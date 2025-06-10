@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the AddVDIAppsRequest type satisfies the MappedNullable interface at compile time
@@ -21,8 +20,8 @@ var _ MappedNullable = &AddVDIAppsRequest{}
 
 // AddVDIAppsRequest Create VDI App
 type AddVDIAppsRequest struct {
-	VdiApp AddVDIAppsRequestVdiApp `json:"vdiApp"`
-	AdditionalProperties map[string]interface{}
+	VdiApp               AddVDIAppsRequestVdiApp `json:"vdiApp"`
+	AdditionalProperties map[string]interface{}  `json:",remain"`
 }
 
 type _AddVDIAppsRequest AddVDIAppsRequest
@@ -70,7 +69,7 @@ func (o *AddVDIAppsRequest) SetVdiApp(v AddVDIAppsRequestVdiApp) {
 }
 
 func (o AddVDIAppsRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -87,83 +86,8 @@ func (o AddVDIAppsRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *AddVDIAppsRequest) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"vdiApp",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varAddVDIAppsRequest := _AddVDIAppsRequest{}
-
-	err = json.Unmarshal(data, &varAddVDIAppsRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddVDIAppsRequest(varAddVDIAppsRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "vdiApp")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddVDIAppsRequest struct {
-	value *AddVDIAppsRequest
-	isSet bool
-}
-
-func (v NullableAddVDIAppsRequest) Get() *AddVDIAppsRequest {
-	return v.value
-}
-
-func (v *NullableAddVDIAppsRequest) Set(val *AddVDIAppsRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddVDIAppsRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddVDIAppsRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddVDIAppsRequest(val *AddVDIAppsRequest) *NullableAddVDIAppsRequest {
-	return &NullableAddVDIAppsRequest{value: val, isSet: true}
-}
-
-func (v NullableAddVDIAppsRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddVDIAppsRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

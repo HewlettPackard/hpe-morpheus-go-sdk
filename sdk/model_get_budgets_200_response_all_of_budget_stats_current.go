@@ -20,9 +20,9 @@ var _ MappedNullable = &GetBudgets200ResponseAllOfBudgetStatsCurrent{}
 
 // GetBudgets200ResponseAllOfBudgetStatsCurrent struct for GetBudgets200ResponseAllOfBudgetStatsCurrent
 type GetBudgets200ResponseAllOfBudgetStatsCurrent struct {
-	EstimatedCost *string `json:"estimatedCost,omitempty"`
-	LastCost *string `json:"lastCost,omitempty"`
-	AdditionalProperties map[string]interface{}
+	EstimatedCost        *string                `json:"estimatedCost,omitempty"`
+	LastCost             *string                `json:"lastCost,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _GetBudgets200ResponseAllOfBudgetStatsCurrent GetBudgets200ResponseAllOfBudgetStatsCurrent
@@ -109,7 +109,7 @@ func (o *GetBudgets200ResponseAllOfBudgetStatsCurrent) SetLastCost(v string) {
 }
 
 func (o GetBudgets200ResponseAllOfBudgetStatsCurrent) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -131,63 +131,8 @@ func (o GetBudgets200ResponseAllOfBudgetStatsCurrent) ToMap() (map[string]interf
 
 	return toSerialize, nil
 }
-
 func (o *GetBudgets200ResponseAllOfBudgetStatsCurrent) UnmarshalJSON(data []byte) (err error) {
-	varGetBudgets200ResponseAllOfBudgetStatsCurrent := _GetBudgets200ResponseAllOfBudgetStatsCurrent{}
-
-	err = json.Unmarshal(data, &varGetBudgets200ResponseAllOfBudgetStatsCurrent)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetBudgets200ResponseAllOfBudgetStatsCurrent(varGetBudgets200ResponseAllOfBudgetStatsCurrent)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "estimatedCost")
-		delete(additionalProperties, "lastCost")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetBudgets200ResponseAllOfBudgetStatsCurrent struct {
-	value *GetBudgets200ResponseAllOfBudgetStatsCurrent
-	isSet bool
-}
-
-func (v NullableGetBudgets200ResponseAllOfBudgetStatsCurrent) Get() *GetBudgets200ResponseAllOfBudgetStatsCurrent {
-	return v.value
-}
-
-func (v *NullableGetBudgets200ResponseAllOfBudgetStatsCurrent) Set(val *GetBudgets200ResponseAllOfBudgetStatsCurrent) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetBudgets200ResponseAllOfBudgetStatsCurrent) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetBudgets200ResponseAllOfBudgetStatsCurrent) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetBudgets200ResponseAllOfBudgetStatsCurrent(val *GetBudgets200ResponseAllOfBudgetStatsCurrent) *NullableGetBudgets200ResponseAllOfBudgetStatsCurrent {
-	return &NullableGetBudgets200ResponseAllOfBudgetStatsCurrent{value: val, isSet: true}
-}
-
-func (v NullableGetBudgets200ResponseAllOfBudgetStatsCurrent) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetBudgets200ResponseAllOfBudgetStatsCurrent) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

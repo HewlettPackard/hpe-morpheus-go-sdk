@@ -20,12 +20,12 @@ var _ MappedNullable = &ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf11
 
 // ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf11Config struct for ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf11Config
 type ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf11Config struct {
-	PuppetMaster *string `json:"puppetMaster,omitempty"`
-	PuppetFireNow *string `json:"puppetFireNow,omitempty"`
-	PuppetSshUser *string `json:"puppetSshUser,omitempty"`
-	PuppetSshPassword *string `json:"puppetSshPassword,omitempty"`
-	PuppetSshPasswordHash *string `json:"puppetSshPasswordHash,omitempty"`
-	AdditionalProperties map[string]interface{}
+	PuppetMaster          *string                `json:"puppetMaster,omitempty"`
+	PuppetFireNow         *string                `json:"puppetFireNow,omitempty"`
+	PuppetSshUser         *string                `json:"puppetSshUser,omitempty"`
+	PuppetSshPassword     *string                `json:"puppetSshPassword,omitempty"`
+	PuppetSshPasswordHash *string                `json:"puppetSshPasswordHash,omitempty"`
+	AdditionalProperties  map[string]interface{} `json:",remain"`
 }
 
 type _ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf11Config ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf11Config
@@ -208,7 +208,7 @@ func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf11Config) SetPupp
 }
 
 func (o ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf11Config) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -239,66 +239,8 @@ func (o ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf11Config) ToMap() 
 
 	return toSerialize, nil
 }
-
 func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf11Config) UnmarshalJSON(data []byte) (err error) {
-	varListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf11Config := _ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf11Config{}
-
-	err = json.Unmarshal(data, &varListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf11Config)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf11Config(varListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf11Config)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "puppetMaster")
-		delete(additionalProperties, "puppetFireNow")
-		delete(additionalProperties, "puppetSshUser")
-		delete(additionalProperties, "puppetSshPassword")
-		delete(additionalProperties, "puppetSshPasswordHash")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf11Config struct {
-	value *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf11Config
-	isSet bool
-}
-
-func (v NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf11Config) Get() *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf11Config {
-	return v.value
-}
-
-func (v *NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf11Config) Set(val *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf11Config) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf11Config) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf11Config) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf11Config(val *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf11Config) *NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf11Config {
-	return &NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf11Config{value: val, isSet: true}
-}
-
-func (v NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf11Config) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf11Config) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

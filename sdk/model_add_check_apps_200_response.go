@@ -20,9 +20,9 @@ var _ MappedNullable = &AddCheckApps200Response{}
 
 // AddCheckApps200Response struct for AddCheckApps200Response
 type AddCheckApps200Response struct {
-	CheckApp *GetAlerts200ResponseAllOfAppsInner `json:"checkApp,omitempty"`
-	Success *bool `json:"success,omitempty"`
-	AdditionalProperties map[string]interface{}
+	CheckApp             *GetAlerts200ResponseAllOfAppsInner `json:"checkApp,omitempty"`
+	Success              *bool                               `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{}              `json:",remain"`
 }
 
 type _AddCheckApps200Response AddCheckApps200Response
@@ -109,7 +109,7 @@ func (o *AddCheckApps200Response) SetSuccess(v bool) {
 }
 
 func (o AddCheckApps200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -131,63 +131,8 @@ func (o AddCheckApps200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *AddCheckApps200Response) UnmarshalJSON(data []byte) (err error) {
-	varAddCheckApps200Response := _AddCheckApps200Response{}
-
-	err = json.Unmarshal(data, &varAddCheckApps200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddCheckApps200Response(varAddCheckApps200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "checkApp")
-		delete(additionalProperties, "success")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddCheckApps200Response struct {
-	value *AddCheckApps200Response
-	isSet bool
-}
-
-func (v NullableAddCheckApps200Response) Get() *AddCheckApps200Response {
-	return v.value
-}
-
-func (v *NullableAddCheckApps200Response) Set(val *AddCheckApps200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddCheckApps200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddCheckApps200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddCheckApps200Response(val *AddCheckApps200Response) *NullableAddCheckApps200Response {
-	return &NullableAddCheckApps200Response{value: val, isSet: true}
-}
-
-func (v NullableAddCheckApps200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddCheckApps200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

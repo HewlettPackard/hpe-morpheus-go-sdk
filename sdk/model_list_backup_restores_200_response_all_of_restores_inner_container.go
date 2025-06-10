@@ -23,8 +23,8 @@ type ListBackupRestores200ResponseAllOfRestoresInnerContainer struct {
 	// Container ID
 	Id *int64 `json:"id,omitempty"`
 	// Container Name
-	Name *string `json:"name,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Name                 *string                `json:"name,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListBackupRestores200ResponseAllOfRestoresInnerContainer ListBackupRestores200ResponseAllOfRestoresInnerContainer
@@ -111,7 +111,7 @@ func (o *ListBackupRestores200ResponseAllOfRestoresInnerContainer) SetName(v str
 }
 
 func (o ListBackupRestores200ResponseAllOfRestoresInnerContainer) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -133,63 +133,8 @@ func (o ListBackupRestores200ResponseAllOfRestoresInnerContainer) ToMap() (map[s
 
 	return toSerialize, nil
 }
-
 func (o *ListBackupRestores200ResponseAllOfRestoresInnerContainer) UnmarshalJSON(data []byte) (err error) {
-	varListBackupRestores200ResponseAllOfRestoresInnerContainer := _ListBackupRestores200ResponseAllOfRestoresInnerContainer{}
-
-	err = json.Unmarshal(data, &varListBackupRestores200ResponseAllOfRestoresInnerContainer)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListBackupRestores200ResponseAllOfRestoresInnerContainer(varListBackupRestores200ResponseAllOfRestoresInnerContainer)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListBackupRestores200ResponseAllOfRestoresInnerContainer struct {
-	value *ListBackupRestores200ResponseAllOfRestoresInnerContainer
-	isSet bool
-}
-
-func (v NullableListBackupRestores200ResponseAllOfRestoresInnerContainer) Get() *ListBackupRestores200ResponseAllOfRestoresInnerContainer {
-	return v.value
-}
-
-func (v *NullableListBackupRestores200ResponseAllOfRestoresInnerContainer) Set(val *ListBackupRestores200ResponseAllOfRestoresInnerContainer) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListBackupRestores200ResponseAllOfRestoresInnerContainer) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListBackupRestores200ResponseAllOfRestoresInnerContainer) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListBackupRestores200ResponseAllOfRestoresInnerContainer(val *ListBackupRestores200ResponseAllOfRestoresInnerContainer) *NullableListBackupRestores200ResponseAllOfRestoresInnerContainer {
-	return &NullableListBackupRestores200ResponseAllOfRestoresInnerContainer{value: val, isSet: true}
-}
-
-func (v NullableListBackupRestores200ResponseAllOfRestoresInnerContainer) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListBackupRestores200ResponseAllOfRestoresInnerContainer) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -20,28 +20,28 @@ var _ MappedNullable = &ListClusterLayouts200ResponseAllOfLayoutsInnerComputeSer
 
 // ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner struct for ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner
 type ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner struct {
-	Id *int64 `json:"id,omitempty"`
-	PriorityOrder *int64 `json:"priorityOrder,omitempty"`
-	NodeCount *int64 `json:"nodeCount,omitempty"`
-	NodeType *string `json:"nodeType,omitempty"`
-	MinNodeCount *int64 `json:"minNodeCount,omitempty"`
-	MaxNodeCount *string `json:"maxNodeCount,omitempty"`
-	DynamicCount *bool `json:"dynamicCount,omitempty"`
-	InstallContainerRuntime *bool `json:"installContainerRuntime,omitempty"`
-	InstallStorageRuntime *bool `json:"installStorageRuntime,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Code *string `json:"code,omitempty"`
-	Category *string `json:"category,omitempty"`
-	Config *string `json:"config,omitempty"`
-	ContainerType *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType `json:"containerType,omitempty"`
-	ComputeServerType *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerComputeServerType `json:"computeServerType,omitempty"`
-	ProvisionService *string `json:"provisionService,omitempty"`
-	PlanCategory *string `json:"planCategory,omitempty"`
-	NamePrefix *string `json:"namePrefix,omitempty"`
-	NameSuffix *string `json:"nameSuffix,omitempty"`
-	ForceNameIndex *bool `json:"forceNameIndex,omitempty"`
-	LoadBalance *bool `json:"loadBalance,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                      *int64                                                                              `json:"id,omitempty"`
+	PriorityOrder           *int64                                                                              `json:"priorityOrder,omitempty"`
+	NodeCount               *int64                                                                              `json:"nodeCount,omitempty"`
+	NodeType                *string                                                                             `json:"nodeType,omitempty"`
+	MinNodeCount            *int64                                                                              `json:"minNodeCount,omitempty"`
+	MaxNodeCount            *string                                                                             `json:"maxNodeCount,omitempty"`
+	DynamicCount            *bool                                                                               `json:"dynamicCount,omitempty"`
+	InstallContainerRuntime *bool                                                                               `json:"installContainerRuntime,omitempty"`
+	InstallStorageRuntime   *bool                                                                               `json:"installStorageRuntime,omitempty"`
+	Name                    *string                                                                             `json:"name,omitempty"`
+	Code                    *string                                                                             `json:"code,omitempty"`
+	Category                *string                                                                             `json:"category,omitempty"`
+	Config                  *string                                                                             `json:"config,omitempty"`
+	ContainerType           *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType     `json:"containerType,omitempty"`
+	ComputeServerType       *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerComputeServerType `json:"computeServerType,omitempty"`
+	ProvisionService        *string                                                                             `json:"provisionService,omitempty"`
+	PlanCategory            *string                                                                             `json:"planCategory,omitempty"`
+	NamePrefix              *string                                                                             `json:"namePrefix,omitempty"`
+	NameSuffix              *string                                                                             `json:"nameSuffix,omitempty"`
+	ForceNameIndex          *bool                                                                               `json:"forceNameIndex,omitempty"`
+	LoadBalance             *bool                                                                               `json:"loadBalance,omitempty"`
+	AdditionalProperties    map[string]interface{}                                                              `json:",remain"`
 }
 
 type _ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner
@@ -736,7 +736,7 @@ func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner) SetL
 }
 
 func (o ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -815,82 +815,8 @@ func (o ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner) ToMap
 
 	return toSerialize, nil
 }
-
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner) UnmarshalJSON(data []byte) (err error) {
-	varListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner := _ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner{}
-
-	err = json.Unmarshal(data, &varListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner(varListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "priorityOrder")
-		delete(additionalProperties, "nodeCount")
-		delete(additionalProperties, "nodeType")
-		delete(additionalProperties, "minNodeCount")
-		delete(additionalProperties, "maxNodeCount")
-		delete(additionalProperties, "dynamicCount")
-		delete(additionalProperties, "installContainerRuntime")
-		delete(additionalProperties, "installStorageRuntime")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "category")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "containerType")
-		delete(additionalProperties, "computeServerType")
-		delete(additionalProperties, "provisionService")
-		delete(additionalProperties, "planCategory")
-		delete(additionalProperties, "namePrefix")
-		delete(additionalProperties, "nameSuffix")
-		delete(additionalProperties, "forceNameIndex")
-		delete(additionalProperties, "loadBalance")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner struct {
-	value *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner
-	isSet bool
-}
-
-func (v NullableListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner) Get() *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner {
-	return v.value
-}
-
-func (v *NullableListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner) Set(val *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner(val *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner) *NullableListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner {
-	return &NullableListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner{value: val, isSet: true}
-}
-
-func (v NullableListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

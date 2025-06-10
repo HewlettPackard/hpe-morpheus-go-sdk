@@ -21,13 +21,12 @@ import (
 	"strings"
 )
 
-
 // JobsAPIService JobsAPI service
 type JobsAPIService service
 
 type ApiAddJobsRequest struct {
-	ctx context.Context
-	ApiService *JobsAPIService
+	ctx            context.Context
+	ApiService     *JobsAPIService
 	addJobsRequest *AddJobsRequest
 }
 
@@ -45,25 +44,25 @@ AddJobs Creates a Job
 
 Creates a job.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddJobsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddJobsRequest
 */
 func (a *JobsAPIService) AddJobs(ctx context.Context) ApiAddJobsRequest {
 	return ApiAddJobsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddJobs200Response
+//
+//	@return AddJobs200Response
 func (a *JobsAPIService) AddJobsExecute(r ApiAddJobsRequest) (*AddJobs200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddJobs200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddJobs200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "JobsAPIService.AddJobs")
@@ -115,7 +114,7 @@ func (a *JobsAPIService) AddJobsExecute(r ApiAddJobsRequest) (*AddJobs200Respons
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -124,8 +123,8 @@ func (a *JobsAPIService) AddJobsExecute(r ApiAddJobsRequest) (*AddJobs200Respons
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -135,8 +134,8 @@ func (a *JobsAPIService) AddJobsExecute(r ApiAddJobsRequest) (*AddJobs200Respons
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -144,8 +143,8 @@ func (a *JobsAPIService) AddJobsExecute(r ApiAddJobsRequest) (*AddJobs200Respons
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -154,9 +153,9 @@ func (a *JobsAPIService) AddJobsExecute(r ApiAddJobsRequest) (*AddJobs200Respons
 }
 
 type ApiExecuteJobsRequest struct {
-	ctx context.Context
-	ApiService *JobsAPIService
-	id int64
+	ctx          context.Context
+	ApiService   *JobsAPIService
+	id           int64
 	customConfig *string
 }
 
@@ -175,27 +174,27 @@ ExecuteJobs Executes a Specific Job
 
 Executes a specific job.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiExecuteJobsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiExecuteJobsRequest
 */
 func (a *JobsAPIService) ExecuteJobs(ctx context.Context, id int64) ApiExecuteJobsRequest {
 	return ApiExecuteJobsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *JobsAPIService) ExecuteJobsExecute(r ApiExecuteJobsRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "JobsAPIService.ExecuteJobs")
@@ -249,7 +248,7 @@ func (a *JobsAPIService) ExecuteJobsExecute(r ApiExecuteJobsRequest) (*DeleteAle
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -258,8 +257,8 @@ func (a *JobsAPIService) ExecuteJobsExecute(r ApiExecuteJobsRequest) (*DeleteAle
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -269,8 +268,8 @@ func (a *JobsAPIService) ExecuteJobsExecute(r ApiExecuteJobsRequest) (*DeleteAle
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -278,8 +277,8 @@ func (a *JobsAPIService) ExecuteJobsExecute(r ApiExecuteJobsRequest) (*DeleteAle
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -288,10 +287,10 @@ func (a *JobsAPIService) ExecuteJobsExecute(r ApiExecuteJobsRequest) (*DeleteAle
 }
 
 type ApiGetJobExecutionEventsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *JobsAPIService
-	id int64
-	eventId int64
+	id         int64
+	eventId    int64
 }
 
 func (r ApiGetJobExecutionEventsRequest) Execute() (*GetJobExecutionEvents200Response, *http.Response, error) {
@@ -303,29 +302,29 @@ GetJobExecutionEvents Retrieves a Specific Job Execution Event
 
 Retrieves a specific job execution event.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @param eventId ID of the job execution event
- @return ApiGetJobExecutionEventsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@param eventId ID of the job execution event
+	@return ApiGetJobExecutionEventsRequest
 */
 func (a *JobsAPIService) GetJobExecutionEvents(ctx context.Context, id int64, eventId int64) ApiGetJobExecutionEventsRequest {
 	return ApiGetJobExecutionEventsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
-		eventId: eventId,
+		ctx:        ctx,
+		id:         id,
+		eventId:    eventId,
 	}
 }
 
 // Execute executes the request
-//  @return GetJobExecutionEvents200Response
+//
+//	@return GetJobExecutionEvents200Response
 func (a *JobsAPIService) GetJobExecutionEventsExecute(r ApiGetJobExecutionEventsRequest) (*GetJobExecutionEvents200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetJobExecutionEvents200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetJobExecutionEvents200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "JobsAPIService.GetJobExecutionEvents")
@@ -377,7 +376,7 @@ func (a *JobsAPIService) GetJobExecutionEventsExecute(r ApiGetJobExecutionEvents
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -386,8 +385,8 @@ func (a *JobsAPIService) GetJobExecutionEventsExecute(r ApiGetJobExecutionEvents
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -397,8 +396,8 @@ func (a *JobsAPIService) GetJobExecutionEventsExecute(r ApiGetJobExecutionEvents
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -406,8 +405,8 @@ func (a *JobsAPIService) GetJobExecutionEventsExecute(r ApiGetJobExecutionEvents
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -416,9 +415,9 @@ func (a *JobsAPIService) GetJobExecutionEventsExecute(r ApiGetJobExecutionEvents
 }
 
 type ApiGetJobExecutionsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *JobsAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetJobExecutionsRequest) Execute() (*GetJobExecutions200Response, *http.Response, error) {
@@ -430,27 +429,27 @@ GetJobExecutions Retrieves a Specific Job Execution
 
 Retrieves a specific job execution.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetJobExecutionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetJobExecutionsRequest
 */
 func (a *JobsAPIService) GetJobExecutions(ctx context.Context, id int64) ApiGetJobExecutionsRequest {
 	return ApiGetJobExecutionsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetJobExecutions200Response
+//
+//	@return GetJobExecutions200Response
 func (a *JobsAPIService) GetJobExecutionsExecute(r ApiGetJobExecutionsRequest) (*GetJobExecutions200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetJobExecutions200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetJobExecutions200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "JobsAPIService.GetJobExecutions")
@@ -501,7 +500,7 @@ func (a *JobsAPIService) GetJobExecutionsExecute(r ApiGetJobExecutionsRequest) (
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -510,8 +509,8 @@ func (a *JobsAPIService) GetJobExecutionsExecute(r ApiGetJobExecutionsRequest) (
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -521,8 +520,8 @@ func (a *JobsAPIService) GetJobExecutionsExecute(r ApiGetJobExecutionsRequest) (
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -530,8 +529,8 @@ func (a *JobsAPIService) GetJobExecutionsExecute(r ApiGetJobExecutionsRequest) (
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -540,9 +539,9 @@ func (a *JobsAPIService) GetJobExecutionsExecute(r ApiGetJobExecutionsRequest) (
 }
 
 type ApiGetJobsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *JobsAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetJobsRequest) Execute() (*GetJobs200Response, *http.Response, error) {
@@ -554,27 +553,27 @@ GetJobs Retrieves a Specific Job
 
 Retrieves a specific job.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetJobsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetJobsRequest
 */
 func (a *JobsAPIService) GetJobs(ctx context.Context, id int64) ApiGetJobsRequest {
 	return ApiGetJobsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetJobs200Response
+//
+//	@return GetJobs200Response
 func (a *JobsAPIService) GetJobsExecute(r ApiGetJobsRequest) (*GetJobs200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetJobs200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetJobs200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "JobsAPIService.GetJobs")
@@ -625,7 +624,7 @@ func (a *JobsAPIService) GetJobsExecute(r ApiGetJobsRequest) (*GetJobs200Respons
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -634,8 +633,8 @@ func (a *JobsAPIService) GetJobsExecute(r ApiGetJobsRequest) (*GetJobs200Respons
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -645,8 +644,8 @@ func (a *JobsAPIService) GetJobsExecute(r ApiGetJobsRequest) (*GetJobs200Respons
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -654,8 +653,8 @@ func (a *JobsAPIService) GetJobsExecute(r ApiGetJobsRequest) (*GetJobs200Respons
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -664,14 +663,14 @@ func (a *JobsAPIService) GetJobsExecute(r ApiGetJobsRequest) (*GetJobs200Respons
 }
 
 type ApiListJobExecutionsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *JobsAPIService
-	max *int64
-	offset *int64
-	sort *string
-	direction *string
-	phrase *string
-	name *string
+	max        *int64
+	offset     *int64
+	sort       *string
+	direction  *string
+	phrase     *string
+	name       *string
 }
 
 // Maximum number of records to return
@@ -719,25 +718,25 @@ ListJobExecutions Retrieves all Job Executions
 
 Retrieves all job executions.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListJobExecutionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListJobExecutionsRequest
 */
 func (a *JobsAPIService) ListJobExecutions(ctx context.Context) ApiListJobExecutionsRequest {
 	return ApiListJobExecutionsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListJobExecutions200Response
+//
+//	@return ListJobExecutions200Response
 func (a *JobsAPIService) ListJobExecutionsExecute(r ApiListJobExecutionsRequest) (*ListJobExecutions200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListJobExecutions200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListJobExecutions200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "JobsAPIService.ListJobExecutions")
@@ -817,7 +816,7 @@ func (a *JobsAPIService) ListJobExecutionsExecute(r ApiListJobExecutionsRequest)
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -826,8 +825,8 @@ func (a *JobsAPIService) ListJobExecutionsExecute(r ApiListJobExecutionsRequest)
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -837,8 +836,8 @@ func (a *JobsAPIService) ListJobExecutionsExecute(r ApiListJobExecutionsRequest)
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -846,8 +845,8 @@ func (a *JobsAPIService) ListJobExecutionsExecute(r ApiListJobExecutionsRequest)
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -856,17 +855,17 @@ func (a *JobsAPIService) ListJobExecutionsExecute(r ApiListJobExecutionsRequest)
 }
 
 type ApiListJobsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *JobsAPIService
-	max *int64
-	offset *int64
-	sort *string
-	direction *string
-	phrase *string
-	name *string
+	max        *int64
+	offset     *int64
+	sort       *string
+	direction  *string
+	phrase     *string
+	name       *string
 	itemSource *string
-	labels *string
-	allLabels *string
+	labels     *string
+	allLabels  *string
 }
 
 // Maximum number of records to return
@@ -932,25 +931,25 @@ ListJobs Retrieves all Jobs
 
 Retrieves all jobs.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListJobsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListJobsRequest
 */
 func (a *JobsAPIService) ListJobs(ctx context.Context) ApiListJobsRequest {
 	return ApiListJobsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListJobs200Response
+//
+//	@return ListJobs200Response
 func (a *JobsAPIService) ListJobsExecute(r ApiListJobsRequest) (*ListJobs200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListJobs200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListJobs200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "JobsAPIService.ListJobs")
@@ -1039,7 +1038,7 @@ func (a *JobsAPIService) ListJobsExecute(r ApiListJobsRequest) (*ListJobs200Resp
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1048,8 +1047,8 @@ func (a *JobsAPIService) ListJobsExecute(r ApiListJobsRequest) (*ListJobs200Resp
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1059,8 +1058,8 @@ func (a *JobsAPIService) ListJobsExecute(r ApiListJobsRequest) (*ListJobs200Resp
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1068,8 +1067,8 @@ func (a *JobsAPIService) ListJobsExecute(r ApiListJobsRequest) (*ListJobs200Resp
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1078,9 +1077,9 @@ func (a *JobsAPIService) ListJobsExecute(r ApiListJobsRequest) (*ListJobs200Resp
 }
 
 type ApiRemoveJobsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *JobsAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiRemoveJobsRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -1092,27 +1091,27 @@ RemoveJobs Deletes a Job
 
 Deletes a specified job.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiRemoveJobsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiRemoveJobsRequest
 */
 func (a *JobsAPIService) RemoveJobs(ctx context.Context, id int64) ApiRemoveJobsRequest {
 	return ApiRemoveJobsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *JobsAPIService) RemoveJobsExecute(r ApiRemoveJobsRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "JobsAPIService.RemoveJobs")
@@ -1163,7 +1162,7 @@ func (a *JobsAPIService) RemoveJobsExecute(r ApiRemoveJobsRequest) (*DeleteAlert
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1172,8 +1171,8 @@ func (a *JobsAPIService) RemoveJobsExecute(r ApiRemoveJobsRequest) (*DeleteAlert
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1183,8 +1182,8 @@ func (a *JobsAPIService) RemoveJobsExecute(r ApiRemoveJobsRequest) (*DeleteAlert
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1192,8 +1191,8 @@ func (a *JobsAPIService) RemoveJobsExecute(r ApiRemoveJobsRequest) (*DeleteAlert
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1202,9 +1201,9 @@ func (a *JobsAPIService) RemoveJobsExecute(r ApiRemoveJobsRequest) (*DeleteAlert
 }
 
 type ApiUpdateJobsRequest struct {
-	ctx context.Context
-	ApiService *JobsAPIService
-	id int64
+	ctx               context.Context
+	ApiService        *JobsAPIService
+	id                int64
 	updateJobsRequest *UpdateJobsRequest
 }
 
@@ -1222,27 +1221,27 @@ UpdateJobs Updates a Job
 
 Updates a job.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateJobsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateJobsRequest
 */
 func (a *JobsAPIService) UpdateJobs(ctx context.Context, id int64) ApiUpdateJobsRequest {
 	return ApiUpdateJobsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return AddJobs200Response
+//
+//	@return AddJobs200Response
 func (a *JobsAPIService) UpdateJobsExecute(r ApiUpdateJobsRequest) (*AddJobs200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddJobs200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddJobs200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "JobsAPIService.UpdateJobs")
@@ -1295,7 +1294,7 @@ func (a *JobsAPIService) UpdateJobsExecute(r ApiUpdateJobsRequest) (*AddJobs200R
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1304,8 +1303,8 @@ func (a *JobsAPIService) UpdateJobsExecute(r ApiUpdateJobsRequest) (*AddJobs200R
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1315,8 +1314,8 @@ func (a *JobsAPIService) UpdateJobsExecute(r ApiUpdateJobsRequest) (*AddJobs200R
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1324,8 +1323,8 @@ func (a *JobsAPIService) UpdateJobsExecute(r ApiUpdateJobsRequest) (*AddJobs200R
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

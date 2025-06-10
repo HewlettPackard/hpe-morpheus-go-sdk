@@ -20,22 +20,22 @@ var _ MappedNullable = &AddPolicies200ResponseAllOfPolicy{}
 
 // AddPolicies200ResponseAllOfPolicy struct for AddPolicies200ResponseAllOfPolicy
 type AddPolicies200ResponseAllOfPolicy struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Description *string `json:"description,omitempty"`
-	PolicyType *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"policyType,omitempty"`
-	Zone *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"zone,omitempty"`
-	Site *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"site,omitempty"`
-	User *GetAlerts200ResponseAllOfChecksInnerCreatedBy `json:"user,omitempty"`
-	Role *AddPolicies200ResponseAllOfPolicyRole `json:"role,omitempty"`
-	RefType *string `json:"refType,omitempty"`
-	RefId *string `json:"refId,omitempty"`
-	EachUser *bool `json:"eachUser,omitempty"`
-	Config *AddPolicies200ResponseAllOfPolicyConfig `json:"config,omitempty"`
-	Enabled *bool `json:"enabled,omitempty"`
-	Owner *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"owner,omitempty"`
-	Accounts []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"accounts,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                                   `json:"id,omitempty"`
+	Name                 *string                                                                  `json:"name,omitempty"`
+	Description          *string                                                                  `json:"description,omitempty"`
+	PolicyType           *ListBackupSettings200ResponseBackupSettingsDefaultSchedule              `json:"policyType,omitempty"`
+	Zone                 *GetAlerts200ResponseAllOfCheckGroupsInnerInstance                       `json:"zone,omitempty"`
+	Site                 *GetAlerts200ResponseAllOfCheckGroupsInnerInstance                       `json:"site,omitempty"`
+	User                 *GetAlerts200ResponseAllOfChecksInnerCreatedBy                           `json:"user,omitempty"`
+	Role                 *AddPolicies200ResponseAllOfPolicyRole                                   `json:"role,omitempty"`
+	RefType              *string                                                                  `json:"refType,omitempty"`
+	RefId                *string                                                                  `json:"refId,omitempty"`
+	EachUser             *bool                                                                    `json:"eachUser,omitempty"`
+	Config               *AddPolicies200ResponseAllOfPolicyConfig                                 `json:"config,omitempty"`
+	Enabled              *bool                                                                    `json:"enabled,omitempty"`
+	Owner                *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner  `json:"owner,omitempty"`
+	Accounts             []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"accounts,omitempty"`
+	AdditionalProperties map[string]interface{}                                                   `json:",remain"`
 }
 
 type _AddPolicies200ResponseAllOfPolicy AddPolicies200ResponseAllOfPolicy
@@ -538,7 +538,7 @@ func (o *AddPolicies200ResponseAllOfPolicy) SetAccounts(v []ListApplianceSetting
 }
 
 func (o AddPolicies200ResponseAllOfPolicy) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -599,76 +599,8 @@ func (o AddPolicies200ResponseAllOfPolicy) ToMap() (map[string]interface{}, erro
 
 	return toSerialize, nil
 }
-
 func (o *AddPolicies200ResponseAllOfPolicy) UnmarshalJSON(data []byte) (err error) {
-	varAddPolicies200ResponseAllOfPolicy := _AddPolicies200ResponseAllOfPolicy{}
-
-	err = json.Unmarshal(data, &varAddPolicies200ResponseAllOfPolicy)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddPolicies200ResponseAllOfPolicy(varAddPolicies200ResponseAllOfPolicy)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "policyType")
-		delete(additionalProperties, "zone")
-		delete(additionalProperties, "site")
-		delete(additionalProperties, "user")
-		delete(additionalProperties, "role")
-		delete(additionalProperties, "refType")
-		delete(additionalProperties, "refId")
-		delete(additionalProperties, "eachUser")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "owner")
-		delete(additionalProperties, "accounts")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddPolicies200ResponseAllOfPolicy struct {
-	value *AddPolicies200ResponseAllOfPolicy
-	isSet bool
-}
-
-func (v NullableAddPolicies200ResponseAllOfPolicy) Get() *AddPolicies200ResponseAllOfPolicy {
-	return v.value
-}
-
-func (v *NullableAddPolicies200ResponseAllOfPolicy) Set(val *AddPolicies200ResponseAllOfPolicy) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddPolicies200ResponseAllOfPolicy) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddPolicies200ResponseAllOfPolicy) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddPolicies200ResponseAllOfPolicy(val *AddPolicies200ResponseAllOfPolicy) *NullableAddPolicies200ResponseAllOfPolicy {
-	return &NullableAddPolicies200ResponseAllOfPolicy{value: val, isSet: true}
-}
-
-func (v NullableAddPolicies200ResponseAllOfPolicy) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddPolicies200ResponseAllOfPolicy) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

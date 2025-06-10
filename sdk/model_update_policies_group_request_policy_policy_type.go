@@ -21,7 +21,7 @@ var _ MappedNullable = &UpdatePoliciesGroupRequestPolicyPolicyType{}
 // UpdatePoliciesGroupRequestPolicyPolicyType struct for UpdatePoliciesGroupRequestPolicyPolicyType
 type UpdatePoliciesGroupRequestPolicyPolicyType struct {
 	// The policy type
-	Code *string `json:"code,omitempty"`
+	Code   *string                                           `json:"code,omitempty"`
 	Config *UpdatePoliciesGroupRequestPolicyPolicyTypeConfig `json:"config,omitempty"`
 	// Set to false to disable
 	Enabled *bool `json:"enabled,omitempty"`
@@ -32,8 +32,8 @@ type UpdatePoliciesGroupRequestPolicyPolicyType struct {
 	// Array of tenants to scope the policy to
 	Accounts []int64 `json:"accounts,omitempty"`
 	// Apply individually to each user in role.  Only when `refType` equals `Role`
-	EachUser *bool `json:"eachUser,omitempty"`
-	AdditionalProperties map[string]interface{}
+	EachUser             *bool                  `json:"eachUser,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _UpdatePoliciesGroupRequestPolicyPolicyType UpdatePoliciesGroupRequestPolicyPolicyType
@@ -284,7 +284,7 @@ func (o *UpdatePoliciesGroupRequestPolicyPolicyType) SetEachUser(v bool) {
 }
 
 func (o UpdatePoliciesGroupRequestPolicyPolicyType) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -321,68 +321,8 @@ func (o UpdatePoliciesGroupRequestPolicyPolicyType) ToMap() (map[string]interfac
 
 	return toSerialize, nil
 }
-
 func (o *UpdatePoliciesGroupRequestPolicyPolicyType) UnmarshalJSON(data []byte) (err error) {
-	varUpdatePoliciesGroupRequestPolicyPolicyType := _UpdatePoliciesGroupRequestPolicyPolicyType{}
-
-	err = json.Unmarshal(data, &varUpdatePoliciesGroupRequestPolicyPolicyType)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdatePoliciesGroupRequestPolicyPolicyType(varUpdatePoliciesGroupRequestPolicyPolicyType)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "refType")
-		delete(additionalProperties, "refId")
-		delete(additionalProperties, "accounts")
-		delete(additionalProperties, "eachUser")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdatePoliciesGroupRequestPolicyPolicyType struct {
-	value *UpdatePoliciesGroupRequestPolicyPolicyType
-	isSet bool
-}
-
-func (v NullableUpdatePoliciesGroupRequestPolicyPolicyType) Get() *UpdatePoliciesGroupRequestPolicyPolicyType {
-	return v.value
-}
-
-func (v *NullableUpdatePoliciesGroupRequestPolicyPolicyType) Set(val *UpdatePoliciesGroupRequestPolicyPolicyType) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdatePoliciesGroupRequestPolicyPolicyType) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdatePoliciesGroupRequestPolicyPolicyType) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdatePoliciesGroupRequestPolicyPolicyType(val *UpdatePoliciesGroupRequestPolicyPolicyType) *NullableUpdatePoliciesGroupRequestPolicyPolicyType {
-	return &NullableUpdatePoliciesGroupRequestPolicyPolicyType{value: val, isSet: true}
-}
-
-func (v NullableUpdatePoliciesGroupRequestPolicyPolicyType) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdatePoliciesGroupRequestPolicyPolicyType) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

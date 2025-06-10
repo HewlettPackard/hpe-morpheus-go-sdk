@@ -20,21 +20,21 @@ var _ MappedNullable = &TaskType{}
 
 // TaskType struct for TaskType
 type TaskType struct {
-	Id *int64 `json:"id,omitempty"`
-	Code *string `json:"code,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Category *string `json:"category,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Scriptable *bool `json:"scriptable,omitempty"`
-	Enabled *bool `json:"enabled,omitempty"`
-	HasResults *bool `json:"hasResults,omitempty"`
-	AllowExecuteLocal *bool `json:"allowExecuteLocal,omitempty"`
-	AllowExecuteRemote *bool `json:"allowExecuteRemote,omitempty"`
-	AllowExecuteResource *bool `json:"allowExecuteResource,omitempty"`
-	AllowLocalRepo *bool `json:"allowLocalRepo,omitempty"`
-	AllowRemoteKeyAuth *bool `json:"allowRemoteKeyAuth,omitempty"`
-	OptionTypes []ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                   `json:"id,omitempty"`
+	Code                 *string                                                  `json:"code,omitempty"`
+	Name                 *string                                                  `json:"name,omitempty"`
+	Category             *string                                                  `json:"category,omitempty"`
+	Description          *string                                                  `json:"description,omitempty"`
+	Scriptable           *bool                                                    `json:"scriptable,omitempty"`
+	Enabled              *bool                                                    `json:"enabled,omitempty"`
+	HasResults           *bool                                                    `json:"hasResults,omitempty"`
+	AllowExecuteLocal    *bool                                                    `json:"allowExecuteLocal,omitempty"`
+	AllowExecuteRemote   *bool                                                    `json:"allowExecuteRemote,omitempty"`
+	AllowExecuteResource *bool                                                    `json:"allowExecuteResource,omitempty"`
+	AllowLocalRepo       *bool                                                    `json:"allowLocalRepo,omitempty"`
+	AllowRemoteKeyAuth   *bool                                                    `json:"allowRemoteKeyAuth,omitempty"`
+	OptionTypes          []ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
+	AdditionalProperties map[string]interface{}                                   `json:",remain"`
 }
 
 type _TaskType TaskType
@@ -505,7 +505,7 @@ func (o *TaskType) SetOptionTypes(v []ListTaskTypes200ResponseTaskTypesInnerOpti
 }
 
 func (o TaskType) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -563,75 +563,8 @@ func (o TaskType) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *TaskType) UnmarshalJSON(data []byte) (err error) {
-	varTaskType := _TaskType{}
-
-	err = json.Unmarshal(data, &varTaskType)
-
-	if err != nil {
-		return err
-	}
-
-	*o = TaskType(varTaskType)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "category")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "scriptable")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "hasResults")
-		delete(additionalProperties, "allowExecuteLocal")
-		delete(additionalProperties, "allowExecuteRemote")
-		delete(additionalProperties, "allowExecuteResource")
-		delete(additionalProperties, "allowLocalRepo")
-		delete(additionalProperties, "allowRemoteKeyAuth")
-		delete(additionalProperties, "optionTypes")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableTaskType struct {
-	value *TaskType
-	isSet bool
-}
-
-func (v NullableTaskType) Get() *TaskType {
-	return v.value
-}
-
-func (v *NullableTaskType) Set(val *TaskType) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableTaskType) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableTaskType) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableTaskType(val *TaskType) *NullableTaskType {
-	return &NullableTaskType{value: val, isSet: true}
-}
-
-func (v NullableTaskType) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableTaskType) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

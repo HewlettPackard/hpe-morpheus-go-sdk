@@ -21,13 +21,12 @@ import (
 	"strings"
 )
 
-
 // EmailTemplatesAPIService EmailTemplatesAPI service
 type EmailTemplatesAPIService service
 
 type ApiAddEmailTemplateRequest struct {
-	ctx context.Context
-	ApiService *EmailTemplatesAPIService
+	ctx                     context.Context
+	ApiService              *EmailTemplatesAPIService
 	addEmailTemplateRequest *AddEmailTemplateRequest
 }
 
@@ -45,24 +44,25 @@ AddEmailTemplate Creates an Email Template
 
 Use this command to create an email template.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddEmailTemplateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddEmailTemplateRequest
 */
 func (a *EmailTemplatesAPIService) AddEmailTemplate(ctx context.Context) ApiAddEmailTemplateRequest {
 	return ApiAddEmailTemplateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddEmailTemplateRequest
+//
+//	@return AddEmailTemplateRequest
 func (a *EmailTemplatesAPIService) AddEmailTemplateExecute(r ApiAddEmailTemplateRequest) (*AddEmailTemplateRequest, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddEmailTemplateRequest
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddEmailTemplateRequest
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EmailTemplatesAPIService.AddEmailTemplate")
@@ -114,7 +114,7 @@ func (a *EmailTemplatesAPIService) AddEmailTemplateExecute(r ApiAddEmailTemplate
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -123,8 +123,8 @@ func (a *EmailTemplatesAPIService) AddEmailTemplateExecute(r ApiAddEmailTemplate
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -134,8 +134,8 @@ func (a *EmailTemplatesAPIService) AddEmailTemplateExecute(r ApiAddEmailTemplate
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -143,8 +143,8 @@ func (a *EmailTemplatesAPIService) AddEmailTemplateExecute(r ApiAddEmailTemplate
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -153,9 +153,9 @@ func (a *EmailTemplatesAPIService) AddEmailTemplateExecute(r ApiAddEmailTemplate
 }
 
 type ApiDeleteEmailTemplateRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *EmailTemplatesAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiDeleteEmailTemplateRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -167,26 +167,27 @@ DeleteEmailTemplate Deletes an Email Template
 
 Use this command to delete an email template.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiDeleteEmailTemplateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiDeleteEmailTemplateRequest
 */
 func (a *EmailTemplatesAPIService) DeleteEmailTemplate(ctx context.Context, id int64) ApiDeleteEmailTemplateRequest {
 	return ApiDeleteEmailTemplateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *EmailTemplatesAPIService) DeleteEmailTemplateExecute(r ApiDeleteEmailTemplateRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EmailTemplatesAPIService.DeleteEmailTemplate")
@@ -237,7 +238,7 @@ func (a *EmailTemplatesAPIService) DeleteEmailTemplateExecute(r ApiDeleteEmailTe
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -246,8 +247,8 @@ func (a *EmailTemplatesAPIService) DeleteEmailTemplateExecute(r ApiDeleteEmailTe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -257,8 +258,8 @@ func (a *EmailTemplatesAPIService) DeleteEmailTemplateExecute(r ApiDeleteEmailTe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -266,8 +267,8 @@ func (a *EmailTemplatesAPIService) DeleteEmailTemplateExecute(r ApiDeleteEmailTe
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -276,9 +277,9 @@ func (a *EmailTemplatesAPIService) DeleteEmailTemplateExecute(r ApiDeleteEmailTe
 }
 
 type ApiGetEmailTemplateRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *EmailTemplatesAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetEmailTemplateRequest) Execute() (*GetEmailTemplate200Response, *http.Response, error) {
@@ -290,27 +291,27 @@ GetEmailTemplate Retrieves a Specific Email Template
 
 Retrieves a specific email template.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetEmailTemplateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetEmailTemplateRequest
 */
 func (a *EmailTemplatesAPIService) GetEmailTemplate(ctx context.Context, id int64) ApiGetEmailTemplateRequest {
 	return ApiGetEmailTemplateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetEmailTemplate200Response
+//
+//	@return GetEmailTemplate200Response
 func (a *EmailTemplatesAPIService) GetEmailTemplateExecute(r ApiGetEmailTemplateRequest) (*GetEmailTemplate200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetEmailTemplate200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetEmailTemplate200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EmailTemplatesAPIService.GetEmailTemplate")
@@ -361,7 +362,7 @@ func (a *EmailTemplatesAPIService) GetEmailTemplateExecute(r ApiGetEmailTemplate
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -370,8 +371,8 @@ func (a *EmailTemplatesAPIService) GetEmailTemplateExecute(r ApiGetEmailTemplate
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -381,8 +382,8 @@ func (a *EmailTemplatesAPIService) GetEmailTemplateExecute(r ApiGetEmailTemplate
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -390,8 +391,8 @@ func (a *EmailTemplatesAPIService) GetEmailTemplateExecute(r ApiGetEmailTemplate
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -400,14 +401,14 @@ func (a *EmailTemplatesAPIService) GetEmailTemplateExecute(r ApiGetEmailTemplate
 }
 
 type ApiListEmailTemplatesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *EmailTemplatesAPIService
-	max *int64
-	offset *int64
-	sort *string
-	direction *string
-	phrase *string
-	name *string
+	max        *int64
+	offset     *int64
+	sort       *string
+	direction  *string
+	phrase     *string
+	name       *string
 }
 
 // Maximum number of records to return
@@ -455,25 +456,25 @@ ListEmailTemplates Retrieves all Email Templates
 
 Retrieves all email templates.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListEmailTemplatesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListEmailTemplatesRequest
 */
 func (a *EmailTemplatesAPIService) ListEmailTemplates(ctx context.Context) ApiListEmailTemplatesRequest {
 	return ApiListEmailTemplatesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListEmailTemplates200Response
+//
+//	@return ListEmailTemplates200Response
 func (a *EmailTemplatesAPIService) ListEmailTemplatesExecute(r ApiListEmailTemplatesRequest) (*ListEmailTemplates200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListEmailTemplates200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListEmailTemplates200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EmailTemplatesAPIService.ListEmailTemplates")
@@ -553,7 +554,7 @@ func (a *EmailTemplatesAPIService) ListEmailTemplatesExecute(r ApiListEmailTempl
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -562,8 +563,8 @@ func (a *EmailTemplatesAPIService) ListEmailTemplatesExecute(r ApiListEmailTempl
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -573,8 +574,8 @@ func (a *EmailTemplatesAPIService) ListEmailTemplatesExecute(r ApiListEmailTempl
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -582,8 +583,8 @@ func (a *EmailTemplatesAPIService) ListEmailTemplatesExecute(r ApiListEmailTempl
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -592,9 +593,9 @@ func (a *EmailTemplatesAPIService) ListEmailTemplatesExecute(r ApiListEmailTempl
 }
 
 type ApiUpdateEmailTemplateRequest struct {
-	ctx context.Context
-	ApiService *EmailTemplatesAPIService
-	id int64
+	ctx                        context.Context
+	ApiService                 *EmailTemplatesAPIService
+	id                         int64
 	updateEmailTemplateRequest *UpdateEmailTemplateRequest
 }
 
@@ -612,26 +613,27 @@ UpdateEmailTemplate Updates an Email Template
 
 Use this command to update an email template.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateEmailTemplateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateEmailTemplateRequest
 */
 func (a *EmailTemplatesAPIService) UpdateEmailTemplate(ctx context.Context, id int64) ApiUpdateEmailTemplateRequest {
 	return ApiUpdateEmailTemplateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return AddEmailTemplateRequest
+//
+//	@return AddEmailTemplateRequest
 func (a *EmailTemplatesAPIService) UpdateEmailTemplateExecute(r ApiUpdateEmailTemplateRequest) (*AddEmailTemplateRequest, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddEmailTemplateRequest
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddEmailTemplateRequest
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EmailTemplatesAPIService.UpdateEmailTemplate")
@@ -684,7 +686,7 @@ func (a *EmailTemplatesAPIService) UpdateEmailTemplateExecute(r ApiUpdateEmailTe
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -693,8 +695,8 @@ func (a *EmailTemplatesAPIService) UpdateEmailTemplateExecute(r ApiUpdateEmailTe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -704,8 +706,8 @@ func (a *EmailTemplatesAPIService) UpdateEmailTemplateExecute(r ApiUpdateEmailTe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -713,8 +715,8 @@ func (a *EmailTemplatesAPIService) UpdateEmailTemplateExecute(r ApiUpdateEmailTe
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

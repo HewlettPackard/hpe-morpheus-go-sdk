@@ -20,34 +20,34 @@ var _ MappedNullable = &GetClusterMasters200ResponseMastersInnerInterfacesInner{
 
 // GetClusterMasters200ResponseMastersInnerInterfacesInner struct for GetClusterMasters200ResponseMastersInnerInterfacesInner
 type GetClusterMasters200ResponseMastersInnerInterfacesInner struct {
-	Id *int64 `json:"id,omitempty"`
-	RefType *string `json:"refType,omitempty"`
-	RefId *string `json:"refId,omitempty"`
-	Name *string `json:"name,omitempty"`
-	InternalId *string `json:"internalId,omitempty"`
-	ExternalId *string `json:"externalId,omitempty"`
-	UniqueId *string `json:"uniqueId,omitempty"`
-	PublicIpAddress *string `json:"publicIpAddress,omitempty"`
-	PublicIpv6Address *string `json:"publicIpv6Address,omitempty"`
-	IpAddress *string `json:"ipAddress,omitempty"`
-	Ipv6Address *string `json:"ipv6Address,omitempty"`
-	IpSubnet *string `json:"ipSubnet,omitempty"`
-	Ipv6Subnet *string `json:"ipv6Subnet,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Dhcp *bool `json:"dhcp,omitempty"`
-	Active *bool `json:"active,omitempty"`
-	PoolAssigned *bool `json:"poolAssigned,omitempty"`
-	PrimaryInterface *bool `json:"primaryInterface,omitempty"`
-	Network *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"network,omitempty"`
-	Subnet *string `json:"subnet,omitempty"`
-	NetworkGroup *string `json:"networkGroup,omitempty"`
-	NetworkPosition *string `json:"networkPosition,omitempty"`
-	NetworkPool *string `json:"networkPool,omitempty"`
-	NetworkDomain *string `json:"networkDomain,omitempty"`
-	Type *string `json:"type,omitempty"`
-	IpMode *string `json:"ipMode,omitempty"`
-	MacAddress *string `json:"macAddress,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                                  `json:"id,omitempty"`
+	RefType              *string                                                                 `json:"refType,omitempty"`
+	RefId                *string                                                                 `json:"refId,omitempty"`
+	Name                 *string                                                                 `json:"name,omitempty"`
+	InternalId           *string                                                                 `json:"internalId,omitempty"`
+	ExternalId           *string                                                                 `json:"externalId,omitempty"`
+	UniqueId             *string                                                                 `json:"uniqueId,omitempty"`
+	PublicIpAddress      *string                                                                 `json:"publicIpAddress,omitempty"`
+	PublicIpv6Address    *string                                                                 `json:"publicIpv6Address,omitempty"`
+	IpAddress            *string                                                                 `json:"ipAddress,omitempty"`
+	Ipv6Address          *string                                                                 `json:"ipv6Address,omitempty"`
+	IpSubnet             *string                                                                 `json:"ipSubnet,omitempty"`
+	Ipv6Subnet           *string                                                                 `json:"ipv6Subnet,omitempty"`
+	Description          *string                                                                 `json:"description,omitempty"`
+	Dhcp                 *bool                                                                   `json:"dhcp,omitempty"`
+	Active               *bool                                                                   `json:"active,omitempty"`
+	PoolAssigned         *bool                                                                   `json:"poolAssigned,omitempty"`
+	PrimaryInterface     *bool                                                                   `json:"primaryInterface,omitempty"`
+	Network              *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"network,omitempty"`
+	Subnet               *string                                                                 `json:"subnet,omitempty"`
+	NetworkGroup         *string                                                                 `json:"networkGroup,omitempty"`
+	NetworkPosition      *string                                                                 `json:"networkPosition,omitempty"`
+	NetworkPool          *string                                                                 `json:"networkPool,omitempty"`
+	NetworkDomain        *string                                                                 `json:"networkDomain,omitempty"`
+	Type                 *string                                                                 `json:"type,omitempty"`
+	IpMode               *string                                                                 `json:"ipMode,omitempty"`
+	MacAddress           *string                                                                 `json:"macAddress,omitempty"`
+	AdditionalProperties map[string]interface{}                                                  `json:",remain"`
 }
 
 type _GetClusterMasters200ResponseMastersInnerInterfacesInner GetClusterMasters200ResponseMastersInnerInterfacesInner
@@ -934,7 +934,7 @@ func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) SetMacAddress(
 }
 
 func (o GetClusterMasters200ResponseMastersInnerInterfacesInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1031,88 +1031,8 @@ func (o GetClusterMasters200ResponseMastersInnerInterfacesInner) ToMap() (map[st
 
 	return toSerialize, nil
 }
-
 func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) UnmarshalJSON(data []byte) (err error) {
-	varGetClusterMasters200ResponseMastersInnerInterfacesInner := _GetClusterMasters200ResponseMastersInnerInterfacesInner{}
-
-	err = json.Unmarshal(data, &varGetClusterMasters200ResponseMastersInnerInterfacesInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetClusterMasters200ResponseMastersInnerInterfacesInner(varGetClusterMasters200ResponseMastersInnerInterfacesInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "refType")
-		delete(additionalProperties, "refId")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "internalId")
-		delete(additionalProperties, "externalId")
-		delete(additionalProperties, "uniqueId")
-		delete(additionalProperties, "publicIpAddress")
-		delete(additionalProperties, "publicIpv6Address")
-		delete(additionalProperties, "ipAddress")
-		delete(additionalProperties, "ipv6Address")
-		delete(additionalProperties, "ipSubnet")
-		delete(additionalProperties, "ipv6Subnet")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "dhcp")
-		delete(additionalProperties, "active")
-		delete(additionalProperties, "poolAssigned")
-		delete(additionalProperties, "primaryInterface")
-		delete(additionalProperties, "network")
-		delete(additionalProperties, "subnet")
-		delete(additionalProperties, "networkGroup")
-		delete(additionalProperties, "networkPosition")
-		delete(additionalProperties, "networkPool")
-		delete(additionalProperties, "networkDomain")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "ipMode")
-		delete(additionalProperties, "macAddress")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetClusterMasters200ResponseMastersInnerInterfacesInner struct {
-	value *GetClusterMasters200ResponseMastersInnerInterfacesInner
-	isSet bool
-}
-
-func (v NullableGetClusterMasters200ResponseMastersInnerInterfacesInner) Get() *GetClusterMasters200ResponseMastersInnerInterfacesInner {
-	return v.value
-}
-
-func (v *NullableGetClusterMasters200ResponseMastersInnerInterfacesInner) Set(val *GetClusterMasters200ResponseMastersInnerInterfacesInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetClusterMasters200ResponseMastersInnerInterfacesInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetClusterMasters200ResponseMastersInnerInterfacesInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetClusterMasters200ResponseMastersInnerInterfacesInner(val *GetClusterMasters200ResponseMastersInnerInterfacesInner) *NullableGetClusterMasters200ResponseMastersInnerInterfacesInner {
-	return &NullableGetClusterMasters200ResponseMastersInnerInterfacesInner{value: val, isSet: true}
-}
-
-func (v NullableGetClusterMasters200ResponseMastersInnerInterfacesInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetClusterMasters200ResponseMastersInnerInterfacesInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

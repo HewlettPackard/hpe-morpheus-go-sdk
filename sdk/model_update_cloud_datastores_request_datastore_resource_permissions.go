@@ -27,8 +27,8 @@ type UpdateCloudDatastoresRequestDatastoreResourcePermissions struct {
 	// Pass true to allow access all plans
 	AllPlans *bool `json:"allPlans,omitempty"`
 	// Array of plans that are allowed access
-	Plans []UpdateCloudDatastoresRequestDatastoreResourcePermissionsSitesInner `json:"plans,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Plans                []UpdateCloudDatastoresRequestDatastoreResourcePermissionsSitesInner `json:"plans,omitempty"`
+	AdditionalProperties map[string]interface{}                                               `json:",remain"`
 }
 
 type _UpdateCloudDatastoresRequestDatastoreResourcePermissions UpdateCloudDatastoresRequestDatastoreResourcePermissions
@@ -187,7 +187,7 @@ func (o *UpdateCloudDatastoresRequestDatastoreResourcePermissions) SetPlans(v []
 }
 
 func (o UpdateCloudDatastoresRequestDatastoreResourcePermissions) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -215,65 +215,8 @@ func (o UpdateCloudDatastoresRequestDatastoreResourcePermissions) ToMap() (map[s
 
 	return toSerialize, nil
 }
-
 func (o *UpdateCloudDatastoresRequestDatastoreResourcePermissions) UnmarshalJSON(data []byte) (err error) {
-	varUpdateCloudDatastoresRequestDatastoreResourcePermissions := _UpdateCloudDatastoresRequestDatastoreResourcePermissions{}
-
-	err = json.Unmarshal(data, &varUpdateCloudDatastoresRequestDatastoreResourcePermissions)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateCloudDatastoresRequestDatastoreResourcePermissions(varUpdateCloudDatastoresRequestDatastoreResourcePermissions)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "all")
-		delete(additionalProperties, "sites")
-		delete(additionalProperties, "allPlans")
-		delete(additionalProperties, "plans")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateCloudDatastoresRequestDatastoreResourcePermissions struct {
-	value *UpdateCloudDatastoresRequestDatastoreResourcePermissions
-	isSet bool
-}
-
-func (v NullableUpdateCloudDatastoresRequestDatastoreResourcePermissions) Get() *UpdateCloudDatastoresRequestDatastoreResourcePermissions {
-	return v.value
-}
-
-func (v *NullableUpdateCloudDatastoresRequestDatastoreResourcePermissions) Set(val *UpdateCloudDatastoresRequestDatastoreResourcePermissions) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateCloudDatastoresRequestDatastoreResourcePermissions) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateCloudDatastoresRequestDatastoreResourcePermissions) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateCloudDatastoresRequestDatastoreResourcePermissions(val *UpdateCloudDatastoresRequestDatastoreResourcePermissions) *NullableUpdateCloudDatastoresRequestDatastoreResourcePermissions {
-	return &NullableUpdateCloudDatastoresRequestDatastoreResourcePermissions{value: val, isSet: true}
-}
-
-func (v NullableUpdateCloudDatastoresRequestDatastoreResourcePermissions) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateCloudDatastoresRequestDatastoreResourcePermissions) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

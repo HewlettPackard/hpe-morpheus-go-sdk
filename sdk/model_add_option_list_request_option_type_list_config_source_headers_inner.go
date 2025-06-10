@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the AddOptionListRequestOptionTypeListConfigSourceHeadersInner type satisfies the MappedNullable interface at compile time
@@ -26,8 +25,8 @@ type AddOptionListRequestOptionTypeListConfigSourceHeadersInner struct {
 	// Header value
 	Value *string `json:"value,omitempty"`
 	// Can be used to enable / disable masking of value
-	Masked *bool `json:"masked,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Masked               *bool                  `json:"masked,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddOptionListRequestOptionTypeListConfigSourceHeadersInner AddOptionListRequestOptionTypeListConfigSourceHeadersInner
@@ -143,7 +142,7 @@ func (o *AddOptionListRequestOptionTypeListConfigSourceHeadersInner) SetMasked(v
 }
 
 func (o AddOptionListRequestOptionTypeListConfigSourceHeadersInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -166,85 +165,8 @@ func (o AddOptionListRequestOptionTypeListConfigSourceHeadersInner) ToMap() (map
 
 	return toSerialize, nil
 }
-
 func (o *AddOptionListRequestOptionTypeListConfigSourceHeadersInner) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"name",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varAddOptionListRequestOptionTypeListConfigSourceHeadersInner := _AddOptionListRequestOptionTypeListConfigSourceHeadersInner{}
-
-	err = json.Unmarshal(data, &varAddOptionListRequestOptionTypeListConfigSourceHeadersInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddOptionListRequestOptionTypeListConfigSourceHeadersInner(varAddOptionListRequestOptionTypeListConfigSourceHeadersInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "value")
-		delete(additionalProperties, "masked")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddOptionListRequestOptionTypeListConfigSourceHeadersInner struct {
-	value *AddOptionListRequestOptionTypeListConfigSourceHeadersInner
-	isSet bool
-}
-
-func (v NullableAddOptionListRequestOptionTypeListConfigSourceHeadersInner) Get() *AddOptionListRequestOptionTypeListConfigSourceHeadersInner {
-	return v.value
-}
-
-func (v *NullableAddOptionListRequestOptionTypeListConfigSourceHeadersInner) Set(val *AddOptionListRequestOptionTypeListConfigSourceHeadersInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddOptionListRequestOptionTypeListConfigSourceHeadersInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddOptionListRequestOptionTypeListConfigSourceHeadersInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddOptionListRequestOptionTypeListConfigSourceHeadersInner(val *AddOptionListRequestOptionTypeListConfigSourceHeadersInner) *NullableAddOptionListRequestOptionTypeListConfigSourceHeadersInner {
-	return &NullableAddOptionListRequestOptionTypeListConfigSourceHeadersInner{value: val, isSet: true}
-}
-
-func (v NullableAddOptionListRequestOptionTypeListConfigSourceHeadersInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddOptionListRequestOptionTypeListConfigSourceHeadersInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

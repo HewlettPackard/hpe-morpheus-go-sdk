@@ -18,11 +18,11 @@ import (
 // checks if the AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf9 type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf9{}
 
-// AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf9 - Hostname 
+// AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf9 - Hostname
 type AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf9 struct {
-	HostNamingType *string `json:"hostNamingType,omitempty"`
-	HostNamingPattern *string `json:"hostNamingPattern,omitempty"`
-	AdditionalProperties map[string]interface{}
+	HostNamingType       *string                `json:"hostNamingType,omitempty"`
+	HostNamingPattern    *string                `json:"hostNamingPattern,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf9 AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf9
@@ -109,7 +109,7 @@ func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf9) SetHostNamingPatte
 }
 
 func (o AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf9) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -131,63 +131,8 @@ func (o AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf9) ToMap() (map[string
 
 	return toSerialize, nil
 }
-
 func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf9) UnmarshalJSON(data []byte) (err error) {
-	varAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf9 := _AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf9{}
-
-	err = json.Unmarshal(data, &varAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf9)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf9(varAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf9)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "hostNamingType")
-		delete(additionalProperties, "hostNamingPattern")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf9 struct {
-	value *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf9
-	isSet bool
-}
-
-func (v NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf9) Get() *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf9 {
-	return v.value
-}
-
-func (v *NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf9) Set(val *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf9) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf9) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf9) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf9(val *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf9) *NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf9 {
-	return &NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf9{value: val, isSet: true}
-}
-
-func (v NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf9) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf9) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

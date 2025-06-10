@@ -20,8 +20,8 @@ var _ MappedNullable = &CreateLoadBalancerPoolNodeRequest{}
 
 // CreateLoadBalancerPoolNodeRequest struct for CreateLoadBalancerPoolNodeRequest
 type CreateLoadBalancerPoolNodeRequest struct {
-	LoadBalancerNode *CreateLoadBalancerPoolNodeRequestLoadBalancerNode `json:"loadBalancerNode,omitempty"`
-	AdditionalProperties map[string]interface{}
+	LoadBalancerNode     *CreateLoadBalancerPoolNodeRequestLoadBalancerNode `json:"loadBalancerNode,omitempty"`
+	AdditionalProperties map[string]interface{}                             `json:",remain"`
 }
 
 type _CreateLoadBalancerPoolNodeRequest CreateLoadBalancerPoolNodeRequest
@@ -76,7 +76,7 @@ func (o *CreateLoadBalancerPoolNodeRequest) SetLoadBalancerNode(v CreateLoadBala
 }
 
 func (o CreateLoadBalancerPoolNodeRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o CreateLoadBalancerPoolNodeRequest) ToMap() (map[string]interface{}, erro
 
 	return toSerialize, nil
 }
-
 func (o *CreateLoadBalancerPoolNodeRequest) UnmarshalJSON(data []byte) (err error) {
-	varCreateLoadBalancerPoolNodeRequest := _CreateLoadBalancerPoolNodeRequest{}
-
-	err = json.Unmarshal(data, &varCreateLoadBalancerPoolNodeRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = CreateLoadBalancerPoolNodeRequest(varCreateLoadBalancerPoolNodeRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "loadBalancerNode")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableCreateLoadBalancerPoolNodeRequest struct {
-	value *CreateLoadBalancerPoolNodeRequest
-	isSet bool
-}
-
-func (v NullableCreateLoadBalancerPoolNodeRequest) Get() *CreateLoadBalancerPoolNodeRequest {
-	return v.value
-}
-
-func (v *NullableCreateLoadBalancerPoolNodeRequest) Set(val *CreateLoadBalancerPoolNodeRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableCreateLoadBalancerPoolNodeRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableCreateLoadBalancerPoolNodeRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableCreateLoadBalancerPoolNodeRequest(val *CreateLoadBalancerPoolNodeRequest) *NullableCreateLoadBalancerPoolNodeRequest {
-	return &NullableCreateLoadBalancerPoolNodeRequest{value: val, isSet: true}
-}
-
-func (v NullableCreateLoadBalancerPoolNodeRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableCreateLoadBalancerPoolNodeRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

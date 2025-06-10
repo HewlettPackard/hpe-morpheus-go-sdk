@@ -21,13 +21,12 @@ import (
 	"strings"
 )
 
-
 // SecurityPackagesAPIService SecurityPackagesAPI service
 type SecurityPackagesAPIService service
 
 type ApiAddSecurityPackagesRequest struct {
-	ctx context.Context
-	ApiService *SecurityPackagesAPIService
+	ctx                        context.Context
+	ApiService                 *SecurityPackagesAPIService
 	addSecurityPackagesRequest *AddSecurityPackagesRequest
 }
 
@@ -45,25 +44,25 @@ AddSecurityPackages Creates a Security Package
 
 Creates a security package.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddSecurityPackagesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddSecurityPackagesRequest
 */
 func (a *SecurityPackagesAPIService) AddSecurityPackages(ctx context.Context) ApiAddSecurityPackagesRequest {
 	return ApiAddSecurityPackagesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddSecurityPackages200Response
+//
+//	@return AddSecurityPackages200Response
 func (a *SecurityPackagesAPIService) AddSecurityPackagesExecute(r ApiAddSecurityPackagesRequest) (*AddSecurityPackages200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddSecurityPackages200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddSecurityPackages200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecurityPackagesAPIService.AddSecurityPackages")
@@ -115,7 +114,7 @@ func (a *SecurityPackagesAPIService) AddSecurityPackagesExecute(r ApiAddSecurity
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -124,8 +123,8 @@ func (a *SecurityPackagesAPIService) AddSecurityPackagesExecute(r ApiAddSecurity
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -135,8 +134,8 @@ func (a *SecurityPackagesAPIService) AddSecurityPackagesExecute(r ApiAddSecurity
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -144,8 +143,8 @@ func (a *SecurityPackagesAPIService) AddSecurityPackagesExecute(r ApiAddSecurity
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -154,9 +153,9 @@ func (a *SecurityPackagesAPIService) AddSecurityPackagesExecute(r ApiAddSecurity
 }
 
 type ApiGetSecurityPackagesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecurityPackagesAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetSecurityPackagesRequest) Execute() (*GetSecurityPackages200Response, *http.Response, error) {
@@ -168,27 +167,27 @@ GetSecurityPackages Retrieves a Specific Security Package
 
 Retrieves a specific security package.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetSecurityPackagesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetSecurityPackagesRequest
 */
 func (a *SecurityPackagesAPIService) GetSecurityPackages(ctx context.Context, id int64) ApiGetSecurityPackagesRequest {
 	return ApiGetSecurityPackagesRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetSecurityPackages200Response
+//
+//	@return GetSecurityPackages200Response
 func (a *SecurityPackagesAPIService) GetSecurityPackagesExecute(r ApiGetSecurityPackagesRequest) (*GetSecurityPackages200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetSecurityPackages200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetSecurityPackages200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecurityPackagesAPIService.GetSecurityPackages")
@@ -239,7 +238,7 @@ func (a *SecurityPackagesAPIService) GetSecurityPackagesExecute(r ApiGetSecurity
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -248,8 +247,8 @@ func (a *SecurityPackagesAPIService) GetSecurityPackagesExecute(r ApiGetSecurity
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -259,8 +258,8 @@ func (a *SecurityPackagesAPIService) GetSecurityPackagesExecute(r ApiGetSecurity
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -268,8 +267,8 @@ func (a *SecurityPackagesAPIService) GetSecurityPackagesExecute(r ApiGetSecurity
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -278,16 +277,16 @@ func (a *SecurityPackagesAPIService) GetSecurityPackagesExecute(r ApiGetSecurity
 }
 
 type ApiListSecurityPackagesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecurityPackagesAPIService
-	max *int64
-	offset *int64
-	sort *string
-	direction *string
-	phrase *string
-	name *string
-	labels *string
-	allLabels *string
+	max        *int64
+	offset     *int64
+	sort       *string
+	direction  *string
+	phrase     *string
+	name       *string
+	labels     *string
+	allLabels  *string
 }
 
 // Maximum number of records to return
@@ -347,25 +346,25 @@ ListSecurityPackages Retrieves all Security Packages
 
 Retrieves all security packages.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListSecurityPackagesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListSecurityPackagesRequest
 */
 func (a *SecurityPackagesAPIService) ListSecurityPackages(ctx context.Context) ApiListSecurityPackagesRequest {
 	return ApiListSecurityPackagesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListSecurityPackages200Response
+//
+//	@return ListSecurityPackages200Response
 func (a *SecurityPackagesAPIService) ListSecurityPackagesExecute(r ApiListSecurityPackagesRequest) (*ListSecurityPackages200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListSecurityPackages200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListSecurityPackages200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecurityPackagesAPIService.ListSecurityPackages")
@@ -451,7 +450,7 @@ func (a *SecurityPackagesAPIService) ListSecurityPackagesExecute(r ApiListSecuri
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -460,8 +459,8 @@ func (a *SecurityPackagesAPIService) ListSecurityPackagesExecute(r ApiListSecuri
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -471,8 +470,8 @@ func (a *SecurityPackagesAPIService) ListSecurityPackagesExecute(r ApiListSecuri
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -480,8 +479,8 @@ func (a *SecurityPackagesAPIService) ListSecurityPackagesExecute(r ApiListSecuri
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -490,9 +489,9 @@ func (a *SecurityPackagesAPIService) ListSecurityPackagesExecute(r ApiListSecuri
 }
 
 type ApiRemoveSecurityPackagesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecurityPackagesAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiRemoveSecurityPackagesRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -504,27 +503,27 @@ RemoveSecurityPackages Deletes a Security Package
 
 Deletes a specified security package.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiRemoveSecurityPackagesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiRemoveSecurityPackagesRequest
 */
 func (a *SecurityPackagesAPIService) RemoveSecurityPackages(ctx context.Context, id int64) ApiRemoveSecurityPackagesRequest {
 	return ApiRemoveSecurityPackagesRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *SecurityPackagesAPIService) RemoveSecurityPackagesExecute(r ApiRemoveSecurityPackagesRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecurityPackagesAPIService.RemoveSecurityPackages")
@@ -575,7 +574,7 @@ func (a *SecurityPackagesAPIService) RemoveSecurityPackagesExecute(r ApiRemoveSe
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -584,8 +583,8 @@ func (a *SecurityPackagesAPIService) RemoveSecurityPackagesExecute(r ApiRemoveSe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -595,8 +594,8 @@ func (a *SecurityPackagesAPIService) RemoveSecurityPackagesExecute(r ApiRemoveSe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -604,8 +603,8 @@ func (a *SecurityPackagesAPIService) RemoveSecurityPackagesExecute(r ApiRemoveSe
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -614,9 +613,9 @@ func (a *SecurityPackagesAPIService) RemoveSecurityPackagesExecute(r ApiRemoveSe
 }
 
 type ApiUpdateSecurityPackagesRequest struct {
-	ctx context.Context
-	ApiService *SecurityPackagesAPIService
-	id int64
+	ctx                           context.Context
+	ApiService                    *SecurityPackagesAPIService
+	id                            int64
 	updateSecurityPackagesRequest *UpdateSecurityPackagesRequest
 }
 
@@ -634,27 +633,27 @@ UpdateSecurityPackages Updates a Security Package
 
 Updates a security package.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateSecurityPackagesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateSecurityPackagesRequest
 */
 func (a *SecurityPackagesAPIService) UpdateSecurityPackages(ctx context.Context, id int64) ApiUpdateSecurityPackagesRequest {
 	return ApiUpdateSecurityPackagesRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return AddSecurityPackages200Response
+//
+//	@return AddSecurityPackages200Response
 func (a *SecurityPackagesAPIService) UpdateSecurityPackagesExecute(r ApiUpdateSecurityPackagesRequest) (*AddSecurityPackages200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddSecurityPackages200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddSecurityPackages200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecurityPackagesAPIService.UpdateSecurityPackages")
@@ -707,7 +706,7 @@ func (a *SecurityPackagesAPIService) UpdateSecurityPackagesExecute(r ApiUpdateSe
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -716,8 +715,8 @@ func (a *SecurityPackagesAPIService) UpdateSecurityPackagesExecute(r ApiUpdateSe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -727,8 +726,8 @@ func (a *SecurityPackagesAPIService) UpdateSecurityPackagesExecute(r ApiUpdateSe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -736,8 +735,8 @@ func (a *SecurityPackagesAPIService) UpdateSecurityPackagesExecute(r ApiUpdateSe
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

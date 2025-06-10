@@ -20,17 +20,17 @@ var _ MappedNullable = &GetResourcePoolGroups200ResponseResourcePoolGroupsInner{
 
 // GetResourcePoolGroups200ResponseResourcePoolGroupsInner struct for GetResourcePoolGroups200ResponseResourcePoolGroupsInner
 type GetResourcePoolGroups200ResponseResourcePoolGroupsInner struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
+	Id          *int64  `json:"id,omitempty"`
+	Name        *string `json:"name,omitempty"`
 	Description *string `json:"description,omitempty"`
-	Visibility *string `json:"visibility,omitempty"`
+	Visibility  *string `json:"visibility,omitempty"`
 	// Pool selection mode. Valid values are `roundrobin` or `availablecapacity`.
 	Mode *string `json:"mode,omitempty"`
 	// Array of Resource Pool IDs
-	Pools []int64 `json:"pools,omitempty"`
-	Tenants []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"tenants,omitempty"`
-	ResourcePermission *GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermission `json:"resourcePermission,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Pools                []int64                                                                    `json:"pools,omitempty"`
+	Tenants              []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner   `json:"tenants,omitempty"`
+	ResourcePermission   *GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermission `json:"resourcePermission,omitempty"`
+	AdditionalProperties map[string]interface{}                                                     `json:",remain"`
 }
 
 type _GetResourcePoolGroups200ResponseResourcePoolGroupsInner GetResourcePoolGroups200ResponseResourcePoolGroupsInner
@@ -309,7 +309,7 @@ func (o *GetResourcePoolGroups200ResponseResourcePoolGroupsInner) SetResourcePer
 }
 
 func (o GetResourcePoolGroups200ResponseResourcePoolGroupsInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -349,69 +349,8 @@ func (o GetResourcePoolGroups200ResponseResourcePoolGroupsInner) ToMap() (map[st
 
 	return toSerialize, nil
 }
-
 func (o *GetResourcePoolGroups200ResponseResourcePoolGroupsInner) UnmarshalJSON(data []byte) (err error) {
-	varGetResourcePoolGroups200ResponseResourcePoolGroupsInner := _GetResourcePoolGroups200ResponseResourcePoolGroupsInner{}
-
-	err = json.Unmarshal(data, &varGetResourcePoolGroups200ResponseResourcePoolGroupsInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetResourcePoolGroups200ResponseResourcePoolGroupsInner(varGetResourcePoolGroups200ResponseResourcePoolGroupsInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "mode")
-		delete(additionalProperties, "pools")
-		delete(additionalProperties, "tenants")
-		delete(additionalProperties, "resourcePermission")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetResourcePoolGroups200ResponseResourcePoolGroupsInner struct {
-	value *GetResourcePoolGroups200ResponseResourcePoolGroupsInner
-	isSet bool
-}
-
-func (v NullableGetResourcePoolGroups200ResponseResourcePoolGroupsInner) Get() *GetResourcePoolGroups200ResponseResourcePoolGroupsInner {
-	return v.value
-}
-
-func (v *NullableGetResourcePoolGroups200ResponseResourcePoolGroupsInner) Set(val *GetResourcePoolGroups200ResponseResourcePoolGroupsInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetResourcePoolGroups200ResponseResourcePoolGroupsInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetResourcePoolGroups200ResponseResourcePoolGroupsInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetResourcePoolGroups200ResponseResourcePoolGroupsInner(val *GetResourcePoolGroups200ResponseResourcePoolGroupsInner) *NullableGetResourcePoolGroups200ResponseResourcePoolGroupsInner {
-	return &NullableGetResourcePoolGroups200ResponseResourcePoolGroupsInner{value: val, isSet: true}
-}
-
-func (v NullableGetResourcePoolGroups200ResponseResourcePoolGroupsInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetResourcePoolGroups200ResponseResourcePoolGroupsInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

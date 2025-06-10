@@ -20,8 +20,8 @@ var _ MappedNullable = &UpdateSpecTemplateRequestSpecTemplateConfig{}
 
 // UpdateSpecTemplateRequestSpecTemplateConfig The Cloud Formation type supports some additional configuration parameters
 type UpdateSpecTemplateRequestSpecTemplateConfig struct {
-	Cloudformation *UpdateSpecTemplateRequestSpecTemplateConfigCloudformation `json:"cloudformation,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Cloudformation       *UpdateSpecTemplateRequestSpecTemplateConfigCloudformation `json:"cloudformation,omitempty"`
+	AdditionalProperties map[string]interface{}                                     `json:",remain"`
 }
 
 type _UpdateSpecTemplateRequestSpecTemplateConfig UpdateSpecTemplateRequestSpecTemplateConfig
@@ -76,7 +76,7 @@ func (o *UpdateSpecTemplateRequestSpecTemplateConfig) SetCloudformation(v Update
 }
 
 func (o UpdateSpecTemplateRequestSpecTemplateConfig) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o UpdateSpecTemplateRequestSpecTemplateConfig) ToMap() (map[string]interfa
 
 	return toSerialize, nil
 }
-
 func (o *UpdateSpecTemplateRequestSpecTemplateConfig) UnmarshalJSON(data []byte) (err error) {
-	varUpdateSpecTemplateRequestSpecTemplateConfig := _UpdateSpecTemplateRequestSpecTemplateConfig{}
-
-	err = json.Unmarshal(data, &varUpdateSpecTemplateRequestSpecTemplateConfig)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateSpecTemplateRequestSpecTemplateConfig(varUpdateSpecTemplateRequestSpecTemplateConfig)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "cloudformation")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateSpecTemplateRequestSpecTemplateConfig struct {
-	value *UpdateSpecTemplateRequestSpecTemplateConfig
-	isSet bool
-}
-
-func (v NullableUpdateSpecTemplateRequestSpecTemplateConfig) Get() *UpdateSpecTemplateRequestSpecTemplateConfig {
-	return v.value
-}
-
-func (v *NullableUpdateSpecTemplateRequestSpecTemplateConfig) Set(val *UpdateSpecTemplateRequestSpecTemplateConfig) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateSpecTemplateRequestSpecTemplateConfig) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateSpecTemplateRequestSpecTemplateConfig) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateSpecTemplateRequestSpecTemplateConfig(val *UpdateSpecTemplateRequestSpecTemplateConfig) *NullableUpdateSpecTemplateRequestSpecTemplateConfig {
-	return &NullableUpdateSpecTemplateRequestSpecTemplateConfig{value: val, isSet: true}
-}
-
-func (v NullableUpdateSpecTemplateRequestSpecTemplateConfig) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateSpecTemplateRequestSpecTemplateConfig) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

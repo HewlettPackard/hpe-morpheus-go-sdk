@@ -20,48 +20,48 @@ var _ MappedNullable = &OptionType{}
 
 // OptionType struct for OptionType
 type OptionType struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Labels []string `json:"labels,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Code *string `json:"code,omitempty"`
-	FieldName *string `json:"fieldName,omitempty"`
-	FieldLabel *string `json:"fieldLabel,omitempty"`
-	FieldCode *string `json:"fieldCode,omitempty"`
-	FieldContext *string `json:"fieldContext,omitempty"`
-	FieldGroup *string `json:"fieldGroup,omitempty"`
-	FieldClass *string `json:"fieldClass,omitempty"`
-	FieldAddOn *string `json:"fieldAddOn,omitempty"`
-	FieldComponent *string `json:"fieldComponent,omitempty"`
-	FieldInput *string `json:"fieldInput,omitempty"`
-	PlaceHolder *string `json:"placeHolder,omitempty"`
-	VerifyPattern *string `json:"verifyPattern,omitempty"`
-	HelpBlock *string `json:"helpBlock,omitempty"`
-	HelpBlockFieldCode *string `json:"helpBlockFieldCode,omitempty"`
-	DefaultValue *string `json:"defaultValue,omitempty"`
-	OptionSource *string `json:"optionSource,omitempty"`
-	OptionSourceType *string `json:"optionSourceType,omitempty"`
-	OptionList *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"optionList,omitempty"`
-	Type *string `json:"type,omitempty"`
-	Advanced *bool `json:"advanced,omitempty"`
-	Required *bool `json:"required,omitempty"`
-	ExportMeta *bool `json:"exportMeta,omitempty"`
-	Editable *bool `json:"editable,omitempty"`
-	Creatable *bool `json:"creatable,omitempty"`
-	Config map[string]interface{} `json:"config,omitempty"`
-	DisplayOrder *int64 `json:"displayOrder,omitempty"`
-	WrapperClass *string `json:"wrapperClass,omitempty"`
-	Enabled *bool `json:"enabled,omitempty"`
-	NoBlank *bool `json:"noBlank,omitempty"`
-	DependsOnCode *string `json:"dependsOnCode,omitempty"`
-	VisibleOnCode *string `json:"visibleOnCode,omitempty"`
-	RequireOnCode *string `json:"requireOnCode,omitempty"`
-	ContextualDefault *bool `json:"contextualDefault,omitempty"`
-	DisplayValueOnDetails *bool `json:"displayValueOnDetails,omitempty"`
-	ShowOnCreate *bool `json:"showOnCreate,omitempty"`
-	ShowOnEdit *bool `json:"showOnEdit,omitempty"`
-	LocalCredential *bool `json:"localCredential,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                    *int64                                             `json:"id,omitempty"`
+	Name                  *string                                            `json:"name,omitempty"`
+	Labels                []string                                           `json:"labels,omitempty"`
+	Description           *string                                            `json:"description,omitempty"`
+	Code                  *string                                            `json:"code,omitempty"`
+	FieldName             *string                                            `json:"fieldName,omitempty"`
+	FieldLabel            *string                                            `json:"fieldLabel,omitempty"`
+	FieldCode             *string                                            `json:"fieldCode,omitempty"`
+	FieldContext          *string                                            `json:"fieldContext,omitempty"`
+	FieldGroup            *string                                            `json:"fieldGroup,omitempty"`
+	FieldClass            *string                                            `json:"fieldClass,omitempty"`
+	FieldAddOn            *string                                            `json:"fieldAddOn,omitempty"`
+	FieldComponent        *string                                            `json:"fieldComponent,omitempty"`
+	FieldInput            *string                                            `json:"fieldInput,omitempty"`
+	PlaceHolder           *string                                            `json:"placeHolder,omitempty"`
+	VerifyPattern         *string                                            `json:"verifyPattern,omitempty"`
+	HelpBlock             *string                                            `json:"helpBlock,omitempty"`
+	HelpBlockFieldCode    *string                                            `json:"helpBlockFieldCode,omitempty"`
+	DefaultValue          *string                                            `json:"defaultValue,omitempty"`
+	OptionSource          *string                                            `json:"optionSource,omitempty"`
+	OptionSourceType      *string                                            `json:"optionSourceType,omitempty"`
+	OptionList            *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"optionList,omitempty"`
+	Type                  *string                                            `json:"type,omitempty"`
+	Advanced              *bool                                              `json:"advanced,omitempty"`
+	Required              *bool                                              `json:"required,omitempty"`
+	ExportMeta            *bool                                              `json:"exportMeta,omitempty"`
+	Editable              *bool                                              `json:"editable,omitempty"`
+	Creatable             *bool                                              `json:"creatable,omitempty"`
+	Config                map[string]interface{}                             `json:"config,omitempty"`
+	DisplayOrder          *int64                                             `json:"displayOrder,omitempty"`
+	WrapperClass          *string                                            `json:"wrapperClass,omitempty"`
+	Enabled               *bool                                              `json:"enabled,omitempty"`
+	NoBlank               *bool                                              `json:"noBlank,omitempty"`
+	DependsOnCode         *string                                            `json:"dependsOnCode,omitempty"`
+	VisibleOnCode         *string                                            `json:"visibleOnCode,omitempty"`
+	RequireOnCode         *string                                            `json:"requireOnCode,omitempty"`
+	ContextualDefault     *bool                                              `json:"contextualDefault,omitempty"`
+	DisplayValueOnDetails *bool                                              `json:"displayValueOnDetails,omitempty"`
+	ShowOnCreate          *bool                                              `json:"showOnCreate,omitempty"`
+	ShowOnEdit            *bool                                              `json:"showOnEdit,omitempty"`
+	LocalCredential       *bool                                              `json:"localCredential,omitempty"`
+	AdditionalProperties  map[string]interface{}                             `json:",remain"`
 }
 
 type _OptionType OptionType
@@ -1396,7 +1396,7 @@ func (o *OptionType) SetLocalCredential(v bool) {
 }
 
 func (o OptionType) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1535,102 +1535,8 @@ func (o OptionType) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *OptionType) UnmarshalJSON(data []byte) (err error) {
-	varOptionType := _OptionType{}
-
-	err = json.Unmarshal(data, &varOptionType)
-
-	if err != nil {
-		return err
-	}
-
-	*o = OptionType(varOptionType)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "fieldName")
-		delete(additionalProperties, "fieldLabel")
-		delete(additionalProperties, "fieldCode")
-		delete(additionalProperties, "fieldContext")
-		delete(additionalProperties, "fieldGroup")
-		delete(additionalProperties, "fieldClass")
-		delete(additionalProperties, "fieldAddOn")
-		delete(additionalProperties, "fieldComponent")
-		delete(additionalProperties, "fieldInput")
-		delete(additionalProperties, "placeHolder")
-		delete(additionalProperties, "verifyPattern")
-		delete(additionalProperties, "helpBlock")
-		delete(additionalProperties, "helpBlockFieldCode")
-		delete(additionalProperties, "defaultValue")
-		delete(additionalProperties, "optionSource")
-		delete(additionalProperties, "optionSourceType")
-		delete(additionalProperties, "optionList")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "advanced")
-		delete(additionalProperties, "required")
-		delete(additionalProperties, "exportMeta")
-		delete(additionalProperties, "editable")
-		delete(additionalProperties, "creatable")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "displayOrder")
-		delete(additionalProperties, "wrapperClass")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "noBlank")
-		delete(additionalProperties, "dependsOnCode")
-		delete(additionalProperties, "visibleOnCode")
-		delete(additionalProperties, "requireOnCode")
-		delete(additionalProperties, "contextualDefault")
-		delete(additionalProperties, "displayValueOnDetails")
-		delete(additionalProperties, "showOnCreate")
-		delete(additionalProperties, "showOnEdit")
-		delete(additionalProperties, "localCredential")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableOptionType struct {
-	value *OptionType
-	isSet bool
-}
-
-func (v NullableOptionType) Get() *OptionType {
-	return v.value
-}
-
-func (v *NullableOptionType) Set(val *OptionType) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableOptionType) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableOptionType) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableOptionType(val *OptionType) *NullableOptionType {
-	return &NullableOptionType{value: val, isSet: true}
-}
-
-func (v NullableOptionType) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableOptionType) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

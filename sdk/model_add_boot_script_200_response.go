@@ -21,15 +21,15 @@ var _ MappedNullable = &AddBootScript200Response{}
 // AddBootScript200Response struct for AddBootScript200Response
 type AddBootScript200Response struct {
 	BootScript *ListBootScripts200ResponseAllOfBootScriptsInner `json:"bootScript,omitempty"`
-	ErrorCode *string `json:"errorCode,omitempty"`
-	InProgress *bool `json:"inProgress,omitempty"`
+	ErrorCode  *string                                          `json:"errorCode,omitempty"`
+	InProgress *bool                                            `json:"inProgress,omitempty"`
 	// Success indicator, true when the request succeeded and false when an error occurred
 	Success *bool `json:"success,omitempty"`
 	// Message containing a description of the result, usually a message about the error that occurred
 	Msg *string `json:"msg,omitempty"`
 	// Validation errors, with a key for Object containing error messages for each invalid parameter (key)
-	Errors map[string]interface{} `json:"errors,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Errors               map[string]interface{} `json:"errors,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddBootScript200Response AddBootScript200Response
@@ -248,7 +248,7 @@ func (o *AddBootScript200Response) SetErrors(v map[string]interface{}) {
 }
 
 func (o AddBootScript200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -282,67 +282,8 @@ func (o AddBootScript200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *AddBootScript200Response) UnmarshalJSON(data []byte) (err error) {
-	varAddBootScript200Response := _AddBootScript200Response{}
-
-	err = json.Unmarshal(data, &varAddBootScript200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddBootScript200Response(varAddBootScript200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "bootScript")
-		delete(additionalProperties, "errorCode")
-		delete(additionalProperties, "inProgress")
-		delete(additionalProperties, "success")
-		delete(additionalProperties, "msg")
-		delete(additionalProperties, "errors")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddBootScript200Response struct {
-	value *AddBootScript200Response
-	isSet bool
-}
-
-func (v NullableAddBootScript200Response) Get() *AddBootScript200Response {
-	return v.value
-}
-
-func (v *NullableAddBootScript200Response) Set(val *AddBootScript200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddBootScript200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddBootScript200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddBootScript200Response(val *AddBootScript200Response) *NullableAddBootScript200Response {
-	return &NullableAddBootScript200Response{value: val, isSet: true}
-}
-
-func (v NullableAddBootScript200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddBootScript200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

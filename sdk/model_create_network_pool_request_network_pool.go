@@ -21,13 +21,13 @@ var _ MappedNullable = &CreateNetworkPoolRequestNetworkPool{}
 // CreateNetworkPoolRequestNetworkPool struct for CreateNetworkPoolRequestNetworkPool
 type CreateNetworkPoolRequestNetworkPool struct {
 	// Name
-	Name *string `json:"name,omitempty"`
+	Name *string                                  `json:"name,omitempty"`
 	Type *CreateNetworkPoolRequestNetworkPoolType `json:"type,omitempty"`
 	// Array of IP range objects. Type 'morpheus' expects startAddress and endAddress. Type 'morpheusipv6' expects a cidrIPv6.
 	IpRanges []CreateNetworkPoolRequestNetworkPoolIpRangesInner `json:"ipRanges,omitempty"`
 	// Configuration object with parameters that vary by pool type.
-	Config map[string]interface{} `json:"config,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Config               map[string]interface{} `json:"config,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _CreateNetworkPoolRequestNetworkPool CreateNetworkPoolRequestNetworkPool
@@ -178,7 +178,7 @@ func (o *CreateNetworkPoolRequestNetworkPool) SetConfig(v map[string]interface{}
 }
 
 func (o CreateNetworkPoolRequestNetworkPool) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -206,65 +206,8 @@ func (o CreateNetworkPoolRequestNetworkPool) ToMap() (map[string]interface{}, er
 
 	return toSerialize, nil
 }
-
 func (o *CreateNetworkPoolRequestNetworkPool) UnmarshalJSON(data []byte) (err error) {
-	varCreateNetworkPoolRequestNetworkPool := _CreateNetworkPoolRequestNetworkPool{}
-
-	err = json.Unmarshal(data, &varCreateNetworkPoolRequestNetworkPool)
-
-	if err != nil {
-		return err
-	}
-
-	*o = CreateNetworkPoolRequestNetworkPool(varCreateNetworkPoolRequestNetworkPool)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "ipRanges")
-		delete(additionalProperties, "config")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableCreateNetworkPoolRequestNetworkPool struct {
-	value *CreateNetworkPoolRequestNetworkPool
-	isSet bool
-}
-
-func (v NullableCreateNetworkPoolRequestNetworkPool) Get() *CreateNetworkPoolRequestNetworkPool {
-	return v.value
-}
-
-func (v *NullableCreateNetworkPoolRequestNetworkPool) Set(val *CreateNetworkPoolRequestNetworkPool) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableCreateNetworkPoolRequestNetworkPool) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableCreateNetworkPoolRequestNetworkPool) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableCreateNetworkPoolRequestNetworkPool(val *CreateNetworkPoolRequestNetworkPool) *NullableCreateNetworkPoolRequestNetworkPool {
-	return &NullableCreateNetworkPoolRequestNetworkPool{value: val, isSet: true}
-}
-
-func (v NullableCreateNetworkPoolRequestNetworkPool) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableCreateNetworkPoolRequestNetworkPool) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

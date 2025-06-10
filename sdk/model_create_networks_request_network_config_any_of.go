@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the CreateNetworksRequestNetworkConfigAnyOf type satisfies the MappedNullable interface at compile time
@@ -26,8 +25,8 @@ type CreateNetworksRequestNetworkConfigAnyOf struct {
 	// Subnet Name
 	SubnetName string `json:"subnetName"`
 	// The subnet's address range in CIDR notation (e.g. 192.168.1.0/24). It must be contained by the address space of the virtual network.
-	SubnetCidr string `json:"subnetCidr"`
-	AdditionalProperties map[string]interface{}
+	SubnetCidr           string                 `json:"subnetCidr"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _CreateNetworksRequestNetworkConfigAnyOf CreateNetworksRequestNetworkConfigAnyOf
@@ -125,7 +124,7 @@ func (o *CreateNetworksRequestNetworkConfigAnyOf) SetSubnetCidr(v string) {
 }
 
 func (o CreateNetworksRequestNetworkConfigAnyOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -144,87 +143,8 @@ func (o CreateNetworksRequestNetworkConfigAnyOf) ToMap() (map[string]interface{}
 
 	return toSerialize, nil
 }
-
 func (o *CreateNetworksRequestNetworkConfigAnyOf) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"resourceGroupId",
-		"subnetName",
-		"subnetCidr",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varCreateNetworksRequestNetworkConfigAnyOf := _CreateNetworksRequestNetworkConfigAnyOf{}
-
-	err = json.Unmarshal(data, &varCreateNetworksRequestNetworkConfigAnyOf)
-
-	if err != nil {
-		return err
-	}
-
-	*o = CreateNetworksRequestNetworkConfigAnyOf(varCreateNetworksRequestNetworkConfigAnyOf)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "resourceGroupId")
-		delete(additionalProperties, "subnetName")
-		delete(additionalProperties, "subnetCidr")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableCreateNetworksRequestNetworkConfigAnyOf struct {
-	value *CreateNetworksRequestNetworkConfigAnyOf
-	isSet bool
-}
-
-func (v NullableCreateNetworksRequestNetworkConfigAnyOf) Get() *CreateNetworksRequestNetworkConfigAnyOf {
-	return v.value
-}
-
-func (v *NullableCreateNetworksRequestNetworkConfigAnyOf) Set(val *CreateNetworksRequestNetworkConfigAnyOf) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableCreateNetworksRequestNetworkConfigAnyOf) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableCreateNetworksRequestNetworkConfigAnyOf) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableCreateNetworksRequestNetworkConfigAnyOf(val *CreateNetworksRequestNetworkConfigAnyOf) *NullableCreateNetworksRequestNetworkConfigAnyOf {
-	return &NullableCreateNetworksRequestNetworkConfigAnyOf{value: val, isSet: true}
-}
-
-func (v NullableCreateNetworksRequestNetworkConfigAnyOf) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableCreateNetworksRequestNetworkConfigAnyOf) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -20,10 +20,10 @@ var _ MappedNullable = &Creds2{}
 
 // Creds2 struct for Creds2
 type Creds2 struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Type *string `json:"type,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	Type                 *string                `json:"type,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _Creds2 Creds2
@@ -142,7 +142,7 @@ func (o *Creds2) SetType(v string) {
 }
 
 func (o Creds2) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -167,64 +167,8 @@ func (o Creds2) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *Creds2) UnmarshalJSON(data []byte) (err error) {
-	varCreds2 := _Creds2{}
-
-	err = json.Unmarshal(data, &varCreds2)
-
-	if err != nil {
-		return err
-	}
-
-	*o = Creds2(varCreds2)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "type")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableCreds2 struct {
-	value *Creds2
-	isSet bool
-}
-
-func (v NullableCreds2) Get() *Creds2 {
-	return v.value
-}
-
-func (v *NullableCreds2) Set(val *Creds2) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableCreds2) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableCreds2) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableCreds2(val *Creds2) *NullableCreds2 {
-	return &NullableCreds2{value: val, isSet: true}
-}
-
-func (v NullableCreds2) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableCreds2) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

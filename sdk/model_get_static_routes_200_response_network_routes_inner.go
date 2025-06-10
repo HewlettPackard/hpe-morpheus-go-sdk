@@ -20,25 +20,25 @@ var _ MappedNullable = &GetStaticRoutes200ResponseNetworkRoutesInner{}
 
 // GetStaticRoutes200ResponseNetworkRoutesInner struct for GetStaticRoutes200ResponseNetworkRoutesInner
 type GetStaticRoutes200ResponseNetworkRoutesInner struct {
-	Id *int32 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Code *string `json:"code,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Priority *string `json:"priority,omitempty"`
-	RouteType *string `json:"routeType,omitempty"`
-	Source *string `json:"source,omitempty"`
-	SourceType *string `json:"sourceType,omitempty"`
-	Destination *string `json:"destination,omitempty"`
-	DestinationType *string `json:"destinationType,omitempty"`
-	DefaultRoute *bool `json:"defaultRoute,omitempty"`
-	NetworkMtu *string `json:"networkMtu,omitempty"`
-	ExternalInterface *string `json:"externalInterface,omitempty"`
-	InternalId *string `json:"internalId,omitempty"`
-	UniqueId *string `json:"uniqueId,omitempty"`
-	ExternalType *string `json:"externalType,omitempty"`
-	Enabled *bool `json:"enabled,omitempty"`
-	Visible *bool `json:"visible,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int32                 `json:"id,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	Code                 *string                `json:"code,omitempty"`
+	Description          *string                `json:"description,omitempty"`
+	Priority             *string                `json:"priority,omitempty"`
+	RouteType            *string                `json:"routeType,omitempty"`
+	Source               *string                `json:"source,omitempty"`
+	SourceType           *string                `json:"sourceType,omitempty"`
+	Destination          *string                `json:"destination,omitempty"`
+	DestinationType      *string                `json:"destinationType,omitempty"`
+	DefaultRoute         *bool                  `json:"defaultRoute,omitempty"`
+	NetworkMtu           *string                `json:"networkMtu,omitempty"`
+	ExternalInterface    *string                `json:"externalInterface,omitempty"`
+	InternalId           *string                `json:"internalId,omitempty"`
+	UniqueId             *string                `json:"uniqueId,omitempty"`
+	ExternalType         *string                `json:"externalType,omitempty"`
+	Enabled              *bool                  `json:"enabled,omitempty"`
+	Visible              *bool                  `json:"visible,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _GetStaticRoutes200ResponseNetworkRoutesInner GetStaticRoutes200ResponseNetworkRoutesInner
@@ -637,7 +637,7 @@ func (o *GetStaticRoutes200ResponseNetworkRoutesInner) SetVisible(v bool) {
 }
 
 func (o GetStaticRoutes200ResponseNetworkRoutesInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -707,79 +707,8 @@ func (o GetStaticRoutes200ResponseNetworkRoutesInner) ToMap() (map[string]interf
 
 	return toSerialize, nil
 }
-
 func (o *GetStaticRoutes200ResponseNetworkRoutesInner) UnmarshalJSON(data []byte) (err error) {
-	varGetStaticRoutes200ResponseNetworkRoutesInner := _GetStaticRoutes200ResponseNetworkRoutesInner{}
-
-	err = json.Unmarshal(data, &varGetStaticRoutes200ResponseNetworkRoutesInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetStaticRoutes200ResponseNetworkRoutesInner(varGetStaticRoutes200ResponseNetworkRoutesInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "priority")
-		delete(additionalProperties, "routeType")
-		delete(additionalProperties, "source")
-		delete(additionalProperties, "sourceType")
-		delete(additionalProperties, "destination")
-		delete(additionalProperties, "destinationType")
-		delete(additionalProperties, "defaultRoute")
-		delete(additionalProperties, "networkMtu")
-		delete(additionalProperties, "externalInterface")
-		delete(additionalProperties, "internalId")
-		delete(additionalProperties, "uniqueId")
-		delete(additionalProperties, "externalType")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "visible")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetStaticRoutes200ResponseNetworkRoutesInner struct {
-	value *GetStaticRoutes200ResponseNetworkRoutesInner
-	isSet bool
-}
-
-func (v NullableGetStaticRoutes200ResponseNetworkRoutesInner) Get() *GetStaticRoutes200ResponseNetworkRoutesInner {
-	return v.value
-}
-
-func (v *NullableGetStaticRoutes200ResponseNetworkRoutesInner) Set(val *GetStaticRoutes200ResponseNetworkRoutesInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetStaticRoutes200ResponseNetworkRoutesInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetStaticRoutes200ResponseNetworkRoutesInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetStaticRoutes200ResponseNetworkRoutesInner(val *GetStaticRoutes200ResponseNetworkRoutesInner) *NullableGetStaticRoutes200ResponseNetworkRoutesInner {
-	return &NullableGetStaticRoutes200ResponseNetworkRoutesInner{value: val, isSet: true}
-}
-
-func (v NullableGetStaticRoutes200ResponseNetworkRoutesInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetStaticRoutes200ResponseNetworkRoutesInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

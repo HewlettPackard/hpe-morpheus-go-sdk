@@ -21,20 +21,20 @@ var _ MappedNullable = &JobExecution{}
 
 // JobExecution struct for JobExecution
 type JobExecution struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Process *string `json:"process,omitempty"`
-	Job *ListJobExecutions200ResponseAllOfJobExecutionsInnerJob `json:"job,omitempty"`
-	Description *string `json:"description,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	StartDate *time.Time `json:"startDate,omitempty"`
-	EndDate *time.Time `json:"endDate,omitempty"`
-	Duration *int64 `json:"duration,omitempty"`
-	ResultData *string `json:"resultData,omitempty"`
-	Status *string `json:"status,omitempty"`
-	StatusMessage *string `json:"statusMessage,omitempty"`
-	CreatedBy *string `json:"createdBy,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                  `json:"id,omitempty"`
+	Name                 *string                                                 `json:"name,omitempty"`
+	Process              *string                                                 `json:"process,omitempty"`
+	Job                  *ListJobExecutions200ResponseAllOfJobExecutionsInnerJob `json:"job,omitempty"`
+	Description          *string                                                 `json:"description,omitempty"`
+	DateCreated          *time.Time                                              `json:"dateCreated,omitempty"`
+	StartDate            *time.Time                                              `json:"startDate,omitempty"`
+	EndDate              *time.Time                                              `json:"endDate,omitempty"`
+	Duration             *int64                                                  `json:"duration,omitempty"`
+	ResultData           *string                                                 `json:"resultData,omitempty"`
+	Status               *string                                                 `json:"status,omitempty"`
+	StatusMessage        *string                                                 `json:"statusMessage,omitempty"`
+	CreatedBy            *string                                                 `json:"createdBy,omitempty"`
+	AdditionalProperties map[string]interface{}                                  `json:",remain"`
 }
 
 type _JobExecution JobExecution
@@ -473,7 +473,7 @@ func (o *JobExecution) SetCreatedBy(v string) {
 }
 
 func (o JobExecution) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -528,74 +528,8 @@ func (o JobExecution) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *JobExecution) UnmarshalJSON(data []byte) (err error) {
-	varJobExecution := _JobExecution{}
-
-	err = json.Unmarshal(data, &varJobExecution)
-
-	if err != nil {
-		return err
-	}
-
-	*o = JobExecution(varJobExecution)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "process")
-		delete(additionalProperties, "job")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "startDate")
-		delete(additionalProperties, "endDate")
-		delete(additionalProperties, "duration")
-		delete(additionalProperties, "resultData")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "statusMessage")
-		delete(additionalProperties, "createdBy")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableJobExecution struct {
-	value *JobExecution
-	isSet bool
-}
-
-func (v NullableJobExecution) Get() *JobExecution {
-	return v.value
-}
-
-func (v *NullableJobExecution) Set(val *JobExecution) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableJobExecution) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableJobExecution) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableJobExecution(val *JobExecution) *NullableJobExecution {
-	return &NullableJobExecution{value: val, isSet: true}
-}
-
-func (v NullableJobExecution) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableJobExecution) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

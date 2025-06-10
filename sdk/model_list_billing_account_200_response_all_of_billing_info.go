@@ -21,16 +21,16 @@ var _ MappedNullable = &ListBillingAccount200ResponseAllOfBillingInfo{}
 
 // ListBillingAccount200ResponseAllOfBillingInfo struct for ListBillingAccount200ResponseAllOfBillingInfo
 type ListBillingAccount200ResponseAllOfBillingInfo struct {
-	AccountId *int64 `json:"accountId,omitempty"`
-	AccountUUID *string `json:"accountUUID,omitempty"`
-	Name *string `json:"name,omitempty"`
-	StartDate *time.Time `json:"startDate,omitempty"`
-	EndDate *time.Time `json:"endDate,omitempty"`
-	PriceUnit *string `json:"priceUnit,omitempty"`
-	Price *float32 `json:"price,omitempty"`
-	Cost *float32 `json:"cost,omitempty"`
-	Zones []ListBillingAccount200ResponseAllOfBillingInfoZonesInner `json:"zones,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AccountId            *int64                                                    `json:"accountId,omitempty"`
+	AccountUUID          *string                                                   `json:"accountUUID,omitempty"`
+	Name                 *string                                                   `json:"name,omitempty"`
+	StartDate            *time.Time                                                `json:"startDate,omitempty"`
+	EndDate              *time.Time                                                `json:"endDate,omitempty"`
+	PriceUnit            *string                                                   `json:"priceUnit,omitempty"`
+	Price                *float32                                                  `json:"price,omitempty"`
+	Cost                 *float32                                                  `json:"cost,omitempty"`
+	Zones                []ListBillingAccount200ResponseAllOfBillingInfoZonesInner `json:"zones,omitempty"`
+	AdditionalProperties map[string]interface{}                                    `json:",remain"`
 }
 
 type _ListBillingAccount200ResponseAllOfBillingInfo ListBillingAccount200ResponseAllOfBillingInfo
@@ -341,7 +341,7 @@ func (o *ListBillingAccount200ResponseAllOfBillingInfo) SetZones(v []ListBilling
 }
 
 func (o ListBillingAccount200ResponseAllOfBillingInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -384,70 +384,8 @@ func (o ListBillingAccount200ResponseAllOfBillingInfo) ToMap() (map[string]inter
 
 	return toSerialize, nil
 }
-
 func (o *ListBillingAccount200ResponseAllOfBillingInfo) UnmarshalJSON(data []byte) (err error) {
-	varListBillingAccount200ResponseAllOfBillingInfo := _ListBillingAccount200ResponseAllOfBillingInfo{}
-
-	err = json.Unmarshal(data, &varListBillingAccount200ResponseAllOfBillingInfo)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListBillingAccount200ResponseAllOfBillingInfo(varListBillingAccount200ResponseAllOfBillingInfo)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "accountId")
-		delete(additionalProperties, "accountUUID")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "startDate")
-		delete(additionalProperties, "endDate")
-		delete(additionalProperties, "priceUnit")
-		delete(additionalProperties, "price")
-		delete(additionalProperties, "cost")
-		delete(additionalProperties, "zones")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListBillingAccount200ResponseAllOfBillingInfo struct {
-	value *ListBillingAccount200ResponseAllOfBillingInfo
-	isSet bool
-}
-
-func (v NullableListBillingAccount200ResponseAllOfBillingInfo) Get() *ListBillingAccount200ResponseAllOfBillingInfo {
-	return v.value
-}
-
-func (v *NullableListBillingAccount200ResponseAllOfBillingInfo) Set(val *ListBillingAccount200ResponseAllOfBillingInfo) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListBillingAccount200ResponseAllOfBillingInfo) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListBillingAccount200ResponseAllOfBillingInfo) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListBillingAccount200ResponseAllOfBillingInfo(val *ListBillingAccount200ResponseAllOfBillingInfo) *NullableListBillingAccount200ResponseAllOfBillingInfo {
-	return &NullableListBillingAccount200ResponseAllOfBillingInfo{value: val, isSet: true}
-}
-
-func (v NullableListBillingAccount200ResponseAllOfBillingInfo) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListBillingAccount200ResponseAllOfBillingInfo) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

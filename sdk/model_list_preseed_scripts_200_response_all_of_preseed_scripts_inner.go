@@ -20,13 +20,13 @@ var _ MappedNullable = &ListPreseedScripts200ResponseAllOfPreseedScriptsInner{}
 
 // ListPreseedScripts200ResponseAllOfPreseedScriptsInner struct for ListPreseedScripts200ResponseAllOfPreseedScriptsInner
 type ListPreseedScripts200ResponseAllOfPreseedScriptsInner struct {
-	Id *int64 `json:"id,omitempty"`
-	Account *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"account,omitempty"`
-	FileName *string `json:"fileName,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Content *string `json:"content,omitempty"`
-	CreatedBy *GetArchiveBucket200ResponseArchiveFilesInnerCreatedBy `json:"createdBy,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                                  `json:"id,omitempty"`
+	Account              *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"account,omitempty"`
+	FileName             *string                                                                 `json:"fileName,omitempty"`
+	Description          *string                                                                 `json:"description,omitempty"`
+	Content              *string                                                                 `json:"content,omitempty"`
+	CreatedBy            *GetArchiveBucket200ResponseArchiveFilesInnerCreatedBy                  `json:"createdBy,omitempty"`
+	AdditionalProperties map[string]interface{}                                                  `json:",remain"`
 }
 
 type _ListPreseedScripts200ResponseAllOfPreseedScriptsInner ListPreseedScripts200ResponseAllOfPreseedScriptsInner
@@ -241,7 +241,7 @@ func (o *ListPreseedScripts200ResponseAllOfPreseedScriptsInner) SetCreatedBy(v G
 }
 
 func (o ListPreseedScripts200ResponseAllOfPreseedScriptsInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -275,67 +275,8 @@ func (o ListPreseedScripts200ResponseAllOfPreseedScriptsInner) ToMap() (map[stri
 
 	return toSerialize, nil
 }
-
 func (o *ListPreseedScripts200ResponseAllOfPreseedScriptsInner) UnmarshalJSON(data []byte) (err error) {
-	varListPreseedScripts200ResponseAllOfPreseedScriptsInner := _ListPreseedScripts200ResponseAllOfPreseedScriptsInner{}
-
-	err = json.Unmarshal(data, &varListPreseedScripts200ResponseAllOfPreseedScriptsInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListPreseedScripts200ResponseAllOfPreseedScriptsInner(varListPreseedScripts200ResponseAllOfPreseedScriptsInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "account")
-		delete(additionalProperties, "fileName")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "content")
-		delete(additionalProperties, "createdBy")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListPreseedScripts200ResponseAllOfPreseedScriptsInner struct {
-	value *ListPreseedScripts200ResponseAllOfPreseedScriptsInner
-	isSet bool
-}
-
-func (v NullableListPreseedScripts200ResponseAllOfPreseedScriptsInner) Get() *ListPreseedScripts200ResponseAllOfPreseedScriptsInner {
-	return v.value
-}
-
-func (v *NullableListPreseedScripts200ResponseAllOfPreseedScriptsInner) Set(val *ListPreseedScripts200ResponseAllOfPreseedScriptsInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListPreseedScripts200ResponseAllOfPreseedScriptsInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListPreseedScripts200ResponseAllOfPreseedScriptsInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListPreseedScripts200ResponseAllOfPreseedScriptsInner(val *ListPreseedScripts200ResponseAllOfPreseedScriptsInner) *NullableListPreseedScripts200ResponseAllOfPreseedScriptsInner {
-	return &NullableListPreseedScripts200ResponseAllOfPreseedScriptsInner{value: val, isSet: true}
-}
-
-func (v NullableListPreseedScripts200ResponseAllOfPreseedScriptsInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListPreseedScripts200ResponseAllOfPreseedScriptsInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

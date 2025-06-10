@@ -20,15 +20,15 @@ var _ MappedNullable = &GetClusterNamespaces200ResponseAllOfNamespacesInner{}
 
 // GetClusterNamespaces200ResponseAllOfNamespacesInner struct for GetClusterNamespaces200ResponseAllOfNamespacesInner
 type GetClusterNamespaces200ResponseAllOfNamespacesInner struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Description *string `json:"description,omitempty"`
-	RegionCode *string `json:"regionCode,omitempty"`
-	ExternalId *string `json:"externalId,omitempty"`
-	Status *string `json:"status,omitempty"`
-	Visibility *string `json:"visibility,omitempty"`
-	Active *bool `json:"active,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	Description          *string                `json:"description,omitempty"`
+	RegionCode           *string                `json:"regionCode,omitempty"`
+	ExternalId           *string                `json:"externalId,omitempty"`
+	Status               *string                `json:"status,omitempty"`
+	Visibility           *string                `json:"visibility,omitempty"`
+	Active               *bool                  `json:"active,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _GetClusterNamespaces200ResponseAllOfNamespacesInner GetClusterNamespaces200ResponseAllOfNamespacesInner
@@ -307,7 +307,7 @@ func (o *GetClusterNamespaces200ResponseAllOfNamespacesInner) SetActive(v bool) 
 }
 
 func (o GetClusterNamespaces200ResponseAllOfNamespacesInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -347,69 +347,8 @@ func (o GetClusterNamespaces200ResponseAllOfNamespacesInner) ToMap() (map[string
 
 	return toSerialize, nil
 }
-
 func (o *GetClusterNamespaces200ResponseAllOfNamespacesInner) UnmarshalJSON(data []byte) (err error) {
-	varGetClusterNamespaces200ResponseAllOfNamespacesInner := _GetClusterNamespaces200ResponseAllOfNamespacesInner{}
-
-	err = json.Unmarshal(data, &varGetClusterNamespaces200ResponseAllOfNamespacesInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetClusterNamespaces200ResponseAllOfNamespacesInner(varGetClusterNamespaces200ResponseAllOfNamespacesInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "regionCode")
-		delete(additionalProperties, "externalId")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "active")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetClusterNamespaces200ResponseAllOfNamespacesInner struct {
-	value *GetClusterNamespaces200ResponseAllOfNamespacesInner
-	isSet bool
-}
-
-func (v NullableGetClusterNamespaces200ResponseAllOfNamespacesInner) Get() *GetClusterNamespaces200ResponseAllOfNamespacesInner {
-	return v.value
-}
-
-func (v *NullableGetClusterNamespaces200ResponseAllOfNamespacesInner) Set(val *GetClusterNamespaces200ResponseAllOfNamespacesInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetClusterNamespaces200ResponseAllOfNamespacesInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetClusterNamespaces200ResponseAllOfNamespacesInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetClusterNamespaces200ResponseAllOfNamespacesInner(val *GetClusterNamespaces200ResponseAllOfNamespacesInner) *NullableGetClusterNamespaces200ResponseAllOfNamespacesInner {
-	return &NullableGetClusterNamespaces200ResponseAllOfNamespacesInner{value: val, isSet: true}
-}
-
-func (v NullableGetClusterNamespaces200ResponseAllOfNamespacesInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetClusterNamespaces200ResponseAllOfNamespacesInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

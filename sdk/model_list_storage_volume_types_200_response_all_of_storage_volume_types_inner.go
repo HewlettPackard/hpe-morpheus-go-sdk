@@ -20,21 +20,21 @@ var _ MappedNullable = &ListStorageVolumeTypes200ResponseAllOfStorageVolumeTypes
 
 // ListStorageVolumeTypes200ResponseAllOfStorageVolumeTypesInner struct for ListStorageVolumeTypes200ResponseAllOfStorageVolumeTypesInner
 type ListStorageVolumeTypes200ResponseAllOfStorageVolumeTypesInner struct {
-	Id *int64 `json:"id,omitempty"`
-	Code *string `json:"code,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Description *string `json:"description,omitempty"`
-	DisplayOrder *int64 `json:"displayOrder,omitempty"`
-	DefaultType *bool `json:"defaultType,omitempty"`
-	CustomLabel *bool `json:"customLabel,omitempty"`
-	CustomSize *bool `json:"customSize,omitempty"`
-	CustomSizeOptions *string `json:"customSizeOptions,omitempty"`
-	ConfigurableIOPS *bool `json:"configurableIOPS,omitempty"`
-	HasDatastore *bool `json:"hasDatastore,omitempty"`
-	Category *string `json:"category,omitempty"`
-	Enabled *bool `json:"enabled,omitempty"`
-	OptionTypes []ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                                          `json:"id,omitempty"`
+	Code                 *string                                                                         `json:"code,omitempty"`
+	Name                 *string                                                                         `json:"name,omitempty"`
+	Description          *string                                                                         `json:"description,omitempty"`
+	DisplayOrder         *int64                                                                          `json:"displayOrder,omitempty"`
+	DefaultType          *bool                                                                           `json:"defaultType,omitempty"`
+	CustomLabel          *bool                                                                           `json:"customLabel,omitempty"`
+	CustomSize           *bool                                                                           `json:"customSize,omitempty"`
+	CustomSizeOptions    *string                                                                         `json:"customSizeOptions,omitempty"`
+	ConfigurableIOPS     *bool                                                                           `json:"configurableIOPS,omitempty"`
+	HasDatastore         *bool                                                                           `json:"hasDatastore,omitempty"`
+	Category             *string                                                                         `json:"category,omitempty"`
+	Enabled              *bool                                                                           `json:"enabled,omitempty"`
+	OptionTypes          []ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
+	AdditionalProperties map[string]interface{}                                                          `json:",remain"`
 }
 
 type _ListStorageVolumeTypes200ResponseAllOfStorageVolumeTypesInner ListStorageVolumeTypes200ResponseAllOfStorageVolumeTypesInner
@@ -505,7 +505,7 @@ func (o *ListStorageVolumeTypes200ResponseAllOfStorageVolumeTypesInner) SetOptio
 }
 
 func (o ListStorageVolumeTypes200ResponseAllOfStorageVolumeTypesInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -563,75 +563,8 @@ func (o ListStorageVolumeTypes200ResponseAllOfStorageVolumeTypesInner) ToMap() (
 
 	return toSerialize, nil
 }
-
 func (o *ListStorageVolumeTypes200ResponseAllOfStorageVolumeTypesInner) UnmarshalJSON(data []byte) (err error) {
-	varListStorageVolumeTypes200ResponseAllOfStorageVolumeTypesInner := _ListStorageVolumeTypes200ResponseAllOfStorageVolumeTypesInner{}
-
-	err = json.Unmarshal(data, &varListStorageVolumeTypes200ResponseAllOfStorageVolumeTypesInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListStorageVolumeTypes200ResponseAllOfStorageVolumeTypesInner(varListStorageVolumeTypes200ResponseAllOfStorageVolumeTypesInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "displayOrder")
-		delete(additionalProperties, "defaultType")
-		delete(additionalProperties, "customLabel")
-		delete(additionalProperties, "customSize")
-		delete(additionalProperties, "customSizeOptions")
-		delete(additionalProperties, "configurableIOPS")
-		delete(additionalProperties, "hasDatastore")
-		delete(additionalProperties, "category")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "optionTypes")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListStorageVolumeTypes200ResponseAllOfStorageVolumeTypesInner struct {
-	value *ListStorageVolumeTypes200ResponseAllOfStorageVolumeTypesInner
-	isSet bool
-}
-
-func (v NullableListStorageVolumeTypes200ResponseAllOfStorageVolumeTypesInner) Get() *ListStorageVolumeTypes200ResponseAllOfStorageVolumeTypesInner {
-	return v.value
-}
-
-func (v *NullableListStorageVolumeTypes200ResponseAllOfStorageVolumeTypesInner) Set(val *ListStorageVolumeTypes200ResponseAllOfStorageVolumeTypesInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListStorageVolumeTypes200ResponseAllOfStorageVolumeTypesInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListStorageVolumeTypes200ResponseAllOfStorageVolumeTypesInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListStorageVolumeTypes200ResponseAllOfStorageVolumeTypesInner(val *ListStorageVolumeTypes200ResponseAllOfStorageVolumeTypesInner) *NullableListStorageVolumeTypes200ResponseAllOfStorageVolumeTypesInner {
-	return &NullableListStorageVolumeTypes200ResponseAllOfStorageVolumeTypesInner{value: val, isSet: true}
-}
-
-func (v NullableListStorageVolumeTypes200ResponseAllOfStorageVolumeTypesInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListStorageVolumeTypes200ResponseAllOfStorageVolumeTypesInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

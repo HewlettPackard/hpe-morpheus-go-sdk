@@ -20,14 +20,14 @@ var _ MappedNullable = &ListClouds200ResponseAllOfZonesInnerStatsServerCounts{}
 
 // ListClouds200ResponseAllOfZonesInnerStatsServerCounts struct for ListClouds200ResponseAllOfZonesInnerStatsServerCounts
 type ListClouds200ResponseAllOfZonesInnerStatsServerCounts struct {
-	All *int64 `json:"all,omitempty"`
-	Host *int64 `json:"host,omitempty"`
-	Hypervisor *int64 `json:"hypervisor,omitempty"`
-	ContainerHost *int64 `json:"containerHost,omitempty"`
-	Vm *int64 `json:"vm,omitempty"`
-	Baremetal *int64 `json:"baremetal,omitempty"`
-	Unmanaged *int64 `json:"unmanaged,omitempty"`
-	AdditionalProperties map[string]interface{}
+	All                  *int64                 `json:"all,omitempty"`
+	Host                 *int64                 `json:"host,omitempty"`
+	Hypervisor           *int64                 `json:"hypervisor,omitempty"`
+	ContainerHost        *int64                 `json:"containerHost,omitempty"`
+	Vm                   *int64                 `json:"vm,omitempty"`
+	Baremetal            *int64                 `json:"baremetal,omitempty"`
+	Unmanaged            *int64                 `json:"unmanaged,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListClouds200ResponseAllOfZonesInnerStatsServerCounts ListClouds200ResponseAllOfZonesInnerStatsServerCounts
@@ -274,7 +274,7 @@ func (o *ListClouds200ResponseAllOfZonesInnerStatsServerCounts) SetUnmanaged(v i
 }
 
 func (o ListClouds200ResponseAllOfZonesInnerStatsServerCounts) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -311,68 +311,8 @@ func (o ListClouds200ResponseAllOfZonesInnerStatsServerCounts) ToMap() (map[stri
 
 	return toSerialize, nil
 }
-
 func (o *ListClouds200ResponseAllOfZonesInnerStatsServerCounts) UnmarshalJSON(data []byte) (err error) {
-	varListClouds200ResponseAllOfZonesInnerStatsServerCounts := _ListClouds200ResponseAllOfZonesInnerStatsServerCounts{}
-
-	err = json.Unmarshal(data, &varListClouds200ResponseAllOfZonesInnerStatsServerCounts)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListClouds200ResponseAllOfZonesInnerStatsServerCounts(varListClouds200ResponseAllOfZonesInnerStatsServerCounts)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "all")
-		delete(additionalProperties, "host")
-		delete(additionalProperties, "hypervisor")
-		delete(additionalProperties, "containerHost")
-		delete(additionalProperties, "vm")
-		delete(additionalProperties, "baremetal")
-		delete(additionalProperties, "unmanaged")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListClouds200ResponseAllOfZonesInnerStatsServerCounts struct {
-	value *ListClouds200ResponseAllOfZonesInnerStatsServerCounts
-	isSet bool
-}
-
-func (v NullableListClouds200ResponseAllOfZonesInnerStatsServerCounts) Get() *ListClouds200ResponseAllOfZonesInnerStatsServerCounts {
-	return v.value
-}
-
-func (v *NullableListClouds200ResponseAllOfZonesInnerStatsServerCounts) Set(val *ListClouds200ResponseAllOfZonesInnerStatsServerCounts) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListClouds200ResponseAllOfZonesInnerStatsServerCounts) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListClouds200ResponseAllOfZonesInnerStatsServerCounts) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListClouds200ResponseAllOfZonesInnerStatsServerCounts(val *ListClouds200ResponseAllOfZonesInnerStatsServerCounts) *NullableListClouds200ResponseAllOfZonesInnerStatsServerCounts {
-	return &NullableListClouds200ResponseAllOfZonesInnerStatsServerCounts{value: val, isSet: true}
-}
-
-func (v NullableListClouds200ResponseAllOfZonesInnerStatsServerCounts) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListClouds200ResponseAllOfZonesInnerStatsServerCounts) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -21,22 +21,22 @@ var _ MappedNullable = &Approval{}
 
 // Approval struct for Approval
 type Approval struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	InternalId *string `json:"internalId,omitempty"`
-	ExternalId *string `json:"externalId,omitempty"`
-	ExternalName *string `json:"externalName,omitempty"`
-	RequestType *string `json:"requestType,omitempty"`
-	Account *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"account,omitempty"`
-	Approver *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"approver,omitempty"`
-	AccountIntegration *string `json:"accountIntegration,omitempty"`
-	Status *string `json:"status,omitempty"`
-	ErrorMessage *string `json:"errorMessage,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	RequestBy *string `json:"requestBy,omitempty"`
-	ApprovalItems []GetApprovalsItem200ResponseApprovalItem `json:"approvalItems,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                                  `json:"id,omitempty"`
+	Name                 *string                                                                 `json:"name,omitempty"`
+	InternalId           *string                                                                 `json:"internalId,omitempty"`
+	ExternalId           *string                                                                 `json:"externalId,omitempty"`
+	ExternalName         *string                                                                 `json:"externalName,omitempty"`
+	RequestType          *string                                                                 `json:"requestType,omitempty"`
+	Account              *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"account,omitempty"`
+	Approver             *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"approver,omitempty"`
+	AccountIntegration   *string                                                                 `json:"accountIntegration,omitempty"`
+	Status               *string                                                                 `json:"status,omitempty"`
+	ErrorMessage         *string                                                                 `json:"errorMessage,omitempty"`
+	DateCreated          *time.Time                                                              `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                                              `json:"lastUpdated,omitempty"`
+	RequestBy            *string                                                                 `json:"requestBy,omitempty"`
+	ApprovalItems        []GetApprovalsItem200ResponseApprovalItem                               `json:"approvalItems,omitempty"`
+	AdditionalProperties map[string]interface{}                                                  `json:",remain"`
 }
 
 type _Approval Approval
@@ -539,7 +539,7 @@ func (o *Approval) SetApprovalItems(v []GetApprovalsItem200ResponseApprovalItem)
 }
 
 func (o Approval) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -600,76 +600,8 @@ func (o Approval) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *Approval) UnmarshalJSON(data []byte) (err error) {
-	varApproval := _Approval{}
-
-	err = json.Unmarshal(data, &varApproval)
-
-	if err != nil {
-		return err
-	}
-
-	*o = Approval(varApproval)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "internalId")
-		delete(additionalProperties, "externalId")
-		delete(additionalProperties, "externalName")
-		delete(additionalProperties, "requestType")
-		delete(additionalProperties, "account")
-		delete(additionalProperties, "approver")
-		delete(additionalProperties, "accountIntegration")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "errorMessage")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		delete(additionalProperties, "requestBy")
-		delete(additionalProperties, "approvalItems")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableApproval struct {
-	value *Approval
-	isSet bool
-}
-
-func (v NullableApproval) Get() *Approval {
-	return v.value
-}
-
-func (v *NullableApproval) Set(val *Approval) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableApproval) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableApproval) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableApproval(val *Approval) *NullableApproval {
-	return &NullableApproval{value: val, isSet: true}
-}
-
-func (v NullableApproval) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableApproval) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

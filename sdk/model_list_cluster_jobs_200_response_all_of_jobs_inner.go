@@ -21,28 +21,28 @@ var _ MappedNullable = &ListClusterJobs200ResponseAllOfJobsInner{}
 
 // ListClusterJobs200ResponseAllOfJobsInner struct for ListClusterJobs200ResponseAllOfJobsInner
 type ListClusterJobs200ResponseAllOfJobsInner struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Labels []string `json:"labels,omitempty"`
-	Type *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"type,omitempty"`
-	JobSummary *string `json:"jobSummary,omitempty"`
-	ScheduleMode *string `json:"scheduleMode,omitempty"`
-	DateTime *time.Time `json:"dateTime,omitempty"`
-	Status *string `json:"status,omitempty"`
-	Namespace *string `json:"namespace,omitempty"`
-	Category *string `json:"category,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Enabled *bool `json:"enabled,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	LastRun *time.Time `json:"lastRun,omitempty"`
-	LastResult *string `json:"lastResult,omitempty"`
-	CreatedBy *GetAlerts200ResponseAllOfChecksInnerCreatedBy `json:"createdBy,omitempty"`
-	TargetType *string `json:"targetType,omitempty"`
-	Targets []map[string]interface{} `json:"targets,omitempty"`
-	CustomConfig map[string]interface{} `json:"customConfig,omitempty"`
-	CustomOptions map[string]interface{} `json:"customOptions,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                      `json:"id,omitempty"`
+	Name                 *string                                                     `json:"name,omitempty"`
+	Labels               []string                                                    `json:"labels,omitempty"`
+	Type                 *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"type,omitempty"`
+	JobSummary           *string                                                     `json:"jobSummary,omitempty"`
+	ScheduleMode         *string                                                     `json:"scheduleMode,omitempty"`
+	DateTime             *time.Time                                                  `json:"dateTime,omitempty"`
+	Status               *string                                                     `json:"status,omitempty"`
+	Namespace            *string                                                     `json:"namespace,omitempty"`
+	Category             *string                                                     `json:"category,omitempty"`
+	Description          *string                                                     `json:"description,omitempty"`
+	Enabled              *bool                                                       `json:"enabled,omitempty"`
+	DateCreated          *time.Time                                                  `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                                  `json:"lastUpdated,omitempty"`
+	LastRun              *time.Time                                                  `json:"lastRun,omitempty"`
+	LastResult           *string                                                     `json:"lastResult,omitempty"`
+	CreatedBy            *GetAlerts200ResponseAllOfChecksInnerCreatedBy              `json:"createdBy,omitempty"`
+	TargetType           *string                                                     `json:"targetType,omitempty"`
+	Targets              []map[string]interface{}                                    `json:"targets,omitempty"`
+	CustomConfig         map[string]interface{}                                      `json:"customConfig,omitempty"`
+	CustomOptions        map[string]interface{}                                      `json:"customOptions,omitempty"`
+	AdditionalProperties map[string]interface{}                                      `json:",remain"`
 }
 
 type _ListClusterJobs200ResponseAllOfJobsInner ListClusterJobs200ResponseAllOfJobsInner
@@ -737,7 +737,7 @@ func (o *ListClusterJobs200ResponseAllOfJobsInner) SetCustomOptions(v map[string
 }
 
 func (o ListClusterJobs200ResponseAllOfJobsInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -816,82 +816,8 @@ func (o ListClusterJobs200ResponseAllOfJobsInner) ToMap() (map[string]interface{
 
 	return toSerialize, nil
 }
-
 func (o *ListClusterJobs200ResponseAllOfJobsInner) UnmarshalJSON(data []byte) (err error) {
-	varListClusterJobs200ResponseAllOfJobsInner := _ListClusterJobs200ResponseAllOfJobsInner{}
-
-	err = json.Unmarshal(data, &varListClusterJobs200ResponseAllOfJobsInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListClusterJobs200ResponseAllOfJobsInner(varListClusterJobs200ResponseAllOfJobsInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "jobSummary")
-		delete(additionalProperties, "scheduleMode")
-		delete(additionalProperties, "dateTime")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "namespace")
-		delete(additionalProperties, "category")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		delete(additionalProperties, "lastRun")
-		delete(additionalProperties, "lastResult")
-		delete(additionalProperties, "createdBy")
-		delete(additionalProperties, "targetType")
-		delete(additionalProperties, "targets")
-		delete(additionalProperties, "customConfig")
-		delete(additionalProperties, "customOptions")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListClusterJobs200ResponseAllOfJobsInner struct {
-	value *ListClusterJobs200ResponseAllOfJobsInner
-	isSet bool
-}
-
-func (v NullableListClusterJobs200ResponseAllOfJobsInner) Get() *ListClusterJobs200ResponseAllOfJobsInner {
-	return v.value
-}
-
-func (v *NullableListClusterJobs200ResponseAllOfJobsInner) Set(val *ListClusterJobs200ResponseAllOfJobsInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListClusterJobs200ResponseAllOfJobsInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListClusterJobs200ResponseAllOfJobsInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListClusterJobs200ResponseAllOfJobsInner(val *ListClusterJobs200ResponseAllOfJobsInner) *NullableListClusterJobs200ResponseAllOfJobsInner {
-	return &NullableListClusterJobs200ResponseAllOfJobsInner{value: val, isSet: true}
-}
-
-func (v NullableListClusterJobs200ResponseAllOfJobsInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListClusterJobs200ResponseAllOfJobsInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

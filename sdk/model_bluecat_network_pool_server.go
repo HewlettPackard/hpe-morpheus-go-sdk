@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the BluecatNetworkPoolServer type satisfies the MappedNullable interface at compile time
@@ -38,10 +37,10 @@ type BluecatNetworkPoolServer struct {
 	// Disable SSL SNI Verification
 	IgnoreSsl *bool `json:"ignoreSsl,omitempty"`
 	// Network Filter
-	NetworkFilter *string `json:"networkFilter,omitempty"`
-	Config *BluecatNetworkPoolServerConfig `json:"config,omitempty"`
-	Credential *NSXNetworkServerCredential `json:"credential,omitempty"`
-	AdditionalProperties map[string]interface{}
+	NetworkFilter        *string                         `json:"networkFilter,omitempty"`
+	Config               *BluecatNetworkPoolServerConfig `json:"config,omitempty"`
+	Credential           *NSXNetworkServerCredential     `json:"credential,omitempty"`
+	AdditionalProperties map[string]interface{}          `json:",remain"`
 }
 
 type _BluecatNetworkPoolServer BluecatNetworkPoolServer
@@ -407,7 +406,7 @@ func (o *BluecatNetworkPoolServer) SetCredential(v NSXNetworkServerCredential) {
 }
 
 func (o BluecatNetworkPoolServer) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -450,95 +449,8 @@ func (o BluecatNetworkPoolServer) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *BluecatNetworkPoolServer) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"type",
-		"name",
-		"serviceUrl",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varBluecatNetworkPoolServer := _BluecatNetworkPoolServer{}
-
-	err = json.Unmarshal(data, &varBluecatNetworkPoolServer)
-
-	if err != nil {
-		return err
-	}
-
-	*o = BluecatNetworkPoolServer(varBluecatNetworkPoolServer)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "serviceUrl")
-		delete(additionalProperties, "serviceUsername")
-		delete(additionalProperties, "servicePassword")
-		delete(additionalProperties, "serviceThrottleRate")
-		delete(additionalProperties, "ignoreSsl")
-		delete(additionalProperties, "networkFilter")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "credential")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableBluecatNetworkPoolServer struct {
-	value *BluecatNetworkPoolServer
-	isSet bool
-}
-
-func (v NullableBluecatNetworkPoolServer) Get() *BluecatNetworkPoolServer {
-	return v.value
-}
-
-func (v *NullableBluecatNetworkPoolServer) Set(val *BluecatNetworkPoolServer) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableBluecatNetworkPoolServer) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableBluecatNetworkPoolServer) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableBluecatNetworkPoolServer(val *BluecatNetworkPoolServer) *NullableBluecatNetworkPoolServer {
-	return &NullableBluecatNetworkPoolServer{value: val, isSet: true}
-}
-
-func (v NullableBluecatNetworkPoolServer) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableBluecatNetworkPoolServer) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

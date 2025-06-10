@@ -23,8 +23,8 @@ type SaveClusterDatastoreRequestDatastoreConfigAnyOf struct {
 	// Host name or IP address for target NFS instance.
 	SourceHostname *string `json:"sourceHostname,omitempty"`
 	// Path to the target NFS export directory.
-	SourceDirPath *string `json:"sourceDirPath,omitempty"`
-	AdditionalProperties map[string]interface{}
+	SourceDirPath        *string                `json:"sourceDirPath,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _SaveClusterDatastoreRequestDatastoreConfigAnyOf SaveClusterDatastoreRequestDatastoreConfigAnyOf
@@ -111,7 +111,7 @@ func (o *SaveClusterDatastoreRequestDatastoreConfigAnyOf) SetSourceDirPath(v str
 }
 
 func (o SaveClusterDatastoreRequestDatastoreConfigAnyOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -133,63 +133,8 @@ func (o SaveClusterDatastoreRequestDatastoreConfigAnyOf) ToMap() (map[string]int
 
 	return toSerialize, nil
 }
-
 func (o *SaveClusterDatastoreRequestDatastoreConfigAnyOf) UnmarshalJSON(data []byte) (err error) {
-	varSaveClusterDatastoreRequestDatastoreConfigAnyOf := _SaveClusterDatastoreRequestDatastoreConfigAnyOf{}
-
-	err = json.Unmarshal(data, &varSaveClusterDatastoreRequestDatastoreConfigAnyOf)
-
-	if err != nil {
-		return err
-	}
-
-	*o = SaveClusterDatastoreRequestDatastoreConfigAnyOf(varSaveClusterDatastoreRequestDatastoreConfigAnyOf)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "sourceHostname")
-		delete(additionalProperties, "sourceDirPath")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableSaveClusterDatastoreRequestDatastoreConfigAnyOf struct {
-	value *SaveClusterDatastoreRequestDatastoreConfigAnyOf
-	isSet bool
-}
-
-func (v NullableSaveClusterDatastoreRequestDatastoreConfigAnyOf) Get() *SaveClusterDatastoreRequestDatastoreConfigAnyOf {
-	return v.value
-}
-
-func (v *NullableSaveClusterDatastoreRequestDatastoreConfigAnyOf) Set(val *SaveClusterDatastoreRequestDatastoreConfigAnyOf) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSaveClusterDatastoreRequestDatastoreConfigAnyOf) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSaveClusterDatastoreRequestDatastoreConfigAnyOf) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSaveClusterDatastoreRequestDatastoreConfigAnyOf(val *SaveClusterDatastoreRequestDatastoreConfigAnyOf) *NullableSaveClusterDatastoreRequestDatastoreConfigAnyOf {
-	return &NullableSaveClusterDatastoreRequestDatastoreConfigAnyOf{value: val, isSet: true}
-}
-
-func (v NullableSaveClusterDatastoreRequestDatastoreConfigAnyOf) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSaveClusterDatastoreRequestDatastoreConfigAnyOf) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -29,8 +29,8 @@ type UserSourceCreateOneLogin struct {
 	// API Client ID
 	ClientId *string `json:"clientId,omitempty"`
 	// Required Role
-	RequiredRole *string `json:"requiredRole,omitempty"`
-	AdditionalProperties map[string]interface{}
+	RequiredRole         *string                `json:"requiredRole,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _UserSourceCreateOneLogin UserSourceCreateOneLogin
@@ -213,7 +213,7 @@ func (o *UserSourceCreateOneLogin) SetRequiredRole(v string) {
 }
 
 func (o UserSourceCreateOneLogin) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -244,66 +244,8 @@ func (o UserSourceCreateOneLogin) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *UserSourceCreateOneLogin) UnmarshalJSON(data []byte) (err error) {
-	varUserSourceCreateOneLogin := _UserSourceCreateOneLogin{}
-
-	err = json.Unmarshal(data, &varUserSourceCreateOneLogin)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UserSourceCreateOneLogin(varUserSourceCreateOneLogin)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "subdomain")
-		delete(additionalProperties, "region")
-		delete(additionalProperties, "clientSecret")
-		delete(additionalProperties, "clientId")
-		delete(additionalProperties, "requiredRole")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUserSourceCreateOneLogin struct {
-	value *UserSourceCreateOneLogin
-	isSet bool
-}
-
-func (v NullableUserSourceCreateOneLogin) Get() *UserSourceCreateOneLogin {
-	return v.value
-}
-
-func (v *NullableUserSourceCreateOneLogin) Set(val *UserSourceCreateOneLogin) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUserSourceCreateOneLogin) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUserSourceCreateOneLogin) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUserSourceCreateOneLogin(val *UserSourceCreateOneLogin) *NullableUserSourceCreateOneLogin {
-	return &NullableUserSourceCreateOneLogin{value: val, isSet: true}
-}
-
-func (v NullableUserSourceCreateOneLogin) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUserSourceCreateOneLogin) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

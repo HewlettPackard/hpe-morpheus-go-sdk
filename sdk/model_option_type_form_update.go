@@ -25,13 +25,13 @@ type OptionTypeFormUpdate struct {
 	// Unique form code
 	Code *string `json:"code,omitempty"`
 	// A short description of the form
-	Description *string `json:"description,omitempty"`
-	Labels []string `json:"labels,omitempty"`
+	Description *string  `json:"description,omitempty"`
+	Labels      []string `json:"labels,omitempty"`
 	// Inputs
 	Options []ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner `json:"options,omitempty"`
 	// Field Groups
-	FieldGroups []ListOptionForms200ResponseAllOfOptionTypesInnerFieldGroupsInner `json:"fieldGroups,omitempty"`
-	AdditionalProperties map[string]interface{}
+	FieldGroups          []ListOptionForms200ResponseAllOfOptionTypesInnerFieldGroupsInner `json:"fieldGroups,omitempty"`
+	AdditionalProperties map[string]interface{}                                            `json:",remain"`
 }
 
 type _OptionTypeFormUpdate OptionTypeFormUpdate
@@ -246,7 +246,7 @@ func (o *OptionTypeFormUpdate) SetFieldGroups(v []ListOptionForms200ResponseAllO
 }
 
 func (o OptionTypeFormUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -280,67 +280,8 @@ func (o OptionTypeFormUpdate) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *OptionTypeFormUpdate) UnmarshalJSON(data []byte) (err error) {
-	varOptionTypeFormUpdate := _OptionTypeFormUpdate{}
-
-	err = json.Unmarshal(data, &varOptionTypeFormUpdate)
-
-	if err != nil {
-		return err
-	}
-
-	*o = OptionTypeFormUpdate(varOptionTypeFormUpdate)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "options")
-		delete(additionalProperties, "fieldGroups")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableOptionTypeFormUpdate struct {
-	value *OptionTypeFormUpdate
-	isSet bool
-}
-
-func (v NullableOptionTypeFormUpdate) Get() *OptionTypeFormUpdate {
-	return v.value
-}
-
-func (v *NullableOptionTypeFormUpdate) Set(val *OptionTypeFormUpdate) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableOptionTypeFormUpdate) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableOptionTypeFormUpdate) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableOptionTypeFormUpdate(val *OptionTypeFormUpdate) *NullableOptionTypeFormUpdate {
-	return &NullableOptionTypeFormUpdate{value: val, isSet: true}
-}
-
-func (v NullableOptionTypeFormUpdate) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableOptionTypeFormUpdate) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

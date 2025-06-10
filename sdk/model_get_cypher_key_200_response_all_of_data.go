@@ -14,6 +14,7 @@ package sdk
 import (
 	"encoding/json"
 	"fmt"
+
 	"gopkg.in/validator.v2"
 )
 
@@ -23,7 +24,7 @@ var _ fmt.Stringer
 // GetCypherKey200ResponseAllOfData - Data that was written to the key
 type GetCypherKey200ResponseAllOfData struct {
 	MapmapOfStringAny *map[string]interface{}
-	String *string
+	String            *string
 }
 
 // map[string]interface{}AsGetCypherKey200ResponseAllOfData is a convenience function that returns map[string]interface{} wrapped in GetCypherKey200ResponseAllOfData
@@ -40,6 +41,21 @@ func StringAsGetCypherKey200ResponseAllOfData(v *string) GetCypherKey200Response
 	}
 }
 
+func (dst *GetCypherKey200ResponseAllOfData) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &GetCypherKey200ResponseAllOfData{}
+	}
+
+	if out, ok := data.(map[string]interface{}); ok {
+		dst.MapmapOfStringAny = &out
+	}
+
+	if out, ok := data.(string); ok {
+		dst.String = &out
+	}
+
+	return dst, nil
+}
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *GetCypherKey200ResponseAllOfData) UnmarshalJSON(data []byte) error {
@@ -106,7 +122,7 @@ func (src GetCypherKey200ResponseAllOfData) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *GetCypherKey200ResponseAllOfData) GetActualInstance() (interface{}) {
+func (obj *GetCypherKey200ResponseAllOfData) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -123,7 +139,7 @@ func (obj *GetCypherKey200ResponseAllOfData) GetActualInstance() (interface{}) {
 }
 
 // Get the actual instance value
-func (obj GetCypherKey200ResponseAllOfData) GetActualInstanceValue() (interface{}) {
+func (obj GetCypherKey200ResponseAllOfData) GetActualInstanceValue() interface{} {
 	if obj.MapmapOfStringAny != nil {
 		return *obj.MapmapOfStringAny
 	}
@@ -171,5 +187,3 @@ func (v *NullableGetCypherKey200ResponseAllOfData) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

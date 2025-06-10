@@ -21,8 +21,8 @@ var _ MappedNullable = &AddClusterRequestClusterServerSshKeyPair{}
 // AddClusterRequestClusterServerSshKeyPair SSH Key.  See `/api/options/privateKeyPairs` for available private key pairs.
 type AddClusterRequestClusterServerSshKeyPair struct {
 	// Key Pair ID
-	Id *int64 `json:"id,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddClusterRequestClusterServerSshKeyPair AddClusterRequestClusterServerSshKeyPair
@@ -77,7 +77,7 @@ func (o *AddClusterRequestClusterServerSshKeyPair) SetId(v int64) {
 }
 
 func (o AddClusterRequestClusterServerSshKeyPair) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -96,62 +96,8 @@ func (o AddClusterRequestClusterServerSshKeyPair) ToMap() (map[string]interface{
 
 	return toSerialize, nil
 }
-
 func (o *AddClusterRequestClusterServerSshKeyPair) UnmarshalJSON(data []byte) (err error) {
-	varAddClusterRequestClusterServerSshKeyPair := _AddClusterRequestClusterServerSshKeyPair{}
-
-	err = json.Unmarshal(data, &varAddClusterRequestClusterServerSshKeyPair)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddClusterRequestClusterServerSshKeyPair(varAddClusterRequestClusterServerSshKeyPair)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddClusterRequestClusterServerSshKeyPair struct {
-	value *AddClusterRequestClusterServerSshKeyPair
-	isSet bool
-}
-
-func (v NullableAddClusterRequestClusterServerSshKeyPair) Get() *AddClusterRequestClusterServerSshKeyPair {
-	return v.value
-}
-
-func (v *NullableAddClusterRequestClusterServerSshKeyPair) Set(val *AddClusterRequestClusterServerSshKeyPair) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddClusterRequestClusterServerSshKeyPair) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddClusterRequestClusterServerSshKeyPair) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddClusterRequestClusterServerSshKeyPair(val *AddClusterRequestClusterServerSshKeyPair) *NullableAddClusterRequestClusterServerSshKeyPair {
-	return &NullableAddClusterRequestClusterServerSshKeyPair{value: val, isSet: true}
-}
-
-func (v NullableAddClusterRequestClusterServerSshKeyPair) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddClusterRequestClusterServerSshKeyPair) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

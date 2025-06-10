@@ -14,6 +14,7 @@ package sdk
 import (
 	"encoding/json"
 	"fmt"
+
 	"gopkg.in/validator.v2"
 )
 
@@ -22,7 +23,7 @@ var _ fmt.Stringer
 
 // UpdateRoleCloudAccessRequest - struct for UpdateRoleCloudAccessRequest
 type UpdateRoleCloudAccessRequest struct {
-	UpdateRoleCloudAccessRequestOneOf *UpdateRoleCloudAccessRequestOneOf
+	UpdateRoleCloudAccessRequestOneOf  *UpdateRoleCloudAccessRequestOneOf
 	UpdateRoleCloudAccessRequestOneOf1 *UpdateRoleCloudAccessRequestOneOf1
 }
 
@@ -40,6 +41,21 @@ func UpdateRoleCloudAccessRequestOneOf1AsUpdateRoleCloudAccessRequest(v *UpdateR
 	}
 }
 
+func (dst *UpdateRoleCloudAccessRequest) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &UpdateRoleCloudAccessRequest{}
+	}
+
+	if out, ok := data.(UpdateRoleCloudAccessRequestOneOf); ok {
+		dst.UpdateRoleCloudAccessRequestOneOf = &out
+	}
+
+	if out, ok := data.(UpdateRoleCloudAccessRequestOneOf1); ok {
+		dst.UpdateRoleCloudAccessRequestOneOf1 = &out
+	}
+
+	return dst, nil
+}
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *UpdateRoleCloudAccessRequest) UnmarshalJSON(data []byte) error {
@@ -106,7 +122,7 @@ func (src UpdateRoleCloudAccessRequest) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *UpdateRoleCloudAccessRequest) GetActualInstance() (interface{}) {
+func (obj *UpdateRoleCloudAccessRequest) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -123,7 +139,7 @@ func (obj *UpdateRoleCloudAccessRequest) GetActualInstance() (interface{}) {
 }
 
 // Get the actual instance value
-func (obj UpdateRoleCloudAccessRequest) GetActualInstanceValue() (interface{}) {
+func (obj UpdateRoleCloudAccessRequest) GetActualInstanceValue() interface{} {
 	if obj.UpdateRoleCloudAccessRequestOneOf != nil {
 		return *obj.UpdateRoleCloudAccessRequestOneOf
 	}
@@ -171,5 +187,3 @@ func (v *NullableUpdateRoleCloudAccessRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

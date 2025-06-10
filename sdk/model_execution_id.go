@@ -20,8 +20,8 @@ var _ MappedNullable = &ExecutionId{}
 
 // ExecutionId struct for ExecutionId
 type ExecutionId struct {
-	ExecutionId *string `json:"executionId,omitempty"`
-	AdditionalProperties map[string]interface{}
+	ExecutionId          *string                `json:"executionId,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ExecutionId ExecutionId
@@ -76,7 +76,7 @@ func (o *ExecutionId) SetExecutionId(v string) {
 }
 
 func (o ExecutionId) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o ExecutionId) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *ExecutionId) UnmarshalJSON(data []byte) (err error) {
-	varExecutionId := _ExecutionId{}
-
-	err = json.Unmarshal(data, &varExecutionId)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ExecutionId(varExecutionId)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "executionId")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableExecutionId struct {
-	value *ExecutionId
-	isSet bool
-}
-
-func (v NullableExecutionId) Get() *ExecutionId {
-	return v.value
-}
-
-func (v *NullableExecutionId) Set(val *ExecutionId) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableExecutionId) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableExecutionId) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableExecutionId(val *ExecutionId) *NullableExecutionId {
-	return &NullableExecutionId{value: val, isSet: true}
-}
-
-func (v NullableExecutionId) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableExecutionId) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

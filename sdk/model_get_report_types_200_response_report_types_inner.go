@@ -21,20 +21,20 @@ var _ MappedNullable = &GetReportTypes200ResponseReportTypesInner{}
 
 // GetReportTypes200ResponseReportTypesInner struct for GetReportTypes200ResponseReportTypesInner
 type GetReportTypes200ResponseReportTypesInner struct {
-	Id *int64 `json:"id,omitempty"`
-	Code *string `json:"code,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Category *string `json:"category,omitempty"`
-	Visible *bool `json:"visible,omitempty"`
-	MasterOnly *bool `json:"masterOnly,omitempty"`
-	OwnerOnly *bool `json:"ownerOnly,omitempty"`
-	SupportsAllZoneTypes *bool `json:"supportsAllZoneTypes,omitempty"`
-	IsPlugin *bool `json:"isPlugin,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	OptionTypes []GetReportTypes200ResponseReportTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
-	SupportedZoneTypes []ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"supportedZoneTypes,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                       `json:"id,omitempty"`
+	Code                 *string                                                      `json:"code,omitempty"`
+	Name                 *string                                                      `json:"name,omitempty"`
+	Description          *string                                                      `json:"description,omitempty"`
+	Category             *string                                                      `json:"category,omitempty"`
+	Visible              *bool                                                        `json:"visible,omitempty"`
+	MasterOnly           *bool                                                        `json:"masterOnly,omitempty"`
+	OwnerOnly            *bool                                                        `json:"ownerOnly,omitempty"`
+	SupportsAllZoneTypes *bool                                                        `json:"supportsAllZoneTypes,omitempty"`
+	IsPlugin             *bool                                                        `json:"isPlugin,omitempty"`
+	DateCreated          *time.Time                                                   `json:"dateCreated,omitempty"`
+	OptionTypes          []GetReportTypes200ResponseReportTypesInnerOptionTypesInner  `json:"optionTypes,omitempty"`
+	SupportedZoneTypes   []ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"supportedZoneTypes,omitempty"`
+	AdditionalProperties map[string]interface{}                                       `json:",remain"`
 }
 
 type _GetReportTypes200ResponseReportTypesInner GetReportTypes200ResponseReportTypesInner
@@ -473,7 +473,7 @@ func (o *GetReportTypes200ResponseReportTypesInner) SetSupportedZoneTypes(v []Li
 }
 
 func (o GetReportTypes200ResponseReportTypesInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -528,74 +528,8 @@ func (o GetReportTypes200ResponseReportTypesInner) ToMap() (map[string]interface
 
 	return toSerialize, nil
 }
-
 func (o *GetReportTypes200ResponseReportTypesInner) UnmarshalJSON(data []byte) (err error) {
-	varGetReportTypes200ResponseReportTypesInner := _GetReportTypes200ResponseReportTypesInner{}
-
-	err = json.Unmarshal(data, &varGetReportTypes200ResponseReportTypesInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetReportTypes200ResponseReportTypesInner(varGetReportTypes200ResponseReportTypesInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "category")
-		delete(additionalProperties, "visible")
-		delete(additionalProperties, "masterOnly")
-		delete(additionalProperties, "ownerOnly")
-		delete(additionalProperties, "supportsAllZoneTypes")
-		delete(additionalProperties, "isPlugin")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "optionTypes")
-		delete(additionalProperties, "supportedZoneTypes")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetReportTypes200ResponseReportTypesInner struct {
-	value *GetReportTypes200ResponseReportTypesInner
-	isSet bool
-}
-
-func (v NullableGetReportTypes200ResponseReportTypesInner) Get() *GetReportTypes200ResponseReportTypesInner {
-	return v.value
-}
-
-func (v *NullableGetReportTypes200ResponseReportTypesInner) Set(val *GetReportTypes200ResponseReportTypesInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetReportTypes200ResponseReportTypesInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetReportTypes200ResponseReportTypesInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetReportTypes200ResponseReportTypesInner(val *GetReportTypes200ResponseReportTypesInner) *NullableGetReportTypes200ResponseReportTypesInner {
-	return &NullableGetReportTypes200ResponseReportTypesInner{value: val, isSet: true}
-}
-
-func (v NullableGetReportTypes200ResponseReportTypesInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetReportTypes200ResponseReportTypesInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

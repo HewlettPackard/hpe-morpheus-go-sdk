@@ -21,15 +21,15 @@ var _ MappedNullable = &GetBudgets200ResponseAllOfBudgetStatsIntervalsInner{}
 
 // GetBudgets200ResponseAllOfBudgetStatsIntervalsInner struct for GetBudgets200ResponseAllOfBudgetStatsIntervalsInner
 type GetBudgets200ResponseAllOfBudgetStatsIntervalsInner struct {
-	Index *int64 `json:"index,omitempty"`
-	Month *string `json:"month,omitempty"`
-	ShortName *string `json:"shortName,omitempty"`
-	ChartName *string `json:"chartName,omitempty"`
-	Budget *int64 `json:"budget,omitempty"`
-	Cost *float32 `json:"cost,omitempty"`
-	StartDate *time.Time `json:"startDate,omitempty"`
-	EndDate *time.Time `json:"endDate,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Index                *int64                 `json:"index,omitempty"`
+	Month                *string                `json:"month,omitempty"`
+	ShortName            *string                `json:"shortName,omitempty"`
+	ChartName            *string                `json:"chartName,omitempty"`
+	Budget               *int64                 `json:"budget,omitempty"`
+	Cost                 *float32               `json:"cost,omitempty"`
+	StartDate            *time.Time             `json:"startDate,omitempty"`
+	EndDate              *time.Time             `json:"endDate,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _GetBudgets200ResponseAllOfBudgetStatsIntervalsInner GetBudgets200ResponseAllOfBudgetStatsIntervalsInner
@@ -308,7 +308,7 @@ func (o *GetBudgets200ResponseAllOfBudgetStatsIntervalsInner) SetEndDate(v time.
 }
 
 func (o GetBudgets200ResponseAllOfBudgetStatsIntervalsInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -348,69 +348,8 @@ func (o GetBudgets200ResponseAllOfBudgetStatsIntervalsInner) ToMap() (map[string
 
 	return toSerialize, nil
 }
-
 func (o *GetBudgets200ResponseAllOfBudgetStatsIntervalsInner) UnmarshalJSON(data []byte) (err error) {
-	varGetBudgets200ResponseAllOfBudgetStatsIntervalsInner := _GetBudgets200ResponseAllOfBudgetStatsIntervalsInner{}
-
-	err = json.Unmarshal(data, &varGetBudgets200ResponseAllOfBudgetStatsIntervalsInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetBudgets200ResponseAllOfBudgetStatsIntervalsInner(varGetBudgets200ResponseAllOfBudgetStatsIntervalsInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "index")
-		delete(additionalProperties, "month")
-		delete(additionalProperties, "shortName")
-		delete(additionalProperties, "chartName")
-		delete(additionalProperties, "budget")
-		delete(additionalProperties, "cost")
-		delete(additionalProperties, "startDate")
-		delete(additionalProperties, "endDate")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetBudgets200ResponseAllOfBudgetStatsIntervalsInner struct {
-	value *GetBudgets200ResponseAllOfBudgetStatsIntervalsInner
-	isSet bool
-}
-
-func (v NullableGetBudgets200ResponseAllOfBudgetStatsIntervalsInner) Get() *GetBudgets200ResponseAllOfBudgetStatsIntervalsInner {
-	return v.value
-}
-
-func (v *NullableGetBudgets200ResponseAllOfBudgetStatsIntervalsInner) Set(val *GetBudgets200ResponseAllOfBudgetStatsIntervalsInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetBudgets200ResponseAllOfBudgetStatsIntervalsInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetBudgets200ResponseAllOfBudgetStatsIntervalsInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetBudgets200ResponseAllOfBudgetStatsIntervalsInner(val *GetBudgets200ResponseAllOfBudgetStatsIntervalsInner) *NullableGetBudgets200ResponseAllOfBudgetStatsIntervalsInner {
-	return &NullableGetBudgets200ResponseAllOfBudgetStatsIntervalsInner{value: val, isSet: true}
-}
-
-func (v NullableGetBudgets200ResponseAllOfBudgetStatsIntervalsInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetBudgets200ResponseAllOfBudgetStatsIntervalsInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -18,11 +18,11 @@ import (
 // checks if the HostnamePolicyTypeConfiguration type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &HostnamePolicyTypeConfiguration{}
 
-// HostnamePolicyTypeConfiguration Configuration settings for the following policy types: - Hostname 
+// HostnamePolicyTypeConfiguration Configuration settings for the following policy types: - Hostname
 type HostnamePolicyTypeConfiguration struct {
-	HostNamingType *string `json:"hostNamingType,omitempty"`
-	HostNamingPattern *string `json:"hostNamingPattern,omitempty"`
-	AdditionalProperties map[string]interface{}
+	HostNamingType       *string                `json:"hostNamingType,omitempty"`
+	HostNamingPattern    *string                `json:"hostNamingPattern,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _HostnamePolicyTypeConfiguration HostnamePolicyTypeConfiguration
@@ -109,7 +109,7 @@ func (o *HostnamePolicyTypeConfiguration) SetHostNamingPattern(v string) {
 }
 
 func (o HostnamePolicyTypeConfiguration) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -131,63 +131,8 @@ func (o HostnamePolicyTypeConfiguration) ToMap() (map[string]interface{}, error)
 
 	return toSerialize, nil
 }
-
 func (o *HostnamePolicyTypeConfiguration) UnmarshalJSON(data []byte) (err error) {
-	varHostnamePolicyTypeConfiguration := _HostnamePolicyTypeConfiguration{}
-
-	err = json.Unmarshal(data, &varHostnamePolicyTypeConfiguration)
-
-	if err != nil {
-		return err
-	}
-
-	*o = HostnamePolicyTypeConfiguration(varHostnamePolicyTypeConfiguration)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "hostNamingType")
-		delete(additionalProperties, "hostNamingPattern")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableHostnamePolicyTypeConfiguration struct {
-	value *HostnamePolicyTypeConfiguration
-	isSet bool
-}
-
-func (v NullableHostnamePolicyTypeConfiguration) Get() *HostnamePolicyTypeConfiguration {
-	return v.value
-}
-
-func (v *NullableHostnamePolicyTypeConfiguration) Set(val *HostnamePolicyTypeConfiguration) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableHostnamePolicyTypeConfiguration) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableHostnamePolicyTypeConfiguration) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableHostnamePolicyTypeConfiguration(val *HostnamePolicyTypeConfiguration) *NullableHostnamePolicyTypeConfiguration {
-	return &NullableHostnamePolicyTypeConfiguration{value: val, isSet: true}
-}
-
-func (v NullableHostnamePolicyTypeConfiguration) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableHostnamePolicyTypeConfiguration) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -20,8 +20,8 @@ var _ MappedNullable = &UserSettingsRegenerateAccessToken{}
 
 // UserSettingsRegenerateAccessToken struct for UserSettingsRegenerateAccessToken
 type UserSettingsRegenerateAccessToken struct {
-	Token *string `json:"token,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Token                *string                `json:"token,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _UserSettingsRegenerateAccessToken UserSettingsRegenerateAccessToken
@@ -76,7 +76,7 @@ func (o *UserSettingsRegenerateAccessToken) SetToken(v string) {
 }
 
 func (o UserSettingsRegenerateAccessToken) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o UserSettingsRegenerateAccessToken) ToMap() (map[string]interface{}, erro
 
 	return toSerialize, nil
 }
-
 func (o *UserSettingsRegenerateAccessToken) UnmarshalJSON(data []byte) (err error) {
-	varUserSettingsRegenerateAccessToken := _UserSettingsRegenerateAccessToken{}
-
-	err = json.Unmarshal(data, &varUserSettingsRegenerateAccessToken)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UserSettingsRegenerateAccessToken(varUserSettingsRegenerateAccessToken)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "token")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUserSettingsRegenerateAccessToken struct {
-	value *UserSettingsRegenerateAccessToken
-	isSet bool
-}
-
-func (v NullableUserSettingsRegenerateAccessToken) Get() *UserSettingsRegenerateAccessToken {
-	return v.value
-}
-
-func (v *NullableUserSettingsRegenerateAccessToken) Set(val *UserSettingsRegenerateAccessToken) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUserSettingsRegenerateAccessToken) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUserSettingsRegenerateAccessToken) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUserSettingsRegenerateAccessToken(val *UserSettingsRegenerateAccessToken) *NullableUserSettingsRegenerateAccessToken {
-	return &NullableUserSettingsRegenerateAccessToken{value: val, isSet: true}
-}
-
-func (v NullableUserSettingsRegenerateAccessToken) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUserSettingsRegenerateAccessToken) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

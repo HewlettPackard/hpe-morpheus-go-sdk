@@ -27,8 +27,8 @@ type UserSourceCreateJumpCloud struct {
 	// Binding Password
 	BindingPassword *string `json:"bindingPassword,omitempty"`
 	// Required group name
-	RequiredRole *string `json:"requiredRole,omitempty"`
-	AdditionalProperties map[string]interface{}
+	RequiredRole         *string                `json:"requiredRole,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _UserSourceCreateJumpCloud UserSourceCreateJumpCloud
@@ -183,7 +183,7 @@ func (o *UserSourceCreateJumpCloud) SetRequiredRole(v string) {
 }
 
 func (o UserSourceCreateJumpCloud) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -211,65 +211,8 @@ func (o UserSourceCreateJumpCloud) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *UserSourceCreateJumpCloud) UnmarshalJSON(data []byte) (err error) {
-	varUserSourceCreateJumpCloud := _UserSourceCreateJumpCloud{}
-
-	err = json.Unmarshal(data, &varUserSourceCreateJumpCloud)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UserSourceCreateJumpCloud(varUserSourceCreateJumpCloud)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "organizationId")
-		delete(additionalProperties, "bindingUsername")
-		delete(additionalProperties, "bindingPassword")
-		delete(additionalProperties, "requiredRole")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUserSourceCreateJumpCloud struct {
-	value *UserSourceCreateJumpCloud
-	isSet bool
-}
-
-func (v NullableUserSourceCreateJumpCloud) Get() *UserSourceCreateJumpCloud {
-	return v.value
-}
-
-func (v *NullableUserSourceCreateJumpCloud) Set(val *UserSourceCreateJumpCloud) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUserSourceCreateJumpCloud) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUserSourceCreateJumpCloud) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUserSourceCreateJumpCloud(val *UserSourceCreateJumpCloud) *NullableUserSourceCreateJumpCloud {
-	return &NullableUserSourceCreateJumpCloud{value: val, isSet: true}
-}
-
-func (v NullableUserSourceCreateJumpCloud) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUserSourceCreateJumpCloud) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

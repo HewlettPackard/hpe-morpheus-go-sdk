@@ -20,10 +20,10 @@ var _ MappedNullable = &ListJobs200ResponseAllOfJobsInnerAnyOfCreatedBy{}
 
 // ListJobs200ResponseAllOfJobsInnerAnyOfCreatedBy struct for ListJobs200ResponseAllOfJobsInnerAnyOfCreatedBy
 type ListJobs200ResponseAllOfJobsInnerAnyOfCreatedBy struct {
-	Id *int64 `json:"id,omitempty"`
-	Username *string `json:"username,omitempty"`
-	DisplayName *string `json:"displayName,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	Username             *string                `json:"username,omitempty"`
+	DisplayName          *string                `json:"displayName,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListJobs200ResponseAllOfJobsInnerAnyOfCreatedBy ListJobs200ResponseAllOfJobsInnerAnyOfCreatedBy
@@ -142,7 +142,7 @@ func (o *ListJobs200ResponseAllOfJobsInnerAnyOfCreatedBy) SetDisplayName(v strin
 }
 
 func (o ListJobs200ResponseAllOfJobsInnerAnyOfCreatedBy) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -167,64 +167,8 @@ func (o ListJobs200ResponseAllOfJobsInnerAnyOfCreatedBy) ToMap() (map[string]int
 
 	return toSerialize, nil
 }
-
 func (o *ListJobs200ResponseAllOfJobsInnerAnyOfCreatedBy) UnmarshalJSON(data []byte) (err error) {
-	varListJobs200ResponseAllOfJobsInnerAnyOfCreatedBy := _ListJobs200ResponseAllOfJobsInnerAnyOfCreatedBy{}
-
-	err = json.Unmarshal(data, &varListJobs200ResponseAllOfJobsInnerAnyOfCreatedBy)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListJobs200ResponseAllOfJobsInnerAnyOfCreatedBy(varListJobs200ResponseAllOfJobsInnerAnyOfCreatedBy)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "username")
-		delete(additionalProperties, "displayName")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListJobs200ResponseAllOfJobsInnerAnyOfCreatedBy struct {
-	value *ListJobs200ResponseAllOfJobsInnerAnyOfCreatedBy
-	isSet bool
-}
-
-func (v NullableListJobs200ResponseAllOfJobsInnerAnyOfCreatedBy) Get() *ListJobs200ResponseAllOfJobsInnerAnyOfCreatedBy {
-	return v.value
-}
-
-func (v *NullableListJobs200ResponseAllOfJobsInnerAnyOfCreatedBy) Set(val *ListJobs200ResponseAllOfJobsInnerAnyOfCreatedBy) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListJobs200ResponseAllOfJobsInnerAnyOfCreatedBy) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListJobs200ResponseAllOfJobsInnerAnyOfCreatedBy) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListJobs200ResponseAllOfJobsInnerAnyOfCreatedBy(val *ListJobs200ResponseAllOfJobsInnerAnyOfCreatedBy) *NullableListJobs200ResponseAllOfJobsInnerAnyOfCreatedBy {
-	return &NullableListJobs200ResponseAllOfJobsInnerAnyOfCreatedBy{value: val, isSet: true}
-}
-
-func (v NullableListJobs200ResponseAllOfJobsInnerAnyOfCreatedBy) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListJobs200ResponseAllOfJobsInnerAnyOfCreatedBy) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

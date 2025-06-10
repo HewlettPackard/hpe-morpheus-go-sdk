@@ -21,26 +21,26 @@ var _ MappedNullable = &Plugin{}
 
 // Plugin struct for Plugin
 type Plugin struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Code *string `json:"code,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Version *string `json:"version,omitempty"`
-	Enabled *bool `json:"enabled,omitempty"`
-	Author *string `json:"author,omitempty"`
-	WebsiteUrl *string `json:"websiteUrl,omitempty"`
-	SourceCodeLocationUrl *string `json:"sourceCodeLocationUrl,omitempty"`
-	IssueTrackerUrl *string `json:"issueTrackerUrl,omitempty"`
-	Valid *bool `json:"valid,omitempty"`
-	HasValidUpdate *bool `json:"hasValidUpdate,omitempty"`
-	Status *string `json:"status,omitempty"`
-	StatusMessage *string `json:"statusMessage,omitempty"`
-	Providers []GetAppState200ResponseAllOfSpecsInnerTemplate `json:"providers,omitempty"`
-	Config map[string]interface{} `json:"config,omitempty"`
-	OptionTypes []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                    *int64                                                                      `json:"id,omitempty"`
+	Name                  *string                                                                     `json:"name,omitempty"`
+	Code                  *string                                                                     `json:"code,omitempty"`
+	Description           *string                                                                     `json:"description,omitempty"`
+	Version               *string                                                                     `json:"version,omitempty"`
+	Enabled               *bool                                                                       `json:"enabled,omitempty"`
+	Author                *string                                                                     `json:"author,omitempty"`
+	WebsiteUrl            *string                                                                     `json:"websiteUrl,omitempty"`
+	SourceCodeLocationUrl *string                                                                     `json:"sourceCodeLocationUrl,omitempty"`
+	IssueTrackerUrl       *string                                                                     `json:"issueTrackerUrl,omitempty"`
+	Valid                 *bool                                                                       `json:"valid,omitempty"`
+	HasValidUpdate        *bool                                                                       `json:"hasValidUpdate,omitempty"`
+	Status                *string                                                                     `json:"status,omitempty"`
+	StatusMessage         *string                                                                     `json:"statusMessage,omitempty"`
+	Providers             []GetAppState200ResponseAllOfSpecsInnerTemplate                             `json:"providers,omitempty"`
+	Config                map[string]interface{}                                                      `json:"config,omitempty"`
+	OptionTypes           []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
+	DateCreated           *time.Time                                                                  `json:"dateCreated,omitempty"`
+	LastUpdated           *time.Time                                                                  `json:"lastUpdated,omitempty"`
+	AdditionalProperties  map[string]interface{}                                                      `json:",remain"`
 }
 
 type _Plugin Plugin
@@ -671,7 +671,7 @@ func (o *Plugin) SetLastUpdated(v time.Time) {
 }
 
 func (o Plugin) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -744,80 +744,8 @@ func (o Plugin) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *Plugin) UnmarshalJSON(data []byte) (err error) {
-	varPlugin := _Plugin{}
-
-	err = json.Unmarshal(data, &varPlugin)
-
-	if err != nil {
-		return err
-	}
-
-	*o = Plugin(varPlugin)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "version")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "author")
-		delete(additionalProperties, "websiteUrl")
-		delete(additionalProperties, "sourceCodeLocationUrl")
-		delete(additionalProperties, "issueTrackerUrl")
-		delete(additionalProperties, "valid")
-		delete(additionalProperties, "hasValidUpdate")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "statusMessage")
-		delete(additionalProperties, "providers")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "optionTypes")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullablePlugin struct {
-	value *Plugin
-	isSet bool
-}
-
-func (v NullablePlugin) Get() *Plugin {
-	return v.value
-}
-
-func (v *NullablePlugin) Set(val *Plugin) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullablePlugin) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullablePlugin) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullablePlugin(val *Plugin) *NullablePlugin {
-	return &NullablePlugin{value: val, isSet: true}
-}
-
-func (v NullablePlugin) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullablePlugin) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

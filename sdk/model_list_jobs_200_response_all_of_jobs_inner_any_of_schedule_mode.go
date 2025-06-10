@@ -14,6 +14,7 @@ package sdk
 import (
 	"encoding/json"
 	"fmt"
+
 	"gopkg.in/validator.v2"
 )
 
@@ -22,7 +23,7 @@ var _ fmt.Stringer
 
 // ListJobs200ResponseAllOfJobsInnerAnyOfScheduleMode - struct for ListJobs200ResponseAllOfJobsInnerAnyOfScheduleMode
 type ListJobs200ResponseAllOfJobsInnerAnyOfScheduleMode struct {
-	Int64 *int64
+	Int64  *int64
 	String *string
 }
 
@@ -40,6 +41,21 @@ func StringAsListJobs200ResponseAllOfJobsInnerAnyOfScheduleMode(v *string) ListJ
 	}
 }
 
+func (dst *ListJobs200ResponseAllOfJobsInnerAnyOfScheduleMode) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &ListJobs200ResponseAllOfJobsInnerAnyOfScheduleMode{}
+	}
+
+	if out, ok := data.(int64); ok {
+		dst.Int64 = &out
+	}
+
+	if out, ok := data.(string); ok {
+		dst.String = &out
+	}
+
+	return dst, nil
+}
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ListJobs200ResponseAllOfJobsInnerAnyOfScheduleMode) UnmarshalJSON(data []byte) error {
@@ -106,7 +122,7 @@ func (src ListJobs200ResponseAllOfJobsInnerAnyOfScheduleMode) MarshalJSON() ([]b
 }
 
 // Get the actual instance
-func (obj *ListJobs200ResponseAllOfJobsInnerAnyOfScheduleMode) GetActualInstance() (interface{}) {
+func (obj *ListJobs200ResponseAllOfJobsInnerAnyOfScheduleMode) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -123,7 +139,7 @@ func (obj *ListJobs200ResponseAllOfJobsInnerAnyOfScheduleMode) GetActualInstance
 }
 
 // Get the actual instance value
-func (obj ListJobs200ResponseAllOfJobsInnerAnyOfScheduleMode) GetActualInstanceValue() (interface{}) {
+func (obj ListJobs200ResponseAllOfJobsInnerAnyOfScheduleMode) GetActualInstanceValue() interface{} {
 	if obj.Int64 != nil {
 		return *obj.Int64
 	}
@@ -171,5 +187,3 @@ func (v *NullableListJobs200ResponseAllOfJobsInnerAnyOfScheduleMode) UnmarshalJS
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

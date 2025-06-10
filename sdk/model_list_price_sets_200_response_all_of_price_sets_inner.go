@@ -20,19 +20,19 @@ var _ MappedNullable = &ListPriceSets200ResponseAllOfPriceSetsInner{}
 
 // ListPriceSets200ResponseAllOfPriceSetsInner struct for ListPriceSets200ResponseAllOfPriceSetsInner
 type ListPriceSets200ResponseAllOfPriceSetsInner struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Code *string `json:"code,omitempty"`
-	Active *bool `json:"active,omitempty"`
-	PriceUnit *string `json:"priceUnit,omitempty"`
-	Type *string `json:"type,omitempty"`
-	RegionCode *string `json:"regionCode,omitempty"`
-	SystemCreated *bool `json:"systemCreated,omitempty"`
-	Zone *string `json:"zone,omitempty"`
-	ZonePool *string `json:"zonePool,omitempty"`
-	Account *string `json:"account,omitempty"`
-	Prices []ListPriceSets200ResponseAllOfPriceSetsInnerPricesInner `json:"prices,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                   `json:"id,omitempty"`
+	Name                 *string                                                  `json:"name,omitempty"`
+	Code                 *string                                                  `json:"code,omitempty"`
+	Active               *bool                                                    `json:"active,omitempty"`
+	PriceUnit            *string                                                  `json:"priceUnit,omitempty"`
+	Type                 *string                                                  `json:"type,omitempty"`
+	RegionCode           *string                                                  `json:"regionCode,omitempty"`
+	SystemCreated        *bool                                                    `json:"systemCreated,omitempty"`
+	Zone                 *string                                                  `json:"zone,omitempty"`
+	ZonePool             *string                                                  `json:"zonePool,omitempty"`
+	Account              *string                                                  `json:"account,omitempty"`
+	Prices               []ListPriceSets200ResponseAllOfPriceSetsInnerPricesInner `json:"prices,omitempty"`
+	AdditionalProperties map[string]interface{}                                   `json:",remain"`
 }
 
 type _ListPriceSets200ResponseAllOfPriceSetsInner ListPriceSets200ResponseAllOfPriceSetsInner
@@ -439,7 +439,7 @@ func (o *ListPriceSets200ResponseAllOfPriceSetsInner) SetPrices(v []ListPriceSet
 }
 
 func (o ListPriceSets200ResponseAllOfPriceSetsInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -491,73 +491,8 @@ func (o ListPriceSets200ResponseAllOfPriceSetsInner) ToMap() (map[string]interfa
 
 	return toSerialize, nil
 }
-
 func (o *ListPriceSets200ResponseAllOfPriceSetsInner) UnmarshalJSON(data []byte) (err error) {
-	varListPriceSets200ResponseAllOfPriceSetsInner := _ListPriceSets200ResponseAllOfPriceSetsInner{}
-
-	err = json.Unmarshal(data, &varListPriceSets200ResponseAllOfPriceSetsInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListPriceSets200ResponseAllOfPriceSetsInner(varListPriceSets200ResponseAllOfPriceSetsInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "active")
-		delete(additionalProperties, "priceUnit")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "regionCode")
-		delete(additionalProperties, "systemCreated")
-		delete(additionalProperties, "zone")
-		delete(additionalProperties, "zonePool")
-		delete(additionalProperties, "account")
-		delete(additionalProperties, "prices")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListPriceSets200ResponseAllOfPriceSetsInner struct {
-	value *ListPriceSets200ResponseAllOfPriceSetsInner
-	isSet bool
-}
-
-func (v NullableListPriceSets200ResponseAllOfPriceSetsInner) Get() *ListPriceSets200ResponseAllOfPriceSetsInner {
-	return v.value
-}
-
-func (v *NullableListPriceSets200ResponseAllOfPriceSetsInner) Set(val *ListPriceSets200ResponseAllOfPriceSetsInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListPriceSets200ResponseAllOfPriceSetsInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListPriceSets200ResponseAllOfPriceSetsInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListPriceSets200ResponseAllOfPriceSetsInner(val *ListPriceSets200ResponseAllOfPriceSetsInner) *NullableListPriceSets200ResponseAllOfPriceSetsInner {
-	return &NullableListPriceSets200ResponseAllOfPriceSetsInner{value: val, isSet: true}
-}
-
-func (v NullableListPriceSets200ResponseAllOfPriceSetsInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListPriceSets200ResponseAllOfPriceSetsInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

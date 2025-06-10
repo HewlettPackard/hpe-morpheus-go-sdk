@@ -20,16 +20,16 @@ var _ MappedNullable = &NetworkPoolServerType{}
 
 // NetworkPoolServerType struct for NetworkPoolServerType
 type NetworkPoolServerType struct {
-	Id *int64 `json:"id,omitempty"`
-	PoolService *string `json:"poolService,omitempty"`
-	Selectable *bool `json:"selectable,omitempty"`
-	Code *string `json:"code,omitempty"`
-	IntegrationCode *string `json:"integrationCode,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Enabled *bool `json:"enabled,omitempty"`
-	Description *string `json:"description,omitempty"`
-	OptionTypes []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                                      `json:"id,omitempty"`
+	PoolService          *string                                                                     `json:"poolService,omitempty"`
+	Selectable           *bool                                                                       `json:"selectable,omitempty"`
+	Code                 *string                                                                     `json:"code,omitempty"`
+	IntegrationCode      *string                                                                     `json:"integrationCode,omitempty"`
+	Name                 *string                                                                     `json:"name,omitempty"`
+	Enabled              *bool                                                                       `json:"enabled,omitempty"`
+	Description          *string                                                                     `json:"description,omitempty"`
+	OptionTypes          []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
+	AdditionalProperties map[string]interface{}                                                      `json:",remain"`
 }
 
 type _NetworkPoolServerType NetworkPoolServerType
@@ -340,7 +340,7 @@ func (o *NetworkPoolServerType) SetOptionTypes(v []ListCatalogItemTypes200Respon
 }
 
 func (o NetworkPoolServerType) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -383,70 +383,8 @@ func (o NetworkPoolServerType) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *NetworkPoolServerType) UnmarshalJSON(data []byte) (err error) {
-	varNetworkPoolServerType := _NetworkPoolServerType{}
-
-	err = json.Unmarshal(data, &varNetworkPoolServerType)
-
-	if err != nil {
-		return err
-	}
-
-	*o = NetworkPoolServerType(varNetworkPoolServerType)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "poolService")
-		delete(additionalProperties, "selectable")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "integrationCode")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "optionTypes")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableNetworkPoolServerType struct {
-	value *NetworkPoolServerType
-	isSet bool
-}
-
-func (v NullableNetworkPoolServerType) Get() *NetworkPoolServerType {
-	return v.value
-}
-
-func (v *NullableNetworkPoolServerType) Set(val *NetworkPoolServerType) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableNetworkPoolServerType) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableNetworkPoolServerType) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableNetworkPoolServerType(val *NetworkPoolServerType) *NullableNetworkPoolServerType {
-	return &NullableNetworkPoolServerType{value: val, isSet: true}
-}
-
-func (v NullableNetworkPoolServerType) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableNetworkPoolServerType) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

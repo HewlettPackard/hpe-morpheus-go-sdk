@@ -20,8 +20,8 @@ var _ MappedNullable = &GetJobExecutions200Response{}
 
 // GetJobExecutions200Response struct for GetJobExecutions200Response
 type GetJobExecutions200Response struct {
-	JobExecution *ListJobExecutions200ResponseAllOfJobExecutionsInner `json:"jobExecution,omitempty"`
-	AdditionalProperties map[string]interface{}
+	JobExecution         *ListJobExecutions200ResponseAllOfJobExecutionsInner `json:"jobExecution,omitempty"`
+	AdditionalProperties map[string]interface{}                               `json:",remain"`
 }
 
 type _GetJobExecutions200Response GetJobExecutions200Response
@@ -76,7 +76,7 @@ func (o *GetJobExecutions200Response) SetJobExecution(v ListJobExecutions200Resp
 }
 
 func (o GetJobExecutions200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o GetJobExecutions200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *GetJobExecutions200Response) UnmarshalJSON(data []byte) (err error) {
-	varGetJobExecutions200Response := _GetJobExecutions200Response{}
-
-	err = json.Unmarshal(data, &varGetJobExecutions200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetJobExecutions200Response(varGetJobExecutions200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "jobExecution")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetJobExecutions200Response struct {
-	value *GetJobExecutions200Response
-	isSet bool
-}
-
-func (v NullableGetJobExecutions200Response) Get() *GetJobExecutions200Response {
-	return v.value
-}
-
-func (v *NullableGetJobExecutions200Response) Set(val *GetJobExecutions200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetJobExecutions200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetJobExecutions200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetJobExecutions200Response(val *GetJobExecutions200Response) *NullableGetJobExecutions200Response {
-	return &NullableGetJobExecutions200Response{value: val, isSet: true}
-}
-
-func (v NullableGetJobExecutions200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetJobExecutions200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -20,10 +20,10 @@ var _ MappedNullable = &ListHealth200ResponseAllOfHealthDatabaseSlowQueriesInner
 
 // ListHealth200ResponseAllOfHealthDatabaseSlowQueriesInner struct for ListHealth200ResponseAllOfHealthDatabaseSlowQueriesInner
 type ListHealth200ResponseAllOfHealthDatabaseSlowQueriesInner struct {
-	Count *int64 `json:"count,omitempty"`
-	Time *int64 `json:"time,omitempty"`
-	Query *string `json:"query,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Count                *int64                 `json:"count,omitempty"`
+	Time                 *int64                 `json:"time,omitempty"`
+	Query                *string                `json:"query,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListHealth200ResponseAllOfHealthDatabaseSlowQueriesInner ListHealth200ResponseAllOfHealthDatabaseSlowQueriesInner
@@ -142,7 +142,7 @@ func (o *ListHealth200ResponseAllOfHealthDatabaseSlowQueriesInner) SetQuery(v st
 }
 
 func (o ListHealth200ResponseAllOfHealthDatabaseSlowQueriesInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -167,64 +167,8 @@ func (o ListHealth200ResponseAllOfHealthDatabaseSlowQueriesInner) ToMap() (map[s
 
 	return toSerialize, nil
 }
-
 func (o *ListHealth200ResponseAllOfHealthDatabaseSlowQueriesInner) UnmarshalJSON(data []byte) (err error) {
-	varListHealth200ResponseAllOfHealthDatabaseSlowQueriesInner := _ListHealth200ResponseAllOfHealthDatabaseSlowQueriesInner{}
-
-	err = json.Unmarshal(data, &varListHealth200ResponseAllOfHealthDatabaseSlowQueriesInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListHealth200ResponseAllOfHealthDatabaseSlowQueriesInner(varListHealth200ResponseAllOfHealthDatabaseSlowQueriesInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "count")
-		delete(additionalProperties, "time")
-		delete(additionalProperties, "query")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListHealth200ResponseAllOfHealthDatabaseSlowQueriesInner struct {
-	value *ListHealth200ResponseAllOfHealthDatabaseSlowQueriesInner
-	isSet bool
-}
-
-func (v NullableListHealth200ResponseAllOfHealthDatabaseSlowQueriesInner) Get() *ListHealth200ResponseAllOfHealthDatabaseSlowQueriesInner {
-	return v.value
-}
-
-func (v *NullableListHealth200ResponseAllOfHealthDatabaseSlowQueriesInner) Set(val *ListHealth200ResponseAllOfHealthDatabaseSlowQueriesInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListHealth200ResponseAllOfHealthDatabaseSlowQueriesInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListHealth200ResponseAllOfHealthDatabaseSlowQueriesInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListHealth200ResponseAllOfHealthDatabaseSlowQueriesInner(val *ListHealth200ResponseAllOfHealthDatabaseSlowQueriesInner) *NullableListHealth200ResponseAllOfHealthDatabaseSlowQueriesInner {
-	return &NullableListHealth200ResponseAllOfHealthDatabaseSlowQueriesInner{value: val, isSet: true}
-}
-
-func (v NullableListHealth200ResponseAllOfHealthDatabaseSlowQueriesInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListHealth200ResponseAllOfHealthDatabaseSlowQueriesInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

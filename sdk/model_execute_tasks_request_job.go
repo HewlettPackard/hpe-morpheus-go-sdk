@@ -35,8 +35,8 @@ type ExecuteTasksRequestJob struct {
 	// Map of options to be used as values in the task. These correspond to option types.
 	CustomOptions map[string]interface{} `json:"customOptions,omitempty"`
 	// String of custom configuration values as JSON.
-	CustomConfig *string `json:"customConfig,omitempty"`
-	AdditionalProperties map[string]interface{}
+	CustomConfig         *string                `json:"customConfig,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ExecuteTasksRequestJob ExecuteTasksRequestJob
@@ -315,7 +315,7 @@ func (o *ExecuteTasksRequestJob) SetCustomConfig(v string) {
 }
 
 func (o ExecuteTasksRequestJob) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -355,69 +355,8 @@ func (o ExecuteTasksRequestJob) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *ExecuteTasksRequestJob) UnmarshalJSON(data []byte) (err error) {
-	varExecuteTasksRequestJob := _ExecuteTasksRequestJob{}
-
-	err = json.Unmarshal(data, &varExecuteTasksRequestJob)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ExecuteTasksRequestJob(varExecuteTasksRequestJob)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "targetType")
-		delete(additionalProperties, "instances")
-		delete(additionalProperties, "servers")
-		delete(additionalProperties, "instanceLabel")
-		delete(additionalProperties, "serverLabel")
-		delete(additionalProperties, "customOptions")
-		delete(additionalProperties, "customConfig")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableExecuteTasksRequestJob struct {
-	value *ExecuteTasksRequestJob
-	isSet bool
-}
-
-func (v NullableExecuteTasksRequestJob) Get() *ExecuteTasksRequestJob {
-	return v.value
-}
-
-func (v *NullableExecuteTasksRequestJob) Set(val *ExecuteTasksRequestJob) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableExecuteTasksRequestJob) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableExecuteTasksRequestJob) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableExecuteTasksRequestJob(val *ExecuteTasksRequestJob) *NullableExecuteTasksRequestJob {
-	return &NullableExecuteTasksRequestJob{value: val, isSet: true}
-}
-
-func (v NullableExecuteTasksRequestJob) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableExecuteTasksRequestJob) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

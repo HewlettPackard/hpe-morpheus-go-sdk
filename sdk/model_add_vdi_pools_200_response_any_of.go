@@ -20,8 +20,8 @@ var _ MappedNullable = &AddVDIPools200ResponseAnyOf{}
 
 // AddVDIPools200ResponseAnyOf struct for AddVDIPools200ResponseAnyOf
 type AddVDIPools200ResponseAnyOf struct {
-	VdiPool *ListVDIPools200ResponseAllOfVdiPoolsInner `json:"vdiPool,omitempty"`
-	AdditionalProperties map[string]interface{}
+	VdiPool              *ListVDIPools200ResponseAllOfVdiPoolsInner `json:"vdiPool,omitempty"`
+	AdditionalProperties map[string]interface{}                     `json:",remain"`
 }
 
 type _AddVDIPools200ResponseAnyOf AddVDIPools200ResponseAnyOf
@@ -76,7 +76,7 @@ func (o *AddVDIPools200ResponseAnyOf) SetVdiPool(v ListVDIPools200ResponseAllOfV
 }
 
 func (o AddVDIPools200ResponseAnyOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o AddVDIPools200ResponseAnyOf) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *AddVDIPools200ResponseAnyOf) UnmarshalJSON(data []byte) (err error) {
-	varAddVDIPools200ResponseAnyOf := _AddVDIPools200ResponseAnyOf{}
-
-	err = json.Unmarshal(data, &varAddVDIPools200ResponseAnyOf)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddVDIPools200ResponseAnyOf(varAddVDIPools200ResponseAnyOf)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "vdiPool")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddVDIPools200ResponseAnyOf struct {
-	value *AddVDIPools200ResponseAnyOf
-	isSet bool
-}
-
-func (v NullableAddVDIPools200ResponseAnyOf) Get() *AddVDIPools200ResponseAnyOf {
-	return v.value
-}
-
-func (v *NullableAddVDIPools200ResponseAnyOf) Set(val *AddVDIPools200ResponseAnyOf) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddVDIPools200ResponseAnyOf) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddVDIPools200ResponseAnyOf) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddVDIPools200ResponseAnyOf(val *AddVDIPools200ResponseAnyOf) *NullableAddVDIPools200ResponseAnyOf {
-	return &NullableAddVDIPools200ResponseAnyOf{value: val, isSet: true}
-}
-
-func (v NullableAddVDIPools200ResponseAnyOf) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddVDIPools200ResponseAnyOf) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

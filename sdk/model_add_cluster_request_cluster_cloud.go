@@ -21,8 +21,8 @@ var _ MappedNullable = &AddClusterRequestClusterCloud{}
 // AddClusterRequestClusterCloud struct for AddClusterRequestClusterCloud
 type AddClusterRequestClusterCloud struct {
 	// The Cloud ID to provision the host into
-	Id *int64 `json:"id,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddClusterRequestClusterCloud AddClusterRequestClusterCloud
@@ -77,7 +77,7 @@ func (o *AddClusterRequestClusterCloud) SetId(v int64) {
 }
 
 func (o AddClusterRequestClusterCloud) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -96,62 +96,8 @@ func (o AddClusterRequestClusterCloud) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *AddClusterRequestClusterCloud) UnmarshalJSON(data []byte) (err error) {
-	varAddClusterRequestClusterCloud := _AddClusterRequestClusterCloud{}
-
-	err = json.Unmarshal(data, &varAddClusterRequestClusterCloud)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddClusterRequestClusterCloud(varAddClusterRequestClusterCloud)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddClusterRequestClusterCloud struct {
-	value *AddClusterRequestClusterCloud
-	isSet bool
-}
-
-func (v NullableAddClusterRequestClusterCloud) Get() *AddClusterRequestClusterCloud {
-	return v.value
-}
-
-func (v *NullableAddClusterRequestClusterCloud) Set(val *AddClusterRequestClusterCloud) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddClusterRequestClusterCloud) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddClusterRequestClusterCloud) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddClusterRequestClusterCloud(val *AddClusterRequestClusterCloud) *NullableAddClusterRequestClusterCloud {
-	return &NullableAddClusterRequestClusterCloud{value: val, isSet: true}
-}
-
-func (v NullableAddClusterRequestClusterCloud) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddClusterRequestClusterCloud) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

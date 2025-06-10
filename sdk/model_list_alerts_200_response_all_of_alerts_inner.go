@@ -21,21 +21,21 @@ var _ MappedNullable = &ListAlerts200ResponseAllOfAlertsInner{}
 
 // ListAlerts200ResponseAllOfAlertsInner struct for ListAlerts200ResponseAllOfAlertsInner
 type ListAlerts200ResponseAllOfAlertsInner struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	AllApps *bool `json:"allApps,omitempty"`
-	AllChecks *bool `json:"allChecks,omitempty"`
-	AllGroups *bool `json:"allGroups,omitempty"`
-	Active *bool `json:"active,omitempty"`
-	MinSeverity *string `json:"minSeverity,omitempty"`
-	MinDuration *int64 `json:"minDuration,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	Checks []int32 `json:"checks,omitempty"`
-	CheckGroups []int32 `json:"checkGroups,omitempty"`
-	Apps []int32 `json:"apps,omitempty"`
-	Contacts []ListAlerts200ResponseAllOfAlertsInnerContactsInner `json:"contacts,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                               `json:"id,omitempty"`
+	Name                 *string                                              `json:"name,omitempty"`
+	AllApps              *bool                                                `json:"allApps,omitempty"`
+	AllChecks            *bool                                                `json:"allChecks,omitempty"`
+	AllGroups            *bool                                                `json:"allGroups,omitempty"`
+	Active               *bool                                                `json:"active,omitempty"`
+	MinSeverity          *string                                              `json:"minSeverity,omitempty"`
+	MinDuration          *int64                                               `json:"minDuration,omitempty"`
+	DateCreated          *time.Time                                           `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                           `json:"lastUpdated,omitempty"`
+	Checks               []int32                                              `json:"checks,omitempty"`
+	CheckGroups          []int32                                              `json:"checkGroups,omitempty"`
+	Apps                 []int32                                              `json:"apps,omitempty"`
+	Contacts             []ListAlerts200ResponseAllOfAlertsInnerContactsInner `json:"contacts,omitempty"`
+	AdditionalProperties map[string]interface{}                               `json:",remain"`
 }
 
 type _ListAlerts200ResponseAllOfAlertsInner ListAlerts200ResponseAllOfAlertsInner
@@ -506,7 +506,7 @@ func (o *ListAlerts200ResponseAllOfAlertsInner) SetContacts(v []ListAlerts200Res
 }
 
 func (o ListAlerts200ResponseAllOfAlertsInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -564,75 +564,8 @@ func (o ListAlerts200ResponseAllOfAlertsInner) ToMap() (map[string]interface{}, 
 
 	return toSerialize, nil
 }
-
 func (o *ListAlerts200ResponseAllOfAlertsInner) UnmarshalJSON(data []byte) (err error) {
-	varListAlerts200ResponseAllOfAlertsInner := _ListAlerts200ResponseAllOfAlertsInner{}
-
-	err = json.Unmarshal(data, &varListAlerts200ResponseAllOfAlertsInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListAlerts200ResponseAllOfAlertsInner(varListAlerts200ResponseAllOfAlertsInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "allApps")
-		delete(additionalProperties, "allChecks")
-		delete(additionalProperties, "allGroups")
-		delete(additionalProperties, "active")
-		delete(additionalProperties, "minSeverity")
-		delete(additionalProperties, "minDuration")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		delete(additionalProperties, "checks")
-		delete(additionalProperties, "checkGroups")
-		delete(additionalProperties, "apps")
-		delete(additionalProperties, "contacts")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListAlerts200ResponseAllOfAlertsInner struct {
-	value *ListAlerts200ResponseAllOfAlertsInner
-	isSet bool
-}
-
-func (v NullableListAlerts200ResponseAllOfAlertsInner) Get() *ListAlerts200ResponseAllOfAlertsInner {
-	return v.value
-}
-
-func (v *NullableListAlerts200ResponseAllOfAlertsInner) Set(val *ListAlerts200ResponseAllOfAlertsInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListAlerts200ResponseAllOfAlertsInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListAlerts200ResponseAllOfAlertsInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListAlerts200ResponseAllOfAlertsInner(val *ListAlerts200ResponseAllOfAlertsInner) *NullableListAlerts200ResponseAllOfAlertsInner {
-	return &NullableListAlerts200ResponseAllOfAlertsInner{value: val, isSet: true}
-}
-
-func (v NullableListAlerts200ResponseAllOfAlertsInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListAlerts200ResponseAllOfAlertsInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

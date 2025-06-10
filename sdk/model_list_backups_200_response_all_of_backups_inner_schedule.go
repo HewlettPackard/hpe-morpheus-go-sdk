@@ -25,8 +25,8 @@ type ListBackups200ResponseAllOfBackupsInnerSchedule struct {
 	// Schedule Name
 	Name *string `json:"name,omitempty"`
 	// Schedule Cron Expression
-	Cron *string `json:"cron,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Cron                 *string                `json:"cron,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListBackups200ResponseAllOfBackupsInnerSchedule ListBackups200ResponseAllOfBackupsInnerSchedule
@@ -145,7 +145,7 @@ func (o *ListBackups200ResponseAllOfBackupsInnerSchedule) SetCron(v string) {
 }
 
 func (o ListBackups200ResponseAllOfBackupsInnerSchedule) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -170,64 +170,8 @@ func (o ListBackups200ResponseAllOfBackupsInnerSchedule) ToMap() (map[string]int
 
 	return toSerialize, nil
 }
-
 func (o *ListBackups200ResponseAllOfBackupsInnerSchedule) UnmarshalJSON(data []byte) (err error) {
-	varListBackups200ResponseAllOfBackupsInnerSchedule := _ListBackups200ResponseAllOfBackupsInnerSchedule{}
-
-	err = json.Unmarshal(data, &varListBackups200ResponseAllOfBackupsInnerSchedule)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListBackups200ResponseAllOfBackupsInnerSchedule(varListBackups200ResponseAllOfBackupsInnerSchedule)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "cron")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListBackups200ResponseAllOfBackupsInnerSchedule struct {
-	value *ListBackups200ResponseAllOfBackupsInnerSchedule
-	isSet bool
-}
-
-func (v NullableListBackups200ResponseAllOfBackupsInnerSchedule) Get() *ListBackups200ResponseAllOfBackupsInnerSchedule {
-	return v.value
-}
-
-func (v *NullableListBackups200ResponseAllOfBackupsInnerSchedule) Set(val *ListBackups200ResponseAllOfBackupsInnerSchedule) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListBackups200ResponseAllOfBackupsInnerSchedule) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListBackups200ResponseAllOfBackupsInnerSchedule) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListBackups200ResponseAllOfBackupsInnerSchedule(val *ListBackups200ResponseAllOfBackupsInnerSchedule) *NullableListBackups200ResponseAllOfBackupsInnerSchedule {
-	return &NullableListBackups200ResponseAllOfBackupsInnerSchedule{value: val, isSet: true}
-}
-
-func (v NullableListBackups200ResponseAllOfBackupsInnerSchedule) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListBackups200ResponseAllOfBackupsInnerSchedule) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

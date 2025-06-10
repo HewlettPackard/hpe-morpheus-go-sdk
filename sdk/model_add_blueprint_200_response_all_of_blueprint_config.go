@@ -14,6 +14,7 @@ package sdk
 import (
 	"encoding/json"
 	"fmt"
+
 	"gopkg.in/validator.v2"
 )
 
@@ -22,7 +23,7 @@ var _ fmt.Stringer
 
 // AddBlueprint200ResponseAllOfBlueprintConfig - struct for AddBlueprint200ResponseAllOfBlueprintConfig
 type AddBlueprint200ResponseAllOfBlueprintConfig struct {
-	AddBlueprint200ResponseAllOfBlueprintConfigOneOf *AddBlueprint200ResponseAllOfBlueprintConfigOneOf
+	AddBlueprint200ResponseAllOfBlueprintConfigOneOf  *AddBlueprint200ResponseAllOfBlueprintConfigOneOf
 	AddBlueprint200ResponseAllOfBlueprintConfigOneOf1 *AddBlueprint200ResponseAllOfBlueprintConfigOneOf1
 	AddBlueprint200ResponseAllOfBlueprintConfigOneOf2 *AddBlueprint200ResponseAllOfBlueprintConfigOneOf2
 	AddBlueprint200ResponseAllOfBlueprintConfigOneOf3 *AddBlueprint200ResponseAllOfBlueprintConfigOneOf3
@@ -72,6 +73,37 @@ func AddBlueprint200ResponseAllOfBlueprintConfigOneOf5AsAddBlueprint200ResponseA
 	}
 }
 
+func (dst *AddBlueprint200ResponseAllOfBlueprintConfig) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &AddBlueprint200ResponseAllOfBlueprintConfig{}
+	}
+
+	if out, ok := data.(AddBlueprint200ResponseAllOfBlueprintConfigOneOf); ok {
+		dst.AddBlueprint200ResponseAllOfBlueprintConfigOneOf = &out
+	}
+
+	if out, ok := data.(AddBlueprint200ResponseAllOfBlueprintConfigOneOf1); ok {
+		dst.AddBlueprint200ResponseAllOfBlueprintConfigOneOf1 = &out
+	}
+
+	if out, ok := data.(AddBlueprint200ResponseAllOfBlueprintConfigOneOf2); ok {
+		dst.AddBlueprint200ResponseAllOfBlueprintConfigOneOf2 = &out
+	}
+
+	if out, ok := data.(AddBlueprint200ResponseAllOfBlueprintConfigOneOf3); ok {
+		dst.AddBlueprint200ResponseAllOfBlueprintConfigOneOf3 = &out
+	}
+
+	if out, ok := data.(AddBlueprint200ResponseAllOfBlueprintConfigOneOf4); ok {
+		dst.AddBlueprint200ResponseAllOfBlueprintConfigOneOf4 = &out
+	}
+
+	if out, ok := data.(AddBlueprint200ResponseAllOfBlueprintConfigOneOf5); ok {
+		dst.AddBlueprint200ResponseAllOfBlueprintConfigOneOf5 = &out
+	}
+
+	return dst, nil
+}
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddBlueprint200ResponseAllOfBlueprintConfig) UnmarshalJSON(data []byte) error {
@@ -226,7 +258,7 @@ func (src AddBlueprint200ResponseAllOfBlueprintConfig) MarshalJSON() ([]byte, er
 }
 
 // Get the actual instance
-func (obj *AddBlueprint200ResponseAllOfBlueprintConfig) GetActualInstance() (interface{}) {
+func (obj *AddBlueprint200ResponseAllOfBlueprintConfig) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -259,7 +291,7 @@ func (obj *AddBlueprint200ResponseAllOfBlueprintConfig) GetActualInstance() (int
 }
 
 // Get the actual instance value
-func (obj AddBlueprint200ResponseAllOfBlueprintConfig) GetActualInstanceValue() (interface{}) {
+func (obj AddBlueprint200ResponseAllOfBlueprintConfig) GetActualInstanceValue() interface{} {
 	if obj.AddBlueprint200ResponseAllOfBlueprintConfigOneOf != nil {
 		return *obj.AddBlueprint200ResponseAllOfBlueprintConfigOneOf
 	}
@@ -323,5 +355,3 @@ func (v *NullableAddBlueprint200ResponseAllOfBlueprintConfig) UnmarshalJSON(src 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -20,9 +20,9 @@ var _ MappedNullable = &GetBillingServersIdentifier200Response{}
 
 // GetBillingServersIdentifier200Response struct for GetBillingServersIdentifier200Response
 type GetBillingServersIdentifier200Response struct {
-	BillingInfo *GetBillingServersIdentifier200ResponseAllOfBillingInfo `json:"billingInfo,omitempty"`
-	Success *bool `json:"success,omitempty"`
-	AdditionalProperties map[string]interface{}
+	BillingInfo          *GetBillingServersIdentifier200ResponseAllOfBillingInfo `json:"billingInfo,omitempty"`
+	Success              *bool                                                   `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{}                                  `json:",remain"`
 }
 
 type _GetBillingServersIdentifier200Response GetBillingServersIdentifier200Response
@@ -109,7 +109,7 @@ func (o *GetBillingServersIdentifier200Response) SetSuccess(v bool) {
 }
 
 func (o GetBillingServersIdentifier200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -131,63 +131,8 @@ func (o GetBillingServersIdentifier200Response) ToMap() (map[string]interface{},
 
 	return toSerialize, nil
 }
-
 func (o *GetBillingServersIdentifier200Response) UnmarshalJSON(data []byte) (err error) {
-	varGetBillingServersIdentifier200Response := _GetBillingServersIdentifier200Response{}
-
-	err = json.Unmarshal(data, &varGetBillingServersIdentifier200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetBillingServersIdentifier200Response(varGetBillingServersIdentifier200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "billingInfo")
-		delete(additionalProperties, "success")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetBillingServersIdentifier200Response struct {
-	value *GetBillingServersIdentifier200Response
-	isSet bool
-}
-
-func (v NullableGetBillingServersIdentifier200Response) Get() *GetBillingServersIdentifier200Response {
-	return v.value
-}
-
-func (v *NullableGetBillingServersIdentifier200Response) Set(val *GetBillingServersIdentifier200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetBillingServersIdentifier200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetBillingServersIdentifier200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetBillingServersIdentifier200Response(val *GetBillingServersIdentifier200Response) *NullableGetBillingServersIdentifier200Response {
-	return &NullableGetBillingServersIdentifier200Response{value: val, isSet: true}
-}
-
-func (v NullableGetBillingServersIdentifier200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetBillingServersIdentifier200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

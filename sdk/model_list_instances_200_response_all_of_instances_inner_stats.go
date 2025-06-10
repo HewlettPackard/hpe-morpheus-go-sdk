@@ -20,15 +20,15 @@ var _ MappedNullable = &ListInstances200ResponseAllOfInstancesInnerStats{}
 
 // ListInstances200ResponseAllOfInstancesInnerStats struct for ListInstances200ResponseAllOfInstancesInnerStats
 type ListInstances200ResponseAllOfInstancesInnerStats struct {
-	UsedStorage *int64 `json:"usedStorage,omitempty"`
-	MaxStorage *int64 `json:"maxStorage,omitempty"`
-	UsedMemory *int64 `json:"usedMemory,omitempty"`
-	MaxMemory *int64 `json:"maxMemory,omitempty"`
-	UsedCpu *float32 `json:"usedCpu,omitempty"`
-	CpuUsage *float32 `json:"cpuUsage,omitempty"`
-	CpuUsagePeak *float32 `json:"cpuUsagePeak,omitempty"`
-	CpuUsageAvg *float32 `json:"cpuUsageAvg,omitempty"`
-	AdditionalProperties map[string]interface{}
+	UsedStorage          *int64                 `json:"usedStorage,omitempty"`
+	MaxStorage           *int64                 `json:"maxStorage,omitempty"`
+	UsedMemory           *int64                 `json:"usedMemory,omitempty"`
+	MaxMemory            *int64                 `json:"maxMemory,omitempty"`
+	UsedCpu              *float32               `json:"usedCpu,omitempty"`
+	CpuUsage             *float32               `json:"cpuUsage,omitempty"`
+	CpuUsagePeak         *float32               `json:"cpuUsagePeak,omitempty"`
+	CpuUsageAvg          *float32               `json:"cpuUsageAvg,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListInstances200ResponseAllOfInstancesInnerStats ListInstances200ResponseAllOfInstancesInnerStats
@@ -307,7 +307,7 @@ func (o *ListInstances200ResponseAllOfInstancesInnerStats) SetCpuUsageAvg(v floa
 }
 
 func (o ListInstances200ResponseAllOfInstancesInnerStats) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -347,69 +347,8 @@ func (o ListInstances200ResponseAllOfInstancesInnerStats) ToMap() (map[string]in
 
 	return toSerialize, nil
 }
-
 func (o *ListInstances200ResponseAllOfInstancesInnerStats) UnmarshalJSON(data []byte) (err error) {
-	varListInstances200ResponseAllOfInstancesInnerStats := _ListInstances200ResponseAllOfInstancesInnerStats{}
-
-	err = json.Unmarshal(data, &varListInstances200ResponseAllOfInstancesInnerStats)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListInstances200ResponseAllOfInstancesInnerStats(varListInstances200ResponseAllOfInstancesInnerStats)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "usedStorage")
-		delete(additionalProperties, "maxStorage")
-		delete(additionalProperties, "usedMemory")
-		delete(additionalProperties, "maxMemory")
-		delete(additionalProperties, "usedCpu")
-		delete(additionalProperties, "cpuUsage")
-		delete(additionalProperties, "cpuUsagePeak")
-		delete(additionalProperties, "cpuUsageAvg")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListInstances200ResponseAllOfInstancesInnerStats struct {
-	value *ListInstances200ResponseAllOfInstancesInnerStats
-	isSet bool
-}
-
-func (v NullableListInstances200ResponseAllOfInstancesInnerStats) Get() *ListInstances200ResponseAllOfInstancesInnerStats {
-	return v.value
-}
-
-func (v *NullableListInstances200ResponseAllOfInstancesInnerStats) Set(val *ListInstances200ResponseAllOfInstancesInnerStats) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListInstances200ResponseAllOfInstancesInnerStats) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListInstances200ResponseAllOfInstancesInnerStats) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListInstances200ResponseAllOfInstancesInnerStats(val *ListInstances200ResponseAllOfInstancesInnerStats) *NullableListInstances200ResponseAllOfInstancesInnerStats {
-	return &NullableListInstances200ResponseAllOfInstancesInnerStats{value: val, isSet: true}
-}
-
-func (v NullableListInstances200ResponseAllOfInstancesInnerStats) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListInstances200ResponseAllOfInstancesInnerStats) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -20,8 +20,8 @@ var _ MappedNullable = &AddVDIApps200ResponseAnyOf{}
 
 // AddVDIApps200ResponseAnyOf struct for AddVDIApps200ResponseAnyOf
 type AddVDIApps200ResponseAnyOf struct {
-	VdiApp *ListVDIApps200ResponseAllOfVdiAppsInner `json:"vdiApp,omitempty"`
-	AdditionalProperties map[string]interface{}
+	VdiApp               *ListVDIApps200ResponseAllOfVdiAppsInner `json:"vdiApp,omitempty"`
+	AdditionalProperties map[string]interface{}                   `json:",remain"`
 }
 
 type _AddVDIApps200ResponseAnyOf AddVDIApps200ResponseAnyOf
@@ -76,7 +76,7 @@ func (o *AddVDIApps200ResponseAnyOf) SetVdiApp(v ListVDIApps200ResponseAllOfVdiA
 }
 
 func (o AddVDIApps200ResponseAnyOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o AddVDIApps200ResponseAnyOf) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *AddVDIApps200ResponseAnyOf) UnmarshalJSON(data []byte) (err error) {
-	varAddVDIApps200ResponseAnyOf := _AddVDIApps200ResponseAnyOf{}
-
-	err = json.Unmarshal(data, &varAddVDIApps200ResponseAnyOf)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddVDIApps200ResponseAnyOf(varAddVDIApps200ResponseAnyOf)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "vdiApp")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddVDIApps200ResponseAnyOf struct {
-	value *AddVDIApps200ResponseAnyOf
-	isSet bool
-}
-
-func (v NullableAddVDIApps200ResponseAnyOf) Get() *AddVDIApps200ResponseAnyOf {
-	return v.value
-}
-
-func (v *NullableAddVDIApps200ResponseAnyOf) Set(val *AddVDIApps200ResponseAnyOf) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddVDIApps200ResponseAnyOf) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddVDIApps200ResponseAnyOf) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddVDIApps200ResponseAnyOf(val *AddVDIApps200ResponseAnyOf) *NullableAddVDIApps200ResponseAnyOf {
-	return &NullableAddVDIApps200ResponseAnyOf{value: val, isSet: true}
-}
-
-func (v NullableAddVDIApps200ResponseAnyOf) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddVDIApps200ResponseAnyOf) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

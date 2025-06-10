@@ -18,10 +18,10 @@ import (
 // checks if the UpdateNetworkRouterFirewallRuleRequest type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &UpdateNetworkRouterFirewallRuleRequest{}
 
-// UpdateNetworkRouterFirewallRuleRequest The parameters for updating a network router is type dependent. The following lists the common parameters. See get a specific type to list available options for that network router type. 
+// UpdateNetworkRouterFirewallRuleRequest The parameters for updating a network router is type dependent. The following lists the common parameters. See get a specific type to list available options for that network router type.
 type UpdateNetworkRouterFirewallRuleRequest struct {
-	Rule *CreateNetworkRouterFirewallRuleRequestRule `json:"rule,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Rule                 *CreateNetworkRouterFirewallRuleRequestRule `json:"rule,omitempty"`
+	AdditionalProperties map[string]interface{}                      `json:",remain"`
 }
 
 type _UpdateNetworkRouterFirewallRuleRequest UpdateNetworkRouterFirewallRuleRequest
@@ -76,7 +76,7 @@ func (o *UpdateNetworkRouterFirewallRuleRequest) SetRule(v CreateNetworkRouterFi
 }
 
 func (o UpdateNetworkRouterFirewallRuleRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o UpdateNetworkRouterFirewallRuleRequest) ToMap() (map[string]interface{},
 
 	return toSerialize, nil
 }
-
 func (o *UpdateNetworkRouterFirewallRuleRequest) UnmarshalJSON(data []byte) (err error) {
-	varUpdateNetworkRouterFirewallRuleRequest := _UpdateNetworkRouterFirewallRuleRequest{}
-
-	err = json.Unmarshal(data, &varUpdateNetworkRouterFirewallRuleRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateNetworkRouterFirewallRuleRequest(varUpdateNetworkRouterFirewallRuleRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "rule")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateNetworkRouterFirewallRuleRequest struct {
-	value *UpdateNetworkRouterFirewallRuleRequest
-	isSet bool
-}
-
-func (v NullableUpdateNetworkRouterFirewallRuleRequest) Get() *UpdateNetworkRouterFirewallRuleRequest {
-	return v.value
-}
-
-func (v *NullableUpdateNetworkRouterFirewallRuleRequest) Set(val *UpdateNetworkRouterFirewallRuleRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateNetworkRouterFirewallRuleRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateNetworkRouterFirewallRuleRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateNetworkRouterFirewallRuleRequest(val *UpdateNetworkRouterFirewallRuleRequest) *NullableUpdateNetworkRouterFirewallRuleRequest {
-	return &NullableUpdateNetworkRouterFirewallRuleRequest{value: val, isSet: true}
-}
-
-func (v NullableUpdateNetworkRouterFirewallRuleRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateNetworkRouterFirewallRuleRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

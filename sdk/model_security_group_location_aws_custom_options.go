@@ -21,8 +21,8 @@ var _ MappedNullable = &SecurityGroupLocationAwsCustomOptions{}
 // SecurityGroupLocationAwsCustomOptions struct for SecurityGroupLocationAwsCustomOptions
 type SecurityGroupLocationAwsCustomOptions struct {
 	// External ID of Amazon VPC
-	Vpc *string `json:"vpc,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Vpc                  *string                `json:"vpc,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _SecurityGroupLocationAwsCustomOptions SecurityGroupLocationAwsCustomOptions
@@ -77,7 +77,7 @@ func (o *SecurityGroupLocationAwsCustomOptions) SetVpc(v string) {
 }
 
 func (o SecurityGroupLocationAwsCustomOptions) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -96,62 +96,8 @@ func (o SecurityGroupLocationAwsCustomOptions) ToMap() (map[string]interface{}, 
 
 	return toSerialize, nil
 }
-
 func (o *SecurityGroupLocationAwsCustomOptions) UnmarshalJSON(data []byte) (err error) {
-	varSecurityGroupLocationAwsCustomOptions := _SecurityGroupLocationAwsCustomOptions{}
-
-	err = json.Unmarshal(data, &varSecurityGroupLocationAwsCustomOptions)
-
-	if err != nil {
-		return err
-	}
-
-	*o = SecurityGroupLocationAwsCustomOptions(varSecurityGroupLocationAwsCustomOptions)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "vpc")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableSecurityGroupLocationAwsCustomOptions struct {
-	value *SecurityGroupLocationAwsCustomOptions
-	isSet bool
-}
-
-func (v NullableSecurityGroupLocationAwsCustomOptions) Get() *SecurityGroupLocationAwsCustomOptions {
-	return v.value
-}
-
-func (v *NullableSecurityGroupLocationAwsCustomOptions) Set(val *SecurityGroupLocationAwsCustomOptions) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSecurityGroupLocationAwsCustomOptions) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSecurityGroupLocationAwsCustomOptions) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSecurityGroupLocationAwsCustomOptions(val *SecurityGroupLocationAwsCustomOptions) *NullableSecurityGroupLocationAwsCustomOptions {
-	return &NullableSecurityGroupLocationAwsCustomOptions{value: val, isSet: true}
-}
-
-func (v NullableSecurityGroupLocationAwsCustomOptions) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSecurityGroupLocationAwsCustomOptions) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

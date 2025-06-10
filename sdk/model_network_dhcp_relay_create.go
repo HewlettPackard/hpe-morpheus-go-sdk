@@ -20,9 +20,9 @@ var _ MappedNullable = &NetworkDhcpRelayCreate{}
 
 // NetworkDhcpRelayCreate struct for NetworkDhcpRelayCreate
 type NetworkDhcpRelayCreate struct {
-	Name *string `json:"name,omitempty"`
-	ServerIpAddresses []string `json:"serverIpAddresses,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Name                 *string                `json:"name,omitempty"`
+	ServerIpAddresses    []string               `json:"serverIpAddresses,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _NetworkDhcpRelayCreate NetworkDhcpRelayCreate
@@ -109,7 +109,7 @@ func (o *NetworkDhcpRelayCreate) SetServerIpAddresses(v []string) {
 }
 
 func (o NetworkDhcpRelayCreate) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -131,63 +131,8 @@ func (o NetworkDhcpRelayCreate) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *NetworkDhcpRelayCreate) UnmarshalJSON(data []byte) (err error) {
-	varNetworkDhcpRelayCreate := _NetworkDhcpRelayCreate{}
-
-	err = json.Unmarshal(data, &varNetworkDhcpRelayCreate)
-
-	if err != nil {
-		return err
-	}
-
-	*o = NetworkDhcpRelayCreate(varNetworkDhcpRelayCreate)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "serverIpAddresses")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableNetworkDhcpRelayCreate struct {
-	value *NetworkDhcpRelayCreate
-	isSet bool
-}
-
-func (v NullableNetworkDhcpRelayCreate) Get() *NetworkDhcpRelayCreate {
-	return v.value
-}
-
-func (v *NullableNetworkDhcpRelayCreate) Set(val *NetworkDhcpRelayCreate) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableNetworkDhcpRelayCreate) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableNetworkDhcpRelayCreate) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableNetworkDhcpRelayCreate(val *NetworkDhcpRelayCreate) *NullableNetworkDhcpRelayCreate {
-	return &NullableNetworkDhcpRelayCreate{value: val, isSet: true}
-}
-
-func (v NullableNetworkDhcpRelayCreate) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableNetworkDhcpRelayCreate) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

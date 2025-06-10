@@ -20,10 +20,10 @@ var _ MappedNullable = &ListOptionLists200ResponseAllOfOptionTypesInnerConfigSou
 
 // ListOptionLists200ResponseAllOfOptionTypesInnerConfigSourceHeadersInner struct for ListOptionLists200ResponseAllOfOptionTypesInnerConfigSourceHeadersInner
 type ListOptionLists200ResponseAllOfOptionTypesInnerConfigSourceHeadersInner struct {
-	Name *string `json:"name,omitempty"`
-	Value *string `json:"value,omitempty"`
-	Masked *string `json:"masked,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Name                 *string                `json:"name,omitempty"`
+	Value                *string                `json:"value,omitempty"`
+	Masked               *string                `json:"masked,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListOptionLists200ResponseAllOfOptionTypesInnerConfigSourceHeadersInner ListOptionLists200ResponseAllOfOptionTypesInnerConfigSourceHeadersInner
@@ -142,7 +142,7 @@ func (o *ListOptionLists200ResponseAllOfOptionTypesInnerConfigSourceHeadersInner
 }
 
 func (o ListOptionLists200ResponseAllOfOptionTypesInnerConfigSourceHeadersInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -167,64 +167,8 @@ func (o ListOptionLists200ResponseAllOfOptionTypesInnerConfigSourceHeadersInner)
 
 	return toSerialize, nil
 }
-
 func (o *ListOptionLists200ResponseAllOfOptionTypesInnerConfigSourceHeadersInner) UnmarshalJSON(data []byte) (err error) {
-	varListOptionLists200ResponseAllOfOptionTypesInnerConfigSourceHeadersInner := _ListOptionLists200ResponseAllOfOptionTypesInnerConfigSourceHeadersInner{}
-
-	err = json.Unmarshal(data, &varListOptionLists200ResponseAllOfOptionTypesInnerConfigSourceHeadersInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListOptionLists200ResponseAllOfOptionTypesInnerConfigSourceHeadersInner(varListOptionLists200ResponseAllOfOptionTypesInnerConfigSourceHeadersInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "value")
-		delete(additionalProperties, "masked")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListOptionLists200ResponseAllOfOptionTypesInnerConfigSourceHeadersInner struct {
-	value *ListOptionLists200ResponseAllOfOptionTypesInnerConfigSourceHeadersInner
-	isSet bool
-}
-
-func (v NullableListOptionLists200ResponseAllOfOptionTypesInnerConfigSourceHeadersInner) Get() *ListOptionLists200ResponseAllOfOptionTypesInnerConfigSourceHeadersInner {
-	return v.value
-}
-
-func (v *NullableListOptionLists200ResponseAllOfOptionTypesInnerConfigSourceHeadersInner) Set(val *ListOptionLists200ResponseAllOfOptionTypesInnerConfigSourceHeadersInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListOptionLists200ResponseAllOfOptionTypesInnerConfigSourceHeadersInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListOptionLists200ResponseAllOfOptionTypesInnerConfigSourceHeadersInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListOptionLists200ResponseAllOfOptionTypesInnerConfigSourceHeadersInner(val *ListOptionLists200ResponseAllOfOptionTypesInnerConfigSourceHeadersInner) *NullableListOptionLists200ResponseAllOfOptionTypesInnerConfigSourceHeadersInner {
-	return &NullableListOptionLists200ResponseAllOfOptionTypesInnerConfigSourceHeadersInner{value: val, isSet: true}
-}
-
-func (v NullableListOptionLists200ResponseAllOfOptionTypesInnerConfigSourceHeadersInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListOptionLists200ResponseAllOfOptionTypesInnerConfigSourceHeadersInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

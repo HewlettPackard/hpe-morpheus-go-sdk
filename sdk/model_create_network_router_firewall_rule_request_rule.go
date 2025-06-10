@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the CreateNetworkRouterFirewallRuleRequestRule type satisfies the MappedNullable interface at compile time
@@ -26,8 +25,8 @@ type CreateNetworkRouterFirewallRuleRequestRule struct {
 	// Can be used to enable / disable the rule (true, false). Default is on
 	Enabled *bool `json:"enabled,omitempty"`
 	// Priority for rule
-	Priority *int64 `json:"priority,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Priority             *int64                 `json:"priority,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _CreateNetworkRouterFirewallRuleRequestRule CreateNetworkRouterFirewallRuleRequestRule
@@ -143,7 +142,7 @@ func (o *CreateNetworkRouterFirewallRuleRequestRule) SetPriority(v int64) {
 }
 
 func (o CreateNetworkRouterFirewallRuleRequestRule) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -166,85 +165,8 @@ func (o CreateNetworkRouterFirewallRuleRequestRule) ToMap() (map[string]interfac
 
 	return toSerialize, nil
 }
-
 func (o *CreateNetworkRouterFirewallRuleRequestRule) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"name",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varCreateNetworkRouterFirewallRuleRequestRule := _CreateNetworkRouterFirewallRuleRequestRule{}
-
-	err = json.Unmarshal(data, &varCreateNetworkRouterFirewallRuleRequestRule)
-
-	if err != nil {
-		return err
-	}
-
-	*o = CreateNetworkRouterFirewallRuleRequestRule(varCreateNetworkRouterFirewallRuleRequestRule)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "priority")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableCreateNetworkRouterFirewallRuleRequestRule struct {
-	value *CreateNetworkRouterFirewallRuleRequestRule
-	isSet bool
-}
-
-func (v NullableCreateNetworkRouterFirewallRuleRequestRule) Get() *CreateNetworkRouterFirewallRuleRequestRule {
-	return v.value
-}
-
-func (v *NullableCreateNetworkRouterFirewallRuleRequestRule) Set(val *CreateNetworkRouterFirewallRuleRequestRule) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableCreateNetworkRouterFirewallRuleRequestRule) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableCreateNetworkRouterFirewallRuleRequestRule) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableCreateNetworkRouterFirewallRuleRequestRule(val *CreateNetworkRouterFirewallRuleRequestRule) *NullableCreateNetworkRouterFirewallRuleRequestRule {
-	return &NullableCreateNetworkRouterFirewallRuleRequestRule{value: val, isSet: true}
-}
-
-func (v NullableCreateNetworkRouterFirewallRuleRequestRule) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableCreateNetworkRouterFirewallRuleRequestRule) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

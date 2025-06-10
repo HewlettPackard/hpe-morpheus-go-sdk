@@ -20,29 +20,29 @@ var _ MappedNullable = &ListClusterTypes200ResponseAllOfClusterTypesInner{}
 
 // ListClusterTypes200ResponseAllOfClusterTypesInner struct for ListClusterTypes200ResponseAllOfClusterTypesInner
 type ListClusterTypes200ResponseAllOfClusterTypesInner struct {
-	Id *int64 `json:"id,omitempty"`
-	DeployTargetService *string `json:"deployTargetService,omitempty"`
-	ShortName *string `json:"shortName,omitempty"`
-	ProviderType *string `json:"providerType,omitempty"`
-	Code *string `json:"code,omitempty"`
-	HostService *string `json:"hostService,omitempty"`
-	Managed *bool `json:"managed,omitempty"`
-	HasMasters *bool `json:"hasMasters,omitempty"`
-	HasWorkers *bool `json:"hasWorkers,omitempty"`
-	ViewSet *string `json:"viewSet,omitempty"`
-	ImageCode *string `json:"imageCode,omitempty"`
-	KubeCtlLocal *bool `json:"kubeCtlLocal,omitempty"`
-	HasDatastore *bool `json:"hasDatastore,omitempty"`
-	SupportsCloudScaling *bool `json:"supportsCloudScaling,omitempty"`
-	Name *string `json:"name,omitempty"`
-	HasDefaultDataDisk *bool `json:"hasDefaultDataDisk,omitempty"`
-	CanManage *bool `json:"canManage,omitempty"`
-	HasCluster *bool `json:"hasCluster,omitempty"`
-	Description *string `json:"description,omitempty"`
-	OptionTypes []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
-	ControllerTypes []ListClusterTypes200ResponseAllOfClusterTypesInnerControllerTypesInner `json:"controllerTypes,omitempty"`
-	WorkerTypes []ListClusterTypes200ResponseAllOfClusterTypesInnerControllerTypesInner `json:"workerTypes,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                                      `json:"id,omitempty"`
+	DeployTargetService  *string                                                                     `json:"deployTargetService,omitempty"`
+	ShortName            *string                                                                     `json:"shortName,omitempty"`
+	ProviderType         *string                                                                     `json:"providerType,omitempty"`
+	Code                 *string                                                                     `json:"code,omitempty"`
+	HostService          *string                                                                     `json:"hostService,omitempty"`
+	Managed              *bool                                                                       `json:"managed,omitempty"`
+	HasMasters           *bool                                                                       `json:"hasMasters,omitempty"`
+	HasWorkers           *bool                                                                       `json:"hasWorkers,omitempty"`
+	ViewSet              *string                                                                     `json:"viewSet,omitempty"`
+	ImageCode            *string                                                                     `json:"imageCode,omitempty"`
+	KubeCtlLocal         *bool                                                                       `json:"kubeCtlLocal,omitempty"`
+	HasDatastore         *bool                                                                       `json:"hasDatastore,omitempty"`
+	SupportsCloudScaling *bool                                                                       `json:"supportsCloudScaling,omitempty"`
+	Name                 *string                                                                     `json:"name,omitempty"`
+	HasDefaultDataDisk   *bool                                                                       `json:"hasDefaultDataDisk,omitempty"`
+	CanManage            *bool                                                                       `json:"canManage,omitempty"`
+	HasCluster           *bool                                                                       `json:"hasCluster,omitempty"`
+	Description          *string                                                                     `json:"description,omitempty"`
+	OptionTypes          []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
+	ControllerTypes      []ListClusterTypes200ResponseAllOfClusterTypesInnerControllerTypesInner     `json:"controllerTypes,omitempty"`
+	WorkerTypes          []ListClusterTypes200ResponseAllOfClusterTypesInnerControllerTypesInner     `json:"workerTypes,omitempty"`
+	AdditionalProperties map[string]interface{}                                                      `json:",remain"`
 }
 
 type _ListClusterTypes200ResponseAllOfClusterTypesInner ListClusterTypes200ResponseAllOfClusterTypesInner
@@ -769,7 +769,7 @@ func (o *ListClusterTypes200ResponseAllOfClusterTypesInner) SetWorkerTypes(v []L
 }
 
 func (o ListClusterTypes200ResponseAllOfClusterTypesInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -851,83 +851,8 @@ func (o ListClusterTypes200ResponseAllOfClusterTypesInner) ToMap() (map[string]i
 
 	return toSerialize, nil
 }
-
 func (o *ListClusterTypes200ResponseAllOfClusterTypesInner) UnmarshalJSON(data []byte) (err error) {
-	varListClusterTypes200ResponseAllOfClusterTypesInner := _ListClusterTypes200ResponseAllOfClusterTypesInner{}
-
-	err = json.Unmarshal(data, &varListClusterTypes200ResponseAllOfClusterTypesInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListClusterTypes200ResponseAllOfClusterTypesInner(varListClusterTypes200ResponseAllOfClusterTypesInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "deployTargetService")
-		delete(additionalProperties, "shortName")
-		delete(additionalProperties, "providerType")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "hostService")
-		delete(additionalProperties, "managed")
-		delete(additionalProperties, "hasMasters")
-		delete(additionalProperties, "hasWorkers")
-		delete(additionalProperties, "viewSet")
-		delete(additionalProperties, "imageCode")
-		delete(additionalProperties, "kubeCtlLocal")
-		delete(additionalProperties, "hasDatastore")
-		delete(additionalProperties, "supportsCloudScaling")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "hasDefaultDataDisk")
-		delete(additionalProperties, "canManage")
-		delete(additionalProperties, "hasCluster")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "optionTypes")
-		delete(additionalProperties, "controllerTypes")
-		delete(additionalProperties, "workerTypes")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListClusterTypes200ResponseAllOfClusterTypesInner struct {
-	value *ListClusterTypes200ResponseAllOfClusterTypesInner
-	isSet bool
-}
-
-func (v NullableListClusterTypes200ResponseAllOfClusterTypesInner) Get() *ListClusterTypes200ResponseAllOfClusterTypesInner {
-	return v.value
-}
-
-func (v *NullableListClusterTypes200ResponseAllOfClusterTypesInner) Set(val *ListClusterTypes200ResponseAllOfClusterTypesInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListClusterTypes200ResponseAllOfClusterTypesInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListClusterTypes200ResponseAllOfClusterTypesInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListClusterTypes200ResponseAllOfClusterTypesInner(val *ListClusterTypes200ResponseAllOfClusterTypesInner) *NullableListClusterTypes200ResponseAllOfClusterTypesInner {
-	return &NullableListClusterTypes200ResponseAllOfClusterTypesInner{value: val, isSet: true}
-}
-
-func (v NullableListClusterTypes200ResponseAllOfClusterTypesInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListClusterTypes200ResponseAllOfClusterTypesInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -37,8 +37,8 @@ type AddIntegrationsRequestOneOf1IntegrationConfig struct {
 	// Use Morpheus Agent Command Bus
 	AnsibleCommandBus *bool `json:"ansibleCommandBus,omitempty"`
 	// Enable Git repository caching
-	CacheEnabled *bool `json:"cacheEnabled,omitempty"`
-	AdditionalProperties map[string]interface{}
+	CacheEnabled         *bool                  `json:"cacheEnabled,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddIntegrationsRequestOneOf1IntegrationConfig AddIntegrationsRequestOneOf1IntegrationConfig
@@ -349,7 +349,7 @@ func (o *AddIntegrationsRequestOneOf1IntegrationConfig) SetCacheEnabled(v bool) 
 }
 
 func (o AddIntegrationsRequestOneOf1IntegrationConfig) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -392,70 +392,8 @@ func (o AddIntegrationsRequestOneOf1IntegrationConfig) ToMap() (map[string]inter
 
 	return toSerialize, nil
 }
-
 func (o *AddIntegrationsRequestOneOf1IntegrationConfig) UnmarshalJSON(data []byte) (err error) {
-	varAddIntegrationsRequestOneOf1IntegrationConfig := _AddIntegrationsRequestOneOf1IntegrationConfig{}
-
-	err = json.Unmarshal(data, &varAddIntegrationsRequestOneOf1IntegrationConfig)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddIntegrationsRequestOneOf1IntegrationConfig(varAddIntegrationsRequestOneOf1IntegrationConfig)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "defaultBranch")
-		delete(additionalProperties, "ansiblePlaybooks")
-		delete(additionalProperties, "ansibleRoles")
-		delete(additionalProperties, "ansibleGroupVars")
-		delete(additionalProperties, "ansibleHostVars")
-		delete(additionalProperties, "ansibleGalaxyEnabled")
-		delete(additionalProperties, "ansibleVerbose")
-		delete(additionalProperties, "ansibleCommandBus")
-		delete(additionalProperties, "cacheEnabled")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddIntegrationsRequestOneOf1IntegrationConfig struct {
-	value *AddIntegrationsRequestOneOf1IntegrationConfig
-	isSet bool
-}
-
-func (v NullableAddIntegrationsRequestOneOf1IntegrationConfig) Get() *AddIntegrationsRequestOneOf1IntegrationConfig {
-	return v.value
-}
-
-func (v *NullableAddIntegrationsRequestOneOf1IntegrationConfig) Set(val *AddIntegrationsRequestOneOf1IntegrationConfig) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddIntegrationsRequestOneOf1IntegrationConfig) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddIntegrationsRequestOneOf1IntegrationConfig) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddIntegrationsRequestOneOf1IntegrationConfig(val *AddIntegrationsRequestOneOf1IntegrationConfig) *NullableAddIntegrationsRequestOneOf1IntegrationConfig {
-	return &NullableAddIntegrationsRequestOneOf1IntegrationConfig{value: val, isSet: true}
-}
-
-func (v NullableAddIntegrationsRequestOneOf1IntegrationConfig) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddIntegrationsRequestOneOf1IntegrationConfig) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

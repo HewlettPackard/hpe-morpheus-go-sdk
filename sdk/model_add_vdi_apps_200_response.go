@@ -19,18 +19,33 @@ import (
 // very silly way of avoiding `"fmt" imported and not used` errors
 var _ fmt.Stringer
 
-
 // AddVDIApps200Response struct for AddVDIApps200Response
 type AddVDIApps200Response struct {
 	AddVDIApps200ResponseAnyOf *AddVDIApps200ResponseAnyOf
-	DeleteAlerts200Response *DeleteAlerts200Response
+	DeleteAlerts200Response    *DeleteAlerts200Response
+}
+
+func (dst *AddVDIApps200Response) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &AddVDIApps200Response{}
+	}
+
+	if out, ok := data.(AddVDIApps200ResponseAnyOf); ok {
+		dst.AddVDIApps200ResponseAnyOf = &out
+	}
+
+	if out, ok := data.(DeleteAlerts200Response); ok {
+		dst.DeleteAlerts200Response = &out
+	}
+
+	return dst, nil
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *AddVDIApps200Response) UnmarshalJSON(data []byte) error {
 	var err error
 	// try to unmarshal JSON data into AddVDIApps200ResponseAnyOf
-	err = json.Unmarshal(data, &dst.AddVDIApps200ResponseAnyOf);
+	err = json.Unmarshal(data, &dst.AddVDIApps200ResponseAnyOf)
 	if err == nil {
 		jsonAddVDIApps200ResponseAnyOf, _ := json.Marshal(dst.AddVDIApps200ResponseAnyOf)
 		if string(jsonAddVDIApps200ResponseAnyOf) == "{}" { // empty struct
@@ -43,7 +58,7 @@ func (dst *AddVDIApps200Response) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal JSON data into DeleteAlerts200Response
-	err = json.Unmarshal(data, &dst.DeleteAlerts200Response);
+	err = json.Unmarshal(data, &dst.DeleteAlerts200Response)
 	if err == nil {
 		jsonDeleteAlerts200Response, _ := json.Marshal(dst.DeleteAlerts200Response)
 		if string(jsonDeleteAlerts200Response) == "{}" { // empty struct
@@ -70,7 +85,6 @@ func (src AddVDIApps200Response) MarshalJSON() ([]byte, error) {
 
 	return nil, nil // no data in anyOf schemas
 }
-
 
 type NullableAddVDIApps200Response struct {
 	value *AddVDIApps200Response
@@ -107,5 +121,3 @@ func (v *NullableAddVDIApps200Response) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

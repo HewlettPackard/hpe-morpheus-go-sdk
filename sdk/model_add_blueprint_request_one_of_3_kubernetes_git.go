@@ -27,8 +27,8 @@ type AddBlueprintRequestOneOf3KubernetesGit struct {
 	// Morpheus SCM Integration ID
 	IntegrationId *int64 `json:"integrationId,omitempty"`
 	// Branch Name
-	Branch *string `json:"branch,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Branch               *string                `json:"branch,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddBlueprintRequestOneOf3KubernetesGit AddBlueprintRequestOneOf3KubernetesGit
@@ -179,7 +179,7 @@ func (o *AddBlueprintRequestOneOf3KubernetesGit) SetBranch(v string) {
 }
 
 func (o AddBlueprintRequestOneOf3KubernetesGit) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -207,65 +207,8 @@ func (o AddBlueprintRequestOneOf3KubernetesGit) ToMap() (map[string]interface{},
 
 	return toSerialize, nil
 }
-
 func (o *AddBlueprintRequestOneOf3KubernetesGit) UnmarshalJSON(data []byte) (err error) {
-	varAddBlueprintRequestOneOf3KubernetesGit := _AddBlueprintRequestOneOf3KubernetesGit{}
-
-	err = json.Unmarshal(data, &varAddBlueprintRequestOneOf3KubernetesGit)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddBlueprintRequestOneOf3KubernetesGit(varAddBlueprintRequestOneOf3KubernetesGit)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "repoId")
-		delete(additionalProperties, "path")
-		delete(additionalProperties, "integrationId")
-		delete(additionalProperties, "branch")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddBlueprintRequestOneOf3KubernetesGit struct {
-	value *AddBlueprintRequestOneOf3KubernetesGit
-	isSet bool
-}
-
-func (v NullableAddBlueprintRequestOneOf3KubernetesGit) Get() *AddBlueprintRequestOneOf3KubernetesGit {
-	return v.value
-}
-
-func (v *NullableAddBlueprintRequestOneOf3KubernetesGit) Set(val *AddBlueprintRequestOneOf3KubernetesGit) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddBlueprintRequestOneOf3KubernetesGit) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddBlueprintRequestOneOf3KubernetesGit) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddBlueprintRequestOneOf3KubernetesGit(val *AddBlueprintRequestOneOf3KubernetesGit) *NullableAddBlueprintRequestOneOf3KubernetesGit {
-	return &NullableAddBlueprintRequestOneOf3KubernetesGit{value: val, isSet: true}
-}
-
-func (v NullableAddBlueprintRequestOneOf3KubernetesGit) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddBlueprintRequestOneOf3KubernetesGit) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

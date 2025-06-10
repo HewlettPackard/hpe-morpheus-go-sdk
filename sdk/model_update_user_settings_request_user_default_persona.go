@@ -21,8 +21,8 @@ var _ MappedNullable = &UpdateUserSettingsRequestUserDefaultPersona{}
 // UpdateUserSettingsRequestUserDefaultPersona struct for UpdateUserSettingsRequestUserDefaultPersona
 type UpdateUserSettingsRequestUserDefaultPersona struct {
 	// Default Persona code
-	Code *string `json:"code,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Code                 *string                `json:"code,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _UpdateUserSettingsRequestUserDefaultPersona UpdateUserSettingsRequestUserDefaultPersona
@@ -77,7 +77,7 @@ func (o *UpdateUserSettingsRequestUserDefaultPersona) SetCode(v string) {
 }
 
 func (o UpdateUserSettingsRequestUserDefaultPersona) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -96,62 +96,8 @@ func (o UpdateUserSettingsRequestUserDefaultPersona) ToMap() (map[string]interfa
 
 	return toSerialize, nil
 }
-
 func (o *UpdateUserSettingsRequestUserDefaultPersona) UnmarshalJSON(data []byte) (err error) {
-	varUpdateUserSettingsRequestUserDefaultPersona := _UpdateUserSettingsRequestUserDefaultPersona{}
-
-	err = json.Unmarshal(data, &varUpdateUserSettingsRequestUserDefaultPersona)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateUserSettingsRequestUserDefaultPersona(varUpdateUserSettingsRequestUserDefaultPersona)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "code")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateUserSettingsRequestUserDefaultPersona struct {
-	value *UpdateUserSettingsRequestUserDefaultPersona
-	isSet bool
-}
-
-func (v NullableUpdateUserSettingsRequestUserDefaultPersona) Get() *UpdateUserSettingsRequestUserDefaultPersona {
-	return v.value
-}
-
-func (v *NullableUpdateUserSettingsRequestUserDefaultPersona) Set(val *UpdateUserSettingsRequestUserDefaultPersona) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateUserSettingsRequestUserDefaultPersona) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateUserSettingsRequestUserDefaultPersona) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateUserSettingsRequestUserDefaultPersona(val *UpdateUserSettingsRequestUserDefaultPersona) *NullableUpdateUserSettingsRequestUserDefaultPersona {
-	return &NullableUpdateUserSettingsRequestUserDefaultPersona{value: val, isSet: true}
-}
-
-func (v NullableUpdateUserSettingsRequestUserDefaultPersona) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateUserSettingsRequestUserDefaultPersona) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

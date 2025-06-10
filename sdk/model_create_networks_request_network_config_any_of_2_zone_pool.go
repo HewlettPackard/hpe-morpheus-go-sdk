@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the CreateNetworksRequestNetworkConfigAnyOf2ZonePool type satisfies the MappedNullable interface at compile time
@@ -22,8 +21,8 @@ var _ MappedNullable = &CreateNetworksRequestNetworkConfigAnyOf2ZonePool{}
 // CreateNetworksRequestNetworkConfigAnyOf2ZonePool struct for CreateNetworksRequestNetworkConfigAnyOf2ZonePool
 type CreateNetworksRequestNetworkConfigAnyOf2ZonePool struct {
 	// Morpheus resource pool ID of the GCP Project for the network.
-	Id int32 `json:"id"`
-	AdditionalProperties map[string]interface{}
+	Id                   int32                  `json:"id"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _CreateNetworksRequestNetworkConfigAnyOf2ZonePool CreateNetworksRequestNetworkConfigAnyOf2ZonePool
@@ -71,7 +70,7 @@ func (o *CreateNetworksRequestNetworkConfigAnyOf2ZonePool) SetId(v int32) {
 }
 
 func (o CreateNetworksRequestNetworkConfigAnyOf2ZonePool) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -88,83 +87,8 @@ func (o CreateNetworksRequestNetworkConfigAnyOf2ZonePool) ToMap() (map[string]in
 
 	return toSerialize, nil
 }
-
 func (o *CreateNetworksRequestNetworkConfigAnyOf2ZonePool) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"id",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varCreateNetworksRequestNetworkConfigAnyOf2ZonePool := _CreateNetworksRequestNetworkConfigAnyOf2ZonePool{}
-
-	err = json.Unmarshal(data, &varCreateNetworksRequestNetworkConfigAnyOf2ZonePool)
-
-	if err != nil {
-		return err
-	}
-
-	*o = CreateNetworksRequestNetworkConfigAnyOf2ZonePool(varCreateNetworksRequestNetworkConfigAnyOf2ZonePool)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableCreateNetworksRequestNetworkConfigAnyOf2ZonePool struct {
-	value *CreateNetworksRequestNetworkConfigAnyOf2ZonePool
-	isSet bool
-}
-
-func (v NullableCreateNetworksRequestNetworkConfigAnyOf2ZonePool) Get() *CreateNetworksRequestNetworkConfigAnyOf2ZonePool {
-	return v.value
-}
-
-func (v *NullableCreateNetworksRequestNetworkConfigAnyOf2ZonePool) Set(val *CreateNetworksRequestNetworkConfigAnyOf2ZonePool) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableCreateNetworksRequestNetworkConfigAnyOf2ZonePool) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableCreateNetworksRequestNetworkConfigAnyOf2ZonePool) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableCreateNetworksRequestNetworkConfigAnyOf2ZonePool(val *CreateNetworksRequestNetworkConfigAnyOf2ZonePool) *NullableCreateNetworksRequestNetworkConfigAnyOf2ZonePool {
-	return &NullableCreateNetworksRequestNetworkConfigAnyOf2ZonePool{value: val, isSet: true}
-}
-
-func (v NullableCreateNetworksRequestNetworkConfigAnyOf2ZonePool) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableCreateNetworksRequestNetworkConfigAnyOf2ZonePool) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

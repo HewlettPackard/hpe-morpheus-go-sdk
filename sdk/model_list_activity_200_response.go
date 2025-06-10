@@ -20,9 +20,9 @@ var _ MappedNullable = &ListActivity200Response{}
 
 // ListActivity200Response struct for ListActivity200Response
 type ListActivity200Response struct {
-	Activity []ListActivity200ResponseAllOfActivityInner `json:"activity,omitempty"`
-	Meta *ListActivity200ResponseAllOfMeta `json:"meta,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Activity             []ListActivity200ResponseAllOfActivityInner `json:"activity,omitempty"`
+	Meta                 *ListActivity200ResponseAllOfMeta           `json:"meta,omitempty"`
+	AdditionalProperties map[string]interface{}                      `json:",remain"`
 }
 
 type _ListActivity200Response ListActivity200Response
@@ -109,7 +109,7 @@ func (o *ListActivity200Response) SetMeta(v ListActivity200ResponseAllOfMeta) {
 }
 
 func (o ListActivity200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -131,63 +131,8 @@ func (o ListActivity200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *ListActivity200Response) UnmarshalJSON(data []byte) (err error) {
-	varListActivity200Response := _ListActivity200Response{}
-
-	err = json.Unmarshal(data, &varListActivity200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListActivity200Response(varListActivity200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "activity")
-		delete(additionalProperties, "meta")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListActivity200Response struct {
-	value *ListActivity200Response
-	isSet bool
-}
-
-func (v NullableListActivity200Response) Get() *ListActivity200Response {
-	return v.value
-}
-
-func (v *NullableListActivity200Response) Set(val *ListActivity200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListActivity200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListActivity200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListActivity200Response(val *ListActivity200Response) *NullableListActivity200Response {
-	return &NullableListActivity200Response{value: val, isSet: true}
-}
-
-func (v NullableListActivity200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListActivity200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -20,8 +20,8 @@ var _ MappedNullable = &UpdateEmailTemplateRequest{}
 
 // UpdateEmailTemplateRequest struct for UpdateEmailTemplateRequest
 type UpdateEmailTemplateRequest struct {
-	Policy *ListEmailTemplates200ResponseAllOfEmailTemplatesInner `json:"policy,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Policy               *ListEmailTemplates200ResponseAllOfEmailTemplatesInner `json:"policy,omitempty"`
+	AdditionalProperties map[string]interface{}                                 `json:",remain"`
 }
 
 type _UpdateEmailTemplateRequest UpdateEmailTemplateRequest
@@ -76,7 +76,7 @@ func (o *UpdateEmailTemplateRequest) SetPolicy(v ListEmailTemplates200ResponseAl
 }
 
 func (o UpdateEmailTemplateRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o UpdateEmailTemplateRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *UpdateEmailTemplateRequest) UnmarshalJSON(data []byte) (err error) {
-	varUpdateEmailTemplateRequest := _UpdateEmailTemplateRequest{}
-
-	err = json.Unmarshal(data, &varUpdateEmailTemplateRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateEmailTemplateRequest(varUpdateEmailTemplateRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "policy")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateEmailTemplateRequest struct {
-	value *UpdateEmailTemplateRequest
-	isSet bool
-}
-
-func (v NullableUpdateEmailTemplateRequest) Get() *UpdateEmailTemplateRequest {
-	return v.value
-}
-
-func (v *NullableUpdateEmailTemplateRequest) Set(val *UpdateEmailTemplateRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateEmailTemplateRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateEmailTemplateRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateEmailTemplateRequest(val *UpdateEmailTemplateRequest) *NullableUpdateEmailTemplateRequest {
-	return &NullableUpdateEmailTemplateRequest{value: val, isSet: true}
-}
-
-func (v NullableUpdateEmailTemplateRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateEmailTemplateRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

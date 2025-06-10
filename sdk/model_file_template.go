@@ -21,28 +21,28 @@ var _ MappedNullable = &FileTemplate{}
 
 // FileTemplate struct for FileTemplate
 type FileTemplate struct {
-	Id *int64 `json:"id,omitempty"`
-	Code *string `json:"code,omitempty"`
-	Account *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"account,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Labels []string `json:"labels,omitempty"`
-	FileName *string `json:"fileName,omitempty"`
-	FilePath *string `json:"filePath,omitempty"`
-	TemplateType *string `json:"templateType,omitempty"`
-	TemplatePhase *string `json:"templatePhase,omitempty"`
-	Template *string `json:"template,omitempty"`
-	Category *string `json:"category,omitempty"`
-	SettingCategory *string `json:"settingCategory,omitempty"`
-	SettingName *string `json:"settingName,omitempty"`
-	AutoRun *bool `json:"autoRun,omitempty"`
-	RunOnScale *bool `json:"runOnScale,omitempty"`
-	RunOnDeploy *bool `json:"runOnDeploy,omitempty"`
-	FileOwner *string `json:"fileOwner,omitempty"`
-	FileGroup *string `json:"fileGroup,omitempty"`
-	Permissions *string `json:"permissions,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                             `json:"id,omitempty"`
+	Code                 *string                                            `json:"code,omitempty"`
+	Account              *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"account,omitempty"`
+	Name                 *string                                            `json:"name,omitempty"`
+	Labels               []string                                           `json:"labels,omitempty"`
+	FileName             *string                                            `json:"fileName,omitempty"`
+	FilePath             *string                                            `json:"filePath,omitempty"`
+	TemplateType         *string                                            `json:"templateType,omitempty"`
+	TemplatePhase        *string                                            `json:"templatePhase,omitempty"`
+	Template             *string                                            `json:"template,omitempty"`
+	Category             *string                                            `json:"category,omitempty"`
+	SettingCategory      *string                                            `json:"settingCategory,omitempty"`
+	SettingName          *string                                            `json:"settingName,omitempty"`
+	AutoRun              *bool                                              `json:"autoRun,omitempty"`
+	RunOnScale           *bool                                              `json:"runOnScale,omitempty"`
+	RunOnDeploy          *bool                                              `json:"runOnDeploy,omitempty"`
+	FileOwner            *string                                            `json:"fileOwner,omitempty"`
+	FileGroup            *string                                            `json:"fileGroup,omitempty"`
+	Permissions          *string                                            `json:"permissions,omitempty"`
+	DateCreated          *time.Time                                         `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                         `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}                             `json:",remain"`
 }
 
 type _FileTemplate FileTemplate
@@ -737,7 +737,7 @@ func (o *FileTemplate) SetLastUpdated(v time.Time) {
 }
 
 func (o FileTemplate) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -816,82 +816,8 @@ func (o FileTemplate) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *FileTemplate) UnmarshalJSON(data []byte) (err error) {
-	varFileTemplate := _FileTemplate{}
-
-	err = json.Unmarshal(data, &varFileTemplate)
-
-	if err != nil {
-		return err
-	}
-
-	*o = FileTemplate(varFileTemplate)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "account")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "fileName")
-		delete(additionalProperties, "filePath")
-		delete(additionalProperties, "templateType")
-		delete(additionalProperties, "templatePhase")
-		delete(additionalProperties, "template")
-		delete(additionalProperties, "category")
-		delete(additionalProperties, "settingCategory")
-		delete(additionalProperties, "settingName")
-		delete(additionalProperties, "autoRun")
-		delete(additionalProperties, "runOnScale")
-		delete(additionalProperties, "runOnDeploy")
-		delete(additionalProperties, "fileOwner")
-		delete(additionalProperties, "fileGroup")
-		delete(additionalProperties, "permissions")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableFileTemplate struct {
-	value *FileTemplate
-	isSet bool
-}
-
-func (v NullableFileTemplate) Get() *FileTemplate {
-	return v.value
-}
-
-func (v *NullableFileTemplate) Set(val *FileTemplate) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableFileTemplate) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableFileTemplate) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableFileTemplate(val *FileTemplate) *NullableFileTemplate {
-	return &NullableFileTemplate{value: val, isSet: true}
-}
-
-func (v NullableFileTemplate) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableFileTemplate) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

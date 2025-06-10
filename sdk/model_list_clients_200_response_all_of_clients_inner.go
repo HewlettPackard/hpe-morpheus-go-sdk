@@ -20,15 +20,15 @@ var _ MappedNullable = &ListClients200ResponseAllOfClientsInner{}
 
 // ListClients200ResponseAllOfClientsInner struct for ListClients200ResponseAllOfClientsInner
 type ListClients200ResponseAllOfClientsInner struct {
-	Id *int64 `json:"id,omitempty"`
-	ClientId *string `json:"clientId,omitempty"`
-	AccessTokenValiditySeconds *int64 `json:"accessTokenValiditySeconds,omitempty"`
-	RefreshTokenValiditySeconds *int64 `json:"refreshTokenValiditySeconds,omitempty"`
-	Authorities []string `json:"authorities,omitempty"`
-	AuthorizedGrantTypes []string `json:"authorizedGrantTypes,omitempty"`
-	Scopes []string `json:"scopes,omitempty"`
-	RedirectUris []string `json:"redirectUris,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                          *int64                 `json:"id,omitempty"`
+	ClientId                    *string                `json:"clientId,omitempty"`
+	AccessTokenValiditySeconds  *int64                 `json:"accessTokenValiditySeconds,omitempty"`
+	RefreshTokenValiditySeconds *int64                 `json:"refreshTokenValiditySeconds,omitempty"`
+	Authorities                 []string               `json:"authorities,omitempty"`
+	AuthorizedGrantTypes        []string               `json:"authorizedGrantTypes,omitempty"`
+	Scopes                      []string               `json:"scopes,omitempty"`
+	RedirectUris                []string               `json:"redirectUris,omitempty"`
+	AdditionalProperties        map[string]interface{} `json:",remain"`
 }
 
 type _ListClients200ResponseAllOfClientsInner ListClients200ResponseAllOfClientsInner
@@ -307,7 +307,7 @@ func (o *ListClients200ResponseAllOfClientsInner) SetRedirectUris(v []string) {
 }
 
 func (o ListClients200ResponseAllOfClientsInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -347,69 +347,8 @@ func (o ListClients200ResponseAllOfClientsInner) ToMap() (map[string]interface{}
 
 	return toSerialize, nil
 }
-
 func (o *ListClients200ResponseAllOfClientsInner) UnmarshalJSON(data []byte) (err error) {
-	varListClients200ResponseAllOfClientsInner := _ListClients200ResponseAllOfClientsInner{}
-
-	err = json.Unmarshal(data, &varListClients200ResponseAllOfClientsInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListClients200ResponseAllOfClientsInner(varListClients200ResponseAllOfClientsInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "clientId")
-		delete(additionalProperties, "accessTokenValiditySeconds")
-		delete(additionalProperties, "refreshTokenValiditySeconds")
-		delete(additionalProperties, "authorities")
-		delete(additionalProperties, "authorizedGrantTypes")
-		delete(additionalProperties, "scopes")
-		delete(additionalProperties, "redirectUris")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListClients200ResponseAllOfClientsInner struct {
-	value *ListClients200ResponseAllOfClientsInner
-	isSet bool
-}
-
-func (v NullableListClients200ResponseAllOfClientsInner) Get() *ListClients200ResponseAllOfClientsInner {
-	return v.value
-}
-
-func (v *NullableListClients200ResponseAllOfClientsInner) Set(val *ListClients200ResponseAllOfClientsInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListClients200ResponseAllOfClientsInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListClients200ResponseAllOfClientsInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListClients200ResponseAllOfClientsInner(val *ListClients200ResponseAllOfClientsInner) *NullableListClients200ResponseAllOfClientsInner {
-	return &NullableListClients200ResponseAllOfClientsInner{value: val, isSet: true}
-}
-
-func (v NullableListClients200ResponseAllOfClientsInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListClients200ResponseAllOfClientsInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

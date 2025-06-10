@@ -23,8 +23,8 @@ type AddStorageBucketsRequestStorageBucketConfigOneOf4 struct {
 	// Host
 	Host *string `json:"host,omitempty"`
 	// Export Folder
-	ExportFolder *string `json:"exportFolder,omitempty"`
-	AdditionalProperties map[string]interface{}
+	ExportFolder         *string                `json:"exportFolder,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddStorageBucketsRequestStorageBucketConfigOneOf4 AddStorageBucketsRequestStorageBucketConfigOneOf4
@@ -111,7 +111,7 @@ func (o *AddStorageBucketsRequestStorageBucketConfigOneOf4) SetExportFolder(v st
 }
 
 func (o AddStorageBucketsRequestStorageBucketConfigOneOf4) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -133,63 +133,8 @@ func (o AddStorageBucketsRequestStorageBucketConfigOneOf4) ToMap() (map[string]i
 
 	return toSerialize, nil
 }
-
 func (o *AddStorageBucketsRequestStorageBucketConfigOneOf4) UnmarshalJSON(data []byte) (err error) {
-	varAddStorageBucketsRequestStorageBucketConfigOneOf4 := _AddStorageBucketsRequestStorageBucketConfigOneOf4{}
-
-	err = json.Unmarshal(data, &varAddStorageBucketsRequestStorageBucketConfigOneOf4)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddStorageBucketsRequestStorageBucketConfigOneOf4(varAddStorageBucketsRequestStorageBucketConfigOneOf4)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "host")
-		delete(additionalProperties, "exportFolder")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddStorageBucketsRequestStorageBucketConfigOneOf4 struct {
-	value *AddStorageBucketsRequestStorageBucketConfigOneOf4
-	isSet bool
-}
-
-func (v NullableAddStorageBucketsRequestStorageBucketConfigOneOf4) Get() *AddStorageBucketsRequestStorageBucketConfigOneOf4 {
-	return v.value
-}
-
-func (v *NullableAddStorageBucketsRequestStorageBucketConfigOneOf4) Set(val *AddStorageBucketsRequestStorageBucketConfigOneOf4) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddStorageBucketsRequestStorageBucketConfigOneOf4) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddStorageBucketsRequestStorageBucketConfigOneOf4) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddStorageBucketsRequestStorageBucketConfigOneOf4(val *AddStorageBucketsRequestStorageBucketConfigOneOf4) *NullableAddStorageBucketsRequestStorageBucketConfigOneOf4 {
-	return &NullableAddStorageBucketsRequestStorageBucketConfigOneOf4{value: val, isSet: true}
-}
-
-func (v NullableAddStorageBucketsRequestStorageBucketConfigOneOf4) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddStorageBucketsRequestStorageBucketConfigOneOf4) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

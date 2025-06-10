@@ -21,8 +21,8 @@ var _ MappedNullable = &UpdateInstanceRequestInstanceSite{}
 // UpdateInstanceRequestInstanceSite struct for UpdateInstanceRequestInstanceSite
 type UpdateInstanceRequestInstanceSite struct {
 	// The group ID.
-	Id *int64 `json:"id,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _UpdateInstanceRequestInstanceSite UpdateInstanceRequestInstanceSite
@@ -77,7 +77,7 @@ func (o *UpdateInstanceRequestInstanceSite) SetId(v int64) {
 }
 
 func (o UpdateInstanceRequestInstanceSite) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -96,62 +96,8 @@ func (o UpdateInstanceRequestInstanceSite) ToMap() (map[string]interface{}, erro
 
 	return toSerialize, nil
 }
-
 func (o *UpdateInstanceRequestInstanceSite) UnmarshalJSON(data []byte) (err error) {
-	varUpdateInstanceRequestInstanceSite := _UpdateInstanceRequestInstanceSite{}
-
-	err = json.Unmarshal(data, &varUpdateInstanceRequestInstanceSite)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateInstanceRequestInstanceSite(varUpdateInstanceRequestInstanceSite)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateInstanceRequestInstanceSite struct {
-	value *UpdateInstanceRequestInstanceSite
-	isSet bool
-}
-
-func (v NullableUpdateInstanceRequestInstanceSite) Get() *UpdateInstanceRequestInstanceSite {
-	return v.value
-}
-
-func (v *NullableUpdateInstanceRequestInstanceSite) Set(val *UpdateInstanceRequestInstanceSite) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateInstanceRequestInstanceSite) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateInstanceRequestInstanceSite) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateInstanceRequestInstanceSite(val *UpdateInstanceRequestInstanceSite) *NullableUpdateInstanceRequestInstanceSite {
-	return &NullableUpdateInstanceRequestInstanceSite{value: val, isSet: true}
-}
-
-func (v NullableUpdateInstanceRequestInstanceSite) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateInstanceRequestInstanceSite) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

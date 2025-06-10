@@ -21,39 +21,39 @@ var _ MappedNullable = &Budgets{}
 
 // Budgets struct for Budgets
 type Budgets struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Account *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"account,omitempty"`
-	Enabled *bool `json:"enabled,omitempty"`
-	RefScope *string `json:"refScope,omitempty"`
-	RefType *string `json:"refType,omitempty"`
-	RefId *int64 `json:"refId,omitempty"`
-	RefName *string `json:"refName,omitempty"`
-	Period *string `json:"period,omitempty"`
-	Year *string `json:"year,omitempty"`
-	ResourceType *string `json:"resourceType,omitempty"`
-	Timezone *string `json:"timezone,omitempty"`
-	StartDate *time.Time `json:"startDate,omitempty"`
-	EndDate *time.Time `json:"endDate,omitempty"`
-	Interval *string `json:"interval,omitempty"`
-	Costs []int64 `json:"costs,omitempty"`
-	IsFiscal *bool `json:"isFiscal,omitempty"`
-	AverageCost *int64 `json:"averageCost,omitempty"`
-	TotalCost *int64 `json:"totalCost,omitempty"`
-	Currency *string `json:"currency,omitempty"`
-	Rollover *bool `json:"rollover,omitempty"`
-	WarningLimit *string `json:"warningLimit,omitempty"`
-	OverLimit *string `json:"overLimit,omitempty"`
-	ExternalId *string `json:"externalId,omitempty"`
-	InternalId *string `json:"internalId,omitempty"`
-	CreatedById *int64 `json:"createdById,omitempty"`
-	CreatedByName *string `json:"createdByName,omitempty"`
-	UpdatedById *string `json:"updatedById,omitempty"`
-	UpdatedByName *string `json:"updatedByName,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                                  `json:"id,omitempty"`
+	Name                 *string                                                                 `json:"name,omitempty"`
+	Description          *string                                                                 `json:"description,omitempty"`
+	Account              *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"account,omitempty"`
+	Enabled              *bool                                                                   `json:"enabled,omitempty"`
+	RefScope             *string                                                                 `json:"refScope,omitempty"`
+	RefType              *string                                                                 `json:"refType,omitempty"`
+	RefId                *int64                                                                  `json:"refId,omitempty"`
+	RefName              *string                                                                 `json:"refName,omitempty"`
+	Period               *string                                                                 `json:"period,omitempty"`
+	Year                 *string                                                                 `json:"year,omitempty"`
+	ResourceType         *string                                                                 `json:"resourceType,omitempty"`
+	Timezone             *string                                                                 `json:"timezone,omitempty"`
+	StartDate            *time.Time                                                              `json:"startDate,omitempty"`
+	EndDate              *time.Time                                                              `json:"endDate,omitempty"`
+	Interval             *string                                                                 `json:"interval,omitempty"`
+	Costs                []int64                                                                 `json:"costs,omitempty"`
+	IsFiscal             *bool                                                                   `json:"isFiscal,omitempty"`
+	AverageCost          *int64                                                                  `json:"averageCost,omitempty"`
+	TotalCost            *int64                                                                  `json:"totalCost,omitempty"`
+	Currency             *string                                                                 `json:"currency,omitempty"`
+	Rollover             *bool                                                                   `json:"rollover,omitempty"`
+	WarningLimit         *string                                                                 `json:"warningLimit,omitempty"`
+	OverLimit            *string                                                                 `json:"overLimit,omitempty"`
+	ExternalId           *string                                                                 `json:"externalId,omitempty"`
+	InternalId           *string                                                                 `json:"internalId,omitempty"`
+	CreatedById          *int64                                                                  `json:"createdById,omitempty"`
+	CreatedByName        *string                                                                 `json:"createdByName,omitempty"`
+	UpdatedById          *string                                                                 `json:"updatedById,omitempty"`
+	UpdatedByName        *string                                                                 `json:"updatedByName,omitempty"`
+	DateCreated          *time.Time                                                              `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                                              `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}                                                  `json:",remain"`
 }
 
 type _Budgets Budgets
@@ -1100,7 +1100,7 @@ func (o *Budgets) SetLastUpdated(v time.Time) {
 }
 
 func (o Budgets) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1212,93 +1212,8 @@ func (o Budgets) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *Budgets) UnmarshalJSON(data []byte) (err error) {
-	varBudgets := _Budgets{}
-
-	err = json.Unmarshal(data, &varBudgets)
-
-	if err != nil {
-		return err
-	}
-
-	*o = Budgets(varBudgets)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "account")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "refScope")
-		delete(additionalProperties, "refType")
-		delete(additionalProperties, "refId")
-		delete(additionalProperties, "refName")
-		delete(additionalProperties, "period")
-		delete(additionalProperties, "year")
-		delete(additionalProperties, "resourceType")
-		delete(additionalProperties, "timezone")
-		delete(additionalProperties, "startDate")
-		delete(additionalProperties, "endDate")
-		delete(additionalProperties, "interval")
-		delete(additionalProperties, "costs")
-		delete(additionalProperties, "isFiscal")
-		delete(additionalProperties, "averageCost")
-		delete(additionalProperties, "totalCost")
-		delete(additionalProperties, "currency")
-		delete(additionalProperties, "rollover")
-		delete(additionalProperties, "warningLimit")
-		delete(additionalProperties, "overLimit")
-		delete(additionalProperties, "externalId")
-		delete(additionalProperties, "internalId")
-		delete(additionalProperties, "createdById")
-		delete(additionalProperties, "createdByName")
-		delete(additionalProperties, "updatedById")
-		delete(additionalProperties, "updatedByName")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableBudgets struct {
-	value *Budgets
-	isSet bool
-}
-
-func (v NullableBudgets) Get() *Budgets {
-	return v.value
-}
-
-func (v *NullableBudgets) Set(val *Budgets) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableBudgets) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableBudgets) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableBudgets(val *Budgets) *NullableBudgets {
-	return &NullableBudgets{value: val, isSet: true}
-}
-
-func (v NullableBudgets) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableBudgets) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

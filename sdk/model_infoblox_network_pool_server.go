@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the InfobloxNetworkPoolServer type satisfies the MappedNullable interface at compile time
@@ -44,10 +43,10 @@ type InfobloxNetworkPoolServer struct {
 	// Tenant Match
 	TenantMatch *string `json:"tenantMatch,omitempty"`
 	// IP Mode
-	ServiceMode *string `json:"serviceMode,omitempty"`
-	Config *InfobloxNetworkPoolServerConfig `json:"config,omitempty"`
-	Credential *NSXNetworkServerCredential `json:"credential,omitempty"`
-	AdditionalProperties map[string]interface{}
+	ServiceMode          *string                          `json:"serviceMode,omitempty"`
+	Config               *InfobloxNetworkPoolServerConfig `json:"config,omitempty"`
+	Credential           *NSXNetworkServerCredential      `json:"credential,omitempty"`
+	AdditionalProperties map[string]interface{}           `json:",remain"`
 }
 
 type _InfobloxNetworkPoolServer InfobloxNetworkPoolServer
@@ -513,7 +512,7 @@ func (o *InfobloxNetworkPoolServer) SetCredential(v NSXNetworkServerCredential) 
 }
 
 func (o InfobloxNetworkPoolServer) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -565,98 +564,8 @@ func (o InfobloxNetworkPoolServer) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *InfobloxNetworkPoolServer) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"type",
-		"name",
-		"serviceUrl",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varInfobloxNetworkPoolServer := _InfobloxNetworkPoolServer{}
-
-	err = json.Unmarshal(data, &varInfobloxNetworkPoolServer)
-
-	if err != nil {
-		return err
-	}
-
-	*o = InfobloxNetworkPoolServer(varInfobloxNetworkPoolServer)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "serviceUrl")
-		delete(additionalProperties, "serviceUsername")
-		delete(additionalProperties, "servicePassword")
-		delete(additionalProperties, "serviceThrottleRate")
-		delete(additionalProperties, "ignoreSsl")
-		delete(additionalProperties, "networkFilter")
-		delete(additionalProperties, "zoneFilter")
-		delete(additionalProperties, "tenantMatch")
-		delete(additionalProperties, "serviceMode")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "credential")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableInfobloxNetworkPoolServer struct {
-	value *InfobloxNetworkPoolServer
-	isSet bool
-}
-
-func (v NullableInfobloxNetworkPoolServer) Get() *InfobloxNetworkPoolServer {
-	return v.value
-}
-
-func (v *NullableInfobloxNetworkPoolServer) Set(val *InfobloxNetworkPoolServer) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableInfobloxNetworkPoolServer) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableInfobloxNetworkPoolServer) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableInfobloxNetworkPoolServer(val *InfobloxNetworkPoolServer) *NullableInfobloxNetworkPoolServer {
-	return &NullableInfobloxNetworkPoolServer{value: val, isSet: true}
-}
-
-func (v NullableInfobloxNetworkPoolServer) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableInfobloxNetworkPoolServer) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

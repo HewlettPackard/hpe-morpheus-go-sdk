@@ -20,8 +20,8 @@ var _ MappedNullable = &GetNetworkFloatingIp200Response{}
 
 // GetNetworkFloatingIp200Response struct for GetNetworkFloatingIp200Response
 type GetNetworkFloatingIp200Response struct {
-	NetworkFloatingIp *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp `json:"networkFloatingIp,omitempty"`
-	AdditionalProperties map[string]interface{}
+	NetworkFloatingIp    *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp `json:"networkFloatingIp,omitempty"`
+	AdditionalProperties map[string]interface{}                                      `json:",remain"`
 }
 
 type _GetNetworkFloatingIp200Response GetNetworkFloatingIp200Response
@@ -76,7 +76,7 @@ func (o *GetNetworkFloatingIp200Response) SetNetworkFloatingIp(v AllocateNetwork
 }
 
 func (o GetNetworkFloatingIp200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o GetNetworkFloatingIp200Response) ToMap() (map[string]interface{}, error)
 
 	return toSerialize, nil
 }
-
 func (o *GetNetworkFloatingIp200Response) UnmarshalJSON(data []byte) (err error) {
-	varGetNetworkFloatingIp200Response := _GetNetworkFloatingIp200Response{}
-
-	err = json.Unmarshal(data, &varGetNetworkFloatingIp200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetNetworkFloatingIp200Response(varGetNetworkFloatingIp200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "networkFloatingIp")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetNetworkFloatingIp200Response struct {
-	value *GetNetworkFloatingIp200Response
-	isSet bool
-}
-
-func (v NullableGetNetworkFloatingIp200Response) Get() *GetNetworkFloatingIp200Response {
-	return v.value
-}
-
-func (v *NullableGetNetworkFloatingIp200Response) Set(val *GetNetworkFloatingIp200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetNetworkFloatingIp200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetNetworkFloatingIp200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetNetworkFloatingIp200Response(val *GetNetworkFloatingIp200Response) *NullableGetNetworkFloatingIp200Response {
-	return &NullableGetNetworkFloatingIp200Response{value: val, isSet: true}
-}
-
-func (v NullableGetNetworkFloatingIp200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetNetworkFloatingIp200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

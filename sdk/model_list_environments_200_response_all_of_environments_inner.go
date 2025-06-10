@@ -21,17 +21,17 @@ var _ MappedNullable = &ListEnvironments200ResponseAllOfEnvironmentsInner{}
 
 // ListEnvironments200ResponseAllOfEnvironmentsInner struct for ListEnvironments200ResponseAllOfEnvironmentsInner
 type ListEnvironments200ResponseAllOfEnvironmentsInner struct {
-	Id *int64 `json:"id,omitempty"`
-	Account *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"account,omitempty"`
-	Code *string `json:"code,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Visibility *string `json:"visibility,omitempty"`
-	Active *bool `json:"active,omitempty"`
-	SortOrder *int64 `json:"sortOrder,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                                  `json:"id,omitempty"`
+	Account              *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"account,omitempty"`
+	Code                 *string                                                                 `json:"code,omitempty"`
+	Name                 *string                                                                 `json:"name,omitempty"`
+	Description          *string                                                                 `json:"description,omitempty"`
+	Visibility           *string                                                                 `json:"visibility,omitempty"`
+	Active               *bool                                                                   `json:"active,omitempty"`
+	SortOrder            *int64                                                                  `json:"sortOrder,omitempty"`
+	DateCreated          *time.Time                                                              `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                                              `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}                                                  `json:",remain"`
 }
 
 type _ListEnvironments200ResponseAllOfEnvironmentsInner ListEnvironments200ResponseAllOfEnvironmentsInner
@@ -374,7 +374,7 @@ func (o *ListEnvironments200ResponseAllOfEnvironmentsInner) SetLastUpdated(v tim
 }
 
 func (o ListEnvironments200ResponseAllOfEnvironmentsInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -420,71 +420,8 @@ func (o ListEnvironments200ResponseAllOfEnvironmentsInner) ToMap() (map[string]i
 
 	return toSerialize, nil
 }
-
 func (o *ListEnvironments200ResponseAllOfEnvironmentsInner) UnmarshalJSON(data []byte) (err error) {
-	varListEnvironments200ResponseAllOfEnvironmentsInner := _ListEnvironments200ResponseAllOfEnvironmentsInner{}
-
-	err = json.Unmarshal(data, &varListEnvironments200ResponseAllOfEnvironmentsInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListEnvironments200ResponseAllOfEnvironmentsInner(varListEnvironments200ResponseAllOfEnvironmentsInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "account")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "active")
-		delete(additionalProperties, "sortOrder")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListEnvironments200ResponseAllOfEnvironmentsInner struct {
-	value *ListEnvironments200ResponseAllOfEnvironmentsInner
-	isSet bool
-}
-
-func (v NullableListEnvironments200ResponseAllOfEnvironmentsInner) Get() *ListEnvironments200ResponseAllOfEnvironmentsInner {
-	return v.value
-}
-
-func (v *NullableListEnvironments200ResponseAllOfEnvironmentsInner) Set(val *ListEnvironments200ResponseAllOfEnvironmentsInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListEnvironments200ResponseAllOfEnvironmentsInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListEnvironments200ResponseAllOfEnvironmentsInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListEnvironments200ResponseAllOfEnvironmentsInner(val *ListEnvironments200ResponseAllOfEnvironmentsInner) *NullableListEnvironments200ResponseAllOfEnvironmentsInner {
-	return &NullableListEnvironments200ResponseAllOfEnvironmentsInner{value: val, isSet: true}
-}
-
-func (v NullableListEnvironments200ResponseAllOfEnvironmentsInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListEnvironments200ResponseAllOfEnvironmentsInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

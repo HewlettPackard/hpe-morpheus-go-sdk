@@ -20,9 +20,9 @@ var _ MappedNullable = &ListPolicyTypes200Response{}
 
 // ListPolicyTypes200Response struct for ListPolicyTypes200Response
 type ListPolicyTypes200Response struct {
-	PolicyTypes []ListPolicyTypes200ResponseAllOfPolicyTypesInner `json:"policyTypes,omitempty"`
-	Meta *ListActivity200ResponseAllOfMeta `json:"meta,omitempty"`
-	AdditionalProperties map[string]interface{}
+	PolicyTypes          []ListPolicyTypes200ResponseAllOfPolicyTypesInner `json:"policyTypes,omitempty"`
+	Meta                 *ListActivity200ResponseAllOfMeta                 `json:"meta,omitempty"`
+	AdditionalProperties map[string]interface{}                            `json:",remain"`
 }
 
 type _ListPolicyTypes200Response ListPolicyTypes200Response
@@ -109,7 +109,7 @@ func (o *ListPolicyTypes200Response) SetMeta(v ListActivity200ResponseAllOfMeta)
 }
 
 func (o ListPolicyTypes200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -131,63 +131,8 @@ func (o ListPolicyTypes200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *ListPolicyTypes200Response) UnmarshalJSON(data []byte) (err error) {
-	varListPolicyTypes200Response := _ListPolicyTypes200Response{}
-
-	err = json.Unmarshal(data, &varListPolicyTypes200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListPolicyTypes200Response(varListPolicyTypes200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "policyTypes")
-		delete(additionalProperties, "meta")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListPolicyTypes200Response struct {
-	value *ListPolicyTypes200Response
-	isSet bool
-}
-
-func (v NullableListPolicyTypes200Response) Get() *ListPolicyTypes200Response {
-	return v.value
-}
-
-func (v *NullableListPolicyTypes200Response) Set(val *ListPolicyTypes200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListPolicyTypes200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListPolicyTypes200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListPolicyTypes200Response(val *ListPolicyTypes200Response) *NullableListPolicyTypes200Response {
-	return &NullableListPolicyTypes200Response{value: val, isSet: true}
-}
-
-func (v NullableListPolicyTypes200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListPolicyTypes200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

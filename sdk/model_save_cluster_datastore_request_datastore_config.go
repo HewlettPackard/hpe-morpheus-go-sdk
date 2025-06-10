@@ -19,18 +19,33 @@ import (
 // very silly way of avoiding `"fmt" imported and not used` errors
 var _ fmt.Stringer
 
-
 // SaveClusterDatastoreRequestDatastoreConfig struct for SaveClusterDatastoreRequestDatastoreConfig
 type SaveClusterDatastoreRequestDatastoreConfig struct {
-	SaveClusterDatastoreRequestDatastoreConfigAnyOf *SaveClusterDatastoreRequestDatastoreConfigAnyOf
+	SaveClusterDatastoreRequestDatastoreConfigAnyOf  *SaveClusterDatastoreRequestDatastoreConfigAnyOf
 	SaveClusterDatastoreRequestDatastoreConfigAnyOf1 *SaveClusterDatastoreRequestDatastoreConfigAnyOf1
+}
+
+func (dst *SaveClusterDatastoreRequestDatastoreConfig) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &SaveClusterDatastoreRequestDatastoreConfig{}
+	}
+
+	if out, ok := data.(SaveClusterDatastoreRequestDatastoreConfigAnyOf); ok {
+		dst.SaveClusterDatastoreRequestDatastoreConfigAnyOf = &out
+	}
+
+	if out, ok := data.(SaveClusterDatastoreRequestDatastoreConfigAnyOf1); ok {
+		dst.SaveClusterDatastoreRequestDatastoreConfigAnyOf1 = &out
+	}
+
+	return dst, nil
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *SaveClusterDatastoreRequestDatastoreConfig) UnmarshalJSON(data []byte) error {
 	var err error
 	// try to unmarshal JSON data into SaveClusterDatastoreRequestDatastoreConfigAnyOf
-	err = json.Unmarshal(data, &dst.SaveClusterDatastoreRequestDatastoreConfigAnyOf);
+	err = json.Unmarshal(data, &dst.SaveClusterDatastoreRequestDatastoreConfigAnyOf)
 	if err == nil {
 		jsonSaveClusterDatastoreRequestDatastoreConfigAnyOf, _ := json.Marshal(dst.SaveClusterDatastoreRequestDatastoreConfigAnyOf)
 		if string(jsonSaveClusterDatastoreRequestDatastoreConfigAnyOf) == "{}" { // empty struct
@@ -43,7 +58,7 @@ func (dst *SaveClusterDatastoreRequestDatastoreConfig) UnmarshalJSON(data []byte
 	}
 
 	// try to unmarshal JSON data into SaveClusterDatastoreRequestDatastoreConfigAnyOf1
-	err = json.Unmarshal(data, &dst.SaveClusterDatastoreRequestDatastoreConfigAnyOf1);
+	err = json.Unmarshal(data, &dst.SaveClusterDatastoreRequestDatastoreConfigAnyOf1)
 	if err == nil {
 		jsonSaveClusterDatastoreRequestDatastoreConfigAnyOf1, _ := json.Marshal(dst.SaveClusterDatastoreRequestDatastoreConfigAnyOf1)
 		if string(jsonSaveClusterDatastoreRequestDatastoreConfigAnyOf1) == "{}" { // empty struct
@@ -70,7 +85,6 @@ func (src SaveClusterDatastoreRequestDatastoreConfig) MarshalJSON() ([]byte, err
 
 	return nil, nil // no data in anyOf schemas
 }
-
 
 type NullableSaveClusterDatastoreRequestDatastoreConfig struct {
 	value *SaveClusterDatastoreRequestDatastoreConfig
@@ -107,5 +121,3 @@ func (v *NullableSaveClusterDatastoreRequestDatastoreConfig) UnmarshalJSON(src [
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

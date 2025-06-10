@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the FormField type satisfies the MappedNullable interface at compile time
@@ -50,7 +49,7 @@ type FormField struct {
 	// Export as Tag
 	ExportMeta *bool `json:"exportMeta,omitempty"`
 	// Used primarily on tasks and workflows. Basically wether or not the field can be overridden optionally when the object is run
-	Editable *bool `json:"editable,omitempty"`
+	Editable   *bool                                     `json:"editable,omitempty"`
 	OptionList *AddOptionTypeRequestOptionTypeOptionList `json:"optionList,omitempty"`
 	// Display Value On Details
 	DisplayValueOnDetails *bool `json:"displayValueOnDetails,omitempty"`
@@ -67,8 +66,8 @@ type FormField struct {
 	// Verify Pattern, A regexp string that validates the input, use (?i) to make the matcher case insensitive
 	VerifyPattern *string `json:"verifyPattern,omitempty"`
 	// A fieldName that will trigger required attribute of this input
-	RequireOnCode *string `json:"requireOnCode,omitempty"`
-	AdditionalProperties map[string]interface{}
+	RequireOnCode        *string                `json:"requireOnCode,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _FormField FormField
@@ -877,7 +876,7 @@ func (o *FormField) SetRequireOnCode(v string) {
 }
 
 func (o FormField) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -961,107 +960,8 @@ func (o FormField) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *FormField) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"fieldName",
-		"fieldLabel",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varFormField := _FormField{}
-
-	err = json.Unmarshal(data, &varFormField)
-
-	if err != nil {
-		return err
-	}
-
-	*o = FormField(varFormField)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "fieldName")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "fieldLabel")
-		delete(additionalProperties, "fieldCode")
-		delete(additionalProperties, "placeHolder")
-		delete(additionalProperties, "helpBlock")
-		delete(additionalProperties, "helpBlockFieldCode")
-		delete(additionalProperties, "defaultValue")
-		delete(additionalProperties, "required")
-		delete(additionalProperties, "exportMeta")
-		delete(additionalProperties, "editable")
-		delete(additionalProperties, "optionList")
-		delete(additionalProperties, "displayValueOnDetails")
-		delete(additionalProperties, "isLocked")
-		delete(additionalProperties, "isHidden")
-		delete(additionalProperties, "excludeFromSearch")
-		delete(additionalProperties, "dependsOnCode")
-		delete(additionalProperties, "visibleOnCode")
-		delete(additionalProperties, "verifyPattern")
-		delete(additionalProperties, "requireOnCode")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableFormField struct {
-	value *FormField
-	isSet bool
-}
-
-func (v NullableFormField) Get() *FormField {
-	return v.value
-}
-
-func (v *NullableFormField) Set(val *FormField) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableFormField) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableFormField) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableFormField(val *FormField) *NullableFormField {
-	return &NullableFormField{value: val, isSet: true}
-}
-
-func (v NullableFormField) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableFormField) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

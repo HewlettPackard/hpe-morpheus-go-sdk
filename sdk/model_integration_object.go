@@ -20,13 +20,13 @@ var _ MappedNullable = &IntegrationObject{}
 
 // IntegrationObject struct for IntegrationObject
 type IntegrationObject struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Type *string `json:"type,omitempty"`
-	RefType *string `json:"refType,omitempty"`
-	RefId *int64 `json:"refId,omitempty"`
-	Layout *ListIntegrationObjects200ResponseObjectsInnerLayout `json:"layout,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                               `json:"id,omitempty"`
+	Name                 *string                                              `json:"name,omitempty"`
+	Type                 *string                                              `json:"type,omitempty"`
+	RefType              *string                                              `json:"refType,omitempty"`
+	RefId                *int64                                               `json:"refId,omitempty"`
+	Layout               *ListIntegrationObjects200ResponseObjectsInnerLayout `json:"layout,omitempty"`
+	AdditionalProperties map[string]interface{}                               `json:",remain"`
 }
 
 type _IntegrationObject IntegrationObject
@@ -241,7 +241,7 @@ func (o *IntegrationObject) SetLayout(v ListIntegrationObjects200ResponseObjects
 }
 
 func (o IntegrationObject) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -275,67 +275,8 @@ func (o IntegrationObject) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *IntegrationObject) UnmarshalJSON(data []byte) (err error) {
-	varIntegrationObject := _IntegrationObject{}
-
-	err = json.Unmarshal(data, &varIntegrationObject)
-
-	if err != nil {
-		return err
-	}
-
-	*o = IntegrationObject(varIntegrationObject)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "refType")
-		delete(additionalProperties, "refId")
-		delete(additionalProperties, "layout")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableIntegrationObject struct {
-	value *IntegrationObject
-	isSet bool
-}
-
-func (v NullableIntegrationObject) Get() *IntegrationObject {
-	return v.value
-}
-
-func (v *NullableIntegrationObject) Set(val *IntegrationObject) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableIntegrationObject) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableIntegrationObject) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableIntegrationObject(val *IntegrationObject) *NullableIntegrationObject {
-	return &NullableIntegrationObject{value: val, isSet: true}
-}
-
-func (v NullableIntegrationObject) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableIntegrationObject) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

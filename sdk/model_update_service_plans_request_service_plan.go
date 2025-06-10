@@ -35,7 +35,7 @@ type UpdateServicePlansRequestServicePlan struct {
 	// Max cores
 	MaxCores *float32 `json:"maxCores,omitempty"`
 	// Max disks allowed
-	MaxDisks *float32 `json:"maxDisks,omitempty"`
+	MaxDisks      *float32                                     `json:"maxDisks,omitempty"`
 	ProvisionType *AddClusterLayoutsRequestLayoutProvisionType `json:"provisionType,omitempty"`
 	// Can be used to enable / disable customizable cores
 	CustomCores *bool `json:"customCores,omitempty"`
@@ -50,9 +50,9 @@ type UpdateServicePlansRequestServicePlan struct {
 	// Sort order
 	SortOrder *float32 `json:"sortOrder,omitempty"`
 	// List of price sets to include in service plan
-	PriceSets []AddServicePlansRequestServicePlanPriceSetsInner `json:"priceSets,omitempty"`
-	Config *UpdateServicePlansRequestServicePlanConfig `json:"config,omitempty"`
-	AdditionalProperties map[string]interface{}
+	PriceSets            []AddServicePlansRequestServicePlanPriceSetsInner `json:"priceSets,omitempty"`
+	Config               *UpdateServicePlansRequestServicePlanConfig       `json:"config,omitempty"`
+	AdditionalProperties map[string]interface{}                            `json:",remain"`
 }
 
 type _UpdateServicePlansRequestServicePlan UpdateServicePlansRequestServicePlan
@@ -643,7 +643,7 @@ func (o *UpdateServicePlansRequestServicePlan) SetConfig(v UpdateServicePlansReq
 }
 
 func (o UpdateServicePlansRequestServicePlan) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -710,78 +710,8 @@ func (o UpdateServicePlansRequestServicePlan) ToMap() (map[string]interface{}, e
 
 	return toSerialize, nil
 }
-
 func (o *UpdateServicePlansRequestServicePlan) UnmarshalJSON(data []byte) (err error) {
-	varUpdateServicePlansRequestServicePlan := _UpdateServicePlansRequestServicePlan{}
-
-	err = json.Unmarshal(data, &varUpdateServicePlansRequestServicePlan)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateServicePlansRequestServicePlan(varUpdateServicePlansRequestServicePlan)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "editable")
-		delete(additionalProperties, "maxStorage")
-		delete(additionalProperties, "maxMemory")
-		delete(additionalProperties, "maxCores")
-		delete(additionalProperties, "maxDisks")
-		delete(additionalProperties, "provisionType")
-		delete(additionalProperties, "customCores")
-		delete(additionalProperties, "customMaxStorage")
-		delete(additionalProperties, "customMaxDataStorage")
-		delete(additionalProperties, "customMaxMemory")
-		delete(additionalProperties, "addVolumes")
-		delete(additionalProperties, "sortOrder")
-		delete(additionalProperties, "priceSets")
-		delete(additionalProperties, "config")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateServicePlansRequestServicePlan struct {
-	value *UpdateServicePlansRequestServicePlan
-	isSet bool
-}
-
-func (v NullableUpdateServicePlansRequestServicePlan) Get() *UpdateServicePlansRequestServicePlan {
-	return v.value
-}
-
-func (v *NullableUpdateServicePlansRequestServicePlan) Set(val *UpdateServicePlansRequestServicePlan) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateServicePlansRequestServicePlan) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateServicePlansRequestServicePlan) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateServicePlansRequestServicePlan(val *UpdateServicePlansRequestServicePlan) *NullableUpdateServicePlansRequestServicePlan {
-	return &NullableUpdateServicePlansRequestServicePlan{value: val, isSet: true}
-}
-
-func (v NullableUpdateServicePlansRequestServicePlan) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateServicePlansRequestServicePlan) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

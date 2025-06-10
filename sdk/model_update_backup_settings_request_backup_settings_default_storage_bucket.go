@@ -21,8 +21,8 @@ var _ MappedNullable = &UpdateBackupSettingsRequestBackupSettingsDefaultStorageB
 // UpdateBackupSettingsRequestBackupSettingsDefaultStorageBucket struct for UpdateBackupSettingsRequestBackupSettingsDefaultStorageBucket
 type UpdateBackupSettingsRequestBackupSettingsDefaultStorageBucket struct {
 	// ID of default storage bucket
-	Id *int64 `json:"id,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _UpdateBackupSettingsRequestBackupSettingsDefaultStorageBucket UpdateBackupSettingsRequestBackupSettingsDefaultStorageBucket
@@ -77,7 +77,7 @@ func (o *UpdateBackupSettingsRequestBackupSettingsDefaultStorageBucket) SetId(v 
 }
 
 func (o UpdateBackupSettingsRequestBackupSettingsDefaultStorageBucket) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -96,62 +96,8 @@ func (o UpdateBackupSettingsRequestBackupSettingsDefaultStorageBucket) ToMap() (
 
 	return toSerialize, nil
 }
-
 func (o *UpdateBackupSettingsRequestBackupSettingsDefaultStorageBucket) UnmarshalJSON(data []byte) (err error) {
-	varUpdateBackupSettingsRequestBackupSettingsDefaultStorageBucket := _UpdateBackupSettingsRequestBackupSettingsDefaultStorageBucket{}
-
-	err = json.Unmarshal(data, &varUpdateBackupSettingsRequestBackupSettingsDefaultStorageBucket)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateBackupSettingsRequestBackupSettingsDefaultStorageBucket(varUpdateBackupSettingsRequestBackupSettingsDefaultStorageBucket)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateBackupSettingsRequestBackupSettingsDefaultStorageBucket struct {
-	value *UpdateBackupSettingsRequestBackupSettingsDefaultStorageBucket
-	isSet bool
-}
-
-func (v NullableUpdateBackupSettingsRequestBackupSettingsDefaultStorageBucket) Get() *UpdateBackupSettingsRequestBackupSettingsDefaultStorageBucket {
-	return v.value
-}
-
-func (v *NullableUpdateBackupSettingsRequestBackupSettingsDefaultStorageBucket) Set(val *UpdateBackupSettingsRequestBackupSettingsDefaultStorageBucket) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateBackupSettingsRequestBackupSettingsDefaultStorageBucket) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateBackupSettingsRequestBackupSettingsDefaultStorageBucket) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateBackupSettingsRequestBackupSettingsDefaultStorageBucket(val *UpdateBackupSettingsRequestBackupSettingsDefaultStorageBucket) *NullableUpdateBackupSettingsRequestBackupSettingsDefaultStorageBucket {
-	return &NullableUpdateBackupSettingsRequestBackupSettingsDefaultStorageBucket{value: val, isSet: true}
-}
-
-func (v NullableUpdateBackupSettingsRequestBackupSettingsDefaultStorageBucket) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateBackupSettingsRequestBackupSettingsDefaultStorageBucket) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

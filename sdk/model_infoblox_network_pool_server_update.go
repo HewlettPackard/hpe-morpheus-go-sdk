@@ -41,10 +41,10 @@ type InfobloxNetworkPoolServerUpdate struct {
 	// Tenant Match
 	TenantMatch *string `json:"tenantMatch,omitempty"`
 	// IP Mode
-	ServiceMode *string `json:"serviceMode,omitempty"`
-	Config *InfobloxNetworkPoolServerConfig `json:"config,omitempty"`
-	Credential *NSXNetworkServerCredential `json:"credential,omitempty"`
-	AdditionalProperties map[string]interface{}
+	ServiceMode          *string                          `json:"serviceMode,omitempty"`
+	Config               *InfobloxNetworkPoolServerConfig `json:"config,omitempty"`
+	Credential           *NSXNetworkServerCredential      `json:"credential,omitempty"`
+	AdditionalProperties map[string]interface{}           `json:",remain"`
 }
 
 type _InfobloxNetworkPoolServerUpdate InfobloxNetworkPoolServerUpdate
@@ -495,7 +495,7 @@ func (o *InfobloxNetworkPoolServerUpdate) SetCredential(v NSXNetworkServerCreden
 }
 
 func (o InfobloxNetworkPoolServerUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -550,74 +550,8 @@ func (o InfobloxNetworkPoolServerUpdate) ToMap() (map[string]interface{}, error)
 
 	return toSerialize, nil
 }
-
 func (o *InfobloxNetworkPoolServerUpdate) UnmarshalJSON(data []byte) (err error) {
-	varInfobloxNetworkPoolServerUpdate := _InfobloxNetworkPoolServerUpdate{}
-
-	err = json.Unmarshal(data, &varInfobloxNetworkPoolServerUpdate)
-
-	if err != nil {
-		return err
-	}
-
-	*o = InfobloxNetworkPoolServerUpdate(varInfobloxNetworkPoolServerUpdate)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "serviceUrl")
-		delete(additionalProperties, "serviceUsername")
-		delete(additionalProperties, "servicePassword")
-		delete(additionalProperties, "serviceThrottleRate")
-		delete(additionalProperties, "ignoreSsl")
-		delete(additionalProperties, "networkFilter")
-		delete(additionalProperties, "zoneFilter")
-		delete(additionalProperties, "tenantMatch")
-		delete(additionalProperties, "serviceMode")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "credential")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableInfobloxNetworkPoolServerUpdate struct {
-	value *InfobloxNetworkPoolServerUpdate
-	isSet bool
-}
-
-func (v NullableInfobloxNetworkPoolServerUpdate) Get() *InfobloxNetworkPoolServerUpdate {
-	return v.value
-}
-
-func (v *NullableInfobloxNetworkPoolServerUpdate) Set(val *InfobloxNetworkPoolServerUpdate) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableInfobloxNetworkPoolServerUpdate) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableInfobloxNetworkPoolServerUpdate) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableInfobloxNetworkPoolServerUpdate(val *InfobloxNetworkPoolServerUpdate) *NullableInfobloxNetworkPoolServerUpdate {
-	return &NullableInfobloxNetworkPoolServerUpdate{value: val, isSet: true}
-}
-
-func (v NullableInfobloxNetworkPoolServerUpdate) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableInfobloxNetworkPoolServerUpdate) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

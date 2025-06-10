@@ -21,16 +21,16 @@ var _ MappedNullable = &GetNetworkDhcpRelay200ResponseNetworkDhcpRelay{}
 
 // GetNetworkDhcpRelay200ResponseNetworkDhcpRelay struct for GetNetworkDhcpRelay200ResponseNetworkDhcpRelay
 type GetNetworkDhcpRelay200ResponseNetworkDhcpRelay struct {
-	Id *int64 `json:"id,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	ProviderId *string `json:"providerId,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	Name *string `json:"name,omitempty"`
-	ExternalId *string `json:"externalId,omitempty"`
-	ServerIpAddresses []string `json:"serverIpAddresses,omitempty"`
-	Owner *GetAlerts200ResponseAllOfChecksInnerAccount `json:"owner,omitempty"`
-	NetworkServer *GetAlerts200ResponseAllOfChecksInnerAccount `json:"networkServer,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                       `json:"id,omitempty"`
+	DateCreated          *time.Time                                   `json:"dateCreated,omitempty"`
+	ProviderId           *string                                      `json:"providerId,omitempty"`
+	LastUpdated          *time.Time                                   `json:"lastUpdated,omitempty"`
+	Name                 *string                                      `json:"name,omitempty"`
+	ExternalId           *string                                      `json:"externalId,omitempty"`
+	ServerIpAddresses    []string                                     `json:"serverIpAddresses,omitempty"`
+	Owner                *GetAlerts200ResponseAllOfChecksInnerAccount `json:"owner,omitempty"`
+	NetworkServer        *GetAlerts200ResponseAllOfChecksInnerAccount `json:"networkServer,omitempty"`
+	AdditionalProperties map[string]interface{}                       `json:",remain"`
 }
 
 type _GetNetworkDhcpRelay200ResponseNetworkDhcpRelay GetNetworkDhcpRelay200ResponseNetworkDhcpRelay
@@ -341,7 +341,7 @@ func (o *GetNetworkDhcpRelay200ResponseNetworkDhcpRelay) SetNetworkServer(v GetA
 }
 
 func (o GetNetworkDhcpRelay200ResponseNetworkDhcpRelay) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -384,70 +384,8 @@ func (o GetNetworkDhcpRelay200ResponseNetworkDhcpRelay) ToMap() (map[string]inte
 
 	return toSerialize, nil
 }
-
 func (o *GetNetworkDhcpRelay200ResponseNetworkDhcpRelay) UnmarshalJSON(data []byte) (err error) {
-	varGetNetworkDhcpRelay200ResponseNetworkDhcpRelay := _GetNetworkDhcpRelay200ResponseNetworkDhcpRelay{}
-
-	err = json.Unmarshal(data, &varGetNetworkDhcpRelay200ResponseNetworkDhcpRelay)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetNetworkDhcpRelay200ResponseNetworkDhcpRelay(varGetNetworkDhcpRelay200ResponseNetworkDhcpRelay)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "providerId")
-		delete(additionalProperties, "lastUpdated")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "externalId")
-		delete(additionalProperties, "serverIpAddresses")
-		delete(additionalProperties, "owner")
-		delete(additionalProperties, "networkServer")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetNetworkDhcpRelay200ResponseNetworkDhcpRelay struct {
-	value *GetNetworkDhcpRelay200ResponseNetworkDhcpRelay
-	isSet bool
-}
-
-func (v NullableGetNetworkDhcpRelay200ResponseNetworkDhcpRelay) Get() *GetNetworkDhcpRelay200ResponseNetworkDhcpRelay {
-	return v.value
-}
-
-func (v *NullableGetNetworkDhcpRelay200ResponseNetworkDhcpRelay) Set(val *GetNetworkDhcpRelay200ResponseNetworkDhcpRelay) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetNetworkDhcpRelay200ResponseNetworkDhcpRelay) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetNetworkDhcpRelay200ResponseNetworkDhcpRelay) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetNetworkDhcpRelay200ResponseNetworkDhcpRelay(val *GetNetworkDhcpRelay200ResponseNetworkDhcpRelay) *NullableGetNetworkDhcpRelay200ResponseNetworkDhcpRelay {
-	return &NullableGetNetworkDhcpRelay200ResponseNetworkDhcpRelay{value: val, isSet: true}
-}
-
-func (v NullableGetNetworkDhcpRelay200ResponseNetworkDhcpRelay) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetNetworkDhcpRelay200ResponseNetworkDhcpRelay) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

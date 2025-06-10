@@ -20,8 +20,8 @@ var _ MappedNullable = &ManageHostPlacementRequest{}
 
 // ManageHostPlacementRequest struct for ManageHostPlacementRequest
 type ManageHostPlacementRequest struct {
-	Server *ManageHostPlacementRequestServer `json:"server,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Server               *ManageHostPlacementRequestServer `json:"server,omitempty"`
+	AdditionalProperties map[string]interface{}            `json:",remain"`
 }
 
 type _ManageHostPlacementRequest ManageHostPlacementRequest
@@ -76,7 +76,7 @@ func (o *ManageHostPlacementRequest) SetServer(v ManageHostPlacementRequestServe
 }
 
 func (o ManageHostPlacementRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o ManageHostPlacementRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *ManageHostPlacementRequest) UnmarshalJSON(data []byte) (err error) {
-	varManageHostPlacementRequest := _ManageHostPlacementRequest{}
-
-	err = json.Unmarshal(data, &varManageHostPlacementRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ManageHostPlacementRequest(varManageHostPlacementRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "server")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableManageHostPlacementRequest struct {
-	value *ManageHostPlacementRequest
-	isSet bool
-}
-
-func (v NullableManageHostPlacementRequest) Get() *ManageHostPlacementRequest {
-	return v.value
-}
-
-func (v *NullableManageHostPlacementRequest) Set(val *ManageHostPlacementRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableManageHostPlacementRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableManageHostPlacementRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableManageHostPlacementRequest(val *ManageHostPlacementRequest) *NullableManageHostPlacementRequest {
-	return &NullableManageHostPlacementRequest{value: val, isSet: true}
-}
-
-func (v NullableManageHostPlacementRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableManageHostPlacementRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

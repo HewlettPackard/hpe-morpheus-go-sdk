@@ -20,11 +20,11 @@ var _ MappedNullable = &ListOptionZoneTypesOptions200ResponseAllOfDataInner{}
 
 // ListOptionZoneTypesOptions200ResponseAllOfDataInner struct for ListOptionZoneTypesOptions200ResponseAllOfDataInner
 type ListOptionZoneTypesOptions200ResponseAllOfDataInner struct {
-	Name *string `json:"name,omitempty"`
-	Value *string `json:"value,omitempty"`
-	Id *int64 `json:"id,omitempty"`
-	Code *string `json:"code,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Name                 *string                `json:"name,omitempty"`
+	Value                *string                `json:"value,omitempty"`
+	Id                   *int64                 `json:"id,omitempty"`
+	Code                 *string                `json:"code,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListOptionZoneTypesOptions200ResponseAllOfDataInner ListOptionZoneTypesOptions200ResponseAllOfDataInner
@@ -175,7 +175,7 @@ func (o *ListOptionZoneTypesOptions200ResponseAllOfDataInner) SetCode(v string) 
 }
 
 func (o ListOptionZoneTypesOptions200ResponseAllOfDataInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -203,65 +203,8 @@ func (o ListOptionZoneTypesOptions200ResponseAllOfDataInner) ToMap() (map[string
 
 	return toSerialize, nil
 }
-
 func (o *ListOptionZoneTypesOptions200ResponseAllOfDataInner) UnmarshalJSON(data []byte) (err error) {
-	varListOptionZoneTypesOptions200ResponseAllOfDataInner := _ListOptionZoneTypesOptions200ResponseAllOfDataInner{}
-
-	err = json.Unmarshal(data, &varListOptionZoneTypesOptions200ResponseAllOfDataInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListOptionZoneTypesOptions200ResponseAllOfDataInner(varListOptionZoneTypesOptions200ResponseAllOfDataInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "value")
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "code")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListOptionZoneTypesOptions200ResponseAllOfDataInner struct {
-	value *ListOptionZoneTypesOptions200ResponseAllOfDataInner
-	isSet bool
-}
-
-func (v NullableListOptionZoneTypesOptions200ResponseAllOfDataInner) Get() *ListOptionZoneTypesOptions200ResponseAllOfDataInner {
-	return v.value
-}
-
-func (v *NullableListOptionZoneTypesOptions200ResponseAllOfDataInner) Set(val *ListOptionZoneTypesOptions200ResponseAllOfDataInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListOptionZoneTypesOptions200ResponseAllOfDataInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListOptionZoneTypesOptions200ResponseAllOfDataInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListOptionZoneTypesOptions200ResponseAllOfDataInner(val *ListOptionZoneTypesOptions200ResponseAllOfDataInner) *NullableListOptionZoneTypesOptions200ResponseAllOfDataInner {
-	return &NullableListOptionZoneTypesOptions200ResponseAllOfDataInner{value: val, isSet: true}
-}
-
-func (v NullableListOptionZoneTypesOptions200ResponseAllOfDataInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListOptionZoneTypesOptions200ResponseAllOfDataInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

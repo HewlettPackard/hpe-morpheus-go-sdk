@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the NetworkTypeAwsConfig type satisfies the MappedNullable interface at compile time
@@ -26,9 +25,9 @@ type NetworkTypeAwsConfig struct {
 	// Network CIDR
 	Cidr string `json:"cidr"`
 	// Assign public IPs by default.
-	AssignPublicIp bool `json:"assignPublicIp"`
-	ZonePool CreateNetworksRequestNetworkConfigAnyOf1ZonePool `json:"zonePool"`
-	AdditionalProperties map[string]interface{}
+	AssignPublicIp       bool                                             `json:"assignPublicIp"`
+	ZonePool             CreateNetworksRequestNetworkConfigAnyOf1ZonePool `json:"zonePool"`
+	AdditionalProperties map[string]interface{}                           `json:",remain"`
 }
 
 type _NetworkTypeAwsConfig NetworkTypeAwsConfig
@@ -151,7 +150,7 @@ func (o *NetworkTypeAwsConfig) SetZonePool(v CreateNetworksRequestNetworkConfigA
 }
 
 func (o NetworkTypeAwsConfig) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -171,89 +170,8 @@ func (o NetworkTypeAwsConfig) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *NetworkTypeAwsConfig) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"availabilityZone",
-		"cidr",
-		"assignPublicIp",
-		"zonePool",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varNetworkTypeAwsConfig := _NetworkTypeAwsConfig{}
-
-	err = json.Unmarshal(data, &varNetworkTypeAwsConfig)
-
-	if err != nil {
-		return err
-	}
-
-	*o = NetworkTypeAwsConfig(varNetworkTypeAwsConfig)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "availabilityZone")
-		delete(additionalProperties, "cidr")
-		delete(additionalProperties, "assignPublicIp")
-		delete(additionalProperties, "zonePool")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableNetworkTypeAwsConfig struct {
-	value *NetworkTypeAwsConfig
-	isSet bool
-}
-
-func (v NullableNetworkTypeAwsConfig) Get() *NetworkTypeAwsConfig {
-	return v.value
-}
-
-func (v *NullableNetworkTypeAwsConfig) Set(val *NetworkTypeAwsConfig) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableNetworkTypeAwsConfig) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableNetworkTypeAwsConfig) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableNetworkTypeAwsConfig(val *NetworkTypeAwsConfig) *NullableNetworkTypeAwsConfig {
-	return &NullableNetworkTypeAwsConfig{value: val, isSet: true}
-}
-
-func (v NullableNetworkTypeAwsConfig) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableNetworkTypeAwsConfig) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -20,8 +20,8 @@ var _ MappedNullable = &ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCre
 
 // ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy struct for ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy
 type ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy struct {
-	Username *string `json:"username,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Username             *string                `json:"username,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy
@@ -76,7 +76,7 @@ func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy) SetUser
 }
 
 func (o ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy) ToMap() 
 
 	return toSerialize, nil
 }
-
 func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy) UnmarshalJSON(data []byte) (err error) {
-	varListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy := _ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy{}
-
-	err = json.Unmarshal(data, &varListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy(varListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "username")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy struct {
-	value *ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy
-	isSet bool
-}
-
-func (v NullableListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy) Get() *ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy {
-	return v.value
-}
-
-func (v *NullableListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy) Set(val *ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy(val *ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy) *NullableListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy {
-	return &NullableListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy{value: val, isSet: true}
-}
-
-func (v NullableListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

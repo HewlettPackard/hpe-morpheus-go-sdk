@@ -20,15 +20,15 @@ var _ MappedNullable = &AddInstance200ResponseAllOfOneOfInstanceStats{}
 
 // AddInstance200ResponseAllOfOneOfInstanceStats struct for AddInstance200ResponseAllOfOneOfInstanceStats
 type AddInstance200ResponseAllOfOneOfInstanceStats struct {
-	UsedStorage *int64 `json:"usedStorage,omitempty"`
-	MaxStorage *int64 `json:"maxStorage,omitempty"`
-	UsedMemory *int64 `json:"usedMemory,omitempty"`
-	MaxMemory *int64 `json:"maxMemory,omitempty"`
-	UsedCpu *float32 `json:"usedCpu,omitempty"`
-	CpuUsage *float32 `json:"cpuUsage,omitempty"`
-	CpuUsagePeak *float32 `json:"cpuUsagePeak,omitempty"`
-	CpuUsageAvg *float32 `json:"cpuUsageAvg,omitempty"`
-	AdditionalProperties map[string]interface{}
+	UsedStorage          *int64                 `json:"usedStorage,omitempty"`
+	MaxStorage           *int64                 `json:"maxStorage,omitempty"`
+	UsedMemory           *int64                 `json:"usedMemory,omitempty"`
+	MaxMemory            *int64                 `json:"maxMemory,omitempty"`
+	UsedCpu              *float32               `json:"usedCpu,omitempty"`
+	CpuUsage             *float32               `json:"cpuUsage,omitempty"`
+	CpuUsagePeak         *float32               `json:"cpuUsagePeak,omitempty"`
+	CpuUsageAvg          *float32               `json:"cpuUsageAvg,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddInstance200ResponseAllOfOneOfInstanceStats AddInstance200ResponseAllOfOneOfInstanceStats
@@ -307,7 +307,7 @@ func (o *AddInstance200ResponseAllOfOneOfInstanceStats) SetCpuUsageAvg(v float32
 }
 
 func (o AddInstance200ResponseAllOfOneOfInstanceStats) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -347,69 +347,8 @@ func (o AddInstance200ResponseAllOfOneOfInstanceStats) ToMap() (map[string]inter
 
 	return toSerialize, nil
 }
-
 func (o *AddInstance200ResponseAllOfOneOfInstanceStats) UnmarshalJSON(data []byte) (err error) {
-	varAddInstance200ResponseAllOfOneOfInstanceStats := _AddInstance200ResponseAllOfOneOfInstanceStats{}
-
-	err = json.Unmarshal(data, &varAddInstance200ResponseAllOfOneOfInstanceStats)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddInstance200ResponseAllOfOneOfInstanceStats(varAddInstance200ResponseAllOfOneOfInstanceStats)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "usedStorage")
-		delete(additionalProperties, "maxStorage")
-		delete(additionalProperties, "usedMemory")
-		delete(additionalProperties, "maxMemory")
-		delete(additionalProperties, "usedCpu")
-		delete(additionalProperties, "cpuUsage")
-		delete(additionalProperties, "cpuUsagePeak")
-		delete(additionalProperties, "cpuUsageAvg")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddInstance200ResponseAllOfOneOfInstanceStats struct {
-	value *AddInstance200ResponseAllOfOneOfInstanceStats
-	isSet bool
-}
-
-func (v NullableAddInstance200ResponseAllOfOneOfInstanceStats) Get() *AddInstance200ResponseAllOfOneOfInstanceStats {
-	return v.value
-}
-
-func (v *NullableAddInstance200ResponseAllOfOneOfInstanceStats) Set(val *AddInstance200ResponseAllOfOneOfInstanceStats) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddInstance200ResponseAllOfOneOfInstanceStats) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddInstance200ResponseAllOfOneOfInstanceStats) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddInstance200ResponseAllOfOneOfInstanceStats(val *AddInstance200ResponseAllOfOneOfInstanceStats) *NullableAddInstance200ResponseAllOfOneOfInstanceStats {
-	return &NullableAddInstance200ResponseAllOfOneOfInstanceStats{value: val, isSet: true}
-}
-
-func (v NullableAddInstance200ResponseAllOfOneOfInstanceStats) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddInstance200ResponseAllOfOneOfInstanceStats) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

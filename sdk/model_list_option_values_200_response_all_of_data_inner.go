@@ -23,8 +23,8 @@ type ListOptionValues200ResponseAllOfDataInner struct {
 	// Key
 	Name *string `json:"name,omitempty"`
 	// Value
-	Value *string `json:"value,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Value                *string                `json:"value,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListOptionValues200ResponseAllOfDataInner ListOptionValues200ResponseAllOfDataInner
@@ -111,7 +111,7 @@ func (o *ListOptionValues200ResponseAllOfDataInner) SetValue(v string) {
 }
 
 func (o ListOptionValues200ResponseAllOfDataInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -133,63 +133,8 @@ func (o ListOptionValues200ResponseAllOfDataInner) ToMap() (map[string]interface
 
 	return toSerialize, nil
 }
-
 func (o *ListOptionValues200ResponseAllOfDataInner) UnmarshalJSON(data []byte) (err error) {
-	varListOptionValues200ResponseAllOfDataInner := _ListOptionValues200ResponseAllOfDataInner{}
-
-	err = json.Unmarshal(data, &varListOptionValues200ResponseAllOfDataInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListOptionValues200ResponseAllOfDataInner(varListOptionValues200ResponseAllOfDataInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "value")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListOptionValues200ResponseAllOfDataInner struct {
-	value *ListOptionValues200ResponseAllOfDataInner
-	isSet bool
-}
-
-func (v NullableListOptionValues200ResponseAllOfDataInner) Get() *ListOptionValues200ResponseAllOfDataInner {
-	return v.value
-}
-
-func (v *NullableListOptionValues200ResponseAllOfDataInner) Set(val *ListOptionValues200ResponseAllOfDataInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListOptionValues200ResponseAllOfDataInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListOptionValues200ResponseAllOfDataInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListOptionValues200ResponseAllOfDataInner(val *ListOptionValues200ResponseAllOfDataInner) *NullableListOptionValues200ResponseAllOfDataInner {
-	return &NullableListOptionValues200ResponseAllOfDataInner{value: val, isSet: true}
-}
-
-func (v NullableListOptionValues200ResponseAllOfDataInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListOptionValues200ResponseAllOfDataInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

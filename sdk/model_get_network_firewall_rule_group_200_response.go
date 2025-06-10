@@ -20,8 +20,8 @@ var _ MappedNullable = &GetNetworkFirewallRuleGroup200Response{}
 
 // GetNetworkFirewallRuleGroup200Response struct for GetNetworkFirewallRuleGroup200Response
 type GetNetworkFirewallRuleGroup200Response struct {
-	RuleGroup *GetNetworkFirewallRuleGroup200ResponseRuleGroup `json:"ruleGroup,omitempty"`
-	AdditionalProperties map[string]interface{}
+	RuleGroup            *GetNetworkFirewallRuleGroup200ResponseRuleGroup `json:"ruleGroup,omitempty"`
+	AdditionalProperties map[string]interface{}                           `json:",remain"`
 }
 
 type _GetNetworkFirewallRuleGroup200Response GetNetworkFirewallRuleGroup200Response
@@ -76,7 +76,7 @@ func (o *GetNetworkFirewallRuleGroup200Response) SetRuleGroup(v GetNetworkFirewa
 }
 
 func (o GetNetworkFirewallRuleGroup200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o GetNetworkFirewallRuleGroup200Response) ToMap() (map[string]interface{},
 
 	return toSerialize, nil
 }
-
 func (o *GetNetworkFirewallRuleGroup200Response) UnmarshalJSON(data []byte) (err error) {
-	varGetNetworkFirewallRuleGroup200Response := _GetNetworkFirewallRuleGroup200Response{}
-
-	err = json.Unmarshal(data, &varGetNetworkFirewallRuleGroup200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetNetworkFirewallRuleGroup200Response(varGetNetworkFirewallRuleGroup200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "ruleGroup")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetNetworkFirewallRuleGroup200Response struct {
-	value *GetNetworkFirewallRuleGroup200Response
-	isSet bool
-}
-
-func (v NullableGetNetworkFirewallRuleGroup200Response) Get() *GetNetworkFirewallRuleGroup200Response {
-	return v.value
-}
-
-func (v *NullableGetNetworkFirewallRuleGroup200Response) Set(val *GetNetworkFirewallRuleGroup200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetNetworkFirewallRuleGroup200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetNetworkFirewallRuleGroup200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetNetworkFirewallRuleGroup200Response(val *GetNetworkFirewallRuleGroup200Response) *NullableGetNetworkFirewallRuleGroup200Response {
-	return &NullableGetNetworkFirewallRuleGroup200Response{value: val, isSet: true}
-}
-
-func (v NullableGetNetworkFirewallRuleGroup200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetNetworkFirewallRuleGroup200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -33,12 +33,12 @@ type UpdateAlertsRequestAlert struct {
 	// Trigger for all check groups
 	AllGroups *bool `json:"allGroups,omitempty"`
 	// Trigger for all monitor apps
-	AllApps *bool `json:"allApps,omitempty"`
-	Checks []int32 `json:"checks,omitempty"`
-	Groups []int32 `json:"groups,omitempty"`
-	Apps []int32 `json:"apps,omitempty"`
-	Contacts []ListAlerts200ResponseAllOfAlertsInnerContactsInner `json:"contacts,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AllApps              *bool                                                `json:"allApps,omitempty"`
+	Checks               []int32                                              `json:"checks,omitempty"`
+	Groups               []int32                                              `json:"groups,omitempty"`
+	Apps                 []int32                                              `json:"apps,omitempty"`
+	Contacts             []ListAlerts200ResponseAllOfAlertsInnerContactsInner `json:"contacts,omitempty"`
+	AdditionalProperties map[string]interface{}                               `json:",remain"`
 }
 
 type _UpdateAlertsRequestAlert UpdateAlertsRequestAlert
@@ -437,7 +437,7 @@ func (o *UpdateAlertsRequestAlert) SetContacts(v []ListAlerts200ResponseAllOfAle
 }
 
 func (o UpdateAlertsRequestAlert) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -486,72 +486,8 @@ func (o UpdateAlertsRequestAlert) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *UpdateAlertsRequestAlert) UnmarshalJSON(data []byte) (err error) {
-	varUpdateAlertsRequestAlert := _UpdateAlertsRequestAlert{}
-
-	err = json.Unmarshal(data, &varUpdateAlertsRequestAlert)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateAlertsRequestAlert(varUpdateAlertsRequestAlert)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "minDuration")
-		delete(additionalProperties, "minSeverity")
-		delete(additionalProperties, "active")
-		delete(additionalProperties, "allChecks")
-		delete(additionalProperties, "allGroups")
-		delete(additionalProperties, "allApps")
-		delete(additionalProperties, "checks")
-		delete(additionalProperties, "groups")
-		delete(additionalProperties, "apps")
-		delete(additionalProperties, "contacts")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateAlertsRequestAlert struct {
-	value *UpdateAlertsRequestAlert
-	isSet bool
-}
-
-func (v NullableUpdateAlertsRequestAlert) Get() *UpdateAlertsRequestAlert {
-	return v.value
-}
-
-func (v *NullableUpdateAlertsRequestAlert) Set(val *UpdateAlertsRequestAlert) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateAlertsRequestAlert) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateAlertsRequestAlert) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateAlertsRequestAlert(val *UpdateAlertsRequestAlert) *NullableUpdateAlertsRequestAlert {
-	return &NullableUpdateAlertsRequestAlert{value: val, isSet: true}
-}
-
-func (v NullableUpdateAlertsRequestAlert) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateAlertsRequestAlert) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

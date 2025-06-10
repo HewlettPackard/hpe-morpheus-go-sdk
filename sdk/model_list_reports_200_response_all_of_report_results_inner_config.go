@@ -20,11 +20,11 @@ var _ MappedNullable = &ListReports200ResponseAllOfReportResultsInnerConfig{}
 
 // ListReports200ResponseAllOfReportResultsInnerConfig struct for ListReports200ResponseAllOfReportResultsInnerConfig
 type ListReports200ResponseAllOfReportResultsInnerConfig struct {
-	ReportType *string `json:"reportType,omitempty"`
-	StartDate *string `json:"startDate,omitempty"`
-	EndDate *string `json:"endDate,omitempty"`
-	CloudId *string `json:"cloudId,omitempty"`
-	AdditionalProperties map[string]interface{}
+	ReportType           *string                `json:"reportType,omitempty"`
+	StartDate            *string                `json:"startDate,omitempty"`
+	EndDate              *string                `json:"endDate,omitempty"`
+	CloudId              *string                `json:"cloudId,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListReports200ResponseAllOfReportResultsInnerConfig ListReports200ResponseAllOfReportResultsInnerConfig
@@ -175,7 +175,7 @@ func (o *ListReports200ResponseAllOfReportResultsInnerConfig) SetCloudId(v strin
 }
 
 func (o ListReports200ResponseAllOfReportResultsInnerConfig) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -203,65 +203,8 @@ func (o ListReports200ResponseAllOfReportResultsInnerConfig) ToMap() (map[string
 
 	return toSerialize, nil
 }
-
 func (o *ListReports200ResponseAllOfReportResultsInnerConfig) UnmarshalJSON(data []byte) (err error) {
-	varListReports200ResponseAllOfReportResultsInnerConfig := _ListReports200ResponseAllOfReportResultsInnerConfig{}
-
-	err = json.Unmarshal(data, &varListReports200ResponseAllOfReportResultsInnerConfig)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListReports200ResponseAllOfReportResultsInnerConfig(varListReports200ResponseAllOfReportResultsInnerConfig)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "reportType")
-		delete(additionalProperties, "startDate")
-		delete(additionalProperties, "endDate")
-		delete(additionalProperties, "cloudId")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListReports200ResponseAllOfReportResultsInnerConfig struct {
-	value *ListReports200ResponseAllOfReportResultsInnerConfig
-	isSet bool
-}
-
-func (v NullableListReports200ResponseAllOfReportResultsInnerConfig) Get() *ListReports200ResponseAllOfReportResultsInnerConfig {
-	return v.value
-}
-
-func (v *NullableListReports200ResponseAllOfReportResultsInnerConfig) Set(val *ListReports200ResponseAllOfReportResultsInnerConfig) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListReports200ResponseAllOfReportResultsInnerConfig) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListReports200ResponseAllOfReportResultsInnerConfig) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListReports200ResponseAllOfReportResultsInnerConfig(val *ListReports200ResponseAllOfReportResultsInnerConfig) *NullableListReports200ResponseAllOfReportResultsInnerConfig {
-	return &NullableListReports200ResponseAllOfReportResultsInnerConfig{value: val, isSet: true}
-}
-
-func (v NullableListReports200ResponseAllOfReportResultsInnerConfig) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListReports200ResponseAllOfReportResultsInnerConfig) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

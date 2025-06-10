@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the RolePermissionBlueprintAll type satisfies the MappedNullable interface at compile time
@@ -24,8 +23,8 @@ type RolePermissionBlueprintAll struct {
 	// Apply to all blueprints (appTemplate)
 	AllAppTemplates bool `json:"allAppTemplates"`
 	// The new access level.
-	Access string `json:"access"`
-	AdditionalProperties map[string]interface{}
+	Access               string                 `json:"access"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _RolePermissionBlueprintAll RolePermissionBlueprintAll
@@ -98,7 +97,7 @@ func (o *RolePermissionBlueprintAll) SetAccess(v string) {
 }
 
 func (o RolePermissionBlueprintAll) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -116,85 +115,8 @@ func (o RolePermissionBlueprintAll) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *RolePermissionBlueprintAll) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"allAppTemplates",
-		"access",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varRolePermissionBlueprintAll := _RolePermissionBlueprintAll{}
-
-	err = json.Unmarshal(data, &varRolePermissionBlueprintAll)
-
-	if err != nil {
-		return err
-	}
-
-	*o = RolePermissionBlueprintAll(varRolePermissionBlueprintAll)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "allAppTemplates")
-		delete(additionalProperties, "access")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableRolePermissionBlueprintAll struct {
-	value *RolePermissionBlueprintAll
-	isSet bool
-}
-
-func (v NullableRolePermissionBlueprintAll) Get() *RolePermissionBlueprintAll {
-	return v.value
-}
-
-func (v *NullableRolePermissionBlueprintAll) Set(val *RolePermissionBlueprintAll) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableRolePermissionBlueprintAll) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableRolePermissionBlueprintAll) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableRolePermissionBlueprintAll(val *RolePermissionBlueprintAll) *NullableRolePermissionBlueprintAll {
-	return &NullableRolePermissionBlueprintAll{value: val, isSet: true}
-}
-
-func (v NullableRolePermissionBlueprintAll) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableRolePermissionBlueprintAll) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

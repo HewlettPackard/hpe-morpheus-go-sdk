@@ -29,8 +29,8 @@ type GetAccessToken200Response struct {
 	// Token type granted
 	TokenType *string `json:"token_type,omitempty"`
 	// Scope granted
-	Scope *string `json:"scope,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Scope                *string                `json:"scope,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _GetAccessToken200Response GetAccessToken200Response
@@ -213,7 +213,7 @@ func (o *GetAccessToken200Response) SetScope(v string) {
 }
 
 func (o GetAccessToken200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -244,66 +244,8 @@ func (o GetAccessToken200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *GetAccessToken200Response) UnmarshalJSON(data []byte) (err error) {
-	varGetAccessToken200Response := _GetAccessToken200Response{}
-
-	err = json.Unmarshal(data, &varGetAccessToken200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetAccessToken200Response(varGetAccessToken200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "access_token")
-		delete(additionalProperties, "refresh_token")
-		delete(additionalProperties, "expires_in")
-		delete(additionalProperties, "token_type")
-		delete(additionalProperties, "scope")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetAccessToken200Response struct {
-	value *GetAccessToken200Response
-	isSet bool
-}
-
-func (v NullableGetAccessToken200Response) Get() *GetAccessToken200Response {
-	return v.value
-}
-
-func (v *NullableGetAccessToken200Response) Set(val *GetAccessToken200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetAccessToken200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetAccessToken200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetAccessToken200Response(val *GetAccessToken200Response) *NullableGetAccessToken200Response {
-	return &NullableGetAccessToken200Response{value: val, isSet: true}
-}
-
-func (v NullableGetAccessToken200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetAccessToken200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

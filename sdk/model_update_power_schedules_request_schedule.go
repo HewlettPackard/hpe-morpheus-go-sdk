@@ -57,8 +57,8 @@ type UpdatePowerSchedulesRequestSchedule struct {
 	// Sunday Start time of the day in 24-hour format
 	SundayOnTime *string `json:"sundayOnTime,omitempty"`
 	// Sunday Off time of the day in 24-hour format
-	SundayOffTime *string `json:"sundayOffTime,omitempty"`
-	AdditionalProperties map[string]interface{}
+	SundayOffTime        *string                `json:"sundayOffTime,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _UpdatePowerSchedulesRequestSchedule UpdatePowerSchedulesRequestSchedule
@@ -753,7 +753,7 @@ func (o *UpdatePowerSchedulesRequestSchedule) SetSundayOffTime(v string) {
 }
 
 func (o UpdatePowerSchedulesRequestSchedule) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -826,80 +826,8 @@ func (o UpdatePowerSchedulesRequestSchedule) ToMap() (map[string]interface{}, er
 
 	return toSerialize, nil
 }
-
 func (o *UpdatePowerSchedulesRequestSchedule) UnmarshalJSON(data []byte) (err error) {
-	varUpdatePowerSchedulesRequestSchedule := _UpdatePowerSchedulesRequestSchedule{}
-
-	err = json.Unmarshal(data, &varUpdatePowerSchedulesRequestSchedule)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdatePowerSchedulesRequestSchedule(varUpdatePowerSchedulesRequestSchedule)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "scheduleType")
-		delete(additionalProperties, "scheduleTimezone")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "mondayOnTime")
-		delete(additionalProperties, "mondayOffTime")
-		delete(additionalProperties, "tuesdayOnTime")
-		delete(additionalProperties, "tuesdayOffTime")
-		delete(additionalProperties, "wednesdayOnTime")
-		delete(additionalProperties, "wednesdayOffTime")
-		delete(additionalProperties, "thursdayOnTime")
-		delete(additionalProperties, "thursdayOffTime")
-		delete(additionalProperties, "fridayOnTime")
-		delete(additionalProperties, "fridayOffTime")
-		delete(additionalProperties, "saturdayOnTime")
-		delete(additionalProperties, "saturdayOffTime")
-		delete(additionalProperties, "sundayOnTime")
-		delete(additionalProperties, "sundayOffTime")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdatePowerSchedulesRequestSchedule struct {
-	value *UpdatePowerSchedulesRequestSchedule
-	isSet bool
-}
-
-func (v NullableUpdatePowerSchedulesRequestSchedule) Get() *UpdatePowerSchedulesRequestSchedule {
-	return v.value
-}
-
-func (v *NullableUpdatePowerSchedulesRequestSchedule) Set(val *UpdatePowerSchedulesRequestSchedule) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdatePowerSchedulesRequestSchedule) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdatePowerSchedulesRequestSchedule) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdatePowerSchedulesRequestSchedule(val *UpdatePowerSchedulesRequestSchedule) *NullableUpdatePowerSchedulesRequestSchedule {
-	return &NullableUpdatePowerSchedulesRequestSchedule{value: val, isSet: true}
-}
-
-func (v NullableUpdatePowerSchedulesRequestSchedule) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdatePowerSchedulesRequestSchedule) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

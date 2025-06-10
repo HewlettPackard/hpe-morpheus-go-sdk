@@ -20,14 +20,14 @@ var _ MappedNullable = &ListImageBuilds200ResponseAllOfImageBuildsInnerConfig{}
 
 // ListImageBuilds200ResponseAllOfImageBuildsInnerConfig struct for ListImageBuilds200ResponseAllOfImageBuildsInnerConfig
 type ListImageBuilds200ResponseAllOfImageBuildsInnerConfig struct {
-	Instance *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigInstance `json:"instance,omitempty"`
-	NetworkInterfaces []ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInner `json:"networkInterfaces,omitempty"`
-	Volumes []ListImageBuilds200ResponseAllOfImageBuildsInnerConfigVolumesInner `json:"volumes,omitempty"`
-	StorageControllers []map[string]interface{} `json:"storageControllers,omitempty"`
-	ZoneId *int64 `json:"zoneId,omitempty"`
-	Config *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigConfig `json:"config,omitempty"`
-	Plan *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigPlan `json:"plan,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Instance             *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigInstance                `json:"instance,omitempty"`
+	NetworkInterfaces    []ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInner `json:"networkInterfaces,omitempty"`
+	Volumes              []ListImageBuilds200ResponseAllOfImageBuildsInnerConfigVolumesInner           `json:"volumes,omitempty"`
+	StorageControllers   []map[string]interface{}                                                      `json:"storageControllers,omitempty"`
+	ZoneId               *int64                                                                        `json:"zoneId,omitempty"`
+	Config               *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigConfig                  `json:"config,omitempty"`
+	Plan                 *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigPlan                    `json:"plan,omitempty"`
+	AdditionalProperties map[string]interface{}                                                        `json:",remain"`
 }
 
 type _ListImageBuilds200ResponseAllOfImageBuildsInnerConfig ListImageBuilds200ResponseAllOfImageBuildsInnerConfig
@@ -274,7 +274,7 @@ func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfig) SetPlan(v ListIm
 }
 
 func (o ListImageBuilds200ResponseAllOfImageBuildsInnerConfig) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -311,68 +311,8 @@ func (o ListImageBuilds200ResponseAllOfImageBuildsInnerConfig) ToMap() (map[stri
 
 	return toSerialize, nil
 }
-
 func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfig) UnmarshalJSON(data []byte) (err error) {
-	varListImageBuilds200ResponseAllOfImageBuildsInnerConfig := _ListImageBuilds200ResponseAllOfImageBuildsInnerConfig{}
-
-	err = json.Unmarshal(data, &varListImageBuilds200ResponseAllOfImageBuildsInnerConfig)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListImageBuilds200ResponseAllOfImageBuildsInnerConfig(varListImageBuilds200ResponseAllOfImageBuildsInnerConfig)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "instance")
-		delete(additionalProperties, "networkInterfaces")
-		delete(additionalProperties, "volumes")
-		delete(additionalProperties, "storageControllers")
-		delete(additionalProperties, "zoneId")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "plan")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListImageBuilds200ResponseAllOfImageBuildsInnerConfig struct {
-	value *ListImageBuilds200ResponseAllOfImageBuildsInnerConfig
-	isSet bool
-}
-
-func (v NullableListImageBuilds200ResponseAllOfImageBuildsInnerConfig) Get() *ListImageBuilds200ResponseAllOfImageBuildsInnerConfig {
-	return v.value
-}
-
-func (v *NullableListImageBuilds200ResponseAllOfImageBuildsInnerConfig) Set(val *ListImageBuilds200ResponseAllOfImageBuildsInnerConfig) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListImageBuilds200ResponseAllOfImageBuildsInnerConfig) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListImageBuilds200ResponseAllOfImageBuildsInnerConfig) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListImageBuilds200ResponseAllOfImageBuildsInnerConfig(val *ListImageBuilds200ResponseAllOfImageBuildsInnerConfig) *NullableListImageBuilds200ResponseAllOfImageBuildsInnerConfig {
-	return &NullableListImageBuilds200ResponseAllOfImageBuildsInnerConfig{value: val, isSet: true}
-}
-
-func (v NullableListImageBuilds200ResponseAllOfImageBuildsInnerConfig) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListImageBuilds200ResponseAllOfImageBuildsInnerConfig) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

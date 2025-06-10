@@ -20,8 +20,8 @@ var _ MappedNullable = &ApprovalItem{}
 
 // ApprovalItem struct for ApprovalItem
 type ApprovalItem struct {
-	ApprovalItem *GetApprovalsItem200ResponseApprovalItem `json:"approvalItem,omitempty"`
-	AdditionalProperties map[string]interface{}
+	ApprovalItem         *GetApprovalsItem200ResponseApprovalItem `json:"approvalItem,omitempty"`
+	AdditionalProperties map[string]interface{}                   `json:",remain"`
 }
 
 type _ApprovalItem ApprovalItem
@@ -76,7 +76,7 @@ func (o *ApprovalItem) SetApprovalItem(v GetApprovalsItem200ResponseApprovalItem
 }
 
 func (o ApprovalItem) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o ApprovalItem) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *ApprovalItem) UnmarshalJSON(data []byte) (err error) {
-	varApprovalItem := _ApprovalItem{}
-
-	err = json.Unmarshal(data, &varApprovalItem)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ApprovalItem(varApprovalItem)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "approvalItem")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableApprovalItem struct {
-	value *ApprovalItem
-	isSet bool
-}
-
-func (v NullableApprovalItem) Get() *ApprovalItem {
-	return v.value
-}
-
-func (v *NullableApprovalItem) Set(val *ApprovalItem) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableApprovalItem) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableApprovalItem) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableApprovalItem(val *ApprovalItem) *NullableApprovalItem {
-	return &NullableApprovalItem{value: val, isSet: true}
-}
-
-func (v NullableApprovalItem) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableApprovalItem) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -18,13 +18,13 @@ import (
 // checks if the CheckElastic type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &CheckElastic{}
 
-// CheckElastic Elasticsearch check is capable of connecting to your Elasticsearch, cluster or node, verifying its health. In addition, Morpheus will also pull statistical information such as: document size, capacity, and cpu usage. 
+// CheckElastic Elasticsearch check is capable of connecting to your Elasticsearch, cluster or node, verifying its health. In addition, Morpheus will also pull statistical information such as: document size, capacity, and cpu usage.
 type CheckElastic struct {
 	// Unique name scoped to your account for the check
 	Name *string `json:"name,omitempty"`
 	// Optional description field
-	Description *string `json:"description,omitempty"`
-	CheckType *AddChecksRequestCheckOneOf3CheckType `json:"checkType,omitempty"`
+	Description *string                               `json:"description,omitempty"`
+	CheckType   *AddChecksRequestCheckOneOf3CheckType `json:"checkType,omitempty"`
 	// Number of seconds you want between check executions (minimum value is 60, depending on your subscription plan)
 	CheckInterval *int32 `json:"checkInterval,omitempty"`
 	// Used to determine if check should affect account wide availability calculations
@@ -32,9 +32,9 @@ type CheckElastic struct {
 	// Used to determine if check should be scheduled to execute
 	Active *bool `json:"active,omitempty"`
 	// Severity level threshold for sending notifications.
-	Severity *string `json:"severity,omitempty"`
-	Config *AddChecksRequestCheckOneOf3Config `json:"config,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Severity             *string                            `json:"severity,omitempty"`
+	Config               *AddChecksRequestCheckOneOf3Config `json:"config,omitempty"`
+	AdditionalProperties map[string]interface{}             `json:",remain"`
 }
 
 type _CheckElastic CheckElastic
@@ -329,7 +329,7 @@ func (o *CheckElastic) SetConfig(v AddChecksRequestCheckOneOf3Config) {
 }
 
 func (o CheckElastic) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -369,69 +369,8 @@ func (o CheckElastic) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *CheckElastic) UnmarshalJSON(data []byte) (err error) {
-	varCheckElastic := _CheckElastic{}
-
-	err = json.Unmarshal(data, &varCheckElastic)
-
-	if err != nil {
-		return err
-	}
-
-	*o = CheckElastic(varCheckElastic)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "checkType")
-		delete(additionalProperties, "checkInterval")
-		delete(additionalProperties, "inUptime")
-		delete(additionalProperties, "active")
-		delete(additionalProperties, "severity")
-		delete(additionalProperties, "config")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableCheckElastic struct {
-	value *CheckElastic
-	isSet bool
-}
-
-func (v NullableCheckElastic) Get() *CheckElastic {
-	return v.value
-}
-
-func (v *NullableCheckElastic) Set(val *CheckElastic) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableCheckElastic) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableCheckElastic) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableCheckElastic(val *CheckElastic) *NullableCheckElastic {
-	return &NullableCheckElastic{value: val, isSet: true}
-}
-
-func (v NullableCheckElastic) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableCheckElastic) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

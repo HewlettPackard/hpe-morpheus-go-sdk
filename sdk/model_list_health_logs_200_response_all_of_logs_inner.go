@@ -21,19 +21,19 @@ var _ MappedNullable = &ListHealthLogs200ResponseAllOfLogsInner{}
 
 // ListHealthLogs200ResponseAllOfLogsInner struct for ListHealthLogs200ResponseAllOfLogsInner
 type ListHealthLogs200ResponseAllOfLogsInner struct {
-	TypeCode *string `json:"typeCode,omitempty"`
-	Ts *time.Time `json:"ts,omitempty"`
-	Level *string `json:"level,omitempty"`
-	SourceType *string `json:"sourceType,omitempty"`
-	Message *string `json:"message,omitempty"`
-	Hostname *string `json:"hostname,omitempty"`
-	Title *string `json:"title,omitempty"`
-	LogSignature *string `json:"logSignature,omitempty"`
-	ObjectId *string `json:"objectId,omitempty"`
-	Seq *int64 `json:"seq,omitempty"`
-	Id *string `json:"_id,omitempty"`
-	SignatureVerified *bool `json:"signatureVerified,omitempty"`
-	AdditionalProperties map[string]interface{}
+	TypeCode             *string                `json:"typeCode,omitempty"`
+	Ts                   *time.Time             `json:"ts,omitempty"`
+	Level                *string                `json:"level,omitempty"`
+	SourceType           *string                `json:"sourceType,omitempty"`
+	Message              *string                `json:"message,omitempty"`
+	Hostname             *string                `json:"hostname,omitempty"`
+	Title                *string                `json:"title,omitempty"`
+	LogSignature         *string                `json:"logSignature,omitempty"`
+	ObjectId             *string                `json:"objectId,omitempty"`
+	Seq                  *int64                 `json:"seq,omitempty"`
+	Id                   *string                `json:"_id,omitempty"`
+	SignatureVerified    *bool                  `json:"signatureVerified,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListHealthLogs200ResponseAllOfLogsInner ListHealthLogs200ResponseAllOfLogsInner
@@ -440,7 +440,7 @@ func (o *ListHealthLogs200ResponseAllOfLogsInner) SetSignatureVerified(v bool) {
 }
 
 func (o ListHealthLogs200ResponseAllOfLogsInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -492,73 +492,8 @@ func (o ListHealthLogs200ResponseAllOfLogsInner) ToMap() (map[string]interface{}
 
 	return toSerialize, nil
 }
-
 func (o *ListHealthLogs200ResponseAllOfLogsInner) UnmarshalJSON(data []byte) (err error) {
-	varListHealthLogs200ResponseAllOfLogsInner := _ListHealthLogs200ResponseAllOfLogsInner{}
-
-	err = json.Unmarshal(data, &varListHealthLogs200ResponseAllOfLogsInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListHealthLogs200ResponseAllOfLogsInner(varListHealthLogs200ResponseAllOfLogsInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "typeCode")
-		delete(additionalProperties, "ts")
-		delete(additionalProperties, "level")
-		delete(additionalProperties, "sourceType")
-		delete(additionalProperties, "message")
-		delete(additionalProperties, "hostname")
-		delete(additionalProperties, "title")
-		delete(additionalProperties, "logSignature")
-		delete(additionalProperties, "objectId")
-		delete(additionalProperties, "seq")
-		delete(additionalProperties, "_id")
-		delete(additionalProperties, "signatureVerified")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListHealthLogs200ResponseAllOfLogsInner struct {
-	value *ListHealthLogs200ResponseAllOfLogsInner
-	isSet bool
-}
-
-func (v NullableListHealthLogs200ResponseAllOfLogsInner) Get() *ListHealthLogs200ResponseAllOfLogsInner {
-	return v.value
-}
-
-func (v *NullableListHealthLogs200ResponseAllOfLogsInner) Set(val *ListHealthLogs200ResponseAllOfLogsInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListHealthLogs200ResponseAllOfLogsInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListHealthLogs200ResponseAllOfLogsInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListHealthLogs200ResponseAllOfLogsInner(val *ListHealthLogs200ResponseAllOfLogsInner) *NullableListHealthLogs200ResponseAllOfLogsInner {
-	return &NullableListHealthLogs200ResponseAllOfLogsInner{value: val, isSet: true}
-}
-
-func (v NullableListHealthLogs200ResponseAllOfLogsInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListHealthLogs200ResponseAllOfLogsInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

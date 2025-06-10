@@ -18,10 +18,10 @@ import (
 // checks if the MaxLoadBalancerPoolsPolicyTypeConfiguration type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &MaxLoadBalancerPoolsPolicyTypeConfiguration{}
 
-// MaxLoadBalancerPoolsPolicyTypeConfiguration Configuration settings for the following policy types: - Max Load Balancer Pools 
+// MaxLoadBalancerPoolsPolicyTypeConfiguration Configuration settings for the following policy types: - Max Load Balancer Pools
 type MaxLoadBalancerPoolsPolicyTypeConfiguration struct {
-	MaxPools *string `json:"maxPools,omitempty"`
-	AdditionalProperties map[string]interface{}
+	MaxPools             *string                `json:"maxPools,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _MaxLoadBalancerPoolsPolicyTypeConfiguration MaxLoadBalancerPoolsPolicyTypeConfiguration
@@ -76,7 +76,7 @@ func (o *MaxLoadBalancerPoolsPolicyTypeConfiguration) SetMaxPools(v string) {
 }
 
 func (o MaxLoadBalancerPoolsPolicyTypeConfiguration) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o MaxLoadBalancerPoolsPolicyTypeConfiguration) ToMap() (map[string]interfa
 
 	return toSerialize, nil
 }
-
 func (o *MaxLoadBalancerPoolsPolicyTypeConfiguration) UnmarshalJSON(data []byte) (err error) {
-	varMaxLoadBalancerPoolsPolicyTypeConfiguration := _MaxLoadBalancerPoolsPolicyTypeConfiguration{}
-
-	err = json.Unmarshal(data, &varMaxLoadBalancerPoolsPolicyTypeConfiguration)
-
-	if err != nil {
-		return err
-	}
-
-	*o = MaxLoadBalancerPoolsPolicyTypeConfiguration(varMaxLoadBalancerPoolsPolicyTypeConfiguration)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "maxPools")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableMaxLoadBalancerPoolsPolicyTypeConfiguration struct {
-	value *MaxLoadBalancerPoolsPolicyTypeConfiguration
-	isSet bool
-}
-
-func (v NullableMaxLoadBalancerPoolsPolicyTypeConfiguration) Get() *MaxLoadBalancerPoolsPolicyTypeConfiguration {
-	return v.value
-}
-
-func (v *NullableMaxLoadBalancerPoolsPolicyTypeConfiguration) Set(val *MaxLoadBalancerPoolsPolicyTypeConfiguration) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableMaxLoadBalancerPoolsPolicyTypeConfiguration) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableMaxLoadBalancerPoolsPolicyTypeConfiguration) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableMaxLoadBalancerPoolsPolicyTypeConfiguration(val *MaxLoadBalancerPoolsPolicyTypeConfiguration) *NullableMaxLoadBalancerPoolsPolicyTypeConfiguration {
-	return &NullableMaxLoadBalancerPoolsPolicyTypeConfiguration{value: val, isSet: true}
-}
-
-func (v NullableMaxLoadBalancerPoolsPolicyTypeConfiguration) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableMaxLoadBalancerPoolsPolicyTypeConfiguration) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

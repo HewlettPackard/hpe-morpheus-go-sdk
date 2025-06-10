@@ -20,16 +20,16 @@ var _ MappedNullable = &ListHealth200ResponseAllOfHealthThreads{}
 
 // ListHealth200ResponseAllOfHealthThreads struct for ListHealth200ResponseAllOfHealthThreads
 type ListHealth200ResponseAllOfHealthThreads struct {
-	Success *bool `json:"success,omitempty"`
-	ThreadList []map[string]interface{} `json:"threadList,omitempty"`
-	BusyThreads []ListHealth200ResponseAllOfHealthThreadsBusyThreadsInner `json:"busyThreads,omitempty"`
-	BlockedThreads []map[string]interface{} `json:"blockedThreads,omitempty"`
-	RunningThreads []map[string]interface{} `json:"runningThreads,omitempty"`
-	TotalCpuTime *int64 `json:"totalCpuTime,omitempty"`
-	TotalThreads *int64 `json:"totalThreads,omitempty"`
-	RunningWebThreads *int64 `json:"runningWebThreads,omitempty"`
-	Status *string `json:"status,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Success              *bool                                                     `json:"success,omitempty"`
+	ThreadList           []map[string]interface{}                                  `json:"threadList,omitempty"`
+	BusyThreads          []ListHealth200ResponseAllOfHealthThreadsBusyThreadsInner `json:"busyThreads,omitempty"`
+	BlockedThreads       []map[string]interface{}                                  `json:"blockedThreads,omitempty"`
+	RunningThreads       []map[string]interface{}                                  `json:"runningThreads,omitempty"`
+	TotalCpuTime         *int64                                                    `json:"totalCpuTime,omitempty"`
+	TotalThreads         *int64                                                    `json:"totalThreads,omitempty"`
+	RunningWebThreads    *int64                                                    `json:"runningWebThreads,omitempty"`
+	Status               *string                                                   `json:"status,omitempty"`
+	AdditionalProperties map[string]interface{}                                    `json:",remain"`
 }
 
 type _ListHealth200ResponseAllOfHealthThreads ListHealth200ResponseAllOfHealthThreads
@@ -340,7 +340,7 @@ func (o *ListHealth200ResponseAllOfHealthThreads) SetStatus(v string) {
 }
 
 func (o ListHealth200ResponseAllOfHealthThreads) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -383,70 +383,8 @@ func (o ListHealth200ResponseAllOfHealthThreads) ToMap() (map[string]interface{}
 
 	return toSerialize, nil
 }
-
 func (o *ListHealth200ResponseAllOfHealthThreads) UnmarshalJSON(data []byte) (err error) {
-	varListHealth200ResponseAllOfHealthThreads := _ListHealth200ResponseAllOfHealthThreads{}
-
-	err = json.Unmarshal(data, &varListHealth200ResponseAllOfHealthThreads)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListHealth200ResponseAllOfHealthThreads(varListHealth200ResponseAllOfHealthThreads)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "success")
-		delete(additionalProperties, "threadList")
-		delete(additionalProperties, "busyThreads")
-		delete(additionalProperties, "blockedThreads")
-		delete(additionalProperties, "runningThreads")
-		delete(additionalProperties, "totalCpuTime")
-		delete(additionalProperties, "totalThreads")
-		delete(additionalProperties, "runningWebThreads")
-		delete(additionalProperties, "status")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListHealth200ResponseAllOfHealthThreads struct {
-	value *ListHealth200ResponseAllOfHealthThreads
-	isSet bool
-}
-
-func (v NullableListHealth200ResponseAllOfHealthThreads) Get() *ListHealth200ResponseAllOfHealthThreads {
-	return v.value
-}
-
-func (v *NullableListHealth200ResponseAllOfHealthThreads) Set(val *ListHealth200ResponseAllOfHealthThreads) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListHealth200ResponseAllOfHealthThreads) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListHealth200ResponseAllOfHealthThreads) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListHealth200ResponseAllOfHealthThreads(val *ListHealth200ResponseAllOfHealthThreads) *NullableListHealth200ResponseAllOfHealthThreads {
-	return &NullableListHealth200ResponseAllOfHealthThreads{value: val, isSet: true}
-}
-
-func (v NullableListHealth200ResponseAllOfHealthThreads) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListHealth200ResponseAllOfHealthThreads) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

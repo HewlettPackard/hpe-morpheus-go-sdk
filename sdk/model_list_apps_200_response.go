@@ -20,10 +20,10 @@ var _ MappedNullable = &ListApps200Response{}
 
 // ListApps200Response struct for ListApps200Response
 type ListApps200Response struct {
-	Apps []ListApps200ResponseAllOfAppsInner `json:"apps,omitempty"`
-	Stats *ListApps200ResponseAllOfAppsInnerStats `json:"stats,omitempty"`
-	Meta *ListActivity200ResponseAllOfMeta `json:"meta,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Apps                 []ListApps200ResponseAllOfAppsInner     `json:"apps,omitempty"`
+	Stats                *ListApps200ResponseAllOfAppsInnerStats `json:"stats,omitempty"`
+	Meta                 *ListActivity200ResponseAllOfMeta       `json:"meta,omitempty"`
+	AdditionalProperties map[string]interface{}                  `json:",remain"`
 }
 
 type _ListApps200Response ListApps200Response
@@ -142,7 +142,7 @@ func (o *ListApps200Response) SetMeta(v ListActivity200ResponseAllOfMeta) {
 }
 
 func (o ListApps200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -167,64 +167,8 @@ func (o ListApps200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *ListApps200Response) UnmarshalJSON(data []byte) (err error) {
-	varListApps200Response := _ListApps200Response{}
-
-	err = json.Unmarshal(data, &varListApps200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListApps200Response(varListApps200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "apps")
-		delete(additionalProperties, "stats")
-		delete(additionalProperties, "meta")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListApps200Response struct {
-	value *ListApps200Response
-	isSet bool
-}
-
-func (v NullableListApps200Response) Get() *ListApps200Response {
-	return v.value
-}
-
-func (v *NullableListApps200Response) Set(val *ListApps200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListApps200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListApps200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListApps200Response(val *ListApps200Response) *NullableListApps200Response {
-	return &NullableListApps200Response{value: val, isSet: true}
-}
-
-func (v NullableListApps200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListApps200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

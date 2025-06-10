@@ -20,15 +20,15 @@ var _ MappedNullable = &ClusterResource{}
 
 // ClusterResource struct for ClusterResource
 type ClusterResource struct {
-	Id *int64 `json:"id,omitempty"`
-	Title *string `json:"title,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Status *string `json:"status,omitempty"`
-	Metadata map[string]interface{} `json:"metadata,omitempty"`
-	Spec map[string]interface{} `json:"spec,omitempty"`
-	Config map[string]interface{} `json:"config,omitempty"`
-	RawSec map[string]interface{} `json:"rawSec,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	Title                *string                `json:"title,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	Status               *string                `json:"status,omitempty"`
+	Metadata             map[string]interface{} `json:"metadata,omitempty"`
+	Spec                 map[string]interface{} `json:"spec,omitempty"`
+	Config               map[string]interface{} `json:"config,omitempty"`
+	RawSec               map[string]interface{} `json:"rawSec,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ClusterResource ClusterResource
@@ -307,7 +307,7 @@ func (o *ClusterResource) SetRawSec(v map[string]interface{}) {
 }
 
 func (o ClusterResource) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -347,69 +347,8 @@ func (o ClusterResource) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *ClusterResource) UnmarshalJSON(data []byte) (err error) {
-	varClusterResource := _ClusterResource{}
-
-	err = json.Unmarshal(data, &varClusterResource)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ClusterResource(varClusterResource)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "title")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "metadata")
-		delete(additionalProperties, "spec")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "rawSec")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableClusterResource struct {
-	value *ClusterResource
-	isSet bool
-}
-
-func (v NullableClusterResource) Get() *ClusterResource {
-	return v.value
-}
-
-func (v *NullableClusterResource) Set(val *ClusterResource) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableClusterResource) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableClusterResource) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableClusterResource(val *ClusterResource) *NullableClusterResource {
-	return &NullableClusterResource{value: val, isSet: true}
-}
-
-func (v NullableClusterResource) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableClusterResource) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

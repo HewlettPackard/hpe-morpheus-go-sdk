@@ -19,18 +19,33 @@ import (
 // very silly way of avoiding `"fmt" imported and not used` errors
 var _ fmt.Stringer
 
-
 // ListIntegrations200Response struct for ListIntegrations200Response
 type ListIntegrations200Response struct {
-	ListIntegrations200ResponseAnyOf *ListIntegrations200ResponseAnyOf
+	ListIntegrations200ResponseAnyOf  *ListIntegrations200ResponseAnyOf
 	ListIntegrations200ResponseAnyOf1 *ListIntegrations200ResponseAnyOf1
+}
+
+func (dst *ListIntegrations200Response) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &ListIntegrations200Response{}
+	}
+
+	if out, ok := data.(ListIntegrations200ResponseAnyOf); ok {
+		dst.ListIntegrations200ResponseAnyOf = &out
+	}
+
+	if out, ok := data.(ListIntegrations200ResponseAnyOf1); ok {
+		dst.ListIntegrations200ResponseAnyOf1 = &out
+	}
+
+	return dst, nil
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *ListIntegrations200Response) UnmarshalJSON(data []byte) error {
 	var err error
 	// try to unmarshal JSON data into ListIntegrations200ResponseAnyOf
-	err = json.Unmarshal(data, &dst.ListIntegrations200ResponseAnyOf);
+	err = json.Unmarshal(data, &dst.ListIntegrations200ResponseAnyOf)
 	if err == nil {
 		jsonListIntegrations200ResponseAnyOf, _ := json.Marshal(dst.ListIntegrations200ResponseAnyOf)
 		if string(jsonListIntegrations200ResponseAnyOf) == "{}" { // empty struct
@@ -43,7 +58,7 @@ func (dst *ListIntegrations200Response) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal JSON data into ListIntegrations200ResponseAnyOf1
-	err = json.Unmarshal(data, &dst.ListIntegrations200ResponseAnyOf1);
+	err = json.Unmarshal(data, &dst.ListIntegrations200ResponseAnyOf1)
 	if err == nil {
 		jsonListIntegrations200ResponseAnyOf1, _ := json.Marshal(dst.ListIntegrations200ResponseAnyOf1)
 		if string(jsonListIntegrations200ResponseAnyOf1) == "{}" { // empty struct
@@ -70,7 +85,6 @@ func (src ListIntegrations200Response) MarshalJSON() ([]byte, error) {
 
 	return nil, nil // no data in anyOf schemas
 }
-
 
 type NullableListIntegrations200Response struct {
 	value *ListIntegrations200Response
@@ -107,5 +121,3 @@ func (v *NullableListIntegrations200Response) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

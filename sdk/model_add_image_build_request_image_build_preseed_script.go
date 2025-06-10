@@ -20,8 +20,8 @@ var _ MappedNullable = &AddImageBuildRequestImageBuildPreseedScript{}
 
 // AddImageBuildRequestImageBuildPreseedScript Preseed Script
 type AddImageBuildRequestImageBuildPreseedScript struct {
-	Id *int64 `json:"id,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddImageBuildRequestImageBuildPreseedScript AddImageBuildRequestImageBuildPreseedScript
@@ -76,7 +76,7 @@ func (o *AddImageBuildRequestImageBuildPreseedScript) SetId(v int64) {
 }
 
 func (o AddImageBuildRequestImageBuildPreseedScript) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o AddImageBuildRequestImageBuildPreseedScript) ToMap() (map[string]interfa
 
 	return toSerialize, nil
 }
-
 func (o *AddImageBuildRequestImageBuildPreseedScript) UnmarshalJSON(data []byte) (err error) {
-	varAddImageBuildRequestImageBuildPreseedScript := _AddImageBuildRequestImageBuildPreseedScript{}
-
-	err = json.Unmarshal(data, &varAddImageBuildRequestImageBuildPreseedScript)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddImageBuildRequestImageBuildPreseedScript(varAddImageBuildRequestImageBuildPreseedScript)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddImageBuildRequestImageBuildPreseedScript struct {
-	value *AddImageBuildRequestImageBuildPreseedScript
-	isSet bool
-}
-
-func (v NullableAddImageBuildRequestImageBuildPreseedScript) Get() *AddImageBuildRequestImageBuildPreseedScript {
-	return v.value
-}
-
-func (v *NullableAddImageBuildRequestImageBuildPreseedScript) Set(val *AddImageBuildRequestImageBuildPreseedScript) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddImageBuildRequestImageBuildPreseedScript) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddImageBuildRequestImageBuildPreseedScript) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddImageBuildRequestImageBuildPreseedScript(val *AddImageBuildRequestImageBuildPreseedScript) *NullableAddImageBuildRequestImageBuildPreseedScript {
-	return &NullableAddImageBuildRequestImageBuildPreseedScript{value: val, isSet: true}
-}
-
-func (v NullableAddImageBuildRequestImageBuildPreseedScript) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddImageBuildRequestImageBuildPreseedScript) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the ExecuteExecutionRequestRequest type satisfies the MappedNullable interface at compile time
@@ -24,8 +23,8 @@ type ExecuteExecutionRequestRequest struct {
 	// A script or command to be executed
 	Script string `json:"script"`
 	// Pass true to send key mappings to the hypervisor console so commands such as <LEFT>, <RIGHT> and <WAIT> can be used.
-	SendKeys *bool `json:"sendKeys,omitempty"`
-	AdditionalProperties map[string]interface{}
+	SendKeys             *bool                  `json:"sendKeys,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ExecuteExecutionRequestRequest ExecuteExecutionRequestRequest
@@ -109,7 +108,7 @@ func (o *ExecuteExecutionRequestRequest) SetSendKeys(v bool) {
 }
 
 func (o ExecuteExecutionRequestRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -129,84 +128,8 @@ func (o ExecuteExecutionRequestRequest) ToMap() (map[string]interface{}, error) 
 
 	return toSerialize, nil
 }
-
 func (o *ExecuteExecutionRequestRequest) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"script",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varExecuteExecutionRequestRequest := _ExecuteExecutionRequestRequest{}
-
-	err = json.Unmarshal(data, &varExecuteExecutionRequestRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ExecuteExecutionRequestRequest(varExecuteExecutionRequestRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "script")
-		delete(additionalProperties, "sendKeys")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableExecuteExecutionRequestRequest struct {
-	value *ExecuteExecutionRequestRequest
-	isSet bool
-}
-
-func (v NullableExecuteExecutionRequestRequest) Get() *ExecuteExecutionRequestRequest {
-	return v.value
-}
-
-func (v *NullableExecuteExecutionRequestRequest) Set(val *ExecuteExecutionRequestRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableExecuteExecutionRequestRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableExecuteExecutionRequestRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableExecuteExecutionRequestRequest(val *ExecuteExecutionRequestRequest) *NullableExecuteExecutionRequestRequest {
-	return &NullableExecuteExecutionRequestRequest{value: val, isSet: true}
-}
-
-func (v NullableExecuteExecutionRequestRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableExecuteExecutionRequestRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

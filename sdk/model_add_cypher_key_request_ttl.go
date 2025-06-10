@@ -14,15 +14,16 @@ package sdk
 import (
 	"encoding/json"
 	"fmt"
+
 	"gopkg.in/validator.v2"
 )
 
 // very silly way of avoiding `"fmt" imported and not used` errors
 var _ fmt.Stringer
 
-// AddCypherKeyRequestTtl - Time to Live. The lease duration in seconds, or a human readable format eg. 15m, 8h, 7d. The default is 0 meaning Never expires. This only is applied if the cypher does not yet exist and is created. 
+// AddCypherKeyRequestTtl - Time to Live. The lease duration in seconds, or a human readable format eg. 15m, 8h, 7d. The default is 0 meaning Never expires. This only is applied if the cypher does not yet exist and is created.
 type AddCypherKeyRequestTtl struct {
-	Int64 *int64
+	Int64  *int64
 	String *string
 }
 
@@ -40,6 +41,21 @@ func StringAsAddCypherKeyRequestTtl(v *string) AddCypherKeyRequestTtl {
 	}
 }
 
+func (dst *AddCypherKeyRequestTtl) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &AddCypherKeyRequestTtl{}
+	}
+
+	if out, ok := data.(int64); ok {
+		dst.Int64 = &out
+	}
+
+	if out, ok := data.(string); ok {
+		dst.String = &out
+	}
+
+	return dst, nil
+}
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddCypherKeyRequestTtl) UnmarshalJSON(data []byte) error {
@@ -106,7 +122,7 @@ func (src AddCypherKeyRequestTtl) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AddCypherKeyRequestTtl) GetActualInstance() (interface{}) {
+func (obj *AddCypherKeyRequestTtl) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -123,7 +139,7 @@ func (obj *AddCypherKeyRequestTtl) GetActualInstance() (interface{}) {
 }
 
 // Get the actual instance value
-func (obj AddCypherKeyRequestTtl) GetActualInstanceValue() (interface{}) {
+func (obj AddCypherKeyRequestTtl) GetActualInstanceValue() interface{} {
 	if obj.Int64 != nil {
 		return *obj.Int64
 	}
@@ -171,5 +187,3 @@ func (v *NullableAddCypherKeyRequestTtl) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

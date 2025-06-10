@@ -20,15 +20,15 @@ var _ MappedNullable = &ListHostDevices200ResponseDevicesInnerType{}
 
 // ListHostDevices200ResponseDevicesInnerType struct for ListHostDevices200ResponseDevicesInnerType
 type ListHostDevices200ResponseDevicesInnerType struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Family *string `json:"family,omitempty"`
-	BusType *string `json:"busType,omitempty"`
-	Assignable *bool `json:"assignable,omitempty"`
-	Hotpluggable *bool `json:"hotpluggable,omitempty"`
-	VendorId *int32 `json:"vendorId,omitempty"`
-	ProductId *int32 `json:"productId,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	Family               *string                `json:"family,omitempty"`
+	BusType              *string                `json:"busType,omitempty"`
+	Assignable           *bool                  `json:"assignable,omitempty"`
+	Hotpluggable         *bool                  `json:"hotpluggable,omitempty"`
+	VendorId             *int32                 `json:"vendorId,omitempty"`
+	ProductId            *int32                 `json:"productId,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListHostDevices200ResponseDevicesInnerType ListHostDevices200ResponseDevicesInnerType
@@ -307,7 +307,7 @@ func (o *ListHostDevices200ResponseDevicesInnerType) SetProductId(v int32) {
 }
 
 func (o ListHostDevices200ResponseDevicesInnerType) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -347,69 +347,8 @@ func (o ListHostDevices200ResponseDevicesInnerType) ToMap() (map[string]interfac
 
 	return toSerialize, nil
 }
-
 func (o *ListHostDevices200ResponseDevicesInnerType) UnmarshalJSON(data []byte) (err error) {
-	varListHostDevices200ResponseDevicesInnerType := _ListHostDevices200ResponseDevicesInnerType{}
-
-	err = json.Unmarshal(data, &varListHostDevices200ResponseDevicesInnerType)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListHostDevices200ResponseDevicesInnerType(varListHostDevices200ResponseDevicesInnerType)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "family")
-		delete(additionalProperties, "busType")
-		delete(additionalProperties, "assignable")
-		delete(additionalProperties, "hotpluggable")
-		delete(additionalProperties, "vendorId")
-		delete(additionalProperties, "productId")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListHostDevices200ResponseDevicesInnerType struct {
-	value *ListHostDevices200ResponseDevicesInnerType
-	isSet bool
-}
-
-func (v NullableListHostDevices200ResponseDevicesInnerType) Get() *ListHostDevices200ResponseDevicesInnerType {
-	return v.value
-}
-
-func (v *NullableListHostDevices200ResponseDevicesInnerType) Set(val *ListHostDevices200ResponseDevicesInnerType) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListHostDevices200ResponseDevicesInnerType) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListHostDevices200ResponseDevicesInnerType) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListHostDevices200ResponseDevicesInnerType(val *ListHostDevices200ResponseDevicesInnerType) *NullableListHostDevices200ResponseDevicesInnerType {
-	return &NullableListHostDevices200ResponseDevicesInnerType{value: val, isSet: true}
-}
-
-func (v NullableListHostDevices200ResponseDevicesInnerType) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListHostDevices200ResponseDevicesInnerType) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

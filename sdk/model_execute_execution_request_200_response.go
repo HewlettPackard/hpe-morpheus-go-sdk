@@ -20,8 +20,8 @@ var _ MappedNullable = &ExecuteExecutionRequest200Response{}
 
 // ExecuteExecutionRequest200Response struct for ExecuteExecutionRequest200Response
 type ExecuteExecutionRequest200Response struct {
-	ExecutionRequest *ExecuteExecutionRequest200ResponseExecutionRequest `json:"executionRequest,omitempty"`
-	AdditionalProperties map[string]interface{}
+	ExecutionRequest     *ExecuteExecutionRequest200ResponseExecutionRequest `json:"executionRequest,omitempty"`
+	AdditionalProperties map[string]interface{}                              `json:",remain"`
 }
 
 type _ExecuteExecutionRequest200Response ExecuteExecutionRequest200Response
@@ -76,7 +76,7 @@ func (o *ExecuteExecutionRequest200Response) SetExecutionRequest(v ExecuteExecut
 }
 
 func (o ExecuteExecutionRequest200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o ExecuteExecutionRequest200Response) ToMap() (map[string]interface{}, err
 
 	return toSerialize, nil
 }
-
 func (o *ExecuteExecutionRequest200Response) UnmarshalJSON(data []byte) (err error) {
-	varExecuteExecutionRequest200Response := _ExecuteExecutionRequest200Response{}
-
-	err = json.Unmarshal(data, &varExecuteExecutionRequest200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ExecuteExecutionRequest200Response(varExecuteExecutionRequest200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "executionRequest")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableExecuteExecutionRequest200Response struct {
-	value *ExecuteExecutionRequest200Response
-	isSet bool
-}
-
-func (v NullableExecuteExecutionRequest200Response) Get() *ExecuteExecutionRequest200Response {
-	return v.value
-}
-
-func (v *NullableExecuteExecutionRequest200Response) Set(val *ExecuteExecutionRequest200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableExecuteExecutionRequest200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableExecuteExecutionRequest200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableExecuteExecutionRequest200Response(val *ExecuteExecutionRequest200Response) *NullableExecuteExecutionRequest200Response {
-	return &NullableExecuteExecutionRequest200Response{value: val, isSet: true}
-}
-
-func (v NullableExecuteExecutionRequest200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableExecuteExecutionRequest200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

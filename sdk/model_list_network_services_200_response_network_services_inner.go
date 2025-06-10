@@ -20,14 +20,14 @@ var _ MappedNullable = &ListNetworkServices200ResponseNetworkServicesInner{}
 
 // ListNetworkServices200ResponseNetworkServicesInner struct for ListNetworkServices200ResponseNetworkServicesInner
 type ListNetworkServices200ResponseNetworkServicesInner struct {
-	ServiceType *string `json:"serviceType,omitempty"`
-	ServiceTypeName *string `json:"serviceTypeName,omitempty"`
-	Type *string `json:"type,omitempty"`
-	TypeName *string `json:"typeName,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Id *int64 `json:"id,omitempty"`
-	IntegrationId *int64 `json:"integrationId,omitempty"`
-	AdditionalProperties map[string]interface{}
+	ServiceType          *string                `json:"serviceType,omitempty"`
+	ServiceTypeName      *string                `json:"serviceTypeName,omitempty"`
+	Type                 *string                `json:"type,omitempty"`
+	TypeName             *string                `json:"typeName,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	Id                   *int64                 `json:"id,omitempty"`
+	IntegrationId        *int64                 `json:"integrationId,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListNetworkServices200ResponseNetworkServicesInner ListNetworkServices200ResponseNetworkServicesInner
@@ -274,7 +274,7 @@ func (o *ListNetworkServices200ResponseNetworkServicesInner) SetIntegrationId(v 
 }
 
 func (o ListNetworkServices200ResponseNetworkServicesInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -311,68 +311,8 @@ func (o ListNetworkServices200ResponseNetworkServicesInner) ToMap() (map[string]
 
 	return toSerialize, nil
 }
-
 func (o *ListNetworkServices200ResponseNetworkServicesInner) UnmarshalJSON(data []byte) (err error) {
-	varListNetworkServices200ResponseNetworkServicesInner := _ListNetworkServices200ResponseNetworkServicesInner{}
-
-	err = json.Unmarshal(data, &varListNetworkServices200ResponseNetworkServicesInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListNetworkServices200ResponseNetworkServicesInner(varListNetworkServices200ResponseNetworkServicesInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "serviceType")
-		delete(additionalProperties, "serviceTypeName")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "typeName")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "integrationId")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListNetworkServices200ResponseNetworkServicesInner struct {
-	value *ListNetworkServices200ResponseNetworkServicesInner
-	isSet bool
-}
-
-func (v NullableListNetworkServices200ResponseNetworkServicesInner) Get() *ListNetworkServices200ResponseNetworkServicesInner {
-	return v.value
-}
-
-func (v *NullableListNetworkServices200ResponseNetworkServicesInner) Set(val *ListNetworkServices200ResponseNetworkServicesInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListNetworkServices200ResponseNetworkServicesInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListNetworkServices200ResponseNetworkServicesInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListNetworkServices200ResponseNetworkServicesInner(val *ListNetworkServices200ResponseNetworkServicesInner) *NullableListNetworkServices200ResponseNetworkServicesInner {
-	return &NullableListNetworkServices200ResponseNetworkServicesInner{value: val, isSet: true}
-}
-
-func (v NullableListNetworkServices200ResponseNetworkServicesInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListNetworkServices200ResponseNetworkServicesInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

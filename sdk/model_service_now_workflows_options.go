@@ -20,9 +20,9 @@ var _ MappedNullable = &ServiceNowWorkflowsOptions{}
 
 // ServiceNowWorkflowsOptions struct for ServiceNowWorkflowsOptions
 type ServiceNowWorkflowsOptions struct {
-	Name *string `json:"name,omitempty"`
-	Value *int64 `json:"value,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Name                 *string                `json:"name,omitempty"`
+	Value                *int64                 `json:"value,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ServiceNowWorkflowsOptions ServiceNowWorkflowsOptions
@@ -109,7 +109,7 @@ func (o *ServiceNowWorkflowsOptions) SetValue(v int64) {
 }
 
 func (o ServiceNowWorkflowsOptions) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -131,63 +131,8 @@ func (o ServiceNowWorkflowsOptions) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *ServiceNowWorkflowsOptions) UnmarshalJSON(data []byte) (err error) {
-	varServiceNowWorkflowsOptions := _ServiceNowWorkflowsOptions{}
-
-	err = json.Unmarshal(data, &varServiceNowWorkflowsOptions)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ServiceNowWorkflowsOptions(varServiceNowWorkflowsOptions)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "value")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableServiceNowWorkflowsOptions struct {
-	value *ServiceNowWorkflowsOptions
-	isSet bool
-}
-
-func (v NullableServiceNowWorkflowsOptions) Get() *ServiceNowWorkflowsOptions {
-	return v.value
-}
-
-func (v *NullableServiceNowWorkflowsOptions) Set(val *ServiceNowWorkflowsOptions) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableServiceNowWorkflowsOptions) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableServiceNowWorkflowsOptions) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableServiceNowWorkflowsOptions(val *ServiceNowWorkflowsOptions) *NullableServiceNowWorkflowsOptions {
-	return &NullableServiceNowWorkflowsOptions{value: val, isSet: true}
-}
-
-func (v NullableServiceNowWorkflowsOptions) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableServiceNowWorkflowsOptions) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

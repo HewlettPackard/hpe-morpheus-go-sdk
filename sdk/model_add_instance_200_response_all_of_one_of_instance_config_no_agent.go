@@ -19,18 +19,33 @@ import (
 // very silly way of avoiding `"fmt" imported and not used` errors
 var _ fmt.Stringer
 
-
 // AddInstance200ResponseAllOfOneOfInstanceConfigNoAgent struct for AddInstance200ResponseAllOfOneOfInstanceConfigNoAgent
 type AddInstance200ResponseAllOfOneOfInstanceConfigNoAgent struct {
-	Bool *bool
+	Bool   *bool
 	String *string
+}
+
+func (dst *AddInstance200ResponseAllOfOneOfInstanceConfigNoAgent) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &AddInstance200ResponseAllOfOneOfInstanceConfigNoAgent{}
+	}
+
+	if out, ok := data.(bool); ok {
+		dst.Bool = &out
+	}
+
+	if out, ok := data.(string); ok {
+		dst.String = &out
+	}
+
+	return dst, nil
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *AddInstance200ResponseAllOfOneOfInstanceConfigNoAgent) UnmarshalJSON(data []byte) error {
 	var err error
 	// try to unmarshal JSON data into Bool
-	err = json.Unmarshal(data, &dst.Bool);
+	err = json.Unmarshal(data, &dst.Bool)
 	if err == nil {
 		jsonBool, _ := json.Marshal(dst.Bool)
 		if string(jsonBool) == "{}" { // empty struct
@@ -43,7 +58,7 @@ func (dst *AddInstance200ResponseAllOfOneOfInstanceConfigNoAgent) UnmarshalJSON(
 	}
 
 	// try to unmarshal JSON data into String
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -70,7 +85,6 @@ func (src AddInstance200ResponseAllOfOneOfInstanceConfigNoAgent) MarshalJSON() (
 
 	return nil, nil // no data in anyOf schemas
 }
-
 
 type NullableAddInstance200ResponseAllOfOneOfInstanceConfigNoAgent struct {
 	value *AddInstance200ResponseAllOfOneOfInstanceConfigNoAgent
@@ -107,5 +121,3 @@ func (v *NullableAddInstance200ResponseAllOfOneOfInstanceConfigNoAgent) Unmarsha
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

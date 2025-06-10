@@ -47,8 +47,8 @@ type UpdateInstanceTypeRequestInstanceType struct {
 	// Array of price set objects
 	PriceSets []AddInstanceTypeRequestInstanceTypePriceSetsInner `json:"priceSets,omitempty"`
 	// Array of instance type option type IDs
-	OptionTypes []int64 `json:"optionTypes,omitempty"`
-	AdditionalProperties map[string]interface{}
+	OptionTypes          []int64                `json:"optionTypes,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _UpdateInstanceTypeRequestInstanceType UpdateInstanceTypeRequestInstanceType
@@ -523,7 +523,7 @@ func (o *UpdateInstanceTypeRequestInstanceType) SetOptionTypes(v []int64) {
 }
 
 func (o UpdateInstanceTypeRequestInstanceType) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -581,75 +581,8 @@ func (o UpdateInstanceTypeRequestInstanceType) ToMap() (map[string]interface{}, 
 
 	return toSerialize, nil
 }
-
 func (o *UpdateInstanceTypeRequestInstanceType) UnmarshalJSON(data []byte) (err error) {
-	varUpdateInstanceTypeRequestInstanceType := _UpdateInstanceTypeRequestInstanceType{}
-
-	err = json.Unmarshal(data, &varUpdateInstanceTypeRequestInstanceType)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateInstanceTypeRequestInstanceType(varUpdateInstanceTypeRequestInstanceType)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "category")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "featured")
-		delete(additionalProperties, "hasSettings")
-		delete(additionalProperties, "hasAutoScale")
-		delete(additionalProperties, "hasDeployment")
-		delete(additionalProperties, "environmentPrefix")
-		delete(additionalProperties, "environmentVariables")
-		delete(additionalProperties, "priceSets")
-		delete(additionalProperties, "optionTypes")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateInstanceTypeRequestInstanceType struct {
-	value *UpdateInstanceTypeRequestInstanceType
-	isSet bool
-}
-
-func (v NullableUpdateInstanceTypeRequestInstanceType) Get() *UpdateInstanceTypeRequestInstanceType {
-	return v.value
-}
-
-func (v *NullableUpdateInstanceTypeRequestInstanceType) Set(val *UpdateInstanceTypeRequestInstanceType) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateInstanceTypeRequestInstanceType) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateInstanceTypeRequestInstanceType) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateInstanceTypeRequestInstanceType(val *UpdateInstanceTypeRequestInstanceType) *NullableUpdateInstanceTypeRequestInstanceType {
-	return &NullableUpdateInstanceTypeRequestInstanceType{value: val, isSet: true}
-}
-
-func (v NullableUpdateInstanceTypeRequestInstanceType) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateInstanceTypeRequestInstanceType) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

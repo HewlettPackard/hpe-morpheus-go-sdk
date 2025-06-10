@@ -14,7 +14,6 @@ package sdk
 import (
 	"encoding/json"
 	"os"
-	"fmt"
 )
 
 // checks if the AddVDIAppsRequestVdiAppOneOf type satisfies the MappedNullable interface at compile time
@@ -29,8 +28,8 @@ type AddVDIAppsRequestVdiAppOneOf struct {
 	// Icon Path. A relative location of an icon image
 	IconPath **os.File `json:"iconPath,omitempty"`
 	// The RDS App Name Prefix.  Must start with '||'
-	LaunchPrefix *string `json:"launchPrefix,omitempty"`
-	AdditionalProperties map[string]interface{}
+	LaunchPrefix         *string                `json:"launchPrefix,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddVDIAppsRequestVdiAppOneOf AddVDIAppsRequestVdiAppOneOf
@@ -174,7 +173,7 @@ func (o *AddVDIAppsRequestVdiAppOneOf) SetLaunchPrefix(v string) {
 }
 
 func (o AddVDIAppsRequestVdiAppOneOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -200,86 +199,8 @@ func (o AddVDIAppsRequestVdiAppOneOf) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *AddVDIAppsRequestVdiAppOneOf) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"name",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varAddVDIAppsRequestVdiAppOneOf := _AddVDIAppsRequestVdiAppOneOf{}
-
-	err = json.Unmarshal(data, &varAddVDIAppsRequestVdiAppOneOf)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddVDIAppsRequestVdiAppOneOf(varAddVDIAppsRequestVdiAppOneOf)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "iconPath")
-		delete(additionalProperties, "launchPrefix")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddVDIAppsRequestVdiAppOneOf struct {
-	value *AddVDIAppsRequestVdiAppOneOf
-	isSet bool
-}
-
-func (v NullableAddVDIAppsRequestVdiAppOneOf) Get() *AddVDIAppsRequestVdiAppOneOf {
-	return v.value
-}
-
-func (v *NullableAddVDIAppsRequestVdiAppOneOf) Set(val *AddVDIAppsRequestVdiAppOneOf) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddVDIAppsRequestVdiAppOneOf) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddVDIAppsRequestVdiAppOneOf) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddVDIAppsRequestVdiAppOneOf(val *AddVDIAppsRequestVdiAppOneOf) *NullableAddVDIAppsRequestVdiAppOneOf {
-	return &NullableAddVDIAppsRequestVdiAppOneOf{value: val, isSet: true}
-}
-
-func (v NullableAddVDIAppsRequestVdiAppOneOf) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddVDIAppsRequestVdiAppOneOf) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

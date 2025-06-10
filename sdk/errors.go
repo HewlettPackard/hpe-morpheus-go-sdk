@@ -17,7 +17,7 @@ type ResponseValidationError struct {
 	message string
 }
 
-func (e ResponseValidationError) Error() string{
+func (e ResponseValidationError) Error() string {
 	return e.message
 }
 

@@ -20,8 +20,8 @@ var _ MappedNullable = &GetIdentitySources200Response{}
 
 // GetIdentitySources200Response struct for GetIdentitySources200Response
 type GetIdentitySources200Response struct {
-	UserSource *ListIdentitySources200ResponseAllOfUserSourcesInner `json:"userSource,omitempty"`
-	AdditionalProperties map[string]interface{}
+	UserSource           *ListIdentitySources200ResponseAllOfUserSourcesInner `json:"userSource,omitempty"`
+	AdditionalProperties map[string]interface{}                               `json:",remain"`
 }
 
 type _GetIdentitySources200Response GetIdentitySources200Response
@@ -76,7 +76,7 @@ func (o *GetIdentitySources200Response) SetUserSource(v ListIdentitySources200Re
 }
 
 func (o GetIdentitySources200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o GetIdentitySources200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *GetIdentitySources200Response) UnmarshalJSON(data []byte) (err error) {
-	varGetIdentitySources200Response := _GetIdentitySources200Response{}
-
-	err = json.Unmarshal(data, &varGetIdentitySources200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetIdentitySources200Response(varGetIdentitySources200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "userSource")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetIdentitySources200Response struct {
-	value *GetIdentitySources200Response
-	isSet bool
-}
-
-func (v NullableGetIdentitySources200Response) Get() *GetIdentitySources200Response {
-	return v.value
-}
-
-func (v *NullableGetIdentitySources200Response) Set(val *GetIdentitySources200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetIdentitySources200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetIdentitySources200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetIdentitySources200Response(val *GetIdentitySources200Response) *NullableGetIdentitySources200Response {
-	return &NullableGetIdentitySources200Response{value: val, isSet: true}
-}
-
-func (v NullableGetIdentitySources200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetIdentitySources200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

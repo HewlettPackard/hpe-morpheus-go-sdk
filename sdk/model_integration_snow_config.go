@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the IntegrationSNOWConfig type satisfies the MappedNullable interface at compile time
@@ -21,8 +20,8 @@ var _ MappedNullable = &IntegrationSNOWConfig{}
 
 // IntegrationSNOWConfig struct for IntegrationSNOWConfig
 type IntegrationSNOWConfig struct {
-	Integration AddIntegrationsRequestOneOf2Integration `json:"integration"`
-	AdditionalProperties map[string]interface{}
+	Integration          AddIntegrationsRequestOneOf2Integration `json:"integration"`
+	AdditionalProperties map[string]interface{}                  `json:",remain"`
 }
 
 type _IntegrationSNOWConfig IntegrationSNOWConfig
@@ -70,7 +69,7 @@ func (o *IntegrationSNOWConfig) SetIntegration(v AddIntegrationsRequestOneOf2Int
 }
 
 func (o IntegrationSNOWConfig) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -87,83 +86,8 @@ func (o IntegrationSNOWConfig) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *IntegrationSNOWConfig) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"integration",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varIntegrationSNOWConfig := _IntegrationSNOWConfig{}
-
-	err = json.Unmarshal(data, &varIntegrationSNOWConfig)
-
-	if err != nil {
-		return err
-	}
-
-	*o = IntegrationSNOWConfig(varIntegrationSNOWConfig)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "integration")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableIntegrationSNOWConfig struct {
-	value *IntegrationSNOWConfig
-	isSet bool
-}
-
-func (v NullableIntegrationSNOWConfig) Get() *IntegrationSNOWConfig {
-	return v.value
-}
-
-func (v *NullableIntegrationSNOWConfig) Set(val *IntegrationSNOWConfig) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableIntegrationSNOWConfig) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableIntegrationSNOWConfig) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableIntegrationSNOWConfig(val *IntegrationSNOWConfig) *NullableIntegrationSNOWConfig {
-	return &NullableIntegrationSNOWConfig{value: val, isSet: true}
-}
-
-func (v NullableIntegrationSNOWConfig) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableIntegrationSNOWConfig) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

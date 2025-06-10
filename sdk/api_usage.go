@@ -20,20 +20,19 @@ import (
 	"net/url"
 )
 
-
 // UsageAPIService UsageAPI service
 type UsageAPIService service
 
 type ApiListUsagesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *UsageAPIService
-	max *int64
-	offset *int64
-	sort *string
-	direction *string
-	phrase *string
-	startDate *string
-	endDate *string
+	max        *int64
+	offset     *int64
+	sort       *string
+	direction  *string
+	phrase     *string
+	startDate  *string
+	endDate    *string
 }
 
 // Maximum number of records to return
@@ -87,25 +86,25 @@ ListUsages Retrieves Usage Records
 
 Retrieves a paginated list of usage records. The usages are scoped to only include resources you have access to.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListUsagesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListUsagesRequest
 */
 func (a *UsageAPIService) ListUsages(ctx context.Context) ApiListUsagesRequest {
 	return ApiListUsagesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListUsages200Response
+//
+//	@return ListUsages200Response
 func (a *UsageAPIService) ListUsagesExecute(r ApiListUsagesRequest) (*ListUsages200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListUsages200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListUsages200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsageAPIService.ListUsages")
@@ -188,7 +187,7 @@ func (a *UsageAPIService) ListUsagesExecute(r ApiListUsagesRequest) (*ListUsages
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -197,8 +196,8 @@ func (a *UsageAPIService) ListUsagesExecute(r ApiListUsagesRequest) (*ListUsages
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -208,8 +207,8 @@ func (a *UsageAPIService) ListUsagesExecute(r ApiListUsagesRequest) (*ListUsages
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -217,8 +216,8 @@ func (a *UsageAPIService) ListUsagesExecute(r ApiListUsagesRequest) (*ListUsages
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

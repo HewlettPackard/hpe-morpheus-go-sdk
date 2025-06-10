@@ -20,31 +20,31 @@ var _ MappedNullable = &InstanceTypeLayout{}
 
 // InstanceTypeLayout struct for InstanceTypeLayout
 type InstanceTypeLayout struct {
-	Id *int64 `json:"id,omitempty"`
+	Id           *int64                                                      `json:"id,omitempty"`
 	InstanceType *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"instanceType,omitempty"`
-	Account *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"account,omitempty"`
-	Code *string `json:"code,omitempty"`
-	Name *string `json:"name,omitempty"`
+	Account      *GetAlerts200ResponseAllOfCheckGroupsInnerInstance          `json:"account,omitempty"`
+	Code         *string                                                     `json:"code,omitempty"`
+	Name         *string                                                     `json:"name,omitempty"`
 	// Array of label strings, can be used for filtering.
-	Labels []string `json:"labels,omitempty"`
-	InstanceVersion *string `json:"instanceVersion,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Creatable *bool `json:"creatable,omitempty"`
-	MemoryRequirement *int64 `json:"memoryRequirement,omitempty"`
-	SortOrder *int64 `json:"sortOrder,omitempty"`
-	SupportsConvertToManaged *bool `json:"supportsConvertToManaged,omitempty"`
-	ProvisionType *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionType `json:"provisionType,omitempty"`
-	TaskSets []map[string]interface{} `json:"taskSets,omitempty"`
-	ContainerTypes []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInner `json:"containerTypes,omitempty"`
-	Mounts []map[string]interface{} `json:"mounts,omitempty"`
-	Ports []map[string]interface{} `json:"ports,omitempty"`
-	OptionTypes []map[string]interface{} `json:"optionTypes,omitempty"`
-	EnvironmentVariables []map[string]interface{} `json:"environmentVariables,omitempty"`
-	PriceSets []map[string]interface{} `json:"priceSets,omitempty"`
-	SpecTemplates []map[string]interface{} `json:"specTemplates,omitempty"`
-	TfvarSecret *string `json:"tfvarSecret,omitempty"`
-	Permissions *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerPermissions `json:"permissions,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Labels                   []string                                                                                             `json:"labels,omitempty"`
+	InstanceVersion          *string                                                                                              `json:"instanceVersion,omitempty"`
+	Description              *string                                                                                              `json:"description,omitempty"`
+	Creatable                *bool                                                                                                `json:"creatable,omitempty"`
+	MemoryRequirement        *int64                                                                                               `json:"memoryRequirement,omitempty"`
+	SortOrder                *int64                                                                                               `json:"sortOrder,omitempty"`
+	SupportsConvertToManaged *bool                                                                                                `json:"supportsConvertToManaged,omitempty"`
+	ProvisionType            *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionType        `json:"provisionType,omitempty"`
+	TaskSets                 []map[string]interface{}                                                                             `json:"taskSets,omitempty"`
+	ContainerTypes           []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInner `json:"containerTypes,omitempty"`
+	Mounts                   []map[string]interface{}                                                                             `json:"mounts,omitempty"`
+	Ports                    []map[string]interface{}                                                                             `json:"ports,omitempty"`
+	OptionTypes              []map[string]interface{}                                                                             `json:"optionTypes,omitempty"`
+	EnvironmentVariables     []map[string]interface{}                                                                             `json:"environmentVariables,omitempty"`
+	PriceSets                []map[string]interface{}                                                                             `json:"priceSets,omitempty"`
+	SpecTemplates            []map[string]interface{}                                                                             `json:"specTemplates,omitempty"`
+	TfvarSecret              *string                                                                                              `json:"tfvarSecret,omitempty"`
+	Permissions              *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerPermissions          `json:"permissions,omitempty"`
+	AdditionalProperties     map[string]interface{}                                                                               `json:",remain"`
 }
 
 type _InstanceTypeLayout InstanceTypeLayout
@@ -803,7 +803,7 @@ func (o *InstanceTypeLayout) SetPermissions(v GetInstanceTypeProvisioning200Resp
 }
 
 func (o InstanceTypeLayout) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -888,84 +888,8 @@ func (o InstanceTypeLayout) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *InstanceTypeLayout) UnmarshalJSON(data []byte) (err error) {
-	varInstanceTypeLayout := _InstanceTypeLayout{}
-
-	err = json.Unmarshal(data, &varInstanceTypeLayout)
-
-	if err != nil {
-		return err
-	}
-
-	*o = InstanceTypeLayout(varInstanceTypeLayout)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "instanceType")
-		delete(additionalProperties, "account")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "instanceVersion")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "creatable")
-		delete(additionalProperties, "memoryRequirement")
-		delete(additionalProperties, "sortOrder")
-		delete(additionalProperties, "supportsConvertToManaged")
-		delete(additionalProperties, "provisionType")
-		delete(additionalProperties, "taskSets")
-		delete(additionalProperties, "containerTypes")
-		delete(additionalProperties, "mounts")
-		delete(additionalProperties, "ports")
-		delete(additionalProperties, "optionTypes")
-		delete(additionalProperties, "environmentVariables")
-		delete(additionalProperties, "priceSets")
-		delete(additionalProperties, "specTemplates")
-		delete(additionalProperties, "tfvarSecret")
-		delete(additionalProperties, "permissions")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableInstanceTypeLayout struct {
-	value *InstanceTypeLayout
-	isSet bool
-}
-
-func (v NullableInstanceTypeLayout) Get() *InstanceTypeLayout {
-	return v.value
-}
-
-func (v *NullableInstanceTypeLayout) Set(val *InstanceTypeLayout) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableInstanceTypeLayout) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableInstanceTypeLayout) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableInstanceTypeLayout(val *InstanceTypeLayout) *NullableInstanceTypeLayout {
-	return &NullableInstanceTypeLayout{value: val, isSet: true}
-}
-
-func (v NullableInstanceTypeLayout) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableInstanceTypeLayout) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

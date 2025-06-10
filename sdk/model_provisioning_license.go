@@ -20,20 +20,20 @@ var _ MappedNullable = &ProvisioningLicense{}
 
 // ProvisioningLicense struct for ProvisioningLicense
 type ProvisioningLicense struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Description *string `json:"description,omitempty"`
-	LicenseType *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"licenseType,omitempty"`
-	LicenseKey *string `json:"licenseKey,omitempty"`
-	OrgName *string `json:"orgName,omitempty"`
-	FullName *string `json:"fullName,omitempty"`
-	LicenseVersion *string `json:"licenseVersion,omitempty"`
-	Copies *int64 `json:"copies,omitempty"`
-	ReservationCount *int64 `json:"reservationCount,omitempty"`
-	Tenants []map[string]interface{} `json:"tenants,omitempty"`
-	VirtualImages []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"virtualImages,omitempty"`
-	Account *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"account,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                                   `json:"id,omitempty"`
+	Name                 *string                                                                  `json:"name,omitempty"`
+	Description          *string                                                                  `json:"description,omitempty"`
+	LicenseType          *ListBackupSettings200ResponseBackupSettingsDefaultSchedule              `json:"licenseType,omitempty"`
+	LicenseKey           *string                                                                  `json:"licenseKey,omitempty"`
+	OrgName              *string                                                                  `json:"orgName,omitempty"`
+	FullName             *string                                                                  `json:"fullName,omitempty"`
+	LicenseVersion       *string                                                                  `json:"licenseVersion,omitempty"`
+	Copies               *int64                                                                   `json:"copies,omitempty"`
+	ReservationCount     *int64                                                                   `json:"reservationCount,omitempty"`
+	Tenants              []map[string]interface{}                                                 `json:"tenants,omitempty"`
+	VirtualImages        []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"virtualImages,omitempty"`
+	Account              *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner  `json:"account,omitempty"`
+	AdditionalProperties map[string]interface{}                                                   `json:",remain"`
 }
 
 type _ProvisioningLicense ProvisioningLicense
@@ -472,7 +472,7 @@ func (o *ProvisioningLicense) SetAccount(v ListApplianceSettings200ResponseAppli
 }
 
 func (o ProvisioningLicense) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -527,74 +527,8 @@ func (o ProvisioningLicense) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *ProvisioningLicense) UnmarshalJSON(data []byte) (err error) {
-	varProvisioningLicense := _ProvisioningLicense{}
-
-	err = json.Unmarshal(data, &varProvisioningLicense)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ProvisioningLicense(varProvisioningLicense)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "licenseType")
-		delete(additionalProperties, "licenseKey")
-		delete(additionalProperties, "orgName")
-		delete(additionalProperties, "fullName")
-		delete(additionalProperties, "licenseVersion")
-		delete(additionalProperties, "copies")
-		delete(additionalProperties, "reservationCount")
-		delete(additionalProperties, "tenants")
-		delete(additionalProperties, "virtualImages")
-		delete(additionalProperties, "account")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableProvisioningLicense struct {
-	value *ProvisioningLicense
-	isSet bool
-}
-
-func (v NullableProvisioningLicense) Get() *ProvisioningLicense {
-	return v.value
-}
-
-func (v *NullableProvisioningLicense) Set(val *ProvisioningLicense) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableProvisioningLicense) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableProvisioningLicense) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableProvisioningLicense(val *ProvisioningLicense) *NullableProvisioningLicense {
-	return &NullableProvisioningLicense{value: val, isSet: true}
-}
-
-func (v NullableProvisioningLicense) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableProvisioningLicense) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -14,6 +14,7 @@ package sdk
 import (
 	"encoding/json"
 	"fmt"
+
 	"gopkg.in/validator.v2"
 )
 
@@ -22,7 +23,7 @@ var _ fmt.Stringer
 
 // CreateNetworkRouterRequestNetworkRouterSiteId - struct for CreateNetworkRouterRequestNetworkRouterSiteId
 type CreateNetworkRouterRequestNetworkRouterSiteId struct {
-	Int64 *int64
+	Int64  *int64
 	String *string
 }
 
@@ -40,6 +41,21 @@ func StringAsCreateNetworkRouterRequestNetworkRouterSiteId(v *string) CreateNetw
 	}
 }
 
+func (dst *CreateNetworkRouterRequestNetworkRouterSiteId) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &CreateNetworkRouterRequestNetworkRouterSiteId{}
+	}
+
+	if out, ok := data.(int64); ok {
+		dst.Int64 = &out
+	}
+
+	if out, ok := data.(string); ok {
+		dst.String = &out
+	}
+
+	return dst, nil
+}
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *CreateNetworkRouterRequestNetworkRouterSiteId) UnmarshalJSON(data []byte) error {
@@ -106,7 +122,7 @@ func (src CreateNetworkRouterRequestNetworkRouterSiteId) MarshalJSON() ([]byte, 
 }
 
 // Get the actual instance
-func (obj *CreateNetworkRouterRequestNetworkRouterSiteId) GetActualInstance() (interface{}) {
+func (obj *CreateNetworkRouterRequestNetworkRouterSiteId) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -123,7 +139,7 @@ func (obj *CreateNetworkRouterRequestNetworkRouterSiteId) GetActualInstance() (i
 }
 
 // Get the actual instance value
-func (obj CreateNetworkRouterRequestNetworkRouterSiteId) GetActualInstanceValue() (interface{}) {
+func (obj CreateNetworkRouterRequestNetworkRouterSiteId) GetActualInstanceValue() interface{} {
 	if obj.Int64 != nil {
 		return *obj.Int64
 	}
@@ -171,5 +187,3 @@ func (v *NullableCreateNetworkRouterRequestNetworkRouterSiteId) UnmarshalJSON(sr
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

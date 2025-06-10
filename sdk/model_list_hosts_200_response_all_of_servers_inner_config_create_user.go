@@ -14,6 +14,7 @@ package sdk
 import (
 	"encoding/json"
 	"fmt"
+
 	"gopkg.in/validator.v2"
 )
 
@@ -22,7 +23,7 @@ var _ fmt.Stringer
 
 // ListHosts200ResponseAllOfServersInnerConfigCreateUser - struct for ListHosts200ResponseAllOfServersInnerConfigCreateUser
 type ListHosts200ResponseAllOfServersInnerConfigCreateUser struct {
-	Bool *bool
+	Bool   *bool
 	String *string
 }
 
@@ -40,6 +41,21 @@ func StringAsListHosts200ResponseAllOfServersInnerConfigCreateUser(v *string) Li
 	}
 }
 
+func (dst *ListHosts200ResponseAllOfServersInnerConfigCreateUser) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &ListHosts200ResponseAllOfServersInnerConfigCreateUser{}
+	}
+
+	if out, ok := data.(bool); ok {
+		dst.Bool = &out
+	}
+
+	if out, ok := data.(string); ok {
+		dst.String = &out
+	}
+
+	return dst, nil
+}
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ListHosts200ResponseAllOfServersInnerConfigCreateUser) UnmarshalJSON(data []byte) error {
@@ -106,7 +122,7 @@ func (src ListHosts200ResponseAllOfServersInnerConfigCreateUser) MarshalJSON() (
 }
 
 // Get the actual instance
-func (obj *ListHosts200ResponseAllOfServersInnerConfigCreateUser) GetActualInstance() (interface{}) {
+func (obj *ListHosts200ResponseAllOfServersInnerConfigCreateUser) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -123,7 +139,7 @@ func (obj *ListHosts200ResponseAllOfServersInnerConfigCreateUser) GetActualInsta
 }
 
 // Get the actual instance value
-func (obj ListHosts200ResponseAllOfServersInnerConfigCreateUser) GetActualInstanceValue() (interface{}) {
+func (obj ListHosts200ResponseAllOfServersInnerConfigCreateUser) GetActualInstanceValue() interface{} {
 	if obj.Bool != nil {
 		return *obj.Bool
 	}
@@ -171,5 +187,3 @@ func (v *NullableListHosts200ResponseAllOfServersInnerConfigCreateUser) Unmarsha
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

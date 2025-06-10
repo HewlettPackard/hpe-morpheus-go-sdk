@@ -20,8 +20,8 @@ var _ MappedNullable = &UpdateCloudDatastoresRequestDatastoreResourcePermissions
 
 // UpdateCloudDatastoresRequestDatastoreResourcePermissionsSitesInner struct for UpdateCloudDatastoresRequestDatastoreResourcePermissionsSitesInner
 type UpdateCloudDatastoresRequestDatastoreResourcePermissionsSitesInner struct {
-	Id *int64 `json:"id,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _UpdateCloudDatastoresRequestDatastoreResourcePermissionsSitesInner UpdateCloudDatastoresRequestDatastoreResourcePermissionsSitesInner
@@ -76,7 +76,7 @@ func (o *UpdateCloudDatastoresRequestDatastoreResourcePermissionsSitesInner) Set
 }
 
 func (o UpdateCloudDatastoresRequestDatastoreResourcePermissionsSitesInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o UpdateCloudDatastoresRequestDatastoreResourcePermissionsSitesInner) ToMa
 
 	return toSerialize, nil
 }
-
 func (o *UpdateCloudDatastoresRequestDatastoreResourcePermissionsSitesInner) UnmarshalJSON(data []byte) (err error) {
-	varUpdateCloudDatastoresRequestDatastoreResourcePermissionsSitesInner := _UpdateCloudDatastoresRequestDatastoreResourcePermissionsSitesInner{}
-
-	err = json.Unmarshal(data, &varUpdateCloudDatastoresRequestDatastoreResourcePermissionsSitesInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateCloudDatastoresRequestDatastoreResourcePermissionsSitesInner(varUpdateCloudDatastoresRequestDatastoreResourcePermissionsSitesInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateCloudDatastoresRequestDatastoreResourcePermissionsSitesInner struct {
-	value *UpdateCloudDatastoresRequestDatastoreResourcePermissionsSitesInner
-	isSet bool
-}
-
-func (v NullableUpdateCloudDatastoresRequestDatastoreResourcePermissionsSitesInner) Get() *UpdateCloudDatastoresRequestDatastoreResourcePermissionsSitesInner {
-	return v.value
-}
-
-func (v *NullableUpdateCloudDatastoresRequestDatastoreResourcePermissionsSitesInner) Set(val *UpdateCloudDatastoresRequestDatastoreResourcePermissionsSitesInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateCloudDatastoresRequestDatastoreResourcePermissionsSitesInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateCloudDatastoresRequestDatastoreResourcePermissionsSitesInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateCloudDatastoresRequestDatastoreResourcePermissionsSitesInner(val *UpdateCloudDatastoresRequestDatastoreResourcePermissionsSitesInner) *NullableUpdateCloudDatastoresRequestDatastoreResourcePermissionsSitesInner {
-	return &NullableUpdateCloudDatastoresRequestDatastoreResourcePermissionsSitesInner{value: val, isSet: true}
-}
-
-func (v NullableUpdateCloudDatastoresRequestDatastoreResourcePermissionsSitesInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateCloudDatastoresRequestDatastoreResourcePermissionsSitesInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

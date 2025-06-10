@@ -23,10 +23,10 @@ type UpdateCloudDatastoresRequestDatastore struct {
 	// Activate `true` or disable `false` the datastore
 	Active *bool `json:"active,omitempty"`
 	// Setting `private` or `public`
-	Visibility *string `json:"visibility,omitempty"`
-	TenantPermissions *UpdateCloudDatastoresRequestDatastoreTenantPermissions `json:"tenantPermissions,omitempty"`
-	ResourcePermissions *UpdateCloudDatastoresRequestDatastoreResourcePermissions `json:"resourcePermissions,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Visibility           *string                                                   `json:"visibility,omitempty"`
+	TenantPermissions    *UpdateCloudDatastoresRequestDatastoreTenantPermissions   `json:"tenantPermissions,omitempty"`
+	ResourcePermissions  *UpdateCloudDatastoresRequestDatastoreResourcePermissions `json:"resourcePermissions,omitempty"`
+	AdditionalProperties map[string]interface{}                                    `json:",remain"`
 }
 
 type _UpdateCloudDatastoresRequestDatastore UpdateCloudDatastoresRequestDatastore
@@ -181,7 +181,7 @@ func (o *UpdateCloudDatastoresRequestDatastore) SetResourcePermissions(v UpdateC
 }
 
 func (o UpdateCloudDatastoresRequestDatastore) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -209,65 +209,8 @@ func (o UpdateCloudDatastoresRequestDatastore) ToMap() (map[string]interface{}, 
 
 	return toSerialize, nil
 }
-
 func (o *UpdateCloudDatastoresRequestDatastore) UnmarshalJSON(data []byte) (err error) {
-	varUpdateCloudDatastoresRequestDatastore := _UpdateCloudDatastoresRequestDatastore{}
-
-	err = json.Unmarshal(data, &varUpdateCloudDatastoresRequestDatastore)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateCloudDatastoresRequestDatastore(varUpdateCloudDatastoresRequestDatastore)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "active")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "tenantPermissions")
-		delete(additionalProperties, "resourcePermissions")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateCloudDatastoresRequestDatastore struct {
-	value *UpdateCloudDatastoresRequestDatastore
-	isSet bool
-}
-
-func (v NullableUpdateCloudDatastoresRequestDatastore) Get() *UpdateCloudDatastoresRequestDatastore {
-	return v.value
-}
-
-func (v *NullableUpdateCloudDatastoresRequestDatastore) Set(val *UpdateCloudDatastoresRequestDatastore) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateCloudDatastoresRequestDatastore) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateCloudDatastoresRequestDatastore) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateCloudDatastoresRequestDatastore(val *UpdateCloudDatastoresRequestDatastore) *NullableUpdateCloudDatastoresRequestDatastore {
-	return &NullableUpdateCloudDatastoresRequestDatastore{value: val, isSet: true}
-}
-
-func (v NullableUpdateCloudDatastoresRequestDatastore) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateCloudDatastoresRequestDatastore) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

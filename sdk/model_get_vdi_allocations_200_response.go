@@ -20,8 +20,8 @@ var _ MappedNullable = &GetVDIAllocations200Response{}
 
 // GetVDIAllocations200Response struct for GetVDIAllocations200Response
 type GetVDIAllocations200Response struct {
-	VdiAllocation *ListVDIAllocations200ResponseAllOfVdiAllocationsInner `json:"vdiAllocation,omitempty"`
-	AdditionalProperties map[string]interface{}
+	VdiAllocation        *ListVDIAllocations200ResponseAllOfVdiAllocationsInner `json:"vdiAllocation,omitempty"`
+	AdditionalProperties map[string]interface{}                                 `json:",remain"`
 }
 
 type _GetVDIAllocations200Response GetVDIAllocations200Response
@@ -76,7 +76,7 @@ func (o *GetVDIAllocations200Response) SetVdiAllocation(v ListVDIAllocations200R
 }
 
 func (o GetVDIAllocations200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o GetVDIAllocations200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *GetVDIAllocations200Response) UnmarshalJSON(data []byte) (err error) {
-	varGetVDIAllocations200Response := _GetVDIAllocations200Response{}
-
-	err = json.Unmarshal(data, &varGetVDIAllocations200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetVDIAllocations200Response(varGetVDIAllocations200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "vdiAllocation")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetVDIAllocations200Response struct {
-	value *GetVDIAllocations200Response
-	isSet bool
-}
-
-func (v NullableGetVDIAllocations200Response) Get() *GetVDIAllocations200Response {
-	return v.value
-}
-
-func (v *NullableGetVDIAllocations200Response) Set(val *GetVDIAllocations200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetVDIAllocations200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetVDIAllocations200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetVDIAllocations200Response(val *GetVDIAllocations200Response) *NullableGetVDIAllocations200Response {
-	return &NullableGetVDIAllocations200Response{value: val, isSet: true}
-}
-
-func (v NullableGetVDIAllocations200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetVDIAllocations200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

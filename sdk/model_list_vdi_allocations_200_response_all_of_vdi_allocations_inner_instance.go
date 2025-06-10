@@ -20,10 +20,10 @@ var _ MappedNullable = &ListVDIAllocations200ResponseAllOfVdiAllocationsInnerIns
 
 // ListVDIAllocations200ResponseAllOfVdiAllocationsInnerInstance struct for ListVDIAllocations200ResponseAllOfVdiAllocationsInnerInstance
 type ListVDIAllocations200ResponseAllOfVdiAllocationsInnerInstance struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Status *string `json:"status,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	Status               *string                `json:"status,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListVDIAllocations200ResponseAllOfVdiAllocationsInnerInstance ListVDIAllocations200ResponseAllOfVdiAllocationsInnerInstance
@@ -142,7 +142,7 @@ func (o *ListVDIAllocations200ResponseAllOfVdiAllocationsInnerInstance) SetStatu
 }
 
 func (o ListVDIAllocations200ResponseAllOfVdiAllocationsInnerInstance) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -167,64 +167,8 @@ func (o ListVDIAllocations200ResponseAllOfVdiAllocationsInnerInstance) ToMap() (
 
 	return toSerialize, nil
 }
-
 func (o *ListVDIAllocations200ResponseAllOfVdiAllocationsInnerInstance) UnmarshalJSON(data []byte) (err error) {
-	varListVDIAllocations200ResponseAllOfVdiAllocationsInnerInstance := _ListVDIAllocations200ResponseAllOfVdiAllocationsInnerInstance{}
-
-	err = json.Unmarshal(data, &varListVDIAllocations200ResponseAllOfVdiAllocationsInnerInstance)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListVDIAllocations200ResponseAllOfVdiAllocationsInnerInstance(varListVDIAllocations200ResponseAllOfVdiAllocationsInnerInstance)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "status")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListVDIAllocations200ResponseAllOfVdiAllocationsInnerInstance struct {
-	value *ListVDIAllocations200ResponseAllOfVdiAllocationsInnerInstance
-	isSet bool
-}
-
-func (v NullableListVDIAllocations200ResponseAllOfVdiAllocationsInnerInstance) Get() *ListVDIAllocations200ResponseAllOfVdiAllocationsInnerInstance {
-	return v.value
-}
-
-func (v *NullableListVDIAllocations200ResponseAllOfVdiAllocationsInnerInstance) Set(val *ListVDIAllocations200ResponseAllOfVdiAllocationsInnerInstance) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListVDIAllocations200ResponseAllOfVdiAllocationsInnerInstance) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListVDIAllocations200ResponseAllOfVdiAllocationsInnerInstance) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListVDIAllocations200ResponseAllOfVdiAllocationsInnerInstance(val *ListVDIAllocations200ResponseAllOfVdiAllocationsInnerInstance) *NullableListVDIAllocations200ResponseAllOfVdiAllocationsInnerInstance {
-	return &NullableListVDIAllocations200ResponseAllOfVdiAllocationsInnerInstance{value: val, isSet: true}
-}
-
-func (v NullableListVDIAllocations200ResponseAllOfVdiAllocationsInnerInstance) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListVDIAllocations200ResponseAllOfVdiAllocationsInnerInstance) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

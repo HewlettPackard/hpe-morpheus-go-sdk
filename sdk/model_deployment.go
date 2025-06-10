@@ -21,16 +21,16 @@ var _ MappedNullable = &Deployment{}
 
 // Deployment struct for Deployment
 type Deployment struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Description *string `json:"description,omitempty"`
-	AccountId *int64 `json:"accountId,omitempty"`
-	ExternalId *string `json:"externalId,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	VersionCount *int64 `json:"versionCount,omitempty"`
-	Versions []GetDeployment200ResponseDeploymentVersionsInner `json:"versions,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                            `json:"id,omitempty"`
+	Name                 *string                                           `json:"name,omitempty"`
+	Description          *string                                           `json:"description,omitempty"`
+	AccountId            *int64                                            `json:"accountId,omitempty"`
+	ExternalId           *string                                           `json:"externalId,omitempty"`
+	DateCreated          *time.Time                                        `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                        `json:"lastUpdated,omitempty"`
+	VersionCount         *int64                                            `json:"versionCount,omitempty"`
+	Versions             []GetDeployment200ResponseDeploymentVersionsInner `json:"versions,omitempty"`
+	AdditionalProperties map[string]interface{}                            `json:",remain"`
 }
 
 type _Deployment Deployment
@@ -341,7 +341,7 @@ func (o *Deployment) SetVersions(v []GetDeployment200ResponseDeploymentVersionsI
 }
 
 func (o Deployment) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -384,70 +384,8 @@ func (o Deployment) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *Deployment) UnmarshalJSON(data []byte) (err error) {
-	varDeployment := _Deployment{}
-
-	err = json.Unmarshal(data, &varDeployment)
-
-	if err != nil {
-		return err
-	}
-
-	*o = Deployment(varDeployment)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "accountId")
-		delete(additionalProperties, "externalId")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		delete(additionalProperties, "versionCount")
-		delete(additionalProperties, "versions")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableDeployment struct {
-	value *Deployment
-	isSet bool
-}
-
-func (v NullableDeployment) Get() *Deployment {
-	return v.value
-}
-
-func (v *NullableDeployment) Set(val *Deployment) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableDeployment) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableDeployment) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableDeployment(val *Deployment) *NullableDeployment {
-	return &NullableDeployment{value: val, isSet: true}
-}
-
-func (v NullableDeployment) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableDeployment) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

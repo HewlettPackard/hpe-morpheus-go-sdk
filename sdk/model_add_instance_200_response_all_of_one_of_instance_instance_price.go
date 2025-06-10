@@ -20,11 +20,11 @@ var _ MappedNullable = &AddInstance200ResponseAllOfOneOfInstanceInstancePrice{}
 
 // AddInstance200ResponseAllOfOneOfInstanceInstancePrice struct for AddInstance200ResponseAllOfOneOfInstanceInstancePrice
 type AddInstance200ResponseAllOfOneOfInstanceInstancePrice struct {
-	Price *float32 `json:"price,omitempty"`
-	Cost *float32 `json:"cost,omitempty"`
-	Currency *string `json:"currency,omitempty"`
-	Unit *string `json:"unit,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Price                *float32               `json:"price,omitempty"`
+	Cost                 *float32               `json:"cost,omitempty"`
+	Currency             *string                `json:"currency,omitempty"`
+	Unit                 *string                `json:"unit,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddInstance200ResponseAllOfOneOfInstanceInstancePrice AddInstance200ResponseAllOfOneOfInstanceInstancePrice
@@ -175,7 +175,7 @@ func (o *AddInstance200ResponseAllOfOneOfInstanceInstancePrice) SetUnit(v string
 }
 
 func (o AddInstance200ResponseAllOfOneOfInstanceInstancePrice) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -203,65 +203,8 @@ func (o AddInstance200ResponseAllOfOneOfInstanceInstancePrice) ToMap() (map[stri
 
 	return toSerialize, nil
 }
-
 func (o *AddInstance200ResponseAllOfOneOfInstanceInstancePrice) UnmarshalJSON(data []byte) (err error) {
-	varAddInstance200ResponseAllOfOneOfInstanceInstancePrice := _AddInstance200ResponseAllOfOneOfInstanceInstancePrice{}
-
-	err = json.Unmarshal(data, &varAddInstance200ResponseAllOfOneOfInstanceInstancePrice)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddInstance200ResponseAllOfOneOfInstanceInstancePrice(varAddInstance200ResponseAllOfOneOfInstanceInstancePrice)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "price")
-		delete(additionalProperties, "cost")
-		delete(additionalProperties, "currency")
-		delete(additionalProperties, "unit")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddInstance200ResponseAllOfOneOfInstanceInstancePrice struct {
-	value *AddInstance200ResponseAllOfOneOfInstanceInstancePrice
-	isSet bool
-}
-
-func (v NullableAddInstance200ResponseAllOfOneOfInstanceInstancePrice) Get() *AddInstance200ResponseAllOfOneOfInstanceInstancePrice {
-	return v.value
-}
-
-func (v *NullableAddInstance200ResponseAllOfOneOfInstanceInstancePrice) Set(val *AddInstance200ResponseAllOfOneOfInstanceInstancePrice) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddInstance200ResponseAllOfOneOfInstanceInstancePrice) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddInstance200ResponseAllOfOneOfInstanceInstancePrice) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddInstance200ResponseAllOfOneOfInstanceInstancePrice(val *AddInstance200ResponseAllOfOneOfInstanceInstancePrice) *NullableAddInstance200ResponseAllOfOneOfInstanceInstancePrice {
-	return &NullableAddInstance200ResponseAllOfOneOfInstanceInstancePrice{value: val, isSet: true}
-}
-
-func (v NullableAddInstance200ResponseAllOfOneOfInstanceInstancePrice) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddInstance200ResponseAllOfOneOfInstanceInstancePrice) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -14,16 +14,17 @@ package sdk
 import (
 	"encoding/json"
 	"fmt"
+
 	"gopkg.in/validator.v2"
 )
 
 // very silly way of avoiding `"fmt" imported and not used` errors
 var _ fmt.Stringer
 
-// AddTasksRequestTaskCredential - Map containing Credential ID or the default `{\"type\": \"local\"}` which means use the values set in the local task options username and password instead of associating a credential. 
+// AddTasksRequestTaskCredential - Map containing Credential ID or the default `{\"type\": \"local\"}` which means use the values set in the local task options username and password instead of associating a credential.
 type AddTasksRequestTaskCredential struct {
 	AddIntegrationsRequestOneOfIntegrationCredentialOneOf *AddIntegrationsRequestOneOfIntegrationCredentialOneOf
-	GetAlerts200ResponseAllOfChecksInnerAccount *GetAlerts200ResponseAllOfChecksInnerAccount
+	GetAlerts200ResponseAllOfChecksInnerAccount           *GetAlerts200ResponseAllOfChecksInnerAccount
 }
 
 // AddIntegrationsRequestOneOfIntegrationCredentialOneOfAsAddTasksRequestTaskCredential is a convenience function that returns AddIntegrationsRequestOneOfIntegrationCredentialOneOf wrapped in AddTasksRequestTaskCredential
@@ -40,6 +41,21 @@ func GetAlerts200ResponseAllOfChecksInnerAccountAsAddTasksRequestTaskCredential(
 	}
 }
 
+func (dst *AddTasksRequestTaskCredential) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &AddTasksRequestTaskCredential{}
+	}
+
+	if out, ok := data.(AddIntegrationsRequestOneOfIntegrationCredentialOneOf); ok {
+		dst.AddIntegrationsRequestOneOfIntegrationCredentialOneOf = &out
+	}
+
+	if out, ok := data.(GetAlerts200ResponseAllOfChecksInnerAccount); ok {
+		dst.GetAlerts200ResponseAllOfChecksInnerAccount = &out
+	}
+
+	return dst, nil
+}
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddTasksRequestTaskCredential) UnmarshalJSON(data []byte) error {
@@ -106,7 +122,7 @@ func (src AddTasksRequestTaskCredential) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AddTasksRequestTaskCredential) GetActualInstance() (interface{}) {
+func (obj *AddTasksRequestTaskCredential) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -123,7 +139,7 @@ func (obj *AddTasksRequestTaskCredential) GetActualInstance() (interface{}) {
 }
 
 // Get the actual instance value
-func (obj AddTasksRequestTaskCredential) GetActualInstanceValue() (interface{}) {
+func (obj AddTasksRequestTaskCredential) GetActualInstanceValue() interface{} {
 	if obj.AddIntegrationsRequestOneOfIntegrationCredentialOneOf != nil {
 		return *obj.AddIntegrationsRequestOneOfIntegrationCredentialOneOf
 	}
@@ -171,5 +187,3 @@ func (v *NullableAddTasksRequestTaskCredential) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

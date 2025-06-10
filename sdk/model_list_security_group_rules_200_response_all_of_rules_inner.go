@@ -20,28 +20,28 @@ var _ MappedNullable = &ListSecurityGroupRules200ResponseAllOfRulesInner{}
 
 // ListSecurityGroupRules200ResponseAllOfRulesInner struct for ListSecurityGroupRules200ResponseAllOfRulesInner
 type ListSecurityGroupRules200ResponseAllOfRulesInner struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	RuleType *string `json:"ruleType,omitempty"`
-	CustomRule *bool `json:"customRule,omitempty"`
-	InstanceTypeId *string `json:"instanceTypeId,omitempty"`
-	Direction *string `json:"direction,omitempty"`
-	Policy *string `json:"policy,omitempty"`
-	SourceType *string `json:"sourceType,omitempty"`
-	Source *string `json:"source,omitempty"`
-	SourceGroup *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"sourceGroup,omitempty"`
-	SourceTier *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"sourceTier,omitempty"`
-	PortRange *string `json:"portRange,omitempty"`
-	SourcePortRange *string `json:"sourcePortRange,omitempty"`
-	DestinationPortRange *string `json:"destinationPortRange,omitempty"`
-	Protocol *string `json:"protocol,omitempty"`
-	DestinationType *string `json:"destinationType,omitempty"`
-	Destination *string `json:"destination,omitempty"`
-	DestinationGroup *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"destinationGroup,omitempty"`
-	DestinationTier *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"destinationTier,omitempty"`
-	ExternalId *string `json:"externalId,omitempty"`
-	Enabled *string `json:"enabled,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                             `json:"id,omitempty"`
+	Name                 *string                                            `json:"name,omitempty"`
+	RuleType             *string                                            `json:"ruleType,omitempty"`
+	CustomRule           *bool                                              `json:"customRule,omitempty"`
+	InstanceTypeId       *string                                            `json:"instanceTypeId,omitempty"`
+	Direction            *string                                            `json:"direction,omitempty"`
+	Policy               *string                                            `json:"policy,omitempty"`
+	SourceType           *string                                            `json:"sourceType,omitempty"`
+	Source               *string                                            `json:"source,omitempty"`
+	SourceGroup          *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"sourceGroup,omitempty"`
+	SourceTier           *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"sourceTier,omitempty"`
+	PortRange            *string                                            `json:"portRange,omitempty"`
+	SourcePortRange      *string                                            `json:"sourcePortRange,omitempty"`
+	DestinationPortRange *string                                            `json:"destinationPortRange,omitempty"`
+	Protocol             *string                                            `json:"protocol,omitempty"`
+	DestinationType      *string                                            `json:"destinationType,omitempty"`
+	Destination          *string                                            `json:"destination,omitempty"`
+	DestinationGroup     *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"destinationGroup,omitempty"`
+	DestinationTier      *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"destinationTier,omitempty"`
+	ExternalId           *string                                            `json:"externalId,omitempty"`
+	Enabled              *string                                            `json:"enabled,omitempty"`
+	AdditionalProperties map[string]interface{}                             `json:",remain"`
 }
 
 type _ListSecurityGroupRules200ResponseAllOfRulesInner ListSecurityGroupRules200ResponseAllOfRulesInner
@@ -736,7 +736,7 @@ func (o *ListSecurityGroupRules200ResponseAllOfRulesInner) SetEnabled(v string) 
 }
 
 func (o ListSecurityGroupRules200ResponseAllOfRulesInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -815,82 +815,8 @@ func (o ListSecurityGroupRules200ResponseAllOfRulesInner) ToMap() (map[string]in
 
 	return toSerialize, nil
 }
-
 func (o *ListSecurityGroupRules200ResponseAllOfRulesInner) UnmarshalJSON(data []byte) (err error) {
-	varListSecurityGroupRules200ResponseAllOfRulesInner := _ListSecurityGroupRules200ResponseAllOfRulesInner{}
-
-	err = json.Unmarshal(data, &varListSecurityGroupRules200ResponseAllOfRulesInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListSecurityGroupRules200ResponseAllOfRulesInner(varListSecurityGroupRules200ResponseAllOfRulesInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "ruleType")
-		delete(additionalProperties, "customRule")
-		delete(additionalProperties, "instanceTypeId")
-		delete(additionalProperties, "direction")
-		delete(additionalProperties, "policy")
-		delete(additionalProperties, "sourceType")
-		delete(additionalProperties, "source")
-		delete(additionalProperties, "sourceGroup")
-		delete(additionalProperties, "sourceTier")
-		delete(additionalProperties, "portRange")
-		delete(additionalProperties, "sourcePortRange")
-		delete(additionalProperties, "destinationPortRange")
-		delete(additionalProperties, "protocol")
-		delete(additionalProperties, "destinationType")
-		delete(additionalProperties, "destination")
-		delete(additionalProperties, "destinationGroup")
-		delete(additionalProperties, "destinationTier")
-		delete(additionalProperties, "externalId")
-		delete(additionalProperties, "enabled")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListSecurityGroupRules200ResponseAllOfRulesInner struct {
-	value *ListSecurityGroupRules200ResponseAllOfRulesInner
-	isSet bool
-}
-
-func (v NullableListSecurityGroupRules200ResponseAllOfRulesInner) Get() *ListSecurityGroupRules200ResponseAllOfRulesInner {
-	return v.value
-}
-
-func (v *NullableListSecurityGroupRules200ResponseAllOfRulesInner) Set(val *ListSecurityGroupRules200ResponseAllOfRulesInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListSecurityGroupRules200ResponseAllOfRulesInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListSecurityGroupRules200ResponseAllOfRulesInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListSecurityGroupRules200ResponseAllOfRulesInner(val *ListSecurityGroupRules200ResponseAllOfRulesInner) *NullableListSecurityGroupRules200ResponseAllOfRulesInner {
-	return &NullableListSecurityGroupRules200ResponseAllOfRulesInner{value: val, isSet: true}
-}
-
-func (v NullableListSecurityGroupRules200ResponseAllOfRulesInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListSecurityGroupRules200ResponseAllOfRulesInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

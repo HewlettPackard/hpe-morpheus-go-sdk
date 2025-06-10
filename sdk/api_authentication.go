@@ -20,13 +20,12 @@ import (
 	"net/url"
 )
 
-
 // AuthenticationAPIService AuthenticationAPI service
 type AuthenticationAPIService service
 
 type ApiForgotPasswordRequest struct {
-	ctx context.Context
-	ApiService *AuthenticationAPIService
+	ctx                   context.Context
+	ApiService            *AuthenticationAPIService
 	forgotPasswordRequest *ForgotPasswordRequest
 }
 
@@ -50,25 +49,25 @@ Once you obtain the token from the email, it may be used to reset the password o
 
 **Note**: This is an unauthorized endpoint and the response will always appear successful, it is not possible determine from the response whether the user exists or if an email was sent.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiForgotPasswordRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiForgotPasswordRequest
 */
 func (a *AuthenticationAPIService) ForgotPassword(ctx context.Context) ApiForgotPasswordRequest {
 	return ApiForgotPasswordRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ForgotPassword200Response
+//
+//	@return ForgotPassword200Response
 func (a *AuthenticationAPIService) ForgotPasswordExecute(r ApiForgotPasswordRequest) (*ForgotPassword200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ForgotPassword200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ForgotPassword200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationAPIService.ForgotPassword")
@@ -120,7 +119,7 @@ func (a *AuthenticationAPIService) ForgotPasswordExecute(r ApiForgotPasswordRequ
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -129,8 +128,8 @@ func (a *AuthenticationAPIService) ForgotPasswordExecute(r ApiForgotPasswordRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -140,8 +139,8 @@ func (a *AuthenticationAPIService) ForgotPasswordExecute(r ApiForgotPasswordRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -149,8 +148,8 @@ func (a *AuthenticationAPIService) ForgotPasswordExecute(r ApiForgotPasswordRequ
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -159,13 +158,13 @@ func (a *AuthenticationAPIService) ForgotPasswordExecute(r ApiForgotPasswordRequ
 }
 
 type ApiGetAccessTokenRequest struct {
-	ctx context.Context
-	ApiService *AuthenticationAPIService
-	clientId *string
-	grantType *string
-	scope *string
-	username *string
-	password *string
+	ctx          context.Context
+	ApiService   *AuthenticationAPIService
+	clientId     *string
+	grantType    *string
+	scope        *string
+	username     *string
+	password     *string
 	refreshToken *interface{}
 }
 
@@ -219,25 +218,25 @@ This endpoint also allows refreshing your current access token to get a new toke
 
 This will render your current access token invalid, so you will need to update any scripts relying on it.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAccessTokenRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetAccessTokenRequest
 */
 func (a *AuthenticationAPIService) GetAccessToken(ctx context.Context) ApiGetAccessTokenRequest {
 	return ApiGetAccessTokenRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return GetAccessToken200Response
+//
+//	@return GetAccessToken200Response
 func (a *AuthenticationAPIService) GetAccessTokenExecute(r ApiGetAccessTokenRequest) (*GetAccessToken200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetAccessToken200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetAccessToken200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationAPIService.GetAccessToken")
@@ -308,7 +307,7 @@ func (a *AuthenticationAPIService) GetAccessTokenExecute(r ApiGetAccessTokenRequ
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -317,8 +316,8 @@ func (a *AuthenticationAPIService) GetAccessTokenExecute(r ApiGetAccessTokenRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -328,8 +327,8 @@ func (a *AuthenticationAPIService) GetAccessTokenExecute(r ApiGetAccessTokenRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -337,8 +336,8 @@ func (a *AuthenticationAPIService) GetAccessTokenExecute(r ApiGetAccessTokenRequ
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -347,8 +346,8 @@ func (a *AuthenticationAPIService) GetAccessTokenExecute(r ApiGetAccessTokenRequ
 }
 
 type ApiResetPasswordRequest struct {
-	ctx context.Context
-	ApiService *AuthenticationAPIService
+	ctx                  context.Context
+	ApiService           *AuthenticationAPIService
 	resetPasswordRequest *ResetPasswordRequest
 }
 
@@ -368,25 +367,25 @@ This endpoint will reset the password for a user, updating it to the specified v
 
 **Note**: You can obtain this token by inspecting the URL of the “Click here to reset” link seen in the email.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiResetPasswordRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiResetPasswordRequest
 */
 func (a *AuthenticationAPIService) ResetPassword(ctx context.Context) ApiResetPasswordRequest {
 	return ApiResetPasswordRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ResetPassword200Response
+//
+//	@return ResetPassword200Response
 func (a *AuthenticationAPIService) ResetPasswordExecute(r ApiResetPasswordRequest) (*ResetPassword200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ResetPassword200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ResetPassword200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationAPIService.ResetPassword")
@@ -438,7 +437,7 @@ func (a *AuthenticationAPIService) ResetPasswordExecute(r ApiResetPasswordReques
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -447,8 +446,8 @@ func (a *AuthenticationAPIService) ResetPasswordExecute(r ApiResetPasswordReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -458,8 +457,8 @@ func (a *AuthenticationAPIService) ResetPasswordExecute(r ApiResetPasswordReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -467,8 +466,8 @@ func (a *AuthenticationAPIService) ResetPasswordExecute(r ApiResetPasswordReques
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -477,7 +476,7 @@ func (a *AuthenticationAPIService) ResetPasswordExecute(r ApiResetPasswordReques
 }
 
 type ApiWhoamiRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthenticationAPIService
 }
 
@@ -492,25 +491,25 @@ Provides API to retrieve information about yourself, including your roles and pe
 
 The appliance build version is also returned.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiWhoamiRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiWhoamiRequest
 */
 func (a *AuthenticationAPIService) Whoami(ctx context.Context) ApiWhoamiRequest {
 	return ApiWhoamiRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return Whoami200Response
+//
+//	@return Whoami200Response
 func (a *AuthenticationAPIService) WhoamiExecute(r ApiWhoamiRequest) (*Whoami200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Whoami200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Whoami200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationAPIService.Whoami")
@@ -560,7 +559,7 @@ func (a *AuthenticationAPIService) WhoamiExecute(r ApiWhoamiRequest) (*Whoami200
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -569,8 +568,8 @@ func (a *AuthenticationAPIService) WhoamiExecute(r ApiWhoamiRequest) (*Whoami200
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -580,8 +579,8 @@ func (a *AuthenticationAPIService) WhoamiExecute(r ApiWhoamiRequest) (*Whoami200
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -589,8 +588,8 @@ func (a *AuthenticationAPIService) WhoamiExecute(r ApiWhoamiRequest) (*Whoami200
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

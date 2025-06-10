@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the AddBudgetsRequestBudgetForecastType type satisfies the MappedNullable interface at compile time
@@ -22,8 +21,8 @@ var _ MappedNullable = &AddBudgetsRequestBudgetForecastType{}
 // AddBudgetsRequestBudgetForecastType Forecast Model
 type AddBudgetsRequestBudgetForecastType struct {
 	// The ID of the Forecast Model type. See GET /api/options/forecastTypes
-	Id int64 `json:"id"`
-	AdditionalProperties map[string]interface{}
+	Id                   int64                  `json:"id"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddBudgetsRequestBudgetForecastType AddBudgetsRequestBudgetForecastType
@@ -71,7 +70,7 @@ func (o *AddBudgetsRequestBudgetForecastType) SetId(v int64) {
 }
 
 func (o AddBudgetsRequestBudgetForecastType) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -88,83 +87,8 @@ func (o AddBudgetsRequestBudgetForecastType) ToMap() (map[string]interface{}, er
 
 	return toSerialize, nil
 }
-
 func (o *AddBudgetsRequestBudgetForecastType) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"id",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varAddBudgetsRequestBudgetForecastType := _AddBudgetsRequestBudgetForecastType{}
-
-	err = json.Unmarshal(data, &varAddBudgetsRequestBudgetForecastType)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddBudgetsRequestBudgetForecastType(varAddBudgetsRequestBudgetForecastType)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddBudgetsRequestBudgetForecastType struct {
-	value *AddBudgetsRequestBudgetForecastType
-	isSet bool
-}
-
-func (v NullableAddBudgetsRequestBudgetForecastType) Get() *AddBudgetsRequestBudgetForecastType {
-	return v.value
-}
-
-func (v *NullableAddBudgetsRequestBudgetForecastType) Set(val *AddBudgetsRequestBudgetForecastType) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddBudgetsRequestBudgetForecastType) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddBudgetsRequestBudgetForecastType) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddBudgetsRequestBudgetForecastType(val *AddBudgetsRequestBudgetForecastType) *NullableAddBudgetsRequestBudgetForecastType {
-	return &NullableAddBudgetsRequestBudgetForecastType{value: val, isSet: true}
-}
-
-func (v NullableAddBudgetsRequestBudgetForecastType) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddBudgetsRequestBudgetForecastType) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

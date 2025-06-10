@@ -33,8 +33,8 @@ type UserSourceCreateActiveDirectory struct {
 	// Required Group
 	RequiredGroup *string `json:"requiredGroup,omitempty"`
 	// Include Member Groups
-	SearchMemberGroups *bool `json:"searchMemberGroups,omitempty"`
-	AdditionalProperties map[string]interface{}
+	SearchMemberGroups   *bool                  `json:"searchMemberGroups,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _UserSourceCreateActiveDirectory UserSourceCreateActiveDirectory
@@ -285,7 +285,7 @@ func (o *UserSourceCreateActiveDirectory) SetSearchMemberGroups(v bool) {
 }
 
 func (o UserSourceCreateActiveDirectory) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -322,68 +322,8 @@ func (o UserSourceCreateActiveDirectory) ToMap() (map[string]interface{}, error)
 
 	return toSerialize, nil
 }
-
 func (o *UserSourceCreateActiveDirectory) UnmarshalJSON(data []byte) (err error) {
-	varUserSourceCreateActiveDirectory := _UserSourceCreateActiveDirectory{}
-
-	err = json.Unmarshal(data, &varUserSourceCreateActiveDirectory)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UserSourceCreateActiveDirectory(varUserSourceCreateActiveDirectory)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "domain")
-		delete(additionalProperties, "useSSL")
-		delete(additionalProperties, "bindingUsername")
-		delete(additionalProperties, "bindingPassword")
-		delete(additionalProperties, "requiredGroup")
-		delete(additionalProperties, "searchMemberGroups")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUserSourceCreateActiveDirectory struct {
-	value *UserSourceCreateActiveDirectory
-	isSet bool
-}
-
-func (v NullableUserSourceCreateActiveDirectory) Get() *UserSourceCreateActiveDirectory {
-	return v.value
-}
-
-func (v *NullableUserSourceCreateActiveDirectory) Set(val *UserSourceCreateActiveDirectory) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUserSourceCreateActiveDirectory) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUserSourceCreateActiveDirectory) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUserSourceCreateActiveDirectory(val *UserSourceCreateActiveDirectory) *NullableUserSourceCreateActiveDirectory {
-	return &NullableUserSourceCreateActiveDirectory{value: val, isSet: true}
-}
-
-func (v NullableUserSourceCreateActiveDirectory) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUserSourceCreateActiveDirectory) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

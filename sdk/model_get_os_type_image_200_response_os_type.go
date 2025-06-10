@@ -21,19 +21,19 @@ var _ MappedNullable = &GetOsTypeImage200ResponseOsType{}
 // GetOsTypeImage200ResponseOsType struct for GetOsTypeImage200ResponseOsType
 type GetOsTypeImage200ResponseOsType struct {
 	Id *int64 `json:"id,omitempty"`
-	// The id of the virtual image. 
+	// The id of the virtual image.
 	VirtualImageId *int64 `json:"virtualImageId,omitempty"`
-	// The name of the virtual image.  
+	// The name of the virtual image.
 	VirtualImageName *string `json:"virtualImageName,omitempty"`
-	// The account attached to the osTypeImage.  
+	// The account attached to the osTypeImage.
 	Account *int64 `json:"account,omitempty"`
-	// The Provision Type of the osTypeImage. 
+	// The Provision Type of the osTypeImage.
 	ProvisionType *int64 `json:"provisionType,omitempty"`
-	// The zone type of the osTypeImage. 
+	// The zone type of the osTypeImage.
 	ComputeZoneType *int64 `json:"computeZoneType,omitempty"`
-	// The cloud that is attached to osTypeImage. 
-	Zone *int64 `json:"zone,omitempty"`
-	AdditionalProperties map[string]interface{}
+	// The cloud that is attached to osTypeImage.
+	Zone                 *int64                 `json:"zone,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _GetOsTypeImage200ResponseOsType GetOsTypeImage200ResponseOsType
@@ -280,7 +280,7 @@ func (o *GetOsTypeImage200ResponseOsType) SetZone(v int64) {
 }
 
 func (o GetOsTypeImage200ResponseOsType) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -317,68 +317,8 @@ func (o GetOsTypeImage200ResponseOsType) ToMap() (map[string]interface{}, error)
 
 	return toSerialize, nil
 }
-
 func (o *GetOsTypeImage200ResponseOsType) UnmarshalJSON(data []byte) (err error) {
-	varGetOsTypeImage200ResponseOsType := _GetOsTypeImage200ResponseOsType{}
-
-	err = json.Unmarshal(data, &varGetOsTypeImage200ResponseOsType)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetOsTypeImage200ResponseOsType(varGetOsTypeImage200ResponseOsType)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "virtualImageId")
-		delete(additionalProperties, "virtualImageName")
-		delete(additionalProperties, "account")
-		delete(additionalProperties, "provisionType")
-		delete(additionalProperties, "computeZoneType")
-		delete(additionalProperties, "zone")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetOsTypeImage200ResponseOsType struct {
-	value *GetOsTypeImage200ResponseOsType
-	isSet bool
-}
-
-func (v NullableGetOsTypeImage200ResponseOsType) Get() *GetOsTypeImage200ResponseOsType {
-	return v.value
-}
-
-func (v *NullableGetOsTypeImage200ResponseOsType) Set(val *GetOsTypeImage200ResponseOsType) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetOsTypeImage200ResponseOsType) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetOsTypeImage200ResponseOsType) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetOsTypeImage200ResponseOsType(val *GetOsTypeImage200ResponseOsType) *NullableGetOsTypeImage200ResponseOsType {
-	return &NullableGetOsTypeImage200ResponseOsType{value: val, isSet: true}
-}
-
-func (v NullableGetOsTypeImage200ResponseOsType) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetOsTypeImage200ResponseOsType) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

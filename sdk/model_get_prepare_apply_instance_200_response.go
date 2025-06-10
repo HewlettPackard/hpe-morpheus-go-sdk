@@ -20,9 +20,9 @@ var _ MappedNullable = &GetPrepareApplyInstance200Response{}
 
 // GetPrepareApplyInstance200Response struct for GetPrepareApplyInstance200Response
 type GetPrepareApplyInstance200Response struct {
-	Data *GetPrepareApplyInstance200ResponseAllOfData `json:"data,omitempty"`
-	Success *bool `json:"success,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Data                 *GetPrepareApplyInstance200ResponseAllOfData `json:"data,omitempty"`
+	Success              *bool                                        `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{}                       `json:",remain"`
 }
 
 type _GetPrepareApplyInstance200Response GetPrepareApplyInstance200Response
@@ -109,7 +109,7 @@ func (o *GetPrepareApplyInstance200Response) SetSuccess(v bool) {
 }
 
 func (o GetPrepareApplyInstance200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -131,63 +131,8 @@ func (o GetPrepareApplyInstance200Response) ToMap() (map[string]interface{}, err
 
 	return toSerialize, nil
 }
-
 func (o *GetPrepareApplyInstance200Response) UnmarshalJSON(data []byte) (err error) {
-	varGetPrepareApplyInstance200Response := _GetPrepareApplyInstance200Response{}
-
-	err = json.Unmarshal(data, &varGetPrepareApplyInstance200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetPrepareApplyInstance200Response(varGetPrepareApplyInstance200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "data")
-		delete(additionalProperties, "success")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetPrepareApplyInstance200Response struct {
-	value *GetPrepareApplyInstance200Response
-	isSet bool
-}
-
-func (v NullableGetPrepareApplyInstance200Response) Get() *GetPrepareApplyInstance200Response {
-	return v.value
-}
-
-func (v *NullableGetPrepareApplyInstance200Response) Set(val *GetPrepareApplyInstance200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetPrepareApplyInstance200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetPrepareApplyInstance200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetPrepareApplyInstance200Response(val *GetPrepareApplyInstance200Response) *NullableGetPrepareApplyInstance200Response {
-	return &NullableGetPrepareApplyInstance200Response{value: val, isSet: true}
-}
-
-func (v NullableGetPrepareApplyInstance200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetPrepareApplyInstance200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

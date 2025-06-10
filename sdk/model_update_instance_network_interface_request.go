@@ -21,8 +21,8 @@ var _ MappedNullable = &UpdateInstanceNetworkInterfaceRequest{}
 // UpdateInstanceNetworkInterfaceRequest struct for UpdateInstanceNetworkInterfaceRequest
 type UpdateInstanceNetworkInterfaceRequest struct {
 	// Desired Name for the Network Interface
-	Name *string `json:"name,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Name                 *string                `json:"name,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _UpdateInstanceNetworkInterfaceRequest UpdateInstanceNetworkInterfaceRequest
@@ -77,7 +77,7 @@ func (o *UpdateInstanceNetworkInterfaceRequest) SetName(v string) {
 }
 
 func (o UpdateInstanceNetworkInterfaceRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -96,62 +96,8 @@ func (o UpdateInstanceNetworkInterfaceRequest) ToMap() (map[string]interface{}, 
 
 	return toSerialize, nil
 }
-
 func (o *UpdateInstanceNetworkInterfaceRequest) UnmarshalJSON(data []byte) (err error) {
-	varUpdateInstanceNetworkInterfaceRequest := _UpdateInstanceNetworkInterfaceRequest{}
-
-	err = json.Unmarshal(data, &varUpdateInstanceNetworkInterfaceRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateInstanceNetworkInterfaceRequest(varUpdateInstanceNetworkInterfaceRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateInstanceNetworkInterfaceRequest struct {
-	value *UpdateInstanceNetworkInterfaceRequest
-	isSet bool
-}
-
-func (v NullableUpdateInstanceNetworkInterfaceRequest) Get() *UpdateInstanceNetworkInterfaceRequest {
-	return v.value
-}
-
-func (v *NullableUpdateInstanceNetworkInterfaceRequest) Set(val *UpdateInstanceNetworkInterfaceRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateInstanceNetworkInterfaceRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateInstanceNetworkInterfaceRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateInstanceNetworkInterfaceRequest(val *UpdateInstanceNetworkInterfaceRequest) *NullableUpdateInstanceNetworkInterfaceRequest {
-	return &NullableUpdateInstanceNetworkInterfaceRequest{value: val, isSet: true}
-}
-
-func (v NullableUpdateInstanceNetworkInterfaceRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateInstanceNetworkInterfaceRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

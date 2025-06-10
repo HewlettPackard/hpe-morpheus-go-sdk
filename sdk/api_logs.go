@@ -21,31 +21,30 @@ import (
 	"time"
 )
 
-
 // LogsAPIService LogsAPI service
 type LogsAPIService service
 
 type ApiListLogsRequest struct {
-	ctx context.Context
-	ApiService *LogsAPIService
-	max *int64
-	offset *int64
-	sort *string
-	order *string
-	query *string
-	message *string
-	sourceType *string
-	typeCode *string
-	objectId *int64
-	token *string
-	level *string
-	startMs *int64
-	endMs *int64
+	ctx           context.Context
+	ApiService    *LogsAPIService
+	max           *int64
+	offset        *int64
+	sort          *string
+	order         *string
+	query         *string
+	message       *string
+	sourceType    *string
+	typeCode      *string
+	objectId      *int64
+	token         *string
+	level         *string
+	startMs       *int64
+	endMs         *int64
 	startDateTime *time.Time
-	endDateTime *time.Time
-	containers *int64
-	servers *int64
-	clusterId *int64
+	endDateTime   *time.Time
+	containers    *int64
+	servers       *int64
+	clusterId     *int64
 }
 
 // Maximum number of records to return
@@ -165,25 +164,25 @@ ListLogs Retrieves Logs
 
 Retrieves logs based on filters provided.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListLogsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListLogsRequest
 */
 func (a *LogsAPIService) ListLogs(ctx context.Context) ApiListLogsRequest {
 	return ApiListLogsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListLogs200Response
+//
+//	@return ListLogs200Response
 func (a *LogsAPIService) ListLogsExecute(r ApiListLogsRequest) (*ListLogs200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListLogs200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListLogs200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LogsAPIService.ListLogs")
@@ -299,7 +298,7 @@ func (a *LogsAPIService) ListLogsExecute(r ApiListLogsRequest) (*ListLogs200Resp
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -308,8 +307,8 @@ func (a *LogsAPIService) ListLogsExecute(r ApiListLogsRequest) (*ListLogs200Resp
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -319,8 +318,8 @@ func (a *LogsAPIService) ListLogsExecute(r ApiListLogsRequest) (*ListLogs200Resp
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -328,8 +327,8 @@ func (a *LogsAPIService) ListLogsExecute(r ApiListLogsRequest) (*ListLogs200Resp
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

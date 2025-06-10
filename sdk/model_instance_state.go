@@ -20,15 +20,15 @@ var _ MappedNullable = &InstanceState{}
 
 // InstanceState struct for InstanceState
 type InstanceState struct {
-	Workloads []map[string]interface{} `json:"workloads,omitempty"`
-	IacDrift *bool `json:"iacDrift,omitempty"`
-	PlanResources []map[string]interface{} `json:"planResources,omitempty"`
-	Specs []map[string]interface{} `json:"specs,omitempty"`
-	StateData *string `json:"stateData,omitempty"`
-	PlanData *string `json:"planData,omitempty"`
-	Input *GetStateInstance200ResponseAllOfInstanceInput `json:"input,omitempty"`
-	Output *GetAppState200ResponseAllOfOutput `json:"output,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Workloads            []map[string]interface{}                       `json:"workloads,omitempty"`
+	IacDrift             *bool                                          `json:"iacDrift,omitempty"`
+	PlanResources        []map[string]interface{}                       `json:"planResources,omitempty"`
+	Specs                []map[string]interface{}                       `json:"specs,omitempty"`
+	StateData            *string                                        `json:"stateData,omitempty"`
+	PlanData             *string                                        `json:"planData,omitempty"`
+	Input                *GetStateInstance200ResponseAllOfInstanceInput `json:"input,omitempty"`
+	Output               *GetAppState200ResponseAllOfOutput             `json:"output,omitempty"`
+	AdditionalProperties map[string]interface{}                         `json:",remain"`
 }
 
 type _InstanceState InstanceState
@@ -307,7 +307,7 @@ func (o *InstanceState) SetOutput(v GetAppState200ResponseAllOfOutput) {
 }
 
 func (o InstanceState) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -347,69 +347,8 @@ func (o InstanceState) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *InstanceState) UnmarshalJSON(data []byte) (err error) {
-	varInstanceState := _InstanceState{}
-
-	err = json.Unmarshal(data, &varInstanceState)
-
-	if err != nil {
-		return err
-	}
-
-	*o = InstanceState(varInstanceState)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "workloads")
-		delete(additionalProperties, "iacDrift")
-		delete(additionalProperties, "planResources")
-		delete(additionalProperties, "specs")
-		delete(additionalProperties, "stateData")
-		delete(additionalProperties, "planData")
-		delete(additionalProperties, "input")
-		delete(additionalProperties, "output")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableInstanceState struct {
-	value *InstanceState
-	isSet bool
-}
-
-func (v NullableInstanceState) Get() *InstanceState {
-	return v.value
-}
-
-func (v *NullableInstanceState) Set(val *InstanceState) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableInstanceState) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableInstanceState) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableInstanceState(val *InstanceState) *NullableInstanceState {
-	return &NullableInstanceState{value: val, isSet: true}
-}
-
-func (v NullableInstanceState) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableInstanceState) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

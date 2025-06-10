@@ -20,8 +20,8 @@ var _ MappedNullable = &GetNetworkRouterRoute200Response{}
 
 // GetNetworkRouterRoute200Response struct for GetNetworkRouterRoute200Response
 type GetNetworkRouterRoute200Response struct {
-	NetworkRoute *GetNetworkRoutersRoutes200ResponseNetworkRoutesInner `json:"networkRoute,omitempty"`
-	AdditionalProperties map[string]interface{}
+	NetworkRoute         *GetNetworkRoutersRoutes200ResponseNetworkRoutesInner `json:"networkRoute,omitempty"`
+	AdditionalProperties map[string]interface{}                                `json:",remain"`
 }
 
 type _GetNetworkRouterRoute200Response GetNetworkRouterRoute200Response
@@ -76,7 +76,7 @@ func (o *GetNetworkRouterRoute200Response) SetNetworkRoute(v GetNetworkRoutersRo
 }
 
 func (o GetNetworkRouterRoute200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o GetNetworkRouterRoute200Response) ToMap() (map[string]interface{}, error
 
 	return toSerialize, nil
 }
-
 func (o *GetNetworkRouterRoute200Response) UnmarshalJSON(data []byte) (err error) {
-	varGetNetworkRouterRoute200Response := _GetNetworkRouterRoute200Response{}
-
-	err = json.Unmarshal(data, &varGetNetworkRouterRoute200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetNetworkRouterRoute200Response(varGetNetworkRouterRoute200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "networkRoute")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetNetworkRouterRoute200Response struct {
-	value *GetNetworkRouterRoute200Response
-	isSet bool
-}
-
-func (v NullableGetNetworkRouterRoute200Response) Get() *GetNetworkRouterRoute200Response {
-	return v.value
-}
-
-func (v *NullableGetNetworkRouterRoute200Response) Set(val *GetNetworkRouterRoute200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetNetworkRouterRoute200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetNetworkRouterRoute200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetNetworkRouterRoute200Response(val *GetNetworkRouterRoute200Response) *NullableGetNetworkRouterRoute200Response {
-	return &NullableGetNetworkRouterRoute200Response{value: val, isSet: true}
-}
-
-func (v NullableGetNetworkRouterRoute200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetNetworkRouterRoute200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

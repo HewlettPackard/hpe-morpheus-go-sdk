@@ -21,22 +21,22 @@ var _ MappedNullable = &Tenant{}
 
 // Tenant struct for Tenant
 type Tenant struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Subdomain *string `json:"subdomain,omitempty"`
-	Currency *string `json:"currency,omitempty"`
-	ExternalId *string `json:"externalId,omitempty"`
-	CustomerNumber *string `json:"customerNumber,omitempty"`
-	AccountNumber *string `json:"accountNumber,omitempty"`
-	AccountName *string `json:"accountName,omitempty"`
-	Active *bool `json:"active,omitempty"`
-	Master *bool `json:"master,omitempty"`
-	Role *ListTenants200ResponseAllOfAccountsInnerRole `json:"role,omitempty"`
-	Stats *ListTenants200ResponseAllOfAccountsInnerStats `json:"stats,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                         `json:"id,omitempty"`
+	Name                 *string                                        `json:"name,omitempty"`
+	Description          *string                                        `json:"description,omitempty"`
+	Subdomain            *string                                        `json:"subdomain,omitempty"`
+	Currency             *string                                        `json:"currency,omitempty"`
+	ExternalId           *string                                        `json:"externalId,omitempty"`
+	CustomerNumber       *string                                        `json:"customerNumber,omitempty"`
+	AccountNumber        *string                                        `json:"accountNumber,omitempty"`
+	AccountName          *string                                        `json:"accountName,omitempty"`
+	Active               *bool                                          `json:"active,omitempty"`
+	Master               *bool                                          `json:"master,omitempty"`
+	Role                 *ListTenants200ResponseAllOfAccountsInnerRole  `json:"role,omitempty"`
+	Stats                *ListTenants200ResponseAllOfAccountsInnerStats `json:"stats,omitempty"`
+	DateCreated          *time.Time                                     `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                     `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}                         `json:",remain"`
 }
 
 type _Tenant Tenant
@@ -539,7 +539,7 @@ func (o *Tenant) SetLastUpdated(v time.Time) {
 }
 
 func (o Tenant) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -600,76 +600,8 @@ func (o Tenant) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *Tenant) UnmarshalJSON(data []byte) (err error) {
-	varTenant := _Tenant{}
-
-	err = json.Unmarshal(data, &varTenant)
-
-	if err != nil {
-		return err
-	}
-
-	*o = Tenant(varTenant)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "subdomain")
-		delete(additionalProperties, "currency")
-		delete(additionalProperties, "externalId")
-		delete(additionalProperties, "customerNumber")
-		delete(additionalProperties, "accountNumber")
-		delete(additionalProperties, "accountName")
-		delete(additionalProperties, "active")
-		delete(additionalProperties, "master")
-		delete(additionalProperties, "role")
-		delete(additionalProperties, "stats")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableTenant struct {
-	value *Tenant
-	isSet bool
-}
-
-func (v NullableTenant) Get() *Tenant {
-	return v.value
-}
-
-func (v *NullableTenant) Set(val *Tenant) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableTenant) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableTenant) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableTenant(val *Tenant) *NullableTenant {
-	return &NullableTenant{value: val, isSet: true}
-}
-
-func (v NullableTenant) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableTenant) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

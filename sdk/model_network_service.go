@@ -20,14 +20,14 @@ var _ MappedNullable = &NetworkService{}
 
 // NetworkService struct for NetworkService
 type NetworkService struct {
-	ServiceType *string `json:"serviceType,omitempty"`
-	ServiceTypeName *string `json:"serviceTypeName,omitempty"`
-	Type *string `json:"type,omitempty"`
-	TypeName *string `json:"typeName,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Id *int64 `json:"id,omitempty"`
-	IntegrationId *int64 `json:"integrationId,omitempty"`
-	AdditionalProperties map[string]interface{}
+	ServiceType          *string                `json:"serviceType,omitempty"`
+	ServiceTypeName      *string                `json:"serviceTypeName,omitempty"`
+	Type                 *string                `json:"type,omitempty"`
+	TypeName             *string                `json:"typeName,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	Id                   *int64                 `json:"id,omitempty"`
+	IntegrationId        *int64                 `json:"integrationId,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _NetworkService NetworkService
@@ -274,7 +274,7 @@ func (o *NetworkService) SetIntegrationId(v int64) {
 }
 
 func (o NetworkService) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -311,68 +311,8 @@ func (o NetworkService) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *NetworkService) UnmarshalJSON(data []byte) (err error) {
-	varNetworkService := _NetworkService{}
-
-	err = json.Unmarshal(data, &varNetworkService)
-
-	if err != nil {
-		return err
-	}
-
-	*o = NetworkService(varNetworkService)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "serviceType")
-		delete(additionalProperties, "serviceTypeName")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "typeName")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "integrationId")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableNetworkService struct {
-	value *NetworkService
-	isSet bool
-}
-
-func (v NullableNetworkService) Get() *NetworkService {
-	return v.value
-}
-
-func (v *NullableNetworkService) Set(val *NetworkService) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableNetworkService) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableNetworkService) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableNetworkService(val *NetworkService) *NullableNetworkService {
-	return &NullableNetworkService{value: val, isSet: true}
-}
-
-func (v NullableNetworkService) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableNetworkService) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

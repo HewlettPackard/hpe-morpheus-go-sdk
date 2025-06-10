@@ -20,8 +20,8 @@ var _ MappedNullable = &GetNetworkPoolIps429Response{}
 
 // GetNetworkPoolIps429Response struct for GetNetworkPoolIps429Response
 type GetNetworkPoolIps429Response struct {
-	Msg *string `json:"msg,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Msg                  *string                `json:"msg,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _GetNetworkPoolIps429Response GetNetworkPoolIps429Response
@@ -76,7 +76,7 @@ func (o *GetNetworkPoolIps429Response) SetMsg(v string) {
 }
 
 func (o GetNetworkPoolIps429Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o GetNetworkPoolIps429Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *GetNetworkPoolIps429Response) UnmarshalJSON(data []byte) (err error) {
-	varGetNetworkPoolIps429Response := _GetNetworkPoolIps429Response{}
-
-	err = json.Unmarshal(data, &varGetNetworkPoolIps429Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetNetworkPoolIps429Response(varGetNetworkPoolIps429Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "msg")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetNetworkPoolIps429Response struct {
-	value *GetNetworkPoolIps429Response
-	isSet bool
-}
-
-func (v NullableGetNetworkPoolIps429Response) Get() *GetNetworkPoolIps429Response {
-	return v.value
-}
-
-func (v *NullableGetNetworkPoolIps429Response) Set(val *GetNetworkPoolIps429Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetNetworkPoolIps429Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetNetworkPoolIps429Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetNetworkPoolIps429Response(val *GetNetworkPoolIps429Response) *NullableGetNetworkPoolIps429Response {
-	return &NullableGetNetworkPoolIps429Response{value: val, isSet: true}
-}
-
-func (v NullableGetNetworkPoolIps429Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetNetworkPoolIps429Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

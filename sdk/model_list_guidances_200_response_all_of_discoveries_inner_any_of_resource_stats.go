@@ -20,23 +20,23 @@ var _ MappedNullable = &ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResour
 
 // ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats struct for ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats
 type ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats struct {
-	Ts *string `json:"ts,omitempty"`
-	FreeMemory *int64 `json:"freeMemory,omitempty"`
-	UsedMemory *int64 `json:"usedMemory,omitempty"`
-	FreeSwap *int64 `json:"freeSwap,omitempty"`
-	UsedSwap *int64 `json:"usedSwap,omitempty"`
-	CpuIdleTime *int64 `json:"cpuIdleTime,omitempty"`
-	CpuSystemTime *int64 `json:"cpuSystemTime,omitempty"`
-	CpuUserTime *int64 `json:"cpuUserTime,omitempty"`
-	CpuTotalTime *int64 `json:"cpuTotalTime,omitempty"`
-	CpuUsage *float32 `json:"cpuUsage,omitempty"`
-	UsedStorage *int64 `json:"usedStorage,omitempty"`
-	ReservedStorage *int64 `json:"reservedStorage,omitempty"`
-	MaxStorage *int64 `json:"maxStorage,omitempty"`
-	NetTxUsage *int64 `json:"netTxUsage,omitempty"`
-	NetRxUsage *int64 `json:"netRxUsage,omitempty"`
-	NetworkBandwidth *int64 `json:"networkBandwidth,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Ts                   *string                `json:"ts,omitempty"`
+	FreeMemory           *int64                 `json:"freeMemory,omitempty"`
+	UsedMemory           *int64                 `json:"usedMemory,omitempty"`
+	FreeSwap             *int64                 `json:"freeSwap,omitempty"`
+	UsedSwap             *int64                 `json:"usedSwap,omitempty"`
+	CpuIdleTime          *int64                 `json:"cpuIdleTime,omitempty"`
+	CpuSystemTime        *int64                 `json:"cpuSystemTime,omitempty"`
+	CpuUserTime          *int64                 `json:"cpuUserTime,omitempty"`
+	CpuTotalTime         *int64                 `json:"cpuTotalTime,omitempty"`
+	CpuUsage             *float32               `json:"cpuUsage,omitempty"`
+	UsedStorage          *int64                 `json:"usedStorage,omitempty"`
+	ReservedStorage      *int64                 `json:"reservedStorage,omitempty"`
+	MaxStorage           *int64                 `json:"maxStorage,omitempty"`
+	NetTxUsage           *int64                 `json:"netTxUsage,omitempty"`
+	NetRxUsage           *int64                 `json:"netRxUsage,omitempty"`
+	NetworkBandwidth     *int64                 `json:"networkBandwidth,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats
@@ -571,7 +571,7 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) SetNet
 }
 
 func (o ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -635,77 +635,8 @@ func (o ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) ToMap()
 
 	return toSerialize, nil
 }
-
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) UnmarshalJSON(data []byte) (err error) {
-	varListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats := _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats{}
-
-	err = json.Unmarshal(data, &varListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats(varListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "ts")
-		delete(additionalProperties, "freeMemory")
-		delete(additionalProperties, "usedMemory")
-		delete(additionalProperties, "freeSwap")
-		delete(additionalProperties, "usedSwap")
-		delete(additionalProperties, "cpuIdleTime")
-		delete(additionalProperties, "cpuSystemTime")
-		delete(additionalProperties, "cpuUserTime")
-		delete(additionalProperties, "cpuTotalTime")
-		delete(additionalProperties, "cpuUsage")
-		delete(additionalProperties, "usedStorage")
-		delete(additionalProperties, "reservedStorage")
-		delete(additionalProperties, "maxStorage")
-		delete(additionalProperties, "netTxUsage")
-		delete(additionalProperties, "netRxUsage")
-		delete(additionalProperties, "networkBandwidth")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats struct {
-	value *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats
-	isSet bool
-}
-
-func (v NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) Get() *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats {
-	return v.value
-}
-
-func (v *NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) Set(val *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats(val *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) *NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats {
-	return &NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats{value: val, isSet: true}
-}
-
-func (v NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

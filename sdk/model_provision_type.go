@@ -20,53 +20,53 @@ var _ MappedNullable = &ProvisionType{}
 
 // ProvisionType struct for ProvisionType
 type ProvisionType struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Code *string `json:"code,omitempty"`
-	AclEnabled *bool `json:"aclEnabled,omitempty"`
-	MultiTenant *bool `json:"multiTenant,omitempty"`
-	Managed *bool `json:"managed,omitempty"`
-	HostNetwork *bool `json:"hostNetwork,omitempty"`
-	CustomSupported *bool `json:"customSupported,omitempty"`
-	MapPorts *bool `json:"mapPorts,omitempty"`
-	ExportServer *bool `json:"exportServer,omitempty"`
-	ViewSet *string `json:"viewSet,omitempty"`
-	ServerType *string `json:"serverType,omitempty"`
-	HostType *string `json:"hostType,omitempty"`
-	AddVolumes *bool `json:"addVolumes,omitempty"`
-	HasVolumes *bool `json:"hasVolumes,omitempty"`
-	HasDatastore *bool `json:"hasDatastore,omitempty"`
-	HasNetworks *bool `json:"hasNetworks,omitempty"`
-	MaxNetworks *int64 `json:"maxNetworks,omitempty"`
-	CustomizeVolume *bool `json:"customizeVolume,omitempty"`
-	RootDiskCustomizable *bool `json:"rootDiskCustomizable,omitempty"`
-	RootDiskSizeKnown *bool `json:"rootDiskSizeKnown,omitempty"`
-	RootDiskResizable *bool `json:"rootDiskResizable,omitempty"`
-	LvmSupported *bool `json:"lvmSupported,omitempty"`
-	HostDiskMode *string `json:"hostDiskMode,omitempty"`
-	MinDisk *int64 `json:"minDisk,omitempty"`
-	MaxDisk *string `json:"maxDisk,omitempty"`
-	ResizeCopiesVolumes *bool `json:"resizeCopiesVolumes,omitempty"`
-	SupportsAutoDatastore *bool `json:"supportsAutoDatastore,omitempty"`
-	HasZonePools *bool `json:"hasZonePools,omitempty"`
-	HasSecurityGroups *bool `json:"hasSecurityGroups,omitempty"`
-	HasParameters *bool `json:"hasParameters,omitempty"`
-	CanEnforceTags *bool `json:"canEnforceTags,omitempty"`
-	DisableRootDatastore *bool `json:"disableRootDatastore,omitempty"`
-	HasSnapshots *bool `json:"hasSnapshots,omitempty"`
-	HasSpecTemplates *bool `json:"hasSpecTemplates,omitempty"`
-	HasPreview *bool `json:"hasPreview,omitempty"`
-	ZonePoolRequired *bool `json:"zonePoolRequired,omitempty"`
-	PlanRequiresPool *bool `json:"planRequiresPool,omitempty"`
-	HasFolders *bool `json:"hasFolders,omitempty"`
-	OptionTypes []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
-	CustomOptionTypes []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"customOptionTypes,omitempty"`
-	NetworkTypes []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner `json:"networkTypes,omitempty"`
-	StorageTypes []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageTypesInner `json:"storageTypes,omitempty"`
-	RootStorageTypes []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageTypesInner `json:"rootStorageTypes,omitempty"`
-	ControllerTypes []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeControllerTypesInner `json:"controllerTypes,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                    *int64                                                                                                             `json:"id,omitempty"`
+	Name                  *string                                                                                                            `json:"name,omitempty"`
+	Description           *string                                                                                                            `json:"description,omitempty"`
+	Code                  *string                                                                                                            `json:"code,omitempty"`
+	AclEnabled            *bool                                                                                                              `json:"aclEnabled,omitempty"`
+	MultiTenant           *bool                                                                                                              `json:"multiTenant,omitempty"`
+	Managed               *bool                                                                                                              `json:"managed,omitempty"`
+	HostNetwork           *bool                                                                                                              `json:"hostNetwork,omitempty"`
+	CustomSupported       *bool                                                                                                              `json:"customSupported,omitempty"`
+	MapPorts              *bool                                                                                                              `json:"mapPorts,omitempty"`
+	ExportServer          *bool                                                                                                              `json:"exportServer,omitempty"`
+	ViewSet               *string                                                                                                            `json:"viewSet,omitempty"`
+	ServerType            *string                                                                                                            `json:"serverType,omitempty"`
+	HostType              *string                                                                                                            `json:"hostType,omitempty"`
+	AddVolumes            *bool                                                                                                              `json:"addVolumes,omitempty"`
+	HasVolumes            *bool                                                                                                              `json:"hasVolumes,omitempty"`
+	HasDatastore          *bool                                                                                                              `json:"hasDatastore,omitempty"`
+	HasNetworks           *bool                                                                                                              `json:"hasNetworks,omitempty"`
+	MaxNetworks           *int64                                                                                                             `json:"maxNetworks,omitempty"`
+	CustomizeVolume       *bool                                                                                                              `json:"customizeVolume,omitempty"`
+	RootDiskCustomizable  *bool                                                                                                              `json:"rootDiskCustomizable,omitempty"`
+	RootDiskSizeKnown     *bool                                                                                                              `json:"rootDiskSizeKnown,omitempty"`
+	RootDiskResizable     *bool                                                                                                              `json:"rootDiskResizable,omitempty"`
+	LvmSupported          *bool                                                                                                              `json:"lvmSupported,omitempty"`
+	HostDiskMode          *string                                                                                                            `json:"hostDiskMode,omitempty"`
+	MinDisk               *int64                                                                                                             `json:"minDisk,omitempty"`
+	MaxDisk               *string                                                                                                            `json:"maxDisk,omitempty"`
+	ResizeCopiesVolumes   *bool                                                                                                              `json:"resizeCopiesVolumes,omitempty"`
+	SupportsAutoDatastore *bool                                                                                                              `json:"supportsAutoDatastore,omitempty"`
+	HasZonePools          *bool                                                                                                              `json:"hasZonePools,omitempty"`
+	HasSecurityGroups     *bool                                                                                                              `json:"hasSecurityGroups,omitempty"`
+	HasParameters         *bool                                                                                                              `json:"hasParameters,omitempty"`
+	CanEnforceTags        *bool                                                                                                              `json:"canEnforceTags,omitempty"`
+	DisableRootDatastore  *bool                                                                                                              `json:"disableRootDatastore,omitempty"`
+	HasSnapshots          *bool                                                                                                              `json:"hasSnapshots,omitempty"`
+	HasSpecTemplates      *bool                                                                                                              `json:"hasSpecTemplates,omitempty"`
+	HasPreview            *bool                                                                                                              `json:"hasPreview,omitempty"`
+	ZonePoolRequired      *bool                                                                                                              `json:"zonePoolRequired,omitempty"`
+	PlanRequiresPool      *bool                                                                                                              `json:"planRequiresPool,omitempty"`
+	HasFolders            *bool                                                                                                              `json:"hasFolders,omitempty"`
+	OptionTypes           []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner                                        `json:"optionTypes,omitempty"`
+	CustomOptionTypes     []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner                                        `json:"customOptionTypes,omitempty"`
+	NetworkTypes          []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner    `json:"networkTypes,omitempty"`
+	StorageTypes          []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageTypesInner    `json:"storageTypes,omitempty"`
+	RootStorageTypes      []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageTypesInner    `json:"rootStorageTypes,omitempty"`
+	ControllerTypes       []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeControllerTypesInner `json:"controllerTypes,omitempty"`
+	AdditionalProperties  map[string]interface{}                                                                                             `json:",remain"`
 }
 
 type _ProvisionType ProvisionType
@@ -1561,7 +1561,7 @@ func (o *ProvisionType) SetControllerTypes(v []GetInstanceTypeProvisioning200Res
 }
 
 func (o ProvisionType) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1715,107 +1715,8 @@ func (o ProvisionType) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *ProvisionType) UnmarshalJSON(data []byte) (err error) {
-	varProvisionType := _ProvisionType{}
-
-	err = json.Unmarshal(data, &varProvisionType)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ProvisionType(varProvisionType)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "aclEnabled")
-		delete(additionalProperties, "multiTenant")
-		delete(additionalProperties, "managed")
-		delete(additionalProperties, "hostNetwork")
-		delete(additionalProperties, "customSupported")
-		delete(additionalProperties, "mapPorts")
-		delete(additionalProperties, "exportServer")
-		delete(additionalProperties, "viewSet")
-		delete(additionalProperties, "serverType")
-		delete(additionalProperties, "hostType")
-		delete(additionalProperties, "addVolumes")
-		delete(additionalProperties, "hasVolumes")
-		delete(additionalProperties, "hasDatastore")
-		delete(additionalProperties, "hasNetworks")
-		delete(additionalProperties, "maxNetworks")
-		delete(additionalProperties, "customizeVolume")
-		delete(additionalProperties, "rootDiskCustomizable")
-		delete(additionalProperties, "rootDiskSizeKnown")
-		delete(additionalProperties, "rootDiskResizable")
-		delete(additionalProperties, "lvmSupported")
-		delete(additionalProperties, "hostDiskMode")
-		delete(additionalProperties, "minDisk")
-		delete(additionalProperties, "maxDisk")
-		delete(additionalProperties, "resizeCopiesVolumes")
-		delete(additionalProperties, "supportsAutoDatastore")
-		delete(additionalProperties, "hasZonePools")
-		delete(additionalProperties, "hasSecurityGroups")
-		delete(additionalProperties, "hasParameters")
-		delete(additionalProperties, "canEnforceTags")
-		delete(additionalProperties, "disableRootDatastore")
-		delete(additionalProperties, "hasSnapshots")
-		delete(additionalProperties, "hasSpecTemplates")
-		delete(additionalProperties, "hasPreview")
-		delete(additionalProperties, "zonePoolRequired")
-		delete(additionalProperties, "planRequiresPool")
-		delete(additionalProperties, "hasFolders")
-		delete(additionalProperties, "optionTypes")
-		delete(additionalProperties, "customOptionTypes")
-		delete(additionalProperties, "networkTypes")
-		delete(additionalProperties, "storageTypes")
-		delete(additionalProperties, "rootStorageTypes")
-		delete(additionalProperties, "controllerTypes")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableProvisionType struct {
-	value *ProvisionType
-	isSet bool
-}
-
-func (v NullableProvisionType) Get() *ProvisionType {
-	return v.value
-}
-
-func (v *NullableProvisionType) Set(val *ProvisionType) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableProvisionType) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableProvisionType) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableProvisionType(val *ProvisionType) *NullableProvisionType {
-	return &NullableProvisionType{value: val, isSet: true}
-}
-
-func (v NullableProvisionType) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableProvisionType) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

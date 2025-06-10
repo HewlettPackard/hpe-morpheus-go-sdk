@@ -20,8 +20,8 @@ var _ MappedNullable = &GetUserSettingsApiClients200ResponseClientsInner{}
 
 // GetUserSettingsApiClients200ResponseClientsInner struct for GetUserSettingsApiClients200ResponseClientsInner
 type GetUserSettingsApiClients200ResponseClientsInner struct {
-	ClientId *string `json:"clientId,omitempty"`
-	AdditionalProperties map[string]interface{}
+	ClientId             *string                `json:"clientId,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _GetUserSettingsApiClients200ResponseClientsInner GetUserSettingsApiClients200ResponseClientsInner
@@ -76,7 +76,7 @@ func (o *GetUserSettingsApiClients200ResponseClientsInner) SetClientId(v string)
 }
 
 func (o GetUserSettingsApiClients200ResponseClientsInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o GetUserSettingsApiClients200ResponseClientsInner) ToMap() (map[string]in
 
 	return toSerialize, nil
 }
-
 func (o *GetUserSettingsApiClients200ResponseClientsInner) UnmarshalJSON(data []byte) (err error) {
-	varGetUserSettingsApiClients200ResponseClientsInner := _GetUserSettingsApiClients200ResponseClientsInner{}
-
-	err = json.Unmarshal(data, &varGetUserSettingsApiClients200ResponseClientsInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetUserSettingsApiClients200ResponseClientsInner(varGetUserSettingsApiClients200ResponseClientsInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "clientId")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetUserSettingsApiClients200ResponseClientsInner struct {
-	value *GetUserSettingsApiClients200ResponseClientsInner
-	isSet bool
-}
-
-func (v NullableGetUserSettingsApiClients200ResponseClientsInner) Get() *GetUserSettingsApiClients200ResponseClientsInner {
-	return v.value
-}
-
-func (v *NullableGetUserSettingsApiClients200ResponseClientsInner) Set(val *GetUserSettingsApiClients200ResponseClientsInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetUserSettingsApiClients200ResponseClientsInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetUserSettingsApiClients200ResponseClientsInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetUserSettingsApiClients200ResponseClientsInner(val *GetUserSettingsApiClients200ResponseClientsInner) *NullableGetUserSettingsApiClients200ResponseClientsInner {
-	return &NullableGetUserSettingsApiClients200ResponseClientsInner{value: val, isSet: true}
-}
-
-func (v NullableGetUserSettingsApiClients200ResponseClientsInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetUserSettingsApiClients200ResponseClientsInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

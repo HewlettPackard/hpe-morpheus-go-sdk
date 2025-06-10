@@ -33,8 +33,8 @@ type AddIdentitySourcesRequestUserSourceConfigOneOf2 struct {
 	// Required Group
 	RequiredGroup *string `json:"requiredGroup,omitempty"`
 	// Include Member Groups
-	SearchMemberGroups *bool `json:"searchMemberGroups,omitempty"`
-	AdditionalProperties map[string]interface{}
+	SearchMemberGroups   *bool                  `json:"searchMemberGroups,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddIdentitySourcesRequestUserSourceConfigOneOf2 AddIdentitySourcesRequestUserSourceConfigOneOf2
@@ -285,7 +285,7 @@ func (o *AddIdentitySourcesRequestUserSourceConfigOneOf2) SetSearchMemberGroups(
 }
 
 func (o AddIdentitySourcesRequestUserSourceConfigOneOf2) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -322,68 +322,8 @@ func (o AddIdentitySourcesRequestUserSourceConfigOneOf2) ToMap() (map[string]int
 
 	return toSerialize, nil
 }
-
 func (o *AddIdentitySourcesRequestUserSourceConfigOneOf2) UnmarshalJSON(data []byte) (err error) {
-	varAddIdentitySourcesRequestUserSourceConfigOneOf2 := _AddIdentitySourcesRequestUserSourceConfigOneOf2{}
-
-	err = json.Unmarshal(data, &varAddIdentitySourcesRequestUserSourceConfigOneOf2)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddIdentitySourcesRequestUserSourceConfigOneOf2(varAddIdentitySourcesRequestUserSourceConfigOneOf2)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "domain")
-		delete(additionalProperties, "useSSL")
-		delete(additionalProperties, "bindingUsername")
-		delete(additionalProperties, "bindingPassword")
-		delete(additionalProperties, "requiredGroup")
-		delete(additionalProperties, "searchMemberGroups")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddIdentitySourcesRequestUserSourceConfigOneOf2 struct {
-	value *AddIdentitySourcesRequestUserSourceConfigOneOf2
-	isSet bool
-}
-
-func (v NullableAddIdentitySourcesRequestUserSourceConfigOneOf2) Get() *AddIdentitySourcesRequestUserSourceConfigOneOf2 {
-	return v.value
-}
-
-func (v *NullableAddIdentitySourcesRequestUserSourceConfigOneOf2) Set(val *AddIdentitySourcesRequestUserSourceConfigOneOf2) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddIdentitySourcesRequestUserSourceConfigOneOf2) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddIdentitySourcesRequestUserSourceConfigOneOf2) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddIdentitySourcesRequestUserSourceConfigOneOf2(val *AddIdentitySourcesRequestUserSourceConfigOneOf2) *NullableAddIdentitySourcesRequestUserSourceConfigOneOf2 {
-	return &NullableAddIdentitySourcesRequestUserSourceConfigOneOf2{value: val, isSet: true}
-}
-
-func (v NullableAddIdentitySourcesRequestUserSourceConfigOneOf2) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddIdentitySourcesRequestUserSourceConfigOneOf2) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

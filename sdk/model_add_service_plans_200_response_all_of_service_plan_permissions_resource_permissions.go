@@ -20,15 +20,15 @@ var _ MappedNullable = &AddServicePlans200ResponseAllOfServicePlanPermissionsRes
 
 // AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions struct for AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions
 type AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions struct {
-	DefaultStore *bool `json:"defaultStore,omitempty"`
-	AllPlans *bool `json:"allPlans,omitempty"`
-	DefaultTarget *bool `json:"defaultTarget,omitempty"`
-	CanManage *bool `json:"canManage,omitempty"`
-	All *bool `json:"all,omitempty"`
-	Account *GetAlerts200ResponseAllOfChecksInnerAccount `json:"account,omitempty"`
-	Sites []ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner `json:"sites,omitempty"`
-	Plans []map[string]interface{} `json:"plans,omitempty"`
-	AdditionalProperties map[string]interface{}
+	DefaultStore         *bool                                                                            `json:"defaultStore,omitempty"`
+	AllPlans             *bool                                                                            `json:"allPlans,omitempty"`
+	DefaultTarget        *bool                                                                            `json:"defaultTarget,omitempty"`
+	CanManage            *bool                                                                            `json:"canManage,omitempty"`
+	All                  *bool                                                                            `json:"all,omitempty"`
+	Account              *GetAlerts200ResponseAllOfChecksInnerAccount                                     `json:"account,omitempty"`
+	Sites                []ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner `json:"sites,omitempty"`
+	Plans                []map[string]interface{}                                                         `json:"plans,omitempty"`
+	AdditionalProperties map[string]interface{}                                                           `json:",remain"`
 }
 
 type _AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions
@@ -307,7 +307,7 @@ func (o *AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermission
 }
 
 func (o AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -347,69 +347,8 @@ func (o AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions
 
 	return toSerialize, nil
 }
-
 func (o *AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions) UnmarshalJSON(data []byte) (err error) {
-	varAddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions := _AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions{}
-
-	err = json.Unmarshal(data, &varAddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions(varAddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "defaultStore")
-		delete(additionalProperties, "allPlans")
-		delete(additionalProperties, "defaultTarget")
-		delete(additionalProperties, "canManage")
-		delete(additionalProperties, "all")
-		delete(additionalProperties, "account")
-		delete(additionalProperties, "sites")
-		delete(additionalProperties, "plans")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions struct {
-	value *AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions
-	isSet bool
-}
-
-func (v NullableAddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions) Get() *AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions {
-	return v.value
-}
-
-func (v *NullableAddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions) Set(val *AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions(val *AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions) *NullableAddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions {
-	return &NullableAddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions{value: val, isSet: true}
-}
-
-func (v NullableAddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

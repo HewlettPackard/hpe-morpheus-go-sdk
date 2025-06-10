@@ -21,13 +21,12 @@ import (
 	"strings"
 )
 
-
 // SSLCertificatesAPIService SSLCertificatesAPI service
 type SSLCertificatesAPIService service
 
 type ApiAddCertificateRequest struct {
-	ctx context.Context
-	ApiService *SSLCertificatesAPIService
+	ctx                   context.Context
+	ApiService            *SSLCertificatesAPIService
 	addCertificateRequest *AddCertificateRequest
 }
 
@@ -45,24 +44,25 @@ AddCertificate Create a Certificate
 
 Create a Certificate
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddCertificateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddCertificateRequest
 */
 func (a *SSLCertificatesAPIService) AddCertificate(ctx context.Context) ApiAddCertificateRequest {
 	return ApiAddCertificateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddCertificate200Response
+//
+//	@return AddCertificate200Response
 func (a *SSLCertificatesAPIService) AddCertificateExecute(r ApiAddCertificateRequest) (*AddCertificate200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddCertificate200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddCertificate200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SSLCertificatesAPIService.AddCertificate")
@@ -114,7 +114,7 @@ func (a *SSLCertificatesAPIService) AddCertificateExecute(r ApiAddCertificateReq
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -123,8 +123,8 @@ func (a *SSLCertificatesAPIService) AddCertificateExecute(r ApiAddCertificateReq
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -134,8 +134,8 @@ func (a *SSLCertificatesAPIService) AddCertificateExecute(r ApiAddCertificateReq
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -143,8 +143,8 @@ func (a *SSLCertificatesAPIService) AddCertificateExecute(r ApiAddCertificateReq
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -153,9 +153,9 @@ func (a *SSLCertificatesAPIService) AddCertificateExecute(r ApiAddCertificateReq
 }
 
 type ApiDeleteCertificateRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SSLCertificatesAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiDeleteCertificateRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -167,29 +167,29 @@ DeleteCertificate Delete a Certificate
 
 Will delete a certificate from the system and make it no longer usable.
 
-If a certificate is actively in use, a delete will fail. 
+If a certificate is actively in use, a delete will fail.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiDeleteCertificateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiDeleteCertificateRequest
 */
 func (a *SSLCertificatesAPIService) DeleteCertificate(ctx context.Context, id int64) ApiDeleteCertificateRequest {
 	return ApiDeleteCertificateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *SSLCertificatesAPIService) DeleteCertificateExecute(r ApiDeleteCertificateRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SSLCertificatesAPIService.DeleteCertificate")
@@ -240,7 +240,7 @@ func (a *SSLCertificatesAPIService) DeleteCertificateExecute(r ApiDeleteCertific
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -249,8 +249,8 @@ func (a *SSLCertificatesAPIService) DeleteCertificateExecute(r ApiDeleteCertific
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -260,8 +260,8 @@ func (a *SSLCertificatesAPIService) DeleteCertificateExecute(r ApiDeleteCertific
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -269,8 +269,8 @@ func (a *SSLCertificatesAPIService) DeleteCertificateExecute(r ApiDeleteCertific
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -279,9 +279,9 @@ func (a *SSLCertificatesAPIService) DeleteCertificateExecute(r ApiDeleteCertific
 }
 
 type ApiGetCertificateRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SSLCertificatesAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetCertificateRequest) Execute() (*GetCertificate200Response, *http.Response, error) {
@@ -293,26 +293,27 @@ GetCertificate Get a Specific Certificate
 
 This endpoint retrieves a specific certificate.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetCertificateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetCertificateRequest
 */
 func (a *SSLCertificatesAPIService) GetCertificate(ctx context.Context, id int64) ApiGetCertificateRequest {
 	return ApiGetCertificateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetCertificate200Response
+//
+//	@return GetCertificate200Response
 func (a *SSLCertificatesAPIService) GetCertificateExecute(r ApiGetCertificateRequest) (*GetCertificate200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetCertificate200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetCertificate200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SSLCertificatesAPIService.GetCertificate")
@@ -363,7 +364,7 @@ func (a *SSLCertificatesAPIService) GetCertificateExecute(r ApiGetCertificateReq
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -372,8 +373,8 @@ func (a *SSLCertificatesAPIService) GetCertificateExecute(r ApiGetCertificateReq
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -383,8 +384,8 @@ func (a *SSLCertificatesAPIService) GetCertificateExecute(r ApiGetCertificateReq
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -392,8 +393,8 @@ func (a *SSLCertificatesAPIService) GetCertificateExecute(r ApiGetCertificateReq
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -402,9 +403,9 @@ func (a *SSLCertificatesAPIService) GetCertificateExecute(r ApiGetCertificateReq
 }
 
 type ApiListCertificatesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SSLCertificatesAPIService
-	name *string
+	name       *string
 }
 
 // Filter by name
@@ -422,24 +423,25 @@ ListCertificates Get All SSL Certificates
 
 This endpoint retrieves all SSL certificates associated with the account.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListCertificatesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListCertificatesRequest
 */
 func (a *SSLCertificatesAPIService) ListCertificates(ctx context.Context) ApiListCertificatesRequest {
 	return ApiListCertificatesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListCertificates200Response
+//
+//	@return ListCertificates200Response
 func (a *SSLCertificatesAPIService) ListCertificatesExecute(r ApiListCertificatesRequest) (*ListCertificates200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListCertificates200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListCertificates200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SSLCertificatesAPIService.ListCertificates")
@@ -492,7 +494,7 @@ func (a *SSLCertificatesAPIService) ListCertificatesExecute(r ApiListCertificate
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -501,8 +503,8 @@ func (a *SSLCertificatesAPIService) ListCertificatesExecute(r ApiListCertificate
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -512,8 +514,8 @@ func (a *SSLCertificatesAPIService) ListCertificatesExecute(r ApiListCertificate
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -521,8 +523,8 @@ func (a *SSLCertificatesAPIService) ListCertificatesExecute(r ApiListCertificate
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -531,9 +533,9 @@ func (a *SSLCertificatesAPIService) ListCertificatesExecute(r ApiListCertificate
 }
 
 type ApiUpdateCertificateRequest struct {
-	ctx context.Context
-	ApiService *SSLCertificatesAPIService
-	id int64
+	ctx                   context.Context
+	ApiService            *SSLCertificatesAPIService
+	id                    int64
 	addCertificateRequest *AddCertificateRequest
 }
 
@@ -551,26 +553,27 @@ UpdateCertificate Update a Certificate
 
 Update a Certificate.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateCertificateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateCertificateRequest
 */
 func (a *SSLCertificatesAPIService) UpdateCertificate(ctx context.Context, id int64) ApiUpdateCertificateRequest {
 	return ApiUpdateCertificateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetCertificate200Response
+//
+//	@return GetCertificate200Response
 func (a *SSLCertificatesAPIService) UpdateCertificateExecute(r ApiUpdateCertificateRequest) (*GetCertificate200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetCertificate200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetCertificate200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SSLCertificatesAPIService.UpdateCertificate")
@@ -623,7 +626,7 @@ func (a *SSLCertificatesAPIService) UpdateCertificateExecute(r ApiUpdateCertific
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -632,8 +635,8 @@ func (a *SSLCertificatesAPIService) UpdateCertificateExecute(r ApiUpdateCertific
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -643,8 +646,8 @@ func (a *SSLCertificatesAPIService) UpdateCertificateExecute(r ApiUpdateCertific
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -652,8 +655,8 @@ func (a *SSLCertificatesAPIService) UpdateCertificateExecute(r ApiUpdateCertific
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

@@ -20,8 +20,8 @@ var _ MappedNullable = &EnableMaintenanceModeRequest{}
 
 // EnableMaintenanceModeRequest struct for EnableMaintenanceModeRequest
 type EnableMaintenanceModeRequest struct {
-	Server *EnableMaintenanceModeRequestServer `json:"server,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Server               *EnableMaintenanceModeRequestServer `json:"server,omitempty"`
+	AdditionalProperties map[string]interface{}              `json:",remain"`
 }
 
 type _EnableMaintenanceModeRequest EnableMaintenanceModeRequest
@@ -76,7 +76,7 @@ func (o *EnableMaintenanceModeRequest) SetServer(v EnableMaintenanceModeRequestS
 }
 
 func (o EnableMaintenanceModeRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o EnableMaintenanceModeRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *EnableMaintenanceModeRequest) UnmarshalJSON(data []byte) (err error) {
-	varEnableMaintenanceModeRequest := _EnableMaintenanceModeRequest{}
-
-	err = json.Unmarshal(data, &varEnableMaintenanceModeRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = EnableMaintenanceModeRequest(varEnableMaintenanceModeRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "server")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableEnableMaintenanceModeRequest struct {
-	value *EnableMaintenanceModeRequest
-	isSet bool
-}
-
-func (v NullableEnableMaintenanceModeRequest) Get() *EnableMaintenanceModeRequest {
-	return v.value
-}
-
-func (v *NullableEnableMaintenanceModeRequest) Set(val *EnableMaintenanceModeRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableEnableMaintenanceModeRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableEnableMaintenanceModeRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableEnableMaintenanceModeRequest(val *EnableMaintenanceModeRequest) *NullableEnableMaintenanceModeRequest {
-	return &NullableEnableMaintenanceModeRequest{value: val, isSet: true}
-}
-
-func (v NullableEnableMaintenanceModeRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableEnableMaintenanceModeRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the AddCredentialsRequestCredentialOneOf4 type satisfies the MappedNullable interface at compile time
@@ -28,13 +27,13 @@ type AddCredentialsRequestCredentialOneOf4 struct {
 	// Optional Description
 	Description *string `json:"description,omitempty"`
 	// Credential enabled
-	Enabled *bool `json:"enabled,omitempty"`
+	Enabled     *bool                                            `json:"enabled,omitempty"`
 	Integration *AddCredentialsRequestCredentialOneOfIntegration `json:"integration,omitempty"`
 	// Username
 	Username string `json:"username"`
 	// API Key
-	Password string `json:"password"`
-	AdditionalProperties map[string]interface{}
+	Password             string                 `json:"password"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddCredentialsRequestCredentialOneOf4 AddCredentialsRequestCredentialOneOf4
@@ -257,7 +256,7 @@ func (o *AddCredentialsRequestCredentialOneOf4) SetPassword(v string) {
 }
 
 func (o AddCredentialsRequestCredentialOneOf4) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -286,92 +285,8 @@ func (o AddCredentialsRequestCredentialOneOf4) ToMap() (map[string]interface{}, 
 
 	return toSerialize, nil
 }
-
 func (o *AddCredentialsRequestCredentialOneOf4) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"type",
-		"name",
-		"username",
-		"password",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varAddCredentialsRequestCredentialOneOf4 := _AddCredentialsRequestCredentialOneOf4{}
-
-	err = json.Unmarshal(data, &varAddCredentialsRequestCredentialOneOf4)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddCredentialsRequestCredentialOneOf4(varAddCredentialsRequestCredentialOneOf4)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "integration")
-		delete(additionalProperties, "username")
-		delete(additionalProperties, "password")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddCredentialsRequestCredentialOneOf4 struct {
-	value *AddCredentialsRequestCredentialOneOf4
-	isSet bool
-}
-
-func (v NullableAddCredentialsRequestCredentialOneOf4) Get() *AddCredentialsRequestCredentialOneOf4 {
-	return v.value
-}
-
-func (v *NullableAddCredentialsRequestCredentialOneOf4) Set(val *AddCredentialsRequestCredentialOneOf4) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddCredentialsRequestCredentialOneOf4) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddCredentialsRequestCredentialOneOf4) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddCredentialsRequestCredentialOneOf4(val *AddCredentialsRequestCredentialOneOf4) *NullableAddCredentialsRequestCredentialOneOf4 {
-	return &NullableAddCredentialsRequestCredentialOneOf4{value: val, isSet: true}
-}
-
-func (v NullableAddCredentialsRequestCredentialOneOf4) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddCredentialsRequestCredentialOneOf4) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

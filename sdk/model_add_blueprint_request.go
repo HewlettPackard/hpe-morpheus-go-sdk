@@ -14,6 +14,7 @@ package sdk
 import (
 	"encoding/json"
 	"fmt"
+
 	"gopkg.in/validator.v2"
 )
 
@@ -22,7 +23,7 @@ var _ fmt.Stringer
 
 // AddBlueprintRequest - struct for AddBlueprintRequest
 type AddBlueprintRequest struct {
-	AddBlueprintRequestOneOf *AddBlueprintRequestOneOf
+	AddBlueprintRequestOneOf  *AddBlueprintRequestOneOf
 	AddBlueprintRequestOneOf1 *AddBlueprintRequestOneOf1
 	AddBlueprintRequestOneOf2 *AddBlueprintRequestOneOf2
 	AddBlueprintRequestOneOf3 *AddBlueprintRequestOneOf3
@@ -72,6 +73,37 @@ func AddBlueprintRequestOneOf5AsAddBlueprintRequest(v *AddBlueprintRequestOneOf5
 	}
 }
 
+func (dst *AddBlueprintRequest) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &AddBlueprintRequest{}
+	}
+
+	if out, ok := data.(AddBlueprintRequestOneOf); ok {
+		dst.AddBlueprintRequestOneOf = &out
+	}
+
+	if out, ok := data.(AddBlueprintRequestOneOf1); ok {
+		dst.AddBlueprintRequestOneOf1 = &out
+	}
+
+	if out, ok := data.(AddBlueprintRequestOneOf2); ok {
+		dst.AddBlueprintRequestOneOf2 = &out
+	}
+
+	if out, ok := data.(AddBlueprintRequestOneOf3); ok {
+		dst.AddBlueprintRequestOneOf3 = &out
+	}
+
+	if out, ok := data.(AddBlueprintRequestOneOf4); ok {
+		dst.AddBlueprintRequestOneOf4 = &out
+	}
+
+	if out, ok := data.(AddBlueprintRequestOneOf5); ok {
+		dst.AddBlueprintRequestOneOf5 = &out
+	}
+
+	return dst, nil
+}
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddBlueprintRequest) UnmarshalJSON(data []byte) error {
@@ -226,7 +258,7 @@ func (src AddBlueprintRequest) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AddBlueprintRequest) GetActualInstance() (interface{}) {
+func (obj *AddBlueprintRequest) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -259,7 +291,7 @@ func (obj *AddBlueprintRequest) GetActualInstance() (interface{}) {
 }
 
 // Get the actual instance value
-func (obj AddBlueprintRequest) GetActualInstanceValue() (interface{}) {
+func (obj AddBlueprintRequest) GetActualInstanceValue() interface{} {
 	if obj.AddBlueprintRequestOneOf != nil {
 		return *obj.AddBlueprintRequestOneOf
 	}
@@ -323,5 +355,3 @@ func (v *NullableAddBlueprintRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

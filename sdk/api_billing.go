@@ -21,26 +21,25 @@ import (
 	"strings"
 )
 
-
 // BillingAPIService BillingAPI service
 type BillingAPIService service
 
 type ApiGetBillingAccountRequest struct {
-	ctx context.Context
-	ApiService *BillingAPIService
-	id int64
-	startDate *string
-	endDate *string
-	includeUsages *bool
-	maxUsages *int64
-	offsetUsages *int64
-	includeComputeServers *bool
-	includeInstances *bool
+	ctx                      context.Context
+	ApiService               *BillingAPIService
+	id                       int64
+	startDate                *string
+	endDate                  *string
+	includeUsages            *bool
+	maxUsages                *int64
+	offsetUsages             *int64
+	includeComputeServers    *bool
+	includeInstances         *bool
 	includeDiscoveredServers *bool
-	includeLoadBalancers *bool
-	includeVirtualImages *bool
-	includeSnapshots *bool
-	includeMs *bool
+	includeLoadBalancers     *bool
+	includeVirtualImages     *bool
+	includeSnapshots         *bool
+	includeMs                *bool
 }
 
 // Filter by startDate greater than or equal to a specified date
@@ -124,27 +123,27 @@ GetBillingAccount This endpoint will retrieve a specific account by id if the us
 
 Will retrieve billing information for a specific tenant, if it is the current account or a sub account of the requesting user's account.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetBillingAccountRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetBillingAccountRequest
 */
 func (a *BillingAPIService) GetBillingAccount(ctx context.Context, id int64) ApiGetBillingAccountRequest {
 	return ApiGetBillingAccountRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return ListBillingAccount200Response
+//
+//	@return ListBillingAccount200Response
 func (a *BillingAPIService) GetBillingAccountExecute(r ApiGetBillingAccountRequest) (*ListBillingAccount200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListBillingAccount200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListBillingAccount200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BillingAPIService.GetBillingAccount")
@@ -255,7 +254,7 @@ func (a *BillingAPIService) GetBillingAccountExecute(r ApiGetBillingAccountReque
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -264,8 +263,8 @@ func (a *BillingAPIService) GetBillingAccountExecute(r ApiGetBillingAccountReque
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -275,8 +274,8 @@ func (a *BillingAPIService) GetBillingAccountExecute(r ApiGetBillingAccountReque
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -284,8 +283,8 @@ func (a *BillingAPIService) GetBillingAccountExecute(r ApiGetBillingAccountReque
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -294,17 +293,17 @@ func (a *BillingAPIService) GetBillingAccountExecute(r ApiGetBillingAccountReque
 }
 
 type ApiGetBillingInstancesIdentifierRequest struct {
-	ctx context.Context
-	ApiService *BillingAPIService
-	identifier string
-	startDate *string
-	endDate *string
-	includeUsages *bool
-	maxUsages *int64
-	offsetUsages *int64
+	ctx            context.Context
+	ApiService     *BillingAPIService
+	identifier     string
+	startDate      *string
+	endDate        *string
+	includeUsages  *bool
+	maxUsages      *int64
+	offsetUsages   *int64
 	includeTenants *bool
-	accountId *int64
-	includeMs *bool
+	accountId      *int64
+	includeMs      *bool
 }
 
 // Filter by startDate greater than or equal to a specified date
@@ -366,27 +365,27 @@ Provides API interfaces for viewing billing usage information by tenant, zone, i
 By default, usage returned is from the beginning of the current month until now.
 The date range is parameterized but the end date cannot exceed the current date.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param identifier Morpheus UUID or ID of the Object being created or referenced
- @return ApiGetBillingInstancesIdentifierRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param identifier Morpheus UUID or ID of the Object being created or referenced
+	@return ApiGetBillingInstancesIdentifierRequest
 */
 func (a *BillingAPIService) GetBillingInstancesIdentifier(ctx context.Context, identifier string) ApiGetBillingInstancesIdentifierRequest {
 	return ApiGetBillingInstancesIdentifierRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		identifier: identifier,
 	}
 }
 
 // Execute executes the request
-//  @return GetBillingInstancesIdentifier200Response
+//
+//	@return GetBillingInstancesIdentifier200Response
 func (a *BillingAPIService) GetBillingInstancesIdentifierExecute(r ApiGetBillingInstancesIdentifierRequest) (*GetBillingInstancesIdentifier200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetBillingInstancesIdentifier200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetBillingInstancesIdentifier200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BillingAPIService.GetBillingInstancesIdentifier")
@@ -470,7 +469,7 @@ func (a *BillingAPIService) GetBillingInstancesIdentifierExecute(r ApiGetBilling
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -479,8 +478,8 @@ func (a *BillingAPIService) GetBillingInstancesIdentifierExecute(r ApiGetBilling
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -490,8 +489,8 @@ func (a *BillingAPIService) GetBillingInstancesIdentifierExecute(r ApiGetBilling
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -499,8 +498,8 @@ func (a *BillingAPIService) GetBillingInstancesIdentifierExecute(r ApiGetBilling
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -509,17 +508,17 @@ func (a *BillingAPIService) GetBillingInstancesIdentifierExecute(r ApiGetBilling
 }
 
 type ApiGetBillingServersIdentifierRequest struct {
-	ctx context.Context
-	ApiService *BillingAPIService
-	identifier string
-	startDate *string
-	endDate *string
-	includeUsages *bool
-	maxUsages *int64
-	offsetUsages *int64
+	ctx            context.Context
+	ApiService     *BillingAPIService
+	identifier     string
+	startDate      *string
+	endDate        *string
+	includeUsages  *bool
+	maxUsages      *int64
+	offsetUsages   *int64
 	includeTenants *bool
-	accountId *int64
-	includeMs *bool
+	accountId      *int64
+	includeMs      *bool
 }
 
 // Filter by startDate greater than or equal to a specified date
@@ -581,27 +580,27 @@ Provides API interfaces for viewing billing usage information by tenant, zone, i
 By default, usage returned is from the beginning of the current month until now.
 The date range is parameterized but the end date cannot exceed the current date.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param identifier Morpheus UUID or ID of the Object being created or referenced
- @return ApiGetBillingServersIdentifierRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param identifier Morpheus UUID or ID of the Object being created or referenced
+	@return ApiGetBillingServersIdentifierRequest
 */
 func (a *BillingAPIService) GetBillingServersIdentifier(ctx context.Context, identifier string) ApiGetBillingServersIdentifierRequest {
 	return ApiGetBillingServersIdentifierRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		identifier: identifier,
 	}
 }
 
 // Execute executes the request
-//  @return GetBillingServersIdentifier200Response
+//
+//	@return GetBillingServersIdentifier200Response
 func (a *BillingAPIService) GetBillingServersIdentifierExecute(r ApiGetBillingServersIdentifierRequest) (*GetBillingServersIdentifier200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetBillingServersIdentifier200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetBillingServersIdentifier200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BillingAPIService.GetBillingServersIdentifier")
@@ -685,7 +684,7 @@ func (a *BillingAPIService) GetBillingServersIdentifierExecute(r ApiGetBillingSe
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -694,8 +693,8 @@ func (a *BillingAPIService) GetBillingServersIdentifierExecute(r ApiGetBillingSe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -705,8 +704,8 @@ func (a *BillingAPIService) GetBillingServersIdentifierExecute(r ApiGetBillingSe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -714,8 +713,8 @@ func (a *BillingAPIService) GetBillingServersIdentifierExecute(r ApiGetBillingSe
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -724,21 +723,21 @@ func (a *BillingAPIService) GetBillingServersIdentifierExecute(r ApiGetBillingSe
 }
 
 type ApiGetBillingZoneIdentifierRequest struct {
-	ctx context.Context
-	ApiService *BillingAPIService
-	identifier string
-	startDate *string
-	endDate *string
-	includeUsages *bool
-	maxUsages *int64
-	offsetUsages *int64
-	includeComputeServers *bool
-	includeInstances *bool
+	ctx                      context.Context
+	ApiService               *BillingAPIService
+	identifier               string
+	startDate                *string
+	endDate                  *string
+	includeUsages            *bool
+	maxUsages                *int64
+	offsetUsages             *int64
+	includeComputeServers    *bool
+	includeInstances         *bool
 	includeDiscoveredServers *bool
-	includeLoadBalancers *bool
-	includeVirtualImages *bool
-	includeSnapshots *bool
-	includeMs *bool
+	includeLoadBalancers     *bool
+	includeVirtualImages     *bool
+	includeSnapshots         *bool
+	includeMs                *bool
 }
 
 // Filter by startDate greater than or equal to a specified date
@@ -824,27 +823,27 @@ Provides API interfaces for viewing billing usage information by tenant, zone, i
 By default, usage returned is from the beginning of the current month until now.
 The date range is parameterized but the end date cannot exceed the current date.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param identifier Morpheus UUID or ID of the Object being created or referenced
- @return ApiGetBillingZoneIdentifierRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param identifier Morpheus UUID or ID of the Object being created or referenced
+	@return ApiGetBillingZoneIdentifierRequest
 */
 func (a *BillingAPIService) GetBillingZoneIdentifier(ctx context.Context, identifier string) ApiGetBillingZoneIdentifierRequest {
 	return ApiGetBillingZoneIdentifierRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		identifier: identifier,
 	}
 }
 
 // Execute executes the request
-//  @return GetBillingZoneIdentifier200Response
+//
+//	@return GetBillingZoneIdentifier200Response
 func (a *BillingAPIService) GetBillingZoneIdentifierExecute(r ApiGetBillingZoneIdentifierRequest) (*GetBillingZoneIdentifier200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetBillingZoneIdentifier200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetBillingZoneIdentifier200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BillingAPIService.GetBillingZoneIdentifier")
@@ -955,7 +954,7 @@ func (a *BillingAPIService) GetBillingZoneIdentifierExecute(r ApiGetBillingZoneI
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -964,8 +963,8 @@ func (a *BillingAPIService) GetBillingZoneIdentifierExecute(r ApiGetBillingZoneI
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -975,8 +974,8 @@ func (a *BillingAPIService) GetBillingZoneIdentifierExecute(r ApiGetBillingZoneI
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -984,8 +983,8 @@ func (a *BillingAPIService) GetBillingZoneIdentifierExecute(r ApiGetBillingZoneI
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -994,20 +993,20 @@ func (a *BillingAPIService) GetBillingZoneIdentifierExecute(r ApiGetBillingZoneI
 }
 
 type ApiListBillingAccountRequest struct {
-	ctx context.Context
-	ApiService *BillingAPIService
-	startDate *string
-	endDate *string
-	includeUsages *bool
-	maxUsages *int64
-	offsetUsages *int64
-	includeComputeServers *bool
-	includeInstances *bool
+	ctx                      context.Context
+	ApiService               *BillingAPIService
+	startDate                *string
+	endDate                  *string
+	includeUsages            *bool
+	maxUsages                *int64
+	offsetUsages             *int64
+	includeComputeServers    *bool
+	includeInstances         *bool
 	includeDiscoveredServers *bool
-	includeLoadBalancers *bool
-	includeVirtualImages *bool
-	includeSnapshots *bool
-	includeMs *bool
+	includeLoadBalancers     *bool
+	includeVirtualImages     *bool
+	includeSnapshots         *bool
+	includeMs                *bool
 }
 
 // Filter by startDate greater than or equal to a specified date
@@ -1093,25 +1092,25 @@ Provides API interfaces for viewing billing usage information by tenant, zone, i
 By default, usage returned is from the beginning of the current month until now.
 The date range is parameterized but the end date cannot exceed the current date.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListBillingAccountRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListBillingAccountRequest
 */
 func (a *BillingAPIService) ListBillingAccount(ctx context.Context) ApiListBillingAccountRequest {
 	return ApiListBillingAccountRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListBillingAccount200Response
+//
+//	@return ListBillingAccount200Response
 func (a *BillingAPIService) ListBillingAccountExecute(r ApiListBillingAccountRequest) (*ListBillingAccount200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListBillingAccount200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListBillingAccount200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BillingAPIService.ListBillingAccount")
@@ -1221,7 +1220,7 @@ func (a *BillingAPIService) ListBillingAccountExecute(r ApiListBillingAccountReq
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1230,8 +1229,8 @@ func (a *BillingAPIService) ListBillingAccountExecute(r ApiListBillingAccountReq
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1241,8 +1240,8 @@ func (a *BillingAPIService) ListBillingAccountExecute(r ApiListBillingAccountReq
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1250,8 +1249,8 @@ func (a *BillingAPIService) ListBillingAccountExecute(r ApiListBillingAccountReq
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1260,16 +1259,16 @@ func (a *BillingAPIService) ListBillingAccountExecute(r ApiListBillingAccountReq
 }
 
 type ApiListBillingInstancesRequest struct {
-	ctx context.Context
-	ApiService *BillingAPIService
-	startDate *string
-	endDate *string
-	includeUsages *bool
-	maxUsages *int64
-	offsetUsages *int64
+	ctx            context.Context
+	ApiService     *BillingAPIService
+	startDate      *string
+	endDate        *string
+	includeUsages  *bool
+	maxUsages      *int64
+	offsetUsages   *int64
 	includeTenants *bool
-	accountId *int64
-	includeMs *bool
+	accountId      *int64
+	includeMs      *bool
 }
 
 // Filter by startDate greater than or equal to a specified date
@@ -1331,25 +1330,25 @@ Provides API interfaces for viewing billing usage information by tenant, zone, i
 By default, usage returned is from the beginning of the current month until now.
 The date range is parameterized but the end date cannot exceed the current date.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListBillingInstancesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListBillingInstancesRequest
 */
 func (a *BillingAPIService) ListBillingInstances(ctx context.Context) ApiListBillingInstancesRequest {
 	return ApiListBillingInstancesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListBillingInstances200Response
+//
+//	@return ListBillingInstances200Response
 func (a *BillingAPIService) ListBillingInstancesExecute(r ApiListBillingInstancesRequest) (*ListBillingInstances200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListBillingInstances200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListBillingInstances200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BillingAPIService.ListBillingInstances")
@@ -1432,7 +1431,7 @@ func (a *BillingAPIService) ListBillingInstancesExecute(r ApiListBillingInstance
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1441,8 +1440,8 @@ func (a *BillingAPIService) ListBillingInstancesExecute(r ApiListBillingInstance
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1452,8 +1451,8 @@ func (a *BillingAPIService) ListBillingInstancesExecute(r ApiListBillingInstance
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1461,8 +1460,8 @@ func (a *BillingAPIService) ListBillingInstancesExecute(r ApiListBillingInstance
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1471,16 +1470,16 @@ func (a *BillingAPIService) ListBillingInstancesExecute(r ApiListBillingInstance
 }
 
 type ApiListBillingServersRequest struct {
-	ctx context.Context
-	ApiService *BillingAPIService
-	startDate *string
-	endDate *string
-	includeUsages *bool
-	maxUsages *int64
-	offsetUsages *int64
+	ctx            context.Context
+	ApiService     *BillingAPIService
+	startDate      *string
+	endDate        *string
+	includeUsages  *bool
+	maxUsages      *int64
+	offsetUsages   *int64
 	includeTenants *bool
-	accountId *int64
-	includeMs *bool
+	accountId      *int64
+	includeMs      *bool
 }
 
 // Filter by startDate greater than or equal to a specified date
@@ -1542,25 +1541,25 @@ Provides API interfaces for viewing billing usage information by tenant, zone, i
 By default, usage returned is from the beginning of the current month until now.
 The date range is parameterized but the end date cannot exceed the current date.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListBillingServersRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListBillingServersRequest
 */
 func (a *BillingAPIService) ListBillingServers(ctx context.Context) ApiListBillingServersRequest {
 	return ApiListBillingServersRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListBillingServers200Response
+//
+//	@return ListBillingServers200Response
 func (a *BillingAPIService) ListBillingServersExecute(r ApiListBillingServersRequest) (*ListBillingServers200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListBillingServers200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListBillingServers200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BillingAPIService.ListBillingServers")
@@ -1643,7 +1642,7 @@ func (a *BillingAPIService) ListBillingServersExecute(r ApiListBillingServersReq
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1652,8 +1651,8 @@ func (a *BillingAPIService) ListBillingServersExecute(r ApiListBillingServersReq
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1663,8 +1662,8 @@ func (a *BillingAPIService) ListBillingServersExecute(r ApiListBillingServersReq
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1672,8 +1671,8 @@ func (a *BillingAPIService) ListBillingServersExecute(r ApiListBillingServersReq
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1682,20 +1681,20 @@ func (a *BillingAPIService) ListBillingServersExecute(r ApiListBillingServersReq
 }
 
 type ApiListBillingZoneRequest struct {
-	ctx context.Context
-	ApiService *BillingAPIService
-	startDate *string
-	endDate *string
-	includeUsages *bool
-	maxUsages *int64
-	offsetUsages *int64
-	includeComputeServers *bool
-	includeInstances *bool
+	ctx                      context.Context
+	ApiService               *BillingAPIService
+	startDate                *string
+	endDate                  *string
+	includeUsages            *bool
+	maxUsages                *int64
+	offsetUsages             *int64
+	includeComputeServers    *bool
+	includeInstances         *bool
 	includeDiscoveredServers *bool
-	includeLoadBalancers *bool
-	includeVirtualImages *bool
-	includeSnapshots *bool
-	includeMs *bool
+	includeLoadBalancers     *bool
+	includeVirtualImages     *bool
+	includeSnapshots         *bool
+	includeMs                *bool
 }
 
 // Filter by startDate greater than or equal to a specified date
@@ -1781,25 +1780,25 @@ Provides API interfaces for viewing billing usage information by tenant, zone, i
 By default, usage returned is from the beginning of the current month until now.
 The date range is parameterized but the end date cannot exceed the current date.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListBillingZoneRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListBillingZoneRequest
 */
 func (a *BillingAPIService) ListBillingZone(ctx context.Context) ApiListBillingZoneRequest {
 	return ApiListBillingZoneRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListBillingZone200Response
+//
+//	@return ListBillingZone200Response
 func (a *BillingAPIService) ListBillingZoneExecute(r ApiListBillingZoneRequest) (*ListBillingZone200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListBillingZone200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListBillingZone200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BillingAPIService.ListBillingZone")
@@ -1909,7 +1908,7 @@ func (a *BillingAPIService) ListBillingZoneExecute(r ApiListBillingZoneRequest) 
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1918,8 +1917,8 @@ func (a *BillingAPIService) ListBillingZoneExecute(r ApiListBillingZoneRequest) 
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1929,8 +1928,8 @@ func (a *BillingAPIService) ListBillingZoneExecute(r ApiListBillingZoneRequest) 
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1938,8 +1937,8 @@ func (a *BillingAPIService) ListBillingZoneExecute(r ApiListBillingZoneRequest) 
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

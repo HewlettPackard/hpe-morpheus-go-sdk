@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the BackupStorageProvider type satisfies the MappedNullable interface at compile time
@@ -39,8 +38,8 @@ type BackupStorageProvider struct {
 	// The ID of the execute schedule for new job. See Execute Schedules. Only applies to jobAction `new` and `clone`.
 	JobSchedule *int64 `json:"jobSchedule,omitempty"`
 	// Retention Count for new job. By default the backup settings value will be used. Only applies to jobAction `new` and `clone`.
-	RetentionCount *int64 `json:"retentionCount,omitempty"`
-	AdditionalProperties map[string]interface{}
+	RetentionCount       *int64                 `json:"retentionCount,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _BackupStorageProvider BackupStorageProvider
@@ -355,7 +354,7 @@ func (o *BackupStorageProvider) SetRetentionCount(v int64) {
 }
 
 func (o BackupStorageProvider) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -393,95 +392,8 @@ func (o BackupStorageProvider) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *BackupStorageProvider) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"locationType",
-		"name",
-		"backupType",
-		"jobAction",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varBackupStorageProvider := _BackupStorageProvider{}
-
-	err = json.Unmarshal(data, &varBackupStorageProvider)
-
-	if err != nil {
-		return err
-	}
-
-	*o = BackupStorageProvider(varBackupStorageProvider)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "locationType")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "sourceProviderId")
-		delete(additionalProperties, "storageProviderId")
-		delete(additionalProperties, "backupType")
-		delete(additionalProperties, "jobAction")
-		delete(additionalProperties, "jobId")
-		delete(additionalProperties, "jobName")
-		delete(additionalProperties, "jobSchedule")
-		delete(additionalProperties, "retentionCount")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableBackupStorageProvider struct {
-	value *BackupStorageProvider
-	isSet bool
-}
-
-func (v NullableBackupStorageProvider) Get() *BackupStorageProvider {
-	return v.value
-}
-
-func (v *NullableBackupStorageProvider) Set(val *BackupStorageProvider) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableBackupStorageProvider) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableBackupStorageProvider) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableBackupStorageProvider(val *BackupStorageProvider) *NullableBackupStorageProvider {
-	return &NullableBackupStorageProvider{value: val, isSet: true}
-}
-
-func (v NullableBackupStorageProvider) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableBackupStorageProvider) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

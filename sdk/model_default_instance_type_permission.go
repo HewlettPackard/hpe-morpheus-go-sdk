@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the DefaultInstanceTypePermission type satisfies the MappedNullable interface at compile time
@@ -24,8 +23,8 @@ type DefaultInstanceTypePermission struct {
 	// `InstanceType` is the code for Default Instance Type Access
 	PermissionCode string `json:"permissionCode"`
 	// The new access level.
-	Access string `json:"access"`
-	AdditionalProperties map[string]interface{}
+	Access               string                 `json:"access"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _DefaultInstanceTypePermission DefaultInstanceTypePermission
@@ -98,7 +97,7 @@ func (o *DefaultInstanceTypePermission) SetAccess(v string) {
 }
 
 func (o DefaultInstanceTypePermission) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -116,85 +115,8 @@ func (o DefaultInstanceTypePermission) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *DefaultInstanceTypePermission) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"permissionCode",
-		"access",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varDefaultInstanceTypePermission := _DefaultInstanceTypePermission{}
-
-	err = json.Unmarshal(data, &varDefaultInstanceTypePermission)
-
-	if err != nil {
-		return err
-	}
-
-	*o = DefaultInstanceTypePermission(varDefaultInstanceTypePermission)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "permissionCode")
-		delete(additionalProperties, "access")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableDefaultInstanceTypePermission struct {
-	value *DefaultInstanceTypePermission
-	isSet bool
-}
-
-func (v NullableDefaultInstanceTypePermission) Get() *DefaultInstanceTypePermission {
-	return v.value
-}
-
-func (v *NullableDefaultInstanceTypePermission) Set(val *DefaultInstanceTypePermission) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableDefaultInstanceTypePermission) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableDefaultInstanceTypePermission) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableDefaultInstanceTypePermission(val *DefaultInstanceTypePermission) *NullableDefaultInstanceTypePermission {
-	return &NullableDefaultInstanceTypePermission{value: val, isSet: true}
-}
-
-func (v NullableDefaultInstanceTypePermission) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableDefaultInstanceTypePermission) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

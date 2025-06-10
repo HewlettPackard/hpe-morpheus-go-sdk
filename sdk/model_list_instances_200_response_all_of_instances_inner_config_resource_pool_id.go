@@ -14,6 +14,7 @@ package sdk
 import (
 	"encoding/json"
 	"fmt"
+
 	"gopkg.in/validator.v2"
 )
 
@@ -22,7 +23,7 @@ var _ fmt.Stringer
 
 // ListInstances200ResponseAllOfInstancesInnerConfigResourcePoolId - struct for ListInstances200ResponseAllOfInstancesInnerConfigResourcePoolId
 type ListInstances200ResponseAllOfInstancesInnerConfigResourcePoolId struct {
-	Int64 *int64
+	Int64  *int64
 	String *string
 }
 
@@ -40,6 +41,21 @@ func StringAsListInstances200ResponseAllOfInstancesInnerConfigResourcePoolId(v *
 	}
 }
 
+func (dst *ListInstances200ResponseAllOfInstancesInnerConfigResourcePoolId) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &ListInstances200ResponseAllOfInstancesInnerConfigResourcePoolId{}
+	}
+
+	if out, ok := data.(int64); ok {
+		dst.Int64 = &out
+	}
+
+	if out, ok := data.(string); ok {
+		dst.String = &out
+	}
+
+	return dst, nil
+}
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ListInstances200ResponseAllOfInstancesInnerConfigResourcePoolId) UnmarshalJSON(data []byte) error {
@@ -106,7 +122,7 @@ func (src ListInstances200ResponseAllOfInstancesInnerConfigResourcePoolId) Marsh
 }
 
 // Get the actual instance
-func (obj *ListInstances200ResponseAllOfInstancesInnerConfigResourcePoolId) GetActualInstance() (interface{}) {
+func (obj *ListInstances200ResponseAllOfInstancesInnerConfigResourcePoolId) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -123,7 +139,7 @@ func (obj *ListInstances200ResponseAllOfInstancesInnerConfigResourcePoolId) GetA
 }
 
 // Get the actual instance value
-func (obj ListInstances200ResponseAllOfInstancesInnerConfigResourcePoolId) GetActualInstanceValue() (interface{}) {
+func (obj ListInstances200ResponseAllOfInstancesInnerConfigResourcePoolId) GetActualInstanceValue() interface{} {
 	if obj.Int64 != nil {
 		return *obj.Int64
 	}
@@ -171,5 +187,3 @@ func (v *NullableListInstances200ResponseAllOfInstancesInnerConfigResourcePoolId
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

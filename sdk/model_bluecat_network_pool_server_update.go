@@ -35,10 +35,10 @@ type BluecatNetworkPoolServerUpdate struct {
 	// Disable SSL SNI Verification
 	IgnoreSsl *bool `json:"ignoreSsl,omitempty"`
 	// Network Filter
-	NetworkFilter *string `json:"networkFilter,omitempty"`
-	Config *BluecatNetworkPoolServerConfig `json:"config,omitempty"`
-	Credential *NSXNetworkServerCredential `json:"credential,omitempty"`
-	AdditionalProperties map[string]interface{}
+	NetworkFilter        *string                         `json:"networkFilter,omitempty"`
+	Config               *BluecatNetworkPoolServerConfig `json:"config,omitempty"`
+	Credential           *NSXNetworkServerCredential     `json:"credential,omitempty"`
+	AdditionalProperties map[string]interface{}          `json:",remain"`
 }
 
 type _BluecatNetworkPoolServerUpdate BluecatNetworkPoolServerUpdate
@@ -389,7 +389,7 @@ func (o *BluecatNetworkPoolServerUpdate) SetCredential(v NSXNetworkServerCredent
 }
 
 func (o BluecatNetworkPoolServerUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -435,71 +435,8 @@ func (o BluecatNetworkPoolServerUpdate) ToMap() (map[string]interface{}, error) 
 
 	return toSerialize, nil
 }
-
 func (o *BluecatNetworkPoolServerUpdate) UnmarshalJSON(data []byte) (err error) {
-	varBluecatNetworkPoolServerUpdate := _BluecatNetworkPoolServerUpdate{}
-
-	err = json.Unmarshal(data, &varBluecatNetworkPoolServerUpdate)
-
-	if err != nil {
-		return err
-	}
-
-	*o = BluecatNetworkPoolServerUpdate(varBluecatNetworkPoolServerUpdate)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "serviceUrl")
-		delete(additionalProperties, "serviceUsername")
-		delete(additionalProperties, "servicePassword")
-		delete(additionalProperties, "serviceThrottleRate")
-		delete(additionalProperties, "ignoreSsl")
-		delete(additionalProperties, "networkFilter")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "credential")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableBluecatNetworkPoolServerUpdate struct {
-	value *BluecatNetworkPoolServerUpdate
-	isSet bool
-}
-
-func (v NullableBluecatNetworkPoolServerUpdate) Get() *BluecatNetworkPoolServerUpdate {
-	return v.value
-}
-
-func (v *NullableBluecatNetworkPoolServerUpdate) Set(val *BluecatNetworkPoolServerUpdate) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableBluecatNetworkPoolServerUpdate) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableBluecatNetworkPoolServerUpdate) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableBluecatNetworkPoolServerUpdate(val *BluecatNetworkPoolServerUpdate) *NullableBluecatNetworkPoolServerUpdate {
-	return &NullableBluecatNetworkPoolServerUpdate{value: val, isSet: true}
-}
-
-func (v NullableBluecatNetworkPoolServerUpdate) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableBluecatNetworkPoolServerUpdate) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

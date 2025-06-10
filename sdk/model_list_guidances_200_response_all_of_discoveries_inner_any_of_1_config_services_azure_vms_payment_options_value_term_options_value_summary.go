@@ -20,19 +20,19 @@ var _ MappedNullable = &ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Confi
 
 // ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValueSummary struct for ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValueSummary
 type ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValueSummary struct {
-	TotalSavings *float32 `json:"totalSavings,omitempty"`
-	CurrencyCode *string `json:"currencyCode,omitempty"`
-	TotalSavingsPercent *float32 `json:"totalSavingsPercent,omitempty"`
-	Term *string `json:"term,omitempty"`
-	PaymentOption *string `json:"paymentOption,omitempty"`
-	Service *string `json:"service,omitempty"`
-	OnDemandCount *int64 `json:"onDemandCount,omitempty"`
-	OnDemandCost *float32 `json:"onDemandCost,omitempty"`
-	ReservedCount *int64 `json:"reservedCount,omitempty"`
-	ReservedCost *int64 `json:"reservedCost,omitempty"`
-	RecommendedCount *int64 `json:"recommendedCount,omitempty"`
-	RecommendedCost *float32 `json:"recommendedCost,omitempty"`
-	AdditionalProperties map[string]interface{}
+	TotalSavings         *float32               `json:"totalSavings,omitempty"`
+	CurrencyCode         *string                `json:"currencyCode,omitempty"`
+	TotalSavingsPercent  *float32               `json:"totalSavingsPercent,omitempty"`
+	Term                 *string                `json:"term,omitempty"`
+	PaymentOption        *string                `json:"paymentOption,omitempty"`
+	Service              *string                `json:"service,omitempty"`
+	OnDemandCount        *int64                 `json:"onDemandCount,omitempty"`
+	OnDemandCost         *float32               `json:"onDemandCost,omitempty"`
+	ReservedCount        *int64                 `json:"reservedCount,omitempty"`
+	ReservedCost         *int64                 `json:"reservedCost,omitempty"`
+	RecommendedCount     *int64                 `json:"recommendedCount,omitempty"`
+	RecommendedCost      *float32               `json:"recommendedCost,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValueSummary ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValueSummary
@@ -439,7 +439,7 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureV
 }
 
 func (o ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValueSummary) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -491,73 +491,8 @@ func (o ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVm
 
 	return toSerialize, nil
 }
-
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValueSummary) UnmarshalJSON(data []byte) (err error) {
-	varListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValueSummary := _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValueSummary{}
-
-	err = json.Unmarshal(data, &varListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValueSummary)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValueSummary(varListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValueSummary)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "totalSavings")
-		delete(additionalProperties, "currencyCode")
-		delete(additionalProperties, "totalSavingsPercent")
-		delete(additionalProperties, "term")
-		delete(additionalProperties, "paymentOption")
-		delete(additionalProperties, "service")
-		delete(additionalProperties, "onDemandCount")
-		delete(additionalProperties, "onDemandCost")
-		delete(additionalProperties, "reservedCount")
-		delete(additionalProperties, "reservedCost")
-		delete(additionalProperties, "recommendedCount")
-		delete(additionalProperties, "recommendedCost")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValueSummary struct {
-	value *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValueSummary
-	isSet bool
-}
-
-func (v NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValueSummary) Get() *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValueSummary {
-	return v.value
-}
-
-func (v *NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValueSummary) Set(val *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValueSummary) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValueSummary) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValueSummary) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValueSummary(val *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValueSummary) *NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValueSummary {
-	return &NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValueSummary{value: val, isSet: true}
-}
-
-func (v NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValueSummary) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValueSummary) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

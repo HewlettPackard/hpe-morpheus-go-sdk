@@ -20,28 +20,28 @@ var _ MappedNullable = &CreateNetworkDomain200ResponseNetworkDomain{}
 
 // CreateNetworkDomain200ResponseNetworkDomain struct for CreateNetworkDomain200ResponseNetworkDomain
 type CreateNetworkDomain200ResponseNetworkDomain struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Active *bool `json:"active,omitempty"`
-	Fqdn *string `json:"fqdn,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Visibility *string `json:"visibility,omitempty"`
-	DomainController *bool `json:"domainController,omitempty"`
-	PublicZone *bool `json:"publicZone,omitempty"`
-	DomainUsername *string `json:"domainUsername,omitempty"`
-	DomainPassword *string `json:"domainPassword,omitempty"`
-	RefType *string `json:"refType,omitempty"`
-	RefId *int64 `json:"refId,omitempty"`
-	RefSource *string `json:"refSource,omitempty"`
-	InternalId *string `json:"internalId,omitempty"`
-	OuPath *string `json:"ouPath,omitempty"`
-	DcServer *string `json:"dcServer,omitempty"`
-	ZoneType *string `json:"zoneType,omitempty"`
-	Dnssec *string `json:"dnssec,omitempty"`
-	DomainSerial *string `json:"domainSerial,omitempty"`
-	Account *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"account,omitempty"`
-	Owner *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"owner,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                                  `json:"id,omitempty"`
+	Name                 *string                                                                 `json:"name,omitempty"`
+	Active               *bool                                                                   `json:"active,omitempty"`
+	Fqdn                 *string                                                                 `json:"fqdn,omitempty"`
+	Description          *string                                                                 `json:"description,omitempty"`
+	Visibility           *string                                                                 `json:"visibility,omitempty"`
+	DomainController     *bool                                                                   `json:"domainController,omitempty"`
+	PublicZone           *bool                                                                   `json:"publicZone,omitempty"`
+	DomainUsername       *string                                                                 `json:"domainUsername,omitempty"`
+	DomainPassword       *string                                                                 `json:"domainPassword,omitempty"`
+	RefType              *string                                                                 `json:"refType,omitempty"`
+	RefId                *int64                                                                  `json:"refId,omitempty"`
+	RefSource            *string                                                                 `json:"refSource,omitempty"`
+	InternalId           *string                                                                 `json:"internalId,omitempty"`
+	OuPath               *string                                                                 `json:"ouPath,omitempty"`
+	DcServer             *string                                                                 `json:"dcServer,omitempty"`
+	ZoneType             *string                                                                 `json:"zoneType,omitempty"`
+	Dnssec               *string                                                                 `json:"dnssec,omitempty"`
+	DomainSerial         *string                                                                 `json:"domainSerial,omitempty"`
+	Account              *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"account,omitempty"`
+	Owner                *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"owner,omitempty"`
+	AdditionalProperties map[string]interface{}                                                  `json:",remain"`
 }
 
 type _CreateNetworkDomain200ResponseNetworkDomain CreateNetworkDomain200ResponseNetworkDomain
@@ -736,7 +736,7 @@ func (o *CreateNetworkDomain200ResponseNetworkDomain) SetOwner(v ListApplianceSe
 }
 
 func (o CreateNetworkDomain200ResponseNetworkDomain) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -815,82 +815,8 @@ func (o CreateNetworkDomain200ResponseNetworkDomain) ToMap() (map[string]interfa
 
 	return toSerialize, nil
 }
-
 func (o *CreateNetworkDomain200ResponseNetworkDomain) UnmarshalJSON(data []byte) (err error) {
-	varCreateNetworkDomain200ResponseNetworkDomain := _CreateNetworkDomain200ResponseNetworkDomain{}
-
-	err = json.Unmarshal(data, &varCreateNetworkDomain200ResponseNetworkDomain)
-
-	if err != nil {
-		return err
-	}
-
-	*o = CreateNetworkDomain200ResponseNetworkDomain(varCreateNetworkDomain200ResponseNetworkDomain)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "active")
-		delete(additionalProperties, "fqdn")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "domainController")
-		delete(additionalProperties, "publicZone")
-		delete(additionalProperties, "domainUsername")
-		delete(additionalProperties, "domainPassword")
-		delete(additionalProperties, "refType")
-		delete(additionalProperties, "refId")
-		delete(additionalProperties, "refSource")
-		delete(additionalProperties, "internalId")
-		delete(additionalProperties, "ouPath")
-		delete(additionalProperties, "dcServer")
-		delete(additionalProperties, "zoneType")
-		delete(additionalProperties, "dnssec")
-		delete(additionalProperties, "domainSerial")
-		delete(additionalProperties, "account")
-		delete(additionalProperties, "owner")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableCreateNetworkDomain200ResponseNetworkDomain struct {
-	value *CreateNetworkDomain200ResponseNetworkDomain
-	isSet bool
-}
-
-func (v NullableCreateNetworkDomain200ResponseNetworkDomain) Get() *CreateNetworkDomain200ResponseNetworkDomain {
-	return v.value
-}
-
-func (v *NullableCreateNetworkDomain200ResponseNetworkDomain) Set(val *CreateNetworkDomain200ResponseNetworkDomain) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableCreateNetworkDomain200ResponseNetworkDomain) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableCreateNetworkDomain200ResponseNetworkDomain) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableCreateNetworkDomain200ResponseNetworkDomain(val *CreateNetworkDomain200ResponseNetworkDomain) *NullableCreateNetworkDomain200ResponseNetworkDomain {
-	return &NullableCreateNetworkDomain200ResponseNetworkDomain{value: val, isSet: true}
-}
-
-func (v NullableCreateNetworkDomain200ResponseNetworkDomain) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableCreateNetworkDomain200ResponseNetworkDomain) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

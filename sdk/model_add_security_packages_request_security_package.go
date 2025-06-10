@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the AddSecurityPackagesRequestSecurityPackage type satisfies the MappedNullable interface at compile time
@@ -32,8 +31,8 @@ type AddSecurityPackagesRequestSecurityPackage struct {
 	// URL to download the security package zip file from
 	Url string `json:"url"`
 	// Can be used to disable the security package
-	Enabled *bool `json:"enabled,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Enabled              *bool                  `json:"enabled,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddSecurityPackagesRequestSecurityPackage AddSecurityPackagesRequestSecurityPackage
@@ -242,7 +241,7 @@ func (o *AddSecurityPackagesRequestSecurityPackage) SetEnabled(v bool) {
 }
 
 func (o AddSecurityPackagesRequestSecurityPackage) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -272,89 +271,8 @@ func (o AddSecurityPackagesRequestSecurityPackage) ToMap() (map[string]interface
 
 	return toSerialize, nil
 }
-
 func (o *AddSecurityPackagesRequestSecurityPackage) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"name",
-		"url",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varAddSecurityPackagesRequestSecurityPackage := _AddSecurityPackagesRequestSecurityPackage{}
-
-	err = json.Unmarshal(data, &varAddSecurityPackagesRequestSecurityPackage)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddSecurityPackagesRequestSecurityPackage(varAddSecurityPackagesRequestSecurityPackage)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "enabled")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddSecurityPackagesRequestSecurityPackage struct {
-	value *AddSecurityPackagesRequestSecurityPackage
-	isSet bool
-}
-
-func (v NullableAddSecurityPackagesRequestSecurityPackage) Get() *AddSecurityPackagesRequestSecurityPackage {
-	return v.value
-}
-
-func (v *NullableAddSecurityPackagesRequestSecurityPackage) Set(val *AddSecurityPackagesRequestSecurityPackage) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddSecurityPackagesRequestSecurityPackage) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddSecurityPackagesRequestSecurityPackage) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddSecurityPackagesRequestSecurityPackage(val *AddSecurityPackagesRequestSecurityPackage) *NullableAddSecurityPackagesRequestSecurityPackage {
-	return &NullableAddSecurityPackagesRequestSecurityPackage{value: val, isSet: true}
-}
-
-func (v NullableAddSecurityPackagesRequestSecurityPackage) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddSecurityPackagesRequestSecurityPackage) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

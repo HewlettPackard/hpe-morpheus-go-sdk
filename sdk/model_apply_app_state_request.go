@@ -21,8 +21,8 @@ var _ MappedNullable = &ApplyAppStateRequest{}
 // ApplyAppStateRequest struct for ApplyAppStateRequest
 type ApplyAppStateRequest struct {
 	// Template Parameter object. A map of key-value pairs that correspond to the template variables i.e. tfvars
-	TemplateParameter map[string]interface{} `json:"templateParameter,omitempty"`
-	AdditionalProperties map[string]interface{}
+	TemplateParameter    map[string]interface{} `json:"templateParameter,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ApplyAppStateRequest ApplyAppStateRequest
@@ -77,7 +77,7 @@ func (o *ApplyAppStateRequest) SetTemplateParameter(v map[string]interface{}) {
 }
 
 func (o ApplyAppStateRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -96,62 +96,8 @@ func (o ApplyAppStateRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *ApplyAppStateRequest) UnmarshalJSON(data []byte) (err error) {
-	varApplyAppStateRequest := _ApplyAppStateRequest{}
-
-	err = json.Unmarshal(data, &varApplyAppStateRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ApplyAppStateRequest(varApplyAppStateRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "templateParameter")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableApplyAppStateRequest struct {
-	value *ApplyAppStateRequest
-	isSet bool
-}
-
-func (v NullableApplyAppStateRequest) Get() *ApplyAppStateRequest {
-	return v.value
-}
-
-func (v *NullableApplyAppStateRequest) Set(val *ApplyAppStateRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableApplyAppStateRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableApplyAppStateRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableApplyAppStateRequest(val *ApplyAppStateRequest) *NullableApplyAppStateRequest {
-	return &NullableApplyAppStateRequest{value: val, isSet: true}
-}
-
-func (v NullableApplyAppStateRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableApplyAppStateRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -14,7 +14,6 @@ package sdk
 import (
 	"encoding/json"
 	"time"
-	"fmt"
 )
 
 // checks if the TaskJobPayload type satisfies the MappedNullable interface at compile time
@@ -27,12 +26,12 @@ type TaskJobPayload struct {
 	// Array of label strings, can be used for filtering.
 	Labels []string `json:"labels,omitempty"`
 	// Use this to set enabled state
-	Enabled *bool `json:"enabled,omitempty"`
-	Task WorkflowJobPayloadTask `json:"task"`
+	Enabled *bool                  `json:"enabled,omitempty"`
+	Task    WorkflowJobPayloadTask `json:"task"`
 	// Target type where job will execute
-	TargetType string `json:"targetType"`
-	Targets []WorkflowJobPayloadTargetsInner `json:"targets,omitempty"`
-	ScheduleMode WorkflowJobPayloadScheduleMode `json:"scheduleMode"`
+	TargetType   string                           `json:"targetType"`
+	Targets      []WorkflowJobPayloadTargetsInner `json:"targets,omitempty"`
+	ScheduleMode WorkflowJobPayloadScheduleMode   `json:"scheduleMode"`
 	// Map of options to be used as values in the workflow tasks. These correspond to option types.
 	CustomOptions map[string]interface{} `json:"customOptions,omitempty"`
 	// Job custom configuration (String in JSON format)
@@ -40,8 +39,8 @@ type TaskJobPayload struct {
 	// Date and Time to execute the job. Use UTC time in the format 2020-02-15T05:00:00Z. Required when scheduleMode is 'dateTime'.
 	DateTime *time.Time `json:"dateTime,omitempty"`
 	// If true, executes job
-	Run *bool `json:"run,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Run                  *bool                  `json:"run,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _TaskJobPayload TaskJobPayload
@@ -392,7 +391,7 @@ func (o *TaskJobPayload) SetRun(v bool) {
 }
 
 func (o TaskJobPayload) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -433,96 +432,8 @@ func (o TaskJobPayload) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *TaskJobPayload) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"name",
-		"task",
-		"targetType",
-		"scheduleMode",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varTaskJobPayload := _TaskJobPayload{}
-
-	err = json.Unmarshal(data, &varTaskJobPayload)
-
-	if err != nil {
-		return err
-	}
-
-	*o = TaskJobPayload(varTaskJobPayload)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "task")
-		delete(additionalProperties, "targetType")
-		delete(additionalProperties, "targets")
-		delete(additionalProperties, "scheduleMode")
-		delete(additionalProperties, "customOptions")
-		delete(additionalProperties, "customConfig")
-		delete(additionalProperties, "dateTime")
-		delete(additionalProperties, "run")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableTaskJobPayload struct {
-	value *TaskJobPayload
-	isSet bool
-}
-
-func (v NullableTaskJobPayload) Get() *TaskJobPayload {
-	return v.value
-}
-
-func (v *NullableTaskJobPayload) Set(val *TaskJobPayload) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableTaskJobPayload) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableTaskJobPayload) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableTaskJobPayload(val *TaskJobPayload) *NullableTaskJobPayload {
-	return &NullableTaskJobPayload{value: val, isSet: true}
-}
-
-func (v NullableTaskJobPayload) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableTaskJobPayload) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

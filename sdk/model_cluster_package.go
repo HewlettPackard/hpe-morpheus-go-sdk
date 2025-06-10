@@ -20,21 +20,21 @@ var _ MappedNullable = &ClusterPackage{}
 
 // ClusterPackage struct for ClusterPackage
 type ClusterPackage struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Account *int64 `json:"account,omitempty"`
-	Code *string `json:"code,omitempty"`
-	RepeatInstall *bool `json:"repeatInstall,omitempty"`
-	Type *string `json:"type,omitempty"`
-	PackageType *string `json:"packageType,omitempty"`
-	PackageVersion *string `json:"packageVersion,omitempty"`
-	Enabled *bool `json:"enabled,omitempty"`
-	IconPath *string `json:"iconPath,omitempty"`
-	ImagePath *string `json:"imagePath,omitempty"`
-	DarkImagePath *string `json:"darkImagePath,omitempty"`
-	SpecTemplates []ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"specTemplates,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                       `json:"id,omitempty"`
+	Name                 *string                                                      `json:"name,omitempty"`
+	Description          *string                                                      `json:"description,omitempty"`
+	Account              *int64                                                       `json:"account,omitempty"`
+	Code                 *string                                                      `json:"code,omitempty"`
+	RepeatInstall        *bool                                                        `json:"repeatInstall,omitempty"`
+	Type                 *string                                                      `json:"type,omitempty"`
+	PackageType          *string                                                      `json:"packageType,omitempty"`
+	PackageVersion       *string                                                      `json:"packageVersion,omitempty"`
+	Enabled              *bool                                                        `json:"enabled,omitempty"`
+	IconPath             *string                                                      `json:"iconPath,omitempty"`
+	ImagePath            *string                                                      `json:"imagePath,omitempty"`
+	DarkImagePath        *string                                                      `json:"darkImagePath,omitempty"`
+	SpecTemplates        []ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"specTemplates,omitempty"`
+	AdditionalProperties map[string]interface{}                                       `json:",remain"`
 }
 
 type _ClusterPackage ClusterPackage
@@ -505,7 +505,7 @@ func (o *ClusterPackage) SetSpecTemplates(v []ListBackupSettings200ResponseBacku
 }
 
 func (o ClusterPackage) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -563,75 +563,8 @@ func (o ClusterPackage) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *ClusterPackage) UnmarshalJSON(data []byte) (err error) {
-	varClusterPackage := _ClusterPackage{}
-
-	err = json.Unmarshal(data, &varClusterPackage)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ClusterPackage(varClusterPackage)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "account")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "repeatInstall")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "packageType")
-		delete(additionalProperties, "packageVersion")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "iconPath")
-		delete(additionalProperties, "imagePath")
-		delete(additionalProperties, "darkImagePath")
-		delete(additionalProperties, "specTemplates")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableClusterPackage struct {
-	value *ClusterPackage
-	isSet bool
-}
-
-func (v NullableClusterPackage) Get() *ClusterPackage {
-	return v.value
-}
-
-func (v *NullableClusterPackage) Set(val *ClusterPackage) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableClusterPackage) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableClusterPackage) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableClusterPackage(val *ClusterPackage) *NullableClusterPackage {
-	return &NullableClusterPackage{value: val, isSet: true}
-}
-
-func (v NullableClusterPackage) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableClusterPackage) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

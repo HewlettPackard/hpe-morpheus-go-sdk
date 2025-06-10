@@ -20,9 +20,9 @@ var _ MappedNullable = &AddArchiveFileLink200Response{}
 
 // AddArchiveFileLink200Response struct for AddArchiveFileLink200Response
 type AddArchiveFileLink200Response struct {
-	Success *bool `json:"success,omitempty"`
-	SecretAccessKey *string `json:"secretAccessKey,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Success              *bool                  `json:"success,omitempty"`
+	SecretAccessKey      *string                `json:"secretAccessKey,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddArchiveFileLink200Response AddArchiveFileLink200Response
@@ -109,7 +109,7 @@ func (o *AddArchiveFileLink200Response) SetSecretAccessKey(v string) {
 }
 
 func (o AddArchiveFileLink200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -131,63 +131,8 @@ func (o AddArchiveFileLink200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *AddArchiveFileLink200Response) UnmarshalJSON(data []byte) (err error) {
-	varAddArchiveFileLink200Response := _AddArchiveFileLink200Response{}
-
-	err = json.Unmarshal(data, &varAddArchiveFileLink200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddArchiveFileLink200Response(varAddArchiveFileLink200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "success")
-		delete(additionalProperties, "secretAccessKey")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddArchiveFileLink200Response struct {
-	value *AddArchiveFileLink200Response
-	isSet bool
-}
-
-func (v NullableAddArchiveFileLink200Response) Get() *AddArchiveFileLink200Response {
-	return v.value
-}
-
-func (v *NullableAddArchiveFileLink200Response) Set(val *AddArchiveFileLink200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddArchiveFileLink200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddArchiveFileLink200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddArchiveFileLink200Response(val *AddArchiveFileLink200Response) *NullableAddArchiveFileLink200Response {
-	return &NullableAddArchiveFileLink200Response{value: val, isSet: true}
-}
-
-func (v NullableAddArchiveFileLink200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddArchiveFileLink200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

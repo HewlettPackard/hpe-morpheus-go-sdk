@@ -20,8 +20,8 @@ var _ MappedNullable = &GetAppState200ResponseAllOfOutput{}
 
 // GetAppState200ResponseAllOfOutput struct for GetAppState200ResponseAllOfOutput
 type GetAppState200ResponseAllOfOutput struct {
-	Outputs []map[string]interface{} `json:"outputs,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Outputs              []map[string]interface{} `json:"outputs,omitempty"`
+	AdditionalProperties map[string]interface{}   `json:",remain"`
 }
 
 type _GetAppState200ResponseAllOfOutput GetAppState200ResponseAllOfOutput
@@ -76,7 +76,7 @@ func (o *GetAppState200ResponseAllOfOutput) SetOutputs(v []map[string]interface{
 }
 
 func (o GetAppState200ResponseAllOfOutput) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o GetAppState200ResponseAllOfOutput) ToMap() (map[string]interface{}, erro
 
 	return toSerialize, nil
 }
-
 func (o *GetAppState200ResponseAllOfOutput) UnmarshalJSON(data []byte) (err error) {
-	varGetAppState200ResponseAllOfOutput := _GetAppState200ResponseAllOfOutput{}
-
-	err = json.Unmarshal(data, &varGetAppState200ResponseAllOfOutput)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetAppState200ResponseAllOfOutput(varGetAppState200ResponseAllOfOutput)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "outputs")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetAppState200ResponseAllOfOutput struct {
-	value *GetAppState200ResponseAllOfOutput
-	isSet bool
-}
-
-func (v NullableGetAppState200ResponseAllOfOutput) Get() *GetAppState200ResponseAllOfOutput {
-	return v.value
-}
-
-func (v *NullableGetAppState200ResponseAllOfOutput) Set(val *GetAppState200ResponseAllOfOutput) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetAppState200ResponseAllOfOutput) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetAppState200ResponseAllOfOutput) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetAppState200ResponseAllOfOutput(val *GetAppState200ResponseAllOfOutput) *NullableGetAppState200ResponseAllOfOutput {
-	return &NullableGetAppState200ResponseAllOfOutput{value: val, isSet: true}
-}
-
-func (v NullableGetAppState200ResponseAllOfOutput) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetAppState200ResponseAllOfOutput) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the NSXNetworkServer type satisfies the MappedNullable interface at compile time
@@ -32,16 +31,16 @@ type NSXNetworkServer struct {
 	// Username
 	ServiceUsername *string `json:"serviceUsername,omitempty"`
 	// Password
-	ServicePassword *string `json:"servicePassword,omitempty"`
-	Config *NSXNetworkServerConfig `json:"config,omitempty"`
+	ServicePassword *string                 `json:"servicePassword,omitempty"`
+	Config          *NSXNetworkServerConfig `json:"config,omitempty"`
 	// Visibility - Set to public to allow all tenants
 	Visibility *string `json:"visibility,omitempty"`
 	// ID of the Cloud that the NSX network server integration should be attached to.
-	ZoneId int64 `json:"zoneId"`
+	ZoneId     int64                       `json:"zoneId"`
 	Credential *NSXNetworkServerCredential `json:"credential,omitempty"`
 	// Array of tenant account ids that are allowed access
-	Tenants []GetAlerts200ResponseAllOfChecksInnerAccount `json:"tenants,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Tenants              []GetAlerts200ResponseAllOfChecksInnerAccount `json:"tenants,omitempty"`
+	AdditionalProperties map[string]interface{}                        `json:",remain"`
 }
 
 type _NSXNetworkServer NSXNetworkServer
@@ -396,7 +395,7 @@ func (o *NSXNetworkServer) SetTenants(v []GetAlerts200ResponseAllOfChecksInnerAc
 }
 
 func (o NSXNetworkServer) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -437,96 +436,8 @@ func (o NSXNetworkServer) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *NSXNetworkServer) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"type",
-		"name",
-		"serviceUrl",
-		"zoneId",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varNSXNetworkServer := _NSXNetworkServer{}
-
-	err = json.Unmarshal(data, &varNSXNetworkServer)
-
-	if err != nil {
-		return err
-	}
-
-	*o = NSXNetworkServer(varNSXNetworkServer)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "serviceUrl")
-		delete(additionalProperties, "serviceUsername")
-		delete(additionalProperties, "servicePassword")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "zoneId")
-		delete(additionalProperties, "credential")
-		delete(additionalProperties, "tenants")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableNSXNetworkServer struct {
-	value *NSXNetworkServer
-	isSet bool
-}
-
-func (v NullableNSXNetworkServer) Get() *NSXNetworkServer {
-	return v.value
-}
-
-func (v *NullableNSXNetworkServer) Set(val *NSXNetworkServer) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableNSXNetworkServer) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableNSXNetworkServer) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableNSXNetworkServer(val *NSXNetworkServer) *NullableNSXNetworkServer {
-	return &NullableNSXNetworkServer{value: val, isSet: true}
-}
-
-func (v NullableNSXNetworkServer) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableNSXNetworkServer) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

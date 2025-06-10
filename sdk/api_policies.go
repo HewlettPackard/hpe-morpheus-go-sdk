@@ -21,13 +21,12 @@ import (
 	"strings"
 )
 
-
 // PoliciesAPIService PoliciesAPI service
 type PoliciesAPIService service
 
 type ApiAddPoliciesRequest struct {
-	ctx context.Context
-	ApiService *PoliciesAPIService
+	ctx                context.Context
+	ApiService         *PoliciesAPIService
 	addPoliciesRequest *AddPoliciesRequest
 }
 
@@ -45,25 +44,25 @@ AddPolicies Creates a Policy
 
 Creates a policy.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddPoliciesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddPoliciesRequest
 */
 func (a *PoliciesAPIService) AddPolicies(ctx context.Context) ApiAddPoliciesRequest {
 	return ApiAddPoliciesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddPolicies200Response
+//
+//	@return AddPolicies200Response
 func (a *PoliciesAPIService) AddPoliciesExecute(r ApiAddPoliciesRequest) (*AddPolicies200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddPolicies200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddPolicies200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PoliciesAPIService.AddPolicies")
@@ -115,7 +114,7 @@ func (a *PoliciesAPIService) AddPoliciesExecute(r ApiAddPoliciesRequest) (*AddPo
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -124,8 +123,8 @@ func (a *PoliciesAPIService) AddPoliciesExecute(r ApiAddPoliciesRequest) (*AddPo
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -135,8 +134,8 @@ func (a *PoliciesAPIService) AddPoliciesExecute(r ApiAddPoliciesRequest) (*AddPo
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -144,8 +143,8 @@ func (a *PoliciesAPIService) AddPoliciesExecute(r ApiAddPoliciesRequest) (*AddPo
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -154,9 +153,9 @@ func (a *PoliciesAPIService) AddPoliciesExecute(r ApiAddPoliciesRequest) (*AddPo
 }
 
 type ApiAddPoliciesCloudRequest struct {
-	ctx context.Context
-	ApiService *PoliciesAPIService
-	cloudId int64
+	ctx                     context.Context
+	ApiService              *PoliciesAPIService
+	cloudId                 int64
 	addPoliciesCloudRequest *AddPoliciesCloudRequest
 }
 
@@ -174,27 +173,27 @@ AddPoliciesCloud Creates a Policy for a Cloud
 
 Creates a policy for a Cloud.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param cloudId The ID of the cloud
- @return ApiAddPoliciesCloudRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param cloudId The ID of the cloud
+	@return ApiAddPoliciesCloudRequest
 */
 func (a *PoliciesAPIService) AddPoliciesCloud(ctx context.Context, cloudId int64) ApiAddPoliciesCloudRequest {
 	return ApiAddPoliciesCloudRequest{
 		ApiService: a,
-		ctx: ctx,
-		cloudId: cloudId,
+		ctx:        ctx,
+		cloudId:    cloudId,
 	}
 }
 
 // Execute executes the request
-//  @return AddPolicies200Response
+//
+//	@return AddPolicies200Response
 func (a *PoliciesAPIService) AddPoliciesCloudExecute(r ApiAddPoliciesCloudRequest) (*AddPolicies200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddPolicies200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddPolicies200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PoliciesAPIService.AddPoliciesCloud")
@@ -247,7 +246,7 @@ func (a *PoliciesAPIService) AddPoliciesCloudExecute(r ApiAddPoliciesCloudReques
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -256,8 +255,8 @@ func (a *PoliciesAPIService) AddPoliciesCloudExecute(r ApiAddPoliciesCloudReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -267,8 +266,8 @@ func (a *PoliciesAPIService) AddPoliciesCloudExecute(r ApiAddPoliciesCloudReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -276,8 +275,8 @@ func (a *PoliciesAPIService) AddPoliciesCloudExecute(r ApiAddPoliciesCloudReques
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -286,9 +285,9 @@ func (a *PoliciesAPIService) AddPoliciesCloudExecute(r ApiAddPoliciesCloudReques
 }
 
 type ApiAddPoliciesGroupRequest struct {
-	ctx context.Context
-	ApiService *PoliciesAPIService
-	groupId int64
+	ctx                     context.Context
+	ApiService              *PoliciesAPIService
+	groupId                 int64
 	addPoliciesGroupRequest *AddPoliciesGroupRequest
 }
 
@@ -306,27 +305,27 @@ AddPoliciesGroup Creates a Policy for a Group
 
 Creates a policy for a Group.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param groupId The ID of the group
- @return ApiAddPoliciesGroupRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param groupId The ID of the group
+	@return ApiAddPoliciesGroupRequest
 */
 func (a *PoliciesAPIService) AddPoliciesGroup(ctx context.Context, groupId int64) ApiAddPoliciesGroupRequest {
 	return ApiAddPoliciesGroupRequest{
 		ApiService: a,
-		ctx: ctx,
-		groupId: groupId,
+		ctx:        ctx,
+		groupId:    groupId,
 	}
 }
 
 // Execute executes the request
-//  @return AddPolicies200Response
+//
+//	@return AddPolicies200Response
 func (a *PoliciesAPIService) AddPoliciesGroupExecute(r ApiAddPoliciesGroupRequest) (*AddPolicies200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddPolicies200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddPolicies200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PoliciesAPIService.AddPoliciesGroup")
@@ -379,7 +378,7 @@ func (a *PoliciesAPIService) AddPoliciesGroupExecute(r ApiAddPoliciesGroupReques
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -388,8 +387,8 @@ func (a *PoliciesAPIService) AddPoliciesGroupExecute(r ApiAddPoliciesGroupReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -399,8 +398,8 @@ func (a *PoliciesAPIService) AddPoliciesGroupExecute(r ApiAddPoliciesGroupReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -408,8 +407,8 @@ func (a *PoliciesAPIService) AddPoliciesGroupExecute(r ApiAddPoliciesGroupReques
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -418,9 +417,9 @@ func (a *PoliciesAPIService) AddPoliciesGroupExecute(r ApiAddPoliciesGroupReques
 }
 
 type ApiGetPoliciesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *PoliciesAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetPoliciesRequest) Execute() (*GetPolicies200Response, *http.Response, error) {
@@ -432,27 +431,27 @@ GetPolicies Retrieves a Specific Policy
 
 Retrieves a specific policy.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetPoliciesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetPoliciesRequest
 */
 func (a *PoliciesAPIService) GetPolicies(ctx context.Context, id int64) ApiGetPoliciesRequest {
 	return ApiGetPoliciesRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetPolicies200Response
+//
+//	@return GetPolicies200Response
 func (a *PoliciesAPIService) GetPoliciesExecute(r ApiGetPoliciesRequest) (*GetPolicies200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetPolicies200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetPolicies200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PoliciesAPIService.GetPolicies")
@@ -503,7 +502,7 @@ func (a *PoliciesAPIService) GetPoliciesExecute(r ApiGetPoliciesRequest) (*GetPo
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -512,8 +511,8 @@ func (a *PoliciesAPIService) GetPoliciesExecute(r ApiGetPoliciesRequest) (*GetPo
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -523,8 +522,8 @@ func (a *PoliciesAPIService) GetPoliciesExecute(r ApiGetPoliciesRequest) (*GetPo
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -532,8 +531,8 @@ func (a *PoliciesAPIService) GetPoliciesExecute(r ApiGetPoliciesRequest) (*GetPo
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -542,10 +541,10 @@ func (a *PoliciesAPIService) GetPoliciesExecute(r ApiGetPoliciesRequest) (*GetPo
 }
 
 type ApiGetPoliciesCloudRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *PoliciesAPIService
-	cloudId int64
-	id int64
+	cloudId    int64
+	id         int64
 }
 
 func (r ApiGetPoliciesCloudRequest) Execute() (*GetPolicies200Response, *http.Response, error) {
@@ -557,29 +556,29 @@ GetPoliciesCloud Retrieves a Specific Policy for a Cloud
 
 Retrieves a specific policy for a Cloud.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param cloudId The ID of the cloud
- @param id Morpheus ID of the Object being referenced
- @return ApiGetPoliciesCloudRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param cloudId The ID of the cloud
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetPoliciesCloudRequest
 */
 func (a *PoliciesAPIService) GetPoliciesCloud(ctx context.Context, cloudId int64, id int64) ApiGetPoliciesCloudRequest {
 	return ApiGetPoliciesCloudRequest{
 		ApiService: a,
-		ctx: ctx,
-		cloudId: cloudId,
-		id: id,
+		ctx:        ctx,
+		cloudId:    cloudId,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetPolicies200Response
+//
+//	@return GetPolicies200Response
 func (a *PoliciesAPIService) GetPoliciesCloudExecute(r ApiGetPoliciesCloudRequest) (*GetPolicies200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetPolicies200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetPolicies200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PoliciesAPIService.GetPoliciesCloud")
@@ -631,7 +630,7 @@ func (a *PoliciesAPIService) GetPoliciesCloudExecute(r ApiGetPoliciesCloudReques
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -640,8 +639,8 @@ func (a *PoliciesAPIService) GetPoliciesCloudExecute(r ApiGetPoliciesCloudReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -651,8 +650,8 @@ func (a *PoliciesAPIService) GetPoliciesCloudExecute(r ApiGetPoliciesCloudReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -660,8 +659,8 @@ func (a *PoliciesAPIService) GetPoliciesCloudExecute(r ApiGetPoliciesCloudReques
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -670,10 +669,10 @@ func (a *PoliciesAPIService) GetPoliciesCloudExecute(r ApiGetPoliciesCloudReques
 }
 
 type ApiGetPoliciesGroupRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *PoliciesAPIService
-	groupId int64
-	id int64
+	groupId    int64
+	id         int64
 }
 
 func (r ApiGetPoliciesGroupRequest) Execute() (*GetPolicies200Response, *http.Response, error) {
@@ -685,29 +684,29 @@ GetPoliciesGroup Retrieves a Specific Policy for a Group
 
 Retrieves a specific policy for a Group.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param groupId The ID of the group
- @param id Morpheus ID of the Object being referenced
- @return ApiGetPoliciesGroupRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param groupId The ID of the group
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetPoliciesGroupRequest
 */
 func (a *PoliciesAPIService) GetPoliciesGroup(ctx context.Context, groupId int64, id int64) ApiGetPoliciesGroupRequest {
 	return ApiGetPoliciesGroupRequest{
 		ApiService: a,
-		ctx: ctx,
-		groupId: groupId,
-		id: id,
+		ctx:        ctx,
+		groupId:    groupId,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetPolicies200Response
+//
+//	@return GetPolicies200Response
 func (a *PoliciesAPIService) GetPoliciesGroupExecute(r ApiGetPoliciesGroupRequest) (*GetPolicies200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetPolicies200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetPolicies200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PoliciesAPIService.GetPoliciesGroup")
@@ -759,7 +758,7 @@ func (a *PoliciesAPIService) GetPoliciesGroupExecute(r ApiGetPoliciesGroupReques
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -768,8 +767,8 @@ func (a *PoliciesAPIService) GetPoliciesGroupExecute(r ApiGetPoliciesGroupReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -779,8 +778,8 @@ func (a *PoliciesAPIService) GetPoliciesGroupExecute(r ApiGetPoliciesGroupReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -788,8 +787,8 @@ func (a *PoliciesAPIService) GetPoliciesGroupExecute(r ApiGetPoliciesGroupReques
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -798,14 +797,14 @@ func (a *PoliciesAPIService) GetPoliciesGroupExecute(r ApiGetPoliciesGroupReques
 }
 
 type ApiListPoliciesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *PoliciesAPIService
-	max *int64
-	offset *int64
-	sort *string
-	direction *string
-	phrase *string
-	name *string
+	max        *int64
+	offset     *int64
+	sort       *string
+	direction  *string
+	phrase     *string
+	name       *string
 }
 
 // Maximum number of records to return
@@ -853,25 +852,25 @@ ListPolicies Retrieves all Policies
 
 Retrieves all policies.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListPoliciesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListPoliciesRequest
 */
 func (a *PoliciesAPIService) ListPolicies(ctx context.Context) ApiListPoliciesRequest {
 	return ApiListPoliciesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListPolicies200Response
+//
+//	@return ListPolicies200Response
 func (a *PoliciesAPIService) ListPoliciesExecute(r ApiListPoliciesRequest) (*ListPolicies200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListPolicies200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListPolicies200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PoliciesAPIService.ListPolicies")
@@ -951,7 +950,7 @@ func (a *PoliciesAPIService) ListPoliciesExecute(r ApiListPoliciesRequest) (*Lis
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -960,8 +959,8 @@ func (a *PoliciesAPIService) ListPoliciesExecute(r ApiListPoliciesRequest) (*Lis
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -971,8 +970,8 @@ func (a *PoliciesAPIService) ListPoliciesExecute(r ApiListPoliciesRequest) (*Lis
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -980,8 +979,8 @@ func (a *PoliciesAPIService) ListPoliciesExecute(r ApiListPoliciesRequest) (*Lis
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -990,15 +989,15 @@ func (a *PoliciesAPIService) ListPoliciesExecute(r ApiListPoliciesRequest) (*Lis
 }
 
 type ApiListPoliciesCloudRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *PoliciesAPIService
-	cloudId int64
-	max *int64
-	offset *int64
-	sort *string
-	direction *string
-	phrase *string
-	name *string
+	cloudId    int64
+	max        *int64
+	offset     *int64
+	sort       *string
+	direction  *string
+	phrase     *string
+	name       *string
 }
 
 // Maximum number of records to return
@@ -1046,27 +1045,27 @@ ListPoliciesCloud Retrieves Policies for a Cloud
 
 Retrieves policies for a specific cloud.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param cloudId The ID of the cloud
- @return ApiListPoliciesCloudRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param cloudId The ID of the cloud
+	@return ApiListPoliciesCloudRequest
 */
 func (a *PoliciesAPIService) ListPoliciesCloud(ctx context.Context, cloudId int64) ApiListPoliciesCloudRequest {
 	return ApiListPoliciesCloudRequest{
 		ApiService: a,
-		ctx: ctx,
-		cloudId: cloudId,
+		ctx:        ctx,
+		cloudId:    cloudId,
 	}
 }
 
 // Execute executes the request
-//  @return ListPoliciesGroup200Response
+//
+//	@return ListPoliciesGroup200Response
 func (a *PoliciesAPIService) ListPoliciesCloudExecute(r ApiListPoliciesCloudRequest) (*ListPoliciesGroup200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListPoliciesGroup200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListPoliciesGroup200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PoliciesAPIService.ListPoliciesCloud")
@@ -1147,7 +1146,7 @@ func (a *PoliciesAPIService) ListPoliciesCloudExecute(r ApiListPoliciesCloudRequ
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1156,8 +1155,8 @@ func (a *PoliciesAPIService) ListPoliciesCloudExecute(r ApiListPoliciesCloudRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1167,8 +1166,8 @@ func (a *PoliciesAPIService) ListPoliciesCloudExecute(r ApiListPoliciesCloudRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1176,8 +1175,8 @@ func (a *PoliciesAPIService) ListPoliciesCloudExecute(r ApiListPoliciesCloudRequ
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1186,15 +1185,15 @@ func (a *PoliciesAPIService) ListPoliciesCloudExecute(r ApiListPoliciesCloudRequ
 }
 
 type ApiListPoliciesGroupRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *PoliciesAPIService
-	groupId int64
-	max *int64
-	offset *int64
-	sort *string
-	direction *string
-	phrase *string
-	name *string
+	groupId    int64
+	max        *int64
+	offset     *int64
+	sort       *string
+	direction  *string
+	phrase     *string
+	name       *string
 }
 
 // Maximum number of records to return
@@ -1242,27 +1241,27 @@ ListPoliciesGroup Retrieves Policies for a Group
 
 Retrieves policies for a specific group.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param groupId The ID of the group
- @return ApiListPoliciesGroupRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param groupId The ID of the group
+	@return ApiListPoliciesGroupRequest
 */
 func (a *PoliciesAPIService) ListPoliciesGroup(ctx context.Context, groupId int64) ApiListPoliciesGroupRequest {
 	return ApiListPoliciesGroupRequest{
 		ApiService: a,
-		ctx: ctx,
-		groupId: groupId,
+		ctx:        ctx,
+		groupId:    groupId,
 	}
 }
 
 // Execute executes the request
-//  @return ListPoliciesGroup200Response
+//
+//	@return ListPoliciesGroup200Response
 func (a *PoliciesAPIService) ListPoliciesGroupExecute(r ApiListPoliciesGroupRequest) (*ListPoliciesGroup200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListPoliciesGroup200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListPoliciesGroup200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PoliciesAPIService.ListPoliciesGroup")
@@ -1343,7 +1342,7 @@ func (a *PoliciesAPIService) ListPoliciesGroupExecute(r ApiListPoliciesGroupRequ
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1352,8 +1351,8 @@ func (a *PoliciesAPIService) ListPoliciesGroupExecute(r ApiListPoliciesGroupRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1363,8 +1362,8 @@ func (a *PoliciesAPIService) ListPoliciesGroupExecute(r ApiListPoliciesGroupRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1372,8 +1371,8 @@ func (a *PoliciesAPIService) ListPoliciesGroupExecute(r ApiListPoliciesGroupRequ
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1382,7 +1381,7 @@ func (a *PoliciesAPIService) ListPoliciesGroupExecute(r ApiListPoliciesGroupRequ
 }
 
 type ApiListPolicyTypesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *PoliciesAPIService
 }
 
@@ -1393,27 +1392,27 @@ func (r ApiListPolicyTypesRequest) Execute() (*ListPolicyTypes200Response, *http
 /*
 ListPolicyTypes Retrieves all Policy Types
 
-Retrieves all Policy Types
+# Retrieves all Policy Types
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListPolicyTypesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListPolicyTypesRequest
 */
 func (a *PoliciesAPIService) ListPolicyTypes(ctx context.Context) ApiListPolicyTypesRequest {
 	return ApiListPolicyTypesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListPolicyTypes200Response
+//
+//	@return ListPolicyTypes200Response
 func (a *PoliciesAPIService) ListPolicyTypesExecute(r ApiListPolicyTypesRequest) (*ListPolicyTypes200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListPolicyTypes200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListPolicyTypes200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PoliciesAPIService.ListPolicyTypes")
@@ -1463,7 +1462,7 @@ func (a *PoliciesAPIService) ListPolicyTypesExecute(r ApiListPolicyTypesRequest)
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1472,8 +1471,8 @@ func (a *PoliciesAPIService) ListPolicyTypesExecute(r ApiListPolicyTypesRequest)
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1483,8 +1482,8 @@ func (a *PoliciesAPIService) ListPolicyTypesExecute(r ApiListPolicyTypesRequest)
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1492,8 +1491,8 @@ func (a *PoliciesAPIService) ListPolicyTypesExecute(r ApiListPolicyTypesRequest)
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1502,9 +1501,9 @@ func (a *PoliciesAPIService) ListPolicyTypesExecute(r ApiListPolicyTypesRequest)
 }
 
 type ApiRemovePoliciesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *PoliciesAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiRemovePoliciesRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -1516,27 +1515,27 @@ RemovePolicies Deletes a Policy
 
 Deletes a specified policy.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiRemovePoliciesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiRemovePoliciesRequest
 */
 func (a *PoliciesAPIService) RemovePolicies(ctx context.Context, id int64) ApiRemovePoliciesRequest {
 	return ApiRemovePoliciesRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *PoliciesAPIService) RemovePoliciesExecute(r ApiRemovePoliciesRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PoliciesAPIService.RemovePolicies")
@@ -1587,7 +1586,7 @@ func (a *PoliciesAPIService) RemovePoliciesExecute(r ApiRemovePoliciesRequest) (
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1596,8 +1595,8 @@ func (a *PoliciesAPIService) RemovePoliciesExecute(r ApiRemovePoliciesRequest) (
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1607,8 +1606,8 @@ func (a *PoliciesAPIService) RemovePoliciesExecute(r ApiRemovePoliciesRequest) (
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1616,8 +1615,8 @@ func (a *PoliciesAPIService) RemovePoliciesExecute(r ApiRemovePoliciesRequest) (
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1626,10 +1625,10 @@ func (a *PoliciesAPIService) RemovePoliciesExecute(r ApiRemovePoliciesRequest) (
 }
 
 type ApiRemovePoliciesCloudRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *PoliciesAPIService
-	cloudId int64
-	id int64
+	cloudId    int64
+	id         int64
 }
 
 func (r ApiRemovePoliciesCloudRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -1641,29 +1640,29 @@ RemovePoliciesCloud Deletes a Policy for a Cloud
 
 Deletes a specified policy for a Cloud.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param cloudId The ID of the cloud
- @param id Morpheus ID of the Object being referenced
- @return ApiRemovePoliciesCloudRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param cloudId The ID of the cloud
+	@param id Morpheus ID of the Object being referenced
+	@return ApiRemovePoliciesCloudRequest
 */
 func (a *PoliciesAPIService) RemovePoliciesCloud(ctx context.Context, cloudId int64, id int64) ApiRemovePoliciesCloudRequest {
 	return ApiRemovePoliciesCloudRequest{
 		ApiService: a,
-		ctx: ctx,
-		cloudId: cloudId,
-		id: id,
+		ctx:        ctx,
+		cloudId:    cloudId,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *PoliciesAPIService) RemovePoliciesCloudExecute(r ApiRemovePoliciesCloudRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PoliciesAPIService.RemovePoliciesCloud")
@@ -1715,7 +1714,7 @@ func (a *PoliciesAPIService) RemovePoliciesCloudExecute(r ApiRemovePoliciesCloud
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1724,8 +1723,8 @@ func (a *PoliciesAPIService) RemovePoliciesCloudExecute(r ApiRemovePoliciesCloud
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1735,8 +1734,8 @@ func (a *PoliciesAPIService) RemovePoliciesCloudExecute(r ApiRemovePoliciesCloud
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1744,8 +1743,8 @@ func (a *PoliciesAPIService) RemovePoliciesCloudExecute(r ApiRemovePoliciesCloud
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1754,10 +1753,10 @@ func (a *PoliciesAPIService) RemovePoliciesCloudExecute(r ApiRemovePoliciesCloud
 }
 
 type ApiRemovePoliciesGroupRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *PoliciesAPIService
-	groupId int64
-	id int64
+	groupId    int64
+	id         int64
 }
 
 func (r ApiRemovePoliciesGroupRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -1769,29 +1768,29 @@ RemovePoliciesGroup Deletes a Policy for a Group
 
 Deletes a specified policy for a Group.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param groupId The ID of the group
- @param id Morpheus ID of the Object being referenced
- @return ApiRemovePoliciesGroupRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param groupId The ID of the group
+	@param id Morpheus ID of the Object being referenced
+	@return ApiRemovePoliciesGroupRequest
 */
 func (a *PoliciesAPIService) RemovePoliciesGroup(ctx context.Context, groupId int64, id int64) ApiRemovePoliciesGroupRequest {
 	return ApiRemovePoliciesGroupRequest{
 		ApiService: a,
-		ctx: ctx,
-		groupId: groupId,
-		id: id,
+		ctx:        ctx,
+		groupId:    groupId,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *PoliciesAPIService) RemovePoliciesGroupExecute(r ApiRemovePoliciesGroupRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PoliciesAPIService.RemovePoliciesGroup")
@@ -1843,7 +1842,7 @@ func (a *PoliciesAPIService) RemovePoliciesGroupExecute(r ApiRemovePoliciesGroup
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1852,8 +1851,8 @@ func (a *PoliciesAPIService) RemovePoliciesGroupExecute(r ApiRemovePoliciesGroup
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1863,8 +1862,8 @@ func (a *PoliciesAPIService) RemovePoliciesGroupExecute(r ApiRemovePoliciesGroup
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1872,8 +1871,8 @@ func (a *PoliciesAPIService) RemovePoliciesGroupExecute(r ApiRemovePoliciesGroup
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1882,9 +1881,9 @@ func (a *PoliciesAPIService) RemovePoliciesGroupExecute(r ApiRemovePoliciesGroup
 }
 
 type ApiUpdatePoliciesRequest struct {
-	ctx context.Context
-	ApiService *PoliciesAPIService
-	id int64
+	ctx                   context.Context
+	ApiService            *PoliciesAPIService
+	id                    int64
 	updatePoliciesRequest *UpdatePoliciesRequest
 }
 
@@ -1902,27 +1901,27 @@ UpdatePolicies Updates a Policy
 
 Updates a policy.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdatePoliciesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdatePoliciesRequest
 */
 func (a *PoliciesAPIService) UpdatePolicies(ctx context.Context, id int64) ApiUpdatePoliciesRequest {
 	return ApiUpdatePoliciesRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return AddPolicies200Response
+//
+//	@return AddPolicies200Response
 func (a *PoliciesAPIService) UpdatePoliciesExecute(r ApiUpdatePoliciesRequest) (*AddPolicies200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddPolicies200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddPolicies200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PoliciesAPIService.UpdatePolicies")
@@ -1975,7 +1974,7 @@ func (a *PoliciesAPIService) UpdatePoliciesExecute(r ApiUpdatePoliciesRequest) (
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1984,8 +1983,8 @@ func (a *PoliciesAPIService) UpdatePoliciesExecute(r ApiUpdatePoliciesRequest) (
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1995,8 +1994,8 @@ func (a *PoliciesAPIService) UpdatePoliciesExecute(r ApiUpdatePoliciesRequest) (
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2004,8 +2003,8 @@ func (a *PoliciesAPIService) UpdatePoliciesExecute(r ApiUpdatePoliciesRequest) (
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2014,10 +2013,10 @@ func (a *PoliciesAPIService) UpdatePoliciesExecute(r ApiUpdatePoliciesRequest) (
 }
 
 type ApiUpdatePoliciesCloudRequest struct {
-	ctx context.Context
-	ApiService *PoliciesAPIService
-	cloudId int64
-	id int64
+	ctx                        context.Context
+	ApiService                 *PoliciesAPIService
+	cloudId                    int64
+	id                         int64
 	updatePoliciesCloudRequest *UpdatePoliciesCloudRequest
 }
 
@@ -2035,29 +2034,29 @@ UpdatePoliciesCloud Updates a Policy for a Cloud
 
 Updates a policy for a Cloud.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param cloudId The ID of the cloud
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdatePoliciesCloudRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param cloudId The ID of the cloud
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdatePoliciesCloudRequest
 */
 func (a *PoliciesAPIService) UpdatePoliciesCloud(ctx context.Context, cloudId int64, id int64) ApiUpdatePoliciesCloudRequest {
 	return ApiUpdatePoliciesCloudRequest{
 		ApiService: a,
-		ctx: ctx,
-		cloudId: cloudId,
-		id: id,
+		ctx:        ctx,
+		cloudId:    cloudId,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return AddPolicies200Response
+//
+//	@return AddPolicies200Response
 func (a *PoliciesAPIService) UpdatePoliciesCloudExecute(r ApiUpdatePoliciesCloudRequest) (*AddPolicies200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddPolicies200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddPolicies200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PoliciesAPIService.UpdatePoliciesCloud")
@@ -2111,7 +2110,7 @@ func (a *PoliciesAPIService) UpdatePoliciesCloudExecute(r ApiUpdatePoliciesCloud
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2120,8 +2119,8 @@ func (a *PoliciesAPIService) UpdatePoliciesCloudExecute(r ApiUpdatePoliciesCloud
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2131,8 +2130,8 @@ func (a *PoliciesAPIService) UpdatePoliciesCloudExecute(r ApiUpdatePoliciesCloud
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2140,8 +2139,8 @@ func (a *PoliciesAPIService) UpdatePoliciesCloudExecute(r ApiUpdatePoliciesCloud
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2150,10 +2149,10 @@ func (a *PoliciesAPIService) UpdatePoliciesCloudExecute(r ApiUpdatePoliciesCloud
 }
 
 type ApiUpdatePoliciesGroupRequest struct {
-	ctx context.Context
-	ApiService *PoliciesAPIService
-	groupId int64
-	id int64
+	ctx                        context.Context
+	ApiService                 *PoliciesAPIService
+	groupId                    int64
+	id                         int64
 	updatePoliciesGroupRequest *UpdatePoliciesGroupRequest
 }
 
@@ -2171,29 +2170,29 @@ UpdatePoliciesGroup Updates a Policy for a Group
 
 Updates a policy for a Group.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param groupId The ID of the group
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdatePoliciesGroupRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param groupId The ID of the group
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdatePoliciesGroupRequest
 */
 func (a *PoliciesAPIService) UpdatePoliciesGroup(ctx context.Context, groupId int64, id int64) ApiUpdatePoliciesGroupRequest {
 	return ApiUpdatePoliciesGroupRequest{
 		ApiService: a,
-		ctx: ctx,
-		groupId: groupId,
-		id: id,
+		ctx:        ctx,
+		groupId:    groupId,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return AddPolicies200Response
+//
+//	@return AddPolicies200Response
 func (a *PoliciesAPIService) UpdatePoliciesGroupExecute(r ApiUpdatePoliciesGroupRequest) (*AddPolicies200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddPolicies200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddPolicies200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PoliciesAPIService.UpdatePoliciesGroup")
@@ -2247,7 +2246,7 @@ func (a *PoliciesAPIService) UpdatePoliciesGroupExecute(r ApiUpdatePoliciesGroup
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2256,8 +2255,8 @@ func (a *PoliciesAPIService) UpdatePoliciesGroupExecute(r ApiUpdatePoliciesGroup
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2267,8 +2266,8 @@ func (a *PoliciesAPIService) UpdatePoliciesGroupExecute(r ApiUpdatePoliciesGroup
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2276,8 +2275,8 @@ func (a *PoliciesAPIService) UpdatePoliciesGroupExecute(r ApiUpdatePoliciesGroup
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

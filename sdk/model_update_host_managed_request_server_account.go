@@ -21,8 +21,8 @@ var _ MappedNullable = &UpdateHostManagedRequestServerAccount{}
 // UpdateHostManagedRequestServerAccount struct for UpdateHostManagedRequestServerAccount
 type UpdateHostManagedRequestServerAccount struct {
 	// Tenant to assign the server to. Only available to Master Tenant users.
-	Id *int64 `json:"id,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _UpdateHostManagedRequestServerAccount UpdateHostManagedRequestServerAccount
@@ -77,7 +77,7 @@ func (o *UpdateHostManagedRequestServerAccount) SetId(v int64) {
 }
 
 func (o UpdateHostManagedRequestServerAccount) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -96,62 +96,8 @@ func (o UpdateHostManagedRequestServerAccount) ToMap() (map[string]interface{}, 
 
 	return toSerialize, nil
 }
-
 func (o *UpdateHostManagedRequestServerAccount) UnmarshalJSON(data []byte) (err error) {
-	varUpdateHostManagedRequestServerAccount := _UpdateHostManagedRequestServerAccount{}
-
-	err = json.Unmarshal(data, &varUpdateHostManagedRequestServerAccount)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateHostManagedRequestServerAccount(varUpdateHostManagedRequestServerAccount)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateHostManagedRequestServerAccount struct {
-	value *UpdateHostManagedRequestServerAccount
-	isSet bool
-}
-
-func (v NullableUpdateHostManagedRequestServerAccount) Get() *UpdateHostManagedRequestServerAccount {
-	return v.value
-}
-
-func (v *NullableUpdateHostManagedRequestServerAccount) Set(val *UpdateHostManagedRequestServerAccount) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateHostManagedRequestServerAccount) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateHostManagedRequestServerAccount) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateHostManagedRequestServerAccount(val *UpdateHostManagedRequestServerAccount) *NullableUpdateHostManagedRequestServerAccount {
-	return &NullableUpdateHostManagedRequestServerAccount{value: val, isSet: true}
-}
-
-func (v NullableUpdateHostManagedRequestServerAccount) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateHostManagedRequestServerAccount) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the AddCredentialsRequestCredentialOneOf8Config type satisfies the MappedNullable interface at compile time
@@ -32,8 +31,8 @@ type AddCredentialsRequestCredentialOneOf8Config struct {
 	// Scope
 	Scope *string `json:"scope,omitempty"`
 	// Client Authentication Method
-	ClientAuth string `json:"clientAuth"`
-	AdditionalProperties map[string]interface{}
+	ClientAuth           string                 `json:"clientAuth"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddCredentialsRequestCredentialOneOf8Config AddCredentialsRequestCredentialOneOf8Config
@@ -227,7 +226,7 @@ func (o *AddCredentialsRequestCredentialOneOf8Config) SetClientAuth(v string) {
 }
 
 func (o AddCredentialsRequestCredentialOneOf8Config) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -255,90 +254,8 @@ func (o AddCredentialsRequestCredentialOneOf8Config) ToMap() (map[string]interfa
 
 	return toSerialize, nil
 }
-
 func (o *AddCredentialsRequestCredentialOneOf8Config) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"grantType",
-		"accessTokenUrl",
-		"clientAuth",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varAddCredentialsRequestCredentialOneOf8Config := _AddCredentialsRequestCredentialOneOf8Config{}
-
-	err = json.Unmarshal(data, &varAddCredentialsRequestCredentialOneOf8Config)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddCredentialsRequestCredentialOneOf8Config(varAddCredentialsRequestCredentialOneOf8Config)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "grantType")
-		delete(additionalProperties, "accessTokenUrl")
-		delete(additionalProperties, "clientId")
-		delete(additionalProperties, "clientSecret")
-		delete(additionalProperties, "scope")
-		delete(additionalProperties, "clientAuth")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddCredentialsRequestCredentialOneOf8Config struct {
-	value *AddCredentialsRequestCredentialOneOf8Config
-	isSet bool
-}
-
-func (v NullableAddCredentialsRequestCredentialOneOf8Config) Get() *AddCredentialsRequestCredentialOneOf8Config {
-	return v.value
-}
-
-func (v *NullableAddCredentialsRequestCredentialOneOf8Config) Set(val *AddCredentialsRequestCredentialOneOf8Config) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddCredentialsRequestCredentialOneOf8Config) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddCredentialsRequestCredentialOneOf8Config) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddCredentialsRequestCredentialOneOf8Config(val *AddCredentialsRequestCredentialOneOf8Config) *NullableAddCredentialsRequestCredentialOneOf8Config {
-	return &NullableAddCredentialsRequestCredentialOneOf8Config{value: val, isSet: true}
-}
-
-func (v NullableAddCredentialsRequestCredentialOneOf8Config) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddCredentialsRequestCredentialOneOf8Config) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

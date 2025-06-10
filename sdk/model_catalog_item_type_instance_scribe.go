@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the CatalogItemTypeInstanceScribe type satisfies the MappedNullable interface at compile time
@@ -26,24 +25,24 @@ type CatalogItemTypeInstanceScribe struct {
 	// The type of instance by code we want to fetch.
 	Type string `json:"type"`
 	// Name of the instance to be created.
-	Name string `json:"name"`
+	Name   string                                                    `json:"name"`
 	Config AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfig `json:"config"`
 	// The (optional) volumes parameter is for LV configuration, can create additional LVs at provision It should be passed as an array of
 	Volumes []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInner `json:"volumes"`
 	// Hostname of the instance to be created.  Can be the same as the instance name.
 	HostName *string `json:"hostName,omitempty"`
 	// Environment code
-	Environment *string `json:"environment,omitempty"`
-	Layout AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigLayout `json:"layout"`
-	Plan AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPlan `json:"plan"`
+	Environment *string                                                   `json:"environment,omitempty"`
+	Layout      AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigLayout `json:"layout"`
+	Plan        AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPlan   `json:"plan"`
 	// Version of the layout to create.
 	Version *string `json:"version,omitempty"`
 	// Environment Variables, an array of objects that have name and value.
-	Evars []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner `json:"evars,omitempty"`
+	Evars              []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner        `json:"evars,omitempty"`
 	ServicePlanOptions *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigServicePlanOptions `json:"servicePlanOptions,omitempty"`
 	// Key for security group configuration. It should be passed as an array of objects containing the id of the security group to assign the instance to.
 	SecurityGroups []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigSecurityGroupsInner `json:"securityGroups,omitempty"`
-	// The networkInterfaces parameter is for network configuration.  The Options API `/api/options/zoneNetworkOptions?zoneId=5&provisionTypeId=10` can be used to see which options are available. 
+	// The networkInterfaces parameter is for network configuration.  The Options API `/api/options/zoneNetworkOptions?zoneId=5&provisionTypeId=10` can be used to see which options are available.
 	NetworkInterfaces []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInner `json:"networkInterfaces,omitempty"`
 	// Array of strings (keywords).
 	Labels []string `json:"labels,omitempty"`
@@ -51,13 +50,13 @@ type CatalogItemTypeInstanceScribe struct {
 	Tags []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner `json:"tags,omitempty"`
 	// Alias for `tags`.
 	Metadata []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner `json:"metadata,omitempty"`
-	// The ports parameter is for port configuration.  The layout may have default ports, which are defined in node types, that are always configured. This parameter will be for additional custom ports to be opened. 
+	// The ports parameter is for port configuration.  The layout may have default ports, which are defined in node types, that are always configured. This parameter will be for additional custom ports to be opened.
 	Ports []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPortsInner `json:"ports,omitempty"`
 	// The Workflow ID to execute.
 	TaskSetId *int64 `json:"taskSetId,omitempty"`
 	// The Workflow Name to execute.
-	TaskSetName *string `json:"taskSetName,omitempty"`
-	AdditionalProperties map[string]interface{}
+	TaskSetName          *string                `json:"taskSetName,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _CatalogItemTypeInstanceScribe CatalogItemTypeInstanceScribe
@@ -696,7 +695,7 @@ func (o *CatalogItemTypeInstanceScribe) SetTaskSetName(v string) {
 }
 
 func (o CatalogItemTypeInstanceScribe) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -759,110 +758,8 @@ func (o CatalogItemTypeInstanceScribe) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *CatalogItemTypeInstanceScribe) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"group",
-		"cloud",
-		"type",
-		"name",
-		"config",
-		"volumes",
-		"layout",
-		"plan",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varCatalogItemTypeInstanceScribe := _CatalogItemTypeInstanceScribe{}
-
-	err = json.Unmarshal(data, &varCatalogItemTypeInstanceScribe)
-
-	if err != nil {
-		return err
-	}
-
-	*o = CatalogItemTypeInstanceScribe(varCatalogItemTypeInstanceScribe)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "group")
-		delete(additionalProperties, "cloud")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "volumes")
-		delete(additionalProperties, "hostName")
-		delete(additionalProperties, "environment")
-		delete(additionalProperties, "layout")
-		delete(additionalProperties, "plan")
-		delete(additionalProperties, "version")
-		delete(additionalProperties, "evars")
-		delete(additionalProperties, "servicePlanOptions")
-		delete(additionalProperties, "securityGroups")
-		delete(additionalProperties, "networkInterfaces")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "metadata")
-		delete(additionalProperties, "ports")
-		delete(additionalProperties, "taskSetId")
-		delete(additionalProperties, "taskSetName")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableCatalogItemTypeInstanceScribe struct {
-	value *CatalogItemTypeInstanceScribe
-	isSet bool
-}
-
-func (v NullableCatalogItemTypeInstanceScribe) Get() *CatalogItemTypeInstanceScribe {
-	return v.value
-}
-
-func (v *NullableCatalogItemTypeInstanceScribe) Set(val *CatalogItemTypeInstanceScribe) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableCatalogItemTypeInstanceScribe) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableCatalogItemTypeInstanceScribe) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableCatalogItemTypeInstanceScribe(val *CatalogItemTypeInstanceScribe) *NullableCatalogItemTypeInstanceScribe {
-	return &NullableCatalogItemTypeInstanceScribe{value: val, isSet: true}
-}
-
-func (v NullableCatalogItemTypeInstanceScribe) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableCatalogItemTypeInstanceScribe) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

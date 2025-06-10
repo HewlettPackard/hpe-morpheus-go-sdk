@@ -20,31 +20,31 @@ var _ MappedNullable = &ListWhitelabelSettings200ResponseWhitelabelSettings{}
 
 // ListWhitelabelSettings200ResponseWhitelabelSettings struct for ListWhitelabelSettings200ResponseWhitelabelSettings
 type ListWhitelabelSettings200ResponseWhitelabelSettings struct {
-	Enabled *bool `json:"enabled,omitempty"`
-	ApplianceName *string `json:"applianceName,omitempty"`
-	DisableSupportMenu *bool `json:"disableSupportMenu,omitempty"`
-	HeaderLogo *string `json:"headerLogo,omitempty"`
-	FooterLogo *string `json:"footerLogo,omitempty"`
-	LoginLogo *string `json:"loginLogo,omitempty"`
-	Favicon *string `json:"favicon,omitempty"`
-	HeaderBgColor *string `json:"headerBgColor,omitempty"`
-	HeaderFgColor *string `json:"headerFgColor,omitempty"`
-	NavBgColor *string `json:"navBgColor,omitempty"`
-	NavFgColor *string `json:"navFgColor,omitempty"`
-	NavHoverColor *string `json:"navHoverColor,omitempty"`
-	PrimaryButtonBgColor *string `json:"primaryButtonBgColor,omitempty"`
-	PrimaryButtonFgColor *string `json:"primaryButtonFgColor,omitempty"`
-	PrimaryButtonHoverBgColor *string `json:"primaryButtonHoverBgColor,omitempty"`
-	PrimaryButtonHoverFgColor *string `json:"primaryButtonHoverFgColor,omitempty"`
-	FooterBgColor *string `json:"footerBgColor,omitempty"`
-	FooterFgColor *string `json:"footerFgColor,omitempty"`
-	LoginBgColor *string `json:"loginBgColor,omitempty"`
-	OverrideCss *string `json:"overrideCss,omitempty"`
-	CopyrightString *string `json:"copyrightString,omitempty"`
-	TermsOfUse *string `json:"termsOfUse,omitempty"`
-	PrivacyPolicy *string `json:"privacyPolicy,omitempty"`
-	SupportMenuLinks []ListWhitelabelSettings200ResponseWhitelabelSettingsSupportMenuLinksInner `json:"supportMenuLinks,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Enabled                   *bool                                                                      `json:"enabled,omitempty"`
+	ApplianceName             *string                                                                    `json:"applianceName,omitempty"`
+	DisableSupportMenu        *bool                                                                      `json:"disableSupportMenu,omitempty"`
+	HeaderLogo                *string                                                                    `json:"headerLogo,omitempty"`
+	FooterLogo                *string                                                                    `json:"footerLogo,omitempty"`
+	LoginLogo                 *string                                                                    `json:"loginLogo,omitempty"`
+	Favicon                   *string                                                                    `json:"favicon,omitempty"`
+	HeaderBgColor             *string                                                                    `json:"headerBgColor,omitempty"`
+	HeaderFgColor             *string                                                                    `json:"headerFgColor,omitempty"`
+	NavBgColor                *string                                                                    `json:"navBgColor,omitempty"`
+	NavFgColor                *string                                                                    `json:"navFgColor,omitempty"`
+	NavHoverColor             *string                                                                    `json:"navHoverColor,omitempty"`
+	PrimaryButtonBgColor      *string                                                                    `json:"primaryButtonBgColor,omitempty"`
+	PrimaryButtonFgColor      *string                                                                    `json:"primaryButtonFgColor,omitempty"`
+	PrimaryButtonHoverBgColor *string                                                                    `json:"primaryButtonHoverBgColor,omitempty"`
+	PrimaryButtonHoverFgColor *string                                                                    `json:"primaryButtonHoverFgColor,omitempty"`
+	FooterBgColor             *string                                                                    `json:"footerBgColor,omitempty"`
+	FooterFgColor             *string                                                                    `json:"footerFgColor,omitempty"`
+	LoginBgColor              *string                                                                    `json:"loginBgColor,omitempty"`
+	OverrideCss               *string                                                                    `json:"overrideCss,omitempty"`
+	CopyrightString           *string                                                                    `json:"copyrightString,omitempty"`
+	TermsOfUse                *string                                                                    `json:"termsOfUse,omitempty"`
+	PrivacyPolicy             *string                                                                    `json:"privacyPolicy,omitempty"`
+	SupportMenuLinks          []ListWhitelabelSettings200ResponseWhitelabelSettingsSupportMenuLinksInner `json:"supportMenuLinks,omitempty"`
+	AdditionalProperties      map[string]interface{}                                                     `json:",remain"`
 }
 
 type _ListWhitelabelSettings200ResponseWhitelabelSettings ListWhitelabelSettings200ResponseWhitelabelSettings
@@ -835,7 +835,7 @@ func (o *ListWhitelabelSettings200ResponseWhitelabelSettings) SetSupportMenuLink
 }
 
 func (o ListWhitelabelSettings200ResponseWhitelabelSettings) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -923,85 +923,8 @@ func (o ListWhitelabelSettings200ResponseWhitelabelSettings) ToMap() (map[string
 
 	return toSerialize, nil
 }
-
 func (o *ListWhitelabelSettings200ResponseWhitelabelSettings) UnmarshalJSON(data []byte) (err error) {
-	varListWhitelabelSettings200ResponseWhitelabelSettings := _ListWhitelabelSettings200ResponseWhitelabelSettings{}
-
-	err = json.Unmarshal(data, &varListWhitelabelSettings200ResponseWhitelabelSettings)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListWhitelabelSettings200ResponseWhitelabelSettings(varListWhitelabelSettings200ResponseWhitelabelSettings)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "applianceName")
-		delete(additionalProperties, "disableSupportMenu")
-		delete(additionalProperties, "headerLogo")
-		delete(additionalProperties, "footerLogo")
-		delete(additionalProperties, "loginLogo")
-		delete(additionalProperties, "favicon")
-		delete(additionalProperties, "headerBgColor")
-		delete(additionalProperties, "headerFgColor")
-		delete(additionalProperties, "navBgColor")
-		delete(additionalProperties, "navFgColor")
-		delete(additionalProperties, "navHoverColor")
-		delete(additionalProperties, "primaryButtonBgColor")
-		delete(additionalProperties, "primaryButtonFgColor")
-		delete(additionalProperties, "primaryButtonHoverBgColor")
-		delete(additionalProperties, "primaryButtonHoverFgColor")
-		delete(additionalProperties, "footerBgColor")
-		delete(additionalProperties, "footerFgColor")
-		delete(additionalProperties, "loginBgColor")
-		delete(additionalProperties, "overrideCss")
-		delete(additionalProperties, "copyrightString")
-		delete(additionalProperties, "termsOfUse")
-		delete(additionalProperties, "privacyPolicy")
-		delete(additionalProperties, "supportMenuLinks")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListWhitelabelSettings200ResponseWhitelabelSettings struct {
-	value *ListWhitelabelSettings200ResponseWhitelabelSettings
-	isSet bool
-}
-
-func (v NullableListWhitelabelSettings200ResponseWhitelabelSettings) Get() *ListWhitelabelSettings200ResponseWhitelabelSettings {
-	return v.value
-}
-
-func (v *NullableListWhitelabelSettings200ResponseWhitelabelSettings) Set(val *ListWhitelabelSettings200ResponseWhitelabelSettings) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListWhitelabelSettings200ResponseWhitelabelSettings) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListWhitelabelSettings200ResponseWhitelabelSettings) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListWhitelabelSettings200ResponseWhitelabelSettings(val *ListWhitelabelSettings200ResponseWhitelabelSettings) *NullableListWhitelabelSettings200ResponseWhitelabelSettings {
-	return &NullableListWhitelabelSettings200ResponseWhitelabelSettings{value: val, isSet: true}
-}
-
-func (v NullableListWhitelabelSettings200ResponseWhitelabelSettings) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListWhitelabelSettings200ResponseWhitelabelSettings) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

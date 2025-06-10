@@ -23,11 +23,11 @@ type SpecTemplateUpdate struct {
 	// Spec template name
 	Name *string `json:"name,omitempty"`
 	// Array of label strings, can be used for filtering.
-	Labels []string `json:"labels,omitempty"`
-	Type *UpdateSpecTemplateRequestSpecTemplateType `json:"type,omitempty"`
-	File *UpdateSpecTemplateRequestSpecTemplateFile `json:"file,omitempty"`
-	Config *UpdateSpecTemplateRequestSpecTemplateConfig `json:"config,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Labels               []string                                     `json:"labels,omitempty"`
+	Type                 *UpdateSpecTemplateRequestSpecTemplateType   `json:"type,omitempty"`
+	File                 *UpdateSpecTemplateRequestSpecTemplateFile   `json:"file,omitempty"`
+	Config               *UpdateSpecTemplateRequestSpecTemplateConfig `json:"config,omitempty"`
+	AdditionalProperties map[string]interface{}                       `json:",remain"`
 }
 
 type _SpecTemplateUpdate SpecTemplateUpdate
@@ -210,7 +210,7 @@ func (o *SpecTemplateUpdate) SetConfig(v UpdateSpecTemplateRequestSpecTemplateCo
 }
 
 func (o SpecTemplateUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -241,66 +241,8 @@ func (o SpecTemplateUpdate) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *SpecTemplateUpdate) UnmarshalJSON(data []byte) (err error) {
-	varSpecTemplateUpdate := _SpecTemplateUpdate{}
-
-	err = json.Unmarshal(data, &varSpecTemplateUpdate)
-
-	if err != nil {
-		return err
-	}
-
-	*o = SpecTemplateUpdate(varSpecTemplateUpdate)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "file")
-		delete(additionalProperties, "config")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableSpecTemplateUpdate struct {
-	value *SpecTemplateUpdate
-	isSet bool
-}
-
-func (v NullableSpecTemplateUpdate) Get() *SpecTemplateUpdate {
-	return v.value
-}
-
-func (v *NullableSpecTemplateUpdate) Set(val *SpecTemplateUpdate) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSpecTemplateUpdate) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSpecTemplateUpdate) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSpecTemplateUpdate(val *SpecTemplateUpdate) *NullableSpecTemplateUpdate {
-	return &NullableSpecTemplateUpdate{value: val, isSet: true}
-}
-
-func (v NullableSpecTemplateUpdate) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSpecTemplateUpdate) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

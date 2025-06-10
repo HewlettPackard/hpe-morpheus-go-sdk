@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the NetworkStaticRouteCreate type satisfies the MappedNullable interface at compile time
@@ -24,8 +23,8 @@ type NetworkStaticRouteCreate struct {
 	// Source CIDR
 	Source string `json:"source"`
 	// Destination address
-	Destination string `json:"destination"`
-	AdditionalProperties map[string]interface{}
+	Destination          string                 `json:"destination"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _NetworkStaticRouteCreate NetworkStaticRouteCreate
@@ -98,7 +97,7 @@ func (o *NetworkStaticRouteCreate) SetDestination(v string) {
 }
 
 func (o NetworkStaticRouteCreate) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -116,85 +115,8 @@ func (o NetworkStaticRouteCreate) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *NetworkStaticRouteCreate) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"source",
-		"destination",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varNetworkStaticRouteCreate := _NetworkStaticRouteCreate{}
-
-	err = json.Unmarshal(data, &varNetworkStaticRouteCreate)
-
-	if err != nil {
-		return err
-	}
-
-	*o = NetworkStaticRouteCreate(varNetworkStaticRouteCreate)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "source")
-		delete(additionalProperties, "destination")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableNetworkStaticRouteCreate struct {
-	value *NetworkStaticRouteCreate
-	isSet bool
-}
-
-func (v NullableNetworkStaticRouteCreate) Get() *NetworkStaticRouteCreate {
-	return v.value
-}
-
-func (v *NullableNetworkStaticRouteCreate) Set(val *NetworkStaticRouteCreate) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableNetworkStaticRouteCreate) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableNetworkStaticRouteCreate) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableNetworkStaticRouteCreate(val *NetworkStaticRouteCreate) *NullableNetworkStaticRouteCreate {
-	return &NullableNetworkStaticRouteCreate{value: val, isSet: true}
-}
-
-func (v NullableNetworkStaticRouteCreate) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableNetworkStaticRouteCreate) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

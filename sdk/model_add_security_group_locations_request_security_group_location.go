@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the AddSecurityGroupLocationsRequestSecurityGroupLocation type satisfies the MappedNullable interface at compile time
@@ -22,9 +21,9 @@ var _ MappedNullable = &AddSecurityGroupLocationsRequestSecurityGroupLocation{}
 // AddSecurityGroupLocationsRequestSecurityGroupLocation struct for AddSecurityGroupLocationsRequestSecurityGroupLocation
 type AddSecurityGroupLocationsRequestSecurityGroupLocation struct {
 	// The ID of the Zone (Cloud)
-	ZoneId int64 `json:"zoneId"`
-	CustomOptions AddSecurityGroupsRequestSecurityGroupCustomOptions `json:"customOptions"`
-	AdditionalProperties map[string]interface{}
+	ZoneId               int64                                              `json:"zoneId"`
+	CustomOptions        AddSecurityGroupsRequestSecurityGroupCustomOptions `json:"customOptions"`
+	AdditionalProperties map[string]interface{}                             `json:",remain"`
 }
 
 type _AddSecurityGroupLocationsRequestSecurityGroupLocation AddSecurityGroupLocationsRequestSecurityGroupLocation
@@ -97,7 +96,7 @@ func (o *AddSecurityGroupLocationsRequestSecurityGroupLocation) SetCustomOptions
 }
 
 func (o AddSecurityGroupLocationsRequestSecurityGroupLocation) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -115,85 +114,8 @@ func (o AddSecurityGroupLocationsRequestSecurityGroupLocation) ToMap() (map[stri
 
 	return toSerialize, nil
 }
-
 func (o *AddSecurityGroupLocationsRequestSecurityGroupLocation) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"zoneId",
-		"customOptions",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varAddSecurityGroupLocationsRequestSecurityGroupLocation := _AddSecurityGroupLocationsRequestSecurityGroupLocation{}
-
-	err = json.Unmarshal(data, &varAddSecurityGroupLocationsRequestSecurityGroupLocation)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddSecurityGroupLocationsRequestSecurityGroupLocation(varAddSecurityGroupLocationsRequestSecurityGroupLocation)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "zoneId")
-		delete(additionalProperties, "customOptions")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddSecurityGroupLocationsRequestSecurityGroupLocation struct {
-	value *AddSecurityGroupLocationsRequestSecurityGroupLocation
-	isSet bool
-}
-
-func (v NullableAddSecurityGroupLocationsRequestSecurityGroupLocation) Get() *AddSecurityGroupLocationsRequestSecurityGroupLocation {
-	return v.value
-}
-
-func (v *NullableAddSecurityGroupLocationsRequestSecurityGroupLocation) Set(val *AddSecurityGroupLocationsRequestSecurityGroupLocation) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddSecurityGroupLocationsRequestSecurityGroupLocation) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddSecurityGroupLocationsRequestSecurityGroupLocation) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddSecurityGroupLocationsRequestSecurityGroupLocation(val *AddSecurityGroupLocationsRequestSecurityGroupLocation) *NullableAddSecurityGroupLocationsRequestSecurityGroupLocation {
-	return &NullableAddSecurityGroupLocationsRequestSecurityGroupLocation{value: val, isSet: true}
-}
-
-func (v NullableAddSecurityGroupLocationsRequestSecurityGroupLocation) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddSecurityGroupLocationsRequestSecurityGroupLocation) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

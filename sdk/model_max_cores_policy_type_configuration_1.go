@@ -18,11 +18,11 @@ import (
 // checks if the MaxCoresPolicyTypeConfiguration1 type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &MaxCoresPolicyTypeConfiguration1{}
 
-// MaxCoresPolicyTypeConfiguration1 Configuration settings for the following policy types: - Max Cores 
+// MaxCoresPolicyTypeConfiguration1 Configuration settings for the following policy types: - Max Cores
 type MaxCoresPolicyTypeConfiguration1 struct {
-	MaxCores *string `json:"maxCores,omitempty"`
-	ExcludeContainers *bool `json:"excludeContainers,omitempty"`
-	AdditionalProperties map[string]interface{}
+	MaxCores             *string                `json:"maxCores,omitempty"`
+	ExcludeContainers    *bool                  `json:"excludeContainers,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _MaxCoresPolicyTypeConfiguration1 MaxCoresPolicyTypeConfiguration1
@@ -109,7 +109,7 @@ func (o *MaxCoresPolicyTypeConfiguration1) SetExcludeContainers(v bool) {
 }
 
 func (o MaxCoresPolicyTypeConfiguration1) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -131,63 +131,8 @@ func (o MaxCoresPolicyTypeConfiguration1) ToMap() (map[string]interface{}, error
 
 	return toSerialize, nil
 }
-
 func (o *MaxCoresPolicyTypeConfiguration1) UnmarshalJSON(data []byte) (err error) {
-	varMaxCoresPolicyTypeConfiguration1 := _MaxCoresPolicyTypeConfiguration1{}
-
-	err = json.Unmarshal(data, &varMaxCoresPolicyTypeConfiguration1)
-
-	if err != nil {
-		return err
-	}
-
-	*o = MaxCoresPolicyTypeConfiguration1(varMaxCoresPolicyTypeConfiguration1)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "maxCores")
-		delete(additionalProperties, "excludeContainers")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableMaxCoresPolicyTypeConfiguration1 struct {
-	value *MaxCoresPolicyTypeConfiguration1
-	isSet bool
-}
-
-func (v NullableMaxCoresPolicyTypeConfiguration1) Get() *MaxCoresPolicyTypeConfiguration1 {
-	return v.value
-}
-
-func (v *NullableMaxCoresPolicyTypeConfiguration1) Set(val *MaxCoresPolicyTypeConfiguration1) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableMaxCoresPolicyTypeConfiguration1) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableMaxCoresPolicyTypeConfiguration1) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableMaxCoresPolicyTypeConfiguration1(val *MaxCoresPolicyTypeConfiguration1) *NullableMaxCoresPolicyTypeConfiguration1 {
-	return &NullableMaxCoresPolicyTypeConfiguration1{value: val, isSet: true}
-}
-
-func (v NullableMaxCoresPolicyTypeConfiguration1) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableMaxCoresPolicyTypeConfiguration1) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -20,9 +20,9 @@ var _ MappedNullable = &SetAppSecurityGroups200Response{}
 
 // SetAppSecurityGroups200Response struct for SetAppSecurityGroups200Response
 type SetAppSecurityGroups200Response struct {
-	SecurityGroups []GetAppSecurityGroups200ResponseAllOfSecurityGroupsInner `json:"securityGroups,omitempty"`
-	Success *bool `json:"success,omitempty"`
-	AdditionalProperties map[string]interface{}
+	SecurityGroups       []GetAppSecurityGroups200ResponseAllOfSecurityGroupsInner `json:"securityGroups,omitempty"`
+	Success              *bool                                                     `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{}                                    `json:",remain"`
 }
 
 type _SetAppSecurityGroups200Response SetAppSecurityGroups200Response
@@ -109,7 +109,7 @@ func (o *SetAppSecurityGroups200Response) SetSuccess(v bool) {
 }
 
 func (o SetAppSecurityGroups200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -131,63 +131,8 @@ func (o SetAppSecurityGroups200Response) ToMap() (map[string]interface{}, error)
 
 	return toSerialize, nil
 }
-
 func (o *SetAppSecurityGroups200Response) UnmarshalJSON(data []byte) (err error) {
-	varSetAppSecurityGroups200Response := _SetAppSecurityGroups200Response{}
-
-	err = json.Unmarshal(data, &varSetAppSecurityGroups200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = SetAppSecurityGroups200Response(varSetAppSecurityGroups200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "securityGroups")
-		delete(additionalProperties, "success")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableSetAppSecurityGroups200Response struct {
-	value *SetAppSecurityGroups200Response
-	isSet bool
-}
-
-func (v NullableSetAppSecurityGroups200Response) Get() *SetAppSecurityGroups200Response {
-	return v.value
-}
-
-func (v *NullableSetAppSecurityGroups200Response) Set(val *SetAppSecurityGroups200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSetAppSecurityGroups200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSetAppSecurityGroups200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSetAppSecurityGroups200Response(val *SetAppSecurityGroups200Response) *NullableSetAppSecurityGroups200Response {
-	return &NullableSetAppSecurityGroups200Response{value: val, isSet: true}
-}
-
-func (v NullableSetAppSecurityGroups200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSetAppSecurityGroups200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

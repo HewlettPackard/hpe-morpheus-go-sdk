@@ -20,10 +20,10 @@ var _ MappedNullable = &ListCloudDatastores200ResponseAllOfDatastoresInnerResour
 
 // ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner struct for ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner
 type ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Default *bool `json:"default,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	Default              *bool                  `json:"default,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner
@@ -142,7 +142,7 @@ func (o *ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSit
 }
 
 func (o ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -167,64 +167,8 @@ func (o ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSite
 
 	return toSerialize, nil
 }
-
 func (o *ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner) UnmarshalJSON(data []byte) (err error) {
-	varListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner := _ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner{}
-
-	err = json.Unmarshal(data, &varListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner(varListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "default")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner struct {
-	value *ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner
-	isSet bool
-}
-
-func (v NullableListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner) Get() *ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner {
-	return v.value
-}
-
-func (v *NullableListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner) Set(val *ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner(val *ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner) *NullableListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner {
-	return &NullableListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner{value: val, isSet: true}
-}
-
-func (v NullableListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

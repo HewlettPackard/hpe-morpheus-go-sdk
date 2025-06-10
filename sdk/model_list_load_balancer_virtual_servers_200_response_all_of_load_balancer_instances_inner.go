@@ -21,48 +21,48 @@ var _ MappedNullable = &ListLoadBalancerVirtualServers200ResponseAllOfLoadBalanc
 
 // ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner struct for ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner
 type ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner struct {
-	Id *int64 `json:"id,omitempty"`
-	LoadBalancer *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerLoadBalancer `json:"loadBalancer,omitempty"`
-	Instance *string `json:"instance,omitempty"`
-	Description *string `json:"description,omitempty"`
-	InternalId *string `json:"internalId,omitempty"`
-	ExternalId *string `json:"externalId,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	Active *bool `json:"active,omitempty"`
-	Sticky *bool `json:"sticky,omitempty"`
-	SslEnabled *string `json:"sslEnabled,omitempty"`
-	ExternalAddress *bool `json:"externalAddress,omitempty"`
-	BackendPort *string `json:"backendPort,omitempty"`
-	VipType *string `json:"vipType,omitempty"`
-	VipAddress *string `json:"vipAddress,omitempty"`
-	VipHostname *string `json:"vipHostname,omitempty"`
-	VipProtocol *string `json:"vipProtocol,omitempty"`
-	VipScheme *string `json:"vipScheme,omitempty"`
-	VipMode *string `json:"vipMode,omitempty"`
-	VipName *string `json:"vipName,omitempty"`
-	VipPort *int64 `json:"vipPort,omitempty"`
-	VipSticky *string `json:"vipSticky,omitempty"`
-	VipBalance *string `json:"vipBalance,omitempty"`
-	ServicePort *string `json:"servicePort,omitempty"`
-	SourceAddress *string `json:"sourceAddress,omitempty"`
-	SslCert *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"sslCert,omitempty"`
-	SslMode *string `json:"sslMode,omitempty"`
-	SslRedirectMode *string `json:"sslRedirectMode,omitempty"`
-	VipShared *bool `json:"vipShared,omitempty"`
-	VipDirectAddress *string `json:"vipDirectAddress,omitempty"`
-	ServerName *string `json:"serverName,omitempty"`
-	PoolName *string `json:"poolName,omitempty"`
-	Removing *bool `json:"removing,omitempty"`
-	VipSource *string `json:"vipSource,omitempty"`
-	ExtraConfig *string `json:"extraConfig,omitempty"`
-	ServiceAccess *string `json:"serviceAccess,omitempty"`
-	NetworkId *string `json:"networkId,omitempty"`
-	SubnetId *string `json:"subnetId,omitempty"`
-	ExternalPortId *string `json:"externalPortId,omitempty"`
-	Status *string `json:"status,omitempty"`
-	VipStatus *string `json:"vipStatus,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                                         `json:"id,omitempty"`
+	LoadBalancer         *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerLoadBalancer `json:"loadBalancer,omitempty"`
+	Instance             *string                                                                        `json:"instance,omitempty"`
+	Description          *string                                                                        `json:"description,omitempty"`
+	InternalId           *string                                                                        `json:"internalId,omitempty"`
+	ExternalId           *string                                                                        `json:"externalId,omitempty"`
+	DateCreated          *time.Time                                                                     `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                                                     `json:"lastUpdated,omitempty"`
+	Active               *bool                                                                          `json:"active,omitempty"`
+	Sticky               *bool                                                                          `json:"sticky,omitempty"`
+	SslEnabled           *string                                                                        `json:"sslEnabled,omitempty"`
+	ExternalAddress      *bool                                                                          `json:"externalAddress,omitempty"`
+	BackendPort          *string                                                                        `json:"backendPort,omitempty"`
+	VipType              *string                                                                        `json:"vipType,omitempty"`
+	VipAddress           *string                                                                        `json:"vipAddress,omitempty"`
+	VipHostname          *string                                                                        `json:"vipHostname,omitempty"`
+	VipProtocol          *string                                                                        `json:"vipProtocol,omitempty"`
+	VipScheme            *string                                                                        `json:"vipScheme,omitempty"`
+	VipMode              *string                                                                        `json:"vipMode,omitempty"`
+	VipName              *string                                                                        `json:"vipName,omitempty"`
+	VipPort              *int64                                                                         `json:"vipPort,omitempty"`
+	VipSticky            *string                                                                        `json:"vipSticky,omitempty"`
+	VipBalance           *string                                                                        `json:"vipBalance,omitempty"`
+	ServicePort          *string                                                                        `json:"servicePort,omitempty"`
+	SourceAddress        *string                                                                        `json:"sourceAddress,omitempty"`
+	SslCert              *GetAlerts200ResponseAllOfCheckGroupsInnerInstance                             `json:"sslCert,omitempty"`
+	SslMode              *string                                                                        `json:"sslMode,omitempty"`
+	SslRedirectMode      *string                                                                        `json:"sslRedirectMode,omitempty"`
+	VipShared            *bool                                                                          `json:"vipShared,omitempty"`
+	VipDirectAddress     *string                                                                        `json:"vipDirectAddress,omitempty"`
+	ServerName           *string                                                                        `json:"serverName,omitempty"`
+	PoolName             *string                                                                        `json:"poolName,omitempty"`
+	Removing             *bool                                                                          `json:"removing,omitempty"`
+	VipSource            *string                                                                        `json:"vipSource,omitempty"`
+	ExtraConfig          *string                                                                        `json:"extraConfig,omitempty"`
+	ServiceAccess        *string                                                                        `json:"serviceAccess,omitempty"`
+	NetworkId            *string                                                                        `json:"networkId,omitempty"`
+	SubnetId             *string                                                                        `json:"subnetId,omitempty"`
+	ExternalPortId       *string                                                                        `json:"externalPortId,omitempty"`
+	Status               *string                                                                        `json:"status,omitempty"`
+	VipStatus            *string                                                                        `json:"vipStatus,omitempty"`
+	AdditionalProperties map[string]interface{}                                                         `json:",remain"`
 }
 
 type _ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner
@@ -1397,7 +1397,7 @@ func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInne
 }
 
 func (o ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1536,102 +1536,8 @@ func (o ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner
 
 	return toSerialize, nil
 }
-
 func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) UnmarshalJSON(data []byte) (err error) {
-	varListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner := _ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner{}
-
-	err = json.Unmarshal(data, &varListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner(varListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "loadBalancer")
-		delete(additionalProperties, "instance")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "internalId")
-		delete(additionalProperties, "externalId")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		delete(additionalProperties, "active")
-		delete(additionalProperties, "sticky")
-		delete(additionalProperties, "sslEnabled")
-		delete(additionalProperties, "externalAddress")
-		delete(additionalProperties, "backendPort")
-		delete(additionalProperties, "vipType")
-		delete(additionalProperties, "vipAddress")
-		delete(additionalProperties, "vipHostname")
-		delete(additionalProperties, "vipProtocol")
-		delete(additionalProperties, "vipScheme")
-		delete(additionalProperties, "vipMode")
-		delete(additionalProperties, "vipName")
-		delete(additionalProperties, "vipPort")
-		delete(additionalProperties, "vipSticky")
-		delete(additionalProperties, "vipBalance")
-		delete(additionalProperties, "servicePort")
-		delete(additionalProperties, "sourceAddress")
-		delete(additionalProperties, "sslCert")
-		delete(additionalProperties, "sslMode")
-		delete(additionalProperties, "sslRedirectMode")
-		delete(additionalProperties, "vipShared")
-		delete(additionalProperties, "vipDirectAddress")
-		delete(additionalProperties, "serverName")
-		delete(additionalProperties, "poolName")
-		delete(additionalProperties, "removing")
-		delete(additionalProperties, "vipSource")
-		delete(additionalProperties, "extraConfig")
-		delete(additionalProperties, "serviceAccess")
-		delete(additionalProperties, "networkId")
-		delete(additionalProperties, "subnetId")
-		delete(additionalProperties, "externalPortId")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "vipStatus")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner struct {
-	value *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner
-	isSet bool
-}
-
-func (v NullableListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) Get() *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner {
-	return v.value
-}
-
-func (v *NullableListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) Set(val *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner(val *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) *NullableListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner {
-	return &NullableListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner{value: val, isSet: true}
-}
-
-func (v NullableListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

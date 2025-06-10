@@ -21,26 +21,26 @@ var _ MappedNullable = &ScaleThreshold{}
 
 // ScaleThreshold struct for ScaleThreshold
 type ScaleThreshold struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Type *string `json:"type,omitempty"`
-	AutoUp *bool `json:"autoUp,omitempty"`
-	AutoDown *bool `json:"autoDown,omitempty"`
-	MinCount *int64 `json:"minCount,omitempty"`
-	MaxCount *int64 `json:"maxCount,omitempty"`
-	ScaleIncrement *int64 `json:"scaleIncrement,omitempty"`
-	CpuEnabled *bool `json:"cpuEnabled,omitempty"`
-	MinCpu *int64 `json:"minCpu,omitempty"`
-	MaxCpu *int64 `json:"maxCpu,omitempty"`
-	MemoryEnabled *bool `json:"memoryEnabled,omitempty"`
-	MinMemory *int64 `json:"minMemory,omitempty"`
-	MaxMemory *int64 `json:"maxMemory,omitempty"`
-	DiskEnabled *bool `json:"diskEnabled,omitempty"`
-	MinDisk *int64 `json:"minDisk,omitempty"`
-	MaxDisk *int64 `json:"maxDisk,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	Type                 *string                `json:"type,omitempty"`
+	AutoUp               *bool                  `json:"autoUp,omitempty"`
+	AutoDown             *bool                  `json:"autoDown,omitempty"`
+	MinCount             *int64                 `json:"minCount,omitempty"`
+	MaxCount             *int64                 `json:"maxCount,omitempty"`
+	ScaleIncrement       *int64                 `json:"scaleIncrement,omitempty"`
+	CpuEnabled           *bool                  `json:"cpuEnabled,omitempty"`
+	MinCpu               *int64                 `json:"minCpu,omitempty"`
+	MaxCpu               *int64                 `json:"maxCpu,omitempty"`
+	MemoryEnabled        *bool                  `json:"memoryEnabled,omitempty"`
+	MinMemory            *int64                 `json:"minMemory,omitempty"`
+	MaxMemory            *int64                 `json:"maxMemory,omitempty"`
+	DiskEnabled          *bool                  `json:"diskEnabled,omitempty"`
+	MinDisk              *int64                 `json:"minDisk,omitempty"`
+	MaxDisk              *int64                 `json:"maxDisk,omitempty"`
+	DateCreated          *time.Time             `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time             `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ScaleThreshold ScaleThreshold
@@ -671,7 +671,7 @@ func (o *ScaleThreshold) SetLastUpdated(v time.Time) {
 }
 
 func (o ScaleThreshold) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -744,80 +744,8 @@ func (o ScaleThreshold) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *ScaleThreshold) UnmarshalJSON(data []byte) (err error) {
-	varScaleThreshold := _ScaleThreshold{}
-
-	err = json.Unmarshal(data, &varScaleThreshold)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ScaleThreshold(varScaleThreshold)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "autoUp")
-		delete(additionalProperties, "autoDown")
-		delete(additionalProperties, "minCount")
-		delete(additionalProperties, "maxCount")
-		delete(additionalProperties, "scaleIncrement")
-		delete(additionalProperties, "cpuEnabled")
-		delete(additionalProperties, "minCpu")
-		delete(additionalProperties, "maxCpu")
-		delete(additionalProperties, "memoryEnabled")
-		delete(additionalProperties, "minMemory")
-		delete(additionalProperties, "maxMemory")
-		delete(additionalProperties, "diskEnabled")
-		delete(additionalProperties, "minDisk")
-		delete(additionalProperties, "maxDisk")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableScaleThreshold struct {
-	value *ScaleThreshold
-	isSet bool
-}
-
-func (v NullableScaleThreshold) Get() *ScaleThreshold {
-	return v.value
-}
-
-func (v *NullableScaleThreshold) Set(val *ScaleThreshold) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableScaleThreshold) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableScaleThreshold) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableScaleThreshold(val *ScaleThreshold) *NullableScaleThreshold {
-	return &NullableScaleThreshold{value: val, isSet: true}
-}
-
-func (v NullableScaleThreshold) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableScaleThreshold) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

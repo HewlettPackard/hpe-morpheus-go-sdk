@@ -20,9 +20,9 @@ var _ MappedNullable = &UpdateHostCloudRequestServersInner{}
 
 // UpdateHostCloudRequestServersInner struct for UpdateHostCloudRequestServersInner
 type UpdateHostCloudRequestServersInner struct {
-	Source *int64 `json:"source,omitempty"`
-	Target *int64 `json:"target,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Source               *int64                 `json:"source,omitempty"`
+	Target               *int64                 `json:"target,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _UpdateHostCloudRequestServersInner UpdateHostCloudRequestServersInner
@@ -109,7 +109,7 @@ func (o *UpdateHostCloudRequestServersInner) SetTarget(v int64) {
 }
 
 func (o UpdateHostCloudRequestServersInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -131,63 +131,8 @@ func (o UpdateHostCloudRequestServersInner) ToMap() (map[string]interface{}, err
 
 	return toSerialize, nil
 }
-
 func (o *UpdateHostCloudRequestServersInner) UnmarshalJSON(data []byte) (err error) {
-	varUpdateHostCloudRequestServersInner := _UpdateHostCloudRequestServersInner{}
-
-	err = json.Unmarshal(data, &varUpdateHostCloudRequestServersInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateHostCloudRequestServersInner(varUpdateHostCloudRequestServersInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "source")
-		delete(additionalProperties, "target")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateHostCloudRequestServersInner struct {
-	value *UpdateHostCloudRequestServersInner
-	isSet bool
-}
-
-func (v NullableUpdateHostCloudRequestServersInner) Get() *UpdateHostCloudRequestServersInner {
-	return v.value
-}
-
-func (v *NullableUpdateHostCloudRequestServersInner) Set(val *UpdateHostCloudRequestServersInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateHostCloudRequestServersInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateHostCloudRequestServersInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateHostCloudRequestServersInner(val *UpdateHostCloudRequestServersInner) *NullableUpdateHostCloudRequestServersInner {
-	return &NullableUpdateHostCloudRequestServersInner{value: val, isSet: true}
-}
-
-func (v NullableUpdateHostCloudRequestServersInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateHostCloudRequestServersInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -20,8 +20,8 @@ var _ MappedNullable = &CreateNetworkGroupRequest{}
 
 // CreateNetworkGroupRequest struct for CreateNetworkGroupRequest
 type CreateNetworkGroupRequest struct {
-	NetworkGroup *CreateNetworkGroupRequestNetworkGroup `json:"networkGroup,omitempty"`
-	AdditionalProperties map[string]interface{}
+	NetworkGroup         *CreateNetworkGroupRequestNetworkGroup `json:"networkGroup,omitempty"`
+	AdditionalProperties map[string]interface{}                 `json:",remain"`
 }
 
 type _CreateNetworkGroupRequest CreateNetworkGroupRequest
@@ -76,7 +76,7 @@ func (o *CreateNetworkGroupRequest) SetNetworkGroup(v CreateNetworkGroupRequestN
 }
 
 func (o CreateNetworkGroupRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o CreateNetworkGroupRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *CreateNetworkGroupRequest) UnmarshalJSON(data []byte) (err error) {
-	varCreateNetworkGroupRequest := _CreateNetworkGroupRequest{}
-
-	err = json.Unmarshal(data, &varCreateNetworkGroupRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = CreateNetworkGroupRequest(varCreateNetworkGroupRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "networkGroup")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableCreateNetworkGroupRequest struct {
-	value *CreateNetworkGroupRequest
-	isSet bool
-}
-
-func (v NullableCreateNetworkGroupRequest) Get() *CreateNetworkGroupRequest {
-	return v.value
-}
-
-func (v *NullableCreateNetworkGroupRequest) Set(val *CreateNetworkGroupRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableCreateNetworkGroupRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableCreateNetworkGroupRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableCreateNetworkGroupRequest(val *CreateNetworkGroupRequest) *NullableCreateNetworkGroupRequest {
-	return &NullableCreateNetworkGroupRequest{value: val, isSet: true}
-}
-
-func (v NullableCreateNetworkGroupRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableCreateNetworkGroupRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

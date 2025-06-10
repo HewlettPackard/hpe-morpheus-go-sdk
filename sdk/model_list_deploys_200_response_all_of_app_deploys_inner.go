@@ -21,18 +21,18 @@ var _ MappedNullable = &ListDeploys200ResponseAllOfAppDeploysInner{}
 
 // ListDeploys200ResponseAllOfAppDeploysInner struct for ListDeploys200ResponseAllOfAppDeploysInner
 type ListDeploys200ResponseAllOfAppDeploysInner struct {
-	Id *int64 `json:"id,omitempty"`
-	InstanceId *int64 `json:"instanceId,omitempty"`
-	Instance *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"instance,omitempty"`
-	Deployment *ListDeploys200ResponseAllOfAppDeploysInnerDeployment `json:"deployment,omitempty"`
-	DeploymentVersionId *int64 `json:"deploymentVersionId,omitempty"`
-	DeploymentVersion *ListDeploys200ResponseAllOfAppDeploysInnerDeploymentVersion `json:"deploymentVersion,omitempty"`
-	Config map[string]interface{} `json:"config,omitempty"`
-	Status *string `json:"status,omitempty"`
-	DeployDate *time.Time `json:"deployDate,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                                  `json:"id,omitempty"`
+	InstanceId           *int64                                                                  `json:"instanceId,omitempty"`
+	Instance             *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"instance,omitempty"`
+	Deployment           *ListDeploys200ResponseAllOfAppDeploysInnerDeployment                   `json:"deployment,omitempty"`
+	DeploymentVersionId  *int64                                                                  `json:"deploymentVersionId,omitempty"`
+	DeploymentVersion    *ListDeploys200ResponseAllOfAppDeploysInnerDeploymentVersion            `json:"deploymentVersion,omitempty"`
+	Config               map[string]interface{}                                                  `json:"config,omitempty"`
+	Status               *string                                                                 `json:"status,omitempty"`
+	DeployDate           *time.Time                                                              `json:"deployDate,omitempty"`
+	DateCreated          *time.Time                                                              `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                                              `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}                                                  `json:",remain"`
 }
 
 type _ListDeploys200ResponseAllOfAppDeploysInner ListDeploys200ResponseAllOfAppDeploysInner
@@ -407,7 +407,7 @@ func (o *ListDeploys200ResponseAllOfAppDeploysInner) SetLastUpdated(v time.Time)
 }
 
 func (o ListDeploys200ResponseAllOfAppDeploysInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -456,72 +456,8 @@ func (o ListDeploys200ResponseAllOfAppDeploysInner) ToMap() (map[string]interfac
 
 	return toSerialize, nil
 }
-
 func (o *ListDeploys200ResponseAllOfAppDeploysInner) UnmarshalJSON(data []byte) (err error) {
-	varListDeploys200ResponseAllOfAppDeploysInner := _ListDeploys200ResponseAllOfAppDeploysInner{}
-
-	err = json.Unmarshal(data, &varListDeploys200ResponseAllOfAppDeploysInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListDeploys200ResponseAllOfAppDeploysInner(varListDeploys200ResponseAllOfAppDeploysInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "instanceId")
-		delete(additionalProperties, "instance")
-		delete(additionalProperties, "deployment")
-		delete(additionalProperties, "deploymentVersionId")
-		delete(additionalProperties, "deploymentVersion")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "deployDate")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListDeploys200ResponseAllOfAppDeploysInner struct {
-	value *ListDeploys200ResponseAllOfAppDeploysInner
-	isSet bool
-}
-
-func (v NullableListDeploys200ResponseAllOfAppDeploysInner) Get() *ListDeploys200ResponseAllOfAppDeploysInner {
-	return v.value
-}
-
-func (v *NullableListDeploys200ResponseAllOfAppDeploysInner) Set(val *ListDeploys200ResponseAllOfAppDeploysInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListDeploys200ResponseAllOfAppDeploysInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListDeploys200ResponseAllOfAppDeploysInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListDeploys200ResponseAllOfAppDeploysInner(val *ListDeploys200ResponseAllOfAppDeploysInner) *NullableListDeploys200ResponseAllOfAppDeploysInner {
-	return &NullableListDeploys200ResponseAllOfAppDeploysInner{value: val, isSet: true}
-}
-
-func (v NullableListDeploys200ResponseAllOfAppDeploysInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListDeploys200ResponseAllOfAppDeploysInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

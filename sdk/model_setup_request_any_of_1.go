@@ -14,6 +14,7 @@ package sdk
 import (
 	"encoding/json"
 	"fmt"
+
 	"gopkg.in/validator.v2"
 )
 
@@ -22,7 +23,7 @@ var _ fmt.Stringer
 
 // SetupRequestAnyOf1 - struct for SetupRequestAnyOf1
 type SetupRequestAnyOf1 struct {
-	SetupRequestAnyOf1OneOf *SetupRequestAnyOf1OneOf
+	SetupRequestAnyOf1OneOf  *SetupRequestAnyOf1OneOf
 	SetupRequestAnyOf1OneOf1 *SetupRequestAnyOf1OneOf1
 }
 
@@ -40,6 +41,21 @@ func SetupRequestAnyOf1OneOf1AsSetupRequestAnyOf1(v *SetupRequestAnyOf1OneOf1) S
 	}
 }
 
+func (dst *SetupRequestAnyOf1) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &SetupRequestAnyOf1{}
+	}
+
+	if out, ok := data.(SetupRequestAnyOf1OneOf); ok {
+		dst.SetupRequestAnyOf1OneOf = &out
+	}
+
+	if out, ok := data.(SetupRequestAnyOf1OneOf1); ok {
+		dst.SetupRequestAnyOf1OneOf1 = &out
+	}
+
+	return dst, nil
+}
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *SetupRequestAnyOf1) UnmarshalJSON(data []byte) error {
@@ -106,7 +122,7 @@ func (src SetupRequestAnyOf1) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *SetupRequestAnyOf1) GetActualInstance() (interface{}) {
+func (obj *SetupRequestAnyOf1) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -123,7 +139,7 @@ func (obj *SetupRequestAnyOf1) GetActualInstance() (interface{}) {
 }
 
 // Get the actual instance value
-func (obj SetupRequestAnyOf1) GetActualInstanceValue() (interface{}) {
+func (obj SetupRequestAnyOf1) GetActualInstanceValue() interface{} {
 	if obj.SetupRequestAnyOf1OneOf != nil {
 		return *obj.SetupRequestAnyOf1OneOf
 	}
@@ -171,5 +187,3 @@ func (v *NullableSetupRequestAnyOf1) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

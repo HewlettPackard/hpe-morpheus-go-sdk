@@ -20,8 +20,8 @@ var _ MappedNullable = &GetUserGroup200Response{}
 
 // GetUserGroup200Response struct for GetUserGroup200Response
 type GetUserGroup200Response struct {
-	UserGroup *ListUserGroups200ResponseAllOfUserGroupsInner `json:"userGroup,omitempty"`
-	AdditionalProperties map[string]interface{}
+	UserGroup            *ListUserGroups200ResponseAllOfUserGroupsInner `json:"userGroup,omitempty"`
+	AdditionalProperties map[string]interface{}                         `json:",remain"`
 }
 
 type _GetUserGroup200Response GetUserGroup200Response
@@ -76,7 +76,7 @@ func (o *GetUserGroup200Response) SetUserGroup(v ListUserGroups200ResponseAllOfU
 }
 
 func (o GetUserGroup200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o GetUserGroup200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *GetUserGroup200Response) UnmarshalJSON(data []byte) (err error) {
-	varGetUserGroup200Response := _GetUserGroup200Response{}
-
-	err = json.Unmarshal(data, &varGetUserGroup200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetUserGroup200Response(varGetUserGroup200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "userGroup")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetUserGroup200Response struct {
-	value *GetUserGroup200Response
-	isSet bool
-}
-
-func (v NullableGetUserGroup200Response) Get() *GetUserGroup200Response {
-	return v.value
-}
-
-func (v *NullableGetUserGroup200Response) Set(val *GetUserGroup200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetUserGroup200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetUserGroup200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetUserGroup200Response(val *GetUserGroup200Response) *NullableGetUserGroup200Response {
-	return &NullableGetUserGroup200Response{value: val, isSet: true}
-}
-
-func (v NullableGetUserGroup200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetUserGroup200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the AddChecksRequestCheckOneOfConfig type satisfies the MappedNullable interface at compile time
@@ -26,19 +25,19 @@ type AddChecksRequestCheckOneOfConfig struct {
 	// Web URL you wish to use to run a check on
 	WebUrl string `json:"webUrl"`
 	// Ignore SSL Errors
-	IgnoreSSL *bool `json:"ignoreSSL,omitempty"`
-	CheckUser *string `json:"checkUser,omitempty"`
+	IgnoreSSL     *bool   `json:"ignoreSSL,omitempty"`
+	CheckUser     *string `json:"checkUser,omitempty"`
 	CheckPassword *string `json:"checkPassword,omitempty"`
-	TextCheckOn *string `json:"textCheckOn,omitempty"`
-	WebTextMatch *string `json:"webTextMatch,omitempty"`
-	TunnelOn *string `json:"tunnelOn,omitempty"`
-	SshHost *string `json:"sshHost,omitempty"`
-	SshPort *int64 `json:"sshPort,omitempty"`
-	SshUser *string `json:"sshUser,omitempty"`
+	TextCheckOn   *string `json:"textCheckOn,omitempty"`
+	WebTextMatch  *string `json:"webTextMatch,omitempty"`
+	TunnelOn      *string `json:"tunnelOn,omitempty"`
+	SshHost       *string `json:"sshHost,omitempty"`
+	SshPort       *int64  `json:"sshPort,omitempty"`
+	SshUser       *string `json:"sshUser,omitempty"`
 	// Password for user, if not using key based authentication
-	SshPassword *string `json:"sshPassword,omitempty"`
-	CheckPasswordHash *string `json:"checkPasswordHash,omitempty"`
-	AdditionalProperties map[string]interface{}
+	SshPassword          *string                `json:"sshPassword,omitempty"`
+	CheckPasswordHash    *string                `json:"checkPasswordHash,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddChecksRequestCheckOneOfConfig AddChecksRequestCheckOneOfConfig
@@ -467,7 +466,7 @@ func (o *AddChecksRequestCheckOneOfConfig) SetCheckPasswordHash(v string) {
 }
 
 func (o AddChecksRequestCheckOneOfConfig) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -518,96 +517,8 @@ func (o AddChecksRequestCheckOneOfConfig) ToMap() (map[string]interface{}, error
 
 	return toSerialize, nil
 }
-
 func (o *AddChecksRequestCheckOneOfConfig) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"webMethod",
-		"webUrl",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varAddChecksRequestCheckOneOfConfig := _AddChecksRequestCheckOneOfConfig{}
-
-	err = json.Unmarshal(data, &varAddChecksRequestCheckOneOfConfig)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddChecksRequestCheckOneOfConfig(varAddChecksRequestCheckOneOfConfig)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "webMethod")
-		delete(additionalProperties, "webUrl")
-		delete(additionalProperties, "ignoreSSL")
-		delete(additionalProperties, "checkUser")
-		delete(additionalProperties, "checkPassword")
-		delete(additionalProperties, "textCheckOn")
-		delete(additionalProperties, "webTextMatch")
-		delete(additionalProperties, "tunnelOn")
-		delete(additionalProperties, "sshHost")
-		delete(additionalProperties, "sshPort")
-		delete(additionalProperties, "sshUser")
-		delete(additionalProperties, "sshPassword")
-		delete(additionalProperties, "checkPasswordHash")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddChecksRequestCheckOneOfConfig struct {
-	value *AddChecksRequestCheckOneOfConfig
-	isSet bool
-}
-
-func (v NullableAddChecksRequestCheckOneOfConfig) Get() *AddChecksRequestCheckOneOfConfig {
-	return v.value
-}
-
-func (v *NullableAddChecksRequestCheckOneOfConfig) Set(val *AddChecksRequestCheckOneOfConfig) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddChecksRequestCheckOneOfConfig) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddChecksRequestCheckOneOfConfig) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddChecksRequestCheckOneOfConfig(val *AddChecksRequestCheckOneOfConfig) *NullableAddChecksRequestCheckOneOfConfig {
-	return &NullableAddChecksRequestCheckOneOfConfig{value: val, isSet: true}
-}
-
-func (v NullableAddChecksRequestCheckOneOfConfig) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddChecksRequestCheckOneOfConfig) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -20,27 +20,27 @@ var _ MappedNullable = &ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Confi
 
 // ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigDetailListInner struct for ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigDetailListInner
 type ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigDetailListInner struct {
-	Id *string `json:"id,omitempty"`
-	ApiName *string `json:"apiName,omitempty"`
-	ApiType *string `json:"apiType,omitempty"`
-	ExternalId *string `json:"externalId,omitempty"`
-	Period *string `json:"period,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Type *string `json:"type,omitempty"`
-	Category *string `json:"category,omitempty"`
-	Size *string `json:"size,omitempty"`
-	Region *string `json:"region,omitempty"`
-	Term *string `json:"term,omitempty"`
-	MeterId *string `json:"meterId,omitempty"`
-	OnDemandCount *int64 `json:"onDemandCount,omitempty"`
-	OnDemandCost *float32 `json:"onDemandCost,omitempty"`
-	ReservedCount *int64 `json:"reservedCount,omitempty"`
-	ReservedCost *int64 `json:"reservedCost,omitempty"`
-	RecommendedCount *int64 `json:"recommendedCount,omitempty"`
-	RecommendedCost *float32 `json:"recommendedCost,omitempty"`
-	TotalSavings *float32 `json:"totalSavings,omitempty"`
-	TotalSavingsPercent *float32 `json:"totalSavingsPercent,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *string                `json:"id,omitempty"`
+	ApiName              *string                `json:"apiName,omitempty"`
+	ApiType              *string                `json:"apiType,omitempty"`
+	ExternalId           *string                `json:"externalId,omitempty"`
+	Period               *string                `json:"period,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	Type                 *string                `json:"type,omitempty"`
+	Category             *string                `json:"category,omitempty"`
+	Size                 *string                `json:"size,omitempty"`
+	Region               *string                `json:"region,omitempty"`
+	Term                 *string                `json:"term,omitempty"`
+	MeterId              *string                `json:"meterId,omitempty"`
+	OnDemandCount        *int64                 `json:"onDemandCount,omitempty"`
+	OnDemandCost         *float32               `json:"onDemandCost,omitempty"`
+	ReservedCount        *int64                 `json:"reservedCount,omitempty"`
+	ReservedCost         *int64                 `json:"reservedCost,omitempty"`
+	RecommendedCount     *int64                 `json:"recommendedCount,omitempty"`
+	RecommendedCost      *float32               `json:"recommendedCost,omitempty"`
+	TotalSavings         *float32               `json:"totalSavings,omitempty"`
+	TotalSavingsPercent  *float32               `json:"totalSavingsPercent,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigDetailListInner ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigDetailListInner
@@ -703,7 +703,7 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigDetailListInne
 }
 
 func (o ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigDetailListInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -779,81 +779,8 @@ func (o ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigDetailListInner
 
 	return toSerialize, nil
 }
-
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigDetailListInner) UnmarshalJSON(data []byte) (err error) {
-	varListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigDetailListInner := _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigDetailListInner{}
-
-	err = json.Unmarshal(data, &varListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigDetailListInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigDetailListInner(varListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigDetailListInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "apiName")
-		delete(additionalProperties, "apiType")
-		delete(additionalProperties, "externalId")
-		delete(additionalProperties, "period")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "category")
-		delete(additionalProperties, "size")
-		delete(additionalProperties, "region")
-		delete(additionalProperties, "term")
-		delete(additionalProperties, "meterId")
-		delete(additionalProperties, "onDemandCount")
-		delete(additionalProperties, "onDemandCost")
-		delete(additionalProperties, "reservedCount")
-		delete(additionalProperties, "reservedCost")
-		delete(additionalProperties, "recommendedCount")
-		delete(additionalProperties, "recommendedCost")
-		delete(additionalProperties, "totalSavings")
-		delete(additionalProperties, "totalSavingsPercent")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigDetailListInner struct {
-	value *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigDetailListInner
-	isSet bool
-}
-
-func (v NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigDetailListInner) Get() *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigDetailListInner {
-	return v.value
-}
-
-func (v *NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigDetailListInner) Set(val *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigDetailListInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigDetailListInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigDetailListInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigDetailListInner(val *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigDetailListInner) *NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigDetailListInner {
-	return &NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigDetailListInner{value: val, isSet: true}
-}
-
-func (v NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigDetailListInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigDetailListInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

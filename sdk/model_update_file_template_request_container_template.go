@@ -39,8 +39,8 @@ type UpdateFileTemplateRequestContainerTemplate struct {
 	// Setting Name
 	SettingName *string `json:"settingName,omitempty"`
 	// Setting Category
-	SettingCategory *string `json:"settingCategory,omitempty"`
-	AdditionalProperties map[string]interface{}
+	SettingCategory      *string                `json:"settingCategory,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _UpdateFileTemplateRequestContainerTemplate UpdateFileTemplateRequestContainerTemplate
@@ -383,7 +383,7 @@ func (o *UpdateFileTemplateRequestContainerTemplate) SetSettingCategory(v string
 }
 
 func (o UpdateFileTemplateRequestContainerTemplate) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -429,71 +429,8 @@ func (o UpdateFileTemplateRequestContainerTemplate) ToMap() (map[string]interfac
 
 	return toSerialize, nil
 }
-
 func (o *UpdateFileTemplateRequestContainerTemplate) UnmarshalJSON(data []byte) (err error) {
-	varUpdateFileTemplateRequestContainerTemplate := _UpdateFileTemplateRequestContainerTemplate{}
-
-	err = json.Unmarshal(data, &varUpdateFileTemplateRequestContainerTemplate)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateFileTemplateRequestContainerTemplate(varUpdateFileTemplateRequestContainerTemplate)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "fileName")
-		delete(additionalProperties, "filePath")
-		delete(additionalProperties, "category")
-		delete(additionalProperties, "templatePhase")
-		delete(additionalProperties, "template")
-		delete(additionalProperties, "fileOwner")
-		delete(additionalProperties, "settingName")
-		delete(additionalProperties, "settingCategory")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateFileTemplateRequestContainerTemplate struct {
-	value *UpdateFileTemplateRequestContainerTemplate
-	isSet bool
-}
-
-func (v NullableUpdateFileTemplateRequestContainerTemplate) Get() *UpdateFileTemplateRequestContainerTemplate {
-	return v.value
-}
-
-func (v *NullableUpdateFileTemplateRequestContainerTemplate) Set(val *UpdateFileTemplateRequestContainerTemplate) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateFileTemplateRequestContainerTemplate) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateFileTemplateRequestContainerTemplate) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateFileTemplateRequestContainerTemplate(val *UpdateFileTemplateRequestContainerTemplate) *NullableUpdateFileTemplateRequestContainerTemplate {
-	return &NullableUpdateFileTemplateRequestContainerTemplate{value: val, isSet: true}
-}
-
-func (v NullableUpdateFileTemplateRequestContainerTemplate) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateFileTemplateRequestContainerTemplate) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

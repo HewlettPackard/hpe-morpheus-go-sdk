@@ -20,9 +20,9 @@ var _ MappedNullable = &AddPrices200Response{}
 
 // AddPrices200Response struct for AddPrices200Response
 type AddPrices200Response struct {
-	Price *ListPrices200ResponseAllOfPricesInner `json:"price,omitempty"`
-	Success *bool `json:"success,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Price                *ListPrices200ResponseAllOfPricesInner `json:"price,omitempty"`
+	Success              *bool                                  `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{}                 `json:",remain"`
 }
 
 type _AddPrices200Response AddPrices200Response
@@ -109,7 +109,7 @@ func (o *AddPrices200Response) SetSuccess(v bool) {
 }
 
 func (o AddPrices200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -131,63 +131,8 @@ func (o AddPrices200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *AddPrices200Response) UnmarshalJSON(data []byte) (err error) {
-	varAddPrices200Response := _AddPrices200Response{}
-
-	err = json.Unmarshal(data, &varAddPrices200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddPrices200Response(varAddPrices200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "price")
-		delete(additionalProperties, "success")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddPrices200Response struct {
-	value *AddPrices200Response
-	isSet bool
-}
-
-func (v NullableAddPrices200Response) Get() *AddPrices200Response {
-	return v.value
-}
-
-func (v *NullableAddPrices200Response) Set(val *AddPrices200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddPrices200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddPrices200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddPrices200Response(val *AddPrices200Response) *NullableAddPrices200Response {
-	return &NullableAddPrices200Response{value: val, isSet: true}
-}
-
-func (v NullableAddPrices200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddPrices200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

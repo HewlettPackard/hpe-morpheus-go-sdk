@@ -20,8 +20,8 @@ var _ MappedNullable = &ListCatalogCart200Response{}
 
 // ListCatalogCart200Response struct for ListCatalogCart200Response
 type ListCatalogCart200Response struct {
-	Cart *ListCatalogCart200ResponseCart `json:"cart,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Cart                 *ListCatalogCart200ResponseCart `json:"cart,omitempty"`
+	AdditionalProperties map[string]interface{}          `json:",remain"`
 }
 
 type _ListCatalogCart200Response ListCatalogCart200Response
@@ -76,7 +76,7 @@ func (o *ListCatalogCart200Response) SetCart(v ListCatalogCart200ResponseCart) {
 }
 
 func (o ListCatalogCart200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o ListCatalogCart200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *ListCatalogCart200Response) UnmarshalJSON(data []byte) (err error) {
-	varListCatalogCart200Response := _ListCatalogCart200Response{}
-
-	err = json.Unmarshal(data, &varListCatalogCart200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListCatalogCart200Response(varListCatalogCart200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "cart")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListCatalogCart200Response struct {
-	value *ListCatalogCart200Response
-	isSet bool
-}
-
-func (v NullableListCatalogCart200Response) Get() *ListCatalogCart200Response {
-	return v.value
-}
-
-func (v *NullableListCatalogCart200Response) Set(val *ListCatalogCart200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListCatalogCart200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListCatalogCart200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListCatalogCart200Response(val *ListCatalogCart200Response) *NullableListCatalogCart200Response {
-	return &NullableListCatalogCart200Response{value: val, isSet: true}
-}
-
-func (v NullableListCatalogCart200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListCatalogCart200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

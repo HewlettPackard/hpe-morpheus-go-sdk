@@ -33,8 +33,8 @@ type AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3 struct {
 	// IAM Profile
 	InstanceProfile *string `json:"instanceProfile,omitempty"`
 	// KMS Key ID
-	KmsKeyId *string `json:"kmsKeyId,omitempty"`
-	AdditionalProperties map[string]interface{}
+	KmsKeyId             *string                `json:"kmsKeyId,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3 AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3
@@ -289,7 +289,7 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) SetKms
 }
 
 func (o AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -326,68 +326,8 @@ func (o AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) ToMap()
 
 	return toSerialize, nil
 }
-
 func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) UnmarshalJSON(data []byte) (err error) {
-	varAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3 := _AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3{}
-
-	err = json.Unmarshal(data, &varAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3(varAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "noAgent")
-		delete(additionalProperties, "isEC2")
-		delete(additionalProperties, "availabilityId")
-		delete(additionalProperties, "securityId")
-		delete(additionalProperties, "publicIpType")
-		delete(additionalProperties, "instanceProfile")
-		delete(additionalProperties, "kmsKeyId")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3 struct {
-	value *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3
-	isSet bool
-}
-
-func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) Get() *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3 {
-	return v.value
-}
-
-func (v *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) Set(val *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3(val *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3 {
-	return &NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3{value: val, isSet: true}
-}
-
-func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -21,22 +21,22 @@ var _ MappedNullable = &UpdateGroups200ResponseGroup{}
 
 // UpdateGroups200ResponseGroup struct for UpdateGroups200ResponseGroup
 type UpdateGroups200ResponseGroup struct {
-	Id *int64 `json:"id,omitempty"`
-	Uuid *string `json:"uuid,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Code *string `json:"code,omitempty"`
-	Labels []string `json:"labels,omitempty"`
-	Location *string `json:"location,omitempty"`
-	AccountId *int64 `json:"accountId,omitempty"`
-	Active *bool `json:"active,omitempty"`
-	Config *ListGroups200ResponseAllOfGroupsInnerConfig `json:"config,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	Zones []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"zones,omitempty"`
-	Stats *ListGroups200ResponseAllOfGroupsInnerStats `json:"stats,omitempty"`
-	ServerCount *int64 `json:"serverCount,omitempty"`
-	Success *bool `json:"success,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                                   `json:"id,omitempty"`
+	Uuid                 *string                                                                  `json:"uuid,omitempty"`
+	Name                 *string                                                                  `json:"name,omitempty"`
+	Code                 *string                                                                  `json:"code,omitempty"`
+	Labels               []string                                                                 `json:"labels,omitempty"`
+	Location             *string                                                                  `json:"location,omitempty"`
+	AccountId            *int64                                                                   `json:"accountId,omitempty"`
+	Active               *bool                                                                    `json:"active,omitempty"`
+	Config               *ListGroups200ResponseAllOfGroupsInnerConfig                             `json:"config,omitempty"`
+	DateCreated          *time.Time                                                               `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                                               `json:"lastUpdated,omitempty"`
+	Zones                []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"zones,omitempty"`
+	Stats                *ListGroups200ResponseAllOfGroupsInnerStats                              `json:"stats,omitempty"`
+	ServerCount          *int64                                                                   `json:"serverCount,omitempty"`
+	Success              *bool                                                                    `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{}                                                   `json:",remain"`
 }
 
 type _UpdateGroups200ResponseGroup UpdateGroups200ResponseGroup
@@ -539,7 +539,7 @@ func (o *UpdateGroups200ResponseGroup) SetSuccess(v bool) {
 }
 
 func (o UpdateGroups200ResponseGroup) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -600,76 +600,8 @@ func (o UpdateGroups200ResponseGroup) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *UpdateGroups200ResponseGroup) UnmarshalJSON(data []byte) (err error) {
-	varUpdateGroups200ResponseGroup := _UpdateGroups200ResponseGroup{}
-
-	err = json.Unmarshal(data, &varUpdateGroups200ResponseGroup)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateGroups200ResponseGroup(varUpdateGroups200ResponseGroup)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "uuid")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "location")
-		delete(additionalProperties, "accountId")
-		delete(additionalProperties, "active")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		delete(additionalProperties, "zones")
-		delete(additionalProperties, "stats")
-		delete(additionalProperties, "serverCount")
-		delete(additionalProperties, "success")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateGroups200ResponseGroup struct {
-	value *UpdateGroups200ResponseGroup
-	isSet bool
-}
-
-func (v NullableUpdateGroups200ResponseGroup) Get() *UpdateGroups200ResponseGroup {
-	return v.value
-}
-
-func (v *NullableUpdateGroups200ResponseGroup) Set(val *UpdateGroups200ResponseGroup) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateGroups200ResponseGroup) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateGroups200ResponseGroup) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateGroups200ResponseGroup(val *UpdateGroups200ResponseGroup) *NullableUpdateGroups200ResponseGroup {
-	return &NullableUpdateGroups200ResponseGroup{value: val, isSet: true}
-}
-
-func (v NullableUpdateGroups200ResponseGroup) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateGroups200ResponseGroup) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

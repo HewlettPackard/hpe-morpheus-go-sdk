@@ -20,10 +20,10 @@ var _ MappedNullable = &ListNetworkServerGroups200ResponseAllOfGroupsInnerPermis
 
 // ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissions struct for ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissions
 type ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissions struct {
-	ResourcePool *AddCluster200ResponseAllOfClusterPermissionsResourcePool `json:"resourcePool,omitempty"`
-	ResourcePermissions *ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission `json:"resourcePermissions,omitempty"`
-	TenantPermissions *AddCloudResourcePoolRequestResourcePoolTenantPermissions `json:"tenantPermissions,omitempty"`
-	AdditionalProperties map[string]interface{}
+	ResourcePool         *AddCluster200ResponseAllOfClusterPermissionsResourcePool             `json:"resourcePool,omitempty"`
+	ResourcePermissions  *ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission `json:"resourcePermissions,omitempty"`
+	TenantPermissions    *AddCloudResourcePoolRequestResourcePoolTenantPermissions             `json:"tenantPermissions,omitempty"`
+	AdditionalProperties map[string]interface{}                                                `json:",remain"`
 }
 
 type _ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissions ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissions
@@ -142,7 +142,7 @@ func (o *ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissions) SetTenan
 }
 
 func (o ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissions) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -167,64 +167,8 @@ func (o ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissions) ToMap() (
 
 	return toSerialize, nil
 }
-
 func (o *ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissions) UnmarshalJSON(data []byte) (err error) {
-	varListNetworkServerGroups200ResponseAllOfGroupsInnerPermissions := _ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissions{}
-
-	err = json.Unmarshal(data, &varListNetworkServerGroups200ResponseAllOfGroupsInnerPermissions)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissions(varListNetworkServerGroups200ResponseAllOfGroupsInnerPermissions)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "resourcePool")
-		delete(additionalProperties, "resourcePermissions")
-		delete(additionalProperties, "tenantPermissions")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListNetworkServerGroups200ResponseAllOfGroupsInnerPermissions struct {
-	value *ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissions
-	isSet bool
-}
-
-func (v NullableListNetworkServerGroups200ResponseAllOfGroupsInnerPermissions) Get() *ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissions {
-	return v.value
-}
-
-func (v *NullableListNetworkServerGroups200ResponseAllOfGroupsInnerPermissions) Set(val *ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissions) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListNetworkServerGroups200ResponseAllOfGroupsInnerPermissions) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListNetworkServerGroups200ResponseAllOfGroupsInnerPermissions) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListNetworkServerGroups200ResponseAllOfGroupsInnerPermissions(val *ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissions) *NullableListNetworkServerGroups200ResponseAllOfGroupsInnerPermissions {
-	return &NullableListNetworkServerGroups200ResponseAllOfGroupsInnerPermissions{value: val, isSet: true}
-}
-
-func (v NullableListNetworkServerGroups200ResponseAllOfGroupsInnerPermissions) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListNetworkServerGroups200ResponseAllOfGroupsInnerPermissions) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

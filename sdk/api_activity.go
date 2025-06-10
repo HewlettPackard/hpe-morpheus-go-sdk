@@ -21,24 +21,23 @@ import (
 	"time"
 )
 
-
 // ActivityAPIService ActivityAPI service
 type ActivityAPIService service
 
 type ApiListActivityRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ActivityAPIService
-	max *int64
-	offset *int64
-	sort *string
-	order *string
-	phrase *string
-	name *string
-	userId *int64
-	tenantId *float32
-	timeframe *string
-	start *time.Time
-	end *time.Time
+	max        *int64
+	offset     *int64
+	sort       *string
+	order      *string
+	phrase     *string
+	name       *string
+	userId     *int64
+	tenantId   *float32
+	timeframe  *string
+	start      *time.Time
+	end        *time.Time
 }
 
 // Maximum number of records to return
@@ -116,25 +115,25 @@ ListActivity Retrieves Activity
 
 Retrieves activity.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListActivityRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListActivityRequest
 */
 func (a *ActivityAPIService) ListActivity(ctx context.Context) ApiListActivityRequest {
 	return ApiListActivityRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListActivity200Response
+//
+//	@return ListActivity200Response
 func (a *ActivityAPIService) ListActivityExecute(r ApiListActivityRequest) (*ListActivity200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListActivity200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListActivity200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ActivityAPIService.ListActivity")
@@ -232,7 +231,7 @@ func (a *ActivityAPIService) ListActivityExecute(r ApiListActivityRequest) (*Lis
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -241,8 +240,8 @@ func (a *ActivityAPIService) ListActivityExecute(r ApiListActivityRequest) (*Lis
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -252,8 +251,8 @@ func (a *ActivityAPIService) ListActivityExecute(r ApiListActivityRequest) (*Lis
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -261,8 +260,8 @@ func (a *ActivityAPIService) ListActivityExecute(r ApiListActivityRequest) (*Lis
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

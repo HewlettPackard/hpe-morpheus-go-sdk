@@ -14,6 +14,7 @@ package sdk
 import (
 	"encoding/json"
 	"fmt"
+
 	"gopkg.in/validator.v2"
 )
 
@@ -22,7 +23,7 @@ var _ fmt.Stringer
 
 // AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigGroupId - struct for AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigGroupId
 type AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigGroupId struct {
-	Int64 *int64
+	Int64  *int64
 	String *string
 }
 
@@ -40,6 +41,21 @@ func StringAsAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigGroupId(v *strin
 	}
 }
 
+func (dst *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigGroupId) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigGroupId{}
+	}
+
+	if out, ok := data.(int64); ok {
+		dst.Int64 = &out
+	}
+
+	if out, ok := data.(string); ok {
+		dst.String = &out
+	}
+
+	return dst, nil
+}
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigGroupId) UnmarshalJSON(data []byte) error {
@@ -106,7 +122,7 @@ func (src AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigGroupId) MarshalJSO
 }
 
 // Get the actual instance
-func (obj *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigGroupId) GetActualInstance() (interface{}) {
+func (obj *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigGroupId) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -123,7 +139,7 @@ func (obj *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigGroupId) GetActual
 }
 
 // Get the actual instance value
-func (obj AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigGroupId) GetActualInstanceValue() (interface{}) {
+func (obj AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigGroupId) GetActualInstanceValue() interface{} {
 	if obj.Int64 != nil {
 		return *obj.Int64
 	}
@@ -171,5 +187,3 @@ func (v *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigGroupId) Unm
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

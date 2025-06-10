@@ -18,17 +18,16 @@ import (
 	"io"
 	"net/http"
 	"net/url"
-	"strings"
 	"os"
+	"strings"
 )
-
 
 // BlueprintsAPIService BlueprintsAPI service
 type BlueprintsAPIService service
 
 type ApiAddBlueprintRequest struct {
-	ctx context.Context
-	ApiService *BlueprintsAPIService
+	ctx                 context.Context
+	ApiService          *BlueprintsAPIService
 	addBlueprintRequest *AddBlueprintRequest
 }
 
@@ -46,24 +45,25 @@ AddBlueprint Create a Blueprint
 
 Create a Blueprint
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddBlueprintRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddBlueprintRequest
 */
 func (a *BlueprintsAPIService) AddBlueprint(ctx context.Context) ApiAddBlueprintRequest {
 	return ApiAddBlueprintRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddBlueprint200Response
+//
+//	@return AddBlueprint200Response
 func (a *BlueprintsAPIService) AddBlueprintExecute(r ApiAddBlueprintRequest) (*AddBlueprint200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddBlueprint200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddBlueprint200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BlueprintsAPIService.AddBlueprint")
@@ -115,7 +115,7 @@ func (a *BlueprintsAPIService) AddBlueprintExecute(r ApiAddBlueprintRequest) (*A
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -124,8 +124,8 @@ func (a *BlueprintsAPIService) AddBlueprintExecute(r ApiAddBlueprintRequest) (*A
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -135,8 +135,8 @@ func (a *BlueprintsAPIService) AddBlueprintExecute(r ApiAddBlueprintRequest) (*A
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -144,8 +144,8 @@ func (a *BlueprintsAPIService) AddBlueprintExecute(r ApiAddBlueprintRequest) (*A
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -154,9 +154,9 @@ func (a *BlueprintsAPIService) AddBlueprintExecute(r ApiAddBlueprintRequest) (*A
 }
 
 type ApiDeleteBlueprintRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *BlueprintsAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiDeleteBlueprintRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -168,26 +168,27 @@ DeleteBlueprint Delete a Blueprint
 
 Delete a Blueprint
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiDeleteBlueprintRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiDeleteBlueprintRequest
 */
 func (a *BlueprintsAPIService) DeleteBlueprint(ctx context.Context, id int64) ApiDeleteBlueprintRequest {
 	return ApiDeleteBlueprintRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *BlueprintsAPIService) DeleteBlueprintExecute(r ApiDeleteBlueprintRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BlueprintsAPIService.DeleteBlueprint")
@@ -238,7 +239,7 @@ func (a *BlueprintsAPIService) DeleteBlueprintExecute(r ApiDeleteBlueprintReques
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -247,8 +248,8 @@ func (a *BlueprintsAPIService) DeleteBlueprintExecute(r ApiDeleteBlueprintReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -258,8 +259,8 @@ func (a *BlueprintsAPIService) DeleteBlueprintExecute(r ApiDeleteBlueprintReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -267,8 +268,8 @@ func (a *BlueprintsAPIService) DeleteBlueprintExecute(r ApiDeleteBlueprintReques
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -277,9 +278,9 @@ func (a *BlueprintsAPIService) DeleteBlueprintExecute(r ApiDeleteBlueprintReques
 }
 
 type ApiGetBlueprintRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *BlueprintsAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetBlueprintRequest) Execute() (*GetBlueprint200Response, *http.Response, error) {
@@ -291,26 +292,27 @@ GetBlueprint Get a Specific Blueprint
 
 This endpoint retrieves a specific blueprint.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetBlueprintRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetBlueprintRequest
 */
 func (a *BlueprintsAPIService) GetBlueprint(ctx context.Context, id int64) ApiGetBlueprintRequest {
 	return ApiGetBlueprintRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetBlueprint200Response
+//
+//	@return GetBlueprint200Response
 func (a *BlueprintsAPIService) GetBlueprintExecute(r ApiGetBlueprintRequest) (*GetBlueprint200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetBlueprint200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetBlueprint200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BlueprintsAPIService.GetBlueprint")
@@ -361,7 +363,7 @@ func (a *BlueprintsAPIService) GetBlueprintExecute(r ApiGetBlueprintRequest) (*G
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -370,8 +372,8 @@ func (a *BlueprintsAPIService) GetBlueprintExecute(r ApiGetBlueprintRequest) (*G
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -381,8 +383,8 @@ func (a *BlueprintsAPIService) GetBlueprintExecute(r ApiGetBlueprintRequest) (*G
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -390,8 +392,8 @@ func (a *BlueprintsAPIService) GetBlueprintExecute(r ApiGetBlueprintRequest) (*G
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -400,14 +402,14 @@ func (a *BlueprintsAPIService) GetBlueprintExecute(r ApiGetBlueprintRequest) (*G
 }
 
 type ApiListBlueprintsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *BlueprintsAPIService
-	max *int64
-	offset *int64
-	name *string
-	phrase *string
-	labels *string
-	allLabels *string
+	max        *int64
+	offset     *int64
+	name       *string
+	phrase     *string
+	labels     *string
+	allLabels  *string
 }
 
 // Maximum number of records to return
@@ -455,24 +457,25 @@ ListBlueprints Get All Blueprints
 
 This endpoint retrieves all blueprints.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListBlueprintsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListBlueprintsRequest
 */
 func (a *BlueprintsAPIService) ListBlueprints(ctx context.Context) ApiListBlueprintsRequest {
 	return ApiListBlueprintsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListBlueprints200Response
+//
+//	@return ListBlueprints200Response
 func (a *BlueprintsAPIService) ListBlueprintsExecute(r ApiListBlueprintsRequest) (*ListBlueprints200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListBlueprints200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListBlueprints200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BlueprintsAPIService.ListBlueprints")
@@ -546,7 +549,7 @@ func (a *BlueprintsAPIService) ListBlueprintsExecute(r ApiListBlueprintsRequest)
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -555,8 +558,8 @@ func (a *BlueprintsAPIService) ListBlueprintsExecute(r ApiListBlueprintsRequest)
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -566,8 +569,8 @@ func (a *BlueprintsAPIService) ListBlueprintsExecute(r ApiListBlueprintsRequest)
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -575,8 +578,8 @@ func (a *BlueprintsAPIService) ListBlueprintsExecute(r ApiListBlueprintsRequest)
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -585,9 +588,9 @@ func (a *BlueprintsAPIService) ListBlueprintsExecute(r ApiListBlueprintsRequest)
 }
 
 type ApiUpdateBlueprintRequest struct {
-	ctx context.Context
-	ApiService *BlueprintsAPIService
-	id int64
+	ctx                 context.Context
+	ApiService          *BlueprintsAPIService
+	id                  int64
 	addBlueprintRequest *AddBlueprintRequest
 }
 
@@ -605,26 +608,27 @@ UpdateBlueprint Updating a Blueprint
 
 Update a Blueprint. This overwrites the entire config, so the entire blueprint config should be passed.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateBlueprintRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateBlueprintRequest
 */
 func (a *BlueprintsAPIService) UpdateBlueprint(ctx context.Context, id int64) ApiUpdateBlueprintRequest {
 	return ApiUpdateBlueprintRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetBlueprint200Response
+//
+//	@return GetBlueprint200Response
 func (a *BlueprintsAPIService) UpdateBlueprintExecute(r ApiUpdateBlueprintRequest) (*GetBlueprint200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetBlueprint200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetBlueprint200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BlueprintsAPIService.UpdateBlueprint")
@@ -677,7 +681,7 @@ func (a *BlueprintsAPIService) UpdateBlueprintExecute(r ApiUpdateBlueprintReques
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -686,8 +690,8 @@ func (a *BlueprintsAPIService) UpdateBlueprintExecute(r ApiUpdateBlueprintReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -697,8 +701,8 @@ func (a *BlueprintsAPIService) UpdateBlueprintExecute(r ApiUpdateBlueprintReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -706,8 +710,8 @@ func (a *BlueprintsAPIService) UpdateBlueprintExecute(r ApiUpdateBlueprintReques
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -716,9 +720,9 @@ func (a *BlueprintsAPIService) UpdateBlueprintExecute(r ApiUpdateBlueprintReques
 }
 
 type ApiUpdateBlueprintImageRequest struct {
-	ctx context.Context
-	ApiService *BlueprintsAPIService
-	id int64
+	ctx           context.Context
+	ApiService    *BlueprintsAPIService
+	id            int64
 	templateImage *os.File
 }
 
@@ -736,26 +740,27 @@ UpdateBlueprintImage Update Blueprint Image
 
 Update Blueprint Image
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateBlueprintImageRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateBlueprintImageRequest
 */
 func (a *BlueprintsAPIService) UpdateBlueprintImage(ctx context.Context, id int64) ApiUpdateBlueprintImageRequest {
 	return ApiUpdateBlueprintImageRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetBlueprint200Response
+//
+//	@return GetBlueprint200Response
 func (a *BlueprintsAPIService) UpdateBlueprintImageExecute(r ApiUpdateBlueprintImageRequest) (*GetBlueprint200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetBlueprint200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetBlueprint200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BlueprintsAPIService.UpdateBlueprintImage")
@@ -788,8 +793,8 @@ func (a *BlueprintsAPIService) UpdateBlueprintImageExecute(r ApiUpdateBlueprintI
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	var templateImageLocalVarFormFileName string
-	var templateImageLocalVarFileName     string
-	var templateImageLocalVarFileBytes    []byte
+	var templateImageLocalVarFileName string
+	var templateImageLocalVarFileBytes []byte
 
 	templateImageLocalVarFormFileName = "templateImage"
 	templateImageLocalVarFile := r.templateImage
@@ -821,7 +826,7 @@ func (a *BlueprintsAPIService) UpdateBlueprintImageExecute(r ApiUpdateBlueprintI
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -830,8 +835,8 @@ func (a *BlueprintsAPIService) UpdateBlueprintImageExecute(r ApiUpdateBlueprintI
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -841,8 +846,8 @@ func (a *BlueprintsAPIService) UpdateBlueprintImageExecute(r ApiUpdateBlueprintI
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -850,8 +855,8 @@ func (a *BlueprintsAPIService) UpdateBlueprintImageExecute(r ApiUpdateBlueprintI
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -860,9 +865,9 @@ func (a *BlueprintsAPIService) UpdateBlueprintImageExecute(r ApiUpdateBlueprintI
 }
 
 type ApiUpdateBlueprintPermissionsRequest struct {
-	ctx context.Context
-	ApiService *BlueprintsAPIService
-	id int64
+	ctx                               context.Context
+	ApiService                        *BlueprintsAPIService
+	id                                int64
 	updateBlueprintPermissionsRequest *UpdateBlueprintPermissionsRequest
 }
 
@@ -880,26 +885,27 @@ UpdateBlueprintPermissions Update Blueprint Permissions
 
 Update Blueprint Permissions
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateBlueprintPermissionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateBlueprintPermissionsRequest
 */
 func (a *BlueprintsAPIService) UpdateBlueprintPermissions(ctx context.Context, id int64) ApiUpdateBlueprintPermissionsRequest {
 	return ApiUpdateBlueprintPermissionsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetBlueprint200Response
+//
+//	@return GetBlueprint200Response
 func (a *BlueprintsAPIService) UpdateBlueprintPermissionsExecute(r ApiUpdateBlueprintPermissionsRequest) (*GetBlueprint200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetBlueprint200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetBlueprint200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BlueprintsAPIService.UpdateBlueprintPermissions")
@@ -952,7 +958,7 @@ func (a *BlueprintsAPIService) UpdateBlueprintPermissionsExecute(r ApiUpdateBlue
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -961,8 +967,8 @@ func (a *BlueprintsAPIService) UpdateBlueprintPermissionsExecute(r ApiUpdateBlue
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -972,8 +978,8 @@ func (a *BlueprintsAPIService) UpdateBlueprintPermissionsExecute(r ApiUpdateBlue
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -981,8 +987,8 @@ func (a *BlueprintsAPIService) UpdateBlueprintPermissionsExecute(r ApiUpdateBlue
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

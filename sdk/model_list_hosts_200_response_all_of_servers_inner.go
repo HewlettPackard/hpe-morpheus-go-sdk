@@ -21,85 +21,85 @@ var _ MappedNullable = &ListHosts200ResponseAllOfServersInner{}
 
 // ListHosts200ResponseAllOfServersInner struct for ListHosts200ResponseAllOfServersInner
 type ListHosts200ResponseAllOfServersInner struct {
-	Id *int64 `json:"id,omitempty"`
-	Uuid *string `json:"uuid,omitempty"`
-	ExternalId *string `json:"externalId,omitempty"`
-	InternalId *string `json:"internalId,omitempty"`
-	ExternalUniqueId *string `json:"externalUniqueId,omitempty"`
-	Name *string `json:"name,omitempty"`
-	ExternalName *string `json:"externalName,omitempty"`
-	Hostname *string `json:"hostname,omitempty"`
-	ParentServer *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"parentServer,omitempty"`
-	AccountId *int64 `json:"accountId,omitempty"`
-	Account *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"account,omitempty"`
-	Owner *GetAlerts200ResponseAllOfChecksInnerCreatedBy `json:"owner,omitempty"`
-	Zone *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"zone,omitempty"`
-	Plan *ListHosts200ResponseAllOfServersInnerPlan `json:"plan,omitempty"`
-	ComputeServerType *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerComputeServerType `json:"computeServerType,omitempty"`
-	Visibility *string `json:"visibility,omitempty"`
-	Description *string `json:"description,omitempty"`
-	ZoneId *int64 `json:"zoneId,omitempty"`
-	SiteId *int64 `json:"siteId,omitempty"`
-	ResourcePoolId *int64 `json:"resourcePoolId,omitempty"`
-	FolderId *int64 `json:"folderId,omitempty"`
-	SshHost *string `json:"sshHost,omitempty"`
-	SshPort *int64 `json:"sshPort,omitempty"`
-	ExternalIp *string `json:"externalIp,omitempty"`
-	InternalIp *string `json:"internalIp,omitempty"`
-	VolumeId *string `json:"volumeId,omitempty"`
-	Platform *string `json:"platform,omitempty"`
-	PlatformVersion *string `json:"platformVersion,omitempty"`
-	SshUsername *string `json:"sshUsername,omitempty"`
-	SshPassword *string `json:"sshPassword,omitempty"`
-	SshPasswordHash *string `json:"sshPasswordHash,omitempty"`
-	SshKeyPair *GetAlerts200ResponseAllOfChecksInnerContainer `json:"sshKeyPair,omitempty"`
-	OsDevice *string `json:"osDevice,omitempty"`
-	OsType *string `json:"osType,omitempty"`
-	DataDevice *string `json:"dataDevice,omitempty"`
-	LvmEnabled *bool `json:"lvmEnabled,omitempty"`
-	ApiKey *string `json:"apiKey,omitempty"`
-	SoftwareRaid *bool `json:"softwareRaid,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	Stats *ListHosts200ResponseAllOfServersInnerStats `json:"stats,omitempty"`
-	Status *string `json:"status,omitempty"`
-	StatusMessage *string `json:"statusMessage,omitempty"`
-	ErrorMessage *string `json:"errorMessage,omitempty"`
-	StatusDate *time.Time `json:"statusDate,omitempty"`
-	StatusPercent *string `json:"statusPercent,omitempty"`
-	StatusEta *string `json:"statusEta,omitempty"`
-	PowerState *string `json:"powerState,omitempty"`
-	AgentInstalled *bool `json:"agentInstalled,omitempty"`
-	LastAgentUpdate *string `json:"lastAgentUpdate,omitempty"`
-	AgentVersion *string `json:"agentVersion,omitempty"`
-	MaxCores *int64 `json:"maxCores,omitempty"`
-	CoresPerSocket *int64 `json:"coresPerSocket,omitempty"`
-	MaxMemory *int64 `json:"maxMemory,omitempty"`
-	MaxStorage *int64 `json:"maxStorage,omitempty"`
-	MaxCpu *int64 `json:"maxCpu,omitempty"`
-	MaxGpus *int64 `json:"maxGpus,omitempty"`
-	ManageInternalFirewall *bool `json:"manageInternalFirewall,omitempty"`
-	EnableLogs *bool `json:"enableLogs,omitempty"`
-	HourlyCost *float32 `json:"hourlyCost,omitempty"`
-	HourlyPrice *float32 `json:"hourlyPrice,omitempty"`
-	SourceImage *ListPriceSets200ResponseAllOfPriceSetsInnerPricesInnerVolumeType `json:"sourceImage,omitempty"`
-	ServerOs *ListHosts200ResponseAllOfServersInnerServerOs `json:"serverOs,omitempty"`
-	Volumes []ListClusterVolumes200ResponseAllOfVolumesInner `json:"volumes,omitempty"`
-	Controllers []ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceControllersInner `json:"controllers,omitempty"`
-	Interfaces []ListHosts200ResponseAllOfServersInnerInterfacesInner `json:"interfaces,omitempty"`
-	Labels []map[string]interface{} `json:"labels,omitempty"`
-	Tags []map[string]interface{} `json:"tags,omitempty"`
-	Enabled *bool `json:"enabled,omitempty"`
-	TagCompliant *string `json:"tagCompliant,omitempty"`
-	Containers []int64 `json:"containers,omitempty"`
-	Config *ListHosts200ResponseAllOfServersInnerConfig `json:"config,omitempty"`
-	GuestConsolePreferred *bool `json:"guestConsolePreferred,omitempty"`
-	GuestConsoleType *string `json:"guestConsoleType,omitempty"`
-	GuestConsoleUsername *string `json:"guestConsoleUsername,omitempty"`
-	GuestConsolePassword *string `json:"guestConsolePassword,omitempty"`
-	GuestConsolePasswordHash *string `json:"guestConsolePasswordHash,omitempty"`
-	GuestConsolePort *string `json:"guestConsolePort,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                       *int64                                                                              `json:"id,omitempty"`
+	Uuid                     *string                                                                             `json:"uuid,omitempty"`
+	ExternalId               *string                                                                             `json:"externalId,omitempty"`
+	InternalId               *string                                                                             `json:"internalId,omitempty"`
+	ExternalUniqueId         *string                                                                             `json:"externalUniqueId,omitempty"`
+	Name                     *string                                                                             `json:"name,omitempty"`
+	ExternalName             *string                                                                             `json:"externalName,omitempty"`
+	Hostname                 *string                                                                             `json:"hostname,omitempty"`
+	ParentServer             *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner             `json:"parentServer,omitempty"`
+	AccountId                *int64                                                                              `json:"accountId,omitempty"`
+	Account                  *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner             `json:"account,omitempty"`
+	Owner                    *GetAlerts200ResponseAllOfChecksInnerCreatedBy                                      `json:"owner,omitempty"`
+	Zone                     *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner             `json:"zone,omitempty"`
+	Plan                     *ListHosts200ResponseAllOfServersInnerPlan                                          `json:"plan,omitempty"`
+	ComputeServerType        *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerComputeServerType `json:"computeServerType,omitempty"`
+	Visibility               *string                                                                             `json:"visibility,omitempty"`
+	Description              *string                                                                             `json:"description,omitempty"`
+	ZoneId                   *int64                                                                              `json:"zoneId,omitempty"`
+	SiteId                   *int64                                                                              `json:"siteId,omitempty"`
+	ResourcePoolId           *int64                                                                              `json:"resourcePoolId,omitempty"`
+	FolderId                 *int64                                                                              `json:"folderId,omitempty"`
+	SshHost                  *string                                                                             `json:"sshHost,omitempty"`
+	SshPort                  *int64                                                                              `json:"sshPort,omitempty"`
+	ExternalIp               *string                                                                             `json:"externalIp,omitempty"`
+	InternalIp               *string                                                                             `json:"internalIp,omitempty"`
+	VolumeId                 *string                                                                             `json:"volumeId,omitempty"`
+	Platform                 *string                                                                             `json:"platform,omitempty"`
+	PlatformVersion          *string                                                                             `json:"platformVersion,omitempty"`
+	SshUsername              *string                                                                             `json:"sshUsername,omitempty"`
+	SshPassword              *string                                                                             `json:"sshPassword,omitempty"`
+	SshPasswordHash          *string                                                                             `json:"sshPasswordHash,omitempty"`
+	SshKeyPair               *GetAlerts200ResponseAllOfChecksInnerContainer                                      `json:"sshKeyPair,omitempty"`
+	OsDevice                 *string                                                                             `json:"osDevice,omitempty"`
+	OsType                   *string                                                                             `json:"osType,omitempty"`
+	DataDevice               *string                                                                             `json:"dataDevice,omitempty"`
+	LvmEnabled               *bool                                                                               `json:"lvmEnabled,omitempty"`
+	ApiKey                   *string                                                                             `json:"apiKey,omitempty"`
+	SoftwareRaid             *bool                                                                               `json:"softwareRaid,omitempty"`
+	DateCreated              *time.Time                                                                          `json:"dateCreated,omitempty"`
+	LastUpdated              *time.Time                                                                          `json:"lastUpdated,omitempty"`
+	Stats                    *ListHosts200ResponseAllOfServersInnerStats                                         `json:"stats,omitempty"`
+	Status                   *string                                                                             `json:"status,omitempty"`
+	StatusMessage            *string                                                                             `json:"statusMessage,omitempty"`
+	ErrorMessage             *string                                                                             `json:"errorMessage,omitempty"`
+	StatusDate               *time.Time                                                                          `json:"statusDate,omitempty"`
+	StatusPercent            *string                                                                             `json:"statusPercent,omitempty"`
+	StatusEta                *string                                                                             `json:"statusEta,omitempty"`
+	PowerState               *string                                                                             `json:"powerState,omitempty"`
+	AgentInstalled           *bool                                                                               `json:"agentInstalled,omitempty"`
+	LastAgentUpdate          *string                                                                             `json:"lastAgentUpdate,omitempty"`
+	AgentVersion             *string                                                                             `json:"agentVersion,omitempty"`
+	MaxCores                 *int64                                                                              `json:"maxCores,omitempty"`
+	CoresPerSocket           *int64                                                                              `json:"coresPerSocket,omitempty"`
+	MaxMemory                *int64                                                                              `json:"maxMemory,omitempty"`
+	MaxStorage               *int64                                                                              `json:"maxStorage,omitempty"`
+	MaxCpu                   *int64                                                                              `json:"maxCpu,omitempty"`
+	MaxGpus                  *int64                                                                              `json:"maxGpus,omitempty"`
+	ManageInternalFirewall   *bool                                                                               `json:"manageInternalFirewall,omitempty"`
+	EnableLogs               *bool                                                                               `json:"enableLogs,omitempty"`
+	HourlyCost               *float32                                                                            `json:"hourlyCost,omitempty"`
+	HourlyPrice              *float32                                                                            `json:"hourlyPrice,omitempty"`
+	SourceImage              *ListPriceSets200ResponseAllOfPriceSetsInnerPricesInnerVolumeType                   `json:"sourceImage,omitempty"`
+	ServerOs                 *ListHosts200ResponseAllOfServersInnerServerOs                                      `json:"serverOs,omitempty"`
+	Volumes                  []ListClusterVolumes200ResponseAllOfVolumesInner                                    `json:"volumes,omitempty"`
+	Controllers              []ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceControllersInner        `json:"controllers,omitempty"`
+	Interfaces               []ListHosts200ResponseAllOfServersInnerInterfacesInner                              `json:"interfaces,omitempty"`
+	Labels                   []map[string]interface{}                                                            `json:"labels,omitempty"`
+	Tags                     []map[string]interface{}                                                            `json:"tags,omitempty"`
+	Enabled                  *bool                                                                               `json:"enabled,omitempty"`
+	TagCompliant             *string                                                                             `json:"tagCompliant,omitempty"`
+	Containers               []int64                                                                             `json:"containers,omitempty"`
+	Config                   *ListHosts200ResponseAllOfServersInnerConfig                                        `json:"config,omitempty"`
+	GuestConsolePreferred    *bool                                                                               `json:"guestConsolePreferred,omitempty"`
+	GuestConsoleType         *string                                                                             `json:"guestConsoleType,omitempty"`
+	GuestConsoleUsername     *string                                                                             `json:"guestConsoleUsername,omitempty"`
+	GuestConsolePassword     *string                                                                             `json:"guestConsolePassword,omitempty"`
+	GuestConsolePasswordHash *string                                                                             `json:"guestConsolePasswordHash,omitempty"`
+	GuestConsolePort         *string                                                                             `json:"guestConsolePort,omitempty"`
+	AdditionalProperties     map[string]interface{}                                                              `json:",remain"`
 }
 
 type _ListHosts200ResponseAllOfServersInner ListHosts200ResponseAllOfServersInner
@@ -2618,7 +2618,7 @@ func (o *ListHosts200ResponseAllOfServersInner) SetGuestConsolePort(v string) {
 }
 
 func (o ListHosts200ResponseAllOfServersInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -2868,139 +2868,8 @@ func (o ListHosts200ResponseAllOfServersInner) ToMap() (map[string]interface{}, 
 
 	return toSerialize, nil
 }
-
 func (o *ListHosts200ResponseAllOfServersInner) UnmarshalJSON(data []byte) (err error) {
-	varListHosts200ResponseAllOfServersInner := _ListHosts200ResponseAllOfServersInner{}
-
-	err = json.Unmarshal(data, &varListHosts200ResponseAllOfServersInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListHosts200ResponseAllOfServersInner(varListHosts200ResponseAllOfServersInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "uuid")
-		delete(additionalProperties, "externalId")
-		delete(additionalProperties, "internalId")
-		delete(additionalProperties, "externalUniqueId")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "externalName")
-		delete(additionalProperties, "hostname")
-		delete(additionalProperties, "parentServer")
-		delete(additionalProperties, "accountId")
-		delete(additionalProperties, "account")
-		delete(additionalProperties, "owner")
-		delete(additionalProperties, "zone")
-		delete(additionalProperties, "plan")
-		delete(additionalProperties, "computeServerType")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "zoneId")
-		delete(additionalProperties, "siteId")
-		delete(additionalProperties, "resourcePoolId")
-		delete(additionalProperties, "folderId")
-		delete(additionalProperties, "sshHost")
-		delete(additionalProperties, "sshPort")
-		delete(additionalProperties, "externalIp")
-		delete(additionalProperties, "internalIp")
-		delete(additionalProperties, "volumeId")
-		delete(additionalProperties, "platform")
-		delete(additionalProperties, "platformVersion")
-		delete(additionalProperties, "sshUsername")
-		delete(additionalProperties, "sshPassword")
-		delete(additionalProperties, "sshPasswordHash")
-		delete(additionalProperties, "sshKeyPair")
-		delete(additionalProperties, "osDevice")
-		delete(additionalProperties, "osType")
-		delete(additionalProperties, "dataDevice")
-		delete(additionalProperties, "lvmEnabled")
-		delete(additionalProperties, "apiKey")
-		delete(additionalProperties, "softwareRaid")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		delete(additionalProperties, "stats")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "statusMessage")
-		delete(additionalProperties, "errorMessage")
-		delete(additionalProperties, "statusDate")
-		delete(additionalProperties, "statusPercent")
-		delete(additionalProperties, "statusEta")
-		delete(additionalProperties, "powerState")
-		delete(additionalProperties, "agentInstalled")
-		delete(additionalProperties, "lastAgentUpdate")
-		delete(additionalProperties, "agentVersion")
-		delete(additionalProperties, "maxCores")
-		delete(additionalProperties, "coresPerSocket")
-		delete(additionalProperties, "maxMemory")
-		delete(additionalProperties, "maxStorage")
-		delete(additionalProperties, "maxCpu")
-		delete(additionalProperties, "maxGpus")
-		delete(additionalProperties, "manageInternalFirewall")
-		delete(additionalProperties, "enableLogs")
-		delete(additionalProperties, "hourlyCost")
-		delete(additionalProperties, "hourlyPrice")
-		delete(additionalProperties, "sourceImage")
-		delete(additionalProperties, "serverOs")
-		delete(additionalProperties, "volumes")
-		delete(additionalProperties, "controllers")
-		delete(additionalProperties, "interfaces")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "tagCompliant")
-		delete(additionalProperties, "containers")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "guestConsolePreferred")
-		delete(additionalProperties, "guestConsoleType")
-		delete(additionalProperties, "guestConsoleUsername")
-		delete(additionalProperties, "guestConsolePassword")
-		delete(additionalProperties, "guestConsolePasswordHash")
-		delete(additionalProperties, "guestConsolePort")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListHosts200ResponseAllOfServersInner struct {
-	value *ListHosts200ResponseAllOfServersInner
-	isSet bool
-}
-
-func (v NullableListHosts200ResponseAllOfServersInner) Get() *ListHosts200ResponseAllOfServersInner {
-	return v.value
-}
-
-func (v *NullableListHosts200ResponseAllOfServersInner) Set(val *ListHosts200ResponseAllOfServersInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListHosts200ResponseAllOfServersInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListHosts200ResponseAllOfServersInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListHosts200ResponseAllOfServersInner(val *ListHosts200ResponseAllOfServersInner) *NullableListHosts200ResponseAllOfServersInner {
-	return &NullableListHosts200ResponseAllOfServersInner{value: val, isSet: true}
-}
-
-func (v NullableListHosts200ResponseAllOfServersInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListHosts200ResponseAllOfServersInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

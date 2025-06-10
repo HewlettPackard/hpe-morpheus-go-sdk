@@ -23,8 +23,8 @@ type PreseedScriptsCreate struct {
 	// A name for the preseed script
 	FileName *string `json:"fileName,omitempty"`
 	// The script content
-	Content *string `json:"content,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Content              *string                `json:"content,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _PreseedScriptsCreate PreseedScriptsCreate
@@ -111,7 +111,7 @@ func (o *PreseedScriptsCreate) SetContent(v string) {
 }
 
 func (o PreseedScriptsCreate) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -133,63 +133,8 @@ func (o PreseedScriptsCreate) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *PreseedScriptsCreate) UnmarshalJSON(data []byte) (err error) {
-	varPreseedScriptsCreate := _PreseedScriptsCreate{}
-
-	err = json.Unmarshal(data, &varPreseedScriptsCreate)
-
-	if err != nil {
-		return err
-	}
-
-	*o = PreseedScriptsCreate(varPreseedScriptsCreate)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "fileName")
-		delete(additionalProperties, "content")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullablePreseedScriptsCreate struct {
-	value *PreseedScriptsCreate
-	isSet bool
-}
-
-func (v NullablePreseedScriptsCreate) Get() *PreseedScriptsCreate {
-	return v.value
-}
-
-func (v *NullablePreseedScriptsCreate) Set(val *PreseedScriptsCreate) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullablePreseedScriptsCreate) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullablePreseedScriptsCreate) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullablePreseedScriptsCreate(val *PreseedScriptsCreate) *NullablePreseedScriptsCreate {
-	return &NullablePreseedScriptsCreate{value: val, isSet: true}
-}
-
-func (v NullablePreseedScriptsCreate) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullablePreseedScriptsCreate) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

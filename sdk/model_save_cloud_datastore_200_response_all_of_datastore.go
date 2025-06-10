@@ -20,32 +20,32 @@ var _ MappedNullable = &SaveCloudDatastore200ResponseAllOfDatastore{}
 
 // SaveCloudDatastore200ResponseAllOfDatastore struct for SaveCloudDatastore200ResponseAllOfDatastore
 type SaveCloudDatastore200ResponseAllOfDatastore struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Code *string `json:"code,omitempty"`
-	DatastoreType *GetAlerts200ResponseAllOfChecksInnerAccount `json:"datastoreType,omitempty"`
-	StorageServer *GetAlerts200ResponseAllOfChecksInnerAccount `json:"storageServer,omitempty"`
-	Type *string `json:"type,omitempty"`
-	Visibility *string `json:"visibility,omitempty"`
-	StorageSize *int64 `json:"storageSize,omitempty"`
-	FreeSpace *int64 `json:"freeSpace,omitempty"`
-	DrsEnabled *bool `json:"drsEnabled,omitempty"`
-	Active *bool `json:"active,omitempty"`
-	AllowWrite *bool `json:"allowWrite,omitempty"`
-	DefaultStore *bool `json:"defaultStore,omitempty"`
-	Online *bool `json:"online,omitempty"`
-	AllowRead *bool `json:"allowRead,omitempty"`
-	AllowProvision *bool `json:"allowProvision,omitempty"`
-	RefType *string `json:"refType,omitempty"`
-	RefId *int64 `json:"refId,omitempty"`
-	ExternalId *string `json:"externalId,omitempty"`
-	Zone *GetAlerts200ResponseAllOfChecksInnerAccount `json:"zone,omitempty"`
-	ZonePool *GetAlerts200ResponseAllOfChecksInnerAccount `json:"zonePool,omitempty"`
-	Owner *GetAlerts200ResponseAllOfChecksInnerAccount `json:"owner,omitempty"`
-	Tenants []ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner `json:"tenants,omitempty"`
-	ResourcePermissions *SaveCloudDatastoreRequestDatastoreResourcePermissions `json:"resourcePermissions,omitempty"`
-	Datastores []map[string]interface{} `json:"datastores,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                           `json:"id,omitempty"`
+	Name                 *string                                                          `json:"name,omitempty"`
+	Code                 *string                                                          `json:"code,omitempty"`
+	DatastoreType        *GetAlerts200ResponseAllOfChecksInnerAccount                     `json:"datastoreType,omitempty"`
+	StorageServer        *GetAlerts200ResponseAllOfChecksInnerAccount                     `json:"storageServer,omitempty"`
+	Type                 *string                                                          `json:"type,omitempty"`
+	Visibility           *string                                                          `json:"visibility,omitempty"`
+	StorageSize          *int64                                                           `json:"storageSize,omitempty"`
+	FreeSpace            *int64                                                           `json:"freeSpace,omitempty"`
+	DrsEnabled           *bool                                                            `json:"drsEnabled,omitempty"`
+	Active               *bool                                                            `json:"active,omitempty"`
+	AllowWrite           *bool                                                            `json:"allowWrite,omitempty"`
+	DefaultStore         *bool                                                            `json:"defaultStore,omitempty"`
+	Online               *bool                                                            `json:"online,omitempty"`
+	AllowRead            *bool                                                            `json:"allowRead,omitempty"`
+	AllowProvision       *bool                                                            `json:"allowProvision,omitempty"`
+	RefType              *string                                                          `json:"refType,omitempty"`
+	RefId                *int64                                                           `json:"refId,omitempty"`
+	ExternalId           *string                                                          `json:"externalId,omitempty"`
+	Zone                 *GetAlerts200ResponseAllOfChecksInnerAccount                     `json:"zone,omitempty"`
+	ZonePool             *GetAlerts200ResponseAllOfChecksInnerAccount                     `json:"zonePool,omitempty"`
+	Owner                *GetAlerts200ResponseAllOfChecksInnerAccount                     `json:"owner,omitempty"`
+	Tenants              []ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner `json:"tenants,omitempty"`
+	ResourcePermissions  *SaveCloudDatastoreRequestDatastoreResourcePermissions           `json:"resourcePermissions,omitempty"`
+	Datastores           []map[string]interface{}                                         `json:"datastores,omitempty"`
+	AdditionalProperties map[string]interface{}                                           `json:",remain"`
 }
 
 type _SaveCloudDatastore200ResponseAllOfDatastore SaveCloudDatastore200ResponseAllOfDatastore
@@ -868,7 +868,7 @@ func (o *SaveCloudDatastore200ResponseAllOfDatastore) SetDatastores(v []map[stri
 }
 
 func (o SaveCloudDatastore200ResponseAllOfDatastore) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -959,86 +959,8 @@ func (o SaveCloudDatastore200ResponseAllOfDatastore) ToMap() (map[string]interfa
 
 	return toSerialize, nil
 }
-
 func (o *SaveCloudDatastore200ResponseAllOfDatastore) UnmarshalJSON(data []byte) (err error) {
-	varSaveCloudDatastore200ResponseAllOfDatastore := _SaveCloudDatastore200ResponseAllOfDatastore{}
-
-	err = json.Unmarshal(data, &varSaveCloudDatastore200ResponseAllOfDatastore)
-
-	if err != nil {
-		return err
-	}
-
-	*o = SaveCloudDatastore200ResponseAllOfDatastore(varSaveCloudDatastore200ResponseAllOfDatastore)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "datastoreType")
-		delete(additionalProperties, "storageServer")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "storageSize")
-		delete(additionalProperties, "freeSpace")
-		delete(additionalProperties, "drsEnabled")
-		delete(additionalProperties, "active")
-		delete(additionalProperties, "allowWrite")
-		delete(additionalProperties, "defaultStore")
-		delete(additionalProperties, "online")
-		delete(additionalProperties, "allowRead")
-		delete(additionalProperties, "allowProvision")
-		delete(additionalProperties, "refType")
-		delete(additionalProperties, "refId")
-		delete(additionalProperties, "externalId")
-		delete(additionalProperties, "zone")
-		delete(additionalProperties, "zonePool")
-		delete(additionalProperties, "owner")
-		delete(additionalProperties, "tenants")
-		delete(additionalProperties, "resourcePermissions")
-		delete(additionalProperties, "datastores")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableSaveCloudDatastore200ResponseAllOfDatastore struct {
-	value *SaveCloudDatastore200ResponseAllOfDatastore
-	isSet bool
-}
-
-func (v NullableSaveCloudDatastore200ResponseAllOfDatastore) Get() *SaveCloudDatastore200ResponseAllOfDatastore {
-	return v.value
-}
-
-func (v *NullableSaveCloudDatastore200ResponseAllOfDatastore) Set(val *SaveCloudDatastore200ResponseAllOfDatastore) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSaveCloudDatastore200ResponseAllOfDatastore) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSaveCloudDatastore200ResponseAllOfDatastore) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSaveCloudDatastore200ResponseAllOfDatastore(val *SaveCloudDatastore200ResponseAllOfDatastore) *NullableSaveCloudDatastore200ResponseAllOfDatastore {
-	return &NullableSaveCloudDatastore200ResponseAllOfDatastore{value: val, isSet: true}
-}
-
-func (v NullableSaveCloudDatastore200ResponseAllOfDatastore) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSaveCloudDatastore200ResponseAllOfDatastore) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

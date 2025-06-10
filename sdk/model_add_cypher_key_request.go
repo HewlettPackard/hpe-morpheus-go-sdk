@@ -18,12 +18,12 @@ import (
 // checks if the AddCypherKeyRequest type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &AddCypherKeyRequest{}
 
-// AddCypherKeyRequest The following parameters are available under the root context of the JSON body. The secret mount is capable of storing the entire JSON object as key=value pairs, or just a single string. To store a string instead, use the value query parameter instead of JSON, or pass type=string. There are a couple of special keys that the API will look for in the payload. The ttl key is a special key that if present in the payload will be parsed and used as the ttl parameter (lease duration in seconds). The value key is a special key that if present in the payload will be parsed and used as the secret data (instead of the entire payload). This is true when type=string. 
+// AddCypherKeyRequest The following parameters are available under the root context of the JSON body. The secret mount is capable of storing the entire JSON object as key=value pairs, or just a single string. To store a string instead, use the value query parameter instead of JSON, or pass type=string. There are a couple of special keys that the API will look for in the payload. The ttl key is a special key that if present in the payload will be parsed and used as the ttl parameter (lease duration in seconds). The value key is a special key that if present in the payload will be parsed and used as the secret data (instead of the entire payload). This is true when type=string.
 type AddCypherKeyRequest struct {
 	Ttl *AddCypherKeyRequestTtl `json:"ttl,omitempty"`
 	// The secret value to be stored. This is only parsed if type is passed as `string`.
-	Value *string `json:"value,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Value                *string                `json:"value,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddCypherKeyRequest AddCypherKeyRequest
@@ -110,7 +110,7 @@ func (o *AddCypherKeyRequest) SetValue(v string) {
 }
 
 func (o AddCypherKeyRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -132,63 +132,8 @@ func (o AddCypherKeyRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *AddCypherKeyRequest) UnmarshalJSON(data []byte) (err error) {
-	varAddCypherKeyRequest := _AddCypherKeyRequest{}
-
-	err = json.Unmarshal(data, &varAddCypherKeyRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddCypherKeyRequest(varAddCypherKeyRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "ttl")
-		delete(additionalProperties, "value")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddCypherKeyRequest struct {
-	value *AddCypherKeyRequest
-	isSet bool
-}
-
-func (v NullableAddCypherKeyRequest) Get() *AddCypherKeyRequest {
-	return v.value
-}
-
-func (v *NullableAddCypherKeyRequest) Set(val *AddCypherKeyRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddCypherKeyRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddCypherKeyRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddCypherKeyRequest(val *AddCypherKeyRequest) *NullableAddCypherKeyRequest {
-	return &NullableAddCypherKeyRequest{value: val, isSet: true}
-}
-
-func (v NullableAddCypherKeyRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddCypherKeyRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

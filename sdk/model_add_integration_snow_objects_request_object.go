@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the AddIntegrationSnowObjectsRequestObject type satisfies the MappedNullable interface at compile time
@@ -26,8 +25,8 @@ type AddIntegrationSnowObjectsRequestObject struct {
 	// Integration Object Type Code
 	Type string `json:"type"`
 	// Catalog Item Type ID
-	CatalogItemType int64 `json:"catalogItemType"`
-	AdditionalProperties map[string]interface{}
+	CatalogItemType      int64                  `json:"catalogItemType"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddIntegrationSnowObjectsRequestObject AddIntegrationSnowObjectsRequestObject
@@ -132,7 +131,7 @@ func (o *AddIntegrationSnowObjectsRequestObject) SetCatalogItemType(v int64) {
 }
 
 func (o AddIntegrationSnowObjectsRequestObject) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -153,86 +152,8 @@ func (o AddIntegrationSnowObjectsRequestObject) ToMap() (map[string]interface{},
 
 	return toSerialize, nil
 }
-
 func (o *AddIntegrationSnowObjectsRequestObject) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"type",
-		"catalogItemType",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varAddIntegrationSnowObjectsRequestObject := _AddIntegrationSnowObjectsRequestObject{}
-
-	err = json.Unmarshal(data, &varAddIntegrationSnowObjectsRequestObject)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddIntegrationSnowObjectsRequestObject(varAddIntegrationSnowObjectsRequestObject)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "catalogItemType")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddIntegrationSnowObjectsRequestObject struct {
-	value *AddIntegrationSnowObjectsRequestObject
-	isSet bool
-}
-
-func (v NullableAddIntegrationSnowObjectsRequestObject) Get() *AddIntegrationSnowObjectsRequestObject {
-	return v.value
-}
-
-func (v *NullableAddIntegrationSnowObjectsRequestObject) Set(val *AddIntegrationSnowObjectsRequestObject) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddIntegrationSnowObjectsRequestObject) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddIntegrationSnowObjectsRequestObject) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddIntegrationSnowObjectsRequestObject(val *AddIntegrationSnowObjectsRequestObject) *NullableAddIntegrationSnowObjectsRequestObject {
-	return &NullableAddIntegrationSnowObjectsRequestObject{value: val, isSet: true}
-}
-
-func (v NullableAddIntegrationSnowObjectsRequestObject) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddIntegrationSnowObjectsRequestObject) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the AddCatalogItemTypeRequestCatalogItemTypeOneOf2 type satisfies the MappedNullable interface at compile time
@@ -44,20 +43,20 @@ type AddCatalogItemTypeRequestCatalogItemTypeOneOf2 struct {
 	// Can be used to feature the catalog item type.
 	Featured *bool `json:"featured,omitempty"`
 	// Can users order more than one of this item at a time.
-	AllowQuantity *bool `json:"allowQuantity,omitempty"`
-	Workflow GetAlerts200ResponseAllOfChecksInnerAccount `json:"workflow"`
+	AllowQuantity *bool                                       `json:"allowQuantity,omitempty"`
+	Workflow      GetAlerts200ResponseAllOfChecksInnerAccount `json:"workflow"`
 	// Context for running the workflow, determines if a target resource must be selected.
 	Context *string `json:"context,omitempty"`
 	// Configuration object that contains settings for the workflow.
 	WorkflowConfig *string `json:"workflowConfig,omitempty"`
 	// Form Type determines if the configuration options come from a Form (form) or a list of Inputs (optionTypes).
-	FormType *string `json:"formType,omitempty"`
-	Form *AddCatalogItemTypeRequestCatalogItemTypeOneOfForm `json:"form,omitempty"`
+	FormType *string                                            `json:"formType,omitempty"`
+	Form     *AddCatalogItemTypeRequestCatalogItemTypeOneOfForm `json:"form,omitempty"`
 	// Array of option type IDs. Only applies to formType 'optionTypes'.
 	OptionTypes []int64 `json:"optionTypes,omitempty"`
 	// Documentation content for this Catalog Item. Markdown-formatted text is accepted and displayed appropriately when the item is ordered from the Service Catalog. A new Catalog Item-type Wiki entry will also be added containing this information.
-	Content *string `json:"content,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Content              *string                `json:"content,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddCatalogItemTypeRequestCatalogItemTypeOneOf2 AddCatalogItemTypeRequestCatalogItemTypeOneOf2
@@ -701,7 +700,7 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOf2) SetContent(v string) {
 }
 
 func (o AddCatalogItemTypeRequestCatalogItemTypeOneOf2) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -772,101 +771,8 @@ func (o AddCatalogItemTypeRequestCatalogItemTypeOneOf2) ToMap() (map[string]inte
 
 	return toSerialize, nil
 }
-
 func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOf2) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"workflow",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varAddCatalogItemTypeRequestCatalogItemTypeOneOf2 := _AddCatalogItemTypeRequestCatalogItemTypeOneOf2{}
-
-	err = json.Unmarshal(data, &varAddCatalogItemTypeRequestCatalogItemTypeOneOf2)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddCatalogItemTypeRequestCatalogItemTypeOneOf2(varAddCatalogItemTypeRequestCatalogItemTypeOneOf2)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "category")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "layoutCode")
-		delete(additionalProperties, "iconPath")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "featured")
-		delete(additionalProperties, "allowQuantity")
-		delete(additionalProperties, "workflow")
-		delete(additionalProperties, "context")
-		delete(additionalProperties, "workflowConfig")
-		delete(additionalProperties, "formType")
-		delete(additionalProperties, "form")
-		delete(additionalProperties, "optionTypes")
-		delete(additionalProperties, "content")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddCatalogItemTypeRequestCatalogItemTypeOneOf2 struct {
-	value *AddCatalogItemTypeRequestCatalogItemTypeOneOf2
-	isSet bool
-}
-
-func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOf2) Get() *AddCatalogItemTypeRequestCatalogItemTypeOneOf2 {
-	return v.value
-}
-
-func (v *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOf2) Set(val *AddCatalogItemTypeRequestCatalogItemTypeOneOf2) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOf2) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOf2) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddCatalogItemTypeRequestCatalogItemTypeOneOf2(val *AddCatalogItemTypeRequestCatalogItemTypeOneOf2) *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOf2 {
-	return &NullableAddCatalogItemTypeRequestCatalogItemTypeOneOf2{value: val, isSet: true}
-}
-
-func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOf2) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOf2) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

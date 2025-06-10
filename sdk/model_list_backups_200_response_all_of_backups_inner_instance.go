@@ -23,8 +23,8 @@ type ListBackups200ResponseAllOfBackupsInnerInstance struct {
 	// Instance ID
 	Id *int64 `json:"id,omitempty"`
 	// Instance Name
-	Name *string `json:"name,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Name                 *string                `json:"name,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListBackups200ResponseAllOfBackupsInnerInstance ListBackups200ResponseAllOfBackupsInnerInstance
@@ -111,7 +111,7 @@ func (o *ListBackups200ResponseAllOfBackupsInnerInstance) SetName(v string) {
 }
 
 func (o ListBackups200ResponseAllOfBackupsInnerInstance) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -133,63 +133,8 @@ func (o ListBackups200ResponseAllOfBackupsInnerInstance) ToMap() (map[string]int
 
 	return toSerialize, nil
 }
-
 func (o *ListBackups200ResponseAllOfBackupsInnerInstance) UnmarshalJSON(data []byte) (err error) {
-	varListBackups200ResponseAllOfBackupsInnerInstance := _ListBackups200ResponseAllOfBackupsInnerInstance{}
-
-	err = json.Unmarshal(data, &varListBackups200ResponseAllOfBackupsInnerInstance)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListBackups200ResponseAllOfBackupsInnerInstance(varListBackups200ResponseAllOfBackupsInnerInstance)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListBackups200ResponseAllOfBackupsInnerInstance struct {
-	value *ListBackups200ResponseAllOfBackupsInnerInstance
-	isSet bool
-}
-
-func (v NullableListBackups200ResponseAllOfBackupsInnerInstance) Get() *ListBackups200ResponseAllOfBackupsInnerInstance {
-	return v.value
-}
-
-func (v *NullableListBackups200ResponseAllOfBackupsInnerInstance) Set(val *ListBackups200ResponseAllOfBackupsInnerInstance) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListBackups200ResponseAllOfBackupsInnerInstance) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListBackups200ResponseAllOfBackupsInnerInstance) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListBackups200ResponseAllOfBackupsInnerInstance(val *ListBackups200ResponseAllOfBackupsInnerInstance) *NullableListBackups200ResponseAllOfBackupsInnerInstance {
-	return &NullableListBackups200ResponseAllOfBackupsInnerInstance{value: val, isSet: true}
-}
-
-func (v NullableListBackups200ResponseAllOfBackupsInnerInstance) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListBackups200ResponseAllOfBackupsInnerInstance) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

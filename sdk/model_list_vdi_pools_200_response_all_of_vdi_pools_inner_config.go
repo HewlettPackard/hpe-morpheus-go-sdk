@@ -20,31 +20,31 @@ var _ MappedNullable = &ListVDIPools200ResponseAllOfVdiPoolsInnerConfig{}
 
 // ListVDIPools200ResponseAllOfVdiPoolsInnerConfig struct for ListVDIPools200ResponseAllOfVdiPoolsInnerConfig
 type ListVDIPools200ResponseAllOfVdiPoolsInnerConfig struct {
-	Group *ListInstanceServicePlans200ResponsePlansInnerAutoOptionsInner `json:"group,omitempty"`
-	Cloud *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"cloud,omitempty"`
-	Type *string `json:"type,omitempty"`
-	Instance *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance `json:"instance,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Environment *string `json:"environment,omitempty"`
-	Config *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigConfig `json:"config,omitempty"`
-	Volumes []ListImageBuilds200ResponseAllOfImageBuildsInnerConfigVolumesInner `json:"volumes,omitempty"`
-	HostName *string `json:"hostName,omitempty"`
-	Layout *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigPlan `json:"layout,omitempty"`
-	StorageControllers []ListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner `json:"storageControllers,omitempty"`
-	Plan *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigPlan `json:"plan,omitempty"`
-	Version *string `json:"version,omitempty"`
-	NetworkInterfaces []ListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInner `json:"networkInterfaces,omitempty"`
-	ExecutionId *string `json:"executionId,omitempty"`
-	Backup *ListInstances200ResponseAllOfInstancesInnerConfigBackup `json:"backup,omitempty"`
-	LoadBalancer []map[string]interface{} `json:"loadBalancer,omitempty"`
-	HideLock *bool `json:"hideLock,omitempty"`
-	HasNetworks *bool `json:"hasNetworks,omitempty"`
-	DisplayNetworks []ListVDIPools200ResponseAllOfVdiPoolsInnerConfigDisplayNetworksInner `json:"displayNetworks,omitempty"`
-	Copies *int64 `json:"copies,omitempty"`
-	ShowScale *bool `json:"showScale,omitempty"`
-	HasPreview *bool `json:"hasPreview,omitempty"`
-	VolumesDisplay []ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner `json:"volumesDisplay,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Group                *ListInstanceServicePlans200ResponsePlansInnerAutoOptionsInner           `json:"group,omitempty"`
+	Cloud                *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner  `json:"cloud,omitempty"`
+	Type                 *string                                                                  `json:"type,omitempty"`
+	Instance             *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance                 `json:"instance,omitempty"`
+	Name                 *string                                                                  `json:"name,omitempty"`
+	Environment          *string                                                                  `json:"environment,omitempty"`
+	Config               *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigConfig                   `json:"config,omitempty"`
+	Volumes              []ListImageBuilds200ResponseAllOfImageBuildsInnerConfigVolumesInner      `json:"volumes,omitempty"`
+	HostName             *string                                                                  `json:"hostName,omitempty"`
+	Layout               *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigPlan               `json:"layout,omitempty"`
+	StorageControllers   []ListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner `json:"storageControllers,omitempty"`
+	Plan                 *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigPlan               `json:"plan,omitempty"`
+	Version              *string                                                                  `json:"version,omitempty"`
+	NetworkInterfaces    []ListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInner  `json:"networkInterfaces,omitempty"`
+	ExecutionId          *string                                                                  `json:"executionId,omitempty"`
+	Backup               *ListInstances200ResponseAllOfInstancesInnerConfigBackup                 `json:"backup,omitempty"`
+	LoadBalancer         []map[string]interface{}                                                 `json:"loadBalancer,omitempty"`
+	HideLock             *bool                                                                    `json:"hideLock,omitempty"`
+	HasNetworks          *bool                                                                    `json:"hasNetworks,omitempty"`
+	DisplayNetworks      []ListVDIPools200ResponseAllOfVdiPoolsInnerConfigDisplayNetworksInner    `json:"displayNetworks,omitempty"`
+	Copies               *int64                                                                   `json:"copies,omitempty"`
+	ShowScale            *bool                                                                    `json:"showScale,omitempty"`
+	HasPreview           *bool                                                                    `json:"hasPreview,omitempty"`
+	VolumesDisplay       []ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner     `json:"volumesDisplay,omitempty"`
+	AdditionalProperties map[string]interface{}                                                   `json:",remain"`
 }
 
 type _ListVDIPools200ResponseAllOfVdiPoolsInnerConfig ListVDIPools200ResponseAllOfVdiPoolsInnerConfig
@@ -835,7 +835,7 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) SetVolumesDisplay(v []
 }
 
 func (o ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -923,85 +923,8 @@ func (o ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) ToMap() (map[string]int
 
 	return toSerialize, nil
 }
-
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) UnmarshalJSON(data []byte) (err error) {
-	varListVDIPools200ResponseAllOfVdiPoolsInnerConfig := _ListVDIPools200ResponseAllOfVdiPoolsInnerConfig{}
-
-	err = json.Unmarshal(data, &varListVDIPools200ResponseAllOfVdiPoolsInnerConfig)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListVDIPools200ResponseAllOfVdiPoolsInnerConfig(varListVDIPools200ResponseAllOfVdiPoolsInnerConfig)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "group")
-		delete(additionalProperties, "cloud")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "instance")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "environment")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "volumes")
-		delete(additionalProperties, "hostName")
-		delete(additionalProperties, "layout")
-		delete(additionalProperties, "storageControllers")
-		delete(additionalProperties, "plan")
-		delete(additionalProperties, "version")
-		delete(additionalProperties, "networkInterfaces")
-		delete(additionalProperties, "executionId")
-		delete(additionalProperties, "backup")
-		delete(additionalProperties, "loadBalancer")
-		delete(additionalProperties, "hideLock")
-		delete(additionalProperties, "hasNetworks")
-		delete(additionalProperties, "displayNetworks")
-		delete(additionalProperties, "copies")
-		delete(additionalProperties, "showScale")
-		delete(additionalProperties, "hasPreview")
-		delete(additionalProperties, "volumesDisplay")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListVDIPools200ResponseAllOfVdiPoolsInnerConfig struct {
-	value *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig
-	isSet bool
-}
-
-func (v NullableListVDIPools200ResponseAllOfVdiPoolsInnerConfig) Get() *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig {
-	return v.value
-}
-
-func (v *NullableListVDIPools200ResponseAllOfVdiPoolsInnerConfig) Set(val *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListVDIPools200ResponseAllOfVdiPoolsInnerConfig) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListVDIPools200ResponseAllOfVdiPoolsInnerConfig) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListVDIPools200ResponseAllOfVdiPoolsInnerConfig(val *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) *NullableListVDIPools200ResponseAllOfVdiPoolsInnerConfig {
-	return &NullableListVDIPools200ResponseAllOfVdiPoolsInnerConfig{value: val, isSet: true}
-}
-
-func (v NullableListVDIPools200ResponseAllOfVdiPoolsInnerConfig) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListVDIPools200ResponseAllOfVdiPoolsInnerConfig) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

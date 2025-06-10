@@ -25,8 +25,8 @@ type AddCloudResourcePoolRequestResourcePoolConfigAnyOf1 struct {
 	// Array of developer usernames
 	Developers []string `json:"developers,omitempty"`
 	// Array of auditor usernames
-	Auditors []string `json:"auditors,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Auditors             []string               `json:"auditors,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddCloudResourcePoolRequestResourcePoolConfigAnyOf1 AddCloudResourcePoolRequestResourcePoolConfigAnyOf1
@@ -145,7 +145,7 @@ func (o *AddCloudResourcePoolRequestResourcePoolConfigAnyOf1) SetAuditors(v []st
 }
 
 func (o AddCloudResourcePoolRequestResourcePoolConfigAnyOf1) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -170,64 +170,8 @@ func (o AddCloudResourcePoolRequestResourcePoolConfigAnyOf1) ToMap() (map[string
 
 	return toSerialize, nil
 }
-
 func (o *AddCloudResourcePoolRequestResourcePoolConfigAnyOf1) UnmarshalJSON(data []byte) (err error) {
-	varAddCloudResourcePoolRequestResourcePoolConfigAnyOf1 := _AddCloudResourcePoolRequestResourcePoolConfigAnyOf1{}
-
-	err = json.Unmarshal(data, &varAddCloudResourcePoolRequestResourcePoolConfigAnyOf1)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddCloudResourcePoolRequestResourcePoolConfigAnyOf1(varAddCloudResourcePoolRequestResourcePoolConfigAnyOf1)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "managers")
-		delete(additionalProperties, "developers")
-		delete(additionalProperties, "auditors")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddCloudResourcePoolRequestResourcePoolConfigAnyOf1 struct {
-	value *AddCloudResourcePoolRequestResourcePoolConfigAnyOf1
-	isSet bool
-}
-
-func (v NullableAddCloudResourcePoolRequestResourcePoolConfigAnyOf1) Get() *AddCloudResourcePoolRequestResourcePoolConfigAnyOf1 {
-	return v.value
-}
-
-func (v *NullableAddCloudResourcePoolRequestResourcePoolConfigAnyOf1) Set(val *AddCloudResourcePoolRequestResourcePoolConfigAnyOf1) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddCloudResourcePoolRequestResourcePoolConfigAnyOf1) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddCloudResourcePoolRequestResourcePoolConfigAnyOf1) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddCloudResourcePoolRequestResourcePoolConfigAnyOf1(val *AddCloudResourcePoolRequestResourcePoolConfigAnyOf1) *NullableAddCloudResourcePoolRequestResourcePoolConfigAnyOf1 {
-	return &NullableAddCloudResourcePoolRequestResourcePoolConfigAnyOf1{value: val, isSet: true}
-}
-
-func (v NullableAddCloudResourcePoolRequestResourcePoolConfigAnyOf1) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddCloudResourcePoolRequestResourcePoolConfigAnyOf1) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

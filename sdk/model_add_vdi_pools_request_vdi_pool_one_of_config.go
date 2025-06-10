@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the AddVDIPoolsRequestVdiPoolOneOfConfig type satisfies the MappedNullable interface at compile time
@@ -22,13 +21,13 @@ var _ MappedNullable = &AddVDIPoolsRequestVdiPoolOneOfConfig{}
 // AddVDIPoolsRequestVdiPoolOneOfConfig This can be passed in place of `instanceConfig`, but will not preserve the config property order.
 type AddVDIPoolsRequestVdiPoolOneOfConfig struct {
 	// Name of instance
-	Name string `json:"name"`
-	Group AddVDIPoolsRequestVdiPoolOneOfConfigGroup `json:"group"`
-	Cloud AddVDIPoolsRequestVdiPoolOneOfConfigCloud `json:"cloud"`
-	Type AddVDIPoolsRequestVdiPoolOneOfConfigType `json:"type"`
-	Layout AddVDIPoolsRequestVdiPoolOneOfConfigLayout `json:"layout"`
-	Plan AddVDIPoolsRequestVdiPoolOneOfConfigPlan `json:"plan"`
-	AdditionalProperties map[string]interface{}
+	Name                 string                                     `json:"name"`
+	Group                AddVDIPoolsRequestVdiPoolOneOfConfigGroup  `json:"group"`
+	Cloud                AddVDIPoolsRequestVdiPoolOneOfConfigCloud  `json:"cloud"`
+	Type                 AddVDIPoolsRequestVdiPoolOneOfConfigType   `json:"type"`
+	Layout               AddVDIPoolsRequestVdiPoolOneOfConfigLayout `json:"layout"`
+	Plan                 AddVDIPoolsRequestVdiPoolOneOfConfigPlan   `json:"plan"`
+	AdditionalProperties map[string]interface{}                     `json:",remain"`
 }
 
 type _AddVDIPoolsRequestVdiPoolOneOfConfig AddVDIPoolsRequestVdiPoolOneOfConfig
@@ -201,7 +200,7 @@ func (o *AddVDIPoolsRequestVdiPoolOneOfConfig) SetPlan(v AddVDIPoolsRequestVdiPo
 }
 
 func (o AddVDIPoolsRequestVdiPoolOneOfConfig) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -223,93 +222,8 @@ func (o AddVDIPoolsRequestVdiPoolOneOfConfig) ToMap() (map[string]interface{}, e
 
 	return toSerialize, nil
 }
-
 func (o *AddVDIPoolsRequestVdiPoolOneOfConfig) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"name",
-		"group",
-		"cloud",
-		"type",
-		"layout",
-		"plan",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varAddVDIPoolsRequestVdiPoolOneOfConfig := _AddVDIPoolsRequestVdiPoolOneOfConfig{}
-
-	err = json.Unmarshal(data, &varAddVDIPoolsRequestVdiPoolOneOfConfig)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddVDIPoolsRequestVdiPoolOneOfConfig(varAddVDIPoolsRequestVdiPoolOneOfConfig)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "group")
-		delete(additionalProperties, "cloud")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "layout")
-		delete(additionalProperties, "plan")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddVDIPoolsRequestVdiPoolOneOfConfig struct {
-	value *AddVDIPoolsRequestVdiPoolOneOfConfig
-	isSet bool
-}
-
-func (v NullableAddVDIPoolsRequestVdiPoolOneOfConfig) Get() *AddVDIPoolsRequestVdiPoolOneOfConfig {
-	return v.value
-}
-
-func (v *NullableAddVDIPoolsRequestVdiPoolOneOfConfig) Set(val *AddVDIPoolsRequestVdiPoolOneOfConfig) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddVDIPoolsRequestVdiPoolOneOfConfig) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddVDIPoolsRequestVdiPoolOneOfConfig) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddVDIPoolsRequestVdiPoolOneOfConfig(val *AddVDIPoolsRequestVdiPoolOneOfConfig) *NullableAddVDIPoolsRequestVdiPoolOneOfConfig {
-	return &NullableAddVDIPoolsRequestVdiPoolOneOfConfig{value: val, isSet: true}
-}
-
-func (v NullableAddVDIPoolsRequestVdiPoolOneOfConfig) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddVDIPoolsRequestVdiPoolOneOfConfig) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

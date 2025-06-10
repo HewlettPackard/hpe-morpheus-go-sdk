@@ -31,9 +31,9 @@ type LoadBalancerCreate struct {
 	// private or public
 	Visibility *string `json:"visibility,omitempty"`
 	// Array of tenant account ids that are allowed access
-	Tenants []CreateLoadBalancerRequestLoadBalancerTenantsInner `json:"tenants,omitempty"`
-	ResourcePermission *CreateLoadBalancerRequestLoadBalancerResourcePermission `json:"resourcePermission,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Tenants              []CreateLoadBalancerRequestLoadBalancerTenantsInner      `json:"tenants,omitempty"`
+	ResourcePermission   *CreateLoadBalancerRequestLoadBalancerResourcePermission `json:"resourcePermission,omitempty"`
+	AdditionalProperties map[string]interface{}                                   `json:",remain"`
 }
 
 type _LoadBalancerCreate LoadBalancerCreate
@@ -284,7 +284,7 @@ func (o *LoadBalancerCreate) SetResourcePermission(v CreateLoadBalancerRequestLo
 }
 
 func (o LoadBalancerCreate) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -321,68 +321,8 @@ func (o LoadBalancerCreate) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *LoadBalancerCreate) UnmarshalJSON(data []byte) (err error) {
-	varLoadBalancerCreate := _LoadBalancerCreate{}
-
-	err = json.Unmarshal(data, &varLoadBalancerCreate)
-
-	if err != nil {
-		return err
-	}
-
-	*o = LoadBalancerCreate(varLoadBalancerCreate)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "networkServerId")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "tenants")
-		delete(additionalProperties, "resourcePermission")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableLoadBalancerCreate struct {
-	value *LoadBalancerCreate
-	isSet bool
-}
-
-func (v NullableLoadBalancerCreate) Get() *LoadBalancerCreate {
-	return v.value
-}
-
-func (v *NullableLoadBalancerCreate) Set(val *LoadBalancerCreate) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableLoadBalancerCreate) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableLoadBalancerCreate) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableLoadBalancerCreate(val *LoadBalancerCreate) *NullableLoadBalancerCreate {
-	return &NullableLoadBalancerCreate{value: val, isSet: true}
-}
-
-func (v NullableLoadBalancerCreate) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableLoadBalancerCreate) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -21,29 +21,29 @@ var _ MappedNullable = &GetBillingServersIdentifier200ResponseAllOfBillingInfo{}
 
 // GetBillingServersIdentifier200ResponseAllOfBillingInfo struct for GetBillingServersIdentifier200ResponseAllOfBillingInfo
 type GetBillingServersIdentifier200ResponseAllOfBillingInfo struct {
-	RefType *string `json:"refType,omitempty"`
-	RefUUID *string `json:"refUUID,omitempty"`
-	RefId *string `json:"refId,omitempty"`
-	StartDate *time.Time `json:"startDate,omitempty"`
-	EndDate *time.Time `json:"endDate,omitempty"`
-	Cost *float32 `json:"cost,omitempty"`
-	Price *float32 `json:"price,omitempty"`
-	NumUnits *float32 `json:"numUnits,omitempty"`
-	Unit *string `json:"unit,omitempty"`
-	Currency *string `json:"currency,omitempty"`
-	Usages []GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInner `json:"usages,omitempty"`
-	NumUsages *int64 `json:"numUsages,omitempty"`
-	TotalUsages *int64 `json:"totalUsages,omitempty"`
-	HasMoreUsages *bool `json:"hasMoreUsages,omitempty"`
-	FoundPricing *bool `json:"foundPricing,omitempty"`
-	Name *string `json:"name,omitempty"`
-	ServerUUID *string `json:"serverUUID,omitempty"`
-	ServerUniqueId *string `json:"serverUniqueId,omitempty"`
-	ServerExternalId *string `json:"serverExternalId,omitempty"`
-	ServerInternalId *string `json:"serverInternalId,omitempty"`
-	ResourcePoolId *int64 `json:"resourcePoolId,omitempty"`
-	ResourcePoolName *string `json:"resourcePoolName,omitempty"`
-	AdditionalProperties map[string]interface{}
+	RefType              *string                                                             `json:"refType,omitempty"`
+	RefUUID              *string                                                             `json:"refUUID,omitempty"`
+	RefId                *string                                                             `json:"refId,omitempty"`
+	StartDate            *time.Time                                                          `json:"startDate,omitempty"`
+	EndDate              *time.Time                                                          `json:"endDate,omitempty"`
+	Cost                 *float32                                                            `json:"cost,omitempty"`
+	Price                *float32                                                            `json:"price,omitempty"`
+	NumUnits             *float32                                                            `json:"numUnits,omitempty"`
+	Unit                 *string                                                             `json:"unit,omitempty"`
+	Currency             *string                                                             `json:"currency,omitempty"`
+	Usages               []GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInner `json:"usages,omitempty"`
+	NumUsages            *int64                                                              `json:"numUsages,omitempty"`
+	TotalUsages          *int64                                                              `json:"totalUsages,omitempty"`
+	HasMoreUsages        *bool                                                               `json:"hasMoreUsages,omitempty"`
+	FoundPricing         *bool                                                               `json:"foundPricing,omitempty"`
+	Name                 *string                                                             `json:"name,omitempty"`
+	ServerUUID           *string                                                             `json:"serverUUID,omitempty"`
+	ServerUniqueId       *string                                                             `json:"serverUniqueId,omitempty"`
+	ServerExternalId     *string                                                             `json:"serverExternalId,omitempty"`
+	ServerInternalId     *string                                                             `json:"serverInternalId,omitempty"`
+	ResourcePoolId       *int64                                                              `json:"resourcePoolId,omitempty"`
+	ResourcePoolName     *string                                                             `json:"resourcePoolName,omitempty"`
+	AdditionalProperties map[string]interface{}                                              `json:",remain"`
 }
 
 type _GetBillingServersIdentifier200ResponseAllOfBillingInfo GetBillingServersIdentifier200ResponseAllOfBillingInfo
@@ -770,7 +770,7 @@ func (o *GetBillingServersIdentifier200ResponseAllOfBillingInfo) SetResourcePool
 }
 
 func (o GetBillingServersIdentifier200ResponseAllOfBillingInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -852,83 +852,8 @@ func (o GetBillingServersIdentifier200ResponseAllOfBillingInfo) ToMap() (map[str
 
 	return toSerialize, nil
 }
-
 func (o *GetBillingServersIdentifier200ResponseAllOfBillingInfo) UnmarshalJSON(data []byte) (err error) {
-	varGetBillingServersIdentifier200ResponseAllOfBillingInfo := _GetBillingServersIdentifier200ResponseAllOfBillingInfo{}
-
-	err = json.Unmarshal(data, &varGetBillingServersIdentifier200ResponseAllOfBillingInfo)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetBillingServersIdentifier200ResponseAllOfBillingInfo(varGetBillingServersIdentifier200ResponseAllOfBillingInfo)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "refType")
-		delete(additionalProperties, "refUUID")
-		delete(additionalProperties, "refId")
-		delete(additionalProperties, "startDate")
-		delete(additionalProperties, "endDate")
-		delete(additionalProperties, "cost")
-		delete(additionalProperties, "price")
-		delete(additionalProperties, "numUnits")
-		delete(additionalProperties, "unit")
-		delete(additionalProperties, "currency")
-		delete(additionalProperties, "usages")
-		delete(additionalProperties, "numUsages")
-		delete(additionalProperties, "totalUsages")
-		delete(additionalProperties, "hasMoreUsages")
-		delete(additionalProperties, "foundPricing")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "serverUUID")
-		delete(additionalProperties, "serverUniqueId")
-		delete(additionalProperties, "serverExternalId")
-		delete(additionalProperties, "serverInternalId")
-		delete(additionalProperties, "resourcePoolId")
-		delete(additionalProperties, "resourcePoolName")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetBillingServersIdentifier200ResponseAllOfBillingInfo struct {
-	value *GetBillingServersIdentifier200ResponseAllOfBillingInfo
-	isSet bool
-}
-
-func (v NullableGetBillingServersIdentifier200ResponseAllOfBillingInfo) Get() *GetBillingServersIdentifier200ResponseAllOfBillingInfo {
-	return v.value
-}
-
-func (v *NullableGetBillingServersIdentifier200ResponseAllOfBillingInfo) Set(val *GetBillingServersIdentifier200ResponseAllOfBillingInfo) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetBillingServersIdentifier200ResponseAllOfBillingInfo) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetBillingServersIdentifier200ResponseAllOfBillingInfo) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetBillingServersIdentifier200ResponseAllOfBillingInfo(val *GetBillingServersIdentifier200ResponseAllOfBillingInfo) *NullableGetBillingServersIdentifier200ResponseAllOfBillingInfo {
-	return &NullableGetBillingServersIdentifier200ResponseAllOfBillingInfo{value: val, isSet: true}
-}
-
-func (v NullableGetBillingServersIdentifier200ResponseAllOfBillingInfo) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetBillingServersIdentifier200ResponseAllOfBillingInfo) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

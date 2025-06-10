@@ -20,9 +20,9 @@ var _ MappedNullable = &InstanceUpdate{}
 
 // InstanceUpdate struct for InstanceUpdate
 type InstanceUpdate struct {
-	Instance *UpdateInstanceRequestInstance `json:"instance,omitempty"`
-	Config *UpdateInstanceRequestConfig `json:"config,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Instance             *UpdateInstanceRequestInstance `json:"instance,omitempty"`
+	Config               *UpdateInstanceRequestConfig   `json:"config,omitempty"`
+	AdditionalProperties map[string]interface{}         `json:",remain"`
 }
 
 type _InstanceUpdate InstanceUpdate
@@ -109,7 +109,7 @@ func (o *InstanceUpdate) SetConfig(v UpdateInstanceRequestConfig) {
 }
 
 func (o InstanceUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -131,63 +131,8 @@ func (o InstanceUpdate) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *InstanceUpdate) UnmarshalJSON(data []byte) (err error) {
-	varInstanceUpdate := _InstanceUpdate{}
-
-	err = json.Unmarshal(data, &varInstanceUpdate)
-
-	if err != nil {
-		return err
-	}
-
-	*o = InstanceUpdate(varInstanceUpdate)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "instance")
-		delete(additionalProperties, "config")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableInstanceUpdate struct {
-	value *InstanceUpdate
-	isSet bool
-}
-
-func (v NullableInstanceUpdate) Get() *InstanceUpdate {
-	return v.value
-}
-
-func (v *NullableInstanceUpdate) Set(val *InstanceUpdate) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableInstanceUpdate) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableInstanceUpdate) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableInstanceUpdate(val *InstanceUpdate) *NullableInstanceUpdate {
-	return &NullableInstanceUpdate{value: val, isSet: true}
-}
-
-func (v NullableInstanceUpdate) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableInstanceUpdate) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

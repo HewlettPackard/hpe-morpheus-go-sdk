@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the AddOsTypesRequestOsType type satisfies the MappedNullable interface at compile time
@@ -21,33 +20,33 @@ var _ MappedNullable = &AddOsTypesRequestOsType{}
 
 // AddOsTypesRequestOsType struct for AddOsTypesRequestOsType
 type AddOsTypesRequestOsType struct {
-	// The name of the osType. 
+	// The name of the osType.
 	Name string `json:"name"`
-	// The description of the osType.  
+	// The description of the osType.
 	Description *string `json:"description,omitempty"`
-	// The platform of the osType.  
+	// The platform of the osType.
 	Platform string `json:"platform"`
-	// The code morph uses as an identifier 
+	// The code morph uses as an identifier
 	Code string `json:"code"`
-	// The category of the osType. 
+	// The category of the osType.
 	Category *string `json:"category,omitempty"`
-	// The vendor of the osType. 
+	// The vendor of the osType.
 	Vendor *string `json:"vendor,omitempty"`
-	// The osName of the osType. 
+	// The osName of the osType.
 	OsName *string `json:"osName,omitempty"`
-	// The osVersion of the osType. 
+	// The osVersion of the osType.
 	OsVersion *string `json:"osVersion,omitempty"`
-	// The osCodename of the osType. 
+	// The osCodename of the osType.
 	OsCodename *string `json:"osCodename,omitempty"`
-	// The family of the osType. 
+	// The family of the osType.
 	OsFamily *string `json:"osFamily,omitempty"`
-	// The bitCount/architecture of the osType. 
+	// The bitCount/architecture of the osType.
 	BitCount int64 `json:"bitCount"`
-	// The version of CloudInit being used. 
+	// The version of CloudInit being used.
 	CloudInitVersion *string `json:"cloudInitVersion,omitempty"`
-	// Whether the morpheus agent is installed. 
-	InstallAgent *bool `json:"installAgent,omitempty"`
-	AdditionalProperties map[string]interface{}
+	// Whether the morpheus agent is installed.
+	InstallAgent         *bool                  `json:"installAgent,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddOsTypesRequestOsType AddOsTypesRequestOsType
@@ -458,7 +457,7 @@ func (o *AddOsTypesRequestOsType) SetInstallAgent(v bool) {
 }
 
 func (o AddOsTypesRequestOsType) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -505,98 +504,8 @@ func (o AddOsTypesRequestOsType) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *AddOsTypesRequestOsType) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"name",
-		"platform",
-		"code",
-		"bitCount",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varAddOsTypesRequestOsType := _AddOsTypesRequestOsType{}
-
-	err = json.Unmarshal(data, &varAddOsTypesRequestOsType)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddOsTypesRequestOsType(varAddOsTypesRequestOsType)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "platform")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "category")
-		delete(additionalProperties, "vendor")
-		delete(additionalProperties, "osName")
-		delete(additionalProperties, "osVersion")
-		delete(additionalProperties, "osCodename")
-		delete(additionalProperties, "osFamily")
-		delete(additionalProperties, "bitCount")
-		delete(additionalProperties, "cloudInitVersion")
-		delete(additionalProperties, "installAgent")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddOsTypesRequestOsType struct {
-	value *AddOsTypesRequestOsType
-	isSet bool
-}
-
-func (v NullableAddOsTypesRequestOsType) Get() *AddOsTypesRequestOsType {
-	return v.value
-}
-
-func (v *NullableAddOsTypesRequestOsType) Set(val *AddOsTypesRequestOsType) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddOsTypesRequestOsType) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddOsTypesRequestOsType) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddOsTypesRequestOsType(val *AddOsTypesRequestOsType) *NullableAddOsTypesRequestOsType {
-	return &NullableAddOsTypesRequestOsType{value: val, isSet: true}
-}
-
-func (v NullableAddOsTypesRequestOsType) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddOsTypesRequestOsType) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

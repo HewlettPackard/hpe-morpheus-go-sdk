@@ -20,13 +20,13 @@ var _ MappedNullable = &ListTasks200ResponseAllOfTasksInnerAnyOfFile{}
 
 // ListTasks200ResponseAllOfTasksInnerAnyOfFile struct for ListTasks200ResponseAllOfTasksInnerAnyOfFile
 type ListTasks200ResponseAllOfTasksInnerAnyOfFile struct {
-	Id *int64 `json:"id,omitempty"`
-	SourceType *string `json:"sourceType,omitempty"`
-	ContentRef *string `json:"contentRef,omitempty"`
-	ContentPath *string `json:"contentPath,omitempty"`
-	Repository *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"repository,omitempty"`
-	Content *string `json:"content,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                             `json:"id,omitempty"`
+	SourceType           *string                                            `json:"sourceType,omitempty"`
+	ContentRef           *string                                            `json:"contentRef,omitempty"`
+	ContentPath          *string                                            `json:"contentPath,omitempty"`
+	Repository           *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"repository,omitempty"`
+	Content              *string                                            `json:"content,omitempty"`
+	AdditionalProperties map[string]interface{}                             `json:",remain"`
 }
 
 type _ListTasks200ResponseAllOfTasksInnerAnyOfFile ListTasks200ResponseAllOfTasksInnerAnyOfFile
@@ -241,7 +241,7 @@ func (o *ListTasks200ResponseAllOfTasksInnerAnyOfFile) SetContent(v string) {
 }
 
 func (o ListTasks200ResponseAllOfTasksInnerAnyOfFile) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -275,67 +275,8 @@ func (o ListTasks200ResponseAllOfTasksInnerAnyOfFile) ToMap() (map[string]interf
 
 	return toSerialize, nil
 }
-
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOfFile) UnmarshalJSON(data []byte) (err error) {
-	varListTasks200ResponseAllOfTasksInnerAnyOfFile := _ListTasks200ResponseAllOfTasksInnerAnyOfFile{}
-
-	err = json.Unmarshal(data, &varListTasks200ResponseAllOfTasksInnerAnyOfFile)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListTasks200ResponseAllOfTasksInnerAnyOfFile(varListTasks200ResponseAllOfTasksInnerAnyOfFile)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "sourceType")
-		delete(additionalProperties, "contentRef")
-		delete(additionalProperties, "contentPath")
-		delete(additionalProperties, "repository")
-		delete(additionalProperties, "content")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListTasks200ResponseAllOfTasksInnerAnyOfFile struct {
-	value *ListTasks200ResponseAllOfTasksInnerAnyOfFile
-	isSet bool
-}
-
-func (v NullableListTasks200ResponseAllOfTasksInnerAnyOfFile) Get() *ListTasks200ResponseAllOfTasksInnerAnyOfFile {
-	return v.value
-}
-
-func (v *NullableListTasks200ResponseAllOfTasksInnerAnyOfFile) Set(val *ListTasks200ResponseAllOfTasksInnerAnyOfFile) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListTasks200ResponseAllOfTasksInnerAnyOfFile) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListTasks200ResponseAllOfTasksInnerAnyOfFile) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListTasks200ResponseAllOfTasksInnerAnyOfFile(val *ListTasks200ResponseAllOfTasksInnerAnyOfFile) *NullableListTasks200ResponseAllOfTasksInnerAnyOfFile {
-	return &NullableListTasks200ResponseAllOfTasksInnerAnyOfFile{value: val, isSet: true}
-}
-
-func (v NullableListTasks200ResponseAllOfTasksInnerAnyOfFile) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListTasks200ResponseAllOfTasksInnerAnyOfFile) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

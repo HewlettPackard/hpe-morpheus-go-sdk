@@ -20,9 +20,9 @@ var _ MappedNullable = &ListApplianceSettings200ResponseApplianceSettingsEnabled
 
 // ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner struct for ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
 type ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
@@ -109,7 +109,7 @@ func (o *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)
 }
 
 func (o ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -131,63 +131,8 @@ func (o ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) 
 
 	return toSerialize, nil
 }
-
 func (o *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) UnmarshalJSON(data []byte) (err error) {
-	varListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner := _ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner{}
-
-	err = json.Unmarshal(data, &varListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner(varListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner struct {
-	value *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
-	isSet bool
-}
-
-func (v NullableListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) Get() *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
-	return v.value
-}
-
-func (v *NullableListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) Set(val *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner(val *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) *NullableListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
-	return &NullableListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner{value: val, isSet: true}
-}
-
-func (v NullableListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

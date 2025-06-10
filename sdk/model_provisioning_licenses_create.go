@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the ProvisioningLicensesCreate type satisfies the MappedNullable interface at compile time
@@ -40,8 +39,8 @@ type ProvisioningLicensesCreate struct {
 	// Virtual Images - Array of Virtual Image IDs to associate with license.
 	VirtualImages []int64 `json:"virtualImages,omitempty"`
 	// Tenants - Array of tenants that are allowed to use the key.
-	Tenants []int64 `json:"tenants,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Tenants              []int64                `json:"tenants,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ProvisioningLicensesCreate ProvisioningLicensesCreate
@@ -367,7 +366,7 @@ func (o *ProvisioningLicensesCreate) SetTenants(v []int64) {
 }
 
 func (o ProvisioningLicensesCreate) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -407,94 +406,8 @@ func (o ProvisioningLicensesCreate) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *ProvisioningLicensesCreate) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"name",
-		"licenseType",
-		"licenseKey",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varProvisioningLicensesCreate := _ProvisioningLicensesCreate{}
-
-	err = json.Unmarshal(data, &varProvisioningLicensesCreate)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ProvisioningLicensesCreate(varProvisioningLicensesCreate)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "licenseType")
-		delete(additionalProperties, "licenseKey")
-		delete(additionalProperties, "orgName")
-		delete(additionalProperties, "fullName")
-		delete(additionalProperties, "licenseVersion")
-		delete(additionalProperties, "copies")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "virtualImages")
-		delete(additionalProperties, "tenants")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableProvisioningLicensesCreate struct {
-	value *ProvisioningLicensesCreate
-	isSet bool
-}
-
-func (v NullableProvisioningLicensesCreate) Get() *ProvisioningLicensesCreate {
-	return v.value
-}
-
-func (v *NullableProvisioningLicensesCreate) Set(val *ProvisioningLicensesCreate) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableProvisioningLicensesCreate) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableProvisioningLicensesCreate) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableProvisioningLicensesCreate(val *ProvisioningLicensesCreate) *NullableProvisioningLicensesCreate {
-	return &NullableProvisioningLicensesCreate{value: val, isSet: true}
-}
-
-func (v NullableProvisioningLicensesCreate) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableProvisioningLicensesCreate) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

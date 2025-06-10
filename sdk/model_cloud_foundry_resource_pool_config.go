@@ -25,8 +25,8 @@ type CloudFoundryResourcePoolConfig struct {
 	// Array of developer usernames
 	Developers []string `json:"developers,omitempty"`
 	// Array of auditor usernames
-	Auditors []string `json:"auditors,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Auditors             []string               `json:"auditors,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _CloudFoundryResourcePoolConfig CloudFoundryResourcePoolConfig
@@ -145,7 +145,7 @@ func (o *CloudFoundryResourcePoolConfig) SetAuditors(v []string) {
 }
 
 func (o CloudFoundryResourcePoolConfig) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -170,64 +170,8 @@ func (o CloudFoundryResourcePoolConfig) ToMap() (map[string]interface{}, error) 
 
 	return toSerialize, nil
 }
-
 func (o *CloudFoundryResourcePoolConfig) UnmarshalJSON(data []byte) (err error) {
-	varCloudFoundryResourcePoolConfig := _CloudFoundryResourcePoolConfig{}
-
-	err = json.Unmarshal(data, &varCloudFoundryResourcePoolConfig)
-
-	if err != nil {
-		return err
-	}
-
-	*o = CloudFoundryResourcePoolConfig(varCloudFoundryResourcePoolConfig)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "managers")
-		delete(additionalProperties, "developers")
-		delete(additionalProperties, "auditors")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableCloudFoundryResourcePoolConfig struct {
-	value *CloudFoundryResourcePoolConfig
-	isSet bool
-}
-
-func (v NullableCloudFoundryResourcePoolConfig) Get() *CloudFoundryResourcePoolConfig {
-	return v.value
-}
-
-func (v *NullableCloudFoundryResourcePoolConfig) Set(val *CloudFoundryResourcePoolConfig) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableCloudFoundryResourcePoolConfig) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableCloudFoundryResourcePoolConfig) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableCloudFoundryResourcePoolConfig(val *CloudFoundryResourcePoolConfig) *NullableCloudFoundryResourcePoolConfig {
-	return &NullableCloudFoundryResourcePoolConfig{value: val, isSet: true}
-}
-
-func (v NullableCloudFoundryResourcePoolConfig) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableCloudFoundryResourcePoolConfig) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

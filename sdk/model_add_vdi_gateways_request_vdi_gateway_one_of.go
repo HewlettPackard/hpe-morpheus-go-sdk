@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the AddVDIGatewaysRequestVdiGatewayOneOf type satisfies the MappedNullable interface at compile time
@@ -26,8 +25,8 @@ type AddVDIGatewaysRequestVdiGatewayOneOf struct {
 	// Description
 	Description *string `json:"description,omitempty"`
 	// Gateway URL
-	GatewayUrl string `json:"gatewayUrl"`
-	AdditionalProperties map[string]interface{}
+	GatewayUrl           string                 `json:"gatewayUrl"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddVDIGatewaysRequestVdiGatewayOneOf AddVDIGatewaysRequestVdiGatewayOneOf
@@ -132,7 +131,7 @@ func (o *AddVDIGatewaysRequestVdiGatewayOneOf) SetGatewayUrl(v string) {
 }
 
 func (o AddVDIGatewaysRequestVdiGatewayOneOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -153,86 +152,8 @@ func (o AddVDIGatewaysRequestVdiGatewayOneOf) ToMap() (map[string]interface{}, e
 
 	return toSerialize, nil
 }
-
 func (o *AddVDIGatewaysRequestVdiGatewayOneOf) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"name",
-		"gatewayUrl",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varAddVDIGatewaysRequestVdiGatewayOneOf := _AddVDIGatewaysRequestVdiGatewayOneOf{}
-
-	err = json.Unmarshal(data, &varAddVDIGatewaysRequestVdiGatewayOneOf)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddVDIGatewaysRequestVdiGatewayOneOf(varAddVDIGatewaysRequestVdiGatewayOneOf)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "gatewayUrl")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddVDIGatewaysRequestVdiGatewayOneOf struct {
-	value *AddVDIGatewaysRequestVdiGatewayOneOf
-	isSet bool
-}
-
-func (v NullableAddVDIGatewaysRequestVdiGatewayOneOf) Get() *AddVDIGatewaysRequestVdiGatewayOneOf {
-	return v.value
-}
-
-func (v *NullableAddVDIGatewaysRequestVdiGatewayOneOf) Set(val *AddVDIGatewaysRequestVdiGatewayOneOf) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddVDIGatewaysRequestVdiGatewayOneOf) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddVDIGatewaysRequestVdiGatewayOneOf) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddVDIGatewaysRequestVdiGatewayOneOf(val *AddVDIGatewaysRequestVdiGatewayOneOf) *NullableAddVDIGatewaysRequestVdiGatewayOneOf {
-	return &NullableAddVDIGatewaysRequestVdiGatewayOneOf{value: val, isSet: true}
-}
-
-func (v NullableAddVDIGatewaysRequestVdiGatewayOneOf) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddVDIGatewaysRequestVdiGatewayOneOf) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

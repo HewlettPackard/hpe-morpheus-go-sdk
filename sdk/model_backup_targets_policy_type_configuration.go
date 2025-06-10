@@ -18,10 +18,10 @@ import (
 // checks if the BackupTargetsPolicyTypeConfiguration type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &BackupTargetsPolicyTypeConfiguration{}
 
-// BackupTargetsPolicyTypeConfiguration Configuration settings for the following policy types: - Backup Targets 
+// BackupTargetsPolicyTypeConfiguration Configuration settings for the following policy types: - Backup Targets
 type BackupTargetsPolicyTypeConfiguration struct {
-	BackupStorageIds []int64 `json:"backupStorageIds,omitempty"`
-	AdditionalProperties map[string]interface{}
+	BackupStorageIds     []int64                `json:"backupStorageIds,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _BackupTargetsPolicyTypeConfiguration BackupTargetsPolicyTypeConfiguration
@@ -76,7 +76,7 @@ func (o *BackupTargetsPolicyTypeConfiguration) SetBackupStorageIds(v []int64) {
 }
 
 func (o BackupTargetsPolicyTypeConfiguration) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o BackupTargetsPolicyTypeConfiguration) ToMap() (map[string]interface{}, e
 
 	return toSerialize, nil
 }
-
 func (o *BackupTargetsPolicyTypeConfiguration) UnmarshalJSON(data []byte) (err error) {
-	varBackupTargetsPolicyTypeConfiguration := _BackupTargetsPolicyTypeConfiguration{}
-
-	err = json.Unmarshal(data, &varBackupTargetsPolicyTypeConfiguration)
-
-	if err != nil {
-		return err
-	}
-
-	*o = BackupTargetsPolicyTypeConfiguration(varBackupTargetsPolicyTypeConfiguration)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "backupStorageIds")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableBackupTargetsPolicyTypeConfiguration struct {
-	value *BackupTargetsPolicyTypeConfiguration
-	isSet bool
-}
-
-func (v NullableBackupTargetsPolicyTypeConfiguration) Get() *BackupTargetsPolicyTypeConfiguration {
-	return v.value
-}
-
-func (v *NullableBackupTargetsPolicyTypeConfiguration) Set(val *BackupTargetsPolicyTypeConfiguration) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableBackupTargetsPolicyTypeConfiguration) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableBackupTargetsPolicyTypeConfiguration) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableBackupTargetsPolicyTypeConfiguration(val *BackupTargetsPolicyTypeConfiguration) *NullableBackupTargetsPolicyTypeConfiguration {
-	return &NullableBackupTargetsPolicyTypeConfiguration{value: val, isSet: true}
-}
-
-func (v NullableBackupTargetsPolicyTypeConfiguration) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableBackupTargetsPolicyTypeConfiguration) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

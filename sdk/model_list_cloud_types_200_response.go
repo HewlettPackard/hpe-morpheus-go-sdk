@@ -20,9 +20,9 @@ var _ MappedNullable = &ListCloudTypes200Response{}
 
 // ListCloudTypes200Response struct for ListCloudTypes200Response
 type ListCloudTypes200Response struct {
-	ZoneTypes []ListCloudTypes200ResponseAllOfZoneTypesInner `json:"zoneTypes,omitempty"`
-	Meta *ListActivity200ResponseAllOfMeta `json:"meta,omitempty"`
-	AdditionalProperties map[string]interface{}
+	ZoneTypes            []ListCloudTypes200ResponseAllOfZoneTypesInner `json:"zoneTypes,omitempty"`
+	Meta                 *ListActivity200ResponseAllOfMeta              `json:"meta,omitempty"`
+	AdditionalProperties map[string]interface{}                         `json:",remain"`
 }
 
 type _ListCloudTypes200Response ListCloudTypes200Response
@@ -109,7 +109,7 @@ func (o *ListCloudTypes200Response) SetMeta(v ListActivity200ResponseAllOfMeta) 
 }
 
 func (o ListCloudTypes200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -131,63 +131,8 @@ func (o ListCloudTypes200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *ListCloudTypes200Response) UnmarshalJSON(data []byte) (err error) {
-	varListCloudTypes200Response := _ListCloudTypes200Response{}
-
-	err = json.Unmarshal(data, &varListCloudTypes200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListCloudTypes200Response(varListCloudTypes200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "zoneTypes")
-		delete(additionalProperties, "meta")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListCloudTypes200Response struct {
-	value *ListCloudTypes200Response
-	isSet bool
-}
-
-func (v NullableListCloudTypes200Response) Get() *ListCloudTypes200Response {
-	return v.value
-}
-
-func (v *NullableListCloudTypes200Response) Set(val *ListCloudTypes200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListCloudTypes200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListCloudTypes200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListCloudTypes200Response(val *ListCloudTypes200Response) *NullableListCloudTypes200Response {
-	return &NullableListCloudTypes200Response{value: val, isSet: true}
-}
-
-func (v NullableListCloudTypes200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListCloudTypes200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

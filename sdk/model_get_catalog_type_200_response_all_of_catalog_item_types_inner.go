@@ -20,20 +20,20 @@ var _ MappedNullable = &GetCatalogType200ResponseAllOfCatalogItemTypesInner{}
 
 // GetCatalogType200ResponseAllOfCatalogItemTypesInner struct for GetCatalogType200ResponseAllOfCatalogItemTypesInner
 type GetCatalogType200ResponseAllOfCatalogItemTypesInner struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
+	Id          *int64  `json:"id,omitempty"`
+	Name        *string `json:"name,omitempty"`
 	Description *string `json:"description,omitempty"`
-	Type *string `json:"type,omitempty"`
-	Context *string `json:"context,omitempty"`
-	Featured *bool `json:"featured,omitempty"`
+	Type        *string `json:"type,omitempty"`
+	Context     *string `json:"context,omitempty"`
+	Featured    *bool   `json:"featured,omitempty"`
 	// Can users order more than one of this item at a time.
-	AllowQuantity *bool `json:"allowQuantity,omitempty"`
-	ImagePath *string `json:"imagePath,omitempty"`
-	DarkImagePath *string `json:"darkImagePath,omitempty"`
-	FormType *string `json:"formType,omitempty"`
-	Form *GetCatalogType200ResponseAllOfCatalogItemTypesInnerForm `json:"form,omitempty"`
-	OptionTypes []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AllowQuantity        *bool                                                                       `json:"allowQuantity,omitempty"`
+	ImagePath            *string                                                                     `json:"imagePath,omitempty"`
+	DarkImagePath        *string                                                                     `json:"darkImagePath,omitempty"`
+	FormType             *string                                                                     `json:"formType,omitempty"`
+	Form                 *GetCatalogType200ResponseAllOfCatalogItemTypesInnerForm                    `json:"form,omitempty"`
+	OptionTypes          []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
+	AdditionalProperties map[string]interface{}                                                      `json:",remain"`
 }
 
 type _GetCatalogType200ResponseAllOfCatalogItemTypesInner GetCatalogType200ResponseAllOfCatalogItemTypesInner
@@ -440,7 +440,7 @@ func (o *GetCatalogType200ResponseAllOfCatalogItemTypesInner) SetOptionTypes(v [
 }
 
 func (o GetCatalogType200ResponseAllOfCatalogItemTypesInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -492,73 +492,8 @@ func (o GetCatalogType200ResponseAllOfCatalogItemTypesInner) ToMap() (map[string
 
 	return toSerialize, nil
 }
-
 func (o *GetCatalogType200ResponseAllOfCatalogItemTypesInner) UnmarshalJSON(data []byte) (err error) {
-	varGetCatalogType200ResponseAllOfCatalogItemTypesInner := _GetCatalogType200ResponseAllOfCatalogItemTypesInner{}
-
-	err = json.Unmarshal(data, &varGetCatalogType200ResponseAllOfCatalogItemTypesInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetCatalogType200ResponseAllOfCatalogItemTypesInner(varGetCatalogType200ResponseAllOfCatalogItemTypesInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "context")
-		delete(additionalProperties, "featured")
-		delete(additionalProperties, "allowQuantity")
-		delete(additionalProperties, "imagePath")
-		delete(additionalProperties, "darkImagePath")
-		delete(additionalProperties, "formType")
-		delete(additionalProperties, "form")
-		delete(additionalProperties, "optionTypes")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetCatalogType200ResponseAllOfCatalogItemTypesInner struct {
-	value *GetCatalogType200ResponseAllOfCatalogItemTypesInner
-	isSet bool
-}
-
-func (v NullableGetCatalogType200ResponseAllOfCatalogItemTypesInner) Get() *GetCatalogType200ResponseAllOfCatalogItemTypesInner {
-	return v.value
-}
-
-func (v *NullableGetCatalogType200ResponseAllOfCatalogItemTypesInner) Set(val *GetCatalogType200ResponseAllOfCatalogItemTypesInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetCatalogType200ResponseAllOfCatalogItemTypesInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetCatalogType200ResponseAllOfCatalogItemTypesInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetCatalogType200ResponseAllOfCatalogItemTypesInner(val *GetCatalogType200ResponseAllOfCatalogItemTypesInner) *NullableGetCatalogType200ResponseAllOfCatalogItemTypesInner {
-	return &NullableGetCatalogType200ResponseAllOfCatalogItemTypesInner{value: val, isSet: true}
-}
-
-func (v NullableGetCatalogType200ResponseAllOfCatalogItemTypesInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetCatalogType200ResponseAllOfCatalogItemTypesInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the UpdateGroupsZonesRequestGroup type satisfies the MappedNullable interface at compile time
@@ -22,8 +21,8 @@ var _ MappedNullable = &UpdateGroupsZonesRequestGroup{}
 // UpdateGroupsZonesRequestGroup struct for UpdateGroupsZonesRequestGroup
 type UpdateGroupsZonesRequestGroup struct {
 	// An array of all the zones assigned to this group.
-	Zones []map[string]interface{} `json:"zones"`
-	AdditionalProperties map[string]interface{}
+	Zones                []map[string]interface{} `json:"zones"`
+	AdditionalProperties map[string]interface{}   `json:",remain"`
 }
 
 type _UpdateGroupsZonesRequestGroup UpdateGroupsZonesRequestGroup
@@ -71,7 +70,7 @@ func (o *UpdateGroupsZonesRequestGroup) SetZones(v []map[string]interface{}) {
 }
 
 func (o UpdateGroupsZonesRequestGroup) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -88,83 +87,8 @@ func (o UpdateGroupsZonesRequestGroup) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *UpdateGroupsZonesRequestGroup) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"zones",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varUpdateGroupsZonesRequestGroup := _UpdateGroupsZonesRequestGroup{}
-
-	err = json.Unmarshal(data, &varUpdateGroupsZonesRequestGroup)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateGroupsZonesRequestGroup(varUpdateGroupsZonesRequestGroup)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "zones")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateGroupsZonesRequestGroup struct {
-	value *UpdateGroupsZonesRequestGroup
-	isSet bool
-}
-
-func (v NullableUpdateGroupsZonesRequestGroup) Get() *UpdateGroupsZonesRequestGroup {
-	return v.value
-}
-
-func (v *NullableUpdateGroupsZonesRequestGroup) Set(val *UpdateGroupsZonesRequestGroup) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateGroupsZonesRequestGroup) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateGroupsZonesRequestGroup) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateGroupsZonesRequestGroup(val *UpdateGroupsZonesRequestGroup) *NullableUpdateGroupsZonesRequestGroup {
-	return &NullableUpdateGroupsZonesRequestGroup{value: val, isSet: true}
-}
-
-func (v NullableUpdateGroupsZonesRequestGroup) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateGroupsZonesRequestGroup) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

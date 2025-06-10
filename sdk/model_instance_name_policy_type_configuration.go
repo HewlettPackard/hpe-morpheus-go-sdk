@@ -18,12 +18,12 @@ import (
 // checks if the InstanceNamePolicyTypeConfiguration type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &InstanceNamePolicyTypeConfiguration{}
 
-// InstanceNamePolicyTypeConfiguration Configuration settings for the following policy types: - Instance Name 
+// InstanceNamePolicyTypeConfiguration Configuration settings for the following policy types: - Instance Name
 type InstanceNamePolicyTypeConfiguration struct {
-	NamingType *string `json:"namingType,omitempty"`
-	NamingPattern *string `json:"namingPattern,omitempty"`
-	NamingConflict *bool `json:"namingConflict,omitempty"`
-	AdditionalProperties map[string]interface{}
+	NamingType           *string                `json:"namingType,omitempty"`
+	NamingPattern        *string                `json:"namingPattern,omitempty"`
+	NamingConflict       *bool                  `json:"namingConflict,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _InstanceNamePolicyTypeConfiguration InstanceNamePolicyTypeConfiguration
@@ -142,7 +142,7 @@ func (o *InstanceNamePolicyTypeConfiguration) SetNamingConflict(v bool) {
 }
 
 func (o InstanceNamePolicyTypeConfiguration) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -167,64 +167,8 @@ func (o InstanceNamePolicyTypeConfiguration) ToMap() (map[string]interface{}, er
 
 	return toSerialize, nil
 }
-
 func (o *InstanceNamePolicyTypeConfiguration) UnmarshalJSON(data []byte) (err error) {
-	varInstanceNamePolicyTypeConfiguration := _InstanceNamePolicyTypeConfiguration{}
-
-	err = json.Unmarshal(data, &varInstanceNamePolicyTypeConfiguration)
-
-	if err != nil {
-		return err
-	}
-
-	*o = InstanceNamePolicyTypeConfiguration(varInstanceNamePolicyTypeConfiguration)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "namingType")
-		delete(additionalProperties, "namingPattern")
-		delete(additionalProperties, "namingConflict")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableInstanceNamePolicyTypeConfiguration struct {
-	value *InstanceNamePolicyTypeConfiguration
-	isSet bool
-}
-
-func (v NullableInstanceNamePolicyTypeConfiguration) Get() *InstanceNamePolicyTypeConfiguration {
-	return v.value
-}
-
-func (v *NullableInstanceNamePolicyTypeConfiguration) Set(val *InstanceNamePolicyTypeConfiguration) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableInstanceNamePolicyTypeConfiguration) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableInstanceNamePolicyTypeConfiguration) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableInstanceNamePolicyTypeConfiguration(val *InstanceNamePolicyTypeConfiguration) *NullableInstanceNamePolicyTypeConfiguration {
-	return &NullableInstanceNamePolicyTypeConfiguration{value: val, isSet: true}
-}
-
-func (v NullableInstanceNamePolicyTypeConfiguration) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableInstanceNamePolicyTypeConfiguration) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

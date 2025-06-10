@@ -21,70 +21,70 @@ var _ MappedNullable = &Zone{}
 
 // Zone struct for Zone
 type Zone struct {
-	Id *int64 `json:"id,omitempty"`
-	Uuid *string `json:"uuid,omitempty"`
-	ExternalId *string `json:"externalId,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Code *string `json:"code,omitempty"`
-	Labels []string `json:"labels,omitempty"`
-	Location *string `json:"location,omitempty"`
-	Owner *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"owner,omitempty"`
-	AccountId *int64 `json:"accountId,omitempty"`
-	Account *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"account,omitempty"`
-	Visibility *string `json:"visibility,omitempty"`
-	Enabled *bool `json:"enabled,omitempty"`
-	Status *string `json:"status,omitempty"`
-	StatusMessage *string `json:"statusMessage,omitempty"`
-	StatusDate *time.Time `json:"statusDate,omitempty"`
-	CostStatus *string `json:"costStatus,omitempty"`
-	CostStatusMessage *string `json:"costStatusMessage,omitempty"`
-	CostStatusDate *time.Time `json:"costStatusDate,omitempty"`
-	CostLastSyncDuration *int64 `json:"costLastSyncDuration,omitempty"`
-	CostLastSync *time.Time `json:"costLastSync,omitempty"`
-	ZoneType *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"zoneType,omitempty"`
-	ZoneTypeId *int64 `json:"zoneTypeId,omitempty"`
-	GuidanceMode *string `json:"guidanceMode,omitempty"`
-	StorageMode *string `json:"storageMode,omitempty"`
-	AgentMode *string `json:"agentMode,omitempty"`
-	UserDataLinux *string `json:"userDataLinux,omitempty"`
-	UserDataWindows *string `json:"userDataWindows,omitempty"`
-	ConsoleKeymap *string `json:"consoleKeymap,omitempty"`
-	ContainerMode *string `json:"containerMode,omitempty"`
-	CostingMode *string `json:"costingMode,omitempty"`
-	ServiceVersion *string `json:"serviceVersion,omitempty"`
-	SecurityMode *string `json:"securityMode,omitempty"`
-	InventoryLevel *string `json:"inventoryLevel,omitempty"`
-	Timezone *string `json:"timezone,omitempty"`
-	ApiProxy *string `json:"apiProxy,omitempty"`
-	ProvisioningProxy *string `json:"provisioningProxy,omitempty"`
-	NetworkDomain *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"networkDomain,omitempty"`
-	DomainName *string `json:"domainName,omitempty"`
-	RegionCode *string `json:"regionCode,omitempty"`
-	AutoRecoverPowerState *bool `json:"autoRecoverPowerState,omitempty"`
-	ScalePriority *int64 `json:"scalePriority,omitempty"`
-	DefaultDatastoreSyncActive *bool `json:"defaultDatastoreSyncActive,omitempty"`
-	DefaultNetworkSyncActive *bool `json:"defaultNetworkSyncActive,omitempty"`
-	DefaultFolderSyncActive *bool `json:"defaultFolderSyncActive,omitempty"`
-	DefaultSecurityGroupSyncActive *bool `json:"defaultSecurityGroupSyncActive,omitempty"`
-	DefaultPoolSyncActive *bool `json:"defaultPoolSyncActive,omitempty"`
-	DefaultPlanSyncActive *bool `json:"defaultPlanSyncActive,omitempty"`
-	Config *ListClouds200ResponseAllOfZonesInnerConfig `json:"config,omitempty"`
-	Credential *ListClouds200ResponseAllOfZonesInnerCredential `json:"credential,omitempty"`
+	Id                             *int64                                                                  `json:"id,omitempty"`
+	Uuid                           *string                                                                 `json:"uuid,omitempty"`
+	ExternalId                     *string                                                                 `json:"externalId,omitempty"`
+	Name                           *string                                                                 `json:"name,omitempty"`
+	Code                           *string                                                                 `json:"code,omitempty"`
+	Labels                         []string                                                                `json:"labels,omitempty"`
+	Location                       *string                                                                 `json:"location,omitempty"`
+	Owner                          *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"owner,omitempty"`
+	AccountId                      *int64                                                                  `json:"accountId,omitempty"`
+	Account                        *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"account,omitempty"`
+	Visibility                     *string                                                                 `json:"visibility,omitempty"`
+	Enabled                        *bool                                                                   `json:"enabled,omitempty"`
+	Status                         *string                                                                 `json:"status,omitempty"`
+	StatusMessage                  *string                                                                 `json:"statusMessage,omitempty"`
+	StatusDate                     *time.Time                                                              `json:"statusDate,omitempty"`
+	CostStatus                     *string                                                                 `json:"costStatus,omitempty"`
+	CostStatusMessage              *string                                                                 `json:"costStatusMessage,omitempty"`
+	CostStatusDate                 *time.Time                                                              `json:"costStatusDate,omitempty"`
+	CostLastSyncDuration           *int64                                                                  `json:"costLastSyncDuration,omitempty"`
+	CostLastSync                   *time.Time                                                              `json:"costLastSync,omitempty"`
+	ZoneType                       *ListBackupSettings200ResponseBackupSettingsDefaultSchedule             `json:"zoneType,omitempty"`
+	ZoneTypeId                     *int64                                                                  `json:"zoneTypeId,omitempty"`
+	GuidanceMode                   *string                                                                 `json:"guidanceMode,omitempty"`
+	StorageMode                    *string                                                                 `json:"storageMode,omitempty"`
+	AgentMode                      *string                                                                 `json:"agentMode,omitempty"`
+	UserDataLinux                  *string                                                                 `json:"userDataLinux,omitempty"`
+	UserDataWindows                *string                                                                 `json:"userDataWindows,omitempty"`
+	ConsoleKeymap                  *string                                                                 `json:"consoleKeymap,omitempty"`
+	ContainerMode                  *string                                                                 `json:"containerMode,omitempty"`
+	CostingMode                    *string                                                                 `json:"costingMode,omitempty"`
+	ServiceVersion                 *string                                                                 `json:"serviceVersion,omitempty"`
+	SecurityMode                   *string                                                                 `json:"securityMode,omitempty"`
+	InventoryLevel                 *string                                                                 `json:"inventoryLevel,omitempty"`
+	Timezone                       *string                                                                 `json:"timezone,omitempty"`
+	ApiProxy                       *string                                                                 `json:"apiProxy,omitempty"`
+	ProvisioningProxy              *string                                                                 `json:"provisioningProxy,omitempty"`
+	NetworkDomain                  *GetAlerts200ResponseAllOfCheckGroupsInnerInstance                      `json:"networkDomain,omitempty"`
+	DomainName                     *string                                                                 `json:"domainName,omitempty"`
+	RegionCode                     *string                                                                 `json:"regionCode,omitempty"`
+	AutoRecoverPowerState          *bool                                                                   `json:"autoRecoverPowerState,omitempty"`
+	ScalePriority                  *int64                                                                  `json:"scalePriority,omitempty"`
+	DefaultDatastoreSyncActive     *bool                                                                   `json:"defaultDatastoreSyncActive,omitempty"`
+	DefaultNetworkSyncActive       *bool                                                                   `json:"defaultNetworkSyncActive,omitempty"`
+	DefaultFolderSyncActive        *bool                                                                   `json:"defaultFolderSyncActive,omitempty"`
+	DefaultSecurityGroupSyncActive *bool                                                                   `json:"defaultSecurityGroupSyncActive,omitempty"`
+	DefaultPoolSyncActive          *bool                                                                   `json:"defaultPoolSyncActive,omitempty"`
+	DefaultPlanSyncActive          *bool                                                                   `json:"defaultPlanSyncActive,omitempty"`
+	Config                         *ListClouds200ResponseAllOfZonesInnerConfig                             `json:"config,omitempty"`
+	Credential                     *ListClouds200ResponseAllOfZonesInnerCredential                         `json:"credential,omitempty"`
 	// Logo image URL
 	ImagePath *string `json:"imagePath,omitempty"`
 	// Dark logo image URL
-	DarkImagePath *string `json:"darkImagePath,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	LastSync *time.Time `json:"lastSync,omitempty"`
-	LastSyncDuration *int64 `json:"lastSyncDuration,omitempty"`
-	NextRunDate *time.Time `json:"nextRunDate,omitempty"`
-	Groups []ListClouds200ResponseAllOfZonesInnerGroupsInner `json:"groups,omitempty"`
-	SecurityServer *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"securityServer,omitempty"`
-	NetworkServer *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"networkServer,omitempty"`
-	Stats *ListClouds200ResponseAllOfZonesInnerStats `json:"stats,omitempty"`
-	ServerCount *int64 `json:"serverCount,omitempty"`
-	AdditionalProperties map[string]interface{}
+	DarkImagePath        *string                                            `json:"darkImagePath,omitempty"`
+	DateCreated          *time.Time                                         `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                         `json:"lastUpdated,omitempty"`
+	LastSync             *time.Time                                         `json:"lastSync,omitempty"`
+	LastSyncDuration     *int64                                             `json:"lastSyncDuration,omitempty"`
+	NextRunDate          *time.Time                                         `json:"nextRunDate,omitempty"`
+	Groups               []ListClouds200ResponseAllOfZonesInnerGroupsInner  `json:"groups,omitempty"`
+	SecurityServer       *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"securityServer,omitempty"`
+	NetworkServer        *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"networkServer,omitempty"`
+	Stats                *ListClouds200ResponseAllOfZonesInnerStats         `json:"stats,omitempty"`
+	ServerCount          *int64                                             `json:"serverCount,omitempty"`
+	AdditionalProperties map[string]interface{}                             `json:",remain"`
 }
 
 type _Zone Zone
@@ -2059,7 +2059,7 @@ func (o *Zone) SetServerCount(v int64) {
 }
 
 func (o Zone) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -2258,122 +2258,8 @@ func (o Zone) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *Zone) UnmarshalJSON(data []byte) (err error) {
-	varZone := _Zone{}
-
-	err = json.Unmarshal(data, &varZone)
-
-	if err != nil {
-		return err
-	}
-
-	*o = Zone(varZone)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "uuid")
-		delete(additionalProperties, "externalId")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "location")
-		delete(additionalProperties, "owner")
-		delete(additionalProperties, "accountId")
-		delete(additionalProperties, "account")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "statusMessage")
-		delete(additionalProperties, "statusDate")
-		delete(additionalProperties, "costStatus")
-		delete(additionalProperties, "costStatusMessage")
-		delete(additionalProperties, "costStatusDate")
-		delete(additionalProperties, "costLastSyncDuration")
-		delete(additionalProperties, "costLastSync")
-		delete(additionalProperties, "zoneType")
-		delete(additionalProperties, "zoneTypeId")
-		delete(additionalProperties, "guidanceMode")
-		delete(additionalProperties, "storageMode")
-		delete(additionalProperties, "agentMode")
-		delete(additionalProperties, "userDataLinux")
-		delete(additionalProperties, "userDataWindows")
-		delete(additionalProperties, "consoleKeymap")
-		delete(additionalProperties, "containerMode")
-		delete(additionalProperties, "costingMode")
-		delete(additionalProperties, "serviceVersion")
-		delete(additionalProperties, "securityMode")
-		delete(additionalProperties, "inventoryLevel")
-		delete(additionalProperties, "timezone")
-		delete(additionalProperties, "apiProxy")
-		delete(additionalProperties, "provisioningProxy")
-		delete(additionalProperties, "networkDomain")
-		delete(additionalProperties, "domainName")
-		delete(additionalProperties, "regionCode")
-		delete(additionalProperties, "autoRecoverPowerState")
-		delete(additionalProperties, "scalePriority")
-		delete(additionalProperties, "defaultDatastoreSyncActive")
-		delete(additionalProperties, "defaultNetworkSyncActive")
-		delete(additionalProperties, "defaultFolderSyncActive")
-		delete(additionalProperties, "defaultSecurityGroupSyncActive")
-		delete(additionalProperties, "defaultPoolSyncActive")
-		delete(additionalProperties, "defaultPlanSyncActive")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "credential")
-		delete(additionalProperties, "imagePath")
-		delete(additionalProperties, "darkImagePath")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		delete(additionalProperties, "lastSync")
-		delete(additionalProperties, "lastSyncDuration")
-		delete(additionalProperties, "nextRunDate")
-		delete(additionalProperties, "groups")
-		delete(additionalProperties, "securityServer")
-		delete(additionalProperties, "networkServer")
-		delete(additionalProperties, "stats")
-		delete(additionalProperties, "serverCount")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableZone struct {
-	value *Zone
-	isSet bool
-}
-
-func (v NullableZone) Get() *Zone {
-	return v.value
-}
-
-func (v *NullableZone) Set(val *Zone) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableZone) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableZone) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableZone(val *Zone) *NullableZone {
-	return &NullableZone{value: val, isSet: true}
-}
-
-func (v NullableZone) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableZone) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

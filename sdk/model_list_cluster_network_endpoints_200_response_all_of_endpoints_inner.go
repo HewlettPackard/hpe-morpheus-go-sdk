@@ -20,11 +20,11 @@ var _ MappedNullable = &ListClusterNetworkEndpoints200ResponseAllOfEndpointsInne
 
 // ListClusterNetworkEndpoints200ResponseAllOfEndpointsInner struct for ListClusterNetworkEndpoints200ResponseAllOfEndpointsInner
 type ListClusterNetworkEndpoints200ResponseAllOfEndpointsInner struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Code *string `json:"code,omitempty"`
-	Category *string `json:"category,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	Code                 *string                `json:"code,omitempty"`
+	Category             *string                `json:"category,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListClusterNetworkEndpoints200ResponseAllOfEndpointsInner ListClusterNetworkEndpoints200ResponseAllOfEndpointsInner
@@ -175,7 +175,7 @@ func (o *ListClusterNetworkEndpoints200ResponseAllOfEndpointsInner) SetCategory(
 }
 
 func (o ListClusterNetworkEndpoints200ResponseAllOfEndpointsInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -203,65 +203,8 @@ func (o ListClusterNetworkEndpoints200ResponseAllOfEndpointsInner) ToMap() (map[
 
 	return toSerialize, nil
 }
-
 func (o *ListClusterNetworkEndpoints200ResponseAllOfEndpointsInner) UnmarshalJSON(data []byte) (err error) {
-	varListClusterNetworkEndpoints200ResponseAllOfEndpointsInner := _ListClusterNetworkEndpoints200ResponseAllOfEndpointsInner{}
-
-	err = json.Unmarshal(data, &varListClusterNetworkEndpoints200ResponseAllOfEndpointsInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListClusterNetworkEndpoints200ResponseAllOfEndpointsInner(varListClusterNetworkEndpoints200ResponseAllOfEndpointsInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "category")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListClusterNetworkEndpoints200ResponseAllOfEndpointsInner struct {
-	value *ListClusterNetworkEndpoints200ResponseAllOfEndpointsInner
-	isSet bool
-}
-
-func (v NullableListClusterNetworkEndpoints200ResponseAllOfEndpointsInner) Get() *ListClusterNetworkEndpoints200ResponseAllOfEndpointsInner {
-	return v.value
-}
-
-func (v *NullableListClusterNetworkEndpoints200ResponseAllOfEndpointsInner) Set(val *ListClusterNetworkEndpoints200ResponseAllOfEndpointsInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListClusterNetworkEndpoints200ResponseAllOfEndpointsInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListClusterNetworkEndpoints200ResponseAllOfEndpointsInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListClusterNetworkEndpoints200ResponseAllOfEndpointsInner(val *ListClusterNetworkEndpoints200ResponseAllOfEndpointsInner) *NullableListClusterNetworkEndpoints200ResponseAllOfEndpointsInner {
-	return &NullableListClusterNetworkEndpoints200ResponseAllOfEndpointsInner{value: val, isSet: true}
-}
-
-func (v NullableListClusterNetworkEndpoints200ResponseAllOfEndpointsInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListClusterNetworkEndpoints200ResponseAllOfEndpointsInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

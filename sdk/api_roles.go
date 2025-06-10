@@ -21,18 +21,17 @@ import (
 	"strings"
 )
 
-
 // RolesAPIService RolesAPI service
 type RolesAPIService service
 
 type ApiAddRolesRequest struct {
-	ctx context.Context
-	ApiService *RolesAPIService
+	ctx                  context.Context
+	ApiService           *RolesAPIService
 	includeDefaultAccess *bool
-	addRolesRequest *AddRolesRequest
+	addRolesRequest      *AddRolesRequest
 }
 
-// Pass true to include all resource permissions in the response including those with access set to &#x60;default&#x60;. Only resources with access specific levels are returned by default. eg. &#x60;full&#x60;, &#x60;read&#x60; or &#x60;none&#x60; 
+// Pass true to include all resource permissions in the response including those with access set to &#x60;default&#x60;. Only resources with access specific levels are returned by default. eg. &#x60;full&#x60;, &#x60;read&#x60; or &#x60;none&#x60;
 func (r ApiAddRolesRequest) IncludeDefaultAccess(includeDefaultAccess bool) ApiAddRolesRequest {
 	r.includeDefaultAccess = &includeDefaultAccess
 	return r
@@ -52,24 +51,25 @@ AddRoles Create role
 
 Create a new role.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddRolesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddRolesRequest
 */
 func (a *RolesAPIService) AddRoles(ctx context.Context) ApiAddRolesRequest {
 	return ApiAddRolesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddRoles200Response
+//
+//	@return AddRoles200Response
 func (a *RolesAPIService) AddRolesExecute(r ApiAddRolesRequest) (*AddRoles200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddRoles200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddRoles200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RolesAPIService.AddRoles")
@@ -124,7 +124,7 @@ func (a *RolesAPIService) AddRolesExecute(r ApiAddRolesRequest) (*AddRoles200Res
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -133,8 +133,8 @@ func (a *RolesAPIService) AddRolesExecute(r ApiAddRolesRequest) (*AddRoles200Res
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -144,8 +144,8 @@ func (a *RolesAPIService) AddRolesExecute(r ApiAddRolesRequest) (*AddRoles200Res
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -153,8 +153,8 @@ func (a *RolesAPIService) AddRolesExecute(r ApiAddRolesRequest) (*AddRoles200Res
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -163,9 +163,9 @@ func (a *RolesAPIService) AddRolesExecute(r ApiAddRolesRequest) (*AddRoles200Res
 }
 
 type ApiDeleteRoleRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *RolesAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiDeleteRoleRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -177,26 +177,27 @@ DeleteRole Delete role
 
 Delete an existing role. A role cannot be deleted while it is still in use.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiDeleteRoleRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiDeleteRoleRequest
 */
 func (a *RolesAPIService) DeleteRole(ctx context.Context, id int64) ApiDeleteRoleRequest {
 	return ApiDeleteRoleRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *RolesAPIService) DeleteRoleExecute(r ApiDeleteRoleRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RolesAPIService.DeleteRole")
@@ -247,7 +248,7 @@ func (a *RolesAPIService) DeleteRoleExecute(r ApiDeleteRoleRequest) (*DeleteAler
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
 			var v ListActivity4XXResponse
@@ -256,8 +257,8 @@ func (a *RolesAPIService) DeleteRoleExecute(r ApiDeleteRoleRequest) (*DeleteAler
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
@@ -267,8 +268,8 @@ func (a *RolesAPIService) DeleteRoleExecute(r ApiDeleteRoleRequest) (*DeleteAler
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -278,8 +279,8 @@ func (a *RolesAPIService) DeleteRoleExecute(r ApiDeleteRoleRequest) (*DeleteAler
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -287,8 +288,8 @@ func (a *RolesAPIService) DeleteRoleExecute(r ApiDeleteRoleRequest) (*DeleteAler
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -297,13 +298,13 @@ func (a *RolesAPIService) DeleteRoleExecute(r ApiDeleteRoleRequest) (*DeleteAler
 }
 
 type ApiGetRoleRequest struct {
-	ctx context.Context
-	ApiService *RolesAPIService
-	id int64
+	ctx                  context.Context
+	ApiService           *RolesAPIService
+	id                   int64
 	includeDefaultAccess *bool
 }
 
-// Pass true to include all resource permissions in the response including those with access set to &#x60;default&#x60;. Only resources with access specific levels are returned by default. eg. &#x60;full&#x60;, &#x60;read&#x60; or &#x60;none&#x60; 
+// Pass true to include all resource permissions in the response including those with access set to &#x60;default&#x60;. Only resources with access specific levels are returned by default. eg. &#x60;full&#x60;, &#x60;read&#x60; or &#x60;none&#x60;
 func (r ApiGetRoleRequest) IncludeDefaultAccess(includeDefaultAccess bool) ApiGetRoleRequest {
 	r.includeDefaultAccess = &includeDefaultAccess
 	return r
@@ -318,26 +319,27 @@ GetRole Get role
 
 Get details about a role
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetRoleRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetRoleRequest
 */
 func (a *RolesAPIService) GetRole(ctx context.Context, id int64) ApiGetRoleRequest {
 	return ApiGetRoleRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetRole200Response
+//
+//	@return GetRole200Response
 func (a *RolesAPIService) GetRoleExecute(r ApiGetRoleRequest) (*GetRole200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetRole200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetRole200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RolesAPIService.GetRole")
@@ -391,7 +393,7 @@ func (a *RolesAPIService) GetRoleExecute(r ApiGetRoleRequest) (*GetRole200Respon
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -400,8 +402,8 @@ func (a *RolesAPIService) GetRoleExecute(r ApiGetRoleRequest) (*GetRole200Respon
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -411,8 +413,8 @@ func (a *RolesAPIService) GetRoleExecute(r ApiGetRoleRequest) (*GetRole200Respon
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -420,8 +422,8 @@ func (a *RolesAPIService) GetRoleExecute(r ApiGetRoleRequest) (*GetRole200Respon
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -430,15 +432,15 @@ func (a *RolesAPIService) GetRoleExecute(r ApiGetRoleRequest) (*GetRole200Respon
 }
 
 type ApiListRolesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *RolesAPIService
-	phrase *string
-	max *int64
-	offset *int64
-	sort *string
-	direction *string
-	authority *string
-	roleType *string
+	phrase     *string
+	max        *int64
+	offset     *int64
+	sort       *string
+	direction  *string
+	authority  *string
+	roleType   *string
 }
 
 // Search phrase for partial matches on name or description
@@ -492,24 +494,25 @@ ListRoles List roles
 
 Get a list of roles.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListRolesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListRolesRequest
 */
 func (a *RolesAPIService) ListRoles(ctx context.Context) ApiListRolesRequest {
 	return ApiListRolesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListRoles200Response
+//
+//	@return ListRoles200Response
 func (a *RolesAPIService) ListRolesExecute(r ApiListRolesRequest) (*ListRoles200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListRoles200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListRoles200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RolesAPIService.ListRoles")
@@ -592,7 +595,7 @@ func (a *RolesAPIService) ListRolesExecute(r ApiListRolesRequest) (*ListRoles200
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -601,8 +604,8 @@ func (a *RolesAPIService) ListRolesExecute(r ApiListRolesRequest) (*ListRoles200
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -612,8 +615,8 @@ func (a *RolesAPIService) ListRolesExecute(r ApiListRolesRequest) (*ListRoles200
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -621,8 +624,8 @@ func (a *RolesAPIService) ListRolesExecute(r ApiListRolesRequest) (*ListRoles200
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -631,14 +634,14 @@ func (a *RolesAPIService) ListRolesExecute(r ApiListRolesRequest) (*ListRoles200
 }
 
 type ApiUpdateRoleRequest struct {
-	ctx context.Context
-	ApiService *RolesAPIService
-	id int64
+	ctx                  context.Context
+	ApiService           *RolesAPIService
+	id                   int64
 	includeDefaultAccess *bool
-	updateRoleRequest *UpdateRoleRequest
+	updateRoleRequest    *UpdateRoleRequest
 }
 
-// Pass true to include all resource permissions in the response including those with access set to &#x60;default&#x60;. Only resources with access specific levels are returned by default. eg. &#x60;full&#x60;, &#x60;read&#x60; or &#x60;none&#x60; 
+// Pass true to include all resource permissions in the response including those with access set to &#x60;default&#x60;. Only resources with access specific levels are returned by default. eg. &#x60;full&#x60;, &#x60;read&#x60; or &#x60;none&#x60;
 func (r ApiUpdateRoleRequest) IncludeDefaultAccess(includeDefaultAccess bool) ApiUpdateRoleRequest {
 	r.includeDefaultAccess = &includeDefaultAccess
 	return r
@@ -658,26 +661,27 @@ UpdateRole Update role
 
 Update an existing role.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateRoleRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateRoleRequest
 */
 func (a *RolesAPIService) UpdateRole(ctx context.Context, id int64) ApiUpdateRoleRequest {
 	return ApiUpdateRoleRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return AddRoles200Response
+//
+//	@return AddRoles200Response
 func (a *RolesAPIService) UpdateRoleExecute(r ApiUpdateRoleRequest) (*AddRoles200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddRoles200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddRoles200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RolesAPIService.UpdateRole")
@@ -733,7 +737,7 @@ func (a *RolesAPIService) UpdateRoleExecute(r ApiUpdateRoleRequest) (*AddRoles20
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -742,8 +746,8 @@ func (a *RolesAPIService) UpdateRoleExecute(r ApiUpdateRoleRequest) (*AddRoles20
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -753,8 +757,8 @@ func (a *RolesAPIService) UpdateRoleExecute(r ApiUpdateRoleRequest) (*AddRoles20
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -762,8 +766,8 @@ func (a *RolesAPIService) UpdateRoleExecute(r ApiUpdateRoleRequest) (*AddRoles20
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -772,9 +776,9 @@ func (a *RolesAPIService) UpdateRoleExecute(r ApiUpdateRoleRequest) (*AddRoles20
 }
 
 type ApiUpdateRoleBlueprintAccessRequest struct {
-	ctx context.Context
-	ApiService *RolesAPIService
-	id int64
+	ctx                              context.Context
+	ApiService                       *RolesAPIService
+	id                               int64
 	updateRoleBlueprintAccessRequest *UpdateRoleBlueprintAccessRequest
 }
 
@@ -792,26 +796,27 @@ UpdateRoleBlueprintAccess Customizing Blueprint Access
 
 Customizing Blueprint Access
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateRoleBlueprintAccessRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateRoleBlueprintAccessRequest
 */
 func (a *RolesAPIService) UpdateRoleBlueprintAccess(ctx context.Context, id int64) ApiUpdateRoleBlueprintAccessRequest {
 	return ApiUpdateRoleBlueprintAccessRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return UpdateRoleBlueprintAccess200Response
+//
+//	@return UpdateRoleBlueprintAccess200Response
 func (a *RolesAPIService) UpdateRoleBlueprintAccessExecute(r ApiUpdateRoleBlueprintAccessRequest) (*UpdateRoleBlueprintAccess200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *UpdateRoleBlueprintAccess200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *UpdateRoleBlueprintAccess200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RolesAPIService.UpdateRoleBlueprintAccess")
@@ -864,7 +869,7 @@ func (a *RolesAPIService) UpdateRoleBlueprintAccessExecute(r ApiUpdateRoleBluepr
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -873,8 +878,8 @@ func (a *RolesAPIService) UpdateRoleBlueprintAccessExecute(r ApiUpdateRoleBluepr
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -884,8 +889,8 @@ func (a *RolesAPIService) UpdateRoleBlueprintAccessExecute(r ApiUpdateRoleBluepr
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -893,8 +898,8 @@ func (a *RolesAPIService) UpdateRoleBlueprintAccessExecute(r ApiUpdateRoleBluepr
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -903,9 +908,9 @@ func (a *RolesAPIService) UpdateRoleBlueprintAccessExecute(r ApiUpdateRoleBluepr
 }
 
 type ApiUpdateRoleCatalogItemTypeAccessRequest struct {
-	ctx context.Context
-	ApiService *RolesAPIService
-	id int64
+	ctx                                    context.Context
+	ApiService                             *RolesAPIService
+	id                                     int64
 	updateRoleCatalogItemTypeAccessRequest *UpdateRoleCatalogItemTypeAccessRequest
 }
 
@@ -923,26 +928,27 @@ UpdateRoleCatalogItemTypeAccess Customizing Catalog Item Type Access
 
 Customizing Catalog Item Type Access
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateRoleCatalogItemTypeAccessRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateRoleCatalogItemTypeAccessRequest
 */
 func (a *RolesAPIService) UpdateRoleCatalogItemTypeAccess(ctx context.Context, id int64) ApiUpdateRoleCatalogItemTypeAccessRequest {
 	return ApiUpdateRoleCatalogItemTypeAccessRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return UpdateRoleBlueprintAccess200Response
+//
+//	@return UpdateRoleBlueprintAccess200Response
 func (a *RolesAPIService) UpdateRoleCatalogItemTypeAccessExecute(r ApiUpdateRoleCatalogItemTypeAccessRequest) (*UpdateRoleBlueprintAccess200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *UpdateRoleBlueprintAccess200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *UpdateRoleBlueprintAccess200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RolesAPIService.UpdateRoleCatalogItemTypeAccess")
@@ -995,7 +1001,7 @@ func (a *RolesAPIService) UpdateRoleCatalogItemTypeAccessExecute(r ApiUpdateRole
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1004,8 +1010,8 @@ func (a *RolesAPIService) UpdateRoleCatalogItemTypeAccessExecute(r ApiUpdateRole
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1015,8 +1021,8 @@ func (a *RolesAPIService) UpdateRoleCatalogItemTypeAccessExecute(r ApiUpdateRole
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1024,8 +1030,8 @@ func (a *RolesAPIService) UpdateRoleCatalogItemTypeAccessExecute(r ApiUpdateRole
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1034,9 +1040,9 @@ func (a *RolesAPIService) UpdateRoleCatalogItemTypeAccessExecute(r ApiUpdateRole
 }
 
 type ApiUpdateRoleCloudAccessRequest struct {
-	ctx context.Context
-	ApiService *RolesAPIService
-	id int64
+	ctx                          context.Context
+	ApiService                   *RolesAPIService
+	id                           int64
 	updateRoleCloudAccessRequest *UpdateRoleCloudAccessRequest
 }
 
@@ -1054,26 +1060,27 @@ UpdateRoleCloudAccess Customizing Cloud Access
 
 Customizing Cloud Access
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateRoleCloudAccessRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateRoleCloudAccessRequest
 */
 func (a *RolesAPIService) UpdateRoleCloudAccess(ctx context.Context, id int64) ApiUpdateRoleCloudAccessRequest {
 	return ApiUpdateRoleCloudAccessRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return UpdateRoleBlueprintAccess200Response
+//
+//	@return UpdateRoleBlueprintAccess200Response
 func (a *RolesAPIService) UpdateRoleCloudAccessExecute(r ApiUpdateRoleCloudAccessRequest) (*UpdateRoleBlueprintAccess200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *UpdateRoleBlueprintAccess200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *UpdateRoleBlueprintAccess200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RolesAPIService.UpdateRoleCloudAccess")
@@ -1126,7 +1133,7 @@ func (a *RolesAPIService) UpdateRoleCloudAccessExecute(r ApiUpdateRoleCloudAcces
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1135,8 +1142,8 @@ func (a *RolesAPIService) UpdateRoleCloudAccessExecute(r ApiUpdateRoleCloudAcces
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1146,8 +1153,8 @@ func (a *RolesAPIService) UpdateRoleCloudAccessExecute(r ApiUpdateRoleCloudAcces
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1155,8 +1162,8 @@ func (a *RolesAPIService) UpdateRoleCloudAccessExecute(r ApiUpdateRoleCloudAcces
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1165,9 +1172,9 @@ func (a *RolesAPIService) UpdateRoleCloudAccessExecute(r ApiUpdateRoleCloudAcces
 }
 
 type ApiUpdateRoleGroupAccessRequest struct {
-	ctx context.Context
-	ApiService *RolesAPIService
-	id int64
+	ctx                          context.Context
+	ApiService                   *RolesAPIService
+	id                           int64
 	updateRoleGroupAccessRequest *UpdateRoleGroupAccessRequest
 }
 
@@ -1185,26 +1192,27 @@ UpdateRoleGroupAccess Customizing Group Access
 
 Customizing Group Access
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateRoleGroupAccessRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateRoleGroupAccessRequest
 */
 func (a *RolesAPIService) UpdateRoleGroupAccess(ctx context.Context, id int64) ApiUpdateRoleGroupAccessRequest {
 	return ApiUpdateRoleGroupAccessRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return UpdateRoleBlueprintAccess200Response
+//
+//	@return UpdateRoleBlueprintAccess200Response
 func (a *RolesAPIService) UpdateRoleGroupAccessExecute(r ApiUpdateRoleGroupAccessRequest) (*UpdateRoleBlueprintAccess200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *UpdateRoleBlueprintAccess200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *UpdateRoleBlueprintAccess200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RolesAPIService.UpdateRoleGroupAccess")
@@ -1257,7 +1265,7 @@ func (a *RolesAPIService) UpdateRoleGroupAccessExecute(r ApiUpdateRoleGroupAcces
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1266,8 +1274,8 @@ func (a *RolesAPIService) UpdateRoleGroupAccessExecute(r ApiUpdateRoleGroupAcces
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1277,8 +1285,8 @@ func (a *RolesAPIService) UpdateRoleGroupAccessExecute(r ApiUpdateRoleGroupAcces
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1286,8 +1294,8 @@ func (a *RolesAPIService) UpdateRoleGroupAccessExecute(r ApiUpdateRoleGroupAcces
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1296,9 +1304,9 @@ func (a *RolesAPIService) UpdateRoleGroupAccessExecute(r ApiUpdateRoleGroupAcces
 }
 
 type ApiUpdateRoleInstanceTypeAccessRequest struct {
-	ctx context.Context
-	ApiService *RolesAPIService
-	id int64
+	ctx                                 context.Context
+	ApiService                          *RolesAPIService
+	id                                  int64
 	updateRoleInstanceTypeAccessRequest *UpdateRoleInstanceTypeAccessRequest
 }
 
@@ -1316,26 +1324,27 @@ UpdateRoleInstanceTypeAccess Customizing Instance Type Access
 
 Customizing Instance Type Access
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateRoleInstanceTypeAccessRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateRoleInstanceTypeAccessRequest
 */
 func (a *RolesAPIService) UpdateRoleInstanceTypeAccess(ctx context.Context, id int64) ApiUpdateRoleInstanceTypeAccessRequest {
 	return ApiUpdateRoleInstanceTypeAccessRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return UpdateRoleBlueprintAccess200Response
+//
+//	@return UpdateRoleBlueprintAccess200Response
 func (a *RolesAPIService) UpdateRoleInstanceTypeAccessExecute(r ApiUpdateRoleInstanceTypeAccessRequest) (*UpdateRoleBlueprintAccess200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *UpdateRoleBlueprintAccess200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *UpdateRoleBlueprintAccess200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RolesAPIService.UpdateRoleInstanceTypeAccess")
@@ -1388,7 +1397,7 @@ func (a *RolesAPIService) UpdateRoleInstanceTypeAccessExecute(r ApiUpdateRoleIns
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1397,8 +1406,8 @@ func (a *RolesAPIService) UpdateRoleInstanceTypeAccessExecute(r ApiUpdateRoleIns
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1408,8 +1417,8 @@ func (a *RolesAPIService) UpdateRoleInstanceTypeAccessExecute(r ApiUpdateRoleIns
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1417,8 +1426,8 @@ func (a *RolesAPIService) UpdateRoleInstanceTypeAccessExecute(r ApiUpdateRoleIns
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1427,9 +1436,9 @@ func (a *RolesAPIService) UpdateRoleInstanceTypeAccessExecute(r ApiUpdateRoleIns
 }
 
 type ApiUpdateRolePermissionRequest struct {
-	ctx context.Context
-	ApiService *RolesAPIService
-	id int64
+	ctx                         context.Context
+	ApiService                  *RolesAPIService
+	id                          int64
 	updateRolePermissionRequest *UpdateRolePermissionRequest
 }
 
@@ -1447,26 +1456,27 @@ UpdateRolePermission Updating Role Permissions
 
 Update a feature permission or default permission category (group, cloud, persona, ect.)
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateRolePermissionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateRolePermissionRequest
 */
 func (a *RolesAPIService) UpdateRolePermission(ctx context.Context, id int64) ApiUpdateRolePermissionRequest {
 	return ApiUpdateRolePermissionRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return UpdateRoleBlueprintAccess200Response
+//
+//	@return UpdateRoleBlueprintAccess200Response
 func (a *RolesAPIService) UpdateRolePermissionExecute(r ApiUpdateRolePermissionRequest) (*UpdateRoleBlueprintAccess200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *UpdateRoleBlueprintAccess200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *UpdateRoleBlueprintAccess200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RolesAPIService.UpdateRolePermission")
@@ -1519,7 +1529,7 @@ func (a *RolesAPIService) UpdateRolePermissionExecute(r ApiUpdateRolePermissionR
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1528,8 +1538,8 @@ func (a *RolesAPIService) UpdateRolePermissionExecute(r ApiUpdateRolePermissionR
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1539,8 +1549,8 @@ func (a *RolesAPIService) UpdateRolePermissionExecute(r ApiUpdateRolePermissionR
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1548,8 +1558,8 @@ func (a *RolesAPIService) UpdateRolePermissionExecute(r ApiUpdateRolePermissionR
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1558,9 +1568,9 @@ func (a *RolesAPIService) UpdateRolePermissionExecute(r ApiUpdateRolePermissionR
 }
 
 type ApiUpdateRolePersonaAccessRequest struct {
-	ctx context.Context
-	ApiService *RolesAPIService
-	id int64
+	ctx                            context.Context
+	ApiService                     *RolesAPIService
+	id                             int64
 	updateRolePersonaAccessRequest *UpdateRolePersonaAccessRequest
 }
 
@@ -1578,26 +1588,27 @@ UpdateRolePersonaAccess Customizing Persona Access
 
 Customizing Persona Access
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateRolePersonaAccessRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateRolePersonaAccessRequest
 */
 func (a *RolesAPIService) UpdateRolePersonaAccess(ctx context.Context, id int64) ApiUpdateRolePersonaAccessRequest {
 	return ApiUpdateRolePersonaAccessRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return UpdateRoleBlueprintAccess200Response
+//
+//	@return UpdateRoleBlueprintAccess200Response
 func (a *RolesAPIService) UpdateRolePersonaAccessExecute(r ApiUpdateRolePersonaAccessRequest) (*UpdateRoleBlueprintAccess200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *UpdateRoleBlueprintAccess200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *UpdateRoleBlueprintAccess200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RolesAPIService.UpdateRolePersonaAccess")
@@ -1650,7 +1661,7 @@ func (a *RolesAPIService) UpdateRolePersonaAccessExecute(r ApiUpdateRolePersonaA
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1659,8 +1670,8 @@ func (a *RolesAPIService) UpdateRolePersonaAccessExecute(r ApiUpdateRolePersonaA
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1670,8 +1681,8 @@ func (a *RolesAPIService) UpdateRolePersonaAccessExecute(r ApiUpdateRolePersonaA
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1679,8 +1690,8 @@ func (a *RolesAPIService) UpdateRolePersonaAccessExecute(r ApiUpdateRolePersonaA
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1689,9 +1700,9 @@ func (a *RolesAPIService) UpdateRolePersonaAccessExecute(r ApiUpdateRolePersonaA
 }
 
 type ApiUpdateRoleReportTypeAccessRequest struct {
-	ctx context.Context
-	ApiService *RolesAPIService
-	id int64
+	ctx                               context.Context
+	ApiService                        *RolesAPIService
+	id                                int64
 	updateRoleReportTypeAccessRequest *UpdateRoleReportTypeAccessRequest
 }
 
@@ -1709,26 +1720,27 @@ UpdateRoleReportTypeAccess Customizing Report Type Access
 
 Customizing Report Type Access
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateRoleReportTypeAccessRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateRoleReportTypeAccessRequest
 */
 func (a *RolesAPIService) UpdateRoleReportTypeAccess(ctx context.Context, id int64) ApiUpdateRoleReportTypeAccessRequest {
 	return ApiUpdateRoleReportTypeAccessRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return UpdateRoleBlueprintAccess200Response
+//
+//	@return UpdateRoleBlueprintAccess200Response
 func (a *RolesAPIService) UpdateRoleReportTypeAccessExecute(r ApiUpdateRoleReportTypeAccessRequest) (*UpdateRoleBlueprintAccess200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *UpdateRoleBlueprintAccess200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *UpdateRoleBlueprintAccess200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RolesAPIService.UpdateRoleReportTypeAccess")
@@ -1781,7 +1793,7 @@ func (a *RolesAPIService) UpdateRoleReportTypeAccessExecute(r ApiUpdateRoleRepor
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1790,8 +1802,8 @@ func (a *RolesAPIService) UpdateRoleReportTypeAccessExecute(r ApiUpdateRoleRepor
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1801,8 +1813,8 @@ func (a *RolesAPIService) UpdateRoleReportTypeAccessExecute(r ApiUpdateRoleRepor
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1810,8 +1822,8 @@ func (a *RolesAPIService) UpdateRoleReportTypeAccessExecute(r ApiUpdateRoleRepor
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1820,9 +1832,9 @@ func (a *RolesAPIService) UpdateRoleReportTypeAccessExecute(r ApiUpdateRoleRepor
 }
 
 type ApiUpdateRoleTaskAccessRequest struct {
-	ctx context.Context
-	ApiService *RolesAPIService
-	id int64
+	ctx                         context.Context
+	ApiService                  *RolesAPIService
+	id                          int64
 	updateRoleTaskAccessRequest *UpdateRoleTaskAccessRequest
 }
 
@@ -1840,26 +1852,27 @@ UpdateRoleTaskAccess Customizing Task Access
 
 Customizing Task Access
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateRoleTaskAccessRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateRoleTaskAccessRequest
 */
 func (a *RolesAPIService) UpdateRoleTaskAccess(ctx context.Context, id int64) ApiUpdateRoleTaskAccessRequest {
 	return ApiUpdateRoleTaskAccessRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return UpdateRoleBlueprintAccess200Response
+//
+//	@return UpdateRoleBlueprintAccess200Response
 func (a *RolesAPIService) UpdateRoleTaskAccessExecute(r ApiUpdateRoleTaskAccessRequest) (*UpdateRoleBlueprintAccess200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *UpdateRoleBlueprintAccess200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *UpdateRoleBlueprintAccess200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RolesAPIService.UpdateRoleTaskAccess")
@@ -1912,7 +1925,7 @@ func (a *RolesAPIService) UpdateRoleTaskAccessExecute(r ApiUpdateRoleTaskAccessR
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1921,8 +1934,8 @@ func (a *RolesAPIService) UpdateRoleTaskAccessExecute(r ApiUpdateRoleTaskAccessR
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1932,8 +1945,8 @@ func (a *RolesAPIService) UpdateRoleTaskAccessExecute(r ApiUpdateRoleTaskAccessR
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1941,8 +1954,8 @@ func (a *RolesAPIService) UpdateRoleTaskAccessExecute(r ApiUpdateRoleTaskAccessR
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1951,9 +1964,9 @@ func (a *RolesAPIService) UpdateRoleTaskAccessExecute(r ApiUpdateRoleTaskAccessR
 }
 
 type ApiUpdateRoleVDIPoolAccessRequest struct {
-	ctx context.Context
-	ApiService *RolesAPIService
-	id int64
+	ctx                            context.Context
+	ApiService                     *RolesAPIService
+	id                             int64
 	updateRoleVDIPoolAccessRequest *UpdateRoleVDIPoolAccessRequest
 }
 
@@ -1971,26 +1984,27 @@ UpdateRoleVDIPoolAccess Customizing VDI Pool Access
 
 Customizing VDI Pool Access
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateRoleVDIPoolAccessRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateRoleVDIPoolAccessRequest
 */
 func (a *RolesAPIService) UpdateRoleVDIPoolAccess(ctx context.Context, id int64) ApiUpdateRoleVDIPoolAccessRequest {
 	return ApiUpdateRoleVDIPoolAccessRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return UpdateRoleBlueprintAccess200Response
+//
+//	@return UpdateRoleBlueprintAccess200Response
 func (a *RolesAPIService) UpdateRoleVDIPoolAccessExecute(r ApiUpdateRoleVDIPoolAccessRequest) (*UpdateRoleBlueprintAccess200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *UpdateRoleBlueprintAccess200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *UpdateRoleBlueprintAccess200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RolesAPIService.UpdateRoleVDIPoolAccess")
@@ -2043,7 +2057,7 @@ func (a *RolesAPIService) UpdateRoleVDIPoolAccessExecute(r ApiUpdateRoleVDIPoolA
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2052,8 +2066,8 @@ func (a *RolesAPIService) UpdateRoleVDIPoolAccessExecute(r ApiUpdateRoleVDIPoolA
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2063,8 +2077,8 @@ func (a *RolesAPIService) UpdateRoleVDIPoolAccessExecute(r ApiUpdateRoleVDIPoolA
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2072,8 +2086,8 @@ func (a *RolesAPIService) UpdateRoleVDIPoolAccessExecute(r ApiUpdateRoleVDIPoolA
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2082,9 +2096,9 @@ func (a *RolesAPIService) UpdateRoleVDIPoolAccessExecute(r ApiUpdateRoleVDIPoolA
 }
 
 type ApiUpdateRoleWorkflowAccessRequest struct {
-	ctx context.Context
-	ApiService *RolesAPIService
-	id int64
+	ctx                             context.Context
+	ApiService                      *RolesAPIService
+	id                              int64
 	updateRoleWorkflowAccessRequest *UpdateRoleWorkflowAccessRequest
 }
 
@@ -2102,26 +2116,27 @@ UpdateRoleWorkflowAccess Customizing Workflow Access
 
 Customizing Workflow Access
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateRoleWorkflowAccessRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateRoleWorkflowAccessRequest
 */
 func (a *RolesAPIService) UpdateRoleWorkflowAccess(ctx context.Context, id int64) ApiUpdateRoleWorkflowAccessRequest {
 	return ApiUpdateRoleWorkflowAccessRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return UpdateRoleBlueprintAccess200Response
+//
+//	@return UpdateRoleBlueprintAccess200Response
 func (a *RolesAPIService) UpdateRoleWorkflowAccessExecute(r ApiUpdateRoleWorkflowAccessRequest) (*UpdateRoleBlueprintAccess200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *UpdateRoleBlueprintAccess200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *UpdateRoleBlueprintAccess200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RolesAPIService.UpdateRoleWorkflowAccess")
@@ -2174,7 +2189,7 @@ func (a *RolesAPIService) UpdateRoleWorkflowAccessExecute(r ApiUpdateRoleWorkflo
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2183,8 +2198,8 @@ func (a *RolesAPIService) UpdateRoleWorkflowAccessExecute(r ApiUpdateRoleWorkflo
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2194,8 +2209,8 @@ func (a *RolesAPIService) UpdateRoleWorkflowAccessExecute(r ApiUpdateRoleWorkflo
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2203,8 +2218,8 @@ func (a *RolesAPIService) UpdateRoleWorkflowAccessExecute(r ApiUpdateRoleWorkflo
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

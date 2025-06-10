@@ -29,8 +29,8 @@ type CreateLoadBalancerPoolRequestLoadBalancerPool struct {
 	// Min Active Members
 	MinActive *int64 `json:"minActive,omitempty"`
 	// Configuration object with parameters that vary by type.
-	Config map[string]interface{} `json:"config,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Config               map[string]interface{} `json:"config,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _CreateLoadBalancerPoolRequestLoadBalancerPool CreateLoadBalancerPoolRequestLoadBalancerPool
@@ -213,7 +213,7 @@ func (o *CreateLoadBalancerPoolRequestLoadBalancerPool) SetConfig(v map[string]i
 }
 
 func (o CreateLoadBalancerPoolRequestLoadBalancerPool) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -244,66 +244,8 @@ func (o CreateLoadBalancerPoolRequestLoadBalancerPool) ToMap() (map[string]inter
 
 	return toSerialize, nil
 }
-
 func (o *CreateLoadBalancerPoolRequestLoadBalancerPool) UnmarshalJSON(data []byte) (err error) {
-	varCreateLoadBalancerPoolRequestLoadBalancerPool := _CreateLoadBalancerPoolRequestLoadBalancerPool{}
-
-	err = json.Unmarshal(data, &varCreateLoadBalancerPoolRequestLoadBalancerPool)
-
-	if err != nil {
-		return err
-	}
-
-	*o = CreateLoadBalancerPoolRequestLoadBalancerPool(varCreateLoadBalancerPoolRequestLoadBalancerPool)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "vipBalance")
-		delete(additionalProperties, "minActive")
-		delete(additionalProperties, "config")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableCreateLoadBalancerPoolRequestLoadBalancerPool struct {
-	value *CreateLoadBalancerPoolRequestLoadBalancerPool
-	isSet bool
-}
-
-func (v NullableCreateLoadBalancerPoolRequestLoadBalancerPool) Get() *CreateLoadBalancerPoolRequestLoadBalancerPool {
-	return v.value
-}
-
-func (v *NullableCreateLoadBalancerPoolRequestLoadBalancerPool) Set(val *CreateLoadBalancerPoolRequestLoadBalancerPool) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableCreateLoadBalancerPoolRequestLoadBalancerPool) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableCreateLoadBalancerPoolRequestLoadBalancerPool) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableCreateLoadBalancerPoolRequestLoadBalancerPool(val *CreateLoadBalancerPoolRequestLoadBalancerPool) *NullableCreateLoadBalancerPoolRequestLoadBalancerPool {
-	return &NullableCreateLoadBalancerPoolRequestLoadBalancerPool{value: val, isSet: true}
-}
-
-func (v NullableCreateLoadBalancerPoolRequestLoadBalancerPool) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableCreateLoadBalancerPoolRequestLoadBalancerPool) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

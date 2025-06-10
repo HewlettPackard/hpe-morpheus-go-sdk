@@ -25,7 +25,7 @@ type BlueprintCFTCreateSuccess struct {
 	// Path to display image. Defaults to an internal Morpheus image.
 	Image *string `json:"image,omitempty"`
 	// Blueprint Type
-	Type *string `json:"type,omitempty"`
+	Type           *string                                                          `json:"type,omitempty"`
 	CloudFormation *AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormation `json:"cloudFormation,omitempty"`
 	// Private or Public Access
 	Visibility *string `json:"visibility,omitempty"`
@@ -34,8 +34,8 @@ type BlueprintCFTCreateSuccess struct {
 	// Owner
 	Owner map[string]interface{} `json:"owner,omitempty"`
 	// Tenant
-	Tenant map[string]interface{} `json:"tenant,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Tenant               map[string]interface{} `json:"tenant,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _BlueprintCFTCreateSuccess BlueprintCFTCreateSuccess
@@ -318,7 +318,7 @@ func (o *BlueprintCFTCreateSuccess) SetTenant(v map[string]interface{}) {
 }
 
 func (o BlueprintCFTCreateSuccess) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -358,69 +358,8 @@ func (o BlueprintCFTCreateSuccess) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *BlueprintCFTCreateSuccess) UnmarshalJSON(data []byte) (err error) {
-	varBlueprintCFTCreateSuccess := _BlueprintCFTCreateSuccess{}
-
-	err = json.Unmarshal(data, &varBlueprintCFTCreateSuccess)
-
-	if err != nil {
-		return err
-	}
-
-	*o = BlueprintCFTCreateSuccess(varBlueprintCFTCreateSuccess)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "image")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "cloudFormation")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "resourcePermission")
-		delete(additionalProperties, "owner")
-		delete(additionalProperties, "tenant")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableBlueprintCFTCreateSuccess struct {
-	value *BlueprintCFTCreateSuccess
-	isSet bool
-}
-
-func (v NullableBlueprintCFTCreateSuccess) Get() *BlueprintCFTCreateSuccess {
-	return v.value
-}
-
-func (v *NullableBlueprintCFTCreateSuccess) Set(val *BlueprintCFTCreateSuccess) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableBlueprintCFTCreateSuccess) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableBlueprintCFTCreateSuccess) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableBlueprintCFTCreateSuccess(val *BlueprintCFTCreateSuccess) *NullableBlueprintCFTCreateSuccess {
-	return &NullableBlueprintCFTCreateSuccess{value: val, isSet: true}
-}
-
-func (v NullableBlueprintCFTCreateSuccess) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableBlueprintCFTCreateSuccess) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the AddJobsRequest type satisfies the MappedNullable interface at compile time
@@ -21,8 +20,8 @@ var _ MappedNullable = &AddJobsRequest{}
 
 // AddJobsRequest struct for AddJobsRequest
 type AddJobsRequest struct {
-	Job AddJobsRequestJob `json:"job"`
-	AdditionalProperties map[string]interface{}
+	Job                  AddJobsRequestJob      `json:"job"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddJobsRequest AddJobsRequest
@@ -70,7 +69,7 @@ func (o *AddJobsRequest) SetJob(v AddJobsRequestJob) {
 }
 
 func (o AddJobsRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -87,83 +86,8 @@ func (o AddJobsRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *AddJobsRequest) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"job",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varAddJobsRequest := _AddJobsRequest{}
-
-	err = json.Unmarshal(data, &varAddJobsRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddJobsRequest(varAddJobsRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "job")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddJobsRequest struct {
-	value *AddJobsRequest
-	isSet bool
-}
-
-func (v NullableAddJobsRequest) Get() *AddJobsRequest {
-	return v.value
-}
-
-func (v *NullableAddJobsRequest) Set(val *AddJobsRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddJobsRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddJobsRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddJobsRequest(val *AddJobsRequest) *NullableAddJobsRequest {
-	return &NullableAddJobsRequest{value: val, isSet: true}
-}
-
-func (v NullableAddJobsRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddJobsRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

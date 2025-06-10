@@ -18,18 +18,17 @@ import (
 	"io"
 	"net/http"
 	"net/url"
-	"strings"
 	"os"
+	"strings"
 )
-
 
 // WhitelabelSettingsAPIService WhitelabelSettingsAPI service
 type WhitelabelSettingsAPIService service
 
 type ApiGetWhitelabelImageRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *WhitelabelSettingsAPIService
-	imageType string
+	imageType  string
 }
 
 func (r ApiGetWhitelabelImageRequest) Execute() (*os.File, *http.Response, error) {
@@ -41,26 +40,27 @@ GetWhitelabelImage Download Image
 
 Downloads the specified image.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param imageType Valid image types
- @return ApiGetWhitelabelImageRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param imageType Valid image types
+	@return ApiGetWhitelabelImageRequest
 */
 func (a *WhitelabelSettingsAPIService) GetWhitelabelImage(ctx context.Context, imageType string) ApiGetWhitelabelImageRequest {
 	return ApiGetWhitelabelImageRequest{
 		ApiService: a,
-		ctx: ctx,
-		imageType: imageType,
+		ctx:        ctx,
+		imageType:  imageType,
 	}
 }
 
 // Execute executes the request
-//  @return *os.File
+//
+//	@return *os.File
 func (a *WhitelabelSettingsAPIService) GetWhitelabelImageExecute(r ApiGetWhitelabelImageRequest) (*os.File, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *os.File
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *os.File
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WhitelabelSettingsAPIService.GetWhitelabelImage")
@@ -111,7 +111,7 @@ func (a *WhitelabelSettingsAPIService) GetWhitelabelImageExecute(r ApiGetWhitela
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -120,8 +120,8 @@ func (a *WhitelabelSettingsAPIService) GetWhitelabelImageExecute(r ApiGetWhitela
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -131,8 +131,8 @@ func (a *WhitelabelSettingsAPIService) GetWhitelabelImageExecute(r ApiGetWhitela
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -140,8 +140,8 @@ func (a *WhitelabelSettingsAPIService) GetWhitelabelImageExecute(r ApiGetWhitela
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -150,7 +150,7 @@ func (a *WhitelabelSettingsAPIService) GetWhitelabelImageExecute(r ApiGetWhitela
 }
 
 type ApiListWhitelabelSettingsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *WhitelabelSettingsAPIService
 }
 
@@ -163,24 +163,25 @@ ListWhitelabelSettings Get Whitelabel Settings
 
 This endpoint retrieves whitelabel settings.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListWhitelabelSettingsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListWhitelabelSettingsRequest
 */
 func (a *WhitelabelSettingsAPIService) ListWhitelabelSettings(ctx context.Context) ApiListWhitelabelSettingsRequest {
 	return ApiListWhitelabelSettingsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListWhitelabelSettings200Response
+//
+//	@return ListWhitelabelSettings200Response
 func (a *WhitelabelSettingsAPIService) ListWhitelabelSettingsExecute(r ApiListWhitelabelSettingsRequest) (*ListWhitelabelSettings200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListWhitelabelSettings200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListWhitelabelSettings200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WhitelabelSettingsAPIService.ListWhitelabelSettings")
@@ -230,7 +231,7 @@ func (a *WhitelabelSettingsAPIService) ListWhitelabelSettingsExecute(r ApiListWh
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -239,8 +240,8 @@ func (a *WhitelabelSettingsAPIService) ListWhitelabelSettingsExecute(r ApiListWh
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -250,8 +251,8 @@ func (a *WhitelabelSettingsAPIService) ListWhitelabelSettingsExecute(r ApiListWh
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -259,8 +260,8 @@ func (a *WhitelabelSettingsAPIService) ListWhitelabelSettingsExecute(r ApiListWh
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -269,9 +270,9 @@ func (a *WhitelabelSettingsAPIService) ListWhitelabelSettingsExecute(r ApiListWh
 }
 
 type ApiRemoveWhitelabelImageRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *WhitelabelSettingsAPIService
-	imageType string
+	imageType  string
 }
 
 func (r ApiRemoveWhitelabelImageRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -283,26 +284,27 @@ RemoveWhitelabelImage Reset Image
 
 Resets the specified image to the Morpheus default.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param imageType Valid image types
- @return ApiRemoveWhitelabelImageRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param imageType Valid image types
+	@return ApiRemoveWhitelabelImageRequest
 */
 func (a *WhitelabelSettingsAPIService) RemoveWhitelabelImage(ctx context.Context, imageType string) ApiRemoveWhitelabelImageRequest {
 	return ApiRemoveWhitelabelImageRequest{
 		ApiService: a,
-		ctx: ctx,
-		imageType: imageType,
+		ctx:        ctx,
+		imageType:  imageType,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *WhitelabelSettingsAPIService) RemoveWhitelabelImageExecute(r ApiRemoveWhitelabelImageRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WhitelabelSettingsAPIService.RemoveWhitelabelImage")
@@ -353,7 +355,7 @@ func (a *WhitelabelSettingsAPIService) RemoveWhitelabelImageExecute(r ApiRemoveW
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -362,8 +364,8 @@ func (a *WhitelabelSettingsAPIService) RemoveWhitelabelImageExecute(r ApiRemoveW
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -373,8 +375,8 @@ func (a *WhitelabelSettingsAPIService) RemoveWhitelabelImageExecute(r ApiRemoveW
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -382,8 +384,8 @@ func (a *WhitelabelSettingsAPIService) RemoveWhitelabelImageExecute(r ApiRemoveW
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -392,15 +394,15 @@ func (a *WhitelabelSettingsAPIService) RemoveWhitelabelImageExecute(r ApiRemoveW
 }
 
 type ApiUpdateWhitelabelImagesRequest struct {
-	ctx context.Context
-	ApiService *WhitelabelSettingsAPIService
-	headerLogoFile *os.File
-	resetHeaderLogo *bool
-	footerLogoFile *os.File
-	resetFooterLogo *bool
-	loginLogoFile *os.File
-	resetLoginLogo *bool
-	faviconFile *os.File
+	ctx              context.Context
+	ApiService       *WhitelabelSettingsAPIService
+	headerLogoFile   *os.File
+	resetHeaderLogo  *bool
+	footerLogoFile   *os.File
+	resetFooterLogo  *bool
+	loginLogoFile    *os.File
+	resetLoginLogo   *bool
+	faviconFile      *os.File
 	resetFaviconLogo *bool
 }
 
@@ -461,24 +463,25 @@ UpdateWhitelabelImages Update Images
 
 Uploads whitelabel images. Expects multipart form data as the request format, not JSON.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiUpdateWhitelabelImagesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiUpdateWhitelabelImagesRequest
 */
 func (a *WhitelabelSettingsAPIService) UpdateWhitelabelImages(ctx context.Context) ApiUpdateWhitelabelImagesRequest {
 	return ApiUpdateWhitelabelImagesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *WhitelabelSettingsAPIService) UpdateWhitelabelImagesExecute(r ApiUpdateWhitelabelImagesRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WhitelabelSettingsAPIService.UpdateWhitelabelImages")
@@ -510,8 +513,8 @@ func (a *WhitelabelSettingsAPIService) UpdateWhitelabelImagesExecute(r ApiUpdate
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	var headerLogoFileLocalVarFormFileName string
-	var headerLogoFileLocalVarFileName     string
-	var headerLogoFileLocalVarFileBytes    []byte
+	var headerLogoFileLocalVarFileName string
+	var headerLogoFileLocalVarFileBytes []byte
 
 	headerLogoFileLocalVarFormFileName = "headerLogo.file"
 	headerLogoFileLocalVarFile := r.headerLogoFile
@@ -528,8 +531,8 @@ func (a *WhitelabelSettingsAPIService) UpdateWhitelabelImagesExecute(r ApiUpdate
 		parameterAddToHeaderOrQuery(localVarFormParams, "resetHeaderLogo", r.resetHeaderLogo, "", "")
 	}
 	var footerLogoFileLocalVarFormFileName string
-	var footerLogoFileLocalVarFileName     string
-	var footerLogoFileLocalVarFileBytes    []byte
+	var footerLogoFileLocalVarFileName string
+	var footerLogoFileLocalVarFileBytes []byte
 
 	footerLogoFileLocalVarFormFileName = "footerLogo.file"
 	footerLogoFileLocalVarFile := r.footerLogoFile
@@ -546,8 +549,8 @@ func (a *WhitelabelSettingsAPIService) UpdateWhitelabelImagesExecute(r ApiUpdate
 		parameterAddToHeaderOrQuery(localVarFormParams, "resetFooterLogo", r.resetFooterLogo, "", "")
 	}
 	var loginLogoFileLocalVarFormFileName string
-	var loginLogoFileLocalVarFileName     string
-	var loginLogoFileLocalVarFileBytes    []byte
+	var loginLogoFileLocalVarFileName string
+	var loginLogoFileLocalVarFileBytes []byte
 
 	loginLogoFileLocalVarFormFileName = "loginLogo.file"
 	loginLogoFileLocalVarFile := r.loginLogoFile
@@ -564,8 +567,8 @@ func (a *WhitelabelSettingsAPIService) UpdateWhitelabelImagesExecute(r ApiUpdate
 		parameterAddToHeaderOrQuery(localVarFormParams, "resetLoginLogo", r.resetLoginLogo, "", "")
 	}
 	var faviconFileLocalVarFormFileName string
-	var faviconFileLocalVarFileName     string
-	var faviconFileLocalVarFileBytes    []byte
+	var faviconFileLocalVarFileName string
+	var faviconFileLocalVarFileBytes []byte
 
 	faviconFileLocalVarFormFileName = "favicon.file"
 	faviconFileLocalVarFile := r.faviconFile
@@ -600,7 +603,7 @@ func (a *WhitelabelSettingsAPIService) UpdateWhitelabelImagesExecute(r ApiUpdate
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -609,8 +612,8 @@ func (a *WhitelabelSettingsAPIService) UpdateWhitelabelImagesExecute(r ApiUpdate
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -620,8 +623,8 @@ func (a *WhitelabelSettingsAPIService) UpdateWhitelabelImagesExecute(r ApiUpdate
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -629,8 +632,8 @@ func (a *WhitelabelSettingsAPIService) UpdateWhitelabelImagesExecute(r ApiUpdate
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -639,8 +642,8 @@ func (a *WhitelabelSettingsAPIService) UpdateWhitelabelImagesExecute(r ApiUpdate
 }
 
 type ApiUpdateWhitelabelSettingsRequest struct {
-	ctx context.Context
-	ApiService *WhitelabelSettingsAPIService
+	ctx                             context.Context
+	ApiService                      *WhitelabelSettingsAPIService
 	updateWhitelabelSettingsRequest *UpdateWhitelabelSettingsRequest
 }
 
@@ -658,24 +661,25 @@ UpdateWhitelabelSettings Update Whitelabel Settings
 
 Update Whitelabel Settings
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiUpdateWhitelabelSettingsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiUpdateWhitelabelSettingsRequest
 */
 func (a *WhitelabelSettingsAPIService) UpdateWhitelabelSettings(ctx context.Context) ApiUpdateWhitelabelSettingsRequest {
 	return ApiUpdateWhitelabelSettingsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *WhitelabelSettingsAPIService) UpdateWhitelabelSettingsExecute(r ApiUpdateWhitelabelSettingsRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WhitelabelSettingsAPIService.UpdateWhitelabelSettings")
@@ -727,7 +731,7 @@ func (a *WhitelabelSettingsAPIService) UpdateWhitelabelSettingsExecute(r ApiUpda
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -736,8 +740,8 @@ func (a *WhitelabelSettingsAPIService) UpdateWhitelabelSettingsExecute(r ApiUpda
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -747,8 +751,8 @@ func (a *WhitelabelSettingsAPIService) UpdateWhitelabelSettingsExecute(r ApiUpda
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -756,8 +760,8 @@ func (a *WhitelabelSettingsAPIService) UpdateWhitelabelSettingsExecute(r ApiUpda
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

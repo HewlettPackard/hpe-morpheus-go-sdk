@@ -21,33 +21,33 @@ var _ MappedNullable = &CreateNetworkPoolIp200ResponseNetworkPool{}
 
 // CreateNetworkPoolIp200ResponseNetworkPool struct for CreateNetworkPoolIp200ResponseNetworkPool
 type CreateNetworkPoolIp200ResponseNetworkPool struct {
-	Id *int64 `json:"id,omitempty"`
-	NetworkPoolId *int64 `json:"networkPoolId,omitempty"`
-	IpType *string `json:"ipType,omitempty"`
-	IpAddress *string `json:"ipAddress,omitempty"`
-	GatewayAddress *string `json:"gatewayAddress,omitempty"`
-	SubnetMask *string `json:"subnetMask,omitempty"`
-	DnsServer *string `json:"dnsServer,omitempty"`
-	InterfaceName *string `json:"interfaceName,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Active *bool `json:"active,omitempty"`
-	StaticIp *bool `json:"staticIp,omitempty"`
-	Fqdn *string `json:"fqdn,omitempty"`
-	DomainName *string `json:"domainName,omitempty"`
-	Hostname *string `json:"hostname,omitempty"`
-	InternalId *string `json:"internalId,omitempty"`
-	ExternalId *string `json:"externalId,omitempty"`
-	PtrId *string `json:"ptrId,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	StartDate *time.Time `json:"startDate,omitempty"`
-	EndDate *time.Time `json:"endDate,omitempty"`
-	RefType *string `json:"refType,omitempty"`
-	RefId *int64 `json:"refId,omitempty"`
-	SubRefId *int64 `json:"subRefId,omitempty"`
-	NetworkDomain *string `json:"networkDomain,omitempty"`
-	CreatedBy *ListActivity200ResponseAllOfActivityInnerActivityInnerUser `json:"createdBy,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                      `json:"id,omitempty"`
+	NetworkPoolId        *int64                                                      `json:"networkPoolId,omitempty"`
+	IpType               *string                                                     `json:"ipType,omitempty"`
+	IpAddress            *string                                                     `json:"ipAddress,omitempty"`
+	GatewayAddress       *string                                                     `json:"gatewayAddress,omitempty"`
+	SubnetMask           *string                                                     `json:"subnetMask,omitempty"`
+	DnsServer            *string                                                     `json:"dnsServer,omitempty"`
+	InterfaceName        *string                                                     `json:"interfaceName,omitempty"`
+	Description          *string                                                     `json:"description,omitempty"`
+	Active               *bool                                                       `json:"active,omitempty"`
+	StaticIp             *bool                                                       `json:"staticIp,omitempty"`
+	Fqdn                 *string                                                     `json:"fqdn,omitempty"`
+	DomainName           *string                                                     `json:"domainName,omitempty"`
+	Hostname             *string                                                     `json:"hostname,omitempty"`
+	InternalId           *string                                                     `json:"internalId,omitempty"`
+	ExternalId           *string                                                     `json:"externalId,omitempty"`
+	PtrId                *string                                                     `json:"ptrId,omitempty"`
+	DateCreated          *time.Time                                                  `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                                  `json:"lastUpdated,omitempty"`
+	StartDate            *time.Time                                                  `json:"startDate,omitempty"`
+	EndDate              *time.Time                                                  `json:"endDate,omitempty"`
+	RefType              *string                                                     `json:"refType,omitempty"`
+	RefId                *int64                                                      `json:"refId,omitempty"`
+	SubRefId             *int64                                                      `json:"subRefId,omitempty"`
+	NetworkDomain        *string                                                     `json:"networkDomain,omitempty"`
+	CreatedBy            *ListActivity200ResponseAllOfActivityInnerActivityInnerUser `json:"createdBy,omitempty"`
+	AdditionalProperties map[string]interface{}                                      `json:",remain"`
 }
 
 type _CreateNetworkPoolIp200ResponseNetworkPool CreateNetworkPoolIp200ResponseNetworkPool
@@ -902,7 +902,7 @@ func (o *CreateNetworkPoolIp200ResponseNetworkPool) SetCreatedBy(v ListActivity2
 }
 
 func (o CreateNetworkPoolIp200ResponseNetworkPool) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -996,87 +996,8 @@ func (o CreateNetworkPoolIp200ResponseNetworkPool) ToMap() (map[string]interface
 
 	return toSerialize, nil
 }
-
 func (o *CreateNetworkPoolIp200ResponseNetworkPool) UnmarshalJSON(data []byte) (err error) {
-	varCreateNetworkPoolIp200ResponseNetworkPool := _CreateNetworkPoolIp200ResponseNetworkPool{}
-
-	err = json.Unmarshal(data, &varCreateNetworkPoolIp200ResponseNetworkPool)
-
-	if err != nil {
-		return err
-	}
-
-	*o = CreateNetworkPoolIp200ResponseNetworkPool(varCreateNetworkPoolIp200ResponseNetworkPool)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "networkPoolId")
-		delete(additionalProperties, "ipType")
-		delete(additionalProperties, "ipAddress")
-		delete(additionalProperties, "gatewayAddress")
-		delete(additionalProperties, "subnetMask")
-		delete(additionalProperties, "dnsServer")
-		delete(additionalProperties, "interfaceName")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "active")
-		delete(additionalProperties, "staticIp")
-		delete(additionalProperties, "fqdn")
-		delete(additionalProperties, "domainName")
-		delete(additionalProperties, "hostname")
-		delete(additionalProperties, "internalId")
-		delete(additionalProperties, "externalId")
-		delete(additionalProperties, "ptrId")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		delete(additionalProperties, "startDate")
-		delete(additionalProperties, "endDate")
-		delete(additionalProperties, "refType")
-		delete(additionalProperties, "refId")
-		delete(additionalProperties, "subRefId")
-		delete(additionalProperties, "networkDomain")
-		delete(additionalProperties, "createdBy")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableCreateNetworkPoolIp200ResponseNetworkPool struct {
-	value *CreateNetworkPoolIp200ResponseNetworkPool
-	isSet bool
-}
-
-func (v NullableCreateNetworkPoolIp200ResponseNetworkPool) Get() *CreateNetworkPoolIp200ResponseNetworkPool {
-	return v.value
-}
-
-func (v *NullableCreateNetworkPoolIp200ResponseNetworkPool) Set(val *CreateNetworkPoolIp200ResponseNetworkPool) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableCreateNetworkPoolIp200ResponseNetworkPool) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableCreateNetworkPoolIp200ResponseNetworkPool) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableCreateNetworkPoolIp200ResponseNetworkPool(val *CreateNetworkPoolIp200ResponseNetworkPool) *NullableCreateNetworkPoolIp200ResponseNetworkPool {
-	return &NullableCreateNetworkPoolIp200ResponseNetworkPool{value: val, isSet: true}
-}
-
-func (v NullableCreateNetworkPoolIp200ResponseNetworkPool) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableCreateNetworkPoolIp200ResponseNetworkPool) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

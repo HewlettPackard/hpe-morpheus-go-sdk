@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the UpdateEnvironmentsRequest type satisfies the MappedNullable interface at compile time
@@ -21,8 +20,8 @@ var _ MappedNullable = &UpdateEnvironmentsRequest{}
 
 // UpdateEnvironmentsRequest struct for UpdateEnvironmentsRequest
 type UpdateEnvironmentsRequest struct {
-	Environment UpdateEnvironmentsRequestEnvironment `json:"environment"`
-	AdditionalProperties map[string]interface{}
+	Environment          UpdateEnvironmentsRequestEnvironment `json:"environment"`
+	AdditionalProperties map[string]interface{}               `json:",remain"`
 }
 
 type _UpdateEnvironmentsRequest UpdateEnvironmentsRequest
@@ -70,7 +69,7 @@ func (o *UpdateEnvironmentsRequest) SetEnvironment(v UpdateEnvironmentsRequestEn
 }
 
 func (o UpdateEnvironmentsRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -87,83 +86,8 @@ func (o UpdateEnvironmentsRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *UpdateEnvironmentsRequest) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"environment",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varUpdateEnvironmentsRequest := _UpdateEnvironmentsRequest{}
-
-	err = json.Unmarshal(data, &varUpdateEnvironmentsRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateEnvironmentsRequest(varUpdateEnvironmentsRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "environment")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateEnvironmentsRequest struct {
-	value *UpdateEnvironmentsRequest
-	isSet bool
-}
-
-func (v NullableUpdateEnvironmentsRequest) Get() *UpdateEnvironmentsRequest {
-	return v.value
-}
-
-func (v *NullableUpdateEnvironmentsRequest) Set(val *UpdateEnvironmentsRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateEnvironmentsRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateEnvironmentsRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateEnvironmentsRequest(val *UpdateEnvironmentsRequest) *NullableUpdateEnvironmentsRequest {
-	return &NullableUpdateEnvironmentsRequest{value: val, isSet: true}
-}
-
-func (v NullableUpdateEnvironmentsRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateEnvironmentsRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

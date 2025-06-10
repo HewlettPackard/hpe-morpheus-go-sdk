@@ -21,35 +21,35 @@ var _ MappedNullable = &ClusterLayout{}
 
 // ClusterLayout struct for ClusterLayout
 type ClusterLayout struct {
-	Id *int64 `json:"id,omitempty"`
-	InternalId *string `json:"internalId,omitempty"`
-	ServerCount *int64 `json:"serverCount,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	Code *string `json:"code,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	HasAutoScale *bool `json:"hasAutoScale,omitempty"`
-	MemoryRequirement *int64 `json:"memoryRequirement,omitempty"`
-	ClusterVersion *string `json:"clusterVersion,omitempty"`
-	ComputeVersion *string `json:"computeVersion,omitempty"`
-	HasSettings *bool `json:"hasSettings,omitempty"`
-	SortOrder *int64 `json:"sortOrder,omitempty"`
-	HasConfig *bool `json:"hasConfig,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Creatable *bool `json:"creatable,omitempty"`
-	Enabled *bool `json:"enabled,omitempty"`
-	Description *string `json:"description,omitempty"`
-	GroupType *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"groupType,omitempty"`
-	Labels []string `json:"labels,omitempty"`
-	EnvironmentVariables []map[string]interface{} `json:"environmentVariables,omitempty"`
-	OptionTypes []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
-	Actions []map[string]interface{} `json:"actions,omitempty"`
-	ComputeServers []ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner `json:"computeServers,omitempty"`
-	InstallContainerRuntime *bool `json:"installContainerRuntime,omitempty"`
-	ProvisionType *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"provisionType,omitempty"`
-	SpecTemplates []ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner `json:"specTemplates,omitempty"`
-	TaskSets []map[string]interface{} `json:"taskSets,omitempty"`
-	Type *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"type,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                      *int64                                                                      `json:"id,omitempty"`
+	InternalId              *string                                                                     `json:"internalId,omitempty"`
+	ServerCount             *int64                                                                      `json:"serverCount,omitempty"`
+	DateCreated             *time.Time                                                                  `json:"dateCreated,omitempty"`
+	Code                    *string                                                                     `json:"code,omitempty"`
+	LastUpdated             *time.Time                                                                  `json:"lastUpdated,omitempty"`
+	HasAutoScale            *bool                                                                       `json:"hasAutoScale,omitempty"`
+	MemoryRequirement       *int64                                                                      `json:"memoryRequirement,omitempty"`
+	ClusterVersion          *string                                                                     `json:"clusterVersion,omitempty"`
+	ComputeVersion          *string                                                                     `json:"computeVersion,omitempty"`
+	HasSettings             *bool                                                                       `json:"hasSettings,omitempty"`
+	SortOrder               *int64                                                                      `json:"sortOrder,omitempty"`
+	HasConfig               *bool                                                                       `json:"hasConfig,omitempty"`
+	Name                    *string                                                                     `json:"name,omitempty"`
+	Creatable               *bool                                                                       `json:"creatable,omitempty"`
+	Enabled                 *bool                                                                       `json:"enabled,omitempty"`
+	Description             *string                                                                     `json:"description,omitempty"`
+	GroupType               *ListBackupSettings200ResponseBackupSettingsDefaultSchedule                 `json:"groupType,omitempty"`
+	Labels                  []string                                                                    `json:"labels,omitempty"`
+	EnvironmentVariables    []map[string]interface{}                                                    `json:"environmentVariables,omitempty"`
+	OptionTypes             []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
+	Actions                 []map[string]interface{}                                                    `json:"actions,omitempty"`
+	ComputeServers          []ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner         `json:"computeServers,omitempty"`
+	InstallContainerRuntime *bool                                                                       `json:"installContainerRuntime,omitempty"`
+	ProvisionType           *ListBackupSettings200ResponseBackupSettingsDefaultSchedule                 `json:"provisionType,omitempty"`
+	SpecTemplates           []ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner          `json:"specTemplates,omitempty"`
+	TaskSets                []map[string]interface{}                                                    `json:"taskSets,omitempty"`
+	Type                    *ListBackupSettings200ResponseBackupSettingsDefaultSchedule                 `json:"type,omitempty"`
+	AdditionalProperties    map[string]interface{}                                                      `json:",remain"`
 }
 
 type _ClusterLayout ClusterLayout
@@ -968,7 +968,7 @@ func (o *ClusterLayout) SetType(v ListBackupSettings200ResponseBackupSettingsDef
 }
 
 func (o ClusterLayout) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1068,89 +1068,8 @@ func (o ClusterLayout) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *ClusterLayout) UnmarshalJSON(data []byte) (err error) {
-	varClusterLayout := _ClusterLayout{}
-
-	err = json.Unmarshal(data, &varClusterLayout)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ClusterLayout(varClusterLayout)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "internalId")
-		delete(additionalProperties, "serverCount")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "lastUpdated")
-		delete(additionalProperties, "hasAutoScale")
-		delete(additionalProperties, "memoryRequirement")
-		delete(additionalProperties, "clusterVersion")
-		delete(additionalProperties, "computeVersion")
-		delete(additionalProperties, "hasSettings")
-		delete(additionalProperties, "sortOrder")
-		delete(additionalProperties, "hasConfig")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "creatable")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "groupType")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "environmentVariables")
-		delete(additionalProperties, "optionTypes")
-		delete(additionalProperties, "actions")
-		delete(additionalProperties, "computeServers")
-		delete(additionalProperties, "installContainerRuntime")
-		delete(additionalProperties, "provisionType")
-		delete(additionalProperties, "specTemplates")
-		delete(additionalProperties, "taskSets")
-		delete(additionalProperties, "type")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableClusterLayout struct {
-	value *ClusterLayout
-	isSet bool
-}
-
-func (v NullableClusterLayout) Get() *ClusterLayout {
-	return v.value
-}
-
-func (v *NullableClusterLayout) Set(val *ClusterLayout) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableClusterLayout) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableClusterLayout) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableClusterLayout(val *ClusterLayout) *NullableClusterLayout {
-	return &NullableClusterLayout{value: val, isSet: true}
-}
-
-func (v NullableClusterLayout) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableClusterLayout) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

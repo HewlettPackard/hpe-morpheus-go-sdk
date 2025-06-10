@@ -18,10 +18,10 @@ import (
 // checks if the MaxHostsPolicyTypeConfiguration type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &MaxHostsPolicyTypeConfiguration{}
 
-// MaxHostsPolicyTypeConfiguration Configuration settings for the following policy types: - Max Hosts 
+// MaxHostsPolicyTypeConfiguration Configuration settings for the following policy types: - Max Hosts
 type MaxHostsPolicyTypeConfiguration struct {
-	MaxHosts *string `json:"maxHosts,omitempty"`
-	AdditionalProperties map[string]interface{}
+	MaxHosts             *string                `json:"maxHosts,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _MaxHostsPolicyTypeConfiguration MaxHostsPolicyTypeConfiguration
@@ -76,7 +76,7 @@ func (o *MaxHostsPolicyTypeConfiguration) SetMaxHosts(v string) {
 }
 
 func (o MaxHostsPolicyTypeConfiguration) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o MaxHostsPolicyTypeConfiguration) ToMap() (map[string]interface{}, error)
 
 	return toSerialize, nil
 }
-
 func (o *MaxHostsPolicyTypeConfiguration) UnmarshalJSON(data []byte) (err error) {
-	varMaxHostsPolicyTypeConfiguration := _MaxHostsPolicyTypeConfiguration{}
-
-	err = json.Unmarshal(data, &varMaxHostsPolicyTypeConfiguration)
-
-	if err != nil {
-		return err
-	}
-
-	*o = MaxHostsPolicyTypeConfiguration(varMaxHostsPolicyTypeConfiguration)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "maxHosts")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableMaxHostsPolicyTypeConfiguration struct {
-	value *MaxHostsPolicyTypeConfiguration
-	isSet bool
-}
-
-func (v NullableMaxHostsPolicyTypeConfiguration) Get() *MaxHostsPolicyTypeConfiguration {
-	return v.value
-}
-
-func (v *NullableMaxHostsPolicyTypeConfiguration) Set(val *MaxHostsPolicyTypeConfiguration) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableMaxHostsPolicyTypeConfiguration) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableMaxHostsPolicyTypeConfiguration) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableMaxHostsPolicyTypeConfiguration(val *MaxHostsPolicyTypeConfiguration) *NullableMaxHostsPolicyTypeConfiguration {
-	return &NullableMaxHostsPolicyTypeConfiguration{value: val, isSet: true}
-}
-
-func (v NullableMaxHostsPolicyTypeConfiguration) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableMaxHostsPolicyTypeConfiguration) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

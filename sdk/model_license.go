@@ -22,9 +22,9 @@ var _ MappedNullable = &License{}
 type License struct {
 	License *GetLicense200ResponseLicense `json:"license,omitempty"`
 	// List of all the installed licenses
-	InstalledLicenses []GetLicense200ResponseInstalledLicensesInner `json:"installedLicenses,omitempty"`
-	CurrentUsage *GetLicense200ResponseCurrentUsage `json:"currentUsage,omitempty"`
-	AdditionalProperties map[string]interface{}
+	InstalledLicenses    []GetLicense200ResponseInstalledLicensesInner `json:"installedLicenses,omitempty"`
+	CurrentUsage         *GetLicense200ResponseCurrentUsage            `json:"currentUsage,omitempty"`
+	AdditionalProperties map[string]interface{}                        `json:",remain"`
 }
 
 type _License License
@@ -143,7 +143,7 @@ func (o *License) SetCurrentUsage(v GetLicense200ResponseCurrentUsage) {
 }
 
 func (o License) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -168,64 +168,8 @@ func (o License) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *License) UnmarshalJSON(data []byte) (err error) {
-	varLicense := _License{}
-
-	err = json.Unmarshal(data, &varLicense)
-
-	if err != nil {
-		return err
-	}
-
-	*o = License(varLicense)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "license")
-		delete(additionalProperties, "installedLicenses")
-		delete(additionalProperties, "currentUsage")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableLicense struct {
-	value *License
-	isSet bool
-}
-
-func (v NullableLicense) Get() *License {
-	return v.value
-}
-
-func (v *NullableLicense) Set(val *License) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableLicense) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableLicense) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableLicense(val *License) *NullableLicense {
-	return &NullableLicense{value: val, isSet: true}
-}
-
-func (v NullableLicense) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableLicense) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

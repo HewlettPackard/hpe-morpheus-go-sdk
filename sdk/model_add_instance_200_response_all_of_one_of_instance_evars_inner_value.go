@@ -14,6 +14,7 @@ package sdk
 import (
 	"encoding/json"
 	"fmt"
+
 	"gopkg.in/validator.v2"
 )
 
@@ -23,7 +24,7 @@ var _ fmt.Stringer
 // AddInstance200ResponseAllOfOneOfInstanceEvarsInnerValue - struct for AddInstance200ResponseAllOfOneOfInstanceEvarsInnerValue
 type AddInstance200ResponseAllOfOneOfInstanceEvarsInnerValue struct {
 	Float32 *float32
-	String *string
+	String  *string
 }
 
 // float32AsAddInstance200ResponseAllOfOneOfInstanceEvarsInnerValue is a convenience function that returns float32 wrapped in AddInstance200ResponseAllOfOneOfInstanceEvarsInnerValue
@@ -40,6 +41,21 @@ func StringAsAddInstance200ResponseAllOfOneOfInstanceEvarsInnerValue(v *string) 
 	}
 }
 
+func (dst *AddInstance200ResponseAllOfOneOfInstanceEvarsInnerValue) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &AddInstance200ResponseAllOfOneOfInstanceEvarsInnerValue{}
+	}
+
+	if out, ok := data.(float32); ok {
+		dst.Float32 = &out
+	}
+
+	if out, ok := data.(string); ok {
+		dst.String = &out
+	}
+
+	return dst, nil
+}
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddInstance200ResponseAllOfOneOfInstanceEvarsInnerValue) UnmarshalJSON(data []byte) error {
@@ -106,7 +122,7 @@ func (src AddInstance200ResponseAllOfOneOfInstanceEvarsInnerValue) MarshalJSON()
 }
 
 // Get the actual instance
-func (obj *AddInstance200ResponseAllOfOneOfInstanceEvarsInnerValue) GetActualInstance() (interface{}) {
+func (obj *AddInstance200ResponseAllOfOneOfInstanceEvarsInnerValue) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -123,7 +139,7 @@ func (obj *AddInstance200ResponseAllOfOneOfInstanceEvarsInnerValue) GetActualIns
 }
 
 // Get the actual instance value
-func (obj AddInstance200ResponseAllOfOneOfInstanceEvarsInnerValue) GetActualInstanceValue() (interface{}) {
+func (obj AddInstance200ResponseAllOfOneOfInstanceEvarsInnerValue) GetActualInstanceValue() interface{} {
 	if obj.Float32 != nil {
 		return *obj.Float32
 	}
@@ -171,5 +187,3 @@ func (v *NullableAddInstance200ResponseAllOfOneOfInstanceEvarsInnerValue) Unmars
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

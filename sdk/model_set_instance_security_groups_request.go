@@ -21,8 +21,8 @@ var _ MappedNullable = &SetInstanceSecurityGroupsRequest{}
 // SetInstanceSecurityGroupsRequest struct for SetInstanceSecurityGroupsRequest
 type SetInstanceSecurityGroupsRequest struct {
 	// List of all security groups ids which should be applied. If no security groups should apply, pass '[]'
-	SecurityGroupIds []int64 `json:"securityGroupIds,omitempty"`
-	AdditionalProperties map[string]interface{}
+	SecurityGroupIds     []int64                `json:"securityGroupIds,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _SetInstanceSecurityGroupsRequest SetInstanceSecurityGroupsRequest
@@ -77,7 +77,7 @@ func (o *SetInstanceSecurityGroupsRequest) SetSecurityGroupIds(v []int64) {
 }
 
 func (o SetInstanceSecurityGroupsRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -96,62 +96,8 @@ func (o SetInstanceSecurityGroupsRequest) ToMap() (map[string]interface{}, error
 
 	return toSerialize, nil
 }
-
 func (o *SetInstanceSecurityGroupsRequest) UnmarshalJSON(data []byte) (err error) {
-	varSetInstanceSecurityGroupsRequest := _SetInstanceSecurityGroupsRequest{}
-
-	err = json.Unmarshal(data, &varSetInstanceSecurityGroupsRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = SetInstanceSecurityGroupsRequest(varSetInstanceSecurityGroupsRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "securityGroupIds")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableSetInstanceSecurityGroupsRequest struct {
-	value *SetInstanceSecurityGroupsRequest
-	isSet bool
-}
-
-func (v NullableSetInstanceSecurityGroupsRequest) Get() *SetInstanceSecurityGroupsRequest {
-	return v.value
-}
-
-func (v *NullableSetInstanceSecurityGroupsRequest) Set(val *SetInstanceSecurityGroupsRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSetInstanceSecurityGroupsRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSetInstanceSecurityGroupsRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSetInstanceSecurityGroupsRequest(val *SetInstanceSecurityGroupsRequest) *NullableSetInstanceSecurityGroupsRequest {
-	return &NullableSetInstanceSecurityGroupsRequest{value: val, isSet: true}
-}
-
-func (v NullableSetInstanceSecurityGroupsRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSetInstanceSecurityGroupsRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

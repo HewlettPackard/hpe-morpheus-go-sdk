@@ -25,8 +25,8 @@ type UpdateCloudDatastoresRequestDatastoreTenantPermissions struct {
 	// Array of tenant account ids which should use the data store as the Default
 	DefaultTarget []int64 `json:"defaultTarget,omitempty"`
 	// Array of tenant account ids which should use the data store as the Image Target
-	DefaultStore []int64 `json:"defaultStore,omitempty"`
-	AdditionalProperties map[string]interface{}
+	DefaultStore         []int64                `json:"defaultStore,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _UpdateCloudDatastoresRequestDatastoreTenantPermissions UpdateCloudDatastoresRequestDatastoreTenantPermissions
@@ -145,7 +145,7 @@ func (o *UpdateCloudDatastoresRequestDatastoreTenantPermissions) SetDefaultStore
 }
 
 func (o UpdateCloudDatastoresRequestDatastoreTenantPermissions) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -170,64 +170,8 @@ func (o UpdateCloudDatastoresRequestDatastoreTenantPermissions) ToMap() (map[str
 
 	return toSerialize, nil
 }
-
 func (o *UpdateCloudDatastoresRequestDatastoreTenantPermissions) UnmarshalJSON(data []byte) (err error) {
-	varUpdateCloudDatastoresRequestDatastoreTenantPermissions := _UpdateCloudDatastoresRequestDatastoreTenantPermissions{}
-
-	err = json.Unmarshal(data, &varUpdateCloudDatastoresRequestDatastoreTenantPermissions)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateCloudDatastoresRequestDatastoreTenantPermissions(varUpdateCloudDatastoresRequestDatastoreTenantPermissions)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "accounts")
-		delete(additionalProperties, "defaultTarget")
-		delete(additionalProperties, "defaultStore")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateCloudDatastoresRequestDatastoreTenantPermissions struct {
-	value *UpdateCloudDatastoresRequestDatastoreTenantPermissions
-	isSet bool
-}
-
-func (v NullableUpdateCloudDatastoresRequestDatastoreTenantPermissions) Get() *UpdateCloudDatastoresRequestDatastoreTenantPermissions {
-	return v.value
-}
-
-func (v *NullableUpdateCloudDatastoresRequestDatastoreTenantPermissions) Set(val *UpdateCloudDatastoresRequestDatastoreTenantPermissions) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateCloudDatastoresRequestDatastoreTenantPermissions) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateCloudDatastoresRequestDatastoreTenantPermissions) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateCloudDatastoresRequestDatastoreTenantPermissions(val *UpdateCloudDatastoresRequestDatastoreTenantPermissions) *NullableUpdateCloudDatastoresRequestDatastoreTenantPermissions {
-	return &NullableUpdateCloudDatastoresRequestDatastoreTenantPermissions{value: val, isSet: true}
-}
-
-func (v NullableUpdateCloudDatastoresRequestDatastoreTenantPermissions) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateCloudDatastoresRequestDatastoreTenantPermissions) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

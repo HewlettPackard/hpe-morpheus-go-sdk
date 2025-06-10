@@ -21,31 +21,31 @@ var _ MappedNullable = &AddCredentials200ResponseAllOfCredential{}
 
 // AddCredentials200ResponseAllOfCredential struct for AddCredentials200ResponseAllOfCredential
 type AddCredentials200ResponseAllOfCredential struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Type *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"type,omitempty"`
-	Integration *string `json:"integration,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Username *string `json:"username,omitempty"`
-	Password *string `json:"password,omitempty"`
-	PasswordHash *string `json:"passwordHash,omitempty"`
-	AuthKey *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"authKey,omitempty"`
-	AuthPath *string `json:"authPath,omitempty"`
-	ExternalId *string `json:"externalId,omitempty"`
-	RefType *string `json:"refType,omitempty"`
-	RefId *string `json:"refId,omitempty"`
-	Category *string `json:"category,omitempty"`
-	Scope *string `json:"scope,omitempty"`
-	Status *string `json:"status,omitempty"`
-	StatusMessage *string `json:"statusMessage,omitempty"`
-	StatusDate *time.Time `json:"statusDate,omitempty"`
-	Enabled *bool `json:"enabled,omitempty"`
-	Account *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"account,omitempty"`
-	User *ListCredentials200ResponseAllOfCredentialsInnerUser `json:"user,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	Config *AddCredentials200ResponseAllOfCredentialConfig `json:"config,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                                  `json:"id,omitempty"`
+	Name                 *string                                                                 `json:"name,omitempty"`
+	Type                 *ListBackupSettings200ResponseBackupSettingsDefaultSchedule             `json:"type,omitempty"`
+	Integration          *string                                                                 `json:"integration,omitempty"`
+	Description          *string                                                                 `json:"description,omitempty"`
+	Username             *string                                                                 `json:"username,omitempty"`
+	Password             *string                                                                 `json:"password,omitempty"`
+	PasswordHash         *string                                                                 `json:"passwordHash,omitempty"`
+	AuthKey              *GetAlerts200ResponseAllOfCheckGroupsInnerInstance                      `json:"authKey,omitempty"`
+	AuthPath             *string                                                                 `json:"authPath,omitempty"`
+	ExternalId           *string                                                                 `json:"externalId,omitempty"`
+	RefType              *string                                                                 `json:"refType,omitempty"`
+	RefId                *string                                                                 `json:"refId,omitempty"`
+	Category             *string                                                                 `json:"category,omitempty"`
+	Scope                *string                                                                 `json:"scope,omitempty"`
+	Status               *string                                                                 `json:"status,omitempty"`
+	StatusMessage        *string                                                                 `json:"statusMessage,omitempty"`
+	StatusDate           *time.Time                                                              `json:"statusDate,omitempty"`
+	Enabled              *bool                                                                   `json:"enabled,omitempty"`
+	Account              *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"account,omitempty"`
+	User                 *ListCredentials200ResponseAllOfCredentialsInnerUser                    `json:"user,omitempty"`
+	DateCreated          *time.Time                                                              `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                                              `json:"lastUpdated,omitempty"`
+	Config               *AddCredentials200ResponseAllOfCredentialConfig                         `json:"config,omitempty"`
+	AdditionalProperties map[string]interface{}                                                  `json:",remain"`
 }
 
 type _AddCredentials200ResponseAllOfCredential AddCredentials200ResponseAllOfCredential
@@ -836,7 +836,7 @@ func (o *AddCredentials200ResponseAllOfCredential) SetConfig(v AddCredentials200
 }
 
 func (o AddCredentials200ResponseAllOfCredential) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -924,85 +924,8 @@ func (o AddCredentials200ResponseAllOfCredential) ToMap() (map[string]interface{
 
 	return toSerialize, nil
 }
-
 func (o *AddCredentials200ResponseAllOfCredential) UnmarshalJSON(data []byte) (err error) {
-	varAddCredentials200ResponseAllOfCredential := _AddCredentials200ResponseAllOfCredential{}
-
-	err = json.Unmarshal(data, &varAddCredentials200ResponseAllOfCredential)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddCredentials200ResponseAllOfCredential(varAddCredentials200ResponseAllOfCredential)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "integration")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "username")
-		delete(additionalProperties, "password")
-		delete(additionalProperties, "passwordHash")
-		delete(additionalProperties, "authKey")
-		delete(additionalProperties, "authPath")
-		delete(additionalProperties, "externalId")
-		delete(additionalProperties, "refType")
-		delete(additionalProperties, "refId")
-		delete(additionalProperties, "category")
-		delete(additionalProperties, "scope")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "statusMessage")
-		delete(additionalProperties, "statusDate")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "account")
-		delete(additionalProperties, "user")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		delete(additionalProperties, "config")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddCredentials200ResponseAllOfCredential struct {
-	value *AddCredentials200ResponseAllOfCredential
-	isSet bool
-}
-
-func (v NullableAddCredentials200ResponseAllOfCredential) Get() *AddCredentials200ResponseAllOfCredential {
-	return v.value
-}
-
-func (v *NullableAddCredentials200ResponseAllOfCredential) Set(val *AddCredentials200ResponseAllOfCredential) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddCredentials200ResponseAllOfCredential) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddCredentials200ResponseAllOfCredential) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddCredentials200ResponseAllOfCredential(val *AddCredentials200ResponseAllOfCredential) *NullableAddCredentials200ResponseAllOfCredential {
-	return &NullableAddCredentials200ResponseAllOfCredential{value: val, isSet: true}
-}
-
-func (v NullableAddCredentials200ResponseAllOfCredential) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddCredentials200ResponseAllOfCredential) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -21,20 +21,20 @@ var _ MappedNullable = &ListJobExecutions200ResponseAllOfJobExecutionsInner{}
 
 // ListJobExecutions200ResponseAllOfJobExecutionsInner struct for ListJobExecutions200ResponseAllOfJobExecutionsInner
 type ListJobExecutions200ResponseAllOfJobExecutionsInner struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Process *string `json:"process,omitempty"`
-	Job *ListJobExecutions200ResponseAllOfJobExecutionsInnerJob `json:"job,omitempty"`
-	Description *string `json:"description,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	StartDate *time.Time `json:"startDate,omitempty"`
-	EndDate *time.Time `json:"endDate,omitempty"`
-	Duration *int64 `json:"duration,omitempty"`
-	ResultData *string `json:"resultData,omitempty"`
-	Status *string `json:"status,omitempty"`
-	StatusMessage *string `json:"statusMessage,omitempty"`
-	CreatedBy *string `json:"createdBy,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                  `json:"id,omitempty"`
+	Name                 *string                                                 `json:"name,omitempty"`
+	Process              *string                                                 `json:"process,omitempty"`
+	Job                  *ListJobExecutions200ResponseAllOfJobExecutionsInnerJob `json:"job,omitempty"`
+	Description          *string                                                 `json:"description,omitempty"`
+	DateCreated          *time.Time                                              `json:"dateCreated,omitempty"`
+	StartDate            *time.Time                                              `json:"startDate,omitempty"`
+	EndDate              *time.Time                                              `json:"endDate,omitempty"`
+	Duration             *int64                                                  `json:"duration,omitempty"`
+	ResultData           *string                                                 `json:"resultData,omitempty"`
+	Status               *string                                                 `json:"status,omitempty"`
+	StatusMessage        *string                                                 `json:"statusMessage,omitempty"`
+	CreatedBy            *string                                                 `json:"createdBy,omitempty"`
+	AdditionalProperties map[string]interface{}                                  `json:",remain"`
 }
 
 type _ListJobExecutions200ResponseAllOfJobExecutionsInner ListJobExecutions200ResponseAllOfJobExecutionsInner
@@ -473,7 +473,7 @@ func (o *ListJobExecutions200ResponseAllOfJobExecutionsInner) SetCreatedBy(v str
 }
 
 func (o ListJobExecutions200ResponseAllOfJobExecutionsInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -528,74 +528,8 @@ func (o ListJobExecutions200ResponseAllOfJobExecutionsInner) ToMap() (map[string
 
 	return toSerialize, nil
 }
-
 func (o *ListJobExecutions200ResponseAllOfJobExecutionsInner) UnmarshalJSON(data []byte) (err error) {
-	varListJobExecutions200ResponseAllOfJobExecutionsInner := _ListJobExecutions200ResponseAllOfJobExecutionsInner{}
-
-	err = json.Unmarshal(data, &varListJobExecutions200ResponseAllOfJobExecutionsInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListJobExecutions200ResponseAllOfJobExecutionsInner(varListJobExecutions200ResponseAllOfJobExecutionsInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "process")
-		delete(additionalProperties, "job")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "startDate")
-		delete(additionalProperties, "endDate")
-		delete(additionalProperties, "duration")
-		delete(additionalProperties, "resultData")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "statusMessage")
-		delete(additionalProperties, "createdBy")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListJobExecutions200ResponseAllOfJobExecutionsInner struct {
-	value *ListJobExecutions200ResponseAllOfJobExecutionsInner
-	isSet bool
-}
-
-func (v NullableListJobExecutions200ResponseAllOfJobExecutionsInner) Get() *ListJobExecutions200ResponseAllOfJobExecutionsInner {
-	return v.value
-}
-
-func (v *NullableListJobExecutions200ResponseAllOfJobExecutionsInner) Set(val *ListJobExecutions200ResponseAllOfJobExecutionsInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListJobExecutions200ResponseAllOfJobExecutionsInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListJobExecutions200ResponseAllOfJobExecutionsInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListJobExecutions200ResponseAllOfJobExecutionsInner(val *ListJobExecutions200ResponseAllOfJobExecutionsInner) *NullableListJobExecutions200ResponseAllOfJobExecutionsInner {
-	return &NullableListJobExecutions200ResponseAllOfJobExecutionsInner{value: val, isSet: true}
-}
-
-func (v NullableListJobExecutions200ResponseAllOfJobExecutionsInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListJobExecutions200ResponseAllOfJobExecutionsInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

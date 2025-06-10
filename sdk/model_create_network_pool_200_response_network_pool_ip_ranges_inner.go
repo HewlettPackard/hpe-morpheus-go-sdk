@@ -21,19 +21,19 @@ var _ MappedNullable = &CreateNetworkPool200ResponseNetworkPoolIpRangesInner{}
 
 // CreateNetworkPool200ResponseNetworkPoolIpRangesInner struct for CreateNetworkPool200ResponseNetworkPoolIpRangesInner
 type CreateNetworkPool200ResponseNetworkPoolIpRangesInner struct {
-	Id *int64 `json:"id,omitempty"`
-	StartAddress *string `json:"startAddress,omitempty"`
-	EndAddress *string `json:"endAddress,omitempty"`
-	InternalId *string `json:"internalId,omitempty"`
-	ExternalId *string `json:"externalId,omitempty"`
-	Description *string `json:"description,omitempty"`
-	AddressCount *int64 `json:"addressCount,omitempty"`
-	Active *bool `json:"active,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	Cidr *string `json:"cidr,omitempty"`
-	CidrIPv6 *string `json:"cidrIPv6,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	StartAddress         *string                `json:"startAddress,omitempty"`
+	EndAddress           *string                `json:"endAddress,omitempty"`
+	InternalId           *string                `json:"internalId,omitempty"`
+	ExternalId           *string                `json:"externalId,omitempty"`
+	Description          *string                `json:"description,omitempty"`
+	AddressCount         *int64                 `json:"addressCount,omitempty"`
+	Active               *bool                  `json:"active,omitempty"`
+	DateCreated          *time.Time             `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time             `json:"lastUpdated,omitempty"`
+	Cidr                 *string                `json:"cidr,omitempty"`
+	CidrIPv6             *string                `json:"cidrIPv6,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _CreateNetworkPool200ResponseNetworkPoolIpRangesInner CreateNetworkPool200ResponseNetworkPoolIpRangesInner
@@ -440,7 +440,7 @@ func (o *CreateNetworkPool200ResponseNetworkPoolIpRangesInner) SetCidrIPv6(v str
 }
 
 func (o CreateNetworkPool200ResponseNetworkPoolIpRangesInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -492,73 +492,8 @@ func (o CreateNetworkPool200ResponseNetworkPoolIpRangesInner) ToMap() (map[strin
 
 	return toSerialize, nil
 }
-
 func (o *CreateNetworkPool200ResponseNetworkPoolIpRangesInner) UnmarshalJSON(data []byte) (err error) {
-	varCreateNetworkPool200ResponseNetworkPoolIpRangesInner := _CreateNetworkPool200ResponseNetworkPoolIpRangesInner{}
-
-	err = json.Unmarshal(data, &varCreateNetworkPool200ResponseNetworkPoolIpRangesInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = CreateNetworkPool200ResponseNetworkPoolIpRangesInner(varCreateNetworkPool200ResponseNetworkPoolIpRangesInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "startAddress")
-		delete(additionalProperties, "endAddress")
-		delete(additionalProperties, "internalId")
-		delete(additionalProperties, "externalId")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "addressCount")
-		delete(additionalProperties, "active")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		delete(additionalProperties, "cidr")
-		delete(additionalProperties, "cidrIPv6")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableCreateNetworkPool200ResponseNetworkPoolIpRangesInner struct {
-	value *CreateNetworkPool200ResponseNetworkPoolIpRangesInner
-	isSet bool
-}
-
-func (v NullableCreateNetworkPool200ResponseNetworkPoolIpRangesInner) Get() *CreateNetworkPool200ResponseNetworkPoolIpRangesInner {
-	return v.value
-}
-
-func (v *NullableCreateNetworkPool200ResponseNetworkPoolIpRangesInner) Set(val *CreateNetworkPool200ResponseNetworkPoolIpRangesInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableCreateNetworkPool200ResponseNetworkPoolIpRangesInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableCreateNetworkPool200ResponseNetworkPoolIpRangesInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableCreateNetworkPool200ResponseNetworkPoolIpRangesInner(val *CreateNetworkPool200ResponseNetworkPoolIpRangesInner) *NullableCreateNetworkPool200ResponseNetworkPoolIpRangesInner {
-	return &NullableCreateNetworkPool200ResponseNetworkPoolIpRangesInner{value: val, isSet: true}
-}
-
-func (v NullableCreateNetworkPool200ResponseNetworkPoolIpRangesInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableCreateNetworkPool200ResponseNetworkPoolIpRangesInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

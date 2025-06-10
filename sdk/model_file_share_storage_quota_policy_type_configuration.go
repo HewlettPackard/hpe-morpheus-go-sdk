@@ -18,10 +18,10 @@ import (
 // checks if the FileShareStorageQuotaPolicyTypeConfiguration type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &FileShareStorageQuotaPolicyTypeConfiguration{}
 
-// FileShareStorageQuotaPolicyTypeConfiguration Configuration settings for the following policy types: - File Share Storage Quota 
+// FileShareStorageQuotaPolicyTypeConfiguration Configuration settings for the following policy types: - File Share Storage Quota
 type FileShareStorageQuotaPolicyTypeConfiguration struct {
-	MaxStorage *string `json:"maxStorage,omitempty"`
-	AdditionalProperties map[string]interface{}
+	MaxStorage           *string                `json:"maxStorage,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _FileShareStorageQuotaPolicyTypeConfiguration FileShareStorageQuotaPolicyTypeConfiguration
@@ -76,7 +76,7 @@ func (o *FileShareStorageQuotaPolicyTypeConfiguration) SetMaxStorage(v string) {
 }
 
 func (o FileShareStorageQuotaPolicyTypeConfiguration) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o FileShareStorageQuotaPolicyTypeConfiguration) ToMap() (map[string]interf
 
 	return toSerialize, nil
 }
-
 func (o *FileShareStorageQuotaPolicyTypeConfiguration) UnmarshalJSON(data []byte) (err error) {
-	varFileShareStorageQuotaPolicyTypeConfiguration := _FileShareStorageQuotaPolicyTypeConfiguration{}
-
-	err = json.Unmarshal(data, &varFileShareStorageQuotaPolicyTypeConfiguration)
-
-	if err != nil {
-		return err
-	}
-
-	*o = FileShareStorageQuotaPolicyTypeConfiguration(varFileShareStorageQuotaPolicyTypeConfiguration)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "maxStorage")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableFileShareStorageQuotaPolicyTypeConfiguration struct {
-	value *FileShareStorageQuotaPolicyTypeConfiguration
-	isSet bool
-}
-
-func (v NullableFileShareStorageQuotaPolicyTypeConfiguration) Get() *FileShareStorageQuotaPolicyTypeConfiguration {
-	return v.value
-}
-
-func (v *NullableFileShareStorageQuotaPolicyTypeConfiguration) Set(val *FileShareStorageQuotaPolicyTypeConfiguration) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableFileShareStorageQuotaPolicyTypeConfiguration) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableFileShareStorageQuotaPolicyTypeConfiguration) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableFileShareStorageQuotaPolicyTypeConfiguration(val *FileShareStorageQuotaPolicyTypeConfiguration) *NullableFileShareStorageQuotaPolicyTypeConfiguration {
-	return &NullableFileShareStorageQuotaPolicyTypeConfiguration{value: val, isSet: true}
-}
-
-func (v NullableFileShareStorageQuotaPolicyTypeConfiguration) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableFileShareStorageQuotaPolicyTypeConfiguration) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

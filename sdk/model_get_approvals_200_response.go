@@ -20,8 +20,8 @@ var _ MappedNullable = &GetApprovals200Response{}
 
 // GetApprovals200Response struct for GetApprovals200Response
 type GetApprovals200Response struct {
-	Approval *GetApprovals200ResponseApproval `json:"approval,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Approval             *GetApprovals200ResponseApproval `json:"approval,omitempty"`
+	AdditionalProperties map[string]interface{}           `json:",remain"`
 }
 
 type _GetApprovals200Response GetApprovals200Response
@@ -76,7 +76,7 @@ func (o *GetApprovals200Response) SetApproval(v GetApprovals200ResponseApproval)
 }
 
 func (o GetApprovals200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o GetApprovals200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *GetApprovals200Response) UnmarshalJSON(data []byte) (err error) {
-	varGetApprovals200Response := _GetApprovals200Response{}
-
-	err = json.Unmarshal(data, &varGetApprovals200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetApprovals200Response(varGetApprovals200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "approval")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetApprovals200Response struct {
-	value *GetApprovals200Response
-	isSet bool
-}
-
-func (v NullableGetApprovals200Response) Get() *GetApprovals200Response {
-	return v.value
-}
-
-func (v *NullableGetApprovals200Response) Set(val *GetApprovals200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetApprovals200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetApprovals200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetApprovals200Response(val *GetApprovals200Response) *NullableGetApprovals200Response {
-	return &NullableGetApprovals200Response{value: val, isSet: true}
-}
-
-func (v NullableGetApprovals200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetApprovals200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

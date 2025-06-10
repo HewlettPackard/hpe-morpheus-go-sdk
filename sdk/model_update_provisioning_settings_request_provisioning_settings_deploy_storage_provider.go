@@ -21,8 +21,8 @@ var _ MappedNullable = &UpdateProvisioningSettingsRequestProvisioningSettingsDep
 // UpdateProvisioningSettingsRequestProvisioningSettingsDeployStorageProvider struct for UpdateProvisioningSettingsRequestProvisioningSettingsDeployStorageProvider
 type UpdateProvisioningSettingsRequestProvisioningSettingsDeployStorageProvider struct {
 	// Deployment archive storage provider ID
-	Id *int64 `json:"id,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _UpdateProvisioningSettingsRequestProvisioningSettingsDeployStorageProvider UpdateProvisioningSettingsRequestProvisioningSettingsDeployStorageProvider
@@ -77,7 +77,7 @@ func (o *UpdateProvisioningSettingsRequestProvisioningSettingsDeployStorageProvi
 }
 
 func (o UpdateProvisioningSettingsRequestProvisioningSettingsDeployStorageProvider) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -96,62 +96,8 @@ func (o UpdateProvisioningSettingsRequestProvisioningSettingsDeployStorageProvid
 
 	return toSerialize, nil
 }
-
 func (o *UpdateProvisioningSettingsRequestProvisioningSettingsDeployStorageProvider) UnmarshalJSON(data []byte) (err error) {
-	varUpdateProvisioningSettingsRequestProvisioningSettingsDeployStorageProvider := _UpdateProvisioningSettingsRequestProvisioningSettingsDeployStorageProvider{}
-
-	err = json.Unmarshal(data, &varUpdateProvisioningSettingsRequestProvisioningSettingsDeployStorageProvider)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateProvisioningSettingsRequestProvisioningSettingsDeployStorageProvider(varUpdateProvisioningSettingsRequestProvisioningSettingsDeployStorageProvider)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateProvisioningSettingsRequestProvisioningSettingsDeployStorageProvider struct {
-	value *UpdateProvisioningSettingsRequestProvisioningSettingsDeployStorageProvider
-	isSet bool
-}
-
-func (v NullableUpdateProvisioningSettingsRequestProvisioningSettingsDeployStorageProvider) Get() *UpdateProvisioningSettingsRequestProvisioningSettingsDeployStorageProvider {
-	return v.value
-}
-
-func (v *NullableUpdateProvisioningSettingsRequestProvisioningSettingsDeployStorageProvider) Set(val *UpdateProvisioningSettingsRequestProvisioningSettingsDeployStorageProvider) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateProvisioningSettingsRequestProvisioningSettingsDeployStorageProvider) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateProvisioningSettingsRequestProvisioningSettingsDeployStorageProvider) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateProvisioningSettingsRequestProvisioningSettingsDeployStorageProvider(val *UpdateProvisioningSettingsRequestProvisioningSettingsDeployStorageProvider) *NullableUpdateProvisioningSettingsRequestProvisioningSettingsDeployStorageProvider {
-	return &NullableUpdateProvisioningSettingsRequestProvisioningSettingsDeployStorageProvider{value: val, isSet: true}
-}
-
-func (v NullableUpdateProvisioningSettingsRequestProvisioningSettingsDeployStorageProvider) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateProvisioningSettingsRequestProvisioningSettingsDeployStorageProvider) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

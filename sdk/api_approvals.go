@@ -21,14 +21,13 @@ import (
 	"strings"
 )
 
-
 // ApprovalsAPIService ApprovalsAPI service
 type ApprovalsAPIService service
 
 type ApiGetApprovalsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ApprovalsAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetApprovalsRequest) Execute() (*GetApprovals200Response, *http.Response, error) {
@@ -40,27 +39,27 @@ GetApprovals Retrieves a Specific Approval
 
 Retrieves a specific approval.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetApprovalsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetApprovalsRequest
 */
 func (a *ApprovalsAPIService) GetApprovals(ctx context.Context, id int64) ApiGetApprovalsRequest {
 	return ApiGetApprovalsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetApprovals200Response
+//
+//	@return GetApprovals200Response
 func (a *ApprovalsAPIService) GetApprovalsExecute(r ApiGetApprovalsRequest) (*GetApprovals200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetApprovals200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetApprovals200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApprovalsAPIService.GetApprovals")
@@ -111,7 +110,7 @@ func (a *ApprovalsAPIService) GetApprovalsExecute(r ApiGetApprovalsRequest) (*Ge
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -120,8 +119,8 @@ func (a *ApprovalsAPIService) GetApprovalsExecute(r ApiGetApprovalsRequest) (*Ge
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -131,8 +130,8 @@ func (a *ApprovalsAPIService) GetApprovalsExecute(r ApiGetApprovalsRequest) (*Ge
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -140,8 +139,8 @@ func (a *ApprovalsAPIService) GetApprovalsExecute(r ApiGetApprovalsRequest) (*Ge
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -150,9 +149,9 @@ func (a *ApprovalsAPIService) GetApprovalsExecute(r ApiGetApprovalsRequest) (*Ge
 }
 
 type ApiGetApprovalsItemRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ApprovalsAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetApprovalsItemRequest) Execute() (*GetApprovalsItem200Response, *http.Response, error) {
@@ -164,27 +163,27 @@ GetApprovalsItem Retrieves a Specific Approval Item
 
 Retrieves a specific approval item.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetApprovalsItemRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetApprovalsItemRequest
 */
 func (a *ApprovalsAPIService) GetApprovalsItem(ctx context.Context, id int64) ApiGetApprovalsItemRequest {
 	return ApiGetApprovalsItemRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetApprovalsItem200Response
+//
+//	@return GetApprovalsItem200Response
 func (a *ApprovalsAPIService) GetApprovalsItemExecute(r ApiGetApprovalsItemRequest) (*GetApprovalsItem200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetApprovalsItem200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetApprovalsItem200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApprovalsAPIService.GetApprovalsItem")
@@ -235,7 +234,7 @@ func (a *ApprovalsAPIService) GetApprovalsItemExecute(r ApiGetApprovalsItemReque
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -244,8 +243,8 @@ func (a *ApprovalsAPIService) GetApprovalsItemExecute(r ApiGetApprovalsItemReque
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -255,8 +254,8 @@ func (a *ApprovalsAPIService) GetApprovalsItemExecute(r ApiGetApprovalsItemReque
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -264,8 +263,8 @@ func (a *ApprovalsAPIService) GetApprovalsItemExecute(r ApiGetApprovalsItemReque
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -274,14 +273,14 @@ func (a *ApprovalsAPIService) GetApprovalsItemExecute(r ApiGetApprovalsItemReque
 }
 
 type ApiListApprovalsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ApprovalsAPIService
-	max *int64
-	offset *int64
-	sort *string
-	direction *string
-	phrase *string
-	name *string
+	max        *int64
+	offset     *int64
+	sort       *string
+	direction  *string
+	phrase     *string
+	name       *string
 }
 
 // Maximum number of records to return
@@ -329,25 +328,25 @@ ListApprovals Retrieves all Approvals
 
 Retrieves all approvals.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListApprovalsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListApprovalsRequest
 */
 func (a *ApprovalsAPIService) ListApprovals(ctx context.Context) ApiListApprovalsRequest {
 	return ApiListApprovalsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListApprovals200Response
+//
+//	@return ListApprovals200Response
 func (a *ApprovalsAPIService) ListApprovalsExecute(r ApiListApprovalsRequest) (*ListApprovals200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListApprovals200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListApprovals200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApprovalsAPIService.ListApprovals")
@@ -427,7 +426,7 @@ func (a *ApprovalsAPIService) ListApprovalsExecute(r ApiListApprovalsRequest) (*
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -436,8 +435,8 @@ func (a *ApprovalsAPIService) ListApprovalsExecute(r ApiListApprovalsRequest) (*
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -447,8 +446,8 @@ func (a *ApprovalsAPIService) ListApprovalsExecute(r ApiListApprovalsRequest) (*
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -456,8 +455,8 @@ func (a *ApprovalsAPIService) ListApprovalsExecute(r ApiListApprovalsRequest) (*
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -466,10 +465,10 @@ func (a *ApprovalsAPIService) ListApprovalsExecute(r ApiListApprovalsRequest) (*
 }
 
 type ApiUpdateApprovalsItemRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ApprovalsAPIService
-	id int64
-	action string
+	id         int64
+	action     string
 }
 
 func (r ApiUpdateApprovalsItemRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -481,29 +480,29 @@ UpdateApprovalsItem Updates a Specific Approval Item
 
 Updates a specific approval item.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @param action Approval Action Item
- @return ApiUpdateApprovalsItemRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@param action Approval Action Item
+	@return ApiUpdateApprovalsItemRequest
 */
 func (a *ApprovalsAPIService) UpdateApprovalsItem(ctx context.Context, id int64, action string) ApiUpdateApprovalsItemRequest {
 	return ApiUpdateApprovalsItemRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
-		action: action,
+		ctx:        ctx,
+		id:         id,
+		action:     action,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *ApprovalsAPIService) UpdateApprovalsItemExecute(r ApiUpdateApprovalsItemRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApprovalsAPIService.UpdateApprovalsItem")
@@ -555,7 +554,7 @@ func (a *ApprovalsAPIService) UpdateApprovalsItemExecute(r ApiUpdateApprovalsIte
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -564,8 +563,8 @@ func (a *ApprovalsAPIService) UpdateApprovalsItemExecute(r ApiUpdateApprovalsIte
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -575,8 +574,8 @@ func (a *ApprovalsAPIService) UpdateApprovalsItemExecute(r ApiUpdateApprovalsIte
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -584,8 +583,8 @@ func (a *ApprovalsAPIService) UpdateApprovalsItemExecute(r ApiUpdateApprovalsIte
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

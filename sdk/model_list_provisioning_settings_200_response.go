@@ -21,7 +21,7 @@ var _ MappedNullable = &ListProvisioningSettings200Response{}
 // ListProvisioningSettings200Response struct for ListProvisioningSettings200Response
 type ListProvisioningSettings200Response struct {
 	ProvisioningSettings *ListProvisioningSettings200ResponseProvisioningSettings `json:"provisioningSettings,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                   `json:",remain"`
 }
 
 type _ListProvisioningSettings200Response ListProvisioningSettings200Response
@@ -76,7 +76,7 @@ func (o *ListProvisioningSettings200Response) SetProvisioningSettings(v ListProv
 }
 
 func (o ListProvisioningSettings200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o ListProvisioningSettings200Response) ToMap() (map[string]interface{}, er
 
 	return toSerialize, nil
 }
-
 func (o *ListProvisioningSettings200Response) UnmarshalJSON(data []byte) (err error) {
-	varListProvisioningSettings200Response := _ListProvisioningSettings200Response{}
-
-	err = json.Unmarshal(data, &varListProvisioningSettings200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListProvisioningSettings200Response(varListProvisioningSettings200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "provisioningSettings")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListProvisioningSettings200Response struct {
-	value *ListProvisioningSettings200Response
-	isSet bool
-}
-
-func (v NullableListProvisioningSettings200Response) Get() *ListProvisioningSettings200Response {
-	return v.value
-}
-
-func (v *NullableListProvisioningSettings200Response) Set(val *ListProvisioningSettings200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListProvisioningSettings200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListProvisioningSettings200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListProvisioningSettings200Response(val *ListProvisioningSettings200Response) *NullableListProvisioningSettings200Response {
-	return &NullableListProvisioningSettings200Response{value: val, isSet: true}
-}
-
-func (v NullableListProvisioningSettings200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListProvisioningSettings200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

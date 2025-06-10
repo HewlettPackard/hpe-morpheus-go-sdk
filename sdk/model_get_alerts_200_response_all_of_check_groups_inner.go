@@ -21,34 +21,34 @@ var _ MappedNullable = &GetAlerts200ResponseAllOfCheckGroupsInner{}
 
 // GetAlerts200ResponseAllOfCheckGroupsInner struct for GetAlerts200ResponseAllOfCheckGroupsInner
 type GetAlerts200ResponseAllOfCheckGroupsInner struct {
-	Id *int64 `json:"id,omitempty"`
-	Account *GetAlerts200ResponseAllOfChecksInnerAccount `json:"account,omitempty"`
-	Instance *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"instance,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Description *string `json:"description,omitempty"`
-	InUptime *bool `json:"inUptime,omitempty"`
-	LastCheckStatus *string `json:"lastCheckStatus,omitempty"`
-	LastWarningDate *time.Time `json:"lastWarningDate,omitempty"`
-	LastErrorDate *time.Time `json:"lastErrorDate,omitempty"`
-	LastSuccessDate *time.Time `json:"lastSuccessDate,omitempty"`
-	LastRunDate *time.Time `json:"lastRunDate,omitempty"`
-	LastError *string `json:"lastError,omitempty"`
-	OutageTime *int64 `json:"outageTime,omitempty"`
-	LastTimer *int64 `json:"lastTimer,omitempty"`
-	Health *int64 `json:"health,omitempty"`
-	History *string `json:"history,omitempty"`
-	MinHappy *int64 `json:"minHappy,omitempty"`
-	LastMetric *string `json:"lastMetric,omitempty"`
-	Severity *string `json:"severity,omitempty"`
-	CreateIncident *bool `json:"createIncident,omitempty"`
-	Muted *bool `json:"muted,omitempty"`
-	CreatedBy *ListActivity200ResponseAllOfActivityInnerActivityInnerUser `json:"createdBy,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	Availability *float32 `json:"availability,omitempty"`
-	CheckType *GetAlerts200ResponseAllOfChecksInnerCheckType `json:"checkType,omitempty"`
-	Checks []int64 `json:"checks,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                      `json:"id,omitempty"`
+	Account              *GetAlerts200ResponseAllOfChecksInnerAccount                `json:"account,omitempty"`
+	Instance             *GetAlerts200ResponseAllOfCheckGroupsInnerInstance          `json:"instance,omitempty"`
+	Name                 *string                                                     `json:"name,omitempty"`
+	Description          *string                                                     `json:"description,omitempty"`
+	InUptime             *bool                                                       `json:"inUptime,omitempty"`
+	LastCheckStatus      *string                                                     `json:"lastCheckStatus,omitempty"`
+	LastWarningDate      *time.Time                                                  `json:"lastWarningDate,omitempty"`
+	LastErrorDate        *time.Time                                                  `json:"lastErrorDate,omitempty"`
+	LastSuccessDate      *time.Time                                                  `json:"lastSuccessDate,omitempty"`
+	LastRunDate          *time.Time                                                  `json:"lastRunDate,omitempty"`
+	LastError            *string                                                     `json:"lastError,omitempty"`
+	OutageTime           *int64                                                      `json:"outageTime,omitempty"`
+	LastTimer            *int64                                                      `json:"lastTimer,omitempty"`
+	Health               *int64                                                      `json:"health,omitempty"`
+	History              *string                                                     `json:"history,omitempty"`
+	MinHappy             *int64                                                      `json:"minHappy,omitempty"`
+	LastMetric           *string                                                     `json:"lastMetric,omitempty"`
+	Severity             *string                                                     `json:"severity,omitempty"`
+	CreateIncident       *bool                                                       `json:"createIncident,omitempty"`
+	Muted                *bool                                                       `json:"muted,omitempty"`
+	CreatedBy            *ListActivity200ResponseAllOfActivityInnerActivityInnerUser `json:"createdBy,omitempty"`
+	DateCreated          *time.Time                                                  `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                                  `json:"lastUpdated,omitempty"`
+	Availability         *float32                                                    `json:"availability,omitempty"`
+	CheckType            *GetAlerts200ResponseAllOfChecksInnerCheckType              `json:"checkType,omitempty"`
+	Checks               []int64                                                     `json:"checks,omitempty"`
+	AdditionalProperties map[string]interface{}                                      `json:",remain"`
 }
 
 type _GetAlerts200ResponseAllOfCheckGroupsInner GetAlerts200ResponseAllOfCheckGroupsInner
@@ -935,7 +935,7 @@ func (o *GetAlerts200ResponseAllOfCheckGroupsInner) SetChecks(v []int64) {
 }
 
 func (o GetAlerts200ResponseAllOfCheckGroupsInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1032,88 +1032,8 @@ func (o GetAlerts200ResponseAllOfCheckGroupsInner) ToMap() (map[string]interface
 
 	return toSerialize, nil
 }
-
 func (o *GetAlerts200ResponseAllOfCheckGroupsInner) UnmarshalJSON(data []byte) (err error) {
-	varGetAlerts200ResponseAllOfCheckGroupsInner := _GetAlerts200ResponseAllOfCheckGroupsInner{}
-
-	err = json.Unmarshal(data, &varGetAlerts200ResponseAllOfCheckGroupsInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetAlerts200ResponseAllOfCheckGroupsInner(varGetAlerts200ResponseAllOfCheckGroupsInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "account")
-		delete(additionalProperties, "instance")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "inUptime")
-		delete(additionalProperties, "lastCheckStatus")
-		delete(additionalProperties, "lastWarningDate")
-		delete(additionalProperties, "lastErrorDate")
-		delete(additionalProperties, "lastSuccessDate")
-		delete(additionalProperties, "lastRunDate")
-		delete(additionalProperties, "lastError")
-		delete(additionalProperties, "outageTime")
-		delete(additionalProperties, "lastTimer")
-		delete(additionalProperties, "health")
-		delete(additionalProperties, "history")
-		delete(additionalProperties, "minHappy")
-		delete(additionalProperties, "lastMetric")
-		delete(additionalProperties, "severity")
-		delete(additionalProperties, "createIncident")
-		delete(additionalProperties, "muted")
-		delete(additionalProperties, "createdBy")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		delete(additionalProperties, "availability")
-		delete(additionalProperties, "checkType")
-		delete(additionalProperties, "checks")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetAlerts200ResponseAllOfCheckGroupsInner struct {
-	value *GetAlerts200ResponseAllOfCheckGroupsInner
-	isSet bool
-}
-
-func (v NullableGetAlerts200ResponseAllOfCheckGroupsInner) Get() *GetAlerts200ResponseAllOfCheckGroupsInner {
-	return v.value
-}
-
-func (v *NullableGetAlerts200ResponseAllOfCheckGroupsInner) Set(val *GetAlerts200ResponseAllOfCheckGroupsInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetAlerts200ResponseAllOfCheckGroupsInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetAlerts200ResponseAllOfCheckGroupsInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetAlerts200ResponseAllOfCheckGroupsInner(val *GetAlerts200ResponseAllOfCheckGroupsInner) *NullableGetAlerts200ResponseAllOfCheckGroupsInner {
-	return &NullableGetAlerts200ResponseAllOfCheckGroupsInner{value: val, isSet: true}
-}
-
-func (v NullableGetAlerts200ResponseAllOfCheckGroupsInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetAlerts200ResponseAllOfCheckGroupsInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

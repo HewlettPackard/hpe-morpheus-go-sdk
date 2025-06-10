@@ -18,12 +18,12 @@ import (
 // checks if the AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf4 type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf4{}
 
-// AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf4 - Cluster Resource Name 
+// AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf4 - Cluster Resource Name
 type AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf4 struct {
-	ServerNamingType *string `json:"serverNamingType,omitempty"`
-	ServerNamingPattern *string `json:"serverNamingPattern,omitempty"`
-	ServerNamingConflict *bool `json:"serverNamingConflict,omitempty"`
-	AdditionalProperties map[string]interface{}
+	ServerNamingType     *string                `json:"serverNamingType,omitempty"`
+	ServerNamingPattern  *string                `json:"serverNamingPattern,omitempty"`
+	ServerNamingConflict *bool                  `json:"serverNamingConflict,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf4 AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf4
@@ -142,7 +142,7 @@ func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf4) SetServerNamingCon
 }
 
 func (o AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf4) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -167,64 +167,8 @@ func (o AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf4) ToMap() (map[string
 
 	return toSerialize, nil
 }
-
 func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf4) UnmarshalJSON(data []byte) (err error) {
-	varAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf4 := _AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf4{}
-
-	err = json.Unmarshal(data, &varAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf4)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf4(varAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf4)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "serverNamingType")
-		delete(additionalProperties, "serverNamingPattern")
-		delete(additionalProperties, "serverNamingConflict")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf4 struct {
-	value *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf4
-	isSet bool
-}
-
-func (v NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf4) Get() *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf4 {
-	return v.value
-}
-
-func (v *NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf4) Set(val *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf4) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf4) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf4) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf4(val *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf4) *NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf4 {
-	return &NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf4{value: val, isSet: true}
-}
-
-func (v NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf4) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf4) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

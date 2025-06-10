@@ -20,42 +20,42 @@ var _ MappedNullable = &ServerServicePlans{}
 
 // ServerServicePlans struct for ServerServicePlans
 type ServerServicePlans struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Value *int64 `json:"value,omitempty"`
-	Code *string `json:"code,omitempty"`
-	MaxStorage *int64 `json:"maxStorage,omitempty"`
-	MaxMemory *int64 `json:"maxMemory,omitempty"`
-	MaxCpu *int64 `json:"maxCpu,omitempty"`
-	MaxCores *int64 `json:"maxCores,omitempty"`
-	MaxDataStorage *int64 `json:"maxDataStorage,omitempty"`
-	CustomCpu *bool `json:"customCpu,omitempty"`
-	CustomMaxMemory *bool `json:"customMaxMemory,omitempty"`
-	CustomMaxStorage *bool `json:"customMaxStorage,omitempty"`
-	CustomMaxDataStorage *bool `json:"customMaxDataStorage,omitempty"`
-	CustomCoresPerSocket *bool `json:"customCoresPerSocket,omitempty"`
-	CoresPerSocket *int64 `json:"coresPerSocket,omitempty"`
-	StorageTypes []map[string]interface{} `json:"storageTypes,omitempty"`
-	RootStorageTypes []map[string]interface{} `json:"rootStorageTypes,omitempty"`
-	AddVolumes *bool `json:"addVolumes,omitempty"`
-	CustomizeVolume *bool `json:"customizeVolume,omitempty"`
-	RootDiskCustomizable *bool `json:"rootDiskCustomizable,omitempty"`
-	HostDiskMode *string `json:"hostDiskMode,omitempty"`
-	HasDatastore *string `json:"hasDatastore,omitempty"`
-	LvmSupported *string `json:"lvmSupported,omitempty"`
-	MinDisk *string `json:"minDisk,omitempty"`
-	MaxDisk *string `json:"maxDisk,omitempty"`
-	Datastores *ListServerServicePlans200ResponsePlansInnerDatastores `json:"datastores,omitempty"`
-	SupportsAutoDatastore *bool `json:"supportsAutoDatastore,omitempty"`
-	AutoOptions []ListInstanceServicePlans200ResponsePlansInnerAutoOptionsInner `json:"autoOptions,omitempty"`
-	CpuOptions []map[string]interface{} `json:"cpuOptions,omitempty"`
-	MemoryOptions []map[string]interface{} `json:"memoryOptions,omitempty"`
-	RootCustomSizeOptions map[string]interface{} `json:"rootCustomSizeOptions,omitempty"`
-	CustomSizeOptions map[string]interface{} `json:"customSizeOptions,omitempty"`
-	CustomCores *bool `json:"customCores,omitempty"`
-	MaxDisks *string `json:"maxDisks,omitempty"`
-	MemorySizeType *string `json:"memorySizeType,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                    *int64                                                          `json:"id,omitempty"`
+	Name                  *string                                                         `json:"name,omitempty"`
+	Value                 *int64                                                          `json:"value,omitempty"`
+	Code                  *string                                                         `json:"code,omitempty"`
+	MaxStorage            *int64                                                          `json:"maxStorage,omitempty"`
+	MaxMemory             *int64                                                          `json:"maxMemory,omitempty"`
+	MaxCpu                *int64                                                          `json:"maxCpu,omitempty"`
+	MaxCores              *int64                                                          `json:"maxCores,omitempty"`
+	MaxDataStorage        *int64                                                          `json:"maxDataStorage,omitempty"`
+	CustomCpu             *bool                                                           `json:"customCpu,omitempty"`
+	CustomMaxMemory       *bool                                                           `json:"customMaxMemory,omitempty"`
+	CustomMaxStorage      *bool                                                           `json:"customMaxStorage,omitempty"`
+	CustomMaxDataStorage  *bool                                                           `json:"customMaxDataStorage,omitempty"`
+	CustomCoresPerSocket  *bool                                                           `json:"customCoresPerSocket,omitempty"`
+	CoresPerSocket        *int64                                                          `json:"coresPerSocket,omitempty"`
+	StorageTypes          []map[string]interface{}                                        `json:"storageTypes,omitempty"`
+	RootStorageTypes      []map[string]interface{}                                        `json:"rootStorageTypes,omitempty"`
+	AddVolumes            *bool                                                           `json:"addVolumes,omitempty"`
+	CustomizeVolume       *bool                                                           `json:"customizeVolume,omitempty"`
+	RootDiskCustomizable  *bool                                                           `json:"rootDiskCustomizable,omitempty"`
+	HostDiskMode          *string                                                         `json:"hostDiskMode,omitempty"`
+	HasDatastore          *string                                                         `json:"hasDatastore,omitempty"`
+	LvmSupported          *string                                                         `json:"lvmSupported,omitempty"`
+	MinDisk               *string                                                         `json:"minDisk,omitempty"`
+	MaxDisk               *string                                                         `json:"maxDisk,omitempty"`
+	Datastores            *ListServerServicePlans200ResponsePlansInnerDatastores          `json:"datastores,omitempty"`
+	SupportsAutoDatastore *bool                                                           `json:"supportsAutoDatastore,omitempty"`
+	AutoOptions           []ListInstanceServicePlans200ResponsePlansInnerAutoOptionsInner `json:"autoOptions,omitempty"`
+	CpuOptions            []map[string]interface{}                                        `json:"cpuOptions,omitempty"`
+	MemoryOptions         []map[string]interface{}                                        `json:"memoryOptions,omitempty"`
+	RootCustomSizeOptions map[string]interface{}                                          `json:"rootCustomSizeOptions,omitempty"`
+	CustomSizeOptions     map[string]interface{}                                          `json:"customSizeOptions,omitempty"`
+	CustomCores           *bool                                                           `json:"customCores,omitempty"`
+	MaxDisks              *string                                                         `json:"maxDisks,omitempty"`
+	MemorySizeType        *string                                                         `json:"memorySizeType,omitempty"`
+	AdditionalProperties  map[string]interface{}                                          `json:",remain"`
 }
 
 type _ServerServicePlans ServerServicePlans
@@ -1198,7 +1198,7 @@ func (o *ServerServicePlans) SetMemorySizeType(v string) {
 }
 
 func (o ServerServicePlans) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1319,96 +1319,8 @@ func (o ServerServicePlans) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *ServerServicePlans) UnmarshalJSON(data []byte) (err error) {
-	varServerServicePlans := _ServerServicePlans{}
-
-	err = json.Unmarshal(data, &varServerServicePlans)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ServerServicePlans(varServerServicePlans)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "value")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "maxStorage")
-		delete(additionalProperties, "maxMemory")
-		delete(additionalProperties, "maxCpu")
-		delete(additionalProperties, "maxCores")
-		delete(additionalProperties, "maxDataStorage")
-		delete(additionalProperties, "customCpu")
-		delete(additionalProperties, "customMaxMemory")
-		delete(additionalProperties, "customMaxStorage")
-		delete(additionalProperties, "customMaxDataStorage")
-		delete(additionalProperties, "customCoresPerSocket")
-		delete(additionalProperties, "coresPerSocket")
-		delete(additionalProperties, "storageTypes")
-		delete(additionalProperties, "rootStorageTypes")
-		delete(additionalProperties, "addVolumes")
-		delete(additionalProperties, "customizeVolume")
-		delete(additionalProperties, "rootDiskCustomizable")
-		delete(additionalProperties, "hostDiskMode")
-		delete(additionalProperties, "hasDatastore")
-		delete(additionalProperties, "lvmSupported")
-		delete(additionalProperties, "minDisk")
-		delete(additionalProperties, "maxDisk")
-		delete(additionalProperties, "datastores")
-		delete(additionalProperties, "supportsAutoDatastore")
-		delete(additionalProperties, "autoOptions")
-		delete(additionalProperties, "cpuOptions")
-		delete(additionalProperties, "memoryOptions")
-		delete(additionalProperties, "rootCustomSizeOptions")
-		delete(additionalProperties, "customSizeOptions")
-		delete(additionalProperties, "customCores")
-		delete(additionalProperties, "maxDisks")
-		delete(additionalProperties, "memorySizeType")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableServerServicePlans struct {
-	value *ServerServicePlans
-	isSet bool
-}
-
-func (v NullableServerServicePlans) Get() *ServerServicePlans {
-	return v.value
-}
-
-func (v *NullableServerServicePlans) Set(val *ServerServicePlans) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableServerServicePlans) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableServerServicePlans) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableServerServicePlans(val *ServerServicePlans) *NullableServerServicePlans {
-	return &NullableServerServicePlans{value: val, isSet: true}
-}
-
-func (v NullableServerServicePlans) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableServerServicePlans) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

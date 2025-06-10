@@ -21,44 +21,44 @@ var _ MappedNullable = &ListInvoiceLineItems200ResponseAllOfLineItemsInner{}
 
 // ListInvoiceLineItems200ResponseAllOfLineItemsInner struct for ListInvoiceLineItems200ResponseAllOfLineItemsInner
 type ListInvoiceLineItems200ResponseAllOfLineItemsInner struct {
-	Id *int64 `json:"id,omitempty"`
-	InvoiceId *int64 `json:"invoiceId,omitempty"`
-	RefType *string `json:"refType,omitempty"`
-	RefId *int64 `json:"refId,omitempty"`
-	RefName *string `json:"refName,omitempty"`
-	StartDate *time.Time `json:"startDate,omitempty"`
-	EndDate *time.Time `json:"endDate,omitempty"`
-	ItemId *string `json:"itemId,omitempty"`
-	ItemType *string `json:"itemType,omitempty"`
-	ItemName *string `json:"itemName,omitempty"`
-	ItemDescription *string `json:"itemDescription,omitempty"`
-	ProductId *string `json:"productId,omitempty"`
-	ProductCode *string `json:"productCode,omitempty"`
-	ProductName *string `json:"productName,omitempty"`
-	ItemSeller *string `json:"itemSeller,omitempty"`
-	ItemAction *string `json:"itemAction,omitempty"`
-	ExternalId *string `json:"externalId,omitempty"`
-	RateId *string `json:"rateId,omitempty"`
-	RateClass *string `json:"rateClass,omitempty"`
-	RateUnit *string `json:"rateUnit,omitempty"`
-	RateTerm *string `json:"rateTerm,omitempty"`
-	UsageType *string `json:"usageType,omitempty"`
-	UsageCategory *string `json:"usageCategory,omitempty"`
-	UsageService *string `json:"usageService,omitempty"`
-	ItemUsage *int64 `json:"itemUsage,omitempty"`
-	ItemRate *float32 `json:"itemRate,omitempty"`
-	ItemCost *float32 `json:"itemCost,omitempty"`
-	ItemPriceRate *float32 `json:"itemPriceRate,omitempty"`
-	ItemPrice *float32 `json:"itemPrice,omitempty"`
-	ItemTax *int64 `json:"itemTax,omitempty"`
-	ItemTerm *string `json:"itemTerm,omitempty"`
-	TaxType *string `json:"taxType,omitempty"`
-	RegionCode *string `json:"regionCode,omitempty"`
-	Currency *string `json:"currency,omitempty"`
-	ConversionRate *int64 `json:"conversionRate,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	InvoiceId            *int64                 `json:"invoiceId,omitempty"`
+	RefType              *string                `json:"refType,omitempty"`
+	RefId                *int64                 `json:"refId,omitempty"`
+	RefName              *string                `json:"refName,omitempty"`
+	StartDate            *time.Time             `json:"startDate,omitempty"`
+	EndDate              *time.Time             `json:"endDate,omitempty"`
+	ItemId               *string                `json:"itemId,omitempty"`
+	ItemType             *string                `json:"itemType,omitempty"`
+	ItemName             *string                `json:"itemName,omitempty"`
+	ItemDescription      *string                `json:"itemDescription,omitempty"`
+	ProductId            *string                `json:"productId,omitempty"`
+	ProductCode          *string                `json:"productCode,omitempty"`
+	ProductName          *string                `json:"productName,omitempty"`
+	ItemSeller           *string                `json:"itemSeller,omitempty"`
+	ItemAction           *string                `json:"itemAction,omitempty"`
+	ExternalId           *string                `json:"externalId,omitempty"`
+	RateId               *string                `json:"rateId,omitempty"`
+	RateClass            *string                `json:"rateClass,omitempty"`
+	RateUnit             *string                `json:"rateUnit,omitempty"`
+	RateTerm             *string                `json:"rateTerm,omitempty"`
+	UsageType            *string                `json:"usageType,omitempty"`
+	UsageCategory        *string                `json:"usageCategory,omitempty"`
+	UsageService         *string                `json:"usageService,omitempty"`
+	ItemUsage            *int64                 `json:"itemUsage,omitempty"`
+	ItemRate             *float32               `json:"itemRate,omitempty"`
+	ItemCost             *float32               `json:"itemCost,omitempty"`
+	ItemPriceRate        *float32               `json:"itemPriceRate,omitempty"`
+	ItemPrice            *float32               `json:"itemPrice,omitempty"`
+	ItemTax              *int64                 `json:"itemTax,omitempty"`
+	ItemTerm             *string                `json:"itemTerm,omitempty"`
+	TaxType              *string                `json:"taxType,omitempty"`
+	RegionCode           *string                `json:"regionCode,omitempty"`
+	Currency             *string                `json:"currency,omitempty"`
+	ConversionRate       *int64                 `json:"conversionRate,omitempty"`
+	DateCreated          *time.Time             `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time             `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListInvoiceLineItems200ResponseAllOfLineItemsInner ListInvoiceLineItems200ResponseAllOfLineItemsInner
@@ -1265,7 +1265,7 @@ func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) SetLastUpdated(v ti
 }
 
 func (o ListInvoiceLineItems200ResponseAllOfLineItemsInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1392,98 +1392,8 @@ func (o ListInvoiceLineItems200ResponseAllOfLineItemsInner) ToMap() (map[string]
 
 	return toSerialize, nil
 }
-
 func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) UnmarshalJSON(data []byte) (err error) {
-	varListInvoiceLineItems200ResponseAllOfLineItemsInner := _ListInvoiceLineItems200ResponseAllOfLineItemsInner{}
-
-	err = json.Unmarshal(data, &varListInvoiceLineItems200ResponseAllOfLineItemsInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListInvoiceLineItems200ResponseAllOfLineItemsInner(varListInvoiceLineItems200ResponseAllOfLineItemsInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "invoiceId")
-		delete(additionalProperties, "refType")
-		delete(additionalProperties, "refId")
-		delete(additionalProperties, "refName")
-		delete(additionalProperties, "startDate")
-		delete(additionalProperties, "endDate")
-		delete(additionalProperties, "itemId")
-		delete(additionalProperties, "itemType")
-		delete(additionalProperties, "itemName")
-		delete(additionalProperties, "itemDescription")
-		delete(additionalProperties, "productId")
-		delete(additionalProperties, "productCode")
-		delete(additionalProperties, "productName")
-		delete(additionalProperties, "itemSeller")
-		delete(additionalProperties, "itemAction")
-		delete(additionalProperties, "externalId")
-		delete(additionalProperties, "rateId")
-		delete(additionalProperties, "rateClass")
-		delete(additionalProperties, "rateUnit")
-		delete(additionalProperties, "rateTerm")
-		delete(additionalProperties, "usageType")
-		delete(additionalProperties, "usageCategory")
-		delete(additionalProperties, "usageService")
-		delete(additionalProperties, "itemUsage")
-		delete(additionalProperties, "itemRate")
-		delete(additionalProperties, "itemCost")
-		delete(additionalProperties, "itemPriceRate")
-		delete(additionalProperties, "itemPrice")
-		delete(additionalProperties, "itemTax")
-		delete(additionalProperties, "itemTerm")
-		delete(additionalProperties, "taxType")
-		delete(additionalProperties, "regionCode")
-		delete(additionalProperties, "currency")
-		delete(additionalProperties, "conversionRate")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListInvoiceLineItems200ResponseAllOfLineItemsInner struct {
-	value *ListInvoiceLineItems200ResponseAllOfLineItemsInner
-	isSet bool
-}
-
-func (v NullableListInvoiceLineItems200ResponseAllOfLineItemsInner) Get() *ListInvoiceLineItems200ResponseAllOfLineItemsInner {
-	return v.value
-}
-
-func (v *NullableListInvoiceLineItems200ResponseAllOfLineItemsInner) Set(val *ListInvoiceLineItems200ResponseAllOfLineItemsInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListInvoiceLineItems200ResponseAllOfLineItemsInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListInvoiceLineItems200ResponseAllOfLineItemsInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListInvoiceLineItems200ResponseAllOfLineItemsInner(val *ListInvoiceLineItems200ResponseAllOfLineItemsInner) *NullableListInvoiceLineItems200ResponseAllOfLineItemsInner {
-	return &NullableListInvoiceLineItems200ResponseAllOfLineItemsInner{value: val, isSet: true}
-}
-
-func (v NullableListInvoiceLineItems200ResponseAllOfLineItemsInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListInvoiceLineItems200ResponseAllOfLineItemsInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

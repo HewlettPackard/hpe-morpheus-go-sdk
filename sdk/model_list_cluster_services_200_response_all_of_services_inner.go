@@ -21,18 +21,18 @@ var _ MappedNullable = &ListClusterServices200ResponseAllOfServicesInner{}
 
 // ListClusterServices200ResponseAllOfServicesInner struct for ListClusterServices200ResponseAllOfServicesInner
 type ListClusterServices200ResponseAllOfServicesInner struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Type *string `json:"type,omitempty"`
-	Code *string `json:"code,omitempty"`
-	ExternalIp *string `json:"externalIp,omitempty"`
-	InternalIp *string `json:"internalIp,omitempty"`
-	ExternalPort *string `json:"externalPort,omitempty"`
-	InternalPort *string `json:"internalPort,omitempty"`
-	Status *string `json:"status,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	Type                 *string                `json:"type,omitempty"`
+	Code                 *string                `json:"code,omitempty"`
+	ExternalIp           *string                `json:"externalIp,omitempty"`
+	InternalIp           *string                `json:"internalIp,omitempty"`
+	ExternalPort         *string                `json:"externalPort,omitempty"`
+	InternalPort         *string                `json:"internalPort,omitempty"`
+	Status               *string                `json:"status,omitempty"`
+	DateCreated          *time.Time             `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time             `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListClusterServices200ResponseAllOfServicesInner ListClusterServices200ResponseAllOfServicesInner
@@ -407,7 +407,7 @@ func (o *ListClusterServices200ResponseAllOfServicesInner) SetLastUpdated(v time
 }
 
 func (o ListClusterServices200ResponseAllOfServicesInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -456,72 +456,8 @@ func (o ListClusterServices200ResponseAllOfServicesInner) ToMap() (map[string]in
 
 	return toSerialize, nil
 }
-
 func (o *ListClusterServices200ResponseAllOfServicesInner) UnmarshalJSON(data []byte) (err error) {
-	varListClusterServices200ResponseAllOfServicesInner := _ListClusterServices200ResponseAllOfServicesInner{}
-
-	err = json.Unmarshal(data, &varListClusterServices200ResponseAllOfServicesInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListClusterServices200ResponseAllOfServicesInner(varListClusterServices200ResponseAllOfServicesInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "externalIp")
-		delete(additionalProperties, "internalIp")
-		delete(additionalProperties, "externalPort")
-		delete(additionalProperties, "internalPort")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListClusterServices200ResponseAllOfServicesInner struct {
-	value *ListClusterServices200ResponseAllOfServicesInner
-	isSet bool
-}
-
-func (v NullableListClusterServices200ResponseAllOfServicesInner) Get() *ListClusterServices200ResponseAllOfServicesInner {
-	return v.value
-}
-
-func (v *NullableListClusterServices200ResponseAllOfServicesInner) Set(val *ListClusterServices200ResponseAllOfServicesInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListClusterServices200ResponseAllOfServicesInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListClusterServices200ResponseAllOfServicesInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListClusterServices200ResponseAllOfServicesInner(val *ListClusterServices200ResponseAllOfServicesInner) *NullableListClusterServices200ResponseAllOfServicesInner {
-	return &NullableListClusterServices200ResponseAllOfServicesInner{value: val, isSet: true}
-}
-
-func (v NullableListClusterServices200ResponseAllOfServicesInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListClusterServices200ResponseAllOfServicesInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

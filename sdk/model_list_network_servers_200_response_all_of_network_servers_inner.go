@@ -26,11 +26,11 @@ type ListNetworkServers200ResponseAllOfNetworkServersInner struct {
 	// Name
 	Name *string `json:"name,omitempty"`
 	// Description
-	Description *string `json:"description,omitempty"`
-	Type *ListNetworkServers200ResponseAllOfNetworkServersInnerType `json:"type,omitempty"`
+	Description *string                                                           `json:"description,omitempty"`
+	Type        *ListNetworkServers200ResponseAllOfNetworkServersInnerType        `json:"type,omitempty"`
 	Integration *ListNetworkServers200ResponseAllOfNetworkServersInnerIntegration `json:"integration,omitempty"`
-	Account *ListNetworkServers200ResponseAllOfNetworkServersInnerAccount `json:"account,omitempty"`
-	Visibility *string `json:"visibility,omitempty"`
+	Account     *ListNetworkServers200ResponseAllOfNetworkServersInnerAccount     `json:"account,omitempty"`
+	Visibility  *string                                                           `json:"visibility,omitempty"`
 	// Internal ID
 	InternalId *string `json:"internalId,omitempty"`
 	// External ID
@@ -48,18 +48,18 @@ type ListNetworkServers200ResponseAllOfNetworkServersInner struct {
 	// Service Username
 	ServiceUsername *string `json:"serviceUsername,omitempty"`
 	// Service Password
-	ServicePassword *string `json:"servicePassword,omitempty"`
+	ServicePassword     *string `json:"servicePassword,omitempty"`
 	ServicePasswordHash *string `json:"servicePasswordHash,omitempty"`
 	// Service Token
-	ServiceToken *string `json:"serviceToken,omitempty"`
+	ServiceToken     *string `json:"serviceToken,omitempty"`
 	ServiceTokenHash *string `json:"serviceTokenHash,omitempty"`
-	ApiPort *int32 `json:"apiPort,omitempty"`
-	AdminPort *int32 `json:"adminPort,omitempty"`
+	ApiPort          *int32  `json:"apiPort,omitempty"`
+	AdminPort        *int32  `json:"adminPort,omitempty"`
 	// Status
 	Status *string `json:"status,omitempty"`
 	// Status Message
-	StatusMessage *string `json:"statusMessage,omitempty"`
-	StatusDate *time.Time `json:"statusDate,omitempty"`
+	StatusMessage *string    `json:"statusMessage,omitempty"`
+	StatusDate    *time.Time `json:"statusDate,omitempty"`
 	// Last Sync Date
 	LastSync *time.Time `json:"lastSync,omitempty"`
 	// Next Run Date
@@ -73,14 +73,14 @@ type ListNetworkServers200ResponseAllOfNetworkServersInner struct {
 	// Tenant Match
 	TenantMatch *string `json:"tenantMatch,omitempty"`
 	// Cloud ID
-	ZoneId *int64 `json:"zoneId,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	Enabled *bool `json:"enabled,omitempty"`
-	Visible *bool `json:"visible,omitempty"`
-	Credential *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential `json:"credential,omitempty"`
-	Tenants []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"tenants,omitempty"`
-	AdditionalProperties map[string]interface{}
+	ZoneId               *int64                                                                   `json:"zoneId,omitempty"`
+	DateCreated          *time.Time                                                               `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                                               `json:"lastUpdated,omitempty"`
+	Enabled              *bool                                                                    `json:"enabled,omitempty"`
+	Visible              *bool                                                                    `json:"visible,omitempty"`
+	Credential           *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential        `json:"credential,omitempty"`
+	Tenants              []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"tenants,omitempty"`
+	AdditionalProperties map[string]interface{}                                                   `json:",remain"`
 }
 
 type _ListNetworkServers200ResponseAllOfNetworkServersInner ListNetworkServers200ResponseAllOfNetworkServersInner
@@ -1287,7 +1287,7 @@ func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) SetTenants(v []L
 }
 
 func (o ListNetworkServers200ResponseAllOfNetworkServersInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1414,98 +1414,8 @@ func (o ListNetworkServers200ResponseAllOfNetworkServersInner) ToMap() (map[stri
 
 	return toSerialize, nil
 }
-
 func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) UnmarshalJSON(data []byte) (err error) {
-	varListNetworkServers200ResponseAllOfNetworkServersInner := _ListNetworkServers200ResponseAllOfNetworkServersInner{}
-
-	err = json.Unmarshal(data, &varListNetworkServers200ResponseAllOfNetworkServersInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListNetworkServers200ResponseAllOfNetworkServersInner(varListNetworkServers200ResponseAllOfNetworkServersInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "integration")
-		delete(additionalProperties, "account")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "internalId")
-		delete(additionalProperties, "externalId")
-		delete(additionalProperties, "serviceUrl")
-		delete(additionalProperties, "serviceHost")
-		delete(additionalProperties, "servicePort")
-		delete(additionalProperties, "serviceMode")
-		delete(additionalProperties, "servicePath")
-		delete(additionalProperties, "serviceUsername")
-		delete(additionalProperties, "servicePassword")
-		delete(additionalProperties, "servicePasswordHash")
-		delete(additionalProperties, "serviceToken")
-		delete(additionalProperties, "serviceTokenHash")
-		delete(additionalProperties, "apiPort")
-		delete(additionalProperties, "adminPort")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "statusMessage")
-		delete(additionalProperties, "statusDate")
-		delete(additionalProperties, "lastSync")
-		delete(additionalProperties, "nextRunDate")
-		delete(additionalProperties, "lastSyncDuration")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "networkFilter")
-		delete(additionalProperties, "tenantMatch")
-		delete(additionalProperties, "zoneId")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "visible")
-		delete(additionalProperties, "credential")
-		delete(additionalProperties, "tenants")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListNetworkServers200ResponseAllOfNetworkServersInner struct {
-	value *ListNetworkServers200ResponseAllOfNetworkServersInner
-	isSet bool
-}
-
-func (v NullableListNetworkServers200ResponseAllOfNetworkServersInner) Get() *ListNetworkServers200ResponseAllOfNetworkServersInner {
-	return v.value
-}
-
-func (v *NullableListNetworkServers200ResponseAllOfNetworkServersInner) Set(val *ListNetworkServers200ResponseAllOfNetworkServersInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListNetworkServers200ResponseAllOfNetworkServersInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListNetworkServers200ResponseAllOfNetworkServersInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListNetworkServers200ResponseAllOfNetworkServersInner(val *ListNetworkServers200ResponseAllOfNetworkServersInner) *NullableListNetworkServers200ResponseAllOfNetworkServersInner {
-	return &NullableListNetworkServers200ResponseAllOfNetworkServersInner{value: val, isSet: true}
-}
-
-func (v NullableListNetworkServers200ResponseAllOfNetworkServersInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListNetworkServers200ResponseAllOfNetworkServersInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

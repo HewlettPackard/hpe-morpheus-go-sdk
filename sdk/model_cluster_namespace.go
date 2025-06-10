@@ -20,14 +20,14 @@ var _ MappedNullable = &ClusterNamespace{}
 
 // ClusterNamespace struct for ClusterNamespace
 type ClusterNamespace struct {
-	Id *int64 `json:"id,omitempty"`
-	Visibility *string `json:"visibility,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Status *string `json:"status,omitempty"`
-	ExternalId *string `json:"externalId,omitempty"`
-	Permissions *GetClusterNamespace200ResponseNamespacePermissions `json:"permissions,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                              `json:"id,omitempty"`
+	Visibility           *string                                             `json:"visibility,omitempty"`
+	Name                 *string                                             `json:"name,omitempty"`
+	Description          *string                                             `json:"description,omitempty"`
+	Status               *string                                             `json:"status,omitempty"`
+	ExternalId           *string                                             `json:"externalId,omitempty"`
+	Permissions          *GetClusterNamespace200ResponseNamespacePermissions `json:"permissions,omitempty"`
+	AdditionalProperties map[string]interface{}                              `json:",remain"`
 }
 
 type _ClusterNamespace ClusterNamespace
@@ -274,7 +274,7 @@ func (o *ClusterNamespace) SetPermissions(v GetClusterNamespace200ResponseNamesp
 }
 
 func (o ClusterNamespace) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -311,68 +311,8 @@ func (o ClusterNamespace) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *ClusterNamespace) UnmarshalJSON(data []byte) (err error) {
-	varClusterNamespace := _ClusterNamespace{}
-
-	err = json.Unmarshal(data, &varClusterNamespace)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ClusterNamespace(varClusterNamespace)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "externalId")
-		delete(additionalProperties, "permissions")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableClusterNamespace struct {
-	value *ClusterNamespace
-	isSet bool
-}
-
-func (v NullableClusterNamespace) Get() *ClusterNamespace {
-	return v.value
-}
-
-func (v *NullableClusterNamespace) Set(val *ClusterNamespace) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableClusterNamespace) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableClusterNamespace) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableClusterNamespace(val *ClusterNamespace) *NullableClusterNamespace {
-	return &NullableClusterNamespace{value: val, isSet: true}
-}
-
-func (v NullableClusterNamespace) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableClusterNamespace) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

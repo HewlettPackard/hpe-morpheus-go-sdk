@@ -18,13 +18,13 @@ import (
 // checks if the AddIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &AddIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole{}
 
-// AddIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole This object defines a mapping from the Morpheus role to the identity source role. The Morpheus role is identified by passing `mappedRole.id` or `mappedRole.authority` and the identity source role must be identified by passing either `sourceRoleFqn` or `sourceRoleName` to match on. **NOTE** This replaces the current mappings and must contain the entire set of role mappings you would like to set. Anything not defined will be removed. 
+// AddIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole This object defines a mapping from the Morpheus role to the identity source role. The Morpheus role is identified by passing `mappedRole.id` or `mappedRole.authority` and the identity source role must be identified by passing either `sourceRoleFqn` or `sourceRoleName` to match on. **NOTE** This replaces the current mappings and must contain the entire set of role mappings you would like to set. Anything not defined will be removed.
 type AddIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole struct {
 	// Role ID of the Morpheus role in the identity source tenant
 	Id *int64 `json:"id,omitempty"`
 	// Role authority of the Morpheus role in the identity source tenant
-	Authority *string `json:"authority,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Authority            *string                `json:"authority,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole AddIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole
@@ -111,7 +111,7 @@ func (o *AddIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole) Se
 }
 
 func (o AddIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -133,63 +133,8 @@ func (o AddIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole) ToM
 
 	return toSerialize, nil
 }
-
 func (o *AddIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole) UnmarshalJSON(data []byte) (err error) {
-	varAddIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole := _AddIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole{}
-
-	err = json.Unmarshal(data, &varAddIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole(varAddIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "authority")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole struct {
-	value *AddIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole
-	isSet bool
-}
-
-func (v NullableAddIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole) Get() *AddIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole {
-	return v.value
-}
-
-func (v *NullableAddIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole) Set(val *AddIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole(val *AddIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole) *NullableAddIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole {
-	return &NullableAddIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole{value: val, isSet: true}
-}
-
-func (v NullableAddIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

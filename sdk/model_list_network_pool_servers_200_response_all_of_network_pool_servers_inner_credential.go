@@ -20,10 +20,10 @@ var _ MappedNullable = &ListNetworkPoolServers200ResponseAllOfNetworkPoolServers
 
 // ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInnerCredential struct for ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInnerCredential
 type ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInnerCredential struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Type *string `json:"type,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	Type                 *string                `json:"type,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInnerCredential ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInnerCredential
@@ -142,7 +142,7 @@ func (o *ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInnerCredential
 }
 
 func (o ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInnerCredential) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -167,64 +167,8 @@ func (o ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInnerCredential)
 
 	return toSerialize, nil
 }
-
 func (o *ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInnerCredential) UnmarshalJSON(data []byte) (err error) {
-	varListNetworkPoolServers200ResponseAllOfNetworkPoolServersInnerCredential := _ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInnerCredential{}
-
-	err = json.Unmarshal(data, &varListNetworkPoolServers200ResponseAllOfNetworkPoolServersInnerCredential)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInnerCredential(varListNetworkPoolServers200ResponseAllOfNetworkPoolServersInnerCredential)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "type")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListNetworkPoolServers200ResponseAllOfNetworkPoolServersInnerCredential struct {
-	value *ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInnerCredential
-	isSet bool
-}
-
-func (v NullableListNetworkPoolServers200ResponseAllOfNetworkPoolServersInnerCredential) Get() *ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInnerCredential {
-	return v.value
-}
-
-func (v *NullableListNetworkPoolServers200ResponseAllOfNetworkPoolServersInnerCredential) Set(val *ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInnerCredential) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListNetworkPoolServers200ResponseAllOfNetworkPoolServersInnerCredential) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListNetworkPoolServers200ResponseAllOfNetworkPoolServersInnerCredential) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListNetworkPoolServers200ResponseAllOfNetworkPoolServersInnerCredential(val *ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInnerCredential) *NullableListNetworkPoolServers200ResponseAllOfNetworkPoolServersInnerCredential {
-	return &NullableListNetworkPoolServers200ResponseAllOfNetworkPoolServersInnerCredential{value: val, isSet: true}
-}
-
-func (v NullableListNetworkPoolServers200ResponseAllOfNetworkPoolServersInnerCredential) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListNetworkPoolServers200ResponseAllOfNetworkPoolServersInnerCredential) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

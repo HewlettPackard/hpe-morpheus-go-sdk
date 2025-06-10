@@ -20,8 +20,8 @@ var _ MappedNullable = &GetTasks200Response{}
 
 // GetTasks200Response struct for GetTasks200Response
 type GetTasks200Response struct {
-	Task *AddTasks200ResponseAllOfTask `json:"task,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Task                 *AddTasks200ResponseAllOfTask `json:"task,omitempty"`
+	AdditionalProperties map[string]interface{}        `json:",remain"`
 }
 
 type _GetTasks200Response GetTasks200Response
@@ -76,7 +76,7 @@ func (o *GetTasks200Response) SetTask(v AddTasks200ResponseAllOfTask) {
 }
 
 func (o GetTasks200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o GetTasks200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *GetTasks200Response) UnmarshalJSON(data []byte) (err error) {
-	varGetTasks200Response := _GetTasks200Response{}
-
-	err = json.Unmarshal(data, &varGetTasks200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetTasks200Response(varGetTasks200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "task")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetTasks200Response struct {
-	value *GetTasks200Response
-	isSet bool
-}
-
-func (v NullableGetTasks200Response) Get() *GetTasks200Response {
-	return v.value
-}
-
-func (v *NullableGetTasks200Response) Set(val *GetTasks200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetTasks200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetTasks200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetTasks200Response(val *GetTasks200Response) *NullableGetTasks200Response {
-	return &NullableGetTasks200Response{value: val, isSet: true}
-}
-
-func (v NullableGetTasks200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetTasks200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

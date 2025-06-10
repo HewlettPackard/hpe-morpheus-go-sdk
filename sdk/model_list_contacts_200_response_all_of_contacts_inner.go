@@ -20,12 +20,12 @@ var _ MappedNullable = &ListContacts200ResponseAllOfContactsInner{}
 
 // ListContacts200ResponseAllOfContactsInner struct for ListContacts200ResponseAllOfContactsInner
 type ListContacts200ResponseAllOfContactsInner struct {
-	Id *int64 `json:"id,omitempty"`
-	EmailAddress *string `json:"emailAddress,omitempty"`
-	Name *string `json:"name,omitempty"`
-	SmsAddress *string `json:"smsAddress,omitempty"`
-	SlackHook *string `json:"slackHook,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	EmailAddress         *string                `json:"emailAddress,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	SmsAddress           *string                `json:"smsAddress,omitempty"`
+	SlackHook            *string                `json:"slackHook,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListContacts200ResponseAllOfContactsInner ListContacts200ResponseAllOfContactsInner
@@ -208,7 +208,7 @@ func (o *ListContacts200ResponseAllOfContactsInner) SetSlackHook(v string) {
 }
 
 func (o ListContacts200ResponseAllOfContactsInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -239,66 +239,8 @@ func (o ListContacts200ResponseAllOfContactsInner) ToMap() (map[string]interface
 
 	return toSerialize, nil
 }
-
 func (o *ListContacts200ResponseAllOfContactsInner) UnmarshalJSON(data []byte) (err error) {
-	varListContacts200ResponseAllOfContactsInner := _ListContacts200ResponseAllOfContactsInner{}
-
-	err = json.Unmarshal(data, &varListContacts200ResponseAllOfContactsInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListContacts200ResponseAllOfContactsInner(varListContacts200ResponseAllOfContactsInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "emailAddress")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "smsAddress")
-		delete(additionalProperties, "slackHook")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListContacts200ResponseAllOfContactsInner struct {
-	value *ListContacts200ResponseAllOfContactsInner
-	isSet bool
-}
-
-func (v NullableListContacts200ResponseAllOfContactsInner) Get() *ListContacts200ResponseAllOfContactsInner {
-	return v.value
-}
-
-func (v *NullableListContacts200ResponseAllOfContactsInner) Set(val *ListContacts200ResponseAllOfContactsInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListContacts200ResponseAllOfContactsInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListContacts200ResponseAllOfContactsInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListContacts200ResponseAllOfContactsInner(val *ListContacts200ResponseAllOfContactsInner) *NullableListContacts200ResponseAllOfContactsInner {
-	return &NullableListContacts200ResponseAllOfContactsInner{value: val, isSet: true}
-}
-
-func (v NullableListContacts200ResponseAllOfContactsInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListContacts200ResponseAllOfContactsInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -21,15 +21,15 @@ var _ MappedNullable = &VdiApp{}
 
 // VdiApp struct for VdiApp
 type VdiApp struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Description *string `json:"description,omitempty"`
-	LaunchPrefix *string `json:"launchPrefix,omitempty"`
-	IconPath *string `json:"iconPath,omitempty"`
-	Logo *string `json:"logo,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	Description          *string                `json:"description,omitempty"`
+	LaunchPrefix         *string                `json:"launchPrefix,omitempty"`
+	IconPath             *string                `json:"iconPath,omitempty"`
+	Logo                 *string                `json:"logo,omitempty"`
+	DateCreated          *time.Time             `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time             `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _VdiApp VdiApp
@@ -308,7 +308,7 @@ func (o *VdiApp) SetLastUpdated(v time.Time) {
 }
 
 func (o VdiApp) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -348,69 +348,8 @@ func (o VdiApp) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *VdiApp) UnmarshalJSON(data []byte) (err error) {
-	varVdiApp := _VdiApp{}
-
-	err = json.Unmarshal(data, &varVdiApp)
-
-	if err != nil {
-		return err
-	}
-
-	*o = VdiApp(varVdiApp)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "launchPrefix")
-		delete(additionalProperties, "iconPath")
-		delete(additionalProperties, "logo")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableVdiApp struct {
-	value *VdiApp
-	isSet bool
-}
-
-func (v NullableVdiApp) Get() *VdiApp {
-	return v.value
-}
-
-func (v *NullableVdiApp) Set(val *VdiApp) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableVdiApp) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableVdiApp) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableVdiApp(val *VdiApp) *NullableVdiApp {
-	return &NullableVdiApp{value: val, isSet: true}
-}
-
-func (v NullableVdiApp) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableVdiApp) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

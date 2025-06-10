@@ -20,22 +20,22 @@ var _ MappedNullable = &StorageBucket{}
 
 // StorageBucket struct for StorageBucket
 type StorageBucket struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Active *bool `json:"active,omitempty"`
-	AccountId *int64 `json:"accountId,omitempty"`
-	ProviderType *string `json:"providerType,omitempty"`
-	Config *ListStorageBuckets200ResponseAllOfStorageBucketsInnerConfig `json:"config,omitempty"`
-	BucketName *string `json:"bucketName,omitempty"`
-	ReadOnly *bool `json:"readOnly,omitempty"`
-	DefaultBackupTarget *bool `json:"defaultBackupTarget,omitempty"`
-	DefaultDeploymentTarget *bool `json:"defaultDeploymentTarget,omitempty"`
-	DefaultVirtualImageTarget *bool `json:"defaultVirtualImageTarget,omitempty"`
-	CopyToStore *bool `json:"copyToStore,omitempty"`
-	RetentionPolicyType *string `json:"retentionPolicyType,omitempty"`
-	RetentionPolicyDays *string `json:"retentionPolicyDays,omitempty"`
-	RetentionProvider *string `json:"retentionProvider,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                        *int64                                                       `json:"id,omitempty"`
+	Name                      *string                                                      `json:"name,omitempty"`
+	Active                    *bool                                                        `json:"active,omitempty"`
+	AccountId                 *int64                                                       `json:"accountId,omitempty"`
+	ProviderType              *string                                                      `json:"providerType,omitempty"`
+	Config                    *ListStorageBuckets200ResponseAllOfStorageBucketsInnerConfig `json:"config,omitempty"`
+	BucketName                *string                                                      `json:"bucketName,omitempty"`
+	ReadOnly                  *bool                                                        `json:"readOnly,omitempty"`
+	DefaultBackupTarget       *bool                                                        `json:"defaultBackupTarget,omitempty"`
+	DefaultDeploymentTarget   *bool                                                        `json:"defaultDeploymentTarget,omitempty"`
+	DefaultVirtualImageTarget *bool                                                        `json:"defaultVirtualImageTarget,omitempty"`
+	CopyToStore               *bool                                                        `json:"copyToStore,omitempty"`
+	RetentionPolicyType       *string                                                      `json:"retentionPolicyType,omitempty"`
+	RetentionPolicyDays       *string                                                      `json:"retentionPolicyDays,omitempty"`
+	RetentionProvider         *string                                                      `json:"retentionProvider,omitempty"`
+	AdditionalProperties      map[string]interface{}                                       `json:",remain"`
 }
 
 type _StorageBucket StorageBucket
@@ -538,7 +538,7 @@ func (o *StorageBucket) SetRetentionProvider(v string) {
 }
 
 func (o StorageBucket) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -599,76 +599,8 @@ func (o StorageBucket) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *StorageBucket) UnmarshalJSON(data []byte) (err error) {
-	varStorageBucket := _StorageBucket{}
-
-	err = json.Unmarshal(data, &varStorageBucket)
-
-	if err != nil {
-		return err
-	}
-
-	*o = StorageBucket(varStorageBucket)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "active")
-		delete(additionalProperties, "accountId")
-		delete(additionalProperties, "providerType")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "bucketName")
-		delete(additionalProperties, "readOnly")
-		delete(additionalProperties, "defaultBackupTarget")
-		delete(additionalProperties, "defaultDeploymentTarget")
-		delete(additionalProperties, "defaultVirtualImageTarget")
-		delete(additionalProperties, "copyToStore")
-		delete(additionalProperties, "retentionPolicyType")
-		delete(additionalProperties, "retentionPolicyDays")
-		delete(additionalProperties, "retentionProvider")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableStorageBucket struct {
-	value *StorageBucket
-	isSet bool
-}
-
-func (v NullableStorageBucket) Get() *StorageBucket {
-	return v.value
-}
-
-func (v *NullableStorageBucket) Set(val *StorageBucket) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableStorageBucket) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableStorageBucket) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableStorageBucket(val *StorageBucket) *NullableStorageBucket {
-	return &NullableStorageBucket{value: val, isSet: true}
-}
-
-func (v NullableStorageBucket) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableStorageBucket) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

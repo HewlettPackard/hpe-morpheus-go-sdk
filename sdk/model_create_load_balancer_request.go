@@ -20,8 +20,8 @@ var _ MappedNullable = &CreateLoadBalancerRequest{}
 
 // CreateLoadBalancerRequest struct for CreateLoadBalancerRequest
 type CreateLoadBalancerRequest struct {
-	LoadBalancer *CreateLoadBalancerRequestLoadBalancer `json:"loadBalancer,omitempty"`
-	AdditionalProperties map[string]interface{}
+	LoadBalancer         *CreateLoadBalancerRequestLoadBalancer `json:"loadBalancer,omitempty"`
+	AdditionalProperties map[string]interface{}                 `json:",remain"`
 }
 
 type _CreateLoadBalancerRequest CreateLoadBalancerRequest
@@ -76,7 +76,7 @@ func (o *CreateLoadBalancerRequest) SetLoadBalancer(v CreateLoadBalancerRequestL
 }
 
 func (o CreateLoadBalancerRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o CreateLoadBalancerRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *CreateLoadBalancerRequest) UnmarshalJSON(data []byte) (err error) {
-	varCreateLoadBalancerRequest := _CreateLoadBalancerRequest{}
-
-	err = json.Unmarshal(data, &varCreateLoadBalancerRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = CreateLoadBalancerRequest(varCreateLoadBalancerRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "loadBalancer")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableCreateLoadBalancerRequest struct {
-	value *CreateLoadBalancerRequest
-	isSet bool
-}
-
-func (v NullableCreateLoadBalancerRequest) Get() *CreateLoadBalancerRequest {
-	return v.value
-}
-
-func (v *NullableCreateLoadBalancerRequest) Set(val *CreateLoadBalancerRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableCreateLoadBalancerRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableCreateLoadBalancerRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableCreateLoadBalancerRequest(val *CreateLoadBalancerRequest) *NullableCreateLoadBalancerRequest {
-	return &NullableCreateLoadBalancerRequest{value: val, isSet: true}
-}
-
-func (v NullableCreateLoadBalancerRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableCreateLoadBalancerRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

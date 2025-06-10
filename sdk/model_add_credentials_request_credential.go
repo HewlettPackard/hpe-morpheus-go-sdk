@@ -14,6 +14,7 @@ package sdk
 import (
 	"encoding/json"
 	"fmt"
+
 	"gopkg.in/validator.v2"
 )
 
@@ -22,7 +23,7 @@ var _ fmt.Stringer
 
 // AddCredentialsRequestCredential - Payload for creating a new credential
 type AddCredentialsRequestCredential struct {
-	AddCredentialsRequestCredentialOneOf *AddCredentialsRequestCredentialOneOf
+	AddCredentialsRequestCredentialOneOf  *AddCredentialsRequestCredentialOneOf
 	AddCredentialsRequestCredentialOneOf1 *AddCredentialsRequestCredentialOneOf1
 	AddCredentialsRequestCredentialOneOf2 *AddCredentialsRequestCredentialOneOf2
 	AddCredentialsRequestCredentialOneOf3 *AddCredentialsRequestCredentialOneOf3
@@ -96,6 +97,49 @@ func AddCredentialsRequestCredentialOneOf8AsAddCredentialsRequestCredential(v *A
 	}
 }
 
+func (dst *AddCredentialsRequestCredential) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &AddCredentialsRequestCredential{}
+	}
+
+	if out, ok := data.(AddCredentialsRequestCredentialOneOf); ok {
+		dst.AddCredentialsRequestCredentialOneOf = &out
+	}
+
+	if out, ok := data.(AddCredentialsRequestCredentialOneOf1); ok {
+		dst.AddCredentialsRequestCredentialOneOf1 = &out
+	}
+
+	if out, ok := data.(AddCredentialsRequestCredentialOneOf2); ok {
+		dst.AddCredentialsRequestCredentialOneOf2 = &out
+	}
+
+	if out, ok := data.(AddCredentialsRequestCredentialOneOf3); ok {
+		dst.AddCredentialsRequestCredentialOneOf3 = &out
+	}
+
+	if out, ok := data.(AddCredentialsRequestCredentialOneOf4); ok {
+		dst.AddCredentialsRequestCredentialOneOf4 = &out
+	}
+
+	if out, ok := data.(AddCredentialsRequestCredentialOneOf5); ok {
+		dst.AddCredentialsRequestCredentialOneOf5 = &out
+	}
+
+	if out, ok := data.(AddCredentialsRequestCredentialOneOf6); ok {
+		dst.AddCredentialsRequestCredentialOneOf6 = &out
+	}
+
+	if out, ok := data.(AddCredentialsRequestCredentialOneOf7); ok {
+		dst.AddCredentialsRequestCredentialOneOf7 = &out
+	}
+
+	if out, ok := data.(AddCredentialsRequestCredentialOneOf8); ok {
+		dst.AddCredentialsRequestCredentialOneOf8 = &out
+	}
+
+	return dst, nil
+}
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddCredentialsRequestCredential) UnmarshalJSON(data []byte) error {
@@ -316,7 +360,7 @@ func (src AddCredentialsRequestCredential) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AddCredentialsRequestCredential) GetActualInstance() (interface{}) {
+func (obj *AddCredentialsRequestCredential) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -361,7 +405,7 @@ func (obj *AddCredentialsRequestCredential) GetActualInstance() (interface{}) {
 }
 
 // Get the actual instance value
-func (obj AddCredentialsRequestCredential) GetActualInstanceValue() (interface{}) {
+func (obj AddCredentialsRequestCredential) GetActualInstanceValue() interface{} {
 	if obj.AddCredentialsRequestCredentialOneOf != nil {
 		return *obj.AddCredentialsRequestCredentialOneOf
 	}
@@ -437,5 +481,3 @@ func (v *NullableAddCredentialsRequestCredential) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

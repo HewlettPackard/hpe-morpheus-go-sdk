@@ -21,8 +21,8 @@ var _ MappedNullable = &UpdateInstanceRequestConfig{}
 // UpdateInstanceRequestConfig struct for UpdateInstanceRequestConfig
 type UpdateInstanceRequestConfig struct {
 	// Custom Option Type settings object containing name value pairs.
-	CustomOptions map[string]interface{} `json:"customOptions,omitempty"`
-	AdditionalProperties map[string]interface{}
+	CustomOptions        map[string]interface{} `json:"customOptions,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _UpdateInstanceRequestConfig UpdateInstanceRequestConfig
@@ -77,7 +77,7 @@ func (o *UpdateInstanceRequestConfig) SetCustomOptions(v map[string]interface{})
 }
 
 func (o UpdateInstanceRequestConfig) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -96,62 +96,8 @@ func (o UpdateInstanceRequestConfig) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *UpdateInstanceRequestConfig) UnmarshalJSON(data []byte) (err error) {
-	varUpdateInstanceRequestConfig := _UpdateInstanceRequestConfig{}
-
-	err = json.Unmarshal(data, &varUpdateInstanceRequestConfig)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateInstanceRequestConfig(varUpdateInstanceRequestConfig)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "customOptions")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateInstanceRequestConfig struct {
-	value *UpdateInstanceRequestConfig
-	isSet bool
-}
-
-func (v NullableUpdateInstanceRequestConfig) Get() *UpdateInstanceRequestConfig {
-	return v.value
-}
-
-func (v *NullableUpdateInstanceRequestConfig) Set(val *UpdateInstanceRequestConfig) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateInstanceRequestConfig) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateInstanceRequestConfig) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateInstanceRequestConfig(val *UpdateInstanceRequestConfig) *NullableUpdateInstanceRequestConfig {
-	return &NullableUpdateInstanceRequestConfig{value: val, isSet: true}
-}
-
-func (v NullableUpdateInstanceRequestConfig) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateInstanceRequestConfig) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

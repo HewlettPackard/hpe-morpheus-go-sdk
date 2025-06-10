@@ -21,8 +21,8 @@ var _ MappedNullable = &UpdateIntegrationInventoryRequestInventory{}
 // UpdateIntegrationInventoryRequestInventory struct for UpdateIntegrationInventoryRequestInventory
 type UpdateIntegrationInventoryRequestInventory struct {
 	// Array of tenant accounts that will use this inventory as Default. Used by jobs set to 'Use Tenant Default'
-	Tenants []GetAlerts200ResponseAllOfChecksInnerAccount `json:"tenants,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Tenants              []GetAlerts200ResponseAllOfChecksInnerAccount `json:"tenants,omitempty"`
+	AdditionalProperties map[string]interface{}                        `json:",remain"`
 }
 
 type _UpdateIntegrationInventoryRequestInventory UpdateIntegrationInventoryRequestInventory
@@ -77,7 +77,7 @@ func (o *UpdateIntegrationInventoryRequestInventory) SetTenants(v []GetAlerts200
 }
 
 func (o UpdateIntegrationInventoryRequestInventory) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -96,62 +96,8 @@ func (o UpdateIntegrationInventoryRequestInventory) ToMap() (map[string]interfac
 
 	return toSerialize, nil
 }
-
 func (o *UpdateIntegrationInventoryRequestInventory) UnmarshalJSON(data []byte) (err error) {
-	varUpdateIntegrationInventoryRequestInventory := _UpdateIntegrationInventoryRequestInventory{}
-
-	err = json.Unmarshal(data, &varUpdateIntegrationInventoryRequestInventory)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateIntegrationInventoryRequestInventory(varUpdateIntegrationInventoryRequestInventory)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "tenants")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateIntegrationInventoryRequestInventory struct {
-	value *UpdateIntegrationInventoryRequestInventory
-	isSet bool
-}
-
-func (v NullableUpdateIntegrationInventoryRequestInventory) Get() *UpdateIntegrationInventoryRequestInventory {
-	return v.value
-}
-
-func (v *NullableUpdateIntegrationInventoryRequestInventory) Set(val *UpdateIntegrationInventoryRequestInventory) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateIntegrationInventoryRequestInventory) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateIntegrationInventoryRequestInventory) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateIntegrationInventoryRequestInventory(val *UpdateIntegrationInventoryRequestInventory) *NullableUpdateIntegrationInventoryRequestInventory {
-	return &NullableUpdateIntegrationInventoryRequestInventory{value: val, isSet: true}
-}
-
-func (v NullableUpdateIntegrationInventoryRequestInventory) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateIntegrationInventoryRequestInventory) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

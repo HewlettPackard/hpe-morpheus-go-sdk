@@ -20,8 +20,8 @@ var _ MappedNullable = &Model200Success{}
 
 // Model200Success struct for Model200Success
 type Model200Success struct {
-	Success *bool `json:"success,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Success              *bool                  `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _Model200Success Model200Success
@@ -76,7 +76,7 @@ func (o *Model200Success) SetSuccess(v bool) {
 }
 
 func (o Model200Success) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o Model200Success) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *Model200Success) UnmarshalJSON(data []byte) (err error) {
-	varModel200Success := _Model200Success{}
-
-	err = json.Unmarshal(data, &varModel200Success)
-
-	if err != nil {
-		return err
-	}
-
-	*o = Model200Success(varModel200Success)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "success")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableModel200Success struct {
-	value *Model200Success
-	isSet bool
-}
-
-func (v NullableModel200Success) Get() *Model200Success {
-	return v.value
-}
-
-func (v *NullableModel200Success) Set(val *Model200Success) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableModel200Success) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableModel200Success) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableModel200Success(val *Model200Success) *NullableModel200Success {
-	return &NullableModel200Success{value: val, isSet: true}
-}
-
-func (v NullableModel200Success) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableModel200Success) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

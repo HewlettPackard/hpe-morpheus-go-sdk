@@ -20,8 +20,8 @@ var _ MappedNullable = &GetIntegrationTypeOptionTypes200Response{}
 
 // GetIntegrationTypeOptionTypes200Response struct for GetIntegrationTypeOptionTypes200Response
 type GetIntegrationTypeOptionTypes200Response struct {
-	OptionTypes []GetIntegrationTypeOptionTypes200ResponseOptionTypesInner `json:"optionTypes,omitempty"`
-	AdditionalProperties map[string]interface{}
+	OptionTypes          []GetIntegrationTypeOptionTypes200ResponseOptionTypesInner `json:"optionTypes,omitempty"`
+	AdditionalProperties map[string]interface{}                                     `json:",remain"`
 }
 
 type _GetIntegrationTypeOptionTypes200Response GetIntegrationTypeOptionTypes200Response
@@ -76,7 +76,7 @@ func (o *GetIntegrationTypeOptionTypes200Response) SetOptionTypes(v []GetIntegra
 }
 
 func (o GetIntegrationTypeOptionTypes200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o GetIntegrationTypeOptionTypes200Response) ToMap() (map[string]interface{
 
 	return toSerialize, nil
 }
-
 func (o *GetIntegrationTypeOptionTypes200Response) UnmarshalJSON(data []byte) (err error) {
-	varGetIntegrationTypeOptionTypes200Response := _GetIntegrationTypeOptionTypes200Response{}
-
-	err = json.Unmarshal(data, &varGetIntegrationTypeOptionTypes200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetIntegrationTypeOptionTypes200Response(varGetIntegrationTypeOptionTypes200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "optionTypes")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetIntegrationTypeOptionTypes200Response struct {
-	value *GetIntegrationTypeOptionTypes200Response
-	isSet bool
-}
-
-func (v NullableGetIntegrationTypeOptionTypes200Response) Get() *GetIntegrationTypeOptionTypes200Response {
-	return v.value
-}
-
-func (v *NullableGetIntegrationTypeOptionTypes200Response) Set(val *GetIntegrationTypeOptionTypes200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetIntegrationTypeOptionTypes200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetIntegrationTypeOptionTypes200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetIntegrationTypeOptionTypes200Response(val *GetIntegrationTypeOptionTypes200Response) *NullableGetIntegrationTypeOptionTypes200Response {
-	return &NullableGetIntegrationTypeOptionTypes200Response{value: val, isSet: true}
-}
-
-func (v NullableGetIntegrationTypeOptionTypes200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetIntegrationTypeOptionTypes200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

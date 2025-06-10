@@ -20,8 +20,8 @@ var _ MappedNullable = &GetPrices200Response{}
 
 // GetPrices200Response struct for GetPrices200Response
 type GetPrices200Response struct {
-	Price *ListPrices200ResponseAllOfPricesInner `json:"price,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Price                *ListPrices200ResponseAllOfPricesInner `json:"price,omitempty"`
+	AdditionalProperties map[string]interface{}                 `json:",remain"`
 }
 
 type _GetPrices200Response GetPrices200Response
@@ -76,7 +76,7 @@ func (o *GetPrices200Response) SetPrice(v ListPrices200ResponseAllOfPricesInner)
 }
 
 func (o GetPrices200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o GetPrices200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *GetPrices200Response) UnmarshalJSON(data []byte) (err error) {
-	varGetPrices200Response := _GetPrices200Response{}
-
-	err = json.Unmarshal(data, &varGetPrices200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetPrices200Response(varGetPrices200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "price")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetPrices200Response struct {
-	value *GetPrices200Response
-	isSet bool
-}
-
-func (v NullableGetPrices200Response) Get() *GetPrices200Response {
-	return v.value
-}
-
-func (v *NullableGetPrices200Response) Set(val *GetPrices200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetPrices200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetPrices200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetPrices200Response(val *GetPrices200Response) *NullableGetPrices200Response {
-	return &NullableGetPrices200Response{value: val, isSet: true}
-}
-
-func (v NullableGetPrices200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetPrices200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

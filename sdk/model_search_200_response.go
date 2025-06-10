@@ -20,11 +20,11 @@ var _ MappedNullable = &Search200Response{}
 
 // Search200Response struct for Search200Response
 type Search200Response struct {
-	Hits []Search200ResponseHitsInner `json:"hits,omitempty"`
-	Query *string `json:"query,omitempty"`
-	Took *int64 `json:"took,omitempty"`
-	Meta *Search200ResponseMeta `json:"meta,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Hits                 []Search200ResponseHitsInner `json:"hits,omitempty"`
+	Query                *string                      `json:"query,omitempty"`
+	Took                 *int64                       `json:"took,omitempty"`
+	Meta                 *Search200ResponseMeta       `json:"meta,omitempty"`
+	AdditionalProperties map[string]interface{}       `json:",remain"`
 }
 
 type _Search200Response Search200Response
@@ -175,7 +175,7 @@ func (o *Search200Response) SetMeta(v Search200ResponseMeta) {
 }
 
 func (o Search200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -203,65 +203,8 @@ func (o Search200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *Search200Response) UnmarshalJSON(data []byte) (err error) {
-	varSearch200Response := _Search200Response{}
-
-	err = json.Unmarshal(data, &varSearch200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = Search200Response(varSearch200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "hits")
-		delete(additionalProperties, "query")
-		delete(additionalProperties, "took")
-		delete(additionalProperties, "meta")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableSearch200Response struct {
-	value *Search200Response
-	isSet bool
-}
-
-func (v NullableSearch200Response) Get() *Search200Response {
-	return v.value
-}
-
-func (v *NullableSearch200Response) Set(val *Search200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSearch200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSearch200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSearch200Response(val *Search200Response) *NullableSearch200Response {
-	return &NullableSearch200Response{value: val, isSet: true}
-}
-
-func (v NullableSearch200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSearch200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

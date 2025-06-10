@@ -20,17 +20,17 @@ var _ MappedNullable = &ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15
 
 // ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15Config struct for ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15Config
 type ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15Config struct {
-	IncidentAccess *bool `json:"incidentAccess,omitempty"`
-	RequestAccess *bool `json:"requestAccess,omitempty"`
-	ServiceNowCMDBBusinessObject *string `json:"serviceNowCMDBBusinessObject,omitempty"`
-	ServiceNowCustomCmdbMapping *string `json:"serviceNowCustomCmdbMapping,omitempty"`
-	ServiceNowCmdbClassMapping []ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15ConfigServiceNowCmdbClassMappingInner `json:"serviceNowCmdbClassMapping,omitempty"`
-	WebServiceImportUrl *string `json:"webServiceImportUrl,omitempty"`
-	WebServiceImportSysId *string `json:"webServiceImportSysId,omitempty"`
-	WebServiceOperationUrl *string `json:"webServiceOperationUrl,omitempty"`
-	CmdbMode *string `json:"cmdbMode,omitempty"`
-	PreparedForSync *bool `json:"preparedForSync,omitempty"`
-	AdditionalProperties map[string]interface{}
+	IncidentAccess               *bool                                                                                           `json:"incidentAccess,omitempty"`
+	RequestAccess                *bool                                                                                           `json:"requestAccess,omitempty"`
+	ServiceNowCMDBBusinessObject *string                                                                                         `json:"serviceNowCMDBBusinessObject,omitempty"`
+	ServiceNowCustomCmdbMapping  *string                                                                                         `json:"serviceNowCustomCmdbMapping,omitempty"`
+	ServiceNowCmdbClassMapping   []ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15ConfigServiceNowCmdbClassMappingInner `json:"serviceNowCmdbClassMapping,omitempty"`
+	WebServiceImportUrl          *string                                                                                         `json:"webServiceImportUrl,omitempty"`
+	WebServiceImportSysId        *string                                                                                         `json:"webServiceImportSysId,omitempty"`
+	WebServiceOperationUrl       *string                                                                                         `json:"webServiceOperationUrl,omitempty"`
+	CmdbMode                     *string                                                                                         `json:"cmdbMode,omitempty"`
+	PreparedForSync              *bool                                                                                           `json:"preparedForSync,omitempty"`
+	AdditionalProperties         map[string]interface{}                                                                          `json:",remain"`
 }
 
 type _ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15Config ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15Config
@@ -377,7 +377,7 @@ func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15Config) SetPrep
 }
 
 func (o ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15Config) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -423,71 +423,8 @@ func (o ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15Config) ToMap() 
 
 	return toSerialize, nil
 }
-
 func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15Config) UnmarshalJSON(data []byte) (err error) {
-	varListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15Config := _ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15Config{}
-
-	err = json.Unmarshal(data, &varListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15Config)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15Config(varListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15Config)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "incidentAccess")
-		delete(additionalProperties, "requestAccess")
-		delete(additionalProperties, "serviceNowCMDBBusinessObject")
-		delete(additionalProperties, "serviceNowCustomCmdbMapping")
-		delete(additionalProperties, "serviceNowCmdbClassMapping")
-		delete(additionalProperties, "webServiceImportUrl")
-		delete(additionalProperties, "webServiceImportSysId")
-		delete(additionalProperties, "webServiceOperationUrl")
-		delete(additionalProperties, "cmdbMode")
-		delete(additionalProperties, "preparedForSync")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15Config struct {
-	value *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15Config
-	isSet bool
-}
-
-func (v NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15Config) Get() *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15Config {
-	return v.value
-}
-
-func (v *NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15Config) Set(val *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15Config) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15Config) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15Config) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15Config(val *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15Config) *NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15Config {
-	return &NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15Config{value: val, isSet: true}
-}
-
-func (v NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15Config) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15Config) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

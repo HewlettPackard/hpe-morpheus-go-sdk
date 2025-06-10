@@ -20,37 +20,37 @@ var _ MappedNullable = &StorageServerType{}
 
 // StorageServerType struct for StorageServerType
 type StorageServerType struct {
-	Id *int64 `json:"id,omitempty"`
-	Code *string `json:"code,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Enabled *bool `json:"enabled,omitempty"`
-	Creatable *bool `json:"creatable,omitempty"`
-	HasNamespaces *bool `json:"hasNamespaces,omitempty"`
-	HasGroups *bool `json:"hasGroups,omitempty"`
-	HasBlock *bool `json:"hasBlock,omitempty"`
-	HasObject *bool `json:"hasObject,omitempty"`
-	HasFile *bool `json:"hasFile,omitempty"`
-	HasDatastore *bool `json:"hasDatastore,omitempty"`
-	HasDisks *bool `json:"hasDisks,omitempty"`
-	HasHosts *bool `json:"hasHosts,omitempty"`
-	CreateNamespaces *bool `json:"createNamespaces,omitempty"`
-	CreateGroup *bool `json:"createGroup,omitempty"`
-	CreateBlock *bool `json:"createBlock,omitempty"`
-	CreateObject *bool `json:"createObject,omitempty"`
-	CreateFile *bool `json:"createFile,omitempty"`
-	CreateDatastore *bool `json:"createDatastore,omitempty"`
-	CreateDisk *bool `json:"createDisk,omitempty"`
-	CreateHost *bool `json:"createHost,omitempty"`
-	IconCode *string `json:"iconCode,omitempty"`
-	HasFileBrowser *bool `json:"hasFileBrowser,omitempty"`
-	OptionTypes []ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
-	GroupOptionTypes []ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner `json:"groupOptionTypes,omitempty"`
-	BucketOptionTypes []map[string]interface{} `json:"bucketOptionTypes,omitempty"`
-	ShareOptionTypes []map[string]interface{} `json:"shareOptionTypes,omitempty"`
-	ShareAccessOptionTypes []map[string]interface{} `json:"shareAccessOptionTypes,omitempty"`
-	StorageVolumeTypes []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageTypesInner `json:"storageVolumeTypes,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                     *int64                                                                                                          `json:"id,omitempty"`
+	Code                   *string                                                                                                         `json:"code,omitempty"`
+	Name                   *string                                                                                                         `json:"name,omitempty"`
+	Description            *string                                                                                                         `json:"description,omitempty"`
+	Enabled                *bool                                                                                                           `json:"enabled,omitempty"`
+	Creatable              *bool                                                                                                           `json:"creatable,omitempty"`
+	HasNamespaces          *bool                                                                                                           `json:"hasNamespaces,omitempty"`
+	HasGroups              *bool                                                                                                           `json:"hasGroups,omitempty"`
+	HasBlock               *bool                                                                                                           `json:"hasBlock,omitempty"`
+	HasObject              *bool                                                                                                           `json:"hasObject,omitempty"`
+	HasFile                *bool                                                                                                           `json:"hasFile,omitempty"`
+	HasDatastore           *bool                                                                                                           `json:"hasDatastore,omitempty"`
+	HasDisks               *bool                                                                                                           `json:"hasDisks,omitempty"`
+	HasHosts               *bool                                                                                                           `json:"hasHosts,omitempty"`
+	CreateNamespaces       *bool                                                                                                           `json:"createNamespaces,omitempty"`
+	CreateGroup            *bool                                                                                                           `json:"createGroup,omitempty"`
+	CreateBlock            *bool                                                                                                           `json:"createBlock,omitempty"`
+	CreateObject           *bool                                                                                                           `json:"createObject,omitempty"`
+	CreateFile             *bool                                                                                                           `json:"createFile,omitempty"`
+	CreateDatastore        *bool                                                                                                           `json:"createDatastore,omitempty"`
+	CreateDisk             *bool                                                                                                           `json:"createDisk,omitempty"`
+	CreateHost             *bool                                                                                                           `json:"createHost,omitempty"`
+	IconCode               *string                                                                                                         `json:"iconCode,omitempty"`
+	HasFileBrowser         *bool                                                                                                           `json:"hasFileBrowser,omitempty"`
+	OptionTypes            []ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerOptionTypesInner                                 `json:"optionTypes,omitempty"`
+	GroupOptionTypes       []ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner                            `json:"groupOptionTypes,omitempty"`
+	BucketOptionTypes      []map[string]interface{}                                                                                        `json:"bucketOptionTypes,omitempty"`
+	ShareOptionTypes       []map[string]interface{}                                                                                        `json:"shareOptionTypes,omitempty"`
+	ShareAccessOptionTypes []map[string]interface{}                                                                                        `json:"shareAccessOptionTypes,omitempty"`
+	StorageVolumeTypes     []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageTypesInner `json:"storageVolumeTypes,omitempty"`
+	AdditionalProperties   map[string]interface{}                                                                                          `json:",remain"`
 }
 
 type _StorageServerType StorageServerType
@@ -1033,7 +1033,7 @@ func (o *StorageServerType) SetStorageVolumeTypes(v []GetInstanceTypeProvisionin
 }
 
 func (o StorageServerType) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1139,91 +1139,8 @@ func (o StorageServerType) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *StorageServerType) UnmarshalJSON(data []byte) (err error) {
-	varStorageServerType := _StorageServerType{}
-
-	err = json.Unmarshal(data, &varStorageServerType)
-
-	if err != nil {
-		return err
-	}
-
-	*o = StorageServerType(varStorageServerType)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "creatable")
-		delete(additionalProperties, "hasNamespaces")
-		delete(additionalProperties, "hasGroups")
-		delete(additionalProperties, "hasBlock")
-		delete(additionalProperties, "hasObject")
-		delete(additionalProperties, "hasFile")
-		delete(additionalProperties, "hasDatastore")
-		delete(additionalProperties, "hasDisks")
-		delete(additionalProperties, "hasHosts")
-		delete(additionalProperties, "createNamespaces")
-		delete(additionalProperties, "createGroup")
-		delete(additionalProperties, "createBlock")
-		delete(additionalProperties, "createObject")
-		delete(additionalProperties, "createFile")
-		delete(additionalProperties, "createDatastore")
-		delete(additionalProperties, "createDisk")
-		delete(additionalProperties, "createHost")
-		delete(additionalProperties, "iconCode")
-		delete(additionalProperties, "hasFileBrowser")
-		delete(additionalProperties, "optionTypes")
-		delete(additionalProperties, "groupOptionTypes")
-		delete(additionalProperties, "bucketOptionTypes")
-		delete(additionalProperties, "shareOptionTypes")
-		delete(additionalProperties, "shareAccessOptionTypes")
-		delete(additionalProperties, "storageVolumeTypes")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableStorageServerType struct {
-	value *StorageServerType
-	isSet bool
-}
-
-func (v NullableStorageServerType) Get() *StorageServerType {
-	return v.value
-}
-
-func (v *NullableStorageServerType) Set(val *StorageServerType) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableStorageServerType) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableStorageServerType) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableStorageServerType(val *StorageServerType) *NullableStorageServerType {
-	return &NullableStorageServerType{value: val, isSet: true}
-}
-
-func (v NullableStorageServerType) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableStorageServerType) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

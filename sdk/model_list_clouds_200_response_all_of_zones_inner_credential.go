@@ -19,18 +19,33 @@ import (
 // very silly way of avoiding `"fmt" imported and not used` errors
 var _ fmt.Stringer
 
-
 // ListClouds200ResponseAllOfZonesInnerCredential struct for ListClouds200ResponseAllOfZonesInnerCredential
 type ListClouds200ResponseAllOfZonesInnerCredential struct {
-	ListApps200ResponseAllOfAppsInnerBlueprint *ListApps200ResponseAllOfAppsInnerBlueprint
+	ListApps200ResponseAllOfAppsInnerBlueprint          *ListApps200ResponseAllOfAppsInnerBlueprint
 	ListClouds200ResponseAllOfZonesInnerCredentialAnyOf *ListClouds200ResponseAllOfZonesInnerCredentialAnyOf
+}
+
+func (dst *ListClouds200ResponseAllOfZonesInnerCredential) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &ListClouds200ResponseAllOfZonesInnerCredential{}
+	}
+
+	if out, ok := data.(ListApps200ResponseAllOfAppsInnerBlueprint); ok {
+		dst.ListApps200ResponseAllOfAppsInnerBlueprint = &out
+	}
+
+	if out, ok := data.(ListClouds200ResponseAllOfZonesInnerCredentialAnyOf); ok {
+		dst.ListClouds200ResponseAllOfZonesInnerCredentialAnyOf = &out
+	}
+
+	return dst, nil
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *ListClouds200ResponseAllOfZonesInnerCredential) UnmarshalJSON(data []byte) error {
 	var err error
 	// try to unmarshal JSON data into ListApps200ResponseAllOfAppsInnerBlueprint
-	err = json.Unmarshal(data, &dst.ListApps200ResponseAllOfAppsInnerBlueprint);
+	err = json.Unmarshal(data, &dst.ListApps200ResponseAllOfAppsInnerBlueprint)
 	if err == nil {
 		jsonListApps200ResponseAllOfAppsInnerBlueprint, _ := json.Marshal(dst.ListApps200ResponseAllOfAppsInnerBlueprint)
 		if string(jsonListApps200ResponseAllOfAppsInnerBlueprint) == "{}" { // empty struct
@@ -43,7 +58,7 @@ func (dst *ListClouds200ResponseAllOfZonesInnerCredential) UnmarshalJSON(data []
 	}
 
 	// try to unmarshal JSON data into ListClouds200ResponseAllOfZonesInnerCredentialAnyOf
-	err = json.Unmarshal(data, &dst.ListClouds200ResponseAllOfZonesInnerCredentialAnyOf);
+	err = json.Unmarshal(data, &dst.ListClouds200ResponseAllOfZonesInnerCredentialAnyOf)
 	if err == nil {
 		jsonListClouds200ResponseAllOfZonesInnerCredentialAnyOf, _ := json.Marshal(dst.ListClouds200ResponseAllOfZonesInnerCredentialAnyOf)
 		if string(jsonListClouds200ResponseAllOfZonesInnerCredentialAnyOf) == "{}" { // empty struct
@@ -70,7 +85,6 @@ func (src ListClouds200ResponseAllOfZonesInnerCredential) MarshalJSON() ([]byte,
 
 	return nil, nil // no data in anyOf schemas
 }
-
 
 type NullableListClouds200ResponseAllOfZonesInnerCredential struct {
 	value *ListClouds200ResponseAllOfZonesInnerCredential
@@ -107,5 +121,3 @@ func (v *NullableListClouds200ResponseAllOfZonesInnerCredential) UnmarshalJSON(s
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

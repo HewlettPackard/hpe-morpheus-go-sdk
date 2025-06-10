@@ -18,12 +18,12 @@ import (
 // checks if the ClusterResourceNamePolicyTypeConfiguration type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &ClusterResourceNamePolicyTypeConfiguration{}
 
-// ClusterResourceNamePolicyTypeConfiguration Configuration settings for the following policy types: - Cluster Resource Name 
+// ClusterResourceNamePolicyTypeConfiguration Configuration settings for the following policy types: - Cluster Resource Name
 type ClusterResourceNamePolicyTypeConfiguration struct {
-	ServerNamingType *string `json:"serverNamingType,omitempty"`
-	ServerNamingPattern *string `json:"serverNamingPattern,omitempty"`
-	ServerNamingConflict *bool `json:"serverNamingConflict,omitempty"`
-	AdditionalProperties map[string]interface{}
+	ServerNamingType     *string                `json:"serverNamingType,omitempty"`
+	ServerNamingPattern  *string                `json:"serverNamingPattern,omitempty"`
+	ServerNamingConflict *bool                  `json:"serverNamingConflict,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ClusterResourceNamePolicyTypeConfiguration ClusterResourceNamePolicyTypeConfiguration
@@ -142,7 +142,7 @@ func (o *ClusterResourceNamePolicyTypeConfiguration) SetServerNamingConflict(v b
 }
 
 func (o ClusterResourceNamePolicyTypeConfiguration) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -167,64 +167,8 @@ func (o ClusterResourceNamePolicyTypeConfiguration) ToMap() (map[string]interfac
 
 	return toSerialize, nil
 }
-
 func (o *ClusterResourceNamePolicyTypeConfiguration) UnmarshalJSON(data []byte) (err error) {
-	varClusterResourceNamePolicyTypeConfiguration := _ClusterResourceNamePolicyTypeConfiguration{}
-
-	err = json.Unmarshal(data, &varClusterResourceNamePolicyTypeConfiguration)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ClusterResourceNamePolicyTypeConfiguration(varClusterResourceNamePolicyTypeConfiguration)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "serverNamingType")
-		delete(additionalProperties, "serverNamingPattern")
-		delete(additionalProperties, "serverNamingConflict")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableClusterResourceNamePolicyTypeConfiguration struct {
-	value *ClusterResourceNamePolicyTypeConfiguration
-	isSet bool
-}
-
-func (v NullableClusterResourceNamePolicyTypeConfiguration) Get() *ClusterResourceNamePolicyTypeConfiguration {
-	return v.value
-}
-
-func (v *NullableClusterResourceNamePolicyTypeConfiguration) Set(val *ClusterResourceNamePolicyTypeConfiguration) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableClusterResourceNamePolicyTypeConfiguration) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableClusterResourceNamePolicyTypeConfiguration) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableClusterResourceNamePolicyTypeConfiguration(val *ClusterResourceNamePolicyTypeConfiguration) *NullableClusterResourceNamePolicyTypeConfiguration {
-	return &NullableClusterResourceNamePolicyTypeConfiguration{value: val, isSet: true}
-}
-
-func (v NullableClusterResourceNamePolicyTypeConfiguration) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableClusterResourceNamePolicyTypeConfiguration) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -21,13 +21,12 @@ import (
 	"strings"
 )
 
-
 // PriceSetsAPIService PriceSetsAPI service
 type PriceSetsAPIService service
 
 type ApiAddPriceSetsRequest struct {
-	ctx context.Context
-	ApiService *PriceSetsAPIService
+	ctx                 context.Context
+	ApiService          *PriceSetsAPIService
 	addPriceSetsRequest *AddPriceSetsRequest
 }
 
@@ -45,25 +44,25 @@ AddPriceSets Creates a Price Set
 
 Creates a price set.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddPriceSetsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddPriceSetsRequest
 */
 func (a *PriceSetsAPIService) AddPriceSets(ctx context.Context) ApiAddPriceSetsRequest {
 	return ApiAddPriceSetsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddPriceSets200Response
+//
+//	@return AddPriceSets200Response
 func (a *PriceSetsAPIService) AddPriceSetsExecute(r ApiAddPriceSetsRequest) (*AddPriceSets200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddPriceSets200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddPriceSets200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PriceSetsAPIService.AddPriceSets")
@@ -115,7 +114,7 @@ func (a *PriceSetsAPIService) AddPriceSetsExecute(r ApiAddPriceSetsRequest) (*Ad
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -124,8 +123,8 @@ func (a *PriceSetsAPIService) AddPriceSetsExecute(r ApiAddPriceSetsRequest) (*Ad
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -135,8 +134,8 @@ func (a *PriceSetsAPIService) AddPriceSetsExecute(r ApiAddPriceSetsRequest) (*Ad
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -144,8 +143,8 @@ func (a *PriceSetsAPIService) AddPriceSetsExecute(r ApiAddPriceSetsRequest) (*Ad
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -154,9 +153,9 @@ func (a *PriceSetsAPIService) AddPriceSetsExecute(r ApiAddPriceSetsRequest) (*Ad
 }
 
 type ApiDeactivatePriceSetsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *PriceSetsAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiDeactivatePriceSetsRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -168,27 +167,27 @@ DeactivatePriceSets Deactivates a Price Set
 
 Deactivates a price set. This does the same thing as the delete action in the UI, hiding it and making it unavailable to new resources.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiDeactivatePriceSetsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiDeactivatePriceSetsRequest
 */
 func (a *PriceSetsAPIService) DeactivatePriceSets(ctx context.Context, id int64) ApiDeactivatePriceSetsRequest {
 	return ApiDeactivatePriceSetsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *PriceSetsAPIService) DeactivatePriceSetsExecute(r ApiDeactivatePriceSetsRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PriceSetsAPIService.DeactivatePriceSets")
@@ -239,7 +238,7 @@ func (a *PriceSetsAPIService) DeactivatePriceSetsExecute(r ApiDeactivatePriceSet
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -248,8 +247,8 @@ func (a *PriceSetsAPIService) DeactivatePriceSetsExecute(r ApiDeactivatePriceSet
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -259,8 +258,8 @@ func (a *PriceSetsAPIService) DeactivatePriceSetsExecute(r ApiDeactivatePriceSet
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -268,8 +267,8 @@ func (a *PriceSetsAPIService) DeactivatePriceSetsExecute(r ApiDeactivatePriceSet
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -278,9 +277,9 @@ func (a *PriceSetsAPIService) DeactivatePriceSetsExecute(r ApiDeactivatePriceSet
 }
 
 type ApiGetPriceSetsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *PriceSetsAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetPriceSetsRequest) Execute() (*GetPriceSets200Response, *http.Response, error) {
@@ -292,27 +291,27 @@ GetPriceSets Retrieves a Specific Price Set
 
 Retrieves a specific price set.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetPriceSetsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetPriceSetsRequest
 */
 func (a *PriceSetsAPIService) GetPriceSets(ctx context.Context, id int64) ApiGetPriceSetsRequest {
 	return ApiGetPriceSetsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetPriceSets200Response
+//
+//	@return GetPriceSets200Response
 func (a *PriceSetsAPIService) GetPriceSetsExecute(r ApiGetPriceSetsRequest) (*GetPriceSets200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetPriceSets200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetPriceSets200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PriceSetsAPIService.GetPriceSets")
@@ -363,7 +362,7 @@ func (a *PriceSetsAPIService) GetPriceSetsExecute(r ApiGetPriceSetsRequest) (*Ge
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -372,8 +371,8 @@ func (a *PriceSetsAPIService) GetPriceSetsExecute(r ApiGetPriceSetsRequest) (*Ge
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -383,8 +382,8 @@ func (a *PriceSetsAPIService) GetPriceSetsExecute(r ApiGetPriceSetsRequest) (*Ge
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -392,8 +391,8 @@ func (a *PriceSetsAPIService) GetPriceSetsExecute(r ApiGetPriceSetsRequest) (*Ge
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -402,16 +401,16 @@ func (a *PriceSetsAPIService) GetPriceSetsExecute(r ApiGetPriceSetsRequest) (*Ge
 }
 
 type ApiListPriceSetsRequest struct {
-	ctx context.Context
-	ApiService *PriceSetsAPIService
-	max *int64
-	offset *int64
-	sort *string
-	direction *string
-	phrase *string
-	name *string
+	ctx             context.Context
+	ApiService      *PriceSetsAPIService
+	max             *int64
+	offset          *int64
+	sort            *string
+	direction       *string
+	phrase          *string
+	name            *string
 	includeInactive *bool
-	type_ *string
+	type_           *string
 }
 
 // Maximum number of records to return
@@ -471,25 +470,25 @@ ListPriceSets Retrieves all Price Sets
 
 Retrieves all price sets.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListPriceSetsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListPriceSetsRequest
 */
 func (a *PriceSetsAPIService) ListPriceSets(ctx context.Context) ApiListPriceSetsRequest {
 	return ApiListPriceSetsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListPriceSets200Response
+//
+//	@return ListPriceSets200Response
 func (a *PriceSetsAPIService) ListPriceSetsExecute(r ApiListPriceSetsRequest) (*ListPriceSets200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListPriceSets200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListPriceSets200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PriceSetsAPIService.ListPriceSets")
@@ -575,7 +574,7 @@ func (a *PriceSetsAPIService) ListPriceSetsExecute(r ApiListPriceSetsRequest) (*
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -584,8 +583,8 @@ func (a *PriceSetsAPIService) ListPriceSetsExecute(r ApiListPriceSetsRequest) (*
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -595,8 +594,8 @@ func (a *PriceSetsAPIService) ListPriceSetsExecute(r ApiListPriceSetsRequest) (*
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -604,8 +603,8 @@ func (a *PriceSetsAPIService) ListPriceSetsExecute(r ApiListPriceSetsRequest) (*
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -614,9 +613,9 @@ func (a *PriceSetsAPIService) ListPriceSetsExecute(r ApiListPriceSetsRequest) (*
 }
 
 type ApiUpdatePriceSetsRequest struct {
-	ctx context.Context
-	ApiService *PriceSetsAPIService
-	id int64
+	ctx                    context.Context
+	ApiService             *PriceSetsAPIService
+	id                     int64
 	updatePriceSetsRequest *UpdatePriceSetsRequest
 }
 
@@ -634,27 +633,27 @@ UpdatePriceSets Updates a Price Set
 
 Updates a price set.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdatePriceSetsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdatePriceSetsRequest
 */
 func (a *PriceSetsAPIService) UpdatePriceSets(ctx context.Context, id int64) ApiUpdatePriceSetsRequest {
 	return ApiUpdatePriceSetsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return AddPriceSets200Response
+//
+//	@return AddPriceSets200Response
 func (a *PriceSetsAPIService) UpdatePriceSetsExecute(r ApiUpdatePriceSetsRequest) (*AddPriceSets200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddPriceSets200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddPriceSets200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PriceSetsAPIService.UpdatePriceSets")
@@ -707,7 +706,7 @@ func (a *PriceSetsAPIService) UpdatePriceSetsExecute(r ApiUpdatePriceSetsRequest
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -716,8 +715,8 @@ func (a *PriceSetsAPIService) UpdatePriceSetsExecute(r ApiUpdatePriceSetsRequest
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -727,8 +726,8 @@ func (a *PriceSetsAPIService) UpdatePriceSetsExecute(r ApiUpdatePriceSetsRequest
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -736,8 +735,8 @@ func (a *PriceSetsAPIService) UpdatePriceSetsExecute(r ApiUpdatePriceSetsRequest
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

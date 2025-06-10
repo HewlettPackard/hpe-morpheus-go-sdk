@@ -14,6 +14,7 @@ package sdk
 import (
 	"encoding/json"
 	"fmt"
+
 	"gopkg.in/validator.v2"
 )
 
@@ -32,6 +33,17 @@ func NSXNetworkServerUpdateAsUpdateNetworkServerRequestNetworkServer(v *NSXNetwo
 	}
 }
 
+func (dst *UpdateNetworkServerRequestNetworkServer) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &UpdateNetworkServerRequestNetworkServer{}
+	}
+
+	if out, ok := data.(NSXNetworkServerUpdate); ok {
+		dst.NSXNetworkServerUpdate = &out
+	}
+
+	return dst, nil
+}
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *UpdateNetworkServerRequestNetworkServer) UnmarshalJSON(data []byte) error {
@@ -76,7 +88,7 @@ func (src UpdateNetworkServerRequestNetworkServer) MarshalJSON() ([]byte, error)
 }
 
 // Get the actual instance
-func (obj *UpdateNetworkServerRequestNetworkServer) GetActualInstance() (interface{}) {
+func (obj *UpdateNetworkServerRequestNetworkServer) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -89,7 +101,7 @@ func (obj *UpdateNetworkServerRequestNetworkServer) GetActualInstance() (interfa
 }
 
 // Get the actual instance value
-func (obj UpdateNetworkServerRequestNetworkServer) GetActualInstanceValue() (interface{}) {
+func (obj UpdateNetworkServerRequestNetworkServer) GetActualInstanceValue() interface{} {
 	if obj.NSXNetworkServerUpdate != nil {
 		return *obj.NSXNetworkServerUpdate
 	}
@@ -133,5 +145,3 @@ func (v *NullableUpdateNetworkServerRequestNetworkServer) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

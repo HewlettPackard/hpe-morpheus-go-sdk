@@ -21,30 +21,30 @@ var _ MappedNullable = &ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14
 
 // ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14 struct for ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14
 type ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14 struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Enabled *bool `json:"enabled,omitempty"`
-	Type *string `json:"type,omitempty"`
-	IntegrationType *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"integrationType,omitempty"`
-	Url *string `json:"url,omitempty"`
-	Port *string `json:"port,omitempty"`
-	Username *string `json:"username,omitempty"`
-	Password *string `json:"password,omitempty"`
-	PasswordHash *string `json:"passwordHash,omitempty"`
-	Path *string `json:"path,omitempty"`
-	Version *string `json:"version,omitempty"`
-	WindowsVersion *string `json:"windowsVersion,omitempty"`
-	RepoUrl *string `json:"repoUrl,omitempty"`
-	ServiceMode *string `json:"serviceMode,omitempty"`
-	IsPlugin *bool `json:"isPlugin,omitempty"`
-	Config *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14Config `json:"config,omitempty"`
-	Status *string `json:"status,omitempty"`
-	StatusDate *time.Time `json:"statusDate,omitempty"`
-	StatusMessage *string `json:"statusMessage,omitempty"`
-	LastSync *string `json:"lastSync,omitempty"`
-	LastSyncDuration *string `json:"lastSyncDuration,omitempty"`
-	Credential *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential `json:"credential,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                            `json:"id,omitempty"`
+	Name                 *string                                                           `json:"name,omitempty"`
+	Enabled              *bool                                                             `json:"enabled,omitempty"`
+	Type                 *string                                                           `json:"type,omitempty"`
+	IntegrationType      *ListBackupSettings200ResponseBackupSettingsDefaultSchedule       `json:"integrationType,omitempty"`
+	Url                  *string                                                           `json:"url,omitempty"`
+	Port                 *string                                                           `json:"port,omitempty"`
+	Username             *string                                                           `json:"username,omitempty"`
+	Password             *string                                                           `json:"password,omitempty"`
+	PasswordHash         *string                                                           `json:"passwordHash,omitempty"`
+	Path                 *string                                                           `json:"path,omitempty"`
+	Version              *string                                                           `json:"version,omitempty"`
+	WindowsVersion       *string                                                           `json:"windowsVersion,omitempty"`
+	RepoUrl              *string                                                           `json:"repoUrl,omitempty"`
+	ServiceMode          *string                                                           `json:"serviceMode,omitempty"`
+	IsPlugin             *bool                                                             `json:"isPlugin,omitempty"`
+	Config               *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14Config   `json:"config,omitempty"`
+	Status               *string                                                           `json:"status,omitempty"`
+	StatusDate           *time.Time                                                        `json:"statusDate,omitempty"`
+	StatusMessage        *string                                                           `json:"statusMessage,omitempty"`
+	LastSync             *string                                                           `json:"lastSync,omitempty"`
+	LastSyncDuration     *string                                                           `json:"lastSyncDuration,omitempty"`
+	Credential           *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential `json:"credential,omitempty"`
+	AdditionalProperties map[string]interface{}                                            `json:",remain"`
 }
 
 type _ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14 ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14
@@ -803,7 +803,7 @@ func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14) SetCredential
 }
 
 func (o ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -888,84 +888,8 @@ func (o ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14) ToMap() (map[s
 
 	return toSerialize, nil
 }
-
 func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14) UnmarshalJSON(data []byte) (err error) {
-	varListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14 := _ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14{}
-
-	err = json.Unmarshal(data, &varListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14(varListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "integrationType")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "port")
-		delete(additionalProperties, "username")
-		delete(additionalProperties, "password")
-		delete(additionalProperties, "passwordHash")
-		delete(additionalProperties, "path")
-		delete(additionalProperties, "version")
-		delete(additionalProperties, "windowsVersion")
-		delete(additionalProperties, "repoUrl")
-		delete(additionalProperties, "serviceMode")
-		delete(additionalProperties, "isPlugin")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "statusDate")
-		delete(additionalProperties, "statusMessage")
-		delete(additionalProperties, "lastSync")
-		delete(additionalProperties, "lastSyncDuration")
-		delete(additionalProperties, "credential")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14 struct {
-	value *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14
-	isSet bool
-}
-
-func (v NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14) Get() *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14 {
-	return v.value
-}
-
-func (v *NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14) Set(val *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14(val *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14) *NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14 {
-	return &NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14{value: val, isSet: true}
-}
-
-func (v NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

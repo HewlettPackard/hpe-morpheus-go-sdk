@@ -20,11 +20,11 @@ var _ MappedNullable = &GetCheckApps200Response{}
 
 // GetCheckApps200Response struct for GetCheckApps200Response
 type GetCheckApps200Response struct {
-	MonitorApp *GetAlerts200ResponseAllOfAppsInner `json:"monitorApp,omitempty"`
-	CheckGroups []GetAlerts200ResponseAllOfCheckGroupsInner `json:"checkGroups,omitempty"`
-	Checks []GetAlerts200ResponseAllOfChecksInner `json:"checks,omitempty"`
-	OpenIncidents []GetCheckApps200ResponseOpenIncidentsInner `json:"openIncidents,omitempty"`
-	AdditionalProperties map[string]interface{}
+	MonitorApp           *GetAlerts200ResponseAllOfAppsInner         `json:"monitorApp,omitempty"`
+	CheckGroups          []GetAlerts200ResponseAllOfCheckGroupsInner `json:"checkGroups,omitempty"`
+	Checks               []GetAlerts200ResponseAllOfChecksInner      `json:"checks,omitempty"`
+	OpenIncidents        []GetCheckApps200ResponseOpenIncidentsInner `json:"openIncidents,omitempty"`
+	AdditionalProperties map[string]interface{}                      `json:",remain"`
 }
 
 type _GetCheckApps200Response GetCheckApps200Response
@@ -175,7 +175,7 @@ func (o *GetCheckApps200Response) SetOpenIncidents(v []GetCheckApps200ResponseOp
 }
 
 func (o GetCheckApps200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -203,65 +203,8 @@ func (o GetCheckApps200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *GetCheckApps200Response) UnmarshalJSON(data []byte) (err error) {
-	varGetCheckApps200Response := _GetCheckApps200Response{}
-
-	err = json.Unmarshal(data, &varGetCheckApps200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetCheckApps200Response(varGetCheckApps200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "monitorApp")
-		delete(additionalProperties, "checkGroups")
-		delete(additionalProperties, "checks")
-		delete(additionalProperties, "openIncidents")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetCheckApps200Response struct {
-	value *GetCheckApps200Response
-	isSet bool
-}
-
-func (v NullableGetCheckApps200Response) Get() *GetCheckApps200Response {
-	return v.value
-}
-
-func (v *NullableGetCheckApps200Response) Set(val *GetCheckApps200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetCheckApps200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetCheckApps200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetCheckApps200Response(val *GetCheckApps200Response) *NullableGetCheckApps200Response {
-	return &NullableGetCheckApps200Response{value: val, isSet: true}
-}
-
-func (v NullableGetCheckApps200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetCheckApps200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -21,19 +21,19 @@ var _ MappedNullable = &TenantGroup{}
 
 // TenantGroup struct for TenantGroup
 type TenantGroup struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Code *string `json:"code,omitempty"`
-	Location *string `json:"location,omitempty"`
-	AccountId *int64 `json:"accountId,omitempty"`
-	Visibility *string `json:"visibility,omitempty"`
-	Active *bool `json:"active,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	Zones []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"zones,omitempty"`
-	Stats *ListGroups200ResponseAllOfGroupsInnerStats `json:"stats,omitempty"`
-	ServerCount *int64 `json:"serverCount,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                                   `json:"id,omitempty"`
+	Name                 *string                                                                  `json:"name,omitempty"`
+	Code                 *string                                                                  `json:"code,omitempty"`
+	Location             *string                                                                  `json:"location,omitempty"`
+	AccountId            *int64                                                                   `json:"accountId,omitempty"`
+	Visibility           *string                                                                  `json:"visibility,omitempty"`
+	Active               *bool                                                                    `json:"active,omitempty"`
+	DateCreated          *time.Time                                                               `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                                               `json:"lastUpdated,omitempty"`
+	Zones                []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"zones,omitempty"`
+	Stats                *ListGroups200ResponseAllOfGroupsInnerStats                              `json:"stats,omitempty"`
+	ServerCount          *int64                                                                   `json:"serverCount,omitempty"`
+	AdditionalProperties map[string]interface{}                                                   `json:",remain"`
 }
 
 type _TenantGroup TenantGroup
@@ -440,7 +440,7 @@ func (o *TenantGroup) SetServerCount(v int64) {
 }
 
 func (o TenantGroup) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -492,73 +492,8 @@ func (o TenantGroup) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *TenantGroup) UnmarshalJSON(data []byte) (err error) {
-	varTenantGroup := _TenantGroup{}
-
-	err = json.Unmarshal(data, &varTenantGroup)
-
-	if err != nil {
-		return err
-	}
-
-	*o = TenantGroup(varTenantGroup)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "location")
-		delete(additionalProperties, "accountId")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "active")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		delete(additionalProperties, "zones")
-		delete(additionalProperties, "stats")
-		delete(additionalProperties, "serverCount")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableTenantGroup struct {
-	value *TenantGroup
-	isSet bool
-}
-
-func (v NullableTenantGroup) Get() *TenantGroup {
-	return v.value
-}
-
-func (v *NullableTenantGroup) Set(val *TenantGroup) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableTenantGroup) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableTenantGroup) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableTenantGroup(val *TenantGroup) *NullableTenantGroup {
-	return &NullableTenantGroup{value: val, isSet: true}
-}
-
-func (v NullableTenantGroup) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableTenantGroup) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

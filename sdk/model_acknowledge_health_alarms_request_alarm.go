@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the AcknowledgeHealthAlarmsRequestAlarm type satisfies the MappedNullable interface at compile time
@@ -25,9 +24,9 @@ type AcknowledgeHealthAlarmsRequestAlarm struct {
 	Acknowledged bool `json:"acknowledged"`
 	// Array of Alarm ID(s)to be updated.
 	Ids []int64 `json:"ids,omitempty"`
-	// Pass `true` to update all alarms instead of passing ids. This will update any active alarm that is not already acknowledged. 
-	All *bool `json:"all,omitempty"`
-	AdditionalProperties map[string]interface{}
+	// Pass `true` to update all alarms instead of passing ids. This will update any active alarm that is not already acknowledged.
+	All                  *bool                  `json:"all,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AcknowledgeHealthAlarmsRequestAlarm AcknowledgeHealthAlarmsRequestAlarm
@@ -143,7 +142,7 @@ func (o *AcknowledgeHealthAlarmsRequestAlarm) SetAll(v bool) {
 }
 
 func (o AcknowledgeHealthAlarmsRequestAlarm) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -166,85 +165,8 @@ func (o AcknowledgeHealthAlarmsRequestAlarm) ToMap() (map[string]interface{}, er
 
 	return toSerialize, nil
 }
-
 func (o *AcknowledgeHealthAlarmsRequestAlarm) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"acknowledged",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varAcknowledgeHealthAlarmsRequestAlarm := _AcknowledgeHealthAlarmsRequestAlarm{}
-
-	err = json.Unmarshal(data, &varAcknowledgeHealthAlarmsRequestAlarm)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AcknowledgeHealthAlarmsRequestAlarm(varAcknowledgeHealthAlarmsRequestAlarm)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "acknowledged")
-		delete(additionalProperties, "ids")
-		delete(additionalProperties, "all")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAcknowledgeHealthAlarmsRequestAlarm struct {
-	value *AcknowledgeHealthAlarmsRequestAlarm
-	isSet bool
-}
-
-func (v NullableAcknowledgeHealthAlarmsRequestAlarm) Get() *AcknowledgeHealthAlarmsRequestAlarm {
-	return v.value
-}
-
-func (v *NullableAcknowledgeHealthAlarmsRequestAlarm) Set(val *AcknowledgeHealthAlarmsRequestAlarm) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAcknowledgeHealthAlarmsRequestAlarm) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAcknowledgeHealthAlarmsRequestAlarm) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAcknowledgeHealthAlarmsRequestAlarm(val *AcknowledgeHealthAlarmsRequestAlarm) *NullableAcknowledgeHealthAlarmsRequestAlarm {
-	return &NullableAcknowledgeHealthAlarmsRequestAlarm{value: val, isSet: true}
-}
-
-func (v NullableAcknowledgeHealthAlarmsRequestAlarm) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAcknowledgeHealthAlarmsRequestAlarm) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

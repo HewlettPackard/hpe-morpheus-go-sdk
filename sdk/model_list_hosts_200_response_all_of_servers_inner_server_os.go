@@ -20,17 +20,17 @@ var _ MappedNullable = &ListHosts200ResponseAllOfServersInnerServerOs{}
 
 // ListHosts200ResponseAllOfServersInnerServerOs struct for ListHosts200ResponseAllOfServersInnerServerOs
 type ListHosts200ResponseAllOfServersInnerServerOs struct {
-	Id *int64 `json:"id,omitempty"`
-	Code *string `json:"code,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Vendor *string `json:"vendor,omitempty"`
-	Category *string `json:"category,omitempty"`
-	OsFamily *string `json:"osFamily,omitempty"`
-	OsVersion *string `json:"osVersion,omitempty"`
-	BitCount *int64 `json:"bitCount,omitempty"`
-	Platform *string `json:"platform,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	Code                 *string                `json:"code,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	Description          *string                `json:"description,omitempty"`
+	Vendor               *string                `json:"vendor,omitempty"`
+	Category             *string                `json:"category,omitempty"`
+	OsFamily             *string                `json:"osFamily,omitempty"`
+	OsVersion            *string                `json:"osVersion,omitempty"`
+	BitCount             *int64                 `json:"bitCount,omitempty"`
+	Platform             *string                `json:"platform,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListHosts200ResponseAllOfServersInnerServerOs ListHosts200ResponseAllOfServersInnerServerOs
@@ -373,7 +373,7 @@ func (o *ListHosts200ResponseAllOfServersInnerServerOs) SetPlatform(v string) {
 }
 
 func (o ListHosts200ResponseAllOfServersInnerServerOs) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -419,71 +419,8 @@ func (o ListHosts200ResponseAllOfServersInnerServerOs) ToMap() (map[string]inter
 
 	return toSerialize, nil
 }
-
 func (o *ListHosts200ResponseAllOfServersInnerServerOs) UnmarshalJSON(data []byte) (err error) {
-	varListHosts200ResponseAllOfServersInnerServerOs := _ListHosts200ResponseAllOfServersInnerServerOs{}
-
-	err = json.Unmarshal(data, &varListHosts200ResponseAllOfServersInnerServerOs)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListHosts200ResponseAllOfServersInnerServerOs(varListHosts200ResponseAllOfServersInnerServerOs)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "vendor")
-		delete(additionalProperties, "category")
-		delete(additionalProperties, "osFamily")
-		delete(additionalProperties, "osVersion")
-		delete(additionalProperties, "bitCount")
-		delete(additionalProperties, "platform")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListHosts200ResponseAllOfServersInnerServerOs struct {
-	value *ListHosts200ResponseAllOfServersInnerServerOs
-	isSet bool
-}
-
-func (v NullableListHosts200ResponseAllOfServersInnerServerOs) Get() *ListHosts200ResponseAllOfServersInnerServerOs {
-	return v.value
-}
-
-func (v *NullableListHosts200ResponseAllOfServersInnerServerOs) Set(val *ListHosts200ResponseAllOfServersInnerServerOs) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListHosts200ResponseAllOfServersInnerServerOs) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListHosts200ResponseAllOfServersInnerServerOs) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListHosts200ResponseAllOfServersInnerServerOs(val *ListHosts200ResponseAllOfServersInnerServerOs) *NullableListHosts200ResponseAllOfServersInnerServerOs {
-	return &NullableListHosts200ResponseAllOfServersInnerServerOs{value: val, isSet: true}
-}
-
-func (v NullableListHosts200ResponseAllOfServersInnerServerOs) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListHosts200ResponseAllOfServersInnerServerOs) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

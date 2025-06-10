@@ -20,502 +20,502 @@ var _ MappedNullable = &ListHealth200ResponseAllOfHealthDatabaseStats{}
 
 // ListHealth200ResponseAllOfHealthDatabaseStats struct for ListHealth200ResponseAllOfHealthDatabaseStats
 type ListHealth200ResponseAllOfHealthDatabaseStats struct {
-	AbortedClients *string `json:"Aborted_clients,omitempty"`
-	AbortedConnects *string `json:"Aborted_connects,omitempty"`
-	BinlogSnapshotFile *string `json:"Binlog_snapshot_file,omitempty"`
-	BinlogSnapshotPosition *string `json:"Binlog_snapshot_position,omitempty"`
-	BinlogCacheDiskUse *string `json:"Binlog_cache_disk_use,omitempty"`
-	BinlogCacheUse *string `json:"Binlog_cache_use,omitempty"`
-	BinlogSnapshotGtidExecuted *string `json:"Binlog_snapshot_gtid_executed,omitempty"`
-	BinlogStmtCacheDiskUse *string `json:"Binlog_stmt_cache_disk_use,omitempty"`
-	BinlogStmtCacheUse *string `json:"Binlog_stmt_cache_use,omitempty"`
-	BytesReceived *string `json:"Bytes_received,omitempty"`
-	BytesSent *string `json:"Bytes_sent,omitempty"`
-	ComAdminCommands *string `json:"Com_admin_commands,omitempty"`
-	ComAssignToKeycache *string `json:"Com_assign_to_keycache,omitempty"`
-	ComAlterDb *string `json:"Com_alter_db,omitempty"`
-	ComAlterDbUpgrade *string `json:"Com_alter_db_upgrade,omitempty"`
-	ComAlterEvent *string `json:"Com_alter_event,omitempty"`
-	ComAlterFunction *string `json:"Com_alter_function,omitempty"`
-	ComAlterInstance *string `json:"Com_alter_instance,omitempty"`
-	ComAlterProcedure *string `json:"Com_alter_procedure,omitempty"`
-	ComAlterServer *string `json:"Com_alter_server,omitempty"`
-	ComAlterTable *string `json:"Com_alter_table,omitempty"`
-	ComAlterTablespace *string `json:"Com_alter_tablespace,omitempty"`
-	ComAlterUser *string `json:"Com_alter_user,omitempty"`
-	ComAnalyze *string `json:"Com_analyze,omitempty"`
-	ComBegin *string `json:"Com_begin,omitempty"`
-	ComBinlog *string `json:"Com_binlog,omitempty"`
-	ComCallProcedure *string `json:"Com_call_procedure,omitempty"`
-	ComChangeDb *string `json:"Com_change_db,omitempty"`
-	ComChangeMaster *string `json:"Com_change_master,omitempty"`
-	ComChangeReplFilter *string `json:"Com_change_repl_filter,omitempty"`
-	ComCheck *string `json:"Com_check,omitempty"`
-	ComChecksum *string `json:"Com_checksum,omitempty"`
-	ComCommit *string `json:"Com_commit,omitempty"`
-	ComCreateCompressionDictionary *string `json:"Com_create_compression_dictionary,omitempty"`
-	ComCreateDb *string `json:"Com_create_db,omitempty"`
-	ComCreateEvent *string `json:"Com_create_event,omitempty"`
-	ComCreateFunction *string `json:"Com_create_function,omitempty"`
-	ComCreateIndex *string `json:"Com_create_index,omitempty"`
-	ComCreateProcedure *string `json:"Com_create_procedure,omitempty"`
-	ComCreateServer *string `json:"Com_create_server,omitempty"`
-	ComCreateTable *string `json:"Com_create_table,omitempty"`
-	ComCreateTrigger *string `json:"Com_create_trigger,omitempty"`
-	ComCreateUdf *string `json:"Com_create_udf,omitempty"`
-	ComCreateUser *string `json:"Com_create_user,omitempty"`
-	ComCreateView *string `json:"Com_create_view,omitempty"`
-	ComDeallocSql *string `json:"Com_dealloc_sql,omitempty"`
-	ComDelete *string `json:"Com_delete,omitempty"`
-	ComDeleteMulti *string `json:"Com_delete_multi,omitempty"`
-	ComDo *string `json:"Com_do,omitempty"`
-	ComDropCompressionDictionary *string `json:"Com_drop_compression_dictionary,omitempty"`
-	ComDropDb *string `json:"Com_drop_db,omitempty"`
-	ComDropEvent *string `json:"Com_drop_event,omitempty"`
-	ComDropFunction *string `json:"Com_drop_function,omitempty"`
-	ComDropIndex *string `json:"Com_drop_index,omitempty"`
-	ComDropProcedure *string `json:"Com_drop_procedure,omitempty"`
-	ComDropServer *string `json:"Com_drop_server,omitempty"`
-	ComDropTable *string `json:"Com_drop_table,omitempty"`
-	ComDropTrigger *string `json:"Com_drop_trigger,omitempty"`
-	ComDropUser *string `json:"Com_drop_user,omitempty"`
-	ComDropView *string `json:"Com_drop_view,omitempty"`
-	ComEmptyQuery *string `json:"Com_empty_query,omitempty"`
-	ComExecuteSql *string `json:"Com_execute_sql,omitempty"`
-	ComExplainOther *string `json:"Com_explain_other,omitempty"`
-	ComFlush *string `json:"Com_flush,omitempty"`
-	ComGetDiagnostics *string `json:"Com_get_diagnostics,omitempty"`
-	ComGrant *string `json:"Com_grant,omitempty"`
-	ComHaClose *string `json:"Com_ha_close,omitempty"`
-	ComHaOpen *string `json:"Com_ha_open,omitempty"`
-	ComHaRead *string `json:"Com_ha_read,omitempty"`
-	ComHelp *string `json:"Com_help,omitempty"`
-	ComInsert *string `json:"Com_insert,omitempty"`
-	ComInsertSelect *string `json:"Com_insert_select,omitempty"`
-	ComInstallPlugin *string `json:"Com_install_plugin,omitempty"`
-	ComKill *string `json:"Com_kill,omitempty"`
-	ComLoad *string `json:"Com_load,omitempty"`
-	ComLockTables *string `json:"Com_lock_tables,omitempty"`
-	ComLockTablesForBackup *string `json:"Com_lock_tables_for_backup,omitempty"`
-	ComLockBinlogForBackup *string `json:"Com_lock_binlog_for_backup,omitempty"`
-	ComOptimize *string `json:"Com_optimize,omitempty"`
-	ComPreloadKeys *string `json:"Com_preload_keys,omitempty"`
-	ComPrepareSql *string `json:"Com_prepare_sql,omitempty"`
-	ComPurge *string `json:"Com_purge,omitempty"`
-	ComPurgeBeforeDate *string `json:"Com_purge_before_date,omitempty"`
-	ComReleaseSavepoint *string `json:"Com_release_savepoint,omitempty"`
-	ComRenameTable *string `json:"Com_rename_table,omitempty"`
-	ComRenameUser *string `json:"Com_rename_user,omitempty"`
-	ComRepair *string `json:"Com_repair,omitempty"`
-	ComReplace *string `json:"Com_replace,omitempty"`
-	ComReplaceSelect *string `json:"Com_replace_select,omitempty"`
-	ComReset *string `json:"Com_reset,omitempty"`
-	ComResignal *string `json:"Com_resignal,omitempty"`
-	ComRevoke *string `json:"Com_revoke,omitempty"`
-	ComRevokeAll *string `json:"Com_revoke_all,omitempty"`
-	ComRollback *string `json:"Com_rollback,omitempty"`
-	ComRollbackToSavepoint *string `json:"Com_rollback_to_savepoint,omitempty"`
-	ComSavepoint *string `json:"Com_savepoint,omitempty"`
-	ComSelect *string `json:"Com_select,omitempty"`
-	ComSetOption *string `json:"Com_set_option,omitempty"`
-	ComSignal *string `json:"Com_signal,omitempty"`
-	ComShowBinlogEvents *string `json:"Com_show_binlog_events,omitempty"`
-	ComShowBinlogs *string `json:"Com_show_binlogs,omitempty"`
-	ComShowCharsets *string `json:"Com_show_charsets,omitempty"`
-	ComShowClientStatistics *string `json:"Com_show_client_statistics,omitempty"`
-	ComShowCollations *string `json:"Com_show_collations,omitempty"`
-	ComShowCreateDb *string `json:"Com_show_create_db,omitempty"`
-	ComShowCreateEvent *string `json:"Com_show_create_event,omitempty"`
-	ComShowCreateFunc *string `json:"Com_show_create_func,omitempty"`
-	ComShowCreateProc *string `json:"Com_show_create_proc,omitempty"`
-	ComShowCreateTable *string `json:"Com_show_create_table,omitempty"`
-	ComShowCreateTrigger *string `json:"Com_show_create_trigger,omitempty"`
-	ComShowDatabases *string `json:"Com_show_databases,omitempty"`
-	ComShowEngineLogs *string `json:"Com_show_engine_logs,omitempty"`
-	ComShowEngineMutex *string `json:"Com_show_engine_mutex,omitempty"`
-	ComShowEngineStatus *string `json:"Com_show_engine_status,omitempty"`
-	ComShowEvents *string `json:"Com_show_events,omitempty"`
-	ComShowErrors *string `json:"Com_show_errors,omitempty"`
-	ComShowFields *string `json:"Com_show_fields,omitempty"`
-	ComShowFunctionCode *string `json:"Com_show_function_code,omitempty"`
-	ComShowFunctionStatus *string `json:"Com_show_function_status,omitempty"`
-	ComShowGrants *string `json:"Com_show_grants,omitempty"`
-	ComShowIndexStatistics *string `json:"Com_show_index_statistics,omitempty"`
-	ComShowKeys *string `json:"Com_show_keys,omitempty"`
-	ComShowMasterStatus *string `json:"Com_show_master_status,omitempty"`
-	ComShowOpenTables *string `json:"Com_show_open_tables,omitempty"`
-	ComShowPlugins *string `json:"Com_show_plugins,omitempty"`
-	ComShowPrivileges *string `json:"Com_show_privileges,omitempty"`
-	ComShowProcedureCode *string `json:"Com_show_procedure_code,omitempty"`
-	ComShowProcedureStatus *string `json:"Com_show_procedure_status,omitempty"`
-	ComShowProcesslist *string `json:"Com_show_processlist,omitempty"`
-	ComShowProfile *string `json:"Com_show_profile,omitempty"`
-	ComShowProfiles *string `json:"Com_show_profiles,omitempty"`
-	ComShowRelaylogEvents *string `json:"Com_show_relaylog_events,omitempty"`
-	ComShowSlaveHosts *string `json:"Com_show_slave_hosts,omitempty"`
-	ComShowSlaveStatus *string `json:"Com_show_slave_status,omitempty"`
-	ComShowStatus *string `json:"Com_show_status,omitempty"`
-	ComShowStorageEngines *string `json:"Com_show_storage_engines,omitempty"`
-	ComShowTableStatistics *string `json:"Com_show_table_statistics,omitempty"`
-	ComShowTableStatus *string `json:"Com_show_table_status,omitempty"`
-	ComShowTables *string `json:"Com_show_tables,omitempty"`
-	ComShowThreadStatistics *string `json:"Com_show_thread_statistics,omitempty"`
-	ComShowTriggers *string `json:"Com_show_triggers,omitempty"`
-	ComShowUserStatistics *string `json:"Com_show_user_statistics,omitempty"`
-	ComShowVariables *string `json:"Com_show_variables,omitempty"`
-	ComShowWarnings *string `json:"Com_show_warnings,omitempty"`
-	ComShowCreateUser *string `json:"Com_show_create_user,omitempty"`
-	ComShutdown *string `json:"Com_shutdown,omitempty"`
-	ComSlaveStart *string `json:"Com_slave_start,omitempty"`
-	ComSlaveStop *string `json:"Com_slave_stop,omitempty"`
-	ComGroupReplicationStart *string `json:"Com_group_replication_start,omitempty"`
-	ComGroupReplicationStop *string `json:"Com_group_replication_stop,omitempty"`
-	ComStmtExecute *string `json:"Com_stmt_execute,omitempty"`
-	ComStmtClose *string `json:"Com_stmt_close,omitempty"`
-	ComStmtFetch *string `json:"Com_stmt_fetch,omitempty"`
-	ComStmtPrepare *string `json:"Com_stmt_prepare,omitempty"`
-	ComStmtReset *string `json:"Com_stmt_reset,omitempty"`
-	ComStmtSendLongData *string `json:"Com_stmt_send_long_data,omitempty"`
-	ComTruncate *string `json:"Com_truncate,omitempty"`
-	ComUninstallPlugin *string `json:"Com_uninstall_plugin,omitempty"`
-	ComUnlockBinlog *string `json:"Com_unlock_binlog,omitempty"`
-	ComUnlockTables *string `json:"Com_unlock_tables,omitempty"`
-	ComUpdate *string `json:"Com_update,omitempty"`
-	ComUpdateMulti *string `json:"Com_update_multi,omitempty"`
-	ComXaCommit *string `json:"Com_xa_commit,omitempty"`
-	ComXaEnd *string `json:"Com_xa_end,omitempty"`
-	ComXaPrepare *string `json:"Com_xa_prepare,omitempty"`
-	ComXaRecover *string `json:"Com_xa_recover,omitempty"`
-	ComXaRollback *string `json:"Com_xa_rollback,omitempty"`
-	ComXaStart *string `json:"Com_xa_start,omitempty"`
-	ComStmtReprepare *string `json:"Com_stmt_reprepare,omitempty"`
-	Compression *string `json:"Compression,omitempty"`
-	ConnectionErrorsAccept *string `json:"Connection_errors_accept,omitempty"`
-	ConnectionErrorsInternal *string `json:"Connection_errors_internal,omitempty"`
-	ConnectionErrorsMaxConnections *string `json:"Connection_errors_max_connections,omitempty"`
-	ConnectionErrorsPeerAddress *string `json:"Connection_errors_peer_address,omitempty"`
-	ConnectionErrorsSelect *string `json:"Connection_errors_select,omitempty"`
-	ConnectionErrorsTcpwrap *string `json:"Connection_errors_tcpwrap,omitempty"`
-	Connections *string `json:"Connections,omitempty"`
-	CreatedTmpDiskTables *string `json:"Created_tmp_disk_tables,omitempty"`
-	CreatedTmpFiles *string `json:"Created_tmp_files,omitempty"`
-	CreatedTmpTables *string `json:"Created_tmp_tables,omitempty"`
-	DelayedErrors *string `json:"Delayed_errors,omitempty"`
-	DelayedInsertThreads *string `json:"Delayed_insert_threads,omitempty"`
-	DelayedWrites *string `json:"Delayed_writes,omitempty"`
-	FlushCommands *string `json:"Flush_commands,omitempty"`
-	HandlerCommit *string `json:"Handler_commit,omitempty"`
-	HandlerDelete *string `json:"Handler_delete,omitempty"`
-	HandlerDiscover *string `json:"Handler_discover,omitempty"`
-	HandlerExternalLock *string `json:"Handler_external_lock,omitempty"`
-	HandlerMrrInit *string `json:"Handler_mrr_init,omitempty"`
-	HandlerPrepare *string `json:"Handler_prepare,omitempty"`
-	HandlerReadFirst *string `json:"Handler_read_first,omitempty"`
-	HandlerReadKey *string `json:"Handler_read_key,omitempty"`
-	HandlerReadLast *string `json:"Handler_read_last,omitempty"`
-	HandlerReadNext *string `json:"Handler_read_next,omitempty"`
-	HandlerReadPrev *string `json:"Handler_read_prev,omitempty"`
-	HandlerReadRnd *string `json:"Handler_read_rnd,omitempty"`
-	HandlerReadRndNext *string `json:"Handler_read_rnd_next,omitempty"`
-	HandlerRollback *string `json:"Handler_rollback,omitempty"`
-	HandlerSavepoint *string `json:"Handler_savepoint,omitempty"`
-	HandlerSavepointRollback *string `json:"Handler_savepoint_rollback,omitempty"`
-	HandlerUpdate *string `json:"Handler_update,omitempty"`
-	HandlerWrite *string `json:"Handler_write,omitempty"`
-	InnodbBackgroundLogSync *string `json:"Innodb_background_log_sync,omitempty"`
-	InnodbBufferPoolDumpStatus *string `json:"Innodb_buffer_pool_dump_status,omitempty"`
-	InnodbBufferPoolLoadStatus *string `json:"Innodb_buffer_pool_load_status,omitempty"`
-	InnodbBufferPoolResizeStatus *string `json:"Innodb_buffer_pool_resize_status,omitempty"`
-	InnodbBufferPoolPagesData *string `json:"Innodb_buffer_pool_pages_data,omitempty"`
-	InnodbBufferPoolBytesData *string `json:"Innodb_buffer_pool_bytes_data,omitempty"`
-	InnodbBufferPoolPagesDirty *string `json:"Innodb_buffer_pool_pages_dirty,omitempty"`
-	InnodbBufferPoolBytesDirty *string `json:"Innodb_buffer_pool_bytes_dirty,omitempty"`
-	InnodbBufferPoolPagesFlushed *string `json:"Innodb_buffer_pool_pages_flushed,omitempty"`
-	InnodbBufferPoolPagesFree *string `json:"Innodb_buffer_pool_pages_free,omitempty"`
-	InnodbBufferPoolPagesLRUFlushed *string `json:"Innodb_buffer_pool_pages_LRU_flushed,omitempty"`
-	InnodbBufferPoolPagesMadeNotYoung *string `json:"Innodb_buffer_pool_pages_made_not_young,omitempty"`
-	InnodbBufferPoolPagesMadeYoung *string `json:"Innodb_buffer_pool_pages_made_young,omitempty"`
-	InnodbBufferPoolPagesMisc *string `json:"Innodb_buffer_pool_pages_misc,omitempty"`
-	InnodbBufferPoolPagesOld *string `json:"Innodb_buffer_pool_pages_old,omitempty"`
-	InnodbBufferPoolPagesTotal *string `json:"Innodb_buffer_pool_pages_total,omitempty"`
-	InnodbBufferPoolReadAheadRnd *string `json:"Innodb_buffer_pool_read_ahead_rnd,omitempty"`
-	InnodbBufferPoolReadAhead *string `json:"Innodb_buffer_pool_read_ahead,omitempty"`
-	InnodbBufferPoolReadAheadEvicted *string `json:"Innodb_buffer_pool_read_ahead_evicted,omitempty"`
-	InnodbBufferPoolReadRequests *string `json:"Innodb_buffer_pool_read_requests,omitempty"`
-	InnodbBufferPoolReads *string `json:"Innodb_buffer_pool_reads,omitempty"`
-	InnodbBufferPoolWaitFree *string `json:"Innodb_buffer_pool_wait_free,omitempty"`
-	InnodbBufferPoolWriteRequests *string `json:"Innodb_buffer_pool_write_requests,omitempty"`
-	InnodbCheckpointAge *string `json:"Innodb_checkpoint_age,omitempty"`
-	InnodbCheckpointMaxAge *string `json:"Innodb_checkpoint_max_age,omitempty"`
-	InnodbDataFsyncs *string `json:"Innodb_data_fsyncs,omitempty"`
-	InnodbDataPendingFsyncs *string `json:"Innodb_data_pending_fsyncs,omitempty"`
-	InnodbDataPendingReads *string `json:"Innodb_data_pending_reads,omitempty"`
-	InnodbDataPendingWrites *string `json:"Innodb_data_pending_writes,omitempty"`
-	InnodbDataRead *string `json:"Innodb_data_read,omitempty"`
-	InnodbDataReads *string `json:"Innodb_data_reads,omitempty"`
-	InnodbDataWrites *string `json:"Innodb_data_writes,omitempty"`
-	InnodbDataWritten *string `json:"Innodb_data_written,omitempty"`
-	InnodbDblwrPagesWritten *string `json:"Innodb_dblwr_pages_written,omitempty"`
-	InnodbDblwrWrites *string `json:"Innodb_dblwr_writes,omitempty"`
-	InnodbIbufFreeList *string `json:"Innodb_ibuf_free_list,omitempty"`
-	InnodbIbufSegmentSize *string `json:"Innodb_ibuf_segment_size,omitempty"`
-	InnodbLogWaits *string `json:"Innodb_log_waits,omitempty"`
-	InnodbLogWriteRequests *string `json:"Innodb_log_write_requests,omitempty"`
-	InnodbLogWrites *string `json:"Innodb_log_writes,omitempty"`
-	InnodbLsnCurrent *string `json:"Innodb_lsn_current,omitempty"`
-	InnodbLsnFlushed *string `json:"Innodb_lsn_flushed,omitempty"`
-	InnodbLsnLastCheckpoint *string `json:"Innodb_lsn_last_checkpoint,omitempty"`
-	InnodbMasterThreadActiveLoops *string `json:"Innodb_master_thread_active_loops,omitempty"`
-	InnodbMasterThreadIdleLoops *string `json:"Innodb_master_thread_idle_loops,omitempty"`
-	InnodbMaxTrxId *string `json:"Innodb_max_trx_id,omitempty"`
-	InnodbMemAdaptiveHash *string `json:"Innodb_mem_adaptive_hash,omitempty"`
-	InnodbMemDictionary *string `json:"Innodb_mem_dictionary,omitempty"`
-	InnodbOldestViewLowLimitTrxId *string `json:"Innodb_oldest_view_low_limit_trx_id,omitempty"`
-	InnodbOsLogFsyncs *string `json:"Innodb_os_log_fsyncs,omitempty"`
-	InnodbOsLogPendingFsyncs *string `json:"Innodb_os_log_pending_fsyncs,omitempty"`
-	InnodbOsLogPendingWrites *string `json:"Innodb_os_log_pending_writes,omitempty"`
-	InnodbOsLogWritten *string `json:"Innodb_os_log_written,omitempty"`
-	InnodbPageSize *string `json:"Innodb_page_size,omitempty"`
-	InnodbPagesCreated *string `json:"Innodb_pages_created,omitempty"`
-	InnodbPagesRead *string `json:"Innodb_pages_read,omitempty"`
-	InnodbPages0Read *string `json:"Innodb_pages0_read,omitempty"`
-	InnodbPagesWritten *string `json:"Innodb_pages_written,omitempty"`
-	InnodbPurgeTrxId *string `json:"Innodb_purge_trx_id,omitempty"`
-	InnodbPurgeUndoNo *string `json:"Innodb_purge_undo_no,omitempty"`
-	InnodbRowLockCurrentWaits *string `json:"Innodb_row_lock_current_waits,omitempty"`
-	InnodbRowLockTime *string `json:"Innodb_row_lock_time,omitempty"`
-	InnodbRowLockTimeAvg *string `json:"Innodb_row_lock_time_avg,omitempty"`
-	InnodbRowLockTimeMax *string `json:"Innodb_row_lock_time_max,omitempty"`
-	InnodbRowLockWaits *string `json:"Innodb_row_lock_waits,omitempty"`
-	InnodbRowsDeleted *string `json:"Innodb_rows_deleted,omitempty"`
-	InnodbRowsInserted *string `json:"Innodb_rows_inserted,omitempty"`
-	InnodbRowsRead *string `json:"Innodb_rows_read,omitempty"`
-	InnodbRowsUpdated *string `json:"Innodb_rows_updated,omitempty"`
-	InnodbNumOpenFiles *string `json:"Innodb_num_open_files,omitempty"`
-	InnodbTruncatedStatusWrites *string `json:"Innodb_truncated_status_writes,omitempty"`
-	InnodbAvailableUndoLogs *string `json:"Innodb_available_undo_logs,omitempty"`
-	InnodbSecondaryIndexTriggeredClusterReads *string `json:"Innodb_secondary_index_triggered_cluster_reads,omitempty"`
-	InnodbSecondaryIndexTriggeredClusterReadsAvoided *string `json:"Innodb_secondary_index_triggered_cluster_reads_avoided,omitempty"`
-	InnodbBufferedAioSubmitted *string `json:"Innodb_buffered_aio_submitted,omitempty"`
-	InnodbScanPagesContiguous *string `json:"Innodb_scan_pages_contiguous,omitempty"`
-	InnodbScanPagesDisjointed *string `json:"Innodb_scan_pages_disjointed,omitempty"`
-	InnodbScanPagesTotalSeekDistance *string `json:"Innodb_scan_pages_total_seek_distance,omitempty"`
-	InnodbScanDataSize *string `json:"Innodb_scan_data_size,omitempty"`
-	InnodbScanDeletedRecsSize *string `json:"Innodb_scan_deleted_recs_size,omitempty"`
-	InnodbScrubBackgroundPageReorganizations *string `json:"Innodb_scrub_background_page_reorganizations,omitempty"`
-	InnodbScrubBackgroundPageSplits *string `json:"Innodb_scrub_background_page_splits,omitempty"`
-	InnodbScrubBackgroundPageSplitFailuresUnderflow *string `json:"Innodb_scrub_background_page_split_failures_underflow,omitempty"`
-	InnodbScrubBackgroundPageSplitFailuresOutOfFilespace *string `json:"Innodb_scrub_background_page_split_failures_out_of_filespace,omitempty"`
-	InnodbScrubBackgroundPageSplitFailuresMissingIndex *string `json:"Innodb_scrub_background_page_split_failures_missing_index,omitempty"`
-	InnodbScrubBackgroundPageSplitFailuresUnknown *string `json:"Innodb_scrub_background_page_split_failures_unknown,omitempty"`
-	InnodbScrubLog *string `json:"Innodb_scrub_log,omitempty"`
-	InnodbEncryptionRotationPagesReadFromCache *string `json:"Innodb_encryption_rotation_pages_read_from_cache,omitempty"`
-	InnodbEncryptionRotationPagesReadFromDisk *string `json:"Innodb_encryption_rotation_pages_read_from_disk,omitempty"`
-	InnodbEncryptionRotationPagesModified *string `json:"Innodb_encryption_rotation_pages_modified,omitempty"`
-	InnodbEncryptionRotationPagesFlushed *string `json:"Innodb_encryption_rotation_pages_flushed,omitempty"`
-	InnodbEncryptionRotationEstimatedIops *string `json:"Innodb_encryption_rotation_estimated_iops,omitempty"`
-	InnodbEncryptionKeyRotationListLength *string `json:"Innodb_encryption_key_rotation_list_length,omitempty"`
-	InnodbEncryptionNMergeBlocksEncrypted *string `json:"Innodb_encryption_n_merge_blocks_encrypted,omitempty"`
-	InnodbEncryptionNMergeBlocksDecrypted *string `json:"Innodb_encryption_n_merge_blocks_decrypted,omitempty"`
-	InnodbEncryptionNRowlogBlocksEncrypted *string `json:"Innodb_encryption_n_rowlog_blocks_encrypted,omitempty"`
-	InnodbEncryptionNRowlogBlocksDecrypted *string `json:"Innodb_encryption_n_rowlog_blocks_decrypted,omitempty"`
-	InnodbNumPagesEncrypted *string `json:"Innodb_num_pages_encrypted,omitempty"`
-	InnodbNumPagesDecrypted *string `json:"Innodb_num_pages_decrypted,omitempty"`
-	InnodbEncryptionRedoKeyVersion *string `json:"Innodb_encryption_redo_key_version,omitempty"`
-	KeyBlocksNotFlushed *string `json:"Key_blocks_not_flushed,omitempty"`
-	KeyBlocksUnused *string `json:"Key_blocks_unused,omitempty"`
-	KeyBlocksUsed *string `json:"Key_blocks_used,omitempty"`
-	KeyReadRequests *string `json:"Key_read_requests,omitempty"`
-	KeyReads *string `json:"Key_reads,omitempty"`
-	KeyWriteRequests *string `json:"Key_write_requests,omitempty"`
-	KeyWrites *string `json:"Key_writes,omitempty"`
-	LastQueryCost *string `json:"Last_query_cost,omitempty"`
-	LastQueryPartialPlans *string `json:"Last_query_partial_plans,omitempty"`
-	LockedConnects *string `json:"Locked_connects,omitempty"`
-	MaxExecutionTimeExceeded *string `json:"Max_execution_time_exceeded,omitempty"`
-	MaxExecutionTimeSet *string `json:"Max_execution_time_set,omitempty"`
-	MaxExecutionTimeSetFailed *string `json:"Max_execution_time_set_failed,omitempty"`
-	MaxUsedConnections *string `json:"Max_used_connections,omitempty"`
-	MaxUsedConnectionsTime *string `json:"Max_used_connections_time,omitempty"`
-	NotFlushedDelayedRows *string `json:"Not_flushed_delayed_rows,omitempty"`
-	OngoingAnonymousTransactionCount *string `json:"Ongoing_anonymous_transaction_count,omitempty"`
-	OpenFiles *string `json:"Open_files,omitempty"`
-	OpenStreams *string `json:"Open_streams,omitempty"`
-	OpenTableDefinitions *string `json:"Open_table_definitions,omitempty"`
-	OpenTables *string `json:"Open_tables,omitempty"`
-	OpenedFiles *string `json:"Opened_files,omitempty"`
-	OpenedTableDefinitions *string `json:"Opened_table_definitions,omitempty"`
-	OpenedTables *string `json:"Opened_tables,omitempty"`
-	PerformanceSchemaAccountsLost *string `json:"Performance_schema_accounts_lost,omitempty"`
-	PerformanceSchemaCondClassesLost *string `json:"Performance_schema_cond_classes_lost,omitempty"`
-	PerformanceSchemaCondInstancesLost *string `json:"Performance_schema_cond_instances_lost,omitempty"`
-	PerformanceSchemaDigestLost *string `json:"Performance_schema_digest_lost,omitempty"`
-	PerformanceSchemaFileClassesLost *string `json:"Performance_schema_file_classes_lost,omitempty"`
-	PerformanceSchemaFileHandlesLost *string `json:"Performance_schema_file_handles_lost,omitempty"`
-	PerformanceSchemaFileInstancesLost *string `json:"Performance_schema_file_instances_lost,omitempty"`
-	PerformanceSchemaHostsLost *string `json:"Performance_schema_hosts_lost,omitempty"`
-	PerformanceSchemaIndexStatLost *string `json:"Performance_schema_index_stat_lost,omitempty"`
-	PerformanceSchemaLockerLost *string `json:"Performance_schema_locker_lost,omitempty"`
-	PerformanceSchemaMemoryClassesLost *string `json:"Performance_schema_memory_classes_lost,omitempty"`
-	PerformanceSchemaMetadataLockLost *string `json:"Performance_schema_metadata_lock_lost,omitempty"`
-	PerformanceSchemaMutexClassesLost *string `json:"Performance_schema_mutex_classes_lost,omitempty"`
-	PerformanceSchemaMutexInstancesLost *string `json:"Performance_schema_mutex_instances_lost,omitempty"`
-	PerformanceSchemaNestedStatementLost *string `json:"Performance_schema_nested_statement_lost,omitempty"`
-	PerformanceSchemaPreparedStatementsLost *string `json:"Performance_schema_prepared_statements_lost,omitempty"`
-	PerformanceSchemaProgramLost *string `json:"Performance_schema_program_lost,omitempty"`
-	PerformanceSchemaRwlockClassesLost *string `json:"Performance_schema_rwlock_classes_lost,omitempty"`
-	PerformanceSchemaRwlockInstancesLost *string `json:"Performance_schema_rwlock_instances_lost,omitempty"`
-	PerformanceSchemaSessionConnectAttrsLost *string `json:"Performance_schema_session_connect_attrs_lost,omitempty"`
-	PerformanceSchemaSocketClassesLost *string `json:"Performance_schema_socket_classes_lost,omitempty"`
-	PerformanceSchemaSocketInstancesLost *string `json:"Performance_schema_socket_instances_lost,omitempty"`
-	PerformanceSchemaStageClassesLost *string `json:"Performance_schema_stage_classes_lost,omitempty"`
-	PerformanceSchemaStatementClassesLost *string `json:"Performance_schema_statement_classes_lost,omitempty"`
-	PerformanceSchemaTableHandlesLost *string `json:"Performance_schema_table_handles_lost,omitempty"`
-	PerformanceSchemaTableInstancesLost *string `json:"Performance_schema_table_instances_lost,omitempty"`
-	PerformanceSchemaTableLockStatLost *string `json:"Performance_schema_table_lock_stat_lost,omitempty"`
-	PerformanceSchemaThreadClassesLost *string `json:"Performance_schema_thread_classes_lost,omitempty"`
-	PerformanceSchemaThreadInstancesLost *string `json:"Performance_schema_thread_instances_lost,omitempty"`
-	PerformanceSchemaUsersLost *string `json:"Performance_schema_users_lost,omitempty"`
-	PreparedStmtCount *string `json:"Prepared_stmt_count,omitempty"`
-	QcacheFreeBlocks *string `json:"Qcache_free_blocks,omitempty"`
-	QcacheFreeMemory *string `json:"Qcache_free_memory,omitempty"`
-	QcacheHits *string `json:"Qcache_hits,omitempty"`
-	QcacheInserts *string `json:"Qcache_inserts,omitempty"`
-	QcacheLowmemPrunes *string `json:"Qcache_lowmem_prunes,omitempty"`
-	QcacheNotCached *string `json:"Qcache_not_cached,omitempty"`
-	QcacheQueriesInCache *string `json:"Qcache_queries_in_cache,omitempty"`
-	QcacheTotalBlocks *string `json:"Qcache_total_blocks,omitempty"`
-	Queries *string `json:"Queries,omitempty"`
-	Questions *string `json:"Questions,omitempty"`
-	RsaPublicKey *string `json:"Rsa_public_key,omitempty"`
-	SelectFullJoin *string `json:"Select_full_join,omitempty"`
-	SelectFullRangeJoin *string `json:"Select_full_range_join,omitempty"`
-	SelectRange *string `json:"Select_range,omitempty"`
-	SelectRangeCheck *string `json:"Select_range_check,omitempty"`
-	SelectScan *string `json:"Select_scan,omitempty"`
-	SlaveOpenTempTables *string `json:"Slave_open_temp_tables,omitempty"`
-	SlowLaunchThreads *string `json:"Slow_launch_threads,omitempty"`
-	SlowQueries *string `json:"Slow_queries,omitempty"`
-	SortMergePasses *string `json:"Sort_merge_passes,omitempty"`
-	SortRange *string `json:"Sort_range,omitempty"`
-	SortRows *string `json:"Sort_rows,omitempty"`
-	SortScan *string `json:"Sort_scan,omitempty"`
-	SslAcceptRenegotiates *string `json:"Ssl_accept_renegotiates,omitempty"`
-	SslAccepts *string `json:"Ssl_accepts,omitempty"`
-	SslCallbackCacheHits *string `json:"Ssl_callback_cache_hits,omitempty"`
-	SslCipher *string `json:"Ssl_cipher,omitempty"`
-	SslCipherList *string `json:"Ssl_cipher_list,omitempty"`
-	SslClientConnects *string `json:"Ssl_client_connects,omitempty"`
-	SslConnectRenegotiates *string `json:"Ssl_connect_renegotiates,omitempty"`
-	SslCtxVerifyDepth *string `json:"Ssl_ctx_verify_depth,omitempty"`
-	SslCtxVerifyMode *string `json:"Ssl_ctx_verify_mode,omitempty"`
-	SslDefaultTimeout *string `json:"Ssl_default_timeout,omitempty"`
-	SslFinishedAccepts *string `json:"Ssl_finished_accepts,omitempty"`
-	SslFinishedConnects *string `json:"Ssl_finished_connects,omitempty"`
-	SslServerNotAfter *string `json:"Ssl_server_not_after,omitempty"`
-	SslServerNotBefore *string `json:"Ssl_server_not_before,omitempty"`
-	SslSessionCacheHits *string `json:"Ssl_session_cache_hits,omitempty"`
-	SslSessionCacheMisses *string `json:"Ssl_session_cache_misses,omitempty"`
-	SslSessionCacheMode *string `json:"Ssl_session_cache_mode,omitempty"`
-	SslSessionCacheOverflows *string `json:"Ssl_session_cache_overflows,omitempty"`
-	SslSessionCacheSize *string `json:"Ssl_session_cache_size,omitempty"`
-	SslSessionCacheTimeouts *string `json:"Ssl_session_cache_timeouts,omitempty"`
-	SslSessionsReused *string `json:"Ssl_sessions_reused,omitempty"`
-	SslUsedSessionCacheEntries *string `json:"Ssl_used_session_cache_entries,omitempty"`
-	SslVerifyDepth *string `json:"Ssl_verify_depth,omitempty"`
-	SslVerifyMode *string `json:"Ssl_verify_mode,omitempty"`
-	SslVersion *string `json:"Ssl_version,omitempty"`
-	TableLocksImmediate *string `json:"Table_locks_immediate,omitempty"`
-	TableLocksWaited *string `json:"Table_locks_waited,omitempty"`
-	TableOpenCacheHits *string `json:"Table_open_cache_hits,omitempty"`
-	TableOpenCacheMisses *string `json:"Table_open_cache_misses,omitempty"`
-	TableOpenCacheOverflows *string `json:"Table_open_cache_overflows,omitempty"`
-	TcLogMaxPagesUsed *string `json:"Tc_log_max_pages_used,omitempty"`
-	TcLogPageSize *string `json:"Tc_log_page_size,omitempty"`
-	TcLogPageWaits *string `json:"Tc_log_page_waits,omitempty"`
-	ThreadpoolIdleThreads *string `json:"Threadpool_idle_threads,omitempty"`
-	ThreadpoolThreads *string `json:"Threadpool_threads,omitempty"`
-	ThreadsCached *string `json:"Threads_cached,omitempty"`
-	ThreadsConnected *string `json:"Threads_connected,omitempty"`
-	ThreadsCreated *string `json:"Threads_created,omitempty"`
-	ThreadsRunning *string `json:"Threads_running,omitempty"`
-	Uptime *string `json:"Uptime,omitempty"`
-	UptimeSinceFlushStatus *string `json:"Uptime_since_flush_status,omitempty"`
-	WsrepLocalStateUuid *string `json:"wsrep_local_state_uuid,omitempty"`
-	WsrepProtocolVersion *string `json:"wsrep_protocol_version,omitempty"`
-	WsrepLastApplied *string `json:"wsrep_last_applied,omitempty"`
-	WsrepLastCommitted *string `json:"wsrep_last_committed,omitempty"`
-	WsrepReplicated *string `json:"wsrep_replicated,omitempty"`
-	WsrepReplicatedBytes *string `json:"wsrep_replicated_bytes,omitempty"`
-	WsrepReplKeys *string `json:"wsrep_repl_keys,omitempty"`
-	WsrepReplKeysBytes *string `json:"wsrep_repl_keys_bytes,omitempty"`
-	WsrepReplDataBytes *string `json:"wsrep_repl_data_bytes,omitempty"`
-	WsrepReplOtherBytes *string `json:"wsrep_repl_other_bytes,omitempty"`
-	WsrepReceived *string `json:"wsrep_received,omitempty"`
-	WsrepReceivedBytes *string `json:"wsrep_received_bytes,omitempty"`
-	WsrepLocalCommits *string `json:"wsrep_local_commits,omitempty"`
-	WsrepLocalCertFailures *string `json:"wsrep_local_cert_failures,omitempty"`
-	WsrepLocalReplays *string `json:"wsrep_local_replays,omitempty"`
-	WsrepLocalSendQueue *string `json:"wsrep_local_send_queue,omitempty"`
-	WsrepLocalSendQueueMax *string `json:"wsrep_local_send_queue_max,omitempty"`
-	WsrepLocalSendQueueMin *string `json:"wsrep_local_send_queue_min,omitempty"`
-	WsrepLocalSendQueueAvg *string `json:"wsrep_local_send_queue_avg,omitempty"`
-	WsrepLocalRecvQueue *string `json:"wsrep_local_recv_queue,omitempty"`
-	WsrepLocalRecvQueueMax *string `json:"wsrep_local_recv_queue_max,omitempty"`
-	WsrepLocalRecvQueueMin *string `json:"wsrep_local_recv_queue_min,omitempty"`
-	WsrepLocalRecvQueueAvg *string `json:"wsrep_local_recv_queue_avg,omitempty"`
-	WsrepLocalCachedDownto *string `json:"wsrep_local_cached_downto,omitempty"`
-	WsrepFlowControlPausedNs *string `json:"wsrep_flow_control_paused_ns,omitempty"`
-	WsrepFlowControlPaused *string `json:"wsrep_flow_control_paused,omitempty"`
-	WsrepFlowControlSent *string `json:"wsrep_flow_control_sent,omitempty"`
-	WsrepFlowControlRecv *string `json:"wsrep_flow_control_recv,omitempty"`
-	WsrepFlowControlInterval *string `json:"wsrep_flow_control_interval,omitempty"`
-	WsrepFlowControlIntervalLow *string `json:"wsrep_flow_control_interval_low,omitempty"`
-	WsrepFlowControlIntervalHigh *string `json:"wsrep_flow_control_interval_high,omitempty"`
-	WsrepFlowControlStatus *string `json:"wsrep_flow_control_status,omitempty"`
-	WsrepFlowControlActive *string `json:"wsrep_flow_control_active,omitempty"`
-	WsrepFlowControlRequested *string `json:"wsrep_flow_control_requested,omitempty"`
-	WsrepCertDepsDistance *string `json:"wsrep_cert_deps_distance,omitempty"`
-	WsrepApplyOooe *string `json:"wsrep_apply_oooe,omitempty"`
-	WsrepApplyOool *string `json:"wsrep_apply_oool,omitempty"`
-	WsrepApplyWindow *string `json:"wsrep_apply_window,omitempty"`
-	WsrepCommitOooe *string `json:"wsrep_commit_oooe,omitempty"`
-	WsrepCommitOool *string `json:"wsrep_commit_oool,omitempty"`
-	WsrepCommitWindow *string `json:"wsrep_commit_window,omitempty"`
-	WsrepLocalState *string `json:"wsrep_local_state,omitempty"`
-	WsrepLocalStateComment *string `json:"wsrep_local_state_comment,omitempty"`
-	WsrepCertIndexSize *string `json:"wsrep_cert_index_size,omitempty"`
-	WsrepCertBucketCount *string `json:"wsrep_cert_bucket_count,omitempty"`
-	WsrepGcachePoolSize *string `json:"wsrep_gcache_pool_size,omitempty"`
-	WsrepCausalReads *string `json:"wsrep_causal_reads,omitempty"`
-	WsrepCertInterval *string `json:"wsrep_cert_interval,omitempty"`
-	WsrepOpenTransactions *string `json:"wsrep_open_transactions,omitempty"`
-	WsrepOpenConnections *string `json:"wsrep_open_connections,omitempty"`
-	WsrepIstReceiveStatus *string `json:"wsrep_ist_receive_status,omitempty"`
-	WsrepIstReceiveSeqnoStart *string `json:"wsrep_ist_receive_seqno_start,omitempty"`
-	WsrepIstReceiveSeqnoCurrent *string `json:"wsrep_ist_receive_seqno_current,omitempty"`
-	WsrepIstReceiveSeqnoEnd *string `json:"wsrep_ist_receive_seqno_end,omitempty"`
-	WsrepIncomingAddresses *string `json:"wsrep_incoming_addresses,omitempty"`
-	WsrepClusterWeight *string `json:"wsrep_cluster_weight,omitempty"`
-	WsrepDesyncCount *string `json:"wsrep_desync_count,omitempty"`
-	WsrepEvsDelayed *string `json:"wsrep_evs_delayed,omitempty"`
-	WsrepEvsEvictList *string `json:"wsrep_evs_evict_list,omitempty"`
-	WsrepEvsReplLatency *string `json:"wsrep_evs_repl_latency,omitempty"`
-	WsrepEvsState *string `json:"wsrep_evs_state,omitempty"`
-	WsrepGcommUuid *string `json:"wsrep_gcomm_uuid,omitempty"`
-	WsrepGmcastSegment *string `json:"wsrep_gmcast_segment,omitempty"`
-	WsrepClusterConfId *string `json:"wsrep_cluster_conf_id,omitempty"`
-	WsrepClusterSize *string `json:"wsrep_cluster_size,omitempty"`
-	WsrepClusterStateUuid *string `json:"wsrep_cluster_state_uuid,omitempty"`
-	WsrepClusterStatus *string `json:"wsrep_cluster_status,omitempty"`
-	WsrepConnected *string `json:"wsrep_connected,omitempty"`
-	WsrepLocalBfAborts *string `json:"wsrep_local_bf_aborts,omitempty"`
-	WsrepLocalIndex *string `json:"wsrep_local_index,omitempty"`
-	WsrepProviderName *string `json:"wsrep_provider_name,omitempty"`
-	WsrepProviderVendor *string `json:"wsrep_provider_vendor,omitempty"`
-	WsrepProviderVersion *string `json:"wsrep_provider_version,omitempty"`
-	WsrepReady *string `json:"wsrep_ready,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AbortedClients                                       *string                `json:"Aborted_clients,omitempty"`
+	AbortedConnects                                      *string                `json:"Aborted_connects,omitempty"`
+	BinlogSnapshotFile                                   *string                `json:"Binlog_snapshot_file,omitempty"`
+	BinlogSnapshotPosition                               *string                `json:"Binlog_snapshot_position,omitempty"`
+	BinlogCacheDiskUse                                   *string                `json:"Binlog_cache_disk_use,omitempty"`
+	BinlogCacheUse                                       *string                `json:"Binlog_cache_use,omitempty"`
+	BinlogSnapshotGtidExecuted                           *string                `json:"Binlog_snapshot_gtid_executed,omitempty"`
+	BinlogStmtCacheDiskUse                               *string                `json:"Binlog_stmt_cache_disk_use,omitempty"`
+	BinlogStmtCacheUse                                   *string                `json:"Binlog_stmt_cache_use,omitempty"`
+	BytesReceived                                        *string                `json:"Bytes_received,omitempty"`
+	BytesSent                                            *string                `json:"Bytes_sent,omitempty"`
+	ComAdminCommands                                     *string                `json:"Com_admin_commands,omitempty"`
+	ComAssignToKeycache                                  *string                `json:"Com_assign_to_keycache,omitempty"`
+	ComAlterDb                                           *string                `json:"Com_alter_db,omitempty"`
+	ComAlterDbUpgrade                                    *string                `json:"Com_alter_db_upgrade,omitempty"`
+	ComAlterEvent                                        *string                `json:"Com_alter_event,omitempty"`
+	ComAlterFunction                                     *string                `json:"Com_alter_function,omitempty"`
+	ComAlterInstance                                     *string                `json:"Com_alter_instance,omitempty"`
+	ComAlterProcedure                                    *string                `json:"Com_alter_procedure,omitempty"`
+	ComAlterServer                                       *string                `json:"Com_alter_server,omitempty"`
+	ComAlterTable                                        *string                `json:"Com_alter_table,omitempty"`
+	ComAlterTablespace                                   *string                `json:"Com_alter_tablespace,omitempty"`
+	ComAlterUser                                         *string                `json:"Com_alter_user,omitempty"`
+	ComAnalyze                                           *string                `json:"Com_analyze,omitempty"`
+	ComBegin                                             *string                `json:"Com_begin,omitempty"`
+	ComBinlog                                            *string                `json:"Com_binlog,omitempty"`
+	ComCallProcedure                                     *string                `json:"Com_call_procedure,omitempty"`
+	ComChangeDb                                          *string                `json:"Com_change_db,omitempty"`
+	ComChangeMaster                                      *string                `json:"Com_change_master,omitempty"`
+	ComChangeReplFilter                                  *string                `json:"Com_change_repl_filter,omitempty"`
+	ComCheck                                             *string                `json:"Com_check,omitempty"`
+	ComChecksum                                          *string                `json:"Com_checksum,omitempty"`
+	ComCommit                                            *string                `json:"Com_commit,omitempty"`
+	ComCreateCompressionDictionary                       *string                `json:"Com_create_compression_dictionary,omitempty"`
+	ComCreateDb                                          *string                `json:"Com_create_db,omitempty"`
+	ComCreateEvent                                       *string                `json:"Com_create_event,omitempty"`
+	ComCreateFunction                                    *string                `json:"Com_create_function,omitempty"`
+	ComCreateIndex                                       *string                `json:"Com_create_index,omitempty"`
+	ComCreateProcedure                                   *string                `json:"Com_create_procedure,omitempty"`
+	ComCreateServer                                      *string                `json:"Com_create_server,omitempty"`
+	ComCreateTable                                       *string                `json:"Com_create_table,omitempty"`
+	ComCreateTrigger                                     *string                `json:"Com_create_trigger,omitempty"`
+	ComCreateUdf                                         *string                `json:"Com_create_udf,omitempty"`
+	ComCreateUser                                        *string                `json:"Com_create_user,omitempty"`
+	ComCreateView                                        *string                `json:"Com_create_view,omitempty"`
+	ComDeallocSql                                        *string                `json:"Com_dealloc_sql,omitempty"`
+	ComDelete                                            *string                `json:"Com_delete,omitempty"`
+	ComDeleteMulti                                       *string                `json:"Com_delete_multi,omitempty"`
+	ComDo                                                *string                `json:"Com_do,omitempty"`
+	ComDropCompressionDictionary                         *string                `json:"Com_drop_compression_dictionary,omitempty"`
+	ComDropDb                                            *string                `json:"Com_drop_db,omitempty"`
+	ComDropEvent                                         *string                `json:"Com_drop_event,omitempty"`
+	ComDropFunction                                      *string                `json:"Com_drop_function,omitempty"`
+	ComDropIndex                                         *string                `json:"Com_drop_index,omitempty"`
+	ComDropProcedure                                     *string                `json:"Com_drop_procedure,omitempty"`
+	ComDropServer                                        *string                `json:"Com_drop_server,omitempty"`
+	ComDropTable                                         *string                `json:"Com_drop_table,omitempty"`
+	ComDropTrigger                                       *string                `json:"Com_drop_trigger,omitempty"`
+	ComDropUser                                          *string                `json:"Com_drop_user,omitempty"`
+	ComDropView                                          *string                `json:"Com_drop_view,omitempty"`
+	ComEmptyQuery                                        *string                `json:"Com_empty_query,omitempty"`
+	ComExecuteSql                                        *string                `json:"Com_execute_sql,omitempty"`
+	ComExplainOther                                      *string                `json:"Com_explain_other,omitempty"`
+	ComFlush                                             *string                `json:"Com_flush,omitempty"`
+	ComGetDiagnostics                                    *string                `json:"Com_get_diagnostics,omitempty"`
+	ComGrant                                             *string                `json:"Com_grant,omitempty"`
+	ComHaClose                                           *string                `json:"Com_ha_close,omitempty"`
+	ComHaOpen                                            *string                `json:"Com_ha_open,omitempty"`
+	ComHaRead                                            *string                `json:"Com_ha_read,omitempty"`
+	ComHelp                                              *string                `json:"Com_help,omitempty"`
+	ComInsert                                            *string                `json:"Com_insert,omitempty"`
+	ComInsertSelect                                      *string                `json:"Com_insert_select,omitempty"`
+	ComInstallPlugin                                     *string                `json:"Com_install_plugin,omitempty"`
+	ComKill                                              *string                `json:"Com_kill,omitempty"`
+	ComLoad                                              *string                `json:"Com_load,omitempty"`
+	ComLockTables                                        *string                `json:"Com_lock_tables,omitempty"`
+	ComLockTablesForBackup                               *string                `json:"Com_lock_tables_for_backup,omitempty"`
+	ComLockBinlogForBackup                               *string                `json:"Com_lock_binlog_for_backup,omitempty"`
+	ComOptimize                                          *string                `json:"Com_optimize,omitempty"`
+	ComPreloadKeys                                       *string                `json:"Com_preload_keys,omitempty"`
+	ComPrepareSql                                        *string                `json:"Com_prepare_sql,omitempty"`
+	ComPurge                                             *string                `json:"Com_purge,omitempty"`
+	ComPurgeBeforeDate                                   *string                `json:"Com_purge_before_date,omitempty"`
+	ComReleaseSavepoint                                  *string                `json:"Com_release_savepoint,omitempty"`
+	ComRenameTable                                       *string                `json:"Com_rename_table,omitempty"`
+	ComRenameUser                                        *string                `json:"Com_rename_user,omitempty"`
+	ComRepair                                            *string                `json:"Com_repair,omitempty"`
+	ComReplace                                           *string                `json:"Com_replace,omitempty"`
+	ComReplaceSelect                                     *string                `json:"Com_replace_select,omitempty"`
+	ComReset                                             *string                `json:"Com_reset,omitempty"`
+	ComResignal                                          *string                `json:"Com_resignal,omitempty"`
+	ComRevoke                                            *string                `json:"Com_revoke,omitempty"`
+	ComRevokeAll                                         *string                `json:"Com_revoke_all,omitempty"`
+	ComRollback                                          *string                `json:"Com_rollback,omitempty"`
+	ComRollbackToSavepoint                               *string                `json:"Com_rollback_to_savepoint,omitempty"`
+	ComSavepoint                                         *string                `json:"Com_savepoint,omitempty"`
+	ComSelect                                            *string                `json:"Com_select,omitempty"`
+	ComSetOption                                         *string                `json:"Com_set_option,omitempty"`
+	ComSignal                                            *string                `json:"Com_signal,omitempty"`
+	ComShowBinlogEvents                                  *string                `json:"Com_show_binlog_events,omitempty"`
+	ComShowBinlogs                                       *string                `json:"Com_show_binlogs,omitempty"`
+	ComShowCharsets                                      *string                `json:"Com_show_charsets,omitempty"`
+	ComShowClientStatistics                              *string                `json:"Com_show_client_statistics,omitempty"`
+	ComShowCollations                                    *string                `json:"Com_show_collations,omitempty"`
+	ComShowCreateDb                                      *string                `json:"Com_show_create_db,omitempty"`
+	ComShowCreateEvent                                   *string                `json:"Com_show_create_event,omitempty"`
+	ComShowCreateFunc                                    *string                `json:"Com_show_create_func,omitempty"`
+	ComShowCreateProc                                    *string                `json:"Com_show_create_proc,omitempty"`
+	ComShowCreateTable                                   *string                `json:"Com_show_create_table,omitempty"`
+	ComShowCreateTrigger                                 *string                `json:"Com_show_create_trigger,omitempty"`
+	ComShowDatabases                                     *string                `json:"Com_show_databases,omitempty"`
+	ComShowEngineLogs                                    *string                `json:"Com_show_engine_logs,omitempty"`
+	ComShowEngineMutex                                   *string                `json:"Com_show_engine_mutex,omitempty"`
+	ComShowEngineStatus                                  *string                `json:"Com_show_engine_status,omitempty"`
+	ComShowEvents                                        *string                `json:"Com_show_events,omitempty"`
+	ComShowErrors                                        *string                `json:"Com_show_errors,omitempty"`
+	ComShowFields                                        *string                `json:"Com_show_fields,omitempty"`
+	ComShowFunctionCode                                  *string                `json:"Com_show_function_code,omitempty"`
+	ComShowFunctionStatus                                *string                `json:"Com_show_function_status,omitempty"`
+	ComShowGrants                                        *string                `json:"Com_show_grants,omitempty"`
+	ComShowIndexStatistics                               *string                `json:"Com_show_index_statistics,omitempty"`
+	ComShowKeys                                          *string                `json:"Com_show_keys,omitempty"`
+	ComShowMasterStatus                                  *string                `json:"Com_show_master_status,omitempty"`
+	ComShowOpenTables                                    *string                `json:"Com_show_open_tables,omitempty"`
+	ComShowPlugins                                       *string                `json:"Com_show_plugins,omitempty"`
+	ComShowPrivileges                                    *string                `json:"Com_show_privileges,omitempty"`
+	ComShowProcedureCode                                 *string                `json:"Com_show_procedure_code,omitempty"`
+	ComShowProcedureStatus                               *string                `json:"Com_show_procedure_status,omitempty"`
+	ComShowProcesslist                                   *string                `json:"Com_show_processlist,omitempty"`
+	ComShowProfile                                       *string                `json:"Com_show_profile,omitempty"`
+	ComShowProfiles                                      *string                `json:"Com_show_profiles,omitempty"`
+	ComShowRelaylogEvents                                *string                `json:"Com_show_relaylog_events,omitempty"`
+	ComShowSlaveHosts                                    *string                `json:"Com_show_slave_hosts,omitempty"`
+	ComShowSlaveStatus                                   *string                `json:"Com_show_slave_status,omitempty"`
+	ComShowStatus                                        *string                `json:"Com_show_status,omitempty"`
+	ComShowStorageEngines                                *string                `json:"Com_show_storage_engines,omitempty"`
+	ComShowTableStatistics                               *string                `json:"Com_show_table_statistics,omitempty"`
+	ComShowTableStatus                                   *string                `json:"Com_show_table_status,omitempty"`
+	ComShowTables                                        *string                `json:"Com_show_tables,omitempty"`
+	ComShowThreadStatistics                              *string                `json:"Com_show_thread_statistics,omitempty"`
+	ComShowTriggers                                      *string                `json:"Com_show_triggers,omitempty"`
+	ComShowUserStatistics                                *string                `json:"Com_show_user_statistics,omitempty"`
+	ComShowVariables                                     *string                `json:"Com_show_variables,omitempty"`
+	ComShowWarnings                                      *string                `json:"Com_show_warnings,omitempty"`
+	ComShowCreateUser                                    *string                `json:"Com_show_create_user,omitempty"`
+	ComShutdown                                          *string                `json:"Com_shutdown,omitempty"`
+	ComSlaveStart                                        *string                `json:"Com_slave_start,omitempty"`
+	ComSlaveStop                                         *string                `json:"Com_slave_stop,omitempty"`
+	ComGroupReplicationStart                             *string                `json:"Com_group_replication_start,omitempty"`
+	ComGroupReplicationStop                              *string                `json:"Com_group_replication_stop,omitempty"`
+	ComStmtExecute                                       *string                `json:"Com_stmt_execute,omitempty"`
+	ComStmtClose                                         *string                `json:"Com_stmt_close,omitempty"`
+	ComStmtFetch                                         *string                `json:"Com_stmt_fetch,omitempty"`
+	ComStmtPrepare                                       *string                `json:"Com_stmt_prepare,omitempty"`
+	ComStmtReset                                         *string                `json:"Com_stmt_reset,omitempty"`
+	ComStmtSendLongData                                  *string                `json:"Com_stmt_send_long_data,omitempty"`
+	ComTruncate                                          *string                `json:"Com_truncate,omitempty"`
+	ComUninstallPlugin                                   *string                `json:"Com_uninstall_plugin,omitempty"`
+	ComUnlockBinlog                                      *string                `json:"Com_unlock_binlog,omitempty"`
+	ComUnlockTables                                      *string                `json:"Com_unlock_tables,omitempty"`
+	ComUpdate                                            *string                `json:"Com_update,omitempty"`
+	ComUpdateMulti                                       *string                `json:"Com_update_multi,omitempty"`
+	ComXaCommit                                          *string                `json:"Com_xa_commit,omitempty"`
+	ComXaEnd                                             *string                `json:"Com_xa_end,omitempty"`
+	ComXaPrepare                                         *string                `json:"Com_xa_prepare,omitempty"`
+	ComXaRecover                                         *string                `json:"Com_xa_recover,omitempty"`
+	ComXaRollback                                        *string                `json:"Com_xa_rollback,omitempty"`
+	ComXaStart                                           *string                `json:"Com_xa_start,omitempty"`
+	ComStmtReprepare                                     *string                `json:"Com_stmt_reprepare,omitempty"`
+	Compression                                          *string                `json:"Compression,omitempty"`
+	ConnectionErrorsAccept                               *string                `json:"Connection_errors_accept,omitempty"`
+	ConnectionErrorsInternal                             *string                `json:"Connection_errors_internal,omitempty"`
+	ConnectionErrorsMaxConnections                       *string                `json:"Connection_errors_max_connections,omitempty"`
+	ConnectionErrorsPeerAddress                          *string                `json:"Connection_errors_peer_address,omitempty"`
+	ConnectionErrorsSelect                               *string                `json:"Connection_errors_select,omitempty"`
+	ConnectionErrorsTcpwrap                              *string                `json:"Connection_errors_tcpwrap,omitempty"`
+	Connections                                          *string                `json:"Connections,omitempty"`
+	CreatedTmpDiskTables                                 *string                `json:"Created_tmp_disk_tables,omitempty"`
+	CreatedTmpFiles                                      *string                `json:"Created_tmp_files,omitempty"`
+	CreatedTmpTables                                     *string                `json:"Created_tmp_tables,omitempty"`
+	DelayedErrors                                        *string                `json:"Delayed_errors,omitempty"`
+	DelayedInsertThreads                                 *string                `json:"Delayed_insert_threads,omitempty"`
+	DelayedWrites                                        *string                `json:"Delayed_writes,omitempty"`
+	FlushCommands                                        *string                `json:"Flush_commands,omitempty"`
+	HandlerCommit                                        *string                `json:"Handler_commit,omitempty"`
+	HandlerDelete                                        *string                `json:"Handler_delete,omitempty"`
+	HandlerDiscover                                      *string                `json:"Handler_discover,omitempty"`
+	HandlerExternalLock                                  *string                `json:"Handler_external_lock,omitempty"`
+	HandlerMrrInit                                       *string                `json:"Handler_mrr_init,omitempty"`
+	HandlerPrepare                                       *string                `json:"Handler_prepare,omitempty"`
+	HandlerReadFirst                                     *string                `json:"Handler_read_first,omitempty"`
+	HandlerReadKey                                       *string                `json:"Handler_read_key,omitempty"`
+	HandlerReadLast                                      *string                `json:"Handler_read_last,omitempty"`
+	HandlerReadNext                                      *string                `json:"Handler_read_next,omitempty"`
+	HandlerReadPrev                                      *string                `json:"Handler_read_prev,omitempty"`
+	HandlerReadRnd                                       *string                `json:"Handler_read_rnd,omitempty"`
+	HandlerReadRndNext                                   *string                `json:"Handler_read_rnd_next,omitempty"`
+	HandlerRollback                                      *string                `json:"Handler_rollback,omitempty"`
+	HandlerSavepoint                                     *string                `json:"Handler_savepoint,omitempty"`
+	HandlerSavepointRollback                             *string                `json:"Handler_savepoint_rollback,omitempty"`
+	HandlerUpdate                                        *string                `json:"Handler_update,omitempty"`
+	HandlerWrite                                         *string                `json:"Handler_write,omitempty"`
+	InnodbBackgroundLogSync                              *string                `json:"Innodb_background_log_sync,omitempty"`
+	InnodbBufferPoolDumpStatus                           *string                `json:"Innodb_buffer_pool_dump_status,omitempty"`
+	InnodbBufferPoolLoadStatus                           *string                `json:"Innodb_buffer_pool_load_status,omitempty"`
+	InnodbBufferPoolResizeStatus                         *string                `json:"Innodb_buffer_pool_resize_status,omitempty"`
+	InnodbBufferPoolPagesData                            *string                `json:"Innodb_buffer_pool_pages_data,omitempty"`
+	InnodbBufferPoolBytesData                            *string                `json:"Innodb_buffer_pool_bytes_data,omitempty"`
+	InnodbBufferPoolPagesDirty                           *string                `json:"Innodb_buffer_pool_pages_dirty,omitempty"`
+	InnodbBufferPoolBytesDirty                           *string                `json:"Innodb_buffer_pool_bytes_dirty,omitempty"`
+	InnodbBufferPoolPagesFlushed                         *string                `json:"Innodb_buffer_pool_pages_flushed,omitempty"`
+	InnodbBufferPoolPagesFree                            *string                `json:"Innodb_buffer_pool_pages_free,omitempty"`
+	InnodbBufferPoolPagesLRUFlushed                      *string                `json:"Innodb_buffer_pool_pages_LRU_flushed,omitempty"`
+	InnodbBufferPoolPagesMadeNotYoung                    *string                `json:"Innodb_buffer_pool_pages_made_not_young,omitempty"`
+	InnodbBufferPoolPagesMadeYoung                       *string                `json:"Innodb_buffer_pool_pages_made_young,omitempty"`
+	InnodbBufferPoolPagesMisc                            *string                `json:"Innodb_buffer_pool_pages_misc,omitempty"`
+	InnodbBufferPoolPagesOld                             *string                `json:"Innodb_buffer_pool_pages_old,omitempty"`
+	InnodbBufferPoolPagesTotal                           *string                `json:"Innodb_buffer_pool_pages_total,omitempty"`
+	InnodbBufferPoolReadAheadRnd                         *string                `json:"Innodb_buffer_pool_read_ahead_rnd,omitempty"`
+	InnodbBufferPoolReadAhead                            *string                `json:"Innodb_buffer_pool_read_ahead,omitempty"`
+	InnodbBufferPoolReadAheadEvicted                     *string                `json:"Innodb_buffer_pool_read_ahead_evicted,omitempty"`
+	InnodbBufferPoolReadRequests                         *string                `json:"Innodb_buffer_pool_read_requests,omitempty"`
+	InnodbBufferPoolReads                                *string                `json:"Innodb_buffer_pool_reads,omitempty"`
+	InnodbBufferPoolWaitFree                             *string                `json:"Innodb_buffer_pool_wait_free,omitempty"`
+	InnodbBufferPoolWriteRequests                        *string                `json:"Innodb_buffer_pool_write_requests,omitempty"`
+	InnodbCheckpointAge                                  *string                `json:"Innodb_checkpoint_age,omitempty"`
+	InnodbCheckpointMaxAge                               *string                `json:"Innodb_checkpoint_max_age,omitempty"`
+	InnodbDataFsyncs                                     *string                `json:"Innodb_data_fsyncs,omitempty"`
+	InnodbDataPendingFsyncs                              *string                `json:"Innodb_data_pending_fsyncs,omitempty"`
+	InnodbDataPendingReads                               *string                `json:"Innodb_data_pending_reads,omitempty"`
+	InnodbDataPendingWrites                              *string                `json:"Innodb_data_pending_writes,omitempty"`
+	InnodbDataRead                                       *string                `json:"Innodb_data_read,omitempty"`
+	InnodbDataReads                                      *string                `json:"Innodb_data_reads,omitempty"`
+	InnodbDataWrites                                     *string                `json:"Innodb_data_writes,omitempty"`
+	InnodbDataWritten                                    *string                `json:"Innodb_data_written,omitempty"`
+	InnodbDblwrPagesWritten                              *string                `json:"Innodb_dblwr_pages_written,omitempty"`
+	InnodbDblwrWrites                                    *string                `json:"Innodb_dblwr_writes,omitempty"`
+	InnodbIbufFreeList                                   *string                `json:"Innodb_ibuf_free_list,omitempty"`
+	InnodbIbufSegmentSize                                *string                `json:"Innodb_ibuf_segment_size,omitempty"`
+	InnodbLogWaits                                       *string                `json:"Innodb_log_waits,omitempty"`
+	InnodbLogWriteRequests                               *string                `json:"Innodb_log_write_requests,omitempty"`
+	InnodbLogWrites                                      *string                `json:"Innodb_log_writes,omitempty"`
+	InnodbLsnCurrent                                     *string                `json:"Innodb_lsn_current,omitempty"`
+	InnodbLsnFlushed                                     *string                `json:"Innodb_lsn_flushed,omitempty"`
+	InnodbLsnLastCheckpoint                              *string                `json:"Innodb_lsn_last_checkpoint,omitempty"`
+	InnodbMasterThreadActiveLoops                        *string                `json:"Innodb_master_thread_active_loops,omitempty"`
+	InnodbMasterThreadIdleLoops                          *string                `json:"Innodb_master_thread_idle_loops,omitempty"`
+	InnodbMaxTrxId                                       *string                `json:"Innodb_max_trx_id,omitempty"`
+	InnodbMemAdaptiveHash                                *string                `json:"Innodb_mem_adaptive_hash,omitempty"`
+	InnodbMemDictionary                                  *string                `json:"Innodb_mem_dictionary,omitempty"`
+	InnodbOldestViewLowLimitTrxId                        *string                `json:"Innodb_oldest_view_low_limit_trx_id,omitempty"`
+	InnodbOsLogFsyncs                                    *string                `json:"Innodb_os_log_fsyncs,omitempty"`
+	InnodbOsLogPendingFsyncs                             *string                `json:"Innodb_os_log_pending_fsyncs,omitempty"`
+	InnodbOsLogPendingWrites                             *string                `json:"Innodb_os_log_pending_writes,omitempty"`
+	InnodbOsLogWritten                                   *string                `json:"Innodb_os_log_written,omitempty"`
+	InnodbPageSize                                       *string                `json:"Innodb_page_size,omitempty"`
+	InnodbPagesCreated                                   *string                `json:"Innodb_pages_created,omitempty"`
+	InnodbPagesRead                                      *string                `json:"Innodb_pages_read,omitempty"`
+	InnodbPages0Read                                     *string                `json:"Innodb_pages0_read,omitempty"`
+	InnodbPagesWritten                                   *string                `json:"Innodb_pages_written,omitempty"`
+	InnodbPurgeTrxId                                     *string                `json:"Innodb_purge_trx_id,omitempty"`
+	InnodbPurgeUndoNo                                    *string                `json:"Innodb_purge_undo_no,omitempty"`
+	InnodbRowLockCurrentWaits                            *string                `json:"Innodb_row_lock_current_waits,omitempty"`
+	InnodbRowLockTime                                    *string                `json:"Innodb_row_lock_time,omitempty"`
+	InnodbRowLockTimeAvg                                 *string                `json:"Innodb_row_lock_time_avg,omitempty"`
+	InnodbRowLockTimeMax                                 *string                `json:"Innodb_row_lock_time_max,omitempty"`
+	InnodbRowLockWaits                                   *string                `json:"Innodb_row_lock_waits,omitempty"`
+	InnodbRowsDeleted                                    *string                `json:"Innodb_rows_deleted,omitempty"`
+	InnodbRowsInserted                                   *string                `json:"Innodb_rows_inserted,omitempty"`
+	InnodbRowsRead                                       *string                `json:"Innodb_rows_read,omitempty"`
+	InnodbRowsUpdated                                    *string                `json:"Innodb_rows_updated,omitempty"`
+	InnodbNumOpenFiles                                   *string                `json:"Innodb_num_open_files,omitempty"`
+	InnodbTruncatedStatusWrites                          *string                `json:"Innodb_truncated_status_writes,omitempty"`
+	InnodbAvailableUndoLogs                              *string                `json:"Innodb_available_undo_logs,omitempty"`
+	InnodbSecondaryIndexTriggeredClusterReads            *string                `json:"Innodb_secondary_index_triggered_cluster_reads,omitempty"`
+	InnodbSecondaryIndexTriggeredClusterReadsAvoided     *string                `json:"Innodb_secondary_index_triggered_cluster_reads_avoided,omitempty"`
+	InnodbBufferedAioSubmitted                           *string                `json:"Innodb_buffered_aio_submitted,omitempty"`
+	InnodbScanPagesContiguous                            *string                `json:"Innodb_scan_pages_contiguous,omitempty"`
+	InnodbScanPagesDisjointed                            *string                `json:"Innodb_scan_pages_disjointed,omitempty"`
+	InnodbScanPagesTotalSeekDistance                     *string                `json:"Innodb_scan_pages_total_seek_distance,omitempty"`
+	InnodbScanDataSize                                   *string                `json:"Innodb_scan_data_size,omitempty"`
+	InnodbScanDeletedRecsSize                            *string                `json:"Innodb_scan_deleted_recs_size,omitempty"`
+	InnodbScrubBackgroundPageReorganizations             *string                `json:"Innodb_scrub_background_page_reorganizations,omitempty"`
+	InnodbScrubBackgroundPageSplits                      *string                `json:"Innodb_scrub_background_page_splits,omitempty"`
+	InnodbScrubBackgroundPageSplitFailuresUnderflow      *string                `json:"Innodb_scrub_background_page_split_failures_underflow,omitempty"`
+	InnodbScrubBackgroundPageSplitFailuresOutOfFilespace *string                `json:"Innodb_scrub_background_page_split_failures_out_of_filespace,omitempty"`
+	InnodbScrubBackgroundPageSplitFailuresMissingIndex   *string                `json:"Innodb_scrub_background_page_split_failures_missing_index,omitempty"`
+	InnodbScrubBackgroundPageSplitFailuresUnknown        *string                `json:"Innodb_scrub_background_page_split_failures_unknown,omitempty"`
+	InnodbScrubLog                                       *string                `json:"Innodb_scrub_log,omitempty"`
+	InnodbEncryptionRotationPagesReadFromCache           *string                `json:"Innodb_encryption_rotation_pages_read_from_cache,omitempty"`
+	InnodbEncryptionRotationPagesReadFromDisk            *string                `json:"Innodb_encryption_rotation_pages_read_from_disk,omitempty"`
+	InnodbEncryptionRotationPagesModified                *string                `json:"Innodb_encryption_rotation_pages_modified,omitempty"`
+	InnodbEncryptionRotationPagesFlushed                 *string                `json:"Innodb_encryption_rotation_pages_flushed,omitempty"`
+	InnodbEncryptionRotationEstimatedIops                *string                `json:"Innodb_encryption_rotation_estimated_iops,omitempty"`
+	InnodbEncryptionKeyRotationListLength                *string                `json:"Innodb_encryption_key_rotation_list_length,omitempty"`
+	InnodbEncryptionNMergeBlocksEncrypted                *string                `json:"Innodb_encryption_n_merge_blocks_encrypted,omitempty"`
+	InnodbEncryptionNMergeBlocksDecrypted                *string                `json:"Innodb_encryption_n_merge_blocks_decrypted,omitempty"`
+	InnodbEncryptionNRowlogBlocksEncrypted               *string                `json:"Innodb_encryption_n_rowlog_blocks_encrypted,omitempty"`
+	InnodbEncryptionNRowlogBlocksDecrypted               *string                `json:"Innodb_encryption_n_rowlog_blocks_decrypted,omitempty"`
+	InnodbNumPagesEncrypted                              *string                `json:"Innodb_num_pages_encrypted,omitempty"`
+	InnodbNumPagesDecrypted                              *string                `json:"Innodb_num_pages_decrypted,omitempty"`
+	InnodbEncryptionRedoKeyVersion                       *string                `json:"Innodb_encryption_redo_key_version,omitempty"`
+	KeyBlocksNotFlushed                                  *string                `json:"Key_blocks_not_flushed,omitempty"`
+	KeyBlocksUnused                                      *string                `json:"Key_blocks_unused,omitempty"`
+	KeyBlocksUsed                                        *string                `json:"Key_blocks_used,omitempty"`
+	KeyReadRequests                                      *string                `json:"Key_read_requests,omitempty"`
+	KeyReads                                             *string                `json:"Key_reads,omitempty"`
+	KeyWriteRequests                                     *string                `json:"Key_write_requests,omitempty"`
+	KeyWrites                                            *string                `json:"Key_writes,omitempty"`
+	LastQueryCost                                        *string                `json:"Last_query_cost,omitempty"`
+	LastQueryPartialPlans                                *string                `json:"Last_query_partial_plans,omitempty"`
+	LockedConnects                                       *string                `json:"Locked_connects,omitempty"`
+	MaxExecutionTimeExceeded                             *string                `json:"Max_execution_time_exceeded,omitempty"`
+	MaxExecutionTimeSet                                  *string                `json:"Max_execution_time_set,omitempty"`
+	MaxExecutionTimeSetFailed                            *string                `json:"Max_execution_time_set_failed,omitempty"`
+	MaxUsedConnections                                   *string                `json:"Max_used_connections,omitempty"`
+	MaxUsedConnectionsTime                               *string                `json:"Max_used_connections_time,omitempty"`
+	NotFlushedDelayedRows                                *string                `json:"Not_flushed_delayed_rows,omitempty"`
+	OngoingAnonymousTransactionCount                     *string                `json:"Ongoing_anonymous_transaction_count,omitempty"`
+	OpenFiles                                            *string                `json:"Open_files,omitempty"`
+	OpenStreams                                          *string                `json:"Open_streams,omitempty"`
+	OpenTableDefinitions                                 *string                `json:"Open_table_definitions,omitempty"`
+	OpenTables                                           *string                `json:"Open_tables,omitempty"`
+	OpenedFiles                                          *string                `json:"Opened_files,omitempty"`
+	OpenedTableDefinitions                               *string                `json:"Opened_table_definitions,omitempty"`
+	OpenedTables                                         *string                `json:"Opened_tables,omitempty"`
+	PerformanceSchemaAccountsLost                        *string                `json:"Performance_schema_accounts_lost,omitempty"`
+	PerformanceSchemaCondClassesLost                     *string                `json:"Performance_schema_cond_classes_lost,omitempty"`
+	PerformanceSchemaCondInstancesLost                   *string                `json:"Performance_schema_cond_instances_lost,omitempty"`
+	PerformanceSchemaDigestLost                          *string                `json:"Performance_schema_digest_lost,omitempty"`
+	PerformanceSchemaFileClassesLost                     *string                `json:"Performance_schema_file_classes_lost,omitempty"`
+	PerformanceSchemaFileHandlesLost                     *string                `json:"Performance_schema_file_handles_lost,omitempty"`
+	PerformanceSchemaFileInstancesLost                   *string                `json:"Performance_schema_file_instances_lost,omitempty"`
+	PerformanceSchemaHostsLost                           *string                `json:"Performance_schema_hosts_lost,omitempty"`
+	PerformanceSchemaIndexStatLost                       *string                `json:"Performance_schema_index_stat_lost,omitempty"`
+	PerformanceSchemaLockerLost                          *string                `json:"Performance_schema_locker_lost,omitempty"`
+	PerformanceSchemaMemoryClassesLost                   *string                `json:"Performance_schema_memory_classes_lost,omitempty"`
+	PerformanceSchemaMetadataLockLost                    *string                `json:"Performance_schema_metadata_lock_lost,omitempty"`
+	PerformanceSchemaMutexClassesLost                    *string                `json:"Performance_schema_mutex_classes_lost,omitempty"`
+	PerformanceSchemaMutexInstancesLost                  *string                `json:"Performance_schema_mutex_instances_lost,omitempty"`
+	PerformanceSchemaNestedStatementLost                 *string                `json:"Performance_schema_nested_statement_lost,omitempty"`
+	PerformanceSchemaPreparedStatementsLost              *string                `json:"Performance_schema_prepared_statements_lost,omitempty"`
+	PerformanceSchemaProgramLost                         *string                `json:"Performance_schema_program_lost,omitempty"`
+	PerformanceSchemaRwlockClassesLost                   *string                `json:"Performance_schema_rwlock_classes_lost,omitempty"`
+	PerformanceSchemaRwlockInstancesLost                 *string                `json:"Performance_schema_rwlock_instances_lost,omitempty"`
+	PerformanceSchemaSessionConnectAttrsLost             *string                `json:"Performance_schema_session_connect_attrs_lost,omitempty"`
+	PerformanceSchemaSocketClassesLost                   *string                `json:"Performance_schema_socket_classes_lost,omitempty"`
+	PerformanceSchemaSocketInstancesLost                 *string                `json:"Performance_schema_socket_instances_lost,omitempty"`
+	PerformanceSchemaStageClassesLost                    *string                `json:"Performance_schema_stage_classes_lost,omitempty"`
+	PerformanceSchemaStatementClassesLost                *string                `json:"Performance_schema_statement_classes_lost,omitempty"`
+	PerformanceSchemaTableHandlesLost                    *string                `json:"Performance_schema_table_handles_lost,omitempty"`
+	PerformanceSchemaTableInstancesLost                  *string                `json:"Performance_schema_table_instances_lost,omitempty"`
+	PerformanceSchemaTableLockStatLost                   *string                `json:"Performance_schema_table_lock_stat_lost,omitempty"`
+	PerformanceSchemaThreadClassesLost                   *string                `json:"Performance_schema_thread_classes_lost,omitempty"`
+	PerformanceSchemaThreadInstancesLost                 *string                `json:"Performance_schema_thread_instances_lost,omitempty"`
+	PerformanceSchemaUsersLost                           *string                `json:"Performance_schema_users_lost,omitempty"`
+	PreparedStmtCount                                    *string                `json:"Prepared_stmt_count,omitempty"`
+	QcacheFreeBlocks                                     *string                `json:"Qcache_free_blocks,omitempty"`
+	QcacheFreeMemory                                     *string                `json:"Qcache_free_memory,omitempty"`
+	QcacheHits                                           *string                `json:"Qcache_hits,omitempty"`
+	QcacheInserts                                        *string                `json:"Qcache_inserts,omitempty"`
+	QcacheLowmemPrunes                                   *string                `json:"Qcache_lowmem_prunes,omitempty"`
+	QcacheNotCached                                      *string                `json:"Qcache_not_cached,omitempty"`
+	QcacheQueriesInCache                                 *string                `json:"Qcache_queries_in_cache,omitempty"`
+	QcacheTotalBlocks                                    *string                `json:"Qcache_total_blocks,omitempty"`
+	Queries                                              *string                `json:"Queries,omitempty"`
+	Questions                                            *string                `json:"Questions,omitempty"`
+	RsaPublicKey                                         *string                `json:"Rsa_public_key,omitempty"`
+	SelectFullJoin                                       *string                `json:"Select_full_join,omitempty"`
+	SelectFullRangeJoin                                  *string                `json:"Select_full_range_join,omitempty"`
+	SelectRange                                          *string                `json:"Select_range,omitempty"`
+	SelectRangeCheck                                     *string                `json:"Select_range_check,omitempty"`
+	SelectScan                                           *string                `json:"Select_scan,omitempty"`
+	SlaveOpenTempTables                                  *string                `json:"Slave_open_temp_tables,omitempty"`
+	SlowLaunchThreads                                    *string                `json:"Slow_launch_threads,omitempty"`
+	SlowQueries                                          *string                `json:"Slow_queries,omitempty"`
+	SortMergePasses                                      *string                `json:"Sort_merge_passes,omitempty"`
+	SortRange                                            *string                `json:"Sort_range,omitempty"`
+	SortRows                                             *string                `json:"Sort_rows,omitempty"`
+	SortScan                                             *string                `json:"Sort_scan,omitempty"`
+	SslAcceptRenegotiates                                *string                `json:"Ssl_accept_renegotiates,omitempty"`
+	SslAccepts                                           *string                `json:"Ssl_accepts,omitempty"`
+	SslCallbackCacheHits                                 *string                `json:"Ssl_callback_cache_hits,omitempty"`
+	SslCipher                                            *string                `json:"Ssl_cipher,omitempty"`
+	SslCipherList                                        *string                `json:"Ssl_cipher_list,omitempty"`
+	SslClientConnects                                    *string                `json:"Ssl_client_connects,omitempty"`
+	SslConnectRenegotiates                               *string                `json:"Ssl_connect_renegotiates,omitempty"`
+	SslCtxVerifyDepth                                    *string                `json:"Ssl_ctx_verify_depth,omitempty"`
+	SslCtxVerifyMode                                     *string                `json:"Ssl_ctx_verify_mode,omitempty"`
+	SslDefaultTimeout                                    *string                `json:"Ssl_default_timeout,omitempty"`
+	SslFinishedAccepts                                   *string                `json:"Ssl_finished_accepts,omitempty"`
+	SslFinishedConnects                                  *string                `json:"Ssl_finished_connects,omitempty"`
+	SslServerNotAfter                                    *string                `json:"Ssl_server_not_after,omitempty"`
+	SslServerNotBefore                                   *string                `json:"Ssl_server_not_before,omitempty"`
+	SslSessionCacheHits                                  *string                `json:"Ssl_session_cache_hits,omitempty"`
+	SslSessionCacheMisses                                *string                `json:"Ssl_session_cache_misses,omitempty"`
+	SslSessionCacheMode                                  *string                `json:"Ssl_session_cache_mode,omitempty"`
+	SslSessionCacheOverflows                             *string                `json:"Ssl_session_cache_overflows,omitempty"`
+	SslSessionCacheSize                                  *string                `json:"Ssl_session_cache_size,omitempty"`
+	SslSessionCacheTimeouts                              *string                `json:"Ssl_session_cache_timeouts,omitempty"`
+	SslSessionsReused                                    *string                `json:"Ssl_sessions_reused,omitempty"`
+	SslUsedSessionCacheEntries                           *string                `json:"Ssl_used_session_cache_entries,omitempty"`
+	SslVerifyDepth                                       *string                `json:"Ssl_verify_depth,omitempty"`
+	SslVerifyMode                                        *string                `json:"Ssl_verify_mode,omitempty"`
+	SslVersion                                           *string                `json:"Ssl_version,omitempty"`
+	TableLocksImmediate                                  *string                `json:"Table_locks_immediate,omitempty"`
+	TableLocksWaited                                     *string                `json:"Table_locks_waited,omitempty"`
+	TableOpenCacheHits                                   *string                `json:"Table_open_cache_hits,omitempty"`
+	TableOpenCacheMisses                                 *string                `json:"Table_open_cache_misses,omitempty"`
+	TableOpenCacheOverflows                              *string                `json:"Table_open_cache_overflows,omitempty"`
+	TcLogMaxPagesUsed                                    *string                `json:"Tc_log_max_pages_used,omitempty"`
+	TcLogPageSize                                        *string                `json:"Tc_log_page_size,omitempty"`
+	TcLogPageWaits                                       *string                `json:"Tc_log_page_waits,omitempty"`
+	ThreadpoolIdleThreads                                *string                `json:"Threadpool_idle_threads,omitempty"`
+	ThreadpoolThreads                                    *string                `json:"Threadpool_threads,omitempty"`
+	ThreadsCached                                        *string                `json:"Threads_cached,omitempty"`
+	ThreadsConnected                                     *string                `json:"Threads_connected,omitempty"`
+	ThreadsCreated                                       *string                `json:"Threads_created,omitempty"`
+	ThreadsRunning                                       *string                `json:"Threads_running,omitempty"`
+	Uptime                                               *string                `json:"Uptime,omitempty"`
+	UptimeSinceFlushStatus                               *string                `json:"Uptime_since_flush_status,omitempty"`
+	WsrepLocalStateUuid                                  *string                `json:"wsrep_local_state_uuid,omitempty"`
+	WsrepProtocolVersion                                 *string                `json:"wsrep_protocol_version,omitempty"`
+	WsrepLastApplied                                     *string                `json:"wsrep_last_applied,omitempty"`
+	WsrepLastCommitted                                   *string                `json:"wsrep_last_committed,omitempty"`
+	WsrepReplicated                                      *string                `json:"wsrep_replicated,omitempty"`
+	WsrepReplicatedBytes                                 *string                `json:"wsrep_replicated_bytes,omitempty"`
+	WsrepReplKeys                                        *string                `json:"wsrep_repl_keys,omitempty"`
+	WsrepReplKeysBytes                                   *string                `json:"wsrep_repl_keys_bytes,omitempty"`
+	WsrepReplDataBytes                                   *string                `json:"wsrep_repl_data_bytes,omitempty"`
+	WsrepReplOtherBytes                                  *string                `json:"wsrep_repl_other_bytes,omitempty"`
+	WsrepReceived                                        *string                `json:"wsrep_received,omitempty"`
+	WsrepReceivedBytes                                   *string                `json:"wsrep_received_bytes,omitempty"`
+	WsrepLocalCommits                                    *string                `json:"wsrep_local_commits,omitempty"`
+	WsrepLocalCertFailures                               *string                `json:"wsrep_local_cert_failures,omitempty"`
+	WsrepLocalReplays                                    *string                `json:"wsrep_local_replays,omitempty"`
+	WsrepLocalSendQueue                                  *string                `json:"wsrep_local_send_queue,omitempty"`
+	WsrepLocalSendQueueMax                               *string                `json:"wsrep_local_send_queue_max,omitempty"`
+	WsrepLocalSendQueueMin                               *string                `json:"wsrep_local_send_queue_min,omitempty"`
+	WsrepLocalSendQueueAvg                               *string                `json:"wsrep_local_send_queue_avg,omitempty"`
+	WsrepLocalRecvQueue                                  *string                `json:"wsrep_local_recv_queue,omitempty"`
+	WsrepLocalRecvQueueMax                               *string                `json:"wsrep_local_recv_queue_max,omitempty"`
+	WsrepLocalRecvQueueMin                               *string                `json:"wsrep_local_recv_queue_min,omitempty"`
+	WsrepLocalRecvQueueAvg                               *string                `json:"wsrep_local_recv_queue_avg,omitempty"`
+	WsrepLocalCachedDownto                               *string                `json:"wsrep_local_cached_downto,omitempty"`
+	WsrepFlowControlPausedNs                             *string                `json:"wsrep_flow_control_paused_ns,omitempty"`
+	WsrepFlowControlPaused                               *string                `json:"wsrep_flow_control_paused,omitempty"`
+	WsrepFlowControlSent                                 *string                `json:"wsrep_flow_control_sent,omitempty"`
+	WsrepFlowControlRecv                                 *string                `json:"wsrep_flow_control_recv,omitempty"`
+	WsrepFlowControlInterval                             *string                `json:"wsrep_flow_control_interval,omitempty"`
+	WsrepFlowControlIntervalLow                          *string                `json:"wsrep_flow_control_interval_low,omitempty"`
+	WsrepFlowControlIntervalHigh                         *string                `json:"wsrep_flow_control_interval_high,omitempty"`
+	WsrepFlowControlStatus                               *string                `json:"wsrep_flow_control_status,omitempty"`
+	WsrepFlowControlActive                               *string                `json:"wsrep_flow_control_active,omitempty"`
+	WsrepFlowControlRequested                            *string                `json:"wsrep_flow_control_requested,omitempty"`
+	WsrepCertDepsDistance                                *string                `json:"wsrep_cert_deps_distance,omitempty"`
+	WsrepApplyOooe                                       *string                `json:"wsrep_apply_oooe,omitempty"`
+	WsrepApplyOool                                       *string                `json:"wsrep_apply_oool,omitempty"`
+	WsrepApplyWindow                                     *string                `json:"wsrep_apply_window,omitempty"`
+	WsrepCommitOooe                                      *string                `json:"wsrep_commit_oooe,omitempty"`
+	WsrepCommitOool                                      *string                `json:"wsrep_commit_oool,omitempty"`
+	WsrepCommitWindow                                    *string                `json:"wsrep_commit_window,omitempty"`
+	WsrepLocalState                                      *string                `json:"wsrep_local_state,omitempty"`
+	WsrepLocalStateComment                               *string                `json:"wsrep_local_state_comment,omitempty"`
+	WsrepCertIndexSize                                   *string                `json:"wsrep_cert_index_size,omitempty"`
+	WsrepCertBucketCount                                 *string                `json:"wsrep_cert_bucket_count,omitempty"`
+	WsrepGcachePoolSize                                  *string                `json:"wsrep_gcache_pool_size,omitempty"`
+	WsrepCausalReads                                     *string                `json:"wsrep_causal_reads,omitempty"`
+	WsrepCertInterval                                    *string                `json:"wsrep_cert_interval,omitempty"`
+	WsrepOpenTransactions                                *string                `json:"wsrep_open_transactions,omitempty"`
+	WsrepOpenConnections                                 *string                `json:"wsrep_open_connections,omitempty"`
+	WsrepIstReceiveStatus                                *string                `json:"wsrep_ist_receive_status,omitempty"`
+	WsrepIstReceiveSeqnoStart                            *string                `json:"wsrep_ist_receive_seqno_start,omitempty"`
+	WsrepIstReceiveSeqnoCurrent                          *string                `json:"wsrep_ist_receive_seqno_current,omitempty"`
+	WsrepIstReceiveSeqnoEnd                              *string                `json:"wsrep_ist_receive_seqno_end,omitempty"`
+	WsrepIncomingAddresses                               *string                `json:"wsrep_incoming_addresses,omitempty"`
+	WsrepClusterWeight                                   *string                `json:"wsrep_cluster_weight,omitempty"`
+	WsrepDesyncCount                                     *string                `json:"wsrep_desync_count,omitempty"`
+	WsrepEvsDelayed                                      *string                `json:"wsrep_evs_delayed,omitempty"`
+	WsrepEvsEvictList                                    *string                `json:"wsrep_evs_evict_list,omitempty"`
+	WsrepEvsReplLatency                                  *string                `json:"wsrep_evs_repl_latency,omitempty"`
+	WsrepEvsState                                        *string                `json:"wsrep_evs_state,omitempty"`
+	WsrepGcommUuid                                       *string                `json:"wsrep_gcomm_uuid,omitempty"`
+	WsrepGmcastSegment                                   *string                `json:"wsrep_gmcast_segment,omitempty"`
+	WsrepClusterConfId                                   *string                `json:"wsrep_cluster_conf_id,omitempty"`
+	WsrepClusterSize                                     *string                `json:"wsrep_cluster_size,omitempty"`
+	WsrepClusterStateUuid                                *string                `json:"wsrep_cluster_state_uuid,omitempty"`
+	WsrepClusterStatus                                   *string                `json:"wsrep_cluster_status,omitempty"`
+	WsrepConnected                                       *string                `json:"wsrep_connected,omitempty"`
+	WsrepLocalBfAborts                                   *string                `json:"wsrep_local_bf_aborts,omitempty"`
+	WsrepLocalIndex                                      *string                `json:"wsrep_local_index,omitempty"`
+	WsrepProviderName                                    *string                `json:"wsrep_provider_name,omitempty"`
+	WsrepProviderVendor                                  *string                `json:"wsrep_provider_vendor,omitempty"`
+	WsrepProviderVersion                                 *string                `json:"wsrep_provider_version,omitempty"`
+	WsrepReady                                           *string                `json:"wsrep_ready,omitempty"`
+	AdditionalProperties                                 map[string]interface{} `json:",remain"`
 }
 
 type _ListHealth200ResponseAllOfHealthDatabaseStats ListHealth200ResponseAllOfHealthDatabaseStats
@@ -16378,7 +16378,7 @@ func (o *ListHealth200ResponseAllOfHealthDatabaseStats) SetWsrepReady(v string) 
 }
 
 func (o ListHealth200ResponseAllOfHealthDatabaseStats) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -17879,556 +17879,8 @@ func (o ListHealth200ResponseAllOfHealthDatabaseStats) ToMap() (map[string]inter
 
 	return toSerialize, nil
 }
-
 func (o *ListHealth200ResponseAllOfHealthDatabaseStats) UnmarshalJSON(data []byte) (err error) {
-	varListHealth200ResponseAllOfHealthDatabaseStats := _ListHealth200ResponseAllOfHealthDatabaseStats{}
-
-	err = json.Unmarshal(data, &varListHealth200ResponseAllOfHealthDatabaseStats)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListHealth200ResponseAllOfHealthDatabaseStats(varListHealth200ResponseAllOfHealthDatabaseStats)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "Aborted_clients")
-		delete(additionalProperties, "Aborted_connects")
-		delete(additionalProperties, "Binlog_snapshot_file")
-		delete(additionalProperties, "Binlog_snapshot_position")
-		delete(additionalProperties, "Binlog_cache_disk_use")
-		delete(additionalProperties, "Binlog_cache_use")
-		delete(additionalProperties, "Binlog_snapshot_gtid_executed")
-		delete(additionalProperties, "Binlog_stmt_cache_disk_use")
-		delete(additionalProperties, "Binlog_stmt_cache_use")
-		delete(additionalProperties, "Bytes_received")
-		delete(additionalProperties, "Bytes_sent")
-		delete(additionalProperties, "Com_admin_commands")
-		delete(additionalProperties, "Com_assign_to_keycache")
-		delete(additionalProperties, "Com_alter_db")
-		delete(additionalProperties, "Com_alter_db_upgrade")
-		delete(additionalProperties, "Com_alter_event")
-		delete(additionalProperties, "Com_alter_function")
-		delete(additionalProperties, "Com_alter_instance")
-		delete(additionalProperties, "Com_alter_procedure")
-		delete(additionalProperties, "Com_alter_server")
-		delete(additionalProperties, "Com_alter_table")
-		delete(additionalProperties, "Com_alter_tablespace")
-		delete(additionalProperties, "Com_alter_user")
-		delete(additionalProperties, "Com_analyze")
-		delete(additionalProperties, "Com_begin")
-		delete(additionalProperties, "Com_binlog")
-		delete(additionalProperties, "Com_call_procedure")
-		delete(additionalProperties, "Com_change_db")
-		delete(additionalProperties, "Com_change_master")
-		delete(additionalProperties, "Com_change_repl_filter")
-		delete(additionalProperties, "Com_check")
-		delete(additionalProperties, "Com_checksum")
-		delete(additionalProperties, "Com_commit")
-		delete(additionalProperties, "Com_create_compression_dictionary")
-		delete(additionalProperties, "Com_create_db")
-		delete(additionalProperties, "Com_create_event")
-		delete(additionalProperties, "Com_create_function")
-		delete(additionalProperties, "Com_create_index")
-		delete(additionalProperties, "Com_create_procedure")
-		delete(additionalProperties, "Com_create_server")
-		delete(additionalProperties, "Com_create_table")
-		delete(additionalProperties, "Com_create_trigger")
-		delete(additionalProperties, "Com_create_udf")
-		delete(additionalProperties, "Com_create_user")
-		delete(additionalProperties, "Com_create_view")
-		delete(additionalProperties, "Com_dealloc_sql")
-		delete(additionalProperties, "Com_delete")
-		delete(additionalProperties, "Com_delete_multi")
-		delete(additionalProperties, "Com_do")
-		delete(additionalProperties, "Com_drop_compression_dictionary")
-		delete(additionalProperties, "Com_drop_db")
-		delete(additionalProperties, "Com_drop_event")
-		delete(additionalProperties, "Com_drop_function")
-		delete(additionalProperties, "Com_drop_index")
-		delete(additionalProperties, "Com_drop_procedure")
-		delete(additionalProperties, "Com_drop_server")
-		delete(additionalProperties, "Com_drop_table")
-		delete(additionalProperties, "Com_drop_trigger")
-		delete(additionalProperties, "Com_drop_user")
-		delete(additionalProperties, "Com_drop_view")
-		delete(additionalProperties, "Com_empty_query")
-		delete(additionalProperties, "Com_execute_sql")
-		delete(additionalProperties, "Com_explain_other")
-		delete(additionalProperties, "Com_flush")
-		delete(additionalProperties, "Com_get_diagnostics")
-		delete(additionalProperties, "Com_grant")
-		delete(additionalProperties, "Com_ha_close")
-		delete(additionalProperties, "Com_ha_open")
-		delete(additionalProperties, "Com_ha_read")
-		delete(additionalProperties, "Com_help")
-		delete(additionalProperties, "Com_insert")
-		delete(additionalProperties, "Com_insert_select")
-		delete(additionalProperties, "Com_install_plugin")
-		delete(additionalProperties, "Com_kill")
-		delete(additionalProperties, "Com_load")
-		delete(additionalProperties, "Com_lock_tables")
-		delete(additionalProperties, "Com_lock_tables_for_backup")
-		delete(additionalProperties, "Com_lock_binlog_for_backup")
-		delete(additionalProperties, "Com_optimize")
-		delete(additionalProperties, "Com_preload_keys")
-		delete(additionalProperties, "Com_prepare_sql")
-		delete(additionalProperties, "Com_purge")
-		delete(additionalProperties, "Com_purge_before_date")
-		delete(additionalProperties, "Com_release_savepoint")
-		delete(additionalProperties, "Com_rename_table")
-		delete(additionalProperties, "Com_rename_user")
-		delete(additionalProperties, "Com_repair")
-		delete(additionalProperties, "Com_replace")
-		delete(additionalProperties, "Com_replace_select")
-		delete(additionalProperties, "Com_reset")
-		delete(additionalProperties, "Com_resignal")
-		delete(additionalProperties, "Com_revoke")
-		delete(additionalProperties, "Com_revoke_all")
-		delete(additionalProperties, "Com_rollback")
-		delete(additionalProperties, "Com_rollback_to_savepoint")
-		delete(additionalProperties, "Com_savepoint")
-		delete(additionalProperties, "Com_select")
-		delete(additionalProperties, "Com_set_option")
-		delete(additionalProperties, "Com_signal")
-		delete(additionalProperties, "Com_show_binlog_events")
-		delete(additionalProperties, "Com_show_binlogs")
-		delete(additionalProperties, "Com_show_charsets")
-		delete(additionalProperties, "Com_show_client_statistics")
-		delete(additionalProperties, "Com_show_collations")
-		delete(additionalProperties, "Com_show_create_db")
-		delete(additionalProperties, "Com_show_create_event")
-		delete(additionalProperties, "Com_show_create_func")
-		delete(additionalProperties, "Com_show_create_proc")
-		delete(additionalProperties, "Com_show_create_table")
-		delete(additionalProperties, "Com_show_create_trigger")
-		delete(additionalProperties, "Com_show_databases")
-		delete(additionalProperties, "Com_show_engine_logs")
-		delete(additionalProperties, "Com_show_engine_mutex")
-		delete(additionalProperties, "Com_show_engine_status")
-		delete(additionalProperties, "Com_show_events")
-		delete(additionalProperties, "Com_show_errors")
-		delete(additionalProperties, "Com_show_fields")
-		delete(additionalProperties, "Com_show_function_code")
-		delete(additionalProperties, "Com_show_function_status")
-		delete(additionalProperties, "Com_show_grants")
-		delete(additionalProperties, "Com_show_index_statistics")
-		delete(additionalProperties, "Com_show_keys")
-		delete(additionalProperties, "Com_show_master_status")
-		delete(additionalProperties, "Com_show_open_tables")
-		delete(additionalProperties, "Com_show_plugins")
-		delete(additionalProperties, "Com_show_privileges")
-		delete(additionalProperties, "Com_show_procedure_code")
-		delete(additionalProperties, "Com_show_procedure_status")
-		delete(additionalProperties, "Com_show_processlist")
-		delete(additionalProperties, "Com_show_profile")
-		delete(additionalProperties, "Com_show_profiles")
-		delete(additionalProperties, "Com_show_relaylog_events")
-		delete(additionalProperties, "Com_show_slave_hosts")
-		delete(additionalProperties, "Com_show_slave_status")
-		delete(additionalProperties, "Com_show_status")
-		delete(additionalProperties, "Com_show_storage_engines")
-		delete(additionalProperties, "Com_show_table_statistics")
-		delete(additionalProperties, "Com_show_table_status")
-		delete(additionalProperties, "Com_show_tables")
-		delete(additionalProperties, "Com_show_thread_statistics")
-		delete(additionalProperties, "Com_show_triggers")
-		delete(additionalProperties, "Com_show_user_statistics")
-		delete(additionalProperties, "Com_show_variables")
-		delete(additionalProperties, "Com_show_warnings")
-		delete(additionalProperties, "Com_show_create_user")
-		delete(additionalProperties, "Com_shutdown")
-		delete(additionalProperties, "Com_slave_start")
-		delete(additionalProperties, "Com_slave_stop")
-		delete(additionalProperties, "Com_group_replication_start")
-		delete(additionalProperties, "Com_group_replication_stop")
-		delete(additionalProperties, "Com_stmt_execute")
-		delete(additionalProperties, "Com_stmt_close")
-		delete(additionalProperties, "Com_stmt_fetch")
-		delete(additionalProperties, "Com_stmt_prepare")
-		delete(additionalProperties, "Com_stmt_reset")
-		delete(additionalProperties, "Com_stmt_send_long_data")
-		delete(additionalProperties, "Com_truncate")
-		delete(additionalProperties, "Com_uninstall_plugin")
-		delete(additionalProperties, "Com_unlock_binlog")
-		delete(additionalProperties, "Com_unlock_tables")
-		delete(additionalProperties, "Com_update")
-		delete(additionalProperties, "Com_update_multi")
-		delete(additionalProperties, "Com_xa_commit")
-		delete(additionalProperties, "Com_xa_end")
-		delete(additionalProperties, "Com_xa_prepare")
-		delete(additionalProperties, "Com_xa_recover")
-		delete(additionalProperties, "Com_xa_rollback")
-		delete(additionalProperties, "Com_xa_start")
-		delete(additionalProperties, "Com_stmt_reprepare")
-		delete(additionalProperties, "Compression")
-		delete(additionalProperties, "Connection_errors_accept")
-		delete(additionalProperties, "Connection_errors_internal")
-		delete(additionalProperties, "Connection_errors_max_connections")
-		delete(additionalProperties, "Connection_errors_peer_address")
-		delete(additionalProperties, "Connection_errors_select")
-		delete(additionalProperties, "Connection_errors_tcpwrap")
-		delete(additionalProperties, "Connections")
-		delete(additionalProperties, "Created_tmp_disk_tables")
-		delete(additionalProperties, "Created_tmp_files")
-		delete(additionalProperties, "Created_tmp_tables")
-		delete(additionalProperties, "Delayed_errors")
-		delete(additionalProperties, "Delayed_insert_threads")
-		delete(additionalProperties, "Delayed_writes")
-		delete(additionalProperties, "Flush_commands")
-		delete(additionalProperties, "Handler_commit")
-		delete(additionalProperties, "Handler_delete")
-		delete(additionalProperties, "Handler_discover")
-		delete(additionalProperties, "Handler_external_lock")
-		delete(additionalProperties, "Handler_mrr_init")
-		delete(additionalProperties, "Handler_prepare")
-		delete(additionalProperties, "Handler_read_first")
-		delete(additionalProperties, "Handler_read_key")
-		delete(additionalProperties, "Handler_read_last")
-		delete(additionalProperties, "Handler_read_next")
-		delete(additionalProperties, "Handler_read_prev")
-		delete(additionalProperties, "Handler_read_rnd")
-		delete(additionalProperties, "Handler_read_rnd_next")
-		delete(additionalProperties, "Handler_rollback")
-		delete(additionalProperties, "Handler_savepoint")
-		delete(additionalProperties, "Handler_savepoint_rollback")
-		delete(additionalProperties, "Handler_update")
-		delete(additionalProperties, "Handler_write")
-		delete(additionalProperties, "Innodb_background_log_sync")
-		delete(additionalProperties, "Innodb_buffer_pool_dump_status")
-		delete(additionalProperties, "Innodb_buffer_pool_load_status")
-		delete(additionalProperties, "Innodb_buffer_pool_resize_status")
-		delete(additionalProperties, "Innodb_buffer_pool_pages_data")
-		delete(additionalProperties, "Innodb_buffer_pool_bytes_data")
-		delete(additionalProperties, "Innodb_buffer_pool_pages_dirty")
-		delete(additionalProperties, "Innodb_buffer_pool_bytes_dirty")
-		delete(additionalProperties, "Innodb_buffer_pool_pages_flushed")
-		delete(additionalProperties, "Innodb_buffer_pool_pages_free")
-		delete(additionalProperties, "Innodb_buffer_pool_pages_LRU_flushed")
-		delete(additionalProperties, "Innodb_buffer_pool_pages_made_not_young")
-		delete(additionalProperties, "Innodb_buffer_pool_pages_made_young")
-		delete(additionalProperties, "Innodb_buffer_pool_pages_misc")
-		delete(additionalProperties, "Innodb_buffer_pool_pages_old")
-		delete(additionalProperties, "Innodb_buffer_pool_pages_total")
-		delete(additionalProperties, "Innodb_buffer_pool_read_ahead_rnd")
-		delete(additionalProperties, "Innodb_buffer_pool_read_ahead")
-		delete(additionalProperties, "Innodb_buffer_pool_read_ahead_evicted")
-		delete(additionalProperties, "Innodb_buffer_pool_read_requests")
-		delete(additionalProperties, "Innodb_buffer_pool_reads")
-		delete(additionalProperties, "Innodb_buffer_pool_wait_free")
-		delete(additionalProperties, "Innodb_buffer_pool_write_requests")
-		delete(additionalProperties, "Innodb_checkpoint_age")
-		delete(additionalProperties, "Innodb_checkpoint_max_age")
-		delete(additionalProperties, "Innodb_data_fsyncs")
-		delete(additionalProperties, "Innodb_data_pending_fsyncs")
-		delete(additionalProperties, "Innodb_data_pending_reads")
-		delete(additionalProperties, "Innodb_data_pending_writes")
-		delete(additionalProperties, "Innodb_data_read")
-		delete(additionalProperties, "Innodb_data_reads")
-		delete(additionalProperties, "Innodb_data_writes")
-		delete(additionalProperties, "Innodb_data_written")
-		delete(additionalProperties, "Innodb_dblwr_pages_written")
-		delete(additionalProperties, "Innodb_dblwr_writes")
-		delete(additionalProperties, "Innodb_ibuf_free_list")
-		delete(additionalProperties, "Innodb_ibuf_segment_size")
-		delete(additionalProperties, "Innodb_log_waits")
-		delete(additionalProperties, "Innodb_log_write_requests")
-		delete(additionalProperties, "Innodb_log_writes")
-		delete(additionalProperties, "Innodb_lsn_current")
-		delete(additionalProperties, "Innodb_lsn_flushed")
-		delete(additionalProperties, "Innodb_lsn_last_checkpoint")
-		delete(additionalProperties, "Innodb_master_thread_active_loops")
-		delete(additionalProperties, "Innodb_master_thread_idle_loops")
-		delete(additionalProperties, "Innodb_max_trx_id")
-		delete(additionalProperties, "Innodb_mem_adaptive_hash")
-		delete(additionalProperties, "Innodb_mem_dictionary")
-		delete(additionalProperties, "Innodb_oldest_view_low_limit_trx_id")
-		delete(additionalProperties, "Innodb_os_log_fsyncs")
-		delete(additionalProperties, "Innodb_os_log_pending_fsyncs")
-		delete(additionalProperties, "Innodb_os_log_pending_writes")
-		delete(additionalProperties, "Innodb_os_log_written")
-		delete(additionalProperties, "Innodb_page_size")
-		delete(additionalProperties, "Innodb_pages_created")
-		delete(additionalProperties, "Innodb_pages_read")
-		delete(additionalProperties, "Innodb_pages0_read")
-		delete(additionalProperties, "Innodb_pages_written")
-		delete(additionalProperties, "Innodb_purge_trx_id")
-		delete(additionalProperties, "Innodb_purge_undo_no")
-		delete(additionalProperties, "Innodb_row_lock_current_waits")
-		delete(additionalProperties, "Innodb_row_lock_time")
-		delete(additionalProperties, "Innodb_row_lock_time_avg")
-		delete(additionalProperties, "Innodb_row_lock_time_max")
-		delete(additionalProperties, "Innodb_row_lock_waits")
-		delete(additionalProperties, "Innodb_rows_deleted")
-		delete(additionalProperties, "Innodb_rows_inserted")
-		delete(additionalProperties, "Innodb_rows_read")
-		delete(additionalProperties, "Innodb_rows_updated")
-		delete(additionalProperties, "Innodb_num_open_files")
-		delete(additionalProperties, "Innodb_truncated_status_writes")
-		delete(additionalProperties, "Innodb_available_undo_logs")
-		delete(additionalProperties, "Innodb_secondary_index_triggered_cluster_reads")
-		delete(additionalProperties, "Innodb_secondary_index_triggered_cluster_reads_avoided")
-		delete(additionalProperties, "Innodb_buffered_aio_submitted")
-		delete(additionalProperties, "Innodb_scan_pages_contiguous")
-		delete(additionalProperties, "Innodb_scan_pages_disjointed")
-		delete(additionalProperties, "Innodb_scan_pages_total_seek_distance")
-		delete(additionalProperties, "Innodb_scan_data_size")
-		delete(additionalProperties, "Innodb_scan_deleted_recs_size")
-		delete(additionalProperties, "Innodb_scrub_background_page_reorganizations")
-		delete(additionalProperties, "Innodb_scrub_background_page_splits")
-		delete(additionalProperties, "Innodb_scrub_background_page_split_failures_underflow")
-		delete(additionalProperties, "Innodb_scrub_background_page_split_failures_out_of_filespace")
-		delete(additionalProperties, "Innodb_scrub_background_page_split_failures_missing_index")
-		delete(additionalProperties, "Innodb_scrub_background_page_split_failures_unknown")
-		delete(additionalProperties, "Innodb_scrub_log")
-		delete(additionalProperties, "Innodb_encryption_rotation_pages_read_from_cache")
-		delete(additionalProperties, "Innodb_encryption_rotation_pages_read_from_disk")
-		delete(additionalProperties, "Innodb_encryption_rotation_pages_modified")
-		delete(additionalProperties, "Innodb_encryption_rotation_pages_flushed")
-		delete(additionalProperties, "Innodb_encryption_rotation_estimated_iops")
-		delete(additionalProperties, "Innodb_encryption_key_rotation_list_length")
-		delete(additionalProperties, "Innodb_encryption_n_merge_blocks_encrypted")
-		delete(additionalProperties, "Innodb_encryption_n_merge_blocks_decrypted")
-		delete(additionalProperties, "Innodb_encryption_n_rowlog_blocks_encrypted")
-		delete(additionalProperties, "Innodb_encryption_n_rowlog_blocks_decrypted")
-		delete(additionalProperties, "Innodb_num_pages_encrypted")
-		delete(additionalProperties, "Innodb_num_pages_decrypted")
-		delete(additionalProperties, "Innodb_encryption_redo_key_version")
-		delete(additionalProperties, "Key_blocks_not_flushed")
-		delete(additionalProperties, "Key_blocks_unused")
-		delete(additionalProperties, "Key_blocks_used")
-		delete(additionalProperties, "Key_read_requests")
-		delete(additionalProperties, "Key_reads")
-		delete(additionalProperties, "Key_write_requests")
-		delete(additionalProperties, "Key_writes")
-		delete(additionalProperties, "Last_query_cost")
-		delete(additionalProperties, "Last_query_partial_plans")
-		delete(additionalProperties, "Locked_connects")
-		delete(additionalProperties, "Max_execution_time_exceeded")
-		delete(additionalProperties, "Max_execution_time_set")
-		delete(additionalProperties, "Max_execution_time_set_failed")
-		delete(additionalProperties, "Max_used_connections")
-		delete(additionalProperties, "Max_used_connections_time")
-		delete(additionalProperties, "Not_flushed_delayed_rows")
-		delete(additionalProperties, "Ongoing_anonymous_transaction_count")
-		delete(additionalProperties, "Open_files")
-		delete(additionalProperties, "Open_streams")
-		delete(additionalProperties, "Open_table_definitions")
-		delete(additionalProperties, "Open_tables")
-		delete(additionalProperties, "Opened_files")
-		delete(additionalProperties, "Opened_table_definitions")
-		delete(additionalProperties, "Opened_tables")
-		delete(additionalProperties, "Performance_schema_accounts_lost")
-		delete(additionalProperties, "Performance_schema_cond_classes_lost")
-		delete(additionalProperties, "Performance_schema_cond_instances_lost")
-		delete(additionalProperties, "Performance_schema_digest_lost")
-		delete(additionalProperties, "Performance_schema_file_classes_lost")
-		delete(additionalProperties, "Performance_schema_file_handles_lost")
-		delete(additionalProperties, "Performance_schema_file_instances_lost")
-		delete(additionalProperties, "Performance_schema_hosts_lost")
-		delete(additionalProperties, "Performance_schema_index_stat_lost")
-		delete(additionalProperties, "Performance_schema_locker_lost")
-		delete(additionalProperties, "Performance_schema_memory_classes_lost")
-		delete(additionalProperties, "Performance_schema_metadata_lock_lost")
-		delete(additionalProperties, "Performance_schema_mutex_classes_lost")
-		delete(additionalProperties, "Performance_schema_mutex_instances_lost")
-		delete(additionalProperties, "Performance_schema_nested_statement_lost")
-		delete(additionalProperties, "Performance_schema_prepared_statements_lost")
-		delete(additionalProperties, "Performance_schema_program_lost")
-		delete(additionalProperties, "Performance_schema_rwlock_classes_lost")
-		delete(additionalProperties, "Performance_schema_rwlock_instances_lost")
-		delete(additionalProperties, "Performance_schema_session_connect_attrs_lost")
-		delete(additionalProperties, "Performance_schema_socket_classes_lost")
-		delete(additionalProperties, "Performance_schema_socket_instances_lost")
-		delete(additionalProperties, "Performance_schema_stage_classes_lost")
-		delete(additionalProperties, "Performance_schema_statement_classes_lost")
-		delete(additionalProperties, "Performance_schema_table_handles_lost")
-		delete(additionalProperties, "Performance_schema_table_instances_lost")
-		delete(additionalProperties, "Performance_schema_table_lock_stat_lost")
-		delete(additionalProperties, "Performance_schema_thread_classes_lost")
-		delete(additionalProperties, "Performance_schema_thread_instances_lost")
-		delete(additionalProperties, "Performance_schema_users_lost")
-		delete(additionalProperties, "Prepared_stmt_count")
-		delete(additionalProperties, "Qcache_free_blocks")
-		delete(additionalProperties, "Qcache_free_memory")
-		delete(additionalProperties, "Qcache_hits")
-		delete(additionalProperties, "Qcache_inserts")
-		delete(additionalProperties, "Qcache_lowmem_prunes")
-		delete(additionalProperties, "Qcache_not_cached")
-		delete(additionalProperties, "Qcache_queries_in_cache")
-		delete(additionalProperties, "Qcache_total_blocks")
-		delete(additionalProperties, "Queries")
-		delete(additionalProperties, "Questions")
-		delete(additionalProperties, "Rsa_public_key")
-		delete(additionalProperties, "Select_full_join")
-		delete(additionalProperties, "Select_full_range_join")
-		delete(additionalProperties, "Select_range")
-		delete(additionalProperties, "Select_range_check")
-		delete(additionalProperties, "Select_scan")
-		delete(additionalProperties, "Slave_open_temp_tables")
-		delete(additionalProperties, "Slow_launch_threads")
-		delete(additionalProperties, "Slow_queries")
-		delete(additionalProperties, "Sort_merge_passes")
-		delete(additionalProperties, "Sort_range")
-		delete(additionalProperties, "Sort_rows")
-		delete(additionalProperties, "Sort_scan")
-		delete(additionalProperties, "Ssl_accept_renegotiates")
-		delete(additionalProperties, "Ssl_accepts")
-		delete(additionalProperties, "Ssl_callback_cache_hits")
-		delete(additionalProperties, "Ssl_cipher")
-		delete(additionalProperties, "Ssl_cipher_list")
-		delete(additionalProperties, "Ssl_client_connects")
-		delete(additionalProperties, "Ssl_connect_renegotiates")
-		delete(additionalProperties, "Ssl_ctx_verify_depth")
-		delete(additionalProperties, "Ssl_ctx_verify_mode")
-		delete(additionalProperties, "Ssl_default_timeout")
-		delete(additionalProperties, "Ssl_finished_accepts")
-		delete(additionalProperties, "Ssl_finished_connects")
-		delete(additionalProperties, "Ssl_server_not_after")
-		delete(additionalProperties, "Ssl_server_not_before")
-		delete(additionalProperties, "Ssl_session_cache_hits")
-		delete(additionalProperties, "Ssl_session_cache_misses")
-		delete(additionalProperties, "Ssl_session_cache_mode")
-		delete(additionalProperties, "Ssl_session_cache_overflows")
-		delete(additionalProperties, "Ssl_session_cache_size")
-		delete(additionalProperties, "Ssl_session_cache_timeouts")
-		delete(additionalProperties, "Ssl_sessions_reused")
-		delete(additionalProperties, "Ssl_used_session_cache_entries")
-		delete(additionalProperties, "Ssl_verify_depth")
-		delete(additionalProperties, "Ssl_verify_mode")
-		delete(additionalProperties, "Ssl_version")
-		delete(additionalProperties, "Table_locks_immediate")
-		delete(additionalProperties, "Table_locks_waited")
-		delete(additionalProperties, "Table_open_cache_hits")
-		delete(additionalProperties, "Table_open_cache_misses")
-		delete(additionalProperties, "Table_open_cache_overflows")
-		delete(additionalProperties, "Tc_log_max_pages_used")
-		delete(additionalProperties, "Tc_log_page_size")
-		delete(additionalProperties, "Tc_log_page_waits")
-		delete(additionalProperties, "Threadpool_idle_threads")
-		delete(additionalProperties, "Threadpool_threads")
-		delete(additionalProperties, "Threads_cached")
-		delete(additionalProperties, "Threads_connected")
-		delete(additionalProperties, "Threads_created")
-		delete(additionalProperties, "Threads_running")
-		delete(additionalProperties, "Uptime")
-		delete(additionalProperties, "Uptime_since_flush_status")
-		delete(additionalProperties, "wsrep_local_state_uuid")
-		delete(additionalProperties, "wsrep_protocol_version")
-		delete(additionalProperties, "wsrep_last_applied")
-		delete(additionalProperties, "wsrep_last_committed")
-		delete(additionalProperties, "wsrep_replicated")
-		delete(additionalProperties, "wsrep_replicated_bytes")
-		delete(additionalProperties, "wsrep_repl_keys")
-		delete(additionalProperties, "wsrep_repl_keys_bytes")
-		delete(additionalProperties, "wsrep_repl_data_bytes")
-		delete(additionalProperties, "wsrep_repl_other_bytes")
-		delete(additionalProperties, "wsrep_received")
-		delete(additionalProperties, "wsrep_received_bytes")
-		delete(additionalProperties, "wsrep_local_commits")
-		delete(additionalProperties, "wsrep_local_cert_failures")
-		delete(additionalProperties, "wsrep_local_replays")
-		delete(additionalProperties, "wsrep_local_send_queue")
-		delete(additionalProperties, "wsrep_local_send_queue_max")
-		delete(additionalProperties, "wsrep_local_send_queue_min")
-		delete(additionalProperties, "wsrep_local_send_queue_avg")
-		delete(additionalProperties, "wsrep_local_recv_queue")
-		delete(additionalProperties, "wsrep_local_recv_queue_max")
-		delete(additionalProperties, "wsrep_local_recv_queue_min")
-		delete(additionalProperties, "wsrep_local_recv_queue_avg")
-		delete(additionalProperties, "wsrep_local_cached_downto")
-		delete(additionalProperties, "wsrep_flow_control_paused_ns")
-		delete(additionalProperties, "wsrep_flow_control_paused")
-		delete(additionalProperties, "wsrep_flow_control_sent")
-		delete(additionalProperties, "wsrep_flow_control_recv")
-		delete(additionalProperties, "wsrep_flow_control_interval")
-		delete(additionalProperties, "wsrep_flow_control_interval_low")
-		delete(additionalProperties, "wsrep_flow_control_interval_high")
-		delete(additionalProperties, "wsrep_flow_control_status")
-		delete(additionalProperties, "wsrep_flow_control_active")
-		delete(additionalProperties, "wsrep_flow_control_requested")
-		delete(additionalProperties, "wsrep_cert_deps_distance")
-		delete(additionalProperties, "wsrep_apply_oooe")
-		delete(additionalProperties, "wsrep_apply_oool")
-		delete(additionalProperties, "wsrep_apply_window")
-		delete(additionalProperties, "wsrep_commit_oooe")
-		delete(additionalProperties, "wsrep_commit_oool")
-		delete(additionalProperties, "wsrep_commit_window")
-		delete(additionalProperties, "wsrep_local_state")
-		delete(additionalProperties, "wsrep_local_state_comment")
-		delete(additionalProperties, "wsrep_cert_index_size")
-		delete(additionalProperties, "wsrep_cert_bucket_count")
-		delete(additionalProperties, "wsrep_gcache_pool_size")
-		delete(additionalProperties, "wsrep_causal_reads")
-		delete(additionalProperties, "wsrep_cert_interval")
-		delete(additionalProperties, "wsrep_open_transactions")
-		delete(additionalProperties, "wsrep_open_connections")
-		delete(additionalProperties, "wsrep_ist_receive_status")
-		delete(additionalProperties, "wsrep_ist_receive_seqno_start")
-		delete(additionalProperties, "wsrep_ist_receive_seqno_current")
-		delete(additionalProperties, "wsrep_ist_receive_seqno_end")
-		delete(additionalProperties, "wsrep_incoming_addresses")
-		delete(additionalProperties, "wsrep_cluster_weight")
-		delete(additionalProperties, "wsrep_desync_count")
-		delete(additionalProperties, "wsrep_evs_delayed")
-		delete(additionalProperties, "wsrep_evs_evict_list")
-		delete(additionalProperties, "wsrep_evs_repl_latency")
-		delete(additionalProperties, "wsrep_evs_state")
-		delete(additionalProperties, "wsrep_gcomm_uuid")
-		delete(additionalProperties, "wsrep_gmcast_segment")
-		delete(additionalProperties, "wsrep_cluster_conf_id")
-		delete(additionalProperties, "wsrep_cluster_size")
-		delete(additionalProperties, "wsrep_cluster_state_uuid")
-		delete(additionalProperties, "wsrep_cluster_status")
-		delete(additionalProperties, "wsrep_connected")
-		delete(additionalProperties, "wsrep_local_bf_aborts")
-		delete(additionalProperties, "wsrep_local_index")
-		delete(additionalProperties, "wsrep_provider_name")
-		delete(additionalProperties, "wsrep_provider_vendor")
-		delete(additionalProperties, "wsrep_provider_version")
-		delete(additionalProperties, "wsrep_ready")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListHealth200ResponseAllOfHealthDatabaseStats struct {
-	value *ListHealth200ResponseAllOfHealthDatabaseStats
-	isSet bool
-}
-
-func (v NullableListHealth200ResponseAllOfHealthDatabaseStats) Get() *ListHealth200ResponseAllOfHealthDatabaseStats {
-	return v.value
-}
-
-func (v *NullableListHealth200ResponseAllOfHealthDatabaseStats) Set(val *ListHealth200ResponseAllOfHealthDatabaseStats) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListHealth200ResponseAllOfHealthDatabaseStats) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListHealth200ResponseAllOfHealthDatabaseStats) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListHealth200ResponseAllOfHealthDatabaseStats(val *ListHealth200ResponseAllOfHealthDatabaseStats) *NullableListHealth200ResponseAllOfHealthDatabaseStats {
-	return &NullableListHealth200ResponseAllOfHealthDatabaseStats{value: val, isSet: true}
-}
-
-func (v NullableListHealth200ResponseAllOfHealthDatabaseStats) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListHealth200ResponseAllOfHealthDatabaseStats) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -20,8 +20,8 @@ var _ MappedNullable = &AddImageBuildRequestImageBuildZone{}
 
 // AddImageBuildRequestImageBuildZone Cloud
 type AddImageBuildRequestImageBuildZone struct {
-	Id *int64 `json:"id,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddImageBuildRequestImageBuildZone AddImageBuildRequestImageBuildZone
@@ -76,7 +76,7 @@ func (o *AddImageBuildRequestImageBuildZone) SetId(v int64) {
 }
 
 func (o AddImageBuildRequestImageBuildZone) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o AddImageBuildRequestImageBuildZone) ToMap() (map[string]interface{}, err
 
 	return toSerialize, nil
 }
-
 func (o *AddImageBuildRequestImageBuildZone) UnmarshalJSON(data []byte) (err error) {
-	varAddImageBuildRequestImageBuildZone := _AddImageBuildRequestImageBuildZone{}
-
-	err = json.Unmarshal(data, &varAddImageBuildRequestImageBuildZone)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddImageBuildRequestImageBuildZone(varAddImageBuildRequestImageBuildZone)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddImageBuildRequestImageBuildZone struct {
-	value *AddImageBuildRequestImageBuildZone
-	isSet bool
-}
-
-func (v NullableAddImageBuildRequestImageBuildZone) Get() *AddImageBuildRequestImageBuildZone {
-	return v.value
-}
-
-func (v *NullableAddImageBuildRequestImageBuildZone) Set(val *AddImageBuildRequestImageBuildZone) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddImageBuildRequestImageBuildZone) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddImageBuildRequestImageBuildZone) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddImageBuildRequestImageBuildZone(val *AddImageBuildRequestImageBuildZone) *NullableAddImageBuildRequestImageBuildZone {
-	return &NullableAddImageBuildRequestImageBuildZone{value: val, isSet: true}
-}
-
-func (v NullableAddImageBuildRequestImageBuildZone) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddImageBuildRequestImageBuildZone) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -20,9 +20,9 @@ var _ MappedNullable = &AddNodeType200Response{}
 
 // AddNodeType200Response struct for AddNodeType200Response
 type AddNodeType200Response struct {
-	ContainerType *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInner `json:"containerType,omitempty"`
-	Success *bool `json:"success,omitempty"`
-	AdditionalProperties map[string]interface{}
+	ContainerType        *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInner `json:"containerType,omitempty"`
+	Success              *bool                                                                                               `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{}                                                                              `json:",remain"`
 }
 
 type _AddNodeType200Response AddNodeType200Response
@@ -109,7 +109,7 @@ func (o *AddNodeType200Response) SetSuccess(v bool) {
 }
 
 func (o AddNodeType200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -131,63 +131,8 @@ func (o AddNodeType200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *AddNodeType200Response) UnmarshalJSON(data []byte) (err error) {
-	varAddNodeType200Response := _AddNodeType200Response{}
-
-	err = json.Unmarshal(data, &varAddNodeType200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddNodeType200Response(varAddNodeType200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "containerType")
-		delete(additionalProperties, "success")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddNodeType200Response struct {
-	value *AddNodeType200Response
-	isSet bool
-}
-
-func (v NullableAddNodeType200Response) Get() *AddNodeType200Response {
-	return v.value
-}
-
-func (v *NullableAddNodeType200Response) Set(val *AddNodeType200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddNodeType200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddNodeType200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddNodeType200Response(val *AddNodeType200Response) *NullableAddNodeType200Response {
-	return &NullableAddNodeType200Response{value: val, isSet: true}
-}
-
-func (v NullableAddNodeType200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddNodeType200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

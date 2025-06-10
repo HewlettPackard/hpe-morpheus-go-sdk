@@ -35,9 +35,9 @@ type UpdateClusterLayoutRequestLayout struct {
 	// Install Docker (container runtime).
 	InstallContainerRuntime *bool `json:"installContainerRuntime,omitempty"`
 	// Memory requirement in bytes
-	MemoryRequirement *int64 `json:"memoryRequirement,omitempty"`
-	GroupType *AddClusterLayoutsRequestLayoutGroupType `json:"groupType,omitempty"`
-	ProvisionType *AddClusterLayoutsRequestLayoutProvisionType `json:"provisionType,omitempty"`
+	MemoryRequirement *int64                                       `json:"memoryRequirement,omitempty"`
+	GroupType         *AddClusterLayoutsRequestLayoutGroupType     `json:"groupType,omitempty"`
+	ProvisionType     *AddClusterLayoutsRequestLayoutProvisionType `json:"provisionType,omitempty"`
 	// Array of cluster layout option types
 	OptionTypes []GetAlerts200ResponseAllOfChecksInnerAccount `json:"optionTypes,omitempty"`
 	// Array of cluster layout task sets
@@ -47,8 +47,8 @@ type UpdateClusterLayoutRequestLayout struct {
 	// Array of cluster layout master nodes
 	Masters []AddClusterLayoutsRequestLayoutMastersInner `json:"masters,omitempty"`
 	// Array of cluster layout worker nodes
-	Workers []AddClusterLayoutsRequestLayoutMastersInner `json:"workers,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Workers              []AddClusterLayoutsRequestLayoutMastersInner `json:"workers,omitempty"`
+	AdditionalProperties map[string]interface{}                       `json:",remain"`
 }
 
 type _UpdateClusterLayoutRequestLayout UpdateClusterLayoutRequestLayout
@@ -563,7 +563,7 @@ func (o *UpdateClusterLayoutRequestLayout) SetWorkers(v []AddClusterLayoutsReque
 }
 
 func (o UpdateClusterLayoutRequestLayout) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -624,76 +624,8 @@ func (o UpdateClusterLayoutRequestLayout) ToMap() (map[string]interface{}, error
 
 	return toSerialize, nil
 }
-
 func (o *UpdateClusterLayoutRequestLayout) UnmarshalJSON(data []byte) (err error) {
-	varUpdateClusterLayoutRequestLayout := _UpdateClusterLayoutRequestLayout{}
-
-	err = json.Unmarshal(data, &varUpdateClusterLayoutRequestLayout)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateClusterLayoutRequestLayout(varUpdateClusterLayoutRequestLayout)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "computeVersion")
-		delete(additionalProperties, "creatable")
-		delete(additionalProperties, "hasAutoScale")
-		delete(additionalProperties, "installContainerRuntime")
-		delete(additionalProperties, "memoryRequirement")
-		delete(additionalProperties, "groupType")
-		delete(additionalProperties, "provisionType")
-		delete(additionalProperties, "optionTypes")
-		delete(additionalProperties, "taskSets")
-		delete(additionalProperties, "environmentVariables")
-		delete(additionalProperties, "masters")
-		delete(additionalProperties, "workers")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateClusterLayoutRequestLayout struct {
-	value *UpdateClusterLayoutRequestLayout
-	isSet bool
-}
-
-func (v NullableUpdateClusterLayoutRequestLayout) Get() *UpdateClusterLayoutRequestLayout {
-	return v.value
-}
-
-func (v *NullableUpdateClusterLayoutRequestLayout) Set(val *UpdateClusterLayoutRequestLayout) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateClusterLayoutRequestLayout) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateClusterLayoutRequestLayout) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateClusterLayoutRequestLayout(val *UpdateClusterLayoutRequestLayout) *NullableUpdateClusterLayoutRequestLayout {
-	return &NullableUpdateClusterLayoutRequestLayout{value: val, isSet: true}
-}
-
-func (v NullableUpdateClusterLayoutRequestLayout) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateClusterLayoutRequestLayout) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

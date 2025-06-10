@@ -20,12 +20,11 @@ import (
 	"net/url"
 )
 
-
 // GuidanceSettingsAPIService GuidanceSettingsAPI service
 type GuidanceSettingsAPIService service
 
 type ApiGetGuidanceSettingsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *GuidanceSettingsAPIService
 }
 
@@ -38,24 +37,25 @@ GetGuidanceSettings Get Guidance Settings
 
 This endpoint retrieves guidance settings.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetGuidanceSettingsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetGuidanceSettingsRequest
 */
 func (a *GuidanceSettingsAPIService) GetGuidanceSettings(ctx context.Context) ApiGetGuidanceSettingsRequest {
 	return ApiGetGuidanceSettingsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return GetGuidanceSettings200Response
+//
+//	@return GetGuidanceSettings200Response
 func (a *GuidanceSettingsAPIService) GetGuidanceSettingsExecute(r ApiGetGuidanceSettingsRequest) (*GetGuidanceSettings200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetGuidanceSettings200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetGuidanceSettings200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GuidanceSettingsAPIService.GetGuidanceSettings")
@@ -105,7 +105,7 @@ func (a *GuidanceSettingsAPIService) GetGuidanceSettingsExecute(r ApiGetGuidance
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -114,8 +114,8 @@ func (a *GuidanceSettingsAPIService) GetGuidanceSettingsExecute(r ApiGetGuidance
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -125,8 +125,8 @@ func (a *GuidanceSettingsAPIService) GetGuidanceSettingsExecute(r ApiGetGuidance
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -134,8 +134,8 @@ func (a *GuidanceSettingsAPIService) GetGuidanceSettingsExecute(r ApiGetGuidance
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -144,8 +144,8 @@ func (a *GuidanceSettingsAPIService) GetGuidanceSettingsExecute(r ApiGetGuidance
 }
 
 type ApiUpdateGuidanceSettingsRequest struct {
-	ctx context.Context
-	ApiService *GuidanceSettingsAPIService
+	ctx                            context.Context
+	ApiService                     *GuidanceSettingsAPIService
 	getGuidanceSettings200Response *GetGuidanceSettings200Response
 }
 
@@ -163,24 +163,25 @@ UpdateGuidanceSettings Update Guidance Settings
 
 Update Guidance Settings
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiUpdateGuidanceSettingsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiUpdateGuidanceSettingsRequest
 */
 func (a *GuidanceSettingsAPIService) UpdateGuidanceSettings(ctx context.Context) ApiUpdateGuidanceSettingsRequest {
 	return ApiUpdateGuidanceSettingsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return UpdateGuidanceSettings200Response
+//
+//	@return UpdateGuidanceSettings200Response
 func (a *GuidanceSettingsAPIService) UpdateGuidanceSettingsExecute(r ApiUpdateGuidanceSettingsRequest) (*UpdateGuidanceSettings200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *UpdateGuidanceSettings200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *UpdateGuidanceSettings200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GuidanceSettingsAPIService.UpdateGuidanceSettings")
@@ -232,7 +233,7 @@ func (a *GuidanceSettingsAPIService) UpdateGuidanceSettingsExecute(r ApiUpdateGu
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -241,8 +242,8 @@ func (a *GuidanceSettingsAPIService) UpdateGuidanceSettingsExecute(r ApiUpdateGu
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -252,8 +253,8 @@ func (a *GuidanceSettingsAPIService) UpdateGuidanceSettingsExecute(r ApiUpdateGu
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -261,8 +262,8 @@ func (a *GuidanceSettingsAPIService) UpdateGuidanceSettingsExecute(r ApiUpdateGu
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

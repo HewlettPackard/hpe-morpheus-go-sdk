@@ -20,28 +20,28 @@ var _ MappedNullable = &ListPrices200ResponseAllOfPricesInner{}
 
 // ListPrices200ResponseAllOfPricesInner struct for ListPrices200ResponseAllOfPricesInner
 type ListPrices200ResponseAllOfPricesInner struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Code *string `json:"code,omitempty"`
-	Active *bool `json:"active,omitempty"`
-	PriceType *string `json:"priceType,omitempty"`
-	PriceUnit *string `json:"priceUnit,omitempty"`
-	AdditionalPriceUnit *string `json:"additionalPriceUnit,omitempty"`
-	Price *float32 `json:"price,omitempty"`
-	CustomPrice *float32 `json:"customPrice,omitempty"`
-	MarkupType *string `json:"markupType,omitempty"`
-	Markup *float32 `json:"markup,omitempty"`
-	MarkupPercent *float32 `json:"markupPercent,omitempty"`
-	Cost *float32 `json:"cost,omitempty"`
-	Currency *string `json:"currency,omitempty"`
-	IncurCharges *string `json:"incurCharges,omitempty"`
-	Platform *string `json:"platform,omitempty"`
-	Software *string `json:"software,omitempty"`
-	VolumeType *ListPriceSets200ResponseAllOfPriceSetsInnerPricesInnerVolumeType `json:"volumeType,omitempty"`
-	Datastore *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"datastore,omitempty"`
-	CrossCloudApply *bool `json:"crossCloudApply,omitempty"`
-	Account *string `json:"account,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                            `json:"id,omitempty"`
+	Name                 *string                                                           `json:"name,omitempty"`
+	Code                 *string                                                           `json:"code,omitempty"`
+	Active               *bool                                                             `json:"active,omitempty"`
+	PriceType            *string                                                           `json:"priceType,omitempty"`
+	PriceUnit            *string                                                           `json:"priceUnit,omitempty"`
+	AdditionalPriceUnit  *string                                                           `json:"additionalPriceUnit,omitempty"`
+	Price                *float32                                                          `json:"price,omitempty"`
+	CustomPrice          *float32                                                          `json:"customPrice,omitempty"`
+	MarkupType           *string                                                           `json:"markupType,omitempty"`
+	Markup               *float32                                                          `json:"markup,omitempty"`
+	MarkupPercent        *float32                                                          `json:"markupPercent,omitempty"`
+	Cost                 *float32                                                          `json:"cost,omitempty"`
+	Currency             *string                                                           `json:"currency,omitempty"`
+	IncurCharges         *string                                                           `json:"incurCharges,omitempty"`
+	Platform             *string                                                           `json:"platform,omitempty"`
+	Software             *string                                                           `json:"software,omitempty"`
+	VolumeType           *ListPriceSets200ResponseAllOfPriceSetsInnerPricesInnerVolumeType `json:"volumeType,omitempty"`
+	Datastore            *GetAlerts200ResponseAllOfCheckGroupsInnerInstance                `json:"datastore,omitempty"`
+	CrossCloudApply      *bool                                                             `json:"crossCloudApply,omitempty"`
+	Account              *string                                                           `json:"account,omitempty"`
+	AdditionalProperties map[string]interface{}                                            `json:",remain"`
 }
 
 type _ListPrices200ResponseAllOfPricesInner ListPrices200ResponseAllOfPricesInner
@@ -736,7 +736,7 @@ func (o *ListPrices200ResponseAllOfPricesInner) SetAccount(v string) {
 }
 
 func (o ListPrices200ResponseAllOfPricesInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -815,82 +815,8 @@ func (o ListPrices200ResponseAllOfPricesInner) ToMap() (map[string]interface{}, 
 
 	return toSerialize, nil
 }
-
 func (o *ListPrices200ResponseAllOfPricesInner) UnmarshalJSON(data []byte) (err error) {
-	varListPrices200ResponseAllOfPricesInner := _ListPrices200ResponseAllOfPricesInner{}
-
-	err = json.Unmarshal(data, &varListPrices200ResponseAllOfPricesInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListPrices200ResponseAllOfPricesInner(varListPrices200ResponseAllOfPricesInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "active")
-		delete(additionalProperties, "priceType")
-		delete(additionalProperties, "priceUnit")
-		delete(additionalProperties, "additionalPriceUnit")
-		delete(additionalProperties, "price")
-		delete(additionalProperties, "customPrice")
-		delete(additionalProperties, "markupType")
-		delete(additionalProperties, "markup")
-		delete(additionalProperties, "markupPercent")
-		delete(additionalProperties, "cost")
-		delete(additionalProperties, "currency")
-		delete(additionalProperties, "incurCharges")
-		delete(additionalProperties, "platform")
-		delete(additionalProperties, "software")
-		delete(additionalProperties, "volumeType")
-		delete(additionalProperties, "datastore")
-		delete(additionalProperties, "crossCloudApply")
-		delete(additionalProperties, "account")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListPrices200ResponseAllOfPricesInner struct {
-	value *ListPrices200ResponseAllOfPricesInner
-	isSet bool
-}
-
-func (v NullableListPrices200ResponseAllOfPricesInner) Get() *ListPrices200ResponseAllOfPricesInner {
-	return v.value
-}
-
-func (v *NullableListPrices200ResponseAllOfPricesInner) Set(val *ListPrices200ResponseAllOfPricesInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListPrices200ResponseAllOfPricesInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListPrices200ResponseAllOfPricesInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListPrices200ResponseAllOfPricesInner(val *ListPrices200ResponseAllOfPricesInner) *NullableListPrices200ResponseAllOfPricesInner {
-	return &NullableListPrices200ResponseAllOfPricesInner{value: val, isSet: true}
-}
-
-func (v NullableListPrices200ResponseAllOfPricesInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListPrices200ResponseAllOfPricesInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

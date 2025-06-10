@@ -20,11 +20,11 @@ var _ MappedNullable = &ListClusters200ResponseAllOfClustersInnerServersInner{}
 
 // ListClusters200ResponseAllOfClustersInnerServersInner struct for ListClusters200ResponseAllOfClustersInnerServersInner
 type ListClusters200ResponseAllOfClustersInnerServersInner struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	TypeSet *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"typeSet,omitempty"`
-	ComputeServerType *ListClusters200ResponseAllOfClustersInnerServersInnerComputeServerType `json:"computeServerType,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                                  `json:"id,omitempty"`
+	Name                 *string                                                                 `json:"name,omitempty"`
+	TypeSet              *ListBackupSettings200ResponseBackupSettingsDefaultSchedule             `json:"typeSet,omitempty"`
+	ComputeServerType    *ListClusters200ResponseAllOfClustersInnerServersInnerComputeServerType `json:"computeServerType,omitempty"`
+	AdditionalProperties map[string]interface{}                                                  `json:",remain"`
 }
 
 type _ListClusters200ResponseAllOfClustersInnerServersInner ListClusters200ResponseAllOfClustersInnerServersInner
@@ -175,7 +175,7 @@ func (o *ListClusters200ResponseAllOfClustersInnerServersInner) SetComputeServer
 }
 
 func (o ListClusters200ResponseAllOfClustersInnerServersInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -203,65 +203,8 @@ func (o ListClusters200ResponseAllOfClustersInnerServersInner) ToMap() (map[stri
 
 	return toSerialize, nil
 }
-
 func (o *ListClusters200ResponseAllOfClustersInnerServersInner) UnmarshalJSON(data []byte) (err error) {
-	varListClusters200ResponseAllOfClustersInnerServersInner := _ListClusters200ResponseAllOfClustersInnerServersInner{}
-
-	err = json.Unmarshal(data, &varListClusters200ResponseAllOfClustersInnerServersInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListClusters200ResponseAllOfClustersInnerServersInner(varListClusters200ResponseAllOfClustersInnerServersInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "typeSet")
-		delete(additionalProperties, "computeServerType")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListClusters200ResponseAllOfClustersInnerServersInner struct {
-	value *ListClusters200ResponseAllOfClustersInnerServersInner
-	isSet bool
-}
-
-func (v NullableListClusters200ResponseAllOfClustersInnerServersInner) Get() *ListClusters200ResponseAllOfClustersInnerServersInner {
-	return v.value
-}
-
-func (v *NullableListClusters200ResponseAllOfClustersInnerServersInner) Set(val *ListClusters200ResponseAllOfClustersInnerServersInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListClusters200ResponseAllOfClustersInnerServersInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListClusters200ResponseAllOfClustersInnerServersInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListClusters200ResponseAllOfClustersInnerServersInner(val *ListClusters200ResponseAllOfClustersInnerServersInner) *NullableListClusters200ResponseAllOfClustersInnerServersInner {
-	return &NullableListClusters200ResponseAllOfClustersInnerServersInner{value: val, isSet: true}
-}
-
-func (v NullableListClusters200ResponseAllOfClustersInnerServersInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListClusters200ResponseAllOfClustersInnerServersInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

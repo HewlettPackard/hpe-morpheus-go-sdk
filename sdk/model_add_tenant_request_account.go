@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the AddTenantRequestAccount type satisfies the MappedNullable interface at compile time
@@ -24,13 +23,13 @@ type AddTenantRequestAccount struct {
 	// Name
 	Name string `json:"name"`
 	// Description
-	Description *string `json:"description,omitempty"`
-	Role *AddTenantRequestAccountRole `json:"role,omitempty"`
+	Description *string                      `json:"description,omitempty"`
+	Role        *AddTenantRequestAccountRole `json:"role,omitempty"`
 	// The subdomain. This will be part of the login URL and username for sub tenant users.
 	Subdomain *string `json:"subdomain,omitempty"`
 	// Currency Code (ISO 4217)
-	Currency *string `json:"currency,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Currency             *string                `json:"currency,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddTenantRequestAccount AddTenantRequestAccount
@@ -210,7 +209,7 @@ func (o *AddTenantRequestAccount) SetCurrency(v string) {
 }
 
 func (o AddTenantRequestAccount) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -239,87 +238,8 @@ func (o AddTenantRequestAccount) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *AddTenantRequestAccount) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"name",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varAddTenantRequestAccount := _AddTenantRequestAccount{}
-
-	err = json.Unmarshal(data, &varAddTenantRequestAccount)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddTenantRequestAccount(varAddTenantRequestAccount)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "role")
-		delete(additionalProperties, "subdomain")
-		delete(additionalProperties, "currency")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddTenantRequestAccount struct {
-	value *AddTenantRequestAccount
-	isSet bool
-}
-
-func (v NullableAddTenantRequestAccount) Get() *AddTenantRequestAccount {
-	return v.value
-}
-
-func (v *NullableAddTenantRequestAccount) Set(val *AddTenantRequestAccount) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddTenantRequestAccount) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddTenantRequestAccount) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddTenantRequestAccount(val *AddTenantRequestAccount) *NullableAddTenantRequestAccount {
-	return &NullableAddTenantRequestAccount{value: val, isSet: true}
-}
-
-func (v NullableAddTenantRequestAccount) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddTenantRequestAccount) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

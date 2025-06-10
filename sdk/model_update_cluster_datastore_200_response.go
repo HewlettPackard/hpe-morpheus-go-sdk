@@ -20,9 +20,9 @@ var _ MappedNullable = &UpdateClusterDatastore200Response{}
 
 // UpdateClusterDatastore200Response struct for UpdateClusterDatastore200Response
 type UpdateClusterDatastore200Response struct {
-	Datastore *SaveCloudDatastore200ResponseAllOfDatastore `json:"datastore,omitempty"`
-	Success *bool `json:"success,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Datastore            *SaveCloudDatastore200ResponseAllOfDatastore `json:"datastore,omitempty"`
+	Success              *bool                                        `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{}                       `json:",remain"`
 }
 
 type _UpdateClusterDatastore200Response UpdateClusterDatastore200Response
@@ -109,7 +109,7 @@ func (o *UpdateClusterDatastore200Response) SetSuccess(v bool) {
 }
 
 func (o UpdateClusterDatastore200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -131,63 +131,8 @@ func (o UpdateClusterDatastore200Response) ToMap() (map[string]interface{}, erro
 
 	return toSerialize, nil
 }
-
 func (o *UpdateClusterDatastore200Response) UnmarshalJSON(data []byte) (err error) {
-	varUpdateClusterDatastore200Response := _UpdateClusterDatastore200Response{}
-
-	err = json.Unmarshal(data, &varUpdateClusterDatastore200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateClusterDatastore200Response(varUpdateClusterDatastore200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "datastore")
-		delete(additionalProperties, "success")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateClusterDatastore200Response struct {
-	value *UpdateClusterDatastore200Response
-	isSet bool
-}
-
-func (v NullableUpdateClusterDatastore200Response) Get() *UpdateClusterDatastore200Response {
-	return v.value
-}
-
-func (v *NullableUpdateClusterDatastore200Response) Set(val *UpdateClusterDatastore200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateClusterDatastore200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateClusterDatastore200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateClusterDatastore200Response(val *UpdateClusterDatastore200Response) *NullableUpdateClusterDatastore200Response {
-	return &NullableUpdateClusterDatastore200Response{value: val, isSet: true}
-}
-
-func (v NullableUpdateClusterDatastore200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateClusterDatastore200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

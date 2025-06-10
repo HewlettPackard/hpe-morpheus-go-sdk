@@ -14,6 +14,7 @@ package sdk
 import (
 	"encoding/json"
 	"fmt"
+
 	"gopkg.in/validator.v2"
 )
 
@@ -22,7 +23,7 @@ var _ fmt.Stringer
 
 // AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormationCAPABILITYNAMEDIAM - CloudFormation Attribute CAPABILITY_NAMED_IAM
 type AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormationCAPABILITYNAMEDIAM struct {
-	Bool *bool
+	Bool   *bool
 	String *string
 }
 
@@ -40,6 +41,21 @@ func StringAsAddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormationCAPA
 	}
 }
 
+func (dst *AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormationCAPABILITYNAMEDIAM) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormationCAPABILITYNAMEDIAM{}
+	}
+
+	if out, ok := data.(bool); ok {
+		dst.Bool = &out
+	}
+
+	if out, ok := data.(string); ok {
+		dst.String = &out
+	}
+
+	return dst, nil
+}
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormationCAPABILITYNAMEDIAM) UnmarshalJSON(data []byte) error {
@@ -106,7 +122,7 @@ func (src AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormationCAPABIL
 }
 
 // Get the actual instance
-func (obj *AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormationCAPABILITYNAMEDIAM) GetActualInstance() (interface{}) {
+func (obj *AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormationCAPABILITYNAMEDIAM) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -123,7 +139,7 @@ func (obj *AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormationCAPABI
 }
 
 // Get the actual instance value
-func (obj AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormationCAPABILITYNAMEDIAM) GetActualInstanceValue() (interface{}) {
+func (obj AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormationCAPABILITYNAMEDIAM) GetActualInstanceValue() interface{} {
 	if obj.Bool != nil {
 		return *obj.Bool
 	}
@@ -171,5 +187,3 @@ func (v *NullableAddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormation
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

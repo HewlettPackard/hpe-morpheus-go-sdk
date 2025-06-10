@@ -14,6 +14,7 @@ package sdk
 import (
 	"encoding/json"
 	"fmt"
+
 	"gopkg.in/validator.v2"
 )
 
@@ -32,6 +33,17 @@ func AddVDIGatewaysRequestVdiGatewayOneOfAsAddVDIGatewaysRequestVdiGateway(v *Ad
 	}
 }
 
+func (dst *AddVDIGatewaysRequestVdiGateway) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &AddVDIGatewaysRequestVdiGateway{}
+	}
+
+	if out, ok := data.(AddVDIGatewaysRequestVdiGatewayOneOf); ok {
+		dst.AddVDIGatewaysRequestVdiGatewayOneOf = &out
+	}
+
+	return dst, nil
+}
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddVDIGatewaysRequestVdiGateway) UnmarshalJSON(data []byte) error {
@@ -76,7 +88,7 @@ func (src AddVDIGatewaysRequestVdiGateway) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AddVDIGatewaysRequestVdiGateway) GetActualInstance() (interface{}) {
+func (obj *AddVDIGatewaysRequestVdiGateway) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -89,7 +101,7 @@ func (obj *AddVDIGatewaysRequestVdiGateway) GetActualInstance() (interface{}) {
 }
 
 // Get the actual instance value
-func (obj AddVDIGatewaysRequestVdiGateway) GetActualInstanceValue() (interface{}) {
+func (obj AddVDIGatewaysRequestVdiGateway) GetActualInstanceValue() interface{} {
 	if obj.AddVDIGatewaysRequestVdiGatewayOneOf != nil {
 		return *obj.AddVDIGatewaysRequestVdiGatewayOneOf
 	}
@@ -133,5 +145,3 @@ func (v *NullableAddVDIGatewaysRequestVdiGateway) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

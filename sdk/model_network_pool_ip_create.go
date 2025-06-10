@@ -27,8 +27,8 @@ type NetworkPoolIpCreate struct {
 	// Type of associated resource such as a host/server
 	RefType *string `json:"refType,omitempty"`
 	// ID of associated resource such as a host/server
-	RefId *int64 `json:"refId,omitempty"`
-	AdditionalProperties map[string]interface{}
+	RefId                *int64                 `json:"refId,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _NetworkPoolIpCreate NetworkPoolIpCreate
@@ -179,7 +179,7 @@ func (o *NetworkPoolIpCreate) SetRefId(v int64) {
 }
 
 func (o NetworkPoolIpCreate) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -207,65 +207,8 @@ func (o NetworkPoolIpCreate) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *NetworkPoolIpCreate) UnmarshalJSON(data []byte) (err error) {
-	varNetworkPoolIpCreate := _NetworkPoolIpCreate{}
-
-	err = json.Unmarshal(data, &varNetworkPoolIpCreate)
-
-	if err != nil {
-		return err
-	}
-
-	*o = NetworkPoolIpCreate(varNetworkPoolIpCreate)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "ipAddress")
-		delete(additionalProperties, "hostname")
-		delete(additionalProperties, "refType")
-		delete(additionalProperties, "refId")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableNetworkPoolIpCreate struct {
-	value *NetworkPoolIpCreate
-	isSet bool
-}
-
-func (v NullableNetworkPoolIpCreate) Get() *NetworkPoolIpCreate {
-	return v.value
-}
-
-func (v *NullableNetworkPoolIpCreate) Set(val *NetworkPoolIpCreate) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableNetworkPoolIpCreate) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableNetworkPoolIpCreate) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableNetworkPoolIpCreate(val *NetworkPoolIpCreate) *NullableNetworkPoolIpCreate {
-	return &NullableNetworkPoolIpCreate{value: val, isSet: true}
-}
-
-func (v NullableNetworkPoolIpCreate) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableNetworkPoolIpCreate) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

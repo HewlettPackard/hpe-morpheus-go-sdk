@@ -20,25 +20,25 @@ var _ MappedNullable = &GetNetworkRouter200ResponseNetworkRouterType{}
 
 // GetNetworkRouter200ResponseNetworkRouterType struct for GetNetworkRouter200ResponseNetworkRouterType
 type GetNetworkRouter200ResponseNetworkRouterType struct {
-	Id *int64 `json:"id,omitempty"`
-	Code *string `json:"code,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Enabled *bool `json:"enabled,omitempty"`
-	Creatable *bool `json:"creatable,omitempty"`
-	Selectable *bool `json:"selectable,omitempty"`
-	HasFirewall *bool `json:"hasFirewall,omitempty"`
-	HasDhcp *bool `json:"hasDhcp,omitempty"`
-	HasRouting *bool `json:"hasRouting,omitempty"`
-	HasNat *bool `json:"hasNat,omitempty"`
-	HasNetworkServer *bool `json:"hasNetworkServer,omitempty"`
-	HasFirewallGroups *bool `json:"hasFirewallGroups,omitempty"`
-	HasSecurityGroupPriority *bool `json:"hasSecurityGroupPriority,omitempty"`
-	OptionTypes []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
-	RuleOptionTypes []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"ruleOptionTypes,omitempty"`
+	Id                       *int64                                                                      `json:"id,omitempty"`
+	Code                     *string                                                                     `json:"code,omitempty"`
+	Name                     *string                                                                     `json:"name,omitempty"`
+	Description              *string                                                                     `json:"description,omitempty"`
+	Enabled                  *bool                                                                       `json:"enabled,omitempty"`
+	Creatable                *bool                                                                       `json:"creatable,omitempty"`
+	Selectable               *bool                                                                       `json:"selectable,omitempty"`
+	HasFirewall              *bool                                                                       `json:"hasFirewall,omitempty"`
+	HasDhcp                  *bool                                                                       `json:"hasDhcp,omitempty"`
+	HasRouting               *bool                                                                       `json:"hasRouting,omitempty"`
+	HasNat                   *bool                                                                       `json:"hasNat,omitempty"`
+	HasNetworkServer         *bool                                                                       `json:"hasNetworkServer,omitempty"`
+	HasFirewallGroups        *bool                                                                       `json:"hasFirewallGroups,omitempty"`
+	HasSecurityGroupPriority *bool                                                                       `json:"hasSecurityGroupPriority,omitempty"`
+	OptionTypes              []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
+	RuleOptionTypes          []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"ruleOptionTypes,omitempty"`
 	FirewallGroupOptionTypes []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"firewallGroupOptionTypes,omitempty"`
-	NatOptionTypes []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"natOptionTypes,omitempty"`
-	AdditionalProperties map[string]interface{}
+	NatOptionTypes           []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"natOptionTypes,omitempty"`
+	AdditionalProperties     map[string]interface{}                                                      `json:",remain"`
 }
 
 type _GetNetworkRouter200ResponseNetworkRouterType GetNetworkRouter200ResponseNetworkRouterType
@@ -637,7 +637,7 @@ func (o *GetNetworkRouter200ResponseNetworkRouterType) SetNatOptionTypes(v []Lis
 }
 
 func (o GetNetworkRouter200ResponseNetworkRouterType) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -707,79 +707,8 @@ func (o GetNetworkRouter200ResponseNetworkRouterType) ToMap() (map[string]interf
 
 	return toSerialize, nil
 }
-
 func (o *GetNetworkRouter200ResponseNetworkRouterType) UnmarshalJSON(data []byte) (err error) {
-	varGetNetworkRouter200ResponseNetworkRouterType := _GetNetworkRouter200ResponseNetworkRouterType{}
-
-	err = json.Unmarshal(data, &varGetNetworkRouter200ResponseNetworkRouterType)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetNetworkRouter200ResponseNetworkRouterType(varGetNetworkRouter200ResponseNetworkRouterType)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "creatable")
-		delete(additionalProperties, "selectable")
-		delete(additionalProperties, "hasFirewall")
-		delete(additionalProperties, "hasDhcp")
-		delete(additionalProperties, "hasRouting")
-		delete(additionalProperties, "hasNat")
-		delete(additionalProperties, "hasNetworkServer")
-		delete(additionalProperties, "hasFirewallGroups")
-		delete(additionalProperties, "hasSecurityGroupPriority")
-		delete(additionalProperties, "optionTypes")
-		delete(additionalProperties, "ruleOptionTypes")
-		delete(additionalProperties, "firewallGroupOptionTypes")
-		delete(additionalProperties, "natOptionTypes")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetNetworkRouter200ResponseNetworkRouterType struct {
-	value *GetNetworkRouter200ResponseNetworkRouterType
-	isSet bool
-}
-
-func (v NullableGetNetworkRouter200ResponseNetworkRouterType) Get() *GetNetworkRouter200ResponseNetworkRouterType {
-	return v.value
-}
-
-func (v *NullableGetNetworkRouter200ResponseNetworkRouterType) Set(val *GetNetworkRouter200ResponseNetworkRouterType) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetNetworkRouter200ResponseNetworkRouterType) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetNetworkRouter200ResponseNetworkRouterType) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetNetworkRouter200ResponseNetworkRouterType(val *GetNetworkRouter200ResponseNetworkRouterType) *NullableGetNetworkRouter200ResponseNetworkRouterType {
-	return &NullableGetNetworkRouter200ResponseNetworkRouterType{value: val, isSet: true}
-}
-
-func (v NullableGetNetworkRouter200ResponseNetworkRouterType) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetNetworkRouter200ResponseNetworkRouterType) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -21,29 +21,29 @@ var _ MappedNullable = &NetworkRouterNat{}
 
 // NetworkRouterNat struct for NetworkRouterNat
 type NetworkRouterNat struct {
-	Id *int32 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Enabled *bool `json:"enabled,omitempty"`
-	SourceNetwork *string `json:"sourceNetwork,omitempty"`
-	DestinationNetwork *string `json:"destinationNetwork,omitempty"`
-	TranslatedNetwork *string `json:"translatedNetwork,omitempty"`
-	SourcePorts *string `json:"sourcePorts,omitempty"`
-	DestinationPorts *string `json:"destinationPorts,omitempty"`
-	TranslatedPorts *string `json:"translatedPorts,omitempty"`
-	Priority *int32 `json:"priority,omitempty"`
-	Protocol *string `json:"protocol,omitempty"`
-	MatchIpv6DestinationPrefix *string `json:"matchIpv6DestinationPrefix,omitempty"`
-	TranslatedIpv4SourcePrefix *string `json:"translatedIpv4SourcePrefix,omitempty"`
-	RefType *string `json:"refType,omitempty"`
-	RefId *string `json:"refId,omitempty"`
-	SyncSource *string `json:"syncSource,omitempty"`
-	InternalId *string `json:"internalId,omitempty"`
-	ExternalId *string `json:"externalId,omitempty"`
-	ProviderId *string `json:"providerId,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                         *int32                 `json:"id,omitempty"`
+	Name                       *string                `json:"name,omitempty"`
+	Description                *string                `json:"description,omitempty"`
+	Enabled                    *bool                  `json:"enabled,omitempty"`
+	SourceNetwork              *string                `json:"sourceNetwork,omitempty"`
+	DestinationNetwork         *string                `json:"destinationNetwork,omitempty"`
+	TranslatedNetwork          *string                `json:"translatedNetwork,omitempty"`
+	SourcePorts                *string                `json:"sourcePorts,omitempty"`
+	DestinationPorts           *string                `json:"destinationPorts,omitempty"`
+	TranslatedPorts            *string                `json:"translatedPorts,omitempty"`
+	Priority                   *int32                 `json:"priority,omitempty"`
+	Protocol                   *string                `json:"protocol,omitempty"`
+	MatchIpv6DestinationPrefix *string                `json:"matchIpv6DestinationPrefix,omitempty"`
+	TranslatedIpv4SourcePrefix *string                `json:"translatedIpv4SourcePrefix,omitempty"`
+	RefType                    *string                `json:"refType,omitempty"`
+	RefId                      *string                `json:"refId,omitempty"`
+	SyncSource                 *string                `json:"syncSource,omitempty"`
+	InternalId                 *string                `json:"internalId,omitempty"`
+	ExternalId                 *string                `json:"externalId,omitempty"`
+	ProviderId                 *string                `json:"providerId,omitempty"`
+	DateCreated                *time.Time             `json:"dateCreated,omitempty"`
+	LastUpdated                *time.Time             `json:"lastUpdated,omitempty"`
+	AdditionalProperties       map[string]interface{} `json:",remain"`
 }
 
 type _NetworkRouterNat NetworkRouterNat
@@ -770,7 +770,7 @@ func (o *NetworkRouterNat) SetLastUpdated(v time.Time) {
 }
 
 func (o NetworkRouterNat) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -852,83 +852,8 @@ func (o NetworkRouterNat) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *NetworkRouterNat) UnmarshalJSON(data []byte) (err error) {
-	varNetworkRouterNat := _NetworkRouterNat{}
-
-	err = json.Unmarshal(data, &varNetworkRouterNat)
-
-	if err != nil {
-		return err
-	}
-
-	*o = NetworkRouterNat(varNetworkRouterNat)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "sourceNetwork")
-		delete(additionalProperties, "destinationNetwork")
-		delete(additionalProperties, "translatedNetwork")
-		delete(additionalProperties, "sourcePorts")
-		delete(additionalProperties, "destinationPorts")
-		delete(additionalProperties, "translatedPorts")
-		delete(additionalProperties, "priority")
-		delete(additionalProperties, "protocol")
-		delete(additionalProperties, "matchIpv6DestinationPrefix")
-		delete(additionalProperties, "translatedIpv4SourcePrefix")
-		delete(additionalProperties, "refType")
-		delete(additionalProperties, "refId")
-		delete(additionalProperties, "syncSource")
-		delete(additionalProperties, "internalId")
-		delete(additionalProperties, "externalId")
-		delete(additionalProperties, "providerId")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableNetworkRouterNat struct {
-	value *NetworkRouterNat
-	isSet bool
-}
-
-func (v NullableNetworkRouterNat) Get() *NetworkRouterNat {
-	return v.value
-}
-
-func (v *NullableNetworkRouterNat) Set(val *NetworkRouterNat) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableNetworkRouterNat) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableNetworkRouterNat) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableNetworkRouterNat(val *NetworkRouterNat) *NullableNetworkRouterNat {
-	return &NullableNetworkRouterNat{value: val, isSet: true}
-}
-
-func (v NullableNetworkRouterNat) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableNetworkRouterNat) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -14,7 +14,6 @@ package sdk
 import (
 	"encoding/json"
 	"time"
-	"fmt"
 )
 
 // checks if the AddIncidentRequestIncident type satisfies the MappedNullable interface at compile time
@@ -37,8 +36,8 @@ type AddIncidentRequestIncident struct {
 	// Set start time
 	EndDate *time.Time `json:"endDate,omitempty"`
 	// Set 'In Availability'
-	InUptime *bool `json:"inUptime,omitempty"`
-	AdditionalProperties map[string]interface{}
+	InUptime             *bool                  `json:"inUptime,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddIncidentRequestIncident AddIncidentRequestIncident
@@ -310,7 +309,7 @@ func (o *AddIncidentRequestIncident) SetInUptime(v bool) {
 }
 
 func (o AddIncidentRequestIncident) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -348,90 +347,8 @@ func (o AddIncidentRequestIncident) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *AddIncidentRequestIncident) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"name",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varAddIncidentRequestIncident := _AddIncidentRequestIncident{}
-
-	err = json.Unmarshal(data, &varAddIncidentRequestIncident)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddIncidentRequestIncident(varAddIncidentRequestIncident)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "resolution")
-		delete(additionalProperties, "comment")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "severity")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "startDate")
-		delete(additionalProperties, "endDate")
-		delete(additionalProperties, "inUptime")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddIncidentRequestIncident struct {
-	value *AddIncidentRequestIncident
-	isSet bool
-}
-
-func (v NullableAddIncidentRequestIncident) Get() *AddIncidentRequestIncident {
-	return v.value
-}
-
-func (v *NullableAddIncidentRequestIncident) Set(val *AddIncidentRequestIncident) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddIncidentRequestIncident) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddIncidentRequestIncident) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddIncidentRequestIncident(val *AddIncidentRequestIncident) *NullableAddIncidentRequestIncident {
-	return &NullableAddIncidentRequestIncident{value: val, isSet: true}
-}
-
-func (v NullableAddIncidentRequestIncident) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddIncidentRequestIncident) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

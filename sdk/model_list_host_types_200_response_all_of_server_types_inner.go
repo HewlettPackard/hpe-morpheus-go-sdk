@@ -20,29 +20,29 @@ var _ MappedNullable = &ListHostTypes200ResponseAllOfServerTypesInner{}
 
 // ListHostTypes200ResponseAllOfServerTypesInner struct for ListHostTypes200ResponseAllOfServerTypesInner
 type ListHostTypes200ResponseAllOfServerTypesInner struct {
-	Id *int64 `json:"id,omitempty"`
-	Code *string `json:"code,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Description *string `json:"description,omitempty"`
-	NodeType *string `json:"nodeType,omitempty"`
-	Platform *string `json:"platform,omitempty"`
-	Enabled *bool `json:"enabled,omitempty"`
-	Selectable *bool `json:"selectable,omitempty"`
-	ExternalDelete *bool `json:"externalDelete,omitempty"`
-	Managed *bool `json:"managed,omitempty"`
-	ControlPower *bool `json:"controlPower,omitempty"`
-	ControlSuspend *bool `json:"controlSuspend,omitempty"`
-	Creatable *bool `json:"creatable,omitempty"`
-	HasAgent *bool `json:"hasAgent,omitempty"`
-	VmHypervisor *bool `json:"vmHypervisor,omitempty"`
-	ContainerHypervisor *bool `json:"containerHypervisor,omitempty"`
-	BareMetalHost *bool `json:"bareMetalHost,omitempty"`
-	GuestVm *bool `json:"guestVm,omitempty"`
-	HasAutomation *bool `json:"hasAutomation,omitempty"`
-	ProvisionType *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerProvisionType `json:"provisionType,omitempty"`
-	OptionTypes []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
-	DisplayOrder *int64 `json:"displayOrder,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                                      `json:"id,omitempty"`
+	Code                 *string                                                                     `json:"code,omitempty"`
+	Name                 *string                                                                     `json:"name,omitempty"`
+	Description          *string                                                                     `json:"description,omitempty"`
+	NodeType             *string                                                                     `json:"nodeType,omitempty"`
+	Platform             *string                                                                     `json:"platform,omitempty"`
+	Enabled              *bool                                                                       `json:"enabled,omitempty"`
+	Selectable           *bool                                                                       `json:"selectable,omitempty"`
+	ExternalDelete       *bool                                                                       `json:"externalDelete,omitempty"`
+	Managed              *bool                                                                       `json:"managed,omitempty"`
+	ControlPower         *bool                                                                       `json:"controlPower,omitempty"`
+	ControlSuspend       *bool                                                                       `json:"controlSuspend,omitempty"`
+	Creatable            *bool                                                                       `json:"creatable,omitempty"`
+	HasAgent             *bool                                                                       `json:"hasAgent,omitempty"`
+	VmHypervisor         *bool                                                                       `json:"vmHypervisor,omitempty"`
+	ContainerHypervisor  *bool                                                                       `json:"containerHypervisor,omitempty"`
+	BareMetalHost        *bool                                                                       `json:"bareMetalHost,omitempty"`
+	GuestVm              *bool                                                                       `json:"guestVm,omitempty"`
+	HasAutomation        *bool                                                                       `json:"hasAutomation,omitempty"`
+	ProvisionType        *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerProvisionType  `json:"provisionType,omitempty"`
+	OptionTypes          []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
+	DisplayOrder         *int64                                                                      `json:"displayOrder,omitempty"`
+	AdditionalProperties map[string]interface{}                                                      `json:",remain"`
 }
 
 type _ListHostTypes200ResponseAllOfServerTypesInner ListHostTypes200ResponseAllOfServerTypesInner
@@ -769,7 +769,7 @@ func (o *ListHostTypes200ResponseAllOfServerTypesInner) SetDisplayOrder(v int64)
 }
 
 func (o ListHostTypes200ResponseAllOfServerTypesInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -851,83 +851,8 @@ func (o ListHostTypes200ResponseAllOfServerTypesInner) ToMap() (map[string]inter
 
 	return toSerialize, nil
 }
-
 func (o *ListHostTypes200ResponseAllOfServerTypesInner) UnmarshalJSON(data []byte) (err error) {
-	varListHostTypes200ResponseAllOfServerTypesInner := _ListHostTypes200ResponseAllOfServerTypesInner{}
-
-	err = json.Unmarshal(data, &varListHostTypes200ResponseAllOfServerTypesInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListHostTypes200ResponseAllOfServerTypesInner(varListHostTypes200ResponseAllOfServerTypesInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "nodeType")
-		delete(additionalProperties, "platform")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "selectable")
-		delete(additionalProperties, "externalDelete")
-		delete(additionalProperties, "managed")
-		delete(additionalProperties, "controlPower")
-		delete(additionalProperties, "controlSuspend")
-		delete(additionalProperties, "creatable")
-		delete(additionalProperties, "hasAgent")
-		delete(additionalProperties, "vmHypervisor")
-		delete(additionalProperties, "containerHypervisor")
-		delete(additionalProperties, "bareMetalHost")
-		delete(additionalProperties, "guestVm")
-		delete(additionalProperties, "hasAutomation")
-		delete(additionalProperties, "provisionType")
-		delete(additionalProperties, "optionTypes")
-		delete(additionalProperties, "displayOrder")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListHostTypes200ResponseAllOfServerTypesInner struct {
-	value *ListHostTypes200ResponseAllOfServerTypesInner
-	isSet bool
-}
-
-func (v NullableListHostTypes200ResponseAllOfServerTypesInner) Get() *ListHostTypes200ResponseAllOfServerTypesInner {
-	return v.value
-}
-
-func (v *NullableListHostTypes200ResponseAllOfServerTypesInner) Set(val *ListHostTypes200ResponseAllOfServerTypesInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListHostTypes200ResponseAllOfServerTypesInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListHostTypes200ResponseAllOfServerTypesInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListHostTypes200ResponseAllOfServerTypesInner(val *ListHostTypes200ResponseAllOfServerTypesInner) *NullableListHostTypes200ResponseAllOfServerTypesInner {
-	return &NullableListHostTypes200ResponseAllOfServerTypesInner{value: val, isSet: true}
-}
-
-func (v NullableListHostTypes200ResponseAllOfServerTypesInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListHostTypes200ResponseAllOfServerTypesInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

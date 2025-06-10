@@ -21,12 +21,12 @@ var _ MappedNullable = &BillingServers{}
 
 // BillingServers struct for BillingServers
 type BillingServers struct {
-	Price *float32 `json:"price,omitempty"`
-	Cost *float32 `json:"cost,omitempty"`
-	StartDate *time.Time `json:"startDate,omitempty"`
-	EndDate *time.Time `json:"endDate,omitempty"`
-	Servers []ListBillingServers200ResponseAllOfBillingInfoServersInner `json:"servers,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Price                *float32                                                    `json:"price,omitempty"`
+	Cost                 *float32                                                    `json:"cost,omitempty"`
+	StartDate            *time.Time                                                  `json:"startDate,omitempty"`
+	EndDate              *time.Time                                                  `json:"endDate,omitempty"`
+	Servers              []ListBillingServers200ResponseAllOfBillingInfoServersInner `json:"servers,omitempty"`
+	AdditionalProperties map[string]interface{}                                      `json:",remain"`
 }
 
 type _BillingServers BillingServers
@@ -209,7 +209,7 @@ func (o *BillingServers) SetServers(v []ListBillingServers200ResponseAllOfBillin
 }
 
 func (o BillingServers) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -240,66 +240,8 @@ func (o BillingServers) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *BillingServers) UnmarshalJSON(data []byte) (err error) {
-	varBillingServers := _BillingServers{}
-
-	err = json.Unmarshal(data, &varBillingServers)
-
-	if err != nil {
-		return err
-	}
-
-	*o = BillingServers(varBillingServers)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "price")
-		delete(additionalProperties, "cost")
-		delete(additionalProperties, "startDate")
-		delete(additionalProperties, "endDate")
-		delete(additionalProperties, "servers")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableBillingServers struct {
-	value *BillingServers
-	isSet bool
-}
-
-func (v NullableBillingServers) Get() *BillingServers {
-	return v.value
-}
-
-func (v *NullableBillingServers) Set(val *BillingServers) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableBillingServers) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableBillingServers) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableBillingServers(val *BillingServers) *NullableBillingServers {
-	return &NullableBillingServers{value: val, isSet: true}
-}
-
-func (v NullableBillingServers) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableBillingServers) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

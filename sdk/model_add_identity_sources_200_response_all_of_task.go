@@ -14,6 +14,7 @@ package sdk
 import (
 	"encoding/json"
 	"fmt"
+
 	"gopkg.in/validator.v2"
 )
 
@@ -22,7 +23,7 @@ var _ fmt.Stringer
 
 // AddIdentitySources200ResponseAllOfTask - struct for AddIdentitySources200ResponseAllOfTask
 type AddIdentitySources200ResponseAllOfTask struct {
-	ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf
+	ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf  *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf
 	ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1 *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1
 	ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2 *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2
 	ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3 *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3
@@ -88,6 +89,45 @@ func ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7AsAddIdentitySourc
 	}
 }
 
+func (dst *AddIdentitySources200ResponseAllOfTask) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &AddIdentitySources200ResponseAllOfTask{}
+	}
+
+	if out, ok := data.(ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf); ok {
+		dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf = &out
+	}
+
+	if out, ok := data.(ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1); ok {
+		dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1 = &out
+	}
+
+	if out, ok := data.(ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2); ok {
+		dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2 = &out
+	}
+
+	if out, ok := data.(ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3); ok {
+		dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3 = &out
+	}
+
+	if out, ok := data.(ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4); ok {
+		dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4 = &out
+	}
+
+	if out, ok := data.(ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5); ok {
+		dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5 = &out
+	}
+
+	if out, ok := data.(ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6); ok {
+		dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6 = &out
+	}
+
+	if out, ok := data.(ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7); ok {
+		dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7 = &out
+	}
+
+	return dst, nil
+}
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddIdentitySources200ResponseAllOfTask) UnmarshalJSON(data []byte) error {
@@ -286,7 +326,7 @@ func (src AddIdentitySources200ResponseAllOfTask) MarshalJSON() ([]byte, error) 
 }
 
 // Get the actual instance
-func (obj *AddIdentitySources200ResponseAllOfTask) GetActualInstance() (interface{}) {
+func (obj *AddIdentitySources200ResponseAllOfTask) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -327,7 +367,7 @@ func (obj *AddIdentitySources200ResponseAllOfTask) GetActualInstance() (interfac
 }
 
 // Get the actual instance value
-func (obj AddIdentitySources200ResponseAllOfTask) GetActualInstanceValue() (interface{}) {
+func (obj AddIdentitySources200ResponseAllOfTask) GetActualInstanceValue() interface{} {
 	if obj.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf != nil {
 		return *obj.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf
 	}
@@ -399,5 +439,3 @@ func (v *NullableAddIdentitySources200ResponseAllOfTask) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

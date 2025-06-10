@@ -20,11 +20,11 @@ var _ MappedNullable = &ListHealth200ResponseAllOfHealthElasticMaster{}
 
 // ListHealth200ResponseAllOfHealthElasticMaster struct for ListHealth200ResponseAllOfHealthElasticMaster
 type ListHealth200ResponseAllOfHealthElasticMaster struct {
-	Id *string `json:"id,omitempty"`
-	Host *string `json:"host,omitempty"`
-	Ip *string `json:"ip,omitempty"`
-	Node *string `json:"node,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *string                `json:"id,omitempty"`
+	Host                 *string                `json:"host,omitempty"`
+	Ip                   *string                `json:"ip,omitempty"`
+	Node                 *string                `json:"node,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListHealth200ResponseAllOfHealthElasticMaster ListHealth200ResponseAllOfHealthElasticMaster
@@ -175,7 +175,7 @@ func (o *ListHealth200ResponseAllOfHealthElasticMaster) SetNode(v string) {
 }
 
 func (o ListHealth200ResponseAllOfHealthElasticMaster) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -203,65 +203,8 @@ func (o ListHealth200ResponseAllOfHealthElasticMaster) ToMap() (map[string]inter
 
 	return toSerialize, nil
 }
-
 func (o *ListHealth200ResponseAllOfHealthElasticMaster) UnmarshalJSON(data []byte) (err error) {
-	varListHealth200ResponseAllOfHealthElasticMaster := _ListHealth200ResponseAllOfHealthElasticMaster{}
-
-	err = json.Unmarshal(data, &varListHealth200ResponseAllOfHealthElasticMaster)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListHealth200ResponseAllOfHealthElasticMaster(varListHealth200ResponseAllOfHealthElasticMaster)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "host")
-		delete(additionalProperties, "ip")
-		delete(additionalProperties, "node")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListHealth200ResponseAllOfHealthElasticMaster struct {
-	value *ListHealth200ResponseAllOfHealthElasticMaster
-	isSet bool
-}
-
-func (v NullableListHealth200ResponseAllOfHealthElasticMaster) Get() *ListHealth200ResponseAllOfHealthElasticMaster {
-	return v.value
-}
-
-func (v *NullableListHealth200ResponseAllOfHealthElasticMaster) Set(val *ListHealth200ResponseAllOfHealthElasticMaster) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListHealth200ResponseAllOfHealthElasticMaster) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListHealth200ResponseAllOfHealthElasticMaster) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListHealth200ResponseAllOfHealthElasticMaster(val *ListHealth200ResponseAllOfHealthElasticMaster) *NullableListHealth200ResponseAllOfHealthElasticMaster {
-	return &NullableListHealth200ResponseAllOfHealthElasticMaster{value: val, isSet: true}
-}
-
-func (v NullableListHealth200ResponseAllOfHealthElasticMaster) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListHealth200ResponseAllOfHealthElasticMaster) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

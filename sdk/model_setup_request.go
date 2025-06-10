@@ -19,18 +19,33 @@ import (
 // very silly way of avoiding `"fmt" imported and not used` errors
 var _ fmt.Stringer
 
-
 // SetupRequest struct for SetupRequest
 type SetupRequest struct {
-	SetupRequestAnyOf *SetupRequestAnyOf
+	SetupRequestAnyOf  *SetupRequestAnyOf
 	SetupRequestAnyOf1 *SetupRequestAnyOf1
+}
+
+func (dst *SetupRequest) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &SetupRequest{}
+	}
+
+	if out, ok := data.(SetupRequestAnyOf); ok {
+		dst.SetupRequestAnyOf = &out
+	}
+
+	if out, ok := data.(SetupRequestAnyOf1); ok {
+		dst.SetupRequestAnyOf1 = &out
+	}
+
+	return dst, nil
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *SetupRequest) UnmarshalJSON(data []byte) error {
 	var err error
 	// try to unmarshal JSON data into SetupRequestAnyOf
-	err = json.Unmarshal(data, &dst.SetupRequestAnyOf);
+	err = json.Unmarshal(data, &dst.SetupRequestAnyOf)
 	if err == nil {
 		jsonSetupRequestAnyOf, _ := json.Marshal(dst.SetupRequestAnyOf)
 		if string(jsonSetupRequestAnyOf) == "{}" { // empty struct
@@ -43,7 +58,7 @@ func (dst *SetupRequest) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal JSON data into SetupRequestAnyOf1
-	err = json.Unmarshal(data, &dst.SetupRequestAnyOf1);
+	err = json.Unmarshal(data, &dst.SetupRequestAnyOf1)
 	if err == nil {
 		jsonSetupRequestAnyOf1, _ := json.Marshal(dst.SetupRequestAnyOf1)
 		if string(jsonSetupRequestAnyOf1) == "{}" { // empty struct
@@ -70,7 +85,6 @@ func (src SetupRequest) MarshalJSON() ([]byte, error) {
 
 	return nil, nil // no data in anyOf schemas
 }
-
 
 type NullableSetupRequest struct {
 	value *SetupRequest
@@ -107,5 +121,3 @@ func (v *NullableSetupRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

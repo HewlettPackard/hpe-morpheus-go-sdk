@@ -41,11 +41,11 @@ type UpdateUserSettingsRequestUser struct {
 	// Windows Password
 	WindowsPassword *string `json:"windowsPassword,omitempty"`
 	// Receive Notifications (true or false)
-	ReceiveNotifications *bool `json:"receiveNotifications,omitempty"`
-	DefaultGroup *UpdateUserSettingsRequestUserDefaultGroup `json:"defaultGroup,omitempty"`
-	DefaultCloud *UpdateUserSettingsRequestUserDefaultCloud `json:"defaultCloud,omitempty"`
-	DefaultPersona *UpdateUserSettingsRequestUserDefaultPersona `json:"defaultPersona,omitempty"`
-	AdditionalProperties map[string]interface{}
+	ReceiveNotifications *bool                                        `json:"receiveNotifications,omitempty"`
+	DefaultGroup         *UpdateUserSettingsRequestUserDefaultGroup   `json:"defaultGroup,omitempty"`
+	DefaultCloud         *UpdateUserSettingsRequestUserDefaultCloud   `json:"defaultCloud,omitempty"`
+	DefaultPersona       *UpdateUserSettingsRequestUserDefaultPersona `json:"defaultPersona,omitempty"`
+	AdditionalProperties map[string]interface{}                       `json:",remain"`
 }
 
 type _UpdateUserSettingsRequestUser UpdateUserSettingsRequestUser
@@ -516,7 +516,7 @@ func (o *UpdateUserSettingsRequestUser) SetDefaultPersona(v UpdateUserSettingsRe
 }
 
 func (o UpdateUserSettingsRequestUser) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -574,75 +574,8 @@ func (o UpdateUserSettingsRequestUser) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *UpdateUserSettingsRequestUser) UnmarshalJSON(data []byte) (err error) {
-	varUpdateUserSettingsRequestUser := _UpdateUserSettingsRequestUser{}
-
-	err = json.Unmarshal(data, &varUpdateUserSettingsRequestUser)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateUserSettingsRequestUser(varUpdateUserSettingsRequestUser)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "username")
-		delete(additionalProperties, "email")
-		delete(additionalProperties, "firstName")
-		delete(additionalProperties, "lastName")
-		delete(additionalProperties, "password")
-		delete(additionalProperties, "linuxUsername")
-		delete(additionalProperties, "linuxPassword")
-		delete(additionalProperties, "linuxKeyPairId")
-		delete(additionalProperties, "windowsUsername")
-		delete(additionalProperties, "windowsPassword")
-		delete(additionalProperties, "receiveNotifications")
-		delete(additionalProperties, "defaultGroup")
-		delete(additionalProperties, "defaultCloud")
-		delete(additionalProperties, "defaultPersona")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateUserSettingsRequestUser struct {
-	value *UpdateUserSettingsRequestUser
-	isSet bool
-}
-
-func (v NullableUpdateUserSettingsRequestUser) Get() *UpdateUserSettingsRequestUser {
-	return v.value
-}
-
-func (v *NullableUpdateUserSettingsRequestUser) Set(val *UpdateUserSettingsRequestUser) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateUserSettingsRequestUser) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateUserSettingsRequestUser) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateUserSettingsRequestUser(val *UpdateUserSettingsRequestUser) *NullableUpdateUserSettingsRequestUser {
-	return &NullableUpdateUserSettingsRequestUser{value: val, isSet: true}
-}
-
-func (v NullableUpdateUserSettingsRequestUser) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateUserSettingsRequestUser) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

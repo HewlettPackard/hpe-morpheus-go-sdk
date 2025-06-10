@@ -20,14 +20,14 @@ var _ MappedNullable = &ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBe
 
 // ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionProvisionType struct for ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionProvisionType
 type ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionProvisionType struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Code *string `json:"code,omitempty"`
-	RootDiskCustomizable *bool `json:"rootDiskCustomizable,omitempty"`
-	AddVolumes *bool `json:"addVolumes,omitempty"`
-	CustomizeVolume *bool `json:"customizeVolume,omitempty"`
-	HasConfigurableCpuSockets *bool `json:"hasConfigurableCpuSockets,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                        *int64                 `json:"id,omitempty"`
+	Name                      *string                `json:"name,omitempty"`
+	Code                      *string                `json:"code,omitempty"`
+	RootDiskCustomizable      *bool                  `json:"rootDiskCustomizable,omitempty"`
+	AddVolumes                *bool                  `json:"addVolumes,omitempty"`
+	CustomizeVolume           *bool                  `json:"customizeVolume,omitempty"`
+	HasConfigurableCpuSockets *bool                  `json:"hasConfigurableCpuSockets,omitempty"`
+	AdditionalProperties      map[string]interface{} `json:",remain"`
 }
 
 type _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionProvisionType ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionProvisionType
@@ -274,7 +274,7 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionProvi
 }
 
 func (o ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionProvisionType) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -311,68 +311,8 @@ func (o ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionProvis
 
 	return toSerialize, nil
 }
-
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionProvisionType) UnmarshalJSON(data []byte) (err error) {
-	varListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionProvisionType := _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionProvisionType{}
-
-	err = json.Unmarshal(data, &varListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionProvisionType)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionProvisionType(varListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionProvisionType)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "rootDiskCustomizable")
-		delete(additionalProperties, "addVolumes")
-		delete(additionalProperties, "customizeVolume")
-		delete(additionalProperties, "hasConfigurableCpuSockets")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionProvisionType struct {
-	value *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionProvisionType
-	isSet bool
-}
-
-func (v NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionProvisionType) Get() *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionProvisionType {
-	return v.value
-}
-
-func (v *NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionProvisionType) Set(val *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionProvisionType) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionProvisionType) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionProvisionType) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionProvisionType(val *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionProvisionType) *NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionProvisionType {
-	return &NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionProvisionType{value: val, isSet: true}
-}
-
-func (v NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionProvisionType) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionProvisionType) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -20,8 +20,8 @@ var _ MappedNullable = &Success{}
 
 // Success struct for Success
 type Success struct {
-	Success *bool `json:"success,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Success              *bool                  `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _Success Success
@@ -76,7 +76,7 @@ func (o *Success) SetSuccess(v bool) {
 }
 
 func (o Success) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o Success) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *Success) UnmarshalJSON(data []byte) (err error) {
-	varSuccess := _Success{}
-
-	err = json.Unmarshal(data, &varSuccess)
-
-	if err != nil {
-		return err
-	}
-
-	*o = Success(varSuccess)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "success")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableSuccess struct {
-	value *Success
-	isSet bool
-}
-
-func (v NullableSuccess) Get() *Success {
-	return v.value
-}
-
-func (v *NullableSuccess) Set(val *Success) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSuccess) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSuccess) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSuccess(val *Success) *NullableSuccess {
-	return &NullableSuccess{value: val, isSet: true}
-}
-
-func (v NullableSuccess) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSuccess) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

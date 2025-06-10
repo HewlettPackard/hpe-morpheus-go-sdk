@@ -20,9 +20,9 @@ var _ MappedNullable = &UpdateMuteCheckApps200Response{}
 
 // UpdateMuteCheckApps200Response struct for UpdateMuteCheckApps200Response
 type UpdateMuteCheckApps200Response struct {
-	Success *bool `json:"success,omitempty"`
-	Muted *bool `json:"muted,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Success              *bool                  `json:"success,omitempty"`
+	Muted                *bool                  `json:"muted,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _UpdateMuteCheckApps200Response UpdateMuteCheckApps200Response
@@ -109,7 +109,7 @@ func (o *UpdateMuteCheckApps200Response) SetMuted(v bool) {
 }
 
 func (o UpdateMuteCheckApps200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -131,63 +131,8 @@ func (o UpdateMuteCheckApps200Response) ToMap() (map[string]interface{}, error) 
 
 	return toSerialize, nil
 }
-
 func (o *UpdateMuteCheckApps200Response) UnmarshalJSON(data []byte) (err error) {
-	varUpdateMuteCheckApps200Response := _UpdateMuteCheckApps200Response{}
-
-	err = json.Unmarshal(data, &varUpdateMuteCheckApps200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateMuteCheckApps200Response(varUpdateMuteCheckApps200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "success")
-		delete(additionalProperties, "muted")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateMuteCheckApps200Response struct {
-	value *UpdateMuteCheckApps200Response
-	isSet bool
-}
-
-func (v NullableUpdateMuteCheckApps200Response) Get() *UpdateMuteCheckApps200Response {
-	return v.value
-}
-
-func (v *NullableUpdateMuteCheckApps200Response) Set(val *UpdateMuteCheckApps200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateMuteCheckApps200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateMuteCheckApps200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateMuteCheckApps200Response(val *UpdateMuteCheckApps200Response) *NullableUpdateMuteCheckApps200Response {
-	return &NullableUpdateMuteCheckApps200Response{value: val, isSet: true}
-}
-
-func (v NullableUpdateMuteCheckApps200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateMuteCheckApps200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

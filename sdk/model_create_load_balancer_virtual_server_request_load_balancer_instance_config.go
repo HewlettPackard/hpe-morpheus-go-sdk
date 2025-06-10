@@ -14,6 +14,7 @@ package sdk
 import (
 	"encoding/json"
 	"fmt"
+
 	"gopkg.in/validator.v2"
 )
 
@@ -23,7 +24,7 @@ var _ fmt.Stringer
 // CreateLoadBalancerVirtualServerRequestLoadBalancerInstanceConfig - struct for CreateLoadBalancerVirtualServerRequestLoadBalancerInstanceConfig
 type CreateLoadBalancerVirtualServerRequestLoadBalancerInstanceConfig struct {
 	NSXVirtualServerConfigObject *NSXVirtualServerConfigObject
-	MapmapOfStringAny *map[string]interface{}
+	MapmapOfStringAny            *map[string]interface{}
 }
 
 // NSXVirtualServerConfigObjectAsCreateLoadBalancerVirtualServerRequestLoadBalancerInstanceConfig is a convenience function that returns NSXVirtualServerConfigObject wrapped in CreateLoadBalancerVirtualServerRequestLoadBalancerInstanceConfig
@@ -40,6 +41,21 @@ func MapmapOfStringAnyAsCreateLoadBalancerVirtualServerRequestLoadBalancerInstan
 	}
 }
 
+func (dst *CreateLoadBalancerVirtualServerRequestLoadBalancerInstanceConfig) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &CreateLoadBalancerVirtualServerRequestLoadBalancerInstanceConfig{}
+	}
+
+	if out, ok := data.(NSXVirtualServerConfigObject); ok {
+		dst.NSXVirtualServerConfigObject = &out
+	}
+
+	if out, ok := data.(map[string]interface{}); ok {
+		dst.MapmapOfStringAny = &out
+	}
+
+	return dst, nil
+}
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *CreateLoadBalancerVirtualServerRequestLoadBalancerInstanceConfig) UnmarshalJSON(data []byte) error {
@@ -106,7 +122,7 @@ func (src CreateLoadBalancerVirtualServerRequestLoadBalancerInstanceConfig) Mars
 }
 
 // Get the actual instance
-func (obj *CreateLoadBalancerVirtualServerRequestLoadBalancerInstanceConfig) GetActualInstance() (interface{}) {
+func (obj *CreateLoadBalancerVirtualServerRequestLoadBalancerInstanceConfig) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -123,7 +139,7 @@ func (obj *CreateLoadBalancerVirtualServerRequestLoadBalancerInstanceConfig) Get
 }
 
 // Get the actual instance value
-func (obj CreateLoadBalancerVirtualServerRequestLoadBalancerInstanceConfig) GetActualInstanceValue() (interface{}) {
+func (obj CreateLoadBalancerVirtualServerRequestLoadBalancerInstanceConfig) GetActualInstanceValue() interface{} {
 	if obj.NSXVirtualServerConfigObject != nil {
 		return *obj.NSXVirtualServerConfigObject
 	}
@@ -171,5 +187,3 @@ func (v *NullableCreateLoadBalancerVirtualServerRequestLoadBalancerInstanceConfi
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

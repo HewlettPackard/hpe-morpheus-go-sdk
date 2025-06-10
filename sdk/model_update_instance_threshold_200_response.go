@@ -20,10 +20,10 @@ var _ MappedNullable = &UpdateInstanceThreshold200Response{}
 
 // UpdateInstanceThreshold200Response struct for UpdateInstanceThreshold200Response
 type UpdateInstanceThreshold200Response struct {
-	InstanceThreshold *GetInstanceThreshold200ResponseInstanceThreshold `json:"instanceThreshold,omitempty"`
-	InstanceSchedules []GetInstanceThreshold200ResponseInstanceSchedulesInner `json:"instanceSchedules,omitempty"`
-	Success *bool `json:"success,omitempty"`
-	AdditionalProperties map[string]interface{}
+	InstanceThreshold    *GetInstanceThreshold200ResponseInstanceThreshold       `json:"instanceThreshold,omitempty"`
+	InstanceSchedules    []GetInstanceThreshold200ResponseInstanceSchedulesInner `json:"instanceSchedules,omitempty"`
+	Success              *bool                                                   `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{}                                  `json:",remain"`
 }
 
 type _UpdateInstanceThreshold200Response UpdateInstanceThreshold200Response
@@ -142,7 +142,7 @@ func (o *UpdateInstanceThreshold200Response) SetSuccess(v bool) {
 }
 
 func (o UpdateInstanceThreshold200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -167,64 +167,8 @@ func (o UpdateInstanceThreshold200Response) ToMap() (map[string]interface{}, err
 
 	return toSerialize, nil
 }
-
 func (o *UpdateInstanceThreshold200Response) UnmarshalJSON(data []byte) (err error) {
-	varUpdateInstanceThreshold200Response := _UpdateInstanceThreshold200Response{}
-
-	err = json.Unmarshal(data, &varUpdateInstanceThreshold200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateInstanceThreshold200Response(varUpdateInstanceThreshold200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "instanceThreshold")
-		delete(additionalProperties, "instanceSchedules")
-		delete(additionalProperties, "success")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateInstanceThreshold200Response struct {
-	value *UpdateInstanceThreshold200Response
-	isSet bool
-}
-
-func (v NullableUpdateInstanceThreshold200Response) Get() *UpdateInstanceThreshold200Response {
-	return v.value
-}
-
-func (v *NullableUpdateInstanceThreshold200Response) Set(val *UpdateInstanceThreshold200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateInstanceThreshold200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateInstanceThreshold200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateInstanceThreshold200Response(val *UpdateInstanceThreshold200Response) *NullableUpdateInstanceThreshold200Response {
-	return &NullableUpdateInstanceThreshold200Response{value: val, isSet: true}
-}
-
-func (v NullableUpdateInstanceThreshold200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateInstanceThreshold200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -21,19 +21,19 @@ var _ MappedNullable = &Report{}
 
 // Report struct for Report
 type Report struct {
-	Id *int64 `json:"id,omitempty"`
-	Type *ListClusterNetworkEndpoints200ResponseAllOfEndpointsInner `json:"type,omitempty"`
-	ReportTitle *string `json:"reportTitle,omitempty"`
-	FilterTitle *string `json:"filterTitle,omitempty"`
-	Status *string `json:"status,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	StartDate *time.Time `json:"startDate,omitempty"`
-	EndDate *time.Time `json:"endDate,omitempty"`
-	Config *ListReports200ResponseAllOfReportResultsInnerConfig `json:"config,omitempty"`
-	CreatedBy *ListActivity200ResponseAllOfActivityInnerActivityInnerUser `json:"createdBy,omitempty"`
-	Rows []ListReports200ResponseAllOfReportResultsInnerRowsInner `json:"rows,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                      `json:"id,omitempty"`
+	Type                 *ListClusterNetworkEndpoints200ResponseAllOfEndpointsInner  `json:"type,omitempty"`
+	ReportTitle          *string                                                     `json:"reportTitle,omitempty"`
+	FilterTitle          *string                                                     `json:"filterTitle,omitempty"`
+	Status               *string                                                     `json:"status,omitempty"`
+	DateCreated          *time.Time                                                  `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                                  `json:"lastUpdated,omitempty"`
+	StartDate            *time.Time                                                  `json:"startDate,omitempty"`
+	EndDate              *time.Time                                                  `json:"endDate,omitempty"`
+	Config               *ListReports200ResponseAllOfReportResultsInnerConfig        `json:"config,omitempty"`
+	CreatedBy            *ListActivity200ResponseAllOfActivityInnerActivityInnerUser `json:"createdBy,omitempty"`
+	Rows                 []ListReports200ResponseAllOfReportResultsInnerRowsInner    `json:"rows,omitempty"`
+	AdditionalProperties map[string]interface{}                                      `json:",remain"`
 }
 
 type _Report Report
@@ -440,7 +440,7 @@ func (o *Report) SetRows(v []ListReports200ResponseAllOfReportResultsInnerRowsIn
 }
 
 func (o Report) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -492,73 +492,8 @@ func (o Report) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *Report) UnmarshalJSON(data []byte) (err error) {
-	varReport := _Report{}
-
-	err = json.Unmarshal(data, &varReport)
-
-	if err != nil {
-		return err
-	}
-
-	*o = Report(varReport)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "reportTitle")
-		delete(additionalProperties, "filterTitle")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		delete(additionalProperties, "startDate")
-		delete(additionalProperties, "endDate")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "createdBy")
-		delete(additionalProperties, "rows")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableReport struct {
-	value *Report
-	isSet bool
-}
-
-func (v NullableReport) Get() *Report {
-	return v.value
-}
-
-func (v *NullableReport) Set(val *Report) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableReport) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableReport) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableReport(val *Report) *NullableReport {
-	return &NullableReport{value: val, isSet: true}
-}
-
-func (v NullableReport) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableReport) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

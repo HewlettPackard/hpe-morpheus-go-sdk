@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the CheckSqlConfig type satisfies the MappedNullable interface at compile time
@@ -36,13 +35,13 @@ type CheckSqlConfig struct {
 	// Query to test
 	DbQuery string `json:"dbQuery"`
 	// Can be set to `lt` (less than), `gt` (greater than), `equal` (Equal to) for comparison
-	CheckOperator *string `json:"checkOperator,omitempty"`
-	CheckResult *float32 `json:"checkResult,omitempty"`
-	CheckUser *string `json:"checkUser,omitempty"`
-	TextCheckOn *string `json:"textCheckOn,omitempty"`
-	CheckPassword *string `json:"checkPassword,omitempty"`
-	WebTextMatch *string `json:"webTextMatch,omitempty"`
-	CheckPasswordHash *string `json:"checkPasswordHash,omitempty"`
+	CheckOperator     *string  `json:"checkOperator,omitempty"`
+	CheckResult       *float32 `json:"checkResult,omitempty"`
+	CheckUser         *string  `json:"checkUser,omitempty"`
+	TextCheckOn       *string  `json:"textCheckOn,omitempty"`
+	CheckPassword     *string  `json:"checkPassword,omitempty"`
+	WebTextMatch      *string  `json:"webTextMatch,omitempty"`
+	CheckPasswordHash *string  `json:"checkPasswordHash,omitempty"`
 	// Set to on to turn on tunneling
 	TunnelOn *string `json:"tunnelOn,omitempty"`
 	// Hostname or IP address of the proxy host
@@ -52,8 +51,8 @@ type CheckSqlConfig struct {
 	// SSH user on the proxy host to login as
 	SshUser *string `json:"sshUser,omitempty"`
 	// Password for user, if not using key based authentication
-	SshPassword *string `json:"sshPassword,omitempty"`
-	AdditionalProperties map[string]interface{}
+	SshPassword          *string                `json:"sshPassword,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _CheckSqlConfig CheckSqlConfig
@@ -646,7 +645,7 @@ func (o *CheckSqlConfig) SetSshPassword(v string) {
 }
 
 func (o CheckSqlConfig) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -707,106 +706,8 @@ func (o CheckSqlConfig) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *CheckSqlConfig) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"dbHost",
-		"dbPort",
-		"dbUser",
-		"dbPassword",
-		"dbName",
-		"dbQuery",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varCheckSqlConfig := _CheckSqlConfig{}
-
-	err = json.Unmarshal(data, &varCheckSqlConfig)
-
-	if err != nil {
-		return err
-	}
-
-	*o = CheckSqlConfig(varCheckSqlConfig)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "dbHost")
-		delete(additionalProperties, "dbPort")
-		delete(additionalProperties, "dbUser")
-		delete(additionalProperties, "dbPassword")
-		delete(additionalProperties, "dbPasswordHash")
-		delete(additionalProperties, "dbName")
-		delete(additionalProperties, "dbQuery")
-		delete(additionalProperties, "checkOperator")
-		delete(additionalProperties, "checkResult")
-		delete(additionalProperties, "checkUser")
-		delete(additionalProperties, "textCheckOn")
-		delete(additionalProperties, "checkPassword")
-		delete(additionalProperties, "webTextMatch")
-		delete(additionalProperties, "checkPasswordHash")
-		delete(additionalProperties, "tunnelOn")
-		delete(additionalProperties, "sshHost")
-		delete(additionalProperties, "sshPort")
-		delete(additionalProperties, "sshUser")
-		delete(additionalProperties, "sshPassword")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableCheckSqlConfig struct {
-	value *CheckSqlConfig
-	isSet bool
-}
-
-func (v NullableCheckSqlConfig) Get() *CheckSqlConfig {
-	return v.value
-}
-
-func (v *NullableCheckSqlConfig) Set(val *CheckSqlConfig) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableCheckSqlConfig) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableCheckSqlConfig) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableCheckSqlConfig(val *CheckSqlConfig) *NullableCheckSqlConfig {
-	return &NullableCheckSqlConfig{value: val, isSet: true}
-}
-
-func (v NullableCheckSqlConfig) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableCheckSqlConfig) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

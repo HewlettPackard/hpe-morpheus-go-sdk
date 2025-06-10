@@ -20,9 +20,9 @@ var _ MappedNullable = &ListCredentialTypes200Response{}
 
 // ListCredentialTypes200Response struct for ListCredentialTypes200Response
 type ListCredentialTypes200Response struct {
-	CredentialTypes []ListCredentialTypes200ResponseAllOfCredentialTypesInner `json:"credentialTypes,omitempty"`
-	Meta *ListActivity200ResponseAllOfMeta `json:"meta,omitempty"`
-	AdditionalProperties map[string]interface{}
+	CredentialTypes      []ListCredentialTypes200ResponseAllOfCredentialTypesInner `json:"credentialTypes,omitempty"`
+	Meta                 *ListActivity200ResponseAllOfMeta                         `json:"meta,omitempty"`
+	AdditionalProperties map[string]interface{}                                    `json:",remain"`
 }
 
 type _ListCredentialTypes200Response ListCredentialTypes200Response
@@ -109,7 +109,7 @@ func (o *ListCredentialTypes200Response) SetMeta(v ListActivity200ResponseAllOfM
 }
 
 func (o ListCredentialTypes200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -131,63 +131,8 @@ func (o ListCredentialTypes200Response) ToMap() (map[string]interface{}, error) 
 
 	return toSerialize, nil
 }
-
 func (o *ListCredentialTypes200Response) UnmarshalJSON(data []byte) (err error) {
-	varListCredentialTypes200Response := _ListCredentialTypes200Response{}
-
-	err = json.Unmarshal(data, &varListCredentialTypes200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListCredentialTypes200Response(varListCredentialTypes200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "credentialTypes")
-		delete(additionalProperties, "meta")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListCredentialTypes200Response struct {
-	value *ListCredentialTypes200Response
-	isSet bool
-}
-
-func (v NullableListCredentialTypes200Response) Get() *ListCredentialTypes200Response {
-	return v.value
-}
-
-func (v *NullableListCredentialTypes200Response) Set(val *ListCredentialTypes200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListCredentialTypes200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListCredentialTypes200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListCredentialTypes200Response(val *ListCredentialTypes200Response) *NullableListCredentialTypes200Response {
-	return &NullableListCredentialTypes200Response{value: val, isSet: true}
-}
-
-func (v NullableListCredentialTypes200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListCredentialTypes200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

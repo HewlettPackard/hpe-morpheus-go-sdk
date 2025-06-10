@@ -34,7 +34,7 @@ type UpdateNetworkRequestNetwork struct {
 	DnsPrimary *string `json:"dnsPrimary,omitempty"`
 	// Secondary DNS Server
 	DnsSecondary *string `json:"dnsSecondary,omitempty"`
-	VlanId *int64 `json:"vlanId,omitempty"`
+	VlanId       *int64  `json:"vlanId,omitempty"`
 	// Network Pool ID
 	Pool *int64 `json:"pool,omitempty"`
 	// Allow IP Override
@@ -44,11 +44,11 @@ type UpdateNetworkRequestNetwork struct {
 	// Activate (true) or disable (false) the network
 	Active *bool `json:"active,omitempty"`
 	// DHCP Server enabled network
-	DhcpServer *bool `json:"dhcpServer,omitempty"`
+	DhcpServer    *bool                                      `json:"dhcpServer,omitempty"`
 	NetworkDomain *CreateNetworksRequestNetworkNetworkDomain `json:"networkDomain,omitempty"`
 	// Search Domains
-	SearchDomains *string `json:"searchDomains,omitempty"`
-	NetworkProxy *CreateNetworksRequestNetworkNetworkProxy `json:"networkProxy,omitempty"`
+	SearchDomains *string                                   `json:"searchDomains,omitempty"`
+	NetworkProxy  *CreateNetworksRequestNetworkNetworkProxy `json:"networkProxy,omitempty"`
 	// Bypass Proxy for Appliance URL
 	ApplianceUrlProxyBypass *bool `json:"applianceUrlProxyBypass,omitempty"`
 	// Comma-separated list of ip addresses or name servers to exclude proxy traversal for. Typically locally routable servers are excluded.
@@ -58,9 +58,9 @@ type UpdateNetworkRequestNetwork struct {
 	// Configuration object. Settings vary by type.
 	Config map[string]interface{} `json:"config,omitempty"`
 	// Array of tenant account ids that are allowed access
-	Tenants []GetAlerts200ResponseAllOfChecksInnerAccount `json:"tenants,omitempty"`
-	ResourcePermissions *UpdateNetworkRequestNetworkResourcePermissions `json:"resourcePermissions,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Tenants              []GetAlerts200ResponseAllOfChecksInnerAccount   `json:"tenants,omitempty"`
+	ResourcePermissions  *UpdateNetworkRequestNetworkResourcePermissions `json:"resourcePermissions,omitempty"`
+	AdditionalProperties map[string]interface{}                          `json:",remain"`
 }
 
 type _UpdateNetworkRequestNetwork UpdateNetworkRequestNetwork
@@ -791,7 +791,7 @@ func (o *UpdateNetworkRequestNetwork) SetResourcePermissions(v UpdateNetworkRequ
 }
 
 func (o UpdateNetworkRequestNetwork) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -873,83 +873,8 @@ func (o UpdateNetworkRequestNetwork) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *UpdateNetworkRequestNetwork) UnmarshalJSON(data []byte) (err error) {
-	varUpdateNetworkRequestNetwork := _UpdateNetworkRequestNetwork{}
-
-	err = json.Unmarshal(data, &varUpdateNetworkRequestNetwork)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateNetworkRequestNetwork(varUpdateNetworkRequestNetwork)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "displayName")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "cidr")
-		delete(additionalProperties, "gateway")
-		delete(additionalProperties, "dnsPrimary")
-		delete(additionalProperties, "dnsSecondary")
-		delete(additionalProperties, "vlanId")
-		delete(additionalProperties, "pool")
-		delete(additionalProperties, "allowStaticOverride")
-		delete(additionalProperties, "assignPublicIp")
-		delete(additionalProperties, "active")
-		delete(additionalProperties, "dhcpServer")
-		delete(additionalProperties, "networkDomain")
-		delete(additionalProperties, "searchDomains")
-		delete(additionalProperties, "networkProxy")
-		delete(additionalProperties, "applianceUrlProxyBypass")
-		delete(additionalProperties, "noProxy")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "tenants")
-		delete(additionalProperties, "resourcePermissions")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateNetworkRequestNetwork struct {
-	value *UpdateNetworkRequestNetwork
-	isSet bool
-}
-
-func (v NullableUpdateNetworkRequestNetwork) Get() *UpdateNetworkRequestNetwork {
-	return v.value
-}
-
-func (v *NullableUpdateNetworkRequestNetwork) Set(val *UpdateNetworkRequestNetwork) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateNetworkRequestNetwork) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateNetworkRequestNetwork) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateNetworkRequestNetwork(val *UpdateNetworkRequestNetwork) *NullableUpdateNetworkRequestNetwork {
-	return &NullableUpdateNetworkRequestNetwork{value: val, isSet: true}
-}
-
-func (v NullableUpdateNetworkRequestNetwork) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateNetworkRequestNetwork) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -21,22 +21,22 @@ var _ MappedNullable = &GetApprovals200ResponseApproval{}
 
 // GetApprovals200ResponseApproval struct for GetApprovals200ResponseApproval
 type GetApprovals200ResponseApproval struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	InternalId *string `json:"internalId,omitempty"`
-	ExternalId *string `json:"externalId,omitempty"`
-	ExternalName *string `json:"externalName,omitempty"`
-	RequestType *string `json:"requestType,omitempty"`
-	Account *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"account,omitempty"`
-	Approver *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"approver,omitempty"`
-	AccountIntegration *string `json:"accountIntegration,omitempty"`
-	Status *string `json:"status,omitempty"`
-	ErrorMessage *string `json:"errorMessage,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	RequestBy *string `json:"requestBy,omitempty"`
-	ApprovalItems []GetApprovalsItem200ResponseApprovalItem `json:"approvalItems,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                                  `json:"id,omitempty"`
+	Name                 *string                                                                 `json:"name,omitempty"`
+	InternalId           *string                                                                 `json:"internalId,omitempty"`
+	ExternalId           *string                                                                 `json:"externalId,omitempty"`
+	ExternalName         *string                                                                 `json:"externalName,omitempty"`
+	RequestType          *string                                                                 `json:"requestType,omitempty"`
+	Account              *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"account,omitempty"`
+	Approver             *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"approver,omitempty"`
+	AccountIntegration   *string                                                                 `json:"accountIntegration,omitempty"`
+	Status               *string                                                                 `json:"status,omitempty"`
+	ErrorMessage         *string                                                                 `json:"errorMessage,omitempty"`
+	DateCreated          *time.Time                                                              `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                                              `json:"lastUpdated,omitempty"`
+	RequestBy            *string                                                                 `json:"requestBy,omitempty"`
+	ApprovalItems        []GetApprovalsItem200ResponseApprovalItem                               `json:"approvalItems,omitempty"`
+	AdditionalProperties map[string]interface{}                                                  `json:",remain"`
 }
 
 type _GetApprovals200ResponseApproval GetApprovals200ResponseApproval
@@ -539,7 +539,7 @@ func (o *GetApprovals200ResponseApproval) SetApprovalItems(v []GetApprovalsItem2
 }
 
 func (o GetApprovals200ResponseApproval) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -600,76 +600,8 @@ func (o GetApprovals200ResponseApproval) ToMap() (map[string]interface{}, error)
 
 	return toSerialize, nil
 }
-
 func (o *GetApprovals200ResponseApproval) UnmarshalJSON(data []byte) (err error) {
-	varGetApprovals200ResponseApproval := _GetApprovals200ResponseApproval{}
-
-	err = json.Unmarshal(data, &varGetApprovals200ResponseApproval)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetApprovals200ResponseApproval(varGetApprovals200ResponseApproval)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "internalId")
-		delete(additionalProperties, "externalId")
-		delete(additionalProperties, "externalName")
-		delete(additionalProperties, "requestType")
-		delete(additionalProperties, "account")
-		delete(additionalProperties, "approver")
-		delete(additionalProperties, "accountIntegration")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "errorMessage")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		delete(additionalProperties, "requestBy")
-		delete(additionalProperties, "approvalItems")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetApprovals200ResponseApproval struct {
-	value *GetApprovals200ResponseApproval
-	isSet bool
-}
-
-func (v NullableGetApprovals200ResponseApproval) Get() *GetApprovals200ResponseApproval {
-	return v.value
-}
-
-func (v *NullableGetApprovals200ResponseApproval) Set(val *GetApprovals200ResponseApproval) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetApprovals200ResponseApproval) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetApprovals200ResponseApproval) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetApprovals200ResponseApproval(val *GetApprovals200ResponseApproval) *NullableGetApprovals200ResponseApproval {
-	return &NullableGetApprovals200ResponseApproval{value: val, isSet: true}
-}
-
-func (v NullableGetApprovals200ResponseApproval) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetApprovals200ResponseApproval) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

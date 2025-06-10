@@ -20,13 +20,13 @@ var _ MappedNullable = &ClusterNamespaceCreateSuccess{}
 
 // ClusterNamespaceCreateSuccess struct for ClusterNamespaceCreateSuccess
 type ClusterNamespaceCreateSuccess struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Description *string `json:"description,omitempty"`
-	RegionCode *string `json:"regionCode,omitempty"`
-	ExternalId *string `json:"externalId,omitempty"`
-	Status *string `json:"status,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	Description          *string                `json:"description,omitempty"`
+	RegionCode           *string                `json:"regionCode,omitempty"`
+	ExternalId           *string                `json:"externalId,omitempty"`
+	Status               *string                `json:"status,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ClusterNamespaceCreateSuccess ClusterNamespaceCreateSuccess
@@ -241,7 +241,7 @@ func (o *ClusterNamespaceCreateSuccess) SetStatus(v string) {
 }
 
 func (o ClusterNamespaceCreateSuccess) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -275,67 +275,8 @@ func (o ClusterNamespaceCreateSuccess) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *ClusterNamespaceCreateSuccess) UnmarshalJSON(data []byte) (err error) {
-	varClusterNamespaceCreateSuccess := _ClusterNamespaceCreateSuccess{}
-
-	err = json.Unmarshal(data, &varClusterNamespaceCreateSuccess)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ClusterNamespaceCreateSuccess(varClusterNamespaceCreateSuccess)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "regionCode")
-		delete(additionalProperties, "externalId")
-		delete(additionalProperties, "status")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableClusterNamespaceCreateSuccess struct {
-	value *ClusterNamespaceCreateSuccess
-	isSet bool
-}
-
-func (v NullableClusterNamespaceCreateSuccess) Get() *ClusterNamespaceCreateSuccess {
-	return v.value
-}
-
-func (v *NullableClusterNamespaceCreateSuccess) Set(val *ClusterNamespaceCreateSuccess) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableClusterNamespaceCreateSuccess) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableClusterNamespaceCreateSuccess) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableClusterNamespaceCreateSuccess(val *ClusterNamespaceCreateSuccess) *NullableClusterNamespaceCreateSuccess {
-	return &NullableClusterNamespaceCreateSuccess{value: val, isSet: true}
-}
-
-func (v NullableClusterNamespaceCreateSuccess) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableClusterNamespaceCreateSuccess) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

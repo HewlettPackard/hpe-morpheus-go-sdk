@@ -20,11 +20,11 @@ var _ MappedNullable = &GetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig
 
 // GetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig struct for GetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig
 type GetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig struct {
-	ClusterProfileBindings *string `json:"clusterProfileBindings,omitempty"`
-	Members *int32 `json:"members,omitempty"`
-	DeploymentType *string `json:"deploymentType,omitempty"`
-	MemberNodeType *string `json:"memberNodeType,omitempty"`
-	AdditionalProperties map[string]interface{}
+	ClusterProfileBindings *string                `json:"clusterProfileBindings,omitempty"`
+	Members                *int32                 `json:"members,omitempty"`
+	DeploymentType         *string                `json:"deploymentType,omitempty"`
+	MemberNodeType         *string                `json:"memberNodeType,omitempty"`
+	AdditionalProperties   map[string]interface{} `json:",remain"`
 }
 
 type _GetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig GetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig
@@ -175,7 +175,7 @@ func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig) SetMemberNode
 }
 
 func (o GetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -203,65 +203,8 @@ func (o GetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig) ToMap() (map[s
 
 	return toSerialize, nil
 }
-
 func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig) UnmarshalJSON(data []byte) (err error) {
-	varGetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig := _GetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig{}
-
-	err = json.Unmarshal(data, &varGetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig(varGetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "clusterProfileBindings")
-		delete(additionalProperties, "members")
-		delete(additionalProperties, "deploymentType")
-		delete(additionalProperties, "memberNodeType")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig struct {
-	value *GetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig
-	isSet bool
-}
-
-func (v NullableGetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig) Get() *GetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig {
-	return v.value
-}
-
-func (v *NullableGetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig) Set(val *GetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig(val *GetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig) *NullableGetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig {
-	return &NullableGetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig{value: val, isSet: true}
-}
-
-func (v NullableGetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

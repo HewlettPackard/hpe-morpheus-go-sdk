@@ -26,31 +26,31 @@ type ListBackups200ResponseAllOfBackupsInner struct {
 	// Name
 	Name *string `json:"name,omitempty"`
 	// Source Type (instance, server, storage)
-	LocationType *string `json:"locationType,omitempty"`
-	Instance *ListBackups200ResponseAllOfBackupsInnerInstance `json:"instance,omitempty"`
-	ContainerId *int64 `json:"containerId,omitempty"`
-	Job *ListBackups200ResponseAllOfBackupsInnerJob `json:"job,omitempty"`
-	Schedule *ListBackups200ResponseAllOfBackupsInnerSchedule `json:"schedule,omitempty"`
-	RetentionCount *int64 `json:"retentionCount,omitempty"`
-	BackupType *ListBackups200ResponseAllOfBackupsInnerBackupType `json:"backupType,omitempty"`
-	StorageProvider *ListBackups200ResponseAllOfBackupsInnerStorageProvider `json:"storageProvider,omitempty"`
-	BackupProvider *ListBackups200ResponseAllOfBackupsInnerBackupProvider `json:"backupProvider,omitempty"`
+	LocationType      *string                                                   `json:"locationType,omitempty"`
+	Instance          *ListBackups200ResponseAllOfBackupsInnerInstance          `json:"instance,omitempty"`
+	ContainerId       *int64                                                    `json:"containerId,omitempty"`
+	Job               *ListBackups200ResponseAllOfBackupsInnerJob               `json:"job,omitempty"`
+	Schedule          *ListBackups200ResponseAllOfBackupsInnerSchedule          `json:"schedule,omitempty"`
+	RetentionCount    *int64                                                    `json:"retentionCount,omitempty"`
+	BackupType        *ListBackups200ResponseAllOfBackupsInnerBackupType        `json:"backupType,omitempty"`
+	StorageProvider   *ListBackups200ResponseAllOfBackupsInnerStorageProvider   `json:"storageProvider,omitempty"`
+	BackupProvider    *ListBackups200ResponseAllOfBackupsInnerBackupProvider    `json:"backupProvider,omitempty"`
 	BackupRespository *ListBackups200ResponseAllOfBackupsInnerBackupRespository `json:"backupRespository,omitempty"`
 	// Cron Expression
 	CronExpression *string `json:"cronExpression,omitempty"`
 	// Next Fire
 	NextFire *time.Time `json:"nextFire,omitempty"`
 	// Last Status
-	LastStatus *string `json:"lastStatus,omitempty"`
+	LastStatus *string                                            `json:"lastStatus,omitempty"`
 	LastResult *ListBackups200ResponseAllOfBackupsInnerLastResult `json:"lastResult,omitempty"`
-	Stats *ListBackups200ResponseAllOfBackupsInnerStats `json:"stats,omitempty"`
+	Stats      *ListBackups200ResponseAllOfBackupsInnerStats      `json:"stats,omitempty"`
 	// Enabled
 	Enabled *bool `json:"enabled,omitempty"`
 	// Date Created
 	DateCreated *time.Time `json:"dateCreated,omitempty"`
 	// Last Updated
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}
+	LastUpdated          *time.Time             `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListBackups200ResponseAllOfBackupsInner ListBackups200ResponseAllOfBackupsInner
@@ -713,7 +713,7 @@ func (o *ListBackups200ResponseAllOfBackupsInner) SetLastUpdated(v time.Time) {
 }
 
 func (o ListBackups200ResponseAllOfBackupsInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -789,81 +789,8 @@ func (o ListBackups200ResponseAllOfBackupsInner) ToMap() (map[string]interface{}
 
 	return toSerialize, nil
 }
-
 func (o *ListBackups200ResponseAllOfBackupsInner) UnmarshalJSON(data []byte) (err error) {
-	varListBackups200ResponseAllOfBackupsInner := _ListBackups200ResponseAllOfBackupsInner{}
-
-	err = json.Unmarshal(data, &varListBackups200ResponseAllOfBackupsInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListBackups200ResponseAllOfBackupsInner(varListBackups200ResponseAllOfBackupsInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "locationType")
-		delete(additionalProperties, "instance")
-		delete(additionalProperties, "containerId")
-		delete(additionalProperties, "job")
-		delete(additionalProperties, "schedule")
-		delete(additionalProperties, "retentionCount")
-		delete(additionalProperties, "backupType")
-		delete(additionalProperties, "storageProvider")
-		delete(additionalProperties, "backupProvider")
-		delete(additionalProperties, "backupRespository")
-		delete(additionalProperties, "cronExpression")
-		delete(additionalProperties, "nextFire")
-		delete(additionalProperties, "lastStatus")
-		delete(additionalProperties, "lastResult")
-		delete(additionalProperties, "stats")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListBackups200ResponseAllOfBackupsInner struct {
-	value *ListBackups200ResponseAllOfBackupsInner
-	isSet bool
-}
-
-func (v NullableListBackups200ResponseAllOfBackupsInner) Get() *ListBackups200ResponseAllOfBackupsInner {
-	return v.value
-}
-
-func (v *NullableListBackups200ResponseAllOfBackupsInner) Set(val *ListBackups200ResponseAllOfBackupsInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListBackups200ResponseAllOfBackupsInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListBackups200ResponseAllOfBackupsInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListBackups200ResponseAllOfBackupsInner(val *ListBackups200ResponseAllOfBackupsInner) *NullableListBackups200ResponseAllOfBackupsInner {
-	return &NullableListBackups200ResponseAllOfBackupsInner{value: val, isSet: true}
-}
-
-func (v NullableListBackups200ResponseAllOfBackupsInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListBackups200ResponseAllOfBackupsInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

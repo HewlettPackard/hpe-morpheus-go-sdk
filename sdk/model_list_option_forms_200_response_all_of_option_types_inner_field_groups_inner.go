@@ -20,16 +20,16 @@ var _ MappedNullable = &ListOptionForms200ResponseAllOfOptionTypesInnerFieldGrou
 
 // ListOptionForms200ResponseAllOfOptionTypesInnerFieldGroupsInner struct for ListOptionForms200ResponseAllOfOptionTypesInnerFieldGroupsInner
 type ListOptionForms200ResponseAllOfOptionTypesInnerFieldGroupsInner struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Code *string `json:"code,omitempty"`
-	Description *string `json:"description,omitempty"`
-	LocalizedName *string `json:"localizedName,omitempty"`
-	Collapsible *bool `json:"collapsible,omitempty"`
-	DefaultCollapsed *bool `json:"defaultCollapsed,omitempty"`
-	VisibleOnCode *string `json:"visibleOnCode,omitempty"`
-	Options []ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner `json:"options,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                        `json:"id,omitempty"`
+	Name                 *string                                                       `json:"name,omitempty"`
+	Code                 *string                                                       `json:"code,omitempty"`
+	Description          *string                                                       `json:"description,omitempty"`
+	LocalizedName        *string                                                       `json:"localizedName,omitempty"`
+	Collapsible          *bool                                                         `json:"collapsible,omitempty"`
+	DefaultCollapsed     *bool                                                         `json:"defaultCollapsed,omitempty"`
+	VisibleOnCode        *string                                                       `json:"visibleOnCode,omitempty"`
+	Options              []ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner `json:"options,omitempty"`
+	AdditionalProperties map[string]interface{}                                        `json:",remain"`
 }
 
 type _ListOptionForms200ResponseAllOfOptionTypesInnerFieldGroupsInner ListOptionForms200ResponseAllOfOptionTypesInnerFieldGroupsInner
@@ -340,7 +340,7 @@ func (o *ListOptionForms200ResponseAllOfOptionTypesInnerFieldGroupsInner) SetOpt
 }
 
 func (o ListOptionForms200ResponseAllOfOptionTypesInnerFieldGroupsInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -383,70 +383,8 @@ func (o ListOptionForms200ResponseAllOfOptionTypesInnerFieldGroupsInner) ToMap()
 
 	return toSerialize, nil
 }
-
 func (o *ListOptionForms200ResponseAllOfOptionTypesInnerFieldGroupsInner) UnmarshalJSON(data []byte) (err error) {
-	varListOptionForms200ResponseAllOfOptionTypesInnerFieldGroupsInner := _ListOptionForms200ResponseAllOfOptionTypesInnerFieldGroupsInner{}
-
-	err = json.Unmarshal(data, &varListOptionForms200ResponseAllOfOptionTypesInnerFieldGroupsInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListOptionForms200ResponseAllOfOptionTypesInnerFieldGroupsInner(varListOptionForms200ResponseAllOfOptionTypesInnerFieldGroupsInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "localizedName")
-		delete(additionalProperties, "collapsible")
-		delete(additionalProperties, "defaultCollapsed")
-		delete(additionalProperties, "visibleOnCode")
-		delete(additionalProperties, "options")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListOptionForms200ResponseAllOfOptionTypesInnerFieldGroupsInner struct {
-	value *ListOptionForms200ResponseAllOfOptionTypesInnerFieldGroupsInner
-	isSet bool
-}
-
-func (v NullableListOptionForms200ResponseAllOfOptionTypesInnerFieldGroupsInner) Get() *ListOptionForms200ResponseAllOfOptionTypesInnerFieldGroupsInner {
-	return v.value
-}
-
-func (v *NullableListOptionForms200ResponseAllOfOptionTypesInnerFieldGroupsInner) Set(val *ListOptionForms200ResponseAllOfOptionTypesInnerFieldGroupsInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListOptionForms200ResponseAllOfOptionTypesInnerFieldGroupsInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListOptionForms200ResponseAllOfOptionTypesInnerFieldGroupsInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListOptionForms200ResponseAllOfOptionTypesInnerFieldGroupsInner(val *ListOptionForms200ResponseAllOfOptionTypesInnerFieldGroupsInner) *NullableListOptionForms200ResponseAllOfOptionTypesInnerFieldGroupsInner {
-	return &NullableListOptionForms200ResponseAllOfOptionTypesInnerFieldGroupsInner{value: val, isSet: true}
-}
-
-func (v NullableListOptionForms200ResponseAllOfOptionTypesInnerFieldGroupsInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListOptionForms200ResponseAllOfOptionTypesInnerFieldGroupsInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

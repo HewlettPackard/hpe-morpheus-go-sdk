@@ -20,8 +20,8 @@ var _ MappedNullable = &GetWikiCategories200Response{}
 
 // GetWikiCategories200Response struct for GetWikiCategories200Response
 type GetWikiCategories200Response struct {
-	Categories []GetWikiCategories200ResponseCategoriesInner `json:"categories,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Categories           []GetWikiCategories200ResponseCategoriesInner `json:"categories,omitempty"`
+	AdditionalProperties map[string]interface{}                        `json:",remain"`
 }
 
 type _GetWikiCategories200Response GetWikiCategories200Response
@@ -76,7 +76,7 @@ func (o *GetWikiCategories200Response) SetCategories(v []GetWikiCategories200Res
 }
 
 func (o GetWikiCategories200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o GetWikiCategories200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *GetWikiCategories200Response) UnmarshalJSON(data []byte) (err error) {
-	varGetWikiCategories200Response := _GetWikiCategories200Response{}
-
-	err = json.Unmarshal(data, &varGetWikiCategories200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetWikiCategories200Response(varGetWikiCategories200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "categories")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetWikiCategories200Response struct {
-	value *GetWikiCategories200Response
-	isSet bool
-}
-
-func (v NullableGetWikiCategories200Response) Get() *GetWikiCategories200Response {
-	return v.value
-}
-
-func (v *NullableGetWikiCategories200Response) Set(val *GetWikiCategories200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetWikiCategories200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetWikiCategories200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetWikiCategories200Response(val *GetWikiCategories200Response) *NullableGetWikiCategories200Response {
-	return &NullableGetWikiCategories200Response{value: val, isSet: true}
-}
-
-func (v NullableGetWikiCategories200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetWikiCategories200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

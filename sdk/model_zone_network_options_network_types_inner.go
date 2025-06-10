@@ -20,14 +20,14 @@ var _ MappedNullable = &ZoneNetworkOptionsNetworkTypesInner{}
 
 // ZoneNetworkOptionsNetworkTypesInner struct for ZoneNetworkOptionsNetworkTypesInner
 type ZoneNetworkOptionsNetworkTypesInner struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	DisplayOrder *int64 `json:"displayOrder,omitempty"`
-	Enabled *bool `json:"enabled,omitempty"`
-	DefaultType *bool `json:"defaultType,omitempty"`
-	ExternalId *string `json:"externalId,omitempty"`
-	Code *string `json:"code,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	DisplayOrder         *int64                 `json:"displayOrder,omitempty"`
+	Enabled              *bool                  `json:"enabled,omitempty"`
+	DefaultType          *bool                  `json:"defaultType,omitempty"`
+	ExternalId           *string                `json:"externalId,omitempty"`
+	Code                 *string                `json:"code,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ZoneNetworkOptionsNetworkTypesInner ZoneNetworkOptionsNetworkTypesInner
@@ -274,7 +274,7 @@ func (o *ZoneNetworkOptionsNetworkTypesInner) SetCode(v string) {
 }
 
 func (o ZoneNetworkOptionsNetworkTypesInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -311,68 +311,8 @@ func (o ZoneNetworkOptionsNetworkTypesInner) ToMap() (map[string]interface{}, er
 
 	return toSerialize, nil
 }
-
 func (o *ZoneNetworkOptionsNetworkTypesInner) UnmarshalJSON(data []byte) (err error) {
-	varZoneNetworkOptionsNetworkTypesInner := _ZoneNetworkOptionsNetworkTypesInner{}
-
-	err = json.Unmarshal(data, &varZoneNetworkOptionsNetworkTypesInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ZoneNetworkOptionsNetworkTypesInner(varZoneNetworkOptionsNetworkTypesInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "displayOrder")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "defaultType")
-		delete(additionalProperties, "externalId")
-		delete(additionalProperties, "code")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableZoneNetworkOptionsNetworkTypesInner struct {
-	value *ZoneNetworkOptionsNetworkTypesInner
-	isSet bool
-}
-
-func (v NullableZoneNetworkOptionsNetworkTypesInner) Get() *ZoneNetworkOptionsNetworkTypesInner {
-	return v.value
-}
-
-func (v *NullableZoneNetworkOptionsNetworkTypesInner) Set(val *ZoneNetworkOptionsNetworkTypesInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableZoneNetworkOptionsNetworkTypesInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableZoneNetworkOptionsNetworkTypesInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableZoneNetworkOptionsNetworkTypesInner(val *ZoneNetworkOptionsNetworkTypesInner) *NullableZoneNetworkOptionsNetworkTypesInner {
-	return &NullableZoneNetworkOptionsNetworkTypesInner{value: val, isSet: true}
-}
-
-func (v NullableZoneNetworkOptionsNetworkTypesInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableZoneNetworkOptionsNetworkTypesInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

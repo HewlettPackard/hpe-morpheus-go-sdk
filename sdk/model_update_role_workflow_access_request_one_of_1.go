@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the UpdateRoleWorkflowAccessRequestOneOf1 type satisfies the MappedNullable interface at compile time
@@ -24,8 +23,8 @@ type UpdateRoleWorkflowAccessRequestOneOf1 struct {
 	// Apply to all workflows (taskSets)
 	AllTaskSets bool `json:"allTaskSets"`
 	// The new access level.
-	Access string `json:"access"`
-	AdditionalProperties map[string]interface{}
+	Access               string                 `json:"access"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _UpdateRoleWorkflowAccessRequestOneOf1 UpdateRoleWorkflowAccessRequestOneOf1
@@ -98,7 +97,7 @@ func (o *UpdateRoleWorkflowAccessRequestOneOf1) SetAccess(v string) {
 }
 
 func (o UpdateRoleWorkflowAccessRequestOneOf1) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -116,85 +115,8 @@ func (o UpdateRoleWorkflowAccessRequestOneOf1) ToMap() (map[string]interface{}, 
 
 	return toSerialize, nil
 }
-
 func (o *UpdateRoleWorkflowAccessRequestOneOf1) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"allTaskSets",
-		"access",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varUpdateRoleWorkflowAccessRequestOneOf1 := _UpdateRoleWorkflowAccessRequestOneOf1{}
-
-	err = json.Unmarshal(data, &varUpdateRoleWorkflowAccessRequestOneOf1)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateRoleWorkflowAccessRequestOneOf1(varUpdateRoleWorkflowAccessRequestOneOf1)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "allTaskSets")
-		delete(additionalProperties, "access")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateRoleWorkflowAccessRequestOneOf1 struct {
-	value *UpdateRoleWorkflowAccessRequestOneOf1
-	isSet bool
-}
-
-func (v NullableUpdateRoleWorkflowAccessRequestOneOf1) Get() *UpdateRoleWorkflowAccessRequestOneOf1 {
-	return v.value
-}
-
-func (v *NullableUpdateRoleWorkflowAccessRequestOneOf1) Set(val *UpdateRoleWorkflowAccessRequestOneOf1) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateRoleWorkflowAccessRequestOneOf1) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateRoleWorkflowAccessRequestOneOf1) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateRoleWorkflowAccessRequestOneOf1(val *UpdateRoleWorkflowAccessRequestOneOf1) *NullableUpdateRoleWorkflowAccessRequestOneOf1 {
-	return &NullableUpdateRoleWorkflowAccessRequestOneOf1{value: val, isSet: true}
-}
-
-func (v NullableUpdateRoleWorkflowAccessRequestOneOf1) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateRoleWorkflowAccessRequestOneOf1) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

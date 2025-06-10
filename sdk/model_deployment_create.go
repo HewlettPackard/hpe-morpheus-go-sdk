@@ -23,8 +23,8 @@ type DeploymentCreate struct {
 	// Name, a unique identifier for the deployment
 	Name *string `json:"name,omitempty"`
 	// Description
-	Description *string `json:"description,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Description          *string                `json:"description,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _DeploymentCreate DeploymentCreate
@@ -111,7 +111,7 @@ func (o *DeploymentCreate) SetDescription(v string) {
 }
 
 func (o DeploymentCreate) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -133,63 +133,8 @@ func (o DeploymentCreate) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *DeploymentCreate) UnmarshalJSON(data []byte) (err error) {
-	varDeploymentCreate := _DeploymentCreate{}
-
-	err = json.Unmarshal(data, &varDeploymentCreate)
-
-	if err != nil {
-		return err
-	}
-
-	*o = DeploymentCreate(varDeploymentCreate)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableDeploymentCreate struct {
-	value *DeploymentCreate
-	isSet bool
-}
-
-func (v NullableDeploymentCreate) Get() *DeploymentCreate {
-	return v.value
-}
-
-func (v *NullableDeploymentCreate) Set(val *DeploymentCreate) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableDeploymentCreate) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableDeploymentCreate) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableDeploymentCreate(val *DeploymentCreate) *NullableDeploymentCreate {
-	return &NullableDeploymentCreate{value: val, isSet: true}
-}
-
-func (v NullableDeploymentCreate) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableDeploymentCreate) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

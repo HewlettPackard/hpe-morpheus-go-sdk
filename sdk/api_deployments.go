@@ -18,22 +18,21 @@ import (
 	"io"
 	"net/http"
 	"net/url"
-	"strings"
 	"os"
+	"strings"
 	"time"
 )
-
 
 // DeploymentsAPIService DeploymentsAPI service
 type DeploymentsAPIService service
 
 type ApiAddDeploymentFileRequest struct {
-	ctx context.Context
-	ApiService *DeploymentsAPIService
+	ctx          context.Context
+	ApiService   *DeploymentsAPIService
 	deploymentId int64
-	id int64
-	filepath string
-	file *os.File
+	id           int64
+	filepath     string
+	file         *os.File
 }
 
 func (r ApiAddDeploymentFileRequest) File(file *os.File) ApiAddDeploymentFileRequest {
@@ -50,30 +49,31 @@ AddDeploymentFile Upload a Deployment File
 
 This endpoint will upload a file for a specific deployment version. This will overwrite the file if one with the same name exists already.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param deploymentId Deployment ID
- @param id Morpheus ID of the Object being referenced
- @param filepath The path to to search for files under. Default is the root directory /.
- @return ApiAddDeploymentFileRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param deploymentId Deployment ID
+	@param id Morpheus ID of the Object being referenced
+	@param filepath The path to to search for files under. Default is the root directory /.
+	@return ApiAddDeploymentFileRequest
 */
 func (a *DeploymentsAPIService) AddDeploymentFile(ctx context.Context, deploymentId int64, id int64, filepath string) ApiAddDeploymentFileRequest {
 	return ApiAddDeploymentFileRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:   a,
+		ctx:          ctx,
 		deploymentId: deploymentId,
-		id: id,
-		filepath: filepath,
+		id:           id,
+		filepath:     filepath,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *DeploymentsAPIService) AddDeploymentFileExecute(r ApiAddDeploymentFileRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeploymentsAPIService.AddDeploymentFile")
@@ -108,8 +108,8 @@ func (a *DeploymentsAPIService) AddDeploymentFileExecute(r ApiAddDeploymentFileR
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	var fileLocalVarFormFileName string
-	var fileLocalVarFileName     string
-	var fileLocalVarFileBytes    []byte
+	var fileLocalVarFileName string
+	var fileLocalVarFileBytes []byte
 
 	fileLocalVarFormFileName = "file"
 	fileLocalVarFile := r.file
@@ -141,7 +141,7 @@ func (a *DeploymentsAPIService) AddDeploymentFileExecute(r ApiAddDeploymentFileR
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -150,8 +150,8 @@ func (a *DeploymentsAPIService) AddDeploymentFileExecute(r ApiAddDeploymentFileR
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -161,8 +161,8 @@ func (a *DeploymentsAPIService) AddDeploymentFileExecute(r ApiAddDeploymentFileR
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -170,8 +170,8 @@ func (a *DeploymentsAPIService) AddDeploymentFileExecute(r ApiAddDeploymentFileR
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -180,9 +180,9 @@ func (a *DeploymentsAPIService) AddDeploymentFileExecute(r ApiAddDeploymentFileR
 }
 
 type ApiAddDeploymentVersionRequest struct {
-	ctx context.Context
-	ApiService *DeploymentsAPIService
-	deploymentId int64
+	ctx                         context.Context
+	ApiService                  *DeploymentsAPIService
+	deploymentId                int64
 	addDeploymentVersionRequest *AddDeploymentVersionRequest
 }
 
@@ -200,26 +200,27 @@ AddDeploymentVersion Create a new Deployment Version
 
 This endpoint will create a new deployment version that is ready to have files uploaded to it. The default type is file, which has files directly uploaded via Morpheus. Alternatively, the type git or fetch can be used to just point to a repository or remote url.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param deploymentId Deployment ID
- @return ApiAddDeploymentVersionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param deploymentId Deployment ID
+	@return ApiAddDeploymentVersionRequest
 */
 func (a *DeploymentsAPIService) AddDeploymentVersion(ctx context.Context, deploymentId int64) ApiAddDeploymentVersionRequest {
 	return ApiAddDeploymentVersionRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:   a,
+		ctx:          ctx,
 		deploymentId: deploymentId,
 	}
 }
 
 // Execute executes the request
-//  @return AddDeploymentVersion200Response
+//
+//	@return AddDeploymentVersion200Response
 func (a *DeploymentsAPIService) AddDeploymentVersionExecute(r ApiAddDeploymentVersionRequest) (*AddDeploymentVersion200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddDeploymentVersion200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddDeploymentVersion200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeploymentsAPIService.AddDeploymentVersion")
@@ -272,7 +273,7 @@ func (a *DeploymentsAPIService) AddDeploymentVersionExecute(r ApiAddDeploymentVe
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -281,8 +282,8 @@ func (a *DeploymentsAPIService) AddDeploymentVersionExecute(r ApiAddDeploymentVe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -292,8 +293,8 @@ func (a *DeploymentsAPIService) AddDeploymentVersionExecute(r ApiAddDeploymentVe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -301,8 +302,8 @@ func (a *DeploymentsAPIService) AddDeploymentVersionExecute(r ApiAddDeploymentVe
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -311,8 +312,8 @@ func (a *DeploymentsAPIService) AddDeploymentVersionExecute(r ApiAddDeploymentVe
 }
 
 type ApiAddDeploymentsRequest struct {
-	ctx context.Context
-	ApiService *DeploymentsAPIService
+	ctx                   context.Context
+	ApiService            *DeploymentsAPIService
 	addDeploymentsRequest *AddDeploymentsRequest
 }
 
@@ -330,24 +331,25 @@ AddDeployments Create a new Deployment
 
 This endpoint will create a new deployment that is ready to have versions added to it.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddDeploymentsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddDeploymentsRequest
 */
 func (a *DeploymentsAPIService) AddDeployments(ctx context.Context) ApiAddDeploymentsRequest {
 	return ApiAddDeploymentsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddDeployments200Response
+//
+//	@return AddDeployments200Response
 func (a *DeploymentsAPIService) AddDeploymentsExecute(r ApiAddDeploymentsRequest) (*AddDeployments200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddDeployments200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddDeployments200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeploymentsAPIService.AddDeployments")
@@ -399,7 +401,7 @@ func (a *DeploymentsAPIService) AddDeploymentsExecute(r ApiAddDeploymentsRequest
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -408,8 +410,8 @@ func (a *DeploymentsAPIService) AddDeploymentsExecute(r ApiAddDeploymentsRequest
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -419,8 +421,8 @@ func (a *DeploymentsAPIService) AddDeploymentsExecute(r ApiAddDeploymentsRequest
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -428,8 +430,8 @@ func (a *DeploymentsAPIService) AddDeploymentsExecute(r ApiAddDeploymentsRequest
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -438,8 +440,8 @@ func (a *DeploymentsAPIService) AddDeploymentsExecute(r ApiAddDeploymentsRequest
 }
 
 type ApiDeleteDeploymentRequest struct {
-	ctx context.Context
-	ApiService *DeploymentsAPIService
+	ctx          context.Context
+	ApiService   *DeploymentsAPIService
 	deploymentId int64
 }
 
@@ -452,26 +454,27 @@ DeleteDeployment Delete a Deployment
 
 This endpoint will delete an existing deployment.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param deploymentId Deployment ID
- @return ApiDeleteDeploymentRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param deploymentId Deployment ID
+	@return ApiDeleteDeploymentRequest
 */
 func (a *DeploymentsAPIService) DeleteDeployment(ctx context.Context, deploymentId int64) ApiDeleteDeploymentRequest {
 	return ApiDeleteDeploymentRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:   a,
+		ctx:          ctx,
 		deploymentId: deploymentId,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *DeploymentsAPIService) DeleteDeploymentExecute(r ApiDeleteDeploymentRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeploymentsAPIService.DeleteDeployment")
@@ -522,7 +525,7 @@ func (a *DeploymentsAPIService) DeleteDeploymentExecute(r ApiDeleteDeploymentReq
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -531,8 +534,8 @@ func (a *DeploymentsAPIService) DeleteDeploymentExecute(r ApiDeleteDeploymentReq
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -542,8 +545,8 @@ func (a *DeploymentsAPIService) DeleteDeploymentExecute(r ApiDeleteDeploymentReq
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -551,8 +554,8 @@ func (a *DeploymentsAPIService) DeleteDeploymentExecute(r ApiDeleteDeploymentReq
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -561,12 +564,12 @@ func (a *DeploymentsAPIService) DeleteDeploymentExecute(r ApiDeleteDeploymentReq
 }
 
 type ApiDeleteDeploymentFileRequest struct {
-	ctx context.Context
-	ApiService *DeploymentsAPIService
+	ctx          context.Context
+	ApiService   *DeploymentsAPIService
 	deploymentId int64
-	id int64
-	filepath string
-	force *string
+	id           int64
+	filepath     string
+	force        *string
 }
 
 // Force Delete
@@ -584,30 +587,31 @@ DeleteDeploymentFile Delete a Deployment File
 
 This endpoint will delete an existing deployment file. To recursively delete a directory and all of its contents, the force parameter must be specified.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param deploymentId Deployment ID
- @param id Morpheus ID of the Object being referenced
- @param filepath The path to to search for files under. Default is the root directory /.
- @return ApiDeleteDeploymentFileRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param deploymentId Deployment ID
+	@param id Morpheus ID of the Object being referenced
+	@param filepath The path to to search for files under. Default is the root directory /.
+	@return ApiDeleteDeploymentFileRequest
 */
 func (a *DeploymentsAPIService) DeleteDeploymentFile(ctx context.Context, deploymentId int64, id int64, filepath string) ApiDeleteDeploymentFileRequest {
 	return ApiDeleteDeploymentFileRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:   a,
+		ctx:          ctx,
 		deploymentId: deploymentId,
-		id: id,
-		filepath: filepath,
+		id:           id,
+		filepath:     filepath,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *DeploymentsAPIService) DeleteDeploymentFileExecute(r ApiDeleteDeploymentFileRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeploymentsAPIService.DeleteDeploymentFile")
@@ -666,7 +670,7 @@ func (a *DeploymentsAPIService) DeleteDeploymentFileExecute(r ApiDeleteDeploymen
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -675,8 +679,8 @@ func (a *DeploymentsAPIService) DeleteDeploymentFileExecute(r ApiDeleteDeploymen
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -686,8 +690,8 @@ func (a *DeploymentsAPIService) DeleteDeploymentFileExecute(r ApiDeleteDeploymen
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -695,8 +699,8 @@ func (a *DeploymentsAPIService) DeleteDeploymentFileExecute(r ApiDeleteDeploymen
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -705,10 +709,10 @@ func (a *DeploymentsAPIService) DeleteDeploymentFileExecute(r ApiDeleteDeploymen
 }
 
 type ApiDeleteDeploymentVersionRequest struct {
-	ctx context.Context
-	ApiService *DeploymentsAPIService
+	ctx          context.Context
+	ApiService   *DeploymentsAPIService
 	deploymentId int64
-	id int64
+	id           int64
 }
 
 func (r ApiDeleteDeploymentVersionRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -720,28 +724,29 @@ DeleteDeploymentVersion Delete a Deployment Version
 
 This endpoint will delete an existing deployment version.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param deploymentId Deployment ID
- @param id Morpheus ID of the Object being referenced
- @return ApiDeleteDeploymentVersionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param deploymentId Deployment ID
+	@param id Morpheus ID of the Object being referenced
+	@return ApiDeleteDeploymentVersionRequest
 */
 func (a *DeploymentsAPIService) DeleteDeploymentVersion(ctx context.Context, deploymentId int64, id int64) ApiDeleteDeploymentVersionRequest {
 	return ApiDeleteDeploymentVersionRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:   a,
+		ctx:          ctx,
 		deploymentId: deploymentId,
-		id: id,
+		id:           id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *DeploymentsAPIService) DeleteDeploymentVersionExecute(r ApiDeleteDeploymentVersionRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeploymentsAPIService.DeleteDeploymentVersion")
@@ -793,7 +798,7 @@ func (a *DeploymentsAPIService) DeleteDeploymentVersionExecute(r ApiDeleteDeploy
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -802,8 +807,8 @@ func (a *DeploymentsAPIService) DeleteDeploymentVersionExecute(r ApiDeleteDeploy
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -813,8 +818,8 @@ func (a *DeploymentsAPIService) DeleteDeploymentVersionExecute(r ApiDeleteDeploy
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -822,8 +827,8 @@ func (a *DeploymentsAPIService) DeleteDeploymentVersionExecute(r ApiDeleteDeploy
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -832,10 +837,10 @@ func (a *DeploymentsAPIService) DeleteDeploymentVersionExecute(r ApiDeleteDeploy
 }
 
 type ApiGetDeploymentRequest struct {
-	ctx context.Context
-	ApiService *DeploymentsAPIService
+	ctx          context.Context
+	ApiService   *DeploymentsAPIService
 	deploymentId int64
-	maxVersions *int64
+	maxVersions  *int64
 }
 
 // Max number of recent versions to return.
@@ -853,26 +858,27 @@ GetDeployment Get a Specific Deployment
 
 This endpoint retrieves a specific deployment. By default the 5 most recent versions are returned, more can be returned by specifying the maxVersions parameter.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param deploymentId Deployment ID
- @return ApiGetDeploymentRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param deploymentId Deployment ID
+	@return ApiGetDeploymentRequest
 */
 func (a *DeploymentsAPIService) GetDeployment(ctx context.Context, deploymentId int64) ApiGetDeploymentRequest {
 	return ApiGetDeploymentRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:   a,
+		ctx:          ctx,
 		deploymentId: deploymentId,
 	}
 }
 
 // Execute executes the request
-//  @return GetDeployment200Response
+//
+//	@return GetDeployment200Response
 func (a *DeploymentsAPIService) GetDeploymentExecute(r ApiGetDeploymentRequest) (*GetDeployment200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetDeployment200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetDeployment200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeploymentsAPIService.GetDeployment")
@@ -926,7 +932,7 @@ func (a *DeploymentsAPIService) GetDeploymentExecute(r ApiGetDeploymentRequest) 
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -935,8 +941,8 @@ func (a *DeploymentsAPIService) GetDeploymentExecute(r ApiGetDeploymentRequest) 
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -946,8 +952,8 @@ func (a *DeploymentsAPIService) GetDeploymentExecute(r ApiGetDeploymentRequest) 
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -955,8 +961,8 @@ func (a *DeploymentsAPIService) GetDeploymentExecute(r ApiGetDeploymentRequest) 
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -965,10 +971,10 @@ func (a *DeploymentsAPIService) GetDeploymentExecute(r ApiGetDeploymentRequest) 
 }
 
 type ApiGetDeploymentVersionRequest struct {
-	ctx context.Context
-	ApiService *DeploymentsAPIService
+	ctx          context.Context
+	ApiService   *DeploymentsAPIService
 	deploymentId int64
-	id int64
+	id           int64
 }
 
 func (r ApiGetDeploymentVersionRequest) Execute() (*GetDeploymentVersion200Response, *http.Response, error) {
@@ -980,28 +986,29 @@ GetDeploymentVersion Get a Specific Deployment Version
 
 This endpoint retrieves a specific deployment version.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param deploymentId Deployment ID
- @param id Morpheus ID of the Object being referenced
- @return ApiGetDeploymentVersionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param deploymentId Deployment ID
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetDeploymentVersionRequest
 */
 func (a *DeploymentsAPIService) GetDeploymentVersion(ctx context.Context, deploymentId int64, id int64) ApiGetDeploymentVersionRequest {
 	return ApiGetDeploymentVersionRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:   a,
+		ctx:          ctx,
 		deploymentId: deploymentId,
-		id: id,
+		id:           id,
 	}
 }
 
 // Execute executes the request
-//  @return GetDeploymentVersion200Response
+//
+//	@return GetDeploymentVersion200Response
 func (a *DeploymentsAPIService) GetDeploymentVersionExecute(r ApiGetDeploymentVersionRequest) (*GetDeploymentVersion200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetDeploymentVersion200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetDeploymentVersion200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeploymentsAPIService.GetDeploymentVersion")
@@ -1053,7 +1060,7 @@ func (a *DeploymentsAPIService) GetDeploymentVersionExecute(r ApiGetDeploymentVe
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1062,8 +1069,8 @@ func (a *DeploymentsAPIService) GetDeploymentVersionExecute(r ApiGetDeploymentVe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1073,8 +1080,8 @@ func (a *DeploymentsAPIService) GetDeploymentVersionExecute(r ApiGetDeploymentVe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1082,8 +1089,8 @@ func (a *DeploymentsAPIService) GetDeploymentVersionExecute(r ApiGetDeploymentVe
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1092,15 +1099,15 @@ func (a *DeploymentsAPIService) GetDeploymentVersionExecute(r ApiGetDeploymentVe
 }
 
 type ApiListDeploymentFilesRequest struct {
-	ctx context.Context
-	ApiService *DeploymentsAPIService
+	ctx          context.Context
+	ApiService   *DeploymentsAPIService
 	deploymentId int64
-	id int64
-	filepath string
-	max *int64
-	offset *int64
-	phrase *string
-	version *int64
+	id           int64
+	filepath     string
+	max          *int64
+	offset       *int64
+	phrase       *string
+	version      *int64
 }
 
 // Maximum number of records to return
@@ -1138,31 +1145,31 @@ This endpoint returns a list of files for a specific deployment version. This on
 
 The filepath parameter can be specified to search for specific files or directories. To list files under a directory, use a trailing / in the filepath parameter.  To list a specific file, provide it's full path.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param deploymentId Deployment ID
- @param id Morpheus ID of the Object being referenced
- @param filepath The path to to search for files under. Default is the root directory /.
- @return ApiListDeploymentFilesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param deploymentId Deployment ID
+	@param id Morpheus ID of the Object being referenced
+	@param filepath The path to to search for files under. Default is the root directory /.
+	@return ApiListDeploymentFilesRequest
 */
 func (a *DeploymentsAPIService) ListDeploymentFiles(ctx context.Context, deploymentId int64, id int64, filepath string) ApiListDeploymentFilesRequest {
 	return ApiListDeploymentFilesRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:   a,
+		ctx:          ctx,
 		deploymentId: deploymentId,
-		id: id,
-		filepath: filepath,
+		id:           id,
+		filepath:     filepath,
 	}
 }
 
 // Execute executes the request
-//  @return ListDeploymentVersions200Response
+//
+//	@return ListDeploymentVersions200Response
 func (a *DeploymentsAPIService) ListDeploymentFilesExecute(r ApiListDeploymentFilesRequest) (*ListDeploymentVersions200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListDeploymentVersions200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListDeploymentVersions200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeploymentsAPIService.ListDeploymentFiles")
@@ -1233,7 +1240,7 @@ func (a *DeploymentsAPIService) ListDeploymentFilesExecute(r ApiListDeploymentFi
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1242,8 +1249,8 @@ func (a *DeploymentsAPIService) ListDeploymentFilesExecute(r ApiListDeploymentFi
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1253,8 +1260,8 @@ func (a *DeploymentsAPIService) ListDeploymentFilesExecute(r ApiListDeploymentFi
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1262,8 +1269,8 @@ func (a *DeploymentsAPIService) ListDeploymentFilesExecute(r ApiListDeploymentFi
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1272,16 +1279,16 @@ func (a *DeploymentsAPIService) ListDeploymentFilesExecute(r ApiListDeploymentFi
 }
 
 type ApiListDeploymentVersionsRequest struct {
-	ctx context.Context
-	ApiService *DeploymentsAPIService
+	ctx          context.Context
+	ApiService   *DeploymentsAPIService
 	deploymentId int64
-	max *int64
-	offset *int64
-	phrase *string
-	version *int64
-	type_ *string
-	dateCreated *string
-	lastUpdated *time.Time
+	max          *int64
+	offset       *int64
+	phrase       *string
+	version      *int64
+	type_        *string
+	dateCreated  *string
+	lastUpdated  *time.Time
 }
 
 // Maximum number of records to return
@@ -1335,26 +1342,27 @@ ListDeploymentVersions Get All Versions For a Deployment
 
 This endpoint returns a paginated list of versions for a specific deployment.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param deploymentId Deployment ID
- @return ApiListDeploymentVersionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param deploymentId Deployment ID
+	@return ApiListDeploymentVersionsRequest
 */
 func (a *DeploymentsAPIService) ListDeploymentVersions(ctx context.Context, deploymentId int64) ApiListDeploymentVersionsRequest {
 	return ApiListDeploymentVersionsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:   a,
+		ctx:          ctx,
 		deploymentId: deploymentId,
 	}
 }
 
 // Execute executes the request
-//  @return ListDeploymentVersions200Response
+//
+//	@return ListDeploymentVersions200Response
 func (a *DeploymentsAPIService) ListDeploymentVersionsExecute(r ApiListDeploymentVersionsRequest) (*ListDeploymentVersions200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListDeploymentVersions200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListDeploymentVersions200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeploymentsAPIService.ListDeploymentVersions")
@@ -1432,7 +1440,7 @@ func (a *DeploymentsAPIService) ListDeploymentVersionsExecute(r ApiListDeploymen
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1441,8 +1449,8 @@ func (a *DeploymentsAPIService) ListDeploymentVersionsExecute(r ApiListDeploymen
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1452,8 +1460,8 @@ func (a *DeploymentsAPIService) ListDeploymentVersionsExecute(r ApiListDeploymen
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1461,8 +1469,8 @@ func (a *DeploymentsAPIService) ListDeploymentVersionsExecute(r ApiListDeploymen
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1471,12 +1479,12 @@ func (a *DeploymentsAPIService) ListDeploymentVersionsExecute(r ApiListDeploymen
 }
 
 type ApiListDeploymentsRequest struct {
-	ctx context.Context
-	ApiService *DeploymentsAPIService
-	max *int64
-	offset *int64
-	phrase *string
-	name *string
+	ctx         context.Context
+	ApiService  *DeploymentsAPIService
+	max         *int64
+	offset      *int64
+	phrase      *string
+	name        *string
 	description *string
 	dateCreated *string
 	lastUpdated *time.Time
@@ -1533,24 +1541,25 @@ ListDeployments Get All Deployments
 
 This endpoint returns a paginated list of deployments.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListDeploymentsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListDeploymentsRequest
 */
 func (a *DeploymentsAPIService) ListDeployments(ctx context.Context) ApiListDeploymentsRequest {
 	return ApiListDeploymentsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListDeployments200Response
+//
+//	@return ListDeployments200Response
 func (a *DeploymentsAPIService) ListDeploymentsExecute(r ApiListDeploymentsRequest) (*ListDeployments200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListDeployments200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListDeployments200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeploymentsAPIService.ListDeployments")
@@ -1627,7 +1636,7 @@ func (a *DeploymentsAPIService) ListDeploymentsExecute(r ApiListDeploymentsReque
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1636,8 +1645,8 @@ func (a *DeploymentsAPIService) ListDeploymentsExecute(r ApiListDeploymentsReque
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1647,8 +1656,8 @@ func (a *DeploymentsAPIService) ListDeploymentsExecute(r ApiListDeploymentsReque
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1656,8 +1665,8 @@ func (a *DeploymentsAPIService) ListDeploymentsExecute(r ApiListDeploymentsReque
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1666,9 +1675,9 @@ func (a *DeploymentsAPIService) ListDeploymentsExecute(r ApiListDeploymentsReque
 }
 
 type ApiUpdateDeploymentRequest struct {
-	ctx context.Context
-	ApiService *DeploymentsAPIService
-	deploymentId int64
+	ctx                   context.Context
+	ApiService            *DeploymentsAPIService
+	deploymentId          int64
 	addDeploymentsRequest *AddDeploymentsRequest
 }
 
@@ -1686,26 +1695,27 @@ UpdateDeployment Updating a Deployment
 
 This endpoint will update an existing deployment.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param deploymentId Deployment ID
- @return ApiUpdateDeploymentRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param deploymentId Deployment ID
+	@return ApiUpdateDeploymentRequest
 */
 func (a *DeploymentsAPIService) UpdateDeployment(ctx context.Context, deploymentId int64) ApiUpdateDeploymentRequest {
 	return ApiUpdateDeploymentRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:   a,
+		ctx:          ctx,
 		deploymentId: deploymentId,
 	}
 }
 
 // Execute executes the request
-//  @return UpdateDeployment200Response
+//
+//	@return UpdateDeployment200Response
 func (a *DeploymentsAPIService) UpdateDeploymentExecute(r ApiUpdateDeploymentRequest) (*UpdateDeployment200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *UpdateDeployment200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *UpdateDeployment200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeploymentsAPIService.UpdateDeployment")
@@ -1758,7 +1768,7 @@ func (a *DeploymentsAPIService) UpdateDeploymentExecute(r ApiUpdateDeploymentReq
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1767,8 +1777,8 @@ func (a *DeploymentsAPIService) UpdateDeploymentExecute(r ApiUpdateDeploymentReq
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1778,8 +1788,8 @@ func (a *DeploymentsAPIService) UpdateDeploymentExecute(r ApiUpdateDeploymentReq
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1787,8 +1797,8 @@ func (a *DeploymentsAPIService) UpdateDeploymentExecute(r ApiUpdateDeploymentReq
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1797,10 +1807,10 @@ func (a *DeploymentsAPIService) UpdateDeploymentExecute(r ApiUpdateDeploymentReq
 }
 
 type ApiUpdateDeploymentVersionRequest struct {
-	ctx context.Context
-	ApiService *DeploymentsAPIService
-	deploymentId int64
-	id int64
+	ctx                         context.Context
+	ApiService                  *DeploymentsAPIService
+	deploymentId                int64
+	id                          int64
 	addDeploymentVersionRequest *AddDeploymentVersionRequest
 }
 
@@ -1818,28 +1828,29 @@ UpdateDeploymentVersion Updating a Deployment Version
 
 This endpoint will update an existing deployment version.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param deploymentId Deployment ID
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateDeploymentVersionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param deploymentId Deployment ID
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateDeploymentVersionRequest
 */
 func (a *DeploymentsAPIService) UpdateDeploymentVersion(ctx context.Context, deploymentId int64, id int64) ApiUpdateDeploymentVersionRequest {
 	return ApiUpdateDeploymentVersionRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:   a,
+		ctx:          ctx,
 		deploymentId: deploymentId,
-		id: id,
+		id:           id,
 	}
 }
 
 // Execute executes the request
-//  @return AddDeploymentVersion200Response
+//
+//	@return AddDeploymentVersion200Response
 func (a *DeploymentsAPIService) UpdateDeploymentVersionExecute(r ApiUpdateDeploymentVersionRequest) (*AddDeploymentVersion200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddDeploymentVersion200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddDeploymentVersion200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeploymentsAPIService.UpdateDeploymentVersion")
@@ -1893,7 +1904,7 @@ func (a *DeploymentsAPIService) UpdateDeploymentVersionExecute(r ApiUpdateDeploy
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1902,8 +1913,8 @@ func (a *DeploymentsAPIService) UpdateDeploymentVersionExecute(r ApiUpdateDeploy
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1913,8 +1924,8 @@ func (a *DeploymentsAPIService) UpdateDeploymentVersionExecute(r ApiUpdateDeploy
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1922,8 +1933,8 @@ func (a *DeploymentsAPIService) UpdateDeploymentVersionExecute(r ApiUpdateDeploy
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

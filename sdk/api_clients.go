@@ -21,13 +21,12 @@ import (
 	"strings"
 )
 
-
 // ClientsAPIService ClientsAPI service
 type ClientsAPIService service
 
 type ApiAddClientRequest struct {
-	ctx context.Context
-	ApiService *ClientsAPIService
+	ctx              context.Context
+	ApiService       *ClientsAPIService
 	addClientRequest *AddClientRequest
 }
 
@@ -45,24 +44,25 @@ AddClient Create an Oauth Client
 
 Create a new Oauth Client.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddClientRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddClientRequest
 */
 func (a *ClientsAPIService) AddClient(ctx context.Context) ApiAddClientRequest {
 	return ApiAddClientRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddClient200Response
+//
+//	@return AddClient200Response
 func (a *ClientsAPIService) AddClientExecute(r ApiAddClientRequest) (*AddClient200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddClient200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddClient200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientsAPIService.AddClient")
@@ -114,7 +114,7 @@ func (a *ClientsAPIService) AddClientExecute(r ApiAddClientRequest) (*AddClient2
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -123,8 +123,8 @@ func (a *ClientsAPIService) AddClientExecute(r ApiAddClientRequest) (*AddClient2
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -134,8 +134,8 @@ func (a *ClientsAPIService) AddClientExecute(r ApiAddClientRequest) (*AddClient2
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -143,8 +143,8 @@ func (a *ClientsAPIService) AddClientExecute(r ApiAddClientRequest) (*AddClient2
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -153,9 +153,9 @@ func (a *ClientsAPIService) AddClientExecute(r ApiAddClientRequest) (*AddClient2
 }
 
 type ApiGetClientsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ClientsAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetClientsRequest) Execute() (*GetClients200Response, *http.Response, error) {
@@ -167,27 +167,27 @@ GetClients Retrieves a Specific Oauth Client
 
 Retrieves a specific oauth client.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetClientsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetClientsRequest
 */
 func (a *ClientsAPIService) GetClients(ctx context.Context, id int64) ApiGetClientsRequest {
 	return ApiGetClientsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetClients200Response
+//
+//	@return GetClients200Response
 func (a *ClientsAPIService) GetClientsExecute(r ApiGetClientsRequest) (*GetClients200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetClients200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetClients200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientsAPIService.GetClients")
@@ -238,7 +238,7 @@ func (a *ClientsAPIService) GetClientsExecute(r ApiGetClientsRequest) (*GetClien
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -247,8 +247,8 @@ func (a *ClientsAPIService) GetClientsExecute(r ApiGetClientsRequest) (*GetClien
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -258,8 +258,8 @@ func (a *ClientsAPIService) GetClientsExecute(r ApiGetClientsRequest) (*GetClien
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -267,8 +267,8 @@ func (a *ClientsAPIService) GetClientsExecute(r ApiGetClientsRequest) (*GetClien
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -277,14 +277,14 @@ func (a *ClientsAPIService) GetClientsExecute(r ApiGetClientsRequest) (*GetClien
 }
 
 type ApiListClientsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ClientsAPIService
-	max *int64
-	offset *int64
-	sort *string
-	direction *string
-	phrase *string
-	clientId *string
+	max        *int64
+	offset     *int64
+	sort       *string
+	direction  *string
+	phrase     *string
+	clientId   *string
 }
 
 // Maximum number of records to return
@@ -332,24 +332,25 @@ ListClients Get All Oauth Clients
 
 This endpoint retrieves a paginated list of oauth clients.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListClientsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListClientsRequest
 */
 func (a *ClientsAPIService) ListClients(ctx context.Context) ApiListClientsRequest {
 	return ApiListClientsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListClients200Response
+//
+//	@return ListClients200Response
 func (a *ClientsAPIService) ListClientsExecute(r ApiListClientsRequest) (*ListClients200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListClients200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListClients200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientsAPIService.ListClients")
@@ -429,7 +430,7 @@ func (a *ClientsAPIService) ListClientsExecute(r ApiListClientsRequest) (*ListCl
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -438,8 +439,8 @@ func (a *ClientsAPIService) ListClientsExecute(r ApiListClientsRequest) (*ListCl
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -449,8 +450,8 @@ func (a *ClientsAPIService) ListClientsExecute(r ApiListClientsRequest) (*ListCl
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -458,8 +459,8 @@ func (a *ClientsAPIService) ListClientsExecute(r ApiListClientsRequest) (*ListCl
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -468,9 +469,9 @@ func (a *ClientsAPIService) ListClientsExecute(r ApiListClientsRequest) (*ListCl
 }
 
 type ApiRemoveClientsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ClientsAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiRemoveClientsRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -482,27 +483,27 @@ RemoveClients Deletes an Oauth Client
 
 Deletes a specified oauth client.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiRemoveClientsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiRemoveClientsRequest
 */
 func (a *ClientsAPIService) RemoveClients(ctx context.Context, id int64) ApiRemoveClientsRequest {
 	return ApiRemoveClientsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *ClientsAPIService) RemoveClientsExecute(r ApiRemoveClientsRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientsAPIService.RemoveClients")
@@ -553,7 +554,7 @@ func (a *ClientsAPIService) RemoveClientsExecute(r ApiRemoveClientsRequest) (*De
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -562,8 +563,8 @@ func (a *ClientsAPIService) RemoveClientsExecute(r ApiRemoveClientsRequest) (*De
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -573,8 +574,8 @@ func (a *ClientsAPIService) RemoveClientsExecute(r ApiRemoveClientsRequest) (*De
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -582,8 +583,8 @@ func (a *ClientsAPIService) RemoveClientsExecute(r ApiRemoveClientsRequest) (*De
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -592,9 +593,9 @@ func (a *ClientsAPIService) RemoveClientsExecute(r ApiRemoveClientsRequest) (*De
 }
 
 type ApiUpdateClientsRequest struct {
-	ctx context.Context
-	ApiService *ClientsAPIService
-	id int64
+	ctx                  context.Context
+	ApiService           *ClientsAPIService
+	id                   int64
 	updateClientsRequest *UpdateClientsRequest
 }
 
@@ -612,27 +613,27 @@ UpdateClients Updates an Oauth Client
 
 Updates an oauth client.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateClientsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateClientsRequest
 */
 func (a *ClientsAPIService) UpdateClients(ctx context.Context, id int64) ApiUpdateClientsRequest {
 	return ApiUpdateClientsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return AddClient200Response
+//
+//	@return AddClient200Response
 func (a *ClientsAPIService) UpdateClientsExecute(r ApiUpdateClientsRequest) (*AddClient200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddClient200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddClient200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientsAPIService.UpdateClients")
@@ -685,7 +686,7 @@ func (a *ClientsAPIService) UpdateClientsExecute(r ApiUpdateClientsRequest) (*Ad
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -694,8 +695,8 @@ func (a *ClientsAPIService) UpdateClientsExecute(r ApiUpdateClientsRequest) (*Ad
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -705,8 +706,8 @@ func (a *ClientsAPIService) UpdateClientsExecute(r ApiUpdateClientsRequest) (*Ad
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -714,8 +715,8 @@ func (a *ClientsAPIService) UpdateClientsExecute(r ApiUpdateClientsRequest) (*Ad
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

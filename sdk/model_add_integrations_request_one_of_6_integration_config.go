@@ -21,8 +21,8 @@ var _ MappedNullable = &AddIntegrationsRequestOneOf6IntegrationConfig{}
 // AddIntegrationsRequestOneOf6IntegrationConfig struct for AddIntegrationsRequestOneOf6IntegrationConfig
 type AddIntegrationsRequestOneOf6IntegrationConfig struct {
 	// Enable Git Repository Caching
-	CacheEnabled *bool `json:"cacheEnabled,omitempty"`
-	AdditionalProperties map[string]interface{}
+	CacheEnabled         *bool                  `json:"cacheEnabled,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddIntegrationsRequestOneOf6IntegrationConfig AddIntegrationsRequestOneOf6IntegrationConfig
@@ -77,7 +77,7 @@ func (o *AddIntegrationsRequestOneOf6IntegrationConfig) SetCacheEnabled(v bool) 
 }
 
 func (o AddIntegrationsRequestOneOf6IntegrationConfig) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -96,62 +96,8 @@ func (o AddIntegrationsRequestOneOf6IntegrationConfig) ToMap() (map[string]inter
 
 	return toSerialize, nil
 }
-
 func (o *AddIntegrationsRequestOneOf6IntegrationConfig) UnmarshalJSON(data []byte) (err error) {
-	varAddIntegrationsRequestOneOf6IntegrationConfig := _AddIntegrationsRequestOneOf6IntegrationConfig{}
-
-	err = json.Unmarshal(data, &varAddIntegrationsRequestOneOf6IntegrationConfig)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddIntegrationsRequestOneOf6IntegrationConfig(varAddIntegrationsRequestOneOf6IntegrationConfig)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "cacheEnabled")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddIntegrationsRequestOneOf6IntegrationConfig struct {
-	value *AddIntegrationsRequestOneOf6IntegrationConfig
-	isSet bool
-}
-
-func (v NullableAddIntegrationsRequestOneOf6IntegrationConfig) Get() *AddIntegrationsRequestOneOf6IntegrationConfig {
-	return v.value
-}
-
-func (v *NullableAddIntegrationsRequestOneOf6IntegrationConfig) Set(val *AddIntegrationsRequestOneOf6IntegrationConfig) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddIntegrationsRequestOneOf6IntegrationConfig) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddIntegrationsRequestOneOf6IntegrationConfig) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddIntegrationsRequestOneOf6IntegrationConfig(val *AddIntegrationsRequestOneOf6IntegrationConfig) *NullableAddIntegrationsRequestOneOf6IntegrationConfig {
-	return &NullableAddIntegrationsRequestOneOf6IntegrationConfig{value: val, isSet: true}
-}
-
-func (v NullableAddIntegrationsRequestOneOf6IntegrationConfig) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddIntegrationsRequestOneOf6IntegrationConfig) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

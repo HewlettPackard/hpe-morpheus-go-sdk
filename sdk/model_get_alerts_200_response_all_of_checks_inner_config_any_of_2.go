@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the GetAlerts200ResponseAllOfChecksInnerConfigAnyOf2 type satisfies the MappedNullable interface at compile time
@@ -24,11 +23,11 @@ type GetAlerts200ResponseAllOfChecksInnerConfigAnyOf2 struct {
 	// Hostname or IP address of the Elasticsearch server
 	EsHost string `json:"esHost"`
 	// Port to connect to the HTTP service
-	EsPort string `json:"esPort"`
-	CheckUser *string `json:"checkUser,omitempty"`
-	TextCheckOn *string `json:"textCheckOn,omitempty"`
-	CheckPassword *string `json:"checkPassword,omitempty"`
-	WebTextMatch *string `json:"webTextMatch,omitempty"`
+	EsPort            string  `json:"esPort"`
+	CheckUser         *string `json:"checkUser,omitempty"`
+	TextCheckOn       *string `json:"textCheckOn,omitempty"`
+	CheckPassword     *string `json:"checkPassword,omitempty"`
+	WebTextMatch      *string `json:"webTextMatch,omitempty"`
 	CheckPasswordHash *string `json:"checkPasswordHash,omitempty"`
 	// Set to on to turn on tunneling
 	TunnelOn *string `json:"tunnelOn,omitempty"`
@@ -39,8 +38,8 @@ type GetAlerts200ResponseAllOfChecksInnerConfigAnyOf2 struct {
 	// SSH user on the proxy host to login as
 	SshUser *string `json:"sshUser,omitempty"`
 	// Password for user, if not using key based authentication
-	SshPassword *string `json:"sshPassword,omitempty"`
-	AdditionalProperties map[string]interface{}
+	SshPassword          *string                `json:"sshPassword,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _GetAlerts200ResponseAllOfChecksInnerConfigAnyOf2 GetAlerts200ResponseAllOfChecksInnerConfigAnyOf2
@@ -437,7 +436,7 @@ func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf2) SetSshPassword(v stri
 }
 
 func (o GetAlerts200ResponseAllOfChecksInnerConfigAnyOf2) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -485,95 +484,8 @@ func (o GetAlerts200ResponseAllOfChecksInnerConfigAnyOf2) ToMap() (map[string]in
 
 	return toSerialize, nil
 }
-
 func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf2) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"esHost",
-		"esPort",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varGetAlerts200ResponseAllOfChecksInnerConfigAnyOf2 := _GetAlerts200ResponseAllOfChecksInnerConfigAnyOf2{}
-
-	err = json.Unmarshal(data, &varGetAlerts200ResponseAllOfChecksInnerConfigAnyOf2)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetAlerts200ResponseAllOfChecksInnerConfigAnyOf2(varGetAlerts200ResponseAllOfChecksInnerConfigAnyOf2)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "esHost")
-		delete(additionalProperties, "esPort")
-		delete(additionalProperties, "checkUser")
-		delete(additionalProperties, "textCheckOn")
-		delete(additionalProperties, "checkPassword")
-		delete(additionalProperties, "webTextMatch")
-		delete(additionalProperties, "checkPasswordHash")
-		delete(additionalProperties, "tunnelOn")
-		delete(additionalProperties, "sshHost")
-		delete(additionalProperties, "sshPort")
-		delete(additionalProperties, "sshUser")
-		delete(additionalProperties, "sshPassword")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetAlerts200ResponseAllOfChecksInnerConfigAnyOf2 struct {
-	value *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf2
-	isSet bool
-}
-
-func (v NullableGetAlerts200ResponseAllOfChecksInnerConfigAnyOf2) Get() *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf2 {
-	return v.value
-}
-
-func (v *NullableGetAlerts200ResponseAllOfChecksInnerConfigAnyOf2) Set(val *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf2) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetAlerts200ResponseAllOfChecksInnerConfigAnyOf2) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetAlerts200ResponseAllOfChecksInnerConfigAnyOf2) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetAlerts200ResponseAllOfChecksInnerConfigAnyOf2(val *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf2) *NullableGetAlerts200ResponseAllOfChecksInnerConfigAnyOf2 {
-	return &NullableGetAlerts200ResponseAllOfChecksInnerConfigAnyOf2{value: val, isSet: true}
-}
-
-func (v NullableGetAlerts200ResponseAllOfChecksInnerConfigAnyOf2) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetAlerts200ResponseAllOfChecksInnerConfigAnyOf2) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

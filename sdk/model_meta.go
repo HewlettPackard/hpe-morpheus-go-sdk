@@ -20,8 +20,8 @@ var _ MappedNullable = &Meta{}
 
 // Meta struct for Meta
 type Meta struct {
-	Meta *ListActivity200ResponseAllOfMeta `json:"meta,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Meta                 *ListActivity200ResponseAllOfMeta `json:"meta,omitempty"`
+	AdditionalProperties map[string]interface{}            `json:",remain"`
 }
 
 type _Meta Meta
@@ -76,7 +76,7 @@ func (o *Meta) SetMeta(v ListActivity200ResponseAllOfMeta) {
 }
 
 func (o Meta) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o Meta) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *Meta) UnmarshalJSON(data []byte) (err error) {
-	varMeta := _Meta{}
-
-	err = json.Unmarshal(data, &varMeta)
-
-	if err != nil {
-		return err
-	}
-
-	*o = Meta(varMeta)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "meta")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableMeta struct {
-	value *Meta
-	isSet bool
-}
-
-func (v NullableMeta) Get() *Meta {
-	return v.value
-}
-
-func (v *NullableMeta) Set(val *Meta) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableMeta) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableMeta) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableMeta(val *Meta) *NullableMeta {
-	return &NullableMeta{value: val, isSet: true}
-}
-
-func (v NullableMeta) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableMeta) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

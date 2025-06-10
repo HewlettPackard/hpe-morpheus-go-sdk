@@ -20,8 +20,8 @@ var _ MappedNullable = &UpdateDeploy200Response{}
 
 // UpdateDeploy200Response struct for UpdateDeploy200Response
 type UpdateDeploy200Response struct {
-	AppDeploy *ListDeploys200ResponseAllOfAppDeploysInner `json:"appDeploy,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AppDeploy            *ListDeploys200ResponseAllOfAppDeploysInner `json:"appDeploy,omitempty"`
+	AdditionalProperties map[string]interface{}                      `json:",remain"`
 }
 
 type _UpdateDeploy200Response UpdateDeploy200Response
@@ -76,7 +76,7 @@ func (o *UpdateDeploy200Response) SetAppDeploy(v ListDeploys200ResponseAllOfAppD
 }
 
 func (o UpdateDeploy200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o UpdateDeploy200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *UpdateDeploy200Response) UnmarshalJSON(data []byte) (err error) {
-	varUpdateDeploy200Response := _UpdateDeploy200Response{}
-
-	err = json.Unmarshal(data, &varUpdateDeploy200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateDeploy200Response(varUpdateDeploy200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "appDeploy")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateDeploy200Response struct {
-	value *UpdateDeploy200Response
-	isSet bool
-}
-
-func (v NullableUpdateDeploy200Response) Get() *UpdateDeploy200Response {
-	return v.value
-}
-
-func (v *NullableUpdateDeploy200Response) Set(val *UpdateDeploy200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateDeploy200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateDeploy200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateDeploy200Response(val *UpdateDeploy200Response) *NullableUpdateDeploy200Response {
-	return &NullableUpdateDeploy200Response{value: val, isSet: true}
-}
-
-func (v NullableUpdateDeploy200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateDeploy200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

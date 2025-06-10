@@ -21,25 +21,25 @@ var _ MappedNullable = &ListSecurityScans200ResponseAllOfSecurityScansInner{}
 
 // ListSecurityScans200ResponseAllOfSecurityScansInner struct for ListSecurityScans200ResponseAllOfSecurityScansInner
 type ListSecurityScans200ResponseAllOfSecurityScansInner struct {
-	Id *int64 `json:"id,omitempty"`
+	Id              *int64                                              `json:"id,omitempty"`
 	SecurityPackage *ListInstances200ResponseAllOfInstancesInnerCluster `json:"securityPackage,omitempty"`
-	Status *string `json:"status,omitempty"`
-	ScanDate *time.Time `json:"scanDate,omitempty"`
-	ScanDuration *int64 `json:"scanDuration,omitempty"`
-	TestCount *int64 `json:"testCount,omitempty"`
-	RunCount *int64 `json:"runCount,omitempty"`
-	PassCount *int64 `json:"passCount,omitempty"`
-	FailCount *int64 `json:"failCount,omitempty"`
-	OtherCount *int64 `json:"otherCount,omitempty"`
-	ScanScore *float32 `json:"scanScore,omitempty"`
-	ExternalId *string `json:"externalId,omitempty"`
-	CreatedBy *string `json:"createdBy,omitempty"`
-	UpdatedBy *string `json:"updatedBy,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
+	Status          *string                                             `json:"status,omitempty"`
+	ScanDate        *time.Time                                          `json:"scanDate,omitempty"`
+	ScanDuration    *int64                                              `json:"scanDuration,omitempty"`
+	TestCount       *int64                                              `json:"testCount,omitempty"`
+	RunCount        *int64                                              `json:"runCount,omitempty"`
+	PassCount       *int64                                              `json:"passCount,omitempty"`
+	FailCount       *int64                                              `json:"failCount,omitempty"`
+	OtherCount      *int64                                              `json:"otherCount,omitempty"`
+	ScanScore       *float32                                            `json:"scanScore,omitempty"`
+	ExternalId      *string                                             `json:"externalId,omitempty"`
+	CreatedBy       *string                                             `json:"createdBy,omitempty"`
+	UpdatedBy       *string                                             `json:"updatedBy,omitempty"`
+	DateCreated     *time.Time                                          `json:"dateCreated,omitempty"`
+	LastUpdated     *time.Time                                          `json:"lastUpdated,omitempty"`
 	// Results Summary (only returned when using query parameter results=true)
-	Results map[string]interface{} `json:"results,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Results              map[string]interface{} `json:"results,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListSecurityScans200ResponseAllOfSecurityScansInner ListSecurityScans200ResponseAllOfSecurityScansInner
@@ -606,7 +606,7 @@ func (o *ListSecurityScans200ResponseAllOfSecurityScansInner) SetResults(v map[s
 }
 
 func (o ListSecurityScans200ResponseAllOfSecurityScansInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -673,78 +673,8 @@ func (o ListSecurityScans200ResponseAllOfSecurityScansInner) ToMap() (map[string
 
 	return toSerialize, nil
 }
-
 func (o *ListSecurityScans200ResponseAllOfSecurityScansInner) UnmarshalJSON(data []byte) (err error) {
-	varListSecurityScans200ResponseAllOfSecurityScansInner := _ListSecurityScans200ResponseAllOfSecurityScansInner{}
-
-	err = json.Unmarshal(data, &varListSecurityScans200ResponseAllOfSecurityScansInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListSecurityScans200ResponseAllOfSecurityScansInner(varListSecurityScans200ResponseAllOfSecurityScansInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "securityPackage")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "scanDate")
-		delete(additionalProperties, "scanDuration")
-		delete(additionalProperties, "testCount")
-		delete(additionalProperties, "runCount")
-		delete(additionalProperties, "passCount")
-		delete(additionalProperties, "failCount")
-		delete(additionalProperties, "otherCount")
-		delete(additionalProperties, "scanScore")
-		delete(additionalProperties, "externalId")
-		delete(additionalProperties, "createdBy")
-		delete(additionalProperties, "updatedBy")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		delete(additionalProperties, "results")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListSecurityScans200ResponseAllOfSecurityScansInner struct {
-	value *ListSecurityScans200ResponseAllOfSecurityScansInner
-	isSet bool
-}
-
-func (v NullableListSecurityScans200ResponseAllOfSecurityScansInner) Get() *ListSecurityScans200ResponseAllOfSecurityScansInner {
-	return v.value
-}
-
-func (v *NullableListSecurityScans200ResponseAllOfSecurityScansInner) Set(val *ListSecurityScans200ResponseAllOfSecurityScansInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListSecurityScans200ResponseAllOfSecurityScansInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListSecurityScans200ResponseAllOfSecurityScansInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListSecurityScans200ResponseAllOfSecurityScansInner(val *ListSecurityScans200ResponseAllOfSecurityScansInner) *NullableListSecurityScans200ResponseAllOfSecurityScansInner {
-	return &NullableListSecurityScans200ResponseAllOfSecurityScansInner{value: val, isSet: true}
-}
-
-func (v NullableListSecurityScans200ResponseAllOfSecurityScansInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListSecurityScans200ResponseAllOfSecurityScansInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

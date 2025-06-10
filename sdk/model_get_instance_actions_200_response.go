@@ -20,9 +20,9 @@ var _ MappedNullable = &GetInstanceActions200Response{}
 
 // GetInstanceActions200Response struct for GetInstanceActions200Response
 type GetInstanceActions200Response struct {
-	InstanceIds []int64 `json:"instanceIds,omitempty"`
-	Actions []ListClusterContainers200ResponseAllOfContainersInnerAvailableActionsInner `json:"actions,omitempty"`
-	AdditionalProperties map[string]interface{}
+	InstanceIds          []int64                                                                     `json:"instanceIds,omitempty"`
+	Actions              []ListClusterContainers200ResponseAllOfContainersInnerAvailableActionsInner `json:"actions,omitempty"`
+	AdditionalProperties map[string]interface{}                                                      `json:",remain"`
 }
 
 type _GetInstanceActions200Response GetInstanceActions200Response
@@ -109,7 +109,7 @@ func (o *GetInstanceActions200Response) SetActions(v []ListClusterContainers200R
 }
 
 func (o GetInstanceActions200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -131,63 +131,8 @@ func (o GetInstanceActions200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *GetInstanceActions200Response) UnmarshalJSON(data []byte) (err error) {
-	varGetInstanceActions200Response := _GetInstanceActions200Response{}
-
-	err = json.Unmarshal(data, &varGetInstanceActions200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetInstanceActions200Response(varGetInstanceActions200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "instanceIds")
-		delete(additionalProperties, "actions")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetInstanceActions200Response struct {
-	value *GetInstanceActions200Response
-	isSet bool
-}
-
-func (v NullableGetInstanceActions200Response) Get() *GetInstanceActions200Response {
-	return v.value
-}
-
-func (v *NullableGetInstanceActions200Response) Set(val *GetInstanceActions200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetInstanceActions200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetInstanceActions200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetInstanceActions200Response(val *GetInstanceActions200Response) *NullableGetInstanceActions200Response {
-	return &NullableGetInstanceActions200Response{value: val, isSet: true}
-}
-
-func (v NullableGetInstanceActions200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetInstanceActions200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

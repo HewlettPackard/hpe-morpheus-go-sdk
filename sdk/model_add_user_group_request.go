@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the AddUserGroupRequest type satisfies the MappedNullable interface at compile time
@@ -21,8 +20,8 @@ var _ MappedNullable = &AddUserGroupRequest{}
 
 // AddUserGroupRequest struct for AddUserGroupRequest
 type AddUserGroupRequest struct {
-	UserGroup AddUserGroupRequestUserGroup `json:"userGroup"`
-	AdditionalProperties map[string]interface{}
+	UserGroup            AddUserGroupRequestUserGroup `json:"userGroup"`
+	AdditionalProperties map[string]interface{}       `json:",remain"`
 }
 
 type _AddUserGroupRequest AddUserGroupRequest
@@ -70,7 +69,7 @@ func (o *AddUserGroupRequest) SetUserGroup(v AddUserGroupRequestUserGroup) {
 }
 
 func (o AddUserGroupRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -87,83 +86,8 @@ func (o AddUserGroupRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *AddUserGroupRequest) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"userGroup",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varAddUserGroupRequest := _AddUserGroupRequest{}
-
-	err = json.Unmarshal(data, &varAddUserGroupRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddUserGroupRequest(varAddUserGroupRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "userGroup")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddUserGroupRequest struct {
-	value *AddUserGroupRequest
-	isSet bool
-}
-
-func (v NullableAddUserGroupRequest) Get() *AddUserGroupRequest {
-	return v.value
-}
-
-func (v *NullableAddUserGroupRequest) Set(val *AddUserGroupRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddUserGroupRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddUserGroupRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddUserGroupRequest(val *AddUserGroupRequest) *NullableAddUserGroupRequest {
-	return &NullableAddUserGroupRequest{value: val, isSet: true}
-}
-
-func (v NullableAddUserGroupRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddUserGroupRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

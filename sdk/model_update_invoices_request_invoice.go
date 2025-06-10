@@ -20,13 +20,13 @@ var _ MappedNullable = &UpdateInvoicesRequestInvoice{}
 
 // UpdateInvoicesRequestInvoice struct for UpdateInvoicesRequestInvoice
 type UpdateInvoicesRequestInvoice struct {
-	// This adds or updates the specified Metadata tags and removes any tags not specified. Array of objects having a name and value. 
+	// This adds or updates the specified Metadata tags and removes any tags not specified. Array of objects having a name and value.
 	Tags []map[string]interface{} `json:"tags,omitempty"`
-	// Add or update value of Metadata tags. Array of objects having a name and value. 
+	// Add or update value of Metadata tags. Array of objects having a name and value.
 	AddTags []map[string]interface{} `json:"addTags,omitempty"`
-	// This removes the specified Metadata tags matching name and optionally value (if provided). Array of objects having a name and value. 
-	RemoveTags []map[string]interface{} `json:"removeTags,omitempty"`
-	AdditionalProperties map[string]interface{}
+	// This removes the specified Metadata tags matching name and optionally value (if provided). Array of objects having a name and value.
+	RemoveTags           []map[string]interface{} `json:"removeTags,omitempty"`
+	AdditionalProperties map[string]interface{}   `json:",remain"`
 }
 
 type _UpdateInvoicesRequestInvoice UpdateInvoicesRequestInvoice
@@ -145,7 +145,7 @@ func (o *UpdateInvoicesRequestInvoice) SetRemoveTags(v []map[string]interface{})
 }
 
 func (o UpdateInvoicesRequestInvoice) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -170,64 +170,8 @@ func (o UpdateInvoicesRequestInvoice) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *UpdateInvoicesRequestInvoice) UnmarshalJSON(data []byte) (err error) {
-	varUpdateInvoicesRequestInvoice := _UpdateInvoicesRequestInvoice{}
-
-	err = json.Unmarshal(data, &varUpdateInvoicesRequestInvoice)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateInvoicesRequestInvoice(varUpdateInvoicesRequestInvoice)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "addTags")
-		delete(additionalProperties, "removeTags")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateInvoicesRequestInvoice struct {
-	value *UpdateInvoicesRequestInvoice
-	isSet bool
-}
-
-func (v NullableUpdateInvoicesRequestInvoice) Get() *UpdateInvoicesRequestInvoice {
-	return v.value
-}
-
-func (v *NullableUpdateInvoicesRequestInvoice) Set(val *UpdateInvoicesRequestInvoice) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateInvoicesRequestInvoice) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateInvoicesRequestInvoice) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateInvoicesRequestInvoice(val *UpdateInvoicesRequestInvoice) *NullableUpdateInvoicesRequestInvoice {
-	return &NullableUpdateInvoicesRequestInvoice{value: val, isSet: true}
-}
-
-func (v NullableUpdateInvoicesRequestInvoice) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateInvoicesRequestInvoice) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

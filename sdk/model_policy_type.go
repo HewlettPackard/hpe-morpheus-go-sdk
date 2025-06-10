@@ -20,19 +20,19 @@ var _ MappedNullable = &PolicyType{}
 
 // PolicyType struct for PolicyType
 type PolicyType struct {
-	Id *int64 `json:"id,omitempty"`
-	Code *string `json:"code,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Category *string `json:"category,omitempty"`
-	LoadMethod *string `json:"loadMethod,omitempty"`
-	EnforceMethod *string `json:"enforceMethod,omitempty"`
-	PrepareMethod *string `json:"prepareMethod,omitempty"`
-	ValidateMethod *string `json:"validateMethod,omitempty"`
-	EnforceOnProvision *bool `json:"enforceOnProvision,omitempty"`
-	EnforceOnManaged *bool `json:"enforceOnManaged,omitempty"`
-	OptionTypes []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                                      `json:"id,omitempty"`
+	Code                 *string                                                                     `json:"code,omitempty"`
+	Name                 *string                                                                     `json:"name,omitempty"`
+	Description          *string                                                                     `json:"description,omitempty"`
+	Category             *string                                                                     `json:"category,omitempty"`
+	LoadMethod           *string                                                                     `json:"loadMethod,omitempty"`
+	EnforceMethod        *string                                                                     `json:"enforceMethod,omitempty"`
+	PrepareMethod        *string                                                                     `json:"prepareMethod,omitempty"`
+	ValidateMethod       *string                                                                     `json:"validateMethod,omitempty"`
+	EnforceOnProvision   *bool                                                                       `json:"enforceOnProvision,omitempty"`
+	EnforceOnManaged     *bool                                                                       `json:"enforceOnManaged,omitempty"`
+	OptionTypes          []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
+	AdditionalProperties map[string]interface{}                                                      `json:",remain"`
 }
 
 type _PolicyType PolicyType
@@ -439,7 +439,7 @@ func (o *PolicyType) SetOptionTypes(v []ListCatalogItemTypes200ResponseAllOfCata
 }
 
 func (o PolicyType) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -491,73 +491,8 @@ func (o PolicyType) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *PolicyType) UnmarshalJSON(data []byte) (err error) {
-	varPolicyType := _PolicyType{}
-
-	err = json.Unmarshal(data, &varPolicyType)
-
-	if err != nil {
-		return err
-	}
-
-	*o = PolicyType(varPolicyType)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "category")
-		delete(additionalProperties, "loadMethod")
-		delete(additionalProperties, "enforceMethod")
-		delete(additionalProperties, "prepareMethod")
-		delete(additionalProperties, "validateMethod")
-		delete(additionalProperties, "enforceOnProvision")
-		delete(additionalProperties, "enforceOnManaged")
-		delete(additionalProperties, "optionTypes")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullablePolicyType struct {
-	value *PolicyType
-	isSet bool
-}
-
-func (v NullablePolicyType) Get() *PolicyType {
-	return v.value
-}
-
-func (v *NullablePolicyType) Set(val *PolicyType) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullablePolicyType) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullablePolicyType) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullablePolicyType(val *PolicyType) *NullablePolicyType {
-	return &NullablePolicyType{value: val, isSet: true}
-}
-
-func (v NullablePolicyType) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullablePolicyType) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

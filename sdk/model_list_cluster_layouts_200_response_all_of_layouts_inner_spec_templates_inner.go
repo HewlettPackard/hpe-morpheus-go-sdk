@@ -21,23 +21,23 @@ var _ MappedNullable = &ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTempla
 
 // ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner struct for ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner
 type ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner struct {
-	Id *int64 `json:"id,omitempty"`
-	Account *string `json:"account,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Labels []string `json:"labels,omitempty"`
-	Code *string `json:"code,omitempty"`
-	Type *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"type,omitempty"`
-	ExternalId *string `json:"externalId,omitempty"`
-	ExternalType *string `json:"externalType,omitempty"`
-	DeploymentId *string `json:"deploymentId,omitempty"`
-	Status *string `json:"status,omitempty"`
-	File *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile `json:"file,omitempty"`
-	Config map[string]interface{} `json:"config,omitempty"`
-	CreatedBy *string `json:"createdBy,omitempty"`
-	UpdatedBy *string `json:"updatedBy,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                                `json:"id,omitempty"`
+	Account              *string                                                               `json:"account,omitempty"`
+	Name                 *string                                                               `json:"name,omitempty"`
+	Labels               []string                                                              `json:"labels,omitempty"`
+	Code                 *string                                                               `json:"code,omitempty"`
+	Type                 *ListBackupSettings200ResponseBackupSettingsDefaultSchedule           `json:"type,omitempty"`
+	ExternalId           *string                                                               `json:"externalId,omitempty"`
+	ExternalType         *string                                                               `json:"externalType,omitempty"`
+	DeploymentId         *string                                                               `json:"deploymentId,omitempty"`
+	Status               *string                                                               `json:"status,omitempty"`
+	File                 *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile `json:"file,omitempty"`
+	Config               map[string]interface{}                                                `json:"config,omitempty"`
+	CreatedBy            *string                                                               `json:"createdBy,omitempty"`
+	UpdatedBy            *string                                                               `json:"updatedBy,omitempty"`
+	DateCreated          *time.Time                                                            `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                                            `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}                                                `json:",remain"`
 }
 
 type _ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner
@@ -572,7 +572,7 @@ func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) SetLa
 }
 
 func (o ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -636,77 +636,8 @@ func (o ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) ToMap(
 
 	return toSerialize, nil
 }
-
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) UnmarshalJSON(data []byte) (err error) {
-	varListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner := _ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner{}
-
-	err = json.Unmarshal(data, &varListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner(varListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "account")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "externalId")
-		delete(additionalProperties, "externalType")
-		delete(additionalProperties, "deploymentId")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "file")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "createdBy")
-		delete(additionalProperties, "updatedBy")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner struct {
-	value *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner
-	isSet bool
-}
-
-func (v NullableListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) Get() *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner {
-	return v.value
-}
-
-func (v *NullableListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) Set(val *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner(val *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) *NullableListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner {
-	return &NullableListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner{value: val, isSet: true}
-}
-
-func (v NullableListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

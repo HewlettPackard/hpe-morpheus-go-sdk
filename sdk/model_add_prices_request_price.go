@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the AddPricesRequestPrice type satisfies the MappedNullable interface at compile time
@@ -24,9 +23,9 @@ type AddPricesRequestPrice struct {
 	// Price name
 	Name string `json:"name"`
 	// Price code, must be unique
-	Code string `json:"code"`
+	Code    string                        `json:"code"`
 	Account *AddPricesRequestPriceAccount `json:"account,omitempty"`
-	// Restricts query to only load only prices with specified priceType. * `fixed` - Everything * `compute` - Memory + CPU * `memory` - Memory * `cores` - Cores * `storage` - Storage * `datastore` - Datastore * `platform` - Platform * `software` - Software * `load_balancer` - Load Balancer * `load_balancer_virtual_server` - Load Balancer Virtual Server 
+	// Restricts query to only load only prices with specified priceType. * `fixed` - Everything * `compute` - Memory + CPU * `memory` - Memory * `cores` - Cores * `storage` - Storage * `datastore` - Datastore * `platform` - Platform * `software` - Software * `load_balancer` - Load Balancer * `load_balancer_virtual_server` - Load Balancer Virtual Server
 	PriceType string `json:"priceType"`
 	// The unit of pricing
 	PriceUnit string `json:"priceUnit"`
@@ -47,12 +46,12 @@ type AddPricesRequestPrice struct {
 	// Platform.  Required for `platform` price type
 	Platform *string `json:"platform,omitempty"`
 	// Software.  Required for software price type
-	Software *string `json:"software,omitempty"`
+	Software   *string                          `json:"software,omitempty"`
 	VolumeType *AddPricesRequestPriceVolumeType `json:"volumeType,omitempty"`
-	Datastore *AddPricesRequestPriceDatastore `json:"datastore,omitempty"`
+	Datastore  *AddPricesRequestPriceDatastore  `json:"datastore,omitempty"`
 	// Apply price across clouds, optional true/false flag for datastore price type
-	CrossCloudApply *bool `json:"crossCloudApply,omitempty"`
-	AdditionalProperties map[string]interface{}
+	CrossCloudApply      *bool                  `json:"crossCloudApply,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddPricesRequestPrice AddPricesRequestPrice
@@ -570,7 +569,7 @@ func (o *AddPricesRequestPrice) SetCrossCloudApply(v bool) {
 }
 
 func (o AddPricesRequestPrice) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -623,105 +622,8 @@ func (o AddPricesRequestPrice) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *AddPricesRequestPrice) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"name",
-		"code",
-		"priceType",
-		"priceUnit",
-		"incurCharges",
-		"currency",
-		"cost",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varAddPricesRequestPrice := _AddPricesRequestPrice{}
-
-	err = json.Unmarshal(data, &varAddPricesRequestPrice)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddPricesRequestPrice(varAddPricesRequestPrice)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "account")
-		delete(additionalProperties, "priceType")
-		delete(additionalProperties, "priceUnit")
-		delete(additionalProperties, "incurCharges")
-		delete(additionalProperties, "currency")
-		delete(additionalProperties, "cost")
-		delete(additionalProperties, "markupType")
-		delete(additionalProperties, "markup")
-		delete(additionalProperties, "markupPercent")
-		delete(additionalProperties, "customPrice")
-		delete(additionalProperties, "platform")
-		delete(additionalProperties, "software")
-		delete(additionalProperties, "volumeType")
-		delete(additionalProperties, "datastore")
-		delete(additionalProperties, "crossCloudApply")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddPricesRequestPrice struct {
-	value *AddPricesRequestPrice
-	isSet bool
-}
-
-func (v NullableAddPricesRequestPrice) Get() *AddPricesRequestPrice {
-	return v.value
-}
-
-func (v *NullableAddPricesRequestPrice) Set(val *AddPricesRequestPrice) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddPricesRequestPrice) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddPricesRequestPrice) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddPricesRequestPrice(val *AddPricesRequestPrice) *NullableAddPricesRequestPrice {
-	return &NullableAddPricesRequestPrice{value: val, isSet: true}
-}
-
-func (v NullableAddPricesRequestPrice) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddPricesRequestPrice) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

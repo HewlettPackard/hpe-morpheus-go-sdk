@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the SetupRequestAnyOf1OneOfHub type satisfies the MappedNullable interface at compile time
@@ -24,8 +23,8 @@ type SetupRequestAnyOf1OneOfHub struct {
 	// Email for existing Morpheus Hub user
 	Email string `json:"email"`
 	// Password for existing Morpheus Hub user
-	Password string `json:"password"`
-	AdditionalProperties map[string]interface{}
+	Password             string                 `json:"password"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _SetupRequestAnyOf1OneOfHub SetupRequestAnyOf1OneOfHub
@@ -98,7 +97,7 @@ func (o *SetupRequestAnyOf1OneOfHub) SetPassword(v string) {
 }
 
 func (o SetupRequestAnyOf1OneOfHub) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -116,85 +115,8 @@ func (o SetupRequestAnyOf1OneOfHub) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *SetupRequestAnyOf1OneOfHub) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"email",
-		"password",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varSetupRequestAnyOf1OneOfHub := _SetupRequestAnyOf1OneOfHub{}
-
-	err = json.Unmarshal(data, &varSetupRequestAnyOf1OneOfHub)
-
-	if err != nil {
-		return err
-	}
-
-	*o = SetupRequestAnyOf1OneOfHub(varSetupRequestAnyOf1OneOfHub)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "email")
-		delete(additionalProperties, "password")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableSetupRequestAnyOf1OneOfHub struct {
-	value *SetupRequestAnyOf1OneOfHub
-	isSet bool
-}
-
-func (v NullableSetupRequestAnyOf1OneOfHub) Get() *SetupRequestAnyOf1OneOfHub {
-	return v.value
-}
-
-func (v *NullableSetupRequestAnyOf1OneOfHub) Set(val *SetupRequestAnyOf1OneOfHub) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSetupRequestAnyOf1OneOfHub) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSetupRequestAnyOf1OneOfHub) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSetupRequestAnyOf1OneOfHub(val *SetupRequestAnyOf1OneOfHub) *NullableSetupRequestAnyOf1OneOfHub {
-	return &NullableSetupRequestAnyOf1OneOfHub{value: val, isSet: true}
-}
-
-func (v NullableSetupRequestAnyOf1OneOfHub) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSetupRequestAnyOf1OneOfHub) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

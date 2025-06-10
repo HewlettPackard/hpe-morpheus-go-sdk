@@ -20,8 +20,8 @@ var _ MappedNullable = &ListApplianceSettings200Response{}
 
 // ListApplianceSettings200Response struct for ListApplianceSettings200Response
 type ListApplianceSettings200Response struct {
-	ApplianceSettings *ListApplianceSettings200ResponseApplianceSettings `json:"applianceSettings,omitempty"`
-	AdditionalProperties map[string]interface{}
+	ApplianceSettings    *ListApplianceSettings200ResponseApplianceSettings `json:"applianceSettings,omitempty"`
+	AdditionalProperties map[string]interface{}                             `json:",remain"`
 }
 
 type _ListApplianceSettings200Response ListApplianceSettings200Response
@@ -76,7 +76,7 @@ func (o *ListApplianceSettings200Response) SetApplianceSettings(v ListApplianceS
 }
 
 func (o ListApplianceSettings200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o ListApplianceSettings200Response) ToMap() (map[string]interface{}, error
 
 	return toSerialize, nil
 }
-
 func (o *ListApplianceSettings200Response) UnmarshalJSON(data []byte) (err error) {
-	varListApplianceSettings200Response := _ListApplianceSettings200Response{}
-
-	err = json.Unmarshal(data, &varListApplianceSettings200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListApplianceSettings200Response(varListApplianceSettings200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "applianceSettings")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListApplianceSettings200Response struct {
-	value *ListApplianceSettings200Response
-	isSet bool
-}
-
-func (v NullableListApplianceSettings200Response) Get() *ListApplianceSettings200Response {
-	return v.value
-}
-
-func (v *NullableListApplianceSettings200Response) Set(val *ListApplianceSettings200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListApplianceSettings200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListApplianceSettings200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListApplianceSettings200Response(val *ListApplianceSettings200Response) *NullableListApplianceSettings200Response {
-	return &NullableListApplianceSettings200Response{value: val, isSet: true}
-}
-
-func (v NullableListApplianceSettings200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListApplianceSettings200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

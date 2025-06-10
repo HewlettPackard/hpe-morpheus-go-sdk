@@ -19,20 +19,43 @@ import (
 // very silly way of avoiding `"fmt" imported and not used` errors
 var _ fmt.Stringer
 
-
 // CreateNetworkPoolServerRequestNetworkPoolServer Payload for creating a new Network Pool Server
 type CreateNetworkPoolServerRequestNetworkPoolServer struct {
-	BluecatNetworkPoolServer *BluecatNetworkPoolServer
-	InfobloxNetworkPoolServer *InfobloxNetworkPoolServer
-	PhpIPAMNetworkPoolServer *PhpIPAMNetworkPoolServer
+	BluecatNetworkPoolServer    *BluecatNetworkPoolServer
+	InfobloxNetworkPoolServer   *InfobloxNetworkPoolServer
+	PhpIPAMNetworkPoolServer    *PhpIPAMNetworkPoolServer
 	SolarWindsNetworkPoolServer *SolarWindsNetworkPoolServer
+}
+
+func (dst *CreateNetworkPoolServerRequestNetworkPoolServer) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &CreateNetworkPoolServerRequestNetworkPoolServer{}
+	}
+
+	if out, ok := data.(BluecatNetworkPoolServer); ok {
+		dst.BluecatNetworkPoolServer = &out
+	}
+
+	if out, ok := data.(InfobloxNetworkPoolServer); ok {
+		dst.InfobloxNetworkPoolServer = &out
+	}
+
+	if out, ok := data.(PhpIPAMNetworkPoolServer); ok {
+		dst.PhpIPAMNetworkPoolServer = &out
+	}
+
+	if out, ok := data.(SolarWindsNetworkPoolServer); ok {
+		dst.SolarWindsNetworkPoolServer = &out
+	}
+
+	return dst, nil
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *CreateNetworkPoolServerRequestNetworkPoolServer) UnmarshalJSON(data []byte) error {
 	var err error
 	// try to unmarshal JSON data into BluecatNetworkPoolServer
-	err = json.Unmarshal(data, &dst.BluecatNetworkPoolServer);
+	err = json.Unmarshal(data, &dst.BluecatNetworkPoolServer)
 	if err == nil {
 		jsonBluecatNetworkPoolServer, _ := json.Marshal(dst.BluecatNetworkPoolServer)
 		if string(jsonBluecatNetworkPoolServer) == "{}" { // empty struct
@@ -45,7 +68,7 @@ func (dst *CreateNetworkPoolServerRequestNetworkPoolServer) UnmarshalJSON(data [
 	}
 
 	// try to unmarshal JSON data into InfobloxNetworkPoolServer
-	err = json.Unmarshal(data, &dst.InfobloxNetworkPoolServer);
+	err = json.Unmarshal(data, &dst.InfobloxNetworkPoolServer)
 	if err == nil {
 		jsonInfobloxNetworkPoolServer, _ := json.Marshal(dst.InfobloxNetworkPoolServer)
 		if string(jsonInfobloxNetworkPoolServer) == "{}" { // empty struct
@@ -58,7 +81,7 @@ func (dst *CreateNetworkPoolServerRequestNetworkPoolServer) UnmarshalJSON(data [
 	}
 
 	// try to unmarshal JSON data into PhpIPAMNetworkPoolServer
-	err = json.Unmarshal(data, &dst.PhpIPAMNetworkPoolServer);
+	err = json.Unmarshal(data, &dst.PhpIPAMNetworkPoolServer)
 	if err == nil {
 		jsonPhpIPAMNetworkPoolServer, _ := json.Marshal(dst.PhpIPAMNetworkPoolServer)
 		if string(jsonPhpIPAMNetworkPoolServer) == "{}" { // empty struct
@@ -71,7 +94,7 @@ func (dst *CreateNetworkPoolServerRequestNetworkPoolServer) UnmarshalJSON(data [
 	}
 
 	// try to unmarshal JSON data into SolarWindsNetworkPoolServer
-	err = json.Unmarshal(data, &dst.SolarWindsNetworkPoolServer);
+	err = json.Unmarshal(data, &dst.SolarWindsNetworkPoolServer)
 	if err == nil {
 		jsonSolarWindsNetworkPoolServer, _ := json.Marshal(dst.SolarWindsNetworkPoolServer)
 		if string(jsonSolarWindsNetworkPoolServer) == "{}" { // empty struct
@@ -106,7 +129,6 @@ func (src CreateNetworkPoolServerRequestNetworkPoolServer) MarshalJSON() ([]byte
 
 	return nil, nil // no data in anyOf schemas
 }
-
 
 type NullableCreateNetworkPoolServerRequestNetworkPoolServer struct {
 	value *CreateNetworkPoolServerRequestNetworkPoolServer
@@ -143,5 +165,3 @@ func (v *NullableCreateNetworkPoolServerRequestNetworkPoolServer) UnmarshalJSON(
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -20,18 +20,18 @@ var _ MappedNullable = &AddUserTenant200ResponseAllOfUserAccess{}
 
 // AddUserTenant200ResponseAllOfUserAccess struct for AddUserTenant200ResponseAllOfUserAccess
 type AddUserTenant200ResponseAllOfUserAccess struct {
-	Features []map[string]interface{} `json:"features,omitempty"`
-	Zones []map[string]interface{} `json:"zones,omitempty"`
-	Sites []map[string]interface{} `json:"sites,omitempty"`
-	InstanceTypes []map[string]interface{} `json:"instanceTypes,omitempty"`
-	AppTemplates []map[string]interface{} `json:"appTemplates,omitempty"`
-	CatalogItemTypes []map[string]interface{} `json:"catalogItemTypes,omitempty"`
-	Personas []map[string]interface{} `json:"personas,omitempty"`
-	VdiPools []map[string]interface{} `json:"vdiPools,omitempty"`
-	ReportTypes []map[string]interface{} `json:"reportTypes,omitempty"`
-	Tasks []map[string]interface{} `json:"tasks,omitempty"`
-	TaskSets []map[string]interface{} `json:"taskSets,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Features             []map[string]interface{} `json:"features,omitempty"`
+	Zones                []map[string]interface{} `json:"zones,omitempty"`
+	Sites                []map[string]interface{} `json:"sites,omitempty"`
+	InstanceTypes        []map[string]interface{} `json:"instanceTypes,omitempty"`
+	AppTemplates         []map[string]interface{} `json:"appTemplates,omitempty"`
+	CatalogItemTypes     []map[string]interface{} `json:"catalogItemTypes,omitempty"`
+	Personas             []map[string]interface{} `json:"personas,omitempty"`
+	VdiPools             []map[string]interface{} `json:"vdiPools,omitempty"`
+	ReportTypes          []map[string]interface{} `json:"reportTypes,omitempty"`
+	Tasks                []map[string]interface{} `json:"tasks,omitempty"`
+	TaskSets             []map[string]interface{} `json:"taskSets,omitempty"`
+	AdditionalProperties map[string]interface{}   `json:",remain"`
 }
 
 type _AddUserTenant200ResponseAllOfUserAccess AddUserTenant200ResponseAllOfUserAccess
@@ -406,7 +406,7 @@ func (o *AddUserTenant200ResponseAllOfUserAccess) SetTaskSets(v []map[string]int
 }
 
 func (o AddUserTenant200ResponseAllOfUserAccess) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -455,72 +455,8 @@ func (o AddUserTenant200ResponseAllOfUserAccess) ToMap() (map[string]interface{}
 
 	return toSerialize, nil
 }
-
 func (o *AddUserTenant200ResponseAllOfUserAccess) UnmarshalJSON(data []byte) (err error) {
-	varAddUserTenant200ResponseAllOfUserAccess := _AddUserTenant200ResponseAllOfUserAccess{}
-
-	err = json.Unmarshal(data, &varAddUserTenant200ResponseAllOfUserAccess)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddUserTenant200ResponseAllOfUserAccess(varAddUserTenant200ResponseAllOfUserAccess)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "features")
-		delete(additionalProperties, "zones")
-		delete(additionalProperties, "sites")
-		delete(additionalProperties, "instanceTypes")
-		delete(additionalProperties, "appTemplates")
-		delete(additionalProperties, "catalogItemTypes")
-		delete(additionalProperties, "personas")
-		delete(additionalProperties, "vdiPools")
-		delete(additionalProperties, "reportTypes")
-		delete(additionalProperties, "tasks")
-		delete(additionalProperties, "taskSets")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddUserTenant200ResponseAllOfUserAccess struct {
-	value *AddUserTenant200ResponseAllOfUserAccess
-	isSet bool
-}
-
-func (v NullableAddUserTenant200ResponseAllOfUserAccess) Get() *AddUserTenant200ResponseAllOfUserAccess {
-	return v.value
-}
-
-func (v *NullableAddUserTenant200ResponseAllOfUserAccess) Set(val *AddUserTenant200ResponseAllOfUserAccess) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddUserTenant200ResponseAllOfUserAccess) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddUserTenant200ResponseAllOfUserAccess) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddUserTenant200ResponseAllOfUserAccess(val *AddUserTenant200ResponseAllOfUserAccess) *NullableAddUserTenant200ResponseAllOfUserAccess {
-	return &NullableAddUserTenant200ResponseAllOfUserAccess{value: val, isSet: true}
-}
-
-func (v NullableAddUserTenant200ResponseAllOfUserAccess) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddUserTenant200ResponseAllOfUserAccess) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

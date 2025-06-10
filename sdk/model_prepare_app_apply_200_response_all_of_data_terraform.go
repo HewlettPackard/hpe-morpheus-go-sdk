@@ -20,11 +20,11 @@ var _ MappedNullable = &PrepareAppApply200ResponseAllOfDataTerraform{}
 
 // PrepareAppApply200ResponseAllOfDataTerraform struct for PrepareAppApply200ResponseAllOfDataTerraform
 type PrepareAppApply200ResponseAllOfDataTerraform struct {
-	RefreshMode *string `json:"refreshMode,omitempty"`
-	BackendType *string `json:"backendType,omitempty"`
-	TimeoutMode *string `json:"timeoutMode,omitempty"`
-	ConfigType *string `json:"configType,omitempty"`
-	AdditionalProperties map[string]interface{}
+	RefreshMode          *string                `json:"refreshMode,omitempty"`
+	BackendType          *string                `json:"backendType,omitempty"`
+	TimeoutMode          *string                `json:"timeoutMode,omitempty"`
+	ConfigType           *string                `json:"configType,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _PrepareAppApply200ResponseAllOfDataTerraform PrepareAppApply200ResponseAllOfDataTerraform
@@ -175,7 +175,7 @@ func (o *PrepareAppApply200ResponseAllOfDataTerraform) SetConfigType(v string) {
 }
 
 func (o PrepareAppApply200ResponseAllOfDataTerraform) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -203,65 +203,8 @@ func (o PrepareAppApply200ResponseAllOfDataTerraform) ToMap() (map[string]interf
 
 	return toSerialize, nil
 }
-
 func (o *PrepareAppApply200ResponseAllOfDataTerraform) UnmarshalJSON(data []byte) (err error) {
-	varPrepareAppApply200ResponseAllOfDataTerraform := _PrepareAppApply200ResponseAllOfDataTerraform{}
-
-	err = json.Unmarshal(data, &varPrepareAppApply200ResponseAllOfDataTerraform)
-
-	if err != nil {
-		return err
-	}
-
-	*o = PrepareAppApply200ResponseAllOfDataTerraform(varPrepareAppApply200ResponseAllOfDataTerraform)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "refreshMode")
-		delete(additionalProperties, "backendType")
-		delete(additionalProperties, "timeoutMode")
-		delete(additionalProperties, "configType")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullablePrepareAppApply200ResponseAllOfDataTerraform struct {
-	value *PrepareAppApply200ResponseAllOfDataTerraform
-	isSet bool
-}
-
-func (v NullablePrepareAppApply200ResponseAllOfDataTerraform) Get() *PrepareAppApply200ResponseAllOfDataTerraform {
-	return v.value
-}
-
-func (v *NullablePrepareAppApply200ResponseAllOfDataTerraform) Set(val *PrepareAppApply200ResponseAllOfDataTerraform) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullablePrepareAppApply200ResponseAllOfDataTerraform) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullablePrepareAppApply200ResponseAllOfDataTerraform) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullablePrepareAppApply200ResponseAllOfDataTerraform(val *PrepareAppApply200ResponseAllOfDataTerraform) *NullablePrepareAppApply200ResponseAllOfDataTerraform {
-	return &NullablePrepareAppApply200ResponseAllOfDataTerraform{value: val, isSet: true}
-}
-
-func (v NullablePrepareAppApply200ResponseAllOfDataTerraform) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullablePrepareAppApply200ResponseAllOfDataTerraform) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

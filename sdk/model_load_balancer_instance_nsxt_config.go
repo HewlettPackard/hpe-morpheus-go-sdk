@@ -20,9 +20,9 @@ var _ MappedNullable = &LoadBalancerInstanceNSXTConfig{}
 
 // LoadBalancerInstanceNSXTConfig struct for LoadBalancerInstanceNSXTConfig
 type LoadBalancerInstanceNSXTConfig struct {
-	// The Load Balancer Application Profile ID The Options API `/api/options/nsxt/nsxtLBVirtualServerApplicationProfile?loadBalancerId=42&loadBalancerInstance.vipProtocol=tcp` can be used to see which options are available. 
-	ApplicationProfile *string `json:"applicationProfile,omitempty"`
-	AdditionalProperties map[string]interface{}
+	// The Load Balancer Application Profile ID The Options API `/api/options/nsxt/nsxtLBVirtualServerApplicationProfile?loadBalancerId=42&loadBalancerInstance.vipProtocol=tcp` can be used to see which options are available.
+	ApplicationProfile   *string                `json:"applicationProfile,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _LoadBalancerInstanceNSXTConfig LoadBalancerInstanceNSXTConfig
@@ -77,7 +77,7 @@ func (o *LoadBalancerInstanceNSXTConfig) SetApplicationProfile(v string) {
 }
 
 func (o LoadBalancerInstanceNSXTConfig) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -96,62 +96,8 @@ func (o LoadBalancerInstanceNSXTConfig) ToMap() (map[string]interface{}, error) 
 
 	return toSerialize, nil
 }
-
 func (o *LoadBalancerInstanceNSXTConfig) UnmarshalJSON(data []byte) (err error) {
-	varLoadBalancerInstanceNSXTConfig := _LoadBalancerInstanceNSXTConfig{}
-
-	err = json.Unmarshal(data, &varLoadBalancerInstanceNSXTConfig)
-
-	if err != nil {
-		return err
-	}
-
-	*o = LoadBalancerInstanceNSXTConfig(varLoadBalancerInstanceNSXTConfig)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "applicationProfile")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableLoadBalancerInstanceNSXTConfig struct {
-	value *LoadBalancerInstanceNSXTConfig
-	isSet bool
-}
-
-func (v NullableLoadBalancerInstanceNSXTConfig) Get() *LoadBalancerInstanceNSXTConfig {
-	return v.value
-}
-
-func (v *NullableLoadBalancerInstanceNSXTConfig) Set(val *LoadBalancerInstanceNSXTConfig) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableLoadBalancerInstanceNSXTConfig) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableLoadBalancerInstanceNSXTConfig) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableLoadBalancerInstanceNSXTConfig(val *LoadBalancerInstanceNSXTConfig) *NullableLoadBalancerInstanceNSXTConfig {
-	return &NullableLoadBalancerInstanceNSXTConfig{value: val, isSet: true}
-}
-
-func (v NullableLoadBalancerInstanceNSXTConfig) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableLoadBalancerInstanceNSXTConfig) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

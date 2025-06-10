@@ -21,19 +21,19 @@ var _ MappedNullable = &HealthLogs{}
 
 // HealthLogs struct for HealthLogs
 type HealthLogs struct {
-	TypeCode *string `json:"typeCode,omitempty"`
-	Ts *time.Time `json:"ts,omitempty"`
-	Level *string `json:"level,omitempty"`
-	SourceType *string `json:"sourceType,omitempty"`
-	Message *string `json:"message,omitempty"`
-	Hostname *string `json:"hostname,omitempty"`
-	Title *string `json:"title,omitempty"`
-	LogSignature *string `json:"logSignature,omitempty"`
-	ObjectId *string `json:"objectId,omitempty"`
-	Seq *int64 `json:"seq,omitempty"`
-	Id *string `json:"_id,omitempty"`
-	SignatureVerified *bool `json:"signatureVerified,omitempty"`
-	AdditionalProperties map[string]interface{}
+	TypeCode             *string                `json:"typeCode,omitempty"`
+	Ts                   *time.Time             `json:"ts,omitempty"`
+	Level                *string                `json:"level,omitempty"`
+	SourceType           *string                `json:"sourceType,omitempty"`
+	Message              *string                `json:"message,omitempty"`
+	Hostname             *string                `json:"hostname,omitempty"`
+	Title                *string                `json:"title,omitempty"`
+	LogSignature         *string                `json:"logSignature,omitempty"`
+	ObjectId             *string                `json:"objectId,omitempty"`
+	Seq                  *int64                 `json:"seq,omitempty"`
+	Id                   *string                `json:"_id,omitempty"`
+	SignatureVerified    *bool                  `json:"signatureVerified,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _HealthLogs HealthLogs
@@ -440,7 +440,7 @@ func (o *HealthLogs) SetSignatureVerified(v bool) {
 }
 
 func (o HealthLogs) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -492,73 +492,8 @@ func (o HealthLogs) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *HealthLogs) UnmarshalJSON(data []byte) (err error) {
-	varHealthLogs := _HealthLogs{}
-
-	err = json.Unmarshal(data, &varHealthLogs)
-
-	if err != nil {
-		return err
-	}
-
-	*o = HealthLogs(varHealthLogs)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "typeCode")
-		delete(additionalProperties, "ts")
-		delete(additionalProperties, "level")
-		delete(additionalProperties, "sourceType")
-		delete(additionalProperties, "message")
-		delete(additionalProperties, "hostname")
-		delete(additionalProperties, "title")
-		delete(additionalProperties, "logSignature")
-		delete(additionalProperties, "objectId")
-		delete(additionalProperties, "seq")
-		delete(additionalProperties, "_id")
-		delete(additionalProperties, "signatureVerified")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableHealthLogs struct {
-	value *HealthLogs
-	isSet bool
-}
-
-func (v NullableHealthLogs) Get() *HealthLogs {
-	return v.value
-}
-
-func (v *NullableHealthLogs) Set(val *HealthLogs) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableHealthLogs) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableHealthLogs) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableHealthLogs(val *HealthLogs) *NullableHealthLogs {
-	return &NullableHealthLogs{value: val, isSet: true}
-}
-
-func (v NullableHealthLogs) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableHealthLogs) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -23,7 +23,7 @@ type BlueprintMorpheusCreateSuccess struct {
 	// A name for the blueprint
 	Name *string `json:"name,omitempty"`
 	// Blueprint Type
-	Type *string `json:"type,omitempty"`
+	Type   *string                                                  `json:"type,omitempty"`
 	Config *AddBlueprint200ResponseAllOfBlueprintConfigOneOf4Config `json:"config,omitempty"`
 	// Private or Public Access
 	Visibility *string `json:"visibility,omitempty"`
@@ -32,8 +32,8 @@ type BlueprintMorpheusCreateSuccess struct {
 	// Owner
 	Owner map[string]interface{} `json:"owner,omitempty"`
 	// Tenant
-	Tenant map[string]interface{} `json:"tenant,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Tenant               map[string]interface{} `json:"tenant,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _BlueprintMorpheusCreateSuccess BlueprintMorpheusCreateSuccess
@@ -284,7 +284,7 @@ func (o *BlueprintMorpheusCreateSuccess) SetTenant(v map[string]interface{}) {
 }
 
 func (o BlueprintMorpheusCreateSuccess) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -321,68 +321,8 @@ func (o BlueprintMorpheusCreateSuccess) ToMap() (map[string]interface{}, error) 
 
 	return toSerialize, nil
 }
-
 func (o *BlueprintMorpheusCreateSuccess) UnmarshalJSON(data []byte) (err error) {
-	varBlueprintMorpheusCreateSuccess := _BlueprintMorpheusCreateSuccess{}
-
-	err = json.Unmarshal(data, &varBlueprintMorpheusCreateSuccess)
-
-	if err != nil {
-		return err
-	}
-
-	*o = BlueprintMorpheusCreateSuccess(varBlueprintMorpheusCreateSuccess)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "resourcePermission")
-		delete(additionalProperties, "owner")
-		delete(additionalProperties, "tenant")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableBlueprintMorpheusCreateSuccess struct {
-	value *BlueprintMorpheusCreateSuccess
-	isSet bool
-}
-
-func (v NullableBlueprintMorpheusCreateSuccess) Get() *BlueprintMorpheusCreateSuccess {
-	return v.value
-}
-
-func (v *NullableBlueprintMorpheusCreateSuccess) Set(val *BlueprintMorpheusCreateSuccess) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableBlueprintMorpheusCreateSuccess) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableBlueprintMorpheusCreateSuccess) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableBlueprintMorpheusCreateSuccess(val *BlueprintMorpheusCreateSuccess) *NullableBlueprintMorpheusCreateSuccess {
-	return &NullableBlueprintMorpheusCreateSuccess{value: val, isSet: true}
-}
-
-func (v NullableBlueprintMorpheusCreateSuccess) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableBlueprintMorpheusCreateSuccess) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

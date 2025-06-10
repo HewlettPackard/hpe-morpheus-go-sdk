@@ -22,8 +22,8 @@ var _ MappedNullable = &RunWorkflowInstance200Response{}
 type RunWorkflowInstance200Response struct {
 	Success *bool `json:"success,omitempty"`
 	// Process ID to track execution results with, use `/api/processes/$processId`
-	ProcessId *int64 `json:"processId,omitempty"`
-	AdditionalProperties map[string]interface{}
+	ProcessId            *int64                 `json:"processId,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _RunWorkflowInstance200Response RunWorkflowInstance200Response
@@ -110,7 +110,7 @@ func (o *RunWorkflowInstance200Response) SetProcessId(v int64) {
 }
 
 func (o RunWorkflowInstance200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -132,63 +132,8 @@ func (o RunWorkflowInstance200Response) ToMap() (map[string]interface{}, error) 
 
 	return toSerialize, nil
 }
-
 func (o *RunWorkflowInstance200Response) UnmarshalJSON(data []byte) (err error) {
-	varRunWorkflowInstance200Response := _RunWorkflowInstance200Response{}
-
-	err = json.Unmarshal(data, &varRunWorkflowInstance200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = RunWorkflowInstance200Response(varRunWorkflowInstance200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "success")
-		delete(additionalProperties, "processId")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableRunWorkflowInstance200Response struct {
-	value *RunWorkflowInstance200Response
-	isSet bool
-}
-
-func (v NullableRunWorkflowInstance200Response) Get() *RunWorkflowInstance200Response {
-	return v.value
-}
-
-func (v *NullableRunWorkflowInstance200Response) Set(val *RunWorkflowInstance200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableRunWorkflowInstance200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableRunWorkflowInstance200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableRunWorkflowInstance200Response(val *RunWorkflowInstance200Response) *NullableRunWorkflowInstance200Response {
-	return &NullableRunWorkflowInstance200Response{value: val, isSet: true}
-}
-
-func (v NullableRunWorkflowInstance200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableRunWorkflowInstance200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -20,9 +20,9 @@ var _ MappedNullable = &AddIdentitySources200Response{}
 
 // AddIdentitySources200Response struct for AddIdentitySources200Response
 type AddIdentitySources200Response struct {
-	Task *AddIdentitySources200ResponseAllOfTask `json:"task,omitempty"`
-	Success *bool `json:"success,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Task                 *AddIdentitySources200ResponseAllOfTask `json:"task,omitempty"`
+	Success              *bool                                   `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{}                  `json:",remain"`
 }
 
 type _AddIdentitySources200Response AddIdentitySources200Response
@@ -109,7 +109,7 @@ func (o *AddIdentitySources200Response) SetSuccess(v bool) {
 }
 
 func (o AddIdentitySources200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -131,63 +131,8 @@ func (o AddIdentitySources200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *AddIdentitySources200Response) UnmarshalJSON(data []byte) (err error) {
-	varAddIdentitySources200Response := _AddIdentitySources200Response{}
-
-	err = json.Unmarshal(data, &varAddIdentitySources200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddIdentitySources200Response(varAddIdentitySources200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "task")
-		delete(additionalProperties, "success")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddIdentitySources200Response struct {
-	value *AddIdentitySources200Response
-	isSet bool
-}
-
-func (v NullableAddIdentitySources200Response) Get() *AddIdentitySources200Response {
-	return v.value
-}
-
-func (v *NullableAddIdentitySources200Response) Set(val *AddIdentitySources200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddIdentitySources200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddIdentitySources200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddIdentitySources200Response(val *AddIdentitySources200Response) *NullableAddIdentitySources200Response {
-	return &NullableAddIdentitySources200Response{value: val, isSet: true}
-}
-
-func (v NullableAddIdentitySources200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddIdentitySources200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

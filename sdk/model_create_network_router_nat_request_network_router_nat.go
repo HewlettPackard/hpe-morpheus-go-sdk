@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the CreateNetworkRouterNatRequestNetworkRouterNAT type satisfies the MappedNullable interface at compile time
@@ -21,8 +20,8 @@ var _ MappedNullable = &CreateNetworkRouterNatRequestNetworkRouterNAT{}
 
 // CreateNetworkRouterNatRequestNetworkRouterNAT For a full list of available NAT options, see natOptionTypes in the specific Network Router Type
 type CreateNetworkRouterNatRequestNetworkRouterNAT struct {
-	Name interface{} `json:"name"`
-	AdditionalProperties map[string]interface{}
+	Name                 interface{}            `json:"name"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _CreateNetworkRouterNatRequestNetworkRouterNAT CreateNetworkRouterNatRequestNetworkRouterNAT
@@ -72,7 +71,7 @@ func (o *CreateNetworkRouterNatRequestNetworkRouterNAT) SetName(v interface{}) {
 }
 
 func (o CreateNetworkRouterNatRequestNetworkRouterNAT) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -91,83 +90,8 @@ func (o CreateNetworkRouterNatRequestNetworkRouterNAT) ToMap() (map[string]inter
 
 	return toSerialize, nil
 }
-
 func (o *CreateNetworkRouterNatRequestNetworkRouterNAT) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"name",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varCreateNetworkRouterNatRequestNetworkRouterNAT := _CreateNetworkRouterNatRequestNetworkRouterNAT{}
-
-	err = json.Unmarshal(data, &varCreateNetworkRouterNatRequestNetworkRouterNAT)
-
-	if err != nil {
-		return err
-	}
-
-	*o = CreateNetworkRouterNatRequestNetworkRouterNAT(varCreateNetworkRouterNatRequestNetworkRouterNAT)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableCreateNetworkRouterNatRequestNetworkRouterNAT struct {
-	value *CreateNetworkRouterNatRequestNetworkRouterNAT
-	isSet bool
-}
-
-func (v NullableCreateNetworkRouterNatRequestNetworkRouterNAT) Get() *CreateNetworkRouterNatRequestNetworkRouterNAT {
-	return v.value
-}
-
-func (v *NullableCreateNetworkRouterNatRequestNetworkRouterNAT) Set(val *CreateNetworkRouterNatRequestNetworkRouterNAT) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableCreateNetworkRouterNatRequestNetworkRouterNAT) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableCreateNetworkRouterNatRequestNetworkRouterNAT) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableCreateNetworkRouterNatRequestNetworkRouterNAT(val *CreateNetworkRouterNatRequestNetworkRouterNAT) *NullableCreateNetworkRouterNatRequestNetworkRouterNAT {
-	return &NullableCreateNetworkRouterNatRequestNetworkRouterNAT{value: val, isSet: true}
-}
-
-func (v NullableCreateNetworkRouterNatRequestNetworkRouterNAT) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableCreateNetworkRouterNatRequestNetworkRouterNAT) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

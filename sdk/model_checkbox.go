@@ -21,7 +21,7 @@ type Checkbox string
 
 // List of checkbox
 const (
-	ON Checkbox = "on"
+	ON  Checkbox = "on"
 	OFF Checkbox = "off"
 )
 
@@ -109,4 +109,3 @@ func (v *NullableCheckbox) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

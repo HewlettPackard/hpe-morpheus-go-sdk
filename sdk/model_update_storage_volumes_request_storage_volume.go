@@ -25,10 +25,10 @@ type UpdateStorageVolumesRequestStorageVolume struct {
 	// Storage Type Code or ID
 	Type *string `json:"type,omitempty"`
 	// Configuration object with parameters that vary by `type`.
-	Config map[string]interface{} `json:"config,omitempty"`
-	StorageServer *AddClusterLayoutsRequestLayoutMastersInnerContainerType `json:"storageServer,omitempty"`
-	StorageGroup *AddClusterLayoutsRequestLayoutMastersInnerContainerType `json:"storageGroup,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Config               map[string]interface{}                                   `json:"config,omitempty"`
+	StorageServer        *AddClusterLayoutsRequestLayoutMastersInnerContainerType `json:"storageServer,omitempty"`
+	StorageGroup         *AddClusterLayoutsRequestLayoutMastersInnerContainerType `json:"storageGroup,omitempty"`
+	AdditionalProperties map[string]interface{}                                   `json:",remain"`
 }
 
 type _UpdateStorageVolumesRequestStorageVolume UpdateStorageVolumesRequestStorageVolume
@@ -211,7 +211,7 @@ func (o *UpdateStorageVolumesRequestStorageVolume) SetStorageGroup(v AddClusterL
 }
 
 func (o UpdateStorageVolumesRequestStorageVolume) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -242,66 +242,8 @@ func (o UpdateStorageVolumesRequestStorageVolume) ToMap() (map[string]interface{
 
 	return toSerialize, nil
 }
-
 func (o *UpdateStorageVolumesRequestStorageVolume) UnmarshalJSON(data []byte) (err error) {
-	varUpdateStorageVolumesRequestStorageVolume := _UpdateStorageVolumesRequestStorageVolume{}
-
-	err = json.Unmarshal(data, &varUpdateStorageVolumesRequestStorageVolume)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateStorageVolumesRequestStorageVolume(varUpdateStorageVolumesRequestStorageVolume)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "storageServer")
-		delete(additionalProperties, "storageGroup")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateStorageVolumesRequestStorageVolume struct {
-	value *UpdateStorageVolumesRequestStorageVolume
-	isSet bool
-}
-
-func (v NullableUpdateStorageVolumesRequestStorageVolume) Get() *UpdateStorageVolumesRequestStorageVolume {
-	return v.value
-}
-
-func (v *NullableUpdateStorageVolumesRequestStorageVolume) Set(val *UpdateStorageVolumesRequestStorageVolume) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateStorageVolumesRequestStorageVolume) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateStorageVolumesRequestStorageVolume) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateStorageVolumesRequestStorageVolume(val *UpdateStorageVolumesRequestStorageVolume) *NullableUpdateStorageVolumesRequestStorageVolume {
-	return &NullableUpdateStorageVolumesRequestStorageVolume{value: val, isSet: true}
-}
-
-func (v NullableUpdateStorageVolumesRequestStorageVolume) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateStorageVolumesRequestStorageVolume) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

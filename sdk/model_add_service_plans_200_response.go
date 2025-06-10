@@ -20,9 +20,9 @@ var _ MappedNullable = &AddServicePlans200Response{}
 
 // AddServicePlans200Response struct for AddServicePlans200Response
 type AddServicePlans200Response struct {
-	ServicePlan *AddServicePlans200ResponseAllOfServicePlan `json:"servicePlan,omitempty"`
-	Success *bool `json:"success,omitempty"`
-	AdditionalProperties map[string]interface{}
+	ServicePlan          *AddServicePlans200ResponseAllOfServicePlan `json:"servicePlan,omitempty"`
+	Success              *bool                                       `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{}                      `json:",remain"`
 }
 
 type _AddServicePlans200Response AddServicePlans200Response
@@ -109,7 +109,7 @@ func (o *AddServicePlans200Response) SetSuccess(v bool) {
 }
 
 func (o AddServicePlans200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -131,63 +131,8 @@ func (o AddServicePlans200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *AddServicePlans200Response) UnmarshalJSON(data []byte) (err error) {
-	varAddServicePlans200Response := _AddServicePlans200Response{}
-
-	err = json.Unmarshal(data, &varAddServicePlans200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddServicePlans200Response(varAddServicePlans200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "servicePlan")
-		delete(additionalProperties, "success")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddServicePlans200Response struct {
-	value *AddServicePlans200Response
-	isSet bool
-}
-
-func (v NullableAddServicePlans200Response) Get() *AddServicePlans200Response {
-	return v.value
-}
-
-func (v *NullableAddServicePlans200Response) Set(val *AddServicePlans200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddServicePlans200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddServicePlans200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddServicePlans200Response(val *AddServicePlans200Response) *NullableAddServicePlans200Response {
-	return &NullableAddServicePlans200Response{value: val, isSet: true}
-}
-
-func (v NullableAddServicePlans200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddServicePlans200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -27,8 +27,8 @@ type Search200ResponseMeta struct {
 	// Number of records returned in the response
 	Size *int64 `json:"size,omitempty"`
 	// Total number of records found
-	Total *int64 `json:"total,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Total                *int64                 `json:"total,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _Search200ResponseMeta Search200ResponseMeta
@@ -195,7 +195,7 @@ func (o *Search200ResponseMeta) SetTotal(v int64) {
 }
 
 func (o Search200ResponseMeta) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -223,65 +223,8 @@ func (o Search200ResponseMeta) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *Search200ResponseMeta) UnmarshalJSON(data []byte) (err error) {
-	varSearch200ResponseMeta := _Search200ResponseMeta{}
-
-	err = json.Unmarshal(data, &varSearch200ResponseMeta)
-
-	if err != nil {
-		return err
-	}
-
-	*o = Search200ResponseMeta(varSearch200ResponseMeta)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "offset")
-		delete(additionalProperties, "max")
-		delete(additionalProperties, "size")
-		delete(additionalProperties, "total")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableSearch200ResponseMeta struct {
-	value *Search200ResponseMeta
-	isSet bool
-}
-
-func (v NullableSearch200ResponseMeta) Get() *Search200ResponseMeta {
-	return v.value
-}
-
-func (v *NullableSearch200ResponseMeta) Set(val *Search200ResponseMeta) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSearch200ResponseMeta) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSearch200ResponseMeta) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSearch200ResponseMeta(val *Search200ResponseMeta) *NullableSearch200ResponseMeta {
-	return &NullableSearch200ResponseMeta{value: val, isSet: true}
-}
-
-func (v NullableSearch200ResponseMeta) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSearch200ResponseMeta) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

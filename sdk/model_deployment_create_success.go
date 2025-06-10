@@ -21,15 +21,15 @@ var _ MappedNullable = &DeploymentCreateSuccess{}
 
 // DeploymentCreateSuccess struct for DeploymentCreateSuccess
 type DeploymentCreateSuccess struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Description *string `json:"description,omitempty"`
-	AccountId *int64 `json:"accountId,omitempty"`
-	ExternalId *string `json:"externalId,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	VersionCount *int64 `json:"versionCount,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	Description          *string                `json:"description,omitempty"`
+	AccountId            *int64                 `json:"accountId,omitempty"`
+	ExternalId           *string                `json:"externalId,omitempty"`
+	DateCreated          *time.Time             `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time             `json:"lastUpdated,omitempty"`
+	VersionCount         *int64                 `json:"versionCount,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _DeploymentCreateSuccess DeploymentCreateSuccess
@@ -308,7 +308,7 @@ func (o *DeploymentCreateSuccess) SetVersionCount(v int64) {
 }
 
 func (o DeploymentCreateSuccess) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -348,69 +348,8 @@ func (o DeploymentCreateSuccess) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *DeploymentCreateSuccess) UnmarshalJSON(data []byte) (err error) {
-	varDeploymentCreateSuccess := _DeploymentCreateSuccess{}
-
-	err = json.Unmarshal(data, &varDeploymentCreateSuccess)
-
-	if err != nil {
-		return err
-	}
-
-	*o = DeploymentCreateSuccess(varDeploymentCreateSuccess)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "accountId")
-		delete(additionalProperties, "externalId")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		delete(additionalProperties, "versionCount")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableDeploymentCreateSuccess struct {
-	value *DeploymentCreateSuccess
-	isSet bool
-}
-
-func (v NullableDeploymentCreateSuccess) Get() *DeploymentCreateSuccess {
-	return v.value
-}
-
-func (v *NullableDeploymentCreateSuccess) Set(val *DeploymentCreateSuccess) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableDeploymentCreateSuccess) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableDeploymentCreateSuccess) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableDeploymentCreateSuccess(val *DeploymentCreateSuccess) *NullableDeploymentCreateSuccess {
-	return &NullableDeploymentCreateSuccess{value: val, isSet: true}
-}
-
-func (v NullableDeploymentCreateSuccess) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableDeploymentCreateSuccess) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

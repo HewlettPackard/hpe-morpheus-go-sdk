@@ -21,13 +21,12 @@ import (
 	"strings"
 )
 
-
 // NetworksAPIService NetworksAPI service
 type NetworksAPIService service
 
 type ApiAllocateNetworkFloatingIpRequest struct {
-	ctx context.Context
-	ApiService *NetworksAPIService
+	ctx                              context.Context
+	ApiService                       *NetworksAPIService
 	allocateNetworkFloatingIpRequest *AllocateNetworkFloatingIpRequest
 }
 
@@ -45,25 +44,25 @@ AllocateNetworkFloatingIp Allocate a Floating IP
 
 Allocate a floating IP from the associated network service and floating ip pool.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAllocateNetworkFloatingIpRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAllocateNetworkFloatingIpRequest
 */
 func (a *NetworksAPIService) AllocateNetworkFloatingIp(ctx context.Context) ApiAllocateNetworkFloatingIpRequest {
 	return ApiAllocateNetworkFloatingIpRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AllocateNetworkFloatingIp200Response
+//
+//	@return AllocateNetworkFloatingIp200Response
 func (a *NetworksAPIService) AllocateNetworkFloatingIpExecute(r ApiAllocateNetworkFloatingIpRequest) (*AllocateNetworkFloatingIp200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AllocateNetworkFloatingIp200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AllocateNetworkFloatingIp200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.AllocateNetworkFloatingIp")
@@ -115,7 +114,7 @@ func (a *NetworksAPIService) AllocateNetworkFloatingIpExecute(r ApiAllocateNetwo
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -124,8 +123,8 @@ func (a *NetworksAPIService) AllocateNetworkFloatingIpExecute(r ApiAllocateNetwo
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -135,8 +134,8 @@ func (a *NetworksAPIService) AllocateNetworkFloatingIpExecute(r ApiAllocateNetwo
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -144,8 +143,8 @@ func (a *NetworksAPIService) AllocateNetworkFloatingIpExecute(r ApiAllocateNetwo
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -154,9 +153,9 @@ func (a *NetworksAPIService) AllocateNetworkFloatingIpExecute(r ApiAllocateNetwo
 }
 
 type ApiCreateNetworkDhcpRelayRequest struct {
-	ctx context.Context
-	ApiService *NetworksAPIService
-	serverId float32
+	ctx                           context.Context
+	ApiService                    *NetworksAPIService
+	serverId                      float32
 	createNetworkDhcpRelayRequest *CreateNetworkDhcpRelayRequest
 }
 
@@ -174,27 +173,27 @@ CreateNetworkDhcpRelay Create a Network DHCP Relay
 
 Create a Network DHCP Relay.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serverId Server ID
- @return ApiCreateNetworkDhcpRelayRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param serverId Server ID
+	@return ApiCreateNetworkDhcpRelayRequest
 */
 func (a *NetworksAPIService) CreateNetworkDhcpRelay(ctx context.Context, serverId float32) ApiCreateNetworkDhcpRelayRequest {
 	return ApiCreateNetworkDhcpRelayRequest{
 		ApiService: a,
-		ctx: ctx,
-		serverId: serverId,
+		ctx:        ctx,
+		serverId:   serverId,
 	}
 }
 
 // Execute executes the request
-//  @return AddClusterLayouts200Response
+//
+//	@return AddClusterLayouts200Response
 func (a *NetworksAPIService) CreateNetworkDhcpRelayExecute(r ApiCreateNetworkDhcpRelayRequest) (*AddClusterLayouts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddClusterLayouts200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddClusterLayouts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.CreateNetworkDhcpRelay")
@@ -247,7 +246,7 @@ func (a *NetworksAPIService) CreateNetworkDhcpRelayExecute(r ApiCreateNetworkDhc
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -256,8 +255,8 @@ func (a *NetworksAPIService) CreateNetworkDhcpRelayExecute(r ApiCreateNetworkDhc
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -267,8 +266,8 @@ func (a *NetworksAPIService) CreateNetworkDhcpRelayExecute(r ApiCreateNetworkDhc
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -276,8 +275,8 @@ func (a *NetworksAPIService) CreateNetworkDhcpRelayExecute(r ApiCreateNetworkDhc
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -286,9 +285,9 @@ func (a *NetworksAPIService) CreateNetworkDhcpRelayExecute(r ApiCreateNetworkDhc
 }
 
 type ApiCreateNetworkDhcpServerRequest struct {
-	ctx context.Context
-	ApiService *NetworksAPIService
-	serverId float32
+	ctx                            context.Context
+	ApiService                     *NetworksAPIService
+	serverId                       float32
 	createNetworkDhcpServerRequest *CreateNetworkDhcpServerRequest
 }
 
@@ -306,27 +305,27 @@ CreateNetworkDhcpServer Create a Network DHCP Server
 
 Create a Network DHCP Server.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serverId Server ID
- @return ApiCreateNetworkDhcpServerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param serverId Server ID
+	@return ApiCreateNetworkDhcpServerRequest
 */
 func (a *NetworksAPIService) CreateNetworkDhcpServer(ctx context.Context, serverId float32) ApiCreateNetworkDhcpServerRequest {
 	return ApiCreateNetworkDhcpServerRequest{
 		ApiService: a,
-		ctx: ctx,
-		serverId: serverId,
+		ctx:        ctx,
+		serverId:   serverId,
 	}
 }
 
 // Execute executes the request
-//  @return AddClusterLayouts200Response
+//
+//	@return AddClusterLayouts200Response
 func (a *NetworksAPIService) CreateNetworkDhcpServerExecute(r ApiCreateNetworkDhcpServerRequest) (*AddClusterLayouts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddClusterLayouts200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddClusterLayouts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.CreateNetworkDhcpServer")
@@ -379,7 +378,7 @@ func (a *NetworksAPIService) CreateNetworkDhcpServerExecute(r ApiCreateNetworkDh
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -388,8 +387,8 @@ func (a *NetworksAPIService) CreateNetworkDhcpServerExecute(r ApiCreateNetworkDh
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -399,8 +398,8 @@ func (a *NetworksAPIService) CreateNetworkDhcpServerExecute(r ApiCreateNetworkDh
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -408,8 +407,8 @@ func (a *NetworksAPIService) CreateNetworkDhcpServerExecute(r ApiCreateNetworkDh
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -418,8 +417,8 @@ func (a *NetworksAPIService) CreateNetworkDhcpServerExecute(r ApiCreateNetworkDh
 }
 
 type ApiCreateNetworkDomainRequest struct {
-	ctx context.Context
-	ApiService *NetworksAPIService
+	ctx                        context.Context
+	ApiService                 *NetworksAPIService
 	createNetworkDomainRequest *CreateNetworkDomainRequest
 }
 
@@ -437,25 +436,25 @@ CreateNetworkDomain Create a Network Domain
 
 Create a Network Domain.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateNetworkDomainRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCreateNetworkDomainRequest
 */
 func (a *NetworksAPIService) CreateNetworkDomain(ctx context.Context) ApiCreateNetworkDomainRequest {
 	return ApiCreateNetworkDomainRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return CreateNetworkDomain200Response
+//
+//	@return CreateNetworkDomain200Response
 func (a *NetworksAPIService) CreateNetworkDomainExecute(r ApiCreateNetworkDomainRequest) (*CreateNetworkDomain200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CreateNetworkDomain200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CreateNetworkDomain200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.CreateNetworkDomain")
@@ -507,7 +506,7 @@ func (a *NetworksAPIService) CreateNetworkDomainExecute(r ApiCreateNetworkDomain
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -516,8 +515,8 @@ func (a *NetworksAPIService) CreateNetworkDomainExecute(r ApiCreateNetworkDomain
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -527,8 +526,8 @@ func (a *NetworksAPIService) CreateNetworkDomainExecute(r ApiCreateNetworkDomain
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -536,8 +535,8 @@ func (a *NetworksAPIService) CreateNetworkDomainExecute(r ApiCreateNetworkDomain
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -546,9 +545,9 @@ func (a *NetworksAPIService) CreateNetworkDomainExecute(r ApiCreateNetworkDomain
 }
 
 type ApiCreateNetworkFirewallRuleRequest struct {
-	ctx context.Context
-	ApiService *NetworksAPIService
-	serverId float32
+	ctx                              context.Context
+	ApiService                       *NetworksAPIService
+	serverId                         float32
 	createNetworkFirewallRuleRequest *CreateNetworkFirewallRuleRequest
 }
 
@@ -566,27 +565,27 @@ CreateNetworkFirewallRule Create a Network Firewall Rule
 
 Use this command to create a network firewall rule.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serverId Server ID
- @return ApiCreateNetworkFirewallRuleRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param serverId Server ID
+	@return ApiCreateNetworkFirewallRuleRequest
 */
 func (a *NetworksAPIService) CreateNetworkFirewallRule(ctx context.Context, serverId float32) ApiCreateNetworkFirewallRuleRequest {
 	return ApiCreateNetworkFirewallRuleRequest{
 		ApiService: a,
-		ctx: ctx,
-		serverId: serverId,
+		ctx:        ctx,
+		serverId:   serverId,
 	}
 }
 
 // Execute executes the request
-//  @return AddClusterLayouts200Response
+//
+//	@return AddClusterLayouts200Response
 func (a *NetworksAPIService) CreateNetworkFirewallRuleExecute(r ApiCreateNetworkFirewallRuleRequest) (*AddClusterLayouts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddClusterLayouts200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddClusterLayouts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.CreateNetworkFirewallRule")
@@ -639,7 +638,7 @@ func (a *NetworksAPIService) CreateNetworkFirewallRuleExecute(r ApiCreateNetwork
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -648,8 +647,8 @@ func (a *NetworksAPIService) CreateNetworkFirewallRuleExecute(r ApiCreateNetwork
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -659,8 +658,8 @@ func (a *NetworksAPIService) CreateNetworkFirewallRuleExecute(r ApiCreateNetwork
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -668,8 +667,8 @@ func (a *NetworksAPIService) CreateNetworkFirewallRuleExecute(r ApiCreateNetwork
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -678,9 +677,9 @@ func (a *NetworksAPIService) CreateNetworkFirewallRuleExecute(r ApiCreateNetwork
 }
 
 type ApiCreateNetworkFirewallRuleGroupRequest struct {
-	ctx context.Context
-	ApiService *NetworksAPIService
-	serverId float32
+	ctx                                         context.Context
+	ApiService                                  *NetworksAPIService
+	serverId                                    float32
 	createNetworkRouterFirewallRuleGroupRequest *CreateNetworkRouterFirewallRuleGroupRequest
 }
 
@@ -698,27 +697,27 @@ CreateNetworkFirewallRuleGroup Create a Network Firewall Rule Group
 
 Use this command to create a network firewall rule group.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serverId Server ID
- @return ApiCreateNetworkFirewallRuleGroupRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param serverId Server ID
+	@return ApiCreateNetworkFirewallRuleGroupRequest
 */
 func (a *NetworksAPIService) CreateNetworkFirewallRuleGroup(ctx context.Context, serverId float32) ApiCreateNetworkFirewallRuleGroupRequest {
 	return ApiCreateNetworkFirewallRuleGroupRequest{
 		ApiService: a,
-		ctx: ctx,
-		serverId: serverId,
+		ctx:        ctx,
+		serverId:   serverId,
 	}
 }
 
 // Execute executes the request
-//  @return AddClusterLayouts200Response
+//
+//	@return AddClusterLayouts200Response
 func (a *NetworksAPIService) CreateNetworkFirewallRuleGroupExecute(r ApiCreateNetworkFirewallRuleGroupRequest) (*AddClusterLayouts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddClusterLayouts200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddClusterLayouts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.CreateNetworkFirewallRuleGroup")
@@ -771,7 +770,7 @@ func (a *NetworksAPIService) CreateNetworkFirewallRuleGroupExecute(r ApiCreateNe
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -780,8 +779,8 @@ func (a *NetworksAPIService) CreateNetworkFirewallRuleGroupExecute(r ApiCreateNe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -791,8 +790,8 @@ func (a *NetworksAPIService) CreateNetworkFirewallRuleGroupExecute(r ApiCreateNe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -800,8 +799,8 @@ func (a *NetworksAPIService) CreateNetworkFirewallRuleGroupExecute(r ApiCreateNe
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -810,8 +809,8 @@ func (a *NetworksAPIService) CreateNetworkFirewallRuleGroupExecute(r ApiCreateNe
 }
 
 type ApiCreateNetworkGroupRequest struct {
-	ctx context.Context
-	ApiService *NetworksAPIService
+	ctx                       context.Context
+	ApiService                *NetworksAPIService
 	createNetworkGroupRequest *CreateNetworkGroupRequest
 }
 
@@ -829,25 +828,25 @@ CreateNetworkGroup Create a Network Group
 
 Use this command to create a network group.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateNetworkGroupRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCreateNetworkGroupRequest
 */
 func (a *NetworksAPIService) CreateNetworkGroup(ctx context.Context) ApiCreateNetworkGroupRequest {
 	return ApiCreateNetworkGroupRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddClusterLayouts200Response
+//
+//	@return AddClusterLayouts200Response
 func (a *NetworksAPIService) CreateNetworkGroupExecute(r ApiCreateNetworkGroupRequest) (*AddClusterLayouts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddClusterLayouts200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddClusterLayouts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.CreateNetworkGroup")
@@ -899,7 +898,7 @@ func (a *NetworksAPIService) CreateNetworkGroupExecute(r ApiCreateNetworkGroupRe
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -908,8 +907,8 @@ func (a *NetworksAPIService) CreateNetworkGroupExecute(r ApiCreateNetworkGroupRe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -919,8 +918,8 @@ func (a *NetworksAPIService) CreateNetworkGroupExecute(r ApiCreateNetworkGroupRe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -928,8 +927,8 @@ func (a *NetworksAPIService) CreateNetworkGroupExecute(r ApiCreateNetworkGroupRe
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -938,8 +937,8 @@ func (a *NetworksAPIService) CreateNetworkGroupExecute(r ApiCreateNetworkGroupRe
 }
 
 type ApiCreateNetworkPoolRequest struct {
-	ctx context.Context
-	ApiService *NetworksAPIService
+	ctx                      context.Context
+	ApiService               *NetworksAPIService
 	createNetworkPoolRequest *CreateNetworkPoolRequest
 }
 
@@ -957,25 +956,25 @@ CreateNetworkPool Create a Network Pool
 
 Create a Network Pool.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateNetworkPoolRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCreateNetworkPoolRequest
 */
 func (a *NetworksAPIService) CreateNetworkPool(ctx context.Context) ApiCreateNetworkPoolRequest {
 	return ApiCreateNetworkPoolRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return CreateNetworkPool200Response
+//
+//	@return CreateNetworkPool200Response
 func (a *NetworksAPIService) CreateNetworkPoolExecute(r ApiCreateNetworkPoolRequest) (*CreateNetworkPool200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CreateNetworkPool200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CreateNetworkPool200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.CreateNetworkPool")
@@ -1027,7 +1026,7 @@ func (a *NetworksAPIService) CreateNetworkPoolExecute(r ApiCreateNetworkPoolRequ
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1036,8 +1035,8 @@ func (a *NetworksAPIService) CreateNetworkPoolExecute(r ApiCreateNetworkPoolRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1047,8 +1046,8 @@ func (a *NetworksAPIService) CreateNetworkPoolExecute(r ApiCreateNetworkPoolRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1056,8 +1055,8 @@ func (a *NetworksAPIService) CreateNetworkPoolExecute(r ApiCreateNetworkPoolRequ
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1066,9 +1065,9 @@ func (a *NetworksAPIService) CreateNetworkPoolExecute(r ApiCreateNetworkPoolRequ
 }
 
 type ApiCreateNetworkPoolIpRequest struct {
-	ctx context.Context
-	ApiService *NetworksAPIService
-	id int64
+	ctx                        context.Context
+	ApiService                 *NetworksAPIService
+	id                         int64
 	createNetworkPoolIpRequest *CreateNetworkPoolIpRequest
 }
 
@@ -1084,29 +1083,29 @@ func (r ApiCreateNetworkPoolIpRequest) Execute() (*CreateNetworkPoolIp200Respons
 /*
 CreateNetworkPoolIp Create a Network Pool IP Address
 
-Create an IP Address for a Specific Network Pool
+# Create an IP Address for a Specific Network Pool
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiCreateNetworkPoolIpRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiCreateNetworkPoolIpRequest
 */
 func (a *NetworksAPIService) CreateNetworkPoolIp(ctx context.Context, id int64) ApiCreateNetworkPoolIpRequest {
 	return ApiCreateNetworkPoolIpRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return CreateNetworkPoolIp200Response
+//
+//	@return CreateNetworkPoolIp200Response
 func (a *NetworksAPIService) CreateNetworkPoolIpExecute(r ApiCreateNetworkPoolIpRequest) (*CreateNetworkPoolIp200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CreateNetworkPoolIp200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CreateNetworkPoolIp200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.CreateNetworkPoolIp")
@@ -1159,7 +1158,7 @@ func (a *NetworksAPIService) CreateNetworkPoolIpExecute(r ApiCreateNetworkPoolIp
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
 			var v GetNetworkPoolIps400Response
@@ -1168,8 +1167,8 @@ func (a *NetworksAPIService) CreateNetworkPoolIpExecute(r ApiCreateNetworkPoolIp
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -1179,8 +1178,8 @@ func (a *NetworksAPIService) CreateNetworkPoolIpExecute(r ApiCreateNetworkPoolIp
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -1190,8 +1189,8 @@ func (a *NetworksAPIService) CreateNetworkPoolIpExecute(r ApiCreateNetworkPoolIp
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -1201,8 +1200,8 @@ func (a *NetworksAPIService) CreateNetworkPoolIpExecute(r ApiCreateNetworkPoolIp
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 405 {
@@ -1212,8 +1211,8 @@ func (a *NetworksAPIService) CreateNetworkPoolIpExecute(r ApiCreateNetworkPoolIp
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 406 {
@@ -1223,8 +1222,8 @@ func (a *NetworksAPIService) CreateNetworkPoolIpExecute(r ApiCreateNetworkPoolIp
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 410 {
@@ -1234,8 +1233,8 @@ func (a *NetworksAPIService) CreateNetworkPoolIpExecute(r ApiCreateNetworkPoolIp
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -1245,8 +1244,8 @@ func (a *NetworksAPIService) CreateNetworkPoolIpExecute(r ApiCreateNetworkPoolIp
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -1256,8 +1255,8 @@ func (a *NetworksAPIService) CreateNetworkPoolIpExecute(r ApiCreateNetworkPoolIp
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -1267,8 +1266,8 @@ func (a *NetworksAPIService) CreateNetworkPoolIpExecute(r ApiCreateNetworkPoolIp
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1276,8 +1275,8 @@ func (a *NetworksAPIService) CreateNetworkPoolIpExecute(r ApiCreateNetworkPoolIp
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1286,8 +1285,8 @@ func (a *NetworksAPIService) CreateNetworkPoolIpExecute(r ApiCreateNetworkPoolIp
 }
 
 type ApiCreateNetworkPoolServerRequest struct {
-	ctx context.Context
-	ApiService *NetworksAPIService
+	ctx                            context.Context
+	ApiService                     *NetworksAPIService
 	createNetworkPoolServerRequest *CreateNetworkPoolServerRequest
 }
 
@@ -1305,24 +1304,25 @@ CreateNetworkPoolServer Create a Network Pool Server
 
 This endpoint allows creating a Network Pool Server. Only certain types of integrations support creating and deleting network pool servers, such as Bluecat, Infoblox, phpIPAM, and Solar Winds. Configuration options vary by type. Note that creating a pool server will automatically create and associate the corresponding network integration object, but management is done via the network pool server object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateNetworkPoolServerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCreateNetworkPoolServerRequest
 */
 func (a *NetworksAPIService) CreateNetworkPoolServer(ctx context.Context) ApiCreateNetworkPoolServerRequest {
 	return ApiCreateNetworkPoolServerRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return CreateNetworkPoolServer200Response
+//
+//	@return CreateNetworkPoolServer200Response
 func (a *NetworksAPIService) CreateNetworkPoolServerExecute(r ApiCreateNetworkPoolServerRequest) (*CreateNetworkPoolServer200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CreateNetworkPoolServer200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CreateNetworkPoolServer200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.CreateNetworkPoolServer")
@@ -1374,7 +1374,7 @@ func (a *NetworksAPIService) CreateNetworkPoolServerExecute(r ApiCreateNetworkPo
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1383,8 +1383,8 @@ func (a *NetworksAPIService) CreateNetworkPoolServerExecute(r ApiCreateNetworkPo
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1394,8 +1394,8 @@ func (a *NetworksAPIService) CreateNetworkPoolServerExecute(r ApiCreateNetworkPo
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1403,8 +1403,8 @@ func (a *NetworksAPIService) CreateNetworkPoolServerExecute(r ApiCreateNetworkPo
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1413,8 +1413,8 @@ func (a *NetworksAPIService) CreateNetworkPoolServerExecute(r ApiCreateNetworkPo
 }
 
 type ApiCreateNetworkProxyRequest struct {
-	ctx context.Context
-	ApiService *NetworksAPIService
+	ctx                       context.Context
+	ApiService                *NetworksAPIService
 	createNetworkProxyRequest *CreateNetworkProxyRequest
 }
 
@@ -1432,25 +1432,25 @@ CreateNetworkProxy Create a Network Proxy
 
 Create a Network Proxy.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateNetworkProxyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCreateNetworkProxyRequest
 */
 func (a *NetworksAPIService) CreateNetworkProxy(ctx context.Context) ApiCreateNetworkProxyRequest {
 	return ApiCreateNetworkProxyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return CreateNetworkProxy200Response
+//
+//	@return CreateNetworkProxy200Response
 func (a *NetworksAPIService) CreateNetworkProxyExecute(r ApiCreateNetworkProxyRequest) (*CreateNetworkProxy200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CreateNetworkProxy200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CreateNetworkProxy200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.CreateNetworkProxy")
@@ -1502,7 +1502,7 @@ func (a *NetworksAPIService) CreateNetworkProxyExecute(r ApiCreateNetworkProxyRe
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1511,8 +1511,8 @@ func (a *NetworksAPIService) CreateNetworkProxyExecute(r ApiCreateNetworkProxyRe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1522,8 +1522,8 @@ func (a *NetworksAPIService) CreateNetworkProxyExecute(r ApiCreateNetworkProxyRe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1531,8 +1531,8 @@ func (a *NetworksAPIService) CreateNetworkProxyExecute(r ApiCreateNetworkProxyRe
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1541,8 +1541,8 @@ func (a *NetworksAPIService) CreateNetworkProxyExecute(r ApiCreateNetworkProxyRe
 }
 
 type ApiCreateNetworkRouterRequest struct {
-	ctx context.Context
-	ApiService *NetworksAPIService
+	ctx                        context.Context
+	ApiService                 *NetworksAPIService
 	createNetworkRouterRequest *CreateNetworkRouterRequest
 }
 
@@ -1560,25 +1560,25 @@ CreateNetworkRouter Create a Network Router
 
 Use this command to create a network router.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateNetworkRouterRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCreateNetworkRouterRequest
 */
 func (a *NetworksAPIService) CreateNetworkRouter(ctx context.Context) ApiCreateNetworkRouterRequest {
 	return ApiCreateNetworkRouterRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddClusterLayouts200Response
+//
+//	@return AddClusterLayouts200Response
 func (a *NetworksAPIService) CreateNetworkRouterExecute(r ApiCreateNetworkRouterRequest) (*AddClusterLayouts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddClusterLayouts200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddClusterLayouts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.CreateNetworkRouter")
@@ -1630,7 +1630,7 @@ func (a *NetworksAPIService) CreateNetworkRouterExecute(r ApiCreateNetworkRouter
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1639,8 +1639,8 @@ func (a *NetworksAPIService) CreateNetworkRouterExecute(r ApiCreateNetworkRouter
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1650,8 +1650,8 @@ func (a *NetworksAPIService) CreateNetworkRouterExecute(r ApiCreateNetworkRouter
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1659,8 +1659,8 @@ func (a *NetworksAPIService) CreateNetworkRouterExecute(r ApiCreateNetworkRouter
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1669,9 +1669,9 @@ func (a *NetworksAPIService) CreateNetworkRouterExecute(r ApiCreateNetworkRouter
 }
 
 type ApiCreateNetworkRouterBgpNeighborRequest struct {
-	ctx context.Context
-	ApiService *NetworksAPIService
-	routerId float32
+	ctx                                   context.Context
+	ApiService                            *NetworksAPIService
+	routerId                              float32
 	createNetworkRouterBgpNeighborRequest *CreateNetworkRouterBgpNeighborRequest
 }
 
@@ -1689,26 +1689,27 @@ CreateNetworkRouterBgpNeighbor Create a Network Router BGP Neighbor
 
 Use this command to create a BGP Neighbor for an existing network router.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param routerId Router ID
- @return ApiCreateNetworkRouterBgpNeighborRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param routerId Router ID
+	@return ApiCreateNetworkRouterBgpNeighborRequest
 */
 func (a *NetworksAPIService) CreateNetworkRouterBgpNeighbor(ctx context.Context, routerId float32) ApiCreateNetworkRouterBgpNeighborRequest {
 	return ApiCreateNetworkRouterBgpNeighborRequest{
 		ApiService: a,
-		ctx: ctx,
-		routerId: routerId,
+		ctx:        ctx,
+		routerId:   routerId,
 	}
 }
 
 // Execute executes the request
-//  @return AddClusterLayouts200Response
+//
+//	@return AddClusterLayouts200Response
 func (a *NetworksAPIService) CreateNetworkRouterBgpNeighborExecute(r ApiCreateNetworkRouterBgpNeighborRequest) (*AddClusterLayouts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddClusterLayouts200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddClusterLayouts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.CreateNetworkRouterBgpNeighbor")
@@ -1761,7 +1762,7 @@ func (a *NetworksAPIService) CreateNetworkRouterBgpNeighborExecute(r ApiCreateNe
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1770,8 +1771,8 @@ func (a *NetworksAPIService) CreateNetworkRouterBgpNeighborExecute(r ApiCreateNe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1781,8 +1782,8 @@ func (a *NetworksAPIService) CreateNetworkRouterBgpNeighborExecute(r ApiCreateNe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1790,8 +1791,8 @@ func (a *NetworksAPIService) CreateNetworkRouterBgpNeighborExecute(r ApiCreateNe
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1800,9 +1801,9 @@ func (a *NetworksAPIService) CreateNetworkRouterBgpNeighborExecute(r ApiCreateNe
 }
 
 type ApiCreateNetworkRouterFirewallRuleRequest struct {
-	ctx context.Context
-	ApiService *NetworksAPIService
-	routerId float32
+	ctx                                    context.Context
+	ApiService                             *NetworksAPIService
+	routerId                               float32
 	createNetworkRouterFirewallRuleRequest *CreateNetworkRouterFirewallRuleRequest
 }
 
@@ -1820,27 +1821,27 @@ CreateNetworkRouterFirewallRule Create a Network Router Firewall Rule
 
 Use this command to create a firewall rule for an existing network router.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param routerId Router ID
- @return ApiCreateNetworkRouterFirewallRuleRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param routerId Router ID
+	@return ApiCreateNetworkRouterFirewallRuleRequest
 */
 func (a *NetworksAPIService) CreateNetworkRouterFirewallRule(ctx context.Context, routerId float32) ApiCreateNetworkRouterFirewallRuleRequest {
 	return ApiCreateNetworkRouterFirewallRuleRequest{
 		ApiService: a,
-		ctx: ctx,
-		routerId: routerId,
+		ctx:        ctx,
+		routerId:   routerId,
 	}
 }
 
 // Execute executes the request
-//  @return AddClusterLayouts200Response
+//
+//	@return AddClusterLayouts200Response
 func (a *NetworksAPIService) CreateNetworkRouterFirewallRuleExecute(r ApiCreateNetworkRouterFirewallRuleRequest) (*AddClusterLayouts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddClusterLayouts200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddClusterLayouts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.CreateNetworkRouterFirewallRule")
@@ -1893,7 +1894,7 @@ func (a *NetworksAPIService) CreateNetworkRouterFirewallRuleExecute(r ApiCreateN
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1902,8 +1903,8 @@ func (a *NetworksAPIService) CreateNetworkRouterFirewallRuleExecute(r ApiCreateN
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1913,8 +1914,8 @@ func (a *NetworksAPIService) CreateNetworkRouterFirewallRuleExecute(r ApiCreateN
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1922,8 +1923,8 @@ func (a *NetworksAPIService) CreateNetworkRouterFirewallRuleExecute(r ApiCreateN
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1932,9 +1933,9 @@ func (a *NetworksAPIService) CreateNetworkRouterFirewallRuleExecute(r ApiCreateN
 }
 
 type ApiCreateNetworkRouterFirewallRuleGroupRequest struct {
-	ctx context.Context
-	ApiService *NetworksAPIService
-	routerId float32
+	ctx                                         context.Context
+	ApiService                                  *NetworksAPIService
+	routerId                                    float32
 	createNetworkRouterFirewallRuleGroupRequest *CreateNetworkRouterFirewallRuleGroupRequest
 }
 
@@ -1952,27 +1953,27 @@ CreateNetworkRouterFirewallRuleGroup Create a Network Router Firewall Rule Group
 
 Use this command to create a network firewall rule group.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param routerId Router ID
- @return ApiCreateNetworkRouterFirewallRuleGroupRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param routerId Router ID
+	@return ApiCreateNetworkRouterFirewallRuleGroupRequest
 */
 func (a *NetworksAPIService) CreateNetworkRouterFirewallRuleGroup(ctx context.Context, routerId float32) ApiCreateNetworkRouterFirewallRuleGroupRequest {
 	return ApiCreateNetworkRouterFirewallRuleGroupRequest{
 		ApiService: a,
-		ctx: ctx,
-		routerId: routerId,
+		ctx:        ctx,
+		routerId:   routerId,
 	}
 }
 
 // Execute executes the request
-//  @return AddClusterLayouts200Response
+//
+//	@return AddClusterLayouts200Response
 func (a *NetworksAPIService) CreateNetworkRouterFirewallRuleGroupExecute(r ApiCreateNetworkRouterFirewallRuleGroupRequest) (*AddClusterLayouts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddClusterLayouts200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddClusterLayouts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.CreateNetworkRouterFirewallRuleGroup")
@@ -2025,7 +2026,7 @@ func (a *NetworksAPIService) CreateNetworkRouterFirewallRuleGroupExecute(r ApiCr
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2034,8 +2035,8 @@ func (a *NetworksAPIService) CreateNetworkRouterFirewallRuleGroupExecute(r ApiCr
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2045,8 +2046,8 @@ func (a *NetworksAPIService) CreateNetworkRouterFirewallRuleGroupExecute(r ApiCr
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2054,8 +2055,8 @@ func (a *NetworksAPIService) CreateNetworkRouterFirewallRuleGroupExecute(r ApiCr
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2064,9 +2065,9 @@ func (a *NetworksAPIService) CreateNetworkRouterFirewallRuleGroupExecute(r ApiCr
 }
 
 type ApiCreateNetworkRouterNatRequest struct {
-	ctx context.Context
-	ApiService *NetworksAPIService
-	routerId float32
+	ctx                           context.Context
+	ApiService                    *NetworksAPIService
+	routerId                      float32
 	createNetworkRouterNatRequest *CreateNetworkRouterNatRequest
 }
 
@@ -2084,26 +2085,27 @@ CreateNetworkRouterNat Create a Network Router NAT
 
 Use this command to create a NAT for an existing network router.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param routerId Router ID
- @return ApiCreateNetworkRouterNatRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param routerId Router ID
+	@return ApiCreateNetworkRouterNatRequest
 */
 func (a *NetworksAPIService) CreateNetworkRouterNat(ctx context.Context, routerId float32) ApiCreateNetworkRouterNatRequest {
 	return ApiCreateNetworkRouterNatRequest{
 		ApiService: a,
-		ctx: ctx,
-		routerId: routerId,
+		ctx:        ctx,
+		routerId:   routerId,
 	}
 }
 
 // Execute executes the request
-//  @return AddClusterLayouts200Response
+//
+//	@return AddClusterLayouts200Response
 func (a *NetworksAPIService) CreateNetworkRouterNatExecute(r ApiCreateNetworkRouterNatRequest) (*AddClusterLayouts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddClusterLayouts200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddClusterLayouts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.CreateNetworkRouterNat")
@@ -2156,7 +2158,7 @@ func (a *NetworksAPIService) CreateNetworkRouterNatExecute(r ApiCreateNetworkRou
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2165,8 +2167,8 @@ func (a *NetworksAPIService) CreateNetworkRouterNatExecute(r ApiCreateNetworkRou
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2176,8 +2178,8 @@ func (a *NetworksAPIService) CreateNetworkRouterNatExecute(r ApiCreateNetworkRou
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2185,8 +2187,8 @@ func (a *NetworksAPIService) CreateNetworkRouterNatExecute(r ApiCreateNetworkRou
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2195,9 +2197,9 @@ func (a *NetworksAPIService) CreateNetworkRouterNatExecute(r ApiCreateNetworkRou
 }
 
 type ApiCreateNetworkRouterRouteRequest struct {
-	ctx context.Context
-	ApiService *NetworksAPIService
-	routerId float32
+	ctx                             context.Context
+	ApiService                      *NetworksAPIService
+	routerId                        float32
 	createNetworkRouterRouteRequest *CreateNetworkRouterRouteRequest
 }
 
@@ -2215,26 +2217,27 @@ CreateNetworkRouterRoute Create a Network Router Route
 
 Use this command to create a route for an existing network router.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param routerId Router ID
- @return ApiCreateNetworkRouterRouteRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param routerId Router ID
+	@return ApiCreateNetworkRouterRouteRequest
 */
 func (a *NetworksAPIService) CreateNetworkRouterRoute(ctx context.Context, routerId float32) ApiCreateNetworkRouterRouteRequest {
 	return ApiCreateNetworkRouterRouteRequest{
 		ApiService: a,
-		ctx: ctx,
-		routerId: routerId,
+		ctx:        ctx,
+		routerId:   routerId,
 	}
 }
 
 // Execute executes the request
-//  @return AddClusterLayouts200Response
+//
+//	@return AddClusterLayouts200Response
 func (a *NetworksAPIService) CreateNetworkRouterRouteExecute(r ApiCreateNetworkRouterRouteRequest) (*AddClusterLayouts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddClusterLayouts200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddClusterLayouts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.CreateNetworkRouterRoute")
@@ -2287,7 +2290,7 @@ func (a *NetworksAPIService) CreateNetworkRouterRouteExecute(r ApiCreateNetworkR
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2296,8 +2299,8 @@ func (a *NetworksAPIService) CreateNetworkRouterRouteExecute(r ApiCreateNetworkR
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2307,8 +2310,8 @@ func (a *NetworksAPIService) CreateNetworkRouterRouteExecute(r ApiCreateNetworkR
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2316,8 +2319,8 @@ func (a *NetworksAPIService) CreateNetworkRouterRouteExecute(r ApiCreateNetworkR
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2326,8 +2329,8 @@ func (a *NetworksAPIService) CreateNetworkRouterRouteExecute(r ApiCreateNetworkR
 }
 
 type ApiCreateNetworkServerRequest struct {
-	ctx context.Context
-	ApiService *NetworksAPIService
+	ctx                        context.Context
+	ApiService                 *NetworksAPIService
 	createNetworkServerRequest *CreateNetworkServerRequest
 }
 
@@ -2345,24 +2348,25 @@ CreateNetworkServer Create a Network Server
 
 This endpoint allows creating a Network Server. Only certain types of integrations support creating and deleting network servers, such as VMware. Configuration options vary by type. Note that creating a server will automatically create and associate the corresponding network integration object, but management is done via the network server object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateNetworkServerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCreateNetworkServerRequest
 */
 func (a *NetworksAPIService) CreateNetworkServer(ctx context.Context) ApiCreateNetworkServerRequest {
 	return ApiCreateNetworkServerRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return CreateNetworkServer200Response
+//
+//	@return CreateNetworkServer200Response
 func (a *NetworksAPIService) CreateNetworkServerExecute(r ApiCreateNetworkServerRequest) (*CreateNetworkServer200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CreateNetworkServer200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CreateNetworkServer200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.CreateNetworkServer")
@@ -2414,7 +2418,7 @@ func (a *NetworksAPIService) CreateNetworkServerExecute(r ApiCreateNetworkServer
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2423,8 +2427,8 @@ func (a *NetworksAPIService) CreateNetworkServerExecute(r ApiCreateNetworkServer
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2434,8 +2438,8 @@ func (a *NetworksAPIService) CreateNetworkServerExecute(r ApiCreateNetworkServer
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2443,8 +2447,8 @@ func (a *NetworksAPIService) CreateNetworkServerExecute(r ApiCreateNetworkServer
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2453,9 +2457,9 @@ func (a *NetworksAPIService) CreateNetworkServerExecute(r ApiCreateNetworkServer
 }
 
 type ApiCreateNetworkServerGroupRequest struct {
-	ctx context.Context
-	ApiService *NetworksAPIService
-	serverId float32
+	ctx                             context.Context
+	ApiService                      *NetworksAPIService
+	serverId                        float32
 	createNetworkServerGroupRequest *CreateNetworkServerGroupRequest
 }
 
@@ -2474,27 +2478,27 @@ CreateNetworkServerGroup Create a Network Server Group
 Use this command to create a network server group.
 Note: Only available for NSX-T network integrations.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serverId Server ID
- @return ApiCreateNetworkServerGroupRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param serverId Server ID
+	@return ApiCreateNetworkServerGroupRequest
 */
 func (a *NetworksAPIService) CreateNetworkServerGroup(ctx context.Context, serverId float32) ApiCreateNetworkServerGroupRequest {
 	return ApiCreateNetworkServerGroupRequest{
 		ApiService: a,
-		ctx: ctx,
-		serverId: serverId,
+		ctx:        ctx,
+		serverId:   serverId,
 	}
 }
 
 // Execute executes the request
-//  @return AddClusterLayouts200Response
+//
+//	@return AddClusterLayouts200Response
 func (a *NetworksAPIService) CreateNetworkServerGroupExecute(r ApiCreateNetworkServerGroupRequest) (*AddClusterLayouts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddClusterLayouts200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddClusterLayouts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.CreateNetworkServerGroup")
@@ -2547,7 +2551,7 @@ func (a *NetworksAPIService) CreateNetworkServerGroupExecute(r ApiCreateNetworkS
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2556,8 +2560,8 @@ func (a *NetworksAPIService) CreateNetworkServerGroupExecute(r ApiCreateNetworkS
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2567,8 +2571,8 @@ func (a *NetworksAPIService) CreateNetworkServerGroupExecute(r ApiCreateNetworkS
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2576,8 +2580,8 @@ func (a *NetworksAPIService) CreateNetworkServerGroupExecute(r ApiCreateNetworkS
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2586,9 +2590,9 @@ func (a *NetworksAPIService) CreateNetworkServerGroupExecute(r ApiCreateNetworkS
 }
 
 type ApiCreateNetworkTransportZoneRequest struct {
-	ctx context.Context
-	ApiService *NetworksAPIService
-	serverId float32
+	ctx                               context.Context
+	ApiService                        *NetworksAPIService
+	serverId                          float32
 	createNetworkTransportZoneRequest *CreateNetworkTransportZoneRequest
 }
 
@@ -2606,26 +2610,27 @@ CreateNetworkTransportZone Create a Network Transport Zone
 
 Use this command to create a network transport zone.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serverId Server ID
- @return ApiCreateNetworkTransportZoneRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param serverId Server ID
+	@return ApiCreateNetworkTransportZoneRequest
 */
 func (a *NetworksAPIService) CreateNetworkTransportZone(ctx context.Context, serverId float32) ApiCreateNetworkTransportZoneRequest {
 	return ApiCreateNetworkTransportZoneRequest{
 		ApiService: a,
-		ctx: ctx,
-		serverId: serverId,
+		ctx:        ctx,
+		serverId:   serverId,
 	}
 }
 
 // Execute executes the request
-//  @return AddClusterLayouts200Response
+//
+//	@return AddClusterLayouts200Response
 func (a *NetworksAPIService) CreateNetworkTransportZoneExecute(r ApiCreateNetworkTransportZoneRequest) (*AddClusterLayouts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddClusterLayouts200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddClusterLayouts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.CreateNetworkTransportZone")
@@ -2678,7 +2683,7 @@ func (a *NetworksAPIService) CreateNetworkTransportZoneExecute(r ApiCreateNetwor
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2687,8 +2692,8 @@ func (a *NetworksAPIService) CreateNetworkTransportZoneExecute(r ApiCreateNetwor
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2698,8 +2703,8 @@ func (a *NetworksAPIService) CreateNetworkTransportZoneExecute(r ApiCreateNetwor
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2707,8 +2712,8 @@ func (a *NetworksAPIService) CreateNetworkTransportZoneExecute(r ApiCreateNetwor
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2717,8 +2722,8 @@ func (a *NetworksAPIService) CreateNetworkTransportZoneExecute(r ApiCreateNetwor
 }
 
 type ApiCreateNetworksRequest struct {
-	ctx context.Context
-	ApiService *NetworksAPIService
+	ctx                   context.Context
+	ApiService            *NetworksAPIService
 	createNetworksRequest *CreateNetworksRequest
 }
 
@@ -2736,24 +2741,25 @@ CreateNetworks Create a Network
 
 This endpoint allows creating a Network. Only certain types of clouds support creating and deleting networks. Configuration options vary by Network Types.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateNetworksRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCreateNetworksRequest
 */
 func (a *NetworksAPIService) CreateNetworks(ctx context.Context) ApiCreateNetworksRequest {
 	return ApiCreateNetworksRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return CreateNetworks200Response
+//
+//	@return CreateNetworks200Response
 func (a *NetworksAPIService) CreateNetworksExecute(r ApiCreateNetworksRequest) (*CreateNetworks200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CreateNetworks200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CreateNetworks200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.CreateNetworks")
@@ -2805,7 +2811,7 @@ func (a *NetworksAPIService) CreateNetworksExecute(r ApiCreateNetworksRequest) (
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2814,8 +2820,8 @@ func (a *NetworksAPIService) CreateNetworksExecute(r ApiCreateNetworksRequest) (
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2825,8 +2831,8 @@ func (a *NetworksAPIService) CreateNetworksExecute(r ApiCreateNetworksRequest) (
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2834,8 +2840,8 @@ func (a *NetworksAPIService) CreateNetworksExecute(r ApiCreateNetworksRequest) (
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2844,9 +2850,9 @@ func (a *NetworksAPIService) CreateNetworksExecute(r ApiCreateNetworksRequest) (
 }
 
 type ApiCreateStaticRouteRequest struct {
-	ctx context.Context
-	ApiService *NetworksAPIService
-	id int64
+	ctx                      context.Context
+	ApiService               *NetworksAPIService
+	id                       int64
 	createStaticRouteRequest *CreateStaticRouteRequest
 }
 
@@ -2864,27 +2870,27 @@ CreateStaticRoute Create a Network Static Route
 
 Use this command to create a route for an existing network.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiCreateStaticRouteRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiCreateStaticRouteRequest
 */
 func (a *NetworksAPIService) CreateStaticRoute(ctx context.Context, id int64) ApiCreateStaticRouteRequest {
 	return ApiCreateStaticRouteRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return AddClusterLayouts200Response
+//
+//	@return AddClusterLayouts200Response
 func (a *NetworksAPIService) CreateStaticRouteExecute(r ApiCreateStaticRouteRequest) (*AddClusterLayouts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddClusterLayouts200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddClusterLayouts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.CreateStaticRoute")
@@ -2937,7 +2943,7 @@ func (a *NetworksAPIService) CreateStaticRouteExecute(r ApiCreateStaticRouteRequ
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2946,8 +2952,8 @@ func (a *NetworksAPIService) CreateStaticRouteExecute(r ApiCreateStaticRouteRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2957,8 +2963,8 @@ func (a *NetworksAPIService) CreateStaticRouteExecute(r ApiCreateStaticRouteRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2966,8 +2972,8 @@ func (a *NetworksAPIService) CreateStaticRouteExecute(r ApiCreateStaticRouteRequ
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2976,8 +2982,8 @@ func (a *NetworksAPIService) CreateStaticRouteExecute(r ApiCreateStaticRouteRequ
 }
 
 type ApiCreateSubnetRequest struct {
-	ctx context.Context
-	ApiService *NetworksAPIService
+	ctx                 context.Context
+	ApiService          *NetworksAPIService
 	createSubnetRequest *CreateSubnetRequest
 }
 
@@ -2995,24 +3001,25 @@ CreateSubnet Create a Subnet
 
 This endpoint allows creating a Subnet. Only certain types of clouds support creating and deleting subnets. Configuration options vary for each Subnet Type.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateSubnetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCreateSubnetRequest
 */
 func (a *NetworksAPIService) CreateSubnet(ctx context.Context) ApiCreateSubnetRequest {
 	return ApiCreateSubnetRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return CreateSubnet200Response
+//
+//	@return CreateSubnet200Response
 func (a *NetworksAPIService) CreateSubnetExecute(r ApiCreateSubnetRequest) (*CreateSubnet200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CreateSubnet200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CreateSubnet200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.CreateSubnet")
@@ -3064,7 +3071,7 @@ func (a *NetworksAPIService) CreateSubnetExecute(r ApiCreateSubnetRequest) (*Cre
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -3073,8 +3080,8 @@ func (a *NetworksAPIService) CreateSubnetExecute(r ApiCreateSubnetRequest) (*Cre
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -3084,8 +3091,8 @@ func (a *NetworksAPIService) CreateSubnetExecute(r ApiCreateSubnetRequest) (*Cre
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3093,8 +3100,8 @@ func (a *NetworksAPIService) CreateSubnetExecute(r ApiCreateSubnetRequest) (*Cre
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3103,9 +3110,9 @@ func (a *NetworksAPIService) CreateSubnetExecute(r ApiCreateSubnetRequest) (*Cre
 }
 
 type ApiDeleteNetworkRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NetworksAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiDeleteNetworkRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -3117,26 +3124,27 @@ DeleteNetwork Delete a Network
 
 Will delete a Network from the system and make it no longer usable.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiDeleteNetworkRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiDeleteNetworkRequest
 */
 func (a *NetworksAPIService) DeleteNetwork(ctx context.Context, id int64) ApiDeleteNetworkRequest {
 	return ApiDeleteNetworkRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *NetworksAPIService) DeleteNetworkExecute(r ApiDeleteNetworkRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.DeleteNetwork")
@@ -3187,7 +3195,7 @@ func (a *NetworksAPIService) DeleteNetworkExecute(r ApiDeleteNetworkRequest) (*D
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -3196,8 +3204,8 @@ func (a *NetworksAPIService) DeleteNetworkExecute(r ApiDeleteNetworkRequest) (*D
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -3207,8 +3215,8 @@ func (a *NetworksAPIService) DeleteNetworkExecute(r ApiDeleteNetworkRequest) (*D
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3216,8 +3224,8 @@ func (a *NetworksAPIService) DeleteNetworkExecute(r ApiDeleteNetworkRequest) (*D
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3226,10 +3234,10 @@ func (a *NetworksAPIService) DeleteNetworkExecute(r ApiDeleteNetworkRequest) (*D
 }
 
 type ApiDeleteNetworkDhcpRelayRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NetworksAPIService
-	id int64
-	serverId float32
+	id         int64
+	serverId   float32
 }
 
 func (r ApiDeleteNetworkDhcpRelayRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -3241,28 +3249,29 @@ DeleteNetworkDhcpRelay Delete a Network DHCP Relay
 
 Will delete a Network DHCP Relay from the system and make it no longer usable.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @param serverId Server ID
- @return ApiDeleteNetworkDhcpRelayRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@param serverId Server ID
+	@return ApiDeleteNetworkDhcpRelayRequest
 */
 func (a *NetworksAPIService) DeleteNetworkDhcpRelay(ctx context.Context, id int64, serverId float32) ApiDeleteNetworkDhcpRelayRequest {
 	return ApiDeleteNetworkDhcpRelayRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
-		serverId: serverId,
+		ctx:        ctx,
+		id:         id,
+		serverId:   serverId,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *NetworksAPIService) DeleteNetworkDhcpRelayExecute(r ApiDeleteNetworkDhcpRelayRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.DeleteNetworkDhcpRelay")
@@ -3314,7 +3323,7 @@ func (a *NetworksAPIService) DeleteNetworkDhcpRelayExecute(r ApiDeleteNetworkDhc
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -3323,8 +3332,8 @@ func (a *NetworksAPIService) DeleteNetworkDhcpRelayExecute(r ApiDeleteNetworkDhc
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -3334,8 +3343,8 @@ func (a *NetworksAPIService) DeleteNetworkDhcpRelayExecute(r ApiDeleteNetworkDhc
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3343,8 +3352,8 @@ func (a *NetworksAPIService) DeleteNetworkDhcpRelayExecute(r ApiDeleteNetworkDhc
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3353,10 +3362,10 @@ func (a *NetworksAPIService) DeleteNetworkDhcpRelayExecute(r ApiDeleteNetworkDhc
 }
 
 type ApiDeleteNetworkDhcpServerRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NetworksAPIService
-	id int64
-	serverId float32
+	id         int64
+	serverId   float32
 }
 
 func (r ApiDeleteNetworkDhcpServerRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -3368,28 +3377,29 @@ DeleteNetworkDhcpServer Delete a Network DHCP Server
 
 Will delete a Network DHCP Server from the system and make it no longer usable.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @param serverId Server ID
- @return ApiDeleteNetworkDhcpServerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@param serverId Server ID
+	@return ApiDeleteNetworkDhcpServerRequest
 */
 func (a *NetworksAPIService) DeleteNetworkDhcpServer(ctx context.Context, id int64, serverId float32) ApiDeleteNetworkDhcpServerRequest {
 	return ApiDeleteNetworkDhcpServerRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
-		serverId: serverId,
+		ctx:        ctx,
+		id:         id,
+		serverId:   serverId,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *NetworksAPIService) DeleteNetworkDhcpServerExecute(r ApiDeleteNetworkDhcpServerRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.DeleteNetworkDhcpServer")
@@ -3441,7 +3451,7 @@ func (a *NetworksAPIService) DeleteNetworkDhcpServerExecute(r ApiDeleteNetworkDh
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -3450,8 +3460,8 @@ func (a *NetworksAPIService) DeleteNetworkDhcpServerExecute(r ApiDeleteNetworkDh
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -3461,8 +3471,8 @@ func (a *NetworksAPIService) DeleteNetworkDhcpServerExecute(r ApiDeleteNetworkDh
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3470,8 +3480,8 @@ func (a *NetworksAPIService) DeleteNetworkDhcpServerExecute(r ApiDeleteNetworkDh
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3480,9 +3490,9 @@ func (a *NetworksAPIService) DeleteNetworkDhcpServerExecute(r ApiDeleteNetworkDh
 }
 
 type ApiDeleteNetworkDomainRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NetworksAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiDeleteNetworkDomainRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -3494,26 +3504,27 @@ DeleteNetworkDomain Delete a Network Domain
 
 Will delete a Network Domain from the system and make it no longer usable.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiDeleteNetworkDomainRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiDeleteNetworkDomainRequest
 */
 func (a *NetworksAPIService) DeleteNetworkDomain(ctx context.Context, id int64) ApiDeleteNetworkDomainRequest {
 	return ApiDeleteNetworkDomainRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *NetworksAPIService) DeleteNetworkDomainExecute(r ApiDeleteNetworkDomainRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.DeleteNetworkDomain")
@@ -3564,7 +3575,7 @@ func (a *NetworksAPIService) DeleteNetworkDomainExecute(r ApiDeleteNetworkDomain
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -3573,8 +3584,8 @@ func (a *NetworksAPIService) DeleteNetworkDomainExecute(r ApiDeleteNetworkDomain
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -3584,8 +3595,8 @@ func (a *NetworksAPIService) DeleteNetworkDomainExecute(r ApiDeleteNetworkDomain
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3593,8 +3604,8 @@ func (a *NetworksAPIService) DeleteNetworkDomainExecute(r ApiDeleteNetworkDomain
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3603,10 +3614,10 @@ func (a *NetworksAPIService) DeleteNetworkDomainExecute(r ApiDeleteNetworkDomain
 }
 
 type ApiDeleteNetworkFirewallRuleRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NetworksAPIService
-	id int64
-	serverId float32
+	id         int64
+	serverId   float32
 }
 
 func (r ApiDeleteNetworkFirewallRuleRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -3618,28 +3629,29 @@ DeleteNetworkFirewallRule Delete a Network Firewall Rule
 
 Will delete a Network Firewall Rule from the system and make it no longer usable.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @param serverId Server ID
- @return ApiDeleteNetworkFirewallRuleRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@param serverId Server ID
+	@return ApiDeleteNetworkFirewallRuleRequest
 */
 func (a *NetworksAPIService) DeleteNetworkFirewallRule(ctx context.Context, id int64, serverId float32) ApiDeleteNetworkFirewallRuleRequest {
 	return ApiDeleteNetworkFirewallRuleRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
-		serverId: serverId,
+		ctx:        ctx,
+		id:         id,
+		serverId:   serverId,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *NetworksAPIService) DeleteNetworkFirewallRuleExecute(r ApiDeleteNetworkFirewallRuleRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.DeleteNetworkFirewallRule")
@@ -3691,7 +3703,7 @@ func (a *NetworksAPIService) DeleteNetworkFirewallRuleExecute(r ApiDeleteNetwork
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -3700,8 +3712,8 @@ func (a *NetworksAPIService) DeleteNetworkFirewallRuleExecute(r ApiDeleteNetwork
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -3711,8 +3723,8 @@ func (a *NetworksAPIService) DeleteNetworkFirewallRuleExecute(r ApiDeleteNetwork
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3720,8 +3732,8 @@ func (a *NetworksAPIService) DeleteNetworkFirewallRuleExecute(r ApiDeleteNetwork
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3730,10 +3742,10 @@ func (a *NetworksAPIService) DeleteNetworkFirewallRuleExecute(r ApiDeleteNetwork
 }
 
 type ApiDeleteNetworkFirewallRuleGroupRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NetworksAPIService
-	id int64
-	serverId float32
+	id         int64
+	serverId   float32
 }
 
 func (r ApiDeleteNetworkFirewallRuleGroupRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -3745,28 +3757,29 @@ DeleteNetworkFirewallRuleGroup Delete a Network firewall rule group
 
 Will delete a network firewall rule group.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @param serverId Server ID
- @return ApiDeleteNetworkFirewallRuleGroupRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@param serverId Server ID
+	@return ApiDeleteNetworkFirewallRuleGroupRequest
 */
 func (a *NetworksAPIService) DeleteNetworkFirewallRuleGroup(ctx context.Context, id int64, serverId float32) ApiDeleteNetworkFirewallRuleGroupRequest {
 	return ApiDeleteNetworkFirewallRuleGroupRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
-		serverId: serverId,
+		ctx:        ctx,
+		id:         id,
+		serverId:   serverId,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *NetworksAPIService) DeleteNetworkFirewallRuleGroupExecute(r ApiDeleteNetworkFirewallRuleGroupRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.DeleteNetworkFirewallRuleGroup")
@@ -3818,7 +3831,7 @@ func (a *NetworksAPIService) DeleteNetworkFirewallRuleGroupExecute(r ApiDeleteNe
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -3827,8 +3840,8 @@ func (a *NetworksAPIService) DeleteNetworkFirewallRuleGroupExecute(r ApiDeleteNe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -3838,8 +3851,8 @@ func (a *NetworksAPIService) DeleteNetworkFirewallRuleGroupExecute(r ApiDeleteNe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3847,8 +3860,8 @@ func (a *NetworksAPIService) DeleteNetworkFirewallRuleGroupExecute(r ApiDeleteNe
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3857,9 +3870,9 @@ func (a *NetworksAPIService) DeleteNetworkFirewallRuleGroupExecute(r ApiDeleteNe
 }
 
 type ApiDeleteNetworkGroupRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NetworksAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiDeleteNetworkGroupRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -3871,26 +3884,27 @@ DeleteNetworkGroup Delete a Network Group
 
 Will delete a Network Group from the system and make it no longer usable.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiDeleteNetworkGroupRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiDeleteNetworkGroupRequest
 */
 func (a *NetworksAPIService) DeleteNetworkGroup(ctx context.Context, id int64) ApiDeleteNetworkGroupRequest {
 	return ApiDeleteNetworkGroupRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *NetworksAPIService) DeleteNetworkGroupExecute(r ApiDeleteNetworkGroupRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.DeleteNetworkGroup")
@@ -3941,7 +3955,7 @@ func (a *NetworksAPIService) DeleteNetworkGroupExecute(r ApiDeleteNetworkGroupRe
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -3950,8 +3964,8 @@ func (a *NetworksAPIService) DeleteNetworkGroupExecute(r ApiDeleteNetworkGroupRe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -3961,8 +3975,8 @@ func (a *NetworksAPIService) DeleteNetworkGroupExecute(r ApiDeleteNetworkGroupRe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3970,8 +3984,8 @@ func (a *NetworksAPIService) DeleteNetworkGroupExecute(r ApiDeleteNetworkGroupRe
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3980,9 +3994,9 @@ func (a *NetworksAPIService) DeleteNetworkGroupExecute(r ApiDeleteNetworkGroupRe
 }
 
 type ApiDeleteNetworkPoolRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NetworksAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiDeleteNetworkPoolRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -3994,26 +4008,27 @@ DeleteNetworkPool Delete a Network Pool
 
 Will delete a Network Pool from the system and make it no longer usable.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiDeleteNetworkPoolRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiDeleteNetworkPoolRequest
 */
 func (a *NetworksAPIService) DeleteNetworkPool(ctx context.Context, id int64) ApiDeleteNetworkPoolRequest {
 	return ApiDeleteNetworkPoolRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *NetworksAPIService) DeleteNetworkPoolExecute(r ApiDeleteNetworkPoolRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.DeleteNetworkPool")
@@ -4064,7 +4079,7 @@ func (a *NetworksAPIService) DeleteNetworkPoolExecute(r ApiDeleteNetworkPoolRequ
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -4073,8 +4088,8 @@ func (a *NetworksAPIService) DeleteNetworkPoolExecute(r ApiDeleteNetworkPoolRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -4084,8 +4099,8 @@ func (a *NetworksAPIService) DeleteNetworkPoolExecute(r ApiDeleteNetworkPoolRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -4093,8 +4108,8 @@ func (a *NetworksAPIService) DeleteNetworkPoolExecute(r ApiDeleteNetworkPoolRequ
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -4103,10 +4118,10 @@ func (a *NetworksAPIService) DeleteNetworkPoolExecute(r ApiDeleteNetworkPoolRequ
 }
 
 type ApiDeleteNetworkPoolIpRequest struct {
-	ctx context.Context
-	ApiService *NetworksAPIService
+	ctx           context.Context
+	ApiService    *NetworksAPIService
 	networkPoolId int64
-	id int64
+	id            int64
 }
 
 func (r ApiDeleteNetworkPoolIpRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -4118,28 +4133,29 @@ DeleteNetworkPoolIp Delete a host record associated with an IP Address for a Spe
 
 Will delete a host record associated with an IP address for a specific network pool and free up the address
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param networkPoolId Morpheus Network Pool ID of the Object being referenced
- @param id Morpheus ID of the Object being referenced
- @return ApiDeleteNetworkPoolIpRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param networkPoolId Morpheus Network Pool ID of the Object being referenced
+	@param id Morpheus ID of the Object being referenced
+	@return ApiDeleteNetworkPoolIpRequest
 */
 func (a *NetworksAPIService) DeleteNetworkPoolIp(ctx context.Context, networkPoolId int64, id int64) ApiDeleteNetworkPoolIpRequest {
 	return ApiDeleteNetworkPoolIpRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:    a,
+		ctx:           ctx,
 		networkPoolId: networkPoolId,
-		id: id,
+		id:            id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *NetworksAPIService) DeleteNetworkPoolIpExecute(r ApiDeleteNetworkPoolIpRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.DeleteNetworkPoolIp")
@@ -4191,7 +4207,7 @@ func (a *NetworksAPIService) DeleteNetworkPoolIpExecute(r ApiDeleteNetworkPoolIp
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
 			var v GetNetworkPoolIps400Response
@@ -4200,8 +4216,8 @@ func (a *NetworksAPIService) DeleteNetworkPoolIpExecute(r ApiDeleteNetworkPoolIp
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -4211,8 +4227,8 @@ func (a *NetworksAPIService) DeleteNetworkPoolIpExecute(r ApiDeleteNetworkPoolIp
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -4222,8 +4238,8 @@ func (a *NetworksAPIService) DeleteNetworkPoolIpExecute(r ApiDeleteNetworkPoolIp
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -4233,8 +4249,8 @@ func (a *NetworksAPIService) DeleteNetworkPoolIpExecute(r ApiDeleteNetworkPoolIp
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 405 {
@@ -4244,8 +4260,8 @@ func (a *NetworksAPIService) DeleteNetworkPoolIpExecute(r ApiDeleteNetworkPoolIp
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 406 {
@@ -4255,8 +4271,8 @@ func (a *NetworksAPIService) DeleteNetworkPoolIpExecute(r ApiDeleteNetworkPoolIp
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 410 {
@@ -4266,8 +4282,8 @@ func (a *NetworksAPIService) DeleteNetworkPoolIpExecute(r ApiDeleteNetworkPoolIp
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -4277,8 +4293,8 @@ func (a *NetworksAPIService) DeleteNetworkPoolIpExecute(r ApiDeleteNetworkPoolIp
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -4288,8 +4304,8 @@ func (a *NetworksAPIService) DeleteNetworkPoolIpExecute(r ApiDeleteNetworkPoolIp
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -4299,8 +4315,8 @@ func (a *NetworksAPIService) DeleteNetworkPoolIpExecute(r ApiDeleteNetworkPoolIp
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -4308,8 +4324,8 @@ func (a *NetworksAPIService) DeleteNetworkPoolIpExecute(r ApiDeleteNetworkPoolIp
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -4318,9 +4334,9 @@ func (a *NetworksAPIService) DeleteNetworkPoolIpExecute(r ApiDeleteNetworkPoolIp
 }
 
 type ApiDeleteNetworkPoolServerRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NetworksAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiDeleteNetworkPoolServerRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -4332,26 +4348,27 @@ DeleteNetworkPoolServer Delete a Network Pool Server
 
 Will delete a Network Pool Server from the system and make it no longer usable.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiDeleteNetworkPoolServerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiDeleteNetworkPoolServerRequest
 */
 func (a *NetworksAPIService) DeleteNetworkPoolServer(ctx context.Context, id int64) ApiDeleteNetworkPoolServerRequest {
 	return ApiDeleteNetworkPoolServerRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *NetworksAPIService) DeleteNetworkPoolServerExecute(r ApiDeleteNetworkPoolServerRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.DeleteNetworkPoolServer")
@@ -4402,7 +4419,7 @@ func (a *NetworksAPIService) DeleteNetworkPoolServerExecute(r ApiDeleteNetworkPo
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -4411,8 +4428,8 @@ func (a *NetworksAPIService) DeleteNetworkPoolServerExecute(r ApiDeleteNetworkPo
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -4422,8 +4439,8 @@ func (a *NetworksAPIService) DeleteNetworkPoolServerExecute(r ApiDeleteNetworkPo
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -4431,8 +4448,8 @@ func (a *NetworksAPIService) DeleteNetworkPoolServerExecute(r ApiDeleteNetworkPo
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -4441,9 +4458,9 @@ func (a *NetworksAPIService) DeleteNetworkPoolServerExecute(r ApiDeleteNetworkPo
 }
 
 type ApiDeleteNetworkProxyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NetworksAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiDeleteNetworkProxyRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -4455,26 +4472,27 @@ DeleteNetworkProxy Delete a Network Proxy
 
 Will delete a Network Proxy from the system and make it no longer usable.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiDeleteNetworkProxyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiDeleteNetworkProxyRequest
 */
 func (a *NetworksAPIService) DeleteNetworkProxy(ctx context.Context, id int64) ApiDeleteNetworkProxyRequest {
 	return ApiDeleteNetworkProxyRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *NetworksAPIService) DeleteNetworkProxyExecute(r ApiDeleteNetworkProxyRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.DeleteNetworkProxy")
@@ -4525,7 +4543,7 @@ func (a *NetworksAPIService) DeleteNetworkProxyExecute(r ApiDeleteNetworkProxyRe
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -4534,8 +4552,8 @@ func (a *NetworksAPIService) DeleteNetworkProxyExecute(r ApiDeleteNetworkProxyRe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -4545,8 +4563,8 @@ func (a *NetworksAPIService) DeleteNetworkProxyExecute(r ApiDeleteNetworkProxyRe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -4554,8 +4572,8 @@ func (a *NetworksAPIService) DeleteNetworkProxyExecute(r ApiDeleteNetworkProxyRe
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -4564,9 +4582,9 @@ func (a *NetworksAPIService) DeleteNetworkProxyExecute(r ApiDeleteNetworkProxyRe
 }
 
 type ApiDeleteNetworkRouterRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NetworksAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiDeleteNetworkRouterRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -4578,26 +4596,27 @@ DeleteNetworkRouter Delete a Network Router
 
 Will delete a Network Router from the system and make it no longer usable.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiDeleteNetworkRouterRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiDeleteNetworkRouterRequest
 */
 func (a *NetworksAPIService) DeleteNetworkRouter(ctx context.Context, id int64) ApiDeleteNetworkRouterRequest {
 	return ApiDeleteNetworkRouterRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *NetworksAPIService) DeleteNetworkRouterExecute(r ApiDeleteNetworkRouterRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.DeleteNetworkRouter")
@@ -4648,7 +4667,7 @@ func (a *NetworksAPIService) DeleteNetworkRouterExecute(r ApiDeleteNetworkRouter
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -4657,8 +4676,8 @@ func (a *NetworksAPIService) DeleteNetworkRouterExecute(r ApiDeleteNetworkRouter
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -4668,8 +4687,8 @@ func (a *NetworksAPIService) DeleteNetworkRouterExecute(r ApiDeleteNetworkRouter
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -4677,8 +4696,8 @@ func (a *NetworksAPIService) DeleteNetworkRouterExecute(r ApiDeleteNetworkRouter
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -4687,10 +4706,10 @@ func (a *NetworksAPIService) DeleteNetworkRouterExecute(r ApiDeleteNetworkRouter
 }
 
 type ApiDeleteNetworkRouterBgpNeighborRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NetworksAPIService
-	id int64
-	routerId float32
+	id         int64
+	routerId   float32
 }
 
 func (r ApiDeleteNetworkRouterBgpNeighborRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -4702,28 +4721,29 @@ DeleteNetworkRouterBgpNeighbor Delete a Network Router BGP Neighbor
 
 Will delete a BGP Neighbor from a network router.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @param routerId Router ID
- @return ApiDeleteNetworkRouterBgpNeighborRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@param routerId Router ID
+	@return ApiDeleteNetworkRouterBgpNeighborRequest
 */
 func (a *NetworksAPIService) DeleteNetworkRouterBgpNeighbor(ctx context.Context, id int64, routerId float32) ApiDeleteNetworkRouterBgpNeighborRequest {
 	return ApiDeleteNetworkRouterBgpNeighborRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
-		routerId: routerId,
+		ctx:        ctx,
+		id:         id,
+		routerId:   routerId,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *NetworksAPIService) DeleteNetworkRouterBgpNeighborExecute(r ApiDeleteNetworkRouterBgpNeighborRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.DeleteNetworkRouterBgpNeighbor")
@@ -4775,7 +4795,7 @@ func (a *NetworksAPIService) DeleteNetworkRouterBgpNeighborExecute(r ApiDeleteNe
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -4784,8 +4804,8 @@ func (a *NetworksAPIService) DeleteNetworkRouterBgpNeighborExecute(r ApiDeleteNe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -4795,8 +4815,8 @@ func (a *NetworksAPIService) DeleteNetworkRouterBgpNeighborExecute(r ApiDeleteNe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -4804,8 +4824,8 @@ func (a *NetworksAPIService) DeleteNetworkRouterBgpNeighborExecute(r ApiDeleteNe
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -4814,10 +4834,10 @@ func (a *NetworksAPIService) DeleteNetworkRouterBgpNeighborExecute(r ApiDeleteNe
 }
 
 type ApiDeleteNetworkRouterFirewallRuleRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NetworksAPIService
-	id int64
-	routerId float32
+	id         int64
+	routerId   float32
 }
 
 func (r ApiDeleteNetworkRouterFirewallRuleRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -4829,28 +4849,29 @@ DeleteNetworkRouterFirewallRule Delete a Network Router Firewall Rule
 
 Will delete a firewall rule from a network router.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @param routerId Router ID
- @return ApiDeleteNetworkRouterFirewallRuleRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@param routerId Router ID
+	@return ApiDeleteNetworkRouterFirewallRuleRequest
 */
 func (a *NetworksAPIService) DeleteNetworkRouterFirewallRule(ctx context.Context, id int64, routerId float32) ApiDeleteNetworkRouterFirewallRuleRequest {
 	return ApiDeleteNetworkRouterFirewallRuleRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
-		routerId: routerId,
+		ctx:        ctx,
+		id:         id,
+		routerId:   routerId,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *NetworksAPIService) DeleteNetworkRouterFirewallRuleExecute(r ApiDeleteNetworkRouterFirewallRuleRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.DeleteNetworkRouterFirewallRule")
@@ -4902,7 +4923,7 @@ func (a *NetworksAPIService) DeleteNetworkRouterFirewallRuleExecute(r ApiDeleteN
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -4911,8 +4932,8 @@ func (a *NetworksAPIService) DeleteNetworkRouterFirewallRuleExecute(r ApiDeleteN
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -4922,8 +4943,8 @@ func (a *NetworksAPIService) DeleteNetworkRouterFirewallRuleExecute(r ApiDeleteN
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -4931,8 +4952,8 @@ func (a *NetworksAPIService) DeleteNetworkRouterFirewallRuleExecute(r ApiDeleteN
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -4941,10 +4962,10 @@ func (a *NetworksAPIService) DeleteNetworkRouterFirewallRuleExecute(r ApiDeleteN
 }
 
 type ApiDeleteNetworkRouterFirewallRuleGroupRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NetworksAPIService
-	id int64
-	routerId float32
+	id         int64
+	routerId   float32
 }
 
 func (r ApiDeleteNetworkRouterFirewallRuleGroupRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -4956,28 +4977,29 @@ DeleteNetworkRouterFirewallRuleGroup Delete a Network Router firewall rule group
 
 Will delete a network router firewall rule group.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @param routerId Router ID
- @return ApiDeleteNetworkRouterFirewallRuleGroupRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@param routerId Router ID
+	@return ApiDeleteNetworkRouterFirewallRuleGroupRequest
 */
 func (a *NetworksAPIService) DeleteNetworkRouterFirewallRuleGroup(ctx context.Context, id int64, routerId float32) ApiDeleteNetworkRouterFirewallRuleGroupRequest {
 	return ApiDeleteNetworkRouterFirewallRuleGroupRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
-		routerId: routerId,
+		ctx:        ctx,
+		id:         id,
+		routerId:   routerId,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *NetworksAPIService) DeleteNetworkRouterFirewallRuleGroupExecute(r ApiDeleteNetworkRouterFirewallRuleGroupRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.DeleteNetworkRouterFirewallRuleGroup")
@@ -5029,7 +5051,7 @@ func (a *NetworksAPIService) DeleteNetworkRouterFirewallRuleGroupExecute(r ApiDe
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -5038,8 +5060,8 @@ func (a *NetworksAPIService) DeleteNetworkRouterFirewallRuleGroupExecute(r ApiDe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -5049,8 +5071,8 @@ func (a *NetworksAPIService) DeleteNetworkRouterFirewallRuleGroupExecute(r ApiDe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -5058,8 +5080,8 @@ func (a *NetworksAPIService) DeleteNetworkRouterFirewallRuleGroupExecute(r ApiDe
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -5068,10 +5090,10 @@ func (a *NetworksAPIService) DeleteNetworkRouterFirewallRuleGroupExecute(r ApiDe
 }
 
 type ApiDeleteNetworkRouterNatRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NetworksAPIService
-	id int64
-	routerId float32
+	id         int64
+	routerId   float32
 }
 
 func (r ApiDeleteNetworkRouterNatRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -5083,28 +5105,29 @@ DeleteNetworkRouterNat Delete a Network Router NAT
 
 Will delete a NAT from a network router.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @param routerId Router ID
- @return ApiDeleteNetworkRouterNatRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@param routerId Router ID
+	@return ApiDeleteNetworkRouterNatRequest
 */
 func (a *NetworksAPIService) DeleteNetworkRouterNat(ctx context.Context, id int64, routerId float32) ApiDeleteNetworkRouterNatRequest {
 	return ApiDeleteNetworkRouterNatRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
-		routerId: routerId,
+		ctx:        ctx,
+		id:         id,
+		routerId:   routerId,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *NetworksAPIService) DeleteNetworkRouterNatExecute(r ApiDeleteNetworkRouterNatRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.DeleteNetworkRouterNat")
@@ -5156,7 +5179,7 @@ func (a *NetworksAPIService) DeleteNetworkRouterNatExecute(r ApiDeleteNetworkRou
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -5165,8 +5188,8 @@ func (a *NetworksAPIService) DeleteNetworkRouterNatExecute(r ApiDeleteNetworkRou
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -5176,8 +5199,8 @@ func (a *NetworksAPIService) DeleteNetworkRouterNatExecute(r ApiDeleteNetworkRou
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -5185,8 +5208,8 @@ func (a *NetworksAPIService) DeleteNetworkRouterNatExecute(r ApiDeleteNetworkRou
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -5195,10 +5218,10 @@ func (a *NetworksAPIService) DeleteNetworkRouterNatExecute(r ApiDeleteNetworkRou
 }
 
 type ApiDeleteNetworkRouterRouteRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NetworksAPIService
-	id int64
-	routerId float32
+	id         int64
+	routerId   float32
 }
 
 func (r ApiDeleteNetworkRouterRouteRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -5210,28 +5233,29 @@ DeleteNetworkRouterRoute Delete a Network Router Route
 
 Will delete a Route from a network router.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @param routerId Router ID
- @return ApiDeleteNetworkRouterRouteRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@param routerId Router ID
+	@return ApiDeleteNetworkRouterRouteRequest
 */
 func (a *NetworksAPIService) DeleteNetworkRouterRoute(ctx context.Context, id int64, routerId float32) ApiDeleteNetworkRouterRouteRequest {
 	return ApiDeleteNetworkRouterRouteRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
-		routerId: routerId,
+		ctx:        ctx,
+		id:         id,
+		routerId:   routerId,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *NetworksAPIService) DeleteNetworkRouterRouteExecute(r ApiDeleteNetworkRouterRouteRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.DeleteNetworkRouterRoute")
@@ -5283,7 +5307,7 @@ func (a *NetworksAPIService) DeleteNetworkRouterRouteExecute(r ApiDeleteNetworkR
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -5292,8 +5316,8 @@ func (a *NetworksAPIService) DeleteNetworkRouterRouteExecute(r ApiDeleteNetworkR
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -5303,8 +5327,8 @@ func (a *NetworksAPIService) DeleteNetworkRouterRouteExecute(r ApiDeleteNetworkR
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -5312,8 +5336,8 @@ func (a *NetworksAPIService) DeleteNetworkRouterRouteExecute(r ApiDeleteNetworkR
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -5322,9 +5346,9 @@ func (a *NetworksAPIService) DeleteNetworkRouterRouteExecute(r ApiDeleteNetworkR
 }
 
 type ApiDeleteNetworkServerRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NetworksAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiDeleteNetworkServerRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -5336,26 +5360,27 @@ DeleteNetworkServer Delete a Network Server
 
 Will delete a Network Server from the system and make it no longer usable.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiDeleteNetworkServerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiDeleteNetworkServerRequest
 */
 func (a *NetworksAPIService) DeleteNetworkServer(ctx context.Context, id int64) ApiDeleteNetworkServerRequest {
 	return ApiDeleteNetworkServerRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *NetworksAPIService) DeleteNetworkServerExecute(r ApiDeleteNetworkServerRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.DeleteNetworkServer")
@@ -5406,7 +5431,7 @@ func (a *NetworksAPIService) DeleteNetworkServerExecute(r ApiDeleteNetworkServer
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -5415,8 +5440,8 @@ func (a *NetworksAPIService) DeleteNetworkServerExecute(r ApiDeleteNetworkServer
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -5426,8 +5451,8 @@ func (a *NetworksAPIService) DeleteNetworkServerExecute(r ApiDeleteNetworkServer
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -5435,8 +5460,8 @@ func (a *NetworksAPIService) DeleteNetworkServerExecute(r ApiDeleteNetworkServer
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -5445,10 +5470,10 @@ func (a *NetworksAPIService) DeleteNetworkServerExecute(r ApiDeleteNetworkServer
 }
 
 type ApiDeleteNetworkServerGroupRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NetworksAPIService
-	id int64
-	serverId float32
+	id         int64
+	serverId   float32
 }
 
 func (r ApiDeleteNetworkServerGroupRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -5461,29 +5486,29 @@ DeleteNetworkServerGroup Delete a Network Server Group
 Will delete a Network Server Group from the system and make it no longer usable.
 Note: Only available for NSX-T network integrations.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @param serverId Server ID
- @return ApiDeleteNetworkServerGroupRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@param serverId Server ID
+	@return ApiDeleteNetworkServerGroupRequest
 */
 func (a *NetworksAPIService) DeleteNetworkServerGroup(ctx context.Context, id int64, serverId float32) ApiDeleteNetworkServerGroupRequest {
 	return ApiDeleteNetworkServerGroupRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
-		serverId: serverId,
+		ctx:        ctx,
+		id:         id,
+		serverId:   serverId,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *NetworksAPIService) DeleteNetworkServerGroupExecute(r ApiDeleteNetworkServerGroupRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.DeleteNetworkServerGroup")
@@ -5535,7 +5560,7 @@ func (a *NetworksAPIService) DeleteNetworkServerGroupExecute(r ApiDeleteNetworkS
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -5544,8 +5569,8 @@ func (a *NetworksAPIService) DeleteNetworkServerGroupExecute(r ApiDeleteNetworkS
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -5555,8 +5580,8 @@ func (a *NetworksAPIService) DeleteNetworkServerGroupExecute(r ApiDeleteNetworkS
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -5564,8 +5589,8 @@ func (a *NetworksAPIService) DeleteNetworkServerGroupExecute(r ApiDeleteNetworkS
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -5574,10 +5599,10 @@ func (a *NetworksAPIService) DeleteNetworkServerGroupExecute(r ApiDeleteNetworkS
 }
 
 type ApiDeleteNetworkTransportZoneRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NetworksAPIService
-	id int64
-	serverId float32
+	id         int64
+	serverId   float32
 }
 
 func (r ApiDeleteNetworkTransportZoneRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -5589,28 +5614,29 @@ DeleteNetworkTransportZone Delete a Network Transport Zone
 
 Will delete a Network Transport Zone from the system and make it no longer usable.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @param serverId Server ID
- @return ApiDeleteNetworkTransportZoneRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@param serverId Server ID
+	@return ApiDeleteNetworkTransportZoneRequest
 */
 func (a *NetworksAPIService) DeleteNetworkTransportZone(ctx context.Context, id int64, serverId float32) ApiDeleteNetworkTransportZoneRequest {
 	return ApiDeleteNetworkTransportZoneRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
-		serverId: serverId,
+		ctx:        ctx,
+		id:         id,
+		serverId:   serverId,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *NetworksAPIService) DeleteNetworkTransportZoneExecute(r ApiDeleteNetworkTransportZoneRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.DeleteNetworkTransportZone")
@@ -5662,7 +5688,7 @@ func (a *NetworksAPIService) DeleteNetworkTransportZoneExecute(r ApiDeleteNetwor
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -5671,8 +5697,8 @@ func (a *NetworksAPIService) DeleteNetworkTransportZoneExecute(r ApiDeleteNetwor
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -5682,8 +5708,8 @@ func (a *NetworksAPIService) DeleteNetworkTransportZoneExecute(r ApiDeleteNetwor
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -5691,8 +5717,8 @@ func (a *NetworksAPIService) DeleteNetworkTransportZoneExecute(r ApiDeleteNetwor
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -5701,10 +5727,10 @@ func (a *NetworksAPIService) DeleteNetworkTransportZoneExecute(r ApiDeleteNetwor
 }
 
 type ApiDeleteStaticRouteRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NetworksAPIService
-	id int64
-	routeId float32
+	id         int64
+	routeId    float32
 }
 
 func (r ApiDeleteStaticRouteRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -5716,28 +5742,29 @@ DeleteStaticRoute Delete a Network Static Route
 
 Will delete a route from a network.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @param routeId The ID of the route
- @return ApiDeleteStaticRouteRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@param routeId The ID of the route
+	@return ApiDeleteStaticRouteRequest
 */
 func (a *NetworksAPIService) DeleteStaticRoute(ctx context.Context, id int64, routeId float32) ApiDeleteStaticRouteRequest {
 	return ApiDeleteStaticRouteRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
-		routeId: routeId,
+		ctx:        ctx,
+		id:         id,
+		routeId:    routeId,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *NetworksAPIService) DeleteStaticRouteExecute(r ApiDeleteStaticRouteRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.DeleteStaticRoute")
@@ -5789,7 +5816,7 @@ func (a *NetworksAPIService) DeleteStaticRouteExecute(r ApiDeleteStaticRouteRequ
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -5798,8 +5825,8 @@ func (a *NetworksAPIService) DeleteStaticRouteExecute(r ApiDeleteStaticRouteRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -5809,8 +5836,8 @@ func (a *NetworksAPIService) DeleteStaticRouteExecute(r ApiDeleteStaticRouteRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -5818,8 +5845,8 @@ func (a *NetworksAPIService) DeleteStaticRouteExecute(r ApiDeleteStaticRouteRequ
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -5828,9 +5855,9 @@ func (a *NetworksAPIService) DeleteStaticRouteExecute(r ApiDeleteStaticRouteRequ
 }
 
 type ApiDeleteSubnetRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NetworksAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiDeleteSubnetRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -5842,26 +5869,27 @@ DeleteSubnet Delete a Subnet
 
 Will delete a Subnet from the system and make it no longer usable.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiDeleteSubnetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiDeleteSubnetRequest
 */
 func (a *NetworksAPIService) DeleteSubnet(ctx context.Context, id int64) ApiDeleteSubnetRequest {
 	return ApiDeleteSubnetRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *NetworksAPIService) DeleteSubnetExecute(r ApiDeleteSubnetRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.DeleteSubnet")
@@ -5912,7 +5940,7 @@ func (a *NetworksAPIService) DeleteSubnetExecute(r ApiDeleteSubnetRequest) (*Del
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -5921,8 +5949,8 @@ func (a *NetworksAPIService) DeleteSubnetExecute(r ApiDeleteSubnetRequest) (*Del
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -5932,8 +5960,8 @@ func (a *NetworksAPIService) DeleteSubnetExecute(r ApiDeleteSubnetRequest) (*Del
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -5941,8 +5969,8 @@ func (a *NetworksAPIService) DeleteSubnetExecute(r ApiDeleteSubnetRequest) (*Del
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -5951,13 +5979,13 @@ func (a *NetworksAPIService) DeleteSubnetExecute(r ApiDeleteSubnetRequest) (*Del
 }
 
 type ApiGetAllNetworkFloatingIpsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NetworksAPIService
-	phrase *string
-	ipAddress *string
-	ipStatus *string
-	zoneId *int64
-	serverId *int64
+	phrase     *string
+	ipAddress  *string
+	ipStatus   *string
+	zoneId     *int64
+	serverId   *int64
 }
 
 // Search phrase for partial matches on name or description
@@ -5999,25 +6027,25 @@ GetAllNetworkFloatingIps Get All Floating IPs
 
 This endpoint retrieves all network floating IPs associated with the account.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAllNetworkFloatingIpsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetAllNetworkFloatingIpsRequest
 */
 func (a *NetworksAPIService) GetAllNetworkFloatingIps(ctx context.Context) ApiGetAllNetworkFloatingIpsRequest {
 	return ApiGetAllNetworkFloatingIpsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return GetAllNetworkFloatingIps200Response
+//
+//	@return GetAllNetworkFloatingIps200Response
 func (a *NetworksAPIService) GetAllNetworkFloatingIpsExecute(r ApiGetAllNetworkFloatingIpsRequest) (*GetAllNetworkFloatingIps200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetAllNetworkFloatingIps200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetAllNetworkFloatingIps200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetAllNetworkFloatingIps")
@@ -6082,7 +6110,7 @@ func (a *NetworksAPIService) GetAllNetworkFloatingIpsExecute(r ApiGetAllNetworkF
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -6091,8 +6119,8 @@ func (a *NetworksAPIService) GetAllNetworkFloatingIpsExecute(r ApiGetAllNetworkF
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -6102,8 +6130,8 @@ func (a *NetworksAPIService) GetAllNetworkFloatingIpsExecute(r ApiGetAllNetworkF
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -6111,8 +6139,8 @@ func (a *NetworksAPIService) GetAllNetworkFloatingIpsExecute(r ApiGetAllNetworkF
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -6121,9 +6149,9 @@ func (a *NetworksAPIService) GetAllNetworkFloatingIpsExecute(r ApiGetAllNetworkF
 }
 
 type ApiGetNetworkRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NetworksAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetNetworkRequest) Execute() (*GetNetwork200Response, *http.Response, error) {
@@ -6135,27 +6163,27 @@ GetNetwork Get a Specific Network
 
 This endpoint retrieves a specific Network.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetNetworkRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetNetworkRequest
 */
 func (a *NetworksAPIService) GetNetwork(ctx context.Context, id int64) ApiGetNetworkRequest {
 	return ApiGetNetworkRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetNetwork200Response
+//
+//	@return GetNetwork200Response
 func (a *NetworksAPIService) GetNetworkExecute(r ApiGetNetworkRequest) (*GetNetwork200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetNetwork200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetNetwork200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetwork")
@@ -6206,7 +6234,7 @@ func (a *NetworksAPIService) GetNetworkExecute(r ApiGetNetworkRequest) (*GetNetw
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -6215,8 +6243,8 @@ func (a *NetworksAPIService) GetNetworkExecute(r ApiGetNetworkRequest) (*GetNetw
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -6226,8 +6254,8 @@ func (a *NetworksAPIService) GetNetworkExecute(r ApiGetNetworkRequest) (*GetNetw
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -6235,8 +6263,8 @@ func (a *NetworksAPIService) GetNetworkExecute(r ApiGetNetworkRequest) (*GetNetw
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -6245,10 +6273,10 @@ func (a *NetworksAPIService) GetNetworkExecute(r ApiGetNetworkRequest) (*GetNetw
 }
 
 type ApiGetNetworkDhcpRelayRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NetworksAPIService
-	id int64
-	serverId float32
+	id         int64
+	serverId   float32
 }
 
 func (r ApiGetNetworkDhcpRelayRequest) Execute() (*GetNetworkDhcpRelay200Response, *http.Response, error) {
@@ -6260,29 +6288,29 @@ GetNetworkDhcpRelay Get a Specific Network DHCP Relay
 
 This endpoint retrieves a specific Network DHCP Relay.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @param serverId Server ID
- @return ApiGetNetworkDhcpRelayRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@param serverId Server ID
+	@return ApiGetNetworkDhcpRelayRequest
 */
 func (a *NetworksAPIService) GetNetworkDhcpRelay(ctx context.Context, id int64, serverId float32) ApiGetNetworkDhcpRelayRequest {
 	return ApiGetNetworkDhcpRelayRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
-		serverId: serverId,
+		ctx:        ctx,
+		id:         id,
+		serverId:   serverId,
 	}
 }
 
 // Execute executes the request
-//  @return GetNetworkDhcpRelay200Response
+//
+//	@return GetNetworkDhcpRelay200Response
 func (a *NetworksAPIService) GetNetworkDhcpRelayExecute(r ApiGetNetworkDhcpRelayRequest) (*GetNetworkDhcpRelay200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetNetworkDhcpRelay200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetNetworkDhcpRelay200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkDhcpRelay")
@@ -6334,7 +6362,7 @@ func (a *NetworksAPIService) GetNetworkDhcpRelayExecute(r ApiGetNetworkDhcpRelay
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -6343,8 +6371,8 @@ func (a *NetworksAPIService) GetNetworkDhcpRelayExecute(r ApiGetNetworkDhcpRelay
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -6354,8 +6382,8 @@ func (a *NetworksAPIService) GetNetworkDhcpRelayExecute(r ApiGetNetworkDhcpRelay
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -6363,8 +6391,8 @@ func (a *NetworksAPIService) GetNetworkDhcpRelayExecute(r ApiGetNetworkDhcpRelay
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -6373,14 +6401,14 @@ func (a *NetworksAPIService) GetNetworkDhcpRelayExecute(r ApiGetNetworkDhcpRelay
 }
 
 type ApiGetNetworkDhcpRelaysRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NetworksAPIService
-	serverId float32
-	max *int64
-	offset *int64
-	sort *string
-	direction *string
-	phrase *string
+	serverId   float32
+	max        *int64
+	offset     *int64
+	sort       *string
+	direction  *string
+	phrase     *string
 }
 
 // Maximum number of records to return
@@ -6422,27 +6450,27 @@ GetNetworkDhcpRelays Get all Network DHCP Relays for Network Relay
 
 This endpoint retrieves all Network DHCP Relays for a specified Network Service.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serverId Server ID
- @return ApiGetNetworkDhcpRelaysRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param serverId Server ID
+	@return ApiGetNetworkDhcpRelaysRequest
 */
 func (a *NetworksAPIService) GetNetworkDhcpRelays(ctx context.Context, serverId float32) ApiGetNetworkDhcpRelaysRequest {
 	return ApiGetNetworkDhcpRelaysRequest{
 		ApiService: a,
-		ctx: ctx,
-		serverId: serverId,
+		ctx:        ctx,
+		serverId:   serverId,
 	}
 }
 
 // Execute executes the request
-//  @return GetNetworkDhcpRelays200Response
+//
+//	@return GetNetworkDhcpRelays200Response
 func (a *NetworksAPIService) GetNetworkDhcpRelaysExecute(r ApiGetNetworkDhcpRelaysRequest) (*GetNetworkDhcpRelays200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetNetworkDhcpRelays200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetNetworkDhcpRelays200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkDhcpRelays")
@@ -6520,7 +6548,7 @@ func (a *NetworksAPIService) GetNetworkDhcpRelaysExecute(r ApiGetNetworkDhcpRela
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -6529,8 +6557,8 @@ func (a *NetworksAPIService) GetNetworkDhcpRelaysExecute(r ApiGetNetworkDhcpRela
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -6540,8 +6568,8 @@ func (a *NetworksAPIService) GetNetworkDhcpRelaysExecute(r ApiGetNetworkDhcpRela
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -6549,8 +6577,8 @@ func (a *NetworksAPIService) GetNetworkDhcpRelaysExecute(r ApiGetNetworkDhcpRela
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -6559,10 +6587,10 @@ func (a *NetworksAPIService) GetNetworkDhcpRelaysExecute(r ApiGetNetworkDhcpRela
 }
 
 type ApiGetNetworkDhcpServerRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NetworksAPIService
-	id int64
-	serverId float32
+	id         int64
+	serverId   float32
 }
 
 func (r ApiGetNetworkDhcpServerRequest) Execute() (*GetNetworkDhcpServer200Response, *http.Response, error) {
@@ -6574,29 +6602,29 @@ GetNetworkDhcpServer Get a Specific Network DHCP Server
 
 This endpoint retrieves a specific Network DHCP Server.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @param serverId Server ID
- @return ApiGetNetworkDhcpServerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@param serverId Server ID
+	@return ApiGetNetworkDhcpServerRequest
 */
 func (a *NetworksAPIService) GetNetworkDhcpServer(ctx context.Context, id int64, serverId float32) ApiGetNetworkDhcpServerRequest {
 	return ApiGetNetworkDhcpServerRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
-		serverId: serverId,
+		ctx:        ctx,
+		id:         id,
+		serverId:   serverId,
 	}
 }
 
 // Execute executes the request
-//  @return GetNetworkDhcpServer200Response
+//
+//	@return GetNetworkDhcpServer200Response
 func (a *NetworksAPIService) GetNetworkDhcpServerExecute(r ApiGetNetworkDhcpServerRequest) (*GetNetworkDhcpServer200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetNetworkDhcpServer200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetNetworkDhcpServer200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkDhcpServer")
@@ -6648,7 +6676,7 @@ func (a *NetworksAPIService) GetNetworkDhcpServerExecute(r ApiGetNetworkDhcpServ
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -6657,8 +6685,8 @@ func (a *NetworksAPIService) GetNetworkDhcpServerExecute(r ApiGetNetworkDhcpServ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -6668,8 +6696,8 @@ func (a *NetworksAPIService) GetNetworkDhcpServerExecute(r ApiGetNetworkDhcpServ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -6677,8 +6705,8 @@ func (a *NetworksAPIService) GetNetworkDhcpServerExecute(r ApiGetNetworkDhcpServ
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -6687,14 +6715,14 @@ func (a *NetworksAPIService) GetNetworkDhcpServerExecute(r ApiGetNetworkDhcpServ
 }
 
 type ApiGetNetworkDhcpServersRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NetworksAPIService
-	serverId float32
-	max *int64
-	offset *int64
-	sort *string
-	direction *string
-	phrase *string
+	serverId   float32
+	max        *int64
+	offset     *int64
+	sort       *string
+	direction  *string
+	phrase     *string
 }
 
 // Maximum number of records to return
@@ -6736,27 +6764,27 @@ GetNetworkDhcpServers Get all Network DHCP Servers for Network Server
 
 This endpoint retrieves all Network DHCP Servers for a specified Network Service.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serverId Server ID
- @return ApiGetNetworkDhcpServersRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param serverId Server ID
+	@return ApiGetNetworkDhcpServersRequest
 */
 func (a *NetworksAPIService) GetNetworkDhcpServers(ctx context.Context, serverId float32) ApiGetNetworkDhcpServersRequest {
 	return ApiGetNetworkDhcpServersRequest{
 		ApiService: a,
-		ctx: ctx,
-		serverId: serverId,
+		ctx:        ctx,
+		serverId:   serverId,
 	}
 }
 
 // Execute executes the request
-//  @return GetNetworkDhcpServers200Response
+//
+//	@return GetNetworkDhcpServers200Response
 func (a *NetworksAPIService) GetNetworkDhcpServersExecute(r ApiGetNetworkDhcpServersRequest) (*GetNetworkDhcpServers200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetNetworkDhcpServers200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetNetworkDhcpServers200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkDhcpServers")
@@ -6834,7 +6862,7 @@ func (a *NetworksAPIService) GetNetworkDhcpServersExecute(r ApiGetNetworkDhcpSer
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -6843,8 +6871,8 @@ func (a *NetworksAPIService) GetNetworkDhcpServersExecute(r ApiGetNetworkDhcpSer
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -6854,8 +6882,8 @@ func (a *NetworksAPIService) GetNetworkDhcpServersExecute(r ApiGetNetworkDhcpSer
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -6863,8 +6891,8 @@ func (a *NetworksAPIService) GetNetworkDhcpServersExecute(r ApiGetNetworkDhcpSer
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -6873,9 +6901,9 @@ func (a *NetworksAPIService) GetNetworkDhcpServersExecute(r ApiGetNetworkDhcpSer
 }
 
 type ApiGetNetworkDomainRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NetworksAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetNetworkDomainRequest) Execute() (*CreateNetworkDomain200Response, *http.Response, error) {
@@ -6887,27 +6915,27 @@ GetNetworkDomain Get a Specific Network Domain
 
 This endpoint retrieves a specific Network Domain.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetNetworkDomainRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetNetworkDomainRequest
 */
 func (a *NetworksAPIService) GetNetworkDomain(ctx context.Context, id int64) ApiGetNetworkDomainRequest {
 	return ApiGetNetworkDomainRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return CreateNetworkDomain200Response
+//
+//	@return CreateNetworkDomain200Response
 func (a *NetworksAPIService) GetNetworkDomainExecute(r ApiGetNetworkDomainRequest) (*CreateNetworkDomain200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CreateNetworkDomain200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CreateNetworkDomain200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkDomain")
@@ -6958,7 +6986,7 @@ func (a *NetworksAPIService) GetNetworkDomainExecute(r ApiGetNetworkDomainReques
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -6967,8 +6995,8 @@ func (a *NetworksAPIService) GetNetworkDomainExecute(r ApiGetNetworkDomainReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -6978,8 +7006,8 @@ func (a *NetworksAPIService) GetNetworkDomainExecute(r ApiGetNetworkDomainReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -6987,8 +7015,8 @@ func (a *NetworksAPIService) GetNetworkDomainExecute(r ApiGetNetworkDomainReques
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -6997,10 +7025,10 @@ func (a *NetworksAPIService) GetNetworkDomainExecute(r ApiGetNetworkDomainReques
 }
 
 type ApiGetNetworkDomainsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NetworksAPIService
-	name *string
-	phrase *string
+	name       *string
+	phrase     *string
 }
 
 // Filter by name
@@ -7024,25 +7052,25 @@ GetNetworkDomains Get all Network Domains
 
 This endpoint retrieves all Network Domains associated with the account.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetNetworkDomainsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetNetworkDomainsRequest
 */
 func (a *NetworksAPIService) GetNetworkDomains(ctx context.Context) ApiGetNetworkDomainsRequest {
 	return ApiGetNetworkDomainsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return GetNetworkDomains200Response
+//
+//	@return GetNetworkDomains200Response
 func (a *NetworksAPIService) GetNetworkDomainsExecute(r ApiGetNetworkDomainsRequest) (*GetNetworkDomains200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetNetworkDomains200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetNetworkDomains200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkDomains")
@@ -7098,7 +7126,7 @@ func (a *NetworksAPIService) GetNetworkDomainsExecute(r ApiGetNetworkDomainsRequ
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -7107,8 +7135,8 @@ func (a *NetworksAPIService) GetNetworkDomainsExecute(r ApiGetNetworkDomainsRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -7118,8 +7146,8 @@ func (a *NetworksAPIService) GetNetworkDomainsExecute(r ApiGetNetworkDomainsRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -7127,8 +7155,8 @@ func (a *NetworksAPIService) GetNetworkDomainsExecute(r ApiGetNetworkDomainsRequ
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -7137,10 +7165,10 @@ func (a *NetworksAPIService) GetNetworkDomainsExecute(r ApiGetNetworkDomainsRequ
 }
 
 type ApiGetNetworkEdgeClusterRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NetworksAPIService
-	id int64
-	serverId float32
+	id         int64
+	serverId   float32
 }
 
 func (r ApiGetNetworkEdgeClusterRequest) Execute() (*GetNetworkEdgeCluster200Response, *http.Response, error) {
@@ -7152,29 +7180,29 @@ GetNetworkEdgeCluster Get a Specific Network Edge Cluster
 
 This endpoint retrieves a specific network Edge Cluster.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @param serverId Server ID
- @return ApiGetNetworkEdgeClusterRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@param serverId Server ID
+	@return ApiGetNetworkEdgeClusterRequest
 */
 func (a *NetworksAPIService) GetNetworkEdgeCluster(ctx context.Context, id int64, serverId float32) ApiGetNetworkEdgeClusterRequest {
 	return ApiGetNetworkEdgeClusterRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
-		serverId: serverId,
+		ctx:        ctx,
+		id:         id,
+		serverId:   serverId,
 	}
 }
 
 // Execute executes the request
-//  @return GetNetworkEdgeCluster200Response
+//
+//	@return GetNetworkEdgeCluster200Response
 func (a *NetworksAPIService) GetNetworkEdgeClusterExecute(r ApiGetNetworkEdgeClusterRequest) (*GetNetworkEdgeCluster200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetNetworkEdgeCluster200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetNetworkEdgeCluster200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkEdgeCluster")
@@ -7226,7 +7254,7 @@ func (a *NetworksAPIService) GetNetworkEdgeClusterExecute(r ApiGetNetworkEdgeClu
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -7235,8 +7263,8 @@ func (a *NetworksAPIService) GetNetworkEdgeClusterExecute(r ApiGetNetworkEdgeClu
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -7246,8 +7274,8 @@ func (a *NetworksAPIService) GetNetworkEdgeClusterExecute(r ApiGetNetworkEdgeClu
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -7255,8 +7283,8 @@ func (a *NetworksAPIService) GetNetworkEdgeClusterExecute(r ApiGetNetworkEdgeClu
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -7265,14 +7293,14 @@ func (a *NetworksAPIService) GetNetworkEdgeClusterExecute(r ApiGetNetworkEdgeClu
 }
 
 type ApiGetNetworkEdgeClustersRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NetworksAPIService
-	serverId float32
-	max *int64
-	offset *int64
-	sort *string
-	direction *string
-	phrase *string
+	serverId   float32
+	max        *int64
+	offset     *int64
+	sort       *string
+	direction  *string
+	phrase     *string
 }
 
 // Maximum number of records to return
@@ -7314,27 +7342,27 @@ GetNetworkEdgeClusters Get all Network Edge Clusters for Network Server
 
 This endpoint retrieves all Network Edge Clusters for a specified Network Service.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serverId Server ID
- @return ApiGetNetworkEdgeClustersRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param serverId Server ID
+	@return ApiGetNetworkEdgeClustersRequest
 */
 func (a *NetworksAPIService) GetNetworkEdgeClusters(ctx context.Context, serverId float32) ApiGetNetworkEdgeClustersRequest {
 	return ApiGetNetworkEdgeClustersRequest{
 		ApiService: a,
-		ctx: ctx,
-		serverId: serverId,
+		ctx:        ctx,
+		serverId:   serverId,
 	}
 }
 
 // Execute executes the request
-//  @return GetNetworkEdgeClusters200Response
+//
+//	@return GetNetworkEdgeClusters200Response
 func (a *NetworksAPIService) GetNetworkEdgeClustersExecute(r ApiGetNetworkEdgeClustersRequest) (*GetNetworkEdgeClusters200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetNetworkEdgeClusters200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetNetworkEdgeClusters200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkEdgeClusters")
@@ -7412,7 +7440,7 @@ func (a *NetworksAPIService) GetNetworkEdgeClustersExecute(r ApiGetNetworkEdgeCl
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -7421,8 +7449,8 @@ func (a *NetworksAPIService) GetNetworkEdgeClustersExecute(r ApiGetNetworkEdgeCl
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -7432,8 +7460,8 @@ func (a *NetworksAPIService) GetNetworkEdgeClustersExecute(r ApiGetNetworkEdgeCl
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -7441,8 +7469,8 @@ func (a *NetworksAPIService) GetNetworkEdgeClustersExecute(r ApiGetNetworkEdgeCl
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -7451,10 +7479,10 @@ func (a *NetworksAPIService) GetNetworkEdgeClustersExecute(r ApiGetNetworkEdgeCl
 }
 
 type ApiGetNetworkFirewallRuleRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NetworksAPIService
-	id int64
-	serverId float32
+	id         int64
+	serverId   float32
 }
 
 func (r ApiGetNetworkFirewallRuleRequest) Execute() (*GetNetworkFirewallRule200Response, *http.Response, error) {
@@ -7466,29 +7494,29 @@ GetNetworkFirewallRule Get a Specific Network Firewall Rule
 
 This endpoint retrieves a specific Network Firewall Rule.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @param serverId Server ID
- @return ApiGetNetworkFirewallRuleRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@param serverId Server ID
+	@return ApiGetNetworkFirewallRuleRequest
 */
 func (a *NetworksAPIService) GetNetworkFirewallRule(ctx context.Context, id int64, serverId float32) ApiGetNetworkFirewallRuleRequest {
 	return ApiGetNetworkFirewallRuleRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
-		serverId: serverId,
+		ctx:        ctx,
+		id:         id,
+		serverId:   serverId,
 	}
 }
 
 // Execute executes the request
-//  @return GetNetworkFirewallRule200Response
+//
+//	@return GetNetworkFirewallRule200Response
 func (a *NetworksAPIService) GetNetworkFirewallRuleExecute(r ApiGetNetworkFirewallRuleRequest) (*GetNetworkFirewallRule200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetNetworkFirewallRule200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetNetworkFirewallRule200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkFirewallRule")
@@ -7540,7 +7568,7 @@ func (a *NetworksAPIService) GetNetworkFirewallRuleExecute(r ApiGetNetworkFirewa
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -7549,8 +7577,8 @@ func (a *NetworksAPIService) GetNetworkFirewallRuleExecute(r ApiGetNetworkFirewa
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -7560,8 +7588,8 @@ func (a *NetworksAPIService) GetNetworkFirewallRuleExecute(r ApiGetNetworkFirewa
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -7569,8 +7597,8 @@ func (a *NetworksAPIService) GetNetworkFirewallRuleExecute(r ApiGetNetworkFirewa
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -7579,10 +7607,10 @@ func (a *NetworksAPIService) GetNetworkFirewallRuleExecute(r ApiGetNetworkFirewa
 }
 
 type ApiGetNetworkFirewallRuleGroupRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NetworksAPIService
-	id int64
-	serverId float32
+	id         int64
+	serverId   float32
 }
 
 func (r ApiGetNetworkFirewallRuleGroupRequest) Execute() (*GetNetworkFirewallRuleGroup200Response, *http.Response, error) {
@@ -7594,29 +7622,29 @@ GetNetworkFirewallRuleGroup Get a Specific Network Firewall Rule Group
 
 This endpoint retrieves a specific Network Firewall Rule Group.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @param serverId Server ID
- @return ApiGetNetworkFirewallRuleGroupRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@param serverId Server ID
+	@return ApiGetNetworkFirewallRuleGroupRequest
 */
 func (a *NetworksAPIService) GetNetworkFirewallRuleGroup(ctx context.Context, id int64, serverId float32) ApiGetNetworkFirewallRuleGroupRequest {
 	return ApiGetNetworkFirewallRuleGroupRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
-		serverId: serverId,
+		ctx:        ctx,
+		id:         id,
+		serverId:   serverId,
 	}
 }
 
 // Execute executes the request
-//  @return GetNetworkFirewallRuleGroup200Response
+//
+//	@return GetNetworkFirewallRuleGroup200Response
 func (a *NetworksAPIService) GetNetworkFirewallRuleGroupExecute(r ApiGetNetworkFirewallRuleGroupRequest) (*GetNetworkFirewallRuleGroup200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetNetworkFirewallRuleGroup200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetNetworkFirewallRuleGroup200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkFirewallRuleGroup")
@@ -7668,7 +7696,7 @@ func (a *NetworksAPIService) GetNetworkFirewallRuleGroupExecute(r ApiGetNetworkF
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -7677,8 +7705,8 @@ func (a *NetworksAPIService) GetNetworkFirewallRuleGroupExecute(r ApiGetNetworkF
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -7688,8 +7716,8 @@ func (a *NetworksAPIService) GetNetworkFirewallRuleGroupExecute(r ApiGetNetworkF
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -7697,8 +7725,8 @@ func (a *NetworksAPIService) GetNetworkFirewallRuleGroupExecute(r ApiGetNetworkF
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -7707,14 +7735,14 @@ func (a *NetworksAPIService) GetNetworkFirewallRuleGroupExecute(r ApiGetNetworkF
 }
 
 type ApiGetNetworkFirewallRuleGroupsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NetworksAPIService
-	serverId float32
-	max *int64
-	offset *int64
-	sort *string
-	direction *string
-	phrase *string
+	serverId   float32
+	max        *int64
+	offset     *int64
+	sort       *string
+	direction  *string
+	phrase     *string
 }
 
 // Maximum number of records to return
@@ -7756,27 +7784,27 @@ GetNetworkFirewallRuleGroups Get all Network Firewall Rule Groups for Network Se
 
 This endpoint retrieves all Network Firewall Rule Groups for a specified Network Service.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serverId Server ID
- @return ApiGetNetworkFirewallRuleGroupsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param serverId Server ID
+	@return ApiGetNetworkFirewallRuleGroupsRequest
 */
 func (a *NetworksAPIService) GetNetworkFirewallRuleGroups(ctx context.Context, serverId float32) ApiGetNetworkFirewallRuleGroupsRequest {
 	return ApiGetNetworkFirewallRuleGroupsRequest{
 		ApiService: a,
-		ctx: ctx,
-		serverId: serverId,
+		ctx:        ctx,
+		serverId:   serverId,
 	}
 }
 
 // Execute executes the request
-//  @return GetNetworkFirewallRuleGroups200Response
+//
+//	@return GetNetworkFirewallRuleGroups200Response
 func (a *NetworksAPIService) GetNetworkFirewallRuleGroupsExecute(r ApiGetNetworkFirewallRuleGroupsRequest) (*GetNetworkFirewallRuleGroups200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetNetworkFirewallRuleGroups200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetNetworkFirewallRuleGroups200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkFirewallRuleGroups")
@@ -7854,7 +7882,7 @@ func (a *NetworksAPIService) GetNetworkFirewallRuleGroupsExecute(r ApiGetNetwork
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -7863,8 +7891,8 @@ func (a *NetworksAPIService) GetNetworkFirewallRuleGroupsExecute(r ApiGetNetwork
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -7874,8 +7902,8 @@ func (a *NetworksAPIService) GetNetworkFirewallRuleGroupsExecute(r ApiGetNetwork
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -7883,8 +7911,8 @@ func (a *NetworksAPIService) GetNetworkFirewallRuleGroupsExecute(r ApiGetNetwork
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -7893,14 +7921,14 @@ func (a *NetworksAPIService) GetNetworkFirewallRuleGroupsExecute(r ApiGetNetwork
 }
 
 type ApiGetNetworkFirewallRulesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NetworksAPIService
-	serverId float32
-	max *int64
-	offset *int64
-	sort *string
-	direction *string
-	phrase *string
+	serverId   float32
+	max        *int64
+	offset     *int64
+	sort       *string
+	direction  *string
+	phrase     *string
 }
 
 // Maximum number of records to return
@@ -7942,27 +7970,27 @@ GetNetworkFirewallRules Get all Network Firewall Rules for Network Server
 
 This endpoint retrieves all Network Firewall Rules for a specified Network Service.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serverId Server ID
- @return ApiGetNetworkFirewallRulesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param serverId Server ID
+	@return ApiGetNetworkFirewallRulesRequest
 */
 func (a *NetworksAPIService) GetNetworkFirewallRules(ctx context.Context, serverId float32) ApiGetNetworkFirewallRulesRequest {
 	return ApiGetNetworkFirewallRulesRequest{
 		ApiService: a,
-		ctx: ctx,
-		serverId: serverId,
+		ctx:        ctx,
+		serverId:   serverId,
 	}
 }
 
 // Execute executes the request
-//  @return GetNetworkFirewallRules200Response
+//
+//	@return GetNetworkFirewallRules200Response
 func (a *NetworksAPIService) GetNetworkFirewallRulesExecute(r ApiGetNetworkFirewallRulesRequest) (*GetNetworkFirewallRules200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetNetworkFirewallRules200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetNetworkFirewallRules200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkFirewallRules")
@@ -8040,7 +8068,7 @@ func (a *NetworksAPIService) GetNetworkFirewallRulesExecute(r ApiGetNetworkFirew
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -8049,8 +8077,8 @@ func (a *NetworksAPIService) GetNetworkFirewallRulesExecute(r ApiGetNetworkFirew
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -8060,8 +8088,8 @@ func (a *NetworksAPIService) GetNetworkFirewallRulesExecute(r ApiGetNetworkFirew
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -8069,8 +8097,8 @@ func (a *NetworksAPIService) GetNetworkFirewallRulesExecute(r ApiGetNetworkFirew
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -8079,9 +8107,9 @@ func (a *NetworksAPIService) GetNetworkFirewallRulesExecute(r ApiGetNetworkFirew
 }
 
 type ApiGetNetworkFloatingIpRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NetworksAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetNetworkFloatingIpRequest) Execute() (*GetNetworkFloatingIp200Response, *http.Response, error) {
@@ -8093,27 +8121,27 @@ GetNetworkFloatingIp Get a Specific Floating IP
 
 This endpoint retrieves a specific Floating IP.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetNetworkFloatingIpRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetNetworkFloatingIpRequest
 */
 func (a *NetworksAPIService) GetNetworkFloatingIp(ctx context.Context, id int64) ApiGetNetworkFloatingIpRequest {
 	return ApiGetNetworkFloatingIpRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetNetworkFloatingIp200Response
+//
+//	@return GetNetworkFloatingIp200Response
 func (a *NetworksAPIService) GetNetworkFloatingIpExecute(r ApiGetNetworkFloatingIpRequest) (*GetNetworkFloatingIp200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetNetworkFloatingIp200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetNetworkFloatingIp200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkFloatingIp")
@@ -8164,7 +8192,7 @@ func (a *NetworksAPIService) GetNetworkFloatingIpExecute(r ApiGetNetworkFloating
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -8173,8 +8201,8 @@ func (a *NetworksAPIService) GetNetworkFloatingIpExecute(r ApiGetNetworkFloating
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -8184,8 +8212,8 @@ func (a *NetworksAPIService) GetNetworkFloatingIpExecute(r ApiGetNetworkFloating
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -8193,8 +8221,8 @@ func (a *NetworksAPIService) GetNetworkFloatingIpExecute(r ApiGetNetworkFloating
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -8203,9 +8231,9 @@ func (a *NetworksAPIService) GetNetworkFloatingIpExecute(r ApiGetNetworkFloating
 }
 
 type ApiGetNetworkGroupRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NetworksAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetNetworkGroupRequest) Execute() (*GetNetworkGroup200Response, *http.Response, error) {
@@ -8217,27 +8245,27 @@ GetNetworkGroup Get a Specific Network Group
 
 This endpoint retrieves a specific Network Group.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetNetworkGroupRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetNetworkGroupRequest
 */
 func (a *NetworksAPIService) GetNetworkGroup(ctx context.Context, id int64) ApiGetNetworkGroupRequest {
 	return ApiGetNetworkGroupRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetNetworkGroup200Response
+//
+//	@return GetNetworkGroup200Response
 func (a *NetworksAPIService) GetNetworkGroupExecute(r ApiGetNetworkGroupRequest) (*GetNetworkGroup200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetNetworkGroup200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetNetworkGroup200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkGroup")
@@ -8288,7 +8316,7 @@ func (a *NetworksAPIService) GetNetworkGroupExecute(r ApiGetNetworkGroupRequest)
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -8297,8 +8325,8 @@ func (a *NetworksAPIService) GetNetworkGroupExecute(r ApiGetNetworkGroupRequest)
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -8308,8 +8336,8 @@ func (a *NetworksAPIService) GetNetworkGroupExecute(r ApiGetNetworkGroupRequest)
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -8317,8 +8345,8 @@ func (a *NetworksAPIService) GetNetworkGroupExecute(r ApiGetNetworkGroupRequest)
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -8327,7 +8355,7 @@ func (a *NetworksAPIService) GetNetworkGroupExecute(r ApiGetNetworkGroupRequest)
 }
 
 type ApiGetNetworkGroupsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NetworksAPIService
 }
 
@@ -8340,25 +8368,25 @@ GetNetworkGroups Get all Network Groups
 
 This endpoint retrieves all Network Groups associated with the account.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetNetworkGroupsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetNetworkGroupsRequest
 */
 func (a *NetworksAPIService) GetNetworkGroups(ctx context.Context) ApiGetNetworkGroupsRequest {
 	return ApiGetNetworkGroupsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return GetNetworkGroups200Response
+//
+//	@return GetNetworkGroups200Response
 func (a *NetworksAPIService) GetNetworkGroupsExecute(r ApiGetNetworkGroupsRequest) (*GetNetworkGroups200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetNetworkGroups200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetNetworkGroups200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkGroups")
@@ -8408,7 +8436,7 @@ func (a *NetworksAPIService) GetNetworkGroupsExecute(r ApiGetNetworkGroupsReques
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -8417,8 +8445,8 @@ func (a *NetworksAPIService) GetNetworkGroupsExecute(r ApiGetNetworkGroupsReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -8428,8 +8456,8 @@ func (a *NetworksAPIService) GetNetworkGroupsExecute(r ApiGetNetworkGroupsReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -8437,8 +8465,8 @@ func (a *NetworksAPIService) GetNetworkGroupsExecute(r ApiGetNetworkGroupsReques
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -8447,9 +8475,9 @@ func (a *NetworksAPIService) GetNetworkGroupsExecute(r ApiGetNetworkGroupsReques
 }
 
 type ApiGetNetworkPoolRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NetworksAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetNetworkPoolRequest) Execute() (*CreateNetworkPool200Response, *http.Response, error) {
@@ -8461,27 +8489,27 @@ GetNetworkPool Get a Specific Network Pool
 
 This endpoint retrieves a specific Network Pool.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetNetworkPoolRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetNetworkPoolRequest
 */
 func (a *NetworksAPIService) GetNetworkPool(ctx context.Context, id int64) ApiGetNetworkPoolRequest {
 	return ApiGetNetworkPoolRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return CreateNetworkPool200Response
+//
+//	@return CreateNetworkPool200Response
 func (a *NetworksAPIService) GetNetworkPoolExecute(r ApiGetNetworkPoolRequest) (*CreateNetworkPool200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CreateNetworkPool200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CreateNetworkPool200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkPool")
@@ -8532,7 +8560,7 @@ func (a *NetworksAPIService) GetNetworkPoolExecute(r ApiGetNetworkPoolRequest) (
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -8541,8 +8569,8 @@ func (a *NetworksAPIService) GetNetworkPoolExecute(r ApiGetNetworkPoolRequest) (
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -8552,8 +8580,8 @@ func (a *NetworksAPIService) GetNetworkPoolExecute(r ApiGetNetworkPoolRequest) (
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -8561,8 +8589,8 @@ func (a *NetworksAPIService) GetNetworkPoolExecute(r ApiGetNetworkPoolRequest) (
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -8571,10 +8599,10 @@ func (a *NetworksAPIService) GetNetworkPoolExecute(r ApiGetNetworkPoolRequest) (
 }
 
 type ApiGetNetworkPoolIpRequest struct {
-	ctx context.Context
-	ApiService *NetworksAPIService
+	ctx           context.Context
+	ApiService    *NetworksAPIService
 	networkPoolId int64
-	id int64
+	id            int64
 }
 
 func (r ApiGetNetworkPoolIpRequest) Execute() (*GetNetworkPoolIps200Response, *http.Response, error) {
@@ -8586,29 +8614,29 @@ GetNetworkPoolIp Get a Specific IP Address for a Specific Network Pool
 
 This endpoint retrieves a specific IP address for a specific Network Pool.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param networkPoolId Morpheus Network Pool ID of the Object being referenced
- @param id Morpheus ID of the Object being referenced
- @return ApiGetNetworkPoolIpRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param networkPoolId Morpheus Network Pool ID of the Object being referenced
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetNetworkPoolIpRequest
 */
 func (a *NetworksAPIService) GetNetworkPoolIp(ctx context.Context, networkPoolId int64, id int64) ApiGetNetworkPoolIpRequest {
 	return ApiGetNetworkPoolIpRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:    a,
+		ctx:           ctx,
 		networkPoolId: networkPoolId,
-		id: id,
+		id:            id,
 	}
 }
 
 // Execute executes the request
-//  @return GetNetworkPoolIps200Response
+//
+//	@return GetNetworkPoolIps200Response
 func (a *NetworksAPIService) GetNetworkPoolIpExecute(r ApiGetNetworkPoolIpRequest) (*GetNetworkPoolIps200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetNetworkPoolIps200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetNetworkPoolIps200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkPoolIp")
@@ -8660,7 +8688,7 @@ func (a *NetworksAPIService) GetNetworkPoolIpExecute(r ApiGetNetworkPoolIpReques
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
 			var v GetNetworkPoolIps400Response
@@ -8669,8 +8697,8 @@ func (a *NetworksAPIService) GetNetworkPoolIpExecute(r ApiGetNetworkPoolIpReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -8680,8 +8708,8 @@ func (a *NetworksAPIService) GetNetworkPoolIpExecute(r ApiGetNetworkPoolIpReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -8691,8 +8719,8 @@ func (a *NetworksAPIService) GetNetworkPoolIpExecute(r ApiGetNetworkPoolIpReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -8702,8 +8730,8 @@ func (a *NetworksAPIService) GetNetworkPoolIpExecute(r ApiGetNetworkPoolIpReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 405 {
@@ -8713,8 +8741,8 @@ func (a *NetworksAPIService) GetNetworkPoolIpExecute(r ApiGetNetworkPoolIpReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 406 {
@@ -8724,8 +8752,8 @@ func (a *NetworksAPIService) GetNetworkPoolIpExecute(r ApiGetNetworkPoolIpReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 410 {
@@ -8735,8 +8763,8 @@ func (a *NetworksAPIService) GetNetworkPoolIpExecute(r ApiGetNetworkPoolIpReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -8746,8 +8774,8 @@ func (a *NetworksAPIService) GetNetworkPoolIpExecute(r ApiGetNetworkPoolIpReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -8757,8 +8785,8 @@ func (a *NetworksAPIService) GetNetworkPoolIpExecute(r ApiGetNetworkPoolIpReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -8768,8 +8796,8 @@ func (a *NetworksAPIService) GetNetworkPoolIpExecute(r ApiGetNetworkPoolIpReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -8777,8 +8805,8 @@ func (a *NetworksAPIService) GetNetworkPoolIpExecute(r ApiGetNetworkPoolIpReques
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -8787,12 +8815,12 @@ func (a *NetworksAPIService) GetNetworkPoolIpExecute(r ApiGetNetworkPoolIpReques
 }
 
 type ApiGetNetworkPoolIpsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NetworksAPIService
-	id int64
-	phrase *string
-	ipAddress *string
-	hostname *string
+	id         int64
+	phrase     *string
+	ipAddress  *string
+	hostname   *string
 }
 
 // Search phrase for partial matches on ipAddress or hostname
@@ -8822,27 +8850,27 @@ GetNetworkPoolIps Get all IP Addresses for a Specific Network Pool
 
 This endpoint retrieves a list of IP addresses for a specific Network Pool.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetNetworkPoolIpsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetNetworkPoolIpsRequest
 */
 func (a *NetworksAPIService) GetNetworkPoolIps(ctx context.Context, id int64) ApiGetNetworkPoolIpsRequest {
 	return ApiGetNetworkPoolIpsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetNetworkPoolIps200Response
+//
+//	@return GetNetworkPoolIps200Response
 func (a *NetworksAPIService) GetNetworkPoolIpsExecute(r ApiGetNetworkPoolIpsRequest) (*GetNetworkPoolIps200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetNetworkPoolIps200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetNetworkPoolIps200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkPoolIps")
@@ -8902,7 +8930,7 @@ func (a *NetworksAPIService) GetNetworkPoolIpsExecute(r ApiGetNetworkPoolIpsRequ
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
 			var v GetNetworkPoolIps400Response
@@ -8911,8 +8939,8 @@ func (a *NetworksAPIService) GetNetworkPoolIpsExecute(r ApiGetNetworkPoolIpsRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -8922,8 +8950,8 @@ func (a *NetworksAPIService) GetNetworkPoolIpsExecute(r ApiGetNetworkPoolIpsRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -8933,8 +8961,8 @@ func (a *NetworksAPIService) GetNetworkPoolIpsExecute(r ApiGetNetworkPoolIpsRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -8944,8 +8972,8 @@ func (a *NetworksAPIService) GetNetworkPoolIpsExecute(r ApiGetNetworkPoolIpsRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 405 {
@@ -8955,8 +8983,8 @@ func (a *NetworksAPIService) GetNetworkPoolIpsExecute(r ApiGetNetworkPoolIpsRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 406 {
@@ -8966,8 +8994,8 @@ func (a *NetworksAPIService) GetNetworkPoolIpsExecute(r ApiGetNetworkPoolIpsRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 410 {
@@ -8977,8 +9005,8 @@ func (a *NetworksAPIService) GetNetworkPoolIpsExecute(r ApiGetNetworkPoolIpsRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -8988,8 +9016,8 @@ func (a *NetworksAPIService) GetNetworkPoolIpsExecute(r ApiGetNetworkPoolIpsRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -8999,8 +9027,8 @@ func (a *NetworksAPIService) GetNetworkPoolIpsExecute(r ApiGetNetworkPoolIpsRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -9010,8 +9038,8 @@ func (a *NetworksAPIService) GetNetworkPoolIpsExecute(r ApiGetNetworkPoolIpsRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -9019,8 +9047,8 @@ func (a *NetworksAPIService) GetNetworkPoolIpsExecute(r ApiGetNetworkPoolIpsRequ
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -9029,9 +9057,9 @@ func (a *NetworksAPIService) GetNetworkPoolIpsExecute(r ApiGetNetworkPoolIpsRequ
 }
 
 type ApiGetNetworkPoolServerRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NetworksAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetNetworkPoolServerRequest) Execute() (*GetNetworkPoolServer200Response, *http.Response, error) {
@@ -9043,27 +9071,27 @@ GetNetworkPoolServer Get a Specific Network Pool Server
 
 This endpoint retrieves a specific Network Pool Server.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetNetworkPoolServerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetNetworkPoolServerRequest
 */
 func (a *NetworksAPIService) GetNetworkPoolServer(ctx context.Context, id int64) ApiGetNetworkPoolServerRequest {
 	return ApiGetNetworkPoolServerRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetNetworkPoolServer200Response
+//
+//	@return GetNetworkPoolServer200Response
 func (a *NetworksAPIService) GetNetworkPoolServerExecute(r ApiGetNetworkPoolServerRequest) (*GetNetworkPoolServer200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetNetworkPoolServer200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetNetworkPoolServer200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkPoolServer")
@@ -9114,7 +9142,7 @@ func (a *NetworksAPIService) GetNetworkPoolServerExecute(r ApiGetNetworkPoolServ
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -9123,8 +9151,8 @@ func (a *NetworksAPIService) GetNetworkPoolServerExecute(r ApiGetNetworkPoolServ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -9134,8 +9162,8 @@ func (a *NetworksAPIService) GetNetworkPoolServerExecute(r ApiGetNetworkPoolServ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -9143,8 +9171,8 @@ func (a *NetworksAPIService) GetNetworkPoolServerExecute(r ApiGetNetworkPoolServ
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -9153,9 +9181,9 @@ func (a *NetworksAPIService) GetNetworkPoolServerExecute(r ApiGetNetworkPoolServ
 }
 
 type ApiGetNetworkPoolServerTypeRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NetworksAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetNetworkPoolServerTypeRequest) Execute() (*GetNetworkPoolServerType200Response, *http.Response, error) {
@@ -9167,27 +9195,27 @@ GetNetworkPoolServerType Retrieves a Specific Network Pool Server Type
 
 Retrieves a specific Network Pool Server Type.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetNetworkPoolServerTypeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetNetworkPoolServerTypeRequest
 */
 func (a *NetworksAPIService) GetNetworkPoolServerType(ctx context.Context, id int64) ApiGetNetworkPoolServerTypeRequest {
 	return ApiGetNetworkPoolServerTypeRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetNetworkPoolServerType200Response
+//
+//	@return GetNetworkPoolServerType200Response
 func (a *NetworksAPIService) GetNetworkPoolServerTypeExecute(r ApiGetNetworkPoolServerTypeRequest) (*GetNetworkPoolServerType200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetNetworkPoolServerType200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetNetworkPoolServerType200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkPoolServerType")
@@ -9238,7 +9266,7 @@ func (a *NetworksAPIService) GetNetworkPoolServerTypeExecute(r ApiGetNetworkPool
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -9247,8 +9275,8 @@ func (a *NetworksAPIService) GetNetworkPoolServerTypeExecute(r ApiGetNetworkPool
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -9258,8 +9286,8 @@ func (a *NetworksAPIService) GetNetworkPoolServerTypeExecute(r ApiGetNetworkPool
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -9267,8 +9295,8 @@ func (a *NetworksAPIService) GetNetworkPoolServerTypeExecute(r ApiGetNetworkPool
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -9277,10 +9305,10 @@ func (a *NetworksAPIService) GetNetworkPoolServerTypeExecute(r ApiGetNetworkPool
 }
 
 type ApiGetNetworkPoolsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NetworksAPIService
-	name *string
-	phrase *string
+	name       *string
+	phrase     *string
 }
 
 // Filter by name
@@ -9304,25 +9332,25 @@ GetNetworkPools Get all Network Pools
 
 This endpoint retrieves all Network Pools associated with the account.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetNetworkPoolsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetNetworkPoolsRequest
 */
 func (a *NetworksAPIService) GetNetworkPools(ctx context.Context) ApiGetNetworkPoolsRequest {
 	return ApiGetNetworkPoolsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return GetNetworkPools200Response
+//
+//	@return GetNetworkPools200Response
 func (a *NetworksAPIService) GetNetworkPoolsExecute(r ApiGetNetworkPoolsRequest) (*GetNetworkPools200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetNetworkPools200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetNetworkPools200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkPools")
@@ -9378,7 +9406,7 @@ func (a *NetworksAPIService) GetNetworkPoolsExecute(r ApiGetNetworkPoolsRequest)
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -9387,8 +9415,8 @@ func (a *NetworksAPIService) GetNetworkPoolsExecute(r ApiGetNetworkPoolsRequest)
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -9398,8 +9426,8 @@ func (a *NetworksAPIService) GetNetworkPoolsExecute(r ApiGetNetworkPoolsRequest)
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -9407,8 +9435,8 @@ func (a *NetworksAPIService) GetNetworkPoolsExecute(r ApiGetNetworkPoolsRequest)
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -9417,10 +9445,10 @@ func (a *NetworksAPIService) GetNetworkPoolsExecute(r ApiGetNetworkPoolsRequest)
 }
 
 type ApiGetNetworkProxiesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NetworksAPIService
-	name *string
-	phrase *string
+	name       *string
+	phrase     *string
 }
 
 // Filter by name
@@ -9444,25 +9472,25 @@ GetNetworkProxies Get all Network Proxies
 
 This endpoint retrieves all Network Proxies associated with the account.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetNetworkProxiesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetNetworkProxiesRequest
 */
 func (a *NetworksAPIService) GetNetworkProxies(ctx context.Context) ApiGetNetworkProxiesRequest {
 	return ApiGetNetworkProxiesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return GetNetworkProxies200Response
+//
+//	@return GetNetworkProxies200Response
 func (a *NetworksAPIService) GetNetworkProxiesExecute(r ApiGetNetworkProxiesRequest) (*GetNetworkProxies200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetNetworkProxies200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetNetworkProxies200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkProxies")
@@ -9518,7 +9546,7 @@ func (a *NetworksAPIService) GetNetworkProxiesExecute(r ApiGetNetworkProxiesRequ
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -9527,8 +9555,8 @@ func (a *NetworksAPIService) GetNetworkProxiesExecute(r ApiGetNetworkProxiesRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -9538,8 +9566,8 @@ func (a *NetworksAPIService) GetNetworkProxiesExecute(r ApiGetNetworkProxiesRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -9547,8 +9575,8 @@ func (a *NetworksAPIService) GetNetworkProxiesExecute(r ApiGetNetworkProxiesRequ
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -9557,9 +9585,9 @@ func (a *NetworksAPIService) GetNetworkProxiesExecute(r ApiGetNetworkProxiesRequ
 }
 
 type ApiGetNetworkProxyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NetworksAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetNetworkProxyRequest) Execute() (*CreateNetworkProxy200Response, *http.Response, error) {
@@ -9571,27 +9599,27 @@ GetNetworkProxy Get a Specific Network Proxy
 
 This endpoint retrieves a specific Network Proxy.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetNetworkProxyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetNetworkProxyRequest
 */
 func (a *NetworksAPIService) GetNetworkProxy(ctx context.Context, id int64) ApiGetNetworkProxyRequest {
 	return ApiGetNetworkProxyRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return CreateNetworkProxy200Response
+//
+//	@return CreateNetworkProxy200Response
 func (a *NetworksAPIService) GetNetworkProxyExecute(r ApiGetNetworkProxyRequest) (*CreateNetworkProxy200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CreateNetworkProxy200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CreateNetworkProxy200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkProxy")
@@ -9642,7 +9670,7 @@ func (a *NetworksAPIService) GetNetworkProxyExecute(r ApiGetNetworkProxyRequest)
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -9651,8 +9679,8 @@ func (a *NetworksAPIService) GetNetworkProxyExecute(r ApiGetNetworkProxyRequest)
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -9662,8 +9690,8 @@ func (a *NetworksAPIService) GetNetworkProxyExecute(r ApiGetNetworkProxyRequest)
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -9671,8 +9699,8 @@ func (a *NetworksAPIService) GetNetworkProxyExecute(r ApiGetNetworkProxyRequest)
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -9681,9 +9709,9 @@ func (a *NetworksAPIService) GetNetworkProxyExecute(r ApiGetNetworkProxyRequest)
 }
 
 type ApiGetNetworkRouterRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NetworksAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetNetworkRouterRequest) Execute() (*GetNetworkRouter200Response, *http.Response, error) {
@@ -9695,27 +9723,27 @@ GetNetworkRouter Get a Specific Network Router
 
 This endpoint retrieves a specific Network Router.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetNetworkRouterRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetNetworkRouterRequest
 */
 func (a *NetworksAPIService) GetNetworkRouter(ctx context.Context, id int64) ApiGetNetworkRouterRequest {
 	return ApiGetNetworkRouterRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetNetworkRouter200Response
+//
+//	@return GetNetworkRouter200Response
 func (a *NetworksAPIService) GetNetworkRouterExecute(r ApiGetNetworkRouterRequest) (*GetNetworkRouter200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetNetworkRouter200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetNetworkRouter200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkRouter")
@@ -9766,7 +9794,7 @@ func (a *NetworksAPIService) GetNetworkRouterExecute(r ApiGetNetworkRouterReques
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -9775,8 +9803,8 @@ func (a *NetworksAPIService) GetNetworkRouterExecute(r ApiGetNetworkRouterReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -9786,8 +9814,8 @@ func (a *NetworksAPIService) GetNetworkRouterExecute(r ApiGetNetworkRouterReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -9795,8 +9823,8 @@ func (a *NetworksAPIService) GetNetworkRouterExecute(r ApiGetNetworkRouterReques
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -9805,10 +9833,10 @@ func (a *NetworksAPIService) GetNetworkRouterExecute(r ApiGetNetworkRouterReques
 }
 
 type ApiGetNetworkRouterBgpNeighborRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NetworksAPIService
-	id int64
-	routerId float32
+	id         int64
+	routerId   float32
 }
 
 func (r ApiGetNetworkRouterBgpNeighborRequest) Execute() (*GetNetworkRouterBgpNeighbor200Response, *http.Response, error) {
@@ -9820,28 +9848,29 @@ GetNetworkRouterBgpNeighbor Get a Network Router BGP Neighbor
 
 This endpoint retrieves a network router BGP Neighbor for specified network router.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @param routerId Router ID
- @return ApiGetNetworkRouterBgpNeighborRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@param routerId Router ID
+	@return ApiGetNetworkRouterBgpNeighborRequest
 */
 func (a *NetworksAPIService) GetNetworkRouterBgpNeighbor(ctx context.Context, id int64, routerId float32) ApiGetNetworkRouterBgpNeighborRequest {
 	return ApiGetNetworkRouterBgpNeighborRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
-		routerId: routerId,
+		ctx:        ctx,
+		id:         id,
+		routerId:   routerId,
 	}
 }
 
 // Execute executes the request
-//  @return GetNetworkRouterBgpNeighbor200Response
+//
+//	@return GetNetworkRouterBgpNeighbor200Response
 func (a *NetworksAPIService) GetNetworkRouterBgpNeighborExecute(r ApiGetNetworkRouterBgpNeighborRequest) (*GetNetworkRouterBgpNeighbor200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetNetworkRouterBgpNeighbor200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetNetworkRouterBgpNeighbor200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkRouterBgpNeighbor")
@@ -9893,7 +9922,7 @@ func (a *NetworksAPIService) GetNetworkRouterBgpNeighborExecute(r ApiGetNetworkR
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -9902,8 +9931,8 @@ func (a *NetworksAPIService) GetNetworkRouterBgpNeighborExecute(r ApiGetNetworkR
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -9913,8 +9942,8 @@ func (a *NetworksAPIService) GetNetworkRouterBgpNeighborExecute(r ApiGetNetworkR
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -9922,8 +9951,8 @@ func (a *NetworksAPIService) GetNetworkRouterBgpNeighborExecute(r ApiGetNetworkR
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -9932,10 +9961,10 @@ func (a *NetworksAPIService) GetNetworkRouterBgpNeighborExecute(r ApiGetNetworkR
 }
 
 type ApiGetNetworkRouterFirewallRuleRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NetworksAPIService
-	id int64
-	routerId float32
+	id         int64
+	routerId   float32
 }
 
 func (r ApiGetNetworkRouterFirewallRuleRequest) Execute() (*GetNetworkRouterFirewallRule200Response, *http.Response, error) {
@@ -9947,29 +9976,29 @@ GetNetworkRouterFirewallRule Get a Firewall Rule for Network Router
 
 This endpoint retrieves a firewall rule.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @param routerId Router ID
- @return ApiGetNetworkRouterFirewallRuleRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@param routerId Router ID
+	@return ApiGetNetworkRouterFirewallRuleRequest
 */
 func (a *NetworksAPIService) GetNetworkRouterFirewallRule(ctx context.Context, id int64, routerId float32) ApiGetNetworkRouterFirewallRuleRequest {
 	return ApiGetNetworkRouterFirewallRuleRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
-		routerId: routerId,
+		ctx:        ctx,
+		id:         id,
+		routerId:   routerId,
 	}
 }
 
 // Execute executes the request
-//  @return GetNetworkRouterFirewallRule200Response
+//
+//	@return GetNetworkRouterFirewallRule200Response
 func (a *NetworksAPIService) GetNetworkRouterFirewallRuleExecute(r ApiGetNetworkRouterFirewallRuleRequest) (*GetNetworkRouterFirewallRule200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetNetworkRouterFirewallRule200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetNetworkRouterFirewallRule200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkRouterFirewallRule")
@@ -10021,7 +10050,7 @@ func (a *NetworksAPIService) GetNetworkRouterFirewallRuleExecute(r ApiGetNetwork
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -10030,8 +10059,8 @@ func (a *NetworksAPIService) GetNetworkRouterFirewallRuleExecute(r ApiGetNetwork
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -10041,8 +10070,8 @@ func (a *NetworksAPIService) GetNetworkRouterFirewallRuleExecute(r ApiGetNetwork
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -10050,8 +10079,8 @@ func (a *NetworksAPIService) GetNetworkRouterFirewallRuleExecute(r ApiGetNetwork
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -10060,10 +10089,10 @@ func (a *NetworksAPIService) GetNetworkRouterFirewallRuleExecute(r ApiGetNetwork
 }
 
 type ApiGetNetworkRouterFirewallRuleGroupRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NetworksAPIService
-	id int64
-	routerId float32
+	id         int64
+	routerId   float32
 }
 
 func (r ApiGetNetworkRouterFirewallRuleGroupRequest) Execute() (*GetNetworkRouterFirewallRuleGroup200Response, *http.Response, error) {
@@ -10075,29 +10104,29 @@ GetNetworkRouterFirewallRuleGroup Get a Firewall Rule Group for Network Router
 
 This endpoint retrieves a firewall rule group for specified network router.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @param routerId Router ID
- @return ApiGetNetworkRouterFirewallRuleGroupRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@param routerId Router ID
+	@return ApiGetNetworkRouterFirewallRuleGroupRequest
 */
 func (a *NetworksAPIService) GetNetworkRouterFirewallRuleGroup(ctx context.Context, id int64, routerId float32) ApiGetNetworkRouterFirewallRuleGroupRequest {
 	return ApiGetNetworkRouterFirewallRuleGroupRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
-		routerId: routerId,
+		ctx:        ctx,
+		id:         id,
+		routerId:   routerId,
 	}
 }
 
 // Execute executes the request
-//  @return GetNetworkRouterFirewallRuleGroup200Response
+//
+//	@return GetNetworkRouterFirewallRuleGroup200Response
 func (a *NetworksAPIService) GetNetworkRouterFirewallRuleGroupExecute(r ApiGetNetworkRouterFirewallRuleGroupRequest) (*GetNetworkRouterFirewallRuleGroup200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetNetworkRouterFirewallRuleGroup200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetNetworkRouterFirewallRuleGroup200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkRouterFirewallRuleGroup")
@@ -10149,7 +10178,7 @@ func (a *NetworksAPIService) GetNetworkRouterFirewallRuleGroupExecute(r ApiGetNe
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -10158,8 +10187,8 @@ func (a *NetworksAPIService) GetNetworkRouterFirewallRuleGroupExecute(r ApiGetNe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -10169,8 +10198,8 @@ func (a *NetworksAPIService) GetNetworkRouterFirewallRuleGroupExecute(r ApiGetNe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -10178,8 +10207,8 @@ func (a *NetworksAPIService) GetNetworkRouterFirewallRuleGroupExecute(r ApiGetNe
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -10188,9 +10217,9 @@ func (a *NetworksAPIService) GetNetworkRouterFirewallRuleGroupExecute(r ApiGetNe
 }
 
 type ApiGetNetworkRouterFirewallRuleGroupsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NetworksAPIService
-	routerId float32
+	routerId   float32
 }
 
 func (r ApiGetNetworkRouterFirewallRuleGroupsRequest) Execute() (*GetNetworkRouterFirewallRuleGroups200Response, *http.Response, error) {
@@ -10202,27 +10231,27 @@ GetNetworkRouterFirewallRuleGroups Get all Network Firewall Rule Groups for Netw
 
 This endpoint retrieves all Network Firewall Rule Groups for a specified Network Service.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param routerId Router ID
- @return ApiGetNetworkRouterFirewallRuleGroupsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param routerId Router ID
+	@return ApiGetNetworkRouterFirewallRuleGroupsRequest
 */
 func (a *NetworksAPIService) GetNetworkRouterFirewallRuleGroups(ctx context.Context, routerId float32) ApiGetNetworkRouterFirewallRuleGroupsRequest {
 	return ApiGetNetworkRouterFirewallRuleGroupsRequest{
 		ApiService: a,
-		ctx: ctx,
-		routerId: routerId,
+		ctx:        ctx,
+		routerId:   routerId,
 	}
 }
 
 // Execute executes the request
-//  @return GetNetworkRouterFirewallRuleGroups200Response
+//
+//	@return GetNetworkRouterFirewallRuleGroups200Response
 func (a *NetworksAPIService) GetNetworkRouterFirewallRuleGroupsExecute(r ApiGetNetworkRouterFirewallRuleGroupsRequest) (*GetNetworkRouterFirewallRuleGroups200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetNetworkRouterFirewallRuleGroups200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetNetworkRouterFirewallRuleGroups200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkRouterFirewallRuleGroups")
@@ -10273,7 +10302,7 @@ func (a *NetworksAPIService) GetNetworkRouterFirewallRuleGroupsExecute(r ApiGetN
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -10282,8 +10311,8 @@ func (a *NetworksAPIService) GetNetworkRouterFirewallRuleGroupsExecute(r ApiGetN
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -10293,8 +10322,8 @@ func (a *NetworksAPIService) GetNetworkRouterFirewallRuleGroupsExecute(r ApiGetN
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -10302,8 +10331,8 @@ func (a *NetworksAPIService) GetNetworkRouterFirewallRuleGroupsExecute(r ApiGetN
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -10312,10 +10341,10 @@ func (a *NetworksAPIService) GetNetworkRouterFirewallRuleGroupsExecute(r ApiGetN
 }
 
 type ApiGetNetworkRouterNatRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NetworksAPIService
-	id int64
-	routerId float32
+	id         int64
+	routerId   float32
 }
 
 func (r ApiGetNetworkRouterNatRequest) Execute() (*GetNetworkRouterNat200Response, *http.Response, error) {
@@ -10327,28 +10356,29 @@ GetNetworkRouterNat Get a Network Router NAT
 
 This endpoint retrieves a network router NAT for specified network router.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @param routerId Router ID
- @return ApiGetNetworkRouterNatRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@param routerId Router ID
+	@return ApiGetNetworkRouterNatRequest
 */
 func (a *NetworksAPIService) GetNetworkRouterNat(ctx context.Context, id int64, routerId float32) ApiGetNetworkRouterNatRequest {
 	return ApiGetNetworkRouterNatRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
-		routerId: routerId,
+		ctx:        ctx,
+		id:         id,
+		routerId:   routerId,
 	}
 }
 
 // Execute executes the request
-//  @return GetNetworkRouterNat200Response
+//
+//	@return GetNetworkRouterNat200Response
 func (a *NetworksAPIService) GetNetworkRouterNatExecute(r ApiGetNetworkRouterNatRequest) (*GetNetworkRouterNat200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetNetworkRouterNat200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetNetworkRouterNat200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkRouterNat")
@@ -10400,7 +10430,7 @@ func (a *NetworksAPIService) GetNetworkRouterNatExecute(r ApiGetNetworkRouterNat
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -10409,8 +10439,8 @@ func (a *NetworksAPIService) GetNetworkRouterNatExecute(r ApiGetNetworkRouterNat
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -10420,8 +10450,8 @@ func (a *NetworksAPIService) GetNetworkRouterNatExecute(r ApiGetNetworkRouterNat
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -10429,8 +10459,8 @@ func (a *NetworksAPIService) GetNetworkRouterNatExecute(r ApiGetNetworkRouterNat
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -10439,10 +10469,10 @@ func (a *NetworksAPIService) GetNetworkRouterNatExecute(r ApiGetNetworkRouterNat
 }
 
 type ApiGetNetworkRouterRouteRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NetworksAPIService
-	id int64
-	routerId float32
+	id         int64
+	routerId   float32
 }
 
 func (r ApiGetNetworkRouterRouteRequest) Execute() (*GetNetworkRouterRoute200Response, *http.Response, error) {
@@ -10454,29 +10484,29 @@ GetNetworkRouterRoute Get a Route for Network Router
 
 This endpoint retrieves a Route.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @param routerId Router ID
- @return ApiGetNetworkRouterRouteRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@param routerId Router ID
+	@return ApiGetNetworkRouterRouteRequest
 */
 func (a *NetworksAPIService) GetNetworkRouterRoute(ctx context.Context, id int64, routerId float32) ApiGetNetworkRouterRouteRequest {
 	return ApiGetNetworkRouterRouteRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
-		routerId: routerId,
+		ctx:        ctx,
+		id:         id,
+		routerId:   routerId,
 	}
 }
 
 // Execute executes the request
-//  @return GetNetworkRouterRoute200Response
+//
+//	@return GetNetworkRouterRoute200Response
 func (a *NetworksAPIService) GetNetworkRouterRouteExecute(r ApiGetNetworkRouterRouteRequest) (*GetNetworkRouterRoute200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetNetworkRouterRoute200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetNetworkRouterRoute200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkRouterRoute")
@@ -10528,7 +10558,7 @@ func (a *NetworksAPIService) GetNetworkRouterRouteExecute(r ApiGetNetworkRouterR
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -10537,8 +10567,8 @@ func (a *NetworksAPIService) GetNetworkRouterRouteExecute(r ApiGetNetworkRouterR
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -10548,8 +10578,8 @@ func (a *NetworksAPIService) GetNetworkRouterRouteExecute(r ApiGetNetworkRouterR
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -10557,8 +10587,8 @@ func (a *NetworksAPIService) GetNetworkRouterRouteExecute(r ApiGetNetworkRouterR
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -10567,9 +10597,9 @@ func (a *NetworksAPIService) GetNetworkRouterRouteExecute(r ApiGetNetworkRouterR
 }
 
 type ApiGetNetworkRouterTypeRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NetworksAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetNetworkRouterTypeRequest) Execute() (*GetNetworkRouterType200Response, *http.Response, error) {
@@ -10581,27 +10611,27 @@ GetNetworkRouterType Get a Specific Network Router Type
 
 This endpoint retrieves a specific network router type. Use this API to retrieve list of available option types for a specific network router type.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetNetworkRouterTypeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetNetworkRouterTypeRequest
 */
 func (a *NetworksAPIService) GetNetworkRouterType(ctx context.Context, id int64) ApiGetNetworkRouterTypeRequest {
 	return ApiGetNetworkRouterTypeRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetNetworkRouterType200Response
+//
+//	@return GetNetworkRouterType200Response
 func (a *NetworksAPIService) GetNetworkRouterTypeExecute(r ApiGetNetworkRouterTypeRequest) (*GetNetworkRouterType200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetNetworkRouterType200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetNetworkRouterType200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkRouterType")
@@ -10652,7 +10682,7 @@ func (a *NetworksAPIService) GetNetworkRouterTypeExecute(r ApiGetNetworkRouterTy
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -10661,8 +10691,8 @@ func (a *NetworksAPIService) GetNetworkRouterTypeExecute(r ApiGetNetworkRouterTy
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -10672,8 +10702,8 @@ func (a *NetworksAPIService) GetNetworkRouterTypeExecute(r ApiGetNetworkRouterTy
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -10681,8 +10711,8 @@ func (a *NetworksAPIService) GetNetworkRouterTypeExecute(r ApiGetNetworkRouterTy
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -10691,7 +10721,7 @@ func (a *NetworksAPIService) GetNetworkRouterTypeExecute(r ApiGetNetworkRouterTy
 }
 
 type ApiGetNetworkRoutersRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NetworksAPIService
 }
 
@@ -10702,27 +10732,27 @@ func (r ApiGetNetworkRoutersRequest) Execute() (*GetNetworkRouters200Response, *
 /*
 GetNetworkRouters Get all Network Routers
 
-This endpoint retrieves all Network Routers
+# This endpoint retrieves all Network Routers
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetNetworkRoutersRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetNetworkRoutersRequest
 */
 func (a *NetworksAPIService) GetNetworkRouters(ctx context.Context) ApiGetNetworkRoutersRequest {
 	return ApiGetNetworkRoutersRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return GetNetworkRouters200Response
+//
+//	@return GetNetworkRouters200Response
 func (a *NetworksAPIService) GetNetworkRoutersExecute(r ApiGetNetworkRoutersRequest) (*GetNetworkRouters200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetNetworkRouters200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetNetworkRouters200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkRouters")
@@ -10772,7 +10802,7 @@ func (a *NetworksAPIService) GetNetworkRoutersExecute(r ApiGetNetworkRoutersRequ
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -10781,8 +10811,8 @@ func (a *NetworksAPIService) GetNetworkRoutersExecute(r ApiGetNetworkRoutersRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -10792,8 +10822,8 @@ func (a *NetworksAPIService) GetNetworkRoutersExecute(r ApiGetNetworkRoutersRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -10801,8 +10831,8 @@ func (a *NetworksAPIService) GetNetworkRoutersExecute(r ApiGetNetworkRoutersRequ
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -10811,9 +10841,9 @@ func (a *NetworksAPIService) GetNetworkRoutersExecute(r ApiGetNetworkRoutersRequ
 }
 
 type ApiGetNetworkRoutersBgpNeighborsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NetworksAPIService
-	routerId float32
+	routerId   float32
 }
 
 func (r ApiGetNetworkRoutersBgpNeighborsRequest) Execute() (*GetNetworkRoutersBgpNeighbors200Response, *http.Response, error) {
@@ -10825,26 +10855,27 @@ GetNetworkRoutersBgpNeighbors Get all BGP Neighbors for Network Router
 
 This endpoint retrieves all BGP Neighbors for specified network router.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param routerId Router ID
- @return ApiGetNetworkRoutersBgpNeighborsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param routerId Router ID
+	@return ApiGetNetworkRoutersBgpNeighborsRequest
 */
 func (a *NetworksAPIService) GetNetworkRoutersBgpNeighbors(ctx context.Context, routerId float32) ApiGetNetworkRoutersBgpNeighborsRequest {
 	return ApiGetNetworkRoutersBgpNeighborsRequest{
 		ApiService: a,
-		ctx: ctx,
-		routerId: routerId,
+		ctx:        ctx,
+		routerId:   routerId,
 	}
 }
 
 // Execute executes the request
-//  @return GetNetworkRoutersBgpNeighbors200Response
+//
+//	@return GetNetworkRoutersBgpNeighbors200Response
 func (a *NetworksAPIService) GetNetworkRoutersBgpNeighborsExecute(r ApiGetNetworkRoutersBgpNeighborsRequest) (*GetNetworkRoutersBgpNeighbors200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetNetworkRoutersBgpNeighbors200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetNetworkRoutersBgpNeighbors200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkRoutersBgpNeighbors")
@@ -10895,7 +10926,7 @@ func (a *NetworksAPIService) GetNetworkRoutersBgpNeighborsExecute(r ApiGetNetwor
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -10904,8 +10935,8 @@ func (a *NetworksAPIService) GetNetworkRoutersBgpNeighborsExecute(r ApiGetNetwor
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -10915,8 +10946,8 @@ func (a *NetworksAPIService) GetNetworkRoutersBgpNeighborsExecute(r ApiGetNetwor
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -10924,8 +10955,8 @@ func (a *NetworksAPIService) GetNetworkRoutersBgpNeighborsExecute(r ApiGetNetwor
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -10934,9 +10965,9 @@ func (a *NetworksAPIService) GetNetworkRoutersBgpNeighborsExecute(r ApiGetNetwor
 }
 
 type ApiGetNetworkRoutersFirewallRulesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NetworksAPIService
-	routerId float32
+	routerId   float32
 }
 
 func (r ApiGetNetworkRoutersFirewallRulesRequest) Execute() (*GetNetworkRoutersFirewallRules200Response, *http.Response, error) {
@@ -10948,27 +10979,27 @@ GetNetworkRoutersFirewallRules Get all Firewall Rules for Network Router
 
 This endpoint retrieves all firewall rules for specified network router.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param routerId Router ID
- @return ApiGetNetworkRoutersFirewallRulesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param routerId Router ID
+	@return ApiGetNetworkRoutersFirewallRulesRequest
 */
 func (a *NetworksAPIService) GetNetworkRoutersFirewallRules(ctx context.Context, routerId float32) ApiGetNetworkRoutersFirewallRulesRequest {
 	return ApiGetNetworkRoutersFirewallRulesRequest{
 		ApiService: a,
-		ctx: ctx,
-		routerId: routerId,
+		ctx:        ctx,
+		routerId:   routerId,
 	}
 }
 
 // Execute executes the request
-//  @return GetNetworkRoutersFirewallRules200Response
+//
+//	@return GetNetworkRoutersFirewallRules200Response
 func (a *NetworksAPIService) GetNetworkRoutersFirewallRulesExecute(r ApiGetNetworkRoutersFirewallRulesRequest) (*GetNetworkRoutersFirewallRules200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetNetworkRoutersFirewallRules200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetNetworkRoutersFirewallRules200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkRoutersFirewallRules")
@@ -11019,7 +11050,7 @@ func (a *NetworksAPIService) GetNetworkRoutersFirewallRulesExecute(r ApiGetNetwo
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -11028,8 +11059,8 @@ func (a *NetworksAPIService) GetNetworkRoutersFirewallRulesExecute(r ApiGetNetwo
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -11039,8 +11070,8 @@ func (a *NetworksAPIService) GetNetworkRoutersFirewallRulesExecute(r ApiGetNetwo
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -11048,8 +11079,8 @@ func (a *NetworksAPIService) GetNetworkRoutersFirewallRulesExecute(r ApiGetNetwo
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -11058,9 +11089,9 @@ func (a *NetworksAPIService) GetNetworkRoutersFirewallRulesExecute(r ApiGetNetwo
 }
 
 type ApiGetNetworkRoutersNatsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NetworksAPIService
-	routerId float32
+	routerId   float32
 }
 
 func (r ApiGetNetworkRoutersNatsRequest) Execute() (*GetNetworkRoutersNats200Response, *http.Response, error) {
@@ -11072,27 +11103,27 @@ GetNetworkRoutersNats Get all Network Router NATs for Network Router
 
 This endpoint retrieves all NATs for specified network router.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param routerId Router ID
- @return ApiGetNetworkRoutersNatsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param routerId Router ID
+	@return ApiGetNetworkRoutersNatsRequest
 */
 func (a *NetworksAPIService) GetNetworkRoutersNats(ctx context.Context, routerId float32) ApiGetNetworkRoutersNatsRequest {
 	return ApiGetNetworkRoutersNatsRequest{
 		ApiService: a,
-		ctx: ctx,
-		routerId: routerId,
+		ctx:        ctx,
+		routerId:   routerId,
 	}
 }
 
 // Execute executes the request
-//  @return GetNetworkRoutersNats200Response
+//
+//	@return GetNetworkRoutersNats200Response
 func (a *NetworksAPIService) GetNetworkRoutersNatsExecute(r ApiGetNetworkRoutersNatsRequest) (*GetNetworkRoutersNats200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetNetworkRoutersNats200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetNetworkRoutersNats200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkRoutersNats")
@@ -11143,7 +11174,7 @@ func (a *NetworksAPIService) GetNetworkRoutersNatsExecute(r ApiGetNetworkRouters
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -11152,8 +11183,8 @@ func (a *NetworksAPIService) GetNetworkRoutersNatsExecute(r ApiGetNetworkRouters
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -11163,8 +11194,8 @@ func (a *NetworksAPIService) GetNetworkRoutersNatsExecute(r ApiGetNetworkRouters
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -11172,8 +11203,8 @@ func (a *NetworksAPIService) GetNetworkRoutersNatsExecute(r ApiGetNetworkRouters
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -11182,9 +11213,9 @@ func (a *NetworksAPIService) GetNetworkRoutersNatsExecute(r ApiGetNetworkRouters
 }
 
 type ApiGetNetworkRoutersRoutesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NetworksAPIService
-	routerId float32
+	routerId   float32
 }
 
 func (r ApiGetNetworkRoutersRoutesRequest) Execute() (*GetNetworkRoutersRoutes200Response, *http.Response, error) {
@@ -11196,27 +11227,27 @@ GetNetworkRoutersRoutes Get all Routes for Network Router
 
 This endpoint retrieves all Routes for specified network router.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param routerId Router ID
- @return ApiGetNetworkRoutersRoutesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param routerId Router ID
+	@return ApiGetNetworkRoutersRoutesRequest
 */
 func (a *NetworksAPIService) GetNetworkRoutersRoutes(ctx context.Context, routerId float32) ApiGetNetworkRoutersRoutesRequest {
 	return ApiGetNetworkRoutersRoutesRequest{
 		ApiService: a,
-		ctx: ctx,
-		routerId: routerId,
+		ctx:        ctx,
+		routerId:   routerId,
 	}
 }
 
 // Execute executes the request
-//  @return GetNetworkRoutersRoutes200Response
+//
+//	@return GetNetworkRoutersRoutes200Response
 func (a *NetworksAPIService) GetNetworkRoutersRoutesExecute(r ApiGetNetworkRoutersRoutesRequest) (*GetNetworkRoutersRoutes200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetNetworkRoutersRoutes200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetNetworkRoutersRoutes200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkRoutersRoutes")
@@ -11267,7 +11298,7 @@ func (a *NetworksAPIService) GetNetworkRoutersRoutesExecute(r ApiGetNetworkRoute
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -11276,8 +11307,8 @@ func (a *NetworksAPIService) GetNetworkRoutersRoutesExecute(r ApiGetNetworkRoute
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -11287,8 +11318,8 @@ func (a *NetworksAPIService) GetNetworkRoutersRoutesExecute(r ApiGetNetworkRoute
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -11296,8 +11327,8 @@ func (a *NetworksAPIService) GetNetworkRoutersRoutesExecute(r ApiGetNetworkRoute
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -11306,9 +11337,9 @@ func (a *NetworksAPIService) GetNetworkRoutersRoutesExecute(r ApiGetNetworkRoute
 }
 
 type ApiGetNetworkServerRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NetworksAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetNetworkServerRequest) Execute() (*GetNetworkServer200Response, *http.Response, error) {
@@ -11320,27 +11351,27 @@ GetNetworkServer Get a Specific Network Server
 
 This endpoint retrieves a specific Network Server.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetNetworkServerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetNetworkServerRequest
 */
 func (a *NetworksAPIService) GetNetworkServer(ctx context.Context, id int64) ApiGetNetworkServerRequest {
 	return ApiGetNetworkServerRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetNetworkServer200Response
+//
+//	@return GetNetworkServer200Response
 func (a *NetworksAPIService) GetNetworkServerExecute(r ApiGetNetworkServerRequest) (*GetNetworkServer200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetNetworkServer200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetNetworkServer200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkServer")
@@ -11391,7 +11422,7 @@ func (a *NetworksAPIService) GetNetworkServerExecute(r ApiGetNetworkServerReques
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -11400,8 +11431,8 @@ func (a *NetworksAPIService) GetNetworkServerExecute(r ApiGetNetworkServerReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -11411,8 +11442,8 @@ func (a *NetworksAPIService) GetNetworkServerExecute(r ApiGetNetworkServerReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -11420,8 +11451,8 @@ func (a *NetworksAPIService) GetNetworkServerExecute(r ApiGetNetworkServerReques
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -11430,10 +11461,10 @@ func (a *NetworksAPIService) GetNetworkServerExecute(r ApiGetNetworkServerReques
 }
 
 type ApiGetNetworkServerGroupRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NetworksAPIService
-	serverId float32
-	id int64
+	serverId   float32
+	id         int64
 }
 
 func (r ApiGetNetworkServerGroupRequest) Execute() (*GetNetworkServerGroup200Response, *http.Response, error) {
@@ -11446,29 +11477,29 @@ GetNetworkServerGroup Get a specific Network Server Group
 This endpoint retrieves a specific Network Server Group for a Network Server.
 Note: Only available for NSX-T network integrations.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serverId Server ID
- @param id Morpheus ID of the Object being referenced
- @return ApiGetNetworkServerGroupRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param serverId Server ID
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetNetworkServerGroupRequest
 */
 func (a *NetworksAPIService) GetNetworkServerGroup(ctx context.Context, serverId float32, id int64) ApiGetNetworkServerGroupRequest {
 	return ApiGetNetworkServerGroupRequest{
 		ApiService: a,
-		ctx: ctx,
-		serverId: serverId,
-		id: id,
+		ctx:        ctx,
+		serverId:   serverId,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetNetworkServerGroup200Response
+//
+//	@return GetNetworkServerGroup200Response
 func (a *NetworksAPIService) GetNetworkServerGroupExecute(r ApiGetNetworkServerGroupRequest) (*GetNetworkServerGroup200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetNetworkServerGroup200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetNetworkServerGroup200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkServerGroup")
@@ -11520,7 +11551,7 @@ func (a *NetworksAPIService) GetNetworkServerGroupExecute(r ApiGetNetworkServerG
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -11529,8 +11560,8 @@ func (a *NetworksAPIService) GetNetworkServerGroupExecute(r ApiGetNetworkServerG
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -11540,8 +11571,8 @@ func (a *NetworksAPIService) GetNetworkServerGroupExecute(r ApiGetNetworkServerG
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -11549,8 +11580,8 @@ func (a *NetworksAPIService) GetNetworkServerGroupExecute(r ApiGetNetworkServerG
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -11559,9 +11590,9 @@ func (a *NetworksAPIService) GetNetworkServerGroupExecute(r ApiGetNetworkServerG
 }
 
 type ApiGetNetworkSubnetsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NetworksAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetNetworkSubnetsRequest) Execute() (*GetNetworkSubnets200Response, *http.Response, error) {
@@ -11573,27 +11604,27 @@ GetNetworkSubnets Get Subnets for a Network
 
 This endpoint retrieves all Subnets under a specific network.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetNetworkSubnetsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetNetworkSubnetsRequest
 */
 func (a *NetworksAPIService) GetNetworkSubnets(ctx context.Context, id int64) ApiGetNetworkSubnetsRequest {
 	return ApiGetNetworkSubnetsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetNetworkSubnets200Response
+//
+//	@return GetNetworkSubnets200Response
 func (a *NetworksAPIService) GetNetworkSubnetsExecute(r ApiGetNetworkSubnetsRequest) (*GetNetworkSubnets200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetNetworkSubnets200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetNetworkSubnets200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkSubnets")
@@ -11644,7 +11675,7 @@ func (a *NetworksAPIService) GetNetworkSubnetsExecute(r ApiGetNetworkSubnetsRequ
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -11653,8 +11684,8 @@ func (a *NetworksAPIService) GetNetworkSubnetsExecute(r ApiGetNetworkSubnetsRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -11664,8 +11695,8 @@ func (a *NetworksAPIService) GetNetworkSubnetsExecute(r ApiGetNetworkSubnetsRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -11673,8 +11704,8 @@ func (a *NetworksAPIService) GetNetworkSubnetsExecute(r ApiGetNetworkSubnetsRequ
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -11683,10 +11714,10 @@ func (a *NetworksAPIService) GetNetworkSubnetsExecute(r ApiGetNetworkSubnetsRequ
 }
 
 type ApiGetNetworkTransportZoneRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NetworksAPIService
-	id int64
-	serverId float32
+	id         int64
+	serverId   float32
 }
 
 func (r ApiGetNetworkTransportZoneRequest) Execute() (*GetNetworkTransportZone200Response, *http.Response, error) {
@@ -11698,29 +11729,29 @@ GetNetworkTransportZone Get a Specific Network Transport Zone
 
 This endpoint retrieves a specific Network Transport Zone.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @param serverId Server ID
- @return ApiGetNetworkTransportZoneRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@param serverId Server ID
+	@return ApiGetNetworkTransportZoneRequest
 */
 func (a *NetworksAPIService) GetNetworkTransportZone(ctx context.Context, id int64, serverId float32) ApiGetNetworkTransportZoneRequest {
 	return ApiGetNetworkTransportZoneRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
-		serverId: serverId,
+		ctx:        ctx,
+		id:         id,
+		serverId:   serverId,
 	}
 }
 
 // Execute executes the request
-//  @return GetNetworkTransportZone200Response
+//
+//	@return GetNetworkTransportZone200Response
 func (a *NetworksAPIService) GetNetworkTransportZoneExecute(r ApiGetNetworkTransportZoneRequest) (*GetNetworkTransportZone200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetNetworkTransportZone200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetNetworkTransportZone200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkTransportZone")
@@ -11772,7 +11803,7 @@ func (a *NetworksAPIService) GetNetworkTransportZoneExecute(r ApiGetNetworkTrans
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -11781,8 +11812,8 @@ func (a *NetworksAPIService) GetNetworkTransportZoneExecute(r ApiGetNetworkTrans
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -11792,8 +11823,8 @@ func (a *NetworksAPIService) GetNetworkTransportZoneExecute(r ApiGetNetworkTrans
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -11801,8 +11832,8 @@ func (a *NetworksAPIService) GetNetworkTransportZoneExecute(r ApiGetNetworkTrans
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -11811,14 +11842,14 @@ func (a *NetworksAPIService) GetNetworkTransportZoneExecute(r ApiGetNetworkTrans
 }
 
 type ApiGetNetworkTransportZonesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NetworksAPIService
-	serverId float32
-	max *int64
-	offset *int64
-	sort *string
-	direction *string
-	phrase *string
+	serverId   float32
+	max        *int64
+	offset     *int64
+	sort       *string
+	direction  *string
+	phrase     *string
 }
 
 // Maximum number of records to return
@@ -11860,26 +11891,27 @@ GetNetworkTransportZones Get all Network Transport Zones for Network Server
 
 This endpoint retrieves all Network Transport Zones for a specified Network Service.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serverId Server ID
- @return ApiGetNetworkTransportZonesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param serverId Server ID
+	@return ApiGetNetworkTransportZonesRequest
 */
 func (a *NetworksAPIService) GetNetworkTransportZones(ctx context.Context, serverId float32) ApiGetNetworkTransportZonesRequest {
 	return ApiGetNetworkTransportZonesRequest{
 		ApiService: a,
-		ctx: ctx,
-		serverId: serverId,
+		ctx:        ctx,
+		serverId:   serverId,
 	}
 }
 
 // Execute executes the request
-//  @return GetNetworkTransportZones200Response
+//
+//	@return GetNetworkTransportZones200Response
 func (a *NetworksAPIService) GetNetworkTransportZonesExecute(r ApiGetNetworkTransportZonesRequest) (*GetNetworkTransportZones200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetNetworkTransportZones200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetNetworkTransportZones200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkTransportZones")
@@ -11957,7 +11989,7 @@ func (a *NetworksAPIService) GetNetworkTransportZonesExecute(r ApiGetNetworkTran
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -11966,8 +11998,8 @@ func (a *NetworksAPIService) GetNetworkTransportZonesExecute(r ApiGetNetworkTran
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -11977,8 +12009,8 @@ func (a *NetworksAPIService) GetNetworkTransportZonesExecute(r ApiGetNetworkTran
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -11986,8 +12018,8 @@ func (a *NetworksAPIService) GetNetworkTransportZonesExecute(r ApiGetNetworkTran
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -11996,9 +12028,9 @@ func (a *NetworksAPIService) GetNetworkTransportZonesExecute(r ApiGetNetworkTran
 }
 
 type ApiGetNetworkTypeRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NetworksAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetNetworkTypeRequest) Execute() (*GetNetworkType200Response, *http.Response, error) {
@@ -12010,26 +12042,27 @@ GetNetworkType Get a Specific Network Type
 
 This endpoint retrieves a specific Network Type.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetNetworkTypeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetNetworkTypeRequest
 */
 func (a *NetworksAPIService) GetNetworkType(ctx context.Context, id int64) ApiGetNetworkTypeRequest {
 	return ApiGetNetworkTypeRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetNetworkType200Response
+//
+//	@return GetNetworkType200Response
 func (a *NetworksAPIService) GetNetworkTypeExecute(r ApiGetNetworkTypeRequest) (*GetNetworkType200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetNetworkType200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetNetworkType200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkType")
@@ -12080,7 +12113,7 @@ func (a *NetworksAPIService) GetNetworkTypeExecute(r ApiGetNetworkTypeRequest) (
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -12089,8 +12122,8 @@ func (a *NetworksAPIService) GetNetworkTypeExecute(r ApiGetNetworkTypeRequest) (
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -12100,8 +12133,8 @@ func (a *NetworksAPIService) GetNetworkTypeExecute(r ApiGetNetworkTypeRequest) (
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -12109,8 +12142,8 @@ func (a *NetworksAPIService) GetNetworkTypeExecute(r ApiGetNetworkTypeRequest) (
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -12119,10 +12152,10 @@ func (a *NetworksAPIService) GetNetworkTypeExecute(r ApiGetNetworkTypeRequest) (
 }
 
 type ApiGetStaticRouteRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NetworksAPIService
-	id int64
-	routeId float32
+	id         int64
+	routeId    float32
 }
 
 func (r ApiGetStaticRouteRequest) Execute() (*GetStaticRoute200Response, *http.Response, error) {
@@ -12134,29 +12167,29 @@ GetStaticRoute Get a Static Route for a Network
 
 This endpoint retrieves a network static route for specified network.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @param routeId The ID of the route
- @return ApiGetStaticRouteRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@param routeId The ID of the route
+	@return ApiGetStaticRouteRequest
 */
 func (a *NetworksAPIService) GetStaticRoute(ctx context.Context, id int64, routeId float32) ApiGetStaticRouteRequest {
 	return ApiGetStaticRouteRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
-		routeId: routeId,
+		ctx:        ctx,
+		id:         id,
+		routeId:    routeId,
 	}
 }
 
 // Execute executes the request
-//  @return GetStaticRoute200Response
+//
+//	@return GetStaticRoute200Response
 func (a *NetworksAPIService) GetStaticRouteExecute(r ApiGetStaticRouteRequest) (*GetStaticRoute200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetStaticRoute200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetStaticRoute200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetStaticRoute")
@@ -12208,7 +12241,7 @@ func (a *NetworksAPIService) GetStaticRouteExecute(r ApiGetStaticRouteRequest) (
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -12217,8 +12250,8 @@ func (a *NetworksAPIService) GetStaticRouteExecute(r ApiGetStaticRouteRequest) (
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -12228,8 +12261,8 @@ func (a *NetworksAPIService) GetStaticRouteExecute(r ApiGetStaticRouteRequest) (
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -12237,8 +12270,8 @@ func (a *NetworksAPIService) GetStaticRouteExecute(r ApiGetStaticRouteRequest) (
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -12247,9 +12280,9 @@ func (a *NetworksAPIService) GetStaticRouteExecute(r ApiGetStaticRouteRequest) (
 }
 
 type ApiGetStaticRoutesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NetworksAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetStaticRoutesRequest) Execute() (*GetStaticRoutes200Response, *http.Response, error) {
@@ -12261,27 +12294,27 @@ GetStaticRoutes Get all Static Routes for a Network
 
 This endpoint retrieves all routes for specified network.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetStaticRoutesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetStaticRoutesRequest
 */
 func (a *NetworksAPIService) GetStaticRoutes(ctx context.Context, id int64) ApiGetStaticRoutesRequest {
 	return ApiGetStaticRoutesRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetStaticRoutes200Response
+//
+//	@return GetStaticRoutes200Response
 func (a *NetworksAPIService) GetStaticRoutesExecute(r ApiGetStaticRoutesRequest) (*GetStaticRoutes200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetStaticRoutes200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetStaticRoutes200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetStaticRoutes")
@@ -12332,7 +12365,7 @@ func (a *NetworksAPIService) GetStaticRoutesExecute(r ApiGetStaticRoutesRequest)
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -12341,8 +12374,8 @@ func (a *NetworksAPIService) GetStaticRoutesExecute(r ApiGetStaticRoutesRequest)
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -12352,8 +12385,8 @@ func (a *NetworksAPIService) GetStaticRoutesExecute(r ApiGetStaticRoutesRequest)
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -12361,8 +12394,8 @@ func (a *NetworksAPIService) GetStaticRoutesExecute(r ApiGetStaticRoutesRequest)
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -12371,9 +12404,9 @@ func (a *NetworksAPIService) GetStaticRoutesExecute(r ApiGetStaticRoutesRequest)
 }
 
 type ApiGetSubnetRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NetworksAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetSubnetRequest) Execute() (*CreateSubnet200Response, *http.Response, error) {
@@ -12385,27 +12418,27 @@ GetSubnet Get a Specific Subnet
 
 This endpoint retrieves a specific Subnet.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetSubnetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetSubnetRequest
 */
 func (a *NetworksAPIService) GetSubnet(ctx context.Context, id int64) ApiGetSubnetRequest {
 	return ApiGetSubnetRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return CreateSubnet200Response
+//
+//	@return CreateSubnet200Response
 func (a *NetworksAPIService) GetSubnetExecute(r ApiGetSubnetRequest) (*CreateSubnet200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CreateSubnet200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CreateSubnet200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetSubnet")
@@ -12456,7 +12489,7 @@ func (a *NetworksAPIService) GetSubnetExecute(r ApiGetSubnetRequest) (*CreateSub
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -12465,8 +12498,8 @@ func (a *NetworksAPIService) GetSubnetExecute(r ApiGetSubnetRequest) (*CreateSub
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -12476,8 +12509,8 @@ func (a *NetworksAPIService) GetSubnetExecute(r ApiGetSubnetRequest) (*CreateSub
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -12485,8 +12518,8 @@ func (a *NetworksAPIService) GetSubnetExecute(r ApiGetSubnetRequest) (*CreateSub
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -12495,15 +12528,15 @@ func (a *NetworksAPIService) GetSubnetExecute(r ApiGetSubnetRequest) (*CreateSub
 }
 
 type ApiListNetworkPoolServerTypesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NetworksAPIService
-	max *int64
-	offset *int64
-	sort *string
-	direction *string
-	phrase *string
-	name *string
-	code *string
+	max        *int64
+	offset     *int64
+	sort       *string
+	direction  *string
+	phrase     *string
+	name       *string
+	code       *string
 }
 
 // Maximum number of records to return
@@ -12555,27 +12588,27 @@ func (r ApiListNetworkPoolServerTypesRequest) Execute() (*ListNetworkPoolServerT
 /*
 ListNetworkPoolServerTypes Get All Network Pool Server Types
 
-This endpoint retrieves all Network Pool Server Types
+# This endpoint retrieves all Network Pool Server Types
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListNetworkPoolServerTypesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListNetworkPoolServerTypesRequest
 */
 func (a *NetworksAPIService) ListNetworkPoolServerTypes(ctx context.Context) ApiListNetworkPoolServerTypesRequest {
 	return ApiListNetworkPoolServerTypesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListNetworkPoolServerTypes200Response
+//
+//	@return ListNetworkPoolServerTypes200Response
 func (a *NetworksAPIService) ListNetworkPoolServerTypesExecute(r ApiListNetworkPoolServerTypesRequest) (*ListNetworkPoolServerTypes200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListNetworkPoolServerTypes200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListNetworkPoolServerTypes200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.ListNetworkPoolServerTypes")
@@ -12658,7 +12691,7 @@ func (a *NetworksAPIService) ListNetworkPoolServerTypesExecute(r ApiListNetworkP
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -12667,8 +12700,8 @@ func (a *NetworksAPIService) ListNetworkPoolServerTypesExecute(r ApiListNetworkP
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -12678,8 +12711,8 @@ func (a *NetworksAPIService) ListNetworkPoolServerTypesExecute(r ApiListNetworkP
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -12687,8 +12720,8 @@ func (a *NetworksAPIService) ListNetworkPoolServerTypesExecute(r ApiListNetworkP
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -12697,14 +12730,14 @@ func (a *NetworksAPIService) ListNetworkPoolServerTypesExecute(r ApiListNetworkP
 }
 
 type ApiListNetworkPoolServersRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NetworksAPIService
-	max *int64
-	offset *int64
-	sort *string
-	direction *string
-	phrase *string
-	name *string
+	max        *int64
+	offset     *int64
+	sort       *string
+	direction  *string
+	phrase     *string
+	name       *string
 }
 
 // Maximum number of records to return
@@ -12752,25 +12785,25 @@ ListNetworkPoolServers Get All Network Pool Servers
 
 This endpoint retrieves all Network Pool Servers associated with the account.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListNetworkPoolServersRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListNetworkPoolServersRequest
 */
 func (a *NetworksAPIService) ListNetworkPoolServers(ctx context.Context) ApiListNetworkPoolServersRequest {
 	return ApiListNetworkPoolServersRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListNetworkPoolServers200Response
+//
+//	@return ListNetworkPoolServers200Response
 func (a *NetworksAPIService) ListNetworkPoolServersExecute(r ApiListNetworkPoolServersRequest) (*ListNetworkPoolServers200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListNetworkPoolServers200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListNetworkPoolServers200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.ListNetworkPoolServers")
@@ -12850,7 +12883,7 @@ func (a *NetworksAPIService) ListNetworkPoolServersExecute(r ApiListNetworkPoolS
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -12859,8 +12892,8 @@ func (a *NetworksAPIService) ListNetworkPoolServersExecute(r ApiListNetworkPoolS
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -12870,8 +12903,8 @@ func (a *NetworksAPIService) ListNetworkPoolServersExecute(r ApiListNetworkPoolS
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -12879,8 +12912,8 @@ func (a *NetworksAPIService) ListNetworkPoolServersExecute(r ApiListNetworkPoolS
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -12889,7 +12922,7 @@ func (a *NetworksAPIService) ListNetworkPoolServersExecute(r ApiListNetworkPoolS
 }
 
 type ApiListNetworkRouterTypesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NetworksAPIService
 }
 
@@ -12902,25 +12935,25 @@ ListNetworkRouterTypes Get all Network Router Types
 
 Get all Network Router Types.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListNetworkRouterTypesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListNetworkRouterTypesRequest
 */
 func (a *NetworksAPIService) ListNetworkRouterTypes(ctx context.Context) ApiListNetworkRouterTypesRequest {
 	return ApiListNetworkRouterTypesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListNetworkRouterTypes200Response
+//
+//	@return ListNetworkRouterTypes200Response
 func (a *NetworksAPIService) ListNetworkRouterTypesExecute(r ApiListNetworkRouterTypesRequest) (*ListNetworkRouterTypes200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListNetworkRouterTypes200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListNetworkRouterTypes200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.ListNetworkRouterTypes")
@@ -12970,7 +13003,7 @@ func (a *NetworksAPIService) ListNetworkRouterTypesExecute(r ApiListNetworkRoute
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -12979,8 +13012,8 @@ func (a *NetworksAPIService) ListNetworkRouterTypesExecute(r ApiListNetworkRoute
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -12990,8 +13023,8 @@ func (a *NetworksAPIService) ListNetworkRouterTypesExecute(r ApiListNetworkRoute
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -12999,8 +13032,8 @@ func (a *NetworksAPIService) ListNetworkRouterTypesExecute(r ApiListNetworkRoute
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -13009,14 +13042,14 @@ func (a *NetworksAPIService) ListNetworkRouterTypesExecute(r ApiListNetworkRoute
 }
 
 type ApiListNetworkServerGroupsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NetworksAPIService
-	serverId float32
-	max *int64
-	offset *int64
-	sort *string
-	direction *string
-	phrase *string
+	serverId   float32
+	max        *int64
+	offset     *int64
+	sort       *string
+	direction  *string
+	phrase     *string
 }
 
 // Maximum number of records to return
@@ -13059,27 +13092,27 @@ ListNetworkServerGroups Get all Network Server Groups for Network Server
 This endpoint retrieves all Network Server Groups for a specified Network Service.
 Note: Only available for NSX-T network integrations.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serverId Server ID
- @return ApiListNetworkServerGroupsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param serverId Server ID
+	@return ApiListNetworkServerGroupsRequest
 */
 func (a *NetworksAPIService) ListNetworkServerGroups(ctx context.Context, serverId float32) ApiListNetworkServerGroupsRequest {
 	return ApiListNetworkServerGroupsRequest{
 		ApiService: a,
-		ctx: ctx,
-		serverId: serverId,
+		ctx:        ctx,
+		serverId:   serverId,
 	}
 }
 
 // Execute executes the request
-//  @return ListNetworkServerGroups200Response
+//
+//	@return ListNetworkServerGroups200Response
 func (a *NetworksAPIService) ListNetworkServerGroupsExecute(r ApiListNetworkServerGroupsRequest) (*ListNetworkServerGroups200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListNetworkServerGroups200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListNetworkServerGroups200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.ListNetworkServerGroups")
@@ -13157,7 +13190,7 @@ func (a *NetworksAPIService) ListNetworkServerGroupsExecute(r ApiListNetworkServ
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -13166,8 +13199,8 @@ func (a *NetworksAPIService) ListNetworkServerGroupsExecute(r ApiListNetworkServ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -13177,8 +13210,8 @@ func (a *NetworksAPIService) ListNetworkServerGroupsExecute(r ApiListNetworkServ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -13186,8 +13219,8 @@ func (a *NetworksAPIService) ListNetworkServerGroupsExecute(r ApiListNetworkServ
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -13196,14 +13229,14 @@ func (a *NetworksAPIService) ListNetworkServerGroupsExecute(r ApiListNetworkServ
 }
 
 type ApiListNetworkServersRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NetworksAPIService
-	max *int64
-	offset *int64
-	sort *string
-	direction *string
-	phrase *string
-	name *string
+	max        *int64
+	offset     *int64
+	sort       *string
+	direction  *string
+	phrase     *string
+	name       *string
 }
 
 // Maximum number of records to return
@@ -13251,25 +13284,25 @@ ListNetworkServers Get All Network Servers
 
 This endpoint retrieves all Network Servers associated with the account.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListNetworkServersRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListNetworkServersRequest
 */
 func (a *NetworksAPIService) ListNetworkServers(ctx context.Context) ApiListNetworkServersRequest {
 	return ApiListNetworkServersRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListNetworkServers200Response
+//
+//	@return ListNetworkServers200Response
 func (a *NetworksAPIService) ListNetworkServersExecute(r ApiListNetworkServersRequest) (*ListNetworkServers200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListNetworkServers200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListNetworkServers200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.ListNetworkServers")
@@ -13349,7 +13382,7 @@ func (a *NetworksAPIService) ListNetworkServersExecute(r ApiListNetworkServersRe
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -13358,8 +13391,8 @@ func (a *NetworksAPIService) ListNetworkServersExecute(r ApiListNetworkServersRe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -13369,8 +13402,8 @@ func (a *NetworksAPIService) ListNetworkServersExecute(r ApiListNetworkServersRe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -13378,8 +13411,8 @@ func (a *NetworksAPIService) ListNetworkServersExecute(r ApiListNetworkServersRe
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -13388,10 +13421,10 @@ func (a *NetworksAPIService) ListNetworkServersExecute(r ApiListNetworkServersRe
 }
 
 type ApiListNetworkServicesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NetworksAPIService
-	name *string
-	phrase *string
+	name       *string
+	phrase     *string
 }
 
 // Filter by name
@@ -13415,24 +13448,25 @@ ListNetworkServices Get All Network Services
 
 This endpoint retrieves all Network Services associated with the account.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListNetworkServicesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListNetworkServicesRequest
 */
 func (a *NetworksAPIService) ListNetworkServices(ctx context.Context) ApiListNetworkServicesRequest {
 	return ApiListNetworkServicesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListNetworkServices200Response
+//
+//	@return ListNetworkServices200Response
 func (a *NetworksAPIService) ListNetworkServicesExecute(r ApiListNetworkServicesRequest) (*ListNetworkServices200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListNetworkServices200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListNetworkServices200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.ListNetworkServices")
@@ -13488,7 +13522,7 @@ func (a *NetworksAPIService) ListNetworkServicesExecute(r ApiListNetworkServices
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -13497,8 +13531,8 @@ func (a *NetworksAPIService) ListNetworkServicesExecute(r ApiListNetworkServices
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -13508,8 +13542,8 @@ func (a *NetworksAPIService) ListNetworkServicesExecute(r ApiListNetworkServices
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -13517,8 +13551,8 @@ func (a *NetworksAPIService) ListNetworkServicesExecute(r ApiListNetworkServices
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -13527,11 +13561,11 @@ func (a *NetworksAPIService) ListNetworkServicesExecute(r ApiListNetworkServices
 }
 
 type ApiListNetworkTypesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NetworksAPIService
-	name *string
-	code *string
-	phrase *string
+	name       *string
+	code       *string
+	phrase     *string
 }
 
 // Filter by name
@@ -13563,25 +13597,25 @@ Provides API for viewing Network Types and their configuration options.
 
 This endpoint retrieves all Network Types. The sample response has been abbreviated.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListNetworkTypesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListNetworkTypesRequest
 */
 func (a *NetworksAPIService) ListNetworkTypes(ctx context.Context) ApiListNetworkTypesRequest {
 	return ApiListNetworkTypesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListNetworkTypes200Response
+//
+//	@return ListNetworkTypes200Response
 func (a *NetworksAPIService) ListNetworkTypesExecute(r ApiListNetworkTypesRequest) (*ListNetworkTypes200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListNetworkTypes200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListNetworkTypes200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.ListNetworkTypes")
@@ -13640,7 +13674,7 @@ func (a *NetworksAPIService) ListNetworkTypesExecute(r ApiListNetworkTypesReques
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -13649,8 +13683,8 @@ func (a *NetworksAPIService) ListNetworkTypesExecute(r ApiListNetworkTypesReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -13660,8 +13694,8 @@ func (a *NetworksAPIService) ListNetworkTypesExecute(r ApiListNetworkTypesReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -13669,8 +13703,8 @@ func (a *NetworksAPIService) ListNetworkTypesExecute(r ApiListNetworkTypesReques
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -13679,14 +13713,14 @@ func (a *NetworksAPIService) ListNetworkTypesExecute(r ApiListNetworkTypesReques
 }
 
 type ApiListNetworksRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NetworksAPIService
-	name *string
-	phrase *string
-	labels *string
-	allLabels *string
-	zoneId *int64
-	cidr *string
+	name       *string
+	phrase     *string
+	labels     *string
+	allLabels  *string
+	zoneId     *int64
+	cidr       *string
 }
 
 // Filter by name
@@ -13734,25 +13768,25 @@ ListNetworks Get All Networks
 
 This endpoint retrieves all Networks associated with the account.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListNetworksRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListNetworksRequest
 */
 func (a *NetworksAPIService) ListNetworks(ctx context.Context) ApiListNetworksRequest {
 	return ApiListNetworksRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListNetworks200Response
+//
+//	@return ListNetworks200Response
 func (a *NetworksAPIService) ListNetworksExecute(r ApiListNetworksRequest) (*ListNetworks200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListNetworks200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListNetworks200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.ListNetworks")
@@ -13820,7 +13854,7 @@ func (a *NetworksAPIService) ListNetworksExecute(r ApiListNetworksRequest) (*Lis
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -13829,8 +13863,8 @@ func (a *NetworksAPIService) ListNetworksExecute(r ApiListNetworksRequest) (*Lis
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -13840,8 +13874,8 @@ func (a *NetworksAPIService) ListNetworksExecute(r ApiListNetworksRequest) (*Lis
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -13849,8 +13883,8 @@ func (a *NetworksAPIService) ListNetworksExecute(r ApiListNetworksRequest) (*Lis
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -13859,10 +13893,10 @@ func (a *NetworksAPIService) ListNetworksExecute(r ApiListNetworksRequest) (*Lis
 }
 
 type ApiListSubnetTypesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NetworksAPIService
-	name *string
-	phrase *string
+	name       *string
+	phrase     *string
 }
 
 // Filter by name
@@ -13888,25 +13922,25 @@ Provides API for viewing Network Subnet Types and their configuration options.
 
 This endpoint retrieves all Network Types. The sample response has been abbreviated.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListSubnetTypesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListSubnetTypesRequest
 */
 func (a *NetworksAPIService) ListSubnetTypes(ctx context.Context) ApiListSubnetTypesRequest {
 	return ApiListSubnetTypesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListSubnetTypes200Response
+//
+//	@return ListSubnetTypes200Response
 func (a *NetworksAPIService) ListSubnetTypesExecute(r ApiListSubnetTypesRequest) (*ListSubnetTypes200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListSubnetTypes200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListSubnetTypes200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.ListSubnetTypes")
@@ -13962,7 +13996,7 @@ func (a *NetworksAPIService) ListSubnetTypesExecute(r ApiListSubnetTypesRequest)
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -13971,8 +14005,8 @@ func (a *NetworksAPIService) ListSubnetTypesExecute(r ApiListSubnetTypesRequest)
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -13982,8 +14016,8 @@ func (a *NetworksAPIService) ListSubnetTypesExecute(r ApiListSubnetTypesRequest)
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -13991,8 +14025,8 @@ func (a *NetworksAPIService) ListSubnetTypesExecute(r ApiListSubnetTypesRequest)
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -14001,12 +14035,12 @@ func (a *NetworksAPIService) ListSubnetTypesExecute(r ApiListSubnetTypesRequest)
 }
 
 type ApiListSubnetsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NetworksAPIService
-	name *string
-	phrase *string
-	labels *string
-	allLabels *string
+	name       *string
+	phrase     *string
+	labels     *string
+	allLabels  *string
 }
 
 // Filter by name
@@ -14042,25 +14076,25 @@ ListSubnets Get All Subnets
 
 This endpoint retrieves all Subnets associated with the account.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListSubnetsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListSubnetsRequest
 */
 func (a *NetworksAPIService) ListSubnets(ctx context.Context) ApiListSubnetsRequest {
 	return ApiListSubnetsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return GetNetworkSubnets200Response
+//
+//	@return GetNetworkSubnets200Response
 func (a *NetworksAPIService) ListSubnetsExecute(r ApiListSubnetsRequest) (*GetNetworkSubnets200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetNetworkSubnets200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetNetworkSubnets200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.ListSubnets")
@@ -14122,7 +14156,7 @@ func (a *NetworksAPIService) ListSubnetsExecute(r ApiListSubnetsRequest) (*GetNe
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -14131,8 +14165,8 @@ func (a *NetworksAPIService) ListSubnetsExecute(r ApiListSubnetsRequest) (*GetNe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -14142,8 +14176,8 @@ func (a *NetworksAPIService) ListSubnetsExecute(r ApiListSubnetsRequest) (*GetNe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -14151,8 +14185,8 @@ func (a *NetworksAPIService) ListSubnetsExecute(r ApiListSubnetsRequest) (*GetNe
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -14161,9 +14195,9 @@ func (a *NetworksAPIService) ListSubnetsExecute(r ApiListSubnetsRequest) (*GetNe
 }
 
 type ApiRefreshNetworkServerRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NetworksAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiRefreshNetworkServerRequest) Execute() (*AddClusterLayouts200Response, *http.Response, error) {
@@ -14175,27 +14209,27 @@ RefreshNetworkServer Refresh a Network Server/Integration
 
 Refreshes a network server/integration.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiRefreshNetworkServerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiRefreshNetworkServerRequest
 */
 func (a *NetworksAPIService) RefreshNetworkServer(ctx context.Context, id int64) ApiRefreshNetworkServerRequest {
 	return ApiRefreshNetworkServerRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return AddClusterLayouts200Response
+//
+//	@return AddClusterLayouts200Response
 func (a *NetworksAPIService) RefreshNetworkServerExecute(r ApiRefreshNetworkServerRequest) (*AddClusterLayouts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddClusterLayouts200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddClusterLayouts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.RefreshNetworkServer")
@@ -14246,7 +14280,7 @@ func (a *NetworksAPIService) RefreshNetworkServerExecute(r ApiRefreshNetworkServ
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -14255,8 +14289,8 @@ func (a *NetworksAPIService) RefreshNetworkServerExecute(r ApiRefreshNetworkServ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -14266,8 +14300,8 @@ func (a *NetworksAPIService) RefreshNetworkServerExecute(r ApiRefreshNetworkServ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -14275,8 +14309,8 @@ func (a *NetworksAPIService) RefreshNetworkServerExecute(r ApiRefreshNetworkServ
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -14285,9 +14319,9 @@ func (a *NetworksAPIService) RefreshNetworkServerExecute(r ApiRefreshNetworkServ
 }
 
 type ApiReleaseNetworkFloatingIpRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NetworksAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiReleaseNetworkFloatingIpRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -14299,27 +14333,27 @@ ReleaseNetworkFloatingIp Release a Floating IP
 
 Release a floating IP detaching it from the associated node/VM.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiReleaseNetworkFloatingIpRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiReleaseNetworkFloatingIpRequest
 */
 func (a *NetworksAPIService) ReleaseNetworkFloatingIp(ctx context.Context, id int64) ApiReleaseNetworkFloatingIpRequest {
 	return ApiReleaseNetworkFloatingIpRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *NetworksAPIService) ReleaseNetworkFloatingIpExecute(r ApiReleaseNetworkFloatingIpRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.ReleaseNetworkFloatingIp")
@@ -14370,7 +14404,7 @@ func (a *NetworksAPIService) ReleaseNetworkFloatingIpExecute(r ApiReleaseNetwork
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -14379,8 +14413,8 @@ func (a *NetworksAPIService) ReleaseNetworkFloatingIpExecute(r ApiReleaseNetwork
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -14390,8 +14424,8 @@ func (a *NetworksAPIService) ReleaseNetworkFloatingIpExecute(r ApiReleaseNetwork
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -14399,8 +14433,8 @@ func (a *NetworksAPIService) ReleaseNetworkFloatingIpExecute(r ApiReleaseNetwork
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -14409,9 +14443,9 @@ func (a *NetworksAPIService) ReleaseNetworkFloatingIpExecute(r ApiReleaseNetwork
 }
 
 type ApiUpdateNetworkRequest struct {
-	ctx context.Context
-	ApiService *NetworksAPIService
-	id int64
+	ctx                  context.Context
+	ApiService           *NetworksAPIService
+	id                   int64
 	updateNetworkRequest *UpdateNetworkRequest
 }
 
@@ -14429,27 +14463,27 @@ UpdateNetwork Update a Network
 
 This endpoint allows updating a Network. Configuration options vary by Network Types.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateNetworkRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateNetworkRequest
 */
 func (a *NetworksAPIService) UpdateNetwork(ctx context.Context, id int64) ApiUpdateNetworkRequest {
 	return ApiUpdateNetworkRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return CreateNetworks200Response
+//
+//	@return CreateNetworks200Response
 func (a *NetworksAPIService) UpdateNetworkExecute(r ApiUpdateNetworkRequest) (*CreateNetworks200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CreateNetworks200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CreateNetworks200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.UpdateNetwork")
@@ -14502,7 +14536,7 @@ func (a *NetworksAPIService) UpdateNetworkExecute(r ApiUpdateNetworkRequest) (*C
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -14511,8 +14545,8 @@ func (a *NetworksAPIService) UpdateNetworkExecute(r ApiUpdateNetworkRequest) (*C
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -14522,8 +14556,8 @@ func (a *NetworksAPIService) UpdateNetworkExecute(r ApiUpdateNetworkRequest) (*C
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -14531,8 +14565,8 @@ func (a *NetworksAPIService) UpdateNetworkExecute(r ApiUpdateNetworkRequest) (*C
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -14541,10 +14575,10 @@ func (a *NetworksAPIService) UpdateNetworkExecute(r ApiUpdateNetworkRequest) (*C
 }
 
 type ApiUpdateNetworkDhcpRelayRequest struct {
-	ctx context.Context
-	ApiService *NetworksAPIService
-	id int64
-	serverId float32
+	ctx                           context.Context
+	ApiService                    *NetworksAPIService
+	id                            int64
+	serverId                      float32
 	updateNetworkDhcpRelayRequest *UpdateNetworkDhcpRelayRequest
 }
 
@@ -14562,29 +14596,29 @@ UpdateNetworkDhcpRelay Update a Network DHCP Relay
 
 Use this command to update an existing Network DHCP Relay.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @param serverId Server ID
- @return ApiUpdateNetworkDhcpRelayRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@param serverId Server ID
+	@return ApiUpdateNetworkDhcpRelayRequest
 */
 func (a *NetworksAPIService) UpdateNetworkDhcpRelay(ctx context.Context, id int64, serverId float32) ApiUpdateNetworkDhcpRelayRequest {
 	return ApiUpdateNetworkDhcpRelayRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
-		serverId: serverId,
+		ctx:        ctx,
+		id:         id,
+		serverId:   serverId,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *NetworksAPIService) UpdateNetworkDhcpRelayExecute(r ApiUpdateNetworkDhcpRelayRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.UpdateNetworkDhcpRelay")
@@ -14638,7 +14672,7 @@ func (a *NetworksAPIService) UpdateNetworkDhcpRelayExecute(r ApiUpdateNetworkDhc
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -14647,8 +14681,8 @@ func (a *NetworksAPIService) UpdateNetworkDhcpRelayExecute(r ApiUpdateNetworkDhc
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -14658,8 +14692,8 @@ func (a *NetworksAPIService) UpdateNetworkDhcpRelayExecute(r ApiUpdateNetworkDhc
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -14667,8 +14701,8 @@ func (a *NetworksAPIService) UpdateNetworkDhcpRelayExecute(r ApiUpdateNetworkDhc
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -14677,10 +14711,10 @@ func (a *NetworksAPIService) UpdateNetworkDhcpRelayExecute(r ApiUpdateNetworkDhc
 }
 
 type ApiUpdateNetworkDhcpServerRequest struct {
-	ctx context.Context
-	ApiService *NetworksAPIService
-	id int64
-	serverId float32
+	ctx                            context.Context
+	ApiService                     *NetworksAPIService
+	id                             int64
+	serverId                       float32
 	updateNetworkDhcpServerRequest *UpdateNetworkDhcpServerRequest
 }
 
@@ -14698,29 +14732,29 @@ UpdateNetworkDhcpServer Update a Network DHCP Server
 
 Use this command to update an existing Network DHCP Server.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @param serverId Server ID
- @return ApiUpdateNetworkDhcpServerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@param serverId Server ID
+	@return ApiUpdateNetworkDhcpServerRequest
 */
 func (a *NetworksAPIService) UpdateNetworkDhcpServer(ctx context.Context, id int64, serverId float32) ApiUpdateNetworkDhcpServerRequest {
 	return ApiUpdateNetworkDhcpServerRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
-		serverId: serverId,
+		ctx:        ctx,
+		id:         id,
+		serverId:   serverId,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *NetworksAPIService) UpdateNetworkDhcpServerExecute(r ApiUpdateNetworkDhcpServerRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.UpdateNetworkDhcpServer")
@@ -14774,7 +14808,7 @@ func (a *NetworksAPIService) UpdateNetworkDhcpServerExecute(r ApiUpdateNetworkDh
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -14783,8 +14817,8 @@ func (a *NetworksAPIService) UpdateNetworkDhcpServerExecute(r ApiUpdateNetworkDh
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -14794,8 +14828,8 @@ func (a *NetworksAPIService) UpdateNetworkDhcpServerExecute(r ApiUpdateNetworkDh
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -14803,8 +14837,8 @@ func (a *NetworksAPIService) UpdateNetworkDhcpServerExecute(r ApiUpdateNetworkDh
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -14813,9 +14847,9 @@ func (a *NetworksAPIService) UpdateNetworkDhcpServerExecute(r ApiUpdateNetworkDh
 }
 
 type ApiUpdateNetworkDomainRequest struct {
-	ctx context.Context
-	ApiService *NetworksAPIService
-	id int64
+	ctx                        context.Context
+	ApiService                 *NetworksAPIService
+	id                         int64
 	createNetworkDomainRequest *CreateNetworkDomainRequest
 }
 
@@ -14833,27 +14867,27 @@ UpdateNetworkDomain Update a Network Domain
 
 Update a Network Domain.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateNetworkDomainRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateNetworkDomainRequest
 */
 func (a *NetworksAPIService) UpdateNetworkDomain(ctx context.Context, id int64) ApiUpdateNetworkDomainRequest {
 	return ApiUpdateNetworkDomainRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return CreateNetworkDomain200Response
+//
+//	@return CreateNetworkDomain200Response
 func (a *NetworksAPIService) UpdateNetworkDomainExecute(r ApiUpdateNetworkDomainRequest) (*CreateNetworkDomain200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CreateNetworkDomain200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CreateNetworkDomain200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.UpdateNetworkDomain")
@@ -14906,7 +14940,7 @@ func (a *NetworksAPIService) UpdateNetworkDomainExecute(r ApiUpdateNetworkDomain
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -14915,8 +14949,8 @@ func (a *NetworksAPIService) UpdateNetworkDomainExecute(r ApiUpdateNetworkDomain
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -14926,8 +14960,8 @@ func (a *NetworksAPIService) UpdateNetworkDomainExecute(r ApiUpdateNetworkDomain
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -14935,8 +14969,8 @@ func (a *NetworksAPIService) UpdateNetworkDomainExecute(r ApiUpdateNetworkDomain
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -14945,10 +14979,10 @@ func (a *NetworksAPIService) UpdateNetworkDomainExecute(r ApiUpdateNetworkDomain
 }
 
 type ApiUpdateNetworkEdgeClusterRequest struct {
-	ctx context.Context
-	ApiService *NetworksAPIService
-	id int64
-	serverId float32
+	ctx                             context.Context
+	ApiService                      *NetworksAPIService
+	id                              int64
+	serverId                        float32
 	updateNetworkEdgeClusterRequest *UpdateNetworkEdgeClusterRequest
 }
 
@@ -14966,29 +15000,29 @@ UpdateNetworkEdgeCluster Update a Network Edge Cluster
 
 Use this command to update an existing network Edge Cluster.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @param serverId Server ID
- @return ApiUpdateNetworkEdgeClusterRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@param serverId Server ID
+	@return ApiUpdateNetworkEdgeClusterRequest
 */
 func (a *NetworksAPIService) UpdateNetworkEdgeCluster(ctx context.Context, id int64, serverId float32) ApiUpdateNetworkEdgeClusterRequest {
 	return ApiUpdateNetworkEdgeClusterRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
-		serverId: serverId,
+		ctx:        ctx,
+		id:         id,
+		serverId:   serverId,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *NetworksAPIService) UpdateNetworkEdgeClusterExecute(r ApiUpdateNetworkEdgeClusterRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.UpdateNetworkEdgeCluster")
@@ -15042,7 +15076,7 @@ func (a *NetworksAPIService) UpdateNetworkEdgeClusterExecute(r ApiUpdateNetworkE
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -15051,8 +15085,8 @@ func (a *NetworksAPIService) UpdateNetworkEdgeClusterExecute(r ApiUpdateNetworkE
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -15062,8 +15096,8 @@ func (a *NetworksAPIService) UpdateNetworkEdgeClusterExecute(r ApiUpdateNetworkE
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -15071,8 +15105,8 @@ func (a *NetworksAPIService) UpdateNetworkEdgeClusterExecute(r ApiUpdateNetworkE
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -15081,10 +15115,10 @@ func (a *NetworksAPIService) UpdateNetworkEdgeClusterExecute(r ApiUpdateNetworkE
 }
 
 type ApiUpdateNetworkFirewallRuleRequest struct {
-	ctx context.Context
-	ApiService *NetworksAPIService
-	id int64
-	serverId float32
+	ctx                              context.Context
+	ApiService                       *NetworksAPIService
+	id                               int64
+	serverId                         float32
 	updateNetworkFirewallRuleRequest *UpdateNetworkFirewallRuleRequest
 }
 
@@ -15102,29 +15136,29 @@ UpdateNetworkFirewallRule Update a Network Firewall Rule
 
 Use this command to update an existing network firewall Rule.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @param serverId Server ID
- @return ApiUpdateNetworkFirewallRuleRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@param serverId Server ID
+	@return ApiUpdateNetworkFirewallRuleRequest
 */
 func (a *NetworksAPIService) UpdateNetworkFirewallRule(ctx context.Context, id int64, serverId float32) ApiUpdateNetworkFirewallRuleRequest {
 	return ApiUpdateNetworkFirewallRuleRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
-		serverId: serverId,
+		ctx:        ctx,
+		id:         id,
+		serverId:   serverId,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *NetworksAPIService) UpdateNetworkFirewallRuleExecute(r ApiUpdateNetworkFirewallRuleRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.UpdateNetworkFirewallRule")
@@ -15178,7 +15212,7 @@ func (a *NetworksAPIService) UpdateNetworkFirewallRuleExecute(r ApiUpdateNetwork
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -15187,8 +15221,8 @@ func (a *NetworksAPIService) UpdateNetworkFirewallRuleExecute(r ApiUpdateNetwork
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -15198,8 +15232,8 @@ func (a *NetworksAPIService) UpdateNetworkFirewallRuleExecute(r ApiUpdateNetwork
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -15207,8 +15241,8 @@ func (a *NetworksAPIService) UpdateNetworkFirewallRuleExecute(r ApiUpdateNetwork
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -15217,10 +15251,10 @@ func (a *NetworksAPIService) UpdateNetworkFirewallRuleExecute(r ApiUpdateNetwork
 }
 
 type ApiUpdateNetworkFirewallRuleGroupRequest struct {
-	ctx context.Context
-	ApiService *NetworksAPIService
-	id int64
-	serverId float32
+	ctx                                   context.Context
+	ApiService                            *NetworksAPIService
+	id                                    int64
+	serverId                              float32
 	updateNetworkFirewallRuleGroupRequest *UpdateNetworkFirewallRuleGroupRequest
 }
 
@@ -15238,29 +15272,29 @@ UpdateNetworkFirewallRuleGroup Update a Network Firewall Rule Group
 
 Use this command to update an existing Network Firewall Rule Group.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @param serverId Server ID
- @return ApiUpdateNetworkFirewallRuleGroupRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@param serverId Server ID
+	@return ApiUpdateNetworkFirewallRuleGroupRequest
 */
 func (a *NetworksAPIService) UpdateNetworkFirewallRuleGroup(ctx context.Context, id int64, serverId float32) ApiUpdateNetworkFirewallRuleGroupRequest {
 	return ApiUpdateNetworkFirewallRuleGroupRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
-		serverId: serverId,
+		ctx:        ctx,
+		id:         id,
+		serverId:   serverId,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *NetworksAPIService) UpdateNetworkFirewallRuleGroupExecute(r ApiUpdateNetworkFirewallRuleGroupRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.UpdateNetworkFirewallRuleGroup")
@@ -15314,7 +15348,7 @@ func (a *NetworksAPIService) UpdateNetworkFirewallRuleGroupExecute(r ApiUpdateNe
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -15323,8 +15357,8 @@ func (a *NetworksAPIService) UpdateNetworkFirewallRuleGroupExecute(r ApiUpdateNe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -15334,8 +15368,8 @@ func (a *NetworksAPIService) UpdateNetworkFirewallRuleGroupExecute(r ApiUpdateNe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -15343,8 +15377,8 @@ func (a *NetworksAPIService) UpdateNetworkFirewallRuleGroupExecute(r ApiUpdateNe
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -15353,9 +15387,9 @@ func (a *NetworksAPIService) UpdateNetworkFirewallRuleGroupExecute(r ApiUpdateNe
 }
 
 type ApiUpdateNetworkGroupRequest struct {
-	ctx context.Context
-	ApiService *NetworksAPIService
-	id int64
+	ctx                       context.Context
+	ApiService                *NetworksAPIService
+	id                        int64
 	createNetworkGroupRequest *CreateNetworkGroupRequest
 }
 
@@ -15373,27 +15407,27 @@ UpdateNetworkGroup Update a Network Group
 
 Use this command to update an existing network Group.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateNetworkGroupRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateNetworkGroupRequest
 */
 func (a *NetworksAPIService) UpdateNetworkGroup(ctx context.Context, id int64) ApiUpdateNetworkGroupRequest {
 	return ApiUpdateNetworkGroupRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *NetworksAPIService) UpdateNetworkGroupExecute(r ApiUpdateNetworkGroupRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.UpdateNetworkGroup")
@@ -15446,7 +15480,7 @@ func (a *NetworksAPIService) UpdateNetworkGroupExecute(r ApiUpdateNetworkGroupRe
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -15455,8 +15489,8 @@ func (a *NetworksAPIService) UpdateNetworkGroupExecute(r ApiUpdateNetworkGroupRe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -15466,8 +15500,8 @@ func (a *NetworksAPIService) UpdateNetworkGroupExecute(r ApiUpdateNetworkGroupRe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -15475,8 +15509,8 @@ func (a *NetworksAPIService) UpdateNetworkGroupExecute(r ApiUpdateNetworkGroupRe
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -15485,9 +15519,9 @@ func (a *NetworksAPIService) UpdateNetworkGroupExecute(r ApiUpdateNetworkGroupRe
 }
 
 type ApiUpdateNetworkPoolRequest struct {
-	ctx context.Context
-	ApiService *NetworksAPIService
-	id int64
+	ctx                      context.Context
+	ApiService               *NetworksAPIService
+	id                       int64
 	createNetworkPoolRequest *CreateNetworkPoolRequest
 }
 
@@ -15505,27 +15539,27 @@ UpdateNetworkPool Update a Network Pool
 
 Update a Network Pool.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateNetworkPoolRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateNetworkPoolRequest
 */
 func (a *NetworksAPIService) UpdateNetworkPool(ctx context.Context, id int64) ApiUpdateNetworkPoolRequest {
 	return ApiUpdateNetworkPoolRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return CreateNetworkPool200Response
+//
+//	@return CreateNetworkPool200Response
 func (a *NetworksAPIService) UpdateNetworkPoolExecute(r ApiUpdateNetworkPoolRequest) (*CreateNetworkPool200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CreateNetworkPool200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CreateNetworkPool200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.UpdateNetworkPool")
@@ -15578,7 +15612,7 @@ func (a *NetworksAPIService) UpdateNetworkPoolExecute(r ApiUpdateNetworkPoolRequ
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -15587,8 +15621,8 @@ func (a *NetworksAPIService) UpdateNetworkPoolExecute(r ApiUpdateNetworkPoolRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -15598,8 +15632,8 @@ func (a *NetworksAPIService) UpdateNetworkPoolExecute(r ApiUpdateNetworkPoolRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -15607,8 +15641,8 @@ func (a *NetworksAPIService) UpdateNetworkPoolExecute(r ApiUpdateNetworkPoolRequ
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -15617,9 +15651,9 @@ func (a *NetworksAPIService) UpdateNetworkPoolExecute(r ApiUpdateNetworkPoolRequ
 }
 
 type ApiUpdateNetworkPoolServerRequest struct {
-	ctx context.Context
-	ApiService *NetworksAPIService
-	id int64
+	ctx                            context.Context
+	ApiService                     *NetworksAPIService
+	id                             int64
 	updateNetworkPoolServerRequest *UpdateNetworkPoolServerRequest
 }
 
@@ -15637,27 +15671,27 @@ UpdateNetworkPoolServer Update a Network Pool Server
 
 This endpoint allows updating a Network Pool Server. Configuration options vary by type.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateNetworkPoolServerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateNetworkPoolServerRequest
 */
 func (a *NetworksAPIService) UpdateNetworkPoolServer(ctx context.Context, id int64) ApiUpdateNetworkPoolServerRequest {
 	return ApiUpdateNetworkPoolServerRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return CreateNetworkPoolServer200Response
+//
+//	@return CreateNetworkPoolServer200Response
 func (a *NetworksAPIService) UpdateNetworkPoolServerExecute(r ApiUpdateNetworkPoolServerRequest) (*CreateNetworkPoolServer200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CreateNetworkPoolServer200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CreateNetworkPoolServer200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.UpdateNetworkPoolServer")
@@ -15710,7 +15744,7 @@ func (a *NetworksAPIService) UpdateNetworkPoolServerExecute(r ApiUpdateNetworkPo
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -15719,8 +15753,8 @@ func (a *NetworksAPIService) UpdateNetworkPoolServerExecute(r ApiUpdateNetworkPo
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -15730,8 +15764,8 @@ func (a *NetworksAPIService) UpdateNetworkPoolServerExecute(r ApiUpdateNetworkPo
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -15739,8 +15773,8 @@ func (a *NetworksAPIService) UpdateNetworkPoolServerExecute(r ApiUpdateNetworkPo
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -15749,9 +15783,9 @@ func (a *NetworksAPIService) UpdateNetworkPoolServerExecute(r ApiUpdateNetworkPo
 }
 
 type ApiUpdateNetworkProxyRequest struct {
-	ctx context.Context
-	ApiService *NetworksAPIService
-	id int64
+	ctx                       context.Context
+	ApiService                *NetworksAPIService
+	id                        int64
 	createNetworkProxyRequest *CreateNetworkProxyRequest
 }
 
@@ -15769,27 +15803,27 @@ UpdateNetworkProxy Update a Network Proxy
 
 Use this command to update an existing network Proxy.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateNetworkProxyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateNetworkProxyRequest
 */
 func (a *NetworksAPIService) UpdateNetworkProxy(ctx context.Context, id int64) ApiUpdateNetworkProxyRequest {
 	return ApiUpdateNetworkProxyRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *NetworksAPIService) UpdateNetworkProxyExecute(r ApiUpdateNetworkProxyRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.UpdateNetworkProxy")
@@ -15842,7 +15876,7 @@ func (a *NetworksAPIService) UpdateNetworkProxyExecute(r ApiUpdateNetworkProxyRe
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -15851,8 +15885,8 @@ func (a *NetworksAPIService) UpdateNetworkProxyExecute(r ApiUpdateNetworkProxyRe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -15862,8 +15896,8 @@ func (a *NetworksAPIService) UpdateNetworkProxyExecute(r ApiUpdateNetworkProxyRe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -15871,8 +15905,8 @@ func (a *NetworksAPIService) UpdateNetworkProxyExecute(r ApiUpdateNetworkProxyRe
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -15881,9 +15915,9 @@ func (a *NetworksAPIService) UpdateNetworkProxyExecute(r ApiUpdateNetworkProxyRe
 }
 
 type ApiUpdateNetworkRouterRequest struct {
-	ctx context.Context
-	ApiService *NetworksAPIService
-	id int64
+	ctx                        context.Context
+	ApiService                 *NetworksAPIService
+	id                         int64
 	updateNetworkRouterRequest *UpdateNetworkRouterRequest
 }
 
@@ -15901,27 +15935,27 @@ UpdateNetworkRouter Update a Network Router
 
 Use this command to update an existing network Router.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateNetworkRouterRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateNetworkRouterRequest
 */
 func (a *NetworksAPIService) UpdateNetworkRouter(ctx context.Context, id int64) ApiUpdateNetworkRouterRequest {
 	return ApiUpdateNetworkRouterRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *NetworksAPIService) UpdateNetworkRouterExecute(r ApiUpdateNetworkRouterRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.UpdateNetworkRouter")
@@ -15974,7 +16008,7 @@ func (a *NetworksAPIService) UpdateNetworkRouterExecute(r ApiUpdateNetworkRouter
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -15983,8 +16017,8 @@ func (a *NetworksAPIService) UpdateNetworkRouterExecute(r ApiUpdateNetworkRouter
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -15994,8 +16028,8 @@ func (a *NetworksAPIService) UpdateNetworkRouterExecute(r ApiUpdateNetworkRouter
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -16003,8 +16037,8 @@ func (a *NetworksAPIService) UpdateNetworkRouterExecute(r ApiUpdateNetworkRouter
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -16013,10 +16047,10 @@ func (a *NetworksAPIService) UpdateNetworkRouterExecute(r ApiUpdateNetworkRouter
 }
 
 type ApiUpdateNetworkRouterBgpNeighborRequest struct {
-	ctx context.Context
-	ApiService *NetworksAPIService
-	id int64
-	routerId float32
+	ctx                                   context.Context
+	ApiService                            *NetworksAPIService
+	id                                    int64
+	routerId                              float32
 	updateNetworkRouterBgpNeighborRequest *UpdateNetworkRouterBgpNeighborRequest
 }
 
@@ -16034,29 +16068,29 @@ UpdateNetworkRouterBgpNeighbor Update Network Router BGP Neighbor
 
 Use this command to update an existing Network Router BGP Neighbor.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @param routerId Router ID
- @return ApiUpdateNetworkRouterBgpNeighborRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@param routerId Router ID
+	@return ApiUpdateNetworkRouterBgpNeighborRequest
 */
 func (a *NetworksAPIService) UpdateNetworkRouterBgpNeighbor(ctx context.Context, id int64, routerId float32) ApiUpdateNetworkRouterBgpNeighborRequest {
 	return ApiUpdateNetworkRouterBgpNeighborRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
-		routerId: routerId,
+		ctx:        ctx,
+		id:         id,
+		routerId:   routerId,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *NetworksAPIService) UpdateNetworkRouterBgpNeighborExecute(r ApiUpdateNetworkRouterBgpNeighborRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.UpdateNetworkRouterBgpNeighbor")
@@ -16110,7 +16144,7 @@ func (a *NetworksAPIService) UpdateNetworkRouterBgpNeighborExecute(r ApiUpdateNe
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -16119,8 +16153,8 @@ func (a *NetworksAPIService) UpdateNetworkRouterBgpNeighborExecute(r ApiUpdateNe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -16130,8 +16164,8 @@ func (a *NetworksAPIService) UpdateNetworkRouterBgpNeighborExecute(r ApiUpdateNe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -16139,8 +16173,8 @@ func (a *NetworksAPIService) UpdateNetworkRouterBgpNeighborExecute(r ApiUpdateNe
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -16149,10 +16183,10 @@ func (a *NetworksAPIService) UpdateNetworkRouterBgpNeighborExecute(r ApiUpdateNe
 }
 
 type ApiUpdateNetworkRouterFirewallRuleRequest struct {
-	ctx context.Context
-	ApiService *NetworksAPIService
-	id int64
-	routerId float32
+	ctx                                    context.Context
+	ApiService                             *NetworksAPIService
+	id                                     int64
+	routerId                               float32
 	updateNetworkRouterFirewallRuleRequest *UpdateNetworkRouterFirewallRuleRequest
 }
 
@@ -16170,29 +16204,29 @@ UpdateNetworkRouterFirewallRule Update a Network Router Firewall Rule
 
 Use this command to update an existing network router firewall rule.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @param routerId Router ID
- @return ApiUpdateNetworkRouterFirewallRuleRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@param routerId Router ID
+	@return ApiUpdateNetworkRouterFirewallRuleRequest
 */
 func (a *NetworksAPIService) UpdateNetworkRouterFirewallRule(ctx context.Context, id int64, routerId float32) ApiUpdateNetworkRouterFirewallRuleRequest {
 	return ApiUpdateNetworkRouterFirewallRuleRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
-		routerId: routerId,
+		ctx:        ctx,
+		id:         id,
+		routerId:   routerId,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *NetworksAPIService) UpdateNetworkRouterFirewallRuleExecute(r ApiUpdateNetworkRouterFirewallRuleRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.UpdateNetworkRouterFirewallRule")
@@ -16246,7 +16280,7 @@ func (a *NetworksAPIService) UpdateNetworkRouterFirewallRuleExecute(r ApiUpdateN
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -16255,8 +16289,8 @@ func (a *NetworksAPIService) UpdateNetworkRouterFirewallRuleExecute(r ApiUpdateN
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -16266,8 +16300,8 @@ func (a *NetworksAPIService) UpdateNetworkRouterFirewallRuleExecute(r ApiUpdateN
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -16275,8 +16309,8 @@ func (a *NetworksAPIService) UpdateNetworkRouterFirewallRuleExecute(r ApiUpdateN
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -16285,10 +16319,10 @@ func (a *NetworksAPIService) UpdateNetworkRouterFirewallRuleExecute(r ApiUpdateN
 }
 
 type ApiUpdateNetworkRouterFirewallRuleGroupRequest struct {
-	ctx context.Context
-	ApiService *NetworksAPIService
-	id int64
-	routerId float32
+	ctx                                         context.Context
+	ApiService                                  *NetworksAPIService
+	id                                          int64
+	routerId                                    float32
 	updateNetworkRouterFirewallRuleGroupRequest *UpdateNetworkRouterFirewallRuleGroupRequest
 }
 
@@ -16306,29 +16340,29 @@ UpdateNetworkRouterFirewallRuleGroup Update a Network Router Firewall Rule Group
 
 Use this command to update an existing Network Router Firewall Rule Group.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @param routerId Router ID
- @return ApiUpdateNetworkRouterFirewallRuleGroupRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@param routerId Router ID
+	@return ApiUpdateNetworkRouterFirewallRuleGroupRequest
 */
 func (a *NetworksAPIService) UpdateNetworkRouterFirewallRuleGroup(ctx context.Context, id int64, routerId float32) ApiUpdateNetworkRouterFirewallRuleGroupRequest {
 	return ApiUpdateNetworkRouterFirewallRuleGroupRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
-		routerId: routerId,
+		ctx:        ctx,
+		id:         id,
+		routerId:   routerId,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *NetworksAPIService) UpdateNetworkRouterFirewallRuleGroupExecute(r ApiUpdateNetworkRouterFirewallRuleGroupRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.UpdateNetworkRouterFirewallRuleGroup")
@@ -16382,7 +16416,7 @@ func (a *NetworksAPIService) UpdateNetworkRouterFirewallRuleGroupExecute(r ApiUp
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -16391,8 +16425,8 @@ func (a *NetworksAPIService) UpdateNetworkRouterFirewallRuleGroupExecute(r ApiUp
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -16402,8 +16436,8 @@ func (a *NetworksAPIService) UpdateNetworkRouterFirewallRuleGroupExecute(r ApiUp
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -16411,8 +16445,8 @@ func (a *NetworksAPIService) UpdateNetworkRouterFirewallRuleGroupExecute(r ApiUp
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -16421,10 +16455,10 @@ func (a *NetworksAPIService) UpdateNetworkRouterFirewallRuleGroupExecute(r ApiUp
 }
 
 type ApiUpdateNetworkRouterNatRequest struct {
-	ctx context.Context
-	ApiService *NetworksAPIService
-	id int64
-	routerId float32
+	ctx                           context.Context
+	ApiService                    *NetworksAPIService
+	id                            int64
+	routerId                      float32
 	updateNetworkRouterNatRequest *UpdateNetworkRouterNatRequest
 }
 
@@ -16442,29 +16476,29 @@ UpdateNetworkRouterNat Update Network Router NAT
 
 Use this command to update an existing Network Router NAT.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @param routerId Router ID
- @return ApiUpdateNetworkRouterNatRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@param routerId Router ID
+	@return ApiUpdateNetworkRouterNatRequest
 */
 func (a *NetworksAPIService) UpdateNetworkRouterNat(ctx context.Context, id int64, routerId float32) ApiUpdateNetworkRouterNatRequest {
 	return ApiUpdateNetworkRouterNatRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
-		routerId: routerId,
+		ctx:        ctx,
+		id:         id,
+		routerId:   routerId,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *NetworksAPIService) UpdateNetworkRouterNatExecute(r ApiUpdateNetworkRouterNatRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.UpdateNetworkRouterNat")
@@ -16518,7 +16552,7 @@ func (a *NetworksAPIService) UpdateNetworkRouterNatExecute(r ApiUpdateNetworkRou
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -16527,8 +16561,8 @@ func (a *NetworksAPIService) UpdateNetworkRouterNatExecute(r ApiUpdateNetworkRou
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -16538,8 +16572,8 @@ func (a *NetworksAPIService) UpdateNetworkRouterNatExecute(r ApiUpdateNetworkRou
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -16547,8 +16581,8 @@ func (a *NetworksAPIService) UpdateNetworkRouterNatExecute(r ApiUpdateNetworkRou
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -16557,9 +16591,9 @@ func (a *NetworksAPIService) UpdateNetworkRouterNatExecute(r ApiUpdateNetworkRou
 }
 
 type ApiUpdateNetworkRouterPermissionsRequest struct {
-	ctx context.Context
-	ApiService *NetworksAPIService
-	routerId float32
+	ctx                                   context.Context
+	ApiService                            *NetworksAPIService
+	routerId                              float32
 	updateNetworkRouterPermissionsRequest *UpdateNetworkRouterPermissionsRequest
 }
 
@@ -16575,29 +16609,29 @@ func (r ApiUpdateNetworkRouterPermissionsRequest) Execute() (*AddClusterLayouts2
 /*
 UpdateNetworkRouterPermissions Update Network Router Permissions
 
-Update Network Router Permissions
+# Update Network Router Permissions
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param routerId Router ID
- @return ApiUpdateNetworkRouterPermissionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param routerId Router ID
+	@return ApiUpdateNetworkRouterPermissionsRequest
 */
 func (a *NetworksAPIService) UpdateNetworkRouterPermissions(ctx context.Context, routerId float32) ApiUpdateNetworkRouterPermissionsRequest {
 	return ApiUpdateNetworkRouterPermissionsRequest{
 		ApiService: a,
-		ctx: ctx,
-		routerId: routerId,
+		ctx:        ctx,
+		routerId:   routerId,
 	}
 }
 
 // Execute executes the request
-//  @return AddClusterLayouts200Response
+//
+//	@return AddClusterLayouts200Response
 func (a *NetworksAPIService) UpdateNetworkRouterPermissionsExecute(r ApiUpdateNetworkRouterPermissionsRequest) (*AddClusterLayouts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddClusterLayouts200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddClusterLayouts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.UpdateNetworkRouterPermissions")
@@ -16650,7 +16684,7 @@ func (a *NetworksAPIService) UpdateNetworkRouterPermissionsExecute(r ApiUpdateNe
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -16659,8 +16693,8 @@ func (a *NetworksAPIService) UpdateNetworkRouterPermissionsExecute(r ApiUpdateNe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -16670,8 +16704,8 @@ func (a *NetworksAPIService) UpdateNetworkRouterPermissionsExecute(r ApiUpdateNe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -16679,8 +16713,8 @@ func (a *NetworksAPIService) UpdateNetworkRouterPermissionsExecute(r ApiUpdateNe
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -16689,9 +16723,9 @@ func (a *NetworksAPIService) UpdateNetworkRouterPermissionsExecute(r ApiUpdateNe
 }
 
 type ApiUpdateNetworkServerRequest struct {
-	ctx context.Context
-	ApiService *NetworksAPIService
-	id int64
+	ctx                        context.Context
+	ApiService                 *NetworksAPIService
+	id                         int64
 	updateNetworkServerRequest *UpdateNetworkServerRequest
 }
 
@@ -16709,27 +16743,27 @@ UpdateNetworkServer Update a Network Server
 
 This endpoint allows updating a Network Server. Configuration options vary by type.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateNetworkServerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateNetworkServerRequest
 */
 func (a *NetworksAPIService) UpdateNetworkServer(ctx context.Context, id int64) ApiUpdateNetworkServerRequest {
 	return ApiUpdateNetworkServerRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return CreateNetworkServer200Response
+//
+//	@return CreateNetworkServer200Response
 func (a *NetworksAPIService) UpdateNetworkServerExecute(r ApiUpdateNetworkServerRequest) (*CreateNetworkServer200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CreateNetworkServer200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CreateNetworkServer200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.UpdateNetworkServer")
@@ -16782,7 +16816,7 @@ func (a *NetworksAPIService) UpdateNetworkServerExecute(r ApiUpdateNetworkServer
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -16791,8 +16825,8 @@ func (a *NetworksAPIService) UpdateNetworkServerExecute(r ApiUpdateNetworkServer
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -16802,8 +16836,8 @@ func (a *NetworksAPIService) UpdateNetworkServerExecute(r ApiUpdateNetworkServer
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -16811,8 +16845,8 @@ func (a *NetworksAPIService) UpdateNetworkServerExecute(r ApiUpdateNetworkServer
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -16821,10 +16855,10 @@ func (a *NetworksAPIService) UpdateNetworkServerExecute(r ApiUpdateNetworkServer
 }
 
 type ApiUpdateNetworkServerGroupRequest struct {
-	ctx context.Context
-	ApiService *NetworksAPIService
-	id int64
-	serverId float32
+	ctx                             context.Context
+	ApiService                      *NetworksAPIService
+	id                              int64
+	serverId                        float32
 	updateNetworkServerGroupRequest *UpdateNetworkServerGroupRequest
 }
 
@@ -16843,29 +16877,29 @@ UpdateNetworkServerGroup Update a Network Server Group
 Use this command to update an existing network server group.
 Note: Only available for NSX-T network integrations.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @param serverId Server ID
- @return ApiUpdateNetworkServerGroupRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@param serverId Server ID
+	@return ApiUpdateNetworkServerGroupRequest
 */
 func (a *NetworksAPIService) UpdateNetworkServerGroup(ctx context.Context, id int64, serverId float32) ApiUpdateNetworkServerGroupRequest {
 	return ApiUpdateNetworkServerGroupRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
-		serverId: serverId,
+		ctx:        ctx,
+		id:         id,
+		serverId:   serverId,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *NetworksAPIService) UpdateNetworkServerGroupExecute(r ApiUpdateNetworkServerGroupRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.UpdateNetworkServerGroup")
@@ -16919,7 +16953,7 @@ func (a *NetworksAPIService) UpdateNetworkServerGroupExecute(r ApiUpdateNetworkS
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -16928,8 +16962,8 @@ func (a *NetworksAPIService) UpdateNetworkServerGroupExecute(r ApiUpdateNetworkS
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -16939,8 +16973,8 @@ func (a *NetworksAPIService) UpdateNetworkServerGroupExecute(r ApiUpdateNetworkS
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -16948,8 +16982,8 @@ func (a *NetworksAPIService) UpdateNetworkServerGroupExecute(r ApiUpdateNetworkS
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -16958,10 +16992,10 @@ func (a *NetworksAPIService) UpdateNetworkServerGroupExecute(r ApiUpdateNetworkS
 }
 
 type ApiUpdateNetworkTransportZoneRequest struct {
-	ctx context.Context
-	ApiService *NetworksAPIService
-	id int64
-	serverId float32
+	ctx                               context.Context
+	ApiService                        *NetworksAPIService
+	id                                int64
+	serverId                          float32
 	updateNetworkTransportZoneRequest *UpdateNetworkTransportZoneRequest
 }
 
@@ -16979,29 +17013,29 @@ UpdateNetworkTransportZone Update a Network Transport Zone
 
 Use this command to update an existing network Transport Zone.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @param serverId Server ID
- @return ApiUpdateNetworkTransportZoneRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@param serverId Server ID
+	@return ApiUpdateNetworkTransportZoneRequest
 */
 func (a *NetworksAPIService) UpdateNetworkTransportZone(ctx context.Context, id int64, serverId float32) ApiUpdateNetworkTransportZoneRequest {
 	return ApiUpdateNetworkTransportZoneRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
-		serverId: serverId,
+		ctx:        ctx,
+		id:         id,
+		serverId:   serverId,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *NetworksAPIService) UpdateNetworkTransportZoneExecute(r ApiUpdateNetworkTransportZoneRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.UpdateNetworkTransportZone")
@@ -17055,7 +17089,7 @@ func (a *NetworksAPIService) UpdateNetworkTransportZoneExecute(r ApiUpdateNetwor
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -17064,8 +17098,8 @@ func (a *NetworksAPIService) UpdateNetworkTransportZoneExecute(r ApiUpdateNetwor
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -17075,8 +17109,8 @@ func (a *NetworksAPIService) UpdateNetworkTransportZoneExecute(r ApiUpdateNetwor
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -17084,8 +17118,8 @@ func (a *NetworksAPIService) UpdateNetworkTransportZoneExecute(r ApiUpdateNetwor
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -17094,10 +17128,10 @@ func (a *NetworksAPIService) UpdateNetworkTransportZoneExecute(r ApiUpdateNetwor
 }
 
 type ApiUpdateStaticRouteRequest struct {
-	ctx context.Context
-	ApiService *NetworksAPIService
-	id int64
-	routeId float32
+	ctx                      context.Context
+	ApiService               *NetworksAPIService
+	id                       int64
+	routeId                  float32
 	createStaticRouteRequest *CreateStaticRouteRequest
 }
 
@@ -17115,29 +17149,29 @@ UpdateStaticRoute Update a Network Static Route
 
 Use this command to update a route.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @param routeId The ID of the route
- @return ApiUpdateStaticRouteRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@param routeId The ID of the route
+	@return ApiUpdateStaticRouteRequest
 */
 func (a *NetworksAPIService) UpdateStaticRoute(ctx context.Context, id int64, routeId float32) ApiUpdateStaticRouteRequest {
 	return ApiUpdateStaticRouteRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
-		routeId: routeId,
+		ctx:        ctx,
+		id:         id,
+		routeId:    routeId,
 	}
 }
 
 // Execute executes the request
-//  @return AddClusterLayouts200Response
+//
+//	@return AddClusterLayouts200Response
 func (a *NetworksAPIService) UpdateStaticRouteExecute(r ApiUpdateStaticRouteRequest) (*AddClusterLayouts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddClusterLayouts200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddClusterLayouts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.UpdateStaticRoute")
@@ -17191,7 +17225,7 @@ func (a *NetworksAPIService) UpdateStaticRouteExecute(r ApiUpdateStaticRouteRequ
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -17200,8 +17234,8 @@ func (a *NetworksAPIService) UpdateStaticRouteExecute(r ApiUpdateStaticRouteRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -17211,8 +17245,8 @@ func (a *NetworksAPIService) UpdateStaticRouteExecute(r ApiUpdateStaticRouteRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -17220,8 +17254,8 @@ func (a *NetworksAPIService) UpdateStaticRouteExecute(r ApiUpdateStaticRouteRequ
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -17230,9 +17264,9 @@ func (a *NetworksAPIService) UpdateStaticRouteExecute(r ApiUpdateStaticRouteRequ
 }
 
 type ApiUpdateSubnetRequest struct {
-	ctx context.Context
-	ApiService *NetworksAPIService
-	id int64
+	ctx                 context.Context
+	ApiService          *NetworksAPIService
+	id                  int64
 	createSubnetRequest *CreateSubnetRequest
 }
 
@@ -17250,27 +17284,27 @@ UpdateSubnet Update a Subnet
 
 This endpoint allows updating a Subnet. Only certain types of clouds support this action. Configuration options vary for each Subnet Type.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateSubnetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateSubnetRequest
 */
 func (a *NetworksAPIService) UpdateSubnet(ctx context.Context, id int64) ApiUpdateSubnetRequest {
 	return ApiUpdateSubnetRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return CreateSubnet200Response
+//
+//	@return CreateSubnet200Response
 func (a *NetworksAPIService) UpdateSubnetExecute(r ApiUpdateSubnetRequest) (*CreateSubnet200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CreateSubnet200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CreateSubnet200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.UpdateSubnet")
@@ -17323,7 +17357,7 @@ func (a *NetworksAPIService) UpdateSubnetExecute(r ApiUpdateSubnetRequest) (*Cre
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -17332,8 +17366,8 @@ func (a *NetworksAPIService) UpdateSubnetExecute(r ApiUpdateSubnetRequest) (*Cre
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -17343,8 +17377,8 @@ func (a *NetworksAPIService) UpdateSubnetExecute(r ApiUpdateSubnetRequest) (*Cre
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -17352,8 +17386,8 @@ func (a *NetworksAPIService) UpdateSubnetExecute(r ApiUpdateSubnetRequest) (*Cre
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

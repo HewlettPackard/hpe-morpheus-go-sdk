@@ -20,9 +20,9 @@ var _ MappedNullable = &AddCloudsRequestZoneCredential{}
 
 // AddCloudsRequestZoneCredential Map containing Credential ID. Setting `type` to `local` means use the values set in the local cloud config instead of associating a credential.
 type AddCloudsRequestZoneCredential struct {
-	Type *string `json:"type,omitempty"`
-	Id *int32 `json:"id,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Type                 *string                `json:"type,omitempty"`
+	Id                   *int32                 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddCloudsRequestZoneCredential AddCloudsRequestZoneCredential
@@ -113,7 +113,7 @@ func (o *AddCloudsRequestZoneCredential) SetId(v int32) {
 }
 
 func (o AddCloudsRequestZoneCredential) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -135,63 +135,8 @@ func (o AddCloudsRequestZoneCredential) ToMap() (map[string]interface{}, error) 
 
 	return toSerialize, nil
 }
-
 func (o *AddCloudsRequestZoneCredential) UnmarshalJSON(data []byte) (err error) {
-	varAddCloudsRequestZoneCredential := _AddCloudsRequestZoneCredential{}
-
-	err = json.Unmarshal(data, &varAddCloudsRequestZoneCredential)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddCloudsRequestZoneCredential(varAddCloudsRequestZoneCredential)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "id")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddCloudsRequestZoneCredential struct {
-	value *AddCloudsRequestZoneCredential
-	isSet bool
-}
-
-func (v NullableAddCloudsRequestZoneCredential) Get() *AddCloudsRequestZoneCredential {
-	return v.value
-}
-
-func (v *NullableAddCloudsRequestZoneCredential) Set(val *AddCloudsRequestZoneCredential) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddCloudsRequestZoneCredential) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddCloudsRequestZoneCredential) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddCloudsRequestZoneCredential(val *AddCloudsRequestZoneCredential) *NullableAddCloudsRequestZoneCredential {
-	return &NullableAddCloudsRequestZoneCredential{value: val, isSet: true}
-}
-
-func (v NullableAddCloudsRequestZoneCredential) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddCloudsRequestZoneCredential) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

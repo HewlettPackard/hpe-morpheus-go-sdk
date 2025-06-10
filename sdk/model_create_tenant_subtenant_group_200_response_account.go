@@ -21,20 +21,20 @@ var _ MappedNullable = &CreateTenantSubtenantGroup200ResponseAccount{}
 
 // CreateTenantSubtenantGroup200ResponseAccount struct for CreateTenantSubtenantGroup200ResponseAccount
 type CreateTenantSubtenantGroup200ResponseAccount struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Code *string `json:"code,omitempty"`
-	Location *string `json:"location,omitempty"`
-	AccountId *int64 `json:"accountId,omitempty"`
-	Visibility *string `json:"visibility,omitempty"`
-	Active *bool `json:"active,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	Zones []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"zones,omitempty"`
-	Stats *ListGroups200ResponseAllOfGroupsInnerStats `json:"stats,omitempty"`
-	ServerCount *int64 `json:"serverCount,omitempty"`
-	Success *bool `json:"success,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                                   `json:"id,omitempty"`
+	Name                 *string                                                                  `json:"name,omitempty"`
+	Code                 *string                                                                  `json:"code,omitempty"`
+	Location             *string                                                                  `json:"location,omitempty"`
+	AccountId            *int64                                                                   `json:"accountId,omitempty"`
+	Visibility           *string                                                                  `json:"visibility,omitempty"`
+	Active               *bool                                                                    `json:"active,omitempty"`
+	DateCreated          *time.Time                                                               `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                                               `json:"lastUpdated,omitempty"`
+	Zones                []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"zones,omitempty"`
+	Stats                *ListGroups200ResponseAllOfGroupsInnerStats                              `json:"stats,omitempty"`
+	ServerCount          *int64                                                                   `json:"serverCount,omitempty"`
+	Success              *bool                                                                    `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{}                                                   `json:",remain"`
 }
 
 type _CreateTenantSubtenantGroup200ResponseAccount CreateTenantSubtenantGroup200ResponseAccount
@@ -473,7 +473,7 @@ func (o *CreateTenantSubtenantGroup200ResponseAccount) SetSuccess(v bool) {
 }
 
 func (o CreateTenantSubtenantGroup200ResponseAccount) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -528,74 +528,8 @@ func (o CreateTenantSubtenantGroup200ResponseAccount) ToMap() (map[string]interf
 
 	return toSerialize, nil
 }
-
 func (o *CreateTenantSubtenantGroup200ResponseAccount) UnmarshalJSON(data []byte) (err error) {
-	varCreateTenantSubtenantGroup200ResponseAccount := _CreateTenantSubtenantGroup200ResponseAccount{}
-
-	err = json.Unmarshal(data, &varCreateTenantSubtenantGroup200ResponseAccount)
-
-	if err != nil {
-		return err
-	}
-
-	*o = CreateTenantSubtenantGroup200ResponseAccount(varCreateTenantSubtenantGroup200ResponseAccount)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "location")
-		delete(additionalProperties, "accountId")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "active")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		delete(additionalProperties, "zones")
-		delete(additionalProperties, "stats")
-		delete(additionalProperties, "serverCount")
-		delete(additionalProperties, "success")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableCreateTenantSubtenantGroup200ResponseAccount struct {
-	value *CreateTenantSubtenantGroup200ResponseAccount
-	isSet bool
-}
-
-func (v NullableCreateTenantSubtenantGroup200ResponseAccount) Get() *CreateTenantSubtenantGroup200ResponseAccount {
-	return v.value
-}
-
-func (v *NullableCreateTenantSubtenantGroup200ResponseAccount) Set(val *CreateTenantSubtenantGroup200ResponseAccount) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableCreateTenantSubtenantGroup200ResponseAccount) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableCreateTenantSubtenantGroup200ResponseAccount) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableCreateTenantSubtenantGroup200ResponseAccount(val *CreateTenantSubtenantGroup200ResponseAccount) *NullableCreateTenantSubtenantGroup200ResponseAccount {
-	return &NullableCreateTenantSubtenantGroup200ResponseAccount{value: val, isSet: true}
-}
-
-func (v NullableCreateTenantSubtenantGroup200ResponseAccount) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableCreateTenantSubtenantGroup200ResponseAccount) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

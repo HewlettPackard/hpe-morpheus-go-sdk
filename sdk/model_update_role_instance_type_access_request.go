@@ -14,6 +14,7 @@ package sdk
 import (
 	"encoding/json"
 	"fmt"
+
 	"gopkg.in/validator.v2"
 )
 
@@ -22,7 +23,7 @@ var _ fmt.Stringer
 
 // UpdateRoleInstanceTypeAccessRequest - struct for UpdateRoleInstanceTypeAccessRequest
 type UpdateRoleInstanceTypeAccessRequest struct {
-	UpdateRoleInstanceTypeAccessRequestOneOf *UpdateRoleInstanceTypeAccessRequestOneOf
+	UpdateRoleInstanceTypeAccessRequestOneOf  *UpdateRoleInstanceTypeAccessRequestOneOf
 	UpdateRoleInstanceTypeAccessRequestOneOf1 *UpdateRoleInstanceTypeAccessRequestOneOf1
 }
 
@@ -40,6 +41,21 @@ func UpdateRoleInstanceTypeAccessRequestOneOf1AsUpdateRoleInstanceTypeAccessRequ
 	}
 }
 
+func (dst *UpdateRoleInstanceTypeAccessRequest) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &UpdateRoleInstanceTypeAccessRequest{}
+	}
+
+	if out, ok := data.(UpdateRoleInstanceTypeAccessRequestOneOf); ok {
+		dst.UpdateRoleInstanceTypeAccessRequestOneOf = &out
+	}
+
+	if out, ok := data.(UpdateRoleInstanceTypeAccessRequestOneOf1); ok {
+		dst.UpdateRoleInstanceTypeAccessRequestOneOf1 = &out
+	}
+
+	return dst, nil
+}
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *UpdateRoleInstanceTypeAccessRequest) UnmarshalJSON(data []byte) error {
@@ -106,7 +122,7 @@ func (src UpdateRoleInstanceTypeAccessRequest) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *UpdateRoleInstanceTypeAccessRequest) GetActualInstance() (interface{}) {
+func (obj *UpdateRoleInstanceTypeAccessRequest) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -123,7 +139,7 @@ func (obj *UpdateRoleInstanceTypeAccessRequest) GetActualInstance() (interface{}
 }
 
 // Get the actual instance value
-func (obj UpdateRoleInstanceTypeAccessRequest) GetActualInstanceValue() (interface{}) {
+func (obj UpdateRoleInstanceTypeAccessRequest) GetActualInstanceValue() interface{} {
 	if obj.UpdateRoleInstanceTypeAccessRequestOneOf != nil {
 		return *obj.UpdateRoleInstanceTypeAccessRequestOneOf
 	}
@@ -171,5 +187,3 @@ func (v *NullableUpdateRoleInstanceTypeAccessRequest) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

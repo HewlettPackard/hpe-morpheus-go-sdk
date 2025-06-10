@@ -35,9 +35,9 @@ type CreateInstanceScheduleRequestInstanceSchedule struct {
 	// Start Date. Only used and required for scheduleType `exact`
 	StartDate *time.Time `json:"startDate,omitempty"`
 	// End Date. Only used and required for scheduleType `exact`
-	EndDate *time.Time `json:"endDate,omitempty"`
-	Threshold *CreateInstanceScheduleRequestInstanceScheduleThreshold `json:"threshold,omitempty"`
-	AdditionalProperties map[string]interface{}
+	EndDate              *time.Time                                              `json:"endDate,omitempty"`
+	Threshold            *CreateInstanceScheduleRequestInstanceScheduleThreshold `json:"threshold,omitempty"`
+	AdditionalProperties map[string]interface{}                                  `json:",remain"`
 }
 
 type _CreateInstanceScheduleRequestInstanceSchedule CreateInstanceScheduleRequestInstanceSchedule
@@ -356,7 +356,7 @@ func (o *CreateInstanceScheduleRequestInstanceSchedule) SetThreshold(v CreateIns
 }
 
 func (o CreateInstanceScheduleRequestInstanceSchedule) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -399,70 +399,8 @@ func (o CreateInstanceScheduleRequestInstanceSchedule) ToMap() (map[string]inter
 
 	return toSerialize, nil
 }
-
 func (o *CreateInstanceScheduleRequestInstanceSchedule) UnmarshalJSON(data []byte) (err error) {
-	varCreateInstanceScheduleRequestInstanceSchedule := _CreateInstanceScheduleRequestInstanceSchedule{}
-
-	err = json.Unmarshal(data, &varCreateInstanceScheduleRequestInstanceSchedule)
-
-	if err != nil {
-		return err
-	}
-
-	*o = CreateInstanceScheduleRequestInstanceSchedule(varCreateInstanceScheduleRequestInstanceSchedule)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "scheduleType")
-		delete(additionalProperties, "scheduleTimezone")
-		delete(additionalProperties, "startDayOfWeek")
-		delete(additionalProperties, "startTime")
-		delete(additionalProperties, "endDayOfWeek")
-		delete(additionalProperties, "endTime")
-		delete(additionalProperties, "startDate")
-		delete(additionalProperties, "endDate")
-		delete(additionalProperties, "threshold")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableCreateInstanceScheduleRequestInstanceSchedule struct {
-	value *CreateInstanceScheduleRequestInstanceSchedule
-	isSet bool
-}
-
-func (v NullableCreateInstanceScheduleRequestInstanceSchedule) Get() *CreateInstanceScheduleRequestInstanceSchedule {
-	return v.value
-}
-
-func (v *NullableCreateInstanceScheduleRequestInstanceSchedule) Set(val *CreateInstanceScheduleRequestInstanceSchedule) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableCreateInstanceScheduleRequestInstanceSchedule) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableCreateInstanceScheduleRequestInstanceSchedule) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableCreateInstanceScheduleRequestInstanceSchedule(val *CreateInstanceScheduleRequestInstanceSchedule) *NullableCreateInstanceScheduleRequestInstanceSchedule {
-	return &NullableCreateInstanceScheduleRequestInstanceSchedule{value: val, isSet: true}
-}
-
-func (v NullableCreateInstanceScheduleRequestInstanceSchedule) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableCreateInstanceScheduleRequestInstanceSchedule) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

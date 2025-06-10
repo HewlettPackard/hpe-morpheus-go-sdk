@@ -20,18 +20,18 @@ var _ MappedNullable = &PrepareAppApply200ResponseAllOfData{}
 
 // PrepareAppApply200ResponseAllOfData struct for PrepareAppApply200ResponseAllOfData
 type PrepareAppApply200ResponseAllOfData struct {
-	Image *string `json:"image,omitempty"`
-	Name *string `json:"name,omitempty"`
-	AutoValidate *bool `json:"autoValidate,omitempty"`
-	Terraform *PrepareAppApply200ResponseAllOfDataTerraform `json:"terraform,omitempty"`
-	Type *string `json:"type,omitempty"`
-	Config map[string]interface{} `json:"config,omitempty"`
-	BlueprintName *string `json:"blueprintName,omitempty"`
-	Description *string `json:"description,omitempty"`
-	TemplateId *int64 `json:"templateId,omitempty"`
-	BlueprintId *int64 `json:"blueprintId,omitempty"`
-	Group *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"group,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Image                *string                                                                 `json:"image,omitempty"`
+	Name                 *string                                                                 `json:"name,omitempty"`
+	AutoValidate         *bool                                                                   `json:"autoValidate,omitempty"`
+	Terraform            *PrepareAppApply200ResponseAllOfDataTerraform                           `json:"terraform,omitempty"`
+	Type                 *string                                                                 `json:"type,omitempty"`
+	Config               map[string]interface{}                                                  `json:"config,omitempty"`
+	BlueprintName        *string                                                                 `json:"blueprintName,omitempty"`
+	Description          *string                                                                 `json:"description,omitempty"`
+	TemplateId           *int64                                                                  `json:"templateId,omitempty"`
+	BlueprintId          *int64                                                                  `json:"blueprintId,omitempty"`
+	Group                *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"group,omitempty"`
+	AdditionalProperties map[string]interface{}                                                  `json:",remain"`
 }
 
 type _PrepareAppApply200ResponseAllOfData PrepareAppApply200ResponseAllOfData
@@ -406,7 +406,7 @@ func (o *PrepareAppApply200ResponseAllOfData) SetGroup(v ListApplianceSettings20
 }
 
 func (o PrepareAppApply200ResponseAllOfData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -455,72 +455,8 @@ func (o PrepareAppApply200ResponseAllOfData) ToMap() (map[string]interface{}, er
 
 	return toSerialize, nil
 }
-
 func (o *PrepareAppApply200ResponseAllOfData) UnmarshalJSON(data []byte) (err error) {
-	varPrepareAppApply200ResponseAllOfData := _PrepareAppApply200ResponseAllOfData{}
-
-	err = json.Unmarshal(data, &varPrepareAppApply200ResponseAllOfData)
-
-	if err != nil {
-		return err
-	}
-
-	*o = PrepareAppApply200ResponseAllOfData(varPrepareAppApply200ResponseAllOfData)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "image")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "autoValidate")
-		delete(additionalProperties, "terraform")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "blueprintName")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "templateId")
-		delete(additionalProperties, "blueprintId")
-		delete(additionalProperties, "group")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullablePrepareAppApply200ResponseAllOfData struct {
-	value *PrepareAppApply200ResponseAllOfData
-	isSet bool
-}
-
-func (v NullablePrepareAppApply200ResponseAllOfData) Get() *PrepareAppApply200ResponseAllOfData {
-	return v.value
-}
-
-func (v *NullablePrepareAppApply200ResponseAllOfData) Set(val *PrepareAppApply200ResponseAllOfData) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullablePrepareAppApply200ResponseAllOfData) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullablePrepareAppApply200ResponseAllOfData) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullablePrepareAppApply200ResponseAllOfData(val *PrepareAppApply200ResponseAllOfData) *NullablePrepareAppApply200ResponseAllOfData {
-	return &NullablePrepareAppApply200ResponseAllOfData{value: val, isSet: true}
-}
-
-func (v NullablePrepareAppApply200ResponseAllOfData) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullablePrepareAppApply200ResponseAllOfData) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

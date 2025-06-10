@@ -20,16 +20,16 @@ var _ MappedNullable = &CheckType{}
 
 // CheckType struct for CheckType
 type CheckType struct {
-	Id *int64 `json:"id,omitempty"`
-	Code *string `json:"code,omitempty"`
-	Name *string `json:"name,omitempty"`
-	DefaultInterval *int64 `json:"defaultInterval,omitempty"`
-	MetricName *string `json:"metricName,omitempty"`
-	InUptime *bool `json:"inUptime,omitempty"`
-	CreateIncident *bool `json:"createIncident,omitempty"`
-	PushOnly *bool `json:"pushOnly,omitempty"`
-	TunnelSupported *bool `json:"tunnelSupported,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	Code                 *string                `json:"code,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	DefaultInterval      *int64                 `json:"defaultInterval,omitempty"`
+	MetricName           *string                `json:"metricName,omitempty"`
+	InUptime             *bool                  `json:"inUptime,omitempty"`
+	CreateIncident       *bool                  `json:"createIncident,omitempty"`
+	PushOnly             *bool                  `json:"pushOnly,omitempty"`
+	TunnelSupported      *bool                  `json:"tunnelSupported,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _CheckType CheckType
@@ -340,7 +340,7 @@ func (o *CheckType) SetTunnelSupported(v bool) {
 }
 
 func (o CheckType) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -383,70 +383,8 @@ func (o CheckType) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *CheckType) UnmarshalJSON(data []byte) (err error) {
-	varCheckType := _CheckType{}
-
-	err = json.Unmarshal(data, &varCheckType)
-
-	if err != nil {
-		return err
-	}
-
-	*o = CheckType(varCheckType)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "defaultInterval")
-		delete(additionalProperties, "metricName")
-		delete(additionalProperties, "inUptime")
-		delete(additionalProperties, "createIncident")
-		delete(additionalProperties, "pushOnly")
-		delete(additionalProperties, "tunnelSupported")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableCheckType struct {
-	value *CheckType
-	isSet bool
-}
-
-func (v NullableCheckType) Get() *CheckType {
-	return v.value
-}
-
-func (v *NullableCheckType) Set(val *CheckType) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableCheckType) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableCheckType) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableCheckType(val *CheckType) *NullableCheckType {
-	return &NullableCheckType{value: val, isSet: true}
-}
-
-func (v NullableCheckType) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableCheckType) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

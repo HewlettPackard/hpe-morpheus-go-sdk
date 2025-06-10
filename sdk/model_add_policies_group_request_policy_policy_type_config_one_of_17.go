@@ -18,11 +18,11 @@ import (
 // checks if the AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf17 type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf17{}
 
-// AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf17 - Max Storage - Object Storage Quota 
+// AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf17 - Max Storage - Object Storage Quota
 type AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf17 struct {
-	MaxStorage *string `json:"maxStorage,omitempty"`
-	ExcludeContainers *string `json:"excludeContainers,omitempty"`
-	AdditionalProperties map[string]interface{}
+	MaxStorage           *string                `json:"maxStorage,omitempty"`
+	ExcludeContainers    *string                `json:"excludeContainers,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf17 AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf17
@@ -113,7 +113,7 @@ func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf17) SetExcludeContain
 }
 
 func (o AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf17) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -135,63 +135,8 @@ func (o AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf17) ToMap() (map[strin
 
 	return toSerialize, nil
 }
-
 func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf17) UnmarshalJSON(data []byte) (err error) {
-	varAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf17 := _AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf17{}
-
-	err = json.Unmarshal(data, &varAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf17)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf17(varAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf17)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "maxStorage")
-		delete(additionalProperties, "excludeContainers")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf17 struct {
-	value *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf17
-	isSet bool
-}
-
-func (v NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf17) Get() *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf17 {
-	return v.value
-}
-
-func (v *NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf17) Set(val *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf17) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf17) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf17) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf17(val *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf17) *NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf17 {
-	return &NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf17{value: val, isSet: true}
-}
-
-func (v NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf17) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf17) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

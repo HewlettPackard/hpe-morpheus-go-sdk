@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the AddRolesRequestRoleInstanceTypesInner type satisfies the MappedNullable interface at compile time
@@ -24,8 +23,8 @@ type AddRolesRequestRoleInstanceTypesInner struct {
 	// `id` of the instance type
 	Id int32 `json:"id"`
 	// The new access level.
-	Access string `json:"access"`
-	AdditionalProperties map[string]interface{}
+	Access               string                 `json:"access"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddRolesRequestRoleInstanceTypesInner AddRolesRequestRoleInstanceTypesInner
@@ -98,7 +97,7 @@ func (o *AddRolesRequestRoleInstanceTypesInner) SetAccess(v string) {
 }
 
 func (o AddRolesRequestRoleInstanceTypesInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -116,85 +115,8 @@ func (o AddRolesRequestRoleInstanceTypesInner) ToMap() (map[string]interface{}, 
 
 	return toSerialize, nil
 }
-
 func (o *AddRolesRequestRoleInstanceTypesInner) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"id",
-		"access",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varAddRolesRequestRoleInstanceTypesInner := _AddRolesRequestRoleInstanceTypesInner{}
-
-	err = json.Unmarshal(data, &varAddRolesRequestRoleInstanceTypesInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddRolesRequestRoleInstanceTypesInner(varAddRolesRequestRoleInstanceTypesInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "access")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddRolesRequestRoleInstanceTypesInner struct {
-	value *AddRolesRequestRoleInstanceTypesInner
-	isSet bool
-}
-
-func (v NullableAddRolesRequestRoleInstanceTypesInner) Get() *AddRolesRequestRoleInstanceTypesInner {
-	return v.value
-}
-
-func (v *NullableAddRolesRequestRoleInstanceTypesInner) Set(val *AddRolesRequestRoleInstanceTypesInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddRolesRequestRoleInstanceTypesInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddRolesRequestRoleInstanceTypesInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddRolesRequestRoleInstanceTypesInner(val *AddRolesRequestRoleInstanceTypesInner) *NullableAddRolesRequestRoleInstanceTypesInner {
-	return &NullableAddRolesRequestRoleInstanceTypesInner{value: val, isSet: true}
-}
-
-func (v NullableAddRolesRequestRoleInstanceTypesInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddRolesRequestRoleInstanceTypesInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

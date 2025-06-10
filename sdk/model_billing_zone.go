@@ -21,22 +21,22 @@ var _ MappedNullable = &BillingZone{}
 
 // BillingZone struct for BillingZone
 type BillingZone struct {
-	ZoneName *string `json:"zoneName,omitempty"`
-	ZoneId *int64 `json:"zoneId,omitempty"`
-	ZoneUUID *string `json:"zoneUUID,omitempty"`
-	ZoneCode *string `json:"zoneCode,omitempty"`
-	StartDate *time.Time `json:"startDate,omitempty"`
-	EndDate *time.Time `json:"endDate,omitempty"`
-	PriceUnit *string `json:"priceUnit,omitempty"`
-	ComputeServers *ListBillingAccount200ResponseAllOfBillingInfoZonesInnerComputeServers `json:"computeServers,omitempty"`
-	Instances *ListBillingAccount200ResponseAllOfBillingInfoZonesInnerInstances `json:"instances,omitempty"`
-	DiscoveredServers *ListBillingAccount200ResponseAllOfBillingInfoZonesInnerComputeServers `json:"discoveredServers,omitempty"`
-	LoadBalancers *ListBillingAccount200ResponseAllOfBillingInfoZonesInnerLoadBalancers `json:"loadBalancers,omitempty"`
-	VirtualImages *ListBillingAccount200ResponseAllOfBillingInfoZonesInnerVirtualImages `json:"virtualImages,omitempty"`
-	Snapshots *ListBillingAccount200ResponseAllOfBillingInfoZonesInnerSnapshots `json:"snapshots,omitempty"`
-	Price *float32 `json:"price,omitempty"`
-	Cost *float32 `json:"cost,omitempty"`
-	AdditionalProperties map[string]interface{}
+	ZoneName             *string                                                                `json:"zoneName,omitempty"`
+	ZoneId               *int64                                                                 `json:"zoneId,omitempty"`
+	ZoneUUID             *string                                                                `json:"zoneUUID,omitempty"`
+	ZoneCode             *string                                                                `json:"zoneCode,omitempty"`
+	StartDate            *time.Time                                                             `json:"startDate,omitempty"`
+	EndDate              *time.Time                                                             `json:"endDate,omitempty"`
+	PriceUnit            *string                                                                `json:"priceUnit,omitempty"`
+	ComputeServers       *ListBillingAccount200ResponseAllOfBillingInfoZonesInnerComputeServers `json:"computeServers,omitempty"`
+	Instances            *ListBillingAccount200ResponseAllOfBillingInfoZonesInnerInstances      `json:"instances,omitempty"`
+	DiscoveredServers    *ListBillingAccount200ResponseAllOfBillingInfoZonesInnerComputeServers `json:"discoveredServers,omitempty"`
+	LoadBalancers        *ListBillingAccount200ResponseAllOfBillingInfoZonesInnerLoadBalancers  `json:"loadBalancers,omitempty"`
+	VirtualImages        *ListBillingAccount200ResponseAllOfBillingInfoZonesInnerVirtualImages  `json:"virtualImages,omitempty"`
+	Snapshots            *ListBillingAccount200ResponseAllOfBillingInfoZonesInnerSnapshots      `json:"snapshots,omitempty"`
+	Price                *float32                                                               `json:"price,omitempty"`
+	Cost                 *float32                                                               `json:"cost,omitempty"`
+	AdditionalProperties map[string]interface{}                                                 `json:",remain"`
 }
 
 type _BillingZone BillingZone
@@ -539,7 +539,7 @@ func (o *BillingZone) SetCost(v float32) {
 }
 
 func (o BillingZone) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -600,76 +600,8 @@ func (o BillingZone) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *BillingZone) UnmarshalJSON(data []byte) (err error) {
-	varBillingZone := _BillingZone{}
-
-	err = json.Unmarshal(data, &varBillingZone)
-
-	if err != nil {
-		return err
-	}
-
-	*o = BillingZone(varBillingZone)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "zoneName")
-		delete(additionalProperties, "zoneId")
-		delete(additionalProperties, "zoneUUID")
-		delete(additionalProperties, "zoneCode")
-		delete(additionalProperties, "startDate")
-		delete(additionalProperties, "endDate")
-		delete(additionalProperties, "priceUnit")
-		delete(additionalProperties, "computeServers")
-		delete(additionalProperties, "instances")
-		delete(additionalProperties, "discoveredServers")
-		delete(additionalProperties, "loadBalancers")
-		delete(additionalProperties, "virtualImages")
-		delete(additionalProperties, "snapshots")
-		delete(additionalProperties, "price")
-		delete(additionalProperties, "cost")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableBillingZone struct {
-	value *BillingZone
-	isSet bool
-}
-
-func (v NullableBillingZone) Get() *BillingZone {
-	return v.value
-}
-
-func (v *NullableBillingZone) Set(val *BillingZone) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableBillingZone) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableBillingZone) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableBillingZone(val *BillingZone) *NullableBillingZone {
-	return &NullableBillingZone{value: val, isSet: true}
-}
-
-func (v NullableBillingZone) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableBillingZone) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

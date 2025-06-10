@@ -20,8 +20,8 @@ var _ MappedNullable = &GetChecks200Response{}
 
 // GetChecks200Response struct for GetChecks200Response
 type GetChecks200Response struct {
-	Check *GetAlerts200ResponseAllOfChecksInner `json:"check,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Check                *GetAlerts200ResponseAllOfChecksInner `json:"check,omitempty"`
+	AdditionalProperties map[string]interface{}                `json:",remain"`
 }
 
 type _GetChecks200Response GetChecks200Response
@@ -76,7 +76,7 @@ func (o *GetChecks200Response) SetCheck(v GetAlerts200ResponseAllOfChecksInner) 
 }
 
 func (o GetChecks200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o GetChecks200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *GetChecks200Response) UnmarshalJSON(data []byte) (err error) {
-	varGetChecks200Response := _GetChecks200Response{}
-
-	err = json.Unmarshal(data, &varGetChecks200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetChecks200Response(varGetChecks200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "check")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetChecks200Response struct {
-	value *GetChecks200Response
-	isSet bool
-}
-
-func (v NullableGetChecks200Response) Get() *GetChecks200Response {
-	return v.value
-}
-
-func (v *NullableGetChecks200Response) Set(val *GetChecks200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetChecks200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetChecks200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetChecks200Response(val *GetChecks200Response) *NullableGetChecks200Response {
-	return &NullableGetChecks200Response{value: val, isSet: true}
-}
-
-func (v NullableGetChecks200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetChecks200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

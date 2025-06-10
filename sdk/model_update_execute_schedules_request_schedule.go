@@ -31,8 +31,8 @@ type UpdateExecuteSchedulesRequestSchedule struct {
 	// Cron Expression. The default is daily at midnight
 	Cron *string `json:"cron,omitempty"`
 	// Is enabled
-	Enabled *bool `json:"enabled,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Enabled              *bool                  `json:"enabled,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _UpdateExecuteSchedulesRequestSchedule UpdateExecuteSchedulesRequestSchedule
@@ -259,7 +259,7 @@ func (o *UpdateExecuteSchedulesRequestSchedule) SetEnabled(v bool) {
 }
 
 func (o UpdateExecuteSchedulesRequestSchedule) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -293,67 +293,8 @@ func (o UpdateExecuteSchedulesRequestSchedule) ToMap() (map[string]interface{}, 
 
 	return toSerialize, nil
 }
-
 func (o *UpdateExecuteSchedulesRequestSchedule) UnmarshalJSON(data []byte) (err error) {
-	varUpdateExecuteSchedulesRequestSchedule := _UpdateExecuteSchedulesRequestSchedule{}
-
-	err = json.Unmarshal(data, &varUpdateExecuteSchedulesRequestSchedule)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateExecuteSchedulesRequestSchedule(varUpdateExecuteSchedulesRequestSchedule)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "scheduleType")
-		delete(additionalProperties, "scheduleTimezone")
-		delete(additionalProperties, "cron")
-		delete(additionalProperties, "enabled")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateExecuteSchedulesRequestSchedule struct {
-	value *UpdateExecuteSchedulesRequestSchedule
-	isSet bool
-}
-
-func (v NullableUpdateExecuteSchedulesRequestSchedule) Get() *UpdateExecuteSchedulesRequestSchedule {
-	return v.value
-}
-
-func (v *NullableUpdateExecuteSchedulesRequestSchedule) Set(val *UpdateExecuteSchedulesRequestSchedule) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateExecuteSchedulesRequestSchedule) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateExecuteSchedulesRequestSchedule) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateExecuteSchedulesRequestSchedule(val *UpdateExecuteSchedulesRequestSchedule) *NullableUpdateExecuteSchedulesRequestSchedule {
-	return &NullableUpdateExecuteSchedulesRequestSchedule{value: val, isSet: true}
-}
-
-func (v NullableUpdateExecuteSchedulesRequestSchedule) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateExecuteSchedulesRequestSchedule) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

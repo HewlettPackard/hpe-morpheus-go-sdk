@@ -20,38 +20,38 @@ var _ MappedNullable = &GetInstanceType200ResponseInstanceType{}
 
 // GetInstanceType200ResponseInstanceType struct for GetInstanceType200ResponseInstanceType
 type GetInstanceType200ResponseInstanceType struct {
-	Id *int64 `json:"id,omitempty"`
-	Account *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"account,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Labels []string `json:"labels,omitempty"`
-	Code *string `json:"code,omitempty"`
-	Description *string `json:"description,omitempty"`
-	ProvisionTypeCode *string `json:"provisionTypeCode,omitempty"`
-	Category *string `json:"category,omitempty"`
-	Active *bool `json:"active,omitempty"`
-	HasProvisioningStep *bool `json:"hasProvisioningStep,omitempty"`
-	HasDeployment *bool `json:"hasDeployment,omitempty"`
-	HasConfig *bool `json:"hasConfig,omitempty"`
-	HasSettings *bool `json:"hasSettings,omitempty"`
-	HasAutoScale *bool `json:"hasAutoScale,omitempty"`
-	ProxyType *string `json:"proxyType,omitempty"`
-	ProxyPort *string `json:"proxyPort,omitempty"`
-	ProxyProtocol *string `json:"proxyProtocol,omitempty"`
-	EnvironmentPrefix *string `json:"environmentPrefix,omitempty"`
-	BackupType *string `json:"backupType,omitempty"`
-	Config map[string]interface{} `json:"config,omitempty"`
-	Visibility *string `json:"visibility,omitempty"`
-	Featured *bool `json:"featured,omitempty"`
-	Versions []string `json:"versions,omitempty"`
-	InstanceTypeLayouts []GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner `json:"instanceTypeLayouts,omitempty"`
-	OptionTypes []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
-	EnvironmentVariables []map[string]interface{} `json:"environmentVariables,omitempty"`
-	PriceSets []map[string]interface{} `json:"priceSets,omitempty"`
+	Id                   *int64                                                                      `json:"id,omitempty"`
+	Account              *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner     `json:"account,omitempty"`
+	Name                 *string                                                                     `json:"name,omitempty"`
+	Labels               []string                                                                    `json:"labels,omitempty"`
+	Code                 *string                                                                     `json:"code,omitempty"`
+	Description          *string                                                                     `json:"description,omitempty"`
+	ProvisionTypeCode    *string                                                                     `json:"provisionTypeCode,omitempty"`
+	Category             *string                                                                     `json:"category,omitempty"`
+	Active               *bool                                                                       `json:"active,omitempty"`
+	HasProvisioningStep  *bool                                                                       `json:"hasProvisioningStep,omitempty"`
+	HasDeployment        *bool                                                                       `json:"hasDeployment,omitempty"`
+	HasConfig            *bool                                                                       `json:"hasConfig,omitempty"`
+	HasSettings          *bool                                                                       `json:"hasSettings,omitempty"`
+	HasAutoScale         *bool                                                                       `json:"hasAutoScale,omitempty"`
+	ProxyType            *string                                                                     `json:"proxyType,omitempty"`
+	ProxyPort            *string                                                                     `json:"proxyPort,omitempty"`
+	ProxyProtocol        *string                                                                     `json:"proxyProtocol,omitempty"`
+	EnvironmentPrefix    *string                                                                     `json:"environmentPrefix,omitempty"`
+	BackupType           *string                                                                     `json:"backupType,omitempty"`
+	Config               map[string]interface{}                                                      `json:"config,omitempty"`
+	Visibility           *string                                                                     `json:"visibility,omitempty"`
+	Featured             *bool                                                                       `json:"featured,omitempty"`
+	Versions             []string                                                                    `json:"versions,omitempty"`
+	InstanceTypeLayouts  []GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner            `json:"instanceTypeLayouts,omitempty"`
+	OptionTypes          []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
+	EnvironmentVariables []map[string]interface{}                                                    `json:"environmentVariables,omitempty"`
+	PriceSets            []map[string]interface{}                                                    `json:"priceSets,omitempty"`
 	// Logo image URL
 	ImagePath *string `json:"imagePath,omitempty"`
 	// Dark logo image URL
-	DarkImagePath *string `json:"darkImagePath,omitempty"`
-	AdditionalProperties map[string]interface{}
+	DarkImagePath        *string                `json:"darkImagePath,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _GetInstanceType200ResponseInstanceType GetInstanceType200ResponseInstanceType
@@ -1002,7 +1002,7 @@ func (o *GetInstanceType200ResponseInstanceType) SetDarkImagePath(v string) {
 }
 
 func (o GetInstanceType200ResponseInstanceType) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1105,90 +1105,8 @@ func (o GetInstanceType200ResponseInstanceType) ToMap() (map[string]interface{},
 
 	return toSerialize, nil
 }
-
 func (o *GetInstanceType200ResponseInstanceType) UnmarshalJSON(data []byte) (err error) {
-	varGetInstanceType200ResponseInstanceType := _GetInstanceType200ResponseInstanceType{}
-
-	err = json.Unmarshal(data, &varGetInstanceType200ResponseInstanceType)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetInstanceType200ResponseInstanceType(varGetInstanceType200ResponseInstanceType)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "account")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "provisionTypeCode")
-		delete(additionalProperties, "category")
-		delete(additionalProperties, "active")
-		delete(additionalProperties, "hasProvisioningStep")
-		delete(additionalProperties, "hasDeployment")
-		delete(additionalProperties, "hasConfig")
-		delete(additionalProperties, "hasSettings")
-		delete(additionalProperties, "hasAutoScale")
-		delete(additionalProperties, "proxyType")
-		delete(additionalProperties, "proxyPort")
-		delete(additionalProperties, "proxyProtocol")
-		delete(additionalProperties, "environmentPrefix")
-		delete(additionalProperties, "backupType")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "featured")
-		delete(additionalProperties, "versions")
-		delete(additionalProperties, "instanceTypeLayouts")
-		delete(additionalProperties, "optionTypes")
-		delete(additionalProperties, "environmentVariables")
-		delete(additionalProperties, "priceSets")
-		delete(additionalProperties, "imagePath")
-		delete(additionalProperties, "darkImagePath")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetInstanceType200ResponseInstanceType struct {
-	value *GetInstanceType200ResponseInstanceType
-	isSet bool
-}
-
-func (v NullableGetInstanceType200ResponseInstanceType) Get() *GetInstanceType200ResponseInstanceType {
-	return v.value
-}
-
-func (v *NullableGetInstanceType200ResponseInstanceType) Set(val *GetInstanceType200ResponseInstanceType) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetInstanceType200ResponseInstanceType) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetInstanceType200ResponseInstanceType) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetInstanceType200ResponseInstanceType(val *GetInstanceType200ResponseInstanceType) *NullableGetInstanceType200ResponseInstanceType {
-	return &NullableGetInstanceType200ResponseInstanceType{value: val, isSet: true}
-}
-
-func (v NullableGetInstanceType200ResponseInstanceType) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetInstanceType200ResponseInstanceType) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

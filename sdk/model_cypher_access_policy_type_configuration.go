@@ -18,15 +18,15 @@ import (
 // checks if the CypherAccessPolicyTypeConfiguration type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &CypherAccessPolicyTypeConfiguration{}
 
-// CypherAccessPolicyTypeConfiguration Configuration settings for the following policy types: - Cypher Access 
+// CypherAccessPolicyTypeConfiguration Configuration settings for the following policy types: - Cypher Access
 type CypherAccessPolicyTypeConfiguration struct {
-	KeyPattern *string `json:"keyPattern,omitempty"`
-	Read *bool `json:"read,omitempty"`
-	Write *bool `json:"write,omitempty"`
-	Update *bool `json:"update,omitempty"`
-	Delete *bool `json:"delete,omitempty"`
-	List *bool `json:"list,omitempty"`
-	AdditionalProperties map[string]interface{}
+	KeyPattern           *string                `json:"keyPattern,omitempty"`
+	Read                 *bool                  `json:"read,omitempty"`
+	Write                *bool                  `json:"write,omitempty"`
+	Update               *bool                  `json:"update,omitempty"`
+	Delete               *bool                  `json:"delete,omitempty"`
+	List                 *bool                  `json:"list,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _CypherAccessPolicyTypeConfiguration CypherAccessPolicyTypeConfiguration
@@ -241,7 +241,7 @@ func (o *CypherAccessPolicyTypeConfiguration) SetList(v bool) {
 }
 
 func (o CypherAccessPolicyTypeConfiguration) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -275,67 +275,8 @@ func (o CypherAccessPolicyTypeConfiguration) ToMap() (map[string]interface{}, er
 
 	return toSerialize, nil
 }
-
 func (o *CypherAccessPolicyTypeConfiguration) UnmarshalJSON(data []byte) (err error) {
-	varCypherAccessPolicyTypeConfiguration := _CypherAccessPolicyTypeConfiguration{}
-
-	err = json.Unmarshal(data, &varCypherAccessPolicyTypeConfiguration)
-
-	if err != nil {
-		return err
-	}
-
-	*o = CypherAccessPolicyTypeConfiguration(varCypherAccessPolicyTypeConfiguration)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "keyPattern")
-		delete(additionalProperties, "read")
-		delete(additionalProperties, "write")
-		delete(additionalProperties, "update")
-		delete(additionalProperties, "delete")
-		delete(additionalProperties, "list")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableCypherAccessPolicyTypeConfiguration struct {
-	value *CypherAccessPolicyTypeConfiguration
-	isSet bool
-}
-
-func (v NullableCypherAccessPolicyTypeConfiguration) Get() *CypherAccessPolicyTypeConfiguration {
-	return v.value
-}
-
-func (v *NullableCypherAccessPolicyTypeConfiguration) Set(val *CypherAccessPolicyTypeConfiguration) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableCypherAccessPolicyTypeConfiguration) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableCypherAccessPolicyTypeConfiguration) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableCypherAccessPolicyTypeConfiguration(val *CypherAccessPolicyTypeConfiguration) *NullableCypherAccessPolicyTypeConfiguration {
-	return &NullableCypherAccessPolicyTypeConfiguration{value: val, isSet: true}
-}
-
-func (v NullableCypherAccessPolicyTypeConfiguration) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableCypherAccessPolicyTypeConfiguration) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

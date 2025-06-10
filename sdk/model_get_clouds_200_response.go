@@ -20,8 +20,8 @@ var _ MappedNullable = &GetClouds200Response{}
 
 // GetClouds200Response struct for GetClouds200Response
 type GetClouds200Response struct {
-	Zone *ListClouds200ResponseAllOfZonesInner `json:"zone,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Zone                 *ListClouds200ResponseAllOfZonesInner `json:"zone,omitempty"`
+	AdditionalProperties map[string]interface{}                `json:",remain"`
 }
 
 type _GetClouds200Response GetClouds200Response
@@ -76,7 +76,7 @@ func (o *GetClouds200Response) SetZone(v ListClouds200ResponseAllOfZonesInner) {
 }
 
 func (o GetClouds200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o GetClouds200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *GetClouds200Response) UnmarshalJSON(data []byte) (err error) {
-	varGetClouds200Response := _GetClouds200Response{}
-
-	err = json.Unmarshal(data, &varGetClouds200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetClouds200Response(varGetClouds200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "zone")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetClouds200Response struct {
-	value *GetClouds200Response
-	isSet bool
-}
-
-func (v NullableGetClouds200Response) Get() *GetClouds200Response {
-	return v.value
-}
-
-func (v *NullableGetClouds200Response) Set(val *GetClouds200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetClouds200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetClouds200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetClouds200Response(val *GetClouds200Response) *NullableGetClouds200Response {
-	return &NullableGetClouds200Response{value: val, isSet: true}
-}
-
-func (v NullableGetClouds200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetClouds200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

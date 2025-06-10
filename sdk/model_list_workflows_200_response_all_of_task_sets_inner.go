@@ -21,21 +21,21 @@ var _ MappedNullable = &ListWorkflows200ResponseAllOfTaskSetsInner{}
 
 // ListWorkflows200ResponseAllOfTaskSetsInner struct for ListWorkflows200ResponseAllOfTaskSetsInner
 type ListWorkflows200ResponseAllOfTaskSetsInner struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Type *string `json:"type,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Labels []string `json:"labels,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	AccountId *int64 `json:"accountId,omitempty"`
-	Platform *string `json:"platform,omitempty"`
-	Visibility *string `json:"visibility,omitempty"`
-	AllowCustomConfig *bool `json:"allowCustomConfig,omitempty"`
-	Tasks []int64 `json:"tasks,omitempty"`
-	OptionTypes []ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner `json:"optionTypes,omitempty"`
-	TaskSetTasks []ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInner `json:"taskSetTasks,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                        `json:"id,omitempty"`
+	Name                 *string                                                       `json:"name,omitempty"`
+	Type                 *string                                                       `json:"type,omitempty"`
+	Description          *string                                                       `json:"description,omitempty"`
+	Labels               []string                                                      `json:"labels,omitempty"`
+	DateCreated          *time.Time                                                    `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                                    `json:"lastUpdated,omitempty"`
+	AccountId            *int64                                                        `json:"accountId,omitempty"`
+	Platform             *string                                                       `json:"platform,omitempty"`
+	Visibility           *string                                                       `json:"visibility,omitempty"`
+	AllowCustomConfig    *bool                                                         `json:"allowCustomConfig,omitempty"`
+	Tasks                []int64                                                       `json:"tasks,omitempty"`
+	OptionTypes          []ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner  `json:"optionTypes,omitempty"`
+	TaskSetTasks         []ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInner `json:"taskSetTasks,omitempty"`
+	AdditionalProperties map[string]interface{}                                        `json:",remain"`
 }
 
 type _ListWorkflows200ResponseAllOfTaskSetsInner ListWorkflows200ResponseAllOfTaskSetsInner
@@ -506,7 +506,7 @@ func (o *ListWorkflows200ResponseAllOfTaskSetsInner) SetTaskSetTasks(v []ListWor
 }
 
 func (o ListWorkflows200ResponseAllOfTaskSetsInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -564,75 +564,8 @@ func (o ListWorkflows200ResponseAllOfTaskSetsInner) ToMap() (map[string]interfac
 
 	return toSerialize, nil
 }
-
 func (o *ListWorkflows200ResponseAllOfTaskSetsInner) UnmarshalJSON(data []byte) (err error) {
-	varListWorkflows200ResponseAllOfTaskSetsInner := _ListWorkflows200ResponseAllOfTaskSetsInner{}
-
-	err = json.Unmarshal(data, &varListWorkflows200ResponseAllOfTaskSetsInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListWorkflows200ResponseAllOfTaskSetsInner(varListWorkflows200ResponseAllOfTaskSetsInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		delete(additionalProperties, "accountId")
-		delete(additionalProperties, "platform")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "allowCustomConfig")
-		delete(additionalProperties, "tasks")
-		delete(additionalProperties, "optionTypes")
-		delete(additionalProperties, "taskSetTasks")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListWorkflows200ResponseAllOfTaskSetsInner struct {
-	value *ListWorkflows200ResponseAllOfTaskSetsInner
-	isSet bool
-}
-
-func (v NullableListWorkflows200ResponseAllOfTaskSetsInner) Get() *ListWorkflows200ResponseAllOfTaskSetsInner {
-	return v.value
-}
-
-func (v *NullableListWorkflows200ResponseAllOfTaskSetsInner) Set(val *ListWorkflows200ResponseAllOfTaskSetsInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListWorkflows200ResponseAllOfTaskSetsInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListWorkflows200ResponseAllOfTaskSetsInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListWorkflows200ResponseAllOfTaskSetsInner(val *ListWorkflows200ResponseAllOfTaskSetsInner) *NullableListWorkflows200ResponseAllOfTaskSetsInner {
-	return &NullableListWorkflows200ResponseAllOfTaskSetsInner{value: val, isSet: true}
-}
-
-func (v NullableListWorkflows200ResponseAllOfTaskSetsInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListWorkflows200ResponseAllOfTaskSetsInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

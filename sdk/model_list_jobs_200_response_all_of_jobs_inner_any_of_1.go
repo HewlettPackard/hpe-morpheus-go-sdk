@@ -21,29 +21,29 @@ var _ MappedNullable = &ListJobs200ResponseAllOfJobsInnerAnyOf1{}
 
 // ListJobs200ResponseAllOfJobsInnerAnyOf1 struct for ListJobs200ResponseAllOfJobsInnerAnyOf1
 type ListJobs200ResponseAllOfJobsInnerAnyOf1 struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Labels []string `json:"labels,omitempty"`
-	Type *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"type,omitempty"`
-	Task *GetAlerts200ResponseAllOfChecksInnerAccount `json:"task,omitempty"`
-	JobSummary *string `json:"jobSummary,omitempty"`
-	ScheduleMode *ListJobs200ResponseAllOfJobsInnerAnyOfScheduleMode `json:"scheduleMode,omitempty"`
-	DateTime *string `json:"dateTime,omitempty"`
-	Status *string `json:"status,omitempty"`
-	Namespace *string `json:"namespace,omitempty"`
-	Category *string `json:"category,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Enabled *bool `json:"enabled,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	LastRun *time.Time `json:"lastRun,omitempty"`
-	LastResult *string `json:"lastResult,omitempty"`
-	CreatedBy *ListJobs200ResponseAllOfJobsInnerAnyOfCreatedBy `json:"createdBy,omitempty"`
-	TargetType *string `json:"targetType,omitempty"`
-	Targets []ListJobs200ResponseAllOfJobsInnerAnyOfTargetsInner `json:"targets,omitempty"`
-	CustomConfig *string `json:"customConfig,omitempty"`
-	CustomOptions *ListJobs200ResponseAllOfJobsInnerAnyOfCustomOptions `json:"customOptions,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                      `json:"id,omitempty"`
+	Name                 *string                                                     `json:"name,omitempty"`
+	Labels               []string                                                    `json:"labels,omitempty"`
+	Type                 *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"type,omitempty"`
+	Task                 *GetAlerts200ResponseAllOfChecksInnerAccount                `json:"task,omitempty"`
+	JobSummary           *string                                                     `json:"jobSummary,omitempty"`
+	ScheduleMode         *ListJobs200ResponseAllOfJobsInnerAnyOfScheduleMode         `json:"scheduleMode,omitempty"`
+	DateTime             *string                                                     `json:"dateTime,omitempty"`
+	Status               *string                                                     `json:"status,omitempty"`
+	Namespace            *string                                                     `json:"namespace,omitempty"`
+	Category             *string                                                     `json:"category,omitempty"`
+	Description          *string                                                     `json:"description,omitempty"`
+	Enabled              *bool                                                       `json:"enabled,omitempty"`
+	DateCreated          *time.Time                                                  `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                                  `json:"lastUpdated,omitempty"`
+	LastRun              *time.Time                                                  `json:"lastRun,omitempty"`
+	LastResult           *string                                                     `json:"lastResult,omitempty"`
+	CreatedBy            *ListJobs200ResponseAllOfJobsInnerAnyOfCreatedBy            `json:"createdBy,omitempty"`
+	TargetType           *string                                                     `json:"targetType,omitempty"`
+	Targets              []ListJobs200ResponseAllOfJobsInnerAnyOfTargetsInner        `json:"targets,omitempty"`
+	CustomConfig         *string                                                     `json:"customConfig,omitempty"`
+	CustomOptions        *ListJobs200ResponseAllOfJobsInnerAnyOfCustomOptions        `json:"customOptions,omitempty"`
+	AdditionalProperties map[string]interface{}                                      `json:",remain"`
 }
 
 type _ListJobs200ResponseAllOfJobsInnerAnyOf1 ListJobs200ResponseAllOfJobsInnerAnyOf1
@@ -770,7 +770,7 @@ func (o *ListJobs200ResponseAllOfJobsInnerAnyOf1) SetCustomOptions(v ListJobs200
 }
 
 func (o ListJobs200ResponseAllOfJobsInnerAnyOf1) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -852,83 +852,8 @@ func (o ListJobs200ResponseAllOfJobsInnerAnyOf1) ToMap() (map[string]interface{}
 
 	return toSerialize, nil
 }
-
 func (o *ListJobs200ResponseAllOfJobsInnerAnyOf1) UnmarshalJSON(data []byte) (err error) {
-	varListJobs200ResponseAllOfJobsInnerAnyOf1 := _ListJobs200ResponseAllOfJobsInnerAnyOf1{}
-
-	err = json.Unmarshal(data, &varListJobs200ResponseAllOfJobsInnerAnyOf1)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListJobs200ResponseAllOfJobsInnerAnyOf1(varListJobs200ResponseAllOfJobsInnerAnyOf1)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "task")
-		delete(additionalProperties, "jobSummary")
-		delete(additionalProperties, "scheduleMode")
-		delete(additionalProperties, "dateTime")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "namespace")
-		delete(additionalProperties, "category")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		delete(additionalProperties, "lastRun")
-		delete(additionalProperties, "lastResult")
-		delete(additionalProperties, "createdBy")
-		delete(additionalProperties, "targetType")
-		delete(additionalProperties, "targets")
-		delete(additionalProperties, "customConfig")
-		delete(additionalProperties, "customOptions")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListJobs200ResponseAllOfJobsInnerAnyOf1 struct {
-	value *ListJobs200ResponseAllOfJobsInnerAnyOf1
-	isSet bool
-}
-
-func (v NullableListJobs200ResponseAllOfJobsInnerAnyOf1) Get() *ListJobs200ResponseAllOfJobsInnerAnyOf1 {
-	return v.value
-}
-
-func (v *NullableListJobs200ResponseAllOfJobsInnerAnyOf1) Set(val *ListJobs200ResponseAllOfJobsInnerAnyOf1) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListJobs200ResponseAllOfJobsInnerAnyOf1) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListJobs200ResponseAllOfJobsInnerAnyOf1) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListJobs200ResponseAllOfJobsInnerAnyOf1(val *ListJobs200ResponseAllOfJobsInnerAnyOf1) *NullableListJobs200ResponseAllOfJobsInnerAnyOf1 {
-	return &NullableListJobs200ResponseAllOfJobsInnerAnyOf1{value: val, isSet: true}
-}
-
-func (v NullableListJobs200ResponseAllOfJobsInnerAnyOf1) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListJobs200ResponseAllOfJobsInnerAnyOf1) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

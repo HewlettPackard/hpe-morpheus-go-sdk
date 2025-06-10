@@ -20,14 +20,14 @@ var _ MappedNullable = &GetCypherKey200Response{}
 
 // GetCypherKey200Response struct for GetCypherKey200Response
 type GetCypherKey200Response struct {
-	Success *bool `json:"success,omitempty"`
-	Data *GetCypherKey200ResponseAllOfData `json:"data,omitempty"`
+	Success *bool                             `json:"success,omitempty"`
+	Data    *GetCypherKey200ResponseAllOfData `json:"data,omitempty"`
 	// Type of data that was written to the key
 	Type *string `json:"type,omitempty"`
 	// Lease duration in seconds, 0 means no expiry.
-	LeaseDuration *int32 `json:"lease_duration,omitempty"`
-	Cypher *ListCypherKeys200ResponseAllOfCyphersInner `json:"cypher,omitempty"`
-	AdditionalProperties map[string]interface{}
+	LeaseDuration        *int32                                      `json:"lease_duration,omitempty"`
+	Cypher               *ListCypherKeys200ResponseAllOfCyphersInner `json:"cypher,omitempty"`
+	AdditionalProperties map[string]interface{}                      `json:",remain"`
 }
 
 type _GetCypherKey200Response GetCypherKey200Response
@@ -210,7 +210,7 @@ func (o *GetCypherKey200Response) SetCypher(v ListCypherKeys200ResponseAllOfCyph
 }
 
 func (o GetCypherKey200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -241,66 +241,8 @@ func (o GetCypherKey200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *GetCypherKey200Response) UnmarshalJSON(data []byte) (err error) {
-	varGetCypherKey200Response := _GetCypherKey200Response{}
-
-	err = json.Unmarshal(data, &varGetCypherKey200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetCypherKey200Response(varGetCypherKey200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "success")
-		delete(additionalProperties, "data")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "lease_duration")
-		delete(additionalProperties, "cypher")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetCypherKey200Response struct {
-	value *GetCypherKey200Response
-	isSet bool
-}
-
-func (v NullableGetCypherKey200Response) Get() *GetCypherKey200Response {
-	return v.value
-}
-
-func (v *NullableGetCypherKey200Response) Set(val *GetCypherKey200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetCypherKey200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetCypherKey200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetCypherKey200Response(val *GetCypherKey200Response) *NullableGetCypherKey200Response {
-	return &NullableGetCypherKey200Response{value: val, isSet: true}
-}
-
-func (v NullableGetCypherKey200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetCypherKey200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

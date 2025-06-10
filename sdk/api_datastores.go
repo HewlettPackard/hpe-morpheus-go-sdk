@@ -21,14 +21,13 @@ import (
 	"strings"
 )
 
-
 // DatastoresAPIService DatastoresAPI service
 type DatastoresAPIService service
 
 type ApiGetDatastoresRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DatastoresAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetDatastoresRequest) Execute() (*GetDatastores200Response, *http.Response, error) {
@@ -40,27 +39,27 @@ GetDatastores Retrieves a Datastore
 
 This endpoint retrieves a specific datastore.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetDatastoresRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetDatastoresRequest
 */
 func (a *DatastoresAPIService) GetDatastores(ctx context.Context, id int64) ApiGetDatastoresRequest {
 	return ApiGetDatastoresRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetDatastores200Response
+//
+//	@return GetDatastores200Response
 func (a *DatastoresAPIService) GetDatastoresExecute(r ApiGetDatastoresRequest) (*GetDatastores200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetDatastores200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetDatastores200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DatastoresAPIService.GetDatastores")
@@ -111,7 +110,7 @@ func (a *DatastoresAPIService) GetDatastoresExecute(r ApiGetDatastoresRequest) (
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -120,8 +119,8 @@ func (a *DatastoresAPIService) GetDatastoresExecute(r ApiGetDatastoresRequest) (
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -131,8 +130,8 @@ func (a *DatastoresAPIService) GetDatastoresExecute(r ApiGetDatastoresRequest) (
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -140,8 +139,8 @@ func (a *DatastoresAPIService) GetDatastoresExecute(r ApiGetDatastoresRequest) (
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -150,13 +149,13 @@ func (a *DatastoresAPIService) GetDatastoresExecute(r ApiGetDatastoresRequest) (
 }
 
 type ApiListDatastoresRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DatastoresAPIService
-	name *string
-	phrase *string
-	max *int64
-	sort *string
-	direction *string
+	name       *string
+	phrase     *string
+	max        *int64
+	sort       *string
+	direction  *string
 }
 
 // Filter by name
@@ -198,25 +197,25 @@ ListDatastores Retrieves all Datastores
 
 This endpoint retrieves all data stores.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListDatastoresRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListDatastoresRequest
 */
 func (a *DatastoresAPIService) ListDatastores(ctx context.Context) ApiListDatastoresRequest {
 	return ApiListDatastoresRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListCloudDatastores200Response
+//
+//	@return ListCloudDatastores200Response
 func (a *DatastoresAPIService) ListDatastoresExecute(r ApiListDatastoresRequest) (*ListCloudDatastores200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListCloudDatastores200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListCloudDatastores200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DatastoresAPIService.ListDatastores")
@@ -290,7 +289,7 @@ func (a *DatastoresAPIService) ListDatastoresExecute(r ApiListDatastoresRequest)
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -299,8 +298,8 @@ func (a *DatastoresAPIService) ListDatastoresExecute(r ApiListDatastoresRequest)
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -310,8 +309,8 @@ func (a *DatastoresAPIService) ListDatastoresExecute(r ApiListDatastoresRequest)
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -319,8 +318,8 @@ func (a *DatastoresAPIService) ListDatastoresExecute(r ApiListDatastoresRequest)
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -329,8 +328,8 @@ func (a *DatastoresAPIService) ListDatastoresExecute(r ApiListDatastoresRequest)
 }
 
 type ApiSaveDatastoreRequest struct {
-	ctx context.Context
-	ApiService *DatastoresAPIService
+	ctx                  context.Context
+	ApiService           *DatastoresAPIService
 	saveDatastoreRequest *SaveDatastoreRequest
 }
 
@@ -348,24 +347,25 @@ SaveDatastore Create a Datastore
 
 This endpoint will create a datastore.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSaveDatastoreRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiSaveDatastoreRequest
 */
 func (a *DatastoresAPIService) SaveDatastore(ctx context.Context) ApiSaveDatastoreRequest {
 	return ApiSaveDatastoreRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SaveCloudDatastore200Response
+//
+//	@return SaveCloudDatastore200Response
 func (a *DatastoresAPIService) SaveDatastoreExecute(r ApiSaveDatastoreRequest) (*SaveCloudDatastore200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *SaveCloudDatastore200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *SaveCloudDatastore200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DatastoresAPIService.SaveDatastore")
@@ -417,7 +417,7 @@ func (a *DatastoresAPIService) SaveDatastoreExecute(r ApiSaveDatastoreRequest) (
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -426,8 +426,8 @@ func (a *DatastoresAPIService) SaveDatastoreExecute(r ApiSaveDatastoreRequest) (
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -437,8 +437,8 @@ func (a *DatastoresAPIService) SaveDatastoreExecute(r ApiSaveDatastoreRequest) (
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -446,8 +446,8 @@ func (a *DatastoresAPIService) SaveDatastoreExecute(r ApiSaveDatastoreRequest) (
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -456,9 +456,9 @@ func (a *DatastoresAPIService) SaveDatastoreExecute(r ApiSaveDatastoreRequest) (
 }
 
 type ApiUpdateDatastoresRequest struct {
-	ctx context.Context
-	ApiService *DatastoresAPIService
-	id int64
+	ctx                          context.Context
+	ApiService                   *DatastoresAPIService
+	id                           int64
 	updateCloudDatastoresRequest *UpdateCloudDatastoresRequest
 }
 
@@ -476,27 +476,27 @@ UpdateDatastores Updates a Specified Datastore
 
 Updates a datastore.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateDatastoresRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateDatastoresRequest
 */
 func (a *DatastoresAPIService) UpdateDatastores(ctx context.Context, id int64) ApiUpdateDatastoresRequest {
 	return ApiUpdateDatastoresRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return UpdateDatastores200Response
+//
+//	@return UpdateDatastores200Response
 func (a *DatastoresAPIService) UpdateDatastoresExecute(r ApiUpdateDatastoresRequest) (*UpdateDatastores200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *UpdateDatastores200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *UpdateDatastores200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DatastoresAPIService.UpdateDatastores")
@@ -549,7 +549,7 @@ func (a *DatastoresAPIService) UpdateDatastoresExecute(r ApiUpdateDatastoresRequ
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -558,8 +558,8 @@ func (a *DatastoresAPIService) UpdateDatastoresExecute(r ApiUpdateDatastoresRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -569,8 +569,8 @@ func (a *DatastoresAPIService) UpdateDatastoresExecute(r ApiUpdateDatastoresRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -578,8 +578,8 @@ func (a *DatastoresAPIService) UpdateDatastoresExecute(r ApiUpdateDatastoresRequ
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

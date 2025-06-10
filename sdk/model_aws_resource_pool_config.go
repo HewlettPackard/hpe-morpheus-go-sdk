@@ -23,8 +23,8 @@ type AwsResourcePoolConfig struct {
 	// Provide the base CIDR Block to use for this VPC (must be between a /16 and /28 Block)
 	CidrBlock *string `json:"cidrBlock,omitempty"`
 	// default or dedicated
-	Tenancy *string `json:"tenancy,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Tenancy              *string                `json:"tenancy,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AwsResourcePoolConfig AwsResourcePoolConfig
@@ -115,7 +115,7 @@ func (o *AwsResourcePoolConfig) SetTenancy(v string) {
 }
 
 func (o AwsResourcePoolConfig) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -137,63 +137,8 @@ func (o AwsResourcePoolConfig) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *AwsResourcePoolConfig) UnmarshalJSON(data []byte) (err error) {
-	varAwsResourcePoolConfig := _AwsResourcePoolConfig{}
-
-	err = json.Unmarshal(data, &varAwsResourcePoolConfig)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AwsResourcePoolConfig(varAwsResourcePoolConfig)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "cidrBlock")
-		delete(additionalProperties, "tenancy")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAwsResourcePoolConfig struct {
-	value *AwsResourcePoolConfig
-	isSet bool
-}
-
-func (v NullableAwsResourcePoolConfig) Get() *AwsResourcePoolConfig {
-	return v.value
-}
-
-func (v *NullableAwsResourcePoolConfig) Set(val *AwsResourcePoolConfig) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAwsResourcePoolConfig) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAwsResourcePoolConfig) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAwsResourcePoolConfig(val *AwsResourcePoolConfig) *NullableAwsResourcePoolConfig {
-	return &NullableAwsResourcePoolConfig{value: val, isSet: true}
-}
-
-func (v NullableAwsResourcePoolConfig) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAwsResourcePoolConfig) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

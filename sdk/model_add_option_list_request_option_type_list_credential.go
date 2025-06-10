@@ -20,9 +20,9 @@ var _ MappedNullable = &AddOptionListRequestOptionTypeListCredential{}
 
 // AddOptionListRequestOptionTypeListCredential Map containing Credential ID or the default `{\"type\": \"local\"}` which means use the values set in the local option list serviceUsername and servicePassword instead of associating a credential.
 type AddOptionListRequestOptionTypeListCredential struct {
-	Type *string `json:"type,omitempty"`
-	Id *int64 `json:"id,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Type                 *string                `json:"type,omitempty"`
+	Id                   *int64                 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddOptionListRequestOptionTypeListCredential AddOptionListRequestOptionTypeListCredential
@@ -109,7 +109,7 @@ func (o *AddOptionListRequestOptionTypeListCredential) SetId(v int64) {
 }
 
 func (o AddOptionListRequestOptionTypeListCredential) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -131,63 +131,8 @@ func (o AddOptionListRequestOptionTypeListCredential) ToMap() (map[string]interf
 
 	return toSerialize, nil
 }
-
 func (o *AddOptionListRequestOptionTypeListCredential) UnmarshalJSON(data []byte) (err error) {
-	varAddOptionListRequestOptionTypeListCredential := _AddOptionListRequestOptionTypeListCredential{}
-
-	err = json.Unmarshal(data, &varAddOptionListRequestOptionTypeListCredential)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddOptionListRequestOptionTypeListCredential(varAddOptionListRequestOptionTypeListCredential)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "id")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddOptionListRequestOptionTypeListCredential struct {
-	value *AddOptionListRequestOptionTypeListCredential
-	isSet bool
-}
-
-func (v NullableAddOptionListRequestOptionTypeListCredential) Get() *AddOptionListRequestOptionTypeListCredential {
-	return v.value
-}
-
-func (v *NullableAddOptionListRequestOptionTypeListCredential) Set(val *AddOptionListRequestOptionTypeListCredential) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddOptionListRequestOptionTypeListCredential) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddOptionListRequestOptionTypeListCredential) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddOptionListRequestOptionTypeListCredential(val *AddOptionListRequestOptionTypeListCredential) *NullableAddOptionListRequestOptionTypeListCredential {
-	return &NullableAddOptionListRequestOptionTypeListCredential{value: val, isSet: true}
-}
-
-func (v NullableAddOptionListRequestOptionTypeListCredential) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddOptionListRequestOptionTypeListCredential) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

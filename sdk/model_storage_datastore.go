@@ -20,32 +20,32 @@ var _ MappedNullable = &StorageDatastore{}
 
 // StorageDatastore struct for StorageDatastore
 type StorageDatastore struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Code *string `json:"code,omitempty"`
-	DatastoreType *GetAlerts200ResponseAllOfChecksInnerAccount `json:"datastoreType,omitempty"`
-	StorageServer *GetAlerts200ResponseAllOfChecksInnerAccount `json:"storageServer,omitempty"`
-	Type *string `json:"type,omitempty"`
-	Visibility *string `json:"visibility,omitempty"`
-	StorageSize *int64 `json:"storageSize,omitempty"`
-	FreeSpace *int64 `json:"freeSpace,omitempty"`
-	DrsEnabled *bool `json:"drsEnabled,omitempty"`
-	Active *bool `json:"active,omitempty"`
-	AllowWrite *bool `json:"allowWrite,omitempty"`
-	DefaultStore *bool `json:"defaultStore,omitempty"`
-	Online *bool `json:"online,omitempty"`
-	AllowRead *bool `json:"allowRead,omitempty"`
-	AllowProvision *bool `json:"allowProvision,omitempty"`
-	RefType *string `json:"refType,omitempty"`
-	RefId *int64 `json:"refId,omitempty"`
-	ExternalId *string `json:"externalId,omitempty"`
-	Zone *GetAlerts200ResponseAllOfChecksInnerAccount `json:"zone,omitempty"`
-	ZonePool *GetAlerts200ResponseAllOfChecksInnerAccount `json:"zonePool,omitempty"`
-	Owner *GetAlerts200ResponseAllOfChecksInnerAccount `json:"owner,omitempty"`
-	Tenants []ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner `json:"tenants,omitempty"`
-	ResourcePermissions *SaveCloudDatastoreRequestDatastoreResourcePermissions `json:"resourcePermissions,omitempty"`
-	Datastores []map[string]interface{} `json:"datastores,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                           `json:"id,omitempty"`
+	Name                 *string                                                          `json:"name,omitempty"`
+	Code                 *string                                                          `json:"code,omitempty"`
+	DatastoreType        *GetAlerts200ResponseAllOfChecksInnerAccount                     `json:"datastoreType,omitempty"`
+	StorageServer        *GetAlerts200ResponseAllOfChecksInnerAccount                     `json:"storageServer,omitempty"`
+	Type                 *string                                                          `json:"type,omitempty"`
+	Visibility           *string                                                          `json:"visibility,omitempty"`
+	StorageSize          *int64                                                           `json:"storageSize,omitempty"`
+	FreeSpace            *int64                                                           `json:"freeSpace,omitempty"`
+	DrsEnabled           *bool                                                            `json:"drsEnabled,omitempty"`
+	Active               *bool                                                            `json:"active,omitempty"`
+	AllowWrite           *bool                                                            `json:"allowWrite,omitempty"`
+	DefaultStore         *bool                                                            `json:"defaultStore,omitempty"`
+	Online               *bool                                                            `json:"online,omitempty"`
+	AllowRead            *bool                                                            `json:"allowRead,omitempty"`
+	AllowProvision       *bool                                                            `json:"allowProvision,omitempty"`
+	RefType              *string                                                          `json:"refType,omitempty"`
+	RefId                *int64                                                           `json:"refId,omitempty"`
+	ExternalId           *string                                                          `json:"externalId,omitempty"`
+	Zone                 *GetAlerts200ResponseAllOfChecksInnerAccount                     `json:"zone,omitempty"`
+	ZonePool             *GetAlerts200ResponseAllOfChecksInnerAccount                     `json:"zonePool,omitempty"`
+	Owner                *GetAlerts200ResponseAllOfChecksInnerAccount                     `json:"owner,omitempty"`
+	Tenants              []ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner `json:"tenants,omitempty"`
+	ResourcePermissions  *SaveCloudDatastoreRequestDatastoreResourcePermissions           `json:"resourcePermissions,omitempty"`
+	Datastores           []map[string]interface{}                                         `json:"datastores,omitempty"`
+	AdditionalProperties map[string]interface{}                                           `json:",remain"`
 }
 
 type _StorageDatastore StorageDatastore
@@ -868,7 +868,7 @@ func (o *StorageDatastore) SetDatastores(v []map[string]interface{}) {
 }
 
 func (o StorageDatastore) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -959,86 +959,8 @@ func (o StorageDatastore) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *StorageDatastore) UnmarshalJSON(data []byte) (err error) {
-	varStorageDatastore := _StorageDatastore{}
-
-	err = json.Unmarshal(data, &varStorageDatastore)
-
-	if err != nil {
-		return err
-	}
-
-	*o = StorageDatastore(varStorageDatastore)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "datastoreType")
-		delete(additionalProperties, "storageServer")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "storageSize")
-		delete(additionalProperties, "freeSpace")
-		delete(additionalProperties, "drsEnabled")
-		delete(additionalProperties, "active")
-		delete(additionalProperties, "allowWrite")
-		delete(additionalProperties, "defaultStore")
-		delete(additionalProperties, "online")
-		delete(additionalProperties, "allowRead")
-		delete(additionalProperties, "allowProvision")
-		delete(additionalProperties, "refType")
-		delete(additionalProperties, "refId")
-		delete(additionalProperties, "externalId")
-		delete(additionalProperties, "zone")
-		delete(additionalProperties, "zonePool")
-		delete(additionalProperties, "owner")
-		delete(additionalProperties, "tenants")
-		delete(additionalProperties, "resourcePermissions")
-		delete(additionalProperties, "datastores")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableStorageDatastore struct {
-	value *StorageDatastore
-	isSet bool
-}
-
-func (v NullableStorageDatastore) Get() *StorageDatastore {
-	return v.value
-}
-
-func (v *NullableStorageDatastore) Set(val *StorageDatastore) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableStorageDatastore) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableStorageDatastore) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableStorageDatastore(val *StorageDatastore) *NullableStorageDatastore {
-	return &NullableStorageDatastore{value: val, isSet: true}
-}
-
-func (v NullableStorageDatastore) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableStorageDatastore) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

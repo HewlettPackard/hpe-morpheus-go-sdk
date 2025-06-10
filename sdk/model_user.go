@@ -21,34 +21,34 @@ var _ MappedNullable = &User{}
 
 // User struct for User
 type User struct {
-	Id *int64 `json:"id,omitempty"`
-	AccountId *int64 `json:"accountId,omitempty"`
-	Username *string `json:"username,omitempty"`
-	DisplayName *string `json:"displayName,omitempty"`
-	Email *string `json:"email,omitempty"`
-	FirstName *string `json:"firstName,omitempty"`
-	LastName *string `json:"lastName,omitempty"`
-	Enabled *bool `json:"enabled,omitempty"`
-	ReceiveNotifications *bool `json:"receiveNotifications,omitempty"`
-	IsUsing2FA *bool `json:"isUsing2FA,omitempty"`
-	AccountExpired *bool `json:"accountExpired,omitempty"`
-	AccountLocked *bool `json:"accountLocked,omitempty"`
-	PasswordExpired *bool `json:"passwordExpired,omitempty"`
-	LoginCount *int64 `json:"loginCount,omitempty"`
-	LoginAttempts *int64 `json:"loginAttempts,omitempty"`
-	LastLoginDate *time.Time `json:"lastLoginDate,omitempty"`
-	Roles []AddUserTenant200ResponseAllOfUserRolesInner `json:"roles,omitempty"`
-	Account *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"account,omitempty"`
-	LinuxUsername *string `json:"linuxUsername,omitempty"`
-	LinuxPassword *string `json:"linuxPassword,omitempty"`
-	LinuxKeyPairId *int64 `json:"linuxKeyPairId,omitempty"`
-	WindowsUsername *string `json:"windowsUsername,omitempty"`
-	WindowsPassword *string `json:"windowsPassword,omitempty"`
-	DefaultPersona *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"defaultPersona,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	Access *AddUserTenant200ResponseAllOfUserAccess `json:"access,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                                  `json:"id,omitempty"`
+	AccountId            *int64                                                                  `json:"accountId,omitempty"`
+	Username             *string                                                                 `json:"username,omitempty"`
+	DisplayName          *string                                                                 `json:"displayName,omitempty"`
+	Email                *string                                                                 `json:"email,omitempty"`
+	FirstName            *string                                                                 `json:"firstName,omitempty"`
+	LastName             *string                                                                 `json:"lastName,omitempty"`
+	Enabled              *bool                                                                   `json:"enabled,omitempty"`
+	ReceiveNotifications *bool                                                                   `json:"receiveNotifications,omitempty"`
+	IsUsing2FA           *bool                                                                   `json:"isUsing2FA,omitempty"`
+	AccountExpired       *bool                                                                   `json:"accountExpired,omitempty"`
+	AccountLocked        *bool                                                                   `json:"accountLocked,omitempty"`
+	PasswordExpired      *bool                                                                   `json:"passwordExpired,omitempty"`
+	LoginCount           *int64                                                                  `json:"loginCount,omitempty"`
+	LoginAttempts        *int64                                                                  `json:"loginAttempts,omitempty"`
+	LastLoginDate        *time.Time                                                              `json:"lastLoginDate,omitempty"`
+	Roles                []AddUserTenant200ResponseAllOfUserRolesInner                           `json:"roles,omitempty"`
+	Account              *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"account,omitempty"`
+	LinuxUsername        *string                                                                 `json:"linuxUsername,omitempty"`
+	LinuxPassword        *string                                                                 `json:"linuxPassword,omitempty"`
+	LinuxKeyPairId       *int64                                                                  `json:"linuxKeyPairId,omitempty"`
+	WindowsUsername      *string                                                                 `json:"windowsUsername,omitempty"`
+	WindowsPassword      *string                                                                 `json:"windowsPassword,omitempty"`
+	DefaultPersona       *ListBackupSettings200ResponseBackupSettingsDefaultSchedule             `json:"defaultPersona,omitempty"`
+	DateCreated          *time.Time                                                              `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                                              `json:"lastUpdated,omitempty"`
+	Access               *AddUserTenant200ResponseAllOfUserAccess                                `json:"access,omitempty"`
+	AdditionalProperties map[string]interface{}                                                  `json:",remain"`
 }
 
 type _User User
@@ -935,7 +935,7 @@ func (o *User) SetAccess(v AddUserTenant200ResponseAllOfUserAccess) {
 }
 
 func (o User) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1032,88 +1032,8 @@ func (o User) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *User) UnmarshalJSON(data []byte) (err error) {
-	varUser := _User{}
-
-	err = json.Unmarshal(data, &varUser)
-
-	if err != nil {
-		return err
-	}
-
-	*o = User(varUser)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "accountId")
-		delete(additionalProperties, "username")
-		delete(additionalProperties, "displayName")
-		delete(additionalProperties, "email")
-		delete(additionalProperties, "firstName")
-		delete(additionalProperties, "lastName")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "receiveNotifications")
-		delete(additionalProperties, "isUsing2FA")
-		delete(additionalProperties, "accountExpired")
-		delete(additionalProperties, "accountLocked")
-		delete(additionalProperties, "passwordExpired")
-		delete(additionalProperties, "loginCount")
-		delete(additionalProperties, "loginAttempts")
-		delete(additionalProperties, "lastLoginDate")
-		delete(additionalProperties, "roles")
-		delete(additionalProperties, "account")
-		delete(additionalProperties, "linuxUsername")
-		delete(additionalProperties, "linuxPassword")
-		delete(additionalProperties, "linuxKeyPairId")
-		delete(additionalProperties, "windowsUsername")
-		delete(additionalProperties, "windowsPassword")
-		delete(additionalProperties, "defaultPersona")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		delete(additionalProperties, "access")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUser struct {
-	value *User
-	isSet bool
-}
-
-func (v NullableUser) Get() *User {
-	return v.value
-}
-
-func (v *NullableUser) Set(val *User) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUser) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUser) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUser(val *User) *NullableUser {
-	return &NullableUser{value: val, isSet: true}
-}
-
-func (v NullableUser) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUser) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

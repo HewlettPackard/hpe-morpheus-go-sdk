@@ -20,12 +20,12 @@ var _ MappedNullable = &GetNetworkRouter200ResponseNetworkRouterFirewall{}
 
 // GetNetworkRouter200ResponseNetworkRouterFirewall struct for GetNetworkRouter200ResponseNetworkRouterFirewall
 type GetNetworkRouter200ResponseNetworkRouterFirewall struct {
-	Enabled *bool `json:"enabled,omitempty"`
-	Version *string `json:"version,omitempty"`
-	DefaultPolicy *string `json:"defaultPolicy,omitempty"`
-	Global *string `json:"global,omitempty"`
-	RuleGroups []GetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInner `json:"ruleGroups,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Enabled              *bool                                                             `json:"enabled,omitempty"`
+	Version              *string                                                           `json:"version,omitempty"`
+	DefaultPolicy        *string                                                           `json:"defaultPolicy,omitempty"`
+	Global               *string                                                           `json:"global,omitempty"`
+	RuleGroups           []GetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInner `json:"ruleGroups,omitempty"`
+	AdditionalProperties map[string]interface{}                                            `json:",remain"`
 }
 
 type _GetNetworkRouter200ResponseNetworkRouterFirewall GetNetworkRouter200ResponseNetworkRouterFirewall
@@ -208,7 +208,7 @@ func (o *GetNetworkRouter200ResponseNetworkRouterFirewall) SetRuleGroups(v []Get
 }
 
 func (o GetNetworkRouter200ResponseNetworkRouterFirewall) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -239,66 +239,8 @@ func (o GetNetworkRouter200ResponseNetworkRouterFirewall) ToMap() (map[string]in
 
 	return toSerialize, nil
 }
-
 func (o *GetNetworkRouter200ResponseNetworkRouterFirewall) UnmarshalJSON(data []byte) (err error) {
-	varGetNetworkRouter200ResponseNetworkRouterFirewall := _GetNetworkRouter200ResponseNetworkRouterFirewall{}
-
-	err = json.Unmarshal(data, &varGetNetworkRouter200ResponseNetworkRouterFirewall)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetNetworkRouter200ResponseNetworkRouterFirewall(varGetNetworkRouter200ResponseNetworkRouterFirewall)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "version")
-		delete(additionalProperties, "defaultPolicy")
-		delete(additionalProperties, "global")
-		delete(additionalProperties, "ruleGroups")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetNetworkRouter200ResponseNetworkRouterFirewall struct {
-	value *GetNetworkRouter200ResponseNetworkRouterFirewall
-	isSet bool
-}
-
-func (v NullableGetNetworkRouter200ResponseNetworkRouterFirewall) Get() *GetNetworkRouter200ResponseNetworkRouterFirewall {
-	return v.value
-}
-
-func (v *NullableGetNetworkRouter200ResponseNetworkRouterFirewall) Set(val *GetNetworkRouter200ResponseNetworkRouterFirewall) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetNetworkRouter200ResponseNetworkRouterFirewall) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetNetworkRouter200ResponseNetworkRouterFirewall) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetNetworkRouter200ResponseNetworkRouterFirewall(val *GetNetworkRouter200ResponseNetworkRouterFirewall) *NullableGetNetworkRouter200ResponseNetworkRouterFirewall {
-	return &NullableGetNetworkRouter200ResponseNetworkRouterFirewall{value: val, isSet: true}
-}
-
-func (v NullableGetNetworkRouter200ResponseNetworkRouterFirewall) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetNetworkRouter200ResponseNetworkRouterFirewall) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

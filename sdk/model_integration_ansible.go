@@ -21,22 +21,22 @@ var _ MappedNullable = &IntegrationAnsible{}
 
 // IntegrationAnsible struct for IntegrationAnsible
 type IntegrationAnsible struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Enabled *bool `json:"enabled,omitempty"`
-	Type *string `json:"type,omitempty"`
-	IntegrationType *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"integrationType,omitempty"`
-	Url *string `json:"url,omitempty"`
-	ServiceKey *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"serviceKey,omitempty"`
-	IsPlugin *bool `json:"isPlugin,omitempty"`
-	Config *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig `json:"config,omitempty"`
-	Status *string `json:"status,omitempty"`
-	StatusDate *time.Time `json:"statusDate,omitempty"`
-	StatusMessage *string `json:"statusMessage,omitempty"`
-	LastSync *string `json:"lastSync,omitempty"`
-	LastSyncDuration *int64 `json:"lastSyncDuration,omitempty"`
-	Credential *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential `json:"credential,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                                  `json:"id,omitempty"`
+	Name                 *string                                                                 `json:"name,omitempty"`
+	Enabled              *bool                                                                   `json:"enabled,omitempty"`
+	Type                 *string                                                                 `json:"type,omitempty"`
+	IntegrationType      *ListBackupSettings200ResponseBackupSettingsDefaultSchedule             `json:"integrationType,omitempty"`
+	Url                  *string                                                                 `json:"url,omitempty"`
+	ServiceKey           *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"serviceKey,omitempty"`
+	IsPlugin             *bool                                                                   `json:"isPlugin,omitempty"`
+	Config               *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig           `json:"config,omitempty"`
+	Status               *string                                                                 `json:"status,omitempty"`
+	StatusDate           *time.Time                                                              `json:"statusDate,omitempty"`
+	StatusMessage        *string                                                                 `json:"statusMessage,omitempty"`
+	LastSync             *string                                                                 `json:"lastSync,omitempty"`
+	LastSyncDuration     *int64                                                                  `json:"lastSyncDuration,omitempty"`
+	Credential           *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential       `json:"credential,omitempty"`
+	AdditionalProperties map[string]interface{}                                                  `json:",remain"`
 }
 
 type _IntegrationAnsible IntegrationAnsible
@@ -539,7 +539,7 @@ func (o *IntegrationAnsible) SetCredential(v ListIntegrations200ResponseAnyOfInt
 }
 
 func (o IntegrationAnsible) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -600,76 +600,8 @@ func (o IntegrationAnsible) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *IntegrationAnsible) UnmarshalJSON(data []byte) (err error) {
-	varIntegrationAnsible := _IntegrationAnsible{}
-
-	err = json.Unmarshal(data, &varIntegrationAnsible)
-
-	if err != nil {
-		return err
-	}
-
-	*o = IntegrationAnsible(varIntegrationAnsible)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "integrationType")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "serviceKey")
-		delete(additionalProperties, "isPlugin")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "statusDate")
-		delete(additionalProperties, "statusMessage")
-		delete(additionalProperties, "lastSync")
-		delete(additionalProperties, "lastSyncDuration")
-		delete(additionalProperties, "credential")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableIntegrationAnsible struct {
-	value *IntegrationAnsible
-	isSet bool
-}
-
-func (v NullableIntegrationAnsible) Get() *IntegrationAnsible {
-	return v.value
-}
-
-func (v *NullableIntegrationAnsible) Set(val *IntegrationAnsible) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableIntegrationAnsible) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableIntegrationAnsible) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableIntegrationAnsible(val *IntegrationAnsible) *NullableIntegrationAnsible {
-	return &NullableIntegrationAnsible{value: val, isSet: true}
-}
-
-func (v NullableIntegrationAnsible) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableIntegrationAnsible) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

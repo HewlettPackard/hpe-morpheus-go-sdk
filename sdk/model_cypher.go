@@ -21,15 +21,15 @@ var _ MappedNullable = &Cypher{}
 
 // Cypher struct for Cypher
 type Cypher struct {
-	Id *int32 `json:"id,omitempty"`
-	ItemKey *string `json:"itemKey,omitempty"`
-	LeaseTimeout *int64 `json:"leaseTimeout,omitempty"`
-	ExpireDate *time.Time `json:"expireDate,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	LastAccessed *time.Time `json:"lastAccessed,omitempty"`
-	CreatedBy *string `json:"createdBy,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int32                 `json:"id,omitempty"`
+	ItemKey              *string                `json:"itemKey,omitempty"`
+	LeaseTimeout         *int64                 `json:"leaseTimeout,omitempty"`
+	ExpireDate           *time.Time             `json:"expireDate,omitempty"`
+	DateCreated          *time.Time             `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time             `json:"lastUpdated,omitempty"`
+	LastAccessed         *time.Time             `json:"lastAccessed,omitempty"`
+	CreatedBy            *string                `json:"createdBy,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _Cypher Cypher
@@ -308,7 +308,7 @@ func (o *Cypher) SetCreatedBy(v string) {
 }
 
 func (o Cypher) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -348,69 +348,8 @@ func (o Cypher) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *Cypher) UnmarshalJSON(data []byte) (err error) {
-	varCypher := _Cypher{}
-
-	err = json.Unmarshal(data, &varCypher)
-
-	if err != nil {
-		return err
-	}
-
-	*o = Cypher(varCypher)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "itemKey")
-		delete(additionalProperties, "leaseTimeout")
-		delete(additionalProperties, "expireDate")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		delete(additionalProperties, "lastAccessed")
-		delete(additionalProperties, "createdBy")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableCypher struct {
-	value *Cypher
-	isSet bool
-}
-
-func (v NullableCypher) Get() *Cypher {
-	return v.value
-}
-
-func (v *NullableCypher) Set(val *Cypher) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableCypher) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableCypher) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableCypher(val *Cypher) *NullableCypher {
-	return &NullableCypher{value: val, isSet: true}
-}
-
-func (v NullableCypher) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableCypher) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

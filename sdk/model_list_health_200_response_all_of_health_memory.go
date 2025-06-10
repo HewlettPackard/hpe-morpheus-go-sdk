@@ -20,21 +20,21 @@ var _ MappedNullable = &ListHealth200ResponseAllOfHealthMemory{}
 
 // ListHealth200ResponseAllOfHealthMemory struct for ListHealth200ResponseAllOfHealthMemory
 type ListHealth200ResponseAllOfHealthMemory struct {
-	Success *bool `json:"success,omitempty"`
-	MaxMemory *int64 `json:"maxMemory,omitempty"`
-	TotalMemory *int64 `json:"totalMemory,omitempty"`
-	FreeMemory *int64 `json:"freeMemory,omitempty"`
-	UsedMemory *int64 `json:"usedMemory,omitempty"`
-	SystemMemory *int64 `json:"systemMemory,omitempty"`
-	CommittedMemory *int64 `json:"committedMemory,omitempty"`
-	SystemFreeMemory *int64 `json:"systemFreeMemory,omitempty"`
-	SystemSwap *int64 `json:"systemSwap,omitempty"`
-	SystemFreeSwap *int64 `json:"systemFreeSwap,omitempty"`
-	SwapPercent *int64 `json:"swapPercent,omitempty"`
-	MemoryPercent *float32 `json:"memoryPercent,omitempty"`
-	SystemMemoryPercent *float32 `json:"systemMemoryPercent,omitempty"`
-	Status *string `json:"status,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Success              *bool                  `json:"success,omitempty"`
+	MaxMemory            *int64                 `json:"maxMemory,omitempty"`
+	TotalMemory          *int64                 `json:"totalMemory,omitempty"`
+	FreeMemory           *int64                 `json:"freeMemory,omitempty"`
+	UsedMemory           *int64                 `json:"usedMemory,omitempty"`
+	SystemMemory         *int64                 `json:"systemMemory,omitempty"`
+	CommittedMemory      *int64                 `json:"committedMemory,omitempty"`
+	SystemFreeMemory     *int64                 `json:"systemFreeMemory,omitempty"`
+	SystemSwap           *int64                 `json:"systemSwap,omitempty"`
+	SystemFreeSwap       *int64                 `json:"systemFreeSwap,omitempty"`
+	SwapPercent          *int64                 `json:"swapPercent,omitempty"`
+	MemoryPercent        *float32               `json:"memoryPercent,omitempty"`
+	SystemMemoryPercent  *float32               `json:"systemMemoryPercent,omitempty"`
+	Status               *string                `json:"status,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListHealth200ResponseAllOfHealthMemory ListHealth200ResponseAllOfHealthMemory
@@ -505,7 +505,7 @@ func (o *ListHealth200ResponseAllOfHealthMemory) SetStatus(v string) {
 }
 
 func (o ListHealth200ResponseAllOfHealthMemory) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -563,75 +563,8 @@ func (o ListHealth200ResponseAllOfHealthMemory) ToMap() (map[string]interface{},
 
 	return toSerialize, nil
 }
-
 func (o *ListHealth200ResponseAllOfHealthMemory) UnmarshalJSON(data []byte) (err error) {
-	varListHealth200ResponseAllOfHealthMemory := _ListHealth200ResponseAllOfHealthMemory{}
-
-	err = json.Unmarshal(data, &varListHealth200ResponseAllOfHealthMemory)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListHealth200ResponseAllOfHealthMemory(varListHealth200ResponseAllOfHealthMemory)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "success")
-		delete(additionalProperties, "maxMemory")
-		delete(additionalProperties, "totalMemory")
-		delete(additionalProperties, "freeMemory")
-		delete(additionalProperties, "usedMemory")
-		delete(additionalProperties, "systemMemory")
-		delete(additionalProperties, "committedMemory")
-		delete(additionalProperties, "systemFreeMemory")
-		delete(additionalProperties, "systemSwap")
-		delete(additionalProperties, "systemFreeSwap")
-		delete(additionalProperties, "swapPercent")
-		delete(additionalProperties, "memoryPercent")
-		delete(additionalProperties, "systemMemoryPercent")
-		delete(additionalProperties, "status")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListHealth200ResponseAllOfHealthMemory struct {
-	value *ListHealth200ResponseAllOfHealthMemory
-	isSet bool
-}
-
-func (v NullableListHealth200ResponseAllOfHealthMemory) Get() *ListHealth200ResponseAllOfHealthMemory {
-	return v.value
-}
-
-func (v *NullableListHealth200ResponseAllOfHealthMemory) Set(val *ListHealth200ResponseAllOfHealthMemory) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListHealth200ResponseAllOfHealthMemory) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListHealth200ResponseAllOfHealthMemory) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListHealth200ResponseAllOfHealthMemory(val *ListHealth200ResponseAllOfHealthMemory) *NullableListHealth200ResponseAllOfHealthMemory {
-	return &NullableListHealth200ResponseAllOfHealthMemory{value: val, isSet: true}
-}
-
-func (v NullableListHealth200ResponseAllOfHealthMemory) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListHealth200ResponseAllOfHealthMemory) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

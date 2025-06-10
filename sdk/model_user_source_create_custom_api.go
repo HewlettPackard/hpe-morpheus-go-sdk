@@ -27,8 +27,8 @@ type UserSourceCreateCustomApi struct {
 	// Encryption Algorithm
 	EncryptionAlgo *string `json:"encryptionAlgo,omitempty"`
 	// Encryption Key
-	EncryptionKey *string `json:"encryptionKey,omitempty"`
-	AdditionalProperties map[string]interface{}
+	EncryptionKey        *string                `json:"encryptionKey,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _UserSourceCreateCustomApi UserSourceCreateCustomApi
@@ -179,7 +179,7 @@ func (o *UserSourceCreateCustomApi) SetEncryptionKey(v string) {
 }
 
 func (o UserSourceCreateCustomApi) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -207,65 +207,8 @@ func (o UserSourceCreateCustomApi) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *UserSourceCreateCustomApi) UnmarshalJSON(data []byte) (err error) {
-	varUserSourceCreateCustomApi := _UserSourceCreateCustomApi{}
-
-	err = json.Unmarshal(data, &varUserSourceCreateCustomApi)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UserSourceCreateCustomApi(varUserSourceCreateCustomApi)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "endpoint")
-		delete(additionalProperties, "apiStyle")
-		delete(additionalProperties, "encryptionAlgo")
-		delete(additionalProperties, "encryptionKey")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUserSourceCreateCustomApi struct {
-	value *UserSourceCreateCustomApi
-	isSet bool
-}
-
-func (v NullableUserSourceCreateCustomApi) Get() *UserSourceCreateCustomApi {
-	return v.value
-}
-
-func (v *NullableUserSourceCreateCustomApi) Set(val *UserSourceCreateCustomApi) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUserSourceCreateCustomApi) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUserSourceCreateCustomApi) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUserSourceCreateCustomApi(val *UserSourceCreateCustomApi) *NullableUserSourceCreateCustomApi {
-	return &NullableUserSourceCreateCustomApi{value: val, isSet: true}
-}
-
-func (v NullableUserSourceCreateCustomApi) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUserSourceCreateCustomApi) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

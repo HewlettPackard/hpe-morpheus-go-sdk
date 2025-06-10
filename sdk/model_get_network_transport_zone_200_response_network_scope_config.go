@@ -20,9 +20,9 @@ var _ MappedNullable = &GetNetworkTransportZone200ResponseNetworkScopeConfig{}
 
 // GetNetworkTransportZone200ResponseNetworkScopeConfig struct for GetNetworkTransportZone200ResponseNetworkScopeConfig
 type GetNetworkTransportZone200ResponseNetworkScopeConfig struct {
-	NvdsName *string `json:"nvdsName,omitempty"`
-	HostMembershipCriteria *string `json:"hostMembershipCriteria,omitempty"`
-	AdditionalProperties map[string]interface{}
+	NvdsName               *string                `json:"nvdsName,omitempty"`
+	HostMembershipCriteria *string                `json:"hostMembershipCriteria,omitempty"`
+	AdditionalProperties   map[string]interface{} `json:",remain"`
 }
 
 type _GetNetworkTransportZone200ResponseNetworkScopeConfig GetNetworkTransportZone200ResponseNetworkScopeConfig
@@ -109,7 +109,7 @@ func (o *GetNetworkTransportZone200ResponseNetworkScopeConfig) SetHostMembership
 }
 
 func (o GetNetworkTransportZone200ResponseNetworkScopeConfig) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -131,63 +131,8 @@ func (o GetNetworkTransportZone200ResponseNetworkScopeConfig) ToMap() (map[strin
 
 	return toSerialize, nil
 }
-
 func (o *GetNetworkTransportZone200ResponseNetworkScopeConfig) UnmarshalJSON(data []byte) (err error) {
-	varGetNetworkTransportZone200ResponseNetworkScopeConfig := _GetNetworkTransportZone200ResponseNetworkScopeConfig{}
-
-	err = json.Unmarshal(data, &varGetNetworkTransportZone200ResponseNetworkScopeConfig)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetNetworkTransportZone200ResponseNetworkScopeConfig(varGetNetworkTransportZone200ResponseNetworkScopeConfig)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "nvdsName")
-		delete(additionalProperties, "hostMembershipCriteria")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetNetworkTransportZone200ResponseNetworkScopeConfig struct {
-	value *GetNetworkTransportZone200ResponseNetworkScopeConfig
-	isSet bool
-}
-
-func (v NullableGetNetworkTransportZone200ResponseNetworkScopeConfig) Get() *GetNetworkTransportZone200ResponseNetworkScopeConfig {
-	return v.value
-}
-
-func (v *NullableGetNetworkTransportZone200ResponseNetworkScopeConfig) Set(val *GetNetworkTransportZone200ResponseNetworkScopeConfig) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetNetworkTransportZone200ResponseNetworkScopeConfig) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetNetworkTransportZone200ResponseNetworkScopeConfig) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetNetworkTransportZone200ResponseNetworkScopeConfig(val *GetNetworkTransportZone200ResponseNetworkScopeConfig) *NullableGetNetworkTransportZone200ResponseNetworkScopeConfig {
-	return &NullableGetNetworkTransportZone200ResponseNetworkScopeConfig{value: val, isSet: true}
-}
-
-func (v NullableGetNetworkTransportZone200ResponseNetworkScopeConfig) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetNetworkTransportZone200ResponseNetworkScopeConfig) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -29,14 +29,14 @@ type UpdateBackupSettingsRequestBackupSettings struct {
 	// When enabled, a Backup will be created to backup the Morpheus appliance database
 	BackupAppliance *bool `json:"backupAppliance,omitempty"`
 	// Use this to update existing backups with new settings
-	UpdateExisting *bool `json:"updateExisting,omitempty"`
+	UpdateExisting  *bool                                                     `json:"updateExisting,omitempty"`
 	DefaultSchedule *UpdateBackupSettingsRequestBackupSettingsDefaultSchedule `json:"defaultSchedule,omitempty"`
 	// Use this to clear existing default backup schedule
-	ClearDefaultSchedule *bool `json:"clearDefaultSchedule,omitempty"`
+	ClearDefaultSchedule *bool                                                          `json:"clearDefaultSchedule,omitempty"`
 	DefaultStorageBucket *UpdateBackupSettingsRequestBackupSettingsDefaultStorageBucket `json:"defaultStorageBucket,omitempty"`
 	// Use this to clear default store bucket
-	ClearDefaultStorageBucket *bool `json:"clearDefaultStorageBucket,omitempty"`
-	AdditionalProperties map[string]interface{}
+	ClearDefaultStorageBucket *bool                  `json:"clearDefaultStorageBucket,omitempty"`
+	AdditionalProperties      map[string]interface{} `json:",remain"`
 }
 
 type _UpdateBackupSettingsRequestBackupSettings UpdateBackupSettingsRequestBackupSettings
@@ -347,7 +347,7 @@ func (o *UpdateBackupSettingsRequestBackupSettings) SetClearDefaultStorageBucket
 }
 
 func (o UpdateBackupSettingsRequestBackupSettings) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -390,70 +390,8 @@ func (o UpdateBackupSettingsRequestBackupSettings) ToMap() (map[string]interface
 
 	return toSerialize, nil
 }
-
 func (o *UpdateBackupSettingsRequestBackupSettings) UnmarshalJSON(data []byte) (err error) {
-	varUpdateBackupSettingsRequestBackupSettings := _UpdateBackupSettingsRequestBackupSettings{}
-
-	err = json.Unmarshal(data, &varUpdateBackupSettingsRequestBackupSettings)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateBackupSettingsRequestBackupSettings(varUpdateBackupSettingsRequestBackupSettings)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "backupsEnabled")
-		delete(additionalProperties, "retentionCount")
-		delete(additionalProperties, "createBackups")
-		delete(additionalProperties, "backupAppliance")
-		delete(additionalProperties, "updateExisting")
-		delete(additionalProperties, "defaultSchedule")
-		delete(additionalProperties, "clearDefaultSchedule")
-		delete(additionalProperties, "defaultStorageBucket")
-		delete(additionalProperties, "clearDefaultStorageBucket")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateBackupSettingsRequestBackupSettings struct {
-	value *UpdateBackupSettingsRequestBackupSettings
-	isSet bool
-}
-
-func (v NullableUpdateBackupSettingsRequestBackupSettings) Get() *UpdateBackupSettingsRequestBackupSettings {
-	return v.value
-}
-
-func (v *NullableUpdateBackupSettingsRequestBackupSettings) Set(val *UpdateBackupSettingsRequestBackupSettings) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateBackupSettingsRequestBackupSettings) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateBackupSettingsRequestBackupSettings) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateBackupSettingsRequestBackupSettings(val *UpdateBackupSettingsRequestBackupSettings) *NullableUpdateBackupSettingsRequestBackupSettings {
-	return &NullableUpdateBackupSettingsRequestBackupSettings{value: val, isSet: true}
-}
-
-func (v NullableUpdateBackupSettingsRequestBackupSettings) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateBackupSettingsRequestBackupSettings) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

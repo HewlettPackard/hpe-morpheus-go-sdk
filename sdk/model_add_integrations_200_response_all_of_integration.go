@@ -14,6 +14,7 @@ package sdk
 import (
 	"encoding/json"
 	"fmt"
+
 	"gopkg.in/validator.v2"
 )
 
@@ -22,8 +23,8 @@ var _ fmt.Stringer
 
 // AddIntegrations200ResponseAllOfIntegration - struct for AddIntegrations200ResponseAllOfIntegration
 type AddIntegrations200ResponseAllOfIntegration struct {
-	ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf
-	ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf1 *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf1
+	ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf   *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf
+	ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf1  *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf1
 	ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf10 *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf10
 	ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf11 *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf11
 	ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf12 *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf12
@@ -31,14 +32,14 @@ type AddIntegrations200ResponseAllOfIntegration struct {
 	ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14 *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14
 	ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15 *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15
 	ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf16 *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf16
-	ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf2 *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf2
-	ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3 *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3
-	ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf4 *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf4
-	ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf5 *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf5
-	ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf6 *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf6
-	ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf7 *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf7
-	ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8 *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8
-	ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf9 *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf9
+	ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf2  *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf2
+	ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3  *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3
+	ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf4  *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf4
+	ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf5  *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf5
+	ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf6  *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf6
+	ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf7  *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf7
+	ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8  *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8
+	ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf9  *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf9
 }
 
 // ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfAsAddIntegrations200ResponseAllOfIntegration is a convenience function that returns ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf wrapped in AddIntegrations200ResponseAllOfIntegration
@@ -160,6 +161,81 @@ func ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf9AsAddIntegrations200
 	}
 }
 
+func (dst *AddIntegrations200ResponseAllOfIntegration) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &AddIntegrations200ResponseAllOfIntegration{}
+	}
+
+	if out, ok := data.(ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf); ok {
+		dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf = &out
+	}
+
+	if out, ok := data.(ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf1); ok {
+		dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf1 = &out
+	}
+
+	if out, ok := data.(ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf10); ok {
+		dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf10 = &out
+	}
+
+	if out, ok := data.(ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf11); ok {
+		dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf11 = &out
+	}
+
+	if out, ok := data.(ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf12); ok {
+		dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf12 = &out
+	}
+
+	if out, ok := data.(ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf13); ok {
+		dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf13 = &out
+	}
+
+	if out, ok := data.(ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14); ok {
+		dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14 = &out
+	}
+
+	if out, ok := data.(ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15); ok {
+		dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15 = &out
+	}
+
+	if out, ok := data.(ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf16); ok {
+		dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf16 = &out
+	}
+
+	if out, ok := data.(ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf2); ok {
+		dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf2 = &out
+	}
+
+	if out, ok := data.(ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3); ok {
+		dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3 = &out
+	}
+
+	if out, ok := data.(ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf4); ok {
+		dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf4 = &out
+	}
+
+	if out, ok := data.(ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf5); ok {
+		dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf5 = &out
+	}
+
+	if out, ok := data.(ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf6); ok {
+		dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf6 = &out
+	}
+
+	if out, ok := data.(ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf7); ok {
+		dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf7 = &out
+	}
+
+	if out, ok := data.(ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8); ok {
+		dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8 = &out
+	}
+
+	if out, ok := data.(ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf9); ok {
+		dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf9 = &out
+	}
+
+	return dst, nil
+}
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddIntegrations200ResponseAllOfIntegration) UnmarshalJSON(data []byte) error {
@@ -556,7 +632,7 @@ func (src AddIntegrations200ResponseAllOfIntegration) MarshalJSON() ([]byte, err
 }
 
 // Get the actual instance
-func (obj *AddIntegrations200ResponseAllOfIntegration) GetActualInstance() (interface{}) {
+func (obj *AddIntegrations200ResponseAllOfIntegration) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -633,7 +709,7 @@ func (obj *AddIntegrations200ResponseAllOfIntegration) GetActualInstance() (inte
 }
 
 // Get the actual instance value
-func (obj AddIntegrations200ResponseAllOfIntegration) GetActualInstanceValue() (interface{}) {
+func (obj AddIntegrations200ResponseAllOfIntegration) GetActualInstanceValue() interface{} {
 	if obj.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf != nil {
 		return *obj.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf
 	}
@@ -741,5 +817,3 @@ func (v *NullableAddIntegrations200ResponseAllOfIntegration) UnmarshalJSON(src [
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

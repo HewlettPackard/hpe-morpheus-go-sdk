@@ -20,8 +20,8 @@ var _ MappedNullable = &AddAppsRequestGroup{}
 
 // AddAppsRequestGroup A Map containing the id of the Group
 type AddAppsRequestGroup struct {
-	Id *int64 `json:"id,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddAppsRequestGroup AddAppsRequestGroup
@@ -76,7 +76,7 @@ func (o *AddAppsRequestGroup) SetId(v int64) {
 }
 
 func (o AddAppsRequestGroup) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o AddAppsRequestGroup) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *AddAppsRequestGroup) UnmarshalJSON(data []byte) (err error) {
-	varAddAppsRequestGroup := _AddAppsRequestGroup{}
-
-	err = json.Unmarshal(data, &varAddAppsRequestGroup)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddAppsRequestGroup(varAddAppsRequestGroup)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddAppsRequestGroup struct {
-	value *AddAppsRequestGroup
-	isSet bool
-}
-
-func (v NullableAddAppsRequestGroup) Get() *AddAppsRequestGroup {
-	return v.value
-}
-
-func (v *NullableAddAppsRequestGroup) Set(val *AddAppsRequestGroup) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddAppsRequestGroup) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddAppsRequestGroup) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddAppsRequestGroup(val *AddAppsRequestGroup) *NullableAddAppsRequestGroup {
-	return &NullableAddAppsRequestGroup{value: val, isSet: true}
-}
-
-func (v NullableAddAppsRequestGroup) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddAppsRequestGroup) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

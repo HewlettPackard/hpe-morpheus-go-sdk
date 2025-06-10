@@ -20,8 +20,8 @@ var _ MappedNullable = &ListInstances200ResponseAllOfInstancesInnerConfigReplica
 
 // ListInstances200ResponseAllOfInstancesInnerConfigReplicationGroup struct for ListInstances200ResponseAllOfInstancesInnerConfigReplicationGroup
 type ListInstances200ResponseAllOfInstancesInnerConfigReplicationGroup struct {
-	ProviderMethod *string `json:"providerMethod,omitempty"`
-	AdditionalProperties map[string]interface{}
+	ProviderMethod       *string                `json:"providerMethod,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListInstances200ResponseAllOfInstancesInnerConfigReplicationGroup ListInstances200ResponseAllOfInstancesInnerConfigReplicationGroup
@@ -76,7 +76,7 @@ func (o *ListInstances200ResponseAllOfInstancesInnerConfigReplicationGroup) SetP
 }
 
 func (o ListInstances200ResponseAllOfInstancesInnerConfigReplicationGroup) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o ListInstances200ResponseAllOfInstancesInnerConfigReplicationGroup) ToMap
 
 	return toSerialize, nil
 }
-
 func (o *ListInstances200ResponseAllOfInstancesInnerConfigReplicationGroup) UnmarshalJSON(data []byte) (err error) {
-	varListInstances200ResponseAllOfInstancesInnerConfigReplicationGroup := _ListInstances200ResponseAllOfInstancesInnerConfigReplicationGroup{}
-
-	err = json.Unmarshal(data, &varListInstances200ResponseAllOfInstancesInnerConfigReplicationGroup)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListInstances200ResponseAllOfInstancesInnerConfigReplicationGroup(varListInstances200ResponseAllOfInstancesInnerConfigReplicationGroup)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "providerMethod")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListInstances200ResponseAllOfInstancesInnerConfigReplicationGroup struct {
-	value *ListInstances200ResponseAllOfInstancesInnerConfigReplicationGroup
-	isSet bool
-}
-
-func (v NullableListInstances200ResponseAllOfInstancesInnerConfigReplicationGroup) Get() *ListInstances200ResponseAllOfInstancesInnerConfigReplicationGroup {
-	return v.value
-}
-
-func (v *NullableListInstances200ResponseAllOfInstancesInnerConfigReplicationGroup) Set(val *ListInstances200ResponseAllOfInstancesInnerConfigReplicationGroup) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListInstances200ResponseAllOfInstancesInnerConfigReplicationGroup) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListInstances200ResponseAllOfInstancesInnerConfigReplicationGroup) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListInstances200ResponseAllOfInstancesInnerConfigReplicationGroup(val *ListInstances200ResponseAllOfInstancesInnerConfigReplicationGroup) *NullableListInstances200ResponseAllOfInstancesInnerConfigReplicationGroup {
-	return &NullableListInstances200ResponseAllOfInstancesInnerConfigReplicationGroup{value: val, isSet: true}
-}
-
-func (v NullableListInstances200ResponseAllOfInstancesInnerConfigReplicationGroup) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListInstances200ResponseAllOfInstancesInnerConfigReplicationGroup) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

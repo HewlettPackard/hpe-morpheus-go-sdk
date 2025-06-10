@@ -21,25 +21,25 @@ var _ MappedNullable = &IntegrationvRO{}
 
 // IntegrationvRO struct for IntegrationvRO
 type IntegrationvRO struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Enabled *bool `json:"enabled,omitempty"`
-	Type *string `json:"type,omitempty"`
-	IntegrationType *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"integrationType,omitempty"`
-	Url *string `json:"url,omitempty"`
-	Token *string `json:"token,omitempty"`
-	TokenHash *string `json:"tokenHash,omitempty"`
-	AuthType *string `json:"authType,omitempty"`
-	AuthId *string `json:"authId,omitempty"`
-	IsPlugin *bool `json:"isPlugin,omitempty"`
-	Config map[string]interface{} `json:"config,omitempty"`
-	Status *string `json:"status,omitempty"`
-	StatusDate *time.Time `json:"statusDate,omitempty"`
-	StatusMessage *string `json:"statusMessage,omitempty"`
-	LastSync *string `json:"lastSync,omitempty"`
-	LastSyncDuration *string `json:"lastSyncDuration,omitempty"`
-	Credential *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential `json:"credential,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                            `json:"id,omitempty"`
+	Name                 *string                                                           `json:"name,omitempty"`
+	Enabled              *bool                                                             `json:"enabled,omitempty"`
+	Type                 *string                                                           `json:"type,omitempty"`
+	IntegrationType      *ListBackupSettings200ResponseBackupSettingsDefaultSchedule       `json:"integrationType,omitempty"`
+	Url                  *string                                                           `json:"url,omitempty"`
+	Token                *string                                                           `json:"token,omitempty"`
+	TokenHash            *string                                                           `json:"tokenHash,omitempty"`
+	AuthType             *string                                                           `json:"authType,omitempty"`
+	AuthId               *string                                                           `json:"authId,omitempty"`
+	IsPlugin             *bool                                                             `json:"isPlugin,omitempty"`
+	Config               map[string]interface{}                                            `json:"config,omitempty"`
+	Status               *string                                                           `json:"status,omitempty"`
+	StatusDate           *time.Time                                                        `json:"statusDate,omitempty"`
+	StatusMessage        *string                                                           `json:"statusMessage,omitempty"`
+	LastSync             *string                                                           `json:"lastSync,omitempty"`
+	LastSyncDuration     *string                                                           `json:"lastSyncDuration,omitempty"`
+	Credential           *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential `json:"credential,omitempty"`
+	AdditionalProperties map[string]interface{}                                            `json:",remain"`
 }
 
 type _IntegrationvRO IntegrationvRO
@@ -638,7 +638,7 @@ func (o *IntegrationvRO) SetCredential(v ListIntegrations200ResponseAnyOfIntegra
 }
 
 func (o IntegrationvRO) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -708,79 +708,8 @@ func (o IntegrationvRO) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *IntegrationvRO) UnmarshalJSON(data []byte) (err error) {
-	varIntegrationvRO := _IntegrationvRO{}
-
-	err = json.Unmarshal(data, &varIntegrationvRO)
-
-	if err != nil {
-		return err
-	}
-
-	*o = IntegrationvRO(varIntegrationvRO)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "integrationType")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "token")
-		delete(additionalProperties, "tokenHash")
-		delete(additionalProperties, "authType")
-		delete(additionalProperties, "authId")
-		delete(additionalProperties, "isPlugin")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "statusDate")
-		delete(additionalProperties, "statusMessage")
-		delete(additionalProperties, "lastSync")
-		delete(additionalProperties, "lastSyncDuration")
-		delete(additionalProperties, "credential")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableIntegrationvRO struct {
-	value *IntegrationvRO
-	isSet bool
-}
-
-func (v NullableIntegrationvRO) Get() *IntegrationvRO {
-	return v.value
-}
-
-func (v *NullableIntegrationvRO) Set(val *IntegrationvRO) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableIntegrationvRO) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableIntegrationvRO) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableIntegrationvRO(val *IntegrationvRO) *NullableIntegrationvRO {
-	return &NullableIntegrationvRO{value: val, isSet: true}
-}
-
-func (v NullableIntegrationvRO) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableIntegrationvRO) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

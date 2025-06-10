@@ -20,11 +20,11 @@ var _ MappedNullable = &Search{}
 
 // Search struct for Search
 type Search struct {
-	Hits []Search200ResponseHitsInner `json:"hits,omitempty"`
-	Query *string `json:"query,omitempty"`
-	Took *int64 `json:"took,omitempty"`
-	Meta *Search200ResponseMeta `json:"meta,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Hits                 []Search200ResponseHitsInner `json:"hits,omitempty"`
+	Query                *string                      `json:"query,omitempty"`
+	Took                 *int64                       `json:"took,omitempty"`
+	Meta                 *Search200ResponseMeta       `json:"meta,omitempty"`
+	AdditionalProperties map[string]interface{}       `json:",remain"`
 }
 
 type _Search Search
@@ -175,7 +175,7 @@ func (o *Search) SetMeta(v Search200ResponseMeta) {
 }
 
 func (o Search) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -203,65 +203,8 @@ func (o Search) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *Search) UnmarshalJSON(data []byte) (err error) {
-	varSearch := _Search{}
-
-	err = json.Unmarshal(data, &varSearch)
-
-	if err != nil {
-		return err
-	}
-
-	*o = Search(varSearch)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "hits")
-		delete(additionalProperties, "query")
-		delete(additionalProperties, "took")
-		delete(additionalProperties, "meta")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableSearch struct {
-	value *Search
-	isSet bool
-}
-
-func (v NullableSearch) Get() *Search {
-	return v.value
-}
-
-func (v *NullableSearch) Set(val *Search) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSearch) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSearch) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSearch(val *Search) *NullableSearch {
-	return &NullableSearch{value: val, isSet: true}
-}
-
-func (v NullableSearch) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSearch) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

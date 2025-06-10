@@ -20,8 +20,8 @@ var _ MappedNullable = &UpdateFileTemplateRequest{}
 
 // UpdateFileTemplateRequest struct for UpdateFileTemplateRequest
 type UpdateFileTemplateRequest struct {
-	ContainerTemplate *UpdateFileTemplateRequestContainerTemplate `json:"containerTemplate,omitempty"`
-	AdditionalProperties map[string]interface{}
+	ContainerTemplate    *UpdateFileTemplateRequestContainerTemplate `json:"containerTemplate,omitempty"`
+	AdditionalProperties map[string]interface{}                      `json:",remain"`
 }
 
 type _UpdateFileTemplateRequest UpdateFileTemplateRequest
@@ -76,7 +76,7 @@ func (o *UpdateFileTemplateRequest) SetContainerTemplate(v UpdateFileTemplateReq
 }
 
 func (o UpdateFileTemplateRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o UpdateFileTemplateRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *UpdateFileTemplateRequest) UnmarshalJSON(data []byte) (err error) {
-	varUpdateFileTemplateRequest := _UpdateFileTemplateRequest{}
-
-	err = json.Unmarshal(data, &varUpdateFileTemplateRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateFileTemplateRequest(varUpdateFileTemplateRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "containerTemplate")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateFileTemplateRequest struct {
-	value *UpdateFileTemplateRequest
-	isSet bool
-}
-
-func (v NullableUpdateFileTemplateRequest) Get() *UpdateFileTemplateRequest {
-	return v.value
-}
-
-func (v *NullableUpdateFileTemplateRequest) Set(val *UpdateFileTemplateRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateFileTemplateRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateFileTemplateRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateFileTemplateRequest(val *UpdateFileTemplateRequest) *NullableUpdateFileTemplateRequest {
-	return &NullableUpdateFileTemplateRequest{value: val, isSet: true}
-}
-
-func (v NullableUpdateFileTemplateRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateFileTemplateRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

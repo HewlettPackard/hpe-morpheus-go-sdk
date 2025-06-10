@@ -20,8 +20,8 @@ var _ MappedNullable = &GetInstanceSchedules200Response{}
 
 // GetInstanceSchedules200Response struct for GetInstanceSchedules200Response
 type GetInstanceSchedules200Response struct {
-	InstanceSchedules []GetInstanceThreshold200ResponseInstanceSchedulesInner `json:"instanceSchedules,omitempty"`
-	AdditionalProperties map[string]interface{}
+	InstanceSchedules    []GetInstanceThreshold200ResponseInstanceSchedulesInner `json:"instanceSchedules,omitempty"`
+	AdditionalProperties map[string]interface{}                                  `json:",remain"`
 }
 
 type _GetInstanceSchedules200Response GetInstanceSchedules200Response
@@ -76,7 +76,7 @@ func (o *GetInstanceSchedules200Response) SetInstanceSchedules(v []GetInstanceTh
 }
 
 func (o GetInstanceSchedules200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o GetInstanceSchedules200Response) ToMap() (map[string]interface{}, error)
 
 	return toSerialize, nil
 }
-
 func (o *GetInstanceSchedules200Response) UnmarshalJSON(data []byte) (err error) {
-	varGetInstanceSchedules200Response := _GetInstanceSchedules200Response{}
-
-	err = json.Unmarshal(data, &varGetInstanceSchedules200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetInstanceSchedules200Response(varGetInstanceSchedules200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "instanceSchedules")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetInstanceSchedules200Response struct {
-	value *GetInstanceSchedules200Response
-	isSet bool
-}
-
-func (v NullableGetInstanceSchedules200Response) Get() *GetInstanceSchedules200Response {
-	return v.value
-}
-
-func (v *NullableGetInstanceSchedules200Response) Set(val *GetInstanceSchedules200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetInstanceSchedules200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetInstanceSchedules200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetInstanceSchedules200Response(val *GetInstanceSchedules200Response) *NullableGetInstanceSchedules200Response {
-	return &NullableGetInstanceSchedules200Response{value: val, isSet: true}
-}
-
-func (v NullableGetInstanceSchedules200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetInstanceSchedules200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

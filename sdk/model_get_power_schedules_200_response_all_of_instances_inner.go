@@ -20,9 +20,9 @@ var _ MappedNullable = &GetPowerSchedules200ResponseAllOfInstancesInner{}
 
 // GetPowerSchedules200ResponseAllOfInstancesInner struct for GetPowerSchedules200ResponseAllOfInstancesInner
 type GetPowerSchedules200ResponseAllOfInstancesInner struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _GetPowerSchedules200ResponseAllOfInstancesInner GetPowerSchedules200ResponseAllOfInstancesInner
@@ -109,7 +109,7 @@ func (o *GetPowerSchedules200ResponseAllOfInstancesInner) SetName(v string) {
 }
 
 func (o GetPowerSchedules200ResponseAllOfInstancesInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -131,63 +131,8 @@ func (o GetPowerSchedules200ResponseAllOfInstancesInner) ToMap() (map[string]int
 
 	return toSerialize, nil
 }
-
 func (o *GetPowerSchedules200ResponseAllOfInstancesInner) UnmarshalJSON(data []byte) (err error) {
-	varGetPowerSchedules200ResponseAllOfInstancesInner := _GetPowerSchedules200ResponseAllOfInstancesInner{}
-
-	err = json.Unmarshal(data, &varGetPowerSchedules200ResponseAllOfInstancesInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetPowerSchedules200ResponseAllOfInstancesInner(varGetPowerSchedules200ResponseAllOfInstancesInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetPowerSchedules200ResponseAllOfInstancesInner struct {
-	value *GetPowerSchedules200ResponseAllOfInstancesInner
-	isSet bool
-}
-
-func (v NullableGetPowerSchedules200ResponseAllOfInstancesInner) Get() *GetPowerSchedules200ResponseAllOfInstancesInner {
-	return v.value
-}
-
-func (v *NullableGetPowerSchedules200ResponseAllOfInstancesInner) Set(val *GetPowerSchedules200ResponseAllOfInstancesInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetPowerSchedules200ResponseAllOfInstancesInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetPowerSchedules200ResponseAllOfInstancesInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetPowerSchedules200ResponseAllOfInstancesInner(val *GetPowerSchedules200ResponseAllOfInstancesInner) *NullableGetPowerSchedules200ResponseAllOfInstancesInner {
-	return &NullableGetPowerSchedules200ResponseAllOfInstancesInner{value: val, isSet: true}
-}
-
-func (v NullableGetPowerSchedules200ResponseAllOfInstancesInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetPowerSchedules200ResponseAllOfInstancesInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

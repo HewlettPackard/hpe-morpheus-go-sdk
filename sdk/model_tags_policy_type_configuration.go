@@ -18,13 +18,13 @@ import (
 // checks if the TagsPolicyTypeConfiguration type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &TagsPolicyTypeConfiguration{}
 
-// TagsPolicyTypeConfiguration Configuration settings for the following policy types: - Tags 
+// TagsPolicyTypeConfiguration Configuration settings for the following policy types: - Tags
 type TagsPolicyTypeConfiguration struct {
-	Strict *bool `json:"strict,omitempty"`
-	Key *string `json:"key,omitempty"`
-	ValueListId *string `json:"valueListId,omitempty"`
-	Value *string `json:"value,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Strict               *bool                  `json:"strict,omitempty"`
+	Key                  *string                `json:"key,omitempty"`
+	ValueListId          *string                `json:"valueListId,omitempty"`
+	Value                *string                `json:"value,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _TagsPolicyTypeConfiguration TagsPolicyTypeConfiguration
@@ -175,7 +175,7 @@ func (o *TagsPolicyTypeConfiguration) SetValue(v string) {
 }
 
 func (o TagsPolicyTypeConfiguration) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -203,65 +203,8 @@ func (o TagsPolicyTypeConfiguration) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *TagsPolicyTypeConfiguration) UnmarshalJSON(data []byte) (err error) {
-	varTagsPolicyTypeConfiguration := _TagsPolicyTypeConfiguration{}
-
-	err = json.Unmarshal(data, &varTagsPolicyTypeConfiguration)
-
-	if err != nil {
-		return err
-	}
-
-	*o = TagsPolicyTypeConfiguration(varTagsPolicyTypeConfiguration)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "strict")
-		delete(additionalProperties, "key")
-		delete(additionalProperties, "valueListId")
-		delete(additionalProperties, "value")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableTagsPolicyTypeConfiguration struct {
-	value *TagsPolicyTypeConfiguration
-	isSet bool
-}
-
-func (v NullableTagsPolicyTypeConfiguration) Get() *TagsPolicyTypeConfiguration {
-	return v.value
-}
-
-func (v *NullableTagsPolicyTypeConfiguration) Set(val *TagsPolicyTypeConfiguration) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableTagsPolicyTypeConfiguration) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableTagsPolicyTypeConfiguration) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableTagsPolicyTypeConfiguration(val *TagsPolicyTypeConfiguration) *NullableTagsPolicyTypeConfiguration {
-	return &NullableTagsPolicyTypeConfiguration{value: val, isSet: true}
-}
-
-func (v NullableTagsPolicyTypeConfiguration) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableTagsPolicyTypeConfiguration) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -14,7 +14,6 @@ package sdk
 import (
 	"encoding/json"
 	"time"
-	"fmt"
 )
 
 // checks if the SecurityScanJob type satisfies the MappedNullable interface at compile time
@@ -27,16 +26,16 @@ type SecurityScanJob struct {
 	// Array of label strings, can be used for filtering.
 	Labels []string `json:"labels,omitempty"`
 	// Use this to set enabled state
-	Enabled *bool `json:"enabled,omitempty"`
+	Enabled         *bool                  `json:"enabled,omitempty"`
 	SecurityPackage WorkflowJobPayloadTask `json:"securityPackage"`
 	// Scan Checklist
 	ScanPath *string `json:"scanPath,omitempty"`
 	// Security Profile
 	SecurityProfile *string `json:"securityProfile,omitempty"`
 	// Target type where job will execute
-	TargetType string `json:"targetType"`
-	Targets []WorkflowJobPayloadTargetsInner `json:"targets"`
-	ScheduleMode WorkflowJobPayloadScheduleMode `json:"scheduleMode"`
+	TargetType   string                           `json:"targetType"`
+	Targets      []WorkflowJobPayloadTargetsInner `json:"targets"`
+	ScheduleMode WorkflowJobPayloadScheduleMode   `json:"scheduleMode"`
 	// Map of options to be used as values in the workflow tasks. These correspond to option types.
 	CustomOptions map[string]interface{} `json:"customOptions,omitempty"`
 	// Job custom configuration (String in JSON format)
@@ -44,8 +43,8 @@ type SecurityScanJob struct {
 	// Date and Time to execute the job. Use UTC time in the format 2020-02-15T05:00:00Z. Required when scheduleMode is 'dateTime'.
 	DateTime *time.Time `json:"dateTime,omitempty"`
 	// If true, executes job
-	Run *bool `json:"run,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Run                  *bool                  `json:"run,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _SecurityScanJob SecurityScanJob
@@ -453,7 +452,7 @@ func (o *SecurityScanJob) SetRun(v bool) {
 }
 
 func (o SecurityScanJob) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -498,99 +497,8 @@ func (o SecurityScanJob) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *SecurityScanJob) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"name",
-		"securityPackage",
-		"targetType",
-		"targets",
-		"scheduleMode",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varSecurityScanJob := _SecurityScanJob{}
-
-	err = json.Unmarshal(data, &varSecurityScanJob)
-
-	if err != nil {
-		return err
-	}
-
-	*o = SecurityScanJob(varSecurityScanJob)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "securityPackage")
-		delete(additionalProperties, "scanPath")
-		delete(additionalProperties, "securityProfile")
-		delete(additionalProperties, "targetType")
-		delete(additionalProperties, "targets")
-		delete(additionalProperties, "scheduleMode")
-		delete(additionalProperties, "customOptions")
-		delete(additionalProperties, "customConfig")
-		delete(additionalProperties, "dateTime")
-		delete(additionalProperties, "run")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableSecurityScanJob struct {
-	value *SecurityScanJob
-	isSet bool
-}
-
-func (v NullableSecurityScanJob) Get() *SecurityScanJob {
-	return v.value
-}
-
-func (v *NullableSecurityScanJob) Set(val *SecurityScanJob) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSecurityScanJob) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSecurityScanJob) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSecurityScanJob(val *SecurityScanJob) *NullableSecurityScanJob {
-	return &NullableSecurityScanJob{value: val, isSet: true}
-}
-
-func (v NullableSecurityScanJob) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSecurityScanJob) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

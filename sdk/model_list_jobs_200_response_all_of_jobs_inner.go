@@ -19,19 +19,38 @@ import (
 // very silly way of avoiding `"fmt" imported and not used` errors
 var _ fmt.Stringer
 
-
 // ListJobs200ResponseAllOfJobsInner struct for ListJobs200ResponseAllOfJobsInner
 type ListJobs200ResponseAllOfJobsInner struct {
-	ListJobs200ResponseAllOfJobsInnerAnyOf *ListJobs200ResponseAllOfJobsInnerAnyOf
+	ListJobs200ResponseAllOfJobsInnerAnyOf  *ListJobs200ResponseAllOfJobsInnerAnyOf
 	ListJobs200ResponseAllOfJobsInnerAnyOf1 *ListJobs200ResponseAllOfJobsInnerAnyOf1
 	ListJobs200ResponseAllOfJobsInnerAnyOf2 *ListJobs200ResponseAllOfJobsInnerAnyOf2
+}
+
+func (dst *ListJobs200ResponseAllOfJobsInner) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &ListJobs200ResponseAllOfJobsInner{}
+	}
+
+	if out, ok := data.(ListJobs200ResponseAllOfJobsInnerAnyOf); ok {
+		dst.ListJobs200ResponseAllOfJobsInnerAnyOf = &out
+	}
+
+	if out, ok := data.(ListJobs200ResponseAllOfJobsInnerAnyOf1); ok {
+		dst.ListJobs200ResponseAllOfJobsInnerAnyOf1 = &out
+	}
+
+	if out, ok := data.(ListJobs200ResponseAllOfJobsInnerAnyOf2); ok {
+		dst.ListJobs200ResponseAllOfJobsInnerAnyOf2 = &out
+	}
+
+	return dst, nil
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *ListJobs200ResponseAllOfJobsInner) UnmarshalJSON(data []byte) error {
 	var err error
 	// try to unmarshal JSON data into ListJobs200ResponseAllOfJobsInnerAnyOf
-	err = json.Unmarshal(data, &dst.ListJobs200ResponseAllOfJobsInnerAnyOf);
+	err = json.Unmarshal(data, &dst.ListJobs200ResponseAllOfJobsInnerAnyOf)
 	if err == nil {
 		jsonListJobs200ResponseAllOfJobsInnerAnyOf, _ := json.Marshal(dst.ListJobs200ResponseAllOfJobsInnerAnyOf)
 		if string(jsonListJobs200ResponseAllOfJobsInnerAnyOf) == "{}" { // empty struct
@@ -44,7 +63,7 @@ func (dst *ListJobs200ResponseAllOfJobsInner) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal JSON data into ListJobs200ResponseAllOfJobsInnerAnyOf1
-	err = json.Unmarshal(data, &dst.ListJobs200ResponseAllOfJobsInnerAnyOf1);
+	err = json.Unmarshal(data, &dst.ListJobs200ResponseAllOfJobsInnerAnyOf1)
 	if err == nil {
 		jsonListJobs200ResponseAllOfJobsInnerAnyOf1, _ := json.Marshal(dst.ListJobs200ResponseAllOfJobsInnerAnyOf1)
 		if string(jsonListJobs200ResponseAllOfJobsInnerAnyOf1) == "{}" { // empty struct
@@ -57,7 +76,7 @@ func (dst *ListJobs200ResponseAllOfJobsInner) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal JSON data into ListJobs200ResponseAllOfJobsInnerAnyOf2
-	err = json.Unmarshal(data, &dst.ListJobs200ResponseAllOfJobsInnerAnyOf2);
+	err = json.Unmarshal(data, &dst.ListJobs200ResponseAllOfJobsInnerAnyOf2)
 	if err == nil {
 		jsonListJobs200ResponseAllOfJobsInnerAnyOf2, _ := json.Marshal(dst.ListJobs200ResponseAllOfJobsInnerAnyOf2)
 		if string(jsonListJobs200ResponseAllOfJobsInnerAnyOf2) == "{}" { // empty struct
@@ -88,7 +107,6 @@ func (src ListJobs200ResponseAllOfJobsInner) MarshalJSON() ([]byte, error) {
 
 	return nil, nil // no data in anyOf schemas
 }
-
 
 type NullableListJobs200ResponseAllOfJobsInner struct {
 	value *ListJobs200ResponseAllOfJobsInner
@@ -125,5 +143,3 @@ func (v *NullableListJobs200ResponseAllOfJobsInner) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

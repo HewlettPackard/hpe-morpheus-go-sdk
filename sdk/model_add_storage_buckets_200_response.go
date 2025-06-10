@@ -20,9 +20,9 @@ var _ MappedNullable = &AddStorageBuckets200Response{}
 
 // AddStorageBuckets200Response struct for AddStorageBuckets200Response
 type AddStorageBuckets200Response struct {
-	StorageBucket *ListStorageBuckets200ResponseAllOfStorageBucketsInner `json:"storageBucket,omitempty"`
-	Success *bool `json:"success,omitempty"`
-	AdditionalProperties map[string]interface{}
+	StorageBucket        *ListStorageBuckets200ResponseAllOfStorageBucketsInner `json:"storageBucket,omitempty"`
+	Success              *bool                                                  `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{}                                 `json:",remain"`
 }
 
 type _AddStorageBuckets200Response AddStorageBuckets200Response
@@ -109,7 +109,7 @@ func (o *AddStorageBuckets200Response) SetSuccess(v bool) {
 }
 
 func (o AddStorageBuckets200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -131,63 +131,8 @@ func (o AddStorageBuckets200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *AddStorageBuckets200Response) UnmarshalJSON(data []byte) (err error) {
-	varAddStorageBuckets200Response := _AddStorageBuckets200Response{}
-
-	err = json.Unmarshal(data, &varAddStorageBuckets200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddStorageBuckets200Response(varAddStorageBuckets200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "storageBucket")
-		delete(additionalProperties, "success")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddStorageBuckets200Response struct {
-	value *AddStorageBuckets200Response
-	isSet bool
-}
-
-func (v NullableAddStorageBuckets200Response) Get() *AddStorageBuckets200Response {
-	return v.value
-}
-
-func (v *NullableAddStorageBuckets200Response) Set(val *AddStorageBuckets200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddStorageBuckets200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddStorageBuckets200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddStorageBuckets200Response(val *AddStorageBuckets200Response) *NullableAddStorageBuckets200Response {
-	return &NullableAddStorageBuckets200Response{value: val, isSet: true}
-}
-
-func (v NullableAddStorageBuckets200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddStorageBuckets200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

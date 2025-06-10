@@ -21,23 +21,23 @@ var _ MappedNullable = &GetNetworkEdgeCluster200ResponseNetworkEdgeCluster{}
 
 // GetNetworkEdgeCluster200ResponseNetworkEdgeCluster struct for GetNetworkEdgeCluster200ResponseNetworkEdgeCluster
 type GetNetworkEdgeCluster200ResponseNetworkEdgeCluster struct {
-	Id *int32 `json:"id,omitempty"`
-	InternalId *string `json:"internalId,omitempty"`
-	Visibility *string `json:"visibility,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	ProviderId *string `json:"providerId,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	Active *bool `json:"active,omitempty"`
-	DisplayName *string `json:"displayName,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Enabled *bool `json:"enabled,omitempty"`
-	ExternalId *string `json:"externalId,omitempty"`
-	Config *GetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig `json:"config,omitempty"`
-	Owner *CreateLoadBalancerRequestLoadBalancerTenantsInner `json:"owner,omitempty"`
-	NetworkServer *CreateLoadBalancerRequestLoadBalancerTenantsInner `json:"networkServer,omitempty"`
-	Zone *CreateLoadBalancerRequestLoadBalancerTenantsInner `json:"zone,omitempty"`
-	Tenants []SnapshotsInstance200ResponseSnapshotsInnerZone `json:"tenants,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int32                                                    `json:"id,omitempty"`
+	InternalId           *string                                                   `json:"internalId,omitempty"`
+	Visibility           *string                                                   `json:"visibility,omitempty"`
+	DateCreated          *time.Time                                                `json:"dateCreated,omitempty"`
+	ProviderId           *string                                                   `json:"providerId,omitempty"`
+	LastUpdated          *time.Time                                                `json:"lastUpdated,omitempty"`
+	Active               *bool                                                     `json:"active,omitempty"`
+	DisplayName          *string                                                   `json:"displayName,omitempty"`
+	Name                 *string                                                   `json:"name,omitempty"`
+	Enabled              *bool                                                     `json:"enabled,omitempty"`
+	ExternalId           *string                                                   `json:"externalId,omitempty"`
+	Config               *GetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig `json:"config,omitempty"`
+	Owner                *CreateLoadBalancerRequestLoadBalancerTenantsInner        `json:"owner,omitempty"`
+	NetworkServer        *CreateLoadBalancerRequestLoadBalancerTenantsInner        `json:"networkServer,omitempty"`
+	Zone                 *CreateLoadBalancerRequestLoadBalancerTenantsInner        `json:"zone,omitempty"`
+	Tenants              []SnapshotsInstance200ResponseSnapshotsInnerZone          `json:"tenants,omitempty"`
+	AdditionalProperties map[string]interface{}                                    `json:",remain"`
 }
 
 type _GetNetworkEdgeCluster200ResponseNetworkEdgeCluster GetNetworkEdgeCluster200ResponseNetworkEdgeCluster
@@ -572,7 +572,7 @@ func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) SetTenants(v []Snap
 }
 
 func (o GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -636,77 +636,8 @@ func (o GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) ToMap() (map[string]
 
 	return toSerialize, nil
 }
-
 func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) UnmarshalJSON(data []byte) (err error) {
-	varGetNetworkEdgeCluster200ResponseNetworkEdgeCluster := _GetNetworkEdgeCluster200ResponseNetworkEdgeCluster{}
-
-	err = json.Unmarshal(data, &varGetNetworkEdgeCluster200ResponseNetworkEdgeCluster)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetNetworkEdgeCluster200ResponseNetworkEdgeCluster(varGetNetworkEdgeCluster200ResponseNetworkEdgeCluster)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "internalId")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "providerId")
-		delete(additionalProperties, "lastUpdated")
-		delete(additionalProperties, "active")
-		delete(additionalProperties, "displayName")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "externalId")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "owner")
-		delete(additionalProperties, "networkServer")
-		delete(additionalProperties, "zone")
-		delete(additionalProperties, "tenants")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetNetworkEdgeCluster200ResponseNetworkEdgeCluster struct {
-	value *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster
-	isSet bool
-}
-
-func (v NullableGetNetworkEdgeCluster200ResponseNetworkEdgeCluster) Get() *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster {
-	return v.value
-}
-
-func (v *NullableGetNetworkEdgeCluster200ResponseNetworkEdgeCluster) Set(val *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetNetworkEdgeCluster200ResponseNetworkEdgeCluster) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetNetworkEdgeCluster200ResponseNetworkEdgeCluster) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetNetworkEdgeCluster200ResponseNetworkEdgeCluster(val *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) *NullableGetNetworkEdgeCluster200ResponseNetworkEdgeCluster {
-	return &NullableGetNetworkEdgeCluster200ResponseNetworkEdgeCluster{value: val, isSet: true}
-}
-
-func (v NullableGetNetworkEdgeCluster200ResponseNetworkEdgeCluster) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetNetworkEdgeCluster200ResponseNetworkEdgeCluster) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

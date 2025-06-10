@@ -14,6 +14,7 @@ package sdk
 import (
 	"encoding/json"
 	"fmt"
+
 	"gopkg.in/validator.v2"
 )
 
@@ -22,8 +23,8 @@ var _ fmt.Stringer
 
 // AddJobsRequestJob - struct for AddJobsRequestJob
 type AddJobsRequestJob struct {
-	SecurityScanJob *SecurityScanJob
-	TaskJobPayload *TaskJobPayload
+	SecurityScanJob    *SecurityScanJob
+	TaskJobPayload     *TaskJobPayload
 	WorkflowJobPayload *WorkflowJobPayload
 }
 
@@ -48,6 +49,25 @@ func WorkflowJobPayloadAsAddJobsRequestJob(v *WorkflowJobPayload) AddJobsRequest
 	}
 }
 
+func (dst *AddJobsRequestJob) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &AddJobsRequestJob{}
+	}
+
+	if out, ok := data.(SecurityScanJob); ok {
+		dst.SecurityScanJob = &out
+	}
+
+	if out, ok := data.(TaskJobPayload); ok {
+		dst.TaskJobPayload = &out
+	}
+
+	if out, ok := data.(WorkflowJobPayload); ok {
+		dst.WorkflowJobPayload = &out
+	}
+
+	return dst, nil
+}
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddJobsRequestJob) UnmarshalJSON(data []byte) error {
@@ -136,7 +156,7 @@ func (src AddJobsRequestJob) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AddJobsRequestJob) GetActualInstance() (interface{}) {
+func (obj *AddJobsRequestJob) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -157,7 +177,7 @@ func (obj *AddJobsRequestJob) GetActualInstance() (interface{}) {
 }
 
 // Get the actual instance value
-func (obj AddJobsRequestJob) GetActualInstanceValue() (interface{}) {
+func (obj AddJobsRequestJob) GetActualInstanceValue() interface{} {
 	if obj.SecurityScanJob != nil {
 		return *obj.SecurityScanJob
 	}
@@ -209,5 +229,3 @@ func (v *NullableAddJobsRequestJob) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

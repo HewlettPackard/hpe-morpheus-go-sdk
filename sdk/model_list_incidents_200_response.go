@@ -20,10 +20,10 @@ var _ MappedNullable = &ListIncidents200Response{}
 
 // ListIncidents200Response struct for ListIncidents200Response
 type ListIncidents200Response struct {
-	Incidents []GetCheckApps200ResponseOpenIncidentsInner `json:"incidents,omitempty"`
-	Issues []ListIncidents200ResponseAllOfIssuesInner `json:"issues,omitempty"`
-	Meta *ListActivity200ResponseAllOfMeta `json:"meta,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Incidents            []GetCheckApps200ResponseOpenIncidentsInner `json:"incidents,omitempty"`
+	Issues               []ListIncidents200ResponseAllOfIssuesInner  `json:"issues,omitempty"`
+	Meta                 *ListActivity200ResponseAllOfMeta           `json:"meta,omitempty"`
+	AdditionalProperties map[string]interface{}                      `json:",remain"`
 }
 
 type _ListIncidents200Response ListIncidents200Response
@@ -142,7 +142,7 @@ func (o *ListIncidents200Response) SetMeta(v ListActivity200ResponseAllOfMeta) {
 }
 
 func (o ListIncidents200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -167,64 +167,8 @@ func (o ListIncidents200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *ListIncidents200Response) UnmarshalJSON(data []byte) (err error) {
-	varListIncidents200Response := _ListIncidents200Response{}
-
-	err = json.Unmarshal(data, &varListIncidents200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListIncidents200Response(varListIncidents200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "incidents")
-		delete(additionalProperties, "issues")
-		delete(additionalProperties, "meta")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListIncidents200Response struct {
-	value *ListIncidents200Response
-	isSet bool
-}
-
-func (v NullableListIncidents200Response) Get() *ListIncidents200Response {
-	return v.value
-}
-
-func (v *NullableListIncidents200Response) Set(val *ListIncidents200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListIncidents200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListIncidents200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListIncidents200Response(val *ListIncidents200Response) *NullableListIncidents200Response {
-	return &NullableListIncidents200Response{value: val, isSet: true}
-}
-
-func (v NullableListIncidents200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListIncidents200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

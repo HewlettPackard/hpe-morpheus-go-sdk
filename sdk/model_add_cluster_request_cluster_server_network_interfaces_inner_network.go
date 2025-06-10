@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the AddClusterRequestClusterServerNetworkInterfacesInnerNetwork type satisfies the MappedNullable interface at compile time
@@ -21,8 +20,8 @@ var _ MappedNullable = &AddClusterRequestClusterServerNetworkInterfacesInnerNetw
 
 // AddClusterRequestClusterServerNetworkInterfacesInnerNetwork struct for AddClusterRequestClusterServerNetworkInterfacesInnerNetwork
 type AddClusterRequestClusterServerNetworkInterfacesInnerNetwork struct {
-	Id AddClusterRequestClusterServerNetworkInterfacesInnerNetworkId `json:"id"`
-	AdditionalProperties map[string]interface{}
+	Id                   AddClusterRequestClusterServerNetworkInterfacesInnerNetworkId `json:"id"`
+	AdditionalProperties map[string]interface{}                                        `json:",remain"`
 }
 
 type _AddClusterRequestClusterServerNetworkInterfacesInnerNetwork AddClusterRequestClusterServerNetworkInterfacesInnerNetwork
@@ -70,7 +69,7 @@ func (o *AddClusterRequestClusterServerNetworkInterfacesInnerNetwork) SetId(v Ad
 }
 
 func (o AddClusterRequestClusterServerNetworkInterfacesInnerNetwork) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -87,83 +86,8 @@ func (o AddClusterRequestClusterServerNetworkInterfacesInnerNetwork) ToMap() (ma
 
 	return toSerialize, nil
 }
-
 func (o *AddClusterRequestClusterServerNetworkInterfacesInnerNetwork) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"id",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varAddClusterRequestClusterServerNetworkInterfacesInnerNetwork := _AddClusterRequestClusterServerNetworkInterfacesInnerNetwork{}
-
-	err = json.Unmarshal(data, &varAddClusterRequestClusterServerNetworkInterfacesInnerNetwork)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddClusterRequestClusterServerNetworkInterfacesInnerNetwork(varAddClusterRequestClusterServerNetworkInterfacesInnerNetwork)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddClusterRequestClusterServerNetworkInterfacesInnerNetwork struct {
-	value *AddClusterRequestClusterServerNetworkInterfacesInnerNetwork
-	isSet bool
-}
-
-func (v NullableAddClusterRequestClusterServerNetworkInterfacesInnerNetwork) Get() *AddClusterRequestClusterServerNetworkInterfacesInnerNetwork {
-	return v.value
-}
-
-func (v *NullableAddClusterRequestClusterServerNetworkInterfacesInnerNetwork) Set(val *AddClusterRequestClusterServerNetworkInterfacesInnerNetwork) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddClusterRequestClusterServerNetworkInterfacesInnerNetwork) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddClusterRequestClusterServerNetworkInterfacesInnerNetwork) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddClusterRequestClusterServerNetworkInterfacesInnerNetwork(val *AddClusterRequestClusterServerNetworkInterfacesInnerNetwork) *NullableAddClusterRequestClusterServerNetworkInterfacesInnerNetwork {
-	return &NullableAddClusterRequestClusterServerNetworkInterfacesInnerNetwork{value: val, isSet: true}
-}
-
-func (v NullableAddClusterRequestClusterServerNetworkInterfacesInnerNetwork) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddClusterRequestClusterServerNetworkInterfacesInnerNetwork) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

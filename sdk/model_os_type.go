@@ -21,32 +21,32 @@ var _ MappedNullable = &OsType{}
 // OsType struct for OsType
 type OsType struct {
 	Id *int64 `json:"id,omitempty"`
-	// The name of the osType. 
+	// The name of the osType.
 	Name *string `json:"name,omitempty"`
-	// The description of the osType.  
+	// The description of the osType.
 	Description *string `json:"description,omitempty"`
-	// The platform of the osType.  
+	// The platform of the osType.
 	Platform *string `json:"platform,omitempty"`
-	// The category of the osType. 
+	// The category of the osType.
 	Category *string `json:"category,omitempty"`
-	// The vendor of the osType. 
+	// The vendor of the osType.
 	Vendor *string `json:"vendor,omitempty"`
-	// The osName of the osType. 
+	// The osName of the osType.
 	OsName *string `json:"osName,omitempty"`
-	// The osVersion of the osType. 
+	// The osVersion of the osType.
 	OsVersion *string `json:"osVersion,omitempty"`
-	// The osCodename of the osType. 
+	// The osCodename of the osType.
 	OsCodename *string `json:"osCodename,omitempty"`
-	// The family of the osType. 
+	// The family of the osType.
 	OsFamily *string `json:"osFamily,omitempty"`
-	// The bitCount/architecture of the osType. 
+	// The bitCount/architecture of the osType.
 	BitCount *int64 `json:"bitCount,omitempty"`
-	// The version of CloudInit being used. 
+	// The version of CloudInit being used.
 	CloudInitVersion *string `json:"cloudInitVersion,omitempty"`
-	// Whether the morpheus agent is installed. 
-	InstallAgent *bool `json:"installAgent,omitempty"`
-	Images []ListOsTypes200ResponseAllOfOsTypesInnerImagesInner `json:"images,omitempty"`
-	AdditionalProperties map[string]interface{}
+	// Whether the morpheus agent is installed.
+	InstallAgent         *bool                                                `json:"installAgent,omitempty"`
+	Images               []ListOsTypes200ResponseAllOfOsTypesInnerImagesInner `json:"images,omitempty"`
+	AdditionalProperties map[string]interface{}                               `json:",remain"`
 }
 
 type _OsType OsType
@@ -517,7 +517,7 @@ func (o *OsType) SetImages(v []ListOsTypes200ResponseAllOfOsTypesInnerImagesInne
 }
 
 func (o OsType) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -575,75 +575,8 @@ func (o OsType) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *OsType) UnmarshalJSON(data []byte) (err error) {
-	varOsType := _OsType{}
-
-	err = json.Unmarshal(data, &varOsType)
-
-	if err != nil {
-		return err
-	}
-
-	*o = OsType(varOsType)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "platform")
-		delete(additionalProperties, "category")
-		delete(additionalProperties, "vendor")
-		delete(additionalProperties, "osName")
-		delete(additionalProperties, "osVersion")
-		delete(additionalProperties, "osCodename")
-		delete(additionalProperties, "osFamily")
-		delete(additionalProperties, "bitCount")
-		delete(additionalProperties, "cloudInitVersion")
-		delete(additionalProperties, "installAgent")
-		delete(additionalProperties, "images")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableOsType struct {
-	value *OsType
-	isSet bool
-}
-
-func (v NullableOsType) Get() *OsType {
-	return v.value
-}
-
-func (v *NullableOsType) Set(val *OsType) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableOsType) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableOsType) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableOsType(val *OsType) *NullableOsType {
-	return &NullableOsType{value: val, isSet: true}
-}
-
-func (v NullableOsType) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableOsType) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

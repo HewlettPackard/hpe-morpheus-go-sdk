@@ -21,13 +21,12 @@ import (
 	"strings"
 )
 
-
 // WikiAPIService WikiAPI service
 type WikiAPIService service
 
 type ApiAddWikiRequest struct {
-	ctx context.Context
-	ApiService *WikiAPIService
+	ctx            context.Context
+	ApiService     *WikiAPIService
 	addWikiRequest *AddWikiRequest
 }
 
@@ -43,27 +42,27 @@ func (r ApiAddWikiRequest) Execute() (*UpdateWikiApp200Response, *http.Response,
 /*
 AddWiki Create a Wiki Page
 
-Creates a Wiki Page
+# Creates a Wiki Page
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddWikiRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddWikiRequest
 */
 func (a *WikiAPIService) AddWiki(ctx context.Context) ApiAddWikiRequest {
 	return ApiAddWikiRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return UpdateWikiApp200Response
+//
+//	@return UpdateWikiApp200Response
 func (a *WikiAPIService) AddWikiExecute(r ApiAddWikiRequest) (*UpdateWikiApp200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *UpdateWikiApp200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *UpdateWikiApp200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WikiAPIService.AddWiki")
@@ -115,7 +114,7 @@ func (a *WikiAPIService) AddWikiExecute(r ApiAddWikiRequest) (*UpdateWikiApp200R
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -124,8 +123,8 @@ func (a *WikiAPIService) AddWikiExecute(r ApiAddWikiRequest) (*UpdateWikiApp200R
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -135,8 +134,8 @@ func (a *WikiAPIService) AddWikiExecute(r ApiAddWikiRequest) (*UpdateWikiApp200R
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -144,8 +143,8 @@ func (a *WikiAPIService) AddWikiExecute(r ApiAddWikiRequest) (*UpdateWikiApp200R
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -154,9 +153,9 @@ func (a *WikiAPIService) AddWikiExecute(r ApiAddWikiRequest) (*UpdateWikiApp200R
 }
 
 type ApiGetWikiRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *WikiAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetWikiRequest) Execute() (*GetWikiApp200Response, *http.Response, error) {
@@ -168,27 +167,27 @@ GetWiki Retrieves a specific Wiki page
 
 This endpoint retrieves a specific wiki page.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetWikiRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetWikiRequest
 */
 func (a *WikiAPIService) GetWiki(ctx context.Context, id int64) ApiGetWikiRequest {
 	return ApiGetWikiRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetWikiApp200Response
+//
+//	@return GetWikiApp200Response
 func (a *WikiAPIService) GetWikiExecute(r ApiGetWikiRequest) (*GetWikiApp200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetWikiApp200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetWikiApp200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WikiAPIService.GetWiki")
@@ -239,7 +238,7 @@ func (a *WikiAPIService) GetWikiExecute(r ApiGetWikiRequest) (*GetWikiApp200Resp
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -248,8 +247,8 @@ func (a *WikiAPIService) GetWikiExecute(r ApiGetWikiRequest) (*GetWikiApp200Resp
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -259,8 +258,8 @@ func (a *WikiAPIService) GetWikiExecute(r ApiGetWikiRequest) (*GetWikiApp200Resp
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -268,8 +267,8 @@ func (a *WikiAPIService) GetWikiExecute(r ApiGetWikiRequest) (*GetWikiApp200Resp
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -278,9 +277,9 @@ func (a *WikiAPIService) GetWikiExecute(r ApiGetWikiRequest) (*GetWikiApp200Resp
 }
 
 type ApiGetWikiAppRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *WikiAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetWikiAppRequest) Execute() (*GetWikiApp200Response, *http.Response, error) {
@@ -292,27 +291,27 @@ GetWikiApp Retrieves an App Wiki Page
 
 This endpoint retrieves an app Wiki page.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetWikiAppRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetWikiAppRequest
 */
 func (a *WikiAPIService) GetWikiApp(ctx context.Context, id int64) ApiGetWikiAppRequest {
 	return ApiGetWikiAppRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetWikiApp200Response
+//
+//	@return GetWikiApp200Response
 func (a *WikiAPIService) GetWikiAppExecute(r ApiGetWikiAppRequest) (*GetWikiApp200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetWikiApp200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetWikiApp200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WikiAPIService.GetWikiApp")
@@ -363,7 +362,7 @@ func (a *WikiAPIService) GetWikiAppExecute(r ApiGetWikiAppRequest) (*GetWikiApp2
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -372,8 +371,8 @@ func (a *WikiAPIService) GetWikiAppExecute(r ApiGetWikiAppRequest) (*GetWikiApp2
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -383,8 +382,8 @@ func (a *WikiAPIService) GetWikiAppExecute(r ApiGetWikiAppRequest) (*GetWikiApp2
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -392,8 +391,8 @@ func (a *WikiAPIService) GetWikiAppExecute(r ApiGetWikiAppRequest) (*GetWikiApp2
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -402,9 +401,9 @@ func (a *WikiAPIService) GetWikiAppExecute(r ApiGetWikiAppRequest) (*GetWikiApp2
 }
 
 type ApiGetWikiCategoriesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *WikiAPIService
-	phrase *string
+	phrase     *string
 	pagePhrase *string
 }
 
@@ -429,25 +428,25 @@ GetWikiCategories Retrieves all Wiki categories associated with the account
 
 This endpoint retrieves all Wiki categories associated with the account. The results are not paginated. The categories returned are those of the found pages.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetWikiCategoriesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetWikiCategoriesRequest
 */
 func (a *WikiAPIService) GetWikiCategories(ctx context.Context) ApiGetWikiCategoriesRequest {
 	return ApiGetWikiCategoriesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return GetWikiCategories200Response
+//
+//	@return GetWikiCategories200Response
 func (a *WikiAPIService) GetWikiCategoriesExecute(r ApiGetWikiCategoriesRequest) (*GetWikiCategories200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetWikiCategories200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetWikiCategories200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WikiAPIService.GetWikiCategories")
@@ -503,7 +502,7 @@ func (a *WikiAPIService) GetWikiCategoriesExecute(r ApiGetWikiCategoriesRequest)
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -512,8 +511,8 @@ func (a *WikiAPIService) GetWikiCategoriesExecute(r ApiGetWikiCategoriesRequest)
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -523,8 +522,8 @@ func (a *WikiAPIService) GetWikiCategoriesExecute(r ApiGetWikiCategoriesRequest)
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -532,8 +531,8 @@ func (a *WikiAPIService) GetWikiCategoriesExecute(r ApiGetWikiCategoriesRequest)
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -542,9 +541,9 @@ func (a *WikiAPIService) GetWikiCategoriesExecute(r ApiGetWikiCategoriesRequest)
 }
 
 type ApiGetWikiCloudRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *WikiAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetWikiCloudRequest) Execute() (*GetWikiApp200Response, *http.Response, error) {
@@ -556,27 +555,27 @@ GetWikiCloud Retrieves a Cloud Wiki Page
 
 This endpoint retrieves a cloud Wiki page.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetWikiCloudRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetWikiCloudRequest
 */
 func (a *WikiAPIService) GetWikiCloud(ctx context.Context, id int64) ApiGetWikiCloudRequest {
 	return ApiGetWikiCloudRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetWikiApp200Response
+//
+//	@return GetWikiApp200Response
 func (a *WikiAPIService) GetWikiCloudExecute(r ApiGetWikiCloudRequest) (*GetWikiApp200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetWikiApp200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetWikiApp200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WikiAPIService.GetWikiCloud")
@@ -627,7 +626,7 @@ func (a *WikiAPIService) GetWikiCloudExecute(r ApiGetWikiCloudRequest) (*GetWiki
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -636,8 +635,8 @@ func (a *WikiAPIService) GetWikiCloudExecute(r ApiGetWikiCloudRequest) (*GetWiki
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -647,8 +646,8 @@ func (a *WikiAPIService) GetWikiCloudExecute(r ApiGetWikiCloudRequest) (*GetWiki
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -656,8 +655,8 @@ func (a *WikiAPIService) GetWikiCloudExecute(r ApiGetWikiCloudRequest) (*GetWiki
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -666,9 +665,9 @@ func (a *WikiAPIService) GetWikiCloudExecute(r ApiGetWikiCloudRequest) (*GetWiki
 }
 
 type ApiGetWikiClusterRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *WikiAPIService
-	clusterId int32
+	clusterId  int32
 }
 
 func (r ApiGetWikiClusterRequest) Execute() (*GetWikiApp200Response, *http.Response, error) {
@@ -680,27 +679,27 @@ GetWikiCluster Retrieves a Cluster Wiki Page
 
 This endpoint retrieves a cluster Wiki page.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param clusterId The ID of the cluster
- @return ApiGetWikiClusterRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param clusterId The ID of the cluster
+	@return ApiGetWikiClusterRequest
 */
 func (a *WikiAPIService) GetWikiCluster(ctx context.Context, clusterId int32) ApiGetWikiClusterRequest {
 	return ApiGetWikiClusterRequest{
 		ApiService: a,
-		ctx: ctx,
-		clusterId: clusterId,
+		ctx:        ctx,
+		clusterId:  clusterId,
 	}
 }
 
 // Execute executes the request
-//  @return GetWikiApp200Response
+//
+//	@return GetWikiApp200Response
 func (a *WikiAPIService) GetWikiClusterExecute(r ApiGetWikiClusterRequest) (*GetWikiApp200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetWikiApp200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetWikiApp200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WikiAPIService.GetWikiCluster")
@@ -751,7 +750,7 @@ func (a *WikiAPIService) GetWikiClusterExecute(r ApiGetWikiClusterRequest) (*Get
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -760,8 +759,8 @@ func (a *WikiAPIService) GetWikiClusterExecute(r ApiGetWikiClusterRequest) (*Get
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -771,8 +770,8 @@ func (a *WikiAPIService) GetWikiClusterExecute(r ApiGetWikiClusterRequest) (*Get
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -780,8 +779,8 @@ func (a *WikiAPIService) GetWikiClusterExecute(r ApiGetWikiClusterRequest) (*Get
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -790,9 +789,9 @@ func (a *WikiAPIService) GetWikiClusterExecute(r ApiGetWikiClusterRequest) (*Get
 }
 
 type ApiGetWikiGroupRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *WikiAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetWikiGroupRequest) Execute() (*GetWikiApp200Response, *http.Response, error) {
@@ -804,27 +803,27 @@ GetWikiGroup Retrieves a Group Wiki Page
 
 This endpoint retrieves a group Wiki page.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetWikiGroupRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetWikiGroupRequest
 */
 func (a *WikiAPIService) GetWikiGroup(ctx context.Context, id int64) ApiGetWikiGroupRequest {
 	return ApiGetWikiGroupRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetWikiApp200Response
+//
+//	@return GetWikiApp200Response
 func (a *WikiAPIService) GetWikiGroupExecute(r ApiGetWikiGroupRequest) (*GetWikiApp200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetWikiApp200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetWikiApp200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WikiAPIService.GetWikiGroup")
@@ -875,7 +874,7 @@ func (a *WikiAPIService) GetWikiGroupExecute(r ApiGetWikiGroupRequest) (*GetWiki
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -884,8 +883,8 @@ func (a *WikiAPIService) GetWikiGroupExecute(r ApiGetWikiGroupRequest) (*GetWiki
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -895,8 +894,8 @@ func (a *WikiAPIService) GetWikiGroupExecute(r ApiGetWikiGroupRequest) (*GetWiki
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -904,8 +903,8 @@ func (a *WikiAPIService) GetWikiGroupExecute(r ApiGetWikiGroupRequest) (*GetWiki
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -914,9 +913,9 @@ func (a *WikiAPIService) GetWikiGroupExecute(r ApiGetWikiGroupRequest) (*GetWiki
 }
 
 type ApiGetWikiInstanceRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *WikiAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetWikiInstanceRequest) Execute() (*GetWikiApp200Response, *http.Response, error) {
@@ -928,27 +927,27 @@ GetWikiInstance Retrieves an Instance Wiki Page
 
 This endpoint retrieves an instance Wiki page.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetWikiInstanceRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetWikiInstanceRequest
 */
 func (a *WikiAPIService) GetWikiInstance(ctx context.Context, id int64) ApiGetWikiInstanceRequest {
 	return ApiGetWikiInstanceRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetWikiApp200Response
+//
+//	@return GetWikiApp200Response
 func (a *WikiAPIService) GetWikiInstanceExecute(r ApiGetWikiInstanceRequest) (*GetWikiApp200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetWikiApp200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetWikiApp200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WikiAPIService.GetWikiInstance")
@@ -999,7 +998,7 @@ func (a *WikiAPIService) GetWikiInstanceExecute(r ApiGetWikiInstanceRequest) (*G
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1008,8 +1007,8 @@ func (a *WikiAPIService) GetWikiInstanceExecute(r ApiGetWikiInstanceRequest) (*G
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1019,8 +1018,8 @@ func (a *WikiAPIService) GetWikiInstanceExecute(r ApiGetWikiInstanceRequest) (*G
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1028,8 +1027,8 @@ func (a *WikiAPIService) GetWikiInstanceExecute(r ApiGetWikiInstanceRequest) (*G
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1038,9 +1037,9 @@ func (a *WikiAPIService) GetWikiInstanceExecute(r ApiGetWikiInstanceRequest) (*G
 }
 
 type ApiGetWikiServerRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *WikiAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetWikiServerRequest) Execute() (*GetWikiApp200Response, *http.Response, error) {
@@ -1052,27 +1051,27 @@ GetWikiServer Retrieves a Server Wiki Page
 
 This endpoint retrieves a server Wiki page.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetWikiServerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetWikiServerRequest
 */
 func (a *WikiAPIService) GetWikiServer(ctx context.Context, id int64) ApiGetWikiServerRequest {
 	return ApiGetWikiServerRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetWikiApp200Response
+//
+//	@return GetWikiApp200Response
 func (a *WikiAPIService) GetWikiServerExecute(r ApiGetWikiServerRequest) (*GetWikiApp200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetWikiApp200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetWikiApp200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WikiAPIService.GetWikiServer")
@@ -1123,7 +1122,7 @@ func (a *WikiAPIService) GetWikiServerExecute(r ApiGetWikiServerRequest) (*GetWi
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1132,8 +1131,8 @@ func (a *WikiAPIService) GetWikiServerExecute(r ApiGetWikiServerRequest) (*GetWi
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1143,8 +1142,8 @@ func (a *WikiAPIService) GetWikiServerExecute(r ApiGetWikiServerRequest) (*GetWi
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1152,8 +1151,8 @@ func (a *WikiAPIService) GetWikiServerExecute(r ApiGetWikiServerRequest) (*GetWi
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1162,10 +1161,10 @@ func (a *WikiAPIService) GetWikiServerExecute(r ApiGetWikiServerRequest) (*GetWi
 }
 
 type ApiListWikiRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *WikiAPIService
-	name *string
-	phrase *string
+	name       *string
+	phrase     *string
 }
 
 // Filter by name
@@ -1189,25 +1188,25 @@ ListWiki Retrieves wiki pages associated with the account.
 
 This endpoint retrieves wiki pages associated with the account.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListWikiRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListWikiRequest
 */
 func (a *WikiAPIService) ListWiki(ctx context.Context) ApiListWikiRequest {
 	return ApiListWikiRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return GetWikiApp200Response
+//
+//	@return GetWikiApp200Response
 func (a *WikiAPIService) ListWikiExecute(r ApiListWikiRequest) (*GetWikiApp200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetWikiApp200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetWikiApp200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WikiAPIService.ListWiki")
@@ -1263,7 +1262,7 @@ func (a *WikiAPIService) ListWikiExecute(r ApiListWikiRequest) (*GetWikiApp200Re
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1272,8 +1271,8 @@ func (a *WikiAPIService) ListWikiExecute(r ApiListWikiRequest) (*GetWikiApp200Re
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1283,8 +1282,8 @@ func (a *WikiAPIService) ListWikiExecute(r ApiListWikiRequest) (*GetWikiApp200Re
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1292,8 +1291,8 @@ func (a *WikiAPIService) ListWikiExecute(r ApiListWikiRequest) (*GetWikiApp200Re
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1302,9 +1301,9 @@ func (a *WikiAPIService) ListWikiExecute(r ApiListWikiRequest) (*GetWikiApp200Re
 }
 
 type ApiRemoveWikiRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *WikiAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiRemoveWikiRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -1316,27 +1315,27 @@ RemoveWiki Deletes a Wiki Page
 
 Deletes the specified Wiki page.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiRemoveWikiRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiRemoveWikiRequest
 */
 func (a *WikiAPIService) RemoveWiki(ctx context.Context, id int64) ApiRemoveWikiRequest {
 	return ApiRemoveWikiRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *WikiAPIService) RemoveWikiExecute(r ApiRemoveWikiRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WikiAPIService.RemoveWiki")
@@ -1387,7 +1386,7 @@ func (a *WikiAPIService) RemoveWikiExecute(r ApiRemoveWikiRequest) (*DeleteAlert
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1396,8 +1395,8 @@ func (a *WikiAPIService) RemoveWikiExecute(r ApiRemoveWikiRequest) (*DeleteAlert
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1407,8 +1406,8 @@ func (a *WikiAPIService) RemoveWikiExecute(r ApiRemoveWikiRequest) (*DeleteAlert
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1416,8 +1415,8 @@ func (a *WikiAPIService) RemoveWikiExecute(r ApiRemoveWikiRequest) (*DeleteAlert
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1426,9 +1425,9 @@ func (a *WikiAPIService) RemoveWikiExecute(r ApiRemoveWikiRequest) (*DeleteAlert
 }
 
 type ApiUpdateWikiRequest struct {
-	ctx context.Context
-	ApiService *WikiAPIService
-	id int64
+	ctx                  context.Context
+	ApiService           *WikiAPIService
+	id                   int64
 	updateWikiAppRequest *UpdateWikiAppRequest
 }
 
@@ -1444,29 +1443,29 @@ func (r ApiUpdateWikiRequest) Execute() (*UpdateWikiApp200Response, *http.Respon
 /*
 UpdateWiki Updates a Wiki Page
 
-Updates a Wiki Page
+# Updates a Wiki Page
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateWikiRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateWikiRequest
 */
 func (a *WikiAPIService) UpdateWiki(ctx context.Context, id int64) ApiUpdateWikiRequest {
 	return ApiUpdateWikiRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return UpdateWikiApp200Response
+//
+//	@return UpdateWikiApp200Response
 func (a *WikiAPIService) UpdateWikiExecute(r ApiUpdateWikiRequest) (*UpdateWikiApp200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *UpdateWikiApp200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *UpdateWikiApp200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WikiAPIService.UpdateWiki")
@@ -1519,7 +1518,7 @@ func (a *WikiAPIService) UpdateWikiExecute(r ApiUpdateWikiRequest) (*UpdateWikiA
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1528,8 +1527,8 @@ func (a *WikiAPIService) UpdateWikiExecute(r ApiUpdateWikiRequest) (*UpdateWikiA
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1539,8 +1538,8 @@ func (a *WikiAPIService) UpdateWikiExecute(r ApiUpdateWikiRequest) (*UpdateWikiA
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1548,8 +1547,8 @@ func (a *WikiAPIService) UpdateWikiExecute(r ApiUpdateWikiRequest) (*UpdateWikiA
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1558,9 +1557,9 @@ func (a *WikiAPIService) UpdateWikiExecute(r ApiUpdateWikiRequest) (*UpdateWikiA
 }
 
 type ApiUpdateWikiAppRequest struct {
-	ctx context.Context
-	ApiService *WikiAPIService
-	id int64
+	ctx                  context.Context
+	ApiService           *WikiAPIService
+	id                   int64
 	updateWikiAppRequest *UpdateWikiAppRequest
 }
 
@@ -1578,27 +1577,27 @@ UpdateWikiApp Update an App Wiki Page
 
 Updates an app Wiki page.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateWikiAppRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateWikiAppRequest
 */
 func (a *WikiAPIService) UpdateWikiApp(ctx context.Context, id int64) ApiUpdateWikiAppRequest {
 	return ApiUpdateWikiAppRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return UpdateWikiApp200Response
+//
+//	@return UpdateWikiApp200Response
 func (a *WikiAPIService) UpdateWikiAppExecute(r ApiUpdateWikiAppRequest) (*UpdateWikiApp200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *UpdateWikiApp200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *UpdateWikiApp200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WikiAPIService.UpdateWikiApp")
@@ -1651,7 +1650,7 @@ func (a *WikiAPIService) UpdateWikiAppExecute(r ApiUpdateWikiAppRequest) (*Updat
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1660,8 +1659,8 @@ func (a *WikiAPIService) UpdateWikiAppExecute(r ApiUpdateWikiAppRequest) (*Updat
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1671,8 +1670,8 @@ func (a *WikiAPIService) UpdateWikiAppExecute(r ApiUpdateWikiAppRequest) (*Updat
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1680,8 +1679,8 @@ func (a *WikiAPIService) UpdateWikiAppExecute(r ApiUpdateWikiAppRequest) (*Updat
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1690,9 +1689,9 @@ func (a *WikiAPIService) UpdateWikiAppExecute(r ApiUpdateWikiAppRequest) (*Updat
 }
 
 type ApiUpdateWikiCloudRequest struct {
-	ctx context.Context
-	ApiService *WikiAPIService
-	id int64
+	ctx                  context.Context
+	ApiService           *WikiAPIService
+	id                   int64
 	updateWikiAppRequest *UpdateWikiAppRequest
 }
 
@@ -1710,27 +1709,27 @@ UpdateWikiCloud Update a Cloud Wiki Page
 
 Updates a cloud Wiki page.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateWikiCloudRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateWikiCloudRequest
 */
 func (a *WikiAPIService) UpdateWikiCloud(ctx context.Context, id int64) ApiUpdateWikiCloudRequest {
 	return ApiUpdateWikiCloudRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return UpdateWikiApp200Response
+//
+//	@return UpdateWikiApp200Response
 func (a *WikiAPIService) UpdateWikiCloudExecute(r ApiUpdateWikiCloudRequest) (*UpdateWikiApp200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *UpdateWikiApp200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *UpdateWikiApp200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WikiAPIService.UpdateWikiCloud")
@@ -1783,7 +1782,7 @@ func (a *WikiAPIService) UpdateWikiCloudExecute(r ApiUpdateWikiCloudRequest) (*U
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1792,8 +1791,8 @@ func (a *WikiAPIService) UpdateWikiCloudExecute(r ApiUpdateWikiCloudRequest) (*U
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1803,8 +1802,8 @@ func (a *WikiAPIService) UpdateWikiCloudExecute(r ApiUpdateWikiCloudRequest) (*U
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1812,8 +1811,8 @@ func (a *WikiAPIService) UpdateWikiCloudExecute(r ApiUpdateWikiCloudRequest) (*U
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1822,9 +1821,9 @@ func (a *WikiAPIService) UpdateWikiCloudExecute(r ApiUpdateWikiCloudRequest) (*U
 }
 
 type ApiUpdateWikiClusterRequest struct {
-	ctx context.Context
-	ApiService *WikiAPIService
-	clusterId int32
+	ctx                  context.Context
+	ApiService           *WikiAPIService
+	clusterId            int32
 	updateWikiAppRequest *UpdateWikiAppRequest
 }
 
@@ -1842,27 +1841,27 @@ UpdateWikiCluster Update a Cluster Wiki Page
 
 Updates a cluster Wiki page.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param clusterId The ID of the cluster
- @return ApiUpdateWikiClusterRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param clusterId The ID of the cluster
+	@return ApiUpdateWikiClusterRequest
 */
 func (a *WikiAPIService) UpdateWikiCluster(ctx context.Context, clusterId int32) ApiUpdateWikiClusterRequest {
 	return ApiUpdateWikiClusterRequest{
 		ApiService: a,
-		ctx: ctx,
-		clusterId: clusterId,
+		ctx:        ctx,
+		clusterId:  clusterId,
 	}
 }
 
 // Execute executes the request
-//  @return UpdateWikiApp200Response
+//
+//	@return UpdateWikiApp200Response
 func (a *WikiAPIService) UpdateWikiClusterExecute(r ApiUpdateWikiClusterRequest) (*UpdateWikiApp200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *UpdateWikiApp200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *UpdateWikiApp200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WikiAPIService.UpdateWikiCluster")
@@ -1915,7 +1914,7 @@ func (a *WikiAPIService) UpdateWikiClusterExecute(r ApiUpdateWikiClusterRequest)
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1924,8 +1923,8 @@ func (a *WikiAPIService) UpdateWikiClusterExecute(r ApiUpdateWikiClusterRequest)
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1935,8 +1934,8 @@ func (a *WikiAPIService) UpdateWikiClusterExecute(r ApiUpdateWikiClusterRequest)
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1944,8 +1943,8 @@ func (a *WikiAPIService) UpdateWikiClusterExecute(r ApiUpdateWikiClusterRequest)
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1954,9 +1953,9 @@ func (a *WikiAPIService) UpdateWikiClusterExecute(r ApiUpdateWikiClusterRequest)
 }
 
 type ApiUpdateWikiGroupRequest struct {
-	ctx context.Context
-	ApiService *WikiAPIService
-	id int64
+	ctx                  context.Context
+	ApiService           *WikiAPIService
+	id                   int64
 	updateWikiAppRequest *UpdateWikiAppRequest
 }
 
@@ -1974,27 +1973,27 @@ UpdateWikiGroup Update a Group Wiki Page
 
 Updates a group Wiki page.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateWikiGroupRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateWikiGroupRequest
 */
 func (a *WikiAPIService) UpdateWikiGroup(ctx context.Context, id int64) ApiUpdateWikiGroupRequest {
 	return ApiUpdateWikiGroupRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return UpdateWikiApp200Response
+//
+//	@return UpdateWikiApp200Response
 func (a *WikiAPIService) UpdateWikiGroupExecute(r ApiUpdateWikiGroupRequest) (*UpdateWikiApp200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *UpdateWikiApp200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *UpdateWikiApp200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WikiAPIService.UpdateWikiGroup")
@@ -2047,7 +2046,7 @@ func (a *WikiAPIService) UpdateWikiGroupExecute(r ApiUpdateWikiGroupRequest) (*U
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2056,8 +2055,8 @@ func (a *WikiAPIService) UpdateWikiGroupExecute(r ApiUpdateWikiGroupRequest) (*U
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2067,8 +2066,8 @@ func (a *WikiAPIService) UpdateWikiGroupExecute(r ApiUpdateWikiGroupRequest) (*U
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2076,8 +2075,8 @@ func (a *WikiAPIService) UpdateWikiGroupExecute(r ApiUpdateWikiGroupRequest) (*U
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2086,9 +2085,9 @@ func (a *WikiAPIService) UpdateWikiGroupExecute(r ApiUpdateWikiGroupRequest) (*U
 }
 
 type ApiUpdateWikiInstanceRequest struct {
-	ctx context.Context
-	ApiService *WikiAPIService
-	id int64
+	ctx                  context.Context
+	ApiService           *WikiAPIService
+	id                   int64
 	updateWikiAppRequest *UpdateWikiAppRequest
 }
 
@@ -2106,27 +2105,27 @@ UpdateWikiInstance Update an Instance Wiki Page
 
 Updates an instance Wiki page.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateWikiInstanceRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateWikiInstanceRequest
 */
 func (a *WikiAPIService) UpdateWikiInstance(ctx context.Context, id int64) ApiUpdateWikiInstanceRequest {
 	return ApiUpdateWikiInstanceRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return UpdateWikiApp200Response
+//
+//	@return UpdateWikiApp200Response
 func (a *WikiAPIService) UpdateWikiInstanceExecute(r ApiUpdateWikiInstanceRequest) (*UpdateWikiApp200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *UpdateWikiApp200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *UpdateWikiApp200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WikiAPIService.UpdateWikiInstance")
@@ -2179,7 +2178,7 @@ func (a *WikiAPIService) UpdateWikiInstanceExecute(r ApiUpdateWikiInstanceReques
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2188,8 +2187,8 @@ func (a *WikiAPIService) UpdateWikiInstanceExecute(r ApiUpdateWikiInstanceReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2199,8 +2198,8 @@ func (a *WikiAPIService) UpdateWikiInstanceExecute(r ApiUpdateWikiInstanceReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2208,8 +2207,8 @@ func (a *WikiAPIService) UpdateWikiInstanceExecute(r ApiUpdateWikiInstanceReques
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2218,9 +2217,9 @@ func (a *WikiAPIService) UpdateWikiInstanceExecute(r ApiUpdateWikiInstanceReques
 }
 
 type ApiUpdateWikiServerRequest struct {
-	ctx context.Context
-	ApiService *WikiAPIService
-	id int64
+	ctx                  context.Context
+	ApiService           *WikiAPIService
+	id                   int64
 	updateWikiAppRequest *UpdateWikiAppRequest
 }
 
@@ -2238,27 +2237,27 @@ UpdateWikiServer Update a Server Wiki Page
 
 Updates a server Wiki page.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateWikiServerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateWikiServerRequest
 */
 func (a *WikiAPIService) UpdateWikiServer(ctx context.Context, id int64) ApiUpdateWikiServerRequest {
 	return ApiUpdateWikiServerRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return UpdateWikiApp200Response
+//
+//	@return UpdateWikiApp200Response
 func (a *WikiAPIService) UpdateWikiServerExecute(r ApiUpdateWikiServerRequest) (*UpdateWikiApp200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *UpdateWikiApp200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *UpdateWikiApp200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WikiAPIService.UpdateWikiServer")
@@ -2311,7 +2310,7 @@ func (a *WikiAPIService) UpdateWikiServerExecute(r ApiUpdateWikiServerRequest) (
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2320,8 +2319,8 @@ func (a *WikiAPIService) UpdateWikiServerExecute(r ApiUpdateWikiServerRequest) (
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2331,8 +2330,8 @@ func (a *WikiAPIService) UpdateWikiServerExecute(r ApiUpdateWikiServerRequest) (
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2340,8 +2339,8 @@ func (a *WikiAPIService) UpdateWikiServerExecute(r ApiUpdateWikiServerRequest) (
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

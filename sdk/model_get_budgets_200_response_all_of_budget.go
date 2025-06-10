@@ -21,41 +21,41 @@ var _ MappedNullable = &GetBudgets200ResponseAllOfBudget{}
 
 // GetBudgets200ResponseAllOfBudget struct for GetBudgets200ResponseAllOfBudget
 type GetBudgets200ResponseAllOfBudget struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Account *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"account,omitempty"`
-	ForecastType *GetBudgets200ResponseAllOfBudgetForecastType `json:"forecastType,omitempty"`
-	Enabled *bool `json:"enabled,omitempty"`
-	RefScope *string `json:"refScope,omitempty"`
-	RefType *string `json:"refType,omitempty"`
-	RefId *int64 `json:"refId,omitempty"`
-	RefName *string `json:"refName,omitempty"`
-	Period *string `json:"period,omitempty"`
-	Year *string `json:"year,omitempty"`
-	ResourceType *string `json:"resourceType,omitempty"`
-	Timezone *string `json:"timezone,omitempty"`
-	StartDate *time.Time `json:"startDate,omitempty"`
-	EndDate *time.Time `json:"endDate,omitempty"`
-	Interval *string `json:"interval,omitempty"`
-	Costs []int64 `json:"costs,omitempty"`
-	IsFiscal *bool `json:"isFiscal,omitempty"`
-	AverageCost *int64 `json:"averageCost,omitempty"`
-	TotalCost *int64 `json:"totalCost,omitempty"`
-	Currency *string `json:"currency,omitempty"`
-	Rollover *bool `json:"rollover,omitempty"`
-	WarningLimit *string `json:"warningLimit,omitempty"`
-	OverLimit *string `json:"overLimit,omitempty"`
-	ExternalId *string `json:"externalId,omitempty"`
-	InternalId *string `json:"internalId,omitempty"`
-	CreatedById *int64 `json:"createdById,omitempty"`
-	CreatedByName *string `json:"createdByName,omitempty"`
-	UpdatedById *string `json:"updatedById,omitempty"`
-	UpdatedByName *string `json:"updatedByName,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	Stats *GetBudgets200ResponseAllOfBudgetStats `json:"stats,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                                  `json:"id,omitempty"`
+	Name                 *string                                                                 `json:"name,omitempty"`
+	Description          *string                                                                 `json:"description,omitempty"`
+	Account              *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"account,omitempty"`
+	ForecastType         *GetBudgets200ResponseAllOfBudgetForecastType                           `json:"forecastType,omitempty"`
+	Enabled              *bool                                                                   `json:"enabled,omitempty"`
+	RefScope             *string                                                                 `json:"refScope,omitempty"`
+	RefType              *string                                                                 `json:"refType,omitempty"`
+	RefId                *int64                                                                  `json:"refId,omitempty"`
+	RefName              *string                                                                 `json:"refName,omitempty"`
+	Period               *string                                                                 `json:"period,omitempty"`
+	Year                 *string                                                                 `json:"year,omitempty"`
+	ResourceType         *string                                                                 `json:"resourceType,omitempty"`
+	Timezone             *string                                                                 `json:"timezone,omitempty"`
+	StartDate            *time.Time                                                              `json:"startDate,omitempty"`
+	EndDate              *time.Time                                                              `json:"endDate,omitempty"`
+	Interval             *string                                                                 `json:"interval,omitempty"`
+	Costs                []int64                                                                 `json:"costs,omitempty"`
+	IsFiscal             *bool                                                                   `json:"isFiscal,omitempty"`
+	AverageCost          *int64                                                                  `json:"averageCost,omitempty"`
+	TotalCost            *int64                                                                  `json:"totalCost,omitempty"`
+	Currency             *string                                                                 `json:"currency,omitempty"`
+	Rollover             *bool                                                                   `json:"rollover,omitempty"`
+	WarningLimit         *string                                                                 `json:"warningLimit,omitempty"`
+	OverLimit            *string                                                                 `json:"overLimit,omitempty"`
+	ExternalId           *string                                                                 `json:"externalId,omitempty"`
+	InternalId           *string                                                                 `json:"internalId,omitempty"`
+	CreatedById          *int64                                                                  `json:"createdById,omitempty"`
+	CreatedByName        *string                                                                 `json:"createdByName,omitempty"`
+	UpdatedById          *string                                                                 `json:"updatedById,omitempty"`
+	UpdatedByName        *string                                                                 `json:"updatedByName,omitempty"`
+	DateCreated          *time.Time                                                              `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                                              `json:"lastUpdated,omitempty"`
+	Stats                *GetBudgets200ResponseAllOfBudgetStats                                  `json:"stats,omitempty"`
+	AdditionalProperties map[string]interface{}                                                  `json:",remain"`
 }
 
 type _GetBudgets200ResponseAllOfBudget GetBudgets200ResponseAllOfBudget
@@ -1166,7 +1166,7 @@ func (o *GetBudgets200ResponseAllOfBudget) SetStats(v GetBudgets200ResponseAllOf
 }
 
 func (o GetBudgets200ResponseAllOfBudget) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1284,95 +1284,8 @@ func (o GetBudgets200ResponseAllOfBudget) ToMap() (map[string]interface{}, error
 
 	return toSerialize, nil
 }
-
 func (o *GetBudgets200ResponseAllOfBudget) UnmarshalJSON(data []byte) (err error) {
-	varGetBudgets200ResponseAllOfBudget := _GetBudgets200ResponseAllOfBudget{}
-
-	err = json.Unmarshal(data, &varGetBudgets200ResponseAllOfBudget)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetBudgets200ResponseAllOfBudget(varGetBudgets200ResponseAllOfBudget)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "account")
-		delete(additionalProperties, "forecastType")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "refScope")
-		delete(additionalProperties, "refType")
-		delete(additionalProperties, "refId")
-		delete(additionalProperties, "refName")
-		delete(additionalProperties, "period")
-		delete(additionalProperties, "year")
-		delete(additionalProperties, "resourceType")
-		delete(additionalProperties, "timezone")
-		delete(additionalProperties, "startDate")
-		delete(additionalProperties, "endDate")
-		delete(additionalProperties, "interval")
-		delete(additionalProperties, "costs")
-		delete(additionalProperties, "isFiscal")
-		delete(additionalProperties, "averageCost")
-		delete(additionalProperties, "totalCost")
-		delete(additionalProperties, "currency")
-		delete(additionalProperties, "rollover")
-		delete(additionalProperties, "warningLimit")
-		delete(additionalProperties, "overLimit")
-		delete(additionalProperties, "externalId")
-		delete(additionalProperties, "internalId")
-		delete(additionalProperties, "createdById")
-		delete(additionalProperties, "createdByName")
-		delete(additionalProperties, "updatedById")
-		delete(additionalProperties, "updatedByName")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		delete(additionalProperties, "stats")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetBudgets200ResponseAllOfBudget struct {
-	value *GetBudgets200ResponseAllOfBudget
-	isSet bool
-}
-
-func (v NullableGetBudgets200ResponseAllOfBudget) Get() *GetBudgets200ResponseAllOfBudget {
-	return v.value
-}
-
-func (v *NullableGetBudgets200ResponseAllOfBudget) Set(val *GetBudgets200ResponseAllOfBudget) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetBudgets200ResponseAllOfBudget) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetBudgets200ResponseAllOfBudget) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetBudgets200ResponseAllOfBudget(val *GetBudgets200ResponseAllOfBudget) *NullableGetBudgets200ResponseAllOfBudget {
-	return &NullableGetBudgets200ResponseAllOfBudget{value: val, isSet: true}
-}
-
-func (v NullableGetBudgets200ResponseAllOfBudget) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetBudgets200ResponseAllOfBudget) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

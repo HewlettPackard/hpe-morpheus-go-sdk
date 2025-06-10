@@ -20,11 +20,11 @@ var _ MappedNullable = &ZoneTypesOptions{}
 
 // ZoneTypesOptions struct for ZoneTypesOptions
 type ZoneTypesOptions struct {
-	Name *string `json:"name,omitempty"`
-	Value *string `json:"value,omitempty"`
-	Id *int64 `json:"id,omitempty"`
-	Code *string `json:"code,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Name                 *string                `json:"name,omitempty"`
+	Value                *string                `json:"value,omitempty"`
+	Id                   *int64                 `json:"id,omitempty"`
+	Code                 *string                `json:"code,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ZoneTypesOptions ZoneTypesOptions
@@ -175,7 +175,7 @@ func (o *ZoneTypesOptions) SetCode(v string) {
 }
 
 func (o ZoneTypesOptions) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -203,65 +203,8 @@ func (o ZoneTypesOptions) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *ZoneTypesOptions) UnmarshalJSON(data []byte) (err error) {
-	varZoneTypesOptions := _ZoneTypesOptions{}
-
-	err = json.Unmarshal(data, &varZoneTypesOptions)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ZoneTypesOptions(varZoneTypesOptions)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "value")
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "code")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableZoneTypesOptions struct {
-	value *ZoneTypesOptions
-	isSet bool
-}
-
-func (v NullableZoneTypesOptions) Get() *ZoneTypesOptions {
-	return v.value
-}
-
-func (v *NullableZoneTypesOptions) Set(val *ZoneTypesOptions) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableZoneTypesOptions) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableZoneTypesOptions) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableZoneTypesOptions(val *ZoneTypesOptions) *NullableZoneTypesOptions {
-	return &NullableZoneTypesOptions{value: val, isSet: true}
-}
-
-func (v NullableZoneTypesOptions) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableZoneTypesOptions) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

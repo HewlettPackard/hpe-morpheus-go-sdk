@@ -21,20 +21,20 @@ var _ MappedNullable = &ImageBuildExecution{}
 
 // ImageBuildExecution struct for ImageBuildExecution
 type ImageBuildExecution struct {
-	Id *int64 `json:"id,omitempty"`
-	ImageBuild *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"imageBuild,omitempty"`
-	BuildNumber *int64 `json:"buildNumber,omitempty"`
-	StartDate *time.Time `json:"startDate,omitempty"`
-	EndDate *time.Time `json:"endDate,omitempty"`
-	StatusMessage *string `json:"statusMessage,omitempty"`
-	StatusPercent *int64 `json:"statusPercent,omitempty"`
-	StatusEta *string `json:"statusEta,omitempty"`
-	Status *string `json:"status,omitempty"`
-	ErrorMessage *string `json:"errorMessage,omitempty"`
-	CreatedBy *GetArchiveBucket200ResponseArchiveFilesInnerCreatedBy `json:"createdBy,omitempty"`
-	TempInstance *string `json:"tempInstance,omitempty"`
-	VirtualImages []map[string]interface{} `json:"virtualImages,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                                  `json:"id,omitempty"`
+	ImageBuild           *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"imageBuild,omitempty"`
+	BuildNumber          *int64                                                                  `json:"buildNumber,omitempty"`
+	StartDate            *time.Time                                                              `json:"startDate,omitempty"`
+	EndDate              *time.Time                                                              `json:"endDate,omitempty"`
+	StatusMessage        *string                                                                 `json:"statusMessage,omitempty"`
+	StatusPercent        *int64                                                                  `json:"statusPercent,omitempty"`
+	StatusEta            *string                                                                 `json:"statusEta,omitempty"`
+	Status               *string                                                                 `json:"status,omitempty"`
+	ErrorMessage         *string                                                                 `json:"errorMessage,omitempty"`
+	CreatedBy            *GetArchiveBucket200ResponseArchiveFilesInnerCreatedBy                  `json:"createdBy,omitempty"`
+	TempInstance         *string                                                                 `json:"tempInstance,omitempty"`
+	VirtualImages        []map[string]interface{}                                                `json:"virtualImages,omitempty"`
+	AdditionalProperties map[string]interface{}                                                  `json:",remain"`
 }
 
 type _ImageBuildExecution ImageBuildExecution
@@ -473,7 +473,7 @@ func (o *ImageBuildExecution) SetVirtualImages(v []map[string]interface{}) {
 }
 
 func (o ImageBuildExecution) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -528,74 +528,8 @@ func (o ImageBuildExecution) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *ImageBuildExecution) UnmarshalJSON(data []byte) (err error) {
-	varImageBuildExecution := _ImageBuildExecution{}
-
-	err = json.Unmarshal(data, &varImageBuildExecution)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ImageBuildExecution(varImageBuildExecution)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "imageBuild")
-		delete(additionalProperties, "buildNumber")
-		delete(additionalProperties, "startDate")
-		delete(additionalProperties, "endDate")
-		delete(additionalProperties, "statusMessage")
-		delete(additionalProperties, "statusPercent")
-		delete(additionalProperties, "statusEta")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "errorMessage")
-		delete(additionalProperties, "createdBy")
-		delete(additionalProperties, "tempInstance")
-		delete(additionalProperties, "virtualImages")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableImageBuildExecution struct {
-	value *ImageBuildExecution
-	isSet bool
-}
-
-func (v NullableImageBuildExecution) Get() *ImageBuildExecution {
-	return v.value
-}
-
-func (v *NullableImageBuildExecution) Set(val *ImageBuildExecution) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableImageBuildExecution) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableImageBuildExecution) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableImageBuildExecution(val *ImageBuildExecution) *NullableImageBuildExecution {
-	return &NullableImageBuildExecution{value: val, isSet: true}
-}
-
-func (v NullableImageBuildExecution) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableImageBuildExecution) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

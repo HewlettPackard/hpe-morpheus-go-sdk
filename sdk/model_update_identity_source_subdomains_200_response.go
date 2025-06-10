@@ -20,9 +20,9 @@ var _ MappedNullable = &UpdateIdentitySourceSubdomains200Response{}
 
 // UpdateIdentitySourceSubdomains200Response struct for UpdateIdentitySourceSubdomains200Response
 type UpdateIdentitySourceSubdomains200Response struct {
-	UserSource *ListIdentitySources200ResponseAllOfUserSourcesInner `json:"userSource,omitempty"`
-	Success *bool `json:"success,omitempty"`
-	AdditionalProperties map[string]interface{}
+	UserSource           *ListIdentitySources200ResponseAllOfUserSourcesInner `json:"userSource,omitempty"`
+	Success              *bool                                                `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{}                               `json:",remain"`
 }
 
 type _UpdateIdentitySourceSubdomains200Response UpdateIdentitySourceSubdomains200Response
@@ -109,7 +109,7 @@ func (o *UpdateIdentitySourceSubdomains200Response) SetSuccess(v bool) {
 }
 
 func (o UpdateIdentitySourceSubdomains200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -131,63 +131,8 @@ func (o UpdateIdentitySourceSubdomains200Response) ToMap() (map[string]interface
 
 	return toSerialize, nil
 }
-
 func (o *UpdateIdentitySourceSubdomains200Response) UnmarshalJSON(data []byte) (err error) {
-	varUpdateIdentitySourceSubdomains200Response := _UpdateIdentitySourceSubdomains200Response{}
-
-	err = json.Unmarshal(data, &varUpdateIdentitySourceSubdomains200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateIdentitySourceSubdomains200Response(varUpdateIdentitySourceSubdomains200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "userSource")
-		delete(additionalProperties, "success")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateIdentitySourceSubdomains200Response struct {
-	value *UpdateIdentitySourceSubdomains200Response
-	isSet bool
-}
-
-func (v NullableUpdateIdentitySourceSubdomains200Response) Get() *UpdateIdentitySourceSubdomains200Response {
-	return v.value
-}
-
-func (v *NullableUpdateIdentitySourceSubdomains200Response) Set(val *UpdateIdentitySourceSubdomains200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateIdentitySourceSubdomains200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateIdentitySourceSubdomains200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateIdentitySourceSubdomains200Response(val *UpdateIdentitySourceSubdomains200Response) *NullableUpdateIdentitySourceSubdomains200Response {
-	return &NullableUpdateIdentitySourceSubdomains200Response{value: val, isSet: true}
-}
-
-func (v NullableUpdateIdentitySourceSubdomains200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateIdentitySourceSubdomains200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

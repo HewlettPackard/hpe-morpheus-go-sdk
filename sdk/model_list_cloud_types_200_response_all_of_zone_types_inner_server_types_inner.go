@@ -20,29 +20,29 @@ var _ MappedNullable = &ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesI
 
 // ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInner struct for ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInner
 type ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInner struct {
-	Id *int64 `json:"id,omitempty"`
-	Code *string `json:"code,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Description *string `json:"description,omitempty"`
-	NodeType *string `json:"nodeType,omitempty"`
-	Platform *string `json:"platform,omitempty"`
-	Enabled *bool `json:"enabled,omitempty"`
-	Selectable *bool `json:"selectable,omitempty"`
-	ExternalDelete *bool `json:"externalDelete,omitempty"`
-	Managed *bool `json:"managed,omitempty"`
-	ControlPower *bool `json:"controlPower,omitempty"`
-	ControlSuspend *bool `json:"controlSuspend,omitempty"`
-	Creatable *bool `json:"creatable,omitempty"`
-	HasAgent *bool `json:"hasAgent,omitempty"`
-	VmHypervisor *bool `json:"vmHypervisor,omitempty"`
-	ContainerHypervisor *bool `json:"containerHypervisor,omitempty"`
-	BareMetalHost *bool `json:"bareMetalHost,omitempty"`
-	GuestVm *bool `json:"guestVm,omitempty"`
-	HasAutomation *bool `json:"hasAutomation,omitempty"`
-	ProvisionType *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerProvisionType `json:"provisionType,omitempty"`
-	OptionTypes []ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
-	DisplayOrder *int64 `json:"displayOrder,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                                         `json:"id,omitempty"`
+	Code                 *string                                                                        `json:"code,omitempty"`
+	Name                 *string                                                                        `json:"name,omitempty"`
+	Description          *string                                                                        `json:"description,omitempty"`
+	NodeType             *string                                                                        `json:"nodeType,omitempty"`
+	Platform             *string                                                                        `json:"platform,omitempty"`
+	Enabled              *bool                                                                          `json:"enabled,omitempty"`
+	Selectable           *bool                                                                          `json:"selectable,omitempty"`
+	ExternalDelete       *bool                                                                          `json:"externalDelete,omitempty"`
+	Managed              *bool                                                                          `json:"managed,omitempty"`
+	ControlPower         *bool                                                                          `json:"controlPower,omitempty"`
+	ControlSuspend       *bool                                                                          `json:"controlSuspend,omitempty"`
+	Creatable            *bool                                                                          `json:"creatable,omitempty"`
+	HasAgent             *bool                                                                          `json:"hasAgent,omitempty"`
+	VmHypervisor         *bool                                                                          `json:"vmHypervisor,omitempty"`
+	ContainerHypervisor  *bool                                                                          `json:"containerHypervisor,omitempty"`
+	BareMetalHost        *bool                                                                          `json:"bareMetalHost,omitempty"`
+	GuestVm              *bool                                                                          `json:"guestVm,omitempty"`
+	HasAutomation        *bool                                                                          `json:"hasAutomation,omitempty"`
+	ProvisionType        *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerProvisionType     `json:"provisionType,omitempty"`
+	OptionTypes          []ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
+	DisplayOrder         *int64                                                                         `json:"displayOrder,omitempty"`
+	AdditionalProperties map[string]interface{}                                                         `json:",remain"`
 }
 
 type _ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInner ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInner
@@ -769,7 +769,7 @@ func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInner) SetDispla
 }
 
 func (o ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -851,83 +851,8 @@ func (o ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInner) ToMap() (m
 
 	return toSerialize, nil
 }
-
 func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInner) UnmarshalJSON(data []byte) (err error) {
-	varListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInner := _ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInner{}
-
-	err = json.Unmarshal(data, &varListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInner(varListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "nodeType")
-		delete(additionalProperties, "platform")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "selectable")
-		delete(additionalProperties, "externalDelete")
-		delete(additionalProperties, "managed")
-		delete(additionalProperties, "controlPower")
-		delete(additionalProperties, "controlSuspend")
-		delete(additionalProperties, "creatable")
-		delete(additionalProperties, "hasAgent")
-		delete(additionalProperties, "vmHypervisor")
-		delete(additionalProperties, "containerHypervisor")
-		delete(additionalProperties, "bareMetalHost")
-		delete(additionalProperties, "guestVm")
-		delete(additionalProperties, "hasAutomation")
-		delete(additionalProperties, "provisionType")
-		delete(additionalProperties, "optionTypes")
-		delete(additionalProperties, "displayOrder")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInner struct {
-	value *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInner
-	isSet bool
-}
-
-func (v NullableListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInner) Get() *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInner {
-	return v.value
-}
-
-func (v *NullableListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInner) Set(val *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInner(val *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInner) *NullableListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInner {
-	return &NullableListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInner{value: val, isSet: true}
-}
-
-func (v NullableListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -22,26 +22,26 @@ var _ MappedNullable = &BackupRestore{}
 // BackupRestore struct for BackupRestore
 type BackupRestore struct {
 	// Backup Result ID
-	Id *int64 `json:"id,omitempty"`
-	BackupResultId *int64 `json:"backupResultId,omitempty"`
-	BackupId *int64 `json:"backupId,omitempty"`
-	Backup *ListBackupRestores200ResponseAllOfRestoresInnerBackup `json:"backup,omitempty"`
-	ContainerId *int64 `json:"containerId,omitempty"`
-	Container *ListBackupRestores200ResponseAllOfRestoresInnerContainer `json:"container,omitempty"`
-	Instance *ListBackups200ResponseAllOfBackupsInnerInstance `json:"instance,omitempty"`
-	RestoreToNew *bool `json:"restoreToNew,omitempty"`
-	Status *string `json:"status,omitempty"`
-	ErrorMessage *string `json:"errorMessage,omitempty"`
-	StartDate *time.Time `json:"startDate,omitempty"`
-	EndDate *time.Time `json:"endDate,omitempty"`
-	DurationMillis *int64 `json:"durationMillis,omitempty"`
-	ExternalId *string `json:"externalId,omitempty"`
-	ExternalStatusRef *string `json:"externalStatusRef,omitempty"`
+	Id                *int64                                                    `json:"id,omitempty"`
+	BackupResultId    *int64                                                    `json:"backupResultId,omitempty"`
+	BackupId          *int64                                                    `json:"backupId,omitempty"`
+	Backup            *ListBackupRestores200ResponseAllOfRestoresInnerBackup    `json:"backup,omitempty"`
+	ContainerId       *int64                                                    `json:"containerId,omitempty"`
+	Container         *ListBackupRestores200ResponseAllOfRestoresInnerContainer `json:"container,omitempty"`
+	Instance          *ListBackups200ResponseAllOfBackupsInnerInstance          `json:"instance,omitempty"`
+	RestoreToNew      *bool                                                     `json:"restoreToNew,omitempty"`
+	Status            *string                                                   `json:"status,omitempty"`
+	ErrorMessage      *string                                                   `json:"errorMessage,omitempty"`
+	StartDate         *time.Time                                                `json:"startDate,omitempty"`
+	EndDate           *time.Time                                                `json:"endDate,omitempty"`
+	DurationMillis    *int64                                                    `json:"durationMillis,omitempty"`
+	ExternalId        *string                                                   `json:"externalId,omitempty"`
+	ExternalStatusRef *string                                                   `json:"externalStatusRef,omitempty"`
 	// Date Created
 	DateCreated *time.Time `json:"dateCreated,omitempty"`
 	// Last Updated
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}
+	LastUpdated          *time.Time             `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _BackupRestore BackupRestore
@@ -608,7 +608,7 @@ func (o *BackupRestore) SetLastUpdated(v time.Time) {
 }
 
 func (o BackupRestore) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -675,78 +675,8 @@ func (o BackupRestore) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *BackupRestore) UnmarshalJSON(data []byte) (err error) {
-	varBackupRestore := _BackupRestore{}
-
-	err = json.Unmarshal(data, &varBackupRestore)
-
-	if err != nil {
-		return err
-	}
-
-	*o = BackupRestore(varBackupRestore)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "backupResultId")
-		delete(additionalProperties, "backupId")
-		delete(additionalProperties, "backup")
-		delete(additionalProperties, "containerId")
-		delete(additionalProperties, "container")
-		delete(additionalProperties, "instance")
-		delete(additionalProperties, "restoreToNew")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "errorMessage")
-		delete(additionalProperties, "startDate")
-		delete(additionalProperties, "endDate")
-		delete(additionalProperties, "durationMillis")
-		delete(additionalProperties, "externalId")
-		delete(additionalProperties, "externalStatusRef")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableBackupRestore struct {
-	value *BackupRestore
-	isSet bool
-}
-
-func (v NullableBackupRestore) Get() *BackupRestore {
-	return v.value
-}
-
-func (v *NullableBackupRestore) Set(val *BackupRestore) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableBackupRestore) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableBackupRestore) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableBackupRestore(val *BackupRestore) *NullableBackupRestore {
-	return &NullableBackupRestore{value: val, isSet: true}
-}
-
-func (v NullableBackupRestore) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableBackupRestore) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

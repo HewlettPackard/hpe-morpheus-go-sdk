@@ -21,35 +21,35 @@ var _ MappedNullable = &ListClusterLayouts200ResponseAllOfLayoutsInner{}
 
 // ListClusterLayouts200ResponseAllOfLayoutsInner struct for ListClusterLayouts200ResponseAllOfLayoutsInner
 type ListClusterLayouts200ResponseAllOfLayoutsInner struct {
-	Id *int64 `json:"id,omitempty"`
-	InternalId *string `json:"internalId,omitempty"`
-	ServerCount *int64 `json:"serverCount,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	Code *string `json:"code,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	HasAutoScale *bool `json:"hasAutoScale,omitempty"`
-	MemoryRequirement *int64 `json:"memoryRequirement,omitempty"`
-	ClusterVersion *string `json:"clusterVersion,omitempty"`
-	ComputeVersion *string `json:"computeVersion,omitempty"`
-	HasSettings *bool `json:"hasSettings,omitempty"`
-	SortOrder *int64 `json:"sortOrder,omitempty"`
-	HasConfig *bool `json:"hasConfig,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Creatable *bool `json:"creatable,omitempty"`
-	Enabled *bool `json:"enabled,omitempty"`
-	Description *string `json:"description,omitempty"`
-	GroupType *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"groupType,omitempty"`
-	Labels []string `json:"labels,omitempty"`
-	EnvironmentVariables []map[string]interface{} `json:"environmentVariables,omitempty"`
-	OptionTypes []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
-	Actions []map[string]interface{} `json:"actions,omitempty"`
-	ComputeServers []ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner `json:"computeServers,omitempty"`
-	InstallContainerRuntime *bool `json:"installContainerRuntime,omitempty"`
-	ProvisionType *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"provisionType,omitempty"`
-	SpecTemplates []ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner `json:"specTemplates,omitempty"`
-	TaskSets []map[string]interface{} `json:"taskSets,omitempty"`
-	Type *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"type,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                      *int64                                                                      `json:"id,omitempty"`
+	InternalId              *string                                                                     `json:"internalId,omitempty"`
+	ServerCount             *int64                                                                      `json:"serverCount,omitempty"`
+	DateCreated             *time.Time                                                                  `json:"dateCreated,omitempty"`
+	Code                    *string                                                                     `json:"code,omitempty"`
+	LastUpdated             *time.Time                                                                  `json:"lastUpdated,omitempty"`
+	HasAutoScale            *bool                                                                       `json:"hasAutoScale,omitempty"`
+	MemoryRequirement       *int64                                                                      `json:"memoryRequirement,omitempty"`
+	ClusterVersion          *string                                                                     `json:"clusterVersion,omitempty"`
+	ComputeVersion          *string                                                                     `json:"computeVersion,omitempty"`
+	HasSettings             *bool                                                                       `json:"hasSettings,omitempty"`
+	SortOrder               *int64                                                                      `json:"sortOrder,omitempty"`
+	HasConfig               *bool                                                                       `json:"hasConfig,omitempty"`
+	Name                    *string                                                                     `json:"name,omitempty"`
+	Creatable               *bool                                                                       `json:"creatable,omitempty"`
+	Enabled                 *bool                                                                       `json:"enabled,omitempty"`
+	Description             *string                                                                     `json:"description,omitempty"`
+	GroupType               *ListBackupSettings200ResponseBackupSettingsDefaultSchedule                 `json:"groupType,omitempty"`
+	Labels                  []string                                                                    `json:"labels,omitempty"`
+	EnvironmentVariables    []map[string]interface{}                                                    `json:"environmentVariables,omitempty"`
+	OptionTypes             []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
+	Actions                 []map[string]interface{}                                                    `json:"actions,omitempty"`
+	ComputeServers          []ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner         `json:"computeServers,omitempty"`
+	InstallContainerRuntime *bool                                                                       `json:"installContainerRuntime,omitempty"`
+	ProvisionType           *ListBackupSettings200ResponseBackupSettingsDefaultSchedule                 `json:"provisionType,omitempty"`
+	SpecTemplates           []ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner          `json:"specTemplates,omitempty"`
+	TaskSets                []map[string]interface{}                                                    `json:"taskSets,omitempty"`
+	Type                    *ListBackupSettings200ResponseBackupSettingsDefaultSchedule                 `json:"type,omitempty"`
+	AdditionalProperties    map[string]interface{}                                                      `json:",remain"`
 }
 
 type _ListClusterLayouts200ResponseAllOfLayoutsInner ListClusterLayouts200ResponseAllOfLayoutsInner
@@ -968,7 +968,7 @@ func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) SetType(v ListBackupSet
 }
 
 func (o ListClusterLayouts200ResponseAllOfLayoutsInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1068,89 +1068,8 @@ func (o ListClusterLayouts200ResponseAllOfLayoutsInner) ToMap() (map[string]inte
 
 	return toSerialize, nil
 }
-
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) UnmarshalJSON(data []byte) (err error) {
-	varListClusterLayouts200ResponseAllOfLayoutsInner := _ListClusterLayouts200ResponseAllOfLayoutsInner{}
-
-	err = json.Unmarshal(data, &varListClusterLayouts200ResponseAllOfLayoutsInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListClusterLayouts200ResponseAllOfLayoutsInner(varListClusterLayouts200ResponseAllOfLayoutsInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "internalId")
-		delete(additionalProperties, "serverCount")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "lastUpdated")
-		delete(additionalProperties, "hasAutoScale")
-		delete(additionalProperties, "memoryRequirement")
-		delete(additionalProperties, "clusterVersion")
-		delete(additionalProperties, "computeVersion")
-		delete(additionalProperties, "hasSettings")
-		delete(additionalProperties, "sortOrder")
-		delete(additionalProperties, "hasConfig")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "creatable")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "groupType")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "environmentVariables")
-		delete(additionalProperties, "optionTypes")
-		delete(additionalProperties, "actions")
-		delete(additionalProperties, "computeServers")
-		delete(additionalProperties, "installContainerRuntime")
-		delete(additionalProperties, "provisionType")
-		delete(additionalProperties, "specTemplates")
-		delete(additionalProperties, "taskSets")
-		delete(additionalProperties, "type")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListClusterLayouts200ResponseAllOfLayoutsInner struct {
-	value *ListClusterLayouts200ResponseAllOfLayoutsInner
-	isSet bool
-}
-
-func (v NullableListClusterLayouts200ResponseAllOfLayoutsInner) Get() *ListClusterLayouts200ResponseAllOfLayoutsInner {
-	return v.value
-}
-
-func (v *NullableListClusterLayouts200ResponseAllOfLayoutsInner) Set(val *ListClusterLayouts200ResponseAllOfLayoutsInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListClusterLayouts200ResponseAllOfLayoutsInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListClusterLayouts200ResponseAllOfLayoutsInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListClusterLayouts200ResponseAllOfLayoutsInner(val *ListClusterLayouts200ResponseAllOfLayoutsInner) *NullableListClusterLayouts200ResponseAllOfLayoutsInner {
-	return &NullableListClusterLayouts200ResponseAllOfLayoutsInner{value: val, isSet: true}
-}
-
-func (v NullableListClusterLayouts200ResponseAllOfLayoutsInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListClusterLayouts200ResponseAllOfLayoutsInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

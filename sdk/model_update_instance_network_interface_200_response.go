@@ -20,13 +20,13 @@ var _ MappedNullable = &UpdateInstanceNetworkInterface200Response{}
 
 // UpdateInstanceNetworkInterface200Response struct for UpdateInstanceNetworkInterface200Response
 type UpdateInstanceNetworkInterface200Response struct {
-	NetworkInterface *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface `json:"networkInterface,omitempty"`
-	InterfaceType *string `json:"interfaceType,omitempty"`
-	NetId *int64 `json:"netId,omitempty"`
-	Server *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServer `json:"server,omitempty"`
-	Success *bool `json:"success,omitempty"`
-	Errors map[string]interface{} `json:"errors,omitempty"`
-	AdditionalProperties map[string]interface{}
+	NetworkInterface     *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface `json:"networkInterface,omitempty"`
+	InterfaceType        *string                                                              `json:"interfaceType,omitempty"`
+	NetId                *int64                                                               `json:"netId,omitempty"`
+	Server               *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServer           `json:"server,omitempty"`
+	Success              *bool                                                                `json:"success,omitempty"`
+	Errors               map[string]interface{}                                               `json:"errors,omitempty"`
+	AdditionalProperties map[string]interface{}                                               `json:",remain"`
 }
 
 type _UpdateInstanceNetworkInterface200Response UpdateInstanceNetworkInterface200Response
@@ -241,7 +241,7 @@ func (o *UpdateInstanceNetworkInterface200Response) SetErrors(v map[string]inter
 }
 
 func (o UpdateInstanceNetworkInterface200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -275,67 +275,8 @@ func (o UpdateInstanceNetworkInterface200Response) ToMap() (map[string]interface
 
 	return toSerialize, nil
 }
-
 func (o *UpdateInstanceNetworkInterface200Response) UnmarshalJSON(data []byte) (err error) {
-	varUpdateInstanceNetworkInterface200Response := _UpdateInstanceNetworkInterface200Response{}
-
-	err = json.Unmarshal(data, &varUpdateInstanceNetworkInterface200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateInstanceNetworkInterface200Response(varUpdateInstanceNetworkInterface200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "networkInterface")
-		delete(additionalProperties, "interfaceType")
-		delete(additionalProperties, "netId")
-		delete(additionalProperties, "server")
-		delete(additionalProperties, "success")
-		delete(additionalProperties, "errors")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateInstanceNetworkInterface200Response struct {
-	value *UpdateInstanceNetworkInterface200Response
-	isSet bool
-}
-
-func (v NullableUpdateInstanceNetworkInterface200Response) Get() *UpdateInstanceNetworkInterface200Response {
-	return v.value
-}
-
-func (v *NullableUpdateInstanceNetworkInterface200Response) Set(val *UpdateInstanceNetworkInterface200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateInstanceNetworkInterface200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateInstanceNetworkInterface200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateInstanceNetworkInterface200Response(val *UpdateInstanceNetworkInterface200Response) *NullableUpdateInstanceNetworkInterface200Response {
-	return &NullableUpdateInstanceNetworkInterface200Response{value: val, isSet: true}
-}
-
-func (v NullableUpdateInstanceNetworkInterface200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateInstanceNetworkInterface200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -26,20 +26,20 @@ type UpdateJobsRequestJob struct {
 	// Array of label strings, can be used for filtering.
 	Labels []string `json:"labels,omitempty"`
 	// Use this to set enabled state
-	Enabled *bool `json:"enabled,omitempty"`
-	Task *WorkflowJobPayloadTask `json:"task,omitempty"`
+	Enabled  *bool                   `json:"enabled,omitempty"`
+	Task     *WorkflowJobPayloadTask `json:"task,omitempty"`
 	Workflow *WorkflowJobPayloadTask `json:"workflow,omitempty"`
 	// Scan Checklist. Only applies to type scap-package.
 	ScanPath *string `json:"scanPath,omitempty"`
 	// Security Profile. Only applies to type scap-package.
 	SecurityProfile *string `json:"securityProfile,omitempty"`
 	// Target type where job will execute
-	TargetType *string `json:"targetType,omitempty"`
-	Targets []WorkflowJobPayloadTargetsInner `json:"targets,omitempty"`
+	TargetType *string                          `json:"targetType,omitempty"`
+	Targets    []WorkflowJobPayloadTargetsInner `json:"targets,omitempty"`
 	// Instance Label. Only applicable if `targetType` is `instance-label`.
 	InstanceLabel *string `json:"instanceLabel,omitempty"`
 	// Server Label. Only applicable if `targetType` is `server-label`.
-	ServerLabel *string `json:"serverLabel,omitempty"`
+	ServerLabel  *string                         `json:"serverLabel,omitempty"`
 	ScheduleMode *WorkflowJobPayloadScheduleMode `json:"scheduleMode,omitempty"`
 	// Map of options to be used as values in the workflow tasks. These correspond to option types.
 	CustomOptions map[string]interface{} `json:"customOptions,omitempty"`
@@ -48,8 +48,8 @@ type UpdateJobsRequestJob struct {
 	// Date and Time to execute the job. Use UTC time in the format 2020-02-15T05:00:00Z. Required when scheduleMode is 'dateTime'.
 	DateTime *time.Time `json:"dateTime,omitempty"`
 	// If true, executes job
-	Run *bool `json:"run,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Run                  *bool                  `json:"run,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _UpdateJobsRequestJob UpdateJobsRequestJob
@@ -588,7 +588,7 @@ func (o *UpdateJobsRequestJob) SetRun(v bool) {
 }
 
 func (o UpdateJobsRequestJob) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -652,77 +652,8 @@ func (o UpdateJobsRequestJob) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *UpdateJobsRequestJob) UnmarshalJSON(data []byte) (err error) {
-	varUpdateJobsRequestJob := _UpdateJobsRequestJob{}
-
-	err = json.Unmarshal(data, &varUpdateJobsRequestJob)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateJobsRequestJob(varUpdateJobsRequestJob)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "task")
-		delete(additionalProperties, "workflow")
-		delete(additionalProperties, "scanPath")
-		delete(additionalProperties, "securityProfile")
-		delete(additionalProperties, "targetType")
-		delete(additionalProperties, "targets")
-		delete(additionalProperties, "instanceLabel")
-		delete(additionalProperties, "serverLabel")
-		delete(additionalProperties, "scheduleMode")
-		delete(additionalProperties, "customOptions")
-		delete(additionalProperties, "customConfig")
-		delete(additionalProperties, "dateTime")
-		delete(additionalProperties, "run")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateJobsRequestJob struct {
-	value *UpdateJobsRequestJob
-	isSet bool
-}
-
-func (v NullableUpdateJobsRequestJob) Get() *UpdateJobsRequestJob {
-	return v.value
-}
-
-func (v *NullableUpdateJobsRequestJob) Set(val *UpdateJobsRequestJob) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateJobsRequestJob) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateJobsRequestJob) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateJobsRequestJob(val *UpdateJobsRequestJob) *NullableUpdateJobsRequestJob {
-	return &NullableUpdateJobsRequestJob{value: val, isSet: true}
-}
-
-func (v NullableUpdateJobsRequestJob) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateJobsRequestJob) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -20,16 +20,16 @@ var _ MappedNullable = &AddChecksRequestCheckOneOfConfigAllOfAnyOf{}
 
 // AddChecksRequestCheckOneOfConfigAllOfAnyOf struct for AddChecksRequestCheckOneOfConfigAllOfAnyOf
 type AddChecksRequestCheckOneOfConfigAllOfAnyOf struct {
-	SshPort *int64 `json:"sshPort,omitempty"`
-	CheckUser *string `json:"checkUser,omitempty"`
-	TunnelOn *string `json:"tunnelOn,omitempty"`
-	TextCheckOn *string `json:"textCheckOn,omitempty"`
-	CheckPassword *string `json:"checkPassword,omitempty"`
-	SshHost *string `json:"sshHost,omitempty"`
-	SshUser *string `json:"sshUser,omitempty"`
-	WebTextMatch *string `json:"webTextMatch,omitempty"`
-	CheckPasswordHash *string `json:"checkPasswordHash,omitempty"`
-	AdditionalProperties map[string]interface{}
+	SshPort              *int64                 `json:"sshPort,omitempty"`
+	CheckUser            *string                `json:"checkUser,omitempty"`
+	TunnelOn             *string                `json:"tunnelOn,omitempty"`
+	TextCheckOn          *string                `json:"textCheckOn,omitempty"`
+	CheckPassword        *string                `json:"checkPassword,omitempty"`
+	SshHost              *string                `json:"sshHost,omitempty"`
+	SshUser              *string                `json:"sshUser,omitempty"`
+	WebTextMatch         *string                `json:"webTextMatch,omitempty"`
+	CheckPasswordHash    *string                `json:"checkPasswordHash,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddChecksRequestCheckOneOfConfigAllOfAnyOf AddChecksRequestCheckOneOfConfigAllOfAnyOf
@@ -340,7 +340,7 @@ func (o *AddChecksRequestCheckOneOfConfigAllOfAnyOf) SetCheckPasswordHash(v stri
 }
 
 func (o AddChecksRequestCheckOneOfConfigAllOfAnyOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -383,70 +383,8 @@ func (o AddChecksRequestCheckOneOfConfigAllOfAnyOf) ToMap() (map[string]interfac
 
 	return toSerialize, nil
 }
-
 func (o *AddChecksRequestCheckOneOfConfigAllOfAnyOf) UnmarshalJSON(data []byte) (err error) {
-	varAddChecksRequestCheckOneOfConfigAllOfAnyOf := _AddChecksRequestCheckOneOfConfigAllOfAnyOf{}
-
-	err = json.Unmarshal(data, &varAddChecksRequestCheckOneOfConfigAllOfAnyOf)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddChecksRequestCheckOneOfConfigAllOfAnyOf(varAddChecksRequestCheckOneOfConfigAllOfAnyOf)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "sshPort")
-		delete(additionalProperties, "checkUser")
-		delete(additionalProperties, "tunnelOn")
-		delete(additionalProperties, "textCheckOn")
-		delete(additionalProperties, "checkPassword")
-		delete(additionalProperties, "sshHost")
-		delete(additionalProperties, "sshUser")
-		delete(additionalProperties, "webTextMatch")
-		delete(additionalProperties, "checkPasswordHash")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddChecksRequestCheckOneOfConfigAllOfAnyOf struct {
-	value *AddChecksRequestCheckOneOfConfigAllOfAnyOf
-	isSet bool
-}
-
-func (v NullableAddChecksRequestCheckOneOfConfigAllOfAnyOf) Get() *AddChecksRequestCheckOneOfConfigAllOfAnyOf {
-	return v.value
-}
-
-func (v *NullableAddChecksRequestCheckOneOfConfigAllOfAnyOf) Set(val *AddChecksRequestCheckOneOfConfigAllOfAnyOf) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddChecksRequestCheckOneOfConfigAllOfAnyOf) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddChecksRequestCheckOneOfConfigAllOfAnyOf) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddChecksRequestCheckOneOfConfigAllOfAnyOf(val *AddChecksRequestCheckOneOfConfigAllOfAnyOf) *NullableAddChecksRequestCheckOneOfConfigAllOfAnyOf {
-	return &NullableAddChecksRequestCheckOneOfConfigAllOfAnyOf{value: val, isSet: true}
-}
-
-func (v NullableAddChecksRequestCheckOneOfConfigAllOfAnyOf) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddChecksRequestCheckOneOfConfigAllOfAnyOf) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -14,6 +14,7 @@ package sdk
 import (
 	"encoding/json"
 	"fmt"
+
 	"gopkg.in/validator.v2"
 )
 
@@ -23,7 +24,7 @@ var _ fmt.Stringer
 // AddVirtualImageRequestVirtualImageOsType - A Map containing the id of the OS Type. This can also be passed as a string (code or name) instead.
 type AddVirtualImageRequestVirtualImageOsType struct {
 	GetAlerts200ResponseAllOfChecksInnerContainer *GetAlerts200ResponseAllOfChecksInnerContainer
-	String *string
+	String                                        *string
 }
 
 // GetAlerts200ResponseAllOfChecksInnerContainerAsAddVirtualImageRequestVirtualImageOsType is a convenience function that returns GetAlerts200ResponseAllOfChecksInnerContainer wrapped in AddVirtualImageRequestVirtualImageOsType
@@ -40,6 +41,21 @@ func StringAsAddVirtualImageRequestVirtualImageOsType(v *string) AddVirtualImage
 	}
 }
 
+func (dst *AddVirtualImageRequestVirtualImageOsType) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &AddVirtualImageRequestVirtualImageOsType{}
+	}
+
+	if out, ok := data.(GetAlerts200ResponseAllOfChecksInnerContainer); ok {
+		dst.GetAlerts200ResponseAllOfChecksInnerContainer = &out
+	}
+
+	if out, ok := data.(string); ok {
+		dst.String = &out
+	}
+
+	return dst, nil
+}
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddVirtualImageRequestVirtualImageOsType) UnmarshalJSON(data []byte) error {
@@ -106,7 +122,7 @@ func (src AddVirtualImageRequestVirtualImageOsType) MarshalJSON() ([]byte, error
 }
 
 // Get the actual instance
-func (obj *AddVirtualImageRequestVirtualImageOsType) GetActualInstance() (interface{}) {
+func (obj *AddVirtualImageRequestVirtualImageOsType) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -123,7 +139,7 @@ func (obj *AddVirtualImageRequestVirtualImageOsType) GetActualInstance() (interf
 }
 
 // Get the actual instance value
-func (obj AddVirtualImageRequestVirtualImageOsType) GetActualInstanceValue() (interface{}) {
+func (obj AddVirtualImageRequestVirtualImageOsType) GetActualInstanceValue() interface{} {
 	if obj.GetAlerts200ResponseAllOfChecksInnerContainer != nil {
 		return *obj.GetAlerts200ResponseAllOfChecksInnerContainer
 	}
@@ -171,5 +187,3 @@ func (v *NullableAddVirtualImageRequestVirtualImageOsType) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

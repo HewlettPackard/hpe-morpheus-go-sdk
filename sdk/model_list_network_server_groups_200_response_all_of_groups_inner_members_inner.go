@@ -20,18 +20,18 @@ var _ MappedNullable = &ListNetworkServerGroups200ResponseAllOfGroupsInnerMember
 
 // ListNetworkServerGroups200ResponseAllOfGroupsInnerMembersInner struct for ListNetworkServerGroups200ResponseAllOfGroupsInnerMembersInner
 type ListNetworkServerGroups200ResponseAllOfGroupsInnerMembersInner struct {
-	Id *int64 `json:"id,omitempty"`
-	Category *string `json:"category,omitempty"`
-	Type *string `json:"type,omitempty"`
-	MemberName *string `json:"memberName,omitempty"`
-	MemberType *string `json:"memberType,omitempty"`
-	MemberValue *string `json:"memberValue,omitempty"`
-	MemberExpression *string `json:"memberExpression,omitempty"`
-	DisplayOrder *int64 `json:"displayOrder,omitempty"`
-	InternalId *string `json:"internalId,omitempty"`
-	ExternalId *string `json:"externalId,omitempty"`
-	Members []map[string]interface{} `json:"members,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                   `json:"id,omitempty"`
+	Category             *string                  `json:"category,omitempty"`
+	Type                 *string                  `json:"type,omitempty"`
+	MemberName           *string                  `json:"memberName,omitempty"`
+	MemberType           *string                  `json:"memberType,omitempty"`
+	MemberValue          *string                  `json:"memberValue,omitempty"`
+	MemberExpression     *string                  `json:"memberExpression,omitempty"`
+	DisplayOrder         *int64                   `json:"displayOrder,omitempty"`
+	InternalId           *string                  `json:"internalId,omitempty"`
+	ExternalId           *string                  `json:"externalId,omitempty"`
+	Members              []map[string]interface{} `json:"members,omitempty"`
+	AdditionalProperties map[string]interface{}   `json:",remain"`
 }
 
 type _ListNetworkServerGroups200ResponseAllOfGroupsInnerMembersInner ListNetworkServerGroups200ResponseAllOfGroupsInnerMembersInner
@@ -406,7 +406,7 @@ func (o *ListNetworkServerGroups200ResponseAllOfGroupsInnerMembersInner) SetMemb
 }
 
 func (o ListNetworkServerGroups200ResponseAllOfGroupsInnerMembersInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -455,72 +455,8 @@ func (o ListNetworkServerGroups200ResponseAllOfGroupsInnerMembersInner) ToMap() 
 
 	return toSerialize, nil
 }
-
 func (o *ListNetworkServerGroups200ResponseAllOfGroupsInnerMembersInner) UnmarshalJSON(data []byte) (err error) {
-	varListNetworkServerGroups200ResponseAllOfGroupsInnerMembersInner := _ListNetworkServerGroups200ResponseAllOfGroupsInnerMembersInner{}
-
-	err = json.Unmarshal(data, &varListNetworkServerGroups200ResponseAllOfGroupsInnerMembersInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListNetworkServerGroups200ResponseAllOfGroupsInnerMembersInner(varListNetworkServerGroups200ResponseAllOfGroupsInnerMembersInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "category")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "memberName")
-		delete(additionalProperties, "memberType")
-		delete(additionalProperties, "memberValue")
-		delete(additionalProperties, "memberExpression")
-		delete(additionalProperties, "displayOrder")
-		delete(additionalProperties, "internalId")
-		delete(additionalProperties, "externalId")
-		delete(additionalProperties, "members")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListNetworkServerGroups200ResponseAllOfGroupsInnerMembersInner struct {
-	value *ListNetworkServerGroups200ResponseAllOfGroupsInnerMembersInner
-	isSet bool
-}
-
-func (v NullableListNetworkServerGroups200ResponseAllOfGroupsInnerMembersInner) Get() *ListNetworkServerGroups200ResponseAllOfGroupsInnerMembersInner {
-	return v.value
-}
-
-func (v *NullableListNetworkServerGroups200ResponseAllOfGroupsInnerMembersInner) Set(val *ListNetworkServerGroups200ResponseAllOfGroupsInnerMembersInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListNetworkServerGroups200ResponseAllOfGroupsInnerMembersInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListNetworkServerGroups200ResponseAllOfGroupsInnerMembersInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListNetworkServerGroups200ResponseAllOfGroupsInnerMembersInner(val *ListNetworkServerGroups200ResponseAllOfGroupsInnerMembersInner) *NullableListNetworkServerGroups200ResponseAllOfGroupsInnerMembersInner {
-	return &NullableListNetworkServerGroups200ResponseAllOfGroupsInnerMembersInner{value: val, isSet: true}
-}
-
-func (v NullableListNetworkServerGroups200ResponseAllOfGroupsInnerMembersInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListNetworkServerGroups200ResponseAllOfGroupsInnerMembersInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -20,9 +20,9 @@ var _ MappedNullable = &AddIncident200Response{}
 
 // AddIncident200Response struct for AddIncident200Response
 type AddIncident200Response struct {
-	Incident *GetCheckApps200ResponseOpenIncidentsInner `json:"incident,omitempty"`
-	Success *bool `json:"success,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Incident             *GetCheckApps200ResponseOpenIncidentsInner `json:"incident,omitempty"`
+	Success              *bool                                      `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{}                     `json:",remain"`
 }
 
 type _AddIncident200Response AddIncident200Response
@@ -109,7 +109,7 @@ func (o *AddIncident200Response) SetSuccess(v bool) {
 }
 
 func (o AddIncident200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -131,63 +131,8 @@ func (o AddIncident200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *AddIncident200Response) UnmarshalJSON(data []byte) (err error) {
-	varAddIncident200Response := _AddIncident200Response{}
-
-	err = json.Unmarshal(data, &varAddIncident200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddIncident200Response(varAddIncident200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "incident")
-		delete(additionalProperties, "success")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddIncident200Response struct {
-	value *AddIncident200Response
-	isSet bool
-}
-
-func (v NullableAddIncident200Response) Get() *AddIncident200Response {
-	return v.value
-}
-
-func (v *NullableAddIncident200Response) Set(val *AddIncident200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddIncident200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddIncident200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddIncident200Response(val *AddIncident200Response) *NullableAddIncident200Response {
-	return &NullableAddIncident200Response{value: val, isSet: true}
-}
-
-func (v NullableAddIncident200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddIncident200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

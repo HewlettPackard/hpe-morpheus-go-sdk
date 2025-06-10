@@ -14,6 +14,7 @@ package sdk
 import (
 	"encoding/json"
 	"fmt"
+
 	"gopkg.in/validator.v2"
 )
 
@@ -22,7 +23,7 @@ var _ fmt.Stringer
 
 // AddAppsRequestBlueprintId - The ID of the Blueprint. Use \"existing\" to create a blank app.
 type AddAppsRequestBlueprintId struct {
-	Int64 *int64
+	Int64  *int64
 	String *string
 }
 
@@ -40,6 +41,21 @@ func StringAsAddAppsRequestBlueprintId(v *string) AddAppsRequestBlueprintId {
 	}
 }
 
+func (dst *AddAppsRequestBlueprintId) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &AddAppsRequestBlueprintId{}
+	}
+
+	if out, ok := data.(int64); ok {
+		dst.Int64 = &out
+	}
+
+	if out, ok := data.(string); ok {
+		dst.String = &out
+	}
+
+	return dst, nil
+}
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddAppsRequestBlueprintId) UnmarshalJSON(data []byte) error {
@@ -106,7 +122,7 @@ func (src AddAppsRequestBlueprintId) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AddAppsRequestBlueprintId) GetActualInstance() (interface{}) {
+func (obj *AddAppsRequestBlueprintId) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -123,7 +139,7 @@ func (obj *AddAppsRequestBlueprintId) GetActualInstance() (interface{}) {
 }
 
 // Get the actual instance value
-func (obj AddAppsRequestBlueprintId) GetActualInstanceValue() (interface{}) {
+func (obj AddAppsRequestBlueprintId) GetActualInstanceValue() interface{} {
 	if obj.Int64 != nil {
 		return *obj.Int64
 	}
@@ -171,5 +187,3 @@ func (v *NullableAddAppsRequestBlueprintId) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

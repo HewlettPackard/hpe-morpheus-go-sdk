@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the AddLogSettingsSyslogRulesRequestSyslogRule type satisfies the MappedNullable interface at compile time
@@ -24,8 +23,8 @@ type AddLogSettingsSyslogRulesRequestSyslogRule struct {
 	// Name of rule
 	Name string `json:"name"`
 	// Rule configuration
-	Rule string `json:"rule"`
-	AdditionalProperties map[string]interface{}
+	Rule                 string                 `json:"rule"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddLogSettingsSyslogRulesRequestSyslogRule AddLogSettingsSyslogRulesRequestSyslogRule
@@ -98,7 +97,7 @@ func (o *AddLogSettingsSyslogRulesRequestSyslogRule) SetRule(v string) {
 }
 
 func (o AddLogSettingsSyslogRulesRequestSyslogRule) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -116,85 +115,8 @@ func (o AddLogSettingsSyslogRulesRequestSyslogRule) ToMap() (map[string]interfac
 
 	return toSerialize, nil
 }
-
 func (o *AddLogSettingsSyslogRulesRequestSyslogRule) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"name",
-		"rule",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varAddLogSettingsSyslogRulesRequestSyslogRule := _AddLogSettingsSyslogRulesRequestSyslogRule{}
-
-	err = json.Unmarshal(data, &varAddLogSettingsSyslogRulesRequestSyslogRule)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddLogSettingsSyslogRulesRequestSyslogRule(varAddLogSettingsSyslogRulesRequestSyslogRule)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "rule")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddLogSettingsSyslogRulesRequestSyslogRule struct {
-	value *AddLogSettingsSyslogRulesRequestSyslogRule
-	isSet bool
-}
-
-func (v NullableAddLogSettingsSyslogRulesRequestSyslogRule) Get() *AddLogSettingsSyslogRulesRequestSyslogRule {
-	return v.value
-}
-
-func (v *NullableAddLogSettingsSyslogRulesRequestSyslogRule) Set(val *AddLogSettingsSyslogRulesRequestSyslogRule) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddLogSettingsSyslogRulesRequestSyslogRule) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddLogSettingsSyslogRulesRequestSyslogRule) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddLogSettingsSyslogRulesRequestSyslogRule(val *AddLogSettingsSyslogRulesRequestSyslogRule) *NullableAddLogSettingsSyslogRulesRequestSyslogRule {
-	return &NullableAddLogSettingsSyslogRulesRequestSyslogRule{value: val, isSet: true}
-}
-
-func (v NullableAddLogSettingsSyslogRulesRequestSyslogRule) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddLogSettingsSyslogRulesRequestSyslogRule) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

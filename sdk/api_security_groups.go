@@ -21,14 +21,13 @@ import (
 	"strings"
 )
 
-
 // SecurityGroupsAPIService SecurityGroupsAPI service
 type SecurityGroupsAPIService service
 
 type ApiAddSecurityGroupLocationsRequest struct {
-	ctx context.Context
-	ApiService *SecurityGroupsAPIService
-	id int64
+	ctx                              context.Context
+	ApiService                       *SecurityGroupsAPIService
+	id                               int64
 	addSecurityGroupLocationsRequest *AddSecurityGroupLocationsRequest
 }
 
@@ -46,27 +45,27 @@ AddSecurityGroupLocations Creates a Security Group Location
 
 Creates a security group location.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiAddSecurityGroupLocationsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiAddSecurityGroupLocationsRequest
 */
 func (a *SecurityGroupsAPIService) AddSecurityGroupLocations(ctx context.Context, id int64) ApiAddSecurityGroupLocationsRequest {
 	return ApiAddSecurityGroupLocationsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return AddSecurityGroupLocations200Response
+//
+//	@return AddSecurityGroupLocations200Response
 func (a *SecurityGroupsAPIService) AddSecurityGroupLocationsExecute(r ApiAddSecurityGroupLocationsRequest) (*AddSecurityGroupLocations200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddSecurityGroupLocations200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddSecurityGroupLocations200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecurityGroupsAPIService.AddSecurityGroupLocations")
@@ -119,7 +118,7 @@ func (a *SecurityGroupsAPIService) AddSecurityGroupLocationsExecute(r ApiAddSecu
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -128,8 +127,8 @@ func (a *SecurityGroupsAPIService) AddSecurityGroupLocationsExecute(r ApiAddSecu
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -139,8 +138,8 @@ func (a *SecurityGroupsAPIService) AddSecurityGroupLocationsExecute(r ApiAddSecu
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -148,8 +147,8 @@ func (a *SecurityGroupsAPIService) AddSecurityGroupLocationsExecute(r ApiAddSecu
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -158,9 +157,9 @@ func (a *SecurityGroupsAPIService) AddSecurityGroupLocationsExecute(r ApiAddSecu
 }
 
 type ApiAddSecurityGroupRulesRequest struct {
-	ctx context.Context
-	ApiService *SecurityGroupsAPIService
-	id int64
+	ctx                          context.Context
+	ApiService                   *SecurityGroupsAPIService
+	id                           int64
 	addSecurityGroupRulesRequest *AddSecurityGroupRulesRequest
 }
 
@@ -178,27 +177,27 @@ AddSecurityGroupRules Creates a Security Group Rule
 
 Creates a security group rule on specified security group.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiAddSecurityGroupRulesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiAddSecurityGroupRulesRequest
 */
 func (a *SecurityGroupsAPIService) AddSecurityGroupRules(ctx context.Context, id int64) ApiAddSecurityGroupRulesRequest {
 	return ApiAddSecurityGroupRulesRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return AddSecurityGroupRules200Response
+//
+//	@return AddSecurityGroupRules200Response
 func (a *SecurityGroupsAPIService) AddSecurityGroupRulesExecute(r ApiAddSecurityGroupRulesRequest) (*AddSecurityGroupRules200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddSecurityGroupRules200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddSecurityGroupRules200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecurityGroupsAPIService.AddSecurityGroupRules")
@@ -251,7 +250,7 @@ func (a *SecurityGroupsAPIService) AddSecurityGroupRulesExecute(r ApiAddSecurity
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -260,8 +259,8 @@ func (a *SecurityGroupsAPIService) AddSecurityGroupRulesExecute(r ApiAddSecurity
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -271,8 +270,8 @@ func (a *SecurityGroupsAPIService) AddSecurityGroupRulesExecute(r ApiAddSecurity
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -280,8 +279,8 @@ func (a *SecurityGroupsAPIService) AddSecurityGroupRulesExecute(r ApiAddSecurity
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -290,8 +289,8 @@ func (a *SecurityGroupsAPIService) AddSecurityGroupRulesExecute(r ApiAddSecurity
 }
 
 type ApiAddSecurityGroupsRequest struct {
-	ctx context.Context
-	ApiService *SecurityGroupsAPIService
+	ctx                      context.Context
+	ApiService               *SecurityGroupsAPIService
 	addSecurityGroupsRequest *AddSecurityGroupsRequest
 }
 
@@ -309,25 +308,25 @@ AddSecurityGroups Creates a Security Group
 
 Creates a security group.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddSecurityGroupsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddSecurityGroupsRequest
 */
 func (a *SecurityGroupsAPIService) AddSecurityGroups(ctx context.Context) ApiAddSecurityGroupsRequest {
 	return ApiAddSecurityGroupsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddSecurityGroups200Response
+//
+//	@return AddSecurityGroups200Response
 func (a *SecurityGroupsAPIService) AddSecurityGroupsExecute(r ApiAddSecurityGroupsRequest) (*AddSecurityGroups200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddSecurityGroups200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddSecurityGroups200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecurityGroupsAPIService.AddSecurityGroups")
@@ -379,7 +378,7 @@ func (a *SecurityGroupsAPIService) AddSecurityGroupsExecute(r ApiAddSecurityGrou
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -388,8 +387,8 @@ func (a *SecurityGroupsAPIService) AddSecurityGroupsExecute(r ApiAddSecurityGrou
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -399,8 +398,8 @@ func (a *SecurityGroupsAPIService) AddSecurityGroupsExecute(r ApiAddSecurityGrou
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -408,8 +407,8 @@ func (a *SecurityGroupsAPIService) AddSecurityGroupsExecute(r ApiAddSecurityGrou
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -418,10 +417,10 @@ func (a *SecurityGroupsAPIService) AddSecurityGroupsExecute(r ApiAddSecurityGrou
 }
 
 type ApiGetSecurityGroupRulesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecurityGroupsAPIService
-	id int64
-	sgId float32
+	id         int64
+	sgId       float32
 }
 
 func (r ApiGetSecurityGroupRulesRequest) Execute() (*GetSecurityGroupRules200Response, *http.Response, error) {
@@ -433,29 +432,29 @@ GetSecurityGroupRules Retrieves a Specific Security Group Rule
 
 Retrieves a specific security group rule.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @param sgId Morpheus ID of the security group rule being referenced
- @return ApiGetSecurityGroupRulesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@param sgId Morpheus ID of the security group rule being referenced
+	@return ApiGetSecurityGroupRulesRequest
 */
 func (a *SecurityGroupsAPIService) GetSecurityGroupRules(ctx context.Context, id int64, sgId float32) ApiGetSecurityGroupRulesRequest {
 	return ApiGetSecurityGroupRulesRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
-		sgId: sgId,
+		ctx:        ctx,
+		id:         id,
+		sgId:       sgId,
 	}
 }
 
 // Execute executes the request
-//  @return GetSecurityGroupRules200Response
+//
+//	@return GetSecurityGroupRules200Response
 func (a *SecurityGroupsAPIService) GetSecurityGroupRulesExecute(r ApiGetSecurityGroupRulesRequest) (*GetSecurityGroupRules200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetSecurityGroupRules200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetSecurityGroupRules200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecurityGroupsAPIService.GetSecurityGroupRules")
@@ -507,7 +506,7 @@ func (a *SecurityGroupsAPIService) GetSecurityGroupRulesExecute(r ApiGetSecurity
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -516,8 +515,8 @@ func (a *SecurityGroupsAPIService) GetSecurityGroupRulesExecute(r ApiGetSecurity
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -527,8 +526,8 @@ func (a *SecurityGroupsAPIService) GetSecurityGroupRulesExecute(r ApiGetSecurity
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -536,8 +535,8 @@ func (a *SecurityGroupsAPIService) GetSecurityGroupRulesExecute(r ApiGetSecurity
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -546,9 +545,9 @@ func (a *SecurityGroupsAPIService) GetSecurityGroupRulesExecute(r ApiGetSecurity
 }
 
 type ApiGetSecurityGroupsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecurityGroupsAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetSecurityGroupsRequest) Execute() (*GetSecurityGroups200Response, *http.Response, error) {
@@ -560,27 +559,27 @@ GetSecurityGroups Retrieves a Specific Security Group
 
 Retrieves a specific security group.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetSecurityGroupsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetSecurityGroupsRequest
 */
 func (a *SecurityGroupsAPIService) GetSecurityGroups(ctx context.Context, id int64) ApiGetSecurityGroupsRequest {
 	return ApiGetSecurityGroupsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetSecurityGroups200Response
+//
+//	@return GetSecurityGroups200Response
 func (a *SecurityGroupsAPIService) GetSecurityGroupsExecute(r ApiGetSecurityGroupsRequest) (*GetSecurityGroups200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetSecurityGroups200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetSecurityGroups200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecurityGroupsAPIService.GetSecurityGroups")
@@ -631,7 +630,7 @@ func (a *SecurityGroupsAPIService) GetSecurityGroupsExecute(r ApiGetSecurityGrou
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -640,8 +639,8 @@ func (a *SecurityGroupsAPIService) GetSecurityGroupsExecute(r ApiGetSecurityGrou
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -651,8 +650,8 @@ func (a *SecurityGroupsAPIService) GetSecurityGroupsExecute(r ApiGetSecurityGrou
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -660,8 +659,8 @@ func (a *SecurityGroupsAPIService) GetSecurityGroupsExecute(r ApiGetSecurityGrou
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -670,15 +669,15 @@ func (a *SecurityGroupsAPIService) GetSecurityGroupsExecute(r ApiGetSecurityGrou
 }
 
 type ApiListSecurityGroupRulesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecurityGroupsAPIService
-	id int64
-	max *int64
-	offset *int64
-	sort *string
-	direction *string
-	phrase *string
-	name *string
+	id         int64
+	max        *int64
+	offset     *int64
+	sort       *string
+	direction  *string
+	phrase     *string
+	name       *string
 }
 
 // Maximum number of records to return
@@ -726,27 +725,27 @@ ListSecurityGroupRules Retrieves all Security Group Rules
 
 Retrieves all security group rules for specified security group.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiListSecurityGroupRulesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiListSecurityGroupRulesRequest
 */
 func (a *SecurityGroupsAPIService) ListSecurityGroupRules(ctx context.Context, id int64) ApiListSecurityGroupRulesRequest {
 	return ApiListSecurityGroupRulesRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return ListSecurityGroupRules200Response
+//
+//	@return ListSecurityGroupRules200Response
 func (a *SecurityGroupsAPIService) ListSecurityGroupRulesExecute(r ApiListSecurityGroupRulesRequest) (*ListSecurityGroupRules200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListSecurityGroupRules200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListSecurityGroupRules200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecurityGroupsAPIService.ListSecurityGroupRules")
@@ -827,7 +826,7 @@ func (a *SecurityGroupsAPIService) ListSecurityGroupRulesExecute(r ApiListSecuri
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -836,8 +835,8 @@ func (a *SecurityGroupsAPIService) ListSecurityGroupRulesExecute(r ApiListSecuri
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -847,8 +846,8 @@ func (a *SecurityGroupsAPIService) ListSecurityGroupRulesExecute(r ApiListSecuri
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -856,8 +855,8 @@ func (a *SecurityGroupsAPIService) ListSecurityGroupRulesExecute(r ApiListSecuri
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -866,14 +865,14 @@ func (a *SecurityGroupsAPIService) ListSecurityGroupRulesExecute(r ApiListSecuri
 }
 
 type ApiListSecurityGroupsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecurityGroupsAPIService
-	max *int64
-	offset *int64
-	sort *string
-	direction *string
-	phrase *string
-	name *string
+	max        *int64
+	offset     *int64
+	sort       *string
+	direction  *string
+	phrase     *string
+	name       *string
 }
 
 // Maximum number of records to return
@@ -921,25 +920,25 @@ ListSecurityGroups Retrieves all Security Groups
 
 This endpoint retrieves all security groups and their JSON encoded configuration attributes.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListSecurityGroupsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListSecurityGroupsRequest
 */
 func (a *SecurityGroupsAPIService) ListSecurityGroups(ctx context.Context) ApiListSecurityGroupsRequest {
 	return ApiListSecurityGroupsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListSecurityGroups200Response
+//
+//	@return ListSecurityGroups200Response
 func (a *SecurityGroupsAPIService) ListSecurityGroupsExecute(r ApiListSecurityGroupsRequest) (*ListSecurityGroups200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListSecurityGroups200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListSecurityGroups200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecurityGroupsAPIService.ListSecurityGroups")
@@ -1019,7 +1018,7 @@ func (a *SecurityGroupsAPIService) ListSecurityGroupsExecute(r ApiListSecurityGr
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1028,8 +1027,8 @@ func (a *SecurityGroupsAPIService) ListSecurityGroupsExecute(r ApiListSecurityGr
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1039,8 +1038,8 @@ func (a *SecurityGroupsAPIService) ListSecurityGroupsExecute(r ApiListSecurityGr
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1048,8 +1047,8 @@ func (a *SecurityGroupsAPIService) ListSecurityGroupsExecute(r ApiListSecurityGr
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1058,9 +1057,9 @@ func (a *SecurityGroupsAPIService) ListSecurityGroupsExecute(r ApiListSecurityGr
 }
 
 type ApiRemoveSecurityGroupLocationsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecurityGroupsAPIService
-	id int64
+	id         int64
 	locationId float32
 }
 
@@ -1073,29 +1072,29 @@ RemoveSecurityGroupLocations Deletes a Security Group Location
 
 Deletes a security group location.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @param locationId The ID of the location
- @return ApiRemoveSecurityGroupLocationsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@param locationId The ID of the location
+	@return ApiRemoveSecurityGroupLocationsRequest
 */
 func (a *SecurityGroupsAPIService) RemoveSecurityGroupLocations(ctx context.Context, id int64, locationId float32) ApiRemoveSecurityGroupLocationsRequest {
 	return ApiRemoveSecurityGroupLocationsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 		locationId: locationId,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *SecurityGroupsAPIService) RemoveSecurityGroupLocationsExecute(r ApiRemoveSecurityGroupLocationsRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecurityGroupsAPIService.RemoveSecurityGroupLocations")
@@ -1147,7 +1146,7 @@ func (a *SecurityGroupsAPIService) RemoveSecurityGroupLocationsExecute(r ApiRemo
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1156,8 +1155,8 @@ func (a *SecurityGroupsAPIService) RemoveSecurityGroupLocationsExecute(r ApiRemo
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1167,8 +1166,8 @@ func (a *SecurityGroupsAPIService) RemoveSecurityGroupLocationsExecute(r ApiRemo
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1176,8 +1175,8 @@ func (a *SecurityGroupsAPIService) RemoveSecurityGroupLocationsExecute(r ApiRemo
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1186,10 +1185,10 @@ func (a *SecurityGroupsAPIService) RemoveSecurityGroupLocationsExecute(r ApiRemo
 }
 
 type ApiRemoveSecurityGroupRulesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecurityGroupsAPIService
-	id int64
-	sgId float32
+	id         int64
+	sgId       float32
 }
 
 func (r ApiRemoveSecurityGroupRulesRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -1201,29 +1200,29 @@ RemoveSecurityGroupRules Deletes a Security Group Rule
 
 Deletes a security group rule.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @param sgId Morpheus ID of the security group rule being referenced
- @return ApiRemoveSecurityGroupRulesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@param sgId Morpheus ID of the security group rule being referenced
+	@return ApiRemoveSecurityGroupRulesRequest
 */
 func (a *SecurityGroupsAPIService) RemoveSecurityGroupRules(ctx context.Context, id int64, sgId float32) ApiRemoveSecurityGroupRulesRequest {
 	return ApiRemoveSecurityGroupRulesRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
-		sgId: sgId,
+		ctx:        ctx,
+		id:         id,
+		sgId:       sgId,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *SecurityGroupsAPIService) RemoveSecurityGroupRulesExecute(r ApiRemoveSecurityGroupRulesRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecurityGroupsAPIService.RemoveSecurityGroupRules")
@@ -1275,7 +1274,7 @@ func (a *SecurityGroupsAPIService) RemoveSecurityGroupRulesExecute(r ApiRemoveSe
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1284,8 +1283,8 @@ func (a *SecurityGroupsAPIService) RemoveSecurityGroupRulesExecute(r ApiRemoveSe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1295,8 +1294,8 @@ func (a *SecurityGroupsAPIService) RemoveSecurityGroupRulesExecute(r ApiRemoveSe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1304,8 +1303,8 @@ func (a *SecurityGroupsAPIService) RemoveSecurityGroupRulesExecute(r ApiRemoveSe
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1314,9 +1313,9 @@ func (a *SecurityGroupsAPIService) RemoveSecurityGroupRulesExecute(r ApiRemoveSe
 }
 
 type ApiRemoveSecurityGroupsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecurityGroupsAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiRemoveSecurityGroupsRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -1328,27 +1327,27 @@ RemoveSecurityGroups Deletes a Security Group
 
 Deletes a specified security group.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiRemoveSecurityGroupsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiRemoveSecurityGroupsRequest
 */
 func (a *SecurityGroupsAPIService) RemoveSecurityGroups(ctx context.Context, id int64) ApiRemoveSecurityGroupsRequest {
 	return ApiRemoveSecurityGroupsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *SecurityGroupsAPIService) RemoveSecurityGroupsExecute(r ApiRemoveSecurityGroupsRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecurityGroupsAPIService.RemoveSecurityGroups")
@@ -1399,7 +1398,7 @@ func (a *SecurityGroupsAPIService) RemoveSecurityGroupsExecute(r ApiRemoveSecuri
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1408,8 +1407,8 @@ func (a *SecurityGroupsAPIService) RemoveSecurityGroupsExecute(r ApiRemoveSecuri
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1419,8 +1418,8 @@ func (a *SecurityGroupsAPIService) RemoveSecurityGroupsExecute(r ApiRemoveSecuri
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1428,8 +1427,8 @@ func (a *SecurityGroupsAPIService) RemoveSecurityGroupsExecute(r ApiRemoveSecuri
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1438,10 +1437,10 @@ func (a *SecurityGroupsAPIService) RemoveSecurityGroupsExecute(r ApiRemoveSecuri
 }
 
 type ApiUpdateSecurityGroupRulesRequest struct {
-	ctx context.Context
-	ApiService *SecurityGroupsAPIService
-	id int64
-	sgId float32
+	ctx                             context.Context
+	ApiService                      *SecurityGroupsAPIService
+	id                              int64
+	sgId                            float32
 	updateSecurityGroupRulesRequest *UpdateSecurityGroupRulesRequest
 }
 
@@ -1459,29 +1458,29 @@ UpdateSecurityGroupRules Updates a Security Group Rule
 
 Updates a security group rule.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @param sgId Morpheus ID of the security group rule being referenced
- @return ApiUpdateSecurityGroupRulesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@param sgId Morpheus ID of the security group rule being referenced
+	@return ApiUpdateSecurityGroupRulesRequest
 */
 func (a *SecurityGroupsAPIService) UpdateSecurityGroupRules(ctx context.Context, id int64, sgId float32) ApiUpdateSecurityGroupRulesRequest {
 	return ApiUpdateSecurityGroupRulesRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
-		sgId: sgId,
+		ctx:        ctx,
+		id:         id,
+		sgId:       sgId,
 	}
 }
 
 // Execute executes the request
-//  @return AddSecurityGroupRules200Response
+//
+//	@return AddSecurityGroupRules200Response
 func (a *SecurityGroupsAPIService) UpdateSecurityGroupRulesExecute(r ApiUpdateSecurityGroupRulesRequest) (*AddSecurityGroupRules200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddSecurityGroupRules200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddSecurityGroupRules200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecurityGroupsAPIService.UpdateSecurityGroupRules")
@@ -1535,7 +1534,7 @@ func (a *SecurityGroupsAPIService) UpdateSecurityGroupRulesExecute(r ApiUpdateSe
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1544,8 +1543,8 @@ func (a *SecurityGroupsAPIService) UpdateSecurityGroupRulesExecute(r ApiUpdateSe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1555,8 +1554,8 @@ func (a *SecurityGroupsAPIService) UpdateSecurityGroupRulesExecute(r ApiUpdateSe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1564,8 +1563,8 @@ func (a *SecurityGroupsAPIService) UpdateSecurityGroupRulesExecute(r ApiUpdateSe
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1574,9 +1573,9 @@ func (a *SecurityGroupsAPIService) UpdateSecurityGroupRulesExecute(r ApiUpdateSe
 }
 
 type ApiUpdateSecurityGroupsRequest struct {
-	ctx context.Context
-	ApiService *SecurityGroupsAPIService
-	id int64
+	ctx                         context.Context
+	ApiService                  *SecurityGroupsAPIService
+	id                          int64
 	updateSecurityGroupsRequest *UpdateSecurityGroupsRequest
 }
 
@@ -1592,29 +1591,29 @@ func (r ApiUpdateSecurityGroupsRequest) Execute() (*AddSecurityGroups200Response
 /*
 UpdateSecurityGroups Updating a Security Group
 
-Updating a Security Group
+# Updating a Security Group
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateSecurityGroupsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateSecurityGroupsRequest
 */
 func (a *SecurityGroupsAPIService) UpdateSecurityGroups(ctx context.Context, id int64) ApiUpdateSecurityGroupsRequest {
 	return ApiUpdateSecurityGroupsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return AddSecurityGroups200Response
+//
+//	@return AddSecurityGroups200Response
 func (a *SecurityGroupsAPIService) UpdateSecurityGroupsExecute(r ApiUpdateSecurityGroupsRequest) (*AddSecurityGroups200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddSecurityGroups200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddSecurityGroups200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecurityGroupsAPIService.UpdateSecurityGroups")
@@ -1667,7 +1666,7 @@ func (a *SecurityGroupsAPIService) UpdateSecurityGroupsExecute(r ApiUpdateSecuri
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1676,8 +1675,8 @@ func (a *SecurityGroupsAPIService) UpdateSecurityGroupsExecute(r ApiUpdateSecuri
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1687,8 +1686,8 @@ func (a *SecurityGroupsAPIService) UpdateSecurityGroupsExecute(r ApiUpdateSecuri
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1696,8 +1695,8 @@ func (a *SecurityGroupsAPIService) UpdateSecurityGroupsExecute(r ApiUpdateSecuri
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

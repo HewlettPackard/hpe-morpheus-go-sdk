@@ -21,8 +21,8 @@ var _ MappedNullable = &UpdateSpecTemplateRequestSpecTemplateFileRepository{}
 // UpdateSpecTemplateRequestSpecTemplateFileRepository struct for UpdateSpecTemplateRequestSpecTemplateFileRepository
 type UpdateSpecTemplateRequestSpecTemplateFileRepository struct {
 	// Code Repository ID, required for type repository. Use `/api/options/codeRepositories` to see available repositories.
-	Id *int64 `json:"id,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _UpdateSpecTemplateRequestSpecTemplateFileRepository UpdateSpecTemplateRequestSpecTemplateFileRepository
@@ -77,7 +77,7 @@ func (o *UpdateSpecTemplateRequestSpecTemplateFileRepository) SetId(v int64) {
 }
 
 func (o UpdateSpecTemplateRequestSpecTemplateFileRepository) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -96,62 +96,8 @@ func (o UpdateSpecTemplateRequestSpecTemplateFileRepository) ToMap() (map[string
 
 	return toSerialize, nil
 }
-
 func (o *UpdateSpecTemplateRequestSpecTemplateFileRepository) UnmarshalJSON(data []byte) (err error) {
-	varUpdateSpecTemplateRequestSpecTemplateFileRepository := _UpdateSpecTemplateRequestSpecTemplateFileRepository{}
-
-	err = json.Unmarshal(data, &varUpdateSpecTemplateRequestSpecTemplateFileRepository)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateSpecTemplateRequestSpecTemplateFileRepository(varUpdateSpecTemplateRequestSpecTemplateFileRepository)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateSpecTemplateRequestSpecTemplateFileRepository struct {
-	value *UpdateSpecTemplateRequestSpecTemplateFileRepository
-	isSet bool
-}
-
-func (v NullableUpdateSpecTemplateRequestSpecTemplateFileRepository) Get() *UpdateSpecTemplateRequestSpecTemplateFileRepository {
-	return v.value
-}
-
-func (v *NullableUpdateSpecTemplateRequestSpecTemplateFileRepository) Set(val *UpdateSpecTemplateRequestSpecTemplateFileRepository) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateSpecTemplateRequestSpecTemplateFileRepository) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateSpecTemplateRequestSpecTemplateFileRepository) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateSpecTemplateRequestSpecTemplateFileRepository(val *UpdateSpecTemplateRequestSpecTemplateFileRepository) *NullableUpdateSpecTemplateRequestSpecTemplateFileRepository {
-	return &NullableUpdateSpecTemplateRequestSpecTemplateFileRepository{value: val, isSet: true}
-}
-
-func (v NullableUpdateSpecTemplateRequestSpecTemplateFileRepository) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateSpecTemplateRequestSpecTemplateFileRepository) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

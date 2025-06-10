@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the InstanceTypeLayoutCreate type satisfies the MappedNullable interface at compile time
@@ -22,7 +21,7 @@ var _ MappedNullable = &InstanceTypeLayoutCreate{}
 // InstanceTypeLayoutCreate struct for InstanceTypeLayoutCreate
 type InstanceTypeLayoutCreate struct {
 	// Layout name
-	Name string `json:"name"`
+	Name   string   `json:"name"`
 	Labels []string `json:"labels,omitempty"`
 	// Version of the layout
 	InstanceVersion string `json:"instanceVersion"`
@@ -47,9 +46,9 @@ type InstanceTypeLayoutCreate struct {
 	// The environmentVariables parameter is array of env objects
 	EnvironmentVariables []AddClusterLayoutsRequestLayoutEnvironmentVariablesInner `json:"environmentVariables,omitempty"`
 	// Array of price set objects
-	PriceSets []AddInstanceTypeRequestInstanceTypePriceSetsInner `json:"priceSets,omitempty"`
-	Permissions *AddLayoutRequestInstanceTypeLayoutPermissions `json:"permissions,omitempty"`
-	AdditionalProperties map[string]interface{}
+	PriceSets            []AddInstanceTypeRequestInstanceTypePriceSetsInner `json:"priceSets,omitempty"`
+	Permissions          *AddLayoutRequestInstanceTypeLayoutPermissions     `json:"permissions,omitempty"`
+	AdditionalProperties map[string]interface{}                             `json:",remain"`
 }
 
 type _InstanceTypeLayoutCreate InstanceTypeLayoutCreate
@@ -543,7 +542,7 @@ func (o *InstanceTypeLayoutCreate) SetPermissions(v AddLayoutRequestInstanceType
 }
 
 func (o InstanceTypeLayoutCreate) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -598,99 +597,8 @@ func (o InstanceTypeLayoutCreate) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *InstanceTypeLayoutCreate) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"name",
-		"instanceVersion",
-		"provisionTypeCode",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varInstanceTypeLayoutCreate := _InstanceTypeLayoutCreate{}
-
-	err = json.Unmarshal(data, &varInstanceTypeLayoutCreate)
-
-	if err != nil {
-		return err
-	}
-
-	*o = InstanceTypeLayoutCreate(varInstanceTypeLayoutCreate)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "instanceVersion")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "creatable")
-		delete(additionalProperties, "provisionTypeCode")
-		delete(additionalProperties, "memoryRequirement")
-		delete(additionalProperties, "hasAutoScale")
-		delete(additionalProperties, "supportsConvertToManaged")
-		delete(additionalProperties, "containerTypes")
-		delete(additionalProperties, "optionTypes")
-		delete(additionalProperties, "specTemplates")
-		delete(additionalProperties, "environmentVariables")
-		delete(additionalProperties, "priceSets")
-		delete(additionalProperties, "permissions")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableInstanceTypeLayoutCreate struct {
-	value *InstanceTypeLayoutCreate
-	isSet bool
-}
-
-func (v NullableInstanceTypeLayoutCreate) Get() *InstanceTypeLayoutCreate {
-	return v.value
-}
-
-func (v *NullableInstanceTypeLayoutCreate) Set(val *InstanceTypeLayoutCreate) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableInstanceTypeLayoutCreate) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableInstanceTypeLayoutCreate) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableInstanceTypeLayoutCreate(val *InstanceTypeLayoutCreate) *NullableInstanceTypeLayoutCreate {
-	return &NullableInstanceTypeLayoutCreate{value: val, isSet: true}
-}
-
-func (v NullableInstanceTypeLayoutCreate) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableInstanceTypeLayoutCreate) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -20,8 +20,8 @@ var _ MappedNullable = &Model503Error{}
 
 // Model503Error struct for Model503Error
 type Model503Error struct {
-	Msg *string `json:"msg,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Msg                  *string                `json:"msg,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _Model503Error Model503Error
@@ -76,7 +76,7 @@ func (o *Model503Error) SetMsg(v string) {
 }
 
 func (o Model503Error) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o Model503Error) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *Model503Error) UnmarshalJSON(data []byte) (err error) {
-	varModel503Error := _Model503Error{}
-
-	err = json.Unmarshal(data, &varModel503Error)
-
-	if err != nil {
-		return err
-	}
-
-	*o = Model503Error(varModel503Error)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "msg")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableModel503Error struct {
-	value *Model503Error
-	isSet bool
-}
-
-func (v NullableModel503Error) Get() *Model503Error {
-	return v.value
-}
-
-func (v *NullableModel503Error) Set(val *Model503Error) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableModel503Error) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableModel503Error) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableModel503Error(val *Model503Error) *NullableModel503Error {
-	return &NullableModel503Error{value: val, isSet: true}
-}
-
-func (v NullableModel503Error) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableModel503Error) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

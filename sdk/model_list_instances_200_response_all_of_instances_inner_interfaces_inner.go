@@ -20,12 +20,12 @@ var _ MappedNullable = &ListInstances200ResponseAllOfInstancesInnerInterfacesInn
 
 // ListInstances200ResponseAllOfInstancesInnerInterfacesInner struct for ListInstances200ResponseAllOfInstancesInnerInterfacesInner
 type ListInstances200ResponseAllOfInstancesInnerInterfacesInner struct {
-	Id *string `json:"id,omitempty"`
-	Network *ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork `json:"network,omitempty"`
-	IpAddress *string `json:"ipAddress,omitempty"`
-	NetworkInterfaceTypeId *int64 `json:"networkInterfaceTypeId,omitempty"`
-	IpMode *string `json:"ipMode,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                     *string                                                            `json:"id,omitempty"`
+	Network                *ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork `json:"network,omitempty"`
+	IpAddress              *string                                                            `json:"ipAddress,omitempty"`
+	NetworkInterfaceTypeId *int64                                                             `json:"networkInterfaceTypeId,omitempty"`
+	IpMode                 *string                                                            `json:"ipMode,omitempty"`
+	AdditionalProperties   map[string]interface{}                                             `json:",remain"`
 }
 
 type _ListInstances200ResponseAllOfInstancesInnerInterfacesInner ListInstances200ResponseAllOfInstancesInnerInterfacesInner
@@ -208,7 +208,7 @@ func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) SetIpMode(v
 }
 
 func (o ListInstances200ResponseAllOfInstancesInnerInterfacesInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -239,66 +239,8 @@ func (o ListInstances200ResponseAllOfInstancesInnerInterfacesInner) ToMap() (map
 
 	return toSerialize, nil
 }
-
 func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) UnmarshalJSON(data []byte) (err error) {
-	varListInstances200ResponseAllOfInstancesInnerInterfacesInner := _ListInstances200ResponseAllOfInstancesInnerInterfacesInner{}
-
-	err = json.Unmarshal(data, &varListInstances200ResponseAllOfInstancesInnerInterfacesInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListInstances200ResponseAllOfInstancesInnerInterfacesInner(varListInstances200ResponseAllOfInstancesInnerInterfacesInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "network")
-		delete(additionalProperties, "ipAddress")
-		delete(additionalProperties, "networkInterfaceTypeId")
-		delete(additionalProperties, "ipMode")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListInstances200ResponseAllOfInstancesInnerInterfacesInner struct {
-	value *ListInstances200ResponseAllOfInstancesInnerInterfacesInner
-	isSet bool
-}
-
-func (v NullableListInstances200ResponseAllOfInstancesInnerInterfacesInner) Get() *ListInstances200ResponseAllOfInstancesInnerInterfacesInner {
-	return v.value
-}
-
-func (v *NullableListInstances200ResponseAllOfInstancesInnerInterfacesInner) Set(val *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListInstances200ResponseAllOfInstancesInnerInterfacesInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListInstances200ResponseAllOfInstancesInnerInterfacesInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListInstances200ResponseAllOfInstancesInnerInterfacesInner(val *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) *NullableListInstances200ResponseAllOfInstancesInnerInterfacesInner {
-	return &NullableListInstances200ResponseAllOfInstancesInnerInterfacesInner{value: val, isSet: true}
-}
-
-func (v NullableListInstances200ResponseAllOfInstancesInnerInterfacesInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListInstances200ResponseAllOfInstancesInnerInterfacesInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

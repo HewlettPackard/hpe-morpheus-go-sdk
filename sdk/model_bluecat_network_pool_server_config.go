@@ -21,8 +21,8 @@ var _ MappedNullable = &BluecatNetworkPoolServerConfig{}
 // BluecatNetworkPoolServerConfig struct for BluecatNetworkPoolServerConfig
 type BluecatNetworkPoolServerConfig struct {
 	// Inventory Existing
-	InventoryExisting *string `json:"inventoryExisting,omitempty"`
-	AdditionalProperties map[string]interface{}
+	InventoryExisting    *string                `json:"inventoryExisting,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _BluecatNetworkPoolServerConfig BluecatNetworkPoolServerConfig
@@ -81,7 +81,7 @@ func (o *BluecatNetworkPoolServerConfig) SetInventoryExisting(v string) {
 }
 
 func (o BluecatNetworkPoolServerConfig) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -100,62 +100,8 @@ func (o BluecatNetworkPoolServerConfig) ToMap() (map[string]interface{}, error) 
 
 	return toSerialize, nil
 }
-
 func (o *BluecatNetworkPoolServerConfig) UnmarshalJSON(data []byte) (err error) {
-	varBluecatNetworkPoolServerConfig := _BluecatNetworkPoolServerConfig{}
-
-	err = json.Unmarshal(data, &varBluecatNetworkPoolServerConfig)
-
-	if err != nil {
-		return err
-	}
-
-	*o = BluecatNetworkPoolServerConfig(varBluecatNetworkPoolServerConfig)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "inventoryExisting")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableBluecatNetworkPoolServerConfig struct {
-	value *BluecatNetworkPoolServerConfig
-	isSet bool
-}
-
-func (v NullableBluecatNetworkPoolServerConfig) Get() *BluecatNetworkPoolServerConfig {
-	return v.value
-}
-
-func (v *NullableBluecatNetworkPoolServerConfig) Set(val *BluecatNetworkPoolServerConfig) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableBluecatNetworkPoolServerConfig) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableBluecatNetworkPoolServerConfig) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableBluecatNetworkPoolServerConfig(val *BluecatNetworkPoolServerConfig) *NullableBluecatNetworkPoolServerConfig {
-	return &NullableBluecatNetworkPoolServerConfig{value: val, isSet: true}
-}
-
-func (v NullableBluecatNetworkPoolServerConfig) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableBluecatNetworkPoolServerConfig) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

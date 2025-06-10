@@ -20,9 +20,9 @@ var _ MappedNullable = &AddInstance200ResponseAllOfOneOfInstanceTagsInner{}
 
 // AddInstance200ResponseAllOfOneOfInstanceTagsInner struct for AddInstance200ResponseAllOfOneOfInstanceTagsInner
 type AddInstance200ResponseAllOfOneOfInstanceTagsInner struct {
-	Name *string `json:"name,omitempty"`
-	Value *string `json:"value,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Name                 *string                `json:"name,omitempty"`
+	Value                *string                `json:"value,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddInstance200ResponseAllOfOneOfInstanceTagsInner AddInstance200ResponseAllOfOneOfInstanceTagsInner
@@ -109,7 +109,7 @@ func (o *AddInstance200ResponseAllOfOneOfInstanceTagsInner) SetValue(v string) {
 }
 
 func (o AddInstance200ResponseAllOfOneOfInstanceTagsInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -131,63 +131,8 @@ func (o AddInstance200ResponseAllOfOneOfInstanceTagsInner) ToMap() (map[string]i
 
 	return toSerialize, nil
 }
-
 func (o *AddInstance200ResponseAllOfOneOfInstanceTagsInner) UnmarshalJSON(data []byte) (err error) {
-	varAddInstance200ResponseAllOfOneOfInstanceTagsInner := _AddInstance200ResponseAllOfOneOfInstanceTagsInner{}
-
-	err = json.Unmarshal(data, &varAddInstance200ResponseAllOfOneOfInstanceTagsInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddInstance200ResponseAllOfOneOfInstanceTagsInner(varAddInstance200ResponseAllOfOneOfInstanceTagsInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "value")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddInstance200ResponseAllOfOneOfInstanceTagsInner struct {
-	value *AddInstance200ResponseAllOfOneOfInstanceTagsInner
-	isSet bool
-}
-
-func (v NullableAddInstance200ResponseAllOfOneOfInstanceTagsInner) Get() *AddInstance200ResponseAllOfOneOfInstanceTagsInner {
-	return v.value
-}
-
-func (v *NullableAddInstance200ResponseAllOfOneOfInstanceTagsInner) Set(val *AddInstance200ResponseAllOfOneOfInstanceTagsInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddInstance200ResponseAllOfOneOfInstanceTagsInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddInstance200ResponseAllOfOneOfInstanceTagsInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddInstance200ResponseAllOfOneOfInstanceTagsInner(val *AddInstance200ResponseAllOfOneOfInstanceTagsInner) *NullableAddInstance200ResponseAllOfOneOfInstanceTagsInner {
-	return &NullableAddInstance200ResponseAllOfOneOfInstanceTagsInner{value: val, isSet: true}
-}
-
-func (v NullableAddInstance200ResponseAllOfOneOfInstanceTagsInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddInstance200ResponseAllOfOneOfInstanceTagsInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

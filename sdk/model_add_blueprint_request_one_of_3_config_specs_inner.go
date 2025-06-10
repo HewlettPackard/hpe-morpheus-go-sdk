@@ -20,10 +20,10 @@ var _ MappedNullable = &AddBlueprintRequestOneOf3ConfigSpecsInner{}
 
 // AddBlueprintRequestOneOf3ConfigSpecsInner struct for AddBlueprintRequestOneOf3ConfigSpecsInner
 type AddBlueprintRequestOneOf3ConfigSpecsInner struct {
-	Id *int64 `json:"id,omitempty"`
-	Value *int64 `json:"value,omitempty"`
-	Name *string `json:"name,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	Value                *int64                 `json:"value,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddBlueprintRequestOneOf3ConfigSpecsInner AddBlueprintRequestOneOf3ConfigSpecsInner
@@ -142,7 +142,7 @@ func (o *AddBlueprintRequestOneOf3ConfigSpecsInner) SetName(v string) {
 }
 
 func (o AddBlueprintRequestOneOf3ConfigSpecsInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -167,64 +167,8 @@ func (o AddBlueprintRequestOneOf3ConfigSpecsInner) ToMap() (map[string]interface
 
 	return toSerialize, nil
 }
-
 func (o *AddBlueprintRequestOneOf3ConfigSpecsInner) UnmarshalJSON(data []byte) (err error) {
-	varAddBlueprintRequestOneOf3ConfigSpecsInner := _AddBlueprintRequestOneOf3ConfigSpecsInner{}
-
-	err = json.Unmarshal(data, &varAddBlueprintRequestOneOf3ConfigSpecsInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddBlueprintRequestOneOf3ConfigSpecsInner(varAddBlueprintRequestOneOf3ConfigSpecsInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "value")
-		delete(additionalProperties, "name")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddBlueprintRequestOneOf3ConfigSpecsInner struct {
-	value *AddBlueprintRequestOneOf3ConfigSpecsInner
-	isSet bool
-}
-
-func (v NullableAddBlueprintRequestOneOf3ConfigSpecsInner) Get() *AddBlueprintRequestOneOf3ConfigSpecsInner {
-	return v.value
-}
-
-func (v *NullableAddBlueprintRequestOneOf3ConfigSpecsInner) Set(val *AddBlueprintRequestOneOf3ConfigSpecsInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddBlueprintRequestOneOf3ConfigSpecsInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddBlueprintRequestOneOf3ConfigSpecsInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddBlueprintRequestOneOf3ConfigSpecsInner(val *AddBlueprintRequestOneOf3ConfigSpecsInner) *NullableAddBlueprintRequestOneOf3ConfigSpecsInner {
-	return &NullableAddBlueprintRequestOneOf3ConfigSpecsInner{value: val, isSet: true}
-}
-
-func (v NullableAddBlueprintRequestOneOf3ConfigSpecsInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddBlueprintRequestOneOf3ConfigSpecsInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

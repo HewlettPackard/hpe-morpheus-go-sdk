@@ -14,6 +14,7 @@ package sdk
 import (
 	"encoding/json"
 	"fmt"
+
 	"gopkg.in/validator.v2"
 )
 
@@ -22,7 +23,7 @@ var _ fmt.Stringer
 
 // AddIntegrationsRequest - struct for AddIntegrationsRequest
 type AddIntegrationsRequest struct {
-	AddIntegrationsRequestOneOf *AddIntegrationsRequestOneOf
+	AddIntegrationsRequestOneOf  *AddIntegrationsRequestOneOf
 	AddIntegrationsRequestOneOf1 *AddIntegrationsRequestOneOf1
 	AddIntegrationsRequestOneOf2 *AddIntegrationsRequestOneOf2
 	AddIntegrationsRequestOneOf3 *AddIntegrationsRequestOneOf3
@@ -80,6 +81,41 @@ func AddIntegrationsRequestOneOf6AsAddIntegrationsRequest(v *AddIntegrationsRequ
 	}
 }
 
+func (dst *AddIntegrationsRequest) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &AddIntegrationsRequest{}
+	}
+
+	if out, ok := data.(AddIntegrationsRequestOneOf); ok {
+		dst.AddIntegrationsRequestOneOf = &out
+	}
+
+	if out, ok := data.(AddIntegrationsRequestOneOf1); ok {
+		dst.AddIntegrationsRequestOneOf1 = &out
+	}
+
+	if out, ok := data.(AddIntegrationsRequestOneOf2); ok {
+		dst.AddIntegrationsRequestOneOf2 = &out
+	}
+
+	if out, ok := data.(AddIntegrationsRequestOneOf3); ok {
+		dst.AddIntegrationsRequestOneOf3 = &out
+	}
+
+	if out, ok := data.(AddIntegrationsRequestOneOf4); ok {
+		dst.AddIntegrationsRequestOneOf4 = &out
+	}
+
+	if out, ok := data.(AddIntegrationsRequestOneOf5); ok {
+		dst.AddIntegrationsRequestOneOf5 = &out
+	}
+
+	if out, ok := data.(AddIntegrationsRequestOneOf6); ok {
+		dst.AddIntegrationsRequestOneOf6 = &out
+	}
+
+	return dst, nil
+}
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddIntegrationsRequest) UnmarshalJSON(data []byte) error {
@@ -256,7 +292,7 @@ func (src AddIntegrationsRequest) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AddIntegrationsRequest) GetActualInstance() (interface{}) {
+func (obj *AddIntegrationsRequest) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -293,7 +329,7 @@ func (obj *AddIntegrationsRequest) GetActualInstance() (interface{}) {
 }
 
 // Get the actual instance value
-func (obj AddIntegrationsRequest) GetActualInstanceValue() (interface{}) {
+func (obj AddIntegrationsRequest) GetActualInstanceValue() interface{} {
 	if obj.AddIntegrationsRequestOneOf != nil {
 		return *obj.AddIntegrationsRequestOneOf
 	}
@@ -361,5 +397,3 @@ func (v *NullableAddIntegrationsRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

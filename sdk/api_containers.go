@@ -21,14 +21,13 @@ import (
 	"strings"
 )
 
-
 // ContainersAPIService ContainersAPI service
 type ContainersAPIService service
 
 type ApiCloneImageContainerActionRequest struct {
-	ctx context.Context
-	ApiService *ContainersAPIService
-	id int64
+	ctx                              context.Context
+	ApiService                       *ContainersAPIService
+	id                               int64
 	cloneImageContainerActionRequest *CloneImageContainerActionRequest
 }
 
@@ -46,26 +45,27 @@ CloneImageContainerAction Clone Specific Container to Image
 
 This endpoint clones and converts a Container in its current state to image in the source Cloud and adds Virtual Image Record with metadata matching the source configuration.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiCloneImageContainerActionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiCloneImageContainerActionRequest
 */
 func (a *ContainersAPIService) CloneImageContainerAction(ctx context.Context, id int64) ApiCloneImageContainerActionRequest {
 	return ApiCloneImageContainerActionRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return ExecuteContainerAction200Response
+//
+//	@return ExecuteContainerAction200Response
 func (a *ContainersAPIService) CloneImageContainerActionExecute(r ApiCloneImageContainerActionRequest) (*ExecuteContainerAction200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ExecuteContainerAction200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ExecuteContainerAction200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ContainersAPIService.CloneImageContainerAction")
@@ -118,7 +118,7 @@ func (a *ContainersAPIService) CloneImageContainerActionExecute(r ApiCloneImageC
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -127,8 +127,8 @@ func (a *ContainersAPIService) CloneImageContainerActionExecute(r ApiCloneImageC
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -138,8 +138,8 @@ func (a *ContainersAPIService) CloneImageContainerActionExecute(r ApiCloneImageC
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -147,8 +147,8 @@ func (a *ContainersAPIService) CloneImageContainerActionExecute(r ApiCloneImageC
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -157,9 +157,9 @@ func (a *ContainersAPIService) CloneImageContainerActionExecute(r ApiCloneImageC
 }
 
 type ApiContainersAttachFloatingIpRequest struct {
-	ctx context.Context
-	ApiService *ContainersAPIService
-	id int64
+	ctx                               context.Context
+	ApiService                        *ContainersAPIService
+	id                                int64
 	containersAttachFloatingIpRequest *ContainersAttachFloatingIpRequest
 }
 
@@ -177,26 +177,27 @@ ContainersAttachFloatingIp Attach Floating IP to Container
 
 This endpoint attaches a floating IP to a container (node/VM).
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiContainersAttachFloatingIpRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiContainersAttachFloatingIpRequest
 */
 func (a *ContainersAPIService) ContainersAttachFloatingIp(ctx context.Context, id int64) ApiContainersAttachFloatingIpRequest {
 	return ApiContainersAttachFloatingIpRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *ContainersAPIService) ContainersAttachFloatingIpExecute(r ApiContainersAttachFloatingIpRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ContainersAPIService.ContainersAttachFloatingIp")
@@ -249,7 +250,7 @@ func (a *ContainersAPIService) ContainersAttachFloatingIpExecute(r ApiContainers
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -258,8 +259,8 @@ func (a *ContainersAPIService) ContainersAttachFloatingIpExecute(r ApiContainers
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -269,8 +270,8 @@ func (a *ContainersAPIService) ContainersAttachFloatingIpExecute(r ApiContainers
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -278,8 +279,8 @@ func (a *ContainersAPIService) ContainersAttachFloatingIpExecute(r ApiContainers
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -288,9 +289,9 @@ func (a *ContainersAPIService) ContainersAttachFloatingIpExecute(r ApiContainers
 }
 
 type ApiContainersDetachFloatingIpRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ContainersAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiContainersDetachFloatingIpRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -302,26 +303,27 @@ ContainersDetachFloatingIp Detach Floating IP from Container
 
 This endpoint detaches a floating IP from a container (node/VM).
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiContainersDetachFloatingIpRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiContainersDetachFloatingIpRequest
 */
 func (a *ContainersAPIService) ContainersDetachFloatingIp(ctx context.Context, id int64) ApiContainersDetachFloatingIpRequest {
 	return ApiContainersDetachFloatingIpRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *ContainersAPIService) ContainersDetachFloatingIpExecute(r ApiContainersDetachFloatingIpRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ContainersAPIService.ContainersDetachFloatingIp")
@@ -372,7 +374,7 @@ func (a *ContainersAPIService) ContainersDetachFloatingIpExecute(r ApiContainers
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -381,8 +383,8 @@ func (a *ContainersAPIService) ContainersDetachFloatingIpExecute(r ApiContainers
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -392,8 +394,8 @@ func (a *ContainersAPIService) ContainersDetachFloatingIpExecute(r ApiContainers
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -401,8 +403,8 @@ func (a *ContainersAPIService) ContainersDetachFloatingIpExecute(r ApiContainers
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -411,9 +413,9 @@ func (a *ContainersAPIService) ContainersDetachFloatingIpExecute(r ApiContainers
 }
 
 type ApiEjectContainerActionRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ContainersAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiEjectContainerActionRequest) Execute() (*ExecuteContainerAction200Response, *http.Response, error) {
@@ -425,26 +427,27 @@ EjectContainerAction Eject a Specific Container
 
 This endpoint ejects attached disk/iso of a specific container.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiEjectContainerActionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiEjectContainerActionRequest
 */
 func (a *ContainersAPIService) EjectContainerAction(ctx context.Context, id int64) ApiEjectContainerActionRequest {
 	return ApiEjectContainerActionRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return ExecuteContainerAction200Response
+//
+//	@return ExecuteContainerAction200Response
 func (a *ContainersAPIService) EjectContainerActionExecute(r ApiEjectContainerActionRequest) (*ExecuteContainerAction200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ExecuteContainerAction200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ExecuteContainerAction200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ContainersAPIService.EjectContainerAction")
@@ -495,7 +498,7 @@ func (a *ContainersAPIService) EjectContainerActionExecute(r ApiEjectContainerAc
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -504,8 +507,8 @@ func (a *ContainersAPIService) EjectContainerActionExecute(r ApiEjectContainerAc
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -515,8 +518,8 @@ func (a *ContainersAPIService) EjectContainerActionExecute(r ApiEjectContainerAc
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -524,8 +527,8 @@ func (a *ContainersAPIService) EjectContainerActionExecute(r ApiEjectContainerAc
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -534,10 +537,10 @@ func (a *ContainersAPIService) EjectContainerActionExecute(r ApiEjectContainerAc
 }
 
 type ApiExecuteContainerActionRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ContainersAPIService
-	id int64
-	code *string
+	id         int64
+	code       *string
 }
 
 // Action code to be executed on a specific container.
@@ -555,26 +558,27 @@ ExecuteContainerAction Execute Container Action
 
 This endpoint executes a container action on specific container, such as the Remove Node action.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiExecuteContainerActionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiExecuteContainerActionRequest
 */
 func (a *ContainersAPIService) ExecuteContainerAction(ctx context.Context, id int64) ApiExecuteContainerActionRequest {
 	return ApiExecuteContainerActionRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return ExecuteContainerAction200Response
+//
+//	@return ExecuteContainerAction200Response
 func (a *ContainersAPIService) ExecuteContainerActionExecute(r ApiExecuteContainerActionRequest) (*ExecuteContainerAction200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ExecuteContainerAction200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ExecuteContainerAction200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ContainersAPIService.ExecuteContainerAction")
@@ -629,7 +633,7 @@ func (a *ContainersAPIService) ExecuteContainerActionExecute(r ApiExecuteContain
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -638,8 +642,8 @@ func (a *ContainersAPIService) ExecuteContainerActionExecute(r ApiExecuteContain
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -649,8 +653,8 @@ func (a *ContainersAPIService) ExecuteContainerActionExecute(r ApiExecuteContain
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -658,8 +662,8 @@ func (a *ContainersAPIService) ExecuteContainerActionExecute(r ApiExecuteContain
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -668,9 +672,9 @@ func (a *ContainersAPIService) ExecuteContainerActionExecute(r ApiExecuteContain
 }
 
 type ApiGetContainerRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ContainersAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetContainerRequest) Execute() (*GetContainer200Response, *http.Response, error) {
@@ -682,26 +686,27 @@ GetContainer Get a Specific Container
 
 This endpoint retrieves a specific container.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetContainerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetContainerRequest
 */
 func (a *ContainersAPIService) GetContainer(ctx context.Context, id int64) ApiGetContainerRequest {
 	return ApiGetContainerRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetContainer200Response
+//
+//	@return GetContainer200Response
 func (a *ContainersAPIService) GetContainerExecute(r ApiGetContainerRequest) (*GetContainer200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetContainer200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetContainer200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ContainersAPIService.GetContainer")
@@ -752,7 +757,7 @@ func (a *ContainersAPIService) GetContainerExecute(r ApiGetContainerRequest) (*G
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -761,8 +766,8 @@ func (a *ContainersAPIService) GetContainerExecute(r ApiGetContainerRequest) (*G
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -772,8 +777,8 @@ func (a *ContainersAPIService) GetContainerExecute(r ApiGetContainerRequest) (*G
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -781,8 +786,8 @@ func (a *ContainersAPIService) GetContainerExecute(r ApiGetContainerRequest) (*G
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -791,9 +796,9 @@ func (a *ContainersAPIService) GetContainerExecute(r ApiGetContainerRequest) (*G
 }
 
 type ApiGetContainerActionsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ContainersAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetContainerActionsRequest) Execute() (*GetContainerActions200Response, *http.Response, error) {
@@ -805,26 +810,27 @@ GetContainerActions List Container Actions
 
 This endpoint lists available actions for specific container, such as the Remove Node action.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetContainerActionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetContainerActionsRequest
 */
 func (a *ContainersAPIService) GetContainerActions(ctx context.Context, id int64) ApiGetContainerActionsRequest {
 	return ApiGetContainerActionsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetContainerActions200Response
+//
+//	@return GetContainerActions200Response
 func (a *ContainersAPIService) GetContainerActionsExecute(r ApiGetContainerActionsRequest) (*GetContainerActions200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetContainerActions200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetContainerActions200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ContainersAPIService.GetContainerActions")
@@ -875,7 +881,7 @@ func (a *ContainersAPIService) GetContainerActionsExecute(r ApiGetContainerActio
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -884,8 +890,8 @@ func (a *ContainersAPIService) GetContainerActionsExecute(r ApiGetContainerActio
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -895,8 +901,8 @@ func (a *ContainersAPIService) GetContainerActionsExecute(r ApiGetContainerActio
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -904,8 +910,8 @@ func (a *ContainersAPIService) GetContainerActionsExecute(r ApiGetContainerActio
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -914,9 +920,9 @@ func (a *ContainersAPIService) GetContainerActionsExecute(r ApiGetContainerActio
 }
 
 type ApiImportContainerActionRequest struct {
-	ctx context.Context
-	ApiService *ContainersAPIService
-	id int64
+	ctx                          context.Context
+	ApiService                   *ContainersAPIService
+	id                           int64
 	importContainerActionRequest *ImportContainerActionRequest
 }
 
@@ -934,26 +940,27 @@ ImportContainerAction Import a Specific Container
 
 This endpoint clones and exports a Container in its current state to target Storage provider and adds Virtual Image Record with metadata matching the source configuration.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiImportContainerActionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiImportContainerActionRequest
 */
 func (a *ContainersAPIService) ImportContainerAction(ctx context.Context, id int64) ApiImportContainerActionRequest {
 	return ApiImportContainerActionRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return ExecuteContainerAction200Response
+//
+//	@return ExecuteContainerAction200Response
 func (a *ContainersAPIService) ImportContainerActionExecute(r ApiImportContainerActionRequest) (*ExecuteContainerAction200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ExecuteContainerAction200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ExecuteContainerAction200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ContainersAPIService.ImportContainerAction")
@@ -1006,7 +1013,7 @@ func (a *ContainersAPIService) ImportContainerActionExecute(r ApiImportContainer
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1015,8 +1022,8 @@ func (a *ContainersAPIService) ImportContainerActionExecute(r ApiImportContainer
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1026,8 +1033,8 @@ func (a *ContainersAPIService) ImportContainerActionExecute(r ApiImportContainer
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1035,8 +1042,8 @@ func (a *ContainersAPIService) ImportContainerActionExecute(r ApiImportContainer
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1045,9 +1052,9 @@ func (a *ContainersAPIService) ImportContainerActionExecute(r ApiImportContainer
 }
 
 type ApiRestartContainerActionRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ContainersAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiRestartContainerActionRequest) Execute() (*ExecuteContainerAction200Response, *http.Response, error) {
@@ -1059,26 +1066,27 @@ RestartContainerAction Restart a Specific Container
 
 This endpoint restarts a specific container.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiRestartContainerActionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiRestartContainerActionRequest
 */
 func (a *ContainersAPIService) RestartContainerAction(ctx context.Context, id int64) ApiRestartContainerActionRequest {
 	return ApiRestartContainerActionRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return ExecuteContainerAction200Response
+//
+//	@return ExecuteContainerAction200Response
 func (a *ContainersAPIService) RestartContainerActionExecute(r ApiRestartContainerActionRequest) (*ExecuteContainerAction200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ExecuteContainerAction200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ExecuteContainerAction200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ContainersAPIService.RestartContainerAction")
@@ -1129,7 +1137,7 @@ func (a *ContainersAPIService) RestartContainerActionExecute(r ApiRestartContain
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1138,8 +1146,8 @@ func (a *ContainersAPIService) RestartContainerActionExecute(r ApiRestartContain
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1149,8 +1157,8 @@ func (a *ContainersAPIService) RestartContainerActionExecute(r ApiRestartContain
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1158,8 +1166,8 @@ func (a *ContainersAPIService) RestartContainerActionExecute(r ApiRestartContain
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1168,9 +1176,9 @@ func (a *ContainersAPIService) RestartContainerActionExecute(r ApiRestartContain
 }
 
 type ApiStartContainerActionRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ContainersAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiStartContainerActionRequest) Execute() (*ExecuteContainerAction200Response, *http.Response, error) {
@@ -1182,26 +1190,27 @@ StartContainerAction Start a Specific Container
 
 This endpoint starts a specific container.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiStartContainerActionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiStartContainerActionRequest
 */
 func (a *ContainersAPIService) StartContainerAction(ctx context.Context, id int64) ApiStartContainerActionRequest {
 	return ApiStartContainerActionRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return ExecuteContainerAction200Response
+//
+//	@return ExecuteContainerAction200Response
 func (a *ContainersAPIService) StartContainerActionExecute(r ApiStartContainerActionRequest) (*ExecuteContainerAction200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ExecuteContainerAction200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ExecuteContainerAction200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ContainersAPIService.StartContainerAction")
@@ -1252,7 +1261,7 @@ func (a *ContainersAPIService) StartContainerActionExecute(r ApiStartContainerAc
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1261,8 +1270,8 @@ func (a *ContainersAPIService) StartContainerActionExecute(r ApiStartContainerAc
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1272,8 +1281,8 @@ func (a *ContainersAPIService) StartContainerActionExecute(r ApiStartContainerAc
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1281,8 +1290,8 @@ func (a *ContainersAPIService) StartContainerActionExecute(r ApiStartContainerAc
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1291,9 +1300,9 @@ func (a *ContainersAPIService) StartContainerActionExecute(r ApiStartContainerAc
 }
 
 type ApiStopContainerActionRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ContainersAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiStopContainerActionRequest) Execute() (*ExecuteContainerAction200Response, *http.Response, error) {
@@ -1305,26 +1314,27 @@ StopContainerAction Stop a Specific Container
 
 This endpoint stops a specific container.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiStopContainerActionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiStopContainerActionRequest
 */
 func (a *ContainersAPIService) StopContainerAction(ctx context.Context, id int64) ApiStopContainerActionRequest {
 	return ApiStopContainerActionRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return ExecuteContainerAction200Response
+//
+//	@return ExecuteContainerAction200Response
 func (a *ContainersAPIService) StopContainerActionExecute(r ApiStopContainerActionRequest) (*ExecuteContainerAction200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ExecuteContainerAction200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ExecuteContainerAction200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ContainersAPIService.StopContainerAction")
@@ -1375,7 +1385,7 @@ func (a *ContainersAPIService) StopContainerActionExecute(r ApiStopContainerActi
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1384,8 +1394,8 @@ func (a *ContainersAPIService) StopContainerActionExecute(r ApiStopContainerActi
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1395,8 +1405,8 @@ func (a *ContainersAPIService) StopContainerActionExecute(r ApiStopContainerActi
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1404,8 +1414,8 @@ func (a *ContainersAPIService) StopContainerActionExecute(r ApiStopContainerActi
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1414,9 +1424,9 @@ func (a *ContainersAPIService) StopContainerActionExecute(r ApiStopContainerActi
 }
 
 type ApiSuspendContainerActionRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ContainersAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiSuspendContainerActionRequest) Execute() (*ExecuteContainerAction200Response, *http.Response, error) {
@@ -1428,26 +1438,27 @@ SuspendContainerAction Suspend a Specific Container
 
 This endpoint suspends a specific container.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiSuspendContainerActionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiSuspendContainerActionRequest
 */
 func (a *ContainersAPIService) SuspendContainerAction(ctx context.Context, id int64) ApiSuspendContainerActionRequest {
 	return ApiSuspendContainerActionRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return ExecuteContainerAction200Response
+//
+//	@return ExecuteContainerAction200Response
 func (a *ContainersAPIService) SuspendContainerActionExecute(r ApiSuspendContainerActionRequest) (*ExecuteContainerAction200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ExecuteContainerAction200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ExecuteContainerAction200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ContainersAPIService.SuspendContainerAction")
@@ -1498,7 +1509,7 @@ func (a *ContainersAPIService) SuspendContainerActionExecute(r ApiSuspendContain
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1507,8 +1518,8 @@ func (a *ContainersAPIService) SuspendContainerActionExecute(r ApiSuspendContain
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1518,8 +1529,8 @@ func (a *ContainersAPIService) SuspendContainerActionExecute(r ApiSuspendContain
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1527,8 +1538,8 @@ func (a *ContainersAPIService) SuspendContainerActionExecute(r ApiSuspendContain
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

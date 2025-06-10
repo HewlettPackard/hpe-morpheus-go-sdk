@@ -20,24 +20,24 @@ var _ MappedNullable = &ListHealth200ResponseAllOfHealthThreadsBusyThreadsInner{
 
 // ListHealth200ResponseAllOfHealthThreadsBusyThreadsInner struct for ListHealth200ResponseAllOfHealthThreadsBusyThreadsInner
 type ListHealth200ResponseAllOfHealthThreadsBusyThreadsInner struct {
-	ThreadId *int64 `json:"threadId,omitempty"`
-	Name *string `json:"name,omitempty"`
-	CpuTime *int64 `json:"cpuTime,omitempty"`
-	BlockedTime *int64 `json:"blockedTime,omitempty"`
-	LockName *string `json:"lockName,omitempty"`
-	LockOwnerId *int64 `json:"lockOwnerId,omitempty"`
-	LockOwnerName *string `json:"lockOwnerName,omitempty"`
-	State *string `json:"state,omitempty"`
-	WaitedCount *int64 `json:"waitedCount,omitempty"`
-	WaitedTime *int64 `json:"waitedTime,omitempty"`
-	IsInNative *bool `json:"isInNative,omitempty"`
-	IsSuspended *bool `json:"isSuspended,omitempty"`
-	LockedMonitors []map[string]interface{} `json:"lockedMonitors,omitempty"`
-	LockedSynchronizers []map[string]interface{} `json:"lockedSynchronizers,omitempty"`
-	LockInfo *string `json:"lockInfo,omitempty"`
-	CurrentLines *string `json:"currentLines,omitempty"`
-	CpuPercent *float32 `json:"cpuPercent,omitempty"`
-	AdditionalProperties map[string]interface{}
+	ThreadId             *int64                   `json:"threadId,omitempty"`
+	Name                 *string                  `json:"name,omitempty"`
+	CpuTime              *int64                   `json:"cpuTime,omitempty"`
+	BlockedTime          *int64                   `json:"blockedTime,omitempty"`
+	LockName             *string                  `json:"lockName,omitempty"`
+	LockOwnerId          *int64                   `json:"lockOwnerId,omitempty"`
+	LockOwnerName        *string                  `json:"lockOwnerName,omitempty"`
+	State                *string                  `json:"state,omitempty"`
+	WaitedCount          *int64                   `json:"waitedCount,omitempty"`
+	WaitedTime           *int64                   `json:"waitedTime,omitempty"`
+	IsInNative           *bool                    `json:"isInNative,omitempty"`
+	IsSuspended          *bool                    `json:"isSuspended,omitempty"`
+	LockedMonitors       []map[string]interface{} `json:"lockedMonitors,omitempty"`
+	LockedSynchronizers  []map[string]interface{} `json:"lockedSynchronizers,omitempty"`
+	LockInfo             *string                  `json:"lockInfo,omitempty"`
+	CurrentLines         *string                  `json:"currentLines,omitempty"`
+	CpuPercent           *float32                 `json:"cpuPercent,omitempty"`
+	AdditionalProperties map[string]interface{}   `json:",remain"`
 }
 
 type _ListHealth200ResponseAllOfHealthThreadsBusyThreadsInner ListHealth200ResponseAllOfHealthThreadsBusyThreadsInner
@@ -604,7 +604,7 @@ func (o *ListHealth200ResponseAllOfHealthThreadsBusyThreadsInner) SetCpuPercent(
 }
 
 func (o ListHealth200ResponseAllOfHealthThreadsBusyThreadsInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -671,78 +671,8 @@ func (o ListHealth200ResponseAllOfHealthThreadsBusyThreadsInner) ToMap() (map[st
 
 	return toSerialize, nil
 }
-
 func (o *ListHealth200ResponseAllOfHealthThreadsBusyThreadsInner) UnmarshalJSON(data []byte) (err error) {
-	varListHealth200ResponseAllOfHealthThreadsBusyThreadsInner := _ListHealth200ResponseAllOfHealthThreadsBusyThreadsInner{}
-
-	err = json.Unmarshal(data, &varListHealth200ResponseAllOfHealthThreadsBusyThreadsInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListHealth200ResponseAllOfHealthThreadsBusyThreadsInner(varListHealth200ResponseAllOfHealthThreadsBusyThreadsInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "threadId")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "cpuTime")
-		delete(additionalProperties, "blockedTime")
-		delete(additionalProperties, "lockName")
-		delete(additionalProperties, "lockOwnerId")
-		delete(additionalProperties, "lockOwnerName")
-		delete(additionalProperties, "state")
-		delete(additionalProperties, "waitedCount")
-		delete(additionalProperties, "waitedTime")
-		delete(additionalProperties, "isInNative")
-		delete(additionalProperties, "isSuspended")
-		delete(additionalProperties, "lockedMonitors")
-		delete(additionalProperties, "lockedSynchronizers")
-		delete(additionalProperties, "lockInfo")
-		delete(additionalProperties, "currentLines")
-		delete(additionalProperties, "cpuPercent")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListHealth200ResponseAllOfHealthThreadsBusyThreadsInner struct {
-	value *ListHealth200ResponseAllOfHealthThreadsBusyThreadsInner
-	isSet bool
-}
-
-func (v NullableListHealth200ResponseAllOfHealthThreadsBusyThreadsInner) Get() *ListHealth200ResponseAllOfHealthThreadsBusyThreadsInner {
-	return v.value
-}
-
-func (v *NullableListHealth200ResponseAllOfHealthThreadsBusyThreadsInner) Set(val *ListHealth200ResponseAllOfHealthThreadsBusyThreadsInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListHealth200ResponseAllOfHealthThreadsBusyThreadsInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListHealth200ResponseAllOfHealthThreadsBusyThreadsInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListHealth200ResponseAllOfHealthThreadsBusyThreadsInner(val *ListHealth200ResponseAllOfHealthThreadsBusyThreadsInner) *NullableListHealth200ResponseAllOfHealthThreadsBusyThreadsInner {
-	return &NullableListHealth200ResponseAllOfHealthThreadsBusyThreadsInner{value: val, isSet: true}
-}
-
-func (v NullableListHealth200ResponseAllOfHealthThreadsBusyThreadsInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListHealth200ResponseAllOfHealthThreadsBusyThreadsInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

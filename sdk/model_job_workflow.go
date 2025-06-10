@@ -21,29 +21,29 @@ var _ MappedNullable = &JobWorkflow{}
 
 // JobWorkflow struct for JobWorkflow
 type JobWorkflow struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Labels []string `json:"labels,omitempty"`
-	Type *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"type,omitempty"`
-	Workflow *GetAlerts200ResponseAllOfChecksInnerAccount `json:"workflow,omitempty"`
-	JobSummary *string `json:"jobSummary,omitempty"`
-	ScheduleMode *ListJobs200ResponseAllOfJobsInnerAnyOfScheduleMode `json:"scheduleMode,omitempty"`
-	DateTime *string `json:"dateTime,omitempty"`
-	Status *string `json:"status,omitempty"`
-	Namespace *string `json:"namespace,omitempty"`
-	Category *string `json:"category,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Enabled *bool `json:"enabled,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	LastRun *time.Time `json:"lastRun,omitempty"`
-	LastResult *string `json:"lastResult,omitempty"`
-	CreatedBy *ListJobs200ResponseAllOfJobsInnerAnyOfCreatedBy `json:"createdBy,omitempty"`
-	TargetType *string `json:"targetType,omitempty"`
-	Targets []ListJobs200ResponseAllOfJobsInnerAnyOfTargetsInner `json:"targets,omitempty"`
-	CustomConfig *string `json:"customConfig,omitempty"`
-	CustomOptions *ListJobs200ResponseAllOfJobsInnerAnyOfCustomOptions `json:"customOptions,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                      `json:"id,omitempty"`
+	Name                 *string                                                     `json:"name,omitempty"`
+	Labels               []string                                                    `json:"labels,omitempty"`
+	Type                 *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"type,omitempty"`
+	Workflow             *GetAlerts200ResponseAllOfChecksInnerAccount                `json:"workflow,omitempty"`
+	JobSummary           *string                                                     `json:"jobSummary,omitempty"`
+	ScheduleMode         *ListJobs200ResponseAllOfJobsInnerAnyOfScheduleMode         `json:"scheduleMode,omitempty"`
+	DateTime             *string                                                     `json:"dateTime,omitempty"`
+	Status               *string                                                     `json:"status,omitempty"`
+	Namespace            *string                                                     `json:"namespace,omitempty"`
+	Category             *string                                                     `json:"category,omitempty"`
+	Description          *string                                                     `json:"description,omitempty"`
+	Enabled              *bool                                                       `json:"enabled,omitempty"`
+	DateCreated          *time.Time                                                  `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                                  `json:"lastUpdated,omitempty"`
+	LastRun              *time.Time                                                  `json:"lastRun,omitempty"`
+	LastResult           *string                                                     `json:"lastResult,omitempty"`
+	CreatedBy            *ListJobs200ResponseAllOfJobsInnerAnyOfCreatedBy            `json:"createdBy,omitempty"`
+	TargetType           *string                                                     `json:"targetType,omitempty"`
+	Targets              []ListJobs200ResponseAllOfJobsInnerAnyOfTargetsInner        `json:"targets,omitempty"`
+	CustomConfig         *string                                                     `json:"customConfig,omitempty"`
+	CustomOptions        *ListJobs200ResponseAllOfJobsInnerAnyOfCustomOptions        `json:"customOptions,omitempty"`
+	AdditionalProperties map[string]interface{}                                      `json:",remain"`
 }
 
 type _JobWorkflow JobWorkflow
@@ -770,7 +770,7 @@ func (o *JobWorkflow) SetCustomOptions(v ListJobs200ResponseAllOfJobsInnerAnyOfC
 }
 
 func (o JobWorkflow) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -852,83 +852,8 @@ func (o JobWorkflow) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *JobWorkflow) UnmarshalJSON(data []byte) (err error) {
-	varJobWorkflow := _JobWorkflow{}
-
-	err = json.Unmarshal(data, &varJobWorkflow)
-
-	if err != nil {
-		return err
-	}
-
-	*o = JobWorkflow(varJobWorkflow)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "workflow")
-		delete(additionalProperties, "jobSummary")
-		delete(additionalProperties, "scheduleMode")
-		delete(additionalProperties, "dateTime")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "namespace")
-		delete(additionalProperties, "category")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		delete(additionalProperties, "lastRun")
-		delete(additionalProperties, "lastResult")
-		delete(additionalProperties, "createdBy")
-		delete(additionalProperties, "targetType")
-		delete(additionalProperties, "targets")
-		delete(additionalProperties, "customConfig")
-		delete(additionalProperties, "customOptions")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableJobWorkflow struct {
-	value *JobWorkflow
-	isSet bool
-}
-
-func (v NullableJobWorkflow) Get() *JobWorkflow {
-	return v.value
-}
-
-func (v *NullableJobWorkflow) Set(val *JobWorkflow) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableJobWorkflow) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableJobWorkflow) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableJobWorkflow(val *JobWorkflow) *NullableJobWorkflow {
-	return &NullableJobWorkflow{value: val, isSet: true}
-}
-
-func (v NullableJobWorkflow) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableJobWorkflow) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

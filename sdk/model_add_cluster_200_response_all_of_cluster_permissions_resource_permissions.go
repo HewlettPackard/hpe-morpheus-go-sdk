@@ -20,15 +20,15 @@ var _ MappedNullable = &AddCluster200ResponseAllOfClusterPermissionsResourcePerm
 
 // AddCluster200ResponseAllOfClusterPermissionsResourcePermissions struct for AddCluster200ResponseAllOfClusterPermissionsResourcePermissions
 type AddCluster200ResponseAllOfClusterPermissionsResourcePermissions struct {
-	DefaultStore *bool `json:"defaultStore,omitempty"`
-	AllPlans *bool `json:"allPlans,omitempty"`
-	DefaultTarget *bool `json:"defaultTarget,omitempty"`
-	CanManage *bool `json:"canManage,omitempty"`
-	All *bool `json:"all,omitempty"`
-	Account *GetAlerts200ResponseAllOfChecksInnerAccount `json:"account,omitempty"`
-	Sites []map[string]interface{} `json:"sites,omitempty"`
-	Plans []map[string]interface{} `json:"plans,omitempty"`
-	AdditionalProperties map[string]interface{}
+	DefaultStore         *bool                                        `json:"defaultStore,omitempty"`
+	AllPlans             *bool                                        `json:"allPlans,omitempty"`
+	DefaultTarget        *bool                                        `json:"defaultTarget,omitempty"`
+	CanManage            *bool                                        `json:"canManage,omitempty"`
+	All                  *bool                                        `json:"all,omitempty"`
+	Account              *GetAlerts200ResponseAllOfChecksInnerAccount `json:"account,omitempty"`
+	Sites                []map[string]interface{}                     `json:"sites,omitempty"`
+	Plans                []map[string]interface{}                     `json:"plans,omitempty"`
+	AdditionalProperties map[string]interface{}                       `json:",remain"`
 }
 
 type _AddCluster200ResponseAllOfClusterPermissionsResourcePermissions AddCluster200ResponseAllOfClusterPermissionsResourcePermissions
@@ -307,7 +307,7 @@ func (o *AddCluster200ResponseAllOfClusterPermissionsResourcePermissions) SetPla
 }
 
 func (o AddCluster200ResponseAllOfClusterPermissionsResourcePermissions) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -347,69 +347,8 @@ func (o AddCluster200ResponseAllOfClusterPermissionsResourcePermissions) ToMap()
 
 	return toSerialize, nil
 }
-
 func (o *AddCluster200ResponseAllOfClusterPermissionsResourcePermissions) UnmarshalJSON(data []byte) (err error) {
-	varAddCluster200ResponseAllOfClusterPermissionsResourcePermissions := _AddCluster200ResponseAllOfClusterPermissionsResourcePermissions{}
-
-	err = json.Unmarshal(data, &varAddCluster200ResponseAllOfClusterPermissionsResourcePermissions)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddCluster200ResponseAllOfClusterPermissionsResourcePermissions(varAddCluster200ResponseAllOfClusterPermissionsResourcePermissions)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "defaultStore")
-		delete(additionalProperties, "allPlans")
-		delete(additionalProperties, "defaultTarget")
-		delete(additionalProperties, "canManage")
-		delete(additionalProperties, "all")
-		delete(additionalProperties, "account")
-		delete(additionalProperties, "sites")
-		delete(additionalProperties, "plans")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddCluster200ResponseAllOfClusterPermissionsResourcePermissions struct {
-	value *AddCluster200ResponseAllOfClusterPermissionsResourcePermissions
-	isSet bool
-}
-
-func (v NullableAddCluster200ResponseAllOfClusterPermissionsResourcePermissions) Get() *AddCluster200ResponseAllOfClusterPermissionsResourcePermissions {
-	return v.value
-}
-
-func (v *NullableAddCluster200ResponseAllOfClusterPermissionsResourcePermissions) Set(val *AddCluster200ResponseAllOfClusterPermissionsResourcePermissions) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddCluster200ResponseAllOfClusterPermissionsResourcePermissions) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddCluster200ResponseAllOfClusterPermissionsResourcePermissions) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddCluster200ResponseAllOfClusterPermissionsResourcePermissions(val *AddCluster200ResponseAllOfClusterPermissionsResourcePermissions) *NullableAddCluster200ResponseAllOfClusterPermissionsResourcePermissions {
-	return &NullableAddCluster200ResponseAllOfClusterPermissionsResourcePermissions{value: val, isSet: true}
-}
-
-func (v NullableAddCluster200ResponseAllOfClusterPermissionsResourcePermissions) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddCluster200ResponseAllOfClusterPermissionsResourcePermissions) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

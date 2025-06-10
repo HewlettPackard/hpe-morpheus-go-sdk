@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the AddInstanceRequestPortsInner type satisfies the MappedNullable interface at compile time
@@ -26,8 +25,8 @@ type AddInstanceRequestPortsInner struct {
 	// A name for the port.
 	Name *string `json:"name,omitempty"`
 	// The load balancer protocol. HTTP, HTTPS, or TCP.
-	Lb *string `json:"lb,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Lb                   *string                `json:"lb,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddInstanceRequestPortsInner AddInstanceRequestPortsInner
@@ -139,7 +138,7 @@ func (o *AddInstanceRequestPortsInner) SetLb(v string) {
 }
 
 func (o AddInstanceRequestPortsInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -162,85 +161,8 @@ func (o AddInstanceRequestPortsInner) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *AddInstanceRequestPortsInner) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"port",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varAddInstanceRequestPortsInner := _AddInstanceRequestPortsInner{}
-
-	err = json.Unmarshal(data, &varAddInstanceRequestPortsInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddInstanceRequestPortsInner(varAddInstanceRequestPortsInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "port")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "lb")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddInstanceRequestPortsInner struct {
-	value *AddInstanceRequestPortsInner
-	isSet bool
-}
-
-func (v NullableAddInstanceRequestPortsInner) Get() *AddInstanceRequestPortsInner {
-	return v.value
-}
-
-func (v *NullableAddInstanceRequestPortsInner) Set(val *AddInstanceRequestPortsInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddInstanceRequestPortsInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddInstanceRequestPortsInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddInstanceRequestPortsInner(val *AddInstanceRequestPortsInner) *NullableAddInstanceRequestPortsInner {
-	return &NullableAddInstanceRequestPortsInner{value: val, isSet: true}
-}
-
-func (v NullableAddInstanceRequestPortsInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddInstanceRequestPortsInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -20,8 +20,8 @@ var _ MappedNullable = &ListLogs200ResponseAllOfSort{}
 
 // ListLogs200ResponseAllOfSort struct for ListLogs200ResponseAllOfSort
 type ListLogs200ResponseAllOfSort struct {
-	Ts *string `json:"ts,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Ts                   *string                `json:"ts,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListLogs200ResponseAllOfSort ListLogs200ResponseAllOfSort
@@ -76,7 +76,7 @@ func (o *ListLogs200ResponseAllOfSort) SetTs(v string) {
 }
 
 func (o ListLogs200ResponseAllOfSort) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o ListLogs200ResponseAllOfSort) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *ListLogs200ResponseAllOfSort) UnmarshalJSON(data []byte) (err error) {
-	varListLogs200ResponseAllOfSort := _ListLogs200ResponseAllOfSort{}
-
-	err = json.Unmarshal(data, &varListLogs200ResponseAllOfSort)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListLogs200ResponseAllOfSort(varListLogs200ResponseAllOfSort)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "ts")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListLogs200ResponseAllOfSort struct {
-	value *ListLogs200ResponseAllOfSort
-	isSet bool
-}
-
-func (v NullableListLogs200ResponseAllOfSort) Get() *ListLogs200ResponseAllOfSort {
-	return v.value
-}
-
-func (v *NullableListLogs200ResponseAllOfSort) Set(val *ListLogs200ResponseAllOfSort) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListLogs200ResponseAllOfSort) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListLogs200ResponseAllOfSort) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListLogs200ResponseAllOfSort(val *ListLogs200ResponseAllOfSort) *NullableListLogs200ResponseAllOfSort {
-	return &NullableListLogs200ResponseAllOfSort{value: val, isSet: true}
-}
-
-func (v NullableListLogs200ResponseAllOfSort) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListLogs200ResponseAllOfSort) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

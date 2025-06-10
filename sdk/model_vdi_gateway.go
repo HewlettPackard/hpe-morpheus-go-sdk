@@ -21,14 +21,14 @@ var _ MappedNullable = &VdiGateway{}
 
 // VdiGateway struct for VdiGateway
 type VdiGateway struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Description *string `json:"description,omitempty"`
-	GatewayUrl *string `json:"gatewayUrl,omitempty"`
-	ApiKey *string `json:"apiKey,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	Description          *string                `json:"description,omitempty"`
+	GatewayUrl           *string                `json:"gatewayUrl,omitempty"`
+	ApiKey               *string                `json:"apiKey,omitempty"`
+	DateCreated          *time.Time             `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time             `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _VdiGateway VdiGateway
@@ -275,7 +275,7 @@ func (o *VdiGateway) SetLastUpdated(v time.Time) {
 }
 
 func (o VdiGateway) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -312,68 +312,8 @@ func (o VdiGateway) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *VdiGateway) UnmarshalJSON(data []byte) (err error) {
-	varVdiGateway := _VdiGateway{}
-
-	err = json.Unmarshal(data, &varVdiGateway)
-
-	if err != nil {
-		return err
-	}
-
-	*o = VdiGateway(varVdiGateway)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "gatewayUrl")
-		delete(additionalProperties, "apiKey")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableVdiGateway struct {
-	value *VdiGateway
-	isSet bool
-}
-
-func (v NullableVdiGateway) Get() *VdiGateway {
-	return v.value
-}
-
-func (v *NullableVdiGateway) Set(val *VdiGateway) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableVdiGateway) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableVdiGateway) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableVdiGateway(val *VdiGateway) *NullableVdiGateway {
-	return &NullableVdiGateway{value: val, isSet: true}
-}
-
-func (v NullableVdiGateway) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableVdiGateway) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

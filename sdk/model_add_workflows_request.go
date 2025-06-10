@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the AddWorkflowsRequest type satisfies the MappedNullable interface at compile time
@@ -21,8 +20,8 @@ var _ MappedNullable = &AddWorkflowsRequest{}
 
 // AddWorkflowsRequest struct for AddWorkflowsRequest
 type AddWorkflowsRequest struct {
-	TaskSet AddWorkflowsRequestTaskSet `json:"taskSet"`
-	AdditionalProperties map[string]interface{}
+	TaskSet              AddWorkflowsRequestTaskSet `json:"taskSet"`
+	AdditionalProperties map[string]interface{}     `json:",remain"`
 }
 
 type _AddWorkflowsRequest AddWorkflowsRequest
@@ -70,7 +69,7 @@ func (o *AddWorkflowsRequest) SetTaskSet(v AddWorkflowsRequestTaskSet) {
 }
 
 func (o AddWorkflowsRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -87,83 +86,8 @@ func (o AddWorkflowsRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *AddWorkflowsRequest) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"taskSet",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varAddWorkflowsRequest := _AddWorkflowsRequest{}
-
-	err = json.Unmarshal(data, &varAddWorkflowsRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddWorkflowsRequest(varAddWorkflowsRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "taskSet")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddWorkflowsRequest struct {
-	value *AddWorkflowsRequest
-	isSet bool
-}
-
-func (v NullableAddWorkflowsRequest) Get() *AddWorkflowsRequest {
-	return v.value
-}
-
-func (v *NullableAddWorkflowsRequest) Set(val *AddWorkflowsRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddWorkflowsRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddWorkflowsRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddWorkflowsRequest(val *AddWorkflowsRequest) *NullableAddWorkflowsRequest {
-	return &NullableAddWorkflowsRequest{value: val, isSet: true}
-}
-
-func (v NullableAddWorkflowsRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddWorkflowsRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

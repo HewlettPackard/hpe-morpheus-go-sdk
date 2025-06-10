@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the UpdatePoliciesRequest type satisfies the MappedNullable interface at compile time
@@ -21,8 +20,8 @@ var _ MappedNullable = &UpdatePoliciesRequest{}
 
 // UpdatePoliciesRequest struct for UpdatePoliciesRequest
 type UpdatePoliciesRequest struct {
-	Policy UpdatePoliciesRequestPolicy `json:"policy"`
-	AdditionalProperties map[string]interface{}
+	Policy               UpdatePoliciesRequestPolicy `json:"policy"`
+	AdditionalProperties map[string]interface{}      `json:",remain"`
 }
 
 type _UpdatePoliciesRequest UpdatePoliciesRequest
@@ -70,7 +69,7 @@ func (o *UpdatePoliciesRequest) SetPolicy(v UpdatePoliciesRequestPolicy) {
 }
 
 func (o UpdatePoliciesRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -87,83 +86,8 @@ func (o UpdatePoliciesRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *UpdatePoliciesRequest) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"policy",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varUpdatePoliciesRequest := _UpdatePoliciesRequest{}
-
-	err = json.Unmarshal(data, &varUpdatePoliciesRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdatePoliciesRequest(varUpdatePoliciesRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "policy")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdatePoliciesRequest struct {
-	value *UpdatePoliciesRequest
-	isSet bool
-}
-
-func (v NullableUpdatePoliciesRequest) Get() *UpdatePoliciesRequest {
-	return v.value
-}
-
-func (v *NullableUpdatePoliciesRequest) Set(val *UpdatePoliciesRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdatePoliciesRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdatePoliciesRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdatePoliciesRequest(val *UpdatePoliciesRequest) *NullableUpdatePoliciesRequest {
-	return &NullableUpdatePoliciesRequest{value: val, isSet: true}
-}
-
-func (v NullableUpdatePoliciesRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdatePoliciesRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

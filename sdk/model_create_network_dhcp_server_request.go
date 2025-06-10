@@ -20,8 +20,8 @@ var _ MappedNullable = &CreateNetworkDhcpServerRequest{}
 
 // CreateNetworkDhcpServerRequest struct for CreateNetworkDhcpServerRequest
 type CreateNetworkDhcpServerRequest struct {
-	NetworkDhcpServer *CreateNetworkDhcpServerRequestNetworkDhcpServer `json:"networkDhcpServer,omitempty"`
-	AdditionalProperties map[string]interface{}
+	NetworkDhcpServer    *CreateNetworkDhcpServerRequestNetworkDhcpServer `json:"networkDhcpServer,omitempty"`
+	AdditionalProperties map[string]interface{}                           `json:",remain"`
 }
 
 type _CreateNetworkDhcpServerRequest CreateNetworkDhcpServerRequest
@@ -76,7 +76,7 @@ func (o *CreateNetworkDhcpServerRequest) SetNetworkDhcpServer(v CreateNetworkDhc
 }
 
 func (o CreateNetworkDhcpServerRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o CreateNetworkDhcpServerRequest) ToMap() (map[string]interface{}, error) 
 
 	return toSerialize, nil
 }
-
 func (o *CreateNetworkDhcpServerRequest) UnmarshalJSON(data []byte) (err error) {
-	varCreateNetworkDhcpServerRequest := _CreateNetworkDhcpServerRequest{}
-
-	err = json.Unmarshal(data, &varCreateNetworkDhcpServerRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = CreateNetworkDhcpServerRequest(varCreateNetworkDhcpServerRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "networkDhcpServer")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableCreateNetworkDhcpServerRequest struct {
-	value *CreateNetworkDhcpServerRequest
-	isSet bool
-}
-
-func (v NullableCreateNetworkDhcpServerRequest) Get() *CreateNetworkDhcpServerRequest {
-	return v.value
-}
-
-func (v *NullableCreateNetworkDhcpServerRequest) Set(val *CreateNetworkDhcpServerRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableCreateNetworkDhcpServerRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableCreateNetworkDhcpServerRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableCreateNetworkDhcpServerRequest(val *CreateNetworkDhcpServerRequest) *NullableCreateNetworkDhcpServerRequest {
-	return &NullableCreateNetworkDhcpServerRequest{value: val, isSet: true}
-}
-
-func (v NullableCreateNetworkDhcpServerRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableCreateNetworkDhcpServerRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

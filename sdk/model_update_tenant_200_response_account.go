@@ -21,23 +21,23 @@ var _ MappedNullable = &UpdateTenant200ResponseAccount{}
 
 // UpdateTenant200ResponseAccount struct for UpdateTenant200ResponseAccount
 type UpdateTenant200ResponseAccount struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Subdomain *string `json:"subdomain,omitempty"`
-	Currency *string `json:"currency,omitempty"`
-	ExternalId *string `json:"externalId,omitempty"`
-	CustomerNumber *string `json:"customerNumber,omitempty"`
-	AccountNumber *string `json:"accountNumber,omitempty"`
-	AccountName *string `json:"accountName,omitempty"`
-	Active *bool `json:"active,omitempty"`
-	Master *bool `json:"master,omitempty"`
-	Role *ListTenants200ResponseAllOfAccountsInnerRole `json:"role,omitempty"`
-	Stats *ListTenants200ResponseAllOfAccountsInnerStats `json:"stats,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	Success *bool `json:"success,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                         `json:"id,omitempty"`
+	Name                 *string                                        `json:"name,omitempty"`
+	Description          *string                                        `json:"description,omitempty"`
+	Subdomain            *string                                        `json:"subdomain,omitempty"`
+	Currency             *string                                        `json:"currency,omitempty"`
+	ExternalId           *string                                        `json:"externalId,omitempty"`
+	CustomerNumber       *string                                        `json:"customerNumber,omitempty"`
+	AccountNumber        *string                                        `json:"accountNumber,omitempty"`
+	AccountName          *string                                        `json:"accountName,omitempty"`
+	Active               *bool                                          `json:"active,omitempty"`
+	Master               *bool                                          `json:"master,omitempty"`
+	Role                 *ListTenants200ResponseAllOfAccountsInnerRole  `json:"role,omitempty"`
+	Stats                *ListTenants200ResponseAllOfAccountsInnerStats `json:"stats,omitempty"`
+	DateCreated          *time.Time                                     `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                     `json:"lastUpdated,omitempty"`
+	Success              *bool                                          `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{}                         `json:",remain"`
 }
 
 type _UpdateTenant200ResponseAccount UpdateTenant200ResponseAccount
@@ -572,7 +572,7 @@ func (o *UpdateTenant200ResponseAccount) SetSuccess(v bool) {
 }
 
 func (o UpdateTenant200ResponseAccount) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -636,77 +636,8 @@ func (o UpdateTenant200ResponseAccount) ToMap() (map[string]interface{}, error) 
 
 	return toSerialize, nil
 }
-
 func (o *UpdateTenant200ResponseAccount) UnmarshalJSON(data []byte) (err error) {
-	varUpdateTenant200ResponseAccount := _UpdateTenant200ResponseAccount{}
-
-	err = json.Unmarshal(data, &varUpdateTenant200ResponseAccount)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateTenant200ResponseAccount(varUpdateTenant200ResponseAccount)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "subdomain")
-		delete(additionalProperties, "currency")
-		delete(additionalProperties, "externalId")
-		delete(additionalProperties, "customerNumber")
-		delete(additionalProperties, "accountNumber")
-		delete(additionalProperties, "accountName")
-		delete(additionalProperties, "active")
-		delete(additionalProperties, "master")
-		delete(additionalProperties, "role")
-		delete(additionalProperties, "stats")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		delete(additionalProperties, "success")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateTenant200ResponseAccount struct {
-	value *UpdateTenant200ResponseAccount
-	isSet bool
-}
-
-func (v NullableUpdateTenant200ResponseAccount) Get() *UpdateTenant200ResponseAccount {
-	return v.value
-}
-
-func (v *NullableUpdateTenant200ResponseAccount) Set(val *UpdateTenant200ResponseAccount) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateTenant200ResponseAccount) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateTenant200ResponseAccount) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateTenant200ResponseAccount(val *UpdateTenant200ResponseAccount) *NullableUpdateTenant200ResponseAccount {
-	return &NullableUpdateTenant200ResponseAccount{value: val, isSet: true}
-}
-
-func (v NullableUpdateTenant200ResponseAccount) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateTenant200ResponseAccount) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -29,8 +29,8 @@ type UserSourceCreateCustomExternal struct {
 	// Encryption Algorithm
 	EncryptionAlgo *string `json:"encryptionAlgo,omitempty"`
 	// Encryption Key
-	EncryptionKey *string `json:"encryptionKey,omitempty"`
-	AdditionalProperties map[string]interface{}
+	EncryptionKey        *string                `json:"encryptionKey,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _UserSourceCreateCustomExternal UserSourceCreateCustomExternal
@@ -217,7 +217,7 @@ func (o *UserSourceCreateCustomExternal) SetEncryptionKey(v string) {
 }
 
 func (o UserSourceCreateCustomExternal) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -248,66 +248,8 @@ func (o UserSourceCreateCustomExternal) ToMap() (map[string]interface{}, error) 
 
 	return toSerialize, nil
 }
-
 func (o *UserSourceCreateCustomExternal) UnmarshalJSON(data []byte) (err error) {
-	varUserSourceCreateCustomExternal := _UserSourceCreateCustomExternal{}
-
-	err = json.Unmarshal(data, &varUserSourceCreateCustomExternal)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UserSourceCreateCustomExternal(varUserSourceCreateCustomExternal)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "loginUrl")
-		delete(additionalProperties, "doNotIncludeSAMLRequest")
-		delete(additionalProperties, "logout")
-		delete(additionalProperties, "encryptionAlgo")
-		delete(additionalProperties, "encryptionKey")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUserSourceCreateCustomExternal struct {
-	value *UserSourceCreateCustomExternal
-	isSet bool
-}
-
-func (v NullableUserSourceCreateCustomExternal) Get() *UserSourceCreateCustomExternal {
-	return v.value
-}
-
-func (v *NullableUserSourceCreateCustomExternal) Set(val *UserSourceCreateCustomExternal) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUserSourceCreateCustomExternal) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUserSourceCreateCustomExternal) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUserSourceCreateCustomExternal(val *UserSourceCreateCustomExternal) *NullableUserSourceCreateCustomExternal {
-	return &NullableUserSourceCreateCustomExternal{value: val, isSet: true}
-}
-
-func (v NullableUserSourceCreateCustomExternal) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUserSourceCreateCustomExternal) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

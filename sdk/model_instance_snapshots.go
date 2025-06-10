@@ -21,8 +21,8 @@ var _ MappedNullable = &InstanceSnapshots{}
 // InstanceSnapshots struct for InstanceSnapshots
 type InstanceSnapshots struct {
 	// List of snapshot objects
-	Snapshots []SnapshotsInstance200ResponseSnapshotsInner `json:"snapshots,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Snapshots            []SnapshotsInstance200ResponseSnapshotsInner `json:"snapshots,omitempty"`
+	AdditionalProperties map[string]interface{}                       `json:",remain"`
 }
 
 type _InstanceSnapshots InstanceSnapshots
@@ -77,7 +77,7 @@ func (o *InstanceSnapshots) SetSnapshots(v []SnapshotsInstance200ResponseSnapsho
 }
 
 func (o InstanceSnapshots) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -96,62 +96,8 @@ func (o InstanceSnapshots) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *InstanceSnapshots) UnmarshalJSON(data []byte) (err error) {
-	varInstanceSnapshots := _InstanceSnapshots{}
-
-	err = json.Unmarshal(data, &varInstanceSnapshots)
-
-	if err != nil {
-		return err
-	}
-
-	*o = InstanceSnapshots(varInstanceSnapshots)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "snapshots")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableInstanceSnapshots struct {
-	value *InstanceSnapshots
-	isSet bool
-}
-
-func (v NullableInstanceSnapshots) Get() *InstanceSnapshots {
-	return v.value
-}
-
-func (v *NullableInstanceSnapshots) Set(val *InstanceSnapshots) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableInstanceSnapshots) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableInstanceSnapshots) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableInstanceSnapshots(val *InstanceSnapshots) *NullableInstanceSnapshots {
-	return &NullableInstanceSnapshots{value: val, isSet: true}
-}
-
-func (v NullableInstanceSnapshots) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableInstanceSnapshots) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

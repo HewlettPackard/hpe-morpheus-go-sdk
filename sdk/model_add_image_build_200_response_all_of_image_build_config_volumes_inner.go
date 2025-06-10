@@ -20,14 +20,14 @@ var _ MappedNullable = &AddImageBuild200ResponseAllOfImageBuildConfigVolumesInne
 
 // AddImageBuild200ResponseAllOfImageBuildConfigVolumesInner struct for AddImageBuild200ResponseAllOfImageBuildConfigVolumesInner
 type AddImageBuild200ResponseAllOfImageBuildConfigVolumesInner struct {
-	Id *int64 `json:"id,omitempty"`
-	Size *int64 `json:"size,omitempty"`
-	MaxIOPS *string `json:"maxIOPS,omitempty"`
-	Name *string `json:"name,omitempty"`
-	RootVolume *bool `json:"rootVolume,omitempty"`
-	StorageType *int64 `json:"storageType,omitempty"`
-	DatastoreId *string `json:"datastoreId,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	Size                 *int64                 `json:"size,omitempty"`
+	MaxIOPS              *string                `json:"maxIOPS,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	RootVolume           *bool                  `json:"rootVolume,omitempty"`
+	StorageType          *int64                 `json:"storageType,omitempty"`
+	DatastoreId          *string                `json:"datastoreId,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddImageBuild200ResponseAllOfImageBuildConfigVolumesInner AddImageBuild200ResponseAllOfImageBuildConfigVolumesInner
@@ -274,7 +274,7 @@ func (o *AddImageBuild200ResponseAllOfImageBuildConfigVolumesInner) SetDatastore
 }
 
 func (o AddImageBuild200ResponseAllOfImageBuildConfigVolumesInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -311,68 +311,8 @@ func (o AddImageBuild200ResponseAllOfImageBuildConfigVolumesInner) ToMap() (map[
 
 	return toSerialize, nil
 }
-
 func (o *AddImageBuild200ResponseAllOfImageBuildConfigVolumesInner) UnmarshalJSON(data []byte) (err error) {
-	varAddImageBuild200ResponseAllOfImageBuildConfigVolumesInner := _AddImageBuild200ResponseAllOfImageBuildConfigVolumesInner{}
-
-	err = json.Unmarshal(data, &varAddImageBuild200ResponseAllOfImageBuildConfigVolumesInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddImageBuild200ResponseAllOfImageBuildConfigVolumesInner(varAddImageBuild200ResponseAllOfImageBuildConfigVolumesInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "size")
-		delete(additionalProperties, "maxIOPS")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "rootVolume")
-		delete(additionalProperties, "storageType")
-		delete(additionalProperties, "datastoreId")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddImageBuild200ResponseAllOfImageBuildConfigVolumesInner struct {
-	value *AddImageBuild200ResponseAllOfImageBuildConfigVolumesInner
-	isSet bool
-}
-
-func (v NullableAddImageBuild200ResponseAllOfImageBuildConfigVolumesInner) Get() *AddImageBuild200ResponseAllOfImageBuildConfigVolumesInner {
-	return v.value
-}
-
-func (v *NullableAddImageBuild200ResponseAllOfImageBuildConfigVolumesInner) Set(val *AddImageBuild200ResponseAllOfImageBuildConfigVolumesInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddImageBuild200ResponseAllOfImageBuildConfigVolumesInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddImageBuild200ResponseAllOfImageBuildConfigVolumesInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddImageBuild200ResponseAllOfImageBuildConfigVolumesInner(val *AddImageBuild200ResponseAllOfImageBuildConfigVolumesInner) *NullableAddImageBuild200ResponseAllOfImageBuildConfigVolumesInner {
-	return &NullableAddImageBuild200ResponseAllOfImageBuildConfigVolumesInner{value: val, isSet: true}
-}
-
-func (v NullableAddImageBuild200ResponseAllOfImageBuildConfigVolumesInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddImageBuild200ResponseAllOfImageBuildConfigVolumesInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -76,14 +76,14 @@ type GetLicense200ResponseInstalledLicensesInner struct {
 	// Account Name
 	AccountName *string `json:"accountName,omitempty"`
 	// License Configuration Object
-	Config map[string]interface{} `json:"config,omitempty"`
-	AmazonProductCodes *string `json:"amazonProductCodes,omitempty"`
-	Features *GetLicense200ResponseLicenseFeatures `json:"features,omitempty"`
-	ZoneTypes *string `json:"zoneTypes,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	RecalculationDate *time.Time `json:"recalculationDate,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Config               map[string]interface{}                `json:"config,omitempty"`
+	AmazonProductCodes   *string                               `json:"amazonProductCodes,omitempty"`
+	Features             *GetLicense200ResponseLicenseFeatures `json:"features,omitempty"`
+	ZoneTypes            *string                               `json:"zoneTypes,omitempty"`
+	LastUpdated          *time.Time                            `json:"lastUpdated,omitempty"`
+	DateCreated          *time.Time                            `json:"dateCreated,omitempty"`
+	RecalculationDate    *time.Time                            `json:"recalculationDate,omitempty"`
+	AdditionalProperties map[string]interface{}                `json:",remain"`
 }
 
 type _GetLicense200ResponseInstalledLicensesInner GetLicense200ResponseInstalledLicensesInner
@@ -1194,7 +1194,7 @@ func (o *GetLicense200ResponseInstalledLicensesInner) SetRecalculationDate(v tim
 }
 
 func (o GetLicense200ResponseInstalledLicensesInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1312,95 +1312,8 @@ func (o GetLicense200ResponseInstalledLicensesInner) ToMap() (map[string]interfa
 
 	return toSerialize, nil
 }
-
 func (o *GetLicense200ResponseInstalledLicensesInner) UnmarshalJSON(data []byte) (err error) {
-	varGetLicense200ResponseInstalledLicensesInner := _GetLicense200ResponseInstalledLicensesInner{}
-
-	err = json.Unmarshal(data, &varGetLicense200ResponseInstalledLicensesInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetLicense200ResponseInstalledLicensesInner(varGetLicense200ResponseInstalledLicensesInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "keyId")
-		delete(additionalProperties, "hash")
-		delete(additionalProperties, "productTier")
-		delete(additionalProperties, "startDate")
-		delete(additionalProperties, "endDate")
-		delete(additionalProperties, "maxInstances")
-		delete(additionalProperties, "maxMemory")
-		delete(additionalProperties, "maxStorage")
-		delete(additionalProperties, "limitType")
-		delete(additionalProperties, "maxManagedServers")
-		delete(additionalProperties, "maxDiscoveredServers")
-		delete(additionalProperties, "maxHosts")
-		delete(additionalProperties, "maxMvm")
-		delete(additionalProperties, "maxMvmSockets")
-		delete(additionalProperties, "maxIac")
-		delete(additionalProperties, "maxXaas")
-		delete(additionalProperties, "maxExecutions")
-		delete(additionalProperties, "maxDistributedWorkers")
-		delete(additionalProperties, "maxDiscoveredObjects")
-		delete(additionalProperties, "hardLimit")
-		delete(additionalProperties, "freeTrial")
-		delete(additionalProperties, "multiTenant")
-		delete(additionalProperties, "whitelabel")
-		delete(additionalProperties, "reportStatus")
-		delete(additionalProperties, "supportLevel")
-		delete(additionalProperties, "accountName")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "amazonProductCodes")
-		delete(additionalProperties, "features")
-		delete(additionalProperties, "zoneTypes")
-		delete(additionalProperties, "lastUpdated")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "recalculationDate")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetLicense200ResponseInstalledLicensesInner struct {
-	value *GetLicense200ResponseInstalledLicensesInner
-	isSet bool
-}
-
-func (v NullableGetLicense200ResponseInstalledLicensesInner) Get() *GetLicense200ResponseInstalledLicensesInner {
-	return v.value
-}
-
-func (v *NullableGetLicense200ResponseInstalledLicensesInner) Set(val *GetLicense200ResponseInstalledLicensesInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetLicense200ResponseInstalledLicensesInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetLicense200ResponseInstalledLicensesInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetLicense200ResponseInstalledLicensesInner(val *GetLicense200ResponseInstalledLicensesInner) *NullableGetLicense200ResponseInstalledLicensesInner {
-	return &NullableGetLicense200ResponseInstalledLicensesInner{value: val, isSet: true}
-}
-
-func (v NullableGetLicense200ResponseInstalledLicensesInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetLicense200ResponseInstalledLicensesInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -21,8 +21,8 @@ var _ MappedNullable = &UpdateUserSettingsRequestUserDefaultCloud{}
 // UpdateUserSettingsRequestUserDefaultCloud struct for UpdateUserSettingsRequestUserDefaultCloud
 type UpdateUserSettingsRequestUserDefaultCloud struct {
 	// Default Cloud ID
-	Id *int64 `json:"id,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _UpdateUserSettingsRequestUserDefaultCloud UpdateUserSettingsRequestUserDefaultCloud
@@ -77,7 +77,7 @@ func (o *UpdateUserSettingsRequestUserDefaultCloud) SetId(v int64) {
 }
 
 func (o UpdateUserSettingsRequestUserDefaultCloud) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -96,62 +96,8 @@ func (o UpdateUserSettingsRequestUserDefaultCloud) ToMap() (map[string]interface
 
 	return toSerialize, nil
 }
-
 func (o *UpdateUserSettingsRequestUserDefaultCloud) UnmarshalJSON(data []byte) (err error) {
-	varUpdateUserSettingsRequestUserDefaultCloud := _UpdateUserSettingsRequestUserDefaultCloud{}
-
-	err = json.Unmarshal(data, &varUpdateUserSettingsRequestUserDefaultCloud)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateUserSettingsRequestUserDefaultCloud(varUpdateUserSettingsRequestUserDefaultCloud)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateUserSettingsRequestUserDefaultCloud struct {
-	value *UpdateUserSettingsRequestUserDefaultCloud
-	isSet bool
-}
-
-func (v NullableUpdateUserSettingsRequestUserDefaultCloud) Get() *UpdateUserSettingsRequestUserDefaultCloud {
-	return v.value
-}
-
-func (v *NullableUpdateUserSettingsRequestUserDefaultCloud) Set(val *UpdateUserSettingsRequestUserDefaultCloud) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateUserSettingsRequestUserDefaultCloud) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateUserSettingsRequestUserDefaultCloud) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateUserSettingsRequestUserDefaultCloud(val *UpdateUserSettingsRequestUserDefaultCloud) *NullableUpdateUserSettingsRequestUserDefaultCloud {
-	return &NullableUpdateUserSettingsRequestUserDefaultCloud{value: val, isSet: true}
-}
-
-func (v NullableUpdateUserSettingsRequestUserDefaultCloud) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateUserSettingsRequestUserDefaultCloud) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

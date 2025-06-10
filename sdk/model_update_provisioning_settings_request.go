@@ -21,7 +21,7 @@ var _ MappedNullable = &UpdateProvisioningSettingsRequest{}
 // UpdateProvisioningSettingsRequest struct for UpdateProvisioningSettingsRequest
 type UpdateProvisioningSettingsRequest struct {
 	ProvisioningSettings *UpdateProvisioningSettingsRequestProvisioningSettings `json:"provisioningSettings,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                 `json:",remain"`
 }
 
 type _UpdateProvisioningSettingsRequest UpdateProvisioningSettingsRequest
@@ -76,7 +76,7 @@ func (o *UpdateProvisioningSettingsRequest) SetProvisioningSettings(v UpdateProv
 }
 
 func (o UpdateProvisioningSettingsRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o UpdateProvisioningSettingsRequest) ToMap() (map[string]interface{}, erro
 
 	return toSerialize, nil
 }
-
 func (o *UpdateProvisioningSettingsRequest) UnmarshalJSON(data []byte) (err error) {
-	varUpdateProvisioningSettingsRequest := _UpdateProvisioningSettingsRequest{}
-
-	err = json.Unmarshal(data, &varUpdateProvisioningSettingsRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateProvisioningSettingsRequest(varUpdateProvisioningSettingsRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "provisioningSettings")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateProvisioningSettingsRequest struct {
-	value *UpdateProvisioningSettingsRequest
-	isSet bool
-}
-
-func (v NullableUpdateProvisioningSettingsRequest) Get() *UpdateProvisioningSettingsRequest {
-	return v.value
-}
-
-func (v *NullableUpdateProvisioningSettingsRequest) Set(val *UpdateProvisioningSettingsRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateProvisioningSettingsRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateProvisioningSettingsRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateProvisioningSettingsRequest(val *UpdateProvisioningSettingsRequest) *NullableUpdateProvisioningSettingsRequest {
-	return &NullableUpdateProvisioningSettingsRequest{value: val, isSet: true}
-}
-
-func (v NullableUpdateProvisioningSettingsRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateProvisioningSettingsRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

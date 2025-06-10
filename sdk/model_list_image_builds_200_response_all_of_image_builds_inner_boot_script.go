@@ -20,9 +20,9 @@ var _ MappedNullable = &ListImageBuilds200ResponseAllOfImageBuildsInnerBootScrip
 
 // ListImageBuilds200ResponseAllOfImageBuildsInnerBootScript struct for ListImageBuilds200ResponseAllOfImageBuildsInnerBootScript
 type ListImageBuilds200ResponseAllOfImageBuildsInnerBootScript struct {
-	Id *int64 `json:"id,omitempty"`
-	FileName *string `json:"fileName,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	FileName             *string                `json:"fileName,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListImageBuilds200ResponseAllOfImageBuildsInnerBootScript ListImageBuilds200ResponseAllOfImageBuildsInnerBootScript
@@ -109,7 +109,7 @@ func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerBootScript) SetFileName(
 }
 
 func (o ListImageBuilds200ResponseAllOfImageBuildsInnerBootScript) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -131,63 +131,8 @@ func (o ListImageBuilds200ResponseAllOfImageBuildsInnerBootScript) ToMap() (map[
 
 	return toSerialize, nil
 }
-
 func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerBootScript) UnmarshalJSON(data []byte) (err error) {
-	varListImageBuilds200ResponseAllOfImageBuildsInnerBootScript := _ListImageBuilds200ResponseAllOfImageBuildsInnerBootScript{}
-
-	err = json.Unmarshal(data, &varListImageBuilds200ResponseAllOfImageBuildsInnerBootScript)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListImageBuilds200ResponseAllOfImageBuildsInnerBootScript(varListImageBuilds200ResponseAllOfImageBuildsInnerBootScript)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "fileName")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListImageBuilds200ResponseAllOfImageBuildsInnerBootScript struct {
-	value *ListImageBuilds200ResponseAllOfImageBuildsInnerBootScript
-	isSet bool
-}
-
-func (v NullableListImageBuilds200ResponseAllOfImageBuildsInnerBootScript) Get() *ListImageBuilds200ResponseAllOfImageBuildsInnerBootScript {
-	return v.value
-}
-
-func (v *NullableListImageBuilds200ResponseAllOfImageBuildsInnerBootScript) Set(val *ListImageBuilds200ResponseAllOfImageBuildsInnerBootScript) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListImageBuilds200ResponseAllOfImageBuildsInnerBootScript) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListImageBuilds200ResponseAllOfImageBuildsInnerBootScript) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListImageBuilds200ResponseAllOfImageBuildsInnerBootScript(val *ListImageBuilds200ResponseAllOfImageBuildsInnerBootScript) *NullableListImageBuilds200ResponseAllOfImageBuildsInnerBootScript {
-	return &NullableListImageBuilds200ResponseAllOfImageBuildsInnerBootScript{value: val, isSet: true}
-}
-
-func (v NullableListImageBuilds200ResponseAllOfImageBuildsInnerBootScript) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListImageBuilds200ResponseAllOfImageBuildsInnerBootScript) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

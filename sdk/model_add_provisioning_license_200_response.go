@@ -20,9 +20,9 @@ var _ MappedNullable = &AddProvisioningLicense200Response{}
 
 // AddProvisioningLicense200Response struct for AddProvisioningLicense200Response
 type AddProvisioningLicense200Response struct {
-	Success *bool `json:"success,omitempty"`
-	License *GetAlerts200ResponseAllOfChecksInnerAccount `json:"license,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Success              *bool                                        `json:"success,omitempty"`
+	License              *GetAlerts200ResponseAllOfChecksInnerAccount `json:"license,omitempty"`
+	AdditionalProperties map[string]interface{}                       `json:",remain"`
 }
 
 type _AddProvisioningLicense200Response AddProvisioningLicense200Response
@@ -109,7 +109,7 @@ func (o *AddProvisioningLicense200Response) SetLicense(v GetAlerts200ResponseAll
 }
 
 func (o AddProvisioningLicense200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -131,63 +131,8 @@ func (o AddProvisioningLicense200Response) ToMap() (map[string]interface{}, erro
 
 	return toSerialize, nil
 }
-
 func (o *AddProvisioningLicense200Response) UnmarshalJSON(data []byte) (err error) {
-	varAddProvisioningLicense200Response := _AddProvisioningLicense200Response{}
-
-	err = json.Unmarshal(data, &varAddProvisioningLicense200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddProvisioningLicense200Response(varAddProvisioningLicense200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "success")
-		delete(additionalProperties, "license")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddProvisioningLicense200Response struct {
-	value *AddProvisioningLicense200Response
-	isSet bool
-}
-
-func (v NullableAddProvisioningLicense200Response) Get() *AddProvisioningLicense200Response {
-	return v.value
-}
-
-func (v *NullableAddProvisioningLicense200Response) Set(val *AddProvisioningLicense200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddProvisioningLicense200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddProvisioningLicense200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddProvisioningLicense200Response(val *AddProvisioningLicense200Response) *NullableAddProvisioningLicense200Response {
-	return &NullableAddProvisioningLicense200Response{value: val, isSet: true}
-}
-
-func (v NullableAddProvisioningLicense200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddProvisioningLicense200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

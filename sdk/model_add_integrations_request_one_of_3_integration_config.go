@@ -21,8 +21,8 @@ var _ MappedNullable = &AddIntegrationsRequestOneOf3IntegrationConfig{}
 // AddIntegrationsRequestOneOf3IntegrationConfig struct for AddIntegrationsRequestOneOf3IntegrationConfig
 type AddIntegrationsRequestOneOf3IntegrationConfig struct {
 	// Apply state via Minion instead of Master (salt-call)
-	SaltApplyOnMinion *bool `json:"saltApplyOnMinion,omitempty"`
-	AdditionalProperties map[string]interface{}
+	SaltApplyOnMinion    *bool                  `json:"saltApplyOnMinion,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddIntegrationsRequestOneOf3IntegrationConfig AddIntegrationsRequestOneOf3IntegrationConfig
@@ -77,7 +77,7 @@ func (o *AddIntegrationsRequestOneOf3IntegrationConfig) SetSaltApplyOnMinion(v b
 }
 
 func (o AddIntegrationsRequestOneOf3IntegrationConfig) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -96,62 +96,8 @@ func (o AddIntegrationsRequestOneOf3IntegrationConfig) ToMap() (map[string]inter
 
 	return toSerialize, nil
 }
-
 func (o *AddIntegrationsRequestOneOf3IntegrationConfig) UnmarshalJSON(data []byte) (err error) {
-	varAddIntegrationsRequestOneOf3IntegrationConfig := _AddIntegrationsRequestOneOf3IntegrationConfig{}
-
-	err = json.Unmarshal(data, &varAddIntegrationsRequestOneOf3IntegrationConfig)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddIntegrationsRequestOneOf3IntegrationConfig(varAddIntegrationsRequestOneOf3IntegrationConfig)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "saltApplyOnMinion")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddIntegrationsRequestOneOf3IntegrationConfig struct {
-	value *AddIntegrationsRequestOneOf3IntegrationConfig
-	isSet bool
-}
-
-func (v NullableAddIntegrationsRequestOneOf3IntegrationConfig) Get() *AddIntegrationsRequestOneOf3IntegrationConfig {
-	return v.value
-}
-
-func (v *NullableAddIntegrationsRequestOneOf3IntegrationConfig) Set(val *AddIntegrationsRequestOneOf3IntegrationConfig) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddIntegrationsRequestOneOf3IntegrationConfig) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddIntegrationsRequestOneOf3IntegrationConfig) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddIntegrationsRequestOneOf3IntegrationConfig(val *AddIntegrationsRequestOneOf3IntegrationConfig) *NullableAddIntegrationsRequestOneOf3IntegrationConfig {
-	return &NullableAddIntegrationsRequestOneOf3IntegrationConfig{value: val, isSet: true}
-}
-
-func (v NullableAddIntegrationsRequestOneOf3IntegrationConfig) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddIntegrationsRequestOneOf3IntegrationConfig) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

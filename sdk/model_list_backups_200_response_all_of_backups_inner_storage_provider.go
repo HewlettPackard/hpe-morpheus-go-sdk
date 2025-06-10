@@ -23,8 +23,8 @@ type ListBackups200ResponseAllOfBackupsInnerStorageProvider struct {
 	// Storage Provider ID
 	Id *int64 `json:"id,omitempty"`
 	// Storage Provider Name
-	Name *string `json:"name,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Name                 *string                `json:"name,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListBackups200ResponseAllOfBackupsInnerStorageProvider ListBackups200ResponseAllOfBackupsInnerStorageProvider
@@ -111,7 +111,7 @@ func (o *ListBackups200ResponseAllOfBackupsInnerStorageProvider) SetName(v strin
 }
 
 func (o ListBackups200ResponseAllOfBackupsInnerStorageProvider) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -133,63 +133,8 @@ func (o ListBackups200ResponseAllOfBackupsInnerStorageProvider) ToMap() (map[str
 
 	return toSerialize, nil
 }
-
 func (o *ListBackups200ResponseAllOfBackupsInnerStorageProvider) UnmarshalJSON(data []byte) (err error) {
-	varListBackups200ResponseAllOfBackupsInnerStorageProvider := _ListBackups200ResponseAllOfBackupsInnerStorageProvider{}
-
-	err = json.Unmarshal(data, &varListBackups200ResponseAllOfBackupsInnerStorageProvider)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListBackups200ResponseAllOfBackupsInnerStorageProvider(varListBackups200ResponseAllOfBackupsInnerStorageProvider)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListBackups200ResponseAllOfBackupsInnerStorageProvider struct {
-	value *ListBackups200ResponseAllOfBackupsInnerStorageProvider
-	isSet bool
-}
-
-func (v NullableListBackups200ResponseAllOfBackupsInnerStorageProvider) Get() *ListBackups200ResponseAllOfBackupsInnerStorageProvider {
-	return v.value
-}
-
-func (v *NullableListBackups200ResponseAllOfBackupsInnerStorageProvider) Set(val *ListBackups200ResponseAllOfBackupsInnerStorageProvider) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListBackups200ResponseAllOfBackupsInnerStorageProvider) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListBackups200ResponseAllOfBackupsInnerStorageProvider) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListBackups200ResponseAllOfBackupsInnerStorageProvider(val *ListBackups200ResponseAllOfBackupsInnerStorageProvider) *NullableListBackups200ResponseAllOfBackupsInnerStorageProvider {
-	return &NullableListBackups200ResponseAllOfBackupsInnerStorageProvider{value: val, isSet: true}
-}
-
-func (v NullableListBackups200ResponseAllOfBackupsInnerStorageProvider) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListBackups200ResponseAllOfBackupsInnerStorageProvider) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

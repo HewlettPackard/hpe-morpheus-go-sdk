@@ -21,13 +21,12 @@ import (
 	"strings"
 )
 
-
 // ResourcePoolsAPIService ResourcePoolsAPI service
 type ResourcePoolsAPIService service
 
 type ApiCreateResourcePoolGroupRequest struct {
-	ctx context.Context
-	ApiService *ResourcePoolsAPIService
+	ctx                            context.Context
+	ApiService                     *ResourcePoolsAPIService
 	createResourcePoolGroupRequest *CreateResourcePoolGroupRequest
 }
 
@@ -45,25 +44,25 @@ CreateResourcePoolGroup Create a Resource Pool Group
 
 Use this command to create a resource pool group.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateResourcePoolGroupRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCreateResourcePoolGroupRequest
 */
 func (a *ResourcePoolsAPIService) CreateResourcePoolGroup(ctx context.Context) ApiCreateResourcePoolGroupRequest {
 	return ApiCreateResourcePoolGroupRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return CreateResourcePoolGroup200Response
+//
+//	@return CreateResourcePoolGroup200Response
 func (a *ResourcePoolsAPIService) CreateResourcePoolGroupExecute(r ApiCreateResourcePoolGroupRequest) (*CreateResourcePoolGroup200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CreateResourcePoolGroup200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CreateResourcePoolGroup200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ResourcePoolsAPIService.CreateResourcePoolGroup")
@@ -115,7 +114,7 @@ func (a *ResourcePoolsAPIService) CreateResourcePoolGroupExecute(r ApiCreateReso
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -124,8 +123,8 @@ func (a *ResourcePoolsAPIService) CreateResourcePoolGroupExecute(r ApiCreateReso
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -135,8 +134,8 @@ func (a *ResourcePoolsAPIService) CreateResourcePoolGroupExecute(r ApiCreateReso
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -144,8 +143,8 @@ func (a *ResourcePoolsAPIService) CreateResourcePoolGroupExecute(r ApiCreateReso
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -154,9 +153,9 @@ func (a *ResourcePoolsAPIService) CreateResourcePoolGroupExecute(r ApiCreateReso
 }
 
 type ApiDeleteResourcePoolGroupRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ResourcePoolsAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiDeleteResourcePoolGroupRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -168,26 +167,27 @@ DeleteResourcePoolGroup Delete a Resource Pool Group
 
 Will delete a Resource Pool Group from the system and make it no longer usable.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiDeleteResourcePoolGroupRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiDeleteResourcePoolGroupRequest
 */
 func (a *ResourcePoolsAPIService) DeleteResourcePoolGroup(ctx context.Context, id int64) ApiDeleteResourcePoolGroupRequest {
 	return ApiDeleteResourcePoolGroupRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *ResourcePoolsAPIService) DeleteResourcePoolGroupExecute(r ApiDeleteResourcePoolGroupRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ResourcePoolsAPIService.DeleteResourcePoolGroup")
@@ -238,7 +238,7 @@ func (a *ResourcePoolsAPIService) DeleteResourcePoolGroupExecute(r ApiDeleteReso
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -247,8 +247,8 @@ func (a *ResourcePoolsAPIService) DeleteResourcePoolGroupExecute(r ApiDeleteReso
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -258,8 +258,8 @@ func (a *ResourcePoolsAPIService) DeleteResourcePoolGroupExecute(r ApiDeleteReso
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -267,8 +267,8 @@ func (a *ResourcePoolsAPIService) DeleteResourcePoolGroupExecute(r ApiDeleteReso
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -277,7 +277,7 @@ func (a *ResourcePoolsAPIService) DeleteResourcePoolGroupExecute(r ApiDeleteReso
 }
 
 type ApiGetResourcePoolGroupsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ResourcePoolsAPIService
 }
 
@@ -290,25 +290,25 @@ GetResourcePoolGroups Get all Resource Pool Groups
 
 This endpoint retrieves all Resource Pool Groups associated with the account.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetResourcePoolGroupsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetResourcePoolGroupsRequest
 */
 func (a *ResourcePoolsAPIService) GetResourcePoolGroups(ctx context.Context) ApiGetResourcePoolGroupsRequest {
 	return ApiGetResourcePoolGroupsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return GetResourcePoolGroups200Response
+//
+//	@return GetResourcePoolGroups200Response
 func (a *ResourcePoolsAPIService) GetResourcePoolGroupsExecute(r ApiGetResourcePoolGroupsRequest) (*GetResourcePoolGroups200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetResourcePoolGroups200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetResourcePoolGroups200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ResourcePoolsAPIService.GetResourcePoolGroups")
@@ -358,7 +358,7 @@ func (a *ResourcePoolsAPIService) GetResourcePoolGroupsExecute(r ApiGetResourceP
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -367,8 +367,8 @@ func (a *ResourcePoolsAPIService) GetResourcePoolGroupsExecute(r ApiGetResourceP
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -378,8 +378,8 @@ func (a *ResourcePoolsAPIService) GetResourcePoolGroupsExecute(r ApiGetResourceP
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -387,8 +387,8 @@ func (a *ResourcePoolsAPIService) GetResourcePoolGroupsExecute(r ApiGetResourceP
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -397,9 +397,9 @@ func (a *ResourcePoolsAPIService) GetResourcePoolGroupsExecute(r ApiGetResourceP
 }
 
 type ApiGetresourcePoolGroupRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ResourcePoolsAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetresourcePoolGroupRequest) Execute() (*CreateResourcePoolGroup200Response, *http.Response, error) {
@@ -411,27 +411,27 @@ GetresourcePoolGroup Get a Specific Resource Pool Group
 
 This endpoint retrieves a specific Resource Pool Group.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetresourcePoolGroupRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetresourcePoolGroupRequest
 */
 func (a *ResourcePoolsAPIService) GetresourcePoolGroup(ctx context.Context, id int64) ApiGetresourcePoolGroupRequest {
 	return ApiGetresourcePoolGroupRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return CreateResourcePoolGroup200Response
+//
+//	@return CreateResourcePoolGroup200Response
 func (a *ResourcePoolsAPIService) GetresourcePoolGroupExecute(r ApiGetresourcePoolGroupRequest) (*CreateResourcePoolGroup200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CreateResourcePoolGroup200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CreateResourcePoolGroup200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ResourcePoolsAPIService.GetresourcePoolGroup")
@@ -482,7 +482,7 @@ func (a *ResourcePoolsAPIService) GetresourcePoolGroupExecute(r ApiGetresourcePo
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -491,8 +491,8 @@ func (a *ResourcePoolsAPIService) GetresourcePoolGroupExecute(r ApiGetresourcePo
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -502,8 +502,8 @@ func (a *ResourcePoolsAPIService) GetresourcePoolGroupExecute(r ApiGetresourcePo
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -511,8 +511,8 @@ func (a *ResourcePoolsAPIService) GetresourcePoolGroupExecute(r ApiGetresourcePo
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -521,9 +521,9 @@ func (a *ResourcePoolsAPIService) GetresourcePoolGroupExecute(r ApiGetresourcePo
 }
 
 type ApiUpdateResourcePoolGroupRequest struct {
-	ctx context.Context
-	ApiService *ResourcePoolsAPIService
-	id int64
+	ctx                            context.Context
+	ApiService                     *ResourcePoolsAPIService
+	id                             int64
 	createResourcePoolGroupRequest *CreateResourcePoolGroupRequest
 }
 
@@ -541,27 +541,27 @@ UpdateResourcePoolGroup Update a Resource Pool Group
 
 Use this command to update an existing resource pool Group.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateResourcePoolGroupRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateResourcePoolGroupRequest
 */
 func (a *ResourcePoolsAPIService) UpdateResourcePoolGroup(ctx context.Context, id int64) ApiUpdateResourcePoolGroupRequest {
 	return ApiUpdateResourcePoolGroupRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return CreateResourcePoolGroup200Response
+//
+//	@return CreateResourcePoolGroup200Response
 func (a *ResourcePoolsAPIService) UpdateResourcePoolGroupExecute(r ApiUpdateResourcePoolGroupRequest) (*CreateResourcePoolGroup200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CreateResourcePoolGroup200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CreateResourcePoolGroup200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ResourcePoolsAPIService.UpdateResourcePoolGroup")
@@ -614,7 +614,7 @@ func (a *ResourcePoolsAPIService) UpdateResourcePoolGroupExecute(r ApiUpdateReso
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -623,8 +623,8 @@ func (a *ResourcePoolsAPIService) UpdateResourcePoolGroupExecute(r ApiUpdateReso
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -634,8 +634,8 @@ func (a *ResourcePoolsAPIService) UpdateResourcePoolGroupExecute(r ApiUpdateReso
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -643,8 +643,8 @@ func (a *ResourcePoolsAPIService) UpdateResourcePoolGroupExecute(r ApiUpdateReso
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

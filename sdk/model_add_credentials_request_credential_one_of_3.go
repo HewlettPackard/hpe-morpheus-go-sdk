@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the AddCredentialsRequestCredentialOneOf3 type satisfies the MappedNullable interface at compile time
@@ -28,14 +27,14 @@ type AddCredentialsRequestCredentialOneOf3 struct {
 	// Optional Description
 	Description *string `json:"description,omitempty"`
 	// Credential enabled
-	Enabled *bool `json:"enabled,omitempty"`
+	Enabled     *bool                                            `json:"enabled,omitempty"`
 	Integration *AddCredentialsRequestCredentialOneOfIntegration `json:"integration,omitempty"`
 	// Tenant name
 	AuthPath string `json:"authPath"`
 	// Username
-	Username string `json:"username"`
-	AuthKey AddCredentialsRequestCredentialOneOf2AuthKey `json:"authKey"`
-	AdditionalProperties map[string]interface{}
+	Username             string                                       `json:"username"`
+	AuthKey              AddCredentialsRequestCredentialOneOf2AuthKey `json:"authKey"`
+	AdditionalProperties map[string]interface{}                       `json:",remain"`
 }
 
 type _AddCredentialsRequestCredentialOneOf3 AddCredentialsRequestCredentialOneOf3
@@ -283,7 +282,7 @@ func (o *AddCredentialsRequestCredentialOneOf3) SetAuthKey(v AddCredentialsReque
 }
 
 func (o AddCredentialsRequestCredentialOneOf3) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -313,94 +312,8 @@ func (o AddCredentialsRequestCredentialOneOf3) ToMap() (map[string]interface{}, 
 
 	return toSerialize, nil
 }
-
 func (o *AddCredentialsRequestCredentialOneOf3) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"type",
-		"name",
-		"authPath",
-		"username",
-		"authKey",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varAddCredentialsRequestCredentialOneOf3 := _AddCredentialsRequestCredentialOneOf3{}
-
-	err = json.Unmarshal(data, &varAddCredentialsRequestCredentialOneOf3)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddCredentialsRequestCredentialOneOf3(varAddCredentialsRequestCredentialOneOf3)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "integration")
-		delete(additionalProperties, "authPath")
-		delete(additionalProperties, "username")
-		delete(additionalProperties, "authKey")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddCredentialsRequestCredentialOneOf3 struct {
-	value *AddCredentialsRequestCredentialOneOf3
-	isSet bool
-}
-
-func (v NullableAddCredentialsRequestCredentialOneOf3) Get() *AddCredentialsRequestCredentialOneOf3 {
-	return v.value
-}
-
-func (v *NullableAddCredentialsRequestCredentialOneOf3) Set(val *AddCredentialsRequestCredentialOneOf3) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddCredentialsRequestCredentialOneOf3) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddCredentialsRequestCredentialOneOf3) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddCredentialsRequestCredentialOneOf3(val *AddCredentialsRequestCredentialOneOf3) *NullableAddCredentialsRequestCredentialOneOf3 {
-	return &NullableAddCredentialsRequestCredentialOneOf3{value: val, isSet: true}
-}
-
-func (v NullableAddCredentialsRequestCredentialOneOf3) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddCredentialsRequestCredentialOneOf3) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

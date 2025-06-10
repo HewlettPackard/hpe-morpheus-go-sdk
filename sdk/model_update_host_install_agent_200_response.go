@@ -21,9 +21,9 @@ var _ MappedNullable = &UpdateHostInstallAgent200Response{}
 // UpdateHostInstallAgent200Response struct for UpdateHostInstallAgent200Response
 type UpdateHostInstallAgent200Response struct {
 	// Public key to be put into `authorized_keys` on target VM
-	PublicKey *string `json:"publicKey,omitempty"`
-	Success *bool `json:"success,omitempty"`
-	AdditionalProperties map[string]interface{}
+	PublicKey            *string                `json:"publicKey,omitempty"`
+	Success              *bool                  `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _UpdateHostInstallAgent200Response UpdateHostInstallAgent200Response
@@ -110,7 +110,7 @@ func (o *UpdateHostInstallAgent200Response) SetSuccess(v bool) {
 }
 
 func (o UpdateHostInstallAgent200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -132,63 +132,8 @@ func (o UpdateHostInstallAgent200Response) ToMap() (map[string]interface{}, erro
 
 	return toSerialize, nil
 }
-
 func (o *UpdateHostInstallAgent200Response) UnmarshalJSON(data []byte) (err error) {
-	varUpdateHostInstallAgent200Response := _UpdateHostInstallAgent200Response{}
-
-	err = json.Unmarshal(data, &varUpdateHostInstallAgent200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateHostInstallAgent200Response(varUpdateHostInstallAgent200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "publicKey")
-		delete(additionalProperties, "success")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateHostInstallAgent200Response struct {
-	value *UpdateHostInstallAgent200Response
-	isSet bool
-}
-
-func (v NullableUpdateHostInstallAgent200Response) Get() *UpdateHostInstallAgent200Response {
-	return v.value
-}
-
-func (v *NullableUpdateHostInstallAgent200Response) Set(val *UpdateHostInstallAgent200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateHostInstallAgent200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateHostInstallAgent200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateHostInstallAgent200Response(val *UpdateHostInstallAgent200Response) *NullableUpdateHostInstallAgent200Response {
-	return &NullableUpdateHostInstallAgent200Response{value: val, isSet: true}
-}
-
-func (v NullableUpdateHostInstallAgent200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateHostInstallAgent200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

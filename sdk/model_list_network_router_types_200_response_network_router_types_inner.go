@@ -20,22 +20,22 @@ var _ MappedNullable = &ListNetworkRouterTypes200ResponseNetworkRouterTypesInner
 
 // ListNetworkRouterTypes200ResponseNetworkRouterTypesInner struct for ListNetworkRouterTypes200ResponseNetworkRouterTypesInner
 type ListNetworkRouterTypes200ResponseNetworkRouterTypesInner struct {
-	Id *int64 `json:"id,omitempty"`
-	Code *string `json:"code,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Enabled *bool `json:"enabled,omitempty"`
-	Creatable *bool `json:"creatable,omitempty"`
-	Selectable *bool `json:"selectable,omitempty"`
-	HasFirewall *bool `json:"hasFirewall,omitempty"`
-	HasDhcp *bool `json:"hasDhcp,omitempty"`
-	HasRouting *bool `json:"hasRouting,omitempty"`
-	HasNetworkServer *bool `json:"hasNetworkServer,omitempty"`
-	OptionTypes []ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
-	RuleOptionTypes []map[string]interface{} `json:"ruleOptionTypes,omitempty"`
-	NatOptionTypes []map[string]interface{} `json:"natOptionTypes,omitempty"`
-	RuleGroupOptionTypes []map[string]interface{} `json:"ruleGroupOptionTypes,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                                     `json:"id,omitempty"`
+	Code                 *string                                                                    `json:"code,omitempty"`
+	Name                 *string                                                                    `json:"name,omitempty"`
+	Description          *string                                                                    `json:"description,omitempty"`
+	Enabled              *bool                                                                      `json:"enabled,omitempty"`
+	Creatable            *bool                                                                      `json:"creatable,omitempty"`
+	Selectable           *bool                                                                      `json:"selectable,omitempty"`
+	HasFirewall          *bool                                                                      `json:"hasFirewall,omitempty"`
+	HasDhcp              *bool                                                                      `json:"hasDhcp,omitempty"`
+	HasRouting           *bool                                                                      `json:"hasRouting,omitempty"`
+	HasNetworkServer     *bool                                                                      `json:"hasNetworkServer,omitempty"`
+	OptionTypes          []ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
+	RuleOptionTypes      []map[string]interface{}                                                   `json:"ruleOptionTypes,omitempty"`
+	NatOptionTypes       []map[string]interface{}                                                   `json:"natOptionTypes,omitempty"`
+	RuleGroupOptionTypes []map[string]interface{}                                                   `json:"ruleGroupOptionTypes,omitempty"`
+	AdditionalProperties map[string]interface{}                                                     `json:",remain"`
 }
 
 type _ListNetworkRouterTypes200ResponseNetworkRouterTypesInner ListNetworkRouterTypes200ResponseNetworkRouterTypesInner
@@ -538,7 +538,7 @@ func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInner) SetRuleGroupO
 }
 
 func (o ListNetworkRouterTypes200ResponseNetworkRouterTypesInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -599,76 +599,8 @@ func (o ListNetworkRouterTypes200ResponseNetworkRouterTypesInner) ToMap() (map[s
 
 	return toSerialize, nil
 }
-
 func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInner) UnmarshalJSON(data []byte) (err error) {
-	varListNetworkRouterTypes200ResponseNetworkRouterTypesInner := _ListNetworkRouterTypes200ResponseNetworkRouterTypesInner{}
-
-	err = json.Unmarshal(data, &varListNetworkRouterTypes200ResponseNetworkRouterTypesInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListNetworkRouterTypes200ResponseNetworkRouterTypesInner(varListNetworkRouterTypes200ResponseNetworkRouterTypesInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "creatable")
-		delete(additionalProperties, "selectable")
-		delete(additionalProperties, "hasFirewall")
-		delete(additionalProperties, "hasDhcp")
-		delete(additionalProperties, "hasRouting")
-		delete(additionalProperties, "hasNetworkServer")
-		delete(additionalProperties, "optionTypes")
-		delete(additionalProperties, "ruleOptionTypes")
-		delete(additionalProperties, "natOptionTypes")
-		delete(additionalProperties, "ruleGroupOptionTypes")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListNetworkRouterTypes200ResponseNetworkRouterTypesInner struct {
-	value *ListNetworkRouterTypes200ResponseNetworkRouterTypesInner
-	isSet bool
-}
-
-func (v NullableListNetworkRouterTypes200ResponseNetworkRouterTypesInner) Get() *ListNetworkRouterTypes200ResponseNetworkRouterTypesInner {
-	return v.value
-}
-
-func (v *NullableListNetworkRouterTypes200ResponseNetworkRouterTypesInner) Set(val *ListNetworkRouterTypes200ResponseNetworkRouterTypesInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListNetworkRouterTypes200ResponseNetworkRouterTypesInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListNetworkRouterTypes200ResponseNetworkRouterTypesInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListNetworkRouterTypes200ResponseNetworkRouterTypesInner(val *ListNetworkRouterTypes200ResponseNetworkRouterTypesInner) *NullableListNetworkRouterTypes200ResponseNetworkRouterTypesInner {
-	return &NullableListNetworkRouterTypes200ResponseNetworkRouterTypesInner{value: val, isSet: true}
-}
-
-func (v NullableListNetworkRouterTypes200ResponseNetworkRouterTypesInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListNetworkRouterTypes200ResponseNetworkRouterTypesInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

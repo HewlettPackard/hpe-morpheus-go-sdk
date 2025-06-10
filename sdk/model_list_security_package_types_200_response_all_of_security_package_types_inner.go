@@ -20,13 +20,13 @@ var _ MappedNullable = &ListSecurityPackageTypes200ResponseAllOfSecurityPackageT
 
 // ListSecurityPackageTypes200ResponseAllOfSecurityPackageTypesInner struct for ListSecurityPackageTypes200ResponseAllOfSecurityPackageTypesInner
 type ListSecurityPackageTypes200ResponseAllOfSecurityPackageTypesInner struct {
-	Id *int64 `json:"id,omitempty"`
-	Code *string `json:"code,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Enabled *bool `json:"enabled,omitempty"`
-	OptionTypes []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                                      `json:"id,omitempty"`
+	Code                 *string                                                                     `json:"code,omitempty"`
+	Name                 *string                                                                     `json:"name,omitempty"`
+	Description          *string                                                                     `json:"description,omitempty"`
+	Enabled              *bool                                                                       `json:"enabled,omitempty"`
+	OptionTypes          []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
+	AdditionalProperties map[string]interface{}                                                      `json:",remain"`
 }
 
 type _ListSecurityPackageTypes200ResponseAllOfSecurityPackageTypesInner ListSecurityPackageTypes200ResponseAllOfSecurityPackageTypesInner
@@ -241,7 +241,7 @@ func (o *ListSecurityPackageTypes200ResponseAllOfSecurityPackageTypesInner) SetO
 }
 
 func (o ListSecurityPackageTypes200ResponseAllOfSecurityPackageTypesInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -275,67 +275,8 @@ func (o ListSecurityPackageTypes200ResponseAllOfSecurityPackageTypesInner) ToMap
 
 	return toSerialize, nil
 }
-
 func (o *ListSecurityPackageTypes200ResponseAllOfSecurityPackageTypesInner) UnmarshalJSON(data []byte) (err error) {
-	varListSecurityPackageTypes200ResponseAllOfSecurityPackageTypesInner := _ListSecurityPackageTypes200ResponseAllOfSecurityPackageTypesInner{}
-
-	err = json.Unmarshal(data, &varListSecurityPackageTypes200ResponseAllOfSecurityPackageTypesInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListSecurityPackageTypes200ResponseAllOfSecurityPackageTypesInner(varListSecurityPackageTypes200ResponseAllOfSecurityPackageTypesInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "optionTypes")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListSecurityPackageTypes200ResponseAllOfSecurityPackageTypesInner struct {
-	value *ListSecurityPackageTypes200ResponseAllOfSecurityPackageTypesInner
-	isSet bool
-}
-
-func (v NullableListSecurityPackageTypes200ResponseAllOfSecurityPackageTypesInner) Get() *ListSecurityPackageTypes200ResponseAllOfSecurityPackageTypesInner {
-	return v.value
-}
-
-func (v *NullableListSecurityPackageTypes200ResponseAllOfSecurityPackageTypesInner) Set(val *ListSecurityPackageTypes200ResponseAllOfSecurityPackageTypesInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListSecurityPackageTypes200ResponseAllOfSecurityPackageTypesInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListSecurityPackageTypes200ResponseAllOfSecurityPackageTypesInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListSecurityPackageTypes200ResponseAllOfSecurityPackageTypesInner(val *ListSecurityPackageTypes200ResponseAllOfSecurityPackageTypesInner) *NullableListSecurityPackageTypes200ResponseAllOfSecurityPackageTypesInner {
-	return &NullableListSecurityPackageTypes200ResponseAllOfSecurityPackageTypesInner{value: val, isSet: true}
-}
-
-func (v NullableListSecurityPackageTypes200ResponseAllOfSecurityPackageTypesInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListSecurityPackageTypes200ResponseAllOfSecurityPackageTypesInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

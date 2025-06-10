@@ -21,37 +21,37 @@ var _ MappedNullable = &GetClusterHistory200ResponseAllOfProcessesInner{}
 
 // GetClusterHistory200ResponseAllOfProcessesInner struct for GetClusterHistory200ResponseAllOfProcessesInner
 type GetClusterHistory200ResponseAllOfProcessesInner struct {
-	Id *int64 `json:"id,omitempty"`
-	AccountId *int64 `json:"accountId,omitempty"`
-	UniqueId *string `json:"uniqueId,omitempty"`
-	ProcessType *ListClusterContainers200ResponseAllOfContainersInnerAvailableActionsInner `json:"processType,omitempty"`
-	DisplayName *string `json:"displayName,omitempty"`
-	Description *string `json:"description,omitempty"`
-	SubType *string `json:"subType,omitempty"`
-	SubId *string `json:"subId,omitempty"`
-	ZoneId *int64 `json:"zoneId,omitempty"`
-	IntegrationId *int64 `json:"integrationId,omitempty"`
-	AppId *int64 `json:"appId,omitempty"`
-	InstanceId *int64 `json:"instanceId,omitempty"`
-	ContainerId *int64 `json:"containerId,omitempty"`
-	ServerId *int64 `json:"serverId,omitempty"`
-	ContainerName *string `json:"containerName,omitempty"`
-	Status *string `json:"status,omitempty"`
-	Reason *string `json:"reason,omitempty"`
-	Percent *float32 `json:"percent,omitempty"`
-	StatusEta *int64 `json:"statusEta,omitempty"`
-	Message *string `json:"message,omitempty"`
-	Output *string `json:"output,omitempty"`
-	Error *string `json:"error,omitempty"`
-	StartDate *time.Time `json:"startDate,omitempty"`
-	EndDate *time.Time `json:"endDate,omitempty"`
-	Duration *int64 `json:"duration,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	CreatedBy *GetClusterHistory200ResponseAllOfProcessesInnerCreatedBy `json:"createdBy,omitempty"`
-	UpdatedBy *GetClusterHistory200ResponseAllOfProcessesInnerCreatedBy `json:"updatedBy,omitempty"`
-	Events []GetClusterHistory200ResponseAllOfProcessesInnerEventsInner `json:"events,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                                     `json:"id,omitempty"`
+	AccountId            *int64                                                                     `json:"accountId,omitempty"`
+	UniqueId             *string                                                                    `json:"uniqueId,omitempty"`
+	ProcessType          *ListClusterContainers200ResponseAllOfContainersInnerAvailableActionsInner `json:"processType,omitempty"`
+	DisplayName          *string                                                                    `json:"displayName,omitempty"`
+	Description          *string                                                                    `json:"description,omitempty"`
+	SubType              *string                                                                    `json:"subType,omitempty"`
+	SubId                *string                                                                    `json:"subId,omitempty"`
+	ZoneId               *int64                                                                     `json:"zoneId,omitempty"`
+	IntegrationId        *int64                                                                     `json:"integrationId,omitempty"`
+	AppId                *int64                                                                     `json:"appId,omitempty"`
+	InstanceId           *int64                                                                     `json:"instanceId,omitempty"`
+	ContainerId          *int64                                                                     `json:"containerId,omitempty"`
+	ServerId             *int64                                                                     `json:"serverId,omitempty"`
+	ContainerName        *string                                                                    `json:"containerName,omitempty"`
+	Status               *string                                                                    `json:"status,omitempty"`
+	Reason               *string                                                                    `json:"reason,omitempty"`
+	Percent              *float32                                                                   `json:"percent,omitempty"`
+	StatusEta            *int64                                                                     `json:"statusEta,omitempty"`
+	Message              *string                                                                    `json:"message,omitempty"`
+	Output               *string                                                                    `json:"output,omitempty"`
+	Error                *string                                                                    `json:"error,omitempty"`
+	StartDate            *time.Time                                                                 `json:"startDate,omitempty"`
+	EndDate              *time.Time                                                                 `json:"endDate,omitempty"`
+	Duration             *int64                                                                     `json:"duration,omitempty"`
+	DateCreated          *time.Time                                                                 `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                                                 `json:"lastUpdated,omitempty"`
+	CreatedBy            *GetClusterHistory200ResponseAllOfProcessesInnerCreatedBy                  `json:"createdBy,omitempty"`
+	UpdatedBy            *GetClusterHistory200ResponseAllOfProcessesInnerCreatedBy                  `json:"updatedBy,omitempty"`
+	Events               []GetClusterHistory200ResponseAllOfProcessesInnerEventsInner               `json:"events,omitempty"`
+	AdditionalProperties map[string]interface{}                                                     `json:",remain"`
 }
 
 type _GetClusterHistory200ResponseAllOfProcessesInner GetClusterHistory200ResponseAllOfProcessesInner
@@ -1034,7 +1034,7 @@ func (o *GetClusterHistory200ResponseAllOfProcessesInner) SetEvents(v []GetClust
 }
 
 func (o GetClusterHistory200ResponseAllOfProcessesInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1140,91 +1140,8 @@ func (o GetClusterHistory200ResponseAllOfProcessesInner) ToMap() (map[string]int
 
 	return toSerialize, nil
 }
-
 func (o *GetClusterHistory200ResponseAllOfProcessesInner) UnmarshalJSON(data []byte) (err error) {
-	varGetClusterHistory200ResponseAllOfProcessesInner := _GetClusterHistory200ResponseAllOfProcessesInner{}
-
-	err = json.Unmarshal(data, &varGetClusterHistory200ResponseAllOfProcessesInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetClusterHistory200ResponseAllOfProcessesInner(varGetClusterHistory200ResponseAllOfProcessesInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "accountId")
-		delete(additionalProperties, "uniqueId")
-		delete(additionalProperties, "processType")
-		delete(additionalProperties, "displayName")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "subType")
-		delete(additionalProperties, "subId")
-		delete(additionalProperties, "zoneId")
-		delete(additionalProperties, "integrationId")
-		delete(additionalProperties, "appId")
-		delete(additionalProperties, "instanceId")
-		delete(additionalProperties, "containerId")
-		delete(additionalProperties, "serverId")
-		delete(additionalProperties, "containerName")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "reason")
-		delete(additionalProperties, "percent")
-		delete(additionalProperties, "statusEta")
-		delete(additionalProperties, "message")
-		delete(additionalProperties, "output")
-		delete(additionalProperties, "error")
-		delete(additionalProperties, "startDate")
-		delete(additionalProperties, "endDate")
-		delete(additionalProperties, "duration")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		delete(additionalProperties, "createdBy")
-		delete(additionalProperties, "updatedBy")
-		delete(additionalProperties, "events")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetClusterHistory200ResponseAllOfProcessesInner struct {
-	value *GetClusterHistory200ResponseAllOfProcessesInner
-	isSet bool
-}
-
-func (v NullableGetClusterHistory200ResponseAllOfProcessesInner) Get() *GetClusterHistory200ResponseAllOfProcessesInner {
-	return v.value
-}
-
-func (v *NullableGetClusterHistory200ResponseAllOfProcessesInner) Set(val *GetClusterHistory200ResponseAllOfProcessesInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetClusterHistory200ResponseAllOfProcessesInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetClusterHistory200ResponseAllOfProcessesInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetClusterHistory200ResponseAllOfProcessesInner(val *GetClusterHistory200ResponseAllOfProcessesInner) *NullableGetClusterHistory200ResponseAllOfProcessesInner {
-	return &NullableGetClusterHistory200ResponseAllOfProcessesInner{value: val, isSet: true}
-}
-
-func (v NullableGetClusterHistory200ResponseAllOfProcessesInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetClusterHistory200ResponseAllOfProcessesInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

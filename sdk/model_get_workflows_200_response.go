@@ -20,8 +20,8 @@ var _ MappedNullable = &GetWorkflows200Response{}
 
 // GetWorkflows200Response struct for GetWorkflows200Response
 type GetWorkflows200Response struct {
-	TaskSet *ListWorkflows200ResponseAllOfTaskSetsInner `json:"taskSet,omitempty"`
-	AdditionalProperties map[string]interface{}
+	TaskSet              *ListWorkflows200ResponseAllOfTaskSetsInner `json:"taskSet,omitempty"`
+	AdditionalProperties map[string]interface{}                      `json:",remain"`
 }
 
 type _GetWorkflows200Response GetWorkflows200Response
@@ -76,7 +76,7 @@ func (o *GetWorkflows200Response) SetTaskSet(v ListWorkflows200ResponseAllOfTask
 }
 
 func (o GetWorkflows200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o GetWorkflows200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *GetWorkflows200Response) UnmarshalJSON(data []byte) (err error) {
-	varGetWorkflows200Response := _GetWorkflows200Response{}
-
-	err = json.Unmarshal(data, &varGetWorkflows200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetWorkflows200Response(varGetWorkflows200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "taskSet")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetWorkflows200Response struct {
-	value *GetWorkflows200Response
-	isSet bool
-}
-
-func (v NullableGetWorkflows200Response) Get() *GetWorkflows200Response {
-	return v.value
-}
-
-func (v *NullableGetWorkflows200Response) Set(val *GetWorkflows200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetWorkflows200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetWorkflows200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetWorkflows200Response(val *GetWorkflows200Response) *NullableGetWorkflows200Response {
-	return &NullableGetWorkflows200Response{value: val, isSet: true}
-}
-
-func (v NullableGetWorkflows200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetWorkflows200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

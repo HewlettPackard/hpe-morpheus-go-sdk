@@ -20,13 +20,13 @@ var _ MappedNullable = &UpdateHostCloud200Response{}
 
 // UpdateHostCloud200Response struct for UpdateHostCloud200Response
 type UpdateHostCloud200Response struct {
-	Msg *string `json:"msg,omitempty"`
-	Errors *string `json:"errors,omitempty"`
-	ErrorCode *string `json:"errorCode,omitempty"`
-	Data *string `json:"data,omitempty"`
-	InProgress *bool `json:"inProgress,omitempty"`
-	Success *bool `json:"success,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Msg                  *string                `json:"msg,omitempty"`
+	Errors               *string                `json:"errors,omitempty"`
+	ErrorCode            *string                `json:"errorCode,omitempty"`
+	Data                 *string                `json:"data,omitempty"`
+	InProgress           *bool                  `json:"inProgress,omitempty"`
+	Success              *bool                  `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _UpdateHostCloud200Response UpdateHostCloud200Response
@@ -241,7 +241,7 @@ func (o *UpdateHostCloud200Response) SetSuccess(v bool) {
 }
 
 func (o UpdateHostCloud200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -275,67 +275,8 @@ func (o UpdateHostCloud200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *UpdateHostCloud200Response) UnmarshalJSON(data []byte) (err error) {
-	varUpdateHostCloud200Response := _UpdateHostCloud200Response{}
-
-	err = json.Unmarshal(data, &varUpdateHostCloud200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateHostCloud200Response(varUpdateHostCloud200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "msg")
-		delete(additionalProperties, "errors")
-		delete(additionalProperties, "errorCode")
-		delete(additionalProperties, "data")
-		delete(additionalProperties, "inProgress")
-		delete(additionalProperties, "success")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateHostCloud200Response struct {
-	value *UpdateHostCloud200Response
-	isSet bool
-}
-
-func (v NullableUpdateHostCloud200Response) Get() *UpdateHostCloud200Response {
-	return v.value
-}
-
-func (v *NullableUpdateHostCloud200Response) Set(val *UpdateHostCloud200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateHostCloud200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateHostCloud200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateHostCloud200Response(val *UpdateHostCloud200Response) *NullableUpdateHostCloud200Response {
-	return &NullableUpdateHostCloud200Response{value: val, isSet: true}
-}
-
-func (v NullableUpdateHostCloud200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateHostCloud200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

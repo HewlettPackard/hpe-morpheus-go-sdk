@@ -20,9 +20,9 @@ var _ MappedNullable = &UpdateCloudSecurityGroups200Response{}
 
 // UpdateCloudSecurityGroups200Response struct for UpdateCloudSecurityGroups200Response
 type UpdateCloudSecurityGroups200Response struct {
-	Success *bool `json:"success,omitempty"`
-	SecurityGroups []ListCloudSecurityGroups200ResponseAllOfSecurityGroupsInner `json:"securityGroups,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Success              *bool                                                        `json:"success,omitempty"`
+	SecurityGroups       []ListCloudSecurityGroups200ResponseAllOfSecurityGroupsInner `json:"securityGroups,omitempty"`
+	AdditionalProperties map[string]interface{}                                       `json:",remain"`
 }
 
 type _UpdateCloudSecurityGroups200Response UpdateCloudSecurityGroups200Response
@@ -109,7 +109,7 @@ func (o *UpdateCloudSecurityGroups200Response) SetSecurityGroups(v []ListCloudSe
 }
 
 func (o UpdateCloudSecurityGroups200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -131,63 +131,8 @@ func (o UpdateCloudSecurityGroups200Response) ToMap() (map[string]interface{}, e
 
 	return toSerialize, nil
 }
-
 func (o *UpdateCloudSecurityGroups200Response) UnmarshalJSON(data []byte) (err error) {
-	varUpdateCloudSecurityGroups200Response := _UpdateCloudSecurityGroups200Response{}
-
-	err = json.Unmarshal(data, &varUpdateCloudSecurityGroups200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateCloudSecurityGroups200Response(varUpdateCloudSecurityGroups200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "success")
-		delete(additionalProperties, "securityGroups")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateCloudSecurityGroups200Response struct {
-	value *UpdateCloudSecurityGroups200Response
-	isSet bool
-}
-
-func (v NullableUpdateCloudSecurityGroups200Response) Get() *UpdateCloudSecurityGroups200Response {
-	return v.value
-}
-
-func (v *NullableUpdateCloudSecurityGroups200Response) Set(val *UpdateCloudSecurityGroups200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateCloudSecurityGroups200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateCloudSecurityGroups200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateCloudSecurityGroups200Response(val *UpdateCloudSecurityGroups200Response) *NullableUpdateCloudSecurityGroups200Response {
-	return &NullableUpdateCloudSecurityGroups200Response{value: val, isSet: true}
-}
-
-func (v NullableUpdateCloudSecurityGroups200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateCloudSecurityGroups200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

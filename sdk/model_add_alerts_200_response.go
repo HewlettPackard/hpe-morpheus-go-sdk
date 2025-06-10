@@ -20,9 +20,9 @@ var _ MappedNullable = &AddAlerts200Response{}
 
 // AddAlerts200Response struct for AddAlerts200Response
 type AddAlerts200Response struct {
-	Alert *ListAlerts200ResponseAllOfAlertsInner `json:"alert,omitempty"`
-	Success *bool `json:"success,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Alert                *ListAlerts200ResponseAllOfAlertsInner `json:"alert,omitempty"`
+	Success              *bool                                  `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{}                 `json:",remain"`
 }
 
 type _AddAlerts200Response AddAlerts200Response
@@ -109,7 +109,7 @@ func (o *AddAlerts200Response) SetSuccess(v bool) {
 }
 
 func (o AddAlerts200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -131,63 +131,8 @@ func (o AddAlerts200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *AddAlerts200Response) UnmarshalJSON(data []byte) (err error) {
-	varAddAlerts200Response := _AddAlerts200Response{}
-
-	err = json.Unmarshal(data, &varAddAlerts200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddAlerts200Response(varAddAlerts200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "alert")
-		delete(additionalProperties, "success")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddAlerts200Response struct {
-	value *AddAlerts200Response
-	isSet bool
-}
-
-func (v NullableAddAlerts200Response) Get() *AddAlerts200Response {
-	return v.value
-}
-
-func (v *NullableAddAlerts200Response) Set(val *AddAlerts200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddAlerts200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddAlerts200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddAlerts200Response(val *AddAlerts200Response) *NullableAddAlerts200Response {
-	return &NullableAddAlerts200Response{value: val, isSet: true}
-}
-
-func (v NullableAddAlerts200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddAlerts200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

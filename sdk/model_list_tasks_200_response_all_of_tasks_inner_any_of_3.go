@@ -21,25 +21,25 @@ var _ MappedNullable = &ListTasks200ResponseAllOfTasksInnerAnyOf3{}
 
 // ListTasks200ResponseAllOfTasksInnerAnyOf3 struct for ListTasks200ResponseAllOfTasksInnerAnyOf3
 type ListTasks200ResponseAllOfTasksInnerAnyOf3 struct {
-	Id *int64 `json:"id,omitempty"`
-	AccountId *int64 `json:"accountId,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Code *string `json:"code,omitempty"`
-	TaskType *ListTasks200ResponseAllOfTasksInnerAnyOf3TaskType `json:"taskType,omitempty"`
-	Labels []string `json:"labels,omitempty"`
-	Visibility *string `json:"visibility,omitempty"`
-	TaskOptions *ListTasks200ResponseAllOfTasksInnerAnyOf3TaskOptions `json:"taskOptions,omitempty"`
-	File *ListTasks200ResponseAllOfTasksInnerAnyOfFile `json:"file,omitempty"`
-	ResultType *string `json:"resultType,omitempty"`
-	ExecuteTarget *string `json:"executeTarget,omitempty"`
-	Retryable *bool `json:"retryable,omitempty"`
-	RetryCount *int64 `json:"retryCount,omitempty"`
-	RetryDelaySeconds *int64 `json:"retryDelaySeconds,omitempty"`
-	AllowCustomConfig *bool `json:"allowCustomConfig,omitempty"`
-	Credential *ListClouds200ResponseAllOfZonesInnerCredentialAnyOf `json:"credential,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                `json:"id,omitempty"`
+	AccountId            *int64                                                `json:"accountId,omitempty"`
+	Name                 *string                                               `json:"name,omitempty"`
+	Code                 *string                                               `json:"code,omitempty"`
+	TaskType             *ListTasks200ResponseAllOfTasksInnerAnyOf3TaskType    `json:"taskType,omitempty"`
+	Labels               []string                                              `json:"labels,omitempty"`
+	Visibility           *string                                               `json:"visibility,omitempty"`
+	TaskOptions          *ListTasks200ResponseAllOfTasksInnerAnyOf3TaskOptions `json:"taskOptions,omitempty"`
+	File                 *ListTasks200ResponseAllOfTasksInnerAnyOfFile         `json:"file,omitempty"`
+	ResultType           *string                                               `json:"resultType,omitempty"`
+	ExecuteTarget        *string                                               `json:"executeTarget,omitempty"`
+	Retryable            *bool                                                 `json:"retryable,omitempty"`
+	RetryCount           *int64                                                `json:"retryCount,omitempty"`
+	RetryDelaySeconds    *int64                                                `json:"retryDelaySeconds,omitempty"`
+	AllowCustomConfig    *bool                                                 `json:"allowCustomConfig,omitempty"`
+	Credential           *ListClouds200ResponseAllOfZonesInnerCredentialAnyOf  `json:"credential,omitempty"`
+	DateCreated          *time.Time                                            `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                            `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}                                `json:",remain"`
 }
 
 type _ListTasks200ResponseAllOfTasksInnerAnyOf3 ListTasks200ResponseAllOfTasksInnerAnyOf3
@@ -638,7 +638,7 @@ func (o *ListTasks200ResponseAllOfTasksInnerAnyOf3) SetLastUpdated(v time.Time) 
 }
 
 func (o ListTasks200ResponseAllOfTasksInnerAnyOf3) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -708,79 +708,8 @@ func (o ListTasks200ResponseAllOfTasksInnerAnyOf3) ToMap() (map[string]interface
 
 	return toSerialize, nil
 }
-
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOf3) UnmarshalJSON(data []byte) (err error) {
-	varListTasks200ResponseAllOfTasksInnerAnyOf3 := _ListTasks200ResponseAllOfTasksInnerAnyOf3{}
-
-	err = json.Unmarshal(data, &varListTasks200ResponseAllOfTasksInnerAnyOf3)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListTasks200ResponseAllOfTasksInnerAnyOf3(varListTasks200ResponseAllOfTasksInnerAnyOf3)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "accountId")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "taskType")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "taskOptions")
-		delete(additionalProperties, "file")
-		delete(additionalProperties, "resultType")
-		delete(additionalProperties, "executeTarget")
-		delete(additionalProperties, "retryable")
-		delete(additionalProperties, "retryCount")
-		delete(additionalProperties, "retryDelaySeconds")
-		delete(additionalProperties, "allowCustomConfig")
-		delete(additionalProperties, "credential")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListTasks200ResponseAllOfTasksInnerAnyOf3 struct {
-	value *ListTasks200ResponseAllOfTasksInnerAnyOf3
-	isSet bool
-}
-
-func (v NullableListTasks200ResponseAllOfTasksInnerAnyOf3) Get() *ListTasks200ResponseAllOfTasksInnerAnyOf3 {
-	return v.value
-}
-
-func (v *NullableListTasks200ResponseAllOfTasksInnerAnyOf3) Set(val *ListTasks200ResponseAllOfTasksInnerAnyOf3) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListTasks200ResponseAllOfTasksInnerAnyOf3) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListTasks200ResponseAllOfTasksInnerAnyOf3) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListTasks200ResponseAllOfTasksInnerAnyOf3(val *ListTasks200ResponseAllOfTasksInnerAnyOf3) *NullableListTasks200ResponseAllOfTasksInnerAnyOf3 {
-	return &NullableListTasks200ResponseAllOfTasksInnerAnyOf3{value: val, isSet: true}
-}
-
-func (v NullableListTasks200ResponseAllOfTasksInnerAnyOf3) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListTasks200ResponseAllOfTasksInnerAnyOf3) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -20,9 +20,9 @@ var _ MappedNullable = &RestartInstance200Response{}
 
 // RestartInstance200Response struct for RestartInstance200Response
 type RestartInstance200Response struct {
-	Results map[string]interface{} `json:"results,omitempty"`
-	Success *bool `json:"success,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Results              map[string]interface{} `json:"results,omitempty"`
+	Success              *bool                  `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _RestartInstance200Response RestartInstance200Response
@@ -109,7 +109,7 @@ func (o *RestartInstance200Response) SetSuccess(v bool) {
 }
 
 func (o RestartInstance200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -131,63 +131,8 @@ func (o RestartInstance200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *RestartInstance200Response) UnmarshalJSON(data []byte) (err error) {
-	varRestartInstance200Response := _RestartInstance200Response{}
-
-	err = json.Unmarshal(data, &varRestartInstance200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = RestartInstance200Response(varRestartInstance200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "results")
-		delete(additionalProperties, "success")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableRestartInstance200Response struct {
-	value *RestartInstance200Response
-	isSet bool
-}
-
-func (v NullableRestartInstance200Response) Get() *RestartInstance200Response {
-	return v.value
-}
-
-func (v *NullableRestartInstance200Response) Set(val *RestartInstance200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableRestartInstance200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableRestartInstance200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableRestartInstance200Response(val *RestartInstance200Response) *NullableRestartInstance200Response {
-	return &NullableRestartInstance200Response{value: val, isSet: true}
-}
-
-func (v NullableRestartInstance200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableRestartInstance200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

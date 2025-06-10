@@ -18,19 +18,19 @@ import (
 // checks if the AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24 type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24{}
 
-// AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24 - Shutdown 
+// AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24 - Shutdown
 type AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24 struct {
-	ShutdownType *string `json:"shutdownType,omitempty"`
-	ShutdownAge *string `json:"shutdownAge,omitempty"`
-	ShutdownRenewal *string `json:"shutdownRenewal,omitempty"`
-	ShutdownNotify *string `json:"shutdownNotify,omitempty"`
-	ShutdownMessage *string `json:"shutdownMessage,omitempty"`
-	ShutdownAutoRenew *string `json:"shutdownAutoRenew,omitempty"`
-	ShutdownAllowExtend *string `json:"shutdownAllowExtend,omitempty"`
-	ShutdownExtensionsBeforeApproval *string `json:"shutdownExtensionsBeforeApproval,omitempty"`
-	AccountIntegrationId *string `json:"accountIntegrationId,omitempty"`
-	ShutdownHideFixed *bool `json:"shutdownHideFixed,omitempty"`
-	AdditionalProperties map[string]interface{}
+	ShutdownType                     *string                `json:"shutdownType,omitempty"`
+	ShutdownAge                      *string                `json:"shutdownAge,omitempty"`
+	ShutdownRenewal                  *string                `json:"shutdownRenewal,omitempty"`
+	ShutdownNotify                   *string                `json:"shutdownNotify,omitempty"`
+	ShutdownMessage                  *string                `json:"shutdownMessage,omitempty"`
+	ShutdownAutoRenew                *string                `json:"shutdownAutoRenew,omitempty"`
+	ShutdownAllowExtend              *string                `json:"shutdownAllowExtend,omitempty"`
+	ShutdownExtensionsBeforeApproval *string                `json:"shutdownExtensionsBeforeApproval,omitempty"`
+	AccountIntegrationId             *string                `json:"accountIntegrationId,omitempty"`
+	ShutdownHideFixed                *bool                  `json:"shutdownHideFixed,omitempty"`
+	AdditionalProperties             map[string]interface{} `json:",remain"`
 }
 
 type _AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24 AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24
@@ -381,7 +381,7 @@ func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24) SetShutdownHideFi
 }
 
 func (o AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -427,71 +427,8 @@ func (o AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24) ToMap() (map[strin
 
 	return toSerialize, nil
 }
-
 func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24) UnmarshalJSON(data []byte) (err error) {
-	varAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24 := _AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24{}
-
-	err = json.Unmarshal(data, &varAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24(varAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "shutdownType")
-		delete(additionalProperties, "shutdownAge")
-		delete(additionalProperties, "shutdownRenewal")
-		delete(additionalProperties, "shutdownNotify")
-		delete(additionalProperties, "shutdownMessage")
-		delete(additionalProperties, "shutdownAutoRenew")
-		delete(additionalProperties, "shutdownAllowExtend")
-		delete(additionalProperties, "shutdownExtensionsBeforeApproval")
-		delete(additionalProperties, "accountIntegrationId")
-		delete(additionalProperties, "shutdownHideFixed")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24 struct {
-	value *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24
-	isSet bool
-}
-
-func (v NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24) Get() *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24 {
-	return v.value
-}
-
-func (v *NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24) Set(val *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24(val *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24) *NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24 {
-	return &NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24{value: val, isSet: true}
-}
-
-func (v NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -21,17 +21,17 @@ var _ MappedNullable = &Log{}
 
 // Log struct for Log
 type Log struct {
-	Sort *ListLogs200ResponseAllOfSort `json:"sort,omitempty"`
-	Offset *int64 `json:"offset,omitempty"`
-	Start *time.Time `json:"start,omitempty"`
-	End *time.Time `json:"end,omitempty"`
-	Data []ListLogs200ResponseAllOfDataInner `json:"data,omitempty"`
-	Max *int64 `json:"max,omitempty"`
-	GrandTotal *int64 `json:"grandTotal,omitempty"`
-	Total *int64 `json:"total,omitempty"`
-	Success *bool `json:"success,omitempty"`
-	Count *int64 `json:"count,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Sort                 *ListLogs200ResponseAllOfSort       `json:"sort,omitempty"`
+	Offset               *int64                              `json:"offset,omitempty"`
+	Start                *time.Time                          `json:"start,omitempty"`
+	End                  *time.Time                          `json:"end,omitempty"`
+	Data                 []ListLogs200ResponseAllOfDataInner `json:"data,omitempty"`
+	Max                  *int64                              `json:"max,omitempty"`
+	GrandTotal           *int64                              `json:"grandTotal,omitempty"`
+	Total                *int64                              `json:"total,omitempty"`
+	Success              *bool                               `json:"success,omitempty"`
+	Count                *int64                              `json:"count,omitempty"`
+	AdditionalProperties map[string]interface{}              `json:",remain"`
 }
 
 type _Log Log
@@ -374,7 +374,7 @@ func (o *Log) SetCount(v int64) {
 }
 
 func (o Log) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -420,71 +420,8 @@ func (o Log) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *Log) UnmarshalJSON(data []byte) (err error) {
-	varLog := _Log{}
-
-	err = json.Unmarshal(data, &varLog)
-
-	if err != nil {
-		return err
-	}
-
-	*o = Log(varLog)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "sort")
-		delete(additionalProperties, "offset")
-		delete(additionalProperties, "start")
-		delete(additionalProperties, "end")
-		delete(additionalProperties, "data")
-		delete(additionalProperties, "max")
-		delete(additionalProperties, "grandTotal")
-		delete(additionalProperties, "total")
-		delete(additionalProperties, "success")
-		delete(additionalProperties, "count")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableLog struct {
-	value *Log
-	isSet bool
-}
-
-func (v NullableLog) Get() *Log {
-	return v.value
-}
-
-func (v *NullableLog) Set(val *Log) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableLog) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableLog) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableLog(val *Log) *NullableLog {
-	return &NullableLog{value: val, isSet: true}
-}
-
-func (v NullableLog) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableLog) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

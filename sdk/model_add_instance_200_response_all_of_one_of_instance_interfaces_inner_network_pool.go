@@ -20,9 +20,9 @@ var _ MappedNullable = &AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerN
 
 // AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool struct for AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool
 type AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool
@@ -109,7 +109,7 @@ func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool) Set
 }
 
 func (o AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -131,63 +131,8 @@ func (o AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool) ToMa
 
 	return toSerialize, nil
 }
-
 func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool) UnmarshalJSON(data []byte) (err error) {
-	varAddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool := _AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool{}
-
-	err = json.Unmarshal(data, &varAddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool(varAddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool struct {
-	value *AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool
-	isSet bool
-}
-
-func (v NullableAddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool) Get() *AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool {
-	return v.value
-}
-
-func (v *NullableAddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool) Set(val *AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool(val *AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool) *NullableAddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool {
-	return &NullableAddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool{value: val, isSet: true}
-}
-
-func (v NullableAddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

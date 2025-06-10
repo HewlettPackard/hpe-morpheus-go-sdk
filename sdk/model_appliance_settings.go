@@ -20,39 +20,39 @@ var _ MappedNullable = &ApplianceSettings{}
 
 // ApplianceSettings struct for ApplianceSettings
 type ApplianceSettings struct {
-	Uuid *string `json:"uuid,omitempty"`
-	ApplianceId *string `json:"applianceId,omitempty"`
-	ApplianceUrl *string `json:"applianceUrl,omitempty"`
-	InternalApplianceUrl *string `json:"internalApplianceUrl,omitempty"`
-	CorsAllowed *string `json:"corsAllowed,omitempty"`
-	RegistrationEnabled *bool `json:"registrationEnabled,omitempty"`
-	DefaultRoleId *string `json:"defaultRoleId,omitempty"`
-	DefaultUserRoleId *string `json:"defaultUserRoleId,omitempty"`
-	DockerPrivilegedMode *bool `json:"dockerPrivilegedMode,omitempty"`
-	ExpirePwdDays *string `json:"expirePwdDays,omitempty"`
-	DisableAfterAttempts *string `json:"disableAfterAttempts,omitempty"`
-	DisableAfterDaysInactive *string `json:"disableAfterDaysInactive,omitempty"`
-	WarnUserDaysBefore *string `json:"warnUserDaysBefore,omitempty"`
-	SmtpMailFrom *string `json:"smtpMailFrom,omitempty"`
-	SmtpServer *string `json:"smtpServer,omitempty"`
-	SmtpPort *string `json:"smtpPort,omitempty"`
-	SmtpSSL *bool `json:"smtpSSL,omitempty"`
-	SmtpTLS *bool `json:"smtpTLS,omitempty"`
-	SmtpUser *string `json:"smtpUser,omitempty"`
-	SmtpPassword *string `json:"smtpPassword,omitempty"`
-	SmtpPasswordHash *string `json:"smtpPasswordHash,omitempty"`
-	ProxyHost *string `json:"proxyHost,omitempty"`
-	ProxyPort *string `json:"proxyPort,omitempty"`
-	ProxyUser *string `json:"proxyUser,omitempty"`
-	ProxyPassword *string `json:"proxyPassword,omitempty"`
-	ProxyPasswordHash *string `json:"proxyPasswordHash,omitempty"`
-	ProxyDomain *string `json:"proxyDomain,omitempty"`
-	ProxyWorkstation *string `json:"proxyWorkstation,omitempty"`
-	CurrencyProvider *string `json:"currencyProvider,omitempty"`
-	CurrencyKey *string `json:"currencyKey,omitempty"`
-	EnabledZoneTypes []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"enabledZoneTypes,omitempty"`
-	StatsRetainmentPeriod *int64 `json:"statsRetainmentPeriod,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Uuid                     *string                                                                  `json:"uuid,omitempty"`
+	ApplianceId              *string                                                                  `json:"applianceId,omitempty"`
+	ApplianceUrl             *string                                                                  `json:"applianceUrl,omitempty"`
+	InternalApplianceUrl     *string                                                                  `json:"internalApplianceUrl,omitempty"`
+	CorsAllowed              *string                                                                  `json:"corsAllowed,omitempty"`
+	RegistrationEnabled      *bool                                                                    `json:"registrationEnabled,omitempty"`
+	DefaultRoleId            *string                                                                  `json:"defaultRoleId,omitempty"`
+	DefaultUserRoleId        *string                                                                  `json:"defaultUserRoleId,omitempty"`
+	DockerPrivilegedMode     *bool                                                                    `json:"dockerPrivilegedMode,omitempty"`
+	ExpirePwdDays            *string                                                                  `json:"expirePwdDays,omitempty"`
+	DisableAfterAttempts     *string                                                                  `json:"disableAfterAttempts,omitempty"`
+	DisableAfterDaysInactive *string                                                                  `json:"disableAfterDaysInactive,omitempty"`
+	WarnUserDaysBefore       *string                                                                  `json:"warnUserDaysBefore,omitempty"`
+	SmtpMailFrom             *string                                                                  `json:"smtpMailFrom,omitempty"`
+	SmtpServer               *string                                                                  `json:"smtpServer,omitempty"`
+	SmtpPort                 *string                                                                  `json:"smtpPort,omitempty"`
+	SmtpSSL                  *bool                                                                    `json:"smtpSSL,omitempty"`
+	SmtpTLS                  *bool                                                                    `json:"smtpTLS,omitempty"`
+	SmtpUser                 *string                                                                  `json:"smtpUser,omitempty"`
+	SmtpPassword             *string                                                                  `json:"smtpPassword,omitempty"`
+	SmtpPasswordHash         *string                                                                  `json:"smtpPasswordHash,omitempty"`
+	ProxyHost                *string                                                                  `json:"proxyHost,omitempty"`
+	ProxyPort                *string                                                                  `json:"proxyPort,omitempty"`
+	ProxyUser                *string                                                                  `json:"proxyUser,omitempty"`
+	ProxyPassword            *string                                                                  `json:"proxyPassword,omitempty"`
+	ProxyPasswordHash        *string                                                                  `json:"proxyPasswordHash,omitempty"`
+	ProxyDomain              *string                                                                  `json:"proxyDomain,omitempty"`
+	ProxyWorkstation         *string                                                                  `json:"proxyWorkstation,omitempty"`
+	CurrencyProvider         *string                                                                  `json:"currencyProvider,omitempty"`
+	CurrencyKey              *string                                                                  `json:"currencyKey,omitempty"`
+	EnabledZoneTypes         []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"enabledZoneTypes,omitempty"`
+	StatsRetainmentPeriod    *int64                                                                   `json:"statsRetainmentPeriod,omitempty"`
+	AdditionalProperties     map[string]interface{}                                                   `json:",remain"`
 }
 
 type _ApplianceSettings ApplianceSettings
@@ -1099,7 +1099,7 @@ func (o *ApplianceSettings) SetStatsRetainmentPeriod(v int64) {
 }
 
 func (o ApplianceSettings) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1211,93 +1211,8 @@ func (o ApplianceSettings) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *ApplianceSettings) UnmarshalJSON(data []byte) (err error) {
-	varApplianceSettings := _ApplianceSettings{}
-
-	err = json.Unmarshal(data, &varApplianceSettings)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ApplianceSettings(varApplianceSettings)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "uuid")
-		delete(additionalProperties, "applianceId")
-		delete(additionalProperties, "applianceUrl")
-		delete(additionalProperties, "internalApplianceUrl")
-		delete(additionalProperties, "corsAllowed")
-		delete(additionalProperties, "registrationEnabled")
-		delete(additionalProperties, "defaultRoleId")
-		delete(additionalProperties, "defaultUserRoleId")
-		delete(additionalProperties, "dockerPrivilegedMode")
-		delete(additionalProperties, "expirePwdDays")
-		delete(additionalProperties, "disableAfterAttempts")
-		delete(additionalProperties, "disableAfterDaysInactive")
-		delete(additionalProperties, "warnUserDaysBefore")
-		delete(additionalProperties, "smtpMailFrom")
-		delete(additionalProperties, "smtpServer")
-		delete(additionalProperties, "smtpPort")
-		delete(additionalProperties, "smtpSSL")
-		delete(additionalProperties, "smtpTLS")
-		delete(additionalProperties, "smtpUser")
-		delete(additionalProperties, "smtpPassword")
-		delete(additionalProperties, "smtpPasswordHash")
-		delete(additionalProperties, "proxyHost")
-		delete(additionalProperties, "proxyPort")
-		delete(additionalProperties, "proxyUser")
-		delete(additionalProperties, "proxyPassword")
-		delete(additionalProperties, "proxyPasswordHash")
-		delete(additionalProperties, "proxyDomain")
-		delete(additionalProperties, "proxyWorkstation")
-		delete(additionalProperties, "currencyProvider")
-		delete(additionalProperties, "currencyKey")
-		delete(additionalProperties, "enabledZoneTypes")
-		delete(additionalProperties, "statsRetainmentPeriod")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableApplianceSettings struct {
-	value *ApplianceSettings
-	isSet bool
-}
-
-func (v NullableApplianceSettings) Get() *ApplianceSettings {
-	return v.value
-}
-
-func (v *NullableApplianceSettings) Set(val *ApplianceSettings) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableApplianceSettings) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableApplianceSettings) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableApplianceSettings(val *ApplianceSettings) *NullableApplianceSettings {
-	return &NullableApplianceSettings{value: val, isSet: true}
-}
-
-func (v NullableApplianceSettings) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableApplianceSettings) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

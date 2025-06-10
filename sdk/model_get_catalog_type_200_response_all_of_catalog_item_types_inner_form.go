@@ -21,8 +21,8 @@ var _ MappedNullable = &GetCatalogType200ResponseAllOfCatalogItemTypesInnerForm{
 // GetCatalogType200ResponseAllOfCatalogItemTypesInnerForm Object containing the form id. Only applies to formType 'form' and to type instance and blueprint.
 type GetCatalogType200ResponseAllOfCatalogItemTypesInnerForm struct {
 	// Form ID
-	Id *int64 `json:"id,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _GetCatalogType200ResponseAllOfCatalogItemTypesInnerForm GetCatalogType200ResponseAllOfCatalogItemTypesInnerForm
@@ -77,7 +77,7 @@ func (o *GetCatalogType200ResponseAllOfCatalogItemTypesInnerForm) SetId(v int64)
 }
 
 func (o GetCatalogType200ResponseAllOfCatalogItemTypesInnerForm) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -96,62 +96,8 @@ func (o GetCatalogType200ResponseAllOfCatalogItemTypesInnerForm) ToMap() (map[st
 
 	return toSerialize, nil
 }
-
 func (o *GetCatalogType200ResponseAllOfCatalogItemTypesInnerForm) UnmarshalJSON(data []byte) (err error) {
-	varGetCatalogType200ResponseAllOfCatalogItemTypesInnerForm := _GetCatalogType200ResponseAllOfCatalogItemTypesInnerForm{}
-
-	err = json.Unmarshal(data, &varGetCatalogType200ResponseAllOfCatalogItemTypesInnerForm)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetCatalogType200ResponseAllOfCatalogItemTypesInnerForm(varGetCatalogType200ResponseAllOfCatalogItemTypesInnerForm)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetCatalogType200ResponseAllOfCatalogItemTypesInnerForm struct {
-	value *GetCatalogType200ResponseAllOfCatalogItemTypesInnerForm
-	isSet bool
-}
-
-func (v NullableGetCatalogType200ResponseAllOfCatalogItemTypesInnerForm) Get() *GetCatalogType200ResponseAllOfCatalogItemTypesInnerForm {
-	return v.value
-}
-
-func (v *NullableGetCatalogType200ResponseAllOfCatalogItemTypesInnerForm) Set(val *GetCatalogType200ResponseAllOfCatalogItemTypesInnerForm) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetCatalogType200ResponseAllOfCatalogItemTypesInnerForm) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetCatalogType200ResponseAllOfCatalogItemTypesInnerForm) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetCatalogType200ResponseAllOfCatalogItemTypesInnerForm(val *GetCatalogType200ResponseAllOfCatalogItemTypesInnerForm) *NullableGetCatalogType200ResponseAllOfCatalogItemTypesInnerForm {
-	return &NullableGetCatalogType200ResponseAllOfCatalogItemTypesInnerForm{value: val, isSet: true}
-}
-
-func (v NullableGetCatalogType200ResponseAllOfCatalogItemTypesInnerForm) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetCatalogType200ResponseAllOfCatalogItemTypesInnerForm) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

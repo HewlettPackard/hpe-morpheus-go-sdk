@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the AddPriceSetsRequest type satisfies the MappedNullable interface at compile time
@@ -21,8 +20,8 @@ var _ MappedNullable = &AddPriceSetsRequest{}
 
 // AddPriceSetsRequest struct for AddPriceSetsRequest
 type AddPriceSetsRequest struct {
-	PriceSet AddPriceSetsRequestPriceSet `json:"priceSet"`
-	AdditionalProperties map[string]interface{}
+	PriceSet             AddPriceSetsRequestPriceSet `json:"priceSet"`
+	AdditionalProperties map[string]interface{}      `json:",remain"`
 }
 
 type _AddPriceSetsRequest AddPriceSetsRequest
@@ -70,7 +69,7 @@ func (o *AddPriceSetsRequest) SetPriceSet(v AddPriceSetsRequestPriceSet) {
 }
 
 func (o AddPriceSetsRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -87,83 +86,8 @@ func (o AddPriceSetsRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *AddPriceSetsRequest) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"priceSet",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varAddPriceSetsRequest := _AddPriceSetsRequest{}
-
-	err = json.Unmarshal(data, &varAddPriceSetsRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddPriceSetsRequest(varAddPriceSetsRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "priceSet")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddPriceSetsRequest struct {
-	value *AddPriceSetsRequest
-	isSet bool
-}
-
-func (v NullableAddPriceSetsRequest) Get() *AddPriceSetsRequest {
-	return v.value
-}
-
-func (v *NullableAddPriceSetsRequest) Set(val *AddPriceSetsRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddPriceSetsRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddPriceSetsRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddPriceSetsRequest(val *AddPriceSetsRequest) *NullableAddPriceSetsRequest {
-	return &NullableAddPriceSetsRequest{value: val, isSet: true}
-}
-
-func (v NullableAddPriceSetsRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddPriceSetsRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

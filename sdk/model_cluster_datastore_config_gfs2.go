@@ -21,8 +21,8 @@ var _ MappedNullable = &ClusterDatastoreConfigGFS2{}
 // ClusterDatastoreConfigGFS2 struct for ClusterDatastoreConfigGFS2
 type ClusterDatastoreConfigGFS2 struct {
 	// Block device for target GFS2.
-	BlockDevice *string `json:"blockDevice,omitempty"`
-	AdditionalProperties map[string]interface{}
+	BlockDevice          *string                `json:"blockDevice,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ClusterDatastoreConfigGFS2 ClusterDatastoreConfigGFS2
@@ -77,7 +77,7 @@ func (o *ClusterDatastoreConfigGFS2) SetBlockDevice(v string) {
 }
 
 func (o ClusterDatastoreConfigGFS2) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -96,62 +96,8 @@ func (o ClusterDatastoreConfigGFS2) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *ClusterDatastoreConfigGFS2) UnmarshalJSON(data []byte) (err error) {
-	varClusterDatastoreConfigGFS2 := _ClusterDatastoreConfigGFS2{}
-
-	err = json.Unmarshal(data, &varClusterDatastoreConfigGFS2)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ClusterDatastoreConfigGFS2(varClusterDatastoreConfigGFS2)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "blockDevice")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableClusterDatastoreConfigGFS2 struct {
-	value *ClusterDatastoreConfigGFS2
-	isSet bool
-}
-
-func (v NullableClusterDatastoreConfigGFS2) Get() *ClusterDatastoreConfigGFS2 {
-	return v.value
-}
-
-func (v *NullableClusterDatastoreConfigGFS2) Set(val *ClusterDatastoreConfigGFS2) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableClusterDatastoreConfigGFS2) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableClusterDatastoreConfigGFS2) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableClusterDatastoreConfigGFS2(val *ClusterDatastoreConfigGFS2) *NullableClusterDatastoreConfigGFS2 {
-	return &NullableClusterDatastoreConfigGFS2{value: val, isSet: true}
-}
-
-func (v NullableClusterDatastoreConfigGFS2) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableClusterDatastoreConfigGFS2) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

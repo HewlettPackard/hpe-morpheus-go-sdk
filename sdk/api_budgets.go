@@ -21,13 +21,12 @@ import (
 	"strings"
 )
 
-
 // BudgetsAPIService BudgetsAPI service
 type BudgetsAPIService service
 
 type ApiAddBudgetsRequest struct {
-	ctx context.Context
-	ApiService *BudgetsAPIService
+	ctx               context.Context
+	ApiService        *BudgetsAPIService
 	addBudgetsRequest *AddBudgetsRequest
 }
 
@@ -45,25 +44,25 @@ AddBudgets Creates a Budget
 
 Creates a budget.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddBudgetsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddBudgetsRequest
 */
 func (a *BudgetsAPIService) AddBudgets(ctx context.Context) ApiAddBudgetsRequest {
 	return ApiAddBudgetsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddBudgets200Response
+//
+//	@return AddBudgets200Response
 func (a *BudgetsAPIService) AddBudgetsExecute(r ApiAddBudgetsRequest) (*AddBudgets200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddBudgets200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddBudgets200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BudgetsAPIService.AddBudgets")
@@ -115,7 +114,7 @@ func (a *BudgetsAPIService) AddBudgetsExecute(r ApiAddBudgetsRequest) (*AddBudge
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -124,8 +123,8 @@ func (a *BudgetsAPIService) AddBudgetsExecute(r ApiAddBudgetsRequest) (*AddBudge
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -135,8 +134,8 @@ func (a *BudgetsAPIService) AddBudgetsExecute(r ApiAddBudgetsRequest) (*AddBudge
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -144,8 +143,8 @@ func (a *BudgetsAPIService) AddBudgetsExecute(r ApiAddBudgetsRequest) (*AddBudge
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -154,9 +153,9 @@ func (a *BudgetsAPIService) AddBudgetsExecute(r ApiAddBudgetsRequest) (*AddBudge
 }
 
 type ApiGetBudgetsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *BudgetsAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetBudgetsRequest) Execute() (*GetBudgets200Response, *http.Response, error) {
@@ -168,27 +167,27 @@ GetBudgets Retrieves a Specific Budget
 
 Retrieves a specific budget.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetBudgetsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetBudgetsRequest
 */
 func (a *BudgetsAPIService) GetBudgets(ctx context.Context, id int64) ApiGetBudgetsRequest {
 	return ApiGetBudgetsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetBudgets200Response
+//
+//	@return GetBudgets200Response
 func (a *BudgetsAPIService) GetBudgetsExecute(r ApiGetBudgetsRequest) (*GetBudgets200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetBudgets200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetBudgets200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BudgetsAPIService.GetBudgets")
@@ -239,7 +238,7 @@ func (a *BudgetsAPIService) GetBudgetsExecute(r ApiGetBudgetsRequest) (*GetBudge
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -248,8 +247,8 @@ func (a *BudgetsAPIService) GetBudgetsExecute(r ApiGetBudgetsRequest) (*GetBudge
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -259,8 +258,8 @@ func (a *BudgetsAPIService) GetBudgetsExecute(r ApiGetBudgetsRequest) (*GetBudge
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -268,8 +267,8 @@ func (a *BudgetsAPIService) GetBudgetsExecute(r ApiGetBudgetsRequest) (*GetBudge
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -278,14 +277,14 @@ func (a *BudgetsAPIService) GetBudgetsExecute(r ApiGetBudgetsRequest) (*GetBudge
 }
 
 type ApiListBudgetsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *BudgetsAPIService
-	max *int64
-	offset *int64
-	sort *string
-	direction *string
-	phrase *string
-	name *string
+	max        *int64
+	offset     *int64
+	sort       *string
+	direction  *string
+	phrase     *string
+	name       *string
 }
 
 // Maximum number of records to return
@@ -333,25 +332,25 @@ ListBudgets Retrieves all Budgets
 
 Retrieves all budgets.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListBudgetsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListBudgetsRequest
 */
 func (a *BudgetsAPIService) ListBudgets(ctx context.Context) ApiListBudgetsRequest {
 	return ApiListBudgetsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListBudgets200Response
+//
+//	@return ListBudgets200Response
 func (a *BudgetsAPIService) ListBudgetsExecute(r ApiListBudgetsRequest) (*ListBudgets200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListBudgets200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListBudgets200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BudgetsAPIService.ListBudgets")
@@ -431,7 +430,7 @@ func (a *BudgetsAPIService) ListBudgetsExecute(r ApiListBudgetsRequest) (*ListBu
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -440,8 +439,8 @@ func (a *BudgetsAPIService) ListBudgetsExecute(r ApiListBudgetsRequest) (*ListBu
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -451,8 +450,8 @@ func (a *BudgetsAPIService) ListBudgetsExecute(r ApiListBudgetsRequest) (*ListBu
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -460,8 +459,8 @@ func (a *BudgetsAPIService) ListBudgetsExecute(r ApiListBudgetsRequest) (*ListBu
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -470,9 +469,9 @@ func (a *BudgetsAPIService) ListBudgetsExecute(r ApiListBudgetsRequest) (*ListBu
 }
 
 type ApiRemoveBudgetsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *BudgetsAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiRemoveBudgetsRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -484,27 +483,27 @@ RemoveBudgets Deletes a Budget
 
 Deletes a specified Budget.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiRemoveBudgetsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiRemoveBudgetsRequest
 */
 func (a *BudgetsAPIService) RemoveBudgets(ctx context.Context, id int64) ApiRemoveBudgetsRequest {
 	return ApiRemoveBudgetsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *BudgetsAPIService) RemoveBudgetsExecute(r ApiRemoveBudgetsRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BudgetsAPIService.RemoveBudgets")
@@ -555,7 +554,7 @@ func (a *BudgetsAPIService) RemoveBudgetsExecute(r ApiRemoveBudgetsRequest) (*De
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -564,8 +563,8 @@ func (a *BudgetsAPIService) RemoveBudgetsExecute(r ApiRemoveBudgetsRequest) (*De
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -575,8 +574,8 @@ func (a *BudgetsAPIService) RemoveBudgetsExecute(r ApiRemoveBudgetsRequest) (*De
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -584,8 +583,8 @@ func (a *BudgetsAPIService) RemoveBudgetsExecute(r ApiRemoveBudgetsRequest) (*De
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -594,9 +593,9 @@ func (a *BudgetsAPIService) RemoveBudgetsExecute(r ApiRemoveBudgetsRequest) (*De
 }
 
 type ApiUpdateBudgetsRequest struct {
-	ctx context.Context
-	ApiService *BudgetsAPIService
-	id int64
+	ctx               context.Context
+	ApiService        *BudgetsAPIService
+	id                int64
 	addBudgetsRequest *AddBudgetsRequest
 }
 
@@ -614,27 +613,27 @@ UpdateBudgets Updates a Budget
 
 Updates a budget.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateBudgetsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateBudgetsRequest
 */
 func (a *BudgetsAPIService) UpdateBudgets(ctx context.Context, id int64) ApiUpdateBudgetsRequest {
 	return ApiUpdateBudgetsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return AddBudgets200Response
+//
+//	@return AddBudgets200Response
 func (a *BudgetsAPIService) UpdateBudgetsExecute(r ApiUpdateBudgetsRequest) (*AddBudgets200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddBudgets200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddBudgets200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BudgetsAPIService.UpdateBudgets")
@@ -687,7 +686,7 @@ func (a *BudgetsAPIService) UpdateBudgetsExecute(r ApiUpdateBudgetsRequest) (*Ad
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -696,8 +695,8 @@ func (a *BudgetsAPIService) UpdateBudgetsExecute(r ApiUpdateBudgetsRequest) (*Ad
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -707,8 +706,8 @@ func (a *BudgetsAPIService) UpdateBudgetsExecute(r ApiUpdateBudgetsRequest) (*Ad
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -716,8 +715,8 @@ func (a *BudgetsAPIService) UpdateBudgetsExecute(r ApiUpdateBudgetsRequest) (*Ad
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

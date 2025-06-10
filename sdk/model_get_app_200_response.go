@@ -20,8 +20,8 @@ var _ MappedNullable = &GetApp200Response{}
 
 // GetApp200Response struct for GetApp200Response
 type GetApp200Response struct {
-	App *ListApps200ResponseAllOfAppsInner `json:"app,omitempty"`
-	AdditionalProperties map[string]interface{}
+	App                  *ListApps200ResponseAllOfAppsInner `json:"app,omitempty"`
+	AdditionalProperties map[string]interface{}             `json:",remain"`
 }
 
 type _GetApp200Response GetApp200Response
@@ -76,7 +76,7 @@ func (o *GetApp200Response) SetApp(v ListApps200ResponseAllOfAppsInner) {
 }
 
 func (o GetApp200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o GetApp200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *GetApp200Response) UnmarshalJSON(data []byte) (err error) {
-	varGetApp200Response := _GetApp200Response{}
-
-	err = json.Unmarshal(data, &varGetApp200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetApp200Response(varGetApp200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "app")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetApp200Response struct {
-	value *GetApp200Response
-	isSet bool
-}
-
-func (v NullableGetApp200Response) Get() *GetApp200Response {
-	return v.value
-}
-
-func (v *NullableGetApp200Response) Set(val *GetApp200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetApp200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetApp200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetApp200Response(val *GetApp200Response) *NullableGetApp200Response {
-	return &NullableGetApp200Response{value: val, isSet: true}
-}
-
-func (v NullableGetApp200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetApp200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -20,24 +20,24 @@ var _ MappedNullable = &UpdateInstanceNetworkInterface200ResponseAllOfOneOfServe
 
 // UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerType struct for UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerType
 type UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerType struct {
-	Id *int64 `json:"id,omitempty"`
-	Code *string `json:"code,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Platform *string `json:"platform,omitempty"`
-	NodeType *string `json:"nodeType,omitempty"`
-	Managed *bool `json:"managed,omitempty"`
-	Enabled *bool `json:"enabled,omitempty"`
-	VmHypervisor *bool `json:"vmHypervisor,omitempty"`
-	ContainerHypervisor *bool `json:"containerHypervisor,omitempty"`
-	DisplayOrder *int64 `json:"displayOrder,omitempty"`
-	Selectable *bool `json:"selectable,omitempty"`
-	ControlPower *bool `json:"controlPower,omitempty"`
-	ControlSuspend *bool `json:"controlSuspend,omitempty"`
-	HasAgent *bool `json:"hasAgent,omitempty"`
-	Creatable *bool `json:"creatable,omitempty"`
-	OptionTypes []map[string]interface{} `json:"optionTypes,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                   `json:"id,omitempty"`
+	Code                 *string                  `json:"code,omitempty"`
+	Name                 *string                  `json:"name,omitempty"`
+	Description          *string                  `json:"description,omitempty"`
+	Platform             *string                  `json:"platform,omitempty"`
+	NodeType             *string                  `json:"nodeType,omitempty"`
+	Managed              *bool                    `json:"managed,omitempty"`
+	Enabled              *bool                    `json:"enabled,omitempty"`
+	VmHypervisor         *bool                    `json:"vmHypervisor,omitempty"`
+	ContainerHypervisor  *bool                    `json:"containerHypervisor,omitempty"`
+	DisplayOrder         *int64                   `json:"displayOrder,omitempty"`
+	Selectable           *bool                    `json:"selectable,omitempty"`
+	ControlPower         *bool                    `json:"controlPower,omitempty"`
+	ControlSuspend       *bool                    `json:"controlSuspend,omitempty"`
+	HasAgent             *bool                    `json:"hasAgent,omitempty"`
+	Creatable            *bool                    `json:"creatable,omitempty"`
+	OptionTypes          []map[string]interface{} `json:"optionTypes,omitempty"`
+	AdditionalProperties map[string]interface{}   `json:",remain"`
 }
 
 type _UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerType UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerType
@@ -604,7 +604,7 @@ func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerT
 }
 
 func (o UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerType) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -671,78 +671,8 @@ func (o UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerTy
 
 	return toSerialize, nil
 }
-
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerType) UnmarshalJSON(data []byte) (err error) {
-	varUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerType := _UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerType{}
-
-	err = json.Unmarshal(data, &varUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerType)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerType(varUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerType)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "platform")
-		delete(additionalProperties, "nodeType")
-		delete(additionalProperties, "managed")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "vmHypervisor")
-		delete(additionalProperties, "containerHypervisor")
-		delete(additionalProperties, "displayOrder")
-		delete(additionalProperties, "selectable")
-		delete(additionalProperties, "controlPower")
-		delete(additionalProperties, "controlSuspend")
-		delete(additionalProperties, "hasAgent")
-		delete(additionalProperties, "creatable")
-		delete(additionalProperties, "optionTypes")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerType struct {
-	value *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerType
-	isSet bool
-}
-
-func (v NullableUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerType) Get() *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerType {
-	return v.value
-}
-
-func (v *NullableUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerType) Set(val *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerType) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerType) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerType) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerType(val *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerType) *NullableUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerType {
-	return &NullableUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerType{value: val, isSet: true}
-}
-
-func (v NullableUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerType) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerType) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

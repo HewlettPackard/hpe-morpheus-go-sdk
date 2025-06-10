@@ -20,19 +20,19 @@ var _ MappedNullable = &ListPolicyTypes200ResponseAllOfPolicyTypesInner{}
 
 // ListPolicyTypes200ResponseAllOfPolicyTypesInner struct for ListPolicyTypes200ResponseAllOfPolicyTypesInner
 type ListPolicyTypes200ResponseAllOfPolicyTypesInner struct {
-	Id *int64 `json:"id,omitempty"`
-	Code *string `json:"code,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Category *string `json:"category,omitempty"`
-	LoadMethod *string `json:"loadMethod,omitempty"`
-	EnforceMethod *string `json:"enforceMethod,omitempty"`
-	PrepareMethod *string `json:"prepareMethod,omitempty"`
-	ValidateMethod *string `json:"validateMethod,omitempty"`
-	EnforceOnProvision *bool `json:"enforceOnProvision,omitempty"`
-	EnforceOnManaged *bool `json:"enforceOnManaged,omitempty"`
-	OptionTypes []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                                      `json:"id,omitempty"`
+	Code                 *string                                                                     `json:"code,omitempty"`
+	Name                 *string                                                                     `json:"name,omitempty"`
+	Description          *string                                                                     `json:"description,omitempty"`
+	Category             *string                                                                     `json:"category,omitempty"`
+	LoadMethod           *string                                                                     `json:"loadMethod,omitempty"`
+	EnforceMethod        *string                                                                     `json:"enforceMethod,omitempty"`
+	PrepareMethod        *string                                                                     `json:"prepareMethod,omitempty"`
+	ValidateMethod       *string                                                                     `json:"validateMethod,omitempty"`
+	EnforceOnProvision   *bool                                                                       `json:"enforceOnProvision,omitempty"`
+	EnforceOnManaged     *bool                                                                       `json:"enforceOnManaged,omitempty"`
+	OptionTypes          []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
+	AdditionalProperties map[string]interface{}                                                      `json:",remain"`
 }
 
 type _ListPolicyTypes200ResponseAllOfPolicyTypesInner ListPolicyTypes200ResponseAllOfPolicyTypesInner
@@ -439,7 +439,7 @@ func (o *ListPolicyTypes200ResponseAllOfPolicyTypesInner) SetOptionTypes(v []Lis
 }
 
 func (o ListPolicyTypes200ResponseAllOfPolicyTypesInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -491,73 +491,8 @@ func (o ListPolicyTypes200ResponseAllOfPolicyTypesInner) ToMap() (map[string]int
 
 	return toSerialize, nil
 }
-
 func (o *ListPolicyTypes200ResponseAllOfPolicyTypesInner) UnmarshalJSON(data []byte) (err error) {
-	varListPolicyTypes200ResponseAllOfPolicyTypesInner := _ListPolicyTypes200ResponseAllOfPolicyTypesInner{}
-
-	err = json.Unmarshal(data, &varListPolicyTypes200ResponseAllOfPolicyTypesInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListPolicyTypes200ResponseAllOfPolicyTypesInner(varListPolicyTypes200ResponseAllOfPolicyTypesInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "category")
-		delete(additionalProperties, "loadMethod")
-		delete(additionalProperties, "enforceMethod")
-		delete(additionalProperties, "prepareMethod")
-		delete(additionalProperties, "validateMethod")
-		delete(additionalProperties, "enforceOnProvision")
-		delete(additionalProperties, "enforceOnManaged")
-		delete(additionalProperties, "optionTypes")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListPolicyTypes200ResponseAllOfPolicyTypesInner struct {
-	value *ListPolicyTypes200ResponseAllOfPolicyTypesInner
-	isSet bool
-}
-
-func (v NullableListPolicyTypes200ResponseAllOfPolicyTypesInner) Get() *ListPolicyTypes200ResponseAllOfPolicyTypesInner {
-	return v.value
-}
-
-func (v *NullableListPolicyTypes200ResponseAllOfPolicyTypesInner) Set(val *ListPolicyTypes200ResponseAllOfPolicyTypesInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListPolicyTypes200ResponseAllOfPolicyTypesInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListPolicyTypes200ResponseAllOfPolicyTypesInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListPolicyTypes200ResponseAllOfPolicyTypesInner(val *ListPolicyTypes200ResponseAllOfPolicyTypesInner) *NullableListPolicyTypes200ResponseAllOfPolicyTypesInner {
-	return &NullableListPolicyTypes200ResponseAllOfPolicyTypesInner{value: val, isSet: true}
-}
-
-func (v NullableListPolicyTypes200ResponseAllOfPolicyTypesInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListPolicyTypes200ResponseAllOfPolicyTypesInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

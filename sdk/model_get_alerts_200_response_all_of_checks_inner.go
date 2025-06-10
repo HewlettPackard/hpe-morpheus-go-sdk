@@ -21,44 +21,44 @@ var _ MappedNullable = &GetAlerts200ResponseAllOfChecksInner{}
 
 // GetAlerts200ResponseAllOfChecksInner struct for GetAlerts200ResponseAllOfChecksInner
 type GetAlerts200ResponseAllOfChecksInner struct {
-	Id *int64 `json:"id,omitempty"`
-	Account *GetAlerts200ResponseAllOfChecksInnerAccount `json:"account,omitempty"`
-	Active *bool `json:"active,omitempty"`
-	ApiKey *string `json:"apiKey,omitempty"`
-	Availability *float32 `json:"availability,omitempty"`
-	CheckAgent *string `json:"checkAgent,omitempty"`
-	CheckInterval *int64 `json:"checkInterval,omitempty"`
-	CheckSpec *string `json:"checkSpec,omitempty"`
-	CheckType *GetAlerts200ResponseAllOfChecksInnerCheckType `json:"checkType,omitempty"`
-	Config *GetAlerts200ResponseAllOfChecksInnerConfig `json:"config,omitempty"`
-	Container *GetAlerts200ResponseAllOfChecksInnerContainer `json:"container,omitempty"`
-	CreateIncident *bool `json:"createIncident,omitempty"`
-	Muted *bool `json:"muted,omitempty"`
-	CreatedBy *GetAlerts200ResponseAllOfChecksInnerCreatedBy `json:"createdBy,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	Description *string `json:"description,omitempty"`
-	EndDate *time.Time `json:"endDate,omitempty"`
-	Health *int64 `json:"health,omitempty"`
-	InUptime *bool `json:"inUptime,omitempty"`
-	LastBoxStats *string `json:"lastBoxStats,omitempty"`
-	LastCheckStatus *string `json:"lastCheckStatus,omitempty"`
-	LastError *string `json:"lastError,omitempty"`
-	LastErrorDate *time.Time `json:"lastErrorDate,omitempty"`
-	LastMessage *string `json:"lastMessage,omitempty"`
-	LastMetric *string `json:"lastMetric,omitempty"`
-	LastRunDate *time.Time `json:"lastRunDate,omitempty"`
-	LastStats *string `json:"lastStats,omitempty"`
-	LastSuccessDate *time.Time `json:"lastSuccessDate,omitempty"`
-	LastTimer *int64 `json:"lastTimer,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	LastWarningDate *time.Time `json:"lastWarningDate,omitempty"`
-	Name *string `json:"name,omitempty"`
-	NextRunDate *time.Time `json:"nextRunDate,omitempty"`
-	OutageTime *int64 `json:"outageTime,omitempty"`
-	Severity *string `json:"severity,omitempty"`
-	StartDate *time.Time `json:"startDate,omitempty"`
-	Deleted *bool `json:"deleted,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                         `json:"id,omitempty"`
+	Account              *GetAlerts200ResponseAllOfChecksInnerAccount   `json:"account,omitempty"`
+	Active               *bool                                          `json:"active,omitempty"`
+	ApiKey               *string                                        `json:"apiKey,omitempty"`
+	Availability         *float32                                       `json:"availability,omitempty"`
+	CheckAgent           *string                                        `json:"checkAgent,omitempty"`
+	CheckInterval        *int64                                         `json:"checkInterval,omitempty"`
+	CheckSpec            *string                                        `json:"checkSpec,omitempty"`
+	CheckType            *GetAlerts200ResponseAllOfChecksInnerCheckType `json:"checkType,omitempty"`
+	Config               *GetAlerts200ResponseAllOfChecksInnerConfig    `json:"config,omitempty"`
+	Container            *GetAlerts200ResponseAllOfChecksInnerContainer `json:"container,omitempty"`
+	CreateIncident       *bool                                          `json:"createIncident,omitempty"`
+	Muted                *bool                                          `json:"muted,omitempty"`
+	CreatedBy            *GetAlerts200ResponseAllOfChecksInnerCreatedBy `json:"createdBy,omitempty"`
+	DateCreated          *time.Time                                     `json:"dateCreated,omitempty"`
+	Description          *string                                        `json:"description,omitempty"`
+	EndDate              *time.Time                                     `json:"endDate,omitempty"`
+	Health               *int64                                         `json:"health,omitempty"`
+	InUptime             *bool                                          `json:"inUptime,omitempty"`
+	LastBoxStats         *string                                        `json:"lastBoxStats,omitempty"`
+	LastCheckStatus      *string                                        `json:"lastCheckStatus,omitempty"`
+	LastError            *string                                        `json:"lastError,omitempty"`
+	LastErrorDate        *time.Time                                     `json:"lastErrorDate,omitempty"`
+	LastMessage          *string                                        `json:"lastMessage,omitempty"`
+	LastMetric           *string                                        `json:"lastMetric,omitempty"`
+	LastRunDate          *time.Time                                     `json:"lastRunDate,omitempty"`
+	LastStats            *string                                        `json:"lastStats,omitempty"`
+	LastSuccessDate      *time.Time                                     `json:"lastSuccessDate,omitempty"`
+	LastTimer            *int64                                         `json:"lastTimer,omitempty"`
+	LastUpdated          *time.Time                                     `json:"lastUpdated,omitempty"`
+	LastWarningDate      *time.Time                                     `json:"lastWarningDate,omitempty"`
+	Name                 *string                                        `json:"name,omitempty"`
+	NextRunDate          *time.Time                                     `json:"nextRunDate,omitempty"`
+	OutageTime           *int64                                         `json:"outageTime,omitempty"`
+	Severity             *string                                        `json:"severity,omitempty"`
+	StartDate            *time.Time                                     `json:"startDate,omitempty"`
+	Deleted              *bool                                          `json:"deleted,omitempty"`
+	AdditionalProperties map[string]interface{}                         `json:",remain"`
 }
 
 type _GetAlerts200ResponseAllOfChecksInner GetAlerts200ResponseAllOfChecksInner
@@ -1265,7 +1265,7 @@ func (o *GetAlerts200ResponseAllOfChecksInner) SetDeleted(v bool) {
 }
 
 func (o GetAlerts200ResponseAllOfChecksInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1392,98 +1392,8 @@ func (o GetAlerts200ResponseAllOfChecksInner) ToMap() (map[string]interface{}, e
 
 	return toSerialize, nil
 }
-
 func (o *GetAlerts200ResponseAllOfChecksInner) UnmarshalJSON(data []byte) (err error) {
-	varGetAlerts200ResponseAllOfChecksInner := _GetAlerts200ResponseAllOfChecksInner{}
-
-	err = json.Unmarshal(data, &varGetAlerts200ResponseAllOfChecksInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetAlerts200ResponseAllOfChecksInner(varGetAlerts200ResponseAllOfChecksInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "account")
-		delete(additionalProperties, "active")
-		delete(additionalProperties, "apiKey")
-		delete(additionalProperties, "availability")
-		delete(additionalProperties, "checkAgent")
-		delete(additionalProperties, "checkInterval")
-		delete(additionalProperties, "checkSpec")
-		delete(additionalProperties, "checkType")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "container")
-		delete(additionalProperties, "createIncident")
-		delete(additionalProperties, "muted")
-		delete(additionalProperties, "createdBy")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "endDate")
-		delete(additionalProperties, "health")
-		delete(additionalProperties, "inUptime")
-		delete(additionalProperties, "lastBoxStats")
-		delete(additionalProperties, "lastCheckStatus")
-		delete(additionalProperties, "lastError")
-		delete(additionalProperties, "lastErrorDate")
-		delete(additionalProperties, "lastMessage")
-		delete(additionalProperties, "lastMetric")
-		delete(additionalProperties, "lastRunDate")
-		delete(additionalProperties, "lastStats")
-		delete(additionalProperties, "lastSuccessDate")
-		delete(additionalProperties, "lastTimer")
-		delete(additionalProperties, "lastUpdated")
-		delete(additionalProperties, "lastWarningDate")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "nextRunDate")
-		delete(additionalProperties, "outageTime")
-		delete(additionalProperties, "severity")
-		delete(additionalProperties, "startDate")
-		delete(additionalProperties, "deleted")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetAlerts200ResponseAllOfChecksInner struct {
-	value *GetAlerts200ResponseAllOfChecksInner
-	isSet bool
-}
-
-func (v NullableGetAlerts200ResponseAllOfChecksInner) Get() *GetAlerts200ResponseAllOfChecksInner {
-	return v.value
-}
-
-func (v *NullableGetAlerts200ResponseAllOfChecksInner) Set(val *GetAlerts200ResponseAllOfChecksInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetAlerts200ResponseAllOfChecksInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetAlerts200ResponseAllOfChecksInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetAlerts200ResponseAllOfChecksInner(val *GetAlerts200ResponseAllOfChecksInner) *NullableGetAlerts200ResponseAllOfChecksInner {
-	return &NullableGetAlerts200ResponseAllOfChecksInner{value: val, isSet: true}
-}
-
-func (v NullableGetAlerts200ResponseAllOfChecksInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetAlerts200ResponseAllOfChecksInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

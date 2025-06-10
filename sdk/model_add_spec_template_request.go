@@ -20,8 +20,8 @@ var _ MappedNullable = &AddSpecTemplateRequest{}
 
 // AddSpecTemplateRequest struct for AddSpecTemplateRequest
 type AddSpecTemplateRequest struct {
-	SpecTemplate *AddSpecTemplateRequestSpecTemplate `json:"specTemplate,omitempty"`
-	AdditionalProperties map[string]interface{}
+	SpecTemplate         *AddSpecTemplateRequestSpecTemplate `json:"specTemplate,omitempty"`
+	AdditionalProperties map[string]interface{}              `json:",remain"`
 }
 
 type _AddSpecTemplateRequest AddSpecTemplateRequest
@@ -76,7 +76,7 @@ func (o *AddSpecTemplateRequest) SetSpecTemplate(v AddSpecTemplateRequestSpecTem
 }
 
 func (o AddSpecTemplateRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o AddSpecTemplateRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *AddSpecTemplateRequest) UnmarshalJSON(data []byte) (err error) {
-	varAddSpecTemplateRequest := _AddSpecTemplateRequest{}
-
-	err = json.Unmarshal(data, &varAddSpecTemplateRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddSpecTemplateRequest(varAddSpecTemplateRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "specTemplate")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddSpecTemplateRequest struct {
-	value *AddSpecTemplateRequest
-	isSet bool
-}
-
-func (v NullableAddSpecTemplateRequest) Get() *AddSpecTemplateRequest {
-	return v.value
-}
-
-func (v *NullableAddSpecTemplateRequest) Set(val *AddSpecTemplateRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddSpecTemplateRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddSpecTemplateRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddSpecTemplateRequest(val *AddSpecTemplateRequest) *NullableAddSpecTemplateRequest {
-	return &NullableAddSpecTemplateRequest{value: val, isSet: true}
-}
-
-func (v NullableAddSpecTemplateRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddSpecTemplateRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

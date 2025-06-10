@@ -20,8 +20,8 @@ var _ MappedNullable = &GetGuidanceStats200Response{}
 
 // GetGuidanceStats200Response struct for GetGuidanceStats200Response
 type GetGuidanceStats200Response struct {
-	Stats *GetGuidanceStats200ResponseStats `json:"stats,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Stats                *GetGuidanceStats200ResponseStats `json:"stats,omitempty"`
+	AdditionalProperties map[string]interface{}            `json:",remain"`
 }
 
 type _GetGuidanceStats200Response GetGuidanceStats200Response
@@ -76,7 +76,7 @@ func (o *GetGuidanceStats200Response) SetStats(v GetGuidanceStats200ResponseStat
 }
 
 func (o GetGuidanceStats200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o GetGuidanceStats200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *GetGuidanceStats200Response) UnmarshalJSON(data []byte) (err error) {
-	varGetGuidanceStats200Response := _GetGuidanceStats200Response{}
-
-	err = json.Unmarshal(data, &varGetGuidanceStats200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetGuidanceStats200Response(varGetGuidanceStats200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "stats")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetGuidanceStats200Response struct {
-	value *GetGuidanceStats200Response
-	isSet bool
-}
-
-func (v NullableGetGuidanceStats200Response) Get() *GetGuidanceStats200Response {
-	return v.value
-}
-
-func (v *NullableGetGuidanceStats200Response) Set(val *GetGuidanceStats200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetGuidanceStats200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetGuidanceStats200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetGuidanceStats200Response(val *GetGuidanceStats200Response) *NullableGetGuidanceStats200Response {
-	return &NullableGetGuidanceStats200Response{value: val, isSet: true}
-}
-
-func (v NullableGetGuidanceStats200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetGuidanceStats200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

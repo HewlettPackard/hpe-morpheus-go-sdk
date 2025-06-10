@@ -20,11 +20,11 @@ var _ MappedNullable = &GuidanceStats{}
 
 // GuidanceStats struct for GuidanceStats
 type GuidanceStats struct {
-	Total *int64 `json:"total,omitempty"`
-	Savings *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfSavings `json:"savings,omitempty"`
-	Severity *GetGuidanceStats200ResponseStatsSeverity `json:"severity,omitempty"`
-	Type *GetGuidanceStats200ResponseStatsType `json:"type,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Total                *int64                                                     `json:"total,omitempty"`
+	Savings              *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfSavings `json:"savings,omitempty"`
+	Severity             *GetGuidanceStats200ResponseStatsSeverity                  `json:"severity,omitempty"`
+	Type                 *GetGuidanceStats200ResponseStatsType                      `json:"type,omitempty"`
+	AdditionalProperties map[string]interface{}                                     `json:",remain"`
 }
 
 type _GuidanceStats GuidanceStats
@@ -175,7 +175,7 @@ func (o *GuidanceStats) SetType(v GetGuidanceStats200ResponseStatsType) {
 }
 
 func (o GuidanceStats) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -203,65 +203,8 @@ func (o GuidanceStats) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *GuidanceStats) UnmarshalJSON(data []byte) (err error) {
-	varGuidanceStats := _GuidanceStats{}
-
-	err = json.Unmarshal(data, &varGuidanceStats)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GuidanceStats(varGuidanceStats)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "total")
-		delete(additionalProperties, "savings")
-		delete(additionalProperties, "severity")
-		delete(additionalProperties, "type")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGuidanceStats struct {
-	value *GuidanceStats
-	isSet bool
-}
-
-func (v NullableGuidanceStats) Get() *GuidanceStats {
-	return v.value
-}
-
-func (v *NullableGuidanceStats) Set(val *GuidanceStats) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGuidanceStats) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGuidanceStats) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGuidanceStats(val *GuidanceStats) *NullableGuidanceStats {
-	return &NullableGuidanceStats{value: val, isSet: true}
-}
-
-func (v NullableGuidanceStats) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGuidanceStats) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

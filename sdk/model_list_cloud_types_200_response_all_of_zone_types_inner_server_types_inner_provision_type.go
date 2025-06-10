@@ -20,12 +20,12 @@ var _ MappedNullable = &ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesI
 
 // ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerProvisionType struct for ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerProvisionType
 type ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerProvisionType struct {
-	Id *int64 `json:"id,omitempty"`
-	Code *string `json:"code,omitempty"`
-	Name *string `json:"name,omitempty"`
-	HasNetworks *bool `json:"hasNetworks,omitempty"`
-	HasZonePools *bool `json:"hasZonePools,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	Code                 *string                `json:"code,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	HasNetworks          *bool                  `json:"hasNetworks,omitempty"`
+	HasZonePools         *bool                  `json:"hasZonePools,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerProvisionType ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerProvisionType
@@ -208,7 +208,7 @@ func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerProvisionTy
 }
 
 func (o ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerProvisionType) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -239,66 +239,8 @@ func (o ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerProvisionTyp
 
 	return toSerialize, nil
 }
-
 func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerProvisionType) UnmarshalJSON(data []byte) (err error) {
-	varListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerProvisionType := _ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerProvisionType{}
-
-	err = json.Unmarshal(data, &varListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerProvisionType)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerProvisionType(varListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerProvisionType)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "hasNetworks")
-		delete(additionalProperties, "hasZonePools")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerProvisionType struct {
-	value *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerProvisionType
-	isSet bool
-}
-
-func (v NullableListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerProvisionType) Get() *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerProvisionType {
-	return v.value
-}
-
-func (v *NullableListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerProvisionType) Set(val *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerProvisionType) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerProvisionType) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerProvisionType) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerProvisionType(val *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerProvisionType) *NullableListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerProvisionType {
-	return &NullableListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerProvisionType{value: val, isSet: true}
-}
-
-func (v NullableListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerProvisionType) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerProvisionType) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

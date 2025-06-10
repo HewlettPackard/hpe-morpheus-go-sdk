@@ -19,18 +19,33 @@ import (
 // very silly way of avoiding `"fmt" imported and not used` errors
 var _ fmt.Stringer
 
-
 // ListGuidances200ResponseAllOfDiscoveriesInner struct for ListGuidances200ResponseAllOfDiscoveriesInner
 type ListGuidances200ResponseAllOfDiscoveriesInner struct {
-	ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf
+	ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf  *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf
 	ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1 *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1
+}
+
+func (dst *ListGuidances200ResponseAllOfDiscoveriesInner) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &ListGuidances200ResponseAllOfDiscoveriesInner{}
+	}
+
+	if out, ok := data.(ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf); ok {
+		dst.ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf = &out
+	}
+
+	if out, ok := data.(ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1); ok {
+		dst.ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1 = &out
+	}
+
+	return dst, nil
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *ListGuidances200ResponseAllOfDiscoveriesInner) UnmarshalJSON(data []byte) error {
 	var err error
 	// try to unmarshal JSON data into ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf
-	err = json.Unmarshal(data, &dst.ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf);
+	err = json.Unmarshal(data, &dst.ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf)
 	if err == nil {
 		jsonListGuidances200ResponseAllOfDiscoveriesInnerAnyOf, _ := json.Marshal(dst.ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf)
 		if string(jsonListGuidances200ResponseAllOfDiscoveriesInnerAnyOf) == "{}" { // empty struct
@@ -43,7 +58,7 @@ func (dst *ListGuidances200ResponseAllOfDiscoveriesInner) UnmarshalJSON(data []b
 	}
 
 	// try to unmarshal JSON data into ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1
-	err = json.Unmarshal(data, &dst.ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1);
+	err = json.Unmarshal(data, &dst.ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1)
 	if err == nil {
 		jsonListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1, _ := json.Marshal(dst.ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1)
 		if string(jsonListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1) == "{}" { // empty struct
@@ -70,7 +85,6 @@ func (src ListGuidances200ResponseAllOfDiscoveriesInner) MarshalJSON() ([]byte, 
 
 	return nil, nil // no data in anyOf schemas
 }
-
 
 type NullableListGuidances200ResponseAllOfDiscoveriesInner struct {
 	value *ListGuidances200ResponseAllOfDiscoveriesInner
@@ -107,5 +121,3 @@ func (v *NullableListGuidances200ResponseAllOfDiscoveriesInner) UnmarshalJSON(sr
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

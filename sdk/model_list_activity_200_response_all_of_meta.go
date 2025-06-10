@@ -27,8 +27,8 @@ type ListActivity200ResponseAllOfMeta struct {
 	// Number of records returned in the response
 	Size *int64 `json:"size,omitempty"`
 	// Total number of records found
-	Total *int64 `json:"total,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Total                *int64                 `json:"total,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListActivity200ResponseAllOfMeta ListActivity200ResponseAllOfMeta
@@ -195,7 +195,7 @@ func (o *ListActivity200ResponseAllOfMeta) SetTotal(v int64) {
 }
 
 func (o ListActivity200ResponseAllOfMeta) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -223,65 +223,8 @@ func (o ListActivity200ResponseAllOfMeta) ToMap() (map[string]interface{}, error
 
 	return toSerialize, nil
 }
-
 func (o *ListActivity200ResponseAllOfMeta) UnmarshalJSON(data []byte) (err error) {
-	varListActivity200ResponseAllOfMeta := _ListActivity200ResponseAllOfMeta{}
-
-	err = json.Unmarshal(data, &varListActivity200ResponseAllOfMeta)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListActivity200ResponseAllOfMeta(varListActivity200ResponseAllOfMeta)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "offset")
-		delete(additionalProperties, "max")
-		delete(additionalProperties, "size")
-		delete(additionalProperties, "total")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListActivity200ResponseAllOfMeta struct {
-	value *ListActivity200ResponseAllOfMeta
-	isSet bool
-}
-
-func (v NullableListActivity200ResponseAllOfMeta) Get() *ListActivity200ResponseAllOfMeta {
-	return v.value
-}
-
-func (v *NullableListActivity200ResponseAllOfMeta) Set(val *ListActivity200ResponseAllOfMeta) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListActivity200ResponseAllOfMeta) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListActivity200ResponseAllOfMeta) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListActivity200ResponseAllOfMeta(val *ListActivity200ResponseAllOfMeta) *NullableListActivity200ResponseAllOfMeta {
-	return &NullableListActivity200ResponseAllOfMeta{value: val, isSet: true}
-}
-
-func (v NullableListActivity200ResponseAllOfMeta) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListActivity200ResponseAllOfMeta) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

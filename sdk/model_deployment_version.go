@@ -21,18 +21,18 @@ var _ MappedNullable = &DeploymentVersion{}
 
 // DeploymentVersion struct for DeploymentVersion
 type DeploymentVersion struct {
-	Id *int64 `json:"id,omitempty"`
-	DeployType *string `json:"deployType,omitempty"`
-	DeploymentId *int64 `json:"deploymentId,omitempty"`
-	FetchUrl *string `json:"fetchUrl,omitempty"`
-	GitUrl *string `json:"gitUrl,omitempty"`
-	GitRef *string `json:"gitRef,omitempty"`
-	UserVersion *string `json:"userVersion,omitempty"`
-	Version *string `json:"version,omitempty"`
-	Status *string `json:"status,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	DeployType           *string                `json:"deployType,omitempty"`
+	DeploymentId         *int64                 `json:"deploymentId,omitempty"`
+	FetchUrl             *string                `json:"fetchUrl,omitempty"`
+	GitUrl               *string                `json:"gitUrl,omitempty"`
+	GitRef               *string                `json:"gitRef,omitempty"`
+	UserVersion          *string                `json:"userVersion,omitempty"`
+	Version              *string                `json:"version,omitempty"`
+	Status               *string                `json:"status,omitempty"`
+	DateCreated          *time.Time             `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time             `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _DeploymentVersion DeploymentVersion
@@ -407,7 +407,7 @@ func (o *DeploymentVersion) SetLastUpdated(v time.Time) {
 }
 
 func (o DeploymentVersion) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -456,72 +456,8 @@ func (o DeploymentVersion) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *DeploymentVersion) UnmarshalJSON(data []byte) (err error) {
-	varDeploymentVersion := _DeploymentVersion{}
-
-	err = json.Unmarshal(data, &varDeploymentVersion)
-
-	if err != nil {
-		return err
-	}
-
-	*o = DeploymentVersion(varDeploymentVersion)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "deployType")
-		delete(additionalProperties, "deploymentId")
-		delete(additionalProperties, "fetchUrl")
-		delete(additionalProperties, "gitUrl")
-		delete(additionalProperties, "gitRef")
-		delete(additionalProperties, "userVersion")
-		delete(additionalProperties, "version")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableDeploymentVersion struct {
-	value *DeploymentVersion
-	isSet bool
-}
-
-func (v NullableDeploymentVersion) Get() *DeploymentVersion {
-	return v.value
-}
-
-func (v *NullableDeploymentVersion) Set(val *DeploymentVersion) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableDeploymentVersion) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableDeploymentVersion) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableDeploymentVersion(val *DeploymentVersion) *NullableDeploymentVersion {
-	return &NullableDeploymentVersion{value: val, isSet: true}
-}
-
-func (v NullableDeploymentVersion) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableDeploymentVersion) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

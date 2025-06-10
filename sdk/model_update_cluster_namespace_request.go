@@ -20,8 +20,8 @@ var _ MappedNullable = &UpdateClusterNamespaceRequest{}
 
 // UpdateClusterNamespaceRequest struct for UpdateClusterNamespaceRequest
 type UpdateClusterNamespaceRequest struct {
-	Namespace *UpdateClusterNamespaceRequestNamespace `json:"namespace,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Namespace            *UpdateClusterNamespaceRequestNamespace `json:"namespace,omitempty"`
+	AdditionalProperties map[string]interface{}                  `json:",remain"`
 }
 
 type _UpdateClusterNamespaceRequest UpdateClusterNamespaceRequest
@@ -76,7 +76,7 @@ func (o *UpdateClusterNamespaceRequest) SetNamespace(v UpdateClusterNamespaceReq
 }
 
 func (o UpdateClusterNamespaceRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o UpdateClusterNamespaceRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *UpdateClusterNamespaceRequest) UnmarshalJSON(data []byte) (err error) {
-	varUpdateClusterNamespaceRequest := _UpdateClusterNamespaceRequest{}
-
-	err = json.Unmarshal(data, &varUpdateClusterNamespaceRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateClusterNamespaceRequest(varUpdateClusterNamespaceRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "namespace")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateClusterNamespaceRequest struct {
-	value *UpdateClusterNamespaceRequest
-	isSet bool
-}
-
-func (v NullableUpdateClusterNamespaceRequest) Get() *UpdateClusterNamespaceRequest {
-	return v.value
-}
-
-func (v *NullableUpdateClusterNamespaceRequest) Set(val *UpdateClusterNamespaceRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateClusterNamespaceRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateClusterNamespaceRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateClusterNamespaceRequest(val *UpdateClusterNamespaceRequest) *NullableUpdateClusterNamespaceRequest {
-	return &NullableUpdateClusterNamespaceRequest{value: val, isSet: true}
-}
-
-func (v NullableUpdateClusterNamespaceRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateClusterNamespaceRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the ClusterPackageCreate type satisfies the MappedNullable interface at compile time
@@ -38,8 +37,8 @@ type ClusterPackageCreate struct {
 	// Icon Path, relative location of an icon image, eg. /assets/containers-png/nginx.png.
 	IconPath *string `json:"iconPath,omitempty"`
 	// Array of resource spec templates
-	SpecTemplates []int64 `json:"specTemplates"`
-	AdditionalProperties map[string]interface{}
+	SpecTemplates        []int64                `json:"specTemplates"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ClusterPackageCreate ClusterPackageCreate
@@ -303,7 +302,7 @@ func (o *ClusterPackageCreate) SetSpecTemplates(v []int64) {
 }
 
 func (o ClusterPackageCreate) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -332,97 +331,8 @@ func (o ClusterPackageCreate) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *ClusterPackageCreate) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"name",
-		"code",
-		"packageVersion",
-		"packageType",
-		"type",
-		"enabled",
-		"specTemplates",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varClusterPackageCreate := _ClusterPackageCreate{}
-
-	err = json.Unmarshal(data, &varClusterPackageCreate)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ClusterPackageCreate(varClusterPackageCreate)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "packageVersion")
-		delete(additionalProperties, "packageType")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "iconPath")
-		delete(additionalProperties, "specTemplates")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableClusterPackageCreate struct {
-	value *ClusterPackageCreate
-	isSet bool
-}
-
-func (v NullableClusterPackageCreate) Get() *ClusterPackageCreate {
-	return v.value
-}
-
-func (v *NullableClusterPackageCreate) Set(val *ClusterPackageCreate) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableClusterPackageCreate) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableClusterPackageCreate) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableClusterPackageCreate(val *ClusterPackageCreate) *NullableClusterPackageCreate {
-	return &NullableClusterPackageCreate{value: val, isSet: true}
-}
-
-func (v NullableClusterPackageCreate) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableClusterPackageCreate) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

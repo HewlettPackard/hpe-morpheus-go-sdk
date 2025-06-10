@@ -21,17 +21,17 @@ var _ MappedNullable = &ListExecuteSchedules200ResponseAllOfSchedulesInner{}
 
 // ListExecuteSchedules200ResponseAllOfSchedulesInner struct for ListExecuteSchedules200ResponseAllOfSchedulesInner
 type ListExecuteSchedules200ResponseAllOfSchedulesInner struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Visibility *string `json:"visibility,omitempty"`
-	Enabled *bool `json:"enabled,omitempty"`
-	ScheduleType *string `json:"scheduleType,omitempty"`
-	ScheduleTimezone *string `json:"scheduleTimezone,omitempty"`
-	Cron *string `json:"cron,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	Description          *string                `json:"description,omitempty"`
+	Visibility           *string                `json:"visibility,omitempty"`
+	Enabled              *bool                  `json:"enabled,omitempty"`
+	ScheduleType         *string                `json:"scheduleType,omitempty"`
+	ScheduleTimezone     *string                `json:"scheduleTimezone,omitempty"`
+	Cron                 *string                `json:"cron,omitempty"`
+	DateCreated          *time.Time             `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time             `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListExecuteSchedules200ResponseAllOfSchedulesInner ListExecuteSchedules200ResponseAllOfSchedulesInner
@@ -374,7 +374,7 @@ func (o *ListExecuteSchedules200ResponseAllOfSchedulesInner) SetLastUpdated(v ti
 }
 
 func (o ListExecuteSchedules200ResponseAllOfSchedulesInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -420,71 +420,8 @@ func (o ListExecuteSchedules200ResponseAllOfSchedulesInner) ToMap() (map[string]
 
 	return toSerialize, nil
 }
-
 func (o *ListExecuteSchedules200ResponseAllOfSchedulesInner) UnmarshalJSON(data []byte) (err error) {
-	varListExecuteSchedules200ResponseAllOfSchedulesInner := _ListExecuteSchedules200ResponseAllOfSchedulesInner{}
-
-	err = json.Unmarshal(data, &varListExecuteSchedules200ResponseAllOfSchedulesInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListExecuteSchedules200ResponseAllOfSchedulesInner(varListExecuteSchedules200ResponseAllOfSchedulesInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "scheduleType")
-		delete(additionalProperties, "scheduleTimezone")
-		delete(additionalProperties, "cron")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListExecuteSchedules200ResponseAllOfSchedulesInner struct {
-	value *ListExecuteSchedules200ResponseAllOfSchedulesInner
-	isSet bool
-}
-
-func (v NullableListExecuteSchedules200ResponseAllOfSchedulesInner) Get() *ListExecuteSchedules200ResponseAllOfSchedulesInner {
-	return v.value
-}
-
-func (v *NullableListExecuteSchedules200ResponseAllOfSchedulesInner) Set(val *ListExecuteSchedules200ResponseAllOfSchedulesInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListExecuteSchedules200ResponseAllOfSchedulesInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListExecuteSchedules200ResponseAllOfSchedulesInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListExecuteSchedules200ResponseAllOfSchedulesInner(val *ListExecuteSchedules200ResponseAllOfSchedulesInner) *NullableListExecuteSchedules200ResponseAllOfSchedulesInner {
-	return &NullableListExecuteSchedules200ResponseAllOfSchedulesInner{value: val, isSet: true}
-}
-
-func (v NullableListExecuteSchedules200ResponseAllOfSchedulesInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListExecuteSchedules200ResponseAllOfSchedulesInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

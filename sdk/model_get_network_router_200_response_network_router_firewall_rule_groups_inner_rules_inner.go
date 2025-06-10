@@ -20,29 +20,29 @@ var _ MappedNullable = &GetNetworkRouter200ResponseNetworkRouterFirewallRuleGrou
 
 // GetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInnerRulesInner struct for GetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInnerRulesInner
 type GetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInnerRulesInner struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Code *string `json:"code,omitempty"`
-	Enabled *bool `json:"enabled,omitempty"`
-	GroupName *string `json:"groupName,omitempty"`
-	Direction *string `json:"direction,omitempty"`
-	RuleType *string `json:"ruleType,omitempty"`
-	Policy *string `json:"policy,omitempty"`
-	Source []string `json:"source,omitempty"`
-	SourceType *string `json:"sourceType,omitempty"`
-	Destination []string `json:"destination,omitempty"`
-	DestinationType *string `json:"destinationType,omitempty"`
-	Profiles []string `json:"profiles,omitempty"`
-	Protocol *string `json:"protocol,omitempty"`
-	Application *string `json:"application,omitempty"`
-	ApplicationType *string `json:"applicationType,omitempty"`
-	PortRange *string `json:"portRange,omitempty"`
-	SourcePortRange *string `json:"sourcePortRange,omitempty"`
-	DestinationPortRange *string `json:"destinationPortRange,omitempty"`
-	SourceGroup *string `json:"sourceGroup,omitempty"`
-	SourceTier *string `json:"sourceTier,omitempty"`
-	Applications []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"applications,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                                   `json:"id,omitempty"`
+	Name                 *string                                                                  `json:"name,omitempty"`
+	Code                 *string                                                                  `json:"code,omitempty"`
+	Enabled              *bool                                                                    `json:"enabled,omitempty"`
+	GroupName            *string                                                                  `json:"groupName,omitempty"`
+	Direction            *string                                                                  `json:"direction,omitempty"`
+	RuleType             *string                                                                  `json:"ruleType,omitempty"`
+	Policy               *string                                                                  `json:"policy,omitempty"`
+	Source               []string                                                                 `json:"source,omitempty"`
+	SourceType           *string                                                                  `json:"sourceType,omitempty"`
+	Destination          []string                                                                 `json:"destination,omitempty"`
+	DestinationType      *string                                                                  `json:"destinationType,omitempty"`
+	Profiles             []string                                                                 `json:"profiles,omitempty"`
+	Protocol             *string                                                                  `json:"protocol,omitempty"`
+	Application          *string                                                                  `json:"application,omitempty"`
+	ApplicationType      *string                                                                  `json:"applicationType,omitempty"`
+	PortRange            *string                                                                  `json:"portRange,omitempty"`
+	SourcePortRange      *string                                                                  `json:"sourcePortRange,omitempty"`
+	DestinationPortRange *string                                                                  `json:"destinationPortRange,omitempty"`
+	SourceGroup          *string                                                                  `json:"sourceGroup,omitempty"`
+	SourceTier           *string                                                                  `json:"sourceTier,omitempty"`
+	Applications         []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"applications,omitempty"`
+	AdditionalProperties map[string]interface{}                                                   `json:",remain"`
 }
 
 type _GetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInnerRulesInner GetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInnerRulesInner
@@ -769,7 +769,7 @@ func (o *GetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInnerRulesInn
 }
 
 func (o GetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInnerRulesInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -851,83 +851,8 @@ func (o GetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInnerRulesInne
 
 	return toSerialize, nil
 }
-
 func (o *GetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInnerRulesInner) UnmarshalJSON(data []byte) (err error) {
-	varGetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInnerRulesInner := _GetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInnerRulesInner{}
-
-	err = json.Unmarshal(data, &varGetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInnerRulesInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInnerRulesInner(varGetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInnerRulesInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "groupName")
-		delete(additionalProperties, "direction")
-		delete(additionalProperties, "ruleType")
-		delete(additionalProperties, "policy")
-		delete(additionalProperties, "source")
-		delete(additionalProperties, "sourceType")
-		delete(additionalProperties, "destination")
-		delete(additionalProperties, "destinationType")
-		delete(additionalProperties, "profiles")
-		delete(additionalProperties, "protocol")
-		delete(additionalProperties, "application")
-		delete(additionalProperties, "applicationType")
-		delete(additionalProperties, "portRange")
-		delete(additionalProperties, "sourcePortRange")
-		delete(additionalProperties, "destinationPortRange")
-		delete(additionalProperties, "sourceGroup")
-		delete(additionalProperties, "sourceTier")
-		delete(additionalProperties, "applications")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInnerRulesInner struct {
-	value *GetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInnerRulesInner
-	isSet bool
-}
-
-func (v NullableGetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInnerRulesInner) Get() *GetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInnerRulesInner {
-	return v.value
-}
-
-func (v *NullableGetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInnerRulesInner) Set(val *GetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInnerRulesInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInnerRulesInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInnerRulesInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInnerRulesInner(val *GetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInnerRulesInner) *NullableGetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInnerRulesInner {
-	return &NullableGetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInnerRulesInner{value: val, isSet: true}
-}
-
-func (v NullableGetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInnerRulesInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInnerRulesInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

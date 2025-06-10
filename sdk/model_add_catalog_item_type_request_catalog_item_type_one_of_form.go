@@ -21,8 +21,8 @@ var _ MappedNullable = &AddCatalogItemTypeRequestCatalogItemTypeOneOfForm{}
 // AddCatalogItemTypeRequestCatalogItemTypeOneOfForm Object containing the form id. Only applies to formType 'form'.
 type AddCatalogItemTypeRequestCatalogItemTypeOneOfForm struct {
 	// Form ID
-	Id *int64 `json:"id,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddCatalogItemTypeRequestCatalogItemTypeOneOfForm AddCatalogItemTypeRequestCatalogItemTypeOneOfForm
@@ -77,7 +77,7 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfForm) SetId(v int64) {
 }
 
 func (o AddCatalogItemTypeRequestCatalogItemTypeOneOfForm) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -96,62 +96,8 @@ func (o AddCatalogItemTypeRequestCatalogItemTypeOneOfForm) ToMap() (map[string]i
 
 	return toSerialize, nil
 }
-
 func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfForm) UnmarshalJSON(data []byte) (err error) {
-	varAddCatalogItemTypeRequestCatalogItemTypeOneOfForm := _AddCatalogItemTypeRequestCatalogItemTypeOneOfForm{}
-
-	err = json.Unmarshal(data, &varAddCatalogItemTypeRequestCatalogItemTypeOneOfForm)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddCatalogItemTypeRequestCatalogItemTypeOneOfForm(varAddCatalogItemTypeRequestCatalogItemTypeOneOfForm)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfForm struct {
-	value *AddCatalogItemTypeRequestCatalogItemTypeOneOfForm
-	isSet bool
-}
-
-func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfForm) Get() *AddCatalogItemTypeRequestCatalogItemTypeOneOfForm {
-	return v.value
-}
-
-func (v *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfForm) Set(val *AddCatalogItemTypeRequestCatalogItemTypeOneOfForm) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfForm) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfForm) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddCatalogItemTypeRequestCatalogItemTypeOneOfForm(val *AddCatalogItemTypeRequestCatalogItemTypeOneOfForm) *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfForm {
-	return &NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfForm{value: val, isSet: true}
-}
-
-func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfForm) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfForm) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -20,11 +20,11 @@ var _ MappedNullable = &AddImageBuild200ResponseAllOfImageBuildConfigConfig{}
 
 // AddImageBuild200ResponseAllOfImageBuildConfigConfig struct for AddImageBuild200ResponseAllOfImageBuildConfigConfig
 type AddImageBuild200ResponseAllOfImageBuildConfigConfig struct {
-	Template *int64 `json:"template,omitempty"`
-	VmwareFolderId *string `json:"vmwareFolderId,omitempty"`
-	ResourcePoolId *int64 `json:"resourcePoolId,omitempty"`
-	NestedVirtualization *string `json:"nestedVirtualization,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Template             *int64                 `json:"template,omitempty"`
+	VmwareFolderId       *string                `json:"vmwareFolderId,omitempty"`
+	ResourcePoolId       *int64                 `json:"resourcePoolId,omitempty"`
+	NestedVirtualization *string                `json:"nestedVirtualization,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddImageBuild200ResponseAllOfImageBuildConfigConfig AddImageBuild200ResponseAllOfImageBuildConfigConfig
@@ -175,7 +175,7 @@ func (o *AddImageBuild200ResponseAllOfImageBuildConfigConfig) SetNestedVirtualiz
 }
 
 func (o AddImageBuild200ResponseAllOfImageBuildConfigConfig) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -203,65 +203,8 @@ func (o AddImageBuild200ResponseAllOfImageBuildConfigConfig) ToMap() (map[string
 
 	return toSerialize, nil
 }
-
 func (o *AddImageBuild200ResponseAllOfImageBuildConfigConfig) UnmarshalJSON(data []byte) (err error) {
-	varAddImageBuild200ResponseAllOfImageBuildConfigConfig := _AddImageBuild200ResponseAllOfImageBuildConfigConfig{}
-
-	err = json.Unmarshal(data, &varAddImageBuild200ResponseAllOfImageBuildConfigConfig)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddImageBuild200ResponseAllOfImageBuildConfigConfig(varAddImageBuild200ResponseAllOfImageBuildConfigConfig)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "template")
-		delete(additionalProperties, "vmwareFolderId")
-		delete(additionalProperties, "resourcePoolId")
-		delete(additionalProperties, "nestedVirtualization")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddImageBuild200ResponseAllOfImageBuildConfigConfig struct {
-	value *AddImageBuild200ResponseAllOfImageBuildConfigConfig
-	isSet bool
-}
-
-func (v NullableAddImageBuild200ResponseAllOfImageBuildConfigConfig) Get() *AddImageBuild200ResponseAllOfImageBuildConfigConfig {
-	return v.value
-}
-
-func (v *NullableAddImageBuild200ResponseAllOfImageBuildConfigConfig) Set(val *AddImageBuild200ResponseAllOfImageBuildConfigConfig) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddImageBuild200ResponseAllOfImageBuildConfigConfig) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddImageBuild200ResponseAllOfImageBuildConfigConfig) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddImageBuild200ResponseAllOfImageBuildConfigConfig(val *AddImageBuild200ResponseAllOfImageBuildConfigConfig) *NullableAddImageBuild200ResponseAllOfImageBuildConfigConfig {
-	return &NullableAddImageBuild200ResponseAllOfImageBuildConfigConfig{value: val, isSet: true}
-}
-
-func (v NullableAddImageBuild200ResponseAllOfImageBuildConfigConfig) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddImageBuild200ResponseAllOfImageBuildConfigConfig) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

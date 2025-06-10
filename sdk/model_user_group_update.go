@@ -20,13 +20,13 @@ var _ MappedNullable = &UserGroupUpdate{}
 
 // UserGroupUpdate struct for UserGroupUpdate
 type UserGroupUpdate struct {
-	Name *string `json:"name,omitempty"`
+	Name        *string `json:"name,omitempty"`
 	Description *string `json:"description,omitempty"`
-	SudoUser *bool `json:"sudoUser,omitempty"`
+	SudoUser    *bool   `json:"sudoUser,omitempty"`
 	ServerGroup *string `json:"serverGroup,omitempty"`
 	// A list of IDs of users that are in the user group
-	Users []int64 `json:"users,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Users                []int64                `json:"users,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _UserGroupUpdate UserGroupUpdate
@@ -209,7 +209,7 @@ func (o *UserGroupUpdate) SetUsers(v []int64) {
 }
 
 func (o UserGroupUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -240,66 +240,8 @@ func (o UserGroupUpdate) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *UserGroupUpdate) UnmarshalJSON(data []byte) (err error) {
-	varUserGroupUpdate := _UserGroupUpdate{}
-
-	err = json.Unmarshal(data, &varUserGroupUpdate)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UserGroupUpdate(varUserGroupUpdate)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "sudoUser")
-		delete(additionalProperties, "serverGroup")
-		delete(additionalProperties, "users")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUserGroupUpdate struct {
-	value *UserGroupUpdate
-	isSet bool
-}
-
-func (v NullableUserGroupUpdate) Get() *UserGroupUpdate {
-	return v.value
-}
-
-func (v *NullableUserGroupUpdate) Set(val *UserGroupUpdate) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUserGroupUpdate) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUserGroupUpdate) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUserGroupUpdate(val *UserGroupUpdate) *NullableUserGroupUpdate {
-	return &NullableUserGroupUpdate{value: val, isSet: true}
-}
-
-func (v NullableUserGroupUpdate) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUserGroupUpdate) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

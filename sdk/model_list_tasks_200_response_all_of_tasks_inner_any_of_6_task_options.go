@@ -20,16 +20,16 @@ var _ MappedNullable = &ListTasks200ResponseAllOfTasksInnerAnyOf6TaskOptions{}
 
 // ListTasks200ResponseAllOfTasksInnerAnyOf6TaskOptions struct for ListTasks200ResponseAllOfTasksInnerAnyOf6TaskOptions
 type ListTasks200ResponseAllOfTasksInnerAnyOf6TaskOptions struct {
-	Username *string `json:"username,omitempty"`
-	Port *string `json:"port,omitempty"`
-	JsScript *string `json:"jsScript,omitempty"`
-	Host *string `json:"host,omitempty"`
-	LocalScriptGitRef *string `json:"localScriptGitRef,omitempty"`
-	Password *string `json:"password,omitempty"`
-	PasswordHash *string `json:"passwordHash,omitempty"`
-	SshKey *string `json:"sshKey,omitempty"`
-	LocalScriptGitId *string `json:"localScriptGitId,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Username             *string                `json:"username,omitempty"`
+	Port                 *string                `json:"port,omitempty"`
+	JsScript             *string                `json:"jsScript,omitempty"`
+	Host                 *string                `json:"host,omitempty"`
+	LocalScriptGitRef    *string                `json:"localScriptGitRef,omitempty"`
+	Password             *string                `json:"password,omitempty"`
+	PasswordHash         *string                `json:"passwordHash,omitempty"`
+	SshKey               *string                `json:"sshKey,omitempty"`
+	LocalScriptGitId     *string                `json:"localScriptGitId,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListTasks200ResponseAllOfTasksInnerAnyOf6TaskOptions ListTasks200ResponseAllOfTasksInnerAnyOf6TaskOptions
@@ -340,7 +340,7 @@ func (o *ListTasks200ResponseAllOfTasksInnerAnyOf6TaskOptions) SetLocalScriptGit
 }
 
 func (o ListTasks200ResponseAllOfTasksInnerAnyOf6TaskOptions) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -383,70 +383,8 @@ func (o ListTasks200ResponseAllOfTasksInnerAnyOf6TaskOptions) ToMap() (map[strin
 
 	return toSerialize, nil
 }
-
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOf6TaskOptions) UnmarshalJSON(data []byte) (err error) {
-	varListTasks200ResponseAllOfTasksInnerAnyOf6TaskOptions := _ListTasks200ResponseAllOfTasksInnerAnyOf6TaskOptions{}
-
-	err = json.Unmarshal(data, &varListTasks200ResponseAllOfTasksInnerAnyOf6TaskOptions)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListTasks200ResponseAllOfTasksInnerAnyOf6TaskOptions(varListTasks200ResponseAllOfTasksInnerAnyOf6TaskOptions)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "username")
-		delete(additionalProperties, "port")
-		delete(additionalProperties, "jsScript")
-		delete(additionalProperties, "host")
-		delete(additionalProperties, "localScriptGitRef")
-		delete(additionalProperties, "password")
-		delete(additionalProperties, "passwordHash")
-		delete(additionalProperties, "sshKey")
-		delete(additionalProperties, "localScriptGitId")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListTasks200ResponseAllOfTasksInnerAnyOf6TaskOptions struct {
-	value *ListTasks200ResponseAllOfTasksInnerAnyOf6TaskOptions
-	isSet bool
-}
-
-func (v NullableListTasks200ResponseAllOfTasksInnerAnyOf6TaskOptions) Get() *ListTasks200ResponseAllOfTasksInnerAnyOf6TaskOptions {
-	return v.value
-}
-
-func (v *NullableListTasks200ResponseAllOfTasksInnerAnyOf6TaskOptions) Set(val *ListTasks200ResponseAllOfTasksInnerAnyOf6TaskOptions) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListTasks200ResponseAllOfTasksInnerAnyOf6TaskOptions) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListTasks200ResponseAllOfTasksInnerAnyOf6TaskOptions) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListTasks200ResponseAllOfTasksInnerAnyOf6TaskOptions(val *ListTasks200ResponseAllOfTasksInnerAnyOf6TaskOptions) *NullableListTasks200ResponseAllOfTasksInnerAnyOf6TaskOptions {
-	return &NullableListTasks200ResponseAllOfTasksInnerAnyOf6TaskOptions{value: val, isSet: true}
-}
-
-func (v NullableListTasks200ResponseAllOfTasksInnerAnyOf6TaskOptions) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListTasks200ResponseAllOfTasksInnerAnyOf6TaskOptions) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -19,19 +19,38 @@ import (
 // very silly way of avoiding `"fmt" imported and not used` errors
 var _ fmt.Stringer
 
-
 // AddCloudResourcePool200ResponseResourcePoolAllOfConfig struct for AddCloudResourcePool200ResponseResourcePoolAllOfConfig
 type AddCloudResourcePool200ResponseResourcePoolAllOfConfig struct {
-	ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf *ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf
+	ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf  *ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf
 	ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf1 *ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf1
-	MapmapOfStringAny *map[string]interface{}
+	MapmapOfStringAny                                                    *map[string]interface{}
+}
+
+func (dst *AddCloudResourcePool200ResponseResourcePoolAllOfConfig) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &AddCloudResourcePool200ResponseResourcePoolAllOfConfig{}
+	}
+
+	if out, ok := data.(ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf); ok {
+		dst.ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf = &out
+	}
+
+	if out, ok := data.(ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf1); ok {
+		dst.ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf1 = &out
+	}
+
+	if out, ok := data.(map[string]interface{}); ok {
+		dst.MapmapOfStringAny = &out
+	}
+
+	return dst, nil
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *AddCloudResourcePool200ResponseResourcePoolAllOfConfig) UnmarshalJSON(data []byte) error {
 	var err error
 	// try to unmarshal JSON data into ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf
-	err = json.Unmarshal(data, &dst.ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf);
+	err = json.Unmarshal(data, &dst.ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf)
 	if err == nil {
 		jsonListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf, _ := json.Marshal(dst.ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf)
 		if string(jsonListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf) == "{}" { // empty struct
@@ -44,7 +63,7 @@ func (dst *AddCloudResourcePool200ResponseResourcePoolAllOfConfig) UnmarshalJSON
 	}
 
 	// try to unmarshal JSON data into ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf1
-	err = json.Unmarshal(data, &dst.ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf1);
+	err = json.Unmarshal(data, &dst.ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf1)
 	if err == nil {
 		jsonListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf1, _ := json.Marshal(dst.ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf1)
 		if string(jsonListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf1) == "{}" { // empty struct
@@ -57,7 +76,7 @@ func (dst *AddCloudResourcePool200ResponseResourcePoolAllOfConfig) UnmarshalJSON
 	}
 
 	// try to unmarshal JSON data into MapmapOfStringAny
-	err = json.Unmarshal(data, &dst.MapmapOfStringAny);
+	err = json.Unmarshal(data, &dst.MapmapOfStringAny)
 	if err == nil {
 		jsonMapmapOfStringAny, _ := json.Marshal(dst.MapmapOfStringAny)
 		if string(jsonMapmapOfStringAny) == "{}" { // empty struct
@@ -88,7 +107,6 @@ func (src AddCloudResourcePool200ResponseResourcePoolAllOfConfig) MarshalJSON() 
 
 	return nil, nil // no data in anyOf schemas
 }
-
 
 type NullableAddCloudResourcePool200ResponseResourcePoolAllOfConfig struct {
 	value *AddCloudResourcePool200ResponseResourcePoolAllOfConfig
@@ -125,5 +143,3 @@ func (v *NullableAddCloudResourcePool200ResponseResourcePoolAllOfConfig) Unmarsh
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

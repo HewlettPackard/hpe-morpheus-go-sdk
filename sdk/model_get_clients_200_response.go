@@ -20,8 +20,8 @@ var _ MappedNullable = &GetClients200Response{}
 
 // GetClients200Response struct for GetClients200Response
 type GetClients200Response struct {
-	Client *ListClients200ResponseAllOfClientsInner `json:"client,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Client               *ListClients200ResponseAllOfClientsInner `json:"client,omitempty"`
+	AdditionalProperties map[string]interface{}                   `json:",remain"`
 }
 
 type _GetClients200Response GetClients200Response
@@ -76,7 +76,7 @@ func (o *GetClients200Response) SetClient(v ListClients200ResponseAllOfClientsIn
 }
 
 func (o GetClients200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o GetClients200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *GetClients200Response) UnmarshalJSON(data []byte) (err error) {
-	varGetClients200Response := _GetClients200Response{}
-
-	err = json.Unmarshal(data, &varGetClients200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetClients200Response(varGetClients200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "client")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetClients200Response struct {
-	value *GetClients200Response
-	isSet bool
-}
-
-func (v NullableGetClients200Response) Get() *GetClients200Response {
-	return v.value
-}
-
-func (v *NullableGetClients200Response) Set(val *GetClients200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetClients200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetClients200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetClients200Response(val *GetClients200Response) *NullableGetClients200Response {
-	return &NullableGetClients200Response{value: val, isSet: true}
-}
-
-func (v NullableGetClients200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetClients200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

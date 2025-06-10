@@ -20,12 +20,12 @@ var _ MappedNullable = &ListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkIn
 
 // ListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInner struct for ListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInner
 type ListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInner struct {
-	PrimaryInterface *bool `json:"primaryInterface,omitempty"`
-	Network *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork `json:"network,omitempty"`
-	IpMode *string `json:"ipMode,omitempty"`
-	ShowNetworkPoolLabel *bool `json:"showNetworkPoolLabel,omitempty"`
-	ShowNetworkDhcpLabel *bool `json:"showNetworkDhcpLabel,omitempty"`
-	AdditionalProperties map[string]interface{}
+	PrimaryInterface     *bool                                                                               `json:"primaryInterface,omitempty"`
+	Network              *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork `json:"network,omitempty"`
+	IpMode               *string                                                                             `json:"ipMode,omitempty"`
+	ShowNetworkPoolLabel *bool                                                                               `json:"showNetworkPoolLabel,omitempty"`
+	ShowNetworkDhcpLabel *bool                                                                               `json:"showNetworkDhcpLabel,omitempty"`
+	AdditionalProperties map[string]interface{}                                                              `json:",remain"`
 }
 
 type _ListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInner ListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInner
@@ -208,7 +208,7 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInner) 
 }
 
 func (o ListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -239,66 +239,8 @@ func (o ListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInner) T
 
 	return toSerialize, nil
 }
-
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInner) UnmarshalJSON(data []byte) (err error) {
-	varListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInner := _ListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInner{}
-
-	err = json.Unmarshal(data, &varListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInner(varListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "primaryInterface")
-		delete(additionalProperties, "network")
-		delete(additionalProperties, "ipMode")
-		delete(additionalProperties, "showNetworkPoolLabel")
-		delete(additionalProperties, "showNetworkDhcpLabel")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInner struct {
-	value *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInner
-	isSet bool
-}
-
-func (v NullableListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInner) Get() *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInner {
-	return v.value
-}
-
-func (v *NullableListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInner) Set(val *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInner(val *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInner) *NullableListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInner {
-	return &NullableListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInner{value: val, isSet: true}
-}
-
-func (v NullableListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

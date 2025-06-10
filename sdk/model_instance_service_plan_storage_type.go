@@ -20,35 +20,35 @@ var _ MappedNullable = &InstanceServicePlanStorageType{}
 
 // InstanceServicePlanStorageType struct for InstanceServicePlanStorageType
 type InstanceServicePlanStorageType struct {
-	Id *int32 `json:"id,omitempty"`
-	Editable *bool `json:"editable,omitempty"`
-	OptionTypes []map[string]interface{} `json:"optionTypes,omitempty"`
-	DisplayOrder *int32 `json:"displayOrder,omitempty"`
-	Code *string `json:"code,omitempty"`
-	VolumeType *string `json:"volumeType,omitempty"`
-	MinStorage *string `json:"minStorage,omitempty"`
-	Deletable *bool `json:"deletable,omitempty"`
-	DefaultType *bool `json:"defaultType,omitempty"`
-	CreateDatastore *string `json:"createDatastore,omitempty"`
-	Resizable *bool `json:"resizable,omitempty"`
-	StorageType *string `json:"storageType,omitempty"`
-	AllowSearch *bool `json:"allowSearch,omitempty"`
-	VolumeOptionSource *string `json:"volumeOptionSource,omitempty"`
-	DisplayName *string `json:"displayName,omitempty"`
-	MinIOPS *string `json:"minIOPS,omitempty"`
-	MaxIOPS *string `json:"maxIOPS,omitempty"`
-	HasDatastore *bool `json:"hasDatastore,omitempty"`
-	CustomSize *bool `json:"customSize,omitempty"`
-	AutoDelete *bool `json:"autoDelete,omitempty"`
-	Name *string `json:"name,omitempty"`
-	ConfigurableIOPS *bool `json:"configurableIOPS,omitempty"`
-	CustomLabel *bool `json:"customLabel,omitempty"`
-	Enabled *bool `json:"enabled,omitempty"`
-	Description *string `json:"description,omitempty"`
-	VolumeCategory *string `json:"volumeCategory,omitempty"`
-	ExternalId *string `json:"externalId,omitempty"`
-	MaxStorage *string `json:"maxStorage,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int32                   `json:"id,omitempty"`
+	Editable             *bool                    `json:"editable,omitempty"`
+	OptionTypes          []map[string]interface{} `json:"optionTypes,omitempty"`
+	DisplayOrder         *int32                   `json:"displayOrder,omitempty"`
+	Code                 *string                  `json:"code,omitempty"`
+	VolumeType           *string                  `json:"volumeType,omitempty"`
+	MinStorage           *string                  `json:"minStorage,omitempty"`
+	Deletable            *bool                    `json:"deletable,omitempty"`
+	DefaultType          *bool                    `json:"defaultType,omitempty"`
+	CreateDatastore      *string                  `json:"createDatastore,omitempty"`
+	Resizable            *bool                    `json:"resizable,omitempty"`
+	StorageType          *string                  `json:"storageType,omitempty"`
+	AllowSearch          *bool                    `json:"allowSearch,omitempty"`
+	VolumeOptionSource   *string                  `json:"volumeOptionSource,omitempty"`
+	DisplayName          *string                  `json:"displayName,omitempty"`
+	MinIOPS              *string                  `json:"minIOPS,omitempty"`
+	MaxIOPS              *string                  `json:"maxIOPS,omitempty"`
+	HasDatastore         *bool                    `json:"hasDatastore,omitempty"`
+	CustomSize           *bool                    `json:"customSize,omitempty"`
+	AutoDelete           *bool                    `json:"autoDelete,omitempty"`
+	Name                 *string                  `json:"name,omitempty"`
+	ConfigurableIOPS     *bool                    `json:"configurableIOPS,omitempty"`
+	CustomLabel          *bool                    `json:"customLabel,omitempty"`
+	Enabled              *bool                    `json:"enabled,omitempty"`
+	Description          *string                  `json:"description,omitempty"`
+	VolumeCategory       *string                  `json:"volumeCategory,omitempty"`
+	ExternalId           *string                  `json:"externalId,omitempty"`
+	MaxStorage           *string                  `json:"maxStorage,omitempty"`
+	AdditionalProperties map[string]interface{}   `json:",remain"`
 }
 
 type _InstanceServicePlanStorageType InstanceServicePlanStorageType
@@ -967,7 +967,7 @@ func (o *InstanceServicePlanStorageType) SetMaxStorage(v string) {
 }
 
 func (o InstanceServicePlanStorageType) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1067,89 +1067,8 @@ func (o InstanceServicePlanStorageType) ToMap() (map[string]interface{}, error) 
 
 	return toSerialize, nil
 }
-
 func (o *InstanceServicePlanStorageType) UnmarshalJSON(data []byte) (err error) {
-	varInstanceServicePlanStorageType := _InstanceServicePlanStorageType{}
-
-	err = json.Unmarshal(data, &varInstanceServicePlanStorageType)
-
-	if err != nil {
-		return err
-	}
-
-	*o = InstanceServicePlanStorageType(varInstanceServicePlanStorageType)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "editable")
-		delete(additionalProperties, "optionTypes")
-		delete(additionalProperties, "displayOrder")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "volumeType")
-		delete(additionalProperties, "minStorage")
-		delete(additionalProperties, "deletable")
-		delete(additionalProperties, "defaultType")
-		delete(additionalProperties, "createDatastore")
-		delete(additionalProperties, "resizable")
-		delete(additionalProperties, "storageType")
-		delete(additionalProperties, "allowSearch")
-		delete(additionalProperties, "volumeOptionSource")
-		delete(additionalProperties, "displayName")
-		delete(additionalProperties, "minIOPS")
-		delete(additionalProperties, "maxIOPS")
-		delete(additionalProperties, "hasDatastore")
-		delete(additionalProperties, "customSize")
-		delete(additionalProperties, "autoDelete")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "configurableIOPS")
-		delete(additionalProperties, "customLabel")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "volumeCategory")
-		delete(additionalProperties, "externalId")
-		delete(additionalProperties, "maxStorage")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableInstanceServicePlanStorageType struct {
-	value *InstanceServicePlanStorageType
-	isSet bool
-}
-
-func (v NullableInstanceServicePlanStorageType) Get() *InstanceServicePlanStorageType {
-	return v.value
-}
-
-func (v *NullableInstanceServicePlanStorageType) Set(val *InstanceServicePlanStorageType) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableInstanceServicePlanStorageType) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableInstanceServicePlanStorageType) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableInstanceServicePlanStorageType(val *InstanceServicePlanStorageType) *NullableInstanceServicePlanStorageType {
-	return &NullableInstanceServicePlanStorageType{value: val, isSet: true}
-}
-
-func (v NullableInstanceServicePlanStorageType) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableInstanceServicePlanStorageType) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

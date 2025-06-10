@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the AddCheckAppsRequestMonitorApp type satisfies the MappedNullable interface at compile time
@@ -30,10 +29,10 @@ type AddCheckAppsRequestMonitorApp struct {
 	// Severity level of incidents that are created when this check fails
 	Severity *string `json:"severity,omitempty"`
 	// Used to determine if check app is active
-	Active *bool `json:"active,omitempty"`
-	Checks []int32 `json:"checks,omitempty"`
-	CheckGroups []int32 `json:"checkGroups,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Active               *bool                  `json:"active,omitempty"`
+	Checks               []int32                `json:"checks,omitempty"`
+	CheckGroups          []int32                `json:"checkGroups,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddCheckAppsRequestMonitorApp AddCheckAppsRequestMonitorApp
@@ -285,7 +284,7 @@ func (o *AddCheckAppsRequestMonitorApp) SetCheckGroups(v []int32) {
 }
 
 func (o AddCheckAppsRequestMonitorApp) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -320,89 +319,8 @@ func (o AddCheckAppsRequestMonitorApp) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *AddCheckAppsRequestMonitorApp) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"name",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varAddCheckAppsRequestMonitorApp := _AddCheckAppsRequestMonitorApp{}
-
-	err = json.Unmarshal(data, &varAddCheckAppsRequestMonitorApp)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddCheckAppsRequestMonitorApp(varAddCheckAppsRequestMonitorApp)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "inUptime")
-		delete(additionalProperties, "severity")
-		delete(additionalProperties, "active")
-		delete(additionalProperties, "checks")
-		delete(additionalProperties, "checkGroups")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddCheckAppsRequestMonitorApp struct {
-	value *AddCheckAppsRequestMonitorApp
-	isSet bool
-}
-
-func (v NullableAddCheckAppsRequestMonitorApp) Get() *AddCheckAppsRequestMonitorApp {
-	return v.value
-}
-
-func (v *NullableAddCheckAppsRequestMonitorApp) Set(val *AddCheckAppsRequestMonitorApp) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddCheckAppsRequestMonitorApp) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddCheckAppsRequestMonitorApp) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddCheckAppsRequestMonitorApp(val *AddCheckAppsRequestMonitorApp) *NullableAddCheckAppsRequestMonitorApp {
-	return &NullableAddCheckAppsRequestMonitorApp{value: val, isSet: true}
-}
-
-func (v NullableAddCheckAppsRequestMonitorApp) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddCheckAppsRequestMonitorApp) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

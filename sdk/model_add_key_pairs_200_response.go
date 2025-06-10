@@ -20,9 +20,9 @@ var _ MappedNullable = &AddKeyPairs200Response{}
 
 // AddKeyPairs200Response struct for AddKeyPairs200Response
 type AddKeyPairs200Response struct {
-	Account *AddKeyPairs200ResponseAllOfAccount `json:"account,omitempty"`
-	Success *bool `json:"success,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Account              *AddKeyPairs200ResponseAllOfAccount `json:"account,omitempty"`
+	Success              *bool                               `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{}              `json:",remain"`
 }
 
 type _AddKeyPairs200Response AddKeyPairs200Response
@@ -109,7 +109,7 @@ func (o *AddKeyPairs200Response) SetSuccess(v bool) {
 }
 
 func (o AddKeyPairs200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -131,63 +131,8 @@ func (o AddKeyPairs200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *AddKeyPairs200Response) UnmarshalJSON(data []byte) (err error) {
-	varAddKeyPairs200Response := _AddKeyPairs200Response{}
-
-	err = json.Unmarshal(data, &varAddKeyPairs200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddKeyPairs200Response(varAddKeyPairs200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "account")
-		delete(additionalProperties, "success")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddKeyPairs200Response struct {
-	value *AddKeyPairs200Response
-	isSet bool
-}
-
-func (v NullableAddKeyPairs200Response) Get() *AddKeyPairs200Response {
-	return v.value
-}
-
-func (v *NullableAddKeyPairs200Response) Set(val *AddKeyPairs200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddKeyPairs200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddKeyPairs200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddKeyPairs200Response(val *AddKeyPairs200Response) *NullableAddKeyPairs200Response {
-	return &NullableAddKeyPairs200Response{value: val, isSet: true}
-}
-
-func (v NullableAddKeyPairs200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddKeyPairs200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

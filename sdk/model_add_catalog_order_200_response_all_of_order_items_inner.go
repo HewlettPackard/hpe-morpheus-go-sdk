@@ -21,17 +21,17 @@ var _ MappedNullable = &AddCatalogOrder200ResponseAllOfOrderItemsInner{}
 
 // AddCatalogOrder200ResponseAllOfOrderItemsInner struct for AddCatalogOrder200ResponseAllOfOrderItemsInner
 type AddCatalogOrder200ResponseAllOfOrderItemsInner struct {
-	Id *int64 `json:"id,omitempty"`
-	Type *ListApps200ResponseAllOfAppsInnerBlueprint `json:"type,omitempty"`
-	Quantity *int64 `json:"quantity,omitempty"`
-	Price *float32 `json:"price,omitempty"`
-	Currency *string `json:"currency,omitempty"`
-	Unit *string `json:"unit,omitempty"`
-	Valid *bool `json:"valid,omitempty"`
-	Status *string `json:"status,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                      `json:"id,omitempty"`
+	Type                 *ListApps200ResponseAllOfAppsInnerBlueprint `json:"type,omitempty"`
+	Quantity             *int64                                      `json:"quantity,omitempty"`
+	Price                *float32                                    `json:"price,omitempty"`
+	Currency             *string                                     `json:"currency,omitempty"`
+	Unit                 *string                                     `json:"unit,omitempty"`
+	Valid                *bool                                       `json:"valid,omitempty"`
+	Status               *string                                     `json:"status,omitempty"`
+	DateCreated          *time.Time                                  `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                  `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}                      `json:",remain"`
 }
 
 type _AddCatalogOrder200ResponseAllOfOrderItemsInner AddCatalogOrder200ResponseAllOfOrderItemsInner
@@ -374,7 +374,7 @@ func (o *AddCatalogOrder200ResponseAllOfOrderItemsInner) SetLastUpdated(v time.T
 }
 
 func (o AddCatalogOrder200ResponseAllOfOrderItemsInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -420,71 +420,8 @@ func (o AddCatalogOrder200ResponseAllOfOrderItemsInner) ToMap() (map[string]inte
 
 	return toSerialize, nil
 }
-
 func (o *AddCatalogOrder200ResponseAllOfOrderItemsInner) UnmarshalJSON(data []byte) (err error) {
-	varAddCatalogOrder200ResponseAllOfOrderItemsInner := _AddCatalogOrder200ResponseAllOfOrderItemsInner{}
-
-	err = json.Unmarshal(data, &varAddCatalogOrder200ResponseAllOfOrderItemsInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddCatalogOrder200ResponseAllOfOrderItemsInner(varAddCatalogOrder200ResponseAllOfOrderItemsInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "quantity")
-		delete(additionalProperties, "price")
-		delete(additionalProperties, "currency")
-		delete(additionalProperties, "unit")
-		delete(additionalProperties, "valid")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddCatalogOrder200ResponseAllOfOrderItemsInner struct {
-	value *AddCatalogOrder200ResponseAllOfOrderItemsInner
-	isSet bool
-}
-
-func (v NullableAddCatalogOrder200ResponseAllOfOrderItemsInner) Get() *AddCatalogOrder200ResponseAllOfOrderItemsInner {
-	return v.value
-}
-
-func (v *NullableAddCatalogOrder200ResponseAllOfOrderItemsInner) Set(val *AddCatalogOrder200ResponseAllOfOrderItemsInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddCatalogOrder200ResponseAllOfOrderItemsInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddCatalogOrder200ResponseAllOfOrderItemsInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddCatalogOrder200ResponseAllOfOrderItemsInner(val *AddCatalogOrder200ResponseAllOfOrderItemsInner) *NullableAddCatalogOrder200ResponseAllOfOrderItemsInner {
-	return &NullableAddCatalogOrder200ResponseAllOfOrderItemsInner{value: val, isSet: true}
-}
-
-func (v NullableAddCatalogOrder200ResponseAllOfOrderItemsInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddCatalogOrder200ResponseAllOfOrderItemsInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

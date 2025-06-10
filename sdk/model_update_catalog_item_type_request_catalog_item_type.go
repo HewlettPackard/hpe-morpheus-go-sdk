@@ -19,19 +19,38 @@ import (
 // very silly way of avoiding `"fmt" imported and not used` errors
 var _ fmt.Stringer
 
-
 // UpdateCatalogItemTypeRequestCatalogItemType struct for UpdateCatalogItemTypeRequestCatalogItemType
 type UpdateCatalogItemTypeRequestCatalogItemType struct {
-	UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf *UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf
+	UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf  *UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf
 	UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf1 *UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf1
 	UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2 *UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2
+}
+
+func (dst *UpdateCatalogItemTypeRequestCatalogItemType) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &UpdateCatalogItemTypeRequestCatalogItemType{}
+	}
+
+	if out, ok := data.(UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf); ok {
+		dst.UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf = &out
+	}
+
+	if out, ok := data.(UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf1); ok {
+		dst.UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf1 = &out
+	}
+
+	if out, ok := data.(UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2); ok {
+		dst.UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2 = &out
+	}
+
+	return dst, nil
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *UpdateCatalogItemTypeRequestCatalogItemType) UnmarshalJSON(data []byte) error {
 	var err error
 	// try to unmarshal JSON data into UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf
-	err = json.Unmarshal(data, &dst.UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf);
+	err = json.Unmarshal(data, &dst.UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf)
 	if err == nil {
 		jsonUpdateCatalogItemTypeRequestCatalogItemTypeAnyOf, _ := json.Marshal(dst.UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf)
 		if string(jsonUpdateCatalogItemTypeRequestCatalogItemTypeAnyOf) == "{}" { // empty struct
@@ -44,7 +63,7 @@ func (dst *UpdateCatalogItemTypeRequestCatalogItemType) UnmarshalJSON(data []byt
 	}
 
 	// try to unmarshal JSON data into UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf1
-	err = json.Unmarshal(data, &dst.UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf1);
+	err = json.Unmarshal(data, &dst.UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf1)
 	if err == nil {
 		jsonUpdateCatalogItemTypeRequestCatalogItemTypeAnyOf1, _ := json.Marshal(dst.UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf1)
 		if string(jsonUpdateCatalogItemTypeRequestCatalogItemTypeAnyOf1) == "{}" { // empty struct
@@ -57,7 +76,7 @@ func (dst *UpdateCatalogItemTypeRequestCatalogItemType) UnmarshalJSON(data []byt
 	}
 
 	// try to unmarshal JSON data into UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2
-	err = json.Unmarshal(data, &dst.UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2);
+	err = json.Unmarshal(data, &dst.UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2)
 	if err == nil {
 		jsonUpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2, _ := json.Marshal(dst.UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2)
 		if string(jsonUpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2) == "{}" { // empty struct
@@ -88,7 +107,6 @@ func (src UpdateCatalogItemTypeRequestCatalogItemType) MarshalJSON() ([]byte, er
 
 	return nil, nil // no data in anyOf schemas
 }
-
 
 type NullableUpdateCatalogItemTypeRequestCatalogItemType struct {
 	value *UpdateCatalogItemTypeRequestCatalogItemType
@@ -125,5 +143,3 @@ func (v *NullableUpdateCatalogItemTypeRequestCatalogItemType) UnmarshalJSON(src 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -21,24 +21,24 @@ var _ MappedNullable = &ExecuteExecutionRequest200ResponseExecutionRequest{}
 
 // ExecuteExecutionRequest200ResponseExecutionRequest struct for ExecuteExecutionRequest200ResponseExecutionRequest
 type ExecuteExecutionRequest200ResponseExecutionRequest struct {
-	Id *int64 `json:"id,omitempty"`
-	UniqueId *string `json:"uniqueId,omitempty"`
-	ContainerId *string `json:"containerId,omitempty"`
-	ServerId *string `json:"serverId,omitempty"`
-	InstanceId *int64 `json:"instanceId,omitempty"`
-	ResourceId *string `json:"resourceId,omitempty"`
-	AppId *string `json:"appId,omitempty"`
-	StdOut *string `json:"stdOut,omitempty"`
-	StdErr *string `json:"stdErr,omitempty"`
-	ExitCode *int64 `json:"exitCode,omitempty"`
-	Status *string `json:"status,omitempty"`
-	ExpiresAt *time.Time `json:"expiresAt,omitempty"`
-	CreatedById *int64 `json:"createdById,omitempty"`
-	StatusMessage *string `json:"statusMessage,omitempty"`
-	ErrorMessage *string `json:"errorMessage,omitempty"`
-	Config map[string]interface{} `json:"config,omitempty"`
-	RawData *string `json:"rawData,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	UniqueId             *string                `json:"uniqueId,omitempty"`
+	ContainerId          *string                `json:"containerId,omitempty"`
+	ServerId             *string                `json:"serverId,omitempty"`
+	InstanceId           *int64                 `json:"instanceId,omitempty"`
+	ResourceId           *string                `json:"resourceId,omitempty"`
+	AppId                *string                `json:"appId,omitempty"`
+	StdOut               *string                `json:"stdOut,omitempty"`
+	StdErr               *string                `json:"stdErr,omitempty"`
+	ExitCode             *int64                 `json:"exitCode,omitempty"`
+	Status               *string                `json:"status,omitempty"`
+	ExpiresAt            *time.Time             `json:"expiresAt,omitempty"`
+	CreatedById          *int64                 `json:"createdById,omitempty"`
+	StatusMessage        *string                `json:"statusMessage,omitempty"`
+	ErrorMessage         *string                `json:"errorMessage,omitempty"`
+	Config               map[string]interface{} `json:"config,omitempty"`
+	RawData              *string                `json:"rawData,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ExecuteExecutionRequest200ResponseExecutionRequest ExecuteExecutionRequest200ResponseExecutionRequest
@@ -605,7 +605,7 @@ func (o *ExecuteExecutionRequest200ResponseExecutionRequest) SetRawData(v string
 }
 
 func (o ExecuteExecutionRequest200ResponseExecutionRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -672,78 +672,8 @@ func (o ExecuteExecutionRequest200ResponseExecutionRequest) ToMap() (map[string]
 
 	return toSerialize, nil
 }
-
 func (o *ExecuteExecutionRequest200ResponseExecutionRequest) UnmarshalJSON(data []byte) (err error) {
-	varExecuteExecutionRequest200ResponseExecutionRequest := _ExecuteExecutionRequest200ResponseExecutionRequest{}
-
-	err = json.Unmarshal(data, &varExecuteExecutionRequest200ResponseExecutionRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ExecuteExecutionRequest200ResponseExecutionRequest(varExecuteExecutionRequest200ResponseExecutionRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "uniqueId")
-		delete(additionalProperties, "containerId")
-		delete(additionalProperties, "serverId")
-		delete(additionalProperties, "instanceId")
-		delete(additionalProperties, "resourceId")
-		delete(additionalProperties, "appId")
-		delete(additionalProperties, "stdOut")
-		delete(additionalProperties, "stdErr")
-		delete(additionalProperties, "exitCode")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "expiresAt")
-		delete(additionalProperties, "createdById")
-		delete(additionalProperties, "statusMessage")
-		delete(additionalProperties, "errorMessage")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "rawData")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableExecuteExecutionRequest200ResponseExecutionRequest struct {
-	value *ExecuteExecutionRequest200ResponseExecutionRequest
-	isSet bool
-}
-
-func (v NullableExecuteExecutionRequest200ResponseExecutionRequest) Get() *ExecuteExecutionRequest200ResponseExecutionRequest {
-	return v.value
-}
-
-func (v *NullableExecuteExecutionRequest200ResponseExecutionRequest) Set(val *ExecuteExecutionRequest200ResponseExecutionRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableExecuteExecutionRequest200ResponseExecutionRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableExecuteExecutionRequest200ResponseExecutionRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableExecuteExecutionRequest200ResponseExecutionRequest(val *ExecuteExecutionRequest200ResponseExecutionRequest) *NullableExecuteExecutionRequest200ResponseExecutionRequest {
-	return &NullableExecuteExecutionRequest200ResponseExecutionRequest{value: val, isSet: true}
-}
-
-func (v NullableExecuteExecutionRequest200ResponseExecutionRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableExecuteExecutionRequest200ResponseExecutionRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

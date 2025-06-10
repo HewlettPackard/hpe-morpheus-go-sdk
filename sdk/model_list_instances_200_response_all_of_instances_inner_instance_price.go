@@ -20,11 +20,11 @@ var _ MappedNullable = &ListInstances200ResponseAllOfInstancesInnerInstancePrice
 
 // ListInstances200ResponseAllOfInstancesInnerInstancePrice struct for ListInstances200ResponseAllOfInstancesInnerInstancePrice
 type ListInstances200ResponseAllOfInstancesInnerInstancePrice struct {
-	Price *float32 `json:"price,omitempty"`
-	Cost *float32 `json:"cost,omitempty"`
-	Currency *string `json:"currency,omitempty"`
-	Unit *string `json:"unit,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Price                *float32               `json:"price,omitempty"`
+	Cost                 *float32               `json:"cost,omitempty"`
+	Currency             *string                `json:"currency,omitempty"`
+	Unit                 *string                `json:"unit,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListInstances200ResponseAllOfInstancesInnerInstancePrice ListInstances200ResponseAllOfInstancesInnerInstancePrice
@@ -175,7 +175,7 @@ func (o *ListInstances200ResponseAllOfInstancesInnerInstancePrice) SetUnit(v str
 }
 
 func (o ListInstances200ResponseAllOfInstancesInnerInstancePrice) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -203,65 +203,8 @@ func (o ListInstances200ResponseAllOfInstancesInnerInstancePrice) ToMap() (map[s
 
 	return toSerialize, nil
 }
-
 func (o *ListInstances200ResponseAllOfInstancesInnerInstancePrice) UnmarshalJSON(data []byte) (err error) {
-	varListInstances200ResponseAllOfInstancesInnerInstancePrice := _ListInstances200ResponseAllOfInstancesInnerInstancePrice{}
-
-	err = json.Unmarshal(data, &varListInstances200ResponseAllOfInstancesInnerInstancePrice)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListInstances200ResponseAllOfInstancesInnerInstancePrice(varListInstances200ResponseAllOfInstancesInnerInstancePrice)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "price")
-		delete(additionalProperties, "cost")
-		delete(additionalProperties, "currency")
-		delete(additionalProperties, "unit")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListInstances200ResponseAllOfInstancesInnerInstancePrice struct {
-	value *ListInstances200ResponseAllOfInstancesInnerInstancePrice
-	isSet bool
-}
-
-func (v NullableListInstances200ResponseAllOfInstancesInnerInstancePrice) Get() *ListInstances200ResponseAllOfInstancesInnerInstancePrice {
-	return v.value
-}
-
-func (v *NullableListInstances200ResponseAllOfInstancesInnerInstancePrice) Set(val *ListInstances200ResponseAllOfInstancesInnerInstancePrice) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListInstances200ResponseAllOfInstancesInnerInstancePrice) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListInstances200ResponseAllOfInstancesInnerInstancePrice) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListInstances200ResponseAllOfInstancesInnerInstancePrice(val *ListInstances200ResponseAllOfInstancesInnerInstancePrice) *NullableListInstances200ResponseAllOfInstancesInnerInstancePrice {
-	return &NullableListInstances200ResponseAllOfInstancesInnerInstancePrice{value: val, isSet: true}
-}
-
-func (v NullableListInstances200ResponseAllOfInstancesInnerInstancePrice) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListInstances200ResponseAllOfInstancesInnerInstancePrice) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

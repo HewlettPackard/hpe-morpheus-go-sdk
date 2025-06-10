@@ -20,10 +20,10 @@ var _ MappedNullable = &ListBillingServers200ResponseAllOfBillingInfoServersInne
 
 // ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolumesInner struct for ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolumesInner
 type ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolumesInner struct {
-	Size *int64 `json:"size,omitempty"`
-	TypeCode *string `json:"typeCode,omitempty"`
-	Datastore *string `json:"datastore,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Size                 *int64                 `json:"size,omitempty"`
+	TypeCode             *string                `json:"typeCode,omitempty"`
+	Datastore            *string                `json:"datastore,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolumesInner ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolumesInner
@@ -142,7 +142,7 @@ func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVol
 }
 
 func (o ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolumesInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -167,64 +167,8 @@ func (o ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolu
 
 	return toSerialize, nil
 }
-
 func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolumesInner) UnmarshalJSON(data []byte) (err error) {
-	varListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolumesInner := _ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolumesInner{}
-
-	err = json.Unmarshal(data, &varListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolumesInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolumesInner(varListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolumesInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "size")
-		delete(additionalProperties, "typeCode")
-		delete(additionalProperties, "datastore")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolumesInner struct {
-	value *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolumesInner
-	isSet bool
-}
-
-func (v NullableListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolumesInner) Get() *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolumesInner {
-	return v.value
-}
-
-func (v *NullableListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolumesInner) Set(val *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolumesInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolumesInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolumesInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolumesInner(val *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolumesInner) *NullableListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolumesInner {
-	return &NullableListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolumesInner{value: val, isSet: true}
-}
-
-func (v NullableListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolumesInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolumesInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

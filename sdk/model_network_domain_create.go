@@ -28,7 +28,7 @@ type NetworkDomainCreate struct {
 	DisplayName *string `json:"displayName,omitempty"`
 	// Public Zone
 	PublicZone *bool `json:"publicZone,omitempty"`
-	// Workflow ID. Workflows can be applied to an instance when associated with a domain. Useful for custom domain related scripting. (Important if wanting to ensure the computer is removed from the domain using teardown phased workflows.) 
+	// Workflow ID. Workflows can be applied to an instance when associated with a domain. Useful for custom domain related scripting. (Important if wanting to ensure the computer is removed from the domain using teardown phased workflows.)
 	TaskSetId *int64 `json:"taskSetId,omitempty"`
 	// Active
 	Active *bool `json:"active,omitempty"`
@@ -45,8 +45,8 @@ type NetworkDomainCreate struct {
 	// Guest Username. If set, will change the instances RPC Service User after joining a Domain.
 	GuestUsername *string `json:"guestUsername,omitempty"`
 	// Guest Password
-	GuestPassword *string `json:"guestPassword,omitempty"`
-	AdditionalProperties map[string]interface{}
+	GuestPassword        *string                `json:"guestPassword,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _NetworkDomainCreate NetworkDomainCreate
@@ -493,7 +493,7 @@ func (o *NetworkDomainCreate) SetGuestPassword(v string) {
 }
 
 func (o NetworkDomainCreate) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -548,74 +548,8 @@ func (o NetworkDomainCreate) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *NetworkDomainCreate) UnmarshalJSON(data []byte) (err error) {
-	varNetworkDomainCreate := _NetworkDomainCreate{}
-
-	err = json.Unmarshal(data, &varNetworkDomainCreate)
-
-	if err != nil {
-		return err
-	}
-
-	*o = NetworkDomainCreate(varNetworkDomainCreate)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "displayName")
-		delete(additionalProperties, "publicZone")
-		delete(additionalProperties, "taskSetId")
-		delete(additionalProperties, "active")
-		delete(additionalProperties, "domainController")
-		delete(additionalProperties, "domainUsername")
-		delete(additionalProperties, "domainPassword")
-		delete(additionalProperties, "dcServer")
-		delete(additionalProperties, "ouPath")
-		delete(additionalProperties, "guestUsername")
-		delete(additionalProperties, "guestPassword")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableNetworkDomainCreate struct {
-	value *NetworkDomainCreate
-	isSet bool
-}
-
-func (v NullableNetworkDomainCreate) Get() *NetworkDomainCreate {
-	return v.value
-}
-
-func (v *NullableNetworkDomainCreate) Set(val *NetworkDomainCreate) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableNetworkDomainCreate) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableNetworkDomainCreate) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableNetworkDomainCreate(val *NetworkDomainCreate) *NullableNetworkDomainCreate {
-	return &NullableNetworkDomainCreate{value: val, isSet: true}
-}
-
-func (v NullableNetworkDomainCreate) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableNetworkDomainCreate) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -25,38 +25,38 @@ type ListNetworks200ResponseAllOfNetworksInner struct {
 	// Name
 	Name *string `json:"name,omitempty"`
 	// Network Display Name
-	DisplayName *string `json:"displayName,omitempty"`
-	Labels []string `json:"labels,omitempty"`
-	Zone *ListNetworks200ResponseAllOfNetworksInnerZone `json:"zone,omitempty"`
-	Type *ListNetworks200ResponseAllOfNetworksInnerType `json:"type,omitempty"`
-	Owner *ListNetworks200ResponseAllOfNetworksInnerOwner `json:"owner,omitempty"`
+	DisplayName *string                                         `json:"displayName,omitempty"`
+	Labels      []string                                        `json:"labels,omitempty"`
+	Zone        *ListNetworks200ResponseAllOfNetworksInnerZone  `json:"zone,omitempty"`
+	Type        *ListNetworks200ResponseAllOfNetworksInnerType  `json:"type,omitempty"`
+	Owner       *ListNetworks200ResponseAllOfNetworksInnerOwner `json:"owner,omitempty"`
 	// Network Code
-	Code *string `json:"code,omitempty"`
-	Ipv4Enabled *bool `json:"ipv4Enabled,omitempty"`
-	Ipv6Enabled *bool `json:"ipv6Enabled,omitempty"`
+	Code        *string `json:"code,omitempty"`
+	Ipv4Enabled *bool   `json:"ipv4Enabled,omitempty"`
+	Ipv6Enabled *bool   `json:"ipv6Enabled,omitempty"`
 	// Network Category
-	Category *string `json:"category,omitempty"`
-	InterfaceName *string `json:"interfaceName,omitempty"`
-	BridgeName *string `json:"bridgeName,omitempty"`
+	Category        *string `json:"category,omitempty"`
+	InterfaceName   *string `json:"interfaceName,omitempty"`
+	BridgeName      *string `json:"bridgeName,omitempty"`
 	BridgeInterface *string `json:"bridgeInterface,omitempty"`
 	// Description
-	Description *string `json:"description,omitempty"`
-	ExternalId *string `json:"externalId,omitempty"`
-	InternalId *string `json:"internalId,omitempty"`
-	UniqueId *string `json:"uniqueId,omitempty"`
-	ExternalType *string `json:"externalType,omitempty"`
-	RefUrl *string `json:"refUrl,omitempty"`
-	RefType *string `json:"refType,omitempty"`
-	RefId *int64 `json:"refId,omitempty"`
-	VlanId *int64 `json:"vlanId,omitempty"`
-	VswitchName *string `json:"vswitchName,omitempty"`
-	DhcpServer *bool `json:"dhcpServer,omitempty"`
-	DhcpIp *string `json:"dhcpIp,omitempty"`
-	DhcpServerIPv6 *bool `json:"dhcpServerIPv6,omitempty"`
+	Description    *string `json:"description,omitempty"`
+	ExternalId     *string `json:"externalId,omitempty"`
+	InternalId     *string `json:"internalId,omitempty"`
+	UniqueId       *string `json:"uniqueId,omitempty"`
+	ExternalType   *string `json:"externalType,omitempty"`
+	RefUrl         *string `json:"refUrl,omitempty"`
+	RefType        *string `json:"refType,omitempty"`
+	RefId          *int64  `json:"refId,omitempty"`
+	VlanId         *int64  `json:"vlanId,omitempty"`
+	VswitchName    *string `json:"vswitchName,omitempty"`
+	DhcpServer     *bool   `json:"dhcpServer,omitempty"`
+	DhcpIp         *string `json:"dhcpIp,omitempty"`
+	DhcpServerIPv6 *bool   `json:"dhcpServerIPv6,omitempty"`
 	// Network Gateway
-	Gateway *string `json:"gateway,omitempty"`
-	Netmask *string `json:"netmask,omitempty"`
-	Broadcast *string `json:"broadcast,omitempty"`
+	Gateway       *string `json:"gateway,omitempty"`
+	Netmask       *string `json:"netmask,omitempty"`
+	Broadcast     *string `json:"broadcast,omitempty"`
 	SubnetAddress *string `json:"subnetAddress,omitempty"`
 	// Primary DNS Server
 	DnsPrimary *string `json:"dnsPrimary,omitempty"`
@@ -72,32 +72,32 @@ type ListNetworks200ResponseAllOfNetworksInner struct {
 	// Secondary IPv6 DNS Server
 	DnsSecondaryIPv6 *string `json:"dnsSecondaryIPv6,omitempty"`
 	// IPv6 Network CIDR
-	CidrIPv6 *string `json:"cidrIPv6,omitempty"`
-	TftpServer *string `json:"tftpServer,omitempty"`
-	BootFile *string `json:"bootFile,omitempty"`
-	SwitchId *string `json:"switchId,omitempty"`
-	FabricId *string `json:"fabricId,omitempty"`
-	NetworkRole *string `json:"networkRole,omitempty"`
-	Status *string `json:"status,omitempty"`
-	AvailabilityZone *string `json:"availabilityZone,omitempty"`
-	Pool map[string]interface{} `json:"pool,omitempty"`
-	PoolIPv6 map[string]interface{} `json:"poolIPv6,omitempty"`
-	NetworkProxy *ListNetworks200ResponseAllOfNetworksInnerNetworkProxy `json:"networkProxy,omitempty"`
-	NetworkDomain *ListNetworks200ResponseAllOfNetworksInnerNetworkDomain `json:"networkDomain,omitempty"`
-	SearchDomains *string `json:"searchDomains,omitempty"`
-	PrefixLength *string `json:"prefixLength,omitempty"`
-	Visibility *string `json:"visibility,omitempty"`
-	EnableAdmin *bool `json:"enableAdmin,omitempty"`
-	Active *bool `json:"active,omitempty"`
-	DefaultNetwork *bool `json:"defaultNetwork,omitempty"`
-	AssignPublicIp *bool `json:"assignPublicIp,omitempty"`
-	NoProxy *string `json:"noProxy,omitempty"`
-	ApplianceUrlProxyBypass *bool `json:"applianceUrlProxyBypass,omitempty"`
-	ZonePool *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"zonePool,omitempty"`
-	AllowStaticOverride *bool `json:"allowStaticOverride,omitempty"`
-	Config *ListNetworks200ResponseAllOfNetworksInnerConfig `json:"config,omitempty"`
-	Tenants []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"tenants,omitempty"`
-	AdditionalProperties map[string]interface{}
+	CidrIPv6                *string                                                                  `json:"cidrIPv6,omitempty"`
+	TftpServer              *string                                                                  `json:"tftpServer,omitempty"`
+	BootFile                *string                                                                  `json:"bootFile,omitempty"`
+	SwitchId                *string                                                                  `json:"switchId,omitempty"`
+	FabricId                *string                                                                  `json:"fabricId,omitempty"`
+	NetworkRole             *string                                                                  `json:"networkRole,omitempty"`
+	Status                  *string                                                                  `json:"status,omitempty"`
+	AvailabilityZone        *string                                                                  `json:"availabilityZone,omitempty"`
+	Pool                    map[string]interface{}                                                   `json:"pool,omitempty"`
+	PoolIPv6                map[string]interface{}                                                   `json:"poolIPv6,omitempty"`
+	NetworkProxy            *ListNetworks200ResponseAllOfNetworksInnerNetworkProxy                   `json:"networkProxy,omitempty"`
+	NetworkDomain           *ListNetworks200ResponseAllOfNetworksInnerNetworkDomain                  `json:"networkDomain,omitempty"`
+	SearchDomains           *string                                                                  `json:"searchDomains,omitempty"`
+	PrefixLength            *string                                                                  `json:"prefixLength,omitempty"`
+	Visibility              *string                                                                  `json:"visibility,omitempty"`
+	EnableAdmin             *bool                                                                    `json:"enableAdmin,omitempty"`
+	Active                  *bool                                                                    `json:"active,omitempty"`
+	DefaultNetwork          *bool                                                                    `json:"defaultNetwork,omitempty"`
+	AssignPublicIp          *bool                                                                    `json:"assignPublicIp,omitempty"`
+	NoProxy                 *string                                                                  `json:"noProxy,omitempty"`
+	ApplianceUrlProxyBypass *bool                                                                    `json:"applianceUrlProxyBypass,omitempty"`
+	ZonePool                *GetAlerts200ResponseAllOfCheckGroupsInnerInstance                       `json:"zonePool,omitempty"`
+	AllowStaticOverride     *bool                                                                    `json:"allowStaticOverride,omitempty"`
+	Config                  *ListNetworks200ResponseAllOfNetworksInnerConfig                         `json:"config,omitempty"`
+	Tenants                 []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"tenants,omitempty"`
+	AdditionalProperties    map[string]interface{}                                                   `json:",remain"`
 }
 
 type _ListNetworks200ResponseAllOfNetworksInner ListNetworks200ResponseAllOfNetworksInner
@@ -2136,7 +2136,7 @@ func (o *ListNetworks200ResponseAllOfNetworksInner) SetTenants(v []ListAppliance
 }
 
 func (o ListNetworks200ResponseAllOfNetworksInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -2341,124 +2341,8 @@ func (o ListNetworks200ResponseAllOfNetworksInner) ToMap() (map[string]interface
 
 	return toSerialize, nil
 }
-
 func (o *ListNetworks200ResponseAllOfNetworksInner) UnmarshalJSON(data []byte) (err error) {
-	varListNetworks200ResponseAllOfNetworksInner := _ListNetworks200ResponseAllOfNetworksInner{}
-
-	err = json.Unmarshal(data, &varListNetworks200ResponseAllOfNetworksInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListNetworks200ResponseAllOfNetworksInner(varListNetworks200ResponseAllOfNetworksInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "displayName")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "zone")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "owner")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "ipv4Enabled")
-		delete(additionalProperties, "ipv6Enabled")
-		delete(additionalProperties, "category")
-		delete(additionalProperties, "interfaceName")
-		delete(additionalProperties, "bridgeName")
-		delete(additionalProperties, "bridgeInterface")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "externalId")
-		delete(additionalProperties, "internalId")
-		delete(additionalProperties, "uniqueId")
-		delete(additionalProperties, "externalType")
-		delete(additionalProperties, "refUrl")
-		delete(additionalProperties, "refType")
-		delete(additionalProperties, "refId")
-		delete(additionalProperties, "vlanId")
-		delete(additionalProperties, "vswitchName")
-		delete(additionalProperties, "dhcpServer")
-		delete(additionalProperties, "dhcpIp")
-		delete(additionalProperties, "dhcpServerIPv6")
-		delete(additionalProperties, "gateway")
-		delete(additionalProperties, "netmask")
-		delete(additionalProperties, "broadcast")
-		delete(additionalProperties, "subnetAddress")
-		delete(additionalProperties, "dnsPrimary")
-		delete(additionalProperties, "dnsSecondary")
-		delete(additionalProperties, "cidr")
-		delete(additionalProperties, "gatewayIPv6")
-		delete(additionalProperties, "netmaskIPv6")
-		delete(additionalProperties, "dnsPrimaryIPv6")
-		delete(additionalProperties, "dnsSecondaryIPv6")
-		delete(additionalProperties, "cidrIPv6")
-		delete(additionalProperties, "tftpServer")
-		delete(additionalProperties, "bootFile")
-		delete(additionalProperties, "switchId")
-		delete(additionalProperties, "fabricId")
-		delete(additionalProperties, "networkRole")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "availabilityZone")
-		delete(additionalProperties, "pool")
-		delete(additionalProperties, "poolIPv6")
-		delete(additionalProperties, "networkProxy")
-		delete(additionalProperties, "networkDomain")
-		delete(additionalProperties, "searchDomains")
-		delete(additionalProperties, "prefixLength")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "enableAdmin")
-		delete(additionalProperties, "active")
-		delete(additionalProperties, "defaultNetwork")
-		delete(additionalProperties, "assignPublicIp")
-		delete(additionalProperties, "noProxy")
-		delete(additionalProperties, "applianceUrlProxyBypass")
-		delete(additionalProperties, "zonePool")
-		delete(additionalProperties, "allowStaticOverride")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "tenants")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListNetworks200ResponseAllOfNetworksInner struct {
-	value *ListNetworks200ResponseAllOfNetworksInner
-	isSet bool
-}
-
-func (v NullableListNetworks200ResponseAllOfNetworksInner) Get() *ListNetworks200ResponseAllOfNetworksInner {
-	return v.value
-}
-
-func (v *NullableListNetworks200ResponseAllOfNetworksInner) Set(val *ListNetworks200ResponseAllOfNetworksInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListNetworks200ResponseAllOfNetworksInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListNetworks200ResponseAllOfNetworksInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListNetworks200ResponseAllOfNetworksInner(val *ListNetworks200ResponseAllOfNetworksInner) *NullableListNetworks200ResponseAllOfNetworksInner {
-	return &NullableListNetworks200ResponseAllOfNetworksInner{value: val, isSet: true}
-}
-
-func (v NullableListNetworks200ResponseAllOfNetworksInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListNetworks200ResponseAllOfNetworksInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

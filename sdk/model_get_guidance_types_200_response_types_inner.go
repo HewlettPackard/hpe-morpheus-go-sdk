@@ -20,12 +20,12 @@ var _ MappedNullable = &GetGuidanceTypes200ResponseTypesInner{}
 
 // GetGuidanceTypes200ResponseTypesInner struct for GetGuidanceTypes200ResponseTypesInner
 type GetGuidanceTypes200ResponseTypesInner struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Code *string `json:"code,omitempty"`
-	Category *string `json:"category,omitempty"`
-	Title *string `json:"title,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	Code                 *string                `json:"code,omitempty"`
+	Category             *string                `json:"category,omitempty"`
+	Title                *string                `json:"title,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _GetGuidanceTypes200ResponseTypesInner GetGuidanceTypes200ResponseTypesInner
@@ -208,7 +208,7 @@ func (o *GetGuidanceTypes200ResponseTypesInner) SetTitle(v string) {
 }
 
 func (o GetGuidanceTypes200ResponseTypesInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -239,66 +239,8 @@ func (o GetGuidanceTypes200ResponseTypesInner) ToMap() (map[string]interface{}, 
 
 	return toSerialize, nil
 }
-
 func (o *GetGuidanceTypes200ResponseTypesInner) UnmarshalJSON(data []byte) (err error) {
-	varGetGuidanceTypes200ResponseTypesInner := _GetGuidanceTypes200ResponseTypesInner{}
-
-	err = json.Unmarshal(data, &varGetGuidanceTypes200ResponseTypesInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetGuidanceTypes200ResponseTypesInner(varGetGuidanceTypes200ResponseTypesInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "category")
-		delete(additionalProperties, "title")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetGuidanceTypes200ResponseTypesInner struct {
-	value *GetGuidanceTypes200ResponseTypesInner
-	isSet bool
-}
-
-func (v NullableGetGuidanceTypes200ResponseTypesInner) Get() *GetGuidanceTypes200ResponseTypesInner {
-	return v.value
-}
-
-func (v *NullableGetGuidanceTypes200ResponseTypesInner) Set(val *GetGuidanceTypes200ResponseTypesInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetGuidanceTypes200ResponseTypesInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetGuidanceTypes200ResponseTypesInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetGuidanceTypes200ResponseTypesInner(val *GetGuidanceTypes200ResponseTypesInner) *NullableGetGuidanceTypes200ResponseTypesInner {
-	return &NullableGetGuidanceTypes200ResponseTypesInner{value: val, isSet: true}
-}
-
-func (v NullableGetGuidanceTypes200ResponseTypesInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetGuidanceTypes200ResponseTypesInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

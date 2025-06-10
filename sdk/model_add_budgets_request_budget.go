@@ -14,7 +14,6 @@ package sdk
 import (
 	"encoding/json"
 	"time"
-	"fmt"
 )
 
 // checks if the AddBudgetsRequestBudget type satisfies the MappedNullable interface at compile time
@@ -22,26 +21,26 @@ var _ MappedNullable = &AddBudgetsRequestBudget{}
 
 // AddBudgetsRequestBudget struct for AddBudgetsRequestBudget
 type AddBudgetsRequestBudget struct {
-	Name string `json:"name"`
-	Description *string `json:"description,omitempty"`
-	Scope *string `json:"scope,omitempty"`
-	Period *string `json:"period,omitempty"`
-	Year *int64 `json:"year,omitempty"`
-	StartDate *time.Time `json:"startDate,omitempty"`
-	EndDate *time.Time `json:"endDate,omitempty"`
-	Interval *string `json:"interval,omitempty"`
-	// The Tenant ID to scope to, for use with ``scope``=tenant 
+	Name        string     `json:"name"`
+	Description *string    `json:"description,omitempty"`
+	Scope       *string    `json:"scope,omitempty"`
+	Period      *string    `json:"period,omitempty"`
+	Year        *int64     `json:"year,omitempty"`
+	StartDate   *time.Time `json:"startDate,omitempty"`
+	EndDate     *time.Time `json:"endDate,omitempty"`
+	Interval    *string    `json:"interval,omitempty"`
+	// The Tenant ID to scope to, for use with ``scope``=tenant
 	ScopeTenantId *int64 `json:"scopeTenantId,omitempty"`
-	// The Tenant ID to scope to, for use with ``scope``=group  
+	// The Tenant ID to scope to, for use with ``scope``=group
 	ScopeGroupId *int64 `json:"scopeGroupId,omitempty"`
-	// The Tenant ID to scope to, for use with ``scope``=cloud 
+	// The Tenant ID to scope to, for use with ``scope``=cloud
 	ScopeCloudId *int64 `json:"scopeCloudId,omitempty"`
-	// The Tenant ID to scope to, for use with ``scope``=user 
-	ScopeUserId *int64 `json:"scopeUserId,omitempty"`
-	Costs []int64 `json:"costs,omitempty"`
-	Enabled *bool `json:"enabled,omitempty"`
-	ForecastType *AddBudgetsRequestBudgetForecastType `json:"forecastType,omitempty"`
-	AdditionalProperties map[string]interface{}
+	// The Tenant ID to scope to, for use with ``scope``=user
+	ScopeUserId          *int64                               `json:"scopeUserId,omitempty"`
+	Costs                []int64                              `json:"costs,omitempty"`
+	Enabled              *bool                                `json:"enabled,omitempty"`
+	ForecastType         *AddBudgetsRequestBudgetForecastType `json:"forecastType,omitempty"`
+	AdditionalProperties map[string]interface{}               `json:",remain"`
 }
 
 type _AddBudgetsRequestBudget AddBudgetsRequestBudget
@@ -553,7 +552,7 @@ func (o *AddBudgetsRequestBudget) SetForecastType(v AddBudgetsRequestBudgetForec
 }
 
 func (o AddBudgetsRequestBudget) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -612,97 +611,8 @@ func (o AddBudgetsRequestBudget) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *AddBudgetsRequestBudget) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"name",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varAddBudgetsRequestBudget := _AddBudgetsRequestBudget{}
-
-	err = json.Unmarshal(data, &varAddBudgetsRequestBudget)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddBudgetsRequestBudget(varAddBudgetsRequestBudget)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "scope")
-		delete(additionalProperties, "period")
-		delete(additionalProperties, "year")
-		delete(additionalProperties, "startDate")
-		delete(additionalProperties, "endDate")
-		delete(additionalProperties, "interval")
-		delete(additionalProperties, "scopeTenantId")
-		delete(additionalProperties, "scopeGroupId")
-		delete(additionalProperties, "scopeCloudId")
-		delete(additionalProperties, "scopeUserId")
-		delete(additionalProperties, "costs")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "forecastType")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddBudgetsRequestBudget struct {
-	value *AddBudgetsRequestBudget
-	isSet bool
-}
-
-func (v NullableAddBudgetsRequestBudget) Get() *AddBudgetsRequestBudget {
-	return v.value
-}
-
-func (v *NullableAddBudgetsRequestBudget) Set(val *AddBudgetsRequestBudget) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddBudgetsRequestBudget) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddBudgetsRequestBudget) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddBudgetsRequestBudget(val *AddBudgetsRequestBudget) *NullableAddBudgetsRequestBudget {
-	return &NullableAddBudgetsRequestBudget{value: val, isSet: true}
-}
-
-func (v NullableAddBudgetsRequestBudget) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddBudgetsRequestBudget) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

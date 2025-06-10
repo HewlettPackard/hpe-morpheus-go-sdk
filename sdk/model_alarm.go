@@ -21,11 +21,11 @@ var _ MappedNullable = &Alarm{}
 
 // Alarm struct for Alarm
 type Alarm struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	DateCreated          *time.Time             `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time             `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _Alarm Alarm
@@ -176,7 +176,7 @@ func (o *Alarm) SetLastUpdated(v time.Time) {
 }
 
 func (o Alarm) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -204,65 +204,8 @@ func (o Alarm) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *Alarm) UnmarshalJSON(data []byte) (err error) {
-	varAlarm := _Alarm{}
-
-	err = json.Unmarshal(data, &varAlarm)
-
-	if err != nil {
-		return err
-	}
-
-	*o = Alarm(varAlarm)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAlarm struct {
-	value *Alarm
-	isSet bool
-}
-
-func (v NullableAlarm) Get() *Alarm {
-	return v.value
-}
-
-func (v *NullableAlarm) Set(val *Alarm) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAlarm) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAlarm) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAlarm(val *Alarm) *NullableAlarm {
-	return &NullableAlarm{value: val, isSet: true}
-}
-
-func (v NullableAlarm) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAlarm) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

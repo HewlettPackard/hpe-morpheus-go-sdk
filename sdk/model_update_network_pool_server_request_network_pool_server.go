@@ -14,6 +14,7 @@ package sdk
 import (
 	"encoding/json"
 	"fmt"
+
 	"gopkg.in/validator.v2"
 )
 
@@ -22,9 +23,9 @@ var _ fmt.Stringer
 
 // UpdateNetworkPoolServerRequestNetworkPoolServer - Payload for creating a new Network Pool Server
 type UpdateNetworkPoolServerRequestNetworkPoolServer struct {
-	BluecatNetworkPoolServerUpdate *BluecatNetworkPoolServerUpdate
-	InfobloxNetworkPoolServerUpdate *InfobloxNetworkPoolServerUpdate
-	PhpIPAMNetworkPoolServerUpdate *PhpIPAMNetworkPoolServerUpdate
+	BluecatNetworkPoolServerUpdate    *BluecatNetworkPoolServerUpdate
+	InfobloxNetworkPoolServerUpdate   *InfobloxNetworkPoolServerUpdate
+	PhpIPAMNetworkPoolServerUpdate    *PhpIPAMNetworkPoolServerUpdate
 	SolarWindsNetworkPoolServerUpdate *SolarWindsNetworkPoolServerUpdate
 }
 
@@ -56,6 +57,29 @@ func SolarWindsNetworkPoolServerUpdateAsUpdateNetworkPoolServerRequestNetworkPoo
 	}
 }
 
+func (dst *UpdateNetworkPoolServerRequestNetworkPoolServer) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &UpdateNetworkPoolServerRequestNetworkPoolServer{}
+	}
+
+	if out, ok := data.(BluecatNetworkPoolServerUpdate); ok {
+		dst.BluecatNetworkPoolServerUpdate = &out
+	}
+
+	if out, ok := data.(InfobloxNetworkPoolServerUpdate); ok {
+		dst.InfobloxNetworkPoolServerUpdate = &out
+	}
+
+	if out, ok := data.(PhpIPAMNetworkPoolServerUpdate); ok {
+		dst.PhpIPAMNetworkPoolServerUpdate = &out
+	}
+
+	if out, ok := data.(SolarWindsNetworkPoolServerUpdate); ok {
+		dst.SolarWindsNetworkPoolServerUpdate = &out
+	}
+
+	return dst, nil
+}
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *UpdateNetworkPoolServerRequestNetworkPoolServer) UnmarshalJSON(data []byte) error {
@@ -166,7 +190,7 @@ func (src UpdateNetworkPoolServerRequestNetworkPoolServer) MarshalJSON() ([]byte
 }
 
 // Get the actual instance
-func (obj *UpdateNetworkPoolServerRequestNetworkPoolServer) GetActualInstance() (interface{}) {
+func (obj *UpdateNetworkPoolServerRequestNetworkPoolServer) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -191,7 +215,7 @@ func (obj *UpdateNetworkPoolServerRequestNetworkPoolServer) GetActualInstance() 
 }
 
 // Get the actual instance value
-func (obj UpdateNetworkPoolServerRequestNetworkPoolServer) GetActualInstanceValue() (interface{}) {
+func (obj UpdateNetworkPoolServerRequestNetworkPoolServer) GetActualInstanceValue() interface{} {
 	if obj.BluecatNetworkPoolServerUpdate != nil {
 		return *obj.BluecatNetworkPoolServerUpdate
 	}
@@ -247,5 +271,3 @@ func (v *NullableUpdateNetworkPoolServerRequestNetworkPoolServer) UnmarshalJSON(
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

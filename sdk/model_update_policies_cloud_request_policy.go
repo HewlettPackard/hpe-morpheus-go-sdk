@@ -23,9 +23,9 @@ type UpdatePoliciesCloudRequestPolicy struct {
 	// A name for the policy
 	Name *string `json:"name,omitempty"`
 	// A description for the policy
-	Description *string `json:"description,omitempty"`
-	PolicyType *UpdatePoliciesCloudRequestPolicyPolicyType `json:"policyType,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Description          *string                                     `json:"description,omitempty"`
+	PolicyType           *UpdatePoliciesCloudRequestPolicyPolicyType `json:"policyType,omitempty"`
+	AdditionalProperties map[string]interface{}                      `json:",remain"`
 }
 
 type _UpdatePoliciesCloudRequestPolicy UpdatePoliciesCloudRequestPolicy
@@ -144,7 +144,7 @@ func (o *UpdatePoliciesCloudRequestPolicy) SetPolicyType(v UpdatePoliciesCloudRe
 }
 
 func (o UpdatePoliciesCloudRequestPolicy) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -169,64 +169,8 @@ func (o UpdatePoliciesCloudRequestPolicy) ToMap() (map[string]interface{}, error
 
 	return toSerialize, nil
 }
-
 func (o *UpdatePoliciesCloudRequestPolicy) UnmarshalJSON(data []byte) (err error) {
-	varUpdatePoliciesCloudRequestPolicy := _UpdatePoliciesCloudRequestPolicy{}
-
-	err = json.Unmarshal(data, &varUpdatePoliciesCloudRequestPolicy)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdatePoliciesCloudRequestPolicy(varUpdatePoliciesCloudRequestPolicy)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "policyType")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdatePoliciesCloudRequestPolicy struct {
-	value *UpdatePoliciesCloudRequestPolicy
-	isSet bool
-}
-
-func (v NullableUpdatePoliciesCloudRequestPolicy) Get() *UpdatePoliciesCloudRequestPolicy {
-	return v.value
-}
-
-func (v *NullableUpdatePoliciesCloudRequestPolicy) Set(val *UpdatePoliciesCloudRequestPolicy) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdatePoliciesCloudRequestPolicy) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdatePoliciesCloudRequestPolicy) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdatePoliciesCloudRequestPolicy(val *UpdatePoliciesCloudRequestPolicy) *NullableUpdatePoliciesCloudRequestPolicy {
-	return &NullableUpdatePoliciesCloudRequestPolicy{value: val, isSet: true}
-}
-
-func (v NullableUpdatePoliciesCloudRequestPolicy) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdatePoliciesCloudRequestPolicy) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

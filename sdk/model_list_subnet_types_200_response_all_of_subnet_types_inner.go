@@ -20,16 +20,16 @@ var _ MappedNullable = &ListSubnetTypes200ResponseAllOfSubnetTypesInner{}
 
 // ListSubnetTypes200ResponseAllOfSubnetTypesInner struct for ListSubnetTypes200ResponseAllOfSubnetTypesInner
 type ListSubnetTypes200ResponseAllOfSubnetTypesInner struct {
-	Id *int64 `json:"id,omitempty"`
-	Code *string `json:"code,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Creatable *bool `json:"creatable,omitempty"`
-	Deletable *bool `json:"deletable,omitempty"`
-	DhcpServerEditable *bool `json:"dhcpServerEditable,omitempty"`
-	CanAssignPool *bool `json:"canAssignPool,omitempty"`
-	OptionTypes []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                                      `json:"id,omitempty"`
+	Code                 *string                                                                     `json:"code,omitempty"`
+	Name                 *string                                                                     `json:"name,omitempty"`
+	Description          *string                                                                     `json:"description,omitempty"`
+	Creatable            *bool                                                                       `json:"creatable,omitempty"`
+	Deletable            *bool                                                                       `json:"deletable,omitempty"`
+	DhcpServerEditable   *bool                                                                       `json:"dhcpServerEditable,omitempty"`
+	CanAssignPool        *bool                                                                       `json:"canAssignPool,omitempty"`
+	OptionTypes          []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
+	AdditionalProperties map[string]interface{}                                                      `json:",remain"`
 }
 
 type _ListSubnetTypes200ResponseAllOfSubnetTypesInner ListSubnetTypes200ResponseAllOfSubnetTypesInner
@@ -340,7 +340,7 @@ func (o *ListSubnetTypes200ResponseAllOfSubnetTypesInner) SetOptionTypes(v []Lis
 }
 
 func (o ListSubnetTypes200ResponseAllOfSubnetTypesInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -383,70 +383,8 @@ func (o ListSubnetTypes200ResponseAllOfSubnetTypesInner) ToMap() (map[string]int
 
 	return toSerialize, nil
 }
-
 func (o *ListSubnetTypes200ResponseAllOfSubnetTypesInner) UnmarshalJSON(data []byte) (err error) {
-	varListSubnetTypes200ResponseAllOfSubnetTypesInner := _ListSubnetTypes200ResponseAllOfSubnetTypesInner{}
-
-	err = json.Unmarshal(data, &varListSubnetTypes200ResponseAllOfSubnetTypesInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListSubnetTypes200ResponseAllOfSubnetTypesInner(varListSubnetTypes200ResponseAllOfSubnetTypesInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "creatable")
-		delete(additionalProperties, "deletable")
-		delete(additionalProperties, "dhcpServerEditable")
-		delete(additionalProperties, "canAssignPool")
-		delete(additionalProperties, "optionTypes")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListSubnetTypes200ResponseAllOfSubnetTypesInner struct {
-	value *ListSubnetTypes200ResponseAllOfSubnetTypesInner
-	isSet bool
-}
-
-func (v NullableListSubnetTypes200ResponseAllOfSubnetTypesInner) Get() *ListSubnetTypes200ResponseAllOfSubnetTypesInner {
-	return v.value
-}
-
-func (v *NullableListSubnetTypes200ResponseAllOfSubnetTypesInner) Set(val *ListSubnetTypes200ResponseAllOfSubnetTypesInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListSubnetTypes200ResponseAllOfSubnetTypesInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListSubnetTypes200ResponseAllOfSubnetTypesInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListSubnetTypes200ResponseAllOfSubnetTypesInner(val *ListSubnetTypes200ResponseAllOfSubnetTypesInner) *NullableListSubnetTypes200ResponseAllOfSubnetTypesInner {
-	return &NullableListSubnetTypes200ResponseAllOfSubnetTypesInner{value: val, isSet: true}
-}
-
-func (v NullableListSubnetTypes200ResponseAllOfSubnetTypesInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListSubnetTypes200ResponseAllOfSubnetTypesInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

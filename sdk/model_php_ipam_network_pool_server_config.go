@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the PhpIPAMNetworkPoolServerConfig type satisfies the MappedNullable interface at compile time
@@ -24,8 +23,8 @@ type PhpIPAMNetworkPoolServerConfig struct {
 	// App ID (Your App name in phpIPAM)
 	AppId string `json:"appId"`
 	// Inventory Existing
-	InventoryExisting *string `json:"inventoryExisting,omitempty"`
-	AdditionalProperties map[string]interface{}
+	InventoryExisting    *string                `json:"inventoryExisting,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _PhpIPAMNetworkPoolServerConfig PhpIPAMNetworkPoolServerConfig
@@ -109,7 +108,7 @@ func (o *PhpIPAMNetworkPoolServerConfig) SetInventoryExisting(v string) {
 }
 
 func (o PhpIPAMNetworkPoolServerConfig) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -129,84 +128,8 @@ func (o PhpIPAMNetworkPoolServerConfig) ToMap() (map[string]interface{}, error) 
 
 	return toSerialize, nil
 }
-
 func (o *PhpIPAMNetworkPoolServerConfig) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"appId",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varPhpIPAMNetworkPoolServerConfig := _PhpIPAMNetworkPoolServerConfig{}
-
-	err = json.Unmarshal(data, &varPhpIPAMNetworkPoolServerConfig)
-
-	if err != nil {
-		return err
-	}
-
-	*o = PhpIPAMNetworkPoolServerConfig(varPhpIPAMNetworkPoolServerConfig)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "appId")
-		delete(additionalProperties, "inventoryExisting")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullablePhpIPAMNetworkPoolServerConfig struct {
-	value *PhpIPAMNetworkPoolServerConfig
-	isSet bool
-}
-
-func (v NullablePhpIPAMNetworkPoolServerConfig) Get() *PhpIPAMNetworkPoolServerConfig {
-	return v.value
-}
-
-func (v *NullablePhpIPAMNetworkPoolServerConfig) Set(val *PhpIPAMNetworkPoolServerConfig) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullablePhpIPAMNetworkPoolServerConfig) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullablePhpIPAMNetworkPoolServerConfig) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullablePhpIPAMNetworkPoolServerConfig(val *PhpIPAMNetworkPoolServerConfig) *NullablePhpIPAMNetworkPoolServerConfig {
-	return &NullablePhpIPAMNetworkPoolServerConfig{value: val, isSet: true}
-}
-
-func (v NullablePhpIPAMNetworkPoolServerConfig) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullablePhpIPAMNetworkPoolServerConfig) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

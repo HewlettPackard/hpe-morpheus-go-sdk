@@ -23,8 +23,8 @@ type CreateNetworksRequestNetworkResourcePermissions struct {
 	// Pass true to allow access all groups
 	All *bool `json:"all,omitempty"`
 	// Array of groups that are allowed access
-	Sites []int64 `json:"sites,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Sites                []int64                `json:"sites,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _CreateNetworksRequestNetworkResourcePermissions CreateNetworksRequestNetworkResourcePermissions
@@ -111,7 +111,7 @@ func (o *CreateNetworksRequestNetworkResourcePermissions) SetSites(v []int64) {
 }
 
 func (o CreateNetworksRequestNetworkResourcePermissions) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -133,63 +133,8 @@ func (o CreateNetworksRequestNetworkResourcePermissions) ToMap() (map[string]int
 
 	return toSerialize, nil
 }
-
 func (o *CreateNetworksRequestNetworkResourcePermissions) UnmarshalJSON(data []byte) (err error) {
-	varCreateNetworksRequestNetworkResourcePermissions := _CreateNetworksRequestNetworkResourcePermissions{}
-
-	err = json.Unmarshal(data, &varCreateNetworksRequestNetworkResourcePermissions)
-
-	if err != nil {
-		return err
-	}
-
-	*o = CreateNetworksRequestNetworkResourcePermissions(varCreateNetworksRequestNetworkResourcePermissions)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "all")
-		delete(additionalProperties, "sites")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableCreateNetworksRequestNetworkResourcePermissions struct {
-	value *CreateNetworksRequestNetworkResourcePermissions
-	isSet bool
-}
-
-func (v NullableCreateNetworksRequestNetworkResourcePermissions) Get() *CreateNetworksRequestNetworkResourcePermissions {
-	return v.value
-}
-
-func (v *NullableCreateNetworksRequestNetworkResourcePermissions) Set(val *CreateNetworksRequestNetworkResourcePermissions) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableCreateNetworksRequestNetworkResourcePermissions) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableCreateNetworksRequestNetworkResourcePermissions) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableCreateNetworksRequestNetworkResourcePermissions(val *CreateNetworksRequestNetworkResourcePermissions) *NullableCreateNetworksRequestNetworkResourcePermissions {
-	return &NullableCreateNetworksRequestNetworkResourcePermissions{value: val, isSet: true}
-}
-
-func (v NullableCreateNetworksRequestNetworkResourcePermissions) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableCreateNetworksRequestNetworkResourcePermissions) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

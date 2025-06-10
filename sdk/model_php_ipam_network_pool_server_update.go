@@ -35,10 +35,10 @@ type PhpIPAMNetworkPoolServerUpdate struct {
 	// Disable SSL SNI Verification
 	IgnoreSsl *bool `json:"ignoreSsl,omitempty"`
 	// Network Filter
-	NetworkFilter *string `json:"networkFilter,omitempty"`
-	Config *PhpIPAMNetworkPoolServerUpdateConfig `json:"config,omitempty"`
-	Credential *NSXNetworkServerCredential `json:"credential,omitempty"`
-	AdditionalProperties map[string]interface{}
+	NetworkFilter        *string                               `json:"networkFilter,omitempty"`
+	Config               *PhpIPAMNetworkPoolServerUpdateConfig `json:"config,omitempty"`
+	Credential           *NSXNetworkServerCredential           `json:"credential,omitempty"`
+	AdditionalProperties map[string]interface{}                `json:",remain"`
 }
 
 type _PhpIPAMNetworkPoolServerUpdate PhpIPAMNetworkPoolServerUpdate
@@ -389,7 +389,7 @@ func (o *PhpIPAMNetworkPoolServerUpdate) SetCredential(v NSXNetworkServerCredent
 }
 
 func (o PhpIPAMNetworkPoolServerUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -435,71 +435,8 @@ func (o PhpIPAMNetworkPoolServerUpdate) ToMap() (map[string]interface{}, error) 
 
 	return toSerialize, nil
 }
-
 func (o *PhpIPAMNetworkPoolServerUpdate) UnmarshalJSON(data []byte) (err error) {
-	varPhpIPAMNetworkPoolServerUpdate := _PhpIPAMNetworkPoolServerUpdate{}
-
-	err = json.Unmarshal(data, &varPhpIPAMNetworkPoolServerUpdate)
-
-	if err != nil {
-		return err
-	}
-
-	*o = PhpIPAMNetworkPoolServerUpdate(varPhpIPAMNetworkPoolServerUpdate)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "serviceUrl")
-		delete(additionalProperties, "serviceUsername")
-		delete(additionalProperties, "servicePassword")
-		delete(additionalProperties, "serviceThrottleRate")
-		delete(additionalProperties, "ignoreSsl")
-		delete(additionalProperties, "networkFilter")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "credential")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullablePhpIPAMNetworkPoolServerUpdate struct {
-	value *PhpIPAMNetworkPoolServerUpdate
-	isSet bool
-}
-
-func (v NullablePhpIPAMNetworkPoolServerUpdate) Get() *PhpIPAMNetworkPoolServerUpdate {
-	return v.value
-}
-
-func (v *NullablePhpIPAMNetworkPoolServerUpdate) Set(val *PhpIPAMNetworkPoolServerUpdate) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullablePhpIPAMNetworkPoolServerUpdate) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullablePhpIPAMNetworkPoolServerUpdate) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullablePhpIPAMNetworkPoolServerUpdate(val *PhpIPAMNetworkPoolServerUpdate) *NullablePhpIPAMNetworkPoolServerUpdate {
-	return &NullablePhpIPAMNetworkPoolServerUpdate{value: val, isSet: true}
-}
-
-func (v NullablePhpIPAMNetworkPoolServerUpdate) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullablePhpIPAMNetworkPoolServerUpdate) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

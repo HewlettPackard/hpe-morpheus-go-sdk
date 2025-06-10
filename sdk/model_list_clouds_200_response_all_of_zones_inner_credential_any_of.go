@@ -20,8 +20,8 @@ var _ MappedNullable = &ListClouds200ResponseAllOfZonesInnerCredentialAnyOf{}
 
 // ListClouds200ResponseAllOfZonesInnerCredentialAnyOf struct for ListClouds200ResponseAllOfZonesInnerCredentialAnyOf
 type ListClouds200ResponseAllOfZonesInnerCredentialAnyOf struct {
-	Type *string `json:"type,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Type                 *string                `json:"type,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListClouds200ResponseAllOfZonesInnerCredentialAnyOf ListClouds200ResponseAllOfZonesInnerCredentialAnyOf
@@ -76,7 +76,7 @@ func (o *ListClouds200ResponseAllOfZonesInnerCredentialAnyOf) SetType(v string) 
 }
 
 func (o ListClouds200ResponseAllOfZonesInnerCredentialAnyOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o ListClouds200ResponseAllOfZonesInnerCredentialAnyOf) ToMap() (map[string
 
 	return toSerialize, nil
 }
-
 func (o *ListClouds200ResponseAllOfZonesInnerCredentialAnyOf) UnmarshalJSON(data []byte) (err error) {
-	varListClouds200ResponseAllOfZonesInnerCredentialAnyOf := _ListClouds200ResponseAllOfZonesInnerCredentialAnyOf{}
-
-	err = json.Unmarshal(data, &varListClouds200ResponseAllOfZonesInnerCredentialAnyOf)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListClouds200ResponseAllOfZonesInnerCredentialAnyOf(varListClouds200ResponseAllOfZonesInnerCredentialAnyOf)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "type")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListClouds200ResponseAllOfZonesInnerCredentialAnyOf struct {
-	value *ListClouds200ResponseAllOfZonesInnerCredentialAnyOf
-	isSet bool
-}
-
-func (v NullableListClouds200ResponseAllOfZonesInnerCredentialAnyOf) Get() *ListClouds200ResponseAllOfZonesInnerCredentialAnyOf {
-	return v.value
-}
-
-func (v *NullableListClouds200ResponseAllOfZonesInnerCredentialAnyOf) Set(val *ListClouds200ResponseAllOfZonesInnerCredentialAnyOf) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListClouds200ResponseAllOfZonesInnerCredentialAnyOf) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListClouds200ResponseAllOfZonesInnerCredentialAnyOf) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListClouds200ResponseAllOfZonesInnerCredentialAnyOf(val *ListClouds200ResponseAllOfZonesInnerCredentialAnyOf) *NullableListClouds200ResponseAllOfZonesInnerCredentialAnyOf {
-	return &NullableListClouds200ResponseAllOfZonesInnerCredentialAnyOf{value: val, isSet: true}
-}
-
-func (v NullableListClouds200ResponseAllOfZonesInnerCredentialAnyOf) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListClouds200ResponseAllOfZonesInnerCredentialAnyOf) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

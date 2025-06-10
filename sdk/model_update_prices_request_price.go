@@ -23,9 +23,9 @@ type UpdatePricesRequestPrice struct {
 	// Price name
 	Name *string `json:"name,omitempty"`
 	// Price code, must be unique
-	Code *string `json:"code,omitempty"`
+	Code    *string                       `json:"code,omitempty"`
 	Account *AddPricesRequestPriceAccount `json:"account,omitempty"`
-	// Restricts query to only load only prices with specified priceType. * `fixed` - Everything * `compute` - Memory + CPU * `memory` - Memory * `cores` - Cores * `storage` - Storage * `datastore` - Datastore * `platform` - Platform * `software` - Software * `load_balancer` - Load Balancer * `load_balancer_virtual_server` - Load Balancer Virtual Server 
+	// Restricts query to only load only prices with specified priceType. * `fixed` - Everything * `compute` - Memory + CPU * `memory` - Memory * `cores` - Cores * `storage` - Storage * `datastore` - Datastore * `platform` - Platform * `software` - Software * `load_balancer` - Load Balancer * `load_balancer_virtual_server` - Load Balancer Virtual Server
 	PriceType *string `json:"priceType,omitempty"`
 	// The unit of pricing
 	PriceUnit *string `json:"priceUnit,omitempty"`
@@ -46,12 +46,12 @@ type UpdatePricesRequestPrice struct {
 	// Platform.  Required for `platform` price type
 	Platform *string `json:"platform,omitempty"`
 	// Software.  Required for software price type
-	Software *string `json:"software,omitempty"`
+	Software   *string                          `json:"software,omitempty"`
 	VolumeType *AddPricesRequestPriceVolumeType `json:"volumeType,omitempty"`
-	Datastore *AddPricesRequestPriceDatastore `json:"datastore,omitempty"`
+	Datastore  *AddPricesRequestPriceDatastore  `json:"datastore,omitempty"`
 	// Apply price across clouds, optional true/false flag for datastore price type
-	CrossCloudApply *bool `json:"crossCloudApply,omitempty"`
-	AdditionalProperties map[string]interface{}
+	CrossCloudApply      *bool                  `json:"crossCloudApply,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _UpdatePricesRequestPrice UpdatePricesRequestPrice
@@ -618,7 +618,7 @@ func (o *UpdatePricesRequestPrice) SetCrossCloudApply(v bool) {
 }
 
 func (o UpdatePricesRequestPrice) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -685,78 +685,8 @@ func (o UpdatePricesRequestPrice) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *UpdatePricesRequestPrice) UnmarshalJSON(data []byte) (err error) {
-	varUpdatePricesRequestPrice := _UpdatePricesRequestPrice{}
-
-	err = json.Unmarshal(data, &varUpdatePricesRequestPrice)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdatePricesRequestPrice(varUpdatePricesRequestPrice)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "account")
-		delete(additionalProperties, "priceType")
-		delete(additionalProperties, "priceUnit")
-		delete(additionalProperties, "incurCharges")
-		delete(additionalProperties, "currency")
-		delete(additionalProperties, "cost")
-		delete(additionalProperties, "markupType")
-		delete(additionalProperties, "markup")
-		delete(additionalProperties, "markupPercent")
-		delete(additionalProperties, "customPrice")
-		delete(additionalProperties, "platform")
-		delete(additionalProperties, "software")
-		delete(additionalProperties, "volumeType")
-		delete(additionalProperties, "datastore")
-		delete(additionalProperties, "crossCloudApply")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdatePricesRequestPrice struct {
-	value *UpdatePricesRequestPrice
-	isSet bool
-}
-
-func (v NullableUpdatePricesRequestPrice) Get() *UpdatePricesRequestPrice {
-	return v.value
-}
-
-func (v *NullableUpdatePricesRequestPrice) Set(val *UpdatePricesRequestPrice) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdatePricesRequestPrice) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdatePricesRequestPrice) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdatePricesRequestPrice(val *UpdatePricesRequestPrice) *NullableUpdatePricesRequestPrice {
-	return &NullableUpdatePricesRequestPrice{value: val, isSet: true}
-}
-
-func (v NullableUpdatePricesRequestPrice) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdatePricesRequestPrice) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

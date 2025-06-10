@@ -20,31 +20,31 @@ var _ MappedNullable = &GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeI
 
 // GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner struct for GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner
 type GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner struct {
-	Id *int64 `json:"id,omitempty"`
+	Id           *int64                                                      `json:"id,omitempty"`
 	InstanceType *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"instanceType,omitempty"`
-	Account *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"account,omitempty"`
-	Code *string `json:"code,omitempty"`
-	Name *string `json:"name,omitempty"`
+	Account      *GetAlerts200ResponseAllOfCheckGroupsInnerInstance          `json:"account,omitempty"`
+	Code         *string                                                     `json:"code,omitempty"`
+	Name         *string                                                     `json:"name,omitempty"`
 	// Array of label strings, can be used for filtering.
-	Labels []string `json:"labels,omitempty"`
-	InstanceVersion *string `json:"instanceVersion,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Creatable *bool `json:"creatable,omitempty"`
-	MemoryRequirement *int64 `json:"memoryRequirement,omitempty"`
-	SortOrder *int64 `json:"sortOrder,omitempty"`
-	SupportsConvertToManaged *bool `json:"supportsConvertToManaged,omitempty"`
-	ProvisionType *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionType `json:"provisionType,omitempty"`
-	TaskSets []map[string]interface{} `json:"taskSets,omitempty"`
-	ContainerTypes []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInner `json:"containerTypes,omitempty"`
-	Mounts []map[string]interface{} `json:"mounts,omitempty"`
-	Ports []map[string]interface{} `json:"ports,omitempty"`
-	OptionTypes []map[string]interface{} `json:"optionTypes,omitempty"`
-	EnvironmentVariables []map[string]interface{} `json:"environmentVariables,omitempty"`
-	PriceSets []map[string]interface{} `json:"priceSets,omitempty"`
-	SpecTemplates []map[string]interface{} `json:"specTemplates,omitempty"`
-	TfvarSecret *string `json:"tfvarSecret,omitempty"`
-	Permissions *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerPermissions `json:"permissions,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Labels                   []string                                                                                             `json:"labels,omitempty"`
+	InstanceVersion          *string                                                                                              `json:"instanceVersion,omitempty"`
+	Description              *string                                                                                              `json:"description,omitempty"`
+	Creatable                *bool                                                                                                `json:"creatable,omitempty"`
+	MemoryRequirement        *int64                                                                                               `json:"memoryRequirement,omitempty"`
+	SortOrder                *int64                                                                                               `json:"sortOrder,omitempty"`
+	SupportsConvertToManaged *bool                                                                                                `json:"supportsConvertToManaged,omitempty"`
+	ProvisionType            *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionType        `json:"provisionType,omitempty"`
+	TaskSets                 []map[string]interface{}                                                                             `json:"taskSets,omitempty"`
+	ContainerTypes           []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInner `json:"containerTypes,omitempty"`
+	Mounts                   []map[string]interface{}                                                                             `json:"mounts,omitempty"`
+	Ports                    []map[string]interface{}                                                                             `json:"ports,omitempty"`
+	OptionTypes              []map[string]interface{}                                                                             `json:"optionTypes,omitempty"`
+	EnvironmentVariables     []map[string]interface{}                                                                             `json:"environmentVariables,omitempty"`
+	PriceSets                []map[string]interface{}                                                                             `json:"priceSets,omitempty"`
+	SpecTemplates            []map[string]interface{}                                                                             `json:"specTemplates,omitempty"`
+	TfvarSecret              *string                                                                                              `json:"tfvarSecret,omitempty"`
+	Permissions              *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerPermissions          `json:"permissions,omitempty"`
+	AdditionalProperties     map[string]interface{}                                                                               `json:",remain"`
 }
 
 type _GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner
@@ -803,7 +803,7 @@ func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayo
 }
 
 func (o GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -888,84 +888,8 @@ func (o GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayou
 
 	return toSerialize, nil
 }
-
 func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner) UnmarshalJSON(data []byte) (err error) {
-	varGetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner := _GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner{}
-
-	err = json.Unmarshal(data, &varGetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner(varGetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "instanceType")
-		delete(additionalProperties, "account")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "instanceVersion")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "creatable")
-		delete(additionalProperties, "memoryRequirement")
-		delete(additionalProperties, "sortOrder")
-		delete(additionalProperties, "supportsConvertToManaged")
-		delete(additionalProperties, "provisionType")
-		delete(additionalProperties, "taskSets")
-		delete(additionalProperties, "containerTypes")
-		delete(additionalProperties, "mounts")
-		delete(additionalProperties, "ports")
-		delete(additionalProperties, "optionTypes")
-		delete(additionalProperties, "environmentVariables")
-		delete(additionalProperties, "priceSets")
-		delete(additionalProperties, "specTemplates")
-		delete(additionalProperties, "tfvarSecret")
-		delete(additionalProperties, "permissions")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner struct {
-	value *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner
-	isSet bool
-}
-
-func (v NullableGetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner) Get() *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner {
-	return v.value
-}
-
-func (v *NullableGetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner) Set(val *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner(val *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner) *NullableGetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner {
-	return &NullableGetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner{value: val, isSet: true}
-}
-
-func (v NullableGetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

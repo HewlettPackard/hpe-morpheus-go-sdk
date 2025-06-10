@@ -21,16 +21,16 @@ var _ MappedNullable = &ArchiveFileLinks{}
 
 // ArchiveFileLinks struct for ArchiveFileLinks
 type ArchiveFileLinks struct {
-	Id *int64 `json:"id,omitempty"`
-	SecretAccessKey *string `json:"secretAccessKey,omitempty"`
-	ArchiveFile *GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile `json:"archiveFile,omitempty"`
-	CreatedBy *GetArchiveBucket200ResponseArchiveFilesInnerCreatedBy `json:"createdBy,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	LastAccessDate *time.Time `json:"lastAccessDate,omitempty"`
-	ExpirationDate *time.Time `json:"expirationDate,omitempty"`
-	DownloadCount *int64 `json:"downloadCount,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                               `json:"id,omitempty"`
+	SecretAccessKey      *string                                                              `json:"secretAccessKey,omitempty"`
+	ArchiveFile          *GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile `json:"archiveFile,omitempty"`
+	CreatedBy            *GetArchiveBucket200ResponseArchiveFilesInnerCreatedBy               `json:"createdBy,omitempty"`
+	DateCreated          *time.Time                                                           `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                                           `json:"lastUpdated,omitempty"`
+	LastAccessDate       *time.Time                                                           `json:"lastAccessDate,omitempty"`
+	ExpirationDate       *time.Time                                                           `json:"expirationDate,omitempty"`
+	DownloadCount        *int64                                                               `json:"downloadCount,omitempty"`
+	AdditionalProperties map[string]interface{}                                               `json:",remain"`
 }
 
 type _ArchiveFileLinks ArchiveFileLinks
@@ -341,7 +341,7 @@ func (o *ArchiveFileLinks) SetDownloadCount(v int64) {
 }
 
 func (o ArchiveFileLinks) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -384,70 +384,8 @@ func (o ArchiveFileLinks) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *ArchiveFileLinks) UnmarshalJSON(data []byte) (err error) {
-	varArchiveFileLinks := _ArchiveFileLinks{}
-
-	err = json.Unmarshal(data, &varArchiveFileLinks)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ArchiveFileLinks(varArchiveFileLinks)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "secretAccessKey")
-		delete(additionalProperties, "archiveFile")
-		delete(additionalProperties, "createdBy")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		delete(additionalProperties, "lastAccessDate")
-		delete(additionalProperties, "expirationDate")
-		delete(additionalProperties, "downloadCount")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableArchiveFileLinks struct {
-	value *ArchiveFileLinks
-	isSet bool
-}
-
-func (v NullableArchiveFileLinks) Get() *ArchiveFileLinks {
-	return v.value
-}
-
-func (v *NullableArchiveFileLinks) Set(val *ArchiveFileLinks) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableArchiveFileLinks) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableArchiveFileLinks) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableArchiveFileLinks(val *ArchiveFileLinks) *NullableArchiveFileLinks {
-	return &NullableArchiveFileLinks{value: val, isSet: true}
-}
-
-func (v NullableArchiveFileLinks) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableArchiveFileLinks) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

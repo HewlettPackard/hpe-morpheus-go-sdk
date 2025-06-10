@@ -20,11 +20,11 @@ var _ MappedNullable = &LogSettings{}
 
 // LogSettings struct for LogSettings
 type LogSettings struct {
-	Enabled *bool `json:"enabled,omitempty"`
-	RetentionDays *string `json:"retentionDays,omitempty"`
-	SyslogRules []map[string]interface{} `json:"syslogRules,omitempty"`
-	Integrations []map[string]interface{} `json:"integrations,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Enabled              *bool                    `json:"enabled,omitempty"`
+	RetentionDays        *string                  `json:"retentionDays,omitempty"`
+	SyslogRules          []map[string]interface{} `json:"syslogRules,omitempty"`
+	Integrations         []map[string]interface{} `json:"integrations,omitempty"`
+	AdditionalProperties map[string]interface{}   `json:",remain"`
 }
 
 type _LogSettings LogSettings
@@ -175,7 +175,7 @@ func (o *LogSettings) SetIntegrations(v []map[string]interface{}) {
 }
 
 func (o LogSettings) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -203,65 +203,8 @@ func (o LogSettings) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *LogSettings) UnmarshalJSON(data []byte) (err error) {
-	varLogSettings := _LogSettings{}
-
-	err = json.Unmarshal(data, &varLogSettings)
-
-	if err != nil {
-		return err
-	}
-
-	*o = LogSettings(varLogSettings)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "retentionDays")
-		delete(additionalProperties, "syslogRules")
-		delete(additionalProperties, "integrations")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableLogSettings struct {
-	value *LogSettings
-	isSet bool
-}
-
-func (v NullableLogSettings) Get() *LogSettings {
-	return v.value
-}
-
-func (v *NullableLogSettings) Set(val *LogSettings) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableLogSettings) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableLogSettings) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableLogSettings(val *LogSettings) *NullableLogSettings {
-	return &NullableLogSettings{value: val, isSet: true}
-}
-
-func (v NullableLogSettings) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableLogSettings) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

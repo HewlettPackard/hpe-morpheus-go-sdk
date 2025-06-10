@@ -20,11 +20,11 @@ var _ MappedNullable = &Whoami200Response{}
 
 // Whoami200Response struct for Whoami200Response
 type Whoami200Response struct {
-	User *AddUserTenant200ResponseAllOfUser `json:"user,omitempty"`
-	IsMasterAccount *bool `json:"isMasterAccount,omitempty"`
-	Permissions []Whoami200ResponsePermissionsInner `json:"permissions,omitempty"`
-	Appliance *Whoami200ResponseAppliance `json:"appliance,omitempty"`
-	AdditionalProperties map[string]interface{}
+	User                 *AddUserTenant200ResponseAllOfUser  `json:"user,omitempty"`
+	IsMasterAccount      *bool                               `json:"isMasterAccount,omitempty"`
+	Permissions          []Whoami200ResponsePermissionsInner `json:"permissions,omitempty"`
+	Appliance            *Whoami200ResponseAppliance         `json:"appliance,omitempty"`
+	AdditionalProperties map[string]interface{}              `json:",remain"`
 }
 
 type _Whoami200Response Whoami200Response
@@ -175,7 +175,7 @@ func (o *Whoami200Response) SetAppliance(v Whoami200ResponseAppliance) {
 }
 
 func (o Whoami200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -203,65 +203,8 @@ func (o Whoami200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *Whoami200Response) UnmarshalJSON(data []byte) (err error) {
-	varWhoami200Response := _Whoami200Response{}
-
-	err = json.Unmarshal(data, &varWhoami200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = Whoami200Response(varWhoami200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "user")
-		delete(additionalProperties, "isMasterAccount")
-		delete(additionalProperties, "permissions")
-		delete(additionalProperties, "appliance")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableWhoami200Response struct {
-	value *Whoami200Response
-	isSet bool
-}
-
-func (v NullableWhoami200Response) Get() *Whoami200Response {
-	return v.value
-}
-
-func (v *NullableWhoami200Response) Set(val *Whoami200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableWhoami200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableWhoami200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableWhoami200Response(val *Whoami200Response) *NullableWhoami200Response {
-	return &NullableWhoami200Response{value: val, isSet: true}
-}
-
-func (v NullableWhoami200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableWhoami200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

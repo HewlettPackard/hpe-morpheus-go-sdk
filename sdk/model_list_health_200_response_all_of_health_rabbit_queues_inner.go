@@ -20,10 +20,10 @@ var _ MappedNullable = &ListHealth200ResponseAllOfHealthRabbitQueuesInner{}
 
 // ListHealth200ResponseAllOfHealthRabbitQueuesInner struct for ListHealth200ResponseAllOfHealthRabbitQueuesInner
 type ListHealth200ResponseAllOfHealthRabbitQueuesInner struct {
-	Name *string `json:"name,omitempty"`
-	Count *int64 `json:"count,omitempty"`
-	Status *string `json:"status,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Name                 *string                `json:"name,omitempty"`
+	Count                *int64                 `json:"count,omitempty"`
+	Status               *string                `json:"status,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListHealth200ResponseAllOfHealthRabbitQueuesInner ListHealth200ResponseAllOfHealthRabbitQueuesInner
@@ -142,7 +142,7 @@ func (o *ListHealth200ResponseAllOfHealthRabbitQueuesInner) SetStatus(v string) 
 }
 
 func (o ListHealth200ResponseAllOfHealthRabbitQueuesInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -167,64 +167,8 @@ func (o ListHealth200ResponseAllOfHealthRabbitQueuesInner) ToMap() (map[string]i
 
 	return toSerialize, nil
 }
-
 func (o *ListHealth200ResponseAllOfHealthRabbitQueuesInner) UnmarshalJSON(data []byte) (err error) {
-	varListHealth200ResponseAllOfHealthRabbitQueuesInner := _ListHealth200ResponseAllOfHealthRabbitQueuesInner{}
-
-	err = json.Unmarshal(data, &varListHealth200ResponseAllOfHealthRabbitQueuesInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListHealth200ResponseAllOfHealthRabbitQueuesInner(varListHealth200ResponseAllOfHealthRabbitQueuesInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "count")
-		delete(additionalProperties, "status")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListHealth200ResponseAllOfHealthRabbitQueuesInner struct {
-	value *ListHealth200ResponseAllOfHealthRabbitQueuesInner
-	isSet bool
-}
-
-func (v NullableListHealth200ResponseAllOfHealthRabbitQueuesInner) Get() *ListHealth200ResponseAllOfHealthRabbitQueuesInner {
-	return v.value
-}
-
-func (v *NullableListHealth200ResponseAllOfHealthRabbitQueuesInner) Set(val *ListHealth200ResponseAllOfHealthRabbitQueuesInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListHealth200ResponseAllOfHealthRabbitQueuesInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListHealth200ResponseAllOfHealthRabbitQueuesInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListHealth200ResponseAllOfHealthRabbitQueuesInner(val *ListHealth200ResponseAllOfHealthRabbitQueuesInner) *NullableListHealth200ResponseAllOfHealthRabbitQueuesInner {
-	return &NullableListHealth200ResponseAllOfHealthRabbitQueuesInner{value: val, isSet: true}
-}
-
-func (v NullableListHealth200ResponseAllOfHealthRabbitQueuesInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListHealth200ResponseAllOfHealthRabbitQueuesInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

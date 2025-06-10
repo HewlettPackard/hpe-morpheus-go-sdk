@@ -21,18 +21,18 @@ var _ MappedNullable = &CatalogItem{}
 
 // CatalogItem struct for CatalogItem
 type CatalogItem struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Type *ListApps200ResponseAllOfAppsInnerBlueprint `json:"type,omitempty"`
-	Quantity *int64 `json:"quantity,omitempty"`
-	Status *string `json:"status,omitempty"`
-	StatusMessage *string `json:"statusMessage,omitempty"`
-	RefType *string `json:"refType,omitempty"`
-	Instance *ListCatalogCart200ResponseCartItemsInnerInstance `json:"instance,omitempty"`
-	OrderDate *time.Time `json:"orderDate,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                            `json:"id,omitempty"`
+	Name                 *string                                           `json:"name,omitempty"`
+	Type                 *ListApps200ResponseAllOfAppsInnerBlueprint       `json:"type,omitempty"`
+	Quantity             *int64                                            `json:"quantity,omitempty"`
+	Status               *string                                           `json:"status,omitempty"`
+	StatusMessage        *string                                           `json:"statusMessage,omitempty"`
+	RefType              *string                                           `json:"refType,omitempty"`
+	Instance             *ListCatalogCart200ResponseCartItemsInnerInstance `json:"instance,omitempty"`
+	OrderDate            *time.Time                                        `json:"orderDate,omitempty"`
+	DateCreated          *time.Time                                        `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                        `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}                            `json:",remain"`
 }
 
 type _CatalogItem CatalogItem
@@ -407,7 +407,7 @@ func (o *CatalogItem) SetLastUpdated(v time.Time) {
 }
 
 func (o CatalogItem) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -456,72 +456,8 @@ func (o CatalogItem) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *CatalogItem) UnmarshalJSON(data []byte) (err error) {
-	varCatalogItem := _CatalogItem{}
-
-	err = json.Unmarshal(data, &varCatalogItem)
-
-	if err != nil {
-		return err
-	}
-
-	*o = CatalogItem(varCatalogItem)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "quantity")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "statusMessage")
-		delete(additionalProperties, "refType")
-		delete(additionalProperties, "instance")
-		delete(additionalProperties, "orderDate")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableCatalogItem struct {
-	value *CatalogItem
-	isSet bool
-}
-
-func (v NullableCatalogItem) Get() *CatalogItem {
-	return v.value
-}
-
-func (v *NullableCatalogItem) Set(val *CatalogItem) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableCatalogItem) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableCatalogItem) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableCatalogItem(val *CatalogItem) *NullableCatalogItem {
-	return &NullableCatalogItem{value: val, isSet: true}
-}
-
-func (v NullableCatalogItem) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableCatalogItem) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

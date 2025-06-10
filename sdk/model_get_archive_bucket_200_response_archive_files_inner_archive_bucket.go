@@ -20,10 +20,10 @@ var _ MappedNullable = &GetArchiveBucket200ResponseArchiveFilesInnerArchiveBucke
 
 // GetArchiveBucket200ResponseArchiveFilesInnerArchiveBucket struct for GetArchiveBucket200ResponseArchiveFilesInnerArchiveBucket
 type GetArchiveBucket200ResponseArchiveFilesInnerArchiveBucket struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	IsPublic *bool `json:"isPublic,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	IsPublic             *bool                  `json:"isPublic,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _GetArchiveBucket200ResponseArchiveFilesInnerArchiveBucket GetArchiveBucket200ResponseArchiveFilesInnerArchiveBucket
@@ -142,7 +142,7 @@ func (o *GetArchiveBucket200ResponseArchiveFilesInnerArchiveBucket) SetIsPublic(
 }
 
 func (o GetArchiveBucket200ResponseArchiveFilesInnerArchiveBucket) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -167,64 +167,8 @@ func (o GetArchiveBucket200ResponseArchiveFilesInnerArchiveBucket) ToMap() (map[
 
 	return toSerialize, nil
 }
-
 func (o *GetArchiveBucket200ResponseArchiveFilesInnerArchiveBucket) UnmarshalJSON(data []byte) (err error) {
-	varGetArchiveBucket200ResponseArchiveFilesInnerArchiveBucket := _GetArchiveBucket200ResponseArchiveFilesInnerArchiveBucket{}
-
-	err = json.Unmarshal(data, &varGetArchiveBucket200ResponseArchiveFilesInnerArchiveBucket)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetArchiveBucket200ResponseArchiveFilesInnerArchiveBucket(varGetArchiveBucket200ResponseArchiveFilesInnerArchiveBucket)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "isPublic")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetArchiveBucket200ResponseArchiveFilesInnerArchiveBucket struct {
-	value *GetArchiveBucket200ResponseArchiveFilesInnerArchiveBucket
-	isSet bool
-}
-
-func (v NullableGetArchiveBucket200ResponseArchiveFilesInnerArchiveBucket) Get() *GetArchiveBucket200ResponseArchiveFilesInnerArchiveBucket {
-	return v.value
-}
-
-func (v *NullableGetArchiveBucket200ResponseArchiveFilesInnerArchiveBucket) Set(val *GetArchiveBucket200ResponseArchiveFilesInnerArchiveBucket) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetArchiveBucket200ResponseArchiveFilesInnerArchiveBucket) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetArchiveBucket200ResponseArchiveFilesInnerArchiveBucket) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetArchiveBucket200ResponseArchiveFilesInnerArchiveBucket(val *GetArchiveBucket200ResponseArchiveFilesInnerArchiveBucket) *NullableGetArchiveBucket200ResponseArchiveFilesInnerArchiveBucket {
-	return &NullableGetArchiveBucket200ResponseArchiveFilesInnerArchiveBucket{value: val, isSet: true}
-}
-
-func (v NullableGetArchiveBucket200ResponseArchiveFilesInnerArchiveBucket) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetArchiveBucket200ResponseArchiveFilesInnerArchiveBucket) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

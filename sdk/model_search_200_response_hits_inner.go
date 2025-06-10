@@ -26,12 +26,12 @@ type Search200ResponseHitsInner struct {
 	// UUID
 	Uuid *string `json:"uuid,omitempty"`
 	// Name
-	Name *string `json:"name,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Type *string `json:"type,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	Score *float32 `json:"score,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Name                 *string                `json:"name,omitempty"`
+	Description          *string                `json:"description,omitempty"`
+	Type                 *string                `json:"type,omitempty"`
+	DateCreated          *time.Time             `json:"dateCreated,omitempty"`
+	Score                *float32               `json:"score,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _Search200ResponseHitsInner Search200ResponseHitsInner
@@ -278,7 +278,7 @@ func (o *Search200ResponseHitsInner) SetScore(v float32) {
 }
 
 func (o Search200ResponseHitsInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -315,68 +315,8 @@ func (o Search200ResponseHitsInner) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *Search200ResponseHitsInner) UnmarshalJSON(data []byte) (err error) {
-	varSearch200ResponseHitsInner := _Search200ResponseHitsInner{}
-
-	err = json.Unmarshal(data, &varSearch200ResponseHitsInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = Search200ResponseHitsInner(varSearch200ResponseHitsInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "uuid")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "score")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableSearch200ResponseHitsInner struct {
-	value *Search200ResponseHitsInner
-	isSet bool
-}
-
-func (v NullableSearch200ResponseHitsInner) Get() *Search200ResponseHitsInner {
-	return v.value
-}
-
-func (v *NullableSearch200ResponseHitsInner) Set(val *Search200ResponseHitsInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSearch200ResponseHitsInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSearch200ResponseHitsInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSearch200ResponseHitsInner(val *Search200ResponseHitsInner) *NullableSearch200ResponseHitsInner {
-	return &NullableSearch200ResponseHitsInner{value: val, isSet: true}
-}
-
-func (v NullableSearch200ResponseHitsInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSearch200ResponseHitsInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

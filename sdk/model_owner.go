@@ -20,9 +20,9 @@ var _ MappedNullable = &Owner{}
 
 // Owner struct for Owner
 type Owner struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _Owner Owner
@@ -109,7 +109,7 @@ func (o *Owner) SetName(v string) {
 }
 
 func (o Owner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -131,63 +131,8 @@ func (o Owner) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *Owner) UnmarshalJSON(data []byte) (err error) {
-	varOwner := _Owner{}
-
-	err = json.Unmarshal(data, &varOwner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = Owner(varOwner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableOwner struct {
-	value *Owner
-	isSet bool
-}
-
-func (v NullableOwner) Get() *Owner {
-	return v.value
-}
-
-func (v *NullableOwner) Set(val *Owner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableOwner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableOwner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableOwner(val *Owner) *NullableOwner {
-	return &NullableOwner{value: val, isSet: true}
-}
-
-func (v NullableOwner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableOwner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

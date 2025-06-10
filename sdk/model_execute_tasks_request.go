@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the ExecuteTasksRequest type satisfies the MappedNullable interface at compile time
@@ -21,8 +20,8 @@ var _ MappedNullable = &ExecuteTasksRequest{}
 
 // ExecuteTasksRequest struct for ExecuteTasksRequest
 type ExecuteTasksRequest struct {
-	Job ExecuteTasksRequestJob `json:"job"`
-	AdditionalProperties map[string]interface{}
+	Job                  ExecuteTasksRequestJob `json:"job"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ExecuteTasksRequest ExecuteTasksRequest
@@ -70,7 +69,7 @@ func (o *ExecuteTasksRequest) SetJob(v ExecuteTasksRequestJob) {
 }
 
 func (o ExecuteTasksRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -87,83 +86,8 @@ func (o ExecuteTasksRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *ExecuteTasksRequest) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"job",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varExecuteTasksRequest := _ExecuteTasksRequest{}
-
-	err = json.Unmarshal(data, &varExecuteTasksRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ExecuteTasksRequest(varExecuteTasksRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "job")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableExecuteTasksRequest struct {
-	value *ExecuteTasksRequest
-	isSet bool
-}
-
-func (v NullableExecuteTasksRequest) Get() *ExecuteTasksRequest {
-	return v.value
-}
-
-func (v *NullableExecuteTasksRequest) Set(val *ExecuteTasksRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableExecuteTasksRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableExecuteTasksRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableExecuteTasksRequest(val *ExecuteTasksRequest) *NullableExecuteTasksRequest {
-	return &NullableExecuteTasksRequest{value: val, isSet: true}
-}
-
-func (v NullableExecuteTasksRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableExecuteTasksRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

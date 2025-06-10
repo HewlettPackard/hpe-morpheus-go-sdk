@@ -20,10 +20,10 @@ var _ MappedNullable = &Tag{}
 
 // Tag struct for Tag
 type Tag struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Value *string `json:"value,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	Value                *string                `json:"value,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _Tag Tag
@@ -142,7 +142,7 @@ func (o *Tag) SetValue(v string) {
 }
 
 func (o Tag) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -167,64 +167,8 @@ func (o Tag) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *Tag) UnmarshalJSON(data []byte) (err error) {
-	varTag := _Tag{}
-
-	err = json.Unmarshal(data, &varTag)
-
-	if err != nil {
-		return err
-	}
-
-	*o = Tag(varTag)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "value")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableTag struct {
-	value *Tag
-	isSet bool
-}
-
-func (v NullableTag) Get() *Tag {
-	return v.value
-}
-
-func (v *NullableTag) Set(val *Tag) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableTag) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableTag) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableTag(val *Tag) *NullableTag {
-	return &NullableTag{value: val, isSet: true}
-}
-
-func (v NullableTag) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableTag) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

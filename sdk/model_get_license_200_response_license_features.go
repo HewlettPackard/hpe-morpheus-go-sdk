@@ -20,59 +20,59 @@ var _ MappedNullable = &GetLicense200ResponseLicenseFeatures{}
 
 // GetLicense200ResponseLicenseFeatures Features that can be enabled or disabled in the license
 type GetLicense200ResponseLicenseFeatures struct {
-	Dashboard *bool `json:"dashboard,omitempty"`
-	Guidance *bool `json:"guidance,omitempty"`
-	Discovery *bool `json:"discovery,omitempty"`
-	Analytics *bool `json:"analytics,omitempty"`
-	Scheduling *bool `json:"scheduling,omitempty"`
-	Approvals *bool `json:"approvals,omitempty"`
-	Usage *bool `json:"usage,omitempty"`
-	Activity *bool `json:"activity,omitempty"`
-	Instances *bool `json:"instances,omitempty"`
-	Apps *bool `json:"apps,omitempty"`
-	Templates *bool `json:"templates,omitempty"`
-	Automation *bool `json:"automation,omitempty"`
-	VirtualImages *bool `json:"virtualImages,omitempty"`
-	Library *bool `json:"library,omitempty"`
-	Migrations *bool `json:"migrations,omitempty"`
-	Deployments *bool `json:"deployments,omitempty"`
-	Groups *bool `json:"groups,omitempty"`
-	Clouds *bool `json:"clouds,omitempty"`
-	Hosts *bool `json:"hosts,omitempty"`
-	Network *bool `json:"network,omitempty"`
-	LoadBalancers *bool `json:"loadBalancers,omitempty"`
-	Storage *bool `json:"storage,omitempty"`
-	KeyPairs *bool `json:"keyPairs,omitempty"`
-	SslCertificates *bool `json:"sslCertificates,omitempty"`
-	Boot *bool `json:"boot,omitempty"`
-	Backups *bool `json:"backups,omitempty"`
-	Cypher *bool `json:"cypher,omitempty"`
-	Archives *bool `json:"archives,omitempty"`
-	ImageBuilder *bool `json:"imageBuilder,omitempty"`
-	Tenants *bool `json:"tenants,omitempty"`
-	Plans *bool `json:"plans,omitempty"`
-	Pricing *bool `json:"pricing,omitempty"`
-	Users *bool `json:"users,omitempty"`
-	UserGroups *bool `json:"userGroups,omitempty"`
-	Monitoring *bool `json:"monitoring,omitempty"`
-	Logging *bool `json:"logging,omitempty"`
-	MonitoringServices *bool `json:"monitoringServices,omitempty"`
-	LoggingServices *bool `json:"loggingServices,omitempty"`
-	BackupServices *bool `json:"backupServices,omitempty"`
-	DnsServices *bool `json:"dnsServices,omitempty"`
-	CodeService *bool `json:"codeService,omitempty"`
-	BuildServices *bool `json:"buildServices,omitempty"`
-	LoadBalancerServices *bool `json:"loadBalancerServices,omitempty"`
-	IpamServices *bool `json:"ipamServices,omitempty"`
-	ApprovalServices *bool `json:"approvalServices,omitempty"`
-	CmdbServices *bool `json:"cmdbServices,omitempty"`
-	DeploymentServices *bool `json:"deploymentServices,omitempty"`
-	AutomationServices *bool `json:"automationServices,omitempty"`
-	ServiceDiscoveryServices *bool `json:"serviceDiscoveryServices,omitempty"`
-	IdentityServices *bool `json:"identityServices,omitempty"`
-	TrustServices *bool `json:"trustServices,omitempty"`
-	SecurityServices *bool `json:"securityServices,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Dashboard                *bool                  `json:"dashboard,omitempty"`
+	Guidance                 *bool                  `json:"guidance,omitempty"`
+	Discovery                *bool                  `json:"discovery,omitempty"`
+	Analytics                *bool                  `json:"analytics,omitempty"`
+	Scheduling               *bool                  `json:"scheduling,omitempty"`
+	Approvals                *bool                  `json:"approvals,omitempty"`
+	Usage                    *bool                  `json:"usage,omitempty"`
+	Activity                 *bool                  `json:"activity,omitempty"`
+	Instances                *bool                  `json:"instances,omitempty"`
+	Apps                     *bool                  `json:"apps,omitempty"`
+	Templates                *bool                  `json:"templates,omitempty"`
+	Automation               *bool                  `json:"automation,omitempty"`
+	VirtualImages            *bool                  `json:"virtualImages,omitempty"`
+	Library                  *bool                  `json:"library,omitempty"`
+	Migrations               *bool                  `json:"migrations,omitempty"`
+	Deployments              *bool                  `json:"deployments,omitempty"`
+	Groups                   *bool                  `json:"groups,omitempty"`
+	Clouds                   *bool                  `json:"clouds,omitempty"`
+	Hosts                    *bool                  `json:"hosts,omitempty"`
+	Network                  *bool                  `json:"network,omitempty"`
+	LoadBalancers            *bool                  `json:"loadBalancers,omitempty"`
+	Storage                  *bool                  `json:"storage,omitempty"`
+	KeyPairs                 *bool                  `json:"keyPairs,omitempty"`
+	SslCertificates          *bool                  `json:"sslCertificates,omitempty"`
+	Boot                     *bool                  `json:"boot,omitempty"`
+	Backups                  *bool                  `json:"backups,omitempty"`
+	Cypher                   *bool                  `json:"cypher,omitempty"`
+	Archives                 *bool                  `json:"archives,omitempty"`
+	ImageBuilder             *bool                  `json:"imageBuilder,omitempty"`
+	Tenants                  *bool                  `json:"tenants,omitempty"`
+	Plans                    *bool                  `json:"plans,omitempty"`
+	Pricing                  *bool                  `json:"pricing,omitempty"`
+	Users                    *bool                  `json:"users,omitempty"`
+	UserGroups               *bool                  `json:"userGroups,omitempty"`
+	Monitoring               *bool                  `json:"monitoring,omitempty"`
+	Logging                  *bool                  `json:"logging,omitempty"`
+	MonitoringServices       *bool                  `json:"monitoringServices,omitempty"`
+	LoggingServices          *bool                  `json:"loggingServices,omitempty"`
+	BackupServices           *bool                  `json:"backupServices,omitempty"`
+	DnsServices              *bool                  `json:"dnsServices,omitempty"`
+	CodeService              *bool                  `json:"codeService,omitempty"`
+	BuildServices            *bool                  `json:"buildServices,omitempty"`
+	LoadBalancerServices     *bool                  `json:"loadBalancerServices,omitempty"`
+	IpamServices             *bool                  `json:"ipamServices,omitempty"`
+	ApprovalServices         *bool                  `json:"approvalServices,omitempty"`
+	CmdbServices             *bool                  `json:"cmdbServices,omitempty"`
+	DeploymentServices       *bool                  `json:"deploymentServices,omitempty"`
+	AutomationServices       *bool                  `json:"automationServices,omitempty"`
+	ServiceDiscoveryServices *bool                  `json:"serviceDiscoveryServices,omitempty"`
+	IdentityServices         *bool                  `json:"identityServices,omitempty"`
+	TrustServices            *bool                  `json:"trustServices,omitempty"`
+	SecurityServices         *bool                  `json:"securityServices,omitempty"`
+	AdditionalProperties     map[string]interface{} `json:",remain"`
 }
 
 type _GetLicense200ResponseLicenseFeatures GetLicense200ResponseLicenseFeatures
@@ -1759,7 +1759,7 @@ func (o *GetLicense200ResponseLicenseFeatures) SetSecurityServices(v bool) {
 }
 
 func (o GetLicense200ResponseLicenseFeatures) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1931,113 +1931,8 @@ func (o GetLicense200ResponseLicenseFeatures) ToMap() (map[string]interface{}, e
 
 	return toSerialize, nil
 }
-
 func (o *GetLicense200ResponseLicenseFeatures) UnmarshalJSON(data []byte) (err error) {
-	varGetLicense200ResponseLicenseFeatures := _GetLicense200ResponseLicenseFeatures{}
-
-	err = json.Unmarshal(data, &varGetLicense200ResponseLicenseFeatures)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetLicense200ResponseLicenseFeatures(varGetLicense200ResponseLicenseFeatures)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "dashboard")
-		delete(additionalProperties, "guidance")
-		delete(additionalProperties, "discovery")
-		delete(additionalProperties, "analytics")
-		delete(additionalProperties, "scheduling")
-		delete(additionalProperties, "approvals")
-		delete(additionalProperties, "usage")
-		delete(additionalProperties, "activity")
-		delete(additionalProperties, "instances")
-		delete(additionalProperties, "apps")
-		delete(additionalProperties, "templates")
-		delete(additionalProperties, "automation")
-		delete(additionalProperties, "virtualImages")
-		delete(additionalProperties, "library")
-		delete(additionalProperties, "migrations")
-		delete(additionalProperties, "deployments")
-		delete(additionalProperties, "groups")
-		delete(additionalProperties, "clouds")
-		delete(additionalProperties, "hosts")
-		delete(additionalProperties, "network")
-		delete(additionalProperties, "loadBalancers")
-		delete(additionalProperties, "storage")
-		delete(additionalProperties, "keyPairs")
-		delete(additionalProperties, "sslCertificates")
-		delete(additionalProperties, "boot")
-		delete(additionalProperties, "backups")
-		delete(additionalProperties, "cypher")
-		delete(additionalProperties, "archives")
-		delete(additionalProperties, "imageBuilder")
-		delete(additionalProperties, "tenants")
-		delete(additionalProperties, "plans")
-		delete(additionalProperties, "pricing")
-		delete(additionalProperties, "users")
-		delete(additionalProperties, "userGroups")
-		delete(additionalProperties, "monitoring")
-		delete(additionalProperties, "logging")
-		delete(additionalProperties, "monitoringServices")
-		delete(additionalProperties, "loggingServices")
-		delete(additionalProperties, "backupServices")
-		delete(additionalProperties, "dnsServices")
-		delete(additionalProperties, "codeService")
-		delete(additionalProperties, "buildServices")
-		delete(additionalProperties, "loadBalancerServices")
-		delete(additionalProperties, "ipamServices")
-		delete(additionalProperties, "approvalServices")
-		delete(additionalProperties, "cmdbServices")
-		delete(additionalProperties, "deploymentServices")
-		delete(additionalProperties, "automationServices")
-		delete(additionalProperties, "serviceDiscoveryServices")
-		delete(additionalProperties, "identityServices")
-		delete(additionalProperties, "trustServices")
-		delete(additionalProperties, "securityServices")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetLicense200ResponseLicenseFeatures struct {
-	value *GetLicense200ResponseLicenseFeatures
-	isSet bool
-}
-
-func (v NullableGetLicense200ResponseLicenseFeatures) Get() *GetLicense200ResponseLicenseFeatures {
-	return v.value
-}
-
-func (v *NullableGetLicense200ResponseLicenseFeatures) Set(val *GetLicense200ResponseLicenseFeatures) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetLicense200ResponseLicenseFeatures) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetLicense200ResponseLicenseFeatures) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetLicense200ResponseLicenseFeatures(val *GetLicense200ResponseLicenseFeatures) *NullableGetLicense200ResponseLicenseFeatures {
-	return &NullableGetLicense200ResponseLicenseFeatures{value: val, isSet: true}
-}
-
-func (v NullableGetLicense200ResponseLicenseFeatures) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetLicense200ResponseLicenseFeatures) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

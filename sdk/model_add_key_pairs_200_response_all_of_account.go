@@ -21,18 +21,18 @@ var _ MappedNullable = &AddKeyPairs200ResponseAllOfAccount{}
 
 // AddKeyPairs200ResponseAllOfAccount struct for AddKeyPairs200ResponseAllOfAccount
 type AddKeyPairs200ResponseAllOfAccount struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	AccountId *int64 `json:"accountId,omitempty"`
-	PublicKey *string `json:"publicKey,omitempty"`
-	HasPrivateKey *bool `json:"hasPrivateKey,omitempty"`
+	Id             *int64  `json:"id,omitempty"`
+	Name           *string `json:"name,omitempty"`
+	AccountId      *int64  `json:"accountId,omitempty"`
+	PublicKey      *string `json:"publicKey,omitempty"`
+	HasPrivateKey  *bool   `json:"hasPrivateKey,omitempty"`
 	PrivateKeyHash *string `json:"privateKeyHash,omitempty"`
 	// Only present in response to generate
-	PrivateKey *string `json:"privateKey,omitempty"`
-	Fingerprint *string `json:"fingerprint,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}
+	PrivateKey           *string                `json:"privateKey,omitempty"`
+	Fingerprint          *string                `json:"fingerprint,omitempty"`
+	DateCreated          *time.Time             `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time             `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddKeyPairs200ResponseAllOfAccount AddKeyPairs200ResponseAllOfAccount
@@ -375,7 +375,7 @@ func (o *AddKeyPairs200ResponseAllOfAccount) SetLastUpdated(v time.Time) {
 }
 
 func (o AddKeyPairs200ResponseAllOfAccount) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -421,71 +421,8 @@ func (o AddKeyPairs200ResponseAllOfAccount) ToMap() (map[string]interface{}, err
 
 	return toSerialize, nil
 }
-
 func (o *AddKeyPairs200ResponseAllOfAccount) UnmarshalJSON(data []byte) (err error) {
-	varAddKeyPairs200ResponseAllOfAccount := _AddKeyPairs200ResponseAllOfAccount{}
-
-	err = json.Unmarshal(data, &varAddKeyPairs200ResponseAllOfAccount)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddKeyPairs200ResponseAllOfAccount(varAddKeyPairs200ResponseAllOfAccount)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "accountId")
-		delete(additionalProperties, "publicKey")
-		delete(additionalProperties, "hasPrivateKey")
-		delete(additionalProperties, "privateKeyHash")
-		delete(additionalProperties, "privateKey")
-		delete(additionalProperties, "fingerprint")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddKeyPairs200ResponseAllOfAccount struct {
-	value *AddKeyPairs200ResponseAllOfAccount
-	isSet bool
-}
-
-func (v NullableAddKeyPairs200ResponseAllOfAccount) Get() *AddKeyPairs200ResponseAllOfAccount {
-	return v.value
-}
-
-func (v *NullableAddKeyPairs200ResponseAllOfAccount) Set(val *AddKeyPairs200ResponseAllOfAccount) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddKeyPairs200ResponseAllOfAccount) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddKeyPairs200ResponseAllOfAccount) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddKeyPairs200ResponseAllOfAccount(val *AddKeyPairs200ResponseAllOfAccount) *NullableAddKeyPairs200ResponseAllOfAccount {
-	return &NullableAddKeyPairs200ResponseAllOfAccount{value: val, isSet: true}
-}
-
-func (v NullableAddKeyPairs200ResponseAllOfAccount) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddKeyPairs200ResponseAllOfAccount) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

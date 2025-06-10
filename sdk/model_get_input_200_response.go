@@ -20,8 +20,8 @@ var _ MappedNullable = &GetInput200Response{}
 
 // GetInput200Response struct for GetInput200Response
 type GetInput200Response struct {
-	OptionType *ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"optionType,omitempty"`
-	AdditionalProperties map[string]interface{}
+	OptionType           *ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"optionType,omitempty"`
+	AdditionalProperties map[string]interface{}                                                     `json:",remain"`
 }
 
 type _GetInput200Response GetInput200Response
@@ -76,7 +76,7 @@ func (o *GetInput200Response) SetOptionType(v ListCatalogItemTypes200ResponseAll
 }
 
 func (o GetInput200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o GetInput200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *GetInput200Response) UnmarshalJSON(data []byte) (err error) {
-	varGetInput200Response := _GetInput200Response{}
-
-	err = json.Unmarshal(data, &varGetInput200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetInput200Response(varGetInput200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "optionType")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetInput200Response struct {
-	value *GetInput200Response
-	isSet bool
-}
-
-func (v NullableGetInput200Response) Get() *GetInput200Response {
-	return v.value
-}
-
-func (v *NullableGetInput200Response) Set(val *GetInput200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetInput200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetInput200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetInput200Response(val *GetInput200Response) *NullableGetInput200Response {
-	return &NullableGetInput200Response{value: val, isSet: true}
-}
-
-func (v NullableGetInput200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetInput200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

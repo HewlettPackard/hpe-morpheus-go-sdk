@@ -20,13 +20,12 @@ import (
 	"net/url"
 )
 
-
 // SetupAPIService SetupAPI service
 type SetupAPIService service
 
 type ApiSetupRequest struct {
-	ctx context.Context
-	ApiService *SetupAPIService
+	ctx          context.Context
+	ApiService   *SetupAPIService
 	setupRequest *SetupRequest
 }
 
@@ -42,29 +41,29 @@ func (r ApiSetupRequest) Execute() (*Setup200Response, *http.Response, error) {
 /*
 Setup Setup appliance
 
-Initialize a freshly installed appliance to create the master tenant and System Admin user. 
-Authorization is not required. 
+Initialize a freshly installed appliance to create the master tenant and System Admin user.
+Authorization is not required.
 This operation can only be executed successfully once.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSetupRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiSetupRequest
 */
 func (a *SetupAPIService) Setup(ctx context.Context) ApiSetupRequest {
 	return ApiSetupRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return Setup200Response
+//
+//	@return Setup200Response
 func (a *SetupAPIService) SetupExecute(r ApiSetupRequest) (*Setup200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Setup200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Setup200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SetupAPIService.Setup")
@@ -116,7 +115,7 @@ func (a *SetupAPIService) SetupExecute(r ApiSetupRequest) (*Setup200Response, *h
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -125,8 +124,8 @@ func (a *SetupAPIService) SetupExecute(r ApiSetupRequest) (*Setup200Response, *h
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -136,8 +135,8 @@ func (a *SetupAPIService) SetupExecute(r ApiSetupRequest) (*Setup200Response, *h
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -145,8 +144,8 @@ func (a *SetupAPIService) SetupExecute(r ApiSetupRequest) (*Setup200Response, *h
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

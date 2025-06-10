@@ -23,8 +23,8 @@ type AddWorkflowsRequestTaskSetTasks struct {
 	// Task ID
 	TaskId *int64 `json:"taskId,omitempty"`
 	// Task Phase. Pass operation for `operational` workflows.
-	TaskPhase *string `json:"taskPhase,omitempty"`
-	AdditionalProperties map[string]interface{}
+	TaskPhase            *string                `json:"taskPhase,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddWorkflowsRequestTaskSetTasks AddWorkflowsRequestTaskSetTasks
@@ -115,7 +115,7 @@ func (o *AddWorkflowsRequestTaskSetTasks) SetTaskPhase(v string) {
 }
 
 func (o AddWorkflowsRequestTaskSetTasks) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -137,63 +137,8 @@ func (o AddWorkflowsRequestTaskSetTasks) ToMap() (map[string]interface{}, error)
 
 	return toSerialize, nil
 }
-
 func (o *AddWorkflowsRequestTaskSetTasks) UnmarshalJSON(data []byte) (err error) {
-	varAddWorkflowsRequestTaskSetTasks := _AddWorkflowsRequestTaskSetTasks{}
-
-	err = json.Unmarshal(data, &varAddWorkflowsRequestTaskSetTasks)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddWorkflowsRequestTaskSetTasks(varAddWorkflowsRequestTaskSetTasks)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "taskId")
-		delete(additionalProperties, "taskPhase")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddWorkflowsRequestTaskSetTasks struct {
-	value *AddWorkflowsRequestTaskSetTasks
-	isSet bool
-}
-
-func (v NullableAddWorkflowsRequestTaskSetTasks) Get() *AddWorkflowsRequestTaskSetTasks {
-	return v.value
-}
-
-func (v *NullableAddWorkflowsRequestTaskSetTasks) Set(val *AddWorkflowsRequestTaskSetTasks) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddWorkflowsRequestTaskSetTasks) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddWorkflowsRequestTaskSetTasks) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddWorkflowsRequestTaskSetTasks(val *AddWorkflowsRequestTaskSetTasks) *NullableAddWorkflowsRequestTaskSetTasks {
-	return &NullableAddWorkflowsRequestTaskSetTasks{value: val, isSet: true}
-}
-
-func (v NullableAddWorkflowsRequestTaskSetTasks) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddWorkflowsRequestTaskSetTasks) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

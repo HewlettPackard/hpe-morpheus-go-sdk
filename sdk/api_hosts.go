@@ -22,13 +22,12 @@ import (
 	"time"
 )
 
-
 // HostsAPIService HostsAPI service
 type HostsAPIService service
 
 type ApiAddBaremetalHostRequest struct {
-	ctx context.Context
-	ApiService *HostsAPIService
+	ctx                     context.Context
+	ApiService              *HostsAPIService
 	addBaremetalHostRequest *AddBaremetalHostRequest
 }
 
@@ -46,24 +45,25 @@ AddBaremetalHost Add a Baremetal Host
 
 Add a Baremetal Host
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddBaremetalHostRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddBaremetalHostRequest
 */
 func (a *HostsAPIService) AddBaremetalHost(ctx context.Context) ApiAddBaremetalHostRequest {
 	return ApiAddBaremetalHostRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddBaremetalHost200Response
+//
+//	@return AddBaremetalHost200Response
 func (a *HostsAPIService) AddBaremetalHostExecute(r ApiAddBaremetalHostRequest) (*AddBaremetalHost200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddBaremetalHost200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddBaremetalHost200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HostsAPIService.AddBaremetalHost")
@@ -115,7 +115,7 @@ func (a *HostsAPIService) AddBaremetalHostExecute(r ApiAddBaremetalHostRequest) 
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -124,8 +124,8 @@ func (a *HostsAPIService) AddBaremetalHostExecute(r ApiAddBaremetalHostRequest) 
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -135,8 +135,8 @@ func (a *HostsAPIService) AddBaremetalHostExecute(r ApiAddBaremetalHostRequest) 
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -144,8 +144,8 @@ func (a *HostsAPIService) AddBaremetalHostExecute(r ApiAddBaremetalHostRequest) 
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -154,10 +154,10 @@ func (a *HostsAPIService) AddBaremetalHostExecute(r ApiAddBaremetalHostRequest) 
 }
 
 type ApiAssignDeviceRequest struct {
-	ctx context.Context
-	ApiService *HostsAPIService
-	id int32
-	deviceId int32
+	ctx                 context.Context
+	ApiService          *HostsAPIService
+	id                  int32
+	deviceId            int32
 	assignDeviceRequest *AssignDeviceRequest
 }
 
@@ -175,28 +175,29 @@ AssignDevice Assign a Host Device
 
 Will assign a host device to the specified target server (VM). The device must be detached before it can be assigned.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id The ID of the host
- @param deviceId The ID of the device
- @return ApiAssignDeviceRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id The ID of the host
+	@param deviceId The ID of the device
+	@return ApiAssignDeviceRequest
 */
 func (a *HostsAPIService) AssignDevice(ctx context.Context, id int32, deviceId int32) ApiAssignDeviceRequest {
 	return ApiAssignDeviceRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
-		deviceId: deviceId,
+		ctx:        ctx,
+		id:         id,
+		deviceId:   deviceId,
 	}
 }
 
 // Execute executes the request
-//  @return RestartClusterContainer200Response
+//
+//	@return RestartClusterContainer200Response
 func (a *HostsAPIService) AssignDeviceExecute(r ApiAssignDeviceRequest) (*RestartClusterContainer200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *RestartClusterContainer200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *RestartClusterContainer200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HostsAPIService.AssignDevice")
@@ -250,7 +251,7 @@ func (a *HostsAPIService) AssignDeviceExecute(r ApiAssignDeviceRequest) (*Restar
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -259,8 +260,8 @@ func (a *HostsAPIService) AssignDeviceExecute(r ApiAssignDeviceRequest) (*Restar
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -270,8 +271,8 @@ func (a *HostsAPIService) AssignDeviceExecute(r ApiAssignDeviceRequest) (*Restar
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -279,8 +280,8 @@ func (a *HostsAPIService) AssignDeviceExecute(r ApiAssignDeviceRequest) (*Restar
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -289,10 +290,10 @@ func (a *HostsAPIService) AssignDeviceExecute(r ApiAssignDeviceRequest) (*Restar
 }
 
 type ApiAttachDeviceRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *HostsAPIService
-	id int32
-	deviceId int32
+	id         int32
+	deviceId   int32
 }
 
 func (r ApiAttachDeviceRequest) Execute() (*RestartClusterContainer200Response, *http.Response, error) {
@@ -304,28 +305,29 @@ AttachDevice Attach a Host Device
 
 Will attach a host device.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id The ID of the host
- @param deviceId The ID of the device
- @return ApiAttachDeviceRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id The ID of the host
+	@param deviceId The ID of the device
+	@return ApiAttachDeviceRequest
 */
 func (a *HostsAPIService) AttachDevice(ctx context.Context, id int32, deviceId int32) ApiAttachDeviceRequest {
 	return ApiAttachDeviceRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
-		deviceId: deviceId,
+		ctx:        ctx,
+		id:         id,
+		deviceId:   deviceId,
 	}
 }
 
 // Execute executes the request
-//  @return RestartClusterContainer200Response
+//
+//	@return RestartClusterContainer200Response
 func (a *HostsAPIService) AttachDeviceExecute(r ApiAttachDeviceRequest) (*RestartClusterContainer200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *RestartClusterContainer200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *RestartClusterContainer200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HostsAPIService.AttachDevice")
@@ -377,7 +379,7 @@ func (a *HostsAPIService) AttachDeviceExecute(r ApiAttachDeviceRequest) (*Restar
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -386,8 +388,8 @@ func (a *HostsAPIService) AttachDeviceExecute(r ApiAttachDeviceRequest) (*Restar
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -397,8 +399,8 @@ func (a *HostsAPIService) AttachDeviceExecute(r ApiAttachDeviceRequest) (*Restar
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -406,8 +408,8 @@ func (a *HostsAPIService) AttachDeviceExecute(r ApiAttachDeviceRequest) (*Restar
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -416,10 +418,10 @@ func (a *HostsAPIService) AttachDeviceExecute(r ApiAttachDeviceRequest) (*Restar
 }
 
 type ApiDetachDeviceRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *HostsAPIService
-	id int32
-	deviceId int32
+	id         int32
+	deviceId   int32
 }
 
 func (r ApiDetachDeviceRequest) Execute() (*RestartClusterContainer200Response, *http.Response, error) {
@@ -431,28 +433,29 @@ DetachDevice Detach a Host Device
 
 Will detach a host device. This must be done before assigning a device to a new target.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id The ID of the host
- @param deviceId The ID of the device
- @return ApiDetachDeviceRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id The ID of the host
+	@param deviceId The ID of the device
+	@return ApiDetachDeviceRequest
 */
 func (a *HostsAPIService) DetachDevice(ctx context.Context, id int32, deviceId int32) ApiDetachDeviceRequest {
 	return ApiDetachDeviceRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
-		deviceId: deviceId,
+		ctx:        ctx,
+		id:         id,
+		deviceId:   deviceId,
 	}
 }
 
 // Execute executes the request
-//  @return RestartClusterContainer200Response
+//
+//	@return RestartClusterContainer200Response
 func (a *HostsAPIService) DetachDeviceExecute(r ApiDetachDeviceRequest) (*RestartClusterContainer200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *RestartClusterContainer200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *RestartClusterContainer200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HostsAPIService.DetachDevice")
@@ -504,7 +507,7 @@ func (a *HostsAPIService) DetachDeviceExecute(r ApiDetachDeviceRequest) (*Restar
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -513,8 +516,8 @@ func (a *HostsAPIService) DetachDeviceExecute(r ApiDetachDeviceRequest) (*Restar
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -524,8 +527,8 @@ func (a *HostsAPIService) DetachDeviceExecute(r ApiDetachDeviceRequest) (*Restar
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -533,8 +536,8 @@ func (a *HostsAPIService) DetachDeviceExecute(r ApiDetachDeviceRequest) (*Restar
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -543,9 +546,9 @@ func (a *HostsAPIService) DetachDeviceExecute(r ApiDetachDeviceRequest) (*Restar
 }
 
 type ApiEnableMaintenanceModeRequest struct {
-	ctx context.Context
-	ApiService *HostsAPIService
-	id int64
+	ctx                          context.Context
+	ApiService                   *HostsAPIService
+	id                           int64
 	enableMaintenanceModeRequest *EnableMaintenanceModeRequest
 }
 
@@ -563,26 +566,27 @@ EnableMaintenanceMode Enable Maintenance Mode
 
 This will enable maintenance mode on the host. Only available for supported server types such as MVM.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiEnableMaintenanceModeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiEnableMaintenanceModeRequest
 */
 func (a *HostsAPIService) EnableMaintenanceMode(ctx context.Context, id int64) ApiEnableMaintenanceModeRequest {
 	return ApiEnableMaintenanceModeRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *HostsAPIService) EnableMaintenanceModeExecute(r ApiEnableMaintenanceModeRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HostsAPIService.EnableMaintenanceMode")
@@ -635,7 +639,7 @@ func (a *HostsAPIService) EnableMaintenanceModeExecute(r ApiEnableMaintenanceMod
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -644,8 +648,8 @@ func (a *HostsAPIService) EnableMaintenanceModeExecute(r ApiEnableMaintenanceMod
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -655,8 +659,8 @@ func (a *HostsAPIService) EnableMaintenanceModeExecute(r ApiEnableMaintenanceMod
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -664,8 +668,8 @@ func (a *HostsAPIService) EnableMaintenanceModeExecute(r ApiEnableMaintenanceMod
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -674,9 +678,9 @@ func (a *HostsAPIService) EnableMaintenanceModeExecute(r ApiEnableMaintenanceMod
 }
 
 type ApiGetHostRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *HostsAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetHostRequest) Execute() (*GetHost200Response, *http.Response, error) {
@@ -688,26 +692,27 @@ GetHost Get a Specific Host
 
 This endpoint retrieves a specific host.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetHostRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetHostRequest
 */
 func (a *HostsAPIService) GetHost(ctx context.Context, id int64) ApiGetHostRequest {
 	return ApiGetHostRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetHost200Response
+//
+//	@return GetHost200Response
 func (a *HostsAPIService) GetHostExecute(r ApiGetHostRequest) (*GetHost200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetHost200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetHost200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HostsAPIService.GetHost")
@@ -758,7 +763,7 @@ func (a *HostsAPIService) GetHostExecute(r ApiGetHostRequest) (*GetHost200Respon
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -767,8 +772,8 @@ func (a *HostsAPIService) GetHostExecute(r ApiGetHostRequest) (*GetHost200Respon
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -778,8 +783,8 @@ func (a *HostsAPIService) GetHostExecute(r ApiGetHostRequest) (*GetHost200Respon
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -787,8 +792,8 @@ func (a *HostsAPIService) GetHostExecute(r ApiGetHostRequest) (*GetHost200Respon
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -797,9 +802,9 @@ func (a *HostsAPIService) GetHostExecute(r ApiGetHostRequest) (*GetHost200Respon
 }
 
 type ApiGetHostSnpshotsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *HostsAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetHostSnpshotsRequest) Execute() (*GetHostSnpshots200Response, *http.Response, error) {
@@ -811,26 +816,27 @@ GetHostSnpshots Get list of snapshots for a Host
 
 Get list of snapshots for a Host
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetHostSnpshotsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetHostSnpshotsRequest
 */
 func (a *HostsAPIService) GetHostSnpshots(ctx context.Context, id int64) ApiGetHostSnpshotsRequest {
 	return ApiGetHostSnpshotsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetHostSnpshots200Response
+//
+//	@return GetHostSnpshots200Response
 func (a *HostsAPIService) GetHostSnpshotsExecute(r ApiGetHostSnpshotsRequest) (*GetHostSnpshots200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetHostSnpshots200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetHostSnpshots200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HostsAPIService.GetHostSnpshots")
@@ -881,7 +887,7 @@ func (a *HostsAPIService) GetHostSnpshotsExecute(r ApiGetHostSnpshotsRequest) (*
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -890,8 +896,8 @@ func (a *HostsAPIService) GetHostSnpshotsExecute(r ApiGetHostSnpshotsRequest) (*
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -901,8 +907,8 @@ func (a *HostsAPIService) GetHostSnpshotsExecute(r ApiGetHostSnpshotsRequest) (*
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -910,8 +916,8 @@ func (a *HostsAPIService) GetHostSnpshotsExecute(r ApiGetHostSnpshotsRequest) (*
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -920,9 +926,9 @@ func (a *HostsAPIService) GetHostSnpshotsExecute(r ApiGetHostSnpshotsRequest) (*
 }
 
 type ApiGetHostTypeRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *HostsAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetHostTypeRequest) Execute() (*GetHostType200Response, *http.Response, error) {
@@ -934,26 +940,27 @@ GetHostType Get a Specific Host Type
 
 This endpoint will retrieve a specific host type by id
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetHostTypeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetHostTypeRequest
 */
 func (a *HostsAPIService) GetHostType(ctx context.Context, id int64) ApiGetHostTypeRequest {
 	return ApiGetHostTypeRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetHostType200Response
+//
+//	@return GetHostType200Response
 func (a *HostsAPIService) GetHostTypeExecute(r ApiGetHostTypeRequest) (*GetHostType200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetHostType200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetHostType200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HostsAPIService.GetHostType")
@@ -1004,7 +1011,7 @@ func (a *HostsAPIService) GetHostTypeExecute(r ApiGetHostTypeRequest) (*GetHostT
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1013,8 +1020,8 @@ func (a *HostsAPIService) GetHostTypeExecute(r ApiGetHostTypeRequest) (*GetHostT
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1024,8 +1031,8 @@ func (a *HostsAPIService) GetHostTypeExecute(r ApiGetHostTypeRequest) (*GetHostT
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1033,8 +1040,8 @@ func (a *HostsAPIService) GetHostTypeExecute(r ApiGetHostTypeRequest) (*GetHostT
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1043,9 +1050,9 @@ func (a *HostsAPIService) GetHostTypeExecute(r ApiGetHostTypeRequest) (*GetHostT
 }
 
 type ApiLeaveMaintenanceModeRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *HostsAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiLeaveMaintenanceModeRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -1057,26 +1064,27 @@ LeaveMaintenanceMode Leave Maintenance Mode
 
 This will leave maintenance mode on the host. Only available for supported server types such as HPE VM hosts.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiLeaveMaintenanceModeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiLeaveMaintenanceModeRequest
 */
 func (a *HostsAPIService) LeaveMaintenanceMode(ctx context.Context, id int64) ApiLeaveMaintenanceModeRequest {
 	return ApiLeaveMaintenanceModeRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *HostsAPIService) LeaveMaintenanceModeExecute(r ApiLeaveMaintenanceModeRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HostsAPIService.LeaveMaintenanceMode")
@@ -1127,7 +1135,7 @@ func (a *HostsAPIService) LeaveMaintenanceModeExecute(r ApiLeaveMaintenanceModeR
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1136,8 +1144,8 @@ func (a *HostsAPIService) LeaveMaintenanceModeExecute(r ApiLeaveMaintenanceModeR
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1147,8 +1155,8 @@ func (a *HostsAPIService) LeaveMaintenanceModeExecute(r ApiLeaveMaintenanceModeR
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1156,8 +1164,8 @@ func (a *HostsAPIService) LeaveMaintenanceModeExecute(r ApiLeaveMaintenanceModeR
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1166,9 +1174,9 @@ func (a *HostsAPIService) LeaveMaintenanceModeExecute(r ApiLeaveMaintenanceModeR
 }
 
 type ApiListHostDevicesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *HostsAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiListHostDevicesRequest) Execute() (*ListHostDevices200Response, *http.Response, error) {
@@ -1180,26 +1188,27 @@ ListHostDevices Get list of devices for a Host
 
 Get list of devices for a Host
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id The ID of the host
- @return ApiListHostDevicesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id The ID of the host
+	@return ApiListHostDevicesRequest
 */
 func (a *HostsAPIService) ListHostDevices(ctx context.Context, id int32) ApiListHostDevicesRequest {
 	return ApiListHostDevicesRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return ListHostDevices200Response
+//
+//	@return ListHostDevices200Response
 func (a *HostsAPIService) ListHostDevicesExecute(r ApiListHostDevicesRequest) (*ListHostDevices200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListHostDevices200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListHostDevices200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HostsAPIService.ListHostDevices")
@@ -1250,7 +1259,7 @@ func (a *HostsAPIService) ListHostDevicesExecute(r ApiListHostDevicesRequest) (*
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1259,8 +1268,8 @@ func (a *HostsAPIService) ListHostDevicesExecute(r ApiListHostDevicesRequest) (*
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1270,8 +1279,8 @@ func (a *HostsAPIService) ListHostDevicesExecute(r ApiListHostDevicesRequest) (*
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1279,8 +1288,8 @@ func (a *HostsAPIService) ListHostDevicesExecute(r ApiListHostDevicesRequest) (*
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1289,18 +1298,18 @@ func (a *HostsAPIService) ListHostDevicesExecute(r ApiListHostDevicesRequest) (*
 }
 
 type ApiListHostTypesRequest struct {
-	ctx context.Context
-	ApiService *HostsAPIService
-	max *int64
-	offset *int64
-	sort *string
-	direction *string
-	name *string
-	code *string
-	phrase *string
+	ctx           context.Context
+	ApiService    *HostsAPIService
+	max           *int64
+	offset        *int64
+	sort          *string
+	direction     *string
+	name          *string
+	code          *string
+	phrase        *string
 	provisionType *string
-	zoneType *string
-	creatable *bool
+	zoneType      *string
+	creatable     *bool
 }
 
 // Maximum number of records to return
@@ -1345,7 +1354,7 @@ func (r ApiListHostTypesRequest) Phrase(phrase string) ApiListHostTypesRequest {
 	return r
 }
 
-// Filter by &#x60;Provision Type&#x60; code. Refer to &#x60;Provision Types&#x60; API for up to date listings. 
+// Filter by &#x60;Provision Type&#x60; code. Refer to &#x60;Provision Types&#x60; API for up to date listings.
 func (r ApiListHostTypesRequest) ProvisionType(provisionType string) ApiListHostTypesRequest {
 	r.provisionType = &provisionType
 	return r
@@ -1372,24 +1381,25 @@ ListHostTypes Host Types
 
 Fetch a paginated list of available host types. This returns the configuration options for each type.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListHostTypesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListHostTypesRequest
 */
 func (a *HostsAPIService) ListHostTypes(ctx context.Context) ApiListHostTypesRequest {
 	return ApiListHostTypesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListHostTypes200Response
+//
+//	@return ListHostTypes200Response
 func (a *HostsAPIService) ListHostTypesExecute(r ApiListHostTypesRequest) (*ListHostTypes200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListHostTypes200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListHostTypes200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HostsAPIService.ListHostTypes")
@@ -1481,7 +1491,7 @@ func (a *HostsAPIService) ListHostTypesExecute(r ApiListHostTypesRequest) (*List
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1490,8 +1500,8 @@ func (a *HostsAPIService) ListHostTypesExecute(r ApiListHostTypesRequest) (*List
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1501,8 +1511,8 @@ func (a *HostsAPIService) ListHostTypesExecute(r ApiListHostTypesRequest) (*List
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1510,8 +1520,8 @@ func (a *HostsAPIService) ListHostTypesExecute(r ApiListHostTypesRequest) (*List
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1520,31 +1530,31 @@ func (a *HostsAPIService) ListHostTypesExecute(r ApiListHostTypesRequest) (*List
 }
 
 type ApiListHostsRequest struct {
-	ctx context.Context
-	ApiService *HostsAPIService
-	name *string
-	phrase *string
-	zoneId *int64
-	siteId *int64
-	clusterId *int64
-	managed *bool
-	serverType *string
-	powerState *string
-	ip *string
-	vm *bool
-	vmHypervisor *bool
-	bareMetalHost *bool
-	status *string
-	agentInstalled *bool
-	max *int64
-	offset *int64
-	lastUpdated *time.Time
-	createdBy *int64
-	tagsName *string
-	metadata *string
-	uuid *string
-	externalId *string
-	internalId *string
+	ctx               context.Context
+	ApiService        *HostsAPIService
+	name              *string
+	phrase            *string
+	zoneId            *int64
+	siteId            *int64
+	clusterId         *int64
+	managed           *bool
+	serverType        *string
+	powerState        *string
+	ip                *string
+	vm                *bool
+	vmHypervisor      *bool
+	bareMetalHost     *bool
+	status            *string
+	agentInstalled    *bool
+	max               *int64
+	offset            *int64
+	lastUpdated       *time.Time
+	createdBy         *int64
+	tagsName          *string
+	metadata          *string
+	uuid              *string
+	externalId        *string
+	internalId        *string
 	externalUniquelId *string
 }
 
@@ -1656,7 +1666,7 @@ func (r ApiListHostsRequest) CreatedBy(createdBy int64) ApiListHostsRequest {
 	return r
 }
 
-// Filter by tags (metadata). This allows filtering by a tag name and value(s) 
+// Filter by tags (metadata). This allows filtering by a tag name and value(s)
 func (r ApiListHostsRequest) TagsName(tagsName string) ApiListHostsRequest {
 	r.tagsName = &tagsName
 	return r
@@ -1701,24 +1711,25 @@ ListHosts Get All Hosts
 
 This endpoint retrieves a paginated list of hosts.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListHostsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListHostsRequest
 */
 func (a *HostsAPIService) ListHosts(ctx context.Context) ApiListHostsRequest {
 	return ApiListHostsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListHosts200Response
+//
+//	@return ListHosts200Response
 func (a *HostsAPIService) ListHostsExecute(r ApiListHostsRequest) (*ListHosts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListHosts200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListHosts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HostsAPIService.ListHosts")
@@ -1846,7 +1857,7 @@ func (a *HostsAPIService) ListHostsExecute(r ApiListHostsRequest) (*ListHosts200
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1855,8 +1866,8 @@ func (a *HostsAPIService) ListHostsExecute(r ApiListHostsRequest) (*ListHosts200
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1866,8 +1877,8 @@ func (a *HostsAPIService) ListHostsExecute(r ApiListHostsRequest) (*ListHosts200
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1875,8 +1886,8 @@ func (a *HostsAPIService) ListHostsExecute(r ApiListHostsRequest) (*ListHosts200
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1885,11 +1896,11 @@ func (a *HostsAPIService) ListHostsExecute(r ApiListHostsRequest) (*ListHosts200
 }
 
 type ApiListServerServicePlansRequest struct {
-	ctx context.Context
-	ApiService *HostsAPIService
-	zoneId *int64
+	ctx          context.Context
+	ApiService   *HostsAPIService
+	zoneId       *int64
 	serverTypeId *int64
-	siteId *int64
+	siteId       *int64
 }
 
 // The Zone ID for Filtering
@@ -1919,24 +1930,25 @@ ListServerServicePlans Get Available Service Plans for a Host
 
 This endpoint retrieves all the Service Plans available for the specified cloud and host type. It may be used to get the list of available plans when creating a new host or resizing an existing host.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListServerServicePlansRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListServerServicePlansRequest
 */
 func (a *HostsAPIService) ListServerServicePlans(ctx context.Context) ApiListServerServicePlansRequest {
 	return ApiListServerServicePlansRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListServerServicePlans200Response
+//
+//	@return ListServerServicePlans200Response
 func (a *HostsAPIService) ListServerServicePlansExecute(r ApiListServerServicePlansRequest) (*ListServerServicePlans200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListServerServicePlans200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListServerServicePlans200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HostsAPIService.ListServerServicePlans")
@@ -1996,7 +2008,7 @@ func (a *HostsAPIService) ListServerServicePlansExecute(r ApiListServerServicePl
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2005,8 +2017,8 @@ func (a *HostsAPIService) ListServerServicePlansExecute(r ApiListServerServicePl
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2016,8 +2028,8 @@ func (a *HostsAPIService) ListServerServicePlansExecute(r ApiListServerServicePl
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2025,8 +2037,8 @@ func (a *HostsAPIService) ListServerServicePlansExecute(r ApiListServerServicePl
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2035,9 +2047,9 @@ func (a *HostsAPIService) ListServerServicePlansExecute(r ApiListServerServicePl
 }
 
 type ApiManageHostPlacementRequest struct {
-	ctx context.Context
-	ApiService *HostsAPIService
-	id int64
+	ctx                        context.Context
+	ApiService                 *HostsAPIService
+	id                         int64
 	manageHostPlacementRequest *ManageHostPlacementRequest
 }
 
@@ -2055,26 +2067,27 @@ ManageHostPlacement Manage Host Placement
 
 This will update the host placement settings for the virtual machine. Only available for supported server types such as HPE VM virtual machines.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiManageHostPlacementRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiManageHostPlacementRequest
 */
 func (a *HostsAPIService) ManageHostPlacement(ctx context.Context, id int64) ApiManageHostPlacementRequest {
 	return ApiManageHostPlacementRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *HostsAPIService) ManageHostPlacementExecute(r ApiManageHostPlacementRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HostsAPIService.ManageHostPlacement")
@@ -2127,7 +2140,7 @@ func (a *HostsAPIService) ManageHostPlacementExecute(r ApiManageHostPlacementReq
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2136,8 +2149,8 @@ func (a *HostsAPIService) ManageHostPlacementExecute(r ApiManageHostPlacementReq
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2147,8 +2160,8 @@ func (a *HostsAPIService) ManageHostPlacementExecute(r ApiManageHostPlacementReq
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2156,8 +2169,8 @@ func (a *HostsAPIService) ManageHostPlacementExecute(r ApiManageHostPlacementReq
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2166,15 +2179,15 @@ func (a *HostsAPIService) ManageHostPlacementExecute(r ApiManageHostPlacementReq
 }
 
 type ApiRemoveHostRequest struct {
-	ctx context.Context
-	ApiService *HostsAPIService
-	id int64
-	removeResources *string
-	removeInstances *string
-	preserveVolumes *string
+	ctx                context.Context
+	ApiService         *HostsAPIService
+	id                 int64
+	removeResources    *string
+	removeInstances    *string
+	preserveVolumes    *string
 	releaseFloatingIps *string
-	releaseEIPs *string
-	force *string
+	releaseEIPs        *string
+	force              *string
 }
 
 // Remove Resources
@@ -2222,26 +2235,27 @@ RemoveHost Delete a Host
 
 Will delete a host asynchronously.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiRemoveHostRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiRemoveHostRequest
 */
 func (a *HostsAPIService) RemoveHost(ctx context.Context, id int64) ApiRemoveHostRequest {
 	return ApiRemoveHostRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *HostsAPIService) RemoveHostExecute(r ApiRemoveHostRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HostsAPIService.RemoveHost")
@@ -2328,7 +2342,7 @@ func (a *HostsAPIService) RemoveHostExecute(r ApiRemoveHostRequest) (*DeleteAler
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2337,8 +2351,8 @@ func (a *HostsAPIService) RemoveHostExecute(r ApiRemoveHostRequest) (*DeleteAler
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2348,8 +2362,8 @@ func (a *HostsAPIService) RemoveHostExecute(r ApiRemoveHostRequest) (*DeleteAler
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2357,8 +2371,8 @@ func (a *HostsAPIService) RemoveHostExecute(r ApiRemoveHostRequest) (*DeleteAler
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2367,9 +2381,9 @@ func (a *HostsAPIService) RemoveHostExecute(r ApiRemoveHostRequest) (*DeleteAler
 }
 
 type ApiRestartHostRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *HostsAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiRestartHostRequest) Execute() (*UpdateHostAssignTenant200Response, *http.Response, error) {
@@ -2381,26 +2395,27 @@ RestartHost Restart a Host
 
 This will restart a host.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiRestartHostRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiRestartHostRequest
 */
 func (a *HostsAPIService) RestartHost(ctx context.Context, id int64) ApiRestartHostRequest {
 	return ApiRestartHostRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return UpdateHostAssignTenant200Response
+//
+//	@return UpdateHostAssignTenant200Response
 func (a *HostsAPIService) RestartHostExecute(r ApiRestartHostRequest) (*UpdateHostAssignTenant200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *UpdateHostAssignTenant200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *UpdateHostAssignTenant200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HostsAPIService.RestartHost")
@@ -2451,7 +2466,7 @@ func (a *HostsAPIService) RestartHostExecute(r ApiRestartHostRequest) (*UpdateHo
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2460,8 +2475,8 @@ func (a *HostsAPIService) RestartHostExecute(r ApiRestartHostRequest) (*UpdateHo
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2471,8 +2486,8 @@ func (a *HostsAPIService) RestartHostExecute(r ApiRestartHostRequest) (*UpdateHo
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2480,8 +2495,8 @@ func (a *HostsAPIService) RestartHostExecute(r ApiRestartHostRequest) (*UpdateHo
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2490,9 +2505,9 @@ func (a *HostsAPIService) RestartHostExecute(r ApiRestartHostRequest) (*UpdateHo
 }
 
 type ApiStartHostRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *HostsAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiStartHostRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -2504,26 +2519,27 @@ StartHost Start a Host
 
 This will start a host.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiStartHostRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiStartHostRequest
 */
 func (a *HostsAPIService) StartHost(ctx context.Context, id int64) ApiStartHostRequest {
 	return ApiStartHostRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *HostsAPIService) StartHostExecute(r ApiStartHostRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HostsAPIService.StartHost")
@@ -2574,7 +2590,7 @@ func (a *HostsAPIService) StartHostExecute(r ApiStartHostRequest) (*DeleteAlerts
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2583,8 +2599,8 @@ func (a *HostsAPIService) StartHostExecute(r ApiStartHostRequest) (*DeleteAlerts
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2594,8 +2610,8 @@ func (a *HostsAPIService) StartHostExecute(r ApiStartHostRequest) (*DeleteAlerts
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2603,8 +2619,8 @@ func (a *HostsAPIService) StartHostExecute(r ApiStartHostRequest) (*DeleteAlerts
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2613,9 +2629,9 @@ func (a *HostsAPIService) StartHostExecute(r ApiStartHostRequest) (*DeleteAlerts
 }
 
 type ApiStopHostRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *HostsAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiStopHostRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -2627,26 +2643,27 @@ StopHost Stop a Host
 
 This will stop a host.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiStopHostRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiStopHostRequest
 */
 func (a *HostsAPIService) StopHost(ctx context.Context, id int64) ApiStopHostRequest {
 	return ApiStopHostRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *HostsAPIService) StopHostExecute(r ApiStopHostRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HostsAPIService.StopHost")
@@ -2697,7 +2714,7 @@ func (a *HostsAPIService) StopHostExecute(r ApiStopHostRequest) (*DeleteAlerts20
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2706,8 +2723,8 @@ func (a *HostsAPIService) StopHostExecute(r ApiStopHostRequest) (*DeleteAlerts20
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2717,8 +2734,8 @@ func (a *HostsAPIService) StopHostExecute(r ApiStopHostRequest) (*DeleteAlerts20
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2726,8 +2743,8 @@ func (a *HostsAPIService) StopHostExecute(r ApiStopHostRequest) (*DeleteAlerts20
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2736,9 +2753,9 @@ func (a *HostsAPIService) StopHostExecute(r ApiStopHostRequest) (*DeleteAlerts20
 }
 
 type ApiUpdateHostRequest struct {
-	ctx context.Context
-	ApiService *HostsAPIService
-	id int64
+	ctx               context.Context
+	ApiService        *HostsAPIService
+	id                int64
 	updateHostRequest *UpdateHostRequest
 }
 
@@ -2756,26 +2773,27 @@ UpdateHost Updating a Host
 
 Updating a Host
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateHostRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateHostRequest
 */
 func (a *HostsAPIService) UpdateHost(ctx context.Context, id int64) ApiUpdateHostRequest {
 	return ApiUpdateHostRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetHost200Response
+//
+//	@return GetHost200Response
 func (a *HostsAPIService) UpdateHostExecute(r ApiUpdateHostRequest) (*GetHost200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetHost200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetHost200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HostsAPIService.UpdateHost")
@@ -2828,7 +2846,7 @@ func (a *HostsAPIService) UpdateHostExecute(r ApiUpdateHostRequest) (*GetHost200
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2837,8 +2855,8 @@ func (a *HostsAPIService) UpdateHostExecute(r ApiUpdateHostRequest) (*GetHost200
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2848,8 +2866,8 @@ func (a *HostsAPIService) UpdateHostExecute(r ApiUpdateHostRequest) (*GetHost200
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2857,8 +2875,8 @@ func (a *HostsAPIService) UpdateHostExecute(r ApiUpdateHostRequest) (*GetHost200
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2867,10 +2885,10 @@ func (a *HostsAPIService) UpdateHostExecute(r ApiUpdateHostRequest) (*GetHost200
 }
 
 type ApiUpdateHostAssignTenantRequest struct {
-	ctx context.Context
-	ApiService *HostsAPIService
-	id int64
-	accountId *int64
+	ctx                           context.Context
+	ApiService                    *HostsAPIService
+	id                            int64
+	accountId                     *int64
 	updateHostAssignTenantRequest *UpdateHostAssignTenantRequest
 }
 
@@ -2894,26 +2912,27 @@ UpdateHostAssignTenant Assign To Tenant
 
 This will change the ownership of the host to the specified Tenant account. This is only available to Master Tenant users.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateHostAssignTenantRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateHostAssignTenantRequest
 */
 func (a *HostsAPIService) UpdateHostAssignTenant(ctx context.Context, id int64) ApiUpdateHostAssignTenantRequest {
 	return ApiUpdateHostAssignTenantRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return UpdateHostAssignTenant200Response
+//
+//	@return UpdateHostAssignTenant200Response
 func (a *HostsAPIService) UpdateHostAssignTenantExecute(r ApiUpdateHostAssignTenantRequest) (*UpdateHostAssignTenant200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *UpdateHostAssignTenant200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *UpdateHostAssignTenant200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HostsAPIService.UpdateHostAssignTenant")
@@ -2969,7 +2988,7 @@ func (a *HostsAPIService) UpdateHostAssignTenantExecute(r ApiUpdateHostAssignTen
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2978,8 +2997,8 @@ func (a *HostsAPIService) UpdateHostAssignTenantExecute(r ApiUpdateHostAssignTen
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2989,8 +3008,8 @@ func (a *HostsAPIService) UpdateHostAssignTenantExecute(r ApiUpdateHostAssignTen
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2998,8 +3017,8 @@ func (a *HostsAPIService) UpdateHostAssignTenantExecute(r ApiUpdateHostAssignTen
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3008,8 +3027,8 @@ func (a *HostsAPIService) UpdateHostAssignTenantExecute(r ApiUpdateHostAssignTen
 }
 
 type ApiUpdateHostCloudRequest struct {
-	ctx context.Context
-	ApiService *HostsAPIService
+	ctx                    context.Context
+	ApiService             *HostsAPIService
 	updateHostCloudRequest *UpdateHostCloudRequest
 }
 
@@ -3027,24 +3046,25 @@ UpdateHostCloud Change Server Cloud
 
 This api call is reserved for migrating servers from one cloud to another. This could be due to moving clusters or resource pool scoping of a server without losing the data.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiUpdateHostCloudRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiUpdateHostCloudRequest
 */
 func (a *HostsAPIService) UpdateHostCloud(ctx context.Context) ApiUpdateHostCloudRequest {
 	return ApiUpdateHostCloudRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return UpdateHostCloud200Response
+//
+//	@return UpdateHostCloud200Response
 func (a *HostsAPIService) UpdateHostCloudExecute(r ApiUpdateHostCloudRequest) (*UpdateHostCloud200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *UpdateHostCloud200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *UpdateHostCloud200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HostsAPIService.UpdateHostCloud")
@@ -3096,7 +3116,7 @@ func (a *HostsAPIService) UpdateHostCloudExecute(r ApiUpdateHostCloudRequest) (*
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -3105,8 +3125,8 @@ func (a *HostsAPIService) UpdateHostCloudExecute(r ApiUpdateHostCloudRequest) (*
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -3116,8 +3136,8 @@ func (a *HostsAPIService) UpdateHostCloudExecute(r ApiUpdateHostCloudRequest) (*
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3125,8 +3145,8 @@ func (a *HostsAPIService) UpdateHostCloudExecute(r ApiUpdateHostCloudRequest) (*
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3135,11 +3155,11 @@ func (a *HostsAPIService) UpdateHostCloudExecute(r ApiUpdateHostCloudRequest) (*
 }
 
 type ApiUpdateHostExecuteWorkflowRequest struct {
-	ctx context.Context
-	ApiService *HostsAPIService
-	id int64
-	workflowId *int64
-	workflowName *string
+	ctx                              context.Context
+	ApiService                       *HostsAPIService
+	id                               int64
+	workflowId                       *int64
+	workflowName                     *string
 	updateHostExecuteWorkflowRequest *UpdateHostExecuteWorkflowRequest
 }
 
@@ -3171,27 +3191,27 @@ This will run a provisioning workflow on a host.
 
 For operational workflows, see Execute a Workflow.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateHostExecuteWorkflowRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateHostExecuteWorkflowRequest
 */
 func (a *HostsAPIService) UpdateHostExecuteWorkflow(ctx context.Context, id int64) ApiUpdateHostExecuteWorkflowRequest {
 	return ApiUpdateHostExecuteWorkflowRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return RunWorkflowInstance200Response
+//
+//	@return RunWorkflowInstance200Response
 func (a *HostsAPIService) UpdateHostExecuteWorkflowExecute(r ApiUpdateHostExecuteWorkflowRequest) (*RunWorkflowInstance200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *RunWorkflowInstance200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *RunWorkflowInstance200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HostsAPIService.UpdateHostExecuteWorkflow")
@@ -3250,7 +3270,7 @@ func (a *HostsAPIService) UpdateHostExecuteWorkflowExecute(r ApiUpdateHostExecut
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -3259,8 +3279,8 @@ func (a *HostsAPIService) UpdateHostExecuteWorkflowExecute(r ApiUpdateHostExecut
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -3270,8 +3290,8 @@ func (a *HostsAPIService) UpdateHostExecuteWorkflowExecute(r ApiUpdateHostExecut
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3279,8 +3299,8 @@ func (a *HostsAPIService) UpdateHostExecuteWorkflowExecute(r ApiUpdateHostExecut
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3289,9 +3309,9 @@ func (a *HostsAPIService) UpdateHostExecuteWorkflowExecute(r ApiUpdateHostExecut
 }
 
 type ApiUpdateHostInstallAgentRequest struct {
-	ctx context.Context
-	ApiService *HostsAPIService
-	id int64
+	ctx                           context.Context
+	ApiService                    *HostsAPIService
+	id                            int64
 	updateHostInstallAgentRequest *UpdateHostInstallAgentRequest
 }
 
@@ -3309,26 +3329,27 @@ UpdateHostInstallAgent Install Agent
 
 This will make the host a managed server, and install the agent.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateHostInstallAgentRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateHostInstallAgentRequest
 */
 func (a *HostsAPIService) UpdateHostInstallAgent(ctx context.Context, id int64) ApiUpdateHostInstallAgentRequest {
 	return ApiUpdateHostInstallAgentRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return UpdateHostInstallAgent200Response
+//
+//	@return UpdateHostInstallAgent200Response
 func (a *HostsAPIService) UpdateHostInstallAgentExecute(r ApiUpdateHostInstallAgentRequest) (*UpdateHostInstallAgent200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *UpdateHostInstallAgent200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *UpdateHostInstallAgent200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HostsAPIService.UpdateHostInstallAgent")
@@ -3381,7 +3402,7 @@ func (a *HostsAPIService) UpdateHostInstallAgentExecute(r ApiUpdateHostInstallAg
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -3390,8 +3411,8 @@ func (a *HostsAPIService) UpdateHostInstallAgentExecute(r ApiUpdateHostInstallAg
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -3401,8 +3422,8 @@ func (a *HostsAPIService) UpdateHostInstallAgentExecute(r ApiUpdateHostInstallAg
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3410,8 +3431,8 @@ func (a *HostsAPIService) UpdateHostInstallAgentExecute(r ApiUpdateHostInstallAg
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3420,9 +3441,9 @@ func (a *HostsAPIService) UpdateHostInstallAgentExecute(r ApiUpdateHostInstallAg
 }
 
 type ApiUpdateHostManagedRequest struct {
-	ctx context.Context
-	ApiService *HostsAPIService
-	id int64
+	ctx                      context.Context
+	ApiService               *HostsAPIService
+	id                       int64
 	updateHostManagedRequest *UpdateHostManagedRequest
 }
 
@@ -3440,26 +3461,27 @@ UpdateHostManaged Convert To Managed
 
 This will make the host a managed server, and install the agent.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateHostManagedRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateHostManagedRequest
 */
 func (a *HostsAPIService) UpdateHostManaged(ctx context.Context, id int64) ApiUpdateHostManagedRequest {
 	return ApiUpdateHostManagedRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return UpdateHostInstallAgent200Response
+//
+//	@return UpdateHostInstallAgent200Response
 func (a *HostsAPIService) UpdateHostManagedExecute(r ApiUpdateHostManagedRequest) (*UpdateHostInstallAgent200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *UpdateHostInstallAgent200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *UpdateHostInstallAgent200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HostsAPIService.UpdateHostManaged")
@@ -3512,7 +3534,7 @@ func (a *HostsAPIService) UpdateHostManagedExecute(r ApiUpdateHostManagedRequest
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -3521,8 +3543,8 @@ func (a *HostsAPIService) UpdateHostManagedExecute(r ApiUpdateHostManagedRequest
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -3532,8 +3554,8 @@ func (a *HostsAPIService) UpdateHostManagedExecute(r ApiUpdateHostManagedRequest
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3541,8 +3563,8 @@ func (a *HostsAPIService) UpdateHostManagedExecute(r ApiUpdateHostManagedRequest
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3551,9 +3573,9 @@ func (a *HostsAPIService) UpdateHostManagedExecute(r ApiUpdateHostManagedRequest
 }
 
 type ApiUpdateHostResizeRequest struct {
-	ctx context.Context
-	ApiService *HostsAPIService
-	id int64
+	ctx                     context.Context
+	ApiService              *HostsAPIService
+	id                      int64
 	updateHostResizeRequest *UpdateHostResizeRequest
 }
 
@@ -3571,26 +3593,27 @@ UpdateHostResize Resize a Host
 
 Will resize a host asynchronously. This endpoint also allows for NIC reconfiguration by passing a new array of `networkInterfaces`.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateHostResizeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateHostResizeRequest
 */
 func (a *HostsAPIService) UpdateHostResize(ctx context.Context, id int64) ApiUpdateHostResizeRequest {
 	return ApiUpdateHostResizeRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return UpdateHostAssignTenant200Response
+//
+//	@return UpdateHostAssignTenant200Response
 func (a *HostsAPIService) UpdateHostResizeExecute(r ApiUpdateHostResizeRequest) (*UpdateHostAssignTenant200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *UpdateHostAssignTenant200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *UpdateHostAssignTenant200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HostsAPIService.UpdateHostResize")
@@ -3643,7 +3666,7 @@ func (a *HostsAPIService) UpdateHostResizeExecute(r ApiUpdateHostResizeRequest) 
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -3652,8 +3675,8 @@ func (a *HostsAPIService) UpdateHostResizeExecute(r ApiUpdateHostResizeRequest) 
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -3663,8 +3686,8 @@ func (a *HostsAPIService) UpdateHostResizeExecute(r ApiUpdateHostResizeRequest) 
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3672,8 +3695,8 @@ func (a *HostsAPIService) UpdateHostResizeExecute(r ApiUpdateHostResizeRequest) 
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3682,9 +3705,9 @@ func (a *HostsAPIService) UpdateHostResizeExecute(r ApiUpdateHostResizeRequest) 
 }
 
 type ApiUpdateHostUpgradeAgentRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *HostsAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiUpdateHostUpgradeAgentRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -3696,26 +3719,27 @@ UpdateHostUpgradeAgent Upgrade Agent
 
 This will upgrade the version of the agent installed on the host.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateHostUpgradeAgentRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateHostUpgradeAgentRequest
 */
 func (a *HostsAPIService) UpdateHostUpgradeAgent(ctx context.Context, id int64) ApiUpdateHostUpgradeAgentRequest {
 	return ApiUpdateHostUpgradeAgentRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *HostsAPIService) UpdateHostUpgradeAgentExecute(r ApiUpdateHostUpgradeAgentRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HostsAPIService.UpdateHostUpgradeAgent")
@@ -3766,7 +3790,7 @@ func (a *HostsAPIService) UpdateHostUpgradeAgentExecute(r ApiUpdateHostUpgradeAg
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -3775,8 +3799,8 @@ func (a *HostsAPIService) UpdateHostUpgradeAgentExecute(r ApiUpdateHostUpgradeAg
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -3786,8 +3810,8 @@ func (a *HostsAPIService) UpdateHostUpgradeAgentExecute(r ApiUpdateHostUpgradeAg
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3795,8 +3819,8 @@ func (a *HostsAPIService) UpdateHostUpgradeAgentExecute(r ApiUpdateHostUpgradeAg
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3805,10 +3829,10 @@ func (a *HostsAPIService) UpdateHostUpgradeAgentExecute(r ApiUpdateHostUpgradeAg
 }
 
 type ApiUpdateServerNetworkInterfaceRequest struct {
-	ctx context.Context
-	ApiService *HostsAPIService
-	id int64
-	networkInterfaceId float32
+	ctx                                   context.Context
+	ApiService                            *HostsAPIService
+	id                                    int64
+	networkInterfaceId                    float32
 	updateInstanceNetworkInterfaceRequest *UpdateInstanceNetworkInterfaceRequest
 }
 
@@ -3826,28 +3850,29 @@ UpdateServerNetworkInterface Updating a label for a Server's Network
 
 Updating a Server's Network's Label
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @param networkInterfaceId NetworkInterface (ComputeServerInterface) ID of the Object being created or referenced
- @return ApiUpdateServerNetworkInterfaceRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@param networkInterfaceId NetworkInterface (ComputeServerInterface) ID of the Object being created or referenced
+	@return ApiUpdateServerNetworkInterfaceRequest
 */
 func (a *HostsAPIService) UpdateServerNetworkInterface(ctx context.Context, id int64, networkInterfaceId float32) ApiUpdateServerNetworkInterfaceRequest {
 	return ApiUpdateServerNetworkInterfaceRequest{
-		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ApiService:         a,
+		ctx:                ctx,
+		id:                 id,
 		networkInterfaceId: networkInterfaceId,
 	}
 }
 
 // Execute executes the request
-//  @return UpdateServerNetworkInterface200Response
+//
+//	@return UpdateServerNetworkInterface200Response
 func (a *HostsAPIService) UpdateServerNetworkInterfaceExecute(r ApiUpdateServerNetworkInterfaceRequest) (*UpdateServerNetworkInterface200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *UpdateServerNetworkInterface200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *UpdateServerNetworkInterface200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HostsAPIService.UpdateServerNetworkInterface")
@@ -3901,7 +3926,7 @@ func (a *HostsAPIService) UpdateServerNetworkInterfaceExecute(r ApiUpdateServerN
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -3910,8 +3935,8 @@ func (a *HostsAPIService) UpdateServerNetworkInterfaceExecute(r ApiUpdateServerN
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -3921,8 +3946,8 @@ func (a *HostsAPIService) UpdateServerNetworkInterfaceExecute(r ApiUpdateServerN
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3930,8 +3955,8 @@ func (a *HostsAPIService) UpdateServerNetworkInterfaceExecute(r ApiUpdateServerN
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

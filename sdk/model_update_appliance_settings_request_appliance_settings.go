@@ -129,8 +129,8 @@ type UpdateApplianceSettingsRequestApplianceSettings struct {
 	// Max option list size. Units are x10^3 (thousand). Increasing this value can adversely affect Morpheus performance. Increase with caution.
 	MaxOptionListSize *int64 `json:"maxOptionListSize,omitempty"`
 	// The url used for checking if there is an update for plugins. Default https\\://share.morpheusdata.com
-	ExchangeUrl *string `json:"exchangeUrl,omitempty"`
-	AdditionalProperties map[string]interface{}
+	ExchangeUrl          *string                `json:"exchangeUrl,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _UpdateApplianceSettingsRequestApplianceSettings UpdateApplianceSettingsRequestApplianceSettings
@@ -1913,7 +1913,7 @@ func (o *UpdateApplianceSettingsRequestApplianceSettings) SetExchangeUrl(v strin
 }
 
 func (o UpdateApplianceSettingsRequestApplianceSettings) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -2094,116 +2094,8 @@ func (o UpdateApplianceSettingsRequestApplianceSettings) ToMap() (map[string]int
 
 	return toSerialize, nil
 }
-
 func (o *UpdateApplianceSettingsRequestApplianceSettings) UnmarshalJSON(data []byte) (err error) {
-	varUpdateApplianceSettingsRequestApplianceSettings := _UpdateApplianceSettingsRequestApplianceSettings{}
-
-	err = json.Unmarshal(data, &varUpdateApplianceSettingsRequestApplianceSettings)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateApplianceSettingsRequestApplianceSettings(varUpdateApplianceSettingsRequestApplianceSettings)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "applianceUrl")
-		delete(additionalProperties, "internalApplianceUrl")
-		delete(additionalProperties, "corsAllowed")
-		delete(additionalProperties, "registrationEnabled")
-		delete(additionalProperties, "defaultRoleId")
-		delete(additionalProperties, "defaultUserRoleId")
-		delete(additionalProperties, "dockerPrivilegedMode")
-		delete(additionalProperties, "passwordMinLength")
-		delete(additionalProperties, "passwordMinUpperCase")
-		delete(additionalProperties, "passwordMinNumbers")
-		delete(additionalProperties, "passwordMinSymbols")
-		delete(additionalProperties, "userBrowserSessionTimeout")
-		delete(additionalProperties, "userBrowserSessionWarning")
-		delete(additionalProperties, "expirePwdDays")
-		delete(additionalProperties, "disableAfterAttempts")
-		delete(additionalProperties, "disableAfterDaysInactive")
-		delete(additionalProperties, "warnUserDaysBefore")
-		delete(additionalProperties, "smtpMailFrom")
-		delete(additionalProperties, "smtpServer")
-		delete(additionalProperties, "smtpPort")
-		delete(additionalProperties, "smtpSSL")
-		delete(additionalProperties, "smtpTLS")
-		delete(additionalProperties, "smtpUser")
-		delete(additionalProperties, "smtpPassword")
-		delete(additionalProperties, "proxyHost")
-		delete(additionalProperties, "proxyPort")
-		delete(additionalProperties, "proxyUser")
-		delete(additionalProperties, "proxyPassword")
-		delete(additionalProperties, "proxyDomain")
-		delete(additionalProperties, "proxyWorkstation")
-		delete(additionalProperties, "currencyProvider")
-		delete(additionalProperties, "currencyKey")
-		delete(additionalProperties, "enableAllZoneTypes")
-		delete(additionalProperties, "enableZoneTypes")
-		delete(additionalProperties, "disableZoneTypes")
-		delete(additionalProperties, "disableAllZoneTypes")
-		delete(additionalProperties, "twilioAccountSid")
-		delete(additionalProperties, "twilioSmsFrom")
-		delete(additionalProperties, "twilioAuthToken")
-		delete(additionalProperties, "cloudSyncIntervalSeconds")
-		delete(additionalProperties, "clusterSyncIntervalSeconds")
-		delete(additionalProperties, "usageRetainmentPeriod")
-		delete(additionalProperties, "invoiceRetainmentPeriod")
-		delete(additionalProperties, "incidentRetainmentPeriod")
-		delete(additionalProperties, "statsRetainmentPeriod")
-		delete(additionalProperties, "reportsRetainmentPeriod")
-		delete(additionalProperties, "httpBlacklistHosts")
-		delete(additionalProperties, "httpApprovelistHosts")
-		delete(additionalProperties, "noAgent")
-		delete(additionalProperties, "agentSSLVerify")
-		delete(additionalProperties, "disableSSHPasswordAuth")
-		delete(additionalProperties, "defaultLocale")
-		delete(additionalProperties, "defaultVdiGateway")
-		delete(additionalProperties, "maxOptionListSize")
-		delete(additionalProperties, "exchangeUrl")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateApplianceSettingsRequestApplianceSettings struct {
-	value *UpdateApplianceSettingsRequestApplianceSettings
-	isSet bool
-}
-
-func (v NullableUpdateApplianceSettingsRequestApplianceSettings) Get() *UpdateApplianceSettingsRequestApplianceSettings {
-	return v.value
-}
-
-func (v *NullableUpdateApplianceSettingsRequestApplianceSettings) Set(val *UpdateApplianceSettingsRequestApplianceSettings) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateApplianceSettingsRequestApplianceSettings) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateApplianceSettingsRequestApplianceSettings) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateApplianceSettingsRequestApplianceSettings(val *UpdateApplianceSettingsRequestApplianceSettings) *NullableUpdateApplianceSettingsRequestApplianceSettings {
-	return &NullableUpdateApplianceSettingsRequestApplianceSettings{value: val, isSet: true}
-}
-
-func (v NullableUpdateApplianceSettingsRequestApplianceSettings) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateApplianceSettingsRequestApplianceSettings) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

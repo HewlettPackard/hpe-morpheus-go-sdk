@@ -21,8 +21,8 @@ var _ MappedNullable = &NSXNetworkServerConfig{}
 // NSXNetworkServerConfig struct for NSXNetworkServerConfig
 type NSXNetworkServerConfig struct {
 	// NSX Project (NSX 4.1+)
-	Project *string `json:"project,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Project              *string                `json:"project,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _NSXNetworkServerConfig NSXNetworkServerConfig
@@ -77,7 +77,7 @@ func (o *NSXNetworkServerConfig) SetProject(v string) {
 }
 
 func (o NSXNetworkServerConfig) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -96,62 +96,8 @@ func (o NSXNetworkServerConfig) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *NSXNetworkServerConfig) UnmarshalJSON(data []byte) (err error) {
-	varNSXNetworkServerConfig := _NSXNetworkServerConfig{}
-
-	err = json.Unmarshal(data, &varNSXNetworkServerConfig)
-
-	if err != nil {
-		return err
-	}
-
-	*o = NSXNetworkServerConfig(varNSXNetworkServerConfig)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "project")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableNSXNetworkServerConfig struct {
-	value *NSXNetworkServerConfig
-	isSet bool
-}
-
-func (v NullableNSXNetworkServerConfig) Get() *NSXNetworkServerConfig {
-	return v.value
-}
-
-func (v *NullableNSXNetworkServerConfig) Set(val *NSXNetworkServerConfig) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableNSXNetworkServerConfig) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableNSXNetworkServerConfig) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableNSXNetworkServerConfig(val *NSXNetworkServerConfig) *NullableNSXNetworkServerConfig {
-	return &NullableNSXNetworkServerConfig{value: val, isSet: true}
-}
-
-func (v NullableNSXNetworkServerConfig) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableNSXNetworkServerConfig) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -19,18 +19,33 @@ import (
 // very silly way of avoiding `"fmt" imported and not used` errors
 var _ fmt.Stringer
 
-
 // AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInnerDatastoreId The ID of the specific datastore. Auto selection can be specified as auto or autoCluster (for clusters).
 type AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInnerDatastoreId struct {
-	Int64 *int64
+	Int64  *int64
 	String *string
+}
+
+func (dst *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInnerDatastoreId) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInnerDatastoreId{}
+	}
+
+	if out, ok := data.(int64); ok {
+		dst.Int64 = &out
+	}
+
+	if out, ok := data.(string); ok {
+		dst.String = &out
+	}
+
+	return dst, nil
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInnerDatastoreId) UnmarshalJSON(data []byte) error {
 	var err error
 	// try to unmarshal JSON data into Int64
-	err = json.Unmarshal(data, &dst.Int64);
+	err = json.Unmarshal(data, &dst.Int64)
 	if err == nil {
 		jsonInt64, _ := json.Marshal(dst.Int64)
 		if string(jsonInt64) == "{}" { // empty struct
@@ -43,7 +58,7 @@ func (dst *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInnerDatast
 	}
 
 	// try to unmarshal JSON data into String
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -70,7 +85,6 @@ func (src AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInnerDatasto
 
 	return nil, nil // no data in anyOf schemas
 }
-
 
 type NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInnerDatastoreId struct {
 	value *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInnerDatastoreId
@@ -107,5 +121,3 @@ func (v *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInner
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

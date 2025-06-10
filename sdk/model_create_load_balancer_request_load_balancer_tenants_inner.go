@@ -20,8 +20,8 @@ var _ MappedNullable = &CreateLoadBalancerRequestLoadBalancerTenantsInner{}
 
 // CreateLoadBalancerRequestLoadBalancerTenantsInner struct for CreateLoadBalancerRequestLoadBalancerTenantsInner
 type CreateLoadBalancerRequestLoadBalancerTenantsInner struct {
-	Id *int32 `json:"id,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int32                 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _CreateLoadBalancerRequestLoadBalancerTenantsInner CreateLoadBalancerRequestLoadBalancerTenantsInner
@@ -76,7 +76,7 @@ func (o *CreateLoadBalancerRequestLoadBalancerTenantsInner) SetId(v int32) {
 }
 
 func (o CreateLoadBalancerRequestLoadBalancerTenantsInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o CreateLoadBalancerRequestLoadBalancerTenantsInner) ToMap() (map[string]i
 
 	return toSerialize, nil
 }
-
 func (o *CreateLoadBalancerRequestLoadBalancerTenantsInner) UnmarshalJSON(data []byte) (err error) {
-	varCreateLoadBalancerRequestLoadBalancerTenantsInner := _CreateLoadBalancerRequestLoadBalancerTenantsInner{}
-
-	err = json.Unmarshal(data, &varCreateLoadBalancerRequestLoadBalancerTenantsInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = CreateLoadBalancerRequestLoadBalancerTenantsInner(varCreateLoadBalancerRequestLoadBalancerTenantsInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableCreateLoadBalancerRequestLoadBalancerTenantsInner struct {
-	value *CreateLoadBalancerRequestLoadBalancerTenantsInner
-	isSet bool
-}
-
-func (v NullableCreateLoadBalancerRequestLoadBalancerTenantsInner) Get() *CreateLoadBalancerRequestLoadBalancerTenantsInner {
-	return v.value
-}
-
-func (v *NullableCreateLoadBalancerRequestLoadBalancerTenantsInner) Set(val *CreateLoadBalancerRequestLoadBalancerTenantsInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableCreateLoadBalancerRequestLoadBalancerTenantsInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableCreateLoadBalancerRequestLoadBalancerTenantsInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableCreateLoadBalancerRequestLoadBalancerTenantsInner(val *CreateLoadBalancerRequestLoadBalancerTenantsInner) *NullableCreateLoadBalancerRequestLoadBalancerTenantsInner {
-	return &NullableCreateLoadBalancerRequestLoadBalancerTenantsInner{value: val, isSet: true}
-}
-
-func (v NullableCreateLoadBalancerRequestLoadBalancerTenantsInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableCreateLoadBalancerRequestLoadBalancerTenantsInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

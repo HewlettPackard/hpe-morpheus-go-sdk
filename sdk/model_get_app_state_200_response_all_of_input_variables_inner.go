@@ -20,11 +20,11 @@ var _ MappedNullable = &GetAppState200ResponseAllOfInputVariablesInner{}
 
 // GetAppState200ResponseAllOfInputVariablesInner struct for GetAppState200ResponseAllOfInputVariablesInner
 type GetAppState200ResponseAllOfInputVariablesInner struct {
-	Name *string `json:"name,omitempty"`
-	Value *string `json:"value,omitempty"`
-	Sensitive *bool `json:"sensitive,omitempty"`
-	Type *string `json:"type,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Name                 *string                `json:"name,omitempty"`
+	Value                *string                `json:"value,omitempty"`
+	Sensitive            *bool                  `json:"sensitive,omitempty"`
+	Type                 *string                `json:"type,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _GetAppState200ResponseAllOfInputVariablesInner GetAppState200ResponseAllOfInputVariablesInner
@@ -175,7 +175,7 @@ func (o *GetAppState200ResponseAllOfInputVariablesInner) SetType(v string) {
 }
 
 func (o GetAppState200ResponseAllOfInputVariablesInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -203,65 +203,8 @@ func (o GetAppState200ResponseAllOfInputVariablesInner) ToMap() (map[string]inte
 
 	return toSerialize, nil
 }
-
 func (o *GetAppState200ResponseAllOfInputVariablesInner) UnmarshalJSON(data []byte) (err error) {
-	varGetAppState200ResponseAllOfInputVariablesInner := _GetAppState200ResponseAllOfInputVariablesInner{}
-
-	err = json.Unmarshal(data, &varGetAppState200ResponseAllOfInputVariablesInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetAppState200ResponseAllOfInputVariablesInner(varGetAppState200ResponseAllOfInputVariablesInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "value")
-		delete(additionalProperties, "sensitive")
-		delete(additionalProperties, "type")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetAppState200ResponseAllOfInputVariablesInner struct {
-	value *GetAppState200ResponseAllOfInputVariablesInner
-	isSet bool
-}
-
-func (v NullableGetAppState200ResponseAllOfInputVariablesInner) Get() *GetAppState200ResponseAllOfInputVariablesInner {
-	return v.value
-}
-
-func (v *NullableGetAppState200ResponseAllOfInputVariablesInner) Set(val *GetAppState200ResponseAllOfInputVariablesInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetAppState200ResponseAllOfInputVariablesInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetAppState200ResponseAllOfInputVariablesInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetAppState200ResponseAllOfInputVariablesInner(val *GetAppState200ResponseAllOfInputVariablesInner) *NullableGetAppState200ResponseAllOfInputVariablesInner {
-	return &NullableGetAppState200ResponseAllOfInputVariablesInner{value: val, isSet: true}
-}
-
-func (v NullableGetAppState200ResponseAllOfInputVariablesInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetAppState200ResponseAllOfInputVariablesInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

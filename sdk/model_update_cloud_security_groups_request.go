@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the UpdateCloudSecurityGroupsRequest type satisfies the MappedNullable interface at compile time
@@ -21,8 +20,8 @@ var _ MappedNullable = &UpdateCloudSecurityGroupsRequest{}
 
 // UpdateCloudSecurityGroupsRequest struct for UpdateCloudSecurityGroupsRequest
 type UpdateCloudSecurityGroupsRequest struct {
-	SecurityGroupIds []int64 `json:"securityGroupIds"`
-	AdditionalProperties map[string]interface{}
+	SecurityGroupIds     []int64                `json:"securityGroupIds"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _UpdateCloudSecurityGroupsRequest UpdateCloudSecurityGroupsRequest
@@ -70,7 +69,7 @@ func (o *UpdateCloudSecurityGroupsRequest) SetSecurityGroupIds(v []int64) {
 }
 
 func (o UpdateCloudSecurityGroupsRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -87,83 +86,8 @@ func (o UpdateCloudSecurityGroupsRequest) ToMap() (map[string]interface{}, error
 
 	return toSerialize, nil
 }
-
 func (o *UpdateCloudSecurityGroupsRequest) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"securityGroupIds",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varUpdateCloudSecurityGroupsRequest := _UpdateCloudSecurityGroupsRequest{}
-
-	err = json.Unmarshal(data, &varUpdateCloudSecurityGroupsRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateCloudSecurityGroupsRequest(varUpdateCloudSecurityGroupsRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "securityGroupIds")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateCloudSecurityGroupsRequest struct {
-	value *UpdateCloudSecurityGroupsRequest
-	isSet bool
-}
-
-func (v NullableUpdateCloudSecurityGroupsRequest) Get() *UpdateCloudSecurityGroupsRequest {
-	return v.value
-}
-
-func (v *NullableUpdateCloudSecurityGroupsRequest) Set(val *UpdateCloudSecurityGroupsRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateCloudSecurityGroupsRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateCloudSecurityGroupsRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateCloudSecurityGroupsRequest(val *UpdateCloudSecurityGroupsRequest) *NullableUpdateCloudSecurityGroupsRequest {
-	return &NullableUpdateCloudSecurityGroupsRequest{value: val, isSet: true}
-}
-
-func (v NullableUpdateCloudSecurityGroupsRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateCloudSecurityGroupsRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

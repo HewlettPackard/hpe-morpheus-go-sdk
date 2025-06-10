@@ -22,11 +22,11 @@ var _ MappedNullable = &NetworkPoolServer{}
 // NetworkPoolServer struct for NetworkPoolServer
 type NetworkPoolServer struct {
 	// Network Pool Server ID
-	Id *int64 `json:"id,omitempty"`
+	Id   *int64                                                             `json:"id,omitempty"`
 	Type *ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInnerType `json:"type,omitempty"`
 	// Name
-	Name *string `json:"name,omitempty"`
-	Enabled *bool `json:"enabled,omitempty"`
+	Name    *string `json:"name,omitempty"`
+	Enabled *bool   `json:"enabled,omitempty"`
 	// Service URL
 	ServiceUrl *string `json:"serviceUrl,omitempty"`
 	// Service Host
@@ -38,7 +38,7 @@ type NetworkPoolServer struct {
 	// Service Username
 	ServiceUsername *string `json:"serviceUsername,omitempty"`
 	// Service Password
-	ServicePassword *string `json:"servicePassword,omitempty"`
+	ServicePassword     *string `json:"servicePassword,omitempty"`
 	ServicePasswordHash *string `json:"servicePasswordHash,omitempty"`
 	// Throttle Rate
 	ServiceThrottleRate *int64 `json:"serviceThrottleRate,omitempty"`
@@ -47,8 +47,8 @@ type NetworkPoolServer struct {
 	// Status
 	Status *string `json:"status,omitempty"`
 	// Status Message
-	StatusMessage *string `json:"statusMessage,omitempty"`
-	StatusDate *time.Time `json:"statusDate,omitempty"`
+	StatusMessage *string    `json:"statusMessage,omitempty"`
+	StatusDate    *time.Time `json:"statusDate,omitempty"`
 	// Config object varies with pool server type.
 	Config map[string]interface{} `json:"config,omitempty"`
 	// Network Filter
@@ -56,14 +56,14 @@ type NetworkPoolServer struct {
 	// Zone Filter
 	ZoneFilter *string `json:"zoneFilter,omitempty"`
 	// Tenant Match
-	TenantMatch *string `json:"tenantMatch,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	Account *ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInnerAccount `json:"account,omitempty"`
-	Integration *ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInnerIntegration `json:"integration,omitempty"`
-	Pools []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"pools,omitempty"`
-	Credential *ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInnerCredential `json:"credential,omitempty"`
-	AdditionalProperties map[string]interface{}
+	TenantMatch          *string                                                                   `json:"tenantMatch,omitempty"`
+	DateCreated          *time.Time                                                                `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                                                `json:"lastUpdated,omitempty"`
+	Account              *ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInnerAccount     `json:"account,omitempty"`
+	Integration          *ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInnerIntegration `json:"integration,omitempty"`
+	Pools                []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner  `json:"pools,omitempty"`
+	Credential           *ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInnerCredential  `json:"credential,omitempty"`
+	AdditionalProperties map[string]interface{}                                                    `json:",remain"`
 }
 
 type _NetworkPoolServer NetworkPoolServer
@@ -926,7 +926,7 @@ func (o *NetworkPoolServer) SetCredential(v ListNetworkPoolServers200ResponseAll
 }
 
 func (o NetworkPoolServer) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1020,87 +1020,8 @@ func (o NetworkPoolServer) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *NetworkPoolServer) UnmarshalJSON(data []byte) (err error) {
-	varNetworkPoolServer := _NetworkPoolServer{}
-
-	err = json.Unmarshal(data, &varNetworkPoolServer)
-
-	if err != nil {
-		return err
-	}
-
-	*o = NetworkPoolServer(varNetworkPoolServer)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "serviceUrl")
-		delete(additionalProperties, "serviceHost")
-		delete(additionalProperties, "servicePort")
-		delete(additionalProperties, "serviceMode")
-		delete(additionalProperties, "serviceUsername")
-		delete(additionalProperties, "servicePassword")
-		delete(additionalProperties, "servicePasswordHash")
-		delete(additionalProperties, "serviceThrottleRate")
-		delete(additionalProperties, "ignoreSsl")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "statusMessage")
-		delete(additionalProperties, "statusDate")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "networkFilter")
-		delete(additionalProperties, "zoneFilter")
-		delete(additionalProperties, "tenantMatch")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		delete(additionalProperties, "account")
-		delete(additionalProperties, "integration")
-		delete(additionalProperties, "pools")
-		delete(additionalProperties, "credential")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableNetworkPoolServer struct {
-	value *NetworkPoolServer
-	isSet bool
-}
-
-func (v NullableNetworkPoolServer) Get() *NetworkPoolServer {
-	return v.value
-}
-
-func (v *NullableNetworkPoolServer) Set(val *NetworkPoolServer) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableNetworkPoolServer) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableNetworkPoolServer) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableNetworkPoolServer(val *NetworkPoolServer) *NullableNetworkPoolServer {
-	return &NullableNetworkPoolServer{value: val, isSet: true}
-}
-
-func (v NullableNetworkPoolServer) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableNetworkPoolServer) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

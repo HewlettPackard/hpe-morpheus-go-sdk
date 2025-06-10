@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the ListTasks200ResponseAllOfTasksInnerAnyOf9TaskOptions type satisfies the MappedNullable interface at compile time
@@ -24,8 +23,8 @@ type ListTasks200ResponseAllOfTasksInnerAnyOf9TaskOptions struct {
 	// Operational Workflow ID
 	OperationalWorkflowId string `json:"operationalWorkflowId"`
 	// Operational Workflow Name
-	OperationalWorkflowName *string `json:"operationalWorkflowName,omitempty"`
-	AdditionalProperties map[string]interface{}
+	OperationalWorkflowName *string                `json:"operationalWorkflowName,omitempty"`
+	AdditionalProperties    map[string]interface{} `json:",remain"`
 }
 
 type _ListTasks200ResponseAllOfTasksInnerAnyOf9TaskOptions ListTasks200ResponseAllOfTasksInnerAnyOf9TaskOptions
@@ -105,7 +104,7 @@ func (o *ListTasks200ResponseAllOfTasksInnerAnyOf9TaskOptions) SetOperationalWor
 }
 
 func (o ListTasks200ResponseAllOfTasksInnerAnyOf9TaskOptions) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -125,84 +124,8 @@ func (o ListTasks200ResponseAllOfTasksInnerAnyOf9TaskOptions) ToMap() (map[strin
 
 	return toSerialize, nil
 }
-
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOf9TaskOptions) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"operationalWorkflowId",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varListTasks200ResponseAllOfTasksInnerAnyOf9TaskOptions := _ListTasks200ResponseAllOfTasksInnerAnyOf9TaskOptions{}
-
-	err = json.Unmarshal(data, &varListTasks200ResponseAllOfTasksInnerAnyOf9TaskOptions)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListTasks200ResponseAllOfTasksInnerAnyOf9TaskOptions(varListTasks200ResponseAllOfTasksInnerAnyOf9TaskOptions)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "operationalWorkflowId")
-		delete(additionalProperties, "operationalWorkflowName")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListTasks200ResponseAllOfTasksInnerAnyOf9TaskOptions struct {
-	value *ListTasks200ResponseAllOfTasksInnerAnyOf9TaskOptions
-	isSet bool
-}
-
-func (v NullableListTasks200ResponseAllOfTasksInnerAnyOf9TaskOptions) Get() *ListTasks200ResponseAllOfTasksInnerAnyOf9TaskOptions {
-	return v.value
-}
-
-func (v *NullableListTasks200ResponseAllOfTasksInnerAnyOf9TaskOptions) Set(val *ListTasks200ResponseAllOfTasksInnerAnyOf9TaskOptions) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListTasks200ResponseAllOfTasksInnerAnyOf9TaskOptions) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListTasks200ResponseAllOfTasksInnerAnyOf9TaskOptions) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListTasks200ResponseAllOfTasksInnerAnyOf9TaskOptions(val *ListTasks200ResponseAllOfTasksInnerAnyOf9TaskOptions) *NullableListTasks200ResponseAllOfTasksInnerAnyOf9TaskOptions {
-	return &NullableListTasks200ResponseAllOfTasksInnerAnyOf9TaskOptions{value: val, isSet: true}
-}
-
-func (v NullableListTasks200ResponseAllOfTasksInnerAnyOf9TaskOptions) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListTasks200ResponseAllOfTasksInnerAnyOf9TaskOptions) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

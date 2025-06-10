@@ -21,14 +21,13 @@ import (
 	"strings"
 )
 
-
 // InvoicesAPIService InvoicesAPI service
 type InvoicesAPIService service
 
 type ApiGetInvoiceLineItemsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *InvoicesAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetInvoiceLineItemsRequest) Execute() (*GetInvoiceLineItems200Response, *http.Response, error) {
@@ -40,26 +39,27 @@ GetInvoiceLineItems Get a Specific Invoice Line Item
 
 Get details about a specific invoice line item.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetInvoiceLineItemsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetInvoiceLineItemsRequest
 */
 func (a *InvoicesAPIService) GetInvoiceLineItems(ctx context.Context, id int64) ApiGetInvoiceLineItemsRequest {
 	return ApiGetInvoiceLineItemsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetInvoiceLineItems200Response
+//
+//	@return GetInvoiceLineItems200Response
 func (a *InvoicesAPIService) GetInvoiceLineItemsExecute(r ApiGetInvoiceLineItemsRequest) (*GetInvoiceLineItems200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetInvoiceLineItems200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetInvoiceLineItems200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InvoicesAPIService.GetInvoiceLineItems")
@@ -110,7 +110,7 @@ func (a *InvoicesAPIService) GetInvoiceLineItemsExecute(r ApiGetInvoiceLineItems
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -119,8 +119,8 @@ func (a *InvoicesAPIService) GetInvoiceLineItemsExecute(r ApiGetInvoiceLineItems
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -130,8 +130,8 @@ func (a *InvoicesAPIService) GetInvoiceLineItemsExecute(r ApiGetInvoiceLineItems
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -139,8 +139,8 @@ func (a *InvoicesAPIService) GetInvoiceLineItemsExecute(r ApiGetInvoiceLineItems
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -149,9 +149,9 @@ func (a *InvoicesAPIService) GetInvoiceLineItemsExecute(r ApiGetInvoiceLineItems
 }
 
 type ApiGetInvoicesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *InvoicesAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetInvoicesRequest) Execute() (*GetInvoices200Response, *http.Response, error) {
@@ -163,26 +163,27 @@ GetInvoices Get a Specific Invoice
 
 Get details about a specific invoice.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetInvoicesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetInvoicesRequest
 */
 func (a *InvoicesAPIService) GetInvoices(ctx context.Context, id int64) ApiGetInvoicesRequest {
 	return ApiGetInvoicesRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetInvoices200Response
+//
+//	@return GetInvoices200Response
 func (a *InvoicesAPIService) GetInvoicesExecute(r ApiGetInvoicesRequest) (*GetInvoices200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetInvoices200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetInvoices200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InvoicesAPIService.GetInvoices")
@@ -233,7 +234,7 @@ func (a *InvoicesAPIService) GetInvoicesExecute(r ApiGetInvoicesRequest) (*GetIn
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -242,8 +243,8 @@ func (a *InvoicesAPIService) GetInvoicesExecute(r ApiGetInvoicesRequest) (*GetIn
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -253,8 +254,8 @@ func (a *InvoicesAPIService) GetInvoicesExecute(r ApiGetInvoicesRequest) (*GetIn
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -262,8 +263,8 @@ func (a *InvoicesAPIService) GetInvoicesExecute(r ApiGetInvoicesRequest) (*GetIn
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -272,28 +273,28 @@ func (a *InvoicesAPIService) GetInvoicesExecute(r ApiGetInvoicesRequest) (*GetIn
 }
 
 type ApiListInvoiceLineItemsRequest struct {
-	ctx context.Context
-	ApiService *InvoicesAPIService
-	max *int64
-	offset *int64
-	sort *string
-	direction *string
-	phrase *string
-	name *string
-	startDate *string
-	endDate *string
-	period *string
-	refType *string
-	refId *int64
-	zoneId *int64
-	siteId *int64
-	instanceId *int64
-	containerId *int64
-	serverId *int64
-	userId *int64
-	projectId *int64
-	active *bool
-	accountId *int64
+	ctx           context.Context
+	ApiService    *InvoicesAPIService
+	max           *int64
+	offset        *int64
+	sort          *string
+	direction     *string
+	phrase        *string
+	name          *string
+	startDate     *string
+	endDate       *string
+	period        *string
+	refType       *string
+	refId         *int64
+	zoneId        *int64
+	siteId        *int64
+	instanceId    *int64
+	containerId   *int64
+	serverId      *int64
+	userId        *int64
+	projectId     *int64
+	active        *bool
+	accountId     *int64
 	includeTotals *bool
 }
 
@@ -345,13 +346,13 @@ func (r ApiListInvoiceLineItemsRequest) EndDate(endDate string) ApiListInvoiceLi
 	return r
 }
 
-// Only return records for period that matches with the specified value. This is an alternative to using startDate/endDate. Format is YYYY or YYYYMM. 
+// Only return records for period that matches with the specified value. This is an alternative to using startDate/endDate. Format is YYYY or YYYYMM.
 func (r ApiListInvoiceLineItemsRequest) Period(period string) ApiListInvoiceLineItemsRequest {
 	r.period = &period
 	return r
 }
 
-// If specified will return an exact match on refType. 
+// If specified will return an exact match on refType.
 func (r ApiListInvoiceLineItemsRequest) RefType(refType string) ApiListInvoiceLineItemsRequest {
 	r.refType = &refType
 	return r
@@ -417,7 +418,7 @@ func (r ApiListInvoiceLineItemsRequest) AccountId(accountId int64) ApiListInvoic
 	return r
 }
 
-// Pass true to include the summed totals (cost/price values) for all the invoices found in the query. The returned property is called &#x60;invoiceTotals&#x60;. 
+// Pass true to include the summed totals (cost/price values) for all the invoices found in the query. The returned property is called &#x60;invoiceTotals&#x60;.
 func (r ApiListInvoiceLineItemsRequest) IncludeTotals(includeTotals bool) ApiListInvoiceLineItemsRequest {
 	r.includeTotals = &includeTotals
 	return r
@@ -432,24 +433,25 @@ ListInvoiceLineItems List All Invoice Line Items
 
 This endpoint retrieves a list of all invoice line items for the specified parameters.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListInvoiceLineItemsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListInvoiceLineItemsRequest
 */
 func (a *InvoicesAPIService) ListInvoiceLineItems(ctx context.Context) ApiListInvoiceLineItemsRequest {
 	return ApiListInvoiceLineItemsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListInvoiceLineItems200Response
+//
+//	@return ListInvoiceLineItems200Response
 func (a *InvoicesAPIService) ListInvoiceLineItemsExecute(r ApiListInvoiceLineItemsRequest) (*ListInvoiceLineItems200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListInvoiceLineItems200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListInvoiceLineItems200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InvoicesAPIService.ListInvoiceLineItems")
@@ -577,7 +579,7 @@ func (a *InvoicesAPIService) ListInvoiceLineItemsExecute(r ApiListInvoiceLineIte
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -586,8 +588,8 @@ func (a *InvoicesAPIService) ListInvoiceLineItemsExecute(r ApiListInvoiceLineIte
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -597,8 +599,8 @@ func (a *InvoicesAPIService) ListInvoiceLineItemsExecute(r ApiListInvoiceLineIte
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -606,8 +608,8 @@ func (a *InvoicesAPIService) ListInvoiceLineItemsExecute(r ApiListInvoiceLineIte
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -616,32 +618,32 @@ func (a *InvoicesAPIService) ListInvoiceLineItemsExecute(r ApiListInvoiceLineIte
 }
 
 type ApiListInvoicesRequest struct {
-	ctx context.Context
-	ApiService *InvoicesAPIService
-	max *int64
-	offset *int64
-	sort *string
-	direction *string
-	phrase *string
-	name *string
-	startDate *string
-	endDate *string
-	period *string
-	refType *string
-	refId *int64
-	refStatus *string
-	zoneId *int64
-	siteId *int64
-	instanceId *int64
-	containerId *int64
-	serverId *int64
-	userId *int64
-	projectId *int64
-	active *bool
-	accountId *int64
+	ctx              context.Context
+	ApiService       *InvoicesAPIService
+	max              *int64
+	offset           *int64
+	sort             *string
+	direction        *string
+	phrase           *string
+	name             *string
+	startDate        *string
+	endDate          *string
+	period           *string
+	refType          *string
+	refId            *int64
+	refStatus        *string
+	zoneId           *int64
+	siteId           *int64
+	instanceId       *int64
+	containerId      *int64
+	serverId         *int64
+	userId           *int64
+	projectId        *int64
+	active           *bool
+	accountId        *int64
 	includeLineItems *bool
-	includeTotals *bool
-	tagsName *string
+	includeTotals    *bool
+	tagsName         *string
 }
 
 // Maximum number of records to return
@@ -692,13 +694,13 @@ func (r ApiListInvoicesRequest) EndDate(endDate string) ApiListInvoicesRequest {
 	return r
 }
 
-// Only return records for period that matches with the specified value. This is an alternative to using startDate/endDate. Format is YYYY or YYYYMM. 
+// Only return records for period that matches with the specified value. This is an alternative to using startDate/endDate. Format is YYYY or YYYYMM.
 func (r ApiListInvoicesRequest) Period(period string) ApiListInvoicesRequest {
 	r.period = &period
 	return r
 }
 
-// If specified will return an exact match on refType. 
+// If specified will return an exact match on refType.
 func (r ApiListInvoicesRequest) RefType(refType string) ApiListInvoicesRequest {
 	r.refType = &refType
 	return r
@@ -710,7 +712,7 @@ func (r ApiListInvoicesRequest) RefId(refId int64) ApiListInvoicesRequest {
 	return r
 }
 
-// If specified, will filter on the associated StorageVolume status. This is only applicable whn &#x60;refType&#x3D;StorageVolume&#x60;. 
+// If specified, will filter on the associated StorageVolume status. This is only applicable whn &#x60;refType&#x3D;StorageVolume&#x60;.
 func (r ApiListInvoicesRequest) RefStatus(refStatus string) ApiListInvoicesRequest {
 	r.refStatus = &refStatus
 	return r
@@ -770,19 +772,19 @@ func (r ApiListInvoicesRequest) AccountId(accountId int64) ApiListInvoicesReques
 	return r
 }
 
-// Pass true to include the list of &#x60;lineItems&#x60; for each invoice. Only &#x60;lineItemCount&#x60; is returned by default. 
+// Pass true to include the list of &#x60;lineItems&#x60; for each invoice. Only &#x60;lineItemCount&#x60; is returned by default.
 func (r ApiListInvoicesRequest) IncludeLineItems(includeLineItems bool) ApiListInvoicesRequest {
 	r.includeLineItems = &includeLineItems
 	return r
 }
 
-// Pass true to include the summed totals (cost/price values) for all the invoices found in the query. The returned property is called &#x60;invoiceTotals&#x60;. 
+// Pass true to include the summed totals (cost/price values) for all the invoices found in the query. The returned property is called &#x60;invoiceTotals&#x60;.
 func (r ApiListInvoicesRequest) IncludeTotals(includeTotals bool) ApiListInvoicesRequest {
 	r.includeTotals = &includeTotals
 	return r
 }
 
-// Filter by tags (metadata). This allows filtering by a tag name and value(s) 
+// Filter by tags (metadata). This allows filtering by a tag name and value(s)
 func (r ApiListInvoicesRequest) TagsName(tagsName string) ApiListInvoicesRequest {
 	r.tagsName = &tagsName
 	return r
@@ -797,24 +799,25 @@ ListInvoices List All Invoices
 
 This endpoint retrieves a list of invoices for the specified parameters.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListInvoicesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListInvoicesRequest
 */
 func (a *InvoicesAPIService) ListInvoices(ctx context.Context) ApiListInvoicesRequest {
 	return ApiListInvoicesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListInvoices200Response
+//
+//	@return ListInvoices200Response
 func (a *InvoicesAPIService) ListInvoicesExecute(r ApiListInvoicesRequest) (*ListInvoices200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListInvoices200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListInvoices200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InvoicesAPIService.ListInvoices")
@@ -954,7 +957,7 @@ func (a *InvoicesAPIService) ListInvoicesExecute(r ApiListInvoicesRequest) (*Lis
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -963,8 +966,8 @@ func (a *InvoicesAPIService) ListInvoicesExecute(r ApiListInvoicesRequest) (*Lis
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -974,8 +977,8 @@ func (a *InvoicesAPIService) ListInvoicesExecute(r ApiListInvoicesRequest) (*Lis
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -983,8 +986,8 @@ func (a *InvoicesAPIService) ListInvoicesExecute(r ApiListInvoicesRequest) (*Lis
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -993,9 +996,9 @@ func (a *InvoicesAPIService) ListInvoicesExecute(r ApiListInvoicesRequest) (*Lis
 }
 
 type ApiUpdateInvoicesRequest struct {
-	ctx context.Context
-	ApiService *InvoicesAPIService
-	id int64
+	ctx                   context.Context
+	ApiService            *InvoicesAPIService
+	id                    int64
 	updateInvoicesRequest *UpdateInvoicesRequest
 }
 
@@ -1013,26 +1016,27 @@ UpdateInvoices Update Invoice Tags
 
 Update, Add, or Remove invoice tag(s).
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateInvoicesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateInvoicesRequest
 */
 func (a *InvoicesAPIService) UpdateInvoices(ctx context.Context, id int64) ApiUpdateInvoicesRequest {
 	return ApiUpdateInvoicesRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return UpdateInvoices200Response
+//
+//	@return UpdateInvoices200Response
 func (a *InvoicesAPIService) UpdateInvoicesExecute(r ApiUpdateInvoicesRequest) (*UpdateInvoices200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *UpdateInvoices200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *UpdateInvoices200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InvoicesAPIService.UpdateInvoices")
@@ -1085,7 +1089,7 @@ func (a *InvoicesAPIService) UpdateInvoicesExecute(r ApiUpdateInvoicesRequest) (
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1094,8 +1098,8 @@ func (a *InvoicesAPIService) UpdateInvoicesExecute(r ApiUpdateInvoicesRequest) (
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1105,8 +1109,8 @@ func (a *InvoicesAPIService) UpdateInvoicesExecute(r ApiUpdateInvoicesRequest) (
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1114,8 +1118,8 @@ func (a *InvoicesAPIService) UpdateInvoicesExecute(r ApiUpdateInvoicesRequest) (
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

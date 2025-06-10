@@ -20,12 +20,12 @@ var _ MappedNullable = &ListNetworkServers200ResponseAllOfNetworkServersInnerInt
 
 // ListNetworkServers200ResponseAllOfNetworkServersInnerIntegration Integration
 type ListNetworkServers200ResponseAllOfNetworkServersInnerIntegration struct {
-	Id *int64 `json:"id,omitempty"`
+	Id   *int64  `json:"id,omitempty"`
 	Name *string `json:"name,omitempty"`
 	// Integration Type Code
-	Type *string `json:"type,omitempty"`
-	IntegrationType *ListNetworkServers200ResponseAllOfNetworkServersInnerIntegrationIntegrationType `json:"integrationType,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Type                 *string                                                                          `json:"type,omitempty"`
+	IntegrationType      *ListNetworkServers200ResponseAllOfNetworkServersInnerIntegrationIntegrationType `json:"integrationType,omitempty"`
+	AdditionalProperties map[string]interface{}                                                           `json:",remain"`
 }
 
 type _ListNetworkServers200ResponseAllOfNetworkServersInnerIntegration ListNetworkServers200ResponseAllOfNetworkServersInnerIntegration
@@ -176,7 +176,7 @@ func (o *ListNetworkServers200ResponseAllOfNetworkServersInnerIntegration) SetIn
 }
 
 func (o ListNetworkServers200ResponseAllOfNetworkServersInnerIntegration) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -204,65 +204,8 @@ func (o ListNetworkServers200ResponseAllOfNetworkServersInnerIntegration) ToMap(
 
 	return toSerialize, nil
 }
-
 func (o *ListNetworkServers200ResponseAllOfNetworkServersInnerIntegration) UnmarshalJSON(data []byte) (err error) {
-	varListNetworkServers200ResponseAllOfNetworkServersInnerIntegration := _ListNetworkServers200ResponseAllOfNetworkServersInnerIntegration{}
-
-	err = json.Unmarshal(data, &varListNetworkServers200ResponseAllOfNetworkServersInnerIntegration)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListNetworkServers200ResponseAllOfNetworkServersInnerIntegration(varListNetworkServers200ResponseAllOfNetworkServersInnerIntegration)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "integrationType")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListNetworkServers200ResponseAllOfNetworkServersInnerIntegration struct {
-	value *ListNetworkServers200ResponseAllOfNetworkServersInnerIntegration
-	isSet bool
-}
-
-func (v NullableListNetworkServers200ResponseAllOfNetworkServersInnerIntegration) Get() *ListNetworkServers200ResponseAllOfNetworkServersInnerIntegration {
-	return v.value
-}
-
-func (v *NullableListNetworkServers200ResponseAllOfNetworkServersInnerIntegration) Set(val *ListNetworkServers200ResponseAllOfNetworkServersInnerIntegration) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListNetworkServers200ResponseAllOfNetworkServersInnerIntegration) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListNetworkServers200ResponseAllOfNetworkServersInnerIntegration) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListNetworkServers200ResponseAllOfNetworkServersInnerIntegration(val *ListNetworkServers200ResponseAllOfNetworkServersInnerIntegration) *NullableListNetworkServers200ResponseAllOfNetworkServersInnerIntegration {
-	return &NullableListNetworkServers200ResponseAllOfNetworkServersInnerIntegration{value: val, isSet: true}
-}
-
-func (v NullableListNetworkServers200ResponseAllOfNetworkServersInnerIntegration) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListNetworkServers200ResponseAllOfNetworkServersInnerIntegration) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

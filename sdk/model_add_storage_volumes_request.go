@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the AddStorageVolumesRequest type satisfies the MappedNullable interface at compile time
@@ -21,8 +20,8 @@ var _ MappedNullable = &AddStorageVolumesRequest{}
 
 // AddStorageVolumesRequest struct for AddStorageVolumesRequest
 type AddStorageVolumesRequest struct {
-	StorageVolume AddStorageVolumesRequestStorageVolume `json:"storageVolume"`
-	AdditionalProperties map[string]interface{}
+	StorageVolume        AddStorageVolumesRequestStorageVolume `json:"storageVolume"`
+	AdditionalProperties map[string]interface{}                `json:",remain"`
 }
 
 type _AddStorageVolumesRequest AddStorageVolumesRequest
@@ -70,7 +69,7 @@ func (o *AddStorageVolumesRequest) SetStorageVolume(v AddStorageVolumesRequestSt
 }
 
 func (o AddStorageVolumesRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -87,83 +86,8 @@ func (o AddStorageVolumesRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *AddStorageVolumesRequest) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"storageVolume",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varAddStorageVolumesRequest := _AddStorageVolumesRequest{}
-
-	err = json.Unmarshal(data, &varAddStorageVolumesRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddStorageVolumesRequest(varAddStorageVolumesRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "storageVolume")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddStorageVolumesRequest struct {
-	value *AddStorageVolumesRequest
-	isSet bool
-}
-
-func (v NullableAddStorageVolumesRequest) Get() *AddStorageVolumesRequest {
-	return v.value
-}
-
-func (v *NullableAddStorageVolumesRequest) Set(val *AddStorageVolumesRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddStorageVolumesRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddStorageVolumesRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddStorageVolumesRequest(val *AddStorageVolumesRequest) *NullableAddStorageVolumesRequest {
-	return &NullableAddStorageVolumesRequest{value: val, isSet: true}
-}
-
-func (v NullableAddStorageVolumesRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddStorageVolumesRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

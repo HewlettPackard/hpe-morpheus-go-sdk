@@ -20,8 +20,8 @@ var _ MappedNullable = &ListUsersAvailableRoles200Response{}
 
 // ListUsersAvailableRoles200Response struct for ListUsersAvailableRoles200Response
 type ListUsersAvailableRoles200Response struct {
-	Roles []ListUsersAvailableRoles200ResponseRolesInner `json:"roles,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Roles                []ListUsersAvailableRoles200ResponseRolesInner `json:"roles,omitempty"`
+	AdditionalProperties map[string]interface{}                         `json:",remain"`
 }
 
 type _ListUsersAvailableRoles200Response ListUsersAvailableRoles200Response
@@ -76,7 +76,7 @@ func (o *ListUsersAvailableRoles200Response) SetRoles(v []ListUsersAvailableRole
 }
 
 func (o ListUsersAvailableRoles200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o ListUsersAvailableRoles200Response) ToMap() (map[string]interface{}, err
 
 	return toSerialize, nil
 }
-
 func (o *ListUsersAvailableRoles200Response) UnmarshalJSON(data []byte) (err error) {
-	varListUsersAvailableRoles200Response := _ListUsersAvailableRoles200Response{}
-
-	err = json.Unmarshal(data, &varListUsersAvailableRoles200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListUsersAvailableRoles200Response(varListUsersAvailableRoles200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "roles")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListUsersAvailableRoles200Response struct {
-	value *ListUsersAvailableRoles200Response
-	isSet bool
-}
-
-func (v NullableListUsersAvailableRoles200Response) Get() *ListUsersAvailableRoles200Response {
-	return v.value
-}
-
-func (v *NullableListUsersAvailableRoles200Response) Set(val *ListUsersAvailableRoles200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListUsersAvailableRoles200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListUsersAvailableRoles200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListUsersAvailableRoles200Response(val *ListUsersAvailableRoles200Response) *NullableListUsersAvailableRoles200Response {
-	return &NullableListUsersAvailableRoles200Response{value: val, isSet: true}
-}
-
-func (v NullableListUsersAvailableRoles200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListUsersAvailableRoles200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

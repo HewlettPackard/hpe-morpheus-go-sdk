@@ -20,8 +20,8 @@ var _ MappedNullable = &UpdateGuidanceSettings200Response{}
 
 // UpdateGuidanceSettings200Response struct for UpdateGuidanceSettings200Response
 type UpdateGuidanceSettings200Response struct {
-	Success *bool `json:"success,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Success              *bool                  `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _UpdateGuidanceSettings200Response UpdateGuidanceSettings200Response
@@ -76,7 +76,7 @@ func (o *UpdateGuidanceSettings200Response) SetSuccess(v bool) {
 }
 
 func (o UpdateGuidanceSettings200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o UpdateGuidanceSettings200Response) ToMap() (map[string]interface{}, erro
 
 	return toSerialize, nil
 }
-
 func (o *UpdateGuidanceSettings200Response) UnmarshalJSON(data []byte) (err error) {
-	varUpdateGuidanceSettings200Response := _UpdateGuidanceSettings200Response{}
-
-	err = json.Unmarshal(data, &varUpdateGuidanceSettings200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateGuidanceSettings200Response(varUpdateGuidanceSettings200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "success")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateGuidanceSettings200Response struct {
-	value *UpdateGuidanceSettings200Response
-	isSet bool
-}
-
-func (v NullableUpdateGuidanceSettings200Response) Get() *UpdateGuidanceSettings200Response {
-	return v.value
-}
-
-func (v *NullableUpdateGuidanceSettings200Response) Set(val *UpdateGuidanceSettings200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateGuidanceSettings200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateGuidanceSettings200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateGuidanceSettings200Response(val *UpdateGuidanceSettings200Response) *NullableUpdateGuidanceSettings200Response {
-	return &NullableUpdateGuidanceSettings200Response{value: val, isSet: true}
-}
-
-func (v NullableUpdateGuidanceSettings200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateGuidanceSettings200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

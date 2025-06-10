@@ -19,18 +19,33 @@ import (
 // very silly way of avoiding `"fmt" imported and not used` errors
 var _ fmt.Stringer
 
-
 // AddBaremetalHostRequestServerComputeServerType struct for AddBaremetalHostRequestServerComputeServerType
 type AddBaremetalHostRequestServerComputeServerType struct {
-	AddBaremetalHostRequestServerComputeServerTypeAnyOf *AddBaremetalHostRequestServerComputeServerTypeAnyOf
+	AddBaremetalHostRequestServerComputeServerTypeAnyOf  *AddBaremetalHostRequestServerComputeServerTypeAnyOf
 	AddBaremetalHostRequestServerComputeServerTypeAnyOf1 *AddBaremetalHostRequestServerComputeServerTypeAnyOf1
+}
+
+func (dst *AddBaremetalHostRequestServerComputeServerType) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &AddBaremetalHostRequestServerComputeServerType{}
+	}
+
+	if out, ok := data.(AddBaremetalHostRequestServerComputeServerTypeAnyOf); ok {
+		dst.AddBaremetalHostRequestServerComputeServerTypeAnyOf = &out
+	}
+
+	if out, ok := data.(AddBaremetalHostRequestServerComputeServerTypeAnyOf1); ok {
+		dst.AddBaremetalHostRequestServerComputeServerTypeAnyOf1 = &out
+	}
+
+	return dst, nil
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *AddBaremetalHostRequestServerComputeServerType) UnmarshalJSON(data []byte) error {
 	var err error
 	// try to unmarshal JSON data into AddBaremetalHostRequestServerComputeServerTypeAnyOf
-	err = json.Unmarshal(data, &dst.AddBaremetalHostRequestServerComputeServerTypeAnyOf);
+	err = json.Unmarshal(data, &dst.AddBaremetalHostRequestServerComputeServerTypeAnyOf)
 	if err == nil {
 		jsonAddBaremetalHostRequestServerComputeServerTypeAnyOf, _ := json.Marshal(dst.AddBaremetalHostRequestServerComputeServerTypeAnyOf)
 		if string(jsonAddBaremetalHostRequestServerComputeServerTypeAnyOf) == "{}" { // empty struct
@@ -43,7 +58,7 @@ func (dst *AddBaremetalHostRequestServerComputeServerType) UnmarshalJSON(data []
 	}
 
 	// try to unmarshal JSON data into AddBaremetalHostRequestServerComputeServerTypeAnyOf1
-	err = json.Unmarshal(data, &dst.AddBaremetalHostRequestServerComputeServerTypeAnyOf1);
+	err = json.Unmarshal(data, &dst.AddBaremetalHostRequestServerComputeServerTypeAnyOf1)
 	if err == nil {
 		jsonAddBaremetalHostRequestServerComputeServerTypeAnyOf1, _ := json.Marshal(dst.AddBaremetalHostRequestServerComputeServerTypeAnyOf1)
 		if string(jsonAddBaremetalHostRequestServerComputeServerTypeAnyOf1) == "{}" { // empty struct
@@ -70,7 +85,6 @@ func (src AddBaremetalHostRequestServerComputeServerType) MarshalJSON() ([]byte,
 
 	return nil, nil // no data in anyOf schemas
 }
-
 
 type NullableAddBaremetalHostRequestServerComputeServerType struct {
 	value *AddBaremetalHostRequestServerComputeServerType
@@ -107,5 +121,3 @@ func (v *NullableAddBaremetalHostRequestServerComputeServerType) UnmarshalJSON(s
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

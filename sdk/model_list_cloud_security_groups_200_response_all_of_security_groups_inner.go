@@ -20,11 +20,11 @@ var _ MappedNullable = &ListCloudSecurityGroups200ResponseAllOfSecurityGroupsInn
 
 // ListCloudSecurityGroups200ResponseAllOfSecurityGroupsInner struct for ListCloudSecurityGroups200ResponseAllOfSecurityGroupsInner
 type ListCloudSecurityGroups200ResponseAllOfSecurityGroupsInner struct {
-	Id *int32 `json:"id,omitempty"`
-	AccountId *int32 `json:"accountId,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Description *string `json:"description,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int32                 `json:"id,omitempty"`
+	AccountId            *int32                 `json:"accountId,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	Description          *string                `json:"description,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListCloudSecurityGroups200ResponseAllOfSecurityGroupsInner ListCloudSecurityGroups200ResponseAllOfSecurityGroupsInner
@@ -175,7 +175,7 @@ func (o *ListCloudSecurityGroups200ResponseAllOfSecurityGroupsInner) SetDescript
 }
 
 func (o ListCloudSecurityGroups200ResponseAllOfSecurityGroupsInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -203,65 +203,8 @@ func (o ListCloudSecurityGroups200ResponseAllOfSecurityGroupsInner) ToMap() (map
 
 	return toSerialize, nil
 }
-
 func (o *ListCloudSecurityGroups200ResponseAllOfSecurityGroupsInner) UnmarshalJSON(data []byte) (err error) {
-	varListCloudSecurityGroups200ResponseAllOfSecurityGroupsInner := _ListCloudSecurityGroups200ResponseAllOfSecurityGroupsInner{}
-
-	err = json.Unmarshal(data, &varListCloudSecurityGroups200ResponseAllOfSecurityGroupsInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListCloudSecurityGroups200ResponseAllOfSecurityGroupsInner(varListCloudSecurityGroups200ResponseAllOfSecurityGroupsInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "accountId")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListCloudSecurityGroups200ResponseAllOfSecurityGroupsInner struct {
-	value *ListCloudSecurityGroups200ResponseAllOfSecurityGroupsInner
-	isSet bool
-}
-
-func (v NullableListCloudSecurityGroups200ResponseAllOfSecurityGroupsInner) Get() *ListCloudSecurityGroups200ResponseAllOfSecurityGroupsInner {
-	return v.value
-}
-
-func (v *NullableListCloudSecurityGroups200ResponseAllOfSecurityGroupsInner) Set(val *ListCloudSecurityGroups200ResponseAllOfSecurityGroupsInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListCloudSecurityGroups200ResponseAllOfSecurityGroupsInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListCloudSecurityGroups200ResponseAllOfSecurityGroupsInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListCloudSecurityGroups200ResponseAllOfSecurityGroupsInner(val *ListCloudSecurityGroups200ResponseAllOfSecurityGroupsInner) *NullableListCloudSecurityGroups200ResponseAllOfSecurityGroupsInner {
-	return &NullableListCloudSecurityGroups200ResponseAllOfSecurityGroupsInner{value: val, isSet: true}
-}
-
-func (v NullableListCloudSecurityGroups200ResponseAllOfSecurityGroupsInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListCloudSecurityGroups200ResponseAllOfSecurityGroupsInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

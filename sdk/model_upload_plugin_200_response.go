@@ -20,9 +20,9 @@ var _ MappedNullable = &UploadPlugin200Response{}
 
 // UploadPlugin200Response struct for UploadPlugin200Response
 type UploadPlugin200Response struct {
-	Plugin *ListPlugins200ResponseAllOfPluginsInner `json:"plugin,omitempty"`
-	Success *bool `json:"success,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Plugin               *ListPlugins200ResponseAllOfPluginsInner `json:"plugin,omitempty"`
+	Success              *bool                                    `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{}                   `json:",remain"`
 }
 
 type _UploadPlugin200Response UploadPlugin200Response
@@ -109,7 +109,7 @@ func (o *UploadPlugin200Response) SetSuccess(v bool) {
 }
 
 func (o UploadPlugin200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -131,63 +131,8 @@ func (o UploadPlugin200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *UploadPlugin200Response) UnmarshalJSON(data []byte) (err error) {
-	varUploadPlugin200Response := _UploadPlugin200Response{}
-
-	err = json.Unmarshal(data, &varUploadPlugin200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UploadPlugin200Response(varUploadPlugin200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "plugin")
-		delete(additionalProperties, "success")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUploadPlugin200Response struct {
-	value *UploadPlugin200Response
-	isSet bool
-}
-
-func (v NullableUploadPlugin200Response) Get() *UploadPlugin200Response {
-	return v.value
-}
-
-func (v *NullableUploadPlugin200Response) Set(val *UploadPlugin200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUploadPlugin200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUploadPlugin200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUploadPlugin200Response(val *UploadPlugin200Response) *NullableUploadPlugin200Response {
-	return &NullableUploadPlugin200Response{value: val, isSet: true}
-}
-
-func (v NullableUploadPlugin200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUploadPlugin200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

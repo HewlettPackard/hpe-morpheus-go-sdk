@@ -21,25 +21,25 @@ var _ MappedNullable = &TaskLibraryTemplateConfig{}
 
 // TaskLibraryTemplateConfig struct for TaskLibraryTemplateConfig
 type TaskLibraryTemplateConfig struct {
-	Id *int64 `json:"id,omitempty"`
-	AccountId *int64 `json:"accountId,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Code *string `json:"code,omitempty"`
-	TaskType *ListTasks200ResponseAllOfTasksInnerAnyOf8TaskType `json:"taskType,omitempty"`
-	Labels []string `json:"labels,omitempty"`
-	Visibility *string `json:"visibility,omitempty"`
-	TaskOptions *ListTasks200ResponseAllOfTasksInnerAnyOf8TaskOptions `json:"taskOptions,omitempty"`
-	File *ListTasks200ResponseAllOfTasksInnerAnyOfFile `json:"file,omitempty"`
-	ResultType *string `json:"resultType,omitempty"`
-	ExecuteTarget *string `json:"executeTarget,omitempty"`
-	Retryable *bool `json:"retryable,omitempty"`
-	RetryCount *int64 `json:"retryCount,omitempty"`
-	RetryDelaySeconds *int64 `json:"retryDelaySeconds,omitempty"`
-	AllowCustomConfig *bool `json:"allowCustomConfig,omitempty"`
-	Credential *ListClouds200ResponseAllOfZonesInnerCredentialAnyOf `json:"credential,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                `json:"id,omitempty"`
+	AccountId            *int64                                                `json:"accountId,omitempty"`
+	Name                 *string                                               `json:"name,omitempty"`
+	Code                 *string                                               `json:"code,omitempty"`
+	TaskType             *ListTasks200ResponseAllOfTasksInnerAnyOf8TaskType    `json:"taskType,omitempty"`
+	Labels               []string                                              `json:"labels,omitempty"`
+	Visibility           *string                                               `json:"visibility,omitempty"`
+	TaskOptions          *ListTasks200ResponseAllOfTasksInnerAnyOf8TaskOptions `json:"taskOptions,omitempty"`
+	File                 *ListTasks200ResponseAllOfTasksInnerAnyOfFile         `json:"file,omitempty"`
+	ResultType           *string                                               `json:"resultType,omitempty"`
+	ExecuteTarget        *string                                               `json:"executeTarget,omitempty"`
+	Retryable            *bool                                                 `json:"retryable,omitempty"`
+	RetryCount           *int64                                                `json:"retryCount,omitempty"`
+	RetryDelaySeconds    *int64                                                `json:"retryDelaySeconds,omitempty"`
+	AllowCustomConfig    *bool                                                 `json:"allowCustomConfig,omitempty"`
+	Credential           *ListClouds200ResponseAllOfZonesInnerCredentialAnyOf  `json:"credential,omitempty"`
+	DateCreated          *time.Time                                            `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                            `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}                                `json:",remain"`
 }
 
 type _TaskLibraryTemplateConfig TaskLibraryTemplateConfig
@@ -638,7 +638,7 @@ func (o *TaskLibraryTemplateConfig) SetLastUpdated(v time.Time) {
 }
 
 func (o TaskLibraryTemplateConfig) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -708,79 +708,8 @@ func (o TaskLibraryTemplateConfig) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *TaskLibraryTemplateConfig) UnmarshalJSON(data []byte) (err error) {
-	varTaskLibraryTemplateConfig := _TaskLibraryTemplateConfig{}
-
-	err = json.Unmarshal(data, &varTaskLibraryTemplateConfig)
-
-	if err != nil {
-		return err
-	}
-
-	*o = TaskLibraryTemplateConfig(varTaskLibraryTemplateConfig)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "accountId")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "taskType")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "taskOptions")
-		delete(additionalProperties, "file")
-		delete(additionalProperties, "resultType")
-		delete(additionalProperties, "executeTarget")
-		delete(additionalProperties, "retryable")
-		delete(additionalProperties, "retryCount")
-		delete(additionalProperties, "retryDelaySeconds")
-		delete(additionalProperties, "allowCustomConfig")
-		delete(additionalProperties, "credential")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableTaskLibraryTemplateConfig struct {
-	value *TaskLibraryTemplateConfig
-	isSet bool
-}
-
-func (v NullableTaskLibraryTemplateConfig) Get() *TaskLibraryTemplateConfig {
-	return v.value
-}
-
-func (v *NullableTaskLibraryTemplateConfig) Set(val *TaskLibraryTemplateConfig) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableTaskLibraryTemplateConfig) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableTaskLibraryTemplateConfig) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableTaskLibraryTemplateConfig(val *TaskLibraryTemplateConfig) *NullableTaskLibraryTemplateConfig {
-	return &NullableTaskLibraryTemplateConfig{value: val, isSet: true}
-}
-
-func (v NullableTaskLibraryTemplateConfig) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableTaskLibraryTemplateConfig) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

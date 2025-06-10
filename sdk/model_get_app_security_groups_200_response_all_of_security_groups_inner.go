@@ -20,11 +20,11 @@ var _ MappedNullable = &GetAppSecurityGroups200ResponseAllOfSecurityGroupsInner{
 
 // GetAppSecurityGroups200ResponseAllOfSecurityGroupsInner struct for GetAppSecurityGroups200ResponseAllOfSecurityGroupsInner
 type GetAppSecurityGroups200ResponseAllOfSecurityGroupsInner struct {
-	Id *int64 `json:"id,omitempty"`
-	AccountId *int64 `json:"accountId,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Description *string `json:"description,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	AccountId            *int64                 `json:"accountId,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	Description          *string                `json:"description,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _GetAppSecurityGroups200ResponseAllOfSecurityGroupsInner GetAppSecurityGroups200ResponseAllOfSecurityGroupsInner
@@ -175,7 +175,7 @@ func (o *GetAppSecurityGroups200ResponseAllOfSecurityGroupsInner) SetDescription
 }
 
 func (o GetAppSecurityGroups200ResponseAllOfSecurityGroupsInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -203,65 +203,8 @@ func (o GetAppSecurityGroups200ResponseAllOfSecurityGroupsInner) ToMap() (map[st
 
 	return toSerialize, nil
 }
-
 func (o *GetAppSecurityGroups200ResponseAllOfSecurityGroupsInner) UnmarshalJSON(data []byte) (err error) {
-	varGetAppSecurityGroups200ResponseAllOfSecurityGroupsInner := _GetAppSecurityGroups200ResponseAllOfSecurityGroupsInner{}
-
-	err = json.Unmarshal(data, &varGetAppSecurityGroups200ResponseAllOfSecurityGroupsInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetAppSecurityGroups200ResponseAllOfSecurityGroupsInner(varGetAppSecurityGroups200ResponseAllOfSecurityGroupsInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "accountId")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetAppSecurityGroups200ResponseAllOfSecurityGroupsInner struct {
-	value *GetAppSecurityGroups200ResponseAllOfSecurityGroupsInner
-	isSet bool
-}
-
-func (v NullableGetAppSecurityGroups200ResponseAllOfSecurityGroupsInner) Get() *GetAppSecurityGroups200ResponseAllOfSecurityGroupsInner {
-	return v.value
-}
-
-func (v *NullableGetAppSecurityGroups200ResponseAllOfSecurityGroupsInner) Set(val *GetAppSecurityGroups200ResponseAllOfSecurityGroupsInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetAppSecurityGroups200ResponseAllOfSecurityGroupsInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetAppSecurityGroups200ResponseAllOfSecurityGroupsInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetAppSecurityGroups200ResponseAllOfSecurityGroupsInner(val *GetAppSecurityGroups200ResponseAllOfSecurityGroupsInner) *NullableGetAppSecurityGroups200ResponseAllOfSecurityGroupsInner {
-	return &NullableGetAppSecurityGroups200ResponseAllOfSecurityGroupsInner{value: val, isSet: true}
-}
-
-func (v NullableGetAppSecurityGroups200ResponseAllOfSecurityGroupsInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetAppSecurityGroups200ResponseAllOfSecurityGroupsInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

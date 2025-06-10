@@ -20,44 +20,44 @@ var _ MappedNullable = &Subnet{}
 
 // Subnet struct for Subnet
 type Subnet struct {
-	Id *int64 `json:"id,omitempty"`
-	Code *string `json:"code,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Labels []string `json:"labels,omitempty"`
-	Active *bool `json:"active,omitempty"`
-	Description *string `json:"description,omitempty"`
-	ExternalId *string `json:"externalId,omitempty"`
-	UniqueId *string `json:"uniqueId,omitempty"`
-	AddressPrefix *string `json:"addressPrefix,omitempty"`
-	Cidr *string `json:"cidr,omitempty"`
-	Gateway *string `json:"gateway,omitempty"`
-	Netmask *string `json:"netmask,omitempty"`
-	SubnetAddress *string `json:"subnetAddress,omitempty"`
-	TftpServer *string `json:"tftpServer,omitempty"`
-	BootFile *string `json:"bootFile,omitempty"`
-	Pool *string `json:"pool,omitempty"`
-	DhcpServer *bool `json:"dhcpServer,omitempty"`
-	HasFloatingIps *bool `json:"hasFloatingIps,omitempty"`
-	DhcpIp *string `json:"dhcpIp,omitempty"`
-	DnsPrimary *string `json:"dnsPrimary,omitempty"`
-	DnsSecondary *string `json:"dnsSecondary,omitempty"`
-	DhcpStart *string `json:"dhcpStart,omitempty"`
-	DhcpEnd *string `json:"dhcpEnd,omitempty"`
-	DhcpRange *string `json:"dhcpRange,omitempty"`
-	NetworkProxy *string `json:"networkProxy,omitempty"`
-	NetworkDomain *string `json:"networkDomain,omitempty"`
-	SearchDomains *string `json:"searchDomains,omitempty"`
-	DefaultNetwork *bool `json:"defaultNetwork,omitempty"`
-	AssignPublicIp *bool `json:"assignPublicIp,omitempty"`
-	Visibility *string `json:"visibility,omitempty"`
-	Status *GetAppState200ResponseAllOfInputProvidersInner `json:"status,omitempty"`
-	Network *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"network,omitempty"`
-	Type *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"type,omitempty"`
-	Account *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"account,omitempty"`
-	SecurityGroups []map[string]interface{} `json:"securityGroups,omitempty"`
-	Tenants []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"tenants,omitempty"`
-	ResourcePermission *GetNetworkSubnets200ResponseAllOfSubnetsInnerResourcePermission `json:"resourcePermission,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                                   `json:"id,omitempty"`
+	Code                 *string                                                                  `json:"code,omitempty"`
+	Name                 *string                                                                  `json:"name,omitempty"`
+	Labels               []string                                                                 `json:"labels,omitempty"`
+	Active               *bool                                                                    `json:"active,omitempty"`
+	Description          *string                                                                  `json:"description,omitempty"`
+	ExternalId           *string                                                                  `json:"externalId,omitempty"`
+	UniqueId             *string                                                                  `json:"uniqueId,omitempty"`
+	AddressPrefix        *string                                                                  `json:"addressPrefix,omitempty"`
+	Cidr                 *string                                                                  `json:"cidr,omitempty"`
+	Gateway              *string                                                                  `json:"gateway,omitempty"`
+	Netmask              *string                                                                  `json:"netmask,omitempty"`
+	SubnetAddress        *string                                                                  `json:"subnetAddress,omitempty"`
+	TftpServer           *string                                                                  `json:"tftpServer,omitempty"`
+	BootFile             *string                                                                  `json:"bootFile,omitempty"`
+	Pool                 *string                                                                  `json:"pool,omitempty"`
+	DhcpServer           *bool                                                                    `json:"dhcpServer,omitempty"`
+	HasFloatingIps       *bool                                                                    `json:"hasFloatingIps,omitempty"`
+	DhcpIp               *string                                                                  `json:"dhcpIp,omitempty"`
+	DnsPrimary           *string                                                                  `json:"dnsPrimary,omitempty"`
+	DnsSecondary         *string                                                                  `json:"dnsSecondary,omitempty"`
+	DhcpStart            *string                                                                  `json:"dhcpStart,omitempty"`
+	DhcpEnd              *string                                                                  `json:"dhcpEnd,omitempty"`
+	DhcpRange            *string                                                                  `json:"dhcpRange,omitempty"`
+	NetworkProxy         *string                                                                  `json:"networkProxy,omitempty"`
+	NetworkDomain        *string                                                                  `json:"networkDomain,omitempty"`
+	SearchDomains        *string                                                                  `json:"searchDomains,omitempty"`
+	DefaultNetwork       *bool                                                                    `json:"defaultNetwork,omitempty"`
+	AssignPublicIp       *bool                                                                    `json:"assignPublicIp,omitempty"`
+	Visibility           *string                                                                  `json:"visibility,omitempty"`
+	Status               *GetAppState200ResponseAllOfInputProvidersInner                          `json:"status,omitempty"`
+	Network              *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner  `json:"network,omitempty"`
+	Type                 *ListBackupSettings200ResponseBackupSettingsDefaultSchedule              `json:"type,omitempty"`
+	Account              *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner  `json:"account,omitempty"`
+	SecurityGroups       []map[string]interface{}                                                 `json:"securityGroups,omitempty"`
+	Tenants              []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"tenants,omitempty"`
+	ResourcePermission   *GetNetworkSubnets200ResponseAllOfSubnetsInnerResourcePermission         `json:"resourcePermission,omitempty"`
+	AdditionalProperties map[string]interface{}                                                   `json:",remain"`
 }
 
 type _Subnet Subnet
@@ -1264,7 +1264,7 @@ func (o *Subnet) SetResourcePermission(v GetNetworkSubnets200ResponseAllOfSubnet
 }
 
 func (o Subnet) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1391,98 +1391,8 @@ func (o Subnet) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *Subnet) UnmarshalJSON(data []byte) (err error) {
-	varSubnet := _Subnet{}
-
-	err = json.Unmarshal(data, &varSubnet)
-
-	if err != nil {
-		return err
-	}
-
-	*o = Subnet(varSubnet)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "active")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "externalId")
-		delete(additionalProperties, "uniqueId")
-		delete(additionalProperties, "addressPrefix")
-		delete(additionalProperties, "cidr")
-		delete(additionalProperties, "gateway")
-		delete(additionalProperties, "netmask")
-		delete(additionalProperties, "subnetAddress")
-		delete(additionalProperties, "tftpServer")
-		delete(additionalProperties, "bootFile")
-		delete(additionalProperties, "pool")
-		delete(additionalProperties, "dhcpServer")
-		delete(additionalProperties, "hasFloatingIps")
-		delete(additionalProperties, "dhcpIp")
-		delete(additionalProperties, "dnsPrimary")
-		delete(additionalProperties, "dnsSecondary")
-		delete(additionalProperties, "dhcpStart")
-		delete(additionalProperties, "dhcpEnd")
-		delete(additionalProperties, "dhcpRange")
-		delete(additionalProperties, "networkProxy")
-		delete(additionalProperties, "networkDomain")
-		delete(additionalProperties, "searchDomains")
-		delete(additionalProperties, "defaultNetwork")
-		delete(additionalProperties, "assignPublicIp")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "network")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "account")
-		delete(additionalProperties, "securityGroups")
-		delete(additionalProperties, "tenants")
-		delete(additionalProperties, "resourcePermission")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableSubnet struct {
-	value *Subnet
-	isSet bool
-}
-
-func (v NullableSubnet) Get() *Subnet {
-	return v.value
-}
-
-func (v *NullableSubnet) Set(val *Subnet) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSubnet) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSubnet) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSubnet(val *Subnet) *NullableSubnet {
-	return &NullableSubnet{value: val, isSet: true}
-}
-
-func (v NullableSubnet) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSubnet) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

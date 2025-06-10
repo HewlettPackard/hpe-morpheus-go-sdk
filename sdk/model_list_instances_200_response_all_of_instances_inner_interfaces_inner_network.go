@@ -20,13 +20,13 @@ var _ MappedNullable = &ListInstances200ResponseAllOfInstancesInnerInterfacesInn
 
 // ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork struct for ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork
 type ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork struct {
-	Id *int64 `json:"id,omitempty"`
-	Group *int32 `json:"group,omitempty"`
-	Subnet *string `json:"subnet,omitempty"`
-	DhcpServer *bool `json:"dhcpServer,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Pool *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"pool,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                             `json:"id,omitempty"`
+	Group                *int32                                             `json:"group,omitempty"`
+	Subnet               *string                                            `json:"subnet,omitempty"`
+	DhcpServer           *bool                                              `json:"dhcpServer,omitempty"`
+	Name                 *string                                            `json:"name,omitempty"`
+	Pool                 *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"pool,omitempty"`
+	AdditionalProperties map[string]interface{}                             `json:",remain"`
 }
 
 type _ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork
@@ -241,7 +241,7 @@ func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork) SetP
 }
 
 func (o ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -275,67 +275,8 @@ func (o ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork) ToMap
 
 	return toSerialize, nil
 }
-
 func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork) UnmarshalJSON(data []byte) (err error) {
-	varListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork := _ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork{}
-
-	err = json.Unmarshal(data, &varListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork(varListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "group")
-		delete(additionalProperties, "subnet")
-		delete(additionalProperties, "dhcpServer")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "pool")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork struct {
-	value *ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork
-	isSet bool
-}
-
-func (v NullableListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork) Get() *ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork {
-	return v.value
-}
-
-func (v *NullableListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork) Set(val *ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork(val *ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork) *NullableListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork {
-	return &NullableListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork{value: val, isSet: true}
-}
-
-func (v NullableListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

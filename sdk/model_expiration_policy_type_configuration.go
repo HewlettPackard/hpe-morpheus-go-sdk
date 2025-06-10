@@ -18,19 +18,19 @@ import (
 // checks if the ExpirationPolicyTypeConfiguration type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &ExpirationPolicyTypeConfiguration{}
 
-// ExpirationPolicyTypeConfiguration Configuration settings for the following policy types: - Expiration 
+// ExpirationPolicyTypeConfiguration Configuration settings for the following policy types: - Expiration
 type ExpirationPolicyTypeConfiguration struct {
-	LifecycleType *string `json:"lifecycleType,omitempty"`
-	LifecycleAge *string `json:"lifecycleAge,omitempty"`
-	LifecycleRenewal *string `json:"lifecycleRenewal,omitempty"`
-	LifecycleNotify *string `json:"lifecycleNotify,omitempty"`
-	LifecycleMessage *string `json:"lifecycleMessage,omitempty"`
-	LifecycleAutoRenew *string `json:"lifecycleAutoRenew,omitempty"`
-	LifecycleAllowExtend *string `json:"lifecycleAllowExtend,omitempty"`
-	LifecycleExtensionsBeforeApproval *string `json:"lifecycleExtensionsBeforeApproval,omitempty"`
-	AccountIntegrationId *string `json:"accountIntegrationId,omitempty"`
-	LifecycleHideFixed *bool `json:"lifecycleHideFixed,omitempty"`
-	AdditionalProperties map[string]interface{}
+	LifecycleType                     *string                `json:"lifecycleType,omitempty"`
+	LifecycleAge                      *string                `json:"lifecycleAge,omitempty"`
+	LifecycleRenewal                  *string                `json:"lifecycleRenewal,omitempty"`
+	LifecycleNotify                   *string                `json:"lifecycleNotify,omitempty"`
+	LifecycleMessage                  *string                `json:"lifecycleMessage,omitempty"`
+	LifecycleAutoRenew                *string                `json:"lifecycleAutoRenew,omitempty"`
+	LifecycleAllowExtend              *string                `json:"lifecycleAllowExtend,omitempty"`
+	LifecycleExtensionsBeforeApproval *string                `json:"lifecycleExtensionsBeforeApproval,omitempty"`
+	AccountIntegrationId              *string                `json:"accountIntegrationId,omitempty"`
+	LifecycleHideFixed                *bool                  `json:"lifecycleHideFixed,omitempty"`
+	AdditionalProperties              map[string]interface{} `json:",remain"`
 }
 
 type _ExpirationPolicyTypeConfiguration ExpirationPolicyTypeConfiguration
@@ -381,7 +381,7 @@ func (o *ExpirationPolicyTypeConfiguration) SetLifecycleHideFixed(v bool) {
 }
 
 func (o ExpirationPolicyTypeConfiguration) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -427,71 +427,8 @@ func (o ExpirationPolicyTypeConfiguration) ToMap() (map[string]interface{}, erro
 
 	return toSerialize, nil
 }
-
 func (o *ExpirationPolicyTypeConfiguration) UnmarshalJSON(data []byte) (err error) {
-	varExpirationPolicyTypeConfiguration := _ExpirationPolicyTypeConfiguration{}
-
-	err = json.Unmarshal(data, &varExpirationPolicyTypeConfiguration)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ExpirationPolicyTypeConfiguration(varExpirationPolicyTypeConfiguration)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "lifecycleType")
-		delete(additionalProperties, "lifecycleAge")
-		delete(additionalProperties, "lifecycleRenewal")
-		delete(additionalProperties, "lifecycleNotify")
-		delete(additionalProperties, "lifecycleMessage")
-		delete(additionalProperties, "lifecycleAutoRenew")
-		delete(additionalProperties, "lifecycleAllowExtend")
-		delete(additionalProperties, "lifecycleExtensionsBeforeApproval")
-		delete(additionalProperties, "accountIntegrationId")
-		delete(additionalProperties, "lifecycleHideFixed")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableExpirationPolicyTypeConfiguration struct {
-	value *ExpirationPolicyTypeConfiguration
-	isSet bool
-}
-
-func (v NullableExpirationPolicyTypeConfiguration) Get() *ExpirationPolicyTypeConfiguration {
-	return v.value
-}
-
-func (v *NullableExpirationPolicyTypeConfiguration) Set(val *ExpirationPolicyTypeConfiguration) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableExpirationPolicyTypeConfiguration) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableExpirationPolicyTypeConfiguration) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableExpirationPolicyTypeConfiguration(val *ExpirationPolicyTypeConfiguration) *NullableExpirationPolicyTypeConfiguration {
-	return &NullableExpirationPolicyTypeConfiguration{value: val, isSet: true}
-}
-
-func (v NullableExpirationPolicyTypeConfiguration) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableExpirationPolicyTypeConfiguration) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

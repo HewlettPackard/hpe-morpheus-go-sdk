@@ -22,7 +22,7 @@ var _ MappedNullable = &CreateNetworkRouterBgpNeighborRequest{}
 type CreateNetworkRouterBgpNeighborRequest struct {
 	// For a full list of available options, see bgpOptionTypes in the specific Network Router Type
 	NetworkRouterBgpNeighbor map[string]interface{} `json:"networkRouterBgpNeighbor,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties     map[string]interface{} `json:",remain"`
 }
 
 type _CreateNetworkRouterBgpNeighborRequest CreateNetworkRouterBgpNeighborRequest
@@ -77,7 +77,7 @@ func (o *CreateNetworkRouterBgpNeighborRequest) SetNetworkRouterBgpNeighbor(v ma
 }
 
 func (o CreateNetworkRouterBgpNeighborRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -96,62 +96,8 @@ func (o CreateNetworkRouterBgpNeighborRequest) ToMap() (map[string]interface{}, 
 
 	return toSerialize, nil
 }
-
 func (o *CreateNetworkRouterBgpNeighborRequest) UnmarshalJSON(data []byte) (err error) {
-	varCreateNetworkRouterBgpNeighborRequest := _CreateNetworkRouterBgpNeighborRequest{}
-
-	err = json.Unmarshal(data, &varCreateNetworkRouterBgpNeighborRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = CreateNetworkRouterBgpNeighborRequest(varCreateNetworkRouterBgpNeighborRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "networkRouterBgpNeighbor")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableCreateNetworkRouterBgpNeighborRequest struct {
-	value *CreateNetworkRouterBgpNeighborRequest
-	isSet bool
-}
-
-func (v NullableCreateNetworkRouterBgpNeighborRequest) Get() *CreateNetworkRouterBgpNeighborRequest {
-	return v.value
-}
-
-func (v *NullableCreateNetworkRouterBgpNeighborRequest) Set(val *CreateNetworkRouterBgpNeighborRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableCreateNetworkRouterBgpNeighborRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableCreateNetworkRouterBgpNeighborRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableCreateNetworkRouterBgpNeighborRequest(val *CreateNetworkRouterBgpNeighborRequest) *NullableCreateNetworkRouterBgpNeighborRequest {
-	return &NullableCreateNetworkRouterBgpNeighborRequest{value: val, isSet: true}
-}
-
-func (v NullableCreateNetworkRouterBgpNeighborRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableCreateNetworkRouterBgpNeighborRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

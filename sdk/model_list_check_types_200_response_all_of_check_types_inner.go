@@ -20,16 +20,16 @@ var _ MappedNullable = &ListCheckTypes200ResponseAllOfCheckTypesInner{}
 
 // ListCheckTypes200ResponseAllOfCheckTypesInner struct for ListCheckTypes200ResponseAllOfCheckTypesInner
 type ListCheckTypes200ResponseAllOfCheckTypesInner struct {
-	Id *int64 `json:"id,omitempty"`
-	Code *string `json:"code,omitempty"`
-	Name *string `json:"name,omitempty"`
-	DefaultInterval *int64 `json:"defaultInterval,omitempty"`
-	MetricName *string `json:"metricName,omitempty"`
-	InUptime *bool `json:"inUptime,omitempty"`
-	CreateIncident *bool `json:"createIncident,omitempty"`
-	PushOnly *bool `json:"pushOnly,omitempty"`
-	TunnelSupported *bool `json:"tunnelSupported,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	Code                 *string                `json:"code,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	DefaultInterval      *int64                 `json:"defaultInterval,omitempty"`
+	MetricName           *string                `json:"metricName,omitempty"`
+	InUptime             *bool                  `json:"inUptime,omitempty"`
+	CreateIncident       *bool                  `json:"createIncident,omitempty"`
+	PushOnly             *bool                  `json:"pushOnly,omitempty"`
+	TunnelSupported      *bool                  `json:"tunnelSupported,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListCheckTypes200ResponseAllOfCheckTypesInner ListCheckTypes200ResponseAllOfCheckTypesInner
@@ -340,7 +340,7 @@ func (o *ListCheckTypes200ResponseAllOfCheckTypesInner) SetTunnelSupported(v boo
 }
 
 func (o ListCheckTypes200ResponseAllOfCheckTypesInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -383,70 +383,8 @@ func (o ListCheckTypes200ResponseAllOfCheckTypesInner) ToMap() (map[string]inter
 
 	return toSerialize, nil
 }
-
 func (o *ListCheckTypes200ResponseAllOfCheckTypesInner) UnmarshalJSON(data []byte) (err error) {
-	varListCheckTypes200ResponseAllOfCheckTypesInner := _ListCheckTypes200ResponseAllOfCheckTypesInner{}
-
-	err = json.Unmarshal(data, &varListCheckTypes200ResponseAllOfCheckTypesInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListCheckTypes200ResponseAllOfCheckTypesInner(varListCheckTypes200ResponseAllOfCheckTypesInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "defaultInterval")
-		delete(additionalProperties, "metricName")
-		delete(additionalProperties, "inUptime")
-		delete(additionalProperties, "createIncident")
-		delete(additionalProperties, "pushOnly")
-		delete(additionalProperties, "tunnelSupported")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListCheckTypes200ResponseAllOfCheckTypesInner struct {
-	value *ListCheckTypes200ResponseAllOfCheckTypesInner
-	isSet bool
-}
-
-func (v NullableListCheckTypes200ResponseAllOfCheckTypesInner) Get() *ListCheckTypes200ResponseAllOfCheckTypesInner {
-	return v.value
-}
-
-func (v *NullableListCheckTypes200ResponseAllOfCheckTypesInner) Set(val *ListCheckTypes200ResponseAllOfCheckTypesInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListCheckTypes200ResponseAllOfCheckTypesInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListCheckTypes200ResponseAllOfCheckTypesInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListCheckTypes200ResponseAllOfCheckTypesInner(val *ListCheckTypes200ResponseAllOfCheckTypesInner) *NullableListCheckTypes200ResponseAllOfCheckTypesInner {
-	return &NullableListCheckTypes200ResponseAllOfCheckTypesInner{value: val, isSet: true}
-}
-
-func (v NullableListCheckTypes200ResponseAllOfCheckTypesInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListCheckTypes200ResponseAllOfCheckTypesInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

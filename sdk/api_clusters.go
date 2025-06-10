@@ -21,13 +21,12 @@ import (
 	"strings"
 )
 
-
 // ClustersAPIService ClustersAPI service
 type ClustersAPIService service
 
 type ApiAddClusterRequest struct {
-	ctx context.Context
-	ApiService *ClustersAPIService
+	ctx               context.Context
+	ApiService        *ClustersAPIService
 	addClusterRequest *AddClusterRequest
 }
 
@@ -45,24 +44,25 @@ AddCluster Create a Cluster
 
 This endpoint will create a cluster.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddClusterRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddClusterRequest
 */
 func (a *ClustersAPIService) AddCluster(ctx context.Context) ApiAddClusterRequest {
 	return ApiAddClusterRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddCluster200Response
+//
+//	@return AddCluster200Response
 func (a *ClustersAPIService) AddClusterExecute(r ApiAddClusterRequest) (*AddCluster200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddCluster200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddCluster200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClustersAPIService.AddCluster")
@@ -114,7 +114,7 @@ func (a *ClustersAPIService) AddClusterExecute(r ApiAddClusterRequest) (*AddClus
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -123,8 +123,8 @@ func (a *ClustersAPIService) AddClusterExecute(r ApiAddClusterRequest) (*AddClus
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -134,8 +134,8 @@ func (a *ClustersAPIService) AddClusterExecute(r ApiAddClusterRequest) (*AddClus
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -143,8 +143,8 @@ func (a *ClustersAPIService) AddClusterExecute(r ApiAddClusterRequest) (*AddClus
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -153,9 +153,9 @@ func (a *ClustersAPIService) AddClusterExecute(r ApiAddClusterRequest) (*AddClus
 }
 
 type ApiAddClusterNamespaceRequest struct {
-	ctx context.Context
-	ApiService *ClustersAPIService
-	clusterId int32
+	ctx                        context.Context
+	ApiService                 *ClustersAPIService
+	clusterId                  int32
 	addClusterNamespaceRequest *AddClusterNamespaceRequest
 }
 
@@ -173,26 +173,27 @@ AddClusterNamespace Add Namespace (Kubernetes)
 
 Add Namespace (Kubernetes)
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param clusterId The ID of the cluster
- @return ApiAddClusterNamespaceRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param clusterId The ID of the cluster
+	@return ApiAddClusterNamespaceRequest
 */
 func (a *ClustersAPIService) AddClusterNamespace(ctx context.Context, clusterId int32) ApiAddClusterNamespaceRequest {
 	return ApiAddClusterNamespaceRequest{
 		ApiService: a,
-		ctx: ctx,
-		clusterId: clusterId,
+		ctx:        ctx,
+		clusterId:  clusterId,
 	}
 }
 
 // Execute executes the request
-//  @return AddClusterNamespace200Response
+//
+//	@return AddClusterNamespace200Response
 func (a *ClustersAPIService) AddClusterNamespaceExecute(r ApiAddClusterNamespaceRequest) (*AddClusterNamespace200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddClusterNamespace200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddClusterNamespace200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClustersAPIService.AddClusterNamespace")
@@ -245,7 +246,7 @@ func (a *ClustersAPIService) AddClusterNamespaceExecute(r ApiAddClusterNamespace
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -254,8 +255,8 @@ func (a *ClustersAPIService) AddClusterNamespaceExecute(r ApiAddClusterNamespace
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -265,8 +266,8 @@ func (a *ClustersAPIService) AddClusterNamespaceExecute(r ApiAddClusterNamespace
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -274,8 +275,8 @@ func (a *ClustersAPIService) AddClusterNamespaceExecute(r ApiAddClusterNamespace
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -284,9 +285,9 @@ func (a *ClustersAPIService) AddClusterNamespaceExecute(r ApiAddClusterNamespace
 }
 
 type ApiAddClusterWorkerRequest struct {
-	ctx context.Context
-	ApiService *ClustersAPIService
-	clusterId int32
+	ctx                     context.Context
+	ApiService              *ClustersAPIService
+	clusterId               int32
 	addClusterWorkerRequest *AddClusterWorkerRequest
 }
 
@@ -304,26 +305,27 @@ AddClusterWorker Add Worker
 
 Add Worker
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param clusterId The ID of the cluster
- @return ApiAddClusterWorkerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param clusterId The ID of the cluster
+	@return ApiAddClusterWorkerRequest
 */
 func (a *ClustersAPIService) AddClusterWorker(ctx context.Context, clusterId int32) ApiAddClusterWorkerRequest {
 	return ApiAddClusterWorkerRequest{
 		ApiService: a,
-		ctx: ctx,
-		clusterId: clusterId,
+		ctx:        ctx,
+		clusterId:  clusterId,
 	}
 }
 
 // Execute executes the request
-//  @return AddClusterWorker200Response
+//
+//	@return AddClusterWorker200Response
 func (a *ClustersAPIService) AddClusterWorkerExecute(r ApiAddClusterWorkerRequest) (*AddClusterWorker200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddClusterWorker200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddClusterWorker200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClustersAPIService.AddClusterWorker")
@@ -376,7 +378,7 @@ func (a *ClustersAPIService) AddClusterWorkerExecute(r ApiAddClusterWorkerReques
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -385,8 +387,8 @@ func (a *ClustersAPIService) AddClusterWorkerExecute(r ApiAddClusterWorkerReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -396,8 +398,8 @@ func (a *ClustersAPIService) AddClusterWorkerExecute(r ApiAddClusterWorkerReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -405,8 +407,8 @@ func (a *ClustersAPIService) AddClusterWorkerExecute(r ApiAddClusterWorkerReques
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -415,9 +417,9 @@ func (a *ClustersAPIService) AddClusterWorkerExecute(r ApiAddClusterWorkerReques
 }
 
 type ApiApplyTemplateRequest struct {
-	ctx context.Context
-	ApiService *ClustersAPIService
-	clusterId int32
+	ctx                  context.Context
+	ApiService           *ClustersAPIService
+	clusterId            int32
 	applyTemplateRequest *ApplyTemplateRequest
 }
 
@@ -437,27 +439,27 @@ This endpoint applies the requested template, via Service Url, YAML, or Spec Tem
 
 **Note**: The success response informs of status of submission of request. Results of the actual template application can be assesed with the returned execution id via [/api/execution-request/{uniqueId}](/reference/getexecutionrequest)
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param clusterId The ID of the cluster
- @return ApiApplyTemplateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param clusterId The ID of the cluster
+	@return ApiApplyTemplateRequest
 */
 func (a *ClustersAPIService) ApplyTemplate(ctx context.Context, clusterId int32) ApiApplyTemplateRequest {
 	return ApiApplyTemplateRequest{
 		ApiService: a,
-		ctx: ctx,
-		clusterId: clusterId,
+		ctx:        ctx,
+		clusterId:  clusterId,
 	}
 }
 
 // Execute executes the request
-//  @return ApplyTemplate200Response
+//
+//	@return ApplyTemplate200Response
 func (a *ClustersAPIService) ApplyTemplateExecute(r ApiApplyTemplateRequest) (*ApplyTemplate200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ApplyTemplate200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ApplyTemplate200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClustersAPIService.ApplyTemplate")
@@ -510,7 +512,7 @@ func (a *ClustersAPIService) ApplyTemplateExecute(r ApiApplyTemplateRequest) (*A
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -519,8 +521,8 @@ func (a *ClustersAPIService) ApplyTemplateExecute(r ApiApplyTemplateRequest) (*A
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -530,8 +532,8 @@ func (a *ClustersAPIService) ApplyTemplateExecute(r ApiApplyTemplateRequest) (*A
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -539,8 +541,8 @@ func (a *ClustersAPIService) ApplyTemplateExecute(r ApiApplyTemplateRequest) (*A
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -549,15 +551,15 @@ func (a *ClustersAPIService) ApplyTemplateExecute(r ApiApplyTemplateRequest) (*A
 }
 
 type ApiDeleteClusterRequest struct {
-	ctx context.Context
-	ApiService *ClustersAPIService
-	clusterId int32
-	removeInstances *string
-	removeResources *string
-	preserveVolumes *string
+	ctx                context.Context
+	ApiService         *ClustersAPIService
+	clusterId          int32
+	removeInstances    *string
+	removeResources    *string
+	preserveVolumes    *string
 	releaseFloatingIps *string
-	releaseEIPs *string
-	force *string
+	releaseEIPs        *string
+	force              *string
 }
 
 // Remove Instances
@@ -605,26 +607,27 @@ DeleteCluster Delete a Cluster
 
 Will delete a cluster and associated resources, hosts, volumes asynchronously
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param clusterId The ID of the cluster
- @return ApiDeleteClusterRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param clusterId The ID of the cluster
+	@return ApiDeleteClusterRequest
 */
 func (a *ClustersAPIService) DeleteCluster(ctx context.Context, clusterId int32) ApiDeleteClusterRequest {
 	return ApiDeleteClusterRequest{
 		ApiService: a,
-		ctx: ctx,
-		clusterId: clusterId,
+		ctx:        ctx,
+		clusterId:  clusterId,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *ClustersAPIService) DeleteClusterExecute(r ApiDeleteClusterRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClustersAPIService.DeleteCluster")
@@ -711,7 +714,7 @@ func (a *ClustersAPIService) DeleteClusterExecute(r ApiDeleteClusterRequest) (*D
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -720,8 +723,8 @@ func (a *ClustersAPIService) DeleteClusterExecute(r ApiDeleteClusterRequest) (*D
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -731,8 +734,8 @@ func (a *ClustersAPIService) DeleteClusterExecute(r ApiDeleteClusterRequest) (*D
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -740,8 +743,8 @@ func (a *ClustersAPIService) DeleteClusterExecute(r ApiDeleteClusterRequest) (*D
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -750,11 +753,11 @@ func (a *ClustersAPIService) DeleteClusterExecute(r ApiDeleteClusterRequest) (*D
 }
 
 type ApiDeleteClusterContainerRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId int32
-	id int64
-	force *string
+	clusterId  int32
+	id         int64
+	force      *string
 }
 
 // Force Delete
@@ -772,28 +775,29 @@ DeleteClusterContainer Delete Container
 
 This endpoint deletes a specified container from a specified cluster.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param clusterId The ID of the cluster
- @param id Morpheus ID of the Object being referenced
- @return ApiDeleteClusterContainerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param clusterId The ID of the cluster
+	@param id Morpheus ID of the Object being referenced
+	@return ApiDeleteClusterContainerRequest
 */
 func (a *ClustersAPIService) DeleteClusterContainer(ctx context.Context, clusterId int32, id int64) ApiDeleteClusterContainerRequest {
 	return ApiDeleteClusterContainerRequest{
 		ApiService: a,
-		ctx: ctx,
-		clusterId: clusterId,
-		id: id,
+		ctx:        ctx,
+		clusterId:  clusterId,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *ClustersAPIService) DeleteClusterContainerExecute(r ApiDeleteClusterContainerRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClustersAPIService.DeleteClusterContainer")
@@ -851,7 +855,7 @@ func (a *ClustersAPIService) DeleteClusterContainerExecute(r ApiDeleteClusterCon
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -860,8 +864,8 @@ func (a *ClustersAPIService) DeleteClusterContainerExecute(r ApiDeleteClusterCon
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -871,8 +875,8 @@ func (a *ClustersAPIService) DeleteClusterContainerExecute(r ApiDeleteClusterCon
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -880,8 +884,8 @@ func (a *ClustersAPIService) DeleteClusterContainerExecute(r ApiDeleteClusterCon
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -890,10 +894,10 @@ func (a *ClustersAPIService) DeleteClusterContainerExecute(r ApiDeleteClusterCon
 }
 
 type ApiDeleteClusterDatastoreRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId int32
-	id int64
+	clusterId  int32
+	id         int64
 }
 
 func (r ApiDeleteClusterDatastoreRequest) Execute() (*DeleteClusterDatastore200Response, *http.Response, error) {
@@ -907,29 +911,29 @@ Will initiate delete of a cluster datastore.
 
 **Note**: This will initiate a delete request but does not guarantee success.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param clusterId The ID of the cluster
- @param id Morpheus ID of the Object being referenced
- @return ApiDeleteClusterDatastoreRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param clusterId The ID of the cluster
+	@param id Morpheus ID of the Object being referenced
+	@return ApiDeleteClusterDatastoreRequest
 */
 func (a *ClustersAPIService) DeleteClusterDatastore(ctx context.Context, clusterId int32, id int64) ApiDeleteClusterDatastoreRequest {
 	return ApiDeleteClusterDatastoreRequest{
 		ApiService: a,
-		ctx: ctx,
-		clusterId: clusterId,
-		id: id,
+		ctx:        ctx,
+		clusterId:  clusterId,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteClusterDatastore200Response
+//
+//	@return DeleteClusterDatastore200Response
 func (a *ClustersAPIService) DeleteClusterDatastoreExecute(r ApiDeleteClusterDatastoreRequest) (*DeleteClusterDatastore200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteClusterDatastore200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteClusterDatastore200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClustersAPIService.DeleteClusterDatastore")
@@ -981,7 +985,7 @@ func (a *ClustersAPIService) DeleteClusterDatastoreExecute(r ApiDeleteClusterDat
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -990,8 +994,8 @@ func (a *ClustersAPIService) DeleteClusterDatastoreExecute(r ApiDeleteClusterDat
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1001,8 +1005,8 @@ func (a *ClustersAPIService) DeleteClusterDatastoreExecute(r ApiDeleteClusterDat
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1010,8 +1014,8 @@ func (a *ClustersAPIService) DeleteClusterDatastoreExecute(r ApiDeleteClusterDat
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1020,11 +1024,11 @@ func (a *ClustersAPIService) DeleteClusterDatastoreExecute(r ApiDeleteClusterDat
 }
 
 type ApiDeleteClusterDeploymentRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId int32
-	id int64
-	force *string
+	clusterId  int32
+	id         int64
+	force      *string
 }
 
 // Force Delete
@@ -1042,28 +1046,29 @@ DeleteClusterDeployment Delete Deployment
 
 This endpoint deletes a specified deployment from a specified cluster.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param clusterId The ID of the cluster
- @param id Morpheus ID of the Object being referenced
- @return ApiDeleteClusterDeploymentRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param clusterId The ID of the cluster
+	@param id Morpheus ID of the Object being referenced
+	@return ApiDeleteClusterDeploymentRequest
 */
 func (a *ClustersAPIService) DeleteClusterDeployment(ctx context.Context, clusterId int32, id int64) ApiDeleteClusterDeploymentRequest {
 	return ApiDeleteClusterDeploymentRequest{
 		ApiService: a,
-		ctx: ctx,
-		clusterId: clusterId,
-		id: id,
+		ctx:        ctx,
+		clusterId:  clusterId,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *ClustersAPIService) DeleteClusterDeploymentExecute(r ApiDeleteClusterDeploymentRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClustersAPIService.DeleteClusterDeployment")
@@ -1121,7 +1126,7 @@ func (a *ClustersAPIService) DeleteClusterDeploymentExecute(r ApiDeleteClusterDe
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1130,8 +1135,8 @@ func (a *ClustersAPIService) DeleteClusterDeploymentExecute(r ApiDeleteClusterDe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1141,8 +1146,8 @@ func (a *ClustersAPIService) DeleteClusterDeploymentExecute(r ApiDeleteClusterDe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1150,8 +1155,8 @@ func (a *ClustersAPIService) DeleteClusterDeploymentExecute(r ApiDeleteClusterDe
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1160,11 +1165,11 @@ func (a *ClustersAPIService) DeleteClusterDeploymentExecute(r ApiDeleteClusterDe
 }
 
 type ApiDeleteClusterJobRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId int32
-	id int64
-	force *string
+	clusterId  int32
+	id         int64
+	force      *string
 }
 
 // Force Delete
@@ -1182,28 +1187,29 @@ DeleteClusterJob Delete a Job
 
 This endpoint deletes a specified job from a specified cluster.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param clusterId The ID of the cluster
- @param id Morpheus ID of the Object being referenced
- @return ApiDeleteClusterJobRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param clusterId The ID of the cluster
+	@param id Morpheus ID of the Object being referenced
+	@return ApiDeleteClusterJobRequest
 */
 func (a *ClustersAPIService) DeleteClusterJob(ctx context.Context, clusterId int32, id int64) ApiDeleteClusterJobRequest {
 	return ApiDeleteClusterJobRequest{
 		ApiService: a,
-		ctx: ctx,
-		clusterId: clusterId,
-		id: id,
+		ctx:        ctx,
+		clusterId:  clusterId,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *ClustersAPIService) DeleteClusterJobExecute(r ApiDeleteClusterJobRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClustersAPIService.DeleteClusterJob")
@@ -1261,7 +1267,7 @@ func (a *ClustersAPIService) DeleteClusterJobExecute(r ApiDeleteClusterJobReques
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1270,8 +1276,8 @@ func (a *ClustersAPIService) DeleteClusterJobExecute(r ApiDeleteClusterJobReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1281,8 +1287,8 @@ func (a *ClustersAPIService) DeleteClusterJobExecute(r ApiDeleteClusterJobReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1290,8 +1296,8 @@ func (a *ClustersAPIService) DeleteClusterJobExecute(r ApiDeleteClusterJobReques
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1300,11 +1306,11 @@ func (a *ClustersAPIService) DeleteClusterJobExecute(r ApiDeleteClusterJobReques
 }
 
 type ApiDeleteClusterNamespaceRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId int32
-	id int64
-	force *string
+	clusterId  int32
+	id         int64
+	force      *string
 }
 
 // Force Delete
@@ -1322,28 +1328,29 @@ DeleteClusterNamespace Delete a Namespace (Kubernetes)
 
 Will delete a namespace from the specified cluster
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param clusterId The ID of the cluster
- @param id Morpheus ID of the Object being referenced
- @return ApiDeleteClusterNamespaceRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param clusterId The ID of the cluster
+	@param id Morpheus ID of the Object being referenced
+	@return ApiDeleteClusterNamespaceRequest
 */
 func (a *ClustersAPIService) DeleteClusterNamespace(ctx context.Context, clusterId int32, id int64) ApiDeleteClusterNamespaceRequest {
 	return ApiDeleteClusterNamespaceRequest{
 		ApiService: a,
-		ctx: ctx,
-		clusterId: clusterId,
-		id: id,
+		ctx:        ctx,
+		clusterId:  clusterId,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *ClustersAPIService) DeleteClusterNamespaceExecute(r ApiDeleteClusterNamespaceRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClustersAPIService.DeleteClusterNamespace")
@@ -1401,7 +1408,7 @@ func (a *ClustersAPIService) DeleteClusterNamespaceExecute(r ApiDeleteClusterNam
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1410,8 +1417,8 @@ func (a *ClustersAPIService) DeleteClusterNamespaceExecute(r ApiDeleteClusterNam
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1421,8 +1428,8 @@ func (a *ClustersAPIService) DeleteClusterNamespaceExecute(r ApiDeleteClusterNam
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1430,8 +1437,8 @@ func (a *ClustersAPIService) DeleteClusterNamespaceExecute(r ApiDeleteClusterNam
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1440,11 +1447,11 @@ func (a *ClustersAPIService) DeleteClusterNamespaceExecute(r ApiDeleteClusterNam
 }
 
 type ApiDeleteClusterServiceRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId int32
-	id int64
-	force *string
+	clusterId  int32
+	id         int64
+	force      *string
 }
 
 // Force Delete
@@ -1462,28 +1469,29 @@ DeleteClusterService Delete a Service
 
 This endpoint deletes a specified service from a specified cluster.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param clusterId The ID of the cluster
- @param id Morpheus ID of the Object being referenced
- @return ApiDeleteClusterServiceRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param clusterId The ID of the cluster
+	@param id Morpheus ID of the Object being referenced
+	@return ApiDeleteClusterServiceRequest
 */
 func (a *ClustersAPIService) DeleteClusterService(ctx context.Context, clusterId int32, id int64) ApiDeleteClusterServiceRequest {
 	return ApiDeleteClusterServiceRequest{
 		ApiService: a,
-		ctx: ctx,
-		clusterId: clusterId,
-		id: id,
+		ctx:        ctx,
+		clusterId:  clusterId,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *ClustersAPIService) DeleteClusterServiceExecute(r ApiDeleteClusterServiceRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClustersAPIService.DeleteClusterService")
@@ -1541,7 +1549,7 @@ func (a *ClustersAPIService) DeleteClusterServiceExecute(r ApiDeleteClusterServi
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1550,8 +1558,8 @@ func (a *ClustersAPIService) DeleteClusterServiceExecute(r ApiDeleteClusterServi
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1561,8 +1569,8 @@ func (a *ClustersAPIService) DeleteClusterServiceExecute(r ApiDeleteClusterServi
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1570,8 +1578,8 @@ func (a *ClustersAPIService) DeleteClusterServiceExecute(r ApiDeleteClusterServi
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1580,11 +1588,11 @@ func (a *ClustersAPIService) DeleteClusterServiceExecute(r ApiDeleteClusterServi
 }
 
 type ApiDeleteClusterStatefulSetRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId int32
-	id int64
-	force *string
+	clusterId  int32
+	id         int64
+	force      *string
 }
 
 // Force Delete
@@ -1602,28 +1610,29 @@ DeleteClusterStatefulSet Delete a Stateful Set
 
 Will delete a stateful set from the specified cluster
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param clusterId The ID of the cluster
- @param id Morpheus ID of the Object being referenced
- @return ApiDeleteClusterStatefulSetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param clusterId The ID of the cluster
+	@param id Morpheus ID of the Object being referenced
+	@return ApiDeleteClusterStatefulSetRequest
 */
 func (a *ClustersAPIService) DeleteClusterStatefulSet(ctx context.Context, clusterId int32, id int64) ApiDeleteClusterStatefulSetRequest {
 	return ApiDeleteClusterStatefulSetRequest{
 		ApiService: a,
-		ctx: ctx,
-		clusterId: clusterId,
-		id: id,
+		ctx:        ctx,
+		clusterId:  clusterId,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return RestartClusterContainer200Response
+//
+//	@return RestartClusterContainer200Response
 func (a *ClustersAPIService) DeleteClusterStatefulSetExecute(r ApiDeleteClusterStatefulSetRequest) (*RestartClusterContainer200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *RestartClusterContainer200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *RestartClusterContainer200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClustersAPIService.DeleteClusterStatefulSet")
@@ -1681,7 +1690,7 @@ func (a *ClustersAPIService) DeleteClusterStatefulSetExecute(r ApiDeleteClusterS
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1690,8 +1699,8 @@ func (a *ClustersAPIService) DeleteClusterStatefulSetExecute(r ApiDeleteClusterS
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1701,8 +1710,8 @@ func (a *ClustersAPIService) DeleteClusterStatefulSetExecute(r ApiDeleteClusterS
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1710,8 +1719,8 @@ func (a *ClustersAPIService) DeleteClusterStatefulSetExecute(r ApiDeleteClusterS
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1720,11 +1729,11 @@ func (a *ClustersAPIService) DeleteClusterStatefulSetExecute(r ApiDeleteClusterS
 }
 
 type ApiDeleteClusterVolumeRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId int32
-	id int64
-	force *string
+	clusterId  int32
+	id         int64
+	force      *string
 }
 
 // Force Delete
@@ -1742,28 +1751,29 @@ DeleteClusterVolume Delete a Volume
 
 Will delete a volume from the specified cluster
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param clusterId The ID of the cluster
- @param id Morpheus ID of the Object being referenced
- @return ApiDeleteClusterVolumeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param clusterId The ID of the cluster
+	@param id Morpheus ID of the Object being referenced
+	@return ApiDeleteClusterVolumeRequest
 */
 func (a *ClustersAPIService) DeleteClusterVolume(ctx context.Context, clusterId int32, id int64) ApiDeleteClusterVolumeRequest {
 	return ApiDeleteClusterVolumeRequest{
 		ApiService: a,
-		ctx: ctx,
-		clusterId: clusterId,
-		id: id,
+		ctx:        ctx,
+		clusterId:  clusterId,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *ClustersAPIService) DeleteClusterVolumeExecute(r ApiDeleteClusterVolumeRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClustersAPIService.DeleteClusterVolume")
@@ -1821,7 +1831,7 @@ func (a *ClustersAPIService) DeleteClusterVolumeExecute(r ApiDeleteClusterVolume
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1830,8 +1840,8 @@ func (a *ClustersAPIService) DeleteClusterVolumeExecute(r ApiDeleteClusterVolume
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1841,8 +1851,8 @@ func (a *ClustersAPIService) DeleteClusterVolumeExecute(r ApiDeleteClusterVolume
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1850,8 +1860,8 @@ func (a *ClustersAPIService) DeleteClusterVolumeExecute(r ApiDeleteClusterVolume
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1860,11 +1870,11 @@ func (a *ClustersAPIService) DeleteClusterVolumeExecute(r ApiDeleteClusterVolume
 }
 
 type ApiDeleteClusterWorkerRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId int32
-	id int64
-	force *string
+	clusterId  int32
+	id         int64
+	force      *string
 }
 
 // Force Delete
@@ -1882,28 +1892,29 @@ DeleteClusterWorker Delete a Worker
 
 This endpoint deletes a specified worker from a specified cluster.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param clusterId The ID of the cluster
- @param id Morpheus ID of the Object being referenced
- @return ApiDeleteClusterWorkerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param clusterId The ID of the cluster
+	@param id Morpheus ID of the Object being referenced
+	@return ApiDeleteClusterWorkerRequest
 */
 func (a *ClustersAPIService) DeleteClusterWorker(ctx context.Context, clusterId int32, id int64) ApiDeleteClusterWorkerRequest {
 	return ApiDeleteClusterWorkerRequest{
 		ApiService: a,
-		ctx: ctx,
-		clusterId: clusterId,
-		id: id,
+		ctx:        ctx,
+		clusterId:  clusterId,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *ClustersAPIService) DeleteClusterWorkerExecute(r ApiDeleteClusterWorkerRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClustersAPIService.DeleteClusterWorker")
@@ -1961,7 +1972,7 @@ func (a *ClustersAPIService) DeleteClusterWorkerExecute(r ApiDeleteClusterWorker
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1970,8 +1981,8 @@ func (a *ClustersAPIService) DeleteClusterWorkerExecute(r ApiDeleteClusterWorker
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1981,8 +1992,8 @@ func (a *ClustersAPIService) DeleteClusterWorkerExecute(r ApiDeleteClusterWorker
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1990,8 +2001,8 @@ func (a *ClustersAPIService) DeleteClusterWorkerExecute(r ApiDeleteClusterWorker
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2000,9 +2011,9 @@ func (a *ClustersAPIService) DeleteClusterWorkerExecute(r ApiDeleteClusterWorker
 }
 
 type ApiGetClusterRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId int32
+	clusterId  int32
 }
 
 func (r ApiGetClusterRequest) Execute() (*GetCluster200Response, *http.Response, error) {
@@ -2014,26 +2025,27 @@ GetCluster Get a Specific Cluster
 
 This endpoint retrieves a specific cluster.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param clusterId The ID of the cluster
- @return ApiGetClusterRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param clusterId The ID of the cluster
+	@return ApiGetClusterRequest
 */
 func (a *ClustersAPIService) GetCluster(ctx context.Context, clusterId int32) ApiGetClusterRequest {
 	return ApiGetClusterRequest{
 		ApiService: a,
-		ctx: ctx,
-		clusterId: clusterId,
+		ctx:        ctx,
+		clusterId:  clusterId,
 	}
 }
 
 // Execute executes the request
-//  @return GetCluster200Response
+//
+//	@return GetCluster200Response
 func (a *ClustersAPIService) GetClusterExecute(r ApiGetClusterRequest) (*GetCluster200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetCluster200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetCluster200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClustersAPIService.GetCluster")
@@ -2084,7 +2096,7 @@ func (a *ClustersAPIService) GetClusterExecute(r ApiGetClusterRequest) (*GetClus
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2093,8 +2105,8 @@ func (a *ClustersAPIService) GetClusterExecute(r ApiGetClusterRequest) (*GetClus
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2104,8 +2116,8 @@ func (a *ClustersAPIService) GetClusterExecute(r ApiGetClusterRequest) (*GetClus
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2113,8 +2125,8 @@ func (a *ClustersAPIService) GetClusterExecute(r ApiGetClusterRequest) (*GetClus
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2123,9 +2135,9 @@ func (a *ClustersAPIService) GetClusterExecute(r ApiGetClusterRequest) (*GetClus
 }
 
 type ApiGetClusterApiConfigRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId int32
+	clusterId  int32
 }
 
 func (r ApiGetClusterApiConfigRequest) Execute() (*GetClusterApiConfig200Response, *http.Response, error) {
@@ -2137,26 +2149,27 @@ GetClusterApiConfig Get API Config
 
 This endpoint retrieves the API configuration for a specified cluster. The configuration is cluster type specific.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param clusterId The ID of the cluster
- @return ApiGetClusterApiConfigRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param clusterId The ID of the cluster
+	@return ApiGetClusterApiConfigRequest
 */
 func (a *ClustersAPIService) GetClusterApiConfig(ctx context.Context, clusterId int32) ApiGetClusterApiConfigRequest {
 	return ApiGetClusterApiConfigRequest{
 		ApiService: a,
-		ctx: ctx,
-		clusterId: clusterId,
+		ctx:        ctx,
+		clusterId:  clusterId,
 	}
 }
 
 // Execute executes the request
-//  @return GetClusterApiConfig200Response
+//
+//	@return GetClusterApiConfig200Response
 func (a *ClustersAPIService) GetClusterApiConfigExecute(r ApiGetClusterApiConfigRequest) (*GetClusterApiConfig200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetClusterApiConfig200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetClusterApiConfig200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClustersAPIService.GetClusterApiConfig")
@@ -2207,7 +2220,7 @@ func (a *ClustersAPIService) GetClusterApiConfigExecute(r ApiGetClusterApiConfig
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2216,8 +2229,8 @@ func (a *ClustersAPIService) GetClusterApiConfigExecute(r ApiGetClusterApiConfig
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2227,8 +2240,8 @@ func (a *ClustersAPIService) GetClusterApiConfigExecute(r ApiGetClusterApiConfig
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2236,8 +2249,8 @@ func (a *ClustersAPIService) GetClusterApiConfigExecute(r ApiGetClusterApiConfig
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2246,10 +2259,10 @@ func (a *ClustersAPIService) GetClusterApiConfigExecute(r ApiGetClusterApiConfig
 }
 
 type ApiGetClusterConfigmapRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId int32
-	id int64
+	clusterId  int32
+	id         int64
 }
 
 func (r ApiGetClusterConfigmapRequest) Execute() (*GetClusterContainer200Response, *http.Response, error) {
@@ -2261,28 +2274,29 @@ GetClusterConfigmap Get a Specific Cluster Configmap
 
 This endpoint retrieves a specific cluster configmap.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param clusterId The ID of the cluster
- @param id Morpheus ID of the Object being referenced
- @return ApiGetClusterConfigmapRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param clusterId The ID of the cluster
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetClusterConfigmapRequest
 */
 func (a *ClustersAPIService) GetClusterConfigmap(ctx context.Context, clusterId int32, id int64) ApiGetClusterConfigmapRequest {
 	return ApiGetClusterConfigmapRequest{
 		ApiService: a,
-		ctx: ctx,
-		clusterId: clusterId,
-		id: id,
+		ctx:        ctx,
+		clusterId:  clusterId,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetClusterContainer200Response
+//
+//	@return GetClusterContainer200Response
 func (a *ClustersAPIService) GetClusterConfigmapExecute(r ApiGetClusterConfigmapRequest) (*GetClusterContainer200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetClusterContainer200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetClusterContainer200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClustersAPIService.GetClusterConfigmap")
@@ -2334,7 +2348,7 @@ func (a *ClustersAPIService) GetClusterConfigmapExecute(r ApiGetClusterConfigmap
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2343,8 +2357,8 @@ func (a *ClustersAPIService) GetClusterConfigmapExecute(r ApiGetClusterConfigmap
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2354,8 +2368,8 @@ func (a *ClustersAPIService) GetClusterConfigmapExecute(r ApiGetClusterConfigmap
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2363,8 +2377,8 @@ func (a *ClustersAPIService) GetClusterConfigmapExecute(r ApiGetClusterConfigmap
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2373,10 +2387,10 @@ func (a *ClustersAPIService) GetClusterConfigmapExecute(r ApiGetClusterConfigmap
 }
 
 type ApiGetClusterContainerRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId int32
-	id int64
+	clusterId  int32
+	id         int64
 }
 
 func (r ApiGetClusterContainerRequest) Execute() (*GetClusterContainer200Response, *http.Response, error) {
@@ -2388,28 +2402,29 @@ GetClusterContainer Get a Specific Cluster Container
 
 This endpoint retrieves a specific cluster container.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param clusterId The ID of the cluster
- @param id Morpheus ID of the Object being referenced
- @return ApiGetClusterContainerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param clusterId The ID of the cluster
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetClusterContainerRequest
 */
 func (a *ClustersAPIService) GetClusterContainer(ctx context.Context, clusterId int32, id int64) ApiGetClusterContainerRequest {
 	return ApiGetClusterContainerRequest{
 		ApiService: a,
-		ctx: ctx,
-		clusterId: clusterId,
-		id: id,
+		ctx:        ctx,
+		clusterId:  clusterId,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetClusterContainer200Response
+//
+//	@return GetClusterContainer200Response
 func (a *ClustersAPIService) GetClusterContainerExecute(r ApiGetClusterContainerRequest) (*GetClusterContainer200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetClusterContainer200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetClusterContainer200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClustersAPIService.GetClusterContainer")
@@ -2461,7 +2476,7 @@ func (a *ClustersAPIService) GetClusterContainerExecute(r ApiGetClusterContainer
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2470,8 +2485,8 @@ func (a *ClustersAPIService) GetClusterContainerExecute(r ApiGetClusterContainer
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2481,8 +2496,8 @@ func (a *ClustersAPIService) GetClusterContainerExecute(r ApiGetClusterContainer
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2490,8 +2505,8 @@ func (a *ClustersAPIService) GetClusterContainerExecute(r ApiGetClusterContainer
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2500,10 +2515,10 @@ func (a *ClustersAPIService) GetClusterContainerExecute(r ApiGetClusterContainer
 }
 
 type ApiGetClusterDaemonsetRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId int32
-	id int64
+	clusterId  int32
+	id         int64
 }
 
 func (r ApiGetClusterDaemonsetRequest) Execute() (*GetClusterContainer200Response, *http.Response, error) {
@@ -2515,28 +2530,29 @@ GetClusterDaemonset Get a Specific Cluster Daemonset
 
 This endpoint retrieves a specific cluster daemonset.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param clusterId The ID of the cluster
- @param id Morpheus ID of the Object being referenced
- @return ApiGetClusterDaemonsetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param clusterId The ID of the cluster
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetClusterDaemonsetRequest
 */
 func (a *ClustersAPIService) GetClusterDaemonset(ctx context.Context, clusterId int32, id int64) ApiGetClusterDaemonsetRequest {
 	return ApiGetClusterDaemonsetRequest{
 		ApiService: a,
-		ctx: ctx,
-		clusterId: clusterId,
-		id: id,
+		ctx:        ctx,
+		clusterId:  clusterId,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetClusterContainer200Response
+//
+//	@return GetClusterContainer200Response
 func (a *ClustersAPIService) GetClusterDaemonsetExecute(r ApiGetClusterDaemonsetRequest) (*GetClusterContainer200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetClusterContainer200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetClusterContainer200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClustersAPIService.GetClusterDaemonset")
@@ -2588,7 +2604,7 @@ func (a *ClustersAPIService) GetClusterDaemonsetExecute(r ApiGetClusterDaemonset
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2597,8 +2613,8 @@ func (a *ClustersAPIService) GetClusterDaemonsetExecute(r ApiGetClusterDaemonset
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2608,8 +2624,8 @@ func (a *ClustersAPIService) GetClusterDaemonsetExecute(r ApiGetClusterDaemonset
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2617,8 +2633,8 @@ func (a *ClustersAPIService) GetClusterDaemonsetExecute(r ApiGetClusterDaemonset
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2627,10 +2643,10 @@ func (a *ClustersAPIService) GetClusterDaemonsetExecute(r ApiGetClusterDaemonset
 }
 
 type ApiGetClusterDatastoreRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId int32
-	id int64
+	clusterId  int32
+	id         int64
 }
 
 func (r ApiGetClusterDatastoreRequest) Execute() (*GetClusterDatastore200Response, *http.Response, error) {
@@ -2642,28 +2658,29 @@ GetClusterDatastore Get a Specific Cluster Datastore
 
 This endpoint retrieves a specific cluster datastore.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param clusterId The ID of the cluster
- @param id Morpheus ID of the Object being referenced
- @return ApiGetClusterDatastoreRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param clusterId The ID of the cluster
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetClusterDatastoreRequest
 */
 func (a *ClustersAPIService) GetClusterDatastore(ctx context.Context, clusterId int32, id int64) ApiGetClusterDatastoreRequest {
 	return ApiGetClusterDatastoreRequest{
 		ApiService: a,
-		ctx: ctx,
-		clusterId: clusterId,
-		id: id,
+		ctx:        ctx,
+		clusterId:  clusterId,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetClusterDatastore200Response
+//
+//	@return GetClusterDatastore200Response
 func (a *ClustersAPIService) GetClusterDatastoreExecute(r ApiGetClusterDatastoreRequest) (*GetClusterDatastore200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetClusterDatastore200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetClusterDatastore200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClustersAPIService.GetClusterDatastore")
@@ -2715,7 +2732,7 @@ func (a *ClustersAPIService) GetClusterDatastoreExecute(r ApiGetClusterDatastore
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2724,8 +2741,8 @@ func (a *ClustersAPIService) GetClusterDatastoreExecute(r ApiGetClusterDatastore
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2735,8 +2752,8 @@ func (a *ClustersAPIService) GetClusterDatastoreExecute(r ApiGetClusterDatastore
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2744,8 +2761,8 @@ func (a *ClustersAPIService) GetClusterDatastoreExecute(r ApiGetClusterDatastore
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2754,10 +2771,10 @@ func (a *ClustersAPIService) GetClusterDatastoreExecute(r ApiGetClusterDatastore
 }
 
 type ApiGetClusterDeploymentRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId int32
-	id int64
+	clusterId  int32
+	id         int64
 }
 
 func (r ApiGetClusterDeploymentRequest) Execute() (*GetClusterContainer200Response, *http.Response, error) {
@@ -2769,28 +2786,29 @@ GetClusterDeployment Get a Specific Cluster Deployment
 
 This endpoint retrieves a specific cluster deployment.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param clusterId The ID of the cluster
- @param id Morpheus ID of the Object being referenced
- @return ApiGetClusterDeploymentRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param clusterId The ID of the cluster
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetClusterDeploymentRequest
 */
 func (a *ClustersAPIService) GetClusterDeployment(ctx context.Context, clusterId int32, id int64) ApiGetClusterDeploymentRequest {
 	return ApiGetClusterDeploymentRequest{
 		ApiService: a,
-		ctx: ctx,
-		clusterId: clusterId,
-		id: id,
+		ctx:        ctx,
+		clusterId:  clusterId,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetClusterContainer200Response
+//
+//	@return GetClusterContainer200Response
 func (a *ClustersAPIService) GetClusterDeploymentExecute(r ApiGetClusterDeploymentRequest) (*GetClusterContainer200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetClusterContainer200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetClusterContainer200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClustersAPIService.GetClusterDeployment")
@@ -2842,7 +2860,7 @@ func (a *ClustersAPIService) GetClusterDeploymentExecute(r ApiGetClusterDeployme
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2851,8 +2869,8 @@ func (a *ClustersAPIService) GetClusterDeploymentExecute(r ApiGetClusterDeployme
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2862,8 +2880,8 @@ func (a *ClustersAPIService) GetClusterDeploymentExecute(r ApiGetClusterDeployme
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2871,8 +2889,8 @@ func (a *ClustersAPIService) GetClusterDeploymentExecute(r ApiGetClusterDeployme
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2881,9 +2899,9 @@ func (a *ClustersAPIService) GetClusterDeploymentExecute(r ApiGetClusterDeployme
 }
 
 type ApiGetClusterHistoryRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId int32
+	clusterId  int32
 }
 
 func (r ApiGetClusterHistoryRequest) Execute() (*GetClusterHistory200Response, *http.Response, error) {
@@ -2895,26 +2913,27 @@ GetClusterHistory Get Cluster History
 
 This endpoint retrieves the process history for a specific cluster.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param clusterId The ID of the cluster
- @return ApiGetClusterHistoryRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param clusterId The ID of the cluster
+	@return ApiGetClusterHistoryRequest
 */
 func (a *ClustersAPIService) GetClusterHistory(ctx context.Context, clusterId int32) ApiGetClusterHistoryRequest {
 	return ApiGetClusterHistoryRequest{
 		ApiService: a,
-		ctx: ctx,
-		clusterId: clusterId,
+		ctx:        ctx,
+		clusterId:  clusterId,
 	}
 }
 
 // Execute executes the request
-//  @return GetClusterHistory200Response
+//
+//	@return GetClusterHistory200Response
 func (a *ClustersAPIService) GetClusterHistoryExecute(r ApiGetClusterHistoryRequest) (*GetClusterHistory200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetClusterHistory200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetClusterHistory200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClustersAPIService.GetClusterHistory")
@@ -2965,7 +2984,7 @@ func (a *ClustersAPIService) GetClusterHistoryExecute(r ApiGetClusterHistoryRequ
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2974,8 +2993,8 @@ func (a *ClustersAPIService) GetClusterHistoryExecute(r ApiGetClusterHistoryRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2985,8 +3004,8 @@ func (a *ClustersAPIService) GetClusterHistoryExecute(r ApiGetClusterHistoryRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2994,8 +3013,8 @@ func (a *ClustersAPIService) GetClusterHistoryExecute(r ApiGetClusterHistoryRequ
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3004,10 +3023,10 @@ func (a *ClustersAPIService) GetClusterHistoryExecute(r ApiGetClusterHistoryRequ
 }
 
 type ApiGetClusterHistoryDetailRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId int32
-	id int64
+	clusterId  int32
+	id         int64
 }
 
 func (r ApiGetClusterHistoryDetailRequest) Execute() (*GetClusterHistoryDetail200Response, *http.Response, error) {
@@ -3019,28 +3038,29 @@ GetClusterHistoryDetail Get Cluster History Details
 
 This endpoint retrieves the history for a specific cluster process.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param clusterId The ID of the cluster
- @param id Morpheus ID of the Object being referenced
- @return ApiGetClusterHistoryDetailRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param clusterId The ID of the cluster
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetClusterHistoryDetailRequest
 */
 func (a *ClustersAPIService) GetClusterHistoryDetail(ctx context.Context, clusterId int32, id int64) ApiGetClusterHistoryDetailRequest {
 	return ApiGetClusterHistoryDetailRequest{
 		ApiService: a,
-		ctx: ctx,
-		clusterId: clusterId,
-		id: id,
+		ctx:        ctx,
+		clusterId:  clusterId,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetClusterHistoryDetail200Response
+//
+//	@return GetClusterHistoryDetail200Response
 func (a *ClustersAPIService) GetClusterHistoryDetailExecute(r ApiGetClusterHistoryDetailRequest) (*GetClusterHistoryDetail200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetClusterHistoryDetail200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetClusterHistoryDetail200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClustersAPIService.GetClusterHistoryDetail")
@@ -3092,7 +3112,7 @@ func (a *ClustersAPIService) GetClusterHistoryDetailExecute(r ApiGetClusterHisto
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -3101,8 +3121,8 @@ func (a *ClustersAPIService) GetClusterHistoryDetailExecute(r ApiGetClusterHisto
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -3112,8 +3132,8 @@ func (a *ClustersAPIService) GetClusterHistoryDetailExecute(r ApiGetClusterHisto
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3121,8 +3141,8 @@ func (a *ClustersAPIService) GetClusterHistoryDetailExecute(r ApiGetClusterHisto
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3131,10 +3151,10 @@ func (a *ClustersAPIService) GetClusterHistoryDetailExecute(r ApiGetClusterHisto
 }
 
 type ApiGetClusterHistoryEventDetailRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId int32
-	id int64
+	clusterId  int32
+	id         int64
 }
 
 func (r ApiGetClusterHistoryEventDetailRequest) Execute() (*GetClusterHistoryEventDetail200Response, *http.Response, error) {
@@ -3146,28 +3166,29 @@ GetClusterHistoryEventDetail Get Cluster History Event
 
 This endpoint retrieves the process event for a specific cluster process event.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param clusterId The ID of the cluster
- @param id Morpheus ID of the Object being referenced
- @return ApiGetClusterHistoryEventDetailRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param clusterId The ID of the cluster
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetClusterHistoryEventDetailRequest
 */
 func (a *ClustersAPIService) GetClusterHistoryEventDetail(ctx context.Context, clusterId int32, id int64) ApiGetClusterHistoryEventDetailRequest {
 	return ApiGetClusterHistoryEventDetailRequest{
 		ApiService: a,
-		ctx: ctx,
-		clusterId: clusterId,
-		id: id,
+		ctx:        ctx,
+		clusterId:  clusterId,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetClusterHistoryEventDetail200Response
+//
+//	@return GetClusterHistoryEventDetail200Response
 func (a *ClustersAPIService) GetClusterHistoryEventDetailExecute(r ApiGetClusterHistoryEventDetailRequest) (*GetClusterHistoryEventDetail200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetClusterHistoryEventDetail200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetClusterHistoryEventDetail200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClustersAPIService.GetClusterHistoryEventDetail")
@@ -3219,7 +3240,7 @@ func (a *ClustersAPIService) GetClusterHistoryEventDetailExecute(r ApiGetCluster
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -3228,8 +3249,8 @@ func (a *ClustersAPIService) GetClusterHistoryEventDetailExecute(r ApiGetCluster
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -3239,8 +3260,8 @@ func (a *ClustersAPIService) GetClusterHistoryEventDetailExecute(r ApiGetCluster
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3248,8 +3269,8 @@ func (a *ClustersAPIService) GetClusterHistoryEventDetailExecute(r ApiGetCluster
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3258,10 +3279,10 @@ func (a *ClustersAPIService) GetClusterHistoryEventDetailExecute(r ApiGetCluster
 }
 
 type ApiGetClusterIngressRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId int32
-	id int64
+	clusterId  int32
+	id         int64
 }
 
 func (r ApiGetClusterIngressRequest) Execute() (*GetClusterContainer200Response, *http.Response, error) {
@@ -3273,28 +3294,29 @@ GetClusterIngress Get a Specific Cluster Ingress
 
 This endpoint retrieves a specific cluster ingress.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param clusterId The ID of the cluster
- @param id Morpheus ID of the Object being referenced
- @return ApiGetClusterIngressRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param clusterId The ID of the cluster
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetClusterIngressRequest
 */
 func (a *ClustersAPIService) GetClusterIngress(ctx context.Context, clusterId int32, id int64) ApiGetClusterIngressRequest {
 	return ApiGetClusterIngressRequest{
 		ApiService: a,
-		ctx: ctx,
-		clusterId: clusterId,
-		id: id,
+		ctx:        ctx,
+		clusterId:  clusterId,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetClusterContainer200Response
+//
+//	@return GetClusterContainer200Response
 func (a *ClustersAPIService) GetClusterIngressExecute(r ApiGetClusterIngressRequest) (*GetClusterContainer200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetClusterContainer200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetClusterContainer200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClustersAPIService.GetClusterIngress")
@@ -3346,7 +3368,7 @@ func (a *ClustersAPIService) GetClusterIngressExecute(r ApiGetClusterIngressRequ
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -3355,8 +3377,8 @@ func (a *ClustersAPIService) GetClusterIngressExecute(r ApiGetClusterIngressRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -3366,8 +3388,8 @@ func (a *ClustersAPIService) GetClusterIngressExecute(r ApiGetClusterIngressRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3375,8 +3397,8 @@ func (a *ClustersAPIService) GetClusterIngressExecute(r ApiGetClusterIngressRequ
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3385,10 +3407,10 @@ func (a *ClustersAPIService) GetClusterIngressExecute(r ApiGetClusterIngressRequ
 }
 
 type ApiGetClusterJobRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId int32
-	id int64
+	clusterId  int32
+	id         int64
 }
 
 func (r ApiGetClusterJobRequest) Execute() (*GetClusterContainer200Response, *http.Response, error) {
@@ -3400,28 +3422,29 @@ GetClusterJob Get a Specific Cluster Job
 
 This endpoint retrieves a specific cluster job.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param clusterId The ID of the cluster
- @param id Morpheus ID of the Object being referenced
- @return ApiGetClusterJobRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param clusterId The ID of the cluster
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetClusterJobRequest
 */
 func (a *ClustersAPIService) GetClusterJob(ctx context.Context, clusterId int32, id int64) ApiGetClusterJobRequest {
 	return ApiGetClusterJobRequest{
 		ApiService: a,
-		ctx: ctx,
-		clusterId: clusterId,
-		id: id,
+		ctx:        ctx,
+		clusterId:  clusterId,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetClusterContainer200Response
+//
+//	@return GetClusterContainer200Response
 func (a *ClustersAPIService) GetClusterJobExecute(r ApiGetClusterJobRequest) (*GetClusterContainer200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetClusterContainer200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetClusterContainer200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClustersAPIService.GetClusterJob")
@@ -3473,7 +3496,7 @@ func (a *ClustersAPIService) GetClusterJobExecute(r ApiGetClusterJobRequest) (*G
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -3482,8 +3505,8 @@ func (a *ClustersAPIService) GetClusterJobExecute(r ApiGetClusterJobRequest) (*G
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -3493,8 +3516,8 @@ func (a *ClustersAPIService) GetClusterJobExecute(r ApiGetClusterJobRequest) (*G
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3502,8 +3525,8 @@ func (a *ClustersAPIService) GetClusterJobExecute(r ApiGetClusterJobRequest) (*G
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3512,10 +3535,10 @@ func (a *ClustersAPIService) GetClusterJobExecute(r ApiGetClusterJobRequest) (*G
 }
 
 type ApiGetClusterMastersRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId int32
-	phrase *string
+	clusterId  int32
+	phrase     *string
 }
 
 // Search phrase for partial matches on name or description
@@ -3533,26 +3556,27 @@ GetClusterMasters Get Masters (Kubernetes)
 
 This endpoint retrieves masters of a specified kubernetes cluster.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param clusterId The ID of the cluster
- @return ApiGetClusterMastersRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param clusterId The ID of the cluster
+	@return ApiGetClusterMastersRequest
 */
 func (a *ClustersAPIService) GetClusterMasters(ctx context.Context, clusterId int32) ApiGetClusterMastersRequest {
 	return ApiGetClusterMastersRequest{
 		ApiService: a,
-		ctx: ctx,
-		clusterId: clusterId,
+		ctx:        ctx,
+		clusterId:  clusterId,
 	}
 }
 
 // Execute executes the request
-//  @return GetClusterMasters200Response
+//
+//	@return GetClusterMasters200Response
 func (a *ClustersAPIService) GetClusterMastersExecute(r ApiGetClusterMastersRequest) (*GetClusterMasters200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetClusterMasters200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetClusterMasters200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClustersAPIService.GetClusterMasters")
@@ -3606,7 +3630,7 @@ func (a *ClustersAPIService) GetClusterMastersExecute(r ApiGetClusterMastersRequ
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -3615,8 +3639,8 @@ func (a *ClustersAPIService) GetClusterMastersExecute(r ApiGetClusterMastersRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -3626,8 +3650,8 @@ func (a *ClustersAPIService) GetClusterMastersExecute(r ApiGetClusterMastersRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3635,8 +3659,8 @@ func (a *ClustersAPIService) GetClusterMastersExecute(r ApiGetClusterMastersRequ
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3645,10 +3669,10 @@ func (a *ClustersAPIService) GetClusterMastersExecute(r ApiGetClusterMastersRequ
 }
 
 type ApiGetClusterNamespaceRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId int32
-	id int64
+	clusterId  int32
+	id         int64
 }
 
 func (r ApiGetClusterNamespaceRequest) Execute() (*GetClusterNamespace200Response, *http.Response, error) {
@@ -3660,28 +3684,29 @@ GetClusterNamespace Get Namespace (Kubernetes)
 
 This endpoint retrieves a specific namespace of a Kubernetes cluster
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param clusterId The ID of the cluster
- @param id Morpheus ID of the Object being referenced
- @return ApiGetClusterNamespaceRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param clusterId The ID of the cluster
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetClusterNamespaceRequest
 */
 func (a *ClustersAPIService) GetClusterNamespace(ctx context.Context, clusterId int32, id int64) ApiGetClusterNamespaceRequest {
 	return ApiGetClusterNamespaceRequest{
 		ApiService: a,
-		ctx: ctx,
-		clusterId: clusterId,
-		id: id,
+		ctx:        ctx,
+		clusterId:  clusterId,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetClusterNamespace200Response
+//
+//	@return GetClusterNamespace200Response
 func (a *ClustersAPIService) GetClusterNamespaceExecute(r ApiGetClusterNamespaceRequest) (*GetClusterNamespace200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetClusterNamespace200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetClusterNamespace200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClustersAPIService.GetClusterNamespace")
@@ -3733,7 +3758,7 @@ func (a *ClustersAPIService) GetClusterNamespaceExecute(r ApiGetClusterNamespace
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -3742,8 +3767,8 @@ func (a *ClustersAPIService) GetClusterNamespaceExecute(r ApiGetClusterNamespace
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -3753,8 +3778,8 @@ func (a *ClustersAPIService) GetClusterNamespaceExecute(r ApiGetClusterNamespace
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3762,8 +3787,8 @@ func (a *ClustersAPIService) GetClusterNamespaceExecute(r ApiGetClusterNamespace
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3772,9 +3797,9 @@ func (a *ClustersAPIService) GetClusterNamespaceExecute(r ApiGetClusterNamespace
 }
 
 type ApiGetClusterNamespacesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId int32
+	clusterId  int32
 }
 
 func (r ApiGetClusterNamespacesRequest) Execute() (*GetClusterNamespaces200Response, *http.Response, error) {
@@ -3786,26 +3811,27 @@ GetClusterNamespaces List Namespaces (Kubernetes)
 
 List Namespaces (Kubernetes)
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param clusterId The ID of the cluster
- @return ApiGetClusterNamespacesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param clusterId The ID of the cluster
+	@return ApiGetClusterNamespacesRequest
 */
 func (a *ClustersAPIService) GetClusterNamespaces(ctx context.Context, clusterId int32) ApiGetClusterNamespacesRequest {
 	return ApiGetClusterNamespacesRequest{
 		ApiService: a,
-		ctx: ctx,
-		clusterId: clusterId,
+		ctx:        ctx,
+		clusterId:  clusterId,
 	}
 }
 
 // Execute executes the request
-//  @return GetClusterNamespaces200Response
+//
+//	@return GetClusterNamespaces200Response
 func (a *ClustersAPIService) GetClusterNamespacesExecute(r ApiGetClusterNamespacesRequest) (*GetClusterNamespaces200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetClusterNamespaces200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetClusterNamespaces200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClustersAPIService.GetClusterNamespaces")
@@ -3856,7 +3882,7 @@ func (a *ClustersAPIService) GetClusterNamespacesExecute(r ApiGetClusterNamespac
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -3865,8 +3891,8 @@ func (a *ClustersAPIService) GetClusterNamespacesExecute(r ApiGetClusterNamespac
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -3876,8 +3902,8 @@ func (a *ClustersAPIService) GetClusterNamespacesExecute(r ApiGetClusterNamespac
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3885,8 +3911,8 @@ func (a *ClustersAPIService) GetClusterNamespacesExecute(r ApiGetClusterNamespac
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3895,10 +3921,10 @@ func (a *ClustersAPIService) GetClusterNamespacesExecute(r ApiGetClusterNamespac
 }
 
 type ApiGetClusterNetworkEndpoingRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId int32
-	id int64
+	clusterId  int32
+	id         int64
 }
 
 func (r ApiGetClusterNetworkEndpoingRequest) Execute() (*GetClusterContainer200Response, *http.Response, error) {
@@ -3910,28 +3936,29 @@ GetClusterNetworkEndpoing Get a Specific Cluster Endpoint
 
 This endpoint retrieves a specific cluster endpoint.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param clusterId The ID of the cluster
- @param id Morpheus ID of the Object being referenced
- @return ApiGetClusterNetworkEndpoingRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param clusterId The ID of the cluster
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetClusterNetworkEndpoingRequest
 */
 func (a *ClustersAPIService) GetClusterNetworkEndpoing(ctx context.Context, clusterId int32, id int64) ApiGetClusterNetworkEndpoingRequest {
 	return ApiGetClusterNetworkEndpoingRequest{
 		ApiService: a,
-		ctx: ctx,
-		clusterId: clusterId,
-		id: id,
+		ctx:        ctx,
+		clusterId:  clusterId,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetClusterContainer200Response
+//
+//	@return GetClusterContainer200Response
 func (a *ClustersAPIService) GetClusterNetworkEndpoingExecute(r ApiGetClusterNetworkEndpoingRequest) (*GetClusterContainer200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetClusterContainer200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetClusterContainer200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClustersAPIService.GetClusterNetworkEndpoing")
@@ -3983,7 +4010,7 @@ func (a *ClustersAPIService) GetClusterNetworkEndpoingExecute(r ApiGetClusterNet
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -3992,8 +4019,8 @@ func (a *ClustersAPIService) GetClusterNetworkEndpoingExecute(r ApiGetClusterNet
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -4003,8 +4030,8 @@ func (a *ClustersAPIService) GetClusterNetworkEndpoingExecute(r ApiGetClusterNet
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -4012,8 +4039,8 @@ func (a *ClustersAPIService) GetClusterNetworkEndpoingExecute(r ApiGetClusterNet
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -4022,10 +4049,10 @@ func (a *ClustersAPIService) GetClusterNetworkEndpoingExecute(r ApiGetClusterNet
 }
 
 type ApiGetClusterPodRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId int32
-	id int64
+	clusterId  int32
+	id         int64
 }
 
 func (r ApiGetClusterPodRequest) Execute() (*GetClusterContainer200Response, *http.Response, error) {
@@ -4037,28 +4064,29 @@ GetClusterPod Get a Specific Pod for a Cluster
 
 This endpoint retrieves a specific cluster pod.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param clusterId The ID of the cluster
- @param id Morpheus ID of the Object being referenced
- @return ApiGetClusterPodRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param clusterId The ID of the cluster
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetClusterPodRequest
 */
 func (a *ClustersAPIService) GetClusterPod(ctx context.Context, clusterId int32, id int64) ApiGetClusterPodRequest {
 	return ApiGetClusterPodRequest{
 		ApiService: a,
-		ctx: ctx,
-		clusterId: clusterId,
-		id: id,
+		ctx:        ctx,
+		clusterId:  clusterId,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetClusterContainer200Response
+//
+//	@return GetClusterContainer200Response
 func (a *ClustersAPIService) GetClusterPodExecute(r ApiGetClusterPodRequest) (*GetClusterContainer200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetClusterContainer200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetClusterContainer200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClustersAPIService.GetClusterPod")
@@ -4110,7 +4138,7 @@ func (a *ClustersAPIService) GetClusterPodExecute(r ApiGetClusterPodRequest) (*G
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -4119,8 +4147,8 @@ func (a *ClustersAPIService) GetClusterPodExecute(r ApiGetClusterPodRequest) (*G
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -4130,8 +4158,8 @@ func (a *ClustersAPIService) GetClusterPodExecute(r ApiGetClusterPodRequest) (*G
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -4139,8 +4167,8 @@ func (a *ClustersAPIService) GetClusterPodExecute(r ApiGetClusterPodRequest) (*G
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -4149,10 +4177,10 @@ func (a *ClustersAPIService) GetClusterPodExecute(r ApiGetClusterPodRequest) (*G
 }
 
 type ApiGetClusterPolicyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId int32
-	id int64
+	clusterId  int32
+	id         int64
 }
 
 func (r ApiGetClusterPolicyRequest) Execute() (*GetClusterContainer200Response, *http.Response, error) {
@@ -4164,28 +4192,29 @@ GetClusterPolicy Get a Specific Cluster Policy
 
 This endpoint retrieves a specific cluster policy.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param clusterId The ID of the cluster
- @param id Morpheus ID of the Object being referenced
- @return ApiGetClusterPolicyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param clusterId The ID of the cluster
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetClusterPolicyRequest
 */
 func (a *ClustersAPIService) GetClusterPolicy(ctx context.Context, clusterId int32, id int64) ApiGetClusterPolicyRequest {
 	return ApiGetClusterPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		clusterId: clusterId,
-		id: id,
+		ctx:        ctx,
+		clusterId:  clusterId,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetClusterContainer200Response
+//
+//	@return GetClusterContainer200Response
 func (a *ClustersAPIService) GetClusterPolicyExecute(r ApiGetClusterPolicyRequest) (*GetClusterContainer200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetClusterContainer200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetClusterContainer200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClustersAPIService.GetClusterPolicy")
@@ -4237,7 +4266,7 @@ func (a *ClustersAPIService) GetClusterPolicyExecute(r ApiGetClusterPolicyReques
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -4246,8 +4275,8 @@ func (a *ClustersAPIService) GetClusterPolicyExecute(r ApiGetClusterPolicyReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -4257,8 +4286,8 @@ func (a *ClustersAPIService) GetClusterPolicyExecute(r ApiGetClusterPolicyReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -4266,8 +4295,8 @@ func (a *ClustersAPIService) GetClusterPolicyExecute(r ApiGetClusterPolicyReques
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -4276,10 +4305,10 @@ func (a *ClustersAPIService) GetClusterPolicyExecute(r ApiGetClusterPolicyReques
 }
 
 type ApiGetClusterReplicasetRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId int32
-	id int64
+	clusterId  int32
+	id         int64
 }
 
 func (r ApiGetClusterReplicasetRequest) Execute() (*GetClusterContainer200Response, *http.Response, error) {
@@ -4291,28 +4320,29 @@ GetClusterReplicaset Get a Specific Cluster Replicaset
 
 This endpoint retrieves a specific cluster replicaset.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param clusterId The ID of the cluster
- @param id Morpheus ID of the Object being referenced
- @return ApiGetClusterReplicasetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param clusterId The ID of the cluster
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetClusterReplicasetRequest
 */
 func (a *ClustersAPIService) GetClusterReplicaset(ctx context.Context, clusterId int32, id int64) ApiGetClusterReplicasetRequest {
 	return ApiGetClusterReplicasetRequest{
 		ApiService: a,
-		ctx: ctx,
-		clusterId: clusterId,
-		id: id,
+		ctx:        ctx,
+		clusterId:  clusterId,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetClusterContainer200Response
+//
+//	@return GetClusterContainer200Response
 func (a *ClustersAPIService) GetClusterReplicasetExecute(r ApiGetClusterReplicasetRequest) (*GetClusterContainer200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetClusterContainer200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetClusterContainer200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClustersAPIService.GetClusterReplicaset")
@@ -4364,7 +4394,7 @@ func (a *ClustersAPIService) GetClusterReplicasetExecute(r ApiGetClusterReplicas
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -4373,8 +4403,8 @@ func (a *ClustersAPIService) GetClusterReplicasetExecute(r ApiGetClusterReplicas
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -4384,8 +4414,8 @@ func (a *ClustersAPIService) GetClusterReplicasetExecute(r ApiGetClusterReplicas
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -4393,8 +4423,8 @@ func (a *ClustersAPIService) GetClusterReplicasetExecute(r ApiGetClusterReplicas
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -4403,10 +4433,10 @@ func (a *ClustersAPIService) GetClusterReplicasetExecute(r ApiGetClusterReplicas
 }
 
 type ApiGetClusterSecretRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId int32
-	id int64
+	clusterId  int32
+	id         int64
 }
 
 func (r ApiGetClusterSecretRequest) Execute() (*GetClusterContainer200Response, *http.Response, error) {
@@ -4418,28 +4448,29 @@ GetClusterSecret Get a Specific Cluster Secret
 
 This endpoint retrieves a specific cluster secret.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param clusterId The ID of the cluster
- @param id Morpheus ID of the Object being referenced
- @return ApiGetClusterSecretRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param clusterId The ID of the cluster
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetClusterSecretRequest
 */
 func (a *ClustersAPIService) GetClusterSecret(ctx context.Context, clusterId int32, id int64) ApiGetClusterSecretRequest {
 	return ApiGetClusterSecretRequest{
 		ApiService: a,
-		ctx: ctx,
-		clusterId: clusterId,
-		id: id,
+		ctx:        ctx,
+		clusterId:  clusterId,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetClusterContainer200Response
+//
+//	@return GetClusterContainer200Response
 func (a *ClustersAPIService) GetClusterSecretExecute(r ApiGetClusterSecretRequest) (*GetClusterContainer200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetClusterContainer200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetClusterContainer200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClustersAPIService.GetClusterSecret")
@@ -4491,7 +4522,7 @@ func (a *ClustersAPIService) GetClusterSecretExecute(r ApiGetClusterSecretReques
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -4500,8 +4531,8 @@ func (a *ClustersAPIService) GetClusterSecretExecute(r ApiGetClusterSecretReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -4511,8 +4542,8 @@ func (a *ClustersAPIService) GetClusterSecretExecute(r ApiGetClusterSecretReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -4520,8 +4551,8 @@ func (a *ClustersAPIService) GetClusterSecretExecute(r ApiGetClusterSecretReques
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -4530,10 +4561,10 @@ func (a *ClustersAPIService) GetClusterSecretExecute(r ApiGetClusterSecretReques
 }
 
 type ApiGetClusterServiceRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId int32
-	id int64
+	clusterId  int32
+	id         int64
 }
 
 func (r ApiGetClusterServiceRequest) Execute() (*GetClusterContainer200Response, *http.Response, error) {
@@ -4545,28 +4576,29 @@ GetClusterService Get a Specific Cluster Service
 
 This endpoint retrieves a specific cluster service.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param clusterId The ID of the cluster
- @param id Morpheus ID of the Object being referenced
- @return ApiGetClusterServiceRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param clusterId The ID of the cluster
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetClusterServiceRequest
 */
 func (a *ClustersAPIService) GetClusterService(ctx context.Context, clusterId int32, id int64) ApiGetClusterServiceRequest {
 	return ApiGetClusterServiceRequest{
 		ApiService: a,
-		ctx: ctx,
-		clusterId: clusterId,
-		id: id,
+		ctx:        ctx,
+		clusterId:  clusterId,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetClusterContainer200Response
+//
+//	@return GetClusterContainer200Response
 func (a *ClustersAPIService) GetClusterServiceExecute(r ApiGetClusterServiceRequest) (*GetClusterContainer200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetClusterContainer200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetClusterContainer200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClustersAPIService.GetClusterService")
@@ -4618,7 +4650,7 @@ func (a *ClustersAPIService) GetClusterServiceExecute(r ApiGetClusterServiceRequ
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -4627,8 +4659,8 @@ func (a *ClustersAPIService) GetClusterServiceExecute(r ApiGetClusterServiceRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -4638,8 +4670,8 @@ func (a *ClustersAPIService) GetClusterServiceExecute(r ApiGetClusterServiceRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -4647,8 +4679,8 @@ func (a *ClustersAPIService) GetClusterServiceExecute(r ApiGetClusterServiceRequ
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -4657,10 +4689,10 @@ func (a *ClustersAPIService) GetClusterServiceExecute(r ApiGetClusterServiceRequ
 }
 
 type ApiGetClusterStatefulsetRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId int32
-	id int64
+	clusterId  int32
+	id         int64
 }
 
 func (r ApiGetClusterStatefulsetRequest) Execute() (*GetClusterContainer200Response, *http.Response, error) {
@@ -4672,28 +4704,29 @@ GetClusterStatefulset Get a Specific Cluster Statefulset
 
 This endpoint retrieves a specific cluster statefulset.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param clusterId The ID of the cluster
- @param id Morpheus ID of the Object being referenced
- @return ApiGetClusterStatefulsetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param clusterId The ID of the cluster
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetClusterStatefulsetRequest
 */
 func (a *ClustersAPIService) GetClusterStatefulset(ctx context.Context, clusterId int32, id int64) ApiGetClusterStatefulsetRequest {
 	return ApiGetClusterStatefulsetRequest{
 		ApiService: a,
-		ctx: ctx,
-		clusterId: clusterId,
-		id: id,
+		ctx:        ctx,
+		clusterId:  clusterId,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetClusterContainer200Response
+//
+//	@return GetClusterContainer200Response
 func (a *ClustersAPIService) GetClusterStatefulsetExecute(r ApiGetClusterStatefulsetRequest) (*GetClusterContainer200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetClusterContainer200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetClusterContainer200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClustersAPIService.GetClusterStatefulset")
@@ -4745,7 +4778,7 @@ func (a *ClustersAPIService) GetClusterStatefulsetExecute(r ApiGetClusterStatefu
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -4754,8 +4787,8 @@ func (a *ClustersAPIService) GetClusterStatefulsetExecute(r ApiGetClusterStatefu
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -4765,8 +4798,8 @@ func (a *ClustersAPIService) GetClusterStatefulsetExecute(r ApiGetClusterStatefu
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -4774,8 +4807,8 @@ func (a *ClustersAPIService) GetClusterStatefulsetExecute(r ApiGetClusterStatefu
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -4784,9 +4817,9 @@ func (a *ClustersAPIService) GetClusterStatefulsetExecute(r ApiGetClusterStatefu
 }
 
 type ApiGetClusterUpgradeVersionsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId int32
+	clusterId  int32
 }
 
 func (r ApiGetClusterUpgradeVersionsRequest) Execute() (*GetClusterUpgradeVersions200Response, *http.Response, error) {
@@ -4798,26 +4831,27 @@ GetClusterUpgradeVersions Get Cluster Upgrade Versions (Kubernetes)
 
 This endpoint returns valid version targets for upgrading kubectl and kubeadm on the cluster.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param clusterId The ID of the cluster
- @return ApiGetClusterUpgradeVersionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param clusterId The ID of the cluster
+	@return ApiGetClusterUpgradeVersionsRequest
 */
 func (a *ClustersAPIService) GetClusterUpgradeVersions(ctx context.Context, clusterId int32) ApiGetClusterUpgradeVersionsRequest {
 	return ApiGetClusterUpgradeVersionsRequest{
 		ApiService: a,
-		ctx: ctx,
-		clusterId: clusterId,
+		ctx:        ctx,
+		clusterId:  clusterId,
 	}
 }
 
 // Execute executes the request
-//  @return GetClusterUpgradeVersions200Response
+//
+//	@return GetClusterUpgradeVersions200Response
 func (a *ClustersAPIService) GetClusterUpgradeVersionsExecute(r ApiGetClusterUpgradeVersionsRequest) (*GetClusterUpgradeVersions200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetClusterUpgradeVersions200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetClusterUpgradeVersions200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClustersAPIService.GetClusterUpgradeVersions")
@@ -4868,7 +4902,7 @@ func (a *ClustersAPIService) GetClusterUpgradeVersionsExecute(r ApiGetClusterUpg
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -4877,8 +4911,8 @@ func (a *ClustersAPIService) GetClusterUpgradeVersionsExecute(r ApiGetClusterUpg
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -4888,8 +4922,8 @@ func (a *ClustersAPIService) GetClusterUpgradeVersionsExecute(r ApiGetClusterUpg
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -4897,8 +4931,8 @@ func (a *ClustersAPIService) GetClusterUpgradeVersionsExecute(r ApiGetClusterUpg
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -4907,10 +4941,10 @@ func (a *ClustersAPIService) GetClusterUpgradeVersionsExecute(r ApiGetClusterUpg
 }
 
 type ApiGetClusterVolumeRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId int32
-	id int64
+	clusterId  int32
+	id         int64
 }
 
 func (r ApiGetClusterVolumeRequest) Execute() (*GetClusterContainer200Response, *http.Response, error) {
@@ -4922,28 +4956,29 @@ GetClusterVolume Get a Specific Cluster Volume
 
 This endpoint retrieves a specific cluster volume.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param clusterId The ID of the cluster
- @param id Morpheus ID of the Object being referenced
- @return ApiGetClusterVolumeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param clusterId The ID of the cluster
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetClusterVolumeRequest
 */
 func (a *ClustersAPIService) GetClusterVolume(ctx context.Context, clusterId int32, id int64) ApiGetClusterVolumeRequest {
 	return ApiGetClusterVolumeRequest{
 		ApiService: a,
-		ctx: ctx,
-		clusterId: clusterId,
-		id: id,
+		ctx:        ctx,
+		clusterId:  clusterId,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetClusterContainer200Response
+//
+//	@return GetClusterContainer200Response
 func (a *ClustersAPIService) GetClusterVolumeExecute(r ApiGetClusterVolumeRequest) (*GetClusterContainer200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetClusterContainer200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetClusterContainer200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClustersAPIService.GetClusterVolume")
@@ -4995,7 +5030,7 @@ func (a *ClustersAPIService) GetClusterVolumeExecute(r ApiGetClusterVolumeReques
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -5004,8 +5039,8 @@ func (a *ClustersAPIService) GetClusterVolumeExecute(r ApiGetClusterVolumeReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -5015,8 +5050,8 @@ func (a *ClustersAPIService) GetClusterVolumeExecute(r ApiGetClusterVolumeReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -5024,8 +5059,8 @@ func (a *ClustersAPIService) GetClusterVolumeExecute(r ApiGetClusterVolumeReques
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -5034,10 +5069,10 @@ func (a *ClustersAPIService) GetClusterVolumeExecute(r ApiGetClusterVolumeReques
 }
 
 type ApiGetClusterVolumeclaimRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId int32
-	id int64
+	clusterId  int32
+	id         int64
 }
 
 func (r ApiGetClusterVolumeclaimRequest) Execute() (*GetClusterContainer200Response, *http.Response, error) {
@@ -5049,28 +5084,29 @@ GetClusterVolumeclaim Get a Specific Cluster VolumeClaim
 
 This endpoint retrieves a specific cluster volumeclaim.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param clusterId The ID of the cluster
- @param id Morpheus ID of the Object being referenced
- @return ApiGetClusterVolumeclaimRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param clusterId The ID of the cluster
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetClusterVolumeclaimRequest
 */
 func (a *ClustersAPIService) GetClusterVolumeclaim(ctx context.Context, clusterId int32, id int64) ApiGetClusterVolumeclaimRequest {
 	return ApiGetClusterVolumeclaimRequest{
 		ApiService: a,
-		ctx: ctx,
-		clusterId: clusterId,
-		id: id,
+		ctx:        ctx,
+		clusterId:  clusterId,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetClusterContainer200Response
+//
+//	@return GetClusterContainer200Response
 func (a *ClustersAPIService) GetClusterVolumeclaimExecute(r ApiGetClusterVolumeclaimRequest) (*GetClusterContainer200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetClusterContainer200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetClusterContainer200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClustersAPIService.GetClusterVolumeclaim")
@@ -5122,7 +5158,7 @@ func (a *ClustersAPIService) GetClusterVolumeclaimExecute(r ApiGetClusterVolumec
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -5131,8 +5167,8 @@ func (a *ClustersAPIService) GetClusterVolumeclaimExecute(r ApiGetClusterVolumec
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -5142,8 +5178,8 @@ func (a *ClustersAPIService) GetClusterVolumeclaimExecute(r ApiGetClusterVolumec
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -5151,8 +5187,8 @@ func (a *ClustersAPIService) GetClusterVolumeclaimExecute(r ApiGetClusterVolumec
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -5161,9 +5197,9 @@ func (a *ClustersAPIService) GetClusterVolumeclaimExecute(r ApiGetClusterVolumec
 }
 
 type ApiListClusterConfigmapsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId int32
+	clusterId  int32
 }
 
 func (r ApiListClusterConfigmapsRequest) Execute() (*ListClusterConfigmaps200Response, *http.Response, error) {
@@ -5175,26 +5211,27 @@ ListClusterConfigmaps Get Configmaps
 
 This endpoint retrieves configmaps of a specified cluster.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param clusterId The ID of the cluster
- @return ApiListClusterConfigmapsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param clusterId The ID of the cluster
+	@return ApiListClusterConfigmapsRequest
 */
 func (a *ClustersAPIService) ListClusterConfigmaps(ctx context.Context, clusterId int32) ApiListClusterConfigmapsRequest {
 	return ApiListClusterConfigmapsRequest{
 		ApiService: a,
-		ctx: ctx,
-		clusterId: clusterId,
+		ctx:        ctx,
+		clusterId:  clusterId,
 	}
 }
 
 // Execute executes the request
-//  @return ListClusterConfigmaps200Response
+//
+//	@return ListClusterConfigmaps200Response
 func (a *ClustersAPIService) ListClusterConfigmapsExecute(r ApiListClusterConfigmapsRequest) (*ListClusterConfigmaps200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListClusterConfigmaps200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListClusterConfigmaps200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClustersAPIService.ListClusterConfigmaps")
@@ -5245,7 +5282,7 @@ func (a *ClustersAPIService) ListClusterConfigmapsExecute(r ApiListClusterConfig
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -5254,8 +5291,8 @@ func (a *ClustersAPIService) ListClusterConfigmapsExecute(r ApiListClusterConfig
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -5265,8 +5302,8 @@ func (a *ClustersAPIService) ListClusterConfigmapsExecute(r ApiListClusterConfig
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -5274,8 +5311,8 @@ func (a *ClustersAPIService) ListClusterConfigmapsExecute(r ApiListClusterConfig
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -5284,14 +5321,14 @@ func (a *ClustersAPIService) ListClusterConfigmapsExecute(r ApiListClusterConfig
 }
 
 type ApiListClusterContainersRequest struct {
-	ctx context.Context
-	ApiService *ClustersAPIService
-	clusterId int32
-	max *int64
-	offset *int64
-	sort *string
-	order *string
-	phrase *string
+	ctx           context.Context
+	ApiService    *ClustersAPIService
+	clusterId     int32
+	max           *int64
+	offset        *int64
+	sort          *string
+	order         *string
+	phrase        *string
 	resourceLevel *string
 }
 
@@ -5340,26 +5377,27 @@ ListClusterContainers Get Containers for a Cluster
 
 This endpoint retrieves containers of a specified cluster.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param clusterId The ID of the cluster
- @return ApiListClusterContainersRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param clusterId The ID of the cluster
+	@return ApiListClusterContainersRequest
 */
 func (a *ClustersAPIService) ListClusterContainers(ctx context.Context, clusterId int32) ApiListClusterContainersRequest {
 	return ApiListClusterContainersRequest{
 		ApiService: a,
-		ctx: ctx,
-		clusterId: clusterId,
+		ctx:        ctx,
+		clusterId:  clusterId,
 	}
 }
 
 // Execute executes the request
-//  @return ListClusterContainers200Response
+//
+//	@return ListClusterContainers200Response
 func (a *ClustersAPIService) ListClusterContainersExecute(r ApiListClusterContainersRequest) (*ListClusterContainers200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListClusterContainers200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListClusterContainers200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClustersAPIService.ListClusterContainers")
@@ -5437,7 +5475,7 @@ func (a *ClustersAPIService) ListClusterContainersExecute(r ApiListClusterContai
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -5446,8 +5484,8 @@ func (a *ClustersAPIService) ListClusterContainersExecute(r ApiListClusterContai
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -5457,8 +5495,8 @@ func (a *ClustersAPIService) ListClusterContainersExecute(r ApiListClusterContai
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -5466,8 +5504,8 @@ func (a *ClustersAPIService) ListClusterContainersExecute(r ApiListClusterContai
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -5476,9 +5514,9 @@ func (a *ClustersAPIService) ListClusterContainersExecute(r ApiListClusterContai
 }
 
 type ApiListClusterDaemonsetsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId int32
+	clusterId  int32
 }
 
 func (r ApiListClusterDaemonsetsRequest) Execute() (*ListClusterDaemonsets200Response, *http.Response, error) {
@@ -5490,26 +5528,27 @@ ListClusterDaemonsets Get Daemonsets
 
 This endpoint retrieves daemonsets of a specified cluster.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param clusterId The ID of the cluster
- @return ApiListClusterDaemonsetsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param clusterId The ID of the cluster
+	@return ApiListClusterDaemonsetsRequest
 */
 func (a *ClustersAPIService) ListClusterDaemonsets(ctx context.Context, clusterId int32) ApiListClusterDaemonsetsRequest {
 	return ApiListClusterDaemonsetsRequest{
 		ApiService: a,
-		ctx: ctx,
-		clusterId: clusterId,
+		ctx:        ctx,
+		clusterId:  clusterId,
 	}
 }
 
 // Execute executes the request
-//  @return ListClusterDaemonsets200Response
+//
+//	@return ListClusterDaemonsets200Response
 func (a *ClustersAPIService) ListClusterDaemonsetsExecute(r ApiListClusterDaemonsetsRequest) (*ListClusterDaemonsets200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListClusterDaemonsets200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListClusterDaemonsets200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClustersAPIService.ListClusterDaemonsets")
@@ -5560,7 +5599,7 @@ func (a *ClustersAPIService) ListClusterDaemonsetsExecute(r ApiListClusterDaemon
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -5569,8 +5608,8 @@ func (a *ClustersAPIService) ListClusterDaemonsetsExecute(r ApiListClusterDaemon
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -5580,8 +5619,8 @@ func (a *ClustersAPIService) ListClusterDaemonsetsExecute(r ApiListClusterDaemon
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -5589,8 +5628,8 @@ func (a *ClustersAPIService) ListClusterDaemonsetsExecute(r ApiListClusterDaemon
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -5599,16 +5638,16 @@ func (a *ClustersAPIService) ListClusterDaemonsetsExecute(r ApiListClusterDaemon
 }
 
 type ApiListClusterDatastoresRequest struct {
-	ctx context.Context
-	ApiService *ClustersAPIService
-	clusterId int32
-	max *int64
-	offset *int64
-	sort *string
-	order *string
-	phrase *string
-	name *string
-	code *string
+	ctx          context.Context
+	ApiService   *ClustersAPIService
+	clusterId    int32
+	max          *int64
+	offset       *int64
+	sort         *string
+	order        *string
+	phrase       *string
+	name         *string
+	code         *string
 	hideInactive *bool
 }
 
@@ -5669,26 +5708,27 @@ ListClusterDatastores Get Cluster Datastores
 
 This endpoint retrieves datastores of a specified cluster.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param clusterId The ID of the cluster
- @return ApiListClusterDatastoresRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param clusterId The ID of the cluster
+	@return ApiListClusterDatastoresRequest
 */
 func (a *ClustersAPIService) ListClusterDatastores(ctx context.Context, clusterId int32) ApiListClusterDatastoresRequest {
 	return ApiListClusterDatastoresRequest{
 		ApiService: a,
-		ctx: ctx,
-		clusterId: clusterId,
+		ctx:        ctx,
+		clusterId:  clusterId,
 	}
 }
 
 // Execute executes the request
-//  @return ListClusterDatastores200Response
+//
+//	@return ListClusterDatastores200Response
 func (a *ClustersAPIService) ListClusterDatastoresExecute(r ApiListClusterDatastoresRequest) (*ListClusterDatastores200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListClusterDatastores200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListClusterDatastores200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClustersAPIService.ListClusterDatastores")
@@ -5778,7 +5818,7 @@ func (a *ClustersAPIService) ListClusterDatastoresExecute(r ApiListClusterDatast
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -5787,8 +5827,8 @@ func (a *ClustersAPIService) ListClusterDatastoresExecute(r ApiListClusterDatast
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -5798,8 +5838,8 @@ func (a *ClustersAPIService) ListClusterDatastoresExecute(r ApiListClusterDatast
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -5807,8 +5847,8 @@ func (a *ClustersAPIService) ListClusterDatastoresExecute(r ApiListClusterDatast
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -5817,14 +5857,14 @@ func (a *ClustersAPIService) ListClusterDatastoresExecute(r ApiListClusterDatast
 }
 
 type ApiListClusterDeploymentsRequest struct {
-	ctx context.Context
-	ApiService *ClustersAPIService
-	clusterId int32
-	max *int64
-	offset *int64
-	sort *string
-	order *string
-	phrase *string
+	ctx           context.Context
+	ApiService    *ClustersAPIService
+	clusterId     int32
+	max           *int64
+	offset        *int64
+	sort          *string
+	order         *string
+	phrase        *string
 	resourceLevel *string
 }
 
@@ -5873,26 +5913,27 @@ ListClusterDeployments Get Deployments
 
 This endpoint retrieves deployments of a specified cluster.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param clusterId The ID of the cluster
- @return ApiListClusterDeploymentsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param clusterId The ID of the cluster
+	@return ApiListClusterDeploymentsRequest
 */
 func (a *ClustersAPIService) ListClusterDeployments(ctx context.Context, clusterId int32) ApiListClusterDeploymentsRequest {
 	return ApiListClusterDeploymentsRequest{
 		ApiService: a,
-		ctx: ctx,
-		clusterId: clusterId,
+		ctx:        ctx,
+		clusterId:  clusterId,
 	}
 }
 
 // Execute executes the request
-//  @return ListClusterDeployments200Response
+//
+//	@return ListClusterDeployments200Response
 func (a *ClustersAPIService) ListClusterDeploymentsExecute(r ApiListClusterDeploymentsRequest) (*ListClusterDeployments200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListClusterDeployments200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListClusterDeployments200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClustersAPIService.ListClusterDeployments")
@@ -5973,7 +6014,7 @@ func (a *ClustersAPIService) ListClusterDeploymentsExecute(r ApiListClusterDeplo
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -5982,8 +6023,8 @@ func (a *ClustersAPIService) ListClusterDeploymentsExecute(r ApiListClusterDeplo
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -5993,8 +6034,8 @@ func (a *ClustersAPIService) ListClusterDeploymentsExecute(r ApiListClusterDeplo
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -6002,8 +6043,8 @@ func (a *ClustersAPIService) ListClusterDeploymentsExecute(r ApiListClusterDeplo
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -6012,9 +6053,9 @@ func (a *ClustersAPIService) ListClusterDeploymentsExecute(r ApiListClusterDeplo
 }
 
 type ApiListClusterIngressesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId int32
+	clusterId  int32
 }
 
 func (r ApiListClusterIngressesRequest) Execute() (*ListClusterIngresses200Response, *http.Response, error) {
@@ -6026,26 +6067,27 @@ ListClusterIngresses Get Ingresses
 
 This endpoint retrieves ingresses of a specified cluster.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param clusterId The ID of the cluster
- @return ApiListClusterIngressesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param clusterId The ID of the cluster
+	@return ApiListClusterIngressesRequest
 */
 func (a *ClustersAPIService) ListClusterIngresses(ctx context.Context, clusterId int32) ApiListClusterIngressesRequest {
 	return ApiListClusterIngressesRequest{
 		ApiService: a,
-		ctx: ctx,
-		clusterId: clusterId,
+		ctx:        ctx,
+		clusterId:  clusterId,
 	}
 }
 
 // Execute executes the request
-//  @return ListClusterIngresses200Response
+//
+//	@return ListClusterIngresses200Response
 func (a *ClustersAPIService) ListClusterIngressesExecute(r ApiListClusterIngressesRequest) (*ListClusterIngresses200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListClusterIngresses200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListClusterIngresses200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClustersAPIService.ListClusterIngresses")
@@ -6096,7 +6138,7 @@ func (a *ClustersAPIService) ListClusterIngressesExecute(r ApiListClusterIngress
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -6105,8 +6147,8 @@ func (a *ClustersAPIService) ListClusterIngressesExecute(r ApiListClusterIngress
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -6116,8 +6158,8 @@ func (a *ClustersAPIService) ListClusterIngressesExecute(r ApiListClusterIngress
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -6125,8 +6167,8 @@ func (a *ClustersAPIService) ListClusterIngressesExecute(r ApiListClusterIngress
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -6135,14 +6177,14 @@ func (a *ClustersAPIService) ListClusterIngressesExecute(r ApiListClusterIngress
 }
 
 type ApiListClusterJobsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId int32
-	max *int64
-	offset *int64
-	sort *string
-	order *string
-	phrase *string
+	clusterId  int32
+	max        *int64
+	offset     *int64
+	sort       *string
+	order      *string
+	phrase     *string
 }
 
 // Maximum number of records to return
@@ -6184,26 +6226,27 @@ ListClusterJobs Get Jobs
 
 This endpoint retrieves jobs of a specified cluster.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param clusterId The ID of the cluster
- @return ApiListClusterJobsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param clusterId The ID of the cluster
+	@return ApiListClusterJobsRequest
 */
 func (a *ClustersAPIService) ListClusterJobs(ctx context.Context, clusterId int32) ApiListClusterJobsRequest {
 	return ApiListClusterJobsRequest{
 		ApiService: a,
-		ctx: ctx,
-		clusterId: clusterId,
+		ctx:        ctx,
+		clusterId:  clusterId,
 	}
 }
 
 // Execute executes the request
-//  @return ListClusterJobs200Response
+//
+//	@return ListClusterJobs200Response
 func (a *ClustersAPIService) ListClusterJobsExecute(r ApiListClusterJobsRequest) (*ListClusterJobs200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListClusterJobs200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListClusterJobs200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClustersAPIService.ListClusterJobs")
@@ -6281,7 +6324,7 @@ func (a *ClustersAPIService) ListClusterJobsExecute(r ApiListClusterJobsRequest)
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -6290,8 +6333,8 @@ func (a *ClustersAPIService) ListClusterJobsExecute(r ApiListClusterJobsRequest)
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -6301,8 +6344,8 @@ func (a *ClustersAPIService) ListClusterJobsExecute(r ApiListClusterJobsRequest)
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -6310,8 +6353,8 @@ func (a *ClustersAPIService) ListClusterJobsExecute(r ApiListClusterJobsRequest)
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -6320,9 +6363,9 @@ func (a *ClustersAPIService) ListClusterJobsExecute(r ApiListClusterJobsRequest)
 }
 
 type ApiListClusterNetworkEndpointsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId int32
+	clusterId  int32
 }
 
 func (r ApiListClusterNetworkEndpointsRequest) Execute() (*ListClusterNetworkEndpoints200Response, *http.Response, error) {
@@ -6334,26 +6377,27 @@ ListClusterNetworkEndpoints Get Endpoints
 
 This endpoint retrieves network endpoints of a specified cluster.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param clusterId The ID of the cluster
- @return ApiListClusterNetworkEndpointsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param clusterId The ID of the cluster
+	@return ApiListClusterNetworkEndpointsRequest
 */
 func (a *ClustersAPIService) ListClusterNetworkEndpoints(ctx context.Context, clusterId int32) ApiListClusterNetworkEndpointsRequest {
 	return ApiListClusterNetworkEndpointsRequest{
 		ApiService: a,
-		ctx: ctx,
-		clusterId: clusterId,
+		ctx:        ctx,
+		clusterId:  clusterId,
 	}
 }
 
 // Execute executes the request
-//  @return ListClusterNetworkEndpoints200Response
+//
+//	@return ListClusterNetworkEndpoints200Response
 func (a *ClustersAPIService) ListClusterNetworkEndpointsExecute(r ApiListClusterNetworkEndpointsRequest) (*ListClusterNetworkEndpoints200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListClusterNetworkEndpoints200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListClusterNetworkEndpoints200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClustersAPIService.ListClusterNetworkEndpoints")
@@ -6404,7 +6448,7 @@ func (a *ClustersAPIService) ListClusterNetworkEndpointsExecute(r ApiListCluster
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -6413,8 +6457,8 @@ func (a *ClustersAPIService) ListClusterNetworkEndpointsExecute(r ApiListCluster
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -6424,8 +6468,8 @@ func (a *ClustersAPIService) ListClusterNetworkEndpointsExecute(r ApiListCluster
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -6433,8 +6477,8 @@ func (a *ClustersAPIService) ListClusterNetworkEndpointsExecute(r ApiListCluster
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -6443,14 +6487,14 @@ func (a *ClustersAPIService) ListClusterNetworkEndpointsExecute(r ApiListCluster
 }
 
 type ApiListClusterPodsRequest struct {
-	ctx context.Context
-	ApiService *ClustersAPIService
-	clusterId int32
-	max *int64
-	offset *int64
-	sort *string
-	order *string
-	phrase *string
+	ctx           context.Context
+	ApiService    *ClustersAPIService
+	clusterId     int32
+	max           *int64
+	offset        *int64
+	sort          *string
+	order         *string
+	phrase        *string
 	resourceLevel *string
 }
 
@@ -6499,26 +6543,27 @@ ListClusterPods Get Pods
 
 This endpoint retrieves pods of a specified cluster.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param clusterId The ID of the cluster
- @return ApiListClusterPodsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param clusterId The ID of the cluster
+	@return ApiListClusterPodsRequest
 */
 func (a *ClustersAPIService) ListClusterPods(ctx context.Context, clusterId int32) ApiListClusterPodsRequest {
 	return ApiListClusterPodsRequest{
 		ApiService: a,
-		ctx: ctx,
-		clusterId: clusterId,
+		ctx:        ctx,
+		clusterId:  clusterId,
 	}
 }
 
 // Execute executes the request
-//  @return ListClusterPods200Response
+//
+//	@return ListClusterPods200Response
 func (a *ClustersAPIService) ListClusterPodsExecute(r ApiListClusterPodsRequest) (*ListClusterPods200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListClusterPods200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListClusterPods200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClustersAPIService.ListClusterPods")
@@ -6599,7 +6644,7 @@ func (a *ClustersAPIService) ListClusterPodsExecute(r ApiListClusterPodsRequest)
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -6608,8 +6653,8 @@ func (a *ClustersAPIService) ListClusterPodsExecute(r ApiListClusterPodsRequest)
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -6619,8 +6664,8 @@ func (a *ClustersAPIService) ListClusterPodsExecute(r ApiListClusterPodsRequest)
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -6628,8 +6673,8 @@ func (a *ClustersAPIService) ListClusterPodsExecute(r ApiListClusterPodsRequest)
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -6638,9 +6683,9 @@ func (a *ClustersAPIService) ListClusterPodsExecute(r ApiListClusterPodsRequest)
 }
 
 type ApiListClusterPoliciesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId int32
+	clusterId  int32
 }
 
 func (r ApiListClusterPoliciesRequest) Execute() (*ListClusterPolicies200Response, *http.Response, error) {
@@ -6652,26 +6697,27 @@ ListClusterPolicies Get Policies
 
 This endpoint retrieves policies of a specified cluster.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param clusterId The ID of the cluster
- @return ApiListClusterPoliciesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param clusterId The ID of the cluster
+	@return ApiListClusterPoliciesRequest
 */
 func (a *ClustersAPIService) ListClusterPolicies(ctx context.Context, clusterId int32) ApiListClusterPoliciesRequest {
 	return ApiListClusterPoliciesRequest{
 		ApiService: a,
-		ctx: ctx,
-		clusterId: clusterId,
+		ctx:        ctx,
+		clusterId:  clusterId,
 	}
 }
 
 // Execute executes the request
-//  @return ListClusterPolicies200Response
+//
+//	@return ListClusterPolicies200Response
 func (a *ClustersAPIService) ListClusterPoliciesExecute(r ApiListClusterPoliciesRequest) (*ListClusterPolicies200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListClusterPolicies200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListClusterPolicies200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClustersAPIService.ListClusterPolicies")
@@ -6722,7 +6768,7 @@ func (a *ClustersAPIService) ListClusterPoliciesExecute(r ApiListClusterPolicies
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -6731,8 +6777,8 @@ func (a *ClustersAPIService) ListClusterPoliciesExecute(r ApiListClusterPolicies
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -6742,8 +6788,8 @@ func (a *ClustersAPIService) ListClusterPoliciesExecute(r ApiListClusterPolicies
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -6751,8 +6797,8 @@ func (a *ClustersAPIService) ListClusterPoliciesExecute(r ApiListClusterPolicies
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -6761,9 +6807,9 @@ func (a *ClustersAPIService) ListClusterPoliciesExecute(r ApiListClusterPolicies
 }
 
 type ApiListClusterReplicasetsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId int32
+	clusterId  int32
 }
 
 func (r ApiListClusterReplicasetsRequest) Execute() (*ListClusterReplicasets200Response, *http.Response, error) {
@@ -6775,26 +6821,27 @@ ListClusterReplicasets Get Replicasets
 
 This endpoint retrieves replicasets of a specified cluster.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param clusterId The ID of the cluster
- @return ApiListClusterReplicasetsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param clusterId The ID of the cluster
+	@return ApiListClusterReplicasetsRequest
 */
 func (a *ClustersAPIService) ListClusterReplicasets(ctx context.Context, clusterId int32) ApiListClusterReplicasetsRequest {
 	return ApiListClusterReplicasetsRequest{
 		ApiService: a,
-		ctx: ctx,
-		clusterId: clusterId,
+		ctx:        ctx,
+		clusterId:  clusterId,
 	}
 }
 
 // Execute executes the request
-//  @return ListClusterReplicasets200Response
+//
+//	@return ListClusterReplicasets200Response
 func (a *ClustersAPIService) ListClusterReplicasetsExecute(r ApiListClusterReplicasetsRequest) (*ListClusterReplicasets200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListClusterReplicasets200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListClusterReplicasets200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClustersAPIService.ListClusterReplicasets")
@@ -6845,7 +6892,7 @@ func (a *ClustersAPIService) ListClusterReplicasetsExecute(r ApiListClusterRepli
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -6854,8 +6901,8 @@ func (a *ClustersAPIService) ListClusterReplicasetsExecute(r ApiListClusterRepli
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -6865,8 +6912,8 @@ func (a *ClustersAPIService) ListClusterReplicasetsExecute(r ApiListClusterRepli
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -6874,8 +6921,8 @@ func (a *ClustersAPIService) ListClusterReplicasetsExecute(r ApiListClusterRepli
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -6884,9 +6931,9 @@ func (a *ClustersAPIService) ListClusterReplicasetsExecute(r ApiListClusterRepli
 }
 
 type ApiListClusterSecretsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId int32
+	clusterId  int32
 }
 
 func (r ApiListClusterSecretsRequest) Execute() (*ListClusterSecrets200Response, *http.Response, error) {
@@ -6898,26 +6945,27 @@ ListClusterSecrets Get Secrets
 
 This endpoint retrieves secrets of a specified cluster.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param clusterId The ID of the cluster
- @return ApiListClusterSecretsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param clusterId The ID of the cluster
+	@return ApiListClusterSecretsRequest
 */
 func (a *ClustersAPIService) ListClusterSecrets(ctx context.Context, clusterId int32) ApiListClusterSecretsRequest {
 	return ApiListClusterSecretsRequest{
 		ApiService: a,
-		ctx: ctx,
-		clusterId: clusterId,
+		ctx:        ctx,
+		clusterId:  clusterId,
 	}
 }
 
 // Execute executes the request
-//  @return ListClusterSecrets200Response
+//
+//	@return ListClusterSecrets200Response
 func (a *ClustersAPIService) ListClusterSecretsExecute(r ApiListClusterSecretsRequest) (*ListClusterSecrets200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListClusterSecrets200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListClusterSecrets200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClustersAPIService.ListClusterSecrets")
@@ -6968,7 +7016,7 @@ func (a *ClustersAPIService) ListClusterSecretsExecute(r ApiListClusterSecretsRe
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -6977,8 +7025,8 @@ func (a *ClustersAPIService) ListClusterSecretsExecute(r ApiListClusterSecretsRe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -6988,8 +7036,8 @@ func (a *ClustersAPIService) ListClusterSecretsExecute(r ApiListClusterSecretsRe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -6997,8 +7045,8 @@ func (a *ClustersAPIService) ListClusterSecretsExecute(r ApiListClusterSecretsRe
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -7007,14 +7055,14 @@ func (a *ClustersAPIService) ListClusterSecretsExecute(r ApiListClusterSecretsRe
 }
 
 type ApiListClusterServicesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId int32
-	max *int64
-	offset *int64
-	sort *string
-	order *string
-	phrase *string
+	clusterId  int32
+	max        *int64
+	offset     *int64
+	sort       *string
+	order      *string
+	phrase     *string
 }
 
 // Maximum number of records to return
@@ -7056,26 +7104,27 @@ ListClusterServices Get Services
 
 This endpoint retrieves services of a specified cluster.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param clusterId The ID of the cluster
- @return ApiListClusterServicesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param clusterId The ID of the cluster
+	@return ApiListClusterServicesRequest
 */
 func (a *ClustersAPIService) ListClusterServices(ctx context.Context, clusterId int32) ApiListClusterServicesRequest {
 	return ApiListClusterServicesRequest{
 		ApiService: a,
-		ctx: ctx,
-		clusterId: clusterId,
+		ctx:        ctx,
+		clusterId:  clusterId,
 	}
 }
 
 // Execute executes the request
-//  @return ListClusterServices200Response
+//
+//	@return ListClusterServices200Response
 func (a *ClustersAPIService) ListClusterServicesExecute(r ApiListClusterServicesRequest) (*ListClusterServices200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListClusterServices200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListClusterServices200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClustersAPIService.ListClusterServices")
@@ -7153,7 +7202,7 @@ func (a *ClustersAPIService) ListClusterServicesExecute(r ApiListClusterServices
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -7162,8 +7211,8 @@ func (a *ClustersAPIService) ListClusterServicesExecute(r ApiListClusterServices
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -7173,8 +7222,8 @@ func (a *ClustersAPIService) ListClusterServicesExecute(r ApiListClusterServices
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -7182,8 +7231,8 @@ func (a *ClustersAPIService) ListClusterServicesExecute(r ApiListClusterServices
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -7192,14 +7241,14 @@ func (a *ClustersAPIService) ListClusterServicesExecute(r ApiListClusterServices
 }
 
 type ApiListClusterStatefulSetsRequest struct {
-	ctx context.Context
-	ApiService *ClustersAPIService
-	clusterId int32
-	max *int64
-	offset *int64
-	sort *string
-	order *string
-	phrase *string
+	ctx           context.Context
+	ApiService    *ClustersAPIService
+	clusterId     int32
+	max           *int64
+	offset        *int64
+	sort          *string
+	order         *string
+	phrase        *string
 	resourceLevel *string
 }
 
@@ -7248,26 +7297,27 @@ ListClusterStatefulSets Get Stateful Sets
 
 This endpoint retrieves stateful sets of a specified cluster.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param clusterId The ID of the cluster
- @return ApiListClusterStatefulSetsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param clusterId The ID of the cluster
+	@return ApiListClusterStatefulSetsRequest
 */
 func (a *ClustersAPIService) ListClusterStatefulSets(ctx context.Context, clusterId int32) ApiListClusterStatefulSetsRequest {
 	return ApiListClusterStatefulSetsRequest{
 		ApiService: a,
-		ctx: ctx,
-		clusterId: clusterId,
+		ctx:        ctx,
+		clusterId:  clusterId,
 	}
 }
 
 // Execute executes the request
-//  @return ListClusterStatefulSets200Response
+//
+//	@return ListClusterStatefulSets200Response
 func (a *ClustersAPIService) ListClusterStatefulSetsExecute(r ApiListClusterStatefulSetsRequest) (*ListClusterStatefulSets200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListClusterStatefulSets200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListClusterStatefulSets200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClustersAPIService.ListClusterStatefulSets")
@@ -7348,7 +7398,7 @@ func (a *ClustersAPIService) ListClusterStatefulSetsExecute(r ApiListClusterStat
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -7357,8 +7407,8 @@ func (a *ClustersAPIService) ListClusterStatefulSetsExecute(r ApiListClusterStat
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -7368,8 +7418,8 @@ func (a *ClustersAPIService) ListClusterStatefulSetsExecute(r ApiListClusterStat
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -7377,8 +7427,8 @@ func (a *ClustersAPIService) ListClusterStatefulSetsExecute(r ApiListClusterStat
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -7387,15 +7437,15 @@ func (a *ClustersAPIService) ListClusterStatefulSetsExecute(r ApiListClusterStat
 }
 
 type ApiListClusterTypesRequest struct {
-	ctx context.Context
-	ApiService *ClustersAPIService
-	max *int64
-	offset *int64
-	sort *string
-	direction *string
-	phrase *string
-	name *string
-	code *string
+	ctx          context.Context
+	ApiService   *ClustersAPIService
+	max          *int64
+	offset       *int64
+	sort         *string
+	direction    *string
+	phrase       *string
+	name         *string
+	code         *string
 	providerType *string
 }
 
@@ -7441,7 +7491,7 @@ func (r ApiListClusterTypesRequest) Code(code string) ApiListClusterTypesRequest
 	return r
 }
 
-// Filter by &#x60;Provider Type&#x60; code. 
+// Filter by &#x60;Provider Type&#x60; code.
 func (r ApiListClusterTypesRequest) ProviderType(providerType string) ApiListClusterTypesRequest {
 	r.providerType = &providerType
 	return r
@@ -7456,24 +7506,25 @@ ListClusterTypes Get All Cluster Types
 
 Fetch a list of available cluster types.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListClusterTypesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListClusterTypesRequest
 */
 func (a *ClustersAPIService) ListClusterTypes(ctx context.Context) ApiListClusterTypesRequest {
 	return ApiListClusterTypesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListClusterTypes200Response
+//
+//	@return ListClusterTypes200Response
 func (a *ClustersAPIService) ListClusterTypesExecute(r ApiListClusterTypesRequest) (*ListClusterTypes200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListClusterTypes200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListClusterTypes200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClustersAPIService.ListClusterTypes")
@@ -7559,7 +7610,7 @@ func (a *ClustersAPIService) ListClusterTypesExecute(r ApiListClusterTypesReques
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -7568,8 +7619,8 @@ func (a *ClustersAPIService) ListClusterTypesExecute(r ApiListClusterTypesReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -7579,8 +7630,8 @@ func (a *ClustersAPIService) ListClusterTypesExecute(r ApiListClusterTypesReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -7588,8 +7639,8 @@ func (a *ClustersAPIService) ListClusterTypesExecute(r ApiListClusterTypesReques
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -7598,9 +7649,9 @@ func (a *ClustersAPIService) ListClusterTypesExecute(r ApiListClusterTypesReques
 }
 
 type ApiListClusterVolumeclaimsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId int32
+	clusterId  int32
 }
 
 func (r ApiListClusterVolumeclaimsRequest) Execute() (*ListClusterVolumeclaims200Response, *http.Response, error) {
@@ -7612,26 +7663,27 @@ ListClusterVolumeclaims Get VolumeClaims
 
 This endpoint retrieves volumeclaims of a specified cluster.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param clusterId The ID of the cluster
- @return ApiListClusterVolumeclaimsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param clusterId The ID of the cluster
+	@return ApiListClusterVolumeclaimsRequest
 */
 func (a *ClustersAPIService) ListClusterVolumeclaims(ctx context.Context, clusterId int32) ApiListClusterVolumeclaimsRequest {
 	return ApiListClusterVolumeclaimsRequest{
 		ApiService: a,
-		ctx: ctx,
-		clusterId: clusterId,
+		ctx:        ctx,
+		clusterId:  clusterId,
 	}
 }
 
 // Execute executes the request
-//  @return ListClusterVolumeclaims200Response
+//
+//	@return ListClusterVolumeclaims200Response
 func (a *ClustersAPIService) ListClusterVolumeclaimsExecute(r ApiListClusterVolumeclaimsRequest) (*ListClusterVolumeclaims200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListClusterVolumeclaims200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListClusterVolumeclaims200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClustersAPIService.ListClusterVolumeclaims")
@@ -7682,7 +7734,7 @@ func (a *ClustersAPIService) ListClusterVolumeclaimsExecute(r ApiListClusterVolu
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -7691,8 +7743,8 @@ func (a *ClustersAPIService) ListClusterVolumeclaimsExecute(r ApiListClusterVolu
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -7702,8 +7754,8 @@ func (a *ClustersAPIService) ListClusterVolumeclaimsExecute(r ApiListClusterVolu
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -7711,8 +7763,8 @@ func (a *ClustersAPIService) ListClusterVolumeclaimsExecute(r ApiListClusterVolu
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -7721,9 +7773,9 @@ func (a *ClustersAPIService) ListClusterVolumeclaimsExecute(r ApiListClusterVolu
 }
 
 type ApiListClusterVolumesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId int32
+	clusterId  int32
 }
 
 func (r ApiListClusterVolumesRequest) Execute() (*ListClusterVolumes200Response, *http.Response, error) {
@@ -7735,26 +7787,27 @@ ListClusterVolumes Get Volumes
 
 This endpoint retrieves volumes of a specified cluster.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param clusterId The ID of the cluster
- @return ApiListClusterVolumesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param clusterId The ID of the cluster
+	@return ApiListClusterVolumesRequest
 */
 func (a *ClustersAPIService) ListClusterVolumes(ctx context.Context, clusterId int32) ApiListClusterVolumesRequest {
 	return ApiListClusterVolumesRequest{
 		ApiService: a,
-		ctx: ctx,
-		clusterId: clusterId,
+		ctx:        ctx,
+		clusterId:  clusterId,
 	}
 }
 
 // Execute executes the request
-//  @return ListClusterVolumes200Response
+//
+//	@return ListClusterVolumes200Response
 func (a *ClustersAPIService) ListClusterVolumesExecute(r ApiListClusterVolumesRequest) (*ListClusterVolumes200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListClusterVolumes200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListClusterVolumes200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClustersAPIService.ListClusterVolumes")
@@ -7805,7 +7858,7 @@ func (a *ClustersAPIService) ListClusterVolumesExecute(r ApiListClusterVolumesRe
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -7814,8 +7867,8 @@ func (a *ClustersAPIService) ListClusterVolumesExecute(r ApiListClusterVolumesRe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -7825,8 +7878,8 @@ func (a *ClustersAPIService) ListClusterVolumesExecute(r ApiListClusterVolumesRe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -7834,8 +7887,8 @@ func (a *ClustersAPIService) ListClusterVolumesExecute(r ApiListClusterVolumesRe
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -7844,9 +7897,9 @@ func (a *ClustersAPIService) ListClusterVolumesExecute(r ApiListClusterVolumesRe
 }
 
 type ApiListClusterWorkersRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId int32
+	clusterId  int32
 }
 
 func (r ApiListClusterWorkersRequest) Execute() (*ListClusterWorkers200Response, *http.Response, error) {
@@ -7858,26 +7911,27 @@ ListClusterWorkers Get Workers
 
 This endpoint retrieves workers of a specified cluster.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param clusterId The ID of the cluster
- @return ApiListClusterWorkersRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param clusterId The ID of the cluster
+	@return ApiListClusterWorkersRequest
 */
 func (a *ClustersAPIService) ListClusterWorkers(ctx context.Context, clusterId int32) ApiListClusterWorkersRequest {
 	return ApiListClusterWorkersRequest{
 		ApiService: a,
-		ctx: ctx,
-		clusterId: clusterId,
+		ctx:        ctx,
+		clusterId:  clusterId,
 	}
 }
 
 // Execute executes the request
-//  @return ListClusterWorkers200Response
+//
+//	@return ListClusterWorkers200Response
 func (a *ClustersAPIService) ListClusterWorkersExecute(r ApiListClusterWorkersRequest) (*ListClusterWorkers200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListClusterWorkers200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListClusterWorkers200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClustersAPIService.ListClusterWorkers")
@@ -7928,7 +7982,7 @@ func (a *ClustersAPIService) ListClusterWorkersExecute(r ApiListClusterWorkersRe
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -7937,8 +7991,8 @@ func (a *ClustersAPIService) ListClusterWorkersExecute(r ApiListClusterWorkersRe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -7948,8 +8002,8 @@ func (a *ClustersAPIService) ListClusterWorkersExecute(r ApiListClusterWorkersRe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -7957,8 +8011,8 @@ func (a *ClustersAPIService) ListClusterWorkersExecute(r ApiListClusterWorkersRe
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -7967,18 +8021,18 @@ func (a *ClustersAPIService) ListClusterWorkersExecute(r ApiListClusterWorkersRe
 }
 
 type ApiListClustersRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ClustersAPIService
-	max *int64
-	offset *int64
-	sort *string
-	direction *string
-	phrase *string
-	name *string
-	zoneId *int64
-	typeId *int64
-	labels *string
-	allLabels *string
+	max        *int64
+	offset     *int64
+	sort       *string
+	direction  *string
+	phrase     *string
+	name       *string
+	zoneId     *int64
+	typeId     *int64
+	labels     *string
+	allLabels  *string
 }
 
 // Maximum number of records to return
@@ -8050,24 +8104,25 @@ ListClusters Get All Clusters
 
 This endpoint retrieves all clusters and a list of clusters associated with the zone by id.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListClustersRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListClustersRequest
 */
 func (a *ClustersAPIService) ListClusters(ctx context.Context) ApiListClustersRequest {
 	return ApiListClustersRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListClusters200Response
+//
+//	@return ListClusters200Response
 func (a *ClustersAPIService) ListClustersExecute(r ApiListClustersRequest) (*ListClusters200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListClusters200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListClusters200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClustersAPIService.ListClusters")
@@ -8159,7 +8214,7 @@ func (a *ClustersAPIService) ListClustersExecute(r ApiListClustersRequest) (*Lis
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -8168,8 +8223,8 @@ func (a *ClustersAPIService) ListClustersExecute(r ApiListClustersRequest) (*Lis
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -8179,8 +8234,8 @@ func (a *ClustersAPIService) ListClustersExecute(r ApiListClustersRequest) (*Lis
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -8188,8 +8243,8 @@ func (a *ClustersAPIService) ListClustersExecute(r ApiListClustersRequest) (*Lis
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -8198,9 +8253,9 @@ func (a *ClustersAPIService) ListClustersExecute(r ApiListClustersRequest) (*Lis
 }
 
 type ApiRefreshClusterRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId int32
+	clusterId  int32
 }
 
 func (r ApiRefreshClusterRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -8212,27 +8267,27 @@ RefreshCluster Refreshes a Cluster
 
 Refreshes a cluster.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param clusterId The ID of the cluster
- @return ApiRefreshClusterRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param clusterId The ID of the cluster
+	@return ApiRefreshClusterRequest
 */
 func (a *ClustersAPIService) RefreshCluster(ctx context.Context, clusterId int32) ApiRefreshClusterRequest {
 	return ApiRefreshClusterRequest{
 		ApiService: a,
-		ctx: ctx,
-		clusterId: clusterId,
+		ctx:        ctx,
+		clusterId:  clusterId,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *ClustersAPIService) RefreshClusterExecute(r ApiRefreshClusterRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClustersAPIService.RefreshCluster")
@@ -8283,7 +8338,7 @@ func (a *ClustersAPIService) RefreshClusterExecute(r ApiRefreshClusterRequest) (
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -8292,8 +8347,8 @@ func (a *ClustersAPIService) RefreshClusterExecute(r ApiRefreshClusterRequest) (
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -8303,8 +8358,8 @@ func (a *ClustersAPIService) RefreshClusterExecute(r ApiRefreshClusterRequest) (
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -8312,8 +8367,8 @@ func (a *ClustersAPIService) RefreshClusterExecute(r ApiRefreshClusterRequest) (
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -8322,10 +8377,10 @@ func (a *ClustersAPIService) RefreshClusterExecute(r ApiRefreshClusterRequest) (
 }
 
 type ApiRestartClusterContainerRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId int32
-	id int64
+	clusterId  int32
+	id         int64
 }
 
 func (r ApiRestartClusterContainerRequest) Execute() (*RestartClusterContainer200Response, *http.Response, error) {
@@ -8337,28 +8392,29 @@ RestartClusterContainer Restart a Container
 
 Will restart a container in the specified cluster.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param clusterId The ID of the cluster
- @param id Morpheus ID of the Object being referenced
- @return ApiRestartClusterContainerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param clusterId The ID of the cluster
+	@param id Morpheus ID of the Object being referenced
+	@return ApiRestartClusterContainerRequest
 */
 func (a *ClustersAPIService) RestartClusterContainer(ctx context.Context, clusterId int32, id int64) ApiRestartClusterContainerRequest {
 	return ApiRestartClusterContainerRequest{
 		ApiService: a,
-		ctx: ctx,
-		clusterId: clusterId,
-		id: id,
+		ctx:        ctx,
+		clusterId:  clusterId,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return RestartClusterContainer200Response
+//
+//	@return RestartClusterContainer200Response
 func (a *ClustersAPIService) RestartClusterContainerExecute(r ApiRestartClusterContainerRequest) (*RestartClusterContainer200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *RestartClusterContainer200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *RestartClusterContainer200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClustersAPIService.RestartClusterContainer")
@@ -8410,7 +8466,7 @@ func (a *ClustersAPIService) RestartClusterContainerExecute(r ApiRestartClusterC
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -8419,8 +8475,8 @@ func (a *ClustersAPIService) RestartClusterContainerExecute(r ApiRestartClusterC
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -8430,8 +8486,8 @@ func (a *ClustersAPIService) RestartClusterContainerExecute(r ApiRestartClusterC
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -8439,8 +8495,8 @@ func (a *ClustersAPIService) RestartClusterContainerExecute(r ApiRestartClusterC
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -8449,10 +8505,10 @@ func (a *ClustersAPIService) RestartClusterContainerExecute(r ApiRestartClusterC
 }
 
 type ApiRestartClusterDeploymentRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId int32
-	id int64
+	clusterId  int32
+	id         int64
 }
 
 func (r ApiRestartClusterDeploymentRequest) Execute() (*RestartClusterContainer200Response, *http.Response, error) {
@@ -8464,28 +8520,29 @@ RestartClusterDeployment Restart a Deployment
 
 Will restart a deployment in the specified cluster.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param clusterId The ID of the cluster
- @param id Morpheus ID of the Object being referenced
- @return ApiRestartClusterDeploymentRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param clusterId The ID of the cluster
+	@param id Morpheus ID of the Object being referenced
+	@return ApiRestartClusterDeploymentRequest
 */
 func (a *ClustersAPIService) RestartClusterDeployment(ctx context.Context, clusterId int32, id int64) ApiRestartClusterDeploymentRequest {
 	return ApiRestartClusterDeploymentRequest{
 		ApiService: a,
-		ctx: ctx,
-		clusterId: clusterId,
-		id: id,
+		ctx:        ctx,
+		clusterId:  clusterId,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return RestartClusterContainer200Response
+//
+//	@return RestartClusterContainer200Response
 func (a *ClustersAPIService) RestartClusterDeploymentExecute(r ApiRestartClusterDeploymentRequest) (*RestartClusterContainer200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *RestartClusterContainer200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *RestartClusterContainer200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClustersAPIService.RestartClusterDeployment")
@@ -8537,7 +8594,7 @@ func (a *ClustersAPIService) RestartClusterDeploymentExecute(r ApiRestartCluster
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -8546,8 +8603,8 @@ func (a *ClustersAPIService) RestartClusterDeploymentExecute(r ApiRestartCluster
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -8557,8 +8614,8 @@ func (a *ClustersAPIService) RestartClusterDeploymentExecute(r ApiRestartCluster
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -8566,8 +8623,8 @@ func (a *ClustersAPIService) RestartClusterDeploymentExecute(r ApiRestartCluster
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -8576,10 +8633,10 @@ func (a *ClustersAPIService) RestartClusterDeploymentExecute(r ApiRestartCluster
 }
 
 type ApiRestartClusterPodRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId int32
-	id int64
+	clusterId  int32
+	id         int64
 }
 
 func (r ApiRestartClusterPodRequest) Execute() (*RestartClusterContainer200Response, *http.Response, error) {
@@ -8591,28 +8648,29 @@ RestartClusterPod Restart a Pod
 
 Will restart a pod in the specified cluster.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param clusterId The ID of the cluster
- @param id Morpheus ID of the Object being referenced
- @return ApiRestartClusterPodRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param clusterId The ID of the cluster
+	@param id Morpheus ID of the Object being referenced
+	@return ApiRestartClusterPodRequest
 */
 func (a *ClustersAPIService) RestartClusterPod(ctx context.Context, clusterId int32, id int64) ApiRestartClusterPodRequest {
 	return ApiRestartClusterPodRequest{
 		ApiService: a,
-		ctx: ctx,
-		clusterId: clusterId,
-		id: id,
+		ctx:        ctx,
+		clusterId:  clusterId,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return RestartClusterContainer200Response
+//
+//	@return RestartClusterContainer200Response
 func (a *ClustersAPIService) RestartClusterPodExecute(r ApiRestartClusterPodRequest) (*RestartClusterContainer200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *RestartClusterContainer200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *RestartClusterContainer200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClustersAPIService.RestartClusterPod")
@@ -8664,7 +8722,7 @@ func (a *ClustersAPIService) RestartClusterPodExecute(r ApiRestartClusterPodRequ
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -8673,8 +8731,8 @@ func (a *ClustersAPIService) RestartClusterPodExecute(r ApiRestartClusterPodRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -8684,8 +8742,8 @@ func (a *ClustersAPIService) RestartClusterPodExecute(r ApiRestartClusterPodRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -8693,8 +8751,8 @@ func (a *ClustersAPIService) RestartClusterPodExecute(r ApiRestartClusterPodRequ
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -8703,10 +8761,10 @@ func (a *ClustersAPIService) RestartClusterPodExecute(r ApiRestartClusterPodRequ
 }
 
 type ApiRestartClusterStatefulSetRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId int32
-	id int64
+	clusterId  int32
+	id         int64
 }
 
 func (r ApiRestartClusterStatefulSetRequest) Execute() (*RestartClusterContainer200Response, *http.Response, error) {
@@ -8718,28 +8776,29 @@ RestartClusterStatefulSet Restart a Stateful Set
 
 Will restart a stateful set in the specified cluster.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param clusterId The ID of the cluster
- @param id Morpheus ID of the Object being referenced
- @return ApiRestartClusterStatefulSetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param clusterId The ID of the cluster
+	@param id Morpheus ID of the Object being referenced
+	@return ApiRestartClusterStatefulSetRequest
 */
 func (a *ClustersAPIService) RestartClusterStatefulSet(ctx context.Context, clusterId int32, id int64) ApiRestartClusterStatefulSetRequest {
 	return ApiRestartClusterStatefulSetRequest{
 		ApiService: a,
-		ctx: ctx,
-		clusterId: clusterId,
-		id: id,
+		ctx:        ctx,
+		clusterId:  clusterId,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return RestartClusterContainer200Response
+//
+//	@return RestartClusterContainer200Response
 func (a *ClustersAPIService) RestartClusterStatefulSetExecute(r ApiRestartClusterStatefulSetRequest) (*RestartClusterContainer200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *RestartClusterContainer200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *RestartClusterContainer200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClustersAPIService.RestartClusterStatefulSet")
@@ -8791,7 +8850,7 @@ func (a *ClustersAPIService) RestartClusterStatefulSetExecute(r ApiRestartCluste
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -8800,8 +8859,8 @@ func (a *ClustersAPIService) RestartClusterStatefulSetExecute(r ApiRestartCluste
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -8811,8 +8870,8 @@ func (a *ClustersAPIService) RestartClusterStatefulSetExecute(r ApiRestartCluste
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -8820,8 +8879,8 @@ func (a *ClustersAPIService) RestartClusterStatefulSetExecute(r ApiRestartCluste
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -8830,9 +8889,9 @@ func (a *ClustersAPIService) RestartClusterStatefulSetExecute(r ApiRestartCluste
 }
 
 type ApiSaveClusterDatastoreRequest struct {
-	ctx context.Context
-	ApiService *ClustersAPIService
-	clusterId int32
+	ctx                         context.Context
+	ApiService                  *ClustersAPIService
+	clusterId                   int32
 	saveClusterDatastoreRequest *SaveClusterDatastoreRequest
 }
 
@@ -8850,26 +8909,27 @@ SaveClusterDatastore Create a Cluster Datastore
 
 This endpoint will create a datastore for a specific cluster.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param clusterId The ID of the cluster
- @return ApiSaveClusterDatastoreRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param clusterId The ID of the cluster
+	@return ApiSaveClusterDatastoreRequest
 */
 func (a *ClustersAPIService) SaveClusterDatastore(ctx context.Context, clusterId int32) ApiSaveClusterDatastoreRequest {
 	return ApiSaveClusterDatastoreRequest{
 		ApiService: a,
-		ctx: ctx,
-		clusterId: clusterId,
+		ctx:        ctx,
+		clusterId:  clusterId,
 	}
 }
 
 // Execute executes the request
-//  @return SaveCloudDatastore200Response
+//
+//	@return SaveCloudDatastore200Response
 func (a *ClustersAPIService) SaveClusterDatastoreExecute(r ApiSaveClusterDatastoreRequest) (*SaveCloudDatastore200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *SaveCloudDatastore200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *SaveCloudDatastore200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClustersAPIService.SaveClusterDatastore")
@@ -8922,7 +8982,7 @@ func (a *ClustersAPIService) SaveClusterDatastoreExecute(r ApiSaveClusterDatasto
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -8931,8 +8991,8 @@ func (a *ClustersAPIService) SaveClusterDatastoreExecute(r ApiSaveClusterDatasto
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -8942,8 +9002,8 @@ func (a *ClustersAPIService) SaveClusterDatastoreExecute(r ApiSaveClusterDatasto
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -8951,8 +9011,8 @@ func (a *ClustersAPIService) SaveClusterDatastoreExecute(r ApiSaveClusterDatasto
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -8961,9 +9021,9 @@ func (a *ClustersAPIService) SaveClusterDatastoreExecute(r ApiSaveClusterDatasto
 }
 
 type ApiUpdateClusterRequest struct {
-	ctx context.Context
-	ApiService *ClustersAPIService
-	clusterId int32
+	ctx                  context.Context
+	ApiService           *ClustersAPIService
+	clusterId            int32
 	updateClusterRequest *UpdateClusterRequest
 }
 
@@ -8981,26 +9041,27 @@ UpdateCluster Update Cluster
 
 Update Cluster
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param clusterId The ID of the cluster
- @return ApiUpdateClusterRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param clusterId The ID of the cluster
+	@return ApiUpdateClusterRequest
 */
 func (a *ClustersAPIService) UpdateCluster(ctx context.Context, clusterId int32) ApiUpdateClusterRequest {
 	return ApiUpdateClusterRequest{
 		ApiService: a,
-		ctx: ctx,
-		clusterId: clusterId,
+		ctx:        ctx,
+		clusterId:  clusterId,
 	}
 }
 
 // Execute executes the request
-//  @return AddCluster200Response
+//
+//	@return AddCluster200Response
 func (a *ClustersAPIService) UpdateClusterExecute(r ApiUpdateClusterRequest) (*AddCluster200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddCluster200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddCluster200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClustersAPIService.UpdateCluster")
@@ -9053,7 +9114,7 @@ func (a *ClustersAPIService) UpdateClusterExecute(r ApiUpdateClusterRequest) (*A
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -9062,8 +9123,8 @@ func (a *ClustersAPIService) UpdateClusterExecute(r ApiUpdateClusterRequest) (*A
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -9073,8 +9134,8 @@ func (a *ClustersAPIService) UpdateClusterExecute(r ApiUpdateClusterRequest) (*A
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -9082,8 +9143,8 @@ func (a *ClustersAPIService) UpdateClusterExecute(r ApiUpdateClusterRequest) (*A
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -9092,10 +9153,10 @@ func (a *ClustersAPIService) UpdateClusterExecute(r ApiUpdateClusterRequest) (*A
 }
 
 type ApiUpdateClusterDatastoreRequest struct {
-	ctx context.Context
-	ApiService *ClustersAPIService
-	clusterId int32
-	id int64
+	ctx                           context.Context
+	ApiService                    *ClustersAPIService
+	clusterId                     int32
+	id                            int64
 	updateClusterDatastoreRequest *UpdateClusterDatastoreRequest
 }
 
@@ -9113,28 +9174,29 @@ UpdateClusterDatastore Update Cluster Datastore
 
 Update Cluster Datastore
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param clusterId The ID of the cluster
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateClusterDatastoreRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param clusterId The ID of the cluster
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateClusterDatastoreRequest
 */
 func (a *ClustersAPIService) UpdateClusterDatastore(ctx context.Context, clusterId int32, id int64) ApiUpdateClusterDatastoreRequest {
 	return ApiUpdateClusterDatastoreRequest{
 		ApiService: a,
-		ctx: ctx,
-		clusterId: clusterId,
-		id: id,
+		ctx:        ctx,
+		clusterId:  clusterId,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return UpdateClusterDatastore200Response
+//
+//	@return UpdateClusterDatastore200Response
 func (a *ClustersAPIService) UpdateClusterDatastoreExecute(r ApiUpdateClusterDatastoreRequest) (*UpdateClusterDatastore200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *UpdateClusterDatastore200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *UpdateClusterDatastore200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClustersAPIService.UpdateClusterDatastore")
@@ -9188,7 +9250,7 @@ func (a *ClustersAPIService) UpdateClusterDatastoreExecute(r ApiUpdateClusterDat
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -9197,8 +9259,8 @@ func (a *ClustersAPIService) UpdateClusterDatastoreExecute(r ApiUpdateClusterDat
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -9208,8 +9270,8 @@ func (a *ClustersAPIService) UpdateClusterDatastoreExecute(r ApiUpdateClusterDat
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -9217,8 +9279,8 @@ func (a *ClustersAPIService) UpdateClusterDatastoreExecute(r ApiUpdateClusterDat
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -9227,10 +9289,10 @@ func (a *ClustersAPIService) UpdateClusterDatastoreExecute(r ApiUpdateClusterDat
 }
 
 type ApiUpdateClusterNamespaceRequest struct {
-	ctx context.Context
-	ApiService *ClustersAPIService
-	clusterId int32
-	id int64
+	ctx                           context.Context
+	ApiService                    *ClustersAPIService
+	clusterId                     int32
+	id                            int64
 	updateClusterNamespaceRequest *UpdateClusterNamespaceRequest
 }
 
@@ -9248,28 +9310,29 @@ UpdateClusterNamespace Update Namespace (Kubernetes)
 
 Update Namespace (Kubernetes)
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param clusterId The ID of the cluster
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateClusterNamespaceRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param clusterId The ID of the cluster
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateClusterNamespaceRequest
 */
 func (a *ClustersAPIService) UpdateClusterNamespace(ctx context.Context, clusterId int32, id int64) ApiUpdateClusterNamespaceRequest {
 	return ApiUpdateClusterNamespaceRequest{
 		ApiService: a,
-		ctx: ctx,
-		clusterId: clusterId,
-		id: id,
+		ctx:        ctx,
+		clusterId:  clusterId,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return AddClusterNamespace200Response
+//
+//	@return AddClusterNamespace200Response
 func (a *ClustersAPIService) UpdateClusterNamespaceExecute(r ApiUpdateClusterNamespaceRequest) (*AddClusterNamespace200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddClusterNamespace200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddClusterNamespace200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClustersAPIService.UpdateClusterNamespace")
@@ -9323,7 +9386,7 @@ func (a *ClustersAPIService) UpdateClusterNamespaceExecute(r ApiUpdateClusterNam
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -9332,8 +9395,8 @@ func (a *ClustersAPIService) UpdateClusterNamespaceExecute(r ApiUpdateClusterNam
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -9343,8 +9406,8 @@ func (a *ClustersAPIService) UpdateClusterNamespaceExecute(r ApiUpdateClusterNam
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -9352,8 +9415,8 @@ func (a *ClustersAPIService) UpdateClusterNamespaceExecute(r ApiUpdateClusterNam
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -9362,9 +9425,9 @@ func (a *ClustersAPIService) UpdateClusterNamespaceExecute(r ApiUpdateClusterNam
 }
 
 type ApiUpdateClusterPermissionsRequest struct {
-	ctx context.Context
-	ApiService *ClustersAPIService
-	clusterId int32
+	ctx                             context.Context
+	ApiService                      *ClustersAPIService
+	clusterId                       int32
 	updateClusterPermissionsRequest *UpdateClusterPermissionsRequest
 }
 
@@ -9382,26 +9445,27 @@ UpdateClusterPermissions Update Cluster Permissions
 
 Update Cluster Permissions
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param clusterId The ID of the cluster
- @return ApiUpdateClusterPermissionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param clusterId The ID of the cluster
+	@return ApiUpdateClusterPermissionsRequest
 */
 func (a *ClustersAPIService) UpdateClusterPermissions(ctx context.Context, clusterId int32) ApiUpdateClusterPermissionsRequest {
 	return ApiUpdateClusterPermissionsRequest{
 		ApiService: a,
-		ctx: ctx,
-		clusterId: clusterId,
+		ctx:        ctx,
+		clusterId:  clusterId,
 	}
 }
 
 // Execute executes the request
-//  @return AddCluster200Response
+//
+//	@return AddCluster200Response
 func (a *ClustersAPIService) UpdateClusterPermissionsExecute(r ApiUpdateClusterPermissionsRequest) (*AddCluster200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddCluster200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddCluster200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClustersAPIService.UpdateClusterPermissions")
@@ -9454,7 +9518,7 @@ func (a *ClustersAPIService) UpdateClusterPermissionsExecute(r ApiUpdateClusterP
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -9463,8 +9527,8 @@ func (a *ClustersAPIService) UpdateClusterPermissionsExecute(r ApiUpdateClusterP
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -9474,8 +9538,8 @@ func (a *ClustersAPIService) UpdateClusterPermissionsExecute(r ApiUpdateClusterP
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -9483,8 +9547,8 @@ func (a *ClustersAPIService) UpdateClusterPermissionsExecute(r ApiUpdateClusterP
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -9493,9 +9557,9 @@ func (a *ClustersAPIService) UpdateClusterPermissionsExecute(r ApiUpdateClusterP
 }
 
 type ApiUpdateClusterUpgradeVersionsRequest struct {
-	ctx context.Context
-	ApiService *ClustersAPIService
-	clusterId int32
+	ctx           context.Context
+	ApiService    *ClustersAPIService
+	clusterId     int32
 	targetVersion *string
 }
 
@@ -9514,26 +9578,27 @@ UpdateClusterUpgradeVersions Upgrade a Cluster (Kubernetes)
 
 This endpoint updates the kubectl and kudeadm versions on a Kubernetes cluster to the specified version. Use Get Cluster Upgrade Versions to list valid version targets for the cluster.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param clusterId The ID of the cluster
- @return ApiUpdateClusterUpgradeVersionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param clusterId The ID of the cluster
+	@return ApiUpdateClusterUpgradeVersionsRequest
 */
 func (a *ClustersAPIService) UpdateClusterUpgradeVersions(ctx context.Context, clusterId int32) ApiUpdateClusterUpgradeVersionsRequest {
 	return ApiUpdateClusterUpgradeVersionsRequest{
 		ApiService: a,
-		ctx: ctx,
-		clusterId: clusterId,
+		ctx:        ctx,
+		clusterId:  clusterId,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *ClustersAPIService) UpdateClusterUpgradeVersionsExecute(r ApiUpdateClusterUpgradeVersionsRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClustersAPIService.UpdateClusterUpgradeVersions")
@@ -9588,7 +9653,7 @@ func (a *ClustersAPIService) UpdateClusterUpgradeVersionsExecute(r ApiUpdateClus
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -9597,8 +9662,8 @@ func (a *ClustersAPIService) UpdateClusterUpgradeVersionsExecute(r ApiUpdateClus
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -9608,8 +9673,8 @@ func (a *ClustersAPIService) UpdateClusterUpgradeVersionsExecute(r ApiUpdateClus
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -9617,8 +9682,8 @@ func (a *ClustersAPIService) UpdateClusterUpgradeVersionsExecute(r ApiUpdateClus
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -9627,9 +9692,9 @@ func (a *ClustersAPIService) UpdateClusterUpgradeVersionsExecute(r ApiUpdateClus
 }
 
 type ApiUpdateClusterWorkerCountRequest struct {
-	ctx context.Context
-	ApiService *ClustersAPIService
-	clusterId int32
+	ctx         context.Context
+	ApiService  *ClustersAPIService
+	clusterId   int32
 	workerCount *int64
 }
 
@@ -9648,26 +9713,27 @@ UpdateClusterWorkerCount Update Worker Count
 
 This endpoint resizes a cluster to the specified number of worker nodes (only supports Azure AKS, Google GKE, and Amazon EKS clusters).
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param clusterId The ID of the cluster
- @return ApiUpdateClusterWorkerCountRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param clusterId The ID of the cluster
+	@return ApiUpdateClusterWorkerCountRequest
 */
 func (a *ClustersAPIService) UpdateClusterWorkerCount(ctx context.Context, clusterId int32) ApiUpdateClusterWorkerCountRequest {
 	return ApiUpdateClusterWorkerCountRequest{
 		ApiService: a,
-		ctx: ctx,
-		clusterId: clusterId,
+		ctx:        ctx,
+		clusterId:  clusterId,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *ClustersAPIService) UpdateClusterWorkerCountExecute(r ApiUpdateClusterWorkerCountRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClustersAPIService.UpdateClusterWorkerCount")
@@ -9722,7 +9788,7 @@ func (a *ClustersAPIService) UpdateClusterWorkerCountExecute(r ApiUpdateClusterW
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -9731,8 +9797,8 @@ func (a *ClustersAPIService) UpdateClusterWorkerCountExecute(r ApiUpdateClusterW
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -9742,8 +9808,8 @@ func (a *ClustersAPIService) UpdateClusterWorkerCountExecute(r ApiUpdateClusterW
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -9751,8 +9817,8 @@ func (a *ClustersAPIService) UpdateClusterWorkerCountExecute(r ApiUpdateClusterW
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

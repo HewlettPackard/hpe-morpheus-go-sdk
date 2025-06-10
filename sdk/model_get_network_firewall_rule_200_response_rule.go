@@ -20,24 +20,24 @@ var _ MappedNullable = &GetNetworkFirewallRule200ResponseRule{}
 
 // GetNetworkFirewallRule200ResponseRule struct for GetNetworkFirewallRule200ResponseRule
 type GetNetworkFirewallRule200ResponseRule struct {
-	Id *int32 `json:"id,omitempty"`
-	Direction *string `json:"direction,omitempty"`
-	SourceType *string `json:"sourceType,omitempty"`
-	DestinationType *string `json:"destinationType,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Policy *string `json:"policy,omitempty"`
-	Priority *int32 `json:"priority,omitempty"`
-	Enabled *bool `json:"enabled,omitempty"`
-	RuleGroup *SnapshotsInstance200ResponseSnapshotsInnerZone `json:"ruleGroup,omitempty"`
-	GroupName *string `json:"groupName,omitempty"`
-	Config map[string]interface{} `json:"config,omitempty"`
-	Sources []ListInstanceServicePlans200ResponsePlansInnerAutoOptionsInner `json:"sources,omitempty"`
-	Destinations []ListInstanceServicePlans200ResponsePlansInnerAutoOptionsInner `json:"destinations,omitempty"`
-	Applications []ListInstanceServicePlans200ResponsePlansInnerAutoOptionsInner `json:"applications,omitempty"`
-	Scopes []ListInstanceServicePlans200ResponsePlansInnerAutoOptionsInner `json:"scopes,omitempty"`
-	Profiles []ListInstanceServicePlans200ResponsePlansInnerAutoOptionsInner `json:"profiles,omitempty"`
-	AppliedTargets []map[string]interface{} `json:"appliedTargets,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int32                                                          `json:"id,omitempty"`
+	Direction            *string                                                         `json:"direction,omitempty"`
+	SourceType           *string                                                         `json:"sourceType,omitempty"`
+	DestinationType      *string                                                         `json:"destinationType,omitempty"`
+	Name                 *string                                                         `json:"name,omitempty"`
+	Policy               *string                                                         `json:"policy,omitempty"`
+	Priority             *int32                                                          `json:"priority,omitempty"`
+	Enabled              *bool                                                           `json:"enabled,omitempty"`
+	RuleGroup            *SnapshotsInstance200ResponseSnapshotsInnerZone                 `json:"ruleGroup,omitempty"`
+	GroupName            *string                                                         `json:"groupName,omitempty"`
+	Config               map[string]interface{}                                          `json:"config,omitempty"`
+	Sources              []ListInstanceServicePlans200ResponsePlansInnerAutoOptionsInner `json:"sources,omitempty"`
+	Destinations         []ListInstanceServicePlans200ResponsePlansInnerAutoOptionsInner `json:"destinations,omitempty"`
+	Applications         []ListInstanceServicePlans200ResponsePlansInnerAutoOptionsInner `json:"applications,omitempty"`
+	Scopes               []ListInstanceServicePlans200ResponsePlansInnerAutoOptionsInner `json:"scopes,omitempty"`
+	Profiles             []ListInstanceServicePlans200ResponsePlansInnerAutoOptionsInner `json:"profiles,omitempty"`
+	AppliedTargets       []map[string]interface{}                                        `json:"appliedTargets,omitempty"`
+	AdditionalProperties map[string]interface{}                                          `json:",remain"`
 }
 
 type _GetNetworkFirewallRule200ResponseRule GetNetworkFirewallRule200ResponseRule
@@ -604,7 +604,7 @@ func (o *GetNetworkFirewallRule200ResponseRule) SetAppliedTargets(v []map[string
 }
 
 func (o GetNetworkFirewallRule200ResponseRule) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -671,78 +671,8 @@ func (o GetNetworkFirewallRule200ResponseRule) ToMap() (map[string]interface{}, 
 
 	return toSerialize, nil
 }
-
 func (o *GetNetworkFirewallRule200ResponseRule) UnmarshalJSON(data []byte) (err error) {
-	varGetNetworkFirewallRule200ResponseRule := _GetNetworkFirewallRule200ResponseRule{}
-
-	err = json.Unmarshal(data, &varGetNetworkFirewallRule200ResponseRule)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetNetworkFirewallRule200ResponseRule(varGetNetworkFirewallRule200ResponseRule)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "direction")
-		delete(additionalProperties, "sourceType")
-		delete(additionalProperties, "destinationType")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "policy")
-		delete(additionalProperties, "priority")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "ruleGroup")
-		delete(additionalProperties, "groupName")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "sources")
-		delete(additionalProperties, "destinations")
-		delete(additionalProperties, "applications")
-		delete(additionalProperties, "scopes")
-		delete(additionalProperties, "profiles")
-		delete(additionalProperties, "appliedTargets")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetNetworkFirewallRule200ResponseRule struct {
-	value *GetNetworkFirewallRule200ResponseRule
-	isSet bool
-}
-
-func (v NullableGetNetworkFirewallRule200ResponseRule) Get() *GetNetworkFirewallRule200ResponseRule {
-	return v.value
-}
-
-func (v *NullableGetNetworkFirewallRule200ResponseRule) Set(val *GetNetworkFirewallRule200ResponseRule) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetNetworkFirewallRule200ResponseRule) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetNetworkFirewallRule200ResponseRule) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetNetworkFirewallRule200ResponseRule(val *GetNetworkFirewallRule200ResponseRule) *NullableGetNetworkFirewallRule200ResponseRule {
-	return &NullableGetNetworkFirewallRule200ResponseRule{value: val, isSet: true}
-}
-
-func (v NullableGetNetworkFirewallRule200ResponseRule) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetNetworkFirewallRule200ResponseRule) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

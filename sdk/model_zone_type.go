@@ -20,40 +20,40 @@ var _ MappedNullable = &ZoneType{}
 
 // ZoneType struct for ZoneType
 type ZoneType struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Code *string `json:"code,omitempty"`
-	Enabled *bool `json:"enabled,omitempty"`
-	Provision *bool `json:"provision,omitempty"`
-	AutoCapacity *bool `json:"autoCapacity,omitempty"`
-	MigrationTarget *bool `json:"migrationTarget,omitempty"`
-	HasDatastores *bool `json:"hasDatastores,omitempty"`
-	HasNetworks *bool `json:"hasNetworks,omitempty"`
-	HasResourcePools *bool `json:"hasResourcePools,omitempty"`
-	HasSecurityGroups *bool `json:"hasSecurityGroups,omitempty"`
-	HasContainers *bool `json:"hasContainers,omitempty"`
-	HasBareMetal *bool `json:"hasBareMetal,omitempty"`
-	HasServices *bool `json:"hasServices,omitempty"`
-	HasFunctions *bool `json:"hasFunctions,omitempty"`
-	HasJobs *bool `json:"hasJobs,omitempty"`
-	HasDiscovery *bool `json:"hasDiscovery,omitempty"`
-	HasCloudInit *bool `json:"hasCloudInit,omitempty"`
-	HasFolders *bool `json:"hasFolders,omitempty"`
-	HasMarketplace *bool `json:"hasMarketplace,omitempty"`
-	HasNativePlans *bool `json:"hasNativePlans,omitempty"`
-	CanCreateResourcePools *bool `json:"canCreateResourcePools,omitempty"`
-	CanDeleteResourcePools *bool `json:"canDeleteResourcePools,omitempty"`
-	CanCreateDatastores *bool `json:"canCreateDatastores,omitempty"`
-	CanCreateNetworks *bool `json:"canCreateNetworks,omitempty"`
-	CanChooseContainerMode *bool `json:"canChooseContainerMode,omitempty"`
-	ProvisionRequiresResourcePool *bool `json:"provisionRequiresResourcePool,omitempty"`
-	SupportsDistributedWorker *bool `json:"supportsDistributedWorker,omitempty"`
-	Cloud *string `json:"cloud,omitempty"`
-	ProvisionTypes []int64 `json:"provisionTypes,omitempty"`
-	ZoneInstanceTypeLayoutId *int64 `json:"zoneInstanceTypeLayoutId,omitempty"`
-	ServerTypes []ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInner `json:"serverTypes,omitempty"`
-	OptionTypes []ListCloudTypes200ResponseAllOfZoneTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                            *int64                                                         `json:"id,omitempty"`
+	Name                          *string                                                        `json:"name,omitempty"`
+	Code                          *string                                                        `json:"code,omitempty"`
+	Enabled                       *bool                                                          `json:"enabled,omitempty"`
+	Provision                     *bool                                                          `json:"provision,omitempty"`
+	AutoCapacity                  *bool                                                          `json:"autoCapacity,omitempty"`
+	MigrationTarget               *bool                                                          `json:"migrationTarget,omitempty"`
+	HasDatastores                 *bool                                                          `json:"hasDatastores,omitempty"`
+	HasNetworks                   *bool                                                          `json:"hasNetworks,omitempty"`
+	HasResourcePools              *bool                                                          `json:"hasResourcePools,omitempty"`
+	HasSecurityGroups             *bool                                                          `json:"hasSecurityGroups,omitempty"`
+	HasContainers                 *bool                                                          `json:"hasContainers,omitempty"`
+	HasBareMetal                  *bool                                                          `json:"hasBareMetal,omitempty"`
+	HasServices                   *bool                                                          `json:"hasServices,omitempty"`
+	HasFunctions                  *bool                                                          `json:"hasFunctions,omitempty"`
+	HasJobs                       *bool                                                          `json:"hasJobs,omitempty"`
+	HasDiscovery                  *bool                                                          `json:"hasDiscovery,omitempty"`
+	HasCloudInit                  *bool                                                          `json:"hasCloudInit,omitempty"`
+	HasFolders                    *bool                                                          `json:"hasFolders,omitempty"`
+	HasMarketplace                *bool                                                          `json:"hasMarketplace,omitempty"`
+	HasNativePlans                *bool                                                          `json:"hasNativePlans,omitempty"`
+	CanCreateResourcePools        *bool                                                          `json:"canCreateResourcePools,omitempty"`
+	CanDeleteResourcePools        *bool                                                          `json:"canDeleteResourcePools,omitempty"`
+	CanCreateDatastores           *bool                                                          `json:"canCreateDatastores,omitempty"`
+	CanCreateNetworks             *bool                                                          `json:"canCreateNetworks,omitempty"`
+	CanChooseContainerMode        *bool                                                          `json:"canChooseContainerMode,omitempty"`
+	ProvisionRequiresResourcePool *bool                                                          `json:"provisionRequiresResourcePool,omitempty"`
+	SupportsDistributedWorker     *bool                                                          `json:"supportsDistributedWorker,omitempty"`
+	Cloud                         *string                                                        `json:"cloud,omitempty"`
+	ProvisionTypes                []int64                                                        `json:"provisionTypes,omitempty"`
+	ZoneInstanceTypeLayoutId      *int64                                                         `json:"zoneInstanceTypeLayoutId,omitempty"`
+	ServerTypes                   []ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInner `json:"serverTypes,omitempty"`
+	OptionTypes                   []ListCloudTypes200ResponseAllOfZoneTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
+	AdditionalProperties          map[string]interface{}                                         `json:",remain"`
 }
 
 type _ZoneType ZoneType
@@ -1132,7 +1132,7 @@ func (o *ZoneType) SetOptionTypes(v []ListCloudTypes200ResponseAllOfZoneTypesInn
 }
 
 func (o ZoneType) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1247,94 +1247,8 @@ func (o ZoneType) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *ZoneType) UnmarshalJSON(data []byte) (err error) {
-	varZoneType := _ZoneType{}
-
-	err = json.Unmarshal(data, &varZoneType)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ZoneType(varZoneType)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "provision")
-		delete(additionalProperties, "autoCapacity")
-		delete(additionalProperties, "migrationTarget")
-		delete(additionalProperties, "hasDatastores")
-		delete(additionalProperties, "hasNetworks")
-		delete(additionalProperties, "hasResourcePools")
-		delete(additionalProperties, "hasSecurityGroups")
-		delete(additionalProperties, "hasContainers")
-		delete(additionalProperties, "hasBareMetal")
-		delete(additionalProperties, "hasServices")
-		delete(additionalProperties, "hasFunctions")
-		delete(additionalProperties, "hasJobs")
-		delete(additionalProperties, "hasDiscovery")
-		delete(additionalProperties, "hasCloudInit")
-		delete(additionalProperties, "hasFolders")
-		delete(additionalProperties, "hasMarketplace")
-		delete(additionalProperties, "hasNativePlans")
-		delete(additionalProperties, "canCreateResourcePools")
-		delete(additionalProperties, "canDeleteResourcePools")
-		delete(additionalProperties, "canCreateDatastores")
-		delete(additionalProperties, "canCreateNetworks")
-		delete(additionalProperties, "canChooseContainerMode")
-		delete(additionalProperties, "provisionRequiresResourcePool")
-		delete(additionalProperties, "supportsDistributedWorker")
-		delete(additionalProperties, "cloud")
-		delete(additionalProperties, "provisionTypes")
-		delete(additionalProperties, "zoneInstanceTypeLayoutId")
-		delete(additionalProperties, "serverTypes")
-		delete(additionalProperties, "optionTypes")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableZoneType struct {
-	value *ZoneType
-	isSet bool
-}
-
-func (v NullableZoneType) Get() *ZoneType {
-	return v.value
-}
-
-func (v *NullableZoneType) Set(val *ZoneType) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableZoneType) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableZoneType) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableZoneType(val *ZoneType) *NullableZoneType {
-	return &NullableZoneType{value: val, isSet: true}
-}
-
-func (v NullableZoneType) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableZoneType) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

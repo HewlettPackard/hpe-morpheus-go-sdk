@@ -20,9 +20,9 @@ var _ MappedNullable = &UpdateUserSettingsAccessToken200Response{}
 
 // UpdateUserSettingsAccessToken200Response struct for UpdateUserSettingsAccessToken200Response
 type UpdateUserSettingsAccessToken200Response struct {
-	Token *string `json:"token,omitempty"`
-	Success *bool `json:"success,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Token                *string                `json:"token,omitempty"`
+	Success              *bool                  `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _UpdateUserSettingsAccessToken200Response UpdateUserSettingsAccessToken200Response
@@ -109,7 +109,7 @@ func (o *UpdateUserSettingsAccessToken200Response) SetSuccess(v bool) {
 }
 
 func (o UpdateUserSettingsAccessToken200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -131,63 +131,8 @@ func (o UpdateUserSettingsAccessToken200Response) ToMap() (map[string]interface{
 
 	return toSerialize, nil
 }
-
 func (o *UpdateUserSettingsAccessToken200Response) UnmarshalJSON(data []byte) (err error) {
-	varUpdateUserSettingsAccessToken200Response := _UpdateUserSettingsAccessToken200Response{}
-
-	err = json.Unmarshal(data, &varUpdateUserSettingsAccessToken200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateUserSettingsAccessToken200Response(varUpdateUserSettingsAccessToken200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "token")
-		delete(additionalProperties, "success")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateUserSettingsAccessToken200Response struct {
-	value *UpdateUserSettingsAccessToken200Response
-	isSet bool
-}
-
-func (v NullableUpdateUserSettingsAccessToken200Response) Get() *UpdateUserSettingsAccessToken200Response {
-	return v.value
-}
-
-func (v *NullableUpdateUserSettingsAccessToken200Response) Set(val *UpdateUserSettingsAccessToken200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateUserSettingsAccessToken200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateUserSettingsAccessToken200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateUserSettingsAccessToken200Response(val *UpdateUserSettingsAccessToken200Response) *NullableUpdateUserSettingsAccessToken200Response {
-	return &NullableUpdateUserSettingsAccessToken200Response{value: val, isSet: true}
-}
-
-func (v NullableUpdateUserSettingsAccessToken200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateUserSettingsAccessToken200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

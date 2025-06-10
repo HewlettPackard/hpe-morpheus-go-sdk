@@ -21,27 +21,27 @@ var _ MappedNullable = &ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf
 
 // ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7 struct for ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7
 type ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7 struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Code *string `json:"code,omitempty"`
-	Type *string `json:"type,omitempty"`
-	Active *bool `json:"active,omitempty"`
-	Deleted *bool `json:"deleted,omitempty"`
-	AutoSyncOnLogin *bool `json:"autoSyncOnLogin,omitempty"`
-	ExternalLogin *bool `json:"externalLogin,omitempty"`
-	AllowCustomMappings *bool `json:"allowCustomMappings,omitempty"`
-	ManualRoleAssignment *bool `json:"manualRoleAssignment,omitempty"`
-	Account *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"account,omitempty"`
-	DefaultAccountRole *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfDefaultAccountRole `json:"defaultAccountRole,omitempty"`
-	Config *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7Config `json:"config,omitempty"`
-	RoleMappings []map[string]interface{} `json:"roleMappings,omitempty"`
-	Subdomain *string `json:"subdomain,omitempty"`
-	LoginURL *string `json:"loginURL,omitempty"`
-	ProviderSettings map[string]interface{} `json:"providerSettings,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                                      `json:"id,omitempty"`
+	Name                 *string                                                                     `json:"name,omitempty"`
+	Description          *string                                                                     `json:"description,omitempty"`
+	Code                 *string                                                                     `json:"code,omitempty"`
+	Type                 *string                                                                     `json:"type,omitempty"`
+	Active               *bool                                                                       `json:"active,omitempty"`
+	Deleted              *bool                                                                       `json:"deleted,omitempty"`
+	AutoSyncOnLogin      *bool                                                                       `json:"autoSyncOnLogin,omitempty"`
+	ExternalLogin        *bool                                                                       `json:"externalLogin,omitempty"`
+	AllowCustomMappings  *bool                                                                       `json:"allowCustomMappings,omitempty"`
+	ManualRoleAssignment *bool                                                                       `json:"manualRoleAssignment,omitempty"`
+	Account              *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner     `json:"account,omitempty"`
+	DefaultAccountRole   *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfDefaultAccountRole `json:"defaultAccountRole,omitempty"`
+	Config               *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7Config            `json:"config,omitempty"`
+	RoleMappings         []map[string]interface{}                                                    `json:"roleMappings,omitempty"`
+	Subdomain            *string                                                                     `json:"subdomain,omitempty"`
+	LoginURL             *string                                                                     `json:"loginURL,omitempty"`
+	ProviderSettings     map[string]interface{}                                                      `json:"providerSettings,omitempty"`
+	DateCreated          *time.Time                                                                  `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                                                  `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}                                                      `json:",remain"`
 }
 
 type _ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7 ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7
@@ -704,7 +704,7 @@ func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7) SetLastUpdat
 }
 
 func (o ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -780,81 +780,8 @@ func (o ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7) ToMap() (map[
 
 	return toSerialize, nil
 }
-
 func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7) UnmarshalJSON(data []byte) (err error) {
-	varListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7 := _ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7{}
-
-	err = json.Unmarshal(data, &varListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7(varListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "active")
-		delete(additionalProperties, "deleted")
-		delete(additionalProperties, "autoSyncOnLogin")
-		delete(additionalProperties, "externalLogin")
-		delete(additionalProperties, "allowCustomMappings")
-		delete(additionalProperties, "manualRoleAssignment")
-		delete(additionalProperties, "account")
-		delete(additionalProperties, "defaultAccountRole")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "roleMappings")
-		delete(additionalProperties, "subdomain")
-		delete(additionalProperties, "loginURL")
-		delete(additionalProperties, "providerSettings")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7 struct {
-	value *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7
-	isSet bool
-}
-
-func (v NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7) Get() *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7 {
-	return v.value
-}
-
-func (v *NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7) Set(val *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7(val *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7) *NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7 {
-	return &NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7{value: val, isSet: true}
-}
-
-func (v NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

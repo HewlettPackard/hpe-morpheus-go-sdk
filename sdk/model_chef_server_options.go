@@ -20,9 +20,9 @@ var _ MappedNullable = &ChefServerOptions{}
 
 // ChefServerOptions struct for ChefServerOptions
 type ChefServerOptions struct {
-	Name *string `json:"name,omitempty"`
-	Value *int64 `json:"value,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Name                 *string                `json:"name,omitempty"`
+	Value                *int64                 `json:"value,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ChefServerOptions ChefServerOptions
@@ -109,7 +109,7 @@ func (o *ChefServerOptions) SetValue(v int64) {
 }
 
 func (o ChefServerOptions) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -131,63 +131,8 @@ func (o ChefServerOptions) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *ChefServerOptions) UnmarshalJSON(data []byte) (err error) {
-	varChefServerOptions := _ChefServerOptions{}
-
-	err = json.Unmarshal(data, &varChefServerOptions)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ChefServerOptions(varChefServerOptions)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "value")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableChefServerOptions struct {
-	value *ChefServerOptions
-	isSet bool
-}
-
-func (v NullableChefServerOptions) Get() *ChefServerOptions {
-	return v.value
-}
-
-func (v *NullableChefServerOptions) Set(val *ChefServerOptions) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableChefServerOptions) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableChefServerOptions) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableChefServerOptions(val *ChefServerOptions) *NullableChefServerOptions {
-	return &NullableChefServerOptions{value: val, isSet: true}
-}
-
-func (v NullableChefServerOptions) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableChefServerOptions) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

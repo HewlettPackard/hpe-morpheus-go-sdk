@@ -25,8 +25,8 @@ type UpdateVDIGatewaysRequestVdiGatewayOneOf struct {
 	// Description
 	Description *string `json:"description,omitempty"`
 	// Gateway URL
-	GatewayUrl *string `json:"gatewayUrl,omitempty"`
-	AdditionalProperties map[string]interface{}
+	GatewayUrl           *string                `json:"gatewayUrl,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _UpdateVDIGatewaysRequestVdiGatewayOneOf UpdateVDIGatewaysRequestVdiGatewayOneOf
@@ -145,7 +145,7 @@ func (o *UpdateVDIGatewaysRequestVdiGatewayOneOf) SetGatewayUrl(v string) {
 }
 
 func (o UpdateVDIGatewaysRequestVdiGatewayOneOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -170,64 +170,8 @@ func (o UpdateVDIGatewaysRequestVdiGatewayOneOf) ToMap() (map[string]interface{}
 
 	return toSerialize, nil
 }
-
 func (o *UpdateVDIGatewaysRequestVdiGatewayOneOf) UnmarshalJSON(data []byte) (err error) {
-	varUpdateVDIGatewaysRequestVdiGatewayOneOf := _UpdateVDIGatewaysRequestVdiGatewayOneOf{}
-
-	err = json.Unmarshal(data, &varUpdateVDIGatewaysRequestVdiGatewayOneOf)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateVDIGatewaysRequestVdiGatewayOneOf(varUpdateVDIGatewaysRequestVdiGatewayOneOf)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "gatewayUrl")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateVDIGatewaysRequestVdiGatewayOneOf struct {
-	value *UpdateVDIGatewaysRequestVdiGatewayOneOf
-	isSet bool
-}
-
-func (v NullableUpdateVDIGatewaysRequestVdiGatewayOneOf) Get() *UpdateVDIGatewaysRequestVdiGatewayOneOf {
-	return v.value
-}
-
-func (v *NullableUpdateVDIGatewaysRequestVdiGatewayOneOf) Set(val *UpdateVDIGatewaysRequestVdiGatewayOneOf) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateVDIGatewaysRequestVdiGatewayOneOf) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateVDIGatewaysRequestVdiGatewayOneOf) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateVDIGatewaysRequestVdiGatewayOneOf(val *UpdateVDIGatewaysRequestVdiGatewayOneOf) *NullableUpdateVDIGatewaysRequestVdiGatewayOneOf {
-	return &NullableUpdateVDIGatewaysRequestVdiGatewayOneOf{value: val, isSet: true}
-}
-
-func (v NullableUpdateVDIGatewaysRequestVdiGatewayOneOf) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateVDIGatewaysRequestVdiGatewayOneOf) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

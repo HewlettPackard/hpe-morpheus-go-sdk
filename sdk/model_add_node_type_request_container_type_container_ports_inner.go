@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the AddNodeTypeRequestContainerTypeContainerPortsInner type satisfies the MappedNullable interface at compile time
@@ -21,10 +20,10 @@ var _ MappedNullable = &AddNodeTypeRequestContainerTypeContainerPortsInner{}
 
 // AddNodeTypeRequestContainerTypeContainerPortsInner struct for AddNodeTypeRequestContainerTypeContainerPortsInner
 type AddNodeTypeRequestContainerTypeContainerPortsInner struct {
-	Name string `json:"name"`
-	Port int64 `json:"port"`
-	LoadBalanceProtocol *string `json:"loadBalanceProtocol,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Name                 string                 `json:"name"`
+	Port                 int64                  `json:"port"`
+	LoadBalanceProtocol  *string                `json:"loadBalanceProtocol,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddNodeTypeRequestContainerTypeContainerPortsInner AddNodeTypeRequestContainerTypeContainerPortsInner
@@ -129,7 +128,7 @@ func (o *AddNodeTypeRequestContainerTypeContainerPortsInner) SetLoadBalanceProto
 }
 
 func (o AddNodeTypeRequestContainerTypeContainerPortsInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -150,86 +149,8 @@ func (o AddNodeTypeRequestContainerTypeContainerPortsInner) ToMap() (map[string]
 
 	return toSerialize, nil
 }
-
 func (o *AddNodeTypeRequestContainerTypeContainerPortsInner) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"name",
-		"port",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varAddNodeTypeRequestContainerTypeContainerPortsInner := _AddNodeTypeRequestContainerTypeContainerPortsInner{}
-
-	err = json.Unmarshal(data, &varAddNodeTypeRequestContainerTypeContainerPortsInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddNodeTypeRequestContainerTypeContainerPortsInner(varAddNodeTypeRequestContainerTypeContainerPortsInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "port")
-		delete(additionalProperties, "loadBalanceProtocol")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddNodeTypeRequestContainerTypeContainerPortsInner struct {
-	value *AddNodeTypeRequestContainerTypeContainerPortsInner
-	isSet bool
-}
-
-func (v NullableAddNodeTypeRequestContainerTypeContainerPortsInner) Get() *AddNodeTypeRequestContainerTypeContainerPortsInner {
-	return v.value
-}
-
-func (v *NullableAddNodeTypeRequestContainerTypeContainerPortsInner) Set(val *AddNodeTypeRequestContainerTypeContainerPortsInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddNodeTypeRequestContainerTypeContainerPortsInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddNodeTypeRequestContainerTypeContainerPortsInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddNodeTypeRequestContainerTypeContainerPortsInner(val *AddNodeTypeRequestContainerTypeContainerPortsInner) *NullableAddNodeTypeRequestContainerTypeContainerPortsInner {
-	return &NullableAddNodeTypeRequestContainerTypeContainerPortsInner{value: val, isSet: true}
-}
-
-func (v NullableAddNodeTypeRequestContainerTypeContainerPortsInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddNodeTypeRequestContainerTypeContainerPortsInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -21,18 +21,18 @@ var _ MappedNullable = &VdiAllocation{}
 
 // VdiAllocation struct for VdiAllocation
 type VdiAllocation struct {
-	Id *int64 `json:"id,omitempty"`
-	Pool *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"pool,omitempty"`
-	Instance *ListVDIAllocations200ResponseAllOfVdiAllocationsInnerInstance `json:"instance,omitempty"`
-	User *ListVDIAllocations200ResponseAllOfVdiAllocationsInnerUser `json:"user,omitempty"`
-	LocalUserCreated *bool `json:"localUserCreated,omitempty"`
-	Persistent *bool `json:"persistent,omitempty"`
-	Status *string `json:"status,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	LastReserved *time.Time `json:"lastReserved,omitempty"`
-	ReleaseDate *time.Time `json:"releaseDate,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                                  `json:"id,omitempty"`
+	Pool                 *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"pool,omitempty"`
+	Instance             *ListVDIAllocations200ResponseAllOfVdiAllocationsInnerInstance          `json:"instance,omitempty"`
+	User                 *ListVDIAllocations200ResponseAllOfVdiAllocationsInnerUser              `json:"user,omitempty"`
+	LocalUserCreated     *bool                                                                   `json:"localUserCreated,omitempty"`
+	Persistent           *bool                                                                   `json:"persistent,omitempty"`
+	Status               *string                                                                 `json:"status,omitempty"`
+	DateCreated          *time.Time                                                              `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                                              `json:"lastUpdated,omitempty"`
+	LastReserved         *time.Time                                                              `json:"lastReserved,omitempty"`
+	ReleaseDate          *time.Time                                                              `json:"releaseDate,omitempty"`
+	AdditionalProperties map[string]interface{}                                                  `json:",remain"`
 }
 
 type _VdiAllocation VdiAllocation
@@ -407,7 +407,7 @@ func (o *VdiAllocation) SetReleaseDate(v time.Time) {
 }
 
 func (o VdiAllocation) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -456,72 +456,8 @@ func (o VdiAllocation) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *VdiAllocation) UnmarshalJSON(data []byte) (err error) {
-	varVdiAllocation := _VdiAllocation{}
-
-	err = json.Unmarshal(data, &varVdiAllocation)
-
-	if err != nil {
-		return err
-	}
-
-	*o = VdiAllocation(varVdiAllocation)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "pool")
-		delete(additionalProperties, "instance")
-		delete(additionalProperties, "user")
-		delete(additionalProperties, "localUserCreated")
-		delete(additionalProperties, "persistent")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		delete(additionalProperties, "lastReserved")
-		delete(additionalProperties, "releaseDate")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableVdiAllocation struct {
-	value *VdiAllocation
-	isSet bool
-}
-
-func (v NullableVdiAllocation) Get() *VdiAllocation {
-	return v.value
-}
-
-func (v *NullableVdiAllocation) Set(val *VdiAllocation) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableVdiAllocation) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableVdiAllocation) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableVdiAllocation(val *VdiAllocation) *NullableVdiAllocation {
-	return &NullableVdiAllocation{value: val, isSet: true}
-}
-
-func (v NullableVdiAllocation) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableVdiAllocation) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -25,8 +25,8 @@ type AddIdentitySourcesRequestUserSourceConfigOneOf3 struct {
 	// Administrator API Token
 	AdministratorAPIToken *string `json:"administratorAPIToken,omitempty"`
 	// Required Group
-	RequiredGroup *string `json:"requiredGroup,omitempty"`
-	AdditionalProperties map[string]interface{}
+	RequiredGroup        *string                `json:"requiredGroup,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddIdentitySourcesRequestUserSourceConfigOneOf3 AddIdentitySourcesRequestUserSourceConfigOneOf3
@@ -145,7 +145,7 @@ func (o *AddIdentitySourcesRequestUserSourceConfigOneOf3) SetRequiredGroup(v str
 }
 
 func (o AddIdentitySourcesRequestUserSourceConfigOneOf3) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -170,64 +170,8 @@ func (o AddIdentitySourcesRequestUserSourceConfigOneOf3) ToMap() (map[string]int
 
 	return toSerialize, nil
 }
-
 func (o *AddIdentitySourcesRequestUserSourceConfigOneOf3) UnmarshalJSON(data []byte) (err error) {
-	varAddIdentitySourcesRequestUserSourceConfigOneOf3 := _AddIdentitySourcesRequestUserSourceConfigOneOf3{}
-
-	err = json.Unmarshal(data, &varAddIdentitySourcesRequestUserSourceConfigOneOf3)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddIdentitySourcesRequestUserSourceConfigOneOf3(varAddIdentitySourcesRequestUserSourceConfigOneOf3)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "administratorAPIToken")
-		delete(additionalProperties, "requiredGroup")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddIdentitySourcesRequestUserSourceConfigOneOf3 struct {
-	value *AddIdentitySourcesRequestUserSourceConfigOneOf3
-	isSet bool
-}
-
-func (v NullableAddIdentitySourcesRequestUserSourceConfigOneOf3) Get() *AddIdentitySourcesRequestUserSourceConfigOneOf3 {
-	return v.value
-}
-
-func (v *NullableAddIdentitySourcesRequestUserSourceConfigOneOf3) Set(val *AddIdentitySourcesRequestUserSourceConfigOneOf3) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddIdentitySourcesRequestUserSourceConfigOneOf3) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddIdentitySourcesRequestUserSourceConfigOneOf3) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddIdentitySourcesRequestUserSourceConfigOneOf3(val *AddIdentitySourcesRequestUserSourceConfigOneOf3) *NullableAddIdentitySourcesRequestUserSourceConfigOneOf3 {
-	return &NullableAddIdentitySourcesRequestUserSourceConfigOneOf3{value: val, isSet: true}
-}
-
-func (v NullableAddIdentitySourcesRequestUserSourceConfigOneOf3) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddIdentitySourcesRequestUserSourceConfigOneOf3) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

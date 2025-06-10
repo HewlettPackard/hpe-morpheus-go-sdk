@@ -21,51 +21,51 @@ var _ MappedNullable = &StorageServer{}
 
 // StorageServer struct for StorageServer
 type StorageServer struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Type *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"type,omitempty"`
-	Chassis *string `json:"chassis,omitempty"`
-	Visibility *string `json:"visibility,omitempty"`
-	Description *string `json:"description,omitempty"`
-	InternalId *string `json:"internalId,omitempty"`
-	ExternalId *string `json:"externalId,omitempty"`
-	ServiceUrl *string `json:"serviceUrl,omitempty"`
-	ServiceHost *string `json:"serviceHost,omitempty"`
-	ServicePath *string `json:"servicePath,omitempty"`
-	ServiceToken *string `json:"serviceToken,omitempty"`
-	ServiceTokenHash *string `json:"serviceTokenHash,omitempty"`
-	ServiceVersion *string `json:"serviceVersion,omitempty"`
-	ServiceUsername *string `json:"serviceUsername,omitempty"`
-	ServicePassword *string `json:"servicePassword,omitempty"`
-	ServicePasswordHash *string `json:"servicePasswordHash,omitempty"`
-	InternalIp *string `json:"internalIp,omitempty"`
-	ExternalIp *string `json:"externalIp,omitempty"`
-	ApiPort *string `json:"apiPort,omitempty"`
-	AdminPort *string `json:"adminPort,omitempty"`
-	Config map[string]interface{} `json:"config,omitempty"`
-	RefType *string `json:"refType,omitempty"`
-	RefId *int64 `json:"refId,omitempty"`
-	Category *string `json:"category,omitempty"`
-	ServerVendor *string `json:"serverVendor,omitempty"`
-	ServerModel *string `json:"serverModel,omitempty"`
-	SerialNumber *string `json:"serialNumber,omitempty"`
-	Status *string `json:"status,omitempty"`
-	StatusMessage *string `json:"statusMessage,omitempty"`
-	StatusDate *time.Time `json:"statusDate,omitempty"`
-	ErrorMessage *string `json:"errorMessage,omitempty"`
-	MaxStorage *string `json:"maxStorage,omitempty"`
-	UsedStorage *string `json:"usedStorage,omitempty"`
-	DiskCount *string `json:"diskCount,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	Enabled *bool `json:"enabled,omitempty"`
-	Groups []map[string]interface{} `json:"groups,omitempty"`
-	HostGroups []map[string]interface{} `json:"hostGroups,omitempty"`
-	Hosts []map[string]interface{} `json:"hosts,omitempty"`
-	Tenants []map[string]interface{} `json:"tenants,omitempty"`
-	Owner *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"owner,omitempty"`
-	Credential map[string]interface{} `json:"credential,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                                  `json:"id,omitempty"`
+	Name                 *string                                                                 `json:"name,omitempty"`
+	Type                 *ListBackupSettings200ResponseBackupSettingsDefaultSchedule             `json:"type,omitempty"`
+	Chassis              *string                                                                 `json:"chassis,omitempty"`
+	Visibility           *string                                                                 `json:"visibility,omitempty"`
+	Description          *string                                                                 `json:"description,omitempty"`
+	InternalId           *string                                                                 `json:"internalId,omitempty"`
+	ExternalId           *string                                                                 `json:"externalId,omitempty"`
+	ServiceUrl           *string                                                                 `json:"serviceUrl,omitempty"`
+	ServiceHost          *string                                                                 `json:"serviceHost,omitempty"`
+	ServicePath          *string                                                                 `json:"servicePath,omitempty"`
+	ServiceToken         *string                                                                 `json:"serviceToken,omitempty"`
+	ServiceTokenHash     *string                                                                 `json:"serviceTokenHash,omitempty"`
+	ServiceVersion       *string                                                                 `json:"serviceVersion,omitempty"`
+	ServiceUsername      *string                                                                 `json:"serviceUsername,omitempty"`
+	ServicePassword      *string                                                                 `json:"servicePassword,omitempty"`
+	ServicePasswordHash  *string                                                                 `json:"servicePasswordHash,omitempty"`
+	InternalIp           *string                                                                 `json:"internalIp,omitempty"`
+	ExternalIp           *string                                                                 `json:"externalIp,omitempty"`
+	ApiPort              *string                                                                 `json:"apiPort,omitempty"`
+	AdminPort            *string                                                                 `json:"adminPort,omitempty"`
+	Config               map[string]interface{}                                                  `json:"config,omitempty"`
+	RefType              *string                                                                 `json:"refType,omitempty"`
+	RefId                *int64                                                                  `json:"refId,omitempty"`
+	Category             *string                                                                 `json:"category,omitempty"`
+	ServerVendor         *string                                                                 `json:"serverVendor,omitempty"`
+	ServerModel          *string                                                                 `json:"serverModel,omitempty"`
+	SerialNumber         *string                                                                 `json:"serialNumber,omitempty"`
+	Status               *string                                                                 `json:"status,omitempty"`
+	StatusMessage        *string                                                                 `json:"statusMessage,omitempty"`
+	StatusDate           *time.Time                                                              `json:"statusDate,omitempty"`
+	ErrorMessage         *string                                                                 `json:"errorMessage,omitempty"`
+	MaxStorage           *string                                                                 `json:"maxStorage,omitempty"`
+	UsedStorage          *string                                                                 `json:"usedStorage,omitempty"`
+	DiskCount            *string                                                                 `json:"diskCount,omitempty"`
+	DateCreated          *time.Time                                                              `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                                              `json:"lastUpdated,omitempty"`
+	Enabled              *bool                                                                   `json:"enabled,omitempty"`
+	Groups               []map[string]interface{}                                                `json:"groups,omitempty"`
+	HostGroups           []map[string]interface{}                                                `json:"hostGroups,omitempty"`
+	Hosts                []map[string]interface{}                                                `json:"hosts,omitempty"`
+	Tenants              []map[string]interface{}                                                `json:"tenants,omitempty"`
+	Owner                *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"owner,omitempty"`
+	Credential           map[string]interface{}                                                  `json:"credential,omitempty"`
+	AdditionalProperties map[string]interface{}                                                  `json:",remain"`
 }
 
 type _StorageServer StorageServer
@@ -1496,7 +1496,7 @@ func (o *StorageServer) SetCredential(v map[string]interface{}) {
 }
 
 func (o StorageServer) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1644,105 +1644,8 @@ func (o StorageServer) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *StorageServer) UnmarshalJSON(data []byte) (err error) {
-	varStorageServer := _StorageServer{}
-
-	err = json.Unmarshal(data, &varStorageServer)
-
-	if err != nil {
-		return err
-	}
-
-	*o = StorageServer(varStorageServer)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "chassis")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "internalId")
-		delete(additionalProperties, "externalId")
-		delete(additionalProperties, "serviceUrl")
-		delete(additionalProperties, "serviceHost")
-		delete(additionalProperties, "servicePath")
-		delete(additionalProperties, "serviceToken")
-		delete(additionalProperties, "serviceTokenHash")
-		delete(additionalProperties, "serviceVersion")
-		delete(additionalProperties, "serviceUsername")
-		delete(additionalProperties, "servicePassword")
-		delete(additionalProperties, "servicePasswordHash")
-		delete(additionalProperties, "internalIp")
-		delete(additionalProperties, "externalIp")
-		delete(additionalProperties, "apiPort")
-		delete(additionalProperties, "adminPort")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "refType")
-		delete(additionalProperties, "refId")
-		delete(additionalProperties, "category")
-		delete(additionalProperties, "serverVendor")
-		delete(additionalProperties, "serverModel")
-		delete(additionalProperties, "serialNumber")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "statusMessage")
-		delete(additionalProperties, "statusDate")
-		delete(additionalProperties, "errorMessage")
-		delete(additionalProperties, "maxStorage")
-		delete(additionalProperties, "usedStorage")
-		delete(additionalProperties, "diskCount")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "groups")
-		delete(additionalProperties, "hostGroups")
-		delete(additionalProperties, "hosts")
-		delete(additionalProperties, "tenants")
-		delete(additionalProperties, "owner")
-		delete(additionalProperties, "credential")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableStorageServer struct {
-	value *StorageServer
-	isSet bool
-}
-
-func (v NullableStorageServer) Get() *StorageServer {
-	return v.value
-}
-
-func (v *NullableStorageServer) Set(val *StorageServer) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableStorageServer) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableStorageServer) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableStorageServer(val *StorageServer) *NullableStorageServer {
-	return &NullableStorageServer{value: val, isSet: true}
-}
-
-func (v NullableStorageServer) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableStorageServer) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

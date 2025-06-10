@@ -20,16 +20,16 @@ var _ MappedNullable = &CheckSshConfig{}
 
 // CheckSshConfig struct for CheckSshConfig
 type CheckSshConfig struct {
-	SshPort *int64 `json:"sshPort,omitempty"`
-	CheckUser *string `json:"checkUser,omitempty"`
-	TunnelOn *string `json:"tunnelOn,omitempty"`
-	TextCheckOn *string `json:"textCheckOn,omitempty"`
-	CheckPassword *string `json:"checkPassword,omitempty"`
-	SshHost *string `json:"sshHost,omitempty"`
-	SshUser *string `json:"sshUser,omitempty"`
-	WebTextMatch *string `json:"webTextMatch,omitempty"`
-	CheckPasswordHash *string `json:"checkPasswordHash,omitempty"`
-	AdditionalProperties map[string]interface{}
+	SshPort              *int64                 `json:"sshPort,omitempty"`
+	CheckUser            *string                `json:"checkUser,omitempty"`
+	TunnelOn             *string                `json:"tunnelOn,omitempty"`
+	TextCheckOn          *string                `json:"textCheckOn,omitempty"`
+	CheckPassword        *string                `json:"checkPassword,omitempty"`
+	SshHost              *string                `json:"sshHost,omitempty"`
+	SshUser              *string                `json:"sshUser,omitempty"`
+	WebTextMatch         *string                `json:"webTextMatch,omitempty"`
+	CheckPasswordHash    *string                `json:"checkPasswordHash,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _CheckSshConfig CheckSshConfig
@@ -340,7 +340,7 @@ func (o *CheckSshConfig) SetCheckPasswordHash(v string) {
 }
 
 func (o CheckSshConfig) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -383,70 +383,8 @@ func (o CheckSshConfig) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *CheckSshConfig) UnmarshalJSON(data []byte) (err error) {
-	varCheckSshConfig := _CheckSshConfig{}
-
-	err = json.Unmarshal(data, &varCheckSshConfig)
-
-	if err != nil {
-		return err
-	}
-
-	*o = CheckSshConfig(varCheckSshConfig)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "sshPort")
-		delete(additionalProperties, "checkUser")
-		delete(additionalProperties, "tunnelOn")
-		delete(additionalProperties, "textCheckOn")
-		delete(additionalProperties, "checkPassword")
-		delete(additionalProperties, "sshHost")
-		delete(additionalProperties, "sshUser")
-		delete(additionalProperties, "webTextMatch")
-		delete(additionalProperties, "checkPasswordHash")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableCheckSshConfig struct {
-	value *CheckSshConfig
-	isSet bool
-}
-
-func (v NullableCheckSshConfig) Get() *CheckSshConfig {
-	return v.value
-}
-
-func (v *NullableCheckSshConfig) Set(val *CheckSshConfig) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableCheckSshConfig) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableCheckSshConfig) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableCheckSshConfig(val *CheckSshConfig) *NullableCheckSshConfig {
-	return &NullableCheckSshConfig{value: val, isSet: true}
-}
-
-func (v NullableCheckSshConfig) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableCheckSshConfig) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

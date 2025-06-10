@@ -18,10 +18,10 @@ import (
 // checks if the CreateNetworkRouterRequest type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &CreateNetworkRouterRequest{}
 
-// CreateNetworkRouterRequest The parameters for creating a network router is type dependent. The following lists the common parameters. See get a specific type to list available options for that network router type. Note: when creating a router on NSX v3.0+ some BGP configuration settings require BGP to be disabled during initial creation. The BGP feature can be enabled in a subsequent router update API call. 
+// CreateNetworkRouterRequest The parameters for creating a network router is type dependent. The following lists the common parameters. See get a specific type to list available options for that network router type. Note: when creating a router on NSX v3.0+ some BGP configuration settings require BGP to be disabled during initial creation. The BGP feature can be enabled in a subsequent router update API call.
 type CreateNetworkRouterRequest struct {
-	NetworkRouter *CreateNetworkRouterRequestNetworkRouter `json:"networkRouter,omitempty"`
-	AdditionalProperties map[string]interface{}
+	NetworkRouter        *CreateNetworkRouterRequestNetworkRouter `json:"networkRouter,omitempty"`
+	AdditionalProperties map[string]interface{}                   `json:",remain"`
 }
 
 type _CreateNetworkRouterRequest CreateNetworkRouterRequest
@@ -76,7 +76,7 @@ func (o *CreateNetworkRouterRequest) SetNetworkRouter(v CreateNetworkRouterReque
 }
 
 func (o CreateNetworkRouterRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o CreateNetworkRouterRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *CreateNetworkRouterRequest) UnmarshalJSON(data []byte) (err error) {
-	varCreateNetworkRouterRequest := _CreateNetworkRouterRequest{}
-
-	err = json.Unmarshal(data, &varCreateNetworkRouterRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = CreateNetworkRouterRequest(varCreateNetworkRouterRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "networkRouter")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableCreateNetworkRouterRequest struct {
-	value *CreateNetworkRouterRequest
-	isSet bool
-}
-
-func (v NullableCreateNetworkRouterRequest) Get() *CreateNetworkRouterRequest {
-	return v.value
-}
-
-func (v *NullableCreateNetworkRouterRequest) Set(val *CreateNetworkRouterRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableCreateNetworkRouterRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableCreateNetworkRouterRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableCreateNetworkRouterRequest(val *CreateNetworkRouterRequest) *NullableCreateNetworkRouterRequest {
-	return &NullableCreateNetworkRouterRequest{value: val, isSet: true}
-}
-
-func (v NullableCreateNetworkRouterRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableCreateNetworkRouterRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

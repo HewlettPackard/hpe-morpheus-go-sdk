@@ -20,9 +20,9 @@ var _ MappedNullable = &GetAppState200ResponseAllOfSpecsInnerTemplate{}
 
 // GetAppState200ResponseAllOfSpecsInnerTemplate struct for GetAppState200ResponseAllOfSpecsInnerTemplate
 type GetAppState200ResponseAllOfSpecsInnerTemplate struct {
-	Name *string `json:"name,omitempty"`
-	Type *string `json:"type,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Name                 *string                `json:"name,omitempty"`
+	Type                 *string                `json:"type,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _GetAppState200ResponseAllOfSpecsInnerTemplate GetAppState200ResponseAllOfSpecsInnerTemplate
@@ -109,7 +109,7 @@ func (o *GetAppState200ResponseAllOfSpecsInnerTemplate) SetType(v string) {
 }
 
 func (o GetAppState200ResponseAllOfSpecsInnerTemplate) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -131,63 +131,8 @@ func (o GetAppState200ResponseAllOfSpecsInnerTemplate) ToMap() (map[string]inter
 
 	return toSerialize, nil
 }
-
 func (o *GetAppState200ResponseAllOfSpecsInnerTemplate) UnmarshalJSON(data []byte) (err error) {
-	varGetAppState200ResponseAllOfSpecsInnerTemplate := _GetAppState200ResponseAllOfSpecsInnerTemplate{}
-
-	err = json.Unmarshal(data, &varGetAppState200ResponseAllOfSpecsInnerTemplate)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetAppState200ResponseAllOfSpecsInnerTemplate(varGetAppState200ResponseAllOfSpecsInnerTemplate)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "type")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetAppState200ResponseAllOfSpecsInnerTemplate struct {
-	value *GetAppState200ResponseAllOfSpecsInnerTemplate
-	isSet bool
-}
-
-func (v NullableGetAppState200ResponseAllOfSpecsInnerTemplate) Get() *GetAppState200ResponseAllOfSpecsInnerTemplate {
-	return v.value
-}
-
-func (v *NullableGetAppState200ResponseAllOfSpecsInnerTemplate) Set(val *GetAppState200ResponseAllOfSpecsInnerTemplate) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetAppState200ResponseAllOfSpecsInnerTemplate) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetAppState200ResponseAllOfSpecsInnerTemplate) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetAppState200ResponseAllOfSpecsInnerTemplate(val *GetAppState200ResponseAllOfSpecsInnerTemplate) *NullableGetAppState200ResponseAllOfSpecsInnerTemplate {
-	return &NullableGetAppState200ResponseAllOfSpecsInnerTemplate{value: val, isSet: true}
-}
-
-func (v NullableGetAppState200ResponseAllOfSpecsInnerTemplate) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetAppState200ResponseAllOfSpecsInnerTemplate) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

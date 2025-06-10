@@ -20,9 +20,9 @@ var _ MappedNullable = &GetClusterUpgradeVersions200Response{}
 
 // GetClusterUpgradeVersions200Response struct for GetClusterUpgradeVersions200Response
 type GetClusterUpgradeVersions200Response struct {
-	Versions []string `json:"versions,omitempty"`
-	CurrentVersion *string `json:"currentVersion,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Versions             []string               `json:"versions,omitempty"`
+	CurrentVersion       *string                `json:"currentVersion,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _GetClusterUpgradeVersions200Response GetClusterUpgradeVersions200Response
@@ -109,7 +109,7 @@ func (o *GetClusterUpgradeVersions200Response) SetCurrentVersion(v string) {
 }
 
 func (o GetClusterUpgradeVersions200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -131,63 +131,8 @@ func (o GetClusterUpgradeVersions200Response) ToMap() (map[string]interface{}, e
 
 	return toSerialize, nil
 }
-
 func (o *GetClusterUpgradeVersions200Response) UnmarshalJSON(data []byte) (err error) {
-	varGetClusterUpgradeVersions200Response := _GetClusterUpgradeVersions200Response{}
-
-	err = json.Unmarshal(data, &varGetClusterUpgradeVersions200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetClusterUpgradeVersions200Response(varGetClusterUpgradeVersions200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "versions")
-		delete(additionalProperties, "currentVersion")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetClusterUpgradeVersions200Response struct {
-	value *GetClusterUpgradeVersions200Response
-	isSet bool
-}
-
-func (v NullableGetClusterUpgradeVersions200Response) Get() *GetClusterUpgradeVersions200Response {
-	return v.value
-}
-
-func (v *NullableGetClusterUpgradeVersions200Response) Set(val *GetClusterUpgradeVersions200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetClusterUpgradeVersions200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetClusterUpgradeVersions200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetClusterUpgradeVersions200Response(val *GetClusterUpgradeVersions200Response) *NullableGetClusterUpgradeVersions200Response {
-	return &NullableGetClusterUpgradeVersions200Response{value: val, isSet: true}
-}
-
-func (v NullableGetClusterUpgradeVersions200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetClusterUpgradeVersions200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache
