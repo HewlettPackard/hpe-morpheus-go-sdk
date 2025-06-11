@@ -28,7 +28,7 @@ type UpdateUserRequestUser struct {
 	Username        *string        `json:"username,omitempty"`
 	LinuxUsername   NullableString `json:"linuxUsername,omitempty"`
 	LinuxPassword   NullableString `json:"linuxPassword,omitempty"`
-	LinuxKeyPairId  NullableString `json:"linuxKeyPairId,omitempty"`
+	LinuxKeyPairId  NullableInt64  `json:"linuxKeyPairId,omitempty"`
 	WindowsUsername NullableString `json:"windowsUsername,omitempty"`
 	WindowsPassword NullableString `json:"windowsPassword,omitempty"`
 	// Email address
@@ -264,9 +264,9 @@ func (o *UpdateUserRequestUser) UnsetLinuxPassword() {
 }
 
 // GetLinuxKeyPairId returns the LinuxKeyPairId field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *UpdateUserRequestUser) GetLinuxKeyPairId() string {
+func (o *UpdateUserRequestUser) GetLinuxKeyPairId() int64 {
 	if o == nil || IsNil(o.LinuxKeyPairId.Get()) {
-		var ret string
+		var ret int64
 		return ret
 	}
 	return *o.LinuxKeyPairId.Get()
@@ -275,7 +275,7 @@ func (o *UpdateUserRequestUser) GetLinuxKeyPairId() string {
 // GetLinuxKeyPairIdOk returns a tuple with the LinuxKeyPairId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *UpdateUserRequestUser) GetLinuxKeyPairIdOk() (*string, bool) {
+func (o *UpdateUserRequestUser) GetLinuxKeyPairIdOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -291,8 +291,8 @@ func (o *UpdateUserRequestUser) IsSetLinuxKeyPairId() bool {
 	return false
 }
 
-// SetLinuxKeyPairId gets a reference to the given NullableString and assigns it to the LinuxKeyPairId field.
-func (o *UpdateUserRequestUser) SetLinuxKeyPairId(v string) {
+// SetLinuxKeyPairId gets a reference to the given NullableInt64 and assigns it to the LinuxKeyPairId field.
+func (o *UpdateUserRequestUser) SetLinuxKeyPairId(v int64) {
 	o.LinuxKeyPairId.Set(&v)
 }
 
