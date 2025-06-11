@@ -25,7 +25,12 @@ type UpdateUserRequestUser struct {
 	// Last Name
 	LastName NullableString `json:"lastName,omitempty"`
 	// Username (unique per tenant).
-	Username *string `json:"username,omitempty"`
+	Username        *string        `json:"username,omitempty"`
+	LinuxUsername   NullableString `json:"linuxUsername,omitempty"`
+	LinuxPassword   NullableString `json:"linuxPassword,omitempty"`
+	LinuxKeyPairId  NullableString `json:"linuxKeyPairId,omitempty"`
+	WindowsUsername NullableString `json:"windowsUsername,omitempty"`
+	WindowsPassword NullableString `json:"windowsPassword,omitempty"`
 	// Email address
 	Email *string `json:"email,omitempty"`
 	// Password
@@ -172,6 +177,221 @@ func (o *UpdateUserRequestUser) SetUsername(v string) {
 	o.Username = &v
 }
 
+// GetLinuxUsername returns the LinuxUsername field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *UpdateUserRequestUser) GetLinuxUsername() string {
+	if o == nil || IsNil(o.LinuxUsername.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.LinuxUsername.Get()
+}
+
+// GetLinuxUsernameOk returns a tuple with the LinuxUsername field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *UpdateUserRequestUser) GetLinuxUsernameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.LinuxUsername.Get(), o.LinuxUsername.IsSet()
+}
+
+// IsSetLinuxUsername returns a boolean if a field has been set.
+func (o *UpdateUserRequestUser) IsSetLinuxUsername() bool {
+	if o != nil && o.LinuxUsername.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetLinuxUsername gets a reference to the given NullableString and assigns it to the LinuxUsername field.
+func (o *UpdateUserRequestUser) SetLinuxUsername(v string) {
+	o.LinuxUsername.Set(&v)
+}
+
+// SetLinuxUsernameNil sets the value for LinuxUsername to be an explicit nil
+func (o *UpdateUserRequestUser) SetLinuxUsernameNil() {
+	o.LinuxUsername.Set(nil)
+}
+
+// UnsetLinuxUsername ensures that no value is present for LinuxUsername, not even an explicit nil
+func (o *UpdateUserRequestUser) UnsetLinuxUsername() {
+	o.LinuxUsername.Unset()
+}
+
+// GetLinuxPassword returns the LinuxPassword field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *UpdateUserRequestUser) GetLinuxPassword() string {
+	if o == nil || IsNil(o.LinuxPassword.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.LinuxPassword.Get()
+}
+
+// GetLinuxPasswordOk returns a tuple with the LinuxPassword field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *UpdateUserRequestUser) GetLinuxPasswordOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.LinuxPassword.Get(), o.LinuxPassword.IsSet()
+}
+
+// IsSetLinuxPassword returns a boolean if a field has been set.
+func (o *UpdateUserRequestUser) IsSetLinuxPassword() bool {
+	if o != nil && o.LinuxPassword.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetLinuxPassword gets a reference to the given NullableString and assigns it to the LinuxPassword field.
+func (o *UpdateUserRequestUser) SetLinuxPassword(v string) {
+	o.LinuxPassword.Set(&v)
+}
+
+// SetLinuxPasswordNil sets the value for LinuxPassword to be an explicit nil
+func (o *UpdateUserRequestUser) SetLinuxPasswordNil() {
+	o.LinuxPassword.Set(nil)
+}
+
+// UnsetLinuxPassword ensures that no value is present for LinuxPassword, not even an explicit nil
+func (o *UpdateUserRequestUser) UnsetLinuxPassword() {
+	o.LinuxPassword.Unset()
+}
+
+// GetLinuxKeyPairId returns the LinuxKeyPairId field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *UpdateUserRequestUser) GetLinuxKeyPairId() string {
+	if o == nil || IsNil(o.LinuxKeyPairId.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.LinuxKeyPairId.Get()
+}
+
+// GetLinuxKeyPairIdOk returns a tuple with the LinuxKeyPairId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *UpdateUserRequestUser) GetLinuxKeyPairIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.LinuxKeyPairId.Get(), o.LinuxKeyPairId.IsSet()
+}
+
+// IsSetLinuxKeyPairId returns a boolean if a field has been set.
+func (o *UpdateUserRequestUser) IsSetLinuxKeyPairId() bool {
+	if o != nil && o.LinuxKeyPairId.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetLinuxKeyPairId gets a reference to the given NullableString and assigns it to the LinuxKeyPairId field.
+func (o *UpdateUserRequestUser) SetLinuxKeyPairId(v string) {
+	o.LinuxKeyPairId.Set(&v)
+}
+
+// SetLinuxKeyPairIdNil sets the value for LinuxKeyPairId to be an explicit nil
+func (o *UpdateUserRequestUser) SetLinuxKeyPairIdNil() {
+	o.LinuxKeyPairId.Set(nil)
+}
+
+// UnsetLinuxKeyPairId ensures that no value is present for LinuxKeyPairId, not even an explicit nil
+func (o *UpdateUserRequestUser) UnsetLinuxKeyPairId() {
+	o.LinuxKeyPairId.Unset()
+}
+
+// GetWindowsUsername returns the WindowsUsername field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *UpdateUserRequestUser) GetWindowsUsername() string {
+	if o == nil || IsNil(o.WindowsUsername.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.WindowsUsername.Get()
+}
+
+// GetWindowsUsernameOk returns a tuple with the WindowsUsername field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *UpdateUserRequestUser) GetWindowsUsernameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.WindowsUsername.Get(), o.WindowsUsername.IsSet()
+}
+
+// IsSetWindowsUsername returns a boolean if a field has been set.
+func (o *UpdateUserRequestUser) IsSetWindowsUsername() bool {
+	if o != nil && o.WindowsUsername.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetWindowsUsername gets a reference to the given NullableString and assigns it to the WindowsUsername field.
+func (o *UpdateUserRequestUser) SetWindowsUsername(v string) {
+	o.WindowsUsername.Set(&v)
+}
+
+// SetWindowsUsernameNil sets the value for WindowsUsername to be an explicit nil
+func (o *UpdateUserRequestUser) SetWindowsUsernameNil() {
+	o.WindowsUsername.Set(nil)
+}
+
+// UnsetWindowsUsername ensures that no value is present for WindowsUsername, not even an explicit nil
+func (o *UpdateUserRequestUser) UnsetWindowsUsername() {
+	o.WindowsUsername.Unset()
+}
+
+// GetWindowsPassword returns the WindowsPassword field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *UpdateUserRequestUser) GetWindowsPassword() string {
+	if o == nil || IsNil(o.WindowsPassword.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.WindowsPassword.Get()
+}
+
+// GetWindowsPasswordOk returns a tuple with the WindowsPassword field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *UpdateUserRequestUser) GetWindowsPasswordOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.WindowsPassword.Get(), o.WindowsPassword.IsSet()
+}
+
+// IsSetWindowsPassword returns a boolean if a field has been set.
+func (o *UpdateUserRequestUser) IsSetWindowsPassword() bool {
+	if o != nil && o.WindowsPassword.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetWindowsPassword gets a reference to the given NullableString and assigns it to the WindowsPassword field.
+func (o *UpdateUserRequestUser) SetWindowsPassword(v string) {
+	o.WindowsPassword.Set(&v)
+}
+
+// SetWindowsPasswordNil sets the value for WindowsPassword to be an explicit nil
+func (o *UpdateUserRequestUser) SetWindowsPasswordNil() {
+	o.WindowsPassword.Set(nil)
+}
+
+// UnsetWindowsPassword ensures that no value is present for WindowsPassword, not even an explicit nil
+func (o *UpdateUserRequestUser) UnsetWindowsPassword() {
+	o.WindowsPassword.Unset()
+}
+
 // GetEmail returns the Email field value if set, zero value otherwise.
 func (o *UpdateUserRequestUser) GetEmail() string {
 	if o == nil || IsNil(o.Email) {
@@ -286,6 +506,21 @@ func (o UpdateUserRequestUser) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Username) {
 		toSerialize["username"] = o.Username
+	}
+	if o.LinuxUsername.IsSet() {
+		toSerialize["linuxUsername"] = o.LinuxUsername.Get()
+	}
+	if o.LinuxPassword.IsSet() {
+		toSerialize["linuxPassword"] = o.LinuxPassword.Get()
+	}
+	if o.LinuxKeyPairId.IsSet() {
+		toSerialize["linuxKeyPairId"] = o.LinuxKeyPairId.Get()
+	}
+	if o.WindowsUsername.IsSet() {
+		toSerialize["windowsUsername"] = o.WindowsUsername.Get()
+	}
+	if o.WindowsPassword.IsSet() {
+		toSerialize["windowsPassword"] = o.WindowsPassword.Get()
 	}
 	if !IsNil(o.Email) {
 		toSerialize["email"] = o.Email
