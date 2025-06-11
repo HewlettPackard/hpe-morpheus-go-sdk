@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Username** | Pointer to **string** | Username (unique per tenant). | [optional] 
 **LinuxUsername** | Pointer to **NullableString** |  | [optional] 
 **LinuxPassword** | Pointer to **NullableString** |  | [optional] 
-**LinuxKeyPairId** | Pointer to **NullableString** |  | [optional] 
+**LinuxKeyPairId** | Pointer to **NullableInt64** |  | [optional] 
 **WindowsUsername** | Pointer to **NullableString** |  | [optional] 
 **WindowsPassword** | Pointer to **NullableString** |  | [optional] 
 **Email** | Pointer to **string** | Email address | [optional] 
@@ -202,20 +202,20 @@ HasLinuxPassword returns a boolean if a field has been set.
 UnsetLinuxPassword ensures that no value is present for LinuxPassword, not even an explicit nil
 ### GetLinuxKeyPairId
 
-`func (o *UpdateUserRequestUser) GetLinuxKeyPairId() string`
+`func (o *UpdateUserRequestUser) GetLinuxKeyPairId() int64`
 
 GetLinuxKeyPairId returns the LinuxKeyPairId field if non-nil, zero value otherwise.
 
 ### GetLinuxKeyPairIdOk
 
-`func (o *UpdateUserRequestUser) GetLinuxKeyPairIdOk() (*string, bool)`
+`func (o *UpdateUserRequestUser) GetLinuxKeyPairIdOk() (*int64, bool)`
 
 GetLinuxKeyPairIdOk returns a tuple with the LinuxKeyPairId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLinuxKeyPairId
 
-`func (o *UpdateUserRequestUser) SetLinuxKeyPairId(v string)`
+`func (o *UpdateUserRequestUser) SetLinuxKeyPairId(v int64)`
 
 SetLinuxKeyPairId sets LinuxKeyPairId field to given value.
 
