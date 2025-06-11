@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **Labels** | Pointer to **[]string** |  | [optional] 
 **InstanceVersion** | Pointer to **string** | Version of the layout | [optional] 
 **Description** | Pointer to **string** | Layout description | [optional] 
+**SortOrder** | Pointer to **int64** | Display order of the layout, higher to lower | [optional] 
 **Creatable** | Pointer to **bool** | Can be used to enable / disable the creatability of the layout. | [optional] [default to true]
 **ProvisionTypeCode** | Pointer to **string** | Provision type code | [optional] 
 **MemoryRequirement** | Pointer to **string** | Memory requirement in megabytes | [optional] 
@@ -138,6 +139,31 @@ SetDescription sets Description field to given value.
 `func (o *UpdateLayoutRequestInstanceTypeLayout) HasDescription() bool`
 
 HasDescription returns a boolean if a field has been set.
+
+### GetSortOrder
+
+`func (o *UpdateLayoutRequestInstanceTypeLayout) GetSortOrder() int64`
+
+GetSortOrder returns the SortOrder field if non-nil, zero value otherwise.
+
+### GetSortOrderOk
+
+`func (o *UpdateLayoutRequestInstanceTypeLayout) GetSortOrderOk() (*int64, bool)`
+
+GetSortOrderOk returns a tuple with the SortOrder field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSortOrder
+
+`func (o *UpdateLayoutRequestInstanceTypeLayout) SetSortOrder(v int64)`
+
+SetSortOrder sets SortOrder field to given value.
+
+### HasSortOrder
+
+`func (o *UpdateLayoutRequestInstanceTypeLayout) HasSortOrder() bool`
+
+HasSortOrder returns a boolean if a field has been set.
 
 ### GetCreatable
 

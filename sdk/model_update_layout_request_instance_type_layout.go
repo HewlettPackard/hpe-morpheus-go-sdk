@@ -27,6 +27,8 @@ type UpdateLayoutRequestInstanceTypeLayout struct {
 	InstanceVersion *string `json:"instanceVersion,omitempty"`
 	// Layout description
 	Description *string `json:"description,omitempty"`
+	// Display order of the layout, higher to lower
+	SortOrder *int64 `json:"sortOrder,omitempty"`
 	// Can be used to enable / disable the creatability of the layout.
 	Creatable *bool `json:"creatable,omitempty"`
 	// Provision type code
@@ -208,6 +210,38 @@ func (o *UpdateLayoutRequestInstanceTypeLayout) IsSetDescription() bool {
 // SetDescription gets a reference to the given string and assigns it to the Description field.
 func (o *UpdateLayoutRequestInstanceTypeLayout) SetDescription(v string) {
 	o.Description = &v
+}
+
+// GetSortOrder returns the SortOrder field value if set, zero value otherwise.
+func (o *UpdateLayoutRequestInstanceTypeLayout) GetSortOrder() int64 {
+	if o == nil || IsNil(o.SortOrder) {
+		var ret int64
+		return ret
+	}
+	return *o.SortOrder
+}
+
+// GetSortOrderOk returns a tuple with the SortOrder field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UpdateLayoutRequestInstanceTypeLayout) GetSortOrderOk() (*int64, bool) {
+	if o == nil || IsNil(o.SortOrder) {
+		return nil, false
+	}
+	return o.SortOrder, true
+}
+
+// IsSetSortOrder returns a boolean if a field has been set.
+func (o *UpdateLayoutRequestInstanceTypeLayout) IsSetSortOrder() bool {
+	if o != nil && !IsNil(o.SortOrder) {
+		return true
+	}
+
+	return false
+}
+
+// SetSortOrder gets a reference to the given int64 and assigns it to the SortOrder field.
+func (o *UpdateLayoutRequestInstanceTypeLayout) SetSortOrder(v int64) {
+	o.SortOrder = &v
 }
 
 // GetCreatable returns the Creatable field value if set, zero value otherwise.
@@ -583,6 +617,9 @@ func (o UpdateLayoutRequestInstanceTypeLayout) ToMap() (map[string]interface{}, 
 	}
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
+	}
+	if !IsNil(o.SortOrder) {
+		toSerialize["sortOrder"] = o.SortOrder
 	}
 	if !IsNil(o.Creatable) {
 		toSerialize["creatable"] = o.Creatable
