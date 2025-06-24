@@ -6,29 +6,29 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **NullableString** |  | [optional] 
 **MinIdle** | Pointer to **int64** |  | [optional] 
 **MaxIdle** | Pointer to **int64** |  | [optional] 
 **InitialPoolSize** | Pointer to **int64** |  | [optional] 
 **MaxPoolSize** | Pointer to **int64** |  | [optional] 
 **AllocationTimeoutMinutes** | Pointer to **int64** |  | [optional] 
-**PersistentUser** | Pointer to **bool** |  | [optional] 
-**Recyclable** | Pointer to **bool** |  | [optional] 
+**PersistentUser** | Pointer to **NullableBool** |  | [optional] 
+**Recyclable** | Pointer to **NullableBool** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
 **AutoCreateLocalUserOnReservation** | Pointer to **bool** |  | [optional] 
-**AllowHypervisorConsole** | Pointer to **bool** |  | [optional] 
-**AllowCopy** | Pointer to **bool** |  | [optional] 
-**AllowPrinter** | Pointer to **bool** |  | [optional] 
-**AllowFileshare** | Pointer to **bool** |  | [optional] 
-**GuestConsoleJumpHost** | Pointer to **string** |  | [optional] 
-**GuestConsoleJumpPort** | Pointer to **string** |  | [optional] 
-**GuestConsoleJumpUsername** | Pointer to **string** |  | [optional] 
-**GuestConsoleJumpPassword** | Pointer to **string** |  | [optional] 
-**GuestConsoleJumpKeypair** | Pointer to **string** |  | [optional] 
+**AllowHypervisorConsole** | Pointer to **NullableBool** |  | [optional] 
+**AllowCopy** | Pointer to **NullableBool** |  | [optional] 
+**AllowPrinter** | Pointer to **NullableBool** |  | [optional] 
+**AllowFileshare** | Pointer to **NullableBool** |  | [optional] 
+**GuestConsoleJumpHost** | Pointer to **NullableString** |  | [optional] 
+**GuestConsoleJumpPort** | Pointer to **NullableString** |  | [optional] 
+**GuestConsoleJumpUsername** | Pointer to **NullableString** |  | [optional] 
+**GuestConsoleJumpPassword** | Pointer to **NullableString** |  | [optional] 
+**GuestConsoleJumpKeypair** | Pointer to **NullableString** |  | [optional] 
 **Gateway** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **IconPath** | Pointer to **string** |  | [optional] 
 **Logo** | Pointer to **string** |  | [optional] 
-**Apps** | Pointer to [**[]ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
+**Apps** | Pointer to [**[]GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **Owner** | Pointer to [**ListVDIPools200ResponseAllOfVdiPoolsInnerOwner**](ListVDIPools200ResponseAllOfVdiPoolsInnerOwner.md) |  | [optional] 
 **Config** | Pointer to [**ListVDIPools200ResponseAllOfVdiPoolsInnerConfig**](ListVDIPools200ResponseAllOfVdiPoolsInnerConfig.md) |  | [optional] 
 **Group** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
@@ -135,6 +135,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetMinIdle
 
 `func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) GetMinIdle() int64`
@@ -285,6 +295,16 @@ SetPersistentUser sets PersistentUser field to given value.
 
 HasPersistentUser returns a boolean if a field has been set.
 
+### SetPersistentUserNil
+
+`func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) SetPersistentUserNil(b bool)`
+
+ SetPersistentUserNil sets the value for PersistentUser to be an explicit nil
+
+### UnsetPersistentUser
+`func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) UnsetPersistentUser()`
+
+UnsetPersistentUser ensures that no value is present for PersistentUser, not even an explicit nil
 ### GetRecyclable
 
 `func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) GetRecyclable() bool`
@@ -310,6 +330,16 @@ SetRecyclable sets Recyclable field to given value.
 
 HasRecyclable returns a boolean if a field has been set.
 
+### SetRecyclableNil
+
+`func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) SetRecyclableNil(b bool)`
+
+ SetRecyclableNil sets the value for Recyclable to be an explicit nil
+
+### UnsetRecyclable
+`func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) UnsetRecyclable()`
+
+UnsetRecyclable ensures that no value is present for Recyclable, not even an explicit nil
 ### GetEnabled
 
 `func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) GetEnabled() bool`
@@ -385,6 +415,16 @@ SetAllowHypervisorConsole sets AllowHypervisorConsole field to given value.
 
 HasAllowHypervisorConsole returns a boolean if a field has been set.
 
+### SetAllowHypervisorConsoleNil
+
+`func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) SetAllowHypervisorConsoleNil(b bool)`
+
+ SetAllowHypervisorConsoleNil sets the value for AllowHypervisorConsole to be an explicit nil
+
+### UnsetAllowHypervisorConsole
+`func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) UnsetAllowHypervisorConsole()`
+
+UnsetAllowHypervisorConsole ensures that no value is present for AllowHypervisorConsole, not even an explicit nil
 ### GetAllowCopy
 
 `func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) GetAllowCopy() bool`
@@ -410,6 +450,16 @@ SetAllowCopy sets AllowCopy field to given value.
 
 HasAllowCopy returns a boolean if a field has been set.
 
+### SetAllowCopyNil
+
+`func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) SetAllowCopyNil(b bool)`
+
+ SetAllowCopyNil sets the value for AllowCopy to be an explicit nil
+
+### UnsetAllowCopy
+`func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) UnsetAllowCopy()`
+
+UnsetAllowCopy ensures that no value is present for AllowCopy, not even an explicit nil
 ### GetAllowPrinter
 
 `func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) GetAllowPrinter() bool`
@@ -435,6 +485,16 @@ SetAllowPrinter sets AllowPrinter field to given value.
 
 HasAllowPrinter returns a boolean if a field has been set.
 
+### SetAllowPrinterNil
+
+`func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) SetAllowPrinterNil(b bool)`
+
+ SetAllowPrinterNil sets the value for AllowPrinter to be an explicit nil
+
+### UnsetAllowPrinter
+`func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) UnsetAllowPrinter()`
+
+UnsetAllowPrinter ensures that no value is present for AllowPrinter, not even an explicit nil
 ### GetAllowFileshare
 
 `func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) GetAllowFileshare() bool`
@@ -460,6 +520,16 @@ SetAllowFileshare sets AllowFileshare field to given value.
 
 HasAllowFileshare returns a boolean if a field has been set.
 
+### SetAllowFileshareNil
+
+`func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) SetAllowFileshareNil(b bool)`
+
+ SetAllowFileshareNil sets the value for AllowFileshare to be an explicit nil
+
+### UnsetAllowFileshare
+`func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) UnsetAllowFileshare()`
+
+UnsetAllowFileshare ensures that no value is present for AllowFileshare, not even an explicit nil
 ### GetGuestConsoleJumpHost
 
 `func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) GetGuestConsoleJumpHost() string`
@@ -485,6 +555,16 @@ SetGuestConsoleJumpHost sets GuestConsoleJumpHost field to given value.
 
 HasGuestConsoleJumpHost returns a boolean if a field has been set.
 
+### SetGuestConsoleJumpHostNil
+
+`func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) SetGuestConsoleJumpHostNil(b bool)`
+
+ SetGuestConsoleJumpHostNil sets the value for GuestConsoleJumpHost to be an explicit nil
+
+### UnsetGuestConsoleJumpHost
+`func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) UnsetGuestConsoleJumpHost()`
+
+UnsetGuestConsoleJumpHost ensures that no value is present for GuestConsoleJumpHost, not even an explicit nil
 ### GetGuestConsoleJumpPort
 
 `func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) GetGuestConsoleJumpPort() string`
@@ -510,6 +590,16 @@ SetGuestConsoleJumpPort sets GuestConsoleJumpPort field to given value.
 
 HasGuestConsoleJumpPort returns a boolean if a field has been set.
 
+### SetGuestConsoleJumpPortNil
+
+`func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) SetGuestConsoleJumpPortNil(b bool)`
+
+ SetGuestConsoleJumpPortNil sets the value for GuestConsoleJumpPort to be an explicit nil
+
+### UnsetGuestConsoleJumpPort
+`func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) UnsetGuestConsoleJumpPort()`
+
+UnsetGuestConsoleJumpPort ensures that no value is present for GuestConsoleJumpPort, not even an explicit nil
 ### GetGuestConsoleJumpUsername
 
 `func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) GetGuestConsoleJumpUsername() string`
@@ -535,6 +625,16 @@ SetGuestConsoleJumpUsername sets GuestConsoleJumpUsername field to given value.
 
 HasGuestConsoleJumpUsername returns a boolean if a field has been set.
 
+### SetGuestConsoleJumpUsernameNil
+
+`func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) SetGuestConsoleJumpUsernameNil(b bool)`
+
+ SetGuestConsoleJumpUsernameNil sets the value for GuestConsoleJumpUsername to be an explicit nil
+
+### UnsetGuestConsoleJumpUsername
+`func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) UnsetGuestConsoleJumpUsername()`
+
+UnsetGuestConsoleJumpUsername ensures that no value is present for GuestConsoleJumpUsername, not even an explicit nil
 ### GetGuestConsoleJumpPassword
 
 `func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) GetGuestConsoleJumpPassword() string`
@@ -560,6 +660,16 @@ SetGuestConsoleJumpPassword sets GuestConsoleJumpPassword field to given value.
 
 HasGuestConsoleJumpPassword returns a boolean if a field has been set.
 
+### SetGuestConsoleJumpPasswordNil
+
+`func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) SetGuestConsoleJumpPasswordNil(b bool)`
+
+ SetGuestConsoleJumpPasswordNil sets the value for GuestConsoleJumpPassword to be an explicit nil
+
+### UnsetGuestConsoleJumpPassword
+`func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) UnsetGuestConsoleJumpPassword()`
+
+UnsetGuestConsoleJumpPassword ensures that no value is present for GuestConsoleJumpPassword, not even an explicit nil
 ### GetGuestConsoleJumpKeypair
 
 `func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) GetGuestConsoleJumpKeypair() string`
@@ -585,6 +695,16 @@ SetGuestConsoleJumpKeypair sets GuestConsoleJumpKeypair field to given value.
 
 HasGuestConsoleJumpKeypair returns a boolean if a field has been set.
 
+### SetGuestConsoleJumpKeypairNil
+
+`func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) SetGuestConsoleJumpKeypairNil(b bool)`
+
+ SetGuestConsoleJumpKeypairNil sets the value for GuestConsoleJumpKeypair to be an explicit nil
+
+### UnsetGuestConsoleJumpKeypair
+`func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) UnsetGuestConsoleJumpKeypair()`
+
+UnsetGuestConsoleJumpKeypair ensures that no value is present for GuestConsoleJumpKeypair, not even an explicit nil
 ### GetGateway
 
 `func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) GetGateway() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
@@ -662,20 +782,20 @@ HasLogo returns a boolean if a field has been set.
 
 ### GetApps
 
-`func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) GetApps() []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) GetApps() []GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetApps returns the Apps field if non-nil, zero value otherwise.
 
 ### GetAppsOk
 
-`func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) GetAppsOk() (*[]ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) GetAppsOk() (*[]GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetAppsOk returns a tuple with the Apps field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetApps
 
-`func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) SetApps(v []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) SetApps(v []GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetApps sets Apps field to given value.
 

@@ -6,19 +6,19 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
 **Code** | Pointer to **string** |  | [optional] 
-**Account** | Pointer to **string** |  | [optional] 
+**Account** | Pointer to **NullableString** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Labels** | Pointer to **[]string** |  | [optional] 
-**Category** | Pointer to **string** |  | [optional] 
+**Category** | Pointer to **NullableString** |  | [optional] 
 **SortOrder** | Pointer to **int64** |  | [optional] 
 **ScriptVersion** | Pointer to **string** |  | [optional] 
 **ScriptPhase** | Pointer to **string** |  | [optional] 
 **ScriptType** | Pointer to **string** |  | [optional] 
 **Script** | Pointer to **string** |  | [optional] 
-**ScriptService** | Pointer to **string** |  | [optional] 
-**ScriptMethod** | Pointer to **string** |  | [optional] 
-**RunAsUser** | Pointer to **string** |  | [optional] 
-**RunAsPassword** | Pointer to **string** |  | [optional] 
+**ScriptService** | Pointer to **NullableString** |  | [optional] 
+**ScriptMethod** | Pointer to **NullableString** |  | [optional] 
+**RunAsUser** | Pointer to **NullableString** |  | [optional] 
+**RunAsPassword** | Pointer to **NullableString** |  | [optional] 
 **SudoUser** | Pointer to **bool** |  | [optional] 
 **FailOnError** | Pointer to **bool** |  | [optional] 
 
@@ -116,6 +116,16 @@ SetAccount sets Account field to given value.
 
 HasAccount returns a boolean if a field has been set.
 
+### SetAccountNil
+
+`func (o *ListScripts200ResponseAllOfContainerScriptsInner) SetAccountNil(b bool)`
+
+ SetAccountNil sets the value for Account to be an explicit nil
+
+### UnsetAccount
+`func (o *ListScripts200ResponseAllOfContainerScriptsInner) UnsetAccount()`
+
+UnsetAccount ensures that no value is present for Account, not even an explicit nil
 ### GetName
 
 `func (o *ListScripts200ResponseAllOfContainerScriptsInner) GetName() string`
@@ -166,6 +176,16 @@ SetLabels sets Labels field to given value.
 
 HasLabels returns a boolean if a field has been set.
 
+### SetLabelsNil
+
+`func (o *ListScripts200ResponseAllOfContainerScriptsInner) SetLabelsNil(b bool)`
+
+ SetLabelsNil sets the value for Labels to be an explicit nil
+
+### UnsetLabels
+`func (o *ListScripts200ResponseAllOfContainerScriptsInner) UnsetLabels()`
+
+UnsetLabels ensures that no value is present for Labels, not even an explicit nil
 ### GetCategory
 
 `func (o *ListScripts200ResponseAllOfContainerScriptsInner) GetCategory() string`
@@ -191,6 +211,16 @@ SetCategory sets Category field to given value.
 
 HasCategory returns a boolean if a field has been set.
 
+### SetCategoryNil
+
+`func (o *ListScripts200ResponseAllOfContainerScriptsInner) SetCategoryNil(b bool)`
+
+ SetCategoryNil sets the value for Category to be an explicit nil
+
+### UnsetCategory
+`func (o *ListScripts200ResponseAllOfContainerScriptsInner) UnsetCategory()`
+
+UnsetCategory ensures that no value is present for Category, not even an explicit nil
 ### GetSortOrder
 
 `func (o *ListScripts200ResponseAllOfContainerScriptsInner) GetSortOrder() int64`
@@ -341,6 +371,16 @@ SetScriptService sets ScriptService field to given value.
 
 HasScriptService returns a boolean if a field has been set.
 
+### SetScriptServiceNil
+
+`func (o *ListScripts200ResponseAllOfContainerScriptsInner) SetScriptServiceNil(b bool)`
+
+ SetScriptServiceNil sets the value for ScriptService to be an explicit nil
+
+### UnsetScriptService
+`func (o *ListScripts200ResponseAllOfContainerScriptsInner) UnsetScriptService()`
+
+UnsetScriptService ensures that no value is present for ScriptService, not even an explicit nil
 ### GetScriptMethod
 
 `func (o *ListScripts200ResponseAllOfContainerScriptsInner) GetScriptMethod() string`
@@ -366,6 +406,16 @@ SetScriptMethod sets ScriptMethod field to given value.
 
 HasScriptMethod returns a boolean if a field has been set.
 
+### SetScriptMethodNil
+
+`func (o *ListScripts200ResponseAllOfContainerScriptsInner) SetScriptMethodNil(b bool)`
+
+ SetScriptMethodNil sets the value for ScriptMethod to be an explicit nil
+
+### UnsetScriptMethod
+`func (o *ListScripts200ResponseAllOfContainerScriptsInner) UnsetScriptMethod()`
+
+UnsetScriptMethod ensures that no value is present for ScriptMethod, not even an explicit nil
 ### GetRunAsUser
 
 `func (o *ListScripts200ResponseAllOfContainerScriptsInner) GetRunAsUser() string`
@@ -391,6 +441,16 @@ SetRunAsUser sets RunAsUser field to given value.
 
 HasRunAsUser returns a boolean if a field has been set.
 
+### SetRunAsUserNil
+
+`func (o *ListScripts200ResponseAllOfContainerScriptsInner) SetRunAsUserNil(b bool)`
+
+ SetRunAsUserNil sets the value for RunAsUser to be an explicit nil
+
+### UnsetRunAsUser
+`func (o *ListScripts200ResponseAllOfContainerScriptsInner) UnsetRunAsUser()`
+
+UnsetRunAsUser ensures that no value is present for RunAsUser, not even an explicit nil
 ### GetRunAsPassword
 
 `func (o *ListScripts200ResponseAllOfContainerScriptsInner) GetRunAsPassword() string`
@@ -416,6 +476,16 @@ SetRunAsPassword sets RunAsPassword field to given value.
 
 HasRunAsPassword returns a boolean if a field has been set.
 
+### SetRunAsPasswordNil
+
+`func (o *ListScripts200ResponseAllOfContainerScriptsInner) SetRunAsPasswordNil(b bool)`
+
+ SetRunAsPasswordNil sets the value for RunAsPassword to be an explicit nil
+
+### UnsetRunAsPassword
+`func (o *ListScripts200ResponseAllOfContainerScriptsInner) UnsetRunAsPassword()`
+
+UnsetRunAsPassword ensures that no value is present for RunAsPassword, not even an explicit nil
 ### GetSudoUser
 
 `func (o *ListScripts200ResponseAllOfContainerScriptsInner) GetSudoUser() bool`

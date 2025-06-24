@@ -20,8 +20,8 @@ var _ MappedNullable = &GetBudgets200ResponseAllOfBudgetStatsCurrent{}
 
 // GetBudgets200ResponseAllOfBudgetStatsCurrent struct for GetBudgets200ResponseAllOfBudgetStatsCurrent
 type GetBudgets200ResponseAllOfBudgetStatsCurrent struct {
-	EstimatedCost        *string                `json:"estimatedCost,omitempty"`
-	LastCost             *string                `json:"lastCost,omitempty"`
+	EstimatedCost        NullableString         `json:"estimatedCost,omitempty"`
+	LastCost             NullableString         `json:"lastCost,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -44,68 +44,90 @@ func NewGetBudgets200ResponseAllOfBudgetStatsCurrentWithDefaults() *GetBudgets20
 	return &this
 }
 
-// GetEstimatedCost returns the EstimatedCost field value if set, zero value otherwise.
+// GetEstimatedCost returns the EstimatedCost field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetBudgets200ResponseAllOfBudgetStatsCurrent) GetEstimatedCost() string {
-	if o == nil || IsNil(o.EstimatedCost) {
+	if o == nil || IsNil(o.EstimatedCost.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.EstimatedCost
+	return *o.EstimatedCost.Get()
 }
 
 // GetEstimatedCostOk returns a tuple with the EstimatedCost field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetBudgets200ResponseAllOfBudgetStatsCurrent) GetEstimatedCostOk() (*string, bool) {
-	if o == nil || IsNil(o.EstimatedCost) {
+	if o == nil {
 		return nil, false
 	}
-	return o.EstimatedCost, true
+	return o.EstimatedCost.Get(), o.EstimatedCost.IsSet()
 }
 
 // IsSetEstimatedCost returns a boolean if a field has been set.
 func (o *GetBudgets200ResponseAllOfBudgetStatsCurrent) IsSetEstimatedCost() bool {
-	if o != nil && !IsNil(o.EstimatedCost) {
+	if o != nil && o.EstimatedCost.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetEstimatedCost gets a reference to the given string and assigns it to the EstimatedCost field.
+// SetEstimatedCost gets a reference to the given NullableString and assigns it to the EstimatedCost field.
 func (o *GetBudgets200ResponseAllOfBudgetStatsCurrent) SetEstimatedCost(v string) {
-	o.EstimatedCost = &v
+	o.EstimatedCost.Set(&v)
 }
 
-// GetLastCost returns the LastCost field value if set, zero value otherwise.
+// SetEstimatedCostNil sets the value for EstimatedCost to be an explicit nil
+func (o *GetBudgets200ResponseAllOfBudgetStatsCurrent) SetEstimatedCostNil() {
+	o.EstimatedCost.Set(nil)
+}
+
+// UnsetEstimatedCost ensures that no value is present for EstimatedCost, not even an explicit nil
+func (o *GetBudgets200ResponseAllOfBudgetStatsCurrent) UnsetEstimatedCost() {
+	o.EstimatedCost.Unset()
+}
+
+// GetLastCost returns the LastCost field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetBudgets200ResponseAllOfBudgetStatsCurrent) GetLastCost() string {
-	if o == nil || IsNil(o.LastCost) {
+	if o == nil || IsNil(o.LastCost.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.LastCost
+	return *o.LastCost.Get()
 }
 
 // GetLastCostOk returns a tuple with the LastCost field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetBudgets200ResponseAllOfBudgetStatsCurrent) GetLastCostOk() (*string, bool) {
-	if o == nil || IsNil(o.LastCost) {
+	if o == nil {
 		return nil, false
 	}
-	return o.LastCost, true
+	return o.LastCost.Get(), o.LastCost.IsSet()
 }
 
 // IsSetLastCost returns a boolean if a field has been set.
 func (o *GetBudgets200ResponseAllOfBudgetStatsCurrent) IsSetLastCost() bool {
-	if o != nil && !IsNil(o.LastCost) {
+	if o != nil && o.LastCost.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetLastCost gets a reference to the given string and assigns it to the LastCost field.
+// SetLastCost gets a reference to the given NullableString and assigns it to the LastCost field.
 func (o *GetBudgets200ResponseAllOfBudgetStatsCurrent) SetLastCost(v string) {
-	o.LastCost = &v
+	o.LastCost.Set(&v)
+}
+
+// SetLastCostNil sets the value for LastCost to be an explicit nil
+func (o *GetBudgets200ResponseAllOfBudgetStatsCurrent) SetLastCostNil() {
+	o.LastCost.Set(nil)
+}
+
+// UnsetLastCost ensures that no value is present for LastCost, not even an explicit nil
+func (o *GetBudgets200ResponseAllOfBudgetStatsCurrent) UnsetLastCost() {
+	o.LastCost.Unset()
 }
 
 func (o GetBudgets200ResponseAllOfBudgetStatsCurrent) MarshalJSON() ([]byte, error) {
@@ -118,11 +140,11 @@ func (o GetBudgets200ResponseAllOfBudgetStatsCurrent) MarshalJSON() ([]byte, err
 
 func (o GetBudgets200ResponseAllOfBudgetStatsCurrent) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.EstimatedCost) {
-		toSerialize["estimatedCost"] = o.EstimatedCost
+	if o.EstimatedCost.IsSet() {
+		toSerialize["estimatedCost"] = o.EstimatedCost.Get()
 	}
-	if !IsNil(o.LastCost) {
-		toSerialize["lastCost"] = o.LastCost
+	if o.LastCost.IsSet() {
+		toSerialize["lastCost"] = o.LastCost.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {

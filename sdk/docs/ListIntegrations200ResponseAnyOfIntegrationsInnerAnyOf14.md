@@ -24,8 +24,8 @@ Name | Type | Description | Notes
 **Status** | Pointer to **string** |  | [optional] 
 **StatusDate** | Pointer to **time.Time** |  | [optional] 
 **StatusMessage** | Pointer to **string** |  | [optional] 
-**LastSync** | Pointer to **string** |  | [optional] 
-**LastSyncDuration** | Pointer to **string** |  | [optional] 
+**LastSync** | Pointer to **NullableString** |  | [optional] 
+**LastSyncDuration** | Pointer to **NullableString** |  | [optional] 
 **Credential** | Pointer to [**ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential**](ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential.md) |  | [optional] 
 
 ## Methods
@@ -572,6 +572,16 @@ SetLastSync sets LastSync field to given value.
 
 HasLastSync returns a boolean if a field has been set.
 
+### SetLastSyncNil
+
+`func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14) SetLastSyncNil(b bool)`
+
+ SetLastSyncNil sets the value for LastSync to be an explicit nil
+
+### UnsetLastSync
+`func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14) UnsetLastSync()`
+
+UnsetLastSync ensures that no value is present for LastSync, not even an explicit nil
 ### GetLastSyncDuration
 
 `func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14) GetLastSyncDuration() string`
@@ -597,6 +607,16 @@ SetLastSyncDuration sets LastSyncDuration field to given value.
 
 HasLastSyncDuration returns a boolean if a field has been set.
 
+### SetLastSyncDurationNil
+
+`func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14) SetLastSyncDurationNil(b bool)`
+
+ SetLastSyncDurationNil sets the value for LastSyncDuration to be an explicit nil
+
+### UnsetLastSyncDuration
+`func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14) UnsetLastSyncDuration()`
+
+UnsetLastSyncDuration ensures that no value is present for LastSyncDuration, not even an explicit nil
 ### GetCredential
 
 `func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14) GetCredential() ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential`

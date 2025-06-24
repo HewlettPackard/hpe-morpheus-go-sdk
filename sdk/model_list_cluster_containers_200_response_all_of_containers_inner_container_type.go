@@ -22,7 +22,7 @@ var _ MappedNullable = &ListClusterContainers200ResponseAllOfContainersInnerCont
 type ListClusterContainers200ResponseAllOfContainersInnerContainerType struct {
 	Id                   *int64                 `json:"id,omitempty"`
 	Code                 *string                `json:"code,omitempty"`
-	Category             *string                `json:"category,omitempty"`
+	Category             NullableString         `json:"category,omitempty"`
 	Name                 *string                `json:"name,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
@@ -110,36 +110,47 @@ func (o *ListClusterContainers200ResponseAllOfContainersInnerContainerType) SetC
 	o.Code = &v
 }
 
-// GetCategory returns the Category field value if set, zero value otherwise.
+// GetCategory returns the Category field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListClusterContainers200ResponseAllOfContainersInnerContainerType) GetCategory() string {
-	if o == nil || IsNil(o.Category) {
+	if o == nil || IsNil(o.Category.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Category
+	return *o.Category.Get()
 }
 
 // GetCategoryOk returns a tuple with the Category field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListClusterContainers200ResponseAllOfContainersInnerContainerType) GetCategoryOk() (*string, bool) {
-	if o == nil || IsNil(o.Category) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Category, true
+	return o.Category.Get(), o.Category.IsSet()
 }
 
 // IsSetCategory returns a boolean if a field has been set.
 func (o *ListClusterContainers200ResponseAllOfContainersInnerContainerType) IsSetCategory() bool {
-	if o != nil && !IsNil(o.Category) {
+	if o != nil && o.Category.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCategory gets a reference to the given string and assigns it to the Category field.
+// SetCategory gets a reference to the given NullableString and assigns it to the Category field.
 func (o *ListClusterContainers200ResponseAllOfContainersInnerContainerType) SetCategory(v string) {
-	o.Category = &v
+	o.Category.Set(&v)
+}
+
+// SetCategoryNil sets the value for Category to be an explicit nil
+func (o *ListClusterContainers200ResponseAllOfContainersInnerContainerType) SetCategoryNil() {
+	o.Category.Set(nil)
+}
+
+// UnsetCategory ensures that no value is present for Category, not even an explicit nil
+func (o *ListClusterContainers200ResponseAllOfContainersInnerContainerType) UnsetCategory() {
+	o.Category.Unset()
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -190,8 +201,8 @@ func (o ListClusterContainers200ResponseAllOfContainersInnerContainerType) ToMap
 	if !IsNil(o.Code) {
 		toSerialize["code"] = o.Code
 	}
-	if !IsNil(o.Category) {
-		toSerialize["category"] = o.Category
+	if o.Category.IsSet() {
+		toSerialize["category"] = o.Category.Get()
 	}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name

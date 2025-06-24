@@ -22,14 +22,14 @@ var _ MappedNullable = &ListSecurityGroups200ResponseAllOfSecurityGroupsInnerLoc
 type ListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInner struct {
 	Id                   *int64                                             `json:"id,omitempty"`
 	Name                 *string                                            `json:"name,omitempty"`
-	Description          *string                                            `json:"description,omitempty"`
+	Description          NullableString                                     `json:"description,omitempty"`
 	ExternalId           *string                                            `json:"externalId,omitempty"`
-	IacId                *string                                            `json:"iacId,omitempty"`
+	IacId                NullableString                                     `json:"iacId,omitempty"`
 	Zone                 *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"zone,omitempty"`
 	ZonePool             *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"zonePool,omitempty"`
 	Status               *string                                            `json:"status,omitempty"`
-	Priority             *string                                            `json:"priority,omitempty"`
-	GroupLayer           *string                                            `json:"groupLayer,omitempty"`
+	Priority             NullableString                                     `json:"priority,omitempty"`
+	GroupLayer           NullableString                                     `json:"groupLayer,omitempty"`
 	AdditionalProperties map[string]interface{}                             `json:",remain"`
 }
 
@@ -116,36 +116,47 @@ func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInner) Se
 	o.Name = &v
 }
 
-// GetDescription returns the Description field value if set, zero value otherwise.
+// GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInner) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
+	if o == nil || IsNil(o.Description.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Description
+	return *o.Description.Get()
 }
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInner) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Description, true
+	return o.Description.Get(), o.Description.IsSet()
 }
 
 // IsSetDescription returns a boolean if a field has been set.
 func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInner) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
+	if o != nil && o.Description.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDescription gets a reference to the given string and assigns it to the Description field.
+// SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInner) SetDescription(v string) {
-	o.Description = &v
+	o.Description.Set(&v)
+}
+
+// SetDescriptionNil sets the value for Description to be an explicit nil
+func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInner) SetDescriptionNil() {
+	o.Description.Set(nil)
+}
+
+// UnsetDescription ensures that no value is present for Description, not even an explicit nil
+func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInner) UnsetDescription() {
+	o.Description.Unset()
 }
 
 // GetExternalId returns the ExternalId field value if set, zero value otherwise.
@@ -180,36 +191,47 @@ func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInner) Se
 	o.ExternalId = &v
 }
 
-// GetIacId returns the IacId field value if set, zero value otherwise.
+// GetIacId returns the IacId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInner) GetIacId() string {
-	if o == nil || IsNil(o.IacId) {
+	if o == nil || IsNil(o.IacId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.IacId
+	return *o.IacId.Get()
 }
 
 // GetIacIdOk returns a tuple with the IacId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInner) GetIacIdOk() (*string, bool) {
-	if o == nil || IsNil(o.IacId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.IacId, true
+	return o.IacId.Get(), o.IacId.IsSet()
 }
 
 // IsSetIacId returns a boolean if a field has been set.
 func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInner) IsSetIacId() bool {
-	if o != nil && !IsNil(o.IacId) {
+	if o != nil && o.IacId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetIacId gets a reference to the given string and assigns it to the IacId field.
+// SetIacId gets a reference to the given NullableString and assigns it to the IacId field.
 func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInner) SetIacId(v string) {
-	o.IacId = &v
+	o.IacId.Set(&v)
+}
+
+// SetIacIdNil sets the value for IacId to be an explicit nil
+func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInner) SetIacIdNil() {
+	o.IacId.Set(nil)
+}
+
+// UnsetIacId ensures that no value is present for IacId, not even an explicit nil
+func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInner) UnsetIacId() {
+	o.IacId.Unset()
 }
 
 // GetZone returns the Zone field value if set, zero value otherwise.
@@ -308,68 +330,90 @@ func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInner) Se
 	o.Status = &v
 }
 
-// GetPriority returns the Priority field value if set, zero value otherwise.
+// GetPriority returns the Priority field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInner) GetPriority() string {
-	if o == nil || IsNil(o.Priority) {
+	if o == nil || IsNil(o.Priority.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Priority
+	return *o.Priority.Get()
 }
 
 // GetPriorityOk returns a tuple with the Priority field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInner) GetPriorityOk() (*string, bool) {
-	if o == nil || IsNil(o.Priority) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Priority, true
+	return o.Priority.Get(), o.Priority.IsSet()
 }
 
 // IsSetPriority returns a boolean if a field has been set.
 func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInner) IsSetPriority() bool {
-	if o != nil && !IsNil(o.Priority) {
+	if o != nil && o.Priority.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetPriority gets a reference to the given string and assigns it to the Priority field.
+// SetPriority gets a reference to the given NullableString and assigns it to the Priority field.
 func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInner) SetPriority(v string) {
-	o.Priority = &v
+	o.Priority.Set(&v)
 }
 
-// GetGroupLayer returns the GroupLayer field value if set, zero value otherwise.
+// SetPriorityNil sets the value for Priority to be an explicit nil
+func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInner) SetPriorityNil() {
+	o.Priority.Set(nil)
+}
+
+// UnsetPriority ensures that no value is present for Priority, not even an explicit nil
+func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInner) UnsetPriority() {
+	o.Priority.Unset()
+}
+
+// GetGroupLayer returns the GroupLayer field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInner) GetGroupLayer() string {
-	if o == nil || IsNil(o.GroupLayer) {
+	if o == nil || IsNil(o.GroupLayer.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.GroupLayer
+	return *o.GroupLayer.Get()
 }
 
 // GetGroupLayerOk returns a tuple with the GroupLayer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInner) GetGroupLayerOk() (*string, bool) {
-	if o == nil || IsNil(o.GroupLayer) {
+	if o == nil {
 		return nil, false
 	}
-	return o.GroupLayer, true
+	return o.GroupLayer.Get(), o.GroupLayer.IsSet()
 }
 
 // IsSetGroupLayer returns a boolean if a field has been set.
 func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInner) IsSetGroupLayer() bool {
-	if o != nil && !IsNil(o.GroupLayer) {
+	if o != nil && o.GroupLayer.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetGroupLayer gets a reference to the given string and assigns it to the GroupLayer field.
+// SetGroupLayer gets a reference to the given NullableString and assigns it to the GroupLayer field.
 func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInner) SetGroupLayer(v string) {
-	o.GroupLayer = &v
+	o.GroupLayer.Set(&v)
+}
+
+// SetGroupLayerNil sets the value for GroupLayer to be an explicit nil
+func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInner) SetGroupLayerNil() {
+	o.GroupLayer.Set(nil)
+}
+
+// UnsetGroupLayer ensures that no value is present for GroupLayer, not even an explicit nil
+func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInner) UnsetGroupLayer() {
+	o.GroupLayer.Unset()
 }
 
 func (o ListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInner) MarshalJSON() ([]byte, error) {
@@ -388,14 +432,14 @@ func (o ListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInner) ToM
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !IsNil(o.Description) {
-		toSerialize["description"] = o.Description
+	if o.Description.IsSet() {
+		toSerialize["description"] = o.Description.Get()
 	}
 	if !IsNil(o.ExternalId) {
 		toSerialize["externalId"] = o.ExternalId
 	}
-	if !IsNil(o.IacId) {
-		toSerialize["iacId"] = o.IacId
+	if o.IacId.IsSet() {
+		toSerialize["iacId"] = o.IacId.Get()
 	}
 	if !IsNil(o.Zone) {
 		toSerialize["zone"] = o.Zone
@@ -406,11 +450,11 @@ func (o ListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInner) ToM
 	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status
 	}
-	if !IsNil(o.Priority) {
-		toSerialize["priority"] = o.Priority
+	if o.Priority.IsSet() {
+		toSerialize["priority"] = o.Priority.Get()
 	}
-	if !IsNil(o.GroupLayer) {
-		toSerialize["groupLayer"] = o.GroupLayer
+	if o.GroupLayer.IsSet() {
+		toSerialize["groupLayer"] = o.GroupLayer.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {

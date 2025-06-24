@@ -20,7 +20,7 @@ var _ MappedNullable = &ListNetworks200ResponseAllOfNetworksInnerConfig{}
 
 // ListNetworks200ResponseAllOfNetworksInnerConfig struct for ListNetworks200ResponseAllOfNetworksInnerConfig
 type ListNetworks200ResponseAllOfNetworksInnerConfig struct {
-	VlanIDs                 *string                `json:"vlanIDs,omitempty"`
+	VlanIDs                 NullableString         `json:"vlanIDs,omitempty"`
 	ConnectedGateway        *string                `json:"connectedGateway,omitempty"`
 	SubnetIpManagementType  *string                `json:"subnetIpManagementType,omitempty"`
 	SubnetIpServerId        *string                `json:"subnetIpServerId,omitempty"`
@@ -49,36 +49,47 @@ func NewListNetworks200ResponseAllOfNetworksInnerConfigWithDefaults() *ListNetwo
 	return &this
 }
 
-// GetVlanIDs returns the VlanIDs field value if set, zero value otherwise.
+// GetVlanIDs returns the VlanIDs field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListNetworks200ResponseAllOfNetworksInnerConfig) GetVlanIDs() string {
-	if o == nil || IsNil(o.VlanIDs) {
+	if o == nil || IsNil(o.VlanIDs.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.VlanIDs
+	return *o.VlanIDs.Get()
 }
 
 // GetVlanIDsOk returns a tuple with the VlanIDs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListNetworks200ResponseAllOfNetworksInnerConfig) GetVlanIDsOk() (*string, bool) {
-	if o == nil || IsNil(o.VlanIDs) {
+	if o == nil {
 		return nil, false
 	}
-	return o.VlanIDs, true
+	return o.VlanIDs.Get(), o.VlanIDs.IsSet()
 }
 
 // IsSetVlanIDs returns a boolean if a field has been set.
 func (o *ListNetworks200ResponseAllOfNetworksInnerConfig) IsSetVlanIDs() bool {
-	if o != nil && !IsNil(o.VlanIDs) {
+	if o != nil && o.VlanIDs.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetVlanIDs gets a reference to the given string and assigns it to the VlanIDs field.
+// SetVlanIDs gets a reference to the given NullableString and assigns it to the VlanIDs field.
 func (o *ListNetworks200ResponseAllOfNetworksInnerConfig) SetVlanIDs(v string) {
-	o.VlanIDs = &v
+	o.VlanIDs.Set(&v)
+}
+
+// SetVlanIDsNil sets the value for VlanIDs to be an explicit nil
+func (o *ListNetworks200ResponseAllOfNetworksInnerConfig) SetVlanIDsNil() {
+	o.VlanIDs.Set(nil)
+}
+
+// UnsetVlanIDs ensures that no value is present for VlanIDs, not even an explicit nil
+func (o *ListNetworks200ResponseAllOfNetworksInnerConfig) UnsetVlanIDs() {
+	o.VlanIDs.Unset()
 }
 
 // GetConnectedGateway returns the ConnectedGateway field value if set, zero value otherwise.
@@ -283,8 +294,8 @@ func (o ListNetworks200ResponseAllOfNetworksInnerConfig) MarshalJSON() ([]byte, 
 
 func (o ListNetworks200ResponseAllOfNetworksInnerConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.VlanIDs) {
-		toSerialize["vlanIDs"] = o.VlanIDs
+	if o.VlanIDs.IsSet() {
+		toSerialize["vlanIDs"] = o.VlanIDs.Get()
 	}
 	if !IsNil(o.ConnectedGateway) {
 		toSerialize["connectedGateway"] = o.ConnectedGateway

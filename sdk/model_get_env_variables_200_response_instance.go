@@ -45,9 +45,9 @@ func NewGetEnvVariables200ResponseInstanceWithDefaults() *GetEnvVariables200Resp
 	return &this
 }
 
-// GetEnvs returns the Envs field value if set, zero value otherwise.
+// GetEnvs returns the Envs field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetEnvVariables200ResponseInstance) GetEnvs() []GetEnvVariables200ResponseInstanceEnvsInner {
-	if o == nil || IsNil(o.Envs) {
+	if o == nil {
 		var ret []GetEnvVariables200ResponseInstanceEnvsInner
 		return ret
 	}
@@ -56,6 +56,7 @@ func (o *GetEnvVariables200ResponseInstance) GetEnvs() []GetEnvVariables200Respo
 
 // GetEnvsOk returns a tuple with the Envs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetEnvVariables200ResponseInstance) GetEnvsOk() ([]GetEnvVariables200ResponseInstanceEnvsInner, bool) {
 	if o == nil || IsNil(o.Envs) {
 		return nil, false
@@ -77,9 +78,9 @@ func (o *GetEnvVariables200ResponseInstance) SetEnvs(v []GetEnvVariables200Respo
 	o.Envs = v
 }
 
-// GetReadOnlyEnvs returns the ReadOnlyEnvs field value if set, zero value otherwise.
+// GetReadOnlyEnvs returns the ReadOnlyEnvs field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetEnvVariables200ResponseInstance) GetReadOnlyEnvs() []GetEnvVariables200ResponseInstanceEnvsInner {
-	if o == nil || IsNil(o.ReadOnlyEnvs) {
+	if o == nil {
 		var ret []GetEnvVariables200ResponseInstanceEnvsInner
 		return ret
 	}
@@ -88,6 +89,7 @@ func (o *GetEnvVariables200ResponseInstance) GetReadOnlyEnvs() []GetEnvVariables
 
 // GetReadOnlyEnvsOk returns a tuple with the ReadOnlyEnvs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetEnvVariables200ResponseInstance) GetReadOnlyEnvsOk() ([]GetEnvVariables200ResponseInstanceEnvsInner, bool) {
 	if o == nil || IsNil(o.ReadOnlyEnvs) {
 		return nil, false
@@ -109,9 +111,9 @@ func (o *GetEnvVariables200ResponseInstance) SetReadOnlyEnvs(v []GetEnvVariables
 	o.ReadOnlyEnvs = v
 }
 
-// GetImportedEnvs returns the ImportedEnvs field value if set, zero value otherwise.
+// GetImportedEnvs returns the ImportedEnvs field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetEnvVariables200ResponseInstance) GetImportedEnvs() []GetEnvVariables200ResponseInstanceEnvsInner {
-	if o == nil || IsNil(o.ImportedEnvs) {
+	if o == nil {
 		var ret []GetEnvVariables200ResponseInstanceEnvsInner
 		return ret
 	}
@@ -120,6 +122,7 @@ func (o *GetEnvVariables200ResponseInstance) GetImportedEnvs() []GetEnvVariables
 
 // GetImportedEnvsOk returns a tuple with the ImportedEnvs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetEnvVariables200ResponseInstance) GetImportedEnvsOk() ([]GetEnvVariables200ResponseInstanceEnvsInner, bool) {
 	if o == nil || IsNil(o.ImportedEnvs) {
 		return nil, false
@@ -151,13 +154,13 @@ func (o GetEnvVariables200ResponseInstance) MarshalJSON() ([]byte, error) {
 
 func (o GetEnvVariables200ResponseInstance) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Envs) {
+	if o.Envs != nil {
 		toSerialize["envs"] = o.Envs
 	}
-	if !IsNil(o.ReadOnlyEnvs) {
+	if o.ReadOnlyEnvs != nil {
 		toSerialize["readOnlyEnvs"] = o.ReadOnlyEnvs
 	}
-	if !IsNil(o.ImportedEnvs) {
+	if o.ImportedEnvs != nil {
 		toSerialize["importedEnvs"] = o.ImportedEnvs
 	}
 

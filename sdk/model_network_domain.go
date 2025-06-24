@@ -20,28 +20,28 @@ var _ MappedNullable = &NetworkDomain{}
 
 // NetworkDomain struct for NetworkDomain
 type NetworkDomain struct {
-	Id                   *int64                                                                  `json:"id,omitempty"`
-	Name                 *string                                                                 `json:"name,omitempty"`
-	Active               *bool                                                                   `json:"active,omitempty"`
-	Fqdn                 *string                                                                 `json:"fqdn,omitempty"`
-	Description          *string                                                                 `json:"description,omitempty"`
-	Visibility           *string                                                                 `json:"visibility,omitempty"`
-	DomainController     *bool                                                                   `json:"domainController,omitempty"`
-	PublicZone           *bool                                                                   `json:"publicZone,omitempty"`
-	DomainUsername       *string                                                                 `json:"domainUsername,omitempty"`
-	DomainPassword       *string                                                                 `json:"domainPassword,omitempty"`
-	RefType              *string                                                                 `json:"refType,omitempty"`
-	RefId                *int64                                                                  `json:"refId,omitempty"`
-	RefSource            *string                                                                 `json:"refSource,omitempty"`
-	InternalId           *string                                                                 `json:"internalId,omitempty"`
-	OuPath               *string                                                                 `json:"ouPath,omitempty"`
-	DcServer             *string                                                                 `json:"dcServer,omitempty"`
-	ZoneType             *string                                                                 `json:"zoneType,omitempty"`
-	Dnssec               *string                                                                 `json:"dnssec,omitempty"`
-	DomainSerial         *string                                                                 `json:"domainSerial,omitempty"`
-	Account              *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"account,omitempty"`
-	Owner                *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"owner,omitempty"`
-	AdditionalProperties map[string]interface{}                                                  `json:",remain"`
+	Id                   *int64                                             `json:"id,omitempty"`
+	Name                 *string                                            `json:"name,omitempty"`
+	Active               *bool                                              `json:"active,omitempty"`
+	Fqdn                 NullableString                                     `json:"fqdn,omitempty"`
+	Description          NullableString                                     `json:"description,omitempty"`
+	Visibility           *string                                            `json:"visibility,omitempty"`
+	DomainController     *bool                                              `json:"domainController,omitempty"`
+	PublicZone           *bool                                              `json:"publicZone,omitempty"`
+	DomainUsername       NullableString                                     `json:"domainUsername,omitempty"`
+	DomainPassword       NullableString                                     `json:"domainPassword,omitempty"`
+	RefType              NullableString                                     `json:"refType,omitempty"`
+	RefId                NullableInt64                                      `json:"refId,omitempty"`
+	RefSource            NullableString                                     `json:"refSource,omitempty"`
+	InternalId           NullableString                                     `json:"internalId,omitempty"`
+	OuPath               NullableString                                     `json:"ouPath,omitempty"`
+	DcServer             NullableString                                     `json:"dcServer,omitempty"`
+	ZoneType             NullableString                                     `json:"zoneType,omitempty"`
+	Dnssec               NullableString                                     `json:"dnssec,omitempty"`
+	DomainSerial         NullableString                                     `json:"domainSerial,omitempty"`
+	Account              *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"account,omitempty"`
+	Owner                *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"owner,omitempty"`
+	AdditionalProperties map[string]interface{}                             `json:",remain"`
 }
 
 type _NetworkDomain NetworkDomain
@@ -159,68 +159,90 @@ func (o *NetworkDomain) SetActive(v bool) {
 	o.Active = &v
 }
 
-// GetFqdn returns the Fqdn field value if set, zero value otherwise.
+// GetFqdn returns the Fqdn field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NetworkDomain) GetFqdn() string {
-	if o == nil || IsNil(o.Fqdn) {
+	if o == nil || IsNil(o.Fqdn.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Fqdn
+	return *o.Fqdn.Get()
 }
 
 // GetFqdnOk returns a tuple with the Fqdn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NetworkDomain) GetFqdnOk() (*string, bool) {
-	if o == nil || IsNil(o.Fqdn) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Fqdn, true
+	return o.Fqdn.Get(), o.Fqdn.IsSet()
 }
 
 // IsSetFqdn returns a boolean if a field has been set.
 func (o *NetworkDomain) IsSetFqdn() bool {
-	if o != nil && !IsNil(o.Fqdn) {
+	if o != nil && o.Fqdn.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetFqdn gets a reference to the given string and assigns it to the Fqdn field.
+// SetFqdn gets a reference to the given NullableString and assigns it to the Fqdn field.
 func (o *NetworkDomain) SetFqdn(v string) {
-	o.Fqdn = &v
+	o.Fqdn.Set(&v)
 }
 
-// GetDescription returns the Description field value if set, zero value otherwise.
+// SetFqdnNil sets the value for Fqdn to be an explicit nil
+func (o *NetworkDomain) SetFqdnNil() {
+	o.Fqdn.Set(nil)
+}
+
+// UnsetFqdn ensures that no value is present for Fqdn, not even an explicit nil
+func (o *NetworkDomain) UnsetFqdn() {
+	o.Fqdn.Unset()
+}
+
+// GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NetworkDomain) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
+	if o == nil || IsNil(o.Description.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Description
+	return *o.Description.Get()
 }
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NetworkDomain) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Description, true
+	return o.Description.Get(), o.Description.IsSet()
 }
 
 // IsSetDescription returns a boolean if a field has been set.
 func (o *NetworkDomain) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
+	if o != nil && o.Description.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDescription gets a reference to the given string and assigns it to the Description field.
+// SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *NetworkDomain) SetDescription(v string) {
-	o.Description = &v
+	o.Description.Set(&v)
+}
+
+// SetDescriptionNil sets the value for Description to be an explicit nil
+func (o *NetworkDomain) SetDescriptionNil() {
+	o.Description.Set(nil)
+}
+
+// UnsetDescription ensures that no value is present for Description, not even an explicit nil
+func (o *NetworkDomain) UnsetDescription() {
+	o.Description.Unset()
 }
 
 // GetVisibility returns the Visibility field value if set, zero value otherwise.
@@ -319,362 +341,483 @@ func (o *NetworkDomain) SetPublicZone(v bool) {
 	o.PublicZone = &v
 }
 
-// GetDomainUsername returns the DomainUsername field value if set, zero value otherwise.
+// GetDomainUsername returns the DomainUsername field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NetworkDomain) GetDomainUsername() string {
-	if o == nil || IsNil(o.DomainUsername) {
+	if o == nil || IsNil(o.DomainUsername.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.DomainUsername
+	return *o.DomainUsername.Get()
 }
 
 // GetDomainUsernameOk returns a tuple with the DomainUsername field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NetworkDomain) GetDomainUsernameOk() (*string, bool) {
-	if o == nil || IsNil(o.DomainUsername) {
+	if o == nil {
 		return nil, false
 	}
-	return o.DomainUsername, true
+	return o.DomainUsername.Get(), o.DomainUsername.IsSet()
 }
 
 // IsSetDomainUsername returns a boolean if a field has been set.
 func (o *NetworkDomain) IsSetDomainUsername() bool {
-	if o != nil && !IsNil(o.DomainUsername) {
+	if o != nil && o.DomainUsername.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDomainUsername gets a reference to the given string and assigns it to the DomainUsername field.
+// SetDomainUsername gets a reference to the given NullableString and assigns it to the DomainUsername field.
 func (o *NetworkDomain) SetDomainUsername(v string) {
-	o.DomainUsername = &v
+	o.DomainUsername.Set(&v)
 }
 
-// GetDomainPassword returns the DomainPassword field value if set, zero value otherwise.
+// SetDomainUsernameNil sets the value for DomainUsername to be an explicit nil
+func (o *NetworkDomain) SetDomainUsernameNil() {
+	o.DomainUsername.Set(nil)
+}
+
+// UnsetDomainUsername ensures that no value is present for DomainUsername, not even an explicit nil
+func (o *NetworkDomain) UnsetDomainUsername() {
+	o.DomainUsername.Unset()
+}
+
+// GetDomainPassword returns the DomainPassword field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NetworkDomain) GetDomainPassword() string {
-	if o == nil || IsNil(o.DomainPassword) {
+	if o == nil || IsNil(o.DomainPassword.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.DomainPassword
+	return *o.DomainPassword.Get()
 }
 
 // GetDomainPasswordOk returns a tuple with the DomainPassword field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NetworkDomain) GetDomainPasswordOk() (*string, bool) {
-	if o == nil || IsNil(o.DomainPassword) {
+	if o == nil {
 		return nil, false
 	}
-	return o.DomainPassword, true
+	return o.DomainPassword.Get(), o.DomainPassword.IsSet()
 }
 
 // IsSetDomainPassword returns a boolean if a field has been set.
 func (o *NetworkDomain) IsSetDomainPassword() bool {
-	if o != nil && !IsNil(o.DomainPassword) {
+	if o != nil && o.DomainPassword.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDomainPassword gets a reference to the given string and assigns it to the DomainPassword field.
+// SetDomainPassword gets a reference to the given NullableString and assigns it to the DomainPassword field.
 func (o *NetworkDomain) SetDomainPassword(v string) {
-	o.DomainPassword = &v
+	o.DomainPassword.Set(&v)
 }
 
-// GetRefType returns the RefType field value if set, zero value otherwise.
+// SetDomainPasswordNil sets the value for DomainPassword to be an explicit nil
+func (o *NetworkDomain) SetDomainPasswordNil() {
+	o.DomainPassword.Set(nil)
+}
+
+// UnsetDomainPassword ensures that no value is present for DomainPassword, not even an explicit nil
+func (o *NetworkDomain) UnsetDomainPassword() {
+	o.DomainPassword.Unset()
+}
+
+// GetRefType returns the RefType field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NetworkDomain) GetRefType() string {
-	if o == nil || IsNil(o.RefType) {
+	if o == nil || IsNil(o.RefType.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.RefType
+	return *o.RefType.Get()
 }
 
 // GetRefTypeOk returns a tuple with the RefType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NetworkDomain) GetRefTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.RefType) {
+	if o == nil {
 		return nil, false
 	}
-	return o.RefType, true
+	return o.RefType.Get(), o.RefType.IsSet()
 }
 
 // IsSetRefType returns a boolean if a field has been set.
 func (o *NetworkDomain) IsSetRefType() bool {
-	if o != nil && !IsNil(o.RefType) {
+	if o != nil && o.RefType.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetRefType gets a reference to the given string and assigns it to the RefType field.
+// SetRefType gets a reference to the given NullableString and assigns it to the RefType field.
 func (o *NetworkDomain) SetRefType(v string) {
-	o.RefType = &v
+	o.RefType.Set(&v)
 }
 
-// GetRefId returns the RefId field value if set, zero value otherwise.
+// SetRefTypeNil sets the value for RefType to be an explicit nil
+func (o *NetworkDomain) SetRefTypeNil() {
+	o.RefType.Set(nil)
+}
+
+// UnsetRefType ensures that no value is present for RefType, not even an explicit nil
+func (o *NetworkDomain) UnsetRefType() {
+	o.RefType.Unset()
+}
+
+// GetRefId returns the RefId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NetworkDomain) GetRefId() int64 {
-	if o == nil || IsNil(o.RefId) {
+	if o == nil || IsNil(o.RefId.Get()) {
 		var ret int64
 		return ret
 	}
-	return *o.RefId
+	return *o.RefId.Get()
 }
 
 // GetRefIdOk returns a tuple with the RefId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NetworkDomain) GetRefIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.RefId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.RefId, true
+	return o.RefId.Get(), o.RefId.IsSet()
 }
 
 // IsSetRefId returns a boolean if a field has been set.
 func (o *NetworkDomain) IsSetRefId() bool {
-	if o != nil && !IsNil(o.RefId) {
+	if o != nil && o.RefId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetRefId gets a reference to the given int64 and assigns it to the RefId field.
+// SetRefId gets a reference to the given NullableInt64 and assigns it to the RefId field.
 func (o *NetworkDomain) SetRefId(v int64) {
-	o.RefId = &v
+	o.RefId.Set(&v)
 }
 
-// GetRefSource returns the RefSource field value if set, zero value otherwise.
+// SetRefIdNil sets the value for RefId to be an explicit nil
+func (o *NetworkDomain) SetRefIdNil() {
+	o.RefId.Set(nil)
+}
+
+// UnsetRefId ensures that no value is present for RefId, not even an explicit nil
+func (o *NetworkDomain) UnsetRefId() {
+	o.RefId.Unset()
+}
+
+// GetRefSource returns the RefSource field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NetworkDomain) GetRefSource() string {
-	if o == nil || IsNil(o.RefSource) {
+	if o == nil || IsNil(o.RefSource.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.RefSource
+	return *o.RefSource.Get()
 }
 
 // GetRefSourceOk returns a tuple with the RefSource field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NetworkDomain) GetRefSourceOk() (*string, bool) {
-	if o == nil || IsNil(o.RefSource) {
+	if o == nil {
 		return nil, false
 	}
-	return o.RefSource, true
+	return o.RefSource.Get(), o.RefSource.IsSet()
 }
 
 // IsSetRefSource returns a boolean if a field has been set.
 func (o *NetworkDomain) IsSetRefSource() bool {
-	if o != nil && !IsNil(o.RefSource) {
+	if o != nil && o.RefSource.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetRefSource gets a reference to the given string and assigns it to the RefSource field.
+// SetRefSource gets a reference to the given NullableString and assigns it to the RefSource field.
 func (o *NetworkDomain) SetRefSource(v string) {
-	o.RefSource = &v
+	o.RefSource.Set(&v)
 }
 
-// GetInternalId returns the InternalId field value if set, zero value otherwise.
+// SetRefSourceNil sets the value for RefSource to be an explicit nil
+func (o *NetworkDomain) SetRefSourceNil() {
+	o.RefSource.Set(nil)
+}
+
+// UnsetRefSource ensures that no value is present for RefSource, not even an explicit nil
+func (o *NetworkDomain) UnsetRefSource() {
+	o.RefSource.Unset()
+}
+
+// GetInternalId returns the InternalId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NetworkDomain) GetInternalId() string {
-	if o == nil || IsNil(o.InternalId) {
+	if o == nil || IsNil(o.InternalId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.InternalId
+	return *o.InternalId.Get()
 }
 
 // GetInternalIdOk returns a tuple with the InternalId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NetworkDomain) GetInternalIdOk() (*string, bool) {
-	if o == nil || IsNil(o.InternalId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.InternalId, true
+	return o.InternalId.Get(), o.InternalId.IsSet()
 }
 
 // IsSetInternalId returns a boolean if a field has been set.
 func (o *NetworkDomain) IsSetInternalId() bool {
-	if o != nil && !IsNil(o.InternalId) {
+	if o != nil && o.InternalId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetInternalId gets a reference to the given string and assigns it to the InternalId field.
+// SetInternalId gets a reference to the given NullableString and assigns it to the InternalId field.
 func (o *NetworkDomain) SetInternalId(v string) {
-	o.InternalId = &v
+	o.InternalId.Set(&v)
 }
 
-// GetOuPath returns the OuPath field value if set, zero value otherwise.
+// SetInternalIdNil sets the value for InternalId to be an explicit nil
+func (o *NetworkDomain) SetInternalIdNil() {
+	o.InternalId.Set(nil)
+}
+
+// UnsetInternalId ensures that no value is present for InternalId, not even an explicit nil
+func (o *NetworkDomain) UnsetInternalId() {
+	o.InternalId.Unset()
+}
+
+// GetOuPath returns the OuPath field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NetworkDomain) GetOuPath() string {
-	if o == nil || IsNil(o.OuPath) {
+	if o == nil || IsNil(o.OuPath.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.OuPath
+	return *o.OuPath.Get()
 }
 
 // GetOuPathOk returns a tuple with the OuPath field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NetworkDomain) GetOuPathOk() (*string, bool) {
-	if o == nil || IsNil(o.OuPath) {
+	if o == nil {
 		return nil, false
 	}
-	return o.OuPath, true
+	return o.OuPath.Get(), o.OuPath.IsSet()
 }
 
 // IsSetOuPath returns a boolean if a field has been set.
 func (o *NetworkDomain) IsSetOuPath() bool {
-	if o != nil && !IsNil(o.OuPath) {
+	if o != nil && o.OuPath.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetOuPath gets a reference to the given string and assigns it to the OuPath field.
+// SetOuPath gets a reference to the given NullableString and assigns it to the OuPath field.
 func (o *NetworkDomain) SetOuPath(v string) {
-	o.OuPath = &v
+	o.OuPath.Set(&v)
 }
 
-// GetDcServer returns the DcServer field value if set, zero value otherwise.
+// SetOuPathNil sets the value for OuPath to be an explicit nil
+func (o *NetworkDomain) SetOuPathNil() {
+	o.OuPath.Set(nil)
+}
+
+// UnsetOuPath ensures that no value is present for OuPath, not even an explicit nil
+func (o *NetworkDomain) UnsetOuPath() {
+	o.OuPath.Unset()
+}
+
+// GetDcServer returns the DcServer field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NetworkDomain) GetDcServer() string {
-	if o == nil || IsNil(o.DcServer) {
+	if o == nil || IsNil(o.DcServer.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.DcServer
+	return *o.DcServer.Get()
 }
 
 // GetDcServerOk returns a tuple with the DcServer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NetworkDomain) GetDcServerOk() (*string, bool) {
-	if o == nil || IsNil(o.DcServer) {
+	if o == nil {
 		return nil, false
 	}
-	return o.DcServer, true
+	return o.DcServer.Get(), o.DcServer.IsSet()
 }
 
 // IsSetDcServer returns a boolean if a field has been set.
 func (o *NetworkDomain) IsSetDcServer() bool {
-	if o != nil && !IsNil(o.DcServer) {
+	if o != nil && o.DcServer.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDcServer gets a reference to the given string and assigns it to the DcServer field.
+// SetDcServer gets a reference to the given NullableString and assigns it to the DcServer field.
 func (o *NetworkDomain) SetDcServer(v string) {
-	o.DcServer = &v
+	o.DcServer.Set(&v)
 }
 
-// GetZoneType returns the ZoneType field value if set, zero value otherwise.
+// SetDcServerNil sets the value for DcServer to be an explicit nil
+func (o *NetworkDomain) SetDcServerNil() {
+	o.DcServer.Set(nil)
+}
+
+// UnsetDcServer ensures that no value is present for DcServer, not even an explicit nil
+func (o *NetworkDomain) UnsetDcServer() {
+	o.DcServer.Unset()
+}
+
+// GetZoneType returns the ZoneType field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NetworkDomain) GetZoneType() string {
-	if o == nil || IsNil(o.ZoneType) {
+	if o == nil || IsNil(o.ZoneType.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ZoneType
+	return *o.ZoneType.Get()
 }
 
 // GetZoneTypeOk returns a tuple with the ZoneType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NetworkDomain) GetZoneTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.ZoneType) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ZoneType, true
+	return o.ZoneType.Get(), o.ZoneType.IsSet()
 }
 
 // IsSetZoneType returns a boolean if a field has been set.
 func (o *NetworkDomain) IsSetZoneType() bool {
-	if o != nil && !IsNil(o.ZoneType) {
+	if o != nil && o.ZoneType.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetZoneType gets a reference to the given string and assigns it to the ZoneType field.
+// SetZoneType gets a reference to the given NullableString and assigns it to the ZoneType field.
 func (o *NetworkDomain) SetZoneType(v string) {
-	o.ZoneType = &v
+	o.ZoneType.Set(&v)
 }
 
-// GetDnssec returns the Dnssec field value if set, zero value otherwise.
+// SetZoneTypeNil sets the value for ZoneType to be an explicit nil
+func (o *NetworkDomain) SetZoneTypeNil() {
+	o.ZoneType.Set(nil)
+}
+
+// UnsetZoneType ensures that no value is present for ZoneType, not even an explicit nil
+func (o *NetworkDomain) UnsetZoneType() {
+	o.ZoneType.Unset()
+}
+
+// GetDnssec returns the Dnssec field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NetworkDomain) GetDnssec() string {
-	if o == nil || IsNil(o.Dnssec) {
+	if o == nil || IsNil(o.Dnssec.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Dnssec
+	return *o.Dnssec.Get()
 }
 
 // GetDnssecOk returns a tuple with the Dnssec field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NetworkDomain) GetDnssecOk() (*string, bool) {
-	if o == nil || IsNil(o.Dnssec) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Dnssec, true
+	return o.Dnssec.Get(), o.Dnssec.IsSet()
 }
 
 // IsSetDnssec returns a boolean if a field has been set.
 func (o *NetworkDomain) IsSetDnssec() bool {
-	if o != nil && !IsNil(o.Dnssec) {
+	if o != nil && o.Dnssec.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDnssec gets a reference to the given string and assigns it to the Dnssec field.
+// SetDnssec gets a reference to the given NullableString and assigns it to the Dnssec field.
 func (o *NetworkDomain) SetDnssec(v string) {
-	o.Dnssec = &v
+	o.Dnssec.Set(&v)
 }
 
-// GetDomainSerial returns the DomainSerial field value if set, zero value otherwise.
+// SetDnssecNil sets the value for Dnssec to be an explicit nil
+func (o *NetworkDomain) SetDnssecNil() {
+	o.Dnssec.Set(nil)
+}
+
+// UnsetDnssec ensures that no value is present for Dnssec, not even an explicit nil
+func (o *NetworkDomain) UnsetDnssec() {
+	o.Dnssec.Unset()
+}
+
+// GetDomainSerial returns the DomainSerial field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NetworkDomain) GetDomainSerial() string {
-	if o == nil || IsNil(o.DomainSerial) {
+	if o == nil || IsNil(o.DomainSerial.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.DomainSerial
+	return *o.DomainSerial.Get()
 }
 
 // GetDomainSerialOk returns a tuple with the DomainSerial field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NetworkDomain) GetDomainSerialOk() (*string, bool) {
-	if o == nil || IsNil(o.DomainSerial) {
+	if o == nil {
 		return nil, false
 	}
-	return o.DomainSerial, true
+	return o.DomainSerial.Get(), o.DomainSerial.IsSet()
 }
 
 // IsSetDomainSerial returns a boolean if a field has been set.
 func (o *NetworkDomain) IsSetDomainSerial() bool {
-	if o != nil && !IsNil(o.DomainSerial) {
+	if o != nil && o.DomainSerial.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDomainSerial gets a reference to the given string and assigns it to the DomainSerial field.
+// SetDomainSerial gets a reference to the given NullableString and assigns it to the DomainSerial field.
 func (o *NetworkDomain) SetDomainSerial(v string) {
-	o.DomainSerial = &v
+	o.DomainSerial.Set(&v)
+}
+
+// SetDomainSerialNil sets the value for DomainSerial to be an explicit nil
+func (o *NetworkDomain) SetDomainSerialNil() {
+	o.DomainSerial.Set(nil)
+}
+
+// UnsetDomainSerial ensures that no value is present for DomainSerial, not even an explicit nil
+func (o *NetworkDomain) UnsetDomainSerial() {
+	o.DomainSerial.Unset()
 }
 
 // GetAccount returns the Account field value if set, zero value otherwise.
-func (o *NetworkDomain) GetAccount() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *NetworkDomain) GetAccount() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.Account) {
-		var ret ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return *o.Account
@@ -682,7 +825,7 @@ func (o *NetworkDomain) GetAccount() ListApplianceSettings200ResponseApplianceSe
 
 // GetAccountOk returns a tuple with the Account field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *NetworkDomain) GetAccountOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *NetworkDomain) GetAccountOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.Account) {
 		return nil, false
 	}
@@ -698,15 +841,15 @@ func (o *NetworkDomain) IsSetAccount() bool {
 	return false
 }
 
-// SetAccount gets a reference to the given ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the Account field.
-func (o *NetworkDomain) SetAccount(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetAccount gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Account field.
+func (o *NetworkDomain) SetAccount(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.Account = &v
 }
 
 // GetOwner returns the Owner field value if set, zero value otherwise.
-func (o *NetworkDomain) GetOwner() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *NetworkDomain) GetOwner() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.Owner) {
-		var ret ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return *o.Owner
@@ -714,7 +857,7 @@ func (o *NetworkDomain) GetOwner() ListApplianceSettings200ResponseApplianceSett
 
 // GetOwnerOk returns a tuple with the Owner field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *NetworkDomain) GetOwnerOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *NetworkDomain) GetOwnerOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.Owner) {
 		return nil, false
 	}
@@ -730,8 +873,8 @@ func (o *NetworkDomain) IsSetOwner() bool {
 	return false
 }
 
-// SetOwner gets a reference to the given ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the Owner field.
-func (o *NetworkDomain) SetOwner(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetOwner gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Owner field.
+func (o *NetworkDomain) SetOwner(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.Owner = &v
 }
 
@@ -754,11 +897,11 @@ func (o NetworkDomain) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Active) {
 		toSerialize["active"] = o.Active
 	}
-	if !IsNil(o.Fqdn) {
-		toSerialize["fqdn"] = o.Fqdn
+	if o.Fqdn.IsSet() {
+		toSerialize["fqdn"] = o.Fqdn.Get()
 	}
-	if !IsNil(o.Description) {
-		toSerialize["description"] = o.Description
+	if o.Description.IsSet() {
+		toSerialize["description"] = o.Description.Get()
 	}
 	if !IsNil(o.Visibility) {
 		toSerialize["visibility"] = o.Visibility
@@ -769,38 +912,38 @@ func (o NetworkDomain) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.PublicZone) {
 		toSerialize["publicZone"] = o.PublicZone
 	}
-	if !IsNil(o.DomainUsername) {
-		toSerialize["domainUsername"] = o.DomainUsername
+	if o.DomainUsername.IsSet() {
+		toSerialize["domainUsername"] = o.DomainUsername.Get()
 	}
-	if !IsNil(o.DomainPassword) {
-		toSerialize["domainPassword"] = o.DomainPassword
+	if o.DomainPassword.IsSet() {
+		toSerialize["domainPassword"] = o.DomainPassword.Get()
 	}
-	if !IsNil(o.RefType) {
-		toSerialize["refType"] = o.RefType
+	if o.RefType.IsSet() {
+		toSerialize["refType"] = o.RefType.Get()
 	}
-	if !IsNil(o.RefId) {
-		toSerialize["refId"] = o.RefId
+	if o.RefId.IsSet() {
+		toSerialize["refId"] = o.RefId.Get()
 	}
-	if !IsNil(o.RefSource) {
-		toSerialize["refSource"] = o.RefSource
+	if o.RefSource.IsSet() {
+		toSerialize["refSource"] = o.RefSource.Get()
 	}
-	if !IsNil(o.InternalId) {
-		toSerialize["internalId"] = o.InternalId
+	if o.InternalId.IsSet() {
+		toSerialize["internalId"] = o.InternalId.Get()
 	}
-	if !IsNil(o.OuPath) {
-		toSerialize["ouPath"] = o.OuPath
+	if o.OuPath.IsSet() {
+		toSerialize["ouPath"] = o.OuPath.Get()
 	}
-	if !IsNil(o.DcServer) {
-		toSerialize["dcServer"] = o.DcServer
+	if o.DcServer.IsSet() {
+		toSerialize["dcServer"] = o.DcServer.Get()
 	}
-	if !IsNil(o.ZoneType) {
-		toSerialize["zoneType"] = o.ZoneType
+	if o.ZoneType.IsSet() {
+		toSerialize["zoneType"] = o.ZoneType.Get()
 	}
-	if !IsNil(o.Dnssec) {
-		toSerialize["dnssec"] = o.Dnssec
+	if o.Dnssec.IsSet() {
+		toSerialize["dnssec"] = o.Dnssec.Get()
 	}
-	if !IsNil(o.DomainSerial) {
-		toSerialize["domainSerial"] = o.DomainSerial
+	if o.DomainSerial.IsSet() {
+		toSerialize["domainSerial"] = o.DomainSerial.Get()
 	}
 	if !IsNil(o.Account) {
 		toSerialize["account"] = o.Account

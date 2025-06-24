@@ -5,17 +5,17 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
-**StartAddress** | Pointer to **string** |  | [optional] 
-**EndAddress** | Pointer to **string** |  | [optional] 
-**InternalId** | Pointer to **string** |  | [optional] 
-**ExternalId** | Pointer to **string** |  | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
+**StartAddress** | Pointer to **NullableString** |  | [optional] 
+**EndAddress** | Pointer to **NullableString** |  | [optional] 
+**InternalId** | Pointer to **NullableString** |  | [optional] 
+**ExternalId** | Pointer to **NullableString** |  | [optional] 
+**Description** | Pointer to **NullableString** |  | [optional] 
 **AddressCount** | Pointer to **int64** |  | [optional] 
 **Active** | Pointer to **bool** |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
-**Cidr** | Pointer to **string** |  | [optional] 
-**CidrIPv6** | Pointer to **string** |  | [optional] 
+**Cidr** | Pointer to **NullableString** |  | [optional] 
+**CidrIPv6** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -86,6 +86,16 @@ SetStartAddress sets StartAddress field to given value.
 
 HasStartAddress returns a boolean if a field has been set.
 
+### SetStartAddressNil
+
+`func (o *CreateNetworkPool200ResponseNetworkPoolIpRangesInner) SetStartAddressNil(b bool)`
+
+ SetStartAddressNil sets the value for StartAddress to be an explicit nil
+
+### UnsetStartAddress
+`func (o *CreateNetworkPool200ResponseNetworkPoolIpRangesInner) UnsetStartAddress()`
+
+UnsetStartAddress ensures that no value is present for StartAddress, not even an explicit nil
 ### GetEndAddress
 
 `func (o *CreateNetworkPool200ResponseNetworkPoolIpRangesInner) GetEndAddress() string`
@@ -111,6 +121,16 @@ SetEndAddress sets EndAddress field to given value.
 
 HasEndAddress returns a boolean if a field has been set.
 
+### SetEndAddressNil
+
+`func (o *CreateNetworkPool200ResponseNetworkPoolIpRangesInner) SetEndAddressNil(b bool)`
+
+ SetEndAddressNil sets the value for EndAddress to be an explicit nil
+
+### UnsetEndAddress
+`func (o *CreateNetworkPool200ResponseNetworkPoolIpRangesInner) UnsetEndAddress()`
+
+UnsetEndAddress ensures that no value is present for EndAddress, not even an explicit nil
 ### GetInternalId
 
 `func (o *CreateNetworkPool200ResponseNetworkPoolIpRangesInner) GetInternalId() string`
@@ -136,6 +156,16 @@ SetInternalId sets InternalId field to given value.
 
 HasInternalId returns a boolean if a field has been set.
 
+### SetInternalIdNil
+
+`func (o *CreateNetworkPool200ResponseNetworkPoolIpRangesInner) SetInternalIdNil(b bool)`
+
+ SetInternalIdNil sets the value for InternalId to be an explicit nil
+
+### UnsetInternalId
+`func (o *CreateNetworkPool200ResponseNetworkPoolIpRangesInner) UnsetInternalId()`
+
+UnsetInternalId ensures that no value is present for InternalId, not even an explicit nil
 ### GetExternalId
 
 `func (o *CreateNetworkPool200ResponseNetworkPoolIpRangesInner) GetExternalId() string`
@@ -161,6 +191,16 @@ SetExternalId sets ExternalId field to given value.
 
 HasExternalId returns a boolean if a field has been set.
 
+### SetExternalIdNil
+
+`func (o *CreateNetworkPool200ResponseNetworkPoolIpRangesInner) SetExternalIdNil(b bool)`
+
+ SetExternalIdNil sets the value for ExternalId to be an explicit nil
+
+### UnsetExternalId
+`func (o *CreateNetworkPool200ResponseNetworkPoolIpRangesInner) UnsetExternalId()`
+
+UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
 ### GetDescription
 
 `func (o *CreateNetworkPool200ResponseNetworkPoolIpRangesInner) GetDescription() string`
@@ -186,6 +226,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *CreateNetworkPool200ResponseNetworkPoolIpRangesInner) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *CreateNetworkPool200ResponseNetworkPoolIpRangesInner) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetAddressCount
 
 `func (o *CreateNetworkPool200ResponseNetworkPoolIpRangesInner) GetAddressCount() int64`
@@ -311,6 +361,16 @@ SetCidr sets Cidr field to given value.
 
 HasCidr returns a boolean if a field has been set.
 
+### SetCidrNil
+
+`func (o *CreateNetworkPool200ResponseNetworkPoolIpRangesInner) SetCidrNil(b bool)`
+
+ SetCidrNil sets the value for Cidr to be an explicit nil
+
+### UnsetCidr
+`func (o *CreateNetworkPool200ResponseNetworkPoolIpRangesInner) UnsetCidr()`
+
+UnsetCidr ensures that no value is present for Cidr, not even an explicit nil
 ### GetCidrIPv6
 
 `func (o *CreateNetworkPool200ResponseNetworkPoolIpRangesInner) GetCidrIPv6() string`
@@ -336,6 +396,16 @@ SetCidrIPv6 sets CidrIPv6 field to given value.
 
 HasCidrIPv6 returns a boolean if a field has been set.
 
+### SetCidrIPv6Nil
+
+`func (o *CreateNetworkPool200ResponseNetworkPoolIpRangesInner) SetCidrIPv6Nil(b bool)`
+
+ SetCidrIPv6Nil sets the value for CidrIPv6 to be an explicit nil
+
+### UnsetCidrIPv6
+`func (o *CreateNetworkPool200ResponseNetworkPoolIpRangesInner) UnsetCidrIPv6()`
+
+UnsetCidrIPv6 ensures that no value is present for CidrIPv6, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

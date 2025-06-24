@@ -25,7 +25,7 @@ type AddInstanceRequestPortsInner struct {
 	// A name for the port.
 	Name *string `json:"name,omitempty"`
 	// The load balancer protocol. HTTP, HTTPS, or TCP.
-	Lb                   *string                `json:"lb,omitempty"`
+	Lb                   NullableString         `json:"lb,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -105,36 +105,47 @@ func (o *AddInstanceRequestPortsInner) SetName(v string) {
 	o.Name = &v
 }
 
-// GetLb returns the Lb field value if set, zero value otherwise.
+// GetLb returns the Lb field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AddInstanceRequestPortsInner) GetLb() string {
-	if o == nil || IsNil(o.Lb) {
+	if o == nil || IsNil(o.Lb.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Lb
+	return *o.Lb.Get()
 }
 
 // GetLbOk returns a tuple with the Lb field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AddInstanceRequestPortsInner) GetLbOk() (*string, bool) {
-	if o == nil || IsNil(o.Lb) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Lb, true
+	return o.Lb.Get(), o.Lb.IsSet()
 }
 
 // IsSetLb returns a boolean if a field has been set.
 func (o *AddInstanceRequestPortsInner) IsSetLb() bool {
-	if o != nil && !IsNil(o.Lb) {
+	if o != nil && o.Lb.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetLb gets a reference to the given string and assigns it to the Lb field.
+// SetLb gets a reference to the given NullableString and assigns it to the Lb field.
 func (o *AddInstanceRequestPortsInner) SetLb(v string) {
-	o.Lb = &v
+	o.Lb.Set(&v)
+}
+
+// SetLbNil sets the value for Lb to be an explicit nil
+func (o *AddInstanceRequestPortsInner) SetLbNil() {
+	o.Lb.Set(nil)
+}
+
+// UnsetLb ensures that no value is present for Lb, not even an explicit nil
+func (o *AddInstanceRequestPortsInner) UnsetLb() {
+	o.Lb.Unset()
 }
 
 func (o AddInstanceRequestPortsInner) MarshalJSON() ([]byte, error) {
@@ -151,8 +162,8 @@ func (o AddInstanceRequestPortsInner) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !IsNil(o.Lb) {
-		toSerialize["lb"] = o.Lb
+	if o.Lb.IsSet() {
+		toSerialize["lb"] = o.Lb.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {

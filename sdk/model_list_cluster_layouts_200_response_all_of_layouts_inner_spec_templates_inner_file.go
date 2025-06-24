@@ -22,9 +22,9 @@ var _ MappedNullable = &ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTempla
 type ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile struct {
 	Id                   *int64                 `json:"id,omitempty"`
 	SourceType           *string                `json:"sourceType,omitempty"`
-	ContentRef           *string                `json:"contentRef,omitempty"`
-	ContentPath          *string                `json:"contentPath,omitempty"`
-	Repository           *string                `json:"repository,omitempty"`
+	ContentRef           NullableString         `json:"contentRef,omitempty"`
+	ContentPath          NullableString         `json:"contentPath,omitempty"`
+	Repository           NullableString         `json:"repository,omitempty"`
 	Content              *string                `json:"content,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
@@ -112,100 +112,133 @@ func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile) S
 	o.SourceType = &v
 }
 
-// GetContentRef returns the ContentRef field value if set, zero value otherwise.
+// GetContentRef returns the ContentRef field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile) GetContentRef() string {
-	if o == nil || IsNil(o.ContentRef) {
+	if o == nil || IsNil(o.ContentRef.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ContentRef
+	return *o.ContentRef.Get()
 }
 
 // GetContentRefOk returns a tuple with the ContentRef field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile) GetContentRefOk() (*string, bool) {
-	if o == nil || IsNil(o.ContentRef) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ContentRef, true
+	return o.ContentRef.Get(), o.ContentRef.IsSet()
 }
 
 // IsSetContentRef returns a boolean if a field has been set.
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile) IsSetContentRef() bool {
-	if o != nil && !IsNil(o.ContentRef) {
+	if o != nil && o.ContentRef.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetContentRef gets a reference to the given string and assigns it to the ContentRef field.
+// SetContentRef gets a reference to the given NullableString and assigns it to the ContentRef field.
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile) SetContentRef(v string) {
-	o.ContentRef = &v
+	o.ContentRef.Set(&v)
 }
 
-// GetContentPath returns the ContentPath field value if set, zero value otherwise.
+// SetContentRefNil sets the value for ContentRef to be an explicit nil
+func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile) SetContentRefNil() {
+	o.ContentRef.Set(nil)
+}
+
+// UnsetContentRef ensures that no value is present for ContentRef, not even an explicit nil
+func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile) UnsetContentRef() {
+	o.ContentRef.Unset()
+}
+
+// GetContentPath returns the ContentPath field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile) GetContentPath() string {
-	if o == nil || IsNil(o.ContentPath) {
+	if o == nil || IsNil(o.ContentPath.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ContentPath
+	return *o.ContentPath.Get()
 }
 
 // GetContentPathOk returns a tuple with the ContentPath field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile) GetContentPathOk() (*string, bool) {
-	if o == nil || IsNil(o.ContentPath) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ContentPath, true
+	return o.ContentPath.Get(), o.ContentPath.IsSet()
 }
 
 // IsSetContentPath returns a boolean if a field has been set.
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile) IsSetContentPath() bool {
-	if o != nil && !IsNil(o.ContentPath) {
+	if o != nil && o.ContentPath.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetContentPath gets a reference to the given string and assigns it to the ContentPath field.
+// SetContentPath gets a reference to the given NullableString and assigns it to the ContentPath field.
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile) SetContentPath(v string) {
-	o.ContentPath = &v
+	o.ContentPath.Set(&v)
 }
 
-// GetRepository returns the Repository field value if set, zero value otherwise.
+// SetContentPathNil sets the value for ContentPath to be an explicit nil
+func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile) SetContentPathNil() {
+	o.ContentPath.Set(nil)
+}
+
+// UnsetContentPath ensures that no value is present for ContentPath, not even an explicit nil
+func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile) UnsetContentPath() {
+	o.ContentPath.Unset()
+}
+
+// GetRepository returns the Repository field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile) GetRepository() string {
-	if o == nil || IsNil(o.Repository) {
+	if o == nil || IsNil(o.Repository.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Repository
+	return *o.Repository.Get()
 }
 
 // GetRepositoryOk returns a tuple with the Repository field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile) GetRepositoryOk() (*string, bool) {
-	if o == nil || IsNil(o.Repository) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Repository, true
+	return o.Repository.Get(), o.Repository.IsSet()
 }
 
 // IsSetRepository returns a boolean if a field has been set.
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile) IsSetRepository() bool {
-	if o != nil && !IsNil(o.Repository) {
+	if o != nil && o.Repository.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetRepository gets a reference to the given string and assigns it to the Repository field.
+// SetRepository gets a reference to the given NullableString and assigns it to the Repository field.
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile) SetRepository(v string) {
-	o.Repository = &v
+	o.Repository.Set(&v)
+}
+
+// SetRepositoryNil sets the value for Repository to be an explicit nil
+func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile) SetRepositoryNil() {
+	o.Repository.Set(nil)
+}
+
+// UnsetRepository ensures that no value is present for Repository, not even an explicit nil
+func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile) UnsetRepository() {
+	o.Repository.Unset()
 }
 
 // GetContent returns the Content field value if set, zero value otherwise.
@@ -256,14 +289,14 @@ func (o ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile) To
 	if !IsNil(o.SourceType) {
 		toSerialize["sourceType"] = o.SourceType
 	}
-	if !IsNil(o.ContentRef) {
-		toSerialize["contentRef"] = o.ContentRef
+	if o.ContentRef.IsSet() {
+		toSerialize["contentRef"] = o.ContentRef.Get()
 	}
-	if !IsNil(o.ContentPath) {
-		toSerialize["contentPath"] = o.ContentPath
+	if o.ContentPath.IsSet() {
+		toSerialize["contentPath"] = o.ContentPath.Get()
 	}
-	if !IsNil(o.Repository) {
-		toSerialize["repository"] = o.Repository
+	if o.Repository.IsSet() {
+		toSerialize["repository"] = o.Repository.Get()
 	}
 	if !IsNil(o.Content) {
 		toSerialize["content"] = o.Content

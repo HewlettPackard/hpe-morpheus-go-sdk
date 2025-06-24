@@ -21,18 +21,18 @@ var _ MappedNullable = &ListVDIAllocations200ResponseAllOfVdiAllocationsInner{}
 
 // ListVDIAllocations200ResponseAllOfVdiAllocationsInner struct for ListVDIAllocations200ResponseAllOfVdiAllocationsInner
 type ListVDIAllocations200ResponseAllOfVdiAllocationsInner struct {
-	Id                   *int64                                                                  `json:"id,omitempty"`
-	Pool                 *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"pool,omitempty"`
-	Instance             *ListVDIAllocations200ResponseAllOfVdiAllocationsInnerInstance          `json:"instance,omitempty"`
-	User                 *ListVDIAllocations200ResponseAllOfVdiAllocationsInnerUser              `json:"user,omitempty"`
-	LocalUserCreated     *bool                                                                   `json:"localUserCreated,omitempty"`
-	Persistent           *bool                                                                   `json:"persistent,omitempty"`
-	Status               *string                                                                 `json:"status,omitempty"`
-	DateCreated          *time.Time                                                              `json:"dateCreated,omitempty"`
-	LastUpdated          *time.Time                                                              `json:"lastUpdated,omitempty"`
-	LastReserved         *time.Time                                                              `json:"lastReserved,omitempty"`
-	ReleaseDate          *time.Time                                                              `json:"releaseDate,omitempty"`
-	AdditionalProperties map[string]interface{}                                                  `json:",remain"`
+	Id                   *int64                                                         `json:"id,omitempty"`
+	Pool                 *GetAlerts200ResponseAllOfCheckGroupsInnerInstance             `json:"pool,omitempty"`
+	Instance             *ListVDIAllocations200ResponseAllOfVdiAllocationsInnerInstance `json:"instance,omitempty"`
+	User                 *ListVDIPools200ResponseAllOfVdiPoolsInnerOwner                `json:"user,omitempty"`
+	LocalUserCreated     *bool                                                          `json:"localUserCreated,omitempty"`
+	Persistent           *bool                                                          `json:"persistent,omitempty"`
+	Status               *string                                                        `json:"status,omitempty"`
+	DateCreated          *time.Time                                                     `json:"dateCreated,omitempty"`
+	LastUpdated          NullableTime                                                   `json:"lastUpdated,omitempty"`
+	LastReserved         NullableTime                                                   `json:"lastReserved,omitempty"`
+	ReleaseDate          NullableTime                                                   `json:"releaseDate,omitempty"`
+	AdditionalProperties map[string]interface{}                                         `json:",remain"`
 }
 
 type _ListVDIAllocations200ResponseAllOfVdiAllocationsInner ListVDIAllocations200ResponseAllOfVdiAllocationsInner
@@ -87,9 +87,9 @@ func (o *ListVDIAllocations200ResponseAllOfVdiAllocationsInner) SetId(v int64) {
 }
 
 // GetPool returns the Pool field value if set, zero value otherwise.
-func (o *ListVDIAllocations200ResponseAllOfVdiAllocationsInner) GetPool() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *ListVDIAllocations200ResponseAllOfVdiAllocationsInner) GetPool() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.Pool) {
-		var ret ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return *o.Pool
@@ -97,7 +97,7 @@ func (o *ListVDIAllocations200ResponseAllOfVdiAllocationsInner) GetPool() ListAp
 
 // GetPoolOk returns a tuple with the Pool field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListVDIAllocations200ResponseAllOfVdiAllocationsInner) GetPoolOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *ListVDIAllocations200ResponseAllOfVdiAllocationsInner) GetPoolOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.Pool) {
 		return nil, false
 	}
@@ -113,8 +113,8 @@ func (o *ListVDIAllocations200ResponseAllOfVdiAllocationsInner) IsSetPool() bool
 	return false
 }
 
-// SetPool gets a reference to the given ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the Pool field.
-func (o *ListVDIAllocations200ResponseAllOfVdiAllocationsInner) SetPool(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetPool gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Pool field.
+func (o *ListVDIAllocations200ResponseAllOfVdiAllocationsInner) SetPool(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.Pool = &v
 }
 
@@ -151,9 +151,9 @@ func (o *ListVDIAllocations200ResponseAllOfVdiAllocationsInner) SetInstance(v Li
 }
 
 // GetUser returns the User field value if set, zero value otherwise.
-func (o *ListVDIAllocations200ResponseAllOfVdiAllocationsInner) GetUser() ListVDIAllocations200ResponseAllOfVdiAllocationsInnerUser {
+func (o *ListVDIAllocations200ResponseAllOfVdiAllocationsInner) GetUser() ListVDIPools200ResponseAllOfVdiPoolsInnerOwner {
 	if o == nil || IsNil(o.User) {
-		var ret ListVDIAllocations200ResponseAllOfVdiAllocationsInnerUser
+		var ret ListVDIPools200ResponseAllOfVdiPoolsInnerOwner
 		return ret
 	}
 	return *o.User
@@ -161,7 +161,7 @@ func (o *ListVDIAllocations200ResponseAllOfVdiAllocationsInner) GetUser() ListVD
 
 // GetUserOk returns a tuple with the User field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListVDIAllocations200ResponseAllOfVdiAllocationsInner) GetUserOk() (*ListVDIAllocations200ResponseAllOfVdiAllocationsInnerUser, bool) {
+func (o *ListVDIAllocations200ResponseAllOfVdiAllocationsInner) GetUserOk() (*ListVDIPools200ResponseAllOfVdiPoolsInnerOwner, bool) {
 	if o == nil || IsNil(o.User) {
 		return nil, false
 	}
@@ -177,8 +177,8 @@ func (o *ListVDIAllocations200ResponseAllOfVdiAllocationsInner) IsSetUser() bool
 	return false
 }
 
-// SetUser gets a reference to the given ListVDIAllocations200ResponseAllOfVdiAllocationsInnerUser and assigns it to the User field.
-func (o *ListVDIAllocations200ResponseAllOfVdiAllocationsInner) SetUser(v ListVDIAllocations200ResponseAllOfVdiAllocationsInnerUser) {
+// SetUser gets a reference to the given ListVDIPools200ResponseAllOfVdiPoolsInnerOwner and assigns it to the User field.
+func (o *ListVDIAllocations200ResponseAllOfVdiAllocationsInner) SetUser(v ListVDIPools200ResponseAllOfVdiPoolsInnerOwner) {
 	o.User = &v
 }
 
@@ -310,100 +310,133 @@ func (o *ListVDIAllocations200ResponseAllOfVdiAllocationsInner) SetDateCreated(v
 	o.DateCreated = &v
 }
 
-// GetLastUpdated returns the LastUpdated field value if set, zero value otherwise.
+// GetLastUpdated returns the LastUpdated field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListVDIAllocations200ResponseAllOfVdiAllocationsInner) GetLastUpdated() time.Time {
-	if o == nil || IsNil(o.LastUpdated) {
+	if o == nil || IsNil(o.LastUpdated.Get()) {
 		var ret time.Time
 		return ret
 	}
-	return *o.LastUpdated
+	return *o.LastUpdated.Get()
 }
 
 // GetLastUpdatedOk returns a tuple with the LastUpdated field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListVDIAllocations200ResponseAllOfVdiAllocationsInner) GetLastUpdatedOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.LastUpdated) {
+	if o == nil {
 		return nil, false
 	}
-	return o.LastUpdated, true
+	return o.LastUpdated.Get(), o.LastUpdated.IsSet()
 }
 
 // IsSetLastUpdated returns a boolean if a field has been set.
 func (o *ListVDIAllocations200ResponseAllOfVdiAllocationsInner) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
+	if o != nil && o.LastUpdated.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.
+// SetLastUpdated gets a reference to the given NullableTime and assigns it to the LastUpdated field.
 func (o *ListVDIAllocations200ResponseAllOfVdiAllocationsInner) SetLastUpdated(v time.Time) {
-	o.LastUpdated = &v
+	o.LastUpdated.Set(&v)
 }
 
-// GetLastReserved returns the LastReserved field value if set, zero value otherwise.
+// SetLastUpdatedNil sets the value for LastUpdated to be an explicit nil
+func (o *ListVDIAllocations200ResponseAllOfVdiAllocationsInner) SetLastUpdatedNil() {
+	o.LastUpdated.Set(nil)
+}
+
+// UnsetLastUpdated ensures that no value is present for LastUpdated, not even an explicit nil
+func (o *ListVDIAllocations200ResponseAllOfVdiAllocationsInner) UnsetLastUpdated() {
+	o.LastUpdated.Unset()
+}
+
+// GetLastReserved returns the LastReserved field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListVDIAllocations200ResponseAllOfVdiAllocationsInner) GetLastReserved() time.Time {
-	if o == nil || IsNil(o.LastReserved) {
+	if o == nil || IsNil(o.LastReserved.Get()) {
 		var ret time.Time
 		return ret
 	}
-	return *o.LastReserved
+	return *o.LastReserved.Get()
 }
 
 // GetLastReservedOk returns a tuple with the LastReserved field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListVDIAllocations200ResponseAllOfVdiAllocationsInner) GetLastReservedOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.LastReserved) {
+	if o == nil {
 		return nil, false
 	}
-	return o.LastReserved, true
+	return o.LastReserved.Get(), o.LastReserved.IsSet()
 }
 
 // IsSetLastReserved returns a boolean if a field has been set.
 func (o *ListVDIAllocations200ResponseAllOfVdiAllocationsInner) IsSetLastReserved() bool {
-	if o != nil && !IsNil(o.LastReserved) {
+	if o != nil && o.LastReserved.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetLastReserved gets a reference to the given time.Time and assigns it to the LastReserved field.
+// SetLastReserved gets a reference to the given NullableTime and assigns it to the LastReserved field.
 func (o *ListVDIAllocations200ResponseAllOfVdiAllocationsInner) SetLastReserved(v time.Time) {
-	o.LastReserved = &v
+	o.LastReserved.Set(&v)
 }
 
-// GetReleaseDate returns the ReleaseDate field value if set, zero value otherwise.
+// SetLastReservedNil sets the value for LastReserved to be an explicit nil
+func (o *ListVDIAllocations200ResponseAllOfVdiAllocationsInner) SetLastReservedNil() {
+	o.LastReserved.Set(nil)
+}
+
+// UnsetLastReserved ensures that no value is present for LastReserved, not even an explicit nil
+func (o *ListVDIAllocations200ResponseAllOfVdiAllocationsInner) UnsetLastReserved() {
+	o.LastReserved.Unset()
+}
+
+// GetReleaseDate returns the ReleaseDate field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListVDIAllocations200ResponseAllOfVdiAllocationsInner) GetReleaseDate() time.Time {
-	if o == nil || IsNil(o.ReleaseDate) {
+	if o == nil || IsNil(o.ReleaseDate.Get()) {
 		var ret time.Time
 		return ret
 	}
-	return *o.ReleaseDate
+	return *o.ReleaseDate.Get()
 }
 
 // GetReleaseDateOk returns a tuple with the ReleaseDate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListVDIAllocations200ResponseAllOfVdiAllocationsInner) GetReleaseDateOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.ReleaseDate) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ReleaseDate, true
+	return o.ReleaseDate.Get(), o.ReleaseDate.IsSet()
 }
 
 // IsSetReleaseDate returns a boolean if a field has been set.
 func (o *ListVDIAllocations200ResponseAllOfVdiAllocationsInner) IsSetReleaseDate() bool {
-	if o != nil && !IsNil(o.ReleaseDate) {
+	if o != nil && o.ReleaseDate.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetReleaseDate gets a reference to the given time.Time and assigns it to the ReleaseDate field.
+// SetReleaseDate gets a reference to the given NullableTime and assigns it to the ReleaseDate field.
 func (o *ListVDIAllocations200ResponseAllOfVdiAllocationsInner) SetReleaseDate(v time.Time) {
-	o.ReleaseDate = &v
+	o.ReleaseDate.Set(&v)
+}
+
+// SetReleaseDateNil sets the value for ReleaseDate to be an explicit nil
+func (o *ListVDIAllocations200ResponseAllOfVdiAllocationsInner) SetReleaseDateNil() {
+	o.ReleaseDate.Set(nil)
+}
+
+// UnsetReleaseDate ensures that no value is present for ReleaseDate, not even an explicit nil
+func (o *ListVDIAllocations200ResponseAllOfVdiAllocationsInner) UnsetReleaseDate() {
+	o.ReleaseDate.Unset()
 }
 
 func (o ListVDIAllocations200ResponseAllOfVdiAllocationsInner) MarshalJSON() ([]byte, error) {
@@ -440,14 +473,14 @@ func (o ListVDIAllocations200ResponseAllOfVdiAllocationsInner) ToMap() (map[stri
 	if !IsNil(o.DateCreated) {
 		toSerialize["dateCreated"] = o.DateCreated
 	}
-	if !IsNil(o.LastUpdated) {
-		toSerialize["lastUpdated"] = o.LastUpdated
+	if o.LastUpdated.IsSet() {
+		toSerialize["lastUpdated"] = o.LastUpdated.Get()
 	}
-	if !IsNil(o.LastReserved) {
-		toSerialize["lastReserved"] = o.LastReserved
+	if o.LastReserved.IsSet() {
+		toSerialize["lastReserved"] = o.LastReserved.Get()
 	}
-	if !IsNil(o.ReleaseDate) {
-		toSerialize["releaseDate"] = o.ReleaseDate
+	if o.ReleaseDate.IsSet() {
+		toSerialize["releaseDate"] = o.ReleaseDate.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {

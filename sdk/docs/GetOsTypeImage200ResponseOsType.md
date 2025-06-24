@@ -7,10 +7,10 @@ Name | Type | Description | Notes
 **Id** | Pointer to **int64** |  | [optional] 
 **VirtualImageId** | Pointer to **int64** | The id of the virtual image.  | [optional] 
 **VirtualImageName** | Pointer to **string** | The name of the virtual image.   | [optional] 
-**Account** | Pointer to **int64** | The account attached to the osTypeImage.   | [optional] 
-**ProvisionType** | Pointer to **int64** | The Provision Type of the osTypeImage.  | [optional] 
-**ComputeZoneType** | Pointer to **int64** | The zone type of the osTypeImage.  | [optional] 
-**Zone** | Pointer to **int64** | The cloud that is attached to osTypeImage.  | [optional] 
+**Account** | Pointer to **NullableInt64** | The account attached to the osTypeImage.   | [optional] 
+**ProvisionType** | Pointer to **NullableInt64** | The Provision Type of the osTypeImage.  | [optional] 
+**ComputeZoneType** | Pointer to **NullableInt64** | The zone type of the osTypeImage.  | [optional] 
+**Zone** | Pointer to **NullableInt64** | The cloud that is attached to osTypeImage. | [optional] 
 
 ## Methods
 
@@ -131,6 +131,16 @@ SetAccount sets Account field to given value.
 
 HasAccount returns a boolean if a field has been set.
 
+### SetAccountNil
+
+`func (o *GetOsTypeImage200ResponseOsType) SetAccountNil(b bool)`
+
+ SetAccountNil sets the value for Account to be an explicit nil
+
+### UnsetAccount
+`func (o *GetOsTypeImage200ResponseOsType) UnsetAccount()`
+
+UnsetAccount ensures that no value is present for Account, not even an explicit nil
 ### GetProvisionType
 
 `func (o *GetOsTypeImage200ResponseOsType) GetProvisionType() int64`
@@ -156,6 +166,16 @@ SetProvisionType sets ProvisionType field to given value.
 
 HasProvisionType returns a boolean if a field has been set.
 
+### SetProvisionTypeNil
+
+`func (o *GetOsTypeImage200ResponseOsType) SetProvisionTypeNil(b bool)`
+
+ SetProvisionTypeNil sets the value for ProvisionType to be an explicit nil
+
+### UnsetProvisionType
+`func (o *GetOsTypeImage200ResponseOsType) UnsetProvisionType()`
+
+UnsetProvisionType ensures that no value is present for ProvisionType, not even an explicit nil
 ### GetComputeZoneType
 
 `func (o *GetOsTypeImage200ResponseOsType) GetComputeZoneType() int64`
@@ -181,6 +201,16 @@ SetComputeZoneType sets ComputeZoneType field to given value.
 
 HasComputeZoneType returns a boolean if a field has been set.
 
+### SetComputeZoneTypeNil
+
+`func (o *GetOsTypeImage200ResponseOsType) SetComputeZoneTypeNil(b bool)`
+
+ SetComputeZoneTypeNil sets the value for ComputeZoneType to be an explicit nil
+
+### UnsetComputeZoneType
+`func (o *GetOsTypeImage200ResponseOsType) UnsetComputeZoneType()`
+
+UnsetComputeZoneType ensures that no value is present for ComputeZoneType, not even an explicit nil
 ### GetZone
 
 `func (o *GetOsTypeImage200ResponseOsType) GetZone() int64`
@@ -206,6 +236,16 @@ SetZone sets Zone field to given value.
 
 HasZone returns a boolean if a field has been set.
 
+### SetZoneNil
+
+`func (o *GetOsTypeImage200ResponseOsType) SetZoneNil(b bool)`
+
+ SetZoneNil sets the value for Zone to be an explicit nil
+
+### UnsetZone
+`func (o *GetOsTypeImage200ResponseOsType) UnsetZone()`
+
+UnsetZone ensures that no value is present for Zone, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -21,7 +21,7 @@ var _ MappedNullable = &LoadBalancerInstanceNSXTConfig{}
 // LoadBalancerInstanceNSXTConfig struct for LoadBalancerInstanceNSXTConfig
 type LoadBalancerInstanceNSXTConfig struct {
 	// The Load Balancer Application Profile ID The Options API `/api/options/nsxt/nsxtLBVirtualServerApplicationProfile?loadBalancerId=42&loadBalancerInstance.vipProtocol=tcp` can be used to see which options are available.
-	ApplicationProfile   *string                `json:"applicationProfile,omitempty"`
+	ApplicationProfile   NullableString         `json:"applicationProfile,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -44,36 +44,47 @@ func NewLoadBalancerInstanceNSXTConfigWithDefaults() *LoadBalancerInstanceNSXTCo
 	return &this
 }
 
-// GetApplicationProfile returns the ApplicationProfile field value if set, zero value otherwise.
+// GetApplicationProfile returns the ApplicationProfile field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *LoadBalancerInstanceNSXTConfig) GetApplicationProfile() string {
-	if o == nil || IsNil(o.ApplicationProfile) {
+	if o == nil || IsNil(o.ApplicationProfile.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ApplicationProfile
+	return *o.ApplicationProfile.Get()
 }
 
 // GetApplicationProfileOk returns a tuple with the ApplicationProfile field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoadBalancerInstanceNSXTConfig) GetApplicationProfileOk() (*string, bool) {
-	if o == nil || IsNil(o.ApplicationProfile) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ApplicationProfile, true
+	return o.ApplicationProfile.Get(), o.ApplicationProfile.IsSet()
 }
 
 // IsSetApplicationProfile returns a boolean if a field has been set.
 func (o *LoadBalancerInstanceNSXTConfig) IsSetApplicationProfile() bool {
-	if o != nil && !IsNil(o.ApplicationProfile) {
+	if o != nil && o.ApplicationProfile.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetApplicationProfile gets a reference to the given string and assigns it to the ApplicationProfile field.
+// SetApplicationProfile gets a reference to the given NullableString and assigns it to the ApplicationProfile field.
 func (o *LoadBalancerInstanceNSXTConfig) SetApplicationProfile(v string) {
-	o.ApplicationProfile = &v
+	o.ApplicationProfile.Set(&v)
+}
+
+// SetApplicationProfileNil sets the value for ApplicationProfile to be an explicit nil
+func (o *LoadBalancerInstanceNSXTConfig) SetApplicationProfileNil() {
+	o.ApplicationProfile.Set(nil)
+}
+
+// UnsetApplicationProfile ensures that no value is present for ApplicationProfile, not even an explicit nil
+func (o *LoadBalancerInstanceNSXTConfig) UnsetApplicationProfile() {
+	o.ApplicationProfile.Unset()
 }
 
 func (o LoadBalancerInstanceNSXTConfig) MarshalJSON() ([]byte, error) {
@@ -86,8 +97,8 @@ func (o LoadBalancerInstanceNSXTConfig) MarshalJSON() ([]byte, error) {
 
 func (o LoadBalancerInstanceNSXTConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ApplicationProfile) {
-		toSerialize["applicationProfile"] = o.ApplicationProfile
+	if o.ApplicationProfile.IsSet() {
+		toSerialize["applicationProfile"] = o.ApplicationProfile.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {

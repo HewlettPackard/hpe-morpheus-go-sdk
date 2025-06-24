@@ -8,15 +8,15 @@ Name | Type | Description | Notes
 **RootVolume** | Pointer to **bool** | If set to false then a non-root LV will be created | [optional] [default to true]
 **Name** | **string** | Name/type of the LV being created | [default to "root"]
 **Size** | Pointer to **int64** | Size of the LV to be created in GBs  Default is from the service plan  | [optional] 
-**SizeId** | Pointer to **string** | Can be used to select pre-existing LV choices from Morpheus | [optional] 
+**SizeId** | Pointer to **NullableString** | Can be used to select pre-existing LV choices from Morpheus | [optional] 
 **StorageType** | Pointer to **int64** | Identifier for LV type | [optional] 
-**DatastoreId** | **string** | The ID of the specific datastore. Auto selection can be specified as auto or &#x60;autoCluster&#x60; (for clusters). | 
+**DatastoreId** | **NullableString** | The ID of the specific datastore. Auto selection can be specified as auto or &#x60;autoCluster&#x60; (for clusters). | 
 
 ## Methods
 
 ### NewAddClusterRequestClusterServerVolumesInner
 
-`func NewAddClusterRequestClusterServerVolumesInner(name string, datastoreId string, ) *AddClusterRequestClusterServerVolumesInner`
+`func NewAddClusterRequestClusterServerVolumesInner(name string, datastoreId NullableString, ) *AddClusterRequestClusterServerVolumesInner`
 
 NewAddClusterRequestClusterServerVolumesInner instantiates a new AddClusterRequestClusterServerVolumesInner object
 This constructor will assign default values to properties that have it defined,
@@ -151,6 +151,16 @@ SetSizeId sets SizeId field to given value.
 
 HasSizeId returns a boolean if a field has been set.
 
+### SetSizeIdNil
+
+`func (o *AddClusterRequestClusterServerVolumesInner) SetSizeIdNil(b bool)`
+
+ SetSizeIdNil sets the value for SizeId to be an explicit nil
+
+### UnsetSizeId
+`func (o *AddClusterRequestClusterServerVolumesInner) UnsetSizeId()`
+
+UnsetSizeId ensures that no value is present for SizeId, not even an explicit nil
 ### GetStorageType
 
 `func (o *AddClusterRequestClusterServerVolumesInner) GetStorageType() int64`
@@ -196,6 +206,16 @@ and a boolean to check if the value has been set.
 SetDatastoreId sets DatastoreId field to given value.
 
 
+### SetDatastoreIdNil
+
+`func (o *AddClusterRequestClusterServerVolumesInner) SetDatastoreIdNil(b bool)`
+
+ SetDatastoreIdNil sets the value for DatastoreId to be an explicit nil
+
+### UnsetDatastoreId
+`func (o *AddClusterRequestClusterServerVolumesInner) UnsetDatastoreId()`
+
+UnsetDatastoreId ensures that no value is present for DatastoreId, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

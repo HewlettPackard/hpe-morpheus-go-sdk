@@ -23,10 +23,10 @@ var _ MappedNullable = &ListVDIApps200ResponseAllOfVdiAppsInner{}
 type ListVDIApps200ResponseAllOfVdiAppsInner struct {
 	Id                   *int64                 `json:"id,omitempty"`
 	Name                 *string                `json:"name,omitempty"`
-	Description          *string                `json:"description,omitempty"`
+	Description          NullableString         `json:"description,omitempty"`
 	LaunchPrefix         *string                `json:"launchPrefix,omitempty"`
-	IconPath             *string                `json:"iconPath,omitempty"`
-	Logo                 *string                `json:"logo,omitempty"`
+	IconPath             NullableString         `json:"iconPath,omitempty"`
+	Logo                 NullableString         `json:"logo,omitempty"`
 	DateCreated          *time.Time             `json:"dateCreated,omitempty"`
 	LastUpdated          *time.Time             `json:"lastUpdated,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
@@ -115,36 +115,47 @@ func (o *ListVDIApps200ResponseAllOfVdiAppsInner) SetName(v string) {
 	o.Name = &v
 }
 
-// GetDescription returns the Description field value if set, zero value otherwise.
+// GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListVDIApps200ResponseAllOfVdiAppsInner) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
+	if o == nil || IsNil(o.Description.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Description
+	return *o.Description.Get()
 }
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListVDIApps200ResponseAllOfVdiAppsInner) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Description, true
+	return o.Description.Get(), o.Description.IsSet()
 }
 
 // IsSetDescription returns a boolean if a field has been set.
 func (o *ListVDIApps200ResponseAllOfVdiAppsInner) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
+	if o != nil && o.Description.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDescription gets a reference to the given string and assigns it to the Description field.
+// SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *ListVDIApps200ResponseAllOfVdiAppsInner) SetDescription(v string) {
-	o.Description = &v
+	o.Description.Set(&v)
+}
+
+// SetDescriptionNil sets the value for Description to be an explicit nil
+func (o *ListVDIApps200ResponseAllOfVdiAppsInner) SetDescriptionNil() {
+	o.Description.Set(nil)
+}
+
+// UnsetDescription ensures that no value is present for Description, not even an explicit nil
+func (o *ListVDIApps200ResponseAllOfVdiAppsInner) UnsetDescription() {
+	o.Description.Unset()
 }
 
 // GetLaunchPrefix returns the LaunchPrefix field value if set, zero value otherwise.
@@ -179,68 +190,90 @@ func (o *ListVDIApps200ResponseAllOfVdiAppsInner) SetLaunchPrefix(v string) {
 	o.LaunchPrefix = &v
 }
 
-// GetIconPath returns the IconPath field value if set, zero value otherwise.
+// GetIconPath returns the IconPath field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListVDIApps200ResponseAllOfVdiAppsInner) GetIconPath() string {
-	if o == nil || IsNil(o.IconPath) {
+	if o == nil || IsNil(o.IconPath.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.IconPath
+	return *o.IconPath.Get()
 }
 
 // GetIconPathOk returns a tuple with the IconPath field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListVDIApps200ResponseAllOfVdiAppsInner) GetIconPathOk() (*string, bool) {
-	if o == nil || IsNil(o.IconPath) {
+	if o == nil {
 		return nil, false
 	}
-	return o.IconPath, true
+	return o.IconPath.Get(), o.IconPath.IsSet()
 }
 
 // IsSetIconPath returns a boolean if a field has been set.
 func (o *ListVDIApps200ResponseAllOfVdiAppsInner) IsSetIconPath() bool {
-	if o != nil && !IsNil(o.IconPath) {
+	if o != nil && o.IconPath.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetIconPath gets a reference to the given string and assigns it to the IconPath field.
+// SetIconPath gets a reference to the given NullableString and assigns it to the IconPath field.
 func (o *ListVDIApps200ResponseAllOfVdiAppsInner) SetIconPath(v string) {
-	o.IconPath = &v
+	o.IconPath.Set(&v)
 }
 
-// GetLogo returns the Logo field value if set, zero value otherwise.
+// SetIconPathNil sets the value for IconPath to be an explicit nil
+func (o *ListVDIApps200ResponseAllOfVdiAppsInner) SetIconPathNil() {
+	o.IconPath.Set(nil)
+}
+
+// UnsetIconPath ensures that no value is present for IconPath, not even an explicit nil
+func (o *ListVDIApps200ResponseAllOfVdiAppsInner) UnsetIconPath() {
+	o.IconPath.Unset()
+}
+
+// GetLogo returns the Logo field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListVDIApps200ResponseAllOfVdiAppsInner) GetLogo() string {
-	if o == nil || IsNil(o.Logo) {
+	if o == nil || IsNil(o.Logo.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Logo
+	return *o.Logo.Get()
 }
 
 // GetLogoOk returns a tuple with the Logo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListVDIApps200ResponseAllOfVdiAppsInner) GetLogoOk() (*string, bool) {
-	if o == nil || IsNil(o.Logo) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Logo, true
+	return o.Logo.Get(), o.Logo.IsSet()
 }
 
 // IsSetLogo returns a boolean if a field has been set.
 func (o *ListVDIApps200ResponseAllOfVdiAppsInner) IsSetLogo() bool {
-	if o != nil && !IsNil(o.Logo) {
+	if o != nil && o.Logo.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetLogo gets a reference to the given string and assigns it to the Logo field.
+// SetLogo gets a reference to the given NullableString and assigns it to the Logo field.
 func (o *ListVDIApps200ResponseAllOfVdiAppsInner) SetLogo(v string) {
-	o.Logo = &v
+	o.Logo.Set(&v)
+}
+
+// SetLogoNil sets the value for Logo to be an explicit nil
+func (o *ListVDIApps200ResponseAllOfVdiAppsInner) SetLogoNil() {
+	o.Logo.Set(nil)
+}
+
+// UnsetLogo ensures that no value is present for Logo, not even an explicit nil
+func (o *ListVDIApps200ResponseAllOfVdiAppsInner) UnsetLogo() {
+	o.Logo.Unset()
 }
 
 // GetDateCreated returns the DateCreated field value if set, zero value otherwise.
@@ -323,17 +356,17 @@ func (o ListVDIApps200ResponseAllOfVdiAppsInner) ToMap() (map[string]interface{}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !IsNil(o.Description) {
-		toSerialize["description"] = o.Description
+	if o.Description.IsSet() {
+		toSerialize["description"] = o.Description.Get()
 	}
 	if !IsNil(o.LaunchPrefix) {
 		toSerialize["launchPrefix"] = o.LaunchPrefix
 	}
-	if !IsNil(o.IconPath) {
-		toSerialize["iconPath"] = o.IconPath
+	if o.IconPath.IsSet() {
+		toSerialize["iconPath"] = o.IconPath.Get()
 	}
-	if !IsNil(o.Logo) {
-		toSerialize["logo"] = o.Logo
+	if o.Logo.IsSet() {
+		toSerialize["logo"] = o.Logo.Get()
 	}
 	if !IsNil(o.DateCreated) {
 		toSerialize["dateCreated"] = o.DateCreated

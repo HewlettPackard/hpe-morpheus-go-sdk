@@ -23,21 +23,21 @@ var _ MappedNullable = &ExecutionRequest{}
 type ExecutionRequest struct {
 	Id                   *int64                 `json:"id,omitempty"`
 	UniqueId             *string                `json:"uniqueId,omitempty"`
-	ContainerId          *string                `json:"containerId,omitempty"`
-	ServerId             *string                `json:"serverId,omitempty"`
+	ContainerId          NullableString         `json:"containerId,omitempty"`
+	ServerId             NullableString         `json:"serverId,omitempty"`
 	InstanceId           *int64                 `json:"instanceId,omitempty"`
-	ResourceId           *string                `json:"resourceId,omitempty"`
-	AppId                *string                `json:"appId,omitempty"`
+	ResourceId           NullableString         `json:"resourceId,omitempty"`
+	AppId                NullableString         `json:"appId,omitempty"`
 	StdOut               *string                `json:"stdOut,omitempty"`
 	StdErr               *string                `json:"stdErr,omitempty"`
 	ExitCode             *int64                 `json:"exitCode,omitempty"`
 	Status               *string                `json:"status,omitempty"`
 	ExpiresAt            *time.Time             `json:"expiresAt,omitempty"`
 	CreatedById          *int64                 `json:"createdById,omitempty"`
-	StatusMessage        *string                `json:"statusMessage,omitempty"`
-	ErrorMessage         *string                `json:"errorMessage,omitempty"`
+	StatusMessage        NullableString         `json:"statusMessage,omitempty"`
+	ErrorMessage         NullableString         `json:"errorMessage,omitempty"`
 	Config               map[string]interface{} `json:"config,omitempty"`
-	RawData              *string                `json:"rawData,omitempty"`
+	RawData              NullableString         `json:"rawData,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -124,68 +124,90 @@ func (o *ExecutionRequest) SetUniqueId(v string) {
 	o.UniqueId = &v
 }
 
-// GetContainerId returns the ContainerId field value if set, zero value otherwise.
+// GetContainerId returns the ContainerId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ExecutionRequest) GetContainerId() string {
-	if o == nil || IsNil(o.ContainerId) {
+	if o == nil || IsNil(o.ContainerId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ContainerId
+	return *o.ContainerId.Get()
 }
 
 // GetContainerIdOk returns a tuple with the ContainerId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ExecutionRequest) GetContainerIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ContainerId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ContainerId, true
+	return o.ContainerId.Get(), o.ContainerId.IsSet()
 }
 
 // IsSetContainerId returns a boolean if a field has been set.
 func (o *ExecutionRequest) IsSetContainerId() bool {
-	if o != nil && !IsNil(o.ContainerId) {
+	if o != nil && o.ContainerId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetContainerId gets a reference to the given string and assigns it to the ContainerId field.
+// SetContainerId gets a reference to the given NullableString and assigns it to the ContainerId field.
 func (o *ExecutionRequest) SetContainerId(v string) {
-	o.ContainerId = &v
+	o.ContainerId.Set(&v)
 }
 
-// GetServerId returns the ServerId field value if set, zero value otherwise.
+// SetContainerIdNil sets the value for ContainerId to be an explicit nil
+func (o *ExecutionRequest) SetContainerIdNil() {
+	o.ContainerId.Set(nil)
+}
+
+// UnsetContainerId ensures that no value is present for ContainerId, not even an explicit nil
+func (o *ExecutionRequest) UnsetContainerId() {
+	o.ContainerId.Unset()
+}
+
+// GetServerId returns the ServerId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ExecutionRequest) GetServerId() string {
-	if o == nil || IsNil(o.ServerId) {
+	if o == nil || IsNil(o.ServerId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ServerId
+	return *o.ServerId.Get()
 }
 
 // GetServerIdOk returns a tuple with the ServerId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ExecutionRequest) GetServerIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ServerId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ServerId, true
+	return o.ServerId.Get(), o.ServerId.IsSet()
 }
 
 // IsSetServerId returns a boolean if a field has been set.
 func (o *ExecutionRequest) IsSetServerId() bool {
-	if o != nil && !IsNil(o.ServerId) {
+	if o != nil && o.ServerId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetServerId gets a reference to the given string and assigns it to the ServerId field.
+// SetServerId gets a reference to the given NullableString and assigns it to the ServerId field.
 func (o *ExecutionRequest) SetServerId(v string) {
-	o.ServerId = &v
+	o.ServerId.Set(&v)
+}
+
+// SetServerIdNil sets the value for ServerId to be an explicit nil
+func (o *ExecutionRequest) SetServerIdNil() {
+	o.ServerId.Set(nil)
+}
+
+// UnsetServerId ensures that no value is present for ServerId, not even an explicit nil
+func (o *ExecutionRequest) UnsetServerId() {
+	o.ServerId.Unset()
 }
 
 // GetInstanceId returns the InstanceId field value if set, zero value otherwise.
@@ -220,68 +242,90 @@ func (o *ExecutionRequest) SetInstanceId(v int64) {
 	o.InstanceId = &v
 }
 
-// GetResourceId returns the ResourceId field value if set, zero value otherwise.
+// GetResourceId returns the ResourceId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ExecutionRequest) GetResourceId() string {
-	if o == nil || IsNil(o.ResourceId) {
+	if o == nil || IsNil(o.ResourceId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ResourceId
+	return *o.ResourceId.Get()
 }
 
 // GetResourceIdOk returns a tuple with the ResourceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ExecutionRequest) GetResourceIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ResourceId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ResourceId, true
+	return o.ResourceId.Get(), o.ResourceId.IsSet()
 }
 
 // IsSetResourceId returns a boolean if a field has been set.
 func (o *ExecutionRequest) IsSetResourceId() bool {
-	if o != nil && !IsNil(o.ResourceId) {
+	if o != nil && o.ResourceId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetResourceId gets a reference to the given string and assigns it to the ResourceId field.
+// SetResourceId gets a reference to the given NullableString and assigns it to the ResourceId field.
 func (o *ExecutionRequest) SetResourceId(v string) {
-	o.ResourceId = &v
+	o.ResourceId.Set(&v)
 }
 
-// GetAppId returns the AppId field value if set, zero value otherwise.
+// SetResourceIdNil sets the value for ResourceId to be an explicit nil
+func (o *ExecutionRequest) SetResourceIdNil() {
+	o.ResourceId.Set(nil)
+}
+
+// UnsetResourceId ensures that no value is present for ResourceId, not even an explicit nil
+func (o *ExecutionRequest) UnsetResourceId() {
+	o.ResourceId.Unset()
+}
+
+// GetAppId returns the AppId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ExecutionRequest) GetAppId() string {
-	if o == nil || IsNil(o.AppId) {
+	if o == nil || IsNil(o.AppId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.AppId
+	return *o.AppId.Get()
 }
 
 // GetAppIdOk returns a tuple with the AppId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ExecutionRequest) GetAppIdOk() (*string, bool) {
-	if o == nil || IsNil(o.AppId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.AppId, true
+	return o.AppId.Get(), o.AppId.IsSet()
 }
 
 // IsSetAppId returns a boolean if a field has been set.
 func (o *ExecutionRequest) IsSetAppId() bool {
-	if o != nil && !IsNil(o.AppId) {
+	if o != nil && o.AppId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetAppId gets a reference to the given string and assigns it to the AppId field.
+// SetAppId gets a reference to the given NullableString and assigns it to the AppId field.
 func (o *ExecutionRequest) SetAppId(v string) {
-	o.AppId = &v
+	o.AppId.Set(&v)
+}
+
+// SetAppIdNil sets the value for AppId to be an explicit nil
+func (o *ExecutionRequest) SetAppIdNil() {
+	o.AppId.Set(nil)
+}
+
+// UnsetAppId ensures that no value is present for AppId, not even an explicit nil
+func (o *ExecutionRequest) UnsetAppId() {
+	o.AppId.Unset()
 }
 
 // GetStdOut returns the StdOut field value if set, zero value otherwise.
@@ -476,68 +520,90 @@ func (o *ExecutionRequest) SetCreatedById(v int64) {
 	o.CreatedById = &v
 }
 
-// GetStatusMessage returns the StatusMessage field value if set, zero value otherwise.
+// GetStatusMessage returns the StatusMessage field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ExecutionRequest) GetStatusMessage() string {
-	if o == nil || IsNil(o.StatusMessage) {
+	if o == nil || IsNil(o.StatusMessage.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.StatusMessage
+	return *o.StatusMessage.Get()
 }
 
 // GetStatusMessageOk returns a tuple with the StatusMessage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ExecutionRequest) GetStatusMessageOk() (*string, bool) {
-	if o == nil || IsNil(o.StatusMessage) {
+	if o == nil {
 		return nil, false
 	}
-	return o.StatusMessage, true
+	return o.StatusMessage.Get(), o.StatusMessage.IsSet()
 }
 
 // IsSetStatusMessage returns a boolean if a field has been set.
 func (o *ExecutionRequest) IsSetStatusMessage() bool {
-	if o != nil && !IsNil(o.StatusMessage) {
+	if o != nil && o.StatusMessage.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetStatusMessage gets a reference to the given string and assigns it to the StatusMessage field.
+// SetStatusMessage gets a reference to the given NullableString and assigns it to the StatusMessage field.
 func (o *ExecutionRequest) SetStatusMessage(v string) {
-	o.StatusMessage = &v
+	o.StatusMessage.Set(&v)
 }
 
-// GetErrorMessage returns the ErrorMessage field value if set, zero value otherwise.
+// SetStatusMessageNil sets the value for StatusMessage to be an explicit nil
+func (o *ExecutionRequest) SetStatusMessageNil() {
+	o.StatusMessage.Set(nil)
+}
+
+// UnsetStatusMessage ensures that no value is present for StatusMessage, not even an explicit nil
+func (o *ExecutionRequest) UnsetStatusMessage() {
+	o.StatusMessage.Unset()
+}
+
+// GetErrorMessage returns the ErrorMessage field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ExecutionRequest) GetErrorMessage() string {
-	if o == nil || IsNil(o.ErrorMessage) {
+	if o == nil || IsNil(o.ErrorMessage.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ErrorMessage
+	return *o.ErrorMessage.Get()
 }
 
 // GetErrorMessageOk returns a tuple with the ErrorMessage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ExecutionRequest) GetErrorMessageOk() (*string, bool) {
-	if o == nil || IsNil(o.ErrorMessage) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ErrorMessage, true
+	return o.ErrorMessage.Get(), o.ErrorMessage.IsSet()
 }
 
 // IsSetErrorMessage returns a boolean if a field has been set.
 func (o *ExecutionRequest) IsSetErrorMessage() bool {
-	if o != nil && !IsNil(o.ErrorMessage) {
+	if o != nil && o.ErrorMessage.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetErrorMessage gets a reference to the given string and assigns it to the ErrorMessage field.
+// SetErrorMessage gets a reference to the given NullableString and assigns it to the ErrorMessage field.
 func (o *ExecutionRequest) SetErrorMessage(v string) {
-	o.ErrorMessage = &v
+	o.ErrorMessage.Set(&v)
+}
+
+// SetErrorMessageNil sets the value for ErrorMessage to be an explicit nil
+func (o *ExecutionRequest) SetErrorMessageNil() {
+	o.ErrorMessage.Set(nil)
+}
+
+// UnsetErrorMessage ensures that no value is present for ErrorMessage, not even an explicit nil
+func (o *ExecutionRequest) UnsetErrorMessage() {
+	o.ErrorMessage.Unset()
 }
 
 // GetConfig returns the Config field value if set, zero value otherwise.
@@ -572,36 +638,47 @@ func (o *ExecutionRequest) SetConfig(v map[string]interface{}) {
 	o.Config = v
 }
 
-// GetRawData returns the RawData field value if set, zero value otherwise.
+// GetRawData returns the RawData field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ExecutionRequest) GetRawData() string {
-	if o == nil || IsNil(o.RawData) {
+	if o == nil || IsNil(o.RawData.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.RawData
+	return *o.RawData.Get()
 }
 
 // GetRawDataOk returns a tuple with the RawData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ExecutionRequest) GetRawDataOk() (*string, bool) {
-	if o == nil || IsNil(o.RawData) {
+	if o == nil {
 		return nil, false
 	}
-	return o.RawData, true
+	return o.RawData.Get(), o.RawData.IsSet()
 }
 
 // IsSetRawData returns a boolean if a field has been set.
 func (o *ExecutionRequest) IsSetRawData() bool {
-	if o != nil && !IsNil(o.RawData) {
+	if o != nil && o.RawData.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetRawData gets a reference to the given string and assigns it to the RawData field.
+// SetRawData gets a reference to the given NullableString and assigns it to the RawData field.
 func (o *ExecutionRequest) SetRawData(v string) {
-	o.RawData = &v
+	o.RawData.Set(&v)
+}
+
+// SetRawDataNil sets the value for RawData to be an explicit nil
+func (o *ExecutionRequest) SetRawDataNil() {
+	o.RawData.Set(nil)
+}
+
+// UnsetRawData ensures that no value is present for RawData, not even an explicit nil
+func (o *ExecutionRequest) UnsetRawData() {
+	o.RawData.Unset()
 }
 
 func (o ExecutionRequest) MarshalJSON() ([]byte, error) {
@@ -620,20 +697,20 @@ func (o ExecutionRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.UniqueId) {
 		toSerialize["uniqueId"] = o.UniqueId
 	}
-	if !IsNil(o.ContainerId) {
-		toSerialize["containerId"] = o.ContainerId
+	if o.ContainerId.IsSet() {
+		toSerialize["containerId"] = o.ContainerId.Get()
 	}
-	if !IsNil(o.ServerId) {
-		toSerialize["serverId"] = o.ServerId
+	if o.ServerId.IsSet() {
+		toSerialize["serverId"] = o.ServerId.Get()
 	}
 	if !IsNil(o.InstanceId) {
 		toSerialize["instanceId"] = o.InstanceId
 	}
-	if !IsNil(o.ResourceId) {
-		toSerialize["resourceId"] = o.ResourceId
+	if o.ResourceId.IsSet() {
+		toSerialize["resourceId"] = o.ResourceId.Get()
 	}
-	if !IsNil(o.AppId) {
-		toSerialize["appId"] = o.AppId
+	if o.AppId.IsSet() {
+		toSerialize["appId"] = o.AppId.Get()
 	}
 	if !IsNil(o.StdOut) {
 		toSerialize["stdOut"] = o.StdOut
@@ -653,17 +730,17 @@ func (o ExecutionRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CreatedById) {
 		toSerialize["createdById"] = o.CreatedById
 	}
-	if !IsNil(o.StatusMessage) {
-		toSerialize["statusMessage"] = o.StatusMessage
+	if o.StatusMessage.IsSet() {
+		toSerialize["statusMessage"] = o.StatusMessage.Get()
 	}
-	if !IsNil(o.ErrorMessage) {
-		toSerialize["errorMessage"] = o.ErrorMessage
+	if o.ErrorMessage.IsSet() {
+		toSerialize["errorMessage"] = o.ErrorMessage.Get()
 	}
 	if !IsNil(o.Config) {
 		toSerialize["config"] = o.Config
 	}
-	if !IsNil(o.RawData) {
-		toSerialize["rawData"] = o.RawData
+	if o.RawData.IsSet() {
+		toSerialize["rawData"] = o.RawData.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {

@@ -7,9 +7,9 @@ Name | Type | Description | Notes
 **Type** | **string** | Type Code (nsx-t) | 
 **Name** | **string** | Name | 
 **Enabled** | Pointer to **bool** | Can be used to enable / disable the network server. | [optional] [default to true]
-**ServiceUrl** | **string** | URL | 
-**ServiceUsername** | Pointer to **string** | Username | [optional] 
-**ServicePassword** | Pointer to **string** | Password | [optional] 
+**ServiceUrl** | **NullableString** | URL | 
+**ServiceUsername** | Pointer to **NullableString** | Username | [optional] 
+**ServicePassword** | Pointer to **NullableString** | Password | [optional] 
 **Config** | Pointer to [**NSXNetworkServerConfig**](NSXNetworkServerConfig.md) |  | [optional] 
 **Visibility** | Pointer to **string** | Visibility - Set to public to allow all tenants | [optional] [default to "private"]
 **ZoneId** | **int64** | ID of the Cloud that the NSX network server integration should be attached to. | 
@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 
 ### NewNetworkServerCreateNSX
 
-`func NewNetworkServerCreateNSX(type_ string, name string, serviceUrl string, zoneId int64, ) *NetworkServerCreateNSX`
+`func NewNetworkServerCreateNSX(type_ string, name string, serviceUrl NullableString, zoneId int64, ) *NetworkServerCreateNSX`
 
 NewNetworkServerCreateNSX instantiates a new NetworkServerCreateNSX object
 This constructor will assign default values to properties that have it defined,
@@ -120,6 +120,16 @@ and a boolean to check if the value has been set.
 SetServiceUrl sets ServiceUrl field to given value.
 
 
+### SetServiceUrlNil
+
+`func (o *NetworkServerCreateNSX) SetServiceUrlNil(b bool)`
+
+ SetServiceUrlNil sets the value for ServiceUrl to be an explicit nil
+
+### UnsetServiceUrl
+`func (o *NetworkServerCreateNSX) UnsetServiceUrl()`
+
+UnsetServiceUrl ensures that no value is present for ServiceUrl, not even an explicit nil
 ### GetServiceUsername
 
 `func (o *NetworkServerCreateNSX) GetServiceUsername() string`
@@ -145,6 +155,16 @@ SetServiceUsername sets ServiceUsername field to given value.
 
 HasServiceUsername returns a boolean if a field has been set.
 
+### SetServiceUsernameNil
+
+`func (o *NetworkServerCreateNSX) SetServiceUsernameNil(b bool)`
+
+ SetServiceUsernameNil sets the value for ServiceUsername to be an explicit nil
+
+### UnsetServiceUsername
+`func (o *NetworkServerCreateNSX) UnsetServiceUsername()`
+
+UnsetServiceUsername ensures that no value is present for ServiceUsername, not even an explicit nil
 ### GetServicePassword
 
 `func (o *NetworkServerCreateNSX) GetServicePassword() string`
@@ -170,6 +190,16 @@ SetServicePassword sets ServicePassword field to given value.
 
 HasServicePassword returns a boolean if a field has been set.
 
+### SetServicePasswordNil
+
+`func (o *NetworkServerCreateNSX) SetServicePasswordNil(b bool)`
+
+ SetServicePasswordNil sets the value for ServicePassword to be an explicit nil
+
+### UnsetServicePassword
+`func (o *NetworkServerCreateNSX) UnsetServicePassword()`
+
+UnsetServicePassword ensures that no value is present for ServicePassword, not even an explicit nil
 ### GetConfig
 
 `func (o *NetworkServerCreateNSX) GetConfig() NSXNetworkServerConfig`

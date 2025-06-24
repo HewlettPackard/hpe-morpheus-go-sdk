@@ -6,27 +6,27 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
 **OwnerId** | Pointer to **int64** |  | [optional] 
-**Account** | Pointer to [**ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
+**Account** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **Group** | Pointer to **map[string]interface{}** |  | [optional] 
 **Cloud** | Pointer to [**ListInvoices200ResponseAllOfInvoicesInnerCloud**](ListInvoices200ResponseAllOfInvoicesInnerCloud.md) |  | [optional] 
 **Instance** | Pointer to **map[string]interface{}** |  | [optional] 
-**Server** | Pointer to **string** |  | [optional] 
-**Cluster** | Pointer to **string** |  | [optional] 
+**Server** | Pointer to **NullableString** |  | [optional] 
+**Cluster** | Pointer to **NullableString** |  | [optional] 
 **User** | Pointer to **map[string]interface{}** |  | [optional] 
 **Plan** | Pointer to **map[string]interface{}** |  | [optional] 
 **Tags** | Pointer to **[]map[string]interface{}** |  | [optional] 
-**Project** | Pointer to **string** |  | [optional] 
+**Project** | Pointer to **NullableString** |  | [optional] 
 **RefType** | Pointer to **string** |  | [optional] 
 **RefId** | Pointer to **int64** |  | [optional] 
-**RefUuid** | Pointer to **string** |  | [optional] 
+**RefUuid** | Pointer to **NullableString** |  | [optional] 
 **RefName** | Pointer to **string** |  | [optional] 
 **RefCategory** | Pointer to **string** |  | [optional] 
-**ResourceId** | Pointer to **string** |  | [optional] 
-**ResourceUuid** | Pointer to **string** |  | [optional] 
-**ResourceType** | Pointer to **string** |  | [optional] 
-**ResourceName** | Pointer to **string** |  | [optional] 
-**ResourceExternalId** | Pointer to **string** |  | [optional] 
-**ResourceInternalId** | Pointer to **string** |  | [optional] 
+**ResourceId** | Pointer to **NullableString** |  | [optional] 
+**ResourceUuid** | Pointer to **NullableString** |  | [optional] 
+**ResourceType** | Pointer to **NullableString** |  | [optional] 
+**ResourceName** | Pointer to **NullableString** |  | [optional] 
+**ResourceExternalId** | Pointer to **NullableString** |  | [optional] 
+**ResourceInternalId** | Pointer to **NullableString** |  | [optional] 
 **Interval** | Pointer to **string** |  | [optional] 
 **Period** | Pointer to **string** |  | [optional] 
 **Estimate** | Pointer to **bool** |  | [optional] 
@@ -92,13 +92,13 @@ Name | Type | Description | Notes
 **ConversionRate** | Pointer to **float32** |  | [optional] 
 **CostType** | Pointer to **string** |  | [optional] 
 **OffTime** | Pointer to **int64** |  | [optional] 
-**PowerState** | Pointer to **string** |  | [optional] 
+**PowerState** | Pointer to **NullableString** |  | [optional] 
 **PowerDate** | Pointer to **time.Time** |  | [optional] 
 **RunningMultiplier** | Pointer to **float32** |  | [optional] 
-**UsageType** | Pointer to **string** |  | [optional] 
-**UsageCategory** | Pointer to **string** |  | [optional] 
-**LastCostDate** | Pointer to **time.Time** |  | [optional] 
-**LastActualDate** | Pointer to **time.Time** |  | [optional] 
+**UsageType** | Pointer to **NullableString** |  | [optional] 
+**UsageCategory** | Pointer to **NullableString** |  | [optional] 
+**LastCostDate** | Pointer to **NullableTime** |  | [optional] 
+**LastActualDate** | Pointer to **NullableTime** |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
 **LineItemCount** | Pointer to **int64** |  | [optional] 
@@ -175,20 +175,20 @@ HasOwnerId returns a boolean if a field has been set.
 
 ### GetAccount
 
-`func (o *Invoice) GetAccount() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *Invoice) GetAccount() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetAccount returns the Account field if non-nil, zero value otherwise.
 
 ### GetAccountOk
 
-`func (o *Invoice) GetAccountOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *Invoice) GetAccountOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetAccountOk returns a tuple with the Account field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccount
 
-`func (o *Invoice) SetAccount(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *Invoice) SetAccount(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetAccount sets Account field to given value.
 
@@ -223,6 +223,16 @@ SetGroup sets Group field to given value.
 
 HasGroup returns a boolean if a field has been set.
 
+### SetGroupNil
+
+`func (o *Invoice) SetGroupNil(b bool)`
+
+ SetGroupNil sets the value for Group to be an explicit nil
+
+### UnsetGroup
+`func (o *Invoice) UnsetGroup()`
+
+UnsetGroup ensures that no value is present for Group, not even an explicit nil
 ### GetCloud
 
 `func (o *Invoice) GetCloud() ListInvoices200ResponseAllOfInvoicesInnerCloud`
@@ -273,6 +283,16 @@ SetInstance sets Instance field to given value.
 
 HasInstance returns a boolean if a field has been set.
 
+### SetInstanceNil
+
+`func (o *Invoice) SetInstanceNil(b bool)`
+
+ SetInstanceNil sets the value for Instance to be an explicit nil
+
+### UnsetInstance
+`func (o *Invoice) UnsetInstance()`
+
+UnsetInstance ensures that no value is present for Instance, not even an explicit nil
 ### GetServer
 
 `func (o *Invoice) GetServer() string`
@@ -298,6 +318,16 @@ SetServer sets Server field to given value.
 
 HasServer returns a boolean if a field has been set.
 
+### SetServerNil
+
+`func (o *Invoice) SetServerNil(b bool)`
+
+ SetServerNil sets the value for Server to be an explicit nil
+
+### UnsetServer
+`func (o *Invoice) UnsetServer()`
+
+UnsetServer ensures that no value is present for Server, not even an explicit nil
 ### GetCluster
 
 `func (o *Invoice) GetCluster() string`
@@ -323,6 +353,16 @@ SetCluster sets Cluster field to given value.
 
 HasCluster returns a boolean if a field has been set.
 
+### SetClusterNil
+
+`func (o *Invoice) SetClusterNil(b bool)`
+
+ SetClusterNil sets the value for Cluster to be an explicit nil
+
+### UnsetCluster
+`func (o *Invoice) UnsetCluster()`
+
+UnsetCluster ensures that no value is present for Cluster, not even an explicit nil
 ### GetUser
 
 `func (o *Invoice) GetUser() map[string]interface{}`
@@ -348,6 +388,16 @@ SetUser sets User field to given value.
 
 HasUser returns a boolean if a field has been set.
 
+### SetUserNil
+
+`func (o *Invoice) SetUserNil(b bool)`
+
+ SetUserNil sets the value for User to be an explicit nil
+
+### UnsetUser
+`func (o *Invoice) UnsetUser()`
+
+UnsetUser ensures that no value is present for User, not even an explicit nil
 ### GetPlan
 
 `func (o *Invoice) GetPlan() map[string]interface{}`
@@ -373,6 +423,16 @@ SetPlan sets Plan field to given value.
 
 HasPlan returns a boolean if a field has been set.
 
+### SetPlanNil
+
+`func (o *Invoice) SetPlanNil(b bool)`
+
+ SetPlanNil sets the value for Plan to be an explicit nil
+
+### UnsetPlan
+`func (o *Invoice) UnsetPlan()`
+
+UnsetPlan ensures that no value is present for Plan, not even an explicit nil
 ### GetTags
 
 `func (o *Invoice) GetTags() []map[string]interface{}`
@@ -398,6 +458,16 @@ SetTags sets Tags field to given value.
 
 HasTags returns a boolean if a field has been set.
 
+### SetTagsNil
+
+`func (o *Invoice) SetTagsNil(b bool)`
+
+ SetTagsNil sets the value for Tags to be an explicit nil
+
+### UnsetTags
+`func (o *Invoice) UnsetTags()`
+
+UnsetTags ensures that no value is present for Tags, not even an explicit nil
 ### GetProject
 
 `func (o *Invoice) GetProject() string`
@@ -423,6 +493,16 @@ SetProject sets Project field to given value.
 
 HasProject returns a boolean if a field has been set.
 
+### SetProjectNil
+
+`func (o *Invoice) SetProjectNil(b bool)`
+
+ SetProjectNil sets the value for Project to be an explicit nil
+
+### UnsetProject
+`func (o *Invoice) UnsetProject()`
+
+UnsetProject ensures that no value is present for Project, not even an explicit nil
 ### GetRefType
 
 `func (o *Invoice) GetRefType() string`
@@ -498,6 +578,16 @@ SetRefUuid sets RefUuid field to given value.
 
 HasRefUuid returns a boolean if a field has been set.
 
+### SetRefUuidNil
+
+`func (o *Invoice) SetRefUuidNil(b bool)`
+
+ SetRefUuidNil sets the value for RefUuid to be an explicit nil
+
+### UnsetRefUuid
+`func (o *Invoice) UnsetRefUuid()`
+
+UnsetRefUuid ensures that no value is present for RefUuid, not even an explicit nil
 ### GetRefName
 
 `func (o *Invoice) GetRefName() string`
@@ -573,6 +663,16 @@ SetResourceId sets ResourceId field to given value.
 
 HasResourceId returns a boolean if a field has been set.
 
+### SetResourceIdNil
+
+`func (o *Invoice) SetResourceIdNil(b bool)`
+
+ SetResourceIdNil sets the value for ResourceId to be an explicit nil
+
+### UnsetResourceId
+`func (o *Invoice) UnsetResourceId()`
+
+UnsetResourceId ensures that no value is present for ResourceId, not even an explicit nil
 ### GetResourceUuid
 
 `func (o *Invoice) GetResourceUuid() string`
@@ -598,6 +698,16 @@ SetResourceUuid sets ResourceUuid field to given value.
 
 HasResourceUuid returns a boolean if a field has been set.
 
+### SetResourceUuidNil
+
+`func (o *Invoice) SetResourceUuidNil(b bool)`
+
+ SetResourceUuidNil sets the value for ResourceUuid to be an explicit nil
+
+### UnsetResourceUuid
+`func (o *Invoice) UnsetResourceUuid()`
+
+UnsetResourceUuid ensures that no value is present for ResourceUuid, not even an explicit nil
 ### GetResourceType
 
 `func (o *Invoice) GetResourceType() string`
@@ -623,6 +733,16 @@ SetResourceType sets ResourceType field to given value.
 
 HasResourceType returns a boolean if a field has been set.
 
+### SetResourceTypeNil
+
+`func (o *Invoice) SetResourceTypeNil(b bool)`
+
+ SetResourceTypeNil sets the value for ResourceType to be an explicit nil
+
+### UnsetResourceType
+`func (o *Invoice) UnsetResourceType()`
+
+UnsetResourceType ensures that no value is present for ResourceType, not even an explicit nil
 ### GetResourceName
 
 `func (o *Invoice) GetResourceName() string`
@@ -648,6 +768,16 @@ SetResourceName sets ResourceName field to given value.
 
 HasResourceName returns a boolean if a field has been set.
 
+### SetResourceNameNil
+
+`func (o *Invoice) SetResourceNameNil(b bool)`
+
+ SetResourceNameNil sets the value for ResourceName to be an explicit nil
+
+### UnsetResourceName
+`func (o *Invoice) UnsetResourceName()`
+
+UnsetResourceName ensures that no value is present for ResourceName, not even an explicit nil
 ### GetResourceExternalId
 
 `func (o *Invoice) GetResourceExternalId() string`
@@ -673,6 +803,16 @@ SetResourceExternalId sets ResourceExternalId field to given value.
 
 HasResourceExternalId returns a boolean if a field has been set.
 
+### SetResourceExternalIdNil
+
+`func (o *Invoice) SetResourceExternalIdNil(b bool)`
+
+ SetResourceExternalIdNil sets the value for ResourceExternalId to be an explicit nil
+
+### UnsetResourceExternalId
+`func (o *Invoice) UnsetResourceExternalId()`
+
+UnsetResourceExternalId ensures that no value is present for ResourceExternalId, not even an explicit nil
 ### GetResourceInternalId
 
 `func (o *Invoice) GetResourceInternalId() string`
@@ -698,6 +838,16 @@ SetResourceInternalId sets ResourceInternalId field to given value.
 
 HasResourceInternalId returns a boolean if a field has been set.
 
+### SetResourceInternalIdNil
+
+`func (o *Invoice) SetResourceInternalIdNil(b bool)`
+
+ SetResourceInternalIdNil sets the value for ResourceInternalId to be an explicit nil
+
+### UnsetResourceInternalId
+`func (o *Invoice) UnsetResourceInternalId()`
+
+UnsetResourceInternalId ensures that no value is present for ResourceInternalId, not even an explicit nil
 ### GetInterval
 
 `func (o *Invoice) GetInterval() string`
@@ -2348,6 +2498,16 @@ SetPowerState sets PowerState field to given value.
 
 HasPowerState returns a boolean if a field has been set.
 
+### SetPowerStateNil
+
+`func (o *Invoice) SetPowerStateNil(b bool)`
+
+ SetPowerStateNil sets the value for PowerState to be an explicit nil
+
+### UnsetPowerState
+`func (o *Invoice) UnsetPowerState()`
+
+UnsetPowerState ensures that no value is present for PowerState, not even an explicit nil
 ### GetPowerDate
 
 `func (o *Invoice) GetPowerDate() time.Time`
@@ -2423,6 +2583,16 @@ SetUsageType sets UsageType field to given value.
 
 HasUsageType returns a boolean if a field has been set.
 
+### SetUsageTypeNil
+
+`func (o *Invoice) SetUsageTypeNil(b bool)`
+
+ SetUsageTypeNil sets the value for UsageType to be an explicit nil
+
+### UnsetUsageType
+`func (o *Invoice) UnsetUsageType()`
+
+UnsetUsageType ensures that no value is present for UsageType, not even an explicit nil
 ### GetUsageCategory
 
 `func (o *Invoice) GetUsageCategory() string`
@@ -2448,6 +2618,16 @@ SetUsageCategory sets UsageCategory field to given value.
 
 HasUsageCategory returns a boolean if a field has been set.
 
+### SetUsageCategoryNil
+
+`func (o *Invoice) SetUsageCategoryNil(b bool)`
+
+ SetUsageCategoryNil sets the value for UsageCategory to be an explicit nil
+
+### UnsetUsageCategory
+`func (o *Invoice) UnsetUsageCategory()`
+
+UnsetUsageCategory ensures that no value is present for UsageCategory, not even an explicit nil
 ### GetLastCostDate
 
 `func (o *Invoice) GetLastCostDate() time.Time`
@@ -2473,6 +2653,16 @@ SetLastCostDate sets LastCostDate field to given value.
 
 HasLastCostDate returns a boolean if a field has been set.
 
+### SetLastCostDateNil
+
+`func (o *Invoice) SetLastCostDateNil(b bool)`
+
+ SetLastCostDateNil sets the value for LastCostDate to be an explicit nil
+
+### UnsetLastCostDate
+`func (o *Invoice) UnsetLastCostDate()`
+
+UnsetLastCostDate ensures that no value is present for LastCostDate, not even an explicit nil
 ### GetLastActualDate
 
 `func (o *Invoice) GetLastActualDate() time.Time`
@@ -2498,6 +2688,16 @@ SetLastActualDate sets LastActualDate field to given value.
 
 HasLastActualDate returns a boolean if a field has been set.
 
+### SetLastActualDateNil
+
+`func (o *Invoice) SetLastActualDateNil(b bool)`
+
+ SetLastActualDateNil sets the value for LastActualDate to be an explicit nil
+
+### UnsetLastActualDate
+`func (o *Invoice) UnsetLastActualDate()`
+
+UnsetLastActualDate ensures that no value is present for LastActualDate, not even an explicit nil
 ### GetDateCreated
 
 `func (o *Invoice) GetDateCreated() time.Time`

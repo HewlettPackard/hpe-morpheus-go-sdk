@@ -12,9 +12,9 @@ Name | Type | Description | Notes
 **Type** | Pointer to **string** |  | [optional] 
 **RegionCode** | Pointer to **string** |  | [optional] 
 **SystemCreated** | Pointer to **bool** |  | [optional] 
-**Zone** | Pointer to **string** |  | [optional] 
-**ZonePool** | Pointer to **string** |  | [optional] 
-**Account** | Pointer to **string** |  | [optional] 
+**Zone** | Pointer to **NullableString** |  | [optional] 
+**ZonePool** | Pointer to **NullableString** |  | [optional] 
+**Account** | Pointer to **NullableString** |  | [optional] 
 **Prices** | Pointer to [**[]ListPriceSets200ResponseAllOfPriceSetsInnerPricesInner**](ListPriceSets200ResponseAllOfPriceSetsInnerPricesInner.md) |  | [optional] 
 
 ## Methods
@@ -261,6 +261,16 @@ SetZone sets Zone field to given value.
 
 HasZone returns a boolean if a field has been set.
 
+### SetZoneNil
+
+`func (o *ListPriceSets200ResponseAllOfPriceSetsInner) SetZoneNil(b bool)`
+
+ SetZoneNil sets the value for Zone to be an explicit nil
+
+### UnsetZone
+`func (o *ListPriceSets200ResponseAllOfPriceSetsInner) UnsetZone()`
+
+UnsetZone ensures that no value is present for Zone, not even an explicit nil
 ### GetZonePool
 
 `func (o *ListPriceSets200ResponseAllOfPriceSetsInner) GetZonePool() string`
@@ -286,6 +296,16 @@ SetZonePool sets ZonePool field to given value.
 
 HasZonePool returns a boolean if a field has been set.
 
+### SetZonePoolNil
+
+`func (o *ListPriceSets200ResponseAllOfPriceSetsInner) SetZonePoolNil(b bool)`
+
+ SetZonePoolNil sets the value for ZonePool to be an explicit nil
+
+### UnsetZonePool
+`func (o *ListPriceSets200ResponseAllOfPriceSetsInner) UnsetZonePool()`
+
+UnsetZonePool ensures that no value is present for ZonePool, not even an explicit nil
 ### GetAccount
 
 `func (o *ListPriceSets200ResponseAllOfPriceSetsInner) GetAccount() string`
@@ -311,6 +331,16 @@ SetAccount sets Account field to given value.
 
 HasAccount returns a boolean if a field has been set.
 
+### SetAccountNil
+
+`func (o *ListPriceSets200ResponseAllOfPriceSetsInner) SetAccountNil(b bool)`
+
+ SetAccountNil sets the value for Account to be an explicit nil
+
+### UnsetAccount
+`func (o *ListPriceSets200ResponseAllOfPriceSetsInner) UnsetAccount()`
+
+UnsetAccount ensures that no value is present for Account, not even an explicit nil
 ### GetPrices
 
 `func (o *ListPriceSets200ResponseAllOfPriceSetsInner) GetPrices() []ListPriceSets200ResponseAllOfPriceSetsInnerPricesInner`

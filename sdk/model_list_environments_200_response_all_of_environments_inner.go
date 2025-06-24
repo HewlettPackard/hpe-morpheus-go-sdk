@@ -21,17 +21,17 @@ var _ MappedNullable = &ListEnvironments200ResponseAllOfEnvironmentsInner{}
 
 // ListEnvironments200ResponseAllOfEnvironmentsInner struct for ListEnvironments200ResponseAllOfEnvironmentsInner
 type ListEnvironments200ResponseAllOfEnvironmentsInner struct {
-	Id                   *int64                                                                  `json:"id,omitempty"`
-	Account              *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"account,omitempty"`
-	Code                 *string                                                                 `json:"code,omitempty"`
-	Name                 *string                                                                 `json:"name,omitempty"`
-	Description          *string                                                                 `json:"description,omitempty"`
-	Visibility           *string                                                                 `json:"visibility,omitempty"`
-	Active               *bool                                                                   `json:"active,omitempty"`
-	SortOrder            *int64                                                                  `json:"sortOrder,omitempty"`
-	DateCreated          *time.Time                                                              `json:"dateCreated,omitempty"`
-	LastUpdated          *time.Time                                                              `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}                                                  `json:",remain"`
+	Id                   *int64                                             `json:"id,omitempty"`
+	Account              *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"account,omitempty"`
+	Code                 *string                                            `json:"code,omitempty"`
+	Name                 *string                                            `json:"name,omitempty"`
+	Description          *string                                            `json:"description,omitempty"`
+	Visibility           *string                                            `json:"visibility,omitempty"`
+	Active               *bool                                              `json:"active,omitempty"`
+	SortOrder            *int64                                             `json:"sortOrder,omitempty"`
+	DateCreated          *time.Time                                         `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                         `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}                             `json:",remain"`
 }
 
 type _ListEnvironments200ResponseAllOfEnvironmentsInner ListEnvironments200ResponseAllOfEnvironmentsInner
@@ -86,9 +86,9 @@ func (o *ListEnvironments200ResponseAllOfEnvironmentsInner) SetId(v int64) {
 }
 
 // GetAccount returns the Account field value if set, zero value otherwise.
-func (o *ListEnvironments200ResponseAllOfEnvironmentsInner) GetAccount() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *ListEnvironments200ResponseAllOfEnvironmentsInner) GetAccount() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.Account) {
-		var ret ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return *o.Account
@@ -96,7 +96,7 @@ func (o *ListEnvironments200ResponseAllOfEnvironmentsInner) GetAccount() ListApp
 
 // GetAccountOk returns a tuple with the Account field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListEnvironments200ResponseAllOfEnvironmentsInner) GetAccountOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *ListEnvironments200ResponseAllOfEnvironmentsInner) GetAccountOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.Account) {
 		return nil, false
 	}
@@ -112,8 +112,8 @@ func (o *ListEnvironments200ResponseAllOfEnvironmentsInner) IsSetAccount() bool 
 	return false
 }
 
-// SetAccount gets a reference to the given ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the Account field.
-func (o *ListEnvironments200ResponseAllOfEnvironmentsInner) SetAccount(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetAccount gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Account field.
+func (o *ListEnvironments200ResponseAllOfEnvironmentsInner) SetAccount(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.Account = &v
 }
 

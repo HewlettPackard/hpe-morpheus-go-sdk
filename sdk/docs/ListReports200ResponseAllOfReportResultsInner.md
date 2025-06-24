@@ -6,13 +6,13 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
 **Type** | Pointer to [**ListClusterNetworkEndpoints200ResponseAllOfEndpointsInner**](ListClusterNetworkEndpoints200ResponseAllOfEndpointsInner.md) |  | [optional] 
-**ReportTitle** | Pointer to **string** |  | [optional] 
-**FilterTitle** | Pointer to **string** |  | [optional] 
+**ReportTitle** | Pointer to **NullableString** |  | [optional] 
+**FilterTitle** | Pointer to **NullableString** |  | [optional] 
 **Status** | Pointer to **string** |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
-**StartDate** | Pointer to **time.Time** |  | [optional] 
-**EndDate** | Pointer to **time.Time** |  | [optional] 
+**StartDate** | Pointer to **NullableTime** |  | [optional] 
+**EndDate** | Pointer to **NullableTime** |  | [optional] 
 **Config** | Pointer to [**ListReports200ResponseAllOfReportResultsInnerConfig**](ListReports200ResponseAllOfReportResultsInnerConfig.md) |  | [optional] 
 **CreatedBy** | Pointer to [**ListActivity200ResponseAllOfActivityInnerActivityInnerUser**](ListActivity200ResponseAllOfActivityInnerActivityInnerUser.md) |  | [optional] 
 **Rows** | Pointer to [**[]ListReports200ResponseAllOfReportResultsInnerRowsInner**](ListReports200ResponseAllOfReportResultsInnerRowsInner.md) |  | [optional] 
@@ -111,6 +111,16 @@ SetReportTitle sets ReportTitle field to given value.
 
 HasReportTitle returns a boolean if a field has been set.
 
+### SetReportTitleNil
+
+`func (o *ListReports200ResponseAllOfReportResultsInner) SetReportTitleNil(b bool)`
+
+ SetReportTitleNil sets the value for ReportTitle to be an explicit nil
+
+### UnsetReportTitle
+`func (o *ListReports200ResponseAllOfReportResultsInner) UnsetReportTitle()`
+
+UnsetReportTitle ensures that no value is present for ReportTitle, not even an explicit nil
 ### GetFilterTitle
 
 `func (o *ListReports200ResponseAllOfReportResultsInner) GetFilterTitle() string`
@@ -136,6 +146,16 @@ SetFilterTitle sets FilterTitle field to given value.
 
 HasFilterTitle returns a boolean if a field has been set.
 
+### SetFilterTitleNil
+
+`func (o *ListReports200ResponseAllOfReportResultsInner) SetFilterTitleNil(b bool)`
+
+ SetFilterTitleNil sets the value for FilterTitle to be an explicit nil
+
+### UnsetFilterTitle
+`func (o *ListReports200ResponseAllOfReportResultsInner) UnsetFilterTitle()`
+
+UnsetFilterTitle ensures that no value is present for FilterTitle, not even an explicit nil
 ### GetStatus
 
 `func (o *ListReports200ResponseAllOfReportResultsInner) GetStatus() string`
@@ -236,6 +256,16 @@ SetStartDate sets StartDate field to given value.
 
 HasStartDate returns a boolean if a field has been set.
 
+### SetStartDateNil
+
+`func (o *ListReports200ResponseAllOfReportResultsInner) SetStartDateNil(b bool)`
+
+ SetStartDateNil sets the value for StartDate to be an explicit nil
+
+### UnsetStartDate
+`func (o *ListReports200ResponseAllOfReportResultsInner) UnsetStartDate()`
+
+UnsetStartDate ensures that no value is present for StartDate, not even an explicit nil
 ### GetEndDate
 
 `func (o *ListReports200ResponseAllOfReportResultsInner) GetEndDate() time.Time`
@@ -261,6 +291,16 @@ SetEndDate sets EndDate field to given value.
 
 HasEndDate returns a boolean if a field has been set.
 
+### SetEndDateNil
+
+`func (o *ListReports200ResponseAllOfReportResultsInner) SetEndDateNil(b bool)`
+
+ SetEndDateNil sets the value for EndDate to be an explicit nil
+
+### UnsetEndDate
+`func (o *ListReports200ResponseAllOfReportResultsInner) UnsetEndDate()`
+
+UnsetEndDate ensures that no value is present for EndDate, not even an explicit nil
 ### GetConfig
 
 `func (o *ListReports200ResponseAllOfReportResultsInner) GetConfig() ListReports200ResponseAllOfReportResultsInnerConfig`

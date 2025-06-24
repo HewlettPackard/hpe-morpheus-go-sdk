@@ -23,8 +23,8 @@ type ClusterNamespaceCreateSuccess struct {
 	Id                   *int64                 `json:"id,omitempty"`
 	Name                 *string                `json:"name,omitempty"`
 	Description          *string                `json:"description,omitempty"`
-	RegionCode           *string                `json:"regionCode,omitempty"`
-	ExternalId           *string                `json:"externalId,omitempty"`
+	RegionCode           NullableString         `json:"regionCode,omitempty"`
+	ExternalId           NullableString         `json:"externalId,omitempty"`
 	Status               *string                `json:"status,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
@@ -144,68 +144,90 @@ func (o *ClusterNamespaceCreateSuccess) SetDescription(v string) {
 	o.Description = &v
 }
 
-// GetRegionCode returns the RegionCode field value if set, zero value otherwise.
+// GetRegionCode returns the RegionCode field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ClusterNamespaceCreateSuccess) GetRegionCode() string {
-	if o == nil || IsNil(o.RegionCode) {
+	if o == nil || IsNil(o.RegionCode.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.RegionCode
+	return *o.RegionCode.Get()
 }
 
 // GetRegionCodeOk returns a tuple with the RegionCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ClusterNamespaceCreateSuccess) GetRegionCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.RegionCode) {
+	if o == nil {
 		return nil, false
 	}
-	return o.RegionCode, true
+	return o.RegionCode.Get(), o.RegionCode.IsSet()
 }
 
 // IsSetRegionCode returns a boolean if a field has been set.
 func (o *ClusterNamespaceCreateSuccess) IsSetRegionCode() bool {
-	if o != nil && !IsNil(o.RegionCode) {
+	if o != nil && o.RegionCode.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetRegionCode gets a reference to the given string and assigns it to the RegionCode field.
+// SetRegionCode gets a reference to the given NullableString and assigns it to the RegionCode field.
 func (o *ClusterNamespaceCreateSuccess) SetRegionCode(v string) {
-	o.RegionCode = &v
+	o.RegionCode.Set(&v)
 }
 
-// GetExternalId returns the ExternalId field value if set, zero value otherwise.
+// SetRegionCodeNil sets the value for RegionCode to be an explicit nil
+func (o *ClusterNamespaceCreateSuccess) SetRegionCodeNil() {
+	o.RegionCode.Set(nil)
+}
+
+// UnsetRegionCode ensures that no value is present for RegionCode, not even an explicit nil
+func (o *ClusterNamespaceCreateSuccess) UnsetRegionCode() {
+	o.RegionCode.Unset()
+}
+
+// GetExternalId returns the ExternalId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ClusterNamespaceCreateSuccess) GetExternalId() string {
-	if o == nil || IsNil(o.ExternalId) {
+	if o == nil || IsNil(o.ExternalId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ExternalId
+	return *o.ExternalId.Get()
 }
 
 // GetExternalIdOk returns a tuple with the ExternalId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ClusterNamespaceCreateSuccess) GetExternalIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ExternalId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ExternalId, true
+	return o.ExternalId.Get(), o.ExternalId.IsSet()
 }
 
 // IsSetExternalId returns a boolean if a field has been set.
 func (o *ClusterNamespaceCreateSuccess) IsSetExternalId() bool {
-	if o != nil && !IsNil(o.ExternalId) {
+	if o != nil && o.ExternalId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetExternalId gets a reference to the given string and assigns it to the ExternalId field.
+// SetExternalId gets a reference to the given NullableString and assigns it to the ExternalId field.
 func (o *ClusterNamespaceCreateSuccess) SetExternalId(v string) {
-	o.ExternalId = &v
+	o.ExternalId.Set(&v)
+}
+
+// SetExternalIdNil sets the value for ExternalId to be an explicit nil
+func (o *ClusterNamespaceCreateSuccess) SetExternalIdNil() {
+	o.ExternalId.Set(nil)
+}
+
+// UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
+func (o *ClusterNamespaceCreateSuccess) UnsetExternalId() {
+	o.ExternalId.Unset()
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
@@ -259,11 +281,11 @@ func (o ClusterNamespaceCreateSuccess) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
-	if !IsNil(o.RegionCode) {
-		toSerialize["regionCode"] = o.RegionCode
+	if o.RegionCode.IsSet() {
+		toSerialize["regionCode"] = o.RegionCode.Get()
 	}
-	if !IsNil(o.ExternalId) {
-		toSerialize["externalId"] = o.ExternalId
+	if o.ExternalId.IsSet() {
+		toSerialize["externalId"] = o.ExternalId.Get()
 	}
 	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status

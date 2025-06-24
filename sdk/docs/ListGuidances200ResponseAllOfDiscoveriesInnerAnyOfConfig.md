@@ -6,46 +6,46 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Exists** | Pointer to **bool** |  | [optional] 
 **ObjectId** | Pointer to **int64** |  | [optional] 
-**CpuTotalTimeCount** | Pointer to **float32** |  | [optional] 
-**CpuTotalTimeMin** | Pointer to **float32** |  | [optional] 
-**CpuTotalTimeMax** | Pointer to **float32** |  | [optional] 
-**CpuTotalTimeAvg** | Pointer to **float32** |  | [optional] 
-**CpuTotalTimeSum** | Pointer to **float32** |  | [optional] 
-**CpuIdleTimeCount** | Pointer to **float32** |  | [optional] 
-**CpuIdleTimeMin** | Pointer to **float32** |  | [optional] 
-**CpuIdleTimeMax** | Pointer to **float32** |  | [optional] 
-**CpuIdleTimeAvg** | Pointer to **float32** |  | [optional] 
-**CpuIdleTimeSum** | Pointer to **float32** |  | [optional] 
-**CpuUsageCount** | Pointer to **float32** |  | [optional] 
-**CpuUsageMin** | Pointer to **float32** |  | [optional] 
-**CpuUsageMax** | Pointer to **float32** |  | [optional] 
-**CpuUsageAvg** | Pointer to **float32** |  | [optional] 
-**CpuUsageSum** | Pointer to **float32** |  | [optional] 
-**MaxMemoryCount** | Pointer to **float32** |  | [optional] 
-**MaxMemoryMin** | Pointer to **float32** |  | [optional] 
-**MaxMemoryMax** | Pointer to **float32** |  | [optional] 
-**MaxMemoryAvg** | Pointer to **float32** |  | [optional] 
-**MaxMemorySum** | Pointer to **float32** |  | [optional] 
-**CpuUserTimeCount** | Pointer to **float32** |  | [optional] 
-**CpuUserTimeMin** | Pointer to **float32** |  | [optional] 
-**CpuUserTimeMax** | Pointer to **float32** |  | [optional] 
-**CpuUserTimeAvg** | Pointer to **float32** |  | [optional] 
-**CpuUserTimeSum** | Pointer to **float32** |  | [optional] 
-**CpuSystemTimeCount** | Pointer to **float32** |  | [optional] 
-**CpuSystemTimeMin** | Pointer to **float32** |  | [optional] 
-**CpuSystemTimeMax** | Pointer to **float32** |  | [optional] 
+**CpuTotalTimeCount** | Pointer to **NullableFloat32** |  | [optional] 
+**CpuTotalTimeMin** | Pointer to **NullableFloat32** |  | [optional] 
+**CpuTotalTimeMax** | Pointer to **NullableFloat32** |  | [optional] 
+**CpuTotalTimeAvg** | Pointer to **NullableFloat32** |  | [optional] 
+**CpuTotalTimeSum** | Pointer to **NullableFloat32** |  | [optional] 
+**CpuIdleTimeCount** | Pointer to **NullableFloat32** |  | [optional] 
+**CpuIdleTimeMin** | Pointer to **NullableFloat32** |  | [optional] 
+**CpuIdleTimeMax** | Pointer to **NullableFloat32** |  | [optional] 
+**CpuIdleTimeAvg** | Pointer to **NullableFloat32** |  | [optional] 
+**CpuIdleTimeSum** | Pointer to **NullableFloat32** |  | [optional] 
+**CpuUsageCount** | Pointer to **NullableFloat32** |  | [optional] 
+**CpuUsageMin** | Pointer to **NullableFloat32** |  | [optional] 
+**CpuUsageMax** | Pointer to **NullableFloat32** |  | [optional] 
+**CpuUsageAvg** | Pointer to **NullableFloat32** |  | [optional] 
+**CpuUsageSum** | Pointer to **NullableFloat32** |  | [optional] 
+**MaxMemoryCount** | Pointer to **NullableFloat32** |  | [optional] 
+**MaxMemoryMin** | Pointer to **NullableFloat32** |  | [optional] 
+**MaxMemoryMax** | Pointer to **NullableFloat32** |  | [optional] 
+**MaxMemoryAvg** | Pointer to **NullableFloat32** |  | [optional] 
+**MaxMemorySum** | Pointer to **NullableFloat32** |  | [optional] 
+**CpuUserTimeCount** | Pointer to **NullableFloat32** |  | [optional] 
+**CpuUserTimeMin** | Pointer to **NullableFloat32** |  | [optional] 
+**CpuUserTimeMax** | Pointer to **NullableFloat32** |  | [optional] 
+**CpuUserTimeAvg** | Pointer to **NullableFloat32** |  | [optional] 
+**CpuUserTimeSum** | Pointer to **NullableFloat32** |  | [optional] 
+**CpuSystemTimeCount** | Pointer to **NullableFloat32** |  | [optional] 
+**CpuSystemTimeMin** | Pointer to **NullableFloat32** |  | [optional] 
+**CpuSystemTimeMax** | Pointer to **NullableFloat32** |  | [optional] 
 **CpuSystemTimeAvg** | Pointer to **float32** |  | [optional] 
-**CpuSystemTimeSum** | Pointer to **float32** |  | [optional] 
-**UsedMemoryCount** | Pointer to **float32** |  | [optional] 
-**UsedMemoryMin** | Pointer to **float32** |  | [optional] 
-**UsedMemoryMax** | Pointer to **float32** |  | [optional] 
-**UsedMemoryAvg** | Pointer to **float32** |  | [optional] 
-**UsedMemorySum** | Pointer to **float32** |  | [optional] 
-**FreeMemoryCount** | Pointer to **float32** |  | [optional] 
-**FreeMemoryMin** | Pointer to **float32** |  | [optional] 
-**FreeMemoryMax** | Pointer to **float32** |  | [optional] 
-**FreeMemoryAvg** | Pointer to **float32** |  | [optional] 
-**FreeMemorySum** | Pointer to **float32** |  | [optional] 
+**CpuSystemTimeSum** | Pointer to **NullableFloat32** |  | [optional] 
+**UsedMemoryCount** | Pointer to **NullableFloat32** |  | [optional] 
+**UsedMemoryMin** | Pointer to **NullableFloat32** |  | [optional] 
+**UsedMemoryMax** | Pointer to **NullableFloat32** |  | [optional] 
+**UsedMemoryAvg** | Pointer to **NullableFloat32** |  | [optional] 
+**UsedMemorySum** | Pointer to **NullableFloat32** |  | [optional] 
+**FreeMemoryCount** | Pointer to **NullableFloat32** |  | [optional] 
+**FreeMemoryMin** | Pointer to **NullableFloat32** |  | [optional] 
+**FreeMemoryMax** | Pointer to **NullableFloat32** |  | [optional] 
+**FreeMemoryAvg** | Pointer to **NullableFloat32** |  | [optional] 
+**FreeMemorySum** | Pointer to **NullableFloat32** |  | [optional] 
 
 ## Methods
 
@@ -141,6 +141,16 @@ SetCpuTotalTimeCount sets CpuTotalTimeCount field to given value.
 
 HasCpuTotalTimeCount returns a boolean if a field has been set.
 
+### SetCpuTotalTimeCountNil
+
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetCpuTotalTimeCountNil(b bool)`
+
+ SetCpuTotalTimeCountNil sets the value for CpuTotalTimeCount to be an explicit nil
+
+### UnsetCpuTotalTimeCount
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) UnsetCpuTotalTimeCount()`
+
+UnsetCpuTotalTimeCount ensures that no value is present for CpuTotalTimeCount, not even an explicit nil
 ### GetCpuTotalTimeMin
 
 `func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetCpuTotalTimeMin() float32`
@@ -166,6 +176,16 @@ SetCpuTotalTimeMin sets CpuTotalTimeMin field to given value.
 
 HasCpuTotalTimeMin returns a boolean if a field has been set.
 
+### SetCpuTotalTimeMinNil
+
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetCpuTotalTimeMinNil(b bool)`
+
+ SetCpuTotalTimeMinNil sets the value for CpuTotalTimeMin to be an explicit nil
+
+### UnsetCpuTotalTimeMin
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) UnsetCpuTotalTimeMin()`
+
+UnsetCpuTotalTimeMin ensures that no value is present for CpuTotalTimeMin, not even an explicit nil
 ### GetCpuTotalTimeMax
 
 `func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetCpuTotalTimeMax() float32`
@@ -191,6 +211,16 @@ SetCpuTotalTimeMax sets CpuTotalTimeMax field to given value.
 
 HasCpuTotalTimeMax returns a boolean if a field has been set.
 
+### SetCpuTotalTimeMaxNil
+
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetCpuTotalTimeMaxNil(b bool)`
+
+ SetCpuTotalTimeMaxNil sets the value for CpuTotalTimeMax to be an explicit nil
+
+### UnsetCpuTotalTimeMax
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) UnsetCpuTotalTimeMax()`
+
+UnsetCpuTotalTimeMax ensures that no value is present for CpuTotalTimeMax, not even an explicit nil
 ### GetCpuTotalTimeAvg
 
 `func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetCpuTotalTimeAvg() float32`
@@ -216,6 +246,16 @@ SetCpuTotalTimeAvg sets CpuTotalTimeAvg field to given value.
 
 HasCpuTotalTimeAvg returns a boolean if a field has been set.
 
+### SetCpuTotalTimeAvgNil
+
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetCpuTotalTimeAvgNil(b bool)`
+
+ SetCpuTotalTimeAvgNil sets the value for CpuTotalTimeAvg to be an explicit nil
+
+### UnsetCpuTotalTimeAvg
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) UnsetCpuTotalTimeAvg()`
+
+UnsetCpuTotalTimeAvg ensures that no value is present for CpuTotalTimeAvg, not even an explicit nil
 ### GetCpuTotalTimeSum
 
 `func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetCpuTotalTimeSum() float32`
@@ -241,6 +281,16 @@ SetCpuTotalTimeSum sets CpuTotalTimeSum field to given value.
 
 HasCpuTotalTimeSum returns a boolean if a field has been set.
 
+### SetCpuTotalTimeSumNil
+
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetCpuTotalTimeSumNil(b bool)`
+
+ SetCpuTotalTimeSumNil sets the value for CpuTotalTimeSum to be an explicit nil
+
+### UnsetCpuTotalTimeSum
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) UnsetCpuTotalTimeSum()`
+
+UnsetCpuTotalTimeSum ensures that no value is present for CpuTotalTimeSum, not even an explicit nil
 ### GetCpuIdleTimeCount
 
 `func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetCpuIdleTimeCount() float32`
@@ -266,6 +316,16 @@ SetCpuIdleTimeCount sets CpuIdleTimeCount field to given value.
 
 HasCpuIdleTimeCount returns a boolean if a field has been set.
 
+### SetCpuIdleTimeCountNil
+
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetCpuIdleTimeCountNil(b bool)`
+
+ SetCpuIdleTimeCountNil sets the value for CpuIdleTimeCount to be an explicit nil
+
+### UnsetCpuIdleTimeCount
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) UnsetCpuIdleTimeCount()`
+
+UnsetCpuIdleTimeCount ensures that no value is present for CpuIdleTimeCount, not even an explicit nil
 ### GetCpuIdleTimeMin
 
 `func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetCpuIdleTimeMin() float32`
@@ -291,6 +351,16 @@ SetCpuIdleTimeMin sets CpuIdleTimeMin field to given value.
 
 HasCpuIdleTimeMin returns a boolean if a field has been set.
 
+### SetCpuIdleTimeMinNil
+
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetCpuIdleTimeMinNil(b bool)`
+
+ SetCpuIdleTimeMinNil sets the value for CpuIdleTimeMin to be an explicit nil
+
+### UnsetCpuIdleTimeMin
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) UnsetCpuIdleTimeMin()`
+
+UnsetCpuIdleTimeMin ensures that no value is present for CpuIdleTimeMin, not even an explicit nil
 ### GetCpuIdleTimeMax
 
 `func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetCpuIdleTimeMax() float32`
@@ -316,6 +386,16 @@ SetCpuIdleTimeMax sets CpuIdleTimeMax field to given value.
 
 HasCpuIdleTimeMax returns a boolean if a field has been set.
 
+### SetCpuIdleTimeMaxNil
+
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetCpuIdleTimeMaxNil(b bool)`
+
+ SetCpuIdleTimeMaxNil sets the value for CpuIdleTimeMax to be an explicit nil
+
+### UnsetCpuIdleTimeMax
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) UnsetCpuIdleTimeMax()`
+
+UnsetCpuIdleTimeMax ensures that no value is present for CpuIdleTimeMax, not even an explicit nil
 ### GetCpuIdleTimeAvg
 
 `func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetCpuIdleTimeAvg() float32`
@@ -341,6 +421,16 @@ SetCpuIdleTimeAvg sets CpuIdleTimeAvg field to given value.
 
 HasCpuIdleTimeAvg returns a boolean if a field has been set.
 
+### SetCpuIdleTimeAvgNil
+
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetCpuIdleTimeAvgNil(b bool)`
+
+ SetCpuIdleTimeAvgNil sets the value for CpuIdleTimeAvg to be an explicit nil
+
+### UnsetCpuIdleTimeAvg
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) UnsetCpuIdleTimeAvg()`
+
+UnsetCpuIdleTimeAvg ensures that no value is present for CpuIdleTimeAvg, not even an explicit nil
 ### GetCpuIdleTimeSum
 
 `func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetCpuIdleTimeSum() float32`
@@ -366,6 +456,16 @@ SetCpuIdleTimeSum sets CpuIdleTimeSum field to given value.
 
 HasCpuIdleTimeSum returns a boolean if a field has been set.
 
+### SetCpuIdleTimeSumNil
+
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetCpuIdleTimeSumNil(b bool)`
+
+ SetCpuIdleTimeSumNil sets the value for CpuIdleTimeSum to be an explicit nil
+
+### UnsetCpuIdleTimeSum
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) UnsetCpuIdleTimeSum()`
+
+UnsetCpuIdleTimeSum ensures that no value is present for CpuIdleTimeSum, not even an explicit nil
 ### GetCpuUsageCount
 
 `func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetCpuUsageCount() float32`
@@ -391,6 +491,16 @@ SetCpuUsageCount sets CpuUsageCount field to given value.
 
 HasCpuUsageCount returns a boolean if a field has been set.
 
+### SetCpuUsageCountNil
+
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetCpuUsageCountNil(b bool)`
+
+ SetCpuUsageCountNil sets the value for CpuUsageCount to be an explicit nil
+
+### UnsetCpuUsageCount
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) UnsetCpuUsageCount()`
+
+UnsetCpuUsageCount ensures that no value is present for CpuUsageCount, not even an explicit nil
 ### GetCpuUsageMin
 
 `func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetCpuUsageMin() float32`
@@ -416,6 +526,16 @@ SetCpuUsageMin sets CpuUsageMin field to given value.
 
 HasCpuUsageMin returns a boolean if a field has been set.
 
+### SetCpuUsageMinNil
+
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetCpuUsageMinNil(b bool)`
+
+ SetCpuUsageMinNil sets the value for CpuUsageMin to be an explicit nil
+
+### UnsetCpuUsageMin
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) UnsetCpuUsageMin()`
+
+UnsetCpuUsageMin ensures that no value is present for CpuUsageMin, not even an explicit nil
 ### GetCpuUsageMax
 
 `func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetCpuUsageMax() float32`
@@ -441,6 +561,16 @@ SetCpuUsageMax sets CpuUsageMax field to given value.
 
 HasCpuUsageMax returns a boolean if a field has been set.
 
+### SetCpuUsageMaxNil
+
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetCpuUsageMaxNil(b bool)`
+
+ SetCpuUsageMaxNil sets the value for CpuUsageMax to be an explicit nil
+
+### UnsetCpuUsageMax
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) UnsetCpuUsageMax()`
+
+UnsetCpuUsageMax ensures that no value is present for CpuUsageMax, not even an explicit nil
 ### GetCpuUsageAvg
 
 `func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetCpuUsageAvg() float32`
@@ -466,6 +596,16 @@ SetCpuUsageAvg sets CpuUsageAvg field to given value.
 
 HasCpuUsageAvg returns a boolean if a field has been set.
 
+### SetCpuUsageAvgNil
+
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetCpuUsageAvgNil(b bool)`
+
+ SetCpuUsageAvgNil sets the value for CpuUsageAvg to be an explicit nil
+
+### UnsetCpuUsageAvg
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) UnsetCpuUsageAvg()`
+
+UnsetCpuUsageAvg ensures that no value is present for CpuUsageAvg, not even an explicit nil
 ### GetCpuUsageSum
 
 `func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetCpuUsageSum() float32`
@@ -491,6 +631,16 @@ SetCpuUsageSum sets CpuUsageSum field to given value.
 
 HasCpuUsageSum returns a boolean if a field has been set.
 
+### SetCpuUsageSumNil
+
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetCpuUsageSumNil(b bool)`
+
+ SetCpuUsageSumNil sets the value for CpuUsageSum to be an explicit nil
+
+### UnsetCpuUsageSum
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) UnsetCpuUsageSum()`
+
+UnsetCpuUsageSum ensures that no value is present for CpuUsageSum, not even an explicit nil
 ### GetMaxMemoryCount
 
 `func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetMaxMemoryCount() float32`
@@ -516,6 +666,16 @@ SetMaxMemoryCount sets MaxMemoryCount field to given value.
 
 HasMaxMemoryCount returns a boolean if a field has been set.
 
+### SetMaxMemoryCountNil
+
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetMaxMemoryCountNil(b bool)`
+
+ SetMaxMemoryCountNil sets the value for MaxMemoryCount to be an explicit nil
+
+### UnsetMaxMemoryCount
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) UnsetMaxMemoryCount()`
+
+UnsetMaxMemoryCount ensures that no value is present for MaxMemoryCount, not even an explicit nil
 ### GetMaxMemoryMin
 
 `func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetMaxMemoryMin() float32`
@@ -541,6 +701,16 @@ SetMaxMemoryMin sets MaxMemoryMin field to given value.
 
 HasMaxMemoryMin returns a boolean if a field has been set.
 
+### SetMaxMemoryMinNil
+
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetMaxMemoryMinNil(b bool)`
+
+ SetMaxMemoryMinNil sets the value for MaxMemoryMin to be an explicit nil
+
+### UnsetMaxMemoryMin
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) UnsetMaxMemoryMin()`
+
+UnsetMaxMemoryMin ensures that no value is present for MaxMemoryMin, not even an explicit nil
 ### GetMaxMemoryMax
 
 `func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetMaxMemoryMax() float32`
@@ -566,6 +736,16 @@ SetMaxMemoryMax sets MaxMemoryMax field to given value.
 
 HasMaxMemoryMax returns a boolean if a field has been set.
 
+### SetMaxMemoryMaxNil
+
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetMaxMemoryMaxNil(b bool)`
+
+ SetMaxMemoryMaxNil sets the value for MaxMemoryMax to be an explicit nil
+
+### UnsetMaxMemoryMax
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) UnsetMaxMemoryMax()`
+
+UnsetMaxMemoryMax ensures that no value is present for MaxMemoryMax, not even an explicit nil
 ### GetMaxMemoryAvg
 
 `func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetMaxMemoryAvg() float32`
@@ -591,6 +771,16 @@ SetMaxMemoryAvg sets MaxMemoryAvg field to given value.
 
 HasMaxMemoryAvg returns a boolean if a field has been set.
 
+### SetMaxMemoryAvgNil
+
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetMaxMemoryAvgNil(b bool)`
+
+ SetMaxMemoryAvgNil sets the value for MaxMemoryAvg to be an explicit nil
+
+### UnsetMaxMemoryAvg
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) UnsetMaxMemoryAvg()`
+
+UnsetMaxMemoryAvg ensures that no value is present for MaxMemoryAvg, not even an explicit nil
 ### GetMaxMemorySum
 
 `func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetMaxMemorySum() float32`
@@ -616,6 +806,16 @@ SetMaxMemorySum sets MaxMemorySum field to given value.
 
 HasMaxMemorySum returns a boolean if a field has been set.
 
+### SetMaxMemorySumNil
+
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetMaxMemorySumNil(b bool)`
+
+ SetMaxMemorySumNil sets the value for MaxMemorySum to be an explicit nil
+
+### UnsetMaxMemorySum
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) UnsetMaxMemorySum()`
+
+UnsetMaxMemorySum ensures that no value is present for MaxMemorySum, not even an explicit nil
 ### GetCpuUserTimeCount
 
 `func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetCpuUserTimeCount() float32`
@@ -641,6 +841,16 @@ SetCpuUserTimeCount sets CpuUserTimeCount field to given value.
 
 HasCpuUserTimeCount returns a boolean if a field has been set.
 
+### SetCpuUserTimeCountNil
+
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetCpuUserTimeCountNil(b bool)`
+
+ SetCpuUserTimeCountNil sets the value for CpuUserTimeCount to be an explicit nil
+
+### UnsetCpuUserTimeCount
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) UnsetCpuUserTimeCount()`
+
+UnsetCpuUserTimeCount ensures that no value is present for CpuUserTimeCount, not even an explicit nil
 ### GetCpuUserTimeMin
 
 `func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetCpuUserTimeMin() float32`
@@ -666,6 +876,16 @@ SetCpuUserTimeMin sets CpuUserTimeMin field to given value.
 
 HasCpuUserTimeMin returns a boolean if a field has been set.
 
+### SetCpuUserTimeMinNil
+
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetCpuUserTimeMinNil(b bool)`
+
+ SetCpuUserTimeMinNil sets the value for CpuUserTimeMin to be an explicit nil
+
+### UnsetCpuUserTimeMin
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) UnsetCpuUserTimeMin()`
+
+UnsetCpuUserTimeMin ensures that no value is present for CpuUserTimeMin, not even an explicit nil
 ### GetCpuUserTimeMax
 
 `func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetCpuUserTimeMax() float32`
@@ -691,6 +911,16 @@ SetCpuUserTimeMax sets CpuUserTimeMax field to given value.
 
 HasCpuUserTimeMax returns a boolean if a field has been set.
 
+### SetCpuUserTimeMaxNil
+
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetCpuUserTimeMaxNil(b bool)`
+
+ SetCpuUserTimeMaxNil sets the value for CpuUserTimeMax to be an explicit nil
+
+### UnsetCpuUserTimeMax
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) UnsetCpuUserTimeMax()`
+
+UnsetCpuUserTimeMax ensures that no value is present for CpuUserTimeMax, not even an explicit nil
 ### GetCpuUserTimeAvg
 
 `func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetCpuUserTimeAvg() float32`
@@ -716,6 +946,16 @@ SetCpuUserTimeAvg sets CpuUserTimeAvg field to given value.
 
 HasCpuUserTimeAvg returns a boolean if a field has been set.
 
+### SetCpuUserTimeAvgNil
+
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetCpuUserTimeAvgNil(b bool)`
+
+ SetCpuUserTimeAvgNil sets the value for CpuUserTimeAvg to be an explicit nil
+
+### UnsetCpuUserTimeAvg
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) UnsetCpuUserTimeAvg()`
+
+UnsetCpuUserTimeAvg ensures that no value is present for CpuUserTimeAvg, not even an explicit nil
 ### GetCpuUserTimeSum
 
 `func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetCpuUserTimeSum() float32`
@@ -741,6 +981,16 @@ SetCpuUserTimeSum sets CpuUserTimeSum field to given value.
 
 HasCpuUserTimeSum returns a boolean if a field has been set.
 
+### SetCpuUserTimeSumNil
+
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetCpuUserTimeSumNil(b bool)`
+
+ SetCpuUserTimeSumNil sets the value for CpuUserTimeSum to be an explicit nil
+
+### UnsetCpuUserTimeSum
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) UnsetCpuUserTimeSum()`
+
+UnsetCpuUserTimeSum ensures that no value is present for CpuUserTimeSum, not even an explicit nil
 ### GetCpuSystemTimeCount
 
 `func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetCpuSystemTimeCount() float32`
@@ -766,6 +1016,16 @@ SetCpuSystemTimeCount sets CpuSystemTimeCount field to given value.
 
 HasCpuSystemTimeCount returns a boolean if a field has been set.
 
+### SetCpuSystemTimeCountNil
+
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetCpuSystemTimeCountNil(b bool)`
+
+ SetCpuSystemTimeCountNil sets the value for CpuSystemTimeCount to be an explicit nil
+
+### UnsetCpuSystemTimeCount
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) UnsetCpuSystemTimeCount()`
+
+UnsetCpuSystemTimeCount ensures that no value is present for CpuSystemTimeCount, not even an explicit nil
 ### GetCpuSystemTimeMin
 
 `func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetCpuSystemTimeMin() float32`
@@ -791,6 +1051,16 @@ SetCpuSystemTimeMin sets CpuSystemTimeMin field to given value.
 
 HasCpuSystemTimeMin returns a boolean if a field has been set.
 
+### SetCpuSystemTimeMinNil
+
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetCpuSystemTimeMinNil(b bool)`
+
+ SetCpuSystemTimeMinNil sets the value for CpuSystemTimeMin to be an explicit nil
+
+### UnsetCpuSystemTimeMin
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) UnsetCpuSystemTimeMin()`
+
+UnsetCpuSystemTimeMin ensures that no value is present for CpuSystemTimeMin, not even an explicit nil
 ### GetCpuSystemTimeMax
 
 `func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetCpuSystemTimeMax() float32`
@@ -816,6 +1086,16 @@ SetCpuSystemTimeMax sets CpuSystemTimeMax field to given value.
 
 HasCpuSystemTimeMax returns a boolean if a field has been set.
 
+### SetCpuSystemTimeMaxNil
+
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetCpuSystemTimeMaxNil(b bool)`
+
+ SetCpuSystemTimeMaxNil sets the value for CpuSystemTimeMax to be an explicit nil
+
+### UnsetCpuSystemTimeMax
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) UnsetCpuSystemTimeMax()`
+
+UnsetCpuSystemTimeMax ensures that no value is present for CpuSystemTimeMax, not even an explicit nil
 ### GetCpuSystemTimeAvg
 
 `func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetCpuSystemTimeAvg() float32`
@@ -866,6 +1146,16 @@ SetCpuSystemTimeSum sets CpuSystemTimeSum field to given value.
 
 HasCpuSystemTimeSum returns a boolean if a field has been set.
 
+### SetCpuSystemTimeSumNil
+
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetCpuSystemTimeSumNil(b bool)`
+
+ SetCpuSystemTimeSumNil sets the value for CpuSystemTimeSum to be an explicit nil
+
+### UnsetCpuSystemTimeSum
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) UnsetCpuSystemTimeSum()`
+
+UnsetCpuSystemTimeSum ensures that no value is present for CpuSystemTimeSum, not even an explicit nil
 ### GetUsedMemoryCount
 
 `func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetUsedMemoryCount() float32`
@@ -891,6 +1181,16 @@ SetUsedMemoryCount sets UsedMemoryCount field to given value.
 
 HasUsedMemoryCount returns a boolean if a field has been set.
 
+### SetUsedMemoryCountNil
+
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetUsedMemoryCountNil(b bool)`
+
+ SetUsedMemoryCountNil sets the value for UsedMemoryCount to be an explicit nil
+
+### UnsetUsedMemoryCount
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) UnsetUsedMemoryCount()`
+
+UnsetUsedMemoryCount ensures that no value is present for UsedMemoryCount, not even an explicit nil
 ### GetUsedMemoryMin
 
 `func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetUsedMemoryMin() float32`
@@ -916,6 +1216,16 @@ SetUsedMemoryMin sets UsedMemoryMin field to given value.
 
 HasUsedMemoryMin returns a boolean if a field has been set.
 
+### SetUsedMemoryMinNil
+
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetUsedMemoryMinNil(b bool)`
+
+ SetUsedMemoryMinNil sets the value for UsedMemoryMin to be an explicit nil
+
+### UnsetUsedMemoryMin
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) UnsetUsedMemoryMin()`
+
+UnsetUsedMemoryMin ensures that no value is present for UsedMemoryMin, not even an explicit nil
 ### GetUsedMemoryMax
 
 `func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetUsedMemoryMax() float32`
@@ -941,6 +1251,16 @@ SetUsedMemoryMax sets UsedMemoryMax field to given value.
 
 HasUsedMemoryMax returns a boolean if a field has been set.
 
+### SetUsedMemoryMaxNil
+
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetUsedMemoryMaxNil(b bool)`
+
+ SetUsedMemoryMaxNil sets the value for UsedMemoryMax to be an explicit nil
+
+### UnsetUsedMemoryMax
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) UnsetUsedMemoryMax()`
+
+UnsetUsedMemoryMax ensures that no value is present for UsedMemoryMax, not even an explicit nil
 ### GetUsedMemoryAvg
 
 `func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetUsedMemoryAvg() float32`
@@ -966,6 +1286,16 @@ SetUsedMemoryAvg sets UsedMemoryAvg field to given value.
 
 HasUsedMemoryAvg returns a boolean if a field has been set.
 
+### SetUsedMemoryAvgNil
+
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetUsedMemoryAvgNil(b bool)`
+
+ SetUsedMemoryAvgNil sets the value for UsedMemoryAvg to be an explicit nil
+
+### UnsetUsedMemoryAvg
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) UnsetUsedMemoryAvg()`
+
+UnsetUsedMemoryAvg ensures that no value is present for UsedMemoryAvg, not even an explicit nil
 ### GetUsedMemorySum
 
 `func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetUsedMemorySum() float32`
@@ -991,6 +1321,16 @@ SetUsedMemorySum sets UsedMemorySum field to given value.
 
 HasUsedMemorySum returns a boolean if a field has been set.
 
+### SetUsedMemorySumNil
+
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetUsedMemorySumNil(b bool)`
+
+ SetUsedMemorySumNil sets the value for UsedMemorySum to be an explicit nil
+
+### UnsetUsedMemorySum
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) UnsetUsedMemorySum()`
+
+UnsetUsedMemorySum ensures that no value is present for UsedMemorySum, not even an explicit nil
 ### GetFreeMemoryCount
 
 `func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetFreeMemoryCount() float32`
@@ -1016,6 +1356,16 @@ SetFreeMemoryCount sets FreeMemoryCount field to given value.
 
 HasFreeMemoryCount returns a boolean if a field has been set.
 
+### SetFreeMemoryCountNil
+
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetFreeMemoryCountNil(b bool)`
+
+ SetFreeMemoryCountNil sets the value for FreeMemoryCount to be an explicit nil
+
+### UnsetFreeMemoryCount
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) UnsetFreeMemoryCount()`
+
+UnsetFreeMemoryCount ensures that no value is present for FreeMemoryCount, not even an explicit nil
 ### GetFreeMemoryMin
 
 `func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetFreeMemoryMin() float32`
@@ -1041,6 +1391,16 @@ SetFreeMemoryMin sets FreeMemoryMin field to given value.
 
 HasFreeMemoryMin returns a boolean if a field has been set.
 
+### SetFreeMemoryMinNil
+
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetFreeMemoryMinNil(b bool)`
+
+ SetFreeMemoryMinNil sets the value for FreeMemoryMin to be an explicit nil
+
+### UnsetFreeMemoryMin
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) UnsetFreeMemoryMin()`
+
+UnsetFreeMemoryMin ensures that no value is present for FreeMemoryMin, not even an explicit nil
 ### GetFreeMemoryMax
 
 `func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetFreeMemoryMax() float32`
@@ -1066,6 +1426,16 @@ SetFreeMemoryMax sets FreeMemoryMax field to given value.
 
 HasFreeMemoryMax returns a boolean if a field has been set.
 
+### SetFreeMemoryMaxNil
+
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetFreeMemoryMaxNil(b bool)`
+
+ SetFreeMemoryMaxNil sets the value for FreeMemoryMax to be an explicit nil
+
+### UnsetFreeMemoryMax
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) UnsetFreeMemoryMax()`
+
+UnsetFreeMemoryMax ensures that no value is present for FreeMemoryMax, not even an explicit nil
 ### GetFreeMemoryAvg
 
 `func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetFreeMemoryAvg() float32`
@@ -1091,6 +1461,16 @@ SetFreeMemoryAvg sets FreeMemoryAvg field to given value.
 
 HasFreeMemoryAvg returns a boolean if a field has been set.
 
+### SetFreeMemoryAvgNil
+
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetFreeMemoryAvgNil(b bool)`
+
+ SetFreeMemoryAvgNil sets the value for FreeMemoryAvg to be an explicit nil
+
+### UnsetFreeMemoryAvg
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) UnsetFreeMemoryAvg()`
+
+UnsetFreeMemoryAvg ensures that no value is present for FreeMemoryAvg, not even an explicit nil
 ### GetFreeMemorySum
 
 `func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetFreeMemorySum() float32`
@@ -1116,6 +1496,16 @@ SetFreeMemorySum sets FreeMemorySum field to given value.
 
 HasFreeMemorySum returns a boolean if a field has been set.
 
+### SetFreeMemorySumNil
+
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetFreeMemorySumNil(b bool)`
+
+ SetFreeMemorySumNil sets the value for FreeMemorySum to be an explicit nil
+
+### UnsetFreeMemorySum
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) UnsetFreeMemorySum()`
+
+UnsetFreeMemorySum ensures that no value is present for FreeMemorySum, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -5,9 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **string** | Name | [optional] 
-**ServiceUrl** | Pointer to **string** | URL | [optional] 
-**ServiceUsername** | Pointer to **string** | Username | [optional] 
-**ServicePassword** | Pointer to **string** | Password | [optional] 
+**ServiceUrl** | Pointer to **NullableString** | URL | [optional] 
+**ServiceUsername** | Pointer to **NullableString** | Username | [optional] 
+**ServicePassword** | Pointer to **NullableString** | Password | [optional] 
 **Visibility** | Pointer to **string** | Visibility - Set to public to allow all tenants | [optional] [default to "private"]
 **Tenants** | Pointer to [**[]GetAlerts200ResponseAllOfChecksInnerAccount**](GetAlerts200ResponseAllOfChecksInnerAccount.md) | Array of tenant account ids that are allowed access | [optional] 
 
@@ -80,6 +80,16 @@ SetServiceUrl sets ServiceUrl field to given value.
 
 HasServiceUrl returns a boolean if a field has been set.
 
+### SetServiceUrlNil
+
+`func (o *NetworkServerUpdateNSX) SetServiceUrlNil(b bool)`
+
+ SetServiceUrlNil sets the value for ServiceUrl to be an explicit nil
+
+### UnsetServiceUrl
+`func (o *NetworkServerUpdateNSX) UnsetServiceUrl()`
+
+UnsetServiceUrl ensures that no value is present for ServiceUrl, not even an explicit nil
 ### GetServiceUsername
 
 `func (o *NetworkServerUpdateNSX) GetServiceUsername() string`
@@ -105,6 +115,16 @@ SetServiceUsername sets ServiceUsername field to given value.
 
 HasServiceUsername returns a boolean if a field has been set.
 
+### SetServiceUsernameNil
+
+`func (o *NetworkServerUpdateNSX) SetServiceUsernameNil(b bool)`
+
+ SetServiceUsernameNil sets the value for ServiceUsername to be an explicit nil
+
+### UnsetServiceUsername
+`func (o *NetworkServerUpdateNSX) UnsetServiceUsername()`
+
+UnsetServiceUsername ensures that no value is present for ServiceUsername, not even an explicit nil
 ### GetServicePassword
 
 `func (o *NetworkServerUpdateNSX) GetServicePassword() string`
@@ -130,6 +150,16 @@ SetServicePassword sets ServicePassword field to given value.
 
 HasServicePassword returns a boolean if a field has been set.
 
+### SetServicePasswordNil
+
+`func (o *NetworkServerUpdateNSX) SetServicePasswordNil(b bool)`
+
+ SetServicePasswordNil sets the value for ServicePassword to be an explicit nil
+
+### UnsetServicePassword
+`func (o *NetworkServerUpdateNSX) UnsetServicePassword()`
+
+UnsetServicePassword ensures that no value is present for ServicePassword, not even an explicit nil
 ### GetVisibility
 
 `func (o *NetworkServerUpdateNSX) GetVisibility() string`

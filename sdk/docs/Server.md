@@ -6,36 +6,36 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
 **Uuid** | Pointer to **string** |  | [optional] 
-**ExternalId** | Pointer to **string** |  | [optional] 
-**InternalId** | Pointer to **string** |  | [optional] 
-**ExternalUniqueId** | Pointer to **string** |  | [optional] 
+**ExternalId** | Pointer to **NullableString** |  | [optional] 
+**InternalId** | Pointer to **NullableString** |  | [optional] 
+**ExternalUniqueId** | Pointer to **NullableString** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **ExternalName** | Pointer to **string** |  | [optional] 
 **Hostname** | Pointer to **string** |  | [optional] 
-**ParentServer** | Pointer to [**ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
+**ParentServer** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **AccountId** | Pointer to **int64** |  | [optional] 
-**Account** | Pointer to [**ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
-**Owner** | Pointer to [**GetAlerts200ResponseAllOfChecksInnerCreatedBy**](GetAlerts200ResponseAllOfChecksInnerCreatedBy.md) |  | [optional] 
-**Zone** | Pointer to [**ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
+**Account** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**Owner** | Pointer to [**ListActivity200ResponseAllOfActivityInnerActivityInnerUser**](ListActivity200ResponseAllOfActivityInnerActivityInnerUser.md) |  | [optional] 
+**Zone** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **Plan** | Pointer to [**ListHosts200ResponseAllOfServersInnerPlan**](ListHosts200ResponseAllOfServersInnerPlan.md) |  | [optional] 
 **ComputeServerType** | Pointer to [**ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerComputeServerType**](ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerComputeServerType.md) |  | [optional] 
 **Visibility** | Pointer to **string** |  | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **NullableString** |  | [optional] 
 **ZoneId** | Pointer to **int64** |  | [optional] 
 **SiteId** | Pointer to **int64** |  | [optional] 
-**ResourcePoolId** | Pointer to **int64** |  | [optional] 
-**FolderId** | Pointer to **int64** |  | [optional] 
-**SshHost** | Pointer to **string** |  | [optional] 
+**ResourcePoolId** | Pointer to **NullableInt64** |  | [optional] 
+**FolderId** | Pointer to **NullableInt64** |  | [optional] 
+**SshHost** | Pointer to **NullableString** |  | [optional] 
 **SshPort** | Pointer to **int64** |  | [optional] 
-**ExternalIp** | Pointer to **string** |  | [optional] 
-**InternalIp** | Pointer to **string** |  | [optional] 
-**VolumeId** | Pointer to **string** |  | [optional] 
-**Platform** | Pointer to **string** |  | [optional] 
-**PlatformVersion** | Pointer to **string** |  | [optional] 
-**SshUsername** | Pointer to **string** |  | [optional] 
-**SshPassword** | Pointer to **string** |  | [optional] 
-**SshPasswordHash** | Pointer to **string** |  | [optional] 
-**SshKeyPair** | Pointer to [**GetAlerts200ResponseAllOfChecksInnerContainer**](GetAlerts200ResponseAllOfChecksInnerContainer.md) |  | [optional] 
+**ExternalIp** | Pointer to **NullableString** |  | [optional] 
+**InternalIp** | Pointer to **NullableString** |  | [optional] 
+**VolumeId** | Pointer to **NullableString** |  | [optional] 
+**Platform** | Pointer to **NullableString** |  | [optional] 
+**PlatformVersion** | Pointer to **NullableString** |  | [optional] 
+**SshUsername** | Pointer to **NullableString** |  | [optional] 
+**SshPassword** | Pointer to **NullableString** |  | [optional] 
+**SshPasswordHash** | Pointer to **NullableString** |  | [optional] 
+**SshKeyPair** | Pointer to [**GetAlerts200ResponseAllOfChecksInnerAccount**](GetAlerts200ResponseAllOfChecksInnerAccount.md) |  | [optional] 
 **OsDevice** | Pointer to **string** |  | [optional] 
 **OsType** | Pointer to **string** |  | [optional] 
 **DataDevice** | Pointer to **string** |  | [optional] 
@@ -46,26 +46,26 @@ Name | Type | Description | Notes
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
 **Stats** | Pointer to [**ListHosts200ResponseAllOfServersInnerStats**](ListHosts200ResponseAllOfServersInnerStats.md) |  | [optional] 
 **Status** | Pointer to **string** |  | [optional] 
-**StatusMessage** | Pointer to **string** |  | [optional] 
-**ErrorMessage** | Pointer to **string** |  | [optional] 
-**StatusDate** | Pointer to **time.Time** |  | [optional] 
-**StatusPercent** | Pointer to **string** |  | [optional] 
-**StatusEta** | Pointer to **string** |  | [optional] 
+**StatusMessage** | Pointer to **NullableString** |  | [optional] 
+**ErrorMessage** | Pointer to **NullableString** |  | [optional] 
+**StatusDate** | Pointer to **NullableTime** |  | [optional] 
+**StatusPercent** | Pointer to **NullableString** |  | [optional] 
+**StatusEta** | Pointer to **NullableString** |  | [optional] 
 **PowerState** | Pointer to **string** |  | [optional] 
 **AgentInstalled** | Pointer to **bool** |  | [optional] 
-**LastAgentUpdate** | Pointer to **string** |  | [optional] 
-**AgentVersion** | Pointer to **string** |  | [optional] 
+**LastAgentUpdate** | Pointer to **NullableString** |  | [optional] 
+**AgentVersion** | Pointer to **NullableString** |  | [optional] 
 **MaxCores** | Pointer to **int64** |  | [optional] 
-**CoresPerSocket** | Pointer to **int64** |  | [optional] 
+**CoresPerSocket** | Pointer to **NullableInt64** |  | [optional] 
 **MaxMemory** | Pointer to **int64** |  | [optional] 
 **MaxStorage** | Pointer to **int64** |  | [optional] 
-**MaxCpu** | Pointer to **int64** |  | [optional] 
-**MaxGpus** | Pointer to **int64** |  | [optional] 
+**MaxCpu** | Pointer to **NullableInt64** |  | [optional] 
+**MaxGpus** | Pointer to **NullableInt64** |  | [optional] 
 **ManageInternalFirewall** | Pointer to **bool** |  | [optional] 
 **EnableLogs** | Pointer to **bool** |  | [optional] 
 **HourlyCost** | Pointer to **float32** |  | [optional] 
 **HourlyPrice** | Pointer to **float32** |  | [optional] 
-**SourceImage** | Pointer to [**ListPriceSets200ResponseAllOfPriceSetsInnerPricesInnerVolumeType**](ListPriceSets200ResponseAllOfPriceSetsInnerPricesInnerVolumeType.md) |  | [optional] 
+**SourceImage** | Pointer to [**ListBackupSettings200ResponseBackupSettingsDefaultSchedule**](ListBackupSettings200ResponseBackupSettingsDefaultSchedule.md) |  | [optional] 
 **ServerOs** | Pointer to [**ListHosts200ResponseAllOfServersInnerServerOs**](ListHosts200ResponseAllOfServersInnerServerOs.md) |  | [optional] 
 **Volumes** | Pointer to [**[]ListClusterVolumes200ResponseAllOfVolumesInner**](ListClusterVolumes200ResponseAllOfVolumesInner.md) |  | [optional] 
 **Controllers** | Pointer to [**[]ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceControllersInner**](ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceControllersInner.md) |  | [optional] 
@@ -73,15 +73,15 @@ Name | Type | Description | Notes
 **Labels** | Pointer to **[]map[string]interface{}** |  | [optional] 
 **Tags** | Pointer to **[]map[string]interface{}** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
-**TagCompliant** | Pointer to **string** |  | [optional] 
+**TagCompliant** | Pointer to **NullableString** |  | [optional] 
 **Containers** | Pointer to **[]int64** |  | [optional] 
 **Config** | Pointer to [**ListHosts200ResponseAllOfServersInnerConfig**](ListHosts200ResponseAllOfServersInnerConfig.md) |  | [optional] 
 **GuestConsolePreferred** | Pointer to **bool** |  | [optional] 
-**GuestConsoleType** | Pointer to **string** |  | [optional] 
-**GuestConsoleUsername** | Pointer to **string** |  | [optional] 
-**GuestConsolePassword** | Pointer to **string** |  | [optional] 
-**GuestConsolePasswordHash** | Pointer to **string** |  | [optional] 
-**GuestConsolePort** | Pointer to **string** |  | [optional] 
+**GuestConsoleType** | Pointer to **NullableString** |  | [optional] 
+**GuestConsoleUsername** | Pointer to **NullableString** |  | [optional] 
+**GuestConsolePassword** | Pointer to **NullableString** |  | [optional] 
+**GuestConsolePasswordHash** | Pointer to **NullableString** |  | [optional] 
+**GuestConsolePort** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -177,6 +177,16 @@ SetExternalId sets ExternalId field to given value.
 
 HasExternalId returns a boolean if a field has been set.
 
+### SetExternalIdNil
+
+`func (o *Server) SetExternalIdNil(b bool)`
+
+ SetExternalIdNil sets the value for ExternalId to be an explicit nil
+
+### UnsetExternalId
+`func (o *Server) UnsetExternalId()`
+
+UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
 ### GetInternalId
 
 `func (o *Server) GetInternalId() string`
@@ -202,6 +212,16 @@ SetInternalId sets InternalId field to given value.
 
 HasInternalId returns a boolean if a field has been set.
 
+### SetInternalIdNil
+
+`func (o *Server) SetInternalIdNil(b bool)`
+
+ SetInternalIdNil sets the value for InternalId to be an explicit nil
+
+### UnsetInternalId
+`func (o *Server) UnsetInternalId()`
+
+UnsetInternalId ensures that no value is present for InternalId, not even an explicit nil
 ### GetExternalUniqueId
 
 `func (o *Server) GetExternalUniqueId() string`
@@ -227,6 +247,16 @@ SetExternalUniqueId sets ExternalUniqueId field to given value.
 
 HasExternalUniqueId returns a boolean if a field has been set.
 
+### SetExternalUniqueIdNil
+
+`func (o *Server) SetExternalUniqueIdNil(b bool)`
+
+ SetExternalUniqueIdNil sets the value for ExternalUniqueId to be an explicit nil
+
+### UnsetExternalUniqueId
+`func (o *Server) UnsetExternalUniqueId()`
+
+UnsetExternalUniqueId ensures that no value is present for ExternalUniqueId, not even an explicit nil
 ### GetName
 
 `func (o *Server) GetName() string`
@@ -304,20 +334,20 @@ HasHostname returns a boolean if a field has been set.
 
 ### GetParentServer
 
-`func (o *Server) GetParentServer() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *Server) GetParentServer() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetParentServer returns the ParentServer field if non-nil, zero value otherwise.
 
 ### GetParentServerOk
 
-`func (o *Server) GetParentServerOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *Server) GetParentServerOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetParentServerOk returns a tuple with the ParentServer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetParentServer
 
-`func (o *Server) SetParentServer(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *Server) SetParentServer(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetParentServer sets ParentServer field to given value.
 
@@ -354,20 +384,20 @@ HasAccountId returns a boolean if a field has been set.
 
 ### GetAccount
 
-`func (o *Server) GetAccount() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *Server) GetAccount() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetAccount returns the Account field if non-nil, zero value otherwise.
 
 ### GetAccountOk
 
-`func (o *Server) GetAccountOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *Server) GetAccountOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetAccountOk returns a tuple with the Account field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccount
 
-`func (o *Server) SetAccount(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *Server) SetAccount(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetAccount sets Account field to given value.
 
@@ -379,20 +409,20 @@ HasAccount returns a boolean if a field has been set.
 
 ### GetOwner
 
-`func (o *Server) GetOwner() GetAlerts200ResponseAllOfChecksInnerCreatedBy`
+`func (o *Server) GetOwner() ListActivity200ResponseAllOfActivityInnerActivityInnerUser`
 
 GetOwner returns the Owner field if non-nil, zero value otherwise.
 
 ### GetOwnerOk
 
-`func (o *Server) GetOwnerOk() (*GetAlerts200ResponseAllOfChecksInnerCreatedBy, bool)`
+`func (o *Server) GetOwnerOk() (*ListActivity200ResponseAllOfActivityInnerActivityInnerUser, bool)`
 
 GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOwner
 
-`func (o *Server) SetOwner(v GetAlerts200ResponseAllOfChecksInnerCreatedBy)`
+`func (o *Server) SetOwner(v ListActivity200ResponseAllOfActivityInnerActivityInnerUser)`
 
 SetOwner sets Owner field to given value.
 
@@ -404,20 +434,20 @@ HasOwner returns a boolean if a field has been set.
 
 ### GetZone
 
-`func (o *Server) GetZone() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *Server) GetZone() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetZone returns the Zone field if non-nil, zero value otherwise.
 
 ### GetZoneOk
 
-`func (o *Server) GetZoneOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *Server) GetZoneOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetZoneOk returns a tuple with the Zone field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetZone
 
-`func (o *Server) SetZone(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *Server) SetZone(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetZone sets Zone field to given value.
 
@@ -527,6 +557,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *Server) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *Server) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetZoneId
 
 `func (o *Server) GetZoneId() int64`
@@ -602,6 +642,16 @@ SetResourcePoolId sets ResourcePoolId field to given value.
 
 HasResourcePoolId returns a boolean if a field has been set.
 
+### SetResourcePoolIdNil
+
+`func (o *Server) SetResourcePoolIdNil(b bool)`
+
+ SetResourcePoolIdNil sets the value for ResourcePoolId to be an explicit nil
+
+### UnsetResourcePoolId
+`func (o *Server) UnsetResourcePoolId()`
+
+UnsetResourcePoolId ensures that no value is present for ResourcePoolId, not even an explicit nil
 ### GetFolderId
 
 `func (o *Server) GetFolderId() int64`
@@ -627,6 +677,16 @@ SetFolderId sets FolderId field to given value.
 
 HasFolderId returns a boolean if a field has been set.
 
+### SetFolderIdNil
+
+`func (o *Server) SetFolderIdNil(b bool)`
+
+ SetFolderIdNil sets the value for FolderId to be an explicit nil
+
+### UnsetFolderId
+`func (o *Server) UnsetFolderId()`
+
+UnsetFolderId ensures that no value is present for FolderId, not even an explicit nil
 ### GetSshHost
 
 `func (o *Server) GetSshHost() string`
@@ -652,6 +712,16 @@ SetSshHost sets SshHost field to given value.
 
 HasSshHost returns a boolean if a field has been set.
 
+### SetSshHostNil
+
+`func (o *Server) SetSshHostNil(b bool)`
+
+ SetSshHostNil sets the value for SshHost to be an explicit nil
+
+### UnsetSshHost
+`func (o *Server) UnsetSshHost()`
+
+UnsetSshHost ensures that no value is present for SshHost, not even an explicit nil
 ### GetSshPort
 
 `func (o *Server) GetSshPort() int64`
@@ -702,6 +772,16 @@ SetExternalIp sets ExternalIp field to given value.
 
 HasExternalIp returns a boolean if a field has been set.
 
+### SetExternalIpNil
+
+`func (o *Server) SetExternalIpNil(b bool)`
+
+ SetExternalIpNil sets the value for ExternalIp to be an explicit nil
+
+### UnsetExternalIp
+`func (o *Server) UnsetExternalIp()`
+
+UnsetExternalIp ensures that no value is present for ExternalIp, not even an explicit nil
 ### GetInternalIp
 
 `func (o *Server) GetInternalIp() string`
@@ -727,6 +807,16 @@ SetInternalIp sets InternalIp field to given value.
 
 HasInternalIp returns a boolean if a field has been set.
 
+### SetInternalIpNil
+
+`func (o *Server) SetInternalIpNil(b bool)`
+
+ SetInternalIpNil sets the value for InternalIp to be an explicit nil
+
+### UnsetInternalIp
+`func (o *Server) UnsetInternalIp()`
+
+UnsetInternalIp ensures that no value is present for InternalIp, not even an explicit nil
 ### GetVolumeId
 
 `func (o *Server) GetVolumeId() string`
@@ -752,6 +842,16 @@ SetVolumeId sets VolumeId field to given value.
 
 HasVolumeId returns a boolean if a field has been set.
 
+### SetVolumeIdNil
+
+`func (o *Server) SetVolumeIdNil(b bool)`
+
+ SetVolumeIdNil sets the value for VolumeId to be an explicit nil
+
+### UnsetVolumeId
+`func (o *Server) UnsetVolumeId()`
+
+UnsetVolumeId ensures that no value is present for VolumeId, not even an explicit nil
 ### GetPlatform
 
 `func (o *Server) GetPlatform() string`
@@ -777,6 +877,16 @@ SetPlatform sets Platform field to given value.
 
 HasPlatform returns a boolean if a field has been set.
 
+### SetPlatformNil
+
+`func (o *Server) SetPlatformNil(b bool)`
+
+ SetPlatformNil sets the value for Platform to be an explicit nil
+
+### UnsetPlatform
+`func (o *Server) UnsetPlatform()`
+
+UnsetPlatform ensures that no value is present for Platform, not even an explicit nil
 ### GetPlatformVersion
 
 `func (o *Server) GetPlatformVersion() string`
@@ -802,6 +912,16 @@ SetPlatformVersion sets PlatformVersion field to given value.
 
 HasPlatformVersion returns a boolean if a field has been set.
 
+### SetPlatformVersionNil
+
+`func (o *Server) SetPlatformVersionNil(b bool)`
+
+ SetPlatformVersionNil sets the value for PlatformVersion to be an explicit nil
+
+### UnsetPlatformVersion
+`func (o *Server) UnsetPlatformVersion()`
+
+UnsetPlatformVersion ensures that no value is present for PlatformVersion, not even an explicit nil
 ### GetSshUsername
 
 `func (o *Server) GetSshUsername() string`
@@ -827,6 +947,16 @@ SetSshUsername sets SshUsername field to given value.
 
 HasSshUsername returns a boolean if a field has been set.
 
+### SetSshUsernameNil
+
+`func (o *Server) SetSshUsernameNil(b bool)`
+
+ SetSshUsernameNil sets the value for SshUsername to be an explicit nil
+
+### UnsetSshUsername
+`func (o *Server) UnsetSshUsername()`
+
+UnsetSshUsername ensures that no value is present for SshUsername, not even an explicit nil
 ### GetSshPassword
 
 `func (o *Server) GetSshPassword() string`
@@ -852,6 +982,16 @@ SetSshPassword sets SshPassword field to given value.
 
 HasSshPassword returns a boolean if a field has been set.
 
+### SetSshPasswordNil
+
+`func (o *Server) SetSshPasswordNil(b bool)`
+
+ SetSshPasswordNil sets the value for SshPassword to be an explicit nil
+
+### UnsetSshPassword
+`func (o *Server) UnsetSshPassword()`
+
+UnsetSshPassword ensures that no value is present for SshPassword, not even an explicit nil
 ### GetSshPasswordHash
 
 `func (o *Server) GetSshPasswordHash() string`
@@ -877,22 +1017,32 @@ SetSshPasswordHash sets SshPasswordHash field to given value.
 
 HasSshPasswordHash returns a boolean if a field has been set.
 
+### SetSshPasswordHashNil
+
+`func (o *Server) SetSshPasswordHashNil(b bool)`
+
+ SetSshPasswordHashNil sets the value for SshPasswordHash to be an explicit nil
+
+### UnsetSshPasswordHash
+`func (o *Server) UnsetSshPasswordHash()`
+
+UnsetSshPasswordHash ensures that no value is present for SshPasswordHash, not even an explicit nil
 ### GetSshKeyPair
 
-`func (o *Server) GetSshKeyPair() GetAlerts200ResponseAllOfChecksInnerContainer`
+`func (o *Server) GetSshKeyPair() GetAlerts200ResponseAllOfChecksInnerAccount`
 
 GetSshKeyPair returns the SshKeyPair field if non-nil, zero value otherwise.
 
 ### GetSshKeyPairOk
 
-`func (o *Server) GetSshKeyPairOk() (*GetAlerts200ResponseAllOfChecksInnerContainer, bool)`
+`func (o *Server) GetSshKeyPairOk() (*GetAlerts200ResponseAllOfChecksInnerAccount, bool)`
 
 GetSshKeyPairOk returns a tuple with the SshKeyPair field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSshKeyPair
 
-`func (o *Server) SetSshKeyPair(v GetAlerts200ResponseAllOfChecksInnerContainer)`
+`func (o *Server) SetSshKeyPair(v GetAlerts200ResponseAllOfChecksInnerAccount)`
 
 SetSshKeyPair sets SshKeyPair field to given value.
 
@@ -1177,6 +1327,16 @@ SetStatusMessage sets StatusMessage field to given value.
 
 HasStatusMessage returns a boolean if a field has been set.
 
+### SetStatusMessageNil
+
+`func (o *Server) SetStatusMessageNil(b bool)`
+
+ SetStatusMessageNil sets the value for StatusMessage to be an explicit nil
+
+### UnsetStatusMessage
+`func (o *Server) UnsetStatusMessage()`
+
+UnsetStatusMessage ensures that no value is present for StatusMessage, not even an explicit nil
 ### GetErrorMessage
 
 `func (o *Server) GetErrorMessage() string`
@@ -1202,6 +1362,16 @@ SetErrorMessage sets ErrorMessage field to given value.
 
 HasErrorMessage returns a boolean if a field has been set.
 
+### SetErrorMessageNil
+
+`func (o *Server) SetErrorMessageNil(b bool)`
+
+ SetErrorMessageNil sets the value for ErrorMessage to be an explicit nil
+
+### UnsetErrorMessage
+`func (o *Server) UnsetErrorMessage()`
+
+UnsetErrorMessage ensures that no value is present for ErrorMessage, not even an explicit nil
 ### GetStatusDate
 
 `func (o *Server) GetStatusDate() time.Time`
@@ -1227,6 +1397,16 @@ SetStatusDate sets StatusDate field to given value.
 
 HasStatusDate returns a boolean if a field has been set.
 
+### SetStatusDateNil
+
+`func (o *Server) SetStatusDateNil(b bool)`
+
+ SetStatusDateNil sets the value for StatusDate to be an explicit nil
+
+### UnsetStatusDate
+`func (o *Server) UnsetStatusDate()`
+
+UnsetStatusDate ensures that no value is present for StatusDate, not even an explicit nil
 ### GetStatusPercent
 
 `func (o *Server) GetStatusPercent() string`
@@ -1252,6 +1432,16 @@ SetStatusPercent sets StatusPercent field to given value.
 
 HasStatusPercent returns a boolean if a field has been set.
 
+### SetStatusPercentNil
+
+`func (o *Server) SetStatusPercentNil(b bool)`
+
+ SetStatusPercentNil sets the value for StatusPercent to be an explicit nil
+
+### UnsetStatusPercent
+`func (o *Server) UnsetStatusPercent()`
+
+UnsetStatusPercent ensures that no value is present for StatusPercent, not even an explicit nil
 ### GetStatusEta
 
 `func (o *Server) GetStatusEta() string`
@@ -1277,6 +1467,16 @@ SetStatusEta sets StatusEta field to given value.
 
 HasStatusEta returns a boolean if a field has been set.
 
+### SetStatusEtaNil
+
+`func (o *Server) SetStatusEtaNil(b bool)`
+
+ SetStatusEtaNil sets the value for StatusEta to be an explicit nil
+
+### UnsetStatusEta
+`func (o *Server) UnsetStatusEta()`
+
+UnsetStatusEta ensures that no value is present for StatusEta, not even an explicit nil
 ### GetPowerState
 
 `func (o *Server) GetPowerState() string`
@@ -1352,6 +1552,16 @@ SetLastAgentUpdate sets LastAgentUpdate field to given value.
 
 HasLastAgentUpdate returns a boolean if a field has been set.
 
+### SetLastAgentUpdateNil
+
+`func (o *Server) SetLastAgentUpdateNil(b bool)`
+
+ SetLastAgentUpdateNil sets the value for LastAgentUpdate to be an explicit nil
+
+### UnsetLastAgentUpdate
+`func (o *Server) UnsetLastAgentUpdate()`
+
+UnsetLastAgentUpdate ensures that no value is present for LastAgentUpdate, not even an explicit nil
 ### GetAgentVersion
 
 `func (o *Server) GetAgentVersion() string`
@@ -1377,6 +1587,16 @@ SetAgentVersion sets AgentVersion field to given value.
 
 HasAgentVersion returns a boolean if a field has been set.
 
+### SetAgentVersionNil
+
+`func (o *Server) SetAgentVersionNil(b bool)`
+
+ SetAgentVersionNil sets the value for AgentVersion to be an explicit nil
+
+### UnsetAgentVersion
+`func (o *Server) UnsetAgentVersion()`
+
+UnsetAgentVersion ensures that no value is present for AgentVersion, not even an explicit nil
 ### GetMaxCores
 
 `func (o *Server) GetMaxCores() int64`
@@ -1427,6 +1647,16 @@ SetCoresPerSocket sets CoresPerSocket field to given value.
 
 HasCoresPerSocket returns a boolean if a field has been set.
 
+### SetCoresPerSocketNil
+
+`func (o *Server) SetCoresPerSocketNil(b bool)`
+
+ SetCoresPerSocketNil sets the value for CoresPerSocket to be an explicit nil
+
+### UnsetCoresPerSocket
+`func (o *Server) UnsetCoresPerSocket()`
+
+UnsetCoresPerSocket ensures that no value is present for CoresPerSocket, not even an explicit nil
 ### GetMaxMemory
 
 `func (o *Server) GetMaxMemory() int64`
@@ -1502,6 +1732,16 @@ SetMaxCpu sets MaxCpu field to given value.
 
 HasMaxCpu returns a boolean if a field has been set.
 
+### SetMaxCpuNil
+
+`func (o *Server) SetMaxCpuNil(b bool)`
+
+ SetMaxCpuNil sets the value for MaxCpu to be an explicit nil
+
+### UnsetMaxCpu
+`func (o *Server) UnsetMaxCpu()`
+
+UnsetMaxCpu ensures that no value is present for MaxCpu, not even an explicit nil
 ### GetMaxGpus
 
 `func (o *Server) GetMaxGpus() int64`
@@ -1527,6 +1767,16 @@ SetMaxGpus sets MaxGpus field to given value.
 
 HasMaxGpus returns a boolean if a field has been set.
 
+### SetMaxGpusNil
+
+`func (o *Server) SetMaxGpusNil(b bool)`
+
+ SetMaxGpusNil sets the value for MaxGpus to be an explicit nil
+
+### UnsetMaxGpus
+`func (o *Server) UnsetMaxGpus()`
+
+UnsetMaxGpus ensures that no value is present for MaxGpus, not even an explicit nil
 ### GetManageInternalFirewall
 
 `func (o *Server) GetManageInternalFirewall() bool`
@@ -1629,20 +1879,20 @@ HasHourlyPrice returns a boolean if a field has been set.
 
 ### GetSourceImage
 
-`func (o *Server) GetSourceImage() ListPriceSets200ResponseAllOfPriceSetsInnerPricesInnerVolumeType`
+`func (o *Server) GetSourceImage() ListBackupSettings200ResponseBackupSettingsDefaultSchedule`
 
 GetSourceImage returns the SourceImage field if non-nil, zero value otherwise.
 
 ### GetSourceImageOk
 
-`func (o *Server) GetSourceImageOk() (*ListPriceSets200ResponseAllOfPriceSetsInnerPricesInnerVolumeType, bool)`
+`func (o *Server) GetSourceImageOk() (*ListBackupSettings200ResponseBackupSettingsDefaultSchedule, bool)`
 
 GetSourceImageOk returns a tuple with the SourceImage field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSourceImage
 
-`func (o *Server) SetSourceImage(v ListPriceSets200ResponseAllOfPriceSetsInnerPricesInnerVolumeType)`
+`func (o *Server) SetSourceImage(v ListBackupSettings200ResponseBackupSettingsDefaultSchedule)`
 
 SetSourceImage sets SourceImage field to given value.
 
@@ -1777,6 +2027,16 @@ SetLabels sets Labels field to given value.
 
 HasLabels returns a boolean if a field has been set.
 
+### SetLabelsNil
+
+`func (o *Server) SetLabelsNil(b bool)`
+
+ SetLabelsNil sets the value for Labels to be an explicit nil
+
+### UnsetLabels
+`func (o *Server) UnsetLabels()`
+
+UnsetLabels ensures that no value is present for Labels, not even an explicit nil
 ### GetTags
 
 `func (o *Server) GetTags() []map[string]interface{}`
@@ -1802,6 +2062,16 @@ SetTags sets Tags field to given value.
 
 HasTags returns a boolean if a field has been set.
 
+### SetTagsNil
+
+`func (o *Server) SetTagsNil(b bool)`
+
+ SetTagsNil sets the value for Tags to be an explicit nil
+
+### UnsetTags
+`func (o *Server) UnsetTags()`
+
+UnsetTags ensures that no value is present for Tags, not even an explicit nil
 ### GetEnabled
 
 `func (o *Server) GetEnabled() bool`
@@ -1852,6 +2122,16 @@ SetTagCompliant sets TagCompliant field to given value.
 
 HasTagCompliant returns a boolean if a field has been set.
 
+### SetTagCompliantNil
+
+`func (o *Server) SetTagCompliantNil(b bool)`
+
+ SetTagCompliantNil sets the value for TagCompliant to be an explicit nil
+
+### UnsetTagCompliant
+`func (o *Server) UnsetTagCompliant()`
+
+UnsetTagCompliant ensures that no value is present for TagCompliant, not even an explicit nil
 ### GetContainers
 
 `func (o *Server) GetContainers() []int64`
@@ -1952,6 +2232,16 @@ SetGuestConsoleType sets GuestConsoleType field to given value.
 
 HasGuestConsoleType returns a boolean if a field has been set.
 
+### SetGuestConsoleTypeNil
+
+`func (o *Server) SetGuestConsoleTypeNil(b bool)`
+
+ SetGuestConsoleTypeNil sets the value for GuestConsoleType to be an explicit nil
+
+### UnsetGuestConsoleType
+`func (o *Server) UnsetGuestConsoleType()`
+
+UnsetGuestConsoleType ensures that no value is present for GuestConsoleType, not even an explicit nil
 ### GetGuestConsoleUsername
 
 `func (o *Server) GetGuestConsoleUsername() string`
@@ -1977,6 +2267,16 @@ SetGuestConsoleUsername sets GuestConsoleUsername field to given value.
 
 HasGuestConsoleUsername returns a boolean if a field has been set.
 
+### SetGuestConsoleUsernameNil
+
+`func (o *Server) SetGuestConsoleUsernameNil(b bool)`
+
+ SetGuestConsoleUsernameNil sets the value for GuestConsoleUsername to be an explicit nil
+
+### UnsetGuestConsoleUsername
+`func (o *Server) UnsetGuestConsoleUsername()`
+
+UnsetGuestConsoleUsername ensures that no value is present for GuestConsoleUsername, not even an explicit nil
 ### GetGuestConsolePassword
 
 `func (o *Server) GetGuestConsolePassword() string`
@@ -2002,6 +2302,16 @@ SetGuestConsolePassword sets GuestConsolePassword field to given value.
 
 HasGuestConsolePassword returns a boolean if a field has been set.
 
+### SetGuestConsolePasswordNil
+
+`func (o *Server) SetGuestConsolePasswordNil(b bool)`
+
+ SetGuestConsolePasswordNil sets the value for GuestConsolePassword to be an explicit nil
+
+### UnsetGuestConsolePassword
+`func (o *Server) UnsetGuestConsolePassword()`
+
+UnsetGuestConsolePassword ensures that no value is present for GuestConsolePassword, not even an explicit nil
 ### GetGuestConsolePasswordHash
 
 `func (o *Server) GetGuestConsolePasswordHash() string`
@@ -2027,6 +2337,16 @@ SetGuestConsolePasswordHash sets GuestConsolePasswordHash field to given value.
 
 HasGuestConsolePasswordHash returns a boolean if a field has been set.
 
+### SetGuestConsolePasswordHashNil
+
+`func (o *Server) SetGuestConsolePasswordHashNil(b bool)`
+
+ SetGuestConsolePasswordHashNil sets the value for GuestConsolePasswordHash to be an explicit nil
+
+### UnsetGuestConsolePasswordHash
+`func (o *Server) UnsetGuestConsolePasswordHash()`
+
+UnsetGuestConsolePasswordHash ensures that no value is present for GuestConsolePasswordHash, not even an explicit nil
 ### GetGuestConsolePort
 
 `func (o *Server) GetGuestConsolePort() string`
@@ -2052,6 +2372,16 @@ SetGuestConsolePort sets GuestConsolePort field to given value.
 
 HasGuestConsolePort returns a boolean if a field has been set.
 
+### SetGuestConsolePortNil
+
+`func (o *Server) SetGuestConsolePortNil(b bool)`
+
+ SetGuestConsolePortNil sets the value for GuestConsolePort to be an explicit nil
+
+### UnsetGuestConsolePort
+`func (o *Server) UnsetGuestConsolePort()`
+
+UnsetGuestConsolePort ensures that no value is present for GuestConsolePort, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

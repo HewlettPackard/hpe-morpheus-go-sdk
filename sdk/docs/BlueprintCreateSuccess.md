@@ -6,9 +6,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** | Blueprint ID | [optional] 
 **Name** | Pointer to **string** | A name for the blueprint | [optional] 
-**Description** | Pointer to **string** | A description for the blueprint | [optional] 
+**Description** | Pointer to **NullableString** | A description for the blueprint | [optional] 
 **Labels** | Pointer to **[]string** |  | [optional] 
-**Category** | Pointer to **string** | Category | [optional] 
+**Category** | Pointer to **NullableString** | Category | [optional] 
 **Config** | Pointer to [**AddBlueprint200ResponseAllOfBlueprintConfig**](AddBlueprint200ResponseAllOfBlueprintConfig.md) |  | [optional] 
 
 ## Methods
@@ -105,6 +105,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *BlueprintCreateSuccess) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *BlueprintCreateSuccess) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetLabels
 
 `func (o *BlueprintCreateSuccess) GetLabels() []string`
@@ -155,6 +165,16 @@ SetCategory sets Category field to given value.
 
 HasCategory returns a boolean if a field has been set.
 
+### SetCategoryNil
+
+`func (o *BlueprintCreateSuccess) SetCategoryNil(b bool)`
+
+ SetCategoryNil sets the value for Category to be an explicit nil
+
+### UnsetCategory
+`func (o *BlueprintCreateSuccess) UnsetCategory()`
+
+UnsetCategory ensures that no value is present for Category, not even an explicit nil
 ### GetConfig
 
 `func (o *BlueprintCreateSuccess) GetConfig() AddBlueprint200ResponseAllOfBlueprintConfig`

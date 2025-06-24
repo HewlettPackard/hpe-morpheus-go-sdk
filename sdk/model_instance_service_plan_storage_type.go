@@ -26,17 +26,17 @@ type InstanceServicePlanStorageType struct {
 	DisplayOrder         *int32                   `json:"displayOrder,omitempty"`
 	Code                 *string                  `json:"code,omitempty"`
 	VolumeType           *string                  `json:"volumeType,omitempty"`
-	MinStorage           *string                  `json:"minStorage,omitempty"`
+	MinStorage           NullableString           `json:"minStorage,omitempty"`
 	Deletable            *bool                    `json:"deletable,omitempty"`
 	DefaultType          *bool                    `json:"defaultType,omitempty"`
-	CreateDatastore      *string                  `json:"createDatastore,omitempty"`
+	CreateDatastore      NullableString           `json:"createDatastore,omitempty"`
 	Resizable            *bool                    `json:"resizable,omitempty"`
-	StorageType          *string                  `json:"storageType,omitempty"`
+	StorageType          NullableString           `json:"storageType,omitempty"`
 	AllowSearch          *bool                    `json:"allowSearch,omitempty"`
-	VolumeOptionSource   *string                  `json:"volumeOptionSource,omitempty"`
+	VolumeOptionSource   NullableString           `json:"volumeOptionSource,omitempty"`
 	DisplayName          *string                  `json:"displayName,omitempty"`
-	MinIOPS              *string                  `json:"minIOPS,omitempty"`
-	MaxIOPS              *string                  `json:"maxIOPS,omitempty"`
+	MinIOPS              NullableString           `json:"minIOPS,omitempty"`
+	MaxIOPS              NullableString           `json:"maxIOPS,omitempty"`
 	HasDatastore         *bool                    `json:"hasDatastore,omitempty"`
 	CustomSize           *bool                    `json:"customSize,omitempty"`
 	AutoDelete           *bool                    `json:"autoDelete,omitempty"`
@@ -44,10 +44,10 @@ type InstanceServicePlanStorageType struct {
 	ConfigurableIOPS     *bool                    `json:"configurableIOPS,omitempty"`
 	CustomLabel          *bool                    `json:"customLabel,omitempty"`
 	Enabled              *bool                    `json:"enabled,omitempty"`
-	Description          *string                  `json:"description,omitempty"`
+	Description          NullableString           `json:"description,omitempty"`
 	VolumeCategory       *string                  `json:"volumeCategory,omitempty"`
-	ExternalId           *string                  `json:"externalId,omitempty"`
-	MaxStorage           *string                  `json:"maxStorage,omitempty"`
+	ExternalId           NullableString           `json:"externalId,omitempty"`
+	MaxStorage           NullableString           `json:"maxStorage,omitempty"`
 	AdditionalProperties map[string]interface{}   `json:",remain"`
 }
 
@@ -134,9 +134,9 @@ func (o *InstanceServicePlanStorageType) SetEditable(v bool) {
 	o.Editable = &v
 }
 
-// GetOptionTypes returns the OptionTypes field value if set, zero value otherwise.
+// GetOptionTypes returns the OptionTypes field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *InstanceServicePlanStorageType) GetOptionTypes() []map[string]interface{} {
-	if o == nil || IsNil(o.OptionTypes) {
+	if o == nil {
 		var ret []map[string]interface{}
 		return ret
 	}
@@ -145,6 +145,7 @@ func (o *InstanceServicePlanStorageType) GetOptionTypes() []map[string]interface
 
 // GetOptionTypesOk returns a tuple with the OptionTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *InstanceServicePlanStorageType) GetOptionTypesOk() ([]map[string]interface{}, bool) {
 	if o == nil || IsNil(o.OptionTypes) {
 		return nil, false
@@ -262,36 +263,47 @@ func (o *InstanceServicePlanStorageType) SetVolumeType(v string) {
 	o.VolumeType = &v
 }
 
-// GetMinStorage returns the MinStorage field value if set, zero value otherwise.
+// GetMinStorage returns the MinStorage field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *InstanceServicePlanStorageType) GetMinStorage() string {
-	if o == nil || IsNil(o.MinStorage) {
+	if o == nil || IsNil(o.MinStorage.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.MinStorage
+	return *o.MinStorage.Get()
 }
 
 // GetMinStorageOk returns a tuple with the MinStorage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *InstanceServicePlanStorageType) GetMinStorageOk() (*string, bool) {
-	if o == nil || IsNil(o.MinStorage) {
+	if o == nil {
 		return nil, false
 	}
-	return o.MinStorage, true
+	return o.MinStorage.Get(), o.MinStorage.IsSet()
 }
 
 // IsSetMinStorage returns a boolean if a field has been set.
 func (o *InstanceServicePlanStorageType) IsSetMinStorage() bool {
-	if o != nil && !IsNil(o.MinStorage) {
+	if o != nil && o.MinStorage.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetMinStorage gets a reference to the given string and assigns it to the MinStorage field.
+// SetMinStorage gets a reference to the given NullableString and assigns it to the MinStorage field.
 func (o *InstanceServicePlanStorageType) SetMinStorage(v string) {
-	o.MinStorage = &v
+	o.MinStorage.Set(&v)
+}
+
+// SetMinStorageNil sets the value for MinStorage to be an explicit nil
+func (o *InstanceServicePlanStorageType) SetMinStorageNil() {
+	o.MinStorage.Set(nil)
+}
+
+// UnsetMinStorage ensures that no value is present for MinStorage, not even an explicit nil
+func (o *InstanceServicePlanStorageType) UnsetMinStorage() {
+	o.MinStorage.Unset()
 }
 
 // GetDeletable returns the Deletable field value if set, zero value otherwise.
@@ -358,36 +370,47 @@ func (o *InstanceServicePlanStorageType) SetDefaultType(v bool) {
 	o.DefaultType = &v
 }
 
-// GetCreateDatastore returns the CreateDatastore field value if set, zero value otherwise.
+// GetCreateDatastore returns the CreateDatastore field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *InstanceServicePlanStorageType) GetCreateDatastore() string {
-	if o == nil || IsNil(o.CreateDatastore) {
+	if o == nil || IsNil(o.CreateDatastore.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.CreateDatastore
+	return *o.CreateDatastore.Get()
 }
 
 // GetCreateDatastoreOk returns a tuple with the CreateDatastore field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *InstanceServicePlanStorageType) GetCreateDatastoreOk() (*string, bool) {
-	if o == nil || IsNil(o.CreateDatastore) {
+	if o == nil {
 		return nil, false
 	}
-	return o.CreateDatastore, true
+	return o.CreateDatastore.Get(), o.CreateDatastore.IsSet()
 }
 
 // IsSetCreateDatastore returns a boolean if a field has been set.
 func (o *InstanceServicePlanStorageType) IsSetCreateDatastore() bool {
-	if o != nil && !IsNil(o.CreateDatastore) {
+	if o != nil && o.CreateDatastore.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCreateDatastore gets a reference to the given string and assigns it to the CreateDatastore field.
+// SetCreateDatastore gets a reference to the given NullableString and assigns it to the CreateDatastore field.
 func (o *InstanceServicePlanStorageType) SetCreateDatastore(v string) {
-	o.CreateDatastore = &v
+	o.CreateDatastore.Set(&v)
+}
+
+// SetCreateDatastoreNil sets the value for CreateDatastore to be an explicit nil
+func (o *InstanceServicePlanStorageType) SetCreateDatastoreNil() {
+	o.CreateDatastore.Set(nil)
+}
+
+// UnsetCreateDatastore ensures that no value is present for CreateDatastore, not even an explicit nil
+func (o *InstanceServicePlanStorageType) UnsetCreateDatastore() {
+	o.CreateDatastore.Unset()
 }
 
 // GetResizable returns the Resizable field value if set, zero value otherwise.
@@ -422,36 +445,47 @@ func (o *InstanceServicePlanStorageType) SetResizable(v bool) {
 	o.Resizable = &v
 }
 
-// GetStorageType returns the StorageType field value if set, zero value otherwise.
+// GetStorageType returns the StorageType field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *InstanceServicePlanStorageType) GetStorageType() string {
-	if o == nil || IsNil(o.StorageType) {
+	if o == nil || IsNil(o.StorageType.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.StorageType
+	return *o.StorageType.Get()
 }
 
 // GetStorageTypeOk returns a tuple with the StorageType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *InstanceServicePlanStorageType) GetStorageTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.StorageType) {
+	if o == nil {
 		return nil, false
 	}
-	return o.StorageType, true
+	return o.StorageType.Get(), o.StorageType.IsSet()
 }
 
 // IsSetStorageType returns a boolean if a field has been set.
 func (o *InstanceServicePlanStorageType) IsSetStorageType() bool {
-	if o != nil && !IsNil(o.StorageType) {
+	if o != nil && o.StorageType.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetStorageType gets a reference to the given string and assigns it to the StorageType field.
+// SetStorageType gets a reference to the given NullableString and assigns it to the StorageType field.
 func (o *InstanceServicePlanStorageType) SetStorageType(v string) {
-	o.StorageType = &v
+	o.StorageType.Set(&v)
+}
+
+// SetStorageTypeNil sets the value for StorageType to be an explicit nil
+func (o *InstanceServicePlanStorageType) SetStorageTypeNil() {
+	o.StorageType.Set(nil)
+}
+
+// UnsetStorageType ensures that no value is present for StorageType, not even an explicit nil
+func (o *InstanceServicePlanStorageType) UnsetStorageType() {
+	o.StorageType.Unset()
 }
 
 // GetAllowSearch returns the AllowSearch field value if set, zero value otherwise.
@@ -486,36 +520,47 @@ func (o *InstanceServicePlanStorageType) SetAllowSearch(v bool) {
 	o.AllowSearch = &v
 }
 
-// GetVolumeOptionSource returns the VolumeOptionSource field value if set, zero value otherwise.
+// GetVolumeOptionSource returns the VolumeOptionSource field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *InstanceServicePlanStorageType) GetVolumeOptionSource() string {
-	if o == nil || IsNil(o.VolumeOptionSource) {
+	if o == nil || IsNil(o.VolumeOptionSource.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.VolumeOptionSource
+	return *o.VolumeOptionSource.Get()
 }
 
 // GetVolumeOptionSourceOk returns a tuple with the VolumeOptionSource field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *InstanceServicePlanStorageType) GetVolumeOptionSourceOk() (*string, bool) {
-	if o == nil || IsNil(o.VolumeOptionSource) {
+	if o == nil {
 		return nil, false
 	}
-	return o.VolumeOptionSource, true
+	return o.VolumeOptionSource.Get(), o.VolumeOptionSource.IsSet()
 }
 
 // IsSetVolumeOptionSource returns a boolean if a field has been set.
 func (o *InstanceServicePlanStorageType) IsSetVolumeOptionSource() bool {
-	if o != nil && !IsNil(o.VolumeOptionSource) {
+	if o != nil && o.VolumeOptionSource.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetVolumeOptionSource gets a reference to the given string and assigns it to the VolumeOptionSource field.
+// SetVolumeOptionSource gets a reference to the given NullableString and assigns it to the VolumeOptionSource field.
 func (o *InstanceServicePlanStorageType) SetVolumeOptionSource(v string) {
-	o.VolumeOptionSource = &v
+	o.VolumeOptionSource.Set(&v)
+}
+
+// SetVolumeOptionSourceNil sets the value for VolumeOptionSource to be an explicit nil
+func (o *InstanceServicePlanStorageType) SetVolumeOptionSourceNil() {
+	o.VolumeOptionSource.Set(nil)
+}
+
+// UnsetVolumeOptionSource ensures that no value is present for VolumeOptionSource, not even an explicit nil
+func (o *InstanceServicePlanStorageType) UnsetVolumeOptionSource() {
+	o.VolumeOptionSource.Unset()
 }
 
 // GetDisplayName returns the DisplayName field value if set, zero value otherwise.
@@ -550,68 +595,90 @@ func (o *InstanceServicePlanStorageType) SetDisplayName(v string) {
 	o.DisplayName = &v
 }
 
-// GetMinIOPS returns the MinIOPS field value if set, zero value otherwise.
+// GetMinIOPS returns the MinIOPS field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *InstanceServicePlanStorageType) GetMinIOPS() string {
-	if o == nil || IsNil(o.MinIOPS) {
+	if o == nil || IsNil(o.MinIOPS.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.MinIOPS
+	return *o.MinIOPS.Get()
 }
 
 // GetMinIOPSOk returns a tuple with the MinIOPS field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *InstanceServicePlanStorageType) GetMinIOPSOk() (*string, bool) {
-	if o == nil || IsNil(o.MinIOPS) {
+	if o == nil {
 		return nil, false
 	}
-	return o.MinIOPS, true
+	return o.MinIOPS.Get(), o.MinIOPS.IsSet()
 }
 
 // IsSetMinIOPS returns a boolean if a field has been set.
 func (o *InstanceServicePlanStorageType) IsSetMinIOPS() bool {
-	if o != nil && !IsNil(o.MinIOPS) {
+	if o != nil && o.MinIOPS.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetMinIOPS gets a reference to the given string and assigns it to the MinIOPS field.
+// SetMinIOPS gets a reference to the given NullableString and assigns it to the MinIOPS field.
 func (o *InstanceServicePlanStorageType) SetMinIOPS(v string) {
-	o.MinIOPS = &v
+	o.MinIOPS.Set(&v)
 }
 
-// GetMaxIOPS returns the MaxIOPS field value if set, zero value otherwise.
+// SetMinIOPSNil sets the value for MinIOPS to be an explicit nil
+func (o *InstanceServicePlanStorageType) SetMinIOPSNil() {
+	o.MinIOPS.Set(nil)
+}
+
+// UnsetMinIOPS ensures that no value is present for MinIOPS, not even an explicit nil
+func (o *InstanceServicePlanStorageType) UnsetMinIOPS() {
+	o.MinIOPS.Unset()
+}
+
+// GetMaxIOPS returns the MaxIOPS field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *InstanceServicePlanStorageType) GetMaxIOPS() string {
-	if o == nil || IsNil(o.MaxIOPS) {
+	if o == nil || IsNil(o.MaxIOPS.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.MaxIOPS
+	return *o.MaxIOPS.Get()
 }
 
 // GetMaxIOPSOk returns a tuple with the MaxIOPS field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *InstanceServicePlanStorageType) GetMaxIOPSOk() (*string, bool) {
-	if o == nil || IsNil(o.MaxIOPS) {
+	if o == nil {
 		return nil, false
 	}
-	return o.MaxIOPS, true
+	return o.MaxIOPS.Get(), o.MaxIOPS.IsSet()
 }
 
 // IsSetMaxIOPS returns a boolean if a field has been set.
 func (o *InstanceServicePlanStorageType) IsSetMaxIOPS() bool {
-	if o != nil && !IsNil(o.MaxIOPS) {
+	if o != nil && o.MaxIOPS.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetMaxIOPS gets a reference to the given string and assigns it to the MaxIOPS field.
+// SetMaxIOPS gets a reference to the given NullableString and assigns it to the MaxIOPS field.
 func (o *InstanceServicePlanStorageType) SetMaxIOPS(v string) {
-	o.MaxIOPS = &v
+	o.MaxIOPS.Set(&v)
+}
+
+// SetMaxIOPSNil sets the value for MaxIOPS to be an explicit nil
+func (o *InstanceServicePlanStorageType) SetMaxIOPSNil() {
+	o.MaxIOPS.Set(nil)
+}
+
+// UnsetMaxIOPS ensures that no value is present for MaxIOPS, not even an explicit nil
+func (o *InstanceServicePlanStorageType) UnsetMaxIOPS() {
+	o.MaxIOPS.Unset()
 }
 
 // GetHasDatastore returns the HasDatastore field value if set, zero value otherwise.
@@ -838,36 +905,47 @@ func (o *InstanceServicePlanStorageType) SetEnabled(v bool) {
 	o.Enabled = &v
 }
 
-// GetDescription returns the Description field value if set, zero value otherwise.
+// GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *InstanceServicePlanStorageType) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
+	if o == nil || IsNil(o.Description.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Description
+	return *o.Description.Get()
 }
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *InstanceServicePlanStorageType) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Description, true
+	return o.Description.Get(), o.Description.IsSet()
 }
 
 // IsSetDescription returns a boolean if a field has been set.
 func (o *InstanceServicePlanStorageType) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
+	if o != nil && o.Description.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDescription gets a reference to the given string and assigns it to the Description field.
+// SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *InstanceServicePlanStorageType) SetDescription(v string) {
-	o.Description = &v
+	o.Description.Set(&v)
+}
+
+// SetDescriptionNil sets the value for Description to be an explicit nil
+func (o *InstanceServicePlanStorageType) SetDescriptionNil() {
+	o.Description.Set(nil)
+}
+
+// UnsetDescription ensures that no value is present for Description, not even an explicit nil
+func (o *InstanceServicePlanStorageType) UnsetDescription() {
+	o.Description.Unset()
 }
 
 // GetVolumeCategory returns the VolumeCategory field value if set, zero value otherwise.
@@ -902,68 +980,90 @@ func (o *InstanceServicePlanStorageType) SetVolumeCategory(v string) {
 	o.VolumeCategory = &v
 }
 
-// GetExternalId returns the ExternalId field value if set, zero value otherwise.
+// GetExternalId returns the ExternalId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *InstanceServicePlanStorageType) GetExternalId() string {
-	if o == nil || IsNil(o.ExternalId) {
+	if o == nil || IsNil(o.ExternalId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ExternalId
+	return *o.ExternalId.Get()
 }
 
 // GetExternalIdOk returns a tuple with the ExternalId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *InstanceServicePlanStorageType) GetExternalIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ExternalId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ExternalId, true
+	return o.ExternalId.Get(), o.ExternalId.IsSet()
 }
 
 // IsSetExternalId returns a boolean if a field has been set.
 func (o *InstanceServicePlanStorageType) IsSetExternalId() bool {
-	if o != nil && !IsNil(o.ExternalId) {
+	if o != nil && o.ExternalId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetExternalId gets a reference to the given string and assigns it to the ExternalId field.
+// SetExternalId gets a reference to the given NullableString and assigns it to the ExternalId field.
 func (o *InstanceServicePlanStorageType) SetExternalId(v string) {
-	o.ExternalId = &v
+	o.ExternalId.Set(&v)
 }
 
-// GetMaxStorage returns the MaxStorage field value if set, zero value otherwise.
+// SetExternalIdNil sets the value for ExternalId to be an explicit nil
+func (o *InstanceServicePlanStorageType) SetExternalIdNil() {
+	o.ExternalId.Set(nil)
+}
+
+// UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
+func (o *InstanceServicePlanStorageType) UnsetExternalId() {
+	o.ExternalId.Unset()
+}
+
+// GetMaxStorage returns the MaxStorage field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *InstanceServicePlanStorageType) GetMaxStorage() string {
-	if o == nil || IsNil(o.MaxStorage) {
+	if o == nil || IsNil(o.MaxStorage.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.MaxStorage
+	return *o.MaxStorage.Get()
 }
 
 // GetMaxStorageOk returns a tuple with the MaxStorage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *InstanceServicePlanStorageType) GetMaxStorageOk() (*string, bool) {
-	if o == nil || IsNil(o.MaxStorage) {
+	if o == nil {
 		return nil, false
 	}
-	return o.MaxStorage, true
+	return o.MaxStorage.Get(), o.MaxStorage.IsSet()
 }
 
 // IsSetMaxStorage returns a boolean if a field has been set.
 func (o *InstanceServicePlanStorageType) IsSetMaxStorage() bool {
-	if o != nil && !IsNil(o.MaxStorage) {
+	if o != nil && o.MaxStorage.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetMaxStorage gets a reference to the given string and assigns it to the MaxStorage field.
+// SetMaxStorage gets a reference to the given NullableString and assigns it to the MaxStorage field.
 func (o *InstanceServicePlanStorageType) SetMaxStorage(v string) {
-	o.MaxStorage = &v
+	o.MaxStorage.Set(&v)
+}
+
+// SetMaxStorageNil sets the value for MaxStorage to be an explicit nil
+func (o *InstanceServicePlanStorageType) SetMaxStorageNil() {
+	o.MaxStorage.Set(nil)
+}
+
+// UnsetMaxStorage ensures that no value is present for MaxStorage, not even an explicit nil
+func (o *InstanceServicePlanStorageType) UnsetMaxStorage() {
+	o.MaxStorage.Unset()
 }
 
 func (o InstanceServicePlanStorageType) MarshalJSON() ([]byte, error) {
@@ -982,7 +1082,7 @@ func (o InstanceServicePlanStorageType) ToMap() (map[string]interface{}, error) 
 	if !IsNil(o.Editable) {
 		toSerialize["editable"] = o.Editable
 	}
-	if !IsNil(o.OptionTypes) {
+	if o.OptionTypes != nil {
 		toSerialize["optionTypes"] = o.OptionTypes
 	}
 	if !IsNil(o.DisplayOrder) {
@@ -994,8 +1094,8 @@ func (o InstanceServicePlanStorageType) ToMap() (map[string]interface{}, error) 
 	if !IsNil(o.VolumeType) {
 		toSerialize["volumeType"] = o.VolumeType
 	}
-	if !IsNil(o.MinStorage) {
-		toSerialize["minStorage"] = o.MinStorage
+	if o.MinStorage.IsSet() {
+		toSerialize["minStorage"] = o.MinStorage.Get()
 	}
 	if !IsNil(o.Deletable) {
 		toSerialize["deletable"] = o.Deletable
@@ -1003,29 +1103,29 @@ func (o InstanceServicePlanStorageType) ToMap() (map[string]interface{}, error) 
 	if !IsNil(o.DefaultType) {
 		toSerialize["defaultType"] = o.DefaultType
 	}
-	if !IsNil(o.CreateDatastore) {
-		toSerialize["createDatastore"] = o.CreateDatastore
+	if o.CreateDatastore.IsSet() {
+		toSerialize["createDatastore"] = o.CreateDatastore.Get()
 	}
 	if !IsNil(o.Resizable) {
 		toSerialize["resizable"] = o.Resizable
 	}
-	if !IsNil(o.StorageType) {
-		toSerialize["storageType"] = o.StorageType
+	if o.StorageType.IsSet() {
+		toSerialize["storageType"] = o.StorageType.Get()
 	}
 	if !IsNil(o.AllowSearch) {
 		toSerialize["allowSearch"] = o.AllowSearch
 	}
-	if !IsNil(o.VolumeOptionSource) {
-		toSerialize["volumeOptionSource"] = o.VolumeOptionSource
+	if o.VolumeOptionSource.IsSet() {
+		toSerialize["volumeOptionSource"] = o.VolumeOptionSource.Get()
 	}
 	if !IsNil(o.DisplayName) {
 		toSerialize["displayName"] = o.DisplayName
 	}
-	if !IsNil(o.MinIOPS) {
-		toSerialize["minIOPS"] = o.MinIOPS
+	if o.MinIOPS.IsSet() {
+		toSerialize["minIOPS"] = o.MinIOPS.Get()
 	}
-	if !IsNil(o.MaxIOPS) {
-		toSerialize["maxIOPS"] = o.MaxIOPS
+	if o.MaxIOPS.IsSet() {
+		toSerialize["maxIOPS"] = o.MaxIOPS.Get()
 	}
 	if !IsNil(o.HasDatastore) {
 		toSerialize["hasDatastore"] = o.HasDatastore
@@ -1048,17 +1148,17 @@ func (o InstanceServicePlanStorageType) ToMap() (map[string]interface{}, error) 
 	if !IsNil(o.Enabled) {
 		toSerialize["enabled"] = o.Enabled
 	}
-	if !IsNil(o.Description) {
-		toSerialize["description"] = o.Description
+	if o.Description.IsSet() {
+		toSerialize["description"] = o.Description.Get()
 	}
 	if !IsNil(o.VolumeCategory) {
 		toSerialize["volumeCategory"] = o.VolumeCategory
 	}
-	if !IsNil(o.ExternalId) {
-		toSerialize["externalId"] = o.ExternalId
+	if o.ExternalId.IsSet() {
+		toSerialize["externalId"] = o.ExternalId.Get()
 	}
-	if !IsNil(o.MaxStorage) {
-		toSerialize["maxStorage"] = o.MaxStorage
+	if o.MaxStorage.IsSet() {
+		toSerialize["maxStorage"] = o.MaxStorage.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {

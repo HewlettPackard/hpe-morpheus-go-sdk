@@ -23,12 +23,12 @@ type ListPolicyTypes200ResponseAllOfPolicyTypesInner struct {
 	Id                   *int64                                                                      `json:"id,omitempty"`
 	Code                 *string                                                                     `json:"code,omitempty"`
 	Name                 *string                                                                     `json:"name,omitempty"`
-	Description          *string                                                                     `json:"description,omitempty"`
+	Description          NullableString                                                              `json:"description,omitempty"`
 	Category             *string                                                                     `json:"category,omitempty"`
-	LoadMethod           *string                                                                     `json:"loadMethod,omitempty"`
-	EnforceMethod        *string                                                                     `json:"enforceMethod,omitempty"`
-	PrepareMethod        *string                                                                     `json:"prepareMethod,omitempty"`
-	ValidateMethod       *string                                                                     `json:"validateMethod,omitempty"`
+	LoadMethod           NullableString                                                              `json:"loadMethod,omitempty"`
+	EnforceMethod        NullableString                                                              `json:"enforceMethod,omitempty"`
+	PrepareMethod        NullableString                                                              `json:"prepareMethod,omitempty"`
+	ValidateMethod       NullableString                                                              `json:"validateMethod,omitempty"`
 	EnforceOnProvision   *bool                                                                       `json:"enforceOnProvision,omitempty"`
 	EnforceOnManaged     *bool                                                                       `json:"enforceOnManaged,omitempty"`
 	OptionTypes          []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
@@ -150,36 +150,47 @@ func (o *ListPolicyTypes200ResponseAllOfPolicyTypesInner) SetName(v string) {
 	o.Name = &v
 }
 
-// GetDescription returns the Description field value if set, zero value otherwise.
+// GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListPolicyTypes200ResponseAllOfPolicyTypesInner) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
+	if o == nil || IsNil(o.Description.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Description
+	return *o.Description.Get()
 }
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListPolicyTypes200ResponseAllOfPolicyTypesInner) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Description, true
+	return o.Description.Get(), o.Description.IsSet()
 }
 
 // IsSetDescription returns a boolean if a field has been set.
 func (o *ListPolicyTypes200ResponseAllOfPolicyTypesInner) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
+	if o != nil && o.Description.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDescription gets a reference to the given string and assigns it to the Description field.
+// SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *ListPolicyTypes200ResponseAllOfPolicyTypesInner) SetDescription(v string) {
-	o.Description = &v
+	o.Description.Set(&v)
+}
+
+// SetDescriptionNil sets the value for Description to be an explicit nil
+func (o *ListPolicyTypes200ResponseAllOfPolicyTypesInner) SetDescriptionNil() {
+	o.Description.Set(nil)
+}
+
+// UnsetDescription ensures that no value is present for Description, not even an explicit nil
+func (o *ListPolicyTypes200ResponseAllOfPolicyTypesInner) UnsetDescription() {
+	o.Description.Unset()
 }
 
 // GetCategory returns the Category field value if set, zero value otherwise.
@@ -214,132 +225,176 @@ func (o *ListPolicyTypes200ResponseAllOfPolicyTypesInner) SetCategory(v string) 
 	o.Category = &v
 }
 
-// GetLoadMethod returns the LoadMethod field value if set, zero value otherwise.
+// GetLoadMethod returns the LoadMethod field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListPolicyTypes200ResponseAllOfPolicyTypesInner) GetLoadMethod() string {
-	if o == nil || IsNil(o.LoadMethod) {
+	if o == nil || IsNil(o.LoadMethod.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.LoadMethod
+	return *o.LoadMethod.Get()
 }
 
 // GetLoadMethodOk returns a tuple with the LoadMethod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListPolicyTypes200ResponseAllOfPolicyTypesInner) GetLoadMethodOk() (*string, bool) {
-	if o == nil || IsNil(o.LoadMethod) {
+	if o == nil {
 		return nil, false
 	}
-	return o.LoadMethod, true
+	return o.LoadMethod.Get(), o.LoadMethod.IsSet()
 }
 
 // IsSetLoadMethod returns a boolean if a field has been set.
 func (o *ListPolicyTypes200ResponseAllOfPolicyTypesInner) IsSetLoadMethod() bool {
-	if o != nil && !IsNil(o.LoadMethod) {
+	if o != nil && o.LoadMethod.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetLoadMethod gets a reference to the given string and assigns it to the LoadMethod field.
+// SetLoadMethod gets a reference to the given NullableString and assigns it to the LoadMethod field.
 func (o *ListPolicyTypes200ResponseAllOfPolicyTypesInner) SetLoadMethod(v string) {
-	o.LoadMethod = &v
+	o.LoadMethod.Set(&v)
 }
 
-// GetEnforceMethod returns the EnforceMethod field value if set, zero value otherwise.
+// SetLoadMethodNil sets the value for LoadMethod to be an explicit nil
+func (o *ListPolicyTypes200ResponseAllOfPolicyTypesInner) SetLoadMethodNil() {
+	o.LoadMethod.Set(nil)
+}
+
+// UnsetLoadMethod ensures that no value is present for LoadMethod, not even an explicit nil
+func (o *ListPolicyTypes200ResponseAllOfPolicyTypesInner) UnsetLoadMethod() {
+	o.LoadMethod.Unset()
+}
+
+// GetEnforceMethod returns the EnforceMethod field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListPolicyTypes200ResponseAllOfPolicyTypesInner) GetEnforceMethod() string {
-	if o == nil || IsNil(o.EnforceMethod) {
+	if o == nil || IsNil(o.EnforceMethod.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.EnforceMethod
+	return *o.EnforceMethod.Get()
 }
 
 // GetEnforceMethodOk returns a tuple with the EnforceMethod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListPolicyTypes200ResponseAllOfPolicyTypesInner) GetEnforceMethodOk() (*string, bool) {
-	if o == nil || IsNil(o.EnforceMethod) {
+	if o == nil {
 		return nil, false
 	}
-	return o.EnforceMethod, true
+	return o.EnforceMethod.Get(), o.EnforceMethod.IsSet()
 }
 
 // IsSetEnforceMethod returns a boolean if a field has been set.
 func (o *ListPolicyTypes200ResponseAllOfPolicyTypesInner) IsSetEnforceMethod() bool {
-	if o != nil && !IsNil(o.EnforceMethod) {
+	if o != nil && o.EnforceMethod.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetEnforceMethod gets a reference to the given string and assigns it to the EnforceMethod field.
+// SetEnforceMethod gets a reference to the given NullableString and assigns it to the EnforceMethod field.
 func (o *ListPolicyTypes200ResponseAllOfPolicyTypesInner) SetEnforceMethod(v string) {
-	o.EnforceMethod = &v
+	o.EnforceMethod.Set(&v)
 }
 
-// GetPrepareMethod returns the PrepareMethod field value if set, zero value otherwise.
+// SetEnforceMethodNil sets the value for EnforceMethod to be an explicit nil
+func (o *ListPolicyTypes200ResponseAllOfPolicyTypesInner) SetEnforceMethodNil() {
+	o.EnforceMethod.Set(nil)
+}
+
+// UnsetEnforceMethod ensures that no value is present for EnforceMethod, not even an explicit nil
+func (o *ListPolicyTypes200ResponseAllOfPolicyTypesInner) UnsetEnforceMethod() {
+	o.EnforceMethod.Unset()
+}
+
+// GetPrepareMethod returns the PrepareMethod field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListPolicyTypes200ResponseAllOfPolicyTypesInner) GetPrepareMethod() string {
-	if o == nil || IsNil(o.PrepareMethod) {
+	if o == nil || IsNil(o.PrepareMethod.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.PrepareMethod
+	return *o.PrepareMethod.Get()
 }
 
 // GetPrepareMethodOk returns a tuple with the PrepareMethod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListPolicyTypes200ResponseAllOfPolicyTypesInner) GetPrepareMethodOk() (*string, bool) {
-	if o == nil || IsNil(o.PrepareMethod) {
+	if o == nil {
 		return nil, false
 	}
-	return o.PrepareMethod, true
+	return o.PrepareMethod.Get(), o.PrepareMethod.IsSet()
 }
 
 // IsSetPrepareMethod returns a boolean if a field has been set.
 func (o *ListPolicyTypes200ResponseAllOfPolicyTypesInner) IsSetPrepareMethod() bool {
-	if o != nil && !IsNil(o.PrepareMethod) {
+	if o != nil && o.PrepareMethod.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetPrepareMethod gets a reference to the given string and assigns it to the PrepareMethod field.
+// SetPrepareMethod gets a reference to the given NullableString and assigns it to the PrepareMethod field.
 func (o *ListPolicyTypes200ResponseAllOfPolicyTypesInner) SetPrepareMethod(v string) {
-	o.PrepareMethod = &v
+	o.PrepareMethod.Set(&v)
 }
 
-// GetValidateMethod returns the ValidateMethod field value if set, zero value otherwise.
+// SetPrepareMethodNil sets the value for PrepareMethod to be an explicit nil
+func (o *ListPolicyTypes200ResponseAllOfPolicyTypesInner) SetPrepareMethodNil() {
+	o.PrepareMethod.Set(nil)
+}
+
+// UnsetPrepareMethod ensures that no value is present for PrepareMethod, not even an explicit nil
+func (o *ListPolicyTypes200ResponseAllOfPolicyTypesInner) UnsetPrepareMethod() {
+	o.PrepareMethod.Unset()
+}
+
+// GetValidateMethod returns the ValidateMethod field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListPolicyTypes200ResponseAllOfPolicyTypesInner) GetValidateMethod() string {
-	if o == nil || IsNil(o.ValidateMethod) {
+	if o == nil || IsNil(o.ValidateMethod.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ValidateMethod
+	return *o.ValidateMethod.Get()
 }
 
 // GetValidateMethodOk returns a tuple with the ValidateMethod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListPolicyTypes200ResponseAllOfPolicyTypesInner) GetValidateMethodOk() (*string, bool) {
-	if o == nil || IsNil(o.ValidateMethod) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ValidateMethod, true
+	return o.ValidateMethod.Get(), o.ValidateMethod.IsSet()
 }
 
 // IsSetValidateMethod returns a boolean if a field has been set.
 func (o *ListPolicyTypes200ResponseAllOfPolicyTypesInner) IsSetValidateMethod() bool {
-	if o != nil && !IsNil(o.ValidateMethod) {
+	if o != nil && o.ValidateMethod.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetValidateMethod gets a reference to the given string and assigns it to the ValidateMethod field.
+// SetValidateMethod gets a reference to the given NullableString and assigns it to the ValidateMethod field.
 func (o *ListPolicyTypes200ResponseAllOfPolicyTypesInner) SetValidateMethod(v string) {
-	o.ValidateMethod = &v
+	o.ValidateMethod.Set(&v)
+}
+
+// SetValidateMethodNil sets the value for ValidateMethod to be an explicit nil
+func (o *ListPolicyTypes200ResponseAllOfPolicyTypesInner) SetValidateMethodNil() {
+	o.ValidateMethod.Set(nil)
+}
+
+// UnsetValidateMethod ensures that no value is present for ValidateMethod, not even an explicit nil
+func (o *ListPolicyTypes200ResponseAllOfPolicyTypesInner) UnsetValidateMethod() {
+	o.ValidateMethod.Unset()
 }
 
 // GetEnforceOnProvision returns the EnforceOnProvision field value if set, zero value otherwise.
@@ -457,23 +512,23 @@ func (o ListPolicyTypes200ResponseAllOfPolicyTypesInner) ToMap() (map[string]int
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !IsNil(o.Description) {
-		toSerialize["description"] = o.Description
+	if o.Description.IsSet() {
+		toSerialize["description"] = o.Description.Get()
 	}
 	if !IsNil(o.Category) {
 		toSerialize["category"] = o.Category
 	}
-	if !IsNil(o.LoadMethod) {
-		toSerialize["loadMethod"] = o.LoadMethod
+	if o.LoadMethod.IsSet() {
+		toSerialize["loadMethod"] = o.LoadMethod.Get()
 	}
-	if !IsNil(o.EnforceMethod) {
-		toSerialize["enforceMethod"] = o.EnforceMethod
+	if o.EnforceMethod.IsSet() {
+		toSerialize["enforceMethod"] = o.EnforceMethod.Get()
 	}
-	if !IsNil(o.PrepareMethod) {
-		toSerialize["prepareMethod"] = o.PrepareMethod
+	if o.PrepareMethod.IsSet() {
+		toSerialize["prepareMethod"] = o.PrepareMethod.Get()
 	}
-	if !IsNil(o.ValidateMethod) {
-		toSerialize["validateMethod"] = o.ValidateMethod
+	if o.ValidateMethod.IsSet() {
+		toSerialize["validateMethod"] = o.ValidateMethod.Get()
 	}
 	if !IsNil(o.EnforceOnProvision) {
 		toSerialize["enforceOnProvision"] = o.EnforceOnProvision

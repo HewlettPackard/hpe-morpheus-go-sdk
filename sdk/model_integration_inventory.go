@@ -20,13 +20,13 @@ var _ MappedNullable = &IntegrationInventory{}
 
 // IntegrationInventory struct for IntegrationInventory
 type IntegrationInventory struct {
-	Id                   *int64                                                                   `json:"id,omitempty"`
-	Name                 *string                                                                  `json:"name,omitempty"`
-	Description          *string                                                                  `json:"description,omitempty"`
-	ExternalId           *string                                                                  `json:"externalId,omitempty"`
-	Owner                *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner  `json:"owner,omitempty"`
-	Tenants              []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"tenants,omitempty"`
-	AdditionalProperties map[string]interface{}                                                   `json:",remain"`
+	Id                   *int64                                              `json:"id,omitempty"`
+	Name                 *string                                             `json:"name,omitempty"`
+	Description          NullableString                                      `json:"description,omitempty"`
+	ExternalId           NullableString                                      `json:"externalId,omitempty"`
+	Owner                *GetAlerts200ResponseAllOfCheckGroupsInnerInstance  `json:"owner,omitempty"`
+	Tenants              []GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"tenants,omitempty"`
+	AdditionalProperties map[string]interface{}                              `json:",remain"`
 }
 
 type _IntegrationInventory IntegrationInventory
@@ -112,74 +112,96 @@ func (o *IntegrationInventory) SetName(v string) {
 	o.Name = &v
 }
 
-// GetDescription returns the Description field value if set, zero value otherwise.
+// GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IntegrationInventory) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
+	if o == nil || IsNil(o.Description.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Description
+	return *o.Description.Get()
 }
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IntegrationInventory) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Description, true
+	return o.Description.Get(), o.Description.IsSet()
 }
 
 // IsSetDescription returns a boolean if a field has been set.
 func (o *IntegrationInventory) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
+	if o != nil && o.Description.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDescription gets a reference to the given string and assigns it to the Description field.
+// SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *IntegrationInventory) SetDescription(v string) {
-	o.Description = &v
+	o.Description.Set(&v)
 }
 
-// GetExternalId returns the ExternalId field value if set, zero value otherwise.
+// SetDescriptionNil sets the value for Description to be an explicit nil
+func (o *IntegrationInventory) SetDescriptionNil() {
+	o.Description.Set(nil)
+}
+
+// UnsetDescription ensures that no value is present for Description, not even an explicit nil
+func (o *IntegrationInventory) UnsetDescription() {
+	o.Description.Unset()
+}
+
+// GetExternalId returns the ExternalId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IntegrationInventory) GetExternalId() string {
-	if o == nil || IsNil(o.ExternalId) {
+	if o == nil || IsNil(o.ExternalId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ExternalId
+	return *o.ExternalId.Get()
 }
 
 // GetExternalIdOk returns a tuple with the ExternalId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IntegrationInventory) GetExternalIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ExternalId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ExternalId, true
+	return o.ExternalId.Get(), o.ExternalId.IsSet()
 }
 
 // IsSetExternalId returns a boolean if a field has been set.
 func (o *IntegrationInventory) IsSetExternalId() bool {
-	if o != nil && !IsNil(o.ExternalId) {
+	if o != nil && o.ExternalId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetExternalId gets a reference to the given string and assigns it to the ExternalId field.
+// SetExternalId gets a reference to the given NullableString and assigns it to the ExternalId field.
 func (o *IntegrationInventory) SetExternalId(v string) {
-	o.ExternalId = &v
+	o.ExternalId.Set(&v)
+}
+
+// SetExternalIdNil sets the value for ExternalId to be an explicit nil
+func (o *IntegrationInventory) SetExternalIdNil() {
+	o.ExternalId.Set(nil)
+}
+
+// UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
+func (o *IntegrationInventory) UnsetExternalId() {
+	o.ExternalId.Unset()
 }
 
 // GetOwner returns the Owner field value if set, zero value otherwise.
-func (o *IntegrationInventory) GetOwner() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *IntegrationInventory) GetOwner() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.Owner) {
-		var ret ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return *o.Owner
@@ -187,7 +209,7 @@ func (o *IntegrationInventory) GetOwner() ListApplianceSettings200ResponseApplia
 
 // GetOwnerOk returns a tuple with the Owner field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *IntegrationInventory) GetOwnerOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *IntegrationInventory) GetOwnerOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.Owner) {
 		return nil, false
 	}
@@ -203,15 +225,15 @@ func (o *IntegrationInventory) IsSetOwner() bool {
 	return false
 }
 
-// SetOwner gets a reference to the given ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the Owner field.
-func (o *IntegrationInventory) SetOwner(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetOwner gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Owner field.
+func (o *IntegrationInventory) SetOwner(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.Owner = &v
 }
 
 // GetTenants returns the Tenants field value if set, zero value otherwise.
-func (o *IntegrationInventory) GetTenants() []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *IntegrationInventory) GetTenants() []GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.Tenants) {
-		var ret []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret []GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return o.Tenants
@@ -219,7 +241,7 @@ func (o *IntegrationInventory) GetTenants() []ListApplianceSettings200ResponseAp
 
 // GetTenantsOk returns a tuple with the Tenants field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *IntegrationInventory) GetTenantsOk() ([]ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *IntegrationInventory) GetTenantsOk() ([]GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.Tenants) {
 		return nil, false
 	}
@@ -235,8 +257,8 @@ func (o *IntegrationInventory) IsSetTenants() bool {
 	return false
 }
 
-// SetTenants gets a reference to the given []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the Tenants field.
-func (o *IntegrationInventory) SetTenants(v []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetTenants gets a reference to the given []GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Tenants field.
+func (o *IntegrationInventory) SetTenants(v []GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.Tenants = v
 }
 
@@ -256,11 +278,11 @@ func (o IntegrationInventory) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !IsNil(o.Description) {
-		toSerialize["description"] = o.Description
+	if o.Description.IsSet() {
+		toSerialize["description"] = o.Description.Get()
 	}
-	if !IsNil(o.ExternalId) {
-		toSerialize["externalId"] = o.ExternalId
+	if o.ExternalId.IsSet() {
+		toSerialize["externalId"] = o.ExternalId.Get()
 	}
 	if !IsNil(o.Owner) {
 		toSerialize["owner"] = o.Owner

@@ -10,22 +10,22 @@ Name | Type | Description | Notes
 **Labels** | Pointer to **[]string** |  | [optional] 
 **Environment** | Pointer to **string** |  | [optional] 
 **AccountId** | Pointer to **int64** |  | [optional] 
-**Account** | Pointer to [**ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
+**Account** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **Owner** | Pointer to [**ListActivity200ResponseAllOfActivityInnerActivityInnerUser**](ListActivity200ResponseAllOfActivityInnerActivityInnerUser.md) |  | [optional] 
 **SiteId** | Pointer to **int64** |  | [optional] 
-**Group** | Pointer to [**ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
+**Group** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **Blueprint** | Pointer to [**ListApps200ResponseAllOfAppsInnerBlueprint**](ListApps200ResponseAllOfAppsInnerBlueprint.md) |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
-**RemovalDate** | Pointer to **time.Time** |  | [optional] 
+**RemovalDate** | Pointer to **NullableTime** |  | [optional] 
 **AppContext** | Pointer to **string** |  | [optional] 
 **Status** | Pointer to **string** |  | [optional] 
 **AppStatus** | Pointer to **string** |  | [optional] 
 **InstanceCount** | Pointer to **int64** |  | [optional] 
 **ContainerCount** | Pointer to **int64** |  | [optional] 
 **AppTiers** | Pointer to **[]map[string]interface{}** |  | [optional] 
-**Instances** | Pointer to [**[]ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
+**Instances** | Pointer to [**[]GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **Stats** | Pointer to [**ListApps200ResponseAllOfAppsInnerStats**](ListApps200ResponseAllOfAppsInnerStats.md) |  | [optional] 
 
 ## Methods
@@ -199,20 +199,20 @@ HasAccountId returns a boolean if a field has been set.
 
 ### GetAccount
 
-`func (o *App) GetAccount() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *App) GetAccount() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetAccount returns the Account field if non-nil, zero value otherwise.
 
 ### GetAccountOk
 
-`func (o *App) GetAccountOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *App) GetAccountOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetAccountOk returns a tuple with the Account field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccount
 
-`func (o *App) SetAccount(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *App) SetAccount(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetAccount sets Account field to given value.
 
@@ -274,20 +274,20 @@ HasSiteId returns a boolean if a field has been set.
 
 ### GetGroup
 
-`func (o *App) GetGroup() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *App) GetGroup() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetGroup returns the Group field if non-nil, zero value otherwise.
 
 ### GetGroupOk
 
-`func (o *App) GetGroupOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *App) GetGroupOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetGroupOk returns a tuple with the Group field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGroup
 
-`func (o *App) SetGroup(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *App) SetGroup(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetGroup sets Group field to given value.
 
@@ -422,6 +422,16 @@ SetRemovalDate sets RemovalDate field to given value.
 
 HasRemovalDate returns a boolean if a field has been set.
 
+### SetRemovalDateNil
+
+`func (o *App) SetRemovalDateNil(b bool)`
+
+ SetRemovalDateNil sets the value for RemovalDate to be an explicit nil
+
+### UnsetRemovalDate
+`func (o *App) UnsetRemovalDate()`
+
+UnsetRemovalDate ensures that no value is present for RemovalDate, not even an explicit nil
 ### GetAppContext
 
 `func (o *App) GetAppContext() string`
@@ -574,20 +584,20 @@ HasAppTiers returns a boolean if a field has been set.
 
 ### GetInstances
 
-`func (o *App) GetInstances() []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *App) GetInstances() []GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetInstances returns the Instances field if non-nil, zero value otherwise.
 
 ### GetInstancesOk
 
-`func (o *App) GetInstancesOk() (*[]ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *App) GetInstancesOk() (*[]GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetInstancesOk returns a tuple with the Instances field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInstances
 
-`func (o *App) SetInstances(v []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *App) SetInstances(v []GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetInstances sets Instances field to given value.
 

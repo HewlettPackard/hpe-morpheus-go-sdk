@@ -6,17 +6,17 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** | The name of the osType.  | [optional] 
-**Description** | Pointer to **string** | The description of the osType.   | [optional] 
+**Description** | Pointer to **NullableString** | The description of the osType.   | [optional] 
 **Platform** | Pointer to **string** | The platform of the osType.   | [optional] 
-**Category** | Pointer to **string** | The category of the osType.  | [optional] 
-**Vendor** | Pointer to **string** | The vendor of the osType.  | [optional] 
-**OsName** | Pointer to **string** | The osName of the osType.  | [optional] 
-**OsVersion** | Pointer to **string** | The osVersion of the osType.  | [optional] 
-**OsCodename** | Pointer to **string** | The osCodename of the osType.  | [optional] 
-**OsFamily** | Pointer to **string** | The family of the osType.  | [optional] 
+**Category** | Pointer to **NullableString** | The category of the osType.  | [optional] 
+**Vendor** | Pointer to **NullableString** | The vendor of the osType.  | [optional] 
+**OsName** | Pointer to **NullableString** | The osName of the osType.  | [optional] 
+**OsVersion** | Pointer to **NullableString** | The osVersion of the osType.  | [optional] 
+**OsCodename** | Pointer to **NullableString** | The osCodename of the osType.  | [optional] 
+**OsFamily** | Pointer to **NullableString** | The family of the osType.  | [optional] 
 **BitCount** | Pointer to **int64** | The bitCount/architecture of the osType.  | [optional] 
 **CloudInitVersion** | Pointer to **string** | The version of CloudInit being used.  | [optional] 
-**InstallAgent** | Pointer to **bool** | Whether the morpheus agent is installed.  | [optional] 
+**InstallAgent** | Pointer to **NullableBool** | Whether the morpheus agent is installed.  | [optional] 
 **Images** | Pointer to [**[]ListOsTypes200ResponseAllOfOsTypesInnerImagesInner**](ListOsTypes200ResponseAllOfOsTypesInnerImagesInner.md) |  | [optional] 
 
 ## Methods
@@ -113,6 +113,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *OsType) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *OsType) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetPlatform
 
 `func (o *OsType) GetPlatform() string`
@@ -163,6 +173,16 @@ SetCategory sets Category field to given value.
 
 HasCategory returns a boolean if a field has been set.
 
+### SetCategoryNil
+
+`func (o *OsType) SetCategoryNil(b bool)`
+
+ SetCategoryNil sets the value for Category to be an explicit nil
+
+### UnsetCategory
+`func (o *OsType) UnsetCategory()`
+
+UnsetCategory ensures that no value is present for Category, not even an explicit nil
 ### GetVendor
 
 `func (o *OsType) GetVendor() string`
@@ -188,6 +208,16 @@ SetVendor sets Vendor field to given value.
 
 HasVendor returns a boolean if a field has been set.
 
+### SetVendorNil
+
+`func (o *OsType) SetVendorNil(b bool)`
+
+ SetVendorNil sets the value for Vendor to be an explicit nil
+
+### UnsetVendor
+`func (o *OsType) UnsetVendor()`
+
+UnsetVendor ensures that no value is present for Vendor, not even an explicit nil
 ### GetOsName
 
 `func (o *OsType) GetOsName() string`
@@ -213,6 +243,16 @@ SetOsName sets OsName field to given value.
 
 HasOsName returns a boolean if a field has been set.
 
+### SetOsNameNil
+
+`func (o *OsType) SetOsNameNil(b bool)`
+
+ SetOsNameNil sets the value for OsName to be an explicit nil
+
+### UnsetOsName
+`func (o *OsType) UnsetOsName()`
+
+UnsetOsName ensures that no value is present for OsName, not even an explicit nil
 ### GetOsVersion
 
 `func (o *OsType) GetOsVersion() string`
@@ -238,6 +278,16 @@ SetOsVersion sets OsVersion field to given value.
 
 HasOsVersion returns a boolean if a field has been set.
 
+### SetOsVersionNil
+
+`func (o *OsType) SetOsVersionNil(b bool)`
+
+ SetOsVersionNil sets the value for OsVersion to be an explicit nil
+
+### UnsetOsVersion
+`func (o *OsType) UnsetOsVersion()`
+
+UnsetOsVersion ensures that no value is present for OsVersion, not even an explicit nil
 ### GetOsCodename
 
 `func (o *OsType) GetOsCodename() string`
@@ -263,6 +313,16 @@ SetOsCodename sets OsCodename field to given value.
 
 HasOsCodename returns a boolean if a field has been set.
 
+### SetOsCodenameNil
+
+`func (o *OsType) SetOsCodenameNil(b bool)`
+
+ SetOsCodenameNil sets the value for OsCodename to be an explicit nil
+
+### UnsetOsCodename
+`func (o *OsType) UnsetOsCodename()`
+
+UnsetOsCodename ensures that no value is present for OsCodename, not even an explicit nil
 ### GetOsFamily
 
 `func (o *OsType) GetOsFamily() string`
@@ -288,6 +348,16 @@ SetOsFamily sets OsFamily field to given value.
 
 HasOsFamily returns a boolean if a field has been set.
 
+### SetOsFamilyNil
+
+`func (o *OsType) SetOsFamilyNil(b bool)`
+
+ SetOsFamilyNil sets the value for OsFamily to be an explicit nil
+
+### UnsetOsFamily
+`func (o *OsType) UnsetOsFamily()`
+
+UnsetOsFamily ensures that no value is present for OsFamily, not even an explicit nil
 ### GetBitCount
 
 `func (o *OsType) GetBitCount() int64`
@@ -363,6 +433,16 @@ SetInstallAgent sets InstallAgent field to given value.
 
 HasInstallAgent returns a boolean if a field has been set.
 
+### SetInstallAgentNil
+
+`func (o *OsType) SetInstallAgentNil(b bool)`
+
+ SetInstallAgentNil sets the value for InstallAgent to be an explicit nil
+
+### UnsetInstallAgent
+`func (o *OsType) UnsetInstallAgent()`
+
+UnsetInstallAgent ensures that no value is present for InstallAgent, not even an explicit nil
 ### GetImages
 
 `func (o *OsType) GetImages() []ListOsTypes200ResponseAllOfOsTypesInnerImagesInner`
@@ -388,6 +468,16 @@ SetImages sets Images field to given value.
 
 HasImages returns a boolean if a field has been set.
 
+### SetImagesNil
+
+`func (o *OsType) SetImagesNil(b bool)`
+
+ SetImagesNil sets the value for Images to be an explicit nil
+
+### UnsetImages
+`func (o *OsType) UnsetImages()`
+
+UnsetImages ensures that no value is present for Images, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

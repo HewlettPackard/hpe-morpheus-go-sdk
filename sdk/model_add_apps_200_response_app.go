@@ -21,29 +21,29 @@ var _ MappedNullable = &AddApps200ResponseApp{}
 
 // AddApps200ResponseApp struct for AddApps200ResponseApp
 type AddApps200ResponseApp struct {
-	Id                   *int64                                                                   `json:"id,omitempty"`
-	Name                 *string                                                                  `json:"name,omitempty"`
-	Description          *string                                                                  `json:"description,omitempty"`
-	Labels               []string                                                                 `json:"labels,omitempty"`
-	Environment          *string                                                                  `json:"environment,omitempty"`
-	AccountId            *int64                                                                   `json:"accountId,omitempty"`
-	Account              *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner  `json:"account,omitempty"`
-	Owner                *ListActivity200ResponseAllOfActivityInnerActivityInnerUser              `json:"owner,omitempty"`
-	SiteId               *int64                                                                   `json:"siteId,omitempty"`
-	Group                *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner  `json:"group,omitempty"`
-	Blueprint            *ListApps200ResponseAllOfAppsInnerBlueprint                              `json:"blueprint,omitempty"`
-	Type                 *string                                                                  `json:"type,omitempty"`
-	DateCreated          *time.Time                                                               `json:"dateCreated,omitempty"`
-	LastUpdated          *time.Time                                                               `json:"lastUpdated,omitempty"`
-	RemovalDate          *time.Time                                                               `json:"removalDate,omitempty"`
-	AppContext           *string                                                                  `json:"appContext,omitempty"`
-	Status               *string                                                                  `json:"status,omitempty"`
-	AppStatus            *string                                                                  `json:"appStatus,omitempty"`
-	InstanceCount        *int64                                                                   `json:"instanceCount,omitempty"`
-	ContainerCount       *int64                                                                   `json:"containerCount,omitempty"`
-	AppTiers             []map[string]interface{}                                                 `json:"appTiers,omitempty"`
-	Instances            []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"instances,omitempty"`
-	AdditionalProperties map[string]interface{}                                                   `json:",remain"`
+	Id                   *int64                                                      `json:"id,omitempty"`
+	Name                 *string                                                     `json:"name,omitempty"`
+	Description          *string                                                     `json:"description,omitempty"`
+	Labels               []string                                                    `json:"labels,omitempty"`
+	Environment          *string                                                     `json:"environment,omitempty"`
+	AccountId            *int64                                                      `json:"accountId,omitempty"`
+	Account              *GetAlerts200ResponseAllOfCheckGroupsInnerInstance          `json:"account,omitempty"`
+	Owner                *ListActivity200ResponseAllOfActivityInnerActivityInnerUser `json:"owner,omitempty"`
+	SiteId               *int64                                                      `json:"siteId,omitempty"`
+	Group                *GetAlerts200ResponseAllOfCheckGroupsInnerInstance          `json:"group,omitempty"`
+	Blueprint            *ListApps200ResponseAllOfAppsInnerBlueprint                 `json:"blueprint,omitempty"`
+	Type                 *string                                                     `json:"type,omitempty"`
+	DateCreated          *time.Time                                                  `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                                  `json:"lastUpdated,omitempty"`
+	RemovalDate          NullableTime                                                `json:"removalDate,omitempty"`
+	AppContext           *string                                                     `json:"appContext,omitempty"`
+	Status               *string                                                     `json:"status,omitempty"`
+	AppStatus            *string                                                     `json:"appStatus,omitempty"`
+	InstanceCount        *int64                                                      `json:"instanceCount,omitempty"`
+	ContainerCount       *int64                                                      `json:"containerCount,omitempty"`
+	AppTiers             []map[string]interface{}                                    `json:"appTiers,omitempty"`
+	Instances            []GetAlerts200ResponseAllOfCheckGroupsInnerInstance         `json:"instances,omitempty"`
+	AdditionalProperties map[string]interface{}                                      `json:",remain"`
 }
 
 type _AddApps200ResponseApp AddApps200ResponseApp
@@ -258,9 +258,9 @@ func (o *AddApps200ResponseApp) SetAccountId(v int64) {
 }
 
 // GetAccount returns the Account field value if set, zero value otherwise.
-func (o *AddApps200ResponseApp) GetAccount() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *AddApps200ResponseApp) GetAccount() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.Account) {
-		var ret ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return *o.Account
@@ -268,7 +268,7 @@ func (o *AddApps200ResponseApp) GetAccount() ListApplianceSettings200ResponseApp
 
 // GetAccountOk returns a tuple with the Account field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddApps200ResponseApp) GetAccountOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *AddApps200ResponseApp) GetAccountOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.Account) {
 		return nil, false
 	}
@@ -284,8 +284,8 @@ func (o *AddApps200ResponseApp) IsSetAccount() bool {
 	return false
 }
 
-// SetAccount gets a reference to the given ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the Account field.
-func (o *AddApps200ResponseApp) SetAccount(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetAccount gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Account field.
+func (o *AddApps200ResponseApp) SetAccount(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.Account = &v
 }
 
@@ -354,9 +354,9 @@ func (o *AddApps200ResponseApp) SetSiteId(v int64) {
 }
 
 // GetGroup returns the Group field value if set, zero value otherwise.
-func (o *AddApps200ResponseApp) GetGroup() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *AddApps200ResponseApp) GetGroup() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.Group) {
-		var ret ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return *o.Group
@@ -364,7 +364,7 @@ func (o *AddApps200ResponseApp) GetGroup() ListApplianceSettings200ResponseAppli
 
 // GetGroupOk returns a tuple with the Group field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddApps200ResponseApp) GetGroupOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *AddApps200ResponseApp) GetGroupOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.Group) {
 		return nil, false
 	}
@@ -380,8 +380,8 @@ func (o *AddApps200ResponseApp) IsSetGroup() bool {
 	return false
 }
 
-// SetGroup gets a reference to the given ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the Group field.
-func (o *AddApps200ResponseApp) SetGroup(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetGroup gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Group field.
+func (o *AddApps200ResponseApp) SetGroup(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.Group = &v
 }
 
@@ -513,36 +513,47 @@ func (o *AddApps200ResponseApp) SetLastUpdated(v time.Time) {
 	o.LastUpdated = &v
 }
 
-// GetRemovalDate returns the RemovalDate field value if set, zero value otherwise.
+// GetRemovalDate returns the RemovalDate field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AddApps200ResponseApp) GetRemovalDate() time.Time {
-	if o == nil || IsNil(o.RemovalDate) {
+	if o == nil || IsNil(o.RemovalDate.Get()) {
 		var ret time.Time
 		return ret
 	}
-	return *o.RemovalDate
+	return *o.RemovalDate.Get()
 }
 
 // GetRemovalDateOk returns a tuple with the RemovalDate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AddApps200ResponseApp) GetRemovalDateOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.RemovalDate) {
+	if o == nil {
 		return nil, false
 	}
-	return o.RemovalDate, true
+	return o.RemovalDate.Get(), o.RemovalDate.IsSet()
 }
 
 // IsSetRemovalDate returns a boolean if a field has been set.
 func (o *AddApps200ResponseApp) IsSetRemovalDate() bool {
-	if o != nil && !IsNil(o.RemovalDate) {
+	if o != nil && o.RemovalDate.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetRemovalDate gets a reference to the given time.Time and assigns it to the RemovalDate field.
+// SetRemovalDate gets a reference to the given NullableTime and assigns it to the RemovalDate field.
 func (o *AddApps200ResponseApp) SetRemovalDate(v time.Time) {
-	o.RemovalDate = &v
+	o.RemovalDate.Set(&v)
+}
+
+// SetRemovalDateNil sets the value for RemovalDate to be an explicit nil
+func (o *AddApps200ResponseApp) SetRemovalDateNil() {
+	o.RemovalDate.Set(nil)
+}
+
+// UnsetRemovalDate ensures that no value is present for RemovalDate, not even an explicit nil
+func (o *AddApps200ResponseApp) UnsetRemovalDate() {
+	o.RemovalDate.Unset()
 }
 
 // GetAppContext returns the AppContext field value if set, zero value otherwise.
@@ -738,9 +749,9 @@ func (o *AddApps200ResponseApp) SetAppTiers(v []map[string]interface{}) {
 }
 
 // GetInstances returns the Instances field value if set, zero value otherwise.
-func (o *AddApps200ResponseApp) GetInstances() []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *AddApps200ResponseApp) GetInstances() []GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.Instances) {
-		var ret []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret []GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return o.Instances
@@ -748,7 +759,7 @@ func (o *AddApps200ResponseApp) GetInstances() []ListApplianceSettings200Respons
 
 // GetInstancesOk returns a tuple with the Instances field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddApps200ResponseApp) GetInstancesOk() ([]ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *AddApps200ResponseApp) GetInstancesOk() ([]GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.Instances) {
 		return nil, false
 	}
@@ -764,8 +775,8 @@ func (o *AddApps200ResponseApp) IsSetInstances() bool {
 	return false
 }
 
-// SetInstances gets a reference to the given []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the Instances field.
-func (o *AddApps200ResponseApp) SetInstances(v []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetInstances gets a reference to the given []GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Instances field.
+func (o *AddApps200ResponseApp) SetInstances(v []GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.Instances = v
 }
 
@@ -821,8 +832,8 @@ func (o AddApps200ResponseApp) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.LastUpdated) {
 		toSerialize["lastUpdated"] = o.LastUpdated
 	}
-	if !IsNil(o.RemovalDate) {
-		toSerialize["removalDate"] = o.RemovalDate
+	if o.RemovalDate.IsSet() {
+		toSerialize["removalDate"] = o.RemovalDate.Get()
 	}
 	if !IsNil(o.AppContext) {
 		toSerialize["appContext"] = o.AppContext

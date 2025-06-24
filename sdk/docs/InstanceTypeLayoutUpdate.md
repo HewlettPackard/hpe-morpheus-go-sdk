@@ -90,6 +90,16 @@ SetLabels sets Labels field to given value.
 
 HasLabels returns a boolean if a field has been set.
 
+### SetLabelsNil
+
+`func (o *InstanceTypeLayoutUpdate) SetLabelsNil(b bool)`
+
+ SetLabelsNil sets the value for Labels to be an explicit nil
+
+### UnsetLabels
+`func (o *InstanceTypeLayoutUpdate) UnsetLabels()`
+
+UnsetLabels ensures that no value is present for Labels, not even an explicit nil
 ### GetInstanceVersion
 
 `func (o *InstanceTypeLayoutUpdate) GetInstanceVersion() string`

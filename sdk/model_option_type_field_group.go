@@ -23,11 +23,11 @@ type OptionTypeFieldGroup struct {
 	Id                   *int64                                                        `json:"id,omitempty"`
 	Name                 *string                                                       `json:"name,omitempty"`
 	Code                 *string                                                       `json:"code,omitempty"`
-	Description          *string                                                       `json:"description,omitempty"`
-	LocalizedName        *string                                                       `json:"localizedName,omitempty"`
+	Description          NullableString                                                `json:"description,omitempty"`
+	LocalizedName        NullableString                                                `json:"localizedName,omitempty"`
 	Collapsible          *bool                                                         `json:"collapsible,omitempty"`
 	DefaultCollapsed     *bool                                                         `json:"defaultCollapsed,omitempty"`
-	VisibleOnCode        *string                                                       `json:"visibleOnCode,omitempty"`
+	VisibleOnCode        NullableString                                                `json:"visibleOnCode,omitempty"`
 	Options              []ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner `json:"options,omitempty"`
 	AdditionalProperties map[string]interface{}                                        `json:",remain"`
 }
@@ -147,68 +147,90 @@ func (o *OptionTypeFieldGroup) SetCode(v string) {
 	o.Code = &v
 }
 
-// GetDescription returns the Description field value if set, zero value otherwise.
+// GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *OptionTypeFieldGroup) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
+	if o == nil || IsNil(o.Description.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Description
+	return *o.Description.Get()
 }
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OptionTypeFieldGroup) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Description, true
+	return o.Description.Get(), o.Description.IsSet()
 }
 
 // IsSetDescription returns a boolean if a field has been set.
 func (o *OptionTypeFieldGroup) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
+	if o != nil && o.Description.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDescription gets a reference to the given string and assigns it to the Description field.
+// SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *OptionTypeFieldGroup) SetDescription(v string) {
-	o.Description = &v
+	o.Description.Set(&v)
 }
 
-// GetLocalizedName returns the LocalizedName field value if set, zero value otherwise.
+// SetDescriptionNil sets the value for Description to be an explicit nil
+func (o *OptionTypeFieldGroup) SetDescriptionNil() {
+	o.Description.Set(nil)
+}
+
+// UnsetDescription ensures that no value is present for Description, not even an explicit nil
+func (o *OptionTypeFieldGroup) UnsetDescription() {
+	o.Description.Unset()
+}
+
+// GetLocalizedName returns the LocalizedName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *OptionTypeFieldGroup) GetLocalizedName() string {
-	if o == nil || IsNil(o.LocalizedName) {
+	if o == nil || IsNil(o.LocalizedName.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.LocalizedName
+	return *o.LocalizedName.Get()
 }
 
 // GetLocalizedNameOk returns a tuple with the LocalizedName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OptionTypeFieldGroup) GetLocalizedNameOk() (*string, bool) {
-	if o == nil || IsNil(o.LocalizedName) {
+	if o == nil {
 		return nil, false
 	}
-	return o.LocalizedName, true
+	return o.LocalizedName.Get(), o.LocalizedName.IsSet()
 }
 
 // IsSetLocalizedName returns a boolean if a field has been set.
 func (o *OptionTypeFieldGroup) IsSetLocalizedName() bool {
-	if o != nil && !IsNil(o.LocalizedName) {
+	if o != nil && o.LocalizedName.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetLocalizedName gets a reference to the given string and assigns it to the LocalizedName field.
+// SetLocalizedName gets a reference to the given NullableString and assigns it to the LocalizedName field.
 func (o *OptionTypeFieldGroup) SetLocalizedName(v string) {
-	o.LocalizedName = &v
+	o.LocalizedName.Set(&v)
+}
+
+// SetLocalizedNameNil sets the value for LocalizedName to be an explicit nil
+func (o *OptionTypeFieldGroup) SetLocalizedNameNil() {
+	o.LocalizedName.Set(nil)
+}
+
+// UnsetLocalizedName ensures that no value is present for LocalizedName, not even an explicit nil
+func (o *OptionTypeFieldGroup) UnsetLocalizedName() {
+	o.LocalizedName.Unset()
 }
 
 // GetCollapsible returns the Collapsible field value if set, zero value otherwise.
@@ -275,36 +297,47 @@ func (o *OptionTypeFieldGroup) SetDefaultCollapsed(v bool) {
 	o.DefaultCollapsed = &v
 }
 
-// GetVisibleOnCode returns the VisibleOnCode field value if set, zero value otherwise.
+// GetVisibleOnCode returns the VisibleOnCode field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *OptionTypeFieldGroup) GetVisibleOnCode() string {
-	if o == nil || IsNil(o.VisibleOnCode) {
+	if o == nil || IsNil(o.VisibleOnCode.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.VisibleOnCode
+	return *o.VisibleOnCode.Get()
 }
 
 // GetVisibleOnCodeOk returns a tuple with the VisibleOnCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OptionTypeFieldGroup) GetVisibleOnCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.VisibleOnCode) {
+	if o == nil {
 		return nil, false
 	}
-	return o.VisibleOnCode, true
+	return o.VisibleOnCode.Get(), o.VisibleOnCode.IsSet()
 }
 
 // IsSetVisibleOnCode returns a boolean if a field has been set.
 func (o *OptionTypeFieldGroup) IsSetVisibleOnCode() bool {
-	if o != nil && !IsNil(o.VisibleOnCode) {
+	if o != nil && o.VisibleOnCode.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetVisibleOnCode gets a reference to the given string and assigns it to the VisibleOnCode field.
+// SetVisibleOnCode gets a reference to the given NullableString and assigns it to the VisibleOnCode field.
 func (o *OptionTypeFieldGroup) SetVisibleOnCode(v string) {
-	o.VisibleOnCode = &v
+	o.VisibleOnCode.Set(&v)
+}
+
+// SetVisibleOnCodeNil sets the value for VisibleOnCode to be an explicit nil
+func (o *OptionTypeFieldGroup) SetVisibleOnCodeNil() {
+	o.VisibleOnCode.Set(nil)
+}
+
+// UnsetVisibleOnCode ensures that no value is present for VisibleOnCode, not even an explicit nil
+func (o *OptionTypeFieldGroup) UnsetVisibleOnCode() {
+	o.VisibleOnCode.Unset()
 }
 
 // GetOptions returns the Options field value if set, zero value otherwise.
@@ -358,11 +391,11 @@ func (o OptionTypeFieldGroup) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Code) {
 		toSerialize["code"] = o.Code
 	}
-	if !IsNil(o.Description) {
-		toSerialize["description"] = o.Description
+	if o.Description.IsSet() {
+		toSerialize["description"] = o.Description.Get()
 	}
-	if !IsNil(o.LocalizedName) {
-		toSerialize["localizedName"] = o.LocalizedName
+	if o.LocalizedName.IsSet() {
+		toSerialize["localizedName"] = o.LocalizedName.Get()
 	}
 	if !IsNil(o.Collapsible) {
 		toSerialize["collapsible"] = o.Collapsible
@@ -370,8 +403,8 @@ func (o OptionTypeFieldGroup) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.DefaultCollapsed) {
 		toSerialize["defaultCollapsed"] = o.DefaultCollapsed
 	}
-	if !IsNil(o.VisibleOnCode) {
-		toSerialize["visibleOnCode"] = o.VisibleOnCode
+	if o.VisibleOnCode.IsSet() {
+		toSerialize["visibleOnCode"] = o.VisibleOnCode.Get()
 	}
 	if !IsNil(o.Options) {
 		toSerialize["options"] = o.Options

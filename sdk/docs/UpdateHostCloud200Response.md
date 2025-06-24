@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Msg** | Pointer to **string** |  | [optional] 
-**Errors** | Pointer to **string** |  | [optional] 
-**ErrorCode** | Pointer to **string** |  | [optional] 
-**Data** | Pointer to **string** |  | [optional] 
+**Msg** | Pointer to **NullableString** |  | [optional] 
+**Errors** | Pointer to **NullableString** |  | [optional] 
+**ErrorCode** | Pointer to **NullableString** |  | [optional] 
+**Data** | Pointer to **NullableString** |  | [optional] 
 **InProgress** | Pointer to **bool** |  | [optional] 
 **Success** | Pointer to **bool** |  | [optional] 
 
@@ -55,6 +55,16 @@ SetMsg sets Msg field to given value.
 
 HasMsg returns a boolean if a field has been set.
 
+### SetMsgNil
+
+`func (o *UpdateHostCloud200Response) SetMsgNil(b bool)`
+
+ SetMsgNil sets the value for Msg to be an explicit nil
+
+### UnsetMsg
+`func (o *UpdateHostCloud200Response) UnsetMsg()`
+
+UnsetMsg ensures that no value is present for Msg, not even an explicit nil
 ### GetErrors
 
 `func (o *UpdateHostCloud200Response) GetErrors() string`
@@ -80,6 +90,16 @@ SetErrors sets Errors field to given value.
 
 HasErrors returns a boolean if a field has been set.
 
+### SetErrorsNil
+
+`func (o *UpdateHostCloud200Response) SetErrorsNil(b bool)`
+
+ SetErrorsNil sets the value for Errors to be an explicit nil
+
+### UnsetErrors
+`func (o *UpdateHostCloud200Response) UnsetErrors()`
+
+UnsetErrors ensures that no value is present for Errors, not even an explicit nil
 ### GetErrorCode
 
 `func (o *UpdateHostCloud200Response) GetErrorCode() string`
@@ -105,6 +125,16 @@ SetErrorCode sets ErrorCode field to given value.
 
 HasErrorCode returns a boolean if a field has been set.
 
+### SetErrorCodeNil
+
+`func (o *UpdateHostCloud200Response) SetErrorCodeNil(b bool)`
+
+ SetErrorCodeNil sets the value for ErrorCode to be an explicit nil
+
+### UnsetErrorCode
+`func (o *UpdateHostCloud200Response) UnsetErrorCode()`
+
+UnsetErrorCode ensures that no value is present for ErrorCode, not even an explicit nil
 ### GetData
 
 `func (o *UpdateHostCloud200Response) GetData() string`
@@ -130,6 +160,16 @@ SetData sets Data field to given value.
 
 HasData returns a boolean if a field has been set.
 
+### SetDataNil
+
+`func (o *UpdateHostCloud200Response) SetDataNil(b bool)`
+
+ SetDataNil sets the value for Data to be an explicit nil
+
+### UnsetData
+`func (o *UpdateHostCloud200Response) UnsetData()`
+
+UnsetData ensures that no value is present for Data, not even an explicit nil
 ### GetInProgress
 
 `func (o *UpdateHostCloud200Response) GetInProgress() bool`

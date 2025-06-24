@@ -7,11 +7,11 @@ Name | Type | Description | Notes
 **Id** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Code** | Pointer to **string** |  | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
-**LocalizedName** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **NullableString** |  | [optional] 
+**LocalizedName** | Pointer to **NullableString** |  | [optional] 
 **Collapsible** | Pointer to **bool** |  | [optional] 
 **DefaultCollapsed** | Pointer to **bool** |  | [optional] 
-**VisibleOnCode** | Pointer to **string** |  | [optional] 
+**VisibleOnCode** | Pointer to **NullableString** |  | [optional] 
 **Options** | Pointer to [**[]ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner**](ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner.md) |  | [optional] 
 
 ## Methods
@@ -133,6 +133,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *ListOptionForms200ResponseAllOfOptionTypesInnerFieldGroupsInner) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *ListOptionForms200ResponseAllOfOptionTypesInnerFieldGroupsInner) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetLocalizedName
 
 `func (o *ListOptionForms200ResponseAllOfOptionTypesInnerFieldGroupsInner) GetLocalizedName() string`
@@ -158,6 +168,16 @@ SetLocalizedName sets LocalizedName field to given value.
 
 HasLocalizedName returns a boolean if a field has been set.
 
+### SetLocalizedNameNil
+
+`func (o *ListOptionForms200ResponseAllOfOptionTypesInnerFieldGroupsInner) SetLocalizedNameNil(b bool)`
+
+ SetLocalizedNameNil sets the value for LocalizedName to be an explicit nil
+
+### UnsetLocalizedName
+`func (o *ListOptionForms200ResponseAllOfOptionTypesInnerFieldGroupsInner) UnsetLocalizedName()`
+
+UnsetLocalizedName ensures that no value is present for LocalizedName, not even an explicit nil
 ### GetCollapsible
 
 `func (o *ListOptionForms200ResponseAllOfOptionTypesInnerFieldGroupsInner) GetCollapsible() bool`
@@ -233,6 +253,16 @@ SetVisibleOnCode sets VisibleOnCode field to given value.
 
 HasVisibleOnCode returns a boolean if a field has been set.
 
+### SetVisibleOnCodeNil
+
+`func (o *ListOptionForms200ResponseAllOfOptionTypesInnerFieldGroupsInner) SetVisibleOnCodeNil(b bool)`
+
+ SetVisibleOnCodeNil sets the value for VisibleOnCode to be an explicit nil
+
+### UnsetVisibleOnCode
+`func (o *ListOptionForms200ResponseAllOfOptionTypesInnerFieldGroupsInner) UnsetVisibleOnCode()`
+
+UnsetVisibleOnCode ensures that no value is present for VisibleOnCode, not even an explicit nil
 ### GetOptions
 
 `func (o *ListOptionForms200ResponseAllOfOptionTypesInnerFieldGroupsInner) GetOptions() []ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner`

@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Name** | Pointer to **string** | The name of the email template. This is set by morpheus.  | [optional] 
 **Code** | Pointer to **string** | A unique code for the email template. This code is used to reference the email template and as a reference of the templates type.  | [optional] 
 **Owner** | Pointer to [**ListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner**](ListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner.md) |  | [optional] 
-**Accounts** | Pointer to [**[]ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
+**Accounts** | Pointer to [**[]GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **Template** | Pointer to **string** | The email template. This is the actual email template that is sent to the user. This uses handlebars notation (not javascript)  | [optional] 
 
 ## Methods
@@ -132,20 +132,20 @@ HasOwner returns a boolean if a field has been set.
 
 ### GetAccounts
 
-`func (o *EmailTemplate) GetAccounts() []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *EmailTemplate) GetAccounts() []GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetAccounts returns the Accounts field if non-nil, zero value otherwise.
 
 ### GetAccountsOk
 
-`func (o *EmailTemplate) GetAccountsOk() (*[]ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *EmailTemplate) GetAccountsOk() (*[]GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetAccountsOk returns a tuple with the Accounts field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccounts
 
-`func (o *EmailTemplate) SetAccounts(v []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *EmailTemplate) SetAccounts(v []GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetAccounts sets Accounts field to given value.
 
@@ -155,6 +155,16 @@ SetAccounts sets Accounts field to given value.
 
 HasAccounts returns a boolean if a field has been set.
 
+### SetAccountsNil
+
+`func (o *EmailTemplate) SetAccountsNil(b bool)`
+
+ SetAccountsNil sets the value for Accounts to be an explicit nil
+
+### UnsetAccounts
+`func (o *EmailTemplate) UnsetAccounts()`
+
+UnsetAccounts ensures that no value is present for Accounts, not even an explicit nil
 ### GetTemplate
 
 `func (o *EmailTemplate) GetTemplate() string`

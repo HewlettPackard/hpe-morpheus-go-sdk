@@ -24,11 +24,11 @@ type CreateNetworkFirewallRuleRequestRule struct {
 	// Network firewall rule name
 	Name string `json:"name"`
 	// Network firewall rule description
-	Description *string `json:"description,omitempty"`
+	Description NullableString `json:"description,omitempty"`
 	// Use this to set enabled state
 	Enabled *bool `json:"enabled,omitempty"`
 	// Network firewall rule priority
-	Priority             *string                                      `json:"priority,omitempty"`
+	Priority             NullableString                               `json:"priority,omitempty"`
 	Direction            *string                                      `json:"direction,omitempty"`
 	Sources              *CreateNetworkFirewallRuleRequestRuleSources `json:"sources,omitempty"`
 	Destinations         *CreateNetworkFirewallRuleRequestRuleSources `json:"destinations,omitempty"`
@@ -114,36 +114,47 @@ func (o *CreateNetworkFirewallRuleRequestRule) SetName(v string) {
 	o.Name = v
 }
 
-// GetDescription returns the Description field value if set, zero value otherwise.
+// GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CreateNetworkFirewallRuleRequestRule) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
+	if o == nil || IsNil(o.Description.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Description
+	return *o.Description.Get()
 }
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CreateNetworkFirewallRuleRequestRule) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Description, true
+	return o.Description.Get(), o.Description.IsSet()
 }
 
 // IsSetDescription returns a boolean if a field has been set.
 func (o *CreateNetworkFirewallRuleRequestRule) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
+	if o != nil && o.Description.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDescription gets a reference to the given string and assigns it to the Description field.
+// SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *CreateNetworkFirewallRuleRequestRule) SetDescription(v string) {
-	o.Description = &v
+	o.Description.Set(&v)
+}
+
+// SetDescriptionNil sets the value for Description to be an explicit nil
+func (o *CreateNetworkFirewallRuleRequestRule) SetDescriptionNil() {
+	o.Description.Set(nil)
+}
+
+// UnsetDescription ensures that no value is present for Description, not even an explicit nil
+func (o *CreateNetworkFirewallRuleRequestRule) UnsetDescription() {
+	o.Description.Unset()
 }
 
 // GetEnabled returns the Enabled field value if set, zero value otherwise.
@@ -178,36 +189,47 @@ func (o *CreateNetworkFirewallRuleRequestRule) SetEnabled(v bool) {
 	o.Enabled = &v
 }
 
-// GetPriority returns the Priority field value if set, zero value otherwise.
+// GetPriority returns the Priority field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CreateNetworkFirewallRuleRequestRule) GetPriority() string {
-	if o == nil || IsNil(o.Priority) {
+	if o == nil || IsNil(o.Priority.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Priority
+	return *o.Priority.Get()
 }
 
 // GetPriorityOk returns a tuple with the Priority field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CreateNetworkFirewallRuleRequestRule) GetPriorityOk() (*string, bool) {
-	if o == nil || IsNil(o.Priority) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Priority, true
+	return o.Priority.Get(), o.Priority.IsSet()
 }
 
 // IsSetPriority returns a boolean if a field has been set.
 func (o *CreateNetworkFirewallRuleRequestRule) IsSetPriority() bool {
-	if o != nil && !IsNil(o.Priority) {
+	if o != nil && o.Priority.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetPriority gets a reference to the given string and assigns it to the Priority field.
+// SetPriority gets a reference to the given NullableString and assigns it to the Priority field.
 func (o *CreateNetworkFirewallRuleRequestRule) SetPriority(v string) {
-	o.Priority = &v
+	o.Priority.Set(&v)
+}
+
+// SetPriorityNil sets the value for Priority to be an explicit nil
+func (o *CreateNetworkFirewallRuleRequestRule) SetPriorityNil() {
+	o.Priority.Set(nil)
+}
+
+// UnsetPriority ensures that no value is present for Priority, not even an explicit nil
+func (o *CreateNetworkFirewallRuleRequestRule) UnsetPriority() {
+	o.Priority.Unset()
 }
 
 // GetDirection returns the Direction field value if set, zero value otherwise.
@@ -416,14 +438,14 @@ func (o CreateNetworkFirewallRuleRequestRule) ToMap() (map[string]interface{}, e
 		toSerialize["ruleGroup"] = o.RuleGroup
 	}
 	toSerialize["name"] = o.Name
-	if !IsNil(o.Description) {
-		toSerialize["description"] = o.Description
+	if o.Description.IsSet() {
+		toSerialize["description"] = o.Description.Get()
 	}
 	if !IsNil(o.Enabled) {
 		toSerialize["enabled"] = o.Enabled
 	}
-	if !IsNil(o.Priority) {
-		toSerialize["priority"] = o.Priority
+	if o.Priority.IsSet() {
+		toSerialize["priority"] = o.Priority.Get()
 	}
 	if !IsNil(o.Direction) {
 		toSerialize["direction"] = o.Direction

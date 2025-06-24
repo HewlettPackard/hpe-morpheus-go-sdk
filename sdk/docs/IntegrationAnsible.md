@@ -10,14 +10,14 @@ Name | Type | Description | Notes
 **Type** | Pointer to **string** |  | [optional] 
 **IntegrationType** | Pointer to [**ListBackupSettings200ResponseBackupSettingsDefaultSchedule**](ListBackupSettings200ResponseBackupSettingsDefaultSchedule.md) |  | [optional] 
 **Url** | Pointer to **string** |  | [optional] 
-**ServiceKey** | Pointer to [**ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
+**ServiceKey** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **IsPlugin** | Pointer to **bool** |  | [optional] 
 **Config** | Pointer to [**ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig**](ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig.md) |  | [optional] 
 **Status** | Pointer to **string** |  | [optional] 
 **StatusDate** | Pointer to **time.Time** |  | [optional] 
-**StatusMessage** | Pointer to **string** |  | [optional] 
-**LastSync** | Pointer to **string** |  | [optional] 
-**LastSyncDuration** | Pointer to **int64** |  | [optional] 
+**StatusMessage** | Pointer to **NullableString** |  | [optional] 
+**LastSync** | Pointer to **NullableString** |  | [optional] 
+**LastSyncDuration** | Pointer to **NullableInt64** |  | [optional] 
 **Credential** | Pointer to [**ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential**](ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential.md) |  | [optional] 
 
 ## Methods
@@ -191,20 +191,20 @@ HasUrl returns a boolean if a field has been set.
 
 ### GetServiceKey
 
-`func (o *IntegrationAnsible) GetServiceKey() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *IntegrationAnsible) GetServiceKey() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetServiceKey returns the ServiceKey field if non-nil, zero value otherwise.
 
 ### GetServiceKeyOk
 
-`func (o *IntegrationAnsible) GetServiceKeyOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *IntegrationAnsible) GetServiceKeyOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetServiceKeyOk returns a tuple with the ServiceKey field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetServiceKey
 
-`func (o *IntegrationAnsible) SetServiceKey(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *IntegrationAnsible) SetServiceKey(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetServiceKey sets ServiceKey field to given value.
 
@@ -339,6 +339,16 @@ SetStatusMessage sets StatusMessage field to given value.
 
 HasStatusMessage returns a boolean if a field has been set.
 
+### SetStatusMessageNil
+
+`func (o *IntegrationAnsible) SetStatusMessageNil(b bool)`
+
+ SetStatusMessageNil sets the value for StatusMessage to be an explicit nil
+
+### UnsetStatusMessage
+`func (o *IntegrationAnsible) UnsetStatusMessage()`
+
+UnsetStatusMessage ensures that no value is present for StatusMessage, not even an explicit nil
 ### GetLastSync
 
 `func (o *IntegrationAnsible) GetLastSync() string`
@@ -364,6 +374,16 @@ SetLastSync sets LastSync field to given value.
 
 HasLastSync returns a boolean if a field has been set.
 
+### SetLastSyncNil
+
+`func (o *IntegrationAnsible) SetLastSyncNil(b bool)`
+
+ SetLastSyncNil sets the value for LastSync to be an explicit nil
+
+### UnsetLastSync
+`func (o *IntegrationAnsible) UnsetLastSync()`
+
+UnsetLastSync ensures that no value is present for LastSync, not even an explicit nil
 ### GetLastSyncDuration
 
 `func (o *IntegrationAnsible) GetLastSyncDuration() int64`
@@ -389,6 +409,16 @@ SetLastSyncDuration sets LastSyncDuration field to given value.
 
 HasLastSyncDuration returns a boolean if a field has been set.
 
+### SetLastSyncDurationNil
+
+`func (o *IntegrationAnsible) SetLastSyncDurationNil(b bool)`
+
+ SetLastSyncDurationNil sets the value for LastSyncDuration to be an explicit nil
+
+### UnsetLastSyncDuration
+`func (o *IntegrationAnsible) UnsetLastSyncDuration()`
+
+UnsetLastSyncDuration ensures that no value is present for LastSyncDuration, not even an explicit nil
 ### GetCredential
 
 `func (o *IntegrationAnsible) GetCredential() ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential`

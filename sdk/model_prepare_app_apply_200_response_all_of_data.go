@@ -20,18 +20,18 @@ var _ MappedNullable = &PrepareAppApply200ResponseAllOfData{}
 
 // PrepareAppApply200ResponseAllOfData struct for PrepareAppApply200ResponseAllOfData
 type PrepareAppApply200ResponseAllOfData struct {
-	Image                *string                                                                 `json:"image,omitempty"`
-	Name                 *string                                                                 `json:"name,omitempty"`
-	AutoValidate         *bool                                                                   `json:"autoValidate,omitempty"`
-	Terraform            *PrepareAppApply200ResponseAllOfDataTerraform                           `json:"terraform,omitempty"`
-	Type                 *string                                                                 `json:"type,omitempty"`
-	Config               map[string]interface{}                                                  `json:"config,omitempty"`
-	BlueprintName        *string                                                                 `json:"blueprintName,omitempty"`
-	Description          *string                                                                 `json:"description,omitempty"`
-	TemplateId           *int64                                                                  `json:"templateId,omitempty"`
-	BlueprintId          *int64                                                                  `json:"blueprintId,omitempty"`
-	Group                *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"group,omitempty"`
-	AdditionalProperties map[string]interface{}                                                  `json:",remain"`
+	Image                *string                                            `json:"image,omitempty"`
+	Name                 *string                                            `json:"name,omitempty"`
+	AutoValidate         *bool                                              `json:"autoValidate,omitempty"`
+	Terraform            *PrepareAppApply200ResponseAllOfDataTerraform      `json:"terraform,omitempty"`
+	Type                 *string                                            `json:"type,omitempty"`
+	Config               map[string]interface{}                             `json:"config,omitempty"`
+	BlueprintName        *string                                            `json:"blueprintName,omitempty"`
+	Description          NullableString                                     `json:"description,omitempty"`
+	TemplateId           *int64                                             `json:"templateId,omitempty"`
+	BlueprintId          *int64                                             `json:"blueprintId,omitempty"`
+	Group                *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"group,omitempty"`
+	AdditionalProperties map[string]interface{}                             `json:",remain"`
 }
 
 type _PrepareAppApply200ResponseAllOfData PrepareAppApply200ResponseAllOfData
@@ -277,36 +277,47 @@ func (o *PrepareAppApply200ResponseAllOfData) SetBlueprintName(v string) {
 	o.BlueprintName = &v
 }
 
-// GetDescription returns the Description field value if set, zero value otherwise.
+// GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PrepareAppApply200ResponseAllOfData) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
+	if o == nil || IsNil(o.Description.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Description
+	return *o.Description.Get()
 }
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PrepareAppApply200ResponseAllOfData) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Description, true
+	return o.Description.Get(), o.Description.IsSet()
 }
 
 // IsSetDescription returns a boolean if a field has been set.
 func (o *PrepareAppApply200ResponseAllOfData) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
+	if o != nil && o.Description.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDescription gets a reference to the given string and assigns it to the Description field.
+// SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *PrepareAppApply200ResponseAllOfData) SetDescription(v string) {
-	o.Description = &v
+	o.Description.Set(&v)
+}
+
+// SetDescriptionNil sets the value for Description to be an explicit nil
+func (o *PrepareAppApply200ResponseAllOfData) SetDescriptionNil() {
+	o.Description.Set(nil)
+}
+
+// UnsetDescription ensures that no value is present for Description, not even an explicit nil
+func (o *PrepareAppApply200ResponseAllOfData) UnsetDescription() {
+	o.Description.Unset()
 }
 
 // GetTemplateId returns the TemplateId field value if set, zero value otherwise.
@@ -374,9 +385,9 @@ func (o *PrepareAppApply200ResponseAllOfData) SetBlueprintId(v int64) {
 }
 
 // GetGroup returns the Group field value if set, zero value otherwise.
-func (o *PrepareAppApply200ResponseAllOfData) GetGroup() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *PrepareAppApply200ResponseAllOfData) GetGroup() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.Group) {
-		var ret ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return *o.Group
@@ -384,7 +395,7 @@ func (o *PrepareAppApply200ResponseAllOfData) GetGroup() ListApplianceSettings20
 
 // GetGroupOk returns a tuple with the Group field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PrepareAppApply200ResponseAllOfData) GetGroupOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *PrepareAppApply200ResponseAllOfData) GetGroupOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.Group) {
 		return nil, false
 	}
@@ -400,8 +411,8 @@ func (o *PrepareAppApply200ResponseAllOfData) IsSetGroup() bool {
 	return false
 }
 
-// SetGroup gets a reference to the given ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the Group field.
-func (o *PrepareAppApply200ResponseAllOfData) SetGroup(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetGroup gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Group field.
+func (o *PrepareAppApply200ResponseAllOfData) SetGroup(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.Group = &v
 }
 
@@ -436,8 +447,8 @@ func (o PrepareAppApply200ResponseAllOfData) ToMap() (map[string]interface{}, er
 	if !IsNil(o.BlueprintName) {
 		toSerialize["blueprintName"] = o.BlueprintName
 	}
-	if !IsNil(o.Description) {
-		toSerialize["description"] = o.Description
+	if o.Description.IsSet() {
+		toSerialize["description"] = o.Description.Get()
 	}
 	if !IsNil(o.TemplateId) {
 		toSerialize["templateId"] = o.TemplateId

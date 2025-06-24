@@ -22,12 +22,12 @@ var _ MappedNullable = &ListHostDevices200ResponseDevicesInnerType{}
 type ListHostDevices200ResponseDevicesInnerType struct {
 	Id                   *int64                 `json:"id,omitempty"`
 	Name                 *string                `json:"name,omitempty"`
-	Family               *string                `json:"family,omitempty"`
-	BusType              *string                `json:"busType,omitempty"`
+	Family               NullableString         `json:"family,omitempty"`
+	BusType              NullableString         `json:"busType,omitempty"`
 	Assignable           *bool                  `json:"assignable,omitempty"`
 	Hotpluggable         *bool                  `json:"hotpluggable,omitempty"`
-	VendorId             *int32                 `json:"vendorId,omitempty"`
-	ProductId            *int32                 `json:"productId,omitempty"`
+	VendorId             NullableInt32          `json:"vendorId,omitempty"`
+	ProductId            NullableInt32          `json:"productId,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -114,68 +114,90 @@ func (o *ListHostDevices200ResponseDevicesInnerType) SetName(v string) {
 	o.Name = &v
 }
 
-// GetFamily returns the Family field value if set, zero value otherwise.
+// GetFamily returns the Family field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListHostDevices200ResponseDevicesInnerType) GetFamily() string {
-	if o == nil || IsNil(o.Family) {
+	if o == nil || IsNil(o.Family.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Family
+	return *o.Family.Get()
 }
 
 // GetFamilyOk returns a tuple with the Family field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListHostDevices200ResponseDevicesInnerType) GetFamilyOk() (*string, bool) {
-	if o == nil || IsNil(o.Family) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Family, true
+	return o.Family.Get(), o.Family.IsSet()
 }
 
 // IsSetFamily returns a boolean if a field has been set.
 func (o *ListHostDevices200ResponseDevicesInnerType) IsSetFamily() bool {
-	if o != nil && !IsNil(o.Family) {
+	if o != nil && o.Family.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetFamily gets a reference to the given string and assigns it to the Family field.
+// SetFamily gets a reference to the given NullableString and assigns it to the Family field.
 func (o *ListHostDevices200ResponseDevicesInnerType) SetFamily(v string) {
-	o.Family = &v
+	o.Family.Set(&v)
 }
 
-// GetBusType returns the BusType field value if set, zero value otherwise.
+// SetFamilyNil sets the value for Family to be an explicit nil
+func (o *ListHostDevices200ResponseDevicesInnerType) SetFamilyNil() {
+	o.Family.Set(nil)
+}
+
+// UnsetFamily ensures that no value is present for Family, not even an explicit nil
+func (o *ListHostDevices200ResponseDevicesInnerType) UnsetFamily() {
+	o.Family.Unset()
+}
+
+// GetBusType returns the BusType field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListHostDevices200ResponseDevicesInnerType) GetBusType() string {
-	if o == nil || IsNil(o.BusType) {
+	if o == nil || IsNil(o.BusType.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.BusType
+	return *o.BusType.Get()
 }
 
 // GetBusTypeOk returns a tuple with the BusType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListHostDevices200ResponseDevicesInnerType) GetBusTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.BusType) {
+	if o == nil {
 		return nil, false
 	}
-	return o.BusType, true
+	return o.BusType.Get(), o.BusType.IsSet()
 }
 
 // IsSetBusType returns a boolean if a field has been set.
 func (o *ListHostDevices200ResponseDevicesInnerType) IsSetBusType() bool {
-	if o != nil && !IsNil(o.BusType) {
+	if o != nil && o.BusType.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetBusType gets a reference to the given string and assigns it to the BusType field.
+// SetBusType gets a reference to the given NullableString and assigns it to the BusType field.
 func (o *ListHostDevices200ResponseDevicesInnerType) SetBusType(v string) {
-	o.BusType = &v
+	o.BusType.Set(&v)
+}
+
+// SetBusTypeNil sets the value for BusType to be an explicit nil
+func (o *ListHostDevices200ResponseDevicesInnerType) SetBusTypeNil() {
+	o.BusType.Set(nil)
+}
+
+// UnsetBusType ensures that no value is present for BusType, not even an explicit nil
+func (o *ListHostDevices200ResponseDevicesInnerType) UnsetBusType() {
+	o.BusType.Unset()
 }
 
 // GetAssignable returns the Assignable field value if set, zero value otherwise.
@@ -242,68 +264,90 @@ func (o *ListHostDevices200ResponseDevicesInnerType) SetHotpluggable(v bool) {
 	o.Hotpluggable = &v
 }
 
-// GetVendorId returns the VendorId field value if set, zero value otherwise.
+// GetVendorId returns the VendorId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListHostDevices200ResponseDevicesInnerType) GetVendorId() int32 {
-	if o == nil || IsNil(o.VendorId) {
+	if o == nil || IsNil(o.VendorId.Get()) {
 		var ret int32
 		return ret
 	}
-	return *o.VendorId
+	return *o.VendorId.Get()
 }
 
 // GetVendorIdOk returns a tuple with the VendorId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListHostDevices200ResponseDevicesInnerType) GetVendorIdOk() (*int32, bool) {
-	if o == nil || IsNil(o.VendorId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.VendorId, true
+	return o.VendorId.Get(), o.VendorId.IsSet()
 }
 
 // IsSetVendorId returns a boolean if a field has been set.
 func (o *ListHostDevices200ResponseDevicesInnerType) IsSetVendorId() bool {
-	if o != nil && !IsNil(o.VendorId) {
+	if o != nil && o.VendorId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetVendorId gets a reference to the given int32 and assigns it to the VendorId field.
+// SetVendorId gets a reference to the given NullableInt32 and assigns it to the VendorId field.
 func (o *ListHostDevices200ResponseDevicesInnerType) SetVendorId(v int32) {
-	o.VendorId = &v
+	o.VendorId.Set(&v)
 }
 
-// GetProductId returns the ProductId field value if set, zero value otherwise.
+// SetVendorIdNil sets the value for VendorId to be an explicit nil
+func (o *ListHostDevices200ResponseDevicesInnerType) SetVendorIdNil() {
+	o.VendorId.Set(nil)
+}
+
+// UnsetVendorId ensures that no value is present for VendorId, not even an explicit nil
+func (o *ListHostDevices200ResponseDevicesInnerType) UnsetVendorId() {
+	o.VendorId.Unset()
+}
+
+// GetProductId returns the ProductId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListHostDevices200ResponseDevicesInnerType) GetProductId() int32 {
-	if o == nil || IsNil(o.ProductId) {
+	if o == nil || IsNil(o.ProductId.Get()) {
 		var ret int32
 		return ret
 	}
-	return *o.ProductId
+	return *o.ProductId.Get()
 }
 
 // GetProductIdOk returns a tuple with the ProductId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListHostDevices200ResponseDevicesInnerType) GetProductIdOk() (*int32, bool) {
-	if o == nil || IsNil(o.ProductId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ProductId, true
+	return o.ProductId.Get(), o.ProductId.IsSet()
 }
 
 // IsSetProductId returns a boolean if a field has been set.
 func (o *ListHostDevices200ResponseDevicesInnerType) IsSetProductId() bool {
-	if o != nil && !IsNil(o.ProductId) {
+	if o != nil && o.ProductId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetProductId gets a reference to the given int32 and assigns it to the ProductId field.
+// SetProductId gets a reference to the given NullableInt32 and assigns it to the ProductId field.
 func (o *ListHostDevices200ResponseDevicesInnerType) SetProductId(v int32) {
-	o.ProductId = &v
+	o.ProductId.Set(&v)
+}
+
+// SetProductIdNil sets the value for ProductId to be an explicit nil
+func (o *ListHostDevices200ResponseDevicesInnerType) SetProductIdNil() {
+	o.ProductId.Set(nil)
+}
+
+// UnsetProductId ensures that no value is present for ProductId, not even an explicit nil
+func (o *ListHostDevices200ResponseDevicesInnerType) UnsetProductId() {
+	o.ProductId.Unset()
 }
 
 func (o ListHostDevices200ResponseDevicesInnerType) MarshalJSON() ([]byte, error) {
@@ -322,11 +366,11 @@ func (o ListHostDevices200ResponseDevicesInnerType) ToMap() (map[string]interfac
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !IsNil(o.Family) {
-		toSerialize["family"] = o.Family
+	if o.Family.IsSet() {
+		toSerialize["family"] = o.Family.Get()
 	}
-	if !IsNil(o.BusType) {
-		toSerialize["busType"] = o.BusType
+	if o.BusType.IsSet() {
+		toSerialize["busType"] = o.BusType.Get()
 	}
 	if !IsNil(o.Assignable) {
 		toSerialize["assignable"] = o.Assignable
@@ -334,11 +378,11 @@ func (o ListHostDevices200ResponseDevicesInnerType) ToMap() (map[string]interfac
 	if !IsNil(o.Hotpluggable) {
 		toSerialize["hotpluggable"] = o.Hotpluggable
 	}
-	if !IsNil(o.VendorId) {
-		toSerialize["vendorId"] = o.VendorId
+	if o.VendorId.IsSet() {
+		toSerialize["vendorId"] = o.VendorId.Get()
 	}
-	if !IsNil(o.ProductId) {
-		toSerialize["productId"] = o.ProductId
+	if o.ProductId.IsSet() {
+		toSerialize["productId"] = o.ProductId.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {

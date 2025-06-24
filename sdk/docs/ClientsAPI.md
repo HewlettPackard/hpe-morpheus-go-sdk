@@ -33,7 +33,7 @@ import (
 )
 
 func main() {
-	addClientRequest := *openapiclient.NewAddClientRequest(*openapiclient.NewAddClientRequestClient("Test Client", int32(43200), int32(43200))) // AddClientRequest |  (optional)
+	addClientRequest := *openapiclient.NewAddClientRequest(*openapiclient.NewAddClientRequestClient("Test Client", NullableInt32(43200), NullableInt32(43200))) // AddClientRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

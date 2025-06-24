@@ -25,7 +25,7 @@ type UpdateNetworkRequestNetwork struct {
 	// Array of label strings, can be used for filtering.
 	Labels []string `json:"labels,omitempty"`
 	// Description
-	Description *string `json:"description,omitempty"`
+	Description NullableString `json:"description,omitempty"`
 	// CIDR Network
 	Cidr *string `json:"cidr,omitempty"`
 	// Network Gateway
@@ -36,7 +36,7 @@ type UpdateNetworkRequestNetwork struct {
 	DnsSecondary *string `json:"dnsSecondary,omitempty"`
 	VlanId       *int64  `json:"vlanId,omitempty"`
 	// Network Pool ID
-	Pool *int64 `json:"pool,omitempty"`
+	Pool NullableInt64 `json:"pool,omitempty"`
 	// Allow IP Override
 	AllowStaticOverride *bool `json:"allowStaticOverride,omitempty"`
 	// Assign Public IP
@@ -44,15 +44,15 @@ type UpdateNetworkRequestNetwork struct {
 	// Activate (true) or disable (false) the network
 	Active *bool `json:"active,omitempty"`
 	// DHCP Server enabled network
-	DhcpServer    *bool                                      `json:"dhcpServer,omitempty"`
-	NetworkDomain *CreateNetworksRequestNetworkNetworkDomain `json:"networkDomain,omitempty"`
+	DhcpServer    *bool                                                   `json:"dhcpServer,omitempty"`
+	NetworkDomain *ListNetworks200ResponseAllOfNetworksInnerNetworkDomain `json:"networkDomain,omitempty"`
 	// Search Domains
-	SearchDomains *string                                   `json:"searchDomains,omitempty"`
-	NetworkProxy  *CreateNetworksRequestNetworkNetworkProxy `json:"networkProxy,omitempty"`
+	SearchDomains *string                                                `json:"searchDomains,omitempty"`
+	NetworkProxy  *ListNetworks200ResponseAllOfNetworksInnerNetworkProxy `json:"networkProxy,omitempty"`
 	// Bypass Proxy for Appliance URL
 	ApplianceUrlProxyBypass *bool `json:"applianceUrlProxyBypass,omitempty"`
 	// Comma-separated list of ip addresses or name servers to exclude proxy traversal for. Typically locally routable servers are excluded.
-	NoProxy *string `json:"noProxy,omitempty"`
+	NoProxy NullableString `json:"noProxy,omitempty"`
 	// Visibility, private or public.
 	Visibility *string `json:"visibility,omitempty"`
 	// Configuration object. Settings vary by type.
@@ -118,9 +118,9 @@ func (o *UpdateNetworkRequestNetwork) SetDisplayName(v string) {
 	o.DisplayName = &v
 }
 
-// GetLabels returns the Labels field value if set, zero value otherwise.
+// GetLabels returns the Labels field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UpdateNetworkRequestNetwork) GetLabels() []string {
-	if o == nil || IsNil(o.Labels) {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -129,6 +129,7 @@ func (o *UpdateNetworkRequestNetwork) GetLabels() []string {
 
 // GetLabelsOk returns a tuple with the Labels field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *UpdateNetworkRequestNetwork) GetLabelsOk() ([]string, bool) {
 	if o == nil || IsNil(o.Labels) {
 		return nil, false
@@ -150,36 +151,47 @@ func (o *UpdateNetworkRequestNetwork) SetLabels(v []string) {
 	o.Labels = v
 }
 
-// GetDescription returns the Description field value if set, zero value otherwise.
+// GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UpdateNetworkRequestNetwork) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
+	if o == nil || IsNil(o.Description.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Description
+	return *o.Description.Get()
 }
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *UpdateNetworkRequestNetwork) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Description, true
+	return o.Description.Get(), o.Description.IsSet()
 }
 
 // IsSetDescription returns a boolean if a field has been set.
 func (o *UpdateNetworkRequestNetwork) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
+	if o != nil && o.Description.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDescription gets a reference to the given string and assigns it to the Description field.
+// SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *UpdateNetworkRequestNetwork) SetDescription(v string) {
-	o.Description = &v
+	o.Description.Set(&v)
+}
+
+// SetDescriptionNil sets the value for Description to be an explicit nil
+func (o *UpdateNetworkRequestNetwork) SetDescriptionNil() {
+	o.Description.Set(nil)
+}
+
+// UnsetDescription ensures that no value is present for Description, not even an explicit nil
+func (o *UpdateNetworkRequestNetwork) UnsetDescription() {
+	o.Description.Unset()
 }
 
 // GetCidr returns the Cidr field value if set, zero value otherwise.
@@ -342,36 +354,47 @@ func (o *UpdateNetworkRequestNetwork) SetVlanId(v int64) {
 	o.VlanId = &v
 }
 
-// GetPool returns the Pool field value if set, zero value otherwise.
+// GetPool returns the Pool field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UpdateNetworkRequestNetwork) GetPool() int64 {
-	if o == nil || IsNil(o.Pool) {
+	if o == nil || IsNil(o.Pool.Get()) {
 		var ret int64
 		return ret
 	}
-	return *o.Pool
+	return *o.Pool.Get()
 }
 
 // GetPoolOk returns a tuple with the Pool field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *UpdateNetworkRequestNetwork) GetPoolOk() (*int64, bool) {
-	if o == nil || IsNil(o.Pool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Pool, true
+	return o.Pool.Get(), o.Pool.IsSet()
 }
 
 // IsSetPool returns a boolean if a field has been set.
 func (o *UpdateNetworkRequestNetwork) IsSetPool() bool {
-	if o != nil && !IsNil(o.Pool) {
+	if o != nil && o.Pool.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetPool gets a reference to the given int64 and assigns it to the Pool field.
+// SetPool gets a reference to the given NullableInt64 and assigns it to the Pool field.
 func (o *UpdateNetworkRequestNetwork) SetPool(v int64) {
-	o.Pool = &v
+	o.Pool.Set(&v)
+}
+
+// SetPoolNil sets the value for Pool to be an explicit nil
+func (o *UpdateNetworkRequestNetwork) SetPoolNil() {
+	o.Pool.Set(nil)
+}
+
+// UnsetPool ensures that no value is present for Pool, not even an explicit nil
+func (o *UpdateNetworkRequestNetwork) UnsetPool() {
+	o.Pool.Unset()
 }
 
 // GetAllowStaticOverride returns the AllowStaticOverride field value if set, zero value otherwise.
@@ -503,9 +526,9 @@ func (o *UpdateNetworkRequestNetwork) SetDhcpServer(v bool) {
 }
 
 // GetNetworkDomain returns the NetworkDomain field value if set, zero value otherwise.
-func (o *UpdateNetworkRequestNetwork) GetNetworkDomain() CreateNetworksRequestNetworkNetworkDomain {
+func (o *UpdateNetworkRequestNetwork) GetNetworkDomain() ListNetworks200ResponseAllOfNetworksInnerNetworkDomain {
 	if o == nil || IsNil(o.NetworkDomain) {
-		var ret CreateNetworksRequestNetworkNetworkDomain
+		var ret ListNetworks200ResponseAllOfNetworksInnerNetworkDomain
 		return ret
 	}
 	return *o.NetworkDomain
@@ -513,7 +536,7 @@ func (o *UpdateNetworkRequestNetwork) GetNetworkDomain() CreateNetworksRequestNe
 
 // GetNetworkDomainOk returns a tuple with the NetworkDomain field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UpdateNetworkRequestNetwork) GetNetworkDomainOk() (*CreateNetworksRequestNetworkNetworkDomain, bool) {
+func (o *UpdateNetworkRequestNetwork) GetNetworkDomainOk() (*ListNetworks200ResponseAllOfNetworksInnerNetworkDomain, bool) {
 	if o == nil || IsNil(o.NetworkDomain) {
 		return nil, false
 	}
@@ -529,8 +552,8 @@ func (o *UpdateNetworkRequestNetwork) IsSetNetworkDomain() bool {
 	return false
 }
 
-// SetNetworkDomain gets a reference to the given CreateNetworksRequestNetworkNetworkDomain and assigns it to the NetworkDomain field.
-func (o *UpdateNetworkRequestNetwork) SetNetworkDomain(v CreateNetworksRequestNetworkNetworkDomain) {
+// SetNetworkDomain gets a reference to the given ListNetworks200ResponseAllOfNetworksInnerNetworkDomain and assigns it to the NetworkDomain field.
+func (o *UpdateNetworkRequestNetwork) SetNetworkDomain(v ListNetworks200ResponseAllOfNetworksInnerNetworkDomain) {
 	o.NetworkDomain = &v
 }
 
@@ -567,9 +590,9 @@ func (o *UpdateNetworkRequestNetwork) SetSearchDomains(v string) {
 }
 
 // GetNetworkProxy returns the NetworkProxy field value if set, zero value otherwise.
-func (o *UpdateNetworkRequestNetwork) GetNetworkProxy() CreateNetworksRequestNetworkNetworkProxy {
+func (o *UpdateNetworkRequestNetwork) GetNetworkProxy() ListNetworks200ResponseAllOfNetworksInnerNetworkProxy {
 	if o == nil || IsNil(o.NetworkProxy) {
-		var ret CreateNetworksRequestNetworkNetworkProxy
+		var ret ListNetworks200ResponseAllOfNetworksInnerNetworkProxy
 		return ret
 	}
 	return *o.NetworkProxy
@@ -577,7 +600,7 @@ func (o *UpdateNetworkRequestNetwork) GetNetworkProxy() CreateNetworksRequestNet
 
 // GetNetworkProxyOk returns a tuple with the NetworkProxy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UpdateNetworkRequestNetwork) GetNetworkProxyOk() (*CreateNetworksRequestNetworkNetworkProxy, bool) {
+func (o *UpdateNetworkRequestNetwork) GetNetworkProxyOk() (*ListNetworks200ResponseAllOfNetworksInnerNetworkProxy, bool) {
 	if o == nil || IsNil(o.NetworkProxy) {
 		return nil, false
 	}
@@ -593,8 +616,8 @@ func (o *UpdateNetworkRequestNetwork) IsSetNetworkProxy() bool {
 	return false
 }
 
-// SetNetworkProxy gets a reference to the given CreateNetworksRequestNetworkNetworkProxy and assigns it to the NetworkProxy field.
-func (o *UpdateNetworkRequestNetwork) SetNetworkProxy(v CreateNetworksRequestNetworkNetworkProxy) {
+// SetNetworkProxy gets a reference to the given ListNetworks200ResponseAllOfNetworksInnerNetworkProxy and assigns it to the NetworkProxy field.
+func (o *UpdateNetworkRequestNetwork) SetNetworkProxy(v ListNetworks200ResponseAllOfNetworksInnerNetworkProxy) {
 	o.NetworkProxy = &v
 }
 
@@ -630,36 +653,47 @@ func (o *UpdateNetworkRequestNetwork) SetApplianceUrlProxyBypass(v bool) {
 	o.ApplianceUrlProxyBypass = &v
 }
 
-// GetNoProxy returns the NoProxy field value if set, zero value otherwise.
+// GetNoProxy returns the NoProxy field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UpdateNetworkRequestNetwork) GetNoProxy() string {
-	if o == nil || IsNil(o.NoProxy) {
+	if o == nil || IsNil(o.NoProxy.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.NoProxy
+	return *o.NoProxy.Get()
 }
 
 // GetNoProxyOk returns a tuple with the NoProxy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *UpdateNetworkRequestNetwork) GetNoProxyOk() (*string, bool) {
-	if o == nil || IsNil(o.NoProxy) {
+	if o == nil {
 		return nil, false
 	}
-	return o.NoProxy, true
+	return o.NoProxy.Get(), o.NoProxy.IsSet()
 }
 
 // IsSetNoProxy returns a boolean if a field has been set.
 func (o *UpdateNetworkRequestNetwork) IsSetNoProxy() bool {
-	if o != nil && !IsNil(o.NoProxy) {
+	if o != nil && o.NoProxy.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetNoProxy gets a reference to the given string and assigns it to the NoProxy field.
+// SetNoProxy gets a reference to the given NullableString and assigns it to the NoProxy field.
 func (o *UpdateNetworkRequestNetwork) SetNoProxy(v string) {
-	o.NoProxy = &v
+	o.NoProxy.Set(&v)
+}
+
+// SetNoProxyNil sets the value for NoProxy to be an explicit nil
+func (o *UpdateNetworkRequestNetwork) SetNoProxyNil() {
+	o.NoProxy.Set(nil)
+}
+
+// UnsetNoProxy ensures that no value is present for NoProxy, not even an explicit nil
+func (o *UpdateNetworkRequestNetwork) UnsetNoProxy() {
+	o.NoProxy.Unset()
 }
 
 // GetVisibility returns the Visibility field value if set, zero value otherwise.
@@ -803,11 +837,11 @@ func (o UpdateNetworkRequestNetwork) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.DisplayName) {
 		toSerialize["displayName"] = o.DisplayName
 	}
-	if !IsNil(o.Labels) {
+	if o.Labels != nil {
 		toSerialize["labels"] = o.Labels
 	}
-	if !IsNil(o.Description) {
-		toSerialize["description"] = o.Description
+	if o.Description.IsSet() {
+		toSerialize["description"] = o.Description.Get()
 	}
 	if !IsNil(o.Cidr) {
 		toSerialize["cidr"] = o.Cidr
@@ -824,8 +858,8 @@ func (o UpdateNetworkRequestNetwork) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.VlanId) {
 		toSerialize["vlanId"] = o.VlanId
 	}
-	if !IsNil(o.Pool) {
-		toSerialize["pool"] = o.Pool
+	if o.Pool.IsSet() {
+		toSerialize["pool"] = o.Pool.Get()
 	}
 	if !IsNil(o.AllowStaticOverride) {
 		toSerialize["allowStaticOverride"] = o.AllowStaticOverride
@@ -851,8 +885,8 @@ func (o UpdateNetworkRequestNetwork) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ApplianceUrlProxyBypass) {
 		toSerialize["applianceUrlProxyBypass"] = o.ApplianceUrlProxyBypass
 	}
-	if !IsNil(o.NoProxy) {
-		toSerialize["noProxy"] = o.NoProxy
+	if o.NoProxy.IsSet() {
+		toSerialize["noProxy"] = o.NoProxy.Get()
 	}
 	if !IsNil(o.Visibility) {
 		toSerialize["visibility"] = o.Visibility

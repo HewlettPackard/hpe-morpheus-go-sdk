@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **MasterOnly** | Pointer to **bool** |  | [optional] 
 **OwnerOnly** | Pointer to **bool** |  | [optional] 
 **SupportsAllZoneTypes** | Pointer to **bool** |  | [optional] 
-**IsPlugin** | Pointer to **bool** |  | [optional] 
+**IsPlugin** | Pointer to **NullableBool** |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **OptionTypes** | Pointer to [**[]GetReportTypes200ResponseReportTypesInnerOptionTypesInner**](GetReportTypes200ResponseReportTypesInnerOptionTypesInner.md) |  | [optional] 
 **SupportedZoneTypes** | Pointer to [**[]ListBackupSettings200ResponseBackupSettingsDefaultSchedule**](ListBackupSettings200ResponseBackupSettingsDefaultSchedule.md) |  | [optional] 
@@ -287,6 +287,16 @@ SetIsPlugin sets IsPlugin field to given value.
 
 HasIsPlugin returns a boolean if a field has been set.
 
+### SetIsPluginNil
+
+`func (o *GetReportTypes200ResponseReportTypesInner) SetIsPluginNil(b bool)`
+
+ SetIsPluginNil sets the value for IsPlugin to be an explicit nil
+
+### UnsetIsPlugin
+`func (o *GetReportTypes200ResponseReportTypesInner) UnsetIsPlugin()`
+
+UnsetIsPlugin ensures that no value is present for IsPlugin, not even an explicit nil
 ### GetDateCreated
 
 `func (o *GetReportTypes200ResponseReportTypesInner) GetDateCreated() time.Time`

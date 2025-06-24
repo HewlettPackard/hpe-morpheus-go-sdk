@@ -22,9 +22,9 @@ Name | Type | Description | Notes
 **Name** | Pointer to **string** |  | [optional] 
 **ServerId** | Pointer to **int64** |  | [optional] 
 **ServerUUID** | Pointer to **string** |  | [optional] 
-**ServerUniqueId** | Pointer to **string** |  | [optional] 
+**ServerUniqueId** | Pointer to **NullableString** |  | [optional] 
 **ServerExternalId** | Pointer to **string** |  | [optional] 
-**ServerInternalId** | Pointer to **string** |  | [optional] 
+**ServerInternalId** | Pointer to **NullableString** |  | [optional] 
 **ResourcePoolId** | Pointer to **int64** |  | [optional] 
 **ResourcePoolName** | Pointer to **string** |  | [optional] 
 
@@ -522,6 +522,16 @@ SetServerUniqueId sets ServerUniqueId field to given value.
 
 HasServerUniqueId returns a boolean if a field has been set.
 
+### SetServerUniqueIdNil
+
+`func (o *GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInner) SetServerUniqueIdNil(b bool)`
+
+ SetServerUniqueIdNil sets the value for ServerUniqueId to be an explicit nil
+
+### UnsetServerUniqueId
+`func (o *GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInner) UnsetServerUniqueId()`
+
+UnsetServerUniqueId ensures that no value is present for ServerUniqueId, not even an explicit nil
 ### GetServerExternalId
 
 `func (o *GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInner) GetServerExternalId() string`
@@ -572,6 +582,16 @@ SetServerInternalId sets ServerInternalId field to given value.
 
 HasServerInternalId returns a boolean if a field has been set.
 
+### SetServerInternalIdNil
+
+`func (o *GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInner) SetServerInternalIdNil(b bool)`
+
+ SetServerInternalIdNil sets the value for ServerInternalId to be an explicit nil
+
+### UnsetServerInternalId
+`func (o *GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInner) UnsetServerInternalId()`
+
+UnsetServerInternalId ensures that no value is present for ServerInternalId, not even an explicit nil
 ### GetResourcePoolId
 
 `func (o *GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInner) GetResourcePoolId() int64`

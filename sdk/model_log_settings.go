@@ -110,9 +110,9 @@ func (o *LogSettings) SetRetentionDays(v string) {
 	o.RetentionDays = &v
 }
 
-// GetSyslogRules returns the SyslogRules field value if set, zero value otherwise.
+// GetSyslogRules returns the SyslogRules field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *LogSettings) GetSyslogRules() []map[string]interface{} {
-	if o == nil || IsNil(o.SyslogRules) {
+	if o == nil {
 		var ret []map[string]interface{}
 		return ret
 	}
@@ -121,6 +121,7 @@ func (o *LogSettings) GetSyslogRules() []map[string]interface{} {
 
 // GetSyslogRulesOk returns a tuple with the SyslogRules field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LogSettings) GetSyslogRulesOk() ([]map[string]interface{}, bool) {
 	if o == nil || IsNil(o.SyslogRules) {
 		return nil, false
@@ -142,9 +143,9 @@ func (o *LogSettings) SetSyslogRules(v []map[string]interface{}) {
 	o.SyslogRules = v
 }
 
-// GetIntegrations returns the Integrations field value if set, zero value otherwise.
+// GetIntegrations returns the Integrations field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *LogSettings) GetIntegrations() []map[string]interface{} {
-	if o == nil || IsNil(o.Integrations) {
+	if o == nil {
 		var ret []map[string]interface{}
 		return ret
 	}
@@ -153,6 +154,7 @@ func (o *LogSettings) GetIntegrations() []map[string]interface{} {
 
 // GetIntegrationsOk returns a tuple with the Integrations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LogSettings) GetIntegrationsOk() ([]map[string]interface{}, bool) {
 	if o == nil || IsNil(o.Integrations) {
 		return nil, false
@@ -190,10 +192,10 @@ func (o LogSettings) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.RetentionDays) {
 		toSerialize["retentionDays"] = o.RetentionDays
 	}
-	if !IsNil(o.SyslogRules) {
+	if o.SyslogRules != nil {
 		toSerialize["syslogRules"] = o.SyslogRules
 	}
-	if !IsNil(o.Integrations) {
+	if o.Integrations != nil {
 		toSerialize["integrations"] = o.Integrations
 	}
 

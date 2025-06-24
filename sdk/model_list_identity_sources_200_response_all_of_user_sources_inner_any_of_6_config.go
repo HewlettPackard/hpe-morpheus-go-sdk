@@ -36,10 +36,10 @@ type ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6Config struct {
 	RoleAttributeName          *string                `json:"roleAttributeName,omitempty"`
 	AzureTenantId              *string                `json:"azureTenantId,omitempty"`
 	AzureAppId                 *string                `json:"azureAppId,omitempty"`
-	AzureAppSecret             *string                `json:"azureAppSecret,omitempty"`
+	AzureAppSecret             NullableString         `json:"azureAppSecret,omitempty"`
 	RoleLinkAttributeName      *string                `json:"roleLinkAttributeName,omitempty"`
 	PublicKey                  *string                `json:"publicKey,omitempty"`
-	AzureAppSecretHash         *string                `json:"azureAppSecretHash,omitempty"`
+	AzureAppSecretHash         NullableString         `json:"azureAppSecretHash,omitempty"`
 	AdditionalProperties       map[string]interface{} `json:",remain"`
 }
 
@@ -574,36 +574,47 @@ func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6Config) SetAzu
 	o.AzureAppId = &v
 }
 
-// GetAzureAppSecret returns the AzureAppSecret field value if set, zero value otherwise.
+// GetAzureAppSecret returns the AzureAppSecret field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6Config) GetAzureAppSecret() string {
-	if o == nil || IsNil(o.AzureAppSecret) {
+	if o == nil || IsNil(o.AzureAppSecret.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.AzureAppSecret
+	return *o.AzureAppSecret.Get()
 }
 
 // GetAzureAppSecretOk returns a tuple with the AzureAppSecret field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6Config) GetAzureAppSecretOk() (*string, bool) {
-	if o == nil || IsNil(o.AzureAppSecret) {
+	if o == nil {
 		return nil, false
 	}
-	return o.AzureAppSecret, true
+	return o.AzureAppSecret.Get(), o.AzureAppSecret.IsSet()
 }
 
 // IsSetAzureAppSecret returns a boolean if a field has been set.
 func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6Config) IsSetAzureAppSecret() bool {
-	if o != nil && !IsNil(o.AzureAppSecret) {
+	if o != nil && o.AzureAppSecret.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetAzureAppSecret gets a reference to the given string and assigns it to the AzureAppSecret field.
+// SetAzureAppSecret gets a reference to the given NullableString and assigns it to the AzureAppSecret field.
 func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6Config) SetAzureAppSecret(v string) {
-	o.AzureAppSecret = &v
+	o.AzureAppSecret.Set(&v)
+}
+
+// SetAzureAppSecretNil sets the value for AzureAppSecret to be an explicit nil
+func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6Config) SetAzureAppSecretNil() {
+	o.AzureAppSecret.Set(nil)
+}
+
+// UnsetAzureAppSecret ensures that no value is present for AzureAppSecret, not even an explicit nil
+func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6Config) UnsetAzureAppSecret() {
+	o.AzureAppSecret.Unset()
 }
 
 // GetRoleLinkAttributeName returns the RoleLinkAttributeName field value if set, zero value otherwise.
@@ -670,36 +681,47 @@ func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6Config) SetPub
 	o.PublicKey = &v
 }
 
-// GetAzureAppSecretHash returns the AzureAppSecretHash field value if set, zero value otherwise.
+// GetAzureAppSecretHash returns the AzureAppSecretHash field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6Config) GetAzureAppSecretHash() string {
-	if o == nil || IsNil(o.AzureAppSecretHash) {
+	if o == nil || IsNil(o.AzureAppSecretHash.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.AzureAppSecretHash
+	return *o.AzureAppSecretHash.Get()
 }
 
 // GetAzureAppSecretHashOk returns a tuple with the AzureAppSecretHash field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6Config) GetAzureAppSecretHashOk() (*string, bool) {
-	if o == nil || IsNil(o.AzureAppSecretHash) {
+	if o == nil {
 		return nil, false
 	}
-	return o.AzureAppSecretHash, true
+	return o.AzureAppSecretHash.Get(), o.AzureAppSecretHash.IsSet()
 }
 
 // IsSetAzureAppSecretHash returns a boolean if a field has been set.
 func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6Config) IsSetAzureAppSecretHash() bool {
-	if o != nil && !IsNil(o.AzureAppSecretHash) {
+	if o != nil && o.AzureAppSecretHash.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetAzureAppSecretHash gets a reference to the given string and assigns it to the AzureAppSecretHash field.
+// SetAzureAppSecretHash gets a reference to the given NullableString and assigns it to the AzureAppSecretHash field.
 func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6Config) SetAzureAppSecretHash(v string) {
-	o.AzureAppSecretHash = &v
+	o.AzureAppSecretHash.Set(&v)
+}
+
+// SetAzureAppSecretHashNil sets the value for AzureAppSecretHash to be an explicit nil
+func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6Config) SetAzureAppSecretHashNil() {
+	o.AzureAppSecretHash.Set(nil)
+}
+
+// UnsetAzureAppSecretHash ensures that no value is present for AzureAppSecretHash, not even an explicit nil
+func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6Config) UnsetAzureAppSecretHash() {
+	o.AzureAppSecretHash.Unset()
 }
 
 func (o ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6Config) MarshalJSON() ([]byte, error) {
@@ -760,8 +782,8 @@ func (o ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6Config) ToMap()
 	if !IsNil(o.AzureAppId) {
 		toSerialize["azureAppId"] = o.AzureAppId
 	}
-	if !IsNil(o.AzureAppSecret) {
-		toSerialize["azureAppSecret"] = o.AzureAppSecret
+	if o.AzureAppSecret.IsSet() {
+		toSerialize["azureAppSecret"] = o.AzureAppSecret.Get()
 	}
 	if !IsNil(o.RoleLinkAttributeName) {
 		toSerialize["roleLinkAttributeName"] = o.RoleLinkAttributeName
@@ -769,8 +791,8 @@ func (o ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6Config) ToMap()
 	if !IsNil(o.PublicKey) {
 		toSerialize["publicKey"] = o.PublicKey
 	}
-	if !IsNil(o.AzureAppSecretHash) {
-		toSerialize["azureAppSecretHash"] = o.AzureAppSecretHash
+	if o.AzureAppSecretHash.IsSet() {
+		toSerialize["azureAppSecretHash"] = o.AzureAppSecretHash.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {

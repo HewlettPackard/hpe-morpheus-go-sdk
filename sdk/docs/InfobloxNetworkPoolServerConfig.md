@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **InventoryExisting** | Pointer to **string** | Inventory Existing | [optional] [default to "off"]
-**ExtraAttributes** | Pointer to **string** | Extra Attributes | [optional] 
+**ExtraAttributes** | Pointer to **NullableString** | Extra Attributes | [optional] 
 
 ## Methods
 
@@ -76,6 +76,16 @@ SetExtraAttributes sets ExtraAttributes field to given value.
 
 HasExtraAttributes returns a boolean if a field has been set.
 
+### SetExtraAttributesNil
+
+`func (o *InfobloxNetworkPoolServerConfig) SetExtraAttributesNil(b bool)`
+
+ SetExtraAttributesNil sets the value for ExtraAttributes to be an explicit nil
+
+### UnsetExtraAttributes
+`func (o *InfobloxNetworkPoolServerConfig) UnsetExtraAttributes()`
+
+UnsetExtraAttributes ensures that no value is present for ExtraAttributes, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

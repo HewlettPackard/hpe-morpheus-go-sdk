@@ -13,11 +13,11 @@ Name | Type | Description | Notes
 **ReuseSequence** | Pointer to **bool** |  | [optional] 
 **CloudInitUsername** | Pointer to **string** |  | [optional] 
 **CloudInitPassword** | Pointer to **string** |  | [optional] 
-**CloudInitKeyPair** | Pointer to [**ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
-**WindowsPassword** | Pointer to **string** |  | [optional] 
-**PxeRootPassword** | Pointer to **string** |  | [optional] 
+**CloudInitKeyPair** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**WindowsPassword** | Pointer to **NullableString** |  | [optional] 
+**PxeRootPassword** | Pointer to **NullableString** |  | [optional] 
 **DefaultTemplateType** | Pointer to [**ListBackupSettings200ResponseBackupSettingsDefaultSchedule**](ListBackupSettings200ResponseBackupSettingsDefaultSchedule.md) |  | [optional] 
-**DeployStorageProvider** | Pointer to [**ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
+**DeployStorageProvider** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 
 ## Methods
 
@@ -265,20 +265,20 @@ HasCloudInitPassword returns a boolean if a field has been set.
 
 ### GetCloudInitKeyPair
 
-`func (o *ListProvisioningSettings200ResponseProvisioningSettings) GetCloudInitKeyPair() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *ListProvisioningSettings200ResponseProvisioningSettings) GetCloudInitKeyPair() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetCloudInitKeyPair returns the CloudInitKeyPair field if non-nil, zero value otherwise.
 
 ### GetCloudInitKeyPairOk
 
-`func (o *ListProvisioningSettings200ResponseProvisioningSettings) GetCloudInitKeyPairOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *ListProvisioningSettings200ResponseProvisioningSettings) GetCloudInitKeyPairOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetCloudInitKeyPairOk returns a tuple with the CloudInitKeyPair field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCloudInitKeyPair
 
-`func (o *ListProvisioningSettings200ResponseProvisioningSettings) SetCloudInitKeyPair(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *ListProvisioningSettings200ResponseProvisioningSettings) SetCloudInitKeyPair(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetCloudInitKeyPair sets CloudInitKeyPair field to given value.
 
@@ -313,6 +313,16 @@ SetWindowsPassword sets WindowsPassword field to given value.
 
 HasWindowsPassword returns a boolean if a field has been set.
 
+### SetWindowsPasswordNil
+
+`func (o *ListProvisioningSettings200ResponseProvisioningSettings) SetWindowsPasswordNil(b bool)`
+
+ SetWindowsPasswordNil sets the value for WindowsPassword to be an explicit nil
+
+### UnsetWindowsPassword
+`func (o *ListProvisioningSettings200ResponseProvisioningSettings) UnsetWindowsPassword()`
+
+UnsetWindowsPassword ensures that no value is present for WindowsPassword, not even an explicit nil
 ### GetPxeRootPassword
 
 `func (o *ListProvisioningSettings200ResponseProvisioningSettings) GetPxeRootPassword() string`
@@ -338,6 +348,16 @@ SetPxeRootPassword sets PxeRootPassword field to given value.
 
 HasPxeRootPassword returns a boolean if a field has been set.
 
+### SetPxeRootPasswordNil
+
+`func (o *ListProvisioningSettings200ResponseProvisioningSettings) SetPxeRootPasswordNil(b bool)`
+
+ SetPxeRootPasswordNil sets the value for PxeRootPassword to be an explicit nil
+
+### UnsetPxeRootPassword
+`func (o *ListProvisioningSettings200ResponseProvisioningSettings) UnsetPxeRootPassword()`
+
+UnsetPxeRootPassword ensures that no value is present for PxeRootPassword, not even an explicit nil
 ### GetDefaultTemplateType
 
 `func (o *ListProvisioningSettings200ResponseProvisioningSettings) GetDefaultTemplateType() ListBackupSettings200ResponseBackupSettingsDefaultSchedule`
@@ -365,20 +385,20 @@ HasDefaultTemplateType returns a boolean if a field has been set.
 
 ### GetDeployStorageProvider
 
-`func (o *ListProvisioningSettings200ResponseProvisioningSettings) GetDeployStorageProvider() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *ListProvisioningSettings200ResponseProvisioningSettings) GetDeployStorageProvider() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetDeployStorageProvider returns the DeployStorageProvider field if non-nil, zero value otherwise.
 
 ### GetDeployStorageProviderOk
 
-`func (o *ListProvisioningSettings200ResponseProvisioningSettings) GetDeployStorageProviderOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *ListProvisioningSettings200ResponseProvisioningSettings) GetDeployStorageProviderOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetDeployStorageProviderOk returns a tuple with the DeployStorageProvider field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDeployStorageProvider
 
-`func (o *ListProvisioningSettings200ResponseProvisioningSettings) SetDeployStorageProvider(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *ListProvisioningSettings200ResponseProvisioningSettings) SetDeployStorageProvider(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetDeployStorageProvider sets DeployStorageProvider field to given value.
 

@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Cluster** | Pointer to [**[]SnapshotsInstance200ResponseSnapshotsInnerZone**](SnapshotsInstance200ResponseSnapshotsInnerZone.md) |  | [optional] 
-**Store** | Pointer to [**[]SnapshotsInstance200ResponseSnapshotsInnerZone**](SnapshotsInstance200ResponseSnapshotsInnerZone.md) |  | [optional] 
+**Cluster** | Pointer to [**[]GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount**](GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount.md) |  | [optional] 
+**Store** | Pointer to [**[]GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount**](GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount.md) |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetCluster
 
-`func (o *ListInstanceServicePlans200ResponsePlansInnerDatastores) GetCluster() []SnapshotsInstance200ResponseSnapshotsInnerZone`
+`func (o *ListInstanceServicePlans200ResponsePlansInnerDatastores) GetCluster() []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount`
 
 GetCluster returns the Cluster field if non-nil, zero value otherwise.
 
 ### GetClusterOk
 
-`func (o *ListInstanceServicePlans200ResponsePlansInnerDatastores) GetClusterOk() (*[]SnapshotsInstance200ResponseSnapshotsInnerZone, bool)`
+`func (o *ListInstanceServicePlans200ResponsePlansInnerDatastores) GetClusterOk() (*[]GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount, bool)`
 
 GetClusterOk returns a tuple with the Cluster field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCluster
 
-`func (o *ListInstanceServicePlans200ResponsePlansInnerDatastores) SetCluster(v []SnapshotsInstance200ResponseSnapshotsInnerZone)`
+`func (o *ListInstanceServicePlans200ResponsePlansInnerDatastores) SetCluster(v []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount)`
 
 SetCluster sets Cluster field to given value.
 
@@ -53,20 +53,20 @@ HasCluster returns a boolean if a field has been set.
 
 ### GetStore
 
-`func (o *ListInstanceServicePlans200ResponsePlansInnerDatastores) GetStore() []SnapshotsInstance200ResponseSnapshotsInnerZone`
+`func (o *ListInstanceServicePlans200ResponsePlansInnerDatastores) GetStore() []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount`
 
 GetStore returns the Store field if non-nil, zero value otherwise.
 
 ### GetStoreOk
 
-`func (o *ListInstanceServicePlans200ResponsePlansInnerDatastores) GetStoreOk() (*[]SnapshotsInstance200ResponseSnapshotsInnerZone, bool)`
+`func (o *ListInstanceServicePlans200ResponsePlansInnerDatastores) GetStoreOk() (*[]GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount, bool)`
 
 GetStoreOk returns a tuple with the Store field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStore
 
-`func (o *ListInstanceServicePlans200ResponsePlansInnerDatastores) SetStore(v []SnapshotsInstance200ResponseSnapshotsInnerZone)`
+`func (o *ListInstanceServicePlans200ResponsePlansInnerDatastores) SetStore(v []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount)`
 
 SetStore sets Store field to given value.
 

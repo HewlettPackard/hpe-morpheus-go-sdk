@@ -8,15 +8,15 @@ Name | Type | Description | Notes
 **Code** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Category** | Pointer to **string** |  | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **NullableString** |  | [optional] 
 **Scriptable** | Pointer to **bool** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
 **HasResults** | Pointer to **bool** |  | [optional] 
-**AllowExecuteLocal** | Pointer to **bool** |  | [optional] 
-**AllowExecuteRemote** | Pointer to **bool** |  | [optional] 
-**AllowExecuteResource** | Pointer to **bool** |  | [optional] 
-**AllowLocalRepo** | Pointer to **bool** |  | [optional] 
-**AllowRemoteKeyAuth** | Pointer to **bool** |  | [optional] 
+**AllowExecuteLocal** | Pointer to **NullableBool** |  | [optional] 
+**AllowExecuteRemote** | Pointer to **NullableBool** |  | [optional] 
+**AllowExecuteResource** | Pointer to **NullableBool** |  | [optional] 
+**AllowLocalRepo** | Pointer to **NullableBool** |  | [optional] 
+**AllowRemoteKeyAuth** | Pointer to **NullableBool** |  | [optional] 
 **OptionTypes** | Pointer to [**[]ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner**](ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner.md) |  | [optional] 
 
 ## Methods
@@ -163,6 +163,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *ListTaskTypes200ResponseTaskTypesInner) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *ListTaskTypes200ResponseTaskTypesInner) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetScriptable
 
 `func (o *ListTaskTypes200ResponseTaskTypesInner) GetScriptable() bool`
@@ -263,6 +273,16 @@ SetAllowExecuteLocal sets AllowExecuteLocal field to given value.
 
 HasAllowExecuteLocal returns a boolean if a field has been set.
 
+### SetAllowExecuteLocalNil
+
+`func (o *ListTaskTypes200ResponseTaskTypesInner) SetAllowExecuteLocalNil(b bool)`
+
+ SetAllowExecuteLocalNil sets the value for AllowExecuteLocal to be an explicit nil
+
+### UnsetAllowExecuteLocal
+`func (o *ListTaskTypes200ResponseTaskTypesInner) UnsetAllowExecuteLocal()`
+
+UnsetAllowExecuteLocal ensures that no value is present for AllowExecuteLocal, not even an explicit nil
 ### GetAllowExecuteRemote
 
 `func (o *ListTaskTypes200ResponseTaskTypesInner) GetAllowExecuteRemote() bool`
@@ -288,6 +308,16 @@ SetAllowExecuteRemote sets AllowExecuteRemote field to given value.
 
 HasAllowExecuteRemote returns a boolean if a field has been set.
 
+### SetAllowExecuteRemoteNil
+
+`func (o *ListTaskTypes200ResponseTaskTypesInner) SetAllowExecuteRemoteNil(b bool)`
+
+ SetAllowExecuteRemoteNil sets the value for AllowExecuteRemote to be an explicit nil
+
+### UnsetAllowExecuteRemote
+`func (o *ListTaskTypes200ResponseTaskTypesInner) UnsetAllowExecuteRemote()`
+
+UnsetAllowExecuteRemote ensures that no value is present for AllowExecuteRemote, not even an explicit nil
 ### GetAllowExecuteResource
 
 `func (o *ListTaskTypes200ResponseTaskTypesInner) GetAllowExecuteResource() bool`
@@ -313,6 +343,16 @@ SetAllowExecuteResource sets AllowExecuteResource field to given value.
 
 HasAllowExecuteResource returns a boolean if a field has been set.
 
+### SetAllowExecuteResourceNil
+
+`func (o *ListTaskTypes200ResponseTaskTypesInner) SetAllowExecuteResourceNil(b bool)`
+
+ SetAllowExecuteResourceNil sets the value for AllowExecuteResource to be an explicit nil
+
+### UnsetAllowExecuteResource
+`func (o *ListTaskTypes200ResponseTaskTypesInner) UnsetAllowExecuteResource()`
+
+UnsetAllowExecuteResource ensures that no value is present for AllowExecuteResource, not even an explicit nil
 ### GetAllowLocalRepo
 
 `func (o *ListTaskTypes200ResponseTaskTypesInner) GetAllowLocalRepo() bool`
@@ -338,6 +378,16 @@ SetAllowLocalRepo sets AllowLocalRepo field to given value.
 
 HasAllowLocalRepo returns a boolean if a field has been set.
 
+### SetAllowLocalRepoNil
+
+`func (o *ListTaskTypes200ResponseTaskTypesInner) SetAllowLocalRepoNil(b bool)`
+
+ SetAllowLocalRepoNil sets the value for AllowLocalRepo to be an explicit nil
+
+### UnsetAllowLocalRepo
+`func (o *ListTaskTypes200ResponseTaskTypesInner) UnsetAllowLocalRepo()`
+
+UnsetAllowLocalRepo ensures that no value is present for AllowLocalRepo, not even an explicit nil
 ### GetAllowRemoteKeyAuth
 
 `func (o *ListTaskTypes200ResponseTaskTypesInner) GetAllowRemoteKeyAuth() bool`
@@ -363,6 +413,16 @@ SetAllowRemoteKeyAuth sets AllowRemoteKeyAuth field to given value.
 
 HasAllowRemoteKeyAuth returns a boolean if a field has been set.
 
+### SetAllowRemoteKeyAuthNil
+
+`func (o *ListTaskTypes200ResponseTaskTypesInner) SetAllowRemoteKeyAuthNil(b bool)`
+
+ SetAllowRemoteKeyAuthNil sets the value for AllowRemoteKeyAuth to be an explicit nil
+
+### UnsetAllowRemoteKeyAuth
+`func (o *ListTaskTypes200ResponseTaskTypesInner) UnsetAllowRemoteKeyAuth()`
+
+UnsetAllowRemoteKeyAuth ensures that no value is present for AllowRemoteKeyAuth, not even an explicit nil
 ### GetOptionTypes
 
 `func (o *ListTaskTypes200ResponseTaskTypesInner) GetOptionTypes() []ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner`

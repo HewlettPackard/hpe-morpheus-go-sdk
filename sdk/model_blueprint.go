@@ -20,18 +20,18 @@ var _ MappedNullable = &Blueprint{}
 
 // Blueprint struct for Blueprint
 type Blueprint struct {
-	Id                   *int64                                                                  `json:"id,omitempty"`
-	Name                 *string                                                                 `json:"name,omitempty"`
-	Labels               []string                                                                `json:"labels,omitempty"`
-	Type                 *string                                                                 `json:"type,omitempty"`
-	Description          *string                                                                 `json:"description,omitempty"`
-	Category             *string                                                                 `json:"category,omitempty"`
-	Config               map[string]interface{}                                                  `json:"config,omitempty"`
-	Visibility           *string                                                                 `json:"visibility,omitempty"`
-	ResourcePermission   map[string]interface{}                                                  `json:"resourcePermission,omitempty"`
-	Owner                *ListActivity200ResponseAllOfActivityInnerActivityInnerUser             `json:"owner,omitempty"`
-	Tenant               *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"tenant,omitempty"`
-	AdditionalProperties map[string]interface{}                                                  `json:",remain"`
+	Id                   *int64                                                      `json:"id,omitempty"`
+	Name                 *string                                                     `json:"name,omitempty"`
+	Labels               []string                                                    `json:"labels,omitempty"`
+	Type                 *string                                                     `json:"type,omitempty"`
+	Description          NullableString                                              `json:"description,omitempty"`
+	Category             NullableString                                              `json:"category,omitempty"`
+	Config               map[string]interface{}                                      `json:"config,omitempty"`
+	Visibility           *string                                                     `json:"visibility,omitempty"`
+	ResourcePermission   map[string]interface{}                                      `json:"resourcePermission,omitempty"`
+	Owner                *ListActivity200ResponseAllOfActivityInnerActivityInnerUser `json:"owner,omitempty"`
+	Tenant               *GetAlerts200ResponseAllOfCheckGroupsInnerInstance          `json:"tenant,omitempty"`
+	AdditionalProperties map[string]interface{}                                      `json:",remain"`
 }
 
 type _Blueprint Blueprint
@@ -181,68 +181,90 @@ func (o *Blueprint) SetType(v string) {
 	o.Type = &v
 }
 
-// GetDescription returns the Description field value if set, zero value otherwise.
+// GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Blueprint) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
+	if o == nil || IsNil(o.Description.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Description
+	return *o.Description.Get()
 }
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Blueprint) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Description, true
+	return o.Description.Get(), o.Description.IsSet()
 }
 
 // IsSetDescription returns a boolean if a field has been set.
 func (o *Blueprint) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
+	if o != nil && o.Description.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDescription gets a reference to the given string and assigns it to the Description field.
+// SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *Blueprint) SetDescription(v string) {
-	o.Description = &v
+	o.Description.Set(&v)
 }
 
-// GetCategory returns the Category field value if set, zero value otherwise.
+// SetDescriptionNil sets the value for Description to be an explicit nil
+func (o *Blueprint) SetDescriptionNil() {
+	o.Description.Set(nil)
+}
+
+// UnsetDescription ensures that no value is present for Description, not even an explicit nil
+func (o *Blueprint) UnsetDescription() {
+	o.Description.Unset()
+}
+
+// GetCategory returns the Category field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Blueprint) GetCategory() string {
-	if o == nil || IsNil(o.Category) {
+	if o == nil || IsNil(o.Category.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Category
+	return *o.Category.Get()
 }
 
 // GetCategoryOk returns a tuple with the Category field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Blueprint) GetCategoryOk() (*string, bool) {
-	if o == nil || IsNil(o.Category) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Category, true
+	return o.Category.Get(), o.Category.IsSet()
 }
 
 // IsSetCategory returns a boolean if a field has been set.
 func (o *Blueprint) IsSetCategory() bool {
-	if o != nil && !IsNil(o.Category) {
+	if o != nil && o.Category.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCategory gets a reference to the given string and assigns it to the Category field.
+// SetCategory gets a reference to the given NullableString and assigns it to the Category field.
 func (o *Blueprint) SetCategory(v string) {
-	o.Category = &v
+	o.Category.Set(&v)
+}
+
+// SetCategoryNil sets the value for Category to be an explicit nil
+func (o *Blueprint) SetCategoryNil() {
+	o.Category.Set(nil)
+}
+
+// UnsetCategory ensures that no value is present for Category, not even an explicit nil
+func (o *Blueprint) UnsetCategory() {
+	o.Category.Unset()
 }
 
 // GetConfig returns the Config field value if set, zero value otherwise.
@@ -309,9 +331,9 @@ func (o *Blueprint) SetVisibility(v string) {
 	o.Visibility = &v
 }
 
-// GetResourcePermission returns the ResourcePermission field value if set, zero value otherwise.
+// GetResourcePermission returns the ResourcePermission field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Blueprint) GetResourcePermission() map[string]interface{} {
-	if o == nil || IsNil(o.ResourcePermission) {
+	if o == nil {
 		var ret map[string]interface{}
 		return ret
 	}
@@ -320,6 +342,7 @@ func (o *Blueprint) GetResourcePermission() map[string]interface{} {
 
 // GetResourcePermissionOk returns a tuple with the ResourcePermission field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Blueprint) GetResourcePermissionOk() (map[string]interface{}, bool) {
 	if o == nil || IsNil(o.ResourcePermission) {
 		return map[string]interface{}{}, false
@@ -374,9 +397,9 @@ func (o *Blueprint) SetOwner(v ListActivity200ResponseAllOfActivityInnerActivity
 }
 
 // GetTenant returns the Tenant field value if set, zero value otherwise.
-func (o *Blueprint) GetTenant() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *Blueprint) GetTenant() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.Tenant) {
-		var ret ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return *o.Tenant
@@ -384,7 +407,7 @@ func (o *Blueprint) GetTenant() ListApplianceSettings200ResponseApplianceSetting
 
 // GetTenantOk returns a tuple with the Tenant field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Blueprint) GetTenantOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *Blueprint) GetTenantOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.Tenant) {
 		return nil, false
 	}
@@ -400,8 +423,8 @@ func (o *Blueprint) IsSetTenant() bool {
 	return false
 }
 
-// SetTenant gets a reference to the given ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the Tenant field.
-func (o *Blueprint) SetTenant(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetTenant gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Tenant field.
+func (o *Blueprint) SetTenant(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.Tenant = &v
 }
 
@@ -427,11 +450,11 @@ func (o Blueprint) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type
 	}
-	if !IsNil(o.Description) {
-		toSerialize["description"] = o.Description
+	if o.Description.IsSet() {
+		toSerialize["description"] = o.Description.Get()
 	}
-	if !IsNil(o.Category) {
-		toSerialize["category"] = o.Category
+	if o.Category.IsSet() {
+		toSerialize["category"] = o.Category.Get()
 	}
 	if !IsNil(o.Config) {
 		toSerialize["config"] = o.Config
@@ -439,7 +462,7 @@ func (o Blueprint) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Visibility) {
 		toSerialize["visibility"] = o.Visibility
 	}
-	if !IsNil(o.ResourcePermission) {
+	if o.ResourcePermission != nil {
 		toSerialize["resourcePermission"] = o.ResourcePermission
 	}
 	if !IsNil(o.Owner) {

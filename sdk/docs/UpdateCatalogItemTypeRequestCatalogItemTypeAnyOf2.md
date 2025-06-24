@@ -5,13 +5,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **string** | Catalog Item Type name | [optional] 
-**Code** | Pointer to **string** | Useful shortcode for provisioning naming schemes and export reference. | [optional] 
-**Category** | Pointer to **string** | Catalog Item Type category | [optional] 
+**Code** | Pointer to **NullableString** | Useful shortcode for provisioning naming schemes and export reference. | [optional] 
+**Category** | Pointer to **NullableString** | Catalog Item Type category | [optional] 
 **Description** | Pointer to **string** | Catalog Item Type description | [optional] 
 **Labels** | Pointer to **[]string** | Array of label strings, can be used for filtering. | [optional] 
 **Type** | Pointer to **string** | Type, &#x60;instance&#x60;, &#x60;blueprint&#x60; or &#x60;workflow&#x60;. This determines whether an Instance or App will be provisioned. Instance types require a config and blueprint requires a blueprint and appSpec, while workflow types requires a workflow and context. | [optional] 
 **Visibility** | Pointer to **string** | Visibility - Set to public to allow all tenants | [optional] [default to "private"]
-**LayoutCode** | Pointer to **string** | Identifier primarily used for Plugin Catalog Item Types | [optional] 
+**LayoutCode** | Pointer to **NullableString** | Identifier primarily used for Plugin Catalog Item Types | [optional] 
 **IconPath** | Pointer to **string** | Icon Path, relative location of an icon image, eg. /assets/containers-png/nginx.png. | [optional] 
 **Enabled** | Pointer to **bool** | Can be used to enable / disable the catalog item type. | [optional] [default to true]
 **Featured** | Pointer to **bool** | Can be used to feature the catalog item type. | [optional] [default to false]
@@ -93,6 +93,16 @@ SetCode sets Code field to given value.
 
 HasCode returns a boolean if a field has been set.
 
+### SetCodeNil
+
+`func (o *UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2) SetCodeNil(b bool)`
+
+ SetCodeNil sets the value for Code to be an explicit nil
+
+### UnsetCode
+`func (o *UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2) UnsetCode()`
+
+UnsetCode ensures that no value is present for Code, not even an explicit nil
 ### GetCategory
 
 `func (o *UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2) GetCategory() string`
@@ -118,6 +128,16 @@ SetCategory sets Category field to given value.
 
 HasCategory returns a boolean if a field has been set.
 
+### SetCategoryNil
+
+`func (o *UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2) SetCategoryNil(b bool)`
+
+ SetCategoryNil sets the value for Category to be an explicit nil
+
+### UnsetCategory
+`func (o *UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2) UnsetCategory()`
+
+UnsetCategory ensures that no value is present for Category, not even an explicit nil
 ### GetDescription
 
 `func (o *UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2) GetDescription() string`
@@ -168,6 +188,16 @@ SetLabels sets Labels field to given value.
 
 HasLabels returns a boolean if a field has been set.
 
+### SetLabelsNil
+
+`func (o *UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2) SetLabelsNil(b bool)`
+
+ SetLabelsNil sets the value for Labels to be an explicit nil
+
+### UnsetLabels
+`func (o *UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2) UnsetLabels()`
+
+UnsetLabels ensures that no value is present for Labels, not even an explicit nil
 ### GetType
 
 `func (o *UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2) GetType() string`
@@ -243,6 +273,16 @@ SetLayoutCode sets LayoutCode field to given value.
 
 HasLayoutCode returns a boolean if a field has been set.
 
+### SetLayoutCodeNil
+
+`func (o *UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2) SetLayoutCodeNil(b bool)`
+
+ SetLayoutCodeNil sets the value for LayoutCode to be an explicit nil
+
+### UnsetLayoutCode
+`func (o *UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2) UnsetLayoutCode()`
+
+UnsetLayoutCode ensures that no value is present for LayoutCode, not even an explicit nil
 ### GetIconPath
 
 `func (o *UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2) GetIconPath() string`

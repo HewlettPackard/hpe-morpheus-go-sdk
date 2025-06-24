@@ -13,14 +13,14 @@ Name | Type | Description | Notes
 **DatacenterName** | Pointer to **string** |  | [optional] 
 **NetworkServerId** | Pointer to **string** |  | [optional] 
 **NetworkServer** | Pointer to [**ListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer**](ListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer.md) |  | [optional] 
-**SecurityServer** | Pointer to **string** |  | [optional] 
-**CertificateProvider** | Pointer to **string** |  | [optional] 
-**BackupMode** | Pointer to **string** |  | [optional] 
-**ReplicationMode** | Pointer to **string** |  | [optional] 
-**DnsIntegrationId** | Pointer to **string** |  | [optional] 
-**ServiceRegistryId** | Pointer to **string** |  | [optional] 
-**ConfigManagementId** | Pointer to **string** |  | [optional] 
-**PrivateKeyHash** | Pointer to **string** |  | [optional] 
+**SecurityServer** | Pointer to **NullableString** |  | [optional] 
+**CertificateProvider** | Pointer to **NullableString** |  | [optional] 
+**BackupMode** | Pointer to **NullableString** |  | [optional] 
+**ReplicationMode** | Pointer to **NullableString** |  | [optional] 
+**DnsIntegrationId** | Pointer to **NullableString** |  | [optional] 
+**ServiceRegistryId** | Pointer to **NullableString** |  | [optional] 
+**ConfigManagementId** | Pointer to **NullableString** |  | [optional] 
+**PrivateKeyHash** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -291,6 +291,16 @@ SetSecurityServer sets SecurityServer field to given value.
 
 HasSecurityServer returns a boolean if a field has been set.
 
+### SetSecurityServerNil
+
+`func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf3) SetSecurityServerNil(b bool)`
+
+ SetSecurityServerNil sets the value for SecurityServer to be an explicit nil
+
+### UnsetSecurityServer
+`func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf3) UnsetSecurityServer()`
+
+UnsetSecurityServer ensures that no value is present for SecurityServer, not even an explicit nil
 ### GetCertificateProvider
 
 `func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf3) GetCertificateProvider() string`
@@ -316,6 +326,16 @@ SetCertificateProvider sets CertificateProvider field to given value.
 
 HasCertificateProvider returns a boolean if a field has been set.
 
+### SetCertificateProviderNil
+
+`func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf3) SetCertificateProviderNil(b bool)`
+
+ SetCertificateProviderNil sets the value for CertificateProvider to be an explicit nil
+
+### UnsetCertificateProvider
+`func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf3) UnsetCertificateProvider()`
+
+UnsetCertificateProvider ensures that no value is present for CertificateProvider, not even an explicit nil
 ### GetBackupMode
 
 `func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf3) GetBackupMode() string`
@@ -341,6 +361,16 @@ SetBackupMode sets BackupMode field to given value.
 
 HasBackupMode returns a boolean if a field has been set.
 
+### SetBackupModeNil
+
+`func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf3) SetBackupModeNil(b bool)`
+
+ SetBackupModeNil sets the value for BackupMode to be an explicit nil
+
+### UnsetBackupMode
+`func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf3) UnsetBackupMode()`
+
+UnsetBackupMode ensures that no value is present for BackupMode, not even an explicit nil
 ### GetReplicationMode
 
 `func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf3) GetReplicationMode() string`
@@ -366,6 +396,16 @@ SetReplicationMode sets ReplicationMode field to given value.
 
 HasReplicationMode returns a boolean if a field has been set.
 
+### SetReplicationModeNil
+
+`func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf3) SetReplicationModeNil(b bool)`
+
+ SetReplicationModeNil sets the value for ReplicationMode to be an explicit nil
+
+### UnsetReplicationMode
+`func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf3) UnsetReplicationMode()`
+
+UnsetReplicationMode ensures that no value is present for ReplicationMode, not even an explicit nil
 ### GetDnsIntegrationId
 
 `func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf3) GetDnsIntegrationId() string`
@@ -391,6 +431,16 @@ SetDnsIntegrationId sets DnsIntegrationId field to given value.
 
 HasDnsIntegrationId returns a boolean if a field has been set.
 
+### SetDnsIntegrationIdNil
+
+`func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf3) SetDnsIntegrationIdNil(b bool)`
+
+ SetDnsIntegrationIdNil sets the value for DnsIntegrationId to be an explicit nil
+
+### UnsetDnsIntegrationId
+`func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf3) UnsetDnsIntegrationId()`
+
+UnsetDnsIntegrationId ensures that no value is present for DnsIntegrationId, not even an explicit nil
 ### GetServiceRegistryId
 
 `func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf3) GetServiceRegistryId() string`
@@ -416,6 +466,16 @@ SetServiceRegistryId sets ServiceRegistryId field to given value.
 
 HasServiceRegistryId returns a boolean if a field has been set.
 
+### SetServiceRegistryIdNil
+
+`func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf3) SetServiceRegistryIdNil(b bool)`
+
+ SetServiceRegistryIdNil sets the value for ServiceRegistryId to be an explicit nil
+
+### UnsetServiceRegistryId
+`func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf3) UnsetServiceRegistryId()`
+
+UnsetServiceRegistryId ensures that no value is present for ServiceRegistryId, not even an explicit nil
 ### GetConfigManagementId
 
 `func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf3) GetConfigManagementId() string`
@@ -441,6 +501,16 @@ SetConfigManagementId sets ConfigManagementId field to given value.
 
 HasConfigManagementId returns a boolean if a field has been set.
 
+### SetConfigManagementIdNil
+
+`func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf3) SetConfigManagementIdNil(b bool)`
+
+ SetConfigManagementIdNil sets the value for ConfigManagementId to be an explicit nil
+
+### UnsetConfigManagementId
+`func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf3) UnsetConfigManagementId()`
+
+UnsetConfigManagementId ensures that no value is present for ConfigManagementId, not even an explicit nil
 ### GetPrivateKeyHash
 
 `func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf3) GetPrivateKeyHash() string`
@@ -466,6 +536,16 @@ SetPrivateKeyHash sets PrivateKeyHash field to given value.
 
 HasPrivateKeyHash returns a boolean if a field has been set.
 
+### SetPrivateKeyHashNil
+
+`func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf3) SetPrivateKeyHashNil(b bool)`
+
+ SetPrivateKeyHashNil sets the value for PrivateKeyHash to be an explicit nil
+
+### UnsetPrivateKeyHash
+`func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf3) UnsetPrivateKeyHash()`
+
+UnsetPrivateKeyHash ensures that no value is present for PrivateKeyHash, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

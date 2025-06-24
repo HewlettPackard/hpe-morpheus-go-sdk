@@ -23,9 +23,9 @@ type NetworkType struct {
 	Id                     *int64                                                                                                                               `json:"id,omitempty"`
 	Code                   *string                                                                                                                              `json:"code,omitempty"`
 	Name                   *string                                                                                                                              `json:"name,omitempty"`
-	Description            *string                                                                                                                              `json:"description,omitempty"`
-	Category               *string                                                                                                                              `json:"category,omitempty"`
-	ExternalType           *string                                                                                                                              `json:"externalType,omitempty"`
+	Description            NullableString                                                                                                                       `json:"description,omitempty"`
+	Category               NullableString                                                                                                                       `json:"category,omitempty"`
+	ExternalType           NullableString                                                                                                                       `json:"externalType,omitempty"`
 	Creatable              *bool                                                                                                                                `json:"creatable,omitempty"`
 	Overlay                *bool                                                                                                                                `json:"overlay,omitempty"`
 	NameEditable           *bool                                                                                                                                `json:"nameEditable,omitempty"`
@@ -163,100 +163,133 @@ func (o *NetworkType) SetName(v string) {
 	o.Name = &v
 }
 
-// GetDescription returns the Description field value if set, zero value otherwise.
+// GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NetworkType) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
+	if o == nil || IsNil(o.Description.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Description
+	return *o.Description.Get()
 }
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NetworkType) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Description, true
+	return o.Description.Get(), o.Description.IsSet()
 }
 
 // IsSetDescription returns a boolean if a field has been set.
 func (o *NetworkType) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
+	if o != nil && o.Description.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDescription gets a reference to the given string and assigns it to the Description field.
+// SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *NetworkType) SetDescription(v string) {
-	o.Description = &v
+	o.Description.Set(&v)
 }
 
-// GetCategory returns the Category field value if set, zero value otherwise.
+// SetDescriptionNil sets the value for Description to be an explicit nil
+func (o *NetworkType) SetDescriptionNil() {
+	o.Description.Set(nil)
+}
+
+// UnsetDescription ensures that no value is present for Description, not even an explicit nil
+func (o *NetworkType) UnsetDescription() {
+	o.Description.Unset()
+}
+
+// GetCategory returns the Category field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NetworkType) GetCategory() string {
-	if o == nil || IsNil(o.Category) {
+	if o == nil || IsNil(o.Category.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Category
+	return *o.Category.Get()
 }
 
 // GetCategoryOk returns a tuple with the Category field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NetworkType) GetCategoryOk() (*string, bool) {
-	if o == nil || IsNil(o.Category) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Category, true
+	return o.Category.Get(), o.Category.IsSet()
 }
 
 // IsSetCategory returns a boolean if a field has been set.
 func (o *NetworkType) IsSetCategory() bool {
-	if o != nil && !IsNil(o.Category) {
+	if o != nil && o.Category.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCategory gets a reference to the given string and assigns it to the Category field.
+// SetCategory gets a reference to the given NullableString and assigns it to the Category field.
 func (o *NetworkType) SetCategory(v string) {
-	o.Category = &v
+	o.Category.Set(&v)
 }
 
-// GetExternalType returns the ExternalType field value if set, zero value otherwise.
+// SetCategoryNil sets the value for Category to be an explicit nil
+func (o *NetworkType) SetCategoryNil() {
+	o.Category.Set(nil)
+}
+
+// UnsetCategory ensures that no value is present for Category, not even an explicit nil
+func (o *NetworkType) UnsetCategory() {
+	o.Category.Unset()
+}
+
+// GetExternalType returns the ExternalType field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NetworkType) GetExternalType() string {
-	if o == nil || IsNil(o.ExternalType) {
+	if o == nil || IsNil(o.ExternalType.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ExternalType
+	return *o.ExternalType.Get()
 }
 
 // GetExternalTypeOk returns a tuple with the ExternalType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NetworkType) GetExternalTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.ExternalType) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ExternalType, true
+	return o.ExternalType.Get(), o.ExternalType.IsSet()
 }
 
 // IsSetExternalType returns a boolean if a field has been set.
 func (o *NetworkType) IsSetExternalType() bool {
-	if o != nil && !IsNil(o.ExternalType) {
+	if o != nil && o.ExternalType.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetExternalType gets a reference to the given string and assigns it to the ExternalType field.
+// SetExternalType gets a reference to the given NullableString and assigns it to the ExternalType field.
 func (o *NetworkType) SetExternalType(v string) {
-	o.ExternalType = &v
+	o.ExternalType.Set(&v)
+}
+
+// SetExternalTypeNil sets the value for ExternalType to be an explicit nil
+func (o *NetworkType) SetExternalTypeNil() {
+	o.ExternalType.Set(nil)
+}
+
+// UnsetExternalType ensures that no value is present for ExternalType, not even an explicit nil
+func (o *NetworkType) UnsetExternalType() {
+	o.ExternalType.Unset()
 }
 
 // GetCreatable returns the Creatable field value if set, zero value otherwise.
@@ -886,14 +919,14 @@ func (o NetworkType) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !IsNil(o.Description) {
-		toSerialize["description"] = o.Description
+	if o.Description.IsSet() {
+		toSerialize["description"] = o.Description.Get()
 	}
-	if !IsNil(o.Category) {
-		toSerialize["category"] = o.Category
+	if o.Category.IsSet() {
+		toSerialize["category"] = o.Category.Get()
 	}
-	if !IsNil(o.ExternalType) {
-		toSerialize["externalType"] = o.ExternalType
+	if o.ExternalType.IsSet() {
+		toSerialize["externalType"] = o.ExternalType.Get()
 	}
 	if !IsNil(o.Creatable) {
 		toSerialize["creatable"] = o.Creatable

@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **PolicyType** | [**AddPoliciesRequestPolicyPolicyType**](AddPoliciesRequestPolicyPolicyType.md) |  | 
 **Config** | [**AddPoliciesRequestPolicyConfig**](AddPoliciesRequestPolicyConfig.md) |  | 
 **Enabled** | Pointer to **bool** | Set to false to disable | [optional] [default to true]
-**RefType** | Pointer to **string** | Scope object type.  If none specified, will default to Global (null) | [optional] 
+**RefType** | Pointer to **NullableString** |  | [optional] 
 **RefId** | Pointer to **int64** | Scope object ID (&#x60;group&#x60;,&#x60;cloud&#x60;,&#x60;user&#x60;, etc) | [optional] 
 **Accounts** | Pointer to **[]int64** | Array of tenants to scope the policy to | [optional] 
 **EachUser** | Pointer to **bool** | Apply individually to each user in role.  Only when &#x60;refType&#x60; equals &#x60;Role&#x60; | [optional] 
@@ -168,6 +168,16 @@ SetRefType sets RefType field to given value.
 
 HasRefType returns a boolean if a field has been set.
 
+### SetRefTypeNil
+
+`func (o *PolicyCreate) SetRefTypeNil(b bool)`
+
+ SetRefTypeNil sets the value for RefType to be an explicit nil
+
+### UnsetRefType
+`func (o *PolicyCreate) UnsetRefType()`
+
+UnsetRefType ensures that no value is present for RefType, not even an explicit nil
 ### GetRefId
 
 `func (o *PolicyCreate) GetRefId() int64`

@@ -24,9 +24,9 @@ type Instance struct {
 	Id                   *int64                                                                       `json:"id,omitempty"`
 	Uuid                 *string                                                                      `json:"uuid,omitempty"`
 	AccountId            *int64                                                                       `json:"accountId,omitempty"`
-	Tenant               *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner      `json:"tenant,omitempty"`
+	Tenant               *GetAlerts200ResponseAllOfCheckGroupsInnerInstance                           `json:"tenant,omitempty"`
 	InstanceType         *AddInstance200ResponseAllOfOneOfInstanceInstanceType                        `json:"instanceType,omitempty"`
-	Group                *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner      `json:"group,omitempty"`
+	Group                *GetAlerts200ResponseAllOfCheckGroupsInnerInstance                           `json:"group,omitempty"`
 	Cloud                *ListApps200ResponseAllOfAppsInnerBlueprint                                  `json:"cloud,omitempty"`
 	Cluster              *ListInstances200ResponseAllOfInstancesInnerCluster                          `json:"cluster,omitempty"`
 	Containers           []int64                                                                      `json:"containers,omitempty"`
@@ -36,12 +36,12 @@ type Instance struct {
 	Plan                 *ListBackupSettings200ResponseBackupSettingsDefaultSchedule                  `json:"plan,omitempty"`
 	Name                 *string                                                                      `json:"name,omitempty"`
 	DisplayName          *string                                                                      `json:"displayName,omitempty"`
-	Description          *string                                                                      `json:"description,omitempty"`
-	Environment          *string                                                                      `json:"environment,omitempty"`
+	Description          NullableString                                                               `json:"description,omitempty"`
+	Environment          NullableString                                                               `json:"environment,omitempty"`
 	Config               *AddInstance200ResponseAllOfOneOfInstanceConfig                              `json:"config,omitempty"`
-	ConfigGroup          *string                                                                      `json:"configGroup,omitempty"`
-	ConfigId             *string                                                                      `json:"configId,omitempty"`
-	ConfigRole           *string                                                                      `json:"configRole,omitempty"`
+	ConfigGroup          NullableString                                                               `json:"configGroup,omitempty"`
+	ConfigId             NullableString                                                               `json:"configId,omitempty"`
+	ConfigRole           NullableString                                                               `json:"configRole,omitempty"`
 	Volumes              []AddInstance200ResponseAllOfOneOfInstanceVolumesInner                       `json:"volumes,omitempty"`
 	Controllers          []ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceControllersInner `json:"controllers,omitempty"`
 	Interfaces           []AddInstance200ResponseAllOfOneOfInstanceInterfacesInner                    `json:"interfaces,omitempty"`
@@ -53,29 +53,29 @@ type Instance struct {
 	MaxMemory            *int64                                                                       `json:"maxMemory,omitempty"`
 	MaxStorage           *int64                                                                       `json:"maxStorage,omitempty"`
 	MaxCores             *int64                                                                       `json:"maxCores,omitempty"`
-	CoresPerSocket       *int64                                                                       `json:"coresPerSocket,omitempty"`
-	MaxCpu               *string                                                                      `json:"maxCpu,omitempty"`
+	CoresPerSocket       NullableInt64                                                                `json:"coresPerSocket,omitempty"`
+	MaxCpu               NullableString                                                               `json:"maxCpu,omitempty"`
 	HourlyCost           *float32                                                                     `json:"hourlyCost,omitempty"`
 	HourlyPrice          *float32                                                                     `json:"hourlyPrice,omitempty"`
 	InstancePrice        *AddInstance200ResponseAllOfOneOfInstanceInstancePrice                       `json:"instancePrice,omitempty"`
 	DateCreated          *time.Time                                                                   `json:"dateCreated,omitempty"`
 	LastUpdated          *time.Time                                                                   `json:"lastUpdated,omitempty"`
 	HostName             *string                                                                      `json:"hostName,omitempty"`
-	DomainName           *string                                                                      `json:"domainName,omitempty"`
-	EnvironmentPrefix    *string                                                                      `json:"environmentPrefix,omitempty"`
+	DomainName           NullableString                                                               `json:"domainName,omitempty"`
+	EnvironmentPrefix    NullableString                                                               `json:"environmentPrefix,omitempty"`
 	FirewallEnabled      *bool                                                                        `json:"firewallEnabled,omitempty"`
 	NetworkLevel         *string                                                                      `json:"networkLevel,omitempty"`
 	AutoScale            *bool                                                                        `json:"autoScale,omitempty"`
-	InstanceContext      *string                                                                      `json:"instanceContext,omitempty"`
-	CurrentDeployId      *string                                                                      `json:"currentDeployId,omitempty"`
+	InstanceContext      NullableString                                                               `json:"instanceContext,omitempty"`
+	CurrentDeployId      NullableString                                                               `json:"currentDeployId,omitempty"`
 	Locked               *bool                                                                        `json:"locked,omitempty"`
 	Status               *string                                                                      `json:"status,omitempty"`
-	StatusMessage        *string                                                                      `json:"statusMessage,omitempty"`
-	ErrorMessage         *string                                                                      `json:"errorMessage,omitempty"`
+	StatusMessage        NullableString                                                               `json:"statusMessage,omitempty"`
+	ErrorMessage         NullableString                                                               `json:"errorMessage,omitempty"`
 	StatusDate           *time.Time                                                                   `json:"statusDate,omitempty"`
-	StatusPercent        *string                                                                      `json:"statusPercent,omitempty"`
-	StatusEta            *string                                                                      `json:"statusEta,omitempty"`
-	UserStatus           *string                                                                      `json:"userStatus,omitempty"`
+	StatusPercent        NullableString                                                               `json:"statusPercent,omitempty"`
+	StatusEta            NullableString                                                               `json:"statusEta,omitempty"`
+	UserStatus           NullableString                                                               `json:"userStatus,omitempty"`
 	ExpireDays           *int64                                                                       `json:"expireDays,omitempty"`
 	RenewDays            *int64                                                                       `json:"renewDays,omitempty"`
 	ExpireCount          *int64                                                                       `json:"expireCount,omitempty"`
@@ -88,12 +88,12 @@ type Instance struct {
 	ShutdownDate         *time.Time                                                                   `json:"shutdownDate,omitempty"`
 	ShutdownWarningDate  *time.Time                                                                   `json:"shutdownWarningDate,omitempty"`
 	ShutdownWarningSent  *bool                                                                        `json:"shutdownWarningSent,omitempty"`
-	RemovalDate          *time.Time                                                                   `json:"removalDate,omitempty"`
+	RemovalDate          NullableTime                                                                 `json:"removalDate,omitempty"`
 	CreatedBy            *ListActivity200ResponseAllOfActivityInnerActivityInnerUser                  `json:"createdBy,omitempty"`
-	Owner                *GetAlerts200ResponseAllOfChecksInnerCreatedBy                               `json:"owner,omitempty"`
-	Notes                *string                                                                      `json:"notes,omitempty"`
+	Owner                *ListActivity200ResponseAllOfActivityInnerActivityInnerUser                  `json:"owner,omitempty"`
+	Notes                NullableString                                                               `json:"notes,omitempty"`
 	Stats                *AddInstance200ResponseAllOfOneOfInstanceStats                               `json:"stats,omitempty"`
-	PowerSchedule        *string                                                                      `json:"powerSchedule,omitempty"`
+	PowerSchedule        NullableString                                                               `json:"powerSchedule,omitempty"`
 	IsScalable           *bool                                                                        `json:"isScalable,omitempty"`
 	InstanceThreshold    map[string]interface{}                                                       `json:"instanceThreshold,omitempty"`
 	IsBusy               *bool                                                                        `json:"isBusy,omitempty"`
@@ -217,9 +217,9 @@ func (o *Instance) SetAccountId(v int64) {
 }
 
 // GetTenant returns the Tenant field value if set, zero value otherwise.
-func (o *Instance) GetTenant() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *Instance) GetTenant() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.Tenant) {
-		var ret ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return *o.Tenant
@@ -227,7 +227,7 @@ func (o *Instance) GetTenant() ListApplianceSettings200ResponseApplianceSettings
 
 // GetTenantOk returns a tuple with the Tenant field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Instance) GetTenantOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *Instance) GetTenantOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.Tenant) {
 		return nil, false
 	}
@@ -243,8 +243,8 @@ func (o *Instance) IsSetTenant() bool {
 	return false
 }
 
-// SetTenant gets a reference to the given ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the Tenant field.
-func (o *Instance) SetTenant(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetTenant gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Tenant field.
+func (o *Instance) SetTenant(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.Tenant = &v
 }
 
@@ -281,9 +281,9 @@ func (o *Instance) SetInstanceType(v AddInstance200ResponseAllOfOneOfInstanceIns
 }
 
 // GetGroup returns the Group field value if set, zero value otherwise.
-func (o *Instance) GetGroup() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *Instance) GetGroup() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.Group) {
-		var ret ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return *o.Group
@@ -291,7 +291,7 @@ func (o *Instance) GetGroup() ListApplianceSettings200ResponseApplianceSettingsE
 
 // GetGroupOk returns a tuple with the Group field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Instance) GetGroupOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *Instance) GetGroupOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.Group) {
 		return nil, false
 	}
@@ -307,8 +307,8 @@ func (o *Instance) IsSetGroup() bool {
 	return false
 }
 
-// SetGroup gets a reference to the given ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the Group field.
-func (o *Instance) SetGroup(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetGroup gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Group field.
+func (o *Instance) SetGroup(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.Group = &v
 }
 
@@ -600,68 +600,90 @@ func (o *Instance) SetDisplayName(v string) {
 	o.DisplayName = &v
 }
 
-// GetDescription returns the Description field value if set, zero value otherwise.
+// GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Instance) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
+	if o == nil || IsNil(o.Description.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Description
+	return *o.Description.Get()
 }
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Instance) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Description, true
+	return o.Description.Get(), o.Description.IsSet()
 }
 
 // IsSetDescription returns a boolean if a field has been set.
 func (o *Instance) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
+	if o != nil && o.Description.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDescription gets a reference to the given string and assigns it to the Description field.
+// SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *Instance) SetDescription(v string) {
-	o.Description = &v
+	o.Description.Set(&v)
 }
 
-// GetEnvironment returns the Environment field value if set, zero value otherwise.
+// SetDescriptionNil sets the value for Description to be an explicit nil
+func (o *Instance) SetDescriptionNil() {
+	o.Description.Set(nil)
+}
+
+// UnsetDescription ensures that no value is present for Description, not even an explicit nil
+func (o *Instance) UnsetDescription() {
+	o.Description.Unset()
+}
+
+// GetEnvironment returns the Environment field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Instance) GetEnvironment() string {
-	if o == nil || IsNil(o.Environment) {
+	if o == nil || IsNil(o.Environment.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Environment
+	return *o.Environment.Get()
 }
 
 // GetEnvironmentOk returns a tuple with the Environment field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Instance) GetEnvironmentOk() (*string, bool) {
-	if o == nil || IsNil(o.Environment) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Environment, true
+	return o.Environment.Get(), o.Environment.IsSet()
 }
 
 // IsSetEnvironment returns a boolean if a field has been set.
 func (o *Instance) IsSetEnvironment() bool {
-	if o != nil && !IsNil(o.Environment) {
+	if o != nil && o.Environment.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetEnvironment gets a reference to the given string and assigns it to the Environment field.
+// SetEnvironment gets a reference to the given NullableString and assigns it to the Environment field.
 func (o *Instance) SetEnvironment(v string) {
-	o.Environment = &v
+	o.Environment.Set(&v)
+}
+
+// SetEnvironmentNil sets the value for Environment to be an explicit nil
+func (o *Instance) SetEnvironmentNil() {
+	o.Environment.Set(nil)
+}
+
+// UnsetEnvironment ensures that no value is present for Environment, not even an explicit nil
+func (o *Instance) UnsetEnvironment() {
+	o.Environment.Unset()
 }
 
 // GetConfig returns the Config field value if set, zero value otherwise.
@@ -696,100 +718,133 @@ func (o *Instance) SetConfig(v AddInstance200ResponseAllOfOneOfInstanceConfig) {
 	o.Config = &v
 }
 
-// GetConfigGroup returns the ConfigGroup field value if set, zero value otherwise.
+// GetConfigGroup returns the ConfigGroup field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Instance) GetConfigGroup() string {
-	if o == nil || IsNil(o.ConfigGroup) {
+	if o == nil || IsNil(o.ConfigGroup.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ConfigGroup
+	return *o.ConfigGroup.Get()
 }
 
 // GetConfigGroupOk returns a tuple with the ConfigGroup field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Instance) GetConfigGroupOk() (*string, bool) {
-	if o == nil || IsNil(o.ConfigGroup) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ConfigGroup, true
+	return o.ConfigGroup.Get(), o.ConfigGroup.IsSet()
 }
 
 // IsSetConfigGroup returns a boolean if a field has been set.
 func (o *Instance) IsSetConfigGroup() bool {
-	if o != nil && !IsNil(o.ConfigGroup) {
+	if o != nil && o.ConfigGroup.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetConfigGroup gets a reference to the given string and assigns it to the ConfigGroup field.
+// SetConfigGroup gets a reference to the given NullableString and assigns it to the ConfigGroup field.
 func (o *Instance) SetConfigGroup(v string) {
-	o.ConfigGroup = &v
+	o.ConfigGroup.Set(&v)
 }
 
-// GetConfigId returns the ConfigId field value if set, zero value otherwise.
+// SetConfigGroupNil sets the value for ConfigGroup to be an explicit nil
+func (o *Instance) SetConfigGroupNil() {
+	o.ConfigGroup.Set(nil)
+}
+
+// UnsetConfigGroup ensures that no value is present for ConfigGroup, not even an explicit nil
+func (o *Instance) UnsetConfigGroup() {
+	o.ConfigGroup.Unset()
+}
+
+// GetConfigId returns the ConfigId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Instance) GetConfigId() string {
-	if o == nil || IsNil(o.ConfigId) {
+	if o == nil || IsNil(o.ConfigId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ConfigId
+	return *o.ConfigId.Get()
 }
 
 // GetConfigIdOk returns a tuple with the ConfigId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Instance) GetConfigIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ConfigId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ConfigId, true
+	return o.ConfigId.Get(), o.ConfigId.IsSet()
 }
 
 // IsSetConfigId returns a boolean if a field has been set.
 func (o *Instance) IsSetConfigId() bool {
-	if o != nil && !IsNil(o.ConfigId) {
+	if o != nil && o.ConfigId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetConfigId gets a reference to the given string and assigns it to the ConfigId field.
+// SetConfigId gets a reference to the given NullableString and assigns it to the ConfigId field.
 func (o *Instance) SetConfigId(v string) {
-	o.ConfigId = &v
+	o.ConfigId.Set(&v)
 }
 
-// GetConfigRole returns the ConfigRole field value if set, zero value otherwise.
+// SetConfigIdNil sets the value for ConfigId to be an explicit nil
+func (o *Instance) SetConfigIdNil() {
+	o.ConfigId.Set(nil)
+}
+
+// UnsetConfigId ensures that no value is present for ConfigId, not even an explicit nil
+func (o *Instance) UnsetConfigId() {
+	o.ConfigId.Unset()
+}
+
+// GetConfigRole returns the ConfigRole field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Instance) GetConfigRole() string {
-	if o == nil || IsNil(o.ConfigRole) {
+	if o == nil || IsNil(o.ConfigRole.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ConfigRole
+	return *o.ConfigRole.Get()
 }
 
 // GetConfigRoleOk returns a tuple with the ConfigRole field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Instance) GetConfigRoleOk() (*string, bool) {
-	if o == nil || IsNil(o.ConfigRole) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ConfigRole, true
+	return o.ConfigRole.Get(), o.ConfigRole.IsSet()
 }
 
 // IsSetConfigRole returns a boolean if a field has been set.
 func (o *Instance) IsSetConfigRole() bool {
-	if o != nil && !IsNil(o.ConfigRole) {
+	if o != nil && o.ConfigRole.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetConfigRole gets a reference to the given string and assigns it to the ConfigRole field.
+// SetConfigRole gets a reference to the given NullableString and assigns it to the ConfigRole field.
 func (o *Instance) SetConfigRole(v string) {
-	o.ConfigRole = &v
+	o.ConfigRole.Set(&v)
+}
+
+// SetConfigRoleNil sets the value for ConfigRole to be an explicit nil
+func (o *Instance) SetConfigRoleNil() {
+	o.ConfigRole.Set(nil)
+}
+
+// UnsetConfigRole ensures that no value is present for ConfigRole, not even an explicit nil
+func (o *Instance) UnsetConfigRole() {
+	o.ConfigRole.Unset()
 }
 
 // GetVolumes returns the Volumes field value if set, zero value otherwise.
@@ -952,9 +1007,9 @@ func (o *Instance) SetInstanceVersion(v string) {
 	o.InstanceVersion = &v
 }
 
-// GetLabels returns the Labels field value if set, zero value otherwise.
+// GetLabels returns the Labels field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Instance) GetLabels() []string {
-	if o == nil || IsNil(o.Labels) {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -963,6 +1018,7 @@ func (o *Instance) GetLabels() []string {
 
 // GetLabelsOk returns a tuple with the Labels field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Instance) GetLabelsOk() ([]string, bool) {
 	if o == nil || IsNil(o.Labels) {
 		return nil, false
@@ -1144,68 +1200,90 @@ func (o *Instance) SetMaxCores(v int64) {
 	o.MaxCores = &v
 }
 
-// GetCoresPerSocket returns the CoresPerSocket field value if set, zero value otherwise.
+// GetCoresPerSocket returns the CoresPerSocket field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Instance) GetCoresPerSocket() int64 {
-	if o == nil || IsNil(o.CoresPerSocket) {
+	if o == nil || IsNil(o.CoresPerSocket.Get()) {
 		var ret int64
 		return ret
 	}
-	return *o.CoresPerSocket
+	return *o.CoresPerSocket.Get()
 }
 
 // GetCoresPerSocketOk returns a tuple with the CoresPerSocket field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Instance) GetCoresPerSocketOk() (*int64, bool) {
-	if o == nil || IsNil(o.CoresPerSocket) {
+	if o == nil {
 		return nil, false
 	}
-	return o.CoresPerSocket, true
+	return o.CoresPerSocket.Get(), o.CoresPerSocket.IsSet()
 }
 
 // IsSetCoresPerSocket returns a boolean if a field has been set.
 func (o *Instance) IsSetCoresPerSocket() bool {
-	if o != nil && !IsNil(o.CoresPerSocket) {
+	if o != nil && o.CoresPerSocket.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCoresPerSocket gets a reference to the given int64 and assigns it to the CoresPerSocket field.
+// SetCoresPerSocket gets a reference to the given NullableInt64 and assigns it to the CoresPerSocket field.
 func (o *Instance) SetCoresPerSocket(v int64) {
-	o.CoresPerSocket = &v
+	o.CoresPerSocket.Set(&v)
 }
 
-// GetMaxCpu returns the MaxCpu field value if set, zero value otherwise.
+// SetCoresPerSocketNil sets the value for CoresPerSocket to be an explicit nil
+func (o *Instance) SetCoresPerSocketNil() {
+	o.CoresPerSocket.Set(nil)
+}
+
+// UnsetCoresPerSocket ensures that no value is present for CoresPerSocket, not even an explicit nil
+func (o *Instance) UnsetCoresPerSocket() {
+	o.CoresPerSocket.Unset()
+}
+
+// GetMaxCpu returns the MaxCpu field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Instance) GetMaxCpu() string {
-	if o == nil || IsNil(o.MaxCpu) {
+	if o == nil || IsNil(o.MaxCpu.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.MaxCpu
+	return *o.MaxCpu.Get()
 }
 
 // GetMaxCpuOk returns a tuple with the MaxCpu field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Instance) GetMaxCpuOk() (*string, bool) {
-	if o == nil || IsNil(o.MaxCpu) {
+	if o == nil {
 		return nil, false
 	}
-	return o.MaxCpu, true
+	return o.MaxCpu.Get(), o.MaxCpu.IsSet()
 }
 
 // IsSetMaxCpu returns a boolean if a field has been set.
 func (o *Instance) IsSetMaxCpu() bool {
-	if o != nil && !IsNil(o.MaxCpu) {
+	if o != nil && o.MaxCpu.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetMaxCpu gets a reference to the given string and assigns it to the MaxCpu field.
+// SetMaxCpu gets a reference to the given NullableString and assigns it to the MaxCpu field.
 func (o *Instance) SetMaxCpu(v string) {
-	o.MaxCpu = &v
+	o.MaxCpu.Set(&v)
+}
+
+// SetMaxCpuNil sets the value for MaxCpu to be an explicit nil
+func (o *Instance) SetMaxCpuNil() {
+	o.MaxCpu.Set(nil)
+}
+
+// UnsetMaxCpu ensures that no value is present for MaxCpu, not even an explicit nil
+func (o *Instance) UnsetMaxCpu() {
+	o.MaxCpu.Unset()
 }
 
 // GetHourlyCost returns the HourlyCost field value if set, zero value otherwise.
@@ -1400,68 +1478,90 @@ func (o *Instance) SetHostName(v string) {
 	o.HostName = &v
 }
 
-// GetDomainName returns the DomainName field value if set, zero value otherwise.
+// GetDomainName returns the DomainName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Instance) GetDomainName() string {
-	if o == nil || IsNil(o.DomainName) {
+	if o == nil || IsNil(o.DomainName.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.DomainName
+	return *o.DomainName.Get()
 }
 
 // GetDomainNameOk returns a tuple with the DomainName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Instance) GetDomainNameOk() (*string, bool) {
-	if o == nil || IsNil(o.DomainName) {
+	if o == nil {
 		return nil, false
 	}
-	return o.DomainName, true
+	return o.DomainName.Get(), o.DomainName.IsSet()
 }
 
 // IsSetDomainName returns a boolean if a field has been set.
 func (o *Instance) IsSetDomainName() bool {
-	if o != nil && !IsNil(o.DomainName) {
+	if o != nil && o.DomainName.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDomainName gets a reference to the given string and assigns it to the DomainName field.
+// SetDomainName gets a reference to the given NullableString and assigns it to the DomainName field.
 func (o *Instance) SetDomainName(v string) {
-	o.DomainName = &v
+	o.DomainName.Set(&v)
 }
 
-// GetEnvironmentPrefix returns the EnvironmentPrefix field value if set, zero value otherwise.
+// SetDomainNameNil sets the value for DomainName to be an explicit nil
+func (o *Instance) SetDomainNameNil() {
+	o.DomainName.Set(nil)
+}
+
+// UnsetDomainName ensures that no value is present for DomainName, not even an explicit nil
+func (o *Instance) UnsetDomainName() {
+	o.DomainName.Unset()
+}
+
+// GetEnvironmentPrefix returns the EnvironmentPrefix field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Instance) GetEnvironmentPrefix() string {
-	if o == nil || IsNil(o.EnvironmentPrefix) {
+	if o == nil || IsNil(o.EnvironmentPrefix.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.EnvironmentPrefix
+	return *o.EnvironmentPrefix.Get()
 }
 
 // GetEnvironmentPrefixOk returns a tuple with the EnvironmentPrefix field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Instance) GetEnvironmentPrefixOk() (*string, bool) {
-	if o == nil || IsNil(o.EnvironmentPrefix) {
+	if o == nil {
 		return nil, false
 	}
-	return o.EnvironmentPrefix, true
+	return o.EnvironmentPrefix.Get(), o.EnvironmentPrefix.IsSet()
 }
 
 // IsSetEnvironmentPrefix returns a boolean if a field has been set.
 func (o *Instance) IsSetEnvironmentPrefix() bool {
-	if o != nil && !IsNil(o.EnvironmentPrefix) {
+	if o != nil && o.EnvironmentPrefix.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetEnvironmentPrefix gets a reference to the given string and assigns it to the EnvironmentPrefix field.
+// SetEnvironmentPrefix gets a reference to the given NullableString and assigns it to the EnvironmentPrefix field.
 func (o *Instance) SetEnvironmentPrefix(v string) {
-	o.EnvironmentPrefix = &v
+	o.EnvironmentPrefix.Set(&v)
+}
+
+// SetEnvironmentPrefixNil sets the value for EnvironmentPrefix to be an explicit nil
+func (o *Instance) SetEnvironmentPrefixNil() {
+	o.EnvironmentPrefix.Set(nil)
+}
+
+// UnsetEnvironmentPrefix ensures that no value is present for EnvironmentPrefix, not even an explicit nil
+func (o *Instance) UnsetEnvironmentPrefix() {
+	o.EnvironmentPrefix.Unset()
 }
 
 // GetFirewallEnabled returns the FirewallEnabled field value if set, zero value otherwise.
@@ -1560,68 +1660,90 @@ func (o *Instance) SetAutoScale(v bool) {
 	o.AutoScale = &v
 }
 
-// GetInstanceContext returns the InstanceContext field value if set, zero value otherwise.
+// GetInstanceContext returns the InstanceContext field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Instance) GetInstanceContext() string {
-	if o == nil || IsNil(o.InstanceContext) {
+	if o == nil || IsNil(o.InstanceContext.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.InstanceContext
+	return *o.InstanceContext.Get()
 }
 
 // GetInstanceContextOk returns a tuple with the InstanceContext field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Instance) GetInstanceContextOk() (*string, bool) {
-	if o == nil || IsNil(o.InstanceContext) {
+	if o == nil {
 		return nil, false
 	}
-	return o.InstanceContext, true
+	return o.InstanceContext.Get(), o.InstanceContext.IsSet()
 }
 
 // IsSetInstanceContext returns a boolean if a field has been set.
 func (o *Instance) IsSetInstanceContext() bool {
-	if o != nil && !IsNil(o.InstanceContext) {
+	if o != nil && o.InstanceContext.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetInstanceContext gets a reference to the given string and assigns it to the InstanceContext field.
+// SetInstanceContext gets a reference to the given NullableString and assigns it to the InstanceContext field.
 func (o *Instance) SetInstanceContext(v string) {
-	o.InstanceContext = &v
+	o.InstanceContext.Set(&v)
 }
 
-// GetCurrentDeployId returns the CurrentDeployId field value if set, zero value otherwise.
+// SetInstanceContextNil sets the value for InstanceContext to be an explicit nil
+func (o *Instance) SetInstanceContextNil() {
+	o.InstanceContext.Set(nil)
+}
+
+// UnsetInstanceContext ensures that no value is present for InstanceContext, not even an explicit nil
+func (o *Instance) UnsetInstanceContext() {
+	o.InstanceContext.Unset()
+}
+
+// GetCurrentDeployId returns the CurrentDeployId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Instance) GetCurrentDeployId() string {
-	if o == nil || IsNil(o.CurrentDeployId) {
+	if o == nil || IsNil(o.CurrentDeployId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.CurrentDeployId
+	return *o.CurrentDeployId.Get()
 }
 
 // GetCurrentDeployIdOk returns a tuple with the CurrentDeployId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Instance) GetCurrentDeployIdOk() (*string, bool) {
-	if o == nil || IsNil(o.CurrentDeployId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.CurrentDeployId, true
+	return o.CurrentDeployId.Get(), o.CurrentDeployId.IsSet()
 }
 
 // IsSetCurrentDeployId returns a boolean if a field has been set.
 func (o *Instance) IsSetCurrentDeployId() bool {
-	if o != nil && !IsNil(o.CurrentDeployId) {
+	if o != nil && o.CurrentDeployId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCurrentDeployId gets a reference to the given string and assigns it to the CurrentDeployId field.
+// SetCurrentDeployId gets a reference to the given NullableString and assigns it to the CurrentDeployId field.
 func (o *Instance) SetCurrentDeployId(v string) {
-	o.CurrentDeployId = &v
+	o.CurrentDeployId.Set(&v)
+}
+
+// SetCurrentDeployIdNil sets the value for CurrentDeployId to be an explicit nil
+func (o *Instance) SetCurrentDeployIdNil() {
+	o.CurrentDeployId.Set(nil)
+}
+
+// UnsetCurrentDeployId ensures that no value is present for CurrentDeployId, not even an explicit nil
+func (o *Instance) UnsetCurrentDeployId() {
+	o.CurrentDeployId.Unset()
 }
 
 // GetLocked returns the Locked field value if set, zero value otherwise.
@@ -1688,68 +1810,90 @@ func (o *Instance) SetStatus(v string) {
 	o.Status = &v
 }
 
-// GetStatusMessage returns the StatusMessage field value if set, zero value otherwise.
+// GetStatusMessage returns the StatusMessage field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Instance) GetStatusMessage() string {
-	if o == nil || IsNil(o.StatusMessage) {
+	if o == nil || IsNil(o.StatusMessage.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.StatusMessage
+	return *o.StatusMessage.Get()
 }
 
 // GetStatusMessageOk returns a tuple with the StatusMessage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Instance) GetStatusMessageOk() (*string, bool) {
-	if o == nil || IsNil(o.StatusMessage) {
+	if o == nil {
 		return nil, false
 	}
-	return o.StatusMessage, true
+	return o.StatusMessage.Get(), o.StatusMessage.IsSet()
 }
 
 // IsSetStatusMessage returns a boolean if a field has been set.
 func (o *Instance) IsSetStatusMessage() bool {
-	if o != nil && !IsNil(o.StatusMessage) {
+	if o != nil && o.StatusMessage.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetStatusMessage gets a reference to the given string and assigns it to the StatusMessage field.
+// SetStatusMessage gets a reference to the given NullableString and assigns it to the StatusMessage field.
 func (o *Instance) SetStatusMessage(v string) {
-	o.StatusMessage = &v
+	o.StatusMessage.Set(&v)
 }
 
-// GetErrorMessage returns the ErrorMessage field value if set, zero value otherwise.
+// SetStatusMessageNil sets the value for StatusMessage to be an explicit nil
+func (o *Instance) SetStatusMessageNil() {
+	o.StatusMessage.Set(nil)
+}
+
+// UnsetStatusMessage ensures that no value is present for StatusMessage, not even an explicit nil
+func (o *Instance) UnsetStatusMessage() {
+	o.StatusMessage.Unset()
+}
+
+// GetErrorMessage returns the ErrorMessage field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Instance) GetErrorMessage() string {
-	if o == nil || IsNil(o.ErrorMessage) {
+	if o == nil || IsNil(o.ErrorMessage.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ErrorMessage
+	return *o.ErrorMessage.Get()
 }
 
 // GetErrorMessageOk returns a tuple with the ErrorMessage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Instance) GetErrorMessageOk() (*string, bool) {
-	if o == nil || IsNil(o.ErrorMessage) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ErrorMessage, true
+	return o.ErrorMessage.Get(), o.ErrorMessage.IsSet()
 }
 
 // IsSetErrorMessage returns a boolean if a field has been set.
 func (o *Instance) IsSetErrorMessage() bool {
-	if o != nil && !IsNil(o.ErrorMessage) {
+	if o != nil && o.ErrorMessage.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetErrorMessage gets a reference to the given string and assigns it to the ErrorMessage field.
+// SetErrorMessage gets a reference to the given NullableString and assigns it to the ErrorMessage field.
 func (o *Instance) SetErrorMessage(v string) {
-	o.ErrorMessage = &v
+	o.ErrorMessage.Set(&v)
+}
+
+// SetErrorMessageNil sets the value for ErrorMessage to be an explicit nil
+func (o *Instance) SetErrorMessageNil() {
+	o.ErrorMessage.Set(nil)
+}
+
+// UnsetErrorMessage ensures that no value is present for ErrorMessage, not even an explicit nil
+func (o *Instance) UnsetErrorMessage() {
+	o.ErrorMessage.Unset()
 }
 
 // GetStatusDate returns the StatusDate field value if set, zero value otherwise.
@@ -1784,100 +1928,133 @@ func (o *Instance) SetStatusDate(v time.Time) {
 	o.StatusDate = &v
 }
 
-// GetStatusPercent returns the StatusPercent field value if set, zero value otherwise.
+// GetStatusPercent returns the StatusPercent field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Instance) GetStatusPercent() string {
-	if o == nil || IsNil(o.StatusPercent) {
+	if o == nil || IsNil(o.StatusPercent.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.StatusPercent
+	return *o.StatusPercent.Get()
 }
 
 // GetStatusPercentOk returns a tuple with the StatusPercent field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Instance) GetStatusPercentOk() (*string, bool) {
-	if o == nil || IsNil(o.StatusPercent) {
+	if o == nil {
 		return nil, false
 	}
-	return o.StatusPercent, true
+	return o.StatusPercent.Get(), o.StatusPercent.IsSet()
 }
 
 // IsSetStatusPercent returns a boolean if a field has been set.
 func (o *Instance) IsSetStatusPercent() bool {
-	if o != nil && !IsNil(o.StatusPercent) {
+	if o != nil && o.StatusPercent.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetStatusPercent gets a reference to the given string and assigns it to the StatusPercent field.
+// SetStatusPercent gets a reference to the given NullableString and assigns it to the StatusPercent field.
 func (o *Instance) SetStatusPercent(v string) {
-	o.StatusPercent = &v
+	o.StatusPercent.Set(&v)
 }
 
-// GetStatusEta returns the StatusEta field value if set, zero value otherwise.
+// SetStatusPercentNil sets the value for StatusPercent to be an explicit nil
+func (o *Instance) SetStatusPercentNil() {
+	o.StatusPercent.Set(nil)
+}
+
+// UnsetStatusPercent ensures that no value is present for StatusPercent, not even an explicit nil
+func (o *Instance) UnsetStatusPercent() {
+	o.StatusPercent.Unset()
+}
+
+// GetStatusEta returns the StatusEta field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Instance) GetStatusEta() string {
-	if o == nil || IsNil(o.StatusEta) {
+	if o == nil || IsNil(o.StatusEta.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.StatusEta
+	return *o.StatusEta.Get()
 }
 
 // GetStatusEtaOk returns a tuple with the StatusEta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Instance) GetStatusEtaOk() (*string, bool) {
-	if o == nil || IsNil(o.StatusEta) {
+	if o == nil {
 		return nil, false
 	}
-	return o.StatusEta, true
+	return o.StatusEta.Get(), o.StatusEta.IsSet()
 }
 
 // IsSetStatusEta returns a boolean if a field has been set.
 func (o *Instance) IsSetStatusEta() bool {
-	if o != nil && !IsNil(o.StatusEta) {
+	if o != nil && o.StatusEta.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetStatusEta gets a reference to the given string and assigns it to the StatusEta field.
+// SetStatusEta gets a reference to the given NullableString and assigns it to the StatusEta field.
 func (o *Instance) SetStatusEta(v string) {
-	o.StatusEta = &v
+	o.StatusEta.Set(&v)
 }
 
-// GetUserStatus returns the UserStatus field value if set, zero value otherwise.
+// SetStatusEtaNil sets the value for StatusEta to be an explicit nil
+func (o *Instance) SetStatusEtaNil() {
+	o.StatusEta.Set(nil)
+}
+
+// UnsetStatusEta ensures that no value is present for StatusEta, not even an explicit nil
+func (o *Instance) UnsetStatusEta() {
+	o.StatusEta.Unset()
+}
+
+// GetUserStatus returns the UserStatus field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Instance) GetUserStatus() string {
-	if o == nil || IsNil(o.UserStatus) {
+	if o == nil || IsNil(o.UserStatus.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.UserStatus
+	return *o.UserStatus.Get()
 }
 
 // GetUserStatusOk returns a tuple with the UserStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Instance) GetUserStatusOk() (*string, bool) {
-	if o == nil || IsNil(o.UserStatus) {
+	if o == nil {
 		return nil, false
 	}
-	return o.UserStatus, true
+	return o.UserStatus.Get(), o.UserStatus.IsSet()
 }
 
 // IsSetUserStatus returns a boolean if a field has been set.
 func (o *Instance) IsSetUserStatus() bool {
-	if o != nil && !IsNil(o.UserStatus) {
+	if o != nil && o.UserStatus.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetUserStatus gets a reference to the given string and assigns it to the UserStatus field.
+// SetUserStatus gets a reference to the given NullableString and assigns it to the UserStatus field.
 func (o *Instance) SetUserStatus(v string) {
-	o.UserStatus = &v
+	o.UserStatus.Set(&v)
+}
+
+// SetUserStatusNil sets the value for UserStatus to be an explicit nil
+func (o *Instance) SetUserStatusNil() {
+	o.UserStatus.Set(nil)
+}
+
+// UnsetUserStatus ensures that no value is present for UserStatus, not even an explicit nil
+func (o *Instance) UnsetUserStatus() {
+	o.UserStatus.Unset()
 }
 
 // GetExpireDays returns the ExpireDays field value if set, zero value otherwise.
@@ -2264,36 +2441,47 @@ func (o *Instance) SetShutdownWarningSent(v bool) {
 	o.ShutdownWarningSent = &v
 }
 
-// GetRemovalDate returns the RemovalDate field value if set, zero value otherwise.
+// GetRemovalDate returns the RemovalDate field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Instance) GetRemovalDate() time.Time {
-	if o == nil || IsNil(o.RemovalDate) {
+	if o == nil || IsNil(o.RemovalDate.Get()) {
 		var ret time.Time
 		return ret
 	}
-	return *o.RemovalDate
+	return *o.RemovalDate.Get()
 }
 
 // GetRemovalDateOk returns a tuple with the RemovalDate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Instance) GetRemovalDateOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.RemovalDate) {
+	if o == nil {
 		return nil, false
 	}
-	return o.RemovalDate, true
+	return o.RemovalDate.Get(), o.RemovalDate.IsSet()
 }
 
 // IsSetRemovalDate returns a boolean if a field has been set.
 func (o *Instance) IsSetRemovalDate() bool {
-	if o != nil && !IsNil(o.RemovalDate) {
+	if o != nil && o.RemovalDate.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetRemovalDate gets a reference to the given time.Time and assigns it to the RemovalDate field.
+// SetRemovalDate gets a reference to the given NullableTime and assigns it to the RemovalDate field.
 func (o *Instance) SetRemovalDate(v time.Time) {
-	o.RemovalDate = &v
+	o.RemovalDate.Set(&v)
+}
+
+// SetRemovalDateNil sets the value for RemovalDate to be an explicit nil
+func (o *Instance) SetRemovalDateNil() {
+	o.RemovalDate.Set(nil)
+}
+
+// UnsetRemovalDate ensures that no value is present for RemovalDate, not even an explicit nil
+func (o *Instance) UnsetRemovalDate() {
+	o.RemovalDate.Unset()
 }
 
 // GetCreatedBy returns the CreatedBy field value if set, zero value otherwise.
@@ -2329,9 +2517,9 @@ func (o *Instance) SetCreatedBy(v ListActivity200ResponseAllOfActivityInnerActiv
 }
 
 // GetOwner returns the Owner field value if set, zero value otherwise.
-func (o *Instance) GetOwner() GetAlerts200ResponseAllOfChecksInnerCreatedBy {
+func (o *Instance) GetOwner() ListActivity200ResponseAllOfActivityInnerActivityInnerUser {
 	if o == nil || IsNil(o.Owner) {
-		var ret GetAlerts200ResponseAllOfChecksInnerCreatedBy
+		var ret ListActivity200ResponseAllOfActivityInnerActivityInnerUser
 		return ret
 	}
 	return *o.Owner
@@ -2339,7 +2527,7 @@ func (o *Instance) GetOwner() GetAlerts200ResponseAllOfChecksInnerCreatedBy {
 
 // GetOwnerOk returns a tuple with the Owner field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Instance) GetOwnerOk() (*GetAlerts200ResponseAllOfChecksInnerCreatedBy, bool) {
+func (o *Instance) GetOwnerOk() (*ListActivity200ResponseAllOfActivityInnerActivityInnerUser, bool) {
 	if o == nil || IsNil(o.Owner) {
 		return nil, false
 	}
@@ -2355,41 +2543,52 @@ func (o *Instance) IsSetOwner() bool {
 	return false
 }
 
-// SetOwner gets a reference to the given GetAlerts200ResponseAllOfChecksInnerCreatedBy and assigns it to the Owner field.
-func (o *Instance) SetOwner(v GetAlerts200ResponseAllOfChecksInnerCreatedBy) {
+// SetOwner gets a reference to the given ListActivity200ResponseAllOfActivityInnerActivityInnerUser and assigns it to the Owner field.
+func (o *Instance) SetOwner(v ListActivity200ResponseAllOfActivityInnerActivityInnerUser) {
 	o.Owner = &v
 }
 
-// GetNotes returns the Notes field value if set, zero value otherwise.
+// GetNotes returns the Notes field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Instance) GetNotes() string {
-	if o == nil || IsNil(o.Notes) {
+	if o == nil || IsNil(o.Notes.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Notes
+	return *o.Notes.Get()
 }
 
 // GetNotesOk returns a tuple with the Notes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Instance) GetNotesOk() (*string, bool) {
-	if o == nil || IsNil(o.Notes) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Notes, true
+	return o.Notes.Get(), o.Notes.IsSet()
 }
 
 // IsSetNotes returns a boolean if a field has been set.
 func (o *Instance) IsSetNotes() bool {
-	if o != nil && !IsNil(o.Notes) {
+	if o != nil && o.Notes.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetNotes gets a reference to the given string and assigns it to the Notes field.
+// SetNotes gets a reference to the given NullableString and assigns it to the Notes field.
 func (o *Instance) SetNotes(v string) {
-	o.Notes = &v
+	o.Notes.Set(&v)
+}
+
+// SetNotesNil sets the value for Notes to be an explicit nil
+func (o *Instance) SetNotesNil() {
+	o.Notes.Set(nil)
+}
+
+// UnsetNotes ensures that no value is present for Notes, not even an explicit nil
+func (o *Instance) UnsetNotes() {
+	o.Notes.Unset()
 }
 
 // GetStats returns the Stats field value if set, zero value otherwise.
@@ -2424,36 +2623,47 @@ func (o *Instance) SetStats(v AddInstance200ResponseAllOfOneOfInstanceStats) {
 	o.Stats = &v
 }
 
-// GetPowerSchedule returns the PowerSchedule field value if set, zero value otherwise.
+// GetPowerSchedule returns the PowerSchedule field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Instance) GetPowerSchedule() string {
-	if o == nil || IsNil(o.PowerSchedule) {
+	if o == nil || IsNil(o.PowerSchedule.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.PowerSchedule
+	return *o.PowerSchedule.Get()
 }
 
 // GetPowerScheduleOk returns a tuple with the PowerSchedule field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Instance) GetPowerScheduleOk() (*string, bool) {
-	if o == nil || IsNil(o.PowerSchedule) {
+	if o == nil {
 		return nil, false
 	}
-	return o.PowerSchedule, true
+	return o.PowerSchedule.Get(), o.PowerSchedule.IsSet()
 }
 
 // IsSetPowerSchedule returns a boolean if a field has been set.
 func (o *Instance) IsSetPowerSchedule() bool {
-	if o != nil && !IsNil(o.PowerSchedule) {
+	if o != nil && o.PowerSchedule.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetPowerSchedule gets a reference to the given string and assigns it to the PowerSchedule field.
+// SetPowerSchedule gets a reference to the given NullableString and assigns it to the PowerSchedule field.
 func (o *Instance) SetPowerSchedule(v string) {
-	o.PowerSchedule = &v
+	o.PowerSchedule.Set(&v)
+}
+
+// SetPowerScheduleNil sets the value for PowerSchedule to be an explicit nil
+func (o *Instance) SetPowerScheduleNil() {
+	o.PowerSchedule.Set(nil)
+}
+
+// UnsetPowerSchedule ensures that no value is present for PowerSchedule, not even an explicit nil
+func (o *Instance) UnsetPowerSchedule() {
+	o.PowerSchedule.Unset()
 }
 
 // GetIsScalable returns the IsScalable field value if set, zero value otherwise.
@@ -2488,9 +2698,9 @@ func (o *Instance) SetIsScalable(v bool) {
 	o.IsScalable = &v
 }
 
-// GetInstanceThreshold returns the InstanceThreshold field value if set, zero value otherwise.
+// GetInstanceThreshold returns the InstanceThreshold field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Instance) GetInstanceThreshold() map[string]interface{} {
-	if o == nil || IsNil(o.InstanceThreshold) {
+	if o == nil {
 		var ret map[string]interface{}
 		return ret
 	}
@@ -2499,6 +2709,7 @@ func (o *Instance) GetInstanceThreshold() map[string]interface{} {
 
 // GetInstanceThresholdOk returns a tuple with the InstanceThreshold field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Instance) GetInstanceThresholdOk() (map[string]interface{}, bool) {
 	if o == nil || IsNil(o.InstanceThreshold) {
 		return map[string]interface{}{}, false
@@ -2552,9 +2763,9 @@ func (o *Instance) SetIsBusy(v bool) {
 	o.IsBusy = &v
 }
 
-// GetApps returns the Apps field value if set, zero value otherwise.
+// GetApps returns the Apps field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Instance) GetApps() []map[string]interface{} {
-	if o == nil || IsNil(o.Apps) {
+	if o == nil {
 		var ret []map[string]interface{}
 		return ret
 	}
@@ -2563,6 +2774,7 @@ func (o *Instance) GetApps() []map[string]interface{} {
 
 // GetAppsOk returns a tuple with the Apps field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Instance) GetAppsOk() ([]map[string]interface{}, bool) {
 	if o == nil || IsNil(o.Apps) {
 		return nil, false
@@ -2639,23 +2851,23 @@ func (o Instance) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.DisplayName) {
 		toSerialize["displayName"] = o.DisplayName
 	}
-	if !IsNil(o.Description) {
-		toSerialize["description"] = o.Description
+	if o.Description.IsSet() {
+		toSerialize["description"] = o.Description.Get()
 	}
-	if !IsNil(o.Environment) {
-		toSerialize["environment"] = o.Environment
+	if o.Environment.IsSet() {
+		toSerialize["environment"] = o.Environment.Get()
 	}
 	if !IsNil(o.Config) {
 		toSerialize["config"] = o.Config
 	}
-	if !IsNil(o.ConfigGroup) {
-		toSerialize["configGroup"] = o.ConfigGroup
+	if o.ConfigGroup.IsSet() {
+		toSerialize["configGroup"] = o.ConfigGroup.Get()
 	}
-	if !IsNil(o.ConfigId) {
-		toSerialize["configId"] = o.ConfigId
+	if o.ConfigId.IsSet() {
+		toSerialize["configId"] = o.ConfigId.Get()
 	}
-	if !IsNil(o.ConfigRole) {
-		toSerialize["configRole"] = o.ConfigRole
+	if o.ConfigRole.IsSet() {
+		toSerialize["configRole"] = o.ConfigRole.Get()
 	}
 	if !IsNil(o.Volumes) {
 		toSerialize["volumes"] = o.Volumes
@@ -2672,7 +2884,7 @@ func (o Instance) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.InstanceVersion) {
 		toSerialize["instanceVersion"] = o.InstanceVersion
 	}
-	if !IsNil(o.Labels) {
+	if o.Labels != nil {
 		toSerialize["labels"] = o.Labels
 	}
 	if !IsNil(o.Tags) {
@@ -2690,11 +2902,11 @@ func (o Instance) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.MaxCores) {
 		toSerialize["maxCores"] = o.MaxCores
 	}
-	if !IsNil(o.CoresPerSocket) {
-		toSerialize["coresPerSocket"] = o.CoresPerSocket
+	if o.CoresPerSocket.IsSet() {
+		toSerialize["coresPerSocket"] = o.CoresPerSocket.Get()
 	}
-	if !IsNil(o.MaxCpu) {
-		toSerialize["maxCpu"] = o.MaxCpu
+	if o.MaxCpu.IsSet() {
+		toSerialize["maxCpu"] = o.MaxCpu.Get()
 	}
 	if !IsNil(o.HourlyCost) {
 		toSerialize["hourlyCost"] = o.HourlyCost
@@ -2714,11 +2926,11 @@ func (o Instance) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.HostName) {
 		toSerialize["hostName"] = o.HostName
 	}
-	if !IsNil(o.DomainName) {
-		toSerialize["domainName"] = o.DomainName
+	if o.DomainName.IsSet() {
+		toSerialize["domainName"] = o.DomainName.Get()
 	}
-	if !IsNil(o.EnvironmentPrefix) {
-		toSerialize["environmentPrefix"] = o.EnvironmentPrefix
+	if o.EnvironmentPrefix.IsSet() {
+		toSerialize["environmentPrefix"] = o.EnvironmentPrefix.Get()
 	}
 	if !IsNil(o.FirewallEnabled) {
 		toSerialize["firewallEnabled"] = o.FirewallEnabled
@@ -2729,11 +2941,11 @@ func (o Instance) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.AutoScale) {
 		toSerialize["autoScale"] = o.AutoScale
 	}
-	if !IsNil(o.InstanceContext) {
-		toSerialize["instanceContext"] = o.InstanceContext
+	if o.InstanceContext.IsSet() {
+		toSerialize["instanceContext"] = o.InstanceContext.Get()
 	}
-	if !IsNil(o.CurrentDeployId) {
-		toSerialize["currentDeployId"] = o.CurrentDeployId
+	if o.CurrentDeployId.IsSet() {
+		toSerialize["currentDeployId"] = o.CurrentDeployId.Get()
 	}
 	if !IsNil(o.Locked) {
 		toSerialize["locked"] = o.Locked
@@ -2741,23 +2953,23 @@ func (o Instance) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status
 	}
-	if !IsNil(o.StatusMessage) {
-		toSerialize["statusMessage"] = o.StatusMessage
+	if o.StatusMessage.IsSet() {
+		toSerialize["statusMessage"] = o.StatusMessage.Get()
 	}
-	if !IsNil(o.ErrorMessage) {
-		toSerialize["errorMessage"] = o.ErrorMessage
+	if o.ErrorMessage.IsSet() {
+		toSerialize["errorMessage"] = o.ErrorMessage.Get()
 	}
 	if !IsNil(o.StatusDate) {
 		toSerialize["statusDate"] = o.StatusDate
 	}
-	if !IsNil(o.StatusPercent) {
-		toSerialize["statusPercent"] = o.StatusPercent
+	if o.StatusPercent.IsSet() {
+		toSerialize["statusPercent"] = o.StatusPercent.Get()
 	}
-	if !IsNil(o.StatusEta) {
-		toSerialize["statusEta"] = o.StatusEta
+	if o.StatusEta.IsSet() {
+		toSerialize["statusEta"] = o.StatusEta.Get()
 	}
-	if !IsNil(o.UserStatus) {
-		toSerialize["userStatus"] = o.UserStatus
+	if o.UserStatus.IsSet() {
+		toSerialize["userStatus"] = o.UserStatus.Get()
 	}
 	if !IsNil(o.ExpireDays) {
 		toSerialize["expireDays"] = o.ExpireDays
@@ -2795,8 +3007,8 @@ func (o Instance) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ShutdownWarningSent) {
 		toSerialize["shutdownWarningSent"] = o.ShutdownWarningSent
 	}
-	if !IsNil(o.RemovalDate) {
-		toSerialize["removalDate"] = o.RemovalDate
+	if o.RemovalDate.IsSet() {
+		toSerialize["removalDate"] = o.RemovalDate.Get()
 	}
 	if !IsNil(o.CreatedBy) {
 		toSerialize["createdBy"] = o.CreatedBy
@@ -2804,25 +3016,25 @@ func (o Instance) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Owner) {
 		toSerialize["owner"] = o.Owner
 	}
-	if !IsNil(o.Notes) {
-		toSerialize["notes"] = o.Notes
+	if o.Notes.IsSet() {
+		toSerialize["notes"] = o.Notes.Get()
 	}
 	if !IsNil(o.Stats) {
 		toSerialize["stats"] = o.Stats
 	}
-	if !IsNil(o.PowerSchedule) {
-		toSerialize["powerSchedule"] = o.PowerSchedule
+	if o.PowerSchedule.IsSet() {
+		toSerialize["powerSchedule"] = o.PowerSchedule.Get()
 	}
 	if !IsNil(o.IsScalable) {
 		toSerialize["isScalable"] = o.IsScalable
 	}
-	if !IsNil(o.InstanceThreshold) {
+	if o.InstanceThreshold != nil {
 		toSerialize["instanceThreshold"] = o.InstanceThreshold
 	}
 	if !IsNil(o.IsBusy) {
 		toSerialize["isBusy"] = o.IsBusy
 	}
-	if !IsNil(o.Apps) {
+	if o.Apps != nil {
 		toSerialize["apps"] = o.Apps
 	}
 

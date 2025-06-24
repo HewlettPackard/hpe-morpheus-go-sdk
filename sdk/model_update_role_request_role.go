@@ -23,11 +23,10 @@ type UpdateRoleRequestRole struct {
 	// Authority (Name)
 	Authority *string `json:"authority,omitempty"`
 	// Description
-	Description *string `json:"description,omitempty"`
+	Description NullableString `json:"description,omitempty"`
 	// An optional override for the default landing page after login for a user.
-	LandingUrl *string `json:"landingUrl,omitempty"`
-	// Set the default persona by code.
-	DefaultPersona *string `json:"defaultPersona,omitempty"`
+	LandingUrl     NullableString `json:"landingUrl,omitempty"`
+	DefaultPersona NullableString `json:"defaultPersona,omitempty"`
 	// Set the access level for the specified permissions.
 	Permissions []AddRolesRequestRoleFeaturePermissionsInner `json:"permissions,omitempty"`
 	// Set the default access level for for groups (sites). Only applies to user roles.
@@ -124,100 +123,133 @@ func (o *UpdateRoleRequestRole) SetAuthority(v string) {
 	o.Authority = &v
 }
 
-// GetDescription returns the Description field value if set, zero value otherwise.
+// GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UpdateRoleRequestRole) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
+	if o == nil || IsNil(o.Description.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Description
+	return *o.Description.Get()
 }
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *UpdateRoleRequestRole) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Description, true
+	return o.Description.Get(), o.Description.IsSet()
 }
 
 // IsSetDescription returns a boolean if a field has been set.
 func (o *UpdateRoleRequestRole) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
+	if o != nil && o.Description.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDescription gets a reference to the given string and assigns it to the Description field.
+// SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *UpdateRoleRequestRole) SetDescription(v string) {
-	o.Description = &v
+	o.Description.Set(&v)
 }
 
-// GetLandingUrl returns the LandingUrl field value if set, zero value otherwise.
+// SetDescriptionNil sets the value for Description to be an explicit nil
+func (o *UpdateRoleRequestRole) SetDescriptionNil() {
+	o.Description.Set(nil)
+}
+
+// UnsetDescription ensures that no value is present for Description, not even an explicit nil
+func (o *UpdateRoleRequestRole) UnsetDescription() {
+	o.Description.Unset()
+}
+
+// GetLandingUrl returns the LandingUrl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UpdateRoleRequestRole) GetLandingUrl() string {
-	if o == nil || IsNil(o.LandingUrl) {
+	if o == nil || IsNil(o.LandingUrl.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.LandingUrl
+	return *o.LandingUrl.Get()
 }
 
 // GetLandingUrlOk returns a tuple with the LandingUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *UpdateRoleRequestRole) GetLandingUrlOk() (*string, bool) {
-	if o == nil || IsNil(o.LandingUrl) {
+	if o == nil {
 		return nil, false
 	}
-	return o.LandingUrl, true
+	return o.LandingUrl.Get(), o.LandingUrl.IsSet()
 }
 
 // IsSetLandingUrl returns a boolean if a field has been set.
 func (o *UpdateRoleRequestRole) IsSetLandingUrl() bool {
-	if o != nil && !IsNil(o.LandingUrl) {
+	if o != nil && o.LandingUrl.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetLandingUrl gets a reference to the given string and assigns it to the LandingUrl field.
+// SetLandingUrl gets a reference to the given NullableString and assigns it to the LandingUrl field.
 func (o *UpdateRoleRequestRole) SetLandingUrl(v string) {
-	o.LandingUrl = &v
+	o.LandingUrl.Set(&v)
 }
 
-// GetDefaultPersona returns the DefaultPersona field value if set, zero value otherwise.
+// SetLandingUrlNil sets the value for LandingUrl to be an explicit nil
+func (o *UpdateRoleRequestRole) SetLandingUrlNil() {
+	o.LandingUrl.Set(nil)
+}
+
+// UnsetLandingUrl ensures that no value is present for LandingUrl, not even an explicit nil
+func (o *UpdateRoleRequestRole) UnsetLandingUrl() {
+	o.LandingUrl.Unset()
+}
+
+// GetDefaultPersona returns the DefaultPersona field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UpdateRoleRequestRole) GetDefaultPersona() string {
-	if o == nil || IsNil(o.DefaultPersona) {
+	if o == nil || IsNil(o.DefaultPersona.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.DefaultPersona
+	return *o.DefaultPersona.Get()
 }
 
 // GetDefaultPersonaOk returns a tuple with the DefaultPersona field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *UpdateRoleRequestRole) GetDefaultPersonaOk() (*string, bool) {
-	if o == nil || IsNil(o.DefaultPersona) {
+	if o == nil {
 		return nil, false
 	}
-	return o.DefaultPersona, true
+	return o.DefaultPersona.Get(), o.DefaultPersona.IsSet()
 }
 
 // IsSetDefaultPersona returns a boolean if a field has been set.
 func (o *UpdateRoleRequestRole) IsSetDefaultPersona() bool {
-	if o != nil && !IsNil(o.DefaultPersona) {
+	if o != nil && o.DefaultPersona.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDefaultPersona gets a reference to the given string and assigns it to the DefaultPersona field.
+// SetDefaultPersona gets a reference to the given NullableString and assigns it to the DefaultPersona field.
 func (o *UpdateRoleRequestRole) SetDefaultPersona(v string) {
-	o.DefaultPersona = &v
+	o.DefaultPersona.Set(&v)
+}
+
+// SetDefaultPersonaNil sets the value for DefaultPersona to be an explicit nil
+func (o *UpdateRoleRequestRole) SetDefaultPersonaNil() {
+	o.DefaultPersona.Set(nil)
+}
+
+// UnsetDefaultPersona ensures that no value is present for DefaultPersona, not even an explicit nil
+func (o *UpdateRoleRequestRole) UnsetDefaultPersona() {
+	o.DefaultPersona.Unset()
 }
 
 // GetPermissions returns the Permissions field value if set, zero value otherwise.
@@ -905,14 +937,14 @@ func (o UpdateRoleRequestRole) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Authority) {
 		toSerialize["authority"] = o.Authority
 	}
-	if !IsNil(o.Description) {
-		toSerialize["description"] = o.Description
+	if o.Description.IsSet() {
+		toSerialize["description"] = o.Description.Get()
 	}
-	if !IsNil(o.LandingUrl) {
-		toSerialize["landingUrl"] = o.LandingUrl
+	if o.LandingUrl.IsSet() {
+		toSerialize["landingUrl"] = o.LandingUrl.Get()
 	}
-	if !IsNil(o.DefaultPersona) {
-		toSerialize["defaultPersona"] = o.DefaultPersona
+	if o.DefaultPersona.IsSet() {
+		toSerialize["defaultPersona"] = o.DefaultPersona.Get()
 	}
 	if !IsNil(o.Permissions) {
 		toSerialize["permissions"] = o.Permissions

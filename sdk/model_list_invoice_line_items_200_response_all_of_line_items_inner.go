@@ -28,32 +28,32 @@ type ListInvoiceLineItems200ResponseAllOfLineItemsInner struct {
 	RefName              *string                `json:"refName,omitempty"`
 	StartDate            *time.Time             `json:"startDate,omitempty"`
 	EndDate              *time.Time             `json:"endDate,omitempty"`
-	ItemId               *string                `json:"itemId,omitempty"`
-	ItemType             *string                `json:"itemType,omitempty"`
-	ItemName             *string                `json:"itemName,omitempty"`
-	ItemDescription      *string                `json:"itemDescription,omitempty"`
-	ProductId            *string                `json:"productId,omitempty"`
-	ProductCode          *string                `json:"productCode,omitempty"`
-	ProductName          *string                `json:"productName,omitempty"`
-	ItemSeller           *string                `json:"itemSeller,omitempty"`
-	ItemAction           *string                `json:"itemAction,omitempty"`
+	ItemId               NullableString         `json:"itemId,omitempty"`
+	ItemType             NullableString         `json:"itemType,omitempty"`
+	ItemName             NullableString         `json:"itemName,omitempty"`
+	ItemDescription      NullableString         `json:"itemDescription,omitempty"`
+	ProductId            NullableString         `json:"productId,omitempty"`
+	ProductCode          NullableString         `json:"productCode,omitempty"`
+	ProductName          NullableString         `json:"productName,omitempty"`
+	ItemSeller           NullableString         `json:"itemSeller,omitempty"`
+	ItemAction           NullableString         `json:"itemAction,omitempty"`
 	ExternalId           *string                `json:"externalId,omitempty"`
-	RateId               *string                `json:"rateId,omitempty"`
-	RateClass            *string                `json:"rateClass,omitempty"`
+	RateId               NullableString         `json:"rateId,omitempty"`
+	RateClass            NullableString         `json:"rateClass,omitempty"`
 	RateUnit             *string                `json:"rateUnit,omitempty"`
-	RateTerm             *string                `json:"rateTerm,omitempty"`
+	RateTerm             NullableString         `json:"rateTerm,omitempty"`
 	UsageType            *string                `json:"usageType,omitempty"`
 	UsageCategory        *string                `json:"usageCategory,omitempty"`
-	UsageService         *string                `json:"usageService,omitempty"`
+	UsageService         NullableString         `json:"usageService,omitempty"`
 	ItemUsage            *int64                 `json:"itemUsage,omitempty"`
 	ItemRate             *float32               `json:"itemRate,omitempty"`
 	ItemCost             *float32               `json:"itemCost,omitempty"`
 	ItemPriceRate        *float32               `json:"itemPriceRate,omitempty"`
 	ItemPrice            *float32               `json:"itemPrice,omitempty"`
 	ItemTax              *int64                 `json:"itemTax,omitempty"`
-	ItemTerm             *string                `json:"itemTerm,omitempty"`
-	TaxType              *string                `json:"taxType,omitempty"`
-	RegionCode           *string                `json:"regionCode,omitempty"`
+	ItemTerm             NullableString         `json:"itemTerm,omitempty"`
+	TaxType              NullableString         `json:"taxType,omitempty"`
+	RegionCode           NullableString         `json:"regionCode,omitempty"`
 	Currency             *string                `json:"currency,omitempty"`
 	ConversionRate       *int64                 `json:"conversionRate,omitempty"`
 	DateCreated          *time.Time             `json:"dateCreated,omitempty"`
@@ -304,292 +304,391 @@ func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) SetEndDate(v time.T
 	o.EndDate = &v
 }
 
-// GetItemId returns the ItemId field value if set, zero value otherwise.
+// GetItemId returns the ItemId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) GetItemId() string {
-	if o == nil || IsNil(o.ItemId) {
+	if o == nil || IsNil(o.ItemId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ItemId
+	return *o.ItemId.Get()
 }
 
 // GetItemIdOk returns a tuple with the ItemId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) GetItemIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ItemId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ItemId, true
+	return o.ItemId.Get(), o.ItemId.IsSet()
 }
 
 // IsSetItemId returns a boolean if a field has been set.
 func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) IsSetItemId() bool {
-	if o != nil && !IsNil(o.ItemId) {
+	if o != nil && o.ItemId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetItemId gets a reference to the given string and assigns it to the ItemId field.
+// SetItemId gets a reference to the given NullableString and assigns it to the ItemId field.
 func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) SetItemId(v string) {
-	o.ItemId = &v
+	o.ItemId.Set(&v)
 }
 
-// GetItemType returns the ItemType field value if set, zero value otherwise.
+// SetItemIdNil sets the value for ItemId to be an explicit nil
+func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) SetItemIdNil() {
+	o.ItemId.Set(nil)
+}
+
+// UnsetItemId ensures that no value is present for ItemId, not even an explicit nil
+func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) UnsetItemId() {
+	o.ItemId.Unset()
+}
+
+// GetItemType returns the ItemType field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) GetItemType() string {
-	if o == nil || IsNil(o.ItemType) {
+	if o == nil || IsNil(o.ItemType.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ItemType
+	return *o.ItemType.Get()
 }
 
 // GetItemTypeOk returns a tuple with the ItemType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) GetItemTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.ItemType) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ItemType, true
+	return o.ItemType.Get(), o.ItemType.IsSet()
 }
 
 // IsSetItemType returns a boolean if a field has been set.
 func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) IsSetItemType() bool {
-	if o != nil && !IsNil(o.ItemType) {
+	if o != nil && o.ItemType.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetItemType gets a reference to the given string and assigns it to the ItemType field.
+// SetItemType gets a reference to the given NullableString and assigns it to the ItemType field.
 func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) SetItemType(v string) {
-	o.ItemType = &v
+	o.ItemType.Set(&v)
 }
 
-// GetItemName returns the ItemName field value if set, zero value otherwise.
+// SetItemTypeNil sets the value for ItemType to be an explicit nil
+func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) SetItemTypeNil() {
+	o.ItemType.Set(nil)
+}
+
+// UnsetItemType ensures that no value is present for ItemType, not even an explicit nil
+func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) UnsetItemType() {
+	o.ItemType.Unset()
+}
+
+// GetItemName returns the ItemName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) GetItemName() string {
-	if o == nil || IsNil(o.ItemName) {
+	if o == nil || IsNil(o.ItemName.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ItemName
+	return *o.ItemName.Get()
 }
 
 // GetItemNameOk returns a tuple with the ItemName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) GetItemNameOk() (*string, bool) {
-	if o == nil || IsNil(o.ItemName) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ItemName, true
+	return o.ItemName.Get(), o.ItemName.IsSet()
 }
 
 // IsSetItemName returns a boolean if a field has been set.
 func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) IsSetItemName() bool {
-	if o != nil && !IsNil(o.ItemName) {
+	if o != nil && o.ItemName.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetItemName gets a reference to the given string and assigns it to the ItemName field.
+// SetItemName gets a reference to the given NullableString and assigns it to the ItemName field.
 func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) SetItemName(v string) {
-	o.ItemName = &v
+	o.ItemName.Set(&v)
 }
 
-// GetItemDescription returns the ItemDescription field value if set, zero value otherwise.
+// SetItemNameNil sets the value for ItemName to be an explicit nil
+func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) SetItemNameNil() {
+	o.ItemName.Set(nil)
+}
+
+// UnsetItemName ensures that no value is present for ItemName, not even an explicit nil
+func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) UnsetItemName() {
+	o.ItemName.Unset()
+}
+
+// GetItemDescription returns the ItemDescription field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) GetItemDescription() string {
-	if o == nil || IsNil(o.ItemDescription) {
+	if o == nil || IsNil(o.ItemDescription.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ItemDescription
+	return *o.ItemDescription.Get()
 }
 
 // GetItemDescriptionOk returns a tuple with the ItemDescription field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) GetItemDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.ItemDescription) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ItemDescription, true
+	return o.ItemDescription.Get(), o.ItemDescription.IsSet()
 }
 
 // IsSetItemDescription returns a boolean if a field has been set.
 func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) IsSetItemDescription() bool {
-	if o != nil && !IsNil(o.ItemDescription) {
+	if o != nil && o.ItemDescription.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetItemDescription gets a reference to the given string and assigns it to the ItemDescription field.
+// SetItemDescription gets a reference to the given NullableString and assigns it to the ItemDescription field.
 func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) SetItemDescription(v string) {
-	o.ItemDescription = &v
+	o.ItemDescription.Set(&v)
 }
 
-// GetProductId returns the ProductId field value if set, zero value otherwise.
+// SetItemDescriptionNil sets the value for ItemDescription to be an explicit nil
+func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) SetItemDescriptionNil() {
+	o.ItemDescription.Set(nil)
+}
+
+// UnsetItemDescription ensures that no value is present for ItemDescription, not even an explicit nil
+func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) UnsetItemDescription() {
+	o.ItemDescription.Unset()
+}
+
+// GetProductId returns the ProductId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) GetProductId() string {
-	if o == nil || IsNil(o.ProductId) {
+	if o == nil || IsNil(o.ProductId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ProductId
+	return *o.ProductId.Get()
 }
 
 // GetProductIdOk returns a tuple with the ProductId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) GetProductIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ProductId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ProductId, true
+	return o.ProductId.Get(), o.ProductId.IsSet()
 }
 
 // IsSetProductId returns a boolean if a field has been set.
 func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) IsSetProductId() bool {
-	if o != nil && !IsNil(o.ProductId) {
+	if o != nil && o.ProductId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetProductId gets a reference to the given string and assigns it to the ProductId field.
+// SetProductId gets a reference to the given NullableString and assigns it to the ProductId field.
 func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) SetProductId(v string) {
-	o.ProductId = &v
+	o.ProductId.Set(&v)
 }
 
-// GetProductCode returns the ProductCode field value if set, zero value otherwise.
+// SetProductIdNil sets the value for ProductId to be an explicit nil
+func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) SetProductIdNil() {
+	o.ProductId.Set(nil)
+}
+
+// UnsetProductId ensures that no value is present for ProductId, not even an explicit nil
+func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) UnsetProductId() {
+	o.ProductId.Unset()
+}
+
+// GetProductCode returns the ProductCode field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) GetProductCode() string {
-	if o == nil || IsNil(o.ProductCode) {
+	if o == nil || IsNil(o.ProductCode.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ProductCode
+	return *o.ProductCode.Get()
 }
 
 // GetProductCodeOk returns a tuple with the ProductCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) GetProductCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.ProductCode) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ProductCode, true
+	return o.ProductCode.Get(), o.ProductCode.IsSet()
 }
 
 // IsSetProductCode returns a boolean if a field has been set.
 func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) IsSetProductCode() bool {
-	if o != nil && !IsNil(o.ProductCode) {
+	if o != nil && o.ProductCode.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetProductCode gets a reference to the given string and assigns it to the ProductCode field.
+// SetProductCode gets a reference to the given NullableString and assigns it to the ProductCode field.
 func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) SetProductCode(v string) {
-	o.ProductCode = &v
+	o.ProductCode.Set(&v)
 }
 
-// GetProductName returns the ProductName field value if set, zero value otherwise.
+// SetProductCodeNil sets the value for ProductCode to be an explicit nil
+func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) SetProductCodeNil() {
+	o.ProductCode.Set(nil)
+}
+
+// UnsetProductCode ensures that no value is present for ProductCode, not even an explicit nil
+func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) UnsetProductCode() {
+	o.ProductCode.Unset()
+}
+
+// GetProductName returns the ProductName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) GetProductName() string {
-	if o == nil || IsNil(o.ProductName) {
+	if o == nil || IsNil(o.ProductName.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ProductName
+	return *o.ProductName.Get()
 }
 
 // GetProductNameOk returns a tuple with the ProductName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) GetProductNameOk() (*string, bool) {
-	if o == nil || IsNil(o.ProductName) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ProductName, true
+	return o.ProductName.Get(), o.ProductName.IsSet()
 }
 
 // IsSetProductName returns a boolean if a field has been set.
 func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) IsSetProductName() bool {
-	if o != nil && !IsNil(o.ProductName) {
+	if o != nil && o.ProductName.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetProductName gets a reference to the given string and assigns it to the ProductName field.
+// SetProductName gets a reference to the given NullableString and assigns it to the ProductName field.
 func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) SetProductName(v string) {
-	o.ProductName = &v
+	o.ProductName.Set(&v)
 }
 
-// GetItemSeller returns the ItemSeller field value if set, zero value otherwise.
+// SetProductNameNil sets the value for ProductName to be an explicit nil
+func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) SetProductNameNil() {
+	o.ProductName.Set(nil)
+}
+
+// UnsetProductName ensures that no value is present for ProductName, not even an explicit nil
+func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) UnsetProductName() {
+	o.ProductName.Unset()
+}
+
+// GetItemSeller returns the ItemSeller field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) GetItemSeller() string {
-	if o == nil || IsNil(o.ItemSeller) {
+	if o == nil || IsNil(o.ItemSeller.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ItemSeller
+	return *o.ItemSeller.Get()
 }
 
 // GetItemSellerOk returns a tuple with the ItemSeller field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) GetItemSellerOk() (*string, bool) {
-	if o == nil || IsNil(o.ItemSeller) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ItemSeller, true
+	return o.ItemSeller.Get(), o.ItemSeller.IsSet()
 }
 
 // IsSetItemSeller returns a boolean if a field has been set.
 func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) IsSetItemSeller() bool {
-	if o != nil && !IsNil(o.ItemSeller) {
+	if o != nil && o.ItemSeller.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetItemSeller gets a reference to the given string and assigns it to the ItemSeller field.
+// SetItemSeller gets a reference to the given NullableString and assigns it to the ItemSeller field.
 func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) SetItemSeller(v string) {
-	o.ItemSeller = &v
+	o.ItemSeller.Set(&v)
 }
 
-// GetItemAction returns the ItemAction field value if set, zero value otherwise.
+// SetItemSellerNil sets the value for ItemSeller to be an explicit nil
+func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) SetItemSellerNil() {
+	o.ItemSeller.Set(nil)
+}
+
+// UnsetItemSeller ensures that no value is present for ItemSeller, not even an explicit nil
+func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) UnsetItemSeller() {
+	o.ItemSeller.Unset()
+}
+
+// GetItemAction returns the ItemAction field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) GetItemAction() string {
-	if o == nil || IsNil(o.ItemAction) {
+	if o == nil || IsNil(o.ItemAction.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ItemAction
+	return *o.ItemAction.Get()
 }
 
 // GetItemActionOk returns a tuple with the ItemAction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) GetItemActionOk() (*string, bool) {
-	if o == nil || IsNil(o.ItemAction) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ItemAction, true
+	return o.ItemAction.Get(), o.ItemAction.IsSet()
 }
 
 // IsSetItemAction returns a boolean if a field has been set.
 func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) IsSetItemAction() bool {
-	if o != nil && !IsNil(o.ItemAction) {
+	if o != nil && o.ItemAction.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetItemAction gets a reference to the given string and assigns it to the ItemAction field.
+// SetItemAction gets a reference to the given NullableString and assigns it to the ItemAction field.
 func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) SetItemAction(v string) {
-	o.ItemAction = &v
+	o.ItemAction.Set(&v)
+}
+
+// SetItemActionNil sets the value for ItemAction to be an explicit nil
+func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) SetItemActionNil() {
+	o.ItemAction.Set(nil)
+}
+
+// UnsetItemAction ensures that no value is present for ItemAction, not even an explicit nil
+func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) UnsetItemAction() {
+	o.ItemAction.Unset()
 }
 
 // GetExternalId returns the ExternalId field value if set, zero value otherwise.
@@ -624,68 +723,90 @@ func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) SetExternalId(v str
 	o.ExternalId = &v
 }
 
-// GetRateId returns the RateId field value if set, zero value otherwise.
+// GetRateId returns the RateId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) GetRateId() string {
-	if o == nil || IsNil(o.RateId) {
+	if o == nil || IsNil(o.RateId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.RateId
+	return *o.RateId.Get()
 }
 
 // GetRateIdOk returns a tuple with the RateId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) GetRateIdOk() (*string, bool) {
-	if o == nil || IsNil(o.RateId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.RateId, true
+	return o.RateId.Get(), o.RateId.IsSet()
 }
 
 // IsSetRateId returns a boolean if a field has been set.
 func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) IsSetRateId() bool {
-	if o != nil && !IsNil(o.RateId) {
+	if o != nil && o.RateId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetRateId gets a reference to the given string and assigns it to the RateId field.
+// SetRateId gets a reference to the given NullableString and assigns it to the RateId field.
 func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) SetRateId(v string) {
-	o.RateId = &v
+	o.RateId.Set(&v)
 }
 
-// GetRateClass returns the RateClass field value if set, zero value otherwise.
+// SetRateIdNil sets the value for RateId to be an explicit nil
+func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) SetRateIdNil() {
+	o.RateId.Set(nil)
+}
+
+// UnsetRateId ensures that no value is present for RateId, not even an explicit nil
+func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) UnsetRateId() {
+	o.RateId.Unset()
+}
+
+// GetRateClass returns the RateClass field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) GetRateClass() string {
-	if o == nil || IsNil(o.RateClass) {
+	if o == nil || IsNil(o.RateClass.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.RateClass
+	return *o.RateClass.Get()
 }
 
 // GetRateClassOk returns a tuple with the RateClass field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) GetRateClassOk() (*string, bool) {
-	if o == nil || IsNil(o.RateClass) {
+	if o == nil {
 		return nil, false
 	}
-	return o.RateClass, true
+	return o.RateClass.Get(), o.RateClass.IsSet()
 }
 
 // IsSetRateClass returns a boolean if a field has been set.
 func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) IsSetRateClass() bool {
-	if o != nil && !IsNil(o.RateClass) {
+	if o != nil && o.RateClass.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetRateClass gets a reference to the given string and assigns it to the RateClass field.
+// SetRateClass gets a reference to the given NullableString and assigns it to the RateClass field.
 func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) SetRateClass(v string) {
-	o.RateClass = &v
+	o.RateClass.Set(&v)
+}
+
+// SetRateClassNil sets the value for RateClass to be an explicit nil
+func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) SetRateClassNil() {
+	o.RateClass.Set(nil)
+}
+
+// UnsetRateClass ensures that no value is present for RateClass, not even an explicit nil
+func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) UnsetRateClass() {
+	o.RateClass.Unset()
 }
 
 // GetRateUnit returns the RateUnit field value if set, zero value otherwise.
@@ -720,36 +841,47 @@ func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) SetRateUnit(v strin
 	o.RateUnit = &v
 }
 
-// GetRateTerm returns the RateTerm field value if set, zero value otherwise.
+// GetRateTerm returns the RateTerm field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) GetRateTerm() string {
-	if o == nil || IsNil(o.RateTerm) {
+	if o == nil || IsNil(o.RateTerm.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.RateTerm
+	return *o.RateTerm.Get()
 }
 
 // GetRateTermOk returns a tuple with the RateTerm field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) GetRateTermOk() (*string, bool) {
-	if o == nil || IsNil(o.RateTerm) {
+	if o == nil {
 		return nil, false
 	}
-	return o.RateTerm, true
+	return o.RateTerm.Get(), o.RateTerm.IsSet()
 }
 
 // IsSetRateTerm returns a boolean if a field has been set.
 func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) IsSetRateTerm() bool {
-	if o != nil && !IsNil(o.RateTerm) {
+	if o != nil && o.RateTerm.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetRateTerm gets a reference to the given string and assigns it to the RateTerm field.
+// SetRateTerm gets a reference to the given NullableString and assigns it to the RateTerm field.
 func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) SetRateTerm(v string) {
-	o.RateTerm = &v
+	o.RateTerm.Set(&v)
+}
+
+// SetRateTermNil sets the value for RateTerm to be an explicit nil
+func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) SetRateTermNil() {
+	o.RateTerm.Set(nil)
+}
+
+// UnsetRateTerm ensures that no value is present for RateTerm, not even an explicit nil
+func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) UnsetRateTerm() {
+	o.RateTerm.Unset()
 }
 
 // GetUsageType returns the UsageType field value if set, zero value otherwise.
@@ -816,36 +948,47 @@ func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) SetUsageCategory(v 
 	o.UsageCategory = &v
 }
 
-// GetUsageService returns the UsageService field value if set, zero value otherwise.
+// GetUsageService returns the UsageService field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) GetUsageService() string {
-	if o == nil || IsNil(o.UsageService) {
+	if o == nil || IsNil(o.UsageService.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.UsageService
+	return *o.UsageService.Get()
 }
 
 // GetUsageServiceOk returns a tuple with the UsageService field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) GetUsageServiceOk() (*string, bool) {
-	if o == nil || IsNil(o.UsageService) {
+	if o == nil {
 		return nil, false
 	}
-	return o.UsageService, true
+	return o.UsageService.Get(), o.UsageService.IsSet()
 }
 
 // IsSetUsageService returns a boolean if a field has been set.
 func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) IsSetUsageService() bool {
-	if o != nil && !IsNil(o.UsageService) {
+	if o != nil && o.UsageService.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetUsageService gets a reference to the given string and assigns it to the UsageService field.
+// SetUsageService gets a reference to the given NullableString and assigns it to the UsageService field.
 func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) SetUsageService(v string) {
-	o.UsageService = &v
+	o.UsageService.Set(&v)
+}
+
+// SetUsageServiceNil sets the value for UsageService to be an explicit nil
+func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) SetUsageServiceNil() {
+	o.UsageService.Set(nil)
+}
+
+// UnsetUsageService ensures that no value is present for UsageService, not even an explicit nil
+func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) UnsetUsageService() {
+	o.UsageService.Unset()
 }
 
 // GetItemUsage returns the ItemUsage field value if set, zero value otherwise.
@@ -1040,100 +1183,133 @@ func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) SetItemTax(v int64)
 	o.ItemTax = &v
 }
 
-// GetItemTerm returns the ItemTerm field value if set, zero value otherwise.
+// GetItemTerm returns the ItemTerm field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) GetItemTerm() string {
-	if o == nil || IsNil(o.ItemTerm) {
+	if o == nil || IsNil(o.ItemTerm.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ItemTerm
+	return *o.ItemTerm.Get()
 }
 
 // GetItemTermOk returns a tuple with the ItemTerm field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) GetItemTermOk() (*string, bool) {
-	if o == nil || IsNil(o.ItemTerm) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ItemTerm, true
+	return o.ItemTerm.Get(), o.ItemTerm.IsSet()
 }
 
 // IsSetItemTerm returns a boolean if a field has been set.
 func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) IsSetItemTerm() bool {
-	if o != nil && !IsNil(o.ItemTerm) {
+	if o != nil && o.ItemTerm.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetItemTerm gets a reference to the given string and assigns it to the ItemTerm field.
+// SetItemTerm gets a reference to the given NullableString and assigns it to the ItemTerm field.
 func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) SetItemTerm(v string) {
-	o.ItemTerm = &v
+	o.ItemTerm.Set(&v)
 }
 
-// GetTaxType returns the TaxType field value if set, zero value otherwise.
+// SetItemTermNil sets the value for ItemTerm to be an explicit nil
+func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) SetItemTermNil() {
+	o.ItemTerm.Set(nil)
+}
+
+// UnsetItemTerm ensures that no value is present for ItemTerm, not even an explicit nil
+func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) UnsetItemTerm() {
+	o.ItemTerm.Unset()
+}
+
+// GetTaxType returns the TaxType field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) GetTaxType() string {
-	if o == nil || IsNil(o.TaxType) {
+	if o == nil || IsNil(o.TaxType.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.TaxType
+	return *o.TaxType.Get()
 }
 
 // GetTaxTypeOk returns a tuple with the TaxType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) GetTaxTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.TaxType) {
+	if o == nil {
 		return nil, false
 	}
-	return o.TaxType, true
+	return o.TaxType.Get(), o.TaxType.IsSet()
 }
 
 // IsSetTaxType returns a boolean if a field has been set.
 func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) IsSetTaxType() bool {
-	if o != nil && !IsNil(o.TaxType) {
+	if o != nil && o.TaxType.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetTaxType gets a reference to the given string and assigns it to the TaxType field.
+// SetTaxType gets a reference to the given NullableString and assigns it to the TaxType field.
 func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) SetTaxType(v string) {
-	o.TaxType = &v
+	o.TaxType.Set(&v)
 }
 
-// GetRegionCode returns the RegionCode field value if set, zero value otherwise.
+// SetTaxTypeNil sets the value for TaxType to be an explicit nil
+func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) SetTaxTypeNil() {
+	o.TaxType.Set(nil)
+}
+
+// UnsetTaxType ensures that no value is present for TaxType, not even an explicit nil
+func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) UnsetTaxType() {
+	o.TaxType.Unset()
+}
+
+// GetRegionCode returns the RegionCode field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) GetRegionCode() string {
-	if o == nil || IsNil(o.RegionCode) {
+	if o == nil || IsNil(o.RegionCode.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.RegionCode
+	return *o.RegionCode.Get()
 }
 
 // GetRegionCodeOk returns a tuple with the RegionCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) GetRegionCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.RegionCode) {
+	if o == nil {
 		return nil, false
 	}
-	return o.RegionCode, true
+	return o.RegionCode.Get(), o.RegionCode.IsSet()
 }
 
 // IsSetRegionCode returns a boolean if a field has been set.
 func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) IsSetRegionCode() bool {
-	if o != nil && !IsNil(o.RegionCode) {
+	if o != nil && o.RegionCode.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetRegionCode gets a reference to the given string and assigns it to the RegionCode field.
+// SetRegionCode gets a reference to the given NullableString and assigns it to the RegionCode field.
 func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) SetRegionCode(v string) {
-	o.RegionCode = &v
+	o.RegionCode.Set(&v)
+}
+
+// SetRegionCodeNil sets the value for RegionCode to be an explicit nil
+func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) SetRegionCodeNil() {
+	o.RegionCode.Set(nil)
+}
+
+// UnsetRegionCode ensures that no value is present for RegionCode, not even an explicit nil
+func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) UnsetRegionCode() {
+	o.RegionCode.Unset()
 }
 
 // GetCurrency returns the Currency field value if set, zero value otherwise.
@@ -1295,47 +1471,47 @@ func (o ListInvoiceLineItems200ResponseAllOfLineItemsInner) ToMap() (map[string]
 	if !IsNil(o.EndDate) {
 		toSerialize["endDate"] = o.EndDate
 	}
-	if !IsNil(o.ItemId) {
-		toSerialize["itemId"] = o.ItemId
+	if o.ItemId.IsSet() {
+		toSerialize["itemId"] = o.ItemId.Get()
 	}
-	if !IsNil(o.ItemType) {
-		toSerialize["itemType"] = o.ItemType
+	if o.ItemType.IsSet() {
+		toSerialize["itemType"] = o.ItemType.Get()
 	}
-	if !IsNil(o.ItemName) {
-		toSerialize["itemName"] = o.ItemName
+	if o.ItemName.IsSet() {
+		toSerialize["itemName"] = o.ItemName.Get()
 	}
-	if !IsNil(o.ItemDescription) {
-		toSerialize["itemDescription"] = o.ItemDescription
+	if o.ItemDescription.IsSet() {
+		toSerialize["itemDescription"] = o.ItemDescription.Get()
 	}
-	if !IsNil(o.ProductId) {
-		toSerialize["productId"] = o.ProductId
+	if o.ProductId.IsSet() {
+		toSerialize["productId"] = o.ProductId.Get()
 	}
-	if !IsNil(o.ProductCode) {
-		toSerialize["productCode"] = o.ProductCode
+	if o.ProductCode.IsSet() {
+		toSerialize["productCode"] = o.ProductCode.Get()
 	}
-	if !IsNil(o.ProductName) {
-		toSerialize["productName"] = o.ProductName
+	if o.ProductName.IsSet() {
+		toSerialize["productName"] = o.ProductName.Get()
 	}
-	if !IsNil(o.ItemSeller) {
-		toSerialize["itemSeller"] = o.ItemSeller
+	if o.ItemSeller.IsSet() {
+		toSerialize["itemSeller"] = o.ItemSeller.Get()
 	}
-	if !IsNil(o.ItemAction) {
-		toSerialize["itemAction"] = o.ItemAction
+	if o.ItemAction.IsSet() {
+		toSerialize["itemAction"] = o.ItemAction.Get()
 	}
 	if !IsNil(o.ExternalId) {
 		toSerialize["externalId"] = o.ExternalId
 	}
-	if !IsNil(o.RateId) {
-		toSerialize["rateId"] = o.RateId
+	if o.RateId.IsSet() {
+		toSerialize["rateId"] = o.RateId.Get()
 	}
-	if !IsNil(o.RateClass) {
-		toSerialize["rateClass"] = o.RateClass
+	if o.RateClass.IsSet() {
+		toSerialize["rateClass"] = o.RateClass.Get()
 	}
 	if !IsNil(o.RateUnit) {
 		toSerialize["rateUnit"] = o.RateUnit
 	}
-	if !IsNil(o.RateTerm) {
-		toSerialize["rateTerm"] = o.RateTerm
+	if o.RateTerm.IsSet() {
+		toSerialize["rateTerm"] = o.RateTerm.Get()
 	}
 	if !IsNil(o.UsageType) {
 		toSerialize["usageType"] = o.UsageType
@@ -1343,8 +1519,8 @@ func (o ListInvoiceLineItems200ResponseAllOfLineItemsInner) ToMap() (map[string]
 	if !IsNil(o.UsageCategory) {
 		toSerialize["usageCategory"] = o.UsageCategory
 	}
-	if !IsNil(o.UsageService) {
-		toSerialize["usageService"] = o.UsageService
+	if o.UsageService.IsSet() {
+		toSerialize["usageService"] = o.UsageService.Get()
 	}
 	if !IsNil(o.ItemUsage) {
 		toSerialize["itemUsage"] = o.ItemUsage
@@ -1364,14 +1540,14 @@ func (o ListInvoiceLineItems200ResponseAllOfLineItemsInner) ToMap() (map[string]
 	if !IsNil(o.ItemTax) {
 		toSerialize["itemTax"] = o.ItemTax
 	}
-	if !IsNil(o.ItemTerm) {
-		toSerialize["itemTerm"] = o.ItemTerm
+	if o.ItemTerm.IsSet() {
+		toSerialize["itemTerm"] = o.ItemTerm.Get()
 	}
-	if !IsNil(o.TaxType) {
-		toSerialize["taxType"] = o.TaxType
+	if o.TaxType.IsSet() {
+		toSerialize["taxType"] = o.TaxType.Get()
 	}
-	if !IsNil(o.RegionCode) {
-		toSerialize["regionCode"] = o.RegionCode
+	if o.RegionCode.IsSet() {
+		toSerialize["regionCode"] = o.RegionCode.Get()
 	}
 	if !IsNil(o.Currency) {
 		toSerialize["currency"] = o.Currency

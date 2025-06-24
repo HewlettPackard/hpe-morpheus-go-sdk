@@ -23,7 +23,7 @@ type ListReports200ResponseAllOfReportResultsInnerRowsInner struct {
 	Id                   *int64                 `json:"id,omitempty"`
 	Section              *string                `json:"section,omitempty"`
 	Data                 *string                `json:"data,omitempty"`
-	DisplayOrder         *string                `json:"displayOrder,omitempty"`
+	DisplayOrder         NullableString         `json:"displayOrder,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -142,36 +142,47 @@ func (o *ListReports200ResponseAllOfReportResultsInnerRowsInner) SetData(v strin
 	o.Data = &v
 }
 
-// GetDisplayOrder returns the DisplayOrder field value if set, zero value otherwise.
+// GetDisplayOrder returns the DisplayOrder field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListReports200ResponseAllOfReportResultsInnerRowsInner) GetDisplayOrder() string {
-	if o == nil || IsNil(o.DisplayOrder) {
+	if o == nil || IsNil(o.DisplayOrder.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.DisplayOrder
+	return *o.DisplayOrder.Get()
 }
 
 // GetDisplayOrderOk returns a tuple with the DisplayOrder field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListReports200ResponseAllOfReportResultsInnerRowsInner) GetDisplayOrderOk() (*string, bool) {
-	if o == nil || IsNil(o.DisplayOrder) {
+	if o == nil {
 		return nil, false
 	}
-	return o.DisplayOrder, true
+	return o.DisplayOrder.Get(), o.DisplayOrder.IsSet()
 }
 
 // IsSetDisplayOrder returns a boolean if a field has been set.
 func (o *ListReports200ResponseAllOfReportResultsInnerRowsInner) IsSetDisplayOrder() bool {
-	if o != nil && !IsNil(o.DisplayOrder) {
+	if o != nil && o.DisplayOrder.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDisplayOrder gets a reference to the given string and assigns it to the DisplayOrder field.
+// SetDisplayOrder gets a reference to the given NullableString and assigns it to the DisplayOrder field.
 func (o *ListReports200ResponseAllOfReportResultsInnerRowsInner) SetDisplayOrder(v string) {
-	o.DisplayOrder = &v
+	o.DisplayOrder.Set(&v)
+}
+
+// SetDisplayOrderNil sets the value for DisplayOrder to be an explicit nil
+func (o *ListReports200ResponseAllOfReportResultsInnerRowsInner) SetDisplayOrderNil() {
+	o.DisplayOrder.Set(nil)
+}
+
+// UnsetDisplayOrder ensures that no value is present for DisplayOrder, not even an explicit nil
+func (o *ListReports200ResponseAllOfReportResultsInnerRowsInner) UnsetDisplayOrder() {
+	o.DisplayOrder.Unset()
 }
 
 func (o ListReports200ResponseAllOfReportResultsInnerRowsInner) MarshalJSON() ([]byte, error) {
@@ -193,8 +204,8 @@ func (o ListReports200ResponseAllOfReportResultsInnerRowsInner) ToMap() (map[str
 	if !IsNil(o.Data) {
 		toSerialize["data"] = o.Data
 	}
-	if !IsNil(o.DisplayOrder) {
-		toSerialize["displayOrder"] = o.DisplayOrder
+	if o.DisplayOrder.IsSet() {
+		toSerialize["displayOrder"] = o.DisplayOrder.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {

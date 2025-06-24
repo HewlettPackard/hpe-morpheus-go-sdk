@@ -12,21 +12,21 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** |  | [optional] 
 **MaxStorage** | Pointer to **float32** |  | [optional] 
 **MaxMemory** | Pointer to **float32** |  | [optional] 
-**MaxCpu** | Pointer to **float32** |  | [optional] 
-**MaxCores** | Pointer to **float32** |  | [optional] 
-**MaxDisks** | Pointer to **float32** |  | [optional] 
+**MaxCpu** | Pointer to **NullableFloat32** |  | [optional] 
+**MaxCores** | Pointer to **NullableFloat32** |  | [optional] 
+**MaxDisks** | Pointer to **NullableFloat32** |  | [optional] 
 **CoresPerSocket** | Pointer to **float32** |  | [optional] 
 **CustomCpu** | Pointer to **bool** |  | [optional] 
 **CustomCores** | Pointer to **bool** |  | [optional] 
-**CustomMaxStorage** | Pointer to **bool** |  | [optional] 
-**CustomMaxDataStorage** | Pointer to **bool** |  | [optional] 
-**CustomMaxMemory** | Pointer to **bool** |  | [optional] 
-**AddVolumes** | Pointer to **bool** |  | [optional] 
-**MemoryOptionSource** | Pointer to **string** |  | [optional] 
-**CpuOptionSource** | Pointer to **string** |  | [optional] 
+**CustomMaxStorage** | Pointer to **NullableBool** |  | [optional] 
+**CustomMaxDataStorage** | Pointer to **NullableBool** |  | [optional] 
+**CustomMaxMemory** | Pointer to **NullableBool** |  | [optional] 
+**AddVolumes** | Pointer to **NullableBool** |  | [optional] 
+**MemoryOptionSource** | Pointer to **NullableString** |  | [optional] 
+**CpuOptionSource** | Pointer to **NullableString** |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
-**RegionCode** | Pointer to **string** |  | [optional] 
+**RegionCode** | Pointer to **NullableString** |  | [optional] 
 **Visibility** | Pointer to **string** |  | [optional] 
 **Editable** | Pointer to **bool** |  | [optional] 
 **ProvisionType** | Pointer to [**ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionProvisionType**](ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionProvisionType.md) |  | [optional] 
@@ -280,6 +280,16 @@ SetMaxCpu sets MaxCpu field to given value.
 
 HasMaxCpu returns a boolean if a field has been set.
 
+### SetMaxCpuNil
+
+`func (o *ServicePlan) SetMaxCpuNil(b bool)`
+
+ SetMaxCpuNil sets the value for MaxCpu to be an explicit nil
+
+### UnsetMaxCpu
+`func (o *ServicePlan) UnsetMaxCpu()`
+
+UnsetMaxCpu ensures that no value is present for MaxCpu, not even an explicit nil
 ### GetMaxCores
 
 `func (o *ServicePlan) GetMaxCores() float32`
@@ -305,6 +315,16 @@ SetMaxCores sets MaxCores field to given value.
 
 HasMaxCores returns a boolean if a field has been set.
 
+### SetMaxCoresNil
+
+`func (o *ServicePlan) SetMaxCoresNil(b bool)`
+
+ SetMaxCoresNil sets the value for MaxCores to be an explicit nil
+
+### UnsetMaxCores
+`func (o *ServicePlan) UnsetMaxCores()`
+
+UnsetMaxCores ensures that no value is present for MaxCores, not even an explicit nil
 ### GetMaxDisks
 
 `func (o *ServicePlan) GetMaxDisks() float32`
@@ -330,6 +350,16 @@ SetMaxDisks sets MaxDisks field to given value.
 
 HasMaxDisks returns a boolean if a field has been set.
 
+### SetMaxDisksNil
+
+`func (o *ServicePlan) SetMaxDisksNil(b bool)`
+
+ SetMaxDisksNil sets the value for MaxDisks to be an explicit nil
+
+### UnsetMaxDisks
+`func (o *ServicePlan) UnsetMaxDisks()`
+
+UnsetMaxDisks ensures that no value is present for MaxDisks, not even an explicit nil
 ### GetCoresPerSocket
 
 `func (o *ServicePlan) GetCoresPerSocket() float32`
@@ -430,6 +460,16 @@ SetCustomMaxStorage sets CustomMaxStorage field to given value.
 
 HasCustomMaxStorage returns a boolean if a field has been set.
 
+### SetCustomMaxStorageNil
+
+`func (o *ServicePlan) SetCustomMaxStorageNil(b bool)`
+
+ SetCustomMaxStorageNil sets the value for CustomMaxStorage to be an explicit nil
+
+### UnsetCustomMaxStorage
+`func (o *ServicePlan) UnsetCustomMaxStorage()`
+
+UnsetCustomMaxStorage ensures that no value is present for CustomMaxStorage, not even an explicit nil
 ### GetCustomMaxDataStorage
 
 `func (o *ServicePlan) GetCustomMaxDataStorage() bool`
@@ -455,6 +495,16 @@ SetCustomMaxDataStorage sets CustomMaxDataStorage field to given value.
 
 HasCustomMaxDataStorage returns a boolean if a field has been set.
 
+### SetCustomMaxDataStorageNil
+
+`func (o *ServicePlan) SetCustomMaxDataStorageNil(b bool)`
+
+ SetCustomMaxDataStorageNil sets the value for CustomMaxDataStorage to be an explicit nil
+
+### UnsetCustomMaxDataStorage
+`func (o *ServicePlan) UnsetCustomMaxDataStorage()`
+
+UnsetCustomMaxDataStorage ensures that no value is present for CustomMaxDataStorage, not even an explicit nil
 ### GetCustomMaxMemory
 
 `func (o *ServicePlan) GetCustomMaxMemory() bool`
@@ -480,6 +530,16 @@ SetCustomMaxMemory sets CustomMaxMemory field to given value.
 
 HasCustomMaxMemory returns a boolean if a field has been set.
 
+### SetCustomMaxMemoryNil
+
+`func (o *ServicePlan) SetCustomMaxMemoryNil(b bool)`
+
+ SetCustomMaxMemoryNil sets the value for CustomMaxMemory to be an explicit nil
+
+### UnsetCustomMaxMemory
+`func (o *ServicePlan) UnsetCustomMaxMemory()`
+
+UnsetCustomMaxMemory ensures that no value is present for CustomMaxMemory, not even an explicit nil
 ### GetAddVolumes
 
 `func (o *ServicePlan) GetAddVolumes() bool`
@@ -505,6 +565,16 @@ SetAddVolumes sets AddVolumes field to given value.
 
 HasAddVolumes returns a boolean if a field has been set.
 
+### SetAddVolumesNil
+
+`func (o *ServicePlan) SetAddVolumesNil(b bool)`
+
+ SetAddVolumesNil sets the value for AddVolumes to be an explicit nil
+
+### UnsetAddVolumes
+`func (o *ServicePlan) UnsetAddVolumes()`
+
+UnsetAddVolumes ensures that no value is present for AddVolumes, not even an explicit nil
 ### GetMemoryOptionSource
 
 `func (o *ServicePlan) GetMemoryOptionSource() string`
@@ -530,6 +600,16 @@ SetMemoryOptionSource sets MemoryOptionSource field to given value.
 
 HasMemoryOptionSource returns a boolean if a field has been set.
 
+### SetMemoryOptionSourceNil
+
+`func (o *ServicePlan) SetMemoryOptionSourceNil(b bool)`
+
+ SetMemoryOptionSourceNil sets the value for MemoryOptionSource to be an explicit nil
+
+### UnsetMemoryOptionSource
+`func (o *ServicePlan) UnsetMemoryOptionSource()`
+
+UnsetMemoryOptionSource ensures that no value is present for MemoryOptionSource, not even an explicit nil
 ### GetCpuOptionSource
 
 `func (o *ServicePlan) GetCpuOptionSource() string`
@@ -555,6 +635,16 @@ SetCpuOptionSource sets CpuOptionSource field to given value.
 
 HasCpuOptionSource returns a boolean if a field has been set.
 
+### SetCpuOptionSourceNil
+
+`func (o *ServicePlan) SetCpuOptionSourceNil(b bool)`
+
+ SetCpuOptionSourceNil sets the value for CpuOptionSource to be an explicit nil
+
+### UnsetCpuOptionSource
+`func (o *ServicePlan) UnsetCpuOptionSource()`
+
+UnsetCpuOptionSource ensures that no value is present for CpuOptionSource, not even an explicit nil
 ### GetDateCreated
 
 `func (o *ServicePlan) GetDateCreated() time.Time`
@@ -630,6 +720,16 @@ SetRegionCode sets RegionCode field to given value.
 
 HasRegionCode returns a boolean if a field has been set.
 
+### SetRegionCodeNil
+
+`func (o *ServicePlan) SetRegionCodeNil(b bool)`
+
+ SetRegionCodeNil sets the value for RegionCode to be an explicit nil
+
+### UnsetRegionCode
+`func (o *ServicePlan) UnsetRegionCode()`
+
+UnsetRegionCode ensures that no value is present for RegionCode, not even an explicit nil
 ### GetVisibility
 
 `func (o *ServicePlan) GetVisibility() string`
@@ -755,6 +855,16 @@ SetPriceSets sets PriceSets field to given value.
 
 HasPriceSets returns a boolean if a field has been set.
 
+### SetPriceSetsNil
+
+`func (o *ServicePlan) SetPriceSetsNil(b bool)`
+
+ SetPriceSetsNil sets the value for PriceSets to be an explicit nil
+
+### UnsetPriceSets
+`func (o *ServicePlan) UnsetPriceSets()`
+
+UnsetPriceSets ensures that no value is present for PriceSets, not even an explicit nil
 ### GetConfig
 
 `func (o *ServicePlan) GetConfig() ListServicePlans200ResponseAllOfServicePlansInnerConfig`

@@ -79,6 +79,16 @@ SetBusyQueues sets BusyQueues field to given value.
 
 HasBusyQueues returns a boolean if a field has been set.
 
+### SetBusyQueuesNil
+
+`func (o *ListHealth200ResponseAllOfHealthRabbit) SetBusyQueuesNil(b bool)`
+
+ SetBusyQueuesNil sets the value for BusyQueues to be an explicit nil
+
+### UnsetBusyQueues
+`func (o *ListHealth200ResponseAllOfHealthRabbit) UnsetBusyQueues()`
+
+UnsetBusyQueues ensures that no value is present for BusyQueues, not even an explicit nil
 ### GetErrorQueues
 
 `func (o *ListHealth200ResponseAllOfHealthRabbit) GetErrorQueues() []map[string]interface{}`
@@ -104,6 +114,16 @@ SetErrorQueues sets ErrorQueues field to given value.
 
 HasErrorQueues returns a boolean if a field has been set.
 
+### SetErrorQueuesNil
+
+`func (o *ListHealth200ResponseAllOfHealthRabbit) SetErrorQueuesNil(b bool)`
+
+ SetErrorQueuesNil sets the value for ErrorQueues to be an explicit nil
+
+### UnsetErrorQueues
+`func (o *ListHealth200ResponseAllOfHealthRabbit) UnsetErrorQueues()`
+
+UnsetErrorQueues ensures that no value is present for ErrorQueues, not even an explicit nil
 ### GetStatus
 
 `func (o *ListHealth200ResponseAllOfHealthRabbit) GetStatus() string`

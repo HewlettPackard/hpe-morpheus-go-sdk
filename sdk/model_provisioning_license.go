@@ -20,20 +20,20 @@ var _ MappedNullable = &ProvisioningLicense{}
 
 // ProvisioningLicense struct for ProvisioningLicense
 type ProvisioningLicense struct {
-	Id                   *int64                                                                   `json:"id,omitempty"`
-	Name                 *string                                                                  `json:"name,omitempty"`
-	Description          *string                                                                  `json:"description,omitempty"`
-	LicenseType          *ListBackupSettings200ResponseBackupSettingsDefaultSchedule              `json:"licenseType,omitempty"`
-	LicenseKey           *string                                                                  `json:"licenseKey,omitempty"`
-	OrgName              *string                                                                  `json:"orgName,omitempty"`
-	FullName             *string                                                                  `json:"fullName,omitempty"`
-	LicenseVersion       *string                                                                  `json:"licenseVersion,omitempty"`
-	Copies               *int64                                                                   `json:"copies,omitempty"`
-	ReservationCount     *int64                                                                   `json:"reservationCount,omitempty"`
-	Tenants              []map[string]interface{}                                                 `json:"tenants,omitempty"`
-	VirtualImages        []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"virtualImages,omitempty"`
-	Account              *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner  `json:"account,omitempty"`
-	AdditionalProperties map[string]interface{}                                                   `json:",remain"`
+	Id                   *int64                                                      `json:"id,omitempty"`
+	Name                 *string                                                     `json:"name,omitempty"`
+	Description          *string                                                     `json:"description,omitempty"`
+	LicenseType          *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"licenseType,omitempty"`
+	LicenseKey           *string                                                     `json:"licenseKey,omitempty"`
+	OrgName              *string                                                     `json:"orgName,omitempty"`
+	FullName             *string                                                     `json:"fullName,omitempty"`
+	LicenseVersion       *string                                                     `json:"licenseVersion,omitempty"`
+	Copies               *int64                                                      `json:"copies,omitempty"`
+	ReservationCount     *int64                                                      `json:"reservationCount,omitempty"`
+	Tenants              []map[string]interface{}                                    `json:"tenants,omitempty"`
+	VirtualImages        []GetAlerts200ResponseAllOfCheckGroupsInnerInstance         `json:"virtualImages,omitempty"`
+	Account              *GetAlerts200ResponseAllOfCheckGroupsInnerInstance          `json:"account,omitempty"`
+	AdditionalProperties map[string]interface{}                                      `json:",remain"`
 }
 
 type _ProvisioningLicense ProvisioningLicense
@@ -408,9 +408,9 @@ func (o *ProvisioningLicense) SetTenants(v []map[string]interface{}) {
 }
 
 // GetVirtualImages returns the VirtualImages field value if set, zero value otherwise.
-func (o *ProvisioningLicense) GetVirtualImages() []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *ProvisioningLicense) GetVirtualImages() []GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.VirtualImages) {
-		var ret []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret []GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return o.VirtualImages
@@ -418,7 +418,7 @@ func (o *ProvisioningLicense) GetVirtualImages() []ListApplianceSettings200Respo
 
 // GetVirtualImagesOk returns a tuple with the VirtualImages field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ProvisioningLicense) GetVirtualImagesOk() ([]ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *ProvisioningLicense) GetVirtualImagesOk() ([]GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.VirtualImages) {
 		return nil, false
 	}
@@ -434,15 +434,15 @@ func (o *ProvisioningLicense) IsSetVirtualImages() bool {
 	return false
 }
 
-// SetVirtualImages gets a reference to the given []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the VirtualImages field.
-func (o *ProvisioningLicense) SetVirtualImages(v []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetVirtualImages gets a reference to the given []GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the VirtualImages field.
+func (o *ProvisioningLicense) SetVirtualImages(v []GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.VirtualImages = v
 }
 
 // GetAccount returns the Account field value if set, zero value otherwise.
-func (o *ProvisioningLicense) GetAccount() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *ProvisioningLicense) GetAccount() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.Account) {
-		var ret ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return *o.Account
@@ -450,7 +450,7 @@ func (o *ProvisioningLicense) GetAccount() ListApplianceSettings200ResponseAppli
 
 // GetAccountOk returns a tuple with the Account field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ProvisioningLicense) GetAccountOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *ProvisioningLicense) GetAccountOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.Account) {
 		return nil, false
 	}
@@ -466,8 +466,8 @@ func (o *ProvisioningLicense) IsSetAccount() bool {
 	return false
 }
 
-// SetAccount gets a reference to the given ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the Account field.
-func (o *ProvisioningLicense) SetAccount(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetAccount gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Account field.
+func (o *ProvisioningLicense) SetAccount(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.Account = &v
 }
 

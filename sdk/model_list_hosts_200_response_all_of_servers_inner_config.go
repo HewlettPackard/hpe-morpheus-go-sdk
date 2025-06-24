@@ -20,17 +20,17 @@ var _ MappedNullable = &ListHosts200ResponseAllOfServersInnerConfig{}
 
 // ListHosts200ResponseAllOfServersInnerConfig struct for ListHosts200ResponseAllOfServersInnerConfig
 type ListHosts200ResponseAllOfServersInnerConfig struct {
-	PoolProviderType     *string                                                `json:"poolProviderType,omitempty"`
+	PoolProviderType     NullableString                                         `json:"poolProviderType,omitempty"`
 	IsVpcSelectable      *bool                                                  `json:"isVpcSelectable,omitempty"`
-	SmbiosAssetTag       *string                                                `json:"smbiosAssetTag,omitempty"`
+	SmbiosAssetTag       NullableString                                         `json:"smbiosAssetTag,omitempty"`
 	IsEC2                *bool                                                  `json:"isEC2,omitempty"`
 	ResourcePoolId       *int64                                                 `json:"resourcePoolId,omitempty"`
-	HostId               *int64                                                 `json:"hostId,omitempty"`
+	HostId               NullableInt64                                          `json:"hostId,omitempty"`
 	CreateUser           *ListHosts200ResponseAllOfServersInnerConfigCreateUser `json:"createUser,omitempty"`
-	NestedVirtualization *string                                                `json:"nestedVirtualization,omitempty"`
+	NestedVirtualization NullableString                                         `json:"nestedVirtualization,omitempty"`
 	VmwareFolderId       *string                                                `json:"vmwareFolderId,omitempty"`
 	NoAgent              *bool                                                  `json:"noAgent,omitempty"`
-	PowerScheduleType    *int64                                                 `json:"powerScheduleType,omitempty"`
+	PowerScheduleType    NullableInt64                                          `json:"powerScheduleType,omitempty"`
 	AdditionalProperties map[string]interface{}                                 `json:",remain"`
 }
 
@@ -53,36 +53,47 @@ func NewListHosts200ResponseAllOfServersInnerConfigWithDefaults() *ListHosts200R
 	return &this
 }
 
-// GetPoolProviderType returns the PoolProviderType field value if set, zero value otherwise.
+// GetPoolProviderType returns the PoolProviderType field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListHosts200ResponseAllOfServersInnerConfig) GetPoolProviderType() string {
-	if o == nil || IsNil(o.PoolProviderType) {
+	if o == nil || IsNil(o.PoolProviderType.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.PoolProviderType
+	return *o.PoolProviderType.Get()
 }
 
 // GetPoolProviderTypeOk returns a tuple with the PoolProviderType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListHosts200ResponseAllOfServersInnerConfig) GetPoolProviderTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.PoolProviderType) {
+	if o == nil {
 		return nil, false
 	}
-	return o.PoolProviderType, true
+	return o.PoolProviderType.Get(), o.PoolProviderType.IsSet()
 }
 
 // IsSetPoolProviderType returns a boolean if a field has been set.
 func (o *ListHosts200ResponseAllOfServersInnerConfig) IsSetPoolProviderType() bool {
-	if o != nil && !IsNil(o.PoolProviderType) {
+	if o != nil && o.PoolProviderType.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetPoolProviderType gets a reference to the given string and assigns it to the PoolProviderType field.
+// SetPoolProviderType gets a reference to the given NullableString and assigns it to the PoolProviderType field.
 func (o *ListHosts200ResponseAllOfServersInnerConfig) SetPoolProviderType(v string) {
-	o.PoolProviderType = &v
+	o.PoolProviderType.Set(&v)
+}
+
+// SetPoolProviderTypeNil sets the value for PoolProviderType to be an explicit nil
+func (o *ListHosts200ResponseAllOfServersInnerConfig) SetPoolProviderTypeNil() {
+	o.PoolProviderType.Set(nil)
+}
+
+// UnsetPoolProviderType ensures that no value is present for PoolProviderType, not even an explicit nil
+func (o *ListHosts200ResponseAllOfServersInnerConfig) UnsetPoolProviderType() {
+	o.PoolProviderType.Unset()
 }
 
 // GetIsVpcSelectable returns the IsVpcSelectable field value if set, zero value otherwise.
@@ -117,36 +128,47 @@ func (o *ListHosts200ResponseAllOfServersInnerConfig) SetIsVpcSelectable(v bool)
 	o.IsVpcSelectable = &v
 }
 
-// GetSmbiosAssetTag returns the SmbiosAssetTag field value if set, zero value otherwise.
+// GetSmbiosAssetTag returns the SmbiosAssetTag field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListHosts200ResponseAllOfServersInnerConfig) GetSmbiosAssetTag() string {
-	if o == nil || IsNil(o.SmbiosAssetTag) {
+	if o == nil || IsNil(o.SmbiosAssetTag.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.SmbiosAssetTag
+	return *o.SmbiosAssetTag.Get()
 }
 
 // GetSmbiosAssetTagOk returns a tuple with the SmbiosAssetTag field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListHosts200ResponseAllOfServersInnerConfig) GetSmbiosAssetTagOk() (*string, bool) {
-	if o == nil || IsNil(o.SmbiosAssetTag) {
+	if o == nil {
 		return nil, false
 	}
-	return o.SmbiosAssetTag, true
+	return o.SmbiosAssetTag.Get(), o.SmbiosAssetTag.IsSet()
 }
 
 // IsSetSmbiosAssetTag returns a boolean if a field has been set.
 func (o *ListHosts200ResponseAllOfServersInnerConfig) IsSetSmbiosAssetTag() bool {
-	if o != nil && !IsNil(o.SmbiosAssetTag) {
+	if o != nil && o.SmbiosAssetTag.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetSmbiosAssetTag gets a reference to the given string and assigns it to the SmbiosAssetTag field.
+// SetSmbiosAssetTag gets a reference to the given NullableString and assigns it to the SmbiosAssetTag field.
 func (o *ListHosts200ResponseAllOfServersInnerConfig) SetSmbiosAssetTag(v string) {
-	o.SmbiosAssetTag = &v
+	o.SmbiosAssetTag.Set(&v)
+}
+
+// SetSmbiosAssetTagNil sets the value for SmbiosAssetTag to be an explicit nil
+func (o *ListHosts200ResponseAllOfServersInnerConfig) SetSmbiosAssetTagNil() {
+	o.SmbiosAssetTag.Set(nil)
+}
+
+// UnsetSmbiosAssetTag ensures that no value is present for SmbiosAssetTag, not even an explicit nil
+func (o *ListHosts200ResponseAllOfServersInnerConfig) UnsetSmbiosAssetTag() {
+	o.SmbiosAssetTag.Unset()
 }
 
 // GetIsEC2 returns the IsEC2 field value if set, zero value otherwise.
@@ -213,36 +235,47 @@ func (o *ListHosts200ResponseAllOfServersInnerConfig) SetResourcePoolId(v int64)
 	o.ResourcePoolId = &v
 }
 
-// GetHostId returns the HostId field value if set, zero value otherwise.
+// GetHostId returns the HostId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListHosts200ResponseAllOfServersInnerConfig) GetHostId() int64 {
-	if o == nil || IsNil(o.HostId) {
+	if o == nil || IsNil(o.HostId.Get()) {
 		var ret int64
 		return ret
 	}
-	return *o.HostId
+	return *o.HostId.Get()
 }
 
 // GetHostIdOk returns a tuple with the HostId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListHosts200ResponseAllOfServersInnerConfig) GetHostIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.HostId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.HostId, true
+	return o.HostId.Get(), o.HostId.IsSet()
 }
 
 // IsSetHostId returns a boolean if a field has been set.
 func (o *ListHosts200ResponseAllOfServersInnerConfig) IsSetHostId() bool {
-	if o != nil && !IsNil(o.HostId) {
+	if o != nil && o.HostId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetHostId gets a reference to the given int64 and assigns it to the HostId field.
+// SetHostId gets a reference to the given NullableInt64 and assigns it to the HostId field.
 func (o *ListHosts200ResponseAllOfServersInnerConfig) SetHostId(v int64) {
-	o.HostId = &v
+	o.HostId.Set(&v)
+}
+
+// SetHostIdNil sets the value for HostId to be an explicit nil
+func (o *ListHosts200ResponseAllOfServersInnerConfig) SetHostIdNil() {
+	o.HostId.Set(nil)
+}
+
+// UnsetHostId ensures that no value is present for HostId, not even an explicit nil
+func (o *ListHosts200ResponseAllOfServersInnerConfig) UnsetHostId() {
+	o.HostId.Unset()
 }
 
 // GetCreateUser returns the CreateUser field value if set, zero value otherwise.
@@ -277,36 +310,47 @@ func (o *ListHosts200ResponseAllOfServersInnerConfig) SetCreateUser(v ListHosts2
 	o.CreateUser = &v
 }
 
-// GetNestedVirtualization returns the NestedVirtualization field value if set, zero value otherwise.
+// GetNestedVirtualization returns the NestedVirtualization field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListHosts200ResponseAllOfServersInnerConfig) GetNestedVirtualization() string {
-	if o == nil || IsNil(o.NestedVirtualization) {
+	if o == nil || IsNil(o.NestedVirtualization.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.NestedVirtualization
+	return *o.NestedVirtualization.Get()
 }
 
 // GetNestedVirtualizationOk returns a tuple with the NestedVirtualization field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListHosts200ResponseAllOfServersInnerConfig) GetNestedVirtualizationOk() (*string, bool) {
-	if o == nil || IsNil(o.NestedVirtualization) {
+	if o == nil {
 		return nil, false
 	}
-	return o.NestedVirtualization, true
+	return o.NestedVirtualization.Get(), o.NestedVirtualization.IsSet()
 }
 
 // IsSetNestedVirtualization returns a boolean if a field has been set.
 func (o *ListHosts200ResponseAllOfServersInnerConfig) IsSetNestedVirtualization() bool {
-	if o != nil && !IsNil(o.NestedVirtualization) {
+	if o != nil && o.NestedVirtualization.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetNestedVirtualization gets a reference to the given string and assigns it to the NestedVirtualization field.
+// SetNestedVirtualization gets a reference to the given NullableString and assigns it to the NestedVirtualization field.
 func (o *ListHosts200ResponseAllOfServersInnerConfig) SetNestedVirtualization(v string) {
-	o.NestedVirtualization = &v
+	o.NestedVirtualization.Set(&v)
+}
+
+// SetNestedVirtualizationNil sets the value for NestedVirtualization to be an explicit nil
+func (o *ListHosts200ResponseAllOfServersInnerConfig) SetNestedVirtualizationNil() {
+	o.NestedVirtualization.Set(nil)
+}
+
+// UnsetNestedVirtualization ensures that no value is present for NestedVirtualization, not even an explicit nil
+func (o *ListHosts200ResponseAllOfServersInnerConfig) UnsetNestedVirtualization() {
+	o.NestedVirtualization.Unset()
 }
 
 // GetVmwareFolderId returns the VmwareFolderId field value if set, zero value otherwise.
@@ -373,36 +417,47 @@ func (o *ListHosts200ResponseAllOfServersInnerConfig) SetNoAgent(v bool) {
 	o.NoAgent = &v
 }
 
-// GetPowerScheduleType returns the PowerScheduleType field value if set, zero value otherwise.
+// GetPowerScheduleType returns the PowerScheduleType field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListHosts200ResponseAllOfServersInnerConfig) GetPowerScheduleType() int64 {
-	if o == nil || IsNil(o.PowerScheduleType) {
+	if o == nil || IsNil(o.PowerScheduleType.Get()) {
 		var ret int64
 		return ret
 	}
-	return *o.PowerScheduleType
+	return *o.PowerScheduleType.Get()
 }
 
 // GetPowerScheduleTypeOk returns a tuple with the PowerScheduleType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListHosts200ResponseAllOfServersInnerConfig) GetPowerScheduleTypeOk() (*int64, bool) {
-	if o == nil || IsNil(o.PowerScheduleType) {
+	if o == nil {
 		return nil, false
 	}
-	return o.PowerScheduleType, true
+	return o.PowerScheduleType.Get(), o.PowerScheduleType.IsSet()
 }
 
 // IsSetPowerScheduleType returns a boolean if a field has been set.
 func (o *ListHosts200ResponseAllOfServersInnerConfig) IsSetPowerScheduleType() bool {
-	if o != nil && !IsNil(o.PowerScheduleType) {
+	if o != nil && o.PowerScheduleType.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetPowerScheduleType gets a reference to the given int64 and assigns it to the PowerScheduleType field.
+// SetPowerScheduleType gets a reference to the given NullableInt64 and assigns it to the PowerScheduleType field.
 func (o *ListHosts200ResponseAllOfServersInnerConfig) SetPowerScheduleType(v int64) {
-	o.PowerScheduleType = &v
+	o.PowerScheduleType.Set(&v)
+}
+
+// SetPowerScheduleTypeNil sets the value for PowerScheduleType to be an explicit nil
+func (o *ListHosts200ResponseAllOfServersInnerConfig) SetPowerScheduleTypeNil() {
+	o.PowerScheduleType.Set(nil)
+}
+
+// UnsetPowerScheduleType ensures that no value is present for PowerScheduleType, not even an explicit nil
+func (o *ListHosts200ResponseAllOfServersInnerConfig) UnsetPowerScheduleType() {
+	o.PowerScheduleType.Unset()
 }
 
 func (o ListHosts200ResponseAllOfServersInnerConfig) MarshalJSON() ([]byte, error) {
@@ -415,14 +470,14 @@ func (o ListHosts200ResponseAllOfServersInnerConfig) MarshalJSON() ([]byte, erro
 
 func (o ListHosts200ResponseAllOfServersInnerConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.PoolProviderType) {
-		toSerialize["poolProviderType"] = o.PoolProviderType
+	if o.PoolProviderType.IsSet() {
+		toSerialize["poolProviderType"] = o.PoolProviderType.Get()
 	}
 	if !IsNil(o.IsVpcSelectable) {
 		toSerialize["isVpcSelectable"] = o.IsVpcSelectable
 	}
-	if !IsNil(o.SmbiosAssetTag) {
-		toSerialize["smbiosAssetTag"] = o.SmbiosAssetTag
+	if o.SmbiosAssetTag.IsSet() {
+		toSerialize["smbiosAssetTag"] = o.SmbiosAssetTag.Get()
 	}
 	if !IsNil(o.IsEC2) {
 		toSerialize["isEC2"] = o.IsEC2
@@ -430,14 +485,14 @@ func (o ListHosts200ResponseAllOfServersInnerConfig) ToMap() (map[string]interfa
 	if !IsNil(o.ResourcePoolId) {
 		toSerialize["resourcePoolId"] = o.ResourcePoolId
 	}
-	if !IsNil(o.HostId) {
-		toSerialize["hostId"] = o.HostId
+	if o.HostId.IsSet() {
+		toSerialize["hostId"] = o.HostId.Get()
 	}
 	if !IsNil(o.CreateUser) {
 		toSerialize["createUser"] = o.CreateUser
 	}
-	if !IsNil(o.NestedVirtualization) {
-		toSerialize["nestedVirtualization"] = o.NestedVirtualization
+	if o.NestedVirtualization.IsSet() {
+		toSerialize["nestedVirtualization"] = o.NestedVirtualization.Get()
 	}
 	if !IsNil(o.VmwareFolderId) {
 		toSerialize["vmwareFolderId"] = o.VmwareFolderId
@@ -445,8 +500,8 @@ func (o ListHosts200ResponseAllOfServersInnerConfig) ToMap() (map[string]interfa
 	if !IsNil(o.NoAgent) {
 		toSerialize["noAgent"] = o.NoAgent
 	}
-	if !IsNil(o.PowerScheduleType) {
-		toSerialize["powerScheduleType"] = o.PowerScheduleType
+	if o.PowerScheduleType.IsSet() {
+		toSerialize["powerScheduleType"] = o.PowerScheduleType.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {

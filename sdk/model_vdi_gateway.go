@@ -23,9 +23,9 @@ var _ MappedNullable = &VdiGateway{}
 type VdiGateway struct {
 	Id                   *int64                 `json:"id,omitempty"`
 	Name                 *string                `json:"name,omitempty"`
-	Description          *string                `json:"description,omitempty"`
-	GatewayUrl           *string                `json:"gatewayUrl,omitempty"`
-	ApiKey               *string                `json:"apiKey,omitempty"`
+	Description          NullableString         `json:"description,omitempty"`
+	GatewayUrl           NullableString         `json:"gatewayUrl,omitempty"`
+	ApiKey               NullableString         `json:"apiKey,omitempty"`
 	DateCreated          *time.Time             `json:"dateCreated,omitempty"`
 	LastUpdated          *time.Time             `json:"lastUpdated,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
@@ -114,100 +114,133 @@ func (o *VdiGateway) SetName(v string) {
 	o.Name = &v
 }
 
-// GetDescription returns the Description field value if set, zero value otherwise.
+// GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VdiGateway) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
+	if o == nil || IsNil(o.Description.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Description
+	return *o.Description.Get()
 }
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VdiGateway) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Description, true
+	return o.Description.Get(), o.Description.IsSet()
 }
 
 // IsSetDescription returns a boolean if a field has been set.
 func (o *VdiGateway) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
+	if o != nil && o.Description.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDescription gets a reference to the given string and assigns it to the Description field.
+// SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *VdiGateway) SetDescription(v string) {
-	o.Description = &v
+	o.Description.Set(&v)
 }
 
-// GetGatewayUrl returns the GatewayUrl field value if set, zero value otherwise.
+// SetDescriptionNil sets the value for Description to be an explicit nil
+func (o *VdiGateway) SetDescriptionNil() {
+	o.Description.Set(nil)
+}
+
+// UnsetDescription ensures that no value is present for Description, not even an explicit nil
+func (o *VdiGateway) UnsetDescription() {
+	o.Description.Unset()
+}
+
+// GetGatewayUrl returns the GatewayUrl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VdiGateway) GetGatewayUrl() string {
-	if o == nil || IsNil(o.GatewayUrl) {
+	if o == nil || IsNil(o.GatewayUrl.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.GatewayUrl
+	return *o.GatewayUrl.Get()
 }
 
 // GetGatewayUrlOk returns a tuple with the GatewayUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VdiGateway) GetGatewayUrlOk() (*string, bool) {
-	if o == nil || IsNil(o.GatewayUrl) {
+	if o == nil {
 		return nil, false
 	}
-	return o.GatewayUrl, true
+	return o.GatewayUrl.Get(), o.GatewayUrl.IsSet()
 }
 
 // IsSetGatewayUrl returns a boolean if a field has been set.
 func (o *VdiGateway) IsSetGatewayUrl() bool {
-	if o != nil && !IsNil(o.GatewayUrl) {
+	if o != nil && o.GatewayUrl.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetGatewayUrl gets a reference to the given string and assigns it to the GatewayUrl field.
+// SetGatewayUrl gets a reference to the given NullableString and assigns it to the GatewayUrl field.
 func (o *VdiGateway) SetGatewayUrl(v string) {
-	o.GatewayUrl = &v
+	o.GatewayUrl.Set(&v)
 }
 
-// GetApiKey returns the ApiKey field value if set, zero value otherwise.
+// SetGatewayUrlNil sets the value for GatewayUrl to be an explicit nil
+func (o *VdiGateway) SetGatewayUrlNil() {
+	o.GatewayUrl.Set(nil)
+}
+
+// UnsetGatewayUrl ensures that no value is present for GatewayUrl, not even an explicit nil
+func (o *VdiGateway) UnsetGatewayUrl() {
+	o.GatewayUrl.Unset()
+}
+
+// GetApiKey returns the ApiKey field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VdiGateway) GetApiKey() string {
-	if o == nil || IsNil(o.ApiKey) {
+	if o == nil || IsNil(o.ApiKey.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ApiKey
+	return *o.ApiKey.Get()
 }
 
 // GetApiKeyOk returns a tuple with the ApiKey field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VdiGateway) GetApiKeyOk() (*string, bool) {
-	if o == nil || IsNil(o.ApiKey) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ApiKey, true
+	return o.ApiKey.Get(), o.ApiKey.IsSet()
 }
 
 // IsSetApiKey returns a boolean if a field has been set.
 func (o *VdiGateway) IsSetApiKey() bool {
-	if o != nil && !IsNil(o.ApiKey) {
+	if o != nil && o.ApiKey.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetApiKey gets a reference to the given string and assigns it to the ApiKey field.
+// SetApiKey gets a reference to the given NullableString and assigns it to the ApiKey field.
 func (o *VdiGateway) SetApiKey(v string) {
-	o.ApiKey = &v
+	o.ApiKey.Set(&v)
+}
+
+// SetApiKeyNil sets the value for ApiKey to be an explicit nil
+func (o *VdiGateway) SetApiKeyNil() {
+	o.ApiKey.Set(nil)
+}
+
+// UnsetApiKey ensures that no value is present for ApiKey, not even an explicit nil
+func (o *VdiGateway) UnsetApiKey() {
+	o.ApiKey.Unset()
 }
 
 // GetDateCreated returns the DateCreated field value if set, zero value otherwise.
@@ -290,14 +323,14 @@ func (o VdiGateway) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !IsNil(o.Description) {
-		toSerialize["description"] = o.Description
+	if o.Description.IsSet() {
+		toSerialize["description"] = o.Description.Get()
 	}
-	if !IsNil(o.GatewayUrl) {
-		toSerialize["gatewayUrl"] = o.GatewayUrl
+	if o.GatewayUrl.IsSet() {
+		toSerialize["gatewayUrl"] = o.GatewayUrl.Get()
 	}
-	if !IsNil(o.ApiKey) {
-		toSerialize["apiKey"] = o.ApiKey
+	if o.ApiKey.IsSet() {
+		toSerialize["apiKey"] = o.ApiKey.Get()
 	}
 	if !IsNil(o.DateCreated) {
 		toSerialize["dateCreated"] = o.DateCreated

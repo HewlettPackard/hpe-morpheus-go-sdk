@@ -181,6 +181,16 @@ SetIndices sets Indices field to given value.
 
 HasIndices returns a boolean if a field has been set.
 
+### SetIndicesNil
+
+`func (o *ListHealth200ResponseAllOfHealthElastic) SetIndicesNil(b bool)`
+
+ SetIndicesNil sets the value for Indices to be an explicit nil
+
+### UnsetIndices
+`func (o *ListHealth200ResponseAllOfHealthElastic) UnsetIndices()`
+
+UnsetIndices ensures that no value is present for Indices, not even an explicit nil
 ### GetBadIndices
 
 `func (o *ListHealth200ResponseAllOfHealthElastic) GetBadIndices() []map[string]interface{}`
@@ -206,6 +216,16 @@ SetBadIndices sets BadIndices field to given value.
 
 HasBadIndices returns a boolean if a field has been set.
 
+### SetBadIndicesNil
+
+`func (o *ListHealth200ResponseAllOfHealthElastic) SetBadIndicesNil(b bool)`
+
+ SetBadIndicesNil sets the value for BadIndices to be an explicit nil
+
+### UnsetBadIndices
+`func (o *ListHealth200ResponseAllOfHealthElastic) UnsetBadIndices()`
+
+UnsetBadIndices ensures that no value is present for BadIndices, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

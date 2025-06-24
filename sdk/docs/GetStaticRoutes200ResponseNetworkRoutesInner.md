@@ -6,20 +6,20 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int32** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**Code** | Pointer to **string** |  | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
-**Priority** | Pointer to **string** |  | [optional] 
+**Code** | Pointer to **NullableString** |  | [optional] 
+**Description** | Pointer to **NullableString** |  | [optional] 
+**Priority** | Pointer to **NullableString** |  | [optional] 
 **RouteType** | Pointer to **string** |  | [optional] 
 **Source** | Pointer to **string** |  | [optional] 
 **SourceType** | Pointer to **string** |  | [optional] 
 **Destination** | Pointer to **string** |  | [optional] 
 **DestinationType** | Pointer to **string** |  | [optional] 
 **DefaultRoute** | Pointer to **bool** |  | [optional] 
-**NetworkMtu** | Pointer to **string** |  | [optional] 
-**ExternalInterface** | Pointer to **string** |  | [optional] 
-**InternalId** | Pointer to **string** |  | [optional] 
-**UniqueId** | Pointer to **string** |  | [optional] 
-**ExternalType** | Pointer to **string** |  | [optional] 
+**NetworkMtu** | Pointer to **NullableString** |  | [optional] 
+**ExternalInterface** | Pointer to **NullableString** |  | [optional] 
+**InternalId** | Pointer to **NullableString** |  | [optional] 
+**UniqueId** | Pointer to **NullableString** |  | [optional] 
+**ExternalType** | Pointer to **NullableString** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
 **Visible** | Pointer to **bool** |  | [optional] 
 
@@ -117,6 +117,16 @@ SetCode sets Code field to given value.
 
 HasCode returns a boolean if a field has been set.
 
+### SetCodeNil
+
+`func (o *GetStaticRoutes200ResponseNetworkRoutesInner) SetCodeNil(b bool)`
+
+ SetCodeNil sets the value for Code to be an explicit nil
+
+### UnsetCode
+`func (o *GetStaticRoutes200ResponseNetworkRoutesInner) UnsetCode()`
+
+UnsetCode ensures that no value is present for Code, not even an explicit nil
 ### GetDescription
 
 `func (o *GetStaticRoutes200ResponseNetworkRoutesInner) GetDescription() string`
@@ -142,6 +152,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *GetStaticRoutes200ResponseNetworkRoutesInner) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *GetStaticRoutes200ResponseNetworkRoutesInner) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetPriority
 
 `func (o *GetStaticRoutes200ResponseNetworkRoutesInner) GetPriority() string`
@@ -167,6 +187,16 @@ SetPriority sets Priority field to given value.
 
 HasPriority returns a boolean if a field has been set.
 
+### SetPriorityNil
+
+`func (o *GetStaticRoutes200ResponseNetworkRoutesInner) SetPriorityNil(b bool)`
+
+ SetPriorityNil sets the value for Priority to be an explicit nil
+
+### UnsetPriority
+`func (o *GetStaticRoutes200ResponseNetworkRoutesInner) UnsetPriority()`
+
+UnsetPriority ensures that no value is present for Priority, not even an explicit nil
 ### GetRouteType
 
 `func (o *GetStaticRoutes200ResponseNetworkRoutesInner) GetRouteType() string`
@@ -342,6 +372,16 @@ SetNetworkMtu sets NetworkMtu field to given value.
 
 HasNetworkMtu returns a boolean if a field has been set.
 
+### SetNetworkMtuNil
+
+`func (o *GetStaticRoutes200ResponseNetworkRoutesInner) SetNetworkMtuNil(b bool)`
+
+ SetNetworkMtuNil sets the value for NetworkMtu to be an explicit nil
+
+### UnsetNetworkMtu
+`func (o *GetStaticRoutes200ResponseNetworkRoutesInner) UnsetNetworkMtu()`
+
+UnsetNetworkMtu ensures that no value is present for NetworkMtu, not even an explicit nil
 ### GetExternalInterface
 
 `func (o *GetStaticRoutes200ResponseNetworkRoutesInner) GetExternalInterface() string`
@@ -367,6 +407,16 @@ SetExternalInterface sets ExternalInterface field to given value.
 
 HasExternalInterface returns a boolean if a field has been set.
 
+### SetExternalInterfaceNil
+
+`func (o *GetStaticRoutes200ResponseNetworkRoutesInner) SetExternalInterfaceNil(b bool)`
+
+ SetExternalInterfaceNil sets the value for ExternalInterface to be an explicit nil
+
+### UnsetExternalInterface
+`func (o *GetStaticRoutes200ResponseNetworkRoutesInner) UnsetExternalInterface()`
+
+UnsetExternalInterface ensures that no value is present for ExternalInterface, not even an explicit nil
 ### GetInternalId
 
 `func (o *GetStaticRoutes200ResponseNetworkRoutesInner) GetInternalId() string`
@@ -392,6 +442,16 @@ SetInternalId sets InternalId field to given value.
 
 HasInternalId returns a boolean if a field has been set.
 
+### SetInternalIdNil
+
+`func (o *GetStaticRoutes200ResponseNetworkRoutesInner) SetInternalIdNil(b bool)`
+
+ SetInternalIdNil sets the value for InternalId to be an explicit nil
+
+### UnsetInternalId
+`func (o *GetStaticRoutes200ResponseNetworkRoutesInner) UnsetInternalId()`
+
+UnsetInternalId ensures that no value is present for InternalId, not even an explicit nil
 ### GetUniqueId
 
 `func (o *GetStaticRoutes200ResponseNetworkRoutesInner) GetUniqueId() string`
@@ -417,6 +477,16 @@ SetUniqueId sets UniqueId field to given value.
 
 HasUniqueId returns a boolean if a field has been set.
 
+### SetUniqueIdNil
+
+`func (o *GetStaticRoutes200ResponseNetworkRoutesInner) SetUniqueIdNil(b bool)`
+
+ SetUniqueIdNil sets the value for UniqueId to be an explicit nil
+
+### UnsetUniqueId
+`func (o *GetStaticRoutes200ResponseNetworkRoutesInner) UnsetUniqueId()`
+
+UnsetUniqueId ensures that no value is present for UniqueId, not even an explicit nil
 ### GetExternalType
 
 `func (o *GetStaticRoutes200ResponseNetworkRoutesInner) GetExternalType() string`
@@ -442,6 +512,16 @@ SetExternalType sets ExternalType field to given value.
 
 HasExternalType returns a boolean if a field has been set.
 
+### SetExternalTypeNil
+
+`func (o *GetStaticRoutes200ResponseNetworkRoutesInner) SetExternalTypeNil(b bool)`
+
+ SetExternalTypeNil sets the value for ExternalType to be an explicit nil
+
+### UnsetExternalType
+`func (o *GetStaticRoutes200ResponseNetworkRoutesInner) UnsetExternalType()`
+
+UnsetExternalType ensures that no value is present for ExternalType, not even an explicit nil
 ### GetEnabled
 
 `func (o *GetStaticRoutes200ResponseNetworkRoutesInner) GetEnabled() bool`

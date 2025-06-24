@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **TaskType** | Pointer to [**AddTasksRequestTaskTaskType**](AddTasksRequestTaskTaskType.md) |  | [optional] 
 **Labels** | Pointer to **[]string** | An array of Category labels for filtering | [optional] 
 **TaskOptions** | Pointer to **map[string]interface{}** | Map of options specific to each &#x60;task type&#x60;. eg. script | [optional] 
-**ResultType** | Pointer to **string** |  | [optional] 
+**ResultType** | Pointer to **NullableString** |  | [optional] 
 **ExecuteTarget** | Pointer to **string** | The execution target. eg. local,remote,resource. The default value varies by task type.  | [optional] 
 **Retryable** | Pointer to **bool** | If the task should be retried or not. | [optional] [default to false]
 **RetryCount** | Pointer to **int32** | The number of times to retry. | [optional] 
@@ -212,6 +212,16 @@ SetResultType sets ResultType field to given value.
 
 HasResultType returns a boolean if a field has been set.
 
+### SetResultTypeNil
+
+`func (o *UpdateTasksRequestTask) SetResultTypeNil(b bool)`
+
+ SetResultTypeNil sets the value for ResultType to be an explicit nil
+
+### UnsetResultType
+`func (o *UpdateTasksRequestTask) UnsetResultType()`
+
+UnsetResultType ensures that no value is present for ResultType, not even an explicit nil
 ### GetExecuteTarget
 
 `func (o *UpdateTasksRequestTask) GetExecuteTarget() string`

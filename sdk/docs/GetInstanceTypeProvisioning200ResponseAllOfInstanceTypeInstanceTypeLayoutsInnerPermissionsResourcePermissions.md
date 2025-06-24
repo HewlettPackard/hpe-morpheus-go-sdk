@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **DefaultTarget** | Pointer to **bool** |  | [optional] 
 **CanManage** | Pointer to **bool** |  | [optional] 
 **All** | Pointer to **bool** |  | [optional] 
-**Account** | Pointer to [**GetAlerts200ResponseAllOfChecksInnerContainer**](GetAlerts200ResponseAllOfChecksInnerContainer.md) |  | [optional] 
+**Account** | Pointer to [**GetAlerts200ResponseAllOfChecksInnerAccount**](GetAlerts200ResponseAllOfChecksInnerAccount.md) |  | [optional] 
 **Sites** | Pointer to **[]map[string]interface{}** |  | [optional] 
 **Plans** | Pointer to **[]map[string]interface{}** |  | [optional] 
 
@@ -159,20 +159,20 @@ HasAll returns a boolean if a field has been set.
 
 ### GetAccount
 
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerPermissionsResourcePermissions) GetAccount() GetAlerts200ResponseAllOfChecksInnerContainer`
+`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerPermissionsResourcePermissions) GetAccount() GetAlerts200ResponseAllOfChecksInnerAccount`
 
 GetAccount returns the Account field if non-nil, zero value otherwise.
 
 ### GetAccountOk
 
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerPermissionsResourcePermissions) GetAccountOk() (*GetAlerts200ResponseAllOfChecksInnerContainer, bool)`
+`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerPermissionsResourcePermissions) GetAccountOk() (*GetAlerts200ResponseAllOfChecksInnerAccount, bool)`
 
 GetAccountOk returns a tuple with the Account field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccount
 
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerPermissionsResourcePermissions) SetAccount(v GetAlerts200ResponseAllOfChecksInnerContainer)`
+`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerPermissionsResourcePermissions) SetAccount(v GetAlerts200ResponseAllOfChecksInnerAccount)`
 
 SetAccount sets Account field to given value.
 
@@ -207,6 +207,16 @@ SetSites sets Sites field to given value.
 
 HasSites returns a boolean if a field has been set.
 
+### SetSitesNil
+
+`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerPermissionsResourcePermissions) SetSitesNil(b bool)`
+
+ SetSitesNil sets the value for Sites to be an explicit nil
+
+### UnsetSites
+`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerPermissionsResourcePermissions) UnsetSites()`
+
+UnsetSites ensures that no value is present for Sites, not even an explicit nil
 ### GetPlans
 
 `func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerPermissionsResourcePermissions) GetPlans() []map[string]interface{}`
@@ -232,6 +242,16 @@ SetPlans sets Plans field to given value.
 
 HasPlans returns a boolean if a field has been set.
 
+### SetPlansNil
+
+`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerPermissionsResourcePermissions) SetPlansNil(b bool)`
+
+ SetPlansNil sets the value for Plans to be an explicit nil
+
+### UnsetPlans
+`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerPermissionsResourcePermissions) UnsetPlans()`
+
+UnsetPlans ensures that no value is present for Plans, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

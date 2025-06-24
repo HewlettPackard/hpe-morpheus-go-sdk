@@ -21,20 +21,20 @@ var _ MappedNullable = &ListVdi200ResponseAllOfDesktopsInnerAllocation{}
 
 // ListVdi200ResponseAllOfDesktopsInnerAllocation struct for ListVdi200ResponseAllOfDesktopsInnerAllocation
 type ListVdi200ResponseAllOfDesktopsInnerAllocation struct {
-	Id                   *int64                                                                  `json:"id,omitempty"`
-	PoolId               *int64                                                                  `json:"poolId,omitempty"`
-	Pool                 *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"pool,omitempty"`
-	Instance             *ListVDIAllocations200ResponseAllOfVdiAllocationsInnerInstance          `json:"instance,omitempty"`
-	User                 *ListVDIPools200ResponseAllOfVdiPoolsInnerOwner                         `json:"user,omitempty"`
-	LocalUserCreated     *bool                                                                   `json:"localUserCreated,omitempty"`
-	Persistent           *bool                                                                   `json:"persistent,omitempty"`
-	Recyclable           *bool                                                                   `json:"recyclable,omitempty"`
-	Status               *string                                                                 `json:"status,omitempty"`
-	DateCreated          *time.Time                                                              `json:"dateCreated,omitempty"`
-	LastUpdated          *time.Time                                                              `json:"lastUpdated,omitempty"`
-	LastReserved         *time.Time                                                              `json:"lastReserved,omitempty"`
-	ReleaseDate          *time.Time                                                              `json:"releaseDate,omitempty"`
-	AdditionalProperties map[string]interface{}                                                  `json:",remain"`
+	Id                   *int64                                                         `json:"id,omitempty"`
+	PoolId               *int64                                                         `json:"poolId,omitempty"`
+	Pool                 *GetAlerts200ResponseAllOfCheckGroupsInnerInstance             `json:"pool,omitempty"`
+	Instance             *ListVDIAllocations200ResponseAllOfVdiAllocationsInnerInstance `json:"instance,omitempty"`
+	User                 *ListVDIPools200ResponseAllOfVdiPoolsInnerOwner                `json:"user,omitempty"`
+	LocalUserCreated     *bool                                                          `json:"localUserCreated,omitempty"`
+	Persistent           *bool                                                          `json:"persistent,omitempty"`
+	Recyclable           *bool                                                          `json:"recyclable,omitempty"`
+	Status               *string                                                        `json:"status,omitempty"`
+	DateCreated          *time.Time                                                     `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                                     `json:"lastUpdated,omitempty"`
+	LastReserved         NullableTime                                                   `json:"lastReserved,omitempty"`
+	ReleaseDate          *time.Time                                                     `json:"releaseDate,omitempty"`
+	AdditionalProperties map[string]interface{}                                         `json:",remain"`
 }
 
 type _ListVdi200ResponseAllOfDesktopsInnerAllocation ListVdi200ResponseAllOfDesktopsInnerAllocation
@@ -121,9 +121,9 @@ func (o *ListVdi200ResponseAllOfDesktopsInnerAllocation) SetPoolId(v int64) {
 }
 
 // GetPool returns the Pool field value if set, zero value otherwise.
-func (o *ListVdi200ResponseAllOfDesktopsInnerAllocation) GetPool() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *ListVdi200ResponseAllOfDesktopsInnerAllocation) GetPool() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.Pool) {
-		var ret ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return *o.Pool
@@ -131,7 +131,7 @@ func (o *ListVdi200ResponseAllOfDesktopsInnerAllocation) GetPool() ListAppliance
 
 // GetPoolOk returns a tuple with the Pool field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListVdi200ResponseAllOfDesktopsInnerAllocation) GetPoolOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *ListVdi200ResponseAllOfDesktopsInnerAllocation) GetPoolOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.Pool) {
 		return nil, false
 	}
@@ -147,8 +147,8 @@ func (o *ListVdi200ResponseAllOfDesktopsInnerAllocation) IsSetPool() bool {
 	return false
 }
 
-// SetPool gets a reference to the given ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the Pool field.
-func (o *ListVdi200ResponseAllOfDesktopsInnerAllocation) SetPool(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetPool gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Pool field.
+func (o *ListVdi200ResponseAllOfDesktopsInnerAllocation) SetPool(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.Pool = &v
 }
 
@@ -408,36 +408,47 @@ func (o *ListVdi200ResponseAllOfDesktopsInnerAllocation) SetLastUpdated(v time.T
 	o.LastUpdated = &v
 }
 
-// GetLastReserved returns the LastReserved field value if set, zero value otherwise.
+// GetLastReserved returns the LastReserved field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListVdi200ResponseAllOfDesktopsInnerAllocation) GetLastReserved() time.Time {
-	if o == nil || IsNil(o.LastReserved) {
+	if o == nil || IsNil(o.LastReserved.Get()) {
 		var ret time.Time
 		return ret
 	}
-	return *o.LastReserved
+	return *o.LastReserved.Get()
 }
 
 // GetLastReservedOk returns a tuple with the LastReserved field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListVdi200ResponseAllOfDesktopsInnerAllocation) GetLastReservedOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.LastReserved) {
+	if o == nil {
 		return nil, false
 	}
-	return o.LastReserved, true
+	return o.LastReserved.Get(), o.LastReserved.IsSet()
 }
 
 // IsSetLastReserved returns a boolean if a field has been set.
 func (o *ListVdi200ResponseAllOfDesktopsInnerAllocation) IsSetLastReserved() bool {
-	if o != nil && !IsNil(o.LastReserved) {
+	if o != nil && o.LastReserved.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetLastReserved gets a reference to the given time.Time and assigns it to the LastReserved field.
+// SetLastReserved gets a reference to the given NullableTime and assigns it to the LastReserved field.
 func (o *ListVdi200ResponseAllOfDesktopsInnerAllocation) SetLastReserved(v time.Time) {
-	o.LastReserved = &v
+	o.LastReserved.Set(&v)
+}
+
+// SetLastReservedNil sets the value for LastReserved to be an explicit nil
+func (o *ListVdi200ResponseAllOfDesktopsInnerAllocation) SetLastReservedNil() {
+	o.LastReserved.Set(nil)
+}
+
+// UnsetLastReserved ensures that no value is present for LastReserved, not even an explicit nil
+func (o *ListVdi200ResponseAllOfDesktopsInnerAllocation) UnsetLastReserved() {
+	o.LastReserved.Unset()
 }
 
 // GetReleaseDate returns the ReleaseDate field value if set, zero value otherwise.
@@ -515,8 +526,8 @@ func (o ListVdi200ResponseAllOfDesktopsInnerAllocation) ToMap() (map[string]inte
 	if !IsNil(o.LastUpdated) {
 		toSerialize["lastUpdated"] = o.LastUpdated
 	}
-	if !IsNil(o.LastReserved) {
-		toSerialize["lastReserved"] = o.LastReserved
+	if o.LastReserved.IsSet() {
+		toSerialize["lastReserved"] = o.LastReserved.Get()
 	}
 	if !IsNil(o.ReleaseDate) {
 		toSerialize["releaseDate"] = o.ReleaseDate

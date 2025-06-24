@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ReportType** | Pointer to **string** |  | [optional] 
+**ReportType** | Pointer to **NullableString** |  | [optional] 
 **StartDate** | Pointer to **string** |  | [optional] 
 **EndDate** | Pointer to **string** |  | [optional] 
 **CloudId** | Pointer to **string** |  | [optional] 
@@ -53,6 +53,16 @@ SetReportType sets ReportType field to given value.
 
 HasReportType returns a boolean if a field has been set.
 
+### SetReportTypeNil
+
+`func (o *ListReports200ResponseAllOfReportResultsInnerConfig) SetReportTypeNil(b bool)`
+
+ SetReportTypeNil sets the value for ReportType to be an explicit nil
+
+### UnsetReportType
+`func (o *ListReports200ResponseAllOfReportResultsInnerConfig) UnsetReportType()`
+
+UnsetReportType ensures that no value is present for ReportType, not even an explicit nil
 ### GetStartDate
 
 `func (o *ListReports200ResponseAllOfReportResultsInnerConfig) GetStartDate() string`

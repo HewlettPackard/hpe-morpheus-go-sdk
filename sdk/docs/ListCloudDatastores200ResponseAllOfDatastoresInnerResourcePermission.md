@@ -78,6 +78,16 @@ SetSites sets Sites field to given value.
 
 HasSites returns a boolean if a field has been set.
 
+### SetSitesNil
+
+`func (o *ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission) SetSitesNil(b bool)`
+
+ SetSitesNil sets the value for Sites to be an explicit nil
+
+### UnsetSites
+`func (o *ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission) UnsetSites()`
+
+UnsetSites ensures that no value is present for Sites, not even an explicit nil
 ### GetAllPlans
 
 `func (o *ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission) GetAllPlans() bool`
@@ -128,6 +138,16 @@ SetPlans sets Plans field to given value.
 
 HasPlans returns a boolean if a field has been set.
 
+### SetPlansNil
+
+`func (o *ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission) SetPlansNil(b bool)`
+
+ SetPlansNil sets the value for Plans to be an explicit nil
+
+### UnsetPlans
+`func (o *ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission) UnsetPlans()`
+
+UnsetPlans ensures that no value is present for Plans, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

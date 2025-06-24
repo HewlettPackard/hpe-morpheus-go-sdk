@@ -32,7 +32,7 @@ type ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1 struct {
 	ExternalLogin        *bool                                                                        `json:"externalLogin,omitempty"`
 	AllowCustomMappings  *bool                                                                        `json:"allowCustomMappings,omitempty"`
 	ManualRoleAssignment *bool                                                                        `json:"manualRoleAssignment,omitempty"`
-	Account              *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner      `json:"account,omitempty"`
+	Account              *GetAlerts200ResponseAllOfCheckGroupsInnerInstance                           `json:"account,omitempty"`
 	DefaultAccountRole   *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfDefaultAccountRole  `json:"defaultAccountRole,omitempty"`
 	Config               *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1Config             `json:"config,omitempty"`
 	RoleMappings         []ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1RoleMappingsInner `json:"roleMappings,omitempty"`
@@ -416,9 +416,9 @@ func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1) SetManualRol
 }
 
 // GetAccount returns the Account field value if set, zero value otherwise.
-func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1) GetAccount() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1) GetAccount() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.Account) {
-		var ret ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return *o.Account
@@ -426,7 +426,7 @@ func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1) GetAccount()
 
 // GetAccountOk returns a tuple with the Account field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1) GetAccountOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1) GetAccountOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.Account) {
 		return nil, false
 	}
@@ -442,8 +442,8 @@ func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1) IsSetAccount
 	return false
 }
 
-// SetAccount gets a reference to the given ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the Account field.
-func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1) SetAccount(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetAccount gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Account field.
+func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1) SetAccount(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.Account = &v
 }
 

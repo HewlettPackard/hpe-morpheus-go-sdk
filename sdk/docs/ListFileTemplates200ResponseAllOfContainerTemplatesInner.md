@@ -11,18 +11,18 @@ Name | Type | Description | Notes
 **Labels** | Pointer to **[]string** |  | [optional] 
 **FileName** | Pointer to **string** |  | [optional] 
 **FilePath** | Pointer to **string** |  | [optional] 
-**TemplateType** | Pointer to **string** |  | [optional] 
+**TemplateType** | Pointer to **NullableString** |  | [optional] 
 **TemplatePhase** | Pointer to **string** |  | [optional] 
 **Template** | Pointer to **string** |  | [optional] 
-**Category** | Pointer to **string** |  | [optional] 
-**SettingCategory** | Pointer to **string** |  | [optional] 
-**SettingName** | Pointer to **string** |  | [optional] 
+**Category** | Pointer to **NullableString** |  | [optional] 
+**SettingCategory** | Pointer to **NullableString** |  | [optional] 
+**SettingName** | Pointer to **NullableString** |  | [optional] 
 **AutoRun** | Pointer to **bool** |  | [optional] 
-**RunOnScale** | Pointer to **bool** |  | [optional] 
-**RunOnDeploy** | Pointer to **bool** |  | [optional] 
-**FileOwner** | Pointer to **string** |  | [optional] 
-**FileGroup** | Pointer to **string** |  | [optional] 
-**Permissions** | Pointer to **string** |  | [optional] 
+**RunOnScale** | Pointer to **NullableBool** |  | [optional] 
+**RunOnDeploy** | Pointer to **NullableBool** |  | [optional] 
+**FileOwner** | Pointer to **NullableString** |  | [optional] 
+**FileGroup** | Pointer to **NullableString** |  | [optional] 
+**Permissions** | Pointer to **NullableString** |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
 
@@ -170,6 +170,16 @@ SetLabels sets Labels field to given value.
 
 HasLabels returns a boolean if a field has been set.
 
+### SetLabelsNil
+
+`func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) SetLabelsNil(b bool)`
+
+ SetLabelsNil sets the value for Labels to be an explicit nil
+
+### UnsetLabels
+`func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) UnsetLabels()`
+
+UnsetLabels ensures that no value is present for Labels, not even an explicit nil
 ### GetFileName
 
 `func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) GetFileName() string`
@@ -245,6 +255,16 @@ SetTemplateType sets TemplateType field to given value.
 
 HasTemplateType returns a boolean if a field has been set.
 
+### SetTemplateTypeNil
+
+`func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) SetTemplateTypeNil(b bool)`
+
+ SetTemplateTypeNil sets the value for TemplateType to be an explicit nil
+
+### UnsetTemplateType
+`func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) UnsetTemplateType()`
+
+UnsetTemplateType ensures that no value is present for TemplateType, not even an explicit nil
 ### GetTemplatePhase
 
 `func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) GetTemplatePhase() string`
@@ -320,6 +340,16 @@ SetCategory sets Category field to given value.
 
 HasCategory returns a boolean if a field has been set.
 
+### SetCategoryNil
+
+`func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) SetCategoryNil(b bool)`
+
+ SetCategoryNil sets the value for Category to be an explicit nil
+
+### UnsetCategory
+`func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) UnsetCategory()`
+
+UnsetCategory ensures that no value is present for Category, not even an explicit nil
 ### GetSettingCategory
 
 `func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) GetSettingCategory() string`
@@ -345,6 +375,16 @@ SetSettingCategory sets SettingCategory field to given value.
 
 HasSettingCategory returns a boolean if a field has been set.
 
+### SetSettingCategoryNil
+
+`func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) SetSettingCategoryNil(b bool)`
+
+ SetSettingCategoryNil sets the value for SettingCategory to be an explicit nil
+
+### UnsetSettingCategory
+`func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) UnsetSettingCategory()`
+
+UnsetSettingCategory ensures that no value is present for SettingCategory, not even an explicit nil
 ### GetSettingName
 
 `func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) GetSettingName() string`
@@ -370,6 +410,16 @@ SetSettingName sets SettingName field to given value.
 
 HasSettingName returns a boolean if a field has been set.
 
+### SetSettingNameNil
+
+`func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) SetSettingNameNil(b bool)`
+
+ SetSettingNameNil sets the value for SettingName to be an explicit nil
+
+### UnsetSettingName
+`func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) UnsetSettingName()`
+
+UnsetSettingName ensures that no value is present for SettingName, not even an explicit nil
 ### GetAutoRun
 
 `func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) GetAutoRun() bool`
@@ -420,6 +470,16 @@ SetRunOnScale sets RunOnScale field to given value.
 
 HasRunOnScale returns a boolean if a field has been set.
 
+### SetRunOnScaleNil
+
+`func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) SetRunOnScaleNil(b bool)`
+
+ SetRunOnScaleNil sets the value for RunOnScale to be an explicit nil
+
+### UnsetRunOnScale
+`func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) UnsetRunOnScale()`
+
+UnsetRunOnScale ensures that no value is present for RunOnScale, not even an explicit nil
 ### GetRunOnDeploy
 
 `func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) GetRunOnDeploy() bool`
@@ -445,6 +505,16 @@ SetRunOnDeploy sets RunOnDeploy field to given value.
 
 HasRunOnDeploy returns a boolean if a field has been set.
 
+### SetRunOnDeployNil
+
+`func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) SetRunOnDeployNil(b bool)`
+
+ SetRunOnDeployNil sets the value for RunOnDeploy to be an explicit nil
+
+### UnsetRunOnDeploy
+`func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) UnsetRunOnDeploy()`
+
+UnsetRunOnDeploy ensures that no value is present for RunOnDeploy, not even an explicit nil
 ### GetFileOwner
 
 `func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) GetFileOwner() string`
@@ -470,6 +540,16 @@ SetFileOwner sets FileOwner field to given value.
 
 HasFileOwner returns a boolean if a field has been set.
 
+### SetFileOwnerNil
+
+`func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) SetFileOwnerNil(b bool)`
+
+ SetFileOwnerNil sets the value for FileOwner to be an explicit nil
+
+### UnsetFileOwner
+`func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) UnsetFileOwner()`
+
+UnsetFileOwner ensures that no value is present for FileOwner, not even an explicit nil
 ### GetFileGroup
 
 `func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) GetFileGroup() string`
@@ -495,6 +575,16 @@ SetFileGroup sets FileGroup field to given value.
 
 HasFileGroup returns a boolean if a field has been set.
 
+### SetFileGroupNil
+
+`func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) SetFileGroupNil(b bool)`
+
+ SetFileGroupNil sets the value for FileGroup to be an explicit nil
+
+### UnsetFileGroup
+`func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) UnsetFileGroup()`
+
+UnsetFileGroup ensures that no value is present for FileGroup, not even an explicit nil
 ### GetPermissions
 
 `func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) GetPermissions() string`
@@ -520,6 +610,16 @@ SetPermissions sets Permissions field to given value.
 
 HasPermissions returns a boolean if a field has been set.
 
+### SetPermissionsNil
+
+`func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) SetPermissionsNil(b bool)`
+
+ SetPermissionsNil sets the value for Permissions to be an explicit nil
+
+### UnsetPermissions
+`func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) UnsetPermissions()`
+
+UnsetPermissions ensures that no value is present for Permissions, not even an explicit nil
 ### GetDateCreated
 
 `func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) GetDateCreated() time.Time`

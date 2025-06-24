@@ -5,12 +5,12 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
-**Account** | Pointer to [**ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
+**Account** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Labels** | Pointer to **[]string** |  | [optional] 
 **Code** | Pointer to **string** |  | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
-**ProvisionTypeCode** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **NullableString** |  | [optional] 
+**ProvisionTypeCode** | Pointer to **NullableString** |  | [optional] 
 **Category** | Pointer to **string** |  | [optional] 
 **Active** | Pointer to **bool** |  | [optional] 
 **HasProvisioningStep** | Pointer to **bool** |  | [optional] 
@@ -18,11 +18,11 @@ Name | Type | Description | Notes
 **HasConfig** | Pointer to **bool** |  | [optional] 
 **HasSettings** | Pointer to **bool** |  | [optional] 
 **HasAutoScale** | Pointer to **bool** |  | [optional] 
-**ProxyType** | Pointer to **string** |  | [optional] 
-**ProxyPort** | Pointer to **string** |  | [optional] 
-**ProxyProtocol** | Pointer to **string** |  | [optional] 
+**ProxyType** | Pointer to **NullableString** |  | [optional] 
+**ProxyPort** | Pointer to **NullableString** |  | [optional] 
+**ProxyProtocol** | Pointer to **NullableString** |  | [optional] 
 **EnvironmentPrefix** | Pointer to **string** |  | [optional] 
-**BackupType** | Pointer to **string** |  | [optional] 
+**BackupType** | Pointer to **NullableString** |  | [optional] 
 **Config** | Pointer to **map[string]interface{}** |  | [optional] 
 **Visibility** | Pointer to **string** |  | [optional] 
 **Featured** | Pointer to **bool** |  | [optional] 
@@ -31,8 +31,8 @@ Name | Type | Description | Notes
 **OptionTypes** | Pointer to [**[]ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner**](ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner.md) |  | [optional] 
 **EnvironmentVariables** | Pointer to **[]map[string]interface{}** |  | [optional] 
 **PriceSets** | Pointer to **[]map[string]interface{}** |  | [optional] 
-**ImagePath** | Pointer to **string** | Logo image URL | [optional] 
-**DarkImagePath** | Pointer to **string** | Dark logo image URL | [optional] 
+**ImagePath** | Pointer to **NullableString** | Logo image URL | [optional] 
+**DarkImagePath** | Pointer to **NullableString** | Dark logo image URL | [optional] 
 
 ## Methods
 
@@ -80,20 +80,20 @@ HasId returns a boolean if a field has been set.
 
 ### GetAccount
 
-`func (o *GetInstanceType200ResponseInstanceType) GetAccount() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *GetInstanceType200ResponseInstanceType) GetAccount() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetAccount returns the Account field if non-nil, zero value otherwise.
 
 ### GetAccountOk
 
-`func (o *GetInstanceType200ResponseInstanceType) GetAccountOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *GetInstanceType200ResponseInstanceType) GetAccountOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetAccountOk returns a tuple with the Account field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccount
 
-`func (o *GetInstanceType200ResponseInstanceType) SetAccount(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *GetInstanceType200ResponseInstanceType) SetAccount(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetAccount sets Account field to given value.
 
@@ -153,6 +153,16 @@ SetLabels sets Labels field to given value.
 
 HasLabels returns a boolean if a field has been set.
 
+### SetLabelsNil
+
+`func (o *GetInstanceType200ResponseInstanceType) SetLabelsNil(b bool)`
+
+ SetLabelsNil sets the value for Labels to be an explicit nil
+
+### UnsetLabels
+`func (o *GetInstanceType200ResponseInstanceType) UnsetLabels()`
+
+UnsetLabels ensures that no value is present for Labels, not even an explicit nil
 ### GetCode
 
 `func (o *GetInstanceType200ResponseInstanceType) GetCode() string`
@@ -203,6 +213,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *GetInstanceType200ResponseInstanceType) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *GetInstanceType200ResponseInstanceType) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetProvisionTypeCode
 
 `func (o *GetInstanceType200ResponseInstanceType) GetProvisionTypeCode() string`
@@ -228,6 +248,16 @@ SetProvisionTypeCode sets ProvisionTypeCode field to given value.
 
 HasProvisionTypeCode returns a boolean if a field has been set.
 
+### SetProvisionTypeCodeNil
+
+`func (o *GetInstanceType200ResponseInstanceType) SetProvisionTypeCodeNil(b bool)`
+
+ SetProvisionTypeCodeNil sets the value for ProvisionTypeCode to be an explicit nil
+
+### UnsetProvisionTypeCode
+`func (o *GetInstanceType200ResponseInstanceType) UnsetProvisionTypeCode()`
+
+UnsetProvisionTypeCode ensures that no value is present for ProvisionTypeCode, not even an explicit nil
 ### GetCategory
 
 `func (o *GetInstanceType200ResponseInstanceType) GetCategory() string`
@@ -428,6 +458,16 @@ SetProxyType sets ProxyType field to given value.
 
 HasProxyType returns a boolean if a field has been set.
 
+### SetProxyTypeNil
+
+`func (o *GetInstanceType200ResponseInstanceType) SetProxyTypeNil(b bool)`
+
+ SetProxyTypeNil sets the value for ProxyType to be an explicit nil
+
+### UnsetProxyType
+`func (o *GetInstanceType200ResponseInstanceType) UnsetProxyType()`
+
+UnsetProxyType ensures that no value is present for ProxyType, not even an explicit nil
 ### GetProxyPort
 
 `func (o *GetInstanceType200ResponseInstanceType) GetProxyPort() string`
@@ -453,6 +493,16 @@ SetProxyPort sets ProxyPort field to given value.
 
 HasProxyPort returns a boolean if a field has been set.
 
+### SetProxyPortNil
+
+`func (o *GetInstanceType200ResponseInstanceType) SetProxyPortNil(b bool)`
+
+ SetProxyPortNil sets the value for ProxyPort to be an explicit nil
+
+### UnsetProxyPort
+`func (o *GetInstanceType200ResponseInstanceType) UnsetProxyPort()`
+
+UnsetProxyPort ensures that no value is present for ProxyPort, not even an explicit nil
 ### GetProxyProtocol
 
 `func (o *GetInstanceType200ResponseInstanceType) GetProxyProtocol() string`
@@ -478,6 +528,16 @@ SetProxyProtocol sets ProxyProtocol field to given value.
 
 HasProxyProtocol returns a boolean if a field has been set.
 
+### SetProxyProtocolNil
+
+`func (o *GetInstanceType200ResponseInstanceType) SetProxyProtocolNil(b bool)`
+
+ SetProxyProtocolNil sets the value for ProxyProtocol to be an explicit nil
+
+### UnsetProxyProtocol
+`func (o *GetInstanceType200ResponseInstanceType) UnsetProxyProtocol()`
+
+UnsetProxyProtocol ensures that no value is present for ProxyProtocol, not even an explicit nil
 ### GetEnvironmentPrefix
 
 `func (o *GetInstanceType200ResponseInstanceType) GetEnvironmentPrefix() string`
@@ -528,6 +588,16 @@ SetBackupType sets BackupType field to given value.
 
 HasBackupType returns a boolean if a field has been set.
 
+### SetBackupTypeNil
+
+`func (o *GetInstanceType200ResponseInstanceType) SetBackupTypeNil(b bool)`
+
+ SetBackupTypeNil sets the value for BackupType to be an explicit nil
+
+### UnsetBackupType
+`func (o *GetInstanceType200ResponseInstanceType) UnsetBackupType()`
+
+UnsetBackupType ensures that no value is present for BackupType, not even an explicit nil
 ### GetConfig
 
 `func (o *GetInstanceType200ResponseInstanceType) GetConfig() map[string]interface{}`
@@ -553,6 +623,16 @@ SetConfig sets Config field to given value.
 
 HasConfig returns a boolean if a field has been set.
 
+### SetConfigNil
+
+`func (o *GetInstanceType200ResponseInstanceType) SetConfigNil(b bool)`
+
+ SetConfigNil sets the value for Config to be an explicit nil
+
+### UnsetConfig
+`func (o *GetInstanceType200ResponseInstanceType) UnsetConfig()`
+
+UnsetConfig ensures that no value is present for Config, not even an explicit nil
 ### GetVisibility
 
 `func (o *GetInstanceType200ResponseInstanceType) GetVisibility() string`
@@ -703,6 +783,16 @@ SetEnvironmentVariables sets EnvironmentVariables field to given value.
 
 HasEnvironmentVariables returns a boolean if a field has been set.
 
+### SetEnvironmentVariablesNil
+
+`func (o *GetInstanceType200ResponseInstanceType) SetEnvironmentVariablesNil(b bool)`
+
+ SetEnvironmentVariablesNil sets the value for EnvironmentVariables to be an explicit nil
+
+### UnsetEnvironmentVariables
+`func (o *GetInstanceType200ResponseInstanceType) UnsetEnvironmentVariables()`
+
+UnsetEnvironmentVariables ensures that no value is present for EnvironmentVariables, not even an explicit nil
 ### GetPriceSets
 
 `func (o *GetInstanceType200ResponseInstanceType) GetPriceSets() []map[string]interface{}`
@@ -728,6 +818,16 @@ SetPriceSets sets PriceSets field to given value.
 
 HasPriceSets returns a boolean if a field has been set.
 
+### SetPriceSetsNil
+
+`func (o *GetInstanceType200ResponseInstanceType) SetPriceSetsNil(b bool)`
+
+ SetPriceSetsNil sets the value for PriceSets to be an explicit nil
+
+### UnsetPriceSets
+`func (o *GetInstanceType200ResponseInstanceType) UnsetPriceSets()`
+
+UnsetPriceSets ensures that no value is present for PriceSets, not even an explicit nil
 ### GetImagePath
 
 `func (o *GetInstanceType200ResponseInstanceType) GetImagePath() string`
@@ -753,6 +853,16 @@ SetImagePath sets ImagePath field to given value.
 
 HasImagePath returns a boolean if a field has been set.
 
+### SetImagePathNil
+
+`func (o *GetInstanceType200ResponseInstanceType) SetImagePathNil(b bool)`
+
+ SetImagePathNil sets the value for ImagePath to be an explicit nil
+
+### UnsetImagePath
+`func (o *GetInstanceType200ResponseInstanceType) UnsetImagePath()`
+
+UnsetImagePath ensures that no value is present for ImagePath, not even an explicit nil
 ### GetDarkImagePath
 
 `func (o *GetInstanceType200ResponseInstanceType) GetDarkImagePath() string`
@@ -778,6 +888,16 @@ SetDarkImagePath sets DarkImagePath field to given value.
 
 HasDarkImagePath returns a boolean if a field has been set.
 
+### SetDarkImagePathNil
+
+`func (o *GetInstanceType200ResponseInstanceType) SetDarkImagePathNil(b bool)`
+
+ SetDarkImagePathNil sets the value for DarkImagePath to be an explicit nil
+
+### UnsetDarkImagePath
+`func (o *GetInstanceType200ResponseInstanceType) UnsetDarkImagePath()`
+
+UnsetDarkImagePath ensures that no value is present for DarkImagePath, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -21,7 +21,7 @@ var _ MappedNullable = &AddRoles200ResponseAllOfAppTemplatePermissionsInner{}
 // AddRoles200ResponseAllOfAppTemplatePermissionsInner struct for AddRoles200ResponseAllOfAppTemplatePermissionsInner
 type AddRoles200ResponseAllOfAppTemplatePermissionsInner struct {
 	Id                   *int64                 `json:"id,omitempty"`
-	Code                 *string                `json:"code,omitempty"`
+	Code                 NullableString         `json:"code,omitempty"`
 	Name                 *string                `json:"name,omitempty"`
 	Access               *string                `json:"access,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
@@ -78,36 +78,47 @@ func (o *AddRoles200ResponseAllOfAppTemplatePermissionsInner) SetId(v int64) {
 	o.Id = &v
 }
 
-// GetCode returns the Code field value if set, zero value otherwise.
+// GetCode returns the Code field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AddRoles200ResponseAllOfAppTemplatePermissionsInner) GetCode() string {
-	if o == nil || IsNil(o.Code) {
+	if o == nil || IsNil(o.Code.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Code
+	return *o.Code.Get()
 }
 
 // GetCodeOk returns a tuple with the Code field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AddRoles200ResponseAllOfAppTemplatePermissionsInner) GetCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.Code) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Code, true
+	return o.Code.Get(), o.Code.IsSet()
 }
 
 // IsSetCode returns a boolean if a field has been set.
 func (o *AddRoles200ResponseAllOfAppTemplatePermissionsInner) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
+	if o != nil && o.Code.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCode gets a reference to the given string and assigns it to the Code field.
+// SetCode gets a reference to the given NullableString and assigns it to the Code field.
 func (o *AddRoles200ResponseAllOfAppTemplatePermissionsInner) SetCode(v string) {
-	o.Code = &v
+	o.Code.Set(&v)
+}
+
+// SetCodeNil sets the value for Code to be an explicit nil
+func (o *AddRoles200ResponseAllOfAppTemplatePermissionsInner) SetCodeNil() {
+	o.Code.Set(nil)
+}
+
+// UnsetCode ensures that no value is present for Code, not even an explicit nil
+func (o *AddRoles200ResponseAllOfAppTemplatePermissionsInner) UnsetCode() {
+	o.Code.Unset()
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -187,8 +198,8 @@ func (o AddRoles200ResponseAllOfAppTemplatePermissionsInner) ToMap() (map[string
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
-	if !IsNil(o.Code) {
-		toSerialize["code"] = o.Code
+	if o.Code.IsSet() {
+		toSerialize["code"] = o.Code.Get()
 	}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name

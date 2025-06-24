@@ -20,10 +20,10 @@ Name | Type | Description | Notes
 **RoleAttributeName** | Pointer to **string** |  | [optional] 
 **AzureTenantId** | Pointer to **string** |  | [optional] 
 **AzureAppId** | Pointer to **string** |  | [optional] 
-**AzureAppSecret** | Pointer to **string** |  | [optional] 
+**AzureAppSecret** | Pointer to **NullableString** |  | [optional] 
 **RoleLinkAttributeName** | Pointer to **string** |  | [optional] 
 **PublicKey** | Pointer to **string** |  | [optional] 
-**AzureAppSecretHash** | Pointer to **string** |  | [optional] 
+**AzureAppSecretHash** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -469,6 +469,16 @@ SetAzureAppSecret sets AzureAppSecret field to given value.
 
 HasAzureAppSecret returns a boolean if a field has been set.
 
+### SetAzureAppSecretNil
+
+`func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6Config) SetAzureAppSecretNil(b bool)`
+
+ SetAzureAppSecretNil sets the value for AzureAppSecret to be an explicit nil
+
+### UnsetAzureAppSecret
+`func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6Config) UnsetAzureAppSecret()`
+
+UnsetAzureAppSecret ensures that no value is present for AzureAppSecret, not even an explicit nil
 ### GetRoleLinkAttributeName
 
 `func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6Config) GetRoleLinkAttributeName() string`
@@ -544,6 +554,16 @@ SetAzureAppSecretHash sets AzureAppSecretHash field to given value.
 
 HasAzureAppSecretHash returns a boolean if a field has been set.
 
+### SetAzureAppSecretHashNil
+
+`func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6Config) SetAzureAppSecretHashNil(b bool)`
+
+ SetAzureAppSecretHashNil sets the value for AzureAppSecretHash to be an explicit nil
+
+### UnsetAzureAppSecretHash
+`func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6Config) UnsetAzureAppSecretHash()`
+
+UnsetAzureAppSecretHash ensures that no value is present for AzureAppSecretHash, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

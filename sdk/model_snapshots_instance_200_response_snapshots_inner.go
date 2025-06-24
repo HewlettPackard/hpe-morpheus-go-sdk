@@ -21,21 +21,21 @@ var _ MappedNullable = &SnapshotsInstance200ResponseSnapshotsInner{}
 
 // SnapshotsInstance200ResponseSnapshotsInner struct for SnapshotsInstance200ResponseSnapshotsInner
 type SnapshotsInstance200ResponseSnapshotsInner struct {
-	Id                   *int32                                                         `json:"id,omitempty"`
-	Name                 *string                                                        `json:"name,omitempty"`
-	Description          *string                                                        `json:"description,omitempty"`
-	ExternalId           *string                                                        `json:"externalId,omitempty"`
-	Status               *string                                                        `json:"status,omitempty"`
-	State                *string                                                        `json:"state,omitempty"`
-	SnapshotType         *string                                                        `json:"snapshotType,omitempty"`
-	SnapshotCreated      *time.Time                                                     `json:"snapshotCreated,omitempty"`
-	Zone                 *SnapshotsInstance200ResponseSnapshotsInnerZone                `json:"zone,omitempty"`
-	Datastore            *string                                                        `json:"datastore,omitempty"`
-	ParentSnapshot       *string                                                        `json:"parentSnapshot,omitempty"`
-	SnapshotFiles        []SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInner `json:"snapshotFiles,omitempty"`
-	CurrentlyActive      *bool                                                          `json:"currentlyActive,omitempty"`
-	DateCreated          *time.Time                                                     `json:"dateCreated,omitempty"`
-	AdditionalProperties map[string]interface{}                                         `json:",remain"`
+	Id                   *int32                                                                                                     `json:"id,omitempty"`
+	Name                 *string                                                                                                    `json:"name,omitempty"`
+	Description          NullableString                                                                                             `json:"description,omitempty"`
+	ExternalId           NullableString                                                                                             `json:"externalId,omitempty"`
+	Status               *string                                                                                                    `json:"status,omitempty"`
+	State                NullableString                                                                                             `json:"state,omitempty"`
+	SnapshotType         *string                                                                                                    `json:"snapshotType,omitempty"`
+	SnapshotCreated      NullableTime                                                                                               `json:"snapshotCreated,omitempty"`
+	Zone                 *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount `json:"zone,omitempty"`
+	Datastore            NullableString                                                                                             `json:"datastore,omitempty"`
+	ParentSnapshot       NullableString                                                                                             `json:"parentSnapshot,omitempty"`
+	SnapshotFiles        []SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInner                                             `json:"snapshotFiles,omitempty"`
+	CurrentlyActive      *bool                                                                                                      `json:"currentlyActive,omitempty"`
+	DateCreated          *time.Time                                                                                                 `json:"dateCreated,omitempty"`
+	AdditionalProperties map[string]interface{}                                                                                     `json:",remain"`
 }
 
 type _SnapshotsInstance200ResponseSnapshotsInner SnapshotsInstance200ResponseSnapshotsInner
@@ -121,68 +121,90 @@ func (o *SnapshotsInstance200ResponseSnapshotsInner) SetName(v string) {
 	o.Name = &v
 }
 
-// GetDescription returns the Description field value if set, zero value otherwise.
+// GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SnapshotsInstance200ResponseSnapshotsInner) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
+	if o == nil || IsNil(o.Description.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Description
+	return *o.Description.Get()
 }
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SnapshotsInstance200ResponseSnapshotsInner) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Description, true
+	return o.Description.Get(), o.Description.IsSet()
 }
 
 // IsSetDescription returns a boolean if a field has been set.
 func (o *SnapshotsInstance200ResponseSnapshotsInner) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
+	if o != nil && o.Description.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDescription gets a reference to the given string and assigns it to the Description field.
+// SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *SnapshotsInstance200ResponseSnapshotsInner) SetDescription(v string) {
-	o.Description = &v
+	o.Description.Set(&v)
 }
 
-// GetExternalId returns the ExternalId field value if set, zero value otherwise.
+// SetDescriptionNil sets the value for Description to be an explicit nil
+func (o *SnapshotsInstance200ResponseSnapshotsInner) SetDescriptionNil() {
+	o.Description.Set(nil)
+}
+
+// UnsetDescription ensures that no value is present for Description, not even an explicit nil
+func (o *SnapshotsInstance200ResponseSnapshotsInner) UnsetDescription() {
+	o.Description.Unset()
+}
+
+// GetExternalId returns the ExternalId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SnapshotsInstance200ResponseSnapshotsInner) GetExternalId() string {
-	if o == nil || IsNil(o.ExternalId) {
+	if o == nil || IsNil(o.ExternalId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ExternalId
+	return *o.ExternalId.Get()
 }
 
 // GetExternalIdOk returns a tuple with the ExternalId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SnapshotsInstance200ResponseSnapshotsInner) GetExternalIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ExternalId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ExternalId, true
+	return o.ExternalId.Get(), o.ExternalId.IsSet()
 }
 
 // IsSetExternalId returns a boolean if a field has been set.
 func (o *SnapshotsInstance200ResponseSnapshotsInner) IsSetExternalId() bool {
-	if o != nil && !IsNil(o.ExternalId) {
+	if o != nil && o.ExternalId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetExternalId gets a reference to the given string and assigns it to the ExternalId field.
+// SetExternalId gets a reference to the given NullableString and assigns it to the ExternalId field.
 func (o *SnapshotsInstance200ResponseSnapshotsInner) SetExternalId(v string) {
-	o.ExternalId = &v
+	o.ExternalId.Set(&v)
+}
+
+// SetExternalIdNil sets the value for ExternalId to be an explicit nil
+func (o *SnapshotsInstance200ResponseSnapshotsInner) SetExternalIdNil() {
+	o.ExternalId.Set(nil)
+}
+
+// UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
+func (o *SnapshotsInstance200ResponseSnapshotsInner) UnsetExternalId() {
+	o.ExternalId.Unset()
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
@@ -217,36 +239,47 @@ func (o *SnapshotsInstance200ResponseSnapshotsInner) SetStatus(v string) {
 	o.Status = &v
 }
 
-// GetState returns the State field value if set, zero value otherwise.
+// GetState returns the State field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SnapshotsInstance200ResponseSnapshotsInner) GetState() string {
-	if o == nil || IsNil(o.State) {
+	if o == nil || IsNil(o.State.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.State
+	return *o.State.Get()
 }
 
 // GetStateOk returns a tuple with the State field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SnapshotsInstance200ResponseSnapshotsInner) GetStateOk() (*string, bool) {
-	if o == nil || IsNil(o.State) {
+	if o == nil {
 		return nil, false
 	}
-	return o.State, true
+	return o.State.Get(), o.State.IsSet()
 }
 
 // IsSetState returns a boolean if a field has been set.
 func (o *SnapshotsInstance200ResponseSnapshotsInner) IsSetState() bool {
-	if o != nil && !IsNil(o.State) {
+	if o != nil && o.State.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetState gets a reference to the given string and assigns it to the State field.
+// SetState gets a reference to the given NullableString and assigns it to the State field.
 func (o *SnapshotsInstance200ResponseSnapshotsInner) SetState(v string) {
-	o.State = &v
+	o.State.Set(&v)
+}
+
+// SetStateNil sets the value for State to be an explicit nil
+func (o *SnapshotsInstance200ResponseSnapshotsInner) SetStateNil() {
+	o.State.Set(nil)
+}
+
+// UnsetState ensures that no value is present for State, not even an explicit nil
+func (o *SnapshotsInstance200ResponseSnapshotsInner) UnsetState() {
+	o.State.Unset()
 }
 
 // GetSnapshotType returns the SnapshotType field value if set, zero value otherwise.
@@ -281,42 +314,53 @@ func (o *SnapshotsInstance200ResponseSnapshotsInner) SetSnapshotType(v string) {
 	o.SnapshotType = &v
 }
 
-// GetSnapshotCreated returns the SnapshotCreated field value if set, zero value otherwise.
+// GetSnapshotCreated returns the SnapshotCreated field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SnapshotsInstance200ResponseSnapshotsInner) GetSnapshotCreated() time.Time {
-	if o == nil || IsNil(o.SnapshotCreated) {
+	if o == nil || IsNil(o.SnapshotCreated.Get()) {
 		var ret time.Time
 		return ret
 	}
-	return *o.SnapshotCreated
+	return *o.SnapshotCreated.Get()
 }
 
 // GetSnapshotCreatedOk returns a tuple with the SnapshotCreated field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SnapshotsInstance200ResponseSnapshotsInner) GetSnapshotCreatedOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.SnapshotCreated) {
+	if o == nil {
 		return nil, false
 	}
-	return o.SnapshotCreated, true
+	return o.SnapshotCreated.Get(), o.SnapshotCreated.IsSet()
 }
 
 // IsSetSnapshotCreated returns a boolean if a field has been set.
 func (o *SnapshotsInstance200ResponseSnapshotsInner) IsSetSnapshotCreated() bool {
-	if o != nil && !IsNil(o.SnapshotCreated) {
+	if o != nil && o.SnapshotCreated.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetSnapshotCreated gets a reference to the given time.Time and assigns it to the SnapshotCreated field.
+// SetSnapshotCreated gets a reference to the given NullableTime and assigns it to the SnapshotCreated field.
 func (o *SnapshotsInstance200ResponseSnapshotsInner) SetSnapshotCreated(v time.Time) {
-	o.SnapshotCreated = &v
+	o.SnapshotCreated.Set(&v)
+}
+
+// SetSnapshotCreatedNil sets the value for SnapshotCreated to be an explicit nil
+func (o *SnapshotsInstance200ResponseSnapshotsInner) SetSnapshotCreatedNil() {
+	o.SnapshotCreated.Set(nil)
+}
+
+// UnsetSnapshotCreated ensures that no value is present for SnapshotCreated, not even an explicit nil
+func (o *SnapshotsInstance200ResponseSnapshotsInner) UnsetSnapshotCreated() {
+	o.SnapshotCreated.Unset()
 }
 
 // GetZone returns the Zone field value if set, zero value otherwise.
-func (o *SnapshotsInstance200ResponseSnapshotsInner) GetZone() SnapshotsInstance200ResponseSnapshotsInnerZone {
+func (o *SnapshotsInstance200ResponseSnapshotsInner) GetZone() GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount {
 	if o == nil || IsNil(o.Zone) {
-		var ret SnapshotsInstance200ResponseSnapshotsInnerZone
+		var ret GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount
 		return ret
 	}
 	return *o.Zone
@@ -324,7 +368,7 @@ func (o *SnapshotsInstance200ResponseSnapshotsInner) GetZone() SnapshotsInstance
 
 // GetZoneOk returns a tuple with the Zone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SnapshotsInstance200ResponseSnapshotsInner) GetZoneOk() (*SnapshotsInstance200ResponseSnapshotsInnerZone, bool) {
+func (o *SnapshotsInstance200ResponseSnapshotsInner) GetZoneOk() (*GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount, bool) {
 	if o == nil || IsNil(o.Zone) {
 		return nil, false
 	}
@@ -340,73 +384,95 @@ func (o *SnapshotsInstance200ResponseSnapshotsInner) IsSetZone() bool {
 	return false
 }
 
-// SetZone gets a reference to the given SnapshotsInstance200ResponseSnapshotsInnerZone and assigns it to the Zone field.
-func (o *SnapshotsInstance200ResponseSnapshotsInner) SetZone(v SnapshotsInstance200ResponseSnapshotsInnerZone) {
+// SetZone gets a reference to the given GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount and assigns it to the Zone field.
+func (o *SnapshotsInstance200ResponseSnapshotsInner) SetZone(v GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount) {
 	o.Zone = &v
 }
 
-// GetDatastore returns the Datastore field value if set, zero value otherwise.
+// GetDatastore returns the Datastore field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SnapshotsInstance200ResponseSnapshotsInner) GetDatastore() string {
-	if o == nil || IsNil(o.Datastore) {
+	if o == nil || IsNil(o.Datastore.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Datastore
+	return *o.Datastore.Get()
 }
 
 // GetDatastoreOk returns a tuple with the Datastore field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SnapshotsInstance200ResponseSnapshotsInner) GetDatastoreOk() (*string, bool) {
-	if o == nil || IsNil(o.Datastore) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Datastore, true
+	return o.Datastore.Get(), o.Datastore.IsSet()
 }
 
 // IsSetDatastore returns a boolean if a field has been set.
 func (o *SnapshotsInstance200ResponseSnapshotsInner) IsSetDatastore() bool {
-	if o != nil && !IsNil(o.Datastore) {
+	if o != nil && o.Datastore.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDatastore gets a reference to the given string and assigns it to the Datastore field.
+// SetDatastore gets a reference to the given NullableString and assigns it to the Datastore field.
 func (o *SnapshotsInstance200ResponseSnapshotsInner) SetDatastore(v string) {
-	o.Datastore = &v
+	o.Datastore.Set(&v)
 }
 
-// GetParentSnapshot returns the ParentSnapshot field value if set, zero value otherwise.
+// SetDatastoreNil sets the value for Datastore to be an explicit nil
+func (o *SnapshotsInstance200ResponseSnapshotsInner) SetDatastoreNil() {
+	o.Datastore.Set(nil)
+}
+
+// UnsetDatastore ensures that no value is present for Datastore, not even an explicit nil
+func (o *SnapshotsInstance200ResponseSnapshotsInner) UnsetDatastore() {
+	o.Datastore.Unset()
+}
+
+// GetParentSnapshot returns the ParentSnapshot field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SnapshotsInstance200ResponseSnapshotsInner) GetParentSnapshot() string {
-	if o == nil || IsNil(o.ParentSnapshot) {
+	if o == nil || IsNil(o.ParentSnapshot.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ParentSnapshot
+	return *o.ParentSnapshot.Get()
 }
 
 // GetParentSnapshotOk returns a tuple with the ParentSnapshot field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SnapshotsInstance200ResponseSnapshotsInner) GetParentSnapshotOk() (*string, bool) {
-	if o == nil || IsNil(o.ParentSnapshot) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ParentSnapshot, true
+	return o.ParentSnapshot.Get(), o.ParentSnapshot.IsSet()
 }
 
 // IsSetParentSnapshot returns a boolean if a field has been set.
 func (o *SnapshotsInstance200ResponseSnapshotsInner) IsSetParentSnapshot() bool {
-	if o != nil && !IsNil(o.ParentSnapshot) {
+	if o != nil && o.ParentSnapshot.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetParentSnapshot gets a reference to the given string and assigns it to the ParentSnapshot field.
+// SetParentSnapshot gets a reference to the given NullableString and assigns it to the ParentSnapshot field.
 func (o *SnapshotsInstance200ResponseSnapshotsInner) SetParentSnapshot(v string) {
-	o.ParentSnapshot = &v
+	o.ParentSnapshot.Set(&v)
+}
+
+// SetParentSnapshotNil sets the value for ParentSnapshot to be an explicit nil
+func (o *SnapshotsInstance200ResponseSnapshotsInner) SetParentSnapshotNil() {
+	o.ParentSnapshot.Set(nil)
+}
+
+// UnsetParentSnapshot ensures that no value is present for ParentSnapshot, not even an explicit nil
+func (o *SnapshotsInstance200ResponseSnapshotsInner) UnsetParentSnapshot() {
+	o.ParentSnapshot.Unset()
 }
 
 // GetSnapshotFiles returns the SnapshotFiles field value if set, zero value otherwise.
@@ -521,32 +587,32 @@ func (o SnapshotsInstance200ResponseSnapshotsInner) ToMap() (map[string]interfac
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !IsNil(o.Description) {
-		toSerialize["description"] = o.Description
+	if o.Description.IsSet() {
+		toSerialize["description"] = o.Description.Get()
 	}
-	if !IsNil(o.ExternalId) {
-		toSerialize["externalId"] = o.ExternalId
+	if o.ExternalId.IsSet() {
+		toSerialize["externalId"] = o.ExternalId.Get()
 	}
 	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status
 	}
-	if !IsNil(o.State) {
-		toSerialize["state"] = o.State
+	if o.State.IsSet() {
+		toSerialize["state"] = o.State.Get()
 	}
 	if !IsNil(o.SnapshotType) {
 		toSerialize["snapshotType"] = o.SnapshotType
 	}
-	if !IsNil(o.SnapshotCreated) {
-		toSerialize["snapshotCreated"] = o.SnapshotCreated
+	if o.SnapshotCreated.IsSet() {
+		toSerialize["snapshotCreated"] = o.SnapshotCreated.Get()
 	}
 	if !IsNil(o.Zone) {
 		toSerialize["zone"] = o.Zone
 	}
-	if !IsNil(o.Datastore) {
-		toSerialize["datastore"] = o.Datastore
+	if o.Datastore.IsSet() {
+		toSerialize["datastore"] = o.Datastore.Get()
 	}
-	if !IsNil(o.ParentSnapshot) {
-		toSerialize["parentSnapshot"] = o.ParentSnapshot
+	if o.ParentSnapshot.IsSet() {
+		toSerialize["parentSnapshot"] = o.ParentSnapshot.Get()
 	}
 	if !IsNil(o.SnapshotFiles) {
 		toSerialize["snapshotFiles"] = o.SnapshotFiles

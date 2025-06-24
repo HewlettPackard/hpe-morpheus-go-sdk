@@ -7,10 +7,10 @@ Name | Type | Description | Notes
 **Id** | Pointer to **string** | ID | [optional] 
 **Uuid** | Pointer to **string** | UUID | [optional] 
 **Name** | Pointer to **string** | Name | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **NullableString** |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
-**DateCreated** | Pointer to **time.Time** |  | [optional] 
-**Score** | Pointer to **float32** |  | [optional] 
+**DateCreated** | Pointer to **NullableTime** |  | [optional] 
+**Score** | Pointer to **NullableFloat32** |  | [optional] 
 
 ## Methods
 
@@ -131,6 +131,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *Search200ResponseHitsInner) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *Search200ResponseHitsInner) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetType
 
 `func (o *Search200ResponseHitsInner) GetType() string`
@@ -181,6 +191,16 @@ SetDateCreated sets DateCreated field to given value.
 
 HasDateCreated returns a boolean if a field has been set.
 
+### SetDateCreatedNil
+
+`func (o *Search200ResponseHitsInner) SetDateCreatedNil(b bool)`
+
+ SetDateCreatedNil sets the value for DateCreated to be an explicit nil
+
+### UnsetDateCreated
+`func (o *Search200ResponseHitsInner) UnsetDateCreated()`
+
+UnsetDateCreated ensures that no value is present for DateCreated, not even an explicit nil
 ### GetScore
 
 `func (o *Search200ResponseHitsInner) GetScore() float32`
@@ -206,6 +226,16 @@ SetScore sets Score field to given value.
 
 HasScore returns a boolean if a field has been set.
 
+### SetScoreNil
+
+`func (o *Search200ResponseHitsInner) SetScoreNil(b bool)`
+
+ SetScoreNil sets the value for Score to be an explicit nil
+
+### UnsetScore
+`func (o *Search200ResponseHitsInner) UnsetScore()`
+
+UnsetScore ensures that no value is present for Score, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **RefType** | Pointer to **string** |  | [optional] 
 **RefId** | Pointer to **int64** |  | [optional] 
 **RefName** | Pointer to **string** |  | [optional] 
-**SubRefName** | Pointer to **string** |  | [optional] 
+**SubRefName** | Pointer to **NullableString** |  | [optional] 
 **StateDate** | Pointer to **time.Time** |  | [optional] 
 **Status** | Pointer to **string** |  | [optional] 
 **IacDrift** | Pointer to **bool** |  | [optional] 
@@ -131,6 +131,16 @@ SetSubRefName sets SubRefName field to given value.
 
 HasSubRefName returns a boolean if a field has been set.
 
+### SetSubRefNameNil
+
+`func (o *GetAppState200ResponseAllOfWorkloadsInner) SetSubRefNameNil(b bool)`
+
+ SetSubRefNameNil sets the value for SubRefName to be an explicit nil
+
+### UnsetSubRefName
+`func (o *GetAppState200ResponseAllOfWorkloadsInner) UnsetSubRefName()`
+
+UnsetSubRefName ensures that no value is present for SubRefName, not even an explicit nil
 ### GetStateDate
 
 `func (o *GetAppState200ResponseAllOfWorkloadsInner) GetStateDate() time.Time`

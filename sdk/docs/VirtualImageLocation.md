@@ -7,24 +7,24 @@ Name | Type | Description | Notes
 **Id** | Pointer to **int64** |  | [optional] 
 **Cloud** | Pointer to [**ListBackupSettings200ResponseBackupSettingsDefaultSchedule**](ListBackupSettings200ResponseBackupSettingsDefaultSchedule.md) |  | [optional] 
 **Code** | Pointer to **string** |  | [optional] 
-**InternalId** | Pointer to **string** |  | [optional] 
+**InternalId** | Pointer to **NullableString** |  | [optional] 
 **ExternalId** | Pointer to **string** |  | [optional] 
 **ExternalDiskId** | Pointer to **string** |  | [optional] 
-**RemotePath** | Pointer to **string** |  | [optional] 
-**ImagePath** | Pointer to **string** |  | [optional] 
+**RemotePath** | Pointer to **NullableString** |  | [optional] 
+**ImagePath** | Pointer to **NullableString** |  | [optional] 
 **ImageName** | Pointer to **string** |  | [optional] 
 **ImageRegion** | Pointer to **string** |  | [optional] 
-**ImageFolder** | Pointer to **string** |  | [optional] 
+**ImageFolder** | Pointer to **NullableString** |  | [optional] 
 **RefType** | Pointer to **string** |  | [optional] 
 **RefId** | Pointer to **int64** |  | [optional] 
-**NodeRefType** | Pointer to **string** |  | [optional] 
-**NodeRefId** | Pointer to **string** |  | [optional] 
-**SubRefType** | Pointer to **string** |  | [optional] 
-**SubRefId** | Pointer to **string** |  | [optional] 
+**NodeRefType** | Pointer to **NullableString** |  | [optional] 
+**NodeRefId** | Pointer to **NullableString** |  | [optional] 
+**SubRefType** | Pointer to **NullableString** |  | [optional] 
+**SubRefId** | Pointer to **NullableString** |  | [optional] 
 **IsPublic** | Pointer to **bool** |  | [optional] 
 **SystemImage** | Pointer to **bool** |  | [optional] 
 **DiskIndex** | Pointer to **int64** |  | [optional] 
-**PricePlan** | Pointer to **string** |  | [optional] 
+**PricePlan** | Pointer to **NullableString** |  | [optional] 
 **Volumes** | Pointer to **[]map[string]interface{}** |  | [optional] 
 **StorageControllers** | Pointer to **[]map[string]interface{}** |  | [optional] 
 **NetworkInterfaces** | Pointer to **[]map[string]interface{}** |  | [optional] 
@@ -149,6 +149,16 @@ SetInternalId sets InternalId field to given value.
 
 HasInternalId returns a boolean if a field has been set.
 
+### SetInternalIdNil
+
+`func (o *VirtualImageLocation) SetInternalIdNil(b bool)`
+
+ SetInternalIdNil sets the value for InternalId to be an explicit nil
+
+### UnsetInternalId
+`func (o *VirtualImageLocation) UnsetInternalId()`
+
+UnsetInternalId ensures that no value is present for InternalId, not even an explicit nil
 ### GetExternalId
 
 `func (o *VirtualImageLocation) GetExternalId() string`
@@ -224,6 +234,16 @@ SetRemotePath sets RemotePath field to given value.
 
 HasRemotePath returns a boolean if a field has been set.
 
+### SetRemotePathNil
+
+`func (o *VirtualImageLocation) SetRemotePathNil(b bool)`
+
+ SetRemotePathNil sets the value for RemotePath to be an explicit nil
+
+### UnsetRemotePath
+`func (o *VirtualImageLocation) UnsetRemotePath()`
+
+UnsetRemotePath ensures that no value is present for RemotePath, not even an explicit nil
 ### GetImagePath
 
 `func (o *VirtualImageLocation) GetImagePath() string`
@@ -249,6 +269,16 @@ SetImagePath sets ImagePath field to given value.
 
 HasImagePath returns a boolean if a field has been set.
 
+### SetImagePathNil
+
+`func (o *VirtualImageLocation) SetImagePathNil(b bool)`
+
+ SetImagePathNil sets the value for ImagePath to be an explicit nil
+
+### UnsetImagePath
+`func (o *VirtualImageLocation) UnsetImagePath()`
+
+UnsetImagePath ensures that no value is present for ImagePath, not even an explicit nil
 ### GetImageName
 
 `func (o *VirtualImageLocation) GetImageName() string`
@@ -324,6 +354,16 @@ SetImageFolder sets ImageFolder field to given value.
 
 HasImageFolder returns a boolean if a field has been set.
 
+### SetImageFolderNil
+
+`func (o *VirtualImageLocation) SetImageFolderNil(b bool)`
+
+ SetImageFolderNil sets the value for ImageFolder to be an explicit nil
+
+### UnsetImageFolder
+`func (o *VirtualImageLocation) UnsetImageFolder()`
+
+UnsetImageFolder ensures that no value is present for ImageFolder, not even an explicit nil
 ### GetRefType
 
 `func (o *VirtualImageLocation) GetRefType() string`
@@ -399,6 +439,16 @@ SetNodeRefType sets NodeRefType field to given value.
 
 HasNodeRefType returns a boolean if a field has been set.
 
+### SetNodeRefTypeNil
+
+`func (o *VirtualImageLocation) SetNodeRefTypeNil(b bool)`
+
+ SetNodeRefTypeNil sets the value for NodeRefType to be an explicit nil
+
+### UnsetNodeRefType
+`func (o *VirtualImageLocation) UnsetNodeRefType()`
+
+UnsetNodeRefType ensures that no value is present for NodeRefType, not even an explicit nil
 ### GetNodeRefId
 
 `func (o *VirtualImageLocation) GetNodeRefId() string`
@@ -424,6 +474,16 @@ SetNodeRefId sets NodeRefId field to given value.
 
 HasNodeRefId returns a boolean if a field has been set.
 
+### SetNodeRefIdNil
+
+`func (o *VirtualImageLocation) SetNodeRefIdNil(b bool)`
+
+ SetNodeRefIdNil sets the value for NodeRefId to be an explicit nil
+
+### UnsetNodeRefId
+`func (o *VirtualImageLocation) UnsetNodeRefId()`
+
+UnsetNodeRefId ensures that no value is present for NodeRefId, not even an explicit nil
 ### GetSubRefType
 
 `func (o *VirtualImageLocation) GetSubRefType() string`
@@ -449,6 +509,16 @@ SetSubRefType sets SubRefType field to given value.
 
 HasSubRefType returns a boolean if a field has been set.
 
+### SetSubRefTypeNil
+
+`func (o *VirtualImageLocation) SetSubRefTypeNil(b bool)`
+
+ SetSubRefTypeNil sets the value for SubRefType to be an explicit nil
+
+### UnsetSubRefType
+`func (o *VirtualImageLocation) UnsetSubRefType()`
+
+UnsetSubRefType ensures that no value is present for SubRefType, not even an explicit nil
 ### GetSubRefId
 
 `func (o *VirtualImageLocation) GetSubRefId() string`
@@ -474,6 +544,16 @@ SetSubRefId sets SubRefId field to given value.
 
 HasSubRefId returns a boolean if a field has been set.
 
+### SetSubRefIdNil
+
+`func (o *VirtualImageLocation) SetSubRefIdNil(b bool)`
+
+ SetSubRefIdNil sets the value for SubRefId to be an explicit nil
+
+### UnsetSubRefId
+`func (o *VirtualImageLocation) UnsetSubRefId()`
+
+UnsetSubRefId ensures that no value is present for SubRefId, not even an explicit nil
 ### GetIsPublic
 
 `func (o *VirtualImageLocation) GetIsPublic() bool`
@@ -574,6 +654,16 @@ SetPricePlan sets PricePlan field to given value.
 
 HasPricePlan returns a boolean if a field has been set.
 
+### SetPricePlanNil
+
+`func (o *VirtualImageLocation) SetPricePlanNil(b bool)`
+
+ SetPricePlanNil sets the value for PricePlan to be an explicit nil
+
+### UnsetPricePlan
+`func (o *VirtualImageLocation) UnsetPricePlan()`
+
+UnsetPricePlan ensures that no value is present for PricePlan, not even an explicit nil
 ### GetVolumes
 
 `func (o *VirtualImageLocation) GetVolumes() []map[string]interface{}`

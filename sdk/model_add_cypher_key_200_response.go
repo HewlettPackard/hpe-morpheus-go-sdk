@@ -22,7 +22,7 @@ var _ MappedNullable = &AddCypherKey200Response{}
 type AddCypherKey200Response struct {
 	Data                 *string                                     `json:"data,omitempty"`
 	Type                 *string                                     `json:"type,omitempty"`
-	LeaseDuration        *int64                                      `json:"lease_duration,omitempty"`
+	LeaseDuration        NullableInt64                               `json:"lease_duration,omitempty"`
 	Cypher               *ListCypherKeys200ResponseAllOfCyphersInner `json:"cypher,omitempty"`
 	Success              *bool                                       `json:"success,omitempty"`
 	AdditionalProperties map[string]interface{}                      `json:",remain"`
@@ -111,36 +111,47 @@ func (o *AddCypherKey200Response) SetType(v string) {
 	o.Type = &v
 }
 
-// GetLeaseDuration returns the LeaseDuration field value if set, zero value otherwise.
+// GetLeaseDuration returns the LeaseDuration field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AddCypherKey200Response) GetLeaseDuration() int64 {
-	if o == nil || IsNil(o.LeaseDuration) {
+	if o == nil || IsNil(o.LeaseDuration.Get()) {
 		var ret int64
 		return ret
 	}
-	return *o.LeaseDuration
+	return *o.LeaseDuration.Get()
 }
 
 // GetLeaseDurationOk returns a tuple with the LeaseDuration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AddCypherKey200Response) GetLeaseDurationOk() (*int64, bool) {
-	if o == nil || IsNil(o.LeaseDuration) {
+	if o == nil {
 		return nil, false
 	}
-	return o.LeaseDuration, true
+	return o.LeaseDuration.Get(), o.LeaseDuration.IsSet()
 }
 
 // IsSetLeaseDuration returns a boolean if a field has been set.
 func (o *AddCypherKey200Response) IsSetLeaseDuration() bool {
-	if o != nil && !IsNil(o.LeaseDuration) {
+	if o != nil && o.LeaseDuration.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetLeaseDuration gets a reference to the given int64 and assigns it to the LeaseDuration field.
+// SetLeaseDuration gets a reference to the given NullableInt64 and assigns it to the LeaseDuration field.
 func (o *AddCypherKey200Response) SetLeaseDuration(v int64) {
-	o.LeaseDuration = &v
+	o.LeaseDuration.Set(&v)
+}
+
+// SetLeaseDurationNil sets the value for LeaseDuration to be an explicit nil
+func (o *AddCypherKey200Response) SetLeaseDurationNil() {
+	o.LeaseDuration.Set(nil)
+}
+
+// UnsetLeaseDuration ensures that no value is present for LeaseDuration, not even an explicit nil
+func (o *AddCypherKey200Response) UnsetLeaseDuration() {
+	o.LeaseDuration.Unset()
 }
 
 // GetCypher returns the Cypher field value if set, zero value otherwise.
@@ -223,8 +234,8 @@ func (o AddCypherKey200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type
 	}
-	if !IsNil(o.LeaseDuration) {
-		toSerialize["lease_duration"] = o.LeaseDuration
+	if o.LeaseDuration.IsSet() {
+		toSerialize["lease_duration"] = o.LeaseDuration.Get()
 	}
 	if !IsNil(o.Cypher) {
 		toSerialize["cypher"] = o.Cypher

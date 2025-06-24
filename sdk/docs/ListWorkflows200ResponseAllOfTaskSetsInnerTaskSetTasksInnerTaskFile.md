@@ -6,10 +6,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
 **SourceType** | Pointer to **string** |  | [optional] 
-**ContentRef** | Pointer to **string** |  | [optional] 
-**ContentPath** | Pointer to **string** |  | [optional] 
+**ContentRef** | Pointer to **NullableString** |  | [optional] 
+**ContentPath** | Pointer to **NullableString** |  | [optional] 
 **Repository** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
-**Content** | Pointer to **string** |  | [optional] 
+**Content** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -105,6 +105,16 @@ SetContentRef sets ContentRef field to given value.
 
 HasContentRef returns a boolean if a field has been set.
 
+### SetContentRefNil
+
+`func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskFile) SetContentRefNil(b bool)`
+
+ SetContentRefNil sets the value for ContentRef to be an explicit nil
+
+### UnsetContentRef
+`func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskFile) UnsetContentRef()`
+
+UnsetContentRef ensures that no value is present for ContentRef, not even an explicit nil
 ### GetContentPath
 
 `func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskFile) GetContentPath() string`
@@ -130,6 +140,16 @@ SetContentPath sets ContentPath field to given value.
 
 HasContentPath returns a boolean if a field has been set.
 
+### SetContentPathNil
+
+`func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskFile) SetContentPathNil(b bool)`
+
+ SetContentPathNil sets the value for ContentPath to be an explicit nil
+
+### UnsetContentPath
+`func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskFile) UnsetContentPath()`
+
+UnsetContentPath ensures that no value is present for ContentPath, not even an explicit nil
 ### GetRepository
 
 `func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskFile) GetRepository() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
@@ -180,6 +200,16 @@ SetContent sets Content field to given value.
 
 HasContent returns a boolean if a field has been set.
 
+### SetContentNil
+
+`func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskFile) SetContentNil(b bool)`
+
+ SetContentNil sets the value for Content to be an explicit nil
+
+### UnsetContent
+`func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskFile) UnsetContent()`
+
+UnsetContent ensures that no value is present for Content, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

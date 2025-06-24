@@ -22,7 +22,7 @@ var _ MappedNullable = &ListInstanceTypesProvisioning200ResponseAllOfInstanceTyp
 type ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInnerInstanceTypeLayoutsInner struct {
 	Id                   *int64                 `json:"id,omitempty"`
 	Name                 *string                `json:"name,omitempty"`
-	ProvisionTypeCode    *string                `json:"provisionTypeCode,omitempty"`
+	ProvisionTypeCode    NullableString         `json:"provisionTypeCode,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -109,36 +109,47 @@ func (o *ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInnerInstance
 	o.Name = &v
 }
 
-// GetProvisionTypeCode returns the ProvisionTypeCode field value if set, zero value otherwise.
+// GetProvisionTypeCode returns the ProvisionTypeCode field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInnerInstanceTypeLayoutsInner) GetProvisionTypeCode() string {
-	if o == nil || IsNil(o.ProvisionTypeCode) {
+	if o == nil || IsNil(o.ProvisionTypeCode.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ProvisionTypeCode
+	return *o.ProvisionTypeCode.Get()
 }
 
 // GetProvisionTypeCodeOk returns a tuple with the ProvisionTypeCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInnerInstanceTypeLayoutsInner) GetProvisionTypeCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.ProvisionTypeCode) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ProvisionTypeCode, true
+	return o.ProvisionTypeCode.Get(), o.ProvisionTypeCode.IsSet()
 }
 
 // IsSetProvisionTypeCode returns a boolean if a field has been set.
 func (o *ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInnerInstanceTypeLayoutsInner) IsSetProvisionTypeCode() bool {
-	if o != nil && !IsNil(o.ProvisionTypeCode) {
+	if o != nil && o.ProvisionTypeCode.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetProvisionTypeCode gets a reference to the given string and assigns it to the ProvisionTypeCode field.
+// SetProvisionTypeCode gets a reference to the given NullableString and assigns it to the ProvisionTypeCode field.
 func (o *ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInnerInstanceTypeLayoutsInner) SetProvisionTypeCode(v string) {
-	o.ProvisionTypeCode = &v
+	o.ProvisionTypeCode.Set(&v)
+}
+
+// SetProvisionTypeCodeNil sets the value for ProvisionTypeCode to be an explicit nil
+func (o *ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInnerInstanceTypeLayoutsInner) SetProvisionTypeCodeNil() {
+	o.ProvisionTypeCode.Set(nil)
+}
+
+// UnsetProvisionTypeCode ensures that no value is present for ProvisionTypeCode, not even an explicit nil
+func (o *ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInnerInstanceTypeLayoutsInner) UnsetProvisionTypeCode() {
+	o.ProvisionTypeCode.Unset()
 }
 
 func (o ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInnerInstanceTypeLayoutsInner) MarshalJSON() ([]byte, error) {
@@ -157,8 +168,8 @@ func (o ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInnerInstanceT
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !IsNil(o.ProvisionTypeCode) {
-		toSerialize["provisionTypeCode"] = o.ProvisionTypeCode
+	if o.ProvisionTypeCode.IsSet() {
+		toSerialize["provisionTypeCode"] = o.ProvisionTypeCode.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {

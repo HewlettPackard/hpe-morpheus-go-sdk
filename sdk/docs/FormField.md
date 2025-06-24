@@ -7,14 +7,14 @@ Name | Type | Description | Notes
 **Id** | Pointer to **int64** | The ID of the input, include this to use an existing input or to update an existing form input record instead of creating a new one. | [optional] 
 **Code** | Pointer to **string** | The code of the option type as a globally unique identifier. By default a UUID will be used. | [optional] 
 **Name** | Pointer to **string** | The name of the option type for handy reference. By default a UUID will be used. | [optional] 
-**Description** | Pointer to **string** | Short description of the option type | [optional] 
+**Description** | Pointer to **NullableString** | Short description of the option type | [optional] 
 **FieldName** | **string** | Field Name, the name for user input. This along with fieldContext determines the configuration property name.  The property key for when posting this option type to a JSON POST request | 
 **Type** | Pointer to **string** | Type, the type of input. eg. text, checkbox, select, etc. | [optional] [default to "text"]
 **FieldLabel** | **string** | Field Label, the label for user input. | 
-**FieldCode** | Pointer to **string** | Localized Label, i18n code for the label | [optional] 
+**FieldCode** | Pointer to **NullableString** | Localized Label, i18n code for the label | [optional] 
 **PlaceHolder** | Pointer to **string** | Any placeholder text when nothing is yet entered | [optional] 
-**HelpBlock** | Pointer to **string** | This is the explaination of the input that shows typically underneath the option | [optional] 
-**HelpBlockFieldCode** | Pointer to **string** | Localized Help Block, i18n code for the help block | [optional] 
+**HelpBlock** | Pointer to **NullableString** | This is the explaination of the input that shows typically underneath the option | [optional] 
+**HelpBlockFieldCode** | Pointer to **NullableString** | Localized Help Block, i18n code for the help block | [optional] 
 **DefaultValue** | Pointer to **string** | The default value if no user entry is specified. This value should be passed to the desired JSON Map if nothing else is entered | [optional] 
 **Required** | Pointer to **bool** | Is this field entry required for the request | [optional] [default to false]
 **ExportMeta** | Pointer to **bool** | Export as Tag | [optional] [default to false]
@@ -24,10 +24,10 @@ Name | Type | Description | Notes
 **IsLocked** | Pointer to **bool** | Locked | [optional] [default to false]
 **IsHidden** | Pointer to **bool** | Hidden | [optional] [default to false]
 **ExcludeFromSearch** | Pointer to **bool** | Exclude From Search | [optional] [default to false]
-**DependsOnCode** | Pointer to **string** | A fieldName that will trigger reloading this input | [optional] 
-**VisibleOnCode** | Pointer to **string** | A fieldName that will trigger visibility of this input | [optional] 
+**DependsOnCode** | Pointer to **NullableString** | A fieldName that will trigger reloading this input | [optional] 
+**VisibleOnCode** | Pointer to **NullableString** | A fieldName that will trigger visibility of this input | [optional] 
 **VerifyPattern** | Pointer to **string** | Verify Pattern, A regexp string that validates the input, use (?i) to make the matcher case insensitive | [optional] 
-**RequireOnCode** | Pointer to **string** | A fieldName that will trigger required attribute of this input | [optional] 
+**RequireOnCode** | Pointer to **NullableString** | A fieldName that will trigger required attribute of this input | [optional] 
 
 ## Methods
 
@@ -148,6 +148,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *FormField) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *FormField) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetFieldName
 
 `func (o *FormField) GetFieldName() string`
@@ -238,6 +248,16 @@ SetFieldCode sets FieldCode field to given value.
 
 HasFieldCode returns a boolean if a field has been set.
 
+### SetFieldCodeNil
+
+`func (o *FormField) SetFieldCodeNil(b bool)`
+
+ SetFieldCodeNil sets the value for FieldCode to be an explicit nil
+
+### UnsetFieldCode
+`func (o *FormField) UnsetFieldCode()`
+
+UnsetFieldCode ensures that no value is present for FieldCode, not even an explicit nil
 ### GetPlaceHolder
 
 `func (o *FormField) GetPlaceHolder() string`
@@ -288,6 +308,16 @@ SetHelpBlock sets HelpBlock field to given value.
 
 HasHelpBlock returns a boolean if a field has been set.
 
+### SetHelpBlockNil
+
+`func (o *FormField) SetHelpBlockNil(b bool)`
+
+ SetHelpBlockNil sets the value for HelpBlock to be an explicit nil
+
+### UnsetHelpBlock
+`func (o *FormField) UnsetHelpBlock()`
+
+UnsetHelpBlock ensures that no value is present for HelpBlock, not even an explicit nil
 ### GetHelpBlockFieldCode
 
 `func (o *FormField) GetHelpBlockFieldCode() string`
@@ -313,6 +343,16 @@ SetHelpBlockFieldCode sets HelpBlockFieldCode field to given value.
 
 HasHelpBlockFieldCode returns a boolean if a field has been set.
 
+### SetHelpBlockFieldCodeNil
+
+`func (o *FormField) SetHelpBlockFieldCodeNil(b bool)`
+
+ SetHelpBlockFieldCodeNil sets the value for HelpBlockFieldCode to be an explicit nil
+
+### UnsetHelpBlockFieldCode
+`func (o *FormField) UnsetHelpBlockFieldCode()`
+
+UnsetHelpBlockFieldCode ensures that no value is present for HelpBlockFieldCode, not even an explicit nil
 ### GetDefaultValue
 
 `func (o *FormField) GetDefaultValue() string`
@@ -563,6 +603,16 @@ SetDependsOnCode sets DependsOnCode field to given value.
 
 HasDependsOnCode returns a boolean if a field has been set.
 
+### SetDependsOnCodeNil
+
+`func (o *FormField) SetDependsOnCodeNil(b bool)`
+
+ SetDependsOnCodeNil sets the value for DependsOnCode to be an explicit nil
+
+### UnsetDependsOnCode
+`func (o *FormField) UnsetDependsOnCode()`
+
+UnsetDependsOnCode ensures that no value is present for DependsOnCode, not even an explicit nil
 ### GetVisibleOnCode
 
 `func (o *FormField) GetVisibleOnCode() string`
@@ -588,6 +638,16 @@ SetVisibleOnCode sets VisibleOnCode field to given value.
 
 HasVisibleOnCode returns a boolean if a field has been set.
 
+### SetVisibleOnCodeNil
+
+`func (o *FormField) SetVisibleOnCodeNil(b bool)`
+
+ SetVisibleOnCodeNil sets the value for VisibleOnCode to be an explicit nil
+
+### UnsetVisibleOnCode
+`func (o *FormField) UnsetVisibleOnCode()`
+
+UnsetVisibleOnCode ensures that no value is present for VisibleOnCode, not even an explicit nil
 ### GetVerifyPattern
 
 `func (o *FormField) GetVerifyPattern() string`
@@ -638,6 +698,16 @@ SetRequireOnCode sets RequireOnCode field to given value.
 
 HasRequireOnCode returns a boolean if a field has been set.
 
+### SetRequireOnCodeNil
+
+`func (o *FormField) SetRequireOnCodeNil(b bool)`
+
+ SetRequireOnCodeNil sets the value for RequireOnCode to be an explicit nil
+
+### UnsetRequireOnCode
+`func (o *FormField) UnsetRequireOnCode()`
+
+UnsetRequireOnCode ensures that no value is present for RequireOnCode, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

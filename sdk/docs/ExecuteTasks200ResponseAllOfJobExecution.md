@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
-**ProcessId** | Pointer to **string** |  | [optional] 
+**ProcessId** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -76,6 +76,16 @@ SetProcessId sets ProcessId field to given value.
 
 HasProcessId returns a boolean if a field has been set.
 
+### SetProcessIdNil
+
+`func (o *ExecuteTasks200ResponseAllOfJobExecution) SetProcessIdNil(b bool)`
+
+ SetProcessIdNil sets the value for ProcessId to be an explicit nil
+
+### UnsetProcessId
+`func (o *ExecuteTasks200ResponseAllOfJobExecution) UnsetProcessId()`
+
+UnsetProcessId ensures that no value is present for ProcessId, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

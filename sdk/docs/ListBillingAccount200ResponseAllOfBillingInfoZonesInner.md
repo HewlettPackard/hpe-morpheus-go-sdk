@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **ZoneName** | Pointer to **string** |  | [optional] 
 **ZoneId** | Pointer to **int64** |  | [optional] 
 **ZoneUUID** | Pointer to **string** |  | [optional] 
-**ZoneCode** | Pointer to **string** |  | [optional] 
+**ZoneCode** | Pointer to **NullableString** |  | [optional] 
 **StartDate** | Pointer to **time.Time** |  | [optional] 
 **EndDate** | Pointer to **time.Time** |  | [optional] 
 **PriceUnit** | Pointer to **string** |  | [optional] 
@@ -139,6 +139,16 @@ SetZoneCode sets ZoneCode field to given value.
 
 HasZoneCode returns a boolean if a field has been set.
 
+### SetZoneCodeNil
+
+`func (o *ListBillingAccount200ResponseAllOfBillingInfoZonesInner) SetZoneCodeNil(b bool)`
+
+ SetZoneCodeNil sets the value for ZoneCode to be an explicit nil
+
+### UnsetZoneCode
+`func (o *ListBillingAccount200ResponseAllOfBillingInfoZonesInner) UnsetZoneCode()`
+
+UnsetZoneCode ensures that no value is present for ZoneCode, not even an explicit nil
 ### GetStartDate
 
 `func (o *ListBillingAccount200ResponseAllOfBillingInfoZonesInner) GetStartDate() time.Time`

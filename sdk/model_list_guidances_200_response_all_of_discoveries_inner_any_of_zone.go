@@ -20,10 +20,10 @@ var _ MappedNullable = &ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone{}
 
 // ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone struct for ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone
 type ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone struct {
-	Id                   *int64                                                                  `json:"id,omitempty"`
-	Name                 *string                                                                 `json:"name,omitempty"`
-	ZoneType             *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"zoneType,omitempty"`
-	AdditionalProperties map[string]interface{}                                                  `json:",remain"`
+	Id                   *int64                                             `json:"id,omitempty"`
+	Name                 *string                                            `json:"name,omitempty"`
+	ZoneType             *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"zoneType,omitempty"`
+	AdditionalProperties map[string]interface{}                             `json:",remain"`
 }
 
 type _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone
@@ -110,9 +110,9 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone) SetName(v strin
 }
 
 // GetZoneType returns the ZoneType field value if set, zero value otherwise.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone) GetZoneType() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone) GetZoneType() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.ZoneType) {
-		var ret ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return *o.ZoneType
@@ -120,7 +120,7 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone) GetZoneType() L
 
 // GetZoneTypeOk returns a tuple with the ZoneType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone) GetZoneTypeOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone) GetZoneTypeOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.ZoneType) {
 		return nil, false
 	}
@@ -136,8 +136,8 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone) IsSetZoneType()
 	return false
 }
 
-// SetZoneType gets a reference to the given ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the ZoneType field.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone) SetZoneType(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetZoneType gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the ZoneType field.
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone) SetZoneType(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.ZoneType = &v
 }
 

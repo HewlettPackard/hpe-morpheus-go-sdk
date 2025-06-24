@@ -24,12 +24,12 @@ type UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZone struct {
 	AccountId            *int64                                                                      `json:"accountId,omitempty"`
 	Groups               []int64                                                                     `json:"groups,omitempty"`
 	Name                 *string                                                                     `json:"name,omitempty"`
-	Description          *string                                                                     `json:"description,omitempty"`
+	Description          NullableString                                                              `json:"description,omitempty"`
 	Location             *string                                                                     `json:"location,omitempty"`
 	Visibility           *string                                                                     `json:"visibility,omitempty"`
 	ZoneTypeId           *int64                                                                      `json:"zoneTypeId,omitempty"`
 	NetworkServer        *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServer `json:"networkServer,omitempty"`
-	SecurityServer       *string                                                                     `json:"securityServer,omitempty"`
+	SecurityServer       NullableString                                                              `json:"securityServer,omitempty"`
 	AdditionalProperties map[string]interface{}                                                      `json:",remain"`
 }
 
@@ -180,36 +180,47 @@ func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZone) SetName(
 	o.Name = &v
 }
 
-// GetDescription returns the Description field value if set, zero value otherwise.
+// GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZone) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
+	if o == nil || IsNil(o.Description.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Description
+	return *o.Description.Get()
 }
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZone) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Description, true
+	return o.Description.Get(), o.Description.IsSet()
 }
 
 // IsSetDescription returns a boolean if a field has been set.
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZone) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
+	if o != nil && o.Description.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDescription gets a reference to the given string and assigns it to the Description field.
+// SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZone) SetDescription(v string) {
-	o.Description = &v
+	o.Description.Set(&v)
+}
+
+// SetDescriptionNil sets the value for Description to be an explicit nil
+func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZone) SetDescriptionNil() {
+	o.Description.Set(nil)
+}
+
+// UnsetDescription ensures that no value is present for Description, not even an explicit nil
+func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZone) UnsetDescription() {
+	o.Description.Unset()
 }
 
 // GetLocation returns the Location field value if set, zero value otherwise.
@@ -340,36 +351,47 @@ func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZone) SetNetwo
 	o.NetworkServer = &v
 }
 
-// GetSecurityServer returns the SecurityServer field value if set, zero value otherwise.
+// GetSecurityServer returns the SecurityServer field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZone) GetSecurityServer() string {
-	if o == nil || IsNil(o.SecurityServer) {
+	if o == nil || IsNil(o.SecurityServer.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.SecurityServer
+	return *o.SecurityServer.Get()
 }
 
 // GetSecurityServerOk returns a tuple with the SecurityServer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZone) GetSecurityServerOk() (*string, bool) {
-	if o == nil || IsNil(o.SecurityServer) {
+	if o == nil {
 		return nil, false
 	}
-	return o.SecurityServer, true
+	return o.SecurityServer.Get(), o.SecurityServer.IsSet()
 }
 
 // IsSetSecurityServer returns a boolean if a field has been set.
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZone) IsSetSecurityServer() bool {
-	if o != nil && !IsNil(o.SecurityServer) {
+	if o != nil && o.SecurityServer.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetSecurityServer gets a reference to the given string and assigns it to the SecurityServer field.
+// SetSecurityServer gets a reference to the given NullableString and assigns it to the SecurityServer field.
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZone) SetSecurityServer(v string) {
-	o.SecurityServer = &v
+	o.SecurityServer.Set(&v)
+}
+
+// SetSecurityServerNil sets the value for SecurityServer to be an explicit nil
+func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZone) SetSecurityServerNil() {
+	o.SecurityServer.Set(nil)
+}
+
+// UnsetSecurityServer ensures that no value is present for SecurityServer, not even an explicit nil
+func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZone) UnsetSecurityServer() {
+	o.SecurityServer.Unset()
 }
 
 func (o UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZone) MarshalJSON() ([]byte, error) {
@@ -394,8 +416,8 @@ func (o UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZone) ToMap() (
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !IsNil(o.Description) {
-		toSerialize["description"] = o.Description
+	if o.Description.IsSet() {
+		toSerialize["description"] = o.Description.Get()
 	}
 	if !IsNil(o.Location) {
 		toSerialize["location"] = o.Location
@@ -409,8 +431,8 @@ func (o UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZone) ToMap() (
 	if !IsNil(o.NetworkServer) {
 		toSerialize["networkServer"] = o.NetworkServer
 	}
-	if !IsNil(o.SecurityServer) {
-		toSerialize["securityServer"] = o.SecurityServer
+	if o.SecurityServer.IsSet() {
+		toSerialize["securityServer"] = o.SecurityServer.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {

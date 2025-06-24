@@ -20,22 +20,22 @@ var _ MappedNullable = &ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions{}
 
 // ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions struct for ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions
 type ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions struct {
-	WebPassword          *string                `json:"webPassword,omitempty"`
-	WebPasswordHash      *string                `json:"webPasswordHash,omitempty"`
-	LocalScriptGitId     *string                `json:"localScriptGitId,omitempty"`
-	LocalScriptGitRef    *string                `json:"localScriptGitRef,omitempty"`
-	WebUser              *string                `json:"webUser,omitempty"`
-	WebBody              *string                `json:"webBody,omitempty"`
+	WebPassword          NullableString         `json:"webPassword,omitempty"`
+	WebPasswordHash      NullableString         `json:"webPasswordHash,omitempty"`
+	LocalScriptGitId     NullableString         `json:"localScriptGitId,omitempty"`
+	LocalScriptGitRef    NullableString         `json:"localScriptGitRef,omitempty"`
+	WebUser              NullableString         `json:"webUser,omitempty"`
+	WebBody              NullableString         `json:"webBody,omitempty"`
 	WebHeaders           *string                `json:"webHeaders,omitempty"`
-	Password             *string                `json:"password,omitempty"`
-	PasswordHash         *string                `json:"passwordHash,omitempty"`
-	Username             *string                `json:"username,omitempty"`
-	IgnoreSSL            *string                `json:"ignoreSSL,omitempty"`
-	WebMethod            *string                `json:"webMethod,omitempty"`
-	WebUrl               *string                `json:"webUrl,omitempty"`
-	Host                 *string                `json:"host,omitempty"`
-	Port                 *string                `json:"port,omitempty"`
-	SshKey               *string                `json:"sshKey,omitempty"`
+	Password             NullableString         `json:"password,omitempty"`
+	PasswordHash         NullableString         `json:"passwordHash,omitempty"`
+	Username             NullableString         `json:"username,omitempty"`
+	IgnoreSSL            NullableString         `json:"ignoreSSL,omitempty"`
+	WebMethod            NullableString         `json:"webMethod,omitempty"`
+	WebUrl               NullableString         `json:"webUrl,omitempty"`
+	Host                 NullableString         `json:"host,omitempty"`
+	Port                 NullableString         `json:"port,omitempty"`
+	SshKey               NullableString         `json:"sshKey,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -58,196 +58,262 @@ func NewListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptionsWithDefaults() *List
 	return &this
 }
 
-// GetWebPassword returns the WebPassword field value if set, zero value otherwise.
+// GetWebPassword returns the WebPassword field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) GetWebPassword() string {
-	if o == nil || IsNil(o.WebPassword) {
+	if o == nil || IsNil(o.WebPassword.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.WebPassword
+	return *o.WebPassword.Get()
 }
 
 // GetWebPasswordOk returns a tuple with the WebPassword field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) GetWebPasswordOk() (*string, bool) {
-	if o == nil || IsNil(o.WebPassword) {
+	if o == nil {
 		return nil, false
 	}
-	return o.WebPassword, true
+	return o.WebPassword.Get(), o.WebPassword.IsSet()
 }
 
 // IsSetWebPassword returns a boolean if a field has been set.
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) IsSetWebPassword() bool {
-	if o != nil && !IsNil(o.WebPassword) {
+	if o != nil && o.WebPassword.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetWebPassword gets a reference to the given string and assigns it to the WebPassword field.
+// SetWebPassword gets a reference to the given NullableString and assigns it to the WebPassword field.
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) SetWebPassword(v string) {
-	o.WebPassword = &v
+	o.WebPassword.Set(&v)
 }
 
-// GetWebPasswordHash returns the WebPasswordHash field value if set, zero value otherwise.
+// SetWebPasswordNil sets the value for WebPassword to be an explicit nil
+func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) SetWebPasswordNil() {
+	o.WebPassword.Set(nil)
+}
+
+// UnsetWebPassword ensures that no value is present for WebPassword, not even an explicit nil
+func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) UnsetWebPassword() {
+	o.WebPassword.Unset()
+}
+
+// GetWebPasswordHash returns the WebPasswordHash field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) GetWebPasswordHash() string {
-	if o == nil || IsNil(o.WebPasswordHash) {
+	if o == nil || IsNil(o.WebPasswordHash.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.WebPasswordHash
+	return *o.WebPasswordHash.Get()
 }
 
 // GetWebPasswordHashOk returns a tuple with the WebPasswordHash field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) GetWebPasswordHashOk() (*string, bool) {
-	if o == nil || IsNil(o.WebPasswordHash) {
+	if o == nil {
 		return nil, false
 	}
-	return o.WebPasswordHash, true
+	return o.WebPasswordHash.Get(), o.WebPasswordHash.IsSet()
 }
 
 // IsSetWebPasswordHash returns a boolean if a field has been set.
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) IsSetWebPasswordHash() bool {
-	if o != nil && !IsNil(o.WebPasswordHash) {
+	if o != nil && o.WebPasswordHash.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetWebPasswordHash gets a reference to the given string and assigns it to the WebPasswordHash field.
+// SetWebPasswordHash gets a reference to the given NullableString and assigns it to the WebPasswordHash field.
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) SetWebPasswordHash(v string) {
-	o.WebPasswordHash = &v
+	o.WebPasswordHash.Set(&v)
 }
 
-// GetLocalScriptGitId returns the LocalScriptGitId field value if set, zero value otherwise.
+// SetWebPasswordHashNil sets the value for WebPasswordHash to be an explicit nil
+func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) SetWebPasswordHashNil() {
+	o.WebPasswordHash.Set(nil)
+}
+
+// UnsetWebPasswordHash ensures that no value is present for WebPasswordHash, not even an explicit nil
+func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) UnsetWebPasswordHash() {
+	o.WebPasswordHash.Unset()
+}
+
+// GetLocalScriptGitId returns the LocalScriptGitId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) GetLocalScriptGitId() string {
-	if o == nil || IsNil(o.LocalScriptGitId) {
+	if o == nil || IsNil(o.LocalScriptGitId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.LocalScriptGitId
+	return *o.LocalScriptGitId.Get()
 }
 
 // GetLocalScriptGitIdOk returns a tuple with the LocalScriptGitId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) GetLocalScriptGitIdOk() (*string, bool) {
-	if o == nil || IsNil(o.LocalScriptGitId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.LocalScriptGitId, true
+	return o.LocalScriptGitId.Get(), o.LocalScriptGitId.IsSet()
 }
 
 // IsSetLocalScriptGitId returns a boolean if a field has been set.
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) IsSetLocalScriptGitId() bool {
-	if o != nil && !IsNil(o.LocalScriptGitId) {
+	if o != nil && o.LocalScriptGitId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetLocalScriptGitId gets a reference to the given string and assigns it to the LocalScriptGitId field.
+// SetLocalScriptGitId gets a reference to the given NullableString and assigns it to the LocalScriptGitId field.
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) SetLocalScriptGitId(v string) {
-	o.LocalScriptGitId = &v
+	o.LocalScriptGitId.Set(&v)
 }
 
-// GetLocalScriptGitRef returns the LocalScriptGitRef field value if set, zero value otherwise.
+// SetLocalScriptGitIdNil sets the value for LocalScriptGitId to be an explicit nil
+func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) SetLocalScriptGitIdNil() {
+	o.LocalScriptGitId.Set(nil)
+}
+
+// UnsetLocalScriptGitId ensures that no value is present for LocalScriptGitId, not even an explicit nil
+func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) UnsetLocalScriptGitId() {
+	o.LocalScriptGitId.Unset()
+}
+
+// GetLocalScriptGitRef returns the LocalScriptGitRef field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) GetLocalScriptGitRef() string {
-	if o == nil || IsNil(o.LocalScriptGitRef) {
+	if o == nil || IsNil(o.LocalScriptGitRef.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.LocalScriptGitRef
+	return *o.LocalScriptGitRef.Get()
 }
 
 // GetLocalScriptGitRefOk returns a tuple with the LocalScriptGitRef field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) GetLocalScriptGitRefOk() (*string, bool) {
-	if o == nil || IsNil(o.LocalScriptGitRef) {
+	if o == nil {
 		return nil, false
 	}
-	return o.LocalScriptGitRef, true
+	return o.LocalScriptGitRef.Get(), o.LocalScriptGitRef.IsSet()
 }
 
 // IsSetLocalScriptGitRef returns a boolean if a field has been set.
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) IsSetLocalScriptGitRef() bool {
-	if o != nil && !IsNil(o.LocalScriptGitRef) {
+	if o != nil && o.LocalScriptGitRef.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetLocalScriptGitRef gets a reference to the given string and assigns it to the LocalScriptGitRef field.
+// SetLocalScriptGitRef gets a reference to the given NullableString and assigns it to the LocalScriptGitRef field.
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) SetLocalScriptGitRef(v string) {
-	o.LocalScriptGitRef = &v
+	o.LocalScriptGitRef.Set(&v)
 }
 
-// GetWebUser returns the WebUser field value if set, zero value otherwise.
+// SetLocalScriptGitRefNil sets the value for LocalScriptGitRef to be an explicit nil
+func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) SetLocalScriptGitRefNil() {
+	o.LocalScriptGitRef.Set(nil)
+}
+
+// UnsetLocalScriptGitRef ensures that no value is present for LocalScriptGitRef, not even an explicit nil
+func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) UnsetLocalScriptGitRef() {
+	o.LocalScriptGitRef.Unset()
+}
+
+// GetWebUser returns the WebUser field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) GetWebUser() string {
-	if o == nil || IsNil(o.WebUser) {
+	if o == nil || IsNil(o.WebUser.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.WebUser
+	return *o.WebUser.Get()
 }
 
 // GetWebUserOk returns a tuple with the WebUser field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) GetWebUserOk() (*string, bool) {
-	if o == nil || IsNil(o.WebUser) {
+	if o == nil {
 		return nil, false
 	}
-	return o.WebUser, true
+	return o.WebUser.Get(), o.WebUser.IsSet()
 }
 
 // IsSetWebUser returns a boolean if a field has been set.
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) IsSetWebUser() bool {
-	if o != nil && !IsNil(o.WebUser) {
+	if o != nil && o.WebUser.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetWebUser gets a reference to the given string and assigns it to the WebUser field.
+// SetWebUser gets a reference to the given NullableString and assigns it to the WebUser field.
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) SetWebUser(v string) {
-	o.WebUser = &v
+	o.WebUser.Set(&v)
 }
 
-// GetWebBody returns the WebBody field value if set, zero value otherwise.
+// SetWebUserNil sets the value for WebUser to be an explicit nil
+func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) SetWebUserNil() {
+	o.WebUser.Set(nil)
+}
+
+// UnsetWebUser ensures that no value is present for WebUser, not even an explicit nil
+func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) UnsetWebUser() {
+	o.WebUser.Unset()
+}
+
+// GetWebBody returns the WebBody field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) GetWebBody() string {
-	if o == nil || IsNil(o.WebBody) {
+	if o == nil || IsNil(o.WebBody.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.WebBody
+	return *o.WebBody.Get()
 }
 
 // GetWebBodyOk returns a tuple with the WebBody field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) GetWebBodyOk() (*string, bool) {
-	if o == nil || IsNil(o.WebBody) {
+	if o == nil {
 		return nil, false
 	}
-	return o.WebBody, true
+	return o.WebBody.Get(), o.WebBody.IsSet()
 }
 
 // IsSetWebBody returns a boolean if a field has been set.
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) IsSetWebBody() bool {
-	if o != nil && !IsNil(o.WebBody) {
+	if o != nil && o.WebBody.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetWebBody gets a reference to the given string and assigns it to the WebBody field.
+// SetWebBody gets a reference to the given NullableString and assigns it to the WebBody field.
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) SetWebBody(v string) {
-	o.WebBody = &v
+	o.WebBody.Set(&v)
+}
+
+// SetWebBodyNil sets the value for WebBody to be an explicit nil
+func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) SetWebBodyNil() {
+	o.WebBody.Set(nil)
+}
+
+// UnsetWebBody ensures that no value is present for WebBody, not even an explicit nil
+func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) UnsetWebBody() {
+	o.WebBody.Unset()
 }
 
 // GetWebHeaders returns the WebHeaders field value if set, zero value otherwise.
@@ -282,292 +348,391 @@ func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) SetWebHeaders(v s
 	o.WebHeaders = &v
 }
 
-// GetPassword returns the Password field value if set, zero value otherwise.
+// GetPassword returns the Password field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) GetPassword() string {
-	if o == nil || IsNil(o.Password) {
+	if o == nil || IsNil(o.Password.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Password
+	return *o.Password.Get()
 }
 
 // GetPasswordOk returns a tuple with the Password field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) GetPasswordOk() (*string, bool) {
-	if o == nil || IsNil(o.Password) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Password, true
+	return o.Password.Get(), o.Password.IsSet()
 }
 
 // IsSetPassword returns a boolean if a field has been set.
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) IsSetPassword() bool {
-	if o != nil && !IsNil(o.Password) {
+	if o != nil && o.Password.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetPassword gets a reference to the given string and assigns it to the Password field.
+// SetPassword gets a reference to the given NullableString and assigns it to the Password field.
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) SetPassword(v string) {
-	o.Password = &v
+	o.Password.Set(&v)
 }
 
-// GetPasswordHash returns the PasswordHash field value if set, zero value otherwise.
+// SetPasswordNil sets the value for Password to be an explicit nil
+func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) SetPasswordNil() {
+	o.Password.Set(nil)
+}
+
+// UnsetPassword ensures that no value is present for Password, not even an explicit nil
+func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) UnsetPassword() {
+	o.Password.Unset()
+}
+
+// GetPasswordHash returns the PasswordHash field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) GetPasswordHash() string {
-	if o == nil || IsNil(o.PasswordHash) {
+	if o == nil || IsNil(o.PasswordHash.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.PasswordHash
+	return *o.PasswordHash.Get()
 }
 
 // GetPasswordHashOk returns a tuple with the PasswordHash field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) GetPasswordHashOk() (*string, bool) {
-	if o == nil || IsNil(o.PasswordHash) {
+	if o == nil {
 		return nil, false
 	}
-	return o.PasswordHash, true
+	return o.PasswordHash.Get(), o.PasswordHash.IsSet()
 }
 
 // IsSetPasswordHash returns a boolean if a field has been set.
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) IsSetPasswordHash() bool {
-	if o != nil && !IsNil(o.PasswordHash) {
+	if o != nil && o.PasswordHash.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetPasswordHash gets a reference to the given string and assigns it to the PasswordHash field.
+// SetPasswordHash gets a reference to the given NullableString and assigns it to the PasswordHash field.
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) SetPasswordHash(v string) {
-	o.PasswordHash = &v
+	o.PasswordHash.Set(&v)
 }
 
-// GetUsername returns the Username field value if set, zero value otherwise.
+// SetPasswordHashNil sets the value for PasswordHash to be an explicit nil
+func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) SetPasswordHashNil() {
+	o.PasswordHash.Set(nil)
+}
+
+// UnsetPasswordHash ensures that no value is present for PasswordHash, not even an explicit nil
+func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) UnsetPasswordHash() {
+	o.PasswordHash.Unset()
+}
+
+// GetUsername returns the Username field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) GetUsername() string {
-	if o == nil || IsNil(o.Username) {
+	if o == nil || IsNil(o.Username.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Username
+	return *o.Username.Get()
 }
 
 // GetUsernameOk returns a tuple with the Username field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) GetUsernameOk() (*string, bool) {
-	if o == nil || IsNil(o.Username) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Username, true
+	return o.Username.Get(), o.Username.IsSet()
 }
 
 // IsSetUsername returns a boolean if a field has been set.
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) IsSetUsername() bool {
-	if o != nil && !IsNil(o.Username) {
+	if o != nil && o.Username.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetUsername gets a reference to the given string and assigns it to the Username field.
+// SetUsername gets a reference to the given NullableString and assigns it to the Username field.
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) SetUsername(v string) {
-	o.Username = &v
+	o.Username.Set(&v)
 }
 
-// GetIgnoreSSL returns the IgnoreSSL field value if set, zero value otherwise.
+// SetUsernameNil sets the value for Username to be an explicit nil
+func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) SetUsernameNil() {
+	o.Username.Set(nil)
+}
+
+// UnsetUsername ensures that no value is present for Username, not even an explicit nil
+func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) UnsetUsername() {
+	o.Username.Unset()
+}
+
+// GetIgnoreSSL returns the IgnoreSSL field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) GetIgnoreSSL() string {
-	if o == nil || IsNil(o.IgnoreSSL) {
+	if o == nil || IsNil(o.IgnoreSSL.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.IgnoreSSL
+	return *o.IgnoreSSL.Get()
 }
 
 // GetIgnoreSSLOk returns a tuple with the IgnoreSSL field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) GetIgnoreSSLOk() (*string, bool) {
-	if o == nil || IsNil(o.IgnoreSSL) {
+	if o == nil {
 		return nil, false
 	}
-	return o.IgnoreSSL, true
+	return o.IgnoreSSL.Get(), o.IgnoreSSL.IsSet()
 }
 
 // IsSetIgnoreSSL returns a boolean if a field has been set.
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) IsSetIgnoreSSL() bool {
-	if o != nil && !IsNil(o.IgnoreSSL) {
+	if o != nil && o.IgnoreSSL.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetIgnoreSSL gets a reference to the given string and assigns it to the IgnoreSSL field.
+// SetIgnoreSSL gets a reference to the given NullableString and assigns it to the IgnoreSSL field.
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) SetIgnoreSSL(v string) {
-	o.IgnoreSSL = &v
+	o.IgnoreSSL.Set(&v)
 }
 
-// GetWebMethod returns the WebMethod field value if set, zero value otherwise.
+// SetIgnoreSSLNil sets the value for IgnoreSSL to be an explicit nil
+func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) SetIgnoreSSLNil() {
+	o.IgnoreSSL.Set(nil)
+}
+
+// UnsetIgnoreSSL ensures that no value is present for IgnoreSSL, not even an explicit nil
+func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) UnsetIgnoreSSL() {
+	o.IgnoreSSL.Unset()
+}
+
+// GetWebMethod returns the WebMethod field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) GetWebMethod() string {
-	if o == nil || IsNil(o.WebMethod) {
+	if o == nil || IsNil(o.WebMethod.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.WebMethod
+	return *o.WebMethod.Get()
 }
 
 // GetWebMethodOk returns a tuple with the WebMethod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) GetWebMethodOk() (*string, bool) {
-	if o == nil || IsNil(o.WebMethod) {
+	if o == nil {
 		return nil, false
 	}
-	return o.WebMethod, true
+	return o.WebMethod.Get(), o.WebMethod.IsSet()
 }
 
 // IsSetWebMethod returns a boolean if a field has been set.
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) IsSetWebMethod() bool {
-	if o != nil && !IsNil(o.WebMethod) {
+	if o != nil && o.WebMethod.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetWebMethod gets a reference to the given string and assigns it to the WebMethod field.
+// SetWebMethod gets a reference to the given NullableString and assigns it to the WebMethod field.
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) SetWebMethod(v string) {
-	o.WebMethod = &v
+	o.WebMethod.Set(&v)
 }
 
-// GetWebUrl returns the WebUrl field value if set, zero value otherwise.
+// SetWebMethodNil sets the value for WebMethod to be an explicit nil
+func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) SetWebMethodNil() {
+	o.WebMethod.Set(nil)
+}
+
+// UnsetWebMethod ensures that no value is present for WebMethod, not even an explicit nil
+func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) UnsetWebMethod() {
+	o.WebMethod.Unset()
+}
+
+// GetWebUrl returns the WebUrl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) GetWebUrl() string {
-	if o == nil || IsNil(o.WebUrl) {
+	if o == nil || IsNil(o.WebUrl.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.WebUrl
+	return *o.WebUrl.Get()
 }
 
 // GetWebUrlOk returns a tuple with the WebUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) GetWebUrlOk() (*string, bool) {
-	if o == nil || IsNil(o.WebUrl) {
+	if o == nil {
 		return nil, false
 	}
-	return o.WebUrl, true
+	return o.WebUrl.Get(), o.WebUrl.IsSet()
 }
 
 // IsSetWebUrl returns a boolean if a field has been set.
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) IsSetWebUrl() bool {
-	if o != nil && !IsNil(o.WebUrl) {
+	if o != nil && o.WebUrl.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetWebUrl gets a reference to the given string and assigns it to the WebUrl field.
+// SetWebUrl gets a reference to the given NullableString and assigns it to the WebUrl field.
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) SetWebUrl(v string) {
-	o.WebUrl = &v
+	o.WebUrl.Set(&v)
 }
 
-// GetHost returns the Host field value if set, zero value otherwise.
+// SetWebUrlNil sets the value for WebUrl to be an explicit nil
+func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) SetWebUrlNil() {
+	o.WebUrl.Set(nil)
+}
+
+// UnsetWebUrl ensures that no value is present for WebUrl, not even an explicit nil
+func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) UnsetWebUrl() {
+	o.WebUrl.Unset()
+}
+
+// GetHost returns the Host field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) GetHost() string {
-	if o == nil || IsNil(o.Host) {
+	if o == nil || IsNil(o.Host.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Host
+	return *o.Host.Get()
 }
 
 // GetHostOk returns a tuple with the Host field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) GetHostOk() (*string, bool) {
-	if o == nil || IsNil(o.Host) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Host, true
+	return o.Host.Get(), o.Host.IsSet()
 }
 
 // IsSetHost returns a boolean if a field has been set.
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) IsSetHost() bool {
-	if o != nil && !IsNil(o.Host) {
+	if o != nil && o.Host.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetHost gets a reference to the given string and assigns it to the Host field.
+// SetHost gets a reference to the given NullableString and assigns it to the Host field.
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) SetHost(v string) {
-	o.Host = &v
+	o.Host.Set(&v)
 }
 
-// GetPort returns the Port field value if set, zero value otherwise.
+// SetHostNil sets the value for Host to be an explicit nil
+func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) SetHostNil() {
+	o.Host.Set(nil)
+}
+
+// UnsetHost ensures that no value is present for Host, not even an explicit nil
+func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) UnsetHost() {
+	o.Host.Unset()
+}
+
+// GetPort returns the Port field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) GetPort() string {
-	if o == nil || IsNil(o.Port) {
+	if o == nil || IsNil(o.Port.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Port
+	return *o.Port.Get()
 }
 
 // GetPortOk returns a tuple with the Port field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) GetPortOk() (*string, bool) {
-	if o == nil || IsNil(o.Port) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Port, true
+	return o.Port.Get(), o.Port.IsSet()
 }
 
 // IsSetPort returns a boolean if a field has been set.
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) IsSetPort() bool {
-	if o != nil && !IsNil(o.Port) {
+	if o != nil && o.Port.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetPort gets a reference to the given string and assigns it to the Port field.
+// SetPort gets a reference to the given NullableString and assigns it to the Port field.
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) SetPort(v string) {
-	o.Port = &v
+	o.Port.Set(&v)
 }
 
-// GetSshKey returns the SshKey field value if set, zero value otherwise.
+// SetPortNil sets the value for Port to be an explicit nil
+func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) SetPortNil() {
+	o.Port.Set(nil)
+}
+
+// UnsetPort ensures that no value is present for Port, not even an explicit nil
+func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) UnsetPort() {
+	o.Port.Unset()
+}
+
+// GetSshKey returns the SshKey field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) GetSshKey() string {
-	if o == nil || IsNil(o.SshKey) {
+	if o == nil || IsNil(o.SshKey.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.SshKey
+	return *o.SshKey.Get()
 }
 
 // GetSshKeyOk returns a tuple with the SshKey field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) GetSshKeyOk() (*string, bool) {
-	if o == nil || IsNil(o.SshKey) {
+	if o == nil {
 		return nil, false
 	}
-	return o.SshKey, true
+	return o.SshKey.Get(), o.SshKey.IsSet()
 }
 
 // IsSetSshKey returns a boolean if a field has been set.
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) IsSetSshKey() bool {
-	if o != nil && !IsNil(o.SshKey) {
+	if o != nil && o.SshKey.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetSshKey gets a reference to the given string and assigns it to the SshKey field.
+// SetSshKey gets a reference to the given NullableString and assigns it to the SshKey field.
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) SetSshKey(v string) {
-	o.SshKey = &v
+	o.SshKey.Set(&v)
+}
+
+// SetSshKeyNil sets the value for SshKey to be an explicit nil
+func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) SetSshKeyNil() {
+	o.SshKey.Set(nil)
+}
+
+// UnsetSshKey ensures that no value is present for SshKey, not even an explicit nil
+func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) UnsetSshKey() {
+	o.SshKey.Unset()
 }
 
 func (o ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) MarshalJSON() ([]byte, error) {
@@ -580,53 +745,53 @@ func (o ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) MarshalJSON() ([]b
 
 func (o ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.WebPassword) {
-		toSerialize["webPassword"] = o.WebPassword
+	if o.WebPassword.IsSet() {
+		toSerialize["webPassword"] = o.WebPassword.Get()
 	}
-	if !IsNil(o.WebPasswordHash) {
-		toSerialize["webPasswordHash"] = o.WebPasswordHash
+	if o.WebPasswordHash.IsSet() {
+		toSerialize["webPasswordHash"] = o.WebPasswordHash.Get()
 	}
-	if !IsNil(o.LocalScriptGitId) {
-		toSerialize["localScriptGitId"] = o.LocalScriptGitId
+	if o.LocalScriptGitId.IsSet() {
+		toSerialize["localScriptGitId"] = o.LocalScriptGitId.Get()
 	}
-	if !IsNil(o.LocalScriptGitRef) {
-		toSerialize["localScriptGitRef"] = o.LocalScriptGitRef
+	if o.LocalScriptGitRef.IsSet() {
+		toSerialize["localScriptGitRef"] = o.LocalScriptGitRef.Get()
 	}
-	if !IsNil(o.WebUser) {
-		toSerialize["webUser"] = o.WebUser
+	if o.WebUser.IsSet() {
+		toSerialize["webUser"] = o.WebUser.Get()
 	}
-	if !IsNil(o.WebBody) {
-		toSerialize["webBody"] = o.WebBody
+	if o.WebBody.IsSet() {
+		toSerialize["webBody"] = o.WebBody.Get()
 	}
 	if !IsNil(o.WebHeaders) {
 		toSerialize["webHeaders"] = o.WebHeaders
 	}
-	if !IsNil(o.Password) {
-		toSerialize["password"] = o.Password
+	if o.Password.IsSet() {
+		toSerialize["password"] = o.Password.Get()
 	}
-	if !IsNil(o.PasswordHash) {
-		toSerialize["passwordHash"] = o.PasswordHash
+	if o.PasswordHash.IsSet() {
+		toSerialize["passwordHash"] = o.PasswordHash.Get()
 	}
-	if !IsNil(o.Username) {
-		toSerialize["username"] = o.Username
+	if o.Username.IsSet() {
+		toSerialize["username"] = o.Username.Get()
 	}
-	if !IsNil(o.IgnoreSSL) {
-		toSerialize["ignoreSSL"] = o.IgnoreSSL
+	if o.IgnoreSSL.IsSet() {
+		toSerialize["ignoreSSL"] = o.IgnoreSSL.Get()
 	}
-	if !IsNil(o.WebMethod) {
-		toSerialize["webMethod"] = o.WebMethod
+	if o.WebMethod.IsSet() {
+		toSerialize["webMethod"] = o.WebMethod.Get()
 	}
-	if !IsNil(o.WebUrl) {
-		toSerialize["webUrl"] = o.WebUrl
+	if o.WebUrl.IsSet() {
+		toSerialize["webUrl"] = o.WebUrl.Get()
 	}
-	if !IsNil(o.Host) {
-		toSerialize["host"] = o.Host
+	if o.Host.IsSet() {
+		toSerialize["host"] = o.Host.Get()
 	}
-	if !IsNil(o.Port) {
-		toSerialize["port"] = o.Port
+	if o.Port.IsSet() {
+		toSerialize["port"] = o.Port.Get()
 	}
-	if !IsNil(o.SshKey) {
-		toSerialize["sshKey"] = o.SshKey
+	if o.SshKey.IsSet() {
+		toSerialize["sshKey"] = o.SshKey.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {

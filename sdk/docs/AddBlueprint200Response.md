@@ -5,9 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Blueprint** | Pointer to [**AddBlueprint200ResponseAllOfBlueprint**](AddBlueprint200ResponseAllOfBlueprint.md) |  | [optional] 
-**Msg** | Pointer to **string** |  | [optional] 
-**Errors** | Pointer to **string** |  | [optional] 
-**ErrorCode** | Pointer to **string** |  | [optional] 
+**Msg** | Pointer to **NullableString** |  | [optional] 
+**Errors** | Pointer to **NullableString** |  | [optional] 
+**ErrorCode** | Pointer to **NullableString** |  | [optional] 
 **InProgress** | Pointer to **bool** |  | [optional] 
 **Success** | Pointer to **bool** |  | [optional] 
 
@@ -80,6 +80,16 @@ SetMsg sets Msg field to given value.
 
 HasMsg returns a boolean if a field has been set.
 
+### SetMsgNil
+
+`func (o *AddBlueprint200Response) SetMsgNil(b bool)`
+
+ SetMsgNil sets the value for Msg to be an explicit nil
+
+### UnsetMsg
+`func (o *AddBlueprint200Response) UnsetMsg()`
+
+UnsetMsg ensures that no value is present for Msg, not even an explicit nil
 ### GetErrors
 
 `func (o *AddBlueprint200Response) GetErrors() string`
@@ -105,6 +115,16 @@ SetErrors sets Errors field to given value.
 
 HasErrors returns a boolean if a field has been set.
 
+### SetErrorsNil
+
+`func (o *AddBlueprint200Response) SetErrorsNil(b bool)`
+
+ SetErrorsNil sets the value for Errors to be an explicit nil
+
+### UnsetErrors
+`func (o *AddBlueprint200Response) UnsetErrors()`
+
+UnsetErrors ensures that no value is present for Errors, not even an explicit nil
 ### GetErrorCode
 
 `func (o *AddBlueprint200Response) GetErrorCode() string`
@@ -130,6 +150,16 @@ SetErrorCode sets ErrorCode field to given value.
 
 HasErrorCode returns a boolean if a field has been set.
 
+### SetErrorCodeNil
+
+`func (o *AddBlueprint200Response) SetErrorCodeNil(b bool)`
+
+ SetErrorCodeNil sets the value for ErrorCode to be an explicit nil
+
+### UnsetErrorCode
+`func (o *AddBlueprint200Response) UnsetErrorCode()`
+
+UnsetErrorCode ensures that no value is present for ErrorCode, not even an explicit nil
 ### GetInProgress
 
 `func (o *AddBlueprint200Response) GetInProgress() bool`

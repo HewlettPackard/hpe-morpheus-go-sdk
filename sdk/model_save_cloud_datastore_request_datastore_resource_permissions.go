@@ -341,9 +341,9 @@ func (o *SaveCloudDatastoreRequestDatastoreResourcePermissions) SetAccount(v Get
 	o.Account = &v
 }
 
-// GetSites returns the Sites field value if set, zero value otherwise.
+// GetSites returns the Sites field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SaveCloudDatastoreRequestDatastoreResourcePermissions) GetSites() []map[string]interface{} {
-	if o == nil || IsNil(o.Sites) {
+	if o == nil {
 		var ret []map[string]interface{}
 		return ret
 	}
@@ -352,6 +352,7 @@ func (o *SaveCloudDatastoreRequestDatastoreResourcePermissions) GetSites() []map
 
 // GetSitesOk returns a tuple with the Sites field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SaveCloudDatastoreRequestDatastoreResourcePermissions) GetSitesOk() ([]map[string]interface{}, bool) {
 	if o == nil || IsNil(o.Sites) {
 		return nil, false
@@ -373,9 +374,9 @@ func (o *SaveCloudDatastoreRequestDatastoreResourcePermissions) SetSites(v []map
 	o.Sites = v
 }
 
-// GetPlans returns the Plans field value if set, zero value otherwise.
+// GetPlans returns the Plans field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SaveCloudDatastoreRequestDatastoreResourcePermissions) GetPlans() []map[string]interface{} {
-	if o == nil || IsNil(o.Plans) {
+	if o == nil {
 		var ret []map[string]interface{}
 		return ret
 	}
@@ -384,6 +385,7 @@ func (o *SaveCloudDatastoreRequestDatastoreResourcePermissions) GetPlans() []map
 
 // GetPlansOk returns a tuple with the Plans field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SaveCloudDatastoreRequestDatastoreResourcePermissions) GetPlansOk() ([]map[string]interface{}, bool) {
 	if o == nil || IsNil(o.Plans) {
 		return nil, false
@@ -442,10 +444,10 @@ func (o SaveCloudDatastoreRequestDatastoreResourcePermissions) ToMap() (map[stri
 	if !IsNil(o.Account) {
 		toSerialize["account"] = o.Account
 	}
-	if !IsNil(o.Sites) {
+	if o.Sites != nil {
 		toSerialize["sites"] = o.Sites
 	}
-	if !IsNil(o.Plans) {
+	if o.Plans != nil {
 		toSerialize["plans"] = o.Plans
 	}
 

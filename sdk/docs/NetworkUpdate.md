@@ -6,22 +6,22 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **DisplayName** | Pointer to **string** | Display Name | [optional] 
 **Labels** | Pointer to **[]string** | Array of label strings, can be used for filtering. | [optional] 
-**Description** | Pointer to **string** | Description | [optional] 
+**Description** | Pointer to **NullableString** | Description | [optional] 
 **Cidr** | Pointer to **string** | CIDR Network | [optional] 
 **Gateway** | Pointer to **string** | Network Gateway | [optional] 
 **DnsPrimary** | Pointer to **string** | Primary DNS Server | [optional] 
 **DnsSecondary** | Pointer to **string** | Secondary DNS Server | [optional] 
 **VlanId** | Pointer to **int64** |  | [optional] 
-**Pool** | Pointer to **int64** | Network Pool ID | [optional] 
+**Pool** | Pointer to **NullableInt64** | Network Pool ID | [optional] 
 **AllowStaticOverride** | Pointer to **bool** | Allow IP Override | [optional] 
 **AssignPublicIp** | Pointer to **bool** | Assign Public IP | [optional] 
 **Active** | Pointer to **bool** | Activate (true) or disable (false) the network | [optional] 
 **DhcpServer** | Pointer to **bool** | DHCP Server enabled network | [optional] 
-**NetworkDomain** | Pointer to [**CreateNetworksRequestNetworkNetworkDomain**](CreateNetworksRequestNetworkNetworkDomain.md) |  | [optional] 
+**NetworkDomain** | Pointer to [**ListNetworks200ResponseAllOfNetworksInnerNetworkDomain**](ListNetworks200ResponseAllOfNetworksInnerNetworkDomain.md) |  | [optional] 
 **SearchDomains** | Pointer to **string** | Search Domains | [optional] 
-**NetworkProxy** | Pointer to [**CreateNetworksRequestNetworkNetworkProxy**](CreateNetworksRequestNetworkNetworkProxy.md) |  | [optional] 
+**NetworkProxy** | Pointer to [**ListNetworks200ResponseAllOfNetworksInnerNetworkProxy**](ListNetworks200ResponseAllOfNetworksInnerNetworkProxy.md) |  | [optional] 
 **ApplianceUrlProxyBypass** | Pointer to **bool** | Bypass Proxy for Appliance URL | [optional] 
-**NoProxy** | Pointer to **string** | Comma-separated list of ip addresses or name servers to exclude proxy traversal for. Typically locally routable servers are excluded. | [optional] 
+**NoProxy** | Pointer to **NullableString** | Comma-separated list of ip addresses or name servers to exclude proxy traversal for. Typically locally routable servers are excluded. | [optional] 
 **Visibility** | Pointer to **string** | Visibility, private or public. | [optional] [default to "private"]
 **Config** | Pointer to **map[string]interface{}** | Configuration object. Settings vary by type. | [optional] 
 **Tenants** | Pointer to [**[]GetAlerts200ResponseAllOfChecksInnerAccount**](GetAlerts200ResponseAllOfChecksInnerAccount.md) | Array of tenant account ids that are allowed access | [optional] 
@@ -96,6 +96,16 @@ SetLabels sets Labels field to given value.
 
 HasLabels returns a boolean if a field has been set.
 
+### SetLabelsNil
+
+`func (o *NetworkUpdate) SetLabelsNil(b bool)`
+
+ SetLabelsNil sets the value for Labels to be an explicit nil
+
+### UnsetLabels
+`func (o *NetworkUpdate) UnsetLabels()`
+
+UnsetLabels ensures that no value is present for Labels, not even an explicit nil
 ### GetDescription
 
 `func (o *NetworkUpdate) GetDescription() string`
@@ -121,6 +131,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *NetworkUpdate) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *NetworkUpdate) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetCidr
 
 `func (o *NetworkUpdate) GetCidr() string`
@@ -271,6 +291,16 @@ SetPool sets Pool field to given value.
 
 HasPool returns a boolean if a field has been set.
 
+### SetPoolNil
+
+`func (o *NetworkUpdate) SetPoolNil(b bool)`
+
+ SetPoolNil sets the value for Pool to be an explicit nil
+
+### UnsetPool
+`func (o *NetworkUpdate) UnsetPool()`
+
+UnsetPool ensures that no value is present for Pool, not even an explicit nil
 ### GetAllowStaticOverride
 
 `func (o *NetworkUpdate) GetAllowStaticOverride() bool`
@@ -373,20 +403,20 @@ HasDhcpServer returns a boolean if a field has been set.
 
 ### GetNetworkDomain
 
-`func (o *NetworkUpdate) GetNetworkDomain() CreateNetworksRequestNetworkNetworkDomain`
+`func (o *NetworkUpdate) GetNetworkDomain() ListNetworks200ResponseAllOfNetworksInnerNetworkDomain`
 
 GetNetworkDomain returns the NetworkDomain field if non-nil, zero value otherwise.
 
 ### GetNetworkDomainOk
 
-`func (o *NetworkUpdate) GetNetworkDomainOk() (*CreateNetworksRequestNetworkNetworkDomain, bool)`
+`func (o *NetworkUpdate) GetNetworkDomainOk() (*ListNetworks200ResponseAllOfNetworksInnerNetworkDomain, bool)`
 
 GetNetworkDomainOk returns a tuple with the NetworkDomain field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNetworkDomain
 
-`func (o *NetworkUpdate) SetNetworkDomain(v CreateNetworksRequestNetworkNetworkDomain)`
+`func (o *NetworkUpdate) SetNetworkDomain(v ListNetworks200ResponseAllOfNetworksInnerNetworkDomain)`
 
 SetNetworkDomain sets NetworkDomain field to given value.
 
@@ -423,20 +453,20 @@ HasSearchDomains returns a boolean if a field has been set.
 
 ### GetNetworkProxy
 
-`func (o *NetworkUpdate) GetNetworkProxy() CreateNetworksRequestNetworkNetworkProxy`
+`func (o *NetworkUpdate) GetNetworkProxy() ListNetworks200ResponseAllOfNetworksInnerNetworkProxy`
 
 GetNetworkProxy returns the NetworkProxy field if non-nil, zero value otherwise.
 
 ### GetNetworkProxyOk
 
-`func (o *NetworkUpdate) GetNetworkProxyOk() (*CreateNetworksRequestNetworkNetworkProxy, bool)`
+`func (o *NetworkUpdate) GetNetworkProxyOk() (*ListNetworks200ResponseAllOfNetworksInnerNetworkProxy, bool)`
 
 GetNetworkProxyOk returns a tuple with the NetworkProxy field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNetworkProxy
 
-`func (o *NetworkUpdate) SetNetworkProxy(v CreateNetworksRequestNetworkNetworkProxy)`
+`func (o *NetworkUpdate) SetNetworkProxy(v ListNetworks200ResponseAllOfNetworksInnerNetworkProxy)`
 
 SetNetworkProxy sets NetworkProxy field to given value.
 
@@ -496,6 +526,16 @@ SetNoProxy sets NoProxy field to given value.
 
 HasNoProxy returns a boolean if a field has been set.
 
+### SetNoProxyNil
+
+`func (o *NetworkUpdate) SetNoProxyNil(b bool)`
+
+ SetNoProxyNil sets the value for NoProxy to be an explicit nil
+
+### UnsetNoProxy
+`func (o *NetworkUpdate) UnsetNoProxy()`
+
+UnsetNoProxy ensures that no value is present for NoProxy, not even an explicit nil
 ### GetVisibility
 
 `func (o *NetworkUpdate) GetVisibility() string`

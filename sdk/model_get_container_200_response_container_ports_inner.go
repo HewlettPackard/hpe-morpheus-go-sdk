@@ -33,8 +33,8 @@ type GetContainer200ResponseContainerPortsInner struct {
 	LoadBalance          *bool                  `json:"loadBalance,omitempty"`
 	Protocol             *string                `json:"protocol,omitempty"`
 	Link                 *bool                  `json:"link,omitempty"`
-	ExternalIp           *string                `json:"externalIp,omitempty"`
-	InternalIp           *string                `json:"internalIp,omitempty"`
+	ExternalIp           NullableString         `json:"externalIp,omitempty"`
+	InternalIp           NullableString         `json:"internalIp,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -473,68 +473,90 @@ func (o *GetContainer200ResponseContainerPortsInner) SetLink(v bool) {
 	o.Link = &v
 }
 
-// GetExternalIp returns the ExternalIp field value if set, zero value otherwise.
+// GetExternalIp returns the ExternalIp field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetContainer200ResponseContainerPortsInner) GetExternalIp() string {
-	if o == nil || IsNil(o.ExternalIp) {
+	if o == nil || IsNil(o.ExternalIp.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ExternalIp
+	return *o.ExternalIp.Get()
 }
 
 // GetExternalIpOk returns a tuple with the ExternalIp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetContainer200ResponseContainerPortsInner) GetExternalIpOk() (*string, bool) {
-	if o == nil || IsNil(o.ExternalIp) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ExternalIp, true
+	return o.ExternalIp.Get(), o.ExternalIp.IsSet()
 }
 
 // IsSetExternalIp returns a boolean if a field has been set.
 func (o *GetContainer200ResponseContainerPortsInner) IsSetExternalIp() bool {
-	if o != nil && !IsNil(o.ExternalIp) {
+	if o != nil && o.ExternalIp.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetExternalIp gets a reference to the given string and assigns it to the ExternalIp field.
+// SetExternalIp gets a reference to the given NullableString and assigns it to the ExternalIp field.
 func (o *GetContainer200ResponseContainerPortsInner) SetExternalIp(v string) {
-	o.ExternalIp = &v
+	o.ExternalIp.Set(&v)
 }
 
-// GetInternalIp returns the InternalIp field value if set, zero value otherwise.
+// SetExternalIpNil sets the value for ExternalIp to be an explicit nil
+func (o *GetContainer200ResponseContainerPortsInner) SetExternalIpNil() {
+	o.ExternalIp.Set(nil)
+}
+
+// UnsetExternalIp ensures that no value is present for ExternalIp, not even an explicit nil
+func (o *GetContainer200ResponseContainerPortsInner) UnsetExternalIp() {
+	o.ExternalIp.Unset()
+}
+
+// GetInternalIp returns the InternalIp field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetContainer200ResponseContainerPortsInner) GetInternalIp() string {
-	if o == nil || IsNil(o.InternalIp) {
+	if o == nil || IsNil(o.InternalIp.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.InternalIp
+	return *o.InternalIp.Get()
 }
 
 // GetInternalIpOk returns a tuple with the InternalIp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetContainer200ResponseContainerPortsInner) GetInternalIpOk() (*string, bool) {
-	if o == nil || IsNil(o.InternalIp) {
+	if o == nil {
 		return nil, false
 	}
-	return o.InternalIp, true
+	return o.InternalIp.Get(), o.InternalIp.IsSet()
 }
 
 // IsSetInternalIp returns a boolean if a field has been set.
 func (o *GetContainer200ResponseContainerPortsInner) IsSetInternalIp() bool {
-	if o != nil && !IsNil(o.InternalIp) {
+	if o != nil && o.InternalIp.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetInternalIp gets a reference to the given string and assigns it to the InternalIp field.
+// SetInternalIp gets a reference to the given NullableString and assigns it to the InternalIp field.
 func (o *GetContainer200ResponseContainerPortsInner) SetInternalIp(v string) {
-	o.InternalIp = &v
+	o.InternalIp.Set(&v)
+}
+
+// SetInternalIpNil sets the value for InternalIp to be an explicit nil
+func (o *GetContainer200ResponseContainerPortsInner) SetInternalIpNil() {
+	o.InternalIp.Set(nil)
+}
+
+// UnsetInternalIp ensures that no value is present for InternalIp, not even an explicit nil
+func (o *GetContainer200ResponseContainerPortsInner) UnsetInternalIp() {
+	o.InternalIp.Unset()
 }
 
 func (o GetContainer200ResponseContainerPortsInner) MarshalJSON() ([]byte, error) {
@@ -586,11 +608,11 @@ func (o GetContainer200ResponseContainerPortsInner) ToMap() (map[string]interfac
 	if !IsNil(o.Link) {
 		toSerialize["link"] = o.Link
 	}
-	if !IsNil(o.ExternalIp) {
-		toSerialize["externalIp"] = o.ExternalIp
+	if o.ExternalIp.IsSet() {
+		toSerialize["externalIp"] = o.ExternalIp.Get()
 	}
-	if !IsNil(o.InternalIp) {
-		toSerialize["internalIp"] = o.InternalIp
+	if o.InternalIp.IsSet() {
+		toSerialize["internalIp"] = o.InternalIp.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {

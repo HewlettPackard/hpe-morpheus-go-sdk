@@ -9,12 +9,12 @@ Name | Type | Description | Notes
 **IsVpcSelectable** | Pointer to **bool** |  | [optional] 
 **NoAgent** | Pointer to [**AddInstance200ResponseAllOfOneOfInstanceConfigNoAgent**](AddInstance200ResponseAllOfOneOfInstanceConfigNoAgent.md) |  | [optional] 
 **SecurityGroups** | Pointer to [**[]ListInstances200ResponseAllOfInstancesInnerConfigUserGroup**](ListInstances200ResponseAllOfInstancesInnerConfigUserGroup.md) |  | [optional] 
-**SmbiosAssetTag** | Pointer to **string** |  | [optional] 
-**NestedVirtualization** | Pointer to **string** |  | [optional] 
+**SmbiosAssetTag** | Pointer to **NullableString** |  | [optional] 
+**NestedVirtualization** | Pointer to **NullableString** |  | [optional] 
 **VmwareFolderId** | Pointer to **string** |  | [optional] 
 **CustomOptions** | Pointer to **map[string]interface{}** |  | [optional] 
 **ResourcePoolId** | Pointer to [**AddInstance200ResponseAllOfOneOfInstanceConfigResourcePoolId**](AddInstance200ResponseAllOfOneOfInstanceConfigResourcePoolId.md) |  | [optional] 
-**PoolProviderType** | Pointer to **string** |  | [optional] 
+**PoolProviderType** | Pointer to **NullableString** |  | [optional] 
 **UserGroup** | Pointer to [**ListInstances200ResponseAllOfInstancesInnerConfigUserGroup**](ListInstances200ResponseAllOfInstancesInnerConfigUserGroup.md) |  | [optional] 
 **ExpireDays** | Pointer to **string** |  | [optional] 
 **ShutdownDays** | Pointer to **string** |  | [optional] 
@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **HostName** | Pointer to **string** |  | [optional] 
 **InstanceType** | Pointer to [**AddInstance200ResponseAllOfOneOfInstanceConfigInstanceType**](AddInstance200ResponseAllOfOneOfInstanceConfigInstanceType.md) |  | [optional] 
 **Site** | Pointer to [**GetAlerts200ResponseAllOfChecksInnerAccount**](GetAlerts200ResponseAllOfChecksInnerAccount.md) |  | [optional] 
-**EnvironmentPrefix** | Pointer to **string** |  | [optional] 
+**EnvironmentPrefix** | Pointer to **NullableString** |  | [optional] 
 **Layout** | Pointer to [**ListImageBuilds200ResponseAllOfImageBuildsInnerConfigPlan**](ListImageBuilds200ResponseAllOfImageBuildsInnerConfigPlan.md) |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 **InstanceContext** | Pointer to **string** |  | [optional] 
@@ -203,6 +203,16 @@ SetSmbiosAssetTag sets SmbiosAssetTag field to given value.
 
 HasSmbiosAssetTag returns a boolean if a field has been set.
 
+### SetSmbiosAssetTagNil
+
+`func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) SetSmbiosAssetTagNil(b bool)`
+
+ SetSmbiosAssetTagNil sets the value for SmbiosAssetTag to be an explicit nil
+
+### UnsetSmbiosAssetTag
+`func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) UnsetSmbiosAssetTag()`
+
+UnsetSmbiosAssetTag ensures that no value is present for SmbiosAssetTag, not even an explicit nil
 ### GetNestedVirtualization
 
 `func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetNestedVirtualization() string`
@@ -228,6 +238,16 @@ SetNestedVirtualization sets NestedVirtualization field to given value.
 
 HasNestedVirtualization returns a boolean if a field has been set.
 
+### SetNestedVirtualizationNil
+
+`func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) SetNestedVirtualizationNil(b bool)`
+
+ SetNestedVirtualizationNil sets the value for NestedVirtualization to be an explicit nil
+
+### UnsetNestedVirtualization
+`func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) UnsetNestedVirtualization()`
+
+UnsetNestedVirtualization ensures that no value is present for NestedVirtualization, not even an explicit nil
 ### GetVmwareFolderId
 
 `func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetVmwareFolderId() string`
@@ -328,6 +348,16 @@ SetPoolProviderType sets PoolProviderType field to given value.
 
 HasPoolProviderType returns a boolean if a field has been set.
 
+### SetPoolProviderTypeNil
+
+`func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) SetPoolProviderTypeNil(b bool)`
+
+ SetPoolProviderTypeNil sets the value for PoolProviderType to be an explicit nil
+
+### UnsetPoolProviderType
+`func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) UnsetPoolProviderType()`
+
+UnsetPoolProviderType ensures that no value is present for PoolProviderType, not even an explicit nil
 ### GetUserGroup
 
 `func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetUserGroup() ListInstances200ResponseAllOfInstancesInnerConfigUserGroup`
@@ -528,6 +558,16 @@ SetEnvironmentPrefix sets EnvironmentPrefix field to given value.
 
 HasEnvironmentPrefix returns a boolean if a field has been set.
 
+### SetEnvironmentPrefixNil
+
+`func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) SetEnvironmentPrefixNil(b bool)`
+
+ SetEnvironmentPrefixNil sets the value for EnvironmentPrefix to be an explicit nil
+
+### UnsetEnvironmentPrefix
+`func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) UnsetEnvironmentPrefix()`
+
+UnsetEnvironmentPrefix ensures that no value is present for EnvironmentPrefix, not even an explicit nil
 ### GetLayout
 
 `func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetLayout() ListImageBuilds200ResponseAllOfImageBuildsInnerConfigPlan`
@@ -653,6 +693,16 @@ SetExpose sets Expose field to given value.
 
 HasExpose returns a boolean if a field has been set.
 
+### SetExposeNil
+
+`func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) SetExposeNil(b bool)`
+
+ SetExposeNil sets the value for Expose to be an explicit nil
+
+### UnsetExpose
+`func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) UnsetExpose()`
+
+UnsetExpose ensures that no value is present for Expose, not even an explicit nil
 ### GetCreateBackup
 
 `func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetCreateBackup() bool`
@@ -778,6 +828,16 @@ SetLbInstances sets LbInstances field to given value.
 
 HasLbInstances returns a boolean if a field has been set.
 
+### SetLbInstancesNil
+
+`func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) SetLbInstancesNil(b bool)`
+
+ SetLbInstancesNil sets the value for LbInstances to be an explicit nil
+
+### UnsetLbInstances
+`func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) UnsetLbInstances()`
+
+UnsetLbInstances ensures that no value is present for LbInstances, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

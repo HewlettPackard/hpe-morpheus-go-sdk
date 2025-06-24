@@ -8,17 +8,17 @@ Name | Type | Description | Notes
 **Name** | Pointer to **string** | Name | [optional] 
 **LocationType** | Pointer to **string** | Source Type (instance, server, storage) | [optional] 
 **Instance** | Pointer to [**ListBackups200ResponseAllOfBackupsInnerInstance**](ListBackups200ResponseAllOfBackupsInnerInstance.md) |  | [optional] 
-**ContainerId** | Pointer to **int64** |  | [optional] 
+**ContainerId** | Pointer to **NullableInt64** |  | [optional] 
 **Job** | Pointer to [**ListBackups200ResponseAllOfBackupsInnerJob**](ListBackups200ResponseAllOfBackupsInnerJob.md) |  | [optional] 
 **Schedule** | Pointer to [**ListBackups200ResponseAllOfBackupsInnerSchedule**](ListBackups200ResponseAllOfBackupsInnerSchedule.md) |  | [optional] 
-**RetentionCount** | Pointer to **int64** |  | [optional] 
+**RetentionCount** | Pointer to **NullableInt64** |  | [optional] 
 **BackupType** | Pointer to [**ListBackups200ResponseAllOfBackupsInnerBackupType**](ListBackups200ResponseAllOfBackupsInnerBackupType.md) |  | [optional] 
 **StorageProvider** | Pointer to [**ListBackups200ResponseAllOfBackupsInnerStorageProvider**](ListBackups200ResponseAllOfBackupsInnerStorageProvider.md) |  | [optional] 
 **BackupProvider** | Pointer to [**ListBackups200ResponseAllOfBackupsInnerBackupProvider**](ListBackups200ResponseAllOfBackupsInnerBackupProvider.md) |  | [optional] 
 **BackupRespository** | Pointer to [**ListBackups200ResponseAllOfBackupsInnerBackupRespository**](ListBackups200ResponseAllOfBackupsInnerBackupRespository.md) |  | [optional] 
-**CronExpression** | Pointer to **string** | Cron Expression | [optional] 
-**NextFire** | Pointer to **time.Time** | Next Fire | [optional] 
-**LastStatus** | Pointer to **string** | Last Status | [optional] 
+**CronExpression** | Pointer to **NullableString** | Cron Expression | [optional] 
+**NextFire** | Pointer to **NullableTime** | Next Fire | [optional] 
+**LastStatus** | Pointer to **NullableString** | Last Status | [optional] 
 **LastResult** | Pointer to [**ListBackups200ResponseAllOfBackupsInnerLastResult**](ListBackups200ResponseAllOfBackupsInnerLastResult.md) |  | [optional] 
 **Stats** | Pointer to [**ListBackups200ResponseAllOfBackupsInnerStats**](ListBackups200ResponseAllOfBackupsInnerStats.md) |  | [optional] 
 **Enabled** | Pointer to **bool** | Enabled | [optional] 
@@ -169,6 +169,16 @@ SetContainerId sets ContainerId field to given value.
 
 HasContainerId returns a boolean if a field has been set.
 
+### SetContainerIdNil
+
+`func (o *ListBackups200ResponseAllOfBackupsInner) SetContainerIdNil(b bool)`
+
+ SetContainerIdNil sets the value for ContainerId to be an explicit nil
+
+### UnsetContainerId
+`func (o *ListBackups200ResponseAllOfBackupsInner) UnsetContainerId()`
+
+UnsetContainerId ensures that no value is present for ContainerId, not even an explicit nil
 ### GetJob
 
 `func (o *ListBackups200ResponseAllOfBackupsInner) GetJob() ListBackups200ResponseAllOfBackupsInnerJob`
@@ -244,6 +254,16 @@ SetRetentionCount sets RetentionCount field to given value.
 
 HasRetentionCount returns a boolean if a field has been set.
 
+### SetRetentionCountNil
+
+`func (o *ListBackups200ResponseAllOfBackupsInner) SetRetentionCountNil(b bool)`
+
+ SetRetentionCountNil sets the value for RetentionCount to be an explicit nil
+
+### UnsetRetentionCount
+`func (o *ListBackups200ResponseAllOfBackupsInner) UnsetRetentionCount()`
+
+UnsetRetentionCount ensures that no value is present for RetentionCount, not even an explicit nil
 ### GetBackupType
 
 `func (o *ListBackups200ResponseAllOfBackupsInner) GetBackupType() ListBackups200ResponseAllOfBackupsInnerBackupType`
@@ -369,6 +389,16 @@ SetCronExpression sets CronExpression field to given value.
 
 HasCronExpression returns a boolean if a field has been set.
 
+### SetCronExpressionNil
+
+`func (o *ListBackups200ResponseAllOfBackupsInner) SetCronExpressionNil(b bool)`
+
+ SetCronExpressionNil sets the value for CronExpression to be an explicit nil
+
+### UnsetCronExpression
+`func (o *ListBackups200ResponseAllOfBackupsInner) UnsetCronExpression()`
+
+UnsetCronExpression ensures that no value is present for CronExpression, not even an explicit nil
 ### GetNextFire
 
 `func (o *ListBackups200ResponseAllOfBackupsInner) GetNextFire() time.Time`
@@ -394,6 +424,16 @@ SetNextFire sets NextFire field to given value.
 
 HasNextFire returns a boolean if a field has been set.
 
+### SetNextFireNil
+
+`func (o *ListBackups200ResponseAllOfBackupsInner) SetNextFireNil(b bool)`
+
+ SetNextFireNil sets the value for NextFire to be an explicit nil
+
+### UnsetNextFire
+`func (o *ListBackups200ResponseAllOfBackupsInner) UnsetNextFire()`
+
+UnsetNextFire ensures that no value is present for NextFire, not even an explicit nil
 ### GetLastStatus
 
 `func (o *ListBackups200ResponseAllOfBackupsInner) GetLastStatus() string`
@@ -419,6 +459,16 @@ SetLastStatus sets LastStatus field to given value.
 
 HasLastStatus returns a boolean if a field has been set.
 
+### SetLastStatusNil
+
+`func (o *ListBackups200ResponseAllOfBackupsInner) SetLastStatusNil(b bool)`
+
+ SetLastStatusNil sets the value for LastStatus to be an explicit nil
+
+### UnsetLastStatus
+`func (o *ListBackups200ResponseAllOfBackupsInner) UnsetLastStatus()`
+
+UnsetLastStatus ensures that no value is present for LastStatus, not even an explicit nil
 ### GetLastResult
 
 `func (o *ListBackups200ResponseAllOfBackupsInner) GetLastResult() ListBackups200ResponseAllOfBackupsInnerLastResult`

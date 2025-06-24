@@ -5,19 +5,19 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
-**Account** | Pointer to [**ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
+**Account** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Labels** | Pointer to **[]string** |  | [optional] 
-**Code** | Pointer to **string** |  | [optional] 
+**Code** | Pointer to **NullableString** |  | [optional] 
 **Type** | Pointer to [**ListBackupSettings200ResponseBackupSettingsDefaultSchedule**](ListBackupSettings200ResponseBackupSettingsDefaultSchedule.md) |  | [optional] 
-**ExternalId** | Pointer to **string** |  | [optional] 
-**ExternalType** | Pointer to **string** |  | [optional] 
-**DeploymentId** | Pointer to **string** |  | [optional] 
-**Status** | Pointer to **string** |  | [optional] 
+**ExternalId** | Pointer to **NullableString** |  | [optional] 
+**ExternalType** | Pointer to **NullableString** |  | [optional] 
+**DeploymentId** | Pointer to **NullableString** |  | [optional] 
+**Status** | Pointer to **NullableString** |  | [optional] 
 **File** | Pointer to [**ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile**](ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile.md) |  | [optional] 
 **Config** | Pointer to **map[string]interface{}** |  | [optional] 
 **CreatedBy** | Pointer to **string** |  | [optional] 
-**UpdatedBy** | Pointer to **string** |  | [optional] 
+**UpdatedBy** | Pointer to **NullableString** |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
 
@@ -67,20 +67,20 @@ HasId returns a boolean if a field has been set.
 
 ### GetAccount
 
-`func (o *ListSpecTemplates200ResponseAllOfSpecTemplatesInner) GetAccount() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *ListSpecTemplates200ResponseAllOfSpecTemplatesInner) GetAccount() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetAccount returns the Account field if non-nil, zero value otherwise.
 
 ### GetAccountOk
 
-`func (o *ListSpecTemplates200ResponseAllOfSpecTemplatesInner) GetAccountOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *ListSpecTemplates200ResponseAllOfSpecTemplatesInner) GetAccountOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetAccountOk returns a tuple with the Account field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccount
 
-`func (o *ListSpecTemplates200ResponseAllOfSpecTemplatesInner) SetAccount(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *ListSpecTemplates200ResponseAllOfSpecTemplatesInner) SetAccount(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetAccount sets Account field to given value.
 
@@ -165,6 +165,16 @@ SetCode sets Code field to given value.
 
 HasCode returns a boolean if a field has been set.
 
+### SetCodeNil
+
+`func (o *ListSpecTemplates200ResponseAllOfSpecTemplatesInner) SetCodeNil(b bool)`
+
+ SetCodeNil sets the value for Code to be an explicit nil
+
+### UnsetCode
+`func (o *ListSpecTemplates200ResponseAllOfSpecTemplatesInner) UnsetCode()`
+
+UnsetCode ensures that no value is present for Code, not even an explicit nil
 ### GetType
 
 `func (o *ListSpecTemplates200ResponseAllOfSpecTemplatesInner) GetType() ListBackupSettings200ResponseBackupSettingsDefaultSchedule`
@@ -215,6 +225,16 @@ SetExternalId sets ExternalId field to given value.
 
 HasExternalId returns a boolean if a field has been set.
 
+### SetExternalIdNil
+
+`func (o *ListSpecTemplates200ResponseAllOfSpecTemplatesInner) SetExternalIdNil(b bool)`
+
+ SetExternalIdNil sets the value for ExternalId to be an explicit nil
+
+### UnsetExternalId
+`func (o *ListSpecTemplates200ResponseAllOfSpecTemplatesInner) UnsetExternalId()`
+
+UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
 ### GetExternalType
 
 `func (o *ListSpecTemplates200ResponseAllOfSpecTemplatesInner) GetExternalType() string`
@@ -240,6 +260,16 @@ SetExternalType sets ExternalType field to given value.
 
 HasExternalType returns a boolean if a field has been set.
 
+### SetExternalTypeNil
+
+`func (o *ListSpecTemplates200ResponseAllOfSpecTemplatesInner) SetExternalTypeNil(b bool)`
+
+ SetExternalTypeNil sets the value for ExternalType to be an explicit nil
+
+### UnsetExternalType
+`func (o *ListSpecTemplates200ResponseAllOfSpecTemplatesInner) UnsetExternalType()`
+
+UnsetExternalType ensures that no value is present for ExternalType, not even an explicit nil
 ### GetDeploymentId
 
 `func (o *ListSpecTemplates200ResponseAllOfSpecTemplatesInner) GetDeploymentId() string`
@@ -265,6 +295,16 @@ SetDeploymentId sets DeploymentId field to given value.
 
 HasDeploymentId returns a boolean if a field has been set.
 
+### SetDeploymentIdNil
+
+`func (o *ListSpecTemplates200ResponseAllOfSpecTemplatesInner) SetDeploymentIdNil(b bool)`
+
+ SetDeploymentIdNil sets the value for DeploymentId to be an explicit nil
+
+### UnsetDeploymentId
+`func (o *ListSpecTemplates200ResponseAllOfSpecTemplatesInner) UnsetDeploymentId()`
+
+UnsetDeploymentId ensures that no value is present for DeploymentId, not even an explicit nil
 ### GetStatus
 
 `func (o *ListSpecTemplates200ResponseAllOfSpecTemplatesInner) GetStatus() string`
@@ -290,6 +330,16 @@ SetStatus sets Status field to given value.
 
 HasStatus returns a boolean if a field has been set.
 
+### SetStatusNil
+
+`func (o *ListSpecTemplates200ResponseAllOfSpecTemplatesInner) SetStatusNil(b bool)`
+
+ SetStatusNil sets the value for Status to be an explicit nil
+
+### UnsetStatus
+`func (o *ListSpecTemplates200ResponseAllOfSpecTemplatesInner) UnsetStatus()`
+
+UnsetStatus ensures that no value is present for Status, not even an explicit nil
 ### GetFile
 
 `func (o *ListSpecTemplates200ResponseAllOfSpecTemplatesInner) GetFile() ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile`
@@ -390,6 +440,16 @@ SetUpdatedBy sets UpdatedBy field to given value.
 
 HasUpdatedBy returns a boolean if a field has been set.
 
+### SetUpdatedByNil
+
+`func (o *ListSpecTemplates200ResponseAllOfSpecTemplatesInner) SetUpdatedByNil(b bool)`
+
+ SetUpdatedByNil sets the value for UpdatedBy to be an explicit nil
+
+### UnsetUpdatedBy
+`func (o *ListSpecTemplates200ResponseAllOfSpecTemplatesInner) UnsetUpdatedBy()`
+
+UnsetUpdatedBy ensures that no value is present for UpdatedBy, not even an explicit nil
 ### GetDateCreated
 
 `func (o *ListSpecTemplates200ResponseAllOfSpecTemplatesInner) GetDateCreated() time.Time`

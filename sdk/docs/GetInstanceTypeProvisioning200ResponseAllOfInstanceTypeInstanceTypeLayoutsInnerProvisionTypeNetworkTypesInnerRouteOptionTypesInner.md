@@ -6,25 +6,25 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **NullableString** |  | [optional] 
 **Code** | Pointer to **string** |  | [optional] 
 **FieldName** | Pointer to **string** |  | [optional] 
 **FieldLabel** | Pointer to **string** |  | [optional] 
 **FieldCode** | Pointer to **string** |  | [optional] 
 **FieldContext** | Pointer to **string** |  | [optional] 
-**FieldGroup** | Pointer to **string** |  | [optional] 
-**FieldClass** | Pointer to **string** |  | [optional] 
-**FieldAddOn** | Pointer to **string** |  | [optional] 
-**FieldComponent** | Pointer to **string** |  | [optional] 
-**FieldInput** | Pointer to **string** |  | [optional] 
+**FieldGroup** | Pointer to **NullableString** |  | [optional] 
+**FieldClass** | Pointer to **NullableString** |  | [optional] 
+**FieldAddOn** | Pointer to **NullableString** |  | [optional] 
+**FieldComponent** | Pointer to **NullableString** |  | [optional] 
+**FieldInput** | Pointer to **NullableString** |  | [optional] 
 **PlaceHolder** | Pointer to **string** |  | [optional] 
-**VerifyPattern** | Pointer to **string** |  | [optional] 
+**VerifyPattern** | Pointer to **NullableString** |  | [optional] 
 **HelpBlock** | Pointer to **string** |  | [optional] 
-**HelpBlockFieldCode** | Pointer to **string** |  | [optional] 
-**DefaultValue** | Pointer to **string** |  | [optional] 
-**OptionSource** | Pointer to **string** |  | [optional] 
-**OptionSourceType** | Pointer to **string** |  | [optional] 
-**OptionList** | Pointer to **string** |  | [optional] 
+**HelpBlockFieldCode** | Pointer to **NullableString** |  | [optional] 
+**DefaultValue** | Pointer to **NullableString** |  | [optional] 
+**OptionSource** | Pointer to **NullableString** |  | [optional] 
+**OptionSourceType** | Pointer to **NullableString** |  | [optional] 
+**OptionList** | Pointer to **NullableString** |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 **Advanced** | Pointer to **bool** |  | [optional] 
 **Required** | Pointer to **bool** |  | [optional] 
@@ -33,12 +33,12 @@ Name | Type | Description | Notes
 **Creatable** | Pointer to **bool** |  | [optional] 
 **Config** | Pointer to **map[string]interface{}** |  | [optional] 
 **DisplayOrder** | Pointer to **int64** |  | [optional] 
-**WrapperClass** | Pointer to **string** |  | [optional] 
+**WrapperClass** | Pointer to **NullableString** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
 **NoBlank** | Pointer to **bool** |  | [optional] 
-**DependsOnCode** | Pointer to **string** |  | [optional] 
-**VisibleOnCode** | Pointer to **string** |  | [optional] 
-**RequireOnCode** | Pointer to **string** |  | [optional] 
+**DependsOnCode** | Pointer to **NullableString** |  | [optional] 
+**VisibleOnCode** | Pointer to **NullableString** |  | [optional] 
+**RequireOnCode** | Pointer to **NullableString** |  | [optional] 
 **ContextualDefault** | Pointer to **bool** |  | [optional] 
 **DisplayValueOnDetails** | Pointer to **bool** |  | [optional] 
 **ShowOnCreate** | Pointer to **bool** |  | [optional] 
@@ -138,6 +138,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerRouteOptionTypesInner) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerRouteOptionTypesInner) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetCode
 
 `func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerRouteOptionTypesInner) GetCode() string`
@@ -288,6 +298,16 @@ SetFieldGroup sets FieldGroup field to given value.
 
 HasFieldGroup returns a boolean if a field has been set.
 
+### SetFieldGroupNil
+
+`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerRouteOptionTypesInner) SetFieldGroupNil(b bool)`
+
+ SetFieldGroupNil sets the value for FieldGroup to be an explicit nil
+
+### UnsetFieldGroup
+`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerRouteOptionTypesInner) UnsetFieldGroup()`
+
+UnsetFieldGroup ensures that no value is present for FieldGroup, not even an explicit nil
 ### GetFieldClass
 
 `func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerRouteOptionTypesInner) GetFieldClass() string`
@@ -313,6 +333,16 @@ SetFieldClass sets FieldClass field to given value.
 
 HasFieldClass returns a boolean if a field has been set.
 
+### SetFieldClassNil
+
+`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerRouteOptionTypesInner) SetFieldClassNil(b bool)`
+
+ SetFieldClassNil sets the value for FieldClass to be an explicit nil
+
+### UnsetFieldClass
+`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerRouteOptionTypesInner) UnsetFieldClass()`
+
+UnsetFieldClass ensures that no value is present for FieldClass, not even an explicit nil
 ### GetFieldAddOn
 
 `func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerRouteOptionTypesInner) GetFieldAddOn() string`
@@ -338,6 +368,16 @@ SetFieldAddOn sets FieldAddOn field to given value.
 
 HasFieldAddOn returns a boolean if a field has been set.
 
+### SetFieldAddOnNil
+
+`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerRouteOptionTypesInner) SetFieldAddOnNil(b bool)`
+
+ SetFieldAddOnNil sets the value for FieldAddOn to be an explicit nil
+
+### UnsetFieldAddOn
+`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerRouteOptionTypesInner) UnsetFieldAddOn()`
+
+UnsetFieldAddOn ensures that no value is present for FieldAddOn, not even an explicit nil
 ### GetFieldComponent
 
 `func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerRouteOptionTypesInner) GetFieldComponent() string`
@@ -363,6 +403,16 @@ SetFieldComponent sets FieldComponent field to given value.
 
 HasFieldComponent returns a boolean if a field has been set.
 
+### SetFieldComponentNil
+
+`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerRouteOptionTypesInner) SetFieldComponentNil(b bool)`
+
+ SetFieldComponentNil sets the value for FieldComponent to be an explicit nil
+
+### UnsetFieldComponent
+`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerRouteOptionTypesInner) UnsetFieldComponent()`
+
+UnsetFieldComponent ensures that no value is present for FieldComponent, not even an explicit nil
 ### GetFieldInput
 
 `func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerRouteOptionTypesInner) GetFieldInput() string`
@@ -388,6 +438,16 @@ SetFieldInput sets FieldInput field to given value.
 
 HasFieldInput returns a boolean if a field has been set.
 
+### SetFieldInputNil
+
+`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerRouteOptionTypesInner) SetFieldInputNil(b bool)`
+
+ SetFieldInputNil sets the value for FieldInput to be an explicit nil
+
+### UnsetFieldInput
+`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerRouteOptionTypesInner) UnsetFieldInput()`
+
+UnsetFieldInput ensures that no value is present for FieldInput, not even an explicit nil
 ### GetPlaceHolder
 
 `func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerRouteOptionTypesInner) GetPlaceHolder() string`
@@ -438,6 +498,16 @@ SetVerifyPattern sets VerifyPattern field to given value.
 
 HasVerifyPattern returns a boolean if a field has been set.
 
+### SetVerifyPatternNil
+
+`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerRouteOptionTypesInner) SetVerifyPatternNil(b bool)`
+
+ SetVerifyPatternNil sets the value for VerifyPattern to be an explicit nil
+
+### UnsetVerifyPattern
+`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerRouteOptionTypesInner) UnsetVerifyPattern()`
+
+UnsetVerifyPattern ensures that no value is present for VerifyPattern, not even an explicit nil
 ### GetHelpBlock
 
 `func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerRouteOptionTypesInner) GetHelpBlock() string`
@@ -488,6 +558,16 @@ SetHelpBlockFieldCode sets HelpBlockFieldCode field to given value.
 
 HasHelpBlockFieldCode returns a boolean if a field has been set.
 
+### SetHelpBlockFieldCodeNil
+
+`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerRouteOptionTypesInner) SetHelpBlockFieldCodeNil(b bool)`
+
+ SetHelpBlockFieldCodeNil sets the value for HelpBlockFieldCode to be an explicit nil
+
+### UnsetHelpBlockFieldCode
+`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerRouteOptionTypesInner) UnsetHelpBlockFieldCode()`
+
+UnsetHelpBlockFieldCode ensures that no value is present for HelpBlockFieldCode, not even an explicit nil
 ### GetDefaultValue
 
 `func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerRouteOptionTypesInner) GetDefaultValue() string`
@@ -513,6 +593,16 @@ SetDefaultValue sets DefaultValue field to given value.
 
 HasDefaultValue returns a boolean if a field has been set.
 
+### SetDefaultValueNil
+
+`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerRouteOptionTypesInner) SetDefaultValueNil(b bool)`
+
+ SetDefaultValueNil sets the value for DefaultValue to be an explicit nil
+
+### UnsetDefaultValue
+`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerRouteOptionTypesInner) UnsetDefaultValue()`
+
+UnsetDefaultValue ensures that no value is present for DefaultValue, not even an explicit nil
 ### GetOptionSource
 
 `func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerRouteOptionTypesInner) GetOptionSource() string`
@@ -538,6 +628,16 @@ SetOptionSource sets OptionSource field to given value.
 
 HasOptionSource returns a boolean if a field has been set.
 
+### SetOptionSourceNil
+
+`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerRouteOptionTypesInner) SetOptionSourceNil(b bool)`
+
+ SetOptionSourceNil sets the value for OptionSource to be an explicit nil
+
+### UnsetOptionSource
+`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerRouteOptionTypesInner) UnsetOptionSource()`
+
+UnsetOptionSource ensures that no value is present for OptionSource, not even an explicit nil
 ### GetOptionSourceType
 
 `func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerRouteOptionTypesInner) GetOptionSourceType() string`
@@ -563,6 +663,16 @@ SetOptionSourceType sets OptionSourceType field to given value.
 
 HasOptionSourceType returns a boolean if a field has been set.
 
+### SetOptionSourceTypeNil
+
+`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerRouteOptionTypesInner) SetOptionSourceTypeNil(b bool)`
+
+ SetOptionSourceTypeNil sets the value for OptionSourceType to be an explicit nil
+
+### UnsetOptionSourceType
+`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerRouteOptionTypesInner) UnsetOptionSourceType()`
+
+UnsetOptionSourceType ensures that no value is present for OptionSourceType, not even an explicit nil
 ### GetOptionList
 
 `func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerRouteOptionTypesInner) GetOptionList() string`
@@ -588,6 +698,16 @@ SetOptionList sets OptionList field to given value.
 
 HasOptionList returns a boolean if a field has been set.
 
+### SetOptionListNil
+
+`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerRouteOptionTypesInner) SetOptionListNil(b bool)`
+
+ SetOptionListNil sets the value for OptionList to be an explicit nil
+
+### UnsetOptionList
+`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerRouteOptionTypesInner) UnsetOptionList()`
+
+UnsetOptionList ensures that no value is present for OptionList, not even an explicit nil
 ### GetType
 
 `func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerRouteOptionTypesInner) GetType() string`
@@ -763,6 +883,16 @@ SetConfig sets Config field to given value.
 
 HasConfig returns a boolean if a field has been set.
 
+### SetConfigNil
+
+`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerRouteOptionTypesInner) SetConfigNil(b bool)`
+
+ SetConfigNil sets the value for Config to be an explicit nil
+
+### UnsetConfig
+`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerRouteOptionTypesInner) UnsetConfig()`
+
+UnsetConfig ensures that no value is present for Config, not even an explicit nil
 ### GetDisplayOrder
 
 `func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerRouteOptionTypesInner) GetDisplayOrder() int64`
@@ -813,6 +943,16 @@ SetWrapperClass sets WrapperClass field to given value.
 
 HasWrapperClass returns a boolean if a field has been set.
 
+### SetWrapperClassNil
+
+`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerRouteOptionTypesInner) SetWrapperClassNil(b bool)`
+
+ SetWrapperClassNil sets the value for WrapperClass to be an explicit nil
+
+### UnsetWrapperClass
+`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerRouteOptionTypesInner) UnsetWrapperClass()`
+
+UnsetWrapperClass ensures that no value is present for WrapperClass, not even an explicit nil
 ### GetEnabled
 
 `func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerRouteOptionTypesInner) GetEnabled() bool`
@@ -888,6 +1028,16 @@ SetDependsOnCode sets DependsOnCode field to given value.
 
 HasDependsOnCode returns a boolean if a field has been set.
 
+### SetDependsOnCodeNil
+
+`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerRouteOptionTypesInner) SetDependsOnCodeNil(b bool)`
+
+ SetDependsOnCodeNil sets the value for DependsOnCode to be an explicit nil
+
+### UnsetDependsOnCode
+`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerRouteOptionTypesInner) UnsetDependsOnCode()`
+
+UnsetDependsOnCode ensures that no value is present for DependsOnCode, not even an explicit nil
 ### GetVisibleOnCode
 
 `func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerRouteOptionTypesInner) GetVisibleOnCode() string`
@@ -913,6 +1063,16 @@ SetVisibleOnCode sets VisibleOnCode field to given value.
 
 HasVisibleOnCode returns a boolean if a field has been set.
 
+### SetVisibleOnCodeNil
+
+`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerRouteOptionTypesInner) SetVisibleOnCodeNil(b bool)`
+
+ SetVisibleOnCodeNil sets the value for VisibleOnCode to be an explicit nil
+
+### UnsetVisibleOnCode
+`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerRouteOptionTypesInner) UnsetVisibleOnCode()`
+
+UnsetVisibleOnCode ensures that no value is present for VisibleOnCode, not even an explicit nil
 ### GetRequireOnCode
 
 `func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerRouteOptionTypesInner) GetRequireOnCode() string`
@@ -938,6 +1098,16 @@ SetRequireOnCode sets RequireOnCode field to given value.
 
 HasRequireOnCode returns a boolean if a field has been set.
 
+### SetRequireOnCodeNil
+
+`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerRouteOptionTypesInner) SetRequireOnCodeNil(b bool)`
+
+ SetRequireOnCodeNil sets the value for RequireOnCode to be an explicit nil
+
+### UnsetRequireOnCode
+`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerRouteOptionTypesInner) UnsetRequireOnCode()`
+
+UnsetRequireOnCode ensures that no value is present for RequireOnCode, not even an explicit nil
 ### GetContextualDefault
 
 `func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerRouteOptionTypesInner) GetContextualDefault() bool`

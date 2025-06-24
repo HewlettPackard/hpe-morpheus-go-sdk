@@ -20,20 +20,20 @@ var _ MappedNullable = &GetClusterApiConfig200Response{}
 
 // GetClusterApiConfig200Response struct for GetClusterApiConfig200Response
 type GetClusterApiConfig200Response struct {
-	ServiceUrl          *string `json:"serviceUrl,omitempty"`
-	ServiceHost         *string `json:"serviceHost,omitempty"`
-	ServicePath         *string `json:"servicePath,omitempty"`
-	ServiceHostname     *string `json:"serviceHostname,omitempty"`
-	ServicePort         *int64  `json:"servicePort,omitempty"`
-	ServiceUsername     *string `json:"serviceUsername,omitempty"`
-	ServicePassword     *string `json:"servicePassword,omitempty"`
-	ServicePasswordHash *string `json:"servicePasswordHash,omitempty"`
+	ServiceUrl          NullableString `json:"serviceUrl,omitempty"`
+	ServiceHost         NullableString `json:"serviceHost,omitempty"`
+	ServicePath         NullableString `json:"servicePath,omitempty"`
+	ServiceHostname     NullableString `json:"serviceHostname,omitempty"`
+	ServicePort         *int64         `json:"servicePort,omitempty"`
+	ServiceUsername     NullableString `json:"serviceUsername,omitempty"`
+	ServicePassword     NullableString `json:"servicePassword,omitempty"`
+	ServicePasswordHash NullableString `json:"servicePasswordHash,omitempty"`
 	// API Token
-	ServiceToken *string `json:"serviceToken,omitempty"`
+	ServiceToken NullableString `json:"serviceToken,omitempty"`
 	// Kube Config
-	ServiceAccess        *string                `json:"serviceAccess,omitempty"`
-	ServiceCert          *string                `json:"serviceCert,omitempty"`
-	ServiceVersion       *string                `json:"serviceVersion,omitempty"`
+	ServiceAccess        NullableString         `json:"serviceAccess,omitempty"`
+	ServiceCert          NullableString         `json:"serviceCert,omitempty"`
+	ServiceVersion       NullableString         `json:"serviceVersion,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -56,132 +56,176 @@ func NewGetClusterApiConfig200ResponseWithDefaults() *GetClusterApiConfig200Resp
 	return &this
 }
 
-// GetServiceUrl returns the ServiceUrl field value if set, zero value otherwise.
+// GetServiceUrl returns the ServiceUrl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetClusterApiConfig200Response) GetServiceUrl() string {
-	if o == nil || IsNil(o.ServiceUrl) {
+	if o == nil || IsNil(o.ServiceUrl.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ServiceUrl
+	return *o.ServiceUrl.Get()
 }
 
 // GetServiceUrlOk returns a tuple with the ServiceUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetClusterApiConfig200Response) GetServiceUrlOk() (*string, bool) {
-	if o == nil || IsNil(o.ServiceUrl) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ServiceUrl, true
+	return o.ServiceUrl.Get(), o.ServiceUrl.IsSet()
 }
 
 // IsSetServiceUrl returns a boolean if a field has been set.
 func (o *GetClusterApiConfig200Response) IsSetServiceUrl() bool {
-	if o != nil && !IsNil(o.ServiceUrl) {
+	if o != nil && o.ServiceUrl.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetServiceUrl gets a reference to the given string and assigns it to the ServiceUrl field.
+// SetServiceUrl gets a reference to the given NullableString and assigns it to the ServiceUrl field.
 func (o *GetClusterApiConfig200Response) SetServiceUrl(v string) {
-	o.ServiceUrl = &v
+	o.ServiceUrl.Set(&v)
 }
 
-// GetServiceHost returns the ServiceHost field value if set, zero value otherwise.
+// SetServiceUrlNil sets the value for ServiceUrl to be an explicit nil
+func (o *GetClusterApiConfig200Response) SetServiceUrlNil() {
+	o.ServiceUrl.Set(nil)
+}
+
+// UnsetServiceUrl ensures that no value is present for ServiceUrl, not even an explicit nil
+func (o *GetClusterApiConfig200Response) UnsetServiceUrl() {
+	o.ServiceUrl.Unset()
+}
+
+// GetServiceHost returns the ServiceHost field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetClusterApiConfig200Response) GetServiceHost() string {
-	if o == nil || IsNil(o.ServiceHost) {
+	if o == nil || IsNil(o.ServiceHost.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ServiceHost
+	return *o.ServiceHost.Get()
 }
 
 // GetServiceHostOk returns a tuple with the ServiceHost field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetClusterApiConfig200Response) GetServiceHostOk() (*string, bool) {
-	if o == nil || IsNil(o.ServiceHost) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ServiceHost, true
+	return o.ServiceHost.Get(), o.ServiceHost.IsSet()
 }
 
 // IsSetServiceHost returns a boolean if a field has been set.
 func (o *GetClusterApiConfig200Response) IsSetServiceHost() bool {
-	if o != nil && !IsNil(o.ServiceHost) {
+	if o != nil && o.ServiceHost.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetServiceHost gets a reference to the given string and assigns it to the ServiceHost field.
+// SetServiceHost gets a reference to the given NullableString and assigns it to the ServiceHost field.
 func (o *GetClusterApiConfig200Response) SetServiceHost(v string) {
-	o.ServiceHost = &v
+	o.ServiceHost.Set(&v)
 }
 
-// GetServicePath returns the ServicePath field value if set, zero value otherwise.
+// SetServiceHostNil sets the value for ServiceHost to be an explicit nil
+func (o *GetClusterApiConfig200Response) SetServiceHostNil() {
+	o.ServiceHost.Set(nil)
+}
+
+// UnsetServiceHost ensures that no value is present for ServiceHost, not even an explicit nil
+func (o *GetClusterApiConfig200Response) UnsetServiceHost() {
+	o.ServiceHost.Unset()
+}
+
+// GetServicePath returns the ServicePath field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetClusterApiConfig200Response) GetServicePath() string {
-	if o == nil || IsNil(o.ServicePath) {
+	if o == nil || IsNil(o.ServicePath.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ServicePath
+	return *o.ServicePath.Get()
 }
 
 // GetServicePathOk returns a tuple with the ServicePath field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetClusterApiConfig200Response) GetServicePathOk() (*string, bool) {
-	if o == nil || IsNil(o.ServicePath) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ServicePath, true
+	return o.ServicePath.Get(), o.ServicePath.IsSet()
 }
 
 // IsSetServicePath returns a boolean if a field has been set.
 func (o *GetClusterApiConfig200Response) IsSetServicePath() bool {
-	if o != nil && !IsNil(o.ServicePath) {
+	if o != nil && o.ServicePath.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetServicePath gets a reference to the given string and assigns it to the ServicePath field.
+// SetServicePath gets a reference to the given NullableString and assigns it to the ServicePath field.
 func (o *GetClusterApiConfig200Response) SetServicePath(v string) {
-	o.ServicePath = &v
+	o.ServicePath.Set(&v)
 }
 
-// GetServiceHostname returns the ServiceHostname field value if set, zero value otherwise.
+// SetServicePathNil sets the value for ServicePath to be an explicit nil
+func (o *GetClusterApiConfig200Response) SetServicePathNil() {
+	o.ServicePath.Set(nil)
+}
+
+// UnsetServicePath ensures that no value is present for ServicePath, not even an explicit nil
+func (o *GetClusterApiConfig200Response) UnsetServicePath() {
+	o.ServicePath.Unset()
+}
+
+// GetServiceHostname returns the ServiceHostname field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetClusterApiConfig200Response) GetServiceHostname() string {
-	if o == nil || IsNil(o.ServiceHostname) {
+	if o == nil || IsNil(o.ServiceHostname.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ServiceHostname
+	return *o.ServiceHostname.Get()
 }
 
 // GetServiceHostnameOk returns a tuple with the ServiceHostname field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetClusterApiConfig200Response) GetServiceHostnameOk() (*string, bool) {
-	if o == nil || IsNil(o.ServiceHostname) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ServiceHostname, true
+	return o.ServiceHostname.Get(), o.ServiceHostname.IsSet()
 }
 
 // IsSetServiceHostname returns a boolean if a field has been set.
 func (o *GetClusterApiConfig200Response) IsSetServiceHostname() bool {
-	if o != nil && !IsNil(o.ServiceHostname) {
+	if o != nil && o.ServiceHostname.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetServiceHostname gets a reference to the given string and assigns it to the ServiceHostname field.
+// SetServiceHostname gets a reference to the given NullableString and assigns it to the ServiceHostname field.
 func (o *GetClusterApiConfig200Response) SetServiceHostname(v string) {
-	o.ServiceHostname = &v
+	o.ServiceHostname.Set(&v)
+}
+
+// SetServiceHostnameNil sets the value for ServiceHostname to be an explicit nil
+func (o *GetClusterApiConfig200Response) SetServiceHostnameNil() {
+	o.ServiceHostname.Set(nil)
+}
+
+// UnsetServiceHostname ensures that no value is present for ServiceHostname, not even an explicit nil
+func (o *GetClusterApiConfig200Response) UnsetServiceHostname() {
+	o.ServiceHostname.Unset()
 }
 
 // GetServicePort returns the ServicePort field value if set, zero value otherwise.
@@ -216,228 +260,305 @@ func (o *GetClusterApiConfig200Response) SetServicePort(v int64) {
 	o.ServicePort = &v
 }
 
-// GetServiceUsername returns the ServiceUsername field value if set, zero value otherwise.
+// GetServiceUsername returns the ServiceUsername field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetClusterApiConfig200Response) GetServiceUsername() string {
-	if o == nil || IsNil(o.ServiceUsername) {
+	if o == nil || IsNil(o.ServiceUsername.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ServiceUsername
+	return *o.ServiceUsername.Get()
 }
 
 // GetServiceUsernameOk returns a tuple with the ServiceUsername field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetClusterApiConfig200Response) GetServiceUsernameOk() (*string, bool) {
-	if o == nil || IsNil(o.ServiceUsername) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ServiceUsername, true
+	return o.ServiceUsername.Get(), o.ServiceUsername.IsSet()
 }
 
 // IsSetServiceUsername returns a boolean if a field has been set.
 func (o *GetClusterApiConfig200Response) IsSetServiceUsername() bool {
-	if o != nil && !IsNil(o.ServiceUsername) {
+	if o != nil && o.ServiceUsername.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetServiceUsername gets a reference to the given string and assigns it to the ServiceUsername field.
+// SetServiceUsername gets a reference to the given NullableString and assigns it to the ServiceUsername field.
 func (o *GetClusterApiConfig200Response) SetServiceUsername(v string) {
-	o.ServiceUsername = &v
+	o.ServiceUsername.Set(&v)
 }
 
-// GetServicePassword returns the ServicePassword field value if set, zero value otherwise.
+// SetServiceUsernameNil sets the value for ServiceUsername to be an explicit nil
+func (o *GetClusterApiConfig200Response) SetServiceUsernameNil() {
+	o.ServiceUsername.Set(nil)
+}
+
+// UnsetServiceUsername ensures that no value is present for ServiceUsername, not even an explicit nil
+func (o *GetClusterApiConfig200Response) UnsetServiceUsername() {
+	o.ServiceUsername.Unset()
+}
+
+// GetServicePassword returns the ServicePassword field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetClusterApiConfig200Response) GetServicePassword() string {
-	if o == nil || IsNil(o.ServicePassword) {
+	if o == nil || IsNil(o.ServicePassword.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ServicePassword
+	return *o.ServicePassword.Get()
 }
 
 // GetServicePasswordOk returns a tuple with the ServicePassword field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetClusterApiConfig200Response) GetServicePasswordOk() (*string, bool) {
-	if o == nil || IsNil(o.ServicePassword) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ServicePassword, true
+	return o.ServicePassword.Get(), o.ServicePassword.IsSet()
 }
 
 // IsSetServicePassword returns a boolean if a field has been set.
 func (o *GetClusterApiConfig200Response) IsSetServicePassword() bool {
-	if o != nil && !IsNil(o.ServicePassword) {
+	if o != nil && o.ServicePassword.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetServicePassword gets a reference to the given string and assigns it to the ServicePassword field.
+// SetServicePassword gets a reference to the given NullableString and assigns it to the ServicePassword field.
 func (o *GetClusterApiConfig200Response) SetServicePassword(v string) {
-	o.ServicePassword = &v
+	o.ServicePassword.Set(&v)
 }
 
-// GetServicePasswordHash returns the ServicePasswordHash field value if set, zero value otherwise.
+// SetServicePasswordNil sets the value for ServicePassword to be an explicit nil
+func (o *GetClusterApiConfig200Response) SetServicePasswordNil() {
+	o.ServicePassword.Set(nil)
+}
+
+// UnsetServicePassword ensures that no value is present for ServicePassword, not even an explicit nil
+func (o *GetClusterApiConfig200Response) UnsetServicePassword() {
+	o.ServicePassword.Unset()
+}
+
+// GetServicePasswordHash returns the ServicePasswordHash field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetClusterApiConfig200Response) GetServicePasswordHash() string {
-	if o == nil || IsNil(o.ServicePasswordHash) {
+	if o == nil || IsNil(o.ServicePasswordHash.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ServicePasswordHash
+	return *o.ServicePasswordHash.Get()
 }
 
 // GetServicePasswordHashOk returns a tuple with the ServicePasswordHash field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetClusterApiConfig200Response) GetServicePasswordHashOk() (*string, bool) {
-	if o == nil || IsNil(o.ServicePasswordHash) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ServicePasswordHash, true
+	return o.ServicePasswordHash.Get(), o.ServicePasswordHash.IsSet()
 }
 
 // IsSetServicePasswordHash returns a boolean if a field has been set.
 func (o *GetClusterApiConfig200Response) IsSetServicePasswordHash() bool {
-	if o != nil && !IsNil(o.ServicePasswordHash) {
+	if o != nil && o.ServicePasswordHash.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetServicePasswordHash gets a reference to the given string and assigns it to the ServicePasswordHash field.
+// SetServicePasswordHash gets a reference to the given NullableString and assigns it to the ServicePasswordHash field.
 func (o *GetClusterApiConfig200Response) SetServicePasswordHash(v string) {
-	o.ServicePasswordHash = &v
+	o.ServicePasswordHash.Set(&v)
 }
 
-// GetServiceToken returns the ServiceToken field value if set, zero value otherwise.
+// SetServicePasswordHashNil sets the value for ServicePasswordHash to be an explicit nil
+func (o *GetClusterApiConfig200Response) SetServicePasswordHashNil() {
+	o.ServicePasswordHash.Set(nil)
+}
+
+// UnsetServicePasswordHash ensures that no value is present for ServicePasswordHash, not even an explicit nil
+func (o *GetClusterApiConfig200Response) UnsetServicePasswordHash() {
+	o.ServicePasswordHash.Unset()
+}
+
+// GetServiceToken returns the ServiceToken field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetClusterApiConfig200Response) GetServiceToken() string {
-	if o == nil || IsNil(o.ServiceToken) {
+	if o == nil || IsNil(o.ServiceToken.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ServiceToken
+	return *o.ServiceToken.Get()
 }
 
 // GetServiceTokenOk returns a tuple with the ServiceToken field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetClusterApiConfig200Response) GetServiceTokenOk() (*string, bool) {
-	if o == nil || IsNil(o.ServiceToken) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ServiceToken, true
+	return o.ServiceToken.Get(), o.ServiceToken.IsSet()
 }
 
 // IsSetServiceToken returns a boolean if a field has been set.
 func (o *GetClusterApiConfig200Response) IsSetServiceToken() bool {
-	if o != nil && !IsNil(o.ServiceToken) {
+	if o != nil && o.ServiceToken.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetServiceToken gets a reference to the given string and assigns it to the ServiceToken field.
+// SetServiceToken gets a reference to the given NullableString and assigns it to the ServiceToken field.
 func (o *GetClusterApiConfig200Response) SetServiceToken(v string) {
-	o.ServiceToken = &v
+	o.ServiceToken.Set(&v)
 }
 
-// GetServiceAccess returns the ServiceAccess field value if set, zero value otherwise.
+// SetServiceTokenNil sets the value for ServiceToken to be an explicit nil
+func (o *GetClusterApiConfig200Response) SetServiceTokenNil() {
+	o.ServiceToken.Set(nil)
+}
+
+// UnsetServiceToken ensures that no value is present for ServiceToken, not even an explicit nil
+func (o *GetClusterApiConfig200Response) UnsetServiceToken() {
+	o.ServiceToken.Unset()
+}
+
+// GetServiceAccess returns the ServiceAccess field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetClusterApiConfig200Response) GetServiceAccess() string {
-	if o == nil || IsNil(o.ServiceAccess) {
+	if o == nil || IsNil(o.ServiceAccess.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ServiceAccess
+	return *o.ServiceAccess.Get()
 }
 
 // GetServiceAccessOk returns a tuple with the ServiceAccess field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetClusterApiConfig200Response) GetServiceAccessOk() (*string, bool) {
-	if o == nil || IsNil(o.ServiceAccess) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ServiceAccess, true
+	return o.ServiceAccess.Get(), o.ServiceAccess.IsSet()
 }
 
 // IsSetServiceAccess returns a boolean if a field has been set.
 func (o *GetClusterApiConfig200Response) IsSetServiceAccess() bool {
-	if o != nil && !IsNil(o.ServiceAccess) {
+	if o != nil && o.ServiceAccess.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetServiceAccess gets a reference to the given string and assigns it to the ServiceAccess field.
+// SetServiceAccess gets a reference to the given NullableString and assigns it to the ServiceAccess field.
 func (o *GetClusterApiConfig200Response) SetServiceAccess(v string) {
-	o.ServiceAccess = &v
+	o.ServiceAccess.Set(&v)
 }
 
-// GetServiceCert returns the ServiceCert field value if set, zero value otherwise.
+// SetServiceAccessNil sets the value for ServiceAccess to be an explicit nil
+func (o *GetClusterApiConfig200Response) SetServiceAccessNil() {
+	o.ServiceAccess.Set(nil)
+}
+
+// UnsetServiceAccess ensures that no value is present for ServiceAccess, not even an explicit nil
+func (o *GetClusterApiConfig200Response) UnsetServiceAccess() {
+	o.ServiceAccess.Unset()
+}
+
+// GetServiceCert returns the ServiceCert field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetClusterApiConfig200Response) GetServiceCert() string {
-	if o == nil || IsNil(o.ServiceCert) {
+	if o == nil || IsNil(o.ServiceCert.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ServiceCert
+	return *o.ServiceCert.Get()
 }
 
 // GetServiceCertOk returns a tuple with the ServiceCert field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetClusterApiConfig200Response) GetServiceCertOk() (*string, bool) {
-	if o == nil || IsNil(o.ServiceCert) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ServiceCert, true
+	return o.ServiceCert.Get(), o.ServiceCert.IsSet()
 }
 
 // IsSetServiceCert returns a boolean if a field has been set.
 func (o *GetClusterApiConfig200Response) IsSetServiceCert() bool {
-	if o != nil && !IsNil(o.ServiceCert) {
+	if o != nil && o.ServiceCert.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetServiceCert gets a reference to the given string and assigns it to the ServiceCert field.
+// SetServiceCert gets a reference to the given NullableString and assigns it to the ServiceCert field.
 func (o *GetClusterApiConfig200Response) SetServiceCert(v string) {
-	o.ServiceCert = &v
+	o.ServiceCert.Set(&v)
 }
 
-// GetServiceVersion returns the ServiceVersion field value if set, zero value otherwise.
+// SetServiceCertNil sets the value for ServiceCert to be an explicit nil
+func (o *GetClusterApiConfig200Response) SetServiceCertNil() {
+	o.ServiceCert.Set(nil)
+}
+
+// UnsetServiceCert ensures that no value is present for ServiceCert, not even an explicit nil
+func (o *GetClusterApiConfig200Response) UnsetServiceCert() {
+	o.ServiceCert.Unset()
+}
+
+// GetServiceVersion returns the ServiceVersion field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetClusterApiConfig200Response) GetServiceVersion() string {
-	if o == nil || IsNil(o.ServiceVersion) {
+	if o == nil || IsNil(o.ServiceVersion.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ServiceVersion
+	return *o.ServiceVersion.Get()
 }
 
 // GetServiceVersionOk returns a tuple with the ServiceVersion field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetClusterApiConfig200Response) GetServiceVersionOk() (*string, bool) {
-	if o == nil || IsNil(o.ServiceVersion) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ServiceVersion, true
+	return o.ServiceVersion.Get(), o.ServiceVersion.IsSet()
 }
 
 // IsSetServiceVersion returns a boolean if a field has been set.
 func (o *GetClusterApiConfig200Response) IsSetServiceVersion() bool {
-	if o != nil && !IsNil(o.ServiceVersion) {
+	if o != nil && o.ServiceVersion.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetServiceVersion gets a reference to the given string and assigns it to the ServiceVersion field.
+// SetServiceVersion gets a reference to the given NullableString and assigns it to the ServiceVersion field.
 func (o *GetClusterApiConfig200Response) SetServiceVersion(v string) {
-	o.ServiceVersion = &v
+	o.ServiceVersion.Set(&v)
+}
+
+// SetServiceVersionNil sets the value for ServiceVersion to be an explicit nil
+func (o *GetClusterApiConfig200Response) SetServiceVersionNil() {
+	o.ServiceVersion.Set(nil)
+}
+
+// UnsetServiceVersion ensures that no value is present for ServiceVersion, not even an explicit nil
+func (o *GetClusterApiConfig200Response) UnsetServiceVersion() {
+	o.ServiceVersion.Unset()
 }
 
 func (o GetClusterApiConfig200Response) MarshalJSON() ([]byte, error) {
@@ -450,41 +571,41 @@ func (o GetClusterApiConfig200Response) MarshalJSON() ([]byte, error) {
 
 func (o GetClusterApiConfig200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ServiceUrl) {
-		toSerialize["serviceUrl"] = o.ServiceUrl
+	if o.ServiceUrl.IsSet() {
+		toSerialize["serviceUrl"] = o.ServiceUrl.Get()
 	}
-	if !IsNil(o.ServiceHost) {
-		toSerialize["serviceHost"] = o.ServiceHost
+	if o.ServiceHost.IsSet() {
+		toSerialize["serviceHost"] = o.ServiceHost.Get()
 	}
-	if !IsNil(o.ServicePath) {
-		toSerialize["servicePath"] = o.ServicePath
+	if o.ServicePath.IsSet() {
+		toSerialize["servicePath"] = o.ServicePath.Get()
 	}
-	if !IsNil(o.ServiceHostname) {
-		toSerialize["serviceHostname"] = o.ServiceHostname
+	if o.ServiceHostname.IsSet() {
+		toSerialize["serviceHostname"] = o.ServiceHostname.Get()
 	}
 	if !IsNil(o.ServicePort) {
 		toSerialize["servicePort"] = o.ServicePort
 	}
-	if !IsNil(o.ServiceUsername) {
-		toSerialize["serviceUsername"] = o.ServiceUsername
+	if o.ServiceUsername.IsSet() {
+		toSerialize["serviceUsername"] = o.ServiceUsername.Get()
 	}
-	if !IsNil(o.ServicePassword) {
-		toSerialize["servicePassword"] = o.ServicePassword
+	if o.ServicePassword.IsSet() {
+		toSerialize["servicePassword"] = o.ServicePassword.Get()
 	}
-	if !IsNil(o.ServicePasswordHash) {
-		toSerialize["servicePasswordHash"] = o.ServicePasswordHash
+	if o.ServicePasswordHash.IsSet() {
+		toSerialize["servicePasswordHash"] = o.ServicePasswordHash.Get()
 	}
-	if !IsNil(o.ServiceToken) {
-		toSerialize["serviceToken"] = o.ServiceToken
+	if o.ServiceToken.IsSet() {
+		toSerialize["serviceToken"] = o.ServiceToken.Get()
 	}
-	if !IsNil(o.ServiceAccess) {
-		toSerialize["serviceAccess"] = o.ServiceAccess
+	if o.ServiceAccess.IsSet() {
+		toSerialize["serviceAccess"] = o.ServiceAccess.Get()
 	}
-	if !IsNil(o.ServiceCert) {
-		toSerialize["serviceCert"] = o.ServiceCert
+	if o.ServiceCert.IsSet() {
+		toSerialize["serviceCert"] = o.ServiceCert.Get()
 	}
-	if !IsNil(o.ServiceVersion) {
-		toSerialize["serviceVersion"] = o.ServiceVersion
+	if o.ServiceVersion.IsSet() {
+		toSerialize["serviceVersion"] = o.ServiceVersion.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {

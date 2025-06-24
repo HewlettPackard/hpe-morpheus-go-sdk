@@ -23,24 +23,24 @@ type ListVirtualImageLocations200ResponseAllOfLocationsInner struct {
 	Id                   *int64                                                               `json:"id,omitempty"`
 	Cloud                *ListBackupSettings200ResponseBackupSettingsDefaultSchedule          `json:"cloud,omitempty"`
 	Code                 *string                                                              `json:"code,omitempty"`
-	InternalId           *string                                                              `json:"internalId,omitempty"`
+	InternalId           NullableString                                                       `json:"internalId,omitempty"`
 	ExternalId           *string                                                              `json:"externalId,omitempty"`
 	ExternalDiskId       *string                                                              `json:"externalDiskId,omitempty"`
-	RemotePath           *string                                                              `json:"remotePath,omitempty"`
-	ImagePath            *string                                                              `json:"imagePath,omitempty"`
+	RemotePath           NullableString                                                       `json:"remotePath,omitempty"`
+	ImagePath            NullableString                                                       `json:"imagePath,omitempty"`
 	ImageName            *string                                                              `json:"imageName,omitempty"`
 	ImageRegion          *string                                                              `json:"imageRegion,omitempty"`
-	ImageFolder          *string                                                              `json:"imageFolder,omitempty"`
+	ImageFolder          NullableString                                                       `json:"imageFolder,omitempty"`
 	RefType              *string                                                              `json:"refType,omitempty"`
 	RefId                *int64                                                               `json:"refId,omitempty"`
-	NodeRefType          *string                                                              `json:"nodeRefType,omitempty"`
-	NodeRefId            *string                                                              `json:"nodeRefId,omitempty"`
-	SubRefType           *string                                                              `json:"subRefType,omitempty"`
-	SubRefId             *string                                                              `json:"subRefId,omitempty"`
+	NodeRefType          NullableString                                                       `json:"nodeRefType,omitempty"`
+	NodeRefId            NullableString                                                       `json:"nodeRefId,omitempty"`
+	SubRefType           NullableString                                                       `json:"subRefType,omitempty"`
+	SubRefId             NullableString                                                       `json:"subRefId,omitempty"`
 	IsPublic             *bool                                                                `json:"isPublic,omitempty"`
 	SystemImage          *bool                                                                `json:"systemImage,omitempty"`
 	DiskIndex            *int64                                                               `json:"diskIndex,omitempty"`
-	PricePlan            *string                                                              `json:"pricePlan,omitempty"`
+	PricePlan            NullableString                                                       `json:"pricePlan,omitempty"`
 	Volumes              []map[string]interface{}                                             `json:"volumes,omitempty"`
 	StorageControllers   []map[string]interface{}                                             `json:"storageControllers,omitempty"`
 	NetworkInterfaces    []map[string]interface{}                                             `json:"networkInterfaces,omitempty"`
@@ -163,36 +163,47 @@ func (o *ListVirtualImageLocations200ResponseAllOfLocationsInner) SetCode(v stri
 	o.Code = &v
 }
 
-// GetInternalId returns the InternalId field value if set, zero value otherwise.
+// GetInternalId returns the InternalId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListVirtualImageLocations200ResponseAllOfLocationsInner) GetInternalId() string {
-	if o == nil || IsNil(o.InternalId) {
+	if o == nil || IsNil(o.InternalId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.InternalId
+	return *o.InternalId.Get()
 }
 
 // GetInternalIdOk returns a tuple with the InternalId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListVirtualImageLocations200ResponseAllOfLocationsInner) GetInternalIdOk() (*string, bool) {
-	if o == nil || IsNil(o.InternalId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.InternalId, true
+	return o.InternalId.Get(), o.InternalId.IsSet()
 }
 
 // IsSetInternalId returns a boolean if a field has been set.
 func (o *ListVirtualImageLocations200ResponseAllOfLocationsInner) IsSetInternalId() bool {
-	if o != nil && !IsNil(o.InternalId) {
+	if o != nil && o.InternalId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetInternalId gets a reference to the given string and assigns it to the InternalId field.
+// SetInternalId gets a reference to the given NullableString and assigns it to the InternalId field.
 func (o *ListVirtualImageLocations200ResponseAllOfLocationsInner) SetInternalId(v string) {
-	o.InternalId = &v
+	o.InternalId.Set(&v)
+}
+
+// SetInternalIdNil sets the value for InternalId to be an explicit nil
+func (o *ListVirtualImageLocations200ResponseAllOfLocationsInner) SetInternalIdNil() {
+	o.InternalId.Set(nil)
+}
+
+// UnsetInternalId ensures that no value is present for InternalId, not even an explicit nil
+func (o *ListVirtualImageLocations200ResponseAllOfLocationsInner) UnsetInternalId() {
+	o.InternalId.Unset()
 }
 
 // GetExternalId returns the ExternalId field value if set, zero value otherwise.
@@ -259,68 +270,90 @@ func (o *ListVirtualImageLocations200ResponseAllOfLocationsInner) SetExternalDis
 	o.ExternalDiskId = &v
 }
 
-// GetRemotePath returns the RemotePath field value if set, zero value otherwise.
+// GetRemotePath returns the RemotePath field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListVirtualImageLocations200ResponseAllOfLocationsInner) GetRemotePath() string {
-	if o == nil || IsNil(o.RemotePath) {
+	if o == nil || IsNil(o.RemotePath.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.RemotePath
+	return *o.RemotePath.Get()
 }
 
 // GetRemotePathOk returns a tuple with the RemotePath field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListVirtualImageLocations200ResponseAllOfLocationsInner) GetRemotePathOk() (*string, bool) {
-	if o == nil || IsNil(o.RemotePath) {
+	if o == nil {
 		return nil, false
 	}
-	return o.RemotePath, true
+	return o.RemotePath.Get(), o.RemotePath.IsSet()
 }
 
 // IsSetRemotePath returns a boolean if a field has been set.
 func (o *ListVirtualImageLocations200ResponseAllOfLocationsInner) IsSetRemotePath() bool {
-	if o != nil && !IsNil(o.RemotePath) {
+	if o != nil && o.RemotePath.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetRemotePath gets a reference to the given string and assigns it to the RemotePath field.
+// SetRemotePath gets a reference to the given NullableString and assigns it to the RemotePath field.
 func (o *ListVirtualImageLocations200ResponseAllOfLocationsInner) SetRemotePath(v string) {
-	o.RemotePath = &v
+	o.RemotePath.Set(&v)
 }
 
-// GetImagePath returns the ImagePath field value if set, zero value otherwise.
+// SetRemotePathNil sets the value for RemotePath to be an explicit nil
+func (o *ListVirtualImageLocations200ResponseAllOfLocationsInner) SetRemotePathNil() {
+	o.RemotePath.Set(nil)
+}
+
+// UnsetRemotePath ensures that no value is present for RemotePath, not even an explicit nil
+func (o *ListVirtualImageLocations200ResponseAllOfLocationsInner) UnsetRemotePath() {
+	o.RemotePath.Unset()
+}
+
+// GetImagePath returns the ImagePath field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListVirtualImageLocations200ResponseAllOfLocationsInner) GetImagePath() string {
-	if o == nil || IsNil(o.ImagePath) {
+	if o == nil || IsNil(o.ImagePath.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ImagePath
+	return *o.ImagePath.Get()
 }
 
 // GetImagePathOk returns a tuple with the ImagePath field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListVirtualImageLocations200ResponseAllOfLocationsInner) GetImagePathOk() (*string, bool) {
-	if o == nil || IsNil(o.ImagePath) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ImagePath, true
+	return o.ImagePath.Get(), o.ImagePath.IsSet()
 }
 
 // IsSetImagePath returns a boolean if a field has been set.
 func (o *ListVirtualImageLocations200ResponseAllOfLocationsInner) IsSetImagePath() bool {
-	if o != nil && !IsNil(o.ImagePath) {
+	if o != nil && o.ImagePath.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetImagePath gets a reference to the given string and assigns it to the ImagePath field.
+// SetImagePath gets a reference to the given NullableString and assigns it to the ImagePath field.
 func (o *ListVirtualImageLocations200ResponseAllOfLocationsInner) SetImagePath(v string) {
-	o.ImagePath = &v
+	o.ImagePath.Set(&v)
+}
+
+// SetImagePathNil sets the value for ImagePath to be an explicit nil
+func (o *ListVirtualImageLocations200ResponseAllOfLocationsInner) SetImagePathNil() {
+	o.ImagePath.Set(nil)
+}
+
+// UnsetImagePath ensures that no value is present for ImagePath, not even an explicit nil
+func (o *ListVirtualImageLocations200ResponseAllOfLocationsInner) UnsetImagePath() {
+	o.ImagePath.Unset()
 }
 
 // GetImageName returns the ImageName field value if set, zero value otherwise.
@@ -387,36 +420,47 @@ func (o *ListVirtualImageLocations200ResponseAllOfLocationsInner) SetImageRegion
 	o.ImageRegion = &v
 }
 
-// GetImageFolder returns the ImageFolder field value if set, zero value otherwise.
+// GetImageFolder returns the ImageFolder field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListVirtualImageLocations200ResponseAllOfLocationsInner) GetImageFolder() string {
-	if o == nil || IsNil(o.ImageFolder) {
+	if o == nil || IsNil(o.ImageFolder.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ImageFolder
+	return *o.ImageFolder.Get()
 }
 
 // GetImageFolderOk returns a tuple with the ImageFolder field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListVirtualImageLocations200ResponseAllOfLocationsInner) GetImageFolderOk() (*string, bool) {
-	if o == nil || IsNil(o.ImageFolder) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ImageFolder, true
+	return o.ImageFolder.Get(), o.ImageFolder.IsSet()
 }
 
 // IsSetImageFolder returns a boolean if a field has been set.
 func (o *ListVirtualImageLocations200ResponseAllOfLocationsInner) IsSetImageFolder() bool {
-	if o != nil && !IsNil(o.ImageFolder) {
+	if o != nil && o.ImageFolder.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetImageFolder gets a reference to the given string and assigns it to the ImageFolder field.
+// SetImageFolder gets a reference to the given NullableString and assigns it to the ImageFolder field.
 func (o *ListVirtualImageLocations200ResponseAllOfLocationsInner) SetImageFolder(v string) {
-	o.ImageFolder = &v
+	o.ImageFolder.Set(&v)
+}
+
+// SetImageFolderNil sets the value for ImageFolder to be an explicit nil
+func (o *ListVirtualImageLocations200ResponseAllOfLocationsInner) SetImageFolderNil() {
+	o.ImageFolder.Set(nil)
+}
+
+// UnsetImageFolder ensures that no value is present for ImageFolder, not even an explicit nil
+func (o *ListVirtualImageLocations200ResponseAllOfLocationsInner) UnsetImageFolder() {
+	o.ImageFolder.Unset()
 }
 
 // GetRefType returns the RefType field value if set, zero value otherwise.
@@ -483,132 +527,176 @@ func (o *ListVirtualImageLocations200ResponseAllOfLocationsInner) SetRefId(v int
 	o.RefId = &v
 }
 
-// GetNodeRefType returns the NodeRefType field value if set, zero value otherwise.
+// GetNodeRefType returns the NodeRefType field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListVirtualImageLocations200ResponseAllOfLocationsInner) GetNodeRefType() string {
-	if o == nil || IsNil(o.NodeRefType) {
+	if o == nil || IsNil(o.NodeRefType.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.NodeRefType
+	return *o.NodeRefType.Get()
 }
 
 // GetNodeRefTypeOk returns a tuple with the NodeRefType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListVirtualImageLocations200ResponseAllOfLocationsInner) GetNodeRefTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.NodeRefType) {
+	if o == nil {
 		return nil, false
 	}
-	return o.NodeRefType, true
+	return o.NodeRefType.Get(), o.NodeRefType.IsSet()
 }
 
 // IsSetNodeRefType returns a boolean if a field has been set.
 func (o *ListVirtualImageLocations200ResponseAllOfLocationsInner) IsSetNodeRefType() bool {
-	if o != nil && !IsNil(o.NodeRefType) {
+	if o != nil && o.NodeRefType.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetNodeRefType gets a reference to the given string and assigns it to the NodeRefType field.
+// SetNodeRefType gets a reference to the given NullableString and assigns it to the NodeRefType field.
 func (o *ListVirtualImageLocations200ResponseAllOfLocationsInner) SetNodeRefType(v string) {
-	o.NodeRefType = &v
+	o.NodeRefType.Set(&v)
 }
 
-// GetNodeRefId returns the NodeRefId field value if set, zero value otherwise.
+// SetNodeRefTypeNil sets the value for NodeRefType to be an explicit nil
+func (o *ListVirtualImageLocations200ResponseAllOfLocationsInner) SetNodeRefTypeNil() {
+	o.NodeRefType.Set(nil)
+}
+
+// UnsetNodeRefType ensures that no value is present for NodeRefType, not even an explicit nil
+func (o *ListVirtualImageLocations200ResponseAllOfLocationsInner) UnsetNodeRefType() {
+	o.NodeRefType.Unset()
+}
+
+// GetNodeRefId returns the NodeRefId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListVirtualImageLocations200ResponseAllOfLocationsInner) GetNodeRefId() string {
-	if o == nil || IsNil(o.NodeRefId) {
+	if o == nil || IsNil(o.NodeRefId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.NodeRefId
+	return *o.NodeRefId.Get()
 }
 
 // GetNodeRefIdOk returns a tuple with the NodeRefId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListVirtualImageLocations200ResponseAllOfLocationsInner) GetNodeRefIdOk() (*string, bool) {
-	if o == nil || IsNil(o.NodeRefId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.NodeRefId, true
+	return o.NodeRefId.Get(), o.NodeRefId.IsSet()
 }
 
 // IsSetNodeRefId returns a boolean if a field has been set.
 func (o *ListVirtualImageLocations200ResponseAllOfLocationsInner) IsSetNodeRefId() bool {
-	if o != nil && !IsNil(o.NodeRefId) {
+	if o != nil && o.NodeRefId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetNodeRefId gets a reference to the given string and assigns it to the NodeRefId field.
+// SetNodeRefId gets a reference to the given NullableString and assigns it to the NodeRefId field.
 func (o *ListVirtualImageLocations200ResponseAllOfLocationsInner) SetNodeRefId(v string) {
-	o.NodeRefId = &v
+	o.NodeRefId.Set(&v)
 }
 
-// GetSubRefType returns the SubRefType field value if set, zero value otherwise.
+// SetNodeRefIdNil sets the value for NodeRefId to be an explicit nil
+func (o *ListVirtualImageLocations200ResponseAllOfLocationsInner) SetNodeRefIdNil() {
+	o.NodeRefId.Set(nil)
+}
+
+// UnsetNodeRefId ensures that no value is present for NodeRefId, not even an explicit nil
+func (o *ListVirtualImageLocations200ResponseAllOfLocationsInner) UnsetNodeRefId() {
+	o.NodeRefId.Unset()
+}
+
+// GetSubRefType returns the SubRefType field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListVirtualImageLocations200ResponseAllOfLocationsInner) GetSubRefType() string {
-	if o == nil || IsNil(o.SubRefType) {
+	if o == nil || IsNil(o.SubRefType.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.SubRefType
+	return *o.SubRefType.Get()
 }
 
 // GetSubRefTypeOk returns a tuple with the SubRefType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListVirtualImageLocations200ResponseAllOfLocationsInner) GetSubRefTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.SubRefType) {
+	if o == nil {
 		return nil, false
 	}
-	return o.SubRefType, true
+	return o.SubRefType.Get(), o.SubRefType.IsSet()
 }
 
 // IsSetSubRefType returns a boolean if a field has been set.
 func (o *ListVirtualImageLocations200ResponseAllOfLocationsInner) IsSetSubRefType() bool {
-	if o != nil && !IsNil(o.SubRefType) {
+	if o != nil && o.SubRefType.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetSubRefType gets a reference to the given string and assigns it to the SubRefType field.
+// SetSubRefType gets a reference to the given NullableString and assigns it to the SubRefType field.
 func (o *ListVirtualImageLocations200ResponseAllOfLocationsInner) SetSubRefType(v string) {
-	o.SubRefType = &v
+	o.SubRefType.Set(&v)
 }
 
-// GetSubRefId returns the SubRefId field value if set, zero value otherwise.
+// SetSubRefTypeNil sets the value for SubRefType to be an explicit nil
+func (o *ListVirtualImageLocations200ResponseAllOfLocationsInner) SetSubRefTypeNil() {
+	o.SubRefType.Set(nil)
+}
+
+// UnsetSubRefType ensures that no value is present for SubRefType, not even an explicit nil
+func (o *ListVirtualImageLocations200ResponseAllOfLocationsInner) UnsetSubRefType() {
+	o.SubRefType.Unset()
+}
+
+// GetSubRefId returns the SubRefId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListVirtualImageLocations200ResponseAllOfLocationsInner) GetSubRefId() string {
-	if o == nil || IsNil(o.SubRefId) {
+	if o == nil || IsNil(o.SubRefId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.SubRefId
+	return *o.SubRefId.Get()
 }
 
 // GetSubRefIdOk returns a tuple with the SubRefId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListVirtualImageLocations200ResponseAllOfLocationsInner) GetSubRefIdOk() (*string, bool) {
-	if o == nil || IsNil(o.SubRefId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.SubRefId, true
+	return o.SubRefId.Get(), o.SubRefId.IsSet()
 }
 
 // IsSetSubRefId returns a boolean if a field has been set.
 func (o *ListVirtualImageLocations200ResponseAllOfLocationsInner) IsSetSubRefId() bool {
-	if o != nil && !IsNil(o.SubRefId) {
+	if o != nil && o.SubRefId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetSubRefId gets a reference to the given string and assigns it to the SubRefId field.
+// SetSubRefId gets a reference to the given NullableString and assigns it to the SubRefId field.
 func (o *ListVirtualImageLocations200ResponseAllOfLocationsInner) SetSubRefId(v string) {
-	o.SubRefId = &v
+	o.SubRefId.Set(&v)
+}
+
+// SetSubRefIdNil sets the value for SubRefId to be an explicit nil
+func (o *ListVirtualImageLocations200ResponseAllOfLocationsInner) SetSubRefIdNil() {
+	o.SubRefId.Set(nil)
+}
+
+// UnsetSubRefId ensures that no value is present for SubRefId, not even an explicit nil
+func (o *ListVirtualImageLocations200ResponseAllOfLocationsInner) UnsetSubRefId() {
+	o.SubRefId.Unset()
 }
 
 // GetIsPublic returns the IsPublic field value if set, zero value otherwise.
@@ -707,36 +795,47 @@ func (o *ListVirtualImageLocations200ResponseAllOfLocationsInner) SetDiskIndex(v
 	o.DiskIndex = &v
 }
 
-// GetPricePlan returns the PricePlan field value if set, zero value otherwise.
+// GetPricePlan returns the PricePlan field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListVirtualImageLocations200ResponseAllOfLocationsInner) GetPricePlan() string {
-	if o == nil || IsNil(o.PricePlan) {
+	if o == nil || IsNil(o.PricePlan.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.PricePlan
+	return *o.PricePlan.Get()
 }
 
 // GetPricePlanOk returns a tuple with the PricePlan field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListVirtualImageLocations200ResponseAllOfLocationsInner) GetPricePlanOk() (*string, bool) {
-	if o == nil || IsNil(o.PricePlan) {
+	if o == nil {
 		return nil, false
 	}
-	return o.PricePlan, true
+	return o.PricePlan.Get(), o.PricePlan.IsSet()
 }
 
 // IsSetPricePlan returns a boolean if a field has been set.
 func (o *ListVirtualImageLocations200ResponseAllOfLocationsInner) IsSetPricePlan() bool {
-	if o != nil && !IsNil(o.PricePlan) {
+	if o != nil && o.PricePlan.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetPricePlan gets a reference to the given string and assigns it to the PricePlan field.
+// SetPricePlan gets a reference to the given NullableString and assigns it to the PricePlan field.
 func (o *ListVirtualImageLocations200ResponseAllOfLocationsInner) SetPricePlan(v string) {
-	o.PricePlan = &v
+	o.PricePlan.Set(&v)
+}
+
+// SetPricePlanNil sets the value for PricePlan to be an explicit nil
+func (o *ListVirtualImageLocations200ResponseAllOfLocationsInner) SetPricePlanNil() {
+	o.PricePlan.Set(nil)
+}
+
+// UnsetPricePlan ensures that no value is present for PricePlan, not even an explicit nil
+func (o *ListVirtualImageLocations200ResponseAllOfLocationsInner) UnsetPricePlan() {
+	o.PricePlan.Unset()
 }
 
 // GetVolumes returns the Volumes field value if set, zero value otherwise.
@@ -886,8 +985,8 @@ func (o ListVirtualImageLocations200ResponseAllOfLocationsInner) ToMap() (map[st
 	if !IsNil(o.Code) {
 		toSerialize["code"] = o.Code
 	}
-	if !IsNil(o.InternalId) {
-		toSerialize["internalId"] = o.InternalId
+	if o.InternalId.IsSet() {
+		toSerialize["internalId"] = o.InternalId.Get()
 	}
 	if !IsNil(o.ExternalId) {
 		toSerialize["externalId"] = o.ExternalId
@@ -895,11 +994,11 @@ func (o ListVirtualImageLocations200ResponseAllOfLocationsInner) ToMap() (map[st
 	if !IsNil(o.ExternalDiskId) {
 		toSerialize["externalDiskId"] = o.ExternalDiskId
 	}
-	if !IsNil(o.RemotePath) {
-		toSerialize["remotePath"] = o.RemotePath
+	if o.RemotePath.IsSet() {
+		toSerialize["remotePath"] = o.RemotePath.Get()
 	}
-	if !IsNil(o.ImagePath) {
-		toSerialize["imagePath"] = o.ImagePath
+	if o.ImagePath.IsSet() {
+		toSerialize["imagePath"] = o.ImagePath.Get()
 	}
 	if !IsNil(o.ImageName) {
 		toSerialize["imageName"] = o.ImageName
@@ -907,8 +1006,8 @@ func (o ListVirtualImageLocations200ResponseAllOfLocationsInner) ToMap() (map[st
 	if !IsNil(o.ImageRegion) {
 		toSerialize["imageRegion"] = o.ImageRegion
 	}
-	if !IsNil(o.ImageFolder) {
-		toSerialize["imageFolder"] = o.ImageFolder
+	if o.ImageFolder.IsSet() {
+		toSerialize["imageFolder"] = o.ImageFolder.Get()
 	}
 	if !IsNil(o.RefType) {
 		toSerialize["refType"] = o.RefType
@@ -916,17 +1015,17 @@ func (o ListVirtualImageLocations200ResponseAllOfLocationsInner) ToMap() (map[st
 	if !IsNil(o.RefId) {
 		toSerialize["refId"] = o.RefId
 	}
-	if !IsNil(o.NodeRefType) {
-		toSerialize["nodeRefType"] = o.NodeRefType
+	if o.NodeRefType.IsSet() {
+		toSerialize["nodeRefType"] = o.NodeRefType.Get()
 	}
-	if !IsNil(o.NodeRefId) {
-		toSerialize["nodeRefId"] = o.NodeRefId
+	if o.NodeRefId.IsSet() {
+		toSerialize["nodeRefId"] = o.NodeRefId.Get()
 	}
-	if !IsNil(o.SubRefType) {
-		toSerialize["subRefType"] = o.SubRefType
+	if o.SubRefType.IsSet() {
+		toSerialize["subRefType"] = o.SubRefType.Get()
 	}
-	if !IsNil(o.SubRefId) {
-		toSerialize["subRefId"] = o.SubRefId
+	if o.SubRefId.IsSet() {
+		toSerialize["subRefId"] = o.SubRefId.Get()
 	}
 	if !IsNil(o.IsPublic) {
 		toSerialize["isPublic"] = o.IsPublic
@@ -937,8 +1036,8 @@ func (o ListVirtualImageLocations200ResponseAllOfLocationsInner) ToMap() (map[st
 	if !IsNil(o.DiskIndex) {
 		toSerialize["diskIndex"] = o.DiskIndex
 	}
-	if !IsNil(o.PricePlan) {
-		toSerialize["pricePlan"] = o.PricePlan
+	if o.PricePlan.IsSet() {
+		toSerialize["pricePlan"] = o.PricePlan.Get()
 	}
 	if !IsNil(o.Volumes) {
 		toSerialize["volumes"] = o.Volumes

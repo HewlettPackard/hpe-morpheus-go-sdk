@@ -23,9 +23,9 @@ type ApplianceSettingsUpdate struct {
 	// Appliance URL
 	ApplianceUrl *string `json:"applianceUrl,omitempty"`
 	// Internal Appliance URL (PXE)
-	InternalApplianceUrl *string `json:"internalApplianceUrl,omitempty"`
+	InternalApplianceUrl NullableString `json:"internalApplianceUrl,omitempty"`
 	// API Allowed Origins
-	CorsAllowed *string `json:"corsAllowed,omitempty"`
+	CorsAllowed NullableString `json:"corsAllowed,omitempty"`
 	// Registration enabled (true, false)
 	RegistrationEnabled *bool `json:"registrationEnabled,omitempty"`
 	// Default tenant role ID
@@ -69,21 +69,21 @@ type ApplianceSettingsUpdate struct {
 	// SMTP password
 	SmtpPassword *string `json:"smtpPassword,omitempty"`
 	// Proxy host
-	ProxyHost *string `json:"proxyHost,omitempty"`
+	ProxyHost NullableString `json:"proxyHost,omitempty"`
 	// Proxy port
-	ProxyPort *string `json:"proxyPort,omitempty"`
+	ProxyPort NullableString `json:"proxyPort,omitempty"`
 	// Proxy username
 	ProxyUser *string `json:"proxyUser,omitempty"`
 	// Proxy password
 	ProxyPassword *string `json:"proxyPassword,omitempty"`
 	// Proxy domain
-	ProxyDomain *string `json:"proxyDomain,omitempty"`
+	ProxyDomain NullableString `json:"proxyDomain,omitempty"`
 	// Proxy workstation
-	ProxyWorkstation *string `json:"proxyWorkstation,omitempty"`
+	ProxyWorkstation NullableString `json:"proxyWorkstation,omitempty"`
 	// Currency provider
 	CurrencyProvider *string `json:"currencyProvider,omitempty"`
 	// Currency provider API key
-	CurrencyKey *string `json:"currencyKey,omitempty"`
+	CurrencyKey NullableString `json:"currencyKey,omitempty"`
 	// Set all cloud types enabled status on, overrides enableZoneTypes and disableZoneTypes parameters
 	EnableAllZoneTypes *bool `json:"enableAllZoneTypes,omitempty"`
 	// List of cloud type IDs to set enabled status on
@@ -184,68 +184,90 @@ func (o *ApplianceSettingsUpdate) SetApplianceUrl(v string) {
 	o.ApplianceUrl = &v
 }
 
-// GetInternalApplianceUrl returns the InternalApplianceUrl field value if set, zero value otherwise.
+// GetInternalApplianceUrl returns the InternalApplianceUrl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ApplianceSettingsUpdate) GetInternalApplianceUrl() string {
-	if o == nil || IsNil(o.InternalApplianceUrl) {
+	if o == nil || IsNil(o.InternalApplianceUrl.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.InternalApplianceUrl
+	return *o.InternalApplianceUrl.Get()
 }
 
 // GetInternalApplianceUrlOk returns a tuple with the InternalApplianceUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ApplianceSettingsUpdate) GetInternalApplianceUrlOk() (*string, bool) {
-	if o == nil || IsNil(o.InternalApplianceUrl) {
+	if o == nil {
 		return nil, false
 	}
-	return o.InternalApplianceUrl, true
+	return o.InternalApplianceUrl.Get(), o.InternalApplianceUrl.IsSet()
 }
 
 // IsSetInternalApplianceUrl returns a boolean if a field has been set.
 func (o *ApplianceSettingsUpdate) IsSetInternalApplianceUrl() bool {
-	if o != nil && !IsNil(o.InternalApplianceUrl) {
+	if o != nil && o.InternalApplianceUrl.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetInternalApplianceUrl gets a reference to the given string and assigns it to the InternalApplianceUrl field.
+// SetInternalApplianceUrl gets a reference to the given NullableString and assigns it to the InternalApplianceUrl field.
 func (o *ApplianceSettingsUpdate) SetInternalApplianceUrl(v string) {
-	o.InternalApplianceUrl = &v
+	o.InternalApplianceUrl.Set(&v)
 }
 
-// GetCorsAllowed returns the CorsAllowed field value if set, zero value otherwise.
+// SetInternalApplianceUrlNil sets the value for InternalApplianceUrl to be an explicit nil
+func (o *ApplianceSettingsUpdate) SetInternalApplianceUrlNil() {
+	o.InternalApplianceUrl.Set(nil)
+}
+
+// UnsetInternalApplianceUrl ensures that no value is present for InternalApplianceUrl, not even an explicit nil
+func (o *ApplianceSettingsUpdate) UnsetInternalApplianceUrl() {
+	o.InternalApplianceUrl.Unset()
+}
+
+// GetCorsAllowed returns the CorsAllowed field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ApplianceSettingsUpdate) GetCorsAllowed() string {
-	if o == nil || IsNil(o.CorsAllowed) {
+	if o == nil || IsNil(o.CorsAllowed.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.CorsAllowed
+	return *o.CorsAllowed.Get()
 }
 
 // GetCorsAllowedOk returns a tuple with the CorsAllowed field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ApplianceSettingsUpdate) GetCorsAllowedOk() (*string, bool) {
-	if o == nil || IsNil(o.CorsAllowed) {
+	if o == nil {
 		return nil, false
 	}
-	return o.CorsAllowed, true
+	return o.CorsAllowed.Get(), o.CorsAllowed.IsSet()
 }
 
 // IsSetCorsAllowed returns a boolean if a field has been set.
 func (o *ApplianceSettingsUpdate) IsSetCorsAllowed() bool {
-	if o != nil && !IsNil(o.CorsAllowed) {
+	if o != nil && o.CorsAllowed.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCorsAllowed gets a reference to the given string and assigns it to the CorsAllowed field.
+// SetCorsAllowed gets a reference to the given NullableString and assigns it to the CorsAllowed field.
 func (o *ApplianceSettingsUpdate) SetCorsAllowed(v string) {
-	o.CorsAllowed = &v
+	o.CorsAllowed.Set(&v)
+}
+
+// SetCorsAllowedNil sets the value for CorsAllowed to be an explicit nil
+func (o *ApplianceSettingsUpdate) SetCorsAllowedNil() {
+	o.CorsAllowed.Set(nil)
+}
+
+// UnsetCorsAllowed ensures that no value is present for CorsAllowed, not even an explicit nil
+func (o *ApplianceSettingsUpdate) UnsetCorsAllowed() {
+	o.CorsAllowed.Unset()
 }
 
 // GetRegistrationEnabled returns the RegistrationEnabled field value if set, zero value otherwise.
@@ -920,68 +942,90 @@ func (o *ApplianceSettingsUpdate) SetSmtpPassword(v string) {
 	o.SmtpPassword = &v
 }
 
-// GetProxyHost returns the ProxyHost field value if set, zero value otherwise.
+// GetProxyHost returns the ProxyHost field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ApplianceSettingsUpdate) GetProxyHost() string {
-	if o == nil || IsNil(o.ProxyHost) {
+	if o == nil || IsNil(o.ProxyHost.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ProxyHost
+	return *o.ProxyHost.Get()
 }
 
 // GetProxyHostOk returns a tuple with the ProxyHost field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ApplianceSettingsUpdate) GetProxyHostOk() (*string, bool) {
-	if o == nil || IsNil(o.ProxyHost) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ProxyHost, true
+	return o.ProxyHost.Get(), o.ProxyHost.IsSet()
 }
 
 // IsSetProxyHost returns a boolean if a field has been set.
 func (o *ApplianceSettingsUpdate) IsSetProxyHost() bool {
-	if o != nil && !IsNil(o.ProxyHost) {
+	if o != nil && o.ProxyHost.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetProxyHost gets a reference to the given string and assigns it to the ProxyHost field.
+// SetProxyHost gets a reference to the given NullableString and assigns it to the ProxyHost field.
 func (o *ApplianceSettingsUpdate) SetProxyHost(v string) {
-	o.ProxyHost = &v
+	o.ProxyHost.Set(&v)
 }
 
-// GetProxyPort returns the ProxyPort field value if set, zero value otherwise.
+// SetProxyHostNil sets the value for ProxyHost to be an explicit nil
+func (o *ApplianceSettingsUpdate) SetProxyHostNil() {
+	o.ProxyHost.Set(nil)
+}
+
+// UnsetProxyHost ensures that no value is present for ProxyHost, not even an explicit nil
+func (o *ApplianceSettingsUpdate) UnsetProxyHost() {
+	o.ProxyHost.Unset()
+}
+
+// GetProxyPort returns the ProxyPort field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ApplianceSettingsUpdate) GetProxyPort() string {
-	if o == nil || IsNil(o.ProxyPort) {
+	if o == nil || IsNil(o.ProxyPort.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ProxyPort
+	return *o.ProxyPort.Get()
 }
 
 // GetProxyPortOk returns a tuple with the ProxyPort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ApplianceSettingsUpdate) GetProxyPortOk() (*string, bool) {
-	if o == nil || IsNil(o.ProxyPort) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ProxyPort, true
+	return o.ProxyPort.Get(), o.ProxyPort.IsSet()
 }
 
 // IsSetProxyPort returns a boolean if a field has been set.
 func (o *ApplianceSettingsUpdate) IsSetProxyPort() bool {
-	if o != nil && !IsNil(o.ProxyPort) {
+	if o != nil && o.ProxyPort.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetProxyPort gets a reference to the given string and assigns it to the ProxyPort field.
+// SetProxyPort gets a reference to the given NullableString and assigns it to the ProxyPort field.
 func (o *ApplianceSettingsUpdate) SetProxyPort(v string) {
-	o.ProxyPort = &v
+	o.ProxyPort.Set(&v)
+}
+
+// SetProxyPortNil sets the value for ProxyPort to be an explicit nil
+func (o *ApplianceSettingsUpdate) SetProxyPortNil() {
+	o.ProxyPort.Set(nil)
+}
+
+// UnsetProxyPort ensures that no value is present for ProxyPort, not even an explicit nil
+func (o *ApplianceSettingsUpdate) UnsetProxyPort() {
+	o.ProxyPort.Unset()
 }
 
 // GetProxyUser returns the ProxyUser field value if set, zero value otherwise.
@@ -1048,68 +1092,90 @@ func (o *ApplianceSettingsUpdate) SetProxyPassword(v string) {
 	o.ProxyPassword = &v
 }
 
-// GetProxyDomain returns the ProxyDomain field value if set, zero value otherwise.
+// GetProxyDomain returns the ProxyDomain field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ApplianceSettingsUpdate) GetProxyDomain() string {
-	if o == nil || IsNil(o.ProxyDomain) {
+	if o == nil || IsNil(o.ProxyDomain.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ProxyDomain
+	return *o.ProxyDomain.Get()
 }
 
 // GetProxyDomainOk returns a tuple with the ProxyDomain field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ApplianceSettingsUpdate) GetProxyDomainOk() (*string, bool) {
-	if o == nil || IsNil(o.ProxyDomain) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ProxyDomain, true
+	return o.ProxyDomain.Get(), o.ProxyDomain.IsSet()
 }
 
 // IsSetProxyDomain returns a boolean if a field has been set.
 func (o *ApplianceSettingsUpdate) IsSetProxyDomain() bool {
-	if o != nil && !IsNil(o.ProxyDomain) {
+	if o != nil && o.ProxyDomain.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetProxyDomain gets a reference to the given string and assigns it to the ProxyDomain field.
+// SetProxyDomain gets a reference to the given NullableString and assigns it to the ProxyDomain field.
 func (o *ApplianceSettingsUpdate) SetProxyDomain(v string) {
-	o.ProxyDomain = &v
+	o.ProxyDomain.Set(&v)
 }
 
-// GetProxyWorkstation returns the ProxyWorkstation field value if set, zero value otherwise.
+// SetProxyDomainNil sets the value for ProxyDomain to be an explicit nil
+func (o *ApplianceSettingsUpdate) SetProxyDomainNil() {
+	o.ProxyDomain.Set(nil)
+}
+
+// UnsetProxyDomain ensures that no value is present for ProxyDomain, not even an explicit nil
+func (o *ApplianceSettingsUpdate) UnsetProxyDomain() {
+	o.ProxyDomain.Unset()
+}
+
+// GetProxyWorkstation returns the ProxyWorkstation field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ApplianceSettingsUpdate) GetProxyWorkstation() string {
-	if o == nil || IsNil(o.ProxyWorkstation) {
+	if o == nil || IsNil(o.ProxyWorkstation.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ProxyWorkstation
+	return *o.ProxyWorkstation.Get()
 }
 
 // GetProxyWorkstationOk returns a tuple with the ProxyWorkstation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ApplianceSettingsUpdate) GetProxyWorkstationOk() (*string, bool) {
-	if o == nil || IsNil(o.ProxyWorkstation) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ProxyWorkstation, true
+	return o.ProxyWorkstation.Get(), o.ProxyWorkstation.IsSet()
 }
 
 // IsSetProxyWorkstation returns a boolean if a field has been set.
 func (o *ApplianceSettingsUpdate) IsSetProxyWorkstation() bool {
-	if o != nil && !IsNil(o.ProxyWorkstation) {
+	if o != nil && o.ProxyWorkstation.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetProxyWorkstation gets a reference to the given string and assigns it to the ProxyWorkstation field.
+// SetProxyWorkstation gets a reference to the given NullableString and assigns it to the ProxyWorkstation field.
 func (o *ApplianceSettingsUpdate) SetProxyWorkstation(v string) {
-	o.ProxyWorkstation = &v
+	o.ProxyWorkstation.Set(&v)
+}
+
+// SetProxyWorkstationNil sets the value for ProxyWorkstation to be an explicit nil
+func (o *ApplianceSettingsUpdate) SetProxyWorkstationNil() {
+	o.ProxyWorkstation.Set(nil)
+}
+
+// UnsetProxyWorkstation ensures that no value is present for ProxyWorkstation, not even an explicit nil
+func (o *ApplianceSettingsUpdate) UnsetProxyWorkstation() {
+	o.ProxyWorkstation.Unset()
 }
 
 // GetCurrencyProvider returns the CurrencyProvider field value if set, zero value otherwise.
@@ -1144,36 +1210,47 @@ func (o *ApplianceSettingsUpdate) SetCurrencyProvider(v string) {
 	o.CurrencyProvider = &v
 }
 
-// GetCurrencyKey returns the CurrencyKey field value if set, zero value otherwise.
+// GetCurrencyKey returns the CurrencyKey field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ApplianceSettingsUpdate) GetCurrencyKey() string {
-	if o == nil || IsNil(o.CurrencyKey) {
+	if o == nil || IsNil(o.CurrencyKey.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.CurrencyKey
+	return *o.CurrencyKey.Get()
 }
 
 // GetCurrencyKeyOk returns a tuple with the CurrencyKey field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ApplianceSettingsUpdate) GetCurrencyKeyOk() (*string, bool) {
-	if o == nil || IsNil(o.CurrencyKey) {
+	if o == nil {
 		return nil, false
 	}
-	return o.CurrencyKey, true
+	return o.CurrencyKey.Get(), o.CurrencyKey.IsSet()
 }
 
 // IsSetCurrencyKey returns a boolean if a field has been set.
 func (o *ApplianceSettingsUpdate) IsSetCurrencyKey() bool {
-	if o != nil && !IsNil(o.CurrencyKey) {
+	if o != nil && o.CurrencyKey.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCurrencyKey gets a reference to the given string and assigns it to the CurrencyKey field.
+// SetCurrencyKey gets a reference to the given NullableString and assigns it to the CurrencyKey field.
 func (o *ApplianceSettingsUpdate) SetCurrencyKey(v string) {
-	o.CurrencyKey = &v
+	o.CurrencyKey.Set(&v)
+}
+
+// SetCurrencyKeyNil sets the value for CurrencyKey to be an explicit nil
+func (o *ApplianceSettingsUpdate) SetCurrencyKeyNil() {
+	o.CurrencyKey.Set(nil)
+}
+
+// UnsetCurrencyKey ensures that no value is present for CurrencyKey, not even an explicit nil
+func (o *ApplianceSettingsUpdate) UnsetCurrencyKey() {
+	o.CurrencyKey.Unset()
 }
 
 // GetEnableAllZoneTypes returns the EnableAllZoneTypes field value if set, zero value otherwise.
@@ -1925,11 +2002,11 @@ func (o ApplianceSettingsUpdate) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ApplianceUrl) {
 		toSerialize["applianceUrl"] = o.ApplianceUrl
 	}
-	if !IsNil(o.InternalApplianceUrl) {
-		toSerialize["internalApplianceUrl"] = o.InternalApplianceUrl
+	if o.InternalApplianceUrl.IsSet() {
+		toSerialize["internalApplianceUrl"] = o.InternalApplianceUrl.Get()
 	}
-	if !IsNil(o.CorsAllowed) {
-		toSerialize["corsAllowed"] = o.CorsAllowed
+	if o.CorsAllowed.IsSet() {
+		toSerialize["corsAllowed"] = o.CorsAllowed.Get()
 	}
 	if !IsNil(o.RegistrationEnabled) {
 		toSerialize["registrationEnabled"] = o.RegistrationEnabled
@@ -1994,11 +2071,11 @@ func (o ApplianceSettingsUpdate) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.SmtpPassword) {
 		toSerialize["smtpPassword"] = o.SmtpPassword
 	}
-	if !IsNil(o.ProxyHost) {
-		toSerialize["proxyHost"] = o.ProxyHost
+	if o.ProxyHost.IsSet() {
+		toSerialize["proxyHost"] = o.ProxyHost.Get()
 	}
-	if !IsNil(o.ProxyPort) {
-		toSerialize["proxyPort"] = o.ProxyPort
+	if o.ProxyPort.IsSet() {
+		toSerialize["proxyPort"] = o.ProxyPort.Get()
 	}
 	if !IsNil(o.ProxyUser) {
 		toSerialize["proxyUser"] = o.ProxyUser
@@ -2006,17 +2083,17 @@ func (o ApplianceSettingsUpdate) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ProxyPassword) {
 		toSerialize["proxyPassword"] = o.ProxyPassword
 	}
-	if !IsNil(o.ProxyDomain) {
-		toSerialize["proxyDomain"] = o.ProxyDomain
+	if o.ProxyDomain.IsSet() {
+		toSerialize["proxyDomain"] = o.ProxyDomain.Get()
 	}
-	if !IsNil(o.ProxyWorkstation) {
-		toSerialize["proxyWorkstation"] = o.ProxyWorkstation
+	if o.ProxyWorkstation.IsSet() {
+		toSerialize["proxyWorkstation"] = o.ProxyWorkstation.Get()
 	}
 	if !IsNil(o.CurrencyProvider) {
 		toSerialize["currencyProvider"] = o.CurrencyProvider
 	}
-	if !IsNil(o.CurrencyKey) {
-		toSerialize["currencyKey"] = o.CurrencyKey
+	if o.CurrencyKey.IsSet() {
+		toSerialize["currencyKey"] = o.CurrencyKey.Get()
 	}
 	if !IsNil(o.EnableAllZoneTypes) {
 		toSerialize["enableAllZoneTypes"] = o.EnableAllZoneTypes

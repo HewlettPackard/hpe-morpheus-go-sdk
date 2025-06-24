@@ -26,7 +26,7 @@ type CreateResourcePoolGroupRequestResourcePoolGroup struct {
 	// Pool selection mode. Valid values are `roundrobin` or `availablecapacity`.
 	Mode                 *string                                                                    `json:"mode,omitempty"`
 	Pools                []int64                                                                    `json:"pools,omitempty"`
-	Tenants              []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner   `json:"tenants,omitempty"`
+	Tenants              []GetAlerts200ResponseAllOfCheckGroupsInnerInstance                        `json:"tenants,omitempty"`
 	ResourcePermission   *GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermission `json:"resourcePermission,omitempty"`
 	AdditionalProperties map[string]interface{}                                                     `json:",remain"`
 }
@@ -211,9 +211,9 @@ func (o *CreateResourcePoolGroupRequestResourcePoolGroup) SetPools(v []int64) {
 }
 
 // GetTenants returns the Tenants field value if set, zero value otherwise.
-func (o *CreateResourcePoolGroupRequestResourcePoolGroup) GetTenants() []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *CreateResourcePoolGroupRequestResourcePoolGroup) GetTenants() []GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.Tenants) {
-		var ret []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret []GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return o.Tenants
@@ -221,7 +221,7 @@ func (o *CreateResourcePoolGroupRequestResourcePoolGroup) GetTenants() []ListApp
 
 // GetTenantsOk returns a tuple with the Tenants field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CreateResourcePoolGroupRequestResourcePoolGroup) GetTenantsOk() ([]ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *CreateResourcePoolGroupRequestResourcePoolGroup) GetTenantsOk() ([]GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.Tenants) {
 		return nil, false
 	}
@@ -237,8 +237,8 @@ func (o *CreateResourcePoolGroupRequestResourcePoolGroup) IsSetTenants() bool {
 	return false
 }
 
-// SetTenants gets a reference to the given []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the Tenants field.
-func (o *CreateResourcePoolGroupRequestResourcePoolGroup) SetTenants(v []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetTenants gets a reference to the given []GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Tenants field.
+func (o *CreateResourcePoolGroupRequestResourcePoolGroup) SetTenants(v []GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.Tenants = v
 }
 

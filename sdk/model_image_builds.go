@@ -20,29 +20,29 @@ var _ MappedNullable = &ImageBuilds{}
 
 // ImageBuilds struct for ImageBuilds
 type ImageBuilds struct {
-	Id                   *int64                                                                  `json:"id,omitempty"`
-	Account              *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"account,omitempty"`
-	Type                 *ListBackupSettings200ResponseBackupSettingsDefaultSchedule             `json:"type,omitempty"`
-	Site                 *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"site,omitempty"`
-	Zone                 *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"zone,omitempty"`
-	Name                 *string                                                                 `json:"name,omitempty"`
-	Description          *string                                                                 `json:"description,omitempty"`
-	BootScript           *ListImageBuilds200ResponseAllOfImageBuildsInnerBootScript              `json:"bootScript,omitempty"`
-	BootCommand          *string                                                                 `json:"bootCommand,omitempty"`
-	PreseedScript        *ListImageBuilds200ResponseAllOfImageBuildsInnerBootScript              `json:"preseedScript,omitempty"`
-	Scripts              []ListImageBuilds200ResponseAllOfImageBuildsInnerScriptsInner           `json:"scripts,omitempty"`
-	SshUsername          *string                                                                 `json:"sshUsername,omitempty"`
-	SshPassword          *string                                                                 `json:"sshPassword,omitempty"`
-	StorageProvider      *string                                                                 `json:"storageProvider,omitempty"`
-	BuildOutputName      *string                                                                 `json:"buildOutputName,omitempty"`
-	ConversionFormats    *string                                                                 `json:"conversionFormats,omitempty"`
-	IsCloudInit          *bool                                                                   `json:"isCloudInit,omitempty"`
-	VmToolsInstalled     *bool                                                                   `json:"vmToolsInstalled,omitempty"`
-	KeepResults          *int64                                                                  `json:"keepResults,omitempty"`
-	Config               *ListImageBuilds200ResponseAllOfImageBuildsInnerConfig                  `json:"config,omitempty"`
-	LastResult           *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult              `json:"lastResult,omitempty"`
-	ExecutionCount       *int64                                                                  `json:"executionCount,omitempty"`
-	AdditionalProperties map[string]interface{}                                                  `json:",remain"`
+	Id                   *int64                                                        `json:"id,omitempty"`
+	Account              *GetAlerts200ResponseAllOfCheckGroupsInnerInstance            `json:"account,omitempty"`
+	Type                 *ListBackupSettings200ResponseBackupSettingsDefaultSchedule   `json:"type,omitempty"`
+	Site                 *GetAlerts200ResponseAllOfCheckGroupsInnerInstance            `json:"site,omitempty"`
+	Zone                 *GetAlerts200ResponseAllOfCheckGroupsInnerInstance            `json:"zone,omitempty"`
+	Name                 *string                                                       `json:"name,omitempty"`
+	Description          *string                                                       `json:"description,omitempty"`
+	BootScript           *ListImageBuilds200ResponseAllOfImageBuildsInnerBootScript    `json:"bootScript,omitempty"`
+	BootCommand          NullableString                                                `json:"bootCommand,omitempty"`
+	PreseedScript        *ListImageBuilds200ResponseAllOfImageBuildsInnerBootScript    `json:"preseedScript,omitempty"`
+	Scripts              []ListImageBuilds200ResponseAllOfImageBuildsInnerScriptsInner `json:"scripts,omitempty"`
+	SshUsername          *string                                                       `json:"sshUsername,omitempty"`
+	SshPassword          *string                                                       `json:"sshPassword,omitempty"`
+	StorageProvider      NullableString                                                `json:"storageProvider,omitempty"`
+	BuildOutputName      *string                                                       `json:"buildOutputName,omitempty"`
+	ConversionFormats    NullableString                                                `json:"conversionFormats,omitempty"`
+	IsCloudInit          *bool                                                         `json:"isCloudInit,omitempty"`
+	VmToolsInstalled     *bool                                                         `json:"vmToolsInstalled,omitempty"`
+	KeepResults          *int64                                                        `json:"keepResults,omitempty"`
+	Config               *ListImageBuilds200ResponseAllOfImageBuildsInnerConfig        `json:"config,omitempty"`
+	LastResult           *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult    `json:"lastResult,omitempty"`
+	ExecutionCount       *int64                                                        `json:"executionCount,omitempty"`
+	AdditionalProperties map[string]interface{}                                        `json:",remain"`
 }
 
 type _ImageBuilds ImageBuilds
@@ -97,9 +97,9 @@ func (o *ImageBuilds) SetId(v int64) {
 }
 
 // GetAccount returns the Account field value if set, zero value otherwise.
-func (o *ImageBuilds) GetAccount() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *ImageBuilds) GetAccount() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.Account) {
-		var ret ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return *o.Account
@@ -107,7 +107,7 @@ func (o *ImageBuilds) GetAccount() ListApplianceSettings200ResponseApplianceSett
 
 // GetAccountOk returns a tuple with the Account field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ImageBuilds) GetAccountOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *ImageBuilds) GetAccountOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.Account) {
 		return nil, false
 	}
@@ -123,8 +123,8 @@ func (o *ImageBuilds) IsSetAccount() bool {
 	return false
 }
 
-// SetAccount gets a reference to the given ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the Account field.
-func (o *ImageBuilds) SetAccount(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetAccount gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Account field.
+func (o *ImageBuilds) SetAccount(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.Account = &v
 }
 
@@ -161,9 +161,9 @@ func (o *ImageBuilds) SetType(v ListBackupSettings200ResponseBackupSettingsDefau
 }
 
 // GetSite returns the Site field value if set, zero value otherwise.
-func (o *ImageBuilds) GetSite() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *ImageBuilds) GetSite() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.Site) {
-		var ret ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return *o.Site
@@ -171,7 +171,7 @@ func (o *ImageBuilds) GetSite() ListApplianceSettings200ResponseApplianceSetting
 
 // GetSiteOk returns a tuple with the Site field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ImageBuilds) GetSiteOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *ImageBuilds) GetSiteOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.Site) {
 		return nil, false
 	}
@@ -187,15 +187,15 @@ func (o *ImageBuilds) IsSetSite() bool {
 	return false
 }
 
-// SetSite gets a reference to the given ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the Site field.
-func (o *ImageBuilds) SetSite(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetSite gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Site field.
+func (o *ImageBuilds) SetSite(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.Site = &v
 }
 
 // GetZone returns the Zone field value if set, zero value otherwise.
-func (o *ImageBuilds) GetZone() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *ImageBuilds) GetZone() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.Zone) {
-		var ret ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return *o.Zone
@@ -203,7 +203,7 @@ func (o *ImageBuilds) GetZone() ListApplianceSettings200ResponseApplianceSetting
 
 // GetZoneOk returns a tuple with the Zone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ImageBuilds) GetZoneOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *ImageBuilds) GetZoneOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.Zone) {
 		return nil, false
 	}
@@ -219,8 +219,8 @@ func (o *ImageBuilds) IsSetZone() bool {
 	return false
 }
 
-// SetZone gets a reference to the given ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the Zone field.
-func (o *ImageBuilds) SetZone(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetZone gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Zone field.
+func (o *ImageBuilds) SetZone(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.Zone = &v
 }
 
@@ -320,36 +320,47 @@ func (o *ImageBuilds) SetBootScript(v ListImageBuilds200ResponseAllOfImageBuilds
 	o.BootScript = &v
 }
 
-// GetBootCommand returns the BootCommand field value if set, zero value otherwise.
+// GetBootCommand returns the BootCommand field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ImageBuilds) GetBootCommand() string {
-	if o == nil || IsNil(o.BootCommand) {
+	if o == nil || IsNil(o.BootCommand.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.BootCommand
+	return *o.BootCommand.Get()
 }
 
 // GetBootCommandOk returns a tuple with the BootCommand field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ImageBuilds) GetBootCommandOk() (*string, bool) {
-	if o == nil || IsNil(o.BootCommand) {
+	if o == nil {
 		return nil, false
 	}
-	return o.BootCommand, true
+	return o.BootCommand.Get(), o.BootCommand.IsSet()
 }
 
 // IsSetBootCommand returns a boolean if a field has been set.
 func (o *ImageBuilds) IsSetBootCommand() bool {
-	if o != nil && !IsNil(o.BootCommand) {
+	if o != nil && o.BootCommand.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetBootCommand gets a reference to the given string and assigns it to the BootCommand field.
+// SetBootCommand gets a reference to the given NullableString and assigns it to the BootCommand field.
 func (o *ImageBuilds) SetBootCommand(v string) {
-	o.BootCommand = &v
+	o.BootCommand.Set(&v)
+}
+
+// SetBootCommandNil sets the value for BootCommand to be an explicit nil
+func (o *ImageBuilds) SetBootCommandNil() {
+	o.BootCommand.Set(nil)
+}
+
+// UnsetBootCommand ensures that no value is present for BootCommand, not even an explicit nil
+func (o *ImageBuilds) UnsetBootCommand() {
+	o.BootCommand.Unset()
 }
 
 // GetPreseedScript returns the PreseedScript field value if set, zero value otherwise.
@@ -480,36 +491,47 @@ func (o *ImageBuilds) SetSshPassword(v string) {
 	o.SshPassword = &v
 }
 
-// GetStorageProvider returns the StorageProvider field value if set, zero value otherwise.
+// GetStorageProvider returns the StorageProvider field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ImageBuilds) GetStorageProvider() string {
-	if o == nil || IsNil(o.StorageProvider) {
+	if o == nil || IsNil(o.StorageProvider.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.StorageProvider
+	return *o.StorageProvider.Get()
 }
 
 // GetStorageProviderOk returns a tuple with the StorageProvider field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ImageBuilds) GetStorageProviderOk() (*string, bool) {
-	if o == nil || IsNil(o.StorageProvider) {
+	if o == nil {
 		return nil, false
 	}
-	return o.StorageProvider, true
+	return o.StorageProvider.Get(), o.StorageProvider.IsSet()
 }
 
 // IsSetStorageProvider returns a boolean if a field has been set.
 func (o *ImageBuilds) IsSetStorageProvider() bool {
-	if o != nil && !IsNil(o.StorageProvider) {
+	if o != nil && o.StorageProvider.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetStorageProvider gets a reference to the given string and assigns it to the StorageProvider field.
+// SetStorageProvider gets a reference to the given NullableString and assigns it to the StorageProvider field.
 func (o *ImageBuilds) SetStorageProvider(v string) {
-	o.StorageProvider = &v
+	o.StorageProvider.Set(&v)
+}
+
+// SetStorageProviderNil sets the value for StorageProvider to be an explicit nil
+func (o *ImageBuilds) SetStorageProviderNil() {
+	o.StorageProvider.Set(nil)
+}
+
+// UnsetStorageProvider ensures that no value is present for StorageProvider, not even an explicit nil
+func (o *ImageBuilds) UnsetStorageProvider() {
+	o.StorageProvider.Unset()
 }
 
 // GetBuildOutputName returns the BuildOutputName field value if set, zero value otherwise.
@@ -544,36 +566,47 @@ func (o *ImageBuilds) SetBuildOutputName(v string) {
 	o.BuildOutputName = &v
 }
 
-// GetConversionFormats returns the ConversionFormats field value if set, zero value otherwise.
+// GetConversionFormats returns the ConversionFormats field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ImageBuilds) GetConversionFormats() string {
-	if o == nil || IsNil(o.ConversionFormats) {
+	if o == nil || IsNil(o.ConversionFormats.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ConversionFormats
+	return *o.ConversionFormats.Get()
 }
 
 // GetConversionFormatsOk returns a tuple with the ConversionFormats field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ImageBuilds) GetConversionFormatsOk() (*string, bool) {
-	if o == nil || IsNil(o.ConversionFormats) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ConversionFormats, true
+	return o.ConversionFormats.Get(), o.ConversionFormats.IsSet()
 }
 
 // IsSetConversionFormats returns a boolean if a field has been set.
 func (o *ImageBuilds) IsSetConversionFormats() bool {
-	if o != nil && !IsNil(o.ConversionFormats) {
+	if o != nil && o.ConversionFormats.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetConversionFormats gets a reference to the given string and assigns it to the ConversionFormats field.
+// SetConversionFormats gets a reference to the given NullableString and assigns it to the ConversionFormats field.
 func (o *ImageBuilds) SetConversionFormats(v string) {
-	o.ConversionFormats = &v
+	o.ConversionFormats.Set(&v)
+}
+
+// SetConversionFormatsNil sets the value for ConversionFormats to be an explicit nil
+func (o *ImageBuilds) SetConversionFormatsNil() {
+	o.ConversionFormats.Set(nil)
+}
+
+// UnsetConversionFormats ensures that no value is present for ConversionFormats, not even an explicit nil
+func (o *ImageBuilds) UnsetConversionFormats() {
+	o.ConversionFormats.Unset()
 }
 
 // GetIsCloudInit returns the IsCloudInit field value if set, zero value otherwise.
@@ -802,8 +835,8 @@ func (o ImageBuilds) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.BootScript) {
 		toSerialize["bootScript"] = o.BootScript
 	}
-	if !IsNil(o.BootCommand) {
-		toSerialize["bootCommand"] = o.BootCommand
+	if o.BootCommand.IsSet() {
+		toSerialize["bootCommand"] = o.BootCommand.Get()
 	}
 	if !IsNil(o.PreseedScript) {
 		toSerialize["preseedScript"] = o.PreseedScript
@@ -817,14 +850,14 @@ func (o ImageBuilds) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.SshPassword) {
 		toSerialize["sshPassword"] = o.SshPassword
 	}
-	if !IsNil(o.StorageProvider) {
-		toSerialize["storageProvider"] = o.StorageProvider
+	if o.StorageProvider.IsSet() {
+		toSerialize["storageProvider"] = o.StorageProvider.Get()
 	}
 	if !IsNil(o.BuildOutputName) {
 		toSerialize["buildOutputName"] = o.BuildOutputName
 	}
-	if !IsNil(o.ConversionFormats) {
-		toSerialize["conversionFormats"] = o.ConversionFormats
+	if o.ConversionFormats.IsSet() {
+		toSerialize["conversionFormats"] = o.ConversionFormats.Get()
 	}
 	if !IsNil(o.IsCloudInit) {
 		toSerialize["isCloudInit"] = o.IsCloudInit

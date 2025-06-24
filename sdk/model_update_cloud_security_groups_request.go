@@ -45,6 +45,7 @@ func NewUpdateCloudSecurityGroupsRequestWithDefaults() *UpdateCloudSecurityGroup
 }
 
 // GetSecurityGroupIds returns the SecurityGroupIds field value
+// If the value is explicit nil, the zero value for []int64 will be returned
 func (o *UpdateCloudSecurityGroupsRequest) GetSecurityGroupIds() []int64 {
 	if o == nil {
 		var ret []int64
@@ -56,8 +57,9 @@ func (o *UpdateCloudSecurityGroupsRequest) GetSecurityGroupIds() []int64 {
 
 // GetSecurityGroupIdsOk returns a tuple with the SecurityGroupIds field value
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *UpdateCloudSecurityGroupsRequest) GetSecurityGroupIdsOk() ([]int64, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.SecurityGroupIds) {
 		return nil, false
 	}
 	return o.SecurityGroupIds, true
@@ -78,7 +80,9 @@ func (o UpdateCloudSecurityGroupsRequest) MarshalJSON() ([]byte, error) {
 
 func (o UpdateCloudSecurityGroupsRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["securityGroupIds"] = o.SecurityGroupIds
+	if o.SecurityGroupIds != nil {
+		toSerialize["securityGroupIds"] = o.SecurityGroupIds
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value

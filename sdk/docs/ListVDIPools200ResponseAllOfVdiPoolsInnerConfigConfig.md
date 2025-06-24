@@ -8,11 +8,11 @@ Name | Type | Description | Notes
 **IsEC2** | Pointer to **bool** |  | [optional] 
 **IsVpcSelectable** | Pointer to **bool** |  | [optional] 
 **NoAgent** | Pointer to **bool** |  | [optional] 
-**SmbiosAssetTag** | Pointer to **string** |  | [optional] 
-**NestedVirtualization** | Pointer to **string** |  | [optional] 
+**SmbiosAssetTag** | Pointer to **NullableString** |  | [optional] 
+**NestedVirtualization** | Pointer to **NullableString** |  | [optional] 
 **VmwareFolderId** | Pointer to **string** |  | [optional] 
 **ResourcePoolId** | Pointer to **int64** |  | [optional] 
-**PoolProviderType** | Pointer to **string** |  | [optional] 
+**PoolProviderType** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -158,6 +158,16 @@ SetSmbiosAssetTag sets SmbiosAssetTag field to given value.
 
 HasSmbiosAssetTag returns a boolean if a field has been set.
 
+### SetSmbiosAssetTagNil
+
+`func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigConfig) SetSmbiosAssetTagNil(b bool)`
+
+ SetSmbiosAssetTagNil sets the value for SmbiosAssetTag to be an explicit nil
+
+### UnsetSmbiosAssetTag
+`func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigConfig) UnsetSmbiosAssetTag()`
+
+UnsetSmbiosAssetTag ensures that no value is present for SmbiosAssetTag, not even an explicit nil
 ### GetNestedVirtualization
 
 `func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigConfig) GetNestedVirtualization() string`
@@ -183,6 +193,16 @@ SetNestedVirtualization sets NestedVirtualization field to given value.
 
 HasNestedVirtualization returns a boolean if a field has been set.
 
+### SetNestedVirtualizationNil
+
+`func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigConfig) SetNestedVirtualizationNil(b bool)`
+
+ SetNestedVirtualizationNil sets the value for NestedVirtualization to be an explicit nil
+
+### UnsetNestedVirtualization
+`func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigConfig) UnsetNestedVirtualization()`
+
+UnsetNestedVirtualization ensures that no value is present for NestedVirtualization, not even an explicit nil
 ### GetVmwareFolderId
 
 `func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigConfig) GetVmwareFolderId() string`
@@ -258,6 +278,16 @@ SetPoolProviderType sets PoolProviderType field to given value.
 
 HasPoolProviderType returns a boolean if a field has been set.
 
+### SetPoolProviderTypeNil
+
+`func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigConfig) SetPoolProviderTypeNil(b bool)`
+
+ SetPoolProviderTypeNil sets the value for PoolProviderType to be an explicit nil
+
+### UnsetPoolProviderType
+`func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigConfig) UnsetPoolProviderType()`
+
+UnsetPoolProviderType ensures that no value is present for PoolProviderType, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

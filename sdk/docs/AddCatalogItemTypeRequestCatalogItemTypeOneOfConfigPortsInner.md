@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Port** | Pointer to **int64** | Port number. | [optional] 
 **Name** | Pointer to **string** | A name for the port. | [optional] 
-**Lb** | Pointer to **string** | The load balancer protocol. HTTP, HTTPS, or TCP. | [optional] 
+**Lb** | Pointer to **NullableString** | The load balancer protocol. HTTP, HTTPS, or TCP. | [optional] 
 
 ## Methods
 
@@ -102,6 +102,16 @@ SetLb sets Lb field to given value.
 
 HasLb returns a boolean if a field has been set.
 
+### SetLbNil
+
+`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPortsInner) SetLbNil(b bool)`
+
+ SetLbNil sets the value for Lb to be an explicit nil
+
+### UnsetLb
+`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPortsInner) UnsetLb()`
+
+UnsetLb ensures that no value is present for Lb, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

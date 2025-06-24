@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**NoAgent** | Pointer to **bool** | Skipping Agent installation will result in a lack of logging and guest operating system statistics. Automation scripts may also be adversely affected. | [optional] [default to false]
+**NoAgent** | Pointer to **NullableBool** | Skipping Agent installation will result in a lack of logging and guest operating system statistics. Automation scripts may also be adversely affected. | [optional] [default to false]
 **GoogleZoneId** | Pointer to **int64** | External ID of the Google zone to use for instance. | [optional] 
 **ExternalIpType** | Pointer to **int64** | External IP Type.  &#x60;-1&#x60; for ephemeral IP. | [optional] 
 **NetworkTags** | Pointer to **string** | Network Tags | [optional] 
@@ -55,6 +55,16 @@ SetNoAgent sets NoAgent field to given value.
 
 HasNoAgent returns a boolean if a field has been set.
 
+### SetNoAgentNil
+
+`func (o *InstancesConfigGCP) SetNoAgentNil(b bool)`
+
+ SetNoAgentNil sets the value for NoAgent to be an explicit nil
+
+### UnsetNoAgent
+`func (o *InstancesConfigGCP) UnsetNoAgent()`
+
+UnsetNoAgent ensures that no value is present for NoAgent, not even an explicit nil
 ### GetGoogleZoneId
 
 `func (o *InstancesConfigGCP) GetGoogleZoneId() int64`

@@ -7,15 +7,15 @@ Name | Type | Description | Notes
 **Id** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Code** | Pointer to **string** |  | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **NullableString** |  | [optional] 
 **Category** | Pointer to **string** |  | [optional] 
-**ResourceLevel** | Pointer to **string** |  | [optional] 
+**ResourceLevel** | Pointer to **NullableString** |  | [optional] 
 **ResourceType** | Pointer to **string** |  | [optional] 
-**Managed** | Pointer to **bool** |  | [optional] 
+**Managed** | Pointer to **NullableBool** |  | [optional] 
 **Status** | Pointer to **string** |  | [optional] 
-**LastUpdated** | Pointer to **time.Time** |  | [optional] 
-**Owner** | Pointer to [**GetAlerts200ResponseAllOfChecksInnerContainer**](GetAlerts200ResponseAllOfChecksInnerContainer.md) |  | [optional] 
-**TotalCpuUsage** | Pointer to **int64** |  | [optional] 
+**LastUpdated** | Pointer to **NullableTime** |  | [optional] 
+**Owner** | Pointer to [**GetAlerts200ResponseAllOfChecksInnerAccount**](GetAlerts200ResponseAllOfChecksInnerAccount.md) |  | [optional] 
+**TotalCpuUsage** | Pointer to **NullableInt64** |  | [optional] 
 **Stats** | Pointer to **map[string]interface{}** |  | [optional] 
 
 ## Methods
@@ -137,6 +137,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *ListClusterReplicasets200ResponseAllOfReplicasetsInner) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *ListClusterReplicasets200ResponseAllOfReplicasetsInner) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetCategory
 
 `func (o *ListClusterReplicasets200ResponseAllOfReplicasetsInner) GetCategory() string`
@@ -187,6 +197,16 @@ SetResourceLevel sets ResourceLevel field to given value.
 
 HasResourceLevel returns a boolean if a field has been set.
 
+### SetResourceLevelNil
+
+`func (o *ListClusterReplicasets200ResponseAllOfReplicasetsInner) SetResourceLevelNil(b bool)`
+
+ SetResourceLevelNil sets the value for ResourceLevel to be an explicit nil
+
+### UnsetResourceLevel
+`func (o *ListClusterReplicasets200ResponseAllOfReplicasetsInner) UnsetResourceLevel()`
+
+UnsetResourceLevel ensures that no value is present for ResourceLevel, not even an explicit nil
 ### GetResourceType
 
 `func (o *ListClusterReplicasets200ResponseAllOfReplicasetsInner) GetResourceType() string`
@@ -237,6 +257,16 @@ SetManaged sets Managed field to given value.
 
 HasManaged returns a boolean if a field has been set.
 
+### SetManagedNil
+
+`func (o *ListClusterReplicasets200ResponseAllOfReplicasetsInner) SetManagedNil(b bool)`
+
+ SetManagedNil sets the value for Managed to be an explicit nil
+
+### UnsetManaged
+`func (o *ListClusterReplicasets200ResponseAllOfReplicasetsInner) UnsetManaged()`
+
+UnsetManaged ensures that no value is present for Managed, not even an explicit nil
 ### GetStatus
 
 `func (o *ListClusterReplicasets200ResponseAllOfReplicasetsInner) GetStatus() string`
@@ -287,22 +317,32 @@ SetLastUpdated sets LastUpdated field to given value.
 
 HasLastUpdated returns a boolean if a field has been set.
 
+### SetLastUpdatedNil
+
+`func (o *ListClusterReplicasets200ResponseAllOfReplicasetsInner) SetLastUpdatedNil(b bool)`
+
+ SetLastUpdatedNil sets the value for LastUpdated to be an explicit nil
+
+### UnsetLastUpdated
+`func (o *ListClusterReplicasets200ResponseAllOfReplicasetsInner) UnsetLastUpdated()`
+
+UnsetLastUpdated ensures that no value is present for LastUpdated, not even an explicit nil
 ### GetOwner
 
-`func (o *ListClusterReplicasets200ResponseAllOfReplicasetsInner) GetOwner() GetAlerts200ResponseAllOfChecksInnerContainer`
+`func (o *ListClusterReplicasets200ResponseAllOfReplicasetsInner) GetOwner() GetAlerts200ResponseAllOfChecksInnerAccount`
 
 GetOwner returns the Owner field if non-nil, zero value otherwise.
 
 ### GetOwnerOk
 
-`func (o *ListClusterReplicasets200ResponseAllOfReplicasetsInner) GetOwnerOk() (*GetAlerts200ResponseAllOfChecksInnerContainer, bool)`
+`func (o *ListClusterReplicasets200ResponseAllOfReplicasetsInner) GetOwnerOk() (*GetAlerts200ResponseAllOfChecksInnerAccount, bool)`
 
 GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOwner
 
-`func (o *ListClusterReplicasets200ResponseAllOfReplicasetsInner) SetOwner(v GetAlerts200ResponseAllOfChecksInnerContainer)`
+`func (o *ListClusterReplicasets200ResponseAllOfReplicasetsInner) SetOwner(v GetAlerts200ResponseAllOfChecksInnerAccount)`
 
 SetOwner sets Owner field to given value.
 
@@ -337,6 +377,16 @@ SetTotalCpuUsage sets TotalCpuUsage field to given value.
 
 HasTotalCpuUsage returns a boolean if a field has been set.
 
+### SetTotalCpuUsageNil
+
+`func (o *ListClusterReplicasets200ResponseAllOfReplicasetsInner) SetTotalCpuUsageNil(b bool)`
+
+ SetTotalCpuUsageNil sets the value for TotalCpuUsage to be an explicit nil
+
+### UnsetTotalCpuUsage
+`func (o *ListClusterReplicasets200ResponseAllOfReplicasetsInner) UnsetTotalCpuUsage()`
+
+UnsetTotalCpuUsage ensures that no value is present for TotalCpuUsage, not even an explicit nil
 ### GetStats
 
 `func (o *ListClusterReplicasets200ResponseAllOfReplicasetsInner) GetStats() map[string]interface{}`
@@ -362,6 +412,16 @@ SetStats sets Stats field to given value.
 
 HasStats returns a boolean if a field has been set.
 
+### SetStatsNil
+
+`func (o *ListClusterReplicasets200ResponseAllOfReplicasetsInner) SetStatsNil(b bool)`
+
+ SetStatsNil sets the value for Stats to be an explicit nil
+
+### UnsetStats
+`func (o *ListClusterReplicasets200ResponseAllOfReplicasetsInner) UnsetStats()`
+
+UnsetStats ensures that no value is present for Stats, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Name** | **string** | Name | 
 **DisplayName** | Pointer to **string** | Display Name | [optional] 
 **Labels** | Pointer to **[]string** | Array of label strings, can be used for filtering. | [optional] 
-**Description** | Pointer to **string** | Description | [optional] 
+**Description** | Pointer to **NullableString** | Description | [optional] 
 **Site** | [**CreateNetworksRequestNetworkSite**](CreateNetworksRequestNetworkSite.md) |  | 
 **Zone** | [**CreateNetworksRequestNetworkZone**](CreateNetworksRequestNetworkZone.md) |  | 
 **Type** | Pointer to [**CreateNetworksRequestNetworkType**](CreateNetworksRequestNetworkType.md) |  | [optional] 
@@ -17,24 +17,24 @@ Name | Type | Description | Notes
 **Gateway** | Pointer to **string** | Network Gateway | [optional] 
 **DnsPrimary** | Pointer to **string** | Primary DNS Server | [optional] 
 **DnsSecondary** | Pointer to **string** | Secondary DNS Server | [optional] 
-**GatewayIPv6** | Pointer to **string** | IPv6 Network Gateway | [optional] 
-**NetmaskIPv6** | Pointer to **string** |  | [optional] 
-**DnsPrimaryIPv6** | Pointer to **string** | Primary IPv6 DNS Server | [optional] 
-**DnsSecondaryIPv6** | Pointer to **string** | Secondary IPv6 DNS Server | [optional] 
+**GatewayIPv6** | Pointer to **NullableString** | IPv6 Network Gateway | [optional] 
+**NetmaskIPv6** | Pointer to **NullableString** |  | [optional] 
+**DnsPrimaryIPv6** | Pointer to **NullableString** | Primary IPv6 DNS Server | [optional] 
+**DnsSecondaryIPv6** | Pointer to **NullableString** | Secondary IPv6 DNS Server | [optional] 
 **CidrIPv6** | Pointer to **string** | IPv6 Network CIDR | [optional] 
 **VlanId** | Pointer to **int64** |  | [optional] 
-**Pool** | Pointer to **int64** | Network Pool ID | [optional] 
-**PoolIPv6** | Pointer to **int64** | IPv6 Network Pool ID | [optional] 
+**Pool** | Pointer to **NullableInt64** | Network Pool ID | [optional] 
+**PoolIPv6** | Pointer to **NullableInt64** | IPv6 Network Pool ID | [optional] 
 **AllowStaticOverride** | Pointer to **bool** | Allow IP Override | [optional] 
 **AssignPublicIp** | Pointer to **bool** | Assign Public IP | [optional] 
 **Active** | Pointer to **bool** | Activate (true) or disable (false) the network | [optional] 
 **DhcpServer** | Pointer to **bool** | DHCP Server enabled network | [optional] 
 **DhcpServerIPv6** | Pointer to **bool** | IPv6 DHCP Server enabled network | [optional] 
-**NetworkDomain** | Pointer to [**CreateNetworksRequestNetworkNetworkDomain**](CreateNetworksRequestNetworkNetworkDomain.md) |  | [optional] 
+**NetworkDomain** | Pointer to [**ListNetworks200ResponseAllOfNetworksInnerNetworkDomain**](ListNetworks200ResponseAllOfNetworksInnerNetworkDomain.md) |  | [optional] 
 **SearchDomains** | Pointer to **string** | Search Domains | [optional] 
-**NetworkProxy** | Pointer to [**CreateNetworksRequestNetworkNetworkProxy**](CreateNetworksRequestNetworkNetworkProxy.md) |  | [optional] 
+**NetworkProxy** | Pointer to [**ListNetworks200ResponseAllOfNetworksInnerNetworkProxy**](ListNetworks200ResponseAllOfNetworksInnerNetworkProxy.md) |  | [optional] 
 **ApplianceUrlProxyBypass** | Pointer to **bool** | Bypass Proxy for Appliance URL | [optional] 
-**NoProxy** | Pointer to **string** | Comma-separated list of ip addresses or name servers to exclude proxy traversal for. Typically locally routable servers are excluded. | [optional] 
+**NoProxy** | Pointer to **NullableString** | Comma-separated list of ip addresses or name servers to exclude proxy traversal for. Typically locally routable servers are excluded. | [optional] 
 **Visibility** | Pointer to **string** | Visibility, private or public. | [optional] [default to "private"]
 **Config** | Pointer to [**CreateNetworksRequestNetworkConfig**](CreateNetworksRequestNetworkConfig.md) |  | [optional] 
 **Tenants** | Pointer to [**[]GetAlerts200ResponseAllOfChecksInnerAccount**](GetAlerts200ResponseAllOfChecksInnerAccount.md) | Array of tenant account ids that are allowed access | [optional] 
@@ -129,6 +129,16 @@ SetLabels sets Labels field to given value.
 
 HasLabels returns a boolean if a field has been set.
 
+### SetLabelsNil
+
+`func (o *CreateNetworksRequestNetwork) SetLabelsNil(b bool)`
+
+ SetLabelsNil sets the value for Labels to be an explicit nil
+
+### UnsetLabels
+`func (o *CreateNetworksRequestNetwork) UnsetLabels()`
+
+UnsetLabels ensures that no value is present for Labels, not even an explicit nil
 ### GetDescription
 
 `func (o *CreateNetworksRequestNetwork) GetDescription() string`
@@ -154,6 +164,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *CreateNetworksRequestNetwork) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *CreateNetworksRequestNetwork) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetSite
 
 `func (o *CreateNetworksRequestNetwork) GetSite() CreateNetworksRequestNetworkSite`
@@ -394,6 +414,16 @@ SetGatewayIPv6 sets GatewayIPv6 field to given value.
 
 HasGatewayIPv6 returns a boolean if a field has been set.
 
+### SetGatewayIPv6Nil
+
+`func (o *CreateNetworksRequestNetwork) SetGatewayIPv6Nil(b bool)`
+
+ SetGatewayIPv6Nil sets the value for GatewayIPv6 to be an explicit nil
+
+### UnsetGatewayIPv6
+`func (o *CreateNetworksRequestNetwork) UnsetGatewayIPv6()`
+
+UnsetGatewayIPv6 ensures that no value is present for GatewayIPv6, not even an explicit nil
 ### GetNetmaskIPv6
 
 `func (o *CreateNetworksRequestNetwork) GetNetmaskIPv6() string`
@@ -419,6 +449,16 @@ SetNetmaskIPv6 sets NetmaskIPv6 field to given value.
 
 HasNetmaskIPv6 returns a boolean if a field has been set.
 
+### SetNetmaskIPv6Nil
+
+`func (o *CreateNetworksRequestNetwork) SetNetmaskIPv6Nil(b bool)`
+
+ SetNetmaskIPv6Nil sets the value for NetmaskIPv6 to be an explicit nil
+
+### UnsetNetmaskIPv6
+`func (o *CreateNetworksRequestNetwork) UnsetNetmaskIPv6()`
+
+UnsetNetmaskIPv6 ensures that no value is present for NetmaskIPv6, not even an explicit nil
 ### GetDnsPrimaryIPv6
 
 `func (o *CreateNetworksRequestNetwork) GetDnsPrimaryIPv6() string`
@@ -444,6 +484,16 @@ SetDnsPrimaryIPv6 sets DnsPrimaryIPv6 field to given value.
 
 HasDnsPrimaryIPv6 returns a boolean if a field has been set.
 
+### SetDnsPrimaryIPv6Nil
+
+`func (o *CreateNetworksRequestNetwork) SetDnsPrimaryIPv6Nil(b bool)`
+
+ SetDnsPrimaryIPv6Nil sets the value for DnsPrimaryIPv6 to be an explicit nil
+
+### UnsetDnsPrimaryIPv6
+`func (o *CreateNetworksRequestNetwork) UnsetDnsPrimaryIPv6()`
+
+UnsetDnsPrimaryIPv6 ensures that no value is present for DnsPrimaryIPv6, not even an explicit nil
 ### GetDnsSecondaryIPv6
 
 `func (o *CreateNetworksRequestNetwork) GetDnsSecondaryIPv6() string`
@@ -469,6 +519,16 @@ SetDnsSecondaryIPv6 sets DnsSecondaryIPv6 field to given value.
 
 HasDnsSecondaryIPv6 returns a boolean if a field has been set.
 
+### SetDnsSecondaryIPv6Nil
+
+`func (o *CreateNetworksRequestNetwork) SetDnsSecondaryIPv6Nil(b bool)`
+
+ SetDnsSecondaryIPv6Nil sets the value for DnsSecondaryIPv6 to be an explicit nil
+
+### UnsetDnsSecondaryIPv6
+`func (o *CreateNetworksRequestNetwork) UnsetDnsSecondaryIPv6()`
+
+UnsetDnsSecondaryIPv6 ensures that no value is present for DnsSecondaryIPv6, not even an explicit nil
 ### GetCidrIPv6
 
 `func (o *CreateNetworksRequestNetwork) GetCidrIPv6() string`
@@ -544,6 +604,16 @@ SetPool sets Pool field to given value.
 
 HasPool returns a boolean if a field has been set.
 
+### SetPoolNil
+
+`func (o *CreateNetworksRequestNetwork) SetPoolNil(b bool)`
+
+ SetPoolNil sets the value for Pool to be an explicit nil
+
+### UnsetPool
+`func (o *CreateNetworksRequestNetwork) UnsetPool()`
+
+UnsetPool ensures that no value is present for Pool, not even an explicit nil
 ### GetPoolIPv6
 
 `func (o *CreateNetworksRequestNetwork) GetPoolIPv6() int64`
@@ -569,6 +639,16 @@ SetPoolIPv6 sets PoolIPv6 field to given value.
 
 HasPoolIPv6 returns a boolean if a field has been set.
 
+### SetPoolIPv6Nil
+
+`func (o *CreateNetworksRequestNetwork) SetPoolIPv6Nil(b bool)`
+
+ SetPoolIPv6Nil sets the value for PoolIPv6 to be an explicit nil
+
+### UnsetPoolIPv6
+`func (o *CreateNetworksRequestNetwork) UnsetPoolIPv6()`
+
+UnsetPoolIPv6 ensures that no value is present for PoolIPv6, not even an explicit nil
 ### GetAllowStaticOverride
 
 `func (o *CreateNetworksRequestNetwork) GetAllowStaticOverride() bool`
@@ -696,20 +776,20 @@ HasDhcpServerIPv6 returns a boolean if a field has been set.
 
 ### GetNetworkDomain
 
-`func (o *CreateNetworksRequestNetwork) GetNetworkDomain() CreateNetworksRequestNetworkNetworkDomain`
+`func (o *CreateNetworksRequestNetwork) GetNetworkDomain() ListNetworks200ResponseAllOfNetworksInnerNetworkDomain`
 
 GetNetworkDomain returns the NetworkDomain field if non-nil, zero value otherwise.
 
 ### GetNetworkDomainOk
 
-`func (o *CreateNetworksRequestNetwork) GetNetworkDomainOk() (*CreateNetworksRequestNetworkNetworkDomain, bool)`
+`func (o *CreateNetworksRequestNetwork) GetNetworkDomainOk() (*ListNetworks200ResponseAllOfNetworksInnerNetworkDomain, bool)`
 
 GetNetworkDomainOk returns a tuple with the NetworkDomain field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNetworkDomain
 
-`func (o *CreateNetworksRequestNetwork) SetNetworkDomain(v CreateNetworksRequestNetworkNetworkDomain)`
+`func (o *CreateNetworksRequestNetwork) SetNetworkDomain(v ListNetworks200ResponseAllOfNetworksInnerNetworkDomain)`
 
 SetNetworkDomain sets NetworkDomain field to given value.
 
@@ -746,20 +826,20 @@ HasSearchDomains returns a boolean if a field has been set.
 
 ### GetNetworkProxy
 
-`func (o *CreateNetworksRequestNetwork) GetNetworkProxy() CreateNetworksRequestNetworkNetworkProxy`
+`func (o *CreateNetworksRequestNetwork) GetNetworkProxy() ListNetworks200ResponseAllOfNetworksInnerNetworkProxy`
 
 GetNetworkProxy returns the NetworkProxy field if non-nil, zero value otherwise.
 
 ### GetNetworkProxyOk
 
-`func (o *CreateNetworksRequestNetwork) GetNetworkProxyOk() (*CreateNetworksRequestNetworkNetworkProxy, bool)`
+`func (o *CreateNetworksRequestNetwork) GetNetworkProxyOk() (*ListNetworks200ResponseAllOfNetworksInnerNetworkProxy, bool)`
 
 GetNetworkProxyOk returns a tuple with the NetworkProxy field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNetworkProxy
 
-`func (o *CreateNetworksRequestNetwork) SetNetworkProxy(v CreateNetworksRequestNetworkNetworkProxy)`
+`func (o *CreateNetworksRequestNetwork) SetNetworkProxy(v ListNetworks200ResponseAllOfNetworksInnerNetworkProxy)`
 
 SetNetworkProxy sets NetworkProxy field to given value.
 
@@ -819,6 +899,16 @@ SetNoProxy sets NoProxy field to given value.
 
 HasNoProxy returns a boolean if a field has been set.
 
+### SetNoProxyNil
+
+`func (o *CreateNetworksRequestNetwork) SetNoProxyNil(b bool)`
+
+ SetNoProxyNil sets the value for NoProxy to be an explicit nil
+
+### UnsetNoProxy
+`func (o *CreateNetworksRequestNetwork) UnsetNoProxy()`
+
+UnsetNoProxy ensures that no value is present for NoProxy, not even an explicit nil
 ### GetVisibility
 
 `func (o *CreateNetworksRequestNetwork) GetVisibility() string`

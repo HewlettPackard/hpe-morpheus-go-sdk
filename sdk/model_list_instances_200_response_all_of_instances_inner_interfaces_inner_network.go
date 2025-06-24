@@ -20,11 +20,11 @@ var _ MappedNullable = &ListInstances200ResponseAllOfInstancesInnerInterfacesInn
 
 // ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork struct for ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork
 type ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork struct {
-	Id                   *int64                                             `json:"id,omitempty"`
-	Group                *int32                                             `json:"group,omitempty"`
-	Subnet               *string                                            `json:"subnet,omitempty"`
-	DhcpServer           *bool                                              `json:"dhcpServer,omitempty"`
-	Name                 *string                                            `json:"name,omitempty"`
+	Id                   NullableInt64                                      `json:"id,omitempty"`
+	Group                NullableInt32                                      `json:"group,omitempty"`
+	Subnet               NullableString                                     `json:"subnet,omitempty"`
+	DhcpServer           NullableBool                                       `json:"dhcpServer,omitempty"`
+	Name                 NullableString                                     `json:"name,omitempty"`
 	Pool                 *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"pool,omitempty"`
 	AdditionalProperties map[string]interface{}                             `json:",remain"`
 }
@@ -48,164 +48,219 @@ func NewListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetworkWithDef
 	return &this
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
+// GetId returns the Id field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
+	if o == nil || IsNil(o.Id.Get()) {
 		var ret int64
 		return ret
 	}
-	return *o.Id
+	return *o.Id.Get()
 }
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Id, true
+	return o.Id.Get(), o.Id.IsSet()
 }
 
 // IsSetId returns a boolean if a field has been set.
 func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
+	if o != nil && o.Id.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetId gets a reference to the given int64 and assigns it to the Id field.
+// SetId gets a reference to the given NullableInt64 and assigns it to the Id field.
 func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork) SetId(v int64) {
-	o.Id = &v
+	o.Id.Set(&v)
 }
 
-// GetGroup returns the Group field value if set, zero value otherwise.
+// SetIdNil sets the value for Id to be an explicit nil
+func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork) SetIdNil() {
+	o.Id.Set(nil)
+}
+
+// UnsetId ensures that no value is present for Id, not even an explicit nil
+func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork) UnsetId() {
+	o.Id.Unset()
+}
+
+// GetGroup returns the Group field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork) GetGroup() int32 {
-	if o == nil || IsNil(o.Group) {
+	if o == nil || IsNil(o.Group.Get()) {
 		var ret int32
 		return ret
 	}
-	return *o.Group
+	return *o.Group.Get()
 }
 
 // GetGroupOk returns a tuple with the Group field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork) GetGroupOk() (*int32, bool) {
-	if o == nil || IsNil(o.Group) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Group, true
+	return o.Group.Get(), o.Group.IsSet()
 }
 
 // IsSetGroup returns a boolean if a field has been set.
 func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork) IsSetGroup() bool {
-	if o != nil && !IsNil(o.Group) {
+	if o != nil && o.Group.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetGroup gets a reference to the given int32 and assigns it to the Group field.
+// SetGroup gets a reference to the given NullableInt32 and assigns it to the Group field.
 func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork) SetGroup(v int32) {
-	o.Group = &v
+	o.Group.Set(&v)
 }
 
-// GetSubnet returns the Subnet field value if set, zero value otherwise.
+// SetGroupNil sets the value for Group to be an explicit nil
+func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork) SetGroupNil() {
+	o.Group.Set(nil)
+}
+
+// UnsetGroup ensures that no value is present for Group, not even an explicit nil
+func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork) UnsetGroup() {
+	o.Group.Unset()
+}
+
+// GetSubnet returns the Subnet field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork) GetSubnet() string {
-	if o == nil || IsNil(o.Subnet) {
+	if o == nil || IsNil(o.Subnet.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Subnet
+	return *o.Subnet.Get()
 }
 
 // GetSubnetOk returns a tuple with the Subnet field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork) GetSubnetOk() (*string, bool) {
-	if o == nil || IsNil(o.Subnet) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Subnet, true
+	return o.Subnet.Get(), o.Subnet.IsSet()
 }
 
 // IsSetSubnet returns a boolean if a field has been set.
 func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork) IsSetSubnet() bool {
-	if o != nil && !IsNil(o.Subnet) {
+	if o != nil && o.Subnet.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetSubnet gets a reference to the given string and assigns it to the Subnet field.
+// SetSubnet gets a reference to the given NullableString and assigns it to the Subnet field.
 func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork) SetSubnet(v string) {
-	o.Subnet = &v
+	o.Subnet.Set(&v)
 }
 
-// GetDhcpServer returns the DhcpServer field value if set, zero value otherwise.
+// SetSubnetNil sets the value for Subnet to be an explicit nil
+func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork) SetSubnetNil() {
+	o.Subnet.Set(nil)
+}
+
+// UnsetSubnet ensures that no value is present for Subnet, not even an explicit nil
+func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork) UnsetSubnet() {
+	o.Subnet.Unset()
+}
+
+// GetDhcpServer returns the DhcpServer field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork) GetDhcpServer() bool {
-	if o == nil || IsNil(o.DhcpServer) {
+	if o == nil || IsNil(o.DhcpServer.Get()) {
 		var ret bool
 		return ret
 	}
-	return *o.DhcpServer
+	return *o.DhcpServer.Get()
 }
 
 // GetDhcpServerOk returns a tuple with the DhcpServer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork) GetDhcpServerOk() (*bool, bool) {
-	if o == nil || IsNil(o.DhcpServer) {
+	if o == nil {
 		return nil, false
 	}
-	return o.DhcpServer, true
+	return o.DhcpServer.Get(), o.DhcpServer.IsSet()
 }
 
 // IsSetDhcpServer returns a boolean if a field has been set.
 func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork) IsSetDhcpServer() bool {
-	if o != nil && !IsNil(o.DhcpServer) {
+	if o != nil && o.DhcpServer.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDhcpServer gets a reference to the given bool and assigns it to the DhcpServer field.
+// SetDhcpServer gets a reference to the given NullableBool and assigns it to the DhcpServer field.
 func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork) SetDhcpServer(v bool) {
-	o.DhcpServer = &v
+	o.DhcpServer.Set(&v)
 }
 
-// GetName returns the Name field value if set, zero value otherwise.
+// SetDhcpServerNil sets the value for DhcpServer to be an explicit nil
+func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork) SetDhcpServerNil() {
+	o.DhcpServer.Set(nil)
+}
+
+// UnsetDhcpServer ensures that no value is present for DhcpServer, not even an explicit nil
+func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork) UnsetDhcpServer() {
+	o.DhcpServer.Unset()
+}
+
+// GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork) GetName() string {
-	if o == nil || IsNil(o.Name) {
+	if o == nil || IsNil(o.Name.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Name
+	return *o.Name.Get()
 }
 
 // GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Name, true
+	return o.Name.Get(), o.Name.IsSet()
 }
 
 // IsSetName returns a boolean if a field has been set.
 func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
+	if o != nil && o.Name.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetName gets a reference to the given string and assigns it to the Name field.
+// SetName gets a reference to the given NullableString and assigns it to the Name field.
 func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork) SetName(v string) {
-	o.Name = &v
+	o.Name.Set(&v)
+}
+
+// SetNameNil sets the value for Name to be an explicit nil
+func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork) SetNameNil() {
+	o.Name.Set(nil)
+}
+
+// UnsetName ensures that no value is present for Name, not even an explicit nil
+func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork) UnsetName() {
+	o.Name.Unset()
 }
 
 // GetPool returns the Pool field value if set, zero value otherwise.
@@ -250,20 +305,20 @@ func (o ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork) Marsh
 
 func (o ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Id) {
-		toSerialize["id"] = o.Id
+	if o.Id.IsSet() {
+		toSerialize["id"] = o.Id.Get()
 	}
-	if !IsNil(o.Group) {
-		toSerialize["group"] = o.Group
+	if o.Group.IsSet() {
+		toSerialize["group"] = o.Group.Get()
 	}
-	if !IsNil(o.Subnet) {
-		toSerialize["subnet"] = o.Subnet
+	if o.Subnet.IsSet() {
+		toSerialize["subnet"] = o.Subnet.Get()
 	}
-	if !IsNil(o.DhcpServer) {
-		toSerialize["dhcpServer"] = o.DhcpServer
+	if o.DhcpServer.IsSet() {
+		toSerialize["dhcpServer"] = o.DhcpServer.Get()
 	}
-	if !IsNil(o.Name) {
-		toSerialize["name"] = o.Name
+	if o.Name.IsSet() {
+		toSerialize["name"] = o.Name.Get()
 	}
 	if !IsNil(o.Pool) {
 		toSerialize["pool"] = o.Pool

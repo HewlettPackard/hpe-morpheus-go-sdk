@@ -27,7 +27,7 @@ type CreateNetworksRequestNetwork struct {
 	// Array of label strings, can be used for filtering.
 	Labels []string `json:"labels,omitempty"`
 	// Description
-	Description *string                           `json:"description,omitempty"`
+	Description NullableString                    `json:"description,omitempty"`
 	Site        CreateNetworksRequestNetworkSite  `json:"site"`
 	Zone        CreateNetworksRequestNetworkZone  `json:"zone"`
 	Type        *CreateNetworksRequestNetworkType `json:"type,omitempty"`
@@ -42,19 +42,19 @@ type CreateNetworksRequestNetwork struct {
 	// Secondary DNS Server
 	DnsSecondary *string `json:"dnsSecondary,omitempty"`
 	// IPv6 Network Gateway
-	GatewayIPv6 *string `json:"gatewayIPv6,omitempty"`
-	NetmaskIPv6 *string `json:"netmaskIPv6,omitempty"`
+	GatewayIPv6 NullableString `json:"gatewayIPv6,omitempty"`
+	NetmaskIPv6 NullableString `json:"netmaskIPv6,omitempty"`
 	// Primary IPv6 DNS Server
-	DnsPrimaryIPv6 *string `json:"dnsPrimaryIPv6,omitempty"`
+	DnsPrimaryIPv6 NullableString `json:"dnsPrimaryIPv6,omitempty"`
 	// Secondary IPv6 DNS Server
-	DnsSecondaryIPv6 *string `json:"dnsSecondaryIPv6,omitempty"`
+	DnsSecondaryIPv6 NullableString `json:"dnsSecondaryIPv6,omitempty"`
 	// IPv6 Network CIDR
 	CidrIPv6 *string `json:"cidrIPv6,omitempty"`
 	VlanId   *int64  `json:"vlanId,omitempty"`
 	// Network Pool ID
-	Pool *int64 `json:"pool,omitempty"`
+	Pool NullableInt64 `json:"pool,omitempty"`
 	// IPv6 Network Pool ID
-	PoolIPv6 *int64 `json:"poolIPv6,omitempty"`
+	PoolIPv6 NullableInt64 `json:"poolIPv6,omitempty"`
 	// Allow IP Override
 	AllowStaticOverride *bool `json:"allowStaticOverride,omitempty"`
 	// Assign Public IP
@@ -64,15 +64,15 @@ type CreateNetworksRequestNetwork struct {
 	// DHCP Server enabled network
 	DhcpServer *bool `json:"dhcpServer,omitempty"`
 	// IPv6 DHCP Server enabled network
-	DhcpServerIPv6 *bool                                      `json:"dhcpServerIPv6,omitempty"`
-	NetworkDomain  *CreateNetworksRequestNetworkNetworkDomain `json:"networkDomain,omitempty"`
+	DhcpServerIPv6 *bool                                                   `json:"dhcpServerIPv6,omitempty"`
+	NetworkDomain  *ListNetworks200ResponseAllOfNetworksInnerNetworkDomain `json:"networkDomain,omitempty"`
 	// Search Domains
-	SearchDomains *string                                   `json:"searchDomains,omitempty"`
-	NetworkProxy  *CreateNetworksRequestNetworkNetworkProxy `json:"networkProxy,omitempty"`
+	SearchDomains *string                                                `json:"searchDomains,omitempty"`
+	NetworkProxy  *ListNetworks200ResponseAllOfNetworksInnerNetworkProxy `json:"networkProxy,omitempty"`
 	// Bypass Proxy for Appliance URL
 	ApplianceUrlProxyBypass *bool `json:"applianceUrlProxyBypass,omitempty"`
 	// Comma-separated list of ip addresses or name servers to exclude proxy traversal for. Typically locally routable servers are excluded.
-	NoProxy *string `json:"noProxy,omitempty"`
+	NoProxy NullableString `json:"noProxy,omitempty"`
 	// Visibility, private or public.
 	Visibility *string                             `json:"visibility,omitempty"`
 	Config     *CreateNetworksRequestNetworkConfig `json:"config,omitempty"`
@@ -164,9 +164,9 @@ func (o *CreateNetworksRequestNetwork) SetDisplayName(v string) {
 	o.DisplayName = &v
 }
 
-// GetLabels returns the Labels field value if set, zero value otherwise.
+// GetLabels returns the Labels field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CreateNetworksRequestNetwork) GetLabels() []string {
-	if o == nil || IsNil(o.Labels) {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -175,6 +175,7 @@ func (o *CreateNetworksRequestNetwork) GetLabels() []string {
 
 // GetLabelsOk returns a tuple with the Labels field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CreateNetworksRequestNetwork) GetLabelsOk() ([]string, bool) {
 	if o == nil || IsNil(o.Labels) {
 		return nil, false
@@ -196,36 +197,47 @@ func (o *CreateNetworksRequestNetwork) SetLabels(v []string) {
 	o.Labels = v
 }
 
-// GetDescription returns the Description field value if set, zero value otherwise.
+// GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CreateNetworksRequestNetwork) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
+	if o == nil || IsNil(o.Description.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Description
+	return *o.Description.Get()
 }
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CreateNetworksRequestNetwork) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Description, true
+	return o.Description.Get(), o.Description.IsSet()
 }
 
 // IsSetDescription returns a boolean if a field has been set.
 func (o *CreateNetworksRequestNetwork) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
+	if o != nil && o.Description.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDescription gets a reference to the given string and assigns it to the Description field.
+// SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *CreateNetworksRequestNetwork) SetDescription(v string) {
-	o.Description = &v
+	o.Description.Set(&v)
+}
+
+// SetDescriptionNil sets the value for Description to be an explicit nil
+func (o *CreateNetworksRequestNetwork) SetDescriptionNil() {
+	o.Description.Set(nil)
+}
+
+// UnsetDescription ensures that no value is present for Description, not even an explicit nil
+func (o *CreateNetworksRequestNetwork) UnsetDescription() {
+	o.Description.Unset()
 }
 
 // GetSite returns the Site field value
@@ -500,132 +512,176 @@ func (o *CreateNetworksRequestNetwork) SetDnsSecondary(v string) {
 	o.DnsSecondary = &v
 }
 
-// GetGatewayIPv6 returns the GatewayIPv6 field value if set, zero value otherwise.
+// GetGatewayIPv6 returns the GatewayIPv6 field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CreateNetworksRequestNetwork) GetGatewayIPv6() string {
-	if o == nil || IsNil(o.GatewayIPv6) {
+	if o == nil || IsNil(o.GatewayIPv6.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.GatewayIPv6
+	return *o.GatewayIPv6.Get()
 }
 
 // GetGatewayIPv6Ok returns a tuple with the GatewayIPv6 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CreateNetworksRequestNetwork) GetGatewayIPv6Ok() (*string, bool) {
-	if o == nil || IsNil(o.GatewayIPv6) {
+	if o == nil {
 		return nil, false
 	}
-	return o.GatewayIPv6, true
+	return o.GatewayIPv6.Get(), o.GatewayIPv6.IsSet()
 }
 
 // IsSetGatewayIPv6 returns a boolean if a field has been set.
 func (o *CreateNetworksRequestNetwork) IsSetGatewayIPv6() bool {
-	if o != nil && !IsNil(o.GatewayIPv6) {
+	if o != nil && o.GatewayIPv6.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetGatewayIPv6 gets a reference to the given string and assigns it to the GatewayIPv6 field.
+// SetGatewayIPv6 gets a reference to the given NullableString and assigns it to the GatewayIPv6 field.
 func (o *CreateNetworksRequestNetwork) SetGatewayIPv6(v string) {
-	o.GatewayIPv6 = &v
+	o.GatewayIPv6.Set(&v)
 }
 
-// GetNetmaskIPv6 returns the NetmaskIPv6 field value if set, zero value otherwise.
+// SetGatewayIPv6Nil sets the value for GatewayIPv6 to be an explicit nil
+func (o *CreateNetworksRequestNetwork) SetGatewayIPv6Nil() {
+	o.GatewayIPv6.Set(nil)
+}
+
+// UnsetGatewayIPv6 ensures that no value is present for GatewayIPv6, not even an explicit nil
+func (o *CreateNetworksRequestNetwork) UnsetGatewayIPv6() {
+	o.GatewayIPv6.Unset()
+}
+
+// GetNetmaskIPv6 returns the NetmaskIPv6 field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CreateNetworksRequestNetwork) GetNetmaskIPv6() string {
-	if o == nil || IsNil(o.NetmaskIPv6) {
+	if o == nil || IsNil(o.NetmaskIPv6.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.NetmaskIPv6
+	return *o.NetmaskIPv6.Get()
 }
 
 // GetNetmaskIPv6Ok returns a tuple with the NetmaskIPv6 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CreateNetworksRequestNetwork) GetNetmaskIPv6Ok() (*string, bool) {
-	if o == nil || IsNil(o.NetmaskIPv6) {
+	if o == nil {
 		return nil, false
 	}
-	return o.NetmaskIPv6, true
+	return o.NetmaskIPv6.Get(), o.NetmaskIPv6.IsSet()
 }
 
 // IsSetNetmaskIPv6 returns a boolean if a field has been set.
 func (o *CreateNetworksRequestNetwork) IsSetNetmaskIPv6() bool {
-	if o != nil && !IsNil(o.NetmaskIPv6) {
+	if o != nil && o.NetmaskIPv6.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetNetmaskIPv6 gets a reference to the given string and assigns it to the NetmaskIPv6 field.
+// SetNetmaskIPv6 gets a reference to the given NullableString and assigns it to the NetmaskIPv6 field.
 func (o *CreateNetworksRequestNetwork) SetNetmaskIPv6(v string) {
-	o.NetmaskIPv6 = &v
+	o.NetmaskIPv6.Set(&v)
 }
 
-// GetDnsPrimaryIPv6 returns the DnsPrimaryIPv6 field value if set, zero value otherwise.
+// SetNetmaskIPv6Nil sets the value for NetmaskIPv6 to be an explicit nil
+func (o *CreateNetworksRequestNetwork) SetNetmaskIPv6Nil() {
+	o.NetmaskIPv6.Set(nil)
+}
+
+// UnsetNetmaskIPv6 ensures that no value is present for NetmaskIPv6, not even an explicit nil
+func (o *CreateNetworksRequestNetwork) UnsetNetmaskIPv6() {
+	o.NetmaskIPv6.Unset()
+}
+
+// GetDnsPrimaryIPv6 returns the DnsPrimaryIPv6 field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CreateNetworksRequestNetwork) GetDnsPrimaryIPv6() string {
-	if o == nil || IsNil(o.DnsPrimaryIPv6) {
+	if o == nil || IsNil(o.DnsPrimaryIPv6.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.DnsPrimaryIPv6
+	return *o.DnsPrimaryIPv6.Get()
 }
 
 // GetDnsPrimaryIPv6Ok returns a tuple with the DnsPrimaryIPv6 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CreateNetworksRequestNetwork) GetDnsPrimaryIPv6Ok() (*string, bool) {
-	if o == nil || IsNil(o.DnsPrimaryIPv6) {
+	if o == nil {
 		return nil, false
 	}
-	return o.DnsPrimaryIPv6, true
+	return o.DnsPrimaryIPv6.Get(), o.DnsPrimaryIPv6.IsSet()
 }
 
 // IsSetDnsPrimaryIPv6 returns a boolean if a field has been set.
 func (o *CreateNetworksRequestNetwork) IsSetDnsPrimaryIPv6() bool {
-	if o != nil && !IsNil(o.DnsPrimaryIPv6) {
+	if o != nil && o.DnsPrimaryIPv6.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDnsPrimaryIPv6 gets a reference to the given string and assigns it to the DnsPrimaryIPv6 field.
+// SetDnsPrimaryIPv6 gets a reference to the given NullableString and assigns it to the DnsPrimaryIPv6 field.
 func (o *CreateNetworksRequestNetwork) SetDnsPrimaryIPv6(v string) {
-	o.DnsPrimaryIPv6 = &v
+	o.DnsPrimaryIPv6.Set(&v)
 }
 
-// GetDnsSecondaryIPv6 returns the DnsSecondaryIPv6 field value if set, zero value otherwise.
+// SetDnsPrimaryIPv6Nil sets the value for DnsPrimaryIPv6 to be an explicit nil
+func (o *CreateNetworksRequestNetwork) SetDnsPrimaryIPv6Nil() {
+	o.DnsPrimaryIPv6.Set(nil)
+}
+
+// UnsetDnsPrimaryIPv6 ensures that no value is present for DnsPrimaryIPv6, not even an explicit nil
+func (o *CreateNetworksRequestNetwork) UnsetDnsPrimaryIPv6() {
+	o.DnsPrimaryIPv6.Unset()
+}
+
+// GetDnsSecondaryIPv6 returns the DnsSecondaryIPv6 field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CreateNetworksRequestNetwork) GetDnsSecondaryIPv6() string {
-	if o == nil || IsNil(o.DnsSecondaryIPv6) {
+	if o == nil || IsNil(o.DnsSecondaryIPv6.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.DnsSecondaryIPv6
+	return *o.DnsSecondaryIPv6.Get()
 }
 
 // GetDnsSecondaryIPv6Ok returns a tuple with the DnsSecondaryIPv6 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CreateNetworksRequestNetwork) GetDnsSecondaryIPv6Ok() (*string, bool) {
-	if o == nil || IsNil(o.DnsSecondaryIPv6) {
+	if o == nil {
 		return nil, false
 	}
-	return o.DnsSecondaryIPv6, true
+	return o.DnsSecondaryIPv6.Get(), o.DnsSecondaryIPv6.IsSet()
 }
 
 // IsSetDnsSecondaryIPv6 returns a boolean if a field has been set.
 func (o *CreateNetworksRequestNetwork) IsSetDnsSecondaryIPv6() bool {
-	if o != nil && !IsNil(o.DnsSecondaryIPv6) {
+	if o != nil && o.DnsSecondaryIPv6.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDnsSecondaryIPv6 gets a reference to the given string and assigns it to the DnsSecondaryIPv6 field.
+// SetDnsSecondaryIPv6 gets a reference to the given NullableString and assigns it to the DnsSecondaryIPv6 field.
 func (o *CreateNetworksRequestNetwork) SetDnsSecondaryIPv6(v string) {
-	o.DnsSecondaryIPv6 = &v
+	o.DnsSecondaryIPv6.Set(&v)
+}
+
+// SetDnsSecondaryIPv6Nil sets the value for DnsSecondaryIPv6 to be an explicit nil
+func (o *CreateNetworksRequestNetwork) SetDnsSecondaryIPv6Nil() {
+	o.DnsSecondaryIPv6.Set(nil)
+}
+
+// UnsetDnsSecondaryIPv6 ensures that no value is present for DnsSecondaryIPv6, not even an explicit nil
+func (o *CreateNetworksRequestNetwork) UnsetDnsSecondaryIPv6() {
+	o.DnsSecondaryIPv6.Unset()
 }
 
 // GetCidrIPv6 returns the CidrIPv6 field value if set, zero value otherwise.
@@ -692,68 +748,90 @@ func (o *CreateNetworksRequestNetwork) SetVlanId(v int64) {
 	o.VlanId = &v
 }
 
-// GetPool returns the Pool field value if set, zero value otherwise.
+// GetPool returns the Pool field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CreateNetworksRequestNetwork) GetPool() int64 {
-	if o == nil || IsNil(o.Pool) {
+	if o == nil || IsNil(o.Pool.Get()) {
 		var ret int64
 		return ret
 	}
-	return *o.Pool
+	return *o.Pool.Get()
 }
 
 // GetPoolOk returns a tuple with the Pool field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CreateNetworksRequestNetwork) GetPoolOk() (*int64, bool) {
-	if o == nil || IsNil(o.Pool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Pool, true
+	return o.Pool.Get(), o.Pool.IsSet()
 }
 
 // IsSetPool returns a boolean if a field has been set.
 func (o *CreateNetworksRequestNetwork) IsSetPool() bool {
-	if o != nil && !IsNil(o.Pool) {
+	if o != nil && o.Pool.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetPool gets a reference to the given int64 and assigns it to the Pool field.
+// SetPool gets a reference to the given NullableInt64 and assigns it to the Pool field.
 func (o *CreateNetworksRequestNetwork) SetPool(v int64) {
-	o.Pool = &v
+	o.Pool.Set(&v)
 }
 
-// GetPoolIPv6 returns the PoolIPv6 field value if set, zero value otherwise.
+// SetPoolNil sets the value for Pool to be an explicit nil
+func (o *CreateNetworksRequestNetwork) SetPoolNil() {
+	o.Pool.Set(nil)
+}
+
+// UnsetPool ensures that no value is present for Pool, not even an explicit nil
+func (o *CreateNetworksRequestNetwork) UnsetPool() {
+	o.Pool.Unset()
+}
+
+// GetPoolIPv6 returns the PoolIPv6 field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CreateNetworksRequestNetwork) GetPoolIPv6() int64 {
-	if o == nil || IsNil(o.PoolIPv6) {
+	if o == nil || IsNil(o.PoolIPv6.Get()) {
 		var ret int64
 		return ret
 	}
-	return *o.PoolIPv6
+	return *o.PoolIPv6.Get()
 }
 
 // GetPoolIPv6Ok returns a tuple with the PoolIPv6 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CreateNetworksRequestNetwork) GetPoolIPv6Ok() (*int64, bool) {
-	if o == nil || IsNil(o.PoolIPv6) {
+	if o == nil {
 		return nil, false
 	}
-	return o.PoolIPv6, true
+	return o.PoolIPv6.Get(), o.PoolIPv6.IsSet()
 }
 
 // IsSetPoolIPv6 returns a boolean if a field has been set.
 func (o *CreateNetworksRequestNetwork) IsSetPoolIPv6() bool {
-	if o != nil && !IsNil(o.PoolIPv6) {
+	if o != nil && o.PoolIPv6.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetPoolIPv6 gets a reference to the given int64 and assigns it to the PoolIPv6 field.
+// SetPoolIPv6 gets a reference to the given NullableInt64 and assigns it to the PoolIPv6 field.
 func (o *CreateNetworksRequestNetwork) SetPoolIPv6(v int64) {
-	o.PoolIPv6 = &v
+	o.PoolIPv6.Set(&v)
+}
+
+// SetPoolIPv6Nil sets the value for PoolIPv6 to be an explicit nil
+func (o *CreateNetworksRequestNetwork) SetPoolIPv6Nil() {
+	o.PoolIPv6.Set(nil)
+}
+
+// UnsetPoolIPv6 ensures that no value is present for PoolIPv6, not even an explicit nil
+func (o *CreateNetworksRequestNetwork) UnsetPoolIPv6() {
+	o.PoolIPv6.Unset()
 }
 
 // GetAllowStaticOverride returns the AllowStaticOverride field value if set, zero value otherwise.
@@ -917,9 +995,9 @@ func (o *CreateNetworksRequestNetwork) SetDhcpServerIPv6(v bool) {
 }
 
 // GetNetworkDomain returns the NetworkDomain field value if set, zero value otherwise.
-func (o *CreateNetworksRequestNetwork) GetNetworkDomain() CreateNetworksRequestNetworkNetworkDomain {
+func (o *CreateNetworksRequestNetwork) GetNetworkDomain() ListNetworks200ResponseAllOfNetworksInnerNetworkDomain {
 	if o == nil || IsNil(o.NetworkDomain) {
-		var ret CreateNetworksRequestNetworkNetworkDomain
+		var ret ListNetworks200ResponseAllOfNetworksInnerNetworkDomain
 		return ret
 	}
 	return *o.NetworkDomain
@@ -927,7 +1005,7 @@ func (o *CreateNetworksRequestNetwork) GetNetworkDomain() CreateNetworksRequestN
 
 // GetNetworkDomainOk returns a tuple with the NetworkDomain field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CreateNetworksRequestNetwork) GetNetworkDomainOk() (*CreateNetworksRequestNetworkNetworkDomain, bool) {
+func (o *CreateNetworksRequestNetwork) GetNetworkDomainOk() (*ListNetworks200ResponseAllOfNetworksInnerNetworkDomain, bool) {
 	if o == nil || IsNil(o.NetworkDomain) {
 		return nil, false
 	}
@@ -943,8 +1021,8 @@ func (o *CreateNetworksRequestNetwork) IsSetNetworkDomain() bool {
 	return false
 }
 
-// SetNetworkDomain gets a reference to the given CreateNetworksRequestNetworkNetworkDomain and assigns it to the NetworkDomain field.
-func (o *CreateNetworksRequestNetwork) SetNetworkDomain(v CreateNetworksRequestNetworkNetworkDomain) {
+// SetNetworkDomain gets a reference to the given ListNetworks200ResponseAllOfNetworksInnerNetworkDomain and assigns it to the NetworkDomain field.
+func (o *CreateNetworksRequestNetwork) SetNetworkDomain(v ListNetworks200ResponseAllOfNetworksInnerNetworkDomain) {
 	o.NetworkDomain = &v
 }
 
@@ -981,9 +1059,9 @@ func (o *CreateNetworksRequestNetwork) SetSearchDomains(v string) {
 }
 
 // GetNetworkProxy returns the NetworkProxy field value if set, zero value otherwise.
-func (o *CreateNetworksRequestNetwork) GetNetworkProxy() CreateNetworksRequestNetworkNetworkProxy {
+func (o *CreateNetworksRequestNetwork) GetNetworkProxy() ListNetworks200ResponseAllOfNetworksInnerNetworkProxy {
 	if o == nil || IsNil(o.NetworkProxy) {
-		var ret CreateNetworksRequestNetworkNetworkProxy
+		var ret ListNetworks200ResponseAllOfNetworksInnerNetworkProxy
 		return ret
 	}
 	return *o.NetworkProxy
@@ -991,7 +1069,7 @@ func (o *CreateNetworksRequestNetwork) GetNetworkProxy() CreateNetworksRequestNe
 
 // GetNetworkProxyOk returns a tuple with the NetworkProxy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CreateNetworksRequestNetwork) GetNetworkProxyOk() (*CreateNetworksRequestNetworkNetworkProxy, bool) {
+func (o *CreateNetworksRequestNetwork) GetNetworkProxyOk() (*ListNetworks200ResponseAllOfNetworksInnerNetworkProxy, bool) {
 	if o == nil || IsNil(o.NetworkProxy) {
 		return nil, false
 	}
@@ -1007,8 +1085,8 @@ func (o *CreateNetworksRequestNetwork) IsSetNetworkProxy() bool {
 	return false
 }
 
-// SetNetworkProxy gets a reference to the given CreateNetworksRequestNetworkNetworkProxy and assigns it to the NetworkProxy field.
-func (o *CreateNetworksRequestNetwork) SetNetworkProxy(v CreateNetworksRequestNetworkNetworkProxy) {
+// SetNetworkProxy gets a reference to the given ListNetworks200ResponseAllOfNetworksInnerNetworkProxy and assigns it to the NetworkProxy field.
+func (o *CreateNetworksRequestNetwork) SetNetworkProxy(v ListNetworks200ResponseAllOfNetworksInnerNetworkProxy) {
 	o.NetworkProxy = &v
 }
 
@@ -1044,36 +1122,47 @@ func (o *CreateNetworksRequestNetwork) SetApplianceUrlProxyBypass(v bool) {
 	o.ApplianceUrlProxyBypass = &v
 }
 
-// GetNoProxy returns the NoProxy field value if set, zero value otherwise.
+// GetNoProxy returns the NoProxy field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CreateNetworksRequestNetwork) GetNoProxy() string {
-	if o == nil || IsNil(o.NoProxy) {
+	if o == nil || IsNil(o.NoProxy.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.NoProxy
+	return *o.NoProxy.Get()
 }
 
 // GetNoProxyOk returns a tuple with the NoProxy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CreateNetworksRequestNetwork) GetNoProxyOk() (*string, bool) {
-	if o == nil || IsNil(o.NoProxy) {
+	if o == nil {
 		return nil, false
 	}
-	return o.NoProxy, true
+	return o.NoProxy.Get(), o.NoProxy.IsSet()
 }
 
 // IsSetNoProxy returns a boolean if a field has been set.
 func (o *CreateNetworksRequestNetwork) IsSetNoProxy() bool {
-	if o != nil && !IsNil(o.NoProxy) {
+	if o != nil && o.NoProxy.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetNoProxy gets a reference to the given string and assigns it to the NoProxy field.
+// SetNoProxy gets a reference to the given NullableString and assigns it to the NoProxy field.
 func (o *CreateNetworksRequestNetwork) SetNoProxy(v string) {
-	o.NoProxy = &v
+	o.NoProxy.Set(&v)
+}
+
+// SetNoProxyNil sets the value for NoProxy to be an explicit nil
+func (o *CreateNetworksRequestNetwork) SetNoProxyNil() {
+	o.NoProxy.Set(nil)
+}
+
+// UnsetNoProxy ensures that no value is present for NoProxy, not even an explicit nil
+func (o *CreateNetworksRequestNetwork) UnsetNoProxy() {
+	o.NoProxy.Unset()
 }
 
 // GetVisibility returns the Visibility field value if set, zero value otherwise.
@@ -1218,11 +1307,11 @@ func (o CreateNetworksRequestNetwork) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.DisplayName) {
 		toSerialize["displayName"] = o.DisplayName
 	}
-	if !IsNil(o.Labels) {
+	if o.Labels != nil {
 		toSerialize["labels"] = o.Labels
 	}
-	if !IsNil(o.Description) {
-		toSerialize["description"] = o.Description
+	if o.Description.IsSet() {
+		toSerialize["description"] = o.Description.Get()
 	}
 	toSerialize["site"] = o.Site
 	toSerialize["zone"] = o.Zone
@@ -1247,17 +1336,17 @@ func (o CreateNetworksRequestNetwork) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.DnsSecondary) {
 		toSerialize["dnsSecondary"] = o.DnsSecondary
 	}
-	if !IsNil(o.GatewayIPv6) {
-		toSerialize["gatewayIPv6"] = o.GatewayIPv6
+	if o.GatewayIPv6.IsSet() {
+		toSerialize["gatewayIPv6"] = o.GatewayIPv6.Get()
 	}
-	if !IsNil(o.NetmaskIPv6) {
-		toSerialize["netmaskIPv6"] = o.NetmaskIPv6
+	if o.NetmaskIPv6.IsSet() {
+		toSerialize["netmaskIPv6"] = o.NetmaskIPv6.Get()
 	}
-	if !IsNil(o.DnsPrimaryIPv6) {
-		toSerialize["dnsPrimaryIPv6"] = o.DnsPrimaryIPv6
+	if o.DnsPrimaryIPv6.IsSet() {
+		toSerialize["dnsPrimaryIPv6"] = o.DnsPrimaryIPv6.Get()
 	}
-	if !IsNil(o.DnsSecondaryIPv6) {
-		toSerialize["dnsSecondaryIPv6"] = o.DnsSecondaryIPv6
+	if o.DnsSecondaryIPv6.IsSet() {
+		toSerialize["dnsSecondaryIPv6"] = o.DnsSecondaryIPv6.Get()
 	}
 	if !IsNil(o.CidrIPv6) {
 		toSerialize["cidrIPv6"] = o.CidrIPv6
@@ -1265,11 +1354,11 @@ func (o CreateNetworksRequestNetwork) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.VlanId) {
 		toSerialize["vlanId"] = o.VlanId
 	}
-	if !IsNil(o.Pool) {
-		toSerialize["pool"] = o.Pool
+	if o.Pool.IsSet() {
+		toSerialize["pool"] = o.Pool.Get()
 	}
-	if !IsNil(o.PoolIPv6) {
-		toSerialize["poolIPv6"] = o.PoolIPv6
+	if o.PoolIPv6.IsSet() {
+		toSerialize["poolIPv6"] = o.PoolIPv6.Get()
 	}
 	if !IsNil(o.AllowStaticOverride) {
 		toSerialize["allowStaticOverride"] = o.AllowStaticOverride
@@ -1298,8 +1387,8 @@ func (o CreateNetworksRequestNetwork) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ApplianceUrlProxyBypass) {
 		toSerialize["applianceUrlProxyBypass"] = o.ApplianceUrlProxyBypass
 	}
-	if !IsNil(o.NoProxy) {
-		toSerialize["noProxy"] = o.NoProxy
+	if o.NoProxy.IsSet() {
+		toSerialize["noProxy"] = o.NoProxy.Get()
 	}
 	if !IsNil(o.Visibility) {
 		toSerialize["visibility"] = o.Visibility

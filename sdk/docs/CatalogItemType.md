@@ -6,9 +6,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**Code** | Pointer to **string** | Useful shortcode for provisioning naming schemes and export reference. | [optional] 
-**Category** | Pointer to **string** | Catalog Item Type category | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
+**Code** | Pointer to **NullableString** | Useful shortcode for provisioning naming schemes and export reference. | [optional] 
+**Category** | Pointer to **NullableString** | Catalog Item Type category | [optional] 
+**Description** | Pointer to **NullableString** |  | [optional] 
 **Labels** | Pointer to **[]string** |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
@@ -18,19 +18,19 @@ Name | Type | Description | Notes
 **ImagePath** | Pointer to **string** |  | [optional] 
 **DarkImagePath** | Pointer to **string** |  | [optional] 
 **Visibility** | Pointer to **string** |  | [optional] 
-**LayoutCode** | Pointer to **string** |  | [optional] 
+**LayoutCode** | Pointer to **NullableString** |  | [optional] 
 **Blueprint** | Pointer to **map[string]interface{}** |  | [optional] 
-**AppSpec** | Pointer to **string** |  | [optional] 
+**AppSpec** | Pointer to **NullableString** |  | [optional] 
 **Config** | Pointer to **map[string]interface{}** |  | [optional] 
-**InstanceSpec** | Pointer to **string** |  | [optional] 
+**InstanceSpec** | Pointer to **NullableString** |  | [optional] 
 **Workflow** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
-**Content** | Pointer to **string** |  | [optional] 
+**Content** | Pointer to **NullableString** |  | [optional] 
 **FormType** | Pointer to **string** |  | [optional] 
 **Form** | Pointer to **map[string]interface{}** | Form object that contains input options and/or field groups | [optional] 
 **FormConfig** | Pointer to **map[string]interface{}** | Form config object | [optional] 
 **OptionTypes** | Pointer to [**[]ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner**](ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner.md) |  | [optional] 
-**CreatedBy** | Pointer to **string** |  | [optional] 
-**Owner** | Pointer to [**ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
+**CreatedBy** | Pointer to **NullableString** |  | [optional] 
+**Owner** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
 
@@ -128,6 +128,16 @@ SetCode sets Code field to given value.
 
 HasCode returns a boolean if a field has been set.
 
+### SetCodeNil
+
+`func (o *CatalogItemType) SetCodeNil(b bool)`
+
+ SetCodeNil sets the value for Code to be an explicit nil
+
+### UnsetCode
+`func (o *CatalogItemType) UnsetCode()`
+
+UnsetCode ensures that no value is present for Code, not even an explicit nil
 ### GetCategory
 
 `func (o *CatalogItemType) GetCategory() string`
@@ -153,6 +163,16 @@ SetCategory sets Category field to given value.
 
 HasCategory returns a boolean if a field has been set.
 
+### SetCategoryNil
+
+`func (o *CatalogItemType) SetCategoryNil(b bool)`
+
+ SetCategoryNil sets the value for Category to be an explicit nil
+
+### UnsetCategory
+`func (o *CatalogItemType) UnsetCategory()`
+
+UnsetCategory ensures that no value is present for Category, not even an explicit nil
 ### GetDescription
 
 `func (o *CatalogItemType) GetDescription() string`
@@ -178,6 +198,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *CatalogItemType) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *CatalogItemType) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetLabels
 
 `func (o *CatalogItemType) GetLabels() []string`
@@ -428,6 +458,16 @@ SetLayoutCode sets LayoutCode field to given value.
 
 HasLayoutCode returns a boolean if a field has been set.
 
+### SetLayoutCodeNil
+
+`func (o *CatalogItemType) SetLayoutCodeNil(b bool)`
+
+ SetLayoutCodeNil sets the value for LayoutCode to be an explicit nil
+
+### UnsetLayoutCode
+`func (o *CatalogItemType) UnsetLayoutCode()`
+
+UnsetLayoutCode ensures that no value is present for LayoutCode, not even an explicit nil
 ### GetBlueprint
 
 `func (o *CatalogItemType) GetBlueprint() map[string]interface{}`
@@ -453,6 +493,16 @@ SetBlueprint sets Blueprint field to given value.
 
 HasBlueprint returns a boolean if a field has been set.
 
+### SetBlueprintNil
+
+`func (o *CatalogItemType) SetBlueprintNil(b bool)`
+
+ SetBlueprintNil sets the value for Blueprint to be an explicit nil
+
+### UnsetBlueprint
+`func (o *CatalogItemType) UnsetBlueprint()`
+
+UnsetBlueprint ensures that no value is present for Blueprint, not even an explicit nil
 ### GetAppSpec
 
 `func (o *CatalogItemType) GetAppSpec() string`
@@ -478,6 +528,16 @@ SetAppSpec sets AppSpec field to given value.
 
 HasAppSpec returns a boolean if a field has been set.
 
+### SetAppSpecNil
+
+`func (o *CatalogItemType) SetAppSpecNil(b bool)`
+
+ SetAppSpecNil sets the value for AppSpec to be an explicit nil
+
+### UnsetAppSpec
+`func (o *CatalogItemType) UnsetAppSpec()`
+
+UnsetAppSpec ensures that no value is present for AppSpec, not even an explicit nil
 ### GetConfig
 
 `func (o *CatalogItemType) GetConfig() map[string]interface{}`
@@ -503,6 +563,16 @@ SetConfig sets Config field to given value.
 
 HasConfig returns a boolean if a field has been set.
 
+### SetConfigNil
+
+`func (o *CatalogItemType) SetConfigNil(b bool)`
+
+ SetConfigNil sets the value for Config to be an explicit nil
+
+### UnsetConfig
+`func (o *CatalogItemType) UnsetConfig()`
+
+UnsetConfig ensures that no value is present for Config, not even an explicit nil
 ### GetInstanceSpec
 
 `func (o *CatalogItemType) GetInstanceSpec() string`
@@ -528,6 +598,16 @@ SetInstanceSpec sets InstanceSpec field to given value.
 
 HasInstanceSpec returns a boolean if a field has been set.
 
+### SetInstanceSpecNil
+
+`func (o *CatalogItemType) SetInstanceSpecNil(b bool)`
+
+ SetInstanceSpecNil sets the value for InstanceSpec to be an explicit nil
+
+### UnsetInstanceSpec
+`func (o *CatalogItemType) UnsetInstanceSpec()`
+
+UnsetInstanceSpec ensures that no value is present for InstanceSpec, not even an explicit nil
 ### GetWorkflow
 
 `func (o *CatalogItemType) GetWorkflow() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
@@ -578,6 +658,16 @@ SetContent sets Content field to given value.
 
 HasContent returns a boolean if a field has been set.
 
+### SetContentNil
+
+`func (o *CatalogItemType) SetContentNil(b bool)`
+
+ SetContentNil sets the value for Content to be an explicit nil
+
+### UnsetContent
+`func (o *CatalogItemType) UnsetContent()`
+
+UnsetContent ensures that no value is present for Content, not even an explicit nil
 ### GetFormType
 
 `func (o *CatalogItemType) GetFormType() string`
@@ -628,6 +718,16 @@ SetForm sets Form field to given value.
 
 HasForm returns a boolean if a field has been set.
 
+### SetFormNil
+
+`func (o *CatalogItemType) SetFormNil(b bool)`
+
+ SetFormNil sets the value for Form to be an explicit nil
+
+### UnsetForm
+`func (o *CatalogItemType) UnsetForm()`
+
+UnsetForm ensures that no value is present for Form, not even an explicit nil
 ### GetFormConfig
 
 `func (o *CatalogItemType) GetFormConfig() map[string]interface{}`
@@ -653,6 +753,16 @@ SetFormConfig sets FormConfig field to given value.
 
 HasFormConfig returns a boolean if a field has been set.
 
+### SetFormConfigNil
+
+`func (o *CatalogItemType) SetFormConfigNil(b bool)`
+
+ SetFormConfigNil sets the value for FormConfig to be an explicit nil
+
+### UnsetFormConfig
+`func (o *CatalogItemType) UnsetFormConfig()`
+
+UnsetFormConfig ensures that no value is present for FormConfig, not even an explicit nil
 ### GetOptionTypes
 
 `func (o *CatalogItemType) GetOptionTypes() []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner`
@@ -678,6 +788,16 @@ SetOptionTypes sets OptionTypes field to given value.
 
 HasOptionTypes returns a boolean if a field has been set.
 
+### SetOptionTypesNil
+
+`func (o *CatalogItemType) SetOptionTypesNil(b bool)`
+
+ SetOptionTypesNil sets the value for OptionTypes to be an explicit nil
+
+### UnsetOptionTypes
+`func (o *CatalogItemType) UnsetOptionTypes()`
+
+UnsetOptionTypes ensures that no value is present for OptionTypes, not even an explicit nil
 ### GetCreatedBy
 
 `func (o *CatalogItemType) GetCreatedBy() string`
@@ -703,22 +823,32 @@ SetCreatedBy sets CreatedBy field to given value.
 
 HasCreatedBy returns a boolean if a field has been set.
 
+### SetCreatedByNil
+
+`func (o *CatalogItemType) SetCreatedByNil(b bool)`
+
+ SetCreatedByNil sets the value for CreatedBy to be an explicit nil
+
+### UnsetCreatedBy
+`func (o *CatalogItemType) UnsetCreatedBy()`
+
+UnsetCreatedBy ensures that no value is present for CreatedBy, not even an explicit nil
 ### GetOwner
 
-`func (o *CatalogItemType) GetOwner() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *CatalogItemType) GetOwner() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetOwner returns the Owner field if non-nil, zero value otherwise.
 
 ### GetOwnerOk
 
-`func (o *CatalogItemType) GetOwnerOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *CatalogItemType) GetOwnerOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOwner
 
-`func (o *CatalogItemType) SetOwner(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *CatalogItemType) SetOwner(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetOwner sets Owner field to given value.
 

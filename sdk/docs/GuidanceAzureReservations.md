@@ -13,17 +13,17 @@ Name | Type | Description | Notes
 **ActionType** | Pointer to **string** |  | [optional] 
 **ActionValue** | Pointer to **string** |  | [optional] 
 **ActionValueType** | Pointer to **string** |  | [optional] 
-**ActionPlanId** | Pointer to **string** |  | [optional] 
+**ActionPlanId** | Pointer to **NullableString** |  | [optional] 
 **StatusMessage** | Pointer to **string** |  | [optional] 
 **AccountId** | Pointer to **int64** |  | [optional] 
-**UserId** | Pointer to **string** |  | [optional] 
+**UserId** | Pointer to **NullableString** |  | [optional] 
 **SiteId** | Pointer to **int64** |  | [optional] 
 **Zone** | Pointer to [**ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone**](ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone.md) |  | [optional] 
 **State** | Pointer to **string** |  | [optional] 
-**StateMessage** | Pointer to **string** |  | [optional] 
+**StateMessage** | Pointer to **NullableString** |  | [optional] 
 **Severity** | Pointer to **string** |  | [optional] 
 **Resolved** | Pointer to **bool** |  | [optional] 
-**ResolvedMessage** | Pointer to **string** |  | [optional] 
+**ResolvedMessage** | Pointer to **NullableString** |  | [optional] 
 **RefType** | Pointer to **string** |  | [optional] 
 **RefId** | Pointer to **int64** |  | [optional] 
 **RefName** | Pointer to **string** |  | [optional] 
@@ -300,6 +300,16 @@ SetActionPlanId sets ActionPlanId field to given value.
 
 HasActionPlanId returns a boolean if a field has been set.
 
+### SetActionPlanIdNil
+
+`func (o *GuidanceAzureReservations) SetActionPlanIdNil(b bool)`
+
+ SetActionPlanIdNil sets the value for ActionPlanId to be an explicit nil
+
+### UnsetActionPlanId
+`func (o *GuidanceAzureReservations) UnsetActionPlanId()`
+
+UnsetActionPlanId ensures that no value is present for ActionPlanId, not even an explicit nil
 ### GetStatusMessage
 
 `func (o *GuidanceAzureReservations) GetStatusMessage() string`
@@ -375,6 +385,16 @@ SetUserId sets UserId field to given value.
 
 HasUserId returns a boolean if a field has been set.
 
+### SetUserIdNil
+
+`func (o *GuidanceAzureReservations) SetUserIdNil(b bool)`
+
+ SetUserIdNil sets the value for UserId to be an explicit nil
+
+### UnsetUserId
+`func (o *GuidanceAzureReservations) UnsetUserId()`
+
+UnsetUserId ensures that no value is present for UserId, not even an explicit nil
 ### GetSiteId
 
 `func (o *GuidanceAzureReservations) GetSiteId() int64`
@@ -475,6 +495,16 @@ SetStateMessage sets StateMessage field to given value.
 
 HasStateMessage returns a boolean if a field has been set.
 
+### SetStateMessageNil
+
+`func (o *GuidanceAzureReservations) SetStateMessageNil(b bool)`
+
+ SetStateMessageNil sets the value for StateMessage to be an explicit nil
+
+### UnsetStateMessage
+`func (o *GuidanceAzureReservations) UnsetStateMessage()`
+
+UnsetStateMessage ensures that no value is present for StateMessage, not even an explicit nil
 ### GetSeverity
 
 `func (o *GuidanceAzureReservations) GetSeverity() string`
@@ -550,6 +580,16 @@ SetResolvedMessage sets ResolvedMessage field to given value.
 
 HasResolvedMessage returns a boolean if a field has been set.
 
+### SetResolvedMessageNil
+
+`func (o *GuidanceAzureReservations) SetResolvedMessageNil(b bool)`
+
+ SetResolvedMessageNil sets the value for ResolvedMessage to be an explicit nil
+
+### UnsetResolvedMessage
+`func (o *GuidanceAzureReservations) UnsetResolvedMessage()`
+
+UnsetResolvedMessage ensures that no value is present for ResolvedMessage, not even an explicit nil
 ### GetRefType
 
 `func (o *GuidanceAzureReservations) GetRefType() string`

@@ -9,25 +9,25 @@ Name | Type | Description | Notes
 **AccountId** | Pointer to **int64** |  | [optional] 
 **UniqueId** | Pointer to **string** |  | [optional] 
 **ProcessType** | Pointer to [**ListClusterContainers200ResponseAllOfContainersInnerAvailableActionsInner**](ListClusterContainers200ResponseAllOfContainersInnerAvailableActionsInner.md) |  | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **NullableString** |  | [optional] 
 **RefType** | Pointer to **string** |  | [optional] 
 **RefId** | Pointer to **int64** |  | [optional] 
-**SubType** | Pointer to **string** |  | [optional] 
-**SubId** | Pointer to **int64** |  | [optional] 
-**ZoneId** | Pointer to **int64** |  | [optional] 
-**IntegrationId** | Pointer to **int64** |  | [optional] 
-**InstanceId** | Pointer to **int64** |  | [optional] 
-**ContainerId** | Pointer to **int64** |  | [optional] 
-**ServerId** | Pointer to **int64** |  | [optional] 
-**ContainerName** | Pointer to **string** |  | [optional] 
+**SubType** | Pointer to **NullableString** |  | [optional] 
+**SubId** | Pointer to **NullableInt64** |  | [optional] 
+**ZoneId** | Pointer to **NullableInt64** |  | [optional] 
+**IntegrationId** | Pointer to **NullableInt64** |  | [optional] 
+**InstanceId** | Pointer to **NullableInt64** |  | [optional] 
+**ContainerId** | Pointer to **NullableInt64** |  | [optional] 
+**ServerId** | Pointer to **NullableInt64** |  | [optional] 
+**ContainerName** | Pointer to **NullableString** |  | [optional] 
 **DisplayName** | Pointer to **string** |  | [optional] 
 **Status** | Pointer to **string** |  | [optional] 
-**Reason** | Pointer to **string** |  | [optional] 
+**Reason** | Pointer to **NullableString** |  | [optional] 
 **Percent** | Pointer to **int64** |  | [optional] 
 **StatusEta** | Pointer to **int64** |  | [optional] 
-**Message** | Pointer to **string** |  | [optional] 
-**Output** | Pointer to **string** |  | [optional] 
-**Error** | Pointer to **string** |  | [optional] 
+**Message** | Pointer to **NullableString** |  | [optional] 
+**Output** | Pointer to **NullableString** |  | [optional] 
+**Error** | Pointer to **NullableString** |  | [optional] 
 **StartDate** | Pointer to **time.Time** |  | [optional] 
 **EndDate** | Pointer to **time.Time** |  | [optional] 
 **Duration** | Pointer to **int64** |  | [optional] 
@@ -205,6 +205,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *GetClusterHistory200ResponseAllOfProcessesInnerEventsInner) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *GetClusterHistory200ResponseAllOfProcessesInnerEventsInner) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetRefType
 
 `func (o *GetClusterHistory200ResponseAllOfProcessesInnerEventsInner) GetRefType() string`
@@ -280,6 +290,16 @@ SetSubType sets SubType field to given value.
 
 HasSubType returns a boolean if a field has been set.
 
+### SetSubTypeNil
+
+`func (o *GetClusterHistory200ResponseAllOfProcessesInnerEventsInner) SetSubTypeNil(b bool)`
+
+ SetSubTypeNil sets the value for SubType to be an explicit nil
+
+### UnsetSubType
+`func (o *GetClusterHistory200ResponseAllOfProcessesInnerEventsInner) UnsetSubType()`
+
+UnsetSubType ensures that no value is present for SubType, not even an explicit nil
 ### GetSubId
 
 `func (o *GetClusterHistory200ResponseAllOfProcessesInnerEventsInner) GetSubId() int64`
@@ -305,6 +325,16 @@ SetSubId sets SubId field to given value.
 
 HasSubId returns a boolean if a field has been set.
 
+### SetSubIdNil
+
+`func (o *GetClusterHistory200ResponseAllOfProcessesInnerEventsInner) SetSubIdNil(b bool)`
+
+ SetSubIdNil sets the value for SubId to be an explicit nil
+
+### UnsetSubId
+`func (o *GetClusterHistory200ResponseAllOfProcessesInnerEventsInner) UnsetSubId()`
+
+UnsetSubId ensures that no value is present for SubId, not even an explicit nil
 ### GetZoneId
 
 `func (o *GetClusterHistory200ResponseAllOfProcessesInnerEventsInner) GetZoneId() int64`
@@ -330,6 +360,16 @@ SetZoneId sets ZoneId field to given value.
 
 HasZoneId returns a boolean if a field has been set.
 
+### SetZoneIdNil
+
+`func (o *GetClusterHistory200ResponseAllOfProcessesInnerEventsInner) SetZoneIdNil(b bool)`
+
+ SetZoneIdNil sets the value for ZoneId to be an explicit nil
+
+### UnsetZoneId
+`func (o *GetClusterHistory200ResponseAllOfProcessesInnerEventsInner) UnsetZoneId()`
+
+UnsetZoneId ensures that no value is present for ZoneId, not even an explicit nil
 ### GetIntegrationId
 
 `func (o *GetClusterHistory200ResponseAllOfProcessesInnerEventsInner) GetIntegrationId() int64`
@@ -355,6 +395,16 @@ SetIntegrationId sets IntegrationId field to given value.
 
 HasIntegrationId returns a boolean if a field has been set.
 
+### SetIntegrationIdNil
+
+`func (o *GetClusterHistory200ResponseAllOfProcessesInnerEventsInner) SetIntegrationIdNil(b bool)`
+
+ SetIntegrationIdNil sets the value for IntegrationId to be an explicit nil
+
+### UnsetIntegrationId
+`func (o *GetClusterHistory200ResponseAllOfProcessesInnerEventsInner) UnsetIntegrationId()`
+
+UnsetIntegrationId ensures that no value is present for IntegrationId, not even an explicit nil
 ### GetInstanceId
 
 `func (o *GetClusterHistory200ResponseAllOfProcessesInnerEventsInner) GetInstanceId() int64`
@@ -380,6 +430,16 @@ SetInstanceId sets InstanceId field to given value.
 
 HasInstanceId returns a boolean if a field has been set.
 
+### SetInstanceIdNil
+
+`func (o *GetClusterHistory200ResponseAllOfProcessesInnerEventsInner) SetInstanceIdNil(b bool)`
+
+ SetInstanceIdNil sets the value for InstanceId to be an explicit nil
+
+### UnsetInstanceId
+`func (o *GetClusterHistory200ResponseAllOfProcessesInnerEventsInner) UnsetInstanceId()`
+
+UnsetInstanceId ensures that no value is present for InstanceId, not even an explicit nil
 ### GetContainerId
 
 `func (o *GetClusterHistory200ResponseAllOfProcessesInnerEventsInner) GetContainerId() int64`
@@ -405,6 +465,16 @@ SetContainerId sets ContainerId field to given value.
 
 HasContainerId returns a boolean if a field has been set.
 
+### SetContainerIdNil
+
+`func (o *GetClusterHistory200ResponseAllOfProcessesInnerEventsInner) SetContainerIdNil(b bool)`
+
+ SetContainerIdNil sets the value for ContainerId to be an explicit nil
+
+### UnsetContainerId
+`func (o *GetClusterHistory200ResponseAllOfProcessesInnerEventsInner) UnsetContainerId()`
+
+UnsetContainerId ensures that no value is present for ContainerId, not even an explicit nil
 ### GetServerId
 
 `func (o *GetClusterHistory200ResponseAllOfProcessesInnerEventsInner) GetServerId() int64`
@@ -430,6 +500,16 @@ SetServerId sets ServerId field to given value.
 
 HasServerId returns a boolean if a field has been set.
 
+### SetServerIdNil
+
+`func (o *GetClusterHistory200ResponseAllOfProcessesInnerEventsInner) SetServerIdNil(b bool)`
+
+ SetServerIdNil sets the value for ServerId to be an explicit nil
+
+### UnsetServerId
+`func (o *GetClusterHistory200ResponseAllOfProcessesInnerEventsInner) UnsetServerId()`
+
+UnsetServerId ensures that no value is present for ServerId, not even an explicit nil
 ### GetContainerName
 
 `func (o *GetClusterHistory200ResponseAllOfProcessesInnerEventsInner) GetContainerName() string`
@@ -455,6 +535,16 @@ SetContainerName sets ContainerName field to given value.
 
 HasContainerName returns a boolean if a field has been set.
 
+### SetContainerNameNil
+
+`func (o *GetClusterHistory200ResponseAllOfProcessesInnerEventsInner) SetContainerNameNil(b bool)`
+
+ SetContainerNameNil sets the value for ContainerName to be an explicit nil
+
+### UnsetContainerName
+`func (o *GetClusterHistory200ResponseAllOfProcessesInnerEventsInner) UnsetContainerName()`
+
+UnsetContainerName ensures that no value is present for ContainerName, not even an explicit nil
 ### GetDisplayName
 
 `func (o *GetClusterHistory200ResponseAllOfProcessesInnerEventsInner) GetDisplayName() string`
@@ -530,6 +620,16 @@ SetReason sets Reason field to given value.
 
 HasReason returns a boolean if a field has been set.
 
+### SetReasonNil
+
+`func (o *GetClusterHistory200ResponseAllOfProcessesInnerEventsInner) SetReasonNil(b bool)`
+
+ SetReasonNil sets the value for Reason to be an explicit nil
+
+### UnsetReason
+`func (o *GetClusterHistory200ResponseAllOfProcessesInnerEventsInner) UnsetReason()`
+
+UnsetReason ensures that no value is present for Reason, not even an explicit nil
 ### GetPercent
 
 `func (o *GetClusterHistory200ResponseAllOfProcessesInnerEventsInner) GetPercent() int64`
@@ -605,6 +705,16 @@ SetMessage sets Message field to given value.
 
 HasMessage returns a boolean if a field has been set.
 
+### SetMessageNil
+
+`func (o *GetClusterHistory200ResponseAllOfProcessesInnerEventsInner) SetMessageNil(b bool)`
+
+ SetMessageNil sets the value for Message to be an explicit nil
+
+### UnsetMessage
+`func (o *GetClusterHistory200ResponseAllOfProcessesInnerEventsInner) UnsetMessage()`
+
+UnsetMessage ensures that no value is present for Message, not even an explicit nil
 ### GetOutput
 
 `func (o *GetClusterHistory200ResponseAllOfProcessesInnerEventsInner) GetOutput() string`
@@ -630,6 +740,16 @@ SetOutput sets Output field to given value.
 
 HasOutput returns a boolean if a field has been set.
 
+### SetOutputNil
+
+`func (o *GetClusterHistory200ResponseAllOfProcessesInnerEventsInner) SetOutputNil(b bool)`
+
+ SetOutputNil sets the value for Output to be an explicit nil
+
+### UnsetOutput
+`func (o *GetClusterHistory200ResponseAllOfProcessesInnerEventsInner) UnsetOutput()`
+
+UnsetOutput ensures that no value is present for Output, not even an explicit nil
 ### GetError
 
 `func (o *GetClusterHistory200ResponseAllOfProcessesInnerEventsInner) GetError() string`
@@ -655,6 +775,16 @@ SetError sets Error field to given value.
 
 HasError returns a boolean if a field has been set.
 
+### SetErrorNil
+
+`func (o *GetClusterHistory200ResponseAllOfProcessesInnerEventsInner) SetErrorNil(b bool)`
+
+ SetErrorNil sets the value for Error to be an explicit nil
+
+### UnsetError
+`func (o *GetClusterHistory200ResponseAllOfProcessesInnerEventsInner) UnsetError()`
+
+UnsetError ensures that no value is present for Error, not even an explicit nil
 ### GetStartDate
 
 `func (o *GetClusterHistory200ResponseAllOfProcessesInnerEventsInner) GetStartDate() time.Time`

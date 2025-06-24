@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **FailCount** | Pointer to **int64** |  | [optional] 
 **OtherCount** | Pointer to **int64** |  | [optional] 
 **ScanScore** | Pointer to **float32** |  | [optional] 
-**ExternalId** | Pointer to **string** |  | [optional] 
+**ExternalId** | Pointer to **NullableString** |  | [optional] 
 **CreatedBy** | Pointer to **string** |  | [optional] 
 **UpdatedBy** | Pointer to **string** |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
@@ -341,6 +341,16 @@ SetExternalId sets ExternalId field to given value.
 
 HasExternalId returns a boolean if a field has been set.
 
+### SetExternalIdNil
+
+`func (o *ListSecurityScans200ResponseAllOfSecurityScansInner) SetExternalIdNil(b bool)`
+
+ SetExternalIdNil sets the value for ExternalId to be an explicit nil
+
+### UnsetExternalId
+`func (o *ListSecurityScans200ResponseAllOfSecurityScansInner) UnsetExternalId()`
+
+UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
 ### GetCreatedBy
 
 `func (o *ListSecurityScans200ResponseAllOfSecurityScansInner) GetCreatedBy() string`

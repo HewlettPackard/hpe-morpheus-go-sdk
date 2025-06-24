@@ -21,14 +21,14 @@ var _ MappedNullable = &ListClusterLayouts200ResponseAllOfLayoutsInnerComputeSer
 // ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType struct for ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType
 type ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType struct {
 	Id                   *int64                                                      `json:"id,omitempty"`
-	Account              *string                                                     `json:"account,omitempty"`
+	Account              NullableString                                              `json:"account,omitempty"`
 	Name                 *string                                                     `json:"name,omitempty"`
 	Labels               []string                                                    `json:"labels,omitempty"`
 	ShortName            *string                                                     `json:"shortName,omitempty"`
 	Code                 *string                                                     `json:"code,omitempty"`
 	ContainerVersion     *string                                                     `json:"containerVersion,omitempty"`
 	ProvisionType        *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"provisionType,omitempty"`
-	VirtualImage         *string                                                     `json:"virtualImage,omitempty"`
+	VirtualImage         NullableString                                              `json:"virtualImage,omitempty"`
 	Category             *string                                                     `json:"category,omitempty"`
 	Config               map[string]interface{}                                      `json:"config,omitempty"`
 	ContainerPorts       []map[string]interface{}                                    `json:"containerPorts,omitempty"`
@@ -89,36 +89,47 @@ func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContai
 	o.Id = &v
 }
 
-// GetAccount returns the Account field value if set, zero value otherwise.
+// GetAccount returns the Account field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType) GetAccount() string {
-	if o == nil || IsNil(o.Account) {
+	if o == nil || IsNil(o.Account.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Account
+	return *o.Account.Get()
 }
 
 // GetAccountOk returns a tuple with the Account field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType) GetAccountOk() (*string, bool) {
-	if o == nil || IsNil(o.Account) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Account, true
+	return o.Account.Get(), o.Account.IsSet()
 }
 
 // IsSetAccount returns a boolean if a field has been set.
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType) IsSetAccount() bool {
-	if o != nil && !IsNil(o.Account) {
+	if o != nil && o.Account.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetAccount gets a reference to the given string and assigns it to the Account field.
+// SetAccount gets a reference to the given NullableString and assigns it to the Account field.
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType) SetAccount(v string) {
-	o.Account = &v
+	o.Account.Set(&v)
+}
+
+// SetAccountNil sets the value for Account to be an explicit nil
+func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType) SetAccountNil() {
+	o.Account.Set(nil)
+}
+
+// UnsetAccount ensures that no value is present for Account, not even an explicit nil
+func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType) UnsetAccount() {
+	o.Account.Unset()
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -153,9 +164,9 @@ func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContai
 	o.Name = &v
 }
 
-// GetLabels returns the Labels field value if set, zero value otherwise.
+// GetLabels returns the Labels field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType) GetLabels() []string {
-	if o == nil || IsNil(o.Labels) {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -164,6 +175,7 @@ func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContai
 
 // GetLabelsOk returns a tuple with the Labels field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType) GetLabelsOk() ([]string, bool) {
 	if o == nil || IsNil(o.Labels) {
 		return nil, false
@@ -313,36 +325,47 @@ func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContai
 	o.ProvisionType = &v
 }
 
-// GetVirtualImage returns the VirtualImage field value if set, zero value otherwise.
+// GetVirtualImage returns the VirtualImage field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType) GetVirtualImage() string {
-	if o == nil || IsNil(o.VirtualImage) {
+	if o == nil || IsNil(o.VirtualImage.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.VirtualImage
+	return *o.VirtualImage.Get()
 }
 
 // GetVirtualImageOk returns a tuple with the VirtualImage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType) GetVirtualImageOk() (*string, bool) {
-	if o == nil || IsNil(o.VirtualImage) {
+	if o == nil {
 		return nil, false
 	}
-	return o.VirtualImage, true
+	return o.VirtualImage.Get(), o.VirtualImage.IsSet()
 }
 
 // IsSetVirtualImage returns a boolean if a field has been set.
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType) IsSetVirtualImage() bool {
-	if o != nil && !IsNil(o.VirtualImage) {
+	if o != nil && o.VirtualImage.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetVirtualImage gets a reference to the given string and assigns it to the VirtualImage field.
+// SetVirtualImage gets a reference to the given NullableString and assigns it to the VirtualImage field.
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType) SetVirtualImage(v string) {
-	o.VirtualImage = &v
+	o.VirtualImage.Set(&v)
+}
+
+// SetVirtualImageNil sets the value for VirtualImage to be an explicit nil
+func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType) SetVirtualImageNil() {
+	o.VirtualImage.Set(nil)
+}
+
+// UnsetVirtualImage ensures that no value is present for VirtualImage, not even an explicit nil
+func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType) UnsetVirtualImage() {
+	o.VirtualImage.Unset()
 }
 
 // GetCategory returns the Category field value if set, zero value otherwise.
@@ -550,13 +573,13 @@ func (o ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContain
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
-	if !IsNil(o.Account) {
-		toSerialize["account"] = o.Account
+	if o.Account.IsSet() {
+		toSerialize["account"] = o.Account.Get()
 	}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !IsNil(o.Labels) {
+	if o.Labels != nil {
 		toSerialize["labels"] = o.Labels
 	}
 	if !IsNil(o.ShortName) {
@@ -571,8 +594,8 @@ func (o ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContain
 	if !IsNil(o.ProvisionType) {
 		toSerialize["provisionType"] = o.ProvisionType
 	}
-	if !IsNil(o.VirtualImage) {
-		toSerialize["virtualImage"] = o.VirtualImage
+	if o.VirtualImage.IsSet() {
+		toSerialize["virtualImage"] = o.VirtualImage.Get()
 	}
 	if !IsNil(o.Category) {
 		toSerialize["category"] = o.Category

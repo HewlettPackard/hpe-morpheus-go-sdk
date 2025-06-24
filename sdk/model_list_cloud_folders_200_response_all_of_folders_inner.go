@@ -20,21 +20,21 @@ var _ MappedNullable = &ListCloudFolders200ResponseAllOfFoldersInner{}
 
 // ListCloudFolders200ResponseAllOfFoldersInner struct for ListCloudFolders200ResponseAllOfFoldersInner
 type ListCloudFolders200ResponseAllOfFoldersInner struct {
-	Id                   *int64                                                                  `json:"id,omitempty"`
-	Name                 *string                                                                 `json:"name,omitempty"`
-	Zone                 *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"zone,omitempty"`
-	Parent               *GetAlerts200ResponseAllOfCheckGroupsInnerInstance                      `json:"parent,omitempty"`
-	Type                 *string                                                                 `json:"type,omitempty"`
-	ExternalId           *string                                                                 `json:"externalId,omitempty"`
-	Visibility           *string                                                                 `json:"visibility,omitempty"`
-	ReadOnly             *bool                                                                   `json:"readOnly,omitempty"`
-	DefaultFolder        *bool                                                                   `json:"defaultFolder,omitempty"`
-	DefaultStore         *bool                                                                   `json:"defaultStore,omitempty"`
-	Active               *bool                                                                   `json:"active,omitempty"`
-	Tenants              []ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner        `json:"tenants,omitempty"`
-	ResourcePermissions  *ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission   `json:"resourcePermissions,omitempty"`
-	Depth                *int64                                                                  `json:"depth,omitempty"`
-	AdditionalProperties map[string]interface{}                                                  `json:",remain"`
+	Id                   *int64                                                                `json:"id,omitempty"`
+	Name                 *string                                                               `json:"name,omitempty"`
+	Zone                 *GetAlerts200ResponseAllOfCheckGroupsInnerInstance                    `json:"zone,omitempty"`
+	Parent               *GetAlerts200ResponseAllOfCheckGroupsInnerInstance                    `json:"parent,omitempty"`
+	Type                 *string                                                               `json:"type,omitempty"`
+	ExternalId           *string                                                               `json:"externalId,omitempty"`
+	Visibility           *string                                                               `json:"visibility,omitempty"`
+	ReadOnly             *bool                                                                 `json:"readOnly,omitempty"`
+	DefaultFolder        *bool                                                                 `json:"defaultFolder,omitempty"`
+	DefaultStore         *bool                                                                 `json:"defaultStore,omitempty"`
+	Active               *bool                                                                 `json:"active,omitempty"`
+	Tenants              []ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner      `json:"tenants,omitempty"`
+	ResourcePermissions  *ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission `json:"resourcePermissions,omitempty"`
+	Depth                *int64                                                                `json:"depth,omitempty"`
+	AdditionalProperties map[string]interface{}                                                `json:",remain"`
 }
 
 type _ListCloudFolders200ResponseAllOfFoldersInner ListCloudFolders200ResponseAllOfFoldersInner
@@ -121,9 +121,9 @@ func (o *ListCloudFolders200ResponseAllOfFoldersInner) SetName(v string) {
 }
 
 // GetZone returns the Zone field value if set, zero value otherwise.
-func (o *ListCloudFolders200ResponseAllOfFoldersInner) GetZone() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *ListCloudFolders200ResponseAllOfFoldersInner) GetZone() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.Zone) {
-		var ret ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return *o.Zone
@@ -131,7 +131,7 @@ func (o *ListCloudFolders200ResponseAllOfFoldersInner) GetZone() ListApplianceSe
 
 // GetZoneOk returns a tuple with the Zone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListCloudFolders200ResponseAllOfFoldersInner) GetZoneOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *ListCloudFolders200ResponseAllOfFoldersInner) GetZoneOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.Zone) {
 		return nil, false
 	}
@@ -147,8 +147,8 @@ func (o *ListCloudFolders200ResponseAllOfFoldersInner) IsSetZone() bool {
 	return false
 }
 
-// SetZone gets a reference to the given ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the Zone field.
-func (o *ListCloudFolders200ResponseAllOfFoldersInner) SetZone(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetZone gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Zone field.
+func (o *ListCloudFolders200ResponseAllOfFoldersInner) SetZone(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.Zone = &v
 }
 

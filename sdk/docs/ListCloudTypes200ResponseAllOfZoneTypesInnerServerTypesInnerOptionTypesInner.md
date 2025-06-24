@@ -6,25 +6,25 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
-**Code** | Pointer to **string** |  | [optional] 
-**FieldName** | Pointer to **string** |  | [optional] 
-**FieldLabel** | Pointer to **string** |  | [optional] 
-**FieldCode** | Pointer to **string** |  | [optional] 
-**FieldContext** | Pointer to **string** |  | [optional] 
-**FieldGroup** | Pointer to **string** |  | [optional] 
-**FieldClass** | Pointer to **string** |  | [optional] 
-**FieldAddOn** | Pointer to **string** |  | [optional] 
-**FieldComponent** | Pointer to **string** |  | [optional] 
-**FieldInput** | Pointer to **string** |  | [optional] 
-**PlaceHolder** | Pointer to **string** |  | [optional] 
-**VerifyPattern** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **NullableString** |  | [optional] 
+**Code** | Pointer to **NullableString** |  | [optional] 
+**FieldName** | Pointer to **NullableString** |  | [optional] 
+**FieldLabel** | Pointer to **NullableString** |  | [optional] 
+**FieldCode** | Pointer to **NullableString** |  | [optional] 
+**FieldContext** | Pointer to **NullableString** |  | [optional] 
+**FieldGroup** | Pointer to **NullableString** |  | [optional] 
+**FieldClass** | Pointer to **NullableString** |  | [optional] 
+**FieldAddOn** | Pointer to **NullableString** |  | [optional] 
+**FieldComponent** | Pointer to **NullableString** |  | [optional] 
+**FieldInput** | Pointer to **NullableString** |  | [optional] 
+**PlaceHolder** | Pointer to **NullableString** |  | [optional] 
+**VerifyPattern** | Pointer to **NullableString** |  | [optional] 
 **HelpBlock** | Pointer to **string** |  | [optional] 
-**HelpBlockFieldCode** | Pointer to **string** |  | [optional] 
-**DefaultValue** | Pointer to **string** |  | [optional] 
-**OptionSource** | Pointer to **string** |  | [optional] 
-**OptionSourceType** | Pointer to **string** |  | [optional] 
-**OptionList** | Pointer to **string** |  | [optional] 
+**HelpBlockFieldCode** | Pointer to **NullableString** |  | [optional] 
+**DefaultValue** | Pointer to **NullableString** |  | [optional] 
+**OptionSource** | Pointer to **NullableString** |  | [optional] 
+**OptionSourceType** | Pointer to **NullableString** |  | [optional] 
+**OptionList** | Pointer to **NullableString** |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 **Advanced** | Pointer to **bool** |  | [optional] 
 **Required** | Pointer to **bool** |  | [optional] 
@@ -33,17 +33,17 @@ Name | Type | Description | Notes
 **Creatable** | Pointer to **bool** |  | [optional] 
 **Config** | Pointer to **map[string]interface{}** |  | [optional] 
 **DisplayOrder** | Pointer to **int64** |  | [optional] 
-**WrapperClass** | Pointer to **string** |  | [optional] 
+**WrapperClass** | Pointer to **NullableString** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
 **NoBlank** | Pointer to **bool** |  | [optional] 
-**DependsOnCode** | Pointer to **string** |  | [optional] 
-**VisibleOnCode** | Pointer to **string** |  | [optional] 
-**RequireOnCode** | Pointer to **string** |  | [optional] 
+**DependsOnCode** | Pointer to **NullableString** |  | [optional] 
+**VisibleOnCode** | Pointer to **NullableString** |  | [optional] 
+**RequireOnCode** | Pointer to **NullableString** |  | [optional] 
 **ContextualDefault** | Pointer to **bool** |  | [optional] 
-**DisplayValueOnDetails** | Pointer to **bool** |  | [optional] 
-**ShowOnCreate** | Pointer to **bool** |  | [optional] 
-**ShowOnEdit** | Pointer to **bool** |  | [optional] 
-**LocalCredential** | Pointer to **bool** |  | [optional] 
+**DisplayValueOnDetails** | Pointer to **NullableBool** |  | [optional] 
+**ShowOnCreate** | Pointer to **NullableBool** |  | [optional] 
+**ShowOnEdit** | Pointer to **NullableBool** |  | [optional] 
+**LocalCredential** | Pointer to **NullableBool** |  | [optional] 
 
 ## Methods
 
@@ -139,6 +139,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetCode
 
 `func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) GetCode() string`
@@ -164,6 +174,16 @@ SetCode sets Code field to given value.
 
 HasCode returns a boolean if a field has been set.
 
+### SetCodeNil
+
+`func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) SetCodeNil(b bool)`
+
+ SetCodeNil sets the value for Code to be an explicit nil
+
+### UnsetCode
+`func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) UnsetCode()`
+
+UnsetCode ensures that no value is present for Code, not even an explicit nil
 ### GetFieldName
 
 `func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) GetFieldName() string`
@@ -189,6 +209,16 @@ SetFieldName sets FieldName field to given value.
 
 HasFieldName returns a boolean if a field has been set.
 
+### SetFieldNameNil
+
+`func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) SetFieldNameNil(b bool)`
+
+ SetFieldNameNil sets the value for FieldName to be an explicit nil
+
+### UnsetFieldName
+`func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) UnsetFieldName()`
+
+UnsetFieldName ensures that no value is present for FieldName, not even an explicit nil
 ### GetFieldLabel
 
 `func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) GetFieldLabel() string`
@@ -214,6 +244,16 @@ SetFieldLabel sets FieldLabel field to given value.
 
 HasFieldLabel returns a boolean if a field has been set.
 
+### SetFieldLabelNil
+
+`func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) SetFieldLabelNil(b bool)`
+
+ SetFieldLabelNil sets the value for FieldLabel to be an explicit nil
+
+### UnsetFieldLabel
+`func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) UnsetFieldLabel()`
+
+UnsetFieldLabel ensures that no value is present for FieldLabel, not even an explicit nil
 ### GetFieldCode
 
 `func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) GetFieldCode() string`
@@ -239,6 +279,16 @@ SetFieldCode sets FieldCode field to given value.
 
 HasFieldCode returns a boolean if a field has been set.
 
+### SetFieldCodeNil
+
+`func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) SetFieldCodeNil(b bool)`
+
+ SetFieldCodeNil sets the value for FieldCode to be an explicit nil
+
+### UnsetFieldCode
+`func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) UnsetFieldCode()`
+
+UnsetFieldCode ensures that no value is present for FieldCode, not even an explicit nil
 ### GetFieldContext
 
 `func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) GetFieldContext() string`
@@ -264,6 +314,16 @@ SetFieldContext sets FieldContext field to given value.
 
 HasFieldContext returns a boolean if a field has been set.
 
+### SetFieldContextNil
+
+`func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) SetFieldContextNil(b bool)`
+
+ SetFieldContextNil sets the value for FieldContext to be an explicit nil
+
+### UnsetFieldContext
+`func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) UnsetFieldContext()`
+
+UnsetFieldContext ensures that no value is present for FieldContext, not even an explicit nil
 ### GetFieldGroup
 
 `func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) GetFieldGroup() string`
@@ -289,6 +349,16 @@ SetFieldGroup sets FieldGroup field to given value.
 
 HasFieldGroup returns a boolean if a field has been set.
 
+### SetFieldGroupNil
+
+`func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) SetFieldGroupNil(b bool)`
+
+ SetFieldGroupNil sets the value for FieldGroup to be an explicit nil
+
+### UnsetFieldGroup
+`func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) UnsetFieldGroup()`
+
+UnsetFieldGroup ensures that no value is present for FieldGroup, not even an explicit nil
 ### GetFieldClass
 
 `func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) GetFieldClass() string`
@@ -314,6 +384,16 @@ SetFieldClass sets FieldClass field to given value.
 
 HasFieldClass returns a boolean if a field has been set.
 
+### SetFieldClassNil
+
+`func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) SetFieldClassNil(b bool)`
+
+ SetFieldClassNil sets the value for FieldClass to be an explicit nil
+
+### UnsetFieldClass
+`func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) UnsetFieldClass()`
+
+UnsetFieldClass ensures that no value is present for FieldClass, not even an explicit nil
 ### GetFieldAddOn
 
 `func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) GetFieldAddOn() string`
@@ -339,6 +419,16 @@ SetFieldAddOn sets FieldAddOn field to given value.
 
 HasFieldAddOn returns a boolean if a field has been set.
 
+### SetFieldAddOnNil
+
+`func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) SetFieldAddOnNil(b bool)`
+
+ SetFieldAddOnNil sets the value for FieldAddOn to be an explicit nil
+
+### UnsetFieldAddOn
+`func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) UnsetFieldAddOn()`
+
+UnsetFieldAddOn ensures that no value is present for FieldAddOn, not even an explicit nil
 ### GetFieldComponent
 
 `func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) GetFieldComponent() string`
@@ -364,6 +454,16 @@ SetFieldComponent sets FieldComponent field to given value.
 
 HasFieldComponent returns a boolean if a field has been set.
 
+### SetFieldComponentNil
+
+`func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) SetFieldComponentNil(b bool)`
+
+ SetFieldComponentNil sets the value for FieldComponent to be an explicit nil
+
+### UnsetFieldComponent
+`func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) UnsetFieldComponent()`
+
+UnsetFieldComponent ensures that no value is present for FieldComponent, not even an explicit nil
 ### GetFieldInput
 
 `func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) GetFieldInput() string`
@@ -389,6 +489,16 @@ SetFieldInput sets FieldInput field to given value.
 
 HasFieldInput returns a boolean if a field has been set.
 
+### SetFieldInputNil
+
+`func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) SetFieldInputNil(b bool)`
+
+ SetFieldInputNil sets the value for FieldInput to be an explicit nil
+
+### UnsetFieldInput
+`func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) UnsetFieldInput()`
+
+UnsetFieldInput ensures that no value is present for FieldInput, not even an explicit nil
 ### GetPlaceHolder
 
 `func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) GetPlaceHolder() string`
@@ -414,6 +524,16 @@ SetPlaceHolder sets PlaceHolder field to given value.
 
 HasPlaceHolder returns a boolean if a field has been set.
 
+### SetPlaceHolderNil
+
+`func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) SetPlaceHolderNil(b bool)`
+
+ SetPlaceHolderNil sets the value for PlaceHolder to be an explicit nil
+
+### UnsetPlaceHolder
+`func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) UnsetPlaceHolder()`
+
+UnsetPlaceHolder ensures that no value is present for PlaceHolder, not even an explicit nil
 ### GetVerifyPattern
 
 `func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) GetVerifyPattern() string`
@@ -439,6 +559,16 @@ SetVerifyPattern sets VerifyPattern field to given value.
 
 HasVerifyPattern returns a boolean if a field has been set.
 
+### SetVerifyPatternNil
+
+`func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) SetVerifyPatternNil(b bool)`
+
+ SetVerifyPatternNil sets the value for VerifyPattern to be an explicit nil
+
+### UnsetVerifyPattern
+`func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) UnsetVerifyPattern()`
+
+UnsetVerifyPattern ensures that no value is present for VerifyPattern, not even an explicit nil
 ### GetHelpBlock
 
 `func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) GetHelpBlock() string`
@@ -489,6 +619,16 @@ SetHelpBlockFieldCode sets HelpBlockFieldCode field to given value.
 
 HasHelpBlockFieldCode returns a boolean if a field has been set.
 
+### SetHelpBlockFieldCodeNil
+
+`func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) SetHelpBlockFieldCodeNil(b bool)`
+
+ SetHelpBlockFieldCodeNil sets the value for HelpBlockFieldCode to be an explicit nil
+
+### UnsetHelpBlockFieldCode
+`func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) UnsetHelpBlockFieldCode()`
+
+UnsetHelpBlockFieldCode ensures that no value is present for HelpBlockFieldCode, not even an explicit nil
 ### GetDefaultValue
 
 `func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) GetDefaultValue() string`
@@ -514,6 +654,16 @@ SetDefaultValue sets DefaultValue field to given value.
 
 HasDefaultValue returns a boolean if a field has been set.
 
+### SetDefaultValueNil
+
+`func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) SetDefaultValueNil(b bool)`
+
+ SetDefaultValueNil sets the value for DefaultValue to be an explicit nil
+
+### UnsetDefaultValue
+`func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) UnsetDefaultValue()`
+
+UnsetDefaultValue ensures that no value is present for DefaultValue, not even an explicit nil
 ### GetOptionSource
 
 `func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) GetOptionSource() string`
@@ -539,6 +689,16 @@ SetOptionSource sets OptionSource field to given value.
 
 HasOptionSource returns a boolean if a field has been set.
 
+### SetOptionSourceNil
+
+`func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) SetOptionSourceNil(b bool)`
+
+ SetOptionSourceNil sets the value for OptionSource to be an explicit nil
+
+### UnsetOptionSource
+`func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) UnsetOptionSource()`
+
+UnsetOptionSource ensures that no value is present for OptionSource, not even an explicit nil
 ### GetOptionSourceType
 
 `func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) GetOptionSourceType() string`
@@ -564,6 +724,16 @@ SetOptionSourceType sets OptionSourceType field to given value.
 
 HasOptionSourceType returns a boolean if a field has been set.
 
+### SetOptionSourceTypeNil
+
+`func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) SetOptionSourceTypeNil(b bool)`
+
+ SetOptionSourceTypeNil sets the value for OptionSourceType to be an explicit nil
+
+### UnsetOptionSourceType
+`func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) UnsetOptionSourceType()`
+
+UnsetOptionSourceType ensures that no value is present for OptionSourceType, not even an explicit nil
 ### GetOptionList
 
 `func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) GetOptionList() string`
@@ -589,6 +759,16 @@ SetOptionList sets OptionList field to given value.
 
 HasOptionList returns a boolean if a field has been set.
 
+### SetOptionListNil
+
+`func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) SetOptionListNil(b bool)`
+
+ SetOptionListNil sets the value for OptionList to be an explicit nil
+
+### UnsetOptionList
+`func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) UnsetOptionList()`
+
+UnsetOptionList ensures that no value is present for OptionList, not even an explicit nil
 ### GetType
 
 `func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) GetType() string`
@@ -814,6 +994,16 @@ SetWrapperClass sets WrapperClass field to given value.
 
 HasWrapperClass returns a boolean if a field has been set.
 
+### SetWrapperClassNil
+
+`func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) SetWrapperClassNil(b bool)`
+
+ SetWrapperClassNil sets the value for WrapperClass to be an explicit nil
+
+### UnsetWrapperClass
+`func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) UnsetWrapperClass()`
+
+UnsetWrapperClass ensures that no value is present for WrapperClass, not even an explicit nil
 ### GetEnabled
 
 `func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) GetEnabled() bool`
@@ -889,6 +1079,16 @@ SetDependsOnCode sets DependsOnCode field to given value.
 
 HasDependsOnCode returns a boolean if a field has been set.
 
+### SetDependsOnCodeNil
+
+`func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) SetDependsOnCodeNil(b bool)`
+
+ SetDependsOnCodeNil sets the value for DependsOnCode to be an explicit nil
+
+### UnsetDependsOnCode
+`func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) UnsetDependsOnCode()`
+
+UnsetDependsOnCode ensures that no value is present for DependsOnCode, not even an explicit nil
 ### GetVisibleOnCode
 
 `func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) GetVisibleOnCode() string`
@@ -914,6 +1114,16 @@ SetVisibleOnCode sets VisibleOnCode field to given value.
 
 HasVisibleOnCode returns a boolean if a field has been set.
 
+### SetVisibleOnCodeNil
+
+`func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) SetVisibleOnCodeNil(b bool)`
+
+ SetVisibleOnCodeNil sets the value for VisibleOnCode to be an explicit nil
+
+### UnsetVisibleOnCode
+`func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) UnsetVisibleOnCode()`
+
+UnsetVisibleOnCode ensures that no value is present for VisibleOnCode, not even an explicit nil
 ### GetRequireOnCode
 
 `func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) GetRequireOnCode() string`
@@ -939,6 +1149,16 @@ SetRequireOnCode sets RequireOnCode field to given value.
 
 HasRequireOnCode returns a boolean if a field has been set.
 
+### SetRequireOnCodeNil
+
+`func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) SetRequireOnCodeNil(b bool)`
+
+ SetRequireOnCodeNil sets the value for RequireOnCode to be an explicit nil
+
+### UnsetRequireOnCode
+`func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) UnsetRequireOnCode()`
+
+UnsetRequireOnCode ensures that no value is present for RequireOnCode, not even an explicit nil
 ### GetContextualDefault
 
 `func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) GetContextualDefault() bool`
@@ -989,6 +1209,16 @@ SetDisplayValueOnDetails sets DisplayValueOnDetails field to given value.
 
 HasDisplayValueOnDetails returns a boolean if a field has been set.
 
+### SetDisplayValueOnDetailsNil
+
+`func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) SetDisplayValueOnDetailsNil(b bool)`
+
+ SetDisplayValueOnDetailsNil sets the value for DisplayValueOnDetails to be an explicit nil
+
+### UnsetDisplayValueOnDetails
+`func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) UnsetDisplayValueOnDetails()`
+
+UnsetDisplayValueOnDetails ensures that no value is present for DisplayValueOnDetails, not even an explicit nil
 ### GetShowOnCreate
 
 `func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) GetShowOnCreate() bool`
@@ -1014,6 +1244,16 @@ SetShowOnCreate sets ShowOnCreate field to given value.
 
 HasShowOnCreate returns a boolean if a field has been set.
 
+### SetShowOnCreateNil
+
+`func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) SetShowOnCreateNil(b bool)`
+
+ SetShowOnCreateNil sets the value for ShowOnCreate to be an explicit nil
+
+### UnsetShowOnCreate
+`func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) UnsetShowOnCreate()`
+
+UnsetShowOnCreate ensures that no value is present for ShowOnCreate, not even an explicit nil
 ### GetShowOnEdit
 
 `func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) GetShowOnEdit() bool`
@@ -1039,6 +1279,16 @@ SetShowOnEdit sets ShowOnEdit field to given value.
 
 HasShowOnEdit returns a boolean if a field has been set.
 
+### SetShowOnEditNil
+
+`func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) SetShowOnEditNil(b bool)`
+
+ SetShowOnEditNil sets the value for ShowOnEdit to be an explicit nil
+
+### UnsetShowOnEdit
+`func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) UnsetShowOnEdit()`
+
+UnsetShowOnEdit ensures that no value is present for ShowOnEdit, not even an explicit nil
 ### GetLocalCredential
 
 `func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) GetLocalCredential() bool`
@@ -1064,6 +1314,16 @@ SetLocalCredential sets LocalCredential field to given value.
 
 HasLocalCredential returns a boolean if a field has been set.
 
+### SetLocalCredentialNil
+
+`func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) SetLocalCredentialNil(b bool)`
+
+ SetLocalCredentialNil sets the value for LocalCredential to be an explicit nil
+
+### UnsetLocalCredential
+`func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) UnsetLocalCredential()`
+
+UnsetLocalCredential ensures that no value is present for LocalCredential, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

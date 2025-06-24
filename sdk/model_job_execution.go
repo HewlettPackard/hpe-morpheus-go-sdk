@@ -23,17 +23,17 @@ var _ MappedNullable = &JobExecution{}
 type JobExecution struct {
 	Id                   *int64                                                  `json:"id,omitempty"`
 	Name                 *string                                                 `json:"name,omitempty"`
-	Process              *string                                                 `json:"process,omitempty"`
+	Process              NullableString                                          `json:"process,omitempty"`
 	Job                  *ListJobExecutions200ResponseAllOfJobExecutionsInnerJob `json:"job,omitempty"`
-	Description          *string                                                 `json:"description,omitempty"`
+	Description          NullableString                                          `json:"description,omitempty"`
 	DateCreated          *time.Time                                              `json:"dateCreated,omitempty"`
 	StartDate            *time.Time                                              `json:"startDate,omitempty"`
 	EndDate              *time.Time                                              `json:"endDate,omitempty"`
 	Duration             *int64                                                  `json:"duration,omitempty"`
-	ResultData           *string                                                 `json:"resultData,omitempty"`
+	ResultData           NullableString                                          `json:"resultData,omitempty"`
 	Status               *string                                                 `json:"status,omitempty"`
-	StatusMessage        *string                                                 `json:"statusMessage,omitempty"`
-	CreatedBy            *string                                                 `json:"createdBy,omitempty"`
+	StatusMessage        NullableString                                          `json:"statusMessage,omitempty"`
+	CreatedBy            NullableString                                          `json:"createdBy,omitempty"`
 	AdditionalProperties map[string]interface{}                                  `json:",remain"`
 }
 
@@ -120,36 +120,47 @@ func (o *JobExecution) SetName(v string) {
 	o.Name = &v
 }
 
-// GetProcess returns the Process field value if set, zero value otherwise.
+// GetProcess returns the Process field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *JobExecution) GetProcess() string {
-	if o == nil || IsNil(o.Process) {
+	if o == nil || IsNil(o.Process.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Process
+	return *o.Process.Get()
 }
 
 // GetProcessOk returns a tuple with the Process field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *JobExecution) GetProcessOk() (*string, bool) {
-	if o == nil || IsNil(o.Process) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Process, true
+	return o.Process.Get(), o.Process.IsSet()
 }
 
 // IsSetProcess returns a boolean if a field has been set.
 func (o *JobExecution) IsSetProcess() bool {
-	if o != nil && !IsNil(o.Process) {
+	if o != nil && o.Process.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetProcess gets a reference to the given string and assigns it to the Process field.
+// SetProcess gets a reference to the given NullableString and assigns it to the Process field.
 func (o *JobExecution) SetProcess(v string) {
-	o.Process = &v
+	o.Process.Set(&v)
+}
+
+// SetProcessNil sets the value for Process to be an explicit nil
+func (o *JobExecution) SetProcessNil() {
+	o.Process.Set(nil)
+}
+
+// UnsetProcess ensures that no value is present for Process, not even an explicit nil
+func (o *JobExecution) UnsetProcess() {
+	o.Process.Unset()
 }
 
 // GetJob returns the Job field value if set, zero value otherwise.
@@ -184,36 +195,47 @@ func (o *JobExecution) SetJob(v ListJobExecutions200ResponseAllOfJobExecutionsIn
 	o.Job = &v
 }
 
-// GetDescription returns the Description field value if set, zero value otherwise.
+// GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *JobExecution) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
+	if o == nil || IsNil(o.Description.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Description
+	return *o.Description.Get()
 }
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *JobExecution) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Description, true
+	return o.Description.Get(), o.Description.IsSet()
 }
 
 // IsSetDescription returns a boolean if a field has been set.
 func (o *JobExecution) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
+	if o != nil && o.Description.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDescription gets a reference to the given string and assigns it to the Description field.
+// SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *JobExecution) SetDescription(v string) {
-	o.Description = &v
+	o.Description.Set(&v)
+}
+
+// SetDescriptionNil sets the value for Description to be an explicit nil
+func (o *JobExecution) SetDescriptionNil() {
+	o.Description.Set(nil)
+}
+
+// UnsetDescription ensures that no value is present for Description, not even an explicit nil
+func (o *JobExecution) UnsetDescription() {
+	o.Description.Unset()
 }
 
 // GetDateCreated returns the DateCreated field value if set, zero value otherwise.
@@ -344,36 +366,47 @@ func (o *JobExecution) SetDuration(v int64) {
 	o.Duration = &v
 }
 
-// GetResultData returns the ResultData field value if set, zero value otherwise.
+// GetResultData returns the ResultData field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *JobExecution) GetResultData() string {
-	if o == nil || IsNil(o.ResultData) {
+	if o == nil || IsNil(o.ResultData.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ResultData
+	return *o.ResultData.Get()
 }
 
 // GetResultDataOk returns a tuple with the ResultData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *JobExecution) GetResultDataOk() (*string, bool) {
-	if o == nil || IsNil(o.ResultData) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ResultData, true
+	return o.ResultData.Get(), o.ResultData.IsSet()
 }
 
 // IsSetResultData returns a boolean if a field has been set.
 func (o *JobExecution) IsSetResultData() bool {
-	if o != nil && !IsNil(o.ResultData) {
+	if o != nil && o.ResultData.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetResultData gets a reference to the given string and assigns it to the ResultData field.
+// SetResultData gets a reference to the given NullableString and assigns it to the ResultData field.
 func (o *JobExecution) SetResultData(v string) {
-	o.ResultData = &v
+	o.ResultData.Set(&v)
+}
+
+// SetResultDataNil sets the value for ResultData to be an explicit nil
+func (o *JobExecution) SetResultDataNil() {
+	o.ResultData.Set(nil)
+}
+
+// UnsetResultData ensures that no value is present for ResultData, not even an explicit nil
+func (o *JobExecution) UnsetResultData() {
+	o.ResultData.Unset()
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
@@ -408,68 +441,90 @@ func (o *JobExecution) SetStatus(v string) {
 	o.Status = &v
 }
 
-// GetStatusMessage returns the StatusMessage field value if set, zero value otherwise.
+// GetStatusMessage returns the StatusMessage field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *JobExecution) GetStatusMessage() string {
-	if o == nil || IsNil(o.StatusMessage) {
+	if o == nil || IsNil(o.StatusMessage.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.StatusMessage
+	return *o.StatusMessage.Get()
 }
 
 // GetStatusMessageOk returns a tuple with the StatusMessage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *JobExecution) GetStatusMessageOk() (*string, bool) {
-	if o == nil || IsNil(o.StatusMessage) {
+	if o == nil {
 		return nil, false
 	}
-	return o.StatusMessage, true
+	return o.StatusMessage.Get(), o.StatusMessage.IsSet()
 }
 
 // IsSetStatusMessage returns a boolean if a field has been set.
 func (o *JobExecution) IsSetStatusMessage() bool {
-	if o != nil && !IsNil(o.StatusMessage) {
+	if o != nil && o.StatusMessage.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetStatusMessage gets a reference to the given string and assigns it to the StatusMessage field.
+// SetStatusMessage gets a reference to the given NullableString and assigns it to the StatusMessage field.
 func (o *JobExecution) SetStatusMessage(v string) {
-	o.StatusMessage = &v
+	o.StatusMessage.Set(&v)
 }
 
-// GetCreatedBy returns the CreatedBy field value if set, zero value otherwise.
+// SetStatusMessageNil sets the value for StatusMessage to be an explicit nil
+func (o *JobExecution) SetStatusMessageNil() {
+	o.StatusMessage.Set(nil)
+}
+
+// UnsetStatusMessage ensures that no value is present for StatusMessage, not even an explicit nil
+func (o *JobExecution) UnsetStatusMessage() {
+	o.StatusMessage.Unset()
+}
+
+// GetCreatedBy returns the CreatedBy field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *JobExecution) GetCreatedBy() string {
-	if o == nil || IsNil(o.CreatedBy) {
+	if o == nil || IsNil(o.CreatedBy.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.CreatedBy
+	return *o.CreatedBy.Get()
 }
 
 // GetCreatedByOk returns a tuple with the CreatedBy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *JobExecution) GetCreatedByOk() (*string, bool) {
-	if o == nil || IsNil(o.CreatedBy) {
+	if o == nil {
 		return nil, false
 	}
-	return o.CreatedBy, true
+	return o.CreatedBy.Get(), o.CreatedBy.IsSet()
 }
 
 // IsSetCreatedBy returns a boolean if a field has been set.
 func (o *JobExecution) IsSetCreatedBy() bool {
-	if o != nil && !IsNil(o.CreatedBy) {
+	if o != nil && o.CreatedBy.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCreatedBy gets a reference to the given string and assigns it to the CreatedBy field.
+// SetCreatedBy gets a reference to the given NullableString and assigns it to the CreatedBy field.
 func (o *JobExecution) SetCreatedBy(v string) {
-	o.CreatedBy = &v
+	o.CreatedBy.Set(&v)
+}
+
+// SetCreatedByNil sets the value for CreatedBy to be an explicit nil
+func (o *JobExecution) SetCreatedByNil() {
+	o.CreatedBy.Set(nil)
+}
+
+// UnsetCreatedBy ensures that no value is present for CreatedBy, not even an explicit nil
+func (o *JobExecution) UnsetCreatedBy() {
+	o.CreatedBy.Unset()
 }
 
 func (o JobExecution) MarshalJSON() ([]byte, error) {
@@ -488,14 +543,14 @@ func (o JobExecution) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !IsNil(o.Process) {
-		toSerialize["process"] = o.Process
+	if o.Process.IsSet() {
+		toSerialize["process"] = o.Process.Get()
 	}
 	if !IsNil(o.Job) {
 		toSerialize["job"] = o.Job
 	}
-	if !IsNil(o.Description) {
-		toSerialize["description"] = o.Description
+	if o.Description.IsSet() {
+		toSerialize["description"] = o.Description.Get()
 	}
 	if !IsNil(o.DateCreated) {
 		toSerialize["dateCreated"] = o.DateCreated
@@ -509,17 +564,17 @@ func (o JobExecution) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Duration) {
 		toSerialize["duration"] = o.Duration
 	}
-	if !IsNil(o.ResultData) {
-		toSerialize["resultData"] = o.ResultData
+	if o.ResultData.IsSet() {
+		toSerialize["resultData"] = o.ResultData.Get()
 	}
 	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status
 	}
-	if !IsNil(o.StatusMessage) {
-		toSerialize["statusMessage"] = o.StatusMessage
+	if o.StatusMessage.IsSet() {
+		toSerialize["statusMessage"] = o.StatusMessage.Get()
 	}
-	if !IsNil(o.CreatedBy) {
-		toSerialize["createdBy"] = o.CreatedBy
+	if o.CreatedBy.IsSet() {
+		toSerialize["createdBy"] = o.CreatedBy.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {

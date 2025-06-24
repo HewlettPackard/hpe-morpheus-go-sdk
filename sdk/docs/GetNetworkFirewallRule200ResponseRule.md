@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **Policy** | Pointer to **string** |  | [optional] 
 **Priority** | Pointer to **int32** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
-**RuleGroup** | Pointer to [**SnapshotsInstance200ResponseSnapshotsInnerZone**](SnapshotsInstance200ResponseSnapshotsInnerZone.md) |  | [optional] 
+**RuleGroup** | Pointer to [**GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount**](GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount.md) |  | [optional] 
 **GroupName** | Pointer to **string** |  | [optional] 
 **Config** | Pointer to **map[string]interface{}** |  | [optional] 
 **Sources** | Pointer to [**[]ListInstanceServicePlans200ResponsePlansInnerAutoOptionsInner**](ListInstanceServicePlans200ResponsePlansInnerAutoOptionsInner.md) |  | [optional] 
@@ -243,20 +243,20 @@ HasEnabled returns a boolean if a field has been set.
 
 ### GetRuleGroup
 
-`func (o *GetNetworkFirewallRule200ResponseRule) GetRuleGroup() SnapshotsInstance200ResponseSnapshotsInnerZone`
+`func (o *GetNetworkFirewallRule200ResponseRule) GetRuleGroup() GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount`
 
 GetRuleGroup returns the RuleGroup field if non-nil, zero value otherwise.
 
 ### GetRuleGroupOk
 
-`func (o *GetNetworkFirewallRule200ResponseRule) GetRuleGroupOk() (*SnapshotsInstance200ResponseSnapshotsInnerZone, bool)`
+`func (o *GetNetworkFirewallRule200ResponseRule) GetRuleGroupOk() (*GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount, bool)`
 
 GetRuleGroupOk returns a tuple with the RuleGroup field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRuleGroup
 
-`func (o *GetNetworkFirewallRule200ResponseRule) SetRuleGroup(v SnapshotsInstance200ResponseSnapshotsInnerZone)`
+`func (o *GetNetworkFirewallRule200ResponseRule) SetRuleGroup(v GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount)`
 
 SetRuleGroup sets RuleGroup field to given value.
 

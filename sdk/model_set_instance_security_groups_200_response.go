@@ -21,9 +21,9 @@ var _ MappedNullable = &SetInstanceSecurityGroups200Response{}
 // SetInstanceSecurityGroups200Response struct for SetInstanceSecurityGroups200Response
 type SetInstanceSecurityGroups200Response struct {
 	// Array of security group objects
-	SecurityGroups       []SetInstanceSecurityGroups200ResponseAllOfSecurityGroupsInner `json:"securityGroups,omitempty"`
-	Success              *bool                                                          `json:"success,omitempty"`
-	AdditionalProperties map[string]interface{}                                         `json:",remain"`
+	SecurityGroups       []ListSecurityGroupsInstance200ResponseAllOfSecurityGroupsInner `json:"securityGroups,omitempty"`
+	Success              *bool                                                           `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{}                                          `json:",remain"`
 }
 
 type _SetInstanceSecurityGroups200Response SetInstanceSecurityGroups200Response
@@ -45,10 +45,10 @@ func NewSetInstanceSecurityGroups200ResponseWithDefaults() *SetInstanceSecurityG
 	return &this
 }
 
-// GetSecurityGroups returns the SecurityGroups field value if set, zero value otherwise.
-func (o *SetInstanceSecurityGroups200Response) GetSecurityGroups() []SetInstanceSecurityGroups200ResponseAllOfSecurityGroupsInner {
-	if o == nil || IsNil(o.SecurityGroups) {
-		var ret []SetInstanceSecurityGroups200ResponseAllOfSecurityGroupsInner
+// GetSecurityGroups returns the SecurityGroups field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *SetInstanceSecurityGroups200Response) GetSecurityGroups() []ListSecurityGroupsInstance200ResponseAllOfSecurityGroupsInner {
+	if o == nil {
+		var ret []ListSecurityGroupsInstance200ResponseAllOfSecurityGroupsInner
 		return ret
 	}
 	return o.SecurityGroups
@@ -56,7 +56,8 @@ func (o *SetInstanceSecurityGroups200Response) GetSecurityGroups() []SetInstance
 
 // GetSecurityGroupsOk returns a tuple with the SecurityGroups field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SetInstanceSecurityGroups200Response) GetSecurityGroupsOk() ([]SetInstanceSecurityGroups200ResponseAllOfSecurityGroupsInner, bool) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *SetInstanceSecurityGroups200Response) GetSecurityGroupsOk() ([]ListSecurityGroupsInstance200ResponseAllOfSecurityGroupsInner, bool) {
 	if o == nil || IsNil(o.SecurityGroups) {
 		return nil, false
 	}
@@ -72,8 +73,8 @@ func (o *SetInstanceSecurityGroups200Response) IsSetSecurityGroups() bool {
 	return false
 }
 
-// SetSecurityGroups gets a reference to the given []SetInstanceSecurityGroups200ResponseAllOfSecurityGroupsInner and assigns it to the SecurityGroups field.
-func (o *SetInstanceSecurityGroups200Response) SetSecurityGroups(v []SetInstanceSecurityGroups200ResponseAllOfSecurityGroupsInner) {
+// SetSecurityGroups gets a reference to the given []ListSecurityGroupsInstance200ResponseAllOfSecurityGroupsInner and assigns it to the SecurityGroups field.
+func (o *SetInstanceSecurityGroups200Response) SetSecurityGroups(v []ListSecurityGroupsInstance200ResponseAllOfSecurityGroupsInner) {
 	o.SecurityGroups = v
 }
 
@@ -119,7 +120,7 @@ func (o SetInstanceSecurityGroups200Response) MarshalJSON() ([]byte, error) {
 
 func (o SetInstanceSecurityGroups200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.SecurityGroups) {
+	if o.SecurityGroups != nil {
 		toSerialize["securityGroups"] = o.SecurityGroups
 	}
 	if !IsNil(o.Success) {

@@ -210,9 +210,9 @@ func (o *GetClusterContainer200ResponseResource) SetMetadata(v map[string]interf
 	o.Metadata = v
 }
 
-// GetSpec returns the Spec field value if set, zero value otherwise.
+// GetSpec returns the Spec field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetClusterContainer200ResponseResource) GetSpec() map[string]interface{} {
-	if o == nil || IsNil(o.Spec) {
+	if o == nil {
 		var ret map[string]interface{}
 		return ret
 	}
@@ -221,6 +221,7 @@ func (o *GetClusterContainer200ResponseResource) GetSpec() map[string]interface{
 
 // GetSpecOk returns a tuple with the Spec field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetClusterContainer200ResponseResource) GetSpecOk() (map[string]interface{}, bool) {
 	if o == nil || IsNil(o.Spec) {
 		return map[string]interface{}{}, false
@@ -242,9 +243,9 @@ func (o *GetClusterContainer200ResponseResource) SetSpec(v map[string]interface{
 	o.Spec = v
 }
 
-// GetConfig returns the Config field value if set, zero value otherwise.
+// GetConfig returns the Config field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetClusterContainer200ResponseResource) GetConfig() map[string]interface{} {
-	if o == nil || IsNil(o.Config) {
+	if o == nil {
 		var ret map[string]interface{}
 		return ret
 	}
@@ -253,6 +254,7 @@ func (o *GetClusterContainer200ResponseResource) GetConfig() map[string]interfac
 
 // GetConfigOk returns a tuple with the Config field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetClusterContainer200ResponseResource) GetConfigOk() (map[string]interface{}, bool) {
 	if o == nil || IsNil(o.Config) {
 		return map[string]interface{}{}, false
@@ -274,9 +276,9 @@ func (o *GetClusterContainer200ResponseResource) SetConfig(v map[string]interfac
 	o.Config = v
 }
 
-// GetRawSec returns the RawSec field value if set, zero value otherwise.
+// GetRawSec returns the RawSec field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetClusterContainer200ResponseResource) GetRawSec() map[string]interface{} {
-	if o == nil || IsNil(o.RawSec) {
+	if o == nil {
 		var ret map[string]interface{}
 		return ret
 	}
@@ -285,6 +287,7 @@ func (o *GetClusterContainer200ResponseResource) GetRawSec() map[string]interfac
 
 // GetRawSecOk returns a tuple with the RawSec field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetClusterContainer200ResponseResource) GetRawSecOk() (map[string]interface{}, bool) {
 	if o == nil || IsNil(o.RawSec) {
 		return map[string]interface{}{}, false
@@ -331,13 +334,13 @@ func (o GetClusterContainer200ResponseResource) ToMap() (map[string]interface{},
 	if !IsNil(o.Metadata) {
 		toSerialize["metadata"] = o.Metadata
 	}
-	if !IsNil(o.Spec) {
+	if o.Spec != nil {
 		toSerialize["spec"] = o.Spec
 	}
-	if !IsNil(o.Config) {
+	if o.Config != nil {
 		toSerialize["config"] = o.Config
 	}
-	if !IsNil(o.RawSec) {
+	if o.RawSec != nil {
 		toSerialize["rawSec"] = o.RawSec
 	}
 

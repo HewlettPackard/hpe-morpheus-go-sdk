@@ -76,9 +76,9 @@ func (o *AddSpecTemplateRequestSpecTemplate) SetName(v string) {
 	o.Name = v
 }
 
-// GetLabels returns the Labels field value if set, zero value otherwise.
+// GetLabels returns the Labels field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AddSpecTemplateRequestSpecTemplate) GetLabels() []string {
-	if o == nil || IsNil(o.Labels) {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -87,6 +87,7 @@ func (o *AddSpecTemplateRequestSpecTemplate) GetLabels() []string {
 
 // GetLabelsOk returns a tuple with the Labels field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AddSpecTemplateRequestSpecTemplate) GetLabelsOk() ([]string, bool) {
 	if o == nil || IsNil(o.Labels) {
 		return nil, false
@@ -199,7 +200,7 @@ func (o AddSpecTemplateRequestSpecTemplate) MarshalJSON() ([]byte, error) {
 func (o AddSpecTemplateRequestSpecTemplate) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["name"] = o.Name
-	if !IsNil(o.Labels) {
+	if o.Labels != nil {
 		toSerialize["labels"] = o.Labels
 	}
 	toSerialize["type"] = o.Type

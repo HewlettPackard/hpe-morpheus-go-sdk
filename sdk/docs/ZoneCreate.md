@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** | Optional description field if you want to put more info there | [optional] 
 **Code** | Pointer to **string** | Optional code for use with policies | [optional] 
 **Labels** | Pointer to **[]string** | Array of label strings, can be used for filtering. | [optional] 
-**Location** | Pointer to **string** | Optional location for your cloud | [optional] 
+**Location** | Pointer to **NullableString** | Optional location for your cloud | [optional] 
 **Visibility** | Pointer to **string** | private or public | [optional] [default to "private"]
 **ZoneType** | [**AddCloudsRequestZoneZoneType**](AddCloudsRequestZoneZoneType.md) |  | 
 **GroupId** | **int64** | Specifies which Server group this cloud should be assigned to | 
@@ -166,6 +166,16 @@ SetLocation sets Location field to given value.
 
 HasLocation returns a boolean if a field has been set.
 
+### SetLocationNil
+
+`func (o *ZoneCreate) SetLocationNil(b bool)`
+
+ SetLocationNil sets the value for Location to be an explicit nil
+
+### UnsetLocation
+`func (o *ZoneCreate) UnsetLocation()`
+
+UnsetLocation ensures that no value is present for Location, not even an explicit nil
 ### GetVisibility
 
 `func (o *ZoneCreate) GetVisibility() string`

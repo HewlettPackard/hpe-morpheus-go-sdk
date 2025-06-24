@@ -21,21 +21,21 @@ var _ MappedNullable = &Group{}
 
 // Group struct for Group
 type Group struct {
-	Id                   *int64                                                                   `json:"id,omitempty"`
-	Uuid                 *string                                                                  `json:"uuid,omitempty"`
-	Name                 *string                                                                  `json:"name,omitempty"`
-	Code                 *string                                                                  `json:"code,omitempty"`
-	Labels               []string                                                                 `json:"labels,omitempty"`
-	Location             *string                                                                  `json:"location,omitempty"`
-	AccountId            *int64                                                                   `json:"accountId,omitempty"`
-	Active               *bool                                                                    `json:"active,omitempty"`
-	Config               *ListGroups200ResponseAllOfGroupsInnerConfig                             `json:"config,omitempty"`
-	DateCreated          *time.Time                                                               `json:"dateCreated,omitempty"`
-	LastUpdated          *time.Time                                                               `json:"lastUpdated,omitempty"`
-	Zones                []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"zones,omitempty"`
-	Stats                *ListGroups200ResponseAllOfGroupsInnerStats                              `json:"stats,omitempty"`
-	ServerCount          *int64                                                                   `json:"serverCount,omitempty"`
-	AdditionalProperties map[string]interface{}                                                   `json:",remain"`
+	Id                   *int64                                              `json:"id,omitempty"`
+	Uuid                 *string                                             `json:"uuid,omitempty"`
+	Name                 *string                                             `json:"name,omitempty"`
+	Code                 NullableString                                      `json:"code,omitempty"`
+	Labels               []string                                            `json:"labels,omitempty"`
+	Location             NullableString                                      `json:"location,omitempty"`
+	AccountId            *int64                                              `json:"accountId,omitempty"`
+	Active               *bool                                               `json:"active,omitempty"`
+	Config               *ListGroups200ResponseAllOfGroupsInnerConfig        `json:"config,omitempty"`
+	DateCreated          *time.Time                                          `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                          `json:"lastUpdated,omitempty"`
+	Zones                []GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"zones,omitempty"`
+	Stats                *ListGroups200ResponseAllOfGroupsInnerStats         `json:"stats,omitempty"`
+	ServerCount          *int64                                              `json:"serverCount,omitempty"`
+	AdditionalProperties map[string]interface{}                              `json:",remain"`
 }
 
 type _Group Group
@@ -153,36 +153,47 @@ func (o *Group) SetName(v string) {
 	o.Name = &v
 }
 
-// GetCode returns the Code field value if set, zero value otherwise.
+// GetCode returns the Code field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Group) GetCode() string {
-	if o == nil || IsNil(o.Code) {
+	if o == nil || IsNil(o.Code.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Code
+	return *o.Code.Get()
 }
 
 // GetCodeOk returns a tuple with the Code field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Group) GetCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.Code) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Code, true
+	return o.Code.Get(), o.Code.IsSet()
 }
 
 // IsSetCode returns a boolean if a field has been set.
 func (o *Group) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
+	if o != nil && o.Code.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCode gets a reference to the given string and assigns it to the Code field.
+// SetCode gets a reference to the given NullableString and assigns it to the Code field.
 func (o *Group) SetCode(v string) {
-	o.Code = &v
+	o.Code.Set(&v)
+}
+
+// SetCodeNil sets the value for Code to be an explicit nil
+func (o *Group) SetCodeNil() {
+	o.Code.Set(nil)
+}
+
+// UnsetCode ensures that no value is present for Code, not even an explicit nil
+func (o *Group) UnsetCode() {
+	o.Code.Unset()
 }
 
 // GetLabels returns the Labels field value if set, zero value otherwise.
@@ -217,36 +228,47 @@ func (o *Group) SetLabels(v []string) {
 	o.Labels = v
 }
 
-// GetLocation returns the Location field value if set, zero value otherwise.
+// GetLocation returns the Location field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Group) GetLocation() string {
-	if o == nil || IsNil(o.Location) {
+	if o == nil || IsNil(o.Location.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Location
+	return *o.Location.Get()
 }
 
 // GetLocationOk returns a tuple with the Location field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Group) GetLocationOk() (*string, bool) {
-	if o == nil || IsNil(o.Location) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Location, true
+	return o.Location.Get(), o.Location.IsSet()
 }
 
 // IsSetLocation returns a boolean if a field has been set.
 func (o *Group) IsSetLocation() bool {
-	if o != nil && !IsNil(o.Location) {
+	if o != nil && o.Location.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetLocation gets a reference to the given string and assigns it to the Location field.
+// SetLocation gets a reference to the given NullableString and assigns it to the Location field.
 func (o *Group) SetLocation(v string) {
-	o.Location = &v
+	o.Location.Set(&v)
+}
+
+// SetLocationNil sets the value for Location to be an explicit nil
+func (o *Group) SetLocationNil() {
+	o.Location.Set(nil)
+}
+
+// UnsetLocation ensures that no value is present for Location, not even an explicit nil
+func (o *Group) UnsetLocation() {
+	o.Location.Unset()
 }
 
 // GetAccountId returns the AccountId field value if set, zero value otherwise.
@@ -410,9 +432,9 @@ func (o *Group) SetLastUpdated(v time.Time) {
 }
 
 // GetZones returns the Zones field value if set, zero value otherwise.
-func (o *Group) GetZones() []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *Group) GetZones() []GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.Zones) {
-		var ret []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret []GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return o.Zones
@@ -420,7 +442,7 @@ func (o *Group) GetZones() []ListApplianceSettings200ResponseApplianceSettingsEn
 
 // GetZonesOk returns a tuple with the Zones field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Group) GetZonesOk() ([]ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *Group) GetZonesOk() ([]GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.Zones) {
 		return nil, false
 	}
@@ -436,8 +458,8 @@ func (o *Group) IsSetZones() bool {
 	return false
 }
 
-// SetZones gets a reference to the given []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the Zones field.
-func (o *Group) SetZones(v []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetZones gets a reference to the given []GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Zones field.
+func (o *Group) SetZones(v []GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.Zones = v
 }
 
@@ -524,14 +546,14 @@ func (o Group) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !IsNil(o.Code) {
-		toSerialize["code"] = o.Code
+	if o.Code.IsSet() {
+		toSerialize["code"] = o.Code.Get()
 	}
 	if !IsNil(o.Labels) {
 		toSerialize["labels"] = o.Labels
 	}
-	if !IsNil(o.Location) {
-		toSerialize["location"] = o.Location
+	if o.Location.IsSet() {
+		toSerialize["location"] = o.Location.Get()
 	}
 	if !IsNil(o.AccountId) {
 		toSerialize["accountId"] = o.AccountId

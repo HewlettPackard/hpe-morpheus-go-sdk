@@ -6,12 +6,12 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**Code** | Pointer to **string** |  | [optional] 
-**InterfaceType** | Pointer to **string** |  | [optional] 
-**NetworkPosition** | Pointer to **string** |  | [optional] 
+**Code** | Pointer to **NullableString** |  | [optional] 
+**InterfaceType** | Pointer to **NullableString** |  | [optional] 
+**NetworkPosition** | Pointer to **NullableString** |  | [optional] 
 **IpAddress** | Pointer to **string** |  | [optional] 
 **Cidr** | Pointer to **string** |  | [optional] 
-**ExternalLink** | Pointer to **string** |  | [optional] 
+**ExternalLink** | Pointer to **NullableString** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
 **Network** | Pointer to [**ListBackupSettings200ResponseBackupSettingsDefaultSchedule**](ListBackupSettings200ResponseBackupSettingsDefaultSchedule.md) |  | [optional] 
 
@@ -109,6 +109,16 @@ SetCode sets Code field to given value.
 
 HasCode returns a boolean if a field has been set.
 
+### SetCodeNil
+
+`func (o *GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner) SetCodeNil(b bool)`
+
+ SetCodeNil sets the value for Code to be an explicit nil
+
+### UnsetCode
+`func (o *GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner) UnsetCode()`
+
+UnsetCode ensures that no value is present for Code, not even an explicit nil
 ### GetInterfaceType
 
 `func (o *GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner) GetInterfaceType() string`
@@ -134,6 +144,16 @@ SetInterfaceType sets InterfaceType field to given value.
 
 HasInterfaceType returns a boolean if a field has been set.
 
+### SetInterfaceTypeNil
+
+`func (o *GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner) SetInterfaceTypeNil(b bool)`
+
+ SetInterfaceTypeNil sets the value for InterfaceType to be an explicit nil
+
+### UnsetInterfaceType
+`func (o *GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner) UnsetInterfaceType()`
+
+UnsetInterfaceType ensures that no value is present for InterfaceType, not even an explicit nil
 ### GetNetworkPosition
 
 `func (o *GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner) GetNetworkPosition() string`
@@ -159,6 +179,16 @@ SetNetworkPosition sets NetworkPosition field to given value.
 
 HasNetworkPosition returns a boolean if a field has been set.
 
+### SetNetworkPositionNil
+
+`func (o *GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner) SetNetworkPositionNil(b bool)`
+
+ SetNetworkPositionNil sets the value for NetworkPosition to be an explicit nil
+
+### UnsetNetworkPosition
+`func (o *GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner) UnsetNetworkPosition()`
+
+UnsetNetworkPosition ensures that no value is present for NetworkPosition, not even an explicit nil
 ### GetIpAddress
 
 `func (o *GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner) GetIpAddress() string`
@@ -234,6 +264,16 @@ SetExternalLink sets ExternalLink field to given value.
 
 HasExternalLink returns a boolean if a field has been set.
 
+### SetExternalLinkNil
+
+`func (o *GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner) SetExternalLinkNil(b bool)`
+
+ SetExternalLinkNil sets the value for ExternalLink to be an explicit nil
+
+### UnsetExternalLink
+`func (o *GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner) UnsetExternalLink()`
+
+UnsetExternalLink ensures that no value is present for ExternalLink, not even an explicit nil
 ### GetEnabled
 
 `func (o *GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner) GetEnabled() bool`

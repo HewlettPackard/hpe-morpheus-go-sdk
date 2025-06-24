@@ -19,13 +19,13 @@ Name | Type | Description | Notes
 **DiskEnabled** | Pointer to **bool** |  | [optional] 
 **MinDisk** | Pointer to **int64** |  | [optional] 
 **MaxDisk** | Pointer to **int64** |  | [optional] 
-**MinNetwork** | Pointer to **string** |  | [optional] 
+**MinNetwork** | Pointer to **NullableString** |  | [optional] 
 **NetworkEnabled** | Pointer to **bool** |  | [optional] 
 **IopsEnabled** | Pointer to **bool** |  | [optional] 
-**MinIops** | Pointer to **string** |  | [optional] 
-**MaxIops** | Pointer to **string** |  | [optional] 
-**Comment** | Pointer to **string** |  | [optional] 
-**ZoneId** | Pointer to **int64** |  | [optional] 
+**MinIops** | Pointer to **NullableString** |  | [optional] 
+**MaxIops** | Pointer to **NullableString** |  | [optional] 
+**Comment** | Pointer to **NullableString** |  | [optional] 
+**ZoneId** | Pointer to **NullableInt64** |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
 
@@ -448,6 +448,16 @@ SetMinNetwork sets MinNetwork field to given value.
 
 HasMinNetwork returns a boolean if a field has been set.
 
+### SetMinNetworkNil
+
+`func (o *GetInstanceThreshold200ResponseInstanceThreshold) SetMinNetworkNil(b bool)`
+
+ SetMinNetworkNil sets the value for MinNetwork to be an explicit nil
+
+### UnsetMinNetwork
+`func (o *GetInstanceThreshold200ResponseInstanceThreshold) UnsetMinNetwork()`
+
+UnsetMinNetwork ensures that no value is present for MinNetwork, not even an explicit nil
 ### GetNetworkEnabled
 
 `func (o *GetInstanceThreshold200ResponseInstanceThreshold) GetNetworkEnabled() bool`
@@ -523,6 +533,16 @@ SetMinIops sets MinIops field to given value.
 
 HasMinIops returns a boolean if a field has been set.
 
+### SetMinIopsNil
+
+`func (o *GetInstanceThreshold200ResponseInstanceThreshold) SetMinIopsNil(b bool)`
+
+ SetMinIopsNil sets the value for MinIops to be an explicit nil
+
+### UnsetMinIops
+`func (o *GetInstanceThreshold200ResponseInstanceThreshold) UnsetMinIops()`
+
+UnsetMinIops ensures that no value is present for MinIops, not even an explicit nil
 ### GetMaxIops
 
 `func (o *GetInstanceThreshold200ResponseInstanceThreshold) GetMaxIops() string`
@@ -548,6 +568,16 @@ SetMaxIops sets MaxIops field to given value.
 
 HasMaxIops returns a boolean if a field has been set.
 
+### SetMaxIopsNil
+
+`func (o *GetInstanceThreshold200ResponseInstanceThreshold) SetMaxIopsNil(b bool)`
+
+ SetMaxIopsNil sets the value for MaxIops to be an explicit nil
+
+### UnsetMaxIops
+`func (o *GetInstanceThreshold200ResponseInstanceThreshold) UnsetMaxIops()`
+
+UnsetMaxIops ensures that no value is present for MaxIops, not even an explicit nil
 ### GetComment
 
 `func (o *GetInstanceThreshold200ResponseInstanceThreshold) GetComment() string`
@@ -573,6 +603,16 @@ SetComment sets Comment field to given value.
 
 HasComment returns a boolean if a field has been set.
 
+### SetCommentNil
+
+`func (o *GetInstanceThreshold200ResponseInstanceThreshold) SetCommentNil(b bool)`
+
+ SetCommentNil sets the value for Comment to be an explicit nil
+
+### UnsetComment
+`func (o *GetInstanceThreshold200ResponseInstanceThreshold) UnsetComment()`
+
+UnsetComment ensures that no value is present for Comment, not even an explicit nil
 ### GetZoneId
 
 `func (o *GetInstanceThreshold200ResponseInstanceThreshold) GetZoneId() int64`
@@ -598,6 +638,16 @@ SetZoneId sets ZoneId field to given value.
 
 HasZoneId returns a boolean if a field has been set.
 
+### SetZoneIdNil
+
+`func (o *GetInstanceThreshold200ResponseInstanceThreshold) SetZoneIdNil(b bool)`
+
+ SetZoneIdNil sets the value for ZoneId to be an explicit nil
+
+### UnsetZoneId
+`func (o *GetInstanceThreshold200ResponseInstanceThreshold) UnsetZoneId()`
+
+UnsetZoneId ensures that no value is present for ZoneId, not even an explicit nil
 ### GetDateCreated
 
 `func (o *GetInstanceThreshold200ResponseInstanceThreshold) GetDateCreated() time.Time`

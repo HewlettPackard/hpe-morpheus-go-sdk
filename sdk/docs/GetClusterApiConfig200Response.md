@@ -4,18 +4,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ServiceUrl** | Pointer to **string** |  | [optional] 
-**ServiceHost** | Pointer to **string** |  | [optional] 
-**ServicePath** | Pointer to **string** |  | [optional] 
-**ServiceHostname** | Pointer to **string** |  | [optional] 
+**ServiceUrl** | Pointer to **NullableString** |  | [optional] 
+**ServiceHost** | Pointer to **NullableString** |  | [optional] 
+**ServicePath** | Pointer to **NullableString** |  | [optional] 
+**ServiceHostname** | Pointer to **NullableString** |  | [optional] 
 **ServicePort** | Pointer to **int64** |  | [optional] 
-**ServiceUsername** | Pointer to **string** |  | [optional] 
-**ServicePassword** | Pointer to **string** |  | [optional] 
-**ServicePasswordHash** | Pointer to **string** |  | [optional] 
-**ServiceToken** | Pointer to **string** | API Token | [optional] 
-**ServiceAccess** | Pointer to **string** | Kube Config | [optional] 
-**ServiceCert** | Pointer to **string** |  | [optional] 
-**ServiceVersion** | Pointer to **string** |  | [optional] 
+**ServiceUsername** | Pointer to **NullableString** |  | [optional] 
+**ServicePassword** | Pointer to **NullableString** |  | [optional] 
+**ServicePasswordHash** | Pointer to **NullableString** |  | [optional] 
+**ServiceToken** | Pointer to **NullableString** | API Token | [optional] 
+**ServiceAccess** | Pointer to **NullableString** | Kube Config | [optional] 
+**ServiceCert** | Pointer to **NullableString** |  | [optional] 
+**ServiceVersion** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -61,6 +61,16 @@ SetServiceUrl sets ServiceUrl field to given value.
 
 HasServiceUrl returns a boolean if a field has been set.
 
+### SetServiceUrlNil
+
+`func (o *GetClusterApiConfig200Response) SetServiceUrlNil(b bool)`
+
+ SetServiceUrlNil sets the value for ServiceUrl to be an explicit nil
+
+### UnsetServiceUrl
+`func (o *GetClusterApiConfig200Response) UnsetServiceUrl()`
+
+UnsetServiceUrl ensures that no value is present for ServiceUrl, not even an explicit nil
 ### GetServiceHost
 
 `func (o *GetClusterApiConfig200Response) GetServiceHost() string`
@@ -86,6 +96,16 @@ SetServiceHost sets ServiceHost field to given value.
 
 HasServiceHost returns a boolean if a field has been set.
 
+### SetServiceHostNil
+
+`func (o *GetClusterApiConfig200Response) SetServiceHostNil(b bool)`
+
+ SetServiceHostNil sets the value for ServiceHost to be an explicit nil
+
+### UnsetServiceHost
+`func (o *GetClusterApiConfig200Response) UnsetServiceHost()`
+
+UnsetServiceHost ensures that no value is present for ServiceHost, not even an explicit nil
 ### GetServicePath
 
 `func (o *GetClusterApiConfig200Response) GetServicePath() string`
@@ -111,6 +131,16 @@ SetServicePath sets ServicePath field to given value.
 
 HasServicePath returns a boolean if a field has been set.
 
+### SetServicePathNil
+
+`func (o *GetClusterApiConfig200Response) SetServicePathNil(b bool)`
+
+ SetServicePathNil sets the value for ServicePath to be an explicit nil
+
+### UnsetServicePath
+`func (o *GetClusterApiConfig200Response) UnsetServicePath()`
+
+UnsetServicePath ensures that no value is present for ServicePath, not even an explicit nil
 ### GetServiceHostname
 
 `func (o *GetClusterApiConfig200Response) GetServiceHostname() string`
@@ -136,6 +166,16 @@ SetServiceHostname sets ServiceHostname field to given value.
 
 HasServiceHostname returns a boolean if a field has been set.
 
+### SetServiceHostnameNil
+
+`func (o *GetClusterApiConfig200Response) SetServiceHostnameNil(b bool)`
+
+ SetServiceHostnameNil sets the value for ServiceHostname to be an explicit nil
+
+### UnsetServiceHostname
+`func (o *GetClusterApiConfig200Response) UnsetServiceHostname()`
+
+UnsetServiceHostname ensures that no value is present for ServiceHostname, not even an explicit nil
 ### GetServicePort
 
 `func (o *GetClusterApiConfig200Response) GetServicePort() int64`
@@ -186,6 +226,16 @@ SetServiceUsername sets ServiceUsername field to given value.
 
 HasServiceUsername returns a boolean if a field has been set.
 
+### SetServiceUsernameNil
+
+`func (o *GetClusterApiConfig200Response) SetServiceUsernameNil(b bool)`
+
+ SetServiceUsernameNil sets the value for ServiceUsername to be an explicit nil
+
+### UnsetServiceUsername
+`func (o *GetClusterApiConfig200Response) UnsetServiceUsername()`
+
+UnsetServiceUsername ensures that no value is present for ServiceUsername, not even an explicit nil
 ### GetServicePassword
 
 `func (o *GetClusterApiConfig200Response) GetServicePassword() string`
@@ -211,6 +261,16 @@ SetServicePassword sets ServicePassword field to given value.
 
 HasServicePassword returns a boolean if a field has been set.
 
+### SetServicePasswordNil
+
+`func (o *GetClusterApiConfig200Response) SetServicePasswordNil(b bool)`
+
+ SetServicePasswordNil sets the value for ServicePassword to be an explicit nil
+
+### UnsetServicePassword
+`func (o *GetClusterApiConfig200Response) UnsetServicePassword()`
+
+UnsetServicePassword ensures that no value is present for ServicePassword, not even an explicit nil
 ### GetServicePasswordHash
 
 `func (o *GetClusterApiConfig200Response) GetServicePasswordHash() string`
@@ -236,6 +296,16 @@ SetServicePasswordHash sets ServicePasswordHash field to given value.
 
 HasServicePasswordHash returns a boolean if a field has been set.
 
+### SetServicePasswordHashNil
+
+`func (o *GetClusterApiConfig200Response) SetServicePasswordHashNil(b bool)`
+
+ SetServicePasswordHashNil sets the value for ServicePasswordHash to be an explicit nil
+
+### UnsetServicePasswordHash
+`func (o *GetClusterApiConfig200Response) UnsetServicePasswordHash()`
+
+UnsetServicePasswordHash ensures that no value is present for ServicePasswordHash, not even an explicit nil
 ### GetServiceToken
 
 `func (o *GetClusterApiConfig200Response) GetServiceToken() string`
@@ -261,6 +331,16 @@ SetServiceToken sets ServiceToken field to given value.
 
 HasServiceToken returns a boolean if a field has been set.
 
+### SetServiceTokenNil
+
+`func (o *GetClusterApiConfig200Response) SetServiceTokenNil(b bool)`
+
+ SetServiceTokenNil sets the value for ServiceToken to be an explicit nil
+
+### UnsetServiceToken
+`func (o *GetClusterApiConfig200Response) UnsetServiceToken()`
+
+UnsetServiceToken ensures that no value is present for ServiceToken, not even an explicit nil
 ### GetServiceAccess
 
 `func (o *GetClusterApiConfig200Response) GetServiceAccess() string`
@@ -286,6 +366,16 @@ SetServiceAccess sets ServiceAccess field to given value.
 
 HasServiceAccess returns a boolean if a field has been set.
 
+### SetServiceAccessNil
+
+`func (o *GetClusterApiConfig200Response) SetServiceAccessNil(b bool)`
+
+ SetServiceAccessNil sets the value for ServiceAccess to be an explicit nil
+
+### UnsetServiceAccess
+`func (o *GetClusterApiConfig200Response) UnsetServiceAccess()`
+
+UnsetServiceAccess ensures that no value is present for ServiceAccess, not even an explicit nil
 ### GetServiceCert
 
 `func (o *GetClusterApiConfig200Response) GetServiceCert() string`
@@ -311,6 +401,16 @@ SetServiceCert sets ServiceCert field to given value.
 
 HasServiceCert returns a boolean if a field has been set.
 
+### SetServiceCertNil
+
+`func (o *GetClusterApiConfig200Response) SetServiceCertNil(b bool)`
+
+ SetServiceCertNil sets the value for ServiceCert to be an explicit nil
+
+### UnsetServiceCert
+`func (o *GetClusterApiConfig200Response) UnsetServiceCert()`
+
+UnsetServiceCert ensures that no value is present for ServiceCert, not even an explicit nil
 ### GetServiceVersion
 
 `func (o *GetClusterApiConfig200Response) GetServiceVersion() string`
@@ -336,6 +436,16 @@ SetServiceVersion sets ServiceVersion field to given value.
 
 HasServiceVersion returns a boolean if a field has been set.
 
+### SetServiceVersionNil
+
+`func (o *GetClusterApiConfig200Response) SetServiceVersionNil(b bool)`
+
+ SetServiceVersionNil sets the value for ServiceVersion to be an explicit nil
+
+### UnsetServiceVersion
+`func (o *GetClusterApiConfig200Response) UnsetServiceVersion()`
+
+UnsetServiceVersion ensures that no value is present for ServiceVersion, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

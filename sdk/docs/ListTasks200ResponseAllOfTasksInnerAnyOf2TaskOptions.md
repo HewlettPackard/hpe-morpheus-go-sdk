@@ -4,20 +4,20 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ChefDataKey** | Pointer to **string** |  | [optional] 
-**ChefDataKeyHash** | Pointer to **string** |  | [optional] 
-**ChefRunList** | Pointer to **string** |  | [optional] 
-**LocalScriptGitRef** | Pointer to **string** |  | [optional] 
-**ChefDataKeyPath** | Pointer to **string** |  | [optional] 
-**LocalScriptGitId** | Pointer to **string** |  | [optional] 
-**Port** | Pointer to **string** |  | [optional] 
-**ChefEnv** | Pointer to **string** |  | [optional] 
-**ChefNodeName** | Pointer to **string** |  | [optional] 
-**Host** | Pointer to **string** |  | [optional] 
-**SshKey** | Pointer to **string** |  | [optional] 
-**Username** | Pointer to **string** |  | [optional] 
-**Password** | Pointer to **string** |  | [optional] 
-**PasswordHash** | Pointer to **string** |  | [optional] 
+**ChefDataKey** | Pointer to **NullableString** |  | [optional] 
+**ChefDataKeyHash** | Pointer to **NullableString** |  | [optional] 
+**ChefRunList** | Pointer to **NullableString** |  | [optional] 
+**LocalScriptGitRef** | Pointer to **NullableString** |  | [optional] 
+**ChefDataKeyPath** | Pointer to **NullableString** |  | [optional] 
+**LocalScriptGitId** | Pointer to **NullableString** |  | [optional] 
+**Port** | Pointer to **NullableString** |  | [optional] 
+**ChefEnv** | Pointer to **NullableString** |  | [optional] 
+**ChefNodeName** | Pointer to **NullableString** |  | [optional] 
+**Host** | Pointer to **NullableString** |  | [optional] 
+**SshKey** | Pointer to **NullableString** |  | [optional] 
+**Username** | Pointer to **NullableString** |  | [optional] 
+**Password** | Pointer to **NullableString** |  | [optional] 
+**PasswordHash** | Pointer to **NullableString** |  | [optional] 
 **ChefAttributes** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -64,6 +64,16 @@ SetChefDataKey sets ChefDataKey field to given value.
 
 HasChefDataKey returns a boolean if a field has been set.
 
+### SetChefDataKeyNil
+
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOf2TaskOptions) SetChefDataKeyNil(b bool)`
+
+ SetChefDataKeyNil sets the value for ChefDataKey to be an explicit nil
+
+### UnsetChefDataKey
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOf2TaskOptions) UnsetChefDataKey()`
+
+UnsetChefDataKey ensures that no value is present for ChefDataKey, not even an explicit nil
 ### GetChefDataKeyHash
 
 `func (o *ListTasks200ResponseAllOfTasksInnerAnyOf2TaskOptions) GetChefDataKeyHash() string`
@@ -89,6 +99,16 @@ SetChefDataKeyHash sets ChefDataKeyHash field to given value.
 
 HasChefDataKeyHash returns a boolean if a field has been set.
 
+### SetChefDataKeyHashNil
+
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOf2TaskOptions) SetChefDataKeyHashNil(b bool)`
+
+ SetChefDataKeyHashNil sets the value for ChefDataKeyHash to be an explicit nil
+
+### UnsetChefDataKeyHash
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOf2TaskOptions) UnsetChefDataKeyHash()`
+
+UnsetChefDataKeyHash ensures that no value is present for ChefDataKeyHash, not even an explicit nil
 ### GetChefRunList
 
 `func (o *ListTasks200ResponseAllOfTasksInnerAnyOf2TaskOptions) GetChefRunList() string`
@@ -114,6 +134,16 @@ SetChefRunList sets ChefRunList field to given value.
 
 HasChefRunList returns a boolean if a field has been set.
 
+### SetChefRunListNil
+
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOf2TaskOptions) SetChefRunListNil(b bool)`
+
+ SetChefRunListNil sets the value for ChefRunList to be an explicit nil
+
+### UnsetChefRunList
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOf2TaskOptions) UnsetChefRunList()`
+
+UnsetChefRunList ensures that no value is present for ChefRunList, not even an explicit nil
 ### GetLocalScriptGitRef
 
 `func (o *ListTasks200ResponseAllOfTasksInnerAnyOf2TaskOptions) GetLocalScriptGitRef() string`
@@ -139,6 +169,16 @@ SetLocalScriptGitRef sets LocalScriptGitRef field to given value.
 
 HasLocalScriptGitRef returns a boolean if a field has been set.
 
+### SetLocalScriptGitRefNil
+
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOf2TaskOptions) SetLocalScriptGitRefNil(b bool)`
+
+ SetLocalScriptGitRefNil sets the value for LocalScriptGitRef to be an explicit nil
+
+### UnsetLocalScriptGitRef
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOf2TaskOptions) UnsetLocalScriptGitRef()`
+
+UnsetLocalScriptGitRef ensures that no value is present for LocalScriptGitRef, not even an explicit nil
 ### GetChefDataKeyPath
 
 `func (o *ListTasks200ResponseAllOfTasksInnerAnyOf2TaskOptions) GetChefDataKeyPath() string`
@@ -164,6 +204,16 @@ SetChefDataKeyPath sets ChefDataKeyPath field to given value.
 
 HasChefDataKeyPath returns a boolean if a field has been set.
 
+### SetChefDataKeyPathNil
+
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOf2TaskOptions) SetChefDataKeyPathNil(b bool)`
+
+ SetChefDataKeyPathNil sets the value for ChefDataKeyPath to be an explicit nil
+
+### UnsetChefDataKeyPath
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOf2TaskOptions) UnsetChefDataKeyPath()`
+
+UnsetChefDataKeyPath ensures that no value is present for ChefDataKeyPath, not even an explicit nil
 ### GetLocalScriptGitId
 
 `func (o *ListTasks200ResponseAllOfTasksInnerAnyOf2TaskOptions) GetLocalScriptGitId() string`
@@ -189,6 +239,16 @@ SetLocalScriptGitId sets LocalScriptGitId field to given value.
 
 HasLocalScriptGitId returns a boolean if a field has been set.
 
+### SetLocalScriptGitIdNil
+
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOf2TaskOptions) SetLocalScriptGitIdNil(b bool)`
+
+ SetLocalScriptGitIdNil sets the value for LocalScriptGitId to be an explicit nil
+
+### UnsetLocalScriptGitId
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOf2TaskOptions) UnsetLocalScriptGitId()`
+
+UnsetLocalScriptGitId ensures that no value is present for LocalScriptGitId, not even an explicit nil
 ### GetPort
 
 `func (o *ListTasks200ResponseAllOfTasksInnerAnyOf2TaskOptions) GetPort() string`
@@ -214,6 +274,16 @@ SetPort sets Port field to given value.
 
 HasPort returns a boolean if a field has been set.
 
+### SetPortNil
+
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOf2TaskOptions) SetPortNil(b bool)`
+
+ SetPortNil sets the value for Port to be an explicit nil
+
+### UnsetPort
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOf2TaskOptions) UnsetPort()`
+
+UnsetPort ensures that no value is present for Port, not even an explicit nil
 ### GetChefEnv
 
 `func (o *ListTasks200ResponseAllOfTasksInnerAnyOf2TaskOptions) GetChefEnv() string`
@@ -239,6 +309,16 @@ SetChefEnv sets ChefEnv field to given value.
 
 HasChefEnv returns a boolean if a field has been set.
 
+### SetChefEnvNil
+
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOf2TaskOptions) SetChefEnvNil(b bool)`
+
+ SetChefEnvNil sets the value for ChefEnv to be an explicit nil
+
+### UnsetChefEnv
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOf2TaskOptions) UnsetChefEnv()`
+
+UnsetChefEnv ensures that no value is present for ChefEnv, not even an explicit nil
 ### GetChefNodeName
 
 `func (o *ListTasks200ResponseAllOfTasksInnerAnyOf2TaskOptions) GetChefNodeName() string`
@@ -264,6 +344,16 @@ SetChefNodeName sets ChefNodeName field to given value.
 
 HasChefNodeName returns a boolean if a field has been set.
 
+### SetChefNodeNameNil
+
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOf2TaskOptions) SetChefNodeNameNil(b bool)`
+
+ SetChefNodeNameNil sets the value for ChefNodeName to be an explicit nil
+
+### UnsetChefNodeName
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOf2TaskOptions) UnsetChefNodeName()`
+
+UnsetChefNodeName ensures that no value is present for ChefNodeName, not even an explicit nil
 ### GetHost
 
 `func (o *ListTasks200ResponseAllOfTasksInnerAnyOf2TaskOptions) GetHost() string`
@@ -289,6 +379,16 @@ SetHost sets Host field to given value.
 
 HasHost returns a boolean if a field has been set.
 
+### SetHostNil
+
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOf2TaskOptions) SetHostNil(b bool)`
+
+ SetHostNil sets the value for Host to be an explicit nil
+
+### UnsetHost
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOf2TaskOptions) UnsetHost()`
+
+UnsetHost ensures that no value is present for Host, not even an explicit nil
 ### GetSshKey
 
 `func (o *ListTasks200ResponseAllOfTasksInnerAnyOf2TaskOptions) GetSshKey() string`
@@ -314,6 +414,16 @@ SetSshKey sets SshKey field to given value.
 
 HasSshKey returns a boolean if a field has been set.
 
+### SetSshKeyNil
+
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOf2TaskOptions) SetSshKeyNil(b bool)`
+
+ SetSshKeyNil sets the value for SshKey to be an explicit nil
+
+### UnsetSshKey
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOf2TaskOptions) UnsetSshKey()`
+
+UnsetSshKey ensures that no value is present for SshKey, not even an explicit nil
 ### GetUsername
 
 `func (o *ListTasks200ResponseAllOfTasksInnerAnyOf2TaskOptions) GetUsername() string`
@@ -339,6 +449,16 @@ SetUsername sets Username field to given value.
 
 HasUsername returns a boolean if a field has been set.
 
+### SetUsernameNil
+
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOf2TaskOptions) SetUsernameNil(b bool)`
+
+ SetUsernameNil sets the value for Username to be an explicit nil
+
+### UnsetUsername
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOf2TaskOptions) UnsetUsername()`
+
+UnsetUsername ensures that no value is present for Username, not even an explicit nil
 ### GetPassword
 
 `func (o *ListTasks200ResponseAllOfTasksInnerAnyOf2TaskOptions) GetPassword() string`
@@ -364,6 +484,16 @@ SetPassword sets Password field to given value.
 
 HasPassword returns a boolean if a field has been set.
 
+### SetPasswordNil
+
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOf2TaskOptions) SetPasswordNil(b bool)`
+
+ SetPasswordNil sets the value for Password to be an explicit nil
+
+### UnsetPassword
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOf2TaskOptions) UnsetPassword()`
+
+UnsetPassword ensures that no value is present for Password, not even an explicit nil
 ### GetPasswordHash
 
 `func (o *ListTasks200ResponseAllOfTasksInnerAnyOf2TaskOptions) GetPasswordHash() string`
@@ -389,6 +519,16 @@ SetPasswordHash sets PasswordHash field to given value.
 
 HasPasswordHash returns a boolean if a field has been set.
 
+### SetPasswordHashNil
+
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOf2TaskOptions) SetPasswordHashNil(b bool)`
+
+ SetPasswordHashNil sets the value for PasswordHash to be an explicit nil
+
+### UnsetPasswordHash
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOf2TaskOptions) UnsetPasswordHash()`
+
+UnsetPasswordHash ensures that no value is present for PasswordHash, not even an explicit nil
 ### GetChefAttributes
 
 `func (o *ListTasks200ResponseAllOfTasksInnerAnyOf2TaskOptions) GetChefAttributes() string`

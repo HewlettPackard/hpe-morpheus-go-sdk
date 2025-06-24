@@ -27,7 +27,7 @@ type GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsI
 	DefaultType          *bool                  `json:"defaultType,omitempty"`
 	CustomLabel          *bool                  `json:"customLabel,omitempty"`
 	CustomSize           *bool                  `json:"customSize,omitempty"`
-	CustomSizeOptions    *string                `json:"customSizeOptions,omitempty"`
+	CustomSizeOptions    NullableString         `json:"customSizeOptions,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -274,36 +274,47 @@ func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayo
 	o.CustomSize = &v
 }
 
-// GetCustomSizeOptions returns the CustomSizeOptions field value if set, zero value otherwise.
+// GetCustomSizeOptions returns the CustomSizeOptions field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageTypesInner) GetCustomSizeOptions() string {
-	if o == nil || IsNil(o.CustomSizeOptions) {
+	if o == nil || IsNil(o.CustomSizeOptions.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.CustomSizeOptions
+	return *o.CustomSizeOptions.Get()
 }
 
 // GetCustomSizeOptionsOk returns a tuple with the CustomSizeOptions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageTypesInner) GetCustomSizeOptionsOk() (*string, bool) {
-	if o == nil || IsNil(o.CustomSizeOptions) {
+	if o == nil {
 		return nil, false
 	}
-	return o.CustomSizeOptions, true
+	return o.CustomSizeOptions.Get(), o.CustomSizeOptions.IsSet()
 }
 
 // IsSetCustomSizeOptions returns a boolean if a field has been set.
 func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageTypesInner) IsSetCustomSizeOptions() bool {
-	if o != nil && !IsNil(o.CustomSizeOptions) {
+	if o != nil && o.CustomSizeOptions.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCustomSizeOptions gets a reference to the given string and assigns it to the CustomSizeOptions field.
+// SetCustomSizeOptions gets a reference to the given NullableString and assigns it to the CustomSizeOptions field.
 func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageTypesInner) SetCustomSizeOptions(v string) {
-	o.CustomSizeOptions = &v
+	o.CustomSizeOptions.Set(&v)
+}
+
+// SetCustomSizeOptionsNil sets the value for CustomSizeOptions to be an explicit nil
+func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageTypesInner) SetCustomSizeOptionsNil() {
+	o.CustomSizeOptions.Set(nil)
+}
+
+// UnsetCustomSizeOptions ensures that no value is present for CustomSizeOptions, not even an explicit nil
+func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageTypesInner) UnsetCustomSizeOptions() {
+	o.CustomSizeOptions.Unset()
 }
 
 func (o GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageTypesInner) MarshalJSON() ([]byte, error) {
@@ -337,8 +348,8 @@ func (o GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayou
 	if !IsNil(o.CustomSize) {
 		toSerialize["customSize"] = o.CustomSize
 	}
-	if !IsNil(o.CustomSizeOptions) {
-		toSerialize["customSizeOptions"] = o.CustomSizeOptions
+	if o.CustomSizeOptions.IsSet() {
+		toSerialize["customSizeOptions"] = o.CustomSizeOptions.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {

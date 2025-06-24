@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ApplicationProfile** | Pointer to **string** | The Load Balancer Application Profile ID The Options API &#x60;/api/options/nsxt/nsxtLBVirtualServerApplicationProfile?loadBalancerId&#x3D;42&amp;loadBalancerInstance.vipProtocol&#x3D;tcp&#x60; can be used to see which options are available.  | [optional] 
+**ApplicationProfile** | Pointer to **NullableString** | The Load Balancer Application Profile ID The Options API &#x60;/api/options/nsxt/nsxtLBVirtualServerApplicationProfile?loadBalancerId&#x3D;42&amp;loadBalancerInstance.vipProtocol&#x3D;tcp&#x60; can be used to see which options are available. | [optional] 
 
 ## Methods
 
@@ -50,6 +50,16 @@ SetApplicationProfile sets ApplicationProfile field to given value.
 
 HasApplicationProfile returns a boolean if a field has been set.
 
+### SetApplicationProfileNil
+
+`func (o *NSXVirtualServerConfigObject) SetApplicationProfileNil(b bool)`
+
+ SetApplicationProfileNil sets the value for ApplicationProfile to be an explicit nil
+
+### UnsetApplicationProfile
+`func (o *NSXVirtualServerConfigObject) UnsetApplicationProfile()`
+
+UnsetApplicationProfile ensures that no value is present for ApplicationProfile, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

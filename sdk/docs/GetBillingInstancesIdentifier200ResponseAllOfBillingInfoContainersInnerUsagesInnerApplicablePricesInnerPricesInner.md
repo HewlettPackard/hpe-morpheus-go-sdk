@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **CostPerUnit** | Pointer to **float32** |  | [optional] 
 **Cost** | Pointer to **float32** |  | [optional] 
 **Price** | Pointer to **float32** |  | [optional] 
-**Quantity** | Pointer to **int64** |  | [optional] 
+**Quantity** | Pointer to **NullableInt64** |  | [optional] 
 
 ## Methods
 
@@ -180,6 +180,16 @@ SetQuantity sets Quantity field to given value.
 
 HasQuantity returns a boolean if a field has been set.
 
+### SetQuantityNil
+
+`func (o *GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerUsagesInnerApplicablePricesInnerPricesInner) SetQuantityNil(b bool)`
+
+ SetQuantityNil sets the value for Quantity to be an explicit nil
+
+### UnsetQuantity
+`func (o *GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerUsagesInnerApplicablePricesInnerPricesInner) UnsetQuantity()`
+
+UnsetQuantity ensures that no value is present for Quantity, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

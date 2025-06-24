@@ -5,9 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AutoManageChecks** | Pointer to **bool** | Auto Create Checks | [optional] 
-**AvailabilityTimeFrame** | Pointer to **int32** | Availability Time Frame. The number of days availability should be calculated for. Changes will not take effect until your checks have passed their check interval. | [optional] 
-**AvailabilityPrecision** | Pointer to **int32** | Availability Precision. The number of decimal places availability should be displayed in. Can be anywhere between 0 and 5. | [optional] 
-**DefaultCheckInterval** | Pointer to **int32** | Default Check Interval. The number of minutes to use as the default interval to use when creating new checks. | [optional] 
+**AvailabilityTimeFrame** | Pointer to **NullableInt32** | Availability Time Frame. The number of days availability should be calculated for. Changes will not take effect until your checks have passed their check interval. | [optional] 
+**AvailabilityPrecision** | Pointer to **NullableInt32** | Availability Precision. The number of decimal places availability should be displayed in. Can be anywhere between 0 and 5. | [optional] 
+**DefaultCheckInterval** | Pointer to **NullableInt32** | Default Check Interval. The number of minutes to use as the default interval to use when creating new checks. | [optional] 
 **ServiceNow** | Pointer to [**GetMonitoringSettings200ResponseMonitoringSettingsServiceNow**](GetMonitoringSettings200ResponseMonitoringSettingsServiceNow.md) |  | [optional] 
 
 ## Methods
@@ -79,6 +79,16 @@ SetAvailabilityTimeFrame sets AvailabilityTimeFrame field to given value.
 
 HasAvailabilityTimeFrame returns a boolean if a field has been set.
 
+### SetAvailabilityTimeFrameNil
+
+`func (o *MonitoringSettings) SetAvailabilityTimeFrameNil(b bool)`
+
+ SetAvailabilityTimeFrameNil sets the value for AvailabilityTimeFrame to be an explicit nil
+
+### UnsetAvailabilityTimeFrame
+`func (o *MonitoringSettings) UnsetAvailabilityTimeFrame()`
+
+UnsetAvailabilityTimeFrame ensures that no value is present for AvailabilityTimeFrame, not even an explicit nil
 ### GetAvailabilityPrecision
 
 `func (o *MonitoringSettings) GetAvailabilityPrecision() int32`
@@ -104,6 +114,16 @@ SetAvailabilityPrecision sets AvailabilityPrecision field to given value.
 
 HasAvailabilityPrecision returns a boolean if a field has been set.
 
+### SetAvailabilityPrecisionNil
+
+`func (o *MonitoringSettings) SetAvailabilityPrecisionNil(b bool)`
+
+ SetAvailabilityPrecisionNil sets the value for AvailabilityPrecision to be an explicit nil
+
+### UnsetAvailabilityPrecision
+`func (o *MonitoringSettings) UnsetAvailabilityPrecision()`
+
+UnsetAvailabilityPrecision ensures that no value is present for AvailabilityPrecision, not even an explicit nil
 ### GetDefaultCheckInterval
 
 `func (o *MonitoringSettings) GetDefaultCheckInterval() int32`
@@ -129,6 +149,16 @@ SetDefaultCheckInterval sets DefaultCheckInterval field to given value.
 
 HasDefaultCheckInterval returns a boolean if a field has been set.
 
+### SetDefaultCheckIntervalNil
+
+`func (o *MonitoringSettings) SetDefaultCheckIntervalNil(b bool)`
+
+ SetDefaultCheckIntervalNil sets the value for DefaultCheckInterval to be an explicit nil
+
+### UnsetDefaultCheckInterval
+`func (o *MonitoringSettings) UnsetDefaultCheckInterval()`
+
+UnsetDefaultCheckInterval ensures that no value is present for DefaultCheckInterval, not even an explicit nil
 ### GetServiceNow
 
 `func (o *MonitoringSettings) GetServiceNow() GetMonitoringSettings200ResponseMonitoringSettingsServiceNow`

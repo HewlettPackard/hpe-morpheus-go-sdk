@@ -29,15 +29,15 @@ type ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource struct {
 	Name                 *string                                                                             `json:"name,omitempty"`
 	ExternalName         *string                                                                             `json:"externalName,omitempty"`
 	Hostname             *string                                                                             `json:"hostname,omitempty"`
-	ParentServer         *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner             `json:"parentServer,omitempty"`
+	ParentServer         *GetAlerts200ResponseAllOfCheckGroupsInnerInstance                                  `json:"parentServer,omitempty"`
 	AccountId            *int64                                                                              `json:"accountId,omitempty"`
-	Account              *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner             `json:"account,omitempty"`
+	Account              *GetAlerts200ResponseAllOfCheckGroupsInnerInstance                                  `json:"account,omitempty"`
 	Owner                *ListActivity200ResponseAllOfActivityInnerActivityInnerUser                         `json:"owner,omitempty"`
-	Zone                 *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner             `json:"zone,omitempty"`
+	Zone                 *GetAlerts200ResponseAllOfCheckGroupsInnerInstance                                  `json:"zone,omitempty"`
 	Plan                 *ListBackupSettings200ResponseBackupSettingsDefaultSchedule                         `json:"plan,omitempty"`
 	ComputeServerType    *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerComputeServerType `json:"computeServerType,omitempty"`
 	Visibility           *string                                                                             `json:"visibility,omitempty"`
-	Description          *string                                                                             `json:"description,omitempty"`
+	Description          NullableString                                                                      `json:"description,omitempty"`
 	ZoneId               *int64                                                                              `json:"zoneId,omitempty"`
 	SiteId               *int64                                                                              `json:"siteId,omitempty"`
 	ResourcePoolId       *int64                                                                              `json:"resourcePoolId,omitempty"`
@@ -46,7 +46,7 @@ type ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource struct {
 	SshPort              *int64                                                                              `json:"sshPort,omitempty"`
 	ExternalIp           *string                                                                             `json:"externalIp,omitempty"`
 	InternalIp           *string                                                                             `json:"internalIp,omitempty"`
-	VolumeId             *string                                                                             `json:"volumeId,omitempty"`
+	VolumeId             NullableString                                                                      `json:"volumeId,omitempty"`
 	Platform             *string                                                                             `json:"platform,omitempty"`
 	PlatformVersion      *string                                                                             `json:"platformVersion,omitempty"`
 	SshUsername          *string                                                                             `json:"sshUsername,omitempty"`
@@ -62,11 +62,11 @@ type ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource struct {
 	LastUpdated          *time.Time                                                                          `json:"lastUpdated,omitempty"`
 	Stats                *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats                    `json:"stats,omitempty"`
 	Status               *string                                                                             `json:"status,omitempty"`
-	StatusMessage        *string                                                                             `json:"statusMessage,omitempty"`
-	ErrorMessage         *string                                                                             `json:"errorMessage,omitempty"`
-	StatusDate           *time.Time                                                                          `json:"statusDate,omitempty"`
-	StatusPercent        *string                                                                             `json:"statusPercent,omitempty"`
-	StatusEta            *string                                                                             `json:"statusEta,omitempty"`
+	StatusMessage        NullableString                                                                      `json:"statusMessage,omitempty"`
+	ErrorMessage         NullableString                                                                      `json:"errorMessage,omitempty"`
+	StatusDate           NullableTime                                                                        `json:"statusDate,omitempty"`
+	StatusPercent        NullableString                                                                      `json:"statusPercent,omitempty"`
+	StatusEta            NullableString                                                                      `json:"statusEta,omitempty"`
 	PowerState           *string                                                                             `json:"powerState,omitempty"`
 	AgentInstalled       *bool                                                                               `json:"agentInstalled,omitempty"`
 	LastAgentUpdate      *time.Time                                                                          `json:"lastAgentUpdate,omitempty"`
@@ -75,7 +75,7 @@ type ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource struct {
 	CoresPerSocket       *int64                                                                              `json:"coresPerSocket,omitempty"`
 	MaxMemory            *int64                                                                              `json:"maxMemory,omitempty"`
 	MaxStorage           *int64                                                                              `json:"maxStorage,omitempty"`
-	MaxCpu               *string                                                                             `json:"maxCpu,omitempty"`
+	MaxCpu               NullableString                                                                      `json:"maxCpu,omitempty"`
 	HourlyPrice          *float32                                                                            `json:"hourlyPrice,omitempty"`
 	SourceImage          *ListBackupSettings200ResponseBackupSettingsDefaultSchedule                         `json:"sourceImage,omitempty"`
 	ServerOs             *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceServerOs                 `json:"serverOs,omitempty"`
@@ -85,7 +85,7 @@ type ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource struct {
 	Labels               []map[string]interface{}                                                            `json:"labels,omitempty"`
 	Tags                 []map[string]interface{}                                                            `json:"tags,omitempty"`
 	Enabled              *bool                                                                               `json:"enabled,omitempty"`
-	TagCompliant         *string                                                                             `json:"tagCompliant,omitempty"`
+	TagCompliant         NullableString                                                                      `json:"tagCompliant,omitempty"`
 	Containers           []int64                                                                             `json:"containers,omitempty"`
 	AdditionalProperties map[string]interface{}                                                              `json:",remain"`
 }
@@ -366,9 +366,9 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) SetHostname
 }
 
 // GetParentServer returns the ParentServer field value if set, zero value otherwise.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) GetParentServer() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) GetParentServer() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.ParentServer) {
-		var ret ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return *o.ParentServer
@@ -376,7 +376,7 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) GetParentSe
 
 // GetParentServerOk returns a tuple with the ParentServer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) GetParentServerOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) GetParentServerOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.ParentServer) {
 		return nil, false
 	}
@@ -392,8 +392,8 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) IsSetParent
 	return false
 }
 
-// SetParentServer gets a reference to the given ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the ParentServer field.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) SetParentServer(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetParentServer gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the ParentServer field.
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) SetParentServer(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.ParentServer = &v
 }
 
@@ -430,9 +430,9 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) SetAccountI
 }
 
 // GetAccount returns the Account field value if set, zero value otherwise.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) GetAccount() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) GetAccount() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.Account) {
-		var ret ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return *o.Account
@@ -440,7 +440,7 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) GetAccount(
 
 // GetAccountOk returns a tuple with the Account field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) GetAccountOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) GetAccountOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.Account) {
 		return nil, false
 	}
@@ -456,8 +456,8 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) IsSetAccoun
 	return false
 }
 
-// SetAccount gets a reference to the given ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the Account field.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) SetAccount(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetAccount gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Account field.
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) SetAccount(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.Account = &v
 }
 
@@ -494,9 +494,9 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) SetOwner(v 
 }
 
 // GetZone returns the Zone field value if set, zero value otherwise.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) GetZone() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) GetZone() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.Zone) {
-		var ret ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return *o.Zone
@@ -504,7 +504,7 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) GetZone() L
 
 // GetZoneOk returns a tuple with the Zone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) GetZoneOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) GetZoneOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.Zone) {
 		return nil, false
 	}
@@ -520,8 +520,8 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) IsSetZone()
 	return false
 }
 
-// SetZone gets a reference to the given ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the Zone field.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) SetZone(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetZone gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Zone field.
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) SetZone(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.Zone = &v
 }
 
@@ -621,36 +621,47 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) SetVisibili
 	o.Visibility = &v
 }
 
-// GetDescription returns the Description field value if set, zero value otherwise.
+// GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
+	if o == nil || IsNil(o.Description.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Description
+	return *o.Description.Get()
 }
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Description, true
+	return o.Description.Get(), o.Description.IsSet()
 }
 
 // IsSetDescription returns a boolean if a field has been set.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
+	if o != nil && o.Description.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDescription gets a reference to the given string and assigns it to the Description field.
+// SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) SetDescription(v string) {
-	o.Description = &v
+	o.Description.Set(&v)
+}
+
+// SetDescriptionNil sets the value for Description to be an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) SetDescriptionNil() {
+	o.Description.Set(nil)
+}
+
+// UnsetDescription ensures that no value is present for Description, not even an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) UnsetDescription() {
+	o.Description.Unset()
 }
 
 // GetZoneId returns the ZoneId field value if set, zero value otherwise.
@@ -909,36 +920,47 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) SetInternal
 	o.InternalIp = &v
 }
 
-// GetVolumeId returns the VolumeId field value if set, zero value otherwise.
+// GetVolumeId returns the VolumeId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) GetVolumeId() string {
-	if o == nil || IsNil(o.VolumeId) {
+	if o == nil || IsNil(o.VolumeId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.VolumeId
+	return *o.VolumeId.Get()
 }
 
 // GetVolumeIdOk returns a tuple with the VolumeId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) GetVolumeIdOk() (*string, bool) {
-	if o == nil || IsNil(o.VolumeId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.VolumeId, true
+	return o.VolumeId.Get(), o.VolumeId.IsSet()
 }
 
 // IsSetVolumeId returns a boolean if a field has been set.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) IsSetVolumeId() bool {
-	if o != nil && !IsNil(o.VolumeId) {
+	if o != nil && o.VolumeId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetVolumeId gets a reference to the given string and assigns it to the VolumeId field.
+// SetVolumeId gets a reference to the given NullableString and assigns it to the VolumeId field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) SetVolumeId(v string) {
-	o.VolumeId = &v
+	o.VolumeId.Set(&v)
+}
+
+// SetVolumeIdNil sets the value for VolumeId to be an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) SetVolumeIdNil() {
+	o.VolumeId.Set(nil)
+}
+
+// UnsetVolumeId ensures that no value is present for VolumeId, not even an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) UnsetVolumeId() {
+	o.VolumeId.Unset()
 }
 
 // GetPlatform returns the Platform field value if set, zero value otherwise.
@@ -1421,164 +1443,219 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) SetStatus(v
 	o.Status = &v
 }
 
-// GetStatusMessage returns the StatusMessage field value if set, zero value otherwise.
+// GetStatusMessage returns the StatusMessage field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) GetStatusMessage() string {
-	if o == nil || IsNil(o.StatusMessage) {
+	if o == nil || IsNil(o.StatusMessage.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.StatusMessage
+	return *o.StatusMessage.Get()
 }
 
 // GetStatusMessageOk returns a tuple with the StatusMessage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) GetStatusMessageOk() (*string, bool) {
-	if o == nil || IsNil(o.StatusMessage) {
+	if o == nil {
 		return nil, false
 	}
-	return o.StatusMessage, true
+	return o.StatusMessage.Get(), o.StatusMessage.IsSet()
 }
 
 // IsSetStatusMessage returns a boolean if a field has been set.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) IsSetStatusMessage() bool {
-	if o != nil && !IsNil(o.StatusMessage) {
+	if o != nil && o.StatusMessage.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetStatusMessage gets a reference to the given string and assigns it to the StatusMessage field.
+// SetStatusMessage gets a reference to the given NullableString and assigns it to the StatusMessage field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) SetStatusMessage(v string) {
-	o.StatusMessage = &v
+	o.StatusMessage.Set(&v)
 }
 
-// GetErrorMessage returns the ErrorMessage field value if set, zero value otherwise.
+// SetStatusMessageNil sets the value for StatusMessage to be an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) SetStatusMessageNil() {
+	o.StatusMessage.Set(nil)
+}
+
+// UnsetStatusMessage ensures that no value is present for StatusMessage, not even an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) UnsetStatusMessage() {
+	o.StatusMessage.Unset()
+}
+
+// GetErrorMessage returns the ErrorMessage field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) GetErrorMessage() string {
-	if o == nil || IsNil(o.ErrorMessage) {
+	if o == nil || IsNil(o.ErrorMessage.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ErrorMessage
+	return *o.ErrorMessage.Get()
 }
 
 // GetErrorMessageOk returns a tuple with the ErrorMessage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) GetErrorMessageOk() (*string, bool) {
-	if o == nil || IsNil(o.ErrorMessage) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ErrorMessage, true
+	return o.ErrorMessage.Get(), o.ErrorMessage.IsSet()
 }
 
 // IsSetErrorMessage returns a boolean if a field has been set.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) IsSetErrorMessage() bool {
-	if o != nil && !IsNil(o.ErrorMessage) {
+	if o != nil && o.ErrorMessage.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetErrorMessage gets a reference to the given string and assigns it to the ErrorMessage field.
+// SetErrorMessage gets a reference to the given NullableString and assigns it to the ErrorMessage field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) SetErrorMessage(v string) {
-	o.ErrorMessage = &v
+	o.ErrorMessage.Set(&v)
 }
 
-// GetStatusDate returns the StatusDate field value if set, zero value otherwise.
+// SetErrorMessageNil sets the value for ErrorMessage to be an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) SetErrorMessageNil() {
+	o.ErrorMessage.Set(nil)
+}
+
+// UnsetErrorMessage ensures that no value is present for ErrorMessage, not even an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) UnsetErrorMessage() {
+	o.ErrorMessage.Unset()
+}
+
+// GetStatusDate returns the StatusDate field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) GetStatusDate() time.Time {
-	if o == nil || IsNil(o.StatusDate) {
+	if o == nil || IsNil(o.StatusDate.Get()) {
 		var ret time.Time
 		return ret
 	}
-	return *o.StatusDate
+	return *o.StatusDate.Get()
 }
 
 // GetStatusDateOk returns a tuple with the StatusDate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) GetStatusDateOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.StatusDate) {
+	if o == nil {
 		return nil, false
 	}
-	return o.StatusDate, true
+	return o.StatusDate.Get(), o.StatusDate.IsSet()
 }
 
 // IsSetStatusDate returns a boolean if a field has been set.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) IsSetStatusDate() bool {
-	if o != nil && !IsNil(o.StatusDate) {
+	if o != nil && o.StatusDate.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetStatusDate gets a reference to the given time.Time and assigns it to the StatusDate field.
+// SetStatusDate gets a reference to the given NullableTime and assigns it to the StatusDate field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) SetStatusDate(v time.Time) {
-	o.StatusDate = &v
+	o.StatusDate.Set(&v)
 }
 
-// GetStatusPercent returns the StatusPercent field value if set, zero value otherwise.
+// SetStatusDateNil sets the value for StatusDate to be an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) SetStatusDateNil() {
+	o.StatusDate.Set(nil)
+}
+
+// UnsetStatusDate ensures that no value is present for StatusDate, not even an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) UnsetStatusDate() {
+	o.StatusDate.Unset()
+}
+
+// GetStatusPercent returns the StatusPercent field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) GetStatusPercent() string {
-	if o == nil || IsNil(o.StatusPercent) {
+	if o == nil || IsNil(o.StatusPercent.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.StatusPercent
+	return *o.StatusPercent.Get()
 }
 
 // GetStatusPercentOk returns a tuple with the StatusPercent field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) GetStatusPercentOk() (*string, bool) {
-	if o == nil || IsNil(o.StatusPercent) {
+	if o == nil {
 		return nil, false
 	}
-	return o.StatusPercent, true
+	return o.StatusPercent.Get(), o.StatusPercent.IsSet()
 }
 
 // IsSetStatusPercent returns a boolean if a field has been set.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) IsSetStatusPercent() bool {
-	if o != nil && !IsNil(o.StatusPercent) {
+	if o != nil && o.StatusPercent.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetStatusPercent gets a reference to the given string and assigns it to the StatusPercent field.
+// SetStatusPercent gets a reference to the given NullableString and assigns it to the StatusPercent field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) SetStatusPercent(v string) {
-	o.StatusPercent = &v
+	o.StatusPercent.Set(&v)
 }
 
-// GetStatusEta returns the StatusEta field value if set, zero value otherwise.
+// SetStatusPercentNil sets the value for StatusPercent to be an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) SetStatusPercentNil() {
+	o.StatusPercent.Set(nil)
+}
+
+// UnsetStatusPercent ensures that no value is present for StatusPercent, not even an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) UnsetStatusPercent() {
+	o.StatusPercent.Unset()
+}
+
+// GetStatusEta returns the StatusEta field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) GetStatusEta() string {
-	if o == nil || IsNil(o.StatusEta) {
+	if o == nil || IsNil(o.StatusEta.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.StatusEta
+	return *o.StatusEta.Get()
 }
 
 // GetStatusEtaOk returns a tuple with the StatusEta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) GetStatusEtaOk() (*string, bool) {
-	if o == nil || IsNil(o.StatusEta) {
+	if o == nil {
 		return nil, false
 	}
-	return o.StatusEta, true
+	return o.StatusEta.Get(), o.StatusEta.IsSet()
 }
 
 // IsSetStatusEta returns a boolean if a field has been set.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) IsSetStatusEta() bool {
-	if o != nil && !IsNil(o.StatusEta) {
+	if o != nil && o.StatusEta.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetStatusEta gets a reference to the given string and assigns it to the StatusEta field.
+// SetStatusEta gets a reference to the given NullableString and assigns it to the StatusEta field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) SetStatusEta(v string) {
-	o.StatusEta = &v
+	o.StatusEta.Set(&v)
+}
+
+// SetStatusEtaNil sets the value for StatusEta to be an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) SetStatusEtaNil() {
+	o.StatusEta.Set(nil)
+}
+
+// UnsetStatusEta ensures that no value is present for StatusEta, not even an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) UnsetStatusEta() {
+	o.StatusEta.Unset()
 }
 
 // GetPowerState returns the PowerState field value if set, zero value otherwise.
@@ -1837,36 +1914,47 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) SetMaxStora
 	o.MaxStorage = &v
 }
 
-// GetMaxCpu returns the MaxCpu field value if set, zero value otherwise.
+// GetMaxCpu returns the MaxCpu field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) GetMaxCpu() string {
-	if o == nil || IsNil(o.MaxCpu) {
+	if o == nil || IsNil(o.MaxCpu.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.MaxCpu
+	return *o.MaxCpu.Get()
 }
 
 // GetMaxCpuOk returns a tuple with the MaxCpu field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) GetMaxCpuOk() (*string, bool) {
-	if o == nil || IsNil(o.MaxCpu) {
+	if o == nil {
 		return nil, false
 	}
-	return o.MaxCpu, true
+	return o.MaxCpu.Get(), o.MaxCpu.IsSet()
 }
 
 // IsSetMaxCpu returns a boolean if a field has been set.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) IsSetMaxCpu() bool {
-	if o != nil && !IsNil(o.MaxCpu) {
+	if o != nil && o.MaxCpu.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetMaxCpu gets a reference to the given string and assigns it to the MaxCpu field.
+// SetMaxCpu gets a reference to the given NullableString and assigns it to the MaxCpu field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) SetMaxCpu(v string) {
-	o.MaxCpu = &v
+	o.MaxCpu.Set(&v)
+}
+
+// SetMaxCpuNil sets the value for MaxCpu to be an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) SetMaxCpuNil() {
+	o.MaxCpu.Set(nil)
+}
+
+// UnsetMaxCpu ensures that no value is present for MaxCpu, not even an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) UnsetMaxCpu() {
+	o.MaxCpu.Unset()
 }
 
 // GetHourlyPrice returns the HourlyPrice field value if set, zero value otherwise.
@@ -2157,36 +2245,47 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) SetEnabled(
 	o.Enabled = &v
 }
 
-// GetTagCompliant returns the TagCompliant field value if set, zero value otherwise.
+// GetTagCompliant returns the TagCompliant field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) GetTagCompliant() string {
-	if o == nil || IsNil(o.TagCompliant) {
+	if o == nil || IsNil(o.TagCompliant.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.TagCompliant
+	return *o.TagCompliant.Get()
 }
 
 // GetTagCompliantOk returns a tuple with the TagCompliant field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) GetTagCompliantOk() (*string, bool) {
-	if o == nil || IsNil(o.TagCompliant) {
+	if o == nil {
 		return nil, false
 	}
-	return o.TagCompliant, true
+	return o.TagCompliant.Get(), o.TagCompliant.IsSet()
 }
 
 // IsSetTagCompliant returns a boolean if a field has been set.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) IsSetTagCompliant() bool {
-	if o != nil && !IsNil(o.TagCompliant) {
+	if o != nil && o.TagCompliant.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetTagCompliant gets a reference to the given string and assigns it to the TagCompliant field.
+// SetTagCompliant gets a reference to the given NullableString and assigns it to the TagCompliant field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) SetTagCompliant(v string) {
-	o.TagCompliant = &v
+	o.TagCompliant.Set(&v)
+}
+
+// SetTagCompliantNil sets the value for TagCompliant to be an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) SetTagCompliantNil() {
+	o.TagCompliant.Set(nil)
+}
+
+// UnsetTagCompliant ensures that no value is present for TagCompliant, not even an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) UnsetTagCompliant() {
+	o.TagCompliant.Unset()
 }
 
 // GetContainers returns the Containers field value if set, zero value otherwise.
@@ -2279,8 +2378,8 @@ func (o ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) ToMap() (map
 	if !IsNil(o.Visibility) {
 		toSerialize["visibility"] = o.Visibility
 	}
-	if !IsNil(o.Description) {
-		toSerialize["description"] = o.Description
+	if o.Description.IsSet() {
+		toSerialize["description"] = o.Description.Get()
 	}
 	if !IsNil(o.ZoneId) {
 		toSerialize["zoneId"] = o.ZoneId
@@ -2306,8 +2405,8 @@ func (o ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) ToMap() (map
 	if !IsNil(o.InternalIp) {
 		toSerialize["internalIp"] = o.InternalIp
 	}
-	if !IsNil(o.VolumeId) {
-		toSerialize["volumeId"] = o.VolumeId
+	if o.VolumeId.IsSet() {
+		toSerialize["volumeId"] = o.VolumeId.Get()
 	}
 	if !IsNil(o.Platform) {
 		toSerialize["platform"] = o.Platform
@@ -2354,20 +2453,20 @@ func (o ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) ToMap() (map
 	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status
 	}
-	if !IsNil(o.StatusMessage) {
-		toSerialize["statusMessage"] = o.StatusMessage
+	if o.StatusMessage.IsSet() {
+		toSerialize["statusMessage"] = o.StatusMessage.Get()
 	}
-	if !IsNil(o.ErrorMessage) {
-		toSerialize["errorMessage"] = o.ErrorMessage
+	if o.ErrorMessage.IsSet() {
+		toSerialize["errorMessage"] = o.ErrorMessage.Get()
 	}
-	if !IsNil(o.StatusDate) {
-		toSerialize["statusDate"] = o.StatusDate
+	if o.StatusDate.IsSet() {
+		toSerialize["statusDate"] = o.StatusDate.Get()
 	}
-	if !IsNil(o.StatusPercent) {
-		toSerialize["statusPercent"] = o.StatusPercent
+	if o.StatusPercent.IsSet() {
+		toSerialize["statusPercent"] = o.StatusPercent.Get()
 	}
-	if !IsNil(o.StatusEta) {
-		toSerialize["statusEta"] = o.StatusEta
+	if o.StatusEta.IsSet() {
+		toSerialize["statusEta"] = o.StatusEta.Get()
 	}
 	if !IsNil(o.PowerState) {
 		toSerialize["powerState"] = o.PowerState
@@ -2393,8 +2492,8 @@ func (o ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) ToMap() (map
 	if !IsNil(o.MaxStorage) {
 		toSerialize["maxStorage"] = o.MaxStorage
 	}
-	if !IsNil(o.MaxCpu) {
-		toSerialize["maxCpu"] = o.MaxCpu
+	if o.MaxCpu.IsSet() {
+		toSerialize["maxCpu"] = o.MaxCpu.Get()
 	}
 	if !IsNil(o.HourlyPrice) {
 		toSerialize["hourlyPrice"] = o.HourlyPrice
@@ -2423,8 +2522,8 @@ func (o ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) ToMap() (map
 	if !IsNil(o.Enabled) {
 		toSerialize["enabled"] = o.Enabled
 	}
-	if !IsNil(o.TagCompliant) {
-		toSerialize["tagCompliant"] = o.TagCompliant
+	if o.TagCompliant.IsSet() {
+		toSerialize["tagCompliant"] = o.TagCompliant.Get()
 	}
 	if !IsNil(o.Containers) {
 		toSerialize["containers"] = o.Containers

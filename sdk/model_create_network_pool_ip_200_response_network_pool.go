@@ -25,27 +25,27 @@ type CreateNetworkPoolIp200ResponseNetworkPool struct {
 	NetworkPoolId        *int64                                                      `json:"networkPoolId,omitempty"`
 	IpType               *string                                                     `json:"ipType,omitempty"`
 	IpAddress            *string                                                     `json:"ipAddress,omitempty"`
-	GatewayAddress       *string                                                     `json:"gatewayAddress,omitempty"`
-	SubnetMask           *string                                                     `json:"subnetMask,omitempty"`
-	DnsServer            *string                                                     `json:"dnsServer,omitempty"`
-	InterfaceName        *string                                                     `json:"interfaceName,omitempty"`
-	Description          *string                                                     `json:"description,omitempty"`
+	GatewayAddress       NullableString                                              `json:"gatewayAddress,omitempty"`
+	SubnetMask           NullableString                                              `json:"subnetMask,omitempty"`
+	DnsServer            NullableString                                              `json:"dnsServer,omitempty"`
+	InterfaceName        NullableString                                              `json:"interfaceName,omitempty"`
+	Description          NullableString                                              `json:"description,omitempty"`
 	Active               *bool                                                       `json:"active,omitempty"`
 	StaticIp             *bool                                                       `json:"staticIp,omitempty"`
 	Fqdn                 *string                                                     `json:"fqdn,omitempty"`
-	DomainName           *string                                                     `json:"domainName,omitempty"`
+	DomainName           NullableString                                              `json:"domainName,omitempty"`
 	Hostname             *string                                                     `json:"hostname,omitempty"`
-	InternalId           *string                                                     `json:"internalId,omitempty"`
-	ExternalId           *string                                                     `json:"externalId,omitempty"`
-	PtrId                *string                                                     `json:"ptrId,omitempty"`
+	InternalId           NullableString                                              `json:"internalId,omitempty"`
+	ExternalId           NullableString                                              `json:"externalId,omitempty"`
+	PtrId                NullableString                                              `json:"ptrId,omitempty"`
 	DateCreated          *time.Time                                                  `json:"dateCreated,omitempty"`
 	LastUpdated          *time.Time                                                  `json:"lastUpdated,omitempty"`
 	StartDate            *time.Time                                                  `json:"startDate,omitempty"`
 	EndDate              *time.Time                                                  `json:"endDate,omitempty"`
-	RefType              *string                                                     `json:"refType,omitempty"`
-	RefId                *int64                                                      `json:"refId,omitempty"`
-	SubRefId             *int64                                                      `json:"subRefId,omitempty"`
-	NetworkDomain        *string                                                     `json:"networkDomain,omitempty"`
+	RefType              NullableString                                              `json:"refType,omitempty"`
+	RefId                NullableInt64                                               `json:"refId,omitempty"`
+	SubRefId             NullableInt64                                               `json:"subRefId,omitempty"`
+	NetworkDomain        NullableString                                              `json:"networkDomain,omitempty"`
 	CreatedBy            *ListActivity200ResponseAllOfActivityInnerActivityInnerUser `json:"createdBy,omitempty"`
 	AdditionalProperties map[string]interface{}                                      `json:",remain"`
 }
@@ -197,164 +197,219 @@ func (o *CreateNetworkPoolIp200ResponseNetworkPool) SetIpAddress(v string) {
 	o.IpAddress = &v
 }
 
-// GetGatewayAddress returns the GatewayAddress field value if set, zero value otherwise.
+// GetGatewayAddress returns the GatewayAddress field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CreateNetworkPoolIp200ResponseNetworkPool) GetGatewayAddress() string {
-	if o == nil || IsNil(o.GatewayAddress) {
+	if o == nil || IsNil(o.GatewayAddress.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.GatewayAddress
+	return *o.GatewayAddress.Get()
 }
 
 // GetGatewayAddressOk returns a tuple with the GatewayAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CreateNetworkPoolIp200ResponseNetworkPool) GetGatewayAddressOk() (*string, bool) {
-	if o == nil || IsNil(o.GatewayAddress) {
+	if o == nil {
 		return nil, false
 	}
-	return o.GatewayAddress, true
+	return o.GatewayAddress.Get(), o.GatewayAddress.IsSet()
 }
 
 // IsSetGatewayAddress returns a boolean if a field has been set.
 func (o *CreateNetworkPoolIp200ResponseNetworkPool) IsSetGatewayAddress() bool {
-	if o != nil && !IsNil(o.GatewayAddress) {
+	if o != nil && o.GatewayAddress.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetGatewayAddress gets a reference to the given string and assigns it to the GatewayAddress field.
+// SetGatewayAddress gets a reference to the given NullableString and assigns it to the GatewayAddress field.
 func (o *CreateNetworkPoolIp200ResponseNetworkPool) SetGatewayAddress(v string) {
-	o.GatewayAddress = &v
+	o.GatewayAddress.Set(&v)
 }
 
-// GetSubnetMask returns the SubnetMask field value if set, zero value otherwise.
+// SetGatewayAddressNil sets the value for GatewayAddress to be an explicit nil
+func (o *CreateNetworkPoolIp200ResponseNetworkPool) SetGatewayAddressNil() {
+	o.GatewayAddress.Set(nil)
+}
+
+// UnsetGatewayAddress ensures that no value is present for GatewayAddress, not even an explicit nil
+func (o *CreateNetworkPoolIp200ResponseNetworkPool) UnsetGatewayAddress() {
+	o.GatewayAddress.Unset()
+}
+
+// GetSubnetMask returns the SubnetMask field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CreateNetworkPoolIp200ResponseNetworkPool) GetSubnetMask() string {
-	if o == nil || IsNil(o.SubnetMask) {
+	if o == nil || IsNil(o.SubnetMask.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.SubnetMask
+	return *o.SubnetMask.Get()
 }
 
 // GetSubnetMaskOk returns a tuple with the SubnetMask field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CreateNetworkPoolIp200ResponseNetworkPool) GetSubnetMaskOk() (*string, bool) {
-	if o == nil || IsNil(o.SubnetMask) {
+	if o == nil {
 		return nil, false
 	}
-	return o.SubnetMask, true
+	return o.SubnetMask.Get(), o.SubnetMask.IsSet()
 }
 
 // IsSetSubnetMask returns a boolean if a field has been set.
 func (o *CreateNetworkPoolIp200ResponseNetworkPool) IsSetSubnetMask() bool {
-	if o != nil && !IsNil(o.SubnetMask) {
+	if o != nil && o.SubnetMask.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetSubnetMask gets a reference to the given string and assigns it to the SubnetMask field.
+// SetSubnetMask gets a reference to the given NullableString and assigns it to the SubnetMask field.
 func (o *CreateNetworkPoolIp200ResponseNetworkPool) SetSubnetMask(v string) {
-	o.SubnetMask = &v
+	o.SubnetMask.Set(&v)
 }
 
-// GetDnsServer returns the DnsServer field value if set, zero value otherwise.
+// SetSubnetMaskNil sets the value for SubnetMask to be an explicit nil
+func (o *CreateNetworkPoolIp200ResponseNetworkPool) SetSubnetMaskNil() {
+	o.SubnetMask.Set(nil)
+}
+
+// UnsetSubnetMask ensures that no value is present for SubnetMask, not even an explicit nil
+func (o *CreateNetworkPoolIp200ResponseNetworkPool) UnsetSubnetMask() {
+	o.SubnetMask.Unset()
+}
+
+// GetDnsServer returns the DnsServer field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CreateNetworkPoolIp200ResponseNetworkPool) GetDnsServer() string {
-	if o == nil || IsNil(o.DnsServer) {
+	if o == nil || IsNil(o.DnsServer.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.DnsServer
+	return *o.DnsServer.Get()
 }
 
 // GetDnsServerOk returns a tuple with the DnsServer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CreateNetworkPoolIp200ResponseNetworkPool) GetDnsServerOk() (*string, bool) {
-	if o == nil || IsNil(o.DnsServer) {
+	if o == nil {
 		return nil, false
 	}
-	return o.DnsServer, true
+	return o.DnsServer.Get(), o.DnsServer.IsSet()
 }
 
 // IsSetDnsServer returns a boolean if a field has been set.
 func (o *CreateNetworkPoolIp200ResponseNetworkPool) IsSetDnsServer() bool {
-	if o != nil && !IsNil(o.DnsServer) {
+	if o != nil && o.DnsServer.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDnsServer gets a reference to the given string and assigns it to the DnsServer field.
+// SetDnsServer gets a reference to the given NullableString and assigns it to the DnsServer field.
 func (o *CreateNetworkPoolIp200ResponseNetworkPool) SetDnsServer(v string) {
-	o.DnsServer = &v
+	o.DnsServer.Set(&v)
 }
 
-// GetInterfaceName returns the InterfaceName field value if set, zero value otherwise.
+// SetDnsServerNil sets the value for DnsServer to be an explicit nil
+func (o *CreateNetworkPoolIp200ResponseNetworkPool) SetDnsServerNil() {
+	o.DnsServer.Set(nil)
+}
+
+// UnsetDnsServer ensures that no value is present for DnsServer, not even an explicit nil
+func (o *CreateNetworkPoolIp200ResponseNetworkPool) UnsetDnsServer() {
+	o.DnsServer.Unset()
+}
+
+// GetInterfaceName returns the InterfaceName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CreateNetworkPoolIp200ResponseNetworkPool) GetInterfaceName() string {
-	if o == nil || IsNil(o.InterfaceName) {
+	if o == nil || IsNil(o.InterfaceName.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.InterfaceName
+	return *o.InterfaceName.Get()
 }
 
 // GetInterfaceNameOk returns a tuple with the InterfaceName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CreateNetworkPoolIp200ResponseNetworkPool) GetInterfaceNameOk() (*string, bool) {
-	if o == nil || IsNil(o.InterfaceName) {
+	if o == nil {
 		return nil, false
 	}
-	return o.InterfaceName, true
+	return o.InterfaceName.Get(), o.InterfaceName.IsSet()
 }
 
 // IsSetInterfaceName returns a boolean if a field has been set.
 func (o *CreateNetworkPoolIp200ResponseNetworkPool) IsSetInterfaceName() bool {
-	if o != nil && !IsNil(o.InterfaceName) {
+	if o != nil && o.InterfaceName.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetInterfaceName gets a reference to the given string and assigns it to the InterfaceName field.
+// SetInterfaceName gets a reference to the given NullableString and assigns it to the InterfaceName field.
 func (o *CreateNetworkPoolIp200ResponseNetworkPool) SetInterfaceName(v string) {
-	o.InterfaceName = &v
+	o.InterfaceName.Set(&v)
 }
 
-// GetDescription returns the Description field value if set, zero value otherwise.
+// SetInterfaceNameNil sets the value for InterfaceName to be an explicit nil
+func (o *CreateNetworkPoolIp200ResponseNetworkPool) SetInterfaceNameNil() {
+	o.InterfaceName.Set(nil)
+}
+
+// UnsetInterfaceName ensures that no value is present for InterfaceName, not even an explicit nil
+func (o *CreateNetworkPoolIp200ResponseNetworkPool) UnsetInterfaceName() {
+	o.InterfaceName.Unset()
+}
+
+// GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CreateNetworkPoolIp200ResponseNetworkPool) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
+	if o == nil || IsNil(o.Description.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Description
+	return *o.Description.Get()
 }
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CreateNetworkPoolIp200ResponseNetworkPool) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Description, true
+	return o.Description.Get(), o.Description.IsSet()
 }
 
 // IsSetDescription returns a boolean if a field has been set.
 func (o *CreateNetworkPoolIp200ResponseNetworkPool) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
+	if o != nil && o.Description.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDescription gets a reference to the given string and assigns it to the Description field.
+// SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *CreateNetworkPoolIp200ResponseNetworkPool) SetDescription(v string) {
-	o.Description = &v
+	o.Description.Set(&v)
+}
+
+// SetDescriptionNil sets the value for Description to be an explicit nil
+func (o *CreateNetworkPoolIp200ResponseNetworkPool) SetDescriptionNil() {
+	o.Description.Set(nil)
+}
+
+// UnsetDescription ensures that no value is present for Description, not even an explicit nil
+func (o *CreateNetworkPoolIp200ResponseNetworkPool) UnsetDescription() {
+	o.Description.Unset()
 }
 
 // GetActive returns the Active field value if set, zero value otherwise.
@@ -453,36 +508,47 @@ func (o *CreateNetworkPoolIp200ResponseNetworkPool) SetFqdn(v string) {
 	o.Fqdn = &v
 }
 
-// GetDomainName returns the DomainName field value if set, zero value otherwise.
+// GetDomainName returns the DomainName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CreateNetworkPoolIp200ResponseNetworkPool) GetDomainName() string {
-	if o == nil || IsNil(o.DomainName) {
+	if o == nil || IsNil(o.DomainName.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.DomainName
+	return *o.DomainName.Get()
 }
 
 // GetDomainNameOk returns a tuple with the DomainName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CreateNetworkPoolIp200ResponseNetworkPool) GetDomainNameOk() (*string, bool) {
-	if o == nil || IsNil(o.DomainName) {
+	if o == nil {
 		return nil, false
 	}
-	return o.DomainName, true
+	return o.DomainName.Get(), o.DomainName.IsSet()
 }
 
 // IsSetDomainName returns a boolean if a field has been set.
 func (o *CreateNetworkPoolIp200ResponseNetworkPool) IsSetDomainName() bool {
-	if o != nil && !IsNil(o.DomainName) {
+	if o != nil && o.DomainName.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDomainName gets a reference to the given string and assigns it to the DomainName field.
+// SetDomainName gets a reference to the given NullableString and assigns it to the DomainName field.
 func (o *CreateNetworkPoolIp200ResponseNetworkPool) SetDomainName(v string) {
-	o.DomainName = &v
+	o.DomainName.Set(&v)
+}
+
+// SetDomainNameNil sets the value for DomainName to be an explicit nil
+func (o *CreateNetworkPoolIp200ResponseNetworkPool) SetDomainNameNil() {
+	o.DomainName.Set(nil)
+}
+
+// UnsetDomainName ensures that no value is present for DomainName, not even an explicit nil
+func (o *CreateNetworkPoolIp200ResponseNetworkPool) UnsetDomainName() {
+	o.DomainName.Unset()
 }
 
 // GetHostname returns the Hostname field value if set, zero value otherwise.
@@ -517,100 +583,133 @@ func (o *CreateNetworkPoolIp200ResponseNetworkPool) SetHostname(v string) {
 	o.Hostname = &v
 }
 
-// GetInternalId returns the InternalId field value if set, zero value otherwise.
+// GetInternalId returns the InternalId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CreateNetworkPoolIp200ResponseNetworkPool) GetInternalId() string {
-	if o == nil || IsNil(o.InternalId) {
+	if o == nil || IsNil(o.InternalId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.InternalId
+	return *o.InternalId.Get()
 }
 
 // GetInternalIdOk returns a tuple with the InternalId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CreateNetworkPoolIp200ResponseNetworkPool) GetInternalIdOk() (*string, bool) {
-	if o == nil || IsNil(o.InternalId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.InternalId, true
+	return o.InternalId.Get(), o.InternalId.IsSet()
 }
 
 // IsSetInternalId returns a boolean if a field has been set.
 func (o *CreateNetworkPoolIp200ResponseNetworkPool) IsSetInternalId() bool {
-	if o != nil && !IsNil(o.InternalId) {
+	if o != nil && o.InternalId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetInternalId gets a reference to the given string and assigns it to the InternalId field.
+// SetInternalId gets a reference to the given NullableString and assigns it to the InternalId field.
 func (o *CreateNetworkPoolIp200ResponseNetworkPool) SetInternalId(v string) {
-	o.InternalId = &v
+	o.InternalId.Set(&v)
 }
 
-// GetExternalId returns the ExternalId field value if set, zero value otherwise.
+// SetInternalIdNil sets the value for InternalId to be an explicit nil
+func (o *CreateNetworkPoolIp200ResponseNetworkPool) SetInternalIdNil() {
+	o.InternalId.Set(nil)
+}
+
+// UnsetInternalId ensures that no value is present for InternalId, not even an explicit nil
+func (o *CreateNetworkPoolIp200ResponseNetworkPool) UnsetInternalId() {
+	o.InternalId.Unset()
+}
+
+// GetExternalId returns the ExternalId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CreateNetworkPoolIp200ResponseNetworkPool) GetExternalId() string {
-	if o == nil || IsNil(o.ExternalId) {
+	if o == nil || IsNil(o.ExternalId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ExternalId
+	return *o.ExternalId.Get()
 }
 
 // GetExternalIdOk returns a tuple with the ExternalId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CreateNetworkPoolIp200ResponseNetworkPool) GetExternalIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ExternalId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ExternalId, true
+	return o.ExternalId.Get(), o.ExternalId.IsSet()
 }
 
 // IsSetExternalId returns a boolean if a field has been set.
 func (o *CreateNetworkPoolIp200ResponseNetworkPool) IsSetExternalId() bool {
-	if o != nil && !IsNil(o.ExternalId) {
+	if o != nil && o.ExternalId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetExternalId gets a reference to the given string and assigns it to the ExternalId field.
+// SetExternalId gets a reference to the given NullableString and assigns it to the ExternalId field.
 func (o *CreateNetworkPoolIp200ResponseNetworkPool) SetExternalId(v string) {
-	o.ExternalId = &v
+	o.ExternalId.Set(&v)
 }
 
-// GetPtrId returns the PtrId field value if set, zero value otherwise.
+// SetExternalIdNil sets the value for ExternalId to be an explicit nil
+func (o *CreateNetworkPoolIp200ResponseNetworkPool) SetExternalIdNil() {
+	o.ExternalId.Set(nil)
+}
+
+// UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
+func (o *CreateNetworkPoolIp200ResponseNetworkPool) UnsetExternalId() {
+	o.ExternalId.Unset()
+}
+
+// GetPtrId returns the PtrId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CreateNetworkPoolIp200ResponseNetworkPool) GetPtrId() string {
-	if o == nil || IsNil(o.PtrId) {
+	if o == nil || IsNil(o.PtrId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.PtrId
+	return *o.PtrId.Get()
 }
 
 // GetPtrIdOk returns a tuple with the PtrId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CreateNetworkPoolIp200ResponseNetworkPool) GetPtrIdOk() (*string, bool) {
-	if o == nil || IsNil(o.PtrId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.PtrId, true
+	return o.PtrId.Get(), o.PtrId.IsSet()
 }
 
 // IsSetPtrId returns a boolean if a field has been set.
 func (o *CreateNetworkPoolIp200ResponseNetworkPool) IsSetPtrId() bool {
-	if o != nil && !IsNil(o.PtrId) {
+	if o != nil && o.PtrId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetPtrId gets a reference to the given string and assigns it to the PtrId field.
+// SetPtrId gets a reference to the given NullableString and assigns it to the PtrId field.
 func (o *CreateNetworkPoolIp200ResponseNetworkPool) SetPtrId(v string) {
-	o.PtrId = &v
+	o.PtrId.Set(&v)
+}
+
+// SetPtrIdNil sets the value for PtrId to be an explicit nil
+func (o *CreateNetworkPoolIp200ResponseNetworkPool) SetPtrIdNil() {
+	o.PtrId.Set(nil)
+}
+
+// UnsetPtrId ensures that no value is present for PtrId, not even an explicit nil
+func (o *CreateNetworkPoolIp200ResponseNetworkPool) UnsetPtrId() {
+	o.PtrId.Unset()
 }
 
 // GetDateCreated returns the DateCreated field value if set, zero value otherwise.
@@ -741,132 +840,176 @@ func (o *CreateNetworkPoolIp200ResponseNetworkPool) SetEndDate(v time.Time) {
 	o.EndDate = &v
 }
 
-// GetRefType returns the RefType field value if set, zero value otherwise.
+// GetRefType returns the RefType field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CreateNetworkPoolIp200ResponseNetworkPool) GetRefType() string {
-	if o == nil || IsNil(o.RefType) {
+	if o == nil || IsNil(o.RefType.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.RefType
+	return *o.RefType.Get()
 }
 
 // GetRefTypeOk returns a tuple with the RefType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CreateNetworkPoolIp200ResponseNetworkPool) GetRefTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.RefType) {
+	if o == nil {
 		return nil, false
 	}
-	return o.RefType, true
+	return o.RefType.Get(), o.RefType.IsSet()
 }
 
 // IsSetRefType returns a boolean if a field has been set.
 func (o *CreateNetworkPoolIp200ResponseNetworkPool) IsSetRefType() bool {
-	if o != nil && !IsNil(o.RefType) {
+	if o != nil && o.RefType.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetRefType gets a reference to the given string and assigns it to the RefType field.
+// SetRefType gets a reference to the given NullableString and assigns it to the RefType field.
 func (o *CreateNetworkPoolIp200ResponseNetworkPool) SetRefType(v string) {
-	o.RefType = &v
+	o.RefType.Set(&v)
 }
 
-// GetRefId returns the RefId field value if set, zero value otherwise.
+// SetRefTypeNil sets the value for RefType to be an explicit nil
+func (o *CreateNetworkPoolIp200ResponseNetworkPool) SetRefTypeNil() {
+	o.RefType.Set(nil)
+}
+
+// UnsetRefType ensures that no value is present for RefType, not even an explicit nil
+func (o *CreateNetworkPoolIp200ResponseNetworkPool) UnsetRefType() {
+	o.RefType.Unset()
+}
+
+// GetRefId returns the RefId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CreateNetworkPoolIp200ResponseNetworkPool) GetRefId() int64 {
-	if o == nil || IsNil(o.RefId) {
+	if o == nil || IsNil(o.RefId.Get()) {
 		var ret int64
 		return ret
 	}
-	return *o.RefId
+	return *o.RefId.Get()
 }
 
 // GetRefIdOk returns a tuple with the RefId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CreateNetworkPoolIp200ResponseNetworkPool) GetRefIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.RefId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.RefId, true
+	return o.RefId.Get(), o.RefId.IsSet()
 }
 
 // IsSetRefId returns a boolean if a field has been set.
 func (o *CreateNetworkPoolIp200ResponseNetworkPool) IsSetRefId() bool {
-	if o != nil && !IsNil(o.RefId) {
+	if o != nil && o.RefId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetRefId gets a reference to the given int64 and assigns it to the RefId field.
+// SetRefId gets a reference to the given NullableInt64 and assigns it to the RefId field.
 func (o *CreateNetworkPoolIp200ResponseNetworkPool) SetRefId(v int64) {
-	o.RefId = &v
+	o.RefId.Set(&v)
 }
 
-// GetSubRefId returns the SubRefId field value if set, zero value otherwise.
+// SetRefIdNil sets the value for RefId to be an explicit nil
+func (o *CreateNetworkPoolIp200ResponseNetworkPool) SetRefIdNil() {
+	o.RefId.Set(nil)
+}
+
+// UnsetRefId ensures that no value is present for RefId, not even an explicit nil
+func (o *CreateNetworkPoolIp200ResponseNetworkPool) UnsetRefId() {
+	o.RefId.Unset()
+}
+
+// GetSubRefId returns the SubRefId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CreateNetworkPoolIp200ResponseNetworkPool) GetSubRefId() int64 {
-	if o == nil || IsNil(o.SubRefId) {
+	if o == nil || IsNil(o.SubRefId.Get()) {
 		var ret int64
 		return ret
 	}
-	return *o.SubRefId
+	return *o.SubRefId.Get()
 }
 
 // GetSubRefIdOk returns a tuple with the SubRefId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CreateNetworkPoolIp200ResponseNetworkPool) GetSubRefIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.SubRefId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.SubRefId, true
+	return o.SubRefId.Get(), o.SubRefId.IsSet()
 }
 
 // IsSetSubRefId returns a boolean if a field has been set.
 func (o *CreateNetworkPoolIp200ResponseNetworkPool) IsSetSubRefId() bool {
-	if o != nil && !IsNil(o.SubRefId) {
+	if o != nil && o.SubRefId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetSubRefId gets a reference to the given int64 and assigns it to the SubRefId field.
+// SetSubRefId gets a reference to the given NullableInt64 and assigns it to the SubRefId field.
 func (o *CreateNetworkPoolIp200ResponseNetworkPool) SetSubRefId(v int64) {
-	o.SubRefId = &v
+	o.SubRefId.Set(&v)
 }
 
-// GetNetworkDomain returns the NetworkDomain field value if set, zero value otherwise.
+// SetSubRefIdNil sets the value for SubRefId to be an explicit nil
+func (o *CreateNetworkPoolIp200ResponseNetworkPool) SetSubRefIdNil() {
+	o.SubRefId.Set(nil)
+}
+
+// UnsetSubRefId ensures that no value is present for SubRefId, not even an explicit nil
+func (o *CreateNetworkPoolIp200ResponseNetworkPool) UnsetSubRefId() {
+	o.SubRefId.Unset()
+}
+
+// GetNetworkDomain returns the NetworkDomain field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CreateNetworkPoolIp200ResponseNetworkPool) GetNetworkDomain() string {
-	if o == nil || IsNil(o.NetworkDomain) {
+	if o == nil || IsNil(o.NetworkDomain.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.NetworkDomain
+	return *o.NetworkDomain.Get()
 }
 
 // GetNetworkDomainOk returns a tuple with the NetworkDomain field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CreateNetworkPoolIp200ResponseNetworkPool) GetNetworkDomainOk() (*string, bool) {
-	if o == nil || IsNil(o.NetworkDomain) {
+	if o == nil {
 		return nil, false
 	}
-	return o.NetworkDomain, true
+	return o.NetworkDomain.Get(), o.NetworkDomain.IsSet()
 }
 
 // IsSetNetworkDomain returns a boolean if a field has been set.
 func (o *CreateNetworkPoolIp200ResponseNetworkPool) IsSetNetworkDomain() bool {
-	if o != nil && !IsNil(o.NetworkDomain) {
+	if o != nil && o.NetworkDomain.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetNetworkDomain gets a reference to the given string and assigns it to the NetworkDomain field.
+// SetNetworkDomain gets a reference to the given NullableString and assigns it to the NetworkDomain field.
 func (o *CreateNetworkPoolIp200ResponseNetworkPool) SetNetworkDomain(v string) {
-	o.NetworkDomain = &v
+	o.NetworkDomain.Set(&v)
+}
+
+// SetNetworkDomainNil sets the value for NetworkDomain to be an explicit nil
+func (o *CreateNetworkPoolIp200ResponseNetworkPool) SetNetworkDomainNil() {
+	o.NetworkDomain.Set(nil)
+}
+
+// UnsetNetworkDomain ensures that no value is present for NetworkDomain, not even an explicit nil
+func (o *CreateNetworkPoolIp200ResponseNetworkPool) UnsetNetworkDomain() {
+	o.NetworkDomain.Unset()
 }
 
 // GetCreatedBy returns the CreatedBy field value if set, zero value otherwise.
@@ -923,20 +1066,20 @@ func (o CreateNetworkPoolIp200ResponseNetworkPool) ToMap() (map[string]interface
 	if !IsNil(o.IpAddress) {
 		toSerialize["ipAddress"] = o.IpAddress
 	}
-	if !IsNil(o.GatewayAddress) {
-		toSerialize["gatewayAddress"] = o.GatewayAddress
+	if o.GatewayAddress.IsSet() {
+		toSerialize["gatewayAddress"] = o.GatewayAddress.Get()
 	}
-	if !IsNil(o.SubnetMask) {
-		toSerialize["subnetMask"] = o.SubnetMask
+	if o.SubnetMask.IsSet() {
+		toSerialize["subnetMask"] = o.SubnetMask.Get()
 	}
-	if !IsNil(o.DnsServer) {
-		toSerialize["dnsServer"] = o.DnsServer
+	if o.DnsServer.IsSet() {
+		toSerialize["dnsServer"] = o.DnsServer.Get()
 	}
-	if !IsNil(o.InterfaceName) {
-		toSerialize["interfaceName"] = o.InterfaceName
+	if o.InterfaceName.IsSet() {
+		toSerialize["interfaceName"] = o.InterfaceName.Get()
 	}
-	if !IsNil(o.Description) {
-		toSerialize["description"] = o.Description
+	if o.Description.IsSet() {
+		toSerialize["description"] = o.Description.Get()
 	}
 	if !IsNil(o.Active) {
 		toSerialize["active"] = o.Active
@@ -947,20 +1090,20 @@ func (o CreateNetworkPoolIp200ResponseNetworkPool) ToMap() (map[string]interface
 	if !IsNil(o.Fqdn) {
 		toSerialize["fqdn"] = o.Fqdn
 	}
-	if !IsNil(o.DomainName) {
-		toSerialize["domainName"] = o.DomainName
+	if o.DomainName.IsSet() {
+		toSerialize["domainName"] = o.DomainName.Get()
 	}
 	if !IsNil(o.Hostname) {
 		toSerialize["hostname"] = o.Hostname
 	}
-	if !IsNil(o.InternalId) {
-		toSerialize["internalId"] = o.InternalId
+	if o.InternalId.IsSet() {
+		toSerialize["internalId"] = o.InternalId.Get()
 	}
-	if !IsNil(o.ExternalId) {
-		toSerialize["externalId"] = o.ExternalId
+	if o.ExternalId.IsSet() {
+		toSerialize["externalId"] = o.ExternalId.Get()
 	}
-	if !IsNil(o.PtrId) {
-		toSerialize["ptrId"] = o.PtrId
+	if o.PtrId.IsSet() {
+		toSerialize["ptrId"] = o.PtrId.Get()
 	}
 	if !IsNil(o.DateCreated) {
 		toSerialize["dateCreated"] = o.DateCreated
@@ -974,17 +1117,17 @@ func (o CreateNetworkPoolIp200ResponseNetworkPool) ToMap() (map[string]interface
 	if !IsNil(o.EndDate) {
 		toSerialize["endDate"] = o.EndDate
 	}
-	if !IsNil(o.RefType) {
-		toSerialize["refType"] = o.RefType
+	if o.RefType.IsSet() {
+		toSerialize["refType"] = o.RefType.Get()
 	}
-	if !IsNil(o.RefId) {
-		toSerialize["refId"] = o.RefId
+	if o.RefId.IsSet() {
+		toSerialize["refId"] = o.RefId.Get()
 	}
-	if !IsNil(o.SubRefId) {
-		toSerialize["subRefId"] = o.SubRefId
+	if o.SubRefId.IsSet() {
+		toSerialize["subRefId"] = o.SubRefId.Get()
 	}
-	if !IsNil(o.NetworkDomain) {
-		toSerialize["networkDomain"] = o.NetworkDomain
+	if o.NetworkDomain.IsSet() {
+		toSerialize["networkDomain"] = o.NetworkDomain.Get()
 	}
 	if !IsNil(o.CreatedBy) {
 		toSerialize["createdBy"] = o.CreatedBy

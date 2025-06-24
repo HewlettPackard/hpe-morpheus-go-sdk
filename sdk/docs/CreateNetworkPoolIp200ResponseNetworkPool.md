@@ -8,27 +8,27 @@ Name | Type | Description | Notes
 **NetworkPoolId** | Pointer to **int64** |  | [optional] 
 **IpType** | Pointer to **string** |  | [optional] 
 **IpAddress** | Pointer to **string** |  | [optional] 
-**GatewayAddress** | Pointer to **string** |  | [optional] 
-**SubnetMask** | Pointer to **string** |  | [optional] 
-**DnsServer** | Pointer to **string** |  | [optional] 
-**InterfaceName** | Pointer to **string** |  | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
+**GatewayAddress** | Pointer to **NullableString** |  | [optional] 
+**SubnetMask** | Pointer to **NullableString** |  | [optional] 
+**DnsServer** | Pointer to **NullableString** |  | [optional] 
+**InterfaceName** | Pointer to **NullableString** |  | [optional] 
+**Description** | Pointer to **NullableString** |  | [optional] 
 **Active** | Pointer to **bool** |  | [optional] 
 **StaticIp** | Pointer to **bool** |  | [optional] 
 **Fqdn** | Pointer to **string** |  | [optional] 
-**DomainName** | Pointer to **string** |  | [optional] 
+**DomainName** | Pointer to **NullableString** |  | [optional] 
 **Hostname** | Pointer to **string** |  | [optional] 
-**InternalId** | Pointer to **string** |  | [optional] 
-**ExternalId** | Pointer to **string** |  | [optional] 
-**PtrId** | Pointer to **string** |  | [optional] 
+**InternalId** | Pointer to **NullableString** |  | [optional] 
+**ExternalId** | Pointer to **NullableString** |  | [optional] 
+**PtrId** | Pointer to **NullableString** |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
 **StartDate** | Pointer to **time.Time** |  | [optional] 
 **EndDate** | Pointer to **time.Time** |  | [optional] 
-**RefType** | Pointer to **string** |  | [optional] 
-**RefId** | Pointer to **int64** |  | [optional] 
-**SubRefId** | Pointer to **int64** |  | [optional] 
-**NetworkDomain** | Pointer to **string** |  | [optional] 
+**RefType** | Pointer to **NullableString** |  | [optional] 
+**RefId** | Pointer to **NullableInt64** |  | [optional] 
+**SubRefId** | Pointer to **NullableInt64** |  | [optional] 
+**NetworkDomain** | Pointer to **NullableString** |  | [optional] 
 **CreatedBy** | Pointer to [**ListActivity200ResponseAllOfActivityInnerActivityInnerUser**](ListActivity200ResponseAllOfActivityInnerActivityInnerUser.md) |  | [optional] 
 
 ## Methods
@@ -175,6 +175,16 @@ SetGatewayAddress sets GatewayAddress field to given value.
 
 HasGatewayAddress returns a boolean if a field has been set.
 
+### SetGatewayAddressNil
+
+`func (o *CreateNetworkPoolIp200ResponseNetworkPool) SetGatewayAddressNil(b bool)`
+
+ SetGatewayAddressNil sets the value for GatewayAddress to be an explicit nil
+
+### UnsetGatewayAddress
+`func (o *CreateNetworkPoolIp200ResponseNetworkPool) UnsetGatewayAddress()`
+
+UnsetGatewayAddress ensures that no value is present for GatewayAddress, not even an explicit nil
 ### GetSubnetMask
 
 `func (o *CreateNetworkPoolIp200ResponseNetworkPool) GetSubnetMask() string`
@@ -200,6 +210,16 @@ SetSubnetMask sets SubnetMask field to given value.
 
 HasSubnetMask returns a boolean if a field has been set.
 
+### SetSubnetMaskNil
+
+`func (o *CreateNetworkPoolIp200ResponseNetworkPool) SetSubnetMaskNil(b bool)`
+
+ SetSubnetMaskNil sets the value for SubnetMask to be an explicit nil
+
+### UnsetSubnetMask
+`func (o *CreateNetworkPoolIp200ResponseNetworkPool) UnsetSubnetMask()`
+
+UnsetSubnetMask ensures that no value is present for SubnetMask, not even an explicit nil
 ### GetDnsServer
 
 `func (o *CreateNetworkPoolIp200ResponseNetworkPool) GetDnsServer() string`
@@ -225,6 +245,16 @@ SetDnsServer sets DnsServer field to given value.
 
 HasDnsServer returns a boolean if a field has been set.
 
+### SetDnsServerNil
+
+`func (o *CreateNetworkPoolIp200ResponseNetworkPool) SetDnsServerNil(b bool)`
+
+ SetDnsServerNil sets the value for DnsServer to be an explicit nil
+
+### UnsetDnsServer
+`func (o *CreateNetworkPoolIp200ResponseNetworkPool) UnsetDnsServer()`
+
+UnsetDnsServer ensures that no value is present for DnsServer, not even an explicit nil
 ### GetInterfaceName
 
 `func (o *CreateNetworkPoolIp200ResponseNetworkPool) GetInterfaceName() string`
@@ -250,6 +280,16 @@ SetInterfaceName sets InterfaceName field to given value.
 
 HasInterfaceName returns a boolean if a field has been set.
 
+### SetInterfaceNameNil
+
+`func (o *CreateNetworkPoolIp200ResponseNetworkPool) SetInterfaceNameNil(b bool)`
+
+ SetInterfaceNameNil sets the value for InterfaceName to be an explicit nil
+
+### UnsetInterfaceName
+`func (o *CreateNetworkPoolIp200ResponseNetworkPool) UnsetInterfaceName()`
+
+UnsetInterfaceName ensures that no value is present for InterfaceName, not even an explicit nil
 ### GetDescription
 
 `func (o *CreateNetworkPoolIp200ResponseNetworkPool) GetDescription() string`
@@ -275,6 +315,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *CreateNetworkPoolIp200ResponseNetworkPool) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *CreateNetworkPoolIp200ResponseNetworkPool) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetActive
 
 `func (o *CreateNetworkPoolIp200ResponseNetworkPool) GetActive() bool`
@@ -375,6 +425,16 @@ SetDomainName sets DomainName field to given value.
 
 HasDomainName returns a boolean if a field has been set.
 
+### SetDomainNameNil
+
+`func (o *CreateNetworkPoolIp200ResponseNetworkPool) SetDomainNameNil(b bool)`
+
+ SetDomainNameNil sets the value for DomainName to be an explicit nil
+
+### UnsetDomainName
+`func (o *CreateNetworkPoolIp200ResponseNetworkPool) UnsetDomainName()`
+
+UnsetDomainName ensures that no value is present for DomainName, not even an explicit nil
 ### GetHostname
 
 `func (o *CreateNetworkPoolIp200ResponseNetworkPool) GetHostname() string`
@@ -425,6 +485,16 @@ SetInternalId sets InternalId field to given value.
 
 HasInternalId returns a boolean if a field has been set.
 
+### SetInternalIdNil
+
+`func (o *CreateNetworkPoolIp200ResponseNetworkPool) SetInternalIdNil(b bool)`
+
+ SetInternalIdNil sets the value for InternalId to be an explicit nil
+
+### UnsetInternalId
+`func (o *CreateNetworkPoolIp200ResponseNetworkPool) UnsetInternalId()`
+
+UnsetInternalId ensures that no value is present for InternalId, not even an explicit nil
 ### GetExternalId
 
 `func (o *CreateNetworkPoolIp200ResponseNetworkPool) GetExternalId() string`
@@ -450,6 +520,16 @@ SetExternalId sets ExternalId field to given value.
 
 HasExternalId returns a boolean if a field has been set.
 
+### SetExternalIdNil
+
+`func (o *CreateNetworkPoolIp200ResponseNetworkPool) SetExternalIdNil(b bool)`
+
+ SetExternalIdNil sets the value for ExternalId to be an explicit nil
+
+### UnsetExternalId
+`func (o *CreateNetworkPoolIp200ResponseNetworkPool) UnsetExternalId()`
+
+UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
 ### GetPtrId
 
 `func (o *CreateNetworkPoolIp200ResponseNetworkPool) GetPtrId() string`
@@ -475,6 +555,16 @@ SetPtrId sets PtrId field to given value.
 
 HasPtrId returns a boolean if a field has been set.
 
+### SetPtrIdNil
+
+`func (o *CreateNetworkPoolIp200ResponseNetworkPool) SetPtrIdNil(b bool)`
+
+ SetPtrIdNil sets the value for PtrId to be an explicit nil
+
+### UnsetPtrId
+`func (o *CreateNetworkPoolIp200ResponseNetworkPool) UnsetPtrId()`
+
+UnsetPtrId ensures that no value is present for PtrId, not even an explicit nil
 ### GetDateCreated
 
 `func (o *CreateNetworkPoolIp200ResponseNetworkPool) GetDateCreated() time.Time`
@@ -600,6 +690,16 @@ SetRefType sets RefType field to given value.
 
 HasRefType returns a boolean if a field has been set.
 
+### SetRefTypeNil
+
+`func (o *CreateNetworkPoolIp200ResponseNetworkPool) SetRefTypeNil(b bool)`
+
+ SetRefTypeNil sets the value for RefType to be an explicit nil
+
+### UnsetRefType
+`func (o *CreateNetworkPoolIp200ResponseNetworkPool) UnsetRefType()`
+
+UnsetRefType ensures that no value is present for RefType, not even an explicit nil
 ### GetRefId
 
 `func (o *CreateNetworkPoolIp200ResponseNetworkPool) GetRefId() int64`
@@ -625,6 +725,16 @@ SetRefId sets RefId field to given value.
 
 HasRefId returns a boolean if a field has been set.
 
+### SetRefIdNil
+
+`func (o *CreateNetworkPoolIp200ResponseNetworkPool) SetRefIdNil(b bool)`
+
+ SetRefIdNil sets the value for RefId to be an explicit nil
+
+### UnsetRefId
+`func (o *CreateNetworkPoolIp200ResponseNetworkPool) UnsetRefId()`
+
+UnsetRefId ensures that no value is present for RefId, not even an explicit nil
 ### GetSubRefId
 
 `func (o *CreateNetworkPoolIp200ResponseNetworkPool) GetSubRefId() int64`
@@ -650,6 +760,16 @@ SetSubRefId sets SubRefId field to given value.
 
 HasSubRefId returns a boolean if a field has been set.
 
+### SetSubRefIdNil
+
+`func (o *CreateNetworkPoolIp200ResponseNetworkPool) SetSubRefIdNil(b bool)`
+
+ SetSubRefIdNil sets the value for SubRefId to be an explicit nil
+
+### UnsetSubRefId
+`func (o *CreateNetworkPoolIp200ResponseNetworkPool) UnsetSubRefId()`
+
+UnsetSubRefId ensures that no value is present for SubRefId, not even an explicit nil
 ### GetNetworkDomain
 
 `func (o *CreateNetworkPoolIp200ResponseNetworkPool) GetNetworkDomain() string`
@@ -675,6 +795,16 @@ SetNetworkDomain sets NetworkDomain field to given value.
 
 HasNetworkDomain returns a boolean if a field has been set.
 
+### SetNetworkDomainNil
+
+`func (o *CreateNetworkPoolIp200ResponseNetworkPool) SetNetworkDomainNil(b bool)`
+
+ SetNetworkDomainNil sets the value for NetworkDomain to be an explicit nil
+
+### UnsetNetworkDomain
+`func (o *CreateNetworkPoolIp200ResponseNetworkPool) UnsetNetworkDomain()`
+
+UnsetNetworkDomain ensures that no value is present for NetworkDomain, not even an explicit nil
 ### GetCreatedBy
 
 `func (o *CreateNetworkPoolIp200ResponseNetworkPool) GetCreatedBy() ListActivity200ResponseAllOfActivityInnerActivityInnerUser`

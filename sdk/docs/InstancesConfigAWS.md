@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**NoAgent** | Pointer to **bool** | Skipping Agent installation will result in a lack of logging and guest operating system statistics. Automation scripts may also be adversely affected. | [optional] [default to false]
+**NoAgent** | Pointer to **NullableBool** | Skipping Agent installation will result in a lack of logging and guest operating system statistics. Automation scripts may also be adversely affected. | [optional] [default to false]
 **IsEC2** | Pointer to **string** | Amazon Cloud Type | [optional] [default to "false"]
 **AvailabilityId** | Pointer to **string** | Amazon Zone | [optional] 
 **SecurityId** | Pointer to **string** | Security Group | [optional] 
@@ -56,6 +56,16 @@ SetNoAgent sets NoAgent field to given value.
 
 HasNoAgent returns a boolean if a field has been set.
 
+### SetNoAgentNil
+
+`func (o *InstancesConfigAWS) SetNoAgentNil(b bool)`
+
+ SetNoAgentNil sets the value for NoAgent to be an explicit nil
+
+### UnsetNoAgent
+`func (o *InstancesConfigAWS) UnsetNoAgent()`
+
+UnsetNoAgent ensures that no value is present for NoAgent, not even an explicit nil
 ### GetIsEC2
 
 `func (o *InstancesConfigAWS) GetIsEC2() string`

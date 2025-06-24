@@ -8,10 +8,10 @@ Name | Type | Description | Notes
 **NetworkGroups** | Pointer to [**[]ListInstanceServicePlans200ResponsePlansInnerAutoOptionsInner**](ListInstanceServicePlans200ResponsePlansInnerAutoOptionsInner.md) |  | [optional] 
 **NetworkTypes** | Pointer to [**[]ZoneNetworkOptionsNetworkTypesInner**](ZoneNetworkOptionsNetworkTypesInner.md) |  | [optional] 
 **NetworkSubnets** | Pointer to [**[]ZoneNetworkOptionsNetworkSubnetsInner**](ZoneNetworkOptionsNetworkSubnetsInner.md) |  | [optional] 
-**HasNetworks** | Pointer to **bool** |  | [optional] 
-**MaxNetworks** | Pointer to **int64** |  | [optional] 
-**EnableNetworkTypeSelection** | Pointer to **string** |  | [optional] 
-**SupportsNetworkSelection** | Pointer to **bool** |  | [optional] 
+**HasNetworks** | Pointer to **NullableBool** |  | [optional] 
+**MaxNetworks** | Pointer to **NullableInt64** |  | [optional] 
+**EnableNetworkTypeSelection** | Pointer to **NullableString** |  | [optional] 
+**SupportsNetworkSelection** | Pointer to **NullableBool** |  | [optional] 
 
 ## Methods
 
@@ -157,6 +157,16 @@ SetHasNetworks sets HasNetworks field to given value.
 
 HasHasNetworks returns a boolean if a field has been set.
 
+### SetHasNetworksNil
+
+`func (o *ZoneNetworkOptions) SetHasNetworksNil(b bool)`
+
+ SetHasNetworksNil sets the value for HasNetworks to be an explicit nil
+
+### UnsetHasNetworks
+`func (o *ZoneNetworkOptions) UnsetHasNetworks()`
+
+UnsetHasNetworks ensures that no value is present for HasNetworks, not even an explicit nil
 ### GetMaxNetworks
 
 `func (o *ZoneNetworkOptions) GetMaxNetworks() int64`
@@ -182,6 +192,16 @@ SetMaxNetworks sets MaxNetworks field to given value.
 
 HasMaxNetworks returns a boolean if a field has been set.
 
+### SetMaxNetworksNil
+
+`func (o *ZoneNetworkOptions) SetMaxNetworksNil(b bool)`
+
+ SetMaxNetworksNil sets the value for MaxNetworks to be an explicit nil
+
+### UnsetMaxNetworks
+`func (o *ZoneNetworkOptions) UnsetMaxNetworks()`
+
+UnsetMaxNetworks ensures that no value is present for MaxNetworks, not even an explicit nil
 ### GetEnableNetworkTypeSelection
 
 `func (o *ZoneNetworkOptions) GetEnableNetworkTypeSelection() string`
@@ -207,6 +227,16 @@ SetEnableNetworkTypeSelection sets EnableNetworkTypeSelection field to given val
 
 HasEnableNetworkTypeSelection returns a boolean if a field has been set.
 
+### SetEnableNetworkTypeSelectionNil
+
+`func (o *ZoneNetworkOptions) SetEnableNetworkTypeSelectionNil(b bool)`
+
+ SetEnableNetworkTypeSelectionNil sets the value for EnableNetworkTypeSelection to be an explicit nil
+
+### UnsetEnableNetworkTypeSelection
+`func (o *ZoneNetworkOptions) UnsetEnableNetworkTypeSelection()`
+
+UnsetEnableNetworkTypeSelection ensures that no value is present for EnableNetworkTypeSelection, not even an explicit nil
 ### GetSupportsNetworkSelection
 
 `func (o *ZoneNetworkOptions) GetSupportsNetworkSelection() bool`
@@ -232,6 +262,16 @@ SetSupportsNetworkSelection sets SupportsNetworkSelection field to given value.
 
 HasSupportsNetworkSelection returns a boolean if a field has been set.
 
+### SetSupportsNetworkSelectionNil
+
+`func (o *ZoneNetworkOptions) SetSupportsNetworkSelectionNil(b bool)`
+
+ SetSupportsNetworkSelectionNil sets the value for SupportsNetworkSelection to be an explicit nil
+
+### UnsetSupportsNetworkSelection
+`func (o *ZoneNetworkOptions) UnsetSupportsNetworkSelection()`
+
+UnsetSupportsNetworkSelection ensures that no value is present for SupportsNetworkSelection, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

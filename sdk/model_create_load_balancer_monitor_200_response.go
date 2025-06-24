@@ -22,7 +22,7 @@ var _ MappedNullable = &CreateLoadBalancerMonitor200Response{}
 type CreateLoadBalancerMonitor200Response struct {
 	LoadBalancerMonitor  *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner `json:"loadBalancerMonitor,omitempty"`
 	Success              *bool                                                              `json:"success,omitempty"`
-	Msg                  *string                                                            `json:"msg,omitempty"`
+	Msg                  NullableString                                                     `json:"msg,omitempty"`
 	AdditionalProperties map[string]interface{}                                             `json:",remain"`
 }
 
@@ -109,36 +109,47 @@ func (o *CreateLoadBalancerMonitor200Response) SetSuccess(v bool) {
 	o.Success = &v
 }
 
-// GetMsg returns the Msg field value if set, zero value otherwise.
+// GetMsg returns the Msg field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CreateLoadBalancerMonitor200Response) GetMsg() string {
-	if o == nil || IsNil(o.Msg) {
+	if o == nil || IsNil(o.Msg.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Msg
+	return *o.Msg.Get()
 }
 
 // GetMsgOk returns a tuple with the Msg field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CreateLoadBalancerMonitor200Response) GetMsgOk() (*string, bool) {
-	if o == nil || IsNil(o.Msg) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Msg, true
+	return o.Msg.Get(), o.Msg.IsSet()
 }
 
 // IsSetMsg returns a boolean if a field has been set.
 func (o *CreateLoadBalancerMonitor200Response) IsSetMsg() bool {
-	if o != nil && !IsNil(o.Msg) {
+	if o != nil && o.Msg.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetMsg gets a reference to the given string and assigns it to the Msg field.
+// SetMsg gets a reference to the given NullableString and assigns it to the Msg field.
 func (o *CreateLoadBalancerMonitor200Response) SetMsg(v string) {
-	o.Msg = &v
+	o.Msg.Set(&v)
+}
+
+// SetMsgNil sets the value for Msg to be an explicit nil
+func (o *CreateLoadBalancerMonitor200Response) SetMsgNil() {
+	o.Msg.Set(nil)
+}
+
+// UnsetMsg ensures that no value is present for Msg, not even an explicit nil
+func (o *CreateLoadBalancerMonitor200Response) UnsetMsg() {
+	o.Msg.Unset()
 }
 
 func (o CreateLoadBalancerMonitor200Response) MarshalJSON() ([]byte, error) {
@@ -157,8 +168,8 @@ func (o CreateLoadBalancerMonitor200Response) ToMap() (map[string]interface{}, e
 	if !IsNil(o.Success) {
 		toSerialize["success"] = o.Success
 	}
-	if !IsNil(o.Msg) {
-		toSerialize["msg"] = o.Msg
+	if o.Msg.IsSet() {
+		toSerialize["msg"] = o.Msg.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {

@@ -5,13 +5,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Authority** | **string** | Authority (Name) | 
-**Description** | Pointer to **string** | Description | [optional] 
-**LandingUrl** | Pointer to **string** | An optional override for the default landing page after login for a user. | [optional] 
+**Description** | Pointer to **NullableString** | Description | [optional] 
+**LandingUrl** | Pointer to **NullableString** | An optional override for the default landing page after login for a user. | [optional] 
 **RoleType** | Pointer to **string** | Role type | [optional] [default to "user"]
 **BaseRoleId** | Pointer to **int64** | Base Role ID. Create the new role with the same permissions and access levels that the specified base role has. If this is not passed, the role is create without any permissions. | [optional] 
 **Multitenant** | Pointer to **bool** | Multitenant roles are copied to all tenant accounts and kept in sync until a sub-tenant user modifies their copy of the role. *Only available to master tenant* | [optional] [default to false]
 **MultitenantLocked** | Pointer to **bool** | Multitenant Locked, prevents sub-tenant users from modifying their copy of multienant roles. *Only available to master tenant* | [optional] [default to false]
-**DefaultPersona** | Pointer to **string** |  | [optional] 
+**DefaultPersona** | Pointer to **NullableString** |  | [optional] 
 **FeaturePermissions** | Pointer to [**[]AddRolesRequestRoleFeaturePermissionsInner**](AddRolesRequestRoleFeaturePermissionsInner.md) | Set the access level for the specified permissions. | [optional] 
 **GlobalSiteAccess** | Pointer to **string** | Set the default access level for for groups (sites). Only applies to user roles. | [optional] 
 **Sites** | Pointer to [**[]AddRolesRequestRoleSitesInner**](AddRolesRequestRoleSitesInner.md) | Set the access level for the specified groups (sites). Only applies to user roles. | [optional] 
@@ -99,6 +99,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *AddRolesRequestRole) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *AddRolesRequestRole) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetLandingUrl
 
 `func (o *AddRolesRequestRole) GetLandingUrl() string`
@@ -124,6 +134,16 @@ SetLandingUrl sets LandingUrl field to given value.
 
 HasLandingUrl returns a boolean if a field has been set.
 
+### SetLandingUrlNil
+
+`func (o *AddRolesRequestRole) SetLandingUrlNil(b bool)`
+
+ SetLandingUrlNil sets the value for LandingUrl to be an explicit nil
+
+### UnsetLandingUrl
+`func (o *AddRolesRequestRole) UnsetLandingUrl()`
+
+UnsetLandingUrl ensures that no value is present for LandingUrl, not even an explicit nil
 ### GetRoleType
 
 `func (o *AddRolesRequestRole) GetRoleType() string`
@@ -249,6 +269,16 @@ SetDefaultPersona sets DefaultPersona field to given value.
 
 HasDefaultPersona returns a boolean if a field has been set.
 
+### SetDefaultPersonaNil
+
+`func (o *AddRolesRequestRole) SetDefaultPersonaNil(b bool)`
+
+ SetDefaultPersonaNil sets the value for DefaultPersona to be an explicit nil
+
+### UnsetDefaultPersona
+`func (o *AddRolesRequestRole) UnsetDefaultPersona()`
+
+UnsetDefaultPersona ensures that no value is present for DefaultPersona, not even an explicit nil
 ### GetFeaturePermissions
 
 `func (o *AddRolesRequestRole) GetFeaturePermissions() []AddRolesRequestRoleFeaturePermissionsInner`

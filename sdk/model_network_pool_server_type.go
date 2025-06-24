@@ -21,13 +21,13 @@ var _ MappedNullable = &NetworkPoolServerType{}
 // NetworkPoolServerType struct for NetworkPoolServerType
 type NetworkPoolServerType struct {
 	Id                   *int64                                                                      `json:"id,omitempty"`
-	PoolService          *string                                                                     `json:"poolService,omitempty"`
+	PoolService          NullableString                                                              `json:"poolService,omitempty"`
 	Selectable           *bool                                                                       `json:"selectable,omitempty"`
 	Code                 *string                                                                     `json:"code,omitempty"`
-	IntegrationCode      *string                                                                     `json:"integrationCode,omitempty"`
+	IntegrationCode      NullableString                                                              `json:"integrationCode,omitempty"`
 	Name                 *string                                                                     `json:"name,omitempty"`
 	Enabled              *bool                                                                       `json:"enabled,omitempty"`
-	Description          *string                                                                     `json:"description,omitempty"`
+	Description          NullableString                                                              `json:"description,omitempty"`
 	OptionTypes          []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
 	AdditionalProperties map[string]interface{}                                                      `json:",remain"`
 }
@@ -83,36 +83,47 @@ func (o *NetworkPoolServerType) SetId(v int64) {
 	o.Id = &v
 }
 
-// GetPoolService returns the PoolService field value if set, zero value otherwise.
+// GetPoolService returns the PoolService field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NetworkPoolServerType) GetPoolService() string {
-	if o == nil || IsNil(o.PoolService) {
+	if o == nil || IsNil(o.PoolService.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.PoolService
+	return *o.PoolService.Get()
 }
 
 // GetPoolServiceOk returns a tuple with the PoolService field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NetworkPoolServerType) GetPoolServiceOk() (*string, bool) {
-	if o == nil || IsNil(o.PoolService) {
+	if o == nil {
 		return nil, false
 	}
-	return o.PoolService, true
+	return o.PoolService.Get(), o.PoolService.IsSet()
 }
 
 // IsSetPoolService returns a boolean if a field has been set.
 func (o *NetworkPoolServerType) IsSetPoolService() bool {
-	if o != nil && !IsNil(o.PoolService) {
+	if o != nil && o.PoolService.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetPoolService gets a reference to the given string and assigns it to the PoolService field.
+// SetPoolService gets a reference to the given NullableString and assigns it to the PoolService field.
 func (o *NetworkPoolServerType) SetPoolService(v string) {
-	o.PoolService = &v
+	o.PoolService.Set(&v)
+}
+
+// SetPoolServiceNil sets the value for PoolService to be an explicit nil
+func (o *NetworkPoolServerType) SetPoolServiceNil() {
+	o.PoolService.Set(nil)
+}
+
+// UnsetPoolService ensures that no value is present for PoolService, not even an explicit nil
+func (o *NetworkPoolServerType) UnsetPoolService() {
+	o.PoolService.Unset()
 }
 
 // GetSelectable returns the Selectable field value if set, zero value otherwise.
@@ -179,36 +190,47 @@ func (o *NetworkPoolServerType) SetCode(v string) {
 	o.Code = &v
 }
 
-// GetIntegrationCode returns the IntegrationCode field value if set, zero value otherwise.
+// GetIntegrationCode returns the IntegrationCode field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NetworkPoolServerType) GetIntegrationCode() string {
-	if o == nil || IsNil(o.IntegrationCode) {
+	if o == nil || IsNil(o.IntegrationCode.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.IntegrationCode
+	return *o.IntegrationCode.Get()
 }
 
 // GetIntegrationCodeOk returns a tuple with the IntegrationCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NetworkPoolServerType) GetIntegrationCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.IntegrationCode) {
+	if o == nil {
 		return nil, false
 	}
-	return o.IntegrationCode, true
+	return o.IntegrationCode.Get(), o.IntegrationCode.IsSet()
 }
 
 // IsSetIntegrationCode returns a boolean if a field has been set.
 func (o *NetworkPoolServerType) IsSetIntegrationCode() bool {
-	if o != nil && !IsNil(o.IntegrationCode) {
+	if o != nil && o.IntegrationCode.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetIntegrationCode gets a reference to the given string and assigns it to the IntegrationCode field.
+// SetIntegrationCode gets a reference to the given NullableString and assigns it to the IntegrationCode field.
 func (o *NetworkPoolServerType) SetIntegrationCode(v string) {
-	o.IntegrationCode = &v
+	o.IntegrationCode.Set(&v)
+}
+
+// SetIntegrationCodeNil sets the value for IntegrationCode to be an explicit nil
+func (o *NetworkPoolServerType) SetIntegrationCodeNil() {
+	o.IntegrationCode.Set(nil)
+}
+
+// UnsetIntegrationCode ensures that no value is present for IntegrationCode, not even an explicit nil
+func (o *NetworkPoolServerType) UnsetIntegrationCode() {
+	o.IntegrationCode.Unset()
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -275,36 +297,47 @@ func (o *NetworkPoolServerType) SetEnabled(v bool) {
 	o.Enabled = &v
 }
 
-// GetDescription returns the Description field value if set, zero value otherwise.
+// GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NetworkPoolServerType) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
+	if o == nil || IsNil(o.Description.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Description
+	return *o.Description.Get()
 }
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NetworkPoolServerType) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Description, true
+	return o.Description.Get(), o.Description.IsSet()
 }
 
 // IsSetDescription returns a boolean if a field has been set.
 func (o *NetworkPoolServerType) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
+	if o != nil && o.Description.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDescription gets a reference to the given string and assigns it to the Description field.
+// SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *NetworkPoolServerType) SetDescription(v string) {
-	o.Description = &v
+	o.Description.Set(&v)
+}
+
+// SetDescriptionNil sets the value for Description to be an explicit nil
+func (o *NetworkPoolServerType) SetDescriptionNil() {
+	o.Description.Set(nil)
+}
+
+// UnsetDescription ensures that no value is present for Description, not even an explicit nil
+func (o *NetworkPoolServerType) UnsetDescription() {
+	o.Description.Unset()
 }
 
 // GetOptionTypes returns the OptionTypes field value if set, zero value otherwise.
@@ -352,8 +385,8 @@ func (o NetworkPoolServerType) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
-	if !IsNil(o.PoolService) {
-		toSerialize["poolService"] = o.PoolService
+	if o.PoolService.IsSet() {
+		toSerialize["poolService"] = o.PoolService.Get()
 	}
 	if !IsNil(o.Selectable) {
 		toSerialize["selectable"] = o.Selectable
@@ -361,8 +394,8 @@ func (o NetworkPoolServerType) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Code) {
 		toSerialize["code"] = o.Code
 	}
-	if !IsNil(o.IntegrationCode) {
-		toSerialize["integrationCode"] = o.IntegrationCode
+	if o.IntegrationCode.IsSet() {
+		toSerialize["integrationCode"] = o.IntegrationCode.Get()
 	}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
@@ -370,8 +403,8 @@ func (o NetworkPoolServerType) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Enabled) {
 		toSerialize["enabled"] = o.Enabled
 	}
-	if !IsNil(o.Description) {
-		toSerialize["description"] = o.Description
+	if o.Description.IsSet() {
+		toSerialize["description"] = o.Description.Get()
 	}
 	if !IsNil(o.OptionTypes) {
 		toSerialize["optionTypes"] = o.OptionTypes

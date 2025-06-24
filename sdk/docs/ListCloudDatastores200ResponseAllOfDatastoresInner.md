@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**Zone** | Pointer to [**ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
+**Zone** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 **FreeSpace** | Pointer to **int64** |  | [optional] 
 **Online** | Pointer to **bool** |  | [optional] 
@@ -86,20 +86,20 @@ HasName returns a boolean if a field has been set.
 
 ### GetZone
 
-`func (o *ListCloudDatastores200ResponseAllOfDatastoresInner) GetZone() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *ListCloudDatastores200ResponseAllOfDatastoresInner) GetZone() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetZone returns the Zone field if non-nil, zero value otherwise.
 
 ### GetZoneOk
 
-`func (o *ListCloudDatastores200ResponseAllOfDatastoresInner) GetZoneOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *ListCloudDatastores200ResponseAllOfDatastoresInner) GetZoneOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetZoneOk returns a tuple with the Zone field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetZone
 
-`func (o *ListCloudDatastores200ResponseAllOfDatastoresInner) SetZone(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *ListCloudDatastores200ResponseAllOfDatastoresInner) SetZone(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetZone sets Zone field to given value.
 
@@ -259,6 +259,16 @@ SetTenants sets Tenants field to given value.
 
 HasTenants returns a boolean if a field has been set.
 
+### SetTenantsNil
+
+`func (o *ListCloudDatastores200ResponseAllOfDatastoresInner) SetTenantsNil(b bool)`
+
+ SetTenantsNil sets the value for Tenants to be an explicit nil
+
+### UnsetTenants
+`func (o *ListCloudDatastores200ResponseAllOfDatastoresInner) UnsetTenants()`
+
+UnsetTenants ensures that no value is present for Tenants, not even an explicit nil
 ### GetResourcePermission
 
 `func (o *ListCloudDatastores200ResponseAllOfDatastoresInner) GetResourcePermission() ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission`

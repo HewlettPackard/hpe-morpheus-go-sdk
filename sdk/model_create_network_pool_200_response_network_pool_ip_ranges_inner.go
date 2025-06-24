@@ -22,17 +22,17 @@ var _ MappedNullable = &CreateNetworkPool200ResponseNetworkPoolIpRangesInner{}
 // CreateNetworkPool200ResponseNetworkPoolIpRangesInner struct for CreateNetworkPool200ResponseNetworkPoolIpRangesInner
 type CreateNetworkPool200ResponseNetworkPoolIpRangesInner struct {
 	Id                   *int64                 `json:"id,omitempty"`
-	StartAddress         *string                `json:"startAddress,omitempty"`
-	EndAddress           *string                `json:"endAddress,omitempty"`
-	InternalId           *string                `json:"internalId,omitempty"`
-	ExternalId           *string                `json:"externalId,omitempty"`
-	Description          *string                `json:"description,omitempty"`
+	StartAddress         NullableString         `json:"startAddress,omitempty"`
+	EndAddress           NullableString         `json:"endAddress,omitempty"`
+	InternalId           NullableString         `json:"internalId,omitempty"`
+	ExternalId           NullableString         `json:"externalId,omitempty"`
+	Description          NullableString         `json:"description,omitempty"`
 	AddressCount         *int64                 `json:"addressCount,omitempty"`
 	Active               *bool                  `json:"active,omitempty"`
 	DateCreated          *time.Time             `json:"dateCreated,omitempty"`
 	LastUpdated          *time.Time             `json:"lastUpdated,omitempty"`
-	Cidr                 *string                `json:"cidr,omitempty"`
-	CidrIPv6             *string                `json:"cidrIPv6,omitempty"`
+	Cidr                 NullableString         `json:"cidr,omitempty"`
+	CidrIPv6             NullableString         `json:"cidrIPv6,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -87,164 +87,219 @@ func (o *CreateNetworkPool200ResponseNetworkPoolIpRangesInner) SetId(v int64) {
 	o.Id = &v
 }
 
-// GetStartAddress returns the StartAddress field value if set, zero value otherwise.
+// GetStartAddress returns the StartAddress field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CreateNetworkPool200ResponseNetworkPoolIpRangesInner) GetStartAddress() string {
-	if o == nil || IsNil(o.StartAddress) {
+	if o == nil || IsNil(o.StartAddress.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.StartAddress
+	return *o.StartAddress.Get()
 }
 
 // GetStartAddressOk returns a tuple with the StartAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CreateNetworkPool200ResponseNetworkPoolIpRangesInner) GetStartAddressOk() (*string, bool) {
-	if o == nil || IsNil(o.StartAddress) {
+	if o == nil {
 		return nil, false
 	}
-	return o.StartAddress, true
+	return o.StartAddress.Get(), o.StartAddress.IsSet()
 }
 
 // IsSetStartAddress returns a boolean if a field has been set.
 func (o *CreateNetworkPool200ResponseNetworkPoolIpRangesInner) IsSetStartAddress() bool {
-	if o != nil && !IsNil(o.StartAddress) {
+	if o != nil && o.StartAddress.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetStartAddress gets a reference to the given string and assigns it to the StartAddress field.
+// SetStartAddress gets a reference to the given NullableString and assigns it to the StartAddress field.
 func (o *CreateNetworkPool200ResponseNetworkPoolIpRangesInner) SetStartAddress(v string) {
-	o.StartAddress = &v
+	o.StartAddress.Set(&v)
 }
 
-// GetEndAddress returns the EndAddress field value if set, zero value otherwise.
+// SetStartAddressNil sets the value for StartAddress to be an explicit nil
+func (o *CreateNetworkPool200ResponseNetworkPoolIpRangesInner) SetStartAddressNil() {
+	o.StartAddress.Set(nil)
+}
+
+// UnsetStartAddress ensures that no value is present for StartAddress, not even an explicit nil
+func (o *CreateNetworkPool200ResponseNetworkPoolIpRangesInner) UnsetStartAddress() {
+	o.StartAddress.Unset()
+}
+
+// GetEndAddress returns the EndAddress field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CreateNetworkPool200ResponseNetworkPoolIpRangesInner) GetEndAddress() string {
-	if o == nil || IsNil(o.EndAddress) {
+	if o == nil || IsNil(o.EndAddress.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.EndAddress
+	return *o.EndAddress.Get()
 }
 
 // GetEndAddressOk returns a tuple with the EndAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CreateNetworkPool200ResponseNetworkPoolIpRangesInner) GetEndAddressOk() (*string, bool) {
-	if o == nil || IsNil(o.EndAddress) {
+	if o == nil {
 		return nil, false
 	}
-	return o.EndAddress, true
+	return o.EndAddress.Get(), o.EndAddress.IsSet()
 }
 
 // IsSetEndAddress returns a boolean if a field has been set.
 func (o *CreateNetworkPool200ResponseNetworkPoolIpRangesInner) IsSetEndAddress() bool {
-	if o != nil && !IsNil(o.EndAddress) {
+	if o != nil && o.EndAddress.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetEndAddress gets a reference to the given string and assigns it to the EndAddress field.
+// SetEndAddress gets a reference to the given NullableString and assigns it to the EndAddress field.
 func (o *CreateNetworkPool200ResponseNetworkPoolIpRangesInner) SetEndAddress(v string) {
-	o.EndAddress = &v
+	o.EndAddress.Set(&v)
 }
 
-// GetInternalId returns the InternalId field value if set, zero value otherwise.
+// SetEndAddressNil sets the value for EndAddress to be an explicit nil
+func (o *CreateNetworkPool200ResponseNetworkPoolIpRangesInner) SetEndAddressNil() {
+	o.EndAddress.Set(nil)
+}
+
+// UnsetEndAddress ensures that no value is present for EndAddress, not even an explicit nil
+func (o *CreateNetworkPool200ResponseNetworkPoolIpRangesInner) UnsetEndAddress() {
+	o.EndAddress.Unset()
+}
+
+// GetInternalId returns the InternalId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CreateNetworkPool200ResponseNetworkPoolIpRangesInner) GetInternalId() string {
-	if o == nil || IsNil(o.InternalId) {
+	if o == nil || IsNil(o.InternalId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.InternalId
+	return *o.InternalId.Get()
 }
 
 // GetInternalIdOk returns a tuple with the InternalId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CreateNetworkPool200ResponseNetworkPoolIpRangesInner) GetInternalIdOk() (*string, bool) {
-	if o == nil || IsNil(o.InternalId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.InternalId, true
+	return o.InternalId.Get(), o.InternalId.IsSet()
 }
 
 // IsSetInternalId returns a boolean if a field has been set.
 func (o *CreateNetworkPool200ResponseNetworkPoolIpRangesInner) IsSetInternalId() bool {
-	if o != nil && !IsNil(o.InternalId) {
+	if o != nil && o.InternalId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetInternalId gets a reference to the given string and assigns it to the InternalId field.
+// SetInternalId gets a reference to the given NullableString and assigns it to the InternalId field.
 func (o *CreateNetworkPool200ResponseNetworkPoolIpRangesInner) SetInternalId(v string) {
-	o.InternalId = &v
+	o.InternalId.Set(&v)
 }
 
-// GetExternalId returns the ExternalId field value if set, zero value otherwise.
+// SetInternalIdNil sets the value for InternalId to be an explicit nil
+func (o *CreateNetworkPool200ResponseNetworkPoolIpRangesInner) SetInternalIdNil() {
+	o.InternalId.Set(nil)
+}
+
+// UnsetInternalId ensures that no value is present for InternalId, not even an explicit nil
+func (o *CreateNetworkPool200ResponseNetworkPoolIpRangesInner) UnsetInternalId() {
+	o.InternalId.Unset()
+}
+
+// GetExternalId returns the ExternalId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CreateNetworkPool200ResponseNetworkPoolIpRangesInner) GetExternalId() string {
-	if o == nil || IsNil(o.ExternalId) {
+	if o == nil || IsNil(o.ExternalId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ExternalId
+	return *o.ExternalId.Get()
 }
 
 // GetExternalIdOk returns a tuple with the ExternalId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CreateNetworkPool200ResponseNetworkPoolIpRangesInner) GetExternalIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ExternalId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ExternalId, true
+	return o.ExternalId.Get(), o.ExternalId.IsSet()
 }
 
 // IsSetExternalId returns a boolean if a field has been set.
 func (o *CreateNetworkPool200ResponseNetworkPoolIpRangesInner) IsSetExternalId() bool {
-	if o != nil && !IsNil(o.ExternalId) {
+	if o != nil && o.ExternalId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetExternalId gets a reference to the given string and assigns it to the ExternalId field.
+// SetExternalId gets a reference to the given NullableString and assigns it to the ExternalId field.
 func (o *CreateNetworkPool200ResponseNetworkPoolIpRangesInner) SetExternalId(v string) {
-	o.ExternalId = &v
+	o.ExternalId.Set(&v)
 }
 
-// GetDescription returns the Description field value if set, zero value otherwise.
+// SetExternalIdNil sets the value for ExternalId to be an explicit nil
+func (o *CreateNetworkPool200ResponseNetworkPoolIpRangesInner) SetExternalIdNil() {
+	o.ExternalId.Set(nil)
+}
+
+// UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
+func (o *CreateNetworkPool200ResponseNetworkPoolIpRangesInner) UnsetExternalId() {
+	o.ExternalId.Unset()
+}
+
+// GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CreateNetworkPool200ResponseNetworkPoolIpRangesInner) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
+	if o == nil || IsNil(o.Description.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Description
+	return *o.Description.Get()
 }
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CreateNetworkPool200ResponseNetworkPoolIpRangesInner) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Description, true
+	return o.Description.Get(), o.Description.IsSet()
 }
 
 // IsSetDescription returns a boolean if a field has been set.
 func (o *CreateNetworkPool200ResponseNetworkPoolIpRangesInner) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
+	if o != nil && o.Description.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDescription gets a reference to the given string and assigns it to the Description field.
+// SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *CreateNetworkPool200ResponseNetworkPoolIpRangesInner) SetDescription(v string) {
-	o.Description = &v
+	o.Description.Set(&v)
+}
+
+// SetDescriptionNil sets the value for Description to be an explicit nil
+func (o *CreateNetworkPool200ResponseNetworkPoolIpRangesInner) SetDescriptionNil() {
+	o.Description.Set(nil)
+}
+
+// UnsetDescription ensures that no value is present for Description, not even an explicit nil
+func (o *CreateNetworkPool200ResponseNetworkPoolIpRangesInner) UnsetDescription() {
+	o.Description.Unset()
 }
 
 // GetAddressCount returns the AddressCount field value if set, zero value otherwise.
@@ -375,68 +430,90 @@ func (o *CreateNetworkPool200ResponseNetworkPoolIpRangesInner) SetLastUpdated(v 
 	o.LastUpdated = &v
 }
 
-// GetCidr returns the Cidr field value if set, zero value otherwise.
+// GetCidr returns the Cidr field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CreateNetworkPool200ResponseNetworkPoolIpRangesInner) GetCidr() string {
-	if o == nil || IsNil(o.Cidr) {
+	if o == nil || IsNil(o.Cidr.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Cidr
+	return *o.Cidr.Get()
 }
 
 // GetCidrOk returns a tuple with the Cidr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CreateNetworkPool200ResponseNetworkPoolIpRangesInner) GetCidrOk() (*string, bool) {
-	if o == nil || IsNil(o.Cidr) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Cidr, true
+	return o.Cidr.Get(), o.Cidr.IsSet()
 }
 
 // IsSetCidr returns a boolean if a field has been set.
 func (o *CreateNetworkPool200ResponseNetworkPoolIpRangesInner) IsSetCidr() bool {
-	if o != nil && !IsNil(o.Cidr) {
+	if o != nil && o.Cidr.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCidr gets a reference to the given string and assigns it to the Cidr field.
+// SetCidr gets a reference to the given NullableString and assigns it to the Cidr field.
 func (o *CreateNetworkPool200ResponseNetworkPoolIpRangesInner) SetCidr(v string) {
-	o.Cidr = &v
+	o.Cidr.Set(&v)
 }
 
-// GetCidrIPv6 returns the CidrIPv6 field value if set, zero value otherwise.
+// SetCidrNil sets the value for Cidr to be an explicit nil
+func (o *CreateNetworkPool200ResponseNetworkPoolIpRangesInner) SetCidrNil() {
+	o.Cidr.Set(nil)
+}
+
+// UnsetCidr ensures that no value is present for Cidr, not even an explicit nil
+func (o *CreateNetworkPool200ResponseNetworkPoolIpRangesInner) UnsetCidr() {
+	o.Cidr.Unset()
+}
+
+// GetCidrIPv6 returns the CidrIPv6 field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CreateNetworkPool200ResponseNetworkPoolIpRangesInner) GetCidrIPv6() string {
-	if o == nil || IsNil(o.CidrIPv6) {
+	if o == nil || IsNil(o.CidrIPv6.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.CidrIPv6
+	return *o.CidrIPv6.Get()
 }
 
 // GetCidrIPv6Ok returns a tuple with the CidrIPv6 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CreateNetworkPool200ResponseNetworkPoolIpRangesInner) GetCidrIPv6Ok() (*string, bool) {
-	if o == nil || IsNil(o.CidrIPv6) {
+	if o == nil {
 		return nil, false
 	}
-	return o.CidrIPv6, true
+	return o.CidrIPv6.Get(), o.CidrIPv6.IsSet()
 }
 
 // IsSetCidrIPv6 returns a boolean if a field has been set.
 func (o *CreateNetworkPool200ResponseNetworkPoolIpRangesInner) IsSetCidrIPv6() bool {
-	if o != nil && !IsNil(o.CidrIPv6) {
+	if o != nil && o.CidrIPv6.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCidrIPv6 gets a reference to the given string and assigns it to the CidrIPv6 field.
+// SetCidrIPv6 gets a reference to the given NullableString and assigns it to the CidrIPv6 field.
 func (o *CreateNetworkPool200ResponseNetworkPoolIpRangesInner) SetCidrIPv6(v string) {
-	o.CidrIPv6 = &v
+	o.CidrIPv6.Set(&v)
+}
+
+// SetCidrIPv6Nil sets the value for CidrIPv6 to be an explicit nil
+func (o *CreateNetworkPool200ResponseNetworkPoolIpRangesInner) SetCidrIPv6Nil() {
+	o.CidrIPv6.Set(nil)
+}
+
+// UnsetCidrIPv6 ensures that no value is present for CidrIPv6, not even an explicit nil
+func (o *CreateNetworkPool200ResponseNetworkPoolIpRangesInner) UnsetCidrIPv6() {
+	o.CidrIPv6.Unset()
 }
 
 func (o CreateNetworkPool200ResponseNetworkPoolIpRangesInner) MarshalJSON() ([]byte, error) {
@@ -452,20 +529,20 @@ func (o CreateNetworkPool200ResponseNetworkPoolIpRangesInner) ToMap() (map[strin
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
-	if !IsNil(o.StartAddress) {
-		toSerialize["startAddress"] = o.StartAddress
+	if o.StartAddress.IsSet() {
+		toSerialize["startAddress"] = o.StartAddress.Get()
 	}
-	if !IsNil(o.EndAddress) {
-		toSerialize["endAddress"] = o.EndAddress
+	if o.EndAddress.IsSet() {
+		toSerialize["endAddress"] = o.EndAddress.Get()
 	}
-	if !IsNil(o.InternalId) {
-		toSerialize["internalId"] = o.InternalId
+	if o.InternalId.IsSet() {
+		toSerialize["internalId"] = o.InternalId.Get()
 	}
-	if !IsNil(o.ExternalId) {
-		toSerialize["externalId"] = o.ExternalId
+	if o.ExternalId.IsSet() {
+		toSerialize["externalId"] = o.ExternalId.Get()
 	}
-	if !IsNil(o.Description) {
-		toSerialize["description"] = o.Description
+	if o.Description.IsSet() {
+		toSerialize["description"] = o.Description.Get()
 	}
 	if !IsNil(o.AddressCount) {
 		toSerialize["addressCount"] = o.AddressCount
@@ -479,11 +556,11 @@ func (o CreateNetworkPool200ResponseNetworkPoolIpRangesInner) ToMap() (map[strin
 	if !IsNil(o.LastUpdated) {
 		toSerialize["lastUpdated"] = o.LastUpdated
 	}
-	if !IsNil(o.Cidr) {
-		toSerialize["cidr"] = o.Cidr
+	if o.Cidr.IsSet() {
+		toSerialize["cidr"] = o.Cidr.Get()
 	}
-	if !IsNil(o.CidrIPv6) {
-		toSerialize["cidrIPv6"] = o.CidrIPv6
+	if o.CidrIPv6.IsSet() {
+		toSerialize["cidrIPv6"] = o.CidrIPv6.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {

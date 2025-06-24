@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
 **InstanceId** | Pointer to **int64** |  | [optional] 
-**Instance** | Pointer to [**ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
+**Instance** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **Deployment** | Pointer to [**ListDeploys200ResponseAllOfAppDeploysInnerDeployment**](ListDeploys200ResponseAllOfAppDeploysInnerDeployment.md) |  | [optional] 
 **DeploymentVersionId** | Pointer to **int64** |  | [optional] 
 **DeploymentVersion** | Pointer to [**ListDeploys200ResponseAllOfAppDeploysInnerDeploymentVersion**](ListDeploys200ResponseAllOfAppDeploysInnerDeploymentVersion.md) |  | [optional] 
@@ -87,20 +87,20 @@ HasInstanceId returns a boolean if a field has been set.
 
 ### GetInstance
 
-`func (o *ListDeploys200ResponseAllOfAppDeploysInner) GetInstance() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *ListDeploys200ResponseAllOfAppDeploysInner) GetInstance() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetInstance returns the Instance field if non-nil, zero value otherwise.
 
 ### GetInstanceOk
 
-`func (o *ListDeploys200ResponseAllOfAppDeploysInner) GetInstanceOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *ListDeploys200ResponseAllOfAppDeploysInner) GetInstanceOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetInstanceOk returns a tuple with the Instance field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInstance
 
-`func (o *ListDeploys200ResponseAllOfAppDeploysInner) SetInstance(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *ListDeploys200ResponseAllOfAppDeploysInner) SetInstance(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetInstance sets Instance field to given value.
 

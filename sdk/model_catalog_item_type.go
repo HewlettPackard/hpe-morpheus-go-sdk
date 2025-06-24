@@ -24,35 +24,35 @@ type CatalogItemType struct {
 	Id   *int64  `json:"id,omitempty"`
 	Name *string `json:"name,omitempty"`
 	// Useful shortcode for provisioning naming schemes and export reference.
-	Code *string `json:"code,omitempty"`
+	Code NullableString `json:"code,omitempty"`
 	// Catalog Item Type category
-	Category    *string  `json:"category,omitempty"`
-	Description *string  `json:"description,omitempty"`
-	Labels      []string `json:"labels,omitempty"`
-	Type        *string  `json:"type,omitempty"`
-	Enabled     *bool    `json:"enabled,omitempty"`
-	Featured    *bool    `json:"featured,omitempty"`
+	Category    NullableString `json:"category,omitempty"`
+	Description NullableString `json:"description,omitempty"`
+	Labels      []string       `json:"labels,omitempty"`
+	Type        *string        `json:"type,omitempty"`
+	Enabled     *bool          `json:"enabled,omitempty"`
+	Featured    *bool          `json:"featured,omitempty"`
 	// Can users order more than one of this item at a time.
 	AllowQuantity *bool                                              `json:"allowQuantity,omitempty"`
 	IconPath      *string                                            `json:"iconPath,omitempty"`
 	ImagePath     *string                                            `json:"imagePath,omitempty"`
 	DarkImagePath *string                                            `json:"darkImagePath,omitempty"`
 	Visibility    *string                                            `json:"visibility,omitempty"`
-	LayoutCode    *string                                            `json:"layoutCode,omitempty"`
+	LayoutCode    NullableString                                     `json:"layoutCode,omitempty"`
 	Blueprint     map[string]interface{}                             `json:"blueprint,omitempty"`
-	AppSpec       *string                                            `json:"appSpec,omitempty"`
+	AppSpec       NullableString                                     `json:"appSpec,omitempty"`
 	Config        map[string]interface{}                             `json:"config,omitempty"`
-	InstanceSpec  *string                                            `json:"instanceSpec,omitempty"`
+	InstanceSpec  NullableString                                     `json:"instanceSpec,omitempty"`
 	Workflow      *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"workflow,omitempty"`
-	Content       *string                                            `json:"content,omitempty"`
+	Content       NullableString                                     `json:"content,omitempty"`
 	FormType      *string                                            `json:"formType,omitempty"`
 	// Form object that contains input options and/or field groups
 	Form map[string]interface{} `json:"form,omitempty"`
 	// Form config object
 	FormConfig           map[string]interface{}                                                      `json:"formConfig,omitempty"`
 	OptionTypes          []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
-	CreatedBy            *string                                                                     `json:"createdBy,omitempty"`
-	Owner                *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner     `json:"owner,omitempty"`
+	CreatedBy            NullableString                                                              `json:"createdBy,omitempty"`
+	Owner                *GetAlerts200ResponseAllOfCheckGroupsInnerInstance                          `json:"owner,omitempty"`
 	DateCreated          *time.Time                                                                  `json:"dateCreated,omitempty"`
 	LastUpdated          *time.Time                                                                  `json:"lastUpdated,omitempty"`
 	AdditionalProperties map[string]interface{}                                                      `json:",remain"`
@@ -141,100 +141,133 @@ func (o *CatalogItemType) SetName(v string) {
 	o.Name = &v
 }
 
-// GetCode returns the Code field value if set, zero value otherwise.
+// GetCode returns the Code field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CatalogItemType) GetCode() string {
-	if o == nil || IsNil(o.Code) {
+	if o == nil || IsNil(o.Code.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Code
+	return *o.Code.Get()
 }
 
 // GetCodeOk returns a tuple with the Code field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CatalogItemType) GetCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.Code) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Code, true
+	return o.Code.Get(), o.Code.IsSet()
 }
 
 // IsSetCode returns a boolean if a field has been set.
 func (o *CatalogItemType) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
+	if o != nil && o.Code.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCode gets a reference to the given string and assigns it to the Code field.
+// SetCode gets a reference to the given NullableString and assigns it to the Code field.
 func (o *CatalogItemType) SetCode(v string) {
-	o.Code = &v
+	o.Code.Set(&v)
 }
 
-// GetCategory returns the Category field value if set, zero value otherwise.
+// SetCodeNil sets the value for Code to be an explicit nil
+func (o *CatalogItemType) SetCodeNil() {
+	o.Code.Set(nil)
+}
+
+// UnsetCode ensures that no value is present for Code, not even an explicit nil
+func (o *CatalogItemType) UnsetCode() {
+	o.Code.Unset()
+}
+
+// GetCategory returns the Category field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CatalogItemType) GetCategory() string {
-	if o == nil || IsNil(o.Category) {
+	if o == nil || IsNil(o.Category.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Category
+	return *o.Category.Get()
 }
 
 // GetCategoryOk returns a tuple with the Category field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CatalogItemType) GetCategoryOk() (*string, bool) {
-	if o == nil || IsNil(o.Category) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Category, true
+	return o.Category.Get(), o.Category.IsSet()
 }
 
 // IsSetCategory returns a boolean if a field has been set.
 func (o *CatalogItemType) IsSetCategory() bool {
-	if o != nil && !IsNil(o.Category) {
+	if o != nil && o.Category.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCategory gets a reference to the given string and assigns it to the Category field.
+// SetCategory gets a reference to the given NullableString and assigns it to the Category field.
 func (o *CatalogItemType) SetCategory(v string) {
-	o.Category = &v
+	o.Category.Set(&v)
 }
 
-// GetDescription returns the Description field value if set, zero value otherwise.
+// SetCategoryNil sets the value for Category to be an explicit nil
+func (o *CatalogItemType) SetCategoryNil() {
+	o.Category.Set(nil)
+}
+
+// UnsetCategory ensures that no value is present for Category, not even an explicit nil
+func (o *CatalogItemType) UnsetCategory() {
+	o.Category.Unset()
+}
+
+// GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CatalogItemType) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
+	if o == nil || IsNil(o.Description.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Description
+	return *o.Description.Get()
 }
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CatalogItemType) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Description, true
+	return o.Description.Get(), o.Description.IsSet()
 }
 
 // IsSetDescription returns a boolean if a field has been set.
 func (o *CatalogItemType) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
+	if o != nil && o.Description.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDescription gets a reference to the given string and assigns it to the Description field.
+// SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *CatalogItemType) SetDescription(v string) {
-	o.Description = &v
+	o.Description.Set(&v)
+}
+
+// SetDescriptionNil sets the value for Description to be an explicit nil
+func (o *CatalogItemType) SetDescriptionNil() {
+	o.Description.Set(nil)
+}
+
+// UnsetDescription ensures that no value is present for Description, not even an explicit nil
+func (o *CatalogItemType) UnsetDescription() {
+	o.Description.Unset()
 }
 
 // GetLabels returns the Labels field value if set, zero value otherwise.
@@ -525,41 +558,52 @@ func (o *CatalogItemType) SetVisibility(v string) {
 	o.Visibility = &v
 }
 
-// GetLayoutCode returns the LayoutCode field value if set, zero value otherwise.
+// GetLayoutCode returns the LayoutCode field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CatalogItemType) GetLayoutCode() string {
-	if o == nil || IsNil(o.LayoutCode) {
+	if o == nil || IsNil(o.LayoutCode.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.LayoutCode
+	return *o.LayoutCode.Get()
 }
 
 // GetLayoutCodeOk returns a tuple with the LayoutCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CatalogItemType) GetLayoutCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.LayoutCode) {
+	if o == nil {
 		return nil, false
 	}
-	return o.LayoutCode, true
+	return o.LayoutCode.Get(), o.LayoutCode.IsSet()
 }
 
 // IsSetLayoutCode returns a boolean if a field has been set.
 func (o *CatalogItemType) IsSetLayoutCode() bool {
-	if o != nil && !IsNil(o.LayoutCode) {
+	if o != nil && o.LayoutCode.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetLayoutCode gets a reference to the given string and assigns it to the LayoutCode field.
+// SetLayoutCode gets a reference to the given NullableString and assigns it to the LayoutCode field.
 func (o *CatalogItemType) SetLayoutCode(v string) {
-	o.LayoutCode = &v
+	o.LayoutCode.Set(&v)
 }
 
-// GetBlueprint returns the Blueprint field value if set, zero value otherwise.
+// SetLayoutCodeNil sets the value for LayoutCode to be an explicit nil
+func (o *CatalogItemType) SetLayoutCodeNil() {
+	o.LayoutCode.Set(nil)
+}
+
+// UnsetLayoutCode ensures that no value is present for LayoutCode, not even an explicit nil
+func (o *CatalogItemType) UnsetLayoutCode() {
+	o.LayoutCode.Unset()
+}
+
+// GetBlueprint returns the Blueprint field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CatalogItemType) GetBlueprint() map[string]interface{} {
-	if o == nil || IsNil(o.Blueprint) {
+	if o == nil {
 		var ret map[string]interface{}
 		return ret
 	}
@@ -568,6 +612,7 @@ func (o *CatalogItemType) GetBlueprint() map[string]interface{} {
 
 // GetBlueprintOk returns a tuple with the Blueprint field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CatalogItemType) GetBlueprintOk() (map[string]interface{}, bool) {
 	if o == nil || IsNil(o.Blueprint) {
 		return map[string]interface{}{}, false
@@ -589,41 +634,52 @@ func (o *CatalogItemType) SetBlueprint(v map[string]interface{}) {
 	o.Blueprint = v
 }
 
-// GetAppSpec returns the AppSpec field value if set, zero value otherwise.
+// GetAppSpec returns the AppSpec field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CatalogItemType) GetAppSpec() string {
-	if o == nil || IsNil(o.AppSpec) {
+	if o == nil || IsNil(o.AppSpec.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.AppSpec
+	return *o.AppSpec.Get()
 }
 
 // GetAppSpecOk returns a tuple with the AppSpec field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CatalogItemType) GetAppSpecOk() (*string, bool) {
-	if o == nil || IsNil(o.AppSpec) {
+	if o == nil {
 		return nil, false
 	}
-	return o.AppSpec, true
+	return o.AppSpec.Get(), o.AppSpec.IsSet()
 }
 
 // IsSetAppSpec returns a boolean if a field has been set.
 func (o *CatalogItemType) IsSetAppSpec() bool {
-	if o != nil && !IsNil(o.AppSpec) {
+	if o != nil && o.AppSpec.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetAppSpec gets a reference to the given string and assigns it to the AppSpec field.
+// SetAppSpec gets a reference to the given NullableString and assigns it to the AppSpec field.
 func (o *CatalogItemType) SetAppSpec(v string) {
-	o.AppSpec = &v
+	o.AppSpec.Set(&v)
 }
 
-// GetConfig returns the Config field value if set, zero value otherwise.
+// SetAppSpecNil sets the value for AppSpec to be an explicit nil
+func (o *CatalogItemType) SetAppSpecNil() {
+	o.AppSpec.Set(nil)
+}
+
+// UnsetAppSpec ensures that no value is present for AppSpec, not even an explicit nil
+func (o *CatalogItemType) UnsetAppSpec() {
+	o.AppSpec.Unset()
+}
+
+// GetConfig returns the Config field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CatalogItemType) GetConfig() map[string]interface{} {
-	if o == nil || IsNil(o.Config) {
+	if o == nil {
 		var ret map[string]interface{}
 		return ret
 	}
@@ -632,6 +688,7 @@ func (o *CatalogItemType) GetConfig() map[string]interface{} {
 
 // GetConfigOk returns a tuple with the Config field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CatalogItemType) GetConfigOk() (map[string]interface{}, bool) {
 	if o == nil || IsNil(o.Config) {
 		return map[string]interface{}{}, false
@@ -653,36 +710,47 @@ func (o *CatalogItemType) SetConfig(v map[string]interface{}) {
 	o.Config = v
 }
 
-// GetInstanceSpec returns the InstanceSpec field value if set, zero value otherwise.
+// GetInstanceSpec returns the InstanceSpec field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CatalogItemType) GetInstanceSpec() string {
-	if o == nil || IsNil(o.InstanceSpec) {
+	if o == nil || IsNil(o.InstanceSpec.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.InstanceSpec
+	return *o.InstanceSpec.Get()
 }
 
 // GetInstanceSpecOk returns a tuple with the InstanceSpec field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CatalogItemType) GetInstanceSpecOk() (*string, bool) {
-	if o == nil || IsNil(o.InstanceSpec) {
+	if o == nil {
 		return nil, false
 	}
-	return o.InstanceSpec, true
+	return o.InstanceSpec.Get(), o.InstanceSpec.IsSet()
 }
 
 // IsSetInstanceSpec returns a boolean if a field has been set.
 func (o *CatalogItemType) IsSetInstanceSpec() bool {
-	if o != nil && !IsNil(o.InstanceSpec) {
+	if o != nil && o.InstanceSpec.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetInstanceSpec gets a reference to the given string and assigns it to the InstanceSpec field.
+// SetInstanceSpec gets a reference to the given NullableString and assigns it to the InstanceSpec field.
 func (o *CatalogItemType) SetInstanceSpec(v string) {
-	o.InstanceSpec = &v
+	o.InstanceSpec.Set(&v)
+}
+
+// SetInstanceSpecNil sets the value for InstanceSpec to be an explicit nil
+func (o *CatalogItemType) SetInstanceSpecNil() {
+	o.InstanceSpec.Set(nil)
+}
+
+// UnsetInstanceSpec ensures that no value is present for InstanceSpec, not even an explicit nil
+func (o *CatalogItemType) UnsetInstanceSpec() {
+	o.InstanceSpec.Unset()
 }
 
 // GetWorkflow returns the Workflow field value if set, zero value otherwise.
@@ -717,36 +785,47 @@ func (o *CatalogItemType) SetWorkflow(v GetAlerts200ResponseAllOfCheckGroupsInne
 	o.Workflow = &v
 }
 
-// GetContent returns the Content field value if set, zero value otherwise.
+// GetContent returns the Content field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CatalogItemType) GetContent() string {
-	if o == nil || IsNil(o.Content) {
+	if o == nil || IsNil(o.Content.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Content
+	return *o.Content.Get()
 }
 
 // GetContentOk returns a tuple with the Content field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CatalogItemType) GetContentOk() (*string, bool) {
-	if o == nil || IsNil(o.Content) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Content, true
+	return o.Content.Get(), o.Content.IsSet()
 }
 
 // IsSetContent returns a boolean if a field has been set.
 func (o *CatalogItemType) IsSetContent() bool {
-	if o != nil && !IsNil(o.Content) {
+	if o != nil && o.Content.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetContent gets a reference to the given string and assigns it to the Content field.
+// SetContent gets a reference to the given NullableString and assigns it to the Content field.
 func (o *CatalogItemType) SetContent(v string) {
-	o.Content = &v
+	o.Content.Set(&v)
+}
+
+// SetContentNil sets the value for Content to be an explicit nil
+func (o *CatalogItemType) SetContentNil() {
+	o.Content.Set(nil)
+}
+
+// UnsetContent ensures that no value is present for Content, not even an explicit nil
+func (o *CatalogItemType) UnsetContent() {
+	o.Content.Unset()
 }
 
 // GetFormType returns the FormType field value if set, zero value otherwise.
@@ -781,9 +860,9 @@ func (o *CatalogItemType) SetFormType(v string) {
 	o.FormType = &v
 }
 
-// GetForm returns the Form field value if set, zero value otherwise.
+// GetForm returns the Form field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CatalogItemType) GetForm() map[string]interface{} {
-	if o == nil || IsNil(o.Form) {
+	if o == nil {
 		var ret map[string]interface{}
 		return ret
 	}
@@ -792,6 +871,7 @@ func (o *CatalogItemType) GetForm() map[string]interface{} {
 
 // GetFormOk returns a tuple with the Form field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CatalogItemType) GetFormOk() (map[string]interface{}, bool) {
 	if o == nil || IsNil(o.Form) {
 		return map[string]interface{}{}, false
@@ -813,9 +893,9 @@ func (o *CatalogItemType) SetForm(v map[string]interface{}) {
 	o.Form = v
 }
 
-// GetFormConfig returns the FormConfig field value if set, zero value otherwise.
+// GetFormConfig returns the FormConfig field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CatalogItemType) GetFormConfig() map[string]interface{} {
-	if o == nil || IsNil(o.FormConfig) {
+	if o == nil {
 		var ret map[string]interface{}
 		return ret
 	}
@@ -824,6 +904,7 @@ func (o *CatalogItemType) GetFormConfig() map[string]interface{} {
 
 // GetFormConfigOk returns a tuple with the FormConfig field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CatalogItemType) GetFormConfigOk() (map[string]interface{}, bool) {
 	if o == nil || IsNil(o.FormConfig) {
 		return map[string]interface{}{}, false
@@ -845,9 +926,9 @@ func (o *CatalogItemType) SetFormConfig(v map[string]interface{}) {
 	o.FormConfig = v
 }
 
-// GetOptionTypes returns the OptionTypes field value if set, zero value otherwise.
+// GetOptionTypes returns the OptionTypes field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CatalogItemType) GetOptionTypes() []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner {
-	if o == nil || IsNil(o.OptionTypes) {
+	if o == nil {
 		var ret []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner
 		return ret
 	}
@@ -856,6 +937,7 @@ func (o *CatalogItemType) GetOptionTypes() []ListCatalogItemTypes200ResponseAllO
 
 // GetOptionTypesOk returns a tuple with the OptionTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CatalogItemType) GetOptionTypesOk() ([]ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner, bool) {
 	if o == nil || IsNil(o.OptionTypes) {
 		return nil, false
@@ -877,42 +959,53 @@ func (o *CatalogItemType) SetOptionTypes(v []ListCatalogItemTypes200ResponseAllO
 	o.OptionTypes = v
 }
 
-// GetCreatedBy returns the CreatedBy field value if set, zero value otherwise.
+// GetCreatedBy returns the CreatedBy field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CatalogItemType) GetCreatedBy() string {
-	if o == nil || IsNil(o.CreatedBy) {
+	if o == nil || IsNil(o.CreatedBy.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.CreatedBy
+	return *o.CreatedBy.Get()
 }
 
 // GetCreatedByOk returns a tuple with the CreatedBy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CatalogItemType) GetCreatedByOk() (*string, bool) {
-	if o == nil || IsNil(o.CreatedBy) {
+	if o == nil {
 		return nil, false
 	}
-	return o.CreatedBy, true
+	return o.CreatedBy.Get(), o.CreatedBy.IsSet()
 }
 
 // IsSetCreatedBy returns a boolean if a field has been set.
 func (o *CatalogItemType) IsSetCreatedBy() bool {
-	if o != nil && !IsNil(o.CreatedBy) {
+	if o != nil && o.CreatedBy.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCreatedBy gets a reference to the given string and assigns it to the CreatedBy field.
+// SetCreatedBy gets a reference to the given NullableString and assigns it to the CreatedBy field.
 func (o *CatalogItemType) SetCreatedBy(v string) {
-	o.CreatedBy = &v
+	o.CreatedBy.Set(&v)
+}
+
+// SetCreatedByNil sets the value for CreatedBy to be an explicit nil
+func (o *CatalogItemType) SetCreatedByNil() {
+	o.CreatedBy.Set(nil)
+}
+
+// UnsetCreatedBy ensures that no value is present for CreatedBy, not even an explicit nil
+func (o *CatalogItemType) UnsetCreatedBy() {
+	o.CreatedBy.Unset()
 }
 
 // GetOwner returns the Owner field value if set, zero value otherwise.
-func (o *CatalogItemType) GetOwner() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *CatalogItemType) GetOwner() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.Owner) {
-		var ret ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return *o.Owner
@@ -920,7 +1013,7 @@ func (o *CatalogItemType) GetOwner() ListApplianceSettings200ResponseApplianceSe
 
 // GetOwnerOk returns a tuple with the Owner field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CatalogItemType) GetOwnerOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *CatalogItemType) GetOwnerOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.Owner) {
 		return nil, false
 	}
@@ -936,8 +1029,8 @@ func (o *CatalogItemType) IsSetOwner() bool {
 	return false
 }
 
-// SetOwner gets a reference to the given ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the Owner field.
-func (o *CatalogItemType) SetOwner(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetOwner gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Owner field.
+func (o *CatalogItemType) SetOwner(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.Owner = &v
 }
 
@@ -1021,14 +1114,14 @@ func (o CatalogItemType) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !IsNil(o.Code) {
-		toSerialize["code"] = o.Code
+	if o.Code.IsSet() {
+		toSerialize["code"] = o.Code.Get()
 	}
-	if !IsNil(o.Category) {
-		toSerialize["category"] = o.Category
+	if o.Category.IsSet() {
+		toSerialize["category"] = o.Category.Get()
 	}
-	if !IsNil(o.Description) {
-		toSerialize["description"] = o.Description
+	if o.Description.IsSet() {
+		toSerialize["description"] = o.Description.Get()
 	}
 	if !IsNil(o.Labels) {
 		toSerialize["labels"] = o.Labels
@@ -1057,41 +1150,41 @@ func (o CatalogItemType) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Visibility) {
 		toSerialize["visibility"] = o.Visibility
 	}
-	if !IsNil(o.LayoutCode) {
-		toSerialize["layoutCode"] = o.LayoutCode
+	if o.LayoutCode.IsSet() {
+		toSerialize["layoutCode"] = o.LayoutCode.Get()
 	}
-	if !IsNil(o.Blueprint) {
+	if o.Blueprint != nil {
 		toSerialize["blueprint"] = o.Blueprint
 	}
-	if !IsNil(o.AppSpec) {
-		toSerialize["appSpec"] = o.AppSpec
+	if o.AppSpec.IsSet() {
+		toSerialize["appSpec"] = o.AppSpec.Get()
 	}
-	if !IsNil(o.Config) {
+	if o.Config != nil {
 		toSerialize["config"] = o.Config
 	}
-	if !IsNil(o.InstanceSpec) {
-		toSerialize["instanceSpec"] = o.InstanceSpec
+	if o.InstanceSpec.IsSet() {
+		toSerialize["instanceSpec"] = o.InstanceSpec.Get()
 	}
 	if !IsNil(o.Workflow) {
 		toSerialize["workflow"] = o.Workflow
 	}
-	if !IsNil(o.Content) {
-		toSerialize["content"] = o.Content
+	if o.Content.IsSet() {
+		toSerialize["content"] = o.Content.Get()
 	}
 	if !IsNil(o.FormType) {
 		toSerialize["formType"] = o.FormType
 	}
-	if !IsNil(o.Form) {
+	if o.Form != nil {
 		toSerialize["form"] = o.Form
 	}
-	if !IsNil(o.FormConfig) {
+	if o.FormConfig != nil {
 		toSerialize["formConfig"] = o.FormConfig
 	}
-	if !IsNil(o.OptionTypes) {
+	if o.OptionTypes != nil {
 		toSerialize["optionTypes"] = o.OptionTypes
 	}
-	if !IsNil(o.CreatedBy) {
-		toSerialize["createdBy"] = o.CreatedBy
+	if o.CreatedBy.IsSet() {
+		toSerialize["createdBy"] = o.CreatedBy.Get()
 	}
 	if !IsNil(o.Owner) {
 		toSerialize["owner"] = o.Owner

@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **VId** | Pointer to **int64** |  | [optional] 
 **ReadonlyName** | Pointer to **bool** |  | [optional] 
 **Size** | Pointer to **int64** |  | [optional] 
-**MaxIOPS** | Pointer to **string** |  | [optional] 
+**MaxIOPS** | Pointer to **NullableString** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **RootVolume** | Pointer to **bool** |  | [optional] 
 **StorageType** | Pointer to **int64** |  | [optional] 
@@ -159,6 +159,16 @@ SetMaxIOPS sets MaxIOPS field to given value.
 
 HasMaxIOPS returns a boolean if a field has been set.
 
+### SetMaxIOPSNil
+
+`func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigVolumesInner) SetMaxIOPSNil(b bool)`
+
+ SetMaxIOPSNil sets the value for MaxIOPS to be an explicit nil
+
+### UnsetMaxIOPS
+`func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigVolumesInner) UnsetMaxIOPS()`
+
+UnsetMaxIOPS ensures that no value is present for MaxIOPS, not even an explicit nil
 ### GetName
 
 `func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigVolumesInner) GetName() string`

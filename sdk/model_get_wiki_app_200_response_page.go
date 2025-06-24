@@ -25,8 +25,8 @@ type GetWikiApp200ResponsePage struct {
 	Name                 *string                                                     `json:"name,omitempty"`
 	UrlName              *string                                                     `json:"urlName,omitempty"`
 	Category             *string                                                     `json:"category,omitempty"`
-	RefId                *string                                                     `json:"refId,omitempty"`
-	RefType              *string                                                     `json:"refType,omitempty"`
+	RefId                NullableString                                              `json:"refId,omitempty"`
+	RefType              NullableString                                              `json:"refType,omitempty"`
 	Format               *string                                                     `json:"format,omitempty"`
 	Content              *string                                                     `json:"content,omitempty"`
 	CreatedBy            *ListActivity200ResponseAllOfActivityInnerActivityInnerUser `json:"createdBy,omitempty"`
@@ -183,68 +183,90 @@ func (o *GetWikiApp200ResponsePage) SetCategory(v string) {
 	o.Category = &v
 }
 
-// GetRefId returns the RefId field value if set, zero value otherwise.
+// GetRefId returns the RefId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetWikiApp200ResponsePage) GetRefId() string {
-	if o == nil || IsNil(o.RefId) {
+	if o == nil || IsNil(o.RefId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.RefId
+	return *o.RefId.Get()
 }
 
 // GetRefIdOk returns a tuple with the RefId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetWikiApp200ResponsePage) GetRefIdOk() (*string, bool) {
-	if o == nil || IsNil(o.RefId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.RefId, true
+	return o.RefId.Get(), o.RefId.IsSet()
 }
 
 // IsSetRefId returns a boolean if a field has been set.
 func (o *GetWikiApp200ResponsePage) IsSetRefId() bool {
-	if o != nil && !IsNil(o.RefId) {
+	if o != nil && o.RefId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetRefId gets a reference to the given string and assigns it to the RefId field.
+// SetRefId gets a reference to the given NullableString and assigns it to the RefId field.
 func (o *GetWikiApp200ResponsePage) SetRefId(v string) {
-	o.RefId = &v
+	o.RefId.Set(&v)
 }
 
-// GetRefType returns the RefType field value if set, zero value otherwise.
+// SetRefIdNil sets the value for RefId to be an explicit nil
+func (o *GetWikiApp200ResponsePage) SetRefIdNil() {
+	o.RefId.Set(nil)
+}
+
+// UnsetRefId ensures that no value is present for RefId, not even an explicit nil
+func (o *GetWikiApp200ResponsePage) UnsetRefId() {
+	o.RefId.Unset()
+}
+
+// GetRefType returns the RefType field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetWikiApp200ResponsePage) GetRefType() string {
-	if o == nil || IsNil(o.RefType) {
+	if o == nil || IsNil(o.RefType.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.RefType
+	return *o.RefType.Get()
 }
 
 // GetRefTypeOk returns a tuple with the RefType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetWikiApp200ResponsePage) GetRefTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.RefType) {
+	if o == nil {
 		return nil, false
 	}
-	return o.RefType, true
+	return o.RefType.Get(), o.RefType.IsSet()
 }
 
 // IsSetRefType returns a boolean if a field has been set.
 func (o *GetWikiApp200ResponsePage) IsSetRefType() bool {
-	if o != nil && !IsNil(o.RefType) {
+	if o != nil && o.RefType.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetRefType gets a reference to the given string and assigns it to the RefType field.
+// SetRefType gets a reference to the given NullableString and assigns it to the RefType field.
 func (o *GetWikiApp200ResponsePage) SetRefType(v string) {
-	o.RefType = &v
+	o.RefType.Set(&v)
+}
+
+// SetRefTypeNil sets the value for RefType to be an explicit nil
+func (o *GetWikiApp200ResponsePage) SetRefTypeNil() {
+	o.RefType.Set(nil)
+}
+
+// UnsetRefType ensures that no value is present for RefType, not even an explicit nil
+func (o *GetWikiApp200ResponsePage) UnsetRefType() {
+	o.RefType.Unset()
 }
 
 // GetFormat returns the Format field value if set, zero value otherwise.
@@ -461,11 +483,11 @@ func (o GetWikiApp200ResponsePage) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Category) {
 		toSerialize["category"] = o.Category
 	}
-	if !IsNil(o.RefId) {
-		toSerialize["refId"] = o.RefId
+	if o.RefId.IsSet() {
+		toSerialize["refId"] = o.RefId.Get()
 	}
-	if !IsNil(o.RefType) {
-		toSerialize["refType"] = o.RefType
+	if o.RefType.IsSet() {
+		toSerialize["refType"] = o.RefType.Get()
 	}
 	if !IsNil(o.Format) {
 		toSerialize["format"] = o.Format

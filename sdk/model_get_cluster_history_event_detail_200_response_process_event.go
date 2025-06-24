@@ -26,25 +26,25 @@ type GetClusterHistoryEventDetail200ResponseProcessEvent struct {
 	AccountId            *int64                                                                     `json:"accountId,omitempty"`
 	UniqueId             *string                                                                    `json:"uniqueId,omitempty"`
 	ProcessType          *ListClusterContainers200ResponseAllOfContainersInnerAvailableActionsInner `json:"processType,omitempty"`
-	Description          *string                                                                    `json:"description,omitempty"`
+	Description          NullableString                                                             `json:"description,omitempty"`
 	RefType              *string                                                                    `json:"refType,omitempty"`
 	RefId                *int64                                                                     `json:"refId,omitempty"`
-	SubType              *string                                                                    `json:"subType,omitempty"`
-	SubId                *string                                                                    `json:"subId,omitempty"`
-	ZoneId               *string                                                                    `json:"zoneId,omitempty"`
-	IntegrationId        *string                                                                    `json:"integrationId,omitempty"`
-	InstanceId           *string                                                                    `json:"instanceId,omitempty"`
-	ContainerId          *string                                                                    `json:"containerId,omitempty"`
+	SubType              NullableString                                                             `json:"subType,omitempty"`
+	SubId                NullableString                                                             `json:"subId,omitempty"`
+	ZoneId               NullableString                                                             `json:"zoneId,omitempty"`
+	IntegrationId        NullableString                                                             `json:"integrationId,omitempty"`
+	InstanceId           NullableString                                                             `json:"instanceId,omitempty"`
+	ContainerId          NullableString                                                             `json:"containerId,omitempty"`
 	ServerId             *int64                                                                     `json:"serverId,omitempty"`
-	ContainerName        *string                                                                    `json:"containerName,omitempty"`
+	ContainerName        NullableString                                                             `json:"containerName,omitempty"`
 	DisplayName          *string                                                                    `json:"displayName,omitempty"`
 	Status               *string                                                                    `json:"status,omitempty"`
-	Reason               *string                                                                    `json:"reason,omitempty"`
+	Reason               NullableString                                                             `json:"reason,omitempty"`
 	Percent              *int64                                                                     `json:"percent,omitempty"`
 	StatusEta            *int64                                                                     `json:"statusEta,omitempty"`
 	Message              *string                                                                    `json:"message,omitempty"`
-	Output               *string                                                                    `json:"output,omitempty"`
-	Error                *string                                                                    `json:"error,omitempty"`
+	Output               NullableString                                                             `json:"output,omitempty"`
+	Error                NullableString                                                             `json:"error,omitempty"`
 	StartDate            *time.Time                                                                 `json:"startDate,omitempty"`
 	EndDate              *time.Time                                                                 `json:"endDate,omitempty"`
 	Duration             *int64                                                                     `json:"duration,omitempty"`
@@ -234,36 +234,47 @@ func (o *GetClusterHistoryEventDetail200ResponseProcessEvent) SetProcessType(v L
 	o.ProcessType = &v
 }
 
-// GetDescription returns the Description field value if set, zero value otherwise.
+// GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetClusterHistoryEventDetail200ResponseProcessEvent) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
+	if o == nil || IsNil(o.Description.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Description
+	return *o.Description.Get()
 }
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetClusterHistoryEventDetail200ResponseProcessEvent) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Description, true
+	return o.Description.Get(), o.Description.IsSet()
 }
 
 // IsSetDescription returns a boolean if a field has been set.
 func (o *GetClusterHistoryEventDetail200ResponseProcessEvent) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
+	if o != nil && o.Description.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDescription gets a reference to the given string and assigns it to the Description field.
+// SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *GetClusterHistoryEventDetail200ResponseProcessEvent) SetDescription(v string) {
-	o.Description = &v
+	o.Description.Set(&v)
+}
+
+// SetDescriptionNil sets the value for Description to be an explicit nil
+func (o *GetClusterHistoryEventDetail200ResponseProcessEvent) SetDescriptionNil() {
+	o.Description.Set(nil)
+}
+
+// UnsetDescription ensures that no value is present for Description, not even an explicit nil
+func (o *GetClusterHistoryEventDetail200ResponseProcessEvent) UnsetDescription() {
+	o.Description.Unset()
 }
 
 // GetRefType returns the RefType field value if set, zero value otherwise.
@@ -330,196 +341,262 @@ func (o *GetClusterHistoryEventDetail200ResponseProcessEvent) SetRefId(v int64) 
 	o.RefId = &v
 }
 
-// GetSubType returns the SubType field value if set, zero value otherwise.
+// GetSubType returns the SubType field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetClusterHistoryEventDetail200ResponseProcessEvent) GetSubType() string {
-	if o == nil || IsNil(o.SubType) {
+	if o == nil || IsNil(o.SubType.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.SubType
+	return *o.SubType.Get()
 }
 
 // GetSubTypeOk returns a tuple with the SubType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetClusterHistoryEventDetail200ResponseProcessEvent) GetSubTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.SubType) {
+	if o == nil {
 		return nil, false
 	}
-	return o.SubType, true
+	return o.SubType.Get(), o.SubType.IsSet()
 }
 
 // IsSetSubType returns a boolean if a field has been set.
 func (o *GetClusterHistoryEventDetail200ResponseProcessEvent) IsSetSubType() bool {
-	if o != nil && !IsNil(o.SubType) {
+	if o != nil && o.SubType.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetSubType gets a reference to the given string and assigns it to the SubType field.
+// SetSubType gets a reference to the given NullableString and assigns it to the SubType field.
 func (o *GetClusterHistoryEventDetail200ResponseProcessEvent) SetSubType(v string) {
-	o.SubType = &v
+	o.SubType.Set(&v)
 }
 
-// GetSubId returns the SubId field value if set, zero value otherwise.
+// SetSubTypeNil sets the value for SubType to be an explicit nil
+func (o *GetClusterHistoryEventDetail200ResponseProcessEvent) SetSubTypeNil() {
+	o.SubType.Set(nil)
+}
+
+// UnsetSubType ensures that no value is present for SubType, not even an explicit nil
+func (o *GetClusterHistoryEventDetail200ResponseProcessEvent) UnsetSubType() {
+	o.SubType.Unset()
+}
+
+// GetSubId returns the SubId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetClusterHistoryEventDetail200ResponseProcessEvent) GetSubId() string {
-	if o == nil || IsNil(o.SubId) {
+	if o == nil || IsNil(o.SubId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.SubId
+	return *o.SubId.Get()
 }
 
 // GetSubIdOk returns a tuple with the SubId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetClusterHistoryEventDetail200ResponseProcessEvent) GetSubIdOk() (*string, bool) {
-	if o == nil || IsNil(o.SubId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.SubId, true
+	return o.SubId.Get(), o.SubId.IsSet()
 }
 
 // IsSetSubId returns a boolean if a field has been set.
 func (o *GetClusterHistoryEventDetail200ResponseProcessEvent) IsSetSubId() bool {
-	if o != nil && !IsNil(o.SubId) {
+	if o != nil && o.SubId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetSubId gets a reference to the given string and assigns it to the SubId field.
+// SetSubId gets a reference to the given NullableString and assigns it to the SubId field.
 func (o *GetClusterHistoryEventDetail200ResponseProcessEvent) SetSubId(v string) {
-	o.SubId = &v
+	o.SubId.Set(&v)
 }
 
-// GetZoneId returns the ZoneId field value if set, zero value otherwise.
+// SetSubIdNil sets the value for SubId to be an explicit nil
+func (o *GetClusterHistoryEventDetail200ResponseProcessEvent) SetSubIdNil() {
+	o.SubId.Set(nil)
+}
+
+// UnsetSubId ensures that no value is present for SubId, not even an explicit nil
+func (o *GetClusterHistoryEventDetail200ResponseProcessEvent) UnsetSubId() {
+	o.SubId.Unset()
+}
+
+// GetZoneId returns the ZoneId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetClusterHistoryEventDetail200ResponseProcessEvent) GetZoneId() string {
-	if o == nil || IsNil(o.ZoneId) {
+	if o == nil || IsNil(o.ZoneId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ZoneId
+	return *o.ZoneId.Get()
 }
 
 // GetZoneIdOk returns a tuple with the ZoneId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetClusterHistoryEventDetail200ResponseProcessEvent) GetZoneIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ZoneId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ZoneId, true
+	return o.ZoneId.Get(), o.ZoneId.IsSet()
 }
 
 // IsSetZoneId returns a boolean if a field has been set.
 func (o *GetClusterHistoryEventDetail200ResponseProcessEvent) IsSetZoneId() bool {
-	if o != nil && !IsNil(o.ZoneId) {
+	if o != nil && o.ZoneId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetZoneId gets a reference to the given string and assigns it to the ZoneId field.
+// SetZoneId gets a reference to the given NullableString and assigns it to the ZoneId field.
 func (o *GetClusterHistoryEventDetail200ResponseProcessEvent) SetZoneId(v string) {
-	o.ZoneId = &v
+	o.ZoneId.Set(&v)
 }
 
-// GetIntegrationId returns the IntegrationId field value if set, zero value otherwise.
+// SetZoneIdNil sets the value for ZoneId to be an explicit nil
+func (o *GetClusterHistoryEventDetail200ResponseProcessEvent) SetZoneIdNil() {
+	o.ZoneId.Set(nil)
+}
+
+// UnsetZoneId ensures that no value is present for ZoneId, not even an explicit nil
+func (o *GetClusterHistoryEventDetail200ResponseProcessEvent) UnsetZoneId() {
+	o.ZoneId.Unset()
+}
+
+// GetIntegrationId returns the IntegrationId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetClusterHistoryEventDetail200ResponseProcessEvent) GetIntegrationId() string {
-	if o == nil || IsNil(o.IntegrationId) {
+	if o == nil || IsNil(o.IntegrationId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.IntegrationId
+	return *o.IntegrationId.Get()
 }
 
 // GetIntegrationIdOk returns a tuple with the IntegrationId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetClusterHistoryEventDetail200ResponseProcessEvent) GetIntegrationIdOk() (*string, bool) {
-	if o == nil || IsNil(o.IntegrationId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.IntegrationId, true
+	return o.IntegrationId.Get(), o.IntegrationId.IsSet()
 }
 
 // IsSetIntegrationId returns a boolean if a field has been set.
 func (o *GetClusterHistoryEventDetail200ResponseProcessEvent) IsSetIntegrationId() bool {
-	if o != nil && !IsNil(o.IntegrationId) {
+	if o != nil && o.IntegrationId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetIntegrationId gets a reference to the given string and assigns it to the IntegrationId field.
+// SetIntegrationId gets a reference to the given NullableString and assigns it to the IntegrationId field.
 func (o *GetClusterHistoryEventDetail200ResponseProcessEvent) SetIntegrationId(v string) {
-	o.IntegrationId = &v
+	o.IntegrationId.Set(&v)
 }
 
-// GetInstanceId returns the InstanceId field value if set, zero value otherwise.
+// SetIntegrationIdNil sets the value for IntegrationId to be an explicit nil
+func (o *GetClusterHistoryEventDetail200ResponseProcessEvent) SetIntegrationIdNil() {
+	o.IntegrationId.Set(nil)
+}
+
+// UnsetIntegrationId ensures that no value is present for IntegrationId, not even an explicit nil
+func (o *GetClusterHistoryEventDetail200ResponseProcessEvent) UnsetIntegrationId() {
+	o.IntegrationId.Unset()
+}
+
+// GetInstanceId returns the InstanceId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetClusterHistoryEventDetail200ResponseProcessEvent) GetInstanceId() string {
-	if o == nil || IsNil(o.InstanceId) {
+	if o == nil || IsNil(o.InstanceId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.InstanceId
+	return *o.InstanceId.Get()
 }
 
 // GetInstanceIdOk returns a tuple with the InstanceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetClusterHistoryEventDetail200ResponseProcessEvent) GetInstanceIdOk() (*string, bool) {
-	if o == nil || IsNil(o.InstanceId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.InstanceId, true
+	return o.InstanceId.Get(), o.InstanceId.IsSet()
 }
 
 // IsSetInstanceId returns a boolean if a field has been set.
 func (o *GetClusterHistoryEventDetail200ResponseProcessEvent) IsSetInstanceId() bool {
-	if o != nil && !IsNil(o.InstanceId) {
+	if o != nil && o.InstanceId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetInstanceId gets a reference to the given string and assigns it to the InstanceId field.
+// SetInstanceId gets a reference to the given NullableString and assigns it to the InstanceId field.
 func (o *GetClusterHistoryEventDetail200ResponseProcessEvent) SetInstanceId(v string) {
-	o.InstanceId = &v
+	o.InstanceId.Set(&v)
 }
 
-// GetContainerId returns the ContainerId field value if set, zero value otherwise.
+// SetInstanceIdNil sets the value for InstanceId to be an explicit nil
+func (o *GetClusterHistoryEventDetail200ResponseProcessEvent) SetInstanceIdNil() {
+	o.InstanceId.Set(nil)
+}
+
+// UnsetInstanceId ensures that no value is present for InstanceId, not even an explicit nil
+func (o *GetClusterHistoryEventDetail200ResponseProcessEvent) UnsetInstanceId() {
+	o.InstanceId.Unset()
+}
+
+// GetContainerId returns the ContainerId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetClusterHistoryEventDetail200ResponseProcessEvent) GetContainerId() string {
-	if o == nil || IsNil(o.ContainerId) {
+	if o == nil || IsNil(o.ContainerId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ContainerId
+	return *o.ContainerId.Get()
 }
 
 // GetContainerIdOk returns a tuple with the ContainerId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetClusterHistoryEventDetail200ResponseProcessEvent) GetContainerIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ContainerId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ContainerId, true
+	return o.ContainerId.Get(), o.ContainerId.IsSet()
 }
 
 // IsSetContainerId returns a boolean if a field has been set.
 func (o *GetClusterHistoryEventDetail200ResponseProcessEvent) IsSetContainerId() bool {
-	if o != nil && !IsNil(o.ContainerId) {
+	if o != nil && o.ContainerId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetContainerId gets a reference to the given string and assigns it to the ContainerId field.
+// SetContainerId gets a reference to the given NullableString and assigns it to the ContainerId field.
 func (o *GetClusterHistoryEventDetail200ResponseProcessEvent) SetContainerId(v string) {
-	o.ContainerId = &v
+	o.ContainerId.Set(&v)
+}
+
+// SetContainerIdNil sets the value for ContainerId to be an explicit nil
+func (o *GetClusterHistoryEventDetail200ResponseProcessEvent) SetContainerIdNil() {
+	o.ContainerId.Set(nil)
+}
+
+// UnsetContainerId ensures that no value is present for ContainerId, not even an explicit nil
+func (o *GetClusterHistoryEventDetail200ResponseProcessEvent) UnsetContainerId() {
+	o.ContainerId.Unset()
 }
 
 // GetServerId returns the ServerId field value if set, zero value otherwise.
@@ -554,36 +631,47 @@ func (o *GetClusterHistoryEventDetail200ResponseProcessEvent) SetServerId(v int6
 	o.ServerId = &v
 }
 
-// GetContainerName returns the ContainerName field value if set, zero value otherwise.
+// GetContainerName returns the ContainerName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetClusterHistoryEventDetail200ResponseProcessEvent) GetContainerName() string {
-	if o == nil || IsNil(o.ContainerName) {
+	if o == nil || IsNil(o.ContainerName.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ContainerName
+	return *o.ContainerName.Get()
 }
 
 // GetContainerNameOk returns a tuple with the ContainerName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetClusterHistoryEventDetail200ResponseProcessEvent) GetContainerNameOk() (*string, bool) {
-	if o == nil || IsNil(o.ContainerName) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ContainerName, true
+	return o.ContainerName.Get(), o.ContainerName.IsSet()
 }
 
 // IsSetContainerName returns a boolean if a field has been set.
 func (o *GetClusterHistoryEventDetail200ResponseProcessEvent) IsSetContainerName() bool {
-	if o != nil && !IsNil(o.ContainerName) {
+	if o != nil && o.ContainerName.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetContainerName gets a reference to the given string and assigns it to the ContainerName field.
+// SetContainerName gets a reference to the given NullableString and assigns it to the ContainerName field.
 func (o *GetClusterHistoryEventDetail200ResponseProcessEvent) SetContainerName(v string) {
-	o.ContainerName = &v
+	o.ContainerName.Set(&v)
+}
+
+// SetContainerNameNil sets the value for ContainerName to be an explicit nil
+func (o *GetClusterHistoryEventDetail200ResponseProcessEvent) SetContainerNameNil() {
+	o.ContainerName.Set(nil)
+}
+
+// UnsetContainerName ensures that no value is present for ContainerName, not even an explicit nil
+func (o *GetClusterHistoryEventDetail200ResponseProcessEvent) UnsetContainerName() {
+	o.ContainerName.Unset()
 }
 
 // GetDisplayName returns the DisplayName field value if set, zero value otherwise.
@@ -650,36 +738,47 @@ func (o *GetClusterHistoryEventDetail200ResponseProcessEvent) SetStatus(v string
 	o.Status = &v
 }
 
-// GetReason returns the Reason field value if set, zero value otherwise.
+// GetReason returns the Reason field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetClusterHistoryEventDetail200ResponseProcessEvent) GetReason() string {
-	if o == nil || IsNil(o.Reason) {
+	if o == nil || IsNil(o.Reason.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Reason
+	return *o.Reason.Get()
 }
 
 // GetReasonOk returns a tuple with the Reason field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetClusterHistoryEventDetail200ResponseProcessEvent) GetReasonOk() (*string, bool) {
-	if o == nil || IsNil(o.Reason) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Reason, true
+	return o.Reason.Get(), o.Reason.IsSet()
 }
 
 // IsSetReason returns a boolean if a field has been set.
 func (o *GetClusterHistoryEventDetail200ResponseProcessEvent) IsSetReason() bool {
-	if o != nil && !IsNil(o.Reason) {
+	if o != nil && o.Reason.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetReason gets a reference to the given string and assigns it to the Reason field.
+// SetReason gets a reference to the given NullableString and assigns it to the Reason field.
 func (o *GetClusterHistoryEventDetail200ResponseProcessEvent) SetReason(v string) {
-	o.Reason = &v
+	o.Reason.Set(&v)
+}
+
+// SetReasonNil sets the value for Reason to be an explicit nil
+func (o *GetClusterHistoryEventDetail200ResponseProcessEvent) SetReasonNil() {
+	o.Reason.Set(nil)
+}
+
+// UnsetReason ensures that no value is present for Reason, not even an explicit nil
+func (o *GetClusterHistoryEventDetail200ResponseProcessEvent) UnsetReason() {
+	o.Reason.Unset()
 }
 
 // GetPercent returns the Percent field value if set, zero value otherwise.
@@ -778,68 +877,90 @@ func (o *GetClusterHistoryEventDetail200ResponseProcessEvent) SetMessage(v strin
 	o.Message = &v
 }
 
-// GetOutput returns the Output field value if set, zero value otherwise.
+// GetOutput returns the Output field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetClusterHistoryEventDetail200ResponseProcessEvent) GetOutput() string {
-	if o == nil || IsNil(o.Output) {
+	if o == nil || IsNil(o.Output.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Output
+	return *o.Output.Get()
 }
 
 // GetOutputOk returns a tuple with the Output field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetClusterHistoryEventDetail200ResponseProcessEvent) GetOutputOk() (*string, bool) {
-	if o == nil || IsNil(o.Output) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Output, true
+	return o.Output.Get(), o.Output.IsSet()
 }
 
 // IsSetOutput returns a boolean if a field has been set.
 func (o *GetClusterHistoryEventDetail200ResponseProcessEvent) IsSetOutput() bool {
-	if o != nil && !IsNil(o.Output) {
+	if o != nil && o.Output.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetOutput gets a reference to the given string and assigns it to the Output field.
+// SetOutput gets a reference to the given NullableString and assigns it to the Output field.
 func (o *GetClusterHistoryEventDetail200ResponseProcessEvent) SetOutput(v string) {
-	o.Output = &v
+	o.Output.Set(&v)
 }
 
-// GetError returns the Error field value if set, zero value otherwise.
+// SetOutputNil sets the value for Output to be an explicit nil
+func (o *GetClusterHistoryEventDetail200ResponseProcessEvent) SetOutputNil() {
+	o.Output.Set(nil)
+}
+
+// UnsetOutput ensures that no value is present for Output, not even an explicit nil
+func (o *GetClusterHistoryEventDetail200ResponseProcessEvent) UnsetOutput() {
+	o.Output.Unset()
+}
+
+// GetError returns the Error field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetClusterHistoryEventDetail200ResponseProcessEvent) GetError() string {
-	if o == nil || IsNil(o.Error) {
+	if o == nil || IsNil(o.Error.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Error
+	return *o.Error.Get()
 }
 
 // GetErrorOk returns a tuple with the Error field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetClusterHistoryEventDetail200ResponseProcessEvent) GetErrorOk() (*string, bool) {
-	if o == nil || IsNil(o.Error) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Error, true
+	return o.Error.Get(), o.Error.IsSet()
 }
 
 // IsSetError returns a boolean if a field has been set.
 func (o *GetClusterHistoryEventDetail200ResponseProcessEvent) IsSetError() bool {
-	if o != nil && !IsNil(o.Error) {
+	if o != nil && o.Error.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetError gets a reference to the given string and assigns it to the Error field.
+// SetError gets a reference to the given NullableString and assigns it to the Error field.
 func (o *GetClusterHistoryEventDetail200ResponseProcessEvent) SetError(v string) {
-	o.Error = &v
+	o.Error.Set(&v)
+}
+
+// SetErrorNil sets the value for Error to be an explicit nil
+func (o *GetClusterHistoryEventDetail200ResponseProcessEvent) SetErrorNil() {
+	o.Error.Set(nil)
+}
+
+// UnsetError ensures that no value is present for Error, not even an explicit nil
+func (o *GetClusterHistoryEventDetail200ResponseProcessEvent) UnsetError() {
+	o.Error.Unset()
 }
 
 // GetStartDate returns the StartDate field value if set, zero value otherwise.
@@ -1091,8 +1212,8 @@ func (o GetClusterHistoryEventDetail200ResponseProcessEvent) ToMap() (map[string
 	if !IsNil(o.ProcessType) {
 		toSerialize["processType"] = o.ProcessType
 	}
-	if !IsNil(o.Description) {
-		toSerialize["description"] = o.Description
+	if o.Description.IsSet() {
+		toSerialize["description"] = o.Description.Get()
 	}
 	if !IsNil(o.RefType) {
 		toSerialize["refType"] = o.RefType
@@ -1100,29 +1221,29 @@ func (o GetClusterHistoryEventDetail200ResponseProcessEvent) ToMap() (map[string
 	if !IsNil(o.RefId) {
 		toSerialize["refId"] = o.RefId
 	}
-	if !IsNil(o.SubType) {
-		toSerialize["subType"] = o.SubType
+	if o.SubType.IsSet() {
+		toSerialize["subType"] = o.SubType.Get()
 	}
-	if !IsNil(o.SubId) {
-		toSerialize["subId"] = o.SubId
+	if o.SubId.IsSet() {
+		toSerialize["subId"] = o.SubId.Get()
 	}
-	if !IsNil(o.ZoneId) {
-		toSerialize["zoneId"] = o.ZoneId
+	if o.ZoneId.IsSet() {
+		toSerialize["zoneId"] = o.ZoneId.Get()
 	}
-	if !IsNil(o.IntegrationId) {
-		toSerialize["integrationId"] = o.IntegrationId
+	if o.IntegrationId.IsSet() {
+		toSerialize["integrationId"] = o.IntegrationId.Get()
 	}
-	if !IsNil(o.InstanceId) {
-		toSerialize["instanceId"] = o.InstanceId
+	if o.InstanceId.IsSet() {
+		toSerialize["instanceId"] = o.InstanceId.Get()
 	}
-	if !IsNil(o.ContainerId) {
-		toSerialize["containerId"] = o.ContainerId
+	if o.ContainerId.IsSet() {
+		toSerialize["containerId"] = o.ContainerId.Get()
 	}
 	if !IsNil(o.ServerId) {
 		toSerialize["serverId"] = o.ServerId
 	}
-	if !IsNil(o.ContainerName) {
-		toSerialize["containerName"] = o.ContainerName
+	if o.ContainerName.IsSet() {
+		toSerialize["containerName"] = o.ContainerName.Get()
 	}
 	if !IsNil(o.DisplayName) {
 		toSerialize["displayName"] = o.DisplayName
@@ -1130,8 +1251,8 @@ func (o GetClusterHistoryEventDetail200ResponseProcessEvent) ToMap() (map[string
 	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status
 	}
-	if !IsNil(o.Reason) {
-		toSerialize["reason"] = o.Reason
+	if o.Reason.IsSet() {
+		toSerialize["reason"] = o.Reason.Get()
 	}
 	if !IsNil(o.Percent) {
 		toSerialize["percent"] = o.Percent
@@ -1142,11 +1263,11 @@ func (o GetClusterHistoryEventDetail200ResponseProcessEvent) ToMap() (map[string
 	if !IsNil(o.Message) {
 		toSerialize["message"] = o.Message
 	}
-	if !IsNil(o.Output) {
-		toSerialize["output"] = o.Output
+	if o.Output.IsSet() {
+		toSerialize["output"] = o.Output.Get()
 	}
-	if !IsNil(o.Error) {
-		toSerialize["error"] = o.Error
+	if o.Error.IsSet() {
+		toSerialize["error"] = o.Error.Get()
 	}
 	if !IsNil(o.StartDate) {
 		toSerialize["startDate"] = o.StartDate

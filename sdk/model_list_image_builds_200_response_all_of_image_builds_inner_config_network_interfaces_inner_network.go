@@ -20,11 +20,11 @@ var _ MappedNullable = &ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNet
 
 // ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork struct for ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork
 type ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork struct {
-	IdName               *string                                                                 `json:"idName,omitempty"`
-	Pool                 *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"pool,omitempty"`
-	Id                   *string                                                                 `json:"id,omitempty"`
-	HasPool              *bool                                                                   `json:"hasPool,omitempty"`
-	AdditionalProperties map[string]interface{}                                                  `json:",remain"`
+	IdName               *string                                            `json:"idName,omitempty"`
+	Pool                 *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"pool,omitempty"`
+	Id                   *string                                            `json:"id,omitempty"`
+	HasPool              *bool                                              `json:"hasPool,omitempty"`
+	AdditionalProperties map[string]interface{}                             `json:",remain"`
 }
 
 type _ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork
@@ -79,9 +79,9 @@ func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesI
 }
 
 // GetPool returns the Pool field value if set, zero value otherwise.
-func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork) GetPool() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork) GetPool() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.Pool) {
-		var ret ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return *o.Pool
@@ -89,7 +89,7 @@ func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesI
 
 // GetPoolOk returns a tuple with the Pool field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork) GetPoolOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork) GetPoolOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.Pool) {
 		return nil, false
 	}
@@ -105,8 +105,8 @@ func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesI
 	return false
 }
 
-// SetPool gets a reference to the given ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the Pool field.
-func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork) SetPool(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetPool gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Pool field.
+func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork) SetPool(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.Pool = &v
 }
 

@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **Type** | Pointer to **string** |  | [optional] 
 **IntegrationType** | Pointer to [**ListBackupSettings200ResponseBackupSettingsDefaultSchedule**](ListBackupSettings200ResponseBackupSettingsDefaultSchedule.md) |  | [optional] 
 **Url** | Pointer to **string** |  | [optional] 
-**ServiceKey** | Pointer to [**ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
+**ServiceKey** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **IsPlugin** | Pointer to **bool** |  | [optional] 
 **Config** | Pointer to **map[string]interface{}** |  | [optional] 
 **Status** | Pointer to **string** |  | [optional] 
@@ -206,20 +206,20 @@ HasUrl returns a boolean if a field has been set.
 
 ### GetServiceKey
 
-`func (o *ListIntegrations200ResponseAnyOfIntegrationsInner) GetServiceKey() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *ListIntegrations200ResponseAnyOfIntegrationsInner) GetServiceKey() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetServiceKey returns the ServiceKey field if non-nil, zero value otherwise.
 
 ### GetServiceKeyOk
 
-`func (o *ListIntegrations200ResponseAnyOfIntegrationsInner) GetServiceKeyOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *ListIntegrations200ResponseAnyOfIntegrationsInner) GetServiceKeyOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetServiceKeyOk returns a tuple with the ServiceKey field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetServiceKey
 
-`func (o *ListIntegrations200ResponseAnyOfIntegrationsInner) SetServiceKey(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *ListIntegrations200ResponseAnyOfIntegrationsInner) SetServiceKey(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetServiceKey sets ServiceKey field to given value.
 

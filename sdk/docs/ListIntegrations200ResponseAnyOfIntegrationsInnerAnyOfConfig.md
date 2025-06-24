@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Inventory** | Pointer to **string** |  | [optional] 
+**Inventory** | Pointer to **NullableString** |  | [optional] 
 **DefaultBranch** | Pointer to **string** |  | [optional] 
-**CacheEnabled** | Pointer to **string** |  | [optional] 
+**CacheEnabled** | Pointer to **NullableString** |  | [optional] 
 **AnsiblePlaybooks** | Pointer to **string** |  | [optional] 
 **AnsibleRoles** | Pointer to **string** |  | [optional] 
 **AnsibleGroupVars** | Pointer to **string** |  | [optional] 
@@ -60,6 +60,16 @@ SetInventory sets Inventory field to given value.
 
 HasInventory returns a boolean if a field has been set.
 
+### SetInventoryNil
+
+`func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig) SetInventoryNil(b bool)`
+
+ SetInventoryNil sets the value for Inventory to be an explicit nil
+
+### UnsetInventory
+`func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig) UnsetInventory()`
+
+UnsetInventory ensures that no value is present for Inventory, not even an explicit nil
 ### GetDefaultBranch
 
 `func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig) GetDefaultBranch() string`
@@ -110,6 +120,16 @@ SetCacheEnabled sets CacheEnabled field to given value.
 
 HasCacheEnabled returns a boolean if a field has been set.
 
+### SetCacheEnabledNil
+
+`func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig) SetCacheEnabledNil(b bool)`
+
+ SetCacheEnabledNil sets the value for CacheEnabled to be an explicit nil
+
+### UnsetCacheEnabled
+`func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig) UnsetCacheEnabled()`
+
+UnsetCacheEnabled ensures that no value is present for CacheEnabled, not even an explicit nil
 ### GetAnsiblePlaybooks
 
 `func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig) GetAnsiblePlaybooks() string`

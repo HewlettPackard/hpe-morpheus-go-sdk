@@ -22,11 +22,11 @@ var _ MappedNullable = &SecurityGroup{}
 type SecurityGroup struct {
 	Id                   *int64                                                                   `json:"id,omitempty"`
 	Name                 *string                                                                  `json:"name,omitempty"`
-	Description          *string                                                                  `json:"description,omitempty"`
+	Description          NullableString                                                           `json:"description,omitempty"`
 	AccountId            *int64                                                                   `json:"accountId,omitempty"`
-	GroupSource          *string                                                                  `json:"groupSource,omitempty"`
-	ExternalId           *string                                                                  `json:"externalId,omitempty"`
-	Enabled              *string                                                                  `json:"enabled,omitempty"`
+	GroupSource          NullableString                                                           `json:"groupSource,omitempty"`
+	ExternalId           NullableString                                                           `json:"externalId,omitempty"`
+	Enabled              NullableString                                                           `json:"enabled,omitempty"`
 	SyncSource           *string                                                                  `json:"syncSource,omitempty"`
 	Visibility           *string                                                                  `json:"visibility,omitempty"`
 	Active               *bool                                                                    `json:"active,omitempty"`
@@ -121,36 +121,47 @@ func (o *SecurityGroup) SetName(v string) {
 	o.Name = &v
 }
 
-// GetDescription returns the Description field value if set, zero value otherwise.
+// GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SecurityGroup) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
+	if o == nil || IsNil(o.Description.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Description
+	return *o.Description.Get()
 }
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SecurityGroup) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Description, true
+	return o.Description.Get(), o.Description.IsSet()
 }
 
 // IsSetDescription returns a boolean if a field has been set.
 func (o *SecurityGroup) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
+	if o != nil && o.Description.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDescription gets a reference to the given string and assigns it to the Description field.
+// SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *SecurityGroup) SetDescription(v string) {
-	o.Description = &v
+	o.Description.Set(&v)
+}
+
+// SetDescriptionNil sets the value for Description to be an explicit nil
+func (o *SecurityGroup) SetDescriptionNil() {
+	o.Description.Set(nil)
+}
+
+// UnsetDescription ensures that no value is present for Description, not even an explicit nil
+func (o *SecurityGroup) UnsetDescription() {
+	o.Description.Unset()
 }
 
 // GetAccountId returns the AccountId field value if set, zero value otherwise.
@@ -185,100 +196,133 @@ func (o *SecurityGroup) SetAccountId(v int64) {
 	o.AccountId = &v
 }
 
-// GetGroupSource returns the GroupSource field value if set, zero value otherwise.
+// GetGroupSource returns the GroupSource field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SecurityGroup) GetGroupSource() string {
-	if o == nil || IsNil(o.GroupSource) {
+	if o == nil || IsNil(o.GroupSource.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.GroupSource
+	return *o.GroupSource.Get()
 }
 
 // GetGroupSourceOk returns a tuple with the GroupSource field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SecurityGroup) GetGroupSourceOk() (*string, bool) {
-	if o == nil || IsNil(o.GroupSource) {
+	if o == nil {
 		return nil, false
 	}
-	return o.GroupSource, true
+	return o.GroupSource.Get(), o.GroupSource.IsSet()
 }
 
 // IsSetGroupSource returns a boolean if a field has been set.
 func (o *SecurityGroup) IsSetGroupSource() bool {
-	if o != nil && !IsNil(o.GroupSource) {
+	if o != nil && o.GroupSource.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetGroupSource gets a reference to the given string and assigns it to the GroupSource field.
+// SetGroupSource gets a reference to the given NullableString and assigns it to the GroupSource field.
 func (o *SecurityGroup) SetGroupSource(v string) {
-	o.GroupSource = &v
+	o.GroupSource.Set(&v)
 }
 
-// GetExternalId returns the ExternalId field value if set, zero value otherwise.
+// SetGroupSourceNil sets the value for GroupSource to be an explicit nil
+func (o *SecurityGroup) SetGroupSourceNil() {
+	o.GroupSource.Set(nil)
+}
+
+// UnsetGroupSource ensures that no value is present for GroupSource, not even an explicit nil
+func (o *SecurityGroup) UnsetGroupSource() {
+	o.GroupSource.Unset()
+}
+
+// GetExternalId returns the ExternalId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SecurityGroup) GetExternalId() string {
-	if o == nil || IsNil(o.ExternalId) {
+	if o == nil || IsNil(o.ExternalId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ExternalId
+	return *o.ExternalId.Get()
 }
 
 // GetExternalIdOk returns a tuple with the ExternalId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SecurityGroup) GetExternalIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ExternalId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ExternalId, true
+	return o.ExternalId.Get(), o.ExternalId.IsSet()
 }
 
 // IsSetExternalId returns a boolean if a field has been set.
 func (o *SecurityGroup) IsSetExternalId() bool {
-	if o != nil && !IsNil(o.ExternalId) {
+	if o != nil && o.ExternalId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetExternalId gets a reference to the given string and assigns it to the ExternalId field.
+// SetExternalId gets a reference to the given NullableString and assigns it to the ExternalId field.
 func (o *SecurityGroup) SetExternalId(v string) {
-	o.ExternalId = &v
+	o.ExternalId.Set(&v)
 }
 
-// GetEnabled returns the Enabled field value if set, zero value otherwise.
+// SetExternalIdNil sets the value for ExternalId to be an explicit nil
+func (o *SecurityGroup) SetExternalIdNil() {
+	o.ExternalId.Set(nil)
+}
+
+// UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
+func (o *SecurityGroup) UnsetExternalId() {
+	o.ExternalId.Unset()
+}
+
+// GetEnabled returns the Enabled field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SecurityGroup) GetEnabled() string {
-	if o == nil || IsNil(o.Enabled) {
+	if o == nil || IsNil(o.Enabled.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Enabled
+	return *o.Enabled.Get()
 }
 
 // GetEnabledOk returns a tuple with the Enabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SecurityGroup) GetEnabledOk() (*string, bool) {
-	if o == nil || IsNil(o.Enabled) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Enabled, true
+	return o.Enabled.Get(), o.Enabled.IsSet()
 }
 
 // IsSetEnabled returns a boolean if a field has been set.
 func (o *SecurityGroup) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
+	if o != nil && o.Enabled.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetEnabled gets a reference to the given string and assigns it to the Enabled field.
+// SetEnabled gets a reference to the given NullableString and assigns it to the Enabled field.
 func (o *SecurityGroup) SetEnabled(v string) {
-	o.Enabled = &v
+	o.Enabled.Set(&v)
+}
+
+// SetEnabledNil sets the value for Enabled to be an explicit nil
+func (o *SecurityGroup) SetEnabledNil() {
+	o.Enabled.Set(nil)
+}
+
+// UnsetEnabled ensures that no value is present for Enabled, not even an explicit nil
+func (o *SecurityGroup) UnsetEnabled() {
+	o.Enabled.Unset()
 }
 
 // GetSyncSource returns the SyncSource field value if set, zero value otherwise.
@@ -553,20 +597,20 @@ func (o SecurityGroup) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !IsNil(o.Description) {
-		toSerialize["description"] = o.Description
+	if o.Description.IsSet() {
+		toSerialize["description"] = o.Description.Get()
 	}
 	if !IsNil(o.AccountId) {
 		toSerialize["accountId"] = o.AccountId
 	}
-	if !IsNil(o.GroupSource) {
-		toSerialize["groupSource"] = o.GroupSource
+	if o.GroupSource.IsSet() {
+		toSerialize["groupSource"] = o.GroupSource.Get()
 	}
-	if !IsNil(o.ExternalId) {
-		toSerialize["externalId"] = o.ExternalId
+	if o.ExternalId.IsSet() {
+		toSerialize["externalId"] = o.ExternalId.Get()
 	}
-	if !IsNil(o.Enabled) {
-		toSerialize["enabled"] = o.Enabled
+	if o.Enabled.IsSet() {
+		toSerialize["enabled"] = o.Enabled.Get()
 	}
 	if !IsNil(o.SyncSource) {
 		toSerialize["syncSource"] = o.SyncSource

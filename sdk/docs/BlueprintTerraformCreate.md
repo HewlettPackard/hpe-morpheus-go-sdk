@@ -120,6 +120,16 @@ SetLabels sets Labels field to given value.
 
 HasLabels returns a boolean if a field has been set.
 
+### SetLabelsNil
+
+`func (o *BlueprintTerraformCreate) SetLabelsNil(b bool)`
+
+ SetLabelsNil sets the value for Labels to be an explicit nil
+
+### UnsetLabels
+`func (o *BlueprintTerraformCreate) UnsetLabels()`
+
+UnsetLabels ensures that no value is present for Labels, not even an explicit nil
 ### GetTerraform
 
 `func (o *BlueprintTerraformCreate) GetTerraform() AddBlueprintRequestOneOf5Terraform`

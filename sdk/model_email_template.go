@@ -24,9 +24,9 @@ type EmailTemplate struct {
 	// The name of the email template. This is set by morpheus.
 	Name *string `json:"name,omitempty"`
 	// A unique code for the email template. This code is used to reference the email template and as a reference of the templates type.
-	Code     *string                                                                  `json:"code,omitempty"`
-	Owner    *ListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner              `json:"owner,omitempty"`
-	Accounts []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"accounts,omitempty"`
+	Code     *string                                                     `json:"code,omitempty"`
+	Owner    *ListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner `json:"owner,omitempty"`
+	Accounts []GetAlerts200ResponseAllOfCheckGroupsInnerInstance         `json:"accounts,omitempty"`
 	// The email template. This is the actual email template that is sent to the user. This uses handlebars notation (not javascript)
 	Template             *string                `json:"template,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
@@ -179,10 +179,10 @@ func (o *EmailTemplate) SetOwner(v ListEmailTemplates200ResponseAllOfEmailTempla
 	o.Owner = &v
 }
 
-// GetAccounts returns the Accounts field value if set, zero value otherwise.
-func (o *EmailTemplate) GetAccounts() []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
-	if o == nil || IsNil(o.Accounts) {
-		var ret []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+// GetAccounts returns the Accounts field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *EmailTemplate) GetAccounts() []GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
+	if o == nil {
+		var ret []GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return o.Accounts
@@ -190,7 +190,8 @@ func (o *EmailTemplate) GetAccounts() []ListApplianceSettings200ResponseApplianc
 
 // GetAccountsOk returns a tuple with the Accounts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *EmailTemplate) GetAccountsOk() ([]ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *EmailTemplate) GetAccountsOk() ([]GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.Accounts) {
 		return nil, false
 	}
@@ -206,8 +207,8 @@ func (o *EmailTemplate) IsSetAccounts() bool {
 	return false
 }
 
-// SetAccounts gets a reference to the given []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the Accounts field.
-func (o *EmailTemplate) SetAccounts(v []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetAccounts gets a reference to the given []GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Accounts field.
+func (o *EmailTemplate) SetAccounts(v []GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.Accounts = v
 }
 
@@ -265,7 +266,7 @@ func (o EmailTemplate) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Owner) {
 		toSerialize["owner"] = o.Owner
 	}
-	if !IsNil(o.Accounts) {
+	if o.Accounts != nil {
 		toSerialize["accounts"] = o.Accounts
 	}
 	if !IsNil(o.Template) {

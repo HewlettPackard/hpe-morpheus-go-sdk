@@ -7,9 +7,9 @@ Name | Type | Description | Notes
 **Id** | Pointer to **int64** |  | [optional] 
 **Code** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
-**Category** | Pointer to **string** |  | [optional] 
-**ExternalType** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **NullableString** |  | [optional] 
+**Category** | Pointer to **NullableString** |  | [optional] 
+**ExternalType** | Pointer to **NullableString** |  | [optional] 
 **Creatable** | Pointer to **bool** |  | [optional] 
 **Overlay** | Pointer to **bool** |  | [optional] 
 **NameEditable** | Pointer to **bool** |  | [optional] 
@@ -149,6 +149,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *NetworkType) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *NetworkType) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetCategory
 
 `func (o *NetworkType) GetCategory() string`
@@ -174,6 +184,16 @@ SetCategory sets Category field to given value.
 
 HasCategory returns a boolean if a field has been set.
 
+### SetCategoryNil
+
+`func (o *NetworkType) SetCategoryNil(b bool)`
+
+ SetCategoryNil sets the value for Category to be an explicit nil
+
+### UnsetCategory
+`func (o *NetworkType) UnsetCategory()`
+
+UnsetCategory ensures that no value is present for Category, not even an explicit nil
 ### GetExternalType
 
 `func (o *NetworkType) GetExternalType() string`
@@ -199,6 +219,16 @@ SetExternalType sets ExternalType field to given value.
 
 HasExternalType returns a boolean if a field has been set.
 
+### SetExternalTypeNil
+
+`func (o *NetworkType) SetExternalTypeNil(b bool)`
+
+ SetExternalTypeNil sets the value for ExternalType to be an explicit nil
+
+### UnsetExternalType
+`func (o *NetworkType) UnsetExternalType()`
+
+UnsetExternalType ensures that no value is present for ExternalType, not even an explicit nil
 ### GetCreatable
 
 `func (o *NetworkType) GetCreatable() bool`

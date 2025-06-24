@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **string** |  | [optional] 
-**Code** | Pointer to **string** |  | [optional] 
-**Category** | Pointer to **string** |  | [optional] 
+**Id** | Pointer to **NullableString** |  | [optional] 
+**Code** | Pointer to **NullableString** |  | [optional] 
+**Category** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -52,6 +52,16 @@ SetId sets Id field to given value.
 
 HasId returns a boolean if a field has been set.
 
+### SetIdNil
+
+`func (o *ListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet) SetIdNil(b bool)`
+
+ SetIdNil sets the value for Id to be an explicit nil
+
+### UnsetId
+`func (o *ListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet) UnsetId()`
+
+UnsetId ensures that no value is present for Id, not even an explicit nil
 ### GetCode
 
 `func (o *ListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet) GetCode() string`
@@ -77,6 +87,16 @@ SetCode sets Code field to given value.
 
 HasCode returns a boolean if a field has been set.
 
+### SetCodeNil
+
+`func (o *ListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet) SetCodeNil(b bool)`
+
+ SetCodeNil sets the value for Code to be an explicit nil
+
+### UnsetCode
+`func (o *ListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet) UnsetCode()`
+
+UnsetCode ensures that no value is present for Code, not even an explicit nil
 ### GetCategory
 
 `func (o *ListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet) GetCategory() string`
@@ -102,6 +122,16 @@ SetCategory sets Category field to given value.
 
 HasCategory returns a boolean if a field has been set.
 
+### SetCategoryNil
+
+`func (o *ListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet) SetCategoryNil(b bool)`
+
+ SetCategoryNil sets the value for Category to be an explicit nil
+
+### UnsetCategory
+`func (o *ListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet) UnsetCategory()`
+
+UnsetCategory ensures that no value is present for Category, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

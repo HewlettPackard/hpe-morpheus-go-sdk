@@ -6,15 +6,15 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**InternalId** | Pointer to **string** |  | [optional] 
-**ExternalId** | Pointer to **string** |  | [optional] 
-**ExternalName** | Pointer to **string** |  | [optional] 
+**InternalId** | Pointer to **NullableString** |  | [optional] 
+**ExternalId** | Pointer to **NullableString** |  | [optional] 
+**ExternalName** | Pointer to **NullableString** |  | [optional] 
 **RequestType** | Pointer to **string** |  | [optional] 
-**Account** | Pointer to [**ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
-**Approver** | Pointer to [**ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
-**AccountIntegration** | Pointer to **string** |  | [optional] 
+**Account** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**Approver** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**AccountIntegration** | Pointer to **NullableString** |  | [optional] 
 **Status** | Pointer to **string** |  | [optional] 
-**ErrorMessage** | Pointer to **string** |  | [optional] 
+**ErrorMessage** | Pointer to **NullableString** |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
 **RequestBy** | Pointer to **string** |  | [optional] 
@@ -114,6 +114,16 @@ SetInternalId sets InternalId field to given value.
 
 HasInternalId returns a boolean if a field has been set.
 
+### SetInternalIdNil
+
+`func (o *Approval) SetInternalIdNil(b bool)`
+
+ SetInternalIdNil sets the value for InternalId to be an explicit nil
+
+### UnsetInternalId
+`func (o *Approval) UnsetInternalId()`
+
+UnsetInternalId ensures that no value is present for InternalId, not even an explicit nil
 ### GetExternalId
 
 `func (o *Approval) GetExternalId() string`
@@ -139,6 +149,16 @@ SetExternalId sets ExternalId field to given value.
 
 HasExternalId returns a boolean if a field has been set.
 
+### SetExternalIdNil
+
+`func (o *Approval) SetExternalIdNil(b bool)`
+
+ SetExternalIdNil sets the value for ExternalId to be an explicit nil
+
+### UnsetExternalId
+`func (o *Approval) UnsetExternalId()`
+
+UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
 ### GetExternalName
 
 `func (o *Approval) GetExternalName() string`
@@ -164,6 +184,16 @@ SetExternalName sets ExternalName field to given value.
 
 HasExternalName returns a boolean if a field has been set.
 
+### SetExternalNameNil
+
+`func (o *Approval) SetExternalNameNil(b bool)`
+
+ SetExternalNameNil sets the value for ExternalName to be an explicit nil
+
+### UnsetExternalName
+`func (o *Approval) UnsetExternalName()`
+
+UnsetExternalName ensures that no value is present for ExternalName, not even an explicit nil
 ### GetRequestType
 
 `func (o *Approval) GetRequestType() string`
@@ -191,20 +221,20 @@ HasRequestType returns a boolean if a field has been set.
 
 ### GetAccount
 
-`func (o *Approval) GetAccount() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *Approval) GetAccount() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetAccount returns the Account field if non-nil, zero value otherwise.
 
 ### GetAccountOk
 
-`func (o *Approval) GetAccountOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *Approval) GetAccountOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetAccountOk returns a tuple with the Account field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccount
 
-`func (o *Approval) SetAccount(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *Approval) SetAccount(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetAccount sets Account field to given value.
 
@@ -216,20 +246,20 @@ HasAccount returns a boolean if a field has been set.
 
 ### GetApprover
 
-`func (o *Approval) GetApprover() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *Approval) GetApprover() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetApprover returns the Approver field if non-nil, zero value otherwise.
 
 ### GetApproverOk
 
-`func (o *Approval) GetApproverOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *Approval) GetApproverOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetApproverOk returns a tuple with the Approver field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetApprover
 
-`func (o *Approval) SetApprover(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *Approval) SetApprover(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetApprover sets Approver field to given value.
 
@@ -264,6 +294,16 @@ SetAccountIntegration sets AccountIntegration field to given value.
 
 HasAccountIntegration returns a boolean if a field has been set.
 
+### SetAccountIntegrationNil
+
+`func (o *Approval) SetAccountIntegrationNil(b bool)`
+
+ SetAccountIntegrationNil sets the value for AccountIntegration to be an explicit nil
+
+### UnsetAccountIntegration
+`func (o *Approval) UnsetAccountIntegration()`
+
+UnsetAccountIntegration ensures that no value is present for AccountIntegration, not even an explicit nil
 ### GetStatus
 
 `func (o *Approval) GetStatus() string`
@@ -314,6 +354,16 @@ SetErrorMessage sets ErrorMessage field to given value.
 
 HasErrorMessage returns a boolean if a field has been set.
 
+### SetErrorMessageNil
+
+`func (o *Approval) SetErrorMessageNil(b bool)`
+
+ SetErrorMessageNil sets the value for ErrorMessage to be an explicit nil
+
+### UnsetErrorMessage
+`func (o *Approval) UnsetErrorMessage()`
+
+UnsetErrorMessage ensures that no value is present for ErrorMessage, not even an explicit nil
 ### GetDateCreated
 
 `func (o *Approval) GetDateCreated() time.Time`

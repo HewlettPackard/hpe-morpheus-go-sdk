@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **string** | A name for the image build | [optional] 
-**Description** | Pointer to **string** | A description for the image build | [optional] 
+**Description** | Pointer to **NullableString** | A description for the image build | [optional] 
 **Type** | Pointer to **string** | The image builder type. | [optional] 
 **Site** | Pointer to [**AddImageBuildRequestImageBuildSite**](AddImageBuildRequestImageBuildSite.md) |  | [optional] 
 **Zone** | Pointer to [**AddImageBuildRequestImageBuildZone**](AddImageBuildRequestImageBuildZone.md) |  | [optional] 
@@ -14,9 +14,9 @@ Name | Type | Description | Notes
 **PreseedScript** | Pointer to [**AddImageBuildRequestImageBuildPreseedScript**](AddImageBuildRequestImageBuildPreseedScript.md) |  | [optional] 
 **SshUsername** | Pointer to **string** | SSH Username | [optional] 
 **SshPassword** | Pointer to **string** | SSH Password | [optional] 
-**StorageProvider** | Pointer to **string** | Storage Provider | [optional] 
+**StorageProvider** | Pointer to **NullableString** | Storage Provider | [optional] 
 **IsCloudInit** | Pointer to **string** | Cloud Init | [optional] 
-**BuildOutputName** | Pointer to **string** | Build Output Name | [optional] 
+**BuildOutputName** | Pointer to **NullableString** | Build Output Name | [optional] 
 **ConversionFormats** | Pointer to **NullableString** |  | [optional] 
 **KeepResults** | Pointer to **int64** | Keep Results - Keep only the most recent builds. Older executions will be deleted along with their associated Virtual Images. The value 0 disables this functionality. | [optional] [default to 0]
 
@@ -89,6 +89,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *AddImageBuildRequestImageBuild) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *AddImageBuildRequestImageBuild) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetType
 
 `func (o *AddImageBuildRequestImageBuild) GetType() string`
@@ -314,6 +324,16 @@ SetStorageProvider sets StorageProvider field to given value.
 
 HasStorageProvider returns a boolean if a field has been set.
 
+### SetStorageProviderNil
+
+`func (o *AddImageBuildRequestImageBuild) SetStorageProviderNil(b bool)`
+
+ SetStorageProviderNil sets the value for StorageProvider to be an explicit nil
+
+### UnsetStorageProvider
+`func (o *AddImageBuildRequestImageBuild) UnsetStorageProvider()`
+
+UnsetStorageProvider ensures that no value is present for StorageProvider, not even an explicit nil
 ### GetIsCloudInit
 
 `func (o *AddImageBuildRequestImageBuild) GetIsCloudInit() string`
@@ -364,6 +384,16 @@ SetBuildOutputName sets BuildOutputName field to given value.
 
 HasBuildOutputName returns a boolean if a field has been set.
 
+### SetBuildOutputNameNil
+
+`func (o *AddImageBuildRequestImageBuild) SetBuildOutputNameNil(b bool)`
+
+ SetBuildOutputNameNil sets the value for BuildOutputName to be an explicit nil
+
+### UnsetBuildOutputName
+`func (o *AddImageBuildRequestImageBuild) UnsetBuildOutputName()`
+
+UnsetBuildOutputName ensures that no value is present for BuildOutputName, not even an explicit nil
 ### GetConversionFormats
 
 `func (o *AddImageBuildRequestImageBuild) GetConversionFormats() string`

@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
 **LastRun** | Pointer to **time.Time** |  | [optional] 
 **LastResult** | Pointer to **string** |  | [optional] 
-**CreatedBy** | Pointer to [**ListJobs200ResponseAllOfJobsInnerAnyOfCreatedBy**](ListJobs200ResponseAllOfJobsInnerAnyOfCreatedBy.md) |  | [optional] 
+**CreatedBy** | Pointer to [**ListCredentials200ResponseAllOfCredentialsInnerUser**](ListCredentials200ResponseAllOfCredentialsInnerUser.md) |  | [optional] 
 **TargetType** | Pointer to **string** |  | [optional] 
 **Targets** | Pointer to [**[]ListJobs200ResponseAllOfJobsInnerAnyOfTargetsInner**](ListJobs200ResponseAllOfJobsInnerAnyOfTargetsInner.md) |  | [optional] 
 **ScanPath** | Pointer to **string** | Scan Checklist. Only applies to type scap-package. | [optional] 
@@ -527,20 +527,20 @@ HasLastResult returns a boolean if a field has been set.
 
 ### GetCreatedBy
 
-`func (o *ListJobs200ResponseAllOfJobsInner) GetCreatedBy() ListJobs200ResponseAllOfJobsInnerAnyOfCreatedBy`
+`func (o *ListJobs200ResponseAllOfJobsInner) GetCreatedBy() ListCredentials200ResponseAllOfCredentialsInnerUser`
 
 GetCreatedBy returns the CreatedBy field if non-nil, zero value otherwise.
 
 ### GetCreatedByOk
 
-`func (o *ListJobs200ResponseAllOfJobsInner) GetCreatedByOk() (*ListJobs200ResponseAllOfJobsInnerAnyOfCreatedBy, bool)`
+`func (o *ListJobs200ResponseAllOfJobsInner) GetCreatedByOk() (*ListCredentials200ResponseAllOfCredentialsInnerUser, bool)`
 
 GetCreatedByOk returns a tuple with the CreatedBy field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCreatedBy
 
-`func (o *ListJobs200ResponseAllOfJobsInner) SetCreatedBy(v ListJobs200ResponseAllOfJobsInnerAnyOfCreatedBy)`
+`func (o *ListJobs200ResponseAllOfJobsInner) SetCreatedBy(v ListCredentials200ResponseAllOfCredentialsInnerUser)`
 
 SetCreatedBy sets CreatedBy field to given value.
 

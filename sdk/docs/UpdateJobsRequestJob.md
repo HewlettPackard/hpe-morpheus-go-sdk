@@ -9,8 +9,8 @@ Name | Type | Description | Notes
 **Enabled** | Pointer to **bool** | Use this to set enabled state | [optional] [default to true]
 **Task** | Pointer to [**WorkflowJobPayloadTask**](WorkflowJobPayloadTask.md) |  | [optional] 
 **Workflow** | Pointer to [**WorkflowJobPayloadTask**](WorkflowJobPayloadTask.md) |  | [optional] 
-**ScanPath** | Pointer to **string** | Scan Checklist. Only applies to type scap-package. | [optional] 
-**SecurityProfile** | Pointer to **string** | Security Profile. Only applies to type scap-package. | [optional] 
+**ScanPath** | Pointer to **NullableString** | Scan Checklist. Only applies to type scap-package. | [optional] 
+**SecurityProfile** | Pointer to **NullableString** | Security Profile. Only applies to type scap-package. | [optional] 
 **TargetType** | Pointer to **string** | Target type where job will execute | [optional] 
 **Targets** | Pointer to [**[]WorkflowJobPayloadTargetsInner**](WorkflowJobPayloadTargetsInner.md) |  | [optional] 
 **InstanceLabel** | Pointer to **string** | Instance Label. Only applicable if &#x60;targetType&#x60; is &#x60;instance-label&#x60;. | [optional] 
@@ -90,6 +90,16 @@ SetLabels sets Labels field to given value.
 
 HasLabels returns a boolean if a field has been set.
 
+### SetLabelsNil
+
+`func (o *UpdateJobsRequestJob) SetLabelsNil(b bool)`
+
+ SetLabelsNil sets the value for Labels to be an explicit nil
+
+### UnsetLabels
+`func (o *UpdateJobsRequestJob) UnsetLabels()`
+
+UnsetLabels ensures that no value is present for Labels, not even an explicit nil
 ### GetEnabled
 
 `func (o *UpdateJobsRequestJob) GetEnabled() bool`
@@ -190,6 +200,16 @@ SetScanPath sets ScanPath field to given value.
 
 HasScanPath returns a boolean if a field has been set.
 
+### SetScanPathNil
+
+`func (o *UpdateJobsRequestJob) SetScanPathNil(b bool)`
+
+ SetScanPathNil sets the value for ScanPath to be an explicit nil
+
+### UnsetScanPath
+`func (o *UpdateJobsRequestJob) UnsetScanPath()`
+
+UnsetScanPath ensures that no value is present for ScanPath, not even an explicit nil
 ### GetSecurityProfile
 
 `func (o *UpdateJobsRequestJob) GetSecurityProfile() string`
@@ -215,6 +235,16 @@ SetSecurityProfile sets SecurityProfile field to given value.
 
 HasSecurityProfile returns a boolean if a field has been set.
 
+### SetSecurityProfileNil
+
+`func (o *UpdateJobsRequestJob) SetSecurityProfileNil(b bool)`
+
+ SetSecurityProfileNil sets the value for SecurityProfile to be an explicit nil
+
+### UnsetSecurityProfile
+`func (o *UpdateJobsRequestJob) UnsetSecurityProfile()`
+
+UnsetSecurityProfile ensures that no value is present for SecurityProfile, not even an explicit nil
 ### GetTargetType
 
 `func (o *UpdateJobsRequestJob) GetTargetType() string`
@@ -265,6 +295,16 @@ SetTargets sets Targets field to given value.
 
 HasTargets returns a boolean if a field has been set.
 
+### SetTargetsNil
+
+`func (o *UpdateJobsRequestJob) SetTargetsNil(b bool)`
+
+ SetTargetsNil sets the value for Targets to be an explicit nil
+
+### UnsetTargets
+`func (o *UpdateJobsRequestJob) UnsetTargets()`
+
+UnsetTargets ensures that no value is present for Targets, not even an explicit nil
 ### GetInstanceLabel
 
 `func (o *UpdateJobsRequestJob) GetInstanceLabel() string`

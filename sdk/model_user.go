@@ -21,34 +21,34 @@ var _ MappedNullable = &User{}
 
 // User struct for User
 type User struct {
-	Id                   *int64                                                                  `json:"id,omitempty"`
-	AccountId            *int64                                                                  `json:"accountId,omitempty"`
-	Username             *string                                                                 `json:"username,omitempty"`
-	DisplayName          *string                                                                 `json:"displayName,omitempty"`
-	Email                *string                                                                 `json:"email,omitempty"`
-	FirstName            *string                                                                 `json:"firstName,omitempty"`
-	LastName             *string                                                                 `json:"lastName,omitempty"`
-	Enabled              *bool                                                                   `json:"enabled,omitempty"`
-	ReceiveNotifications *bool                                                                   `json:"receiveNotifications,omitempty"`
-	IsUsing2FA           *bool                                                                   `json:"isUsing2FA,omitempty"`
-	AccountExpired       *bool                                                                   `json:"accountExpired,omitempty"`
-	AccountLocked        *bool                                                                   `json:"accountLocked,omitempty"`
-	PasswordExpired      *bool                                                                   `json:"passwordExpired,omitempty"`
-	LoginCount           *int64                                                                  `json:"loginCount,omitempty"`
-	LoginAttempts        *int64                                                                  `json:"loginAttempts,omitempty"`
-	LastLoginDate        *time.Time                                                              `json:"lastLoginDate,omitempty"`
-	Roles                []AddUserTenant200ResponseAllOfUserRolesInner                           `json:"roles,omitempty"`
-	Account              *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"account,omitempty"`
-	LinuxUsername        *string                                                                 `json:"linuxUsername,omitempty"`
-	LinuxPassword        *string                                                                 `json:"linuxPassword,omitempty"`
-	LinuxKeyPairId       *int64                                                                  `json:"linuxKeyPairId,omitempty"`
-	WindowsUsername      *string                                                                 `json:"windowsUsername,omitempty"`
-	WindowsPassword      *string                                                                 `json:"windowsPassword,omitempty"`
-	DefaultPersona       *ListBackupSettings200ResponseBackupSettingsDefaultSchedule             `json:"defaultPersona,omitempty"`
-	DateCreated          *time.Time                                                              `json:"dateCreated,omitempty"`
-	LastUpdated          *time.Time                                                              `json:"lastUpdated,omitempty"`
-	Access               *AddUserTenant200ResponseAllOfUserAccess                                `json:"access,omitempty"`
-	AdditionalProperties map[string]interface{}                                                  `json:",remain"`
+	Id                   *int64                                                      `json:"id,omitempty"`
+	AccountId            *int64                                                      `json:"accountId,omitempty"`
+	Username             *string                                                     `json:"username,omitempty"`
+	DisplayName          *string                                                     `json:"displayName,omitempty"`
+	Email                *string                                                     `json:"email,omitempty"`
+	FirstName            *string                                                     `json:"firstName,omitempty"`
+	LastName             *string                                                     `json:"lastName,omitempty"`
+	Enabled              *bool                                                       `json:"enabled,omitempty"`
+	ReceiveNotifications *bool                                                       `json:"receiveNotifications,omitempty"`
+	IsUsing2FA           *bool                                                       `json:"isUsing2FA,omitempty"`
+	AccountExpired       *bool                                                       `json:"accountExpired,omitempty"`
+	AccountLocked        *bool                                                       `json:"accountLocked,omitempty"`
+	PasswordExpired      *bool                                                       `json:"passwordExpired,omitempty"`
+	LoginCount           *int64                                                      `json:"loginCount,omitempty"`
+	LoginAttempts        *int64                                                      `json:"loginAttempts,omitempty"`
+	LastLoginDate        *time.Time                                                  `json:"lastLoginDate,omitempty"`
+	Roles                []AddUserTenant200ResponseAllOfUserRolesInner               `json:"roles,omitempty"`
+	Account              *GetAlerts200ResponseAllOfCheckGroupsInnerInstance          `json:"account,omitempty"`
+	LinuxUsername        NullableString                                              `json:"linuxUsername,omitempty"`
+	LinuxPassword        NullableString                                              `json:"linuxPassword,omitempty"`
+	LinuxKeyPairId       NullableInt64                                               `json:"linuxKeyPairId,omitempty"`
+	WindowsUsername      NullableString                                              `json:"windowsUsername,omitempty"`
+	WindowsPassword      NullableString                                              `json:"windowsPassword,omitempty"`
+	DefaultPersona       *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"defaultPersona,omitempty"`
+	DateCreated          *time.Time                                                  `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                                  `json:"lastUpdated,omitempty"`
+	Access               *AddUserTenant200ResponseAllOfUserAccess                    `json:"access,omitempty"`
+	AdditionalProperties map[string]interface{}                                      `json:",remain"`
 }
 
 type _User User
@@ -615,9 +615,9 @@ func (o *User) SetRoles(v []AddUserTenant200ResponseAllOfUserRolesInner) {
 }
 
 // GetAccount returns the Account field value if set, zero value otherwise.
-func (o *User) GetAccount() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *User) GetAccount() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.Account) {
-		var ret ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return *o.Account
@@ -625,7 +625,7 @@ func (o *User) GetAccount() ListApplianceSettings200ResponseApplianceSettingsEna
 
 // GetAccountOk returns a tuple with the Account field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *User) GetAccountOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *User) GetAccountOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.Account) {
 		return nil, false
 	}
@@ -641,169 +641,224 @@ func (o *User) IsSetAccount() bool {
 	return false
 }
 
-// SetAccount gets a reference to the given ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the Account field.
-func (o *User) SetAccount(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetAccount gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Account field.
+func (o *User) SetAccount(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.Account = &v
 }
 
-// GetLinuxUsername returns the LinuxUsername field value if set, zero value otherwise.
+// GetLinuxUsername returns the LinuxUsername field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *User) GetLinuxUsername() string {
-	if o == nil || IsNil(o.LinuxUsername) {
+	if o == nil || IsNil(o.LinuxUsername.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.LinuxUsername
+	return *o.LinuxUsername.Get()
 }
 
 // GetLinuxUsernameOk returns a tuple with the LinuxUsername field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *User) GetLinuxUsernameOk() (*string, bool) {
-	if o == nil || IsNil(o.LinuxUsername) {
+	if o == nil {
 		return nil, false
 	}
-	return o.LinuxUsername, true
+	return o.LinuxUsername.Get(), o.LinuxUsername.IsSet()
 }
 
 // IsSetLinuxUsername returns a boolean if a field has been set.
 func (o *User) IsSetLinuxUsername() bool {
-	if o != nil && !IsNil(o.LinuxUsername) {
+	if o != nil && o.LinuxUsername.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetLinuxUsername gets a reference to the given string and assigns it to the LinuxUsername field.
+// SetLinuxUsername gets a reference to the given NullableString and assigns it to the LinuxUsername field.
 func (o *User) SetLinuxUsername(v string) {
-	o.LinuxUsername = &v
+	o.LinuxUsername.Set(&v)
 }
 
-// GetLinuxPassword returns the LinuxPassword field value if set, zero value otherwise.
+// SetLinuxUsernameNil sets the value for LinuxUsername to be an explicit nil
+func (o *User) SetLinuxUsernameNil() {
+	o.LinuxUsername.Set(nil)
+}
+
+// UnsetLinuxUsername ensures that no value is present for LinuxUsername, not even an explicit nil
+func (o *User) UnsetLinuxUsername() {
+	o.LinuxUsername.Unset()
+}
+
+// GetLinuxPassword returns the LinuxPassword field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *User) GetLinuxPassword() string {
-	if o == nil || IsNil(o.LinuxPassword) {
+	if o == nil || IsNil(o.LinuxPassword.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.LinuxPassword
+	return *o.LinuxPassword.Get()
 }
 
 // GetLinuxPasswordOk returns a tuple with the LinuxPassword field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *User) GetLinuxPasswordOk() (*string, bool) {
-	if o == nil || IsNil(o.LinuxPassword) {
+	if o == nil {
 		return nil, false
 	}
-	return o.LinuxPassword, true
+	return o.LinuxPassword.Get(), o.LinuxPassword.IsSet()
 }
 
 // IsSetLinuxPassword returns a boolean if a field has been set.
 func (o *User) IsSetLinuxPassword() bool {
-	if o != nil && !IsNil(o.LinuxPassword) {
+	if o != nil && o.LinuxPassword.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetLinuxPassword gets a reference to the given string and assigns it to the LinuxPassword field.
+// SetLinuxPassword gets a reference to the given NullableString and assigns it to the LinuxPassword field.
 func (o *User) SetLinuxPassword(v string) {
-	o.LinuxPassword = &v
+	o.LinuxPassword.Set(&v)
 }
 
-// GetLinuxKeyPairId returns the LinuxKeyPairId field value if set, zero value otherwise.
+// SetLinuxPasswordNil sets the value for LinuxPassword to be an explicit nil
+func (o *User) SetLinuxPasswordNil() {
+	o.LinuxPassword.Set(nil)
+}
+
+// UnsetLinuxPassword ensures that no value is present for LinuxPassword, not even an explicit nil
+func (o *User) UnsetLinuxPassword() {
+	o.LinuxPassword.Unset()
+}
+
+// GetLinuxKeyPairId returns the LinuxKeyPairId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *User) GetLinuxKeyPairId() int64 {
-	if o == nil || IsNil(o.LinuxKeyPairId) {
+	if o == nil || IsNil(o.LinuxKeyPairId.Get()) {
 		var ret int64
 		return ret
 	}
-	return *o.LinuxKeyPairId
+	return *o.LinuxKeyPairId.Get()
 }
 
 // GetLinuxKeyPairIdOk returns a tuple with the LinuxKeyPairId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *User) GetLinuxKeyPairIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.LinuxKeyPairId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.LinuxKeyPairId, true
+	return o.LinuxKeyPairId.Get(), o.LinuxKeyPairId.IsSet()
 }
 
 // IsSetLinuxKeyPairId returns a boolean if a field has been set.
 func (o *User) IsSetLinuxKeyPairId() bool {
-	if o != nil && !IsNil(o.LinuxKeyPairId) {
+	if o != nil && o.LinuxKeyPairId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetLinuxKeyPairId gets a reference to the given int64 and assigns it to the LinuxKeyPairId field.
+// SetLinuxKeyPairId gets a reference to the given NullableInt64 and assigns it to the LinuxKeyPairId field.
 func (o *User) SetLinuxKeyPairId(v int64) {
-	o.LinuxKeyPairId = &v
+	o.LinuxKeyPairId.Set(&v)
 }
 
-// GetWindowsUsername returns the WindowsUsername field value if set, zero value otherwise.
+// SetLinuxKeyPairIdNil sets the value for LinuxKeyPairId to be an explicit nil
+func (o *User) SetLinuxKeyPairIdNil() {
+	o.LinuxKeyPairId.Set(nil)
+}
+
+// UnsetLinuxKeyPairId ensures that no value is present for LinuxKeyPairId, not even an explicit nil
+func (o *User) UnsetLinuxKeyPairId() {
+	o.LinuxKeyPairId.Unset()
+}
+
+// GetWindowsUsername returns the WindowsUsername field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *User) GetWindowsUsername() string {
-	if o == nil || IsNil(o.WindowsUsername) {
+	if o == nil || IsNil(o.WindowsUsername.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.WindowsUsername
+	return *o.WindowsUsername.Get()
 }
 
 // GetWindowsUsernameOk returns a tuple with the WindowsUsername field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *User) GetWindowsUsernameOk() (*string, bool) {
-	if o == nil || IsNil(o.WindowsUsername) {
+	if o == nil {
 		return nil, false
 	}
-	return o.WindowsUsername, true
+	return o.WindowsUsername.Get(), o.WindowsUsername.IsSet()
 }
 
 // IsSetWindowsUsername returns a boolean if a field has been set.
 func (o *User) IsSetWindowsUsername() bool {
-	if o != nil && !IsNil(o.WindowsUsername) {
+	if o != nil && o.WindowsUsername.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetWindowsUsername gets a reference to the given string and assigns it to the WindowsUsername field.
+// SetWindowsUsername gets a reference to the given NullableString and assigns it to the WindowsUsername field.
 func (o *User) SetWindowsUsername(v string) {
-	o.WindowsUsername = &v
+	o.WindowsUsername.Set(&v)
 }
 
-// GetWindowsPassword returns the WindowsPassword field value if set, zero value otherwise.
+// SetWindowsUsernameNil sets the value for WindowsUsername to be an explicit nil
+func (o *User) SetWindowsUsernameNil() {
+	o.WindowsUsername.Set(nil)
+}
+
+// UnsetWindowsUsername ensures that no value is present for WindowsUsername, not even an explicit nil
+func (o *User) UnsetWindowsUsername() {
+	o.WindowsUsername.Unset()
+}
+
+// GetWindowsPassword returns the WindowsPassword field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *User) GetWindowsPassword() string {
-	if o == nil || IsNil(o.WindowsPassword) {
+	if o == nil || IsNil(o.WindowsPassword.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.WindowsPassword
+	return *o.WindowsPassword.Get()
 }
 
 // GetWindowsPasswordOk returns a tuple with the WindowsPassword field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *User) GetWindowsPasswordOk() (*string, bool) {
-	if o == nil || IsNil(o.WindowsPassword) {
+	if o == nil {
 		return nil, false
 	}
-	return o.WindowsPassword, true
+	return o.WindowsPassword.Get(), o.WindowsPassword.IsSet()
 }
 
 // IsSetWindowsPassword returns a boolean if a field has been set.
 func (o *User) IsSetWindowsPassword() bool {
-	if o != nil && !IsNil(o.WindowsPassword) {
+	if o != nil && o.WindowsPassword.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetWindowsPassword gets a reference to the given string and assigns it to the WindowsPassword field.
+// SetWindowsPassword gets a reference to the given NullableString and assigns it to the WindowsPassword field.
 func (o *User) SetWindowsPassword(v string) {
-	o.WindowsPassword = &v
+	o.WindowsPassword.Set(&v)
+}
+
+// SetWindowsPasswordNil sets the value for WindowsPassword to be an explicit nil
+func (o *User) SetWindowsPasswordNil() {
+	o.WindowsPassword.Set(nil)
+}
+
+// UnsetWindowsPassword ensures that no value is present for WindowsPassword, not even an explicit nil
+func (o *User) UnsetWindowsPassword() {
+	o.WindowsPassword.Unset()
 }
 
 // GetDefaultPersona returns the DefaultPersona field value if set, zero value otherwise.
@@ -998,20 +1053,20 @@ func (o User) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Account) {
 		toSerialize["account"] = o.Account
 	}
-	if !IsNil(o.LinuxUsername) {
-		toSerialize["linuxUsername"] = o.LinuxUsername
+	if o.LinuxUsername.IsSet() {
+		toSerialize["linuxUsername"] = o.LinuxUsername.Get()
 	}
-	if !IsNil(o.LinuxPassword) {
-		toSerialize["linuxPassword"] = o.LinuxPassword
+	if o.LinuxPassword.IsSet() {
+		toSerialize["linuxPassword"] = o.LinuxPassword.Get()
 	}
-	if !IsNil(o.LinuxKeyPairId) {
-		toSerialize["linuxKeyPairId"] = o.LinuxKeyPairId
+	if o.LinuxKeyPairId.IsSet() {
+		toSerialize["linuxKeyPairId"] = o.LinuxKeyPairId.Get()
 	}
-	if !IsNil(o.WindowsUsername) {
-		toSerialize["windowsUsername"] = o.WindowsUsername
+	if o.WindowsUsername.IsSet() {
+		toSerialize["windowsUsername"] = o.WindowsUsername.Get()
 	}
-	if !IsNil(o.WindowsPassword) {
-		toSerialize["windowsPassword"] = o.WindowsPassword
+	if o.WindowsPassword.IsSet() {
+		toSerialize["windowsPassword"] = o.WindowsPassword.Get()
 	}
 	if !IsNil(o.DefaultPersona) {
 		toSerialize["defaultPersona"] = o.DefaultPersona

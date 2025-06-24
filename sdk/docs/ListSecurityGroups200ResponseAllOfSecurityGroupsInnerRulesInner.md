@@ -5,24 +5,24 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
-**Name** | Pointer to **string** |  | [optional] 
+**Name** | Pointer to **NullableString** |  | [optional] 
 **RuleType** | Pointer to **string** |  | [optional] 
 **CustomRule** | Pointer to **bool** |  | [optional] 
-**InstanceTypeId** | Pointer to **string** |  | [optional] 
+**InstanceTypeId** | Pointer to **NullableString** |  | [optional] 
 **Direction** | Pointer to **string** |  | [optional] 
 **Policy** | Pointer to **string** |  | [optional] 
 **SourceType** | Pointer to **string** |  | [optional] 
-**Source** | Pointer to **string** |  | [optional] 
-**SourceGroup** | Pointer to **string** |  | [optional] 
-**SourceTier** | Pointer to **string** |  | [optional] 
-**PortRange** | Pointer to **string** |  | [optional] 
+**Source** | Pointer to **NullableString** |  | [optional] 
+**SourceGroup** | Pointer to **NullableString** |  | [optional] 
+**SourceTier** | Pointer to **NullableString** |  | [optional] 
+**PortRange** | Pointer to **NullableString** |  | [optional] 
 **Protocol** | Pointer to **string** |  | [optional] 
 **DestinationType** | Pointer to **string** |  | [optional] 
-**Destination** | Pointer to **string** |  | [optional] 
-**DestinationGroup** | Pointer to **string** |  | [optional] 
-**DestinationTier** | Pointer to **string** |  | [optional] 
+**Destination** | Pointer to **NullableString** |  | [optional] 
+**DestinationGroup** | Pointer to **NullableString** |  | [optional] 
+**DestinationTier** | Pointer to **NullableString** |  | [optional] 
 **ExternalId** | Pointer to **string** |  | [optional] 
-**Enabled** | Pointer to **string** |  | [optional] 
+**Enabled** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -93,6 +93,16 @@ SetName sets Name field to given value.
 
 HasName returns a boolean if a field has been set.
 
+### SetNameNil
+
+`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) SetNameNil(b bool)`
+
+ SetNameNil sets the value for Name to be an explicit nil
+
+### UnsetName
+`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) UnsetName()`
+
+UnsetName ensures that no value is present for Name, not even an explicit nil
 ### GetRuleType
 
 `func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) GetRuleType() string`
@@ -168,6 +178,16 @@ SetInstanceTypeId sets InstanceTypeId field to given value.
 
 HasInstanceTypeId returns a boolean if a field has been set.
 
+### SetInstanceTypeIdNil
+
+`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) SetInstanceTypeIdNil(b bool)`
+
+ SetInstanceTypeIdNil sets the value for InstanceTypeId to be an explicit nil
+
+### UnsetInstanceTypeId
+`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) UnsetInstanceTypeId()`
+
+UnsetInstanceTypeId ensures that no value is present for InstanceTypeId, not even an explicit nil
 ### GetDirection
 
 `func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) GetDirection() string`
@@ -268,6 +288,16 @@ SetSource sets Source field to given value.
 
 HasSource returns a boolean if a field has been set.
 
+### SetSourceNil
+
+`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) SetSourceNil(b bool)`
+
+ SetSourceNil sets the value for Source to be an explicit nil
+
+### UnsetSource
+`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) UnsetSource()`
+
+UnsetSource ensures that no value is present for Source, not even an explicit nil
 ### GetSourceGroup
 
 `func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) GetSourceGroup() string`
@@ -293,6 +323,16 @@ SetSourceGroup sets SourceGroup field to given value.
 
 HasSourceGroup returns a boolean if a field has been set.
 
+### SetSourceGroupNil
+
+`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) SetSourceGroupNil(b bool)`
+
+ SetSourceGroupNil sets the value for SourceGroup to be an explicit nil
+
+### UnsetSourceGroup
+`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) UnsetSourceGroup()`
+
+UnsetSourceGroup ensures that no value is present for SourceGroup, not even an explicit nil
 ### GetSourceTier
 
 `func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) GetSourceTier() string`
@@ -318,6 +358,16 @@ SetSourceTier sets SourceTier field to given value.
 
 HasSourceTier returns a boolean if a field has been set.
 
+### SetSourceTierNil
+
+`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) SetSourceTierNil(b bool)`
+
+ SetSourceTierNil sets the value for SourceTier to be an explicit nil
+
+### UnsetSourceTier
+`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) UnsetSourceTier()`
+
+UnsetSourceTier ensures that no value is present for SourceTier, not even an explicit nil
 ### GetPortRange
 
 `func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) GetPortRange() string`
@@ -343,6 +393,16 @@ SetPortRange sets PortRange field to given value.
 
 HasPortRange returns a boolean if a field has been set.
 
+### SetPortRangeNil
+
+`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) SetPortRangeNil(b bool)`
+
+ SetPortRangeNil sets the value for PortRange to be an explicit nil
+
+### UnsetPortRange
+`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) UnsetPortRange()`
+
+UnsetPortRange ensures that no value is present for PortRange, not even an explicit nil
 ### GetProtocol
 
 `func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) GetProtocol() string`
@@ -418,6 +478,16 @@ SetDestination sets Destination field to given value.
 
 HasDestination returns a boolean if a field has been set.
 
+### SetDestinationNil
+
+`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) SetDestinationNil(b bool)`
+
+ SetDestinationNil sets the value for Destination to be an explicit nil
+
+### UnsetDestination
+`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) UnsetDestination()`
+
+UnsetDestination ensures that no value is present for Destination, not even an explicit nil
 ### GetDestinationGroup
 
 `func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) GetDestinationGroup() string`
@@ -443,6 +513,16 @@ SetDestinationGroup sets DestinationGroup field to given value.
 
 HasDestinationGroup returns a boolean if a field has been set.
 
+### SetDestinationGroupNil
+
+`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) SetDestinationGroupNil(b bool)`
+
+ SetDestinationGroupNil sets the value for DestinationGroup to be an explicit nil
+
+### UnsetDestinationGroup
+`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) UnsetDestinationGroup()`
+
+UnsetDestinationGroup ensures that no value is present for DestinationGroup, not even an explicit nil
 ### GetDestinationTier
 
 `func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) GetDestinationTier() string`
@@ -468,6 +548,16 @@ SetDestinationTier sets DestinationTier field to given value.
 
 HasDestinationTier returns a boolean if a field has been set.
 
+### SetDestinationTierNil
+
+`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) SetDestinationTierNil(b bool)`
+
+ SetDestinationTierNil sets the value for DestinationTier to be an explicit nil
+
+### UnsetDestinationTier
+`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) UnsetDestinationTier()`
+
+UnsetDestinationTier ensures that no value is present for DestinationTier, not even an explicit nil
 ### GetExternalId
 
 `func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) GetExternalId() string`
@@ -518,6 +608,16 @@ SetEnabled sets Enabled field to given value.
 
 HasEnabled returns a boolean if a field has been set.
 
+### SetEnabledNil
+
+`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) SetEnabledNil(b bool)`
+
+ SetEnabledNil sets the value for Enabled to be an explicit nil
+
+### UnsetEnabled
+`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) UnsetEnabled()`
+
+UnsetEnabled ensures that no value is present for Enabled, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

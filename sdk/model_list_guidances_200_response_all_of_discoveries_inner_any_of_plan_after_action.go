@@ -31,7 +31,7 @@ type ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction struct {
 	MaxMemory            *int64                                                                             `json:"maxMemory,omitempty"`
 	MaxCpu               *int64                                                                             `json:"maxCpu,omitempty"`
 	MaxCores             *int64                                                                             `json:"maxCores,omitempty"`
-	MaxDisks             *string                                                                            `json:"maxDisks,omitempty"`
+	MaxDisks             NullableString                                                                     `json:"maxDisks,omitempty"`
 	CoresPerSocket       *int64                                                                             `json:"coresPerSocket,omitempty"`
 	CustomCpu            *bool                                                                              `json:"customCpu,omitempty"`
 	CustomCores          *bool                                                                              `json:"customCores,omitempty"`
@@ -39,11 +39,11 @@ type ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction struct {
 	CustomMaxDataStorage *bool                                                                              `json:"customMaxDataStorage,omitempty"`
 	CustomMaxMemory      *bool                                                                              `json:"customMaxMemory,omitempty"`
 	AddVolumes           *bool                                                                              `json:"addVolumes,omitempty"`
-	MemoryOptionSource   *string                                                                            `json:"memoryOptionSource,omitempty"`
-	CpuOptionSource      *string                                                                            `json:"cpuOptionSource,omitempty"`
+	MemoryOptionSource   NullableString                                                                     `json:"memoryOptionSource,omitempty"`
+	CpuOptionSource      NullableString                                                                     `json:"cpuOptionSource,omitempty"`
 	DateCreated          *time.Time                                                                         `json:"dateCreated,omitempty"`
 	LastUpdated          *time.Time                                                                         `json:"lastUpdated,omitempty"`
-	RegionCode           *string                                                                            `json:"regionCode,omitempty"`
+	RegionCode           NullableString                                                                     `json:"regionCode,omitempty"`
 	Visibility           *string                                                                            `json:"visibility,omitempty"`
 	Editable             *bool                                                                              `json:"editable,omitempty"`
 	ProvisionType        *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionProvisionType   `json:"provisionType,omitempty"`
@@ -392,36 +392,47 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) SetM
 	o.MaxCores = &v
 }
 
-// GetMaxDisks returns the MaxDisks field value if set, zero value otherwise.
+// GetMaxDisks returns the MaxDisks field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) GetMaxDisks() string {
-	if o == nil || IsNil(o.MaxDisks) {
+	if o == nil || IsNil(o.MaxDisks.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.MaxDisks
+	return *o.MaxDisks.Get()
 }
 
 // GetMaxDisksOk returns a tuple with the MaxDisks field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) GetMaxDisksOk() (*string, bool) {
-	if o == nil || IsNil(o.MaxDisks) {
+	if o == nil {
 		return nil, false
 	}
-	return o.MaxDisks, true
+	return o.MaxDisks.Get(), o.MaxDisks.IsSet()
 }
 
 // IsSetMaxDisks returns a boolean if a field has been set.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) IsSetMaxDisks() bool {
-	if o != nil && !IsNil(o.MaxDisks) {
+	if o != nil && o.MaxDisks.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetMaxDisks gets a reference to the given string and assigns it to the MaxDisks field.
+// SetMaxDisks gets a reference to the given NullableString and assigns it to the MaxDisks field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) SetMaxDisks(v string) {
-	o.MaxDisks = &v
+	o.MaxDisks.Set(&v)
+}
+
+// SetMaxDisksNil sets the value for MaxDisks to be an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) SetMaxDisksNil() {
+	o.MaxDisks.Set(nil)
+}
+
+// UnsetMaxDisks ensures that no value is present for MaxDisks, not even an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) UnsetMaxDisks() {
+	o.MaxDisks.Unset()
 }
 
 // GetCoresPerSocket returns the CoresPerSocket field value if set, zero value otherwise.
@@ -648,68 +659,90 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) SetA
 	o.AddVolumes = &v
 }
 
-// GetMemoryOptionSource returns the MemoryOptionSource field value if set, zero value otherwise.
+// GetMemoryOptionSource returns the MemoryOptionSource field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) GetMemoryOptionSource() string {
-	if o == nil || IsNil(o.MemoryOptionSource) {
+	if o == nil || IsNil(o.MemoryOptionSource.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.MemoryOptionSource
+	return *o.MemoryOptionSource.Get()
 }
 
 // GetMemoryOptionSourceOk returns a tuple with the MemoryOptionSource field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) GetMemoryOptionSourceOk() (*string, bool) {
-	if o == nil || IsNil(o.MemoryOptionSource) {
+	if o == nil {
 		return nil, false
 	}
-	return o.MemoryOptionSource, true
+	return o.MemoryOptionSource.Get(), o.MemoryOptionSource.IsSet()
 }
 
 // IsSetMemoryOptionSource returns a boolean if a field has been set.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) IsSetMemoryOptionSource() bool {
-	if o != nil && !IsNil(o.MemoryOptionSource) {
+	if o != nil && o.MemoryOptionSource.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetMemoryOptionSource gets a reference to the given string and assigns it to the MemoryOptionSource field.
+// SetMemoryOptionSource gets a reference to the given NullableString and assigns it to the MemoryOptionSource field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) SetMemoryOptionSource(v string) {
-	o.MemoryOptionSource = &v
+	o.MemoryOptionSource.Set(&v)
 }
 
-// GetCpuOptionSource returns the CpuOptionSource field value if set, zero value otherwise.
+// SetMemoryOptionSourceNil sets the value for MemoryOptionSource to be an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) SetMemoryOptionSourceNil() {
+	o.MemoryOptionSource.Set(nil)
+}
+
+// UnsetMemoryOptionSource ensures that no value is present for MemoryOptionSource, not even an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) UnsetMemoryOptionSource() {
+	o.MemoryOptionSource.Unset()
+}
+
+// GetCpuOptionSource returns the CpuOptionSource field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) GetCpuOptionSource() string {
-	if o == nil || IsNil(o.CpuOptionSource) {
+	if o == nil || IsNil(o.CpuOptionSource.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.CpuOptionSource
+	return *o.CpuOptionSource.Get()
 }
 
 // GetCpuOptionSourceOk returns a tuple with the CpuOptionSource field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) GetCpuOptionSourceOk() (*string, bool) {
-	if o == nil || IsNil(o.CpuOptionSource) {
+	if o == nil {
 		return nil, false
 	}
-	return o.CpuOptionSource, true
+	return o.CpuOptionSource.Get(), o.CpuOptionSource.IsSet()
 }
 
 // IsSetCpuOptionSource returns a boolean if a field has been set.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) IsSetCpuOptionSource() bool {
-	if o != nil && !IsNil(o.CpuOptionSource) {
+	if o != nil && o.CpuOptionSource.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCpuOptionSource gets a reference to the given string and assigns it to the CpuOptionSource field.
+// SetCpuOptionSource gets a reference to the given NullableString and assigns it to the CpuOptionSource field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) SetCpuOptionSource(v string) {
-	o.CpuOptionSource = &v
+	o.CpuOptionSource.Set(&v)
+}
+
+// SetCpuOptionSourceNil sets the value for CpuOptionSource to be an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) SetCpuOptionSourceNil() {
+	o.CpuOptionSource.Set(nil)
+}
+
+// UnsetCpuOptionSource ensures that no value is present for CpuOptionSource, not even an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) UnsetCpuOptionSource() {
+	o.CpuOptionSource.Unset()
 }
 
 // GetDateCreated returns the DateCreated field value if set, zero value otherwise.
@@ -776,36 +809,47 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) SetL
 	o.LastUpdated = &v
 }
 
-// GetRegionCode returns the RegionCode field value if set, zero value otherwise.
+// GetRegionCode returns the RegionCode field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) GetRegionCode() string {
-	if o == nil || IsNil(o.RegionCode) {
+	if o == nil || IsNil(o.RegionCode.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.RegionCode
+	return *o.RegionCode.Get()
 }
 
 // GetRegionCodeOk returns a tuple with the RegionCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) GetRegionCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.RegionCode) {
+	if o == nil {
 		return nil, false
 	}
-	return o.RegionCode, true
+	return o.RegionCode.Get(), o.RegionCode.IsSet()
 }
 
 // IsSetRegionCode returns a boolean if a field has been set.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) IsSetRegionCode() bool {
-	if o != nil && !IsNil(o.RegionCode) {
+	if o != nil && o.RegionCode.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetRegionCode gets a reference to the given string and assigns it to the RegionCode field.
+// SetRegionCode gets a reference to the given NullableString and assigns it to the RegionCode field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) SetRegionCode(v string) {
-	o.RegionCode = &v
+	o.RegionCode.Set(&v)
+}
+
+// SetRegionCodeNil sets the value for RegionCode to be an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) SetRegionCodeNil() {
+	o.RegionCode.Set(nil)
+}
+
+// UnsetRegionCode ensures that no value is present for RegionCode, not even an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) UnsetRegionCode() {
+	o.RegionCode.Unset()
 }
 
 // GetVisibility returns the Visibility field value if set, zero value otherwise.
@@ -1040,8 +1084,8 @@ func (o ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) ToMap
 	if !IsNil(o.MaxCores) {
 		toSerialize["maxCores"] = o.MaxCores
 	}
-	if !IsNil(o.MaxDisks) {
-		toSerialize["maxDisks"] = o.MaxDisks
+	if o.MaxDisks.IsSet() {
+		toSerialize["maxDisks"] = o.MaxDisks.Get()
 	}
 	if !IsNil(o.CoresPerSocket) {
 		toSerialize["coresPerSocket"] = o.CoresPerSocket
@@ -1064,11 +1108,11 @@ func (o ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) ToMap
 	if !IsNil(o.AddVolumes) {
 		toSerialize["addVolumes"] = o.AddVolumes
 	}
-	if !IsNil(o.MemoryOptionSource) {
-		toSerialize["memoryOptionSource"] = o.MemoryOptionSource
+	if o.MemoryOptionSource.IsSet() {
+		toSerialize["memoryOptionSource"] = o.MemoryOptionSource.Get()
 	}
-	if !IsNil(o.CpuOptionSource) {
-		toSerialize["cpuOptionSource"] = o.CpuOptionSource
+	if o.CpuOptionSource.IsSet() {
+		toSerialize["cpuOptionSource"] = o.CpuOptionSource.Get()
 	}
 	if !IsNil(o.DateCreated) {
 		toSerialize["dateCreated"] = o.DateCreated
@@ -1076,8 +1120,8 @@ func (o ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) ToMap
 	if !IsNil(o.LastUpdated) {
 		toSerialize["lastUpdated"] = o.LastUpdated
 	}
-	if !IsNil(o.RegionCode) {
-		toSerialize["regionCode"] = o.RegionCode
+	if o.RegionCode.IsSet() {
+		toSerialize["regionCode"] = o.RegionCode.Get()
 	}
 	if !IsNil(o.Visibility) {
 		toSerialize["visibility"] = o.Visibility

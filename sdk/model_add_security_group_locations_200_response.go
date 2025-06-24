@@ -20,9 +20,9 @@ var _ MappedNullable = &AddSecurityGroupLocations200Response{}
 
 // AddSecurityGroupLocations200Response struct for AddSecurityGroupLocations200Response
 type AddSecurityGroupLocations200Response struct {
-	SecurityGroupLocation *AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation `json:"securityGroupLocation,omitempty"`
-	Success               *bool                                                           `json:"success,omitempty"`
-	AdditionalProperties  map[string]interface{}                                          `json:",remain"`
+	SecurityGroupLocation *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInner `json:"securityGroupLocation,omitempty"`
+	Success               *bool                                                                `json:"success,omitempty"`
+	AdditionalProperties  map[string]interface{}                                               `json:",remain"`
 }
 
 type _AddSecurityGroupLocations200Response AddSecurityGroupLocations200Response
@@ -45,9 +45,9 @@ func NewAddSecurityGroupLocations200ResponseWithDefaults() *AddSecurityGroupLoca
 }
 
 // GetSecurityGroupLocation returns the SecurityGroupLocation field value if set, zero value otherwise.
-func (o *AddSecurityGroupLocations200Response) GetSecurityGroupLocation() AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation {
+func (o *AddSecurityGroupLocations200Response) GetSecurityGroupLocation() ListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInner {
 	if o == nil || IsNil(o.SecurityGroupLocation) {
-		var ret AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation
+		var ret ListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInner
 		return ret
 	}
 	return *o.SecurityGroupLocation
@@ -55,7 +55,7 @@ func (o *AddSecurityGroupLocations200Response) GetSecurityGroupLocation() AddSec
 
 // GetSecurityGroupLocationOk returns a tuple with the SecurityGroupLocation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddSecurityGroupLocations200Response) GetSecurityGroupLocationOk() (*AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation, bool) {
+func (o *AddSecurityGroupLocations200Response) GetSecurityGroupLocationOk() (*ListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInner, bool) {
 	if o == nil || IsNil(o.SecurityGroupLocation) {
 		return nil, false
 	}
@@ -71,8 +71,8 @@ func (o *AddSecurityGroupLocations200Response) IsSetSecurityGroupLocation() bool
 	return false
 }
 
-// SetSecurityGroupLocation gets a reference to the given AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation and assigns it to the SecurityGroupLocation field.
-func (o *AddSecurityGroupLocations200Response) SetSecurityGroupLocation(v AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation) {
+// SetSecurityGroupLocation gets a reference to the given ListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInner and assigns it to the SecurityGroupLocation field.
+func (o *AddSecurityGroupLocations200Response) SetSecurityGroupLocation(v ListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInner) {
 	o.SecurityGroupLocation = &v
 }
 

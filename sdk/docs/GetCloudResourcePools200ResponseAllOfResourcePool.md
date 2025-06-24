@@ -5,13 +5,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
-**Zone** | Pointer to [**ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
+**Description** | Pointer to **NullableString** |  | [optional] 
+**Zone** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **Parent** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 **ExternalId** | Pointer to **string** |  | [optional] 
-**RegionCode** | Pointer to **string** |  | [optional] 
-**IacId** | Pointer to **string** |  | [optional] 
+**RegionCode** | Pointer to **NullableString** |  | [optional] 
+**IacId** | Pointer to **NullableString** |  | [optional] 
 **Visibility** | Pointer to **string** |  | [optional] 
 **ReadOnly** | Pointer to **bool** |  | [optional] 
 **DefaultPool** | Pointer to **bool** |  | [optional] 
@@ -20,8 +20,8 @@ Name | Type | Description | Notes
 **Inventory** | Pointer to **bool** |  | [optional] 
 **Config** | Pointer to [**AddCloudResourcePool200ResponseResourcePoolAllOfConfig**](AddCloudResourcePool200ResponseResourcePoolAllOfConfig.md) |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**DisplayName** | Pointer to **string** |  | [optional] 
-**Tenants** | Pointer to [**[]ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
+**DisplayName** | Pointer to **NullableString** |  | [optional] 
+**Tenants** | Pointer to [**[]GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **ResourcePermission** | Pointer to [**ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission**](ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission.md) |  | [optional] 
 **Depth** | Pointer to **int64** |  | [optional] 
 
@@ -94,22 +94,32 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *GetCloudResourcePools200ResponseAllOfResourcePool) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *GetCloudResourcePools200ResponseAllOfResourcePool) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetZone
 
-`func (o *GetCloudResourcePools200ResponseAllOfResourcePool) GetZone() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *GetCloudResourcePools200ResponseAllOfResourcePool) GetZone() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetZone returns the Zone field if non-nil, zero value otherwise.
 
 ### GetZoneOk
 
-`func (o *GetCloudResourcePools200ResponseAllOfResourcePool) GetZoneOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *GetCloudResourcePools200ResponseAllOfResourcePool) GetZoneOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetZoneOk returns a tuple with the Zone field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetZone
 
-`func (o *GetCloudResourcePools200ResponseAllOfResourcePool) SetZone(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *GetCloudResourcePools200ResponseAllOfResourcePool) SetZone(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetZone sets Zone field to given value.
 
@@ -219,6 +229,16 @@ SetRegionCode sets RegionCode field to given value.
 
 HasRegionCode returns a boolean if a field has been set.
 
+### SetRegionCodeNil
+
+`func (o *GetCloudResourcePools200ResponseAllOfResourcePool) SetRegionCodeNil(b bool)`
+
+ SetRegionCodeNil sets the value for RegionCode to be an explicit nil
+
+### UnsetRegionCode
+`func (o *GetCloudResourcePools200ResponseAllOfResourcePool) UnsetRegionCode()`
+
+UnsetRegionCode ensures that no value is present for RegionCode, not even an explicit nil
 ### GetIacId
 
 `func (o *GetCloudResourcePools200ResponseAllOfResourcePool) GetIacId() string`
@@ -244,6 +264,16 @@ SetIacId sets IacId field to given value.
 
 HasIacId returns a boolean if a field has been set.
 
+### SetIacIdNil
+
+`func (o *GetCloudResourcePools200ResponseAllOfResourcePool) SetIacIdNil(b bool)`
+
+ SetIacIdNil sets the value for IacId to be an explicit nil
+
+### UnsetIacId
+`func (o *GetCloudResourcePools200ResponseAllOfResourcePool) UnsetIacId()`
+
+UnsetIacId ensures that no value is present for IacId, not even an explicit nil
 ### GetVisibility
 
 `func (o *GetCloudResourcePools200ResponseAllOfResourcePool) GetVisibility() string`
@@ -469,22 +499,32 @@ SetDisplayName sets DisplayName field to given value.
 
 HasDisplayName returns a boolean if a field has been set.
 
+### SetDisplayNameNil
+
+`func (o *GetCloudResourcePools200ResponseAllOfResourcePool) SetDisplayNameNil(b bool)`
+
+ SetDisplayNameNil sets the value for DisplayName to be an explicit nil
+
+### UnsetDisplayName
+`func (o *GetCloudResourcePools200ResponseAllOfResourcePool) UnsetDisplayName()`
+
+UnsetDisplayName ensures that no value is present for DisplayName, not even an explicit nil
 ### GetTenants
 
-`func (o *GetCloudResourcePools200ResponseAllOfResourcePool) GetTenants() []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *GetCloudResourcePools200ResponseAllOfResourcePool) GetTenants() []GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetTenants returns the Tenants field if non-nil, zero value otherwise.
 
 ### GetTenantsOk
 
-`func (o *GetCloudResourcePools200ResponseAllOfResourcePool) GetTenantsOk() (*[]ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *GetCloudResourcePools200ResponseAllOfResourcePool) GetTenantsOk() (*[]GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetTenantsOk returns a tuple with the Tenants field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenants
 
-`func (o *GetCloudResourcePools200ResponseAllOfResourcePool) SetTenants(v []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *GetCloudResourcePools200ResponseAllOfResourcePool) SetTenants(v []GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetTenants sets Tenants field to given value.
 

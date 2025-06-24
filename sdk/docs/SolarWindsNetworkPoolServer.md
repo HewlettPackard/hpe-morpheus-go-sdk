@@ -7,10 +7,10 @@ Name | Type | Description | Notes
 **Type** | **string** | Type Code (SolarWinds) | 
 **Name** | **string** | Name | 
 **Enabled** | Pointer to **bool** | Can be used to enable / disable the network pool server. | [optional] [default to true]
-**ServiceUrl** | **string** | URL | 
-**ServiceUsername** | Pointer to **string** | Username | [optional] 
-**ServicePassword** | Pointer to **string** | Password | [optional] 
-**ServiceThrottleRate** | Pointer to **int64** | Throttle Rate | [optional] [default to 0]
+**ServiceUrl** | **NullableString** | URL | 
+**ServiceUsername** | Pointer to **NullableString** | Username | [optional] 
+**ServicePassword** | Pointer to **NullableString** | Password | [optional] 
+**ServiceThrottleRate** | Pointer to **NullableInt64** | Throttle Rate | [optional] [default to 0]
 **IgnoreSsl** | Pointer to **bool** | Disable SSL SNI Verification | [optional] [default to true]
 **Config** | Pointer to [**BluecatNetworkPoolServerConfig**](BluecatNetworkPoolServerConfig.md) |  | [optional] 
 **Credential** | Pointer to [**NSXNetworkServerCredential**](NSXNetworkServerCredential.md) |  | [optional] 
@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 
 ### NewSolarWindsNetworkPoolServer
 
-`func NewSolarWindsNetworkPoolServer(type_ string, name string, serviceUrl string, ) *SolarWindsNetworkPoolServer`
+`func NewSolarWindsNetworkPoolServer(type_ string, name string, serviceUrl NullableString, ) *SolarWindsNetworkPoolServer`
 
 NewSolarWindsNetworkPoolServer instantiates a new SolarWindsNetworkPoolServer object
 This constructor will assign default values to properties that have it defined,
@@ -119,6 +119,16 @@ and a boolean to check if the value has been set.
 SetServiceUrl sets ServiceUrl field to given value.
 
 
+### SetServiceUrlNil
+
+`func (o *SolarWindsNetworkPoolServer) SetServiceUrlNil(b bool)`
+
+ SetServiceUrlNil sets the value for ServiceUrl to be an explicit nil
+
+### UnsetServiceUrl
+`func (o *SolarWindsNetworkPoolServer) UnsetServiceUrl()`
+
+UnsetServiceUrl ensures that no value is present for ServiceUrl, not even an explicit nil
 ### GetServiceUsername
 
 `func (o *SolarWindsNetworkPoolServer) GetServiceUsername() string`
@@ -144,6 +154,16 @@ SetServiceUsername sets ServiceUsername field to given value.
 
 HasServiceUsername returns a boolean if a field has been set.
 
+### SetServiceUsernameNil
+
+`func (o *SolarWindsNetworkPoolServer) SetServiceUsernameNil(b bool)`
+
+ SetServiceUsernameNil sets the value for ServiceUsername to be an explicit nil
+
+### UnsetServiceUsername
+`func (o *SolarWindsNetworkPoolServer) UnsetServiceUsername()`
+
+UnsetServiceUsername ensures that no value is present for ServiceUsername, not even an explicit nil
 ### GetServicePassword
 
 `func (o *SolarWindsNetworkPoolServer) GetServicePassword() string`
@@ -169,6 +189,16 @@ SetServicePassword sets ServicePassword field to given value.
 
 HasServicePassword returns a boolean if a field has been set.
 
+### SetServicePasswordNil
+
+`func (o *SolarWindsNetworkPoolServer) SetServicePasswordNil(b bool)`
+
+ SetServicePasswordNil sets the value for ServicePassword to be an explicit nil
+
+### UnsetServicePassword
+`func (o *SolarWindsNetworkPoolServer) UnsetServicePassword()`
+
+UnsetServicePassword ensures that no value is present for ServicePassword, not even an explicit nil
 ### GetServiceThrottleRate
 
 `func (o *SolarWindsNetworkPoolServer) GetServiceThrottleRate() int64`
@@ -194,6 +224,16 @@ SetServiceThrottleRate sets ServiceThrottleRate field to given value.
 
 HasServiceThrottleRate returns a boolean if a field has been set.
 
+### SetServiceThrottleRateNil
+
+`func (o *SolarWindsNetworkPoolServer) SetServiceThrottleRateNil(b bool)`
+
+ SetServiceThrottleRateNil sets the value for ServiceThrottleRate to be an explicit nil
+
+### UnsetServiceThrottleRate
+`func (o *SolarWindsNetworkPoolServer) UnsetServiceThrottleRate()`
+
+UnsetServiceThrottleRate ensures that no value is present for ServiceThrottleRate, not even an explicit nil
 ### GetIgnoreSsl
 
 `func (o *SolarWindsNetworkPoolServer) GetIgnoreSsl() bool`

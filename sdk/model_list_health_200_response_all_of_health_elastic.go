@@ -209,9 +209,9 @@ func (o *ListHealth200ResponseAllOfHealthElastic) SetStats(v ListHealth200Respon
 	o.Stats = &v
 }
 
-// GetIndices returns the Indices field value if set, zero value otherwise.
+// GetIndices returns the Indices field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListHealth200ResponseAllOfHealthElastic) GetIndices() []map[string]interface{} {
-	if o == nil || IsNil(o.Indices) {
+	if o == nil {
 		var ret []map[string]interface{}
 		return ret
 	}
@@ -220,6 +220,7 @@ func (o *ListHealth200ResponseAllOfHealthElastic) GetIndices() []map[string]inte
 
 // GetIndicesOk returns a tuple with the Indices field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListHealth200ResponseAllOfHealthElastic) GetIndicesOk() ([]map[string]interface{}, bool) {
 	if o == nil || IsNil(o.Indices) {
 		return nil, false
@@ -241,9 +242,9 @@ func (o *ListHealth200ResponseAllOfHealthElastic) SetIndices(v []map[string]inte
 	o.Indices = v
 }
 
-// GetBadIndices returns the BadIndices field value if set, zero value otherwise.
+// GetBadIndices returns the BadIndices field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListHealth200ResponseAllOfHealthElastic) GetBadIndices() []map[string]interface{} {
-	if o == nil || IsNil(o.BadIndices) {
+	if o == nil {
 		var ret []map[string]interface{}
 		return ret
 	}
@@ -252,6 +253,7 @@ func (o *ListHealth200ResponseAllOfHealthElastic) GetBadIndices() []map[string]i
 
 // GetBadIndicesOk returns a tuple with the BadIndices field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListHealth200ResponseAllOfHealthElastic) GetBadIndicesOk() ([]map[string]interface{}, bool) {
 	if o == nil || IsNil(o.BadIndices) {
 		return nil, false
@@ -298,10 +300,10 @@ func (o ListHealth200ResponseAllOfHealthElastic) ToMap() (map[string]interface{}
 	if !IsNil(o.Stats) {
 		toSerialize["stats"] = o.Stats
 	}
-	if !IsNil(o.Indices) {
+	if o.Indices != nil {
 		toSerialize["indices"] = o.Indices
 	}
-	if !IsNil(o.BadIndices) {
+	if o.BadIndices != nil {
 		toSerialize["badIndices"] = o.BadIndices
 	}
 

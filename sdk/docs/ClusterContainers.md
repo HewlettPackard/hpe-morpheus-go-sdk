@@ -7,11 +7,11 @@ Name | Type | Description | Notes
 **Id** | Pointer to **int64** |  | [optional] 
 **Uuid** | Pointer to **string** |  | [optional] 
 **AccountId** | Pointer to **int64** |  | [optional] 
-**Instance** | Pointer to **string** |  | [optional] 
+**Instance** | Pointer to **NullableString** |  | [optional] 
 **ContainerType** | Pointer to [**ListClusterContainers200ResponseAllOfContainersInnerContainerType**](ListClusterContainers200ResponseAllOfContainersInnerContainerType.md) |  | [optional] 
 **ContainerTypeSet** | Pointer to [**ListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet**](ListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet.md) |  | [optional] 
-**Server** | Pointer to [**ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
-**Cloud** | Pointer to [**ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
+**Server** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**Cloud** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Ip** | Pointer to **string** |  | [optional] 
 **InternalIp** | Pointer to **string** |  | [optional] 
@@ -21,28 +21,28 @@ Name | Type | Description | Notes
 **ExternalFqdn** | Pointer to **string** |  | [optional] 
 **Ports** | Pointer to **[]map[string]interface{}** |  | [optional] 
 **Plan** | Pointer to [**ListClusterContainers200ResponseAllOfContainersInnerPlan**](ListClusterContainers200ResponseAllOfContainersInnerPlan.md) |  | [optional] 
-**DateCreated** | Pointer to **time.Time** |  | [optional] 
+**DateCreated** | Pointer to **NullableTime** |  | [optional] 
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
 **StatsEnabled** | Pointer to **bool** |  | [optional] 
 **Status** | Pointer to **string** |  | [optional] 
 **UserStatus** | Pointer to **string** |  | [optional] 
-**EnvironmentPrefix** | Pointer to **string** |  | [optional] 
-**ConfigGroup** | Pointer to **string** |  | [optional] 
-**ConfigId** | Pointer to **string** |  | [optional] 
-**ConfigRole** | Pointer to **string** |  | [optional] 
+**EnvironmentPrefix** | Pointer to **NullableString** |  | [optional] 
+**ConfigGroup** | Pointer to **NullableString** |  | [optional] 
+**ConfigId** | Pointer to **NullableString** |  | [optional] 
+**ConfigRole** | Pointer to **NullableString** |  | [optional] 
 **Stats** | Pointer to [**ListClusterContainers200ResponseAllOfContainersInnerStats**](ListClusterContainers200ResponseAllOfContainersInnerStats.md) |  | [optional] 
 **RuntimeInfo** | Pointer to **map[string]interface{}** |  | [optional] 
-**ContainerVersion** | Pointer to **string** |  | [optional] 
-**RepositoryImage** | Pointer to **string** |  | [optional] 
-**PlanCategory** | Pointer to **string** |  | [optional] 
-**Hostname** | Pointer to **string** |  | [optional] 
-**DomainName** | Pointer to **string** |  | [optional] 
+**ContainerVersion** | Pointer to **NullableString** |  | [optional] 
+**RepositoryImage** | Pointer to **NullableString** |  | [optional] 
+**PlanCategory** | Pointer to **NullableString** |  | [optional] 
+**Hostname** | Pointer to **NullableString** |  | [optional] 
+**DomainName** | Pointer to **NullableString** |  | [optional] 
 **VolumeCreated** | Pointer to **bool** |  | [optional] 
 **ContainerCreated** | Pointer to **bool** |  | [optional] 
-**MaxStorage** | Pointer to **string** |  | [optional] 
-**MaxMemory** | Pointer to **string** |  | [optional] 
-**MaxCores** | Pointer to **string** |  | [optional] 
-**MaxCpu** | Pointer to **string** |  | [optional] 
+**MaxStorage** | Pointer to **NullableString** |  | [optional] 
+**MaxMemory** | Pointer to **NullableString** |  | [optional] 
+**MaxCores** | Pointer to **NullableString** |  | [optional] 
+**MaxCpu** | Pointer to **NullableString** |  | [optional] 
 **HourlyPrice** | Pointer to **float32** |  | [optional] 
 **AvailableActions** | Pointer to [**[]ListClusterContainers200ResponseAllOfContainersInnerAvailableActionsInner**](ListClusterContainers200ResponseAllOfContainersInnerAvailableActionsInner.md) |  | [optional] 
 
@@ -165,6 +165,16 @@ SetInstance sets Instance field to given value.
 
 HasInstance returns a boolean if a field has been set.
 
+### SetInstanceNil
+
+`func (o *ClusterContainers) SetInstanceNil(b bool)`
+
+ SetInstanceNil sets the value for Instance to be an explicit nil
+
+### UnsetInstance
+`func (o *ClusterContainers) UnsetInstance()`
+
+UnsetInstance ensures that no value is present for Instance, not even an explicit nil
 ### GetContainerType
 
 `func (o *ClusterContainers) GetContainerType() ListClusterContainers200ResponseAllOfContainersInnerContainerType`
@@ -217,20 +227,20 @@ HasContainerTypeSet returns a boolean if a field has been set.
 
 ### GetServer
 
-`func (o *ClusterContainers) GetServer() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *ClusterContainers) GetServer() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetServer returns the Server field if non-nil, zero value otherwise.
 
 ### GetServerOk
 
-`func (o *ClusterContainers) GetServerOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *ClusterContainers) GetServerOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetServerOk returns a tuple with the Server field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetServer
 
-`func (o *ClusterContainers) SetServer(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *ClusterContainers) SetServer(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetServer sets Server field to given value.
 
@@ -242,20 +252,20 @@ HasServer returns a boolean if a field has been set.
 
 ### GetCloud
 
-`func (o *ClusterContainers) GetCloud() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *ClusterContainers) GetCloud() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetCloud returns the Cloud field if non-nil, zero value otherwise.
 
 ### GetCloudOk
 
-`func (o *ClusterContainers) GetCloudOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *ClusterContainers) GetCloudOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetCloudOk returns a tuple with the Cloud field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCloud
 
-`func (o *ClusterContainers) SetCloud(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *ClusterContainers) SetCloud(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetCloud sets Cloud field to given value.
 
@@ -515,6 +525,16 @@ SetDateCreated sets DateCreated field to given value.
 
 HasDateCreated returns a boolean if a field has been set.
 
+### SetDateCreatedNil
+
+`func (o *ClusterContainers) SetDateCreatedNil(b bool)`
+
+ SetDateCreatedNil sets the value for DateCreated to be an explicit nil
+
+### UnsetDateCreated
+`func (o *ClusterContainers) UnsetDateCreated()`
+
+UnsetDateCreated ensures that no value is present for DateCreated, not even an explicit nil
 ### GetLastUpdated
 
 `func (o *ClusterContainers) GetLastUpdated() time.Time`
@@ -640,6 +660,16 @@ SetEnvironmentPrefix sets EnvironmentPrefix field to given value.
 
 HasEnvironmentPrefix returns a boolean if a field has been set.
 
+### SetEnvironmentPrefixNil
+
+`func (o *ClusterContainers) SetEnvironmentPrefixNil(b bool)`
+
+ SetEnvironmentPrefixNil sets the value for EnvironmentPrefix to be an explicit nil
+
+### UnsetEnvironmentPrefix
+`func (o *ClusterContainers) UnsetEnvironmentPrefix()`
+
+UnsetEnvironmentPrefix ensures that no value is present for EnvironmentPrefix, not even an explicit nil
 ### GetConfigGroup
 
 `func (o *ClusterContainers) GetConfigGroup() string`
@@ -665,6 +695,16 @@ SetConfigGroup sets ConfigGroup field to given value.
 
 HasConfigGroup returns a boolean if a field has been set.
 
+### SetConfigGroupNil
+
+`func (o *ClusterContainers) SetConfigGroupNil(b bool)`
+
+ SetConfigGroupNil sets the value for ConfigGroup to be an explicit nil
+
+### UnsetConfigGroup
+`func (o *ClusterContainers) UnsetConfigGroup()`
+
+UnsetConfigGroup ensures that no value is present for ConfigGroup, not even an explicit nil
 ### GetConfigId
 
 `func (o *ClusterContainers) GetConfigId() string`
@@ -690,6 +730,16 @@ SetConfigId sets ConfigId field to given value.
 
 HasConfigId returns a boolean if a field has been set.
 
+### SetConfigIdNil
+
+`func (o *ClusterContainers) SetConfigIdNil(b bool)`
+
+ SetConfigIdNil sets the value for ConfigId to be an explicit nil
+
+### UnsetConfigId
+`func (o *ClusterContainers) UnsetConfigId()`
+
+UnsetConfigId ensures that no value is present for ConfigId, not even an explicit nil
 ### GetConfigRole
 
 `func (o *ClusterContainers) GetConfigRole() string`
@@ -715,6 +765,16 @@ SetConfigRole sets ConfigRole field to given value.
 
 HasConfigRole returns a boolean if a field has been set.
 
+### SetConfigRoleNil
+
+`func (o *ClusterContainers) SetConfigRoleNil(b bool)`
+
+ SetConfigRoleNil sets the value for ConfigRole to be an explicit nil
+
+### UnsetConfigRole
+`func (o *ClusterContainers) UnsetConfigRole()`
+
+UnsetConfigRole ensures that no value is present for ConfigRole, not even an explicit nil
 ### GetStats
 
 `func (o *ClusterContainers) GetStats() ListClusterContainers200ResponseAllOfContainersInnerStats`
@@ -790,6 +850,16 @@ SetContainerVersion sets ContainerVersion field to given value.
 
 HasContainerVersion returns a boolean if a field has been set.
 
+### SetContainerVersionNil
+
+`func (o *ClusterContainers) SetContainerVersionNil(b bool)`
+
+ SetContainerVersionNil sets the value for ContainerVersion to be an explicit nil
+
+### UnsetContainerVersion
+`func (o *ClusterContainers) UnsetContainerVersion()`
+
+UnsetContainerVersion ensures that no value is present for ContainerVersion, not even an explicit nil
 ### GetRepositoryImage
 
 `func (o *ClusterContainers) GetRepositoryImage() string`
@@ -815,6 +885,16 @@ SetRepositoryImage sets RepositoryImage field to given value.
 
 HasRepositoryImage returns a boolean if a field has been set.
 
+### SetRepositoryImageNil
+
+`func (o *ClusterContainers) SetRepositoryImageNil(b bool)`
+
+ SetRepositoryImageNil sets the value for RepositoryImage to be an explicit nil
+
+### UnsetRepositoryImage
+`func (o *ClusterContainers) UnsetRepositoryImage()`
+
+UnsetRepositoryImage ensures that no value is present for RepositoryImage, not even an explicit nil
 ### GetPlanCategory
 
 `func (o *ClusterContainers) GetPlanCategory() string`
@@ -840,6 +920,16 @@ SetPlanCategory sets PlanCategory field to given value.
 
 HasPlanCategory returns a boolean if a field has been set.
 
+### SetPlanCategoryNil
+
+`func (o *ClusterContainers) SetPlanCategoryNil(b bool)`
+
+ SetPlanCategoryNil sets the value for PlanCategory to be an explicit nil
+
+### UnsetPlanCategory
+`func (o *ClusterContainers) UnsetPlanCategory()`
+
+UnsetPlanCategory ensures that no value is present for PlanCategory, not even an explicit nil
 ### GetHostname
 
 `func (o *ClusterContainers) GetHostname() string`
@@ -865,6 +955,16 @@ SetHostname sets Hostname field to given value.
 
 HasHostname returns a boolean if a field has been set.
 
+### SetHostnameNil
+
+`func (o *ClusterContainers) SetHostnameNil(b bool)`
+
+ SetHostnameNil sets the value for Hostname to be an explicit nil
+
+### UnsetHostname
+`func (o *ClusterContainers) UnsetHostname()`
+
+UnsetHostname ensures that no value is present for Hostname, not even an explicit nil
 ### GetDomainName
 
 `func (o *ClusterContainers) GetDomainName() string`
@@ -890,6 +990,16 @@ SetDomainName sets DomainName field to given value.
 
 HasDomainName returns a boolean if a field has been set.
 
+### SetDomainNameNil
+
+`func (o *ClusterContainers) SetDomainNameNil(b bool)`
+
+ SetDomainNameNil sets the value for DomainName to be an explicit nil
+
+### UnsetDomainName
+`func (o *ClusterContainers) UnsetDomainName()`
+
+UnsetDomainName ensures that no value is present for DomainName, not even an explicit nil
 ### GetVolumeCreated
 
 `func (o *ClusterContainers) GetVolumeCreated() bool`
@@ -965,6 +1075,16 @@ SetMaxStorage sets MaxStorage field to given value.
 
 HasMaxStorage returns a boolean if a field has been set.
 
+### SetMaxStorageNil
+
+`func (o *ClusterContainers) SetMaxStorageNil(b bool)`
+
+ SetMaxStorageNil sets the value for MaxStorage to be an explicit nil
+
+### UnsetMaxStorage
+`func (o *ClusterContainers) UnsetMaxStorage()`
+
+UnsetMaxStorage ensures that no value is present for MaxStorage, not even an explicit nil
 ### GetMaxMemory
 
 `func (o *ClusterContainers) GetMaxMemory() string`
@@ -990,6 +1110,16 @@ SetMaxMemory sets MaxMemory field to given value.
 
 HasMaxMemory returns a boolean if a field has been set.
 
+### SetMaxMemoryNil
+
+`func (o *ClusterContainers) SetMaxMemoryNil(b bool)`
+
+ SetMaxMemoryNil sets the value for MaxMemory to be an explicit nil
+
+### UnsetMaxMemory
+`func (o *ClusterContainers) UnsetMaxMemory()`
+
+UnsetMaxMemory ensures that no value is present for MaxMemory, not even an explicit nil
 ### GetMaxCores
 
 `func (o *ClusterContainers) GetMaxCores() string`
@@ -1015,6 +1145,16 @@ SetMaxCores sets MaxCores field to given value.
 
 HasMaxCores returns a boolean if a field has been set.
 
+### SetMaxCoresNil
+
+`func (o *ClusterContainers) SetMaxCoresNil(b bool)`
+
+ SetMaxCoresNil sets the value for MaxCores to be an explicit nil
+
+### UnsetMaxCores
+`func (o *ClusterContainers) UnsetMaxCores()`
+
+UnsetMaxCores ensures that no value is present for MaxCores, not even an explicit nil
 ### GetMaxCpu
 
 `func (o *ClusterContainers) GetMaxCpu() string`
@@ -1040,6 +1180,16 @@ SetMaxCpu sets MaxCpu field to given value.
 
 HasMaxCpu returns a boolean if a field has been set.
 
+### SetMaxCpuNil
+
+`func (o *ClusterContainers) SetMaxCpuNil(b bool)`
+
+ SetMaxCpuNil sets the value for MaxCpu to be an explicit nil
+
+### UnsetMaxCpu
+`func (o *ClusterContainers) UnsetMaxCpu()`
+
+UnsetMaxCpu ensures that no value is present for MaxCpu, not even an explicit nil
 ### GetHourlyPrice
 
 `func (o *ClusterContainers) GetHourlyPrice() float32`

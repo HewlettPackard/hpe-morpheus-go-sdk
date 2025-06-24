@@ -23,12 +23,12 @@ var _ MappedNullable = &UpdateTenant200ResponseAccount{}
 type UpdateTenant200ResponseAccount struct {
 	Id                   *int64                                         `json:"id,omitempty"`
 	Name                 *string                                        `json:"name,omitempty"`
-	Description          *string                                        `json:"description,omitempty"`
+	Description          NullableString                                 `json:"description,omitempty"`
 	Subdomain            *string                                        `json:"subdomain,omitempty"`
 	Currency             *string                                        `json:"currency,omitempty"`
-	ExternalId           *string                                        `json:"externalId,omitempty"`
-	CustomerNumber       *string                                        `json:"customerNumber,omitempty"`
-	AccountNumber        *string                                        `json:"accountNumber,omitempty"`
+	ExternalId           NullableString                                 `json:"externalId,omitempty"`
+	CustomerNumber       NullableString                                 `json:"customerNumber,omitempty"`
+	AccountNumber        NullableString                                 `json:"accountNumber,omitempty"`
 	AccountName          *string                                        `json:"accountName,omitempty"`
 	Active               *bool                                          `json:"active,omitempty"`
 	Master               *bool                                          `json:"master,omitempty"`
@@ -123,36 +123,47 @@ func (o *UpdateTenant200ResponseAccount) SetName(v string) {
 	o.Name = &v
 }
 
-// GetDescription returns the Description field value if set, zero value otherwise.
+// GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UpdateTenant200ResponseAccount) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
+	if o == nil || IsNil(o.Description.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Description
+	return *o.Description.Get()
 }
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *UpdateTenant200ResponseAccount) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Description, true
+	return o.Description.Get(), o.Description.IsSet()
 }
 
 // IsSetDescription returns a boolean if a field has been set.
 func (o *UpdateTenant200ResponseAccount) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
+	if o != nil && o.Description.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDescription gets a reference to the given string and assigns it to the Description field.
+// SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *UpdateTenant200ResponseAccount) SetDescription(v string) {
-	o.Description = &v
+	o.Description.Set(&v)
+}
+
+// SetDescriptionNil sets the value for Description to be an explicit nil
+func (o *UpdateTenant200ResponseAccount) SetDescriptionNil() {
+	o.Description.Set(nil)
+}
+
+// UnsetDescription ensures that no value is present for Description, not even an explicit nil
+func (o *UpdateTenant200ResponseAccount) UnsetDescription() {
+	o.Description.Unset()
 }
 
 // GetSubdomain returns the Subdomain field value if set, zero value otherwise.
@@ -219,100 +230,133 @@ func (o *UpdateTenant200ResponseAccount) SetCurrency(v string) {
 	o.Currency = &v
 }
 
-// GetExternalId returns the ExternalId field value if set, zero value otherwise.
+// GetExternalId returns the ExternalId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UpdateTenant200ResponseAccount) GetExternalId() string {
-	if o == nil || IsNil(o.ExternalId) {
+	if o == nil || IsNil(o.ExternalId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ExternalId
+	return *o.ExternalId.Get()
 }
 
 // GetExternalIdOk returns a tuple with the ExternalId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *UpdateTenant200ResponseAccount) GetExternalIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ExternalId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ExternalId, true
+	return o.ExternalId.Get(), o.ExternalId.IsSet()
 }
 
 // IsSetExternalId returns a boolean if a field has been set.
 func (o *UpdateTenant200ResponseAccount) IsSetExternalId() bool {
-	if o != nil && !IsNil(o.ExternalId) {
+	if o != nil && o.ExternalId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetExternalId gets a reference to the given string and assigns it to the ExternalId field.
+// SetExternalId gets a reference to the given NullableString and assigns it to the ExternalId field.
 func (o *UpdateTenant200ResponseAccount) SetExternalId(v string) {
-	o.ExternalId = &v
+	o.ExternalId.Set(&v)
 }
 
-// GetCustomerNumber returns the CustomerNumber field value if set, zero value otherwise.
+// SetExternalIdNil sets the value for ExternalId to be an explicit nil
+func (o *UpdateTenant200ResponseAccount) SetExternalIdNil() {
+	o.ExternalId.Set(nil)
+}
+
+// UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
+func (o *UpdateTenant200ResponseAccount) UnsetExternalId() {
+	o.ExternalId.Unset()
+}
+
+// GetCustomerNumber returns the CustomerNumber field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UpdateTenant200ResponseAccount) GetCustomerNumber() string {
-	if o == nil || IsNil(o.CustomerNumber) {
+	if o == nil || IsNil(o.CustomerNumber.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.CustomerNumber
+	return *o.CustomerNumber.Get()
 }
 
 // GetCustomerNumberOk returns a tuple with the CustomerNumber field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *UpdateTenant200ResponseAccount) GetCustomerNumberOk() (*string, bool) {
-	if o == nil || IsNil(o.CustomerNumber) {
+	if o == nil {
 		return nil, false
 	}
-	return o.CustomerNumber, true
+	return o.CustomerNumber.Get(), o.CustomerNumber.IsSet()
 }
 
 // IsSetCustomerNumber returns a boolean if a field has been set.
 func (o *UpdateTenant200ResponseAccount) IsSetCustomerNumber() bool {
-	if o != nil && !IsNil(o.CustomerNumber) {
+	if o != nil && o.CustomerNumber.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCustomerNumber gets a reference to the given string and assigns it to the CustomerNumber field.
+// SetCustomerNumber gets a reference to the given NullableString and assigns it to the CustomerNumber field.
 func (o *UpdateTenant200ResponseAccount) SetCustomerNumber(v string) {
-	o.CustomerNumber = &v
+	o.CustomerNumber.Set(&v)
 }
 
-// GetAccountNumber returns the AccountNumber field value if set, zero value otherwise.
+// SetCustomerNumberNil sets the value for CustomerNumber to be an explicit nil
+func (o *UpdateTenant200ResponseAccount) SetCustomerNumberNil() {
+	o.CustomerNumber.Set(nil)
+}
+
+// UnsetCustomerNumber ensures that no value is present for CustomerNumber, not even an explicit nil
+func (o *UpdateTenant200ResponseAccount) UnsetCustomerNumber() {
+	o.CustomerNumber.Unset()
+}
+
+// GetAccountNumber returns the AccountNumber field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UpdateTenant200ResponseAccount) GetAccountNumber() string {
-	if o == nil || IsNil(o.AccountNumber) {
+	if o == nil || IsNil(o.AccountNumber.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.AccountNumber
+	return *o.AccountNumber.Get()
 }
 
 // GetAccountNumberOk returns a tuple with the AccountNumber field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *UpdateTenant200ResponseAccount) GetAccountNumberOk() (*string, bool) {
-	if o == nil || IsNil(o.AccountNumber) {
+	if o == nil {
 		return nil, false
 	}
-	return o.AccountNumber, true
+	return o.AccountNumber.Get(), o.AccountNumber.IsSet()
 }
 
 // IsSetAccountNumber returns a boolean if a field has been set.
 func (o *UpdateTenant200ResponseAccount) IsSetAccountNumber() bool {
-	if o != nil && !IsNil(o.AccountNumber) {
+	if o != nil && o.AccountNumber.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetAccountNumber gets a reference to the given string and assigns it to the AccountNumber field.
+// SetAccountNumber gets a reference to the given NullableString and assigns it to the AccountNumber field.
 func (o *UpdateTenant200ResponseAccount) SetAccountNumber(v string) {
-	o.AccountNumber = &v
+	o.AccountNumber.Set(&v)
+}
+
+// SetAccountNumberNil sets the value for AccountNumber to be an explicit nil
+func (o *UpdateTenant200ResponseAccount) SetAccountNumberNil() {
+	o.AccountNumber.Set(nil)
+}
+
+// UnsetAccountNumber ensures that no value is present for AccountNumber, not even an explicit nil
+func (o *UpdateTenant200ResponseAccount) UnsetAccountNumber() {
+	o.AccountNumber.Unset()
 }
 
 // GetAccountName returns the AccountName field value if set, zero value otherwise.
@@ -587,8 +631,8 @@ func (o UpdateTenant200ResponseAccount) ToMap() (map[string]interface{}, error) 
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !IsNil(o.Description) {
-		toSerialize["description"] = o.Description
+	if o.Description.IsSet() {
+		toSerialize["description"] = o.Description.Get()
 	}
 	if !IsNil(o.Subdomain) {
 		toSerialize["subdomain"] = o.Subdomain
@@ -596,14 +640,14 @@ func (o UpdateTenant200ResponseAccount) ToMap() (map[string]interface{}, error) 
 	if !IsNil(o.Currency) {
 		toSerialize["currency"] = o.Currency
 	}
-	if !IsNil(o.ExternalId) {
-		toSerialize["externalId"] = o.ExternalId
+	if o.ExternalId.IsSet() {
+		toSerialize["externalId"] = o.ExternalId.Get()
 	}
-	if !IsNil(o.CustomerNumber) {
-		toSerialize["customerNumber"] = o.CustomerNumber
+	if o.CustomerNumber.IsSet() {
+		toSerialize["customerNumber"] = o.CustomerNumber.Get()
 	}
-	if !IsNil(o.AccountNumber) {
-		toSerialize["accountNumber"] = o.AccountNumber
+	if o.AccountNumber.IsSet() {
+		toSerialize["accountNumber"] = o.AccountNumber.Get()
 	}
 	if !IsNil(o.AccountName) {
 		toSerialize["accountName"] = o.AccountName

@@ -6,15 +6,15 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**Type** | Pointer to **string** |  | [optional] 
-**Code** | Pointer to **string** |  | [optional] 
-**ExternalIp** | Pointer to **string** |  | [optional] 
-**InternalIp** | Pointer to **string** |  | [optional] 
-**ExternalPort** | Pointer to **string** |  | [optional] 
-**InternalPort** | Pointer to **string** |  | [optional] 
-**Status** | Pointer to **string** |  | [optional] 
-**DateCreated** | Pointer to **time.Time** |  | [optional] 
-**LastUpdated** | Pointer to **time.Time** |  | [optional] 
+**Type** | Pointer to **NullableString** |  | [optional] 
+**Code** | Pointer to **NullableString** |  | [optional] 
+**ExternalIp** | Pointer to **NullableString** |  | [optional] 
+**InternalIp** | Pointer to **NullableString** |  | [optional] 
+**ExternalPort** | Pointer to **NullableString** |  | [optional] 
+**InternalPort** | Pointer to **NullableString** |  | [optional] 
+**Status** | Pointer to **NullableString** |  | [optional] 
+**DateCreated** | Pointer to **NullableTime** |  | [optional] 
+**LastUpdated** | Pointer to **NullableTime** |  | [optional] 
 
 ## Methods
 
@@ -110,6 +110,16 @@ SetType sets Type field to given value.
 
 HasType returns a boolean if a field has been set.
 
+### SetTypeNil
+
+`func (o *ListClusterServices200ResponseAllOfServicesInner) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *ListClusterServices200ResponseAllOfServicesInner) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetCode
 
 `func (o *ListClusterServices200ResponseAllOfServicesInner) GetCode() string`
@@ -135,6 +145,16 @@ SetCode sets Code field to given value.
 
 HasCode returns a boolean if a field has been set.
 
+### SetCodeNil
+
+`func (o *ListClusterServices200ResponseAllOfServicesInner) SetCodeNil(b bool)`
+
+ SetCodeNil sets the value for Code to be an explicit nil
+
+### UnsetCode
+`func (o *ListClusterServices200ResponseAllOfServicesInner) UnsetCode()`
+
+UnsetCode ensures that no value is present for Code, not even an explicit nil
 ### GetExternalIp
 
 `func (o *ListClusterServices200ResponseAllOfServicesInner) GetExternalIp() string`
@@ -160,6 +180,16 @@ SetExternalIp sets ExternalIp field to given value.
 
 HasExternalIp returns a boolean if a field has been set.
 
+### SetExternalIpNil
+
+`func (o *ListClusterServices200ResponseAllOfServicesInner) SetExternalIpNil(b bool)`
+
+ SetExternalIpNil sets the value for ExternalIp to be an explicit nil
+
+### UnsetExternalIp
+`func (o *ListClusterServices200ResponseAllOfServicesInner) UnsetExternalIp()`
+
+UnsetExternalIp ensures that no value is present for ExternalIp, not even an explicit nil
 ### GetInternalIp
 
 `func (o *ListClusterServices200ResponseAllOfServicesInner) GetInternalIp() string`
@@ -185,6 +215,16 @@ SetInternalIp sets InternalIp field to given value.
 
 HasInternalIp returns a boolean if a field has been set.
 
+### SetInternalIpNil
+
+`func (o *ListClusterServices200ResponseAllOfServicesInner) SetInternalIpNil(b bool)`
+
+ SetInternalIpNil sets the value for InternalIp to be an explicit nil
+
+### UnsetInternalIp
+`func (o *ListClusterServices200ResponseAllOfServicesInner) UnsetInternalIp()`
+
+UnsetInternalIp ensures that no value is present for InternalIp, not even an explicit nil
 ### GetExternalPort
 
 `func (o *ListClusterServices200ResponseAllOfServicesInner) GetExternalPort() string`
@@ -210,6 +250,16 @@ SetExternalPort sets ExternalPort field to given value.
 
 HasExternalPort returns a boolean if a field has been set.
 
+### SetExternalPortNil
+
+`func (o *ListClusterServices200ResponseAllOfServicesInner) SetExternalPortNil(b bool)`
+
+ SetExternalPortNil sets the value for ExternalPort to be an explicit nil
+
+### UnsetExternalPort
+`func (o *ListClusterServices200ResponseAllOfServicesInner) UnsetExternalPort()`
+
+UnsetExternalPort ensures that no value is present for ExternalPort, not even an explicit nil
 ### GetInternalPort
 
 `func (o *ListClusterServices200ResponseAllOfServicesInner) GetInternalPort() string`
@@ -235,6 +285,16 @@ SetInternalPort sets InternalPort field to given value.
 
 HasInternalPort returns a boolean if a field has been set.
 
+### SetInternalPortNil
+
+`func (o *ListClusterServices200ResponseAllOfServicesInner) SetInternalPortNil(b bool)`
+
+ SetInternalPortNil sets the value for InternalPort to be an explicit nil
+
+### UnsetInternalPort
+`func (o *ListClusterServices200ResponseAllOfServicesInner) UnsetInternalPort()`
+
+UnsetInternalPort ensures that no value is present for InternalPort, not even an explicit nil
 ### GetStatus
 
 `func (o *ListClusterServices200ResponseAllOfServicesInner) GetStatus() string`
@@ -260,6 +320,16 @@ SetStatus sets Status field to given value.
 
 HasStatus returns a boolean if a field has been set.
 
+### SetStatusNil
+
+`func (o *ListClusterServices200ResponseAllOfServicesInner) SetStatusNil(b bool)`
+
+ SetStatusNil sets the value for Status to be an explicit nil
+
+### UnsetStatus
+`func (o *ListClusterServices200ResponseAllOfServicesInner) UnsetStatus()`
+
+UnsetStatus ensures that no value is present for Status, not even an explicit nil
 ### GetDateCreated
 
 `func (o *ListClusterServices200ResponseAllOfServicesInner) GetDateCreated() time.Time`
@@ -285,6 +355,16 @@ SetDateCreated sets DateCreated field to given value.
 
 HasDateCreated returns a boolean if a field has been set.
 
+### SetDateCreatedNil
+
+`func (o *ListClusterServices200ResponseAllOfServicesInner) SetDateCreatedNil(b bool)`
+
+ SetDateCreatedNil sets the value for DateCreated to be an explicit nil
+
+### UnsetDateCreated
+`func (o *ListClusterServices200ResponseAllOfServicesInner) UnsetDateCreated()`
+
+UnsetDateCreated ensures that no value is present for DateCreated, not even an explicit nil
 ### GetLastUpdated
 
 `func (o *ListClusterServices200ResponseAllOfServicesInner) GetLastUpdated() time.Time`
@@ -310,6 +390,16 @@ SetLastUpdated sets LastUpdated field to given value.
 
 HasLastUpdated returns a boolean if a field has been set.
 
+### SetLastUpdatedNil
+
+`func (o *ListClusterServices200ResponseAllOfServicesInner) SetLastUpdatedNil(b bool)`
+
+ SetLastUpdatedNil sets the value for LastUpdated to be an explicit nil
+
+### UnsetLastUpdated
+`func (o *ListClusterServices200ResponseAllOfServicesInner) UnsetLastUpdated()`
+
+UnsetLastUpdated ensures that no value is present for LastUpdated, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

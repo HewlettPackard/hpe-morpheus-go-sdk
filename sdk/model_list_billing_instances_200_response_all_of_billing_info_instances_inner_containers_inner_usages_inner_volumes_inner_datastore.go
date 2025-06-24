@@ -24,8 +24,8 @@ type ListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInne
 	Name                 *string                `json:"name,omitempty"`
 	Type                 *string                `json:"type,omitempty"`
 	ExternalId           *string                `json:"externalId,omitempty"`
-	InternalId           *string                `json:"internalId,omitempty"`
-	ExternalPath         *string                `json:"externalPath,omitempty"`
+	InternalId           NullableString         `json:"internalId,omitempty"`
+	ExternalPath         NullableString         `json:"externalPath,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -176,68 +176,90 @@ func (o *ListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainers
 	o.ExternalId = &v
 }
 
-// GetInternalId returns the InternalId field value if set, zero value otherwise.
+// GetInternalId returns the InternalId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInnerVolumesInnerDatastore) GetInternalId() string {
-	if o == nil || IsNil(o.InternalId) {
+	if o == nil || IsNil(o.InternalId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.InternalId
+	return *o.InternalId.Get()
 }
 
 // GetInternalIdOk returns a tuple with the InternalId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInnerVolumesInnerDatastore) GetInternalIdOk() (*string, bool) {
-	if o == nil || IsNil(o.InternalId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.InternalId, true
+	return o.InternalId.Get(), o.InternalId.IsSet()
 }
 
 // IsSetInternalId returns a boolean if a field has been set.
 func (o *ListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInnerVolumesInnerDatastore) IsSetInternalId() bool {
-	if o != nil && !IsNil(o.InternalId) {
+	if o != nil && o.InternalId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetInternalId gets a reference to the given string and assigns it to the InternalId field.
+// SetInternalId gets a reference to the given NullableString and assigns it to the InternalId field.
 func (o *ListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInnerVolumesInnerDatastore) SetInternalId(v string) {
-	o.InternalId = &v
+	o.InternalId.Set(&v)
 }
 
-// GetExternalPath returns the ExternalPath field value if set, zero value otherwise.
+// SetInternalIdNil sets the value for InternalId to be an explicit nil
+func (o *ListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInnerVolumesInnerDatastore) SetInternalIdNil() {
+	o.InternalId.Set(nil)
+}
+
+// UnsetInternalId ensures that no value is present for InternalId, not even an explicit nil
+func (o *ListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInnerVolumesInnerDatastore) UnsetInternalId() {
+	o.InternalId.Unset()
+}
+
+// GetExternalPath returns the ExternalPath field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInnerVolumesInnerDatastore) GetExternalPath() string {
-	if o == nil || IsNil(o.ExternalPath) {
+	if o == nil || IsNil(o.ExternalPath.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ExternalPath
+	return *o.ExternalPath.Get()
 }
 
 // GetExternalPathOk returns a tuple with the ExternalPath field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInnerVolumesInnerDatastore) GetExternalPathOk() (*string, bool) {
-	if o == nil || IsNil(o.ExternalPath) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ExternalPath, true
+	return o.ExternalPath.Get(), o.ExternalPath.IsSet()
 }
 
 // IsSetExternalPath returns a boolean if a field has been set.
 func (o *ListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInnerVolumesInnerDatastore) IsSetExternalPath() bool {
-	if o != nil && !IsNil(o.ExternalPath) {
+	if o != nil && o.ExternalPath.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetExternalPath gets a reference to the given string and assigns it to the ExternalPath field.
+// SetExternalPath gets a reference to the given NullableString and assigns it to the ExternalPath field.
 func (o *ListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInnerVolumesInnerDatastore) SetExternalPath(v string) {
-	o.ExternalPath = &v
+	o.ExternalPath.Set(&v)
+}
+
+// SetExternalPathNil sets the value for ExternalPath to be an explicit nil
+func (o *ListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInnerVolumesInnerDatastore) SetExternalPathNil() {
+	o.ExternalPath.Set(nil)
+}
+
+// UnsetExternalPath ensures that no value is present for ExternalPath, not even an explicit nil
+func (o *ListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInnerVolumesInnerDatastore) UnsetExternalPath() {
+	o.ExternalPath.Unset()
 }
 
 func (o ListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInnerVolumesInnerDatastore) MarshalJSON() ([]byte, error) {
@@ -262,11 +284,11 @@ func (o ListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersI
 	if !IsNil(o.ExternalId) {
 		toSerialize["externalId"] = o.ExternalId
 	}
-	if !IsNil(o.InternalId) {
-		toSerialize["internalId"] = o.InternalId
+	if o.InternalId.IsSet() {
+		toSerialize["internalId"] = o.InternalId.Get()
 	}
-	if !IsNil(o.ExternalPath) {
-		toSerialize["externalPath"] = o.ExternalPath
+	if o.ExternalPath.IsSet() {
+		toSerialize["externalPath"] = o.ExternalPath.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {

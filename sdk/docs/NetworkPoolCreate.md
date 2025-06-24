@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **string** | Name | [optional] 
-**Type** | Pointer to [**CreateNetworkPoolRequestNetworkPoolType**](CreateNetworkPoolRequestNetworkPoolType.md) |  | [optional] 
+**Type** | Pointer to [**AddInstance200ResponseAllOfOneOfInstanceConfigInstanceType**](AddInstance200ResponseAllOfOneOfInstanceConfigInstanceType.md) |  | [optional] 
 **IpRanges** | Pointer to [**[]CreateNetworkPoolRequestNetworkPoolIpRangesInner**](CreateNetworkPoolRequestNetworkPoolIpRangesInner.md) | Array of IP range objects. Type &#39;morpheus&#39; expects startAddress and endAddress. Type &#39;morpheusipv6&#39; expects a cidrIPv6. | [optional] 
 **Config** | Pointer to **map[string]interface{}** | Configuration object with parameters that vary by pool type. | [optional] 
 
@@ -55,20 +55,20 @@ HasName returns a boolean if a field has been set.
 
 ### GetType
 
-`func (o *NetworkPoolCreate) GetType() CreateNetworkPoolRequestNetworkPoolType`
+`func (o *NetworkPoolCreate) GetType() AddInstance200ResponseAllOfOneOfInstanceConfigInstanceType`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *NetworkPoolCreate) GetTypeOk() (*CreateNetworkPoolRequestNetworkPoolType, bool)`
+`func (o *NetworkPoolCreate) GetTypeOk() (*AddInstance200ResponseAllOfOneOfInstanceConfigInstanceType, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *NetworkPoolCreate) SetType(v CreateNetworkPoolRequestNetworkPoolType)`
+`func (o *NetworkPoolCreate) SetType(v AddInstance200ResponseAllOfOneOfInstanceConfigInstanceType)`
 
 SetType sets Type field to given value.
 

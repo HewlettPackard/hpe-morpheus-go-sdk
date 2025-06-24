@@ -24,11 +24,11 @@ type ListVDIPools200ResponseAllOfVdiPoolsInnerConfigConfig struct {
 	IsEC2                *bool                  `json:"isEC2,omitempty"`
 	IsVpcSelectable      *bool                  `json:"isVpcSelectable,omitempty"`
 	NoAgent              *bool                  `json:"noAgent,omitempty"`
-	SmbiosAssetTag       *string                `json:"smbiosAssetTag,omitempty"`
-	NestedVirtualization *string                `json:"nestedVirtualization,omitempty"`
+	SmbiosAssetTag       NullableString         `json:"smbiosAssetTag,omitempty"`
+	NestedVirtualization NullableString         `json:"nestedVirtualization,omitempty"`
 	VmwareFolderId       *string                `json:"vmwareFolderId,omitempty"`
 	ResourcePoolId       *int64                 `json:"resourcePoolId,omitempty"`
-	PoolProviderType     *string                `json:"poolProviderType,omitempty"`
+	PoolProviderType     NullableString         `json:"poolProviderType,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -179,68 +179,90 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigConfig) SetNoAgent(v boo
 	o.NoAgent = &v
 }
 
-// GetSmbiosAssetTag returns the SmbiosAssetTag field value if set, zero value otherwise.
+// GetSmbiosAssetTag returns the SmbiosAssetTag field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigConfig) GetSmbiosAssetTag() string {
-	if o == nil || IsNil(o.SmbiosAssetTag) {
+	if o == nil || IsNil(o.SmbiosAssetTag.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.SmbiosAssetTag
+	return *o.SmbiosAssetTag.Get()
 }
 
 // GetSmbiosAssetTagOk returns a tuple with the SmbiosAssetTag field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigConfig) GetSmbiosAssetTagOk() (*string, bool) {
-	if o == nil || IsNil(o.SmbiosAssetTag) {
+	if o == nil {
 		return nil, false
 	}
-	return o.SmbiosAssetTag, true
+	return o.SmbiosAssetTag.Get(), o.SmbiosAssetTag.IsSet()
 }
 
 // IsSetSmbiosAssetTag returns a boolean if a field has been set.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigConfig) IsSetSmbiosAssetTag() bool {
-	if o != nil && !IsNil(o.SmbiosAssetTag) {
+	if o != nil && o.SmbiosAssetTag.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetSmbiosAssetTag gets a reference to the given string and assigns it to the SmbiosAssetTag field.
+// SetSmbiosAssetTag gets a reference to the given NullableString and assigns it to the SmbiosAssetTag field.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigConfig) SetSmbiosAssetTag(v string) {
-	o.SmbiosAssetTag = &v
+	o.SmbiosAssetTag.Set(&v)
 }
 
-// GetNestedVirtualization returns the NestedVirtualization field value if set, zero value otherwise.
+// SetSmbiosAssetTagNil sets the value for SmbiosAssetTag to be an explicit nil
+func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigConfig) SetSmbiosAssetTagNil() {
+	o.SmbiosAssetTag.Set(nil)
+}
+
+// UnsetSmbiosAssetTag ensures that no value is present for SmbiosAssetTag, not even an explicit nil
+func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigConfig) UnsetSmbiosAssetTag() {
+	o.SmbiosAssetTag.Unset()
+}
+
+// GetNestedVirtualization returns the NestedVirtualization field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigConfig) GetNestedVirtualization() string {
-	if o == nil || IsNil(o.NestedVirtualization) {
+	if o == nil || IsNil(o.NestedVirtualization.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.NestedVirtualization
+	return *o.NestedVirtualization.Get()
 }
 
 // GetNestedVirtualizationOk returns a tuple with the NestedVirtualization field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigConfig) GetNestedVirtualizationOk() (*string, bool) {
-	if o == nil || IsNil(o.NestedVirtualization) {
+	if o == nil {
 		return nil, false
 	}
-	return o.NestedVirtualization, true
+	return o.NestedVirtualization.Get(), o.NestedVirtualization.IsSet()
 }
 
 // IsSetNestedVirtualization returns a boolean if a field has been set.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigConfig) IsSetNestedVirtualization() bool {
-	if o != nil && !IsNil(o.NestedVirtualization) {
+	if o != nil && o.NestedVirtualization.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetNestedVirtualization gets a reference to the given string and assigns it to the NestedVirtualization field.
+// SetNestedVirtualization gets a reference to the given NullableString and assigns it to the NestedVirtualization field.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigConfig) SetNestedVirtualization(v string) {
-	o.NestedVirtualization = &v
+	o.NestedVirtualization.Set(&v)
+}
+
+// SetNestedVirtualizationNil sets the value for NestedVirtualization to be an explicit nil
+func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigConfig) SetNestedVirtualizationNil() {
+	o.NestedVirtualization.Set(nil)
+}
+
+// UnsetNestedVirtualization ensures that no value is present for NestedVirtualization, not even an explicit nil
+func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigConfig) UnsetNestedVirtualization() {
+	o.NestedVirtualization.Unset()
 }
 
 // GetVmwareFolderId returns the VmwareFolderId field value if set, zero value otherwise.
@@ -307,36 +329,47 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigConfig) SetResourcePoolI
 	o.ResourcePoolId = &v
 }
 
-// GetPoolProviderType returns the PoolProviderType field value if set, zero value otherwise.
+// GetPoolProviderType returns the PoolProviderType field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigConfig) GetPoolProviderType() string {
-	if o == nil || IsNil(o.PoolProviderType) {
+	if o == nil || IsNil(o.PoolProviderType.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.PoolProviderType
+	return *o.PoolProviderType.Get()
 }
 
 // GetPoolProviderTypeOk returns a tuple with the PoolProviderType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigConfig) GetPoolProviderTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.PoolProviderType) {
+	if o == nil {
 		return nil, false
 	}
-	return o.PoolProviderType, true
+	return o.PoolProviderType.Get(), o.PoolProviderType.IsSet()
 }
 
 // IsSetPoolProviderType returns a boolean if a field has been set.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigConfig) IsSetPoolProviderType() bool {
-	if o != nil && !IsNil(o.PoolProviderType) {
+	if o != nil && o.PoolProviderType.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetPoolProviderType gets a reference to the given string and assigns it to the PoolProviderType field.
+// SetPoolProviderType gets a reference to the given NullableString and assigns it to the PoolProviderType field.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigConfig) SetPoolProviderType(v string) {
-	o.PoolProviderType = &v
+	o.PoolProviderType.Set(&v)
+}
+
+// SetPoolProviderTypeNil sets the value for PoolProviderType to be an explicit nil
+func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigConfig) SetPoolProviderTypeNil() {
+	o.PoolProviderType.Set(nil)
+}
+
+// UnsetPoolProviderType ensures that no value is present for PoolProviderType, not even an explicit nil
+func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigConfig) UnsetPoolProviderType() {
+	o.PoolProviderType.Unset()
 }
 
 func (o ListVDIPools200ResponseAllOfVdiPoolsInnerConfigConfig) MarshalJSON() ([]byte, error) {
@@ -361,11 +394,11 @@ func (o ListVDIPools200ResponseAllOfVdiPoolsInnerConfigConfig) ToMap() (map[stri
 	if !IsNil(o.NoAgent) {
 		toSerialize["noAgent"] = o.NoAgent
 	}
-	if !IsNil(o.SmbiosAssetTag) {
-		toSerialize["smbiosAssetTag"] = o.SmbiosAssetTag
+	if o.SmbiosAssetTag.IsSet() {
+		toSerialize["smbiosAssetTag"] = o.SmbiosAssetTag.Get()
 	}
-	if !IsNil(o.NestedVirtualization) {
-		toSerialize["nestedVirtualization"] = o.NestedVirtualization
+	if o.NestedVirtualization.IsSet() {
+		toSerialize["nestedVirtualization"] = o.NestedVirtualization.Get()
 	}
 	if !IsNil(o.VmwareFolderId) {
 		toSerialize["vmwareFolderId"] = o.VmwareFolderId
@@ -373,8 +406,8 @@ func (o ListVDIPools200ResponseAllOfVdiPoolsInnerConfigConfig) ToMap() (map[stri
 	if !IsNil(o.ResourcePoolId) {
 		toSerialize["resourcePoolId"] = o.ResourcePoolId
 	}
-	if !IsNil(o.PoolProviderType) {
-		toSerialize["poolProviderType"] = o.PoolProviderType
+	if o.PoolProviderType.IsSet() {
+		toSerialize["poolProviderType"] = o.PoolProviderType.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {

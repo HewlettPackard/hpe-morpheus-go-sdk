@@ -26,7 +26,7 @@ Name | Type | Description | Notes
 **NoDisks** | Pointer to **bool** |  | [optional] 
 **HasDatastore** | Pointer to **bool** |  | [optional] 
 **MinDisk** | Pointer to **int32** |  | [optional] 
-**MaxDisk** | Pointer to **string** |  | [optional] 
+**MaxDisk** | Pointer to **NullableString** |  | [optional] 
 **LvmSupported** | Pointer to **bool** |  | [optional] 
 **Datastores** | Pointer to [**ListInstanceServicePlans200ResponsePlansInnerDatastores**](ListInstanceServicePlans200ResponsePlansInnerDatastores.md) |  | [optional] 
 **SupportsAutoDatastore** | Pointer to **bool** |  | [optional] 
@@ -37,7 +37,7 @@ Name | Type | Description | Notes
 **RootCustomSizeOptions** | Pointer to **map[string]interface{}** |  | [optional] 
 **CustomSizeOptions** | Pointer to **map[string]interface{}** |  | [optional] 
 **CustomCores** | Pointer to **bool** |  | [optional] 
-**MaxDisks** | Pointer to **string** |  | [optional] 
+**MaxDisks** | Pointer to **NullableString** |  | [optional] 
 **MemorySizeType** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -634,6 +634,16 @@ SetMaxDisk sets MaxDisk field to given value.
 
 HasMaxDisk returns a boolean if a field has been set.
 
+### SetMaxDiskNil
+
+`func (o *InstanceServicePlan) SetMaxDiskNil(b bool)`
+
+ SetMaxDiskNil sets the value for MaxDisk to be an explicit nil
+
+### UnsetMaxDisk
+`func (o *InstanceServicePlan) UnsetMaxDisk()`
+
+UnsetMaxDisk ensures that no value is present for MaxDisk, not even an explicit nil
 ### GetLvmSupported
 
 `func (o *InstanceServicePlan) GetLvmSupported() bool`
@@ -759,6 +769,16 @@ SetCpuOptions sets CpuOptions field to given value.
 
 HasCpuOptions returns a boolean if a field has been set.
 
+### SetCpuOptionsNil
+
+`func (o *InstanceServicePlan) SetCpuOptionsNil(b bool)`
+
+ SetCpuOptionsNil sets the value for CpuOptions to be an explicit nil
+
+### UnsetCpuOptions
+`func (o *InstanceServicePlan) UnsetCpuOptions()`
+
+UnsetCpuOptions ensures that no value is present for CpuOptions, not even an explicit nil
 ### GetCoreOptions
 
 `func (o *InstanceServicePlan) GetCoreOptions() []map[string]interface{}`
@@ -784,6 +804,16 @@ SetCoreOptions sets CoreOptions field to given value.
 
 HasCoreOptions returns a boolean if a field has been set.
 
+### SetCoreOptionsNil
+
+`func (o *InstanceServicePlan) SetCoreOptionsNil(b bool)`
+
+ SetCoreOptionsNil sets the value for CoreOptions to be an explicit nil
+
+### UnsetCoreOptions
+`func (o *InstanceServicePlan) UnsetCoreOptions()`
+
+UnsetCoreOptions ensures that no value is present for CoreOptions, not even an explicit nil
 ### GetMemoryOptions
 
 `func (o *InstanceServicePlan) GetMemoryOptions() []map[string]interface{}`
@@ -809,6 +839,16 @@ SetMemoryOptions sets MemoryOptions field to given value.
 
 HasMemoryOptions returns a boolean if a field has been set.
 
+### SetMemoryOptionsNil
+
+`func (o *InstanceServicePlan) SetMemoryOptionsNil(b bool)`
+
+ SetMemoryOptionsNil sets the value for MemoryOptions to be an explicit nil
+
+### UnsetMemoryOptions
+`func (o *InstanceServicePlan) UnsetMemoryOptions()`
+
+UnsetMemoryOptions ensures that no value is present for MemoryOptions, not even an explicit nil
 ### GetRootCustomSizeOptions
 
 `func (o *InstanceServicePlan) GetRootCustomSizeOptions() map[string]interface{}`
@@ -834,6 +874,16 @@ SetRootCustomSizeOptions sets RootCustomSizeOptions field to given value.
 
 HasRootCustomSizeOptions returns a boolean if a field has been set.
 
+### SetRootCustomSizeOptionsNil
+
+`func (o *InstanceServicePlan) SetRootCustomSizeOptionsNil(b bool)`
+
+ SetRootCustomSizeOptionsNil sets the value for RootCustomSizeOptions to be an explicit nil
+
+### UnsetRootCustomSizeOptions
+`func (o *InstanceServicePlan) UnsetRootCustomSizeOptions()`
+
+UnsetRootCustomSizeOptions ensures that no value is present for RootCustomSizeOptions, not even an explicit nil
 ### GetCustomSizeOptions
 
 `func (o *InstanceServicePlan) GetCustomSizeOptions() map[string]interface{}`
@@ -859,6 +909,16 @@ SetCustomSizeOptions sets CustomSizeOptions field to given value.
 
 HasCustomSizeOptions returns a boolean if a field has been set.
 
+### SetCustomSizeOptionsNil
+
+`func (o *InstanceServicePlan) SetCustomSizeOptionsNil(b bool)`
+
+ SetCustomSizeOptionsNil sets the value for CustomSizeOptions to be an explicit nil
+
+### UnsetCustomSizeOptions
+`func (o *InstanceServicePlan) UnsetCustomSizeOptions()`
+
+UnsetCustomSizeOptions ensures that no value is present for CustomSizeOptions, not even an explicit nil
 ### GetCustomCores
 
 `func (o *InstanceServicePlan) GetCustomCores() bool`
@@ -909,6 +969,16 @@ SetMaxDisks sets MaxDisks field to given value.
 
 HasMaxDisks returns a boolean if a field has been set.
 
+### SetMaxDisksNil
+
+`func (o *InstanceServicePlan) SetMaxDisksNil(b bool)`
+
+ SetMaxDisksNil sets the value for MaxDisks to be an explicit nil
+
+### UnsetMaxDisks
+`func (o *InstanceServicePlan) UnsetMaxDisks()`
+
+UnsetMaxDisks ensures that no value is present for MaxDisks, not even an explicit nil
 ### GetMemorySizeType
 
 `func (o *InstanceServicePlan) GetMemorySizeType() string`

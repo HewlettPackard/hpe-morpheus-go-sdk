@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **ManageInternalFirewall** | Pointer to **bool** | Flag to enable/disable managment of internal firewall | [optional] [default to true]
 **EnableLogs** | Pointer to **bool** | Flag to enable/disable logs | [optional] [default to true]
 **SshUsername** | Pointer to **string** | SSH Username | [optional] 
-**SshPassword** | Pointer to **string** | SSH Password | [optional] 
+**SshPassword** | Pointer to **NullableString** | SSH Password | [optional] 
 **SshKeyPair** | Pointer to [**AddClusterRequestClusterServerSshKeyPair**](AddClusterRequestClusterServerSshKeyPair.md) |  | [optional] 
 **PowerScheduleType** | Pointer to **int64** | Power schedule ID. | [optional] 
 **Labels** | Pointer to **[]string** |  | [optional] 
@@ -217,6 +217,16 @@ SetSshPassword sets SshPassword field to given value.
 
 HasSshPassword returns a boolean if a field has been set.
 
+### SetSshPasswordNil
+
+`func (o *UpdateHostRequestServer) SetSshPasswordNil(b bool)`
+
+ SetSshPasswordNil sets the value for SshPassword to be an explicit nil
+
+### UnsetSshPassword
+`func (o *UpdateHostRequestServer) UnsetSshPassword()`
+
+UnsetSshPassword ensures that no value is present for SshPassword, not even an explicit nil
 ### GetSshKeyPair
 
 `func (o *UpdateHostRequestServer) GetSshKeyPair() AddClusterRequestClusterServerSshKeyPair`

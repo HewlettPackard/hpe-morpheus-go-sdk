@@ -24,7 +24,7 @@ type ZoneNetworkOptionsNetworksInner struct {
 	Name                 *string                `json:"name,omitempty"`
 	DhcpServer           *bool                  `json:"dhcpServer,omitempty"`
 	AllowStaticOverride  *bool                  `json:"allowStaticOverride,omitempty"`
-	Pool                 *string                `json:"pool,omitempty"`
+	Pool                 NullableString         `json:"pool,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -175,36 +175,47 @@ func (o *ZoneNetworkOptionsNetworksInner) SetAllowStaticOverride(v bool) {
 	o.AllowStaticOverride = &v
 }
 
-// GetPool returns the Pool field value if set, zero value otherwise.
+// GetPool returns the Pool field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ZoneNetworkOptionsNetworksInner) GetPool() string {
-	if o == nil || IsNil(o.Pool) {
+	if o == nil || IsNil(o.Pool.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Pool
+	return *o.Pool.Get()
 }
 
 // GetPoolOk returns a tuple with the Pool field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ZoneNetworkOptionsNetworksInner) GetPoolOk() (*string, bool) {
-	if o == nil || IsNil(o.Pool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Pool, true
+	return o.Pool.Get(), o.Pool.IsSet()
 }
 
 // IsSetPool returns a boolean if a field has been set.
 func (o *ZoneNetworkOptionsNetworksInner) IsSetPool() bool {
-	if o != nil && !IsNil(o.Pool) {
+	if o != nil && o.Pool.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetPool gets a reference to the given string and assigns it to the Pool field.
+// SetPool gets a reference to the given NullableString and assigns it to the Pool field.
 func (o *ZoneNetworkOptionsNetworksInner) SetPool(v string) {
-	o.Pool = &v
+	o.Pool.Set(&v)
+}
+
+// SetPoolNil sets the value for Pool to be an explicit nil
+func (o *ZoneNetworkOptionsNetworksInner) SetPoolNil() {
+	o.Pool.Set(nil)
+}
+
+// UnsetPool ensures that no value is present for Pool, not even an explicit nil
+func (o *ZoneNetworkOptionsNetworksInner) UnsetPool() {
+	o.Pool.Unset()
 }
 
 func (o ZoneNetworkOptionsNetworksInner) MarshalJSON() ([]byte, error) {
@@ -229,8 +240,8 @@ func (o ZoneNetworkOptionsNetworksInner) ToMap() (map[string]interface{}, error)
 	if !IsNil(o.AllowStaticOverride) {
 		toSerialize["allowStaticOverride"] = o.AllowStaticOverride
 	}
-	if !IsNil(o.Pool) {
-		toSerialize["pool"] = o.Pool
+	if o.Pool.IsSet() {
+		toSerialize["pool"] = o.Pool.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {

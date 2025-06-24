@@ -21,7 +21,7 @@ var _ MappedNullable = &SuccessId{}
 // SuccessId struct for SuccessId
 type SuccessId struct {
 	Success              *bool                  `json:"success,omitempty"`
-	Id                   *int32                 `json:"id,omitempty"`
+	Id                   NullableInt32          `json:"id,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -76,36 +76,47 @@ func (o *SuccessId) SetSuccess(v bool) {
 	o.Success = &v
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
+// GetId returns the Id field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SuccessId) GetId() int32 {
-	if o == nil || IsNil(o.Id) {
+	if o == nil || IsNil(o.Id.Get()) {
 		var ret int32
 		return ret
 	}
-	return *o.Id
+	return *o.Id.Get()
 }
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SuccessId) GetIdOk() (*int32, bool) {
-	if o == nil || IsNil(o.Id) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Id, true
+	return o.Id.Get(), o.Id.IsSet()
 }
 
 // IsSetId returns a boolean if a field has been set.
 func (o *SuccessId) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
+	if o != nil && o.Id.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
+// SetId gets a reference to the given NullableInt32 and assigns it to the Id field.
 func (o *SuccessId) SetId(v int32) {
-	o.Id = &v
+	o.Id.Set(&v)
+}
+
+// SetIdNil sets the value for Id to be an explicit nil
+func (o *SuccessId) SetIdNil() {
+	o.Id.Set(nil)
+}
+
+// UnsetId ensures that no value is present for Id, not even an explicit nil
+func (o *SuccessId) UnsetId() {
+	o.Id.Unset()
 }
 
 func (o SuccessId) MarshalJSON() ([]byte, error) {
@@ -121,8 +132,8 @@ func (o SuccessId) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Success) {
 		toSerialize["success"] = o.Success
 	}
-	if !IsNil(o.Id) {
-		toSerialize["id"] = o.Id
+	if o.Id.IsSet() {
+		toSerialize["id"] = o.Id.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {

@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ApplianceUrl** | Pointer to **string** | Appliance URL | [optional] 
-**InternalApplianceUrl** | Pointer to **string** | Internal Appliance URL (PXE) | [optional] 
-**CorsAllowed** | Pointer to **string** | API Allowed Origins | [optional] 
+**InternalApplianceUrl** | Pointer to **NullableString** | Internal Appliance URL (PXE) | [optional] 
+**CorsAllowed** | Pointer to **NullableString** | API Allowed Origins | [optional] 
 **RegistrationEnabled** | Pointer to **bool** | Registration enabled (true, false) | [optional] 
 **DefaultRoleId** | Pointer to **int64** | Default tenant role ID | [optional] 
 **DefaultUserRoleId** | Pointer to **int64** | Default user role ID | [optional] 
@@ -28,14 +28,14 @@ Name | Type | Description | Notes
 **SmtpTLS** | Pointer to **bool** | Use TLS for SMTP connections | [optional] 
 **SmtpUser** | Pointer to **string** | SMTP username | [optional] 
 **SmtpPassword** | Pointer to **string** | SMTP password | [optional] 
-**ProxyHost** | Pointer to **string** | Proxy host | [optional] 
-**ProxyPort** | Pointer to **string** | Proxy port | [optional] 
+**ProxyHost** | Pointer to **NullableString** | Proxy host | [optional] 
+**ProxyPort** | Pointer to **NullableString** | Proxy port | [optional] 
 **ProxyUser** | Pointer to **string** | Proxy username | [optional] 
 **ProxyPassword** | Pointer to **string** | Proxy password | [optional] 
-**ProxyDomain** | Pointer to **string** | Proxy domain | [optional] 
-**ProxyWorkstation** | Pointer to **string** | Proxy workstation | [optional] 
+**ProxyDomain** | Pointer to **NullableString** | Proxy domain | [optional] 
+**ProxyWorkstation** | Pointer to **NullableString** | Proxy workstation | [optional] 
 **CurrencyProvider** | Pointer to **string** | Currency provider | [optional] 
-**CurrencyKey** | Pointer to **string** | Currency provider API key | [optional] 
+**CurrencyKey** | Pointer to **NullableString** | Currency provider API key | [optional] 
 **EnableAllZoneTypes** | Pointer to **bool** | Set all cloud types enabled status on, overrides enableZoneTypes and disableZoneTypes parameters | [optional] 
 **EnableZoneTypes** | Pointer to **[]int64** | List of cloud type IDs to set enabled status on | [optional] 
 **DisableZoneTypes** | Pointer to **[]int64** | List of cloud type IDs to set enabled status off | [optional] 
@@ -129,6 +129,16 @@ SetInternalApplianceUrl sets InternalApplianceUrl field to given value.
 
 HasInternalApplianceUrl returns a boolean if a field has been set.
 
+### SetInternalApplianceUrlNil
+
+`func (o *UpdateApplianceSettingsRequestApplianceSettings) SetInternalApplianceUrlNil(b bool)`
+
+ SetInternalApplianceUrlNil sets the value for InternalApplianceUrl to be an explicit nil
+
+### UnsetInternalApplianceUrl
+`func (o *UpdateApplianceSettingsRequestApplianceSettings) UnsetInternalApplianceUrl()`
+
+UnsetInternalApplianceUrl ensures that no value is present for InternalApplianceUrl, not even an explicit nil
 ### GetCorsAllowed
 
 `func (o *UpdateApplianceSettingsRequestApplianceSettings) GetCorsAllowed() string`
@@ -154,6 +164,16 @@ SetCorsAllowed sets CorsAllowed field to given value.
 
 HasCorsAllowed returns a boolean if a field has been set.
 
+### SetCorsAllowedNil
+
+`func (o *UpdateApplianceSettingsRequestApplianceSettings) SetCorsAllowedNil(b bool)`
+
+ SetCorsAllowedNil sets the value for CorsAllowed to be an explicit nil
+
+### UnsetCorsAllowed
+`func (o *UpdateApplianceSettingsRequestApplianceSettings) UnsetCorsAllowed()`
+
+UnsetCorsAllowed ensures that no value is present for CorsAllowed, not even an explicit nil
 ### GetRegistrationEnabled
 
 `func (o *UpdateApplianceSettingsRequestApplianceSettings) GetRegistrationEnabled() bool`
@@ -704,6 +724,16 @@ SetProxyHost sets ProxyHost field to given value.
 
 HasProxyHost returns a boolean if a field has been set.
 
+### SetProxyHostNil
+
+`func (o *UpdateApplianceSettingsRequestApplianceSettings) SetProxyHostNil(b bool)`
+
+ SetProxyHostNil sets the value for ProxyHost to be an explicit nil
+
+### UnsetProxyHost
+`func (o *UpdateApplianceSettingsRequestApplianceSettings) UnsetProxyHost()`
+
+UnsetProxyHost ensures that no value is present for ProxyHost, not even an explicit nil
 ### GetProxyPort
 
 `func (o *UpdateApplianceSettingsRequestApplianceSettings) GetProxyPort() string`
@@ -729,6 +759,16 @@ SetProxyPort sets ProxyPort field to given value.
 
 HasProxyPort returns a boolean if a field has been set.
 
+### SetProxyPortNil
+
+`func (o *UpdateApplianceSettingsRequestApplianceSettings) SetProxyPortNil(b bool)`
+
+ SetProxyPortNil sets the value for ProxyPort to be an explicit nil
+
+### UnsetProxyPort
+`func (o *UpdateApplianceSettingsRequestApplianceSettings) UnsetProxyPort()`
+
+UnsetProxyPort ensures that no value is present for ProxyPort, not even an explicit nil
 ### GetProxyUser
 
 `func (o *UpdateApplianceSettingsRequestApplianceSettings) GetProxyUser() string`
@@ -804,6 +844,16 @@ SetProxyDomain sets ProxyDomain field to given value.
 
 HasProxyDomain returns a boolean if a field has been set.
 
+### SetProxyDomainNil
+
+`func (o *UpdateApplianceSettingsRequestApplianceSettings) SetProxyDomainNil(b bool)`
+
+ SetProxyDomainNil sets the value for ProxyDomain to be an explicit nil
+
+### UnsetProxyDomain
+`func (o *UpdateApplianceSettingsRequestApplianceSettings) UnsetProxyDomain()`
+
+UnsetProxyDomain ensures that no value is present for ProxyDomain, not even an explicit nil
 ### GetProxyWorkstation
 
 `func (o *UpdateApplianceSettingsRequestApplianceSettings) GetProxyWorkstation() string`
@@ -829,6 +879,16 @@ SetProxyWorkstation sets ProxyWorkstation field to given value.
 
 HasProxyWorkstation returns a boolean if a field has been set.
 
+### SetProxyWorkstationNil
+
+`func (o *UpdateApplianceSettingsRequestApplianceSettings) SetProxyWorkstationNil(b bool)`
+
+ SetProxyWorkstationNil sets the value for ProxyWorkstation to be an explicit nil
+
+### UnsetProxyWorkstation
+`func (o *UpdateApplianceSettingsRequestApplianceSettings) UnsetProxyWorkstation()`
+
+UnsetProxyWorkstation ensures that no value is present for ProxyWorkstation, not even an explicit nil
 ### GetCurrencyProvider
 
 `func (o *UpdateApplianceSettingsRequestApplianceSettings) GetCurrencyProvider() string`
@@ -879,6 +939,16 @@ SetCurrencyKey sets CurrencyKey field to given value.
 
 HasCurrencyKey returns a boolean if a field has been set.
 
+### SetCurrencyKeyNil
+
+`func (o *UpdateApplianceSettingsRequestApplianceSettings) SetCurrencyKeyNil(b bool)`
+
+ SetCurrencyKeyNil sets the value for CurrencyKey to be an explicit nil
+
+### UnsetCurrencyKey
+`func (o *UpdateApplianceSettingsRequestApplianceSettings) UnsetCurrencyKey()`
+
+UnsetCurrencyKey ensures that no value is present for CurrencyKey, not even an explicit nil
 ### GetEnableAllZoneTypes
 
 `func (o *UpdateApplianceSettingsRequestApplianceSettings) GetEnableAllZoneTypes() bool`

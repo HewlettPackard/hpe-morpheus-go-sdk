@@ -23,7 +23,7 @@ type MessageOfTheDayPolicyTypeConfigurationMotd struct {
 	Title                *string                `json:"title,omitempty"`
 	Message              *string                `json:"message,omitempty"`
 	Type                 *string                `json:"type,omitempty"`
-	FullPage             *bool                  `json:"_fullPage,omitempty"`
+	FullPage             NullableBool           `json:"_fullPage,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -142,36 +142,47 @@ func (o *MessageOfTheDayPolicyTypeConfigurationMotd) SetType(v string) {
 	o.Type = &v
 }
 
-// GetFullPage returns the FullPage field value if set, zero value otherwise.
+// GetFullPage returns the FullPage field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *MessageOfTheDayPolicyTypeConfigurationMotd) GetFullPage() bool {
-	if o == nil || IsNil(o.FullPage) {
+	if o == nil || IsNil(o.FullPage.Get()) {
 		var ret bool
 		return ret
 	}
-	return *o.FullPage
+	return *o.FullPage.Get()
 }
 
 // GetFullPageOk returns a tuple with the FullPage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *MessageOfTheDayPolicyTypeConfigurationMotd) GetFullPageOk() (*bool, bool) {
-	if o == nil || IsNil(o.FullPage) {
+	if o == nil {
 		return nil, false
 	}
-	return o.FullPage, true
+	return o.FullPage.Get(), o.FullPage.IsSet()
 }
 
 // IsSetFullPage returns a boolean if a field has been set.
 func (o *MessageOfTheDayPolicyTypeConfigurationMotd) IsSetFullPage() bool {
-	if o != nil && !IsNil(o.FullPage) {
+	if o != nil && o.FullPage.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetFullPage gets a reference to the given bool and assigns it to the FullPage field.
+// SetFullPage gets a reference to the given NullableBool and assigns it to the FullPage field.
 func (o *MessageOfTheDayPolicyTypeConfigurationMotd) SetFullPage(v bool) {
-	o.FullPage = &v
+	o.FullPage.Set(&v)
+}
+
+// SetFullPageNil sets the value for FullPage to be an explicit nil
+func (o *MessageOfTheDayPolicyTypeConfigurationMotd) SetFullPageNil() {
+	o.FullPage.Set(nil)
+}
+
+// UnsetFullPage ensures that no value is present for FullPage, not even an explicit nil
+func (o *MessageOfTheDayPolicyTypeConfigurationMotd) UnsetFullPage() {
+	o.FullPage.Unset()
 }
 
 func (o MessageOfTheDayPolicyTypeConfigurationMotd) MarshalJSON() ([]byte, error) {
@@ -193,8 +204,8 @@ func (o MessageOfTheDayPolicyTypeConfigurationMotd) ToMap() (map[string]interfac
 	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type
 	}
-	if !IsNil(o.FullPage) {
-		toSerialize["_fullPage"] = o.FullPage
+	if o.FullPage.IsSet() {
+		toSerialize["_fullPage"] = o.FullPage.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {

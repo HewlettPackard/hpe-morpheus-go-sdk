@@ -33,14 +33,14 @@ type ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf struct {
 	ActionPlanId         *int64                                                              `json:"actionPlanId,omitempty"`
 	StatusMessage        *string                                                             `json:"statusMessage,omitempty"`
 	AccountId            *int64                                                              `json:"accountId,omitempty"`
-	UserId               *string                                                             `json:"userId,omitempty"`
-	SiteId               *int64                                                              `json:"siteId,omitempty"`
+	UserId               NullableString                                                      `json:"userId,omitempty"`
+	SiteId               NullableInt64                                                       `json:"siteId,omitempty"`
 	Zone                 *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone             `json:"zone,omitempty"`
 	State                *string                                                             `json:"state,omitempty"`
-	StateMessage         *string                                                             `json:"stateMessage,omitempty"`
+	StateMessage         NullableString                                                      `json:"stateMessage,omitempty"`
 	Severity             *string                                                             `json:"severity,omitempty"`
 	Resolved             *bool                                                               `json:"resolved,omitempty"`
-	ResolvedMessage      *string                                                             `json:"resolvedMessage,omitempty"`
+	ResolvedMessage      NullableString                                                      `json:"resolvedMessage,omitempty"`
 	RefType              *string                                                             `json:"refType,omitempty"`
 	RefId                *int64                                                              `json:"refId,omitempty"`
 	RefName              *string                                                             `json:"refName,omitempty"`
@@ -456,68 +456,90 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf) SetAccountId(v int6
 	o.AccountId = &v
 }
 
-// GetUserId returns the UserId field value if set, zero value otherwise.
+// GetUserId returns the UserId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf) GetUserId() string {
-	if o == nil || IsNil(o.UserId) {
+	if o == nil || IsNil(o.UserId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.UserId
+	return *o.UserId.Get()
 }
 
 // GetUserIdOk returns a tuple with the UserId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf) GetUserIdOk() (*string, bool) {
-	if o == nil || IsNil(o.UserId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.UserId, true
+	return o.UserId.Get(), o.UserId.IsSet()
 }
 
 // IsSetUserId returns a boolean if a field has been set.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf) IsSetUserId() bool {
-	if o != nil && !IsNil(o.UserId) {
+	if o != nil && o.UserId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetUserId gets a reference to the given string and assigns it to the UserId field.
+// SetUserId gets a reference to the given NullableString and assigns it to the UserId field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf) SetUserId(v string) {
-	o.UserId = &v
+	o.UserId.Set(&v)
 }
 
-// GetSiteId returns the SiteId field value if set, zero value otherwise.
+// SetUserIdNil sets the value for UserId to be an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf) SetUserIdNil() {
+	o.UserId.Set(nil)
+}
+
+// UnsetUserId ensures that no value is present for UserId, not even an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf) UnsetUserId() {
+	o.UserId.Unset()
+}
+
+// GetSiteId returns the SiteId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf) GetSiteId() int64 {
-	if o == nil || IsNil(o.SiteId) {
+	if o == nil || IsNil(o.SiteId.Get()) {
 		var ret int64
 		return ret
 	}
-	return *o.SiteId
+	return *o.SiteId.Get()
 }
 
 // GetSiteIdOk returns a tuple with the SiteId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf) GetSiteIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.SiteId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.SiteId, true
+	return o.SiteId.Get(), o.SiteId.IsSet()
 }
 
 // IsSetSiteId returns a boolean if a field has been set.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf) IsSetSiteId() bool {
-	if o != nil && !IsNil(o.SiteId) {
+	if o != nil && o.SiteId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetSiteId gets a reference to the given int64 and assigns it to the SiteId field.
+// SetSiteId gets a reference to the given NullableInt64 and assigns it to the SiteId field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf) SetSiteId(v int64) {
-	o.SiteId = &v
+	o.SiteId.Set(&v)
+}
+
+// SetSiteIdNil sets the value for SiteId to be an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf) SetSiteIdNil() {
+	o.SiteId.Set(nil)
+}
+
+// UnsetSiteId ensures that no value is present for SiteId, not even an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf) UnsetSiteId() {
+	o.SiteId.Unset()
 }
 
 // GetZone returns the Zone field value if set, zero value otherwise.
@@ -584,36 +606,47 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf) SetState(v string) 
 	o.State = &v
 }
 
-// GetStateMessage returns the StateMessage field value if set, zero value otherwise.
+// GetStateMessage returns the StateMessage field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf) GetStateMessage() string {
-	if o == nil || IsNil(o.StateMessage) {
+	if o == nil || IsNil(o.StateMessage.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.StateMessage
+	return *o.StateMessage.Get()
 }
 
 // GetStateMessageOk returns a tuple with the StateMessage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf) GetStateMessageOk() (*string, bool) {
-	if o == nil || IsNil(o.StateMessage) {
+	if o == nil {
 		return nil, false
 	}
-	return o.StateMessage, true
+	return o.StateMessage.Get(), o.StateMessage.IsSet()
 }
 
 // IsSetStateMessage returns a boolean if a field has been set.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf) IsSetStateMessage() bool {
-	if o != nil && !IsNil(o.StateMessage) {
+	if o != nil && o.StateMessage.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetStateMessage gets a reference to the given string and assigns it to the StateMessage field.
+// SetStateMessage gets a reference to the given NullableString and assigns it to the StateMessage field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf) SetStateMessage(v string) {
-	o.StateMessage = &v
+	o.StateMessage.Set(&v)
+}
+
+// SetStateMessageNil sets the value for StateMessage to be an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf) SetStateMessageNil() {
+	o.StateMessage.Set(nil)
+}
+
+// UnsetStateMessage ensures that no value is present for StateMessage, not even an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf) UnsetStateMessage() {
+	o.StateMessage.Unset()
 }
 
 // GetSeverity returns the Severity field value if set, zero value otherwise.
@@ -680,36 +713,47 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf) SetResolved(v bool)
 	o.Resolved = &v
 }
 
-// GetResolvedMessage returns the ResolvedMessage field value if set, zero value otherwise.
+// GetResolvedMessage returns the ResolvedMessage field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf) GetResolvedMessage() string {
-	if o == nil || IsNil(o.ResolvedMessage) {
+	if o == nil || IsNil(o.ResolvedMessage.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ResolvedMessage
+	return *o.ResolvedMessage.Get()
 }
 
 // GetResolvedMessageOk returns a tuple with the ResolvedMessage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf) GetResolvedMessageOk() (*string, bool) {
-	if o == nil || IsNil(o.ResolvedMessage) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ResolvedMessage, true
+	return o.ResolvedMessage.Get(), o.ResolvedMessage.IsSet()
 }
 
 // IsSetResolvedMessage returns a boolean if a field has been set.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf) IsSetResolvedMessage() bool {
-	if o != nil && !IsNil(o.ResolvedMessage) {
+	if o != nil && o.ResolvedMessage.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetResolvedMessage gets a reference to the given string and assigns it to the ResolvedMessage field.
+// SetResolvedMessage gets a reference to the given NullableString and assigns it to the ResolvedMessage field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf) SetResolvedMessage(v string) {
-	o.ResolvedMessage = &v
+	o.ResolvedMessage.Set(&v)
+}
+
+// SetResolvedMessageNil sets the value for ResolvedMessage to be an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf) SetResolvedMessageNil() {
+	o.ResolvedMessage.Set(nil)
+}
+
+// UnsetResolvedMessage ensures that no value is present for ResolvedMessage, not even an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf) UnsetResolvedMessage() {
+	o.ResolvedMessage.Unset()
 }
 
 // GetRefType returns the RefType field value if set, zero value otherwise.
@@ -1046,11 +1090,11 @@ func (o ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf) ToMap() (map[string]
 	if !IsNil(o.AccountId) {
 		toSerialize["accountId"] = o.AccountId
 	}
-	if !IsNil(o.UserId) {
-		toSerialize["userId"] = o.UserId
+	if o.UserId.IsSet() {
+		toSerialize["userId"] = o.UserId.Get()
 	}
-	if !IsNil(o.SiteId) {
-		toSerialize["siteId"] = o.SiteId
+	if o.SiteId.IsSet() {
+		toSerialize["siteId"] = o.SiteId.Get()
 	}
 	if !IsNil(o.Zone) {
 		toSerialize["zone"] = o.Zone
@@ -1058,8 +1102,8 @@ func (o ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf) ToMap() (map[string]
 	if !IsNil(o.State) {
 		toSerialize["state"] = o.State
 	}
-	if !IsNil(o.StateMessage) {
-		toSerialize["stateMessage"] = o.StateMessage
+	if o.StateMessage.IsSet() {
+		toSerialize["stateMessage"] = o.StateMessage.Get()
 	}
 	if !IsNil(o.Severity) {
 		toSerialize["severity"] = o.Severity
@@ -1067,8 +1111,8 @@ func (o ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf) ToMap() (map[string]
 	if !IsNil(o.Resolved) {
 		toSerialize["resolved"] = o.Resolved
 	}
-	if !IsNil(o.ResolvedMessage) {
-		toSerialize["resolvedMessage"] = o.ResolvedMessage
+	if o.ResolvedMessage.IsSet() {
+		toSerialize["resolvedMessage"] = o.ResolvedMessage.Get()
 	}
 	if !IsNil(o.RefType) {
 		toSerialize["refType"] = o.RefType

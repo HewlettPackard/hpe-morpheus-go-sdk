@@ -78,9 +78,9 @@ func (o *ResourcePermissions) SetAll(v bool) {
 	o.All = &v
 }
 
-// GetSites returns the Sites field value if set, zero value otherwise.
+// GetSites returns the Sites field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ResourcePermissions) GetSites() []ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner {
-	if o == nil || IsNil(o.Sites) {
+	if o == nil {
 		var ret []ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner
 		return ret
 	}
@@ -89,6 +89,7 @@ func (o *ResourcePermissions) GetSites() []ListCloudDatastores200ResponseAllOfDa
 
 // GetSitesOk returns a tuple with the Sites field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ResourcePermissions) GetSitesOk() ([]ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner, bool) {
 	if o == nil || IsNil(o.Sites) {
 		return nil, false
@@ -142,9 +143,9 @@ func (o *ResourcePermissions) SetAllPlans(v bool) {
 	o.AllPlans = &v
 }
 
-// GetPlans returns the Plans field value if set, zero value otherwise.
+// GetPlans returns the Plans field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ResourcePermissions) GetPlans() []ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner {
-	if o == nil || IsNil(o.Plans) {
+	if o == nil {
 		var ret []ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner
 		return ret
 	}
@@ -153,6 +154,7 @@ func (o *ResourcePermissions) GetPlans() []ListCloudDatastores200ResponseAllOfDa
 
 // GetPlansOk returns a tuple with the Plans field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ResourcePermissions) GetPlansOk() ([]ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner, bool) {
 	if o == nil || IsNil(o.Plans) {
 		return nil, false
@@ -187,13 +189,13 @@ func (o ResourcePermissions) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.All) {
 		toSerialize["all"] = o.All
 	}
-	if !IsNil(o.Sites) {
+	if o.Sites != nil {
 		toSerialize["sites"] = o.Sites
 	}
 	if !IsNil(o.AllPlans) {
 		toSerialize["allPlans"] = o.AllPlans
 	}
-	if !IsNil(o.Plans) {
+	if o.Plans != nil {
 		toSerialize["plans"] = o.Plans
 	}
 

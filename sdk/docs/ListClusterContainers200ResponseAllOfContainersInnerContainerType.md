@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
 **Code** | Pointer to **string** |  | [optional] 
-**Category** | Pointer to **string** |  | [optional] 
+**Category** | Pointer to **NullableString** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -103,6 +103,16 @@ SetCategory sets Category field to given value.
 
 HasCategory returns a boolean if a field has been set.
 
+### SetCategoryNil
+
+`func (o *ListClusterContainers200ResponseAllOfContainersInnerContainerType) SetCategoryNil(b bool)`
+
+ SetCategoryNil sets the value for Category to be an explicit nil
+
+### UnsetCategory
+`func (o *ListClusterContainers200ResponseAllOfContainersInnerContainerType) UnsetCategory()`
+
+UnsetCategory ensures that no value is present for Category, not even an explicit nil
 ### GetName
 
 `func (o *ListClusterContainers200ResponseAllOfContainersInnerContainerType) GetName() string`

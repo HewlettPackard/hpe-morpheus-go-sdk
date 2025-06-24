@@ -5,10 +5,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BootScript** | Pointer to [**ListBootScripts200ResponseAllOfBootScriptsInner**](ListBootScripts200ResponseAllOfBootScriptsInner.md) |  | [optional] 
-**ErrorCode** | Pointer to **string** |  | [optional] 
+**ErrorCode** | Pointer to **NullableString** |  | [optional] 
 **InProgress** | Pointer to **bool** |  | [optional] 
 **Success** | Pointer to **bool** | Success indicator, true when the request succeeded and false when an error occurred | [optional] [default to true]
-**Msg** | Pointer to **string** | Message containing a description of the result, usually a message about the error that occurred | [optional] 
+**Msg** | Pointer to **NullableString** | Message containing a description of the result, usually a message about the error that occurred | [optional] 
 **Errors** | Pointer to **map[string]interface{}** | Validation errors, with a key for Object containing error messages for each invalid parameter (key) | [optional] 
 
 ## Methods
@@ -80,6 +80,16 @@ SetErrorCode sets ErrorCode field to given value.
 
 HasErrorCode returns a boolean if a field has been set.
 
+### SetErrorCodeNil
+
+`func (o *AddBootScript200Response) SetErrorCodeNil(b bool)`
+
+ SetErrorCodeNil sets the value for ErrorCode to be an explicit nil
+
+### UnsetErrorCode
+`func (o *AddBootScript200Response) UnsetErrorCode()`
+
+UnsetErrorCode ensures that no value is present for ErrorCode, not even an explicit nil
 ### GetInProgress
 
 `func (o *AddBootScript200Response) GetInProgress() bool`
@@ -155,6 +165,16 @@ SetMsg sets Msg field to given value.
 
 HasMsg returns a boolean if a field has been set.
 
+### SetMsgNil
+
+`func (o *AddBootScript200Response) SetMsgNil(b bool)`
+
+ SetMsgNil sets the value for Msg to be an explicit nil
+
+### UnsetMsg
+`func (o *AddBootScript200Response) UnsetMsg()`
+
+UnsetMsg ensures that no value is present for Msg, not even an explicit nil
 ### GetErrors
 
 `func (o *AddBootScript200Response) GetErrors() map[string]interface{}`
@@ -180,6 +200,16 @@ SetErrors sets Errors field to given value.
 
 HasErrors returns a boolean if a field has been set.
 
+### SetErrorsNil
+
+`func (o *AddBootScript200Response) SetErrorsNil(b bool)`
+
+ SetErrorsNil sets the value for Errors to be an explicit nil
+
+### UnsetErrors
+`func (o *AddBootScript200Response) UnsetErrors()`
+
+UnsetErrors ensures that no value is present for Errors, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

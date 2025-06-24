@@ -9,10 +9,10 @@ Name | Type | Description | Notes
 **AccountName** | Pointer to **string** |  | [optional] 
 **Volumes** | Pointer to [**[]ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolumesInner**](ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolumesInner.md) |  | [optional] 
 **MaxMemory** | Pointer to **int64** |  | [optional] 
-**MaxCpu** | Pointer to **string** |  | [optional] 
+**MaxCpu** | Pointer to **NullableString** |  | [optional] 
 **MaxCores** | Pointer to **int64** |  | [optional] 
-**ServerExternalId** | Pointer to **string** |  | [optional] 
-**ServerInternalId** | Pointer to **string** |  | [optional] 
+**ServerExternalId** | Pointer to **NullableString** |  | [optional] 
+**ServerInternalId** | Pointer to **NullableString** |  | [optional] 
 **PlanName** | Pointer to **string** |  | [optional] 
 **HourlyPrice** | Pointer to **float32** |  | [optional] 
 **HourlyCost** | Pointer to **float32** |  | [optional] 
@@ -22,10 +22,10 @@ Name | Type | Description | Notes
 **Price** | Pointer to **float32** |  | [optional] 
 **CreatedByUser** | Pointer to **string** |  | [optional] 
 **CreatedByUserId** | Pointer to **int64** |  | [optional] 
-**SiteId** | Pointer to **string** |  | [optional] 
-**SiteName** | Pointer to **string** |  | [optional] 
-**SiteUUID** | Pointer to **string** |  | [optional] 
-**SiteCode** | Pointer to **string** |  | [optional] 
+**SiteId** | Pointer to **NullableString** |  | [optional] 
+**SiteName** | Pointer to **NullableString** |  | [optional] 
+**SiteUUID** | Pointer to **NullableString** |  | [optional] 
+**SiteCode** | Pointer to **NullableString** |  | [optional] 
 **StartDate** | Pointer to **time.Time** |  | [optional] 
 **EndDate** | Pointer to **time.Time** |  | [optional] 
 **Status** | Pointer to **string** |  | [optional] 
@@ -33,8 +33,8 @@ Name | Type | Description | Notes
 **ApplicablePrices** | Pointer to [**[]ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerApplicablePricesInner**](ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerApplicablePricesInner.md) |  | [optional] 
 **ServicePlanId** | Pointer to **int64** |  | [optional] 
 **ServicePlanName** | Pointer to **string** |  | [optional] 
-**ResourcePoolId** | Pointer to **string** |  | [optional] 
-**ResourcePoolName** | Pointer to **string** |  | [optional] 
+**ResourcePoolId** | Pointer to **NullableString** |  | [optional] 
+**ResourcePoolName** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -205,6 +205,16 @@ SetMaxCpu sets MaxCpu field to given value.
 
 HasMaxCpu returns a boolean if a field has been set.
 
+### SetMaxCpuNil
+
+`func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) SetMaxCpuNil(b bool)`
+
+ SetMaxCpuNil sets the value for MaxCpu to be an explicit nil
+
+### UnsetMaxCpu
+`func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) UnsetMaxCpu()`
+
+UnsetMaxCpu ensures that no value is present for MaxCpu, not even an explicit nil
 ### GetMaxCores
 
 `func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) GetMaxCores() int64`
@@ -255,6 +265,16 @@ SetServerExternalId sets ServerExternalId field to given value.
 
 HasServerExternalId returns a boolean if a field has been set.
 
+### SetServerExternalIdNil
+
+`func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) SetServerExternalIdNil(b bool)`
+
+ SetServerExternalIdNil sets the value for ServerExternalId to be an explicit nil
+
+### UnsetServerExternalId
+`func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) UnsetServerExternalId()`
+
+UnsetServerExternalId ensures that no value is present for ServerExternalId, not even an explicit nil
 ### GetServerInternalId
 
 `func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) GetServerInternalId() string`
@@ -280,6 +300,16 @@ SetServerInternalId sets ServerInternalId field to given value.
 
 HasServerInternalId returns a boolean if a field has been set.
 
+### SetServerInternalIdNil
+
+`func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) SetServerInternalIdNil(b bool)`
+
+ SetServerInternalIdNil sets the value for ServerInternalId to be an explicit nil
+
+### UnsetServerInternalId
+`func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) UnsetServerInternalId()`
+
+UnsetServerInternalId ensures that no value is present for ServerInternalId, not even an explicit nil
 ### GetPlanName
 
 `func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) GetPlanName() string`
@@ -530,6 +560,16 @@ SetSiteId sets SiteId field to given value.
 
 HasSiteId returns a boolean if a field has been set.
 
+### SetSiteIdNil
+
+`func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) SetSiteIdNil(b bool)`
+
+ SetSiteIdNil sets the value for SiteId to be an explicit nil
+
+### UnsetSiteId
+`func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) UnsetSiteId()`
+
+UnsetSiteId ensures that no value is present for SiteId, not even an explicit nil
 ### GetSiteName
 
 `func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) GetSiteName() string`
@@ -555,6 +595,16 @@ SetSiteName sets SiteName field to given value.
 
 HasSiteName returns a boolean if a field has been set.
 
+### SetSiteNameNil
+
+`func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) SetSiteNameNil(b bool)`
+
+ SetSiteNameNil sets the value for SiteName to be an explicit nil
+
+### UnsetSiteName
+`func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) UnsetSiteName()`
+
+UnsetSiteName ensures that no value is present for SiteName, not even an explicit nil
 ### GetSiteUUID
 
 `func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) GetSiteUUID() string`
@@ -580,6 +630,16 @@ SetSiteUUID sets SiteUUID field to given value.
 
 HasSiteUUID returns a boolean if a field has been set.
 
+### SetSiteUUIDNil
+
+`func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) SetSiteUUIDNil(b bool)`
+
+ SetSiteUUIDNil sets the value for SiteUUID to be an explicit nil
+
+### UnsetSiteUUID
+`func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) UnsetSiteUUID()`
+
+UnsetSiteUUID ensures that no value is present for SiteUUID, not even an explicit nil
 ### GetSiteCode
 
 `func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) GetSiteCode() string`
@@ -605,6 +665,16 @@ SetSiteCode sets SiteCode field to given value.
 
 HasSiteCode returns a boolean if a field has been set.
 
+### SetSiteCodeNil
+
+`func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) SetSiteCodeNil(b bool)`
+
+ SetSiteCodeNil sets the value for SiteCode to be an explicit nil
+
+### UnsetSiteCode
+`func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) UnsetSiteCode()`
+
+UnsetSiteCode ensures that no value is present for SiteCode, not even an explicit nil
 ### GetStartDate
 
 `func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) GetStartDate() time.Time`
@@ -805,6 +875,16 @@ SetResourcePoolId sets ResourcePoolId field to given value.
 
 HasResourcePoolId returns a boolean if a field has been set.
 
+### SetResourcePoolIdNil
+
+`func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) SetResourcePoolIdNil(b bool)`
+
+ SetResourcePoolIdNil sets the value for ResourcePoolId to be an explicit nil
+
+### UnsetResourcePoolId
+`func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) UnsetResourcePoolId()`
+
+UnsetResourcePoolId ensures that no value is present for ResourcePoolId, not even an explicit nil
 ### GetResourcePoolName
 
 `func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) GetResourcePoolName() string`
@@ -830,6 +910,16 @@ SetResourcePoolName sets ResourcePoolName field to given value.
 
 HasResourcePoolName returns a boolean if a field has been set.
 
+### SetResourcePoolNameNil
+
+`func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) SetResourcePoolNameNil(b bool)`
+
+ SetResourcePoolNameNil sets the value for ResourcePoolName to be an explicit nil
+
+### UnsetResourcePoolName
+`func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) UnsetResourcePoolName()`
+
+UnsetResourcePoolName ensures that no value is present for ResourcePoolName, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

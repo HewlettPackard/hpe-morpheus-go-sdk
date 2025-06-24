@@ -16,14 +16,14 @@ Name | Type | Description | Notes
 **ActionPlanId** | Pointer to **int64** |  | [optional] 
 **StatusMessage** | Pointer to **string** |  | [optional] 
 **AccountId** | Pointer to **int64** |  | [optional] 
-**UserId** | Pointer to **string** |  | [optional] 
-**SiteId** | Pointer to **int64** |  | [optional] 
+**UserId** | Pointer to **NullableString** |  | [optional] 
+**SiteId** | Pointer to **NullableInt64** |  | [optional] 
 **Zone** | Pointer to [**ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone**](ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone.md) |  | [optional] 
 **State** | Pointer to **string** |  | [optional] 
-**StateMessage** | Pointer to **string** |  | [optional] 
+**StateMessage** | Pointer to **NullableString** |  | [optional] 
 **Severity** | Pointer to **string** |  | [optional] 
 **Resolved** | Pointer to **bool** |  | [optional] 
-**ResolvedMessage** | Pointer to **string** |  | [optional] 
+**ResolvedMessage** | Pointer to **NullableString** |  | [optional] 
 **RefType** | Pointer to **string** |  | [optional] 
 **RefId** | Pointer to **int64** |  | [optional] 
 **RefName** | Pointer to **string** |  | [optional] 
@@ -378,6 +378,16 @@ SetUserId sets UserId field to given value.
 
 HasUserId returns a boolean if a field has been set.
 
+### SetUserIdNil
+
+`func (o *GuidanceVmwareSizing) SetUserIdNil(b bool)`
+
+ SetUserIdNil sets the value for UserId to be an explicit nil
+
+### UnsetUserId
+`func (o *GuidanceVmwareSizing) UnsetUserId()`
+
+UnsetUserId ensures that no value is present for UserId, not even an explicit nil
 ### GetSiteId
 
 `func (o *GuidanceVmwareSizing) GetSiteId() int64`
@@ -403,6 +413,16 @@ SetSiteId sets SiteId field to given value.
 
 HasSiteId returns a boolean if a field has been set.
 
+### SetSiteIdNil
+
+`func (o *GuidanceVmwareSizing) SetSiteIdNil(b bool)`
+
+ SetSiteIdNil sets the value for SiteId to be an explicit nil
+
+### UnsetSiteId
+`func (o *GuidanceVmwareSizing) UnsetSiteId()`
+
+UnsetSiteId ensures that no value is present for SiteId, not even an explicit nil
 ### GetZone
 
 `func (o *GuidanceVmwareSizing) GetZone() ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone`
@@ -478,6 +498,16 @@ SetStateMessage sets StateMessage field to given value.
 
 HasStateMessage returns a boolean if a field has been set.
 
+### SetStateMessageNil
+
+`func (o *GuidanceVmwareSizing) SetStateMessageNil(b bool)`
+
+ SetStateMessageNil sets the value for StateMessage to be an explicit nil
+
+### UnsetStateMessage
+`func (o *GuidanceVmwareSizing) UnsetStateMessage()`
+
+UnsetStateMessage ensures that no value is present for StateMessage, not even an explicit nil
 ### GetSeverity
 
 `func (o *GuidanceVmwareSizing) GetSeverity() string`
@@ -553,6 +583,16 @@ SetResolvedMessage sets ResolvedMessage field to given value.
 
 HasResolvedMessage returns a boolean if a field has been set.
 
+### SetResolvedMessageNil
+
+`func (o *GuidanceVmwareSizing) SetResolvedMessageNil(b bool)`
+
+ SetResolvedMessageNil sets the value for ResolvedMessage to be an explicit nil
+
+### UnsetResolvedMessage
+`func (o *GuidanceVmwareSizing) UnsetResolvedMessage()`
+
+UnsetResolvedMessage ensures that no value is present for ResolvedMessage, not even an explicit nil
 ### GetRefType
 
 `func (o *GuidanceVmwareSizing) GetRefType() string`

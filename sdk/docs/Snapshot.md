@@ -6,15 +6,15 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int32** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
-**ExternalId** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **NullableString** |  | [optional] 
+**ExternalId** | Pointer to **NullableString** |  | [optional] 
 **Status** | Pointer to **string** |  | [optional] 
-**State** | Pointer to **string** |  | [optional] 
+**State** | Pointer to **NullableString** |  | [optional] 
 **SnapshotType** | Pointer to **string** |  | [optional] 
-**SnapshotCreated** | Pointer to **time.Time** |  | [optional] 
-**Zone** | Pointer to [**SnapshotsInstance200ResponseSnapshotsInnerZone**](SnapshotsInstance200ResponseSnapshotsInnerZone.md) |  | [optional] 
-**Datastore** | Pointer to **string** |  | [optional] 
-**ParentSnapshot** | Pointer to **string** |  | [optional] 
+**SnapshotCreated** | Pointer to **NullableTime** |  | [optional] 
+**Zone** | Pointer to [**GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount**](GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount.md) |  | [optional] 
+**Datastore** | Pointer to **NullableString** |  | [optional] 
+**ParentSnapshot** | Pointer to **NullableString** |  | [optional] 
 **SnapshotFiles** | Pointer to [**[]SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInner**](SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInner.md) |  | [optional] 
 **CurrentlyActive** | Pointer to **bool** |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
@@ -113,6 +113,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *Snapshot) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *Snapshot) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetExternalId
 
 `func (o *Snapshot) GetExternalId() string`
@@ -138,6 +148,16 @@ SetExternalId sets ExternalId field to given value.
 
 HasExternalId returns a boolean if a field has been set.
 
+### SetExternalIdNil
+
+`func (o *Snapshot) SetExternalIdNil(b bool)`
+
+ SetExternalIdNil sets the value for ExternalId to be an explicit nil
+
+### UnsetExternalId
+`func (o *Snapshot) UnsetExternalId()`
+
+UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
 ### GetStatus
 
 `func (o *Snapshot) GetStatus() string`
@@ -188,6 +208,16 @@ SetState sets State field to given value.
 
 HasState returns a boolean if a field has been set.
 
+### SetStateNil
+
+`func (o *Snapshot) SetStateNil(b bool)`
+
+ SetStateNil sets the value for State to be an explicit nil
+
+### UnsetState
+`func (o *Snapshot) UnsetState()`
+
+UnsetState ensures that no value is present for State, not even an explicit nil
 ### GetSnapshotType
 
 `func (o *Snapshot) GetSnapshotType() string`
@@ -238,22 +268,32 @@ SetSnapshotCreated sets SnapshotCreated field to given value.
 
 HasSnapshotCreated returns a boolean if a field has been set.
 
+### SetSnapshotCreatedNil
+
+`func (o *Snapshot) SetSnapshotCreatedNil(b bool)`
+
+ SetSnapshotCreatedNil sets the value for SnapshotCreated to be an explicit nil
+
+### UnsetSnapshotCreated
+`func (o *Snapshot) UnsetSnapshotCreated()`
+
+UnsetSnapshotCreated ensures that no value is present for SnapshotCreated, not even an explicit nil
 ### GetZone
 
-`func (o *Snapshot) GetZone() SnapshotsInstance200ResponseSnapshotsInnerZone`
+`func (o *Snapshot) GetZone() GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount`
 
 GetZone returns the Zone field if non-nil, zero value otherwise.
 
 ### GetZoneOk
 
-`func (o *Snapshot) GetZoneOk() (*SnapshotsInstance200ResponseSnapshotsInnerZone, bool)`
+`func (o *Snapshot) GetZoneOk() (*GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount, bool)`
 
 GetZoneOk returns a tuple with the Zone field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetZone
 
-`func (o *Snapshot) SetZone(v SnapshotsInstance200ResponseSnapshotsInnerZone)`
+`func (o *Snapshot) SetZone(v GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount)`
 
 SetZone sets Zone field to given value.
 
@@ -288,6 +328,16 @@ SetDatastore sets Datastore field to given value.
 
 HasDatastore returns a boolean if a field has been set.
 
+### SetDatastoreNil
+
+`func (o *Snapshot) SetDatastoreNil(b bool)`
+
+ SetDatastoreNil sets the value for Datastore to be an explicit nil
+
+### UnsetDatastore
+`func (o *Snapshot) UnsetDatastore()`
+
+UnsetDatastore ensures that no value is present for Datastore, not even an explicit nil
 ### GetParentSnapshot
 
 `func (o *Snapshot) GetParentSnapshot() string`
@@ -313,6 +363,16 @@ SetParentSnapshot sets ParentSnapshot field to given value.
 
 HasParentSnapshot returns a boolean if a field has been set.
 
+### SetParentSnapshotNil
+
+`func (o *Snapshot) SetParentSnapshotNil(b bool)`
+
+ SetParentSnapshotNil sets the value for ParentSnapshot to be an explicit nil
+
+### UnsetParentSnapshot
+`func (o *Snapshot) UnsetParentSnapshot()`
+
+UnsetParentSnapshot ensures that no value is present for ParentSnapshot, not even an explicit nil
 ### GetSnapshotFiles
 
 `func (o *Snapshot) GetSnapshotFiles() []SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInner`

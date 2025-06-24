@@ -24,7 +24,7 @@ type Contact struct {
 	EmailAddress         *string                `json:"emailAddress,omitempty"`
 	Name                 *string                `json:"name,omitempty"`
 	SmsAddress           *string                `json:"smsAddress,omitempty"`
-	SlackHook            *string                `json:"slackHook,omitempty"`
+	SlackHook            NullableString         `json:"slackHook,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -175,36 +175,47 @@ func (o *Contact) SetSmsAddress(v string) {
 	o.SmsAddress = &v
 }
 
-// GetSlackHook returns the SlackHook field value if set, zero value otherwise.
+// GetSlackHook returns the SlackHook field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Contact) GetSlackHook() string {
-	if o == nil || IsNil(o.SlackHook) {
+	if o == nil || IsNil(o.SlackHook.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.SlackHook
+	return *o.SlackHook.Get()
 }
 
 // GetSlackHookOk returns a tuple with the SlackHook field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Contact) GetSlackHookOk() (*string, bool) {
-	if o == nil || IsNil(o.SlackHook) {
+	if o == nil {
 		return nil, false
 	}
-	return o.SlackHook, true
+	return o.SlackHook.Get(), o.SlackHook.IsSet()
 }
 
 // IsSetSlackHook returns a boolean if a field has been set.
 func (o *Contact) IsSetSlackHook() bool {
-	if o != nil && !IsNil(o.SlackHook) {
+	if o != nil && o.SlackHook.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetSlackHook gets a reference to the given string and assigns it to the SlackHook field.
+// SetSlackHook gets a reference to the given NullableString and assigns it to the SlackHook field.
 func (o *Contact) SetSlackHook(v string) {
-	o.SlackHook = &v
+	o.SlackHook.Set(&v)
+}
+
+// SetSlackHookNil sets the value for SlackHook to be an explicit nil
+func (o *Contact) SetSlackHookNil() {
+	o.SlackHook.Set(nil)
+}
+
+// UnsetSlackHook ensures that no value is present for SlackHook, not even an explicit nil
+func (o *Contact) UnsetSlackHook() {
+	o.SlackHook.Unset()
 }
 
 func (o Contact) MarshalJSON() ([]byte, error) {
@@ -229,8 +240,8 @@ func (o Contact) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.SmsAddress) {
 		toSerialize["smsAddress"] = o.SmsAddress
 	}
-	if !IsNil(o.SlackHook) {
-		toSerialize["slackHook"] = o.SlackHook
+	if o.SlackHook.IsSet() {
+		toSerialize["slackHook"] = o.SlackHook.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {

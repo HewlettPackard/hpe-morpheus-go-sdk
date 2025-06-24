@@ -12,15 +12,15 @@ Name | Type | Description | Notes
 **Name** | Pointer to **string** |  | [optional] 
 **ExternalName** | Pointer to **string** |  | [optional] 
 **Hostname** | Pointer to **string** |  | [optional] 
-**ParentServer** | Pointer to [**ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
+**ParentServer** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **AccountId** | Pointer to **int64** |  | [optional] 
-**Account** | Pointer to [**ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
+**Account** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **Owner** | Pointer to [**ListActivity200ResponseAllOfActivityInnerActivityInnerUser**](ListActivity200ResponseAllOfActivityInnerActivityInnerUser.md) |  | [optional] 
-**Zone** | Pointer to [**ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
+**Zone** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **Plan** | Pointer to [**ListBackupSettings200ResponseBackupSettingsDefaultSchedule**](ListBackupSettings200ResponseBackupSettingsDefaultSchedule.md) |  | [optional] 
 **ComputeServerType** | Pointer to [**ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerComputeServerType**](ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerComputeServerType.md) |  | [optional] 
 **Visibility** | Pointer to **string** |  | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **NullableString** |  | [optional] 
 **ZoneId** | Pointer to **int64** |  | [optional] 
 **SiteId** | Pointer to **int64** |  | [optional] 
 **ResourcePoolId** | Pointer to **int64** |  | [optional] 
@@ -29,7 +29,7 @@ Name | Type | Description | Notes
 **SshPort** | Pointer to **int64** |  | [optional] 
 **ExternalIp** | Pointer to **string** |  | [optional] 
 **InternalIp** | Pointer to **string** |  | [optional] 
-**VolumeId** | Pointer to **string** |  | [optional] 
+**VolumeId** | Pointer to **NullableString** |  | [optional] 
 **Platform** | Pointer to **string** |  | [optional] 
 **PlatformVersion** | Pointer to **string** |  | [optional] 
 **SshUsername** | Pointer to **string** |  | [optional] 
@@ -45,11 +45,11 @@ Name | Type | Description | Notes
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
 **Stats** | Pointer to [**ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats**](ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats.md) |  | [optional] 
 **Status** | Pointer to **string** |  | [optional] 
-**StatusMessage** | Pointer to **string** |  | [optional] 
-**ErrorMessage** | Pointer to **string** |  | [optional] 
-**StatusDate** | Pointer to **time.Time** |  | [optional] 
-**StatusPercent** | Pointer to **string** |  | [optional] 
-**StatusEta** | Pointer to **string** |  | [optional] 
+**StatusMessage** | Pointer to **NullableString** |  | [optional] 
+**ErrorMessage** | Pointer to **NullableString** |  | [optional] 
+**StatusDate** | Pointer to **NullableTime** |  | [optional] 
+**StatusPercent** | Pointer to **NullableString** |  | [optional] 
+**StatusEta** | Pointer to **NullableString** |  | [optional] 
 **PowerState** | Pointer to **string** |  | [optional] 
 **AgentInstalled** | Pointer to **bool** |  | [optional] 
 **LastAgentUpdate** | Pointer to **time.Time** |  | [optional] 
@@ -58,7 +58,7 @@ Name | Type | Description | Notes
 **CoresPerSocket** | Pointer to **int64** |  | [optional] 
 **MaxMemory** | Pointer to **int64** |  | [optional] 
 **MaxStorage** | Pointer to **int64** |  | [optional] 
-**MaxCpu** | Pointer to **string** |  | [optional] 
+**MaxCpu** | Pointer to **NullableString** |  | [optional] 
 **HourlyPrice** | Pointer to **float32** |  | [optional] 
 **SourceImage** | Pointer to [**ListBackupSettings200ResponseBackupSettingsDefaultSchedule**](ListBackupSettings200ResponseBackupSettingsDefaultSchedule.md) |  | [optional] 
 **ServerOs** | Pointer to [**ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceServerOs**](ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceServerOs.md) |  | [optional] 
@@ -68,7 +68,7 @@ Name | Type | Description | Notes
 **Labels** | Pointer to **[]map[string]interface{}** |  | [optional] 
 **Tags** | Pointer to **[]map[string]interface{}** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
-**TagCompliant** | Pointer to **string** |  | [optional] 
+**TagCompliant** | Pointer to **NullableString** |  | [optional] 
 **Containers** | Pointer to **[]int64** |  | [optional] 
 
 ## Methods
@@ -292,20 +292,20 @@ HasHostname returns a boolean if a field has been set.
 
 ### GetParentServer
 
-`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) GetParentServer() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) GetParentServer() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetParentServer returns the ParentServer field if non-nil, zero value otherwise.
 
 ### GetParentServerOk
 
-`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) GetParentServerOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) GetParentServerOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetParentServerOk returns a tuple with the ParentServer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetParentServer
 
-`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) SetParentServer(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) SetParentServer(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetParentServer sets ParentServer field to given value.
 
@@ -342,20 +342,20 @@ HasAccountId returns a boolean if a field has been set.
 
 ### GetAccount
 
-`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) GetAccount() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) GetAccount() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetAccount returns the Account field if non-nil, zero value otherwise.
 
 ### GetAccountOk
 
-`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) GetAccountOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) GetAccountOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetAccountOk returns a tuple with the Account field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccount
 
-`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) SetAccount(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) SetAccount(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetAccount sets Account field to given value.
 
@@ -392,20 +392,20 @@ HasOwner returns a boolean if a field has been set.
 
 ### GetZone
 
-`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) GetZone() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) GetZone() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetZone returns the Zone field if non-nil, zero value otherwise.
 
 ### GetZoneOk
 
-`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) GetZoneOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) GetZoneOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetZoneOk returns a tuple with the Zone field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetZone
 
-`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) SetZone(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) SetZone(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetZone sets Zone field to given value.
 
@@ -515,6 +515,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetZoneId
 
 `func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) GetZoneId() int64`
@@ -740,6 +750,16 @@ SetVolumeId sets VolumeId field to given value.
 
 HasVolumeId returns a boolean if a field has been set.
 
+### SetVolumeIdNil
+
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) SetVolumeIdNil(b bool)`
+
+ SetVolumeIdNil sets the value for VolumeId to be an explicit nil
+
+### UnsetVolumeId
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) UnsetVolumeId()`
+
+UnsetVolumeId ensures that no value is present for VolumeId, not even an explicit nil
 ### GetPlatform
 
 `func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) GetPlatform() string`
@@ -1140,6 +1160,16 @@ SetStatusMessage sets StatusMessage field to given value.
 
 HasStatusMessage returns a boolean if a field has been set.
 
+### SetStatusMessageNil
+
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) SetStatusMessageNil(b bool)`
+
+ SetStatusMessageNil sets the value for StatusMessage to be an explicit nil
+
+### UnsetStatusMessage
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) UnsetStatusMessage()`
+
+UnsetStatusMessage ensures that no value is present for StatusMessage, not even an explicit nil
 ### GetErrorMessage
 
 `func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) GetErrorMessage() string`
@@ -1165,6 +1195,16 @@ SetErrorMessage sets ErrorMessage field to given value.
 
 HasErrorMessage returns a boolean if a field has been set.
 
+### SetErrorMessageNil
+
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) SetErrorMessageNil(b bool)`
+
+ SetErrorMessageNil sets the value for ErrorMessage to be an explicit nil
+
+### UnsetErrorMessage
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) UnsetErrorMessage()`
+
+UnsetErrorMessage ensures that no value is present for ErrorMessage, not even an explicit nil
 ### GetStatusDate
 
 `func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) GetStatusDate() time.Time`
@@ -1190,6 +1230,16 @@ SetStatusDate sets StatusDate field to given value.
 
 HasStatusDate returns a boolean if a field has been set.
 
+### SetStatusDateNil
+
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) SetStatusDateNil(b bool)`
+
+ SetStatusDateNil sets the value for StatusDate to be an explicit nil
+
+### UnsetStatusDate
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) UnsetStatusDate()`
+
+UnsetStatusDate ensures that no value is present for StatusDate, not even an explicit nil
 ### GetStatusPercent
 
 `func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) GetStatusPercent() string`
@@ -1215,6 +1265,16 @@ SetStatusPercent sets StatusPercent field to given value.
 
 HasStatusPercent returns a boolean if a field has been set.
 
+### SetStatusPercentNil
+
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) SetStatusPercentNil(b bool)`
+
+ SetStatusPercentNil sets the value for StatusPercent to be an explicit nil
+
+### UnsetStatusPercent
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) UnsetStatusPercent()`
+
+UnsetStatusPercent ensures that no value is present for StatusPercent, not even an explicit nil
 ### GetStatusEta
 
 `func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) GetStatusEta() string`
@@ -1240,6 +1300,16 @@ SetStatusEta sets StatusEta field to given value.
 
 HasStatusEta returns a boolean if a field has been set.
 
+### SetStatusEtaNil
+
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) SetStatusEtaNil(b bool)`
+
+ SetStatusEtaNil sets the value for StatusEta to be an explicit nil
+
+### UnsetStatusEta
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) UnsetStatusEta()`
+
+UnsetStatusEta ensures that no value is present for StatusEta, not even an explicit nil
 ### GetPowerState
 
 `func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) GetPowerState() string`
@@ -1465,6 +1535,16 @@ SetMaxCpu sets MaxCpu field to given value.
 
 HasMaxCpu returns a boolean if a field has been set.
 
+### SetMaxCpuNil
+
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) SetMaxCpuNil(b bool)`
+
+ SetMaxCpuNil sets the value for MaxCpu to be an explicit nil
+
+### UnsetMaxCpu
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) UnsetMaxCpu()`
+
+UnsetMaxCpu ensures that no value is present for MaxCpu, not even an explicit nil
 ### GetHourlyPrice
 
 `func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) GetHourlyPrice() float32`
@@ -1715,6 +1795,16 @@ SetTagCompliant sets TagCompliant field to given value.
 
 HasTagCompliant returns a boolean if a field has been set.
 
+### SetTagCompliantNil
+
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) SetTagCompliantNil(b bool)`
+
+ SetTagCompliantNil sets the value for TagCompliant to be an explicit nil
+
+### UnsetTagCompliant
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) UnsetTagCompliant()`
+
+UnsetTagCompliant ensures that no value is present for TagCompliant, not even an explicit nil
 ### GetContainers
 
 `func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) GetContainers() []int64`

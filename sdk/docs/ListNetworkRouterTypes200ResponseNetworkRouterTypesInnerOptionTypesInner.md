@@ -6,21 +6,21 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **NullableString** |  | [optional] 
 **Code** | Pointer to **string** |  | [optional] 
 **FieldName** | Pointer to **string** |  | [optional] 
 **FieldLabel** | Pointer to **string** |  | [optional] 
 **FieldContext** | Pointer to **string** |  | [optional] 
-**FieldGroup** | Pointer to **string** |  | [optional] 
-**FieldClass** | Pointer to **string** |  | [optional] 
-**FieldAddOn** | Pointer to **string** |  | [optional] 
-**FieldComponent** | Pointer to **string** |  | [optional] 
+**FieldGroup** | Pointer to **NullableString** |  | [optional] 
+**FieldClass** | Pointer to **NullableString** |  | [optional] 
+**FieldAddOn** | Pointer to **NullableString** |  | [optional] 
+**FieldComponent** | Pointer to **NullableString** |  | [optional] 
 **FieldInput** | Pointer to **string** |  | [optional] 
-**PlaceHolder** | Pointer to **string** |  | [optional] 
+**PlaceHolder** | Pointer to **NullableString** |  | [optional] 
 **HelpBlock** | Pointer to **string** |  | [optional] 
-**DefaultValue** | Pointer to **string** |  | [optional] 
+**DefaultValue** | Pointer to **NullableString** |  | [optional] 
 **OptionSource** | Pointer to **string** |  | [optional] 
-**OptionList** | Pointer to **string** |  | [optional] 
+**OptionList** | Pointer to **NullableString** |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 **Advanced** | Pointer to **bool** |  | [optional] 
 **Required** | Pointer to **bool** |  | [optional] 
@@ -28,7 +28,7 @@ Name | Type | Description | Notes
 **Creatable** | Pointer to **bool** |  | [optional] 
 **Config** | Pointer to **map[string]interface{}** |  | [optional] 
 **DisplayOrder** | Pointer to **int64** |  | [optional] 
-**WrapperClass** | Pointer to **string** |  | [optional] 
+**WrapperClass** | Pointer to **NullableString** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
 **NoBlank** | Pointer to **bool** |  | [optional] 
 **DependsOnCode** | Pointer to **string** |  | [optional] 
@@ -128,6 +128,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetCode
 
 `func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) GetCode() string`
@@ -253,6 +263,16 @@ SetFieldGroup sets FieldGroup field to given value.
 
 HasFieldGroup returns a boolean if a field has been set.
 
+### SetFieldGroupNil
+
+`func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) SetFieldGroupNil(b bool)`
+
+ SetFieldGroupNil sets the value for FieldGroup to be an explicit nil
+
+### UnsetFieldGroup
+`func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) UnsetFieldGroup()`
+
+UnsetFieldGroup ensures that no value is present for FieldGroup, not even an explicit nil
 ### GetFieldClass
 
 `func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) GetFieldClass() string`
@@ -278,6 +298,16 @@ SetFieldClass sets FieldClass field to given value.
 
 HasFieldClass returns a boolean if a field has been set.
 
+### SetFieldClassNil
+
+`func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) SetFieldClassNil(b bool)`
+
+ SetFieldClassNil sets the value for FieldClass to be an explicit nil
+
+### UnsetFieldClass
+`func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) UnsetFieldClass()`
+
+UnsetFieldClass ensures that no value is present for FieldClass, not even an explicit nil
 ### GetFieldAddOn
 
 `func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) GetFieldAddOn() string`
@@ -303,6 +333,16 @@ SetFieldAddOn sets FieldAddOn field to given value.
 
 HasFieldAddOn returns a boolean if a field has been set.
 
+### SetFieldAddOnNil
+
+`func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) SetFieldAddOnNil(b bool)`
+
+ SetFieldAddOnNil sets the value for FieldAddOn to be an explicit nil
+
+### UnsetFieldAddOn
+`func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) UnsetFieldAddOn()`
+
+UnsetFieldAddOn ensures that no value is present for FieldAddOn, not even an explicit nil
 ### GetFieldComponent
 
 `func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) GetFieldComponent() string`
@@ -328,6 +368,16 @@ SetFieldComponent sets FieldComponent field to given value.
 
 HasFieldComponent returns a boolean if a field has been set.
 
+### SetFieldComponentNil
+
+`func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) SetFieldComponentNil(b bool)`
+
+ SetFieldComponentNil sets the value for FieldComponent to be an explicit nil
+
+### UnsetFieldComponent
+`func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) UnsetFieldComponent()`
+
+UnsetFieldComponent ensures that no value is present for FieldComponent, not even an explicit nil
 ### GetFieldInput
 
 `func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) GetFieldInput() string`
@@ -378,6 +428,16 @@ SetPlaceHolder sets PlaceHolder field to given value.
 
 HasPlaceHolder returns a boolean if a field has been set.
 
+### SetPlaceHolderNil
+
+`func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) SetPlaceHolderNil(b bool)`
+
+ SetPlaceHolderNil sets the value for PlaceHolder to be an explicit nil
+
+### UnsetPlaceHolder
+`func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) UnsetPlaceHolder()`
+
+UnsetPlaceHolder ensures that no value is present for PlaceHolder, not even an explicit nil
 ### GetHelpBlock
 
 `func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) GetHelpBlock() string`
@@ -428,6 +488,16 @@ SetDefaultValue sets DefaultValue field to given value.
 
 HasDefaultValue returns a boolean if a field has been set.
 
+### SetDefaultValueNil
+
+`func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) SetDefaultValueNil(b bool)`
+
+ SetDefaultValueNil sets the value for DefaultValue to be an explicit nil
+
+### UnsetDefaultValue
+`func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) UnsetDefaultValue()`
+
+UnsetDefaultValue ensures that no value is present for DefaultValue, not even an explicit nil
 ### GetOptionSource
 
 `func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) GetOptionSource() string`
@@ -478,6 +548,16 @@ SetOptionList sets OptionList field to given value.
 
 HasOptionList returns a boolean if a field has been set.
 
+### SetOptionListNil
+
+`func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) SetOptionListNil(b bool)`
+
+ SetOptionListNil sets the value for OptionList to be an explicit nil
+
+### UnsetOptionList
+`func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) UnsetOptionList()`
+
+UnsetOptionList ensures that no value is present for OptionList, not even an explicit nil
 ### GetType
 
 `func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) GetType() string`
@@ -678,6 +758,16 @@ SetWrapperClass sets WrapperClass field to given value.
 
 HasWrapperClass returns a boolean if a field has been set.
 
+### SetWrapperClassNil
+
+`func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) SetWrapperClassNil(b bool)`
+
+ SetWrapperClassNil sets the value for WrapperClass to be an explicit nil
+
+### UnsetWrapperClass
+`func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) UnsetWrapperClass()`
+
+UnsetWrapperClass ensures that no value is present for WrapperClass, not even an explicit nil
 ### GetEnabled
 
 `func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) GetEnabled() bool`

@@ -7,40 +7,40 @@ Name | Type | Description | Notes
 **Id** | Pointer to **int64** |  | [optional] 
 **LoadBalancer** | Pointer to [**ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerLoadBalancer**](ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerLoadBalancer.md) |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**Code** | Pointer to **string** |  | [optional] 
-**Category** | Pointer to **string** |  | [optional] 
+**Code** | Pointer to **NullableString** |  | [optional] 
+**Category** | Pointer to **NullableString** |  | [optional] 
 **Visibility** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **MonitorType** | Pointer to **string** |  | [optional] 
 **MonitorInterval** | Pointer to **int64** |  | [optional] 
 **MonitorTimeout** | Pointer to **int64** |  | [optional] 
-**SendData** | Pointer to **string** |  | [optional] 
+**SendData** | Pointer to **NullableString** |  | [optional] 
 **SendVersion** | Pointer to **string** |  | [optional] 
 **SendType** | Pointer to **string** |  | [optional] 
-**ReceiveData** | Pointer to **string** |  | [optional] 
+**ReceiveData** | Pointer to **NullableString** |  | [optional] 
 **ReceiveCode** | Pointer to **string** |  | [optional] 
-**DisabledData** | Pointer to **string** |  | [optional] 
-**MonitorUsername** | Pointer to **string** |  | [optional] 
-**MonitorPassword** | Pointer to **string** |  | [optional] 
+**DisabledData** | Pointer to **NullableString** |  | [optional] 
+**MonitorUsername** | Pointer to **NullableString** |  | [optional] 
+**MonitorPassword** | Pointer to **NullableString** |  | [optional] 
 **MonitorDestination** | Pointer to **string** |  | [optional] 
 **MonitorReverse** | Pointer to **bool** |  | [optional] 
 **MonitorTransparent** | Pointer to **bool** |  | [optional] 
 **MonitorAdaptive** | Pointer to **bool** |  | [optional] 
-**AliasAddress** | Pointer to **string** |  | [optional] 
+**AliasAddress** | Pointer to **NullableString** |  | [optional] 
 **AliasPort** | Pointer to **int64** |  | [optional] 
 **InternalId** | Pointer to **string** |  | [optional] 
 **ExternalId** | Pointer to **string** |  | [optional] 
 **MonitorSource** | Pointer to **string** |  | [optional] 
 **Status** | Pointer to **string** |  | [optional] 
-**StatusMessage** | Pointer to **string** |  | [optional] 
-**StatusDate** | Pointer to **time.Time** |  | [optional] 
+**StatusMessage** | Pointer to **NullableString** |  | [optional] 
+**StatusDate** | Pointer to **NullableTime** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
 **MaxRetry** | Pointer to **int64** |  | [optional] 
 **FallCount** | Pointer to **int64** |  | [optional] 
 **RiseCount** | Pointer to **int64** |  | [optional] 
-**DataLength** | Pointer to **string** |  | [optional] 
+**DataLength** | Pointer to **NullableString** |  | [optional] 
 **Config** | Pointer to **map[string]interface{}** |  | [optional] 
-**CreatedBy** | Pointer to **string** |  | [optional] 
+**CreatedBy** | Pointer to **NullableString** |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
 
@@ -163,6 +163,16 @@ SetCode sets Code field to given value.
 
 HasCode returns a boolean if a field has been set.
 
+### SetCodeNil
+
+`func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) SetCodeNil(b bool)`
+
+ SetCodeNil sets the value for Code to be an explicit nil
+
+### UnsetCode
+`func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) UnsetCode()`
+
+UnsetCode ensures that no value is present for Code, not even an explicit nil
 ### GetCategory
 
 `func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) GetCategory() string`
@@ -188,6 +198,16 @@ SetCategory sets Category field to given value.
 
 HasCategory returns a boolean if a field has been set.
 
+### SetCategoryNil
+
+`func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) SetCategoryNil(b bool)`
+
+ SetCategoryNil sets the value for Category to be an explicit nil
+
+### UnsetCategory
+`func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) UnsetCategory()`
+
+UnsetCategory ensures that no value is present for Category, not even an explicit nil
 ### GetVisibility
 
 `func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) GetVisibility() string`
@@ -338,6 +358,16 @@ SetSendData sets SendData field to given value.
 
 HasSendData returns a boolean if a field has been set.
 
+### SetSendDataNil
+
+`func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) SetSendDataNil(b bool)`
+
+ SetSendDataNil sets the value for SendData to be an explicit nil
+
+### UnsetSendData
+`func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) UnsetSendData()`
+
+UnsetSendData ensures that no value is present for SendData, not even an explicit nil
 ### GetSendVersion
 
 `func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) GetSendVersion() string`
@@ -413,6 +443,16 @@ SetReceiveData sets ReceiveData field to given value.
 
 HasReceiveData returns a boolean if a field has been set.
 
+### SetReceiveDataNil
+
+`func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) SetReceiveDataNil(b bool)`
+
+ SetReceiveDataNil sets the value for ReceiveData to be an explicit nil
+
+### UnsetReceiveData
+`func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) UnsetReceiveData()`
+
+UnsetReceiveData ensures that no value is present for ReceiveData, not even an explicit nil
 ### GetReceiveCode
 
 `func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) GetReceiveCode() string`
@@ -463,6 +503,16 @@ SetDisabledData sets DisabledData field to given value.
 
 HasDisabledData returns a boolean if a field has been set.
 
+### SetDisabledDataNil
+
+`func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) SetDisabledDataNil(b bool)`
+
+ SetDisabledDataNil sets the value for DisabledData to be an explicit nil
+
+### UnsetDisabledData
+`func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) UnsetDisabledData()`
+
+UnsetDisabledData ensures that no value is present for DisabledData, not even an explicit nil
 ### GetMonitorUsername
 
 `func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) GetMonitorUsername() string`
@@ -488,6 +538,16 @@ SetMonitorUsername sets MonitorUsername field to given value.
 
 HasMonitorUsername returns a boolean if a field has been set.
 
+### SetMonitorUsernameNil
+
+`func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) SetMonitorUsernameNil(b bool)`
+
+ SetMonitorUsernameNil sets the value for MonitorUsername to be an explicit nil
+
+### UnsetMonitorUsername
+`func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) UnsetMonitorUsername()`
+
+UnsetMonitorUsername ensures that no value is present for MonitorUsername, not even an explicit nil
 ### GetMonitorPassword
 
 `func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) GetMonitorPassword() string`
@@ -513,6 +573,16 @@ SetMonitorPassword sets MonitorPassword field to given value.
 
 HasMonitorPassword returns a boolean if a field has been set.
 
+### SetMonitorPasswordNil
+
+`func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) SetMonitorPasswordNil(b bool)`
+
+ SetMonitorPasswordNil sets the value for MonitorPassword to be an explicit nil
+
+### UnsetMonitorPassword
+`func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) UnsetMonitorPassword()`
+
+UnsetMonitorPassword ensures that no value is present for MonitorPassword, not even an explicit nil
 ### GetMonitorDestination
 
 `func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) GetMonitorDestination() string`
@@ -638,6 +708,16 @@ SetAliasAddress sets AliasAddress field to given value.
 
 HasAliasAddress returns a boolean if a field has been set.
 
+### SetAliasAddressNil
+
+`func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) SetAliasAddressNil(b bool)`
+
+ SetAliasAddressNil sets the value for AliasAddress to be an explicit nil
+
+### UnsetAliasAddress
+`func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) UnsetAliasAddress()`
+
+UnsetAliasAddress ensures that no value is present for AliasAddress, not even an explicit nil
 ### GetAliasPort
 
 `func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) GetAliasPort() int64`
@@ -788,6 +868,16 @@ SetStatusMessage sets StatusMessage field to given value.
 
 HasStatusMessage returns a boolean if a field has been set.
 
+### SetStatusMessageNil
+
+`func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) SetStatusMessageNil(b bool)`
+
+ SetStatusMessageNil sets the value for StatusMessage to be an explicit nil
+
+### UnsetStatusMessage
+`func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) UnsetStatusMessage()`
+
+UnsetStatusMessage ensures that no value is present for StatusMessage, not even an explicit nil
 ### GetStatusDate
 
 `func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) GetStatusDate() time.Time`
@@ -813,6 +903,16 @@ SetStatusDate sets StatusDate field to given value.
 
 HasStatusDate returns a boolean if a field has been set.
 
+### SetStatusDateNil
+
+`func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) SetStatusDateNil(b bool)`
+
+ SetStatusDateNil sets the value for StatusDate to be an explicit nil
+
+### UnsetStatusDate
+`func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) UnsetStatusDate()`
+
+UnsetStatusDate ensures that no value is present for StatusDate, not even an explicit nil
 ### GetEnabled
 
 `func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) GetEnabled() bool`
@@ -938,6 +1038,16 @@ SetDataLength sets DataLength field to given value.
 
 HasDataLength returns a boolean if a field has been set.
 
+### SetDataLengthNil
+
+`func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) SetDataLengthNil(b bool)`
+
+ SetDataLengthNil sets the value for DataLength to be an explicit nil
+
+### UnsetDataLength
+`func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) UnsetDataLength()`
+
+UnsetDataLength ensures that no value is present for DataLength, not even an explicit nil
 ### GetConfig
 
 `func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) GetConfig() map[string]interface{}`
@@ -988,6 +1098,16 @@ SetCreatedBy sets CreatedBy field to given value.
 
 HasCreatedBy returns a boolean if a field has been set.
 
+### SetCreatedByNil
+
+`func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) SetCreatedByNil(b bool)`
+
+ SetCreatedByNil sets the value for CreatedBy to be an explicit nil
+
+### UnsetCreatedBy
+`func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) UnsetCreatedBy()`
+
+UnsetCreatedBy ensures that no value is present for CreatedBy, not even an explicit nil
 ### GetDateCreated
 
 `func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) GetDateCreated() time.Time`

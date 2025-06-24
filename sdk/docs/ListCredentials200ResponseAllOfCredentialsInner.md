@@ -7,23 +7,23 @@ Name | Type | Description | Notes
 **Id** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Type** | Pointer to [**ListBackupSettings200ResponseBackupSettingsDefaultSchedule**](ListBackupSettings200ResponseBackupSettingsDefaultSchedule.md) |  | [optional] 
-**Integration** | Pointer to **string** |  | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
-**Username** | Pointer to **string** |  | [optional] 
-**Password** | Pointer to **string** |  | [optional] 
-**PasswordHash** | Pointer to **string** |  | [optional] 
+**Integration** | Pointer to **NullableString** |  | [optional] 
+**Description** | Pointer to **NullableString** |  | [optional] 
+**Username** | Pointer to **NullableString** |  | [optional] 
+**Password** | Pointer to **NullableString** |  | [optional] 
+**PasswordHash** | Pointer to **NullableString** |  | [optional] 
 **AuthKey** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
-**AuthPath** | Pointer to **string** |  | [optional] 
-**ExternalId** | Pointer to **string** |  | [optional] 
-**RefType** | Pointer to **string** |  | [optional] 
-**RefId** | Pointer to **string** |  | [optional] 
-**Category** | Pointer to **string** |  | [optional] 
+**AuthPath** | Pointer to **NullableString** |  | [optional] 
+**ExternalId** | Pointer to **NullableString** |  | [optional] 
+**RefType** | Pointer to **NullableString** |  | [optional] 
+**RefId** | Pointer to **NullableString** |  | [optional] 
+**Category** | Pointer to **NullableString** |  | [optional] 
 **Scope** | Pointer to **string** |  | [optional] 
 **Status** | Pointer to **string** |  | [optional] 
-**StatusMessage** | Pointer to **string** |  | [optional] 
-**StatusDate** | Pointer to **time.Time** |  | [optional] 
+**StatusMessage** | Pointer to **NullableString** |  | [optional] 
+**StatusDate** | Pointer to **NullableTime** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
-**Account** | Pointer to [**ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
+**Account** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **User** | Pointer to [**ListCredentials200ResponseAllOfCredentialsInnerUser**](ListCredentials200ResponseAllOfCredentialsInnerUser.md) |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
@@ -148,6 +148,16 @@ SetIntegration sets Integration field to given value.
 
 HasIntegration returns a boolean if a field has been set.
 
+### SetIntegrationNil
+
+`func (o *ListCredentials200ResponseAllOfCredentialsInner) SetIntegrationNil(b bool)`
+
+ SetIntegrationNil sets the value for Integration to be an explicit nil
+
+### UnsetIntegration
+`func (o *ListCredentials200ResponseAllOfCredentialsInner) UnsetIntegration()`
+
+UnsetIntegration ensures that no value is present for Integration, not even an explicit nil
 ### GetDescription
 
 `func (o *ListCredentials200ResponseAllOfCredentialsInner) GetDescription() string`
@@ -173,6 +183,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *ListCredentials200ResponseAllOfCredentialsInner) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *ListCredentials200ResponseAllOfCredentialsInner) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetUsername
 
 `func (o *ListCredentials200ResponseAllOfCredentialsInner) GetUsername() string`
@@ -198,6 +218,16 @@ SetUsername sets Username field to given value.
 
 HasUsername returns a boolean if a field has been set.
 
+### SetUsernameNil
+
+`func (o *ListCredentials200ResponseAllOfCredentialsInner) SetUsernameNil(b bool)`
+
+ SetUsernameNil sets the value for Username to be an explicit nil
+
+### UnsetUsername
+`func (o *ListCredentials200ResponseAllOfCredentialsInner) UnsetUsername()`
+
+UnsetUsername ensures that no value is present for Username, not even an explicit nil
 ### GetPassword
 
 `func (o *ListCredentials200ResponseAllOfCredentialsInner) GetPassword() string`
@@ -223,6 +253,16 @@ SetPassword sets Password field to given value.
 
 HasPassword returns a boolean if a field has been set.
 
+### SetPasswordNil
+
+`func (o *ListCredentials200ResponseAllOfCredentialsInner) SetPasswordNil(b bool)`
+
+ SetPasswordNil sets the value for Password to be an explicit nil
+
+### UnsetPassword
+`func (o *ListCredentials200ResponseAllOfCredentialsInner) UnsetPassword()`
+
+UnsetPassword ensures that no value is present for Password, not even an explicit nil
 ### GetPasswordHash
 
 `func (o *ListCredentials200ResponseAllOfCredentialsInner) GetPasswordHash() string`
@@ -248,6 +288,16 @@ SetPasswordHash sets PasswordHash field to given value.
 
 HasPasswordHash returns a boolean if a field has been set.
 
+### SetPasswordHashNil
+
+`func (o *ListCredentials200ResponseAllOfCredentialsInner) SetPasswordHashNil(b bool)`
+
+ SetPasswordHashNil sets the value for PasswordHash to be an explicit nil
+
+### UnsetPasswordHash
+`func (o *ListCredentials200ResponseAllOfCredentialsInner) UnsetPasswordHash()`
+
+UnsetPasswordHash ensures that no value is present for PasswordHash, not even an explicit nil
 ### GetAuthKey
 
 `func (o *ListCredentials200ResponseAllOfCredentialsInner) GetAuthKey() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
@@ -298,6 +348,16 @@ SetAuthPath sets AuthPath field to given value.
 
 HasAuthPath returns a boolean if a field has been set.
 
+### SetAuthPathNil
+
+`func (o *ListCredentials200ResponseAllOfCredentialsInner) SetAuthPathNil(b bool)`
+
+ SetAuthPathNil sets the value for AuthPath to be an explicit nil
+
+### UnsetAuthPath
+`func (o *ListCredentials200ResponseAllOfCredentialsInner) UnsetAuthPath()`
+
+UnsetAuthPath ensures that no value is present for AuthPath, not even an explicit nil
 ### GetExternalId
 
 `func (o *ListCredentials200ResponseAllOfCredentialsInner) GetExternalId() string`
@@ -323,6 +383,16 @@ SetExternalId sets ExternalId field to given value.
 
 HasExternalId returns a boolean if a field has been set.
 
+### SetExternalIdNil
+
+`func (o *ListCredentials200ResponseAllOfCredentialsInner) SetExternalIdNil(b bool)`
+
+ SetExternalIdNil sets the value for ExternalId to be an explicit nil
+
+### UnsetExternalId
+`func (o *ListCredentials200ResponseAllOfCredentialsInner) UnsetExternalId()`
+
+UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
 ### GetRefType
 
 `func (o *ListCredentials200ResponseAllOfCredentialsInner) GetRefType() string`
@@ -348,6 +418,16 @@ SetRefType sets RefType field to given value.
 
 HasRefType returns a boolean if a field has been set.
 
+### SetRefTypeNil
+
+`func (o *ListCredentials200ResponseAllOfCredentialsInner) SetRefTypeNil(b bool)`
+
+ SetRefTypeNil sets the value for RefType to be an explicit nil
+
+### UnsetRefType
+`func (o *ListCredentials200ResponseAllOfCredentialsInner) UnsetRefType()`
+
+UnsetRefType ensures that no value is present for RefType, not even an explicit nil
 ### GetRefId
 
 `func (o *ListCredentials200ResponseAllOfCredentialsInner) GetRefId() string`
@@ -373,6 +453,16 @@ SetRefId sets RefId field to given value.
 
 HasRefId returns a boolean if a field has been set.
 
+### SetRefIdNil
+
+`func (o *ListCredentials200ResponseAllOfCredentialsInner) SetRefIdNil(b bool)`
+
+ SetRefIdNil sets the value for RefId to be an explicit nil
+
+### UnsetRefId
+`func (o *ListCredentials200ResponseAllOfCredentialsInner) UnsetRefId()`
+
+UnsetRefId ensures that no value is present for RefId, not even an explicit nil
 ### GetCategory
 
 `func (o *ListCredentials200ResponseAllOfCredentialsInner) GetCategory() string`
@@ -398,6 +488,16 @@ SetCategory sets Category field to given value.
 
 HasCategory returns a boolean if a field has been set.
 
+### SetCategoryNil
+
+`func (o *ListCredentials200ResponseAllOfCredentialsInner) SetCategoryNil(b bool)`
+
+ SetCategoryNil sets the value for Category to be an explicit nil
+
+### UnsetCategory
+`func (o *ListCredentials200ResponseAllOfCredentialsInner) UnsetCategory()`
+
+UnsetCategory ensures that no value is present for Category, not even an explicit nil
 ### GetScope
 
 `func (o *ListCredentials200ResponseAllOfCredentialsInner) GetScope() string`
@@ -473,6 +573,16 @@ SetStatusMessage sets StatusMessage field to given value.
 
 HasStatusMessage returns a boolean if a field has been set.
 
+### SetStatusMessageNil
+
+`func (o *ListCredentials200ResponseAllOfCredentialsInner) SetStatusMessageNil(b bool)`
+
+ SetStatusMessageNil sets the value for StatusMessage to be an explicit nil
+
+### UnsetStatusMessage
+`func (o *ListCredentials200ResponseAllOfCredentialsInner) UnsetStatusMessage()`
+
+UnsetStatusMessage ensures that no value is present for StatusMessage, not even an explicit nil
 ### GetStatusDate
 
 `func (o *ListCredentials200ResponseAllOfCredentialsInner) GetStatusDate() time.Time`
@@ -498,6 +608,16 @@ SetStatusDate sets StatusDate field to given value.
 
 HasStatusDate returns a boolean if a field has been set.
 
+### SetStatusDateNil
+
+`func (o *ListCredentials200ResponseAllOfCredentialsInner) SetStatusDateNil(b bool)`
+
+ SetStatusDateNil sets the value for StatusDate to be an explicit nil
+
+### UnsetStatusDate
+`func (o *ListCredentials200ResponseAllOfCredentialsInner) UnsetStatusDate()`
+
+UnsetStatusDate ensures that no value is present for StatusDate, not even an explicit nil
 ### GetEnabled
 
 `func (o *ListCredentials200ResponseAllOfCredentialsInner) GetEnabled() bool`
@@ -525,20 +645,20 @@ HasEnabled returns a boolean if a field has been set.
 
 ### GetAccount
 
-`func (o *ListCredentials200ResponseAllOfCredentialsInner) GetAccount() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *ListCredentials200ResponseAllOfCredentialsInner) GetAccount() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetAccount returns the Account field if non-nil, zero value otherwise.
 
 ### GetAccountOk
 
-`func (o *ListCredentials200ResponseAllOfCredentialsInner) GetAccountOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *ListCredentials200ResponseAllOfCredentialsInner) GetAccountOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetAccountOk returns a tuple with the Account field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccount
 
-`func (o *ListCredentials200ResponseAllOfCredentialsInner) SetAccount(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *ListCredentials200ResponseAllOfCredentialsInner) SetAccount(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetAccount sets Account field to given value.
 

@@ -21,23 +21,23 @@ var _ MappedNullable = &SpecTemplate{}
 
 // SpecTemplate struct for SpecTemplate
 type SpecTemplate struct {
-	Id                   *int64                                                                  `json:"id,omitempty"`
-	Account              *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"account,omitempty"`
-	Name                 *string                                                                 `json:"name,omitempty"`
-	Labels               []string                                                                `json:"labels,omitempty"`
-	Code                 *string                                                                 `json:"code,omitempty"`
-	Type                 *ListBackupSettings200ResponseBackupSettingsDefaultSchedule             `json:"type,omitempty"`
-	ExternalId           *string                                                                 `json:"externalId,omitempty"`
-	ExternalType         *string                                                                 `json:"externalType,omitempty"`
-	DeploymentId         *string                                                                 `json:"deploymentId,omitempty"`
-	Status               *string                                                                 `json:"status,omitempty"`
-	File                 *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile   `json:"file,omitempty"`
-	Config               map[string]interface{}                                                  `json:"config,omitempty"`
-	CreatedBy            *string                                                                 `json:"createdBy,omitempty"`
-	UpdatedBy            *string                                                                 `json:"updatedBy,omitempty"`
-	DateCreated          *time.Time                                                              `json:"dateCreated,omitempty"`
-	LastUpdated          *time.Time                                                              `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}                                                  `json:",remain"`
+	Id                   *int64                                                                `json:"id,omitempty"`
+	Account              *GetAlerts200ResponseAllOfCheckGroupsInnerInstance                    `json:"account,omitempty"`
+	Name                 *string                                                               `json:"name,omitempty"`
+	Labels               []string                                                              `json:"labels,omitempty"`
+	Code                 NullableString                                                        `json:"code,omitempty"`
+	Type                 *ListBackupSettings200ResponseBackupSettingsDefaultSchedule           `json:"type,omitempty"`
+	ExternalId           NullableString                                                        `json:"externalId,omitempty"`
+	ExternalType         NullableString                                                        `json:"externalType,omitempty"`
+	DeploymentId         NullableString                                                        `json:"deploymentId,omitempty"`
+	Status               NullableString                                                        `json:"status,omitempty"`
+	File                 *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile `json:"file,omitempty"`
+	Config               map[string]interface{}                                                `json:"config,omitempty"`
+	CreatedBy            *string                                                               `json:"createdBy,omitempty"`
+	UpdatedBy            NullableString                                                        `json:"updatedBy,omitempty"`
+	DateCreated          *time.Time                                                            `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                                            `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}                                                `json:",remain"`
 }
 
 type _SpecTemplate SpecTemplate
@@ -92,9 +92,9 @@ func (o *SpecTemplate) SetId(v int64) {
 }
 
 // GetAccount returns the Account field value if set, zero value otherwise.
-func (o *SpecTemplate) GetAccount() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *SpecTemplate) GetAccount() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.Account) {
-		var ret ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return *o.Account
@@ -102,7 +102,7 @@ func (o *SpecTemplate) GetAccount() ListApplianceSettings200ResponseApplianceSet
 
 // GetAccountOk returns a tuple with the Account field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SpecTemplate) GetAccountOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *SpecTemplate) GetAccountOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.Account) {
 		return nil, false
 	}
@@ -118,8 +118,8 @@ func (o *SpecTemplate) IsSetAccount() bool {
 	return false
 }
 
-// SetAccount gets a reference to the given ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the Account field.
-func (o *SpecTemplate) SetAccount(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetAccount gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Account field.
+func (o *SpecTemplate) SetAccount(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.Account = &v
 }
 
@@ -187,36 +187,47 @@ func (o *SpecTemplate) SetLabels(v []string) {
 	o.Labels = v
 }
 
-// GetCode returns the Code field value if set, zero value otherwise.
+// GetCode returns the Code field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SpecTemplate) GetCode() string {
-	if o == nil || IsNil(o.Code) {
+	if o == nil || IsNil(o.Code.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Code
+	return *o.Code.Get()
 }
 
 // GetCodeOk returns a tuple with the Code field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SpecTemplate) GetCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.Code) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Code, true
+	return o.Code.Get(), o.Code.IsSet()
 }
 
 // IsSetCode returns a boolean if a field has been set.
 func (o *SpecTemplate) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
+	if o != nil && o.Code.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCode gets a reference to the given string and assigns it to the Code field.
+// SetCode gets a reference to the given NullableString and assigns it to the Code field.
 func (o *SpecTemplate) SetCode(v string) {
-	o.Code = &v
+	o.Code.Set(&v)
+}
+
+// SetCodeNil sets the value for Code to be an explicit nil
+func (o *SpecTemplate) SetCodeNil() {
+	o.Code.Set(nil)
+}
+
+// UnsetCode ensures that no value is present for Code, not even an explicit nil
+func (o *SpecTemplate) UnsetCode() {
+	o.Code.Unset()
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
@@ -251,132 +262,176 @@ func (o *SpecTemplate) SetType(v ListBackupSettings200ResponseBackupSettingsDefa
 	o.Type = &v
 }
 
-// GetExternalId returns the ExternalId field value if set, zero value otherwise.
+// GetExternalId returns the ExternalId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SpecTemplate) GetExternalId() string {
-	if o == nil || IsNil(o.ExternalId) {
+	if o == nil || IsNil(o.ExternalId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ExternalId
+	return *o.ExternalId.Get()
 }
 
 // GetExternalIdOk returns a tuple with the ExternalId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SpecTemplate) GetExternalIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ExternalId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ExternalId, true
+	return o.ExternalId.Get(), o.ExternalId.IsSet()
 }
 
 // IsSetExternalId returns a boolean if a field has been set.
 func (o *SpecTemplate) IsSetExternalId() bool {
-	if o != nil && !IsNil(o.ExternalId) {
+	if o != nil && o.ExternalId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetExternalId gets a reference to the given string and assigns it to the ExternalId field.
+// SetExternalId gets a reference to the given NullableString and assigns it to the ExternalId field.
 func (o *SpecTemplate) SetExternalId(v string) {
-	o.ExternalId = &v
+	o.ExternalId.Set(&v)
 }
 
-// GetExternalType returns the ExternalType field value if set, zero value otherwise.
+// SetExternalIdNil sets the value for ExternalId to be an explicit nil
+func (o *SpecTemplate) SetExternalIdNil() {
+	o.ExternalId.Set(nil)
+}
+
+// UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
+func (o *SpecTemplate) UnsetExternalId() {
+	o.ExternalId.Unset()
+}
+
+// GetExternalType returns the ExternalType field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SpecTemplate) GetExternalType() string {
-	if o == nil || IsNil(o.ExternalType) {
+	if o == nil || IsNil(o.ExternalType.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ExternalType
+	return *o.ExternalType.Get()
 }
 
 // GetExternalTypeOk returns a tuple with the ExternalType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SpecTemplate) GetExternalTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.ExternalType) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ExternalType, true
+	return o.ExternalType.Get(), o.ExternalType.IsSet()
 }
 
 // IsSetExternalType returns a boolean if a field has been set.
 func (o *SpecTemplate) IsSetExternalType() bool {
-	if o != nil && !IsNil(o.ExternalType) {
+	if o != nil && o.ExternalType.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetExternalType gets a reference to the given string and assigns it to the ExternalType field.
+// SetExternalType gets a reference to the given NullableString and assigns it to the ExternalType field.
 func (o *SpecTemplate) SetExternalType(v string) {
-	o.ExternalType = &v
+	o.ExternalType.Set(&v)
 }
 
-// GetDeploymentId returns the DeploymentId field value if set, zero value otherwise.
+// SetExternalTypeNil sets the value for ExternalType to be an explicit nil
+func (o *SpecTemplate) SetExternalTypeNil() {
+	o.ExternalType.Set(nil)
+}
+
+// UnsetExternalType ensures that no value is present for ExternalType, not even an explicit nil
+func (o *SpecTemplate) UnsetExternalType() {
+	o.ExternalType.Unset()
+}
+
+// GetDeploymentId returns the DeploymentId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SpecTemplate) GetDeploymentId() string {
-	if o == nil || IsNil(o.DeploymentId) {
+	if o == nil || IsNil(o.DeploymentId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.DeploymentId
+	return *o.DeploymentId.Get()
 }
 
 // GetDeploymentIdOk returns a tuple with the DeploymentId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SpecTemplate) GetDeploymentIdOk() (*string, bool) {
-	if o == nil || IsNil(o.DeploymentId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.DeploymentId, true
+	return o.DeploymentId.Get(), o.DeploymentId.IsSet()
 }
 
 // IsSetDeploymentId returns a boolean if a field has been set.
 func (o *SpecTemplate) IsSetDeploymentId() bool {
-	if o != nil && !IsNil(o.DeploymentId) {
+	if o != nil && o.DeploymentId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDeploymentId gets a reference to the given string and assigns it to the DeploymentId field.
+// SetDeploymentId gets a reference to the given NullableString and assigns it to the DeploymentId field.
 func (o *SpecTemplate) SetDeploymentId(v string) {
-	o.DeploymentId = &v
+	o.DeploymentId.Set(&v)
 }
 
-// GetStatus returns the Status field value if set, zero value otherwise.
+// SetDeploymentIdNil sets the value for DeploymentId to be an explicit nil
+func (o *SpecTemplate) SetDeploymentIdNil() {
+	o.DeploymentId.Set(nil)
+}
+
+// UnsetDeploymentId ensures that no value is present for DeploymentId, not even an explicit nil
+func (o *SpecTemplate) UnsetDeploymentId() {
+	o.DeploymentId.Unset()
+}
+
+// GetStatus returns the Status field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SpecTemplate) GetStatus() string {
-	if o == nil || IsNil(o.Status) {
+	if o == nil || IsNil(o.Status.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Status
+	return *o.Status.Get()
 }
 
 // GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SpecTemplate) GetStatusOk() (*string, bool) {
-	if o == nil || IsNil(o.Status) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Status, true
+	return o.Status.Get(), o.Status.IsSet()
 }
 
 // IsSetStatus returns a boolean if a field has been set.
 func (o *SpecTemplate) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
+	if o != nil && o.Status.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetStatus gets a reference to the given string and assigns it to the Status field.
+// SetStatus gets a reference to the given NullableString and assigns it to the Status field.
 func (o *SpecTemplate) SetStatus(v string) {
-	o.Status = &v
+	o.Status.Set(&v)
+}
+
+// SetStatusNil sets the value for Status to be an explicit nil
+func (o *SpecTemplate) SetStatusNil() {
+	o.Status.Set(nil)
+}
+
+// UnsetStatus ensures that no value is present for Status, not even an explicit nil
+func (o *SpecTemplate) UnsetStatus() {
+	o.Status.Unset()
 }
 
 // GetFile returns the File field value if set, zero value otherwise.
@@ -475,36 +530,47 @@ func (o *SpecTemplate) SetCreatedBy(v string) {
 	o.CreatedBy = &v
 }
 
-// GetUpdatedBy returns the UpdatedBy field value if set, zero value otherwise.
+// GetUpdatedBy returns the UpdatedBy field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SpecTemplate) GetUpdatedBy() string {
-	if o == nil || IsNil(o.UpdatedBy) {
+	if o == nil || IsNil(o.UpdatedBy.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.UpdatedBy
+	return *o.UpdatedBy.Get()
 }
 
 // GetUpdatedByOk returns a tuple with the UpdatedBy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SpecTemplate) GetUpdatedByOk() (*string, bool) {
-	if o == nil || IsNil(o.UpdatedBy) {
+	if o == nil {
 		return nil, false
 	}
-	return o.UpdatedBy, true
+	return o.UpdatedBy.Get(), o.UpdatedBy.IsSet()
 }
 
 // IsSetUpdatedBy returns a boolean if a field has been set.
 func (o *SpecTemplate) IsSetUpdatedBy() bool {
-	if o != nil && !IsNil(o.UpdatedBy) {
+	if o != nil && o.UpdatedBy.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetUpdatedBy gets a reference to the given string and assigns it to the UpdatedBy field.
+// SetUpdatedBy gets a reference to the given NullableString and assigns it to the UpdatedBy field.
 func (o *SpecTemplate) SetUpdatedBy(v string) {
-	o.UpdatedBy = &v
+	o.UpdatedBy.Set(&v)
+}
+
+// SetUpdatedByNil sets the value for UpdatedBy to be an explicit nil
+func (o *SpecTemplate) SetUpdatedByNil() {
+	o.UpdatedBy.Set(nil)
+}
+
+// UnsetUpdatedBy ensures that no value is present for UpdatedBy, not even an explicit nil
+func (o *SpecTemplate) UnsetUpdatedBy() {
+	o.UpdatedBy.Unset()
 }
 
 // GetDateCreated returns the DateCreated field value if set, zero value otherwise.
@@ -593,23 +659,23 @@ func (o SpecTemplate) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Labels) {
 		toSerialize["labels"] = o.Labels
 	}
-	if !IsNil(o.Code) {
-		toSerialize["code"] = o.Code
+	if o.Code.IsSet() {
+		toSerialize["code"] = o.Code.Get()
 	}
 	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type
 	}
-	if !IsNil(o.ExternalId) {
-		toSerialize["externalId"] = o.ExternalId
+	if o.ExternalId.IsSet() {
+		toSerialize["externalId"] = o.ExternalId.Get()
 	}
-	if !IsNil(o.ExternalType) {
-		toSerialize["externalType"] = o.ExternalType
+	if o.ExternalType.IsSet() {
+		toSerialize["externalType"] = o.ExternalType.Get()
 	}
-	if !IsNil(o.DeploymentId) {
-		toSerialize["deploymentId"] = o.DeploymentId
+	if o.DeploymentId.IsSet() {
+		toSerialize["deploymentId"] = o.DeploymentId.Get()
 	}
-	if !IsNil(o.Status) {
-		toSerialize["status"] = o.Status
+	if o.Status.IsSet() {
+		toSerialize["status"] = o.Status.Get()
 	}
 	if !IsNil(o.File) {
 		toSerialize["file"] = o.File
@@ -620,8 +686,8 @@ func (o SpecTemplate) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CreatedBy) {
 		toSerialize["createdBy"] = o.CreatedBy
 	}
-	if !IsNil(o.UpdatedBy) {
-		toSerialize["updatedBy"] = o.UpdatedBy
+	if o.UpdatedBy.IsSet() {
+		toSerialize["updatedBy"] = o.UpdatedBy.Get()
 	}
 	if !IsNil(o.DateCreated) {
 		toSerialize["dateCreated"] = o.DateCreated

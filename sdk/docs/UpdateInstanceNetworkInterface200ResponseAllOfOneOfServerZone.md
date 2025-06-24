@@ -8,12 +8,12 @@ Name | Type | Description | Notes
 **AccountId** | Pointer to **int64** |  | [optional] 
 **Groups** | Pointer to **[]int64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **NullableString** |  | [optional] 
 **Location** | Pointer to **string** |  | [optional] 
 **Visibility** | Pointer to **string** |  | [optional] 
 **ZoneTypeId** | Pointer to **int64** |  | [optional] 
 **NetworkServer** | Pointer to [**UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServer**](UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServer.md) |  | [optional] 
-**SecurityServer** | Pointer to **string** |  | [optional] 
+**SecurityServer** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -159,6 +159,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZone) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZone) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetLocation
 
 `func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZone) GetLocation() string`
@@ -284,6 +294,16 @@ SetSecurityServer sets SecurityServer field to given value.
 
 HasSecurityServer returns a boolean if a field has been set.
 
+### SetSecurityServerNil
+
+`func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZone) SetSecurityServerNil(b bool)`
+
+ SetSecurityServerNil sets the value for SecurityServer to be an explicit nil
+
+### UnsetSecurityServer
+`func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZone) UnsetSecurityServer()`
+
+UnsetSecurityServer ensures that no value is present for SecurityServer, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

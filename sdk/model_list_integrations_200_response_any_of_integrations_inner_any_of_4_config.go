@@ -25,7 +25,7 @@ type ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf4Config struct {
 	CherwellCreatedBy         *string                `json:"cherwellCreatedBy,omitempty"`
 	CherwellStartDate         *string                `json:"cherwellStartDate,omitempty"`
 	CherwellEndDate           *string                `json:"cherwellEndDate,omitempty"`
-	CherwellIgnoreSSLErrors   *string                `json:"cherwellIgnoreSSLErrors,omitempty"`
+	CherwellIgnoreSSLErrors   NullableString         `json:"cherwellIgnoreSSLErrors,omitempty"`
 	CherwellBusinessObject    *string                `json:"cherwellBusinessObject,omitempty"`
 	AdditionalProperties      map[string]interface{} `json:",remain"`
 }
@@ -209,36 +209,47 @@ func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf4Config) SetCherw
 	o.CherwellEndDate = &v
 }
 
-// GetCherwellIgnoreSSLErrors returns the CherwellIgnoreSSLErrors field value if set, zero value otherwise.
+// GetCherwellIgnoreSSLErrors returns the CherwellIgnoreSSLErrors field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf4Config) GetCherwellIgnoreSSLErrors() string {
-	if o == nil || IsNil(o.CherwellIgnoreSSLErrors) {
+	if o == nil || IsNil(o.CherwellIgnoreSSLErrors.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.CherwellIgnoreSSLErrors
+	return *o.CherwellIgnoreSSLErrors.Get()
 }
 
 // GetCherwellIgnoreSSLErrorsOk returns a tuple with the CherwellIgnoreSSLErrors field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf4Config) GetCherwellIgnoreSSLErrorsOk() (*string, bool) {
-	if o == nil || IsNil(o.CherwellIgnoreSSLErrors) {
+	if o == nil {
 		return nil, false
 	}
-	return o.CherwellIgnoreSSLErrors, true
+	return o.CherwellIgnoreSSLErrors.Get(), o.CherwellIgnoreSSLErrors.IsSet()
 }
 
 // IsSetCherwellIgnoreSSLErrors returns a boolean if a field has been set.
 func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf4Config) IsSetCherwellIgnoreSSLErrors() bool {
-	if o != nil && !IsNil(o.CherwellIgnoreSSLErrors) {
+	if o != nil && o.CherwellIgnoreSSLErrors.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCherwellIgnoreSSLErrors gets a reference to the given string and assigns it to the CherwellIgnoreSSLErrors field.
+// SetCherwellIgnoreSSLErrors gets a reference to the given NullableString and assigns it to the CherwellIgnoreSSLErrors field.
 func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf4Config) SetCherwellIgnoreSSLErrors(v string) {
-	o.CherwellIgnoreSSLErrors = &v
+	o.CherwellIgnoreSSLErrors.Set(&v)
+}
+
+// SetCherwellIgnoreSSLErrorsNil sets the value for CherwellIgnoreSSLErrors to be an explicit nil
+func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf4Config) SetCherwellIgnoreSSLErrorsNil() {
+	o.CherwellIgnoreSSLErrors.Set(nil)
+}
+
+// UnsetCherwellIgnoreSSLErrors ensures that no value is present for CherwellIgnoreSSLErrors, not even an explicit nil
+func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf4Config) UnsetCherwellIgnoreSSLErrors() {
+	o.CherwellIgnoreSSLErrors.Unset()
 }
 
 // GetCherwellBusinessObject returns the CherwellBusinessObject field value if set, zero value otherwise.
@@ -298,8 +309,8 @@ func (o ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf4Config) ToMap() (
 	if !IsNil(o.CherwellEndDate) {
 		toSerialize["cherwellEndDate"] = o.CherwellEndDate
 	}
-	if !IsNil(o.CherwellIgnoreSSLErrors) {
-		toSerialize["cherwellIgnoreSSLErrors"] = o.CherwellIgnoreSSLErrors
+	if o.CherwellIgnoreSSLErrors.IsSet() {
+		toSerialize["cherwellIgnoreSSLErrors"] = o.CherwellIgnoreSSLErrors.Get()
 	}
 	if !IsNil(o.CherwellBusinessObject) {
 		toSerialize["cherwellBusinessObject"] = o.CherwellBusinessObject

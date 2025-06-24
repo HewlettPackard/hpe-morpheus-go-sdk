@@ -8,13 +8,13 @@ Name | Type | Description | Notes
 **Name** | Pointer to **string** |  | [optional] 
 **Labels** | Pointer to **[]string** |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
-**Category** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **NullableString** |  | [optional] 
+**Category** | Pointer to **NullableString** |  | [optional] 
 **Config** | Pointer to **map[string]interface{}** |  | [optional] 
 **Visibility** | Pointer to **string** |  | [optional] 
 **ResourcePermission** | Pointer to **map[string]interface{}** |  | [optional] 
 **Owner** | Pointer to [**ListActivity200ResponseAllOfActivityInnerActivityInnerUser**](ListActivity200ResponseAllOfActivityInnerActivityInnerUser.md) |  | [optional] 
-**Tenant** | Pointer to [**ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
+**Tenant** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 
 ## Methods
 
@@ -160,6 +160,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *Blueprint) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *Blueprint) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetCategory
 
 `func (o *Blueprint) GetCategory() string`
@@ -185,6 +195,16 @@ SetCategory sets Category field to given value.
 
 HasCategory returns a boolean if a field has been set.
 
+### SetCategoryNil
+
+`func (o *Blueprint) SetCategoryNil(b bool)`
+
+ SetCategoryNil sets the value for Category to be an explicit nil
+
+### UnsetCategory
+`func (o *Blueprint) UnsetCategory()`
+
+UnsetCategory ensures that no value is present for Category, not even an explicit nil
 ### GetConfig
 
 `func (o *Blueprint) GetConfig() map[string]interface{}`
@@ -260,6 +280,16 @@ SetResourcePermission sets ResourcePermission field to given value.
 
 HasResourcePermission returns a boolean if a field has been set.
 
+### SetResourcePermissionNil
+
+`func (o *Blueprint) SetResourcePermissionNil(b bool)`
+
+ SetResourcePermissionNil sets the value for ResourcePermission to be an explicit nil
+
+### UnsetResourcePermission
+`func (o *Blueprint) UnsetResourcePermission()`
+
+UnsetResourcePermission ensures that no value is present for ResourcePermission, not even an explicit nil
 ### GetOwner
 
 `func (o *Blueprint) GetOwner() ListActivity200ResponseAllOfActivityInnerActivityInnerUser`
@@ -287,20 +317,20 @@ HasOwner returns a boolean if a field has been set.
 
 ### GetTenant
 
-`func (o *Blueprint) GetTenant() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *Blueprint) GetTenant() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetTenant returns the Tenant field if non-nil, zero value otherwise.
 
 ### GetTenantOk
 
-`func (o *Blueprint) GetTenantOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *Blueprint) GetTenantOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetTenantOk returns a tuple with the Tenant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenant
 
-`func (o *Blueprint) SetTenant(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *Blueprint) SetTenant(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetTenant sets Tenant field to given value.
 

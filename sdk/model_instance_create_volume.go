@@ -29,9 +29,9 @@ type InstanceCreateVolume struct {
 	// Size of the LV to be created in GBs.  Uses default from service plan.
 	Size *int64 `json:"size,omitempty"`
 	// Can be used to select pre-existing LV choices from Morpheus.
-	SizeId *int64 `json:"sizeId,omitempty"`
+	SizeId NullableInt64 `json:"sizeId,omitempty"`
 	// Identifier for LV type
-	StorageType *int64                                                                      `json:"storageType,omitempty"`
+	StorageType NullableInt64                                                               `json:"storageType,omitempty"`
 	DatastoreId *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInnerDatastoreId `json:"datastoreId,omitempty"`
 	// The controller mount point specification for this volume in the format: `\"id:busNumber:typeId:unitNumber\"` For new storage controllers the id is passed as -1, so an example value would be: `\"-1:1:6:0\"` which translates to id: -1 (new), busNumber: 1, storage controller type id: 6 (SCSI VMware Paravirtual), unit number: 0. The current list of storage controllers is returned for instances and servers for determining existing id values. Use `/api/provision-types?code=vmware` to see the available `controllerTypes` for vmware.
 	ControllerMountPoint *string                `json:"controllerMountPoint,omitempty"`
@@ -197,68 +197,90 @@ func (o *InstanceCreateVolume) SetSize(v int64) {
 	o.Size = &v
 }
 
-// GetSizeId returns the SizeId field value if set, zero value otherwise.
+// GetSizeId returns the SizeId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *InstanceCreateVolume) GetSizeId() int64 {
-	if o == nil || IsNil(o.SizeId) {
+	if o == nil || IsNil(o.SizeId.Get()) {
 		var ret int64
 		return ret
 	}
-	return *o.SizeId
+	return *o.SizeId.Get()
 }
 
 // GetSizeIdOk returns a tuple with the SizeId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *InstanceCreateVolume) GetSizeIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.SizeId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.SizeId, true
+	return o.SizeId.Get(), o.SizeId.IsSet()
 }
 
 // IsSetSizeId returns a boolean if a field has been set.
 func (o *InstanceCreateVolume) IsSetSizeId() bool {
-	if o != nil && !IsNil(o.SizeId) {
+	if o != nil && o.SizeId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetSizeId gets a reference to the given int64 and assigns it to the SizeId field.
+// SetSizeId gets a reference to the given NullableInt64 and assigns it to the SizeId field.
 func (o *InstanceCreateVolume) SetSizeId(v int64) {
-	o.SizeId = &v
+	o.SizeId.Set(&v)
 }
 
-// GetStorageType returns the StorageType field value if set, zero value otherwise.
+// SetSizeIdNil sets the value for SizeId to be an explicit nil
+func (o *InstanceCreateVolume) SetSizeIdNil() {
+	o.SizeId.Set(nil)
+}
+
+// UnsetSizeId ensures that no value is present for SizeId, not even an explicit nil
+func (o *InstanceCreateVolume) UnsetSizeId() {
+	o.SizeId.Unset()
+}
+
+// GetStorageType returns the StorageType field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *InstanceCreateVolume) GetStorageType() int64 {
-	if o == nil || IsNil(o.StorageType) {
+	if o == nil || IsNil(o.StorageType.Get()) {
 		var ret int64
 		return ret
 	}
-	return *o.StorageType
+	return *o.StorageType.Get()
 }
 
 // GetStorageTypeOk returns a tuple with the StorageType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *InstanceCreateVolume) GetStorageTypeOk() (*int64, bool) {
-	if o == nil || IsNil(o.StorageType) {
+	if o == nil {
 		return nil, false
 	}
-	return o.StorageType, true
+	return o.StorageType.Get(), o.StorageType.IsSet()
 }
 
 // IsSetStorageType returns a boolean if a field has been set.
 func (o *InstanceCreateVolume) IsSetStorageType() bool {
-	if o != nil && !IsNil(o.StorageType) {
+	if o != nil && o.StorageType.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetStorageType gets a reference to the given int64 and assigns it to the StorageType field.
+// SetStorageType gets a reference to the given NullableInt64 and assigns it to the StorageType field.
 func (o *InstanceCreateVolume) SetStorageType(v int64) {
-	o.StorageType = &v
+	o.StorageType.Set(&v)
+}
+
+// SetStorageTypeNil sets the value for StorageType to be an explicit nil
+func (o *InstanceCreateVolume) SetStorageTypeNil() {
+	o.StorageType.Set(nil)
+}
+
+// UnsetStorageType ensures that no value is present for StorageType, not even an explicit nil
+func (o *InstanceCreateVolume) UnsetStorageType() {
+	o.StorageType.Unset()
 }
 
 // GetDatastoreId returns the DatastoreId field value if set, zero value otherwise.
@@ -347,11 +369,11 @@ func (o InstanceCreateVolume) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Size) {
 		toSerialize["size"] = o.Size
 	}
-	if !IsNil(o.SizeId) {
-		toSerialize["sizeId"] = o.SizeId
+	if o.SizeId.IsSet() {
+		toSerialize["sizeId"] = o.SizeId.Get()
 	}
-	if !IsNil(o.StorageType) {
-		toSerialize["storageType"] = o.StorageType
+	if o.StorageType.IsSet() {
+		toSerialize["storageType"] = o.StorageType.Get()
 	}
 	if !IsNil(o.DatastoreId) {
 		toSerialize["datastoreId"] = o.DatastoreId

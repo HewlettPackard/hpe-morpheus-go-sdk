@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Group** | Pointer to [**ListInstanceServicePlans200ResponsePlansInnerAutoOptionsInner**](ListInstanceServicePlans200ResponsePlansInnerAutoOptionsInner.md) |  | [optional] 
-**Cloud** | Pointer to [**ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
+**Cloud** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 **Instance** | Pointer to [**ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance**](ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance.md) |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
@@ -75,20 +75,20 @@ HasGroup returns a boolean if a field has been set.
 
 ### GetCloud
 
-`func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) GetCloud() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) GetCloud() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetCloud returns the Cloud field if non-nil, zero value otherwise.
 
 ### GetCloudOk
 
-`func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) GetCloudOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) GetCloudOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetCloudOk returns a tuple with the Cloud field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCloud
 
-`func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) SetCloud(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) SetCloud(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetCloud sets Cloud field to given value.
 
@@ -323,6 +323,16 @@ SetStorageControllers sets StorageControllers field to given value.
 
 HasStorageControllers returns a boolean if a field has been set.
 
+### SetStorageControllersNil
+
+`func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) SetStorageControllersNil(b bool)`
+
+ SetStorageControllersNil sets the value for StorageControllers to be an explicit nil
+
+### UnsetStorageControllers
+`func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) UnsetStorageControllers()`
+
+UnsetStorageControllers ensures that no value is present for StorageControllers, not even an explicit nil
 ### GetPlan
 
 `func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) GetPlan() ListImageBuilds200ResponseAllOfImageBuildsInnerConfigPlan`
@@ -473,6 +483,16 @@ SetLoadBalancer sets LoadBalancer field to given value.
 
 HasLoadBalancer returns a boolean if a field has been set.
 
+### SetLoadBalancerNil
+
+`func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) SetLoadBalancerNil(b bool)`
+
+ SetLoadBalancerNil sets the value for LoadBalancer to be an explicit nil
+
+### UnsetLoadBalancer
+`func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) UnsetLoadBalancer()`
+
+UnsetLoadBalancer ensures that no value is present for LoadBalancer, not even an explicit nil
 ### GetHideLock
 
 `func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) GetHideLock() bool`

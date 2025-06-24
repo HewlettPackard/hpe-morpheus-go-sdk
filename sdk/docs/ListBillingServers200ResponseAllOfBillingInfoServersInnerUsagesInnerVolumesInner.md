@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Size** | Pointer to **int64** |  | [optional] 
 **TypeCode** | Pointer to **string** |  | [optional] 
-**Datastore** | Pointer to **string** |  | [optional] 
+**Datastore** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -102,6 +102,16 @@ SetDatastore sets Datastore field to given value.
 
 HasDatastore returns a boolean if a field has been set.
 
+### SetDatastoreNil
+
+`func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolumesInner) SetDatastoreNil(b bool)`
+
+ SetDatastoreNil sets the value for Datastore to be an explicit nil
+
+### UnsetDatastore
+`func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolumesInner) UnsetDatastore()`
+
+UnsetDatastore ensures that no value is present for Datastore, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

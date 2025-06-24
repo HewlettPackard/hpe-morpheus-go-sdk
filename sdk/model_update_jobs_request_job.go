@@ -30,9 +30,9 @@ type UpdateJobsRequestJob struct {
 	Task     *WorkflowJobPayloadTask `json:"task,omitempty"`
 	Workflow *WorkflowJobPayloadTask `json:"workflow,omitempty"`
 	// Scan Checklist. Only applies to type scap-package.
-	ScanPath *string `json:"scanPath,omitempty"`
+	ScanPath NullableString `json:"scanPath,omitempty"`
 	// Security Profile. Only applies to type scap-package.
-	SecurityProfile *string `json:"securityProfile,omitempty"`
+	SecurityProfile NullableString `json:"securityProfile,omitempty"`
 	// Target type where job will execute
 	TargetType *string                          `json:"targetType,omitempty"`
 	Targets    []WorkflowJobPayloadTargetsInner `json:"targets,omitempty"`
@@ -107,9 +107,9 @@ func (o *UpdateJobsRequestJob) SetName(v string) {
 	o.Name = &v
 }
 
-// GetLabels returns the Labels field value if set, zero value otherwise.
+// GetLabels returns the Labels field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UpdateJobsRequestJob) GetLabels() []string {
-	if o == nil || IsNil(o.Labels) {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -118,6 +118,7 @@ func (o *UpdateJobsRequestJob) GetLabels() []string {
 
 // GetLabelsOk returns a tuple with the Labels field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *UpdateJobsRequestJob) GetLabelsOk() ([]string, bool) {
 	if o == nil || IsNil(o.Labels) {
 		return nil, false
@@ -235,68 +236,90 @@ func (o *UpdateJobsRequestJob) SetWorkflow(v WorkflowJobPayloadTask) {
 	o.Workflow = &v
 }
 
-// GetScanPath returns the ScanPath field value if set, zero value otherwise.
+// GetScanPath returns the ScanPath field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UpdateJobsRequestJob) GetScanPath() string {
-	if o == nil || IsNil(o.ScanPath) {
+	if o == nil || IsNil(o.ScanPath.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ScanPath
+	return *o.ScanPath.Get()
 }
 
 // GetScanPathOk returns a tuple with the ScanPath field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *UpdateJobsRequestJob) GetScanPathOk() (*string, bool) {
-	if o == nil || IsNil(o.ScanPath) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ScanPath, true
+	return o.ScanPath.Get(), o.ScanPath.IsSet()
 }
 
 // IsSetScanPath returns a boolean if a field has been set.
 func (o *UpdateJobsRequestJob) IsSetScanPath() bool {
-	if o != nil && !IsNil(o.ScanPath) {
+	if o != nil && o.ScanPath.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetScanPath gets a reference to the given string and assigns it to the ScanPath field.
+// SetScanPath gets a reference to the given NullableString and assigns it to the ScanPath field.
 func (o *UpdateJobsRequestJob) SetScanPath(v string) {
-	o.ScanPath = &v
+	o.ScanPath.Set(&v)
 }
 
-// GetSecurityProfile returns the SecurityProfile field value if set, zero value otherwise.
+// SetScanPathNil sets the value for ScanPath to be an explicit nil
+func (o *UpdateJobsRequestJob) SetScanPathNil() {
+	o.ScanPath.Set(nil)
+}
+
+// UnsetScanPath ensures that no value is present for ScanPath, not even an explicit nil
+func (o *UpdateJobsRequestJob) UnsetScanPath() {
+	o.ScanPath.Unset()
+}
+
+// GetSecurityProfile returns the SecurityProfile field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UpdateJobsRequestJob) GetSecurityProfile() string {
-	if o == nil || IsNil(o.SecurityProfile) {
+	if o == nil || IsNil(o.SecurityProfile.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.SecurityProfile
+	return *o.SecurityProfile.Get()
 }
 
 // GetSecurityProfileOk returns a tuple with the SecurityProfile field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *UpdateJobsRequestJob) GetSecurityProfileOk() (*string, bool) {
-	if o == nil || IsNil(o.SecurityProfile) {
+	if o == nil {
 		return nil, false
 	}
-	return o.SecurityProfile, true
+	return o.SecurityProfile.Get(), o.SecurityProfile.IsSet()
 }
 
 // IsSetSecurityProfile returns a boolean if a field has been set.
 func (o *UpdateJobsRequestJob) IsSetSecurityProfile() bool {
-	if o != nil && !IsNil(o.SecurityProfile) {
+	if o != nil && o.SecurityProfile.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetSecurityProfile gets a reference to the given string and assigns it to the SecurityProfile field.
+// SetSecurityProfile gets a reference to the given NullableString and assigns it to the SecurityProfile field.
 func (o *UpdateJobsRequestJob) SetSecurityProfile(v string) {
-	o.SecurityProfile = &v
+	o.SecurityProfile.Set(&v)
+}
+
+// SetSecurityProfileNil sets the value for SecurityProfile to be an explicit nil
+func (o *UpdateJobsRequestJob) SetSecurityProfileNil() {
+	o.SecurityProfile.Set(nil)
+}
+
+// UnsetSecurityProfile ensures that no value is present for SecurityProfile, not even an explicit nil
+func (o *UpdateJobsRequestJob) UnsetSecurityProfile() {
+	o.SecurityProfile.Unset()
 }
 
 // GetTargetType returns the TargetType field value if set, zero value otherwise.
@@ -331,9 +354,9 @@ func (o *UpdateJobsRequestJob) SetTargetType(v string) {
 	o.TargetType = &v
 }
 
-// GetTargets returns the Targets field value if set, zero value otherwise.
+// GetTargets returns the Targets field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UpdateJobsRequestJob) GetTargets() []WorkflowJobPayloadTargetsInner {
-	if o == nil || IsNil(o.Targets) {
+	if o == nil {
 		var ret []WorkflowJobPayloadTargetsInner
 		return ret
 	}
@@ -342,6 +365,7 @@ func (o *UpdateJobsRequestJob) GetTargets() []WorkflowJobPayloadTargetsInner {
 
 // GetTargetsOk returns a tuple with the Targets field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *UpdateJobsRequestJob) GetTargetsOk() ([]WorkflowJobPayloadTargetsInner, bool) {
 	if o == nil || IsNil(o.Targets) {
 		return nil, false
@@ -600,7 +624,7 @@ func (o UpdateJobsRequestJob) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !IsNil(o.Labels) {
+	if o.Labels != nil {
 		toSerialize["labels"] = o.Labels
 	}
 	if !IsNil(o.Enabled) {
@@ -612,16 +636,16 @@ func (o UpdateJobsRequestJob) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Workflow) {
 		toSerialize["workflow"] = o.Workflow
 	}
-	if !IsNil(o.ScanPath) {
-		toSerialize["scanPath"] = o.ScanPath
+	if o.ScanPath.IsSet() {
+		toSerialize["scanPath"] = o.ScanPath.Get()
 	}
-	if !IsNil(o.SecurityProfile) {
-		toSerialize["securityProfile"] = o.SecurityProfile
+	if o.SecurityProfile.IsSet() {
+		toSerialize["securityProfile"] = o.SecurityProfile.Get()
 	}
 	if !IsNil(o.TargetType) {
 		toSerialize["targetType"] = o.TargetType
 	}
-	if !IsNil(o.Targets) {
+	if o.Targets != nil {
 		toSerialize["targets"] = o.Targets
 	}
 	if !IsNil(o.InstanceLabel) {

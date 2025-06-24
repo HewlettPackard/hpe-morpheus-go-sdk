@@ -178,9 +178,9 @@ func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) SetMonitorTimeout(
 	o.MonitorTimeout = &v
 }
 
-// GetConfig returns the Config field value if set, zero value otherwise.
+// GetConfig returns the Config field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) GetConfig() map[string]interface{} {
-	if o == nil || IsNil(o.Config) {
+	if o == nil {
 		var ret map[string]interface{}
 		return ret
 	}
@@ -189,6 +189,7 @@ func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) GetConfig() map[st
 
 // GetConfigOk returns a tuple with the Config field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) GetConfigOk() (map[string]interface{}, bool) {
 	if o == nil || IsNil(o.Config) {
 		return map[string]interface{}{}, false
@@ -232,7 +233,7 @@ func (o CreateLoadBalancerMonitorRequestLoadBalancerMonitor) ToMap() (map[string
 	if !IsNil(o.MonitorTimeout) {
 		toSerialize["monitorTimeout"] = o.MonitorTimeout
 	}
-	if !IsNil(o.Config) {
+	if o.Config != nil {
 		toSerialize["config"] = o.Config
 	}
 

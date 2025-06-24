@@ -6,20 +6,20 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**RefType** | Pointer to **string** |  | [optional] 
-**RefId** | Pointer to **int64** | (Assignee) Target Server ID | [optional] 
+**RefType** | Pointer to **NullableString** |  | [optional] 
+**RefId** | Pointer to **NullableInt64** | (Assignee) Target Server ID | [optional] 
 **Status** | Pointer to **string** |  | [optional] 
-**ExternalId** | Pointer to **string** |  | [optional] 
-**DomainId** | Pointer to **int32** |  | [optional] 
-**Bus** | Pointer to **int32** |  | [optional] 
-**Slot** | Pointer to **int32** |  | [optional] 
-**Device** | Pointer to **int32** |  | [optional] 
-**VendorId** | Pointer to **string** |  | [optional] 
-**ProductId** | Pointer to **string** |  | [optional] 
-**FunctionId** | Pointer to **int32** |  | [optional] 
-**UniqueId** | Pointer to **string** |  | [optional] 
-**IommuGroup** | Pointer to **int32** |  | [optional] 
-**IommuDeviceCount** | Pointer to **int32** |  | [optional] 
+**ExternalId** | Pointer to **NullableString** |  | [optional] 
+**DomainId** | Pointer to **NullableInt32** |  | [optional] 
+**Bus** | Pointer to **NullableInt32** |  | [optional] 
+**Slot** | Pointer to **NullableInt32** |  | [optional] 
+**Device** | Pointer to **NullableInt32** |  | [optional] 
+**VendorId** | Pointer to **NullableString** |  | [optional] 
+**ProductId** | Pointer to **NullableString** |  | [optional] 
+**FunctionId** | Pointer to **NullableInt32** |  | [optional] 
+**UniqueId** | Pointer to **NullableString** |  | [optional] 
+**IommuGroup** | Pointer to **NullableInt32** |  | [optional] 
+**IommuDeviceCount** | Pointer to **NullableInt32** |  | [optional] 
 **Type** | Pointer to [**ListHostDevices200ResponseDevicesInnerType**](ListHostDevices200ResponseDevicesInnerType.md) |  | [optional] 
 
 ## Methods
@@ -116,6 +116,16 @@ SetRefType sets RefType field to given value.
 
 HasRefType returns a boolean if a field has been set.
 
+### SetRefTypeNil
+
+`func (o *ServerDevice) SetRefTypeNil(b bool)`
+
+ SetRefTypeNil sets the value for RefType to be an explicit nil
+
+### UnsetRefType
+`func (o *ServerDevice) UnsetRefType()`
+
+UnsetRefType ensures that no value is present for RefType, not even an explicit nil
 ### GetRefId
 
 `func (o *ServerDevice) GetRefId() int64`
@@ -141,6 +151,16 @@ SetRefId sets RefId field to given value.
 
 HasRefId returns a boolean if a field has been set.
 
+### SetRefIdNil
+
+`func (o *ServerDevice) SetRefIdNil(b bool)`
+
+ SetRefIdNil sets the value for RefId to be an explicit nil
+
+### UnsetRefId
+`func (o *ServerDevice) UnsetRefId()`
+
+UnsetRefId ensures that no value is present for RefId, not even an explicit nil
 ### GetStatus
 
 `func (o *ServerDevice) GetStatus() string`
@@ -191,6 +211,16 @@ SetExternalId sets ExternalId field to given value.
 
 HasExternalId returns a boolean if a field has been set.
 
+### SetExternalIdNil
+
+`func (o *ServerDevice) SetExternalIdNil(b bool)`
+
+ SetExternalIdNil sets the value for ExternalId to be an explicit nil
+
+### UnsetExternalId
+`func (o *ServerDevice) UnsetExternalId()`
+
+UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
 ### GetDomainId
 
 `func (o *ServerDevice) GetDomainId() int32`
@@ -216,6 +246,16 @@ SetDomainId sets DomainId field to given value.
 
 HasDomainId returns a boolean if a field has been set.
 
+### SetDomainIdNil
+
+`func (o *ServerDevice) SetDomainIdNil(b bool)`
+
+ SetDomainIdNil sets the value for DomainId to be an explicit nil
+
+### UnsetDomainId
+`func (o *ServerDevice) UnsetDomainId()`
+
+UnsetDomainId ensures that no value is present for DomainId, not even an explicit nil
 ### GetBus
 
 `func (o *ServerDevice) GetBus() int32`
@@ -241,6 +281,16 @@ SetBus sets Bus field to given value.
 
 HasBus returns a boolean if a field has been set.
 
+### SetBusNil
+
+`func (o *ServerDevice) SetBusNil(b bool)`
+
+ SetBusNil sets the value for Bus to be an explicit nil
+
+### UnsetBus
+`func (o *ServerDevice) UnsetBus()`
+
+UnsetBus ensures that no value is present for Bus, not even an explicit nil
 ### GetSlot
 
 `func (o *ServerDevice) GetSlot() int32`
@@ -266,6 +316,16 @@ SetSlot sets Slot field to given value.
 
 HasSlot returns a boolean if a field has been set.
 
+### SetSlotNil
+
+`func (o *ServerDevice) SetSlotNil(b bool)`
+
+ SetSlotNil sets the value for Slot to be an explicit nil
+
+### UnsetSlot
+`func (o *ServerDevice) UnsetSlot()`
+
+UnsetSlot ensures that no value is present for Slot, not even an explicit nil
 ### GetDevice
 
 `func (o *ServerDevice) GetDevice() int32`
@@ -291,6 +351,16 @@ SetDevice sets Device field to given value.
 
 HasDevice returns a boolean if a field has been set.
 
+### SetDeviceNil
+
+`func (o *ServerDevice) SetDeviceNil(b bool)`
+
+ SetDeviceNil sets the value for Device to be an explicit nil
+
+### UnsetDevice
+`func (o *ServerDevice) UnsetDevice()`
+
+UnsetDevice ensures that no value is present for Device, not even an explicit nil
 ### GetVendorId
 
 `func (o *ServerDevice) GetVendorId() string`
@@ -316,6 +386,16 @@ SetVendorId sets VendorId field to given value.
 
 HasVendorId returns a boolean if a field has been set.
 
+### SetVendorIdNil
+
+`func (o *ServerDevice) SetVendorIdNil(b bool)`
+
+ SetVendorIdNil sets the value for VendorId to be an explicit nil
+
+### UnsetVendorId
+`func (o *ServerDevice) UnsetVendorId()`
+
+UnsetVendorId ensures that no value is present for VendorId, not even an explicit nil
 ### GetProductId
 
 `func (o *ServerDevice) GetProductId() string`
@@ -341,6 +421,16 @@ SetProductId sets ProductId field to given value.
 
 HasProductId returns a boolean if a field has been set.
 
+### SetProductIdNil
+
+`func (o *ServerDevice) SetProductIdNil(b bool)`
+
+ SetProductIdNil sets the value for ProductId to be an explicit nil
+
+### UnsetProductId
+`func (o *ServerDevice) UnsetProductId()`
+
+UnsetProductId ensures that no value is present for ProductId, not even an explicit nil
 ### GetFunctionId
 
 `func (o *ServerDevice) GetFunctionId() int32`
@@ -366,6 +456,16 @@ SetFunctionId sets FunctionId field to given value.
 
 HasFunctionId returns a boolean if a field has been set.
 
+### SetFunctionIdNil
+
+`func (o *ServerDevice) SetFunctionIdNil(b bool)`
+
+ SetFunctionIdNil sets the value for FunctionId to be an explicit nil
+
+### UnsetFunctionId
+`func (o *ServerDevice) UnsetFunctionId()`
+
+UnsetFunctionId ensures that no value is present for FunctionId, not even an explicit nil
 ### GetUniqueId
 
 `func (o *ServerDevice) GetUniqueId() string`
@@ -391,6 +491,16 @@ SetUniqueId sets UniqueId field to given value.
 
 HasUniqueId returns a boolean if a field has been set.
 
+### SetUniqueIdNil
+
+`func (o *ServerDevice) SetUniqueIdNil(b bool)`
+
+ SetUniqueIdNil sets the value for UniqueId to be an explicit nil
+
+### UnsetUniqueId
+`func (o *ServerDevice) UnsetUniqueId()`
+
+UnsetUniqueId ensures that no value is present for UniqueId, not even an explicit nil
 ### GetIommuGroup
 
 `func (o *ServerDevice) GetIommuGroup() int32`
@@ -416,6 +526,16 @@ SetIommuGroup sets IommuGroup field to given value.
 
 HasIommuGroup returns a boolean if a field has been set.
 
+### SetIommuGroupNil
+
+`func (o *ServerDevice) SetIommuGroupNil(b bool)`
+
+ SetIommuGroupNil sets the value for IommuGroup to be an explicit nil
+
+### UnsetIommuGroup
+`func (o *ServerDevice) UnsetIommuGroup()`
+
+UnsetIommuGroup ensures that no value is present for IommuGroup, not even an explicit nil
 ### GetIommuDeviceCount
 
 `func (o *ServerDevice) GetIommuDeviceCount() int32`
@@ -441,6 +561,16 @@ SetIommuDeviceCount sets IommuDeviceCount field to given value.
 
 HasIommuDeviceCount returns a boolean if a field has been set.
 
+### SetIommuDeviceCountNil
+
+`func (o *ServerDevice) SetIommuDeviceCountNil(b bool)`
+
+ SetIommuDeviceCountNil sets the value for IommuDeviceCount to be an explicit nil
+
+### UnsetIommuDeviceCount
+`func (o *ServerDevice) UnsetIommuDeviceCount()`
+
+UnsetIommuDeviceCount ensures that no value is present for IommuDeviceCount, not even an explicit nil
 ### GetType
 
 `func (o *ServerDevice) GetType() ListHostDevices200ResponseDevicesInnerType`

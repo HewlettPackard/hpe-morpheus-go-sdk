@@ -6,24 +6,24 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **NullableString** |  | [optional] 
 **Code** | Pointer to **string** |  | [optional] 
 **FieldName** | Pointer to **string** |  | [optional] 
 **FieldLabel** | Pointer to **string** |  | [optional] 
-**FieldCode** | Pointer to **string** |  | [optional] 
+**FieldCode** | Pointer to **NullableString** |  | [optional] 
 **FieldContext** | Pointer to **string** |  | [optional] 
-**FieldGroup** | Pointer to **string** |  | [optional] 
-**FieldClass** | Pointer to **string** |  | [optional] 
-**FieldAddOn** | Pointer to **string** |  | [optional] 
-**FieldComponent** | Pointer to **string** |  | [optional] 
-**FieldInput** | Pointer to **string** |  | [optional] 
-**PlaceHolder** | Pointer to **string** |  | [optional] 
-**VerifyPattern** | Pointer to **string** |  | [optional] 
-**HelpBlock** | Pointer to **string** |  | [optional] 
-**HelpBlockFieldCode** | Pointer to **string** |  | [optional] 
-**DefaultValue** | Pointer to **string** |  | [optional] 
-**OptionSource** | Pointer to **string** |  | [optional] 
-**OptionSourceType** | Pointer to **string** |  | [optional] 
+**FieldGroup** | Pointer to **NullableString** |  | [optional] 
+**FieldClass** | Pointer to **NullableString** |  | [optional] 
+**FieldAddOn** | Pointer to **NullableString** |  | [optional] 
+**FieldComponent** | Pointer to **NullableString** |  | [optional] 
+**FieldInput** | Pointer to **NullableString** |  | [optional] 
+**PlaceHolder** | Pointer to **NullableString** |  | [optional] 
+**VerifyPattern** | Pointer to **NullableString** |  | [optional] 
+**HelpBlock** | Pointer to **NullableString** |  | [optional] 
+**HelpBlockFieldCode** | Pointer to **NullableString** |  | [optional] 
+**DefaultValue** | Pointer to **NullableString** |  | [optional] 
+**OptionSource** | Pointer to **NullableString** |  | [optional] 
+**OptionSourceType** | Pointer to **NullableString** |  | [optional] 
 **OptionList** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 **Advanced** | Pointer to **bool** |  | [optional] 
@@ -33,17 +33,17 @@ Name | Type | Description | Notes
 **Creatable** | Pointer to **bool** |  | [optional] 
 **Config** | Pointer to **map[string]interface{}** |  | [optional] 
 **DisplayOrder** | Pointer to **int64** |  | [optional] 
-**WrapperClass** | Pointer to **string** |  | [optional] 
+**WrapperClass** | Pointer to **NullableString** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
 **NoBlank** | Pointer to **bool** |  | [optional] 
-**DependsOnCode** | Pointer to **string** |  | [optional] 
-**VisibleOnCode** | Pointer to **string** |  | [optional] 
-**RequireOnCode** | Pointer to **string** |  | [optional] 
+**DependsOnCode** | Pointer to **NullableString** |  | [optional] 
+**VisibleOnCode** | Pointer to **NullableString** |  | [optional] 
+**RequireOnCode** | Pointer to **NullableString** |  | [optional] 
 **ContextualDefault** | Pointer to **bool** |  | [optional] 
-**DisplayValueOnDetails** | Pointer to **bool** |  | [optional] 
-**ShowOnCreate** | Pointer to **bool** |  | [optional] 
-**ShowOnEdit** | Pointer to **bool** |  | [optional] 
-**LocalCredential** | Pointer to **string** |  | [optional] 
+**DisplayValueOnDetails** | Pointer to **NullableBool** |  | [optional] 
+**ShowOnCreate** | Pointer to **NullableBool** |  | [optional] 
+**ShowOnEdit** | Pointer to **NullableBool** |  | [optional] 
+**LocalCredential** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -139,6 +139,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetCode
 
 `func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) GetCode() string`
@@ -239,6 +249,16 @@ SetFieldCode sets FieldCode field to given value.
 
 HasFieldCode returns a boolean if a field has been set.
 
+### SetFieldCodeNil
+
+`func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) SetFieldCodeNil(b bool)`
+
+ SetFieldCodeNil sets the value for FieldCode to be an explicit nil
+
+### UnsetFieldCode
+`func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) UnsetFieldCode()`
+
+UnsetFieldCode ensures that no value is present for FieldCode, not even an explicit nil
 ### GetFieldContext
 
 `func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) GetFieldContext() string`
@@ -289,6 +309,16 @@ SetFieldGroup sets FieldGroup field to given value.
 
 HasFieldGroup returns a boolean if a field has been set.
 
+### SetFieldGroupNil
+
+`func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) SetFieldGroupNil(b bool)`
+
+ SetFieldGroupNil sets the value for FieldGroup to be an explicit nil
+
+### UnsetFieldGroup
+`func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) UnsetFieldGroup()`
+
+UnsetFieldGroup ensures that no value is present for FieldGroup, not even an explicit nil
 ### GetFieldClass
 
 `func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) GetFieldClass() string`
@@ -314,6 +344,16 @@ SetFieldClass sets FieldClass field to given value.
 
 HasFieldClass returns a boolean if a field has been set.
 
+### SetFieldClassNil
+
+`func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) SetFieldClassNil(b bool)`
+
+ SetFieldClassNil sets the value for FieldClass to be an explicit nil
+
+### UnsetFieldClass
+`func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) UnsetFieldClass()`
+
+UnsetFieldClass ensures that no value is present for FieldClass, not even an explicit nil
 ### GetFieldAddOn
 
 `func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) GetFieldAddOn() string`
@@ -339,6 +379,16 @@ SetFieldAddOn sets FieldAddOn field to given value.
 
 HasFieldAddOn returns a boolean if a field has been set.
 
+### SetFieldAddOnNil
+
+`func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) SetFieldAddOnNil(b bool)`
+
+ SetFieldAddOnNil sets the value for FieldAddOn to be an explicit nil
+
+### UnsetFieldAddOn
+`func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) UnsetFieldAddOn()`
+
+UnsetFieldAddOn ensures that no value is present for FieldAddOn, not even an explicit nil
 ### GetFieldComponent
 
 `func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) GetFieldComponent() string`
@@ -364,6 +414,16 @@ SetFieldComponent sets FieldComponent field to given value.
 
 HasFieldComponent returns a boolean if a field has been set.
 
+### SetFieldComponentNil
+
+`func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) SetFieldComponentNil(b bool)`
+
+ SetFieldComponentNil sets the value for FieldComponent to be an explicit nil
+
+### UnsetFieldComponent
+`func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) UnsetFieldComponent()`
+
+UnsetFieldComponent ensures that no value is present for FieldComponent, not even an explicit nil
 ### GetFieldInput
 
 `func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) GetFieldInput() string`
@@ -389,6 +449,16 @@ SetFieldInput sets FieldInput field to given value.
 
 HasFieldInput returns a boolean if a field has been set.
 
+### SetFieldInputNil
+
+`func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) SetFieldInputNil(b bool)`
+
+ SetFieldInputNil sets the value for FieldInput to be an explicit nil
+
+### UnsetFieldInput
+`func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) UnsetFieldInput()`
+
+UnsetFieldInput ensures that no value is present for FieldInput, not even an explicit nil
 ### GetPlaceHolder
 
 `func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) GetPlaceHolder() string`
@@ -414,6 +484,16 @@ SetPlaceHolder sets PlaceHolder field to given value.
 
 HasPlaceHolder returns a boolean if a field has been set.
 
+### SetPlaceHolderNil
+
+`func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) SetPlaceHolderNil(b bool)`
+
+ SetPlaceHolderNil sets the value for PlaceHolder to be an explicit nil
+
+### UnsetPlaceHolder
+`func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) UnsetPlaceHolder()`
+
+UnsetPlaceHolder ensures that no value is present for PlaceHolder, not even an explicit nil
 ### GetVerifyPattern
 
 `func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) GetVerifyPattern() string`
@@ -439,6 +519,16 @@ SetVerifyPattern sets VerifyPattern field to given value.
 
 HasVerifyPattern returns a boolean if a field has been set.
 
+### SetVerifyPatternNil
+
+`func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) SetVerifyPatternNil(b bool)`
+
+ SetVerifyPatternNil sets the value for VerifyPattern to be an explicit nil
+
+### UnsetVerifyPattern
+`func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) UnsetVerifyPattern()`
+
+UnsetVerifyPattern ensures that no value is present for VerifyPattern, not even an explicit nil
 ### GetHelpBlock
 
 `func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) GetHelpBlock() string`
@@ -464,6 +554,16 @@ SetHelpBlock sets HelpBlock field to given value.
 
 HasHelpBlock returns a boolean if a field has been set.
 
+### SetHelpBlockNil
+
+`func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) SetHelpBlockNil(b bool)`
+
+ SetHelpBlockNil sets the value for HelpBlock to be an explicit nil
+
+### UnsetHelpBlock
+`func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) UnsetHelpBlock()`
+
+UnsetHelpBlock ensures that no value is present for HelpBlock, not even an explicit nil
 ### GetHelpBlockFieldCode
 
 `func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) GetHelpBlockFieldCode() string`
@@ -489,6 +589,16 @@ SetHelpBlockFieldCode sets HelpBlockFieldCode field to given value.
 
 HasHelpBlockFieldCode returns a boolean if a field has been set.
 
+### SetHelpBlockFieldCodeNil
+
+`func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) SetHelpBlockFieldCodeNil(b bool)`
+
+ SetHelpBlockFieldCodeNil sets the value for HelpBlockFieldCode to be an explicit nil
+
+### UnsetHelpBlockFieldCode
+`func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) UnsetHelpBlockFieldCode()`
+
+UnsetHelpBlockFieldCode ensures that no value is present for HelpBlockFieldCode, not even an explicit nil
 ### GetDefaultValue
 
 `func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) GetDefaultValue() string`
@@ -514,6 +624,16 @@ SetDefaultValue sets DefaultValue field to given value.
 
 HasDefaultValue returns a boolean if a field has been set.
 
+### SetDefaultValueNil
+
+`func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) SetDefaultValueNil(b bool)`
+
+ SetDefaultValueNil sets the value for DefaultValue to be an explicit nil
+
+### UnsetDefaultValue
+`func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) UnsetDefaultValue()`
+
+UnsetDefaultValue ensures that no value is present for DefaultValue, not even an explicit nil
 ### GetOptionSource
 
 `func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) GetOptionSource() string`
@@ -539,6 +659,16 @@ SetOptionSource sets OptionSource field to given value.
 
 HasOptionSource returns a boolean if a field has been set.
 
+### SetOptionSourceNil
+
+`func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) SetOptionSourceNil(b bool)`
+
+ SetOptionSourceNil sets the value for OptionSource to be an explicit nil
+
+### UnsetOptionSource
+`func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) UnsetOptionSource()`
+
+UnsetOptionSource ensures that no value is present for OptionSource, not even an explicit nil
 ### GetOptionSourceType
 
 `func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) GetOptionSourceType() string`
@@ -564,6 +694,16 @@ SetOptionSourceType sets OptionSourceType field to given value.
 
 HasOptionSourceType returns a boolean if a field has been set.
 
+### SetOptionSourceTypeNil
+
+`func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) SetOptionSourceTypeNil(b bool)`
+
+ SetOptionSourceTypeNil sets the value for OptionSourceType to be an explicit nil
+
+### UnsetOptionSourceType
+`func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) UnsetOptionSourceType()`
+
+UnsetOptionSourceType ensures that no value is present for OptionSourceType, not even an explicit nil
 ### GetOptionList
 
 `func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) GetOptionList() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
@@ -814,6 +954,16 @@ SetWrapperClass sets WrapperClass field to given value.
 
 HasWrapperClass returns a boolean if a field has been set.
 
+### SetWrapperClassNil
+
+`func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) SetWrapperClassNil(b bool)`
+
+ SetWrapperClassNil sets the value for WrapperClass to be an explicit nil
+
+### UnsetWrapperClass
+`func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) UnsetWrapperClass()`
+
+UnsetWrapperClass ensures that no value is present for WrapperClass, not even an explicit nil
 ### GetEnabled
 
 `func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) GetEnabled() bool`
@@ -889,6 +1039,16 @@ SetDependsOnCode sets DependsOnCode field to given value.
 
 HasDependsOnCode returns a boolean if a field has been set.
 
+### SetDependsOnCodeNil
+
+`func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) SetDependsOnCodeNil(b bool)`
+
+ SetDependsOnCodeNil sets the value for DependsOnCode to be an explicit nil
+
+### UnsetDependsOnCode
+`func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) UnsetDependsOnCode()`
+
+UnsetDependsOnCode ensures that no value is present for DependsOnCode, not even an explicit nil
 ### GetVisibleOnCode
 
 `func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) GetVisibleOnCode() string`
@@ -914,6 +1074,16 @@ SetVisibleOnCode sets VisibleOnCode field to given value.
 
 HasVisibleOnCode returns a boolean if a field has been set.
 
+### SetVisibleOnCodeNil
+
+`func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) SetVisibleOnCodeNil(b bool)`
+
+ SetVisibleOnCodeNil sets the value for VisibleOnCode to be an explicit nil
+
+### UnsetVisibleOnCode
+`func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) UnsetVisibleOnCode()`
+
+UnsetVisibleOnCode ensures that no value is present for VisibleOnCode, not even an explicit nil
 ### GetRequireOnCode
 
 `func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) GetRequireOnCode() string`
@@ -939,6 +1109,16 @@ SetRequireOnCode sets RequireOnCode field to given value.
 
 HasRequireOnCode returns a boolean if a field has been set.
 
+### SetRequireOnCodeNil
+
+`func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) SetRequireOnCodeNil(b bool)`
+
+ SetRequireOnCodeNil sets the value for RequireOnCode to be an explicit nil
+
+### UnsetRequireOnCode
+`func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) UnsetRequireOnCode()`
+
+UnsetRequireOnCode ensures that no value is present for RequireOnCode, not even an explicit nil
 ### GetContextualDefault
 
 `func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) GetContextualDefault() bool`
@@ -989,6 +1169,16 @@ SetDisplayValueOnDetails sets DisplayValueOnDetails field to given value.
 
 HasDisplayValueOnDetails returns a boolean if a field has been set.
 
+### SetDisplayValueOnDetailsNil
+
+`func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) SetDisplayValueOnDetailsNil(b bool)`
+
+ SetDisplayValueOnDetailsNil sets the value for DisplayValueOnDetails to be an explicit nil
+
+### UnsetDisplayValueOnDetails
+`func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) UnsetDisplayValueOnDetails()`
+
+UnsetDisplayValueOnDetails ensures that no value is present for DisplayValueOnDetails, not even an explicit nil
 ### GetShowOnCreate
 
 `func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) GetShowOnCreate() bool`
@@ -1014,6 +1204,16 @@ SetShowOnCreate sets ShowOnCreate field to given value.
 
 HasShowOnCreate returns a boolean if a field has been set.
 
+### SetShowOnCreateNil
+
+`func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) SetShowOnCreateNil(b bool)`
+
+ SetShowOnCreateNil sets the value for ShowOnCreate to be an explicit nil
+
+### UnsetShowOnCreate
+`func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) UnsetShowOnCreate()`
+
+UnsetShowOnCreate ensures that no value is present for ShowOnCreate, not even an explicit nil
 ### GetShowOnEdit
 
 `func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) GetShowOnEdit() bool`
@@ -1039,6 +1239,16 @@ SetShowOnEdit sets ShowOnEdit field to given value.
 
 HasShowOnEdit returns a boolean if a field has been set.
 
+### SetShowOnEditNil
+
+`func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) SetShowOnEditNil(b bool)`
+
+ SetShowOnEditNil sets the value for ShowOnEdit to be an explicit nil
+
+### UnsetShowOnEdit
+`func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) UnsetShowOnEdit()`
+
+UnsetShowOnEdit ensures that no value is present for ShowOnEdit, not even an explicit nil
 ### GetLocalCredential
 
 `func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) GetLocalCredential() string`
@@ -1064,6 +1274,16 @@ SetLocalCredential sets LocalCredential field to given value.
 
 HasLocalCredential returns a boolean if a field has been set.
 
+### SetLocalCredentialNil
+
+`func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) SetLocalCredentialNil(b bool)`
+
+ SetLocalCredentialNil sets the value for LocalCredential to be an explicit nil
+
+### UnsetLocalCredential
+`func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) UnsetLocalCredential()`
+
+UnsetLocalCredential ensures that no value is present for LocalCredential, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

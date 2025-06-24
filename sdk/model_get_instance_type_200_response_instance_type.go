@@ -21,12 +21,12 @@ var _ MappedNullable = &GetInstanceType200ResponseInstanceType{}
 // GetInstanceType200ResponseInstanceType struct for GetInstanceType200ResponseInstanceType
 type GetInstanceType200ResponseInstanceType struct {
 	Id                   *int64                                                                      `json:"id,omitempty"`
-	Account              *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner     `json:"account,omitempty"`
+	Account              *GetAlerts200ResponseAllOfCheckGroupsInnerInstance                          `json:"account,omitempty"`
 	Name                 *string                                                                     `json:"name,omitempty"`
 	Labels               []string                                                                    `json:"labels,omitempty"`
 	Code                 *string                                                                     `json:"code,omitempty"`
-	Description          *string                                                                     `json:"description,omitempty"`
-	ProvisionTypeCode    *string                                                                     `json:"provisionTypeCode,omitempty"`
+	Description          NullableString                                                              `json:"description,omitempty"`
+	ProvisionTypeCode    NullableString                                                              `json:"provisionTypeCode,omitempty"`
 	Category             *string                                                                     `json:"category,omitempty"`
 	Active               *bool                                                                       `json:"active,omitempty"`
 	HasProvisioningStep  *bool                                                                       `json:"hasProvisioningStep,omitempty"`
@@ -34,11 +34,11 @@ type GetInstanceType200ResponseInstanceType struct {
 	HasConfig            *bool                                                                       `json:"hasConfig,omitempty"`
 	HasSettings          *bool                                                                       `json:"hasSettings,omitempty"`
 	HasAutoScale         *bool                                                                       `json:"hasAutoScale,omitempty"`
-	ProxyType            *string                                                                     `json:"proxyType,omitempty"`
-	ProxyPort            *string                                                                     `json:"proxyPort,omitempty"`
-	ProxyProtocol        *string                                                                     `json:"proxyProtocol,omitempty"`
+	ProxyType            NullableString                                                              `json:"proxyType,omitempty"`
+	ProxyPort            NullableString                                                              `json:"proxyPort,omitempty"`
+	ProxyProtocol        NullableString                                                              `json:"proxyProtocol,omitempty"`
 	EnvironmentPrefix    *string                                                                     `json:"environmentPrefix,omitempty"`
-	BackupType           *string                                                                     `json:"backupType,omitempty"`
+	BackupType           NullableString                                                              `json:"backupType,omitempty"`
 	Config               map[string]interface{}                                                      `json:"config,omitempty"`
 	Visibility           *string                                                                     `json:"visibility,omitempty"`
 	Featured             *bool                                                                       `json:"featured,omitempty"`
@@ -48,9 +48,9 @@ type GetInstanceType200ResponseInstanceType struct {
 	EnvironmentVariables []map[string]interface{}                                                    `json:"environmentVariables,omitempty"`
 	PriceSets            []map[string]interface{}                                                    `json:"priceSets,omitempty"`
 	// Logo image URL
-	ImagePath *string `json:"imagePath,omitempty"`
+	ImagePath NullableString `json:"imagePath,omitempty"`
 	// Dark logo image URL
-	DarkImagePath        *string                `json:"darkImagePath,omitempty"`
+	DarkImagePath        NullableString         `json:"darkImagePath,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -106,9 +106,9 @@ func (o *GetInstanceType200ResponseInstanceType) SetId(v int64) {
 }
 
 // GetAccount returns the Account field value if set, zero value otherwise.
-func (o *GetInstanceType200ResponseInstanceType) GetAccount() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *GetInstanceType200ResponseInstanceType) GetAccount() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.Account) {
-		var ret ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return *o.Account
@@ -116,7 +116,7 @@ func (o *GetInstanceType200ResponseInstanceType) GetAccount() ListApplianceSetti
 
 // GetAccountOk returns a tuple with the Account field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetInstanceType200ResponseInstanceType) GetAccountOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *GetInstanceType200ResponseInstanceType) GetAccountOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.Account) {
 		return nil, false
 	}
@@ -132,8 +132,8 @@ func (o *GetInstanceType200ResponseInstanceType) IsSetAccount() bool {
 	return false
 }
 
-// SetAccount gets a reference to the given ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the Account field.
-func (o *GetInstanceType200ResponseInstanceType) SetAccount(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetAccount gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Account field.
+func (o *GetInstanceType200ResponseInstanceType) SetAccount(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.Account = &v
 }
 
@@ -169,9 +169,9 @@ func (o *GetInstanceType200ResponseInstanceType) SetName(v string) {
 	o.Name = &v
 }
 
-// GetLabels returns the Labels field value if set, zero value otherwise.
+// GetLabels returns the Labels field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetInstanceType200ResponseInstanceType) GetLabels() []string {
-	if o == nil || IsNil(o.Labels) {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -180,6 +180,7 @@ func (o *GetInstanceType200ResponseInstanceType) GetLabels() []string {
 
 // GetLabelsOk returns a tuple with the Labels field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetInstanceType200ResponseInstanceType) GetLabelsOk() ([]string, bool) {
 	if o == nil || IsNil(o.Labels) {
 		return nil, false
@@ -233,68 +234,90 @@ func (o *GetInstanceType200ResponseInstanceType) SetCode(v string) {
 	o.Code = &v
 }
 
-// GetDescription returns the Description field value if set, zero value otherwise.
+// GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetInstanceType200ResponseInstanceType) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
+	if o == nil || IsNil(o.Description.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Description
+	return *o.Description.Get()
 }
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetInstanceType200ResponseInstanceType) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Description, true
+	return o.Description.Get(), o.Description.IsSet()
 }
 
 // IsSetDescription returns a boolean if a field has been set.
 func (o *GetInstanceType200ResponseInstanceType) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
+	if o != nil && o.Description.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDescription gets a reference to the given string and assigns it to the Description field.
+// SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *GetInstanceType200ResponseInstanceType) SetDescription(v string) {
-	o.Description = &v
+	o.Description.Set(&v)
 }
 
-// GetProvisionTypeCode returns the ProvisionTypeCode field value if set, zero value otherwise.
+// SetDescriptionNil sets the value for Description to be an explicit nil
+func (o *GetInstanceType200ResponseInstanceType) SetDescriptionNil() {
+	o.Description.Set(nil)
+}
+
+// UnsetDescription ensures that no value is present for Description, not even an explicit nil
+func (o *GetInstanceType200ResponseInstanceType) UnsetDescription() {
+	o.Description.Unset()
+}
+
+// GetProvisionTypeCode returns the ProvisionTypeCode field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetInstanceType200ResponseInstanceType) GetProvisionTypeCode() string {
-	if o == nil || IsNil(o.ProvisionTypeCode) {
+	if o == nil || IsNil(o.ProvisionTypeCode.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ProvisionTypeCode
+	return *o.ProvisionTypeCode.Get()
 }
 
 // GetProvisionTypeCodeOk returns a tuple with the ProvisionTypeCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetInstanceType200ResponseInstanceType) GetProvisionTypeCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.ProvisionTypeCode) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ProvisionTypeCode, true
+	return o.ProvisionTypeCode.Get(), o.ProvisionTypeCode.IsSet()
 }
 
 // IsSetProvisionTypeCode returns a boolean if a field has been set.
 func (o *GetInstanceType200ResponseInstanceType) IsSetProvisionTypeCode() bool {
-	if o != nil && !IsNil(o.ProvisionTypeCode) {
+	if o != nil && o.ProvisionTypeCode.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetProvisionTypeCode gets a reference to the given string and assigns it to the ProvisionTypeCode field.
+// SetProvisionTypeCode gets a reference to the given NullableString and assigns it to the ProvisionTypeCode field.
 func (o *GetInstanceType200ResponseInstanceType) SetProvisionTypeCode(v string) {
-	o.ProvisionTypeCode = &v
+	o.ProvisionTypeCode.Set(&v)
+}
+
+// SetProvisionTypeCodeNil sets the value for ProvisionTypeCode to be an explicit nil
+func (o *GetInstanceType200ResponseInstanceType) SetProvisionTypeCodeNil() {
+	o.ProvisionTypeCode.Set(nil)
+}
+
+// UnsetProvisionTypeCode ensures that no value is present for ProvisionTypeCode, not even an explicit nil
+func (o *GetInstanceType200ResponseInstanceType) UnsetProvisionTypeCode() {
+	o.ProvisionTypeCode.Unset()
 }
 
 // GetCategory returns the Category field value if set, zero value otherwise.
@@ -521,100 +544,133 @@ func (o *GetInstanceType200ResponseInstanceType) SetHasAutoScale(v bool) {
 	o.HasAutoScale = &v
 }
 
-// GetProxyType returns the ProxyType field value if set, zero value otherwise.
+// GetProxyType returns the ProxyType field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetInstanceType200ResponseInstanceType) GetProxyType() string {
-	if o == nil || IsNil(o.ProxyType) {
+	if o == nil || IsNil(o.ProxyType.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ProxyType
+	return *o.ProxyType.Get()
 }
 
 // GetProxyTypeOk returns a tuple with the ProxyType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetInstanceType200ResponseInstanceType) GetProxyTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.ProxyType) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ProxyType, true
+	return o.ProxyType.Get(), o.ProxyType.IsSet()
 }
 
 // IsSetProxyType returns a boolean if a field has been set.
 func (o *GetInstanceType200ResponseInstanceType) IsSetProxyType() bool {
-	if o != nil && !IsNil(o.ProxyType) {
+	if o != nil && o.ProxyType.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetProxyType gets a reference to the given string and assigns it to the ProxyType field.
+// SetProxyType gets a reference to the given NullableString and assigns it to the ProxyType field.
 func (o *GetInstanceType200ResponseInstanceType) SetProxyType(v string) {
-	o.ProxyType = &v
+	o.ProxyType.Set(&v)
 }
 
-// GetProxyPort returns the ProxyPort field value if set, zero value otherwise.
+// SetProxyTypeNil sets the value for ProxyType to be an explicit nil
+func (o *GetInstanceType200ResponseInstanceType) SetProxyTypeNil() {
+	o.ProxyType.Set(nil)
+}
+
+// UnsetProxyType ensures that no value is present for ProxyType, not even an explicit nil
+func (o *GetInstanceType200ResponseInstanceType) UnsetProxyType() {
+	o.ProxyType.Unset()
+}
+
+// GetProxyPort returns the ProxyPort field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetInstanceType200ResponseInstanceType) GetProxyPort() string {
-	if o == nil || IsNil(o.ProxyPort) {
+	if o == nil || IsNil(o.ProxyPort.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ProxyPort
+	return *o.ProxyPort.Get()
 }
 
 // GetProxyPortOk returns a tuple with the ProxyPort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetInstanceType200ResponseInstanceType) GetProxyPortOk() (*string, bool) {
-	if o == nil || IsNil(o.ProxyPort) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ProxyPort, true
+	return o.ProxyPort.Get(), o.ProxyPort.IsSet()
 }
 
 // IsSetProxyPort returns a boolean if a field has been set.
 func (o *GetInstanceType200ResponseInstanceType) IsSetProxyPort() bool {
-	if o != nil && !IsNil(o.ProxyPort) {
+	if o != nil && o.ProxyPort.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetProxyPort gets a reference to the given string and assigns it to the ProxyPort field.
+// SetProxyPort gets a reference to the given NullableString and assigns it to the ProxyPort field.
 func (o *GetInstanceType200ResponseInstanceType) SetProxyPort(v string) {
-	o.ProxyPort = &v
+	o.ProxyPort.Set(&v)
 }
 
-// GetProxyProtocol returns the ProxyProtocol field value if set, zero value otherwise.
+// SetProxyPortNil sets the value for ProxyPort to be an explicit nil
+func (o *GetInstanceType200ResponseInstanceType) SetProxyPortNil() {
+	o.ProxyPort.Set(nil)
+}
+
+// UnsetProxyPort ensures that no value is present for ProxyPort, not even an explicit nil
+func (o *GetInstanceType200ResponseInstanceType) UnsetProxyPort() {
+	o.ProxyPort.Unset()
+}
+
+// GetProxyProtocol returns the ProxyProtocol field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetInstanceType200ResponseInstanceType) GetProxyProtocol() string {
-	if o == nil || IsNil(o.ProxyProtocol) {
+	if o == nil || IsNil(o.ProxyProtocol.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ProxyProtocol
+	return *o.ProxyProtocol.Get()
 }
 
 // GetProxyProtocolOk returns a tuple with the ProxyProtocol field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetInstanceType200ResponseInstanceType) GetProxyProtocolOk() (*string, bool) {
-	if o == nil || IsNil(o.ProxyProtocol) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ProxyProtocol, true
+	return o.ProxyProtocol.Get(), o.ProxyProtocol.IsSet()
 }
 
 // IsSetProxyProtocol returns a boolean if a field has been set.
 func (o *GetInstanceType200ResponseInstanceType) IsSetProxyProtocol() bool {
-	if o != nil && !IsNil(o.ProxyProtocol) {
+	if o != nil && o.ProxyProtocol.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetProxyProtocol gets a reference to the given string and assigns it to the ProxyProtocol field.
+// SetProxyProtocol gets a reference to the given NullableString and assigns it to the ProxyProtocol field.
 func (o *GetInstanceType200ResponseInstanceType) SetProxyProtocol(v string) {
-	o.ProxyProtocol = &v
+	o.ProxyProtocol.Set(&v)
+}
+
+// SetProxyProtocolNil sets the value for ProxyProtocol to be an explicit nil
+func (o *GetInstanceType200ResponseInstanceType) SetProxyProtocolNil() {
+	o.ProxyProtocol.Set(nil)
+}
+
+// UnsetProxyProtocol ensures that no value is present for ProxyProtocol, not even an explicit nil
+func (o *GetInstanceType200ResponseInstanceType) UnsetProxyProtocol() {
+	o.ProxyProtocol.Unset()
 }
 
 // GetEnvironmentPrefix returns the EnvironmentPrefix field value if set, zero value otherwise.
@@ -649,41 +705,52 @@ func (o *GetInstanceType200ResponseInstanceType) SetEnvironmentPrefix(v string) 
 	o.EnvironmentPrefix = &v
 }
 
-// GetBackupType returns the BackupType field value if set, zero value otherwise.
+// GetBackupType returns the BackupType field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetInstanceType200ResponseInstanceType) GetBackupType() string {
-	if o == nil || IsNil(o.BackupType) {
+	if o == nil || IsNil(o.BackupType.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.BackupType
+	return *o.BackupType.Get()
 }
 
 // GetBackupTypeOk returns a tuple with the BackupType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetInstanceType200ResponseInstanceType) GetBackupTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.BackupType) {
+	if o == nil {
 		return nil, false
 	}
-	return o.BackupType, true
+	return o.BackupType.Get(), o.BackupType.IsSet()
 }
 
 // IsSetBackupType returns a boolean if a field has been set.
 func (o *GetInstanceType200ResponseInstanceType) IsSetBackupType() bool {
-	if o != nil && !IsNil(o.BackupType) {
+	if o != nil && o.BackupType.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetBackupType gets a reference to the given string and assigns it to the BackupType field.
+// SetBackupType gets a reference to the given NullableString and assigns it to the BackupType field.
 func (o *GetInstanceType200ResponseInstanceType) SetBackupType(v string) {
-	o.BackupType = &v
+	o.BackupType.Set(&v)
 }
 
-// GetConfig returns the Config field value if set, zero value otherwise.
+// SetBackupTypeNil sets the value for BackupType to be an explicit nil
+func (o *GetInstanceType200ResponseInstanceType) SetBackupTypeNil() {
+	o.BackupType.Set(nil)
+}
+
+// UnsetBackupType ensures that no value is present for BackupType, not even an explicit nil
+func (o *GetInstanceType200ResponseInstanceType) UnsetBackupType() {
+	o.BackupType.Unset()
+}
+
+// GetConfig returns the Config field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetInstanceType200ResponseInstanceType) GetConfig() map[string]interface{} {
-	if o == nil || IsNil(o.Config) {
+	if o == nil {
 		var ret map[string]interface{}
 		return ret
 	}
@@ -692,6 +759,7 @@ func (o *GetInstanceType200ResponseInstanceType) GetConfig() map[string]interfac
 
 // GetConfigOk returns a tuple with the Config field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetInstanceType200ResponseInstanceType) GetConfigOk() (map[string]interface{}, bool) {
 	if o == nil || IsNil(o.Config) {
 		return map[string]interface{}{}, false
@@ -873,9 +941,9 @@ func (o *GetInstanceType200ResponseInstanceType) SetOptionTypes(v []ListCatalogI
 	o.OptionTypes = v
 }
 
-// GetEnvironmentVariables returns the EnvironmentVariables field value if set, zero value otherwise.
+// GetEnvironmentVariables returns the EnvironmentVariables field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetInstanceType200ResponseInstanceType) GetEnvironmentVariables() []map[string]interface{} {
-	if o == nil || IsNil(o.EnvironmentVariables) {
+	if o == nil {
 		var ret []map[string]interface{}
 		return ret
 	}
@@ -884,6 +952,7 @@ func (o *GetInstanceType200ResponseInstanceType) GetEnvironmentVariables() []map
 
 // GetEnvironmentVariablesOk returns a tuple with the EnvironmentVariables field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetInstanceType200ResponseInstanceType) GetEnvironmentVariablesOk() ([]map[string]interface{}, bool) {
 	if o == nil || IsNil(o.EnvironmentVariables) {
 		return nil, false
@@ -905,9 +974,9 @@ func (o *GetInstanceType200ResponseInstanceType) SetEnvironmentVariables(v []map
 	o.EnvironmentVariables = v
 }
 
-// GetPriceSets returns the PriceSets field value if set, zero value otherwise.
+// GetPriceSets returns the PriceSets field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetInstanceType200ResponseInstanceType) GetPriceSets() []map[string]interface{} {
-	if o == nil || IsNil(o.PriceSets) {
+	if o == nil {
 		var ret []map[string]interface{}
 		return ret
 	}
@@ -916,6 +985,7 @@ func (o *GetInstanceType200ResponseInstanceType) GetPriceSets() []map[string]int
 
 // GetPriceSetsOk returns a tuple with the PriceSets field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetInstanceType200ResponseInstanceType) GetPriceSetsOk() ([]map[string]interface{}, bool) {
 	if o == nil || IsNil(o.PriceSets) {
 		return nil, false
@@ -937,68 +1007,90 @@ func (o *GetInstanceType200ResponseInstanceType) SetPriceSets(v []map[string]int
 	o.PriceSets = v
 }
 
-// GetImagePath returns the ImagePath field value if set, zero value otherwise.
+// GetImagePath returns the ImagePath field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetInstanceType200ResponseInstanceType) GetImagePath() string {
-	if o == nil || IsNil(o.ImagePath) {
+	if o == nil || IsNil(o.ImagePath.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ImagePath
+	return *o.ImagePath.Get()
 }
 
 // GetImagePathOk returns a tuple with the ImagePath field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetInstanceType200ResponseInstanceType) GetImagePathOk() (*string, bool) {
-	if o == nil || IsNil(o.ImagePath) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ImagePath, true
+	return o.ImagePath.Get(), o.ImagePath.IsSet()
 }
 
 // IsSetImagePath returns a boolean if a field has been set.
 func (o *GetInstanceType200ResponseInstanceType) IsSetImagePath() bool {
-	if o != nil && !IsNil(o.ImagePath) {
+	if o != nil && o.ImagePath.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetImagePath gets a reference to the given string and assigns it to the ImagePath field.
+// SetImagePath gets a reference to the given NullableString and assigns it to the ImagePath field.
 func (o *GetInstanceType200ResponseInstanceType) SetImagePath(v string) {
-	o.ImagePath = &v
+	o.ImagePath.Set(&v)
 }
 
-// GetDarkImagePath returns the DarkImagePath field value if set, zero value otherwise.
+// SetImagePathNil sets the value for ImagePath to be an explicit nil
+func (o *GetInstanceType200ResponseInstanceType) SetImagePathNil() {
+	o.ImagePath.Set(nil)
+}
+
+// UnsetImagePath ensures that no value is present for ImagePath, not even an explicit nil
+func (o *GetInstanceType200ResponseInstanceType) UnsetImagePath() {
+	o.ImagePath.Unset()
+}
+
+// GetDarkImagePath returns the DarkImagePath field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetInstanceType200ResponseInstanceType) GetDarkImagePath() string {
-	if o == nil || IsNil(o.DarkImagePath) {
+	if o == nil || IsNil(o.DarkImagePath.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.DarkImagePath
+	return *o.DarkImagePath.Get()
 }
 
 // GetDarkImagePathOk returns a tuple with the DarkImagePath field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetInstanceType200ResponseInstanceType) GetDarkImagePathOk() (*string, bool) {
-	if o == nil || IsNil(o.DarkImagePath) {
+	if o == nil {
 		return nil, false
 	}
-	return o.DarkImagePath, true
+	return o.DarkImagePath.Get(), o.DarkImagePath.IsSet()
 }
 
 // IsSetDarkImagePath returns a boolean if a field has been set.
 func (o *GetInstanceType200ResponseInstanceType) IsSetDarkImagePath() bool {
-	if o != nil && !IsNil(o.DarkImagePath) {
+	if o != nil && o.DarkImagePath.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDarkImagePath gets a reference to the given string and assigns it to the DarkImagePath field.
+// SetDarkImagePath gets a reference to the given NullableString and assigns it to the DarkImagePath field.
 func (o *GetInstanceType200ResponseInstanceType) SetDarkImagePath(v string) {
-	o.DarkImagePath = &v
+	o.DarkImagePath.Set(&v)
+}
+
+// SetDarkImagePathNil sets the value for DarkImagePath to be an explicit nil
+func (o *GetInstanceType200ResponseInstanceType) SetDarkImagePathNil() {
+	o.DarkImagePath.Set(nil)
+}
+
+// UnsetDarkImagePath ensures that no value is present for DarkImagePath, not even an explicit nil
+func (o *GetInstanceType200ResponseInstanceType) UnsetDarkImagePath() {
+	o.DarkImagePath.Unset()
 }
 
 func (o GetInstanceType200ResponseInstanceType) MarshalJSON() ([]byte, error) {
@@ -1020,17 +1112,17 @@ func (o GetInstanceType200ResponseInstanceType) ToMap() (map[string]interface{},
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !IsNil(o.Labels) {
+	if o.Labels != nil {
 		toSerialize["labels"] = o.Labels
 	}
 	if !IsNil(o.Code) {
 		toSerialize["code"] = o.Code
 	}
-	if !IsNil(o.Description) {
-		toSerialize["description"] = o.Description
+	if o.Description.IsSet() {
+		toSerialize["description"] = o.Description.Get()
 	}
-	if !IsNil(o.ProvisionTypeCode) {
-		toSerialize["provisionTypeCode"] = o.ProvisionTypeCode
+	if o.ProvisionTypeCode.IsSet() {
+		toSerialize["provisionTypeCode"] = o.ProvisionTypeCode.Get()
 	}
 	if !IsNil(o.Category) {
 		toSerialize["category"] = o.Category
@@ -1053,22 +1145,22 @@ func (o GetInstanceType200ResponseInstanceType) ToMap() (map[string]interface{},
 	if !IsNil(o.HasAutoScale) {
 		toSerialize["hasAutoScale"] = o.HasAutoScale
 	}
-	if !IsNil(o.ProxyType) {
-		toSerialize["proxyType"] = o.ProxyType
+	if o.ProxyType.IsSet() {
+		toSerialize["proxyType"] = o.ProxyType.Get()
 	}
-	if !IsNil(o.ProxyPort) {
-		toSerialize["proxyPort"] = o.ProxyPort
+	if o.ProxyPort.IsSet() {
+		toSerialize["proxyPort"] = o.ProxyPort.Get()
 	}
-	if !IsNil(o.ProxyProtocol) {
-		toSerialize["proxyProtocol"] = o.ProxyProtocol
+	if o.ProxyProtocol.IsSet() {
+		toSerialize["proxyProtocol"] = o.ProxyProtocol.Get()
 	}
 	if !IsNil(o.EnvironmentPrefix) {
 		toSerialize["environmentPrefix"] = o.EnvironmentPrefix
 	}
-	if !IsNil(o.BackupType) {
-		toSerialize["backupType"] = o.BackupType
+	if o.BackupType.IsSet() {
+		toSerialize["backupType"] = o.BackupType.Get()
 	}
-	if !IsNil(o.Config) {
+	if o.Config != nil {
 		toSerialize["config"] = o.Config
 	}
 	if !IsNil(o.Visibility) {
@@ -1086,17 +1178,17 @@ func (o GetInstanceType200ResponseInstanceType) ToMap() (map[string]interface{},
 	if !IsNil(o.OptionTypes) {
 		toSerialize["optionTypes"] = o.OptionTypes
 	}
-	if !IsNil(o.EnvironmentVariables) {
+	if o.EnvironmentVariables != nil {
 		toSerialize["environmentVariables"] = o.EnvironmentVariables
 	}
-	if !IsNil(o.PriceSets) {
+	if o.PriceSets != nil {
 		toSerialize["priceSets"] = o.PriceSets
 	}
-	if !IsNil(o.ImagePath) {
-		toSerialize["imagePath"] = o.ImagePath
+	if o.ImagePath.IsSet() {
+		toSerialize["imagePath"] = o.ImagePath.Get()
 	}
-	if !IsNil(o.DarkImagePath) {
-		toSerialize["darkImagePath"] = o.DarkImagePath
+	if o.DarkImagePath.IsSet() {
+		toSerialize["darkImagePath"] = o.DarkImagePath.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {

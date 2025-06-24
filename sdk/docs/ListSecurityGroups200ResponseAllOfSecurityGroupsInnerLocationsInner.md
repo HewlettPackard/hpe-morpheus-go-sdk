@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **NullableString** |  | [optional] 
 **ExternalId** | Pointer to **string** |  | [optional] 
-**IacId** | Pointer to **string** |  | [optional] 
+**IacId** | Pointer to **NullableString** |  | [optional] 
 **Zone** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **ZonePool** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **Status** | Pointer to **string** |  | [optional] 
-**Priority** | Pointer to **string** |  | [optional] 
-**GroupLayer** | Pointer to **string** |  | [optional] 
+**Priority** | Pointer to **NullableString** |  | [optional] 
+**GroupLayer** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -109,6 +109,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInner) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInner) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetExternalId
 
 `func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInner) GetExternalId() string`
@@ -159,6 +169,16 @@ SetIacId sets IacId field to given value.
 
 HasIacId returns a boolean if a field has been set.
 
+### SetIacIdNil
+
+`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInner) SetIacIdNil(b bool)`
+
+ SetIacIdNil sets the value for IacId to be an explicit nil
+
+### UnsetIacId
+`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInner) UnsetIacId()`
+
+UnsetIacId ensures that no value is present for IacId, not even an explicit nil
 ### GetZone
 
 `func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInner) GetZone() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
@@ -259,6 +279,16 @@ SetPriority sets Priority field to given value.
 
 HasPriority returns a boolean if a field has been set.
 
+### SetPriorityNil
+
+`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInner) SetPriorityNil(b bool)`
+
+ SetPriorityNil sets the value for Priority to be an explicit nil
+
+### UnsetPriority
+`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInner) UnsetPriority()`
+
+UnsetPriority ensures that no value is present for Priority, not even an explicit nil
 ### GetGroupLayer
 
 `func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInner) GetGroupLayer() string`
@@ -284,6 +314,16 @@ SetGroupLayer sets GroupLayer field to given value.
 
 HasGroupLayer returns a boolean if a field has been set.
 
+### SetGroupLayerNil
+
+`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInner) SetGroupLayerNil(b bool)`
+
+ SetGroupLayerNil sets the value for GroupLayer to be an explicit nil
+
+### UnsetGroupLayer
+`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInner) UnsetGroupLayer()`
+
+UnsetGroupLayer ensures that no value is present for GroupLayer, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

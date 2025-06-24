@@ -5,26 +5,26 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
-**Name** | Pointer to **string** |  | [optional] 
+**Name** | Pointer to **NullableString** |  | [optional] 
 **RuleType** | Pointer to **string** |  | [optional] 
 **CustomRule** | Pointer to **bool** |  | [optional] 
-**InstanceTypeId** | Pointer to **string** |  | [optional] 
+**InstanceTypeId** | Pointer to **NullableString** |  | [optional] 
 **Direction** | Pointer to **string** |  | [optional] 
 **Policy** | Pointer to **string** |  | [optional] 
 **SourceType** | Pointer to **string** |  | [optional] 
-**Source** | Pointer to **string** |  | [optional] 
+**Source** | Pointer to **NullableString** |  | [optional] 
 **SourceGroup** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **SourceTier** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
-**PortRange** | Pointer to **string** |  | [optional] 
-**SourcePortRange** | Pointer to **string** |  | [optional] 
-**DestinationPortRange** | Pointer to **string** |  | [optional] 
+**PortRange** | Pointer to **NullableString** |  | [optional] 
+**SourcePortRange** | Pointer to **NullableString** |  | [optional] 
+**DestinationPortRange** | Pointer to **NullableString** |  | [optional] 
 **Protocol** | Pointer to **string** |  | [optional] 
 **DestinationType** | Pointer to **string** |  | [optional] 
-**Destination** | Pointer to **string** |  | [optional] 
+**Destination** | Pointer to **NullableString** |  | [optional] 
 **DestinationGroup** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **DestinationTier** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
-**ExternalId** | Pointer to **string** |  | [optional] 
-**Enabled** | Pointer to **string** |  | [optional] 
+**ExternalId** | Pointer to **NullableString** |  | [optional] 
+**Enabled** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -95,6 +95,16 @@ SetName sets Name field to given value.
 
 HasName returns a boolean if a field has been set.
 
+### SetNameNil
+
+`func (o *SecurityGroupRule) SetNameNil(b bool)`
+
+ SetNameNil sets the value for Name to be an explicit nil
+
+### UnsetName
+`func (o *SecurityGroupRule) UnsetName()`
+
+UnsetName ensures that no value is present for Name, not even an explicit nil
 ### GetRuleType
 
 `func (o *SecurityGroupRule) GetRuleType() string`
@@ -170,6 +180,16 @@ SetInstanceTypeId sets InstanceTypeId field to given value.
 
 HasInstanceTypeId returns a boolean if a field has been set.
 
+### SetInstanceTypeIdNil
+
+`func (o *SecurityGroupRule) SetInstanceTypeIdNil(b bool)`
+
+ SetInstanceTypeIdNil sets the value for InstanceTypeId to be an explicit nil
+
+### UnsetInstanceTypeId
+`func (o *SecurityGroupRule) UnsetInstanceTypeId()`
+
+UnsetInstanceTypeId ensures that no value is present for InstanceTypeId, not even an explicit nil
 ### GetDirection
 
 `func (o *SecurityGroupRule) GetDirection() string`
@@ -270,6 +290,16 @@ SetSource sets Source field to given value.
 
 HasSource returns a boolean if a field has been set.
 
+### SetSourceNil
+
+`func (o *SecurityGroupRule) SetSourceNil(b bool)`
+
+ SetSourceNil sets the value for Source to be an explicit nil
+
+### UnsetSource
+`func (o *SecurityGroupRule) UnsetSource()`
+
+UnsetSource ensures that no value is present for Source, not even an explicit nil
 ### GetSourceGroup
 
 `func (o *SecurityGroupRule) GetSourceGroup() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
@@ -345,6 +375,16 @@ SetPortRange sets PortRange field to given value.
 
 HasPortRange returns a boolean if a field has been set.
 
+### SetPortRangeNil
+
+`func (o *SecurityGroupRule) SetPortRangeNil(b bool)`
+
+ SetPortRangeNil sets the value for PortRange to be an explicit nil
+
+### UnsetPortRange
+`func (o *SecurityGroupRule) UnsetPortRange()`
+
+UnsetPortRange ensures that no value is present for PortRange, not even an explicit nil
 ### GetSourcePortRange
 
 `func (o *SecurityGroupRule) GetSourcePortRange() string`
@@ -370,6 +410,16 @@ SetSourcePortRange sets SourcePortRange field to given value.
 
 HasSourcePortRange returns a boolean if a field has been set.
 
+### SetSourcePortRangeNil
+
+`func (o *SecurityGroupRule) SetSourcePortRangeNil(b bool)`
+
+ SetSourcePortRangeNil sets the value for SourcePortRange to be an explicit nil
+
+### UnsetSourcePortRange
+`func (o *SecurityGroupRule) UnsetSourcePortRange()`
+
+UnsetSourcePortRange ensures that no value is present for SourcePortRange, not even an explicit nil
 ### GetDestinationPortRange
 
 `func (o *SecurityGroupRule) GetDestinationPortRange() string`
@@ -395,6 +445,16 @@ SetDestinationPortRange sets DestinationPortRange field to given value.
 
 HasDestinationPortRange returns a boolean if a field has been set.
 
+### SetDestinationPortRangeNil
+
+`func (o *SecurityGroupRule) SetDestinationPortRangeNil(b bool)`
+
+ SetDestinationPortRangeNil sets the value for DestinationPortRange to be an explicit nil
+
+### UnsetDestinationPortRange
+`func (o *SecurityGroupRule) UnsetDestinationPortRange()`
+
+UnsetDestinationPortRange ensures that no value is present for DestinationPortRange, not even an explicit nil
 ### GetProtocol
 
 `func (o *SecurityGroupRule) GetProtocol() string`
@@ -470,6 +530,16 @@ SetDestination sets Destination field to given value.
 
 HasDestination returns a boolean if a field has been set.
 
+### SetDestinationNil
+
+`func (o *SecurityGroupRule) SetDestinationNil(b bool)`
+
+ SetDestinationNil sets the value for Destination to be an explicit nil
+
+### UnsetDestination
+`func (o *SecurityGroupRule) UnsetDestination()`
+
+UnsetDestination ensures that no value is present for Destination, not even an explicit nil
 ### GetDestinationGroup
 
 `func (o *SecurityGroupRule) GetDestinationGroup() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
@@ -545,6 +615,16 @@ SetExternalId sets ExternalId field to given value.
 
 HasExternalId returns a boolean if a field has been set.
 
+### SetExternalIdNil
+
+`func (o *SecurityGroupRule) SetExternalIdNil(b bool)`
+
+ SetExternalIdNil sets the value for ExternalId to be an explicit nil
+
+### UnsetExternalId
+`func (o *SecurityGroupRule) UnsetExternalId()`
+
+UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
 ### GetEnabled
 
 `func (o *SecurityGroupRule) GetEnabled() string`
@@ -570,6 +650,16 @@ SetEnabled sets Enabled field to given value.
 
 HasEnabled returns a boolean if a field has been set.
 
+### SetEnabledNil
+
+`func (o *SecurityGroupRule) SetEnabledNil(b bool)`
+
+ SetEnabledNil sets the value for Enabled to be an explicit nil
+
+### UnsetEnabled
+`func (o *SecurityGroupRule) UnsetEnabled()`
+
+UnsetEnabled ensures that no value is present for Enabled, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

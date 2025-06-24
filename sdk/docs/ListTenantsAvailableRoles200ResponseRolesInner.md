@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
 **Authority** | Pointer to **string** |  | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
-**RoleType** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **NullableString** |  | [optional] 
+**RoleType** | Pointer to **NullableString** |  | [optional] 
 **Owner** | Pointer to **map[string]interface{}** |  | [optional] 
 
 ## Methods
@@ -104,6 +104,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *ListTenantsAvailableRoles200ResponseRolesInner) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *ListTenantsAvailableRoles200ResponseRolesInner) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetRoleType
 
 `func (o *ListTenantsAvailableRoles200ResponseRolesInner) GetRoleType() string`
@@ -129,6 +139,16 @@ SetRoleType sets RoleType field to given value.
 
 HasRoleType returns a boolean if a field has been set.
 
+### SetRoleTypeNil
+
+`func (o *ListTenantsAvailableRoles200ResponseRolesInner) SetRoleTypeNil(b bool)`
+
+ SetRoleTypeNil sets the value for RoleType to be an explicit nil
+
+### UnsetRoleType
+`func (o *ListTenantsAvailableRoles200ResponseRolesInner) UnsetRoleType()`
+
+UnsetRoleType ensures that no value is present for RoleType, not even an explicit nil
 ### GetOwner
 
 `func (o *ListTenantsAvailableRoles200ResponseRolesInner) GetOwner() map[string]interface{}`
@@ -154,6 +174,16 @@ SetOwner sets Owner field to given value.
 
 HasOwner returns a boolean if a field has been set.
 
+### SetOwnerNil
+
+`func (o *ListTenantsAvailableRoles200ResponseRolesInner) SetOwnerNil(b bool)`
+
+ SetOwnerNil sets the value for Owner to be an explicit nil
+
+### UnsetOwner
+`func (o *ListTenantsAvailableRoles200ResponseRolesInner) UnsetOwner()`
+
+UnsetOwner ensures that no value is present for Owner, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

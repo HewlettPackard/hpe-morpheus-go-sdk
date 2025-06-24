@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
-**Account** | Pointer to [**ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
+**Description** | Pointer to **NullableString** |  | [optional] 
+**Account** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
 **RefScope** | Pointer to **string** |  | [optional] 
 **RefType** | Pointer to **string** |  | [optional] 
@@ -26,14 +26,14 @@ Name | Type | Description | Notes
 **TotalCost** | Pointer to **int64** |  | [optional] 
 **Currency** | Pointer to **string** |  | [optional] 
 **Rollover** | Pointer to **bool** |  | [optional] 
-**WarningLimit** | Pointer to **string** |  | [optional] 
-**OverLimit** | Pointer to **string** |  | [optional] 
-**ExternalId** | Pointer to **string** |  | [optional] 
-**InternalId** | Pointer to **string** |  | [optional] 
+**WarningLimit** | Pointer to **NullableString** |  | [optional] 
+**OverLimit** | Pointer to **NullableString** |  | [optional] 
+**ExternalId** | Pointer to **NullableString** |  | [optional] 
+**InternalId** | Pointer to **NullableString** |  | [optional] 
 **CreatedById** | Pointer to **int64** |  | [optional] 
 **CreatedByName** | Pointer to **string** |  | [optional] 
-**UpdatedById** | Pointer to **string** |  | [optional] 
-**UpdatedByName** | Pointer to **string** |  | [optional] 
+**UpdatedById** | Pointer to **NullableString** |  | [optional] 
+**UpdatedByName** | Pointer to **NullableString** |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
 
@@ -131,22 +131,32 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *ListBudgets200ResponseAllOfBudgetsInner) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *ListBudgets200ResponseAllOfBudgetsInner) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetAccount
 
-`func (o *ListBudgets200ResponseAllOfBudgetsInner) GetAccount() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *ListBudgets200ResponseAllOfBudgetsInner) GetAccount() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetAccount returns the Account field if non-nil, zero value otherwise.
 
 ### GetAccountOk
 
-`func (o *ListBudgets200ResponseAllOfBudgetsInner) GetAccountOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *ListBudgets200ResponseAllOfBudgetsInner) GetAccountOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetAccountOk returns a tuple with the Account field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccount
 
-`func (o *ListBudgets200ResponseAllOfBudgetsInner) SetAccount(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *ListBudgets200ResponseAllOfBudgetsInner) SetAccount(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetAccount sets Account field to given value.
 
@@ -631,6 +641,16 @@ SetWarningLimit sets WarningLimit field to given value.
 
 HasWarningLimit returns a boolean if a field has been set.
 
+### SetWarningLimitNil
+
+`func (o *ListBudgets200ResponseAllOfBudgetsInner) SetWarningLimitNil(b bool)`
+
+ SetWarningLimitNil sets the value for WarningLimit to be an explicit nil
+
+### UnsetWarningLimit
+`func (o *ListBudgets200ResponseAllOfBudgetsInner) UnsetWarningLimit()`
+
+UnsetWarningLimit ensures that no value is present for WarningLimit, not even an explicit nil
 ### GetOverLimit
 
 `func (o *ListBudgets200ResponseAllOfBudgetsInner) GetOverLimit() string`
@@ -656,6 +676,16 @@ SetOverLimit sets OverLimit field to given value.
 
 HasOverLimit returns a boolean if a field has been set.
 
+### SetOverLimitNil
+
+`func (o *ListBudgets200ResponseAllOfBudgetsInner) SetOverLimitNil(b bool)`
+
+ SetOverLimitNil sets the value for OverLimit to be an explicit nil
+
+### UnsetOverLimit
+`func (o *ListBudgets200ResponseAllOfBudgetsInner) UnsetOverLimit()`
+
+UnsetOverLimit ensures that no value is present for OverLimit, not even an explicit nil
 ### GetExternalId
 
 `func (o *ListBudgets200ResponseAllOfBudgetsInner) GetExternalId() string`
@@ -681,6 +711,16 @@ SetExternalId sets ExternalId field to given value.
 
 HasExternalId returns a boolean if a field has been set.
 
+### SetExternalIdNil
+
+`func (o *ListBudgets200ResponseAllOfBudgetsInner) SetExternalIdNil(b bool)`
+
+ SetExternalIdNil sets the value for ExternalId to be an explicit nil
+
+### UnsetExternalId
+`func (o *ListBudgets200ResponseAllOfBudgetsInner) UnsetExternalId()`
+
+UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
 ### GetInternalId
 
 `func (o *ListBudgets200ResponseAllOfBudgetsInner) GetInternalId() string`
@@ -706,6 +746,16 @@ SetInternalId sets InternalId field to given value.
 
 HasInternalId returns a boolean if a field has been set.
 
+### SetInternalIdNil
+
+`func (o *ListBudgets200ResponseAllOfBudgetsInner) SetInternalIdNil(b bool)`
+
+ SetInternalIdNil sets the value for InternalId to be an explicit nil
+
+### UnsetInternalId
+`func (o *ListBudgets200ResponseAllOfBudgetsInner) UnsetInternalId()`
+
+UnsetInternalId ensures that no value is present for InternalId, not even an explicit nil
 ### GetCreatedById
 
 `func (o *ListBudgets200ResponseAllOfBudgetsInner) GetCreatedById() int64`
@@ -781,6 +831,16 @@ SetUpdatedById sets UpdatedById field to given value.
 
 HasUpdatedById returns a boolean if a field has been set.
 
+### SetUpdatedByIdNil
+
+`func (o *ListBudgets200ResponseAllOfBudgetsInner) SetUpdatedByIdNil(b bool)`
+
+ SetUpdatedByIdNil sets the value for UpdatedById to be an explicit nil
+
+### UnsetUpdatedById
+`func (o *ListBudgets200ResponseAllOfBudgetsInner) UnsetUpdatedById()`
+
+UnsetUpdatedById ensures that no value is present for UpdatedById, not even an explicit nil
 ### GetUpdatedByName
 
 `func (o *ListBudgets200ResponseAllOfBudgetsInner) GetUpdatedByName() string`
@@ -806,6 +866,16 @@ SetUpdatedByName sets UpdatedByName field to given value.
 
 HasUpdatedByName returns a boolean if a field has been set.
 
+### SetUpdatedByNameNil
+
+`func (o *ListBudgets200ResponseAllOfBudgetsInner) SetUpdatedByNameNil(b bool)`
+
+ SetUpdatedByNameNil sets the value for UpdatedByName to be an explicit nil
+
+### UnsetUpdatedByName
+`func (o *ListBudgets200ResponseAllOfBudgetsInner) UnsetUpdatedByName()`
+
+UnsetUpdatedByName ensures that no value is present for UpdatedByName, not even an explicit nil
 ### GetDateCreated
 
 `func (o *ListBudgets200ResponseAllOfBudgetsInner) GetDateCreated() time.Time`

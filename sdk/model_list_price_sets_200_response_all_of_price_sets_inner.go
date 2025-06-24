@@ -28,9 +28,9 @@ type ListPriceSets200ResponseAllOfPriceSetsInner struct {
 	Type                 *string                                                  `json:"type,omitempty"`
 	RegionCode           *string                                                  `json:"regionCode,omitempty"`
 	SystemCreated        *bool                                                    `json:"systemCreated,omitempty"`
-	Zone                 *string                                                  `json:"zone,omitempty"`
-	ZonePool             *string                                                  `json:"zonePool,omitempty"`
-	Account              *string                                                  `json:"account,omitempty"`
+	Zone                 NullableString                                           `json:"zone,omitempty"`
+	ZonePool             NullableString                                           `json:"zonePool,omitempty"`
+	Account              NullableString                                           `json:"account,omitempty"`
 	Prices               []ListPriceSets200ResponseAllOfPriceSetsInnerPricesInner `json:"prices,omitempty"`
 	AdditionalProperties map[string]interface{}                                   `json:",remain"`
 }
@@ -310,100 +310,133 @@ func (o *ListPriceSets200ResponseAllOfPriceSetsInner) SetSystemCreated(v bool) {
 	o.SystemCreated = &v
 }
 
-// GetZone returns the Zone field value if set, zero value otherwise.
+// GetZone returns the Zone field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListPriceSets200ResponseAllOfPriceSetsInner) GetZone() string {
-	if o == nil || IsNil(o.Zone) {
+	if o == nil || IsNil(o.Zone.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Zone
+	return *o.Zone.Get()
 }
 
 // GetZoneOk returns a tuple with the Zone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListPriceSets200ResponseAllOfPriceSetsInner) GetZoneOk() (*string, bool) {
-	if o == nil || IsNil(o.Zone) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Zone, true
+	return o.Zone.Get(), o.Zone.IsSet()
 }
 
 // IsSetZone returns a boolean if a field has been set.
 func (o *ListPriceSets200ResponseAllOfPriceSetsInner) IsSetZone() bool {
-	if o != nil && !IsNil(o.Zone) {
+	if o != nil && o.Zone.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetZone gets a reference to the given string and assigns it to the Zone field.
+// SetZone gets a reference to the given NullableString and assigns it to the Zone field.
 func (o *ListPriceSets200ResponseAllOfPriceSetsInner) SetZone(v string) {
-	o.Zone = &v
+	o.Zone.Set(&v)
 }
 
-// GetZonePool returns the ZonePool field value if set, zero value otherwise.
+// SetZoneNil sets the value for Zone to be an explicit nil
+func (o *ListPriceSets200ResponseAllOfPriceSetsInner) SetZoneNil() {
+	o.Zone.Set(nil)
+}
+
+// UnsetZone ensures that no value is present for Zone, not even an explicit nil
+func (o *ListPriceSets200ResponseAllOfPriceSetsInner) UnsetZone() {
+	o.Zone.Unset()
+}
+
+// GetZonePool returns the ZonePool field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListPriceSets200ResponseAllOfPriceSetsInner) GetZonePool() string {
-	if o == nil || IsNil(o.ZonePool) {
+	if o == nil || IsNil(o.ZonePool.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ZonePool
+	return *o.ZonePool.Get()
 }
 
 // GetZonePoolOk returns a tuple with the ZonePool field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListPriceSets200ResponseAllOfPriceSetsInner) GetZonePoolOk() (*string, bool) {
-	if o == nil || IsNil(o.ZonePool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ZonePool, true
+	return o.ZonePool.Get(), o.ZonePool.IsSet()
 }
 
 // IsSetZonePool returns a boolean if a field has been set.
 func (o *ListPriceSets200ResponseAllOfPriceSetsInner) IsSetZonePool() bool {
-	if o != nil && !IsNil(o.ZonePool) {
+	if o != nil && o.ZonePool.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetZonePool gets a reference to the given string and assigns it to the ZonePool field.
+// SetZonePool gets a reference to the given NullableString and assigns it to the ZonePool field.
 func (o *ListPriceSets200ResponseAllOfPriceSetsInner) SetZonePool(v string) {
-	o.ZonePool = &v
+	o.ZonePool.Set(&v)
 }
 
-// GetAccount returns the Account field value if set, zero value otherwise.
+// SetZonePoolNil sets the value for ZonePool to be an explicit nil
+func (o *ListPriceSets200ResponseAllOfPriceSetsInner) SetZonePoolNil() {
+	o.ZonePool.Set(nil)
+}
+
+// UnsetZonePool ensures that no value is present for ZonePool, not even an explicit nil
+func (o *ListPriceSets200ResponseAllOfPriceSetsInner) UnsetZonePool() {
+	o.ZonePool.Unset()
+}
+
+// GetAccount returns the Account field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListPriceSets200ResponseAllOfPriceSetsInner) GetAccount() string {
-	if o == nil || IsNil(o.Account) {
+	if o == nil || IsNil(o.Account.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Account
+	return *o.Account.Get()
 }
 
 // GetAccountOk returns a tuple with the Account field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListPriceSets200ResponseAllOfPriceSetsInner) GetAccountOk() (*string, bool) {
-	if o == nil || IsNil(o.Account) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Account, true
+	return o.Account.Get(), o.Account.IsSet()
 }
 
 // IsSetAccount returns a boolean if a field has been set.
 func (o *ListPriceSets200ResponseAllOfPriceSetsInner) IsSetAccount() bool {
-	if o != nil && !IsNil(o.Account) {
+	if o != nil && o.Account.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetAccount gets a reference to the given string and assigns it to the Account field.
+// SetAccount gets a reference to the given NullableString and assigns it to the Account field.
 func (o *ListPriceSets200ResponseAllOfPriceSetsInner) SetAccount(v string) {
-	o.Account = &v
+	o.Account.Set(&v)
+}
+
+// SetAccountNil sets the value for Account to be an explicit nil
+func (o *ListPriceSets200ResponseAllOfPriceSetsInner) SetAccountNil() {
+	o.Account.Set(nil)
+}
+
+// UnsetAccount ensures that no value is present for Account, not even an explicit nil
+func (o *ListPriceSets200ResponseAllOfPriceSetsInner) UnsetAccount() {
+	o.Account.Unset()
 }
 
 // GetPrices returns the Prices field value if set, zero value otherwise.
@@ -472,14 +505,14 @@ func (o ListPriceSets200ResponseAllOfPriceSetsInner) ToMap() (map[string]interfa
 	if !IsNil(o.SystemCreated) {
 		toSerialize["systemCreated"] = o.SystemCreated
 	}
-	if !IsNil(o.Zone) {
-		toSerialize["zone"] = o.Zone
+	if o.Zone.IsSet() {
+		toSerialize["zone"] = o.Zone.Get()
 	}
-	if !IsNil(o.ZonePool) {
-		toSerialize["zonePool"] = o.ZonePool
+	if o.ZonePool.IsSet() {
+		toSerialize["zonePool"] = o.ZonePool.Get()
 	}
-	if !IsNil(o.Account) {
-		toSerialize["account"] = o.Account
+	if o.Account.IsSet() {
+		toSerialize["account"] = o.Account.Get()
 	}
 	if !IsNil(o.Prices) {
 		toSerialize["prices"] = o.Prices

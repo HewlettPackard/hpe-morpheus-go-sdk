@@ -6,15 +6,15 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ClientId** | **string** | Client ID | 
 **ClientSecret** | Pointer to **string** | Client Secret | [optional] 
-**AccessTokenValiditySeconds** | **int32** | Length of time accessToken is valid in seconds. | 
-**RefreshTokenValiditySeconds** | **int32** | Length of time refreshToken is valid in seconds. | 
+**AccessTokenValiditySeconds** | **NullableInt32** | Length of time accessToken is valid in seconds. | 
+**RefreshTokenValiditySeconds** | **NullableInt32** | Length of time refreshToken is valid in seconds. | 
 **RedirectUris** | Pointer to **[]string** | List of Redirect URIs for use with the OpenID Authorization Code Flow | [optional] 
 
 ## Methods
 
 ### NewAddClientRequestClient
 
-`func NewAddClientRequestClient(clientId string, accessTokenValiditySeconds int32, refreshTokenValiditySeconds int32, ) *AddClientRequestClient`
+`func NewAddClientRequestClient(clientId string, accessTokenValiditySeconds NullableInt32, refreshTokenValiditySeconds NullableInt32, ) *AddClientRequestClient`
 
 NewAddClientRequestClient instantiates a new AddClientRequestClient object
 This constructor will assign default values to properties that have it defined,
@@ -94,6 +94,16 @@ and a boolean to check if the value has been set.
 SetAccessTokenValiditySeconds sets AccessTokenValiditySeconds field to given value.
 
 
+### SetAccessTokenValiditySecondsNil
+
+`func (o *AddClientRequestClient) SetAccessTokenValiditySecondsNil(b bool)`
+
+ SetAccessTokenValiditySecondsNil sets the value for AccessTokenValiditySeconds to be an explicit nil
+
+### UnsetAccessTokenValiditySeconds
+`func (o *AddClientRequestClient) UnsetAccessTokenValiditySeconds()`
+
+UnsetAccessTokenValiditySeconds ensures that no value is present for AccessTokenValiditySeconds, not even an explicit nil
 ### GetRefreshTokenValiditySeconds
 
 `func (o *AddClientRequestClient) GetRefreshTokenValiditySeconds() int32`
@@ -114,6 +124,16 @@ and a boolean to check if the value has been set.
 SetRefreshTokenValiditySeconds sets RefreshTokenValiditySeconds field to given value.
 
 
+### SetRefreshTokenValiditySecondsNil
+
+`func (o *AddClientRequestClient) SetRefreshTokenValiditySecondsNil(b bool)`
+
+ SetRefreshTokenValiditySecondsNil sets the value for RefreshTokenValiditySeconds to be an explicit nil
+
+### UnsetRefreshTokenValiditySeconds
+`func (o *AddClientRequestClient) UnsetRefreshTokenValiditySeconds()`
+
+UnsetRefreshTokenValiditySeconds ensures that no value is present for RefreshTokenValiditySeconds, not even an explicit nil
 ### GetRedirectUris
 
 `func (o *AddClientRequestClient) GetRedirectUris() []string`

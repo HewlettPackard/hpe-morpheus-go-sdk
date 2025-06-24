@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **string** | Form name | [optional] 
 **Code** | Pointer to **string** | Unique form code | [optional] 
-**Description** | Pointer to **string** | A short description of the form | [optional] 
+**Description** | Pointer to **NullableString** | A short description of the form | [optional] 
 **Labels** | Pointer to **[]string** |  | [optional] 
 **Options** | Pointer to [**[]ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner**](ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner.md) | Inputs | [optional] 
 **FieldGroups** | Pointer to [**[]ListOptionForms200ResponseAllOfOptionTypesInnerFieldGroupsInner**](ListOptionForms200ResponseAllOfOptionTypesInnerFieldGroupsInner.md) | Field Groups | [optional] 
@@ -105,6 +105,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *OptionTypeFormCreate) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *OptionTypeFormCreate) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetLabels
 
 `func (o *OptionTypeFormCreate) GetLabels() []string`
@@ -130,6 +140,16 @@ SetLabels sets Labels field to given value.
 
 HasLabels returns a boolean if a field has been set.
 
+### SetLabelsNil
+
+`func (o *OptionTypeFormCreate) SetLabelsNil(b bool)`
+
+ SetLabelsNil sets the value for Labels to be an explicit nil
+
+### UnsetLabels
+`func (o *OptionTypeFormCreate) UnsetLabels()`
+
+UnsetLabels ensures that no value is present for Labels, not even an explicit nil
 ### GetOptions
 
 `func (o *OptionTypeFormCreate) GetOptions() []ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner`

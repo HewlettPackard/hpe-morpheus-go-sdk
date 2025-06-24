@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** | A name for the backup job | 
 **Code** | Pointer to **string** | A code for the backup job | [optional] 
-**ScheduleId** | Pointer to **int64** | Execute Schedule ID to use for the backup job | [optional] 
+**ScheduleId** | Pointer to **NullableInt64** | Execute Schedule ID to use for the backup job | [optional] 
 **RetentionCount** | Pointer to **int64** | Retention Count. By default the backup settings value will be used. | [optional] 
 
 ## Methods
@@ -98,6 +98,16 @@ SetScheduleId sets ScheduleId field to given value.
 
 HasScheduleId returns a boolean if a field has been set.
 
+### SetScheduleIdNil
+
+`func (o *AddBackupJobsRequestJob) SetScheduleIdNil(b bool)`
+
+ SetScheduleIdNil sets the value for ScheduleId to be an explicit nil
+
+### UnsetScheduleId
+`func (o *AddBackupJobsRequestJob) UnsetScheduleId()`
+
+UnsetScheduleId ensures that no value is present for ScheduleId, not even an explicit nil
 ### GetRetentionCount
 
 `func (o *AddBackupJobsRequestJob) GetRetentionCount() int64`

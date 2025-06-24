@@ -31,9 +31,9 @@ type UpdateLoadBalancerRequestLoadBalancer struct {
 	// private or public
 	Visibility *string `json:"visibility,omitempty"`
 	// Array of tenant account ids that are allowed access
-	Tenants              []CreateLoadBalancerRequestLoadBalancerTenantsInner      `json:"tenants,omitempty"`
-	ResourcePermission   *CreateLoadBalancerRequestLoadBalancerResourcePermission `json:"resourcePermission,omitempty"`
-	AdditionalProperties map[string]interface{}                                   `json:",remain"`
+	Tenants              []SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume `json:"tenants,omitempty"`
+	ResourcePermission   *CreateLoadBalancerRequestLoadBalancerResourcePermission             `json:"resourcePermission,omitempty"`
+	AdditionalProperties map[string]interface{}                                               `json:",remain"`
 }
 
 type _UpdateLoadBalancerRequestLoadBalancer UpdateLoadBalancerRequestLoadBalancer
@@ -220,9 +220,9 @@ func (o *UpdateLoadBalancerRequestLoadBalancer) SetVisibility(v string) {
 }
 
 // GetTenants returns the Tenants field value if set, zero value otherwise.
-func (o *UpdateLoadBalancerRequestLoadBalancer) GetTenants() []CreateLoadBalancerRequestLoadBalancerTenantsInner {
+func (o *UpdateLoadBalancerRequestLoadBalancer) GetTenants() []SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume {
 	if o == nil || IsNil(o.Tenants) {
-		var ret []CreateLoadBalancerRequestLoadBalancerTenantsInner
+		var ret []SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume
 		return ret
 	}
 	return o.Tenants
@@ -230,7 +230,7 @@ func (o *UpdateLoadBalancerRequestLoadBalancer) GetTenants() []CreateLoadBalance
 
 // GetTenantsOk returns a tuple with the Tenants field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UpdateLoadBalancerRequestLoadBalancer) GetTenantsOk() ([]CreateLoadBalancerRequestLoadBalancerTenantsInner, bool) {
+func (o *UpdateLoadBalancerRequestLoadBalancer) GetTenantsOk() ([]SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume, bool) {
 	if o == nil || IsNil(o.Tenants) {
 		return nil, false
 	}
@@ -246,8 +246,8 @@ func (o *UpdateLoadBalancerRequestLoadBalancer) IsSetTenants() bool {
 	return false
 }
 
-// SetTenants gets a reference to the given []CreateLoadBalancerRequestLoadBalancerTenantsInner and assigns it to the Tenants field.
-func (o *UpdateLoadBalancerRequestLoadBalancer) SetTenants(v []CreateLoadBalancerRequestLoadBalancerTenantsInner) {
+// SetTenants gets a reference to the given []SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume and assigns it to the Tenants field.
+func (o *UpdateLoadBalancerRequestLoadBalancer) SetTenants(v []SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume) {
 	o.Tenants = v
 }
 

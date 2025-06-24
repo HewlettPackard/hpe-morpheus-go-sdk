@@ -17,9 +17,9 @@ Name | Type | Description | Notes
 **Config** | Pointer to [**ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf12Config**](ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf12Config.md) |  | [optional] 
 **Status** | Pointer to **string** |  | [optional] 
 **StatusDate** | Pointer to **time.Time** |  | [optional] 
-**StatusMessage** | Pointer to **string** |  | [optional] 
-**LastSync** | Pointer to **string** |  | [optional] 
-**LastSyncDuration** | Pointer to **string** |  | [optional] 
+**StatusMessage** | Pointer to **NullableString** |  | [optional] 
+**LastSync** | Pointer to **NullableString** |  | [optional] 
+**LastSyncDuration** | Pointer to **NullableString** |  | [optional] 
 **Credential** | Pointer to [**ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential**](ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential.md) |  | [optional] 
 
 ## Methods
@@ -391,6 +391,16 @@ SetStatusMessage sets StatusMessage field to given value.
 
 HasStatusMessage returns a boolean if a field has been set.
 
+### SetStatusMessageNil
+
+`func (o *IntegrationRemedy) SetStatusMessageNil(b bool)`
+
+ SetStatusMessageNil sets the value for StatusMessage to be an explicit nil
+
+### UnsetStatusMessage
+`func (o *IntegrationRemedy) UnsetStatusMessage()`
+
+UnsetStatusMessage ensures that no value is present for StatusMessage, not even an explicit nil
 ### GetLastSync
 
 `func (o *IntegrationRemedy) GetLastSync() string`
@@ -416,6 +426,16 @@ SetLastSync sets LastSync field to given value.
 
 HasLastSync returns a boolean if a field has been set.
 
+### SetLastSyncNil
+
+`func (o *IntegrationRemedy) SetLastSyncNil(b bool)`
+
+ SetLastSyncNil sets the value for LastSync to be an explicit nil
+
+### UnsetLastSync
+`func (o *IntegrationRemedy) UnsetLastSync()`
+
+UnsetLastSync ensures that no value is present for LastSync, not even an explicit nil
 ### GetLastSyncDuration
 
 `func (o *IntegrationRemedy) GetLastSyncDuration() string`
@@ -441,6 +461,16 @@ SetLastSyncDuration sets LastSyncDuration field to given value.
 
 HasLastSyncDuration returns a boolean if a field has been set.
 
+### SetLastSyncDurationNil
+
+`func (o *IntegrationRemedy) SetLastSyncDurationNil(b bool)`
+
+ SetLastSyncDurationNil sets the value for LastSyncDuration to be an explicit nil
+
+### UnsetLastSyncDuration
+`func (o *IntegrationRemedy) UnsetLastSyncDuration()`
+
+UnsetLastSyncDuration ensures that no value is present for LastSyncDuration, not even an explicit nil
 ### GetCredential
 
 `func (o *IntegrationRemedy) GetCredential() ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential`

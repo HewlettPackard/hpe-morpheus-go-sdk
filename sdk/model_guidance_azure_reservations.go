@@ -30,17 +30,17 @@ type GuidanceAzureReservations struct {
 	ActionType           *string                                                    `json:"actionType,omitempty"`
 	ActionValue          *string                                                    `json:"actionValue,omitempty"`
 	ActionValueType      *string                                                    `json:"actionValueType,omitempty"`
-	ActionPlanId         *string                                                    `json:"actionPlanId,omitempty"`
+	ActionPlanId         NullableString                                             `json:"actionPlanId,omitempty"`
 	StatusMessage        *string                                                    `json:"statusMessage,omitempty"`
 	AccountId            *int64                                                     `json:"accountId,omitempty"`
-	UserId               *string                                                    `json:"userId,omitempty"`
+	UserId               NullableString                                             `json:"userId,omitempty"`
 	SiteId               *int64                                                     `json:"siteId,omitempty"`
 	Zone                 *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone    `json:"zone,omitempty"`
 	State                *string                                                    `json:"state,omitempty"`
-	StateMessage         *string                                                    `json:"stateMessage,omitempty"`
+	StateMessage         NullableString                                             `json:"stateMessage,omitempty"`
 	Severity             *string                                                    `json:"severity,omitempty"`
 	Resolved             *bool                                                      `json:"resolved,omitempty"`
-	ResolvedMessage      *string                                                    `json:"resolvedMessage,omitempty"`
+	ResolvedMessage      NullableString                                             `json:"resolvedMessage,omitempty"`
 	RefType              *string                                                    `json:"refType,omitempty"`
 	RefId                *int64                                                     `json:"refId,omitempty"`
 	RefName              *string                                                    `json:"refName,omitempty"`
@@ -357,36 +357,47 @@ func (o *GuidanceAzureReservations) SetActionValueType(v string) {
 	o.ActionValueType = &v
 }
 
-// GetActionPlanId returns the ActionPlanId field value if set, zero value otherwise.
+// GetActionPlanId returns the ActionPlanId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GuidanceAzureReservations) GetActionPlanId() string {
-	if o == nil || IsNil(o.ActionPlanId) {
+	if o == nil || IsNil(o.ActionPlanId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ActionPlanId
+	return *o.ActionPlanId.Get()
 }
 
 // GetActionPlanIdOk returns a tuple with the ActionPlanId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GuidanceAzureReservations) GetActionPlanIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ActionPlanId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ActionPlanId, true
+	return o.ActionPlanId.Get(), o.ActionPlanId.IsSet()
 }
 
 // IsSetActionPlanId returns a boolean if a field has been set.
 func (o *GuidanceAzureReservations) IsSetActionPlanId() bool {
-	if o != nil && !IsNil(o.ActionPlanId) {
+	if o != nil && o.ActionPlanId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetActionPlanId gets a reference to the given string and assigns it to the ActionPlanId field.
+// SetActionPlanId gets a reference to the given NullableString and assigns it to the ActionPlanId field.
 func (o *GuidanceAzureReservations) SetActionPlanId(v string) {
-	o.ActionPlanId = &v
+	o.ActionPlanId.Set(&v)
+}
+
+// SetActionPlanIdNil sets the value for ActionPlanId to be an explicit nil
+func (o *GuidanceAzureReservations) SetActionPlanIdNil() {
+	o.ActionPlanId.Set(nil)
+}
+
+// UnsetActionPlanId ensures that no value is present for ActionPlanId, not even an explicit nil
+func (o *GuidanceAzureReservations) UnsetActionPlanId() {
+	o.ActionPlanId.Unset()
 }
 
 // GetStatusMessage returns the StatusMessage field value if set, zero value otherwise.
@@ -453,36 +464,47 @@ func (o *GuidanceAzureReservations) SetAccountId(v int64) {
 	o.AccountId = &v
 }
 
-// GetUserId returns the UserId field value if set, zero value otherwise.
+// GetUserId returns the UserId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GuidanceAzureReservations) GetUserId() string {
-	if o == nil || IsNil(o.UserId) {
+	if o == nil || IsNil(o.UserId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.UserId
+	return *o.UserId.Get()
 }
 
 // GetUserIdOk returns a tuple with the UserId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GuidanceAzureReservations) GetUserIdOk() (*string, bool) {
-	if o == nil || IsNil(o.UserId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.UserId, true
+	return o.UserId.Get(), o.UserId.IsSet()
 }
 
 // IsSetUserId returns a boolean if a field has been set.
 func (o *GuidanceAzureReservations) IsSetUserId() bool {
-	if o != nil && !IsNil(o.UserId) {
+	if o != nil && o.UserId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetUserId gets a reference to the given string and assigns it to the UserId field.
+// SetUserId gets a reference to the given NullableString and assigns it to the UserId field.
 func (o *GuidanceAzureReservations) SetUserId(v string) {
-	o.UserId = &v
+	o.UserId.Set(&v)
+}
+
+// SetUserIdNil sets the value for UserId to be an explicit nil
+func (o *GuidanceAzureReservations) SetUserIdNil() {
+	o.UserId.Set(nil)
+}
+
+// UnsetUserId ensures that no value is present for UserId, not even an explicit nil
+func (o *GuidanceAzureReservations) UnsetUserId() {
+	o.UserId.Unset()
 }
 
 // GetSiteId returns the SiteId field value if set, zero value otherwise.
@@ -581,36 +603,47 @@ func (o *GuidanceAzureReservations) SetState(v string) {
 	o.State = &v
 }
 
-// GetStateMessage returns the StateMessage field value if set, zero value otherwise.
+// GetStateMessage returns the StateMessage field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GuidanceAzureReservations) GetStateMessage() string {
-	if o == nil || IsNil(o.StateMessage) {
+	if o == nil || IsNil(o.StateMessage.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.StateMessage
+	return *o.StateMessage.Get()
 }
 
 // GetStateMessageOk returns a tuple with the StateMessage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GuidanceAzureReservations) GetStateMessageOk() (*string, bool) {
-	if o == nil || IsNil(o.StateMessage) {
+	if o == nil {
 		return nil, false
 	}
-	return o.StateMessage, true
+	return o.StateMessage.Get(), o.StateMessage.IsSet()
 }
 
 // IsSetStateMessage returns a boolean if a field has been set.
 func (o *GuidanceAzureReservations) IsSetStateMessage() bool {
-	if o != nil && !IsNil(o.StateMessage) {
+	if o != nil && o.StateMessage.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetStateMessage gets a reference to the given string and assigns it to the StateMessage field.
+// SetStateMessage gets a reference to the given NullableString and assigns it to the StateMessage field.
 func (o *GuidanceAzureReservations) SetStateMessage(v string) {
-	o.StateMessage = &v
+	o.StateMessage.Set(&v)
+}
+
+// SetStateMessageNil sets the value for StateMessage to be an explicit nil
+func (o *GuidanceAzureReservations) SetStateMessageNil() {
+	o.StateMessage.Set(nil)
+}
+
+// UnsetStateMessage ensures that no value is present for StateMessage, not even an explicit nil
+func (o *GuidanceAzureReservations) UnsetStateMessage() {
+	o.StateMessage.Unset()
 }
 
 // GetSeverity returns the Severity field value if set, zero value otherwise.
@@ -677,36 +710,47 @@ func (o *GuidanceAzureReservations) SetResolved(v bool) {
 	o.Resolved = &v
 }
 
-// GetResolvedMessage returns the ResolvedMessage field value if set, zero value otherwise.
+// GetResolvedMessage returns the ResolvedMessage field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GuidanceAzureReservations) GetResolvedMessage() string {
-	if o == nil || IsNil(o.ResolvedMessage) {
+	if o == nil || IsNil(o.ResolvedMessage.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ResolvedMessage
+	return *o.ResolvedMessage.Get()
 }
 
 // GetResolvedMessageOk returns a tuple with the ResolvedMessage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GuidanceAzureReservations) GetResolvedMessageOk() (*string, bool) {
-	if o == nil || IsNil(o.ResolvedMessage) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ResolvedMessage, true
+	return o.ResolvedMessage.Get(), o.ResolvedMessage.IsSet()
 }
 
 // IsSetResolvedMessage returns a boolean if a field has been set.
 func (o *GuidanceAzureReservations) IsSetResolvedMessage() bool {
-	if o != nil && !IsNil(o.ResolvedMessage) {
+	if o != nil && o.ResolvedMessage.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetResolvedMessage gets a reference to the given string and assigns it to the ResolvedMessage field.
+// SetResolvedMessage gets a reference to the given NullableString and assigns it to the ResolvedMessage field.
 func (o *GuidanceAzureReservations) SetResolvedMessage(v string) {
-	o.ResolvedMessage = &v
+	o.ResolvedMessage.Set(&v)
+}
+
+// SetResolvedMessageNil sets the value for ResolvedMessage to be an explicit nil
+func (o *GuidanceAzureReservations) SetResolvedMessageNil() {
+	o.ResolvedMessage.Set(nil)
+}
+
+// UnsetResolvedMessage ensures that no value is present for ResolvedMessage, not even an explicit nil
+func (o *GuidanceAzureReservations) UnsetResolvedMessage() {
+	o.ResolvedMessage.Unset()
 }
 
 // GetRefType returns the RefType field value if set, zero value otherwise.
@@ -938,8 +982,8 @@ func (o GuidanceAzureReservations) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ActionValueType) {
 		toSerialize["actionValueType"] = o.ActionValueType
 	}
-	if !IsNil(o.ActionPlanId) {
-		toSerialize["actionPlanId"] = o.ActionPlanId
+	if o.ActionPlanId.IsSet() {
+		toSerialize["actionPlanId"] = o.ActionPlanId.Get()
 	}
 	if !IsNil(o.StatusMessage) {
 		toSerialize["statusMessage"] = o.StatusMessage
@@ -947,8 +991,8 @@ func (o GuidanceAzureReservations) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.AccountId) {
 		toSerialize["accountId"] = o.AccountId
 	}
-	if !IsNil(o.UserId) {
-		toSerialize["userId"] = o.UserId
+	if o.UserId.IsSet() {
+		toSerialize["userId"] = o.UserId.Get()
 	}
 	if !IsNil(o.SiteId) {
 		toSerialize["siteId"] = o.SiteId
@@ -959,8 +1003,8 @@ func (o GuidanceAzureReservations) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.State) {
 		toSerialize["state"] = o.State
 	}
-	if !IsNil(o.StateMessage) {
-		toSerialize["stateMessage"] = o.StateMessage
+	if o.StateMessage.IsSet() {
+		toSerialize["stateMessage"] = o.StateMessage.Get()
 	}
 	if !IsNil(o.Severity) {
 		toSerialize["severity"] = o.Severity
@@ -968,8 +1012,8 @@ func (o GuidanceAzureReservations) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Resolved) {
 		toSerialize["resolved"] = o.Resolved
 	}
-	if !IsNil(o.ResolvedMessage) {
-		toSerialize["resolvedMessage"] = o.ResolvedMessage
+	if o.ResolvedMessage.IsSet() {
+		toSerialize["resolvedMessage"] = o.ResolvedMessage.Get()
 	}
 	if !IsNil(o.RefType) {
 		toSerialize["refType"] = o.RefType

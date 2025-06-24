@@ -7,22 +7,22 @@ Name | Type | Description | Notes
 **Id** | Pointer to **int64** |  | [optional] 
 **Code** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **NullableString** |  | [optional] 
 **Category** | Pointer to **string** |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
 **RouterType** | Pointer to **string** |  | [optional] 
 **Status** | Pointer to **string** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
-**ExternalIp** | Pointer to **string** |  | [optional] 
+**ExternalIp** | Pointer to **NullableString** |  | [optional] 
 **ExternalId** | Pointer to **string** |  | [optional] 
 **ProviderId** | Pointer to **string** |  | [optional] 
 **Type** | Pointer to [**GetNetworkRouter200ResponseNetworkRouterType**](GetNetworkRouter200ResponseNetworkRouterType.md) |  | [optional] 
 **NetworkServer** | Pointer to [**GetNetworkRouter200ResponseNetworkRouterNetworkServer**](GetNetworkRouter200ResponseNetworkRouterNetworkServer.md) |  | [optional] 
 **Zone** | Pointer to [**ListBackupSettings200ResponseBackupSettingsDefaultSchedule**](ListBackupSettings200ResponseBackupSettingsDefaultSchedule.md) |  | [optional] 
-**Instance** | Pointer to **string** |  | [optional] 
-**ExternalNetwork** | Pointer to **string** |  | [optional] 
-**Site** | Pointer to **string** |  | [optional] 
+**Instance** | Pointer to **NullableString** |  | [optional] 
+**ExternalNetwork** | Pointer to **NullableString** |  | [optional] 
+**Site** | Pointer to **NullableString** |  | [optional] 
 **Interfaces** | Pointer to **[]map[string]interface{}** |  | [optional] 
 **Firewall** | Pointer to [**GetNetworkRouter200ResponseNetworkRouterFirewall**](GetNetworkRouter200ResponseNetworkRouterFirewall.md) |  | [optional] 
 **Routes** | Pointer to **[]map[string]interface{}** |  | [optional] 
@@ -148,6 +148,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *GetNetworkRouter200ResponseNetworkRouter) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *GetNetworkRouter200ResponseNetworkRouter) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetCategory
 
 `func (o *GetNetworkRouter200ResponseNetworkRouter) GetCategory() string`
@@ -323,6 +333,16 @@ SetExternalIp sets ExternalIp field to given value.
 
 HasExternalIp returns a boolean if a field has been set.
 
+### SetExternalIpNil
+
+`func (o *GetNetworkRouter200ResponseNetworkRouter) SetExternalIpNil(b bool)`
+
+ SetExternalIpNil sets the value for ExternalIp to be an explicit nil
+
+### UnsetExternalIp
+`func (o *GetNetworkRouter200ResponseNetworkRouter) UnsetExternalIp()`
+
+UnsetExternalIp ensures that no value is present for ExternalIp, not even an explicit nil
 ### GetExternalId
 
 `func (o *GetNetworkRouter200ResponseNetworkRouter) GetExternalId() string`
@@ -473,6 +493,16 @@ SetInstance sets Instance field to given value.
 
 HasInstance returns a boolean if a field has been set.
 
+### SetInstanceNil
+
+`func (o *GetNetworkRouter200ResponseNetworkRouter) SetInstanceNil(b bool)`
+
+ SetInstanceNil sets the value for Instance to be an explicit nil
+
+### UnsetInstance
+`func (o *GetNetworkRouter200ResponseNetworkRouter) UnsetInstance()`
+
+UnsetInstance ensures that no value is present for Instance, not even an explicit nil
 ### GetExternalNetwork
 
 `func (o *GetNetworkRouter200ResponseNetworkRouter) GetExternalNetwork() string`
@@ -498,6 +528,16 @@ SetExternalNetwork sets ExternalNetwork field to given value.
 
 HasExternalNetwork returns a boolean if a field has been set.
 
+### SetExternalNetworkNil
+
+`func (o *GetNetworkRouter200ResponseNetworkRouter) SetExternalNetworkNil(b bool)`
+
+ SetExternalNetworkNil sets the value for ExternalNetwork to be an explicit nil
+
+### UnsetExternalNetwork
+`func (o *GetNetworkRouter200ResponseNetworkRouter) UnsetExternalNetwork()`
+
+UnsetExternalNetwork ensures that no value is present for ExternalNetwork, not even an explicit nil
 ### GetSite
 
 `func (o *GetNetworkRouter200ResponseNetworkRouter) GetSite() string`
@@ -523,6 +563,16 @@ SetSite sets Site field to given value.
 
 HasSite returns a boolean if a field has been set.
 
+### SetSiteNil
+
+`func (o *GetNetworkRouter200ResponseNetworkRouter) SetSiteNil(b bool)`
+
+ SetSiteNil sets the value for Site to be an explicit nil
+
+### UnsetSite
+`func (o *GetNetworkRouter200ResponseNetworkRouter) UnsetSite()`
+
+UnsetSite ensures that no value is present for Site, not even an explicit nil
 ### GetInterfaces
 
 `func (o *GetNetworkRouter200ResponseNetworkRouter) GetInterfaces() []map[string]interface{}`

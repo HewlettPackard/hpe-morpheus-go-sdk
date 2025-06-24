@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**StorageProviderId** | Pointer to **int64** | Optional storage provider to use. | [optional] 
+**StorageProviderId** | Pointer to **NullableInt64** | Optional storage provider to use. | [optional] 
 
 ## Methods
 
@@ -50,6 +50,16 @@ SetStorageProviderId sets StorageProviderId field to given value.
 
 HasStorageProviderId returns a boolean if a field has been set.
 
+### SetStorageProviderIdNil
+
+`func (o *ImportSnapshotInstanceRequest) SetStorageProviderIdNil(b bool)`
+
+ SetStorageProviderIdNil sets the value for StorageProviderId to be an explicit nil
+
+### UnsetStorageProviderId
+`func (o *ImportSnapshotInstanceRequest) UnsetStorageProviderId()`
+
+UnsetStorageProviderId ensures that no value is present for StorageProviderId, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -23,10 +23,10 @@ type ListHosts200ResponseAllOfServersInnerServerOs struct {
 	Id                   *int64                 `json:"id,omitempty"`
 	Code                 *string                `json:"code,omitempty"`
 	Name                 *string                `json:"name,omitempty"`
-	Description          *string                `json:"description,omitempty"`
+	Description          NullableString         `json:"description,omitempty"`
 	Vendor               *string                `json:"vendor,omitempty"`
 	Category             *string                `json:"category,omitempty"`
-	OsFamily             *string                `json:"osFamily,omitempty"`
+	OsFamily             NullableString         `json:"osFamily,omitempty"`
 	OsVersion            *string                `json:"osVersion,omitempty"`
 	BitCount             *int64                 `json:"bitCount,omitempty"`
 	Platform             *string                `json:"platform,omitempty"`
@@ -148,36 +148,47 @@ func (o *ListHosts200ResponseAllOfServersInnerServerOs) SetName(v string) {
 	o.Name = &v
 }
 
-// GetDescription returns the Description field value if set, zero value otherwise.
+// GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListHosts200ResponseAllOfServersInnerServerOs) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
+	if o == nil || IsNil(o.Description.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Description
+	return *o.Description.Get()
 }
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListHosts200ResponseAllOfServersInnerServerOs) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Description, true
+	return o.Description.Get(), o.Description.IsSet()
 }
 
 // IsSetDescription returns a boolean if a field has been set.
 func (o *ListHosts200ResponseAllOfServersInnerServerOs) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
+	if o != nil && o.Description.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDescription gets a reference to the given string and assigns it to the Description field.
+// SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *ListHosts200ResponseAllOfServersInnerServerOs) SetDescription(v string) {
-	o.Description = &v
+	o.Description.Set(&v)
+}
+
+// SetDescriptionNil sets the value for Description to be an explicit nil
+func (o *ListHosts200ResponseAllOfServersInnerServerOs) SetDescriptionNil() {
+	o.Description.Set(nil)
+}
+
+// UnsetDescription ensures that no value is present for Description, not even an explicit nil
+func (o *ListHosts200ResponseAllOfServersInnerServerOs) UnsetDescription() {
+	o.Description.Unset()
 }
 
 // GetVendor returns the Vendor field value if set, zero value otherwise.
@@ -244,36 +255,47 @@ func (o *ListHosts200ResponseAllOfServersInnerServerOs) SetCategory(v string) {
 	o.Category = &v
 }
 
-// GetOsFamily returns the OsFamily field value if set, zero value otherwise.
+// GetOsFamily returns the OsFamily field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListHosts200ResponseAllOfServersInnerServerOs) GetOsFamily() string {
-	if o == nil || IsNil(o.OsFamily) {
+	if o == nil || IsNil(o.OsFamily.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.OsFamily
+	return *o.OsFamily.Get()
 }
 
 // GetOsFamilyOk returns a tuple with the OsFamily field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListHosts200ResponseAllOfServersInnerServerOs) GetOsFamilyOk() (*string, bool) {
-	if o == nil || IsNil(o.OsFamily) {
+	if o == nil {
 		return nil, false
 	}
-	return o.OsFamily, true
+	return o.OsFamily.Get(), o.OsFamily.IsSet()
 }
 
 // IsSetOsFamily returns a boolean if a field has been set.
 func (o *ListHosts200ResponseAllOfServersInnerServerOs) IsSetOsFamily() bool {
-	if o != nil && !IsNil(o.OsFamily) {
+	if o != nil && o.OsFamily.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetOsFamily gets a reference to the given string and assigns it to the OsFamily field.
+// SetOsFamily gets a reference to the given NullableString and assigns it to the OsFamily field.
 func (o *ListHosts200ResponseAllOfServersInnerServerOs) SetOsFamily(v string) {
-	o.OsFamily = &v
+	o.OsFamily.Set(&v)
+}
+
+// SetOsFamilyNil sets the value for OsFamily to be an explicit nil
+func (o *ListHosts200ResponseAllOfServersInnerServerOs) SetOsFamilyNil() {
+	o.OsFamily.Set(nil)
+}
+
+// UnsetOsFamily ensures that no value is present for OsFamily, not even an explicit nil
+func (o *ListHosts200ResponseAllOfServersInnerServerOs) UnsetOsFamily() {
+	o.OsFamily.Unset()
 }
 
 // GetOsVersion returns the OsVersion field value if set, zero value otherwise.
@@ -391,8 +413,8 @@ func (o ListHosts200ResponseAllOfServersInnerServerOs) ToMap() (map[string]inter
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !IsNil(o.Description) {
-		toSerialize["description"] = o.Description
+	if o.Description.IsSet() {
+		toSerialize["description"] = o.Description.Get()
 	}
 	if !IsNil(o.Vendor) {
 		toSerialize["vendor"] = o.Vendor
@@ -400,8 +422,8 @@ func (o ListHosts200ResponseAllOfServersInnerServerOs) ToMap() (map[string]inter
 	if !IsNil(o.Category) {
 		toSerialize["category"] = o.Category
 	}
-	if !IsNil(o.OsFamily) {
-		toSerialize["osFamily"] = o.OsFamily
+	if o.OsFamily.IsSet() {
+		toSerialize["osFamily"] = o.OsFamily.Get()
 	}
 	if !IsNil(o.OsVersion) {
 		toSerialize["osVersion"] = o.OsVersion

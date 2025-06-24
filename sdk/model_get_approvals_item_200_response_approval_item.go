@@ -23,17 +23,17 @@ var _ MappedNullable = &GetApprovalsItem200ResponseApprovalItem{}
 type GetApprovalsItem200ResponseApprovalItem struct {
 	Id                   *int64                                            `json:"id,omitempty"`
 	Name                 *string                                           `json:"name,omitempty"`
-	ExternalId           *string                                           `json:"externalId,omitempty"`
-	ExternalName         *string                                           `json:"externalName,omitempty"`
-	InternalId           *string                                           `json:"internalId,omitempty"`
+	ExternalId           NullableString                                    `json:"externalId,omitempty"`
+	ExternalName         NullableString                                    `json:"externalName,omitempty"`
+	InternalId           NullableString                                    `json:"internalId,omitempty"`
 	ApprovedBy           *string                                           `json:"approvedBy,omitempty"`
-	DeniedBy             *string                                           `json:"deniedBy,omitempty"`
+	DeniedBy             NullableString                                    `json:"deniedBy,omitempty"`
 	Status               *string                                           `json:"status,omitempty"`
-	ErrorMessage         *string                                           `json:"errorMessage,omitempty"`
+	ErrorMessage         NullableString                                    `json:"errorMessage,omitempty"`
 	DateCreated          *time.Time                                        `json:"dateCreated,omitempty"`
 	LastUpdated          *time.Time                                        `json:"lastUpdated,omitempty"`
 	DateApproved         *time.Time                                        `json:"dateApproved,omitempty"`
-	DateDenied           *time.Time                                        `json:"dateDenied,omitempty"`
+	DateDenied           NullableTime                                      `json:"dateDenied,omitempty"`
 	Approval             *GetAlerts200ResponseAllOfChecksInnerAccount      `json:"approval,omitempty"`
 	Reference            *GetApprovalsItem200ResponseApprovalItemReference `json:"reference,omitempty"`
 	AdditionalProperties map[string]interface{}                            `json:",remain"`
@@ -122,100 +122,133 @@ func (o *GetApprovalsItem200ResponseApprovalItem) SetName(v string) {
 	o.Name = &v
 }
 
-// GetExternalId returns the ExternalId field value if set, zero value otherwise.
+// GetExternalId returns the ExternalId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetApprovalsItem200ResponseApprovalItem) GetExternalId() string {
-	if o == nil || IsNil(o.ExternalId) {
+	if o == nil || IsNil(o.ExternalId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ExternalId
+	return *o.ExternalId.Get()
 }
 
 // GetExternalIdOk returns a tuple with the ExternalId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetApprovalsItem200ResponseApprovalItem) GetExternalIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ExternalId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ExternalId, true
+	return o.ExternalId.Get(), o.ExternalId.IsSet()
 }
 
 // IsSetExternalId returns a boolean if a field has been set.
 func (o *GetApprovalsItem200ResponseApprovalItem) IsSetExternalId() bool {
-	if o != nil && !IsNil(o.ExternalId) {
+	if o != nil && o.ExternalId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetExternalId gets a reference to the given string and assigns it to the ExternalId field.
+// SetExternalId gets a reference to the given NullableString and assigns it to the ExternalId field.
 func (o *GetApprovalsItem200ResponseApprovalItem) SetExternalId(v string) {
-	o.ExternalId = &v
+	o.ExternalId.Set(&v)
 }
 
-// GetExternalName returns the ExternalName field value if set, zero value otherwise.
+// SetExternalIdNil sets the value for ExternalId to be an explicit nil
+func (o *GetApprovalsItem200ResponseApprovalItem) SetExternalIdNil() {
+	o.ExternalId.Set(nil)
+}
+
+// UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
+func (o *GetApprovalsItem200ResponseApprovalItem) UnsetExternalId() {
+	o.ExternalId.Unset()
+}
+
+// GetExternalName returns the ExternalName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetApprovalsItem200ResponseApprovalItem) GetExternalName() string {
-	if o == nil || IsNil(o.ExternalName) {
+	if o == nil || IsNil(o.ExternalName.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ExternalName
+	return *o.ExternalName.Get()
 }
 
 // GetExternalNameOk returns a tuple with the ExternalName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetApprovalsItem200ResponseApprovalItem) GetExternalNameOk() (*string, bool) {
-	if o == nil || IsNil(o.ExternalName) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ExternalName, true
+	return o.ExternalName.Get(), o.ExternalName.IsSet()
 }
 
 // IsSetExternalName returns a boolean if a field has been set.
 func (o *GetApprovalsItem200ResponseApprovalItem) IsSetExternalName() bool {
-	if o != nil && !IsNil(o.ExternalName) {
+	if o != nil && o.ExternalName.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetExternalName gets a reference to the given string and assigns it to the ExternalName field.
+// SetExternalName gets a reference to the given NullableString and assigns it to the ExternalName field.
 func (o *GetApprovalsItem200ResponseApprovalItem) SetExternalName(v string) {
-	o.ExternalName = &v
+	o.ExternalName.Set(&v)
 }
 
-// GetInternalId returns the InternalId field value if set, zero value otherwise.
+// SetExternalNameNil sets the value for ExternalName to be an explicit nil
+func (o *GetApprovalsItem200ResponseApprovalItem) SetExternalNameNil() {
+	o.ExternalName.Set(nil)
+}
+
+// UnsetExternalName ensures that no value is present for ExternalName, not even an explicit nil
+func (o *GetApprovalsItem200ResponseApprovalItem) UnsetExternalName() {
+	o.ExternalName.Unset()
+}
+
+// GetInternalId returns the InternalId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetApprovalsItem200ResponseApprovalItem) GetInternalId() string {
-	if o == nil || IsNil(o.InternalId) {
+	if o == nil || IsNil(o.InternalId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.InternalId
+	return *o.InternalId.Get()
 }
 
 // GetInternalIdOk returns a tuple with the InternalId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetApprovalsItem200ResponseApprovalItem) GetInternalIdOk() (*string, bool) {
-	if o == nil || IsNil(o.InternalId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.InternalId, true
+	return o.InternalId.Get(), o.InternalId.IsSet()
 }
 
 // IsSetInternalId returns a boolean if a field has been set.
 func (o *GetApprovalsItem200ResponseApprovalItem) IsSetInternalId() bool {
-	if o != nil && !IsNil(o.InternalId) {
+	if o != nil && o.InternalId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetInternalId gets a reference to the given string and assigns it to the InternalId field.
+// SetInternalId gets a reference to the given NullableString and assigns it to the InternalId field.
 func (o *GetApprovalsItem200ResponseApprovalItem) SetInternalId(v string) {
-	o.InternalId = &v
+	o.InternalId.Set(&v)
+}
+
+// SetInternalIdNil sets the value for InternalId to be an explicit nil
+func (o *GetApprovalsItem200ResponseApprovalItem) SetInternalIdNil() {
+	o.InternalId.Set(nil)
+}
+
+// UnsetInternalId ensures that no value is present for InternalId, not even an explicit nil
+func (o *GetApprovalsItem200ResponseApprovalItem) UnsetInternalId() {
+	o.InternalId.Unset()
 }
 
 // GetApprovedBy returns the ApprovedBy field value if set, zero value otherwise.
@@ -250,36 +283,47 @@ func (o *GetApprovalsItem200ResponseApprovalItem) SetApprovedBy(v string) {
 	o.ApprovedBy = &v
 }
 
-// GetDeniedBy returns the DeniedBy field value if set, zero value otherwise.
+// GetDeniedBy returns the DeniedBy field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetApprovalsItem200ResponseApprovalItem) GetDeniedBy() string {
-	if o == nil || IsNil(o.DeniedBy) {
+	if o == nil || IsNil(o.DeniedBy.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.DeniedBy
+	return *o.DeniedBy.Get()
 }
 
 // GetDeniedByOk returns a tuple with the DeniedBy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetApprovalsItem200ResponseApprovalItem) GetDeniedByOk() (*string, bool) {
-	if o == nil || IsNil(o.DeniedBy) {
+	if o == nil {
 		return nil, false
 	}
-	return o.DeniedBy, true
+	return o.DeniedBy.Get(), o.DeniedBy.IsSet()
 }
 
 // IsSetDeniedBy returns a boolean if a field has been set.
 func (o *GetApprovalsItem200ResponseApprovalItem) IsSetDeniedBy() bool {
-	if o != nil && !IsNil(o.DeniedBy) {
+	if o != nil && o.DeniedBy.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDeniedBy gets a reference to the given string and assigns it to the DeniedBy field.
+// SetDeniedBy gets a reference to the given NullableString and assigns it to the DeniedBy field.
 func (o *GetApprovalsItem200ResponseApprovalItem) SetDeniedBy(v string) {
-	o.DeniedBy = &v
+	o.DeniedBy.Set(&v)
+}
+
+// SetDeniedByNil sets the value for DeniedBy to be an explicit nil
+func (o *GetApprovalsItem200ResponseApprovalItem) SetDeniedByNil() {
+	o.DeniedBy.Set(nil)
+}
+
+// UnsetDeniedBy ensures that no value is present for DeniedBy, not even an explicit nil
+func (o *GetApprovalsItem200ResponseApprovalItem) UnsetDeniedBy() {
+	o.DeniedBy.Unset()
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
@@ -314,36 +358,47 @@ func (o *GetApprovalsItem200ResponseApprovalItem) SetStatus(v string) {
 	o.Status = &v
 }
 
-// GetErrorMessage returns the ErrorMessage field value if set, zero value otherwise.
+// GetErrorMessage returns the ErrorMessage field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetApprovalsItem200ResponseApprovalItem) GetErrorMessage() string {
-	if o == nil || IsNil(o.ErrorMessage) {
+	if o == nil || IsNil(o.ErrorMessage.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ErrorMessage
+	return *o.ErrorMessage.Get()
 }
 
 // GetErrorMessageOk returns a tuple with the ErrorMessage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetApprovalsItem200ResponseApprovalItem) GetErrorMessageOk() (*string, bool) {
-	if o == nil || IsNil(o.ErrorMessage) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ErrorMessage, true
+	return o.ErrorMessage.Get(), o.ErrorMessage.IsSet()
 }
 
 // IsSetErrorMessage returns a boolean if a field has been set.
 func (o *GetApprovalsItem200ResponseApprovalItem) IsSetErrorMessage() bool {
-	if o != nil && !IsNil(o.ErrorMessage) {
+	if o != nil && o.ErrorMessage.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetErrorMessage gets a reference to the given string and assigns it to the ErrorMessage field.
+// SetErrorMessage gets a reference to the given NullableString and assigns it to the ErrorMessage field.
 func (o *GetApprovalsItem200ResponseApprovalItem) SetErrorMessage(v string) {
-	o.ErrorMessage = &v
+	o.ErrorMessage.Set(&v)
+}
+
+// SetErrorMessageNil sets the value for ErrorMessage to be an explicit nil
+func (o *GetApprovalsItem200ResponseApprovalItem) SetErrorMessageNil() {
+	o.ErrorMessage.Set(nil)
+}
+
+// UnsetErrorMessage ensures that no value is present for ErrorMessage, not even an explicit nil
+func (o *GetApprovalsItem200ResponseApprovalItem) UnsetErrorMessage() {
+	o.ErrorMessage.Unset()
 }
 
 // GetDateCreated returns the DateCreated field value if set, zero value otherwise.
@@ -442,36 +497,47 @@ func (o *GetApprovalsItem200ResponseApprovalItem) SetDateApproved(v time.Time) {
 	o.DateApproved = &v
 }
 
-// GetDateDenied returns the DateDenied field value if set, zero value otherwise.
+// GetDateDenied returns the DateDenied field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetApprovalsItem200ResponseApprovalItem) GetDateDenied() time.Time {
-	if o == nil || IsNil(o.DateDenied) {
+	if o == nil || IsNil(o.DateDenied.Get()) {
 		var ret time.Time
 		return ret
 	}
-	return *o.DateDenied
+	return *o.DateDenied.Get()
 }
 
 // GetDateDeniedOk returns a tuple with the DateDenied field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetApprovalsItem200ResponseApprovalItem) GetDateDeniedOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.DateDenied) {
+	if o == nil {
 		return nil, false
 	}
-	return o.DateDenied, true
+	return o.DateDenied.Get(), o.DateDenied.IsSet()
 }
 
 // IsSetDateDenied returns a boolean if a field has been set.
 func (o *GetApprovalsItem200ResponseApprovalItem) IsSetDateDenied() bool {
-	if o != nil && !IsNil(o.DateDenied) {
+	if o != nil && o.DateDenied.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDateDenied gets a reference to the given time.Time and assigns it to the DateDenied field.
+// SetDateDenied gets a reference to the given NullableTime and assigns it to the DateDenied field.
 func (o *GetApprovalsItem200ResponseApprovalItem) SetDateDenied(v time.Time) {
-	o.DateDenied = &v
+	o.DateDenied.Set(&v)
+}
+
+// SetDateDeniedNil sets the value for DateDenied to be an explicit nil
+func (o *GetApprovalsItem200ResponseApprovalItem) SetDateDeniedNil() {
+	o.DateDenied.Set(nil)
+}
+
+// UnsetDateDenied ensures that no value is present for DateDenied, not even an explicit nil
+func (o *GetApprovalsItem200ResponseApprovalItem) UnsetDateDenied() {
+	o.DateDenied.Unset()
 }
 
 // GetApproval returns the Approval field value if set, zero value otherwise.
@@ -554,26 +620,26 @@ func (o GetApprovalsItem200ResponseApprovalItem) ToMap() (map[string]interface{}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !IsNil(o.ExternalId) {
-		toSerialize["externalId"] = o.ExternalId
+	if o.ExternalId.IsSet() {
+		toSerialize["externalId"] = o.ExternalId.Get()
 	}
-	if !IsNil(o.ExternalName) {
-		toSerialize["externalName"] = o.ExternalName
+	if o.ExternalName.IsSet() {
+		toSerialize["externalName"] = o.ExternalName.Get()
 	}
-	if !IsNil(o.InternalId) {
-		toSerialize["internalId"] = o.InternalId
+	if o.InternalId.IsSet() {
+		toSerialize["internalId"] = o.InternalId.Get()
 	}
 	if !IsNil(o.ApprovedBy) {
 		toSerialize["approvedBy"] = o.ApprovedBy
 	}
-	if !IsNil(o.DeniedBy) {
-		toSerialize["deniedBy"] = o.DeniedBy
+	if o.DeniedBy.IsSet() {
+		toSerialize["deniedBy"] = o.DeniedBy.Get()
 	}
 	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status
 	}
-	if !IsNil(o.ErrorMessage) {
-		toSerialize["errorMessage"] = o.ErrorMessage
+	if o.ErrorMessage.IsSet() {
+		toSerialize["errorMessage"] = o.ErrorMessage.Get()
 	}
 	if !IsNil(o.DateCreated) {
 		toSerialize["dateCreated"] = o.DateCreated
@@ -584,8 +650,8 @@ func (o GetApprovalsItem200ResponseApprovalItem) ToMap() (map[string]interface{}
 	if !IsNil(o.DateApproved) {
 		toSerialize["dateApproved"] = o.DateApproved
 	}
-	if !IsNil(o.DateDenied) {
-		toSerialize["dateDenied"] = o.DateDenied
+	if o.DateDenied.IsSet() {
+		toSerialize["dateDenied"] = o.DateDenied.Get()
 	}
 	if !IsNil(o.Approval) {
 		toSerialize["approval"] = o.Approval

@@ -28,26 +28,26 @@ type Job struct {
 	Workflow        *ListJobs200ResponseAllOfJobsInnerAnyOfWorkflow             `json:"workflow,omitempty"`
 	Task            *ListJobs200ResponseAllOfJobsInnerAnyOfTask                 `json:"task,omitempty"`
 	SecurityPackage *ListJobs200ResponseAllOfJobsInnerAnyOfSecurityPackage      `json:"securityPackage,omitempty"`
-	JobSummary      *string                                                     `json:"jobSummary,omitempty"`
+	JobSummary      NullableString                                              `json:"jobSummary,omitempty"`
 	ScheduleMode    *ListJobs200ResponseAllOfJobsInnerAnyOfScheduleMode         `json:"scheduleMode,omitempty"`
-	DateTime        *string                                                     `json:"dateTime,omitempty"`
-	Status          *string                                                     `json:"status,omitempty"`
-	Namespace       *string                                                     `json:"namespace,omitempty"`
-	Category        *string                                                     `json:"category,omitempty"`
-	Description     *string                                                     `json:"description,omitempty"`
+	DateTime        NullableString                                              `json:"dateTime,omitempty"`
+	Status          NullableString                                              `json:"status,omitempty"`
+	Namespace       NullableString                                              `json:"namespace,omitempty"`
+	Category        NullableString                                              `json:"category,omitempty"`
+	Description     NullableString                                              `json:"description,omitempty"`
 	Enabled         *bool                                                       `json:"enabled,omitempty"`
 	DateCreated     *time.Time                                                  `json:"dateCreated,omitempty"`
 	LastUpdated     *time.Time                                                  `json:"lastUpdated,omitempty"`
 	LastRun         *time.Time                                                  `json:"lastRun,omitempty"`
-	LastResult      *string                                                     `json:"lastResult,omitempty"`
-	CreatedBy       *ListJobs200ResponseAllOfJobsInnerAnyOfCreatedBy            `json:"createdBy,omitempty"`
-	TargetType      *string                                                     `json:"targetType,omitempty"`
+	LastResult      NullableString                                              `json:"lastResult,omitempty"`
+	CreatedBy       *ListCredentials200ResponseAllOfCredentialsInnerUser        `json:"createdBy,omitempty"`
+	TargetType      NullableString                                              `json:"targetType,omitempty"`
 	Targets         []ListJobs200ResponseAllOfJobsInnerAnyOfTargetsInner        `json:"targets,omitempty"`
 	// Scan Checklist. Only applies to type scap-package.
-	ScanPath *string `json:"scanPath,omitempty"`
+	ScanPath NullableString `json:"scanPath,omitempty"`
 	// Security Profile. Only applies to type scap-package.
-	SecurityProfile      *string                                              `json:"securityProfile,omitempty"`
-	CustomConfig         *string                                              `json:"customConfig,omitempty"`
+	SecurityProfile      NullableString                                       `json:"securityProfile,omitempty"`
+	CustomConfig         NullableString                                       `json:"customConfig,omitempty"`
 	CustomOptions        *ListJobs200ResponseAllOfJobsInnerAnyOfCustomOptions `json:"customOptions,omitempty"`
 	AdditionalProperties map[string]interface{}                               `json:",remain"`
 }
@@ -135,9 +135,9 @@ func (o *Job) SetName(v string) {
 	o.Name = &v
 }
 
-// GetLabels returns the Labels field value if set, zero value otherwise.
+// GetLabels returns the Labels field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Job) GetLabels() []string {
-	if o == nil || IsNil(o.Labels) {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -146,6 +146,7 @@ func (o *Job) GetLabels() []string {
 
 // GetLabelsOk returns a tuple with the Labels field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Job) GetLabelsOk() ([]string, bool) {
 	if o == nil || IsNil(o.Labels) {
 		return nil, false
@@ -295,36 +296,47 @@ func (o *Job) SetSecurityPackage(v ListJobs200ResponseAllOfJobsInnerAnyOfSecurit
 	o.SecurityPackage = &v
 }
 
-// GetJobSummary returns the JobSummary field value if set, zero value otherwise.
+// GetJobSummary returns the JobSummary field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Job) GetJobSummary() string {
-	if o == nil || IsNil(o.JobSummary) {
+	if o == nil || IsNil(o.JobSummary.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.JobSummary
+	return *o.JobSummary.Get()
 }
 
 // GetJobSummaryOk returns a tuple with the JobSummary field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Job) GetJobSummaryOk() (*string, bool) {
-	if o == nil || IsNil(o.JobSummary) {
+	if o == nil {
 		return nil, false
 	}
-	return o.JobSummary, true
+	return o.JobSummary.Get(), o.JobSummary.IsSet()
 }
 
 // IsSetJobSummary returns a boolean if a field has been set.
 func (o *Job) IsSetJobSummary() bool {
-	if o != nil && !IsNil(o.JobSummary) {
+	if o != nil && o.JobSummary.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetJobSummary gets a reference to the given string and assigns it to the JobSummary field.
+// SetJobSummary gets a reference to the given NullableString and assigns it to the JobSummary field.
 func (o *Job) SetJobSummary(v string) {
-	o.JobSummary = &v
+	o.JobSummary.Set(&v)
+}
+
+// SetJobSummaryNil sets the value for JobSummary to be an explicit nil
+func (o *Job) SetJobSummaryNil() {
+	o.JobSummary.Set(nil)
+}
+
+// UnsetJobSummary ensures that no value is present for JobSummary, not even an explicit nil
+func (o *Job) UnsetJobSummary() {
+	o.JobSummary.Unset()
 }
 
 // GetScheduleMode returns the ScheduleMode field value if set, zero value otherwise.
@@ -359,164 +371,219 @@ func (o *Job) SetScheduleMode(v ListJobs200ResponseAllOfJobsInnerAnyOfScheduleMo
 	o.ScheduleMode = &v
 }
 
-// GetDateTime returns the DateTime field value if set, zero value otherwise.
+// GetDateTime returns the DateTime field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Job) GetDateTime() string {
-	if o == nil || IsNil(o.DateTime) {
+	if o == nil || IsNil(o.DateTime.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.DateTime
+	return *o.DateTime.Get()
 }
 
 // GetDateTimeOk returns a tuple with the DateTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Job) GetDateTimeOk() (*string, bool) {
-	if o == nil || IsNil(o.DateTime) {
+	if o == nil {
 		return nil, false
 	}
-	return o.DateTime, true
+	return o.DateTime.Get(), o.DateTime.IsSet()
 }
 
 // IsSetDateTime returns a boolean if a field has been set.
 func (o *Job) IsSetDateTime() bool {
-	if o != nil && !IsNil(o.DateTime) {
+	if o != nil && o.DateTime.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDateTime gets a reference to the given string and assigns it to the DateTime field.
+// SetDateTime gets a reference to the given NullableString and assigns it to the DateTime field.
 func (o *Job) SetDateTime(v string) {
-	o.DateTime = &v
+	o.DateTime.Set(&v)
 }
 
-// GetStatus returns the Status field value if set, zero value otherwise.
+// SetDateTimeNil sets the value for DateTime to be an explicit nil
+func (o *Job) SetDateTimeNil() {
+	o.DateTime.Set(nil)
+}
+
+// UnsetDateTime ensures that no value is present for DateTime, not even an explicit nil
+func (o *Job) UnsetDateTime() {
+	o.DateTime.Unset()
+}
+
+// GetStatus returns the Status field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Job) GetStatus() string {
-	if o == nil || IsNil(o.Status) {
+	if o == nil || IsNil(o.Status.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Status
+	return *o.Status.Get()
 }
 
 // GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Job) GetStatusOk() (*string, bool) {
-	if o == nil || IsNil(o.Status) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Status, true
+	return o.Status.Get(), o.Status.IsSet()
 }
 
 // IsSetStatus returns a boolean if a field has been set.
 func (o *Job) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
+	if o != nil && o.Status.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetStatus gets a reference to the given string and assigns it to the Status field.
+// SetStatus gets a reference to the given NullableString and assigns it to the Status field.
 func (o *Job) SetStatus(v string) {
-	o.Status = &v
+	o.Status.Set(&v)
 }
 
-// GetNamespace returns the Namespace field value if set, zero value otherwise.
+// SetStatusNil sets the value for Status to be an explicit nil
+func (o *Job) SetStatusNil() {
+	o.Status.Set(nil)
+}
+
+// UnsetStatus ensures that no value is present for Status, not even an explicit nil
+func (o *Job) UnsetStatus() {
+	o.Status.Unset()
+}
+
+// GetNamespace returns the Namespace field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Job) GetNamespace() string {
-	if o == nil || IsNil(o.Namespace) {
+	if o == nil || IsNil(o.Namespace.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Namespace
+	return *o.Namespace.Get()
 }
 
 // GetNamespaceOk returns a tuple with the Namespace field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Job) GetNamespaceOk() (*string, bool) {
-	if o == nil || IsNil(o.Namespace) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Namespace, true
+	return o.Namespace.Get(), o.Namespace.IsSet()
 }
 
 // IsSetNamespace returns a boolean if a field has been set.
 func (o *Job) IsSetNamespace() bool {
-	if o != nil && !IsNil(o.Namespace) {
+	if o != nil && o.Namespace.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetNamespace gets a reference to the given string and assigns it to the Namespace field.
+// SetNamespace gets a reference to the given NullableString and assigns it to the Namespace field.
 func (o *Job) SetNamespace(v string) {
-	o.Namespace = &v
+	o.Namespace.Set(&v)
 }
 
-// GetCategory returns the Category field value if set, zero value otherwise.
+// SetNamespaceNil sets the value for Namespace to be an explicit nil
+func (o *Job) SetNamespaceNil() {
+	o.Namespace.Set(nil)
+}
+
+// UnsetNamespace ensures that no value is present for Namespace, not even an explicit nil
+func (o *Job) UnsetNamespace() {
+	o.Namespace.Unset()
+}
+
+// GetCategory returns the Category field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Job) GetCategory() string {
-	if o == nil || IsNil(o.Category) {
+	if o == nil || IsNil(o.Category.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Category
+	return *o.Category.Get()
 }
 
 // GetCategoryOk returns a tuple with the Category field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Job) GetCategoryOk() (*string, bool) {
-	if o == nil || IsNil(o.Category) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Category, true
+	return o.Category.Get(), o.Category.IsSet()
 }
 
 // IsSetCategory returns a boolean if a field has been set.
 func (o *Job) IsSetCategory() bool {
-	if o != nil && !IsNil(o.Category) {
+	if o != nil && o.Category.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCategory gets a reference to the given string and assigns it to the Category field.
+// SetCategory gets a reference to the given NullableString and assigns it to the Category field.
 func (o *Job) SetCategory(v string) {
-	o.Category = &v
+	o.Category.Set(&v)
 }
 
-// GetDescription returns the Description field value if set, zero value otherwise.
+// SetCategoryNil sets the value for Category to be an explicit nil
+func (o *Job) SetCategoryNil() {
+	o.Category.Set(nil)
+}
+
+// UnsetCategory ensures that no value is present for Category, not even an explicit nil
+func (o *Job) UnsetCategory() {
+	o.Category.Unset()
+}
+
+// GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Job) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
+	if o == nil || IsNil(o.Description.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Description
+	return *o.Description.Get()
 }
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Job) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Description, true
+	return o.Description.Get(), o.Description.IsSet()
 }
 
 // IsSetDescription returns a boolean if a field has been set.
 func (o *Job) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
+	if o != nil && o.Description.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDescription gets a reference to the given string and assigns it to the Description field.
+// SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *Job) SetDescription(v string) {
-	o.Description = &v
+	o.Description.Set(&v)
+}
+
+// SetDescriptionNil sets the value for Description to be an explicit nil
+func (o *Job) SetDescriptionNil() {
+	o.Description.Set(nil)
+}
+
+// UnsetDescription ensures that no value is present for Description, not even an explicit nil
+func (o *Job) UnsetDescription() {
+	o.Description.Unset()
 }
 
 // GetEnabled returns the Enabled field value if set, zero value otherwise.
@@ -647,42 +714,53 @@ func (o *Job) SetLastRun(v time.Time) {
 	o.LastRun = &v
 }
 
-// GetLastResult returns the LastResult field value if set, zero value otherwise.
+// GetLastResult returns the LastResult field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Job) GetLastResult() string {
-	if o == nil || IsNil(o.LastResult) {
+	if o == nil || IsNil(o.LastResult.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.LastResult
+	return *o.LastResult.Get()
 }
 
 // GetLastResultOk returns a tuple with the LastResult field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Job) GetLastResultOk() (*string, bool) {
-	if o == nil || IsNil(o.LastResult) {
+	if o == nil {
 		return nil, false
 	}
-	return o.LastResult, true
+	return o.LastResult.Get(), o.LastResult.IsSet()
 }
 
 // IsSetLastResult returns a boolean if a field has been set.
 func (o *Job) IsSetLastResult() bool {
-	if o != nil && !IsNil(o.LastResult) {
+	if o != nil && o.LastResult.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetLastResult gets a reference to the given string and assigns it to the LastResult field.
+// SetLastResult gets a reference to the given NullableString and assigns it to the LastResult field.
 func (o *Job) SetLastResult(v string) {
-	o.LastResult = &v
+	o.LastResult.Set(&v)
+}
+
+// SetLastResultNil sets the value for LastResult to be an explicit nil
+func (o *Job) SetLastResultNil() {
+	o.LastResult.Set(nil)
+}
+
+// UnsetLastResult ensures that no value is present for LastResult, not even an explicit nil
+func (o *Job) UnsetLastResult() {
+	o.LastResult.Unset()
 }
 
 // GetCreatedBy returns the CreatedBy field value if set, zero value otherwise.
-func (o *Job) GetCreatedBy() ListJobs200ResponseAllOfJobsInnerAnyOfCreatedBy {
+func (o *Job) GetCreatedBy() ListCredentials200ResponseAllOfCredentialsInnerUser {
 	if o == nil || IsNil(o.CreatedBy) {
-		var ret ListJobs200ResponseAllOfJobsInnerAnyOfCreatedBy
+		var ret ListCredentials200ResponseAllOfCredentialsInnerUser
 		return ret
 	}
 	return *o.CreatedBy
@@ -690,7 +768,7 @@ func (o *Job) GetCreatedBy() ListJobs200ResponseAllOfJobsInnerAnyOfCreatedBy {
 
 // GetCreatedByOk returns a tuple with the CreatedBy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Job) GetCreatedByOk() (*ListJobs200ResponseAllOfJobsInnerAnyOfCreatedBy, bool) {
+func (o *Job) GetCreatedByOk() (*ListCredentials200ResponseAllOfCredentialsInnerUser, bool) {
 	if o == nil || IsNil(o.CreatedBy) {
 		return nil, false
 	}
@@ -706,46 +784,57 @@ func (o *Job) IsSetCreatedBy() bool {
 	return false
 }
 
-// SetCreatedBy gets a reference to the given ListJobs200ResponseAllOfJobsInnerAnyOfCreatedBy and assigns it to the CreatedBy field.
-func (o *Job) SetCreatedBy(v ListJobs200ResponseAllOfJobsInnerAnyOfCreatedBy) {
+// SetCreatedBy gets a reference to the given ListCredentials200ResponseAllOfCredentialsInnerUser and assigns it to the CreatedBy field.
+func (o *Job) SetCreatedBy(v ListCredentials200ResponseAllOfCredentialsInnerUser) {
 	o.CreatedBy = &v
 }
 
-// GetTargetType returns the TargetType field value if set, zero value otherwise.
+// GetTargetType returns the TargetType field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Job) GetTargetType() string {
-	if o == nil || IsNil(o.TargetType) {
+	if o == nil || IsNil(o.TargetType.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.TargetType
+	return *o.TargetType.Get()
 }
 
 // GetTargetTypeOk returns a tuple with the TargetType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Job) GetTargetTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.TargetType) {
+	if o == nil {
 		return nil, false
 	}
-	return o.TargetType, true
+	return o.TargetType.Get(), o.TargetType.IsSet()
 }
 
 // IsSetTargetType returns a boolean if a field has been set.
 func (o *Job) IsSetTargetType() bool {
-	if o != nil && !IsNil(o.TargetType) {
+	if o != nil && o.TargetType.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetTargetType gets a reference to the given string and assigns it to the TargetType field.
+// SetTargetType gets a reference to the given NullableString and assigns it to the TargetType field.
 func (o *Job) SetTargetType(v string) {
-	o.TargetType = &v
+	o.TargetType.Set(&v)
 }
 
-// GetTargets returns the Targets field value if set, zero value otherwise.
+// SetTargetTypeNil sets the value for TargetType to be an explicit nil
+func (o *Job) SetTargetTypeNil() {
+	o.TargetType.Set(nil)
+}
+
+// UnsetTargetType ensures that no value is present for TargetType, not even an explicit nil
+func (o *Job) UnsetTargetType() {
+	o.TargetType.Unset()
+}
+
+// GetTargets returns the Targets field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Job) GetTargets() []ListJobs200ResponseAllOfJobsInnerAnyOfTargetsInner {
-	if o == nil || IsNil(o.Targets) {
+	if o == nil {
 		var ret []ListJobs200ResponseAllOfJobsInnerAnyOfTargetsInner
 		return ret
 	}
@@ -754,6 +843,7 @@ func (o *Job) GetTargets() []ListJobs200ResponseAllOfJobsInnerAnyOfTargetsInner 
 
 // GetTargetsOk returns a tuple with the Targets field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Job) GetTargetsOk() ([]ListJobs200ResponseAllOfJobsInnerAnyOfTargetsInner, bool) {
 	if o == nil || IsNil(o.Targets) {
 		return nil, false
@@ -775,100 +865,133 @@ func (o *Job) SetTargets(v []ListJobs200ResponseAllOfJobsInnerAnyOfTargetsInner)
 	o.Targets = v
 }
 
-// GetScanPath returns the ScanPath field value if set, zero value otherwise.
+// GetScanPath returns the ScanPath field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Job) GetScanPath() string {
-	if o == nil || IsNil(o.ScanPath) {
+	if o == nil || IsNil(o.ScanPath.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ScanPath
+	return *o.ScanPath.Get()
 }
 
 // GetScanPathOk returns a tuple with the ScanPath field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Job) GetScanPathOk() (*string, bool) {
-	if o == nil || IsNil(o.ScanPath) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ScanPath, true
+	return o.ScanPath.Get(), o.ScanPath.IsSet()
 }
 
 // IsSetScanPath returns a boolean if a field has been set.
 func (o *Job) IsSetScanPath() bool {
-	if o != nil && !IsNil(o.ScanPath) {
+	if o != nil && o.ScanPath.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetScanPath gets a reference to the given string and assigns it to the ScanPath field.
+// SetScanPath gets a reference to the given NullableString and assigns it to the ScanPath field.
 func (o *Job) SetScanPath(v string) {
-	o.ScanPath = &v
+	o.ScanPath.Set(&v)
 }
 
-// GetSecurityProfile returns the SecurityProfile field value if set, zero value otherwise.
+// SetScanPathNil sets the value for ScanPath to be an explicit nil
+func (o *Job) SetScanPathNil() {
+	o.ScanPath.Set(nil)
+}
+
+// UnsetScanPath ensures that no value is present for ScanPath, not even an explicit nil
+func (o *Job) UnsetScanPath() {
+	o.ScanPath.Unset()
+}
+
+// GetSecurityProfile returns the SecurityProfile field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Job) GetSecurityProfile() string {
-	if o == nil || IsNil(o.SecurityProfile) {
+	if o == nil || IsNil(o.SecurityProfile.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.SecurityProfile
+	return *o.SecurityProfile.Get()
 }
 
 // GetSecurityProfileOk returns a tuple with the SecurityProfile field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Job) GetSecurityProfileOk() (*string, bool) {
-	if o == nil || IsNil(o.SecurityProfile) {
+	if o == nil {
 		return nil, false
 	}
-	return o.SecurityProfile, true
+	return o.SecurityProfile.Get(), o.SecurityProfile.IsSet()
 }
 
 // IsSetSecurityProfile returns a boolean if a field has been set.
 func (o *Job) IsSetSecurityProfile() bool {
-	if o != nil && !IsNil(o.SecurityProfile) {
+	if o != nil && o.SecurityProfile.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetSecurityProfile gets a reference to the given string and assigns it to the SecurityProfile field.
+// SetSecurityProfile gets a reference to the given NullableString and assigns it to the SecurityProfile field.
 func (o *Job) SetSecurityProfile(v string) {
-	o.SecurityProfile = &v
+	o.SecurityProfile.Set(&v)
 }
 
-// GetCustomConfig returns the CustomConfig field value if set, zero value otherwise.
+// SetSecurityProfileNil sets the value for SecurityProfile to be an explicit nil
+func (o *Job) SetSecurityProfileNil() {
+	o.SecurityProfile.Set(nil)
+}
+
+// UnsetSecurityProfile ensures that no value is present for SecurityProfile, not even an explicit nil
+func (o *Job) UnsetSecurityProfile() {
+	o.SecurityProfile.Unset()
+}
+
+// GetCustomConfig returns the CustomConfig field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Job) GetCustomConfig() string {
-	if o == nil || IsNil(o.CustomConfig) {
+	if o == nil || IsNil(o.CustomConfig.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.CustomConfig
+	return *o.CustomConfig.Get()
 }
 
 // GetCustomConfigOk returns a tuple with the CustomConfig field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Job) GetCustomConfigOk() (*string, bool) {
-	if o == nil || IsNil(o.CustomConfig) {
+	if o == nil {
 		return nil, false
 	}
-	return o.CustomConfig, true
+	return o.CustomConfig.Get(), o.CustomConfig.IsSet()
 }
 
 // IsSetCustomConfig returns a boolean if a field has been set.
 func (o *Job) IsSetCustomConfig() bool {
-	if o != nil && !IsNil(o.CustomConfig) {
+	if o != nil && o.CustomConfig.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCustomConfig gets a reference to the given string and assigns it to the CustomConfig field.
+// SetCustomConfig gets a reference to the given NullableString and assigns it to the CustomConfig field.
 func (o *Job) SetCustomConfig(v string) {
-	o.CustomConfig = &v
+	o.CustomConfig.Set(&v)
+}
+
+// SetCustomConfigNil sets the value for CustomConfig to be an explicit nil
+func (o *Job) SetCustomConfigNil() {
+	o.CustomConfig.Set(nil)
+}
+
+// UnsetCustomConfig ensures that no value is present for CustomConfig, not even an explicit nil
+func (o *Job) UnsetCustomConfig() {
+	o.CustomConfig.Unset()
 }
 
 // GetCustomOptions returns the CustomOptions field value if set, zero value otherwise.
@@ -919,7 +1042,7 @@ func (o Job) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !IsNil(o.Labels) {
+	if o.Labels != nil {
 		toSerialize["labels"] = o.Labels
 	}
 	if !IsNil(o.Type) {
@@ -934,26 +1057,26 @@ func (o Job) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.SecurityPackage) {
 		toSerialize["securityPackage"] = o.SecurityPackage
 	}
-	if !IsNil(o.JobSummary) {
-		toSerialize["jobSummary"] = o.JobSummary
+	if o.JobSummary.IsSet() {
+		toSerialize["jobSummary"] = o.JobSummary.Get()
 	}
 	if !IsNil(o.ScheduleMode) {
 		toSerialize["scheduleMode"] = o.ScheduleMode
 	}
-	if !IsNil(o.DateTime) {
-		toSerialize["dateTime"] = o.DateTime
+	if o.DateTime.IsSet() {
+		toSerialize["dateTime"] = o.DateTime.Get()
 	}
-	if !IsNil(o.Status) {
-		toSerialize["status"] = o.Status
+	if o.Status.IsSet() {
+		toSerialize["status"] = o.Status.Get()
 	}
-	if !IsNil(o.Namespace) {
-		toSerialize["namespace"] = o.Namespace
+	if o.Namespace.IsSet() {
+		toSerialize["namespace"] = o.Namespace.Get()
 	}
-	if !IsNil(o.Category) {
-		toSerialize["category"] = o.Category
+	if o.Category.IsSet() {
+		toSerialize["category"] = o.Category.Get()
 	}
-	if !IsNil(o.Description) {
-		toSerialize["description"] = o.Description
+	if o.Description.IsSet() {
+		toSerialize["description"] = o.Description.Get()
 	}
 	if !IsNil(o.Enabled) {
 		toSerialize["enabled"] = o.Enabled
@@ -967,26 +1090,26 @@ func (o Job) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.LastRun) {
 		toSerialize["lastRun"] = o.LastRun
 	}
-	if !IsNil(o.LastResult) {
-		toSerialize["lastResult"] = o.LastResult
+	if o.LastResult.IsSet() {
+		toSerialize["lastResult"] = o.LastResult.Get()
 	}
 	if !IsNil(o.CreatedBy) {
 		toSerialize["createdBy"] = o.CreatedBy
 	}
-	if !IsNil(o.TargetType) {
-		toSerialize["targetType"] = o.TargetType
+	if o.TargetType.IsSet() {
+		toSerialize["targetType"] = o.TargetType.Get()
 	}
-	if !IsNil(o.Targets) {
+	if o.Targets != nil {
 		toSerialize["targets"] = o.Targets
 	}
-	if !IsNil(o.ScanPath) {
-		toSerialize["scanPath"] = o.ScanPath
+	if o.ScanPath.IsSet() {
+		toSerialize["scanPath"] = o.ScanPath.Get()
 	}
-	if !IsNil(o.SecurityProfile) {
-		toSerialize["securityProfile"] = o.SecurityProfile
+	if o.SecurityProfile.IsSet() {
+		toSerialize["securityProfile"] = o.SecurityProfile.Get()
 	}
-	if !IsNil(o.CustomConfig) {
-		toSerialize["customConfig"] = o.CustomConfig
+	if o.CustomConfig.IsSet() {
+		toSerialize["customConfig"] = o.CustomConfig.Get()
 	}
 	if !IsNil(o.CustomOptions) {
 		toSerialize["customOptions"] = o.CustomOptions

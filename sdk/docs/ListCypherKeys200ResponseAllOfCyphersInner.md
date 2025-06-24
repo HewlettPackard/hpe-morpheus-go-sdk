@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 **Id** | Pointer to **int32** |  | [optional] 
 **ItemKey** | Pointer to **string** |  | [optional] 
 **LeaseTimeout** | Pointer to **int64** |  | [optional] 
-**ExpireDate** | Pointer to **time.Time** |  | [optional] 
-**DateCreated** | Pointer to **time.Time** |  | [optional] 
+**ExpireDate** | Pointer to **NullableTime** |  | [optional] 
+**DateCreated** | Pointer to **NullableTime** |  | [optional] 
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
 **LastAccessed** | Pointer to **time.Time** |  | [optional] 
 **CreatedBy** | Pointer to **string** |  | [optional] 
@@ -132,6 +132,16 @@ SetExpireDate sets ExpireDate field to given value.
 
 HasExpireDate returns a boolean if a field has been set.
 
+### SetExpireDateNil
+
+`func (o *ListCypherKeys200ResponseAllOfCyphersInner) SetExpireDateNil(b bool)`
+
+ SetExpireDateNil sets the value for ExpireDate to be an explicit nil
+
+### UnsetExpireDate
+`func (o *ListCypherKeys200ResponseAllOfCyphersInner) UnsetExpireDate()`
+
+UnsetExpireDate ensures that no value is present for ExpireDate, not even an explicit nil
 ### GetDateCreated
 
 `func (o *ListCypherKeys200ResponseAllOfCyphersInner) GetDateCreated() time.Time`
@@ -157,6 +167,16 @@ SetDateCreated sets DateCreated field to given value.
 
 HasDateCreated returns a boolean if a field has been set.
 
+### SetDateCreatedNil
+
+`func (o *ListCypherKeys200ResponseAllOfCyphersInner) SetDateCreatedNil(b bool)`
+
+ SetDateCreatedNil sets the value for DateCreated to be an explicit nil
+
+### UnsetDateCreated
+`func (o *ListCypherKeys200ResponseAllOfCyphersInner) UnsetDateCreated()`
+
+UnsetDateCreated ensures that no value is present for DateCreated, not even an explicit nil
 ### GetLastUpdated
 
 `func (o *ListCypherKeys200ResponseAllOfCyphersInner) GetLastUpdated() time.Time`

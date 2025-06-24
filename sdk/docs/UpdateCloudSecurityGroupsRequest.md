@@ -45,6 +45,16 @@ and a boolean to check if the value has been set.
 SetSecurityGroupIds sets SecurityGroupIds field to given value.
 
 
+### SetSecurityGroupIdsNil
+
+`func (o *UpdateCloudSecurityGroupsRequest) SetSecurityGroupIdsNil(b bool)`
+
+ SetSecurityGroupIdsNil sets the value for SecurityGroupIds to be an explicit nil
+
+### UnsetSecurityGroupIds
+`func (o *UpdateCloudSecurityGroupsRequest) UnsetSecurityGroupIds()`
+
+UnsetSecurityGroupIds ensures that no value is present for SecurityGroupIds, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

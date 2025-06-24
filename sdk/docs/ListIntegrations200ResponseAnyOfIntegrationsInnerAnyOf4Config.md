@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **CherwellCreatedBy** | Pointer to **string** |  | [optional] 
 **CherwellStartDate** | Pointer to **string** |  | [optional] 
 **CherwellEndDate** | Pointer to **string** |  | [optional] 
-**CherwellIgnoreSSLErrors** | Pointer to **string** |  | [optional] 
+**CherwellIgnoreSSLErrors** | Pointer to **NullableString** |  | [optional] 
 **CherwellBusinessObject** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -181,6 +181,16 @@ SetCherwellIgnoreSSLErrors sets CherwellIgnoreSSLErrors field to given value.
 
 HasCherwellIgnoreSSLErrors returns a boolean if a field has been set.
 
+### SetCherwellIgnoreSSLErrorsNil
+
+`func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf4Config) SetCherwellIgnoreSSLErrorsNil(b bool)`
+
+ SetCherwellIgnoreSSLErrorsNil sets the value for CherwellIgnoreSSLErrors to be an explicit nil
+
+### UnsetCherwellIgnoreSSLErrors
+`func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf4Config) UnsetCherwellIgnoreSSLErrors()`
+
+UnsetCherwellIgnoreSSLErrors ensures that no value is present for CherwellIgnoreSSLErrors, not even an explicit nil
 ### GetCherwellBusinessObject
 
 `func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf4Config) GetCherwellBusinessObject() string`

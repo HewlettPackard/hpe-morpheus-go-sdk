@@ -11,24 +11,24 @@ Name | Type | Description | Notes
 **Workflow** | Pointer to [**ListJobs200ResponseAllOfJobsInnerAnyOfWorkflow**](ListJobs200ResponseAllOfJobsInnerAnyOfWorkflow.md) |  | [optional] 
 **Task** | Pointer to [**ListJobs200ResponseAllOfJobsInnerAnyOfTask**](ListJobs200ResponseAllOfJobsInnerAnyOfTask.md) |  | [optional] 
 **SecurityPackage** | Pointer to [**ListJobs200ResponseAllOfJobsInnerAnyOfSecurityPackage**](ListJobs200ResponseAllOfJobsInnerAnyOfSecurityPackage.md) |  | [optional] 
-**JobSummary** | Pointer to **string** |  | [optional] 
+**JobSummary** | Pointer to **NullableString** |  | [optional] 
 **ScheduleMode** | Pointer to [**ListJobs200ResponseAllOfJobsInnerAnyOfScheduleMode**](ListJobs200ResponseAllOfJobsInnerAnyOfScheduleMode.md) |  | [optional] 
-**DateTime** | Pointer to **string** |  | [optional] 
-**Status** | Pointer to **string** |  | [optional] 
-**Namespace** | Pointer to **string** |  | [optional] 
-**Category** | Pointer to **string** |  | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
+**DateTime** | Pointer to **NullableString** |  | [optional] 
+**Status** | Pointer to **NullableString** |  | [optional] 
+**Namespace** | Pointer to **NullableString** |  | [optional] 
+**Category** | Pointer to **NullableString** |  | [optional] 
+**Description** | Pointer to **NullableString** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
 **LastRun** | Pointer to **time.Time** |  | [optional] 
-**LastResult** | Pointer to **string** |  | [optional] 
-**CreatedBy** | Pointer to [**ListJobs200ResponseAllOfJobsInnerAnyOfCreatedBy**](ListJobs200ResponseAllOfJobsInnerAnyOfCreatedBy.md) |  | [optional] 
-**TargetType** | Pointer to **string** |  | [optional] 
+**LastResult** | Pointer to **NullableString** |  | [optional] 
+**CreatedBy** | Pointer to [**ListCredentials200ResponseAllOfCredentialsInnerUser**](ListCredentials200ResponseAllOfCredentialsInnerUser.md) |  | [optional] 
+**TargetType** | Pointer to **NullableString** |  | [optional] 
 **Targets** | Pointer to [**[]ListJobs200ResponseAllOfJobsInnerAnyOfTargetsInner**](ListJobs200ResponseAllOfJobsInnerAnyOfTargetsInner.md) |  | [optional] 
-**ScanPath** | Pointer to **string** | Scan Checklist. Only applies to type scap-package. | [optional] 
-**SecurityProfile** | Pointer to **string** | Security Profile. Only applies to type scap-package. | [optional] 
-**CustomConfig** | Pointer to **string** |  | [optional] 
+**ScanPath** | Pointer to **NullableString** | Scan Checklist. Only applies to type scap-package. | [optional] 
+**SecurityProfile** | Pointer to **NullableString** | Security Profile. Only applies to type scap-package. | [optional] 
+**CustomConfig** | Pointer to **NullableString** |  | [optional] 
 **CustomOptions** | Pointer to [**ListJobs200ResponseAllOfJobsInnerAnyOfCustomOptions**](ListJobs200ResponseAllOfJobsInnerAnyOfCustomOptions.md) |  | [optional] 
 
 ## Methods
@@ -125,6 +125,16 @@ SetLabels sets Labels field to given value.
 
 HasLabels returns a boolean if a field has been set.
 
+### SetLabelsNil
+
+`func (o *ListJobs200ResponseAllOfJobsInnerAnyOf) SetLabelsNil(b bool)`
+
+ SetLabelsNil sets the value for Labels to be an explicit nil
+
+### UnsetLabels
+`func (o *ListJobs200ResponseAllOfJobsInnerAnyOf) UnsetLabels()`
+
+UnsetLabels ensures that no value is present for Labels, not even an explicit nil
 ### GetType
 
 `func (o *ListJobs200ResponseAllOfJobsInnerAnyOf) GetType() ListBackupSettings200ResponseBackupSettingsDefaultSchedule`
@@ -250,6 +260,16 @@ SetJobSummary sets JobSummary field to given value.
 
 HasJobSummary returns a boolean if a field has been set.
 
+### SetJobSummaryNil
+
+`func (o *ListJobs200ResponseAllOfJobsInnerAnyOf) SetJobSummaryNil(b bool)`
+
+ SetJobSummaryNil sets the value for JobSummary to be an explicit nil
+
+### UnsetJobSummary
+`func (o *ListJobs200ResponseAllOfJobsInnerAnyOf) UnsetJobSummary()`
+
+UnsetJobSummary ensures that no value is present for JobSummary, not even an explicit nil
 ### GetScheduleMode
 
 `func (o *ListJobs200ResponseAllOfJobsInnerAnyOf) GetScheduleMode() ListJobs200ResponseAllOfJobsInnerAnyOfScheduleMode`
@@ -300,6 +320,16 @@ SetDateTime sets DateTime field to given value.
 
 HasDateTime returns a boolean if a field has been set.
 
+### SetDateTimeNil
+
+`func (o *ListJobs200ResponseAllOfJobsInnerAnyOf) SetDateTimeNil(b bool)`
+
+ SetDateTimeNil sets the value for DateTime to be an explicit nil
+
+### UnsetDateTime
+`func (o *ListJobs200ResponseAllOfJobsInnerAnyOf) UnsetDateTime()`
+
+UnsetDateTime ensures that no value is present for DateTime, not even an explicit nil
 ### GetStatus
 
 `func (o *ListJobs200ResponseAllOfJobsInnerAnyOf) GetStatus() string`
@@ -325,6 +355,16 @@ SetStatus sets Status field to given value.
 
 HasStatus returns a boolean if a field has been set.
 
+### SetStatusNil
+
+`func (o *ListJobs200ResponseAllOfJobsInnerAnyOf) SetStatusNil(b bool)`
+
+ SetStatusNil sets the value for Status to be an explicit nil
+
+### UnsetStatus
+`func (o *ListJobs200ResponseAllOfJobsInnerAnyOf) UnsetStatus()`
+
+UnsetStatus ensures that no value is present for Status, not even an explicit nil
 ### GetNamespace
 
 `func (o *ListJobs200ResponseAllOfJobsInnerAnyOf) GetNamespace() string`
@@ -350,6 +390,16 @@ SetNamespace sets Namespace field to given value.
 
 HasNamespace returns a boolean if a field has been set.
 
+### SetNamespaceNil
+
+`func (o *ListJobs200ResponseAllOfJobsInnerAnyOf) SetNamespaceNil(b bool)`
+
+ SetNamespaceNil sets the value for Namespace to be an explicit nil
+
+### UnsetNamespace
+`func (o *ListJobs200ResponseAllOfJobsInnerAnyOf) UnsetNamespace()`
+
+UnsetNamespace ensures that no value is present for Namespace, not even an explicit nil
 ### GetCategory
 
 `func (o *ListJobs200ResponseAllOfJobsInnerAnyOf) GetCategory() string`
@@ -375,6 +425,16 @@ SetCategory sets Category field to given value.
 
 HasCategory returns a boolean if a field has been set.
 
+### SetCategoryNil
+
+`func (o *ListJobs200ResponseAllOfJobsInnerAnyOf) SetCategoryNil(b bool)`
+
+ SetCategoryNil sets the value for Category to be an explicit nil
+
+### UnsetCategory
+`func (o *ListJobs200ResponseAllOfJobsInnerAnyOf) UnsetCategory()`
+
+UnsetCategory ensures that no value is present for Category, not even an explicit nil
 ### GetDescription
 
 `func (o *ListJobs200ResponseAllOfJobsInnerAnyOf) GetDescription() string`
@@ -400,6 +460,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *ListJobs200ResponseAllOfJobsInnerAnyOf) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *ListJobs200ResponseAllOfJobsInnerAnyOf) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetEnabled
 
 `func (o *ListJobs200ResponseAllOfJobsInnerAnyOf) GetEnabled() bool`
@@ -525,22 +595,32 @@ SetLastResult sets LastResult field to given value.
 
 HasLastResult returns a boolean if a field has been set.
 
+### SetLastResultNil
+
+`func (o *ListJobs200ResponseAllOfJobsInnerAnyOf) SetLastResultNil(b bool)`
+
+ SetLastResultNil sets the value for LastResult to be an explicit nil
+
+### UnsetLastResult
+`func (o *ListJobs200ResponseAllOfJobsInnerAnyOf) UnsetLastResult()`
+
+UnsetLastResult ensures that no value is present for LastResult, not even an explicit nil
 ### GetCreatedBy
 
-`func (o *ListJobs200ResponseAllOfJobsInnerAnyOf) GetCreatedBy() ListJobs200ResponseAllOfJobsInnerAnyOfCreatedBy`
+`func (o *ListJobs200ResponseAllOfJobsInnerAnyOf) GetCreatedBy() ListCredentials200ResponseAllOfCredentialsInnerUser`
 
 GetCreatedBy returns the CreatedBy field if non-nil, zero value otherwise.
 
 ### GetCreatedByOk
 
-`func (o *ListJobs200ResponseAllOfJobsInnerAnyOf) GetCreatedByOk() (*ListJobs200ResponseAllOfJobsInnerAnyOfCreatedBy, bool)`
+`func (o *ListJobs200ResponseAllOfJobsInnerAnyOf) GetCreatedByOk() (*ListCredentials200ResponseAllOfCredentialsInnerUser, bool)`
 
 GetCreatedByOk returns a tuple with the CreatedBy field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCreatedBy
 
-`func (o *ListJobs200ResponseAllOfJobsInnerAnyOf) SetCreatedBy(v ListJobs200ResponseAllOfJobsInnerAnyOfCreatedBy)`
+`func (o *ListJobs200ResponseAllOfJobsInnerAnyOf) SetCreatedBy(v ListCredentials200ResponseAllOfCredentialsInnerUser)`
 
 SetCreatedBy sets CreatedBy field to given value.
 
@@ -575,6 +655,16 @@ SetTargetType sets TargetType field to given value.
 
 HasTargetType returns a boolean if a field has been set.
 
+### SetTargetTypeNil
+
+`func (o *ListJobs200ResponseAllOfJobsInnerAnyOf) SetTargetTypeNil(b bool)`
+
+ SetTargetTypeNil sets the value for TargetType to be an explicit nil
+
+### UnsetTargetType
+`func (o *ListJobs200ResponseAllOfJobsInnerAnyOf) UnsetTargetType()`
+
+UnsetTargetType ensures that no value is present for TargetType, not even an explicit nil
 ### GetTargets
 
 `func (o *ListJobs200ResponseAllOfJobsInnerAnyOf) GetTargets() []ListJobs200ResponseAllOfJobsInnerAnyOfTargetsInner`
@@ -600,6 +690,16 @@ SetTargets sets Targets field to given value.
 
 HasTargets returns a boolean if a field has been set.
 
+### SetTargetsNil
+
+`func (o *ListJobs200ResponseAllOfJobsInnerAnyOf) SetTargetsNil(b bool)`
+
+ SetTargetsNil sets the value for Targets to be an explicit nil
+
+### UnsetTargets
+`func (o *ListJobs200ResponseAllOfJobsInnerAnyOf) UnsetTargets()`
+
+UnsetTargets ensures that no value is present for Targets, not even an explicit nil
 ### GetScanPath
 
 `func (o *ListJobs200ResponseAllOfJobsInnerAnyOf) GetScanPath() string`
@@ -625,6 +725,16 @@ SetScanPath sets ScanPath field to given value.
 
 HasScanPath returns a boolean if a field has been set.
 
+### SetScanPathNil
+
+`func (o *ListJobs200ResponseAllOfJobsInnerAnyOf) SetScanPathNil(b bool)`
+
+ SetScanPathNil sets the value for ScanPath to be an explicit nil
+
+### UnsetScanPath
+`func (o *ListJobs200ResponseAllOfJobsInnerAnyOf) UnsetScanPath()`
+
+UnsetScanPath ensures that no value is present for ScanPath, not even an explicit nil
 ### GetSecurityProfile
 
 `func (o *ListJobs200ResponseAllOfJobsInnerAnyOf) GetSecurityProfile() string`
@@ -650,6 +760,16 @@ SetSecurityProfile sets SecurityProfile field to given value.
 
 HasSecurityProfile returns a boolean if a field has been set.
 
+### SetSecurityProfileNil
+
+`func (o *ListJobs200ResponseAllOfJobsInnerAnyOf) SetSecurityProfileNil(b bool)`
+
+ SetSecurityProfileNil sets the value for SecurityProfile to be an explicit nil
+
+### UnsetSecurityProfile
+`func (o *ListJobs200ResponseAllOfJobsInnerAnyOf) UnsetSecurityProfile()`
+
+UnsetSecurityProfile ensures that no value is present for SecurityProfile, not even an explicit nil
 ### GetCustomConfig
 
 `func (o *ListJobs200ResponseAllOfJobsInnerAnyOf) GetCustomConfig() string`
@@ -675,6 +795,16 @@ SetCustomConfig sets CustomConfig field to given value.
 
 HasCustomConfig returns a boolean if a field has been set.
 
+### SetCustomConfigNil
+
+`func (o *ListJobs200ResponseAllOfJobsInnerAnyOf) SetCustomConfigNil(b bool)`
+
+ SetCustomConfigNil sets the value for CustomConfig to be an explicit nil
+
+### UnsetCustomConfig
+`func (o *ListJobs200ResponseAllOfJobsInnerAnyOf) UnsetCustomConfig()`
+
+UnsetCustomConfig ensures that no value is present for CustomConfig, not even an explicit nil
 ### GetCustomOptions
 
 `func (o *ListJobs200ResponseAllOfJobsInnerAnyOf) GetCustomOptions() ListJobs200ResponseAllOfJobsInnerAnyOfCustomOptions`

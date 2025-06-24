@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **MaxUsedConnections** | Pointer to **int64** |  | [optional] 
 **UsedConnections** | Pointer to **int64** |  | [optional] 
 **AbortedConnections** | Pointer to **int64** |  | [optional] 
-**InnodbStatus** | Pointer to **string** |  | [optional] 
+**InnodbStatus** | Pointer to **NullableString** |  | [optional] 
 **Stats** | Pointer to [**ListHealth200ResponseAllOfHealthDatabaseStats**](ListHealth200ResponseAllOfHealthDatabaseStats.md) |  | [optional] 
 **Scans** | Pointer to [**ListHealth200ResponseAllOfHealthDatabaseScans**](ListHealth200ResponseAllOfHealthDatabaseScans.md) |  | [optional] 
 **SlowQueries** | Pointer to [**[]ListHealth200ResponseAllOfHealthDatabaseSlowQueriesInner**](ListHealth200ResponseAllOfHealthDatabaseSlowQueriesInner.md) |  | [optional] 
@@ -88,22 +88,32 @@ SetConnectionList sets ConnectionList field to given value.
 
 HasConnectionList returns a boolean if a field has been set.
 
+### SetConnectionListNil
+
+`func (o *ListHealth200ResponseAllOfHealthDatabase) SetConnectionListNil(b bool)`
+
+ SetConnectionListNil sets the value for ConnectionList to be an explicit nil
+
+### UnsetConnectionList
+`func (o *ListHealth200ResponseAllOfHealthDatabase) UnsetConnectionList()`
+
+UnsetConnectionList ensures that no value is present for ConnectionList, not even an explicit nil
 ### GetBusyConnections
 
-`func (o *ListHealth200ResponseAllOfHealthDatabase) GetBusyConnections() []string`
+`func (o *ListHealth200ResponseAllOfHealthDatabase) GetBusyConnections() []*string`
 
 GetBusyConnections returns the BusyConnections field if non-nil, zero value otherwise.
 
 ### GetBusyConnectionsOk
 
-`func (o *ListHealth200ResponseAllOfHealthDatabase) GetBusyConnectionsOk() (*[]string, bool)`
+`func (o *ListHealth200ResponseAllOfHealthDatabase) GetBusyConnectionsOk() (*[]*string, bool)`
 
 GetBusyConnectionsOk returns a tuple with the BusyConnections field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBusyConnections
 
-`func (o *ListHealth200ResponseAllOfHealthDatabase) SetBusyConnections(v []string)`
+`func (o *ListHealth200ResponseAllOfHealthDatabase) SetBusyConnections(v []*string)`
 
 SetBusyConnections sets BusyConnections field to given value.
 
@@ -238,6 +248,16 @@ SetInnodbStatus sets InnodbStatus field to given value.
 
 HasInnodbStatus returns a boolean if a field has been set.
 
+### SetInnodbStatusNil
+
+`func (o *ListHealth200ResponseAllOfHealthDatabase) SetInnodbStatusNil(b bool)`
+
+ SetInnodbStatusNil sets the value for InnodbStatus to be an explicit nil
+
+### UnsetInnodbStatus
+`func (o *ListHealth200ResponseAllOfHealthDatabase) UnsetInnodbStatus()`
+
+UnsetInnodbStatus ensures that no value is present for InnodbStatus, not even an explicit nil
 ### GetStats
 
 `func (o *ListHealth200ResponseAllOfHealthDatabase) GetStats() ListHealth200ResponseAllOfHealthDatabaseStats`

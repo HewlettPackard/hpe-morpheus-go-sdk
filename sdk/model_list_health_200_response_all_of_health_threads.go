@@ -83,9 +83,9 @@ func (o *ListHealth200ResponseAllOfHealthThreads) SetSuccess(v bool) {
 	o.Success = &v
 }
 
-// GetThreadList returns the ThreadList field value if set, zero value otherwise.
+// GetThreadList returns the ThreadList field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListHealth200ResponseAllOfHealthThreads) GetThreadList() []map[string]interface{} {
-	if o == nil || IsNil(o.ThreadList) {
+	if o == nil {
 		var ret []map[string]interface{}
 		return ret
 	}
@@ -94,6 +94,7 @@ func (o *ListHealth200ResponseAllOfHealthThreads) GetThreadList() []map[string]i
 
 // GetThreadListOk returns a tuple with the ThreadList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListHealth200ResponseAllOfHealthThreads) GetThreadListOk() ([]map[string]interface{}, bool) {
 	if o == nil || IsNil(o.ThreadList) {
 		return nil, false
@@ -147,9 +148,9 @@ func (o *ListHealth200ResponseAllOfHealthThreads) SetBusyThreads(v []ListHealth2
 	o.BusyThreads = v
 }
 
-// GetBlockedThreads returns the BlockedThreads field value if set, zero value otherwise.
+// GetBlockedThreads returns the BlockedThreads field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListHealth200ResponseAllOfHealthThreads) GetBlockedThreads() []map[string]interface{} {
-	if o == nil || IsNil(o.BlockedThreads) {
+	if o == nil {
 		var ret []map[string]interface{}
 		return ret
 	}
@@ -158,6 +159,7 @@ func (o *ListHealth200ResponseAllOfHealthThreads) GetBlockedThreads() []map[stri
 
 // GetBlockedThreadsOk returns a tuple with the BlockedThreads field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListHealth200ResponseAllOfHealthThreads) GetBlockedThreadsOk() ([]map[string]interface{}, bool) {
 	if o == nil || IsNil(o.BlockedThreads) {
 		return nil, false
@@ -179,9 +181,9 @@ func (o *ListHealth200ResponseAllOfHealthThreads) SetBlockedThreads(v []map[stri
 	o.BlockedThreads = v
 }
 
-// GetRunningThreads returns the RunningThreads field value if set, zero value otherwise.
+// GetRunningThreads returns the RunningThreads field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListHealth200ResponseAllOfHealthThreads) GetRunningThreads() []map[string]interface{} {
-	if o == nil || IsNil(o.RunningThreads) {
+	if o == nil {
 		var ret []map[string]interface{}
 		return ret
 	}
@@ -190,6 +192,7 @@ func (o *ListHealth200ResponseAllOfHealthThreads) GetRunningThreads() []map[stri
 
 // GetRunningThreadsOk returns a tuple with the RunningThreads field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListHealth200ResponseAllOfHealthThreads) GetRunningThreadsOk() ([]map[string]interface{}, bool) {
 	if o == nil || IsNil(o.RunningThreads) {
 		return nil, false
@@ -352,16 +355,16 @@ func (o ListHealth200ResponseAllOfHealthThreads) ToMap() (map[string]interface{}
 	if !IsNil(o.Success) {
 		toSerialize["success"] = o.Success
 	}
-	if !IsNil(o.ThreadList) {
+	if o.ThreadList != nil {
 		toSerialize["threadList"] = o.ThreadList
 	}
 	if !IsNil(o.BusyThreads) {
 		toSerialize["busyThreads"] = o.BusyThreads
 	}
-	if !IsNil(o.BlockedThreads) {
+	if o.BlockedThreads != nil {
 		toSerialize["blockedThreads"] = o.BlockedThreads
 	}
-	if !IsNil(o.RunningThreads) {
+	if o.RunningThreads != nil {
 		toSerialize["runningThreads"] = o.RunningThreads
 	}
 	if !IsNil(o.TotalCpuTime) {

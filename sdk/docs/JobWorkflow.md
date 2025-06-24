@@ -9,22 +9,22 @@ Name | Type | Description | Notes
 **Labels** | Pointer to **[]string** |  | [optional] 
 **Type** | Pointer to [**ListBackupSettings200ResponseBackupSettingsDefaultSchedule**](ListBackupSettings200ResponseBackupSettingsDefaultSchedule.md) |  | [optional] 
 **Workflow** | Pointer to [**GetAlerts200ResponseAllOfChecksInnerAccount**](GetAlerts200ResponseAllOfChecksInnerAccount.md) |  | [optional] 
-**JobSummary** | Pointer to **string** |  | [optional] 
+**JobSummary** | Pointer to **NullableString** |  | [optional] 
 **ScheduleMode** | Pointer to [**ListJobs200ResponseAllOfJobsInnerAnyOfScheduleMode**](ListJobs200ResponseAllOfJobsInnerAnyOfScheduleMode.md) |  | [optional] 
-**DateTime** | Pointer to **string** |  | [optional] 
-**Status** | Pointer to **string** |  | [optional] 
-**Namespace** | Pointer to **string** |  | [optional] 
-**Category** | Pointer to **string** |  | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
+**DateTime** | Pointer to **NullableString** |  | [optional] 
+**Status** | Pointer to **NullableString** |  | [optional] 
+**Namespace** | Pointer to **NullableString** |  | [optional] 
+**Category** | Pointer to **NullableString** |  | [optional] 
+**Description** | Pointer to **NullableString** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
 **LastRun** | Pointer to **time.Time** |  | [optional] 
 **LastResult** | Pointer to **string** |  | [optional] 
-**CreatedBy** | Pointer to [**ListJobs200ResponseAllOfJobsInnerAnyOfCreatedBy**](ListJobs200ResponseAllOfJobsInnerAnyOfCreatedBy.md) |  | [optional] 
+**CreatedBy** | Pointer to [**ListCredentials200ResponseAllOfCredentialsInnerUser**](ListCredentials200ResponseAllOfCredentialsInnerUser.md) |  | [optional] 
 **TargetType** | Pointer to **string** |  | [optional] 
 **Targets** | Pointer to [**[]ListJobs200ResponseAllOfJobsInnerAnyOfTargetsInner**](ListJobs200ResponseAllOfJobsInnerAnyOfTargetsInner.md) |  | [optional] 
-**CustomConfig** | Pointer to **string** |  | [optional] 
+**CustomConfig** | Pointer to **NullableString** |  | [optional] 
 **CustomOptions** | Pointer to [**ListJobs200ResponseAllOfJobsInnerAnyOfCustomOptions**](ListJobs200ResponseAllOfJobsInnerAnyOfCustomOptions.md) |  | [optional] 
 
 ## Methods
@@ -121,6 +121,16 @@ SetLabels sets Labels field to given value.
 
 HasLabels returns a boolean if a field has been set.
 
+### SetLabelsNil
+
+`func (o *JobWorkflow) SetLabelsNil(b bool)`
+
+ SetLabelsNil sets the value for Labels to be an explicit nil
+
+### UnsetLabels
+`func (o *JobWorkflow) UnsetLabels()`
+
+UnsetLabels ensures that no value is present for Labels, not even an explicit nil
 ### GetType
 
 `func (o *JobWorkflow) GetType() ListBackupSettings200ResponseBackupSettingsDefaultSchedule`
@@ -196,6 +206,16 @@ SetJobSummary sets JobSummary field to given value.
 
 HasJobSummary returns a boolean if a field has been set.
 
+### SetJobSummaryNil
+
+`func (o *JobWorkflow) SetJobSummaryNil(b bool)`
+
+ SetJobSummaryNil sets the value for JobSummary to be an explicit nil
+
+### UnsetJobSummary
+`func (o *JobWorkflow) UnsetJobSummary()`
+
+UnsetJobSummary ensures that no value is present for JobSummary, not even an explicit nil
 ### GetScheduleMode
 
 `func (o *JobWorkflow) GetScheduleMode() ListJobs200ResponseAllOfJobsInnerAnyOfScheduleMode`
@@ -246,6 +266,16 @@ SetDateTime sets DateTime field to given value.
 
 HasDateTime returns a boolean if a field has been set.
 
+### SetDateTimeNil
+
+`func (o *JobWorkflow) SetDateTimeNil(b bool)`
+
+ SetDateTimeNil sets the value for DateTime to be an explicit nil
+
+### UnsetDateTime
+`func (o *JobWorkflow) UnsetDateTime()`
+
+UnsetDateTime ensures that no value is present for DateTime, not even an explicit nil
 ### GetStatus
 
 `func (o *JobWorkflow) GetStatus() string`
@@ -271,6 +301,16 @@ SetStatus sets Status field to given value.
 
 HasStatus returns a boolean if a field has been set.
 
+### SetStatusNil
+
+`func (o *JobWorkflow) SetStatusNil(b bool)`
+
+ SetStatusNil sets the value for Status to be an explicit nil
+
+### UnsetStatus
+`func (o *JobWorkflow) UnsetStatus()`
+
+UnsetStatus ensures that no value is present for Status, not even an explicit nil
 ### GetNamespace
 
 `func (o *JobWorkflow) GetNamespace() string`
@@ -296,6 +336,16 @@ SetNamespace sets Namespace field to given value.
 
 HasNamespace returns a boolean if a field has been set.
 
+### SetNamespaceNil
+
+`func (o *JobWorkflow) SetNamespaceNil(b bool)`
+
+ SetNamespaceNil sets the value for Namespace to be an explicit nil
+
+### UnsetNamespace
+`func (o *JobWorkflow) UnsetNamespace()`
+
+UnsetNamespace ensures that no value is present for Namespace, not even an explicit nil
 ### GetCategory
 
 `func (o *JobWorkflow) GetCategory() string`
@@ -321,6 +371,16 @@ SetCategory sets Category field to given value.
 
 HasCategory returns a boolean if a field has been set.
 
+### SetCategoryNil
+
+`func (o *JobWorkflow) SetCategoryNil(b bool)`
+
+ SetCategoryNil sets the value for Category to be an explicit nil
+
+### UnsetCategory
+`func (o *JobWorkflow) UnsetCategory()`
+
+UnsetCategory ensures that no value is present for Category, not even an explicit nil
 ### GetDescription
 
 `func (o *JobWorkflow) GetDescription() string`
@@ -346,6 +406,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *JobWorkflow) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *JobWorkflow) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetEnabled
 
 `func (o *JobWorkflow) GetEnabled() bool`
@@ -473,20 +543,20 @@ HasLastResult returns a boolean if a field has been set.
 
 ### GetCreatedBy
 
-`func (o *JobWorkflow) GetCreatedBy() ListJobs200ResponseAllOfJobsInnerAnyOfCreatedBy`
+`func (o *JobWorkflow) GetCreatedBy() ListCredentials200ResponseAllOfCredentialsInnerUser`
 
 GetCreatedBy returns the CreatedBy field if non-nil, zero value otherwise.
 
 ### GetCreatedByOk
 
-`func (o *JobWorkflow) GetCreatedByOk() (*ListJobs200ResponseAllOfJobsInnerAnyOfCreatedBy, bool)`
+`func (o *JobWorkflow) GetCreatedByOk() (*ListCredentials200ResponseAllOfCredentialsInnerUser, bool)`
 
 GetCreatedByOk returns a tuple with the CreatedBy field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCreatedBy
 
-`func (o *JobWorkflow) SetCreatedBy(v ListJobs200ResponseAllOfJobsInnerAnyOfCreatedBy)`
+`func (o *JobWorkflow) SetCreatedBy(v ListCredentials200ResponseAllOfCredentialsInnerUser)`
 
 SetCreatedBy sets CreatedBy field to given value.
 
@@ -546,6 +616,16 @@ SetTargets sets Targets field to given value.
 
 HasTargets returns a boolean if a field has been set.
 
+### SetTargetsNil
+
+`func (o *JobWorkflow) SetTargetsNil(b bool)`
+
+ SetTargetsNil sets the value for Targets to be an explicit nil
+
+### UnsetTargets
+`func (o *JobWorkflow) UnsetTargets()`
+
+UnsetTargets ensures that no value is present for Targets, not even an explicit nil
 ### GetCustomConfig
 
 `func (o *JobWorkflow) GetCustomConfig() string`
@@ -571,6 +651,16 @@ SetCustomConfig sets CustomConfig field to given value.
 
 HasCustomConfig returns a boolean if a field has been set.
 
+### SetCustomConfigNil
+
+`func (o *JobWorkflow) SetCustomConfigNil(b bool)`
+
+ SetCustomConfigNil sets the value for CustomConfig to be an explicit nil
+
+### UnsetCustomConfig
+`func (o *JobWorkflow) UnsetCustomConfig()`
+
+UnsetCustomConfig ensures that no value is present for CustomConfig, not even an explicit nil
 ### GetCustomOptions
 
 `func (o *JobWorkflow) GetCustomOptions() ListJobs200ResponseAllOfJobsInnerAnyOfCustomOptions`

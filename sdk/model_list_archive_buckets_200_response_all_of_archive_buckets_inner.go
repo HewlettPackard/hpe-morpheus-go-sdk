@@ -21,22 +21,22 @@ var _ MappedNullable = &ListArchiveBuckets200ResponseAllOfArchiveBucketsInner{}
 
 // ListArchiveBuckets200ResponseAllOfArchiveBucketsInner struct for ListArchiveBuckets200ResponseAllOfArchiveBucketsInner
 type ListArchiveBuckets200ResponseAllOfArchiveBucketsInner struct {
-	Id                   *int64                                                                  `json:"id,omitempty"`
-	Name                 *string                                                                 `json:"name,omitempty"`
-	Description          *string                                                                 `json:"description,omitempty"`
-	StorageProvider      *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"storageProvider,omitempty"`
-	Owner                *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"owner,omitempty"`
-	CreatedBy            *ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy         `json:"createdBy,omitempty"`
-	IsPublic             *bool                                                                   `json:"isPublic,omitempty"`
-	Visibility           *string                                                                 `json:"visibility,omitempty"`
-	Code                 *string                                                                 `json:"code,omitempty"`
-	FilePath             *string                                                                 `json:"filePath,omitempty"`
-	RawSize              *int64                                                                  `json:"rawSize,omitempty"`
-	FileCount            *int64                                                                  `json:"fileCount,omitempty"`
-	Accounts             []map[string]interface{}                                                `json:"accounts,omitempty"`
-	DateCreated          *time.Time                                                              `json:"dateCreated,omitempty"`
-	LastUpdated          *time.Time                                                              `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}                                                  `json:",remain"`
+	Id                   *int64                                                          `json:"id,omitempty"`
+	Name                 *string                                                         `json:"name,omitempty"`
+	Description          NullableString                                                  `json:"description,omitempty"`
+	StorageProvider      *GetAlerts200ResponseAllOfCheckGroupsInnerInstance              `json:"storageProvider,omitempty"`
+	Owner                *GetAlerts200ResponseAllOfCheckGroupsInnerInstance              `json:"owner,omitempty"`
+	CreatedBy            *ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy `json:"createdBy,omitempty"`
+	IsPublic             *bool                                                           `json:"isPublic,omitempty"`
+	Visibility           *string                                                         `json:"visibility,omitempty"`
+	Code                 *string                                                         `json:"code,omitempty"`
+	FilePath             *string                                                         `json:"filePath,omitempty"`
+	RawSize              NullableInt64                                                   `json:"rawSize,omitempty"`
+	FileCount            *int64                                                          `json:"fileCount,omitempty"`
+	Accounts             []map[string]interface{}                                        `json:"accounts,omitempty"`
+	DateCreated          *time.Time                                                      `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                                      `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}                                          `json:",remain"`
 }
 
 type _ListArchiveBuckets200ResponseAllOfArchiveBucketsInner ListArchiveBuckets200ResponseAllOfArchiveBucketsInner
@@ -122,42 +122,53 @@ func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) SetName(v string
 	o.Name = &v
 }
 
-// GetDescription returns the Description field value if set, zero value otherwise.
+// GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
+	if o == nil || IsNil(o.Description.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Description
+	return *o.Description.Get()
 }
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Description, true
+	return o.Description.Get(), o.Description.IsSet()
 }
 
 // IsSetDescription returns a boolean if a field has been set.
 func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
+	if o != nil && o.Description.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDescription gets a reference to the given string and assigns it to the Description field.
+// SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) SetDescription(v string) {
-	o.Description = &v
+	o.Description.Set(&v)
+}
+
+// SetDescriptionNil sets the value for Description to be an explicit nil
+func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) SetDescriptionNil() {
+	o.Description.Set(nil)
+}
+
+// UnsetDescription ensures that no value is present for Description, not even an explicit nil
+func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) UnsetDescription() {
+	o.Description.Unset()
 }
 
 // GetStorageProvider returns the StorageProvider field value if set, zero value otherwise.
-func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) GetStorageProvider() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) GetStorageProvider() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.StorageProvider) {
-		var ret ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return *o.StorageProvider
@@ -165,7 +176,7 @@ func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) GetStorageProvid
 
 // GetStorageProviderOk returns a tuple with the StorageProvider field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) GetStorageProviderOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) GetStorageProviderOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.StorageProvider) {
 		return nil, false
 	}
@@ -181,15 +192,15 @@ func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) IsSetStorageProv
 	return false
 }
 
-// SetStorageProvider gets a reference to the given ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the StorageProvider field.
-func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) SetStorageProvider(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetStorageProvider gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the StorageProvider field.
+func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) SetStorageProvider(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.StorageProvider = &v
 }
 
 // GetOwner returns the Owner field value if set, zero value otherwise.
-func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) GetOwner() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) GetOwner() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.Owner) {
-		var ret ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return *o.Owner
@@ -197,7 +208,7 @@ func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) GetOwner() ListA
 
 // GetOwnerOk returns a tuple with the Owner field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) GetOwnerOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) GetOwnerOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.Owner) {
 		return nil, false
 	}
@@ -213,8 +224,8 @@ func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) IsSetOwner() boo
 	return false
 }
 
-// SetOwner gets a reference to the given ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the Owner field.
-func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) SetOwner(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetOwner gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Owner field.
+func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) SetOwner(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.Owner = &v
 }
 
@@ -378,36 +389,47 @@ func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) SetFilePath(v st
 	o.FilePath = &v
 }
 
-// GetRawSize returns the RawSize field value if set, zero value otherwise.
+// GetRawSize returns the RawSize field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) GetRawSize() int64 {
-	if o == nil || IsNil(o.RawSize) {
+	if o == nil || IsNil(o.RawSize.Get()) {
 		var ret int64
 		return ret
 	}
-	return *o.RawSize
+	return *o.RawSize.Get()
 }
 
 // GetRawSizeOk returns a tuple with the RawSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) GetRawSizeOk() (*int64, bool) {
-	if o == nil || IsNil(o.RawSize) {
+	if o == nil {
 		return nil, false
 	}
-	return o.RawSize, true
+	return o.RawSize.Get(), o.RawSize.IsSet()
 }
 
 // IsSetRawSize returns a boolean if a field has been set.
 func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) IsSetRawSize() bool {
-	if o != nil && !IsNil(o.RawSize) {
+	if o != nil && o.RawSize.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetRawSize gets a reference to the given int64 and assigns it to the RawSize field.
+// SetRawSize gets a reference to the given NullableInt64 and assigns it to the RawSize field.
 func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) SetRawSize(v int64) {
-	o.RawSize = &v
+	o.RawSize.Set(&v)
+}
+
+// SetRawSizeNil sets the value for RawSize to be an explicit nil
+func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) SetRawSizeNil() {
+	o.RawSize.Set(nil)
+}
+
+// UnsetRawSize ensures that no value is present for RawSize, not even an explicit nil
+func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) UnsetRawSize() {
+	o.RawSize.Unset()
 }
 
 // GetFileCount returns the FileCount field value if set, zero value otherwise.
@@ -554,8 +576,8 @@ func (o ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) ToMap() (map[stri
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !IsNil(o.Description) {
-		toSerialize["description"] = o.Description
+	if o.Description.IsSet() {
+		toSerialize["description"] = o.Description.Get()
 	}
 	if !IsNil(o.StorageProvider) {
 		toSerialize["storageProvider"] = o.StorageProvider
@@ -578,8 +600,8 @@ func (o ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) ToMap() (map[stri
 	if !IsNil(o.FilePath) {
 		toSerialize["filePath"] = o.FilePath
 	}
-	if !IsNil(o.RawSize) {
-		toSerialize["rawSize"] = o.RawSize
+	if o.RawSize.IsSet() {
+		toSerialize["rawSize"] = o.RawSize.Get()
 	}
 	if !IsNil(o.FileCount) {
 		toSerialize["fileCount"] = o.FileCount

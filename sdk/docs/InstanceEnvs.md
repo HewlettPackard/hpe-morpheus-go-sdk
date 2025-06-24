@@ -52,6 +52,16 @@ SetEnvs sets Envs field to given value.
 
 HasEnvs returns a boolean if a field has been set.
 
+### SetEnvsNil
+
+`func (o *InstanceEnvs) SetEnvsNil(b bool)`
+
+ SetEnvsNil sets the value for Envs to be an explicit nil
+
+### UnsetEnvs
+`func (o *InstanceEnvs) UnsetEnvs()`
+
+UnsetEnvs ensures that no value is present for Envs, not even an explicit nil
 ### GetReadOnlyEnvs
 
 `func (o *InstanceEnvs) GetReadOnlyEnvs() []GetEnvVariables200ResponseInstanceEnvsInner`
@@ -77,6 +87,16 @@ SetReadOnlyEnvs sets ReadOnlyEnvs field to given value.
 
 HasReadOnlyEnvs returns a boolean if a field has been set.
 
+### SetReadOnlyEnvsNil
+
+`func (o *InstanceEnvs) SetReadOnlyEnvsNil(b bool)`
+
+ SetReadOnlyEnvsNil sets the value for ReadOnlyEnvs to be an explicit nil
+
+### UnsetReadOnlyEnvs
+`func (o *InstanceEnvs) UnsetReadOnlyEnvs()`
+
+UnsetReadOnlyEnvs ensures that no value is present for ReadOnlyEnvs, not even an explicit nil
 ### GetImportedEnvs
 
 `func (o *InstanceEnvs) GetImportedEnvs() []GetEnvVariables200ResponseInstanceEnvsInner`
@@ -102,6 +122,16 @@ SetImportedEnvs sets ImportedEnvs field to given value.
 
 HasImportedEnvs returns a boolean if a field has been set.
 
+### SetImportedEnvsNil
+
+`func (o *InstanceEnvs) SetImportedEnvsNil(b bool)`
+
+ SetImportedEnvsNil sets the value for ImportedEnvs to be an explicit nil
+
+### UnsetImportedEnvs
+`func (o *InstanceEnvs) UnsetImportedEnvs()`
+
+UnsetImportedEnvs ensures that no value is present for ImportedEnvs, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

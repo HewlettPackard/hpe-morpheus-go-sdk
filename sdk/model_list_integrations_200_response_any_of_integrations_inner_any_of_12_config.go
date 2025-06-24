@@ -22,7 +22,7 @@ var _ MappedNullable = &ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf12
 type ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf12Config struct {
 	ApprovalUser          *string                `json:"approvalUser,omitempty"`
 	Company               *string                `json:"company,omitempty"`
-	RemedyIgnoreSSLErrors *string                `json:"remedyIgnoreSSLErrors,omitempty"`
+	RemedyIgnoreSSLErrors NullableString         `json:"remedyIgnoreSSLErrors,omitempty"`
 	AdditionalProperties  map[string]interface{} `json:",remain"`
 }
 
@@ -109,36 +109,47 @@ func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf12Config) SetComp
 	o.Company = &v
 }
 
-// GetRemedyIgnoreSSLErrors returns the RemedyIgnoreSSLErrors field value if set, zero value otherwise.
+// GetRemedyIgnoreSSLErrors returns the RemedyIgnoreSSLErrors field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf12Config) GetRemedyIgnoreSSLErrors() string {
-	if o == nil || IsNil(o.RemedyIgnoreSSLErrors) {
+	if o == nil || IsNil(o.RemedyIgnoreSSLErrors.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.RemedyIgnoreSSLErrors
+	return *o.RemedyIgnoreSSLErrors.Get()
 }
 
 // GetRemedyIgnoreSSLErrorsOk returns a tuple with the RemedyIgnoreSSLErrors field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf12Config) GetRemedyIgnoreSSLErrorsOk() (*string, bool) {
-	if o == nil || IsNil(o.RemedyIgnoreSSLErrors) {
+	if o == nil {
 		return nil, false
 	}
-	return o.RemedyIgnoreSSLErrors, true
+	return o.RemedyIgnoreSSLErrors.Get(), o.RemedyIgnoreSSLErrors.IsSet()
 }
 
 // IsSetRemedyIgnoreSSLErrors returns a boolean if a field has been set.
 func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf12Config) IsSetRemedyIgnoreSSLErrors() bool {
-	if o != nil && !IsNil(o.RemedyIgnoreSSLErrors) {
+	if o != nil && o.RemedyIgnoreSSLErrors.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetRemedyIgnoreSSLErrors gets a reference to the given string and assigns it to the RemedyIgnoreSSLErrors field.
+// SetRemedyIgnoreSSLErrors gets a reference to the given NullableString and assigns it to the RemedyIgnoreSSLErrors field.
 func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf12Config) SetRemedyIgnoreSSLErrors(v string) {
-	o.RemedyIgnoreSSLErrors = &v
+	o.RemedyIgnoreSSLErrors.Set(&v)
+}
+
+// SetRemedyIgnoreSSLErrorsNil sets the value for RemedyIgnoreSSLErrors to be an explicit nil
+func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf12Config) SetRemedyIgnoreSSLErrorsNil() {
+	o.RemedyIgnoreSSLErrors.Set(nil)
+}
+
+// UnsetRemedyIgnoreSSLErrors ensures that no value is present for RemedyIgnoreSSLErrors, not even an explicit nil
+func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf12Config) UnsetRemedyIgnoreSSLErrors() {
+	o.RemedyIgnoreSSLErrors.Unset()
 }
 
 func (o ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf12Config) MarshalJSON() ([]byte, error) {
@@ -157,8 +168,8 @@ func (o ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf12Config) ToMap() 
 	if !IsNil(o.Company) {
 		toSerialize["company"] = o.Company
 	}
-	if !IsNil(o.RemedyIgnoreSSLErrors) {
-		toSerialize["remedyIgnoreSSLErrors"] = o.RemedyIgnoreSSLErrors
+	if o.RemedyIgnoreSSLErrors.IsSet() {
+		toSerialize["remedyIgnoreSSLErrors"] = o.RemedyIgnoreSSLErrors.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {

@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **Owner** | Pointer to [**GetAlerts200ResponseAllOfChecksInnerAccount**](GetAlerts200ResponseAllOfChecksInnerAccount.md) |  | [optional] 
 **NetworkServer** | Pointer to [**GetAlerts200ResponseAllOfChecksInnerAccount**](GetAlerts200ResponseAllOfChecksInnerAccount.md) |  | [optional] 
 **Zone** | Pointer to [**GetAlerts200ResponseAllOfChecksInnerAccount**](GetAlerts200ResponseAllOfChecksInnerAccount.md) |  | [optional] 
-**Tenants** | Pointer to [**[]ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
+**Tenants** | Pointer to [**[]GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 
 ## Methods
 
@@ -469,20 +469,20 @@ HasZone returns a boolean if a field has been set.
 
 ### GetTenants
 
-`func (o *GetNetworkTransportZone200ResponseNetworkScope) GetTenants() []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *GetNetworkTransportZone200ResponseNetworkScope) GetTenants() []GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetTenants returns the Tenants field if non-nil, zero value otherwise.
 
 ### GetTenantsOk
 
-`func (o *GetNetworkTransportZone200ResponseNetworkScope) GetTenantsOk() (*[]ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *GetNetworkTransportZone200ResponseNetworkScope) GetTenantsOk() (*[]GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetTenantsOk returns a tuple with the Tenants field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenants
 
-`func (o *GetNetworkTransportZone200ResponseNetworkScope) SetTenants(v []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *GetNetworkTransportZone200ResponseNetworkScope) SetTenants(v []GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetTenants sets Tenants field to given value.
 

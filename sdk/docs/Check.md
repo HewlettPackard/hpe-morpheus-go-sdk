@@ -9,37 +9,37 @@ Name | Type | Description | Notes
 **Active** | Pointer to **bool** |  | [optional] 
 **ApiKey** | Pointer to **string** |  | [optional] 
 **Availability** | Pointer to **float32** |  | [optional] 
-**CheckAgent** | Pointer to **string** |  | [optional] 
-**CheckInterval** | Pointer to **int64** |  | [optional] 
-**CheckSpec** | Pointer to **string** |  | [optional] 
+**CheckAgent** | Pointer to **NullableString** |  | [optional] 
+**CheckInterval** | Pointer to **NullableInt64** |  | [optional] 
+**CheckSpec** | Pointer to **NullableString** |  | [optional] 
 **CheckType** | Pointer to [**GetAlerts200ResponseAllOfChecksInnerCheckType**](GetAlerts200ResponseAllOfChecksInnerCheckType.md) |  | [optional] 
 **Config** | Pointer to [**GetAlerts200ResponseAllOfChecksInnerConfig**](GetAlerts200ResponseAllOfChecksInnerConfig.md) |  | [optional] 
-**Container** | Pointer to [**GetAlerts200ResponseAllOfChecksInnerContainer**](GetAlerts200ResponseAllOfChecksInnerContainer.md) |  | [optional] 
+**Container** | Pointer to [**GetAlerts200ResponseAllOfChecksInnerAccount**](GetAlerts200ResponseAllOfChecksInnerAccount.md) |  | [optional] 
 **CreateIncident** | Pointer to **bool** |  | [optional] 
 **Muted** | Pointer to **bool** |  | [optional] 
-**CreatedBy** | Pointer to [**GetAlerts200ResponseAllOfChecksInnerCreatedBy**](GetAlerts200ResponseAllOfChecksInnerCreatedBy.md) |  | [optional] 
+**CreatedBy** | Pointer to [**ListActivity200ResponseAllOfActivityInnerActivityInnerUser**](ListActivity200ResponseAllOfActivityInnerActivityInnerUser.md) |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
-**EndDate** | Pointer to **time.Time** |  | [optional] 
+**Description** | Pointer to **NullableString** |  | [optional] 
+**EndDate** | Pointer to **NullableTime** |  | [optional] 
 **Health** | Pointer to **int64** |  | [optional] 
 **InUptime** | Pointer to **bool** |  | [optional] 
-**LastBoxStats** | Pointer to **string** |  | [optional] 
-**LastCheckStatus** | Pointer to **string** |  | [optional] 
-**LastError** | Pointer to **string** |  | [optional] 
-**LastErrorDate** | Pointer to **time.Time** |  | [optional] 
-**LastMessage** | Pointer to **string** |  | [optional] 
-**LastMetric** | Pointer to **string** |  | [optional] 
-**LastRunDate** | Pointer to **time.Time** |  | [optional] 
-**LastStats** | Pointer to **string** |  | [optional] 
-**LastSuccessDate** | Pointer to **time.Time** |  | [optional] 
-**LastTimer** | Pointer to **int64** |  | [optional] 
-**LastUpdated** | Pointer to **time.Time** |  | [optional] 
-**LastWarningDate** | Pointer to **time.Time** |  | [optional] 
+**LastBoxStats** | Pointer to **NullableString** |  | [optional] 
+**LastCheckStatus** | Pointer to **NullableString** |  | [optional] 
+**LastError** | Pointer to **NullableString** |  | [optional] 
+**LastErrorDate** | Pointer to **NullableTime** |  | [optional] 
+**LastMessage** | Pointer to **NullableString** |  | [optional] 
+**LastMetric** | Pointer to **NullableString** |  | [optional] 
+**LastRunDate** | Pointer to **NullableTime** |  | [optional] 
+**LastStats** | Pointer to **NullableString** |  | [optional] 
+**LastSuccessDate** | Pointer to **NullableTime** |  | [optional] 
+**LastTimer** | Pointer to **NullableInt64** |  | [optional] 
+**LastUpdated** | Pointer to **NullableTime** |  | [optional] 
+**LastWarningDate** | Pointer to **NullableTime** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**NextRunDate** | Pointer to **time.Time** |  | [optional] 
+**NextRunDate** | Pointer to **NullableTime** |  | [optional] 
 **OutageTime** | Pointer to **int64** |  | [optional] 
 **Severity** | Pointer to **string** |  | [optional] 
-**StartDate** | Pointer to **time.Time** |  | [optional] 
+**StartDate** | Pointer to **NullableTime** |  | [optional] 
 **Deleted** | Pointer to **bool** |  | [optional] 
 
 ## Methods
@@ -211,6 +211,16 @@ SetCheckAgent sets CheckAgent field to given value.
 
 HasCheckAgent returns a boolean if a field has been set.
 
+### SetCheckAgentNil
+
+`func (o *Check) SetCheckAgentNil(b bool)`
+
+ SetCheckAgentNil sets the value for CheckAgent to be an explicit nil
+
+### UnsetCheckAgent
+`func (o *Check) UnsetCheckAgent()`
+
+UnsetCheckAgent ensures that no value is present for CheckAgent, not even an explicit nil
 ### GetCheckInterval
 
 `func (o *Check) GetCheckInterval() int64`
@@ -236,6 +246,16 @@ SetCheckInterval sets CheckInterval field to given value.
 
 HasCheckInterval returns a boolean if a field has been set.
 
+### SetCheckIntervalNil
+
+`func (o *Check) SetCheckIntervalNil(b bool)`
+
+ SetCheckIntervalNil sets the value for CheckInterval to be an explicit nil
+
+### UnsetCheckInterval
+`func (o *Check) UnsetCheckInterval()`
+
+UnsetCheckInterval ensures that no value is present for CheckInterval, not even an explicit nil
 ### GetCheckSpec
 
 `func (o *Check) GetCheckSpec() string`
@@ -261,6 +281,16 @@ SetCheckSpec sets CheckSpec field to given value.
 
 HasCheckSpec returns a boolean if a field has been set.
 
+### SetCheckSpecNil
+
+`func (o *Check) SetCheckSpecNil(b bool)`
+
+ SetCheckSpecNil sets the value for CheckSpec to be an explicit nil
+
+### UnsetCheckSpec
+`func (o *Check) UnsetCheckSpec()`
+
+UnsetCheckSpec ensures that no value is present for CheckSpec, not even an explicit nil
 ### GetCheckType
 
 `func (o *Check) GetCheckType() GetAlerts200ResponseAllOfChecksInnerCheckType`
@@ -313,20 +343,20 @@ HasConfig returns a boolean if a field has been set.
 
 ### GetContainer
 
-`func (o *Check) GetContainer() GetAlerts200ResponseAllOfChecksInnerContainer`
+`func (o *Check) GetContainer() GetAlerts200ResponseAllOfChecksInnerAccount`
 
 GetContainer returns the Container field if non-nil, zero value otherwise.
 
 ### GetContainerOk
 
-`func (o *Check) GetContainerOk() (*GetAlerts200ResponseAllOfChecksInnerContainer, bool)`
+`func (o *Check) GetContainerOk() (*GetAlerts200ResponseAllOfChecksInnerAccount, bool)`
 
 GetContainerOk returns a tuple with the Container field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetContainer
 
-`func (o *Check) SetContainer(v GetAlerts200ResponseAllOfChecksInnerContainer)`
+`func (o *Check) SetContainer(v GetAlerts200ResponseAllOfChecksInnerAccount)`
 
 SetContainer sets Container field to given value.
 
@@ -388,20 +418,20 @@ HasMuted returns a boolean if a field has been set.
 
 ### GetCreatedBy
 
-`func (o *Check) GetCreatedBy() GetAlerts200ResponseAllOfChecksInnerCreatedBy`
+`func (o *Check) GetCreatedBy() ListActivity200ResponseAllOfActivityInnerActivityInnerUser`
 
 GetCreatedBy returns the CreatedBy field if non-nil, zero value otherwise.
 
 ### GetCreatedByOk
 
-`func (o *Check) GetCreatedByOk() (*GetAlerts200ResponseAllOfChecksInnerCreatedBy, bool)`
+`func (o *Check) GetCreatedByOk() (*ListActivity200ResponseAllOfActivityInnerActivityInnerUser, bool)`
 
 GetCreatedByOk returns a tuple with the CreatedBy field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCreatedBy
 
-`func (o *Check) SetCreatedBy(v GetAlerts200ResponseAllOfChecksInnerCreatedBy)`
+`func (o *Check) SetCreatedBy(v ListActivity200ResponseAllOfActivityInnerActivityInnerUser)`
 
 SetCreatedBy sets CreatedBy field to given value.
 
@@ -461,6 +491,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *Check) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *Check) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetEndDate
 
 `func (o *Check) GetEndDate() time.Time`
@@ -486,6 +526,16 @@ SetEndDate sets EndDate field to given value.
 
 HasEndDate returns a boolean if a field has been set.
 
+### SetEndDateNil
+
+`func (o *Check) SetEndDateNil(b bool)`
+
+ SetEndDateNil sets the value for EndDate to be an explicit nil
+
+### UnsetEndDate
+`func (o *Check) UnsetEndDate()`
+
+UnsetEndDate ensures that no value is present for EndDate, not even an explicit nil
 ### GetHealth
 
 `func (o *Check) GetHealth() int64`
@@ -561,6 +611,16 @@ SetLastBoxStats sets LastBoxStats field to given value.
 
 HasLastBoxStats returns a boolean if a field has been set.
 
+### SetLastBoxStatsNil
+
+`func (o *Check) SetLastBoxStatsNil(b bool)`
+
+ SetLastBoxStatsNil sets the value for LastBoxStats to be an explicit nil
+
+### UnsetLastBoxStats
+`func (o *Check) UnsetLastBoxStats()`
+
+UnsetLastBoxStats ensures that no value is present for LastBoxStats, not even an explicit nil
 ### GetLastCheckStatus
 
 `func (o *Check) GetLastCheckStatus() string`
@@ -586,6 +646,16 @@ SetLastCheckStatus sets LastCheckStatus field to given value.
 
 HasLastCheckStatus returns a boolean if a field has been set.
 
+### SetLastCheckStatusNil
+
+`func (o *Check) SetLastCheckStatusNil(b bool)`
+
+ SetLastCheckStatusNil sets the value for LastCheckStatus to be an explicit nil
+
+### UnsetLastCheckStatus
+`func (o *Check) UnsetLastCheckStatus()`
+
+UnsetLastCheckStatus ensures that no value is present for LastCheckStatus, not even an explicit nil
 ### GetLastError
 
 `func (o *Check) GetLastError() string`
@@ -611,6 +681,16 @@ SetLastError sets LastError field to given value.
 
 HasLastError returns a boolean if a field has been set.
 
+### SetLastErrorNil
+
+`func (o *Check) SetLastErrorNil(b bool)`
+
+ SetLastErrorNil sets the value for LastError to be an explicit nil
+
+### UnsetLastError
+`func (o *Check) UnsetLastError()`
+
+UnsetLastError ensures that no value is present for LastError, not even an explicit nil
 ### GetLastErrorDate
 
 `func (o *Check) GetLastErrorDate() time.Time`
@@ -636,6 +716,16 @@ SetLastErrorDate sets LastErrorDate field to given value.
 
 HasLastErrorDate returns a boolean if a field has been set.
 
+### SetLastErrorDateNil
+
+`func (o *Check) SetLastErrorDateNil(b bool)`
+
+ SetLastErrorDateNil sets the value for LastErrorDate to be an explicit nil
+
+### UnsetLastErrorDate
+`func (o *Check) UnsetLastErrorDate()`
+
+UnsetLastErrorDate ensures that no value is present for LastErrorDate, not even an explicit nil
 ### GetLastMessage
 
 `func (o *Check) GetLastMessage() string`
@@ -661,6 +751,16 @@ SetLastMessage sets LastMessage field to given value.
 
 HasLastMessage returns a boolean if a field has been set.
 
+### SetLastMessageNil
+
+`func (o *Check) SetLastMessageNil(b bool)`
+
+ SetLastMessageNil sets the value for LastMessage to be an explicit nil
+
+### UnsetLastMessage
+`func (o *Check) UnsetLastMessage()`
+
+UnsetLastMessage ensures that no value is present for LastMessage, not even an explicit nil
 ### GetLastMetric
 
 `func (o *Check) GetLastMetric() string`
@@ -686,6 +786,16 @@ SetLastMetric sets LastMetric field to given value.
 
 HasLastMetric returns a boolean if a field has been set.
 
+### SetLastMetricNil
+
+`func (o *Check) SetLastMetricNil(b bool)`
+
+ SetLastMetricNil sets the value for LastMetric to be an explicit nil
+
+### UnsetLastMetric
+`func (o *Check) UnsetLastMetric()`
+
+UnsetLastMetric ensures that no value is present for LastMetric, not even an explicit nil
 ### GetLastRunDate
 
 `func (o *Check) GetLastRunDate() time.Time`
@@ -711,6 +821,16 @@ SetLastRunDate sets LastRunDate field to given value.
 
 HasLastRunDate returns a boolean if a field has been set.
 
+### SetLastRunDateNil
+
+`func (o *Check) SetLastRunDateNil(b bool)`
+
+ SetLastRunDateNil sets the value for LastRunDate to be an explicit nil
+
+### UnsetLastRunDate
+`func (o *Check) UnsetLastRunDate()`
+
+UnsetLastRunDate ensures that no value is present for LastRunDate, not even an explicit nil
 ### GetLastStats
 
 `func (o *Check) GetLastStats() string`
@@ -736,6 +856,16 @@ SetLastStats sets LastStats field to given value.
 
 HasLastStats returns a boolean if a field has been set.
 
+### SetLastStatsNil
+
+`func (o *Check) SetLastStatsNil(b bool)`
+
+ SetLastStatsNil sets the value for LastStats to be an explicit nil
+
+### UnsetLastStats
+`func (o *Check) UnsetLastStats()`
+
+UnsetLastStats ensures that no value is present for LastStats, not even an explicit nil
 ### GetLastSuccessDate
 
 `func (o *Check) GetLastSuccessDate() time.Time`
@@ -761,6 +891,16 @@ SetLastSuccessDate sets LastSuccessDate field to given value.
 
 HasLastSuccessDate returns a boolean if a field has been set.
 
+### SetLastSuccessDateNil
+
+`func (o *Check) SetLastSuccessDateNil(b bool)`
+
+ SetLastSuccessDateNil sets the value for LastSuccessDate to be an explicit nil
+
+### UnsetLastSuccessDate
+`func (o *Check) UnsetLastSuccessDate()`
+
+UnsetLastSuccessDate ensures that no value is present for LastSuccessDate, not even an explicit nil
 ### GetLastTimer
 
 `func (o *Check) GetLastTimer() int64`
@@ -786,6 +926,16 @@ SetLastTimer sets LastTimer field to given value.
 
 HasLastTimer returns a boolean if a field has been set.
 
+### SetLastTimerNil
+
+`func (o *Check) SetLastTimerNil(b bool)`
+
+ SetLastTimerNil sets the value for LastTimer to be an explicit nil
+
+### UnsetLastTimer
+`func (o *Check) UnsetLastTimer()`
+
+UnsetLastTimer ensures that no value is present for LastTimer, not even an explicit nil
 ### GetLastUpdated
 
 `func (o *Check) GetLastUpdated() time.Time`
@@ -811,6 +961,16 @@ SetLastUpdated sets LastUpdated field to given value.
 
 HasLastUpdated returns a boolean if a field has been set.
 
+### SetLastUpdatedNil
+
+`func (o *Check) SetLastUpdatedNil(b bool)`
+
+ SetLastUpdatedNil sets the value for LastUpdated to be an explicit nil
+
+### UnsetLastUpdated
+`func (o *Check) UnsetLastUpdated()`
+
+UnsetLastUpdated ensures that no value is present for LastUpdated, not even an explicit nil
 ### GetLastWarningDate
 
 `func (o *Check) GetLastWarningDate() time.Time`
@@ -836,6 +996,16 @@ SetLastWarningDate sets LastWarningDate field to given value.
 
 HasLastWarningDate returns a boolean if a field has been set.
 
+### SetLastWarningDateNil
+
+`func (o *Check) SetLastWarningDateNil(b bool)`
+
+ SetLastWarningDateNil sets the value for LastWarningDate to be an explicit nil
+
+### UnsetLastWarningDate
+`func (o *Check) UnsetLastWarningDate()`
+
+UnsetLastWarningDate ensures that no value is present for LastWarningDate, not even an explicit nil
 ### GetName
 
 `func (o *Check) GetName() string`
@@ -886,6 +1056,16 @@ SetNextRunDate sets NextRunDate field to given value.
 
 HasNextRunDate returns a boolean if a field has been set.
 
+### SetNextRunDateNil
+
+`func (o *Check) SetNextRunDateNil(b bool)`
+
+ SetNextRunDateNil sets the value for NextRunDate to be an explicit nil
+
+### UnsetNextRunDate
+`func (o *Check) UnsetNextRunDate()`
+
+UnsetNextRunDate ensures that no value is present for NextRunDate, not even an explicit nil
 ### GetOutageTime
 
 `func (o *Check) GetOutageTime() int64`
@@ -961,6 +1141,16 @@ SetStartDate sets StartDate field to given value.
 
 HasStartDate returns a boolean if a field has been set.
 
+### SetStartDateNil
+
+`func (o *Check) SetStartDateNil(b bool)`
+
+ SetStartDateNil sets the value for StartDate to be an explicit nil
+
+### UnsetStartDate
+`func (o *Check) UnsetStartDate()`
+
+UnsetStartDate ensures that no value is present for StartDate, not even an explicit nil
 ### GetDeleted
 
 `func (o *Check) GetDeleted() bool`

@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Host** | Pointer to **string** |  | [optional] 
-**SshKey** | Pointer to **string** |  | [optional] 
-**LocalScriptGitRef** | Pointer to **string** |  | [optional] 
-**Port** | Pointer to **string** |  | [optional] 
-**LocalScriptGitId** | Pointer to **string** |  | [optional] 
-**Password** | Pointer to **string** |  | [optional] 
-**PasswordHash** | Pointer to **string** |  | [optional] 
-**WriteAttributesAttributes** | Pointer to **string** |  | [optional] 
-**Username** | Pointer to **string** |  | [optional] 
+**Host** | Pointer to **NullableString** |  | [optional] 
+**SshKey** | Pointer to **NullableString** |  | [optional] 
+**LocalScriptGitRef** | Pointer to **NullableString** |  | [optional] 
+**Port** | Pointer to **NullableString** |  | [optional] 
+**LocalScriptGitId** | Pointer to **NullableString** |  | [optional] 
+**Password** | Pointer to **NullableString** |  | [optional] 
+**PasswordHash** | Pointer to **NullableString** |  | [optional] 
+**WriteAttributesAttributes** | Pointer to **NullableString** |  | [optional] 
+**Username** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -58,6 +58,16 @@ SetHost sets Host field to given value.
 
 HasHost returns a boolean if a field has been set.
 
+### SetHostNil
+
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOf16TaskOptions) SetHostNil(b bool)`
+
+ SetHostNil sets the value for Host to be an explicit nil
+
+### UnsetHost
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOf16TaskOptions) UnsetHost()`
+
+UnsetHost ensures that no value is present for Host, not even an explicit nil
 ### GetSshKey
 
 `func (o *ListTasks200ResponseAllOfTasksInnerAnyOf16TaskOptions) GetSshKey() string`
@@ -83,6 +93,16 @@ SetSshKey sets SshKey field to given value.
 
 HasSshKey returns a boolean if a field has been set.
 
+### SetSshKeyNil
+
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOf16TaskOptions) SetSshKeyNil(b bool)`
+
+ SetSshKeyNil sets the value for SshKey to be an explicit nil
+
+### UnsetSshKey
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOf16TaskOptions) UnsetSshKey()`
+
+UnsetSshKey ensures that no value is present for SshKey, not even an explicit nil
 ### GetLocalScriptGitRef
 
 `func (o *ListTasks200ResponseAllOfTasksInnerAnyOf16TaskOptions) GetLocalScriptGitRef() string`
@@ -108,6 +128,16 @@ SetLocalScriptGitRef sets LocalScriptGitRef field to given value.
 
 HasLocalScriptGitRef returns a boolean if a field has been set.
 
+### SetLocalScriptGitRefNil
+
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOf16TaskOptions) SetLocalScriptGitRefNil(b bool)`
+
+ SetLocalScriptGitRefNil sets the value for LocalScriptGitRef to be an explicit nil
+
+### UnsetLocalScriptGitRef
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOf16TaskOptions) UnsetLocalScriptGitRef()`
+
+UnsetLocalScriptGitRef ensures that no value is present for LocalScriptGitRef, not even an explicit nil
 ### GetPort
 
 `func (o *ListTasks200ResponseAllOfTasksInnerAnyOf16TaskOptions) GetPort() string`
@@ -133,6 +163,16 @@ SetPort sets Port field to given value.
 
 HasPort returns a boolean if a field has been set.
 
+### SetPortNil
+
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOf16TaskOptions) SetPortNil(b bool)`
+
+ SetPortNil sets the value for Port to be an explicit nil
+
+### UnsetPort
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOf16TaskOptions) UnsetPort()`
+
+UnsetPort ensures that no value is present for Port, not even an explicit nil
 ### GetLocalScriptGitId
 
 `func (o *ListTasks200ResponseAllOfTasksInnerAnyOf16TaskOptions) GetLocalScriptGitId() string`
@@ -158,6 +198,16 @@ SetLocalScriptGitId sets LocalScriptGitId field to given value.
 
 HasLocalScriptGitId returns a boolean if a field has been set.
 
+### SetLocalScriptGitIdNil
+
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOf16TaskOptions) SetLocalScriptGitIdNil(b bool)`
+
+ SetLocalScriptGitIdNil sets the value for LocalScriptGitId to be an explicit nil
+
+### UnsetLocalScriptGitId
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOf16TaskOptions) UnsetLocalScriptGitId()`
+
+UnsetLocalScriptGitId ensures that no value is present for LocalScriptGitId, not even an explicit nil
 ### GetPassword
 
 `func (o *ListTasks200ResponseAllOfTasksInnerAnyOf16TaskOptions) GetPassword() string`
@@ -183,6 +233,16 @@ SetPassword sets Password field to given value.
 
 HasPassword returns a boolean if a field has been set.
 
+### SetPasswordNil
+
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOf16TaskOptions) SetPasswordNil(b bool)`
+
+ SetPasswordNil sets the value for Password to be an explicit nil
+
+### UnsetPassword
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOf16TaskOptions) UnsetPassword()`
+
+UnsetPassword ensures that no value is present for Password, not even an explicit nil
 ### GetPasswordHash
 
 `func (o *ListTasks200ResponseAllOfTasksInnerAnyOf16TaskOptions) GetPasswordHash() string`
@@ -208,6 +268,16 @@ SetPasswordHash sets PasswordHash field to given value.
 
 HasPasswordHash returns a boolean if a field has been set.
 
+### SetPasswordHashNil
+
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOf16TaskOptions) SetPasswordHashNil(b bool)`
+
+ SetPasswordHashNil sets the value for PasswordHash to be an explicit nil
+
+### UnsetPasswordHash
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOf16TaskOptions) UnsetPasswordHash()`
+
+UnsetPasswordHash ensures that no value is present for PasswordHash, not even an explicit nil
 ### GetWriteAttributesAttributes
 
 `func (o *ListTasks200ResponseAllOfTasksInnerAnyOf16TaskOptions) GetWriteAttributesAttributes() string`
@@ -233,6 +303,16 @@ SetWriteAttributesAttributes sets WriteAttributesAttributes field to given value
 
 HasWriteAttributesAttributes returns a boolean if a field has been set.
 
+### SetWriteAttributesAttributesNil
+
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOf16TaskOptions) SetWriteAttributesAttributesNil(b bool)`
+
+ SetWriteAttributesAttributesNil sets the value for WriteAttributesAttributes to be an explicit nil
+
+### UnsetWriteAttributesAttributes
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOf16TaskOptions) UnsetWriteAttributesAttributes()`
+
+UnsetWriteAttributesAttributes ensures that no value is present for WriteAttributesAttributes, not even an explicit nil
 ### GetUsername
 
 `func (o *ListTasks200ResponseAllOfTasksInnerAnyOf16TaskOptions) GetUsername() string`
@@ -258,6 +338,16 @@ SetUsername sets Username field to given value.
 
 HasUsername returns a boolean if a field has been set.
 
+### SetUsernameNil
+
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOf16TaskOptions) SetUsernameNil(b bool)`
+
+ SetUsernameNil sets the value for Username to be an explicit nil
+
+### UnsetUsername
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOf16TaskOptions) UnsetUsername()`
+
+UnsetUsername ensures that no value is present for Username, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

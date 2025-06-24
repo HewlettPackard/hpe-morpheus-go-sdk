@@ -22,7 +22,7 @@ var _ MappedNullable = &ZoneVcenterConfig{}
 type ZoneVcenterConfig struct {
 	ApiUrl                     *string                                                       `json:"apiUrl,omitempty"`
 	Username                   *string                                                       `json:"username,omitempty"`
-	Password                   *string                                                       `json:"password,omitempty"`
+	Password                   NullableString                                                `json:"password,omitempty"`
 	Datacenter                 *string                                                       `json:"datacenter,omitempty"`
 	Cluster                    *string                                                       `json:"cluster,omitempty"`
 	ResourcePoolId             *string                                                       `json:"resourcePoolId,omitempty"`
@@ -31,29 +31,29 @@ type ZoneVcenterConfig struct {
 	HideHostSelection          *string                                                       `json:"hideHostSelection,omitempty"`
 	ImportExisting             *string                                                       `json:"importExisting,omitempty"`
 	EnableVnc                  *string                                                       `json:"enableVnc,omitempty"`
-	EnableDiskTypeSelection    *string                                                       `json:"enableDiskTypeSelection,omitempty"`
+	EnableDiskTypeSelection    NullableString                                                `json:"enableDiskTypeSelection,omitempty"`
 	EnableNetworkTypeSelection *string                                                       `json:"enableNetworkTypeSelection,omitempty"`
-	DiskStorageType            *string                                                       `json:"diskStorageType,omitempty"`
-	ApplianceUrl               *string                                                       `json:"applianceUrl,omitempty"`
-	DatacenterName             *string                                                       `json:"datacenterName,omitempty"`
+	DiskStorageType            NullableString                                                `json:"diskStorageType,omitempty"`
+	ApplianceUrl               NullableString                                                `json:"applianceUrl,omitempty"`
+	DatacenterName             NullableString                                                `json:"datacenterName,omitempty"`
 	NetworkServerId            *string                                                       `json:"networkServer.id,omitempty"`
 	NetworkServer              *ListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer `json:"networkServer,omitempty"`
 	SecurityMode               *string                                                       `json:"securityMode,omitempty"`
-	CertificateProvider        *string                                                       `json:"certificateProvider,omitempty"`
-	BackupMode                 *string                                                       `json:"backupMode,omitempty"`
-	ReplicationMode            *string                                                       `json:"replicationMode,omitempty"`
-	DnsIntegrationId           *string                                                       `json:"dnsIntegrationId,omitempty"`
-	ConfigCmdbId               *string                                                       `json:"configCmdbId,omitempty"`
-	ConfigManagementId         *string                                                       `json:"configManagementId,omitempty"`
-	ConfigCmId                 *string                                                       `json:"configCmId,omitempty"`
-	SecurityServer             *string                                                       `json:"securityServer,omitempty"`
-	ServiceRegistryId          *string                                                       `json:"serviceRegistryId,omitempty"`
-	KubeUrl                    *string                                                       `json:"kubeUrl,omitempty"`
-	ApiVersion                 *string                                                       `json:"apiVersion,omitempty"`
-	DatacenterId               *string                                                       `json:"datacenterId,omitempty"`
+	CertificateProvider        NullableString                                                `json:"certificateProvider,omitempty"`
+	BackupMode                 NullableString                                                `json:"backupMode,omitempty"`
+	ReplicationMode            NullableString                                                `json:"replicationMode,omitempty"`
+	DnsIntegrationId           NullableString                                                `json:"dnsIntegrationId,omitempty"`
+	ConfigCmdbId               NullableString                                                `json:"configCmdbId,omitempty"`
+	ConfigManagementId         NullableString                                                `json:"configManagementId,omitempty"`
+	ConfigCmId                 NullableString                                                `json:"configCmId,omitempty"`
+	SecurityServer             NullableString                                                `json:"securityServer,omitempty"`
+	ServiceRegistryId          NullableString                                                `json:"serviceRegistryId,omitempty"`
+	KubeUrl                    NullableString                                                `json:"kubeUrl,omitempty"`
+	ApiVersion                 NullableString                                                `json:"apiVersion,omitempty"`
+	DatacenterId               NullableString                                                `json:"datacenterId,omitempty"`
 	ConfigCmdbDiscovery        *bool                                                         `json:"configCmdbDiscovery,omitempty"`
-	DistributedWorkerId        *string                                                       `json:"distributedWorkerId,omitempty"`
-	PasswordHash               *string                                                       `json:"passwordHash,omitempty"`
+	DistributedWorkerId        NullableString                                                `json:"distributedWorkerId,omitempty"`
+	PasswordHash               NullableString                                                `json:"passwordHash,omitempty"`
 	AdditionalProperties       map[string]interface{}                                        `json:",remain"`
 }
 
@@ -140,36 +140,47 @@ func (o *ZoneVcenterConfig) SetUsername(v string) {
 	o.Username = &v
 }
 
-// GetPassword returns the Password field value if set, zero value otherwise.
+// GetPassword returns the Password field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ZoneVcenterConfig) GetPassword() string {
-	if o == nil || IsNil(o.Password) {
+	if o == nil || IsNil(o.Password.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Password
+	return *o.Password.Get()
 }
 
 // GetPasswordOk returns a tuple with the Password field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ZoneVcenterConfig) GetPasswordOk() (*string, bool) {
-	if o == nil || IsNil(o.Password) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Password, true
+	return o.Password.Get(), o.Password.IsSet()
 }
 
 // IsSetPassword returns a boolean if a field has been set.
 func (o *ZoneVcenterConfig) IsSetPassword() bool {
-	if o != nil && !IsNil(o.Password) {
+	if o != nil && o.Password.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetPassword gets a reference to the given string and assigns it to the Password field.
+// SetPassword gets a reference to the given NullableString and assigns it to the Password field.
 func (o *ZoneVcenterConfig) SetPassword(v string) {
-	o.Password = &v
+	o.Password.Set(&v)
+}
+
+// SetPasswordNil sets the value for Password to be an explicit nil
+func (o *ZoneVcenterConfig) SetPasswordNil() {
+	o.Password.Set(nil)
+}
+
+// UnsetPassword ensures that no value is present for Password, not even an explicit nil
+func (o *ZoneVcenterConfig) UnsetPassword() {
+	o.Password.Unset()
 }
 
 // GetDatacenter returns the Datacenter field value if set, zero value otherwise.
@@ -428,36 +439,47 @@ func (o *ZoneVcenterConfig) SetEnableVnc(v string) {
 	o.EnableVnc = &v
 }
 
-// GetEnableDiskTypeSelection returns the EnableDiskTypeSelection field value if set, zero value otherwise.
+// GetEnableDiskTypeSelection returns the EnableDiskTypeSelection field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ZoneVcenterConfig) GetEnableDiskTypeSelection() string {
-	if o == nil || IsNil(o.EnableDiskTypeSelection) {
+	if o == nil || IsNil(o.EnableDiskTypeSelection.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.EnableDiskTypeSelection
+	return *o.EnableDiskTypeSelection.Get()
 }
 
 // GetEnableDiskTypeSelectionOk returns a tuple with the EnableDiskTypeSelection field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ZoneVcenterConfig) GetEnableDiskTypeSelectionOk() (*string, bool) {
-	if o == nil || IsNil(o.EnableDiskTypeSelection) {
+	if o == nil {
 		return nil, false
 	}
-	return o.EnableDiskTypeSelection, true
+	return o.EnableDiskTypeSelection.Get(), o.EnableDiskTypeSelection.IsSet()
 }
 
 // IsSetEnableDiskTypeSelection returns a boolean if a field has been set.
 func (o *ZoneVcenterConfig) IsSetEnableDiskTypeSelection() bool {
-	if o != nil && !IsNil(o.EnableDiskTypeSelection) {
+	if o != nil && o.EnableDiskTypeSelection.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetEnableDiskTypeSelection gets a reference to the given string and assigns it to the EnableDiskTypeSelection field.
+// SetEnableDiskTypeSelection gets a reference to the given NullableString and assigns it to the EnableDiskTypeSelection field.
 func (o *ZoneVcenterConfig) SetEnableDiskTypeSelection(v string) {
-	o.EnableDiskTypeSelection = &v
+	o.EnableDiskTypeSelection.Set(&v)
+}
+
+// SetEnableDiskTypeSelectionNil sets the value for EnableDiskTypeSelection to be an explicit nil
+func (o *ZoneVcenterConfig) SetEnableDiskTypeSelectionNil() {
+	o.EnableDiskTypeSelection.Set(nil)
+}
+
+// UnsetEnableDiskTypeSelection ensures that no value is present for EnableDiskTypeSelection, not even an explicit nil
+func (o *ZoneVcenterConfig) UnsetEnableDiskTypeSelection() {
+	o.EnableDiskTypeSelection.Unset()
 }
 
 // GetEnableNetworkTypeSelection returns the EnableNetworkTypeSelection field value if set, zero value otherwise.
@@ -492,100 +514,133 @@ func (o *ZoneVcenterConfig) SetEnableNetworkTypeSelection(v string) {
 	o.EnableNetworkTypeSelection = &v
 }
 
-// GetDiskStorageType returns the DiskStorageType field value if set, zero value otherwise.
+// GetDiskStorageType returns the DiskStorageType field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ZoneVcenterConfig) GetDiskStorageType() string {
-	if o == nil || IsNil(o.DiskStorageType) {
+	if o == nil || IsNil(o.DiskStorageType.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.DiskStorageType
+	return *o.DiskStorageType.Get()
 }
 
 // GetDiskStorageTypeOk returns a tuple with the DiskStorageType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ZoneVcenterConfig) GetDiskStorageTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.DiskStorageType) {
+	if o == nil {
 		return nil, false
 	}
-	return o.DiskStorageType, true
+	return o.DiskStorageType.Get(), o.DiskStorageType.IsSet()
 }
 
 // IsSetDiskStorageType returns a boolean if a field has been set.
 func (o *ZoneVcenterConfig) IsSetDiskStorageType() bool {
-	if o != nil && !IsNil(o.DiskStorageType) {
+	if o != nil && o.DiskStorageType.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDiskStorageType gets a reference to the given string and assigns it to the DiskStorageType field.
+// SetDiskStorageType gets a reference to the given NullableString and assigns it to the DiskStorageType field.
 func (o *ZoneVcenterConfig) SetDiskStorageType(v string) {
-	o.DiskStorageType = &v
+	o.DiskStorageType.Set(&v)
 }
 
-// GetApplianceUrl returns the ApplianceUrl field value if set, zero value otherwise.
+// SetDiskStorageTypeNil sets the value for DiskStorageType to be an explicit nil
+func (o *ZoneVcenterConfig) SetDiskStorageTypeNil() {
+	o.DiskStorageType.Set(nil)
+}
+
+// UnsetDiskStorageType ensures that no value is present for DiskStorageType, not even an explicit nil
+func (o *ZoneVcenterConfig) UnsetDiskStorageType() {
+	o.DiskStorageType.Unset()
+}
+
+// GetApplianceUrl returns the ApplianceUrl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ZoneVcenterConfig) GetApplianceUrl() string {
-	if o == nil || IsNil(o.ApplianceUrl) {
+	if o == nil || IsNil(o.ApplianceUrl.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ApplianceUrl
+	return *o.ApplianceUrl.Get()
 }
 
 // GetApplianceUrlOk returns a tuple with the ApplianceUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ZoneVcenterConfig) GetApplianceUrlOk() (*string, bool) {
-	if o == nil || IsNil(o.ApplianceUrl) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ApplianceUrl, true
+	return o.ApplianceUrl.Get(), o.ApplianceUrl.IsSet()
 }
 
 // IsSetApplianceUrl returns a boolean if a field has been set.
 func (o *ZoneVcenterConfig) IsSetApplianceUrl() bool {
-	if o != nil && !IsNil(o.ApplianceUrl) {
+	if o != nil && o.ApplianceUrl.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetApplianceUrl gets a reference to the given string and assigns it to the ApplianceUrl field.
+// SetApplianceUrl gets a reference to the given NullableString and assigns it to the ApplianceUrl field.
 func (o *ZoneVcenterConfig) SetApplianceUrl(v string) {
-	o.ApplianceUrl = &v
+	o.ApplianceUrl.Set(&v)
 }
 
-// GetDatacenterName returns the DatacenterName field value if set, zero value otherwise.
+// SetApplianceUrlNil sets the value for ApplianceUrl to be an explicit nil
+func (o *ZoneVcenterConfig) SetApplianceUrlNil() {
+	o.ApplianceUrl.Set(nil)
+}
+
+// UnsetApplianceUrl ensures that no value is present for ApplianceUrl, not even an explicit nil
+func (o *ZoneVcenterConfig) UnsetApplianceUrl() {
+	o.ApplianceUrl.Unset()
+}
+
+// GetDatacenterName returns the DatacenterName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ZoneVcenterConfig) GetDatacenterName() string {
-	if o == nil || IsNil(o.DatacenterName) {
+	if o == nil || IsNil(o.DatacenterName.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.DatacenterName
+	return *o.DatacenterName.Get()
 }
 
 // GetDatacenterNameOk returns a tuple with the DatacenterName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ZoneVcenterConfig) GetDatacenterNameOk() (*string, bool) {
-	if o == nil || IsNil(o.DatacenterName) {
+	if o == nil {
 		return nil, false
 	}
-	return o.DatacenterName, true
+	return o.DatacenterName.Get(), o.DatacenterName.IsSet()
 }
 
 // IsSetDatacenterName returns a boolean if a field has been set.
 func (o *ZoneVcenterConfig) IsSetDatacenterName() bool {
-	if o != nil && !IsNil(o.DatacenterName) {
+	if o != nil && o.DatacenterName.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDatacenterName gets a reference to the given string and assigns it to the DatacenterName field.
+// SetDatacenterName gets a reference to the given NullableString and assigns it to the DatacenterName field.
 func (o *ZoneVcenterConfig) SetDatacenterName(v string) {
-	o.DatacenterName = &v
+	o.DatacenterName.Set(&v)
+}
+
+// SetDatacenterNameNil sets the value for DatacenterName to be an explicit nil
+func (o *ZoneVcenterConfig) SetDatacenterNameNil() {
+	o.DatacenterName.Set(nil)
+}
+
+// UnsetDatacenterName ensures that no value is present for DatacenterName, not even an explicit nil
+func (o *ZoneVcenterConfig) UnsetDatacenterName() {
+	o.DatacenterName.Unset()
 }
 
 // GetNetworkServerId returns the NetworkServerId field value if set, zero value otherwise.
@@ -684,388 +739,520 @@ func (o *ZoneVcenterConfig) SetSecurityMode(v string) {
 	o.SecurityMode = &v
 }
 
-// GetCertificateProvider returns the CertificateProvider field value if set, zero value otherwise.
+// GetCertificateProvider returns the CertificateProvider field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ZoneVcenterConfig) GetCertificateProvider() string {
-	if o == nil || IsNil(o.CertificateProvider) {
+	if o == nil || IsNil(o.CertificateProvider.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.CertificateProvider
+	return *o.CertificateProvider.Get()
 }
 
 // GetCertificateProviderOk returns a tuple with the CertificateProvider field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ZoneVcenterConfig) GetCertificateProviderOk() (*string, bool) {
-	if o == nil || IsNil(o.CertificateProvider) {
+	if o == nil {
 		return nil, false
 	}
-	return o.CertificateProvider, true
+	return o.CertificateProvider.Get(), o.CertificateProvider.IsSet()
 }
 
 // IsSetCertificateProvider returns a boolean if a field has been set.
 func (o *ZoneVcenterConfig) IsSetCertificateProvider() bool {
-	if o != nil && !IsNil(o.CertificateProvider) {
+	if o != nil && o.CertificateProvider.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCertificateProvider gets a reference to the given string and assigns it to the CertificateProvider field.
+// SetCertificateProvider gets a reference to the given NullableString and assigns it to the CertificateProvider field.
 func (o *ZoneVcenterConfig) SetCertificateProvider(v string) {
-	o.CertificateProvider = &v
+	o.CertificateProvider.Set(&v)
 }
 
-// GetBackupMode returns the BackupMode field value if set, zero value otherwise.
+// SetCertificateProviderNil sets the value for CertificateProvider to be an explicit nil
+func (o *ZoneVcenterConfig) SetCertificateProviderNil() {
+	o.CertificateProvider.Set(nil)
+}
+
+// UnsetCertificateProvider ensures that no value is present for CertificateProvider, not even an explicit nil
+func (o *ZoneVcenterConfig) UnsetCertificateProvider() {
+	o.CertificateProvider.Unset()
+}
+
+// GetBackupMode returns the BackupMode field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ZoneVcenterConfig) GetBackupMode() string {
-	if o == nil || IsNil(o.BackupMode) {
+	if o == nil || IsNil(o.BackupMode.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.BackupMode
+	return *o.BackupMode.Get()
 }
 
 // GetBackupModeOk returns a tuple with the BackupMode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ZoneVcenterConfig) GetBackupModeOk() (*string, bool) {
-	if o == nil || IsNil(o.BackupMode) {
+	if o == nil {
 		return nil, false
 	}
-	return o.BackupMode, true
+	return o.BackupMode.Get(), o.BackupMode.IsSet()
 }
 
 // IsSetBackupMode returns a boolean if a field has been set.
 func (o *ZoneVcenterConfig) IsSetBackupMode() bool {
-	if o != nil && !IsNil(o.BackupMode) {
+	if o != nil && o.BackupMode.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetBackupMode gets a reference to the given string and assigns it to the BackupMode field.
+// SetBackupMode gets a reference to the given NullableString and assigns it to the BackupMode field.
 func (o *ZoneVcenterConfig) SetBackupMode(v string) {
-	o.BackupMode = &v
+	o.BackupMode.Set(&v)
 }
 
-// GetReplicationMode returns the ReplicationMode field value if set, zero value otherwise.
+// SetBackupModeNil sets the value for BackupMode to be an explicit nil
+func (o *ZoneVcenterConfig) SetBackupModeNil() {
+	o.BackupMode.Set(nil)
+}
+
+// UnsetBackupMode ensures that no value is present for BackupMode, not even an explicit nil
+func (o *ZoneVcenterConfig) UnsetBackupMode() {
+	o.BackupMode.Unset()
+}
+
+// GetReplicationMode returns the ReplicationMode field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ZoneVcenterConfig) GetReplicationMode() string {
-	if o == nil || IsNil(o.ReplicationMode) {
+	if o == nil || IsNil(o.ReplicationMode.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ReplicationMode
+	return *o.ReplicationMode.Get()
 }
 
 // GetReplicationModeOk returns a tuple with the ReplicationMode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ZoneVcenterConfig) GetReplicationModeOk() (*string, bool) {
-	if o == nil || IsNil(o.ReplicationMode) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ReplicationMode, true
+	return o.ReplicationMode.Get(), o.ReplicationMode.IsSet()
 }
 
 // IsSetReplicationMode returns a boolean if a field has been set.
 func (o *ZoneVcenterConfig) IsSetReplicationMode() bool {
-	if o != nil && !IsNil(o.ReplicationMode) {
+	if o != nil && o.ReplicationMode.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetReplicationMode gets a reference to the given string and assigns it to the ReplicationMode field.
+// SetReplicationMode gets a reference to the given NullableString and assigns it to the ReplicationMode field.
 func (o *ZoneVcenterConfig) SetReplicationMode(v string) {
-	o.ReplicationMode = &v
+	o.ReplicationMode.Set(&v)
 }
 
-// GetDnsIntegrationId returns the DnsIntegrationId field value if set, zero value otherwise.
+// SetReplicationModeNil sets the value for ReplicationMode to be an explicit nil
+func (o *ZoneVcenterConfig) SetReplicationModeNil() {
+	o.ReplicationMode.Set(nil)
+}
+
+// UnsetReplicationMode ensures that no value is present for ReplicationMode, not even an explicit nil
+func (o *ZoneVcenterConfig) UnsetReplicationMode() {
+	o.ReplicationMode.Unset()
+}
+
+// GetDnsIntegrationId returns the DnsIntegrationId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ZoneVcenterConfig) GetDnsIntegrationId() string {
-	if o == nil || IsNil(o.DnsIntegrationId) {
+	if o == nil || IsNil(o.DnsIntegrationId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.DnsIntegrationId
+	return *o.DnsIntegrationId.Get()
 }
 
 // GetDnsIntegrationIdOk returns a tuple with the DnsIntegrationId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ZoneVcenterConfig) GetDnsIntegrationIdOk() (*string, bool) {
-	if o == nil || IsNil(o.DnsIntegrationId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.DnsIntegrationId, true
+	return o.DnsIntegrationId.Get(), o.DnsIntegrationId.IsSet()
 }
 
 // IsSetDnsIntegrationId returns a boolean if a field has been set.
 func (o *ZoneVcenterConfig) IsSetDnsIntegrationId() bool {
-	if o != nil && !IsNil(o.DnsIntegrationId) {
+	if o != nil && o.DnsIntegrationId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDnsIntegrationId gets a reference to the given string and assigns it to the DnsIntegrationId field.
+// SetDnsIntegrationId gets a reference to the given NullableString and assigns it to the DnsIntegrationId field.
 func (o *ZoneVcenterConfig) SetDnsIntegrationId(v string) {
-	o.DnsIntegrationId = &v
+	o.DnsIntegrationId.Set(&v)
 }
 
-// GetConfigCmdbId returns the ConfigCmdbId field value if set, zero value otherwise.
+// SetDnsIntegrationIdNil sets the value for DnsIntegrationId to be an explicit nil
+func (o *ZoneVcenterConfig) SetDnsIntegrationIdNil() {
+	o.DnsIntegrationId.Set(nil)
+}
+
+// UnsetDnsIntegrationId ensures that no value is present for DnsIntegrationId, not even an explicit nil
+func (o *ZoneVcenterConfig) UnsetDnsIntegrationId() {
+	o.DnsIntegrationId.Unset()
+}
+
+// GetConfigCmdbId returns the ConfigCmdbId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ZoneVcenterConfig) GetConfigCmdbId() string {
-	if o == nil || IsNil(o.ConfigCmdbId) {
+	if o == nil || IsNil(o.ConfigCmdbId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ConfigCmdbId
+	return *o.ConfigCmdbId.Get()
 }
 
 // GetConfigCmdbIdOk returns a tuple with the ConfigCmdbId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ZoneVcenterConfig) GetConfigCmdbIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ConfigCmdbId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ConfigCmdbId, true
+	return o.ConfigCmdbId.Get(), o.ConfigCmdbId.IsSet()
 }
 
 // IsSetConfigCmdbId returns a boolean if a field has been set.
 func (o *ZoneVcenterConfig) IsSetConfigCmdbId() bool {
-	if o != nil && !IsNil(o.ConfigCmdbId) {
+	if o != nil && o.ConfigCmdbId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetConfigCmdbId gets a reference to the given string and assigns it to the ConfigCmdbId field.
+// SetConfigCmdbId gets a reference to the given NullableString and assigns it to the ConfigCmdbId field.
 func (o *ZoneVcenterConfig) SetConfigCmdbId(v string) {
-	o.ConfigCmdbId = &v
+	o.ConfigCmdbId.Set(&v)
 }
 
-// GetConfigManagementId returns the ConfigManagementId field value if set, zero value otherwise.
+// SetConfigCmdbIdNil sets the value for ConfigCmdbId to be an explicit nil
+func (o *ZoneVcenterConfig) SetConfigCmdbIdNil() {
+	o.ConfigCmdbId.Set(nil)
+}
+
+// UnsetConfigCmdbId ensures that no value is present for ConfigCmdbId, not even an explicit nil
+func (o *ZoneVcenterConfig) UnsetConfigCmdbId() {
+	o.ConfigCmdbId.Unset()
+}
+
+// GetConfigManagementId returns the ConfigManagementId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ZoneVcenterConfig) GetConfigManagementId() string {
-	if o == nil || IsNil(o.ConfigManagementId) {
+	if o == nil || IsNil(o.ConfigManagementId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ConfigManagementId
+	return *o.ConfigManagementId.Get()
 }
 
 // GetConfigManagementIdOk returns a tuple with the ConfigManagementId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ZoneVcenterConfig) GetConfigManagementIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ConfigManagementId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ConfigManagementId, true
+	return o.ConfigManagementId.Get(), o.ConfigManagementId.IsSet()
 }
 
 // IsSetConfigManagementId returns a boolean if a field has been set.
 func (o *ZoneVcenterConfig) IsSetConfigManagementId() bool {
-	if o != nil && !IsNil(o.ConfigManagementId) {
+	if o != nil && o.ConfigManagementId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetConfigManagementId gets a reference to the given string and assigns it to the ConfigManagementId field.
+// SetConfigManagementId gets a reference to the given NullableString and assigns it to the ConfigManagementId field.
 func (o *ZoneVcenterConfig) SetConfigManagementId(v string) {
-	o.ConfigManagementId = &v
+	o.ConfigManagementId.Set(&v)
 }
 
-// GetConfigCmId returns the ConfigCmId field value if set, zero value otherwise.
+// SetConfigManagementIdNil sets the value for ConfigManagementId to be an explicit nil
+func (o *ZoneVcenterConfig) SetConfigManagementIdNil() {
+	o.ConfigManagementId.Set(nil)
+}
+
+// UnsetConfigManagementId ensures that no value is present for ConfigManagementId, not even an explicit nil
+func (o *ZoneVcenterConfig) UnsetConfigManagementId() {
+	o.ConfigManagementId.Unset()
+}
+
+// GetConfigCmId returns the ConfigCmId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ZoneVcenterConfig) GetConfigCmId() string {
-	if o == nil || IsNil(o.ConfigCmId) {
+	if o == nil || IsNil(o.ConfigCmId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ConfigCmId
+	return *o.ConfigCmId.Get()
 }
 
 // GetConfigCmIdOk returns a tuple with the ConfigCmId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ZoneVcenterConfig) GetConfigCmIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ConfigCmId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ConfigCmId, true
+	return o.ConfigCmId.Get(), o.ConfigCmId.IsSet()
 }
 
 // IsSetConfigCmId returns a boolean if a field has been set.
 func (o *ZoneVcenterConfig) IsSetConfigCmId() bool {
-	if o != nil && !IsNil(o.ConfigCmId) {
+	if o != nil && o.ConfigCmId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetConfigCmId gets a reference to the given string and assigns it to the ConfigCmId field.
+// SetConfigCmId gets a reference to the given NullableString and assigns it to the ConfigCmId field.
 func (o *ZoneVcenterConfig) SetConfigCmId(v string) {
-	o.ConfigCmId = &v
+	o.ConfigCmId.Set(&v)
 }
 
-// GetSecurityServer returns the SecurityServer field value if set, zero value otherwise.
+// SetConfigCmIdNil sets the value for ConfigCmId to be an explicit nil
+func (o *ZoneVcenterConfig) SetConfigCmIdNil() {
+	o.ConfigCmId.Set(nil)
+}
+
+// UnsetConfigCmId ensures that no value is present for ConfigCmId, not even an explicit nil
+func (o *ZoneVcenterConfig) UnsetConfigCmId() {
+	o.ConfigCmId.Unset()
+}
+
+// GetSecurityServer returns the SecurityServer field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ZoneVcenterConfig) GetSecurityServer() string {
-	if o == nil || IsNil(o.SecurityServer) {
+	if o == nil || IsNil(o.SecurityServer.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.SecurityServer
+	return *o.SecurityServer.Get()
 }
 
 // GetSecurityServerOk returns a tuple with the SecurityServer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ZoneVcenterConfig) GetSecurityServerOk() (*string, bool) {
-	if o == nil || IsNil(o.SecurityServer) {
+	if o == nil {
 		return nil, false
 	}
-	return o.SecurityServer, true
+	return o.SecurityServer.Get(), o.SecurityServer.IsSet()
 }
 
 // IsSetSecurityServer returns a boolean if a field has been set.
 func (o *ZoneVcenterConfig) IsSetSecurityServer() bool {
-	if o != nil && !IsNil(o.SecurityServer) {
+	if o != nil && o.SecurityServer.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetSecurityServer gets a reference to the given string and assigns it to the SecurityServer field.
+// SetSecurityServer gets a reference to the given NullableString and assigns it to the SecurityServer field.
 func (o *ZoneVcenterConfig) SetSecurityServer(v string) {
-	o.SecurityServer = &v
+	o.SecurityServer.Set(&v)
 }
 
-// GetServiceRegistryId returns the ServiceRegistryId field value if set, zero value otherwise.
+// SetSecurityServerNil sets the value for SecurityServer to be an explicit nil
+func (o *ZoneVcenterConfig) SetSecurityServerNil() {
+	o.SecurityServer.Set(nil)
+}
+
+// UnsetSecurityServer ensures that no value is present for SecurityServer, not even an explicit nil
+func (o *ZoneVcenterConfig) UnsetSecurityServer() {
+	o.SecurityServer.Unset()
+}
+
+// GetServiceRegistryId returns the ServiceRegistryId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ZoneVcenterConfig) GetServiceRegistryId() string {
-	if o == nil || IsNil(o.ServiceRegistryId) {
+	if o == nil || IsNil(o.ServiceRegistryId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ServiceRegistryId
+	return *o.ServiceRegistryId.Get()
 }
 
 // GetServiceRegistryIdOk returns a tuple with the ServiceRegistryId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ZoneVcenterConfig) GetServiceRegistryIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ServiceRegistryId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ServiceRegistryId, true
+	return o.ServiceRegistryId.Get(), o.ServiceRegistryId.IsSet()
 }
 
 // IsSetServiceRegistryId returns a boolean if a field has been set.
 func (o *ZoneVcenterConfig) IsSetServiceRegistryId() bool {
-	if o != nil && !IsNil(o.ServiceRegistryId) {
+	if o != nil && o.ServiceRegistryId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetServiceRegistryId gets a reference to the given string and assigns it to the ServiceRegistryId field.
+// SetServiceRegistryId gets a reference to the given NullableString and assigns it to the ServiceRegistryId field.
 func (o *ZoneVcenterConfig) SetServiceRegistryId(v string) {
-	o.ServiceRegistryId = &v
+	o.ServiceRegistryId.Set(&v)
 }
 
-// GetKubeUrl returns the KubeUrl field value if set, zero value otherwise.
+// SetServiceRegistryIdNil sets the value for ServiceRegistryId to be an explicit nil
+func (o *ZoneVcenterConfig) SetServiceRegistryIdNil() {
+	o.ServiceRegistryId.Set(nil)
+}
+
+// UnsetServiceRegistryId ensures that no value is present for ServiceRegistryId, not even an explicit nil
+func (o *ZoneVcenterConfig) UnsetServiceRegistryId() {
+	o.ServiceRegistryId.Unset()
+}
+
+// GetKubeUrl returns the KubeUrl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ZoneVcenterConfig) GetKubeUrl() string {
-	if o == nil || IsNil(o.KubeUrl) {
+	if o == nil || IsNil(o.KubeUrl.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.KubeUrl
+	return *o.KubeUrl.Get()
 }
 
 // GetKubeUrlOk returns a tuple with the KubeUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ZoneVcenterConfig) GetKubeUrlOk() (*string, bool) {
-	if o == nil || IsNil(o.KubeUrl) {
+	if o == nil {
 		return nil, false
 	}
-	return o.KubeUrl, true
+	return o.KubeUrl.Get(), o.KubeUrl.IsSet()
 }
 
 // IsSetKubeUrl returns a boolean if a field has been set.
 func (o *ZoneVcenterConfig) IsSetKubeUrl() bool {
-	if o != nil && !IsNil(o.KubeUrl) {
+	if o != nil && o.KubeUrl.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetKubeUrl gets a reference to the given string and assigns it to the KubeUrl field.
+// SetKubeUrl gets a reference to the given NullableString and assigns it to the KubeUrl field.
 func (o *ZoneVcenterConfig) SetKubeUrl(v string) {
-	o.KubeUrl = &v
+	o.KubeUrl.Set(&v)
 }
 
-// GetApiVersion returns the ApiVersion field value if set, zero value otherwise.
+// SetKubeUrlNil sets the value for KubeUrl to be an explicit nil
+func (o *ZoneVcenterConfig) SetKubeUrlNil() {
+	o.KubeUrl.Set(nil)
+}
+
+// UnsetKubeUrl ensures that no value is present for KubeUrl, not even an explicit nil
+func (o *ZoneVcenterConfig) UnsetKubeUrl() {
+	o.KubeUrl.Unset()
+}
+
+// GetApiVersion returns the ApiVersion field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ZoneVcenterConfig) GetApiVersion() string {
-	if o == nil || IsNil(o.ApiVersion) {
+	if o == nil || IsNil(o.ApiVersion.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ApiVersion
+	return *o.ApiVersion.Get()
 }
 
 // GetApiVersionOk returns a tuple with the ApiVersion field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ZoneVcenterConfig) GetApiVersionOk() (*string, bool) {
-	if o == nil || IsNil(o.ApiVersion) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ApiVersion, true
+	return o.ApiVersion.Get(), o.ApiVersion.IsSet()
 }
 
 // IsSetApiVersion returns a boolean if a field has been set.
 func (o *ZoneVcenterConfig) IsSetApiVersion() bool {
-	if o != nil && !IsNil(o.ApiVersion) {
+	if o != nil && o.ApiVersion.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetApiVersion gets a reference to the given string and assigns it to the ApiVersion field.
+// SetApiVersion gets a reference to the given NullableString and assigns it to the ApiVersion field.
 func (o *ZoneVcenterConfig) SetApiVersion(v string) {
-	o.ApiVersion = &v
+	o.ApiVersion.Set(&v)
 }
 
-// GetDatacenterId returns the DatacenterId field value if set, zero value otherwise.
+// SetApiVersionNil sets the value for ApiVersion to be an explicit nil
+func (o *ZoneVcenterConfig) SetApiVersionNil() {
+	o.ApiVersion.Set(nil)
+}
+
+// UnsetApiVersion ensures that no value is present for ApiVersion, not even an explicit nil
+func (o *ZoneVcenterConfig) UnsetApiVersion() {
+	o.ApiVersion.Unset()
+}
+
+// GetDatacenterId returns the DatacenterId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ZoneVcenterConfig) GetDatacenterId() string {
-	if o == nil || IsNil(o.DatacenterId) {
+	if o == nil || IsNil(o.DatacenterId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.DatacenterId
+	return *o.DatacenterId.Get()
 }
 
 // GetDatacenterIdOk returns a tuple with the DatacenterId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ZoneVcenterConfig) GetDatacenterIdOk() (*string, bool) {
-	if o == nil || IsNil(o.DatacenterId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.DatacenterId, true
+	return o.DatacenterId.Get(), o.DatacenterId.IsSet()
 }
 
 // IsSetDatacenterId returns a boolean if a field has been set.
 func (o *ZoneVcenterConfig) IsSetDatacenterId() bool {
-	if o != nil && !IsNil(o.DatacenterId) {
+	if o != nil && o.DatacenterId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDatacenterId gets a reference to the given string and assigns it to the DatacenterId field.
+// SetDatacenterId gets a reference to the given NullableString and assigns it to the DatacenterId field.
 func (o *ZoneVcenterConfig) SetDatacenterId(v string) {
-	o.DatacenterId = &v
+	o.DatacenterId.Set(&v)
+}
+
+// SetDatacenterIdNil sets the value for DatacenterId to be an explicit nil
+func (o *ZoneVcenterConfig) SetDatacenterIdNil() {
+	o.DatacenterId.Set(nil)
+}
+
+// UnsetDatacenterId ensures that no value is present for DatacenterId, not even an explicit nil
+func (o *ZoneVcenterConfig) UnsetDatacenterId() {
+	o.DatacenterId.Unset()
 }
 
 // GetConfigCmdbDiscovery returns the ConfigCmdbDiscovery field value if set, zero value otherwise.
@@ -1100,68 +1287,90 @@ func (o *ZoneVcenterConfig) SetConfigCmdbDiscovery(v bool) {
 	o.ConfigCmdbDiscovery = &v
 }
 
-// GetDistributedWorkerId returns the DistributedWorkerId field value if set, zero value otherwise.
+// GetDistributedWorkerId returns the DistributedWorkerId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ZoneVcenterConfig) GetDistributedWorkerId() string {
-	if o == nil || IsNil(o.DistributedWorkerId) {
+	if o == nil || IsNil(o.DistributedWorkerId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.DistributedWorkerId
+	return *o.DistributedWorkerId.Get()
 }
 
 // GetDistributedWorkerIdOk returns a tuple with the DistributedWorkerId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ZoneVcenterConfig) GetDistributedWorkerIdOk() (*string, bool) {
-	if o == nil || IsNil(o.DistributedWorkerId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.DistributedWorkerId, true
+	return o.DistributedWorkerId.Get(), o.DistributedWorkerId.IsSet()
 }
 
 // IsSetDistributedWorkerId returns a boolean if a field has been set.
 func (o *ZoneVcenterConfig) IsSetDistributedWorkerId() bool {
-	if o != nil && !IsNil(o.DistributedWorkerId) {
+	if o != nil && o.DistributedWorkerId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDistributedWorkerId gets a reference to the given string and assigns it to the DistributedWorkerId field.
+// SetDistributedWorkerId gets a reference to the given NullableString and assigns it to the DistributedWorkerId field.
 func (o *ZoneVcenterConfig) SetDistributedWorkerId(v string) {
-	o.DistributedWorkerId = &v
+	o.DistributedWorkerId.Set(&v)
 }
 
-// GetPasswordHash returns the PasswordHash field value if set, zero value otherwise.
+// SetDistributedWorkerIdNil sets the value for DistributedWorkerId to be an explicit nil
+func (o *ZoneVcenterConfig) SetDistributedWorkerIdNil() {
+	o.DistributedWorkerId.Set(nil)
+}
+
+// UnsetDistributedWorkerId ensures that no value is present for DistributedWorkerId, not even an explicit nil
+func (o *ZoneVcenterConfig) UnsetDistributedWorkerId() {
+	o.DistributedWorkerId.Unset()
+}
+
+// GetPasswordHash returns the PasswordHash field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ZoneVcenterConfig) GetPasswordHash() string {
-	if o == nil || IsNil(o.PasswordHash) {
+	if o == nil || IsNil(o.PasswordHash.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.PasswordHash
+	return *o.PasswordHash.Get()
 }
 
 // GetPasswordHashOk returns a tuple with the PasswordHash field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ZoneVcenterConfig) GetPasswordHashOk() (*string, bool) {
-	if o == nil || IsNil(o.PasswordHash) {
+	if o == nil {
 		return nil, false
 	}
-	return o.PasswordHash, true
+	return o.PasswordHash.Get(), o.PasswordHash.IsSet()
 }
 
 // IsSetPasswordHash returns a boolean if a field has been set.
 func (o *ZoneVcenterConfig) IsSetPasswordHash() bool {
-	if o != nil && !IsNil(o.PasswordHash) {
+	if o != nil && o.PasswordHash.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetPasswordHash gets a reference to the given string and assigns it to the PasswordHash field.
+// SetPasswordHash gets a reference to the given NullableString and assigns it to the PasswordHash field.
 func (o *ZoneVcenterConfig) SetPasswordHash(v string) {
-	o.PasswordHash = &v
+	o.PasswordHash.Set(&v)
+}
+
+// SetPasswordHashNil sets the value for PasswordHash to be an explicit nil
+func (o *ZoneVcenterConfig) SetPasswordHashNil() {
+	o.PasswordHash.Set(nil)
+}
+
+// UnsetPasswordHash ensures that no value is present for PasswordHash, not even an explicit nil
+func (o *ZoneVcenterConfig) UnsetPasswordHash() {
+	o.PasswordHash.Unset()
 }
 
 func (o ZoneVcenterConfig) MarshalJSON() ([]byte, error) {
@@ -1180,8 +1389,8 @@ func (o ZoneVcenterConfig) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Username) {
 		toSerialize["username"] = o.Username
 	}
-	if !IsNil(o.Password) {
-		toSerialize["password"] = o.Password
+	if o.Password.IsSet() {
+		toSerialize["password"] = o.Password.Get()
 	}
 	if !IsNil(o.Datacenter) {
 		toSerialize["datacenter"] = o.Datacenter
@@ -1207,20 +1416,20 @@ func (o ZoneVcenterConfig) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.EnableVnc) {
 		toSerialize["enableVnc"] = o.EnableVnc
 	}
-	if !IsNil(o.EnableDiskTypeSelection) {
-		toSerialize["enableDiskTypeSelection"] = o.EnableDiskTypeSelection
+	if o.EnableDiskTypeSelection.IsSet() {
+		toSerialize["enableDiskTypeSelection"] = o.EnableDiskTypeSelection.Get()
 	}
 	if !IsNil(o.EnableNetworkTypeSelection) {
 		toSerialize["enableNetworkTypeSelection"] = o.EnableNetworkTypeSelection
 	}
-	if !IsNil(o.DiskStorageType) {
-		toSerialize["diskStorageType"] = o.DiskStorageType
+	if o.DiskStorageType.IsSet() {
+		toSerialize["diskStorageType"] = o.DiskStorageType.Get()
 	}
-	if !IsNil(o.ApplianceUrl) {
-		toSerialize["applianceUrl"] = o.ApplianceUrl
+	if o.ApplianceUrl.IsSet() {
+		toSerialize["applianceUrl"] = o.ApplianceUrl.Get()
 	}
-	if !IsNil(o.DatacenterName) {
-		toSerialize["datacenterName"] = o.DatacenterName
+	if o.DatacenterName.IsSet() {
+		toSerialize["datacenterName"] = o.DatacenterName.Get()
 	}
 	if !IsNil(o.NetworkServerId) {
 		toSerialize["networkServer.id"] = o.NetworkServerId
@@ -1231,50 +1440,50 @@ func (o ZoneVcenterConfig) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.SecurityMode) {
 		toSerialize["securityMode"] = o.SecurityMode
 	}
-	if !IsNil(o.CertificateProvider) {
-		toSerialize["certificateProvider"] = o.CertificateProvider
+	if o.CertificateProvider.IsSet() {
+		toSerialize["certificateProvider"] = o.CertificateProvider.Get()
 	}
-	if !IsNil(o.BackupMode) {
-		toSerialize["backupMode"] = o.BackupMode
+	if o.BackupMode.IsSet() {
+		toSerialize["backupMode"] = o.BackupMode.Get()
 	}
-	if !IsNil(o.ReplicationMode) {
-		toSerialize["replicationMode"] = o.ReplicationMode
+	if o.ReplicationMode.IsSet() {
+		toSerialize["replicationMode"] = o.ReplicationMode.Get()
 	}
-	if !IsNil(o.DnsIntegrationId) {
-		toSerialize["dnsIntegrationId"] = o.DnsIntegrationId
+	if o.DnsIntegrationId.IsSet() {
+		toSerialize["dnsIntegrationId"] = o.DnsIntegrationId.Get()
 	}
-	if !IsNil(o.ConfigCmdbId) {
-		toSerialize["configCmdbId"] = o.ConfigCmdbId
+	if o.ConfigCmdbId.IsSet() {
+		toSerialize["configCmdbId"] = o.ConfigCmdbId.Get()
 	}
-	if !IsNil(o.ConfigManagementId) {
-		toSerialize["configManagementId"] = o.ConfigManagementId
+	if o.ConfigManagementId.IsSet() {
+		toSerialize["configManagementId"] = o.ConfigManagementId.Get()
 	}
-	if !IsNil(o.ConfigCmId) {
-		toSerialize["configCmId"] = o.ConfigCmId
+	if o.ConfigCmId.IsSet() {
+		toSerialize["configCmId"] = o.ConfigCmId.Get()
 	}
-	if !IsNil(o.SecurityServer) {
-		toSerialize["securityServer"] = o.SecurityServer
+	if o.SecurityServer.IsSet() {
+		toSerialize["securityServer"] = o.SecurityServer.Get()
 	}
-	if !IsNil(o.ServiceRegistryId) {
-		toSerialize["serviceRegistryId"] = o.ServiceRegistryId
+	if o.ServiceRegistryId.IsSet() {
+		toSerialize["serviceRegistryId"] = o.ServiceRegistryId.Get()
 	}
-	if !IsNil(o.KubeUrl) {
-		toSerialize["kubeUrl"] = o.KubeUrl
+	if o.KubeUrl.IsSet() {
+		toSerialize["kubeUrl"] = o.KubeUrl.Get()
 	}
-	if !IsNil(o.ApiVersion) {
-		toSerialize["apiVersion"] = o.ApiVersion
+	if o.ApiVersion.IsSet() {
+		toSerialize["apiVersion"] = o.ApiVersion.Get()
 	}
-	if !IsNil(o.DatacenterId) {
-		toSerialize["datacenterId"] = o.DatacenterId
+	if o.DatacenterId.IsSet() {
+		toSerialize["datacenterId"] = o.DatacenterId.Get()
 	}
 	if !IsNil(o.ConfigCmdbDiscovery) {
 		toSerialize["configCmdbDiscovery"] = o.ConfigCmdbDiscovery
 	}
-	if !IsNil(o.DistributedWorkerId) {
-		toSerialize["distributedWorkerId"] = o.DistributedWorkerId
+	if o.DistributedWorkerId.IsSet() {
+		toSerialize["distributedWorkerId"] = o.DistributedWorkerId.Get()
 	}
-	if !IsNil(o.PasswordHash) {
-		toSerialize["passwordHash"] = o.PasswordHash
+	if o.PasswordHash.IsSet() {
+		toSerialize["passwordHash"] = o.PasswordHash.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {

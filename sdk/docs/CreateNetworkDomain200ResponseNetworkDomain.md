@@ -7,24 +7,24 @@ Name | Type | Description | Notes
 **Id** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Active** | Pointer to **bool** |  | [optional] 
-**Fqdn** | Pointer to **string** |  | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
+**Fqdn** | Pointer to **NullableString** |  | [optional] 
+**Description** | Pointer to **NullableString** |  | [optional] 
 **Visibility** | Pointer to **string** |  | [optional] 
 **DomainController** | Pointer to **bool** |  | [optional] 
 **PublicZone** | Pointer to **bool** |  | [optional] 
-**DomainUsername** | Pointer to **string** |  | [optional] 
-**DomainPassword** | Pointer to **string** |  | [optional] 
-**RefType** | Pointer to **string** |  | [optional] 
-**RefId** | Pointer to **int64** |  | [optional] 
-**RefSource** | Pointer to **string** |  | [optional] 
-**InternalId** | Pointer to **string** |  | [optional] 
-**OuPath** | Pointer to **string** |  | [optional] 
-**DcServer** | Pointer to **string** |  | [optional] 
-**ZoneType** | Pointer to **string** |  | [optional] 
-**Dnssec** | Pointer to **string** |  | [optional] 
-**DomainSerial** | Pointer to **string** |  | [optional] 
-**Account** | Pointer to [**ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
-**Owner** | Pointer to [**ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
+**DomainUsername** | Pointer to **NullableString** |  | [optional] 
+**DomainPassword** | Pointer to **NullableString** |  | [optional] 
+**RefType** | Pointer to **NullableString** |  | [optional] 
+**RefId** | Pointer to **NullableInt64** |  | [optional] 
+**RefSource** | Pointer to **NullableString** |  | [optional] 
+**InternalId** | Pointer to **NullableString** |  | [optional] 
+**OuPath** | Pointer to **NullableString** |  | [optional] 
+**DcServer** | Pointer to **NullableString** |  | [optional] 
+**ZoneType** | Pointer to **NullableString** |  | [optional] 
+**Dnssec** | Pointer to **NullableString** |  | [optional] 
+**DomainSerial** | Pointer to **NullableString** |  | [optional] 
+**Account** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**Owner** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 
 ## Methods
 
@@ -145,6 +145,16 @@ SetFqdn sets Fqdn field to given value.
 
 HasFqdn returns a boolean if a field has been set.
 
+### SetFqdnNil
+
+`func (o *CreateNetworkDomain200ResponseNetworkDomain) SetFqdnNil(b bool)`
+
+ SetFqdnNil sets the value for Fqdn to be an explicit nil
+
+### UnsetFqdn
+`func (o *CreateNetworkDomain200ResponseNetworkDomain) UnsetFqdn()`
+
+UnsetFqdn ensures that no value is present for Fqdn, not even an explicit nil
 ### GetDescription
 
 `func (o *CreateNetworkDomain200ResponseNetworkDomain) GetDescription() string`
@@ -170,6 +180,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *CreateNetworkDomain200ResponseNetworkDomain) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *CreateNetworkDomain200ResponseNetworkDomain) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetVisibility
 
 `func (o *CreateNetworkDomain200ResponseNetworkDomain) GetVisibility() string`
@@ -270,6 +290,16 @@ SetDomainUsername sets DomainUsername field to given value.
 
 HasDomainUsername returns a boolean if a field has been set.
 
+### SetDomainUsernameNil
+
+`func (o *CreateNetworkDomain200ResponseNetworkDomain) SetDomainUsernameNil(b bool)`
+
+ SetDomainUsernameNil sets the value for DomainUsername to be an explicit nil
+
+### UnsetDomainUsername
+`func (o *CreateNetworkDomain200ResponseNetworkDomain) UnsetDomainUsername()`
+
+UnsetDomainUsername ensures that no value is present for DomainUsername, not even an explicit nil
 ### GetDomainPassword
 
 `func (o *CreateNetworkDomain200ResponseNetworkDomain) GetDomainPassword() string`
@@ -295,6 +325,16 @@ SetDomainPassword sets DomainPassword field to given value.
 
 HasDomainPassword returns a boolean if a field has been set.
 
+### SetDomainPasswordNil
+
+`func (o *CreateNetworkDomain200ResponseNetworkDomain) SetDomainPasswordNil(b bool)`
+
+ SetDomainPasswordNil sets the value for DomainPassword to be an explicit nil
+
+### UnsetDomainPassword
+`func (o *CreateNetworkDomain200ResponseNetworkDomain) UnsetDomainPassword()`
+
+UnsetDomainPassword ensures that no value is present for DomainPassword, not even an explicit nil
 ### GetRefType
 
 `func (o *CreateNetworkDomain200ResponseNetworkDomain) GetRefType() string`
@@ -320,6 +360,16 @@ SetRefType sets RefType field to given value.
 
 HasRefType returns a boolean if a field has been set.
 
+### SetRefTypeNil
+
+`func (o *CreateNetworkDomain200ResponseNetworkDomain) SetRefTypeNil(b bool)`
+
+ SetRefTypeNil sets the value for RefType to be an explicit nil
+
+### UnsetRefType
+`func (o *CreateNetworkDomain200ResponseNetworkDomain) UnsetRefType()`
+
+UnsetRefType ensures that no value is present for RefType, not even an explicit nil
 ### GetRefId
 
 `func (o *CreateNetworkDomain200ResponseNetworkDomain) GetRefId() int64`
@@ -345,6 +395,16 @@ SetRefId sets RefId field to given value.
 
 HasRefId returns a boolean if a field has been set.
 
+### SetRefIdNil
+
+`func (o *CreateNetworkDomain200ResponseNetworkDomain) SetRefIdNil(b bool)`
+
+ SetRefIdNil sets the value for RefId to be an explicit nil
+
+### UnsetRefId
+`func (o *CreateNetworkDomain200ResponseNetworkDomain) UnsetRefId()`
+
+UnsetRefId ensures that no value is present for RefId, not even an explicit nil
 ### GetRefSource
 
 `func (o *CreateNetworkDomain200ResponseNetworkDomain) GetRefSource() string`
@@ -370,6 +430,16 @@ SetRefSource sets RefSource field to given value.
 
 HasRefSource returns a boolean if a field has been set.
 
+### SetRefSourceNil
+
+`func (o *CreateNetworkDomain200ResponseNetworkDomain) SetRefSourceNil(b bool)`
+
+ SetRefSourceNil sets the value for RefSource to be an explicit nil
+
+### UnsetRefSource
+`func (o *CreateNetworkDomain200ResponseNetworkDomain) UnsetRefSource()`
+
+UnsetRefSource ensures that no value is present for RefSource, not even an explicit nil
 ### GetInternalId
 
 `func (o *CreateNetworkDomain200ResponseNetworkDomain) GetInternalId() string`
@@ -395,6 +465,16 @@ SetInternalId sets InternalId field to given value.
 
 HasInternalId returns a boolean if a field has been set.
 
+### SetInternalIdNil
+
+`func (o *CreateNetworkDomain200ResponseNetworkDomain) SetInternalIdNil(b bool)`
+
+ SetInternalIdNil sets the value for InternalId to be an explicit nil
+
+### UnsetInternalId
+`func (o *CreateNetworkDomain200ResponseNetworkDomain) UnsetInternalId()`
+
+UnsetInternalId ensures that no value is present for InternalId, not even an explicit nil
 ### GetOuPath
 
 `func (o *CreateNetworkDomain200ResponseNetworkDomain) GetOuPath() string`
@@ -420,6 +500,16 @@ SetOuPath sets OuPath field to given value.
 
 HasOuPath returns a boolean if a field has been set.
 
+### SetOuPathNil
+
+`func (o *CreateNetworkDomain200ResponseNetworkDomain) SetOuPathNil(b bool)`
+
+ SetOuPathNil sets the value for OuPath to be an explicit nil
+
+### UnsetOuPath
+`func (o *CreateNetworkDomain200ResponseNetworkDomain) UnsetOuPath()`
+
+UnsetOuPath ensures that no value is present for OuPath, not even an explicit nil
 ### GetDcServer
 
 `func (o *CreateNetworkDomain200ResponseNetworkDomain) GetDcServer() string`
@@ -445,6 +535,16 @@ SetDcServer sets DcServer field to given value.
 
 HasDcServer returns a boolean if a field has been set.
 
+### SetDcServerNil
+
+`func (o *CreateNetworkDomain200ResponseNetworkDomain) SetDcServerNil(b bool)`
+
+ SetDcServerNil sets the value for DcServer to be an explicit nil
+
+### UnsetDcServer
+`func (o *CreateNetworkDomain200ResponseNetworkDomain) UnsetDcServer()`
+
+UnsetDcServer ensures that no value is present for DcServer, not even an explicit nil
 ### GetZoneType
 
 `func (o *CreateNetworkDomain200ResponseNetworkDomain) GetZoneType() string`
@@ -470,6 +570,16 @@ SetZoneType sets ZoneType field to given value.
 
 HasZoneType returns a boolean if a field has been set.
 
+### SetZoneTypeNil
+
+`func (o *CreateNetworkDomain200ResponseNetworkDomain) SetZoneTypeNil(b bool)`
+
+ SetZoneTypeNil sets the value for ZoneType to be an explicit nil
+
+### UnsetZoneType
+`func (o *CreateNetworkDomain200ResponseNetworkDomain) UnsetZoneType()`
+
+UnsetZoneType ensures that no value is present for ZoneType, not even an explicit nil
 ### GetDnssec
 
 `func (o *CreateNetworkDomain200ResponseNetworkDomain) GetDnssec() string`
@@ -495,6 +605,16 @@ SetDnssec sets Dnssec field to given value.
 
 HasDnssec returns a boolean if a field has been set.
 
+### SetDnssecNil
+
+`func (o *CreateNetworkDomain200ResponseNetworkDomain) SetDnssecNil(b bool)`
+
+ SetDnssecNil sets the value for Dnssec to be an explicit nil
+
+### UnsetDnssec
+`func (o *CreateNetworkDomain200ResponseNetworkDomain) UnsetDnssec()`
+
+UnsetDnssec ensures that no value is present for Dnssec, not even an explicit nil
 ### GetDomainSerial
 
 `func (o *CreateNetworkDomain200ResponseNetworkDomain) GetDomainSerial() string`
@@ -520,22 +640,32 @@ SetDomainSerial sets DomainSerial field to given value.
 
 HasDomainSerial returns a boolean if a field has been set.
 
+### SetDomainSerialNil
+
+`func (o *CreateNetworkDomain200ResponseNetworkDomain) SetDomainSerialNil(b bool)`
+
+ SetDomainSerialNil sets the value for DomainSerial to be an explicit nil
+
+### UnsetDomainSerial
+`func (o *CreateNetworkDomain200ResponseNetworkDomain) UnsetDomainSerial()`
+
+UnsetDomainSerial ensures that no value is present for DomainSerial, not even an explicit nil
 ### GetAccount
 
-`func (o *CreateNetworkDomain200ResponseNetworkDomain) GetAccount() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *CreateNetworkDomain200ResponseNetworkDomain) GetAccount() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetAccount returns the Account field if non-nil, zero value otherwise.
 
 ### GetAccountOk
 
-`func (o *CreateNetworkDomain200ResponseNetworkDomain) GetAccountOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *CreateNetworkDomain200ResponseNetworkDomain) GetAccountOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetAccountOk returns a tuple with the Account field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccount
 
-`func (o *CreateNetworkDomain200ResponseNetworkDomain) SetAccount(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *CreateNetworkDomain200ResponseNetworkDomain) SetAccount(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetAccount sets Account field to given value.
 
@@ -547,20 +677,20 @@ HasAccount returns a boolean if a field has been set.
 
 ### GetOwner
 
-`func (o *CreateNetworkDomain200ResponseNetworkDomain) GetOwner() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *CreateNetworkDomain200ResponseNetworkDomain) GetOwner() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetOwner returns the Owner field if non-nil, zero value otherwise.
 
 ### GetOwnerOk
 
-`func (o *CreateNetworkDomain200ResponseNetworkDomain) GetOwnerOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *CreateNetworkDomain200ResponseNetworkDomain) GetOwnerOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOwner
 
-`func (o *CreateNetworkDomain200ResponseNetworkDomain) SetOwner(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *CreateNetworkDomain200ResponseNetworkDomain) SetOwner(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetOwner sets Owner field to given value.
 

@@ -32,9 +32,9 @@ type ListStorageBuckets200ResponseAllOfStorageBucketsInner struct {
 	DefaultDeploymentTarget   *bool                                                        `json:"defaultDeploymentTarget,omitempty"`
 	DefaultVirtualImageTarget *bool                                                        `json:"defaultVirtualImageTarget,omitempty"`
 	CopyToStore               *bool                                                        `json:"copyToStore,omitempty"`
-	RetentionPolicyType       *string                                                      `json:"retentionPolicyType,omitempty"`
-	RetentionPolicyDays       *string                                                      `json:"retentionPolicyDays,omitempty"`
-	RetentionProvider         *string                                                      `json:"retentionProvider,omitempty"`
+	RetentionPolicyType       NullableString                                               `json:"retentionPolicyType,omitempty"`
+	RetentionPolicyDays       NullableString                                               `json:"retentionPolicyDays,omitempty"`
+	RetentionProvider         NullableString                                               `json:"retentionProvider,omitempty"`
 	AdditionalProperties      map[string]interface{}                                       `json:",remain"`
 }
 
@@ -441,100 +441,133 @@ func (o *ListStorageBuckets200ResponseAllOfStorageBucketsInner) SetCopyToStore(v
 	o.CopyToStore = &v
 }
 
-// GetRetentionPolicyType returns the RetentionPolicyType field value if set, zero value otherwise.
+// GetRetentionPolicyType returns the RetentionPolicyType field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListStorageBuckets200ResponseAllOfStorageBucketsInner) GetRetentionPolicyType() string {
-	if o == nil || IsNil(o.RetentionPolicyType) {
+	if o == nil || IsNil(o.RetentionPolicyType.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.RetentionPolicyType
+	return *o.RetentionPolicyType.Get()
 }
 
 // GetRetentionPolicyTypeOk returns a tuple with the RetentionPolicyType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListStorageBuckets200ResponseAllOfStorageBucketsInner) GetRetentionPolicyTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.RetentionPolicyType) {
+	if o == nil {
 		return nil, false
 	}
-	return o.RetentionPolicyType, true
+	return o.RetentionPolicyType.Get(), o.RetentionPolicyType.IsSet()
 }
 
 // IsSetRetentionPolicyType returns a boolean if a field has been set.
 func (o *ListStorageBuckets200ResponseAllOfStorageBucketsInner) IsSetRetentionPolicyType() bool {
-	if o != nil && !IsNil(o.RetentionPolicyType) {
+	if o != nil && o.RetentionPolicyType.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetRetentionPolicyType gets a reference to the given string and assigns it to the RetentionPolicyType field.
+// SetRetentionPolicyType gets a reference to the given NullableString and assigns it to the RetentionPolicyType field.
 func (o *ListStorageBuckets200ResponseAllOfStorageBucketsInner) SetRetentionPolicyType(v string) {
-	o.RetentionPolicyType = &v
+	o.RetentionPolicyType.Set(&v)
 }
 
-// GetRetentionPolicyDays returns the RetentionPolicyDays field value if set, zero value otherwise.
+// SetRetentionPolicyTypeNil sets the value for RetentionPolicyType to be an explicit nil
+func (o *ListStorageBuckets200ResponseAllOfStorageBucketsInner) SetRetentionPolicyTypeNil() {
+	o.RetentionPolicyType.Set(nil)
+}
+
+// UnsetRetentionPolicyType ensures that no value is present for RetentionPolicyType, not even an explicit nil
+func (o *ListStorageBuckets200ResponseAllOfStorageBucketsInner) UnsetRetentionPolicyType() {
+	o.RetentionPolicyType.Unset()
+}
+
+// GetRetentionPolicyDays returns the RetentionPolicyDays field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListStorageBuckets200ResponseAllOfStorageBucketsInner) GetRetentionPolicyDays() string {
-	if o == nil || IsNil(o.RetentionPolicyDays) {
+	if o == nil || IsNil(o.RetentionPolicyDays.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.RetentionPolicyDays
+	return *o.RetentionPolicyDays.Get()
 }
 
 // GetRetentionPolicyDaysOk returns a tuple with the RetentionPolicyDays field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListStorageBuckets200ResponseAllOfStorageBucketsInner) GetRetentionPolicyDaysOk() (*string, bool) {
-	if o == nil || IsNil(o.RetentionPolicyDays) {
+	if o == nil {
 		return nil, false
 	}
-	return o.RetentionPolicyDays, true
+	return o.RetentionPolicyDays.Get(), o.RetentionPolicyDays.IsSet()
 }
 
 // IsSetRetentionPolicyDays returns a boolean if a field has been set.
 func (o *ListStorageBuckets200ResponseAllOfStorageBucketsInner) IsSetRetentionPolicyDays() bool {
-	if o != nil && !IsNil(o.RetentionPolicyDays) {
+	if o != nil && o.RetentionPolicyDays.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetRetentionPolicyDays gets a reference to the given string and assigns it to the RetentionPolicyDays field.
+// SetRetentionPolicyDays gets a reference to the given NullableString and assigns it to the RetentionPolicyDays field.
 func (o *ListStorageBuckets200ResponseAllOfStorageBucketsInner) SetRetentionPolicyDays(v string) {
-	o.RetentionPolicyDays = &v
+	o.RetentionPolicyDays.Set(&v)
 }
 
-// GetRetentionProvider returns the RetentionProvider field value if set, zero value otherwise.
+// SetRetentionPolicyDaysNil sets the value for RetentionPolicyDays to be an explicit nil
+func (o *ListStorageBuckets200ResponseAllOfStorageBucketsInner) SetRetentionPolicyDaysNil() {
+	o.RetentionPolicyDays.Set(nil)
+}
+
+// UnsetRetentionPolicyDays ensures that no value is present for RetentionPolicyDays, not even an explicit nil
+func (o *ListStorageBuckets200ResponseAllOfStorageBucketsInner) UnsetRetentionPolicyDays() {
+	o.RetentionPolicyDays.Unset()
+}
+
+// GetRetentionProvider returns the RetentionProvider field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListStorageBuckets200ResponseAllOfStorageBucketsInner) GetRetentionProvider() string {
-	if o == nil || IsNil(o.RetentionProvider) {
+	if o == nil || IsNil(o.RetentionProvider.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.RetentionProvider
+	return *o.RetentionProvider.Get()
 }
 
 // GetRetentionProviderOk returns a tuple with the RetentionProvider field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListStorageBuckets200ResponseAllOfStorageBucketsInner) GetRetentionProviderOk() (*string, bool) {
-	if o == nil || IsNil(o.RetentionProvider) {
+	if o == nil {
 		return nil, false
 	}
-	return o.RetentionProvider, true
+	return o.RetentionProvider.Get(), o.RetentionProvider.IsSet()
 }
 
 // IsSetRetentionProvider returns a boolean if a field has been set.
 func (o *ListStorageBuckets200ResponseAllOfStorageBucketsInner) IsSetRetentionProvider() bool {
-	if o != nil && !IsNil(o.RetentionProvider) {
+	if o != nil && o.RetentionProvider.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetRetentionProvider gets a reference to the given string and assigns it to the RetentionProvider field.
+// SetRetentionProvider gets a reference to the given NullableString and assigns it to the RetentionProvider field.
 func (o *ListStorageBuckets200ResponseAllOfStorageBucketsInner) SetRetentionProvider(v string) {
-	o.RetentionProvider = &v
+	o.RetentionProvider.Set(&v)
+}
+
+// SetRetentionProviderNil sets the value for RetentionProvider to be an explicit nil
+func (o *ListStorageBuckets200ResponseAllOfStorageBucketsInner) SetRetentionProviderNil() {
+	o.RetentionProvider.Set(nil)
+}
+
+// UnsetRetentionProvider ensures that no value is present for RetentionProvider, not even an explicit nil
+func (o *ListStorageBuckets200ResponseAllOfStorageBucketsInner) UnsetRetentionProvider() {
+	o.RetentionProvider.Unset()
 }
 
 func (o ListStorageBuckets200ResponseAllOfStorageBucketsInner) MarshalJSON() ([]byte, error) {
@@ -583,14 +616,14 @@ func (o ListStorageBuckets200ResponseAllOfStorageBucketsInner) ToMap() (map[stri
 	if !IsNil(o.CopyToStore) {
 		toSerialize["copyToStore"] = o.CopyToStore
 	}
-	if !IsNil(o.RetentionPolicyType) {
-		toSerialize["retentionPolicyType"] = o.RetentionPolicyType
+	if o.RetentionPolicyType.IsSet() {
+		toSerialize["retentionPolicyType"] = o.RetentionPolicyType.Get()
 	}
-	if !IsNil(o.RetentionPolicyDays) {
-		toSerialize["retentionPolicyDays"] = o.RetentionPolicyDays
+	if o.RetentionPolicyDays.IsSet() {
+		toSerialize["retentionPolicyDays"] = o.RetentionPolicyDays.Get()
 	}
-	if !IsNil(o.RetentionProvider) {
-		toSerialize["retentionProvider"] = o.RetentionProvider
+	if o.RetentionProvider.IsSet() {
+		toSerialize["retentionProvider"] = o.RetentionProvider.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {

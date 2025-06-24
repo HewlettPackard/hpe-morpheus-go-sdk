@@ -5,32 +5,32 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
-**RefType** | Pointer to **string** |  | [optional] 
-**RefId** | Pointer to **string** |  | [optional] 
+**RefType** | Pointer to **NullableString** |  | [optional] 
+**RefId** | Pointer to **NullableString** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**InternalId** | Pointer to **string** |  | [optional] 
-**ExternalId** | Pointer to **string** |  | [optional] 
-**UniqueId** | Pointer to **string** |  | [optional] 
+**InternalId** | Pointer to **NullableString** |  | [optional] 
+**ExternalId** | Pointer to **NullableString** |  | [optional] 
+**UniqueId** | Pointer to **NullableString** |  | [optional] 
 **PublicIpAddress** | Pointer to **string** |  | [optional] 
-**PublicIpv6Address** | Pointer to **string** |  | [optional] 
+**PublicIpv6Address** | Pointer to **NullableString** |  | [optional] 
 **IpAddress** | Pointer to **string** |  | [optional] 
-**Ipv6Address** | Pointer to **string** |  | [optional] 
-**IpSubnet** | Pointer to **string** |  | [optional] 
-**Ipv6Subnet** | Pointer to **string** |  | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
+**Ipv6Address** | Pointer to **NullableString** |  | [optional] 
+**IpSubnet** | Pointer to **NullableString** |  | [optional] 
+**Ipv6Subnet** | Pointer to **NullableString** |  | [optional] 
+**Description** | Pointer to **NullableString** |  | [optional] 
 **Dhcp** | Pointer to **bool** |  | [optional] 
 **Active** | Pointer to **bool** |  | [optional] 
 **PoolAssigned** | Pointer to **bool** |  | [optional] 
 **PrimaryInterface** | Pointer to **bool** |  | [optional] 
-**Network** | Pointer to [**ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
-**Subnet** | Pointer to **string** |  | [optional] 
-**NetworkGroup** | Pointer to **string** |  | [optional] 
-**NetworkPosition** | Pointer to **string** |  | [optional] 
-**NetworkPool** | Pointer to **string** |  | [optional] 
-**NetworkDomain** | Pointer to **string** |  | [optional] 
-**Type** | Pointer to **string** |  | [optional] 
-**IpMode** | Pointer to **string** |  | [optional] 
-**MacAddress** | Pointer to **string** |  | [optional] 
+**Network** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**Subnet** | Pointer to **NullableString** |  | [optional] 
+**NetworkGroup** | Pointer to **NullableString** |  | [optional] 
+**NetworkPosition** | Pointer to **NullableString** |  | [optional] 
+**NetworkPool** | Pointer to **NullableString** |  | [optional] 
+**NetworkDomain** | Pointer to **NullableString** |  | [optional] 
+**Type** | Pointer to **NullableString** |  | [optional] 
+**IpMode** | Pointer to **NullableString** |  | [optional] 
+**MacAddress** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -101,6 +101,16 @@ SetRefType sets RefType field to given value.
 
 HasRefType returns a boolean if a field has been set.
 
+### SetRefTypeNil
+
+`func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) SetRefTypeNil(b bool)`
+
+ SetRefTypeNil sets the value for RefType to be an explicit nil
+
+### UnsetRefType
+`func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) UnsetRefType()`
+
+UnsetRefType ensures that no value is present for RefType, not even an explicit nil
 ### GetRefId
 
 `func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) GetRefId() string`
@@ -126,6 +136,16 @@ SetRefId sets RefId field to given value.
 
 HasRefId returns a boolean if a field has been set.
 
+### SetRefIdNil
+
+`func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) SetRefIdNil(b bool)`
+
+ SetRefIdNil sets the value for RefId to be an explicit nil
+
+### UnsetRefId
+`func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) UnsetRefId()`
+
+UnsetRefId ensures that no value is present for RefId, not even an explicit nil
 ### GetName
 
 `func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) GetName() string`
@@ -176,6 +196,16 @@ SetInternalId sets InternalId field to given value.
 
 HasInternalId returns a boolean if a field has been set.
 
+### SetInternalIdNil
+
+`func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) SetInternalIdNil(b bool)`
+
+ SetInternalIdNil sets the value for InternalId to be an explicit nil
+
+### UnsetInternalId
+`func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) UnsetInternalId()`
+
+UnsetInternalId ensures that no value is present for InternalId, not even an explicit nil
 ### GetExternalId
 
 `func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) GetExternalId() string`
@@ -201,6 +231,16 @@ SetExternalId sets ExternalId field to given value.
 
 HasExternalId returns a boolean if a field has been set.
 
+### SetExternalIdNil
+
+`func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) SetExternalIdNil(b bool)`
+
+ SetExternalIdNil sets the value for ExternalId to be an explicit nil
+
+### UnsetExternalId
+`func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) UnsetExternalId()`
+
+UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
 ### GetUniqueId
 
 `func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) GetUniqueId() string`
@@ -226,6 +266,16 @@ SetUniqueId sets UniqueId field to given value.
 
 HasUniqueId returns a boolean if a field has been set.
 
+### SetUniqueIdNil
+
+`func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) SetUniqueIdNil(b bool)`
+
+ SetUniqueIdNil sets the value for UniqueId to be an explicit nil
+
+### UnsetUniqueId
+`func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) UnsetUniqueId()`
+
+UnsetUniqueId ensures that no value is present for UniqueId, not even an explicit nil
 ### GetPublicIpAddress
 
 `func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) GetPublicIpAddress() string`
@@ -276,6 +326,16 @@ SetPublicIpv6Address sets PublicIpv6Address field to given value.
 
 HasPublicIpv6Address returns a boolean if a field has been set.
 
+### SetPublicIpv6AddressNil
+
+`func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) SetPublicIpv6AddressNil(b bool)`
+
+ SetPublicIpv6AddressNil sets the value for PublicIpv6Address to be an explicit nil
+
+### UnsetPublicIpv6Address
+`func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) UnsetPublicIpv6Address()`
+
+UnsetPublicIpv6Address ensures that no value is present for PublicIpv6Address, not even an explicit nil
 ### GetIpAddress
 
 `func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) GetIpAddress() string`
@@ -326,6 +386,16 @@ SetIpv6Address sets Ipv6Address field to given value.
 
 HasIpv6Address returns a boolean if a field has been set.
 
+### SetIpv6AddressNil
+
+`func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) SetIpv6AddressNil(b bool)`
+
+ SetIpv6AddressNil sets the value for Ipv6Address to be an explicit nil
+
+### UnsetIpv6Address
+`func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) UnsetIpv6Address()`
+
+UnsetIpv6Address ensures that no value is present for Ipv6Address, not even an explicit nil
 ### GetIpSubnet
 
 `func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) GetIpSubnet() string`
@@ -351,6 +421,16 @@ SetIpSubnet sets IpSubnet field to given value.
 
 HasIpSubnet returns a boolean if a field has been set.
 
+### SetIpSubnetNil
+
+`func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) SetIpSubnetNil(b bool)`
+
+ SetIpSubnetNil sets the value for IpSubnet to be an explicit nil
+
+### UnsetIpSubnet
+`func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) UnsetIpSubnet()`
+
+UnsetIpSubnet ensures that no value is present for IpSubnet, not even an explicit nil
 ### GetIpv6Subnet
 
 `func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) GetIpv6Subnet() string`
@@ -376,6 +456,16 @@ SetIpv6Subnet sets Ipv6Subnet field to given value.
 
 HasIpv6Subnet returns a boolean if a field has been set.
 
+### SetIpv6SubnetNil
+
+`func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) SetIpv6SubnetNil(b bool)`
+
+ SetIpv6SubnetNil sets the value for Ipv6Subnet to be an explicit nil
+
+### UnsetIpv6Subnet
+`func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) UnsetIpv6Subnet()`
+
+UnsetIpv6Subnet ensures that no value is present for Ipv6Subnet, not even an explicit nil
 ### GetDescription
 
 `func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) GetDescription() string`
@@ -401,6 +491,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetDhcp
 
 `func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) GetDhcp() bool`
@@ -503,20 +603,20 @@ HasPrimaryInterface returns a boolean if a field has been set.
 
 ### GetNetwork
 
-`func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) GetNetwork() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) GetNetwork() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetNetwork returns the Network field if non-nil, zero value otherwise.
 
 ### GetNetworkOk
 
-`func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) GetNetworkOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) GetNetworkOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetNetworkOk returns a tuple with the Network field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNetwork
 
-`func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) SetNetwork(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) SetNetwork(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetNetwork sets Network field to given value.
 
@@ -551,6 +651,16 @@ SetSubnet sets Subnet field to given value.
 
 HasSubnet returns a boolean if a field has been set.
 
+### SetSubnetNil
+
+`func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) SetSubnetNil(b bool)`
+
+ SetSubnetNil sets the value for Subnet to be an explicit nil
+
+### UnsetSubnet
+`func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) UnsetSubnet()`
+
+UnsetSubnet ensures that no value is present for Subnet, not even an explicit nil
 ### GetNetworkGroup
 
 `func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) GetNetworkGroup() string`
@@ -576,6 +686,16 @@ SetNetworkGroup sets NetworkGroup field to given value.
 
 HasNetworkGroup returns a boolean if a field has been set.
 
+### SetNetworkGroupNil
+
+`func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) SetNetworkGroupNil(b bool)`
+
+ SetNetworkGroupNil sets the value for NetworkGroup to be an explicit nil
+
+### UnsetNetworkGroup
+`func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) UnsetNetworkGroup()`
+
+UnsetNetworkGroup ensures that no value is present for NetworkGroup, not even an explicit nil
 ### GetNetworkPosition
 
 `func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) GetNetworkPosition() string`
@@ -601,6 +721,16 @@ SetNetworkPosition sets NetworkPosition field to given value.
 
 HasNetworkPosition returns a boolean if a field has been set.
 
+### SetNetworkPositionNil
+
+`func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) SetNetworkPositionNil(b bool)`
+
+ SetNetworkPositionNil sets the value for NetworkPosition to be an explicit nil
+
+### UnsetNetworkPosition
+`func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) UnsetNetworkPosition()`
+
+UnsetNetworkPosition ensures that no value is present for NetworkPosition, not even an explicit nil
 ### GetNetworkPool
 
 `func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) GetNetworkPool() string`
@@ -626,6 +756,16 @@ SetNetworkPool sets NetworkPool field to given value.
 
 HasNetworkPool returns a boolean if a field has been set.
 
+### SetNetworkPoolNil
+
+`func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) SetNetworkPoolNil(b bool)`
+
+ SetNetworkPoolNil sets the value for NetworkPool to be an explicit nil
+
+### UnsetNetworkPool
+`func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) UnsetNetworkPool()`
+
+UnsetNetworkPool ensures that no value is present for NetworkPool, not even an explicit nil
 ### GetNetworkDomain
 
 `func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) GetNetworkDomain() string`
@@ -651,6 +791,16 @@ SetNetworkDomain sets NetworkDomain field to given value.
 
 HasNetworkDomain returns a boolean if a field has been set.
 
+### SetNetworkDomainNil
+
+`func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) SetNetworkDomainNil(b bool)`
+
+ SetNetworkDomainNil sets the value for NetworkDomain to be an explicit nil
+
+### UnsetNetworkDomain
+`func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) UnsetNetworkDomain()`
+
+UnsetNetworkDomain ensures that no value is present for NetworkDomain, not even an explicit nil
 ### GetType
 
 `func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) GetType() string`
@@ -676,6 +826,16 @@ SetType sets Type field to given value.
 
 HasType returns a boolean if a field has been set.
 
+### SetTypeNil
+
+`func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetIpMode
 
 `func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) GetIpMode() string`
@@ -701,6 +861,16 @@ SetIpMode sets IpMode field to given value.
 
 HasIpMode returns a boolean if a field has been set.
 
+### SetIpModeNil
+
+`func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) SetIpModeNil(b bool)`
+
+ SetIpModeNil sets the value for IpMode to be an explicit nil
+
+### UnsetIpMode
+`func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) UnsetIpMode()`
+
+UnsetIpMode ensures that no value is present for IpMode, not even an explicit nil
 ### GetMacAddress
 
 `func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) GetMacAddress() string`
@@ -726,6 +896,16 @@ SetMacAddress sets MacAddress field to given value.
 
 HasMacAddress returns a boolean if a field has been set.
 
+### SetMacAddressNil
+
+`func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) SetMacAddressNil(b bool)`
+
+ SetMacAddressNil sets the value for MacAddress to be an explicit nil
+
+### UnsetMacAddress
+`func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) UnsetMacAddress()`
+
+UnsetMacAddress ensures that no value is present for MacAddress, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

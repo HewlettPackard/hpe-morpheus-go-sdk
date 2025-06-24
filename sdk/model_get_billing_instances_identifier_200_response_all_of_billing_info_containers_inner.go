@@ -39,9 +39,9 @@ type GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInner str
 	Name                 *string                                                                              `json:"name,omitempty"`
 	ServerId             *int64                                                                               `json:"serverId,omitempty"`
 	ServerUUID           *string                                                                              `json:"serverUUID,omitempty"`
-	ServerUniqueId       *string                                                                              `json:"serverUniqueId,omitempty"`
+	ServerUniqueId       NullableString                                                                       `json:"serverUniqueId,omitempty"`
 	ServerExternalId     *string                                                                              `json:"serverExternalId,omitempty"`
-	ServerInternalId     *string                                                                              `json:"serverInternalId,omitempty"`
+	ServerInternalId     NullableString                                                                       `json:"serverInternalId,omitempty"`
 	ResourcePoolId       *int64                                                                               `json:"resourcePoolId,omitempty"`
 	ResourcePoolName     *string                                                                              `json:"resourcePoolName,omitempty"`
 	AdditionalProperties map[string]interface{}                                                               `json:",remain"`
@@ -642,36 +642,47 @@ func (o *GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInner
 	o.ServerUUID = &v
 }
 
-// GetServerUniqueId returns the ServerUniqueId field value if set, zero value otherwise.
+// GetServerUniqueId returns the ServerUniqueId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInner) GetServerUniqueId() string {
-	if o == nil || IsNil(o.ServerUniqueId) {
+	if o == nil || IsNil(o.ServerUniqueId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ServerUniqueId
+	return *o.ServerUniqueId.Get()
 }
 
 // GetServerUniqueIdOk returns a tuple with the ServerUniqueId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInner) GetServerUniqueIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ServerUniqueId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ServerUniqueId, true
+	return o.ServerUniqueId.Get(), o.ServerUniqueId.IsSet()
 }
 
 // IsSetServerUniqueId returns a boolean if a field has been set.
 func (o *GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInner) IsSetServerUniqueId() bool {
-	if o != nil && !IsNil(o.ServerUniqueId) {
+	if o != nil && o.ServerUniqueId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetServerUniqueId gets a reference to the given string and assigns it to the ServerUniqueId field.
+// SetServerUniqueId gets a reference to the given NullableString and assigns it to the ServerUniqueId field.
 func (o *GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInner) SetServerUniqueId(v string) {
-	o.ServerUniqueId = &v
+	o.ServerUniqueId.Set(&v)
+}
+
+// SetServerUniqueIdNil sets the value for ServerUniqueId to be an explicit nil
+func (o *GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInner) SetServerUniqueIdNil() {
+	o.ServerUniqueId.Set(nil)
+}
+
+// UnsetServerUniqueId ensures that no value is present for ServerUniqueId, not even an explicit nil
+func (o *GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInner) UnsetServerUniqueId() {
+	o.ServerUniqueId.Unset()
 }
 
 // GetServerExternalId returns the ServerExternalId field value if set, zero value otherwise.
@@ -706,36 +717,47 @@ func (o *GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInner
 	o.ServerExternalId = &v
 }
 
-// GetServerInternalId returns the ServerInternalId field value if set, zero value otherwise.
+// GetServerInternalId returns the ServerInternalId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInner) GetServerInternalId() string {
-	if o == nil || IsNil(o.ServerInternalId) {
+	if o == nil || IsNil(o.ServerInternalId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ServerInternalId
+	return *o.ServerInternalId.Get()
 }
 
 // GetServerInternalIdOk returns a tuple with the ServerInternalId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInner) GetServerInternalIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ServerInternalId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ServerInternalId, true
+	return o.ServerInternalId.Get(), o.ServerInternalId.IsSet()
 }
 
 // IsSetServerInternalId returns a boolean if a field has been set.
 func (o *GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInner) IsSetServerInternalId() bool {
-	if o != nil && !IsNil(o.ServerInternalId) {
+	if o != nil && o.ServerInternalId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetServerInternalId gets a reference to the given string and assigns it to the ServerInternalId field.
+// SetServerInternalId gets a reference to the given NullableString and assigns it to the ServerInternalId field.
 func (o *GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInner) SetServerInternalId(v string) {
-	o.ServerInternalId = &v
+	o.ServerInternalId.Set(&v)
+}
+
+// SetServerInternalIdNil sets the value for ServerInternalId to be an explicit nil
+func (o *GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInner) SetServerInternalIdNil() {
+	o.ServerInternalId.Set(nil)
+}
+
+// UnsetServerInternalId ensures that no value is present for ServerInternalId, not even an explicit nil
+func (o *GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInner) UnsetServerInternalId() {
+	o.ServerInternalId.Unset()
 }
 
 // GetResourcePoolId returns the ResourcePoolId field value if set, zero value otherwise.
@@ -866,14 +888,14 @@ func (o GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInner)
 	if !IsNil(o.ServerUUID) {
 		toSerialize["serverUUID"] = o.ServerUUID
 	}
-	if !IsNil(o.ServerUniqueId) {
-		toSerialize["serverUniqueId"] = o.ServerUniqueId
+	if o.ServerUniqueId.IsSet() {
+		toSerialize["serverUniqueId"] = o.ServerUniqueId.Get()
 	}
 	if !IsNil(o.ServerExternalId) {
 		toSerialize["serverExternalId"] = o.ServerExternalId
 	}
-	if !IsNil(o.ServerInternalId) {
-		toSerialize["serverInternalId"] = o.ServerInternalId
+	if o.ServerInternalId.IsSet() {
+		toSerialize["serverInternalId"] = o.ServerInternalId.Get()
 	}
 	if !IsNil(o.ResourcePoolId) {
 		toSerialize["resourcePoolId"] = o.ResourcePoolId

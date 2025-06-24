@@ -22,7 +22,7 @@ var _ MappedNullable = &GetNetworkFirewallRuleGroup200ResponseRuleGroup{}
 type GetNetworkFirewallRuleGroup200ResponseRuleGroup struct {
 	Id                   *int64                                                      `json:"id,omitempty"`
 	Name                 *string                                                     `json:"name,omitempty"`
-	Description          *string                                                     `json:"description,omitempty"`
+	Description          NullableString                                              `json:"description,omitempty"`
 	Priority             *int64                                                      `json:"priority,omitempty"`
 	GroupLayer           *string                                                     `json:"groupLayer,omitempty"`
 	Rules                []GetNetworkFirewallRuleGroup200ResponseRuleGroupRulesInner `json:"rules,omitempty"`
@@ -112,36 +112,47 @@ func (o *GetNetworkFirewallRuleGroup200ResponseRuleGroup) SetName(v string) {
 	o.Name = &v
 }
 
-// GetDescription returns the Description field value if set, zero value otherwise.
+// GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetNetworkFirewallRuleGroup200ResponseRuleGroup) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
+	if o == nil || IsNil(o.Description.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Description
+	return *o.Description.Get()
 }
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetNetworkFirewallRuleGroup200ResponseRuleGroup) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Description, true
+	return o.Description.Get(), o.Description.IsSet()
 }
 
 // IsSetDescription returns a boolean if a field has been set.
 func (o *GetNetworkFirewallRuleGroup200ResponseRuleGroup) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
+	if o != nil && o.Description.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDescription gets a reference to the given string and assigns it to the Description field.
+// SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *GetNetworkFirewallRuleGroup200ResponseRuleGroup) SetDescription(v string) {
-	o.Description = &v
+	o.Description.Set(&v)
+}
+
+// SetDescriptionNil sets the value for Description to be an explicit nil
+func (o *GetNetworkFirewallRuleGroup200ResponseRuleGroup) SetDescriptionNil() {
+	o.Description.Set(nil)
+}
+
+// UnsetDescription ensures that no value is present for Description, not even an explicit nil
+func (o *GetNetworkFirewallRuleGroup200ResponseRuleGroup) UnsetDescription() {
+	o.Description.Unset()
 }
 
 // GetPriority returns the Priority field value if set, zero value otherwise.
@@ -256,8 +267,8 @@ func (o GetNetworkFirewallRuleGroup200ResponseRuleGroup) ToMap() (map[string]int
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !IsNil(o.Description) {
-		toSerialize["description"] = o.Description
+	if o.Description.IsSet() {
+		toSerialize["description"] = o.Description.Get()
 	}
 	if !IsNil(o.Priority) {
 		toSerialize["priority"] = o.Priority

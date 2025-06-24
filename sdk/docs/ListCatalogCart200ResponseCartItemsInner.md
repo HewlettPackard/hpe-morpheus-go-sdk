@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Type** | Pointer to [**ListApps200ResponseAllOfAppsInnerBlueprint**](ListApps200ResponseAllOfAppsInnerBlueprint.md) |  | [optional] 
 **Quantity** | Pointer to **int64** |  | [optional] 
 **Status** | Pointer to **string** |  | [optional] 
-**StatusMessage** | Pointer to **string** |  | [optional] 
+**StatusMessage** | Pointer to **NullableString** |  | [optional] 
 **RefType** | Pointer to **string** |  | [optional] 
 **Instance** | Pointer to [**ListCatalogCart200ResponseCartItemsInnerInstance**](ListCatalogCart200ResponseCartItemsInnerInstance.md) |  | [optional] 
 **OrderDate** | Pointer to **time.Time** |  | [optional] 
@@ -185,6 +185,16 @@ SetStatusMessage sets StatusMessage field to given value.
 
 HasStatusMessage returns a boolean if a field has been set.
 
+### SetStatusMessageNil
+
+`func (o *ListCatalogCart200ResponseCartItemsInner) SetStatusMessageNil(b bool)`
+
+ SetStatusMessageNil sets the value for StatusMessage to be an explicit nil
+
+### UnsetStatusMessage
+`func (o *ListCatalogCart200ResponseCartItemsInner) UnsetStatusMessage()`
+
+UnsetStatusMessage ensures that no value is present for StatusMessage, not even an explicit nil
 ### GetRefType
 
 `func (o *ListCatalogCart200ResponseCartItemsInner) GetRefType() string`

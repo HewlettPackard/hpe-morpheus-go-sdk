@@ -7,9 +7,9 @@ Name | Type | Description | Notes
 **Id** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Code** | Pointer to **string** |  | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **NullableString** |  | [optional] 
 **Category** | Pointer to **string** |  | [optional] 
-**ResourceLevel** | Pointer to **string** |  | [optional] 
+**ResourceLevel** | Pointer to **NullableString** |  | [optional] 
 **ResourceType** | Pointer to **string** |  | [optional] 
 **Managed** | Pointer to **bool** |  | [optional] 
 **Status** | Pointer to **string** |  | [optional] 
@@ -137,6 +137,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *ListClusterPods200ResponseAllOfPodsInner) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *ListClusterPods200ResponseAllOfPodsInner) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetCategory
 
 `func (o *ListClusterPods200ResponseAllOfPodsInner) GetCategory() string`
@@ -187,6 +197,16 @@ SetResourceLevel sets ResourceLevel field to given value.
 
 HasResourceLevel returns a boolean if a field has been set.
 
+### SetResourceLevelNil
+
+`func (o *ListClusterPods200ResponseAllOfPodsInner) SetResourceLevelNil(b bool)`
+
+ SetResourceLevelNil sets the value for ResourceLevel to be an explicit nil
+
+### UnsetResourceLevel
+`func (o *ListClusterPods200ResponseAllOfPodsInner) UnsetResourceLevel()`
+
+UnsetResourceLevel ensures that no value is present for ResourceLevel, not even an explicit nil
 ### GetResourceType
 
 `func (o *ListClusterPods200ResponseAllOfPodsInner) GetResourceType() string`

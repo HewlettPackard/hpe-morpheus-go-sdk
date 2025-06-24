@@ -10,21 +10,21 @@ Name | Type | Description | Notes
 **Active** | Pointer to **bool** |  | [optional] 
 **PriceType** | Pointer to **string** |  | [optional] 
 **PriceUnit** | Pointer to **string** |  | [optional] 
-**AdditionalPriceUnit** | Pointer to **string** |  | [optional] 
-**Price** | Pointer to **float32** |  | [optional] 
-**CustomPrice** | Pointer to **float32** |  | [optional] 
-**MarkupType** | Pointer to **string** |  | [optional] 
-**Markup** | Pointer to **float32** |  | [optional] 
-**MarkupPercent** | Pointer to **float32** |  | [optional] 
-**Cost** | Pointer to **float32** |  | [optional] 
+**AdditionalPriceUnit** | Pointer to **NullableString** |  | [optional] 
+**Price** | Pointer to **NullableFloat32** |  | [optional] 
+**CustomPrice** | Pointer to **NullableFloat32** |  | [optional] 
+**MarkupType** | Pointer to **NullableString** |  | [optional] 
+**Markup** | Pointer to **NullableFloat32** |  | [optional] 
+**MarkupPercent** | Pointer to **NullableFloat32** |  | [optional] 
+**Cost** | Pointer to **NullableFloat32** |  | [optional] 
 **Currency** | Pointer to **string** |  | [optional] 
 **IncurCharges** | Pointer to **string** |  | [optional] 
-**Platform** | Pointer to **string** |  | [optional] 
-**Software** | Pointer to **string** |  | [optional] 
-**VolumeType** | Pointer to [**ListPriceSets200ResponseAllOfPriceSetsInnerPricesInnerVolumeType**](ListPriceSets200ResponseAllOfPriceSetsInnerPricesInnerVolumeType.md) |  | [optional] 
+**Platform** | Pointer to **NullableString** |  | [optional] 
+**Software** | Pointer to **NullableString** |  | [optional] 
+**VolumeType** | Pointer to [**ListBackupSettings200ResponseBackupSettingsDefaultSchedule**](ListBackupSettings200ResponseBackupSettingsDefaultSchedule.md) |  | [optional] 
 **Datastore** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
-**CrossCloudApply** | Pointer to **bool** |  | [optional] 
-**Account** | Pointer to **string** |  | [optional] 
+**CrossCloudApply** | Pointer to **NullableBool** |  | [optional] 
+**Account** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -220,6 +220,16 @@ SetAdditionalPriceUnit sets AdditionalPriceUnit field to given value.
 
 HasAdditionalPriceUnit returns a boolean if a field has been set.
 
+### SetAdditionalPriceUnitNil
+
+`func (o *ListPrices200ResponseAllOfPricesInner) SetAdditionalPriceUnitNil(b bool)`
+
+ SetAdditionalPriceUnitNil sets the value for AdditionalPriceUnit to be an explicit nil
+
+### UnsetAdditionalPriceUnit
+`func (o *ListPrices200ResponseAllOfPricesInner) UnsetAdditionalPriceUnit()`
+
+UnsetAdditionalPriceUnit ensures that no value is present for AdditionalPriceUnit, not even an explicit nil
 ### GetPrice
 
 `func (o *ListPrices200ResponseAllOfPricesInner) GetPrice() float32`
@@ -245,6 +255,16 @@ SetPrice sets Price field to given value.
 
 HasPrice returns a boolean if a field has been set.
 
+### SetPriceNil
+
+`func (o *ListPrices200ResponseAllOfPricesInner) SetPriceNil(b bool)`
+
+ SetPriceNil sets the value for Price to be an explicit nil
+
+### UnsetPrice
+`func (o *ListPrices200ResponseAllOfPricesInner) UnsetPrice()`
+
+UnsetPrice ensures that no value is present for Price, not even an explicit nil
 ### GetCustomPrice
 
 `func (o *ListPrices200ResponseAllOfPricesInner) GetCustomPrice() float32`
@@ -270,6 +290,16 @@ SetCustomPrice sets CustomPrice field to given value.
 
 HasCustomPrice returns a boolean if a field has been set.
 
+### SetCustomPriceNil
+
+`func (o *ListPrices200ResponseAllOfPricesInner) SetCustomPriceNil(b bool)`
+
+ SetCustomPriceNil sets the value for CustomPrice to be an explicit nil
+
+### UnsetCustomPrice
+`func (o *ListPrices200ResponseAllOfPricesInner) UnsetCustomPrice()`
+
+UnsetCustomPrice ensures that no value is present for CustomPrice, not even an explicit nil
 ### GetMarkupType
 
 `func (o *ListPrices200ResponseAllOfPricesInner) GetMarkupType() string`
@@ -295,6 +325,16 @@ SetMarkupType sets MarkupType field to given value.
 
 HasMarkupType returns a boolean if a field has been set.
 
+### SetMarkupTypeNil
+
+`func (o *ListPrices200ResponseAllOfPricesInner) SetMarkupTypeNil(b bool)`
+
+ SetMarkupTypeNil sets the value for MarkupType to be an explicit nil
+
+### UnsetMarkupType
+`func (o *ListPrices200ResponseAllOfPricesInner) UnsetMarkupType()`
+
+UnsetMarkupType ensures that no value is present for MarkupType, not even an explicit nil
 ### GetMarkup
 
 `func (o *ListPrices200ResponseAllOfPricesInner) GetMarkup() float32`
@@ -320,6 +360,16 @@ SetMarkup sets Markup field to given value.
 
 HasMarkup returns a boolean if a field has been set.
 
+### SetMarkupNil
+
+`func (o *ListPrices200ResponseAllOfPricesInner) SetMarkupNil(b bool)`
+
+ SetMarkupNil sets the value for Markup to be an explicit nil
+
+### UnsetMarkup
+`func (o *ListPrices200ResponseAllOfPricesInner) UnsetMarkup()`
+
+UnsetMarkup ensures that no value is present for Markup, not even an explicit nil
 ### GetMarkupPercent
 
 `func (o *ListPrices200ResponseAllOfPricesInner) GetMarkupPercent() float32`
@@ -345,6 +395,16 @@ SetMarkupPercent sets MarkupPercent field to given value.
 
 HasMarkupPercent returns a boolean if a field has been set.
 
+### SetMarkupPercentNil
+
+`func (o *ListPrices200ResponseAllOfPricesInner) SetMarkupPercentNil(b bool)`
+
+ SetMarkupPercentNil sets the value for MarkupPercent to be an explicit nil
+
+### UnsetMarkupPercent
+`func (o *ListPrices200ResponseAllOfPricesInner) UnsetMarkupPercent()`
+
+UnsetMarkupPercent ensures that no value is present for MarkupPercent, not even an explicit nil
 ### GetCost
 
 `func (o *ListPrices200ResponseAllOfPricesInner) GetCost() float32`
@@ -370,6 +430,16 @@ SetCost sets Cost field to given value.
 
 HasCost returns a boolean if a field has been set.
 
+### SetCostNil
+
+`func (o *ListPrices200ResponseAllOfPricesInner) SetCostNil(b bool)`
+
+ SetCostNil sets the value for Cost to be an explicit nil
+
+### UnsetCost
+`func (o *ListPrices200ResponseAllOfPricesInner) UnsetCost()`
+
+UnsetCost ensures that no value is present for Cost, not even an explicit nil
 ### GetCurrency
 
 `func (o *ListPrices200ResponseAllOfPricesInner) GetCurrency() string`
@@ -445,6 +515,16 @@ SetPlatform sets Platform field to given value.
 
 HasPlatform returns a boolean if a field has been set.
 
+### SetPlatformNil
+
+`func (o *ListPrices200ResponseAllOfPricesInner) SetPlatformNil(b bool)`
+
+ SetPlatformNil sets the value for Platform to be an explicit nil
+
+### UnsetPlatform
+`func (o *ListPrices200ResponseAllOfPricesInner) UnsetPlatform()`
+
+UnsetPlatform ensures that no value is present for Platform, not even an explicit nil
 ### GetSoftware
 
 `func (o *ListPrices200ResponseAllOfPricesInner) GetSoftware() string`
@@ -470,22 +550,32 @@ SetSoftware sets Software field to given value.
 
 HasSoftware returns a boolean if a field has been set.
 
+### SetSoftwareNil
+
+`func (o *ListPrices200ResponseAllOfPricesInner) SetSoftwareNil(b bool)`
+
+ SetSoftwareNil sets the value for Software to be an explicit nil
+
+### UnsetSoftware
+`func (o *ListPrices200ResponseAllOfPricesInner) UnsetSoftware()`
+
+UnsetSoftware ensures that no value is present for Software, not even an explicit nil
 ### GetVolumeType
 
-`func (o *ListPrices200ResponseAllOfPricesInner) GetVolumeType() ListPriceSets200ResponseAllOfPriceSetsInnerPricesInnerVolumeType`
+`func (o *ListPrices200ResponseAllOfPricesInner) GetVolumeType() ListBackupSettings200ResponseBackupSettingsDefaultSchedule`
 
 GetVolumeType returns the VolumeType field if non-nil, zero value otherwise.
 
 ### GetVolumeTypeOk
 
-`func (o *ListPrices200ResponseAllOfPricesInner) GetVolumeTypeOk() (*ListPriceSets200ResponseAllOfPriceSetsInnerPricesInnerVolumeType, bool)`
+`func (o *ListPrices200ResponseAllOfPricesInner) GetVolumeTypeOk() (*ListBackupSettings200ResponseBackupSettingsDefaultSchedule, bool)`
 
 GetVolumeTypeOk returns a tuple with the VolumeType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVolumeType
 
-`func (o *ListPrices200ResponseAllOfPricesInner) SetVolumeType(v ListPriceSets200ResponseAllOfPriceSetsInnerPricesInnerVolumeType)`
+`func (o *ListPrices200ResponseAllOfPricesInner) SetVolumeType(v ListBackupSettings200ResponseBackupSettingsDefaultSchedule)`
 
 SetVolumeType sets VolumeType field to given value.
 
@@ -545,6 +635,16 @@ SetCrossCloudApply sets CrossCloudApply field to given value.
 
 HasCrossCloudApply returns a boolean if a field has been set.
 
+### SetCrossCloudApplyNil
+
+`func (o *ListPrices200ResponseAllOfPricesInner) SetCrossCloudApplyNil(b bool)`
+
+ SetCrossCloudApplyNil sets the value for CrossCloudApply to be an explicit nil
+
+### UnsetCrossCloudApply
+`func (o *ListPrices200ResponseAllOfPricesInner) UnsetCrossCloudApply()`
+
+UnsetCrossCloudApply ensures that no value is present for CrossCloudApply, not even an explicit nil
 ### GetAccount
 
 `func (o *ListPrices200ResponseAllOfPricesInner) GetAccount() string`
@@ -570,6 +670,16 @@ SetAccount sets Account field to given value.
 
 HasAccount returns a boolean if a field has been set.
 
+### SetAccountNil
+
+`func (o *ListPrices200ResponseAllOfPricesInner) SetAccountNil(b bool)`
+
+ SetAccountNil sets the value for Account to be an explicit nil
+
+### UnsetAccount
+`func (o *ListPrices200ResponseAllOfPricesInner) UnsetAccount()`
+
+UnsetAccount ensures that no value is present for Account, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

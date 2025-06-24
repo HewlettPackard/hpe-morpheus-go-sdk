@@ -20,44 +20,44 @@ var _ MappedNullable = &GetNetworkSubnets200ResponseAllOfSubnetsInner{}
 
 // GetNetworkSubnets200ResponseAllOfSubnetsInner struct for GetNetworkSubnets200ResponseAllOfSubnetsInner
 type GetNetworkSubnets200ResponseAllOfSubnetsInner struct {
-	Id                   *int64                                                                   `json:"id,omitempty"`
-	Code                 *string                                                                  `json:"code,omitempty"`
-	Name                 *string                                                                  `json:"name,omitempty"`
-	Labels               []string                                                                 `json:"labels,omitempty"`
-	Active               *bool                                                                    `json:"active,omitempty"`
-	Description          *string                                                                  `json:"description,omitempty"`
-	ExternalId           *string                                                                  `json:"externalId,omitempty"`
-	UniqueId             *string                                                                  `json:"uniqueId,omitempty"`
-	AddressPrefix        *string                                                                  `json:"addressPrefix,omitempty"`
-	Cidr                 *string                                                                  `json:"cidr,omitempty"`
-	Gateway              *string                                                                  `json:"gateway,omitempty"`
-	Netmask              *string                                                                  `json:"netmask,omitempty"`
-	SubnetAddress        *string                                                                  `json:"subnetAddress,omitempty"`
-	TftpServer           *string                                                                  `json:"tftpServer,omitempty"`
-	BootFile             *string                                                                  `json:"bootFile,omitempty"`
-	Pool                 *string                                                                  `json:"pool,omitempty"`
-	DhcpServer           *bool                                                                    `json:"dhcpServer,omitempty"`
-	HasFloatingIps       *bool                                                                    `json:"hasFloatingIps,omitempty"`
-	DhcpIp               *string                                                                  `json:"dhcpIp,omitempty"`
-	DnsPrimary           *string                                                                  `json:"dnsPrimary,omitempty"`
-	DnsSecondary         *string                                                                  `json:"dnsSecondary,omitempty"`
-	DhcpStart            *string                                                                  `json:"dhcpStart,omitempty"`
-	DhcpEnd              *string                                                                  `json:"dhcpEnd,omitempty"`
-	DhcpRange            *string                                                                  `json:"dhcpRange,omitempty"`
-	NetworkProxy         *string                                                                  `json:"networkProxy,omitempty"`
-	NetworkDomain        *string                                                                  `json:"networkDomain,omitempty"`
-	SearchDomains        *string                                                                  `json:"searchDomains,omitempty"`
-	DefaultNetwork       *bool                                                                    `json:"defaultNetwork,omitempty"`
-	AssignPublicIp       *bool                                                                    `json:"assignPublicIp,omitempty"`
-	Visibility           *string                                                                  `json:"visibility,omitempty"`
-	Status               *GetAppState200ResponseAllOfInputProvidersInner                          `json:"status,omitempty"`
-	Network              *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner  `json:"network,omitempty"`
-	Type                 *ListBackupSettings200ResponseBackupSettingsDefaultSchedule              `json:"type,omitempty"`
-	Account              *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner  `json:"account,omitempty"`
-	SecurityGroups       []map[string]interface{}                                                 `json:"securityGroups,omitempty"`
-	Tenants              []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"tenants,omitempty"`
-	ResourcePermission   *GetNetworkSubnets200ResponseAllOfSubnetsInnerResourcePermission         `json:"resourcePermission,omitempty"`
-	AdditionalProperties map[string]interface{}                                                   `json:",remain"`
+	Id                   *int64                                                           `json:"id,omitempty"`
+	Code                 NullableString                                                   `json:"code,omitempty"`
+	Name                 *string                                                          `json:"name,omitempty"`
+	Labels               []string                                                         `json:"labels,omitempty"`
+	Active               *bool                                                            `json:"active,omitempty"`
+	Description          NullableString                                                   `json:"description,omitempty"`
+	ExternalId           *string                                                          `json:"externalId,omitempty"`
+	UniqueId             NullableString                                                   `json:"uniqueId,omitempty"`
+	AddressPrefix        NullableString                                                   `json:"addressPrefix,omitempty"`
+	Cidr                 *string                                                          `json:"cidr,omitempty"`
+	Gateway              NullableString                                                   `json:"gateway,omitempty"`
+	Netmask              *string                                                          `json:"netmask,omitempty"`
+	SubnetAddress        *string                                                          `json:"subnetAddress,omitempty"`
+	TftpServer           NullableString                                                   `json:"tftpServer,omitempty"`
+	BootFile             NullableString                                                   `json:"bootFile,omitempty"`
+	Pool                 NullableString                                                   `json:"pool,omitempty"`
+	DhcpServer           *bool                                                            `json:"dhcpServer,omitempty"`
+	HasFloatingIps       *bool                                                            `json:"hasFloatingIps,omitempty"`
+	DhcpIp               NullableString                                                   `json:"dhcpIp,omitempty"`
+	DnsPrimary           NullableString                                                   `json:"dnsPrimary,omitempty"`
+	DnsSecondary         NullableString                                                   `json:"dnsSecondary,omitempty"`
+	DhcpStart            *string                                                          `json:"dhcpStart,omitempty"`
+	DhcpEnd              *string                                                          `json:"dhcpEnd,omitempty"`
+	DhcpRange            NullableString                                                   `json:"dhcpRange,omitempty"`
+	NetworkProxy         NullableString                                                   `json:"networkProxy,omitempty"`
+	NetworkDomain        NullableString                                                   `json:"networkDomain,omitempty"`
+	SearchDomains        NullableString                                                   `json:"searchDomains,omitempty"`
+	DefaultNetwork       *bool                                                            `json:"defaultNetwork,omitempty"`
+	AssignPublicIp       *bool                                                            `json:"assignPublicIp,omitempty"`
+	Visibility           *string                                                          `json:"visibility,omitempty"`
+	Status               *GetAppState200ResponseAllOfInputProvidersInner                  `json:"status,omitempty"`
+	Network              *GetAlerts200ResponseAllOfCheckGroupsInnerInstance               `json:"network,omitempty"`
+	Type                 *ListBackupSettings200ResponseBackupSettingsDefaultSchedule      `json:"type,omitempty"`
+	Account              *GetAlerts200ResponseAllOfCheckGroupsInnerInstance               `json:"account,omitempty"`
+	SecurityGroups       []map[string]interface{}                                         `json:"securityGroups,omitempty"`
+	Tenants              []GetAlerts200ResponseAllOfCheckGroupsInnerInstance              `json:"tenants,omitempty"`
+	ResourcePermission   *GetNetworkSubnets200ResponseAllOfSubnetsInnerResourcePermission `json:"resourcePermission,omitempty"`
+	AdditionalProperties map[string]interface{}                                           `json:",remain"`
 }
 
 type _GetNetworkSubnets200ResponseAllOfSubnetsInner GetNetworkSubnets200ResponseAllOfSubnetsInner
@@ -111,36 +111,47 @@ func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetId(v int64) {
 	o.Id = &v
 }
 
-// GetCode returns the Code field value if set, zero value otherwise.
+// GetCode returns the Code field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetCode() string {
-	if o == nil || IsNil(o.Code) {
+	if o == nil || IsNil(o.Code.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Code
+	return *o.Code.Get()
 }
 
 // GetCodeOk returns a tuple with the Code field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.Code) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Code, true
+	return o.Code.Get(), o.Code.IsSet()
 }
 
 // IsSetCode returns a boolean if a field has been set.
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
+	if o != nil && o.Code.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCode gets a reference to the given string and assigns it to the Code field.
+// SetCode gets a reference to the given NullableString and assigns it to the Code field.
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetCode(v string) {
-	o.Code = &v
+	o.Code.Set(&v)
+}
+
+// SetCodeNil sets the value for Code to be an explicit nil
+func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetCodeNil() {
+	o.Code.Set(nil)
+}
+
+// UnsetCode ensures that no value is present for Code, not even an explicit nil
+func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) UnsetCode() {
+	o.Code.Unset()
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -175,9 +186,9 @@ func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetName(v string) {
 	o.Name = &v
 }
 
-// GetLabels returns the Labels field value if set, zero value otherwise.
+// GetLabels returns the Labels field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetLabels() []string {
-	if o == nil || IsNil(o.Labels) {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -186,6 +197,7 @@ func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetLabels() []string {
 
 // GetLabelsOk returns a tuple with the Labels field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetLabelsOk() ([]string, bool) {
 	if o == nil || IsNil(o.Labels) {
 		return nil, false
@@ -239,36 +251,47 @@ func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetActive(v bool) {
 	o.Active = &v
 }
 
-// GetDescription returns the Description field value if set, zero value otherwise.
+// GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
+	if o == nil || IsNil(o.Description.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Description
+	return *o.Description.Get()
 }
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Description, true
+	return o.Description.Get(), o.Description.IsSet()
 }
 
 // IsSetDescription returns a boolean if a field has been set.
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
+	if o != nil && o.Description.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDescription gets a reference to the given string and assigns it to the Description field.
+// SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetDescription(v string) {
-	o.Description = &v
+	o.Description.Set(&v)
+}
+
+// SetDescriptionNil sets the value for Description to be an explicit nil
+func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetDescriptionNil() {
+	o.Description.Set(nil)
+}
+
+// UnsetDescription ensures that no value is present for Description, not even an explicit nil
+func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) UnsetDescription() {
+	o.Description.Unset()
 }
 
 // GetExternalId returns the ExternalId field value if set, zero value otherwise.
@@ -303,68 +326,90 @@ func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetExternalId(v string) 
 	o.ExternalId = &v
 }
 
-// GetUniqueId returns the UniqueId field value if set, zero value otherwise.
+// GetUniqueId returns the UniqueId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetUniqueId() string {
-	if o == nil || IsNil(o.UniqueId) {
+	if o == nil || IsNil(o.UniqueId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.UniqueId
+	return *o.UniqueId.Get()
 }
 
 // GetUniqueIdOk returns a tuple with the UniqueId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetUniqueIdOk() (*string, bool) {
-	if o == nil || IsNil(o.UniqueId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.UniqueId, true
+	return o.UniqueId.Get(), o.UniqueId.IsSet()
 }
 
 // IsSetUniqueId returns a boolean if a field has been set.
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) IsSetUniqueId() bool {
-	if o != nil && !IsNil(o.UniqueId) {
+	if o != nil && o.UniqueId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetUniqueId gets a reference to the given string and assigns it to the UniqueId field.
+// SetUniqueId gets a reference to the given NullableString and assigns it to the UniqueId field.
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetUniqueId(v string) {
-	o.UniqueId = &v
+	o.UniqueId.Set(&v)
 }
 
-// GetAddressPrefix returns the AddressPrefix field value if set, zero value otherwise.
+// SetUniqueIdNil sets the value for UniqueId to be an explicit nil
+func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetUniqueIdNil() {
+	o.UniqueId.Set(nil)
+}
+
+// UnsetUniqueId ensures that no value is present for UniqueId, not even an explicit nil
+func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) UnsetUniqueId() {
+	o.UniqueId.Unset()
+}
+
+// GetAddressPrefix returns the AddressPrefix field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetAddressPrefix() string {
-	if o == nil || IsNil(o.AddressPrefix) {
+	if o == nil || IsNil(o.AddressPrefix.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.AddressPrefix
+	return *o.AddressPrefix.Get()
 }
 
 // GetAddressPrefixOk returns a tuple with the AddressPrefix field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetAddressPrefixOk() (*string, bool) {
-	if o == nil || IsNil(o.AddressPrefix) {
+	if o == nil {
 		return nil, false
 	}
-	return o.AddressPrefix, true
+	return o.AddressPrefix.Get(), o.AddressPrefix.IsSet()
 }
 
 // IsSetAddressPrefix returns a boolean if a field has been set.
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) IsSetAddressPrefix() bool {
-	if o != nil && !IsNil(o.AddressPrefix) {
+	if o != nil && o.AddressPrefix.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetAddressPrefix gets a reference to the given string and assigns it to the AddressPrefix field.
+// SetAddressPrefix gets a reference to the given NullableString and assigns it to the AddressPrefix field.
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetAddressPrefix(v string) {
-	o.AddressPrefix = &v
+	o.AddressPrefix.Set(&v)
+}
+
+// SetAddressPrefixNil sets the value for AddressPrefix to be an explicit nil
+func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetAddressPrefixNil() {
+	o.AddressPrefix.Set(nil)
+}
+
+// UnsetAddressPrefix ensures that no value is present for AddressPrefix, not even an explicit nil
+func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) UnsetAddressPrefix() {
+	o.AddressPrefix.Unset()
 }
 
 // GetCidr returns the Cidr field value if set, zero value otherwise.
@@ -399,36 +444,47 @@ func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetCidr(v string) {
 	o.Cidr = &v
 }
 
-// GetGateway returns the Gateway field value if set, zero value otherwise.
+// GetGateway returns the Gateway field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetGateway() string {
-	if o == nil || IsNil(o.Gateway) {
+	if o == nil || IsNil(o.Gateway.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Gateway
+	return *o.Gateway.Get()
 }
 
 // GetGatewayOk returns a tuple with the Gateway field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetGatewayOk() (*string, bool) {
-	if o == nil || IsNil(o.Gateway) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Gateway, true
+	return o.Gateway.Get(), o.Gateway.IsSet()
 }
 
 // IsSetGateway returns a boolean if a field has been set.
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) IsSetGateway() bool {
-	if o != nil && !IsNil(o.Gateway) {
+	if o != nil && o.Gateway.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetGateway gets a reference to the given string and assigns it to the Gateway field.
+// SetGateway gets a reference to the given NullableString and assigns it to the Gateway field.
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetGateway(v string) {
-	o.Gateway = &v
+	o.Gateway.Set(&v)
+}
+
+// SetGatewayNil sets the value for Gateway to be an explicit nil
+func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetGatewayNil() {
+	o.Gateway.Set(nil)
+}
+
+// UnsetGateway ensures that no value is present for Gateway, not even an explicit nil
+func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) UnsetGateway() {
+	o.Gateway.Unset()
 }
 
 // GetNetmask returns the Netmask field value if set, zero value otherwise.
@@ -495,100 +551,133 @@ func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetSubnetAddress(v strin
 	o.SubnetAddress = &v
 }
 
-// GetTftpServer returns the TftpServer field value if set, zero value otherwise.
+// GetTftpServer returns the TftpServer field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetTftpServer() string {
-	if o == nil || IsNil(o.TftpServer) {
+	if o == nil || IsNil(o.TftpServer.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.TftpServer
+	return *o.TftpServer.Get()
 }
 
 // GetTftpServerOk returns a tuple with the TftpServer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetTftpServerOk() (*string, bool) {
-	if o == nil || IsNil(o.TftpServer) {
+	if o == nil {
 		return nil, false
 	}
-	return o.TftpServer, true
+	return o.TftpServer.Get(), o.TftpServer.IsSet()
 }
 
 // IsSetTftpServer returns a boolean if a field has been set.
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) IsSetTftpServer() bool {
-	if o != nil && !IsNil(o.TftpServer) {
+	if o != nil && o.TftpServer.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetTftpServer gets a reference to the given string and assigns it to the TftpServer field.
+// SetTftpServer gets a reference to the given NullableString and assigns it to the TftpServer field.
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetTftpServer(v string) {
-	o.TftpServer = &v
+	o.TftpServer.Set(&v)
 }
 
-// GetBootFile returns the BootFile field value if set, zero value otherwise.
+// SetTftpServerNil sets the value for TftpServer to be an explicit nil
+func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetTftpServerNil() {
+	o.TftpServer.Set(nil)
+}
+
+// UnsetTftpServer ensures that no value is present for TftpServer, not even an explicit nil
+func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) UnsetTftpServer() {
+	o.TftpServer.Unset()
+}
+
+// GetBootFile returns the BootFile field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetBootFile() string {
-	if o == nil || IsNil(o.BootFile) {
+	if o == nil || IsNil(o.BootFile.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.BootFile
+	return *o.BootFile.Get()
 }
 
 // GetBootFileOk returns a tuple with the BootFile field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetBootFileOk() (*string, bool) {
-	if o == nil || IsNil(o.BootFile) {
+	if o == nil {
 		return nil, false
 	}
-	return o.BootFile, true
+	return o.BootFile.Get(), o.BootFile.IsSet()
 }
 
 // IsSetBootFile returns a boolean if a field has been set.
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) IsSetBootFile() bool {
-	if o != nil && !IsNil(o.BootFile) {
+	if o != nil && o.BootFile.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetBootFile gets a reference to the given string and assigns it to the BootFile field.
+// SetBootFile gets a reference to the given NullableString and assigns it to the BootFile field.
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetBootFile(v string) {
-	o.BootFile = &v
+	o.BootFile.Set(&v)
 }
 
-// GetPool returns the Pool field value if set, zero value otherwise.
+// SetBootFileNil sets the value for BootFile to be an explicit nil
+func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetBootFileNil() {
+	o.BootFile.Set(nil)
+}
+
+// UnsetBootFile ensures that no value is present for BootFile, not even an explicit nil
+func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) UnsetBootFile() {
+	o.BootFile.Unset()
+}
+
+// GetPool returns the Pool field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetPool() string {
-	if o == nil || IsNil(o.Pool) {
+	if o == nil || IsNil(o.Pool.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Pool
+	return *o.Pool.Get()
 }
 
 // GetPoolOk returns a tuple with the Pool field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetPoolOk() (*string, bool) {
-	if o == nil || IsNil(o.Pool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Pool, true
+	return o.Pool.Get(), o.Pool.IsSet()
 }
 
 // IsSetPool returns a boolean if a field has been set.
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) IsSetPool() bool {
-	if o != nil && !IsNil(o.Pool) {
+	if o != nil && o.Pool.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetPool gets a reference to the given string and assigns it to the Pool field.
+// SetPool gets a reference to the given NullableString and assigns it to the Pool field.
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetPool(v string) {
-	o.Pool = &v
+	o.Pool.Set(&v)
+}
+
+// SetPoolNil sets the value for Pool to be an explicit nil
+func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetPoolNil() {
+	o.Pool.Set(nil)
+}
+
+// UnsetPool ensures that no value is present for Pool, not even an explicit nil
+func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) UnsetPool() {
+	o.Pool.Unset()
 }
 
 // GetDhcpServer returns the DhcpServer field value if set, zero value otherwise.
@@ -655,100 +744,133 @@ func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetHasFloatingIps(v bool
 	o.HasFloatingIps = &v
 }
 
-// GetDhcpIp returns the DhcpIp field value if set, zero value otherwise.
+// GetDhcpIp returns the DhcpIp field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetDhcpIp() string {
-	if o == nil || IsNil(o.DhcpIp) {
+	if o == nil || IsNil(o.DhcpIp.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.DhcpIp
+	return *o.DhcpIp.Get()
 }
 
 // GetDhcpIpOk returns a tuple with the DhcpIp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetDhcpIpOk() (*string, bool) {
-	if o == nil || IsNil(o.DhcpIp) {
+	if o == nil {
 		return nil, false
 	}
-	return o.DhcpIp, true
+	return o.DhcpIp.Get(), o.DhcpIp.IsSet()
 }
 
 // IsSetDhcpIp returns a boolean if a field has been set.
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) IsSetDhcpIp() bool {
-	if o != nil && !IsNil(o.DhcpIp) {
+	if o != nil && o.DhcpIp.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDhcpIp gets a reference to the given string and assigns it to the DhcpIp field.
+// SetDhcpIp gets a reference to the given NullableString and assigns it to the DhcpIp field.
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetDhcpIp(v string) {
-	o.DhcpIp = &v
+	o.DhcpIp.Set(&v)
 }
 
-// GetDnsPrimary returns the DnsPrimary field value if set, zero value otherwise.
+// SetDhcpIpNil sets the value for DhcpIp to be an explicit nil
+func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetDhcpIpNil() {
+	o.DhcpIp.Set(nil)
+}
+
+// UnsetDhcpIp ensures that no value is present for DhcpIp, not even an explicit nil
+func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) UnsetDhcpIp() {
+	o.DhcpIp.Unset()
+}
+
+// GetDnsPrimary returns the DnsPrimary field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetDnsPrimary() string {
-	if o == nil || IsNil(o.DnsPrimary) {
+	if o == nil || IsNil(o.DnsPrimary.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.DnsPrimary
+	return *o.DnsPrimary.Get()
 }
 
 // GetDnsPrimaryOk returns a tuple with the DnsPrimary field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetDnsPrimaryOk() (*string, bool) {
-	if o == nil || IsNil(o.DnsPrimary) {
+	if o == nil {
 		return nil, false
 	}
-	return o.DnsPrimary, true
+	return o.DnsPrimary.Get(), o.DnsPrimary.IsSet()
 }
 
 // IsSetDnsPrimary returns a boolean if a field has been set.
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) IsSetDnsPrimary() bool {
-	if o != nil && !IsNil(o.DnsPrimary) {
+	if o != nil && o.DnsPrimary.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDnsPrimary gets a reference to the given string and assigns it to the DnsPrimary field.
+// SetDnsPrimary gets a reference to the given NullableString and assigns it to the DnsPrimary field.
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetDnsPrimary(v string) {
-	o.DnsPrimary = &v
+	o.DnsPrimary.Set(&v)
 }
 
-// GetDnsSecondary returns the DnsSecondary field value if set, zero value otherwise.
+// SetDnsPrimaryNil sets the value for DnsPrimary to be an explicit nil
+func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetDnsPrimaryNil() {
+	o.DnsPrimary.Set(nil)
+}
+
+// UnsetDnsPrimary ensures that no value is present for DnsPrimary, not even an explicit nil
+func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) UnsetDnsPrimary() {
+	o.DnsPrimary.Unset()
+}
+
+// GetDnsSecondary returns the DnsSecondary field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetDnsSecondary() string {
-	if o == nil || IsNil(o.DnsSecondary) {
+	if o == nil || IsNil(o.DnsSecondary.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.DnsSecondary
+	return *o.DnsSecondary.Get()
 }
 
 // GetDnsSecondaryOk returns a tuple with the DnsSecondary field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetDnsSecondaryOk() (*string, bool) {
-	if o == nil || IsNil(o.DnsSecondary) {
+	if o == nil {
 		return nil, false
 	}
-	return o.DnsSecondary, true
+	return o.DnsSecondary.Get(), o.DnsSecondary.IsSet()
 }
 
 // IsSetDnsSecondary returns a boolean if a field has been set.
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) IsSetDnsSecondary() bool {
-	if o != nil && !IsNil(o.DnsSecondary) {
+	if o != nil && o.DnsSecondary.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDnsSecondary gets a reference to the given string and assigns it to the DnsSecondary field.
+// SetDnsSecondary gets a reference to the given NullableString and assigns it to the DnsSecondary field.
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetDnsSecondary(v string) {
-	o.DnsSecondary = &v
+	o.DnsSecondary.Set(&v)
+}
+
+// SetDnsSecondaryNil sets the value for DnsSecondary to be an explicit nil
+func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetDnsSecondaryNil() {
+	o.DnsSecondary.Set(nil)
+}
+
+// UnsetDnsSecondary ensures that no value is present for DnsSecondary, not even an explicit nil
+func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) UnsetDnsSecondary() {
+	o.DnsSecondary.Unset()
 }
 
 // GetDhcpStart returns the DhcpStart field value if set, zero value otherwise.
@@ -815,132 +937,176 @@ func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetDhcpEnd(v string) {
 	o.DhcpEnd = &v
 }
 
-// GetDhcpRange returns the DhcpRange field value if set, zero value otherwise.
+// GetDhcpRange returns the DhcpRange field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetDhcpRange() string {
-	if o == nil || IsNil(o.DhcpRange) {
+	if o == nil || IsNil(o.DhcpRange.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.DhcpRange
+	return *o.DhcpRange.Get()
 }
 
 // GetDhcpRangeOk returns a tuple with the DhcpRange field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetDhcpRangeOk() (*string, bool) {
-	if o == nil || IsNil(o.DhcpRange) {
+	if o == nil {
 		return nil, false
 	}
-	return o.DhcpRange, true
+	return o.DhcpRange.Get(), o.DhcpRange.IsSet()
 }
 
 // IsSetDhcpRange returns a boolean if a field has been set.
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) IsSetDhcpRange() bool {
-	if o != nil && !IsNil(o.DhcpRange) {
+	if o != nil && o.DhcpRange.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDhcpRange gets a reference to the given string and assigns it to the DhcpRange field.
+// SetDhcpRange gets a reference to the given NullableString and assigns it to the DhcpRange field.
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetDhcpRange(v string) {
-	o.DhcpRange = &v
+	o.DhcpRange.Set(&v)
 }
 
-// GetNetworkProxy returns the NetworkProxy field value if set, zero value otherwise.
+// SetDhcpRangeNil sets the value for DhcpRange to be an explicit nil
+func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetDhcpRangeNil() {
+	o.DhcpRange.Set(nil)
+}
+
+// UnsetDhcpRange ensures that no value is present for DhcpRange, not even an explicit nil
+func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) UnsetDhcpRange() {
+	o.DhcpRange.Unset()
+}
+
+// GetNetworkProxy returns the NetworkProxy field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetNetworkProxy() string {
-	if o == nil || IsNil(o.NetworkProxy) {
+	if o == nil || IsNil(o.NetworkProxy.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.NetworkProxy
+	return *o.NetworkProxy.Get()
 }
 
 // GetNetworkProxyOk returns a tuple with the NetworkProxy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetNetworkProxyOk() (*string, bool) {
-	if o == nil || IsNil(o.NetworkProxy) {
+	if o == nil {
 		return nil, false
 	}
-	return o.NetworkProxy, true
+	return o.NetworkProxy.Get(), o.NetworkProxy.IsSet()
 }
 
 // IsSetNetworkProxy returns a boolean if a field has been set.
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) IsSetNetworkProxy() bool {
-	if o != nil && !IsNil(o.NetworkProxy) {
+	if o != nil && o.NetworkProxy.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetNetworkProxy gets a reference to the given string and assigns it to the NetworkProxy field.
+// SetNetworkProxy gets a reference to the given NullableString and assigns it to the NetworkProxy field.
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetNetworkProxy(v string) {
-	o.NetworkProxy = &v
+	o.NetworkProxy.Set(&v)
 }
 
-// GetNetworkDomain returns the NetworkDomain field value if set, zero value otherwise.
+// SetNetworkProxyNil sets the value for NetworkProxy to be an explicit nil
+func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetNetworkProxyNil() {
+	o.NetworkProxy.Set(nil)
+}
+
+// UnsetNetworkProxy ensures that no value is present for NetworkProxy, not even an explicit nil
+func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) UnsetNetworkProxy() {
+	o.NetworkProxy.Unset()
+}
+
+// GetNetworkDomain returns the NetworkDomain field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetNetworkDomain() string {
-	if o == nil || IsNil(o.NetworkDomain) {
+	if o == nil || IsNil(o.NetworkDomain.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.NetworkDomain
+	return *o.NetworkDomain.Get()
 }
 
 // GetNetworkDomainOk returns a tuple with the NetworkDomain field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetNetworkDomainOk() (*string, bool) {
-	if o == nil || IsNil(o.NetworkDomain) {
+	if o == nil {
 		return nil, false
 	}
-	return o.NetworkDomain, true
+	return o.NetworkDomain.Get(), o.NetworkDomain.IsSet()
 }
 
 // IsSetNetworkDomain returns a boolean if a field has been set.
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) IsSetNetworkDomain() bool {
-	if o != nil && !IsNil(o.NetworkDomain) {
+	if o != nil && o.NetworkDomain.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetNetworkDomain gets a reference to the given string and assigns it to the NetworkDomain field.
+// SetNetworkDomain gets a reference to the given NullableString and assigns it to the NetworkDomain field.
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetNetworkDomain(v string) {
-	o.NetworkDomain = &v
+	o.NetworkDomain.Set(&v)
 }
 
-// GetSearchDomains returns the SearchDomains field value if set, zero value otherwise.
+// SetNetworkDomainNil sets the value for NetworkDomain to be an explicit nil
+func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetNetworkDomainNil() {
+	o.NetworkDomain.Set(nil)
+}
+
+// UnsetNetworkDomain ensures that no value is present for NetworkDomain, not even an explicit nil
+func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) UnsetNetworkDomain() {
+	o.NetworkDomain.Unset()
+}
+
+// GetSearchDomains returns the SearchDomains field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetSearchDomains() string {
-	if o == nil || IsNil(o.SearchDomains) {
+	if o == nil || IsNil(o.SearchDomains.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.SearchDomains
+	return *o.SearchDomains.Get()
 }
 
 // GetSearchDomainsOk returns a tuple with the SearchDomains field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetSearchDomainsOk() (*string, bool) {
-	if o == nil || IsNil(o.SearchDomains) {
+	if o == nil {
 		return nil, false
 	}
-	return o.SearchDomains, true
+	return o.SearchDomains.Get(), o.SearchDomains.IsSet()
 }
 
 // IsSetSearchDomains returns a boolean if a field has been set.
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) IsSetSearchDomains() bool {
-	if o != nil && !IsNil(o.SearchDomains) {
+	if o != nil && o.SearchDomains.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetSearchDomains gets a reference to the given string and assigns it to the SearchDomains field.
+// SetSearchDomains gets a reference to the given NullableString and assigns it to the SearchDomains field.
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetSearchDomains(v string) {
-	o.SearchDomains = &v
+	o.SearchDomains.Set(&v)
+}
+
+// SetSearchDomainsNil sets the value for SearchDomains to be an explicit nil
+func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetSearchDomainsNil() {
+	o.SearchDomains.Set(nil)
+}
+
+// UnsetSearchDomains ensures that no value is present for SearchDomains, not even an explicit nil
+func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) UnsetSearchDomains() {
+	o.SearchDomains.Unset()
 }
 
 // GetDefaultNetwork returns the DefaultNetwork field value if set, zero value otherwise.
@@ -1072,9 +1238,9 @@ func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetStatus(v GetAppState2
 }
 
 // GetNetwork returns the Network field value if set, zero value otherwise.
-func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetNetwork() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetNetwork() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.Network) {
-		var ret ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return *o.Network
@@ -1082,7 +1248,7 @@ func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetNetwork() ListApplian
 
 // GetNetworkOk returns a tuple with the Network field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetNetworkOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetNetworkOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.Network) {
 		return nil, false
 	}
@@ -1098,8 +1264,8 @@ func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) IsSetNetwork() bool {
 	return false
 }
 
-// SetNetwork gets a reference to the given ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the Network field.
-func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetNetwork(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetNetwork gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Network field.
+func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetNetwork(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.Network = &v
 }
 
@@ -1136,9 +1302,9 @@ func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetType(v ListBackupSett
 }
 
 // GetAccount returns the Account field value if set, zero value otherwise.
-func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetAccount() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetAccount() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.Account) {
-		var ret ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return *o.Account
@@ -1146,7 +1312,7 @@ func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetAccount() ListApplian
 
 // GetAccountOk returns a tuple with the Account field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetAccountOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetAccountOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.Account) {
 		return nil, false
 	}
@@ -1162,8 +1328,8 @@ func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) IsSetAccount() bool {
 	return false
 }
 
-// SetAccount gets a reference to the given ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the Account field.
-func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetAccount(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetAccount gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Account field.
+func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetAccount(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.Account = &v
 }
 
@@ -1200,9 +1366,9 @@ func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetSecurityGroups(v []ma
 }
 
 // GetTenants returns the Tenants field value if set, zero value otherwise.
-func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetTenants() []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetTenants() []GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.Tenants) {
-		var ret []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret []GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return o.Tenants
@@ -1210,7 +1376,7 @@ func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetTenants() []ListAppli
 
 // GetTenantsOk returns a tuple with the Tenants field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetTenantsOk() ([]ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetTenantsOk() ([]GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.Tenants) {
 		return nil, false
 	}
@@ -1226,8 +1392,8 @@ func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) IsSetTenants() bool {
 	return false
 }
 
-// SetTenants gets a reference to the given []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the Tenants field.
-func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetTenants(v []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetTenants gets a reference to the given []GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Tenants field.
+func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetTenants(v []GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.Tenants = v
 }
 
@@ -1276,35 +1442,35 @@ func (o GetNetworkSubnets200ResponseAllOfSubnetsInner) ToMap() (map[string]inter
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
-	if !IsNil(o.Code) {
-		toSerialize["code"] = o.Code
+	if o.Code.IsSet() {
+		toSerialize["code"] = o.Code.Get()
 	}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !IsNil(o.Labels) {
+	if o.Labels != nil {
 		toSerialize["labels"] = o.Labels
 	}
 	if !IsNil(o.Active) {
 		toSerialize["active"] = o.Active
 	}
-	if !IsNil(o.Description) {
-		toSerialize["description"] = o.Description
+	if o.Description.IsSet() {
+		toSerialize["description"] = o.Description.Get()
 	}
 	if !IsNil(o.ExternalId) {
 		toSerialize["externalId"] = o.ExternalId
 	}
-	if !IsNil(o.UniqueId) {
-		toSerialize["uniqueId"] = o.UniqueId
+	if o.UniqueId.IsSet() {
+		toSerialize["uniqueId"] = o.UniqueId.Get()
 	}
-	if !IsNil(o.AddressPrefix) {
-		toSerialize["addressPrefix"] = o.AddressPrefix
+	if o.AddressPrefix.IsSet() {
+		toSerialize["addressPrefix"] = o.AddressPrefix.Get()
 	}
 	if !IsNil(o.Cidr) {
 		toSerialize["cidr"] = o.Cidr
 	}
-	if !IsNil(o.Gateway) {
-		toSerialize["gateway"] = o.Gateway
+	if o.Gateway.IsSet() {
+		toSerialize["gateway"] = o.Gateway.Get()
 	}
 	if !IsNil(o.Netmask) {
 		toSerialize["netmask"] = o.Netmask
@@ -1312,14 +1478,14 @@ func (o GetNetworkSubnets200ResponseAllOfSubnetsInner) ToMap() (map[string]inter
 	if !IsNil(o.SubnetAddress) {
 		toSerialize["subnetAddress"] = o.SubnetAddress
 	}
-	if !IsNil(o.TftpServer) {
-		toSerialize["tftpServer"] = o.TftpServer
+	if o.TftpServer.IsSet() {
+		toSerialize["tftpServer"] = o.TftpServer.Get()
 	}
-	if !IsNil(o.BootFile) {
-		toSerialize["bootFile"] = o.BootFile
+	if o.BootFile.IsSet() {
+		toSerialize["bootFile"] = o.BootFile.Get()
 	}
-	if !IsNil(o.Pool) {
-		toSerialize["pool"] = o.Pool
+	if o.Pool.IsSet() {
+		toSerialize["pool"] = o.Pool.Get()
 	}
 	if !IsNil(o.DhcpServer) {
 		toSerialize["dhcpServer"] = o.DhcpServer
@@ -1327,14 +1493,14 @@ func (o GetNetworkSubnets200ResponseAllOfSubnetsInner) ToMap() (map[string]inter
 	if !IsNil(o.HasFloatingIps) {
 		toSerialize["hasFloatingIps"] = o.HasFloatingIps
 	}
-	if !IsNil(o.DhcpIp) {
-		toSerialize["dhcpIp"] = o.DhcpIp
+	if o.DhcpIp.IsSet() {
+		toSerialize["dhcpIp"] = o.DhcpIp.Get()
 	}
-	if !IsNil(o.DnsPrimary) {
-		toSerialize["dnsPrimary"] = o.DnsPrimary
+	if o.DnsPrimary.IsSet() {
+		toSerialize["dnsPrimary"] = o.DnsPrimary.Get()
 	}
-	if !IsNil(o.DnsSecondary) {
-		toSerialize["dnsSecondary"] = o.DnsSecondary
+	if o.DnsSecondary.IsSet() {
+		toSerialize["dnsSecondary"] = o.DnsSecondary.Get()
 	}
 	if !IsNil(o.DhcpStart) {
 		toSerialize["dhcpStart"] = o.DhcpStart
@@ -1342,17 +1508,17 @@ func (o GetNetworkSubnets200ResponseAllOfSubnetsInner) ToMap() (map[string]inter
 	if !IsNil(o.DhcpEnd) {
 		toSerialize["dhcpEnd"] = o.DhcpEnd
 	}
-	if !IsNil(o.DhcpRange) {
-		toSerialize["dhcpRange"] = o.DhcpRange
+	if o.DhcpRange.IsSet() {
+		toSerialize["dhcpRange"] = o.DhcpRange.Get()
 	}
-	if !IsNil(o.NetworkProxy) {
-		toSerialize["networkProxy"] = o.NetworkProxy
+	if o.NetworkProxy.IsSet() {
+		toSerialize["networkProxy"] = o.NetworkProxy.Get()
 	}
-	if !IsNil(o.NetworkDomain) {
-		toSerialize["networkDomain"] = o.NetworkDomain
+	if o.NetworkDomain.IsSet() {
+		toSerialize["networkDomain"] = o.NetworkDomain.Get()
 	}
-	if !IsNil(o.SearchDomains) {
-		toSerialize["searchDomains"] = o.SearchDomains
+	if o.SearchDomains.IsSet() {
+		toSerialize["searchDomains"] = o.SearchDomains.Get()
 	}
 	if !IsNil(o.DefaultNetwork) {
 		toSerialize["defaultNetwork"] = o.DefaultNetwork

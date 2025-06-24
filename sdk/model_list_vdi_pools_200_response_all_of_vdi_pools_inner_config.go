@@ -21,7 +21,7 @@ var _ MappedNullable = &ListVDIPools200ResponseAllOfVdiPoolsInnerConfig{}
 // ListVDIPools200ResponseAllOfVdiPoolsInnerConfig struct for ListVDIPools200ResponseAllOfVdiPoolsInnerConfig
 type ListVDIPools200ResponseAllOfVdiPoolsInnerConfig struct {
 	Group                *ListInstanceServicePlans200ResponsePlansInnerAutoOptionsInner           `json:"group,omitempty"`
-	Cloud                *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner  `json:"cloud,omitempty"`
+	Cloud                *GetAlerts200ResponseAllOfCheckGroupsInnerInstance                       `json:"cloud,omitempty"`
 	Type                 *string                                                                  `json:"type,omitempty"`
 	Instance             *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance                 `json:"instance,omitempty"`
 	Name                 *string                                                                  `json:"name,omitempty"`
@@ -99,9 +99,9 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) SetGroup(v ListInstanc
 }
 
 // GetCloud returns the Cloud field value if set, zero value otherwise.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) GetCloud() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) GetCloud() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.Cloud) {
-		var ret ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return *o.Cloud
@@ -109,7 +109,7 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) GetCloud() ListApplian
 
 // GetCloudOk returns a tuple with the Cloud field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) GetCloudOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) GetCloudOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.Cloud) {
 		return nil, false
 	}
@@ -125,8 +125,8 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) IsSetCloud() bool {
 	return false
 }
 
-// SetCloud gets a reference to the given ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the Cloud field.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) SetCloud(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetCloud gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Cloud field.
+func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) SetCloud(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.Cloud = &v
 }
 
@@ -386,9 +386,9 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) SetLayout(v ListImageB
 	o.Layout = &v
 }
 
-// GetStorageControllers returns the StorageControllers field value if set, zero value otherwise.
+// GetStorageControllers returns the StorageControllers field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) GetStorageControllers() []ListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner {
-	if o == nil || IsNil(o.StorageControllers) {
+	if o == nil {
 		var ret []ListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner
 		return ret
 	}
@@ -397,6 +397,7 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) GetStorageControllers(
 
 // GetStorageControllersOk returns a tuple with the StorageControllers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) GetStorageControllersOk() ([]ListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner, bool) {
 	if o == nil || IsNil(o.StorageControllers) {
 		return nil, false
@@ -578,9 +579,9 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) SetBackup(v ListInstan
 	o.Backup = &v
 }
 
-// GetLoadBalancer returns the LoadBalancer field value if set, zero value otherwise.
+// GetLoadBalancer returns the LoadBalancer field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) GetLoadBalancer() []map[string]interface{} {
-	if o == nil || IsNil(o.LoadBalancer) {
+	if o == nil {
 		var ret []map[string]interface{}
 		return ret
 	}
@@ -589,6 +590,7 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) GetLoadBalancer() []ma
 
 // GetLoadBalancerOk returns a tuple with the LoadBalancer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) GetLoadBalancerOk() ([]map[string]interface{}, bool) {
 	if o == nil || IsNil(o.LoadBalancer) {
 		return nil, false
@@ -874,7 +876,7 @@ func (o ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) ToMap() (map[string]int
 	if !IsNil(o.Layout) {
 		toSerialize["layout"] = o.Layout
 	}
-	if !IsNil(o.StorageControllers) {
+	if o.StorageControllers != nil {
 		toSerialize["storageControllers"] = o.StorageControllers
 	}
 	if !IsNil(o.Plan) {
@@ -892,7 +894,7 @@ func (o ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) ToMap() (map[string]int
 	if !IsNil(o.Backup) {
 		toSerialize["backup"] = o.Backup
 	}
-	if !IsNil(o.LoadBalancer) {
+	if o.LoadBalancer != nil {
 		toSerialize["loadBalancer"] = o.LoadBalancer
 	}
 	if !IsNil(o.HideLock) {

@@ -20,27 +20,27 @@ var _ MappedNullable = &ListCloudResourcePools200ResponseAllOfResourcePoolsInner
 
 // ListCloudResourcePools200ResponseAllOfResourcePoolsInner struct for ListCloudResourcePools200ResponseAllOfResourcePoolsInner
 type ListCloudResourcePools200ResponseAllOfResourcePoolsInner struct {
-	Id                   *int64                                                                   `json:"id,omitempty"`
-	Description          *string                                                                  `json:"description,omitempty"`
-	Zone                 *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner  `json:"zone,omitempty"`
-	Parent               *GetAlerts200ResponseAllOfCheckGroupsInnerInstance                       `json:"parent,omitempty"`
-	Type                 *string                                                                  `json:"type,omitempty"`
-	ExternalId           *string                                                                  `json:"externalId,omitempty"`
-	RegionCode           *string                                                                  `json:"regionCode,omitempty"`
-	IacId                *string                                                                  `json:"iacId,omitempty"`
-	Visibility           *string                                                                  `json:"visibility,omitempty"`
-	ReadOnly             *bool                                                                    `json:"readOnly,omitempty"`
-	DefaultPool          *bool                                                                    `json:"defaultPool,omitempty"`
-	Active               *bool                                                                    `json:"active,omitempty"`
-	Status               *string                                                                  `json:"status,omitempty"`
-	Inventory            *bool                                                                    `json:"inventory,omitempty"`
-	Config               *ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfig          `json:"config,omitempty"`
-	Name                 *string                                                                  `json:"name,omitempty"`
-	DisplayName          *string                                                                  `json:"displayName,omitempty"`
-	Tenants              []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"tenants,omitempty"`
-	ResourcePermission   *ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission    `json:"resourcePermission,omitempty"`
-	Depth                *int64                                                                   `json:"depth,omitempty"`
-	AdditionalProperties map[string]interface{}                                                   `json:",remain"`
+	Id                   *int64                                                                `json:"id,omitempty"`
+	Description          NullableString                                                        `json:"description,omitempty"`
+	Zone                 *GetAlerts200ResponseAllOfCheckGroupsInnerInstance                    `json:"zone,omitempty"`
+	Parent               *GetAlerts200ResponseAllOfCheckGroupsInnerInstance                    `json:"parent,omitempty"`
+	Type                 *string                                                               `json:"type,omitempty"`
+	ExternalId           *string                                                               `json:"externalId,omitempty"`
+	RegionCode           NullableString                                                        `json:"regionCode,omitempty"`
+	IacId                NullableString                                                        `json:"iacId,omitempty"`
+	Visibility           *string                                                               `json:"visibility,omitempty"`
+	ReadOnly             *bool                                                                 `json:"readOnly,omitempty"`
+	DefaultPool          *bool                                                                 `json:"defaultPool,omitempty"`
+	Active               *bool                                                                 `json:"active,omitempty"`
+	Status               *string                                                               `json:"status,omitempty"`
+	Inventory            *bool                                                                 `json:"inventory,omitempty"`
+	Config               *ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfig       `json:"config,omitempty"`
+	Name                 *string                                                               `json:"name,omitempty"`
+	DisplayName          NullableString                                                        `json:"displayName,omitempty"`
+	Tenants              []GetAlerts200ResponseAllOfCheckGroupsInnerInstance                   `json:"tenants,omitempty"`
+	ResourcePermission   *ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission `json:"resourcePermission,omitempty"`
+	Depth                *int64                                                                `json:"depth,omitempty"`
+	AdditionalProperties map[string]interface{}                                                `json:",remain"`
 }
 
 type _ListCloudResourcePools200ResponseAllOfResourcePoolsInner ListCloudResourcePools200ResponseAllOfResourcePoolsInner
@@ -94,42 +94,53 @@ func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInner) SetId(v int64
 	o.Id = &v
 }
 
-// GetDescription returns the Description field value if set, zero value otherwise.
+// GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInner) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
+	if o == nil || IsNil(o.Description.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Description
+	return *o.Description.Get()
 }
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInner) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Description, true
+	return o.Description.Get(), o.Description.IsSet()
 }
 
 // IsSetDescription returns a boolean if a field has been set.
 func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInner) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
+	if o != nil && o.Description.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDescription gets a reference to the given string and assigns it to the Description field.
+// SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInner) SetDescription(v string) {
-	o.Description = &v
+	o.Description.Set(&v)
+}
+
+// SetDescriptionNil sets the value for Description to be an explicit nil
+func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInner) SetDescriptionNil() {
+	o.Description.Set(nil)
+}
+
+// UnsetDescription ensures that no value is present for Description, not even an explicit nil
+func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInner) UnsetDescription() {
+	o.Description.Unset()
 }
 
 // GetZone returns the Zone field value if set, zero value otherwise.
-func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInner) GetZone() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInner) GetZone() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.Zone) {
-		var ret ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return *o.Zone
@@ -137,7 +148,7 @@ func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInner) GetZone() Lis
 
 // GetZoneOk returns a tuple with the Zone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInner) GetZoneOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInner) GetZoneOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.Zone) {
 		return nil, false
 	}
@@ -153,8 +164,8 @@ func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInner) IsSetZone() b
 	return false
 }
 
-// SetZone gets a reference to the given ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the Zone field.
-func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInner) SetZone(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetZone gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Zone field.
+func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInner) SetZone(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.Zone = &v
 }
 
@@ -254,68 +265,90 @@ func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInner) SetExternalId
 	o.ExternalId = &v
 }
 
-// GetRegionCode returns the RegionCode field value if set, zero value otherwise.
+// GetRegionCode returns the RegionCode field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInner) GetRegionCode() string {
-	if o == nil || IsNil(o.RegionCode) {
+	if o == nil || IsNil(o.RegionCode.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.RegionCode
+	return *o.RegionCode.Get()
 }
 
 // GetRegionCodeOk returns a tuple with the RegionCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInner) GetRegionCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.RegionCode) {
+	if o == nil {
 		return nil, false
 	}
-	return o.RegionCode, true
+	return o.RegionCode.Get(), o.RegionCode.IsSet()
 }
 
 // IsSetRegionCode returns a boolean if a field has been set.
 func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInner) IsSetRegionCode() bool {
-	if o != nil && !IsNil(o.RegionCode) {
+	if o != nil && o.RegionCode.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetRegionCode gets a reference to the given string and assigns it to the RegionCode field.
+// SetRegionCode gets a reference to the given NullableString and assigns it to the RegionCode field.
 func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInner) SetRegionCode(v string) {
-	o.RegionCode = &v
+	o.RegionCode.Set(&v)
 }
 
-// GetIacId returns the IacId field value if set, zero value otherwise.
+// SetRegionCodeNil sets the value for RegionCode to be an explicit nil
+func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInner) SetRegionCodeNil() {
+	o.RegionCode.Set(nil)
+}
+
+// UnsetRegionCode ensures that no value is present for RegionCode, not even an explicit nil
+func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInner) UnsetRegionCode() {
+	o.RegionCode.Unset()
+}
+
+// GetIacId returns the IacId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInner) GetIacId() string {
-	if o == nil || IsNil(o.IacId) {
+	if o == nil || IsNil(o.IacId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.IacId
+	return *o.IacId.Get()
 }
 
 // GetIacIdOk returns a tuple with the IacId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInner) GetIacIdOk() (*string, bool) {
-	if o == nil || IsNil(o.IacId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.IacId, true
+	return o.IacId.Get(), o.IacId.IsSet()
 }
 
 // IsSetIacId returns a boolean if a field has been set.
 func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInner) IsSetIacId() bool {
-	if o != nil && !IsNil(o.IacId) {
+	if o != nil && o.IacId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetIacId gets a reference to the given string and assigns it to the IacId field.
+// SetIacId gets a reference to the given NullableString and assigns it to the IacId field.
 func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInner) SetIacId(v string) {
-	o.IacId = &v
+	o.IacId.Set(&v)
+}
+
+// SetIacIdNil sets the value for IacId to be an explicit nil
+func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInner) SetIacIdNil() {
+	o.IacId.Set(nil)
+}
+
+// UnsetIacId ensures that no value is present for IacId, not even an explicit nil
+func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInner) UnsetIacId() {
+	o.IacId.Unset()
 }
 
 // GetVisibility returns the Visibility field value if set, zero value otherwise.
@@ -574,42 +607,53 @@ func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInner) SetName(v str
 	o.Name = &v
 }
 
-// GetDisplayName returns the DisplayName field value if set, zero value otherwise.
+// GetDisplayName returns the DisplayName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInner) GetDisplayName() string {
-	if o == nil || IsNil(o.DisplayName) {
+	if o == nil || IsNil(o.DisplayName.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.DisplayName
+	return *o.DisplayName.Get()
 }
 
 // GetDisplayNameOk returns a tuple with the DisplayName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInner) GetDisplayNameOk() (*string, bool) {
-	if o == nil || IsNil(o.DisplayName) {
+	if o == nil {
 		return nil, false
 	}
-	return o.DisplayName, true
+	return o.DisplayName.Get(), o.DisplayName.IsSet()
 }
 
 // IsSetDisplayName returns a boolean if a field has been set.
 func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInner) IsSetDisplayName() bool {
-	if o != nil && !IsNil(o.DisplayName) {
+	if o != nil && o.DisplayName.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDisplayName gets a reference to the given string and assigns it to the DisplayName field.
+// SetDisplayName gets a reference to the given NullableString and assigns it to the DisplayName field.
 func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInner) SetDisplayName(v string) {
-	o.DisplayName = &v
+	o.DisplayName.Set(&v)
+}
+
+// SetDisplayNameNil sets the value for DisplayName to be an explicit nil
+func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInner) SetDisplayNameNil() {
+	o.DisplayName.Set(nil)
+}
+
+// UnsetDisplayName ensures that no value is present for DisplayName, not even an explicit nil
+func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInner) UnsetDisplayName() {
+	o.DisplayName.Unset()
 }
 
 // GetTenants returns the Tenants field value if set, zero value otherwise.
-func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInner) GetTenants() []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInner) GetTenants() []GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.Tenants) {
-		var ret []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret []GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return o.Tenants
@@ -617,7 +661,7 @@ func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInner) GetTenants() 
 
 // GetTenantsOk returns a tuple with the Tenants field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInner) GetTenantsOk() ([]ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInner) GetTenantsOk() ([]GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.Tenants) {
 		return nil, false
 	}
@@ -633,8 +677,8 @@ func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInner) IsSetTenants(
 	return false
 }
 
-// SetTenants gets a reference to the given []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the Tenants field.
-func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInner) SetTenants(v []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetTenants gets a reference to the given []GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Tenants field.
+func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInner) SetTenants(v []GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.Tenants = v
 }
 
@@ -715,8 +759,8 @@ func (o ListCloudResourcePools200ResponseAllOfResourcePoolsInner) ToMap() (map[s
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
-	if !IsNil(o.Description) {
-		toSerialize["description"] = o.Description
+	if o.Description.IsSet() {
+		toSerialize["description"] = o.Description.Get()
 	}
 	if !IsNil(o.Zone) {
 		toSerialize["zone"] = o.Zone
@@ -730,11 +774,11 @@ func (o ListCloudResourcePools200ResponseAllOfResourcePoolsInner) ToMap() (map[s
 	if !IsNil(o.ExternalId) {
 		toSerialize["externalId"] = o.ExternalId
 	}
-	if !IsNil(o.RegionCode) {
-		toSerialize["regionCode"] = o.RegionCode
+	if o.RegionCode.IsSet() {
+		toSerialize["regionCode"] = o.RegionCode.Get()
 	}
-	if !IsNil(o.IacId) {
-		toSerialize["iacId"] = o.IacId
+	if o.IacId.IsSet() {
+		toSerialize["iacId"] = o.IacId.Get()
 	}
 	if !IsNil(o.Visibility) {
 		toSerialize["visibility"] = o.Visibility
@@ -760,8 +804,8 @@ func (o ListCloudResourcePools200ResponseAllOfResourcePoolsInner) ToMap() (map[s
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !IsNil(o.DisplayName) {
-		toSerialize["displayName"] = o.DisplayName
+	if o.DisplayName.IsSet() {
+		toSerialize["displayName"] = o.DisplayName.Get()
 	}
 	if !IsNil(o.Tenants) {
 		toSerialize["tenants"] = o.Tenants

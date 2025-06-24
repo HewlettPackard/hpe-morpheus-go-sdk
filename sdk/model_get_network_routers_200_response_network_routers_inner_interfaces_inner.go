@@ -22,12 +22,12 @@ var _ MappedNullable = &GetNetworkRouters200ResponseNetworkRoutersInnerInterface
 type GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner struct {
 	Id                   *int64                                                      `json:"id,omitempty"`
 	Name                 *string                                                     `json:"name,omitempty"`
-	Code                 *string                                                     `json:"code,omitempty"`
-	InterfaceType        *string                                                     `json:"interfaceType,omitempty"`
-	NetworkPosition      *string                                                     `json:"networkPosition,omitempty"`
+	Code                 NullableString                                              `json:"code,omitempty"`
+	InterfaceType        NullableString                                              `json:"interfaceType,omitempty"`
+	NetworkPosition      NullableString                                              `json:"networkPosition,omitempty"`
 	IpAddress            *string                                                     `json:"ipAddress,omitempty"`
 	Cidr                 *string                                                     `json:"cidr,omitempty"`
-	ExternalLink         *string                                                     `json:"externalLink,omitempty"`
+	ExternalLink         NullableString                                              `json:"externalLink,omitempty"`
 	Enabled              *bool                                                       `json:"enabled,omitempty"`
 	Network              *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"network,omitempty"`
 	AdditionalProperties map[string]interface{}                                      `json:",remain"`
@@ -116,100 +116,133 @@ func (o *GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner) SetName
 	o.Name = &v
 }
 
-// GetCode returns the Code field value if set, zero value otherwise.
+// GetCode returns the Code field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner) GetCode() string {
-	if o == nil || IsNil(o.Code) {
+	if o == nil || IsNil(o.Code.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Code
+	return *o.Code.Get()
 }
 
 // GetCodeOk returns a tuple with the Code field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner) GetCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.Code) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Code, true
+	return o.Code.Get(), o.Code.IsSet()
 }
 
 // IsSetCode returns a boolean if a field has been set.
 func (o *GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
+	if o != nil && o.Code.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCode gets a reference to the given string and assigns it to the Code field.
+// SetCode gets a reference to the given NullableString and assigns it to the Code field.
 func (o *GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner) SetCode(v string) {
-	o.Code = &v
+	o.Code.Set(&v)
 }
 
-// GetInterfaceType returns the InterfaceType field value if set, zero value otherwise.
+// SetCodeNil sets the value for Code to be an explicit nil
+func (o *GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner) SetCodeNil() {
+	o.Code.Set(nil)
+}
+
+// UnsetCode ensures that no value is present for Code, not even an explicit nil
+func (o *GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner) UnsetCode() {
+	o.Code.Unset()
+}
+
+// GetInterfaceType returns the InterfaceType field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner) GetInterfaceType() string {
-	if o == nil || IsNil(o.InterfaceType) {
+	if o == nil || IsNil(o.InterfaceType.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.InterfaceType
+	return *o.InterfaceType.Get()
 }
 
 // GetInterfaceTypeOk returns a tuple with the InterfaceType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner) GetInterfaceTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.InterfaceType) {
+	if o == nil {
 		return nil, false
 	}
-	return o.InterfaceType, true
+	return o.InterfaceType.Get(), o.InterfaceType.IsSet()
 }
 
 // IsSetInterfaceType returns a boolean if a field has been set.
 func (o *GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner) IsSetInterfaceType() bool {
-	if o != nil && !IsNil(o.InterfaceType) {
+	if o != nil && o.InterfaceType.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetInterfaceType gets a reference to the given string and assigns it to the InterfaceType field.
+// SetInterfaceType gets a reference to the given NullableString and assigns it to the InterfaceType field.
 func (o *GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner) SetInterfaceType(v string) {
-	o.InterfaceType = &v
+	o.InterfaceType.Set(&v)
 }
 
-// GetNetworkPosition returns the NetworkPosition field value if set, zero value otherwise.
+// SetInterfaceTypeNil sets the value for InterfaceType to be an explicit nil
+func (o *GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner) SetInterfaceTypeNil() {
+	o.InterfaceType.Set(nil)
+}
+
+// UnsetInterfaceType ensures that no value is present for InterfaceType, not even an explicit nil
+func (o *GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner) UnsetInterfaceType() {
+	o.InterfaceType.Unset()
+}
+
+// GetNetworkPosition returns the NetworkPosition field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner) GetNetworkPosition() string {
-	if o == nil || IsNil(o.NetworkPosition) {
+	if o == nil || IsNil(o.NetworkPosition.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.NetworkPosition
+	return *o.NetworkPosition.Get()
 }
 
 // GetNetworkPositionOk returns a tuple with the NetworkPosition field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner) GetNetworkPositionOk() (*string, bool) {
-	if o == nil || IsNil(o.NetworkPosition) {
+	if o == nil {
 		return nil, false
 	}
-	return o.NetworkPosition, true
+	return o.NetworkPosition.Get(), o.NetworkPosition.IsSet()
 }
 
 // IsSetNetworkPosition returns a boolean if a field has been set.
 func (o *GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner) IsSetNetworkPosition() bool {
-	if o != nil && !IsNil(o.NetworkPosition) {
+	if o != nil && o.NetworkPosition.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetNetworkPosition gets a reference to the given string and assigns it to the NetworkPosition field.
+// SetNetworkPosition gets a reference to the given NullableString and assigns it to the NetworkPosition field.
 func (o *GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner) SetNetworkPosition(v string) {
-	o.NetworkPosition = &v
+	o.NetworkPosition.Set(&v)
+}
+
+// SetNetworkPositionNil sets the value for NetworkPosition to be an explicit nil
+func (o *GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner) SetNetworkPositionNil() {
+	o.NetworkPosition.Set(nil)
+}
+
+// UnsetNetworkPosition ensures that no value is present for NetworkPosition, not even an explicit nil
+func (o *GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner) UnsetNetworkPosition() {
+	o.NetworkPosition.Unset()
 }
 
 // GetIpAddress returns the IpAddress field value if set, zero value otherwise.
@@ -276,36 +309,47 @@ func (o *GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner) SetCidr
 	o.Cidr = &v
 }
 
-// GetExternalLink returns the ExternalLink field value if set, zero value otherwise.
+// GetExternalLink returns the ExternalLink field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner) GetExternalLink() string {
-	if o == nil || IsNil(o.ExternalLink) {
+	if o == nil || IsNil(o.ExternalLink.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ExternalLink
+	return *o.ExternalLink.Get()
 }
 
 // GetExternalLinkOk returns a tuple with the ExternalLink field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner) GetExternalLinkOk() (*string, bool) {
-	if o == nil || IsNil(o.ExternalLink) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ExternalLink, true
+	return o.ExternalLink.Get(), o.ExternalLink.IsSet()
 }
 
 // IsSetExternalLink returns a boolean if a field has been set.
 func (o *GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner) IsSetExternalLink() bool {
-	if o != nil && !IsNil(o.ExternalLink) {
+	if o != nil && o.ExternalLink.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetExternalLink gets a reference to the given string and assigns it to the ExternalLink field.
+// SetExternalLink gets a reference to the given NullableString and assigns it to the ExternalLink field.
 func (o *GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner) SetExternalLink(v string) {
-	o.ExternalLink = &v
+	o.ExternalLink.Set(&v)
+}
+
+// SetExternalLinkNil sets the value for ExternalLink to be an explicit nil
+func (o *GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner) SetExternalLinkNil() {
+	o.ExternalLink.Set(nil)
+}
+
+// UnsetExternalLink ensures that no value is present for ExternalLink, not even an explicit nil
+func (o *GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner) UnsetExternalLink() {
+	o.ExternalLink.Unset()
 }
 
 // GetEnabled returns the Enabled field value if set, zero value otherwise.
@@ -388,14 +432,14 @@ func (o GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner) ToMap() 
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !IsNil(o.Code) {
-		toSerialize["code"] = o.Code
+	if o.Code.IsSet() {
+		toSerialize["code"] = o.Code.Get()
 	}
-	if !IsNil(o.InterfaceType) {
-		toSerialize["interfaceType"] = o.InterfaceType
+	if o.InterfaceType.IsSet() {
+		toSerialize["interfaceType"] = o.InterfaceType.Get()
 	}
-	if !IsNil(o.NetworkPosition) {
-		toSerialize["networkPosition"] = o.NetworkPosition
+	if o.NetworkPosition.IsSet() {
+		toSerialize["networkPosition"] = o.NetworkPosition.Get()
 	}
 	if !IsNil(o.IpAddress) {
 		toSerialize["ipAddress"] = o.IpAddress
@@ -403,8 +447,8 @@ func (o GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner) ToMap() 
 	if !IsNil(o.Cidr) {
 		toSerialize["cidr"] = o.Cidr
 	}
-	if !IsNil(o.ExternalLink) {
-		toSerialize["externalLink"] = o.ExternalLink
+	if o.ExternalLink.IsSet() {
+		toSerialize["externalLink"] = o.ExternalLink.Get()
 	}
 	if !IsNil(o.Enabled) {
 		toSerialize["enabled"] = o.Enabled

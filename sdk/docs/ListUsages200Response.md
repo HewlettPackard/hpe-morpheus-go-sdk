@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Activity** | Pointer to [**[]ListUsages200ResponseActivityInner**](ListUsages200ResponseActivityInner.md) |  | [optional] 
+**Activity** | Pointer to [**[]ListActivity200ResponseAllOfActivityInnerActivityInner**](ListActivity200ResponseAllOfActivityInnerActivityInner.md) |  | [optional] 
 **Meta** | Pointer to [**ListUsages200ResponseMeta**](ListUsages200ResponseMeta.md) |  | [optional] 
 
 ## Methods
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetActivity
 
-`func (o *ListUsages200Response) GetActivity() []ListUsages200ResponseActivityInner`
+`func (o *ListUsages200Response) GetActivity() []ListActivity200ResponseAllOfActivityInnerActivityInner`
 
 GetActivity returns the Activity field if non-nil, zero value otherwise.
 
 ### GetActivityOk
 
-`func (o *ListUsages200Response) GetActivityOk() (*[]ListUsages200ResponseActivityInner, bool)`
+`func (o *ListUsages200Response) GetActivityOk() (*[]ListActivity200ResponseAllOfActivityInnerActivityInner, bool)`
 
 GetActivityOk returns a tuple with the Activity field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetActivity
 
-`func (o *ListUsages200Response) SetActivity(v []ListUsages200ResponseActivityInner)`
+`func (o *ListUsages200Response) SetActivity(v []ListActivity200ResponseAllOfActivityInnerActivityInner)`
 
 SetActivity sets Activity field to given value.
 

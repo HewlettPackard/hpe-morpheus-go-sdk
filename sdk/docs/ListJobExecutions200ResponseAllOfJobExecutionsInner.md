@@ -6,17 +6,17 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**Process** | Pointer to **string** |  | [optional] 
+**Process** | Pointer to **NullableString** |  | [optional] 
 **Job** | Pointer to [**ListJobExecutions200ResponseAllOfJobExecutionsInnerJob**](ListJobExecutions200ResponseAllOfJobExecutionsInnerJob.md) |  | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **NullableString** |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **StartDate** | Pointer to **time.Time** |  | [optional] 
 **EndDate** | Pointer to **time.Time** |  | [optional] 
 **Duration** | Pointer to **int64** |  | [optional] 
-**ResultData** | Pointer to **string** |  | [optional] 
+**ResultData** | Pointer to **NullableString** |  | [optional] 
 **Status** | Pointer to **string** |  | [optional] 
-**StatusMessage** | Pointer to **string** |  | [optional] 
-**CreatedBy** | Pointer to **string** |  | [optional] 
+**StatusMessage** | Pointer to **NullableString** |  | [optional] 
+**CreatedBy** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -112,6 +112,16 @@ SetProcess sets Process field to given value.
 
 HasProcess returns a boolean if a field has been set.
 
+### SetProcessNil
+
+`func (o *ListJobExecutions200ResponseAllOfJobExecutionsInner) SetProcessNil(b bool)`
+
+ SetProcessNil sets the value for Process to be an explicit nil
+
+### UnsetProcess
+`func (o *ListJobExecutions200ResponseAllOfJobExecutionsInner) UnsetProcess()`
+
+UnsetProcess ensures that no value is present for Process, not even an explicit nil
 ### GetJob
 
 `func (o *ListJobExecutions200ResponseAllOfJobExecutionsInner) GetJob() ListJobExecutions200ResponseAllOfJobExecutionsInnerJob`
@@ -162,6 +172,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *ListJobExecutions200ResponseAllOfJobExecutionsInner) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *ListJobExecutions200ResponseAllOfJobExecutionsInner) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetDateCreated
 
 `func (o *ListJobExecutions200ResponseAllOfJobExecutionsInner) GetDateCreated() time.Time`
@@ -287,6 +307,16 @@ SetResultData sets ResultData field to given value.
 
 HasResultData returns a boolean if a field has been set.
 
+### SetResultDataNil
+
+`func (o *ListJobExecutions200ResponseAllOfJobExecutionsInner) SetResultDataNil(b bool)`
+
+ SetResultDataNil sets the value for ResultData to be an explicit nil
+
+### UnsetResultData
+`func (o *ListJobExecutions200ResponseAllOfJobExecutionsInner) UnsetResultData()`
+
+UnsetResultData ensures that no value is present for ResultData, not even an explicit nil
 ### GetStatus
 
 `func (o *ListJobExecutions200ResponseAllOfJobExecutionsInner) GetStatus() string`
@@ -337,6 +367,16 @@ SetStatusMessage sets StatusMessage field to given value.
 
 HasStatusMessage returns a boolean if a field has been set.
 
+### SetStatusMessageNil
+
+`func (o *ListJobExecutions200ResponseAllOfJobExecutionsInner) SetStatusMessageNil(b bool)`
+
+ SetStatusMessageNil sets the value for StatusMessage to be an explicit nil
+
+### UnsetStatusMessage
+`func (o *ListJobExecutions200ResponseAllOfJobExecutionsInner) UnsetStatusMessage()`
+
+UnsetStatusMessage ensures that no value is present for StatusMessage, not even an explicit nil
 ### GetCreatedBy
 
 `func (o *ListJobExecutions200ResponseAllOfJobExecutionsInner) GetCreatedBy() string`
@@ -362,6 +402,16 @@ SetCreatedBy sets CreatedBy field to given value.
 
 HasCreatedBy returns a boolean if a field has been set.
 
+### SetCreatedByNil
+
+`func (o *ListJobExecutions200ResponseAllOfJobExecutionsInner) SetCreatedByNil(b bool)`
+
+ SetCreatedByNil sets the value for CreatedBy to be an explicit nil
+
+### UnsetCreatedBy
+`func (o *ListJobExecutions200ResponseAllOfJobExecutionsInner) UnsetCreatedBy()`
+
+UnsetCreatedBy ensures that no value is present for CreatedBy, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

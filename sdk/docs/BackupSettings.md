@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **BackupsEnabled** | Pointer to **bool** |  | [optional] 
 **CreateBackups** | Pointer to **bool** |  | [optional] 
 **BackupAppliance** | Pointer to **bool** |  | [optional] 
-**DefaultStorageBucket** | Pointer to [**ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
+**DefaultStorageBucket** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **DefaultSchedule** | Pointer to [**ListBackupSettings200ResponseBackupSettingsDefaultSchedule**](ListBackupSettings200ResponseBackupSettingsDefaultSchedule.md) |  | [optional] 
 **RetentionCount** | Pointer to **int64** |  | [optional] 
 
@@ -107,20 +107,20 @@ HasBackupAppliance returns a boolean if a field has been set.
 
 ### GetDefaultStorageBucket
 
-`func (o *BackupSettings) GetDefaultStorageBucket() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *BackupSettings) GetDefaultStorageBucket() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetDefaultStorageBucket returns the DefaultStorageBucket field if non-nil, zero value otherwise.
 
 ### GetDefaultStorageBucketOk
 
-`func (o *BackupSettings) GetDefaultStorageBucketOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *BackupSettings) GetDefaultStorageBucketOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetDefaultStorageBucketOk returns a tuple with the DefaultStorageBucket field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDefaultStorageBucket
 
-`func (o *BackupSettings) SetDefaultStorageBucket(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *BackupSettings) SetDefaultStorageBucket(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetDefaultStorageBucket sets DefaultStorageBucket field to given value.
 

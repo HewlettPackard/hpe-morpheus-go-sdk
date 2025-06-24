@@ -118,9 +118,9 @@ func (o *ListSecurityPackages200ResponseAllOfSecurityPackagesInner) SetName(v st
 	o.Name = &v
 }
 
-// GetLabels returns the Labels field value if set, zero value otherwise.
+// GetLabels returns the Labels field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListSecurityPackages200ResponseAllOfSecurityPackagesInner) GetLabels() []string {
-	if o == nil || IsNil(o.Labels) {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -129,6 +129,7 @@ func (o *ListSecurityPackages200ResponseAllOfSecurityPackagesInner) GetLabels() 
 
 // GetLabelsOk returns a tuple with the Labels field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListSecurityPackages200ResponseAllOfSecurityPackagesInner) GetLabelsOk() ([]string, bool) {
 	if o == nil || IsNil(o.Labels) {
 		return nil, false
@@ -422,7 +423,7 @@ func (o ListSecurityPackages200ResponseAllOfSecurityPackagesInner) ToMap() (map[
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !IsNil(o.Labels) {
+	if o.Labels != nil {
 		toSerialize["labels"] = o.Labels
 	}
 	if !IsNil(o.Description) {

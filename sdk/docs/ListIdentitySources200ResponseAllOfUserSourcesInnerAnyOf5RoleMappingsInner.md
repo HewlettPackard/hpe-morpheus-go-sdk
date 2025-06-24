@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **SourceRoleName** | Pointer to **string** |  | [optional] 
-**SourceRoleFqn** | Pointer to **string** |  | [optional] 
+**SourceRoleFqn** | Pointer to **NullableString** |  | [optional] 
 **MappedRole** | Pointer to [**ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfDefaultAccountRole**](ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfDefaultAccountRole.md) |  | [optional] 
 
 ## Methods
@@ -77,6 +77,16 @@ SetSourceRoleFqn sets SourceRoleFqn field to given value.
 
 HasSourceRoleFqn returns a boolean if a field has been set.
 
+### SetSourceRoleFqnNil
+
+`func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5RoleMappingsInner) SetSourceRoleFqnNil(b bool)`
+
+ SetSourceRoleFqnNil sets the value for SourceRoleFqn to be an explicit nil
+
+### UnsetSourceRoleFqn
+`func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5RoleMappingsInner) UnsetSourceRoleFqn()`
+
+UnsetSourceRoleFqn ensures that no value is present for SourceRoleFqn, not even an explicit nil
 ### GetMappedRole
 
 `func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5RoleMappingsInner) GetMappedRole() ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfDefaultAccountRole`

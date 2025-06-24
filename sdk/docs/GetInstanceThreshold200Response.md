@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Instance** | Pointer to [**ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
+**Instance** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **InstanceThreshold** | Pointer to [**GetInstanceThreshold200ResponseInstanceThreshold**](GetInstanceThreshold200ResponseInstanceThreshold.md) |  | [optional] 
 **InstanceSchedules** | Pointer to [**[]GetInstanceThreshold200ResponseInstanceSchedulesInner**](GetInstanceThreshold200ResponseInstanceSchedulesInner.md) |  | [optional] 
 
@@ -29,20 +29,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetInstance
 
-`func (o *GetInstanceThreshold200Response) GetInstance() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *GetInstanceThreshold200Response) GetInstance() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetInstance returns the Instance field if non-nil, zero value otherwise.
 
 ### GetInstanceOk
 
-`func (o *GetInstanceThreshold200Response) GetInstanceOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *GetInstanceThreshold200Response) GetInstanceOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetInstanceOk returns a tuple with the Instance field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInstance
 
-`func (o *GetInstanceThreshold200Response) SetInstance(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *GetInstanceThreshold200Response) SetInstance(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetInstance sets Instance field to given value.
 

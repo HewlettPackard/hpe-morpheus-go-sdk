@@ -19,13 +19,13 @@ Name | Type | Description | Notes
 **CostingBucketName** | Pointer to **string** |  | [optional] 
 **CostingRegion** | Pointer to **string** |  | [optional] 
 **CostingAccessKey** | Pointer to **string** |  | [optional] 
-**CostingSecretKey** | Pointer to **string** |  | [optional] 
+**CostingSecretKey** | Pointer to **NullableString** |  | [optional] 
 **CostingReportName** | Pointer to **string** |  | [optional] 
 **ApplianceUrl** | Pointer to **string** |  | [optional] 
 **DatacenterName** | Pointer to **string** |  | [optional] 
 **NetworkServerId** | Pointer to **string** |  | [optional] 
 **NetworkServer** | Pointer to [**ListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer**](ListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer.md) |  | [optional] 
-**SecurityServer** | Pointer to **string** |  | [optional] 
+**SecurityServer** | Pointer to **NullableString** |  | [optional] 
 **CertificateProvider** | Pointer to **string** |  | [optional] 
 **BackupMode** | Pointer to **string** |  | [optional] 
 **ReplicationMode** | Pointer to **string** |  | [optional] 
@@ -34,7 +34,7 @@ Name | Type | Description | Notes
 **ConfigManagementId** | Pointer to **string** |  | [optional] 
 **ConfigCmdbDiscovery** | Pointer to **bool** |  | [optional] 
 **SecretKeyHash** | Pointer to **string** |  | [optional] 
-**CostingSecretKeyHash** | Pointer to **string** |  | [optional] 
+**CostingSecretKeyHash** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -455,6 +455,16 @@ SetCostingSecretKey sets CostingSecretKey field to given value.
 
 HasCostingSecretKey returns a boolean if a field has been set.
 
+### SetCostingSecretKeyNil
+
+`func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf1) SetCostingSecretKeyNil(b bool)`
+
+ SetCostingSecretKeyNil sets the value for CostingSecretKey to be an explicit nil
+
+### UnsetCostingSecretKey
+`func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf1) UnsetCostingSecretKey()`
+
+UnsetCostingSecretKey ensures that no value is present for CostingSecretKey, not even an explicit nil
 ### GetCostingReportName
 
 `func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf1) GetCostingReportName() string`
@@ -605,6 +615,16 @@ SetSecurityServer sets SecurityServer field to given value.
 
 HasSecurityServer returns a boolean if a field has been set.
 
+### SetSecurityServerNil
+
+`func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf1) SetSecurityServerNil(b bool)`
+
+ SetSecurityServerNil sets the value for SecurityServer to be an explicit nil
+
+### UnsetSecurityServer
+`func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf1) UnsetSecurityServer()`
+
+UnsetSecurityServer ensures that no value is present for SecurityServer, not even an explicit nil
 ### GetCertificateProvider
 
 `func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf1) GetCertificateProvider() string`
@@ -830,6 +850,16 @@ SetCostingSecretKeyHash sets CostingSecretKeyHash field to given value.
 
 HasCostingSecretKeyHash returns a boolean if a field has been set.
 
+### SetCostingSecretKeyHashNil
+
+`func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf1) SetCostingSecretKeyHashNil(b bool)`
+
+ SetCostingSecretKeyHashNil sets the value for CostingSecretKeyHash to be an explicit nil
+
+### UnsetCostingSecretKeyHash
+`func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf1) UnsetCostingSecretKeyHash()`
+
+UnsetCostingSecretKeyHash ensures that no value is present for CostingSecretKeyHash, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

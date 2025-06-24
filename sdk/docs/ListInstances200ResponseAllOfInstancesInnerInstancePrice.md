@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Price** | Pointer to **float32** |  | [optional] 
 **Cost** | Pointer to **float32** |  | [optional] 
-**Currency** | Pointer to **string** |  | [optional] 
+**Currency** | Pointer to **NullableString** |  | [optional] 
 **Unit** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -103,6 +103,16 @@ SetCurrency sets Currency field to given value.
 
 HasCurrency returns a boolean if a field has been set.
 
+### SetCurrencyNil
+
+`func (o *ListInstances200ResponseAllOfInstancesInnerInstancePrice) SetCurrencyNil(b bool)`
+
+ SetCurrencyNil sets the value for Currency to be an explicit nil
+
+### UnsetCurrency
+`func (o *ListInstances200ResponseAllOfInstancesInnerInstancePrice) UnsetCurrency()`
+
+UnsetCurrency ensures that no value is present for Currency, not even an explicit nil
 ### GetUnit
 
 `func (o *ListInstances200ResponseAllOfInstancesInnerInstancePrice) GetUnit() string`

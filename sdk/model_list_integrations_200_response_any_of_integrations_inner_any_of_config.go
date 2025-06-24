@@ -20,9 +20,9 @@ var _ MappedNullable = &ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCo
 
 // ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig struct for ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig
 type ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig struct {
-	Inventory            *string                `json:"inventory,omitempty"`
+	Inventory            NullableString         `json:"inventory,omitempty"`
 	DefaultBranch        *string                `json:"defaultBranch,omitempty"`
-	CacheEnabled         *string                `json:"cacheEnabled,omitempty"`
+	CacheEnabled         NullableString         `json:"cacheEnabled,omitempty"`
 	AnsiblePlaybooks     *string                `json:"ansiblePlaybooks,omitempty"`
 	AnsibleRoles         *string                `json:"ansibleRoles,omitempty"`
 	AnsibleGroupVars     *string                `json:"ansibleGroupVars,omitempty"`
@@ -53,36 +53,47 @@ func NewListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfigWithDefaults
 	return &this
 }
 
-// GetInventory returns the Inventory field value if set, zero value otherwise.
+// GetInventory returns the Inventory field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig) GetInventory() string {
-	if o == nil || IsNil(o.Inventory) {
+	if o == nil || IsNil(o.Inventory.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Inventory
+	return *o.Inventory.Get()
 }
 
 // GetInventoryOk returns a tuple with the Inventory field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig) GetInventoryOk() (*string, bool) {
-	if o == nil || IsNil(o.Inventory) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Inventory, true
+	return o.Inventory.Get(), o.Inventory.IsSet()
 }
 
 // IsSetInventory returns a boolean if a field has been set.
 func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig) IsSetInventory() bool {
-	if o != nil && !IsNil(o.Inventory) {
+	if o != nil && o.Inventory.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetInventory gets a reference to the given string and assigns it to the Inventory field.
+// SetInventory gets a reference to the given NullableString and assigns it to the Inventory field.
 func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig) SetInventory(v string) {
-	o.Inventory = &v
+	o.Inventory.Set(&v)
+}
+
+// SetInventoryNil sets the value for Inventory to be an explicit nil
+func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig) SetInventoryNil() {
+	o.Inventory.Set(nil)
+}
+
+// UnsetInventory ensures that no value is present for Inventory, not even an explicit nil
+func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig) UnsetInventory() {
+	o.Inventory.Unset()
 }
 
 // GetDefaultBranch returns the DefaultBranch field value if set, zero value otherwise.
@@ -117,36 +128,47 @@ func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig) SetDefaul
 	o.DefaultBranch = &v
 }
 
-// GetCacheEnabled returns the CacheEnabled field value if set, zero value otherwise.
+// GetCacheEnabled returns the CacheEnabled field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig) GetCacheEnabled() string {
-	if o == nil || IsNil(o.CacheEnabled) {
+	if o == nil || IsNil(o.CacheEnabled.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.CacheEnabled
+	return *o.CacheEnabled.Get()
 }
 
 // GetCacheEnabledOk returns a tuple with the CacheEnabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig) GetCacheEnabledOk() (*string, bool) {
-	if o == nil || IsNil(o.CacheEnabled) {
+	if o == nil {
 		return nil, false
 	}
-	return o.CacheEnabled, true
+	return o.CacheEnabled.Get(), o.CacheEnabled.IsSet()
 }
 
 // IsSetCacheEnabled returns a boolean if a field has been set.
 func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig) IsSetCacheEnabled() bool {
-	if o != nil && !IsNil(o.CacheEnabled) {
+	if o != nil && o.CacheEnabled.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCacheEnabled gets a reference to the given string and assigns it to the CacheEnabled field.
+// SetCacheEnabled gets a reference to the given NullableString and assigns it to the CacheEnabled field.
 func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig) SetCacheEnabled(v string) {
-	o.CacheEnabled = &v
+	o.CacheEnabled.Set(&v)
+}
+
+// SetCacheEnabledNil sets the value for CacheEnabled to be an explicit nil
+func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig) SetCacheEnabledNil() {
+	o.CacheEnabled.Set(nil)
+}
+
+// UnsetCacheEnabled ensures that no value is present for CacheEnabled, not even an explicit nil
+func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig) UnsetCacheEnabled() {
+	o.CacheEnabled.Unset()
 }
 
 // GetAnsiblePlaybooks returns the AnsiblePlaybooks field value if set, zero value otherwise.
@@ -415,14 +437,14 @@ func (o ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig) MarshalJSO
 
 func (o ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Inventory) {
-		toSerialize["inventory"] = o.Inventory
+	if o.Inventory.IsSet() {
+		toSerialize["inventory"] = o.Inventory.Get()
 	}
 	if !IsNil(o.DefaultBranch) {
 		toSerialize["defaultBranch"] = o.DefaultBranch
 	}
-	if !IsNil(o.CacheEnabled) {
-		toSerialize["cacheEnabled"] = o.CacheEnabled
+	if o.CacheEnabled.IsSet() {
+		toSerialize["cacheEnabled"] = o.CacheEnabled.Get()
 	}
 	if !IsNil(o.AnsiblePlaybooks) {
 		toSerialize["ansiblePlaybooks"] = o.AnsiblePlaybooks

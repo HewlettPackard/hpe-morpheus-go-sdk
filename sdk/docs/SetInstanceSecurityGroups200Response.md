@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**SecurityGroups** | Pointer to [**[]SetInstanceSecurityGroups200ResponseAllOfSecurityGroupsInner**](SetInstanceSecurityGroups200ResponseAllOfSecurityGroupsInner.md) | Array of security group objects | [optional] 
+**SecurityGroups** | Pointer to [**[]ListSecurityGroupsInstance200ResponseAllOfSecurityGroupsInner**](ListSecurityGroupsInstance200ResponseAllOfSecurityGroupsInner.md) | Array of security group objects | [optional] 
 **Success** | Pointer to **bool** |  | [optional] 
 
 ## Methods
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetSecurityGroups
 
-`func (o *SetInstanceSecurityGroups200Response) GetSecurityGroups() []SetInstanceSecurityGroups200ResponseAllOfSecurityGroupsInner`
+`func (o *SetInstanceSecurityGroups200Response) GetSecurityGroups() []ListSecurityGroupsInstance200ResponseAllOfSecurityGroupsInner`
 
 GetSecurityGroups returns the SecurityGroups field if non-nil, zero value otherwise.
 
 ### GetSecurityGroupsOk
 
-`func (o *SetInstanceSecurityGroups200Response) GetSecurityGroupsOk() (*[]SetInstanceSecurityGroups200ResponseAllOfSecurityGroupsInner, bool)`
+`func (o *SetInstanceSecurityGroups200Response) GetSecurityGroupsOk() (*[]ListSecurityGroupsInstance200ResponseAllOfSecurityGroupsInner, bool)`
 
 GetSecurityGroupsOk returns a tuple with the SecurityGroups field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSecurityGroups
 
-`func (o *SetInstanceSecurityGroups200Response) SetSecurityGroups(v []SetInstanceSecurityGroups200ResponseAllOfSecurityGroupsInner)`
+`func (o *SetInstanceSecurityGroups200Response) SetSecurityGroups(v []ListSecurityGroupsInstance200ResponseAllOfSecurityGroupsInner)`
 
 SetSecurityGroups sets SecurityGroups field to given value.
 
@@ -51,6 +51,16 @@ SetSecurityGroups sets SecurityGroups field to given value.
 
 HasSecurityGroups returns a boolean if a field has been set.
 
+### SetSecurityGroupsNil
+
+`func (o *SetInstanceSecurityGroups200Response) SetSecurityGroupsNil(b bool)`
+
+ SetSecurityGroupsNil sets the value for SecurityGroups to be an explicit nil
+
+### UnsetSecurityGroups
+`func (o *SetInstanceSecurityGroups200Response) UnsetSecurityGroups()`
+
+UnsetSecurityGroups ensures that no value is present for SecurityGroups, not even an explicit nil
 ### GetSuccess
 
 `func (o *SetInstanceSecurityGroups200Response) GetSuccess() bool`

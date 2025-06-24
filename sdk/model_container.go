@@ -43,24 +43,24 @@ type Container struct {
 	StatsEnabled         *bool                                             `json:"statsEnabled,omitempty"`
 	Status               *string                                           `json:"status,omitempty"`
 	UserStatus           *string                                           `json:"userStatus,omitempty"`
-	EnvironmentPrefix    *string                                           `json:"environmentPrefix,omitempty"`
+	EnvironmentPrefix    NullableString                                    `json:"environmentPrefix,omitempty"`
 	Stats                *GetContainer200ResponseContainerStats            `json:"stats,omitempty"`
 	RuntimeInfo          map[string]interface{}                            `json:"runtimeInfo,omitempty"`
-	ContainerVersion     *string                                           `json:"containerVersion,omitempty"`
-	RepositoryImage      *string                                           `json:"repositoryImage,omitempty"`
-	PlanCategory         *string                                           `json:"planCategory,omitempty"`
+	ContainerVersion     NullableString                                    `json:"containerVersion,omitempty"`
+	RepositoryImage      NullableString                                    `json:"repositoryImage,omitempty"`
+	PlanCategory         NullableString                                    `json:"planCategory,omitempty"`
 	Hostname             *string                                           `json:"hostname,omitempty"`
-	DomainName           *string                                           `json:"domainName,omitempty"`
+	DomainName           NullableString                                    `json:"domainName,omitempty"`
 	VolumeCreated        *bool                                             `json:"volumeCreated,omitempty"`
 	ContainerCreated     *bool                                             `json:"containerCreated,omitempty"`
 	MaxStorage           *int32                                            `json:"maxStorage,omitempty"`
 	MaxMemory            *int32                                            `json:"maxMemory,omitempty"`
 	MaxCores             *int32                                            `json:"maxCores,omitempty"`
-	MaxCpu               *int32                                            `json:"maxCpu,omitempty"`
+	MaxCpu               NullableInt32                                     `json:"maxCpu,omitempty"`
 	AvailableActions     []map[string]interface{}                          `json:"availableActions,omitempty"`
-	ConfigGroup          *string                                           `json:"configGroup,omitempty"`
-	ConfigId             *string                                           `json:"configId,omitempty"`
-	ConfigRole           *string                                           `json:"configRole,omitempty"`
+	ConfigGroup          NullableString                                    `json:"configGroup,omitempty"`
+	ConfigId             NullableString                                    `json:"configId,omitempty"`
+	ConfigRole           NullableString                                    `json:"configRole,omitempty"`
 	HourlyCost           *float64                                          `json:"hourlyCost,omitempty"`
 	HourlyPrice          *float64                                          `json:"hourlyPrice,omitempty"`
 	AdditionalProperties map[string]interface{}                            `json:",remain"`
@@ -565,9 +565,9 @@ func (o *Container) SetExternalFqdn(v string) {
 	o.ExternalFqdn = &v
 }
 
-// GetPorts returns the Ports field value if set, zero value otherwise.
+// GetPorts returns the Ports field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Container) GetPorts() []GetContainer200ResponseContainerPortsInner {
-	if o == nil || IsNil(o.Ports) {
+	if o == nil {
 		var ret []GetContainer200ResponseContainerPortsInner
 		return ret
 	}
@@ -576,6 +576,7 @@ func (o *Container) GetPorts() []GetContainer200ResponseContainerPortsInner {
 
 // GetPortsOk returns a tuple with the Ports field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Container) GetPortsOk() ([]GetContainer200ResponseContainerPortsInner, bool) {
 	if o == nil || IsNil(o.Ports) {
 		return nil, false
@@ -789,36 +790,47 @@ func (o *Container) SetUserStatus(v string) {
 	o.UserStatus = &v
 }
 
-// GetEnvironmentPrefix returns the EnvironmentPrefix field value if set, zero value otherwise.
+// GetEnvironmentPrefix returns the EnvironmentPrefix field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Container) GetEnvironmentPrefix() string {
-	if o == nil || IsNil(o.EnvironmentPrefix) {
+	if o == nil || IsNil(o.EnvironmentPrefix.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.EnvironmentPrefix
+	return *o.EnvironmentPrefix.Get()
 }
 
 // GetEnvironmentPrefixOk returns a tuple with the EnvironmentPrefix field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Container) GetEnvironmentPrefixOk() (*string, bool) {
-	if o == nil || IsNil(o.EnvironmentPrefix) {
+	if o == nil {
 		return nil, false
 	}
-	return o.EnvironmentPrefix, true
+	return o.EnvironmentPrefix.Get(), o.EnvironmentPrefix.IsSet()
 }
 
 // IsSetEnvironmentPrefix returns a boolean if a field has been set.
 func (o *Container) IsSetEnvironmentPrefix() bool {
-	if o != nil && !IsNil(o.EnvironmentPrefix) {
+	if o != nil && o.EnvironmentPrefix.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetEnvironmentPrefix gets a reference to the given string and assigns it to the EnvironmentPrefix field.
+// SetEnvironmentPrefix gets a reference to the given NullableString and assigns it to the EnvironmentPrefix field.
 func (o *Container) SetEnvironmentPrefix(v string) {
-	o.EnvironmentPrefix = &v
+	o.EnvironmentPrefix.Set(&v)
+}
+
+// SetEnvironmentPrefixNil sets the value for EnvironmentPrefix to be an explicit nil
+func (o *Container) SetEnvironmentPrefixNil() {
+	o.EnvironmentPrefix.Set(nil)
+}
+
+// UnsetEnvironmentPrefix ensures that no value is present for EnvironmentPrefix, not even an explicit nil
+func (o *Container) UnsetEnvironmentPrefix() {
+	o.EnvironmentPrefix.Unset()
 }
 
 // GetStats returns the Stats field value if set, zero value otherwise.
@@ -885,100 +897,133 @@ func (o *Container) SetRuntimeInfo(v map[string]interface{}) {
 	o.RuntimeInfo = v
 }
 
-// GetContainerVersion returns the ContainerVersion field value if set, zero value otherwise.
+// GetContainerVersion returns the ContainerVersion field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Container) GetContainerVersion() string {
-	if o == nil || IsNil(o.ContainerVersion) {
+	if o == nil || IsNil(o.ContainerVersion.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ContainerVersion
+	return *o.ContainerVersion.Get()
 }
 
 // GetContainerVersionOk returns a tuple with the ContainerVersion field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Container) GetContainerVersionOk() (*string, bool) {
-	if o == nil || IsNil(o.ContainerVersion) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ContainerVersion, true
+	return o.ContainerVersion.Get(), o.ContainerVersion.IsSet()
 }
 
 // IsSetContainerVersion returns a boolean if a field has been set.
 func (o *Container) IsSetContainerVersion() bool {
-	if o != nil && !IsNil(o.ContainerVersion) {
+	if o != nil && o.ContainerVersion.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetContainerVersion gets a reference to the given string and assigns it to the ContainerVersion field.
+// SetContainerVersion gets a reference to the given NullableString and assigns it to the ContainerVersion field.
 func (o *Container) SetContainerVersion(v string) {
-	o.ContainerVersion = &v
+	o.ContainerVersion.Set(&v)
 }
 
-// GetRepositoryImage returns the RepositoryImage field value if set, zero value otherwise.
+// SetContainerVersionNil sets the value for ContainerVersion to be an explicit nil
+func (o *Container) SetContainerVersionNil() {
+	o.ContainerVersion.Set(nil)
+}
+
+// UnsetContainerVersion ensures that no value is present for ContainerVersion, not even an explicit nil
+func (o *Container) UnsetContainerVersion() {
+	o.ContainerVersion.Unset()
+}
+
+// GetRepositoryImage returns the RepositoryImage field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Container) GetRepositoryImage() string {
-	if o == nil || IsNil(o.RepositoryImage) {
+	if o == nil || IsNil(o.RepositoryImage.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.RepositoryImage
+	return *o.RepositoryImage.Get()
 }
 
 // GetRepositoryImageOk returns a tuple with the RepositoryImage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Container) GetRepositoryImageOk() (*string, bool) {
-	if o == nil || IsNil(o.RepositoryImage) {
+	if o == nil {
 		return nil, false
 	}
-	return o.RepositoryImage, true
+	return o.RepositoryImage.Get(), o.RepositoryImage.IsSet()
 }
 
 // IsSetRepositoryImage returns a boolean if a field has been set.
 func (o *Container) IsSetRepositoryImage() bool {
-	if o != nil && !IsNil(o.RepositoryImage) {
+	if o != nil && o.RepositoryImage.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetRepositoryImage gets a reference to the given string and assigns it to the RepositoryImage field.
+// SetRepositoryImage gets a reference to the given NullableString and assigns it to the RepositoryImage field.
 func (o *Container) SetRepositoryImage(v string) {
-	o.RepositoryImage = &v
+	o.RepositoryImage.Set(&v)
 }
 
-// GetPlanCategory returns the PlanCategory field value if set, zero value otherwise.
+// SetRepositoryImageNil sets the value for RepositoryImage to be an explicit nil
+func (o *Container) SetRepositoryImageNil() {
+	o.RepositoryImage.Set(nil)
+}
+
+// UnsetRepositoryImage ensures that no value is present for RepositoryImage, not even an explicit nil
+func (o *Container) UnsetRepositoryImage() {
+	o.RepositoryImage.Unset()
+}
+
+// GetPlanCategory returns the PlanCategory field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Container) GetPlanCategory() string {
-	if o == nil || IsNil(o.PlanCategory) {
+	if o == nil || IsNil(o.PlanCategory.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.PlanCategory
+	return *o.PlanCategory.Get()
 }
 
 // GetPlanCategoryOk returns a tuple with the PlanCategory field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Container) GetPlanCategoryOk() (*string, bool) {
-	if o == nil || IsNil(o.PlanCategory) {
+	if o == nil {
 		return nil, false
 	}
-	return o.PlanCategory, true
+	return o.PlanCategory.Get(), o.PlanCategory.IsSet()
 }
 
 // IsSetPlanCategory returns a boolean if a field has been set.
 func (o *Container) IsSetPlanCategory() bool {
-	if o != nil && !IsNil(o.PlanCategory) {
+	if o != nil && o.PlanCategory.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetPlanCategory gets a reference to the given string and assigns it to the PlanCategory field.
+// SetPlanCategory gets a reference to the given NullableString and assigns it to the PlanCategory field.
 func (o *Container) SetPlanCategory(v string) {
-	o.PlanCategory = &v
+	o.PlanCategory.Set(&v)
+}
+
+// SetPlanCategoryNil sets the value for PlanCategory to be an explicit nil
+func (o *Container) SetPlanCategoryNil() {
+	o.PlanCategory.Set(nil)
+}
+
+// UnsetPlanCategory ensures that no value is present for PlanCategory, not even an explicit nil
+func (o *Container) UnsetPlanCategory() {
+	o.PlanCategory.Unset()
 }
 
 // GetHostname returns the Hostname field value if set, zero value otherwise.
@@ -1013,36 +1058,47 @@ func (o *Container) SetHostname(v string) {
 	o.Hostname = &v
 }
 
-// GetDomainName returns the DomainName field value if set, zero value otherwise.
+// GetDomainName returns the DomainName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Container) GetDomainName() string {
-	if o == nil || IsNil(o.DomainName) {
+	if o == nil || IsNil(o.DomainName.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.DomainName
+	return *o.DomainName.Get()
 }
 
 // GetDomainNameOk returns a tuple with the DomainName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Container) GetDomainNameOk() (*string, bool) {
-	if o == nil || IsNil(o.DomainName) {
+	if o == nil {
 		return nil, false
 	}
-	return o.DomainName, true
+	return o.DomainName.Get(), o.DomainName.IsSet()
 }
 
 // IsSetDomainName returns a boolean if a field has been set.
 func (o *Container) IsSetDomainName() bool {
-	if o != nil && !IsNil(o.DomainName) {
+	if o != nil && o.DomainName.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDomainName gets a reference to the given string and assigns it to the DomainName field.
+// SetDomainName gets a reference to the given NullableString and assigns it to the DomainName field.
 func (o *Container) SetDomainName(v string) {
-	o.DomainName = &v
+	o.DomainName.Set(&v)
+}
+
+// SetDomainNameNil sets the value for DomainName to be an explicit nil
+func (o *Container) SetDomainNameNil() {
+	o.DomainName.Set(nil)
+}
+
+// UnsetDomainName ensures that no value is present for DomainName, not even an explicit nil
+func (o *Container) UnsetDomainName() {
+	o.DomainName.Unset()
 }
 
 // GetVolumeCreated returns the VolumeCreated field value if set, zero value otherwise.
@@ -1205,41 +1261,52 @@ func (o *Container) SetMaxCores(v int32) {
 	o.MaxCores = &v
 }
 
-// GetMaxCpu returns the MaxCpu field value if set, zero value otherwise.
+// GetMaxCpu returns the MaxCpu field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Container) GetMaxCpu() int32 {
-	if o == nil || IsNil(o.MaxCpu) {
+	if o == nil || IsNil(o.MaxCpu.Get()) {
 		var ret int32
 		return ret
 	}
-	return *o.MaxCpu
+	return *o.MaxCpu.Get()
 }
 
 // GetMaxCpuOk returns a tuple with the MaxCpu field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Container) GetMaxCpuOk() (*int32, bool) {
-	if o == nil || IsNil(o.MaxCpu) {
+	if o == nil {
 		return nil, false
 	}
-	return o.MaxCpu, true
+	return o.MaxCpu.Get(), o.MaxCpu.IsSet()
 }
 
 // IsSetMaxCpu returns a boolean if a field has been set.
 func (o *Container) IsSetMaxCpu() bool {
-	if o != nil && !IsNil(o.MaxCpu) {
+	if o != nil && o.MaxCpu.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetMaxCpu gets a reference to the given int32 and assigns it to the MaxCpu field.
+// SetMaxCpu gets a reference to the given NullableInt32 and assigns it to the MaxCpu field.
 func (o *Container) SetMaxCpu(v int32) {
-	o.MaxCpu = &v
+	o.MaxCpu.Set(&v)
 }
 
-// GetAvailableActions returns the AvailableActions field value if set, zero value otherwise.
+// SetMaxCpuNil sets the value for MaxCpu to be an explicit nil
+func (o *Container) SetMaxCpuNil() {
+	o.MaxCpu.Set(nil)
+}
+
+// UnsetMaxCpu ensures that no value is present for MaxCpu, not even an explicit nil
+func (o *Container) UnsetMaxCpu() {
+	o.MaxCpu.Unset()
+}
+
+// GetAvailableActions returns the AvailableActions field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Container) GetAvailableActions() []map[string]interface{} {
-	if o == nil || IsNil(o.AvailableActions) {
+	if o == nil {
 		var ret []map[string]interface{}
 		return ret
 	}
@@ -1248,6 +1315,7 @@ func (o *Container) GetAvailableActions() []map[string]interface{} {
 
 // GetAvailableActionsOk returns a tuple with the AvailableActions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Container) GetAvailableActionsOk() ([]map[string]interface{}, bool) {
 	if o == nil || IsNil(o.AvailableActions) {
 		return nil, false
@@ -1269,100 +1337,133 @@ func (o *Container) SetAvailableActions(v []map[string]interface{}) {
 	o.AvailableActions = v
 }
 
-// GetConfigGroup returns the ConfigGroup field value if set, zero value otherwise.
+// GetConfigGroup returns the ConfigGroup field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Container) GetConfigGroup() string {
-	if o == nil || IsNil(o.ConfigGroup) {
+	if o == nil || IsNil(o.ConfigGroup.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ConfigGroup
+	return *o.ConfigGroup.Get()
 }
 
 // GetConfigGroupOk returns a tuple with the ConfigGroup field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Container) GetConfigGroupOk() (*string, bool) {
-	if o == nil || IsNil(o.ConfigGroup) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ConfigGroup, true
+	return o.ConfigGroup.Get(), o.ConfigGroup.IsSet()
 }
 
 // IsSetConfigGroup returns a boolean if a field has been set.
 func (o *Container) IsSetConfigGroup() bool {
-	if o != nil && !IsNil(o.ConfigGroup) {
+	if o != nil && o.ConfigGroup.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetConfigGroup gets a reference to the given string and assigns it to the ConfigGroup field.
+// SetConfigGroup gets a reference to the given NullableString and assigns it to the ConfigGroup field.
 func (o *Container) SetConfigGroup(v string) {
-	o.ConfigGroup = &v
+	o.ConfigGroup.Set(&v)
 }
 
-// GetConfigId returns the ConfigId field value if set, zero value otherwise.
+// SetConfigGroupNil sets the value for ConfigGroup to be an explicit nil
+func (o *Container) SetConfigGroupNil() {
+	o.ConfigGroup.Set(nil)
+}
+
+// UnsetConfigGroup ensures that no value is present for ConfigGroup, not even an explicit nil
+func (o *Container) UnsetConfigGroup() {
+	o.ConfigGroup.Unset()
+}
+
+// GetConfigId returns the ConfigId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Container) GetConfigId() string {
-	if o == nil || IsNil(o.ConfigId) {
+	if o == nil || IsNil(o.ConfigId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ConfigId
+	return *o.ConfigId.Get()
 }
 
 // GetConfigIdOk returns a tuple with the ConfigId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Container) GetConfigIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ConfigId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ConfigId, true
+	return o.ConfigId.Get(), o.ConfigId.IsSet()
 }
 
 // IsSetConfigId returns a boolean if a field has been set.
 func (o *Container) IsSetConfigId() bool {
-	if o != nil && !IsNil(o.ConfigId) {
+	if o != nil && o.ConfigId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetConfigId gets a reference to the given string and assigns it to the ConfigId field.
+// SetConfigId gets a reference to the given NullableString and assigns it to the ConfigId field.
 func (o *Container) SetConfigId(v string) {
-	o.ConfigId = &v
+	o.ConfigId.Set(&v)
 }
 
-// GetConfigRole returns the ConfigRole field value if set, zero value otherwise.
+// SetConfigIdNil sets the value for ConfigId to be an explicit nil
+func (o *Container) SetConfigIdNil() {
+	o.ConfigId.Set(nil)
+}
+
+// UnsetConfigId ensures that no value is present for ConfigId, not even an explicit nil
+func (o *Container) UnsetConfigId() {
+	o.ConfigId.Unset()
+}
+
+// GetConfigRole returns the ConfigRole field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Container) GetConfigRole() string {
-	if o == nil || IsNil(o.ConfigRole) {
+	if o == nil || IsNil(o.ConfigRole.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ConfigRole
+	return *o.ConfigRole.Get()
 }
 
 // GetConfigRoleOk returns a tuple with the ConfigRole field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Container) GetConfigRoleOk() (*string, bool) {
-	if o == nil || IsNil(o.ConfigRole) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ConfigRole, true
+	return o.ConfigRole.Get(), o.ConfigRole.IsSet()
 }
 
 // IsSetConfigRole returns a boolean if a field has been set.
 func (o *Container) IsSetConfigRole() bool {
-	if o != nil && !IsNil(o.ConfigRole) {
+	if o != nil && o.ConfigRole.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetConfigRole gets a reference to the given string and assigns it to the ConfigRole field.
+// SetConfigRole gets a reference to the given NullableString and assigns it to the ConfigRole field.
 func (o *Container) SetConfigRole(v string) {
-	o.ConfigRole = &v
+	o.ConfigRole.Set(&v)
+}
+
+// SetConfigRoleNil sets the value for ConfigRole to be an explicit nil
+func (o *Container) SetConfigRoleNil() {
+	o.ConfigRole.Set(nil)
+}
+
+// UnsetConfigRole ensures that no value is present for ConfigRole, not even an explicit nil
+func (o *Container) UnsetConfigRole() {
+	o.ConfigRole.Unset()
 }
 
 // GetHourlyCost returns the HourlyCost field value if set, zero value otherwise.
@@ -1484,7 +1585,7 @@ func (o Container) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ExternalFqdn) {
 		toSerialize["externalFqdn"] = o.ExternalFqdn
 	}
-	if !IsNil(o.Ports) {
+	if o.Ports != nil {
 		toSerialize["ports"] = o.Ports
 	}
 	if !IsNil(o.Plan) {
@@ -1505,8 +1606,8 @@ func (o Container) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.UserStatus) {
 		toSerialize["userStatus"] = o.UserStatus
 	}
-	if !IsNil(o.EnvironmentPrefix) {
-		toSerialize["environmentPrefix"] = o.EnvironmentPrefix
+	if o.EnvironmentPrefix.IsSet() {
+		toSerialize["environmentPrefix"] = o.EnvironmentPrefix.Get()
 	}
 	if !IsNil(o.Stats) {
 		toSerialize["stats"] = o.Stats
@@ -1514,20 +1615,20 @@ func (o Container) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.RuntimeInfo) {
 		toSerialize["runtimeInfo"] = o.RuntimeInfo
 	}
-	if !IsNil(o.ContainerVersion) {
-		toSerialize["containerVersion"] = o.ContainerVersion
+	if o.ContainerVersion.IsSet() {
+		toSerialize["containerVersion"] = o.ContainerVersion.Get()
 	}
-	if !IsNil(o.RepositoryImage) {
-		toSerialize["repositoryImage"] = o.RepositoryImage
+	if o.RepositoryImage.IsSet() {
+		toSerialize["repositoryImage"] = o.RepositoryImage.Get()
 	}
-	if !IsNil(o.PlanCategory) {
-		toSerialize["planCategory"] = o.PlanCategory
+	if o.PlanCategory.IsSet() {
+		toSerialize["planCategory"] = o.PlanCategory.Get()
 	}
 	if !IsNil(o.Hostname) {
 		toSerialize["hostname"] = o.Hostname
 	}
-	if !IsNil(o.DomainName) {
-		toSerialize["domainName"] = o.DomainName
+	if o.DomainName.IsSet() {
+		toSerialize["domainName"] = o.DomainName.Get()
 	}
 	if !IsNil(o.VolumeCreated) {
 		toSerialize["volumeCreated"] = o.VolumeCreated
@@ -1544,20 +1645,20 @@ func (o Container) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.MaxCores) {
 		toSerialize["maxCores"] = o.MaxCores
 	}
-	if !IsNil(o.MaxCpu) {
-		toSerialize["maxCpu"] = o.MaxCpu
+	if o.MaxCpu.IsSet() {
+		toSerialize["maxCpu"] = o.MaxCpu.Get()
 	}
-	if !IsNil(o.AvailableActions) {
+	if o.AvailableActions != nil {
 		toSerialize["availableActions"] = o.AvailableActions
 	}
-	if !IsNil(o.ConfigGroup) {
-		toSerialize["configGroup"] = o.ConfigGroup
+	if o.ConfigGroup.IsSet() {
+		toSerialize["configGroup"] = o.ConfigGroup.Get()
 	}
-	if !IsNil(o.ConfigId) {
-		toSerialize["configId"] = o.ConfigId
+	if o.ConfigId.IsSet() {
+		toSerialize["configId"] = o.ConfigId.Get()
 	}
-	if !IsNil(o.ConfigRole) {
-		toSerialize["configRole"] = o.ConfigRole
+	if o.ConfigRole.IsSet() {
+		toSerialize["configRole"] = o.ConfigRole.Get()
 	}
 	if !IsNil(o.HourlyCost) {
 		toSerialize["hourlyCost"] = o.HourlyCost

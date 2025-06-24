@@ -7,12 +7,12 @@ Name | Type | Description | Notes
 **Id** | Pointer to **int64** |  | [optional] 
 **AccountId** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**Code** | Pointer to **string** |  | [optional] 
-**TaskType** | Pointer to [**ListPriceSets200ResponseAllOfPriceSetsInnerPricesInnerVolumeType**](ListPriceSets200ResponseAllOfPriceSetsInnerPricesInnerVolumeType.md) |  | [optional] 
+**Code** | Pointer to **NullableString** |  | [optional] 
+**TaskType** | Pointer to [**ListBackupSettings200ResponseBackupSettingsDefaultSchedule**](ListBackupSettings200ResponseBackupSettingsDefaultSchedule.md) |  | [optional] 
 **Labels** | Pointer to **[]string** |  | [optional] 
 **TaskOptions** | Pointer to [**ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskTaskOptions**](ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskTaskOptions.md) |  | [optional] 
 **File** | Pointer to [**ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskFile**](ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskFile.md) |  | [optional] 
-**ResultType** | Pointer to **string** |  | [optional] 
+**ResultType** | Pointer to **NullableString** |  | [optional] 
 **ExecuteTarget** | Pointer to **string** |  | [optional] 
 **Retryable** | Pointer to **bool** |  | [optional] 
 **RetryCount** | Pointer to **int64** |  | [optional] 
@@ -140,22 +140,32 @@ SetCode sets Code field to given value.
 
 HasCode returns a boolean if a field has been set.
 
+### SetCodeNil
+
+`func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTask) SetCodeNil(b bool)`
+
+ SetCodeNil sets the value for Code to be an explicit nil
+
+### UnsetCode
+`func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTask) UnsetCode()`
+
+UnsetCode ensures that no value is present for Code, not even an explicit nil
 ### GetTaskType
 
-`func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTask) GetTaskType() ListPriceSets200ResponseAllOfPriceSetsInnerPricesInnerVolumeType`
+`func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTask) GetTaskType() ListBackupSettings200ResponseBackupSettingsDefaultSchedule`
 
 GetTaskType returns the TaskType field if non-nil, zero value otherwise.
 
 ### GetTaskTypeOk
 
-`func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTask) GetTaskTypeOk() (*ListPriceSets200ResponseAllOfPriceSetsInnerPricesInnerVolumeType, bool)`
+`func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTask) GetTaskTypeOk() (*ListBackupSettings200ResponseBackupSettingsDefaultSchedule, bool)`
 
 GetTaskTypeOk returns a tuple with the TaskType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTaskType
 
-`func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTask) SetTaskType(v ListPriceSets200ResponseAllOfPriceSetsInnerPricesInnerVolumeType)`
+`func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTask) SetTaskType(v ListBackupSettings200ResponseBackupSettingsDefaultSchedule)`
 
 SetTaskType sets TaskType field to given value.
 
@@ -190,6 +200,16 @@ SetLabels sets Labels field to given value.
 
 HasLabels returns a boolean if a field has been set.
 
+### SetLabelsNil
+
+`func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTask) SetLabelsNil(b bool)`
+
+ SetLabelsNil sets the value for Labels to be an explicit nil
+
+### UnsetLabels
+`func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTask) UnsetLabels()`
+
+UnsetLabels ensures that no value is present for Labels, not even an explicit nil
 ### GetTaskOptions
 
 `func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTask) GetTaskOptions() ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskTaskOptions`
@@ -265,6 +285,16 @@ SetResultType sets ResultType field to given value.
 
 HasResultType returns a boolean if a field has been set.
 
+### SetResultTypeNil
+
+`func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTask) SetResultTypeNil(b bool)`
+
+ SetResultTypeNil sets the value for ResultType to be an explicit nil
+
+### UnsetResultType
+`func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTask) UnsetResultType()`
+
+UnsetResultType ensures that no value is present for ResultType, not even an explicit nil
 ### GetExecuteTarget
 
 `func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTask) GetExecuteTarget() string`

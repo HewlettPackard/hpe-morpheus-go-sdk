@@ -20,10 +20,10 @@ var _ MappedNullable = &UpdateHostCloud200Response{}
 
 // UpdateHostCloud200Response struct for UpdateHostCloud200Response
 type UpdateHostCloud200Response struct {
-	Msg                  *string                `json:"msg,omitempty"`
-	Errors               *string                `json:"errors,omitempty"`
-	ErrorCode            *string                `json:"errorCode,omitempty"`
-	Data                 *string                `json:"data,omitempty"`
+	Msg                  NullableString         `json:"msg,omitempty"`
+	Errors               NullableString         `json:"errors,omitempty"`
+	ErrorCode            NullableString         `json:"errorCode,omitempty"`
+	Data                 NullableString         `json:"data,omitempty"`
 	InProgress           *bool                  `json:"inProgress,omitempty"`
 	Success              *bool                  `json:"success,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
@@ -48,132 +48,176 @@ func NewUpdateHostCloud200ResponseWithDefaults() *UpdateHostCloud200Response {
 	return &this
 }
 
-// GetMsg returns the Msg field value if set, zero value otherwise.
+// GetMsg returns the Msg field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UpdateHostCloud200Response) GetMsg() string {
-	if o == nil || IsNil(o.Msg) {
+	if o == nil || IsNil(o.Msg.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Msg
+	return *o.Msg.Get()
 }
 
 // GetMsgOk returns a tuple with the Msg field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *UpdateHostCloud200Response) GetMsgOk() (*string, bool) {
-	if o == nil || IsNil(o.Msg) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Msg, true
+	return o.Msg.Get(), o.Msg.IsSet()
 }
 
 // IsSetMsg returns a boolean if a field has been set.
 func (o *UpdateHostCloud200Response) IsSetMsg() bool {
-	if o != nil && !IsNil(o.Msg) {
+	if o != nil && o.Msg.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetMsg gets a reference to the given string and assigns it to the Msg field.
+// SetMsg gets a reference to the given NullableString and assigns it to the Msg field.
 func (o *UpdateHostCloud200Response) SetMsg(v string) {
-	o.Msg = &v
+	o.Msg.Set(&v)
 }
 
-// GetErrors returns the Errors field value if set, zero value otherwise.
+// SetMsgNil sets the value for Msg to be an explicit nil
+func (o *UpdateHostCloud200Response) SetMsgNil() {
+	o.Msg.Set(nil)
+}
+
+// UnsetMsg ensures that no value is present for Msg, not even an explicit nil
+func (o *UpdateHostCloud200Response) UnsetMsg() {
+	o.Msg.Unset()
+}
+
+// GetErrors returns the Errors field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UpdateHostCloud200Response) GetErrors() string {
-	if o == nil || IsNil(o.Errors) {
+	if o == nil || IsNil(o.Errors.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Errors
+	return *o.Errors.Get()
 }
 
 // GetErrorsOk returns a tuple with the Errors field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *UpdateHostCloud200Response) GetErrorsOk() (*string, bool) {
-	if o == nil || IsNil(o.Errors) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Errors, true
+	return o.Errors.Get(), o.Errors.IsSet()
 }
 
 // IsSetErrors returns a boolean if a field has been set.
 func (o *UpdateHostCloud200Response) IsSetErrors() bool {
-	if o != nil && !IsNil(o.Errors) {
+	if o != nil && o.Errors.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetErrors gets a reference to the given string and assigns it to the Errors field.
+// SetErrors gets a reference to the given NullableString and assigns it to the Errors field.
 func (o *UpdateHostCloud200Response) SetErrors(v string) {
-	o.Errors = &v
+	o.Errors.Set(&v)
 }
 
-// GetErrorCode returns the ErrorCode field value if set, zero value otherwise.
+// SetErrorsNil sets the value for Errors to be an explicit nil
+func (o *UpdateHostCloud200Response) SetErrorsNil() {
+	o.Errors.Set(nil)
+}
+
+// UnsetErrors ensures that no value is present for Errors, not even an explicit nil
+func (o *UpdateHostCloud200Response) UnsetErrors() {
+	o.Errors.Unset()
+}
+
+// GetErrorCode returns the ErrorCode field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UpdateHostCloud200Response) GetErrorCode() string {
-	if o == nil || IsNil(o.ErrorCode) {
+	if o == nil || IsNil(o.ErrorCode.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ErrorCode
+	return *o.ErrorCode.Get()
 }
 
 // GetErrorCodeOk returns a tuple with the ErrorCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *UpdateHostCloud200Response) GetErrorCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.ErrorCode) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ErrorCode, true
+	return o.ErrorCode.Get(), o.ErrorCode.IsSet()
 }
 
 // IsSetErrorCode returns a boolean if a field has been set.
 func (o *UpdateHostCloud200Response) IsSetErrorCode() bool {
-	if o != nil && !IsNil(o.ErrorCode) {
+	if o != nil && o.ErrorCode.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetErrorCode gets a reference to the given string and assigns it to the ErrorCode field.
+// SetErrorCode gets a reference to the given NullableString and assigns it to the ErrorCode field.
 func (o *UpdateHostCloud200Response) SetErrorCode(v string) {
-	o.ErrorCode = &v
+	o.ErrorCode.Set(&v)
 }
 
-// GetData returns the Data field value if set, zero value otherwise.
+// SetErrorCodeNil sets the value for ErrorCode to be an explicit nil
+func (o *UpdateHostCloud200Response) SetErrorCodeNil() {
+	o.ErrorCode.Set(nil)
+}
+
+// UnsetErrorCode ensures that no value is present for ErrorCode, not even an explicit nil
+func (o *UpdateHostCloud200Response) UnsetErrorCode() {
+	o.ErrorCode.Unset()
+}
+
+// GetData returns the Data field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UpdateHostCloud200Response) GetData() string {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || IsNil(o.Data.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Data
+	return *o.Data.Get()
 }
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *UpdateHostCloud200Response) GetDataOk() (*string, bool) {
-	if o == nil || IsNil(o.Data) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Data, true
+	return o.Data.Get(), o.Data.IsSet()
 }
 
 // IsSetData returns a boolean if a field has been set.
 func (o *UpdateHostCloud200Response) IsSetData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given string and assigns it to the Data field.
+// SetData gets a reference to the given NullableString and assigns it to the Data field.
 func (o *UpdateHostCloud200Response) SetData(v string) {
-	o.Data = &v
+	o.Data.Set(&v)
+}
+
+// SetDataNil sets the value for Data to be an explicit nil
+func (o *UpdateHostCloud200Response) SetDataNil() {
+	o.Data.Set(nil)
+}
+
+// UnsetData ensures that no value is present for Data, not even an explicit nil
+func (o *UpdateHostCloud200Response) UnsetData() {
+	o.Data.Unset()
 }
 
 // GetInProgress returns the InProgress field value if set, zero value otherwise.
@@ -250,17 +294,17 @@ func (o UpdateHostCloud200Response) MarshalJSON() ([]byte, error) {
 
 func (o UpdateHostCloud200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Msg) {
-		toSerialize["msg"] = o.Msg
+	if o.Msg.IsSet() {
+		toSerialize["msg"] = o.Msg.Get()
 	}
-	if !IsNil(o.Errors) {
-		toSerialize["errors"] = o.Errors
+	if o.Errors.IsSet() {
+		toSerialize["errors"] = o.Errors.Get()
 	}
-	if !IsNil(o.ErrorCode) {
-		toSerialize["errorCode"] = o.ErrorCode
+	if o.ErrorCode.IsSet() {
+		toSerialize["errorCode"] = o.ErrorCode.Get()
 	}
-	if !IsNil(o.Data) {
-		toSerialize["data"] = o.Data
+	if o.Data.IsSet() {
+		toSerialize["data"] = o.Data.Get()
 	}
 	if !IsNil(o.InProgress) {
 		toSerialize["inProgress"] = o.InProgress

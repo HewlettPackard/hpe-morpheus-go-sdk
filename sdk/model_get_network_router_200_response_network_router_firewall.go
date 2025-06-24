@@ -21,9 +21,9 @@ var _ MappedNullable = &GetNetworkRouter200ResponseNetworkRouterFirewall{}
 // GetNetworkRouter200ResponseNetworkRouterFirewall struct for GetNetworkRouter200ResponseNetworkRouterFirewall
 type GetNetworkRouter200ResponseNetworkRouterFirewall struct {
 	Enabled              *bool                                                             `json:"enabled,omitempty"`
-	Version              *string                                                           `json:"version,omitempty"`
-	DefaultPolicy        *string                                                           `json:"defaultPolicy,omitempty"`
-	Global               *string                                                           `json:"global,omitempty"`
+	Version              NullableString                                                    `json:"version,omitempty"`
+	DefaultPolicy        NullableString                                                    `json:"defaultPolicy,omitempty"`
+	Global               NullableString                                                    `json:"global,omitempty"`
 	RuleGroups           []GetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInner `json:"ruleGroups,omitempty"`
 	AdditionalProperties map[string]interface{}                                            `json:",remain"`
 }
@@ -79,100 +79,133 @@ func (o *GetNetworkRouter200ResponseNetworkRouterFirewall) SetEnabled(v bool) {
 	o.Enabled = &v
 }
 
-// GetVersion returns the Version field value if set, zero value otherwise.
+// GetVersion returns the Version field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetNetworkRouter200ResponseNetworkRouterFirewall) GetVersion() string {
-	if o == nil || IsNil(o.Version) {
+	if o == nil || IsNil(o.Version.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Version
+	return *o.Version.Get()
 }
 
 // GetVersionOk returns a tuple with the Version field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetNetworkRouter200ResponseNetworkRouterFirewall) GetVersionOk() (*string, bool) {
-	if o == nil || IsNil(o.Version) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Version, true
+	return o.Version.Get(), o.Version.IsSet()
 }
 
 // IsSetVersion returns a boolean if a field has been set.
 func (o *GetNetworkRouter200ResponseNetworkRouterFirewall) IsSetVersion() bool {
-	if o != nil && !IsNil(o.Version) {
+	if o != nil && o.Version.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetVersion gets a reference to the given string and assigns it to the Version field.
+// SetVersion gets a reference to the given NullableString and assigns it to the Version field.
 func (o *GetNetworkRouter200ResponseNetworkRouterFirewall) SetVersion(v string) {
-	o.Version = &v
+	o.Version.Set(&v)
 }
 
-// GetDefaultPolicy returns the DefaultPolicy field value if set, zero value otherwise.
+// SetVersionNil sets the value for Version to be an explicit nil
+func (o *GetNetworkRouter200ResponseNetworkRouterFirewall) SetVersionNil() {
+	o.Version.Set(nil)
+}
+
+// UnsetVersion ensures that no value is present for Version, not even an explicit nil
+func (o *GetNetworkRouter200ResponseNetworkRouterFirewall) UnsetVersion() {
+	o.Version.Unset()
+}
+
+// GetDefaultPolicy returns the DefaultPolicy field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetNetworkRouter200ResponseNetworkRouterFirewall) GetDefaultPolicy() string {
-	if o == nil || IsNil(o.DefaultPolicy) {
+	if o == nil || IsNil(o.DefaultPolicy.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.DefaultPolicy
+	return *o.DefaultPolicy.Get()
 }
 
 // GetDefaultPolicyOk returns a tuple with the DefaultPolicy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetNetworkRouter200ResponseNetworkRouterFirewall) GetDefaultPolicyOk() (*string, bool) {
-	if o == nil || IsNil(o.DefaultPolicy) {
+	if o == nil {
 		return nil, false
 	}
-	return o.DefaultPolicy, true
+	return o.DefaultPolicy.Get(), o.DefaultPolicy.IsSet()
 }
 
 // IsSetDefaultPolicy returns a boolean if a field has been set.
 func (o *GetNetworkRouter200ResponseNetworkRouterFirewall) IsSetDefaultPolicy() bool {
-	if o != nil && !IsNil(o.DefaultPolicy) {
+	if o != nil && o.DefaultPolicy.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDefaultPolicy gets a reference to the given string and assigns it to the DefaultPolicy field.
+// SetDefaultPolicy gets a reference to the given NullableString and assigns it to the DefaultPolicy field.
 func (o *GetNetworkRouter200ResponseNetworkRouterFirewall) SetDefaultPolicy(v string) {
-	o.DefaultPolicy = &v
+	o.DefaultPolicy.Set(&v)
 }
 
-// GetGlobal returns the Global field value if set, zero value otherwise.
+// SetDefaultPolicyNil sets the value for DefaultPolicy to be an explicit nil
+func (o *GetNetworkRouter200ResponseNetworkRouterFirewall) SetDefaultPolicyNil() {
+	o.DefaultPolicy.Set(nil)
+}
+
+// UnsetDefaultPolicy ensures that no value is present for DefaultPolicy, not even an explicit nil
+func (o *GetNetworkRouter200ResponseNetworkRouterFirewall) UnsetDefaultPolicy() {
+	o.DefaultPolicy.Unset()
+}
+
+// GetGlobal returns the Global field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetNetworkRouter200ResponseNetworkRouterFirewall) GetGlobal() string {
-	if o == nil || IsNil(o.Global) {
+	if o == nil || IsNil(o.Global.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Global
+	return *o.Global.Get()
 }
 
 // GetGlobalOk returns a tuple with the Global field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetNetworkRouter200ResponseNetworkRouterFirewall) GetGlobalOk() (*string, bool) {
-	if o == nil || IsNil(o.Global) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Global, true
+	return o.Global.Get(), o.Global.IsSet()
 }
 
 // IsSetGlobal returns a boolean if a field has been set.
 func (o *GetNetworkRouter200ResponseNetworkRouterFirewall) IsSetGlobal() bool {
-	if o != nil && !IsNil(o.Global) {
+	if o != nil && o.Global.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetGlobal gets a reference to the given string and assigns it to the Global field.
+// SetGlobal gets a reference to the given NullableString and assigns it to the Global field.
 func (o *GetNetworkRouter200ResponseNetworkRouterFirewall) SetGlobal(v string) {
-	o.Global = &v
+	o.Global.Set(&v)
+}
+
+// SetGlobalNil sets the value for Global to be an explicit nil
+func (o *GetNetworkRouter200ResponseNetworkRouterFirewall) SetGlobalNil() {
+	o.Global.Set(nil)
+}
+
+// UnsetGlobal ensures that no value is present for Global, not even an explicit nil
+func (o *GetNetworkRouter200ResponseNetworkRouterFirewall) UnsetGlobal() {
+	o.Global.Unset()
 }
 
 // GetRuleGroups returns the RuleGroups field value if set, zero value otherwise.
@@ -220,14 +253,14 @@ func (o GetNetworkRouter200ResponseNetworkRouterFirewall) ToMap() (map[string]in
 	if !IsNil(o.Enabled) {
 		toSerialize["enabled"] = o.Enabled
 	}
-	if !IsNil(o.Version) {
-		toSerialize["version"] = o.Version
+	if o.Version.IsSet() {
+		toSerialize["version"] = o.Version.Get()
 	}
-	if !IsNil(o.DefaultPolicy) {
-		toSerialize["defaultPolicy"] = o.DefaultPolicy
+	if o.DefaultPolicy.IsSet() {
+		toSerialize["defaultPolicy"] = o.DefaultPolicy.Get()
 	}
-	if !IsNil(o.Global) {
-		toSerialize["global"] = o.Global
+	if o.Global.IsSet() {
+		toSerialize["global"] = o.Global.Get()
 	}
 	if !IsNil(o.RuleGroups) {
 		toSerialize["ruleGroups"] = o.RuleGroups

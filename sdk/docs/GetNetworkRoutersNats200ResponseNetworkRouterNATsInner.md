@@ -9,19 +9,19 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
 **SourceNetwork** | Pointer to **string** |  | [optional] 
-**DestinationNetwork** | Pointer to **string** |  | [optional] 
+**DestinationNetwork** | Pointer to **NullableString** |  | [optional] 
 **TranslatedNetwork** | Pointer to **string** |  | [optional] 
-**SourcePorts** | Pointer to **string** |  | [optional] 
-**DestinationPorts** | Pointer to **string** |  | [optional] 
-**TranslatedPorts** | Pointer to **string** |  | [optional] 
+**SourcePorts** | Pointer to **NullableString** |  | [optional] 
+**DestinationPorts** | Pointer to **NullableString** |  | [optional] 
+**TranslatedPorts** | Pointer to **NullableString** |  | [optional] 
 **Priority** | Pointer to **int32** |  | [optional] 
-**Protocol** | Pointer to **string** |  | [optional] 
-**MatchIpv6DestinationPrefix** | Pointer to **string** |  | [optional] 
-**TranslatedIpv4SourcePrefix** | Pointer to **string** |  | [optional] 
-**RefType** | Pointer to **string** |  | [optional] 
-**RefId** | Pointer to **string** |  | [optional] 
+**Protocol** | Pointer to **NullableString** |  | [optional] 
+**MatchIpv6DestinationPrefix** | Pointer to **NullableString** |  | [optional] 
+**TranslatedIpv4SourcePrefix** | Pointer to **NullableString** |  | [optional] 
+**RefType** | Pointer to **NullableString** |  | [optional] 
+**RefId** | Pointer to **NullableString** |  | [optional] 
 **SyncSource** | Pointer to **string** |  | [optional] 
-**InternalId** | Pointer to **string** |  | [optional] 
+**InternalId** | Pointer to **NullableString** |  | [optional] 
 **ExternalId** | Pointer to **string** |  | [optional] 
 **ProviderId** | Pointer to **string** |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
@@ -196,6 +196,16 @@ SetDestinationNetwork sets DestinationNetwork field to given value.
 
 HasDestinationNetwork returns a boolean if a field has been set.
 
+### SetDestinationNetworkNil
+
+`func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) SetDestinationNetworkNil(b bool)`
+
+ SetDestinationNetworkNil sets the value for DestinationNetwork to be an explicit nil
+
+### UnsetDestinationNetwork
+`func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) UnsetDestinationNetwork()`
+
+UnsetDestinationNetwork ensures that no value is present for DestinationNetwork, not even an explicit nil
 ### GetTranslatedNetwork
 
 `func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) GetTranslatedNetwork() string`
@@ -246,6 +256,16 @@ SetSourcePorts sets SourcePorts field to given value.
 
 HasSourcePorts returns a boolean if a field has been set.
 
+### SetSourcePortsNil
+
+`func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) SetSourcePortsNil(b bool)`
+
+ SetSourcePortsNil sets the value for SourcePorts to be an explicit nil
+
+### UnsetSourcePorts
+`func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) UnsetSourcePorts()`
+
+UnsetSourcePorts ensures that no value is present for SourcePorts, not even an explicit nil
 ### GetDestinationPorts
 
 `func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) GetDestinationPorts() string`
@@ -271,6 +291,16 @@ SetDestinationPorts sets DestinationPorts field to given value.
 
 HasDestinationPorts returns a boolean if a field has been set.
 
+### SetDestinationPortsNil
+
+`func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) SetDestinationPortsNil(b bool)`
+
+ SetDestinationPortsNil sets the value for DestinationPorts to be an explicit nil
+
+### UnsetDestinationPorts
+`func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) UnsetDestinationPorts()`
+
+UnsetDestinationPorts ensures that no value is present for DestinationPorts, not even an explicit nil
 ### GetTranslatedPorts
 
 `func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) GetTranslatedPorts() string`
@@ -296,6 +326,16 @@ SetTranslatedPorts sets TranslatedPorts field to given value.
 
 HasTranslatedPorts returns a boolean if a field has been set.
 
+### SetTranslatedPortsNil
+
+`func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) SetTranslatedPortsNil(b bool)`
+
+ SetTranslatedPortsNil sets the value for TranslatedPorts to be an explicit nil
+
+### UnsetTranslatedPorts
+`func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) UnsetTranslatedPorts()`
+
+UnsetTranslatedPorts ensures that no value is present for TranslatedPorts, not even an explicit nil
 ### GetPriority
 
 `func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) GetPriority() int32`
@@ -346,6 +386,16 @@ SetProtocol sets Protocol field to given value.
 
 HasProtocol returns a boolean if a field has been set.
 
+### SetProtocolNil
+
+`func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) SetProtocolNil(b bool)`
+
+ SetProtocolNil sets the value for Protocol to be an explicit nil
+
+### UnsetProtocol
+`func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) UnsetProtocol()`
+
+UnsetProtocol ensures that no value is present for Protocol, not even an explicit nil
 ### GetMatchIpv6DestinationPrefix
 
 `func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) GetMatchIpv6DestinationPrefix() string`
@@ -371,6 +421,16 @@ SetMatchIpv6DestinationPrefix sets MatchIpv6DestinationPrefix field to given val
 
 HasMatchIpv6DestinationPrefix returns a boolean if a field has been set.
 
+### SetMatchIpv6DestinationPrefixNil
+
+`func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) SetMatchIpv6DestinationPrefixNil(b bool)`
+
+ SetMatchIpv6DestinationPrefixNil sets the value for MatchIpv6DestinationPrefix to be an explicit nil
+
+### UnsetMatchIpv6DestinationPrefix
+`func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) UnsetMatchIpv6DestinationPrefix()`
+
+UnsetMatchIpv6DestinationPrefix ensures that no value is present for MatchIpv6DestinationPrefix, not even an explicit nil
 ### GetTranslatedIpv4SourcePrefix
 
 `func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) GetTranslatedIpv4SourcePrefix() string`
@@ -396,6 +456,16 @@ SetTranslatedIpv4SourcePrefix sets TranslatedIpv4SourcePrefix field to given val
 
 HasTranslatedIpv4SourcePrefix returns a boolean if a field has been set.
 
+### SetTranslatedIpv4SourcePrefixNil
+
+`func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) SetTranslatedIpv4SourcePrefixNil(b bool)`
+
+ SetTranslatedIpv4SourcePrefixNil sets the value for TranslatedIpv4SourcePrefix to be an explicit nil
+
+### UnsetTranslatedIpv4SourcePrefix
+`func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) UnsetTranslatedIpv4SourcePrefix()`
+
+UnsetTranslatedIpv4SourcePrefix ensures that no value is present for TranslatedIpv4SourcePrefix, not even an explicit nil
 ### GetRefType
 
 `func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) GetRefType() string`
@@ -421,6 +491,16 @@ SetRefType sets RefType field to given value.
 
 HasRefType returns a boolean if a field has been set.
 
+### SetRefTypeNil
+
+`func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) SetRefTypeNil(b bool)`
+
+ SetRefTypeNil sets the value for RefType to be an explicit nil
+
+### UnsetRefType
+`func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) UnsetRefType()`
+
+UnsetRefType ensures that no value is present for RefType, not even an explicit nil
 ### GetRefId
 
 `func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) GetRefId() string`
@@ -446,6 +526,16 @@ SetRefId sets RefId field to given value.
 
 HasRefId returns a boolean if a field has been set.
 
+### SetRefIdNil
+
+`func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) SetRefIdNil(b bool)`
+
+ SetRefIdNil sets the value for RefId to be an explicit nil
+
+### UnsetRefId
+`func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) UnsetRefId()`
+
+UnsetRefId ensures that no value is present for RefId, not even an explicit nil
 ### GetSyncSource
 
 `func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) GetSyncSource() string`
@@ -496,6 +586,16 @@ SetInternalId sets InternalId field to given value.
 
 HasInternalId returns a boolean if a field has been set.
 
+### SetInternalIdNil
+
+`func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) SetInternalIdNil(b bool)`
+
+ SetInternalIdNil sets the value for InternalId to be an explicit nil
+
+### UnsetInternalId
+`func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) UnsetInternalId()`
+
+UnsetInternalId ensures that no value is present for InternalId, not even an explicit nil
 ### GetExternalId
 
 `func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) GetExternalId() string`

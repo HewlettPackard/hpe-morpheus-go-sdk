@@ -5,24 +5,24 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
-**Account** | Pointer to [**ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
+**Account** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **Type** | Pointer to [**ListBackupSettings200ResponseBackupSettingsDefaultSchedule**](ListBackupSettings200ResponseBackupSettingsDefaultSchedule.md) |  | [optional] 
-**Site** | Pointer to [**ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
-**Zone** | Pointer to [**ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
+**Site** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**Zone** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **NullableString** |  | [optional] 
 **BootScript** | Pointer to [**ListImageBuilds200ResponseAllOfImageBuildsInnerBootScript**](ListImageBuilds200ResponseAllOfImageBuildsInnerBootScript.md) |  | [optional] 
-**BootCommand** | Pointer to **string** |  | [optional] 
+**BootCommand** | Pointer to **NullableString** |  | [optional] 
 **PreseedScript** | Pointer to [**ListImageBuilds200ResponseAllOfImageBuildsInnerBootScript**](ListImageBuilds200ResponseAllOfImageBuildsInnerBootScript.md) |  | [optional] 
 **Scripts** | Pointer to [**[]ListImageBuilds200ResponseAllOfImageBuildsInnerScriptsInner**](ListImageBuilds200ResponseAllOfImageBuildsInnerScriptsInner.md) |  | [optional] 
 **SshUsername** | Pointer to **string** |  | [optional] 
 **SshPassword** | Pointer to **string** |  | [optional] 
-**StorageProvider** | Pointer to **string** |  | [optional] 
-**BuildOutputName** | Pointer to **string** |  | [optional] 
-**ConversionFormats** | Pointer to **string** |  | [optional] 
+**StorageProvider** | Pointer to **NullableString** |  | [optional] 
+**BuildOutputName** | Pointer to **NullableString** |  | [optional] 
+**ConversionFormats** | Pointer to **NullableString** |  | [optional] 
 **IsCloudInit** | Pointer to **bool** |  | [optional] 
 **VmToolsInstalled** | Pointer to **bool** |  | [optional] 
-**KeepResults** | Pointer to **int64** |  | [optional] 
+**KeepResults** | Pointer to **NullableInt64** |  | [optional] 
 **Config** | Pointer to [**AddImageBuild200ResponseAllOfImageBuildConfig**](AddImageBuild200ResponseAllOfImageBuildConfig.md) |  | [optional] 
 **LastResult** | Pointer to [**AddImageBuild200ResponseAllOfImageBuildLastResult**](AddImageBuild200ResponseAllOfImageBuildLastResult.md) |  | [optional] 
 **ExecutionCount** | Pointer to **int64** |  | [optional] 
@@ -73,20 +73,20 @@ HasId returns a boolean if a field has been set.
 
 ### GetAccount
 
-`func (o *ImageBuild) GetAccount() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *ImageBuild) GetAccount() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetAccount returns the Account field if non-nil, zero value otherwise.
 
 ### GetAccountOk
 
-`func (o *ImageBuild) GetAccountOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *ImageBuild) GetAccountOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetAccountOk returns a tuple with the Account field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccount
 
-`func (o *ImageBuild) SetAccount(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *ImageBuild) SetAccount(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetAccount sets Account field to given value.
 
@@ -123,20 +123,20 @@ HasType returns a boolean if a field has been set.
 
 ### GetSite
 
-`func (o *ImageBuild) GetSite() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *ImageBuild) GetSite() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetSite returns the Site field if non-nil, zero value otherwise.
 
 ### GetSiteOk
 
-`func (o *ImageBuild) GetSiteOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *ImageBuild) GetSiteOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetSiteOk returns a tuple with the Site field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSite
 
-`func (o *ImageBuild) SetSite(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *ImageBuild) SetSite(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetSite sets Site field to given value.
 
@@ -148,20 +148,20 @@ HasSite returns a boolean if a field has been set.
 
 ### GetZone
 
-`func (o *ImageBuild) GetZone() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *ImageBuild) GetZone() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetZone returns the Zone field if non-nil, zero value otherwise.
 
 ### GetZoneOk
 
-`func (o *ImageBuild) GetZoneOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *ImageBuild) GetZoneOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetZoneOk returns a tuple with the Zone field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetZone
 
-`func (o *ImageBuild) SetZone(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *ImageBuild) SetZone(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetZone sets Zone field to given value.
 
@@ -221,6 +221,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *ImageBuild) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *ImageBuild) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetBootScript
 
 `func (o *ImageBuild) GetBootScript() ListImageBuilds200ResponseAllOfImageBuildsInnerBootScript`
@@ -271,6 +281,16 @@ SetBootCommand sets BootCommand field to given value.
 
 HasBootCommand returns a boolean if a field has been set.
 
+### SetBootCommandNil
+
+`func (o *ImageBuild) SetBootCommandNil(b bool)`
+
+ SetBootCommandNil sets the value for BootCommand to be an explicit nil
+
+### UnsetBootCommand
+`func (o *ImageBuild) UnsetBootCommand()`
+
+UnsetBootCommand ensures that no value is present for BootCommand, not even an explicit nil
 ### GetPreseedScript
 
 `func (o *ImageBuild) GetPreseedScript() ListImageBuilds200ResponseAllOfImageBuildsInnerBootScript`
@@ -396,6 +416,16 @@ SetStorageProvider sets StorageProvider field to given value.
 
 HasStorageProvider returns a boolean if a field has been set.
 
+### SetStorageProviderNil
+
+`func (o *ImageBuild) SetStorageProviderNil(b bool)`
+
+ SetStorageProviderNil sets the value for StorageProvider to be an explicit nil
+
+### UnsetStorageProvider
+`func (o *ImageBuild) UnsetStorageProvider()`
+
+UnsetStorageProvider ensures that no value is present for StorageProvider, not even an explicit nil
 ### GetBuildOutputName
 
 `func (o *ImageBuild) GetBuildOutputName() string`
@@ -421,6 +451,16 @@ SetBuildOutputName sets BuildOutputName field to given value.
 
 HasBuildOutputName returns a boolean if a field has been set.
 
+### SetBuildOutputNameNil
+
+`func (o *ImageBuild) SetBuildOutputNameNil(b bool)`
+
+ SetBuildOutputNameNil sets the value for BuildOutputName to be an explicit nil
+
+### UnsetBuildOutputName
+`func (o *ImageBuild) UnsetBuildOutputName()`
+
+UnsetBuildOutputName ensures that no value is present for BuildOutputName, not even an explicit nil
 ### GetConversionFormats
 
 `func (o *ImageBuild) GetConversionFormats() string`
@@ -446,6 +486,16 @@ SetConversionFormats sets ConversionFormats field to given value.
 
 HasConversionFormats returns a boolean if a field has been set.
 
+### SetConversionFormatsNil
+
+`func (o *ImageBuild) SetConversionFormatsNil(b bool)`
+
+ SetConversionFormatsNil sets the value for ConversionFormats to be an explicit nil
+
+### UnsetConversionFormats
+`func (o *ImageBuild) UnsetConversionFormats()`
+
+UnsetConversionFormats ensures that no value is present for ConversionFormats, not even an explicit nil
 ### GetIsCloudInit
 
 `func (o *ImageBuild) GetIsCloudInit() bool`
@@ -521,6 +571,16 @@ SetKeepResults sets KeepResults field to given value.
 
 HasKeepResults returns a boolean if a field has been set.
 
+### SetKeepResultsNil
+
+`func (o *ImageBuild) SetKeepResultsNil(b bool)`
+
+ SetKeepResultsNil sets the value for KeepResults to be an explicit nil
+
+### UnsetKeepResults
+`func (o *ImageBuild) UnsetKeepResults()`
+
+UnsetKeepResults ensures that no value is present for KeepResults, not even an explicit nil
 ### GetConfig
 
 `func (o *ImageBuild) GetConfig() AddImageBuild200ResponseAllOfImageBuildConfig`

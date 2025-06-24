@@ -26,7 +26,7 @@ type ListCatalogCart200ResponseCartItemsInner struct {
 	Type                 *ListApps200ResponseAllOfAppsInnerBlueprint       `json:"type,omitempty"`
 	Quantity             *int64                                            `json:"quantity,omitempty"`
 	Status               *string                                           `json:"status,omitempty"`
-	StatusMessage        *string                                           `json:"statusMessage,omitempty"`
+	StatusMessage        NullableString                                    `json:"statusMessage,omitempty"`
 	RefType              *string                                           `json:"refType,omitempty"`
 	Instance             *ListCatalogCart200ResponseCartItemsInnerInstance `json:"instance,omitempty"`
 	OrderDate            *time.Time                                        `json:"orderDate,omitempty"`
@@ -214,36 +214,47 @@ func (o *ListCatalogCart200ResponseCartItemsInner) SetStatus(v string) {
 	o.Status = &v
 }
 
-// GetStatusMessage returns the StatusMessage field value if set, zero value otherwise.
+// GetStatusMessage returns the StatusMessage field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListCatalogCart200ResponseCartItemsInner) GetStatusMessage() string {
-	if o == nil || IsNil(o.StatusMessage) {
+	if o == nil || IsNil(o.StatusMessage.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.StatusMessage
+	return *o.StatusMessage.Get()
 }
 
 // GetStatusMessageOk returns a tuple with the StatusMessage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListCatalogCart200ResponseCartItemsInner) GetStatusMessageOk() (*string, bool) {
-	if o == nil || IsNil(o.StatusMessage) {
+	if o == nil {
 		return nil, false
 	}
-	return o.StatusMessage, true
+	return o.StatusMessage.Get(), o.StatusMessage.IsSet()
 }
 
 // IsSetStatusMessage returns a boolean if a field has been set.
 func (o *ListCatalogCart200ResponseCartItemsInner) IsSetStatusMessage() bool {
-	if o != nil && !IsNil(o.StatusMessage) {
+	if o != nil && o.StatusMessage.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetStatusMessage gets a reference to the given string and assigns it to the StatusMessage field.
+// SetStatusMessage gets a reference to the given NullableString and assigns it to the StatusMessage field.
 func (o *ListCatalogCart200ResponseCartItemsInner) SetStatusMessage(v string) {
-	o.StatusMessage = &v
+	o.StatusMessage.Set(&v)
+}
+
+// SetStatusMessageNil sets the value for StatusMessage to be an explicit nil
+func (o *ListCatalogCart200ResponseCartItemsInner) SetStatusMessageNil() {
+	o.StatusMessage.Set(nil)
+}
+
+// UnsetStatusMessage ensures that no value is present for StatusMessage, not even an explicit nil
+func (o *ListCatalogCart200ResponseCartItemsInner) UnsetStatusMessage() {
+	o.StatusMessage.Unset()
 }
 
 // GetRefType returns the RefType field value if set, zero value otherwise.
@@ -431,8 +442,8 @@ func (o ListCatalogCart200ResponseCartItemsInner) ToMap() (map[string]interface{
 	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status
 	}
-	if !IsNil(o.StatusMessage) {
-		toSerialize["statusMessage"] = o.StatusMessage
+	if o.StatusMessage.IsSet() {
+		toSerialize["statusMessage"] = o.StatusMessage.Get()
 	}
 	if !IsNil(o.RefType) {
 		toSerialize["refType"] = o.RefType

@@ -34,17 +34,17 @@ type ListServerServicePlans200ResponsePlansInner struct {
 	CustomMaxStorage      *bool                                                           `json:"customMaxStorage,omitempty"`
 	CustomMaxDataStorage  *bool                                                           `json:"customMaxDataStorage,omitempty"`
 	CustomCoresPerSocket  *bool                                                           `json:"customCoresPerSocket,omitempty"`
-	CoresPerSocket        *int64                                                          `json:"coresPerSocket,omitempty"`
+	CoresPerSocket        NullableInt64                                                   `json:"coresPerSocket,omitempty"`
 	StorageTypes          []map[string]interface{}                                        `json:"storageTypes,omitempty"`
 	RootStorageTypes      []map[string]interface{}                                        `json:"rootStorageTypes,omitempty"`
 	AddVolumes            *bool                                                           `json:"addVolumes,omitempty"`
 	CustomizeVolume       *bool                                                           `json:"customizeVolume,omitempty"`
 	RootDiskCustomizable  *bool                                                           `json:"rootDiskCustomizable,omitempty"`
-	HostDiskMode          *string                                                         `json:"hostDiskMode,omitempty"`
-	HasDatastore          *string                                                         `json:"hasDatastore,omitempty"`
-	LvmSupported          *string                                                         `json:"lvmSupported,omitempty"`
-	MinDisk               *string                                                         `json:"minDisk,omitempty"`
-	MaxDisk               *string                                                         `json:"maxDisk,omitempty"`
+	HostDiskMode          NullableString                                                  `json:"hostDiskMode,omitempty"`
+	HasDatastore          NullableString                                                  `json:"hasDatastore,omitempty"`
+	LvmSupported          NullableString                                                  `json:"lvmSupported,omitempty"`
+	MinDisk               NullableString                                                  `json:"minDisk,omitempty"`
+	MaxDisk               NullableString                                                  `json:"maxDisk,omitempty"`
 	Datastores            *ListServerServicePlans200ResponsePlansInnerDatastores          `json:"datastores,omitempty"`
 	SupportsAutoDatastore *bool                                                           `json:"supportsAutoDatastore,omitempty"`
 	AutoOptions           []ListInstanceServicePlans200ResponsePlansInnerAutoOptionsInner `json:"autoOptions,omitempty"`
@@ -53,7 +53,7 @@ type ListServerServicePlans200ResponsePlansInner struct {
 	RootCustomSizeOptions map[string]interface{}                                          `json:"rootCustomSizeOptions,omitempty"`
 	CustomSizeOptions     map[string]interface{}                                          `json:"customSizeOptions,omitempty"`
 	CustomCores           *bool                                                           `json:"customCores,omitempty"`
-	MaxDisks              *string                                                         `json:"maxDisks,omitempty"`
+	MaxDisks              NullableString                                                  `json:"maxDisks,omitempty"`
 	MemorySizeType        *string                                                         `json:"memorySizeType,omitempty"`
 	AdditionalProperties  map[string]interface{}                                          `json:",remain"`
 }
@@ -525,41 +525,52 @@ func (o *ListServerServicePlans200ResponsePlansInner) SetCustomCoresPerSocket(v 
 	o.CustomCoresPerSocket = &v
 }
 
-// GetCoresPerSocket returns the CoresPerSocket field value if set, zero value otherwise.
+// GetCoresPerSocket returns the CoresPerSocket field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListServerServicePlans200ResponsePlansInner) GetCoresPerSocket() int64 {
-	if o == nil || IsNil(o.CoresPerSocket) {
+	if o == nil || IsNil(o.CoresPerSocket.Get()) {
 		var ret int64
 		return ret
 	}
-	return *o.CoresPerSocket
+	return *o.CoresPerSocket.Get()
 }
 
 // GetCoresPerSocketOk returns a tuple with the CoresPerSocket field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListServerServicePlans200ResponsePlansInner) GetCoresPerSocketOk() (*int64, bool) {
-	if o == nil || IsNil(o.CoresPerSocket) {
+	if o == nil {
 		return nil, false
 	}
-	return o.CoresPerSocket, true
+	return o.CoresPerSocket.Get(), o.CoresPerSocket.IsSet()
 }
 
 // IsSetCoresPerSocket returns a boolean if a field has been set.
 func (o *ListServerServicePlans200ResponsePlansInner) IsSetCoresPerSocket() bool {
-	if o != nil && !IsNil(o.CoresPerSocket) {
+	if o != nil && o.CoresPerSocket.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCoresPerSocket gets a reference to the given int64 and assigns it to the CoresPerSocket field.
+// SetCoresPerSocket gets a reference to the given NullableInt64 and assigns it to the CoresPerSocket field.
 func (o *ListServerServicePlans200ResponsePlansInner) SetCoresPerSocket(v int64) {
-	o.CoresPerSocket = &v
+	o.CoresPerSocket.Set(&v)
 }
 
-// GetStorageTypes returns the StorageTypes field value if set, zero value otherwise.
+// SetCoresPerSocketNil sets the value for CoresPerSocket to be an explicit nil
+func (o *ListServerServicePlans200ResponsePlansInner) SetCoresPerSocketNil() {
+	o.CoresPerSocket.Set(nil)
+}
+
+// UnsetCoresPerSocket ensures that no value is present for CoresPerSocket, not even an explicit nil
+func (o *ListServerServicePlans200ResponsePlansInner) UnsetCoresPerSocket() {
+	o.CoresPerSocket.Unset()
+}
+
+// GetStorageTypes returns the StorageTypes field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListServerServicePlans200ResponsePlansInner) GetStorageTypes() []map[string]interface{} {
-	if o == nil || IsNil(o.StorageTypes) {
+	if o == nil {
 		var ret []map[string]interface{}
 		return ret
 	}
@@ -568,6 +579,7 @@ func (o *ListServerServicePlans200ResponsePlansInner) GetStorageTypes() []map[st
 
 // GetStorageTypesOk returns a tuple with the StorageTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListServerServicePlans200ResponsePlansInner) GetStorageTypesOk() ([]map[string]interface{}, bool) {
 	if o == nil || IsNil(o.StorageTypes) {
 		return nil, false
@@ -589,9 +601,9 @@ func (o *ListServerServicePlans200ResponsePlansInner) SetStorageTypes(v []map[st
 	o.StorageTypes = v
 }
 
-// GetRootStorageTypes returns the RootStorageTypes field value if set, zero value otherwise.
+// GetRootStorageTypes returns the RootStorageTypes field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListServerServicePlans200ResponsePlansInner) GetRootStorageTypes() []map[string]interface{} {
-	if o == nil || IsNil(o.RootStorageTypes) {
+	if o == nil {
 		var ret []map[string]interface{}
 		return ret
 	}
@@ -600,6 +612,7 @@ func (o *ListServerServicePlans200ResponsePlansInner) GetRootStorageTypes() []ma
 
 // GetRootStorageTypesOk returns a tuple with the RootStorageTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListServerServicePlans200ResponsePlansInner) GetRootStorageTypesOk() ([]map[string]interface{}, bool) {
 	if o == nil || IsNil(o.RootStorageTypes) {
 		return nil, false
@@ -717,164 +730,219 @@ func (o *ListServerServicePlans200ResponsePlansInner) SetRootDiskCustomizable(v 
 	o.RootDiskCustomizable = &v
 }
 
-// GetHostDiskMode returns the HostDiskMode field value if set, zero value otherwise.
+// GetHostDiskMode returns the HostDiskMode field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListServerServicePlans200ResponsePlansInner) GetHostDiskMode() string {
-	if o == nil || IsNil(o.HostDiskMode) {
+	if o == nil || IsNil(o.HostDiskMode.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.HostDiskMode
+	return *o.HostDiskMode.Get()
 }
 
 // GetHostDiskModeOk returns a tuple with the HostDiskMode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListServerServicePlans200ResponsePlansInner) GetHostDiskModeOk() (*string, bool) {
-	if o == nil || IsNil(o.HostDiskMode) {
+	if o == nil {
 		return nil, false
 	}
-	return o.HostDiskMode, true
+	return o.HostDiskMode.Get(), o.HostDiskMode.IsSet()
 }
 
 // IsSetHostDiskMode returns a boolean if a field has been set.
 func (o *ListServerServicePlans200ResponsePlansInner) IsSetHostDiskMode() bool {
-	if o != nil && !IsNil(o.HostDiskMode) {
+	if o != nil && o.HostDiskMode.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetHostDiskMode gets a reference to the given string and assigns it to the HostDiskMode field.
+// SetHostDiskMode gets a reference to the given NullableString and assigns it to the HostDiskMode field.
 func (o *ListServerServicePlans200ResponsePlansInner) SetHostDiskMode(v string) {
-	o.HostDiskMode = &v
+	o.HostDiskMode.Set(&v)
 }
 
-// GetHasDatastore returns the HasDatastore field value if set, zero value otherwise.
+// SetHostDiskModeNil sets the value for HostDiskMode to be an explicit nil
+func (o *ListServerServicePlans200ResponsePlansInner) SetHostDiskModeNil() {
+	o.HostDiskMode.Set(nil)
+}
+
+// UnsetHostDiskMode ensures that no value is present for HostDiskMode, not even an explicit nil
+func (o *ListServerServicePlans200ResponsePlansInner) UnsetHostDiskMode() {
+	o.HostDiskMode.Unset()
+}
+
+// GetHasDatastore returns the HasDatastore field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListServerServicePlans200ResponsePlansInner) GetHasDatastore() string {
-	if o == nil || IsNil(o.HasDatastore) {
+	if o == nil || IsNil(o.HasDatastore.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.HasDatastore
+	return *o.HasDatastore.Get()
 }
 
 // GetHasDatastoreOk returns a tuple with the HasDatastore field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListServerServicePlans200ResponsePlansInner) GetHasDatastoreOk() (*string, bool) {
-	if o == nil || IsNil(o.HasDatastore) {
+	if o == nil {
 		return nil, false
 	}
-	return o.HasDatastore, true
+	return o.HasDatastore.Get(), o.HasDatastore.IsSet()
 }
 
 // IsSetHasDatastore returns a boolean if a field has been set.
 func (o *ListServerServicePlans200ResponsePlansInner) IsSetHasDatastore() bool {
-	if o != nil && !IsNil(o.HasDatastore) {
+	if o != nil && o.HasDatastore.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetHasDatastore gets a reference to the given string and assigns it to the HasDatastore field.
+// SetHasDatastore gets a reference to the given NullableString and assigns it to the HasDatastore field.
 func (o *ListServerServicePlans200ResponsePlansInner) SetHasDatastore(v string) {
-	o.HasDatastore = &v
+	o.HasDatastore.Set(&v)
 }
 
-// GetLvmSupported returns the LvmSupported field value if set, zero value otherwise.
+// SetHasDatastoreNil sets the value for HasDatastore to be an explicit nil
+func (o *ListServerServicePlans200ResponsePlansInner) SetHasDatastoreNil() {
+	o.HasDatastore.Set(nil)
+}
+
+// UnsetHasDatastore ensures that no value is present for HasDatastore, not even an explicit nil
+func (o *ListServerServicePlans200ResponsePlansInner) UnsetHasDatastore() {
+	o.HasDatastore.Unset()
+}
+
+// GetLvmSupported returns the LvmSupported field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListServerServicePlans200ResponsePlansInner) GetLvmSupported() string {
-	if o == nil || IsNil(o.LvmSupported) {
+	if o == nil || IsNil(o.LvmSupported.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.LvmSupported
+	return *o.LvmSupported.Get()
 }
 
 // GetLvmSupportedOk returns a tuple with the LvmSupported field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListServerServicePlans200ResponsePlansInner) GetLvmSupportedOk() (*string, bool) {
-	if o == nil || IsNil(o.LvmSupported) {
+	if o == nil {
 		return nil, false
 	}
-	return o.LvmSupported, true
+	return o.LvmSupported.Get(), o.LvmSupported.IsSet()
 }
 
 // IsSetLvmSupported returns a boolean if a field has been set.
 func (o *ListServerServicePlans200ResponsePlansInner) IsSetLvmSupported() bool {
-	if o != nil && !IsNil(o.LvmSupported) {
+	if o != nil && o.LvmSupported.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetLvmSupported gets a reference to the given string and assigns it to the LvmSupported field.
+// SetLvmSupported gets a reference to the given NullableString and assigns it to the LvmSupported field.
 func (o *ListServerServicePlans200ResponsePlansInner) SetLvmSupported(v string) {
-	o.LvmSupported = &v
+	o.LvmSupported.Set(&v)
 }
 
-// GetMinDisk returns the MinDisk field value if set, zero value otherwise.
+// SetLvmSupportedNil sets the value for LvmSupported to be an explicit nil
+func (o *ListServerServicePlans200ResponsePlansInner) SetLvmSupportedNil() {
+	o.LvmSupported.Set(nil)
+}
+
+// UnsetLvmSupported ensures that no value is present for LvmSupported, not even an explicit nil
+func (o *ListServerServicePlans200ResponsePlansInner) UnsetLvmSupported() {
+	o.LvmSupported.Unset()
+}
+
+// GetMinDisk returns the MinDisk field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListServerServicePlans200ResponsePlansInner) GetMinDisk() string {
-	if o == nil || IsNil(o.MinDisk) {
+	if o == nil || IsNil(o.MinDisk.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.MinDisk
+	return *o.MinDisk.Get()
 }
 
 // GetMinDiskOk returns a tuple with the MinDisk field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListServerServicePlans200ResponsePlansInner) GetMinDiskOk() (*string, bool) {
-	if o == nil || IsNil(o.MinDisk) {
+	if o == nil {
 		return nil, false
 	}
-	return o.MinDisk, true
+	return o.MinDisk.Get(), o.MinDisk.IsSet()
 }
 
 // IsSetMinDisk returns a boolean if a field has been set.
 func (o *ListServerServicePlans200ResponsePlansInner) IsSetMinDisk() bool {
-	if o != nil && !IsNil(o.MinDisk) {
+	if o != nil && o.MinDisk.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetMinDisk gets a reference to the given string and assigns it to the MinDisk field.
+// SetMinDisk gets a reference to the given NullableString and assigns it to the MinDisk field.
 func (o *ListServerServicePlans200ResponsePlansInner) SetMinDisk(v string) {
-	o.MinDisk = &v
+	o.MinDisk.Set(&v)
 }
 
-// GetMaxDisk returns the MaxDisk field value if set, zero value otherwise.
+// SetMinDiskNil sets the value for MinDisk to be an explicit nil
+func (o *ListServerServicePlans200ResponsePlansInner) SetMinDiskNil() {
+	o.MinDisk.Set(nil)
+}
+
+// UnsetMinDisk ensures that no value is present for MinDisk, not even an explicit nil
+func (o *ListServerServicePlans200ResponsePlansInner) UnsetMinDisk() {
+	o.MinDisk.Unset()
+}
+
+// GetMaxDisk returns the MaxDisk field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListServerServicePlans200ResponsePlansInner) GetMaxDisk() string {
-	if o == nil || IsNil(o.MaxDisk) {
+	if o == nil || IsNil(o.MaxDisk.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.MaxDisk
+	return *o.MaxDisk.Get()
 }
 
 // GetMaxDiskOk returns a tuple with the MaxDisk field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListServerServicePlans200ResponsePlansInner) GetMaxDiskOk() (*string, bool) {
-	if o == nil || IsNil(o.MaxDisk) {
+	if o == nil {
 		return nil, false
 	}
-	return o.MaxDisk, true
+	return o.MaxDisk.Get(), o.MaxDisk.IsSet()
 }
 
 // IsSetMaxDisk returns a boolean if a field has been set.
 func (o *ListServerServicePlans200ResponsePlansInner) IsSetMaxDisk() bool {
-	if o != nil && !IsNil(o.MaxDisk) {
+	if o != nil && o.MaxDisk.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetMaxDisk gets a reference to the given string and assigns it to the MaxDisk field.
+// SetMaxDisk gets a reference to the given NullableString and assigns it to the MaxDisk field.
 func (o *ListServerServicePlans200ResponsePlansInner) SetMaxDisk(v string) {
-	o.MaxDisk = &v
+	o.MaxDisk.Set(&v)
+}
+
+// SetMaxDiskNil sets the value for MaxDisk to be an explicit nil
+func (o *ListServerServicePlans200ResponsePlansInner) SetMaxDiskNil() {
+	o.MaxDisk.Set(nil)
+}
+
+// UnsetMaxDisk ensures that no value is present for MaxDisk, not even an explicit nil
+func (o *ListServerServicePlans200ResponsePlansInner) UnsetMaxDisk() {
+	o.MaxDisk.Unset()
 }
 
 // GetDatastores returns the Datastores field value if set, zero value otherwise.
@@ -973,9 +1041,9 @@ func (o *ListServerServicePlans200ResponsePlansInner) SetAutoOptions(v []ListIns
 	o.AutoOptions = v
 }
 
-// GetCpuOptions returns the CpuOptions field value if set, zero value otherwise.
+// GetCpuOptions returns the CpuOptions field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListServerServicePlans200ResponsePlansInner) GetCpuOptions() []map[string]interface{} {
-	if o == nil || IsNil(o.CpuOptions) {
+	if o == nil {
 		var ret []map[string]interface{}
 		return ret
 	}
@@ -984,6 +1052,7 @@ func (o *ListServerServicePlans200ResponsePlansInner) GetCpuOptions() []map[stri
 
 // GetCpuOptionsOk returns a tuple with the CpuOptions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListServerServicePlans200ResponsePlansInner) GetCpuOptionsOk() ([]map[string]interface{}, bool) {
 	if o == nil || IsNil(o.CpuOptions) {
 		return nil, false
@@ -1005,9 +1074,9 @@ func (o *ListServerServicePlans200ResponsePlansInner) SetCpuOptions(v []map[stri
 	o.CpuOptions = v
 }
 
-// GetMemoryOptions returns the MemoryOptions field value if set, zero value otherwise.
+// GetMemoryOptions returns the MemoryOptions field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListServerServicePlans200ResponsePlansInner) GetMemoryOptions() []map[string]interface{} {
-	if o == nil || IsNil(o.MemoryOptions) {
+	if o == nil {
 		var ret []map[string]interface{}
 		return ret
 	}
@@ -1016,6 +1085,7 @@ func (o *ListServerServicePlans200ResponsePlansInner) GetMemoryOptions() []map[s
 
 // GetMemoryOptionsOk returns a tuple with the MemoryOptions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListServerServicePlans200ResponsePlansInner) GetMemoryOptionsOk() ([]map[string]interface{}, bool) {
 	if o == nil || IsNil(o.MemoryOptions) {
 		return nil, false
@@ -1133,36 +1203,47 @@ func (o *ListServerServicePlans200ResponsePlansInner) SetCustomCores(v bool) {
 	o.CustomCores = &v
 }
 
-// GetMaxDisks returns the MaxDisks field value if set, zero value otherwise.
+// GetMaxDisks returns the MaxDisks field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListServerServicePlans200ResponsePlansInner) GetMaxDisks() string {
-	if o == nil || IsNil(o.MaxDisks) {
+	if o == nil || IsNil(o.MaxDisks.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.MaxDisks
+	return *o.MaxDisks.Get()
 }
 
 // GetMaxDisksOk returns a tuple with the MaxDisks field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListServerServicePlans200ResponsePlansInner) GetMaxDisksOk() (*string, bool) {
-	if o == nil || IsNil(o.MaxDisks) {
+	if o == nil {
 		return nil, false
 	}
-	return o.MaxDisks, true
+	return o.MaxDisks.Get(), o.MaxDisks.IsSet()
 }
 
 // IsSetMaxDisks returns a boolean if a field has been set.
 func (o *ListServerServicePlans200ResponsePlansInner) IsSetMaxDisks() bool {
-	if o != nil && !IsNil(o.MaxDisks) {
+	if o != nil && o.MaxDisks.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetMaxDisks gets a reference to the given string and assigns it to the MaxDisks field.
+// SetMaxDisks gets a reference to the given NullableString and assigns it to the MaxDisks field.
 func (o *ListServerServicePlans200ResponsePlansInner) SetMaxDisks(v string) {
-	o.MaxDisks = &v
+	o.MaxDisks.Set(&v)
+}
+
+// SetMaxDisksNil sets the value for MaxDisks to be an explicit nil
+func (o *ListServerServicePlans200ResponsePlansInner) SetMaxDisksNil() {
+	o.MaxDisks.Set(nil)
+}
+
+// UnsetMaxDisks ensures that no value is present for MaxDisks, not even an explicit nil
+func (o *ListServerServicePlans200ResponsePlansInner) UnsetMaxDisks() {
+	o.MaxDisks.Unset()
 }
 
 // GetMemorySizeType returns the MemorySizeType field value if set, zero value otherwise.
@@ -1249,13 +1330,13 @@ func (o ListServerServicePlans200ResponsePlansInner) ToMap() (map[string]interfa
 	if !IsNil(o.CustomCoresPerSocket) {
 		toSerialize["customCoresPerSocket"] = o.CustomCoresPerSocket
 	}
-	if !IsNil(o.CoresPerSocket) {
-		toSerialize["coresPerSocket"] = o.CoresPerSocket
+	if o.CoresPerSocket.IsSet() {
+		toSerialize["coresPerSocket"] = o.CoresPerSocket.Get()
 	}
-	if !IsNil(o.StorageTypes) {
+	if o.StorageTypes != nil {
 		toSerialize["storageTypes"] = o.StorageTypes
 	}
-	if !IsNil(o.RootStorageTypes) {
+	if o.RootStorageTypes != nil {
 		toSerialize["rootStorageTypes"] = o.RootStorageTypes
 	}
 	if !IsNil(o.AddVolumes) {
@@ -1267,20 +1348,20 @@ func (o ListServerServicePlans200ResponsePlansInner) ToMap() (map[string]interfa
 	if !IsNil(o.RootDiskCustomizable) {
 		toSerialize["rootDiskCustomizable"] = o.RootDiskCustomizable
 	}
-	if !IsNil(o.HostDiskMode) {
-		toSerialize["hostDiskMode"] = o.HostDiskMode
+	if o.HostDiskMode.IsSet() {
+		toSerialize["hostDiskMode"] = o.HostDiskMode.Get()
 	}
-	if !IsNil(o.HasDatastore) {
-		toSerialize["hasDatastore"] = o.HasDatastore
+	if o.HasDatastore.IsSet() {
+		toSerialize["hasDatastore"] = o.HasDatastore.Get()
 	}
-	if !IsNil(o.LvmSupported) {
-		toSerialize["lvmSupported"] = o.LvmSupported
+	if o.LvmSupported.IsSet() {
+		toSerialize["lvmSupported"] = o.LvmSupported.Get()
 	}
-	if !IsNil(o.MinDisk) {
-		toSerialize["minDisk"] = o.MinDisk
+	if o.MinDisk.IsSet() {
+		toSerialize["minDisk"] = o.MinDisk.Get()
 	}
-	if !IsNil(o.MaxDisk) {
-		toSerialize["maxDisk"] = o.MaxDisk
+	if o.MaxDisk.IsSet() {
+		toSerialize["maxDisk"] = o.MaxDisk.Get()
 	}
 	if !IsNil(o.Datastores) {
 		toSerialize["datastores"] = o.Datastores
@@ -1291,10 +1372,10 @@ func (o ListServerServicePlans200ResponsePlansInner) ToMap() (map[string]interfa
 	if !IsNil(o.AutoOptions) {
 		toSerialize["autoOptions"] = o.AutoOptions
 	}
-	if !IsNil(o.CpuOptions) {
+	if o.CpuOptions != nil {
 		toSerialize["cpuOptions"] = o.CpuOptions
 	}
-	if !IsNil(o.MemoryOptions) {
+	if o.MemoryOptions != nil {
 		toSerialize["memoryOptions"] = o.MemoryOptions
 	}
 	if !IsNil(o.RootCustomSizeOptions) {
@@ -1306,8 +1387,8 @@ func (o ListServerServicePlans200ResponsePlansInner) ToMap() (map[string]interfa
 	if !IsNil(o.CustomCores) {
 		toSerialize["customCores"] = o.CustomCores
 	}
-	if !IsNil(o.MaxDisks) {
-		toSerialize["maxDisks"] = o.MaxDisks
+	if o.MaxDisks.IsSet() {
+		toSerialize["maxDisks"] = o.MaxDisks.Get()
 	}
 	if !IsNil(o.MemorySizeType) {
 		toSerialize["memorySizeType"] = o.MemorySizeType

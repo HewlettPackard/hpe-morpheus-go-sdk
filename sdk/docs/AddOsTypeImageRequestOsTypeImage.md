@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **OsType** | **int32** | id of osType | 
 **VirtualImage** | **int32** | id of virtualImage | 
-**ProvisionType** | Pointer to **int32** | id of provisionType | [optional] 
-**Zone** | Pointer to **int32** | id of cloud/zone | [optional] 
+**ProvisionType** | Pointer to **NullableInt32** | id of provisionType | [optional] 
+**Zone** | Pointer to **NullableInt32** | id of cloud/zone | [optional] 
 
 ## Methods
 
@@ -93,6 +93,16 @@ SetProvisionType sets ProvisionType field to given value.
 
 HasProvisionType returns a boolean if a field has been set.
 
+### SetProvisionTypeNil
+
+`func (o *AddOsTypeImageRequestOsTypeImage) SetProvisionTypeNil(b bool)`
+
+ SetProvisionTypeNil sets the value for ProvisionType to be an explicit nil
+
+### UnsetProvisionType
+`func (o *AddOsTypeImageRequestOsTypeImage) UnsetProvisionType()`
+
+UnsetProvisionType ensures that no value is present for ProvisionType, not even an explicit nil
 ### GetZone
 
 `func (o *AddOsTypeImageRequestOsTypeImage) GetZone() int32`
@@ -118,6 +128,16 @@ SetZone sets Zone field to given value.
 
 HasZone returns a boolean if a field has been set.
 
+### SetZoneNil
+
+`func (o *AddOsTypeImageRequestOsTypeImage) SetZoneNil(b bool)`
+
+ SetZoneNil sets the value for Zone to be an explicit nil
+
+### UnsetZone
+`func (o *AddOsTypeImageRequestOsTypeImage) UnsetZone()`
+
+UnsetZone ensures that no value is present for Zone, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

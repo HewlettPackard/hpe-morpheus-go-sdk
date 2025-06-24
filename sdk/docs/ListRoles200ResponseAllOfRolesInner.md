@@ -7,17 +7,17 @@ Name | Type | Description | Notes
 **Id** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** | a unique name of the role | [optional] 
 **Authority** | Pointer to **string** | Alias for name | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
-**LandingUrl** | Pointer to **string** | An optional override for the default landing page after login for a user. | [optional] 
+**Description** | Pointer to **NullableString** |  | [optional] 
+**LandingUrl** | Pointer to **NullableString** | An optional override for the default landing page after login for a user. | [optional] 
 **Scope** | Pointer to **string** |  | [optional] 
 **RoleType** | Pointer to **string** |  | [optional] 
 **Multitenant** | Pointer to **bool** |  | [optional] 
 **MultitenantLocked** | Pointer to **bool** |  | [optional] 
-**ParentRoleId** | Pointer to **string** |  | [optional] 
+**ParentRoleId** | Pointer to **NullableString** |  | [optional] 
 **Diverged** | Pointer to **bool** |  | [optional] 
 **OwnerId** | Pointer to **int64** |  | [optional] 
-**Owner** | Pointer to [**ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
-**DefaultPersona** | Pointer to **string** |  | [optional] 
+**Owner** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**DefaultPersona** | Pointer to **NullableString** |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
 
@@ -140,6 +140,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *ListRoles200ResponseAllOfRolesInner) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *ListRoles200ResponseAllOfRolesInner) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetLandingUrl
 
 `func (o *ListRoles200ResponseAllOfRolesInner) GetLandingUrl() string`
@@ -165,6 +175,16 @@ SetLandingUrl sets LandingUrl field to given value.
 
 HasLandingUrl returns a boolean if a field has been set.
 
+### SetLandingUrlNil
+
+`func (o *ListRoles200ResponseAllOfRolesInner) SetLandingUrlNil(b bool)`
+
+ SetLandingUrlNil sets the value for LandingUrl to be an explicit nil
+
+### UnsetLandingUrl
+`func (o *ListRoles200ResponseAllOfRolesInner) UnsetLandingUrl()`
+
+UnsetLandingUrl ensures that no value is present for LandingUrl, not even an explicit nil
 ### GetScope
 
 `func (o *ListRoles200ResponseAllOfRolesInner) GetScope() string`
@@ -290,6 +310,16 @@ SetParentRoleId sets ParentRoleId field to given value.
 
 HasParentRoleId returns a boolean if a field has been set.
 
+### SetParentRoleIdNil
+
+`func (o *ListRoles200ResponseAllOfRolesInner) SetParentRoleIdNil(b bool)`
+
+ SetParentRoleIdNil sets the value for ParentRoleId to be an explicit nil
+
+### UnsetParentRoleId
+`func (o *ListRoles200ResponseAllOfRolesInner) UnsetParentRoleId()`
+
+UnsetParentRoleId ensures that no value is present for ParentRoleId, not even an explicit nil
 ### GetDiverged
 
 `func (o *ListRoles200ResponseAllOfRolesInner) GetDiverged() bool`
@@ -342,20 +372,20 @@ HasOwnerId returns a boolean if a field has been set.
 
 ### GetOwner
 
-`func (o *ListRoles200ResponseAllOfRolesInner) GetOwner() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *ListRoles200ResponseAllOfRolesInner) GetOwner() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetOwner returns the Owner field if non-nil, zero value otherwise.
 
 ### GetOwnerOk
 
-`func (o *ListRoles200ResponseAllOfRolesInner) GetOwnerOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *ListRoles200ResponseAllOfRolesInner) GetOwnerOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOwner
 
-`func (o *ListRoles200ResponseAllOfRolesInner) SetOwner(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *ListRoles200ResponseAllOfRolesInner) SetOwner(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetOwner sets Owner field to given value.
 
@@ -390,6 +420,16 @@ SetDefaultPersona sets DefaultPersona field to given value.
 
 HasDefaultPersona returns a boolean if a field has been set.
 
+### SetDefaultPersonaNil
+
+`func (o *ListRoles200ResponseAllOfRolesInner) SetDefaultPersonaNil(b bool)`
+
+ SetDefaultPersonaNil sets the value for DefaultPersona to be an explicit nil
+
+### UnsetDefaultPersona
+`func (o *ListRoles200ResponseAllOfRolesInner) UnsetDefaultPersona()`
+
+UnsetDefaultPersona ensures that no value is present for DefaultPersona, not even an explicit nil
 ### GetDateCreated
 
 `func (o *ListRoles200ResponseAllOfRolesInner) GetDateCreated() time.Time`

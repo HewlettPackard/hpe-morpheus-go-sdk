@@ -21,18 +21,18 @@ var _ MappedNullable = &GetNetworkDhcpServer200ResponseNetworkDhcpServer{}
 
 // GetNetworkDhcpServer200ResponseNetworkDhcpServer struct for GetNetworkDhcpServer200ResponseNetworkDhcpServer
 type GetNetworkDhcpServer200ResponseNetworkDhcpServer struct {
-	Id                   *int32                                                  `json:"id,omitempty"`
-	DateCreated          *time.Time                                              `json:"dateCreated,omitempty"`
-	ProviderId           *string                                                 `json:"providerId,omitempty"`
-	ServerIpAddress      *string                                                 `json:"serverIpAddress,omitempty"`
-	LastUpdated          *time.Time                                              `json:"lastUpdated,omitempty"`
-	LeaseTime            *int32                                                  `json:"leaseTime,omitempty"`
-	Name                 *string                                                 `json:"name,omitempty"`
-	ExternalId           *string                                                 `json:"externalId,omitempty"`
-	Config               *GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig `json:"config,omitempty"`
-	Owner                *CreateLoadBalancerRequestLoadBalancerTenantsInner      `json:"owner,omitempty"`
-	NetworkServer        *CreateLoadBalancerRequestLoadBalancerTenantsInner      `json:"networkServer,omitempty"`
-	AdditionalProperties map[string]interface{}                                  `json:",remain"`
+	Id                   *int32                                                              `json:"id,omitempty"`
+	DateCreated          *time.Time                                                          `json:"dateCreated,omitempty"`
+	ProviderId           *string                                                             `json:"providerId,omitempty"`
+	ServerIpAddress      *string                                                             `json:"serverIpAddress,omitempty"`
+	LastUpdated          *time.Time                                                          `json:"lastUpdated,omitempty"`
+	LeaseTime            *int32                                                              `json:"leaseTime,omitempty"`
+	Name                 *string                                                             `json:"name,omitempty"`
+	ExternalId           *string                                                             `json:"externalId,omitempty"`
+	Config               *GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig             `json:"config,omitempty"`
+	Owner                *SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume `json:"owner,omitempty"`
+	NetworkServer        *SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume `json:"networkServer,omitempty"`
+	AdditionalProperties map[string]interface{}                                              `json:",remain"`
 }
 
 type _GetNetworkDhcpServer200ResponseNetworkDhcpServer GetNetworkDhcpServer200ResponseNetworkDhcpServer
@@ -343,9 +343,9 @@ func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) SetConfig(v GetNetwor
 }
 
 // GetOwner returns the Owner field value if set, zero value otherwise.
-func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) GetOwner() CreateLoadBalancerRequestLoadBalancerTenantsInner {
+func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) GetOwner() SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume {
 	if o == nil || IsNil(o.Owner) {
-		var ret CreateLoadBalancerRequestLoadBalancerTenantsInner
+		var ret SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume
 		return ret
 	}
 	return *o.Owner
@@ -353,7 +353,7 @@ func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) GetOwner() CreateLoad
 
 // GetOwnerOk returns a tuple with the Owner field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) GetOwnerOk() (*CreateLoadBalancerRequestLoadBalancerTenantsInner, bool) {
+func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) GetOwnerOk() (*SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume, bool) {
 	if o == nil || IsNil(o.Owner) {
 		return nil, false
 	}
@@ -369,15 +369,15 @@ func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) IsSetOwner() bool {
 	return false
 }
 
-// SetOwner gets a reference to the given CreateLoadBalancerRequestLoadBalancerTenantsInner and assigns it to the Owner field.
-func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) SetOwner(v CreateLoadBalancerRequestLoadBalancerTenantsInner) {
+// SetOwner gets a reference to the given SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume and assigns it to the Owner field.
+func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) SetOwner(v SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume) {
 	o.Owner = &v
 }
 
 // GetNetworkServer returns the NetworkServer field value if set, zero value otherwise.
-func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) GetNetworkServer() CreateLoadBalancerRequestLoadBalancerTenantsInner {
+func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) GetNetworkServer() SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume {
 	if o == nil || IsNil(o.NetworkServer) {
-		var ret CreateLoadBalancerRequestLoadBalancerTenantsInner
+		var ret SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume
 		return ret
 	}
 	return *o.NetworkServer
@@ -385,7 +385,7 @@ func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) GetNetworkServer() Cr
 
 // GetNetworkServerOk returns a tuple with the NetworkServer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) GetNetworkServerOk() (*CreateLoadBalancerRequestLoadBalancerTenantsInner, bool) {
+func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) GetNetworkServerOk() (*SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume, bool) {
 	if o == nil || IsNil(o.NetworkServer) {
 		return nil, false
 	}
@@ -401,8 +401,8 @@ func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) IsSetNetworkServer() 
 	return false
 }
 
-// SetNetworkServer gets a reference to the given CreateLoadBalancerRequestLoadBalancerTenantsInner and assigns it to the NetworkServer field.
-func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) SetNetworkServer(v CreateLoadBalancerRequestLoadBalancerTenantsInner) {
+// SetNetworkServer gets a reference to the given SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume and assigns it to the NetworkServer field.
+func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) SetNetworkServer(v SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume) {
 	o.NetworkServer = &v
 }
 

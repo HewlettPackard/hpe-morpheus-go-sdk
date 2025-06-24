@@ -8,20 +8,20 @@ Name | Type | Description | Notes
 **Name** | Pointer to **string** |  | [optional] 
 **Labels** | Pointer to **[]string** |  | [optional] 
 **Type** | Pointer to [**ListBackupSettings200ResponseBackupSettingsDefaultSchedule**](ListBackupSettings200ResponseBackupSettingsDefaultSchedule.md) |  | [optional] 
-**JobSummary** | Pointer to **string** |  | [optional] 
-**ScheduleMode** | Pointer to **string** |  | [optional] 
-**DateTime** | Pointer to **time.Time** |  | [optional] 
-**Status** | Pointer to **string** |  | [optional] 
-**Namespace** | Pointer to **string** |  | [optional] 
+**JobSummary** | Pointer to **NullableString** |  | [optional] 
+**ScheduleMode** | Pointer to **NullableString** |  | [optional] 
+**DateTime** | Pointer to **NullableTime** |  | [optional] 
+**Status** | Pointer to **NullableString** |  | [optional] 
+**Namespace** | Pointer to **NullableString** |  | [optional] 
 **Category** | Pointer to **string** |  | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **NullableString** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
-**LastRun** | Pointer to **time.Time** |  | [optional] 
-**LastResult** | Pointer to **string** |  | [optional] 
-**CreatedBy** | Pointer to [**GetAlerts200ResponseAllOfChecksInnerCreatedBy**](GetAlerts200ResponseAllOfChecksInnerCreatedBy.md) |  | [optional] 
-**TargetType** | Pointer to **string** |  | [optional] 
+**LastRun** | Pointer to **NullableTime** |  | [optional] 
+**LastResult** | Pointer to **NullableString** |  | [optional] 
+**CreatedBy** | Pointer to [**ListActivity200ResponseAllOfActivityInnerActivityInnerUser**](ListActivity200ResponseAllOfActivityInnerActivityInnerUser.md) |  | [optional] 
+**TargetType** | Pointer to **NullableString** |  | [optional] 
 **Targets** | Pointer to **[]map[string]interface{}** |  | [optional] 
 **CustomConfig** | Pointer to **map[string]interface{}** |  | [optional] 
 **CustomOptions** | Pointer to **map[string]interface{}** |  | [optional] 
@@ -170,6 +170,16 @@ SetJobSummary sets JobSummary field to given value.
 
 HasJobSummary returns a boolean if a field has been set.
 
+### SetJobSummaryNil
+
+`func (o *ListClusterJobs200ResponseAllOfJobsInner) SetJobSummaryNil(b bool)`
+
+ SetJobSummaryNil sets the value for JobSummary to be an explicit nil
+
+### UnsetJobSummary
+`func (o *ListClusterJobs200ResponseAllOfJobsInner) UnsetJobSummary()`
+
+UnsetJobSummary ensures that no value is present for JobSummary, not even an explicit nil
 ### GetScheduleMode
 
 `func (o *ListClusterJobs200ResponseAllOfJobsInner) GetScheduleMode() string`
@@ -195,6 +205,16 @@ SetScheduleMode sets ScheduleMode field to given value.
 
 HasScheduleMode returns a boolean if a field has been set.
 
+### SetScheduleModeNil
+
+`func (o *ListClusterJobs200ResponseAllOfJobsInner) SetScheduleModeNil(b bool)`
+
+ SetScheduleModeNil sets the value for ScheduleMode to be an explicit nil
+
+### UnsetScheduleMode
+`func (o *ListClusterJobs200ResponseAllOfJobsInner) UnsetScheduleMode()`
+
+UnsetScheduleMode ensures that no value is present for ScheduleMode, not even an explicit nil
 ### GetDateTime
 
 `func (o *ListClusterJobs200ResponseAllOfJobsInner) GetDateTime() time.Time`
@@ -220,6 +240,16 @@ SetDateTime sets DateTime field to given value.
 
 HasDateTime returns a boolean if a field has been set.
 
+### SetDateTimeNil
+
+`func (o *ListClusterJobs200ResponseAllOfJobsInner) SetDateTimeNil(b bool)`
+
+ SetDateTimeNil sets the value for DateTime to be an explicit nil
+
+### UnsetDateTime
+`func (o *ListClusterJobs200ResponseAllOfJobsInner) UnsetDateTime()`
+
+UnsetDateTime ensures that no value is present for DateTime, not even an explicit nil
 ### GetStatus
 
 `func (o *ListClusterJobs200ResponseAllOfJobsInner) GetStatus() string`
@@ -245,6 +275,16 @@ SetStatus sets Status field to given value.
 
 HasStatus returns a boolean if a field has been set.
 
+### SetStatusNil
+
+`func (o *ListClusterJobs200ResponseAllOfJobsInner) SetStatusNil(b bool)`
+
+ SetStatusNil sets the value for Status to be an explicit nil
+
+### UnsetStatus
+`func (o *ListClusterJobs200ResponseAllOfJobsInner) UnsetStatus()`
+
+UnsetStatus ensures that no value is present for Status, not even an explicit nil
 ### GetNamespace
 
 `func (o *ListClusterJobs200ResponseAllOfJobsInner) GetNamespace() string`
@@ -270,6 +310,16 @@ SetNamespace sets Namespace field to given value.
 
 HasNamespace returns a boolean if a field has been set.
 
+### SetNamespaceNil
+
+`func (o *ListClusterJobs200ResponseAllOfJobsInner) SetNamespaceNil(b bool)`
+
+ SetNamespaceNil sets the value for Namespace to be an explicit nil
+
+### UnsetNamespace
+`func (o *ListClusterJobs200ResponseAllOfJobsInner) UnsetNamespace()`
+
+UnsetNamespace ensures that no value is present for Namespace, not even an explicit nil
 ### GetCategory
 
 `func (o *ListClusterJobs200ResponseAllOfJobsInner) GetCategory() string`
@@ -320,6 +370,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *ListClusterJobs200ResponseAllOfJobsInner) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *ListClusterJobs200ResponseAllOfJobsInner) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetEnabled
 
 `func (o *ListClusterJobs200ResponseAllOfJobsInner) GetEnabled() bool`
@@ -420,6 +480,16 @@ SetLastRun sets LastRun field to given value.
 
 HasLastRun returns a boolean if a field has been set.
 
+### SetLastRunNil
+
+`func (o *ListClusterJobs200ResponseAllOfJobsInner) SetLastRunNil(b bool)`
+
+ SetLastRunNil sets the value for LastRun to be an explicit nil
+
+### UnsetLastRun
+`func (o *ListClusterJobs200ResponseAllOfJobsInner) UnsetLastRun()`
+
+UnsetLastRun ensures that no value is present for LastRun, not even an explicit nil
 ### GetLastResult
 
 `func (o *ListClusterJobs200ResponseAllOfJobsInner) GetLastResult() string`
@@ -445,22 +515,32 @@ SetLastResult sets LastResult field to given value.
 
 HasLastResult returns a boolean if a field has been set.
 
+### SetLastResultNil
+
+`func (o *ListClusterJobs200ResponseAllOfJobsInner) SetLastResultNil(b bool)`
+
+ SetLastResultNil sets the value for LastResult to be an explicit nil
+
+### UnsetLastResult
+`func (o *ListClusterJobs200ResponseAllOfJobsInner) UnsetLastResult()`
+
+UnsetLastResult ensures that no value is present for LastResult, not even an explicit nil
 ### GetCreatedBy
 
-`func (o *ListClusterJobs200ResponseAllOfJobsInner) GetCreatedBy() GetAlerts200ResponseAllOfChecksInnerCreatedBy`
+`func (o *ListClusterJobs200ResponseAllOfJobsInner) GetCreatedBy() ListActivity200ResponseAllOfActivityInnerActivityInnerUser`
 
 GetCreatedBy returns the CreatedBy field if non-nil, zero value otherwise.
 
 ### GetCreatedByOk
 
-`func (o *ListClusterJobs200ResponseAllOfJobsInner) GetCreatedByOk() (*GetAlerts200ResponseAllOfChecksInnerCreatedBy, bool)`
+`func (o *ListClusterJobs200ResponseAllOfJobsInner) GetCreatedByOk() (*ListActivity200ResponseAllOfActivityInnerActivityInnerUser, bool)`
 
 GetCreatedByOk returns a tuple with the CreatedBy field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCreatedBy
 
-`func (o *ListClusterJobs200ResponseAllOfJobsInner) SetCreatedBy(v GetAlerts200ResponseAllOfChecksInnerCreatedBy)`
+`func (o *ListClusterJobs200ResponseAllOfJobsInner) SetCreatedBy(v ListActivity200ResponseAllOfActivityInnerActivityInnerUser)`
 
 SetCreatedBy sets CreatedBy field to given value.
 
@@ -495,6 +575,16 @@ SetTargetType sets TargetType field to given value.
 
 HasTargetType returns a boolean if a field has been set.
 
+### SetTargetTypeNil
+
+`func (o *ListClusterJobs200ResponseAllOfJobsInner) SetTargetTypeNil(b bool)`
+
+ SetTargetTypeNil sets the value for TargetType to be an explicit nil
+
+### UnsetTargetType
+`func (o *ListClusterJobs200ResponseAllOfJobsInner) UnsetTargetType()`
+
+UnsetTargetType ensures that no value is present for TargetType, not even an explicit nil
 ### GetTargets
 
 `func (o *ListClusterJobs200ResponseAllOfJobsInner) GetTargets() []map[string]interface{}`
@@ -545,6 +635,16 @@ SetCustomConfig sets CustomConfig field to given value.
 
 HasCustomConfig returns a boolean if a field has been set.
 
+### SetCustomConfigNil
+
+`func (o *ListClusterJobs200ResponseAllOfJobsInner) SetCustomConfigNil(b bool)`
+
+ SetCustomConfigNil sets the value for CustomConfig to be an explicit nil
+
+### UnsetCustomConfig
+`func (o *ListClusterJobs200ResponseAllOfJobsInner) UnsetCustomConfig()`
+
+UnsetCustomConfig ensures that no value is present for CustomConfig, not even an explicit nil
 ### GetCustomOptions
 
 `func (o *ListClusterJobs200ResponseAllOfJobsInner) GetCustomOptions() map[string]interface{}`
@@ -570,6 +670,16 @@ SetCustomOptions sets CustomOptions field to given value.
 
 HasCustomOptions returns a boolean if a field has been set.
 
+### SetCustomOptionsNil
+
+`func (o *ListClusterJobs200ResponseAllOfJobsInner) SetCustomOptionsNil(b bool)`
+
+ SetCustomOptionsNil sets the value for CustomOptions to be an explicit nil
+
+### UnsetCustomOptions
+`func (o *ListClusterJobs200ResponseAllOfJobsInner) UnsetCustomOptions()`
+
+UnsetCustomOptions ensures that no value is present for CustomOptions, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

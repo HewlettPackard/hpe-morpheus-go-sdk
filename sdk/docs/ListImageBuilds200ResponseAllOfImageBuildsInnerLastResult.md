@@ -5,17 +5,17 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
-**ImageBuild** | Pointer to [**ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
+**ImageBuild** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **BuildNumber** | Pointer to **int64** |  | [optional] 
 **StartDate** | Pointer to **time.Time** |  | [optional] 
-**EndDate** | Pointer to **time.Time** |  | [optional] 
+**EndDate** | Pointer to **NullableTime** |  | [optional] 
 **StatusMessage** | Pointer to **string** |  | [optional] 
 **StatusPercent** | Pointer to **int64** |  | [optional] 
-**StatusEta** | Pointer to **string** |  | [optional] 
+**StatusEta** | Pointer to **NullableString** |  | [optional] 
 **Status** | Pointer to **string** |  | [optional] 
-**ErrorMessage** | Pointer to **string** |  | [optional] 
-**CreatedBy** | Pointer to [**GetArchiveBucket200ResponseArchiveFilesInnerCreatedBy**](GetArchiveBucket200ResponseArchiveFilesInnerCreatedBy.md) |  | [optional] 
-**TempInstance** | Pointer to **string** |  | [optional] 
+**ErrorMessage** | Pointer to **NullableString** |  | [optional] 
+**CreatedBy** | Pointer to [**ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy**](ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy.md) |  | [optional] 
+**TempInstance** | Pointer to **NullableString** |  | [optional] 
 **VirtualImages** | Pointer to **[]map[string]interface{}** |  | [optional] 
 
 ## Methods
@@ -64,20 +64,20 @@ HasId returns a boolean if a field has been set.
 
 ### GetImageBuild
 
-`func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult) GetImageBuild() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult) GetImageBuild() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetImageBuild returns the ImageBuild field if non-nil, zero value otherwise.
 
 ### GetImageBuildOk
 
-`func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult) GetImageBuildOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult) GetImageBuildOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetImageBuildOk returns a tuple with the ImageBuild field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetImageBuild
 
-`func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult) SetImageBuild(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult) SetImageBuild(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetImageBuild sets ImageBuild field to given value.
 
@@ -162,6 +162,16 @@ SetEndDate sets EndDate field to given value.
 
 HasEndDate returns a boolean if a field has been set.
 
+### SetEndDateNil
+
+`func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult) SetEndDateNil(b bool)`
+
+ SetEndDateNil sets the value for EndDate to be an explicit nil
+
+### UnsetEndDate
+`func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult) UnsetEndDate()`
+
+UnsetEndDate ensures that no value is present for EndDate, not even an explicit nil
 ### GetStatusMessage
 
 `func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult) GetStatusMessage() string`
@@ -237,6 +247,16 @@ SetStatusEta sets StatusEta field to given value.
 
 HasStatusEta returns a boolean if a field has been set.
 
+### SetStatusEtaNil
+
+`func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult) SetStatusEtaNil(b bool)`
+
+ SetStatusEtaNil sets the value for StatusEta to be an explicit nil
+
+### UnsetStatusEta
+`func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult) UnsetStatusEta()`
+
+UnsetStatusEta ensures that no value is present for StatusEta, not even an explicit nil
 ### GetStatus
 
 `func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult) GetStatus() string`
@@ -287,22 +307,32 @@ SetErrorMessage sets ErrorMessage field to given value.
 
 HasErrorMessage returns a boolean if a field has been set.
 
+### SetErrorMessageNil
+
+`func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult) SetErrorMessageNil(b bool)`
+
+ SetErrorMessageNil sets the value for ErrorMessage to be an explicit nil
+
+### UnsetErrorMessage
+`func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult) UnsetErrorMessage()`
+
+UnsetErrorMessage ensures that no value is present for ErrorMessage, not even an explicit nil
 ### GetCreatedBy
 
-`func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult) GetCreatedBy() GetArchiveBucket200ResponseArchiveFilesInnerCreatedBy`
+`func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult) GetCreatedBy() ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy`
 
 GetCreatedBy returns the CreatedBy field if non-nil, zero value otherwise.
 
 ### GetCreatedByOk
 
-`func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult) GetCreatedByOk() (*GetArchiveBucket200ResponseArchiveFilesInnerCreatedBy, bool)`
+`func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult) GetCreatedByOk() (*ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy, bool)`
 
 GetCreatedByOk returns a tuple with the CreatedBy field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCreatedBy
 
-`func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult) SetCreatedBy(v GetArchiveBucket200ResponseArchiveFilesInnerCreatedBy)`
+`func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult) SetCreatedBy(v ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy)`
 
 SetCreatedBy sets CreatedBy field to given value.
 
@@ -337,6 +367,16 @@ SetTempInstance sets TempInstance field to given value.
 
 HasTempInstance returns a boolean if a field has been set.
 
+### SetTempInstanceNil
+
+`func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult) SetTempInstanceNil(b bool)`
+
+ SetTempInstanceNil sets the value for TempInstance to be an explicit nil
+
+### UnsetTempInstance
+`func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult) UnsetTempInstance()`
+
+UnsetTempInstance ensures that no value is present for TempInstance, not even an explicit nil
 ### GetVirtualImages
 
 `func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult) GetVirtualImages() []map[string]interface{}`

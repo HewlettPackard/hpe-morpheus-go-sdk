@@ -7,24 +7,24 @@ Name | Type | Description | Notes
 **Id** | Pointer to **int64** |  | [optional] 
 **LoadBalancer** | Pointer to [**ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerLoadBalancer**](ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerLoadBalancer.md) |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**Category** | Pointer to **string** |  | [optional] 
+**Category** | Pointer to **NullableString** |  | [optional] 
 **Visibility** | Pointer to **string** |  | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **NullableString** |  | [optional] 
 **InternalId** | Pointer to **string** |  | [optional] 
 **ExternalId** | Pointer to **string** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
-**VipSticky** | Pointer to **string** |  | [optional] 
+**VipSticky** | Pointer to **NullableString** |  | [optional] 
 **VipBalance** | Pointer to **string** |  | [optional] 
-**AllowNat** | Pointer to **string** |  | [optional] 
-**AllowSnat** | Pointer to **string** |  | [optional] 
-**VipClientIpMode** | Pointer to **string** |  | [optional] 
-**VipServerIpMode** | Pointer to **string** |  | [optional] 
+**AllowNat** | Pointer to **NullableString** |  | [optional] 
+**AllowSnat** | Pointer to **NullableString** |  | [optional] 
+**VipClientIpMode** | Pointer to **NullableString** |  | [optional] 
+**VipServerIpMode** | Pointer to **NullableString** |  | [optional] 
 **MinActive** | Pointer to **int64** |  | [optional] 
-**MinInService** | Pointer to **string** |  | [optional] 
-**MinUpMonitor** | Pointer to **string** |  | [optional] 
-**MinUpAction** | Pointer to **string** |  | [optional] 
-**MaxQueueDepth** | Pointer to **string** |  | [optional] 
-**MaxQueueTime** | Pointer to **string** |  | [optional] 
+**MinInService** | Pointer to **NullableString** |  | [optional] 
+**MinUpMonitor** | Pointer to **NullableString** |  | [optional] 
+**MinUpAction** | Pointer to **NullableString** |  | [optional] 
+**MaxQueueDepth** | Pointer to **NullableString** |  | [optional] 
+**MaxQueueTime** | Pointer to **NullableString** |  | [optional] 
 **NumberActive** | Pointer to **int64** |  | [optional] 
 **NumberInService** | Pointer to **int64** |  | [optional] 
 **HealthScore** | Pointer to **int64** |  | [optional] 
@@ -32,16 +32,16 @@ Name | Type | Description | Notes
 **HealthPenalty** | Pointer to **int64** |  | [optional] 
 **SecurityPenalty** | Pointer to **int64** |  | [optional] 
 **ErrorPenalty** | Pointer to **int64** |  | [optional] 
-**DownAction** | Pointer to **string** |  | [optional] 
-**RampTime** | Pointer to **string** |  | [optional] 
-**Port** | Pointer to **string** |  | [optional] 
-**PortType** | Pointer to **string** |  | [optional] 
+**DownAction** | Pointer to **NullableString** |  | [optional] 
+**RampTime** | Pointer to **NullableString** |  | [optional] 
+**Port** | Pointer to **NullableString** |  | [optional] 
+**PortType** | Pointer to **NullableString** |  | [optional] 
 **Status** | Pointer to **string** |  | [optional] 
-**Nodes** | Pointer to [**[]ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
-**Monitors** | Pointer to [**[]ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
+**Nodes** | Pointer to [**[]GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**Monitors** | Pointer to [**[]GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **Members** | Pointer to **[]map[string]interface{}** |  | [optional] 
 **Config** | Pointer to **map[string]interface{}** |  | [optional] 
-**CreatedBy** | Pointer to **string** |  | [optional] 
+**CreatedBy** | Pointer to **NullableString** |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
 
@@ -164,6 +164,16 @@ SetCategory sets Category field to given value.
 
 HasCategory returns a boolean if a field has been set.
 
+### SetCategoryNil
+
+`func (o *ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner) SetCategoryNil(b bool)`
+
+ SetCategoryNil sets the value for Category to be an explicit nil
+
+### UnsetCategory
+`func (o *ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner) UnsetCategory()`
+
+UnsetCategory ensures that no value is present for Category, not even an explicit nil
 ### GetVisibility
 
 `func (o *ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner) GetVisibility() string`
@@ -214,6 +224,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetInternalId
 
 `func (o *ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner) GetInternalId() string`
@@ -314,6 +334,16 @@ SetVipSticky sets VipSticky field to given value.
 
 HasVipSticky returns a boolean if a field has been set.
 
+### SetVipStickyNil
+
+`func (o *ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner) SetVipStickyNil(b bool)`
+
+ SetVipStickyNil sets the value for VipSticky to be an explicit nil
+
+### UnsetVipSticky
+`func (o *ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner) UnsetVipSticky()`
+
+UnsetVipSticky ensures that no value is present for VipSticky, not even an explicit nil
 ### GetVipBalance
 
 `func (o *ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner) GetVipBalance() string`
@@ -364,6 +394,16 @@ SetAllowNat sets AllowNat field to given value.
 
 HasAllowNat returns a boolean if a field has been set.
 
+### SetAllowNatNil
+
+`func (o *ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner) SetAllowNatNil(b bool)`
+
+ SetAllowNatNil sets the value for AllowNat to be an explicit nil
+
+### UnsetAllowNat
+`func (o *ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner) UnsetAllowNat()`
+
+UnsetAllowNat ensures that no value is present for AllowNat, not even an explicit nil
 ### GetAllowSnat
 
 `func (o *ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner) GetAllowSnat() string`
@@ -389,6 +429,16 @@ SetAllowSnat sets AllowSnat field to given value.
 
 HasAllowSnat returns a boolean if a field has been set.
 
+### SetAllowSnatNil
+
+`func (o *ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner) SetAllowSnatNil(b bool)`
+
+ SetAllowSnatNil sets the value for AllowSnat to be an explicit nil
+
+### UnsetAllowSnat
+`func (o *ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner) UnsetAllowSnat()`
+
+UnsetAllowSnat ensures that no value is present for AllowSnat, not even an explicit nil
 ### GetVipClientIpMode
 
 `func (o *ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner) GetVipClientIpMode() string`
@@ -414,6 +464,16 @@ SetVipClientIpMode sets VipClientIpMode field to given value.
 
 HasVipClientIpMode returns a boolean if a field has been set.
 
+### SetVipClientIpModeNil
+
+`func (o *ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner) SetVipClientIpModeNil(b bool)`
+
+ SetVipClientIpModeNil sets the value for VipClientIpMode to be an explicit nil
+
+### UnsetVipClientIpMode
+`func (o *ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner) UnsetVipClientIpMode()`
+
+UnsetVipClientIpMode ensures that no value is present for VipClientIpMode, not even an explicit nil
 ### GetVipServerIpMode
 
 `func (o *ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner) GetVipServerIpMode() string`
@@ -439,6 +499,16 @@ SetVipServerIpMode sets VipServerIpMode field to given value.
 
 HasVipServerIpMode returns a boolean if a field has been set.
 
+### SetVipServerIpModeNil
+
+`func (o *ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner) SetVipServerIpModeNil(b bool)`
+
+ SetVipServerIpModeNil sets the value for VipServerIpMode to be an explicit nil
+
+### UnsetVipServerIpMode
+`func (o *ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner) UnsetVipServerIpMode()`
+
+UnsetVipServerIpMode ensures that no value is present for VipServerIpMode, not even an explicit nil
 ### GetMinActive
 
 `func (o *ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner) GetMinActive() int64`
@@ -489,6 +559,16 @@ SetMinInService sets MinInService field to given value.
 
 HasMinInService returns a boolean if a field has been set.
 
+### SetMinInServiceNil
+
+`func (o *ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner) SetMinInServiceNil(b bool)`
+
+ SetMinInServiceNil sets the value for MinInService to be an explicit nil
+
+### UnsetMinInService
+`func (o *ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner) UnsetMinInService()`
+
+UnsetMinInService ensures that no value is present for MinInService, not even an explicit nil
 ### GetMinUpMonitor
 
 `func (o *ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner) GetMinUpMonitor() string`
@@ -514,6 +594,16 @@ SetMinUpMonitor sets MinUpMonitor field to given value.
 
 HasMinUpMonitor returns a boolean if a field has been set.
 
+### SetMinUpMonitorNil
+
+`func (o *ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner) SetMinUpMonitorNil(b bool)`
+
+ SetMinUpMonitorNil sets the value for MinUpMonitor to be an explicit nil
+
+### UnsetMinUpMonitor
+`func (o *ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner) UnsetMinUpMonitor()`
+
+UnsetMinUpMonitor ensures that no value is present for MinUpMonitor, not even an explicit nil
 ### GetMinUpAction
 
 `func (o *ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner) GetMinUpAction() string`
@@ -539,6 +629,16 @@ SetMinUpAction sets MinUpAction field to given value.
 
 HasMinUpAction returns a boolean if a field has been set.
 
+### SetMinUpActionNil
+
+`func (o *ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner) SetMinUpActionNil(b bool)`
+
+ SetMinUpActionNil sets the value for MinUpAction to be an explicit nil
+
+### UnsetMinUpAction
+`func (o *ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner) UnsetMinUpAction()`
+
+UnsetMinUpAction ensures that no value is present for MinUpAction, not even an explicit nil
 ### GetMaxQueueDepth
 
 `func (o *ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner) GetMaxQueueDepth() string`
@@ -564,6 +664,16 @@ SetMaxQueueDepth sets MaxQueueDepth field to given value.
 
 HasMaxQueueDepth returns a boolean if a field has been set.
 
+### SetMaxQueueDepthNil
+
+`func (o *ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner) SetMaxQueueDepthNil(b bool)`
+
+ SetMaxQueueDepthNil sets the value for MaxQueueDepth to be an explicit nil
+
+### UnsetMaxQueueDepth
+`func (o *ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner) UnsetMaxQueueDepth()`
+
+UnsetMaxQueueDepth ensures that no value is present for MaxQueueDepth, not even an explicit nil
 ### GetMaxQueueTime
 
 `func (o *ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner) GetMaxQueueTime() string`
@@ -589,6 +699,16 @@ SetMaxQueueTime sets MaxQueueTime field to given value.
 
 HasMaxQueueTime returns a boolean if a field has been set.
 
+### SetMaxQueueTimeNil
+
+`func (o *ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner) SetMaxQueueTimeNil(b bool)`
+
+ SetMaxQueueTimeNil sets the value for MaxQueueTime to be an explicit nil
+
+### UnsetMaxQueueTime
+`func (o *ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner) UnsetMaxQueueTime()`
+
+UnsetMaxQueueTime ensures that no value is present for MaxQueueTime, not even an explicit nil
 ### GetNumberActive
 
 `func (o *ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner) GetNumberActive() int64`
@@ -789,6 +909,16 @@ SetDownAction sets DownAction field to given value.
 
 HasDownAction returns a boolean if a field has been set.
 
+### SetDownActionNil
+
+`func (o *ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner) SetDownActionNil(b bool)`
+
+ SetDownActionNil sets the value for DownAction to be an explicit nil
+
+### UnsetDownAction
+`func (o *ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner) UnsetDownAction()`
+
+UnsetDownAction ensures that no value is present for DownAction, not even an explicit nil
 ### GetRampTime
 
 `func (o *ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner) GetRampTime() string`
@@ -814,6 +944,16 @@ SetRampTime sets RampTime field to given value.
 
 HasRampTime returns a boolean if a field has been set.
 
+### SetRampTimeNil
+
+`func (o *ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner) SetRampTimeNil(b bool)`
+
+ SetRampTimeNil sets the value for RampTime to be an explicit nil
+
+### UnsetRampTime
+`func (o *ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner) UnsetRampTime()`
+
+UnsetRampTime ensures that no value is present for RampTime, not even an explicit nil
 ### GetPort
 
 `func (o *ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner) GetPort() string`
@@ -839,6 +979,16 @@ SetPort sets Port field to given value.
 
 HasPort returns a boolean if a field has been set.
 
+### SetPortNil
+
+`func (o *ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner) SetPortNil(b bool)`
+
+ SetPortNil sets the value for Port to be an explicit nil
+
+### UnsetPort
+`func (o *ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner) UnsetPort()`
+
+UnsetPort ensures that no value is present for Port, not even an explicit nil
 ### GetPortType
 
 `func (o *ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner) GetPortType() string`
@@ -864,6 +1014,16 @@ SetPortType sets PortType field to given value.
 
 HasPortType returns a boolean if a field has been set.
 
+### SetPortTypeNil
+
+`func (o *ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner) SetPortTypeNil(b bool)`
+
+ SetPortTypeNil sets the value for PortType to be an explicit nil
+
+### UnsetPortType
+`func (o *ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner) UnsetPortType()`
+
+UnsetPortType ensures that no value is present for PortType, not even an explicit nil
 ### GetStatus
 
 `func (o *ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner) GetStatus() string`
@@ -891,20 +1051,20 @@ HasStatus returns a boolean if a field has been set.
 
 ### GetNodes
 
-`func (o *ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner) GetNodes() []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner) GetNodes() []GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetNodes returns the Nodes field if non-nil, zero value otherwise.
 
 ### GetNodesOk
 
-`func (o *ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner) GetNodesOk() (*[]ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner) GetNodesOk() (*[]GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetNodesOk returns a tuple with the Nodes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNodes
 
-`func (o *ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner) SetNodes(v []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner) SetNodes(v []GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetNodes sets Nodes field to given value.
 
@@ -916,20 +1076,20 @@ HasNodes returns a boolean if a field has been set.
 
 ### GetMonitors
 
-`func (o *ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner) GetMonitors() []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner) GetMonitors() []GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetMonitors returns the Monitors field if non-nil, zero value otherwise.
 
 ### GetMonitorsOk
 
-`func (o *ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner) GetMonitorsOk() (*[]ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner) GetMonitorsOk() (*[]GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetMonitorsOk returns a tuple with the Monitors field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMonitors
 
-`func (o *ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner) SetMonitors(v []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner) SetMonitors(v []GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetMonitors sets Monitors field to given value.
 
@@ -1014,6 +1174,16 @@ SetCreatedBy sets CreatedBy field to given value.
 
 HasCreatedBy returns a boolean if a field has been set.
 
+### SetCreatedByNil
+
+`func (o *ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner) SetCreatedByNil(b bool)`
+
+ SetCreatedByNil sets the value for CreatedBy to be an explicit nil
+
+### UnsetCreatedBy
+`func (o *ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner) UnsetCreatedBy()`
+
+UnsetCreatedBy ensures that no value is present for CreatedBy, not even an explicit nil
 ### GetDateCreated
 
 `func (o *ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner) GetDateCreated() time.Time`

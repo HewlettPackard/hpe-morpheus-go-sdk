@@ -32,7 +32,7 @@ type IdentitySourcesLDAPConfig struct {
 	ExternalLogin        *bool                                                                       `json:"externalLogin,omitempty"`
 	AllowCustomMappings  *bool                                                                       `json:"allowCustomMappings,omitempty"`
 	ManualRoleAssignment *bool                                                                       `json:"manualRoleAssignment,omitempty"`
-	Account              *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner     `json:"account,omitempty"`
+	Account              *GetAlerts200ResponseAllOfCheckGroupsInnerInstance                          `json:"account,omitempty"`
 	DefaultAccountRole   *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfDefaultAccountRole `json:"defaultAccountRole,omitempty"`
 	Config               *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfConfig             `json:"config,omitempty"`
 	RoleMappings         []ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfRoleMappingsInner `json:"roleMappings,omitempty"`
@@ -416,9 +416,9 @@ func (o *IdentitySourcesLDAPConfig) SetManualRoleAssignment(v bool) {
 }
 
 // GetAccount returns the Account field value if set, zero value otherwise.
-func (o *IdentitySourcesLDAPConfig) GetAccount() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *IdentitySourcesLDAPConfig) GetAccount() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.Account) {
-		var ret ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return *o.Account
@@ -426,7 +426,7 @@ func (o *IdentitySourcesLDAPConfig) GetAccount() ListApplianceSettings200Respons
 
 // GetAccountOk returns a tuple with the Account field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *IdentitySourcesLDAPConfig) GetAccountOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *IdentitySourcesLDAPConfig) GetAccountOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.Account) {
 		return nil, false
 	}
@@ -442,8 +442,8 @@ func (o *IdentitySourcesLDAPConfig) IsSetAccount() bool {
 	return false
 }
 
-// SetAccount gets a reference to the given ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the Account field.
-func (o *IdentitySourcesLDAPConfig) SetAccount(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetAccount gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Account field.
+func (o *IdentitySourcesLDAPConfig) SetAccount(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.Account = &v
 }
 

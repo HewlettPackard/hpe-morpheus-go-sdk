@@ -6,22 +6,22 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
 **Account** | Pointer to [**GetAlerts200ResponseAllOfChecksInnerAccount**](GetAlerts200ResponseAllOfChecksInnerAccount.md) |  | [optional] 
-**App** | Pointer to **string** |  | [optional] 
+**App** | Pointer to **NullableString** |  | [optional] 
 **AutoClose** | Pointer to **bool** |  | [optional] 
 **ChannelId** | Pointer to **string** |  | [optional] 
-**CheckGroups** | Pointer to [**[]ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
+**CheckGroups** | Pointer to [**[]GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **Checks** | Pointer to [**[]GetAlerts200ResponseAllOfChecksInner**](GetAlerts200ResponseAllOfChecksInner.md) |  | [optional] 
-**Comment** | Pointer to **string** |  | [optional] 
+**Comment** | Pointer to **NullableString** |  | [optional] 
 **DisplayName** | Pointer to **string** |  | [optional] 
-**Duration** | Pointer to **string** |  | [optional] 
-**EndDate** | Pointer to **time.Time** |  | [optional] 
+**Duration** | Pointer to **NullableString** |  | [optional] 
+**EndDate** | Pointer to **NullableTime** |  | [optional] 
 **InUptime** | Pointer to **bool** |  | [optional] 
 **Muted** | Pointer to **bool** |  | [optional] 
 **LastCheckTime** | Pointer to **time.Time** |  | [optional] 
 **LastError** | Pointer to **string** |  | [optional] 
-**LastMessage** | Pointer to **string** |  | [optional] 
+**LastMessage** | Pointer to **NullableString** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**Resolution** | Pointer to **string** |  | [optional] 
+**Resolution** | Pointer to **NullableString** |  | [optional] 
 **Severity** | Pointer to **string** |  | [optional] 
 **SeverityId** | Pointer to **int64** |  | [optional] 
 **StartDate** | Pointer to **time.Time** |  | [optional] 
@@ -122,6 +122,16 @@ SetApp sets App field to given value.
 
 HasApp returns a boolean if a field has been set.
 
+### SetAppNil
+
+`func (o *Incident) SetAppNil(b bool)`
+
+ SetAppNil sets the value for App to be an explicit nil
+
+### UnsetApp
+`func (o *Incident) UnsetApp()`
+
+UnsetApp ensures that no value is present for App, not even an explicit nil
 ### GetAutoClose
 
 `func (o *Incident) GetAutoClose() bool`
@@ -174,20 +184,20 @@ HasChannelId returns a boolean if a field has been set.
 
 ### GetCheckGroups
 
-`func (o *Incident) GetCheckGroups() []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *Incident) GetCheckGroups() []GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetCheckGroups returns the CheckGroups field if non-nil, zero value otherwise.
 
 ### GetCheckGroupsOk
 
-`func (o *Incident) GetCheckGroupsOk() (*[]ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *Incident) GetCheckGroupsOk() (*[]GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetCheckGroupsOk returns a tuple with the CheckGroups field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCheckGroups
 
-`func (o *Incident) SetCheckGroups(v []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *Incident) SetCheckGroups(v []GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetCheckGroups sets CheckGroups field to given value.
 
@@ -247,6 +257,16 @@ SetComment sets Comment field to given value.
 
 HasComment returns a boolean if a field has been set.
 
+### SetCommentNil
+
+`func (o *Incident) SetCommentNil(b bool)`
+
+ SetCommentNil sets the value for Comment to be an explicit nil
+
+### UnsetComment
+`func (o *Incident) UnsetComment()`
+
+UnsetComment ensures that no value is present for Comment, not even an explicit nil
 ### GetDisplayName
 
 `func (o *Incident) GetDisplayName() string`
@@ -297,6 +317,16 @@ SetDuration sets Duration field to given value.
 
 HasDuration returns a boolean if a field has been set.
 
+### SetDurationNil
+
+`func (o *Incident) SetDurationNil(b bool)`
+
+ SetDurationNil sets the value for Duration to be an explicit nil
+
+### UnsetDuration
+`func (o *Incident) UnsetDuration()`
+
+UnsetDuration ensures that no value is present for Duration, not even an explicit nil
 ### GetEndDate
 
 `func (o *Incident) GetEndDate() time.Time`
@@ -322,6 +352,16 @@ SetEndDate sets EndDate field to given value.
 
 HasEndDate returns a boolean if a field has been set.
 
+### SetEndDateNil
+
+`func (o *Incident) SetEndDateNil(b bool)`
+
+ SetEndDateNil sets the value for EndDate to be an explicit nil
+
+### UnsetEndDate
+`func (o *Incident) UnsetEndDate()`
+
+UnsetEndDate ensures that no value is present for EndDate, not even an explicit nil
 ### GetInUptime
 
 `func (o *Incident) GetInUptime() bool`
@@ -447,6 +487,16 @@ SetLastMessage sets LastMessage field to given value.
 
 HasLastMessage returns a boolean if a field has been set.
 
+### SetLastMessageNil
+
+`func (o *Incident) SetLastMessageNil(b bool)`
+
+ SetLastMessageNil sets the value for LastMessage to be an explicit nil
+
+### UnsetLastMessage
+`func (o *Incident) UnsetLastMessage()`
+
+UnsetLastMessage ensures that no value is present for LastMessage, not even an explicit nil
 ### GetName
 
 `func (o *Incident) GetName() string`
@@ -497,6 +547,16 @@ SetResolution sets Resolution field to given value.
 
 HasResolution returns a boolean if a field has been set.
 
+### SetResolutionNil
+
+`func (o *Incident) SetResolutionNil(b bool)`
+
+ SetResolutionNil sets the value for Resolution to be an explicit nil
+
+### UnsetResolution
+`func (o *Incident) UnsetResolution()`
+
+UnsetResolution ensures that no value is present for Resolution, not even an explicit nil
 ### GetSeverity
 
 `func (o *Incident) GetSeverity() string`

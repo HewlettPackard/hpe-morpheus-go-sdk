@@ -8,8 +8,8 @@ Name | Type | Description | Notes
 **Labels** | Pointer to **[]string** | Array of label strings, can be used for filtering. | [optional] 
 **Enabled** | Pointer to **bool** | Use this to set enabled state | [optional] [default to true]
 **SecurityPackage** | [**WorkflowJobPayloadTask**](WorkflowJobPayloadTask.md) |  | 
-**ScanPath** | Pointer to **string** | Scan Checklist | [optional] 
-**SecurityProfile** | Pointer to **string** | Security Profile | [optional] 
+**ScanPath** | Pointer to **NullableString** | Scan Checklist | [optional] 
+**SecurityProfile** | Pointer to **NullableString** | Security Profile | [optional] 
 **TargetType** | **string** | Target type where job will execute | 
 **Targets** | [**[]WorkflowJobPayloadTargetsInner**](WorkflowJobPayloadTargetsInner.md) |  | 
 **ScheduleMode** | [**WorkflowJobPayloadScheduleMode**](WorkflowJobPayloadScheduleMode.md) |  | 
@@ -82,6 +82,16 @@ SetLabels sets Labels field to given value.
 
 HasLabels returns a boolean if a field has been set.
 
+### SetLabelsNil
+
+`func (o *SecurityScanJob) SetLabelsNil(b bool)`
+
+ SetLabelsNil sets the value for Labels to be an explicit nil
+
+### UnsetLabels
+`func (o *SecurityScanJob) UnsetLabels()`
+
+UnsetLabels ensures that no value is present for Labels, not even an explicit nil
 ### GetEnabled
 
 `func (o *SecurityScanJob) GetEnabled() bool`
@@ -152,6 +162,16 @@ SetScanPath sets ScanPath field to given value.
 
 HasScanPath returns a boolean if a field has been set.
 
+### SetScanPathNil
+
+`func (o *SecurityScanJob) SetScanPathNil(b bool)`
+
+ SetScanPathNil sets the value for ScanPath to be an explicit nil
+
+### UnsetScanPath
+`func (o *SecurityScanJob) UnsetScanPath()`
+
+UnsetScanPath ensures that no value is present for ScanPath, not even an explicit nil
 ### GetSecurityProfile
 
 `func (o *SecurityScanJob) GetSecurityProfile() string`
@@ -177,6 +197,16 @@ SetSecurityProfile sets SecurityProfile field to given value.
 
 HasSecurityProfile returns a boolean if a field has been set.
 
+### SetSecurityProfileNil
+
+`func (o *SecurityScanJob) SetSecurityProfileNil(b bool)`
+
+ SetSecurityProfileNil sets the value for SecurityProfile to be an explicit nil
+
+### UnsetSecurityProfile
+`func (o *SecurityScanJob) UnsetSecurityProfile()`
+
+UnsetSecurityProfile ensures that no value is present for SecurityProfile, not even an explicit nil
 ### GetTargetType
 
 `func (o *SecurityScanJob) GetTargetType() string`
@@ -217,6 +247,16 @@ and a boolean to check if the value has been set.
 SetTargets sets Targets field to given value.
 
 
+### SetTargetsNil
+
+`func (o *SecurityScanJob) SetTargetsNil(b bool)`
+
+ SetTargetsNil sets the value for Targets to be an explicit nil
+
+### UnsetTargets
+`func (o *SecurityScanJob) UnsetTargets()`
+
+UnsetTargets ensures that no value is present for Targets, not even an explicit nil
 ### GetScheduleMode
 
 `func (o *SecurityScanJob) GetScheduleMode() WorkflowJobPayloadScheduleMode`

@@ -41,8 +41,8 @@ type IntegrationSaltMaster struct {
 	Status               *string                                                           `json:"status,omitempty"`
 	StatusDate           *time.Time                                                        `json:"statusDate,omitempty"`
 	StatusMessage        *string                                                           `json:"statusMessage,omitempty"`
-	LastSync             *string                                                           `json:"lastSync,omitempty"`
-	LastSyncDuration     *string                                                           `json:"lastSyncDuration,omitempty"`
+	LastSync             NullableString                                                    `json:"lastSync,omitempty"`
+	LastSyncDuration     NullableString                                                    `json:"lastSyncDuration,omitempty"`
 	Credential           *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential `json:"credential,omitempty"`
 	AdditionalProperties map[string]interface{}                                            `json:",remain"`
 }
@@ -706,68 +706,90 @@ func (o *IntegrationSaltMaster) SetStatusMessage(v string) {
 	o.StatusMessage = &v
 }
 
-// GetLastSync returns the LastSync field value if set, zero value otherwise.
+// GetLastSync returns the LastSync field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IntegrationSaltMaster) GetLastSync() string {
-	if o == nil || IsNil(o.LastSync) {
+	if o == nil || IsNil(o.LastSync.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.LastSync
+	return *o.LastSync.Get()
 }
 
 // GetLastSyncOk returns a tuple with the LastSync field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IntegrationSaltMaster) GetLastSyncOk() (*string, bool) {
-	if o == nil || IsNil(o.LastSync) {
+	if o == nil {
 		return nil, false
 	}
-	return o.LastSync, true
+	return o.LastSync.Get(), o.LastSync.IsSet()
 }
 
 // IsSetLastSync returns a boolean if a field has been set.
 func (o *IntegrationSaltMaster) IsSetLastSync() bool {
-	if o != nil && !IsNil(o.LastSync) {
+	if o != nil && o.LastSync.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetLastSync gets a reference to the given string and assigns it to the LastSync field.
+// SetLastSync gets a reference to the given NullableString and assigns it to the LastSync field.
 func (o *IntegrationSaltMaster) SetLastSync(v string) {
-	o.LastSync = &v
+	o.LastSync.Set(&v)
 }
 
-// GetLastSyncDuration returns the LastSyncDuration field value if set, zero value otherwise.
+// SetLastSyncNil sets the value for LastSync to be an explicit nil
+func (o *IntegrationSaltMaster) SetLastSyncNil() {
+	o.LastSync.Set(nil)
+}
+
+// UnsetLastSync ensures that no value is present for LastSync, not even an explicit nil
+func (o *IntegrationSaltMaster) UnsetLastSync() {
+	o.LastSync.Unset()
+}
+
+// GetLastSyncDuration returns the LastSyncDuration field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IntegrationSaltMaster) GetLastSyncDuration() string {
-	if o == nil || IsNil(o.LastSyncDuration) {
+	if o == nil || IsNil(o.LastSyncDuration.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.LastSyncDuration
+	return *o.LastSyncDuration.Get()
 }
 
 // GetLastSyncDurationOk returns a tuple with the LastSyncDuration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IntegrationSaltMaster) GetLastSyncDurationOk() (*string, bool) {
-	if o == nil || IsNil(o.LastSyncDuration) {
+	if o == nil {
 		return nil, false
 	}
-	return o.LastSyncDuration, true
+	return o.LastSyncDuration.Get(), o.LastSyncDuration.IsSet()
 }
 
 // IsSetLastSyncDuration returns a boolean if a field has been set.
 func (o *IntegrationSaltMaster) IsSetLastSyncDuration() bool {
-	if o != nil && !IsNil(o.LastSyncDuration) {
+	if o != nil && o.LastSyncDuration.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetLastSyncDuration gets a reference to the given string and assigns it to the LastSyncDuration field.
+// SetLastSyncDuration gets a reference to the given NullableString and assigns it to the LastSyncDuration field.
 func (o *IntegrationSaltMaster) SetLastSyncDuration(v string) {
-	o.LastSyncDuration = &v
+	o.LastSyncDuration.Set(&v)
+}
+
+// SetLastSyncDurationNil sets the value for LastSyncDuration to be an explicit nil
+func (o *IntegrationSaltMaster) SetLastSyncDurationNil() {
+	o.LastSyncDuration.Set(nil)
+}
+
+// UnsetLastSyncDuration ensures that no value is present for LastSyncDuration, not even an explicit nil
+func (o *IntegrationSaltMaster) UnsetLastSyncDuration() {
+	o.LastSyncDuration.Unset()
 }
 
 // GetCredential returns the Credential field value if set, zero value otherwise.
@@ -872,11 +894,11 @@ func (o IntegrationSaltMaster) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.StatusMessage) {
 		toSerialize["statusMessage"] = o.StatusMessage
 	}
-	if !IsNil(o.LastSync) {
-		toSerialize["lastSync"] = o.LastSync
+	if o.LastSync.IsSet() {
+		toSerialize["lastSync"] = o.LastSync.Get()
 	}
-	if !IsNil(o.LastSyncDuration) {
-		toSerialize["lastSyncDuration"] = o.LastSyncDuration
+	if o.LastSyncDuration.IsSet() {
+		toSerialize["lastSyncDuration"] = o.LastSyncDuration.Get()
 	}
 	if !IsNil(o.Credential) {
 		toSerialize["credential"] = o.Credential

@@ -20,22 +20,22 @@ var _ MappedNullable = &Policy{}
 
 // Policy struct for Policy
 type Policy struct {
-	Id                   *int64                                                                   `json:"id,omitempty"`
-	Name                 *string                                                                  `json:"name,omitempty"`
-	Description          *string                                                                  `json:"description,omitempty"`
-	PolicyType           *ListBackupSettings200ResponseBackupSettingsDefaultSchedule              `json:"policyType,omitempty"`
-	Zone                 *GetAlerts200ResponseAllOfCheckGroupsInnerInstance                       `json:"zone,omitempty"`
-	Site                 *GetAlerts200ResponseAllOfCheckGroupsInnerInstance                       `json:"site,omitempty"`
-	User                 *GetAlerts200ResponseAllOfChecksInnerCreatedBy                           `json:"user,omitempty"`
-	Role                 *AddPolicies200ResponseAllOfPolicyRole                                   `json:"role,omitempty"`
-	RefType              *string                                                                  `json:"refType,omitempty"`
-	RefId                *string                                                                  `json:"refId,omitempty"`
-	EachUser             *bool                                                                    `json:"eachUser,omitempty"`
-	Config               *AddPolicies200ResponseAllOfPolicyConfig                                 `json:"config,omitempty"`
-	Enabled              *bool                                                                    `json:"enabled,omitempty"`
-	Owner                *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner  `json:"owner,omitempty"`
-	Accounts             []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"accounts,omitempty"`
-	AdditionalProperties map[string]interface{}                                                   `json:",remain"`
+	Id                   *int64                                                      `json:"id,omitempty"`
+	Name                 *string                                                     `json:"name,omitempty"`
+	Description          NullableString                                              `json:"description,omitempty"`
+	PolicyType           *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"policyType,omitempty"`
+	Zone                 *GetAlerts200ResponseAllOfCheckGroupsInnerInstance          `json:"zone,omitempty"`
+	Site                 *GetAlerts200ResponseAllOfCheckGroupsInnerInstance          `json:"site,omitempty"`
+	User                 *ListActivity200ResponseAllOfActivityInnerActivityInnerUser `json:"user,omitempty"`
+	Role                 *AddPolicies200ResponseAllOfPolicyRole                      `json:"role,omitempty"`
+	RefType              NullableString                                              `json:"refType,omitempty"`
+	RefId                NullableString                                              `json:"refId,omitempty"`
+	EachUser             NullableBool                                                `json:"eachUser,omitempty"`
+	Config               *AddPolicies200ResponseAllOfPolicyConfig                    `json:"config,omitempty"`
+	Enabled              *bool                                                       `json:"enabled,omitempty"`
+	Owner                *GetAlerts200ResponseAllOfCheckGroupsInnerInstance          `json:"owner,omitempty"`
+	Accounts             []GetAlerts200ResponseAllOfCheckGroupsInnerInstance         `json:"accounts,omitempty"`
+	AdditionalProperties map[string]interface{}                                      `json:",remain"`
 }
 
 type _Policy Policy
@@ -121,36 +121,47 @@ func (o *Policy) SetName(v string) {
 	o.Name = &v
 }
 
-// GetDescription returns the Description field value if set, zero value otherwise.
+// GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Policy) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
+	if o == nil || IsNil(o.Description.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Description
+	return *o.Description.Get()
 }
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Policy) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Description, true
+	return o.Description.Get(), o.Description.IsSet()
 }
 
 // IsSetDescription returns a boolean if a field has been set.
 func (o *Policy) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
+	if o != nil && o.Description.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDescription gets a reference to the given string and assigns it to the Description field.
+// SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *Policy) SetDescription(v string) {
-	o.Description = &v
+	o.Description.Set(&v)
+}
+
+// SetDescriptionNil sets the value for Description to be an explicit nil
+func (o *Policy) SetDescriptionNil() {
+	o.Description.Set(nil)
+}
+
+// UnsetDescription ensures that no value is present for Description, not even an explicit nil
+func (o *Policy) UnsetDescription() {
+	o.Description.Unset()
 }
 
 // GetPolicyType returns the PolicyType field value if set, zero value otherwise.
@@ -250,9 +261,9 @@ func (o *Policy) SetSite(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 }
 
 // GetUser returns the User field value if set, zero value otherwise.
-func (o *Policy) GetUser() GetAlerts200ResponseAllOfChecksInnerCreatedBy {
+func (o *Policy) GetUser() ListActivity200ResponseAllOfActivityInnerActivityInnerUser {
 	if o == nil || IsNil(o.User) {
-		var ret GetAlerts200ResponseAllOfChecksInnerCreatedBy
+		var ret ListActivity200ResponseAllOfActivityInnerActivityInnerUser
 		return ret
 	}
 	return *o.User
@@ -260,7 +271,7 @@ func (o *Policy) GetUser() GetAlerts200ResponseAllOfChecksInnerCreatedBy {
 
 // GetUserOk returns a tuple with the User field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Policy) GetUserOk() (*GetAlerts200ResponseAllOfChecksInnerCreatedBy, bool) {
+func (o *Policy) GetUserOk() (*ListActivity200ResponseAllOfActivityInnerActivityInnerUser, bool) {
 	if o == nil || IsNil(o.User) {
 		return nil, false
 	}
@@ -276,8 +287,8 @@ func (o *Policy) IsSetUser() bool {
 	return false
 }
 
-// SetUser gets a reference to the given GetAlerts200ResponseAllOfChecksInnerCreatedBy and assigns it to the User field.
-func (o *Policy) SetUser(v GetAlerts200ResponseAllOfChecksInnerCreatedBy) {
+// SetUser gets a reference to the given ListActivity200ResponseAllOfActivityInnerActivityInnerUser and assigns it to the User field.
+func (o *Policy) SetUser(v ListActivity200ResponseAllOfActivityInnerActivityInnerUser) {
 	o.User = &v
 }
 
@@ -313,100 +324,133 @@ func (o *Policy) SetRole(v AddPolicies200ResponseAllOfPolicyRole) {
 	o.Role = &v
 }
 
-// GetRefType returns the RefType field value if set, zero value otherwise.
+// GetRefType returns the RefType field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Policy) GetRefType() string {
-	if o == nil || IsNil(o.RefType) {
+	if o == nil || IsNil(o.RefType.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.RefType
+	return *o.RefType.Get()
 }
 
 // GetRefTypeOk returns a tuple with the RefType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Policy) GetRefTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.RefType) {
+	if o == nil {
 		return nil, false
 	}
-	return o.RefType, true
+	return o.RefType.Get(), o.RefType.IsSet()
 }
 
 // IsSetRefType returns a boolean if a field has been set.
 func (o *Policy) IsSetRefType() bool {
-	if o != nil && !IsNil(o.RefType) {
+	if o != nil && o.RefType.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetRefType gets a reference to the given string and assigns it to the RefType field.
+// SetRefType gets a reference to the given NullableString and assigns it to the RefType field.
 func (o *Policy) SetRefType(v string) {
-	o.RefType = &v
+	o.RefType.Set(&v)
 }
 
-// GetRefId returns the RefId field value if set, zero value otherwise.
+// SetRefTypeNil sets the value for RefType to be an explicit nil
+func (o *Policy) SetRefTypeNil() {
+	o.RefType.Set(nil)
+}
+
+// UnsetRefType ensures that no value is present for RefType, not even an explicit nil
+func (o *Policy) UnsetRefType() {
+	o.RefType.Unset()
+}
+
+// GetRefId returns the RefId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Policy) GetRefId() string {
-	if o == nil || IsNil(o.RefId) {
+	if o == nil || IsNil(o.RefId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.RefId
+	return *o.RefId.Get()
 }
 
 // GetRefIdOk returns a tuple with the RefId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Policy) GetRefIdOk() (*string, bool) {
-	if o == nil || IsNil(o.RefId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.RefId, true
+	return o.RefId.Get(), o.RefId.IsSet()
 }
 
 // IsSetRefId returns a boolean if a field has been set.
 func (o *Policy) IsSetRefId() bool {
-	if o != nil && !IsNil(o.RefId) {
+	if o != nil && o.RefId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetRefId gets a reference to the given string and assigns it to the RefId field.
+// SetRefId gets a reference to the given NullableString and assigns it to the RefId field.
 func (o *Policy) SetRefId(v string) {
-	o.RefId = &v
+	o.RefId.Set(&v)
 }
 
-// GetEachUser returns the EachUser field value if set, zero value otherwise.
+// SetRefIdNil sets the value for RefId to be an explicit nil
+func (o *Policy) SetRefIdNil() {
+	o.RefId.Set(nil)
+}
+
+// UnsetRefId ensures that no value is present for RefId, not even an explicit nil
+func (o *Policy) UnsetRefId() {
+	o.RefId.Unset()
+}
+
+// GetEachUser returns the EachUser field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Policy) GetEachUser() bool {
-	if o == nil || IsNil(o.EachUser) {
+	if o == nil || IsNil(o.EachUser.Get()) {
 		var ret bool
 		return ret
 	}
-	return *o.EachUser
+	return *o.EachUser.Get()
 }
 
 // GetEachUserOk returns a tuple with the EachUser field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Policy) GetEachUserOk() (*bool, bool) {
-	if o == nil || IsNil(o.EachUser) {
+	if o == nil {
 		return nil, false
 	}
-	return o.EachUser, true
+	return o.EachUser.Get(), o.EachUser.IsSet()
 }
 
 // IsSetEachUser returns a boolean if a field has been set.
 func (o *Policy) IsSetEachUser() bool {
-	if o != nil && !IsNil(o.EachUser) {
+	if o != nil && o.EachUser.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetEachUser gets a reference to the given bool and assigns it to the EachUser field.
+// SetEachUser gets a reference to the given NullableBool and assigns it to the EachUser field.
 func (o *Policy) SetEachUser(v bool) {
-	o.EachUser = &v
+	o.EachUser.Set(&v)
+}
+
+// SetEachUserNil sets the value for EachUser to be an explicit nil
+func (o *Policy) SetEachUserNil() {
+	o.EachUser.Set(nil)
+}
+
+// UnsetEachUser ensures that no value is present for EachUser, not even an explicit nil
+func (o *Policy) UnsetEachUser() {
+	o.EachUser.Unset()
 }
 
 // GetConfig returns the Config field value if set, zero value otherwise.
@@ -474,9 +518,9 @@ func (o *Policy) SetEnabled(v bool) {
 }
 
 // GetOwner returns the Owner field value if set, zero value otherwise.
-func (o *Policy) GetOwner() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *Policy) GetOwner() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.Owner) {
-		var ret ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return *o.Owner
@@ -484,7 +528,7 @@ func (o *Policy) GetOwner() ListApplianceSettings200ResponseApplianceSettingsEna
 
 // GetOwnerOk returns a tuple with the Owner field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Policy) GetOwnerOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *Policy) GetOwnerOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.Owner) {
 		return nil, false
 	}
@@ -500,15 +544,15 @@ func (o *Policy) IsSetOwner() bool {
 	return false
 }
 
-// SetOwner gets a reference to the given ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the Owner field.
-func (o *Policy) SetOwner(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetOwner gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Owner field.
+func (o *Policy) SetOwner(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.Owner = &v
 }
 
-// GetAccounts returns the Accounts field value if set, zero value otherwise.
-func (o *Policy) GetAccounts() []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
-	if o == nil || IsNil(o.Accounts) {
-		var ret []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+// GetAccounts returns the Accounts field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *Policy) GetAccounts() []GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
+	if o == nil {
+		var ret []GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return o.Accounts
@@ -516,7 +560,8 @@ func (o *Policy) GetAccounts() []ListApplianceSettings200ResponseApplianceSettin
 
 // GetAccountsOk returns a tuple with the Accounts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Policy) GetAccountsOk() ([]ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *Policy) GetAccountsOk() ([]GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.Accounts) {
 		return nil, false
 	}
@@ -532,8 +577,8 @@ func (o *Policy) IsSetAccounts() bool {
 	return false
 }
 
-// SetAccounts gets a reference to the given []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the Accounts field.
-func (o *Policy) SetAccounts(v []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetAccounts gets a reference to the given []GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Accounts field.
+func (o *Policy) SetAccounts(v []GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.Accounts = v
 }
 
@@ -553,8 +598,8 @@ func (o Policy) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !IsNil(o.Description) {
-		toSerialize["description"] = o.Description
+	if o.Description.IsSet() {
+		toSerialize["description"] = o.Description.Get()
 	}
 	if !IsNil(o.PolicyType) {
 		toSerialize["policyType"] = o.PolicyType
@@ -571,14 +616,14 @@ func (o Policy) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Role) {
 		toSerialize["role"] = o.Role
 	}
-	if !IsNil(o.RefType) {
-		toSerialize["refType"] = o.RefType
+	if o.RefType.IsSet() {
+		toSerialize["refType"] = o.RefType.Get()
 	}
-	if !IsNil(o.RefId) {
-		toSerialize["refId"] = o.RefId
+	if o.RefId.IsSet() {
+		toSerialize["refId"] = o.RefId.Get()
 	}
-	if !IsNil(o.EachUser) {
-		toSerialize["eachUser"] = o.EachUser
+	if o.EachUser.IsSet() {
+		toSerialize["eachUser"] = o.EachUser.Get()
 	}
 	if !IsNil(o.Config) {
 		toSerialize["config"] = o.Config
@@ -589,7 +634,7 @@ func (o Policy) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Owner) {
 		toSerialize["owner"] = o.Owner
 	}
-	if !IsNil(o.Accounts) {
+	if o.Accounts != nil {
 		toSerialize["accounts"] = o.Accounts
 	}
 

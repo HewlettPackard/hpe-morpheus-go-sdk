@@ -24,8 +24,8 @@ type ListCypherKeys200ResponseAllOfCyphersInner struct {
 	Id                   *int32                 `json:"id,omitempty"`
 	ItemKey              *string                `json:"itemKey,omitempty"`
 	LeaseTimeout         *int64                 `json:"leaseTimeout,omitempty"`
-	ExpireDate           *time.Time             `json:"expireDate,omitempty"`
-	DateCreated          *time.Time             `json:"dateCreated,omitempty"`
+	ExpireDate           NullableTime           `json:"expireDate,omitempty"`
+	DateCreated          NullableTime           `json:"dateCreated,omitempty"`
 	LastUpdated          *time.Time             `json:"lastUpdated,omitempty"`
 	LastAccessed         *time.Time             `json:"lastAccessed,omitempty"`
 	CreatedBy            *string                `json:"createdBy,omitempty"`
@@ -147,68 +147,90 @@ func (o *ListCypherKeys200ResponseAllOfCyphersInner) SetLeaseTimeout(v int64) {
 	o.LeaseTimeout = &v
 }
 
-// GetExpireDate returns the ExpireDate field value if set, zero value otherwise.
+// GetExpireDate returns the ExpireDate field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListCypherKeys200ResponseAllOfCyphersInner) GetExpireDate() time.Time {
-	if o == nil || IsNil(o.ExpireDate) {
+	if o == nil || IsNil(o.ExpireDate.Get()) {
 		var ret time.Time
 		return ret
 	}
-	return *o.ExpireDate
+	return *o.ExpireDate.Get()
 }
 
 // GetExpireDateOk returns a tuple with the ExpireDate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListCypherKeys200ResponseAllOfCyphersInner) GetExpireDateOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.ExpireDate) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ExpireDate, true
+	return o.ExpireDate.Get(), o.ExpireDate.IsSet()
 }
 
 // IsSetExpireDate returns a boolean if a field has been set.
 func (o *ListCypherKeys200ResponseAllOfCyphersInner) IsSetExpireDate() bool {
-	if o != nil && !IsNil(o.ExpireDate) {
+	if o != nil && o.ExpireDate.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetExpireDate gets a reference to the given time.Time and assigns it to the ExpireDate field.
+// SetExpireDate gets a reference to the given NullableTime and assigns it to the ExpireDate field.
 func (o *ListCypherKeys200ResponseAllOfCyphersInner) SetExpireDate(v time.Time) {
-	o.ExpireDate = &v
+	o.ExpireDate.Set(&v)
 }
 
-// GetDateCreated returns the DateCreated field value if set, zero value otherwise.
+// SetExpireDateNil sets the value for ExpireDate to be an explicit nil
+func (o *ListCypherKeys200ResponseAllOfCyphersInner) SetExpireDateNil() {
+	o.ExpireDate.Set(nil)
+}
+
+// UnsetExpireDate ensures that no value is present for ExpireDate, not even an explicit nil
+func (o *ListCypherKeys200ResponseAllOfCyphersInner) UnsetExpireDate() {
+	o.ExpireDate.Unset()
+}
+
+// GetDateCreated returns the DateCreated field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListCypherKeys200ResponseAllOfCyphersInner) GetDateCreated() time.Time {
-	if o == nil || IsNil(o.DateCreated) {
+	if o == nil || IsNil(o.DateCreated.Get()) {
 		var ret time.Time
 		return ret
 	}
-	return *o.DateCreated
+	return *o.DateCreated.Get()
 }
 
 // GetDateCreatedOk returns a tuple with the DateCreated field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListCypherKeys200ResponseAllOfCyphersInner) GetDateCreatedOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.DateCreated) {
+	if o == nil {
 		return nil, false
 	}
-	return o.DateCreated, true
+	return o.DateCreated.Get(), o.DateCreated.IsSet()
 }
 
 // IsSetDateCreated returns a boolean if a field has been set.
 func (o *ListCypherKeys200ResponseAllOfCyphersInner) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
+	if o != nil && o.DateCreated.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
+// SetDateCreated gets a reference to the given NullableTime and assigns it to the DateCreated field.
 func (o *ListCypherKeys200ResponseAllOfCyphersInner) SetDateCreated(v time.Time) {
-	o.DateCreated = &v
+	o.DateCreated.Set(&v)
+}
+
+// SetDateCreatedNil sets the value for DateCreated to be an explicit nil
+func (o *ListCypherKeys200ResponseAllOfCyphersInner) SetDateCreatedNil() {
+	o.DateCreated.Set(nil)
+}
+
+// UnsetDateCreated ensures that no value is present for DateCreated, not even an explicit nil
+func (o *ListCypherKeys200ResponseAllOfCyphersInner) UnsetDateCreated() {
+	o.DateCreated.Unset()
 }
 
 // GetLastUpdated returns the LastUpdated field value if set, zero value otherwise.
@@ -326,11 +348,11 @@ func (o ListCypherKeys200ResponseAllOfCyphersInner) ToMap() (map[string]interfac
 	if !IsNil(o.LeaseTimeout) {
 		toSerialize["leaseTimeout"] = o.LeaseTimeout
 	}
-	if !IsNil(o.ExpireDate) {
-		toSerialize["expireDate"] = o.ExpireDate
+	if o.ExpireDate.IsSet() {
+		toSerialize["expireDate"] = o.ExpireDate.Get()
 	}
-	if !IsNil(o.DateCreated) {
-		toSerialize["dateCreated"] = o.DateCreated
+	if o.DateCreated.IsSet() {
+		toSerialize["dateCreated"] = o.DateCreated.Get()
 	}
 	if !IsNil(o.LastUpdated) {
 		toSerialize["lastUpdated"] = o.LastUpdated

@@ -21,53 +21,53 @@ var _ MappedNullable = &ListVirtualImages200ResponseAllOfVirtualImagesInner{}
 
 // ListVirtualImages200ResponseAllOfVirtualImagesInner struct for ListVirtualImages200ResponseAllOfVirtualImagesInner
 type ListVirtualImages200ResponseAllOfVirtualImagesInner struct {
-	Id                   *int64                                                                   `json:"id,omitempty"`
-	Name                 *string                                                                  `json:"name,omitempty"`
-	Description          *string                                                                  `json:"description,omitempty"`
-	Labels               []string                                                                 `json:"labels,omitempty"`
-	OwnerId              *int64                                                                   `json:"ownerId,omitempty"`
-	Tenant               *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner  `json:"tenant,omitempty"`
-	ImageType            *string                                                                  `json:"imageType,omitempty"`
-	UserUploaded         *bool                                                                    `json:"userUploaded,omitempty"`
-	UserDefined          *bool                                                                    `json:"userDefined,omitempty"`
-	SystemImage          *bool                                                                    `json:"systemImage,omitempty"`
-	IsCloudInit          *bool                                                                    `json:"isCloudInit,omitempty"`
-	SshUsername          *string                                                                  `json:"sshUsername,omitempty"`
-	SshPassword          *string                                                                  `json:"sshPassword,omitempty"`
-	SshPasswordHash      *string                                                                  `json:"sshPasswordHash,omitempty"`
-	SshKey               *string                                                                  `json:"sshKey,omitempty"`
-	OsType               *ListVirtualImages200ResponseAllOfVirtualImagesInnerOsType               `json:"osType,omitempty"`
-	MinRam               *int64                                                                   `json:"minRam,omitempty"`
-	MinRamGB             *int64                                                                   `json:"minRamGB,omitempty"`
-	MinDisk              *string                                                                  `json:"minDisk,omitempty"`
-	MinDiskGB            *string                                                                  `json:"minDiskGB,omitempty"`
-	RawSize              *int64                                                                   `json:"rawSize,omitempty"`
-	RawSizeGB            *float32                                                                 `json:"rawSizeGB,omitempty"`
-	TrialVersion         *bool                                                                    `json:"trialVersion,omitempty"`
-	VirtioSupported      *bool                                                                    `json:"virtioSupported,omitempty"`
-	Uefi                 *string                                                                  `json:"uefi,omitempty"`
-	IsAutoJoinDomain     *bool                                                                    `json:"isAutoJoinDomain,omitempty"`
-	VmToolsInstalled     *bool                                                                    `json:"vmToolsInstalled,omitempty"`
-	InstallAgent         *bool                                                                    `json:"installAgent,omitempty"`
-	IsForceCustomization *bool                                                                    `json:"isForceCustomization,omitempty"`
-	IsSysprep            *bool                                                                    `json:"isSysprep,omitempty"`
-	FipsEnabled          *bool                                                                    `json:"fipsEnabled,omitempty"`
-	UserData             *string                                                                  `json:"userData,omitempty"`
-	ConsoleKeymap        *string                                                                  `json:"consoleKeymap,omitempty"`
-	StorageProvider      *string                                                                  `json:"storageProvider,omitempty"`
-	ExternalId           *string                                                                  `json:"externalId,omitempty"`
-	Visibility           *string                                                                  `json:"visibility,omitempty"`
-	Accounts             []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"accounts,omitempty"`
-	Config               *ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig               `json:"config,omitempty"`
-	Volumes              []map[string]interface{}                                                 `json:"volumes,omitempty"`
-	StorageControllers   []map[string]interface{}                                                 `json:"storageControllers,omitempty"`
-	NetworkInterfaces    []map[string]interface{}                                                 `json:"networkInterfaces,omitempty"`
-	Tags                 []map[string]interface{}                                                 `json:"tags,omitempty"`
-	Locations            []map[string]interface{}                                                 `json:"locations,omitempty"`
-	DateCreated          *time.Time                                                               `json:"dateCreated,omitempty"`
-	LastUpdated          *time.Time                                                               `json:"lastUpdated,omitempty"`
-	Status               *string                                                                  `json:"status,omitempty"`
-	AdditionalProperties map[string]interface{}                                                   `json:",remain"`
+	Id                   *int64                                                              `json:"id,omitempty"`
+	Name                 *string                                                             `json:"name,omitempty"`
+	Description          NullableString                                                      `json:"description,omitempty"`
+	Labels               []string                                                            `json:"labels,omitempty"`
+	OwnerId              *int64                                                              `json:"ownerId,omitempty"`
+	Tenant               *GetAlerts200ResponseAllOfCheckGroupsInnerInstance                  `json:"tenant,omitempty"`
+	ImageType            *string                                                             `json:"imageType,omitempty"`
+	UserUploaded         *bool                                                               `json:"userUploaded,omitempty"`
+	UserDefined          *bool                                                               `json:"userDefined,omitempty"`
+	SystemImage          *bool                                                               `json:"systemImage,omitempty"`
+	IsCloudInit          *bool                                                               `json:"isCloudInit,omitempty"`
+	SshUsername          NullableString                                                      `json:"sshUsername,omitempty"`
+	SshPassword          NullableString                                                      `json:"sshPassword,omitempty"`
+	SshPasswordHash      NullableString                                                      `json:"sshPasswordHash,omitempty"`
+	SshKey               NullableString                                                      `json:"sshKey,omitempty"`
+	OsType               *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceServerOs `json:"osType,omitempty"`
+	MinRam               NullableInt64                                                       `json:"minRam,omitempty"`
+	MinRamGB             NullableInt64                                                       `json:"minRamGB,omitempty"`
+	MinDisk              NullableString                                                      `json:"minDisk,omitempty"`
+	MinDiskGB            NullableString                                                      `json:"minDiskGB,omitempty"`
+	RawSize              NullableInt64                                                       `json:"rawSize,omitempty"`
+	RawSizeGB            NullableFloat32                                                     `json:"rawSizeGB,omitempty"`
+	TrialVersion         *bool                                                               `json:"trialVersion,omitempty"`
+	VirtioSupported      *bool                                                               `json:"virtioSupported,omitempty"`
+	Uefi                 NullableString                                                      `json:"uefi,omitempty"`
+	IsAutoJoinDomain     *bool                                                               `json:"isAutoJoinDomain,omitempty"`
+	VmToolsInstalled     *bool                                                               `json:"vmToolsInstalled,omitempty"`
+	InstallAgent         *bool                                                               `json:"installAgent,omitempty"`
+	IsForceCustomization *bool                                                               `json:"isForceCustomization,omitempty"`
+	IsSysprep            *bool                                                               `json:"isSysprep,omitempty"`
+	FipsEnabled          *bool                                                               `json:"fipsEnabled,omitempty"`
+	UserData             NullableString                                                      `json:"userData,omitempty"`
+	ConsoleKeymap        NullableString                                                      `json:"consoleKeymap,omitempty"`
+	StorageProvider      NullableString                                                      `json:"storageProvider,omitempty"`
+	ExternalId           NullableString                                                      `json:"externalId,omitempty"`
+	Visibility           *string                                                             `json:"visibility,omitempty"`
+	Accounts             []GetAlerts200ResponseAllOfCheckGroupsInnerInstance                 `json:"accounts,omitempty"`
+	Config               *ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig          `json:"config,omitempty"`
+	Volumes              []map[string]interface{}                                            `json:"volumes,omitempty"`
+	StorageControllers   []map[string]interface{}                                            `json:"storageControllers,omitempty"`
+	NetworkInterfaces    []map[string]interface{}                                            `json:"networkInterfaces,omitempty"`
+	Tags                 []map[string]interface{}                                            `json:"tags,omitempty"`
+	Locations            []map[string]interface{}                                            `json:"locations,omitempty"`
+	DateCreated          *time.Time                                                          `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                                          `json:"lastUpdated,omitempty"`
+	Status               *string                                                             `json:"status,omitempty"`
+	AdditionalProperties map[string]interface{}                                              `json:",remain"`
 }
 
 type _ListVirtualImages200ResponseAllOfVirtualImagesInner ListVirtualImages200ResponseAllOfVirtualImagesInner
@@ -153,36 +153,47 @@ func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetName(v string) 
 	o.Name = &v
 }
 
-// GetDescription returns the Description field value if set, zero value otherwise.
+// GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
+	if o == nil || IsNil(o.Description.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Description
+	return *o.Description.Get()
 }
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Description, true
+	return o.Description.Get(), o.Description.IsSet()
 }
 
 // IsSetDescription returns a boolean if a field has been set.
 func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
+	if o != nil && o.Description.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDescription gets a reference to the given string and assigns it to the Description field.
+// SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetDescription(v string) {
-	o.Description = &v
+	o.Description.Set(&v)
+}
+
+// SetDescriptionNil sets the value for Description to be an explicit nil
+func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetDescriptionNil() {
+	o.Description.Set(nil)
+}
+
+// UnsetDescription ensures that no value is present for Description, not even an explicit nil
+func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) UnsetDescription() {
+	o.Description.Unset()
 }
 
 // GetLabels returns the Labels field value if set, zero value otherwise.
@@ -250,9 +261,9 @@ func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetOwnerId(v int64
 }
 
 // GetTenant returns the Tenant field value if set, zero value otherwise.
-func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetTenant() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetTenant() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.Tenant) {
-		var ret ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return *o.Tenant
@@ -260,7 +271,7 @@ func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetTenant() ListAp
 
 // GetTenantOk returns a tuple with the Tenant field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetTenantOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetTenantOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.Tenant) {
 		return nil, false
 	}
@@ -276,8 +287,8 @@ func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) IsSetTenant() bool
 	return false
 }
 
-// SetTenant gets a reference to the given ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the Tenant field.
-func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetTenant(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetTenant gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Tenant field.
+func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetTenant(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.Tenant = &v
 }
 
@@ -441,138 +452,182 @@ func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetIsCloudInit(v b
 	o.IsCloudInit = &v
 }
 
-// GetSshUsername returns the SshUsername field value if set, zero value otherwise.
+// GetSshUsername returns the SshUsername field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetSshUsername() string {
-	if o == nil || IsNil(o.SshUsername) {
+	if o == nil || IsNil(o.SshUsername.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.SshUsername
+	return *o.SshUsername.Get()
 }
 
 // GetSshUsernameOk returns a tuple with the SshUsername field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetSshUsernameOk() (*string, bool) {
-	if o == nil || IsNil(o.SshUsername) {
+	if o == nil {
 		return nil, false
 	}
-	return o.SshUsername, true
+	return o.SshUsername.Get(), o.SshUsername.IsSet()
 }
 
 // IsSetSshUsername returns a boolean if a field has been set.
 func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) IsSetSshUsername() bool {
-	if o != nil && !IsNil(o.SshUsername) {
+	if o != nil && o.SshUsername.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetSshUsername gets a reference to the given string and assigns it to the SshUsername field.
+// SetSshUsername gets a reference to the given NullableString and assigns it to the SshUsername field.
 func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetSshUsername(v string) {
-	o.SshUsername = &v
+	o.SshUsername.Set(&v)
 }
 
-// GetSshPassword returns the SshPassword field value if set, zero value otherwise.
+// SetSshUsernameNil sets the value for SshUsername to be an explicit nil
+func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetSshUsernameNil() {
+	o.SshUsername.Set(nil)
+}
+
+// UnsetSshUsername ensures that no value is present for SshUsername, not even an explicit nil
+func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) UnsetSshUsername() {
+	o.SshUsername.Unset()
+}
+
+// GetSshPassword returns the SshPassword field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetSshPassword() string {
-	if o == nil || IsNil(o.SshPassword) {
+	if o == nil || IsNil(o.SshPassword.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.SshPassword
+	return *o.SshPassword.Get()
 }
 
 // GetSshPasswordOk returns a tuple with the SshPassword field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetSshPasswordOk() (*string, bool) {
-	if o == nil || IsNil(o.SshPassword) {
+	if o == nil {
 		return nil, false
 	}
-	return o.SshPassword, true
+	return o.SshPassword.Get(), o.SshPassword.IsSet()
 }
 
 // IsSetSshPassword returns a boolean if a field has been set.
 func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) IsSetSshPassword() bool {
-	if o != nil && !IsNil(o.SshPassword) {
+	if o != nil && o.SshPassword.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetSshPassword gets a reference to the given string and assigns it to the SshPassword field.
+// SetSshPassword gets a reference to the given NullableString and assigns it to the SshPassword field.
 func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetSshPassword(v string) {
-	o.SshPassword = &v
+	o.SshPassword.Set(&v)
 }
 
-// GetSshPasswordHash returns the SshPasswordHash field value if set, zero value otherwise.
+// SetSshPasswordNil sets the value for SshPassword to be an explicit nil
+func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetSshPasswordNil() {
+	o.SshPassword.Set(nil)
+}
+
+// UnsetSshPassword ensures that no value is present for SshPassword, not even an explicit nil
+func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) UnsetSshPassword() {
+	o.SshPassword.Unset()
+}
+
+// GetSshPasswordHash returns the SshPasswordHash field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetSshPasswordHash() string {
-	if o == nil || IsNil(o.SshPasswordHash) {
+	if o == nil || IsNil(o.SshPasswordHash.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.SshPasswordHash
+	return *o.SshPasswordHash.Get()
 }
 
 // GetSshPasswordHashOk returns a tuple with the SshPasswordHash field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetSshPasswordHashOk() (*string, bool) {
-	if o == nil || IsNil(o.SshPasswordHash) {
+	if o == nil {
 		return nil, false
 	}
-	return o.SshPasswordHash, true
+	return o.SshPasswordHash.Get(), o.SshPasswordHash.IsSet()
 }
 
 // IsSetSshPasswordHash returns a boolean if a field has been set.
 func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) IsSetSshPasswordHash() bool {
-	if o != nil && !IsNil(o.SshPasswordHash) {
+	if o != nil && o.SshPasswordHash.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetSshPasswordHash gets a reference to the given string and assigns it to the SshPasswordHash field.
+// SetSshPasswordHash gets a reference to the given NullableString and assigns it to the SshPasswordHash field.
 func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetSshPasswordHash(v string) {
-	o.SshPasswordHash = &v
+	o.SshPasswordHash.Set(&v)
 }
 
-// GetSshKey returns the SshKey field value if set, zero value otherwise.
+// SetSshPasswordHashNil sets the value for SshPasswordHash to be an explicit nil
+func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetSshPasswordHashNil() {
+	o.SshPasswordHash.Set(nil)
+}
+
+// UnsetSshPasswordHash ensures that no value is present for SshPasswordHash, not even an explicit nil
+func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) UnsetSshPasswordHash() {
+	o.SshPasswordHash.Unset()
+}
+
+// GetSshKey returns the SshKey field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetSshKey() string {
-	if o == nil || IsNil(o.SshKey) {
+	if o == nil || IsNil(o.SshKey.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.SshKey
+	return *o.SshKey.Get()
 }
 
 // GetSshKeyOk returns a tuple with the SshKey field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetSshKeyOk() (*string, bool) {
-	if o == nil || IsNil(o.SshKey) {
+	if o == nil {
 		return nil, false
 	}
-	return o.SshKey, true
+	return o.SshKey.Get(), o.SshKey.IsSet()
 }
 
 // IsSetSshKey returns a boolean if a field has been set.
 func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) IsSetSshKey() bool {
-	if o != nil && !IsNil(o.SshKey) {
+	if o != nil && o.SshKey.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetSshKey gets a reference to the given string and assigns it to the SshKey field.
+// SetSshKey gets a reference to the given NullableString and assigns it to the SshKey field.
 func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetSshKey(v string) {
-	o.SshKey = &v
+	o.SshKey.Set(&v)
+}
+
+// SetSshKeyNil sets the value for SshKey to be an explicit nil
+func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetSshKeyNil() {
+	o.SshKey.Set(nil)
+}
+
+// UnsetSshKey ensures that no value is present for SshKey, not even an explicit nil
+func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) UnsetSshKey() {
+	o.SshKey.Unset()
 }
 
 // GetOsType returns the OsType field value if set, zero value otherwise.
-func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetOsType() ListVirtualImages200ResponseAllOfVirtualImagesInnerOsType {
+func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetOsType() ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceServerOs {
 	if o == nil || IsNil(o.OsType) {
-		var ret ListVirtualImages200ResponseAllOfVirtualImagesInnerOsType
+		var ret ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceServerOs
 		return ret
 	}
 	return *o.OsType
@@ -580,7 +635,7 @@ func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetOsType() ListVi
 
 // GetOsTypeOk returns a tuple with the OsType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetOsTypeOk() (*ListVirtualImages200ResponseAllOfVirtualImagesInnerOsType, bool) {
+func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetOsTypeOk() (*ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceServerOs, bool) {
 	if o == nil || IsNil(o.OsType) {
 		return nil, false
 	}
@@ -596,201 +651,267 @@ func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) IsSetOsType() bool
 	return false
 }
 
-// SetOsType gets a reference to the given ListVirtualImages200ResponseAllOfVirtualImagesInnerOsType and assigns it to the OsType field.
-func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetOsType(v ListVirtualImages200ResponseAllOfVirtualImagesInnerOsType) {
+// SetOsType gets a reference to the given ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceServerOs and assigns it to the OsType field.
+func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetOsType(v ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceServerOs) {
 	o.OsType = &v
 }
 
-// GetMinRam returns the MinRam field value if set, zero value otherwise.
+// GetMinRam returns the MinRam field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetMinRam() int64 {
-	if o == nil || IsNil(o.MinRam) {
+	if o == nil || IsNil(o.MinRam.Get()) {
 		var ret int64
 		return ret
 	}
-	return *o.MinRam
+	return *o.MinRam.Get()
 }
 
 // GetMinRamOk returns a tuple with the MinRam field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetMinRamOk() (*int64, bool) {
-	if o == nil || IsNil(o.MinRam) {
+	if o == nil {
 		return nil, false
 	}
-	return o.MinRam, true
+	return o.MinRam.Get(), o.MinRam.IsSet()
 }
 
 // IsSetMinRam returns a boolean if a field has been set.
 func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) IsSetMinRam() bool {
-	if o != nil && !IsNil(o.MinRam) {
+	if o != nil && o.MinRam.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetMinRam gets a reference to the given int64 and assigns it to the MinRam field.
+// SetMinRam gets a reference to the given NullableInt64 and assigns it to the MinRam field.
 func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetMinRam(v int64) {
-	o.MinRam = &v
+	o.MinRam.Set(&v)
 }
 
-// GetMinRamGB returns the MinRamGB field value if set, zero value otherwise.
+// SetMinRamNil sets the value for MinRam to be an explicit nil
+func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetMinRamNil() {
+	o.MinRam.Set(nil)
+}
+
+// UnsetMinRam ensures that no value is present for MinRam, not even an explicit nil
+func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) UnsetMinRam() {
+	o.MinRam.Unset()
+}
+
+// GetMinRamGB returns the MinRamGB field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetMinRamGB() int64 {
-	if o == nil || IsNil(o.MinRamGB) {
+	if o == nil || IsNil(o.MinRamGB.Get()) {
 		var ret int64
 		return ret
 	}
-	return *o.MinRamGB
+	return *o.MinRamGB.Get()
 }
 
 // GetMinRamGBOk returns a tuple with the MinRamGB field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetMinRamGBOk() (*int64, bool) {
-	if o == nil || IsNil(o.MinRamGB) {
+	if o == nil {
 		return nil, false
 	}
-	return o.MinRamGB, true
+	return o.MinRamGB.Get(), o.MinRamGB.IsSet()
 }
 
 // IsSetMinRamGB returns a boolean if a field has been set.
 func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) IsSetMinRamGB() bool {
-	if o != nil && !IsNil(o.MinRamGB) {
+	if o != nil && o.MinRamGB.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetMinRamGB gets a reference to the given int64 and assigns it to the MinRamGB field.
+// SetMinRamGB gets a reference to the given NullableInt64 and assigns it to the MinRamGB field.
 func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetMinRamGB(v int64) {
-	o.MinRamGB = &v
+	o.MinRamGB.Set(&v)
 }
 
-// GetMinDisk returns the MinDisk field value if set, zero value otherwise.
+// SetMinRamGBNil sets the value for MinRamGB to be an explicit nil
+func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetMinRamGBNil() {
+	o.MinRamGB.Set(nil)
+}
+
+// UnsetMinRamGB ensures that no value is present for MinRamGB, not even an explicit nil
+func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) UnsetMinRamGB() {
+	o.MinRamGB.Unset()
+}
+
+// GetMinDisk returns the MinDisk field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetMinDisk() string {
-	if o == nil || IsNil(o.MinDisk) {
+	if o == nil || IsNil(o.MinDisk.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.MinDisk
+	return *o.MinDisk.Get()
 }
 
 // GetMinDiskOk returns a tuple with the MinDisk field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetMinDiskOk() (*string, bool) {
-	if o == nil || IsNil(o.MinDisk) {
+	if o == nil {
 		return nil, false
 	}
-	return o.MinDisk, true
+	return o.MinDisk.Get(), o.MinDisk.IsSet()
 }
 
 // IsSetMinDisk returns a boolean if a field has been set.
 func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) IsSetMinDisk() bool {
-	if o != nil && !IsNil(o.MinDisk) {
+	if o != nil && o.MinDisk.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetMinDisk gets a reference to the given string and assigns it to the MinDisk field.
+// SetMinDisk gets a reference to the given NullableString and assigns it to the MinDisk field.
 func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetMinDisk(v string) {
-	o.MinDisk = &v
+	o.MinDisk.Set(&v)
 }
 
-// GetMinDiskGB returns the MinDiskGB field value if set, zero value otherwise.
+// SetMinDiskNil sets the value for MinDisk to be an explicit nil
+func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetMinDiskNil() {
+	o.MinDisk.Set(nil)
+}
+
+// UnsetMinDisk ensures that no value is present for MinDisk, not even an explicit nil
+func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) UnsetMinDisk() {
+	o.MinDisk.Unset()
+}
+
+// GetMinDiskGB returns the MinDiskGB field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetMinDiskGB() string {
-	if o == nil || IsNil(o.MinDiskGB) {
+	if o == nil || IsNil(o.MinDiskGB.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.MinDiskGB
+	return *o.MinDiskGB.Get()
 }
 
 // GetMinDiskGBOk returns a tuple with the MinDiskGB field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetMinDiskGBOk() (*string, bool) {
-	if o == nil || IsNil(o.MinDiskGB) {
+	if o == nil {
 		return nil, false
 	}
-	return o.MinDiskGB, true
+	return o.MinDiskGB.Get(), o.MinDiskGB.IsSet()
 }
 
 // IsSetMinDiskGB returns a boolean if a field has been set.
 func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) IsSetMinDiskGB() bool {
-	if o != nil && !IsNil(o.MinDiskGB) {
+	if o != nil && o.MinDiskGB.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetMinDiskGB gets a reference to the given string and assigns it to the MinDiskGB field.
+// SetMinDiskGB gets a reference to the given NullableString and assigns it to the MinDiskGB field.
 func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetMinDiskGB(v string) {
-	o.MinDiskGB = &v
+	o.MinDiskGB.Set(&v)
 }
 
-// GetRawSize returns the RawSize field value if set, zero value otherwise.
+// SetMinDiskGBNil sets the value for MinDiskGB to be an explicit nil
+func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetMinDiskGBNil() {
+	o.MinDiskGB.Set(nil)
+}
+
+// UnsetMinDiskGB ensures that no value is present for MinDiskGB, not even an explicit nil
+func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) UnsetMinDiskGB() {
+	o.MinDiskGB.Unset()
+}
+
+// GetRawSize returns the RawSize field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetRawSize() int64 {
-	if o == nil || IsNil(o.RawSize) {
+	if o == nil || IsNil(o.RawSize.Get()) {
 		var ret int64
 		return ret
 	}
-	return *o.RawSize
+	return *o.RawSize.Get()
 }
 
 // GetRawSizeOk returns a tuple with the RawSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetRawSizeOk() (*int64, bool) {
-	if o == nil || IsNil(o.RawSize) {
+	if o == nil {
 		return nil, false
 	}
-	return o.RawSize, true
+	return o.RawSize.Get(), o.RawSize.IsSet()
 }
 
 // IsSetRawSize returns a boolean if a field has been set.
 func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) IsSetRawSize() bool {
-	if o != nil && !IsNil(o.RawSize) {
+	if o != nil && o.RawSize.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetRawSize gets a reference to the given int64 and assigns it to the RawSize field.
+// SetRawSize gets a reference to the given NullableInt64 and assigns it to the RawSize field.
 func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetRawSize(v int64) {
-	o.RawSize = &v
+	o.RawSize.Set(&v)
 }
 
-// GetRawSizeGB returns the RawSizeGB field value if set, zero value otherwise.
+// SetRawSizeNil sets the value for RawSize to be an explicit nil
+func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetRawSizeNil() {
+	o.RawSize.Set(nil)
+}
+
+// UnsetRawSize ensures that no value is present for RawSize, not even an explicit nil
+func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) UnsetRawSize() {
+	o.RawSize.Unset()
+}
+
+// GetRawSizeGB returns the RawSizeGB field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetRawSizeGB() float32 {
-	if o == nil || IsNil(o.RawSizeGB) {
+	if o == nil || IsNil(o.RawSizeGB.Get()) {
 		var ret float32
 		return ret
 	}
-	return *o.RawSizeGB
+	return *o.RawSizeGB.Get()
 }
 
 // GetRawSizeGBOk returns a tuple with the RawSizeGB field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetRawSizeGBOk() (*float32, bool) {
-	if o == nil || IsNil(o.RawSizeGB) {
+	if o == nil {
 		return nil, false
 	}
-	return o.RawSizeGB, true
+	return o.RawSizeGB.Get(), o.RawSizeGB.IsSet()
 }
 
 // IsSetRawSizeGB returns a boolean if a field has been set.
 func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) IsSetRawSizeGB() bool {
-	if o != nil && !IsNil(o.RawSizeGB) {
+	if o != nil && o.RawSizeGB.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetRawSizeGB gets a reference to the given float32 and assigns it to the RawSizeGB field.
+// SetRawSizeGB gets a reference to the given NullableFloat32 and assigns it to the RawSizeGB field.
 func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetRawSizeGB(v float32) {
-	o.RawSizeGB = &v
+	o.RawSizeGB.Set(&v)
+}
+
+// SetRawSizeGBNil sets the value for RawSizeGB to be an explicit nil
+func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetRawSizeGBNil() {
+	o.RawSizeGB.Set(nil)
+}
+
+// UnsetRawSizeGB ensures that no value is present for RawSizeGB, not even an explicit nil
+func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) UnsetRawSizeGB() {
+	o.RawSizeGB.Unset()
 }
 
 // GetTrialVersion returns the TrialVersion field value if set, zero value otherwise.
@@ -857,36 +978,47 @@ func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetVirtioSupported
 	o.VirtioSupported = &v
 }
 
-// GetUefi returns the Uefi field value if set, zero value otherwise.
+// GetUefi returns the Uefi field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetUefi() string {
-	if o == nil || IsNil(o.Uefi) {
+	if o == nil || IsNil(o.Uefi.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Uefi
+	return *o.Uefi.Get()
 }
 
 // GetUefiOk returns a tuple with the Uefi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetUefiOk() (*string, bool) {
-	if o == nil || IsNil(o.Uefi) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Uefi, true
+	return o.Uefi.Get(), o.Uefi.IsSet()
 }
 
 // IsSetUefi returns a boolean if a field has been set.
 func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) IsSetUefi() bool {
-	if o != nil && !IsNil(o.Uefi) {
+	if o != nil && o.Uefi.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetUefi gets a reference to the given string and assigns it to the Uefi field.
+// SetUefi gets a reference to the given NullableString and assigns it to the Uefi field.
 func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetUefi(v string) {
-	o.Uefi = &v
+	o.Uefi.Set(&v)
+}
+
+// SetUefiNil sets the value for Uefi to be an explicit nil
+func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetUefiNil() {
+	o.Uefi.Set(nil)
+}
+
+// UnsetUefi ensures that no value is present for Uefi, not even an explicit nil
+func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) UnsetUefi() {
+	o.Uefi.Unset()
 }
 
 // GetIsAutoJoinDomain returns the IsAutoJoinDomain field value if set, zero value otherwise.
@@ -1081,132 +1213,176 @@ func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetFipsEnabled(v b
 	o.FipsEnabled = &v
 }
 
-// GetUserData returns the UserData field value if set, zero value otherwise.
+// GetUserData returns the UserData field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetUserData() string {
-	if o == nil || IsNil(o.UserData) {
+	if o == nil || IsNil(o.UserData.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.UserData
+	return *o.UserData.Get()
 }
 
 // GetUserDataOk returns a tuple with the UserData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetUserDataOk() (*string, bool) {
-	if o == nil || IsNil(o.UserData) {
+	if o == nil {
 		return nil, false
 	}
-	return o.UserData, true
+	return o.UserData.Get(), o.UserData.IsSet()
 }
 
 // IsSetUserData returns a boolean if a field has been set.
 func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) IsSetUserData() bool {
-	if o != nil && !IsNil(o.UserData) {
+	if o != nil && o.UserData.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetUserData gets a reference to the given string and assigns it to the UserData field.
+// SetUserData gets a reference to the given NullableString and assigns it to the UserData field.
 func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetUserData(v string) {
-	o.UserData = &v
+	o.UserData.Set(&v)
 }
 
-// GetConsoleKeymap returns the ConsoleKeymap field value if set, zero value otherwise.
+// SetUserDataNil sets the value for UserData to be an explicit nil
+func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetUserDataNil() {
+	o.UserData.Set(nil)
+}
+
+// UnsetUserData ensures that no value is present for UserData, not even an explicit nil
+func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) UnsetUserData() {
+	o.UserData.Unset()
+}
+
+// GetConsoleKeymap returns the ConsoleKeymap field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetConsoleKeymap() string {
-	if o == nil || IsNil(o.ConsoleKeymap) {
+	if o == nil || IsNil(o.ConsoleKeymap.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ConsoleKeymap
+	return *o.ConsoleKeymap.Get()
 }
 
 // GetConsoleKeymapOk returns a tuple with the ConsoleKeymap field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetConsoleKeymapOk() (*string, bool) {
-	if o == nil || IsNil(o.ConsoleKeymap) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ConsoleKeymap, true
+	return o.ConsoleKeymap.Get(), o.ConsoleKeymap.IsSet()
 }
 
 // IsSetConsoleKeymap returns a boolean if a field has been set.
 func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) IsSetConsoleKeymap() bool {
-	if o != nil && !IsNil(o.ConsoleKeymap) {
+	if o != nil && o.ConsoleKeymap.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetConsoleKeymap gets a reference to the given string and assigns it to the ConsoleKeymap field.
+// SetConsoleKeymap gets a reference to the given NullableString and assigns it to the ConsoleKeymap field.
 func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetConsoleKeymap(v string) {
-	o.ConsoleKeymap = &v
+	o.ConsoleKeymap.Set(&v)
 }
 
-// GetStorageProvider returns the StorageProvider field value if set, zero value otherwise.
+// SetConsoleKeymapNil sets the value for ConsoleKeymap to be an explicit nil
+func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetConsoleKeymapNil() {
+	o.ConsoleKeymap.Set(nil)
+}
+
+// UnsetConsoleKeymap ensures that no value is present for ConsoleKeymap, not even an explicit nil
+func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) UnsetConsoleKeymap() {
+	o.ConsoleKeymap.Unset()
+}
+
+// GetStorageProvider returns the StorageProvider field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetStorageProvider() string {
-	if o == nil || IsNil(o.StorageProvider) {
+	if o == nil || IsNil(o.StorageProvider.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.StorageProvider
+	return *o.StorageProvider.Get()
 }
 
 // GetStorageProviderOk returns a tuple with the StorageProvider field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetStorageProviderOk() (*string, bool) {
-	if o == nil || IsNil(o.StorageProvider) {
+	if o == nil {
 		return nil, false
 	}
-	return o.StorageProvider, true
+	return o.StorageProvider.Get(), o.StorageProvider.IsSet()
 }
 
 // IsSetStorageProvider returns a boolean if a field has been set.
 func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) IsSetStorageProvider() bool {
-	if o != nil && !IsNil(o.StorageProvider) {
+	if o != nil && o.StorageProvider.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetStorageProvider gets a reference to the given string and assigns it to the StorageProvider field.
+// SetStorageProvider gets a reference to the given NullableString and assigns it to the StorageProvider field.
 func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetStorageProvider(v string) {
-	o.StorageProvider = &v
+	o.StorageProvider.Set(&v)
 }
 
-// GetExternalId returns the ExternalId field value if set, zero value otherwise.
+// SetStorageProviderNil sets the value for StorageProvider to be an explicit nil
+func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetStorageProviderNil() {
+	o.StorageProvider.Set(nil)
+}
+
+// UnsetStorageProvider ensures that no value is present for StorageProvider, not even an explicit nil
+func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) UnsetStorageProvider() {
+	o.StorageProvider.Unset()
+}
+
+// GetExternalId returns the ExternalId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetExternalId() string {
-	if o == nil || IsNil(o.ExternalId) {
+	if o == nil || IsNil(o.ExternalId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ExternalId
+	return *o.ExternalId.Get()
 }
 
 // GetExternalIdOk returns a tuple with the ExternalId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetExternalIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ExternalId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ExternalId, true
+	return o.ExternalId.Get(), o.ExternalId.IsSet()
 }
 
 // IsSetExternalId returns a boolean if a field has been set.
 func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) IsSetExternalId() bool {
-	if o != nil && !IsNil(o.ExternalId) {
+	if o != nil && o.ExternalId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetExternalId gets a reference to the given string and assigns it to the ExternalId field.
+// SetExternalId gets a reference to the given NullableString and assigns it to the ExternalId field.
 func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetExternalId(v string) {
-	o.ExternalId = &v
+	o.ExternalId.Set(&v)
+}
+
+// SetExternalIdNil sets the value for ExternalId to be an explicit nil
+func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetExternalIdNil() {
+	o.ExternalId.Set(nil)
+}
+
+// UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
+func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) UnsetExternalId() {
+	o.ExternalId.Unset()
 }
 
 // GetVisibility returns the Visibility field value if set, zero value otherwise.
@@ -1242,9 +1418,9 @@ func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetVisibility(v st
 }
 
 // GetAccounts returns the Accounts field value if set, zero value otherwise.
-func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetAccounts() []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetAccounts() []GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.Accounts) {
-		var ret []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret []GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return o.Accounts
@@ -1252,7 +1428,7 @@ func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetAccounts() []Li
 
 // GetAccountsOk returns a tuple with the Accounts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetAccountsOk() ([]ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetAccountsOk() ([]GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.Accounts) {
 		return nil, false
 	}
@@ -1268,8 +1444,8 @@ func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) IsSetAccounts() bo
 	return false
 }
 
-// SetAccounts gets a reference to the given []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the Accounts field.
-func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetAccounts(v []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetAccounts gets a reference to the given []GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Accounts field.
+func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetAccounts(v []GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.Accounts = v
 }
 
@@ -1577,8 +1753,8 @@ func (o ListVirtualImages200ResponseAllOfVirtualImagesInner) ToMap() (map[string
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !IsNil(o.Description) {
-		toSerialize["description"] = o.Description
+	if o.Description.IsSet() {
+		toSerialize["description"] = o.Description.Get()
 	}
 	if !IsNil(o.Labels) {
 		toSerialize["labels"] = o.Labels
@@ -1604,38 +1780,38 @@ func (o ListVirtualImages200ResponseAllOfVirtualImagesInner) ToMap() (map[string
 	if !IsNil(o.IsCloudInit) {
 		toSerialize["isCloudInit"] = o.IsCloudInit
 	}
-	if !IsNil(o.SshUsername) {
-		toSerialize["sshUsername"] = o.SshUsername
+	if o.SshUsername.IsSet() {
+		toSerialize["sshUsername"] = o.SshUsername.Get()
 	}
-	if !IsNil(o.SshPassword) {
-		toSerialize["sshPassword"] = o.SshPassword
+	if o.SshPassword.IsSet() {
+		toSerialize["sshPassword"] = o.SshPassword.Get()
 	}
-	if !IsNil(o.SshPasswordHash) {
-		toSerialize["sshPasswordHash"] = o.SshPasswordHash
+	if o.SshPasswordHash.IsSet() {
+		toSerialize["sshPasswordHash"] = o.SshPasswordHash.Get()
 	}
-	if !IsNil(o.SshKey) {
-		toSerialize["sshKey"] = o.SshKey
+	if o.SshKey.IsSet() {
+		toSerialize["sshKey"] = o.SshKey.Get()
 	}
 	if !IsNil(o.OsType) {
 		toSerialize["osType"] = o.OsType
 	}
-	if !IsNil(o.MinRam) {
-		toSerialize["minRam"] = o.MinRam
+	if o.MinRam.IsSet() {
+		toSerialize["minRam"] = o.MinRam.Get()
 	}
-	if !IsNil(o.MinRamGB) {
-		toSerialize["minRamGB"] = o.MinRamGB
+	if o.MinRamGB.IsSet() {
+		toSerialize["minRamGB"] = o.MinRamGB.Get()
 	}
-	if !IsNil(o.MinDisk) {
-		toSerialize["minDisk"] = o.MinDisk
+	if o.MinDisk.IsSet() {
+		toSerialize["minDisk"] = o.MinDisk.Get()
 	}
-	if !IsNil(o.MinDiskGB) {
-		toSerialize["minDiskGB"] = o.MinDiskGB
+	if o.MinDiskGB.IsSet() {
+		toSerialize["minDiskGB"] = o.MinDiskGB.Get()
 	}
-	if !IsNil(o.RawSize) {
-		toSerialize["rawSize"] = o.RawSize
+	if o.RawSize.IsSet() {
+		toSerialize["rawSize"] = o.RawSize.Get()
 	}
-	if !IsNil(o.RawSizeGB) {
-		toSerialize["rawSizeGB"] = o.RawSizeGB
+	if o.RawSizeGB.IsSet() {
+		toSerialize["rawSizeGB"] = o.RawSizeGB.Get()
 	}
 	if !IsNil(o.TrialVersion) {
 		toSerialize["trialVersion"] = o.TrialVersion
@@ -1643,8 +1819,8 @@ func (o ListVirtualImages200ResponseAllOfVirtualImagesInner) ToMap() (map[string
 	if !IsNil(o.VirtioSupported) {
 		toSerialize["virtioSupported"] = o.VirtioSupported
 	}
-	if !IsNil(o.Uefi) {
-		toSerialize["uefi"] = o.Uefi
+	if o.Uefi.IsSet() {
+		toSerialize["uefi"] = o.Uefi.Get()
 	}
 	if !IsNil(o.IsAutoJoinDomain) {
 		toSerialize["isAutoJoinDomain"] = o.IsAutoJoinDomain
@@ -1664,17 +1840,17 @@ func (o ListVirtualImages200ResponseAllOfVirtualImagesInner) ToMap() (map[string
 	if !IsNil(o.FipsEnabled) {
 		toSerialize["fipsEnabled"] = o.FipsEnabled
 	}
-	if !IsNil(o.UserData) {
-		toSerialize["userData"] = o.UserData
+	if o.UserData.IsSet() {
+		toSerialize["userData"] = o.UserData.Get()
 	}
-	if !IsNil(o.ConsoleKeymap) {
-		toSerialize["consoleKeymap"] = o.ConsoleKeymap
+	if o.ConsoleKeymap.IsSet() {
+		toSerialize["consoleKeymap"] = o.ConsoleKeymap.Get()
 	}
-	if !IsNil(o.StorageProvider) {
-		toSerialize["storageProvider"] = o.StorageProvider
+	if o.StorageProvider.IsSet() {
+		toSerialize["storageProvider"] = o.StorageProvider.Get()
 	}
-	if !IsNil(o.ExternalId) {
-		toSerialize["externalId"] = o.ExternalId
+	if o.ExternalId.IsSet() {
+		toSerialize["externalId"] = o.ExternalId.Get()
 	}
 	if !IsNil(o.Visibility) {
 		toSerialize["visibility"] = o.Visibility

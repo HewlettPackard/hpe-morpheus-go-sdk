@@ -42,7 +42,7 @@ type InstanceServicePlan struct {
 	NoDisks               *bool                                                            `json:"noDisks,omitempty"`
 	HasDatastore          *bool                                                            `json:"hasDatastore,omitempty"`
 	MinDisk               *int32                                                           `json:"minDisk,omitempty"`
-	MaxDisk               *string                                                          `json:"maxDisk,omitempty"`
+	MaxDisk               NullableString                                                   `json:"maxDisk,omitempty"`
 	LvmSupported          *bool                                                            `json:"lvmSupported,omitempty"`
 	Datastores            *ListInstanceServicePlans200ResponsePlansInnerDatastores         `json:"datastores,omitempty"`
 	SupportsAutoDatastore *bool                                                            `json:"supportsAutoDatastore,omitempty"`
@@ -53,7 +53,7 @@ type InstanceServicePlan struct {
 	RootCustomSizeOptions map[string]interface{}                                           `json:"rootCustomSizeOptions,omitempty"`
 	CustomSizeOptions     map[string]interface{}                                           `json:"customSizeOptions,omitempty"`
 	CustomCores           *bool                                                            `json:"customCores,omitempty"`
-	MaxDisks              *string                                                          `json:"maxDisks,omitempty"`
+	MaxDisks              NullableString                                                   `json:"maxDisks,omitempty"`
 	MemorySizeType        *string                                                          `json:"memorySizeType,omitempty"`
 	AdditionalProperties  map[string]interface{}                                           `json:",remain"`
 }
@@ -781,36 +781,47 @@ func (o *InstanceServicePlan) SetMinDisk(v int32) {
 	o.MinDisk = &v
 }
 
-// GetMaxDisk returns the MaxDisk field value if set, zero value otherwise.
+// GetMaxDisk returns the MaxDisk field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *InstanceServicePlan) GetMaxDisk() string {
-	if o == nil || IsNil(o.MaxDisk) {
+	if o == nil || IsNil(o.MaxDisk.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.MaxDisk
+	return *o.MaxDisk.Get()
 }
 
 // GetMaxDiskOk returns a tuple with the MaxDisk field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *InstanceServicePlan) GetMaxDiskOk() (*string, bool) {
-	if o == nil || IsNil(o.MaxDisk) {
+	if o == nil {
 		return nil, false
 	}
-	return o.MaxDisk, true
+	return o.MaxDisk.Get(), o.MaxDisk.IsSet()
 }
 
 // IsSetMaxDisk returns a boolean if a field has been set.
 func (o *InstanceServicePlan) IsSetMaxDisk() bool {
-	if o != nil && !IsNil(o.MaxDisk) {
+	if o != nil && o.MaxDisk.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetMaxDisk gets a reference to the given string and assigns it to the MaxDisk field.
+// SetMaxDisk gets a reference to the given NullableString and assigns it to the MaxDisk field.
 func (o *InstanceServicePlan) SetMaxDisk(v string) {
-	o.MaxDisk = &v
+	o.MaxDisk.Set(&v)
+}
+
+// SetMaxDiskNil sets the value for MaxDisk to be an explicit nil
+func (o *InstanceServicePlan) SetMaxDiskNil() {
+	o.MaxDisk.Set(nil)
+}
+
+// UnsetMaxDisk ensures that no value is present for MaxDisk, not even an explicit nil
+func (o *InstanceServicePlan) UnsetMaxDisk() {
+	o.MaxDisk.Unset()
 }
 
 // GetLvmSupported returns the LvmSupported field value if set, zero value otherwise.
@@ -941,9 +952,9 @@ func (o *InstanceServicePlan) SetAutoOptions(v []ListInstanceServicePlans200Resp
 	o.AutoOptions = v
 }
 
-// GetCpuOptions returns the CpuOptions field value if set, zero value otherwise.
+// GetCpuOptions returns the CpuOptions field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *InstanceServicePlan) GetCpuOptions() []map[string]interface{} {
-	if o == nil || IsNil(o.CpuOptions) {
+	if o == nil {
 		var ret []map[string]interface{}
 		return ret
 	}
@@ -952,6 +963,7 @@ func (o *InstanceServicePlan) GetCpuOptions() []map[string]interface{} {
 
 // GetCpuOptionsOk returns a tuple with the CpuOptions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *InstanceServicePlan) GetCpuOptionsOk() ([]map[string]interface{}, bool) {
 	if o == nil || IsNil(o.CpuOptions) {
 		return nil, false
@@ -973,9 +985,9 @@ func (o *InstanceServicePlan) SetCpuOptions(v []map[string]interface{}) {
 	o.CpuOptions = v
 }
 
-// GetCoreOptions returns the CoreOptions field value if set, zero value otherwise.
+// GetCoreOptions returns the CoreOptions field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *InstanceServicePlan) GetCoreOptions() []map[string]interface{} {
-	if o == nil || IsNil(o.CoreOptions) {
+	if o == nil {
 		var ret []map[string]interface{}
 		return ret
 	}
@@ -984,6 +996,7 @@ func (o *InstanceServicePlan) GetCoreOptions() []map[string]interface{} {
 
 // GetCoreOptionsOk returns a tuple with the CoreOptions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *InstanceServicePlan) GetCoreOptionsOk() ([]map[string]interface{}, bool) {
 	if o == nil || IsNil(o.CoreOptions) {
 		return nil, false
@@ -1005,9 +1018,9 @@ func (o *InstanceServicePlan) SetCoreOptions(v []map[string]interface{}) {
 	o.CoreOptions = v
 }
 
-// GetMemoryOptions returns the MemoryOptions field value if set, zero value otherwise.
+// GetMemoryOptions returns the MemoryOptions field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *InstanceServicePlan) GetMemoryOptions() []map[string]interface{} {
-	if o == nil || IsNil(o.MemoryOptions) {
+	if o == nil {
 		var ret []map[string]interface{}
 		return ret
 	}
@@ -1016,6 +1029,7 @@ func (o *InstanceServicePlan) GetMemoryOptions() []map[string]interface{} {
 
 // GetMemoryOptionsOk returns a tuple with the MemoryOptions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *InstanceServicePlan) GetMemoryOptionsOk() ([]map[string]interface{}, bool) {
 	if o == nil || IsNil(o.MemoryOptions) {
 		return nil, false
@@ -1037,9 +1051,9 @@ func (o *InstanceServicePlan) SetMemoryOptions(v []map[string]interface{}) {
 	o.MemoryOptions = v
 }
 
-// GetRootCustomSizeOptions returns the RootCustomSizeOptions field value if set, zero value otherwise.
+// GetRootCustomSizeOptions returns the RootCustomSizeOptions field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *InstanceServicePlan) GetRootCustomSizeOptions() map[string]interface{} {
-	if o == nil || IsNil(o.RootCustomSizeOptions) {
+	if o == nil {
 		var ret map[string]interface{}
 		return ret
 	}
@@ -1048,6 +1062,7 @@ func (o *InstanceServicePlan) GetRootCustomSizeOptions() map[string]interface{} 
 
 // GetRootCustomSizeOptionsOk returns a tuple with the RootCustomSizeOptions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *InstanceServicePlan) GetRootCustomSizeOptionsOk() (map[string]interface{}, bool) {
 	if o == nil || IsNil(o.RootCustomSizeOptions) {
 		return map[string]interface{}{}, false
@@ -1069,9 +1084,9 @@ func (o *InstanceServicePlan) SetRootCustomSizeOptions(v map[string]interface{})
 	o.RootCustomSizeOptions = v
 }
 
-// GetCustomSizeOptions returns the CustomSizeOptions field value if set, zero value otherwise.
+// GetCustomSizeOptions returns the CustomSizeOptions field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *InstanceServicePlan) GetCustomSizeOptions() map[string]interface{} {
-	if o == nil || IsNil(o.CustomSizeOptions) {
+	if o == nil {
 		var ret map[string]interface{}
 		return ret
 	}
@@ -1080,6 +1095,7 @@ func (o *InstanceServicePlan) GetCustomSizeOptions() map[string]interface{} {
 
 // GetCustomSizeOptionsOk returns a tuple with the CustomSizeOptions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *InstanceServicePlan) GetCustomSizeOptionsOk() (map[string]interface{}, bool) {
 	if o == nil || IsNil(o.CustomSizeOptions) {
 		return map[string]interface{}{}, false
@@ -1133,36 +1149,47 @@ func (o *InstanceServicePlan) SetCustomCores(v bool) {
 	o.CustomCores = &v
 }
 
-// GetMaxDisks returns the MaxDisks field value if set, zero value otherwise.
+// GetMaxDisks returns the MaxDisks field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *InstanceServicePlan) GetMaxDisks() string {
-	if o == nil || IsNil(o.MaxDisks) {
+	if o == nil || IsNil(o.MaxDisks.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.MaxDisks
+	return *o.MaxDisks.Get()
 }
 
 // GetMaxDisksOk returns a tuple with the MaxDisks field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *InstanceServicePlan) GetMaxDisksOk() (*string, bool) {
-	if o == nil || IsNil(o.MaxDisks) {
+	if o == nil {
 		return nil, false
 	}
-	return o.MaxDisks, true
+	return o.MaxDisks.Get(), o.MaxDisks.IsSet()
 }
 
 // IsSetMaxDisks returns a boolean if a field has been set.
 func (o *InstanceServicePlan) IsSetMaxDisks() bool {
-	if o != nil && !IsNil(o.MaxDisks) {
+	if o != nil && o.MaxDisks.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetMaxDisks gets a reference to the given string and assigns it to the MaxDisks field.
+// SetMaxDisks gets a reference to the given NullableString and assigns it to the MaxDisks field.
 func (o *InstanceServicePlan) SetMaxDisks(v string) {
-	o.MaxDisks = &v
+	o.MaxDisks.Set(&v)
+}
+
+// SetMaxDisksNil sets the value for MaxDisks to be an explicit nil
+func (o *InstanceServicePlan) SetMaxDisksNil() {
+	o.MaxDisks.Set(nil)
+}
+
+// UnsetMaxDisks ensures that no value is present for MaxDisks, not even an explicit nil
+func (o *InstanceServicePlan) UnsetMaxDisks() {
+	o.MaxDisks.Unset()
 }
 
 // GetMemorySizeType returns the MemorySizeType field value if set, zero value otherwise.
@@ -1273,8 +1300,8 @@ func (o InstanceServicePlan) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.MinDisk) {
 		toSerialize["minDisk"] = o.MinDisk
 	}
-	if !IsNil(o.MaxDisk) {
-		toSerialize["maxDisk"] = o.MaxDisk
+	if o.MaxDisk.IsSet() {
+		toSerialize["maxDisk"] = o.MaxDisk.Get()
 	}
 	if !IsNil(o.LvmSupported) {
 		toSerialize["lvmSupported"] = o.LvmSupported
@@ -1288,26 +1315,26 @@ func (o InstanceServicePlan) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.AutoOptions) {
 		toSerialize["autoOptions"] = o.AutoOptions
 	}
-	if !IsNil(o.CpuOptions) {
+	if o.CpuOptions != nil {
 		toSerialize["cpuOptions"] = o.CpuOptions
 	}
-	if !IsNil(o.CoreOptions) {
+	if o.CoreOptions != nil {
 		toSerialize["coreOptions"] = o.CoreOptions
 	}
-	if !IsNil(o.MemoryOptions) {
+	if o.MemoryOptions != nil {
 		toSerialize["memoryOptions"] = o.MemoryOptions
 	}
-	if !IsNil(o.RootCustomSizeOptions) {
+	if o.RootCustomSizeOptions != nil {
 		toSerialize["rootCustomSizeOptions"] = o.RootCustomSizeOptions
 	}
-	if !IsNil(o.CustomSizeOptions) {
+	if o.CustomSizeOptions != nil {
 		toSerialize["customSizeOptions"] = o.CustomSizeOptions
 	}
 	if !IsNil(o.CustomCores) {
 		toSerialize["customCores"] = o.CustomCores
 	}
-	if !IsNil(o.MaxDisks) {
-		toSerialize["maxDisks"] = o.MaxDisks
+	if o.MaxDisks.IsSet() {
+		toSerialize["maxDisks"] = o.MaxDisks.Get()
 	}
 	if !IsNil(o.MemorySizeType) {
 		toSerialize["memorySizeType"] = o.MemorySizeType

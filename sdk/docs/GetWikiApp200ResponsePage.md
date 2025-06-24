@@ -8,8 +8,8 @@ Name | Type | Description | Notes
 **Name** | Pointer to **string** |  | [optional] 
 **UrlName** | Pointer to **string** |  | [optional] 
 **Category** | Pointer to **string** |  | [optional] 
-**RefId** | Pointer to **string** |  | [optional] 
-**RefType** | Pointer to **string** |  | [optional] 
+**RefId** | Pointer to **NullableString** |  | [optional] 
+**RefType** | Pointer to **NullableString** |  | [optional] 
 **Format** | Pointer to **string** |  | [optional] 
 **Content** | Pointer to **string** |  | [optional] 
 **CreatedBy** | Pointer to [**ListActivity200ResponseAllOfActivityInnerActivityInnerUser**](ListActivity200ResponseAllOfActivityInnerActivityInnerUser.md) |  | [optional] 
@@ -161,6 +161,16 @@ SetRefId sets RefId field to given value.
 
 HasRefId returns a boolean if a field has been set.
 
+### SetRefIdNil
+
+`func (o *GetWikiApp200ResponsePage) SetRefIdNil(b bool)`
+
+ SetRefIdNil sets the value for RefId to be an explicit nil
+
+### UnsetRefId
+`func (o *GetWikiApp200ResponsePage) UnsetRefId()`
+
+UnsetRefId ensures that no value is present for RefId, not even an explicit nil
 ### GetRefType
 
 `func (o *GetWikiApp200ResponsePage) GetRefType() string`
@@ -186,6 +196,16 @@ SetRefType sets RefType field to given value.
 
 HasRefType returns a boolean if a field has been set.
 
+### SetRefTypeNil
+
+`func (o *GetWikiApp200ResponsePage) SetRefTypeNil(b bool)`
+
+ SetRefTypeNil sets the value for RefType to be an explicit nil
+
+### UnsetRefType
+`func (o *GetWikiApp200ResponsePage) UnsetRefType()`
+
+UnsetRefType ensures that no value is present for RefType, not even an explicit nil
 ### GetFormat
 
 `func (o *GetWikiApp200ResponsePage) GetFormat() string`

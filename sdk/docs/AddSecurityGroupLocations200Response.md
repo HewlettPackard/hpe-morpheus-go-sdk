@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**SecurityGroupLocation** | Pointer to [**AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation**](AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation.md) |  | [optional] 
+**SecurityGroupLocation** | Pointer to [**ListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInner**](ListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInner.md) |  | [optional] 
 **Success** | Pointer to **bool** |  | [optional] 
 
 ## Methods
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetSecurityGroupLocation
 
-`func (o *AddSecurityGroupLocations200Response) GetSecurityGroupLocation() AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation`
+`func (o *AddSecurityGroupLocations200Response) GetSecurityGroupLocation() ListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInner`
 
 GetSecurityGroupLocation returns the SecurityGroupLocation field if non-nil, zero value otherwise.
 
 ### GetSecurityGroupLocationOk
 
-`func (o *AddSecurityGroupLocations200Response) GetSecurityGroupLocationOk() (*AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation, bool)`
+`func (o *AddSecurityGroupLocations200Response) GetSecurityGroupLocationOk() (*ListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInner, bool)`
 
 GetSecurityGroupLocationOk returns a tuple with the SecurityGroupLocation field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSecurityGroupLocation
 
-`func (o *AddSecurityGroupLocations200Response) SetSecurityGroupLocation(v AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation)`
+`func (o *AddSecurityGroupLocations200Response) SetSecurityGroupLocation(v ListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInner)`
 
 SetSecurityGroupLocation sets SecurityGroupLocation field to given value.
 

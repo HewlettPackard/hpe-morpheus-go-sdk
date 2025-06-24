@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**EstimatedCost** | Pointer to **string** |  | [optional] 
-**LastCost** | Pointer to **string** |  | [optional] 
+**EstimatedCost** | Pointer to **NullableString** |  | [optional] 
+**LastCost** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -51,6 +51,16 @@ SetEstimatedCost sets EstimatedCost field to given value.
 
 HasEstimatedCost returns a boolean if a field has been set.
 
+### SetEstimatedCostNil
+
+`func (o *GetBudgets200ResponseAllOfBudgetStatsCurrent) SetEstimatedCostNil(b bool)`
+
+ SetEstimatedCostNil sets the value for EstimatedCost to be an explicit nil
+
+### UnsetEstimatedCost
+`func (o *GetBudgets200ResponseAllOfBudgetStatsCurrent) UnsetEstimatedCost()`
+
+UnsetEstimatedCost ensures that no value is present for EstimatedCost, not even an explicit nil
 ### GetLastCost
 
 `func (o *GetBudgets200ResponseAllOfBudgetStatsCurrent) GetLastCost() string`
@@ -76,6 +86,16 @@ SetLastCost sets LastCost field to given value.
 
 HasLastCost returns a boolean if a field has been set.
 
+### SetLastCostNil
+
+`func (o *GetBudgets200ResponseAllOfBudgetStatsCurrent) SetLastCostNil(b bool)`
+
+ SetLastCostNil sets the value for LastCost to be an explicit nil
+
+### UnsetLastCost
+`func (o *GetBudgets200ResponseAllOfBudgetStatsCurrent) UnsetLastCost()`
+
+UnsetLastCost ensures that no value is present for LastCost, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

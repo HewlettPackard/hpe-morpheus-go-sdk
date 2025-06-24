@@ -10,14 +10,14 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** |  | [optional] 
 **Version** | Pointer to **string** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
-**Author** | Pointer to **string** |  | [optional] 
-**WebsiteUrl** | Pointer to **string** |  | [optional] 
-**SourceCodeLocationUrl** | Pointer to **string** |  | [optional] 
-**IssueTrackerUrl** | Pointer to **string** |  | [optional] 
+**Author** | Pointer to **NullableString** |  | [optional] 
+**WebsiteUrl** | Pointer to **NullableString** |  | [optional] 
+**SourceCodeLocationUrl** | Pointer to **NullableString** |  | [optional] 
+**IssueTrackerUrl** | Pointer to **NullableString** |  | [optional] 
 **Valid** | Pointer to **bool** |  | [optional] 
 **HasValidUpdate** | Pointer to **bool** |  | [optional] 
 **Status** | Pointer to **string** |  | [optional] 
-**StatusMessage** | Pointer to **string** |  | [optional] 
+**StatusMessage** | Pointer to **NullableString** |  | [optional] 
 **Providers** | Pointer to [**[]GetAppState200ResponseAllOfSpecsInnerTemplate**](GetAppState200ResponseAllOfSpecsInnerTemplate.md) |  | [optional] 
 **Config** | Pointer to **map[string]interface{}** |  | [optional] 
 **OptionTypes** | Pointer to [**[]ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner**](ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner.md) |  | [optional] 
@@ -218,6 +218,16 @@ SetAuthor sets Author field to given value.
 
 HasAuthor returns a boolean if a field has been set.
 
+### SetAuthorNil
+
+`func (o *Plugin) SetAuthorNil(b bool)`
+
+ SetAuthorNil sets the value for Author to be an explicit nil
+
+### UnsetAuthor
+`func (o *Plugin) UnsetAuthor()`
+
+UnsetAuthor ensures that no value is present for Author, not even an explicit nil
 ### GetWebsiteUrl
 
 `func (o *Plugin) GetWebsiteUrl() string`
@@ -243,6 +253,16 @@ SetWebsiteUrl sets WebsiteUrl field to given value.
 
 HasWebsiteUrl returns a boolean if a field has been set.
 
+### SetWebsiteUrlNil
+
+`func (o *Plugin) SetWebsiteUrlNil(b bool)`
+
+ SetWebsiteUrlNil sets the value for WebsiteUrl to be an explicit nil
+
+### UnsetWebsiteUrl
+`func (o *Plugin) UnsetWebsiteUrl()`
+
+UnsetWebsiteUrl ensures that no value is present for WebsiteUrl, not even an explicit nil
 ### GetSourceCodeLocationUrl
 
 `func (o *Plugin) GetSourceCodeLocationUrl() string`
@@ -268,6 +288,16 @@ SetSourceCodeLocationUrl sets SourceCodeLocationUrl field to given value.
 
 HasSourceCodeLocationUrl returns a boolean if a field has been set.
 
+### SetSourceCodeLocationUrlNil
+
+`func (o *Plugin) SetSourceCodeLocationUrlNil(b bool)`
+
+ SetSourceCodeLocationUrlNil sets the value for SourceCodeLocationUrl to be an explicit nil
+
+### UnsetSourceCodeLocationUrl
+`func (o *Plugin) UnsetSourceCodeLocationUrl()`
+
+UnsetSourceCodeLocationUrl ensures that no value is present for SourceCodeLocationUrl, not even an explicit nil
 ### GetIssueTrackerUrl
 
 `func (o *Plugin) GetIssueTrackerUrl() string`
@@ -293,6 +323,16 @@ SetIssueTrackerUrl sets IssueTrackerUrl field to given value.
 
 HasIssueTrackerUrl returns a boolean if a field has been set.
 
+### SetIssueTrackerUrlNil
+
+`func (o *Plugin) SetIssueTrackerUrlNil(b bool)`
+
+ SetIssueTrackerUrlNil sets the value for IssueTrackerUrl to be an explicit nil
+
+### UnsetIssueTrackerUrl
+`func (o *Plugin) UnsetIssueTrackerUrl()`
+
+UnsetIssueTrackerUrl ensures that no value is present for IssueTrackerUrl, not even an explicit nil
 ### GetValid
 
 `func (o *Plugin) GetValid() bool`
@@ -393,6 +433,16 @@ SetStatusMessage sets StatusMessage field to given value.
 
 HasStatusMessage returns a boolean if a field has been set.
 
+### SetStatusMessageNil
+
+`func (o *Plugin) SetStatusMessageNil(b bool)`
+
+ SetStatusMessageNil sets the value for StatusMessage to be an explicit nil
+
+### UnsetStatusMessage
+`func (o *Plugin) UnsetStatusMessage()`
+
+UnsetStatusMessage ensures that no value is present for StatusMessage, not even an explicit nil
 ### GetProviders
 
 `func (o *Plugin) GetProviders() []GetAppState200ResponseAllOfSpecsInnerTemplate`

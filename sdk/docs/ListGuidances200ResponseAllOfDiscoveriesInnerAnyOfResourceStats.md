@@ -5,18 +5,18 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Ts** | Pointer to **string** |  | [optional] 
-**FreeMemory** | Pointer to **int64** |  | [optional] 
-**UsedMemory** | Pointer to **int64** |  | [optional] 
-**FreeSwap** | Pointer to **int64** |  | [optional] 
-**UsedSwap** | Pointer to **int64** |  | [optional] 
-**CpuIdleTime** | Pointer to **int64** |  | [optional] 
-**CpuSystemTime** | Pointer to **int64** |  | [optional] 
-**CpuUserTime** | Pointer to **int64** |  | [optional] 
-**CpuTotalTime** | Pointer to **int64** |  | [optional] 
-**CpuUsage** | Pointer to **float32** |  | [optional] 
-**UsedStorage** | Pointer to **int64** |  | [optional] 
-**ReservedStorage** | Pointer to **int64** |  | [optional] 
-**MaxStorage** | Pointer to **int64** |  | [optional] 
+**FreeMemory** | Pointer to **NullableInt64** |  | [optional] 
+**UsedMemory** | Pointer to **NullableInt64** |  | [optional] 
+**FreeSwap** | Pointer to **NullableInt64** |  | [optional] 
+**UsedSwap** | Pointer to **NullableInt64** |  | [optional] 
+**CpuIdleTime** | Pointer to **NullableInt64** |  | [optional] 
+**CpuSystemTime** | Pointer to **NullableInt64** |  | [optional] 
+**CpuUserTime** | Pointer to **NullableInt64** |  | [optional] 
+**CpuTotalTime** | Pointer to **NullableInt64** |  | [optional] 
+**CpuUsage** | Pointer to **NullableFloat32** |  | [optional] 
+**UsedStorage** | Pointer to **NullableInt64** |  | [optional] 
+**ReservedStorage** | Pointer to **NullableInt64** |  | [optional] 
+**MaxStorage** | Pointer to **NullableInt64** |  | [optional] 
 **NetTxUsage** | Pointer to **int64** |  | [optional] 
 **NetRxUsage** | Pointer to **int64** |  | [optional] 
 **NetworkBandwidth** | Pointer to **int64** |  | [optional] 
@@ -90,6 +90,16 @@ SetFreeMemory sets FreeMemory field to given value.
 
 HasFreeMemory returns a boolean if a field has been set.
 
+### SetFreeMemoryNil
+
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) SetFreeMemoryNil(b bool)`
+
+ SetFreeMemoryNil sets the value for FreeMemory to be an explicit nil
+
+### UnsetFreeMemory
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) UnsetFreeMemory()`
+
+UnsetFreeMemory ensures that no value is present for FreeMemory, not even an explicit nil
 ### GetUsedMemory
 
 `func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) GetUsedMemory() int64`
@@ -115,6 +125,16 @@ SetUsedMemory sets UsedMemory field to given value.
 
 HasUsedMemory returns a boolean if a field has been set.
 
+### SetUsedMemoryNil
+
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) SetUsedMemoryNil(b bool)`
+
+ SetUsedMemoryNil sets the value for UsedMemory to be an explicit nil
+
+### UnsetUsedMemory
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) UnsetUsedMemory()`
+
+UnsetUsedMemory ensures that no value is present for UsedMemory, not even an explicit nil
 ### GetFreeSwap
 
 `func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) GetFreeSwap() int64`
@@ -140,6 +160,16 @@ SetFreeSwap sets FreeSwap field to given value.
 
 HasFreeSwap returns a boolean if a field has been set.
 
+### SetFreeSwapNil
+
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) SetFreeSwapNil(b bool)`
+
+ SetFreeSwapNil sets the value for FreeSwap to be an explicit nil
+
+### UnsetFreeSwap
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) UnsetFreeSwap()`
+
+UnsetFreeSwap ensures that no value is present for FreeSwap, not even an explicit nil
 ### GetUsedSwap
 
 `func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) GetUsedSwap() int64`
@@ -165,6 +195,16 @@ SetUsedSwap sets UsedSwap field to given value.
 
 HasUsedSwap returns a boolean if a field has been set.
 
+### SetUsedSwapNil
+
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) SetUsedSwapNil(b bool)`
+
+ SetUsedSwapNil sets the value for UsedSwap to be an explicit nil
+
+### UnsetUsedSwap
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) UnsetUsedSwap()`
+
+UnsetUsedSwap ensures that no value is present for UsedSwap, not even an explicit nil
 ### GetCpuIdleTime
 
 `func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) GetCpuIdleTime() int64`
@@ -190,6 +230,16 @@ SetCpuIdleTime sets CpuIdleTime field to given value.
 
 HasCpuIdleTime returns a boolean if a field has been set.
 
+### SetCpuIdleTimeNil
+
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) SetCpuIdleTimeNil(b bool)`
+
+ SetCpuIdleTimeNil sets the value for CpuIdleTime to be an explicit nil
+
+### UnsetCpuIdleTime
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) UnsetCpuIdleTime()`
+
+UnsetCpuIdleTime ensures that no value is present for CpuIdleTime, not even an explicit nil
 ### GetCpuSystemTime
 
 `func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) GetCpuSystemTime() int64`
@@ -215,6 +265,16 @@ SetCpuSystemTime sets CpuSystemTime field to given value.
 
 HasCpuSystemTime returns a boolean if a field has been set.
 
+### SetCpuSystemTimeNil
+
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) SetCpuSystemTimeNil(b bool)`
+
+ SetCpuSystemTimeNil sets the value for CpuSystemTime to be an explicit nil
+
+### UnsetCpuSystemTime
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) UnsetCpuSystemTime()`
+
+UnsetCpuSystemTime ensures that no value is present for CpuSystemTime, not even an explicit nil
 ### GetCpuUserTime
 
 `func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) GetCpuUserTime() int64`
@@ -240,6 +300,16 @@ SetCpuUserTime sets CpuUserTime field to given value.
 
 HasCpuUserTime returns a boolean if a field has been set.
 
+### SetCpuUserTimeNil
+
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) SetCpuUserTimeNil(b bool)`
+
+ SetCpuUserTimeNil sets the value for CpuUserTime to be an explicit nil
+
+### UnsetCpuUserTime
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) UnsetCpuUserTime()`
+
+UnsetCpuUserTime ensures that no value is present for CpuUserTime, not even an explicit nil
 ### GetCpuTotalTime
 
 `func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) GetCpuTotalTime() int64`
@@ -265,6 +335,16 @@ SetCpuTotalTime sets CpuTotalTime field to given value.
 
 HasCpuTotalTime returns a boolean if a field has been set.
 
+### SetCpuTotalTimeNil
+
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) SetCpuTotalTimeNil(b bool)`
+
+ SetCpuTotalTimeNil sets the value for CpuTotalTime to be an explicit nil
+
+### UnsetCpuTotalTime
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) UnsetCpuTotalTime()`
+
+UnsetCpuTotalTime ensures that no value is present for CpuTotalTime, not even an explicit nil
 ### GetCpuUsage
 
 `func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) GetCpuUsage() float32`
@@ -290,6 +370,16 @@ SetCpuUsage sets CpuUsage field to given value.
 
 HasCpuUsage returns a boolean if a field has been set.
 
+### SetCpuUsageNil
+
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) SetCpuUsageNil(b bool)`
+
+ SetCpuUsageNil sets the value for CpuUsage to be an explicit nil
+
+### UnsetCpuUsage
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) UnsetCpuUsage()`
+
+UnsetCpuUsage ensures that no value is present for CpuUsage, not even an explicit nil
 ### GetUsedStorage
 
 `func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) GetUsedStorage() int64`
@@ -315,6 +405,16 @@ SetUsedStorage sets UsedStorage field to given value.
 
 HasUsedStorage returns a boolean if a field has been set.
 
+### SetUsedStorageNil
+
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) SetUsedStorageNil(b bool)`
+
+ SetUsedStorageNil sets the value for UsedStorage to be an explicit nil
+
+### UnsetUsedStorage
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) UnsetUsedStorage()`
+
+UnsetUsedStorage ensures that no value is present for UsedStorage, not even an explicit nil
 ### GetReservedStorage
 
 `func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) GetReservedStorage() int64`
@@ -340,6 +440,16 @@ SetReservedStorage sets ReservedStorage field to given value.
 
 HasReservedStorage returns a boolean if a field has been set.
 
+### SetReservedStorageNil
+
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) SetReservedStorageNil(b bool)`
+
+ SetReservedStorageNil sets the value for ReservedStorage to be an explicit nil
+
+### UnsetReservedStorage
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) UnsetReservedStorage()`
+
+UnsetReservedStorage ensures that no value is present for ReservedStorage, not even an explicit nil
 ### GetMaxStorage
 
 `func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) GetMaxStorage() int64`
@@ -365,6 +475,16 @@ SetMaxStorage sets MaxStorage field to given value.
 
 HasMaxStorage returns a boolean if a field has been set.
 
+### SetMaxStorageNil
+
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) SetMaxStorageNil(b bool)`
+
+ SetMaxStorageNil sets the value for MaxStorage to be an explicit nil
+
+### UnsetMaxStorage
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) UnsetMaxStorage()`
+
+UnsetMaxStorage ensures that no value is present for MaxStorage, not even an explicit nil
 ### GetNetTxUsage
 
 `func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) GetNetTxUsage() int64`

@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **DefaultType** | Pointer to **bool** |  | [optional] 
 **CustomLabel** | Pointer to **bool** |  | [optional] 
 **CustomSize** | Pointer to **bool** |  | [optional] 
-**CustomSizeOptions** | Pointer to **string** |  | [optional] 
+**CustomSizeOptions** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -232,6 +232,16 @@ SetCustomSizeOptions sets CustomSizeOptions field to given value.
 
 HasCustomSizeOptions returns a boolean if a field has been set.
 
+### SetCustomSizeOptionsNil
+
+`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageTypesInner) SetCustomSizeOptionsNil(b bool)`
+
+ SetCustomSizeOptionsNil sets the value for CustomSizeOptions to be an explicit nil
+
+### UnsetCustomSizeOptions
+`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageTypesInner) UnsetCustomSizeOptions()`
+
+UnsetCustomSizeOptions ensures that no value is present for CustomSizeOptions, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

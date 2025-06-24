@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ClientSecret** | Pointer to **string** |  | [optional] 
-**ClientId** | Pointer to **string** |  | [optional] 
+**ClientSecret** | Pointer to **NullableString** |  | [optional] 
+**ClientId** | Pointer to **NullableString** |  | [optional] 
 **ClientAuth** | Pointer to **string** |  | [optional] 
 **Scope** | Pointer to **string** |  | [optional] 
 **GrantType** | Pointer to **string** |  | [optional] 
 **AccessTokenUrl** | Pointer to **string** |  | [optional] 
-**ClientSecretHash** | Pointer to **string** |  | [optional] 
+**ClientSecretHash** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -56,6 +56,16 @@ SetClientSecret sets ClientSecret field to given value.
 
 HasClientSecret returns a boolean if a field has been set.
 
+### SetClientSecretNil
+
+`func (o *ListCredentials200ResponseAllOfCredentialsInnerConfig) SetClientSecretNil(b bool)`
+
+ SetClientSecretNil sets the value for ClientSecret to be an explicit nil
+
+### UnsetClientSecret
+`func (o *ListCredentials200ResponseAllOfCredentialsInnerConfig) UnsetClientSecret()`
+
+UnsetClientSecret ensures that no value is present for ClientSecret, not even an explicit nil
 ### GetClientId
 
 `func (o *ListCredentials200ResponseAllOfCredentialsInnerConfig) GetClientId() string`
@@ -81,6 +91,16 @@ SetClientId sets ClientId field to given value.
 
 HasClientId returns a boolean if a field has been set.
 
+### SetClientIdNil
+
+`func (o *ListCredentials200ResponseAllOfCredentialsInnerConfig) SetClientIdNil(b bool)`
+
+ SetClientIdNil sets the value for ClientId to be an explicit nil
+
+### UnsetClientId
+`func (o *ListCredentials200ResponseAllOfCredentialsInnerConfig) UnsetClientId()`
+
+UnsetClientId ensures that no value is present for ClientId, not even an explicit nil
 ### GetClientAuth
 
 `func (o *ListCredentials200ResponseAllOfCredentialsInnerConfig) GetClientAuth() string`
@@ -206,6 +226,16 @@ SetClientSecretHash sets ClientSecretHash field to given value.
 
 HasClientSecretHash returns a boolean if a field has been set.
 
+### SetClientSecretHashNil
+
+`func (o *ListCredentials200ResponseAllOfCredentialsInnerConfig) SetClientSecretHashNil(b bool)`
+
+ SetClientSecretHashNil sets the value for ClientSecretHash to be an explicit nil
+
+### UnsetClientSecretHash
+`func (o *ListCredentials200ResponseAllOfCredentialsInnerConfig) UnsetClientSecretHash()`
+
+UnsetClientSecretHash ensures that no value is present for ClientSecretHash, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

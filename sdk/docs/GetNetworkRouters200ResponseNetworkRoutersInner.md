@@ -7,22 +7,22 @@ Name | Type | Description | Notes
 **Id** | Pointer to **int64** |  | [optional] 
 **Code** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **NullableString** |  | [optional] 
 **Category** | Pointer to **string** |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
 **RouterType** | Pointer to **string** |  | [optional] 
 **Status** | Pointer to **string** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
-**ExternalIp** | Pointer to **string** |  | [optional] 
+**ExternalIp** | Pointer to **NullableString** |  | [optional] 
 **ExternalId** | Pointer to **string** |  | [optional] 
-**ProviderId** | Pointer to **string** |  | [optional] 
+**ProviderId** | Pointer to **NullableString** |  | [optional] 
 **Type** | Pointer to [**GetNetworkRouters200ResponseNetworkRoutersInnerType**](GetNetworkRouters200ResponseNetworkRoutersInnerType.md) |  | [optional] 
-**NetworkServer** | Pointer to **string** |  | [optional] 
+**NetworkServer** | Pointer to **NullableString** |  | [optional] 
 **Zone** | Pointer to [**ListBackupSettings200ResponseBackupSettingsDefaultSchedule**](ListBackupSettings200ResponseBackupSettingsDefaultSchedule.md) |  | [optional] 
-**Instance** | Pointer to **string** |  | [optional] 
+**Instance** | Pointer to **NullableString** |  | [optional] 
 **ExternalNetwork** | Pointer to [**ListBackupSettings200ResponseBackupSettingsDefaultSchedule**](ListBackupSettings200ResponseBackupSettingsDefaultSchedule.md) |  | [optional] 
-**Site** | Pointer to **string** |  | [optional] 
+**Site** | Pointer to **NullableString** |  | [optional] 
 **Interfaces** | Pointer to [**[]GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner**](GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner.md) |  | [optional] 
 
 ## Methods
@@ -144,6 +144,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *GetNetworkRouters200ResponseNetworkRoutersInner) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *GetNetworkRouters200ResponseNetworkRoutersInner) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetCategory
 
 `func (o *GetNetworkRouters200ResponseNetworkRoutersInner) GetCategory() string`
@@ -319,6 +329,16 @@ SetExternalIp sets ExternalIp field to given value.
 
 HasExternalIp returns a boolean if a field has been set.
 
+### SetExternalIpNil
+
+`func (o *GetNetworkRouters200ResponseNetworkRoutersInner) SetExternalIpNil(b bool)`
+
+ SetExternalIpNil sets the value for ExternalIp to be an explicit nil
+
+### UnsetExternalIp
+`func (o *GetNetworkRouters200ResponseNetworkRoutersInner) UnsetExternalIp()`
+
+UnsetExternalIp ensures that no value is present for ExternalIp, not even an explicit nil
 ### GetExternalId
 
 `func (o *GetNetworkRouters200ResponseNetworkRoutersInner) GetExternalId() string`
@@ -369,6 +389,16 @@ SetProviderId sets ProviderId field to given value.
 
 HasProviderId returns a boolean if a field has been set.
 
+### SetProviderIdNil
+
+`func (o *GetNetworkRouters200ResponseNetworkRoutersInner) SetProviderIdNil(b bool)`
+
+ SetProviderIdNil sets the value for ProviderId to be an explicit nil
+
+### UnsetProviderId
+`func (o *GetNetworkRouters200ResponseNetworkRoutersInner) UnsetProviderId()`
+
+UnsetProviderId ensures that no value is present for ProviderId, not even an explicit nil
 ### GetType
 
 `func (o *GetNetworkRouters200ResponseNetworkRoutersInner) GetType() GetNetworkRouters200ResponseNetworkRoutersInnerType`
@@ -419,6 +449,16 @@ SetNetworkServer sets NetworkServer field to given value.
 
 HasNetworkServer returns a boolean if a field has been set.
 
+### SetNetworkServerNil
+
+`func (o *GetNetworkRouters200ResponseNetworkRoutersInner) SetNetworkServerNil(b bool)`
+
+ SetNetworkServerNil sets the value for NetworkServer to be an explicit nil
+
+### UnsetNetworkServer
+`func (o *GetNetworkRouters200ResponseNetworkRoutersInner) UnsetNetworkServer()`
+
+UnsetNetworkServer ensures that no value is present for NetworkServer, not even an explicit nil
 ### GetZone
 
 `func (o *GetNetworkRouters200ResponseNetworkRoutersInner) GetZone() ListBackupSettings200ResponseBackupSettingsDefaultSchedule`
@@ -469,6 +509,16 @@ SetInstance sets Instance field to given value.
 
 HasInstance returns a boolean if a field has been set.
 
+### SetInstanceNil
+
+`func (o *GetNetworkRouters200ResponseNetworkRoutersInner) SetInstanceNil(b bool)`
+
+ SetInstanceNil sets the value for Instance to be an explicit nil
+
+### UnsetInstance
+`func (o *GetNetworkRouters200ResponseNetworkRoutersInner) UnsetInstance()`
+
+UnsetInstance ensures that no value is present for Instance, not even an explicit nil
 ### GetExternalNetwork
 
 `func (o *GetNetworkRouters200ResponseNetworkRoutersInner) GetExternalNetwork() ListBackupSettings200ResponseBackupSettingsDefaultSchedule`
@@ -519,6 +569,16 @@ SetSite sets Site field to given value.
 
 HasSite returns a boolean if a field has been set.
 
+### SetSiteNil
+
+`func (o *GetNetworkRouters200ResponseNetworkRoutersInner) SetSiteNil(b bool)`
+
+ SetSiteNil sets the value for Site to be an explicit nil
+
+### UnsetSite
+`func (o *GetNetworkRouters200ResponseNetworkRoutersInner) UnsetSite()`
+
+UnsetSite ensures that no value is present for Site, not even an explicit nil
 ### GetInterfaces
 
 `func (o *GetNetworkRouters200ResponseNetworkRoutersInner) GetInterfaces() []GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner`

@@ -20,26 +20,26 @@ var _ MappedNullable = &ListOptionLists200ResponseAllOfOptionTypesInner{}
 
 // ListOptionLists200ResponseAllOfOptionTypesInner struct for ListOptionLists200ResponseAllOfOptionTypesInner
 type ListOptionLists200ResponseAllOfOptionTypesInner struct {
-	Id                   *int64                                                                  `json:"id,omitempty"`
-	Name                 *string                                                                 `json:"name,omitempty"`
-	Description          *string                                                                 `json:"description,omitempty"`
-	Labels               []string                                                                `json:"labels,omitempty"`
-	Type                 *string                                                                 `json:"type,omitempty"`
-	SourceUrl            *string                                                                 `json:"sourceUrl,omitempty"`
-	SourceMethod         *string                                                                 `json:"sourceMethod,omitempty"`
-	ApiType              *string                                                                 `json:"apiType,omitempty"`
-	IgnoreSSLErrors      *bool                                                                   `json:"ignoreSSLErrors,omitempty"`
-	RealTime             *bool                                                                   `json:"realTime,omitempty"`
-	Visibility           *string                                                                 `json:"visibility,omitempty"`
-	Config               *ListOptionLists200ResponseAllOfOptionTypesInnerConfig                  `json:"config,omitempty"`
-	Credential           *ListClouds200ResponseAllOfZonesInnerCredentialAnyOf                    `json:"credential,omitempty"`
-	ServiceUsername      *string                                                                 `json:"serviceUsername,omitempty"`
-	ServicePassword      *string                                                                 `json:"servicePassword,omitempty"`
-	InitialDataset       *string                                                                 `json:"initialDataset,omitempty"`
-	TranslationScript    *string                                                                 `json:"translationScript,omitempty"`
-	RequestScript        *string                                                                 `json:"requestScript,omitempty"`
-	Account              *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"account,omitempty"`
-	AdditionalProperties map[string]interface{}                                                  `json:",remain"`
+	Id                   *int64                                                 `json:"id,omitempty"`
+	Name                 *string                                                `json:"name,omitempty"`
+	Description          NullableString                                         `json:"description,omitempty"`
+	Labels               []string                                               `json:"labels,omitempty"`
+	Type                 *string                                                `json:"type,omitempty"`
+	SourceUrl            *string                                                `json:"sourceUrl,omitempty"`
+	SourceMethod         *string                                                `json:"sourceMethod,omitempty"`
+	ApiType              NullableString                                         `json:"apiType,omitempty"`
+	IgnoreSSLErrors      *bool                                                  `json:"ignoreSSLErrors,omitempty"`
+	RealTime             *bool                                                  `json:"realTime,omitempty"`
+	Visibility           *string                                                `json:"visibility,omitempty"`
+	Config               *ListOptionLists200ResponseAllOfOptionTypesInnerConfig `json:"config,omitempty"`
+	Credential           *ListClouds200ResponseAllOfZonesInnerCredentialAnyOf   `json:"credential,omitempty"`
+	ServiceUsername      NullableString                                         `json:"serviceUsername,omitempty"`
+	ServicePassword      NullableString                                         `json:"servicePassword,omitempty"`
+	InitialDataset       NullableString                                         `json:"initialDataset,omitempty"`
+	TranslationScript    *string                                                `json:"translationScript,omitempty"`
+	RequestScript        NullableString                                         `json:"requestScript,omitempty"`
+	Account              *GetAlerts200ResponseAllOfCheckGroupsInnerInstance     `json:"account,omitempty"`
+	AdditionalProperties map[string]interface{}                                 `json:",remain"`
 }
 
 type _ListOptionLists200ResponseAllOfOptionTypesInner ListOptionLists200ResponseAllOfOptionTypesInner
@@ -125,36 +125,47 @@ func (o *ListOptionLists200ResponseAllOfOptionTypesInner) SetName(v string) {
 	o.Name = &v
 }
 
-// GetDescription returns the Description field value if set, zero value otherwise.
+// GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListOptionLists200ResponseAllOfOptionTypesInner) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
+	if o == nil || IsNil(o.Description.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Description
+	return *o.Description.Get()
 }
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListOptionLists200ResponseAllOfOptionTypesInner) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Description, true
+	return o.Description.Get(), o.Description.IsSet()
 }
 
 // IsSetDescription returns a boolean if a field has been set.
 func (o *ListOptionLists200ResponseAllOfOptionTypesInner) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
+	if o != nil && o.Description.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDescription gets a reference to the given string and assigns it to the Description field.
+// SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *ListOptionLists200ResponseAllOfOptionTypesInner) SetDescription(v string) {
-	o.Description = &v
+	o.Description.Set(&v)
+}
+
+// SetDescriptionNil sets the value for Description to be an explicit nil
+func (o *ListOptionLists200ResponseAllOfOptionTypesInner) SetDescriptionNil() {
+	o.Description.Set(nil)
+}
+
+// UnsetDescription ensures that no value is present for Description, not even an explicit nil
+func (o *ListOptionLists200ResponseAllOfOptionTypesInner) UnsetDescription() {
+	o.Description.Unset()
 }
 
 // GetLabels returns the Labels field value if set, zero value otherwise.
@@ -285,36 +296,47 @@ func (o *ListOptionLists200ResponseAllOfOptionTypesInner) SetSourceMethod(v stri
 	o.SourceMethod = &v
 }
 
-// GetApiType returns the ApiType field value if set, zero value otherwise.
+// GetApiType returns the ApiType field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListOptionLists200ResponseAllOfOptionTypesInner) GetApiType() string {
-	if o == nil || IsNil(o.ApiType) {
+	if o == nil || IsNil(o.ApiType.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ApiType
+	return *o.ApiType.Get()
 }
 
 // GetApiTypeOk returns a tuple with the ApiType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListOptionLists200ResponseAllOfOptionTypesInner) GetApiTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.ApiType) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ApiType, true
+	return o.ApiType.Get(), o.ApiType.IsSet()
 }
 
 // IsSetApiType returns a boolean if a field has been set.
 func (o *ListOptionLists200ResponseAllOfOptionTypesInner) IsSetApiType() bool {
-	if o != nil && !IsNil(o.ApiType) {
+	if o != nil && o.ApiType.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetApiType gets a reference to the given string and assigns it to the ApiType field.
+// SetApiType gets a reference to the given NullableString and assigns it to the ApiType field.
 func (o *ListOptionLists200ResponseAllOfOptionTypesInner) SetApiType(v string) {
-	o.ApiType = &v
+	o.ApiType.Set(&v)
+}
+
+// SetApiTypeNil sets the value for ApiType to be an explicit nil
+func (o *ListOptionLists200ResponseAllOfOptionTypesInner) SetApiTypeNil() {
+	o.ApiType.Set(nil)
+}
+
+// UnsetApiType ensures that no value is present for ApiType, not even an explicit nil
+func (o *ListOptionLists200ResponseAllOfOptionTypesInner) UnsetApiType() {
+	o.ApiType.Unset()
 }
 
 // GetIgnoreSSLErrors returns the IgnoreSSLErrors field value if set, zero value otherwise.
@@ -477,100 +499,133 @@ func (o *ListOptionLists200ResponseAllOfOptionTypesInner) SetCredential(v ListCl
 	o.Credential = &v
 }
 
-// GetServiceUsername returns the ServiceUsername field value if set, zero value otherwise.
+// GetServiceUsername returns the ServiceUsername field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListOptionLists200ResponseAllOfOptionTypesInner) GetServiceUsername() string {
-	if o == nil || IsNil(o.ServiceUsername) {
+	if o == nil || IsNil(o.ServiceUsername.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ServiceUsername
+	return *o.ServiceUsername.Get()
 }
 
 // GetServiceUsernameOk returns a tuple with the ServiceUsername field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListOptionLists200ResponseAllOfOptionTypesInner) GetServiceUsernameOk() (*string, bool) {
-	if o == nil || IsNil(o.ServiceUsername) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ServiceUsername, true
+	return o.ServiceUsername.Get(), o.ServiceUsername.IsSet()
 }
 
 // IsSetServiceUsername returns a boolean if a field has been set.
 func (o *ListOptionLists200ResponseAllOfOptionTypesInner) IsSetServiceUsername() bool {
-	if o != nil && !IsNil(o.ServiceUsername) {
+	if o != nil && o.ServiceUsername.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetServiceUsername gets a reference to the given string and assigns it to the ServiceUsername field.
+// SetServiceUsername gets a reference to the given NullableString and assigns it to the ServiceUsername field.
 func (o *ListOptionLists200ResponseAllOfOptionTypesInner) SetServiceUsername(v string) {
-	o.ServiceUsername = &v
+	o.ServiceUsername.Set(&v)
 }
 
-// GetServicePassword returns the ServicePassword field value if set, zero value otherwise.
+// SetServiceUsernameNil sets the value for ServiceUsername to be an explicit nil
+func (o *ListOptionLists200ResponseAllOfOptionTypesInner) SetServiceUsernameNil() {
+	o.ServiceUsername.Set(nil)
+}
+
+// UnsetServiceUsername ensures that no value is present for ServiceUsername, not even an explicit nil
+func (o *ListOptionLists200ResponseAllOfOptionTypesInner) UnsetServiceUsername() {
+	o.ServiceUsername.Unset()
+}
+
+// GetServicePassword returns the ServicePassword field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListOptionLists200ResponseAllOfOptionTypesInner) GetServicePassword() string {
-	if o == nil || IsNil(o.ServicePassword) {
+	if o == nil || IsNil(o.ServicePassword.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ServicePassword
+	return *o.ServicePassword.Get()
 }
 
 // GetServicePasswordOk returns a tuple with the ServicePassword field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListOptionLists200ResponseAllOfOptionTypesInner) GetServicePasswordOk() (*string, bool) {
-	if o == nil || IsNil(o.ServicePassword) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ServicePassword, true
+	return o.ServicePassword.Get(), o.ServicePassword.IsSet()
 }
 
 // IsSetServicePassword returns a boolean if a field has been set.
 func (o *ListOptionLists200ResponseAllOfOptionTypesInner) IsSetServicePassword() bool {
-	if o != nil && !IsNil(o.ServicePassword) {
+	if o != nil && o.ServicePassword.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetServicePassword gets a reference to the given string and assigns it to the ServicePassword field.
+// SetServicePassword gets a reference to the given NullableString and assigns it to the ServicePassword field.
 func (o *ListOptionLists200ResponseAllOfOptionTypesInner) SetServicePassword(v string) {
-	o.ServicePassword = &v
+	o.ServicePassword.Set(&v)
 }
 
-// GetInitialDataset returns the InitialDataset field value if set, zero value otherwise.
+// SetServicePasswordNil sets the value for ServicePassword to be an explicit nil
+func (o *ListOptionLists200ResponseAllOfOptionTypesInner) SetServicePasswordNil() {
+	o.ServicePassword.Set(nil)
+}
+
+// UnsetServicePassword ensures that no value is present for ServicePassword, not even an explicit nil
+func (o *ListOptionLists200ResponseAllOfOptionTypesInner) UnsetServicePassword() {
+	o.ServicePassword.Unset()
+}
+
+// GetInitialDataset returns the InitialDataset field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListOptionLists200ResponseAllOfOptionTypesInner) GetInitialDataset() string {
-	if o == nil || IsNil(o.InitialDataset) {
+	if o == nil || IsNil(o.InitialDataset.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.InitialDataset
+	return *o.InitialDataset.Get()
 }
 
 // GetInitialDatasetOk returns a tuple with the InitialDataset field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListOptionLists200ResponseAllOfOptionTypesInner) GetInitialDatasetOk() (*string, bool) {
-	if o == nil || IsNil(o.InitialDataset) {
+	if o == nil {
 		return nil, false
 	}
-	return o.InitialDataset, true
+	return o.InitialDataset.Get(), o.InitialDataset.IsSet()
 }
 
 // IsSetInitialDataset returns a boolean if a field has been set.
 func (o *ListOptionLists200ResponseAllOfOptionTypesInner) IsSetInitialDataset() bool {
-	if o != nil && !IsNil(o.InitialDataset) {
+	if o != nil && o.InitialDataset.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetInitialDataset gets a reference to the given string and assigns it to the InitialDataset field.
+// SetInitialDataset gets a reference to the given NullableString and assigns it to the InitialDataset field.
 func (o *ListOptionLists200ResponseAllOfOptionTypesInner) SetInitialDataset(v string) {
-	o.InitialDataset = &v
+	o.InitialDataset.Set(&v)
+}
+
+// SetInitialDatasetNil sets the value for InitialDataset to be an explicit nil
+func (o *ListOptionLists200ResponseAllOfOptionTypesInner) SetInitialDatasetNil() {
+	o.InitialDataset.Set(nil)
+}
+
+// UnsetInitialDataset ensures that no value is present for InitialDataset, not even an explicit nil
+func (o *ListOptionLists200ResponseAllOfOptionTypesInner) UnsetInitialDataset() {
+	o.InitialDataset.Unset()
 }
 
 // GetTranslationScript returns the TranslationScript field value if set, zero value otherwise.
@@ -605,42 +660,53 @@ func (o *ListOptionLists200ResponseAllOfOptionTypesInner) SetTranslationScript(v
 	o.TranslationScript = &v
 }
 
-// GetRequestScript returns the RequestScript field value if set, zero value otherwise.
+// GetRequestScript returns the RequestScript field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListOptionLists200ResponseAllOfOptionTypesInner) GetRequestScript() string {
-	if o == nil || IsNil(o.RequestScript) {
+	if o == nil || IsNil(o.RequestScript.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.RequestScript
+	return *o.RequestScript.Get()
 }
 
 // GetRequestScriptOk returns a tuple with the RequestScript field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListOptionLists200ResponseAllOfOptionTypesInner) GetRequestScriptOk() (*string, bool) {
-	if o == nil || IsNil(o.RequestScript) {
+	if o == nil {
 		return nil, false
 	}
-	return o.RequestScript, true
+	return o.RequestScript.Get(), o.RequestScript.IsSet()
 }
 
 // IsSetRequestScript returns a boolean if a field has been set.
 func (o *ListOptionLists200ResponseAllOfOptionTypesInner) IsSetRequestScript() bool {
-	if o != nil && !IsNil(o.RequestScript) {
+	if o != nil && o.RequestScript.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetRequestScript gets a reference to the given string and assigns it to the RequestScript field.
+// SetRequestScript gets a reference to the given NullableString and assigns it to the RequestScript field.
 func (o *ListOptionLists200ResponseAllOfOptionTypesInner) SetRequestScript(v string) {
-	o.RequestScript = &v
+	o.RequestScript.Set(&v)
+}
+
+// SetRequestScriptNil sets the value for RequestScript to be an explicit nil
+func (o *ListOptionLists200ResponseAllOfOptionTypesInner) SetRequestScriptNil() {
+	o.RequestScript.Set(nil)
+}
+
+// UnsetRequestScript ensures that no value is present for RequestScript, not even an explicit nil
+func (o *ListOptionLists200ResponseAllOfOptionTypesInner) UnsetRequestScript() {
+	o.RequestScript.Unset()
 }
 
 // GetAccount returns the Account field value if set, zero value otherwise.
-func (o *ListOptionLists200ResponseAllOfOptionTypesInner) GetAccount() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *ListOptionLists200ResponseAllOfOptionTypesInner) GetAccount() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.Account) {
-		var ret ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return *o.Account
@@ -648,7 +714,7 @@ func (o *ListOptionLists200ResponseAllOfOptionTypesInner) GetAccount() ListAppli
 
 // GetAccountOk returns a tuple with the Account field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListOptionLists200ResponseAllOfOptionTypesInner) GetAccountOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *ListOptionLists200ResponseAllOfOptionTypesInner) GetAccountOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.Account) {
 		return nil, false
 	}
@@ -664,8 +730,8 @@ func (o *ListOptionLists200ResponseAllOfOptionTypesInner) IsSetAccount() bool {
 	return false
 }
 
-// SetAccount gets a reference to the given ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the Account field.
-func (o *ListOptionLists200ResponseAllOfOptionTypesInner) SetAccount(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetAccount gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Account field.
+func (o *ListOptionLists200ResponseAllOfOptionTypesInner) SetAccount(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.Account = &v
 }
 
@@ -685,8 +751,8 @@ func (o ListOptionLists200ResponseAllOfOptionTypesInner) ToMap() (map[string]int
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !IsNil(o.Description) {
-		toSerialize["description"] = o.Description
+	if o.Description.IsSet() {
+		toSerialize["description"] = o.Description.Get()
 	}
 	if !IsNil(o.Labels) {
 		toSerialize["labels"] = o.Labels
@@ -700,8 +766,8 @@ func (o ListOptionLists200ResponseAllOfOptionTypesInner) ToMap() (map[string]int
 	if !IsNil(o.SourceMethod) {
 		toSerialize["sourceMethod"] = o.SourceMethod
 	}
-	if !IsNil(o.ApiType) {
-		toSerialize["apiType"] = o.ApiType
+	if o.ApiType.IsSet() {
+		toSerialize["apiType"] = o.ApiType.Get()
 	}
 	if !IsNil(o.IgnoreSSLErrors) {
 		toSerialize["ignoreSSLErrors"] = o.IgnoreSSLErrors
@@ -718,20 +784,20 @@ func (o ListOptionLists200ResponseAllOfOptionTypesInner) ToMap() (map[string]int
 	if !IsNil(o.Credential) {
 		toSerialize["credential"] = o.Credential
 	}
-	if !IsNil(o.ServiceUsername) {
-		toSerialize["serviceUsername"] = o.ServiceUsername
+	if o.ServiceUsername.IsSet() {
+		toSerialize["serviceUsername"] = o.ServiceUsername.Get()
 	}
-	if !IsNil(o.ServicePassword) {
-		toSerialize["servicePassword"] = o.ServicePassword
+	if o.ServicePassword.IsSet() {
+		toSerialize["servicePassword"] = o.ServicePassword.Get()
 	}
-	if !IsNil(o.InitialDataset) {
-		toSerialize["initialDataset"] = o.InitialDataset
+	if o.InitialDataset.IsSet() {
+		toSerialize["initialDataset"] = o.InitialDataset.Get()
 	}
 	if !IsNil(o.TranslationScript) {
 		toSerialize["translationScript"] = o.TranslationScript
 	}
-	if !IsNil(o.RequestScript) {
-		toSerialize["requestScript"] = o.RequestScript
+	if o.RequestScript.IsSet() {
+		toSerialize["requestScript"] = o.RequestScript.Get()
 	}
 	if !IsNil(o.Account) {
 		toSerialize["account"] = o.Account

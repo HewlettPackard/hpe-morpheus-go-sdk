@@ -25,8 +25,8 @@ type ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInner struct {
 	Name                *string                                                                                   `json:"name,omitempty"`
 	Labels              []string                                                                                  `json:"labels,omitempty"`
 	Code                *string                                                                                   `json:"code,omitempty"`
-	Description         *string                                                                                   `json:"description,omitempty"`
-	ProvisionTypeCode   *string                                                                                   `json:"provisionTypeCode,omitempty"`
+	Description         NullableString                                                                            `json:"description,omitempty"`
+	ProvisionTypeCode   NullableString                                                                            `json:"provisionTypeCode,omitempty"`
 	Category            *string                                                                                   `json:"category,omitempty"`
 	Active              *bool                                                                                     `json:"active,omitempty"`
 	EnvironmentPrefix   *string                                                                                   `json:"environmentPrefix,omitempty"`
@@ -35,9 +35,9 @@ type ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInner struct {
 	Versions            []string                                                                                  `json:"versions,omitempty"`
 	InstanceTypeLayouts []ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInnerInstanceTypeLayoutsInner `json:"instanceTypeLayouts,omitempty"`
 	// Logo image URL
-	ImagePath *string `json:"imagePath,omitempty"`
+	ImagePath NullableString `json:"imagePath,omitempty"`
 	// Dark logo image URL
-	DarkImagePath        *string                `json:"darkImagePath,omitempty"`
+	DarkImagePath        NullableString         `json:"darkImagePath,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -156,9 +156,9 @@ func (o *ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInner) SetNam
 	o.Name = &v
 }
 
-// GetLabels returns the Labels field value if set, zero value otherwise.
+// GetLabels returns the Labels field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInner) GetLabels() []string {
-	if o == nil || IsNil(o.Labels) {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -167,6 +167,7 @@ func (o *ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInner) GetLab
 
 // GetLabelsOk returns a tuple with the Labels field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInner) GetLabelsOk() ([]string, bool) {
 	if o == nil || IsNil(o.Labels) {
 		return nil, false
@@ -220,68 +221,90 @@ func (o *ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInner) SetCod
 	o.Code = &v
 }
 
-// GetDescription returns the Description field value if set, zero value otherwise.
+// GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInner) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
+	if o == nil || IsNil(o.Description.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Description
+	return *o.Description.Get()
 }
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInner) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Description, true
+	return o.Description.Get(), o.Description.IsSet()
 }
 
 // IsSetDescription returns a boolean if a field has been set.
 func (o *ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInner) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
+	if o != nil && o.Description.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDescription gets a reference to the given string and assigns it to the Description field.
+// SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInner) SetDescription(v string) {
-	o.Description = &v
+	o.Description.Set(&v)
 }
 
-// GetProvisionTypeCode returns the ProvisionTypeCode field value if set, zero value otherwise.
+// SetDescriptionNil sets the value for Description to be an explicit nil
+func (o *ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInner) SetDescriptionNil() {
+	o.Description.Set(nil)
+}
+
+// UnsetDescription ensures that no value is present for Description, not even an explicit nil
+func (o *ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInner) UnsetDescription() {
+	o.Description.Unset()
+}
+
+// GetProvisionTypeCode returns the ProvisionTypeCode field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInner) GetProvisionTypeCode() string {
-	if o == nil || IsNil(o.ProvisionTypeCode) {
+	if o == nil || IsNil(o.ProvisionTypeCode.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ProvisionTypeCode
+	return *o.ProvisionTypeCode.Get()
 }
 
 // GetProvisionTypeCodeOk returns a tuple with the ProvisionTypeCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInner) GetProvisionTypeCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.ProvisionTypeCode) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ProvisionTypeCode, true
+	return o.ProvisionTypeCode.Get(), o.ProvisionTypeCode.IsSet()
 }
 
 // IsSetProvisionTypeCode returns a boolean if a field has been set.
 func (o *ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInner) IsSetProvisionTypeCode() bool {
-	if o != nil && !IsNil(o.ProvisionTypeCode) {
+	if o != nil && o.ProvisionTypeCode.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetProvisionTypeCode gets a reference to the given string and assigns it to the ProvisionTypeCode field.
+// SetProvisionTypeCode gets a reference to the given NullableString and assigns it to the ProvisionTypeCode field.
 func (o *ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInner) SetProvisionTypeCode(v string) {
-	o.ProvisionTypeCode = &v
+	o.ProvisionTypeCode.Set(&v)
+}
+
+// SetProvisionTypeCodeNil sets the value for ProvisionTypeCode to be an explicit nil
+func (o *ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInner) SetProvisionTypeCodeNil() {
+	o.ProvisionTypeCode.Set(nil)
+}
+
+// UnsetProvisionTypeCode ensures that no value is present for ProvisionTypeCode, not even an explicit nil
+func (o *ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInner) UnsetProvisionTypeCode() {
+	o.ProvisionTypeCode.Unset()
 }
 
 // GetCategory returns the Category field value if set, zero value otherwise.
@@ -508,68 +531,90 @@ func (o *ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInner) SetIns
 	o.InstanceTypeLayouts = v
 }
 
-// GetImagePath returns the ImagePath field value if set, zero value otherwise.
+// GetImagePath returns the ImagePath field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInner) GetImagePath() string {
-	if o == nil || IsNil(o.ImagePath) {
+	if o == nil || IsNil(o.ImagePath.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ImagePath
+	return *o.ImagePath.Get()
 }
 
 // GetImagePathOk returns a tuple with the ImagePath field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInner) GetImagePathOk() (*string, bool) {
-	if o == nil || IsNil(o.ImagePath) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ImagePath, true
+	return o.ImagePath.Get(), o.ImagePath.IsSet()
 }
 
 // IsSetImagePath returns a boolean if a field has been set.
 func (o *ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInner) IsSetImagePath() bool {
-	if o != nil && !IsNil(o.ImagePath) {
+	if o != nil && o.ImagePath.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetImagePath gets a reference to the given string and assigns it to the ImagePath field.
+// SetImagePath gets a reference to the given NullableString and assigns it to the ImagePath field.
 func (o *ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInner) SetImagePath(v string) {
-	o.ImagePath = &v
+	o.ImagePath.Set(&v)
 }
 
-// GetDarkImagePath returns the DarkImagePath field value if set, zero value otherwise.
+// SetImagePathNil sets the value for ImagePath to be an explicit nil
+func (o *ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInner) SetImagePathNil() {
+	o.ImagePath.Set(nil)
+}
+
+// UnsetImagePath ensures that no value is present for ImagePath, not even an explicit nil
+func (o *ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInner) UnsetImagePath() {
+	o.ImagePath.Unset()
+}
+
+// GetDarkImagePath returns the DarkImagePath field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInner) GetDarkImagePath() string {
-	if o == nil || IsNil(o.DarkImagePath) {
+	if o == nil || IsNil(o.DarkImagePath.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.DarkImagePath
+	return *o.DarkImagePath.Get()
 }
 
 // GetDarkImagePathOk returns a tuple with the DarkImagePath field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInner) GetDarkImagePathOk() (*string, bool) {
-	if o == nil || IsNil(o.DarkImagePath) {
+	if o == nil {
 		return nil, false
 	}
-	return o.DarkImagePath, true
+	return o.DarkImagePath.Get(), o.DarkImagePath.IsSet()
 }
 
 // IsSetDarkImagePath returns a boolean if a field has been set.
 func (o *ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInner) IsSetDarkImagePath() bool {
-	if o != nil && !IsNil(o.DarkImagePath) {
+	if o != nil && o.DarkImagePath.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDarkImagePath gets a reference to the given string and assigns it to the DarkImagePath field.
+// SetDarkImagePath gets a reference to the given NullableString and assigns it to the DarkImagePath field.
 func (o *ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInner) SetDarkImagePath(v string) {
-	o.DarkImagePath = &v
+	o.DarkImagePath.Set(&v)
+}
+
+// SetDarkImagePathNil sets the value for DarkImagePath to be an explicit nil
+func (o *ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInner) SetDarkImagePathNil() {
+	o.DarkImagePath.Set(nil)
+}
+
+// UnsetDarkImagePath ensures that no value is present for DarkImagePath, not even an explicit nil
+func (o *ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInner) UnsetDarkImagePath() {
+	o.DarkImagePath.Unset()
 }
 
 func (o ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInner) MarshalJSON() ([]byte, error) {
@@ -591,17 +636,17 @@ func (o ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInner) ToMap()
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !IsNil(o.Labels) {
+	if o.Labels != nil {
 		toSerialize["labels"] = o.Labels
 	}
 	if !IsNil(o.Code) {
 		toSerialize["code"] = o.Code
 	}
-	if !IsNil(o.Description) {
-		toSerialize["description"] = o.Description
+	if o.Description.IsSet() {
+		toSerialize["description"] = o.Description.Get()
 	}
-	if !IsNil(o.ProvisionTypeCode) {
-		toSerialize["provisionTypeCode"] = o.ProvisionTypeCode
+	if o.ProvisionTypeCode.IsSet() {
+		toSerialize["provisionTypeCode"] = o.ProvisionTypeCode.Get()
 	}
 	if !IsNil(o.Category) {
 		toSerialize["category"] = o.Category
@@ -624,11 +669,11 @@ func (o ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInner) ToMap()
 	if !IsNil(o.InstanceTypeLayouts) {
 		toSerialize["instanceTypeLayouts"] = o.InstanceTypeLayouts
 	}
-	if !IsNil(o.ImagePath) {
-		toSerialize["imagePath"] = o.ImagePath
+	if o.ImagePath.IsSet() {
+		toSerialize["imagePath"] = o.ImagePath.Get()
 	}
-	if !IsNil(o.DarkImagePath) {
-		toSerialize["darkImagePath"] = o.DarkImagePath
+	if o.DarkImagePath.IsSet() {
+		toSerialize["darkImagePath"] = o.DarkImagePath.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {

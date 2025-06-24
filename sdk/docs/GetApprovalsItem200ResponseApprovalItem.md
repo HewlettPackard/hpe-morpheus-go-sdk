@@ -6,17 +6,17 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**ExternalId** | Pointer to **string** |  | [optional] 
-**ExternalName** | Pointer to **string** |  | [optional] 
-**InternalId** | Pointer to **string** |  | [optional] 
+**ExternalId** | Pointer to **NullableString** |  | [optional] 
+**ExternalName** | Pointer to **NullableString** |  | [optional] 
+**InternalId** | Pointer to **NullableString** |  | [optional] 
 **ApprovedBy** | Pointer to **string** |  | [optional] 
-**DeniedBy** | Pointer to **string** |  | [optional] 
+**DeniedBy** | Pointer to **NullableString** |  | [optional] 
 **Status** | Pointer to **string** |  | [optional] 
-**ErrorMessage** | Pointer to **string** |  | [optional] 
+**ErrorMessage** | Pointer to **NullableString** |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
 **DateApproved** | Pointer to **time.Time** |  | [optional] 
-**DateDenied** | Pointer to **time.Time** |  | [optional] 
+**DateDenied** | Pointer to **NullableTime** |  | [optional] 
 **Approval** | Pointer to [**GetAlerts200ResponseAllOfChecksInnerAccount**](GetAlerts200ResponseAllOfChecksInnerAccount.md) |  | [optional] 
 **Reference** | Pointer to [**GetApprovalsItem200ResponseApprovalItemReference**](GetApprovalsItem200ResponseApprovalItemReference.md) |  | [optional] 
 
@@ -114,6 +114,16 @@ SetExternalId sets ExternalId field to given value.
 
 HasExternalId returns a boolean if a field has been set.
 
+### SetExternalIdNil
+
+`func (o *GetApprovalsItem200ResponseApprovalItem) SetExternalIdNil(b bool)`
+
+ SetExternalIdNil sets the value for ExternalId to be an explicit nil
+
+### UnsetExternalId
+`func (o *GetApprovalsItem200ResponseApprovalItem) UnsetExternalId()`
+
+UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
 ### GetExternalName
 
 `func (o *GetApprovalsItem200ResponseApprovalItem) GetExternalName() string`
@@ -139,6 +149,16 @@ SetExternalName sets ExternalName field to given value.
 
 HasExternalName returns a boolean if a field has been set.
 
+### SetExternalNameNil
+
+`func (o *GetApprovalsItem200ResponseApprovalItem) SetExternalNameNil(b bool)`
+
+ SetExternalNameNil sets the value for ExternalName to be an explicit nil
+
+### UnsetExternalName
+`func (o *GetApprovalsItem200ResponseApprovalItem) UnsetExternalName()`
+
+UnsetExternalName ensures that no value is present for ExternalName, not even an explicit nil
 ### GetInternalId
 
 `func (o *GetApprovalsItem200ResponseApprovalItem) GetInternalId() string`
@@ -164,6 +184,16 @@ SetInternalId sets InternalId field to given value.
 
 HasInternalId returns a boolean if a field has been set.
 
+### SetInternalIdNil
+
+`func (o *GetApprovalsItem200ResponseApprovalItem) SetInternalIdNil(b bool)`
+
+ SetInternalIdNil sets the value for InternalId to be an explicit nil
+
+### UnsetInternalId
+`func (o *GetApprovalsItem200ResponseApprovalItem) UnsetInternalId()`
+
+UnsetInternalId ensures that no value is present for InternalId, not even an explicit nil
 ### GetApprovedBy
 
 `func (o *GetApprovalsItem200ResponseApprovalItem) GetApprovedBy() string`
@@ -214,6 +244,16 @@ SetDeniedBy sets DeniedBy field to given value.
 
 HasDeniedBy returns a boolean if a field has been set.
 
+### SetDeniedByNil
+
+`func (o *GetApprovalsItem200ResponseApprovalItem) SetDeniedByNil(b bool)`
+
+ SetDeniedByNil sets the value for DeniedBy to be an explicit nil
+
+### UnsetDeniedBy
+`func (o *GetApprovalsItem200ResponseApprovalItem) UnsetDeniedBy()`
+
+UnsetDeniedBy ensures that no value is present for DeniedBy, not even an explicit nil
 ### GetStatus
 
 `func (o *GetApprovalsItem200ResponseApprovalItem) GetStatus() string`
@@ -264,6 +304,16 @@ SetErrorMessage sets ErrorMessage field to given value.
 
 HasErrorMessage returns a boolean if a field has been set.
 
+### SetErrorMessageNil
+
+`func (o *GetApprovalsItem200ResponseApprovalItem) SetErrorMessageNil(b bool)`
+
+ SetErrorMessageNil sets the value for ErrorMessage to be an explicit nil
+
+### UnsetErrorMessage
+`func (o *GetApprovalsItem200ResponseApprovalItem) UnsetErrorMessage()`
+
+UnsetErrorMessage ensures that no value is present for ErrorMessage, not even an explicit nil
 ### GetDateCreated
 
 `func (o *GetApprovalsItem200ResponseApprovalItem) GetDateCreated() time.Time`
@@ -364,6 +414,16 @@ SetDateDenied sets DateDenied field to given value.
 
 HasDateDenied returns a boolean if a field has been set.
 
+### SetDateDeniedNil
+
+`func (o *GetApprovalsItem200ResponseApprovalItem) SetDateDeniedNil(b bool)`
+
+ SetDateDeniedNil sets the value for DateDenied to be an explicit nil
+
+### UnsetDateDenied
+`func (o *GetApprovalsItem200ResponseApprovalItem) UnsetDateDenied()`
+
+UnsetDateDenied ensures that no value is present for DateDenied, not even an explicit nil
 ### GetApproval
 
 `func (o *GetApprovalsItem200ResponseApprovalItem) GetApproval() GetAlerts200ResponseAllOfChecksInnerAccount`

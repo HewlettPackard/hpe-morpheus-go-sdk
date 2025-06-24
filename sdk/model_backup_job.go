@@ -26,14 +26,14 @@ type BackupJob struct {
 	// Name
 	Name              *string                                                   `json:"name,omitempty"`
 	Schedule          *ListBackups200ResponseAllOfBackupsInnerSchedule          `json:"schedule,omitempty"`
-	RetentionCount    *int64                                                    `json:"retentionCount,omitempty"`
-	ExternalId        *string                                                   `json:"externalId,omitempty"`
+	RetentionCount    NullableInt64                                             `json:"retentionCount,omitempty"`
+	ExternalId        NullableString                                            `json:"externalId,omitempty"`
 	BackupProvider    *ListBackups200ResponseAllOfBackupsInnerBackupProvider    `json:"backupProvider,omitempty"`
 	BackupRespository *ListBackups200ResponseAllOfBackupsInnerBackupRespository `json:"backupRespository,omitempty"`
 	// Cron Expression
-	CronExpression *string `json:"cronExpression,omitempty"`
+	CronExpression NullableString `json:"cronExpression,omitempty"`
 	// Next Fire is the datetime the job will next occur on according to its schedule
-	NextFire   *time.Time                                      `json:"nextFire,omitempty"`
+	NextFire   NullableTime                                    `json:"nextFire,omitempty"`
 	Source     *string                                         `json:"source,omitempty"`
 	Visibility *string                                         `json:"visibility,omitempty"`
 	Account    *ListBackupJobs200ResponseAllOfJobsInnerAccount `json:"account,omitempty"`
@@ -163,68 +163,90 @@ func (o *BackupJob) SetSchedule(v ListBackups200ResponseAllOfBackupsInnerSchedul
 	o.Schedule = &v
 }
 
-// GetRetentionCount returns the RetentionCount field value if set, zero value otherwise.
+// GetRetentionCount returns the RetentionCount field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *BackupJob) GetRetentionCount() int64 {
-	if o == nil || IsNil(o.RetentionCount) {
+	if o == nil || IsNil(o.RetentionCount.Get()) {
 		var ret int64
 		return ret
 	}
-	return *o.RetentionCount
+	return *o.RetentionCount.Get()
 }
 
 // GetRetentionCountOk returns a tuple with the RetentionCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BackupJob) GetRetentionCountOk() (*int64, bool) {
-	if o == nil || IsNil(o.RetentionCount) {
+	if o == nil {
 		return nil, false
 	}
-	return o.RetentionCount, true
+	return o.RetentionCount.Get(), o.RetentionCount.IsSet()
 }
 
 // IsSetRetentionCount returns a boolean if a field has been set.
 func (o *BackupJob) IsSetRetentionCount() bool {
-	if o != nil && !IsNil(o.RetentionCount) {
+	if o != nil && o.RetentionCount.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetRetentionCount gets a reference to the given int64 and assigns it to the RetentionCount field.
+// SetRetentionCount gets a reference to the given NullableInt64 and assigns it to the RetentionCount field.
 func (o *BackupJob) SetRetentionCount(v int64) {
-	o.RetentionCount = &v
+	o.RetentionCount.Set(&v)
 }
 
-// GetExternalId returns the ExternalId field value if set, zero value otherwise.
+// SetRetentionCountNil sets the value for RetentionCount to be an explicit nil
+func (o *BackupJob) SetRetentionCountNil() {
+	o.RetentionCount.Set(nil)
+}
+
+// UnsetRetentionCount ensures that no value is present for RetentionCount, not even an explicit nil
+func (o *BackupJob) UnsetRetentionCount() {
+	o.RetentionCount.Unset()
+}
+
+// GetExternalId returns the ExternalId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *BackupJob) GetExternalId() string {
-	if o == nil || IsNil(o.ExternalId) {
+	if o == nil || IsNil(o.ExternalId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ExternalId
+	return *o.ExternalId.Get()
 }
 
 // GetExternalIdOk returns a tuple with the ExternalId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BackupJob) GetExternalIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ExternalId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ExternalId, true
+	return o.ExternalId.Get(), o.ExternalId.IsSet()
 }
 
 // IsSetExternalId returns a boolean if a field has been set.
 func (o *BackupJob) IsSetExternalId() bool {
-	if o != nil && !IsNil(o.ExternalId) {
+	if o != nil && o.ExternalId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetExternalId gets a reference to the given string and assigns it to the ExternalId field.
+// SetExternalId gets a reference to the given NullableString and assigns it to the ExternalId field.
 func (o *BackupJob) SetExternalId(v string) {
-	o.ExternalId = &v
+	o.ExternalId.Set(&v)
+}
+
+// SetExternalIdNil sets the value for ExternalId to be an explicit nil
+func (o *BackupJob) SetExternalIdNil() {
+	o.ExternalId.Set(nil)
+}
+
+// UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
+func (o *BackupJob) UnsetExternalId() {
+	o.ExternalId.Unset()
 }
 
 // GetBackupProvider returns the BackupProvider field value if set, zero value otherwise.
@@ -291,68 +313,90 @@ func (o *BackupJob) SetBackupRespository(v ListBackups200ResponseAllOfBackupsInn
 	o.BackupRespository = &v
 }
 
-// GetCronExpression returns the CronExpression field value if set, zero value otherwise.
+// GetCronExpression returns the CronExpression field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *BackupJob) GetCronExpression() string {
-	if o == nil || IsNil(o.CronExpression) {
+	if o == nil || IsNil(o.CronExpression.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.CronExpression
+	return *o.CronExpression.Get()
 }
 
 // GetCronExpressionOk returns a tuple with the CronExpression field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BackupJob) GetCronExpressionOk() (*string, bool) {
-	if o == nil || IsNil(o.CronExpression) {
+	if o == nil {
 		return nil, false
 	}
-	return o.CronExpression, true
+	return o.CronExpression.Get(), o.CronExpression.IsSet()
 }
 
 // IsSetCronExpression returns a boolean if a field has been set.
 func (o *BackupJob) IsSetCronExpression() bool {
-	if o != nil && !IsNil(o.CronExpression) {
+	if o != nil && o.CronExpression.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCronExpression gets a reference to the given string and assigns it to the CronExpression field.
+// SetCronExpression gets a reference to the given NullableString and assigns it to the CronExpression field.
 func (o *BackupJob) SetCronExpression(v string) {
-	o.CronExpression = &v
+	o.CronExpression.Set(&v)
 }
 
-// GetNextFire returns the NextFire field value if set, zero value otherwise.
+// SetCronExpressionNil sets the value for CronExpression to be an explicit nil
+func (o *BackupJob) SetCronExpressionNil() {
+	o.CronExpression.Set(nil)
+}
+
+// UnsetCronExpression ensures that no value is present for CronExpression, not even an explicit nil
+func (o *BackupJob) UnsetCronExpression() {
+	o.CronExpression.Unset()
+}
+
+// GetNextFire returns the NextFire field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *BackupJob) GetNextFire() time.Time {
-	if o == nil || IsNil(o.NextFire) {
+	if o == nil || IsNil(o.NextFire.Get()) {
 		var ret time.Time
 		return ret
 	}
-	return *o.NextFire
+	return *o.NextFire.Get()
 }
 
 // GetNextFireOk returns a tuple with the NextFire field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BackupJob) GetNextFireOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.NextFire) {
+	if o == nil {
 		return nil, false
 	}
-	return o.NextFire, true
+	return o.NextFire.Get(), o.NextFire.IsSet()
 }
 
 // IsSetNextFire returns a boolean if a field has been set.
 func (o *BackupJob) IsSetNextFire() bool {
-	if o != nil && !IsNil(o.NextFire) {
+	if o != nil && o.NextFire.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetNextFire gets a reference to the given time.Time and assigns it to the NextFire field.
+// SetNextFire gets a reference to the given NullableTime and assigns it to the NextFire field.
 func (o *BackupJob) SetNextFire(v time.Time) {
-	o.NextFire = &v
+	o.NextFire.Set(&v)
+}
+
+// SetNextFireNil sets the value for NextFire to be an explicit nil
+func (o *BackupJob) SetNextFireNil() {
+	o.NextFire.Set(nil)
+}
+
+// UnsetNextFire ensures that no value is present for NextFire, not even an explicit nil
+func (o *BackupJob) UnsetNextFire() {
+	o.NextFire.Unset()
 }
 
 // GetSource returns the Source field value if set, zero value otherwise.
@@ -598,11 +642,11 @@ func (o BackupJob) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Schedule) {
 		toSerialize["schedule"] = o.Schedule
 	}
-	if !IsNil(o.RetentionCount) {
-		toSerialize["retentionCount"] = o.RetentionCount
+	if o.RetentionCount.IsSet() {
+		toSerialize["retentionCount"] = o.RetentionCount.Get()
 	}
-	if !IsNil(o.ExternalId) {
-		toSerialize["externalId"] = o.ExternalId
+	if o.ExternalId.IsSet() {
+		toSerialize["externalId"] = o.ExternalId.Get()
 	}
 	if !IsNil(o.BackupProvider) {
 		toSerialize["backupProvider"] = o.BackupProvider
@@ -610,11 +654,11 @@ func (o BackupJob) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.BackupRespository) {
 		toSerialize["backupRespository"] = o.BackupRespository
 	}
-	if !IsNil(o.CronExpression) {
-		toSerialize["cronExpression"] = o.CronExpression
+	if o.CronExpression.IsSet() {
+		toSerialize["cronExpression"] = o.CronExpression.Get()
 	}
-	if !IsNil(o.NextFire) {
-		toSerialize["nextFire"] = o.NextFire
+	if o.NextFire.IsSet() {
+		toSerialize["nextFire"] = o.NextFire.Get()
 	}
 	if !IsNil(o.Source) {
 		toSerialize["source"] = o.Source

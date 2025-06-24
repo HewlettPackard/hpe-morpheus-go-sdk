@@ -355,6 +355,16 @@ SetSecurityGroups sets SecurityGroups field to given value.
 
 HasSecurityGroups returns a boolean if a field has been set.
 
+### SetSecurityGroupsNil
+
+`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfig) SetSecurityGroupsNil(b bool)`
+
+ SetSecurityGroupsNil sets the value for SecurityGroups to be an explicit nil
+
+### UnsetSecurityGroups
+`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfig) UnsetSecurityGroups()`
+
+UnsetSecurityGroups ensures that no value is present for SecurityGroups, not even an explicit nil
 ### GetNetworkInterfaces
 
 `func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfig) GetNetworkInterfaces() []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInner`

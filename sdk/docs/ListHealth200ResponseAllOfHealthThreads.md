@@ -83,6 +83,16 @@ SetThreadList sets ThreadList field to given value.
 
 HasThreadList returns a boolean if a field has been set.
 
+### SetThreadListNil
+
+`func (o *ListHealth200ResponseAllOfHealthThreads) SetThreadListNil(b bool)`
+
+ SetThreadListNil sets the value for ThreadList to be an explicit nil
+
+### UnsetThreadList
+`func (o *ListHealth200ResponseAllOfHealthThreads) UnsetThreadList()`
+
+UnsetThreadList ensures that no value is present for ThreadList, not even an explicit nil
 ### GetBusyThreads
 
 `func (o *ListHealth200ResponseAllOfHealthThreads) GetBusyThreads() []ListHealth200ResponseAllOfHealthThreadsBusyThreadsInner`
@@ -133,6 +143,16 @@ SetBlockedThreads sets BlockedThreads field to given value.
 
 HasBlockedThreads returns a boolean if a field has been set.
 
+### SetBlockedThreadsNil
+
+`func (o *ListHealth200ResponseAllOfHealthThreads) SetBlockedThreadsNil(b bool)`
+
+ SetBlockedThreadsNil sets the value for BlockedThreads to be an explicit nil
+
+### UnsetBlockedThreads
+`func (o *ListHealth200ResponseAllOfHealthThreads) UnsetBlockedThreads()`
+
+UnsetBlockedThreads ensures that no value is present for BlockedThreads, not even an explicit nil
 ### GetRunningThreads
 
 `func (o *ListHealth200ResponseAllOfHealthThreads) GetRunningThreads() []map[string]interface{}`
@@ -158,6 +178,16 @@ SetRunningThreads sets RunningThreads field to given value.
 
 HasRunningThreads returns a boolean if a field has been set.
 
+### SetRunningThreadsNil
+
+`func (o *ListHealth200ResponseAllOfHealthThreads) SetRunningThreadsNil(b bool)`
+
+ SetRunningThreadsNil sets the value for RunningThreads to be an explicit nil
+
+### UnsetRunningThreads
+`func (o *ListHealth200ResponseAllOfHealthThreads) UnsetRunningThreads()`
+
+UnsetRunningThreads ensures that no value is present for RunningThreads, not even an explicit nil
 ### GetTotalCpuTime
 
 `func (o *ListHealth200ResponseAllOfHealthThreads) GetTotalCpuTime() int64`

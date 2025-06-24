@@ -27,7 +27,7 @@ type GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerUsag
 	AccountName          *string                                                                                                   `json:"accountName,omitempty"`
 	Volumes              []ListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInnerVolumesInner     `json:"volumes,omitempty"`
 	MaxMemory            *int64                                                                                                    `json:"maxMemory,omitempty"`
-	MaxCpu               *string                                                                                                   `json:"maxCpu,omitempty"`
+	MaxCpu               NullableString                                                                                            `json:"maxCpu,omitempty"`
 	MaxCores             *int64                                                                                                    `json:"maxCores,omitempty"`
 	ServerExternalId     *string                                                                                                   `json:"serverExternalId,omitempty"`
 	ServerInternalId     *string                                                                                                   `json:"serverInternalId,omitempty"`
@@ -43,7 +43,7 @@ type GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerUsag
 	SiteId               *int64                                                                                                    `json:"siteId,omitempty"`
 	SiteName             *string                                                                                                   `json:"siteName,omitempty"`
 	SiteUUID             *string                                                                                                   `json:"siteUUID,omitempty"`
-	SiteCode             *string                                                                                                   `json:"siteCode,omitempty"`
+	SiteCode             NullableString                                                                                            `json:"siteCode,omitempty"`
 	StartDate            *time.Time                                                                                                `json:"startDate,omitempty"`
 	EndDate              *time.Time                                                                                                `json:"endDate,omitempty"`
 	Status               *string                                                                                                   `json:"status,omitempty"`
@@ -267,36 +267,47 @@ func (o *GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInner
 	o.MaxMemory = &v
 }
 
-// GetMaxCpu returns the MaxCpu field value if set, zero value otherwise.
+// GetMaxCpu returns the MaxCpu field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerUsagesInner) GetMaxCpu() string {
-	if o == nil || IsNil(o.MaxCpu) {
+	if o == nil || IsNil(o.MaxCpu.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.MaxCpu
+	return *o.MaxCpu.Get()
 }
 
 // GetMaxCpuOk returns a tuple with the MaxCpu field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerUsagesInner) GetMaxCpuOk() (*string, bool) {
-	if o == nil || IsNil(o.MaxCpu) {
+	if o == nil {
 		return nil, false
 	}
-	return o.MaxCpu, true
+	return o.MaxCpu.Get(), o.MaxCpu.IsSet()
 }
 
 // IsSetMaxCpu returns a boolean if a field has been set.
 func (o *GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerUsagesInner) IsSetMaxCpu() bool {
-	if o != nil && !IsNil(o.MaxCpu) {
+	if o != nil && o.MaxCpu.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetMaxCpu gets a reference to the given string and assigns it to the MaxCpu field.
+// SetMaxCpu gets a reference to the given NullableString and assigns it to the MaxCpu field.
 func (o *GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerUsagesInner) SetMaxCpu(v string) {
-	o.MaxCpu = &v
+	o.MaxCpu.Set(&v)
+}
+
+// SetMaxCpuNil sets the value for MaxCpu to be an explicit nil
+func (o *GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerUsagesInner) SetMaxCpuNil() {
+	o.MaxCpu.Set(nil)
+}
+
+// UnsetMaxCpu ensures that no value is present for MaxCpu, not even an explicit nil
+func (o *GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerUsagesInner) UnsetMaxCpu() {
+	o.MaxCpu.Unset()
 }
 
 // GetMaxCores returns the MaxCores field value if set, zero value otherwise.
@@ -779,36 +790,47 @@ func (o *GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInner
 	o.SiteUUID = &v
 }
 
-// GetSiteCode returns the SiteCode field value if set, zero value otherwise.
+// GetSiteCode returns the SiteCode field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerUsagesInner) GetSiteCode() string {
-	if o == nil || IsNil(o.SiteCode) {
+	if o == nil || IsNil(o.SiteCode.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.SiteCode
+	return *o.SiteCode.Get()
 }
 
 // GetSiteCodeOk returns a tuple with the SiteCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerUsagesInner) GetSiteCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.SiteCode) {
+	if o == nil {
 		return nil, false
 	}
-	return o.SiteCode, true
+	return o.SiteCode.Get(), o.SiteCode.IsSet()
 }
 
 // IsSetSiteCode returns a boolean if a field has been set.
 func (o *GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerUsagesInner) IsSetSiteCode() bool {
-	if o != nil && !IsNil(o.SiteCode) {
+	if o != nil && o.SiteCode.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetSiteCode gets a reference to the given string and assigns it to the SiteCode field.
+// SetSiteCode gets a reference to the given NullableString and assigns it to the SiteCode field.
 func (o *GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerUsagesInner) SetSiteCode(v string) {
-	o.SiteCode = &v
+	o.SiteCode.Set(&v)
+}
+
+// SetSiteCodeNil sets the value for SiteCode to be an explicit nil
+func (o *GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerUsagesInner) SetSiteCodeNil() {
+	o.SiteCode.Set(nil)
+}
+
+// UnsetSiteCode ensures that no value is present for SiteCode, not even an explicit nil
+func (o *GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerUsagesInner) UnsetSiteCode() {
+	o.SiteCode.Unset()
 }
 
 // GetStartDate returns the StartDate field value if set, zero value otherwise.
@@ -907,9 +929,9 @@ func (o *GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInner
 	o.Status = &v
 }
 
-// GetTags returns the Tags field value if set, zero value otherwise.
+// GetTags returns the Tags field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerUsagesInner) GetTags() []map[string]interface{} {
-	if o == nil || IsNil(o.Tags) {
+	if o == nil {
 		var ret []map[string]interface{}
 		return ret
 	}
@@ -918,6 +940,7 @@ func (o *GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInner
 
 // GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerUsagesInner) GetTagsOk() ([]map[string]interface{}, bool) {
 	if o == nil || IsNil(o.Tags) {
 		return nil, false
@@ -1127,8 +1150,8 @@ func (o GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerU
 	if !IsNil(o.MaxMemory) {
 		toSerialize["maxMemory"] = o.MaxMemory
 	}
-	if !IsNil(o.MaxCpu) {
-		toSerialize["maxCpu"] = o.MaxCpu
+	if o.MaxCpu.IsSet() {
+		toSerialize["maxCpu"] = o.MaxCpu.Get()
 	}
 	if !IsNil(o.MaxCores) {
 		toSerialize["maxCores"] = o.MaxCores
@@ -1175,8 +1198,8 @@ func (o GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerU
 	if !IsNil(o.SiteUUID) {
 		toSerialize["siteUUID"] = o.SiteUUID
 	}
-	if !IsNil(o.SiteCode) {
-		toSerialize["siteCode"] = o.SiteCode
+	if o.SiteCode.IsSet() {
+		toSerialize["siteCode"] = o.SiteCode.Get()
 	}
 	if !IsNil(o.StartDate) {
 		toSerialize["startDate"] = o.StartDate
@@ -1187,7 +1210,7 @@ func (o GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerU
 	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status
 	}
-	if !IsNil(o.Tags) {
+	if o.Tags != nil {
 		toSerialize["tags"] = o.Tags
 	}
 	if !IsNil(o.ApplicablePrices) {

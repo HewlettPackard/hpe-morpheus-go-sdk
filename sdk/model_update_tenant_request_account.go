@@ -23,10 +23,10 @@ type UpdateTenantRequestAccount struct {
 	// Name
 	Name *string `json:"name,omitempty"`
 	// Description
-	Description *string                         `json:"description,omitempty"`
+	Description NullableString                  `json:"description,omitempty"`
 	Role        *UpdateTenantRequestAccountRole `json:"role,omitempty"`
 	// The subdomain. This will be part of the login URL and username for sub tenant users.
-	Subdomain *string `json:"subdomain,omitempty"`
+	Subdomain NullableString `json:"subdomain,omitempty"`
 	// Currency Code (ISO 4217)
 	Currency             *string                `json:"currency,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
@@ -87,36 +87,47 @@ func (o *UpdateTenantRequestAccount) SetName(v string) {
 	o.Name = &v
 }
 
-// GetDescription returns the Description field value if set, zero value otherwise.
+// GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UpdateTenantRequestAccount) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
+	if o == nil || IsNil(o.Description.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Description
+	return *o.Description.Get()
 }
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *UpdateTenantRequestAccount) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Description, true
+	return o.Description.Get(), o.Description.IsSet()
 }
 
 // IsSetDescription returns a boolean if a field has been set.
 func (o *UpdateTenantRequestAccount) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
+	if o != nil && o.Description.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDescription gets a reference to the given string and assigns it to the Description field.
+// SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *UpdateTenantRequestAccount) SetDescription(v string) {
-	o.Description = &v
+	o.Description.Set(&v)
+}
+
+// SetDescriptionNil sets the value for Description to be an explicit nil
+func (o *UpdateTenantRequestAccount) SetDescriptionNil() {
+	o.Description.Set(nil)
+}
+
+// UnsetDescription ensures that no value is present for Description, not even an explicit nil
+func (o *UpdateTenantRequestAccount) UnsetDescription() {
+	o.Description.Unset()
 }
 
 // GetRole returns the Role field value if set, zero value otherwise.
@@ -151,36 +162,47 @@ func (o *UpdateTenantRequestAccount) SetRole(v UpdateTenantRequestAccountRole) {
 	o.Role = &v
 }
 
-// GetSubdomain returns the Subdomain field value if set, zero value otherwise.
+// GetSubdomain returns the Subdomain field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UpdateTenantRequestAccount) GetSubdomain() string {
-	if o == nil || IsNil(o.Subdomain) {
+	if o == nil || IsNil(o.Subdomain.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Subdomain
+	return *o.Subdomain.Get()
 }
 
 // GetSubdomainOk returns a tuple with the Subdomain field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *UpdateTenantRequestAccount) GetSubdomainOk() (*string, bool) {
-	if o == nil || IsNil(o.Subdomain) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Subdomain, true
+	return o.Subdomain.Get(), o.Subdomain.IsSet()
 }
 
 // IsSetSubdomain returns a boolean if a field has been set.
 func (o *UpdateTenantRequestAccount) IsSetSubdomain() bool {
-	if o != nil && !IsNil(o.Subdomain) {
+	if o != nil && o.Subdomain.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetSubdomain gets a reference to the given string and assigns it to the Subdomain field.
+// SetSubdomain gets a reference to the given NullableString and assigns it to the Subdomain field.
 func (o *UpdateTenantRequestAccount) SetSubdomain(v string) {
-	o.Subdomain = &v
+	o.Subdomain.Set(&v)
+}
+
+// SetSubdomainNil sets the value for Subdomain to be an explicit nil
+func (o *UpdateTenantRequestAccount) SetSubdomainNil() {
+	o.Subdomain.Set(nil)
+}
+
+// UnsetSubdomain ensures that no value is present for Subdomain, not even an explicit nil
+func (o *UpdateTenantRequestAccount) UnsetSubdomain() {
+	o.Subdomain.Unset()
 }
 
 // GetCurrency returns the Currency field value if set, zero value otherwise.
@@ -228,14 +250,14 @@ func (o UpdateTenantRequestAccount) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !IsNil(o.Description) {
-		toSerialize["description"] = o.Description
+	if o.Description.IsSet() {
+		toSerialize["description"] = o.Description.Get()
 	}
 	if !IsNil(o.Role) {
 		toSerialize["role"] = o.Role
 	}
-	if !IsNil(o.Subdomain) {
-		toSerialize["subdomain"] = o.Subdomain
+	if o.Subdomain.IsSet() {
+		toSerialize["subdomain"] = o.Subdomain.Get()
 	}
 	if !IsNil(o.Currency) {
 		toSerialize["currency"] = o.Currency

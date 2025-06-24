@@ -14,14 +14,14 @@ Name | Type | Description | Notes
 **SecurityGroups** | Pointer to **[]string** | Key for security group configuration. | [optional] 
 **Visibility** | Pointer to **string** | Visibility for server host | [optional] [default to "private"]
 **UserGroup** | Pointer to [**AddClusterRequestClusterServerUserGroup**](AddClusterRequestClusterServerUserGroup.md) |  | [optional] 
-**NetworkDomain** | Pointer to **string** | Network domain | [optional] 
-**Hostname** | Pointer to **string** | Hostname for server host | [optional] 
+**NetworkDomain** | Pointer to **NullableString** | Network domain | [optional] 
+**Hostname** | Pointer to **NullableString** | Hostname for server host | [optional] 
 **NodeCount** | Pointer to **int64** | Number of workers or hosts | [optional] 
 **Tags** | Pointer to [**[]AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner**](AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner.md) | Metadata tags, Array of objects having a name and value. | [optional] 
 **Labels** | Pointer to **[]string** | Array of strings (keywords). This will set labels on the server and also on the cluster as well by default. | [optional] 
 **SshHosts** | Pointer to [**[]AddClusterRequestClusterServerSshHostsInner**](AddClusterRequestClusterServerSshHostsInner.md) | Array of Host IPs and Names. This is used in conjunction with sshUsername and sshPassword/sshKeyPair to add existing hosts such as with HPE VM clusters. | [optional] 
 **SshUsername** | Pointer to **string** | SSH Username | [optional] 
-**SshPassword** | Pointer to **string** | SSH Password | [optional] 
+**SshPassword** | Pointer to **NullableString** | SSH Password | [optional] 
 **SshKeyPair** | Pointer to [**AddClusterRequestClusterServerSshKeyPair**](AddClusterRequestClusterServerSshKeyPair.md) |  | [optional] 
 
 ## Methods
@@ -303,6 +303,16 @@ SetNetworkDomain sets NetworkDomain field to given value.
 
 HasNetworkDomain returns a boolean if a field has been set.
 
+### SetNetworkDomainNil
+
+`func (o *AddClusterRequestClusterServer) SetNetworkDomainNil(b bool)`
+
+ SetNetworkDomainNil sets the value for NetworkDomain to be an explicit nil
+
+### UnsetNetworkDomain
+`func (o *AddClusterRequestClusterServer) UnsetNetworkDomain()`
+
+UnsetNetworkDomain ensures that no value is present for NetworkDomain, not even an explicit nil
 ### GetHostname
 
 `func (o *AddClusterRequestClusterServer) GetHostname() string`
@@ -328,6 +338,16 @@ SetHostname sets Hostname field to given value.
 
 HasHostname returns a boolean if a field has been set.
 
+### SetHostnameNil
+
+`func (o *AddClusterRequestClusterServer) SetHostnameNil(b bool)`
+
+ SetHostnameNil sets the value for Hostname to be an explicit nil
+
+### UnsetHostname
+`func (o *AddClusterRequestClusterServer) UnsetHostname()`
+
+UnsetHostname ensures that no value is present for Hostname, not even an explicit nil
 ### GetNodeCount
 
 `func (o *AddClusterRequestClusterServer) GetNodeCount() int64`
@@ -478,6 +498,16 @@ SetSshPassword sets SshPassword field to given value.
 
 HasSshPassword returns a boolean if a field has been set.
 
+### SetSshPasswordNil
+
+`func (o *AddClusterRequestClusterServer) SetSshPasswordNil(b bool)`
+
+ SetSshPasswordNil sets the value for SshPassword to be an explicit nil
+
+### UnsetSshPassword
+`func (o *AddClusterRequestClusterServer) UnsetSshPassword()`
+
+UnsetSshPassword ensures that no value is present for SshPassword, not even an explicit nil
 ### GetSshKeyPair
 
 `func (o *AddClusterRequestClusterServer) GetSshKeyPair() AddClusterRequestClusterServerSshKeyPair`

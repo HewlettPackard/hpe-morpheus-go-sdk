@@ -29,10 +29,10 @@ type ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf11 struct {
 	IsPlugin             *bool                                                             `json:"isPlugin,omitempty"`
 	Config               *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf11Config   `json:"config,omitempty"`
 	Status               *string                                                           `json:"status,omitempty"`
-	StatusDate           *time.Time                                                        `json:"statusDate,omitempty"`
-	StatusMessage        *string                                                           `json:"statusMessage,omitempty"`
-	LastSync             *string                                                           `json:"lastSync,omitempty"`
-	LastSyncDuration     *string                                                           `json:"lastSyncDuration,omitempty"`
+	StatusDate           NullableTime                                                      `json:"statusDate,omitempty"`
+	StatusMessage        NullableString                                                    `json:"statusMessage,omitempty"`
+	LastSync             NullableString                                                    `json:"lastSync,omitempty"`
+	LastSyncDuration     NullableString                                                    `json:"lastSyncDuration,omitempty"`
 	Credential           *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential `json:"credential,omitempty"`
 	AdditionalProperties map[string]interface{}                                            `json:",remain"`
 }
@@ -312,132 +312,176 @@ func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf11) SetStatus(v s
 	o.Status = &v
 }
 
-// GetStatusDate returns the StatusDate field value if set, zero value otherwise.
+// GetStatusDate returns the StatusDate field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf11) GetStatusDate() time.Time {
-	if o == nil || IsNil(o.StatusDate) {
+	if o == nil || IsNil(o.StatusDate.Get()) {
 		var ret time.Time
 		return ret
 	}
-	return *o.StatusDate
+	return *o.StatusDate.Get()
 }
 
 // GetStatusDateOk returns a tuple with the StatusDate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf11) GetStatusDateOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.StatusDate) {
+	if o == nil {
 		return nil, false
 	}
-	return o.StatusDate, true
+	return o.StatusDate.Get(), o.StatusDate.IsSet()
 }
 
 // IsSetStatusDate returns a boolean if a field has been set.
 func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf11) IsSetStatusDate() bool {
-	if o != nil && !IsNil(o.StatusDate) {
+	if o != nil && o.StatusDate.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetStatusDate gets a reference to the given time.Time and assigns it to the StatusDate field.
+// SetStatusDate gets a reference to the given NullableTime and assigns it to the StatusDate field.
 func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf11) SetStatusDate(v time.Time) {
-	o.StatusDate = &v
+	o.StatusDate.Set(&v)
 }
 
-// GetStatusMessage returns the StatusMessage field value if set, zero value otherwise.
+// SetStatusDateNil sets the value for StatusDate to be an explicit nil
+func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf11) SetStatusDateNil() {
+	o.StatusDate.Set(nil)
+}
+
+// UnsetStatusDate ensures that no value is present for StatusDate, not even an explicit nil
+func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf11) UnsetStatusDate() {
+	o.StatusDate.Unset()
+}
+
+// GetStatusMessage returns the StatusMessage field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf11) GetStatusMessage() string {
-	if o == nil || IsNil(o.StatusMessage) {
+	if o == nil || IsNil(o.StatusMessage.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.StatusMessage
+	return *o.StatusMessage.Get()
 }
 
 // GetStatusMessageOk returns a tuple with the StatusMessage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf11) GetStatusMessageOk() (*string, bool) {
-	if o == nil || IsNil(o.StatusMessage) {
+	if o == nil {
 		return nil, false
 	}
-	return o.StatusMessage, true
+	return o.StatusMessage.Get(), o.StatusMessage.IsSet()
 }
 
 // IsSetStatusMessage returns a boolean if a field has been set.
 func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf11) IsSetStatusMessage() bool {
-	if o != nil && !IsNil(o.StatusMessage) {
+	if o != nil && o.StatusMessage.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetStatusMessage gets a reference to the given string and assigns it to the StatusMessage field.
+// SetStatusMessage gets a reference to the given NullableString and assigns it to the StatusMessage field.
 func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf11) SetStatusMessage(v string) {
-	o.StatusMessage = &v
+	o.StatusMessage.Set(&v)
 }
 
-// GetLastSync returns the LastSync field value if set, zero value otherwise.
+// SetStatusMessageNil sets the value for StatusMessage to be an explicit nil
+func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf11) SetStatusMessageNil() {
+	o.StatusMessage.Set(nil)
+}
+
+// UnsetStatusMessage ensures that no value is present for StatusMessage, not even an explicit nil
+func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf11) UnsetStatusMessage() {
+	o.StatusMessage.Unset()
+}
+
+// GetLastSync returns the LastSync field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf11) GetLastSync() string {
-	if o == nil || IsNil(o.LastSync) {
+	if o == nil || IsNil(o.LastSync.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.LastSync
+	return *o.LastSync.Get()
 }
 
 // GetLastSyncOk returns a tuple with the LastSync field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf11) GetLastSyncOk() (*string, bool) {
-	if o == nil || IsNil(o.LastSync) {
+	if o == nil {
 		return nil, false
 	}
-	return o.LastSync, true
+	return o.LastSync.Get(), o.LastSync.IsSet()
 }
 
 // IsSetLastSync returns a boolean if a field has been set.
 func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf11) IsSetLastSync() bool {
-	if o != nil && !IsNil(o.LastSync) {
+	if o != nil && o.LastSync.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetLastSync gets a reference to the given string and assigns it to the LastSync field.
+// SetLastSync gets a reference to the given NullableString and assigns it to the LastSync field.
 func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf11) SetLastSync(v string) {
-	o.LastSync = &v
+	o.LastSync.Set(&v)
 }
 
-// GetLastSyncDuration returns the LastSyncDuration field value if set, zero value otherwise.
+// SetLastSyncNil sets the value for LastSync to be an explicit nil
+func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf11) SetLastSyncNil() {
+	o.LastSync.Set(nil)
+}
+
+// UnsetLastSync ensures that no value is present for LastSync, not even an explicit nil
+func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf11) UnsetLastSync() {
+	o.LastSync.Unset()
+}
+
+// GetLastSyncDuration returns the LastSyncDuration field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf11) GetLastSyncDuration() string {
-	if o == nil || IsNil(o.LastSyncDuration) {
+	if o == nil || IsNil(o.LastSyncDuration.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.LastSyncDuration
+	return *o.LastSyncDuration.Get()
 }
 
 // GetLastSyncDurationOk returns a tuple with the LastSyncDuration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf11) GetLastSyncDurationOk() (*string, bool) {
-	if o == nil || IsNil(o.LastSyncDuration) {
+	if o == nil {
 		return nil, false
 	}
-	return o.LastSyncDuration, true
+	return o.LastSyncDuration.Get(), o.LastSyncDuration.IsSet()
 }
 
 // IsSetLastSyncDuration returns a boolean if a field has been set.
 func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf11) IsSetLastSyncDuration() bool {
-	if o != nil && !IsNil(o.LastSyncDuration) {
+	if o != nil && o.LastSyncDuration.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetLastSyncDuration gets a reference to the given string and assigns it to the LastSyncDuration field.
+// SetLastSyncDuration gets a reference to the given NullableString and assigns it to the LastSyncDuration field.
 func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf11) SetLastSyncDuration(v string) {
-	o.LastSyncDuration = &v
+	o.LastSyncDuration.Set(&v)
+}
+
+// SetLastSyncDurationNil sets the value for LastSyncDuration to be an explicit nil
+func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf11) SetLastSyncDurationNil() {
+	o.LastSyncDuration.Set(nil)
+}
+
+// UnsetLastSyncDuration ensures that no value is present for LastSyncDuration, not even an explicit nil
+func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf11) UnsetLastSyncDuration() {
+	o.LastSyncDuration.Unset()
 }
 
 // GetCredential returns the Credential field value if set, zero value otherwise.
@@ -506,17 +550,17 @@ func (o ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf11) ToMap() (map[s
 	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status
 	}
-	if !IsNil(o.StatusDate) {
-		toSerialize["statusDate"] = o.StatusDate
+	if o.StatusDate.IsSet() {
+		toSerialize["statusDate"] = o.StatusDate.Get()
 	}
-	if !IsNil(o.StatusMessage) {
-		toSerialize["statusMessage"] = o.StatusMessage
+	if o.StatusMessage.IsSet() {
+		toSerialize["statusMessage"] = o.StatusMessage.Get()
 	}
-	if !IsNil(o.LastSync) {
-		toSerialize["lastSync"] = o.LastSync
+	if o.LastSync.IsSet() {
+		toSerialize["lastSync"] = o.LastSync.Get()
 	}
-	if !IsNil(o.LastSyncDuration) {
-		toSerialize["lastSyncDuration"] = o.LastSyncDuration
+	if o.LastSyncDuration.IsSet() {
+		toSerialize["lastSyncDuration"] = o.LastSyncDuration.Get()
 	}
 	if !IsNil(o.Credential) {
 		toSerialize["credential"] = o.Credential

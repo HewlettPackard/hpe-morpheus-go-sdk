@@ -28,6 +28,7 @@ type AddPolicies200ResponseAllOfPolicyConfig struct {
 	ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf   *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf
 	ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf1  *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf1
 	ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf10 *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf10
+	ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf11 *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf11
 	ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf12 *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf12
 	ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf13 *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf13
 	ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf14 *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf14
@@ -49,7 +50,6 @@ type AddPolicies200ResponseAllOfPolicyConfig struct {
 	ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf4  *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf4
 	ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf5  *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf5
 	ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf6  *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf6
-	ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf7  *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf7
 	ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf8  *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf8
 	ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf9  *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf9
 }
@@ -86,6 +86,13 @@ func ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf1AsAddPolicies200Respon
 func ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf10AsAddPolicies200ResponseAllOfPolicyConfig(v *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf10) AddPolicies200ResponseAllOfPolicyConfig {
 	return AddPolicies200ResponseAllOfPolicyConfig{
 		ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf10: v,
+	}
+}
+
+// ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf11AsAddPolicies200ResponseAllOfPolicyConfig is a convenience function that returns ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf11 wrapped in AddPolicies200ResponseAllOfPolicyConfig
+func ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf11AsAddPolicies200ResponseAllOfPolicyConfig(v *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf11) AddPolicies200ResponseAllOfPolicyConfig {
+	return AddPolicies200ResponseAllOfPolicyConfig{
+		ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf11: v,
 	}
 }
 
@@ -236,13 +243,6 @@ func ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf6AsAddPolicies200Respon
 	}
 }
 
-// ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf7AsAddPolicies200ResponseAllOfPolicyConfig is a convenience function that returns ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf7 wrapped in AddPolicies200ResponseAllOfPolicyConfig
-func ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf7AsAddPolicies200ResponseAllOfPolicyConfig(v *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf7) AddPolicies200ResponseAllOfPolicyConfig {
-	return AddPolicies200ResponseAllOfPolicyConfig{
-		ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf7: v,
-	}
-}
-
 // ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf8AsAddPolicies200ResponseAllOfPolicyConfig is a convenience function that returns ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf8 wrapped in AddPolicies200ResponseAllOfPolicyConfig
 func ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf8AsAddPolicies200ResponseAllOfPolicyConfig(v *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf8) AddPolicies200ResponseAllOfPolicyConfig {
 	return AddPolicies200ResponseAllOfPolicyConfig{
@@ -280,6 +280,10 @@ func (dst *AddPolicies200ResponseAllOfPolicyConfig) UnmarshalMapstructure(data a
 
 	if out, ok := data.(ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf10); ok {
 		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf10 = &out
+	}
+
+	if out, ok := data.(ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf11); ok {
+		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf11 = &out
 	}
 
 	if out, ok := data.(ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf12); ok {
@@ -364,10 +368,6 @@ func (dst *AddPolicies200ResponseAllOfPolicyConfig) UnmarshalMapstructure(data a
 
 	if out, ok := data.(ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf6); ok {
 		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf6 = &out
-	}
-
-	if out, ok := data.(ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf7); ok {
-		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf7 = &out
 	}
 
 	if out, ok := data.(ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf8); ok {
@@ -468,6 +468,23 @@ func (dst *AddPolicies200ResponseAllOfPolicyConfig) UnmarshalJSON(data []byte) e
 		}
 	} else {
 		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf10 = nil
+	}
+
+	// try to unmarshal data into ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf11
+	err = newStrictDecoder(data).Decode(&dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf11)
+	if err == nil {
+		jsonListPolicies200ResponseAllOfPoliciesInnerConfigOneOf11, _ := json.Marshal(dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf11)
+		if string(jsonListPolicies200ResponseAllOfPoliciesInnerConfigOneOf11) == "{}" { // empty struct
+			dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf11 = nil
+		} else {
+			if err = validator.Validate(dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf11); err != nil {
+				dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf11 = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf11 = nil
 	}
 
 	// try to unmarshal data into ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf12
@@ -827,23 +844,6 @@ func (dst *AddPolicies200ResponseAllOfPolicyConfig) UnmarshalJSON(data []byte) e
 		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf6 = nil
 	}
 
-	// try to unmarshal data into ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf7
-	err = newStrictDecoder(data).Decode(&dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf7)
-	if err == nil {
-		jsonListPolicies200ResponseAllOfPoliciesInnerConfigOneOf7, _ := json.Marshal(dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf7)
-		if string(jsonListPolicies200ResponseAllOfPoliciesInnerConfigOneOf7) == "{}" { // empty struct
-			dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf7 = nil
-		} else {
-			if err = validator.Validate(dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf7); err != nil {
-				dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf7 = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf7 = nil
-	}
-
 	// try to unmarshal data into ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf8
 	err = newStrictDecoder(data).Decode(&dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf8)
 	if err == nil {
@@ -885,6 +885,7 @@ func (dst *AddPolicies200ResponseAllOfPolicyConfig) UnmarshalJSON(data []byte) e
 		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf = nil
 		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf1 = nil
 		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf10 = nil
+		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf11 = nil
 		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf12 = nil
 		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf13 = nil
 		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf14 = nil
@@ -906,7 +907,6 @@ func (dst *AddPolicies200ResponseAllOfPolicyConfig) UnmarshalJSON(data []byte) e
 		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf4 = nil
 		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf5 = nil
 		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf6 = nil
-		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf7 = nil
 		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf8 = nil
 		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf9 = nil
 
@@ -938,6 +938,10 @@ func (src AddPolicies200ResponseAllOfPolicyConfig) MarshalJSON() ([]byte, error)
 
 	if src.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf10 != nil {
 		return json.Marshal(&src.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf10)
+	}
+
+	if src.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf11 != nil {
+		return json.Marshal(&src.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf11)
 	}
 
 	if src.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf12 != nil {
@@ -1024,10 +1028,6 @@ func (src AddPolicies200ResponseAllOfPolicyConfig) MarshalJSON() ([]byte, error)
 		return json.Marshal(&src.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf6)
 	}
 
-	if src.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf7 != nil {
-		return json.Marshal(&src.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf7)
-	}
-
 	if src.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf8 != nil {
 		return json.Marshal(&src.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf8)
 	}
@@ -1062,6 +1062,10 @@ func (obj *AddPolicies200ResponseAllOfPolicyConfig) GetActualInstance() interfac
 
 	if obj.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf10 != nil {
 		return obj.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf10
+	}
+
+	if obj.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf11 != nil {
+		return obj.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf11
 	}
 
 	if obj.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf12 != nil {
@@ -1148,10 +1152,6 @@ func (obj *AddPolicies200ResponseAllOfPolicyConfig) GetActualInstance() interfac
 		return obj.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf6
 	}
 
-	if obj.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf7 != nil {
-		return obj.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf7
-	}
-
 	if obj.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf8 != nil {
 		return obj.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf8
 	}
@@ -1184,6 +1184,10 @@ func (obj AddPolicies200ResponseAllOfPolicyConfig) GetActualInstanceValue() inte
 
 	if obj.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf10 != nil {
 		return *obj.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf10
+	}
+
+	if obj.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf11 != nil {
+		return *obj.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf11
 	}
 
 	if obj.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf12 != nil {
@@ -1268,10 +1272,6 @@ func (obj AddPolicies200ResponseAllOfPolicyConfig) GetActualInstanceValue() inte
 
 	if obj.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf6 != nil {
 		return *obj.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf6
-	}
-
-	if obj.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf7 != nil {
-		return *obj.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf7
 	}
 
 	if obj.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf8 != nil {

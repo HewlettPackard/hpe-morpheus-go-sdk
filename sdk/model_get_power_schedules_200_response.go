@@ -45,9 +45,9 @@ func NewGetPowerSchedules200ResponseWithDefaults() *GetPowerSchedules200Response
 	return &this
 }
 
-// GetInstances returns the Instances field value if set, zero value otherwise.
+// GetInstances returns the Instances field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetPowerSchedules200Response) GetInstances() []GetPowerSchedules200ResponseAllOfInstancesInner {
-	if o == nil || IsNil(o.Instances) {
+	if o == nil {
 		var ret []GetPowerSchedules200ResponseAllOfInstancesInner
 		return ret
 	}
@@ -56,6 +56,7 @@ func (o *GetPowerSchedules200Response) GetInstances() []GetPowerSchedules200Resp
 
 // GetInstancesOk returns a tuple with the Instances field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetPowerSchedules200Response) GetInstancesOk() ([]GetPowerSchedules200ResponseAllOfInstancesInner, bool) {
 	if o == nil || IsNil(o.Instances) {
 		return nil, false
@@ -77,9 +78,9 @@ func (o *GetPowerSchedules200Response) SetInstances(v []GetPowerSchedules200Resp
 	o.Instances = v
 }
 
-// GetServers returns the Servers field value if set, zero value otherwise.
+// GetServers returns the Servers field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetPowerSchedules200Response) GetServers() []GetPowerSchedules200ResponseAllOfInstancesInner {
-	if o == nil || IsNil(o.Servers) {
+	if o == nil {
 		var ret []GetPowerSchedules200ResponseAllOfInstancesInner
 		return ret
 	}
@@ -88,6 +89,7 @@ func (o *GetPowerSchedules200Response) GetServers() []GetPowerSchedules200Respon
 
 // GetServersOk returns a tuple with the Servers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetPowerSchedules200Response) GetServersOk() ([]GetPowerSchedules200ResponseAllOfInstancesInner, bool) {
 	if o == nil || IsNil(o.Servers) {
 		return nil, false
@@ -151,10 +153,10 @@ func (o GetPowerSchedules200Response) MarshalJSON() ([]byte, error) {
 
 func (o GetPowerSchedules200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Instances) {
+	if o.Instances != nil {
 		toSerialize["instances"] = o.Instances
 	}
-	if !IsNil(o.Servers) {
+	if o.Servers != nil {
 		toSerialize["servers"] = o.Servers
 	}
 	if !IsNil(o.Schedule) {

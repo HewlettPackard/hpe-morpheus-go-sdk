@@ -22,7 +22,7 @@ var _ MappedNullable = &ListBillingServers200ResponseAllOfBillingInfoServersInne
 type ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolumesInner struct {
 	Size                 *int64                 `json:"size,omitempty"`
 	TypeCode             *string                `json:"typeCode,omitempty"`
-	Datastore            *string                `json:"datastore,omitempty"`
+	Datastore            NullableString         `json:"datastore,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -109,36 +109,47 @@ func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVol
 	o.TypeCode = &v
 }
 
-// GetDatastore returns the Datastore field value if set, zero value otherwise.
+// GetDatastore returns the Datastore field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolumesInner) GetDatastore() string {
-	if o == nil || IsNil(o.Datastore) {
+	if o == nil || IsNil(o.Datastore.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Datastore
+	return *o.Datastore.Get()
 }
 
 // GetDatastoreOk returns a tuple with the Datastore field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolumesInner) GetDatastoreOk() (*string, bool) {
-	if o == nil || IsNil(o.Datastore) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Datastore, true
+	return o.Datastore.Get(), o.Datastore.IsSet()
 }
 
 // IsSetDatastore returns a boolean if a field has been set.
 func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolumesInner) IsSetDatastore() bool {
-	if o != nil && !IsNil(o.Datastore) {
+	if o != nil && o.Datastore.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDatastore gets a reference to the given string and assigns it to the Datastore field.
+// SetDatastore gets a reference to the given NullableString and assigns it to the Datastore field.
 func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolumesInner) SetDatastore(v string) {
-	o.Datastore = &v
+	o.Datastore.Set(&v)
+}
+
+// SetDatastoreNil sets the value for Datastore to be an explicit nil
+func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolumesInner) SetDatastoreNil() {
+	o.Datastore.Set(nil)
+}
+
+// UnsetDatastore ensures that no value is present for Datastore, not even an explicit nil
+func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolumesInner) UnsetDatastore() {
+	o.Datastore.Unset()
 }
 
 func (o ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolumesInner) MarshalJSON() ([]byte, error) {
@@ -157,8 +168,8 @@ func (o ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolu
 	if !IsNil(o.TypeCode) {
 		toSerialize["typeCode"] = o.TypeCode
 	}
-	if !IsNil(o.Datastore) {
-		toSerialize["datastore"] = o.Datastore
+	if o.Datastore.IsSet() {
+		toSerialize["datastore"] = o.Datastore.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {

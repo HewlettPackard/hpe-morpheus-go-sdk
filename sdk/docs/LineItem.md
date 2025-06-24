@@ -11,32 +11,32 @@ Name | Type | Description | Notes
 **RefName** | Pointer to **string** |  | [optional] 
 **StartDate** | Pointer to **time.Time** |  | [optional] 
 **EndDate** | Pointer to **time.Time** |  | [optional] 
-**ItemId** | Pointer to **string** |  | [optional] 
-**ItemType** | Pointer to **string** |  | [optional] 
-**ItemName** | Pointer to **string** |  | [optional] 
-**ItemDescription** | Pointer to **string** |  | [optional] 
-**ProductId** | Pointer to **string** |  | [optional] 
-**ProductCode** | Pointer to **string** |  | [optional] 
-**ProductName** | Pointer to **string** |  | [optional] 
-**ItemSeller** | Pointer to **string** |  | [optional] 
-**ItemAction** | Pointer to **string** |  | [optional] 
+**ItemId** | Pointer to **NullableString** |  | [optional] 
+**ItemType** | Pointer to **NullableString** |  | [optional] 
+**ItemName** | Pointer to **NullableString** |  | [optional] 
+**ItemDescription** | Pointer to **NullableString** |  | [optional] 
+**ProductId** | Pointer to **NullableString** |  | [optional] 
+**ProductCode** | Pointer to **NullableString** |  | [optional] 
+**ProductName** | Pointer to **NullableString** |  | [optional] 
+**ItemSeller** | Pointer to **NullableString** |  | [optional] 
+**ItemAction** | Pointer to **NullableString** |  | [optional] 
 **ExternalId** | Pointer to **string** |  | [optional] 
-**RateId** | Pointer to **string** |  | [optional] 
-**RateClass** | Pointer to **string** |  | [optional] 
+**RateId** | Pointer to **NullableString** |  | [optional] 
+**RateClass** | Pointer to **NullableString** |  | [optional] 
 **RateUnit** | Pointer to **string** |  | [optional] 
-**RateTerm** | Pointer to **string** |  | [optional] 
+**RateTerm** | Pointer to **NullableString** |  | [optional] 
 **UsageType** | Pointer to **string** |  | [optional] 
 **UsageCategory** | Pointer to **string** |  | [optional] 
-**UsageService** | Pointer to **string** |  | [optional] 
+**UsageService** | Pointer to **NullableString** |  | [optional] 
 **ItemUsage** | Pointer to **int64** |  | [optional] 
 **ItemRate** | Pointer to **float32** |  | [optional] 
 **ItemCost** | Pointer to **float32** |  | [optional] 
 **ItemPriceRate** | Pointer to **float32** |  | [optional] 
 **ItemPrice** | Pointer to **float32** |  | [optional] 
 **ItemTax** | Pointer to **int64** |  | [optional] 
-**ItemTerm** | Pointer to **string** |  | [optional] 
-**TaxType** | Pointer to **string** |  | [optional] 
-**RegionCode** | Pointer to **string** |  | [optional] 
+**ItemTerm** | Pointer to **NullableString** |  | [optional] 
+**TaxType** | Pointer to **NullableString** |  | [optional] 
+**RegionCode** | Pointer to **NullableString** |  | [optional] 
 **Currency** | Pointer to **string** |  | [optional] 
 **ConversionRate** | Pointer to **int64** |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
@@ -261,6 +261,16 @@ SetItemId sets ItemId field to given value.
 
 HasItemId returns a boolean if a field has been set.
 
+### SetItemIdNil
+
+`func (o *LineItem) SetItemIdNil(b bool)`
+
+ SetItemIdNil sets the value for ItemId to be an explicit nil
+
+### UnsetItemId
+`func (o *LineItem) UnsetItemId()`
+
+UnsetItemId ensures that no value is present for ItemId, not even an explicit nil
 ### GetItemType
 
 `func (o *LineItem) GetItemType() string`
@@ -286,6 +296,16 @@ SetItemType sets ItemType field to given value.
 
 HasItemType returns a boolean if a field has been set.
 
+### SetItemTypeNil
+
+`func (o *LineItem) SetItemTypeNil(b bool)`
+
+ SetItemTypeNil sets the value for ItemType to be an explicit nil
+
+### UnsetItemType
+`func (o *LineItem) UnsetItemType()`
+
+UnsetItemType ensures that no value is present for ItemType, not even an explicit nil
 ### GetItemName
 
 `func (o *LineItem) GetItemName() string`
@@ -311,6 +331,16 @@ SetItemName sets ItemName field to given value.
 
 HasItemName returns a boolean if a field has been set.
 
+### SetItemNameNil
+
+`func (o *LineItem) SetItemNameNil(b bool)`
+
+ SetItemNameNil sets the value for ItemName to be an explicit nil
+
+### UnsetItemName
+`func (o *LineItem) UnsetItemName()`
+
+UnsetItemName ensures that no value is present for ItemName, not even an explicit nil
 ### GetItemDescription
 
 `func (o *LineItem) GetItemDescription() string`
@@ -336,6 +366,16 @@ SetItemDescription sets ItemDescription field to given value.
 
 HasItemDescription returns a boolean if a field has been set.
 
+### SetItemDescriptionNil
+
+`func (o *LineItem) SetItemDescriptionNil(b bool)`
+
+ SetItemDescriptionNil sets the value for ItemDescription to be an explicit nil
+
+### UnsetItemDescription
+`func (o *LineItem) UnsetItemDescription()`
+
+UnsetItemDescription ensures that no value is present for ItemDescription, not even an explicit nil
 ### GetProductId
 
 `func (o *LineItem) GetProductId() string`
@@ -361,6 +401,16 @@ SetProductId sets ProductId field to given value.
 
 HasProductId returns a boolean if a field has been set.
 
+### SetProductIdNil
+
+`func (o *LineItem) SetProductIdNil(b bool)`
+
+ SetProductIdNil sets the value for ProductId to be an explicit nil
+
+### UnsetProductId
+`func (o *LineItem) UnsetProductId()`
+
+UnsetProductId ensures that no value is present for ProductId, not even an explicit nil
 ### GetProductCode
 
 `func (o *LineItem) GetProductCode() string`
@@ -386,6 +436,16 @@ SetProductCode sets ProductCode field to given value.
 
 HasProductCode returns a boolean if a field has been set.
 
+### SetProductCodeNil
+
+`func (o *LineItem) SetProductCodeNil(b bool)`
+
+ SetProductCodeNil sets the value for ProductCode to be an explicit nil
+
+### UnsetProductCode
+`func (o *LineItem) UnsetProductCode()`
+
+UnsetProductCode ensures that no value is present for ProductCode, not even an explicit nil
 ### GetProductName
 
 `func (o *LineItem) GetProductName() string`
@@ -411,6 +471,16 @@ SetProductName sets ProductName field to given value.
 
 HasProductName returns a boolean if a field has been set.
 
+### SetProductNameNil
+
+`func (o *LineItem) SetProductNameNil(b bool)`
+
+ SetProductNameNil sets the value for ProductName to be an explicit nil
+
+### UnsetProductName
+`func (o *LineItem) UnsetProductName()`
+
+UnsetProductName ensures that no value is present for ProductName, not even an explicit nil
 ### GetItemSeller
 
 `func (o *LineItem) GetItemSeller() string`
@@ -436,6 +506,16 @@ SetItemSeller sets ItemSeller field to given value.
 
 HasItemSeller returns a boolean if a field has been set.
 
+### SetItemSellerNil
+
+`func (o *LineItem) SetItemSellerNil(b bool)`
+
+ SetItemSellerNil sets the value for ItemSeller to be an explicit nil
+
+### UnsetItemSeller
+`func (o *LineItem) UnsetItemSeller()`
+
+UnsetItemSeller ensures that no value is present for ItemSeller, not even an explicit nil
 ### GetItemAction
 
 `func (o *LineItem) GetItemAction() string`
@@ -461,6 +541,16 @@ SetItemAction sets ItemAction field to given value.
 
 HasItemAction returns a boolean if a field has been set.
 
+### SetItemActionNil
+
+`func (o *LineItem) SetItemActionNil(b bool)`
+
+ SetItemActionNil sets the value for ItemAction to be an explicit nil
+
+### UnsetItemAction
+`func (o *LineItem) UnsetItemAction()`
+
+UnsetItemAction ensures that no value is present for ItemAction, not even an explicit nil
 ### GetExternalId
 
 `func (o *LineItem) GetExternalId() string`
@@ -511,6 +601,16 @@ SetRateId sets RateId field to given value.
 
 HasRateId returns a boolean if a field has been set.
 
+### SetRateIdNil
+
+`func (o *LineItem) SetRateIdNil(b bool)`
+
+ SetRateIdNil sets the value for RateId to be an explicit nil
+
+### UnsetRateId
+`func (o *LineItem) UnsetRateId()`
+
+UnsetRateId ensures that no value is present for RateId, not even an explicit nil
 ### GetRateClass
 
 `func (o *LineItem) GetRateClass() string`
@@ -536,6 +636,16 @@ SetRateClass sets RateClass field to given value.
 
 HasRateClass returns a boolean if a field has been set.
 
+### SetRateClassNil
+
+`func (o *LineItem) SetRateClassNil(b bool)`
+
+ SetRateClassNil sets the value for RateClass to be an explicit nil
+
+### UnsetRateClass
+`func (o *LineItem) UnsetRateClass()`
+
+UnsetRateClass ensures that no value is present for RateClass, not even an explicit nil
 ### GetRateUnit
 
 `func (o *LineItem) GetRateUnit() string`
@@ -586,6 +696,16 @@ SetRateTerm sets RateTerm field to given value.
 
 HasRateTerm returns a boolean if a field has been set.
 
+### SetRateTermNil
+
+`func (o *LineItem) SetRateTermNil(b bool)`
+
+ SetRateTermNil sets the value for RateTerm to be an explicit nil
+
+### UnsetRateTerm
+`func (o *LineItem) UnsetRateTerm()`
+
+UnsetRateTerm ensures that no value is present for RateTerm, not even an explicit nil
 ### GetUsageType
 
 `func (o *LineItem) GetUsageType() string`
@@ -661,6 +781,16 @@ SetUsageService sets UsageService field to given value.
 
 HasUsageService returns a boolean if a field has been set.
 
+### SetUsageServiceNil
+
+`func (o *LineItem) SetUsageServiceNil(b bool)`
+
+ SetUsageServiceNil sets the value for UsageService to be an explicit nil
+
+### UnsetUsageService
+`func (o *LineItem) UnsetUsageService()`
+
+UnsetUsageService ensures that no value is present for UsageService, not even an explicit nil
 ### GetItemUsage
 
 `func (o *LineItem) GetItemUsage() int64`
@@ -836,6 +966,16 @@ SetItemTerm sets ItemTerm field to given value.
 
 HasItemTerm returns a boolean if a field has been set.
 
+### SetItemTermNil
+
+`func (o *LineItem) SetItemTermNil(b bool)`
+
+ SetItemTermNil sets the value for ItemTerm to be an explicit nil
+
+### UnsetItemTerm
+`func (o *LineItem) UnsetItemTerm()`
+
+UnsetItemTerm ensures that no value is present for ItemTerm, not even an explicit nil
 ### GetTaxType
 
 `func (o *LineItem) GetTaxType() string`
@@ -861,6 +1001,16 @@ SetTaxType sets TaxType field to given value.
 
 HasTaxType returns a boolean if a field has been set.
 
+### SetTaxTypeNil
+
+`func (o *LineItem) SetTaxTypeNil(b bool)`
+
+ SetTaxTypeNil sets the value for TaxType to be an explicit nil
+
+### UnsetTaxType
+`func (o *LineItem) UnsetTaxType()`
+
+UnsetTaxType ensures that no value is present for TaxType, not even an explicit nil
 ### GetRegionCode
 
 `func (o *LineItem) GetRegionCode() string`
@@ -886,6 +1036,16 @@ SetRegionCode sets RegionCode field to given value.
 
 HasRegionCode returns a boolean if a field has been set.
 
+### SetRegionCodeNil
+
+`func (o *LineItem) SetRegionCodeNil(b bool)`
+
+ SetRegionCodeNil sets the value for RegionCode to be an explicit nil
+
+### UnsetRegionCode
+`func (o *LineItem) UnsetRegionCode()`
+
+UnsetRegionCode ensures that no value is present for RegionCode, not even an explicit nil
 ### GetCurrency
 
 `func (o *LineItem) GetCurrency() string`

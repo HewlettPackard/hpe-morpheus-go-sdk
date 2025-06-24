@@ -94,9 +94,9 @@ func (o *TaskJobPayload) SetName(v string) {
 	o.Name = v
 }
 
-// GetLabels returns the Labels field value if set, zero value otherwise.
+// GetLabels returns the Labels field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TaskJobPayload) GetLabels() []string {
-	if o == nil || IsNil(o.Labels) {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -105,6 +105,7 @@ func (o *TaskJobPayload) GetLabels() []string {
 
 // GetLabelsOk returns a tuple with the Labels field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *TaskJobPayload) GetLabelsOk() ([]string, bool) {
 	if o == nil || IsNil(o.Labels) {
 		return nil, false
@@ -206,9 +207,9 @@ func (o *TaskJobPayload) SetTargetType(v string) {
 	o.TargetType = v
 }
 
-// GetTargets returns the Targets field value if set, zero value otherwise.
+// GetTargets returns the Targets field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TaskJobPayload) GetTargets() []WorkflowJobPayloadTargetsInner {
-	if o == nil || IsNil(o.Targets) {
+	if o == nil {
 		var ret []WorkflowJobPayloadTargetsInner
 		return ret
 	}
@@ -217,6 +218,7 @@ func (o *TaskJobPayload) GetTargets() []WorkflowJobPayloadTargetsInner {
 
 // GetTargetsOk returns a tuple with the Targets field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *TaskJobPayload) GetTargetsOk() ([]WorkflowJobPayloadTargetsInner, bool) {
 	if o == nil || IsNil(o.Targets) {
 		return nil, false
@@ -401,7 +403,7 @@ func (o TaskJobPayload) MarshalJSON() ([]byte, error) {
 func (o TaskJobPayload) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["name"] = o.Name
-	if !IsNil(o.Labels) {
+	if o.Labels != nil {
 		toSerialize["labels"] = o.Labels
 	}
 	if !IsNil(o.Enabled) {
@@ -409,7 +411,7 @@ func (o TaskJobPayload) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["task"] = o.Task
 	toSerialize["targetType"] = o.TargetType
-	if !IsNil(o.Targets) {
+	if o.Targets != nil {
 		toSerialize["targets"] = o.Targets
 	}
 	toSerialize["scheduleMode"] = o.ScheduleMode

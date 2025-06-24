@@ -15,8 +15,8 @@ Name | Type | Description | Notes
 **Copies** | Pointer to **int64** |  | [optional] 
 **ReservationCount** | Pointer to **int64** |  | [optional] 
 **Tenants** | Pointer to **[]map[string]interface{}** |  | [optional] 
-**VirtualImages** | Pointer to [**[]ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
-**Account** | Pointer to [**ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
+**VirtualImages** | Pointer to [**[]GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**Account** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 
 ## Methods
 
@@ -314,20 +314,20 @@ HasTenants returns a boolean if a field has been set.
 
 ### GetVirtualImages
 
-`func (o *ProvisioningLicense) GetVirtualImages() []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *ProvisioningLicense) GetVirtualImages() []GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetVirtualImages returns the VirtualImages field if non-nil, zero value otherwise.
 
 ### GetVirtualImagesOk
 
-`func (o *ProvisioningLicense) GetVirtualImagesOk() (*[]ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *ProvisioningLicense) GetVirtualImagesOk() (*[]GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetVirtualImagesOk returns a tuple with the VirtualImages field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVirtualImages
 
-`func (o *ProvisioningLicense) SetVirtualImages(v []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *ProvisioningLicense) SetVirtualImages(v []GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetVirtualImages sets VirtualImages field to given value.
 
@@ -339,20 +339,20 @@ HasVirtualImages returns a boolean if a field has been set.
 
 ### GetAccount
 
-`func (o *ProvisioningLicense) GetAccount() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *ProvisioningLicense) GetAccount() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetAccount returns the Account field if non-nil, zero value otherwise.
 
 ### GetAccountOk
 
-`func (o *ProvisioningLicense) GetAccountOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *ProvisioningLicense) GetAccountOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetAccountOk returns a tuple with the Account field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccount
 
-`func (o *ProvisioningLicense) SetAccount(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *ProvisioningLicense) SetAccount(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetAccount sets Account field to given value.
 

@@ -6,10 +6,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **NullableString** |  | [optional] 
 **LaunchPrefix** | Pointer to **string** |  | [optional] 
-**IconPath** | Pointer to **string** |  | [optional] 
-**Logo** | Pointer to **string** |  | [optional] 
+**IconPath** | Pointer to **NullableString** |  | [optional] 
+**Logo** | Pointer to **NullableString** |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
 
@@ -107,6 +107,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *ListVDIApps200ResponseAllOfVdiAppsInner) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *ListVDIApps200ResponseAllOfVdiAppsInner) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetLaunchPrefix
 
 `func (o *ListVDIApps200ResponseAllOfVdiAppsInner) GetLaunchPrefix() string`
@@ -157,6 +167,16 @@ SetIconPath sets IconPath field to given value.
 
 HasIconPath returns a boolean if a field has been set.
 
+### SetIconPathNil
+
+`func (o *ListVDIApps200ResponseAllOfVdiAppsInner) SetIconPathNil(b bool)`
+
+ SetIconPathNil sets the value for IconPath to be an explicit nil
+
+### UnsetIconPath
+`func (o *ListVDIApps200ResponseAllOfVdiAppsInner) UnsetIconPath()`
+
+UnsetIconPath ensures that no value is present for IconPath, not even an explicit nil
 ### GetLogo
 
 `func (o *ListVDIApps200ResponseAllOfVdiAppsInner) GetLogo() string`
@@ -182,6 +202,16 @@ SetLogo sets Logo field to given value.
 
 HasLogo returns a boolean if a field has been set.
 
+### SetLogoNil
+
+`func (o *ListVDIApps200ResponseAllOfVdiAppsInner) SetLogoNil(b bool)`
+
+ SetLogoNil sets the value for Logo to be an explicit nil
+
+### UnsetLogo
+`func (o *ListVDIApps200ResponseAllOfVdiAppsInner) UnsetLogo()`
+
+UnsetLogo ensures that no value is present for Logo, not even an explicit nil
 ### GetDateCreated
 
 `func (o *ListVDIApps200ResponseAllOfVdiAppsInner) GetDateCreated() time.Time`

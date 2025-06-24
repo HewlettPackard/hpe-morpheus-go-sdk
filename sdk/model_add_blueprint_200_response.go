@@ -21,9 +21,9 @@ var _ MappedNullable = &AddBlueprint200Response{}
 // AddBlueprint200Response struct for AddBlueprint200Response
 type AddBlueprint200Response struct {
 	Blueprint            *AddBlueprint200ResponseAllOfBlueprint `json:"blueprint,omitempty"`
-	Msg                  *string                                `json:"msg,omitempty"`
-	Errors               *string                                `json:"errors,omitempty"`
-	ErrorCode            *string                                `json:"errorCode,omitempty"`
+	Msg                  NullableString                         `json:"msg,omitempty"`
+	Errors               NullableString                         `json:"errors,omitempty"`
+	ErrorCode            NullableString                         `json:"errorCode,omitempty"`
 	InProgress           *bool                                  `json:"inProgress,omitempty"`
 	Success              *bool                                  `json:"success,omitempty"`
 	AdditionalProperties map[string]interface{}                 `json:",remain"`
@@ -80,100 +80,133 @@ func (o *AddBlueprint200Response) SetBlueprint(v AddBlueprint200ResponseAllOfBlu
 	o.Blueprint = &v
 }
 
-// GetMsg returns the Msg field value if set, zero value otherwise.
+// GetMsg returns the Msg field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AddBlueprint200Response) GetMsg() string {
-	if o == nil || IsNil(o.Msg) {
+	if o == nil || IsNil(o.Msg.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Msg
+	return *o.Msg.Get()
 }
 
 // GetMsgOk returns a tuple with the Msg field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AddBlueprint200Response) GetMsgOk() (*string, bool) {
-	if o == nil || IsNil(o.Msg) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Msg, true
+	return o.Msg.Get(), o.Msg.IsSet()
 }
 
 // IsSetMsg returns a boolean if a field has been set.
 func (o *AddBlueprint200Response) IsSetMsg() bool {
-	if o != nil && !IsNil(o.Msg) {
+	if o != nil && o.Msg.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetMsg gets a reference to the given string and assigns it to the Msg field.
+// SetMsg gets a reference to the given NullableString and assigns it to the Msg field.
 func (o *AddBlueprint200Response) SetMsg(v string) {
-	o.Msg = &v
+	o.Msg.Set(&v)
 }
 
-// GetErrors returns the Errors field value if set, zero value otherwise.
+// SetMsgNil sets the value for Msg to be an explicit nil
+func (o *AddBlueprint200Response) SetMsgNil() {
+	o.Msg.Set(nil)
+}
+
+// UnsetMsg ensures that no value is present for Msg, not even an explicit nil
+func (o *AddBlueprint200Response) UnsetMsg() {
+	o.Msg.Unset()
+}
+
+// GetErrors returns the Errors field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AddBlueprint200Response) GetErrors() string {
-	if o == nil || IsNil(o.Errors) {
+	if o == nil || IsNil(o.Errors.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Errors
+	return *o.Errors.Get()
 }
 
 // GetErrorsOk returns a tuple with the Errors field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AddBlueprint200Response) GetErrorsOk() (*string, bool) {
-	if o == nil || IsNil(o.Errors) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Errors, true
+	return o.Errors.Get(), o.Errors.IsSet()
 }
 
 // IsSetErrors returns a boolean if a field has been set.
 func (o *AddBlueprint200Response) IsSetErrors() bool {
-	if o != nil && !IsNil(o.Errors) {
+	if o != nil && o.Errors.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetErrors gets a reference to the given string and assigns it to the Errors field.
+// SetErrors gets a reference to the given NullableString and assigns it to the Errors field.
 func (o *AddBlueprint200Response) SetErrors(v string) {
-	o.Errors = &v
+	o.Errors.Set(&v)
 }
 
-// GetErrorCode returns the ErrorCode field value if set, zero value otherwise.
+// SetErrorsNil sets the value for Errors to be an explicit nil
+func (o *AddBlueprint200Response) SetErrorsNil() {
+	o.Errors.Set(nil)
+}
+
+// UnsetErrors ensures that no value is present for Errors, not even an explicit nil
+func (o *AddBlueprint200Response) UnsetErrors() {
+	o.Errors.Unset()
+}
+
+// GetErrorCode returns the ErrorCode field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AddBlueprint200Response) GetErrorCode() string {
-	if o == nil || IsNil(o.ErrorCode) {
+	if o == nil || IsNil(o.ErrorCode.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ErrorCode
+	return *o.ErrorCode.Get()
 }
 
 // GetErrorCodeOk returns a tuple with the ErrorCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AddBlueprint200Response) GetErrorCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.ErrorCode) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ErrorCode, true
+	return o.ErrorCode.Get(), o.ErrorCode.IsSet()
 }
 
 // IsSetErrorCode returns a boolean if a field has been set.
 func (o *AddBlueprint200Response) IsSetErrorCode() bool {
-	if o != nil && !IsNil(o.ErrorCode) {
+	if o != nil && o.ErrorCode.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetErrorCode gets a reference to the given string and assigns it to the ErrorCode field.
+// SetErrorCode gets a reference to the given NullableString and assigns it to the ErrorCode field.
 func (o *AddBlueprint200Response) SetErrorCode(v string) {
-	o.ErrorCode = &v
+	o.ErrorCode.Set(&v)
+}
+
+// SetErrorCodeNil sets the value for ErrorCode to be an explicit nil
+func (o *AddBlueprint200Response) SetErrorCodeNil() {
+	o.ErrorCode.Set(nil)
+}
+
+// UnsetErrorCode ensures that no value is present for ErrorCode, not even an explicit nil
+func (o *AddBlueprint200Response) UnsetErrorCode() {
+	o.ErrorCode.Unset()
 }
 
 // GetInProgress returns the InProgress field value if set, zero value otherwise.
@@ -253,14 +286,14 @@ func (o AddBlueprint200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Blueprint) {
 		toSerialize["blueprint"] = o.Blueprint
 	}
-	if !IsNil(o.Msg) {
-		toSerialize["msg"] = o.Msg
+	if o.Msg.IsSet() {
+		toSerialize["msg"] = o.Msg.Get()
 	}
-	if !IsNil(o.Errors) {
-		toSerialize["errors"] = o.Errors
+	if o.Errors.IsSet() {
+		toSerialize["errors"] = o.Errors.Get()
 	}
-	if !IsNil(o.ErrorCode) {
-		toSerialize["errorCode"] = o.ErrorCode
+	if o.ErrorCode.IsSet() {
+		toSerialize["errorCode"] = o.ErrorCode.Get()
 	}
 	if !IsNil(o.InProgress) {
 		toSerialize["inProgress"] = o.InProgress

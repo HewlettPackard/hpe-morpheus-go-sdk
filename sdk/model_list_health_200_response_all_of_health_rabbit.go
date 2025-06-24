@@ -79,9 +79,9 @@ func (o *ListHealth200ResponseAllOfHealthRabbit) SetSuccess(v bool) {
 	o.Success = &v
 }
 
-// GetBusyQueues returns the BusyQueues field value if set, zero value otherwise.
+// GetBusyQueues returns the BusyQueues field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListHealth200ResponseAllOfHealthRabbit) GetBusyQueues() []map[string]interface{} {
-	if o == nil || IsNil(o.BusyQueues) {
+	if o == nil {
 		var ret []map[string]interface{}
 		return ret
 	}
@@ -90,6 +90,7 @@ func (o *ListHealth200ResponseAllOfHealthRabbit) GetBusyQueues() []map[string]in
 
 // GetBusyQueuesOk returns a tuple with the BusyQueues field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListHealth200ResponseAllOfHealthRabbit) GetBusyQueuesOk() ([]map[string]interface{}, bool) {
 	if o == nil || IsNil(o.BusyQueues) {
 		return nil, false
@@ -111,9 +112,9 @@ func (o *ListHealth200ResponseAllOfHealthRabbit) SetBusyQueues(v []map[string]in
 	o.BusyQueues = v
 }
 
-// GetErrorQueues returns the ErrorQueues field value if set, zero value otherwise.
+// GetErrorQueues returns the ErrorQueues field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListHealth200ResponseAllOfHealthRabbit) GetErrorQueues() []map[string]interface{} {
-	if o == nil || IsNil(o.ErrorQueues) {
+	if o == nil {
 		var ret []map[string]interface{}
 		return ret
 	}
@@ -122,6 +123,7 @@ func (o *ListHealth200ResponseAllOfHealthRabbit) GetErrorQueues() []map[string]i
 
 // GetErrorQueuesOk returns a tuple with the ErrorQueues field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListHealth200ResponseAllOfHealthRabbit) GetErrorQueuesOk() ([]map[string]interface{}, bool) {
 	if o == nil || IsNil(o.ErrorQueues) {
 		return nil, false
@@ -220,10 +222,10 @@ func (o ListHealth200ResponseAllOfHealthRabbit) ToMap() (map[string]interface{},
 	if !IsNil(o.Success) {
 		toSerialize["success"] = o.Success
 	}
-	if !IsNil(o.BusyQueues) {
+	if o.BusyQueues != nil {
 		toSerialize["busyQueues"] = o.BusyQueues
 	}
-	if !IsNil(o.ErrorQueues) {
+	if o.ErrorQueues != nil {
 		toSerialize["errorQueues"] = o.ErrorQueues
 	}
 	if !IsNil(o.Status) {

@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ApprovalUser** | Pointer to **string** |  | [optional] 
 **Company** | Pointer to **string** |  | [optional] 
-**RemedyIgnoreSSLErrors** | Pointer to **string** |  | [optional] 
+**RemedyIgnoreSSLErrors** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -102,6 +102,16 @@ SetRemedyIgnoreSSLErrors sets RemedyIgnoreSSLErrors field to given value.
 
 HasRemedyIgnoreSSLErrors returns a boolean if a field has been set.
 
+### SetRemedyIgnoreSSLErrorsNil
+
+`func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf12Config) SetRemedyIgnoreSSLErrorsNil(b bool)`
+
+ SetRemedyIgnoreSSLErrorsNil sets the value for RemedyIgnoreSSLErrors to be an explicit nil
+
+### UnsetRemedyIgnoreSSLErrors
+`func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf12Config) UnsetRemedyIgnoreSSLErrors()`
+
+UnsetRemedyIgnoreSSLErrors ensures that no value is present for RemedyIgnoreSSLErrors, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

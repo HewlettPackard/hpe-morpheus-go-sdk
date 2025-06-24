@@ -20,65 +20,65 @@ var _ MappedNullable = &ListClusterVolumes200ResponseAllOfVolumesInner{}
 
 // ListClusterVolumes200ResponseAllOfVolumesInner struct for ListClusterVolumes200ResponseAllOfVolumesInner
 type ListClusterVolumes200ResponseAllOfVolumesInner struct {
-	Id                   *int64                                                                  `json:"id,omitempty"`
-	Name                 *string                                                                 `json:"name,omitempty"`
-	Description          *string                                                                 `json:"description,omitempty"`
-	Controller           *GetAlerts200ResponseAllOfCheckGroupsInnerInstance                      `json:"controller,omitempty"`
-	ControllerId         *int64                                                                  `json:"controllerId,omitempty"`
-	ControllerMountPoint *string                                                                 `json:"controllerMountPoint,omitempty"`
-	Resizeable           *bool                                                                   `json:"resizeable,omitempty"`
-	RootVolume           *bool                                                                   `json:"rootVolume,omitempty"`
-	UnitNumber           *string                                                                 `json:"unitNumber,omitempty"`
-	DeviceName           *string                                                                 `json:"deviceName,omitempty"`
-	DeviceDisplayName    *string                                                                 `json:"deviceDisplayName,omitempty"`
-	VolumeName           *string                                                                 `json:"volumeName,omitempty"`
-	VolumePath           *string                                                                 `json:"volumePath,omitempty"`
-	VolumeType           *string                                                                 `json:"volumeType,omitempty"`
-	RefType              *string                                                                 `json:"refType,omitempty"`
-	RefId                *int64                                                                  `json:"refId,omitempty"`
-	DiskMode             *string                                                                 `json:"diskMode,omitempty"`
-	DiskType             *string                                                                 `json:"diskType,omitempty"`
-	Type                 *ListBackupSettings200ResponseBackupSettingsDefaultSchedule             `json:"type,omitempty"`
-	TypeId               *int64                                                                  `json:"typeId,omitempty"`
-	Category             *string                                                                 `json:"category,omitempty"`
-	Status               *string                                                                 `json:"status,omitempty"`
-	StatusMessage        *string                                                                 `json:"statusMessage,omitempty"`
-	ConfigurableIOPS     *bool                                                                   `json:"configurableIOPS,omitempty"`
-	MaxStorage           *int64                                                                  `json:"maxStorage,omitempty"`
-	UsedStorage          *int64                                                                  `json:"usedStorage,omitempty"`
-	DisplayOrder         *int64                                                                  `json:"displayOrder,omitempty"`
-	MaxIOPS              *string                                                                 `json:"maxIOPS,omitempty"`
-	Uuid                 *string                                                                 `json:"uuid,omitempty"`
-	Active               *bool                                                                   `json:"active,omitempty"`
-	ReadOnly             *bool                                                                   `json:"readOnly,omitempty"`
-	Removable            *bool                                                                   `json:"removable,omitempty"`
-	PoolName             *string                                                                 `json:"poolName,omitempty"`
-	Zone                 *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"zone,omitempty"`
-	ZoneId               *int64                                                                  `json:"zoneId,omitempty"`
-	Datastore            *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"datastore,omitempty"`
-	DatastoreId          *int64                                                                  `json:"datastoreId,omitempty"`
-	DatastoreOption      *string                                                                 `json:"datastoreOption,omitempty"`
-	StorageGroup         *string                                                                 `json:"storageGroup,omitempty"`
-	Namespace            *string                                                                 `json:"namespace,omitempty"`
-	StorageServer        *string                                                                 `json:"storageServer,omitempty"`
-	Source               *string                                                                 `json:"source,omitempty"`
-	UniqueId             *string                                                                 `json:"uniqueId,omitempty"`
-	InternalId           *string                                                                 `json:"internalId,omitempty"`
-	ExternalId           *string                                                                 `json:"externalId,omitempty"`
-	ProvisionType        *string                                                                 `json:"provisionType,omitempty"`
-	CopyType             *string                                                                 `json:"copyType,omitempty"`
-	FiberWwn             *string                                                                 `json:"fiberWwn,omitempty"`
-	FileName             *string                                                                 `json:"fileName,omitempty"`
-	ClaimName            *string                                                                 `json:"claimName,omitempty"`
-	SharePath            *string                                                                 `json:"sharePath,omitempty"`
-	SourceId             *string                                                                 `json:"sourceId,omitempty"`
-	SourceImage          *string                                                                 `json:"sourceImage,omitempty"`
-	ImageType            *string                                                                 `json:"imageType,omitempty"`
-	Online               *bool                                                                   `json:"online,omitempty"`
-	RawData              *string                                                                 `json:"rawData,omitempty"`
-	Account              *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"account,omitempty"`
-	Owner                *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"owner,omitempty"`
-	AdditionalProperties map[string]interface{}                                                  `json:",remain"`
+	Id                   *int64                                                      `json:"id,omitempty"`
+	Name                 *string                                                     `json:"name,omitempty"`
+	Description          NullableString                                              `json:"description,omitempty"`
+	Controller           *GetAlerts200ResponseAllOfCheckGroupsInnerInstance          `json:"controller,omitempty"`
+	ControllerId         NullableInt64                                               `json:"controllerId,omitempty"`
+	ControllerMountPoint NullableString                                              `json:"controllerMountPoint,omitempty"`
+	Resizeable           NullableBool                                                `json:"resizeable,omitempty"`
+	RootVolume           *bool                                                       `json:"rootVolume,omitempty"`
+	UnitNumber           NullableString                                              `json:"unitNumber,omitempty"`
+	DeviceName           *string                                                     `json:"deviceName,omitempty"`
+	DeviceDisplayName    *string                                                     `json:"deviceDisplayName,omitempty"`
+	VolumeName           *string                                                     `json:"volumeName,omitempty"`
+	VolumePath           *string                                                     `json:"volumePath,omitempty"`
+	VolumeType           *string                                                     `json:"volumeType,omitempty"`
+	RefType              *string                                                     `json:"refType,omitempty"`
+	RefId                *int64                                                      `json:"refId,omitempty"`
+	DiskMode             *string                                                     `json:"diskMode,omitempty"`
+	DiskType             *string                                                     `json:"diskType,omitempty"`
+	Type                 *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"type,omitempty"`
+	TypeId               *int64                                                      `json:"typeId,omitempty"`
+	Category             *string                                                     `json:"category,omitempty"`
+	Status               *string                                                     `json:"status,omitempty"`
+	StatusMessage        NullableString                                              `json:"statusMessage,omitempty"`
+	ConfigurableIOPS     *bool                                                       `json:"configurableIOPS,omitempty"`
+	MaxStorage           *int64                                                      `json:"maxStorage,omitempty"`
+	UsedStorage          *int64                                                      `json:"usedStorage,omitempty"`
+	DisplayOrder         *int64                                                      `json:"displayOrder,omitempty"`
+	MaxIOPS              NullableString                                              `json:"maxIOPS,omitempty"`
+	Uuid                 *string                                                     `json:"uuid,omitempty"`
+	Active               *bool                                                       `json:"active,omitempty"`
+	ReadOnly             *bool                                                       `json:"readOnly,omitempty"`
+	Removable            *bool                                                       `json:"removable,omitempty"`
+	PoolName             *string                                                     `json:"poolName,omitempty"`
+	Zone                 *GetAlerts200ResponseAllOfCheckGroupsInnerInstance          `json:"zone,omitempty"`
+	ZoneId               *int64                                                      `json:"zoneId,omitempty"`
+	Datastore            *GetAlerts200ResponseAllOfCheckGroupsInnerInstance          `json:"datastore,omitempty"`
+	DatastoreId          NullableInt64                                               `json:"datastoreId,omitempty"`
+	DatastoreOption      *string                                                     `json:"datastoreOption,omitempty"`
+	StorageGroup         NullableString                                              `json:"storageGroup,omitempty"`
+	Namespace            NullableString                                              `json:"namespace,omitempty"`
+	StorageServer        NullableString                                              `json:"storageServer,omitempty"`
+	Source               *string                                                     `json:"source,omitempty"`
+	UniqueId             NullableString                                              `json:"uniqueId,omitempty"`
+	InternalId           NullableString                                              `json:"internalId,omitempty"`
+	ExternalId           *string                                                     `json:"externalId,omitempty"`
+	ProvisionType        NullableString                                              `json:"provisionType,omitempty"`
+	CopyType             NullableString                                              `json:"copyType,omitempty"`
+	FiberWwn             NullableString                                              `json:"fiberWwn,omitempty"`
+	FileName             NullableString                                              `json:"fileName,omitempty"`
+	ClaimName            NullableString                                              `json:"claimName,omitempty"`
+	SharePath            NullableString                                              `json:"sharePath,omitempty"`
+	SourceId             *string                                                     `json:"sourceId,omitempty"`
+	SourceImage          *string                                                     `json:"sourceImage,omitempty"`
+	ImageType            *string                                                     `json:"imageType,omitempty"`
+	Online               *bool                                                       `json:"online,omitempty"`
+	RawData              *string                                                     `json:"rawData,omitempty"`
+	Account              *GetAlerts200ResponseAllOfCheckGroupsInnerInstance          `json:"account,omitempty"`
+	Owner                *GetAlerts200ResponseAllOfCheckGroupsInnerInstance          `json:"owner,omitempty"`
+	AdditionalProperties map[string]interface{}                                      `json:",remain"`
 }
 
 type _ListClusterVolumes200ResponseAllOfVolumesInner ListClusterVolumes200ResponseAllOfVolumesInner
@@ -164,36 +164,47 @@ func (o *ListClusterVolumes200ResponseAllOfVolumesInner) SetName(v string) {
 	o.Name = &v
 }
 
-// GetDescription returns the Description field value if set, zero value otherwise.
+// GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
+	if o == nil || IsNil(o.Description.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Description
+	return *o.Description.Get()
 }
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Description, true
+	return o.Description.Get(), o.Description.IsSet()
 }
 
 // IsSetDescription returns a boolean if a field has been set.
 func (o *ListClusterVolumes200ResponseAllOfVolumesInner) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
+	if o != nil && o.Description.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDescription gets a reference to the given string and assigns it to the Description field.
+// SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *ListClusterVolumes200ResponseAllOfVolumesInner) SetDescription(v string) {
-	o.Description = &v
+	o.Description.Set(&v)
+}
+
+// SetDescriptionNil sets the value for Description to be an explicit nil
+func (o *ListClusterVolumes200ResponseAllOfVolumesInner) SetDescriptionNil() {
+	o.Description.Set(nil)
+}
+
+// UnsetDescription ensures that no value is present for Description, not even an explicit nil
+func (o *ListClusterVolumes200ResponseAllOfVolumesInner) UnsetDescription() {
+	o.Description.Unset()
 }
 
 // GetController returns the Controller field value if set, zero value otherwise.
@@ -228,100 +239,133 @@ func (o *ListClusterVolumes200ResponseAllOfVolumesInner) SetController(v GetAler
 	o.Controller = &v
 }
 
-// GetControllerId returns the ControllerId field value if set, zero value otherwise.
+// GetControllerId returns the ControllerId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetControllerId() int64 {
-	if o == nil || IsNil(o.ControllerId) {
+	if o == nil || IsNil(o.ControllerId.Get()) {
 		var ret int64
 		return ret
 	}
-	return *o.ControllerId
+	return *o.ControllerId.Get()
 }
 
 // GetControllerIdOk returns a tuple with the ControllerId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetControllerIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.ControllerId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ControllerId, true
+	return o.ControllerId.Get(), o.ControllerId.IsSet()
 }
 
 // IsSetControllerId returns a boolean if a field has been set.
 func (o *ListClusterVolumes200ResponseAllOfVolumesInner) IsSetControllerId() bool {
-	if o != nil && !IsNil(o.ControllerId) {
+	if o != nil && o.ControllerId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetControllerId gets a reference to the given int64 and assigns it to the ControllerId field.
+// SetControllerId gets a reference to the given NullableInt64 and assigns it to the ControllerId field.
 func (o *ListClusterVolumes200ResponseAllOfVolumesInner) SetControllerId(v int64) {
-	o.ControllerId = &v
+	o.ControllerId.Set(&v)
 }
 
-// GetControllerMountPoint returns the ControllerMountPoint field value if set, zero value otherwise.
+// SetControllerIdNil sets the value for ControllerId to be an explicit nil
+func (o *ListClusterVolumes200ResponseAllOfVolumesInner) SetControllerIdNil() {
+	o.ControllerId.Set(nil)
+}
+
+// UnsetControllerId ensures that no value is present for ControllerId, not even an explicit nil
+func (o *ListClusterVolumes200ResponseAllOfVolumesInner) UnsetControllerId() {
+	o.ControllerId.Unset()
+}
+
+// GetControllerMountPoint returns the ControllerMountPoint field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetControllerMountPoint() string {
-	if o == nil || IsNil(o.ControllerMountPoint) {
+	if o == nil || IsNil(o.ControllerMountPoint.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ControllerMountPoint
+	return *o.ControllerMountPoint.Get()
 }
 
 // GetControllerMountPointOk returns a tuple with the ControllerMountPoint field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetControllerMountPointOk() (*string, bool) {
-	if o == nil || IsNil(o.ControllerMountPoint) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ControllerMountPoint, true
+	return o.ControllerMountPoint.Get(), o.ControllerMountPoint.IsSet()
 }
 
 // IsSetControllerMountPoint returns a boolean if a field has been set.
 func (o *ListClusterVolumes200ResponseAllOfVolumesInner) IsSetControllerMountPoint() bool {
-	if o != nil && !IsNil(o.ControllerMountPoint) {
+	if o != nil && o.ControllerMountPoint.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetControllerMountPoint gets a reference to the given string and assigns it to the ControllerMountPoint field.
+// SetControllerMountPoint gets a reference to the given NullableString and assigns it to the ControllerMountPoint field.
 func (o *ListClusterVolumes200ResponseAllOfVolumesInner) SetControllerMountPoint(v string) {
-	o.ControllerMountPoint = &v
+	o.ControllerMountPoint.Set(&v)
 }
 
-// GetResizeable returns the Resizeable field value if set, zero value otherwise.
+// SetControllerMountPointNil sets the value for ControllerMountPoint to be an explicit nil
+func (o *ListClusterVolumes200ResponseAllOfVolumesInner) SetControllerMountPointNil() {
+	o.ControllerMountPoint.Set(nil)
+}
+
+// UnsetControllerMountPoint ensures that no value is present for ControllerMountPoint, not even an explicit nil
+func (o *ListClusterVolumes200ResponseAllOfVolumesInner) UnsetControllerMountPoint() {
+	o.ControllerMountPoint.Unset()
+}
+
+// GetResizeable returns the Resizeable field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetResizeable() bool {
-	if o == nil || IsNil(o.Resizeable) {
+	if o == nil || IsNil(o.Resizeable.Get()) {
 		var ret bool
 		return ret
 	}
-	return *o.Resizeable
+	return *o.Resizeable.Get()
 }
 
 // GetResizeableOk returns a tuple with the Resizeable field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetResizeableOk() (*bool, bool) {
-	if o == nil || IsNil(o.Resizeable) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Resizeable, true
+	return o.Resizeable.Get(), o.Resizeable.IsSet()
 }
 
 // IsSetResizeable returns a boolean if a field has been set.
 func (o *ListClusterVolumes200ResponseAllOfVolumesInner) IsSetResizeable() bool {
-	if o != nil && !IsNil(o.Resizeable) {
+	if o != nil && o.Resizeable.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetResizeable gets a reference to the given bool and assigns it to the Resizeable field.
+// SetResizeable gets a reference to the given NullableBool and assigns it to the Resizeable field.
 func (o *ListClusterVolumes200ResponseAllOfVolumesInner) SetResizeable(v bool) {
-	o.Resizeable = &v
+	o.Resizeable.Set(&v)
+}
+
+// SetResizeableNil sets the value for Resizeable to be an explicit nil
+func (o *ListClusterVolumes200ResponseAllOfVolumesInner) SetResizeableNil() {
+	o.Resizeable.Set(nil)
+}
+
+// UnsetResizeable ensures that no value is present for Resizeable, not even an explicit nil
+func (o *ListClusterVolumes200ResponseAllOfVolumesInner) UnsetResizeable() {
+	o.Resizeable.Unset()
 }
 
 // GetRootVolume returns the RootVolume field value if set, zero value otherwise.
@@ -356,36 +400,47 @@ func (o *ListClusterVolumes200ResponseAllOfVolumesInner) SetRootVolume(v bool) {
 	o.RootVolume = &v
 }
 
-// GetUnitNumber returns the UnitNumber field value if set, zero value otherwise.
+// GetUnitNumber returns the UnitNumber field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetUnitNumber() string {
-	if o == nil || IsNil(o.UnitNumber) {
+	if o == nil || IsNil(o.UnitNumber.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.UnitNumber
+	return *o.UnitNumber.Get()
 }
 
 // GetUnitNumberOk returns a tuple with the UnitNumber field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetUnitNumberOk() (*string, bool) {
-	if o == nil || IsNil(o.UnitNumber) {
+	if o == nil {
 		return nil, false
 	}
-	return o.UnitNumber, true
+	return o.UnitNumber.Get(), o.UnitNumber.IsSet()
 }
 
 // IsSetUnitNumber returns a boolean if a field has been set.
 func (o *ListClusterVolumes200ResponseAllOfVolumesInner) IsSetUnitNumber() bool {
-	if o != nil && !IsNil(o.UnitNumber) {
+	if o != nil && o.UnitNumber.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetUnitNumber gets a reference to the given string and assigns it to the UnitNumber field.
+// SetUnitNumber gets a reference to the given NullableString and assigns it to the UnitNumber field.
 func (o *ListClusterVolumes200ResponseAllOfVolumesInner) SetUnitNumber(v string) {
-	o.UnitNumber = &v
+	o.UnitNumber.Set(&v)
+}
+
+// SetUnitNumberNil sets the value for UnitNumber to be an explicit nil
+func (o *ListClusterVolumes200ResponseAllOfVolumesInner) SetUnitNumberNil() {
+	o.UnitNumber.Set(nil)
+}
+
+// UnsetUnitNumber ensures that no value is present for UnitNumber, not even an explicit nil
+func (o *ListClusterVolumes200ResponseAllOfVolumesInner) UnsetUnitNumber() {
+	o.UnitNumber.Unset()
 }
 
 // GetDeviceName returns the DeviceName field value if set, zero value otherwise.
@@ -804,36 +859,47 @@ func (o *ListClusterVolumes200ResponseAllOfVolumesInner) SetStatus(v string) {
 	o.Status = &v
 }
 
-// GetStatusMessage returns the StatusMessage field value if set, zero value otherwise.
+// GetStatusMessage returns the StatusMessage field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetStatusMessage() string {
-	if o == nil || IsNil(o.StatusMessage) {
+	if o == nil || IsNil(o.StatusMessage.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.StatusMessage
+	return *o.StatusMessage.Get()
 }
 
 // GetStatusMessageOk returns a tuple with the StatusMessage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetStatusMessageOk() (*string, bool) {
-	if o == nil || IsNil(o.StatusMessage) {
+	if o == nil {
 		return nil, false
 	}
-	return o.StatusMessage, true
+	return o.StatusMessage.Get(), o.StatusMessage.IsSet()
 }
 
 // IsSetStatusMessage returns a boolean if a field has been set.
 func (o *ListClusterVolumes200ResponseAllOfVolumesInner) IsSetStatusMessage() bool {
-	if o != nil && !IsNil(o.StatusMessage) {
+	if o != nil && o.StatusMessage.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetStatusMessage gets a reference to the given string and assigns it to the StatusMessage field.
+// SetStatusMessage gets a reference to the given NullableString and assigns it to the StatusMessage field.
 func (o *ListClusterVolumes200ResponseAllOfVolumesInner) SetStatusMessage(v string) {
-	o.StatusMessage = &v
+	o.StatusMessage.Set(&v)
+}
+
+// SetStatusMessageNil sets the value for StatusMessage to be an explicit nil
+func (o *ListClusterVolumes200ResponseAllOfVolumesInner) SetStatusMessageNil() {
+	o.StatusMessage.Set(nil)
+}
+
+// UnsetStatusMessage ensures that no value is present for StatusMessage, not even an explicit nil
+func (o *ListClusterVolumes200ResponseAllOfVolumesInner) UnsetStatusMessage() {
+	o.StatusMessage.Unset()
 }
 
 // GetConfigurableIOPS returns the ConfigurableIOPS field value if set, zero value otherwise.
@@ -964,36 +1030,47 @@ func (o *ListClusterVolumes200ResponseAllOfVolumesInner) SetDisplayOrder(v int64
 	o.DisplayOrder = &v
 }
 
-// GetMaxIOPS returns the MaxIOPS field value if set, zero value otherwise.
+// GetMaxIOPS returns the MaxIOPS field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetMaxIOPS() string {
-	if o == nil || IsNil(o.MaxIOPS) {
+	if o == nil || IsNil(o.MaxIOPS.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.MaxIOPS
+	return *o.MaxIOPS.Get()
 }
 
 // GetMaxIOPSOk returns a tuple with the MaxIOPS field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetMaxIOPSOk() (*string, bool) {
-	if o == nil || IsNil(o.MaxIOPS) {
+	if o == nil {
 		return nil, false
 	}
-	return o.MaxIOPS, true
+	return o.MaxIOPS.Get(), o.MaxIOPS.IsSet()
 }
 
 // IsSetMaxIOPS returns a boolean if a field has been set.
 func (o *ListClusterVolumes200ResponseAllOfVolumesInner) IsSetMaxIOPS() bool {
-	if o != nil && !IsNil(o.MaxIOPS) {
+	if o != nil && o.MaxIOPS.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetMaxIOPS gets a reference to the given string and assigns it to the MaxIOPS field.
+// SetMaxIOPS gets a reference to the given NullableString and assigns it to the MaxIOPS field.
 func (o *ListClusterVolumes200ResponseAllOfVolumesInner) SetMaxIOPS(v string) {
-	o.MaxIOPS = &v
+	o.MaxIOPS.Set(&v)
+}
+
+// SetMaxIOPSNil sets the value for MaxIOPS to be an explicit nil
+func (o *ListClusterVolumes200ResponseAllOfVolumesInner) SetMaxIOPSNil() {
+	o.MaxIOPS.Set(nil)
+}
+
+// UnsetMaxIOPS ensures that no value is present for MaxIOPS, not even an explicit nil
+func (o *ListClusterVolumes200ResponseAllOfVolumesInner) UnsetMaxIOPS() {
+	o.MaxIOPS.Unset()
 }
 
 // GetUuid returns the Uuid field value if set, zero value otherwise.
@@ -1157,9 +1234,9 @@ func (o *ListClusterVolumes200ResponseAllOfVolumesInner) SetPoolName(v string) {
 }
 
 // GetZone returns the Zone field value if set, zero value otherwise.
-func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetZone() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetZone() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.Zone) {
-		var ret ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return *o.Zone
@@ -1167,7 +1244,7 @@ func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetZone() ListAppliance
 
 // GetZoneOk returns a tuple with the Zone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetZoneOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetZoneOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.Zone) {
 		return nil, false
 	}
@@ -1183,8 +1260,8 @@ func (o *ListClusterVolumes200ResponseAllOfVolumesInner) IsSetZone() bool {
 	return false
 }
 
-// SetZone gets a reference to the given ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the Zone field.
-func (o *ListClusterVolumes200ResponseAllOfVolumesInner) SetZone(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetZone gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Zone field.
+func (o *ListClusterVolumes200ResponseAllOfVolumesInner) SetZone(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.Zone = &v
 }
 
@@ -1221,9 +1298,9 @@ func (o *ListClusterVolumes200ResponseAllOfVolumesInner) SetZoneId(v int64) {
 }
 
 // GetDatastore returns the Datastore field value if set, zero value otherwise.
-func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetDatastore() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetDatastore() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.Datastore) {
-		var ret ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return *o.Datastore
@@ -1231,7 +1308,7 @@ func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetDatastore() ListAppl
 
 // GetDatastoreOk returns a tuple with the Datastore field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetDatastoreOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetDatastoreOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.Datastore) {
 		return nil, false
 	}
@@ -1247,41 +1324,52 @@ func (o *ListClusterVolumes200ResponseAllOfVolumesInner) IsSetDatastore() bool {
 	return false
 }
 
-// SetDatastore gets a reference to the given ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the Datastore field.
-func (o *ListClusterVolumes200ResponseAllOfVolumesInner) SetDatastore(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetDatastore gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Datastore field.
+func (o *ListClusterVolumes200ResponseAllOfVolumesInner) SetDatastore(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.Datastore = &v
 }
 
-// GetDatastoreId returns the DatastoreId field value if set, zero value otherwise.
+// GetDatastoreId returns the DatastoreId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetDatastoreId() int64 {
-	if o == nil || IsNil(o.DatastoreId) {
+	if o == nil || IsNil(o.DatastoreId.Get()) {
 		var ret int64
 		return ret
 	}
-	return *o.DatastoreId
+	return *o.DatastoreId.Get()
 }
 
 // GetDatastoreIdOk returns a tuple with the DatastoreId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetDatastoreIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.DatastoreId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.DatastoreId, true
+	return o.DatastoreId.Get(), o.DatastoreId.IsSet()
 }
 
 // IsSetDatastoreId returns a boolean if a field has been set.
 func (o *ListClusterVolumes200ResponseAllOfVolumesInner) IsSetDatastoreId() bool {
-	if o != nil && !IsNil(o.DatastoreId) {
+	if o != nil && o.DatastoreId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDatastoreId gets a reference to the given int64 and assigns it to the DatastoreId field.
+// SetDatastoreId gets a reference to the given NullableInt64 and assigns it to the DatastoreId field.
 func (o *ListClusterVolumes200ResponseAllOfVolumesInner) SetDatastoreId(v int64) {
-	o.DatastoreId = &v
+	o.DatastoreId.Set(&v)
+}
+
+// SetDatastoreIdNil sets the value for DatastoreId to be an explicit nil
+func (o *ListClusterVolumes200ResponseAllOfVolumesInner) SetDatastoreIdNil() {
+	o.DatastoreId.Set(nil)
+}
+
+// UnsetDatastoreId ensures that no value is present for DatastoreId, not even an explicit nil
+func (o *ListClusterVolumes200ResponseAllOfVolumesInner) UnsetDatastoreId() {
+	o.DatastoreId.Unset()
 }
 
 // GetDatastoreOption returns the DatastoreOption field value if set, zero value otherwise.
@@ -1316,100 +1404,133 @@ func (o *ListClusterVolumes200ResponseAllOfVolumesInner) SetDatastoreOption(v st
 	o.DatastoreOption = &v
 }
 
-// GetStorageGroup returns the StorageGroup field value if set, zero value otherwise.
+// GetStorageGroup returns the StorageGroup field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetStorageGroup() string {
-	if o == nil || IsNil(o.StorageGroup) {
+	if o == nil || IsNil(o.StorageGroup.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.StorageGroup
+	return *o.StorageGroup.Get()
 }
 
 // GetStorageGroupOk returns a tuple with the StorageGroup field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetStorageGroupOk() (*string, bool) {
-	if o == nil || IsNil(o.StorageGroup) {
+	if o == nil {
 		return nil, false
 	}
-	return o.StorageGroup, true
+	return o.StorageGroup.Get(), o.StorageGroup.IsSet()
 }
 
 // IsSetStorageGroup returns a boolean if a field has been set.
 func (o *ListClusterVolumes200ResponseAllOfVolumesInner) IsSetStorageGroup() bool {
-	if o != nil && !IsNil(o.StorageGroup) {
+	if o != nil && o.StorageGroup.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetStorageGroup gets a reference to the given string and assigns it to the StorageGroup field.
+// SetStorageGroup gets a reference to the given NullableString and assigns it to the StorageGroup field.
 func (o *ListClusterVolumes200ResponseAllOfVolumesInner) SetStorageGroup(v string) {
-	o.StorageGroup = &v
+	o.StorageGroup.Set(&v)
 }
 
-// GetNamespace returns the Namespace field value if set, zero value otherwise.
+// SetStorageGroupNil sets the value for StorageGroup to be an explicit nil
+func (o *ListClusterVolumes200ResponseAllOfVolumesInner) SetStorageGroupNil() {
+	o.StorageGroup.Set(nil)
+}
+
+// UnsetStorageGroup ensures that no value is present for StorageGroup, not even an explicit nil
+func (o *ListClusterVolumes200ResponseAllOfVolumesInner) UnsetStorageGroup() {
+	o.StorageGroup.Unset()
+}
+
+// GetNamespace returns the Namespace field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetNamespace() string {
-	if o == nil || IsNil(o.Namespace) {
+	if o == nil || IsNil(o.Namespace.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Namespace
+	return *o.Namespace.Get()
 }
 
 // GetNamespaceOk returns a tuple with the Namespace field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetNamespaceOk() (*string, bool) {
-	if o == nil || IsNil(o.Namespace) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Namespace, true
+	return o.Namespace.Get(), o.Namespace.IsSet()
 }
 
 // IsSetNamespace returns a boolean if a field has been set.
 func (o *ListClusterVolumes200ResponseAllOfVolumesInner) IsSetNamespace() bool {
-	if o != nil && !IsNil(o.Namespace) {
+	if o != nil && o.Namespace.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetNamespace gets a reference to the given string and assigns it to the Namespace field.
+// SetNamespace gets a reference to the given NullableString and assigns it to the Namespace field.
 func (o *ListClusterVolumes200ResponseAllOfVolumesInner) SetNamespace(v string) {
-	o.Namespace = &v
+	o.Namespace.Set(&v)
 }
 
-// GetStorageServer returns the StorageServer field value if set, zero value otherwise.
+// SetNamespaceNil sets the value for Namespace to be an explicit nil
+func (o *ListClusterVolumes200ResponseAllOfVolumesInner) SetNamespaceNil() {
+	o.Namespace.Set(nil)
+}
+
+// UnsetNamespace ensures that no value is present for Namespace, not even an explicit nil
+func (o *ListClusterVolumes200ResponseAllOfVolumesInner) UnsetNamespace() {
+	o.Namespace.Unset()
+}
+
+// GetStorageServer returns the StorageServer field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetStorageServer() string {
-	if o == nil || IsNil(o.StorageServer) {
+	if o == nil || IsNil(o.StorageServer.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.StorageServer
+	return *o.StorageServer.Get()
 }
 
 // GetStorageServerOk returns a tuple with the StorageServer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetStorageServerOk() (*string, bool) {
-	if o == nil || IsNil(o.StorageServer) {
+	if o == nil {
 		return nil, false
 	}
-	return o.StorageServer, true
+	return o.StorageServer.Get(), o.StorageServer.IsSet()
 }
 
 // IsSetStorageServer returns a boolean if a field has been set.
 func (o *ListClusterVolumes200ResponseAllOfVolumesInner) IsSetStorageServer() bool {
-	if o != nil && !IsNil(o.StorageServer) {
+	if o != nil && o.StorageServer.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetStorageServer gets a reference to the given string and assigns it to the StorageServer field.
+// SetStorageServer gets a reference to the given NullableString and assigns it to the StorageServer field.
 func (o *ListClusterVolumes200ResponseAllOfVolumesInner) SetStorageServer(v string) {
-	o.StorageServer = &v
+	o.StorageServer.Set(&v)
+}
+
+// SetStorageServerNil sets the value for StorageServer to be an explicit nil
+func (o *ListClusterVolumes200ResponseAllOfVolumesInner) SetStorageServerNil() {
+	o.StorageServer.Set(nil)
+}
+
+// UnsetStorageServer ensures that no value is present for StorageServer, not even an explicit nil
+func (o *ListClusterVolumes200ResponseAllOfVolumesInner) UnsetStorageServer() {
+	o.StorageServer.Unset()
 }
 
 // GetSource returns the Source field value if set, zero value otherwise.
@@ -1444,68 +1565,90 @@ func (o *ListClusterVolumes200ResponseAllOfVolumesInner) SetSource(v string) {
 	o.Source = &v
 }
 
-// GetUniqueId returns the UniqueId field value if set, zero value otherwise.
+// GetUniqueId returns the UniqueId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetUniqueId() string {
-	if o == nil || IsNil(o.UniqueId) {
+	if o == nil || IsNil(o.UniqueId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.UniqueId
+	return *o.UniqueId.Get()
 }
 
 // GetUniqueIdOk returns a tuple with the UniqueId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetUniqueIdOk() (*string, bool) {
-	if o == nil || IsNil(o.UniqueId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.UniqueId, true
+	return o.UniqueId.Get(), o.UniqueId.IsSet()
 }
 
 // IsSetUniqueId returns a boolean if a field has been set.
 func (o *ListClusterVolumes200ResponseAllOfVolumesInner) IsSetUniqueId() bool {
-	if o != nil && !IsNil(o.UniqueId) {
+	if o != nil && o.UniqueId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetUniqueId gets a reference to the given string and assigns it to the UniqueId field.
+// SetUniqueId gets a reference to the given NullableString and assigns it to the UniqueId field.
 func (o *ListClusterVolumes200ResponseAllOfVolumesInner) SetUniqueId(v string) {
-	o.UniqueId = &v
+	o.UniqueId.Set(&v)
 }
 
-// GetInternalId returns the InternalId field value if set, zero value otherwise.
+// SetUniqueIdNil sets the value for UniqueId to be an explicit nil
+func (o *ListClusterVolumes200ResponseAllOfVolumesInner) SetUniqueIdNil() {
+	o.UniqueId.Set(nil)
+}
+
+// UnsetUniqueId ensures that no value is present for UniqueId, not even an explicit nil
+func (o *ListClusterVolumes200ResponseAllOfVolumesInner) UnsetUniqueId() {
+	o.UniqueId.Unset()
+}
+
+// GetInternalId returns the InternalId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetInternalId() string {
-	if o == nil || IsNil(o.InternalId) {
+	if o == nil || IsNil(o.InternalId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.InternalId
+	return *o.InternalId.Get()
 }
 
 // GetInternalIdOk returns a tuple with the InternalId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetInternalIdOk() (*string, bool) {
-	if o == nil || IsNil(o.InternalId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.InternalId, true
+	return o.InternalId.Get(), o.InternalId.IsSet()
 }
 
 // IsSetInternalId returns a boolean if a field has been set.
 func (o *ListClusterVolumes200ResponseAllOfVolumesInner) IsSetInternalId() bool {
-	if o != nil && !IsNil(o.InternalId) {
+	if o != nil && o.InternalId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetInternalId gets a reference to the given string and assigns it to the InternalId field.
+// SetInternalId gets a reference to the given NullableString and assigns it to the InternalId field.
 func (o *ListClusterVolumes200ResponseAllOfVolumesInner) SetInternalId(v string) {
-	o.InternalId = &v
+	o.InternalId.Set(&v)
+}
+
+// SetInternalIdNil sets the value for InternalId to be an explicit nil
+func (o *ListClusterVolumes200ResponseAllOfVolumesInner) SetInternalIdNil() {
+	o.InternalId.Set(nil)
+}
+
+// UnsetInternalId ensures that no value is present for InternalId, not even an explicit nil
+func (o *ListClusterVolumes200ResponseAllOfVolumesInner) UnsetInternalId() {
+	o.InternalId.Unset()
 }
 
 // GetExternalId returns the ExternalId field value if set, zero value otherwise.
@@ -1540,196 +1683,262 @@ func (o *ListClusterVolumes200ResponseAllOfVolumesInner) SetExternalId(v string)
 	o.ExternalId = &v
 }
 
-// GetProvisionType returns the ProvisionType field value if set, zero value otherwise.
+// GetProvisionType returns the ProvisionType field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetProvisionType() string {
-	if o == nil || IsNil(o.ProvisionType) {
+	if o == nil || IsNil(o.ProvisionType.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ProvisionType
+	return *o.ProvisionType.Get()
 }
 
 // GetProvisionTypeOk returns a tuple with the ProvisionType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetProvisionTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.ProvisionType) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ProvisionType, true
+	return o.ProvisionType.Get(), o.ProvisionType.IsSet()
 }
 
 // IsSetProvisionType returns a boolean if a field has been set.
 func (o *ListClusterVolumes200ResponseAllOfVolumesInner) IsSetProvisionType() bool {
-	if o != nil && !IsNil(o.ProvisionType) {
+	if o != nil && o.ProvisionType.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetProvisionType gets a reference to the given string and assigns it to the ProvisionType field.
+// SetProvisionType gets a reference to the given NullableString and assigns it to the ProvisionType field.
 func (o *ListClusterVolumes200ResponseAllOfVolumesInner) SetProvisionType(v string) {
-	o.ProvisionType = &v
+	o.ProvisionType.Set(&v)
 }
 
-// GetCopyType returns the CopyType field value if set, zero value otherwise.
+// SetProvisionTypeNil sets the value for ProvisionType to be an explicit nil
+func (o *ListClusterVolumes200ResponseAllOfVolumesInner) SetProvisionTypeNil() {
+	o.ProvisionType.Set(nil)
+}
+
+// UnsetProvisionType ensures that no value is present for ProvisionType, not even an explicit nil
+func (o *ListClusterVolumes200ResponseAllOfVolumesInner) UnsetProvisionType() {
+	o.ProvisionType.Unset()
+}
+
+// GetCopyType returns the CopyType field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetCopyType() string {
-	if o == nil || IsNil(o.CopyType) {
+	if o == nil || IsNil(o.CopyType.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.CopyType
+	return *o.CopyType.Get()
 }
 
 // GetCopyTypeOk returns a tuple with the CopyType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetCopyTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.CopyType) {
+	if o == nil {
 		return nil, false
 	}
-	return o.CopyType, true
+	return o.CopyType.Get(), o.CopyType.IsSet()
 }
 
 // IsSetCopyType returns a boolean if a field has been set.
 func (o *ListClusterVolumes200ResponseAllOfVolumesInner) IsSetCopyType() bool {
-	if o != nil && !IsNil(o.CopyType) {
+	if o != nil && o.CopyType.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCopyType gets a reference to the given string and assigns it to the CopyType field.
+// SetCopyType gets a reference to the given NullableString and assigns it to the CopyType field.
 func (o *ListClusterVolumes200ResponseAllOfVolumesInner) SetCopyType(v string) {
-	o.CopyType = &v
+	o.CopyType.Set(&v)
 }
 
-// GetFiberWwn returns the FiberWwn field value if set, zero value otherwise.
+// SetCopyTypeNil sets the value for CopyType to be an explicit nil
+func (o *ListClusterVolumes200ResponseAllOfVolumesInner) SetCopyTypeNil() {
+	o.CopyType.Set(nil)
+}
+
+// UnsetCopyType ensures that no value is present for CopyType, not even an explicit nil
+func (o *ListClusterVolumes200ResponseAllOfVolumesInner) UnsetCopyType() {
+	o.CopyType.Unset()
+}
+
+// GetFiberWwn returns the FiberWwn field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetFiberWwn() string {
-	if o == nil || IsNil(o.FiberWwn) {
+	if o == nil || IsNil(o.FiberWwn.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.FiberWwn
+	return *o.FiberWwn.Get()
 }
 
 // GetFiberWwnOk returns a tuple with the FiberWwn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetFiberWwnOk() (*string, bool) {
-	if o == nil || IsNil(o.FiberWwn) {
+	if o == nil {
 		return nil, false
 	}
-	return o.FiberWwn, true
+	return o.FiberWwn.Get(), o.FiberWwn.IsSet()
 }
 
 // IsSetFiberWwn returns a boolean if a field has been set.
 func (o *ListClusterVolumes200ResponseAllOfVolumesInner) IsSetFiberWwn() bool {
-	if o != nil && !IsNil(o.FiberWwn) {
+	if o != nil && o.FiberWwn.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetFiberWwn gets a reference to the given string and assigns it to the FiberWwn field.
+// SetFiberWwn gets a reference to the given NullableString and assigns it to the FiberWwn field.
 func (o *ListClusterVolumes200ResponseAllOfVolumesInner) SetFiberWwn(v string) {
-	o.FiberWwn = &v
+	o.FiberWwn.Set(&v)
 }
 
-// GetFileName returns the FileName field value if set, zero value otherwise.
+// SetFiberWwnNil sets the value for FiberWwn to be an explicit nil
+func (o *ListClusterVolumes200ResponseAllOfVolumesInner) SetFiberWwnNil() {
+	o.FiberWwn.Set(nil)
+}
+
+// UnsetFiberWwn ensures that no value is present for FiberWwn, not even an explicit nil
+func (o *ListClusterVolumes200ResponseAllOfVolumesInner) UnsetFiberWwn() {
+	o.FiberWwn.Unset()
+}
+
+// GetFileName returns the FileName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetFileName() string {
-	if o == nil || IsNil(o.FileName) {
+	if o == nil || IsNil(o.FileName.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.FileName
+	return *o.FileName.Get()
 }
 
 // GetFileNameOk returns a tuple with the FileName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetFileNameOk() (*string, bool) {
-	if o == nil || IsNil(o.FileName) {
+	if o == nil {
 		return nil, false
 	}
-	return o.FileName, true
+	return o.FileName.Get(), o.FileName.IsSet()
 }
 
 // IsSetFileName returns a boolean if a field has been set.
 func (o *ListClusterVolumes200ResponseAllOfVolumesInner) IsSetFileName() bool {
-	if o != nil && !IsNil(o.FileName) {
+	if o != nil && o.FileName.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetFileName gets a reference to the given string and assigns it to the FileName field.
+// SetFileName gets a reference to the given NullableString and assigns it to the FileName field.
 func (o *ListClusterVolumes200ResponseAllOfVolumesInner) SetFileName(v string) {
-	o.FileName = &v
+	o.FileName.Set(&v)
 }
 
-// GetClaimName returns the ClaimName field value if set, zero value otherwise.
+// SetFileNameNil sets the value for FileName to be an explicit nil
+func (o *ListClusterVolumes200ResponseAllOfVolumesInner) SetFileNameNil() {
+	o.FileName.Set(nil)
+}
+
+// UnsetFileName ensures that no value is present for FileName, not even an explicit nil
+func (o *ListClusterVolumes200ResponseAllOfVolumesInner) UnsetFileName() {
+	o.FileName.Unset()
+}
+
+// GetClaimName returns the ClaimName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetClaimName() string {
-	if o == nil || IsNil(o.ClaimName) {
+	if o == nil || IsNil(o.ClaimName.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ClaimName
+	return *o.ClaimName.Get()
 }
 
 // GetClaimNameOk returns a tuple with the ClaimName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetClaimNameOk() (*string, bool) {
-	if o == nil || IsNil(o.ClaimName) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ClaimName, true
+	return o.ClaimName.Get(), o.ClaimName.IsSet()
 }
 
 // IsSetClaimName returns a boolean if a field has been set.
 func (o *ListClusterVolumes200ResponseAllOfVolumesInner) IsSetClaimName() bool {
-	if o != nil && !IsNil(o.ClaimName) {
+	if o != nil && o.ClaimName.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetClaimName gets a reference to the given string and assigns it to the ClaimName field.
+// SetClaimName gets a reference to the given NullableString and assigns it to the ClaimName field.
 func (o *ListClusterVolumes200ResponseAllOfVolumesInner) SetClaimName(v string) {
-	o.ClaimName = &v
+	o.ClaimName.Set(&v)
 }
 
-// GetSharePath returns the SharePath field value if set, zero value otherwise.
+// SetClaimNameNil sets the value for ClaimName to be an explicit nil
+func (o *ListClusterVolumes200ResponseAllOfVolumesInner) SetClaimNameNil() {
+	o.ClaimName.Set(nil)
+}
+
+// UnsetClaimName ensures that no value is present for ClaimName, not even an explicit nil
+func (o *ListClusterVolumes200ResponseAllOfVolumesInner) UnsetClaimName() {
+	o.ClaimName.Unset()
+}
+
+// GetSharePath returns the SharePath field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetSharePath() string {
-	if o == nil || IsNil(o.SharePath) {
+	if o == nil || IsNil(o.SharePath.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.SharePath
+	return *o.SharePath.Get()
 }
 
 // GetSharePathOk returns a tuple with the SharePath field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetSharePathOk() (*string, bool) {
-	if o == nil || IsNil(o.SharePath) {
+	if o == nil {
 		return nil, false
 	}
-	return o.SharePath, true
+	return o.SharePath.Get(), o.SharePath.IsSet()
 }
 
 // IsSetSharePath returns a boolean if a field has been set.
 func (o *ListClusterVolumes200ResponseAllOfVolumesInner) IsSetSharePath() bool {
-	if o != nil && !IsNil(o.SharePath) {
+	if o != nil && o.SharePath.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetSharePath gets a reference to the given string and assigns it to the SharePath field.
+// SetSharePath gets a reference to the given NullableString and assigns it to the SharePath field.
 func (o *ListClusterVolumes200ResponseAllOfVolumesInner) SetSharePath(v string) {
-	o.SharePath = &v
+	o.SharePath.Set(&v)
+}
+
+// SetSharePathNil sets the value for SharePath to be an explicit nil
+func (o *ListClusterVolumes200ResponseAllOfVolumesInner) SetSharePathNil() {
+	o.SharePath.Set(nil)
+}
+
+// UnsetSharePath ensures that no value is present for SharePath, not even an explicit nil
+func (o *ListClusterVolumes200ResponseAllOfVolumesInner) UnsetSharePath() {
+	o.SharePath.Unset()
 }
 
 // GetSourceId returns the SourceId field value if set, zero value otherwise.
@@ -1893,9 +2102,9 @@ func (o *ListClusterVolumes200ResponseAllOfVolumesInner) SetRawData(v string) {
 }
 
 // GetAccount returns the Account field value if set, zero value otherwise.
-func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetAccount() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetAccount() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.Account) {
-		var ret ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return *o.Account
@@ -1903,7 +2112,7 @@ func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetAccount() ListApplia
 
 // GetAccountOk returns a tuple with the Account field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetAccountOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetAccountOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.Account) {
 		return nil, false
 	}
@@ -1919,15 +2128,15 @@ func (o *ListClusterVolumes200ResponseAllOfVolumesInner) IsSetAccount() bool {
 	return false
 }
 
-// SetAccount gets a reference to the given ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the Account field.
-func (o *ListClusterVolumes200ResponseAllOfVolumesInner) SetAccount(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetAccount gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Account field.
+func (o *ListClusterVolumes200ResponseAllOfVolumesInner) SetAccount(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.Account = &v
 }
 
 // GetOwner returns the Owner field value if set, zero value otherwise.
-func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetOwner() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetOwner() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.Owner) {
-		var ret ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return *o.Owner
@@ -1935,7 +2144,7 @@ func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetOwner() ListApplianc
 
 // GetOwnerOk returns a tuple with the Owner field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetOwnerOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetOwnerOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.Owner) {
 		return nil, false
 	}
@@ -1951,8 +2160,8 @@ func (o *ListClusterVolumes200ResponseAllOfVolumesInner) IsSetOwner() bool {
 	return false
 }
 
-// SetOwner gets a reference to the given ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the Owner field.
-func (o *ListClusterVolumes200ResponseAllOfVolumesInner) SetOwner(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetOwner gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Owner field.
+func (o *ListClusterVolumes200ResponseAllOfVolumesInner) SetOwner(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.Owner = &v
 }
 
@@ -1972,26 +2181,26 @@ func (o ListClusterVolumes200ResponseAllOfVolumesInner) ToMap() (map[string]inte
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !IsNil(o.Description) {
-		toSerialize["description"] = o.Description
+	if o.Description.IsSet() {
+		toSerialize["description"] = o.Description.Get()
 	}
 	if !IsNil(o.Controller) {
 		toSerialize["controller"] = o.Controller
 	}
-	if !IsNil(o.ControllerId) {
-		toSerialize["controllerId"] = o.ControllerId
+	if o.ControllerId.IsSet() {
+		toSerialize["controllerId"] = o.ControllerId.Get()
 	}
-	if !IsNil(o.ControllerMountPoint) {
-		toSerialize["controllerMountPoint"] = o.ControllerMountPoint
+	if o.ControllerMountPoint.IsSet() {
+		toSerialize["controllerMountPoint"] = o.ControllerMountPoint.Get()
 	}
-	if !IsNil(o.Resizeable) {
-		toSerialize["resizeable"] = o.Resizeable
+	if o.Resizeable.IsSet() {
+		toSerialize["resizeable"] = o.Resizeable.Get()
 	}
 	if !IsNil(o.RootVolume) {
 		toSerialize["rootVolume"] = o.RootVolume
 	}
-	if !IsNil(o.UnitNumber) {
-		toSerialize["unitNumber"] = o.UnitNumber
+	if o.UnitNumber.IsSet() {
+		toSerialize["unitNumber"] = o.UnitNumber.Get()
 	}
 	if !IsNil(o.DeviceName) {
 		toSerialize["deviceName"] = o.DeviceName
@@ -2032,8 +2241,8 @@ func (o ListClusterVolumes200ResponseAllOfVolumesInner) ToMap() (map[string]inte
 	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status
 	}
-	if !IsNil(o.StatusMessage) {
-		toSerialize["statusMessage"] = o.StatusMessage
+	if o.StatusMessage.IsSet() {
+		toSerialize["statusMessage"] = o.StatusMessage.Get()
 	}
 	if !IsNil(o.ConfigurableIOPS) {
 		toSerialize["configurableIOPS"] = o.ConfigurableIOPS
@@ -2047,8 +2256,8 @@ func (o ListClusterVolumes200ResponseAllOfVolumesInner) ToMap() (map[string]inte
 	if !IsNil(o.DisplayOrder) {
 		toSerialize["displayOrder"] = o.DisplayOrder
 	}
-	if !IsNil(o.MaxIOPS) {
-		toSerialize["maxIOPS"] = o.MaxIOPS
+	if o.MaxIOPS.IsSet() {
+		toSerialize["maxIOPS"] = o.MaxIOPS.Get()
 	}
 	if !IsNil(o.Uuid) {
 		toSerialize["uuid"] = o.Uuid
@@ -2074,50 +2283,50 @@ func (o ListClusterVolumes200ResponseAllOfVolumesInner) ToMap() (map[string]inte
 	if !IsNil(o.Datastore) {
 		toSerialize["datastore"] = o.Datastore
 	}
-	if !IsNil(o.DatastoreId) {
-		toSerialize["datastoreId"] = o.DatastoreId
+	if o.DatastoreId.IsSet() {
+		toSerialize["datastoreId"] = o.DatastoreId.Get()
 	}
 	if !IsNil(o.DatastoreOption) {
 		toSerialize["datastoreOption"] = o.DatastoreOption
 	}
-	if !IsNil(o.StorageGroup) {
-		toSerialize["storageGroup"] = o.StorageGroup
+	if o.StorageGroup.IsSet() {
+		toSerialize["storageGroup"] = o.StorageGroup.Get()
 	}
-	if !IsNil(o.Namespace) {
-		toSerialize["namespace"] = o.Namespace
+	if o.Namespace.IsSet() {
+		toSerialize["namespace"] = o.Namespace.Get()
 	}
-	if !IsNil(o.StorageServer) {
-		toSerialize["storageServer"] = o.StorageServer
+	if o.StorageServer.IsSet() {
+		toSerialize["storageServer"] = o.StorageServer.Get()
 	}
 	if !IsNil(o.Source) {
 		toSerialize["source"] = o.Source
 	}
-	if !IsNil(o.UniqueId) {
-		toSerialize["uniqueId"] = o.UniqueId
+	if o.UniqueId.IsSet() {
+		toSerialize["uniqueId"] = o.UniqueId.Get()
 	}
-	if !IsNil(o.InternalId) {
-		toSerialize["internalId"] = o.InternalId
+	if o.InternalId.IsSet() {
+		toSerialize["internalId"] = o.InternalId.Get()
 	}
 	if !IsNil(o.ExternalId) {
 		toSerialize["externalId"] = o.ExternalId
 	}
-	if !IsNil(o.ProvisionType) {
-		toSerialize["provisionType"] = o.ProvisionType
+	if o.ProvisionType.IsSet() {
+		toSerialize["provisionType"] = o.ProvisionType.Get()
 	}
-	if !IsNil(o.CopyType) {
-		toSerialize["copyType"] = o.CopyType
+	if o.CopyType.IsSet() {
+		toSerialize["copyType"] = o.CopyType.Get()
 	}
-	if !IsNil(o.FiberWwn) {
-		toSerialize["fiberWwn"] = o.FiberWwn
+	if o.FiberWwn.IsSet() {
+		toSerialize["fiberWwn"] = o.FiberWwn.Get()
 	}
-	if !IsNil(o.FileName) {
-		toSerialize["fileName"] = o.FileName
+	if o.FileName.IsSet() {
+		toSerialize["fileName"] = o.FileName.Get()
 	}
-	if !IsNil(o.ClaimName) {
-		toSerialize["claimName"] = o.ClaimName
+	if o.ClaimName.IsSet() {
+		toSerialize["claimName"] = o.ClaimName.Get()
 	}
-	if !IsNil(o.SharePath) {
-		toSerialize["sharePath"] = o.SharePath
+	if o.SharePath.IsSet() {
+		toSerialize["sharePath"] = o.SharePath.Get()
 	}
 	if !IsNil(o.SourceId) {
 		toSerialize["sourceId"] = o.SourceId

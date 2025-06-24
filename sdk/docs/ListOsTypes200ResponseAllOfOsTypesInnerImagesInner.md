@@ -7,10 +7,10 @@ Name | Type | Description | Notes
 **Id** | Pointer to **int64** |  | [optional] 
 **VirtualImageId** | Pointer to **int64** |  | [optional] 
 **VirtualImageName** | Pointer to **string** |  | [optional] 
-**Account** | Pointer to **int64** |  | [optional] 
-**ProvisionType** | Pointer to **int64** |  | [optional] 
-**ComputeZoneType** | Pointer to **int64** |  | [optional] 
-**Zone** | Pointer to **int64** |  | [optional] 
+**Account** | Pointer to **NullableInt64** |  | [optional] 
+**ProvisionType** | Pointer to **NullableInt64** |  | [optional] 
+**ComputeZoneType** | Pointer to **NullableInt64** |  | [optional] 
+**Zone** | Pointer to **NullableInt64** |  | [optional] 
 
 ## Methods
 
@@ -131,6 +131,16 @@ SetAccount sets Account field to given value.
 
 HasAccount returns a boolean if a field has been set.
 
+### SetAccountNil
+
+`func (o *ListOsTypes200ResponseAllOfOsTypesInnerImagesInner) SetAccountNil(b bool)`
+
+ SetAccountNil sets the value for Account to be an explicit nil
+
+### UnsetAccount
+`func (o *ListOsTypes200ResponseAllOfOsTypesInnerImagesInner) UnsetAccount()`
+
+UnsetAccount ensures that no value is present for Account, not even an explicit nil
 ### GetProvisionType
 
 `func (o *ListOsTypes200ResponseAllOfOsTypesInnerImagesInner) GetProvisionType() int64`
@@ -156,6 +166,16 @@ SetProvisionType sets ProvisionType field to given value.
 
 HasProvisionType returns a boolean if a field has been set.
 
+### SetProvisionTypeNil
+
+`func (o *ListOsTypes200ResponseAllOfOsTypesInnerImagesInner) SetProvisionTypeNil(b bool)`
+
+ SetProvisionTypeNil sets the value for ProvisionType to be an explicit nil
+
+### UnsetProvisionType
+`func (o *ListOsTypes200ResponseAllOfOsTypesInnerImagesInner) UnsetProvisionType()`
+
+UnsetProvisionType ensures that no value is present for ProvisionType, not even an explicit nil
 ### GetComputeZoneType
 
 `func (o *ListOsTypes200ResponseAllOfOsTypesInnerImagesInner) GetComputeZoneType() int64`
@@ -181,6 +201,16 @@ SetComputeZoneType sets ComputeZoneType field to given value.
 
 HasComputeZoneType returns a boolean if a field has been set.
 
+### SetComputeZoneTypeNil
+
+`func (o *ListOsTypes200ResponseAllOfOsTypesInnerImagesInner) SetComputeZoneTypeNil(b bool)`
+
+ SetComputeZoneTypeNil sets the value for ComputeZoneType to be an explicit nil
+
+### UnsetComputeZoneType
+`func (o *ListOsTypes200ResponseAllOfOsTypesInnerImagesInner) UnsetComputeZoneType()`
+
+UnsetComputeZoneType ensures that no value is present for ComputeZoneType, not even an explicit nil
 ### GetZone
 
 `func (o *ListOsTypes200ResponseAllOfOsTypesInnerImagesInner) GetZone() int64`
@@ -206,6 +236,16 @@ SetZone sets Zone field to given value.
 
 HasZone returns a boolean if a field has been set.
 
+### SetZoneNil
+
+`func (o *ListOsTypes200ResponseAllOfOsTypesInnerImagesInner) SetZoneNil(b bool)`
+
+ SetZoneNil sets the value for Zone to be an explicit nil
+
+### UnsetZone
+`func (o *ListOsTypes200ResponseAllOfOsTypesInnerImagesInner) UnsetZone()`
+
+UnsetZone ensures that no value is present for Zone, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

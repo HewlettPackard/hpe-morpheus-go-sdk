@@ -7,14 +7,14 @@ Name | Type | Description | Notes
 **Type** | **string** | Type Code (Infoblox) | 
 **Name** | **string** | Name | 
 **Enabled** | Pointer to **bool** | Can be used to enable / disable the network pool server. | [optional] [default to true]
-**ServiceUrl** | **string** | URL | 
-**ServiceUsername** | Pointer to **string** | Username | [optional] 
-**ServicePassword** | Pointer to **string** | Password | [optional] 
-**ServiceThrottleRate** | Pointer to **int64** | Throttle Rate | [optional] [default to 0]
+**ServiceUrl** | **NullableString** | URL | 
+**ServiceUsername** | Pointer to **NullableString** | Username | [optional] 
+**ServicePassword** | Pointer to **NullableString** | Password | [optional] 
+**ServiceThrottleRate** | Pointer to **NullableInt64** | Throttle Rate | [optional] [default to 0]
 **IgnoreSsl** | Pointer to **bool** | Disable SSL SNI Verification | [optional] [default to true]
-**NetworkFilter** | Pointer to **string** | Network Filter | [optional] 
-**ZoneFilter** | Pointer to **string** | Zone Filter | [optional] 
-**TenantMatch** | Pointer to **string** | Tenant Match | [optional] 
+**NetworkFilter** | Pointer to **NullableString** | Network Filter | [optional] 
+**ZoneFilter** | Pointer to **NullableString** | Zone Filter | [optional] 
+**TenantMatch** | Pointer to **NullableString** | Tenant Match | [optional] 
 **ServiceMode** | Pointer to **string** | IP Mode | [optional] [default to "static"]
 **Config** | Pointer to [**InfobloxNetworkPoolServerConfig**](InfobloxNetworkPoolServerConfig.md) |  | [optional] 
 **Credential** | Pointer to [**NSXNetworkServerCredential**](NSXNetworkServerCredential.md) |  | [optional] 
@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 
 ### NewInfobloxNetworkPoolServer
 
-`func NewInfobloxNetworkPoolServer(type_ string, name string, serviceUrl string, ) *InfobloxNetworkPoolServer`
+`func NewInfobloxNetworkPoolServer(type_ string, name string, serviceUrl NullableString, ) *InfobloxNetworkPoolServer`
 
 NewInfobloxNetworkPoolServer instantiates a new InfobloxNetworkPoolServer object
 This constructor will assign default values to properties that have it defined,
@@ -123,6 +123,16 @@ and a boolean to check if the value has been set.
 SetServiceUrl sets ServiceUrl field to given value.
 
 
+### SetServiceUrlNil
+
+`func (o *InfobloxNetworkPoolServer) SetServiceUrlNil(b bool)`
+
+ SetServiceUrlNil sets the value for ServiceUrl to be an explicit nil
+
+### UnsetServiceUrl
+`func (o *InfobloxNetworkPoolServer) UnsetServiceUrl()`
+
+UnsetServiceUrl ensures that no value is present for ServiceUrl, not even an explicit nil
 ### GetServiceUsername
 
 `func (o *InfobloxNetworkPoolServer) GetServiceUsername() string`
@@ -148,6 +158,16 @@ SetServiceUsername sets ServiceUsername field to given value.
 
 HasServiceUsername returns a boolean if a field has been set.
 
+### SetServiceUsernameNil
+
+`func (o *InfobloxNetworkPoolServer) SetServiceUsernameNil(b bool)`
+
+ SetServiceUsernameNil sets the value for ServiceUsername to be an explicit nil
+
+### UnsetServiceUsername
+`func (o *InfobloxNetworkPoolServer) UnsetServiceUsername()`
+
+UnsetServiceUsername ensures that no value is present for ServiceUsername, not even an explicit nil
 ### GetServicePassword
 
 `func (o *InfobloxNetworkPoolServer) GetServicePassword() string`
@@ -173,6 +193,16 @@ SetServicePassword sets ServicePassword field to given value.
 
 HasServicePassword returns a boolean if a field has been set.
 
+### SetServicePasswordNil
+
+`func (o *InfobloxNetworkPoolServer) SetServicePasswordNil(b bool)`
+
+ SetServicePasswordNil sets the value for ServicePassword to be an explicit nil
+
+### UnsetServicePassword
+`func (o *InfobloxNetworkPoolServer) UnsetServicePassword()`
+
+UnsetServicePassword ensures that no value is present for ServicePassword, not even an explicit nil
 ### GetServiceThrottleRate
 
 `func (o *InfobloxNetworkPoolServer) GetServiceThrottleRate() int64`
@@ -198,6 +228,16 @@ SetServiceThrottleRate sets ServiceThrottleRate field to given value.
 
 HasServiceThrottleRate returns a boolean if a field has been set.
 
+### SetServiceThrottleRateNil
+
+`func (o *InfobloxNetworkPoolServer) SetServiceThrottleRateNil(b bool)`
+
+ SetServiceThrottleRateNil sets the value for ServiceThrottleRate to be an explicit nil
+
+### UnsetServiceThrottleRate
+`func (o *InfobloxNetworkPoolServer) UnsetServiceThrottleRate()`
+
+UnsetServiceThrottleRate ensures that no value is present for ServiceThrottleRate, not even an explicit nil
 ### GetIgnoreSsl
 
 `func (o *InfobloxNetworkPoolServer) GetIgnoreSsl() bool`
@@ -248,6 +288,16 @@ SetNetworkFilter sets NetworkFilter field to given value.
 
 HasNetworkFilter returns a boolean if a field has been set.
 
+### SetNetworkFilterNil
+
+`func (o *InfobloxNetworkPoolServer) SetNetworkFilterNil(b bool)`
+
+ SetNetworkFilterNil sets the value for NetworkFilter to be an explicit nil
+
+### UnsetNetworkFilter
+`func (o *InfobloxNetworkPoolServer) UnsetNetworkFilter()`
+
+UnsetNetworkFilter ensures that no value is present for NetworkFilter, not even an explicit nil
 ### GetZoneFilter
 
 `func (o *InfobloxNetworkPoolServer) GetZoneFilter() string`
@@ -273,6 +323,16 @@ SetZoneFilter sets ZoneFilter field to given value.
 
 HasZoneFilter returns a boolean if a field has been set.
 
+### SetZoneFilterNil
+
+`func (o *InfobloxNetworkPoolServer) SetZoneFilterNil(b bool)`
+
+ SetZoneFilterNil sets the value for ZoneFilter to be an explicit nil
+
+### UnsetZoneFilter
+`func (o *InfobloxNetworkPoolServer) UnsetZoneFilter()`
+
+UnsetZoneFilter ensures that no value is present for ZoneFilter, not even an explicit nil
 ### GetTenantMatch
 
 `func (o *InfobloxNetworkPoolServer) GetTenantMatch() string`
@@ -298,6 +358,16 @@ SetTenantMatch sets TenantMatch field to given value.
 
 HasTenantMatch returns a boolean if a field has been set.
 
+### SetTenantMatchNil
+
+`func (o *InfobloxNetworkPoolServer) SetTenantMatchNil(b bool)`
+
+ SetTenantMatchNil sets the value for TenantMatch to be an explicit nil
+
+### UnsetTenantMatch
+`func (o *InfobloxNetworkPoolServer) UnsetTenantMatch()`
+
+UnsetTenantMatch ensures that no value is present for TenantMatch, not even an explicit nil
 ### GetServiceMode
 
 `func (o *InfobloxNetworkPoolServer) GetServiceMode() string`

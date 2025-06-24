@@ -42,7 +42,7 @@ type ListStorageServerTypes200ResponseAllOfStorageServerTypesInner struct {
 	CreateDatastore        *bool                                                                                                           `json:"createDatastore,omitempty"`
 	CreateDisk             *bool                                                                                                           `json:"createDisk,omitempty"`
 	CreateHost             *bool                                                                                                           `json:"createHost,omitempty"`
-	IconCode               *string                                                                                                         `json:"iconCode,omitempty"`
+	IconCode               NullableString                                                                                                  `json:"iconCode,omitempty"`
 	HasFileBrowser         *bool                                                                                                           `json:"hasFileBrowser,omitempty"`
 	OptionTypes            []ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerOptionTypesInner                                 `json:"optionTypes,omitempty"`
 	GroupOptionTypes       []ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner                            `json:"groupOptionTypes,omitempty"`
@@ -776,36 +776,47 @@ func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInner) SetCreat
 	o.CreateHost = &v
 }
 
-// GetIconCode returns the IconCode field value if set, zero value otherwise.
+// GetIconCode returns the IconCode field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInner) GetIconCode() string {
-	if o == nil || IsNil(o.IconCode) {
+	if o == nil || IsNil(o.IconCode.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.IconCode
+	return *o.IconCode.Get()
 }
 
 // GetIconCodeOk returns a tuple with the IconCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInner) GetIconCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.IconCode) {
+	if o == nil {
 		return nil, false
 	}
-	return o.IconCode, true
+	return o.IconCode.Get(), o.IconCode.IsSet()
 }
 
 // IsSetIconCode returns a boolean if a field has been set.
 func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInner) IsSetIconCode() bool {
-	if o != nil && !IsNil(o.IconCode) {
+	if o != nil && o.IconCode.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetIconCode gets a reference to the given string and assigns it to the IconCode field.
+// SetIconCode gets a reference to the given NullableString and assigns it to the IconCode field.
 func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInner) SetIconCode(v string) {
-	o.IconCode = &v
+	o.IconCode.Set(&v)
+}
+
+// SetIconCodeNil sets the value for IconCode to be an explicit nil
+func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInner) SetIconCodeNil() {
+	o.IconCode.Set(nil)
+}
+
+// UnsetIconCode ensures that no value is present for IconCode, not even an explicit nil
+func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInner) UnsetIconCode() {
+	o.IconCode.Unset()
 }
 
 // GetHasFileBrowser returns the HasFileBrowser field value if set, zero value otherwise.
@@ -904,9 +915,9 @@ func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInner) SetGroup
 	o.GroupOptionTypes = v
 }
 
-// GetBucketOptionTypes returns the BucketOptionTypes field value if set, zero value otherwise.
+// GetBucketOptionTypes returns the BucketOptionTypes field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInner) GetBucketOptionTypes() []map[string]interface{} {
-	if o == nil || IsNil(o.BucketOptionTypes) {
+	if o == nil {
 		var ret []map[string]interface{}
 		return ret
 	}
@@ -915,6 +926,7 @@ func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInner) GetBucke
 
 // GetBucketOptionTypesOk returns a tuple with the BucketOptionTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInner) GetBucketOptionTypesOk() ([]map[string]interface{}, bool) {
 	if o == nil || IsNil(o.BucketOptionTypes) {
 		return nil, false
@@ -936,9 +948,9 @@ func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInner) SetBucke
 	o.BucketOptionTypes = v
 }
 
-// GetShareOptionTypes returns the ShareOptionTypes field value if set, zero value otherwise.
+// GetShareOptionTypes returns the ShareOptionTypes field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInner) GetShareOptionTypes() []map[string]interface{} {
-	if o == nil || IsNil(o.ShareOptionTypes) {
+	if o == nil {
 		var ret []map[string]interface{}
 		return ret
 	}
@@ -947,6 +959,7 @@ func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInner) GetShare
 
 // GetShareOptionTypesOk returns a tuple with the ShareOptionTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInner) GetShareOptionTypesOk() ([]map[string]interface{}, bool) {
 	if o == nil || IsNil(o.ShareOptionTypes) {
 		return nil, false
@@ -968,9 +981,9 @@ func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInner) SetShare
 	o.ShareOptionTypes = v
 }
 
-// GetShareAccessOptionTypes returns the ShareAccessOptionTypes field value if set, zero value otherwise.
+// GetShareAccessOptionTypes returns the ShareAccessOptionTypes field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInner) GetShareAccessOptionTypes() []map[string]interface{} {
-	if o == nil || IsNil(o.ShareAccessOptionTypes) {
+	if o == nil {
 		var ret []map[string]interface{}
 		return ret
 	}
@@ -979,6 +992,7 @@ func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInner) GetShare
 
 // GetShareAccessOptionTypesOk returns a tuple with the ShareAccessOptionTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInner) GetShareAccessOptionTypesOk() ([]map[string]interface{}, bool) {
 	if o == nil || IsNil(o.ShareAccessOptionTypes) {
 		return nil, false
@@ -1108,8 +1122,8 @@ func (o ListStorageServerTypes200ResponseAllOfStorageServerTypesInner) ToMap() (
 	if !IsNil(o.CreateHost) {
 		toSerialize["createHost"] = o.CreateHost
 	}
-	if !IsNil(o.IconCode) {
-		toSerialize["iconCode"] = o.IconCode
+	if o.IconCode.IsSet() {
+		toSerialize["iconCode"] = o.IconCode.Get()
 	}
 	if !IsNil(o.HasFileBrowser) {
 		toSerialize["hasFileBrowser"] = o.HasFileBrowser
@@ -1120,13 +1134,13 @@ func (o ListStorageServerTypes200ResponseAllOfStorageServerTypesInner) ToMap() (
 	if !IsNil(o.GroupOptionTypes) {
 		toSerialize["groupOptionTypes"] = o.GroupOptionTypes
 	}
-	if !IsNil(o.BucketOptionTypes) {
+	if o.BucketOptionTypes != nil {
 		toSerialize["bucketOptionTypes"] = o.BucketOptionTypes
 	}
-	if !IsNil(o.ShareOptionTypes) {
+	if o.ShareOptionTypes != nil {
 		toSerialize["shareOptionTypes"] = o.ShareOptionTypes
 	}
-	if !IsNil(o.ShareAccessOptionTypes) {
+	if o.ShareAccessOptionTypes != nil {
 		toSerialize["shareAccessOptionTypes"] = o.ShareAccessOptionTypes
 	}
 	if !IsNil(o.StorageVolumeTypes) {

@@ -32,7 +32,7 @@ type SecurityScan struct {
 	FailCount       *int64                                              `json:"failCount,omitempty"`
 	OtherCount      *int64                                              `json:"otherCount,omitempty"`
 	ScanScore       *float32                                            `json:"scanScore,omitempty"`
-	ExternalId      *string                                             `json:"externalId,omitempty"`
+	ExternalId      NullableString                                      `json:"externalId,omitempty"`
 	CreatedBy       *string                                             `json:"createdBy,omitempty"`
 	UpdatedBy       *string                                             `json:"updatedBy,omitempty"`
 	DateCreated     *time.Time                                          `json:"dateCreated,omitempty"`
@@ -413,36 +413,47 @@ func (o *SecurityScan) SetScanScore(v float32) {
 	o.ScanScore = &v
 }
 
-// GetExternalId returns the ExternalId field value if set, zero value otherwise.
+// GetExternalId returns the ExternalId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SecurityScan) GetExternalId() string {
-	if o == nil || IsNil(o.ExternalId) {
+	if o == nil || IsNil(o.ExternalId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ExternalId
+	return *o.ExternalId.Get()
 }
 
 // GetExternalIdOk returns a tuple with the ExternalId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SecurityScan) GetExternalIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ExternalId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ExternalId, true
+	return o.ExternalId.Get(), o.ExternalId.IsSet()
 }
 
 // IsSetExternalId returns a boolean if a field has been set.
 func (o *SecurityScan) IsSetExternalId() bool {
-	if o != nil && !IsNil(o.ExternalId) {
+	if o != nil && o.ExternalId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetExternalId gets a reference to the given string and assigns it to the ExternalId field.
+// SetExternalId gets a reference to the given NullableString and assigns it to the ExternalId field.
 func (o *SecurityScan) SetExternalId(v string) {
-	o.ExternalId = &v
+	o.ExternalId.Set(&v)
+}
+
+// SetExternalIdNil sets the value for ExternalId to be an explicit nil
+func (o *SecurityScan) SetExternalIdNil() {
+	o.ExternalId.Set(nil)
+}
+
+// UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
+func (o *SecurityScan) UnsetExternalId() {
+	o.ExternalId.Unset()
 }
 
 // GetCreatedBy returns the CreatedBy field value if set, zero value otherwise.
@@ -648,8 +659,8 @@ func (o SecurityScan) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ScanScore) {
 		toSerialize["scanScore"] = o.ScanScore
 	}
-	if !IsNil(o.ExternalId) {
-		toSerialize["externalId"] = o.ExternalId
+	if o.ExternalId.IsSet() {
+		toSerialize["externalId"] = o.ExternalId.Get()
 	}
 	if !IsNil(o.CreatedBy) {
 		toSerialize["createdBy"] = o.CreatedBy

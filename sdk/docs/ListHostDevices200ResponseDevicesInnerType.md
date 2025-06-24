@@ -6,12 +6,12 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**Family** | Pointer to **string** |  | [optional] 
-**BusType** | Pointer to **string** |  | [optional] 
+**Family** | Pointer to **NullableString** |  | [optional] 
+**BusType** | Pointer to **NullableString** |  | [optional] 
 **Assignable** | Pointer to **bool** |  | [optional] 
 **Hotpluggable** | Pointer to **bool** |  | [optional] 
-**VendorId** | Pointer to **int32** |  | [optional] 
-**ProductId** | Pointer to **int32** |  | [optional] 
+**VendorId** | Pointer to **NullableInt32** |  | [optional] 
+**ProductId** | Pointer to **NullableInt32** |  | [optional] 
 
 ## Methods
 
@@ -107,6 +107,16 @@ SetFamily sets Family field to given value.
 
 HasFamily returns a boolean if a field has been set.
 
+### SetFamilyNil
+
+`func (o *ListHostDevices200ResponseDevicesInnerType) SetFamilyNil(b bool)`
+
+ SetFamilyNil sets the value for Family to be an explicit nil
+
+### UnsetFamily
+`func (o *ListHostDevices200ResponseDevicesInnerType) UnsetFamily()`
+
+UnsetFamily ensures that no value is present for Family, not even an explicit nil
 ### GetBusType
 
 `func (o *ListHostDevices200ResponseDevicesInnerType) GetBusType() string`
@@ -132,6 +142,16 @@ SetBusType sets BusType field to given value.
 
 HasBusType returns a boolean if a field has been set.
 
+### SetBusTypeNil
+
+`func (o *ListHostDevices200ResponseDevicesInnerType) SetBusTypeNil(b bool)`
+
+ SetBusTypeNil sets the value for BusType to be an explicit nil
+
+### UnsetBusType
+`func (o *ListHostDevices200ResponseDevicesInnerType) UnsetBusType()`
+
+UnsetBusType ensures that no value is present for BusType, not even an explicit nil
 ### GetAssignable
 
 `func (o *ListHostDevices200ResponseDevicesInnerType) GetAssignable() bool`
@@ -207,6 +227,16 @@ SetVendorId sets VendorId field to given value.
 
 HasVendorId returns a boolean if a field has been set.
 
+### SetVendorIdNil
+
+`func (o *ListHostDevices200ResponseDevicesInnerType) SetVendorIdNil(b bool)`
+
+ SetVendorIdNil sets the value for VendorId to be an explicit nil
+
+### UnsetVendorId
+`func (o *ListHostDevices200ResponseDevicesInnerType) UnsetVendorId()`
+
+UnsetVendorId ensures that no value is present for VendorId, not even an explicit nil
 ### GetProductId
 
 `func (o *ListHostDevices200ResponseDevicesInnerType) GetProductId() int32`
@@ -232,6 +262,16 @@ SetProductId sets ProductId field to given value.
 
 HasProductId returns a boolean if a field has been set.
 
+### SetProductIdNil
+
+`func (o *ListHostDevices200ResponseDevicesInnerType) SetProductIdNil(b bool)`
+
+ SetProductIdNil sets the value for ProductId to be an explicit nil
+
+### UnsetProductId
+`func (o *ListHostDevices200ResponseDevicesInnerType) UnsetProductId()`
+
+UnsetProductId ensures that no value is present for ProductId, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

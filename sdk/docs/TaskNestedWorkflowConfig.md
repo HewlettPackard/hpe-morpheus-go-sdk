@@ -7,12 +7,12 @@ Name | Type | Description | Notes
 **Id** | Pointer to **int64** |  | [optional] 
 **AccountId** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**Code** | Pointer to **string** |  | [optional] 
+**Code** | Pointer to **NullableString** |  | [optional] 
 **TaskType** | Pointer to [**ListTasks200ResponseAllOfTasksInnerAnyOf9TaskType**](ListTasks200ResponseAllOfTasksInnerAnyOf9TaskType.md) |  | [optional] 
 **Labels** | Pointer to **[]string** |  | [optional] 
 **Visibility** | Pointer to **string** |  | [optional] 
 **TaskOptions** | Pointer to [**ListTasks200ResponseAllOfTasksInnerAnyOf9TaskOptions**](ListTasks200ResponseAllOfTasksInnerAnyOf9TaskOptions.md) |  | [optional] 
-**ResultType** | Pointer to **string** |  | [optional] 
+**ResultType** | Pointer to **NullableString** |  | [optional] 
 **ExecuteTarget** | Pointer to **string** |  | [optional] 
 **Retryable** | Pointer to **bool** |  | [optional] 
 **RetryCount** | Pointer to **int64** |  | [optional] 
@@ -141,6 +141,16 @@ SetCode sets Code field to given value.
 
 HasCode returns a boolean if a field has been set.
 
+### SetCodeNil
+
+`func (o *TaskNestedWorkflowConfig) SetCodeNil(b bool)`
+
+ SetCodeNil sets the value for Code to be an explicit nil
+
+### UnsetCode
+`func (o *TaskNestedWorkflowConfig) UnsetCode()`
+
+UnsetCode ensures that no value is present for Code, not even an explicit nil
 ### GetTaskType
 
 `func (o *TaskNestedWorkflowConfig) GetTaskType() ListTasks200ResponseAllOfTasksInnerAnyOf9TaskType`
@@ -266,6 +276,16 @@ SetResultType sets ResultType field to given value.
 
 HasResultType returns a boolean if a field has been set.
 
+### SetResultTypeNil
+
+`func (o *TaskNestedWorkflowConfig) SetResultTypeNil(b bool)`
+
+ SetResultTypeNil sets the value for ResultType to be an explicit nil
+
+### UnsetResultType
+`func (o *TaskNestedWorkflowConfig) UnsetResultType()`
+
+UnsetResultType ensures that no value is present for ResultType, not even an explicit nil
 ### GetExecuteTarget
 
 `func (o *TaskNestedWorkflowConfig) GetExecuteTarget() string`

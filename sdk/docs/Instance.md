@@ -7,9 +7,9 @@ Name | Type | Description | Notes
 **Id** | Pointer to **int64** |  | [optional] 
 **Uuid** | Pointer to **string** |  | [optional] 
 **AccountId** | Pointer to **int64** |  | [optional] 
-**Tenant** | Pointer to [**ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
+**Tenant** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **InstanceType** | Pointer to [**AddInstance200ResponseAllOfOneOfInstanceInstanceType**](AddInstance200ResponseAllOfOneOfInstanceInstanceType.md) |  | [optional] 
-**Group** | Pointer to [**ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
+**Group** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **Cloud** | Pointer to [**ListApps200ResponseAllOfAppsInnerBlueprint**](ListApps200ResponseAllOfAppsInnerBlueprint.md) |  | [optional] 
 **Cluster** | Pointer to [**ListInstances200ResponseAllOfInstancesInnerCluster**](ListInstances200ResponseAllOfInstancesInnerCluster.md) |  | [optional] 
 **Containers** | Pointer to **[]int64** |  | [optional] 
@@ -19,12 +19,12 @@ Name | Type | Description | Notes
 **Plan** | Pointer to [**ListBackupSettings200ResponseBackupSettingsDefaultSchedule**](ListBackupSettings200ResponseBackupSettingsDefaultSchedule.md) |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **DisplayName** | Pointer to **string** |  | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
-**Environment** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **NullableString** |  | [optional] 
+**Environment** | Pointer to **NullableString** |  | [optional] 
 **Config** | Pointer to [**AddInstance200ResponseAllOfOneOfInstanceConfig**](AddInstance200ResponseAllOfOneOfInstanceConfig.md) |  | [optional] 
-**ConfigGroup** | Pointer to **string** |  | [optional] 
-**ConfigId** | Pointer to **string** |  | [optional] 
-**ConfigRole** | Pointer to **string** |  | [optional] 
+**ConfigGroup** | Pointer to **NullableString** |  | [optional] 
+**ConfigId** | Pointer to **NullableString** |  | [optional] 
+**ConfigRole** | Pointer to **NullableString** |  | [optional] 
 **Volumes** | Pointer to [**[]AddInstance200ResponseAllOfOneOfInstanceVolumesInner**](AddInstance200ResponseAllOfOneOfInstanceVolumesInner.md) |  | [optional] 
 **Controllers** | Pointer to [**[]ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceControllersInner**](ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceControllersInner.md) |  | [optional] 
 **Interfaces** | Pointer to [**[]AddInstance200ResponseAllOfOneOfInstanceInterfacesInner**](AddInstance200ResponseAllOfOneOfInstanceInterfacesInner.md) |  | [optional] 
@@ -36,29 +36,29 @@ Name | Type | Description | Notes
 **MaxMemory** | Pointer to **int64** |  | [optional] 
 **MaxStorage** | Pointer to **int64** |  | [optional] 
 **MaxCores** | Pointer to **int64** |  | [optional] 
-**CoresPerSocket** | Pointer to **int64** |  | [optional] 
-**MaxCpu** | Pointer to **string** |  | [optional] 
+**CoresPerSocket** | Pointer to **NullableInt64** |  | [optional] 
+**MaxCpu** | Pointer to **NullableString** |  | [optional] 
 **HourlyCost** | Pointer to **float32** |  | [optional] 
 **HourlyPrice** | Pointer to **float32** |  | [optional] 
 **InstancePrice** | Pointer to [**AddInstance200ResponseAllOfOneOfInstanceInstancePrice**](AddInstance200ResponseAllOfOneOfInstanceInstancePrice.md) |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
 **HostName** | Pointer to **string** |  | [optional] 
-**DomainName** | Pointer to **string** |  | [optional] 
-**EnvironmentPrefix** | Pointer to **string** |  | [optional] 
+**DomainName** | Pointer to **NullableString** |  | [optional] 
+**EnvironmentPrefix** | Pointer to **NullableString** |  | [optional] 
 **FirewallEnabled** | Pointer to **bool** |  | [optional] 
 **NetworkLevel** | Pointer to **string** |  | [optional] 
 **AutoScale** | Pointer to **bool** |  | [optional] 
-**InstanceContext** | Pointer to **string** |  | [optional] 
-**CurrentDeployId** | Pointer to **string** |  | [optional] 
+**InstanceContext** | Pointer to **NullableString** |  | [optional] 
+**CurrentDeployId** | Pointer to **NullableString** |  | [optional] 
 **Locked** | Pointer to **bool** |  | [optional] 
 **Status** | Pointer to **string** |  | [optional] 
-**StatusMessage** | Pointer to **string** |  | [optional] 
-**ErrorMessage** | Pointer to **string** |  | [optional] 
+**StatusMessage** | Pointer to **NullableString** |  | [optional] 
+**ErrorMessage** | Pointer to **NullableString** |  | [optional] 
 **StatusDate** | Pointer to **time.Time** |  | [optional] 
-**StatusPercent** | Pointer to **string** |  | [optional] 
-**StatusEta** | Pointer to **string** |  | [optional] 
-**UserStatus** | Pointer to **string** |  | [optional] 
+**StatusPercent** | Pointer to **NullableString** |  | [optional] 
+**StatusEta** | Pointer to **NullableString** |  | [optional] 
+**UserStatus** | Pointer to **NullableString** |  | [optional] 
 **ExpireDays** | Pointer to **int64** |  | [optional] 
 **RenewDays** | Pointer to **int64** |  | [optional] 
 **ExpireCount** | Pointer to **int64** |  | [optional] 
@@ -71,12 +71,12 @@ Name | Type | Description | Notes
 **ShutdownDate** | Pointer to **time.Time** |  | [optional] 
 **ShutdownWarningDate** | Pointer to **time.Time** |  | [optional] 
 **ShutdownWarningSent** | Pointer to **bool** |  | [optional] 
-**RemovalDate** | Pointer to **time.Time** |  | [optional] 
+**RemovalDate** | Pointer to **NullableTime** |  | [optional] 
 **CreatedBy** | Pointer to [**ListActivity200ResponseAllOfActivityInnerActivityInnerUser**](ListActivity200ResponseAllOfActivityInnerActivityInnerUser.md) |  | [optional] 
-**Owner** | Pointer to [**GetAlerts200ResponseAllOfChecksInnerCreatedBy**](GetAlerts200ResponseAllOfChecksInnerCreatedBy.md) |  | [optional] 
-**Notes** | Pointer to **string** |  | [optional] 
+**Owner** | Pointer to [**ListActivity200ResponseAllOfActivityInnerActivityInnerUser**](ListActivity200ResponseAllOfActivityInnerActivityInnerUser.md) |  | [optional] 
+**Notes** | Pointer to **NullableString** |  | [optional] 
 **Stats** | Pointer to [**AddInstance200ResponseAllOfOneOfInstanceStats**](AddInstance200ResponseAllOfOneOfInstanceStats.md) |  | [optional] 
-**PowerSchedule** | Pointer to **string** |  | [optional] 
+**PowerSchedule** | Pointer to **NullableString** |  | [optional] 
 **IsScalable** | Pointer to **bool** |  | [optional] 
 **InstanceThreshold** | Pointer to **map[string]interface{}** |  | [optional] 
 **IsBusy** | Pointer to **bool** |  | [optional] 
@@ -178,20 +178,20 @@ HasAccountId returns a boolean if a field has been set.
 
 ### GetTenant
 
-`func (o *Instance) GetTenant() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *Instance) GetTenant() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetTenant returns the Tenant field if non-nil, zero value otherwise.
 
 ### GetTenantOk
 
-`func (o *Instance) GetTenantOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *Instance) GetTenantOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetTenantOk returns a tuple with the Tenant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenant
 
-`func (o *Instance) SetTenant(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *Instance) SetTenant(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetTenant sets Tenant field to given value.
 
@@ -228,20 +228,20 @@ HasInstanceType returns a boolean if a field has been set.
 
 ### GetGroup
 
-`func (o *Instance) GetGroup() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *Instance) GetGroup() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetGroup returns the Group field if non-nil, zero value otherwise.
 
 ### GetGroupOk
 
-`func (o *Instance) GetGroupOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *Instance) GetGroupOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetGroupOk returns a tuple with the Group field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGroup
 
-`func (o *Instance) SetGroup(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *Instance) SetGroup(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetGroup sets Group field to given value.
 
@@ -501,6 +501,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *Instance) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *Instance) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetEnvironment
 
 `func (o *Instance) GetEnvironment() string`
@@ -526,6 +536,16 @@ SetEnvironment sets Environment field to given value.
 
 HasEnvironment returns a boolean if a field has been set.
 
+### SetEnvironmentNil
+
+`func (o *Instance) SetEnvironmentNil(b bool)`
+
+ SetEnvironmentNil sets the value for Environment to be an explicit nil
+
+### UnsetEnvironment
+`func (o *Instance) UnsetEnvironment()`
+
+UnsetEnvironment ensures that no value is present for Environment, not even an explicit nil
 ### GetConfig
 
 `func (o *Instance) GetConfig() AddInstance200ResponseAllOfOneOfInstanceConfig`
@@ -576,6 +596,16 @@ SetConfigGroup sets ConfigGroup field to given value.
 
 HasConfigGroup returns a boolean if a field has been set.
 
+### SetConfigGroupNil
+
+`func (o *Instance) SetConfigGroupNil(b bool)`
+
+ SetConfigGroupNil sets the value for ConfigGroup to be an explicit nil
+
+### UnsetConfigGroup
+`func (o *Instance) UnsetConfigGroup()`
+
+UnsetConfigGroup ensures that no value is present for ConfigGroup, not even an explicit nil
 ### GetConfigId
 
 `func (o *Instance) GetConfigId() string`
@@ -601,6 +631,16 @@ SetConfigId sets ConfigId field to given value.
 
 HasConfigId returns a boolean if a field has been set.
 
+### SetConfigIdNil
+
+`func (o *Instance) SetConfigIdNil(b bool)`
+
+ SetConfigIdNil sets the value for ConfigId to be an explicit nil
+
+### UnsetConfigId
+`func (o *Instance) UnsetConfigId()`
+
+UnsetConfigId ensures that no value is present for ConfigId, not even an explicit nil
 ### GetConfigRole
 
 `func (o *Instance) GetConfigRole() string`
@@ -626,6 +666,16 @@ SetConfigRole sets ConfigRole field to given value.
 
 HasConfigRole returns a boolean if a field has been set.
 
+### SetConfigRoleNil
+
+`func (o *Instance) SetConfigRoleNil(b bool)`
+
+ SetConfigRoleNil sets the value for ConfigRole to be an explicit nil
+
+### UnsetConfigRole
+`func (o *Instance) UnsetConfigRole()`
+
+UnsetConfigRole ensures that no value is present for ConfigRole, not even an explicit nil
 ### GetVolumes
 
 `func (o *Instance) GetVolumes() []AddInstance200ResponseAllOfOneOfInstanceVolumesInner`
@@ -776,6 +826,16 @@ SetLabels sets Labels field to given value.
 
 HasLabels returns a boolean if a field has been set.
 
+### SetLabelsNil
+
+`func (o *Instance) SetLabelsNil(b bool)`
+
+ SetLabelsNil sets the value for Labels to be an explicit nil
+
+### UnsetLabels
+`func (o *Instance) UnsetLabels()`
+
+UnsetLabels ensures that no value is present for Labels, not even an explicit nil
 ### GetTags
 
 `func (o *Instance) GetTags() []AddInstance200ResponseAllOfOneOfInstanceTagsInner`
@@ -926,6 +986,16 @@ SetCoresPerSocket sets CoresPerSocket field to given value.
 
 HasCoresPerSocket returns a boolean if a field has been set.
 
+### SetCoresPerSocketNil
+
+`func (o *Instance) SetCoresPerSocketNil(b bool)`
+
+ SetCoresPerSocketNil sets the value for CoresPerSocket to be an explicit nil
+
+### UnsetCoresPerSocket
+`func (o *Instance) UnsetCoresPerSocket()`
+
+UnsetCoresPerSocket ensures that no value is present for CoresPerSocket, not even an explicit nil
 ### GetMaxCpu
 
 `func (o *Instance) GetMaxCpu() string`
@@ -951,6 +1021,16 @@ SetMaxCpu sets MaxCpu field to given value.
 
 HasMaxCpu returns a boolean if a field has been set.
 
+### SetMaxCpuNil
+
+`func (o *Instance) SetMaxCpuNil(b bool)`
+
+ SetMaxCpuNil sets the value for MaxCpu to be an explicit nil
+
+### UnsetMaxCpu
+`func (o *Instance) UnsetMaxCpu()`
+
+UnsetMaxCpu ensures that no value is present for MaxCpu, not even an explicit nil
 ### GetHourlyCost
 
 `func (o *Instance) GetHourlyCost() float32`
@@ -1126,6 +1206,16 @@ SetDomainName sets DomainName field to given value.
 
 HasDomainName returns a boolean if a field has been set.
 
+### SetDomainNameNil
+
+`func (o *Instance) SetDomainNameNil(b bool)`
+
+ SetDomainNameNil sets the value for DomainName to be an explicit nil
+
+### UnsetDomainName
+`func (o *Instance) UnsetDomainName()`
+
+UnsetDomainName ensures that no value is present for DomainName, not even an explicit nil
 ### GetEnvironmentPrefix
 
 `func (o *Instance) GetEnvironmentPrefix() string`
@@ -1151,6 +1241,16 @@ SetEnvironmentPrefix sets EnvironmentPrefix field to given value.
 
 HasEnvironmentPrefix returns a boolean if a field has been set.
 
+### SetEnvironmentPrefixNil
+
+`func (o *Instance) SetEnvironmentPrefixNil(b bool)`
+
+ SetEnvironmentPrefixNil sets the value for EnvironmentPrefix to be an explicit nil
+
+### UnsetEnvironmentPrefix
+`func (o *Instance) UnsetEnvironmentPrefix()`
+
+UnsetEnvironmentPrefix ensures that no value is present for EnvironmentPrefix, not even an explicit nil
 ### GetFirewallEnabled
 
 `func (o *Instance) GetFirewallEnabled() bool`
@@ -1251,6 +1351,16 @@ SetInstanceContext sets InstanceContext field to given value.
 
 HasInstanceContext returns a boolean if a field has been set.
 
+### SetInstanceContextNil
+
+`func (o *Instance) SetInstanceContextNil(b bool)`
+
+ SetInstanceContextNil sets the value for InstanceContext to be an explicit nil
+
+### UnsetInstanceContext
+`func (o *Instance) UnsetInstanceContext()`
+
+UnsetInstanceContext ensures that no value is present for InstanceContext, not even an explicit nil
 ### GetCurrentDeployId
 
 `func (o *Instance) GetCurrentDeployId() string`
@@ -1276,6 +1386,16 @@ SetCurrentDeployId sets CurrentDeployId field to given value.
 
 HasCurrentDeployId returns a boolean if a field has been set.
 
+### SetCurrentDeployIdNil
+
+`func (o *Instance) SetCurrentDeployIdNil(b bool)`
+
+ SetCurrentDeployIdNil sets the value for CurrentDeployId to be an explicit nil
+
+### UnsetCurrentDeployId
+`func (o *Instance) UnsetCurrentDeployId()`
+
+UnsetCurrentDeployId ensures that no value is present for CurrentDeployId, not even an explicit nil
 ### GetLocked
 
 `func (o *Instance) GetLocked() bool`
@@ -1351,6 +1471,16 @@ SetStatusMessage sets StatusMessage field to given value.
 
 HasStatusMessage returns a boolean if a field has been set.
 
+### SetStatusMessageNil
+
+`func (o *Instance) SetStatusMessageNil(b bool)`
+
+ SetStatusMessageNil sets the value for StatusMessage to be an explicit nil
+
+### UnsetStatusMessage
+`func (o *Instance) UnsetStatusMessage()`
+
+UnsetStatusMessage ensures that no value is present for StatusMessage, not even an explicit nil
 ### GetErrorMessage
 
 `func (o *Instance) GetErrorMessage() string`
@@ -1376,6 +1506,16 @@ SetErrorMessage sets ErrorMessage field to given value.
 
 HasErrorMessage returns a boolean if a field has been set.
 
+### SetErrorMessageNil
+
+`func (o *Instance) SetErrorMessageNil(b bool)`
+
+ SetErrorMessageNil sets the value for ErrorMessage to be an explicit nil
+
+### UnsetErrorMessage
+`func (o *Instance) UnsetErrorMessage()`
+
+UnsetErrorMessage ensures that no value is present for ErrorMessage, not even an explicit nil
 ### GetStatusDate
 
 `func (o *Instance) GetStatusDate() time.Time`
@@ -1426,6 +1566,16 @@ SetStatusPercent sets StatusPercent field to given value.
 
 HasStatusPercent returns a boolean if a field has been set.
 
+### SetStatusPercentNil
+
+`func (o *Instance) SetStatusPercentNil(b bool)`
+
+ SetStatusPercentNil sets the value for StatusPercent to be an explicit nil
+
+### UnsetStatusPercent
+`func (o *Instance) UnsetStatusPercent()`
+
+UnsetStatusPercent ensures that no value is present for StatusPercent, not even an explicit nil
 ### GetStatusEta
 
 `func (o *Instance) GetStatusEta() string`
@@ -1451,6 +1601,16 @@ SetStatusEta sets StatusEta field to given value.
 
 HasStatusEta returns a boolean if a field has been set.
 
+### SetStatusEtaNil
+
+`func (o *Instance) SetStatusEtaNil(b bool)`
+
+ SetStatusEtaNil sets the value for StatusEta to be an explicit nil
+
+### UnsetStatusEta
+`func (o *Instance) UnsetStatusEta()`
+
+UnsetStatusEta ensures that no value is present for StatusEta, not even an explicit nil
 ### GetUserStatus
 
 `func (o *Instance) GetUserStatus() string`
@@ -1476,6 +1636,16 @@ SetUserStatus sets UserStatus field to given value.
 
 HasUserStatus returns a boolean if a field has been set.
 
+### SetUserStatusNil
+
+`func (o *Instance) SetUserStatusNil(b bool)`
+
+ SetUserStatusNil sets the value for UserStatus to be an explicit nil
+
+### UnsetUserStatus
+`func (o *Instance) UnsetUserStatus()`
+
+UnsetUserStatus ensures that no value is present for UserStatus, not even an explicit nil
 ### GetExpireDays
 
 `func (o *Instance) GetExpireDays() int64`
@@ -1801,6 +1971,16 @@ SetRemovalDate sets RemovalDate field to given value.
 
 HasRemovalDate returns a boolean if a field has been set.
 
+### SetRemovalDateNil
+
+`func (o *Instance) SetRemovalDateNil(b bool)`
+
+ SetRemovalDateNil sets the value for RemovalDate to be an explicit nil
+
+### UnsetRemovalDate
+`func (o *Instance) UnsetRemovalDate()`
+
+UnsetRemovalDate ensures that no value is present for RemovalDate, not even an explicit nil
 ### GetCreatedBy
 
 `func (o *Instance) GetCreatedBy() ListActivity200ResponseAllOfActivityInnerActivityInnerUser`
@@ -1828,20 +2008,20 @@ HasCreatedBy returns a boolean if a field has been set.
 
 ### GetOwner
 
-`func (o *Instance) GetOwner() GetAlerts200ResponseAllOfChecksInnerCreatedBy`
+`func (o *Instance) GetOwner() ListActivity200ResponseAllOfActivityInnerActivityInnerUser`
 
 GetOwner returns the Owner field if non-nil, zero value otherwise.
 
 ### GetOwnerOk
 
-`func (o *Instance) GetOwnerOk() (*GetAlerts200ResponseAllOfChecksInnerCreatedBy, bool)`
+`func (o *Instance) GetOwnerOk() (*ListActivity200ResponseAllOfActivityInnerActivityInnerUser, bool)`
 
 GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOwner
 
-`func (o *Instance) SetOwner(v GetAlerts200ResponseAllOfChecksInnerCreatedBy)`
+`func (o *Instance) SetOwner(v ListActivity200ResponseAllOfActivityInnerActivityInnerUser)`
 
 SetOwner sets Owner field to given value.
 
@@ -1876,6 +2056,16 @@ SetNotes sets Notes field to given value.
 
 HasNotes returns a boolean if a field has been set.
 
+### SetNotesNil
+
+`func (o *Instance) SetNotesNil(b bool)`
+
+ SetNotesNil sets the value for Notes to be an explicit nil
+
+### UnsetNotes
+`func (o *Instance) UnsetNotes()`
+
+UnsetNotes ensures that no value is present for Notes, not even an explicit nil
 ### GetStats
 
 `func (o *Instance) GetStats() AddInstance200ResponseAllOfOneOfInstanceStats`
@@ -1926,6 +2116,16 @@ SetPowerSchedule sets PowerSchedule field to given value.
 
 HasPowerSchedule returns a boolean if a field has been set.
 
+### SetPowerScheduleNil
+
+`func (o *Instance) SetPowerScheduleNil(b bool)`
+
+ SetPowerScheduleNil sets the value for PowerSchedule to be an explicit nil
+
+### UnsetPowerSchedule
+`func (o *Instance) UnsetPowerSchedule()`
+
+UnsetPowerSchedule ensures that no value is present for PowerSchedule, not even an explicit nil
 ### GetIsScalable
 
 `func (o *Instance) GetIsScalable() bool`
@@ -1976,6 +2176,16 @@ SetInstanceThreshold sets InstanceThreshold field to given value.
 
 HasInstanceThreshold returns a boolean if a field has been set.
 
+### SetInstanceThresholdNil
+
+`func (o *Instance) SetInstanceThresholdNil(b bool)`
+
+ SetInstanceThresholdNil sets the value for InstanceThreshold to be an explicit nil
+
+### UnsetInstanceThreshold
+`func (o *Instance) UnsetInstanceThreshold()`
+
+UnsetInstanceThreshold ensures that no value is present for InstanceThreshold, not even an explicit nil
 ### GetIsBusy
 
 `func (o *Instance) GetIsBusy() bool`
@@ -2026,6 +2236,16 @@ SetApps sets Apps field to given value.
 
 HasApps returns a boolean if a field has been set.
 
+### SetAppsNil
+
+`func (o *Instance) SetAppsNil(b bool)`
+
+ SetAppsNil sets the value for Apps to be an explicit nil
+
+### UnsetApps
+`func (o *Instance) UnsetApps()`
+
+UnsetApps ensures that no value is present for Apps, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

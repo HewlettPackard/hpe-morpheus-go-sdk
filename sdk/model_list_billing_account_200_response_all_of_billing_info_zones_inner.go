@@ -24,7 +24,7 @@ type ListBillingAccount200ResponseAllOfBillingInfoZonesInner struct {
 	ZoneName             *string                                                                `json:"zoneName,omitempty"`
 	ZoneId               *int64                                                                 `json:"zoneId,omitempty"`
 	ZoneUUID             *string                                                                `json:"zoneUUID,omitempty"`
-	ZoneCode             *string                                                                `json:"zoneCode,omitempty"`
+	ZoneCode             NullableString                                                         `json:"zoneCode,omitempty"`
 	StartDate            *time.Time                                                             `json:"startDate,omitempty"`
 	EndDate              *time.Time                                                             `json:"endDate,omitempty"`
 	PriceUnit            *string                                                                `json:"priceUnit,omitempty"`
@@ -154,36 +154,47 @@ func (o *ListBillingAccount200ResponseAllOfBillingInfoZonesInner) SetZoneUUID(v 
 	o.ZoneUUID = &v
 }
 
-// GetZoneCode returns the ZoneCode field value if set, zero value otherwise.
+// GetZoneCode returns the ZoneCode field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListBillingAccount200ResponseAllOfBillingInfoZonesInner) GetZoneCode() string {
-	if o == nil || IsNil(o.ZoneCode) {
+	if o == nil || IsNil(o.ZoneCode.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ZoneCode
+	return *o.ZoneCode.Get()
 }
 
 // GetZoneCodeOk returns a tuple with the ZoneCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListBillingAccount200ResponseAllOfBillingInfoZonesInner) GetZoneCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.ZoneCode) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ZoneCode, true
+	return o.ZoneCode.Get(), o.ZoneCode.IsSet()
 }
 
 // IsSetZoneCode returns a boolean if a field has been set.
 func (o *ListBillingAccount200ResponseAllOfBillingInfoZonesInner) IsSetZoneCode() bool {
-	if o != nil && !IsNil(o.ZoneCode) {
+	if o != nil && o.ZoneCode.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetZoneCode gets a reference to the given string and assigns it to the ZoneCode field.
+// SetZoneCode gets a reference to the given NullableString and assigns it to the ZoneCode field.
 func (o *ListBillingAccount200ResponseAllOfBillingInfoZonesInner) SetZoneCode(v string) {
-	o.ZoneCode = &v
+	o.ZoneCode.Set(&v)
+}
+
+// SetZoneCodeNil sets the value for ZoneCode to be an explicit nil
+func (o *ListBillingAccount200ResponseAllOfBillingInfoZonesInner) SetZoneCodeNil() {
+	o.ZoneCode.Set(nil)
+}
+
+// UnsetZoneCode ensures that no value is present for ZoneCode, not even an explicit nil
+func (o *ListBillingAccount200ResponseAllOfBillingInfoZonesInner) UnsetZoneCode() {
+	o.ZoneCode.Unset()
 }
 
 // GetStartDate returns the StartDate field value if set, zero value otherwise.
@@ -557,8 +568,8 @@ func (o ListBillingAccount200ResponseAllOfBillingInfoZonesInner) ToMap() (map[st
 	if !IsNil(o.ZoneUUID) {
 		toSerialize["zoneUUID"] = o.ZoneUUID
 	}
-	if !IsNil(o.ZoneCode) {
-		toSerialize["zoneCode"] = o.ZoneCode
+	if o.ZoneCode.IsSet() {
+		toSerialize["zoneCode"] = o.ZoneCode.Get()
 	}
 	if !IsNil(o.StartDate) {
 		toSerialize["startDate"] = o.StartDate

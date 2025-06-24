@@ -22,46 +22,46 @@ var _ MappedNullable = &ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig
 type ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig struct {
 	Exists               *bool                  `json:"exists,omitempty"`
 	ObjectId             *int64                 `json:"objectId,omitempty"`
-	CpuTotalTimeCount    *float32               `json:"cpuTotalTimeCount,omitempty"`
-	CpuTotalTimeMin      *float32               `json:"cpuTotalTimeMin,omitempty"`
-	CpuTotalTimeMax      *float32               `json:"cpuTotalTimeMax,omitempty"`
-	CpuTotalTimeAvg      *float32               `json:"cpuTotalTimeAvg,omitempty"`
-	CpuTotalTimeSum      *float32               `json:"cpuTotalTimeSum,omitempty"`
-	CpuIdleTimeCount     *float32               `json:"cpuIdleTimeCount,omitempty"`
-	CpuIdleTimeMin       *float32               `json:"cpuIdleTimeMin,omitempty"`
-	CpuIdleTimeMax       *float32               `json:"cpuIdleTimeMax,omitempty"`
-	CpuIdleTimeAvg       *float32               `json:"cpuIdleTimeAvg,omitempty"`
-	CpuIdleTimeSum       *float32               `json:"cpuIdleTimeSum,omitempty"`
-	CpuUsageCount        *float32               `json:"cpuUsageCount,omitempty"`
-	CpuUsageMin          *float32               `json:"cpuUsageMin,omitempty"`
-	CpuUsageMax          *float32               `json:"cpuUsageMax,omitempty"`
-	CpuUsageAvg          *float32               `json:"cpuUsageAvg,omitempty"`
-	CpuUsageSum          *float32               `json:"cpuUsageSum,omitempty"`
-	MaxMemoryCount       *float32               `json:"maxMemoryCount,omitempty"`
-	MaxMemoryMin         *float32               `json:"maxMemoryMin,omitempty"`
-	MaxMemoryMax         *float32               `json:"maxMemoryMax,omitempty"`
-	MaxMemoryAvg         *float32               `json:"maxMemoryAvg,omitempty"`
-	MaxMemorySum         *float32               `json:"maxMemorySum,omitempty"`
-	CpuUserTimeCount     *float32               `json:"cpuUserTimeCount,omitempty"`
-	CpuUserTimeMin       *float32               `json:"cpuUserTimeMin,omitempty"`
-	CpuUserTimeMax       *float32               `json:"cpuUserTimeMax,omitempty"`
-	CpuUserTimeAvg       *float32               `json:"cpuUserTimeAvg,omitempty"`
-	CpuUserTimeSum       *float32               `json:"cpuUserTimeSum,omitempty"`
-	CpuSystemTimeCount   *float32               `json:"cpuSystemTimeCount,omitempty"`
-	CpuSystemTimeMin     *float32               `json:"cpuSystemTimeMin,omitempty"`
-	CpuSystemTimeMax     *float32               `json:"cpuSystemTimeMax,omitempty"`
+	CpuTotalTimeCount    NullableFloat32        `json:"cpuTotalTimeCount,omitempty"`
+	CpuTotalTimeMin      NullableFloat32        `json:"cpuTotalTimeMin,omitempty"`
+	CpuTotalTimeMax      NullableFloat32        `json:"cpuTotalTimeMax,omitempty"`
+	CpuTotalTimeAvg      NullableFloat32        `json:"cpuTotalTimeAvg,omitempty"`
+	CpuTotalTimeSum      NullableFloat32        `json:"cpuTotalTimeSum,omitempty"`
+	CpuIdleTimeCount     NullableFloat32        `json:"cpuIdleTimeCount,omitempty"`
+	CpuIdleTimeMin       NullableFloat32        `json:"cpuIdleTimeMin,omitempty"`
+	CpuIdleTimeMax       NullableFloat32        `json:"cpuIdleTimeMax,omitempty"`
+	CpuIdleTimeAvg       NullableFloat32        `json:"cpuIdleTimeAvg,omitempty"`
+	CpuIdleTimeSum       NullableFloat32        `json:"cpuIdleTimeSum,omitempty"`
+	CpuUsageCount        NullableFloat32        `json:"cpuUsageCount,omitempty"`
+	CpuUsageMin          NullableFloat32        `json:"cpuUsageMin,omitempty"`
+	CpuUsageMax          NullableFloat32        `json:"cpuUsageMax,omitempty"`
+	CpuUsageAvg          NullableFloat32        `json:"cpuUsageAvg,omitempty"`
+	CpuUsageSum          NullableFloat32        `json:"cpuUsageSum,omitempty"`
+	MaxMemoryCount       NullableFloat32        `json:"maxMemoryCount,omitempty"`
+	MaxMemoryMin         NullableFloat32        `json:"maxMemoryMin,omitempty"`
+	MaxMemoryMax         NullableFloat32        `json:"maxMemoryMax,omitempty"`
+	MaxMemoryAvg         NullableFloat32        `json:"maxMemoryAvg,omitempty"`
+	MaxMemorySum         NullableFloat32        `json:"maxMemorySum,omitempty"`
+	CpuUserTimeCount     NullableFloat32        `json:"cpuUserTimeCount,omitempty"`
+	CpuUserTimeMin       NullableFloat32        `json:"cpuUserTimeMin,omitempty"`
+	CpuUserTimeMax       NullableFloat32        `json:"cpuUserTimeMax,omitempty"`
+	CpuUserTimeAvg       NullableFloat32        `json:"cpuUserTimeAvg,omitempty"`
+	CpuUserTimeSum       NullableFloat32        `json:"cpuUserTimeSum,omitempty"`
+	CpuSystemTimeCount   NullableFloat32        `json:"cpuSystemTimeCount,omitempty"`
+	CpuSystemTimeMin     NullableFloat32        `json:"cpuSystemTimeMin,omitempty"`
+	CpuSystemTimeMax     NullableFloat32        `json:"cpuSystemTimeMax,omitempty"`
 	CpuSystemTimeAvg     *float32               `json:"cpuSystemTimeAvg,omitempty"`
-	CpuSystemTimeSum     *float32               `json:"cpuSystemTimeSum,omitempty"`
-	UsedMemoryCount      *float32               `json:"usedMemoryCount,omitempty"`
-	UsedMemoryMin        *float32               `json:"usedMemoryMin,omitempty"`
-	UsedMemoryMax        *float32               `json:"usedMemoryMax,omitempty"`
-	UsedMemoryAvg        *float32               `json:"usedMemoryAvg,omitempty"`
-	UsedMemorySum        *float32               `json:"usedMemorySum,omitempty"`
-	FreeMemoryCount      *float32               `json:"freeMemoryCount,omitempty"`
-	FreeMemoryMin        *float32               `json:"freeMemoryMin,omitempty"`
-	FreeMemoryMax        *float32               `json:"freeMemoryMax,omitempty"`
-	FreeMemoryAvg        *float32               `json:"freeMemoryAvg,omitempty"`
-	FreeMemorySum        *float32               `json:"freeMemorySum,omitempty"`
+	CpuSystemTimeSum     NullableFloat32        `json:"cpuSystemTimeSum,omitempty"`
+	UsedMemoryCount      NullableFloat32        `json:"usedMemoryCount,omitempty"`
+	UsedMemoryMin        NullableFloat32        `json:"usedMemoryMin,omitempty"`
+	UsedMemoryMax        NullableFloat32        `json:"usedMemoryMax,omitempty"`
+	UsedMemoryAvg        NullableFloat32        `json:"usedMemoryAvg,omitempty"`
+	UsedMemorySum        NullableFloat32        `json:"usedMemorySum,omitempty"`
+	FreeMemoryCount      NullableFloat32        `json:"freeMemoryCount,omitempty"`
+	FreeMemoryMin        NullableFloat32        `json:"freeMemoryMin,omitempty"`
+	FreeMemoryMax        NullableFloat32        `json:"freeMemoryMax,omitempty"`
+	FreeMemoryAvg        NullableFloat32        `json:"freeMemoryAvg,omitempty"`
+	FreeMemorySum        NullableFloat32        `json:"freeMemorySum,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -148,900 +148,1208 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetObjectId(v
 	o.ObjectId = &v
 }
 
-// GetCpuTotalTimeCount returns the CpuTotalTimeCount field value if set, zero value otherwise.
+// GetCpuTotalTimeCount returns the CpuTotalTimeCount field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetCpuTotalTimeCount() float32 {
-	if o == nil || IsNil(o.CpuTotalTimeCount) {
+	if o == nil || IsNil(o.CpuTotalTimeCount.Get()) {
 		var ret float32
 		return ret
 	}
-	return *o.CpuTotalTimeCount
+	return *o.CpuTotalTimeCount.Get()
 }
 
 // GetCpuTotalTimeCountOk returns a tuple with the CpuTotalTimeCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetCpuTotalTimeCountOk() (*float32, bool) {
-	if o == nil || IsNil(o.CpuTotalTimeCount) {
+	if o == nil {
 		return nil, false
 	}
-	return o.CpuTotalTimeCount, true
+	return o.CpuTotalTimeCount.Get(), o.CpuTotalTimeCount.IsSet()
 }
 
 // IsSetCpuTotalTimeCount returns a boolean if a field has been set.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) IsSetCpuTotalTimeCount() bool {
-	if o != nil && !IsNil(o.CpuTotalTimeCount) {
+	if o != nil && o.CpuTotalTimeCount.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCpuTotalTimeCount gets a reference to the given float32 and assigns it to the CpuTotalTimeCount field.
+// SetCpuTotalTimeCount gets a reference to the given NullableFloat32 and assigns it to the CpuTotalTimeCount field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetCpuTotalTimeCount(v float32) {
-	o.CpuTotalTimeCount = &v
+	o.CpuTotalTimeCount.Set(&v)
 }
 
-// GetCpuTotalTimeMin returns the CpuTotalTimeMin field value if set, zero value otherwise.
+// SetCpuTotalTimeCountNil sets the value for CpuTotalTimeCount to be an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetCpuTotalTimeCountNil() {
+	o.CpuTotalTimeCount.Set(nil)
+}
+
+// UnsetCpuTotalTimeCount ensures that no value is present for CpuTotalTimeCount, not even an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) UnsetCpuTotalTimeCount() {
+	o.CpuTotalTimeCount.Unset()
+}
+
+// GetCpuTotalTimeMin returns the CpuTotalTimeMin field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetCpuTotalTimeMin() float32 {
-	if o == nil || IsNil(o.CpuTotalTimeMin) {
+	if o == nil || IsNil(o.CpuTotalTimeMin.Get()) {
 		var ret float32
 		return ret
 	}
-	return *o.CpuTotalTimeMin
+	return *o.CpuTotalTimeMin.Get()
 }
 
 // GetCpuTotalTimeMinOk returns a tuple with the CpuTotalTimeMin field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetCpuTotalTimeMinOk() (*float32, bool) {
-	if o == nil || IsNil(o.CpuTotalTimeMin) {
+	if o == nil {
 		return nil, false
 	}
-	return o.CpuTotalTimeMin, true
+	return o.CpuTotalTimeMin.Get(), o.CpuTotalTimeMin.IsSet()
 }
 
 // IsSetCpuTotalTimeMin returns a boolean if a field has been set.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) IsSetCpuTotalTimeMin() bool {
-	if o != nil && !IsNil(o.CpuTotalTimeMin) {
+	if o != nil && o.CpuTotalTimeMin.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCpuTotalTimeMin gets a reference to the given float32 and assigns it to the CpuTotalTimeMin field.
+// SetCpuTotalTimeMin gets a reference to the given NullableFloat32 and assigns it to the CpuTotalTimeMin field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetCpuTotalTimeMin(v float32) {
-	o.CpuTotalTimeMin = &v
+	o.CpuTotalTimeMin.Set(&v)
 }
 
-// GetCpuTotalTimeMax returns the CpuTotalTimeMax field value if set, zero value otherwise.
+// SetCpuTotalTimeMinNil sets the value for CpuTotalTimeMin to be an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetCpuTotalTimeMinNil() {
+	o.CpuTotalTimeMin.Set(nil)
+}
+
+// UnsetCpuTotalTimeMin ensures that no value is present for CpuTotalTimeMin, not even an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) UnsetCpuTotalTimeMin() {
+	o.CpuTotalTimeMin.Unset()
+}
+
+// GetCpuTotalTimeMax returns the CpuTotalTimeMax field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetCpuTotalTimeMax() float32 {
-	if o == nil || IsNil(o.CpuTotalTimeMax) {
+	if o == nil || IsNil(o.CpuTotalTimeMax.Get()) {
 		var ret float32
 		return ret
 	}
-	return *o.CpuTotalTimeMax
+	return *o.CpuTotalTimeMax.Get()
 }
 
 // GetCpuTotalTimeMaxOk returns a tuple with the CpuTotalTimeMax field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetCpuTotalTimeMaxOk() (*float32, bool) {
-	if o == nil || IsNil(o.CpuTotalTimeMax) {
+	if o == nil {
 		return nil, false
 	}
-	return o.CpuTotalTimeMax, true
+	return o.CpuTotalTimeMax.Get(), o.CpuTotalTimeMax.IsSet()
 }
 
 // IsSetCpuTotalTimeMax returns a boolean if a field has been set.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) IsSetCpuTotalTimeMax() bool {
-	if o != nil && !IsNil(o.CpuTotalTimeMax) {
+	if o != nil && o.CpuTotalTimeMax.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCpuTotalTimeMax gets a reference to the given float32 and assigns it to the CpuTotalTimeMax field.
+// SetCpuTotalTimeMax gets a reference to the given NullableFloat32 and assigns it to the CpuTotalTimeMax field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetCpuTotalTimeMax(v float32) {
-	o.CpuTotalTimeMax = &v
+	o.CpuTotalTimeMax.Set(&v)
 }
 
-// GetCpuTotalTimeAvg returns the CpuTotalTimeAvg field value if set, zero value otherwise.
+// SetCpuTotalTimeMaxNil sets the value for CpuTotalTimeMax to be an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetCpuTotalTimeMaxNil() {
+	o.CpuTotalTimeMax.Set(nil)
+}
+
+// UnsetCpuTotalTimeMax ensures that no value is present for CpuTotalTimeMax, not even an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) UnsetCpuTotalTimeMax() {
+	o.CpuTotalTimeMax.Unset()
+}
+
+// GetCpuTotalTimeAvg returns the CpuTotalTimeAvg field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetCpuTotalTimeAvg() float32 {
-	if o == nil || IsNil(o.CpuTotalTimeAvg) {
+	if o == nil || IsNil(o.CpuTotalTimeAvg.Get()) {
 		var ret float32
 		return ret
 	}
-	return *o.CpuTotalTimeAvg
+	return *o.CpuTotalTimeAvg.Get()
 }
 
 // GetCpuTotalTimeAvgOk returns a tuple with the CpuTotalTimeAvg field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetCpuTotalTimeAvgOk() (*float32, bool) {
-	if o == nil || IsNil(o.CpuTotalTimeAvg) {
+	if o == nil {
 		return nil, false
 	}
-	return o.CpuTotalTimeAvg, true
+	return o.CpuTotalTimeAvg.Get(), o.CpuTotalTimeAvg.IsSet()
 }
 
 // IsSetCpuTotalTimeAvg returns a boolean if a field has been set.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) IsSetCpuTotalTimeAvg() bool {
-	if o != nil && !IsNil(o.CpuTotalTimeAvg) {
+	if o != nil && o.CpuTotalTimeAvg.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCpuTotalTimeAvg gets a reference to the given float32 and assigns it to the CpuTotalTimeAvg field.
+// SetCpuTotalTimeAvg gets a reference to the given NullableFloat32 and assigns it to the CpuTotalTimeAvg field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetCpuTotalTimeAvg(v float32) {
-	o.CpuTotalTimeAvg = &v
+	o.CpuTotalTimeAvg.Set(&v)
 }
 
-// GetCpuTotalTimeSum returns the CpuTotalTimeSum field value if set, zero value otherwise.
+// SetCpuTotalTimeAvgNil sets the value for CpuTotalTimeAvg to be an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetCpuTotalTimeAvgNil() {
+	o.CpuTotalTimeAvg.Set(nil)
+}
+
+// UnsetCpuTotalTimeAvg ensures that no value is present for CpuTotalTimeAvg, not even an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) UnsetCpuTotalTimeAvg() {
+	o.CpuTotalTimeAvg.Unset()
+}
+
+// GetCpuTotalTimeSum returns the CpuTotalTimeSum field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetCpuTotalTimeSum() float32 {
-	if o == nil || IsNil(o.CpuTotalTimeSum) {
+	if o == nil || IsNil(o.CpuTotalTimeSum.Get()) {
 		var ret float32
 		return ret
 	}
-	return *o.CpuTotalTimeSum
+	return *o.CpuTotalTimeSum.Get()
 }
 
 // GetCpuTotalTimeSumOk returns a tuple with the CpuTotalTimeSum field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetCpuTotalTimeSumOk() (*float32, bool) {
-	if o == nil || IsNil(o.CpuTotalTimeSum) {
+	if o == nil {
 		return nil, false
 	}
-	return o.CpuTotalTimeSum, true
+	return o.CpuTotalTimeSum.Get(), o.CpuTotalTimeSum.IsSet()
 }
 
 // IsSetCpuTotalTimeSum returns a boolean if a field has been set.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) IsSetCpuTotalTimeSum() bool {
-	if o != nil && !IsNil(o.CpuTotalTimeSum) {
+	if o != nil && o.CpuTotalTimeSum.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCpuTotalTimeSum gets a reference to the given float32 and assigns it to the CpuTotalTimeSum field.
+// SetCpuTotalTimeSum gets a reference to the given NullableFloat32 and assigns it to the CpuTotalTimeSum field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetCpuTotalTimeSum(v float32) {
-	o.CpuTotalTimeSum = &v
+	o.CpuTotalTimeSum.Set(&v)
 }
 
-// GetCpuIdleTimeCount returns the CpuIdleTimeCount field value if set, zero value otherwise.
+// SetCpuTotalTimeSumNil sets the value for CpuTotalTimeSum to be an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetCpuTotalTimeSumNil() {
+	o.CpuTotalTimeSum.Set(nil)
+}
+
+// UnsetCpuTotalTimeSum ensures that no value is present for CpuTotalTimeSum, not even an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) UnsetCpuTotalTimeSum() {
+	o.CpuTotalTimeSum.Unset()
+}
+
+// GetCpuIdleTimeCount returns the CpuIdleTimeCount field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetCpuIdleTimeCount() float32 {
-	if o == nil || IsNil(o.CpuIdleTimeCount) {
+	if o == nil || IsNil(o.CpuIdleTimeCount.Get()) {
 		var ret float32
 		return ret
 	}
-	return *o.CpuIdleTimeCount
+	return *o.CpuIdleTimeCount.Get()
 }
 
 // GetCpuIdleTimeCountOk returns a tuple with the CpuIdleTimeCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetCpuIdleTimeCountOk() (*float32, bool) {
-	if o == nil || IsNil(o.CpuIdleTimeCount) {
+	if o == nil {
 		return nil, false
 	}
-	return o.CpuIdleTimeCount, true
+	return o.CpuIdleTimeCount.Get(), o.CpuIdleTimeCount.IsSet()
 }
 
 // IsSetCpuIdleTimeCount returns a boolean if a field has been set.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) IsSetCpuIdleTimeCount() bool {
-	if o != nil && !IsNil(o.CpuIdleTimeCount) {
+	if o != nil && o.CpuIdleTimeCount.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCpuIdleTimeCount gets a reference to the given float32 and assigns it to the CpuIdleTimeCount field.
+// SetCpuIdleTimeCount gets a reference to the given NullableFloat32 and assigns it to the CpuIdleTimeCount field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetCpuIdleTimeCount(v float32) {
-	o.CpuIdleTimeCount = &v
+	o.CpuIdleTimeCount.Set(&v)
 }
 
-// GetCpuIdleTimeMin returns the CpuIdleTimeMin field value if set, zero value otherwise.
+// SetCpuIdleTimeCountNil sets the value for CpuIdleTimeCount to be an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetCpuIdleTimeCountNil() {
+	o.CpuIdleTimeCount.Set(nil)
+}
+
+// UnsetCpuIdleTimeCount ensures that no value is present for CpuIdleTimeCount, not even an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) UnsetCpuIdleTimeCount() {
+	o.CpuIdleTimeCount.Unset()
+}
+
+// GetCpuIdleTimeMin returns the CpuIdleTimeMin field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetCpuIdleTimeMin() float32 {
-	if o == nil || IsNil(o.CpuIdleTimeMin) {
+	if o == nil || IsNil(o.CpuIdleTimeMin.Get()) {
 		var ret float32
 		return ret
 	}
-	return *o.CpuIdleTimeMin
+	return *o.CpuIdleTimeMin.Get()
 }
 
 // GetCpuIdleTimeMinOk returns a tuple with the CpuIdleTimeMin field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetCpuIdleTimeMinOk() (*float32, bool) {
-	if o == nil || IsNil(o.CpuIdleTimeMin) {
+	if o == nil {
 		return nil, false
 	}
-	return o.CpuIdleTimeMin, true
+	return o.CpuIdleTimeMin.Get(), o.CpuIdleTimeMin.IsSet()
 }
 
 // IsSetCpuIdleTimeMin returns a boolean if a field has been set.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) IsSetCpuIdleTimeMin() bool {
-	if o != nil && !IsNil(o.CpuIdleTimeMin) {
+	if o != nil && o.CpuIdleTimeMin.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCpuIdleTimeMin gets a reference to the given float32 and assigns it to the CpuIdleTimeMin field.
+// SetCpuIdleTimeMin gets a reference to the given NullableFloat32 and assigns it to the CpuIdleTimeMin field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetCpuIdleTimeMin(v float32) {
-	o.CpuIdleTimeMin = &v
+	o.CpuIdleTimeMin.Set(&v)
 }
 
-// GetCpuIdleTimeMax returns the CpuIdleTimeMax field value if set, zero value otherwise.
+// SetCpuIdleTimeMinNil sets the value for CpuIdleTimeMin to be an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetCpuIdleTimeMinNil() {
+	o.CpuIdleTimeMin.Set(nil)
+}
+
+// UnsetCpuIdleTimeMin ensures that no value is present for CpuIdleTimeMin, not even an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) UnsetCpuIdleTimeMin() {
+	o.CpuIdleTimeMin.Unset()
+}
+
+// GetCpuIdleTimeMax returns the CpuIdleTimeMax field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetCpuIdleTimeMax() float32 {
-	if o == nil || IsNil(o.CpuIdleTimeMax) {
+	if o == nil || IsNil(o.CpuIdleTimeMax.Get()) {
 		var ret float32
 		return ret
 	}
-	return *o.CpuIdleTimeMax
+	return *o.CpuIdleTimeMax.Get()
 }
 
 // GetCpuIdleTimeMaxOk returns a tuple with the CpuIdleTimeMax field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetCpuIdleTimeMaxOk() (*float32, bool) {
-	if o == nil || IsNil(o.CpuIdleTimeMax) {
+	if o == nil {
 		return nil, false
 	}
-	return o.CpuIdleTimeMax, true
+	return o.CpuIdleTimeMax.Get(), o.CpuIdleTimeMax.IsSet()
 }
 
 // IsSetCpuIdleTimeMax returns a boolean if a field has been set.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) IsSetCpuIdleTimeMax() bool {
-	if o != nil && !IsNil(o.CpuIdleTimeMax) {
+	if o != nil && o.CpuIdleTimeMax.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCpuIdleTimeMax gets a reference to the given float32 and assigns it to the CpuIdleTimeMax field.
+// SetCpuIdleTimeMax gets a reference to the given NullableFloat32 and assigns it to the CpuIdleTimeMax field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetCpuIdleTimeMax(v float32) {
-	o.CpuIdleTimeMax = &v
+	o.CpuIdleTimeMax.Set(&v)
 }
 
-// GetCpuIdleTimeAvg returns the CpuIdleTimeAvg field value if set, zero value otherwise.
+// SetCpuIdleTimeMaxNil sets the value for CpuIdleTimeMax to be an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetCpuIdleTimeMaxNil() {
+	o.CpuIdleTimeMax.Set(nil)
+}
+
+// UnsetCpuIdleTimeMax ensures that no value is present for CpuIdleTimeMax, not even an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) UnsetCpuIdleTimeMax() {
+	o.CpuIdleTimeMax.Unset()
+}
+
+// GetCpuIdleTimeAvg returns the CpuIdleTimeAvg field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetCpuIdleTimeAvg() float32 {
-	if o == nil || IsNil(o.CpuIdleTimeAvg) {
+	if o == nil || IsNil(o.CpuIdleTimeAvg.Get()) {
 		var ret float32
 		return ret
 	}
-	return *o.CpuIdleTimeAvg
+	return *o.CpuIdleTimeAvg.Get()
 }
 
 // GetCpuIdleTimeAvgOk returns a tuple with the CpuIdleTimeAvg field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetCpuIdleTimeAvgOk() (*float32, bool) {
-	if o == nil || IsNil(o.CpuIdleTimeAvg) {
+	if o == nil {
 		return nil, false
 	}
-	return o.CpuIdleTimeAvg, true
+	return o.CpuIdleTimeAvg.Get(), o.CpuIdleTimeAvg.IsSet()
 }
 
 // IsSetCpuIdleTimeAvg returns a boolean if a field has been set.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) IsSetCpuIdleTimeAvg() bool {
-	if o != nil && !IsNil(o.CpuIdleTimeAvg) {
+	if o != nil && o.CpuIdleTimeAvg.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCpuIdleTimeAvg gets a reference to the given float32 and assigns it to the CpuIdleTimeAvg field.
+// SetCpuIdleTimeAvg gets a reference to the given NullableFloat32 and assigns it to the CpuIdleTimeAvg field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetCpuIdleTimeAvg(v float32) {
-	o.CpuIdleTimeAvg = &v
+	o.CpuIdleTimeAvg.Set(&v)
 }
 
-// GetCpuIdleTimeSum returns the CpuIdleTimeSum field value if set, zero value otherwise.
+// SetCpuIdleTimeAvgNil sets the value for CpuIdleTimeAvg to be an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetCpuIdleTimeAvgNil() {
+	o.CpuIdleTimeAvg.Set(nil)
+}
+
+// UnsetCpuIdleTimeAvg ensures that no value is present for CpuIdleTimeAvg, not even an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) UnsetCpuIdleTimeAvg() {
+	o.CpuIdleTimeAvg.Unset()
+}
+
+// GetCpuIdleTimeSum returns the CpuIdleTimeSum field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetCpuIdleTimeSum() float32 {
-	if o == nil || IsNil(o.CpuIdleTimeSum) {
+	if o == nil || IsNil(o.CpuIdleTimeSum.Get()) {
 		var ret float32
 		return ret
 	}
-	return *o.CpuIdleTimeSum
+	return *o.CpuIdleTimeSum.Get()
 }
 
 // GetCpuIdleTimeSumOk returns a tuple with the CpuIdleTimeSum field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetCpuIdleTimeSumOk() (*float32, bool) {
-	if o == nil || IsNil(o.CpuIdleTimeSum) {
+	if o == nil {
 		return nil, false
 	}
-	return o.CpuIdleTimeSum, true
+	return o.CpuIdleTimeSum.Get(), o.CpuIdleTimeSum.IsSet()
 }
 
 // IsSetCpuIdleTimeSum returns a boolean if a field has been set.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) IsSetCpuIdleTimeSum() bool {
-	if o != nil && !IsNil(o.CpuIdleTimeSum) {
+	if o != nil && o.CpuIdleTimeSum.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCpuIdleTimeSum gets a reference to the given float32 and assigns it to the CpuIdleTimeSum field.
+// SetCpuIdleTimeSum gets a reference to the given NullableFloat32 and assigns it to the CpuIdleTimeSum field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetCpuIdleTimeSum(v float32) {
-	o.CpuIdleTimeSum = &v
+	o.CpuIdleTimeSum.Set(&v)
 }
 
-// GetCpuUsageCount returns the CpuUsageCount field value if set, zero value otherwise.
+// SetCpuIdleTimeSumNil sets the value for CpuIdleTimeSum to be an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetCpuIdleTimeSumNil() {
+	o.CpuIdleTimeSum.Set(nil)
+}
+
+// UnsetCpuIdleTimeSum ensures that no value is present for CpuIdleTimeSum, not even an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) UnsetCpuIdleTimeSum() {
+	o.CpuIdleTimeSum.Unset()
+}
+
+// GetCpuUsageCount returns the CpuUsageCount field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetCpuUsageCount() float32 {
-	if o == nil || IsNil(o.CpuUsageCount) {
+	if o == nil || IsNil(o.CpuUsageCount.Get()) {
 		var ret float32
 		return ret
 	}
-	return *o.CpuUsageCount
+	return *o.CpuUsageCount.Get()
 }
 
 // GetCpuUsageCountOk returns a tuple with the CpuUsageCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetCpuUsageCountOk() (*float32, bool) {
-	if o == nil || IsNil(o.CpuUsageCount) {
+	if o == nil {
 		return nil, false
 	}
-	return o.CpuUsageCount, true
+	return o.CpuUsageCount.Get(), o.CpuUsageCount.IsSet()
 }
 
 // IsSetCpuUsageCount returns a boolean if a field has been set.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) IsSetCpuUsageCount() bool {
-	if o != nil && !IsNil(o.CpuUsageCount) {
+	if o != nil && o.CpuUsageCount.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCpuUsageCount gets a reference to the given float32 and assigns it to the CpuUsageCount field.
+// SetCpuUsageCount gets a reference to the given NullableFloat32 and assigns it to the CpuUsageCount field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetCpuUsageCount(v float32) {
-	o.CpuUsageCount = &v
+	o.CpuUsageCount.Set(&v)
 }
 
-// GetCpuUsageMin returns the CpuUsageMin field value if set, zero value otherwise.
+// SetCpuUsageCountNil sets the value for CpuUsageCount to be an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetCpuUsageCountNil() {
+	o.CpuUsageCount.Set(nil)
+}
+
+// UnsetCpuUsageCount ensures that no value is present for CpuUsageCount, not even an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) UnsetCpuUsageCount() {
+	o.CpuUsageCount.Unset()
+}
+
+// GetCpuUsageMin returns the CpuUsageMin field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetCpuUsageMin() float32 {
-	if o == nil || IsNil(o.CpuUsageMin) {
+	if o == nil || IsNil(o.CpuUsageMin.Get()) {
 		var ret float32
 		return ret
 	}
-	return *o.CpuUsageMin
+	return *o.CpuUsageMin.Get()
 }
 
 // GetCpuUsageMinOk returns a tuple with the CpuUsageMin field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetCpuUsageMinOk() (*float32, bool) {
-	if o == nil || IsNil(o.CpuUsageMin) {
+	if o == nil {
 		return nil, false
 	}
-	return o.CpuUsageMin, true
+	return o.CpuUsageMin.Get(), o.CpuUsageMin.IsSet()
 }
 
 // IsSetCpuUsageMin returns a boolean if a field has been set.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) IsSetCpuUsageMin() bool {
-	if o != nil && !IsNil(o.CpuUsageMin) {
+	if o != nil && o.CpuUsageMin.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCpuUsageMin gets a reference to the given float32 and assigns it to the CpuUsageMin field.
+// SetCpuUsageMin gets a reference to the given NullableFloat32 and assigns it to the CpuUsageMin field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetCpuUsageMin(v float32) {
-	o.CpuUsageMin = &v
+	o.CpuUsageMin.Set(&v)
 }
 
-// GetCpuUsageMax returns the CpuUsageMax field value if set, zero value otherwise.
+// SetCpuUsageMinNil sets the value for CpuUsageMin to be an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetCpuUsageMinNil() {
+	o.CpuUsageMin.Set(nil)
+}
+
+// UnsetCpuUsageMin ensures that no value is present for CpuUsageMin, not even an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) UnsetCpuUsageMin() {
+	o.CpuUsageMin.Unset()
+}
+
+// GetCpuUsageMax returns the CpuUsageMax field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetCpuUsageMax() float32 {
-	if o == nil || IsNil(o.CpuUsageMax) {
+	if o == nil || IsNil(o.CpuUsageMax.Get()) {
 		var ret float32
 		return ret
 	}
-	return *o.CpuUsageMax
+	return *o.CpuUsageMax.Get()
 }
 
 // GetCpuUsageMaxOk returns a tuple with the CpuUsageMax field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetCpuUsageMaxOk() (*float32, bool) {
-	if o == nil || IsNil(o.CpuUsageMax) {
+	if o == nil {
 		return nil, false
 	}
-	return o.CpuUsageMax, true
+	return o.CpuUsageMax.Get(), o.CpuUsageMax.IsSet()
 }
 
 // IsSetCpuUsageMax returns a boolean if a field has been set.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) IsSetCpuUsageMax() bool {
-	if o != nil && !IsNil(o.CpuUsageMax) {
+	if o != nil && o.CpuUsageMax.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCpuUsageMax gets a reference to the given float32 and assigns it to the CpuUsageMax field.
+// SetCpuUsageMax gets a reference to the given NullableFloat32 and assigns it to the CpuUsageMax field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetCpuUsageMax(v float32) {
-	o.CpuUsageMax = &v
+	o.CpuUsageMax.Set(&v)
 }
 
-// GetCpuUsageAvg returns the CpuUsageAvg field value if set, zero value otherwise.
+// SetCpuUsageMaxNil sets the value for CpuUsageMax to be an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetCpuUsageMaxNil() {
+	o.CpuUsageMax.Set(nil)
+}
+
+// UnsetCpuUsageMax ensures that no value is present for CpuUsageMax, not even an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) UnsetCpuUsageMax() {
+	o.CpuUsageMax.Unset()
+}
+
+// GetCpuUsageAvg returns the CpuUsageAvg field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetCpuUsageAvg() float32 {
-	if o == nil || IsNil(o.CpuUsageAvg) {
+	if o == nil || IsNil(o.CpuUsageAvg.Get()) {
 		var ret float32
 		return ret
 	}
-	return *o.CpuUsageAvg
+	return *o.CpuUsageAvg.Get()
 }
 
 // GetCpuUsageAvgOk returns a tuple with the CpuUsageAvg field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetCpuUsageAvgOk() (*float32, bool) {
-	if o == nil || IsNil(o.CpuUsageAvg) {
+	if o == nil {
 		return nil, false
 	}
-	return o.CpuUsageAvg, true
+	return o.CpuUsageAvg.Get(), o.CpuUsageAvg.IsSet()
 }
 
 // IsSetCpuUsageAvg returns a boolean if a field has been set.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) IsSetCpuUsageAvg() bool {
-	if o != nil && !IsNil(o.CpuUsageAvg) {
+	if o != nil && o.CpuUsageAvg.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCpuUsageAvg gets a reference to the given float32 and assigns it to the CpuUsageAvg field.
+// SetCpuUsageAvg gets a reference to the given NullableFloat32 and assigns it to the CpuUsageAvg field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetCpuUsageAvg(v float32) {
-	o.CpuUsageAvg = &v
+	o.CpuUsageAvg.Set(&v)
 }
 
-// GetCpuUsageSum returns the CpuUsageSum field value if set, zero value otherwise.
+// SetCpuUsageAvgNil sets the value for CpuUsageAvg to be an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetCpuUsageAvgNil() {
+	o.CpuUsageAvg.Set(nil)
+}
+
+// UnsetCpuUsageAvg ensures that no value is present for CpuUsageAvg, not even an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) UnsetCpuUsageAvg() {
+	o.CpuUsageAvg.Unset()
+}
+
+// GetCpuUsageSum returns the CpuUsageSum field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetCpuUsageSum() float32 {
-	if o == nil || IsNil(o.CpuUsageSum) {
+	if o == nil || IsNil(o.CpuUsageSum.Get()) {
 		var ret float32
 		return ret
 	}
-	return *o.CpuUsageSum
+	return *o.CpuUsageSum.Get()
 }
 
 // GetCpuUsageSumOk returns a tuple with the CpuUsageSum field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetCpuUsageSumOk() (*float32, bool) {
-	if o == nil || IsNil(o.CpuUsageSum) {
+	if o == nil {
 		return nil, false
 	}
-	return o.CpuUsageSum, true
+	return o.CpuUsageSum.Get(), o.CpuUsageSum.IsSet()
 }
 
 // IsSetCpuUsageSum returns a boolean if a field has been set.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) IsSetCpuUsageSum() bool {
-	if o != nil && !IsNil(o.CpuUsageSum) {
+	if o != nil && o.CpuUsageSum.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCpuUsageSum gets a reference to the given float32 and assigns it to the CpuUsageSum field.
+// SetCpuUsageSum gets a reference to the given NullableFloat32 and assigns it to the CpuUsageSum field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetCpuUsageSum(v float32) {
-	o.CpuUsageSum = &v
+	o.CpuUsageSum.Set(&v)
 }
 
-// GetMaxMemoryCount returns the MaxMemoryCount field value if set, zero value otherwise.
+// SetCpuUsageSumNil sets the value for CpuUsageSum to be an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetCpuUsageSumNil() {
+	o.CpuUsageSum.Set(nil)
+}
+
+// UnsetCpuUsageSum ensures that no value is present for CpuUsageSum, not even an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) UnsetCpuUsageSum() {
+	o.CpuUsageSum.Unset()
+}
+
+// GetMaxMemoryCount returns the MaxMemoryCount field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetMaxMemoryCount() float32 {
-	if o == nil || IsNil(o.MaxMemoryCount) {
+	if o == nil || IsNil(o.MaxMemoryCount.Get()) {
 		var ret float32
 		return ret
 	}
-	return *o.MaxMemoryCount
+	return *o.MaxMemoryCount.Get()
 }
 
 // GetMaxMemoryCountOk returns a tuple with the MaxMemoryCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetMaxMemoryCountOk() (*float32, bool) {
-	if o == nil || IsNil(o.MaxMemoryCount) {
+	if o == nil {
 		return nil, false
 	}
-	return o.MaxMemoryCount, true
+	return o.MaxMemoryCount.Get(), o.MaxMemoryCount.IsSet()
 }
 
 // IsSetMaxMemoryCount returns a boolean if a field has been set.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) IsSetMaxMemoryCount() bool {
-	if o != nil && !IsNil(o.MaxMemoryCount) {
+	if o != nil && o.MaxMemoryCount.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetMaxMemoryCount gets a reference to the given float32 and assigns it to the MaxMemoryCount field.
+// SetMaxMemoryCount gets a reference to the given NullableFloat32 and assigns it to the MaxMemoryCount field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetMaxMemoryCount(v float32) {
-	o.MaxMemoryCount = &v
+	o.MaxMemoryCount.Set(&v)
 }
 
-// GetMaxMemoryMin returns the MaxMemoryMin field value if set, zero value otherwise.
+// SetMaxMemoryCountNil sets the value for MaxMemoryCount to be an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetMaxMemoryCountNil() {
+	o.MaxMemoryCount.Set(nil)
+}
+
+// UnsetMaxMemoryCount ensures that no value is present for MaxMemoryCount, not even an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) UnsetMaxMemoryCount() {
+	o.MaxMemoryCount.Unset()
+}
+
+// GetMaxMemoryMin returns the MaxMemoryMin field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetMaxMemoryMin() float32 {
-	if o == nil || IsNil(o.MaxMemoryMin) {
+	if o == nil || IsNil(o.MaxMemoryMin.Get()) {
 		var ret float32
 		return ret
 	}
-	return *o.MaxMemoryMin
+	return *o.MaxMemoryMin.Get()
 }
 
 // GetMaxMemoryMinOk returns a tuple with the MaxMemoryMin field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetMaxMemoryMinOk() (*float32, bool) {
-	if o == nil || IsNil(o.MaxMemoryMin) {
+	if o == nil {
 		return nil, false
 	}
-	return o.MaxMemoryMin, true
+	return o.MaxMemoryMin.Get(), o.MaxMemoryMin.IsSet()
 }
 
 // IsSetMaxMemoryMin returns a boolean if a field has been set.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) IsSetMaxMemoryMin() bool {
-	if o != nil && !IsNil(o.MaxMemoryMin) {
+	if o != nil && o.MaxMemoryMin.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetMaxMemoryMin gets a reference to the given float32 and assigns it to the MaxMemoryMin field.
+// SetMaxMemoryMin gets a reference to the given NullableFloat32 and assigns it to the MaxMemoryMin field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetMaxMemoryMin(v float32) {
-	o.MaxMemoryMin = &v
+	o.MaxMemoryMin.Set(&v)
 }
 
-// GetMaxMemoryMax returns the MaxMemoryMax field value if set, zero value otherwise.
+// SetMaxMemoryMinNil sets the value for MaxMemoryMin to be an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetMaxMemoryMinNil() {
+	o.MaxMemoryMin.Set(nil)
+}
+
+// UnsetMaxMemoryMin ensures that no value is present for MaxMemoryMin, not even an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) UnsetMaxMemoryMin() {
+	o.MaxMemoryMin.Unset()
+}
+
+// GetMaxMemoryMax returns the MaxMemoryMax field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetMaxMemoryMax() float32 {
-	if o == nil || IsNil(o.MaxMemoryMax) {
+	if o == nil || IsNil(o.MaxMemoryMax.Get()) {
 		var ret float32
 		return ret
 	}
-	return *o.MaxMemoryMax
+	return *o.MaxMemoryMax.Get()
 }
 
 // GetMaxMemoryMaxOk returns a tuple with the MaxMemoryMax field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetMaxMemoryMaxOk() (*float32, bool) {
-	if o == nil || IsNil(o.MaxMemoryMax) {
+	if o == nil {
 		return nil, false
 	}
-	return o.MaxMemoryMax, true
+	return o.MaxMemoryMax.Get(), o.MaxMemoryMax.IsSet()
 }
 
 // IsSetMaxMemoryMax returns a boolean if a field has been set.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) IsSetMaxMemoryMax() bool {
-	if o != nil && !IsNil(o.MaxMemoryMax) {
+	if o != nil && o.MaxMemoryMax.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetMaxMemoryMax gets a reference to the given float32 and assigns it to the MaxMemoryMax field.
+// SetMaxMemoryMax gets a reference to the given NullableFloat32 and assigns it to the MaxMemoryMax field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetMaxMemoryMax(v float32) {
-	o.MaxMemoryMax = &v
+	o.MaxMemoryMax.Set(&v)
 }
 
-// GetMaxMemoryAvg returns the MaxMemoryAvg field value if set, zero value otherwise.
+// SetMaxMemoryMaxNil sets the value for MaxMemoryMax to be an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetMaxMemoryMaxNil() {
+	o.MaxMemoryMax.Set(nil)
+}
+
+// UnsetMaxMemoryMax ensures that no value is present for MaxMemoryMax, not even an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) UnsetMaxMemoryMax() {
+	o.MaxMemoryMax.Unset()
+}
+
+// GetMaxMemoryAvg returns the MaxMemoryAvg field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetMaxMemoryAvg() float32 {
-	if o == nil || IsNil(o.MaxMemoryAvg) {
+	if o == nil || IsNil(o.MaxMemoryAvg.Get()) {
 		var ret float32
 		return ret
 	}
-	return *o.MaxMemoryAvg
+	return *o.MaxMemoryAvg.Get()
 }
 
 // GetMaxMemoryAvgOk returns a tuple with the MaxMemoryAvg field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetMaxMemoryAvgOk() (*float32, bool) {
-	if o == nil || IsNil(o.MaxMemoryAvg) {
+	if o == nil {
 		return nil, false
 	}
-	return o.MaxMemoryAvg, true
+	return o.MaxMemoryAvg.Get(), o.MaxMemoryAvg.IsSet()
 }
 
 // IsSetMaxMemoryAvg returns a boolean if a field has been set.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) IsSetMaxMemoryAvg() bool {
-	if o != nil && !IsNil(o.MaxMemoryAvg) {
+	if o != nil && o.MaxMemoryAvg.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetMaxMemoryAvg gets a reference to the given float32 and assigns it to the MaxMemoryAvg field.
+// SetMaxMemoryAvg gets a reference to the given NullableFloat32 and assigns it to the MaxMemoryAvg field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetMaxMemoryAvg(v float32) {
-	o.MaxMemoryAvg = &v
+	o.MaxMemoryAvg.Set(&v)
 }
 
-// GetMaxMemorySum returns the MaxMemorySum field value if set, zero value otherwise.
+// SetMaxMemoryAvgNil sets the value for MaxMemoryAvg to be an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetMaxMemoryAvgNil() {
+	o.MaxMemoryAvg.Set(nil)
+}
+
+// UnsetMaxMemoryAvg ensures that no value is present for MaxMemoryAvg, not even an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) UnsetMaxMemoryAvg() {
+	o.MaxMemoryAvg.Unset()
+}
+
+// GetMaxMemorySum returns the MaxMemorySum field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetMaxMemorySum() float32 {
-	if o == nil || IsNil(o.MaxMemorySum) {
+	if o == nil || IsNil(o.MaxMemorySum.Get()) {
 		var ret float32
 		return ret
 	}
-	return *o.MaxMemorySum
+	return *o.MaxMemorySum.Get()
 }
 
 // GetMaxMemorySumOk returns a tuple with the MaxMemorySum field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetMaxMemorySumOk() (*float32, bool) {
-	if o == nil || IsNil(o.MaxMemorySum) {
+	if o == nil {
 		return nil, false
 	}
-	return o.MaxMemorySum, true
+	return o.MaxMemorySum.Get(), o.MaxMemorySum.IsSet()
 }
 
 // IsSetMaxMemorySum returns a boolean if a field has been set.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) IsSetMaxMemorySum() bool {
-	if o != nil && !IsNil(o.MaxMemorySum) {
+	if o != nil && o.MaxMemorySum.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetMaxMemorySum gets a reference to the given float32 and assigns it to the MaxMemorySum field.
+// SetMaxMemorySum gets a reference to the given NullableFloat32 and assigns it to the MaxMemorySum field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetMaxMemorySum(v float32) {
-	o.MaxMemorySum = &v
+	o.MaxMemorySum.Set(&v)
 }
 
-// GetCpuUserTimeCount returns the CpuUserTimeCount field value if set, zero value otherwise.
+// SetMaxMemorySumNil sets the value for MaxMemorySum to be an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetMaxMemorySumNil() {
+	o.MaxMemorySum.Set(nil)
+}
+
+// UnsetMaxMemorySum ensures that no value is present for MaxMemorySum, not even an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) UnsetMaxMemorySum() {
+	o.MaxMemorySum.Unset()
+}
+
+// GetCpuUserTimeCount returns the CpuUserTimeCount field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetCpuUserTimeCount() float32 {
-	if o == nil || IsNil(o.CpuUserTimeCount) {
+	if o == nil || IsNil(o.CpuUserTimeCount.Get()) {
 		var ret float32
 		return ret
 	}
-	return *o.CpuUserTimeCount
+	return *o.CpuUserTimeCount.Get()
 }
 
 // GetCpuUserTimeCountOk returns a tuple with the CpuUserTimeCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetCpuUserTimeCountOk() (*float32, bool) {
-	if o == nil || IsNil(o.CpuUserTimeCount) {
+	if o == nil {
 		return nil, false
 	}
-	return o.CpuUserTimeCount, true
+	return o.CpuUserTimeCount.Get(), o.CpuUserTimeCount.IsSet()
 }
 
 // IsSetCpuUserTimeCount returns a boolean if a field has been set.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) IsSetCpuUserTimeCount() bool {
-	if o != nil && !IsNil(o.CpuUserTimeCount) {
+	if o != nil && o.CpuUserTimeCount.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCpuUserTimeCount gets a reference to the given float32 and assigns it to the CpuUserTimeCount field.
+// SetCpuUserTimeCount gets a reference to the given NullableFloat32 and assigns it to the CpuUserTimeCount field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetCpuUserTimeCount(v float32) {
-	o.CpuUserTimeCount = &v
+	o.CpuUserTimeCount.Set(&v)
 }
 
-// GetCpuUserTimeMin returns the CpuUserTimeMin field value if set, zero value otherwise.
+// SetCpuUserTimeCountNil sets the value for CpuUserTimeCount to be an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetCpuUserTimeCountNil() {
+	o.CpuUserTimeCount.Set(nil)
+}
+
+// UnsetCpuUserTimeCount ensures that no value is present for CpuUserTimeCount, not even an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) UnsetCpuUserTimeCount() {
+	o.CpuUserTimeCount.Unset()
+}
+
+// GetCpuUserTimeMin returns the CpuUserTimeMin field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetCpuUserTimeMin() float32 {
-	if o == nil || IsNil(o.CpuUserTimeMin) {
+	if o == nil || IsNil(o.CpuUserTimeMin.Get()) {
 		var ret float32
 		return ret
 	}
-	return *o.CpuUserTimeMin
+	return *o.CpuUserTimeMin.Get()
 }
 
 // GetCpuUserTimeMinOk returns a tuple with the CpuUserTimeMin field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetCpuUserTimeMinOk() (*float32, bool) {
-	if o == nil || IsNil(o.CpuUserTimeMin) {
+	if o == nil {
 		return nil, false
 	}
-	return o.CpuUserTimeMin, true
+	return o.CpuUserTimeMin.Get(), o.CpuUserTimeMin.IsSet()
 }
 
 // IsSetCpuUserTimeMin returns a boolean if a field has been set.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) IsSetCpuUserTimeMin() bool {
-	if o != nil && !IsNil(o.CpuUserTimeMin) {
+	if o != nil && o.CpuUserTimeMin.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCpuUserTimeMin gets a reference to the given float32 and assigns it to the CpuUserTimeMin field.
+// SetCpuUserTimeMin gets a reference to the given NullableFloat32 and assigns it to the CpuUserTimeMin field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetCpuUserTimeMin(v float32) {
-	o.CpuUserTimeMin = &v
+	o.CpuUserTimeMin.Set(&v)
 }
 
-// GetCpuUserTimeMax returns the CpuUserTimeMax field value if set, zero value otherwise.
+// SetCpuUserTimeMinNil sets the value for CpuUserTimeMin to be an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetCpuUserTimeMinNil() {
+	o.CpuUserTimeMin.Set(nil)
+}
+
+// UnsetCpuUserTimeMin ensures that no value is present for CpuUserTimeMin, not even an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) UnsetCpuUserTimeMin() {
+	o.CpuUserTimeMin.Unset()
+}
+
+// GetCpuUserTimeMax returns the CpuUserTimeMax field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetCpuUserTimeMax() float32 {
-	if o == nil || IsNil(o.CpuUserTimeMax) {
+	if o == nil || IsNil(o.CpuUserTimeMax.Get()) {
 		var ret float32
 		return ret
 	}
-	return *o.CpuUserTimeMax
+	return *o.CpuUserTimeMax.Get()
 }
 
 // GetCpuUserTimeMaxOk returns a tuple with the CpuUserTimeMax field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetCpuUserTimeMaxOk() (*float32, bool) {
-	if o == nil || IsNil(o.CpuUserTimeMax) {
+	if o == nil {
 		return nil, false
 	}
-	return o.CpuUserTimeMax, true
+	return o.CpuUserTimeMax.Get(), o.CpuUserTimeMax.IsSet()
 }
 
 // IsSetCpuUserTimeMax returns a boolean if a field has been set.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) IsSetCpuUserTimeMax() bool {
-	if o != nil && !IsNil(o.CpuUserTimeMax) {
+	if o != nil && o.CpuUserTimeMax.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCpuUserTimeMax gets a reference to the given float32 and assigns it to the CpuUserTimeMax field.
+// SetCpuUserTimeMax gets a reference to the given NullableFloat32 and assigns it to the CpuUserTimeMax field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetCpuUserTimeMax(v float32) {
-	o.CpuUserTimeMax = &v
+	o.CpuUserTimeMax.Set(&v)
 }
 
-// GetCpuUserTimeAvg returns the CpuUserTimeAvg field value if set, zero value otherwise.
+// SetCpuUserTimeMaxNil sets the value for CpuUserTimeMax to be an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetCpuUserTimeMaxNil() {
+	o.CpuUserTimeMax.Set(nil)
+}
+
+// UnsetCpuUserTimeMax ensures that no value is present for CpuUserTimeMax, not even an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) UnsetCpuUserTimeMax() {
+	o.CpuUserTimeMax.Unset()
+}
+
+// GetCpuUserTimeAvg returns the CpuUserTimeAvg field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetCpuUserTimeAvg() float32 {
-	if o == nil || IsNil(o.CpuUserTimeAvg) {
+	if o == nil || IsNil(o.CpuUserTimeAvg.Get()) {
 		var ret float32
 		return ret
 	}
-	return *o.CpuUserTimeAvg
+	return *o.CpuUserTimeAvg.Get()
 }
 
 // GetCpuUserTimeAvgOk returns a tuple with the CpuUserTimeAvg field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetCpuUserTimeAvgOk() (*float32, bool) {
-	if o == nil || IsNil(o.CpuUserTimeAvg) {
+	if o == nil {
 		return nil, false
 	}
-	return o.CpuUserTimeAvg, true
+	return o.CpuUserTimeAvg.Get(), o.CpuUserTimeAvg.IsSet()
 }
 
 // IsSetCpuUserTimeAvg returns a boolean if a field has been set.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) IsSetCpuUserTimeAvg() bool {
-	if o != nil && !IsNil(o.CpuUserTimeAvg) {
+	if o != nil && o.CpuUserTimeAvg.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCpuUserTimeAvg gets a reference to the given float32 and assigns it to the CpuUserTimeAvg field.
+// SetCpuUserTimeAvg gets a reference to the given NullableFloat32 and assigns it to the CpuUserTimeAvg field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetCpuUserTimeAvg(v float32) {
-	o.CpuUserTimeAvg = &v
+	o.CpuUserTimeAvg.Set(&v)
 }
 
-// GetCpuUserTimeSum returns the CpuUserTimeSum field value if set, zero value otherwise.
+// SetCpuUserTimeAvgNil sets the value for CpuUserTimeAvg to be an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetCpuUserTimeAvgNil() {
+	o.CpuUserTimeAvg.Set(nil)
+}
+
+// UnsetCpuUserTimeAvg ensures that no value is present for CpuUserTimeAvg, not even an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) UnsetCpuUserTimeAvg() {
+	o.CpuUserTimeAvg.Unset()
+}
+
+// GetCpuUserTimeSum returns the CpuUserTimeSum field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetCpuUserTimeSum() float32 {
-	if o == nil || IsNil(o.CpuUserTimeSum) {
+	if o == nil || IsNil(o.CpuUserTimeSum.Get()) {
 		var ret float32
 		return ret
 	}
-	return *o.CpuUserTimeSum
+	return *o.CpuUserTimeSum.Get()
 }
 
 // GetCpuUserTimeSumOk returns a tuple with the CpuUserTimeSum field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetCpuUserTimeSumOk() (*float32, bool) {
-	if o == nil || IsNil(o.CpuUserTimeSum) {
+	if o == nil {
 		return nil, false
 	}
-	return o.CpuUserTimeSum, true
+	return o.CpuUserTimeSum.Get(), o.CpuUserTimeSum.IsSet()
 }
 
 // IsSetCpuUserTimeSum returns a boolean if a field has been set.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) IsSetCpuUserTimeSum() bool {
-	if o != nil && !IsNil(o.CpuUserTimeSum) {
+	if o != nil && o.CpuUserTimeSum.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCpuUserTimeSum gets a reference to the given float32 and assigns it to the CpuUserTimeSum field.
+// SetCpuUserTimeSum gets a reference to the given NullableFloat32 and assigns it to the CpuUserTimeSum field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetCpuUserTimeSum(v float32) {
-	o.CpuUserTimeSum = &v
+	o.CpuUserTimeSum.Set(&v)
 }
 
-// GetCpuSystemTimeCount returns the CpuSystemTimeCount field value if set, zero value otherwise.
+// SetCpuUserTimeSumNil sets the value for CpuUserTimeSum to be an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetCpuUserTimeSumNil() {
+	o.CpuUserTimeSum.Set(nil)
+}
+
+// UnsetCpuUserTimeSum ensures that no value is present for CpuUserTimeSum, not even an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) UnsetCpuUserTimeSum() {
+	o.CpuUserTimeSum.Unset()
+}
+
+// GetCpuSystemTimeCount returns the CpuSystemTimeCount field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetCpuSystemTimeCount() float32 {
-	if o == nil || IsNil(o.CpuSystemTimeCount) {
+	if o == nil || IsNil(o.CpuSystemTimeCount.Get()) {
 		var ret float32
 		return ret
 	}
-	return *o.CpuSystemTimeCount
+	return *o.CpuSystemTimeCount.Get()
 }
 
 // GetCpuSystemTimeCountOk returns a tuple with the CpuSystemTimeCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetCpuSystemTimeCountOk() (*float32, bool) {
-	if o == nil || IsNil(o.CpuSystemTimeCount) {
+	if o == nil {
 		return nil, false
 	}
-	return o.CpuSystemTimeCount, true
+	return o.CpuSystemTimeCount.Get(), o.CpuSystemTimeCount.IsSet()
 }
 
 // IsSetCpuSystemTimeCount returns a boolean if a field has been set.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) IsSetCpuSystemTimeCount() bool {
-	if o != nil && !IsNil(o.CpuSystemTimeCount) {
+	if o != nil && o.CpuSystemTimeCount.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCpuSystemTimeCount gets a reference to the given float32 and assigns it to the CpuSystemTimeCount field.
+// SetCpuSystemTimeCount gets a reference to the given NullableFloat32 and assigns it to the CpuSystemTimeCount field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetCpuSystemTimeCount(v float32) {
-	o.CpuSystemTimeCount = &v
+	o.CpuSystemTimeCount.Set(&v)
 }
 
-// GetCpuSystemTimeMin returns the CpuSystemTimeMin field value if set, zero value otherwise.
+// SetCpuSystemTimeCountNil sets the value for CpuSystemTimeCount to be an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetCpuSystemTimeCountNil() {
+	o.CpuSystemTimeCount.Set(nil)
+}
+
+// UnsetCpuSystemTimeCount ensures that no value is present for CpuSystemTimeCount, not even an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) UnsetCpuSystemTimeCount() {
+	o.CpuSystemTimeCount.Unset()
+}
+
+// GetCpuSystemTimeMin returns the CpuSystemTimeMin field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetCpuSystemTimeMin() float32 {
-	if o == nil || IsNil(o.CpuSystemTimeMin) {
+	if o == nil || IsNil(o.CpuSystemTimeMin.Get()) {
 		var ret float32
 		return ret
 	}
-	return *o.CpuSystemTimeMin
+	return *o.CpuSystemTimeMin.Get()
 }
 
 // GetCpuSystemTimeMinOk returns a tuple with the CpuSystemTimeMin field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetCpuSystemTimeMinOk() (*float32, bool) {
-	if o == nil || IsNil(o.CpuSystemTimeMin) {
+	if o == nil {
 		return nil, false
 	}
-	return o.CpuSystemTimeMin, true
+	return o.CpuSystemTimeMin.Get(), o.CpuSystemTimeMin.IsSet()
 }
 
 // IsSetCpuSystemTimeMin returns a boolean if a field has been set.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) IsSetCpuSystemTimeMin() bool {
-	if o != nil && !IsNil(o.CpuSystemTimeMin) {
+	if o != nil && o.CpuSystemTimeMin.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCpuSystemTimeMin gets a reference to the given float32 and assigns it to the CpuSystemTimeMin field.
+// SetCpuSystemTimeMin gets a reference to the given NullableFloat32 and assigns it to the CpuSystemTimeMin field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetCpuSystemTimeMin(v float32) {
-	o.CpuSystemTimeMin = &v
+	o.CpuSystemTimeMin.Set(&v)
 }
 
-// GetCpuSystemTimeMax returns the CpuSystemTimeMax field value if set, zero value otherwise.
+// SetCpuSystemTimeMinNil sets the value for CpuSystemTimeMin to be an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetCpuSystemTimeMinNil() {
+	o.CpuSystemTimeMin.Set(nil)
+}
+
+// UnsetCpuSystemTimeMin ensures that no value is present for CpuSystemTimeMin, not even an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) UnsetCpuSystemTimeMin() {
+	o.CpuSystemTimeMin.Unset()
+}
+
+// GetCpuSystemTimeMax returns the CpuSystemTimeMax field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetCpuSystemTimeMax() float32 {
-	if o == nil || IsNil(o.CpuSystemTimeMax) {
+	if o == nil || IsNil(o.CpuSystemTimeMax.Get()) {
 		var ret float32
 		return ret
 	}
-	return *o.CpuSystemTimeMax
+	return *o.CpuSystemTimeMax.Get()
 }
 
 // GetCpuSystemTimeMaxOk returns a tuple with the CpuSystemTimeMax field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetCpuSystemTimeMaxOk() (*float32, bool) {
-	if o == nil || IsNil(o.CpuSystemTimeMax) {
+	if o == nil {
 		return nil, false
 	}
-	return o.CpuSystemTimeMax, true
+	return o.CpuSystemTimeMax.Get(), o.CpuSystemTimeMax.IsSet()
 }
 
 // IsSetCpuSystemTimeMax returns a boolean if a field has been set.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) IsSetCpuSystemTimeMax() bool {
-	if o != nil && !IsNil(o.CpuSystemTimeMax) {
+	if o != nil && o.CpuSystemTimeMax.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCpuSystemTimeMax gets a reference to the given float32 and assigns it to the CpuSystemTimeMax field.
+// SetCpuSystemTimeMax gets a reference to the given NullableFloat32 and assigns it to the CpuSystemTimeMax field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetCpuSystemTimeMax(v float32) {
-	o.CpuSystemTimeMax = &v
+	o.CpuSystemTimeMax.Set(&v)
+}
+
+// SetCpuSystemTimeMaxNil sets the value for CpuSystemTimeMax to be an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetCpuSystemTimeMaxNil() {
+	o.CpuSystemTimeMax.Set(nil)
+}
+
+// UnsetCpuSystemTimeMax ensures that no value is present for CpuSystemTimeMax, not even an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) UnsetCpuSystemTimeMax() {
+	o.CpuSystemTimeMax.Unset()
 }
 
 // GetCpuSystemTimeAvg returns the CpuSystemTimeAvg field value if set, zero value otherwise.
@@ -1076,356 +1384,477 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetCpuSystemT
 	o.CpuSystemTimeAvg = &v
 }
 
-// GetCpuSystemTimeSum returns the CpuSystemTimeSum field value if set, zero value otherwise.
+// GetCpuSystemTimeSum returns the CpuSystemTimeSum field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetCpuSystemTimeSum() float32 {
-	if o == nil || IsNil(o.CpuSystemTimeSum) {
+	if o == nil || IsNil(o.CpuSystemTimeSum.Get()) {
 		var ret float32
 		return ret
 	}
-	return *o.CpuSystemTimeSum
+	return *o.CpuSystemTimeSum.Get()
 }
 
 // GetCpuSystemTimeSumOk returns a tuple with the CpuSystemTimeSum field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetCpuSystemTimeSumOk() (*float32, bool) {
-	if o == nil || IsNil(o.CpuSystemTimeSum) {
+	if o == nil {
 		return nil, false
 	}
-	return o.CpuSystemTimeSum, true
+	return o.CpuSystemTimeSum.Get(), o.CpuSystemTimeSum.IsSet()
 }
 
 // IsSetCpuSystemTimeSum returns a boolean if a field has been set.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) IsSetCpuSystemTimeSum() bool {
-	if o != nil && !IsNil(o.CpuSystemTimeSum) {
+	if o != nil && o.CpuSystemTimeSum.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCpuSystemTimeSum gets a reference to the given float32 and assigns it to the CpuSystemTimeSum field.
+// SetCpuSystemTimeSum gets a reference to the given NullableFloat32 and assigns it to the CpuSystemTimeSum field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetCpuSystemTimeSum(v float32) {
-	o.CpuSystemTimeSum = &v
+	o.CpuSystemTimeSum.Set(&v)
 }
 
-// GetUsedMemoryCount returns the UsedMemoryCount field value if set, zero value otherwise.
+// SetCpuSystemTimeSumNil sets the value for CpuSystemTimeSum to be an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetCpuSystemTimeSumNil() {
+	o.CpuSystemTimeSum.Set(nil)
+}
+
+// UnsetCpuSystemTimeSum ensures that no value is present for CpuSystemTimeSum, not even an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) UnsetCpuSystemTimeSum() {
+	o.CpuSystemTimeSum.Unset()
+}
+
+// GetUsedMemoryCount returns the UsedMemoryCount field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetUsedMemoryCount() float32 {
-	if o == nil || IsNil(o.UsedMemoryCount) {
+	if o == nil || IsNil(o.UsedMemoryCount.Get()) {
 		var ret float32
 		return ret
 	}
-	return *o.UsedMemoryCount
+	return *o.UsedMemoryCount.Get()
 }
 
 // GetUsedMemoryCountOk returns a tuple with the UsedMemoryCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetUsedMemoryCountOk() (*float32, bool) {
-	if o == nil || IsNil(o.UsedMemoryCount) {
+	if o == nil {
 		return nil, false
 	}
-	return o.UsedMemoryCount, true
+	return o.UsedMemoryCount.Get(), o.UsedMemoryCount.IsSet()
 }
 
 // IsSetUsedMemoryCount returns a boolean if a field has been set.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) IsSetUsedMemoryCount() bool {
-	if o != nil && !IsNil(o.UsedMemoryCount) {
+	if o != nil && o.UsedMemoryCount.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetUsedMemoryCount gets a reference to the given float32 and assigns it to the UsedMemoryCount field.
+// SetUsedMemoryCount gets a reference to the given NullableFloat32 and assigns it to the UsedMemoryCount field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetUsedMemoryCount(v float32) {
-	o.UsedMemoryCount = &v
+	o.UsedMemoryCount.Set(&v)
 }
 
-// GetUsedMemoryMin returns the UsedMemoryMin field value if set, zero value otherwise.
+// SetUsedMemoryCountNil sets the value for UsedMemoryCount to be an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetUsedMemoryCountNil() {
+	o.UsedMemoryCount.Set(nil)
+}
+
+// UnsetUsedMemoryCount ensures that no value is present for UsedMemoryCount, not even an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) UnsetUsedMemoryCount() {
+	o.UsedMemoryCount.Unset()
+}
+
+// GetUsedMemoryMin returns the UsedMemoryMin field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetUsedMemoryMin() float32 {
-	if o == nil || IsNil(o.UsedMemoryMin) {
+	if o == nil || IsNil(o.UsedMemoryMin.Get()) {
 		var ret float32
 		return ret
 	}
-	return *o.UsedMemoryMin
+	return *o.UsedMemoryMin.Get()
 }
 
 // GetUsedMemoryMinOk returns a tuple with the UsedMemoryMin field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetUsedMemoryMinOk() (*float32, bool) {
-	if o == nil || IsNil(o.UsedMemoryMin) {
+	if o == nil {
 		return nil, false
 	}
-	return o.UsedMemoryMin, true
+	return o.UsedMemoryMin.Get(), o.UsedMemoryMin.IsSet()
 }
 
 // IsSetUsedMemoryMin returns a boolean if a field has been set.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) IsSetUsedMemoryMin() bool {
-	if o != nil && !IsNil(o.UsedMemoryMin) {
+	if o != nil && o.UsedMemoryMin.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetUsedMemoryMin gets a reference to the given float32 and assigns it to the UsedMemoryMin field.
+// SetUsedMemoryMin gets a reference to the given NullableFloat32 and assigns it to the UsedMemoryMin field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetUsedMemoryMin(v float32) {
-	o.UsedMemoryMin = &v
+	o.UsedMemoryMin.Set(&v)
 }
 
-// GetUsedMemoryMax returns the UsedMemoryMax field value if set, zero value otherwise.
+// SetUsedMemoryMinNil sets the value for UsedMemoryMin to be an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetUsedMemoryMinNil() {
+	o.UsedMemoryMin.Set(nil)
+}
+
+// UnsetUsedMemoryMin ensures that no value is present for UsedMemoryMin, not even an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) UnsetUsedMemoryMin() {
+	o.UsedMemoryMin.Unset()
+}
+
+// GetUsedMemoryMax returns the UsedMemoryMax field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetUsedMemoryMax() float32 {
-	if o == nil || IsNil(o.UsedMemoryMax) {
+	if o == nil || IsNil(o.UsedMemoryMax.Get()) {
 		var ret float32
 		return ret
 	}
-	return *o.UsedMemoryMax
+	return *o.UsedMemoryMax.Get()
 }
 
 // GetUsedMemoryMaxOk returns a tuple with the UsedMemoryMax field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetUsedMemoryMaxOk() (*float32, bool) {
-	if o == nil || IsNil(o.UsedMemoryMax) {
+	if o == nil {
 		return nil, false
 	}
-	return o.UsedMemoryMax, true
+	return o.UsedMemoryMax.Get(), o.UsedMemoryMax.IsSet()
 }
 
 // IsSetUsedMemoryMax returns a boolean if a field has been set.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) IsSetUsedMemoryMax() bool {
-	if o != nil && !IsNil(o.UsedMemoryMax) {
+	if o != nil && o.UsedMemoryMax.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetUsedMemoryMax gets a reference to the given float32 and assigns it to the UsedMemoryMax field.
+// SetUsedMemoryMax gets a reference to the given NullableFloat32 and assigns it to the UsedMemoryMax field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetUsedMemoryMax(v float32) {
-	o.UsedMemoryMax = &v
+	o.UsedMemoryMax.Set(&v)
 }
 
-// GetUsedMemoryAvg returns the UsedMemoryAvg field value if set, zero value otherwise.
+// SetUsedMemoryMaxNil sets the value for UsedMemoryMax to be an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetUsedMemoryMaxNil() {
+	o.UsedMemoryMax.Set(nil)
+}
+
+// UnsetUsedMemoryMax ensures that no value is present for UsedMemoryMax, not even an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) UnsetUsedMemoryMax() {
+	o.UsedMemoryMax.Unset()
+}
+
+// GetUsedMemoryAvg returns the UsedMemoryAvg field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetUsedMemoryAvg() float32 {
-	if o == nil || IsNil(o.UsedMemoryAvg) {
+	if o == nil || IsNil(o.UsedMemoryAvg.Get()) {
 		var ret float32
 		return ret
 	}
-	return *o.UsedMemoryAvg
+	return *o.UsedMemoryAvg.Get()
 }
 
 // GetUsedMemoryAvgOk returns a tuple with the UsedMemoryAvg field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetUsedMemoryAvgOk() (*float32, bool) {
-	if o == nil || IsNil(o.UsedMemoryAvg) {
+	if o == nil {
 		return nil, false
 	}
-	return o.UsedMemoryAvg, true
+	return o.UsedMemoryAvg.Get(), o.UsedMemoryAvg.IsSet()
 }
 
 // IsSetUsedMemoryAvg returns a boolean if a field has been set.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) IsSetUsedMemoryAvg() bool {
-	if o != nil && !IsNil(o.UsedMemoryAvg) {
+	if o != nil && o.UsedMemoryAvg.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetUsedMemoryAvg gets a reference to the given float32 and assigns it to the UsedMemoryAvg field.
+// SetUsedMemoryAvg gets a reference to the given NullableFloat32 and assigns it to the UsedMemoryAvg field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetUsedMemoryAvg(v float32) {
-	o.UsedMemoryAvg = &v
+	o.UsedMemoryAvg.Set(&v)
 }
 
-// GetUsedMemorySum returns the UsedMemorySum field value if set, zero value otherwise.
+// SetUsedMemoryAvgNil sets the value for UsedMemoryAvg to be an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetUsedMemoryAvgNil() {
+	o.UsedMemoryAvg.Set(nil)
+}
+
+// UnsetUsedMemoryAvg ensures that no value is present for UsedMemoryAvg, not even an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) UnsetUsedMemoryAvg() {
+	o.UsedMemoryAvg.Unset()
+}
+
+// GetUsedMemorySum returns the UsedMemorySum field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetUsedMemorySum() float32 {
-	if o == nil || IsNil(o.UsedMemorySum) {
+	if o == nil || IsNil(o.UsedMemorySum.Get()) {
 		var ret float32
 		return ret
 	}
-	return *o.UsedMemorySum
+	return *o.UsedMemorySum.Get()
 }
 
 // GetUsedMemorySumOk returns a tuple with the UsedMemorySum field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetUsedMemorySumOk() (*float32, bool) {
-	if o == nil || IsNil(o.UsedMemorySum) {
+	if o == nil {
 		return nil, false
 	}
-	return o.UsedMemorySum, true
+	return o.UsedMemorySum.Get(), o.UsedMemorySum.IsSet()
 }
 
 // IsSetUsedMemorySum returns a boolean if a field has been set.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) IsSetUsedMemorySum() bool {
-	if o != nil && !IsNil(o.UsedMemorySum) {
+	if o != nil && o.UsedMemorySum.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetUsedMemorySum gets a reference to the given float32 and assigns it to the UsedMemorySum field.
+// SetUsedMemorySum gets a reference to the given NullableFloat32 and assigns it to the UsedMemorySum field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetUsedMemorySum(v float32) {
-	o.UsedMemorySum = &v
+	o.UsedMemorySum.Set(&v)
 }
 
-// GetFreeMemoryCount returns the FreeMemoryCount field value if set, zero value otherwise.
+// SetUsedMemorySumNil sets the value for UsedMemorySum to be an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetUsedMemorySumNil() {
+	o.UsedMemorySum.Set(nil)
+}
+
+// UnsetUsedMemorySum ensures that no value is present for UsedMemorySum, not even an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) UnsetUsedMemorySum() {
+	o.UsedMemorySum.Unset()
+}
+
+// GetFreeMemoryCount returns the FreeMemoryCount field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetFreeMemoryCount() float32 {
-	if o == nil || IsNil(o.FreeMemoryCount) {
+	if o == nil || IsNil(o.FreeMemoryCount.Get()) {
 		var ret float32
 		return ret
 	}
-	return *o.FreeMemoryCount
+	return *o.FreeMemoryCount.Get()
 }
 
 // GetFreeMemoryCountOk returns a tuple with the FreeMemoryCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetFreeMemoryCountOk() (*float32, bool) {
-	if o == nil || IsNil(o.FreeMemoryCount) {
+	if o == nil {
 		return nil, false
 	}
-	return o.FreeMemoryCount, true
+	return o.FreeMemoryCount.Get(), o.FreeMemoryCount.IsSet()
 }
 
 // IsSetFreeMemoryCount returns a boolean if a field has been set.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) IsSetFreeMemoryCount() bool {
-	if o != nil && !IsNil(o.FreeMemoryCount) {
+	if o != nil && o.FreeMemoryCount.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetFreeMemoryCount gets a reference to the given float32 and assigns it to the FreeMemoryCount field.
+// SetFreeMemoryCount gets a reference to the given NullableFloat32 and assigns it to the FreeMemoryCount field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetFreeMemoryCount(v float32) {
-	o.FreeMemoryCount = &v
+	o.FreeMemoryCount.Set(&v)
 }
 
-// GetFreeMemoryMin returns the FreeMemoryMin field value if set, zero value otherwise.
+// SetFreeMemoryCountNil sets the value for FreeMemoryCount to be an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetFreeMemoryCountNil() {
+	o.FreeMemoryCount.Set(nil)
+}
+
+// UnsetFreeMemoryCount ensures that no value is present for FreeMemoryCount, not even an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) UnsetFreeMemoryCount() {
+	o.FreeMemoryCount.Unset()
+}
+
+// GetFreeMemoryMin returns the FreeMemoryMin field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetFreeMemoryMin() float32 {
-	if o == nil || IsNil(o.FreeMemoryMin) {
+	if o == nil || IsNil(o.FreeMemoryMin.Get()) {
 		var ret float32
 		return ret
 	}
-	return *o.FreeMemoryMin
+	return *o.FreeMemoryMin.Get()
 }
 
 // GetFreeMemoryMinOk returns a tuple with the FreeMemoryMin field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetFreeMemoryMinOk() (*float32, bool) {
-	if o == nil || IsNil(o.FreeMemoryMin) {
+	if o == nil {
 		return nil, false
 	}
-	return o.FreeMemoryMin, true
+	return o.FreeMemoryMin.Get(), o.FreeMemoryMin.IsSet()
 }
 
 // IsSetFreeMemoryMin returns a boolean if a field has been set.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) IsSetFreeMemoryMin() bool {
-	if o != nil && !IsNil(o.FreeMemoryMin) {
+	if o != nil && o.FreeMemoryMin.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetFreeMemoryMin gets a reference to the given float32 and assigns it to the FreeMemoryMin field.
+// SetFreeMemoryMin gets a reference to the given NullableFloat32 and assigns it to the FreeMemoryMin field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetFreeMemoryMin(v float32) {
-	o.FreeMemoryMin = &v
+	o.FreeMemoryMin.Set(&v)
 }
 
-// GetFreeMemoryMax returns the FreeMemoryMax field value if set, zero value otherwise.
+// SetFreeMemoryMinNil sets the value for FreeMemoryMin to be an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetFreeMemoryMinNil() {
+	o.FreeMemoryMin.Set(nil)
+}
+
+// UnsetFreeMemoryMin ensures that no value is present for FreeMemoryMin, not even an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) UnsetFreeMemoryMin() {
+	o.FreeMemoryMin.Unset()
+}
+
+// GetFreeMemoryMax returns the FreeMemoryMax field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetFreeMemoryMax() float32 {
-	if o == nil || IsNil(o.FreeMemoryMax) {
+	if o == nil || IsNil(o.FreeMemoryMax.Get()) {
 		var ret float32
 		return ret
 	}
-	return *o.FreeMemoryMax
+	return *o.FreeMemoryMax.Get()
 }
 
 // GetFreeMemoryMaxOk returns a tuple with the FreeMemoryMax field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetFreeMemoryMaxOk() (*float32, bool) {
-	if o == nil || IsNil(o.FreeMemoryMax) {
+	if o == nil {
 		return nil, false
 	}
-	return o.FreeMemoryMax, true
+	return o.FreeMemoryMax.Get(), o.FreeMemoryMax.IsSet()
 }
 
 // IsSetFreeMemoryMax returns a boolean if a field has been set.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) IsSetFreeMemoryMax() bool {
-	if o != nil && !IsNil(o.FreeMemoryMax) {
+	if o != nil && o.FreeMemoryMax.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetFreeMemoryMax gets a reference to the given float32 and assigns it to the FreeMemoryMax field.
+// SetFreeMemoryMax gets a reference to the given NullableFloat32 and assigns it to the FreeMemoryMax field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetFreeMemoryMax(v float32) {
-	o.FreeMemoryMax = &v
+	o.FreeMemoryMax.Set(&v)
 }
 
-// GetFreeMemoryAvg returns the FreeMemoryAvg field value if set, zero value otherwise.
+// SetFreeMemoryMaxNil sets the value for FreeMemoryMax to be an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetFreeMemoryMaxNil() {
+	o.FreeMemoryMax.Set(nil)
+}
+
+// UnsetFreeMemoryMax ensures that no value is present for FreeMemoryMax, not even an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) UnsetFreeMemoryMax() {
+	o.FreeMemoryMax.Unset()
+}
+
+// GetFreeMemoryAvg returns the FreeMemoryAvg field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetFreeMemoryAvg() float32 {
-	if o == nil || IsNil(o.FreeMemoryAvg) {
+	if o == nil || IsNil(o.FreeMemoryAvg.Get()) {
 		var ret float32
 		return ret
 	}
-	return *o.FreeMemoryAvg
+	return *o.FreeMemoryAvg.Get()
 }
 
 // GetFreeMemoryAvgOk returns a tuple with the FreeMemoryAvg field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetFreeMemoryAvgOk() (*float32, bool) {
-	if o == nil || IsNil(o.FreeMemoryAvg) {
+	if o == nil {
 		return nil, false
 	}
-	return o.FreeMemoryAvg, true
+	return o.FreeMemoryAvg.Get(), o.FreeMemoryAvg.IsSet()
 }
 
 // IsSetFreeMemoryAvg returns a boolean if a field has been set.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) IsSetFreeMemoryAvg() bool {
-	if o != nil && !IsNil(o.FreeMemoryAvg) {
+	if o != nil && o.FreeMemoryAvg.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetFreeMemoryAvg gets a reference to the given float32 and assigns it to the FreeMemoryAvg field.
+// SetFreeMemoryAvg gets a reference to the given NullableFloat32 and assigns it to the FreeMemoryAvg field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetFreeMemoryAvg(v float32) {
-	o.FreeMemoryAvg = &v
+	o.FreeMemoryAvg.Set(&v)
 }
 
-// GetFreeMemorySum returns the FreeMemorySum field value if set, zero value otherwise.
+// SetFreeMemoryAvgNil sets the value for FreeMemoryAvg to be an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetFreeMemoryAvgNil() {
+	o.FreeMemoryAvg.Set(nil)
+}
+
+// UnsetFreeMemoryAvg ensures that no value is present for FreeMemoryAvg, not even an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) UnsetFreeMemoryAvg() {
+	o.FreeMemoryAvg.Unset()
+}
+
+// GetFreeMemorySum returns the FreeMemorySum field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetFreeMemorySum() float32 {
-	if o == nil || IsNil(o.FreeMemorySum) {
+	if o == nil || IsNil(o.FreeMemorySum.Get()) {
 		var ret float32
 		return ret
 	}
-	return *o.FreeMemorySum
+	return *o.FreeMemorySum.Get()
 }
 
 // GetFreeMemorySumOk returns a tuple with the FreeMemorySum field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) GetFreeMemorySumOk() (*float32, bool) {
-	if o == nil || IsNil(o.FreeMemorySum) {
+	if o == nil {
 		return nil, false
 	}
-	return o.FreeMemorySum, true
+	return o.FreeMemorySum.Get(), o.FreeMemorySum.IsSet()
 }
 
 // IsSetFreeMemorySum returns a boolean if a field has been set.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) IsSetFreeMemorySum() bool {
-	if o != nil && !IsNil(o.FreeMemorySum) {
+	if o != nil && o.FreeMemorySum.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetFreeMemorySum gets a reference to the given float32 and assigns it to the FreeMemorySum field.
+// SetFreeMemorySum gets a reference to the given NullableFloat32 and assigns it to the FreeMemorySum field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetFreeMemorySum(v float32) {
-	o.FreeMemorySum = &v
+	o.FreeMemorySum.Set(&v)
+}
+
+// SetFreeMemorySumNil sets the value for FreeMemorySum to be an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetFreeMemorySumNil() {
+	o.FreeMemorySum.Set(nil)
+}
+
+// UnsetFreeMemorySum ensures that no value is present for FreeMemorySum, not even an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) UnsetFreeMemorySum() {
+	o.FreeMemorySum.Unset()
 }
 
 func (o ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) MarshalJSON() ([]byte, error) {
@@ -1444,125 +1873,125 @@ func (o ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) ToMap() (map[s
 	if !IsNil(o.ObjectId) {
 		toSerialize["objectId"] = o.ObjectId
 	}
-	if !IsNil(o.CpuTotalTimeCount) {
-		toSerialize["cpuTotalTimeCount"] = o.CpuTotalTimeCount
+	if o.CpuTotalTimeCount.IsSet() {
+		toSerialize["cpuTotalTimeCount"] = o.CpuTotalTimeCount.Get()
 	}
-	if !IsNil(o.CpuTotalTimeMin) {
-		toSerialize["cpuTotalTimeMin"] = o.CpuTotalTimeMin
+	if o.CpuTotalTimeMin.IsSet() {
+		toSerialize["cpuTotalTimeMin"] = o.CpuTotalTimeMin.Get()
 	}
-	if !IsNil(o.CpuTotalTimeMax) {
-		toSerialize["cpuTotalTimeMax"] = o.CpuTotalTimeMax
+	if o.CpuTotalTimeMax.IsSet() {
+		toSerialize["cpuTotalTimeMax"] = o.CpuTotalTimeMax.Get()
 	}
-	if !IsNil(o.CpuTotalTimeAvg) {
-		toSerialize["cpuTotalTimeAvg"] = o.CpuTotalTimeAvg
+	if o.CpuTotalTimeAvg.IsSet() {
+		toSerialize["cpuTotalTimeAvg"] = o.CpuTotalTimeAvg.Get()
 	}
-	if !IsNil(o.CpuTotalTimeSum) {
-		toSerialize["cpuTotalTimeSum"] = o.CpuTotalTimeSum
+	if o.CpuTotalTimeSum.IsSet() {
+		toSerialize["cpuTotalTimeSum"] = o.CpuTotalTimeSum.Get()
 	}
-	if !IsNil(o.CpuIdleTimeCount) {
-		toSerialize["cpuIdleTimeCount"] = o.CpuIdleTimeCount
+	if o.CpuIdleTimeCount.IsSet() {
+		toSerialize["cpuIdleTimeCount"] = o.CpuIdleTimeCount.Get()
 	}
-	if !IsNil(o.CpuIdleTimeMin) {
-		toSerialize["cpuIdleTimeMin"] = o.CpuIdleTimeMin
+	if o.CpuIdleTimeMin.IsSet() {
+		toSerialize["cpuIdleTimeMin"] = o.CpuIdleTimeMin.Get()
 	}
-	if !IsNil(o.CpuIdleTimeMax) {
-		toSerialize["cpuIdleTimeMax"] = o.CpuIdleTimeMax
+	if o.CpuIdleTimeMax.IsSet() {
+		toSerialize["cpuIdleTimeMax"] = o.CpuIdleTimeMax.Get()
 	}
-	if !IsNil(o.CpuIdleTimeAvg) {
-		toSerialize["cpuIdleTimeAvg"] = o.CpuIdleTimeAvg
+	if o.CpuIdleTimeAvg.IsSet() {
+		toSerialize["cpuIdleTimeAvg"] = o.CpuIdleTimeAvg.Get()
 	}
-	if !IsNil(o.CpuIdleTimeSum) {
-		toSerialize["cpuIdleTimeSum"] = o.CpuIdleTimeSum
+	if o.CpuIdleTimeSum.IsSet() {
+		toSerialize["cpuIdleTimeSum"] = o.CpuIdleTimeSum.Get()
 	}
-	if !IsNil(o.CpuUsageCount) {
-		toSerialize["cpuUsageCount"] = o.CpuUsageCount
+	if o.CpuUsageCount.IsSet() {
+		toSerialize["cpuUsageCount"] = o.CpuUsageCount.Get()
 	}
-	if !IsNil(o.CpuUsageMin) {
-		toSerialize["cpuUsageMin"] = o.CpuUsageMin
+	if o.CpuUsageMin.IsSet() {
+		toSerialize["cpuUsageMin"] = o.CpuUsageMin.Get()
 	}
-	if !IsNil(o.CpuUsageMax) {
-		toSerialize["cpuUsageMax"] = o.CpuUsageMax
+	if o.CpuUsageMax.IsSet() {
+		toSerialize["cpuUsageMax"] = o.CpuUsageMax.Get()
 	}
-	if !IsNil(o.CpuUsageAvg) {
-		toSerialize["cpuUsageAvg"] = o.CpuUsageAvg
+	if o.CpuUsageAvg.IsSet() {
+		toSerialize["cpuUsageAvg"] = o.CpuUsageAvg.Get()
 	}
-	if !IsNil(o.CpuUsageSum) {
-		toSerialize["cpuUsageSum"] = o.CpuUsageSum
+	if o.CpuUsageSum.IsSet() {
+		toSerialize["cpuUsageSum"] = o.CpuUsageSum.Get()
 	}
-	if !IsNil(o.MaxMemoryCount) {
-		toSerialize["maxMemoryCount"] = o.MaxMemoryCount
+	if o.MaxMemoryCount.IsSet() {
+		toSerialize["maxMemoryCount"] = o.MaxMemoryCount.Get()
 	}
-	if !IsNil(o.MaxMemoryMin) {
-		toSerialize["maxMemoryMin"] = o.MaxMemoryMin
+	if o.MaxMemoryMin.IsSet() {
+		toSerialize["maxMemoryMin"] = o.MaxMemoryMin.Get()
 	}
-	if !IsNil(o.MaxMemoryMax) {
-		toSerialize["maxMemoryMax"] = o.MaxMemoryMax
+	if o.MaxMemoryMax.IsSet() {
+		toSerialize["maxMemoryMax"] = o.MaxMemoryMax.Get()
 	}
-	if !IsNil(o.MaxMemoryAvg) {
-		toSerialize["maxMemoryAvg"] = o.MaxMemoryAvg
+	if o.MaxMemoryAvg.IsSet() {
+		toSerialize["maxMemoryAvg"] = o.MaxMemoryAvg.Get()
 	}
-	if !IsNil(o.MaxMemorySum) {
-		toSerialize["maxMemorySum"] = o.MaxMemorySum
+	if o.MaxMemorySum.IsSet() {
+		toSerialize["maxMemorySum"] = o.MaxMemorySum.Get()
 	}
-	if !IsNil(o.CpuUserTimeCount) {
-		toSerialize["cpuUserTimeCount"] = o.CpuUserTimeCount
+	if o.CpuUserTimeCount.IsSet() {
+		toSerialize["cpuUserTimeCount"] = o.CpuUserTimeCount.Get()
 	}
-	if !IsNil(o.CpuUserTimeMin) {
-		toSerialize["cpuUserTimeMin"] = o.CpuUserTimeMin
+	if o.CpuUserTimeMin.IsSet() {
+		toSerialize["cpuUserTimeMin"] = o.CpuUserTimeMin.Get()
 	}
-	if !IsNil(o.CpuUserTimeMax) {
-		toSerialize["cpuUserTimeMax"] = o.CpuUserTimeMax
+	if o.CpuUserTimeMax.IsSet() {
+		toSerialize["cpuUserTimeMax"] = o.CpuUserTimeMax.Get()
 	}
-	if !IsNil(o.CpuUserTimeAvg) {
-		toSerialize["cpuUserTimeAvg"] = o.CpuUserTimeAvg
+	if o.CpuUserTimeAvg.IsSet() {
+		toSerialize["cpuUserTimeAvg"] = o.CpuUserTimeAvg.Get()
 	}
-	if !IsNil(o.CpuUserTimeSum) {
-		toSerialize["cpuUserTimeSum"] = o.CpuUserTimeSum
+	if o.CpuUserTimeSum.IsSet() {
+		toSerialize["cpuUserTimeSum"] = o.CpuUserTimeSum.Get()
 	}
-	if !IsNil(o.CpuSystemTimeCount) {
-		toSerialize["cpuSystemTimeCount"] = o.CpuSystemTimeCount
+	if o.CpuSystemTimeCount.IsSet() {
+		toSerialize["cpuSystemTimeCount"] = o.CpuSystemTimeCount.Get()
 	}
-	if !IsNil(o.CpuSystemTimeMin) {
-		toSerialize["cpuSystemTimeMin"] = o.CpuSystemTimeMin
+	if o.CpuSystemTimeMin.IsSet() {
+		toSerialize["cpuSystemTimeMin"] = o.CpuSystemTimeMin.Get()
 	}
-	if !IsNil(o.CpuSystemTimeMax) {
-		toSerialize["cpuSystemTimeMax"] = o.CpuSystemTimeMax
+	if o.CpuSystemTimeMax.IsSet() {
+		toSerialize["cpuSystemTimeMax"] = o.CpuSystemTimeMax.Get()
 	}
 	if !IsNil(o.CpuSystemTimeAvg) {
 		toSerialize["cpuSystemTimeAvg"] = o.CpuSystemTimeAvg
 	}
-	if !IsNil(o.CpuSystemTimeSum) {
-		toSerialize["cpuSystemTimeSum"] = o.CpuSystemTimeSum
+	if o.CpuSystemTimeSum.IsSet() {
+		toSerialize["cpuSystemTimeSum"] = o.CpuSystemTimeSum.Get()
 	}
-	if !IsNil(o.UsedMemoryCount) {
-		toSerialize["usedMemoryCount"] = o.UsedMemoryCount
+	if o.UsedMemoryCount.IsSet() {
+		toSerialize["usedMemoryCount"] = o.UsedMemoryCount.Get()
 	}
-	if !IsNil(o.UsedMemoryMin) {
-		toSerialize["usedMemoryMin"] = o.UsedMemoryMin
+	if o.UsedMemoryMin.IsSet() {
+		toSerialize["usedMemoryMin"] = o.UsedMemoryMin.Get()
 	}
-	if !IsNil(o.UsedMemoryMax) {
-		toSerialize["usedMemoryMax"] = o.UsedMemoryMax
+	if o.UsedMemoryMax.IsSet() {
+		toSerialize["usedMemoryMax"] = o.UsedMemoryMax.Get()
 	}
-	if !IsNil(o.UsedMemoryAvg) {
-		toSerialize["usedMemoryAvg"] = o.UsedMemoryAvg
+	if o.UsedMemoryAvg.IsSet() {
+		toSerialize["usedMemoryAvg"] = o.UsedMemoryAvg.Get()
 	}
-	if !IsNil(o.UsedMemorySum) {
-		toSerialize["usedMemorySum"] = o.UsedMemorySum
+	if o.UsedMemorySum.IsSet() {
+		toSerialize["usedMemorySum"] = o.UsedMemorySum.Get()
 	}
-	if !IsNil(o.FreeMemoryCount) {
-		toSerialize["freeMemoryCount"] = o.FreeMemoryCount
+	if o.FreeMemoryCount.IsSet() {
+		toSerialize["freeMemoryCount"] = o.FreeMemoryCount.Get()
 	}
-	if !IsNil(o.FreeMemoryMin) {
-		toSerialize["freeMemoryMin"] = o.FreeMemoryMin
+	if o.FreeMemoryMin.IsSet() {
+		toSerialize["freeMemoryMin"] = o.FreeMemoryMin.Get()
 	}
-	if !IsNil(o.FreeMemoryMax) {
-		toSerialize["freeMemoryMax"] = o.FreeMemoryMax
+	if o.FreeMemoryMax.IsSet() {
+		toSerialize["freeMemoryMax"] = o.FreeMemoryMax.Get()
 	}
-	if !IsNil(o.FreeMemoryAvg) {
-		toSerialize["freeMemoryAvg"] = o.FreeMemoryAvg
+	if o.FreeMemoryAvg.IsSet() {
+		toSerialize["freeMemoryAvg"] = o.FreeMemoryAvg.Get()
 	}
-	if !IsNil(o.FreeMemorySum) {
-		toSerialize["freeMemorySum"] = o.FreeMemorySum
+	if o.FreeMemorySum.IsSet() {
+		toSerialize["freeMemorySum"] = o.FreeMemorySum.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {

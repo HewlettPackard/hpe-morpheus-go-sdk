@@ -35,13 +35,13 @@ type ListClouds200ResponseAllOfZonesInnerConfigAnyOf1 struct {
 	CostingBucketName    *string                                                       `json:"costingBucketName,omitempty"`
 	CostingRegion        *string                                                       `json:"costingRegion,omitempty"`
 	CostingAccessKey     *string                                                       `json:"costingAccessKey,omitempty"`
-	CostingSecretKey     *string                                                       `json:"costingSecretKey,omitempty"`
+	CostingSecretKey     NullableString                                                `json:"costingSecretKey,omitempty"`
 	CostingReportName    *string                                                       `json:"costingReportName,omitempty"`
 	ApplianceUrl         *string                                                       `json:"applianceUrl,omitempty"`
 	DatacenterName       *string                                                       `json:"datacenterName,omitempty"`
 	NetworkServerId      *string                                                       `json:"networkServer.id,omitempty"`
 	NetworkServer        *ListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer `json:"networkServer,omitempty"`
-	SecurityServer       *string                                                       `json:"securityServer,omitempty"`
+	SecurityServer       NullableString                                                `json:"securityServer,omitempty"`
 	CertificateProvider  *string                                                       `json:"certificateProvider,omitempty"`
 	BackupMode           *string                                                       `json:"backupMode,omitempty"`
 	ReplicationMode      *string                                                       `json:"replicationMode,omitempty"`
@@ -50,7 +50,7 @@ type ListClouds200ResponseAllOfZonesInnerConfigAnyOf1 struct {
 	ConfigManagementId   *string                                                       `json:"configManagementId,omitempty"`
 	ConfigCmdbDiscovery  *bool                                                         `json:"configCmdbDiscovery,omitempty"`
 	SecretKeyHash        *string                                                       `json:"secretKeyHash,omitempty"`
-	CostingSecretKeyHash *string                                                       `json:"costingSecretKeyHash,omitempty"`
+	CostingSecretKeyHash NullableString                                                `json:"costingSecretKeyHash,omitempty"`
 	AdditionalProperties map[string]interface{}                                        `json:",remain"`
 }
 
@@ -553,36 +553,47 @@ func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf1) SetCostingAccessKey(v
 	o.CostingAccessKey = &v
 }
 
-// GetCostingSecretKey returns the CostingSecretKey field value if set, zero value otherwise.
+// GetCostingSecretKey returns the CostingSecretKey field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf1) GetCostingSecretKey() string {
-	if o == nil || IsNil(o.CostingSecretKey) {
+	if o == nil || IsNil(o.CostingSecretKey.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.CostingSecretKey
+	return *o.CostingSecretKey.Get()
 }
 
 // GetCostingSecretKeyOk returns a tuple with the CostingSecretKey field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf1) GetCostingSecretKeyOk() (*string, bool) {
-	if o == nil || IsNil(o.CostingSecretKey) {
+	if o == nil {
 		return nil, false
 	}
-	return o.CostingSecretKey, true
+	return o.CostingSecretKey.Get(), o.CostingSecretKey.IsSet()
 }
 
 // IsSetCostingSecretKey returns a boolean if a field has been set.
 func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf1) IsSetCostingSecretKey() bool {
-	if o != nil && !IsNil(o.CostingSecretKey) {
+	if o != nil && o.CostingSecretKey.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCostingSecretKey gets a reference to the given string and assigns it to the CostingSecretKey field.
+// SetCostingSecretKey gets a reference to the given NullableString and assigns it to the CostingSecretKey field.
 func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf1) SetCostingSecretKey(v string) {
-	o.CostingSecretKey = &v
+	o.CostingSecretKey.Set(&v)
+}
+
+// SetCostingSecretKeyNil sets the value for CostingSecretKey to be an explicit nil
+func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf1) SetCostingSecretKeyNil() {
+	o.CostingSecretKey.Set(nil)
+}
+
+// UnsetCostingSecretKey ensures that no value is present for CostingSecretKey, not even an explicit nil
+func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf1) UnsetCostingSecretKey() {
+	o.CostingSecretKey.Unset()
 }
 
 // GetCostingReportName returns the CostingReportName field value if set, zero value otherwise.
@@ -745,36 +756,47 @@ func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf1) SetNetworkServer(v Li
 	o.NetworkServer = &v
 }
 
-// GetSecurityServer returns the SecurityServer field value if set, zero value otherwise.
+// GetSecurityServer returns the SecurityServer field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf1) GetSecurityServer() string {
-	if o == nil || IsNil(o.SecurityServer) {
+	if o == nil || IsNil(o.SecurityServer.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.SecurityServer
+	return *o.SecurityServer.Get()
 }
 
 // GetSecurityServerOk returns a tuple with the SecurityServer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf1) GetSecurityServerOk() (*string, bool) {
-	if o == nil || IsNil(o.SecurityServer) {
+	if o == nil {
 		return nil, false
 	}
-	return o.SecurityServer, true
+	return o.SecurityServer.Get(), o.SecurityServer.IsSet()
 }
 
 // IsSetSecurityServer returns a boolean if a field has been set.
 func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf1) IsSetSecurityServer() bool {
-	if o != nil && !IsNil(o.SecurityServer) {
+	if o != nil && o.SecurityServer.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetSecurityServer gets a reference to the given string and assigns it to the SecurityServer field.
+// SetSecurityServer gets a reference to the given NullableString and assigns it to the SecurityServer field.
 func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf1) SetSecurityServer(v string) {
-	o.SecurityServer = &v
+	o.SecurityServer.Set(&v)
+}
+
+// SetSecurityServerNil sets the value for SecurityServer to be an explicit nil
+func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf1) SetSecurityServerNil() {
+	o.SecurityServer.Set(nil)
+}
+
+// UnsetSecurityServer ensures that no value is present for SecurityServer, not even an explicit nil
+func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf1) UnsetSecurityServer() {
+	o.SecurityServer.Unset()
 }
 
 // GetCertificateProvider returns the CertificateProvider field value if set, zero value otherwise.
@@ -1033,36 +1055,47 @@ func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf1) SetSecretKeyHash(v st
 	o.SecretKeyHash = &v
 }
 
-// GetCostingSecretKeyHash returns the CostingSecretKeyHash field value if set, zero value otherwise.
+// GetCostingSecretKeyHash returns the CostingSecretKeyHash field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf1) GetCostingSecretKeyHash() string {
-	if o == nil || IsNil(o.CostingSecretKeyHash) {
+	if o == nil || IsNil(o.CostingSecretKeyHash.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.CostingSecretKeyHash
+	return *o.CostingSecretKeyHash.Get()
 }
 
 // GetCostingSecretKeyHashOk returns a tuple with the CostingSecretKeyHash field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf1) GetCostingSecretKeyHashOk() (*string, bool) {
-	if o == nil || IsNil(o.CostingSecretKeyHash) {
+	if o == nil {
 		return nil, false
 	}
-	return o.CostingSecretKeyHash, true
+	return o.CostingSecretKeyHash.Get(), o.CostingSecretKeyHash.IsSet()
 }
 
 // IsSetCostingSecretKeyHash returns a boolean if a field has been set.
 func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf1) IsSetCostingSecretKeyHash() bool {
-	if o != nil && !IsNil(o.CostingSecretKeyHash) {
+	if o != nil && o.CostingSecretKeyHash.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCostingSecretKeyHash gets a reference to the given string and assigns it to the CostingSecretKeyHash field.
+// SetCostingSecretKeyHash gets a reference to the given NullableString and assigns it to the CostingSecretKeyHash field.
 func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf1) SetCostingSecretKeyHash(v string) {
-	o.CostingSecretKeyHash = &v
+	o.CostingSecretKeyHash.Set(&v)
+}
+
+// SetCostingSecretKeyHashNil sets the value for CostingSecretKeyHash to be an explicit nil
+func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf1) SetCostingSecretKeyHashNil() {
+	o.CostingSecretKeyHash.Set(nil)
+}
+
+// UnsetCostingSecretKeyHash ensures that no value is present for CostingSecretKeyHash, not even an explicit nil
+func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf1) UnsetCostingSecretKeyHash() {
+	o.CostingSecretKeyHash.Unset()
 }
 
 func (o ListClouds200ResponseAllOfZonesInnerConfigAnyOf1) MarshalJSON() ([]byte, error) {
@@ -1120,8 +1153,8 @@ func (o ListClouds200ResponseAllOfZonesInnerConfigAnyOf1) ToMap() (map[string]in
 	if !IsNil(o.CostingAccessKey) {
 		toSerialize["costingAccessKey"] = o.CostingAccessKey
 	}
-	if !IsNil(o.CostingSecretKey) {
-		toSerialize["costingSecretKey"] = o.CostingSecretKey
+	if o.CostingSecretKey.IsSet() {
+		toSerialize["costingSecretKey"] = o.CostingSecretKey.Get()
 	}
 	if !IsNil(o.CostingReportName) {
 		toSerialize["costingReportName"] = o.CostingReportName
@@ -1138,8 +1171,8 @@ func (o ListClouds200ResponseAllOfZonesInnerConfigAnyOf1) ToMap() (map[string]in
 	if !IsNil(o.NetworkServer) {
 		toSerialize["networkServer"] = o.NetworkServer
 	}
-	if !IsNil(o.SecurityServer) {
-		toSerialize["securityServer"] = o.SecurityServer
+	if o.SecurityServer.IsSet() {
+		toSerialize["securityServer"] = o.SecurityServer.Get()
 	}
 	if !IsNil(o.CertificateProvider) {
 		toSerialize["certificateProvider"] = o.CertificateProvider
@@ -1165,8 +1198,8 @@ func (o ListClouds200ResponseAllOfZonesInnerConfigAnyOf1) ToMap() (map[string]in
 	if !IsNil(o.SecretKeyHash) {
 		toSerialize["secretKeyHash"] = o.SecretKeyHash
 	}
-	if !IsNil(o.CostingSecretKeyHash) {
-		toSerialize["costingSecretKeyHash"] = o.CostingSecretKeyHash
+	if o.CostingSecretKeyHash.IsSet() {
+		toSerialize["costingSecretKeyHash"] = o.CostingSecretKeyHash.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {

@@ -22,13 +22,13 @@ var _ MappedNullable = &ClusterDatastore{}
 type ClusterDatastore struct {
 	Id                   *int64                                                           `json:"id,omitempty"`
 	Name                 *string                                                          `json:"name,omitempty"`
-	Code                 *string                                                          `json:"code,omitempty"`
+	Code                 NullableString                                                   `json:"code,omitempty"`
 	DatastoreType        *GetAlerts200ResponseAllOfChecksInnerAccount                     `json:"datastoreType,omitempty"`
 	StorageServer        *GetAlerts200ResponseAllOfChecksInnerAccount                     `json:"storageServer,omitempty"`
 	Type                 *string                                                          `json:"type,omitempty"`
 	Visibility           *string                                                          `json:"visibility,omitempty"`
-	StorageSize          *int64                                                           `json:"storageSize,omitempty"`
-	FreeSpace            *int64                                                           `json:"freeSpace,omitempty"`
+	StorageSize          NullableInt64                                                    `json:"storageSize,omitempty"`
+	FreeSpace            NullableInt64                                                    `json:"freeSpace,omitempty"`
 	DrsEnabled           *bool                                                            `json:"drsEnabled,omitempty"`
 	Active               *bool                                                            `json:"active,omitempty"`
 	AllowWrite           *bool                                                            `json:"allowWrite,omitempty"`
@@ -131,36 +131,47 @@ func (o *ClusterDatastore) SetName(v string) {
 	o.Name = &v
 }
 
-// GetCode returns the Code field value if set, zero value otherwise.
+// GetCode returns the Code field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ClusterDatastore) GetCode() string {
-	if o == nil || IsNil(o.Code) {
+	if o == nil || IsNil(o.Code.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Code
+	return *o.Code.Get()
 }
 
 // GetCodeOk returns a tuple with the Code field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ClusterDatastore) GetCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.Code) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Code, true
+	return o.Code.Get(), o.Code.IsSet()
 }
 
 // IsSetCode returns a boolean if a field has been set.
 func (o *ClusterDatastore) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
+	if o != nil && o.Code.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCode gets a reference to the given string and assigns it to the Code field.
+// SetCode gets a reference to the given NullableString and assigns it to the Code field.
 func (o *ClusterDatastore) SetCode(v string) {
-	o.Code = &v
+	o.Code.Set(&v)
+}
+
+// SetCodeNil sets the value for Code to be an explicit nil
+func (o *ClusterDatastore) SetCodeNil() {
+	o.Code.Set(nil)
+}
+
+// UnsetCode ensures that no value is present for Code, not even an explicit nil
+func (o *ClusterDatastore) UnsetCode() {
+	o.Code.Unset()
 }
 
 // GetDatastoreType returns the DatastoreType field value if set, zero value otherwise.
@@ -291,68 +302,90 @@ func (o *ClusterDatastore) SetVisibility(v string) {
 	o.Visibility = &v
 }
 
-// GetStorageSize returns the StorageSize field value if set, zero value otherwise.
+// GetStorageSize returns the StorageSize field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ClusterDatastore) GetStorageSize() int64 {
-	if o == nil || IsNil(o.StorageSize) {
+	if o == nil || IsNil(o.StorageSize.Get()) {
 		var ret int64
 		return ret
 	}
-	return *o.StorageSize
+	return *o.StorageSize.Get()
 }
 
 // GetStorageSizeOk returns a tuple with the StorageSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ClusterDatastore) GetStorageSizeOk() (*int64, bool) {
-	if o == nil || IsNil(o.StorageSize) {
+	if o == nil {
 		return nil, false
 	}
-	return o.StorageSize, true
+	return o.StorageSize.Get(), o.StorageSize.IsSet()
 }
 
 // IsSetStorageSize returns a boolean if a field has been set.
 func (o *ClusterDatastore) IsSetStorageSize() bool {
-	if o != nil && !IsNil(o.StorageSize) {
+	if o != nil && o.StorageSize.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetStorageSize gets a reference to the given int64 and assigns it to the StorageSize field.
+// SetStorageSize gets a reference to the given NullableInt64 and assigns it to the StorageSize field.
 func (o *ClusterDatastore) SetStorageSize(v int64) {
-	o.StorageSize = &v
+	o.StorageSize.Set(&v)
 }
 
-// GetFreeSpace returns the FreeSpace field value if set, zero value otherwise.
+// SetStorageSizeNil sets the value for StorageSize to be an explicit nil
+func (o *ClusterDatastore) SetStorageSizeNil() {
+	o.StorageSize.Set(nil)
+}
+
+// UnsetStorageSize ensures that no value is present for StorageSize, not even an explicit nil
+func (o *ClusterDatastore) UnsetStorageSize() {
+	o.StorageSize.Unset()
+}
+
+// GetFreeSpace returns the FreeSpace field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ClusterDatastore) GetFreeSpace() int64 {
-	if o == nil || IsNil(o.FreeSpace) {
+	if o == nil || IsNil(o.FreeSpace.Get()) {
 		var ret int64
 		return ret
 	}
-	return *o.FreeSpace
+	return *o.FreeSpace.Get()
 }
 
 // GetFreeSpaceOk returns a tuple with the FreeSpace field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ClusterDatastore) GetFreeSpaceOk() (*int64, bool) {
-	if o == nil || IsNil(o.FreeSpace) {
+	if o == nil {
 		return nil, false
 	}
-	return o.FreeSpace, true
+	return o.FreeSpace.Get(), o.FreeSpace.IsSet()
 }
 
 // IsSetFreeSpace returns a boolean if a field has been set.
 func (o *ClusterDatastore) IsSetFreeSpace() bool {
-	if o != nil && !IsNil(o.FreeSpace) {
+	if o != nil && o.FreeSpace.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetFreeSpace gets a reference to the given int64 and assigns it to the FreeSpace field.
+// SetFreeSpace gets a reference to the given NullableInt64 and assigns it to the FreeSpace field.
 func (o *ClusterDatastore) SetFreeSpace(v int64) {
-	o.FreeSpace = &v
+	o.FreeSpace.Set(&v)
+}
+
+// SetFreeSpaceNil sets the value for FreeSpace to be an explicit nil
+func (o *ClusterDatastore) SetFreeSpaceNil() {
+	o.FreeSpace.Set(nil)
+}
+
+// UnsetFreeSpace ensures that no value is present for FreeSpace, not even an explicit nil
+func (o *ClusterDatastore) UnsetFreeSpace() {
+	o.FreeSpace.Unset()
 }
 
 // GetDrsEnabled returns the DrsEnabled field value if set, zero value otherwise.
@@ -883,8 +916,8 @@ func (o ClusterDatastore) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !IsNil(o.Code) {
-		toSerialize["code"] = o.Code
+	if o.Code.IsSet() {
+		toSerialize["code"] = o.Code.Get()
 	}
 	if !IsNil(o.DatastoreType) {
 		toSerialize["datastoreType"] = o.DatastoreType
@@ -898,11 +931,11 @@ func (o ClusterDatastore) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Visibility) {
 		toSerialize["visibility"] = o.Visibility
 	}
-	if !IsNil(o.StorageSize) {
-		toSerialize["storageSize"] = o.StorageSize
+	if o.StorageSize.IsSet() {
+		toSerialize["storageSize"] = o.StorageSize.Get()
 	}
-	if !IsNil(o.FreeSpace) {
-		toSerialize["freeSpace"] = o.FreeSpace
+	if o.FreeSpace.IsSet() {
+		toSerialize["freeSpace"] = o.FreeSpace.Get()
 	}
 	if !IsNil(o.DrsEnabled) {
 		toSerialize["drsEnabled"] = o.DrsEnabled

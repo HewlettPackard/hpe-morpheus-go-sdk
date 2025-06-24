@@ -10,17 +10,17 @@ Name | Type | Description | Notes
 **DisplayOrder** | Pointer to **int32** |  | [optional] 
 **Code** | Pointer to **string** |  | [optional] 
 **VolumeType** | Pointer to **string** |  | [optional] 
-**MinStorage** | Pointer to **string** |  | [optional] 
+**MinStorage** | Pointer to **NullableString** |  | [optional] 
 **Deletable** | Pointer to **bool** |  | [optional] 
 **DefaultType** | Pointer to **bool** |  | [optional] 
-**CreateDatastore** | Pointer to **string** |  | [optional] 
+**CreateDatastore** | Pointer to **NullableString** |  | [optional] 
 **Resizable** | Pointer to **bool** |  | [optional] 
-**StorageType** | Pointer to **string** |  | [optional] 
+**StorageType** | Pointer to **NullableString** |  | [optional] 
 **AllowSearch** | Pointer to **bool** |  | [optional] 
-**VolumeOptionSource** | Pointer to **string** |  | [optional] 
+**VolumeOptionSource** | Pointer to **NullableString** |  | [optional] 
 **DisplayName** | Pointer to **string** |  | [optional] 
-**MinIOPS** | Pointer to **string** |  | [optional] 
-**MaxIOPS** | Pointer to **string** |  | [optional] 
+**MinIOPS** | Pointer to **NullableString** |  | [optional] 
+**MaxIOPS** | Pointer to **NullableString** |  | [optional] 
 **HasDatastore** | Pointer to **bool** |  | [optional] 
 **CustomSize** | Pointer to **bool** |  | [optional] 
 **AutoDelete** | Pointer to **bool** |  | [optional] 
@@ -28,10 +28,10 @@ Name | Type | Description | Notes
 **ConfigurableIOPS** | Pointer to **bool** |  | [optional] 
 **CustomLabel** | Pointer to **bool** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **NullableString** |  | [optional] 
 **VolumeCategory** | Pointer to **string** |  | [optional] 
-**ExternalId** | Pointer to **string** |  | [optional] 
-**MaxStorage** | Pointer to **string** |  | [optional] 
+**ExternalId** | Pointer to **NullableString** |  | [optional] 
+**MaxStorage** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -127,6 +127,16 @@ SetOptionTypes sets OptionTypes field to given value.
 
 HasOptionTypes returns a boolean if a field has been set.
 
+### SetOptionTypesNil
+
+`func (o *ListInstanceServicePlans200ResponsePlansInnerStorageTypesInner) SetOptionTypesNil(b bool)`
+
+ SetOptionTypesNil sets the value for OptionTypes to be an explicit nil
+
+### UnsetOptionTypes
+`func (o *ListInstanceServicePlans200ResponsePlansInnerStorageTypesInner) UnsetOptionTypes()`
+
+UnsetOptionTypes ensures that no value is present for OptionTypes, not even an explicit nil
 ### GetDisplayOrder
 
 `func (o *ListInstanceServicePlans200ResponsePlansInnerStorageTypesInner) GetDisplayOrder() int32`
@@ -227,6 +237,16 @@ SetMinStorage sets MinStorage field to given value.
 
 HasMinStorage returns a boolean if a field has been set.
 
+### SetMinStorageNil
+
+`func (o *ListInstanceServicePlans200ResponsePlansInnerStorageTypesInner) SetMinStorageNil(b bool)`
+
+ SetMinStorageNil sets the value for MinStorage to be an explicit nil
+
+### UnsetMinStorage
+`func (o *ListInstanceServicePlans200ResponsePlansInnerStorageTypesInner) UnsetMinStorage()`
+
+UnsetMinStorage ensures that no value is present for MinStorage, not even an explicit nil
 ### GetDeletable
 
 `func (o *ListInstanceServicePlans200ResponsePlansInnerStorageTypesInner) GetDeletable() bool`
@@ -302,6 +322,16 @@ SetCreateDatastore sets CreateDatastore field to given value.
 
 HasCreateDatastore returns a boolean if a field has been set.
 
+### SetCreateDatastoreNil
+
+`func (o *ListInstanceServicePlans200ResponsePlansInnerStorageTypesInner) SetCreateDatastoreNil(b bool)`
+
+ SetCreateDatastoreNil sets the value for CreateDatastore to be an explicit nil
+
+### UnsetCreateDatastore
+`func (o *ListInstanceServicePlans200ResponsePlansInnerStorageTypesInner) UnsetCreateDatastore()`
+
+UnsetCreateDatastore ensures that no value is present for CreateDatastore, not even an explicit nil
 ### GetResizable
 
 `func (o *ListInstanceServicePlans200ResponsePlansInnerStorageTypesInner) GetResizable() bool`
@@ -352,6 +382,16 @@ SetStorageType sets StorageType field to given value.
 
 HasStorageType returns a boolean if a field has been set.
 
+### SetStorageTypeNil
+
+`func (o *ListInstanceServicePlans200ResponsePlansInnerStorageTypesInner) SetStorageTypeNil(b bool)`
+
+ SetStorageTypeNil sets the value for StorageType to be an explicit nil
+
+### UnsetStorageType
+`func (o *ListInstanceServicePlans200ResponsePlansInnerStorageTypesInner) UnsetStorageType()`
+
+UnsetStorageType ensures that no value is present for StorageType, not even an explicit nil
 ### GetAllowSearch
 
 `func (o *ListInstanceServicePlans200ResponsePlansInnerStorageTypesInner) GetAllowSearch() bool`
@@ -402,6 +442,16 @@ SetVolumeOptionSource sets VolumeOptionSource field to given value.
 
 HasVolumeOptionSource returns a boolean if a field has been set.
 
+### SetVolumeOptionSourceNil
+
+`func (o *ListInstanceServicePlans200ResponsePlansInnerStorageTypesInner) SetVolumeOptionSourceNil(b bool)`
+
+ SetVolumeOptionSourceNil sets the value for VolumeOptionSource to be an explicit nil
+
+### UnsetVolumeOptionSource
+`func (o *ListInstanceServicePlans200ResponsePlansInnerStorageTypesInner) UnsetVolumeOptionSource()`
+
+UnsetVolumeOptionSource ensures that no value is present for VolumeOptionSource, not even an explicit nil
 ### GetDisplayName
 
 `func (o *ListInstanceServicePlans200ResponsePlansInnerStorageTypesInner) GetDisplayName() string`
@@ -452,6 +502,16 @@ SetMinIOPS sets MinIOPS field to given value.
 
 HasMinIOPS returns a boolean if a field has been set.
 
+### SetMinIOPSNil
+
+`func (o *ListInstanceServicePlans200ResponsePlansInnerStorageTypesInner) SetMinIOPSNil(b bool)`
+
+ SetMinIOPSNil sets the value for MinIOPS to be an explicit nil
+
+### UnsetMinIOPS
+`func (o *ListInstanceServicePlans200ResponsePlansInnerStorageTypesInner) UnsetMinIOPS()`
+
+UnsetMinIOPS ensures that no value is present for MinIOPS, not even an explicit nil
 ### GetMaxIOPS
 
 `func (o *ListInstanceServicePlans200ResponsePlansInnerStorageTypesInner) GetMaxIOPS() string`
@@ -477,6 +537,16 @@ SetMaxIOPS sets MaxIOPS field to given value.
 
 HasMaxIOPS returns a boolean if a field has been set.
 
+### SetMaxIOPSNil
+
+`func (o *ListInstanceServicePlans200ResponsePlansInnerStorageTypesInner) SetMaxIOPSNil(b bool)`
+
+ SetMaxIOPSNil sets the value for MaxIOPS to be an explicit nil
+
+### UnsetMaxIOPS
+`func (o *ListInstanceServicePlans200ResponsePlansInnerStorageTypesInner) UnsetMaxIOPS()`
+
+UnsetMaxIOPS ensures that no value is present for MaxIOPS, not even an explicit nil
 ### GetHasDatastore
 
 `func (o *ListInstanceServicePlans200ResponsePlansInnerStorageTypesInner) GetHasDatastore() bool`
@@ -677,6 +747,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *ListInstanceServicePlans200ResponsePlansInnerStorageTypesInner) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *ListInstanceServicePlans200ResponsePlansInnerStorageTypesInner) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetVolumeCategory
 
 `func (o *ListInstanceServicePlans200ResponsePlansInnerStorageTypesInner) GetVolumeCategory() string`
@@ -727,6 +807,16 @@ SetExternalId sets ExternalId field to given value.
 
 HasExternalId returns a boolean if a field has been set.
 
+### SetExternalIdNil
+
+`func (o *ListInstanceServicePlans200ResponsePlansInnerStorageTypesInner) SetExternalIdNil(b bool)`
+
+ SetExternalIdNil sets the value for ExternalId to be an explicit nil
+
+### UnsetExternalId
+`func (o *ListInstanceServicePlans200ResponsePlansInnerStorageTypesInner) UnsetExternalId()`
+
+UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
 ### GetMaxStorage
 
 `func (o *ListInstanceServicePlans200ResponsePlansInnerStorageTypesInner) GetMaxStorage() string`
@@ -752,6 +842,16 @@ SetMaxStorage sets MaxStorage field to given value.
 
 HasMaxStorage returns a boolean if a field has been set.
 
+### SetMaxStorageNil
+
+`func (o *ListInstanceServicePlans200ResponsePlansInnerStorageTypesInner) SetMaxStorageNil(b bool)`
+
+ SetMaxStorageNil sets the value for MaxStorage to be an explicit nil
+
+### UnsetMaxStorage
+`func (o *ListInstanceServicePlans200ResponsePlansInnerStorageTypesInner) UnsetMaxStorage()`
+
+UnsetMaxStorage ensures that no value is present for MaxStorage, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

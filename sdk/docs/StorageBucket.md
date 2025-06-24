@@ -16,9 +16,9 @@ Name | Type | Description | Notes
 **DefaultDeploymentTarget** | Pointer to **bool** |  | [optional] 
 **DefaultVirtualImageTarget** | Pointer to **bool** |  | [optional] 
 **CopyToStore** | Pointer to **bool** |  | [optional] 
-**RetentionPolicyType** | Pointer to **string** |  | [optional] 
-**RetentionPolicyDays** | Pointer to **string** |  | [optional] 
-**RetentionProvider** | Pointer to **string** |  | [optional] 
+**RetentionPolicyType** | Pointer to **NullableString** |  | [optional] 
+**RetentionPolicyDays** | Pointer to **NullableString** |  | [optional] 
+**RetentionProvider** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -364,6 +364,16 @@ SetRetentionPolicyType sets RetentionPolicyType field to given value.
 
 HasRetentionPolicyType returns a boolean if a field has been set.
 
+### SetRetentionPolicyTypeNil
+
+`func (o *StorageBucket) SetRetentionPolicyTypeNil(b bool)`
+
+ SetRetentionPolicyTypeNil sets the value for RetentionPolicyType to be an explicit nil
+
+### UnsetRetentionPolicyType
+`func (o *StorageBucket) UnsetRetentionPolicyType()`
+
+UnsetRetentionPolicyType ensures that no value is present for RetentionPolicyType, not even an explicit nil
 ### GetRetentionPolicyDays
 
 `func (o *StorageBucket) GetRetentionPolicyDays() string`
@@ -389,6 +399,16 @@ SetRetentionPolicyDays sets RetentionPolicyDays field to given value.
 
 HasRetentionPolicyDays returns a boolean if a field has been set.
 
+### SetRetentionPolicyDaysNil
+
+`func (o *StorageBucket) SetRetentionPolicyDaysNil(b bool)`
+
+ SetRetentionPolicyDaysNil sets the value for RetentionPolicyDays to be an explicit nil
+
+### UnsetRetentionPolicyDays
+`func (o *StorageBucket) UnsetRetentionPolicyDays()`
+
+UnsetRetentionPolicyDays ensures that no value is present for RetentionPolicyDays, not even an explicit nil
 ### GetRetentionProvider
 
 `func (o *StorageBucket) GetRetentionProvider() string`
@@ -414,6 +434,16 @@ SetRetentionProvider sets RetentionProvider field to given value.
 
 HasRetentionProvider returns a boolean if a field has been set.
 
+### SetRetentionProviderNil
+
+`func (o *StorageBucket) SetRetentionProviderNil(b bool)`
+
+ SetRetentionProviderNil sets the value for RetentionProvider to be an explicit nil
+
+### UnsetRetentionProvider
+`func (o *StorageBucket) UnsetRetentionProvider()`
+
+UnsetRetentionProvider ensures that no value is present for RetentionProvider, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

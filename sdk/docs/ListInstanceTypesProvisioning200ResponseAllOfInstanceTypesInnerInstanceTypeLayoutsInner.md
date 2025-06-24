@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**ProvisionTypeCode** | Pointer to **string** |  | [optional] 
+**ProvisionTypeCode** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -102,6 +102,16 @@ SetProvisionTypeCode sets ProvisionTypeCode field to given value.
 
 HasProvisionTypeCode returns a boolean if a field has been set.
 
+### SetProvisionTypeCodeNil
+
+`func (o *ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInnerInstanceTypeLayoutsInner) SetProvisionTypeCodeNil(b bool)`
+
+ SetProvisionTypeCodeNil sets the value for ProvisionTypeCode to be an explicit nil
+
+### UnsetProvisionTypeCode
+`func (o *ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInnerInstanceTypeLayoutsInner) UnsetProvisionTypeCode()`
+
+UnsetProvisionTypeCode ensures that no value is present for ProvisionTypeCode, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

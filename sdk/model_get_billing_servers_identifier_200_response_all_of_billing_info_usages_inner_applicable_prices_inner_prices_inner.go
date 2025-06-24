@@ -26,7 +26,7 @@ type GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInnerApplicable
 	Cost                 *float32               `json:"cost,omitempty"`
 	Price                *float32               `json:"price,omitempty"`
 	Quantity             *int64                 `json:"quantity,omitempty"`
-	DatastoreId          *string                `json:"datastoreId,omitempty"`
+	DatastoreId          NullableString         `json:"datastoreId,omitempty"`
 	VolumeType           *string                `json:"volumeType,omitempty"`
 	Datastore            *string                `json:"datastore,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
@@ -243,36 +243,47 @@ func (o *GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInnerApplic
 	o.Quantity = &v
 }
 
-// GetDatastoreId returns the DatastoreId field value if set, zero value otherwise.
+// GetDatastoreId returns the DatastoreId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInnerApplicablePricesInnerPricesInner) GetDatastoreId() string {
-	if o == nil || IsNil(o.DatastoreId) {
+	if o == nil || IsNil(o.DatastoreId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.DatastoreId
+	return *o.DatastoreId.Get()
 }
 
 // GetDatastoreIdOk returns a tuple with the DatastoreId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInnerApplicablePricesInnerPricesInner) GetDatastoreIdOk() (*string, bool) {
-	if o == nil || IsNil(o.DatastoreId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.DatastoreId, true
+	return o.DatastoreId.Get(), o.DatastoreId.IsSet()
 }
 
 // IsSetDatastoreId returns a boolean if a field has been set.
 func (o *GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInnerApplicablePricesInnerPricesInner) IsSetDatastoreId() bool {
-	if o != nil && !IsNil(o.DatastoreId) {
+	if o != nil && o.DatastoreId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDatastoreId gets a reference to the given string and assigns it to the DatastoreId field.
+// SetDatastoreId gets a reference to the given NullableString and assigns it to the DatastoreId field.
 func (o *GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInnerApplicablePricesInnerPricesInner) SetDatastoreId(v string) {
-	o.DatastoreId = &v
+	o.DatastoreId.Set(&v)
+}
+
+// SetDatastoreIdNil sets the value for DatastoreId to be an explicit nil
+func (o *GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInnerApplicablePricesInnerPricesInner) SetDatastoreIdNil() {
+	o.DatastoreId.Set(nil)
+}
+
+// UnsetDatastoreId ensures that no value is present for DatastoreId, not even an explicit nil
+func (o *GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInnerApplicablePricesInnerPricesInner) UnsetDatastoreId() {
+	o.DatastoreId.Unset()
 }
 
 // GetVolumeType returns the VolumeType field value if set, zero value otherwise.
@@ -367,8 +378,8 @@ func (o GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInnerApplica
 	if !IsNil(o.Quantity) {
 		toSerialize["quantity"] = o.Quantity
 	}
-	if !IsNil(o.DatastoreId) {
-		toSerialize["datastoreId"] = o.DatastoreId
+	if o.DatastoreId.IsSet() {
+		toSerialize["datastoreId"] = o.DatastoreId.Get()
 	}
 	if !IsNil(o.VolumeType) {
 		toSerialize["volumeType"] = o.VolumeType

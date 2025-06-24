@@ -27,11 +27,11 @@ type NetworkServerCreateNSX struct {
 	// Can be used to enable / disable the network server.
 	Enabled *bool `json:"enabled,omitempty"`
 	// URL
-	ServiceUrl string `json:"serviceUrl"`
+	ServiceUrl NullableString `json:"serviceUrl"`
 	// Username
-	ServiceUsername *string `json:"serviceUsername,omitempty"`
+	ServiceUsername NullableString `json:"serviceUsername,omitempty"`
 	// Password
-	ServicePassword *string                 `json:"servicePassword,omitempty"`
+	ServicePassword NullableString          `json:"servicePassword,omitempty"`
 	Config          *NSXNetworkServerConfig `json:"config,omitempty"`
 	// Visibility - Set to public to allow all tenants
 	Visibility *string `json:"visibility,omitempty"`
@@ -49,7 +49,7 @@ type _NetworkServerCreateNSX NetworkServerCreateNSX
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewNetworkServerCreateNSX(type_ string, name string, serviceUrl string, zoneId int64) *NetworkServerCreateNSX {
+func NewNetworkServerCreateNSX(type_ string, name string, serviceUrl NullableString, zoneId int64) *NetworkServerCreateNSX {
 	this := NetworkServerCreateNSX{}
 	this.Type = type_
 	this.Name = name
@@ -155,91 +155,115 @@ func (o *NetworkServerCreateNSX) SetEnabled(v bool) {
 }
 
 // GetServiceUrl returns the ServiceUrl field value
+// If the value is explicit nil, the zero value for string will be returned
 func (o *NetworkServerCreateNSX) GetServiceUrl() string {
-	if o == nil {
+	if o == nil || o.ServiceUrl.Get() == nil {
 		var ret string
 		return ret
 	}
 
-	return o.ServiceUrl
+	return *o.ServiceUrl.Get()
 }
 
 // GetServiceUrlOk returns a tuple with the ServiceUrl field value
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NetworkServerCreateNSX) GetServiceUrlOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.ServiceUrl, true
+	return o.ServiceUrl.Get(), o.ServiceUrl.IsSet()
 }
 
 // SetServiceUrl sets field value
 func (o *NetworkServerCreateNSX) SetServiceUrl(v string) {
-	o.ServiceUrl = v
+	o.ServiceUrl.Set(&v)
 }
 
-// GetServiceUsername returns the ServiceUsername field value if set, zero value otherwise.
+// GetServiceUsername returns the ServiceUsername field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NetworkServerCreateNSX) GetServiceUsername() string {
-	if o == nil || IsNil(o.ServiceUsername) {
+	if o == nil || IsNil(o.ServiceUsername.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ServiceUsername
+	return *o.ServiceUsername.Get()
 }
 
 // GetServiceUsernameOk returns a tuple with the ServiceUsername field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NetworkServerCreateNSX) GetServiceUsernameOk() (*string, bool) {
-	if o == nil || IsNil(o.ServiceUsername) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ServiceUsername, true
+	return o.ServiceUsername.Get(), o.ServiceUsername.IsSet()
 }
 
 // IsSetServiceUsername returns a boolean if a field has been set.
 func (o *NetworkServerCreateNSX) IsSetServiceUsername() bool {
-	if o != nil && !IsNil(o.ServiceUsername) {
+	if o != nil && o.ServiceUsername.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetServiceUsername gets a reference to the given string and assigns it to the ServiceUsername field.
+// SetServiceUsername gets a reference to the given NullableString and assigns it to the ServiceUsername field.
 func (o *NetworkServerCreateNSX) SetServiceUsername(v string) {
-	o.ServiceUsername = &v
+	o.ServiceUsername.Set(&v)
 }
 
-// GetServicePassword returns the ServicePassword field value if set, zero value otherwise.
+// SetServiceUsernameNil sets the value for ServiceUsername to be an explicit nil
+func (o *NetworkServerCreateNSX) SetServiceUsernameNil() {
+	o.ServiceUsername.Set(nil)
+}
+
+// UnsetServiceUsername ensures that no value is present for ServiceUsername, not even an explicit nil
+func (o *NetworkServerCreateNSX) UnsetServiceUsername() {
+	o.ServiceUsername.Unset()
+}
+
+// GetServicePassword returns the ServicePassword field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NetworkServerCreateNSX) GetServicePassword() string {
-	if o == nil || IsNil(o.ServicePassword) {
+	if o == nil || IsNil(o.ServicePassword.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ServicePassword
+	return *o.ServicePassword.Get()
 }
 
 // GetServicePasswordOk returns a tuple with the ServicePassword field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NetworkServerCreateNSX) GetServicePasswordOk() (*string, bool) {
-	if o == nil || IsNil(o.ServicePassword) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ServicePassword, true
+	return o.ServicePassword.Get(), o.ServicePassword.IsSet()
 }
 
 // IsSetServicePassword returns a boolean if a field has been set.
 func (o *NetworkServerCreateNSX) IsSetServicePassword() bool {
-	if o != nil && !IsNil(o.ServicePassword) {
+	if o != nil && o.ServicePassword.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetServicePassword gets a reference to the given string and assigns it to the ServicePassword field.
+// SetServicePassword gets a reference to the given NullableString and assigns it to the ServicePassword field.
 func (o *NetworkServerCreateNSX) SetServicePassword(v string) {
-	o.ServicePassword = &v
+	o.ServicePassword.Set(&v)
+}
+
+// SetServicePasswordNil sets the value for ServicePassword to be an explicit nil
+func (o *NetworkServerCreateNSX) SetServicePasswordNil() {
+	o.ServicePassword.Set(nil)
+}
+
+// UnsetServicePassword ensures that no value is present for ServicePassword, not even an explicit nil
+func (o *NetworkServerCreateNSX) UnsetServicePassword() {
+	o.ServicePassword.Unset()
 }
 
 // GetConfig returns the Config field value if set, zero value otherwise.
@@ -409,12 +433,12 @@ func (o NetworkServerCreateNSX) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Enabled) {
 		toSerialize["enabled"] = o.Enabled
 	}
-	toSerialize["serviceUrl"] = o.ServiceUrl
-	if !IsNil(o.ServiceUsername) {
-		toSerialize["serviceUsername"] = o.ServiceUsername
+	toSerialize["serviceUrl"] = o.ServiceUrl.Get()
+	if o.ServiceUsername.IsSet() {
+		toSerialize["serviceUsername"] = o.ServiceUsername.Get()
 	}
-	if !IsNil(o.ServicePassword) {
-		toSerialize["servicePassword"] = o.ServicePassword
+	if o.ServicePassword.IsSet() {
+		toSerialize["servicePassword"] = o.ServicePassword.Get()
 	}
 	if !IsNil(o.Config) {
 		toSerialize["config"] = o.Config

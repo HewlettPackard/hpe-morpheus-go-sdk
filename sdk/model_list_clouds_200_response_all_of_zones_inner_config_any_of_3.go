@@ -29,14 +29,14 @@ type ListClouds200ResponseAllOfZonesInnerConfigAnyOf3 struct {
 	DatacenterName       *string                                                       `json:"datacenterName,omitempty"`
 	NetworkServerId      *string                                                       `json:"networkServer.id,omitempty"`
 	NetworkServer        *ListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer `json:"networkServer,omitempty"`
-	SecurityServer       *string                                                       `json:"securityServer,omitempty"`
-	CertificateProvider  *string                                                       `json:"certificateProvider,omitempty"`
-	BackupMode           *string                                                       `json:"backupMode,omitempty"`
-	ReplicationMode      *string                                                       `json:"replicationMode,omitempty"`
-	DnsIntegrationId     *string                                                       `json:"dnsIntegrationId,omitempty"`
-	ServiceRegistryId    *string                                                       `json:"serviceRegistryId,omitempty"`
-	ConfigManagementId   *string                                                       `json:"configManagementId,omitempty"`
-	PrivateKeyHash       *string                                                       `json:"privateKeyHash,omitempty"`
+	SecurityServer       NullableString                                                `json:"securityServer,omitempty"`
+	CertificateProvider  NullableString                                                `json:"certificateProvider,omitempty"`
+	BackupMode           NullableString                                                `json:"backupMode,omitempty"`
+	ReplicationMode      NullableString                                                `json:"replicationMode,omitempty"`
+	DnsIntegrationId     NullableString                                                `json:"dnsIntegrationId,omitempty"`
+	ServiceRegistryId    NullableString                                                `json:"serviceRegistryId,omitempty"`
+	ConfigManagementId   NullableString                                                `json:"configManagementId,omitempty"`
+	PrivateKeyHash       NullableString                                                `json:"privateKeyHash,omitempty"`
 	AdditionalProperties map[string]interface{}                                        `json:",remain"`
 }
 
@@ -347,260 +347,348 @@ func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf3) SetNetworkServer(v Li
 	o.NetworkServer = &v
 }
 
-// GetSecurityServer returns the SecurityServer field value if set, zero value otherwise.
+// GetSecurityServer returns the SecurityServer field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf3) GetSecurityServer() string {
-	if o == nil || IsNil(o.SecurityServer) {
+	if o == nil || IsNil(o.SecurityServer.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.SecurityServer
+	return *o.SecurityServer.Get()
 }
 
 // GetSecurityServerOk returns a tuple with the SecurityServer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf3) GetSecurityServerOk() (*string, bool) {
-	if o == nil || IsNil(o.SecurityServer) {
+	if o == nil {
 		return nil, false
 	}
-	return o.SecurityServer, true
+	return o.SecurityServer.Get(), o.SecurityServer.IsSet()
 }
 
 // IsSetSecurityServer returns a boolean if a field has been set.
 func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf3) IsSetSecurityServer() bool {
-	if o != nil && !IsNil(o.SecurityServer) {
+	if o != nil && o.SecurityServer.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetSecurityServer gets a reference to the given string and assigns it to the SecurityServer field.
+// SetSecurityServer gets a reference to the given NullableString and assigns it to the SecurityServer field.
 func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf3) SetSecurityServer(v string) {
-	o.SecurityServer = &v
+	o.SecurityServer.Set(&v)
 }
 
-// GetCertificateProvider returns the CertificateProvider field value if set, zero value otherwise.
+// SetSecurityServerNil sets the value for SecurityServer to be an explicit nil
+func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf3) SetSecurityServerNil() {
+	o.SecurityServer.Set(nil)
+}
+
+// UnsetSecurityServer ensures that no value is present for SecurityServer, not even an explicit nil
+func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf3) UnsetSecurityServer() {
+	o.SecurityServer.Unset()
+}
+
+// GetCertificateProvider returns the CertificateProvider field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf3) GetCertificateProvider() string {
-	if o == nil || IsNil(o.CertificateProvider) {
+	if o == nil || IsNil(o.CertificateProvider.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.CertificateProvider
+	return *o.CertificateProvider.Get()
 }
 
 // GetCertificateProviderOk returns a tuple with the CertificateProvider field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf3) GetCertificateProviderOk() (*string, bool) {
-	if o == nil || IsNil(o.CertificateProvider) {
+	if o == nil {
 		return nil, false
 	}
-	return o.CertificateProvider, true
+	return o.CertificateProvider.Get(), o.CertificateProvider.IsSet()
 }
 
 // IsSetCertificateProvider returns a boolean if a field has been set.
 func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf3) IsSetCertificateProvider() bool {
-	if o != nil && !IsNil(o.CertificateProvider) {
+	if o != nil && o.CertificateProvider.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCertificateProvider gets a reference to the given string and assigns it to the CertificateProvider field.
+// SetCertificateProvider gets a reference to the given NullableString and assigns it to the CertificateProvider field.
 func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf3) SetCertificateProvider(v string) {
-	o.CertificateProvider = &v
+	o.CertificateProvider.Set(&v)
 }
 
-// GetBackupMode returns the BackupMode field value if set, zero value otherwise.
+// SetCertificateProviderNil sets the value for CertificateProvider to be an explicit nil
+func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf3) SetCertificateProviderNil() {
+	o.CertificateProvider.Set(nil)
+}
+
+// UnsetCertificateProvider ensures that no value is present for CertificateProvider, not even an explicit nil
+func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf3) UnsetCertificateProvider() {
+	o.CertificateProvider.Unset()
+}
+
+// GetBackupMode returns the BackupMode field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf3) GetBackupMode() string {
-	if o == nil || IsNil(o.BackupMode) {
+	if o == nil || IsNil(o.BackupMode.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.BackupMode
+	return *o.BackupMode.Get()
 }
 
 // GetBackupModeOk returns a tuple with the BackupMode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf3) GetBackupModeOk() (*string, bool) {
-	if o == nil || IsNil(o.BackupMode) {
+	if o == nil {
 		return nil, false
 	}
-	return o.BackupMode, true
+	return o.BackupMode.Get(), o.BackupMode.IsSet()
 }
 
 // IsSetBackupMode returns a boolean if a field has been set.
 func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf3) IsSetBackupMode() bool {
-	if o != nil && !IsNil(o.BackupMode) {
+	if o != nil && o.BackupMode.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetBackupMode gets a reference to the given string and assigns it to the BackupMode field.
+// SetBackupMode gets a reference to the given NullableString and assigns it to the BackupMode field.
 func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf3) SetBackupMode(v string) {
-	o.BackupMode = &v
+	o.BackupMode.Set(&v)
 }
 
-// GetReplicationMode returns the ReplicationMode field value if set, zero value otherwise.
+// SetBackupModeNil sets the value for BackupMode to be an explicit nil
+func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf3) SetBackupModeNil() {
+	o.BackupMode.Set(nil)
+}
+
+// UnsetBackupMode ensures that no value is present for BackupMode, not even an explicit nil
+func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf3) UnsetBackupMode() {
+	o.BackupMode.Unset()
+}
+
+// GetReplicationMode returns the ReplicationMode field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf3) GetReplicationMode() string {
-	if o == nil || IsNil(o.ReplicationMode) {
+	if o == nil || IsNil(o.ReplicationMode.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ReplicationMode
+	return *o.ReplicationMode.Get()
 }
 
 // GetReplicationModeOk returns a tuple with the ReplicationMode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf3) GetReplicationModeOk() (*string, bool) {
-	if o == nil || IsNil(o.ReplicationMode) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ReplicationMode, true
+	return o.ReplicationMode.Get(), o.ReplicationMode.IsSet()
 }
 
 // IsSetReplicationMode returns a boolean if a field has been set.
 func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf3) IsSetReplicationMode() bool {
-	if o != nil && !IsNil(o.ReplicationMode) {
+	if o != nil && o.ReplicationMode.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetReplicationMode gets a reference to the given string and assigns it to the ReplicationMode field.
+// SetReplicationMode gets a reference to the given NullableString and assigns it to the ReplicationMode field.
 func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf3) SetReplicationMode(v string) {
-	o.ReplicationMode = &v
+	o.ReplicationMode.Set(&v)
 }
 
-// GetDnsIntegrationId returns the DnsIntegrationId field value if set, zero value otherwise.
+// SetReplicationModeNil sets the value for ReplicationMode to be an explicit nil
+func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf3) SetReplicationModeNil() {
+	o.ReplicationMode.Set(nil)
+}
+
+// UnsetReplicationMode ensures that no value is present for ReplicationMode, not even an explicit nil
+func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf3) UnsetReplicationMode() {
+	o.ReplicationMode.Unset()
+}
+
+// GetDnsIntegrationId returns the DnsIntegrationId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf3) GetDnsIntegrationId() string {
-	if o == nil || IsNil(o.DnsIntegrationId) {
+	if o == nil || IsNil(o.DnsIntegrationId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.DnsIntegrationId
+	return *o.DnsIntegrationId.Get()
 }
 
 // GetDnsIntegrationIdOk returns a tuple with the DnsIntegrationId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf3) GetDnsIntegrationIdOk() (*string, bool) {
-	if o == nil || IsNil(o.DnsIntegrationId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.DnsIntegrationId, true
+	return o.DnsIntegrationId.Get(), o.DnsIntegrationId.IsSet()
 }
 
 // IsSetDnsIntegrationId returns a boolean if a field has been set.
 func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf3) IsSetDnsIntegrationId() bool {
-	if o != nil && !IsNil(o.DnsIntegrationId) {
+	if o != nil && o.DnsIntegrationId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDnsIntegrationId gets a reference to the given string and assigns it to the DnsIntegrationId field.
+// SetDnsIntegrationId gets a reference to the given NullableString and assigns it to the DnsIntegrationId field.
 func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf3) SetDnsIntegrationId(v string) {
-	o.DnsIntegrationId = &v
+	o.DnsIntegrationId.Set(&v)
 }
 
-// GetServiceRegistryId returns the ServiceRegistryId field value if set, zero value otherwise.
+// SetDnsIntegrationIdNil sets the value for DnsIntegrationId to be an explicit nil
+func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf3) SetDnsIntegrationIdNil() {
+	o.DnsIntegrationId.Set(nil)
+}
+
+// UnsetDnsIntegrationId ensures that no value is present for DnsIntegrationId, not even an explicit nil
+func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf3) UnsetDnsIntegrationId() {
+	o.DnsIntegrationId.Unset()
+}
+
+// GetServiceRegistryId returns the ServiceRegistryId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf3) GetServiceRegistryId() string {
-	if o == nil || IsNil(o.ServiceRegistryId) {
+	if o == nil || IsNil(o.ServiceRegistryId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ServiceRegistryId
+	return *o.ServiceRegistryId.Get()
 }
 
 // GetServiceRegistryIdOk returns a tuple with the ServiceRegistryId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf3) GetServiceRegistryIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ServiceRegistryId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ServiceRegistryId, true
+	return o.ServiceRegistryId.Get(), o.ServiceRegistryId.IsSet()
 }
 
 // IsSetServiceRegistryId returns a boolean if a field has been set.
 func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf3) IsSetServiceRegistryId() bool {
-	if o != nil && !IsNil(o.ServiceRegistryId) {
+	if o != nil && o.ServiceRegistryId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetServiceRegistryId gets a reference to the given string and assigns it to the ServiceRegistryId field.
+// SetServiceRegistryId gets a reference to the given NullableString and assigns it to the ServiceRegistryId field.
 func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf3) SetServiceRegistryId(v string) {
-	o.ServiceRegistryId = &v
+	o.ServiceRegistryId.Set(&v)
 }
 
-// GetConfigManagementId returns the ConfigManagementId field value if set, zero value otherwise.
+// SetServiceRegistryIdNil sets the value for ServiceRegistryId to be an explicit nil
+func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf3) SetServiceRegistryIdNil() {
+	o.ServiceRegistryId.Set(nil)
+}
+
+// UnsetServiceRegistryId ensures that no value is present for ServiceRegistryId, not even an explicit nil
+func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf3) UnsetServiceRegistryId() {
+	o.ServiceRegistryId.Unset()
+}
+
+// GetConfigManagementId returns the ConfigManagementId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf3) GetConfigManagementId() string {
-	if o == nil || IsNil(o.ConfigManagementId) {
+	if o == nil || IsNil(o.ConfigManagementId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ConfigManagementId
+	return *o.ConfigManagementId.Get()
 }
 
 // GetConfigManagementIdOk returns a tuple with the ConfigManagementId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf3) GetConfigManagementIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ConfigManagementId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ConfigManagementId, true
+	return o.ConfigManagementId.Get(), o.ConfigManagementId.IsSet()
 }
 
 // IsSetConfigManagementId returns a boolean if a field has been set.
 func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf3) IsSetConfigManagementId() bool {
-	if o != nil && !IsNil(o.ConfigManagementId) {
+	if o != nil && o.ConfigManagementId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetConfigManagementId gets a reference to the given string and assigns it to the ConfigManagementId field.
+// SetConfigManagementId gets a reference to the given NullableString and assigns it to the ConfigManagementId field.
 func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf3) SetConfigManagementId(v string) {
-	o.ConfigManagementId = &v
+	o.ConfigManagementId.Set(&v)
 }
 
-// GetPrivateKeyHash returns the PrivateKeyHash field value if set, zero value otherwise.
+// SetConfigManagementIdNil sets the value for ConfigManagementId to be an explicit nil
+func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf3) SetConfigManagementIdNil() {
+	o.ConfigManagementId.Set(nil)
+}
+
+// UnsetConfigManagementId ensures that no value is present for ConfigManagementId, not even an explicit nil
+func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf3) UnsetConfigManagementId() {
+	o.ConfigManagementId.Unset()
+}
+
+// GetPrivateKeyHash returns the PrivateKeyHash field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf3) GetPrivateKeyHash() string {
-	if o == nil || IsNil(o.PrivateKeyHash) {
+	if o == nil || IsNil(o.PrivateKeyHash.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.PrivateKeyHash
+	return *o.PrivateKeyHash.Get()
 }
 
 // GetPrivateKeyHashOk returns a tuple with the PrivateKeyHash field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf3) GetPrivateKeyHashOk() (*string, bool) {
-	if o == nil || IsNil(o.PrivateKeyHash) {
+	if o == nil {
 		return nil, false
 	}
-	return o.PrivateKeyHash, true
+	return o.PrivateKeyHash.Get(), o.PrivateKeyHash.IsSet()
 }
 
 // IsSetPrivateKeyHash returns a boolean if a field has been set.
 func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf3) IsSetPrivateKeyHash() bool {
-	if o != nil && !IsNil(o.PrivateKeyHash) {
+	if o != nil && o.PrivateKeyHash.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetPrivateKeyHash gets a reference to the given string and assigns it to the PrivateKeyHash field.
+// SetPrivateKeyHash gets a reference to the given NullableString and assigns it to the PrivateKeyHash field.
 func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf3) SetPrivateKeyHash(v string) {
-	o.PrivateKeyHash = &v
+	o.PrivateKeyHash.Set(&v)
+}
+
+// SetPrivateKeyHashNil sets the value for PrivateKeyHash to be an explicit nil
+func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf3) SetPrivateKeyHashNil() {
+	o.PrivateKeyHash.Set(nil)
+}
+
+// UnsetPrivateKeyHash ensures that no value is present for PrivateKeyHash, not even an explicit nil
+func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf3) UnsetPrivateKeyHash() {
+	o.PrivateKeyHash.Unset()
 }
 
 func (o ListClouds200ResponseAllOfZonesInnerConfigAnyOf3) MarshalJSON() ([]byte, error) {
@@ -640,29 +728,29 @@ func (o ListClouds200ResponseAllOfZonesInnerConfigAnyOf3) ToMap() (map[string]in
 	if !IsNil(o.NetworkServer) {
 		toSerialize["networkServer"] = o.NetworkServer
 	}
-	if !IsNil(o.SecurityServer) {
-		toSerialize["securityServer"] = o.SecurityServer
+	if o.SecurityServer.IsSet() {
+		toSerialize["securityServer"] = o.SecurityServer.Get()
 	}
-	if !IsNil(o.CertificateProvider) {
-		toSerialize["certificateProvider"] = o.CertificateProvider
+	if o.CertificateProvider.IsSet() {
+		toSerialize["certificateProvider"] = o.CertificateProvider.Get()
 	}
-	if !IsNil(o.BackupMode) {
-		toSerialize["backupMode"] = o.BackupMode
+	if o.BackupMode.IsSet() {
+		toSerialize["backupMode"] = o.BackupMode.Get()
 	}
-	if !IsNil(o.ReplicationMode) {
-		toSerialize["replicationMode"] = o.ReplicationMode
+	if o.ReplicationMode.IsSet() {
+		toSerialize["replicationMode"] = o.ReplicationMode.Get()
 	}
-	if !IsNil(o.DnsIntegrationId) {
-		toSerialize["dnsIntegrationId"] = o.DnsIntegrationId
+	if o.DnsIntegrationId.IsSet() {
+		toSerialize["dnsIntegrationId"] = o.DnsIntegrationId.Get()
 	}
-	if !IsNil(o.ServiceRegistryId) {
-		toSerialize["serviceRegistryId"] = o.ServiceRegistryId
+	if o.ServiceRegistryId.IsSet() {
+		toSerialize["serviceRegistryId"] = o.ServiceRegistryId.Get()
 	}
-	if !IsNil(o.ConfigManagementId) {
-		toSerialize["configManagementId"] = o.ConfigManagementId
+	if o.ConfigManagementId.IsSet() {
+		toSerialize["configManagementId"] = o.ConfigManagementId.Get()
 	}
-	if !IsNil(o.PrivateKeyHash) {
-		toSerialize["privateKeyHash"] = o.PrivateKeyHash
+	if o.PrivateKeyHash.IsSet() {
+		toSerialize["privateKeyHash"] = o.PrivateKeyHash.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {

@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Visibility** | Pointer to **string** |  | [optional] 
 **Mode** | Pointer to **string** | Pool selection mode. Valid values are &#x60;roundrobin&#x60; or &#x60;availablecapacity&#x60;. | [optional] 
 **Pools** | Pointer to **[]int64** |  | [optional] 
-**Tenants** | Pointer to [**[]ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
+**Tenants** | Pointer to [**[]GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **ResourcePermission** | Pointer to [**GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermission**](GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermission.md) |  | [optional] 
 
 ## Methods
@@ -158,20 +158,20 @@ HasPools returns a boolean if a field has been set.
 
 ### GetTenants
 
-`func (o *ResourcePoolGroupsCreateInput) GetTenants() []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *ResourcePoolGroupsCreateInput) GetTenants() []GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetTenants returns the Tenants field if non-nil, zero value otherwise.
 
 ### GetTenantsOk
 
-`func (o *ResourcePoolGroupsCreateInput) GetTenantsOk() (*[]ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *ResourcePoolGroupsCreateInput) GetTenantsOk() (*[]GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetTenantsOk returns a tuple with the Tenants field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenants
 
-`func (o *ResourcePoolGroupsCreateInput) SetTenants(v []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *ResourcePoolGroupsCreateInput) SetTenants(v []GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetTenants sets Tenants field to given value.
 

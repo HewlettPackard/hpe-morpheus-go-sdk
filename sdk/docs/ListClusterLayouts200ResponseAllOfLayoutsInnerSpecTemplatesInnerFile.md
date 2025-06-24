@@ -6,9 +6,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
 **SourceType** | Pointer to **string** |  | [optional] 
-**ContentRef** | Pointer to **string** |  | [optional] 
-**ContentPath** | Pointer to **string** |  | [optional] 
-**Repository** | Pointer to **string** |  | [optional] 
+**ContentRef** | Pointer to **NullableString** |  | [optional] 
+**ContentPath** | Pointer to **NullableString** |  | [optional] 
+**Repository** | Pointer to **NullableString** |  | [optional] 
 **Content** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -105,6 +105,16 @@ SetContentRef sets ContentRef field to given value.
 
 HasContentRef returns a boolean if a field has been set.
 
+### SetContentRefNil
+
+`func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile) SetContentRefNil(b bool)`
+
+ SetContentRefNil sets the value for ContentRef to be an explicit nil
+
+### UnsetContentRef
+`func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile) UnsetContentRef()`
+
+UnsetContentRef ensures that no value is present for ContentRef, not even an explicit nil
 ### GetContentPath
 
 `func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile) GetContentPath() string`
@@ -130,6 +140,16 @@ SetContentPath sets ContentPath field to given value.
 
 HasContentPath returns a boolean if a field has been set.
 
+### SetContentPathNil
+
+`func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile) SetContentPathNil(b bool)`
+
+ SetContentPathNil sets the value for ContentPath to be an explicit nil
+
+### UnsetContentPath
+`func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile) UnsetContentPath()`
+
+UnsetContentPath ensures that no value is present for ContentPath, not even an explicit nil
 ### GetRepository
 
 `func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile) GetRepository() string`
@@ -155,6 +175,16 @@ SetRepository sets Repository field to given value.
 
 HasRepository returns a boolean if a field has been set.
 
+### SetRepositoryNil
+
+`func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile) SetRepositoryNil(b bool)`
+
+ SetRepositoryNil sets the value for Repository to be an explicit nil
+
+### UnsetRepository
+`func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile) UnsetRepository()`
+
+UnsetRepository ensures that no value is present for Repository, not even an explicit nil
 ### GetContent
 
 `func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile) GetContent() string`

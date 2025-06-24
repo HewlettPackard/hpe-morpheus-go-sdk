@@ -21,30 +21,30 @@ var _ MappedNullable = &Incident{}
 
 // Incident struct for Incident
 type Incident struct {
-	Id                   *int64                                                                   `json:"id,omitempty"`
-	Account              *GetAlerts200ResponseAllOfChecksInnerAccount                             `json:"account,omitempty"`
-	App                  *string                                                                  `json:"app,omitempty"`
-	AutoClose            *bool                                                                    `json:"autoClose,omitempty"`
-	ChannelId            *string                                                                  `json:"channelId,omitempty"`
-	CheckGroups          []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"checkGroups,omitempty"`
-	Checks               []GetAlerts200ResponseAllOfChecksInner                                   `json:"checks,omitempty"`
-	Comment              *string                                                                  `json:"comment,omitempty"`
-	DisplayName          *string                                                                  `json:"displayName,omitempty"`
-	Duration             *string                                                                  `json:"duration,omitempty"`
-	EndDate              *time.Time                                                               `json:"endDate,omitempty"`
-	InUptime             *bool                                                                    `json:"inUptime,omitempty"`
-	Muted                *bool                                                                    `json:"muted,omitempty"`
-	LastCheckTime        *time.Time                                                               `json:"lastCheckTime,omitempty"`
-	LastError            *string                                                                  `json:"lastError,omitempty"`
-	LastMessage          *string                                                                  `json:"lastMessage,omitempty"`
-	Name                 *string                                                                  `json:"name,omitempty"`
-	Resolution           *string                                                                  `json:"resolution,omitempty"`
-	Severity             *string                                                                  `json:"severity,omitempty"`
-	SeverityId           *int64                                                                   `json:"severityId,omitempty"`
-	StartDate            *time.Time                                                               `json:"startDate,omitempty"`
-	Status               *string                                                                  `json:"status,omitempty"`
-	Visibility           *string                                                                  `json:"visibility,omitempty"`
-	AdditionalProperties map[string]interface{}                                                   `json:",remain"`
+	Id                   *int64                                              `json:"id,omitempty"`
+	Account              *GetAlerts200ResponseAllOfChecksInnerAccount        `json:"account,omitempty"`
+	App                  NullableString                                      `json:"app,omitempty"`
+	AutoClose            *bool                                               `json:"autoClose,omitempty"`
+	ChannelId            *string                                             `json:"channelId,omitempty"`
+	CheckGroups          []GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"checkGroups,omitempty"`
+	Checks               []GetAlerts200ResponseAllOfChecksInner              `json:"checks,omitempty"`
+	Comment              NullableString                                      `json:"comment,omitempty"`
+	DisplayName          *string                                             `json:"displayName,omitempty"`
+	Duration             NullableString                                      `json:"duration,omitempty"`
+	EndDate              NullableTime                                        `json:"endDate,omitempty"`
+	InUptime             *bool                                               `json:"inUptime,omitempty"`
+	Muted                *bool                                               `json:"muted,omitempty"`
+	LastCheckTime        *time.Time                                          `json:"lastCheckTime,omitempty"`
+	LastError            *string                                             `json:"lastError,omitempty"`
+	LastMessage          NullableString                                      `json:"lastMessage,omitempty"`
+	Name                 *string                                             `json:"name,omitempty"`
+	Resolution           NullableString                                      `json:"resolution,omitempty"`
+	Severity             *string                                             `json:"severity,omitempty"`
+	SeverityId           *int64                                              `json:"severityId,omitempty"`
+	StartDate            *time.Time                                          `json:"startDate,omitempty"`
+	Status               *string                                             `json:"status,omitempty"`
+	Visibility           *string                                             `json:"visibility,omitempty"`
+	AdditionalProperties map[string]interface{}                              `json:",remain"`
 }
 
 type _Incident Incident
@@ -130,36 +130,47 @@ func (o *Incident) SetAccount(v GetAlerts200ResponseAllOfChecksInnerAccount) {
 	o.Account = &v
 }
 
-// GetApp returns the App field value if set, zero value otherwise.
+// GetApp returns the App field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Incident) GetApp() string {
-	if o == nil || IsNil(o.App) {
+	if o == nil || IsNil(o.App.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.App
+	return *o.App.Get()
 }
 
 // GetAppOk returns a tuple with the App field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Incident) GetAppOk() (*string, bool) {
-	if o == nil || IsNil(o.App) {
+	if o == nil {
 		return nil, false
 	}
-	return o.App, true
+	return o.App.Get(), o.App.IsSet()
 }
 
 // IsSetApp returns a boolean if a field has been set.
 func (o *Incident) IsSetApp() bool {
-	if o != nil && !IsNil(o.App) {
+	if o != nil && o.App.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetApp gets a reference to the given string and assigns it to the App field.
+// SetApp gets a reference to the given NullableString and assigns it to the App field.
 func (o *Incident) SetApp(v string) {
-	o.App = &v
+	o.App.Set(&v)
+}
+
+// SetAppNil sets the value for App to be an explicit nil
+func (o *Incident) SetAppNil() {
+	o.App.Set(nil)
+}
+
+// UnsetApp ensures that no value is present for App, not even an explicit nil
+func (o *Incident) UnsetApp() {
+	o.App.Unset()
 }
 
 // GetAutoClose returns the AutoClose field value if set, zero value otherwise.
@@ -227,9 +238,9 @@ func (o *Incident) SetChannelId(v string) {
 }
 
 // GetCheckGroups returns the CheckGroups field value if set, zero value otherwise.
-func (o *Incident) GetCheckGroups() []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *Incident) GetCheckGroups() []GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.CheckGroups) {
-		var ret []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret []GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return o.CheckGroups
@@ -237,7 +248,7 @@ func (o *Incident) GetCheckGroups() []ListApplianceSettings200ResponseApplianceS
 
 // GetCheckGroupsOk returns a tuple with the CheckGroups field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Incident) GetCheckGroupsOk() ([]ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *Incident) GetCheckGroupsOk() ([]GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.CheckGroups) {
 		return nil, false
 	}
@@ -253,8 +264,8 @@ func (o *Incident) IsSetCheckGroups() bool {
 	return false
 }
 
-// SetCheckGroups gets a reference to the given []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the CheckGroups field.
-func (o *Incident) SetCheckGroups(v []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetCheckGroups gets a reference to the given []GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the CheckGroups field.
+func (o *Incident) SetCheckGroups(v []GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.CheckGroups = v
 }
 
@@ -290,36 +301,47 @@ func (o *Incident) SetChecks(v []GetAlerts200ResponseAllOfChecksInner) {
 	o.Checks = v
 }
 
-// GetComment returns the Comment field value if set, zero value otherwise.
+// GetComment returns the Comment field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Incident) GetComment() string {
-	if o == nil || IsNil(o.Comment) {
+	if o == nil || IsNil(o.Comment.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Comment
+	return *o.Comment.Get()
 }
 
 // GetCommentOk returns a tuple with the Comment field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Incident) GetCommentOk() (*string, bool) {
-	if o == nil || IsNil(o.Comment) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Comment, true
+	return o.Comment.Get(), o.Comment.IsSet()
 }
 
 // IsSetComment returns a boolean if a field has been set.
 func (o *Incident) IsSetComment() bool {
-	if o != nil && !IsNil(o.Comment) {
+	if o != nil && o.Comment.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetComment gets a reference to the given string and assigns it to the Comment field.
+// SetComment gets a reference to the given NullableString and assigns it to the Comment field.
 func (o *Incident) SetComment(v string) {
-	o.Comment = &v
+	o.Comment.Set(&v)
+}
+
+// SetCommentNil sets the value for Comment to be an explicit nil
+func (o *Incident) SetCommentNil() {
+	o.Comment.Set(nil)
+}
+
+// UnsetComment ensures that no value is present for Comment, not even an explicit nil
+func (o *Incident) UnsetComment() {
+	o.Comment.Unset()
 }
 
 // GetDisplayName returns the DisplayName field value if set, zero value otherwise.
@@ -354,68 +376,90 @@ func (o *Incident) SetDisplayName(v string) {
 	o.DisplayName = &v
 }
 
-// GetDuration returns the Duration field value if set, zero value otherwise.
+// GetDuration returns the Duration field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Incident) GetDuration() string {
-	if o == nil || IsNil(o.Duration) {
+	if o == nil || IsNil(o.Duration.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Duration
+	return *o.Duration.Get()
 }
 
 // GetDurationOk returns a tuple with the Duration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Incident) GetDurationOk() (*string, bool) {
-	if o == nil || IsNil(o.Duration) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Duration, true
+	return o.Duration.Get(), o.Duration.IsSet()
 }
 
 // IsSetDuration returns a boolean if a field has been set.
 func (o *Incident) IsSetDuration() bool {
-	if o != nil && !IsNil(o.Duration) {
+	if o != nil && o.Duration.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDuration gets a reference to the given string and assigns it to the Duration field.
+// SetDuration gets a reference to the given NullableString and assigns it to the Duration field.
 func (o *Incident) SetDuration(v string) {
-	o.Duration = &v
+	o.Duration.Set(&v)
 }
 
-// GetEndDate returns the EndDate field value if set, zero value otherwise.
+// SetDurationNil sets the value for Duration to be an explicit nil
+func (o *Incident) SetDurationNil() {
+	o.Duration.Set(nil)
+}
+
+// UnsetDuration ensures that no value is present for Duration, not even an explicit nil
+func (o *Incident) UnsetDuration() {
+	o.Duration.Unset()
+}
+
+// GetEndDate returns the EndDate field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Incident) GetEndDate() time.Time {
-	if o == nil || IsNil(o.EndDate) {
+	if o == nil || IsNil(o.EndDate.Get()) {
 		var ret time.Time
 		return ret
 	}
-	return *o.EndDate
+	return *o.EndDate.Get()
 }
 
 // GetEndDateOk returns a tuple with the EndDate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Incident) GetEndDateOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.EndDate) {
+	if o == nil {
 		return nil, false
 	}
-	return o.EndDate, true
+	return o.EndDate.Get(), o.EndDate.IsSet()
 }
 
 // IsSetEndDate returns a boolean if a field has been set.
 func (o *Incident) IsSetEndDate() bool {
-	if o != nil && !IsNil(o.EndDate) {
+	if o != nil && o.EndDate.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetEndDate gets a reference to the given time.Time and assigns it to the EndDate field.
+// SetEndDate gets a reference to the given NullableTime and assigns it to the EndDate field.
 func (o *Incident) SetEndDate(v time.Time) {
-	o.EndDate = &v
+	o.EndDate.Set(&v)
+}
+
+// SetEndDateNil sets the value for EndDate to be an explicit nil
+func (o *Incident) SetEndDateNil() {
+	o.EndDate.Set(nil)
+}
+
+// UnsetEndDate ensures that no value is present for EndDate, not even an explicit nil
+func (o *Incident) UnsetEndDate() {
+	o.EndDate.Unset()
 }
 
 // GetInUptime returns the InUptime field value if set, zero value otherwise.
@@ -546,36 +590,47 @@ func (o *Incident) SetLastError(v string) {
 	o.LastError = &v
 }
 
-// GetLastMessage returns the LastMessage field value if set, zero value otherwise.
+// GetLastMessage returns the LastMessage field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Incident) GetLastMessage() string {
-	if o == nil || IsNil(o.LastMessage) {
+	if o == nil || IsNil(o.LastMessage.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.LastMessage
+	return *o.LastMessage.Get()
 }
 
 // GetLastMessageOk returns a tuple with the LastMessage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Incident) GetLastMessageOk() (*string, bool) {
-	if o == nil || IsNil(o.LastMessage) {
+	if o == nil {
 		return nil, false
 	}
-	return o.LastMessage, true
+	return o.LastMessage.Get(), o.LastMessage.IsSet()
 }
 
 // IsSetLastMessage returns a boolean if a field has been set.
 func (o *Incident) IsSetLastMessage() bool {
-	if o != nil && !IsNil(o.LastMessage) {
+	if o != nil && o.LastMessage.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetLastMessage gets a reference to the given string and assigns it to the LastMessage field.
+// SetLastMessage gets a reference to the given NullableString and assigns it to the LastMessage field.
 func (o *Incident) SetLastMessage(v string) {
-	o.LastMessage = &v
+	o.LastMessage.Set(&v)
+}
+
+// SetLastMessageNil sets the value for LastMessage to be an explicit nil
+func (o *Incident) SetLastMessageNil() {
+	o.LastMessage.Set(nil)
+}
+
+// UnsetLastMessage ensures that no value is present for LastMessage, not even an explicit nil
+func (o *Incident) UnsetLastMessage() {
+	o.LastMessage.Unset()
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -610,36 +665,47 @@ func (o *Incident) SetName(v string) {
 	o.Name = &v
 }
 
-// GetResolution returns the Resolution field value if set, zero value otherwise.
+// GetResolution returns the Resolution field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Incident) GetResolution() string {
-	if o == nil || IsNil(o.Resolution) {
+	if o == nil || IsNil(o.Resolution.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Resolution
+	return *o.Resolution.Get()
 }
 
 // GetResolutionOk returns a tuple with the Resolution field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Incident) GetResolutionOk() (*string, bool) {
-	if o == nil || IsNil(o.Resolution) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Resolution, true
+	return o.Resolution.Get(), o.Resolution.IsSet()
 }
 
 // IsSetResolution returns a boolean if a field has been set.
 func (o *Incident) IsSetResolution() bool {
-	if o != nil && !IsNil(o.Resolution) {
+	if o != nil && o.Resolution.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetResolution gets a reference to the given string and assigns it to the Resolution field.
+// SetResolution gets a reference to the given NullableString and assigns it to the Resolution field.
 func (o *Incident) SetResolution(v string) {
-	o.Resolution = &v
+	o.Resolution.Set(&v)
+}
+
+// SetResolutionNil sets the value for Resolution to be an explicit nil
+func (o *Incident) SetResolutionNil() {
+	o.Resolution.Set(nil)
+}
+
+// UnsetResolution ensures that no value is present for Resolution, not even an explicit nil
+func (o *Incident) UnsetResolution() {
+	o.Resolution.Unset()
 }
 
 // GetSeverity returns the Severity field value if set, zero value otherwise.
@@ -818,8 +884,8 @@ func (o Incident) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Account) {
 		toSerialize["account"] = o.Account
 	}
-	if !IsNil(o.App) {
-		toSerialize["app"] = o.App
+	if o.App.IsSet() {
+		toSerialize["app"] = o.App.Get()
 	}
 	if !IsNil(o.AutoClose) {
 		toSerialize["autoClose"] = o.AutoClose
@@ -833,17 +899,17 @@ func (o Incident) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Checks) {
 		toSerialize["checks"] = o.Checks
 	}
-	if !IsNil(o.Comment) {
-		toSerialize["comment"] = o.Comment
+	if o.Comment.IsSet() {
+		toSerialize["comment"] = o.Comment.Get()
 	}
 	if !IsNil(o.DisplayName) {
 		toSerialize["displayName"] = o.DisplayName
 	}
-	if !IsNil(o.Duration) {
-		toSerialize["duration"] = o.Duration
+	if o.Duration.IsSet() {
+		toSerialize["duration"] = o.Duration.Get()
 	}
-	if !IsNil(o.EndDate) {
-		toSerialize["endDate"] = o.EndDate
+	if o.EndDate.IsSet() {
+		toSerialize["endDate"] = o.EndDate.Get()
 	}
 	if !IsNil(o.InUptime) {
 		toSerialize["inUptime"] = o.InUptime
@@ -857,14 +923,14 @@ func (o Incident) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.LastError) {
 		toSerialize["lastError"] = o.LastError
 	}
-	if !IsNil(o.LastMessage) {
-		toSerialize["lastMessage"] = o.LastMessage
+	if o.LastMessage.IsSet() {
+		toSerialize["lastMessage"] = o.LastMessage.Get()
 	}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !IsNil(o.Resolution) {
-		toSerialize["resolution"] = o.Resolution
+	if o.Resolution.IsSet() {
+		toSerialize["resolution"] = o.Resolution.Get()
 	}
 	if !IsNil(o.Severity) {
 		toSerialize["severity"] = o.Severity

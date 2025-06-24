@@ -6,11 +6,11 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
-**Visibility** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **NullableString** |  | [optional] 
+**Visibility** | Pointer to **NullableString** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
 **ScheduleType** | Pointer to **string** |  | [optional] 
-**ScheduleTimezone** | Pointer to **string** |  | [optional] 
+**ScheduleTimezone** | Pointer to **NullableString** |  | [optional] 
 **Cron** | Pointer to **string** |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
@@ -109,6 +109,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *ExecuteSchedule) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *ExecuteSchedule) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetVisibility
 
 `func (o *ExecuteSchedule) GetVisibility() string`
@@ -134,6 +144,16 @@ SetVisibility sets Visibility field to given value.
 
 HasVisibility returns a boolean if a field has been set.
 
+### SetVisibilityNil
+
+`func (o *ExecuteSchedule) SetVisibilityNil(b bool)`
+
+ SetVisibilityNil sets the value for Visibility to be an explicit nil
+
+### UnsetVisibility
+`func (o *ExecuteSchedule) UnsetVisibility()`
+
+UnsetVisibility ensures that no value is present for Visibility, not even an explicit nil
 ### GetEnabled
 
 `func (o *ExecuteSchedule) GetEnabled() bool`
@@ -209,6 +229,16 @@ SetScheduleTimezone sets ScheduleTimezone field to given value.
 
 HasScheduleTimezone returns a boolean if a field has been set.
 
+### SetScheduleTimezoneNil
+
+`func (o *ExecuteSchedule) SetScheduleTimezoneNil(b bool)`
+
+ SetScheduleTimezoneNil sets the value for ScheduleTimezone to be an explicit nil
+
+### UnsetScheduleTimezone
+`func (o *ExecuteSchedule) UnsetScheduleTimezone()`
+
+UnsetScheduleTimezone ensures that no value is present for ScheduleTimezone, not even an explicit nil
 ### GetCron
 
 `func (o *ExecuteSchedule) GetCron() string`

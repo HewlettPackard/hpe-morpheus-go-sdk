@@ -6,32 +6,32 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**Code** | Pointer to **string** |  | [optional] 
-**Category** | Pointer to **string** |  | [optional] 
+**Code** | Pointer to **NullableString** |  | [optional] 
+**Category** | Pointer to **NullableString** |  | [optional] 
 **Visibility** | Pointer to **string** |  | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
-**Location** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **NullableString** |  | [optional] 
+**Location** | Pointer to **NullableString** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
-**ServiceUrl** | Pointer to **string** |  | [optional] 
-**ServiceHost** | Pointer to **string** |  | [optional] 
-**ServicePath** | Pointer to **string** |  | [optional] 
-**ServiceHostname** | Pointer to **string** |  | [optional] 
+**ServiceUrl** | Pointer to **NullableString** |  | [optional] 
+**ServiceHost** | Pointer to **NullableString** |  | [optional] 
+**ServicePath** | Pointer to **NullableString** |  | [optional] 
+**ServiceHostname** | Pointer to **NullableString** |  | [optional] 
 **ServicePort** | Pointer to **int64** |  | [optional] 
-**ServiceUsername** | Pointer to **string** |  | [optional] 
-**ServicePassword** | Pointer to **string** |  | [optional] 
-**ServicePasswordHash** | Pointer to **string** |  | [optional] 
+**ServiceUsername** | Pointer to **NullableString** |  | [optional] 
+**ServicePassword** | Pointer to **NullableString** |  | [optional] 
+**ServicePasswordHash** | Pointer to **NullableString** |  | [optional] 
 **ServiceToken** | Pointer to **string** |  | [optional] 
 **ServiceTokenHash** | Pointer to **string** |  | [optional] 
 **ServiceAccess** | Pointer to **string** |  | [optional] 
 **ServiceAccessHash** | Pointer to **string** |  | [optional] 
-**ServiceCert** | Pointer to **string** |  | [optional] 
-**ServiceCertHash** | Pointer to **string** |  | [optional] 
+**ServiceCert** | Pointer to **NullableString** |  | [optional] 
+**ServiceCertHash** | Pointer to **NullableString** |  | [optional] 
 **ServiceVersion** | Pointer to **string** |  | [optional] 
-**SearchDomains** | Pointer to **string** |  | [optional] 
+**SearchDomains** | Pointer to **NullableString** |  | [optional] 
 **EnableInternalDns** | Pointer to **bool** |  | [optional] 
-**InternalId** | Pointer to **string** |  | [optional] 
-**ExternalId** | Pointer to **string** |  | [optional] 
-**DatacenterId** | Pointer to **string** |  | [optional] 
+**InternalId** | Pointer to **NullableString** |  | [optional] 
+**ExternalId** | Pointer to **NullableString** |  | [optional] 
+**DatacenterId** | Pointer to **NullableString** |  | [optional] 
 **Status** | Pointer to **string** |  | [optional] 
 **StatusDate** | Pointer to **time.Time** |  | [optional] 
 **StatusMessage** | Pointer to **string** |  | [optional] 
@@ -44,16 +44,16 @@ Name | Type | Description | Notes
 **Managed** | Pointer to **bool** |  | [optional] 
 **Labels** | Pointer to **[]string** |  | [optional] 
 **AutoRecoverPowerState** | Pointer to **bool** |  | [optional] 
-**ServiceEntry** | Pointer to **string** |  | [optional] 
+**ServiceEntry** | Pointer to **NullableString** |  | [optional] 
 **CreatedBy** | Pointer to [**ListActivity200ResponseAllOfActivityInnerActivityInnerUser**](ListActivity200ResponseAllOfActivityInnerActivityInnerUser.md) |  | [optional] 
-**UserGroup** | Pointer to **string** |  | [optional] 
+**UserGroup** | Pointer to **NullableString** |  | [optional] 
 **Layout** | Pointer to [**ListClusters200ResponseAllOfClustersInnerLayout**](ListClusters200ResponseAllOfClustersInnerLayout.md) |  | [optional] 
-**Owner** | Pointer to [**ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
+**Owner** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **Servers** | Pointer to [**[]ListClusters200ResponseAllOfClustersInnerServersInner**](ListClusters200ResponseAllOfClustersInnerServersInner.md) |  | [optional] 
 **Accounts** | Pointer to **[]map[string]interface{}** |  | [optional] 
 **Integrations** | Pointer to **[]map[string]interface{}** |  | [optional] 
-**Site** | Pointer to [**ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
-**Type** | Pointer to [**ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
+**Site** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**Type** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **Zone** | Pointer to [**ListClusters200ResponseAllOfClustersInnerZone**](ListClusters200ResponseAllOfClustersInnerZone.md) |  | [optional] 
 **WorkerStats** | Pointer to [**ListClusters200ResponseAllOfClustersInnerWorkerStats**](ListClusters200ResponseAllOfClustersInnerWorkerStats.md) |  | [optional] 
 **Config** | Pointer to **map[string]interface{}** |  | [optional] 
@@ -152,6 +152,16 @@ SetCode sets Code field to given value.
 
 HasCode returns a boolean if a field has been set.
 
+### SetCodeNil
+
+`func (o *Clusters) SetCodeNil(b bool)`
+
+ SetCodeNil sets the value for Code to be an explicit nil
+
+### UnsetCode
+`func (o *Clusters) UnsetCode()`
+
+UnsetCode ensures that no value is present for Code, not even an explicit nil
 ### GetCategory
 
 `func (o *Clusters) GetCategory() string`
@@ -177,6 +187,16 @@ SetCategory sets Category field to given value.
 
 HasCategory returns a boolean if a field has been set.
 
+### SetCategoryNil
+
+`func (o *Clusters) SetCategoryNil(b bool)`
+
+ SetCategoryNil sets the value for Category to be an explicit nil
+
+### UnsetCategory
+`func (o *Clusters) UnsetCategory()`
+
+UnsetCategory ensures that no value is present for Category, not even an explicit nil
 ### GetVisibility
 
 `func (o *Clusters) GetVisibility() string`
@@ -227,6 +247,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *Clusters) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *Clusters) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetLocation
 
 `func (o *Clusters) GetLocation() string`
@@ -252,6 +282,16 @@ SetLocation sets Location field to given value.
 
 HasLocation returns a boolean if a field has been set.
 
+### SetLocationNil
+
+`func (o *Clusters) SetLocationNil(b bool)`
+
+ SetLocationNil sets the value for Location to be an explicit nil
+
+### UnsetLocation
+`func (o *Clusters) UnsetLocation()`
+
+UnsetLocation ensures that no value is present for Location, not even an explicit nil
 ### GetEnabled
 
 `func (o *Clusters) GetEnabled() bool`
@@ -302,6 +342,16 @@ SetServiceUrl sets ServiceUrl field to given value.
 
 HasServiceUrl returns a boolean if a field has been set.
 
+### SetServiceUrlNil
+
+`func (o *Clusters) SetServiceUrlNil(b bool)`
+
+ SetServiceUrlNil sets the value for ServiceUrl to be an explicit nil
+
+### UnsetServiceUrl
+`func (o *Clusters) UnsetServiceUrl()`
+
+UnsetServiceUrl ensures that no value is present for ServiceUrl, not even an explicit nil
 ### GetServiceHost
 
 `func (o *Clusters) GetServiceHost() string`
@@ -327,6 +377,16 @@ SetServiceHost sets ServiceHost field to given value.
 
 HasServiceHost returns a boolean if a field has been set.
 
+### SetServiceHostNil
+
+`func (o *Clusters) SetServiceHostNil(b bool)`
+
+ SetServiceHostNil sets the value for ServiceHost to be an explicit nil
+
+### UnsetServiceHost
+`func (o *Clusters) UnsetServiceHost()`
+
+UnsetServiceHost ensures that no value is present for ServiceHost, not even an explicit nil
 ### GetServicePath
 
 `func (o *Clusters) GetServicePath() string`
@@ -352,6 +412,16 @@ SetServicePath sets ServicePath field to given value.
 
 HasServicePath returns a boolean if a field has been set.
 
+### SetServicePathNil
+
+`func (o *Clusters) SetServicePathNil(b bool)`
+
+ SetServicePathNil sets the value for ServicePath to be an explicit nil
+
+### UnsetServicePath
+`func (o *Clusters) UnsetServicePath()`
+
+UnsetServicePath ensures that no value is present for ServicePath, not even an explicit nil
 ### GetServiceHostname
 
 `func (o *Clusters) GetServiceHostname() string`
@@ -377,6 +447,16 @@ SetServiceHostname sets ServiceHostname field to given value.
 
 HasServiceHostname returns a boolean if a field has been set.
 
+### SetServiceHostnameNil
+
+`func (o *Clusters) SetServiceHostnameNil(b bool)`
+
+ SetServiceHostnameNil sets the value for ServiceHostname to be an explicit nil
+
+### UnsetServiceHostname
+`func (o *Clusters) UnsetServiceHostname()`
+
+UnsetServiceHostname ensures that no value is present for ServiceHostname, not even an explicit nil
 ### GetServicePort
 
 `func (o *Clusters) GetServicePort() int64`
@@ -427,6 +507,16 @@ SetServiceUsername sets ServiceUsername field to given value.
 
 HasServiceUsername returns a boolean if a field has been set.
 
+### SetServiceUsernameNil
+
+`func (o *Clusters) SetServiceUsernameNil(b bool)`
+
+ SetServiceUsernameNil sets the value for ServiceUsername to be an explicit nil
+
+### UnsetServiceUsername
+`func (o *Clusters) UnsetServiceUsername()`
+
+UnsetServiceUsername ensures that no value is present for ServiceUsername, not even an explicit nil
 ### GetServicePassword
 
 `func (o *Clusters) GetServicePassword() string`
@@ -452,6 +542,16 @@ SetServicePassword sets ServicePassword field to given value.
 
 HasServicePassword returns a boolean if a field has been set.
 
+### SetServicePasswordNil
+
+`func (o *Clusters) SetServicePasswordNil(b bool)`
+
+ SetServicePasswordNil sets the value for ServicePassword to be an explicit nil
+
+### UnsetServicePassword
+`func (o *Clusters) UnsetServicePassword()`
+
+UnsetServicePassword ensures that no value is present for ServicePassword, not even an explicit nil
 ### GetServicePasswordHash
 
 `func (o *Clusters) GetServicePasswordHash() string`
@@ -477,6 +577,16 @@ SetServicePasswordHash sets ServicePasswordHash field to given value.
 
 HasServicePasswordHash returns a boolean if a field has been set.
 
+### SetServicePasswordHashNil
+
+`func (o *Clusters) SetServicePasswordHashNil(b bool)`
+
+ SetServicePasswordHashNil sets the value for ServicePasswordHash to be an explicit nil
+
+### UnsetServicePasswordHash
+`func (o *Clusters) UnsetServicePasswordHash()`
+
+UnsetServicePasswordHash ensures that no value is present for ServicePasswordHash, not even an explicit nil
 ### GetServiceToken
 
 `func (o *Clusters) GetServiceToken() string`
@@ -602,6 +712,16 @@ SetServiceCert sets ServiceCert field to given value.
 
 HasServiceCert returns a boolean if a field has been set.
 
+### SetServiceCertNil
+
+`func (o *Clusters) SetServiceCertNil(b bool)`
+
+ SetServiceCertNil sets the value for ServiceCert to be an explicit nil
+
+### UnsetServiceCert
+`func (o *Clusters) UnsetServiceCert()`
+
+UnsetServiceCert ensures that no value is present for ServiceCert, not even an explicit nil
 ### GetServiceCertHash
 
 `func (o *Clusters) GetServiceCertHash() string`
@@ -627,6 +747,16 @@ SetServiceCertHash sets ServiceCertHash field to given value.
 
 HasServiceCertHash returns a boolean if a field has been set.
 
+### SetServiceCertHashNil
+
+`func (o *Clusters) SetServiceCertHashNil(b bool)`
+
+ SetServiceCertHashNil sets the value for ServiceCertHash to be an explicit nil
+
+### UnsetServiceCertHash
+`func (o *Clusters) UnsetServiceCertHash()`
+
+UnsetServiceCertHash ensures that no value is present for ServiceCertHash, not even an explicit nil
 ### GetServiceVersion
 
 `func (o *Clusters) GetServiceVersion() string`
@@ -677,6 +807,16 @@ SetSearchDomains sets SearchDomains field to given value.
 
 HasSearchDomains returns a boolean if a field has been set.
 
+### SetSearchDomainsNil
+
+`func (o *Clusters) SetSearchDomainsNil(b bool)`
+
+ SetSearchDomainsNil sets the value for SearchDomains to be an explicit nil
+
+### UnsetSearchDomains
+`func (o *Clusters) UnsetSearchDomains()`
+
+UnsetSearchDomains ensures that no value is present for SearchDomains, not even an explicit nil
 ### GetEnableInternalDns
 
 `func (o *Clusters) GetEnableInternalDns() bool`
@@ -727,6 +867,16 @@ SetInternalId sets InternalId field to given value.
 
 HasInternalId returns a boolean if a field has been set.
 
+### SetInternalIdNil
+
+`func (o *Clusters) SetInternalIdNil(b bool)`
+
+ SetInternalIdNil sets the value for InternalId to be an explicit nil
+
+### UnsetInternalId
+`func (o *Clusters) UnsetInternalId()`
+
+UnsetInternalId ensures that no value is present for InternalId, not even an explicit nil
 ### GetExternalId
 
 `func (o *Clusters) GetExternalId() string`
@@ -752,6 +902,16 @@ SetExternalId sets ExternalId field to given value.
 
 HasExternalId returns a boolean if a field has been set.
 
+### SetExternalIdNil
+
+`func (o *Clusters) SetExternalIdNil(b bool)`
+
+ SetExternalIdNil sets the value for ExternalId to be an explicit nil
+
+### UnsetExternalId
+`func (o *Clusters) UnsetExternalId()`
+
+UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
 ### GetDatacenterId
 
 `func (o *Clusters) GetDatacenterId() string`
@@ -777,6 +937,16 @@ SetDatacenterId sets DatacenterId field to given value.
 
 HasDatacenterId returns a boolean if a field has been set.
 
+### SetDatacenterIdNil
+
+`func (o *Clusters) SetDatacenterIdNil(b bool)`
+
+ SetDatacenterIdNil sets the value for DatacenterId to be an explicit nil
+
+### UnsetDatacenterId
+`func (o *Clusters) UnsetDatacenterId()`
+
+UnsetDatacenterId ensures that no value is present for DatacenterId, not even an explicit nil
 ### GetStatus
 
 `func (o *Clusters) GetStatus() string`
@@ -1102,6 +1272,16 @@ SetServiceEntry sets ServiceEntry field to given value.
 
 HasServiceEntry returns a boolean if a field has been set.
 
+### SetServiceEntryNil
+
+`func (o *Clusters) SetServiceEntryNil(b bool)`
+
+ SetServiceEntryNil sets the value for ServiceEntry to be an explicit nil
+
+### UnsetServiceEntry
+`func (o *Clusters) UnsetServiceEntry()`
+
+UnsetServiceEntry ensures that no value is present for ServiceEntry, not even an explicit nil
 ### GetCreatedBy
 
 `func (o *Clusters) GetCreatedBy() ListActivity200ResponseAllOfActivityInnerActivityInnerUser`
@@ -1152,6 +1332,16 @@ SetUserGroup sets UserGroup field to given value.
 
 HasUserGroup returns a boolean if a field has been set.
 
+### SetUserGroupNil
+
+`func (o *Clusters) SetUserGroupNil(b bool)`
+
+ SetUserGroupNil sets the value for UserGroup to be an explicit nil
+
+### UnsetUserGroup
+`func (o *Clusters) UnsetUserGroup()`
+
+UnsetUserGroup ensures that no value is present for UserGroup, not even an explicit nil
 ### GetLayout
 
 `func (o *Clusters) GetLayout() ListClusters200ResponseAllOfClustersInnerLayout`
@@ -1179,20 +1369,20 @@ HasLayout returns a boolean if a field has been set.
 
 ### GetOwner
 
-`func (o *Clusters) GetOwner() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *Clusters) GetOwner() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetOwner returns the Owner field if non-nil, zero value otherwise.
 
 ### GetOwnerOk
 
-`func (o *Clusters) GetOwnerOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *Clusters) GetOwnerOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOwner
 
-`func (o *Clusters) SetOwner(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *Clusters) SetOwner(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetOwner sets Owner field to given value.
 
@@ -1279,20 +1469,20 @@ HasIntegrations returns a boolean if a field has been set.
 
 ### GetSite
 
-`func (o *Clusters) GetSite() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *Clusters) GetSite() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetSite returns the Site field if non-nil, zero value otherwise.
 
 ### GetSiteOk
 
-`func (o *Clusters) GetSiteOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *Clusters) GetSiteOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetSiteOk returns a tuple with the Site field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSite
 
-`func (o *Clusters) SetSite(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *Clusters) SetSite(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetSite sets Site field to given value.
 
@@ -1304,20 +1494,20 @@ HasSite returns a boolean if a field has been set.
 
 ### GetType
 
-`func (o *Clusters) GetType() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *Clusters) GetType() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *Clusters) GetTypeOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *Clusters) GetTypeOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *Clusters) SetType(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *Clusters) SetType(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetType sets Type field to given value.
 

@@ -20,7 +20,7 @@ var _ MappedNullable = &ListReports200ResponseAllOfReportResultsInnerConfig{}
 
 // ListReports200ResponseAllOfReportResultsInnerConfig struct for ListReports200ResponseAllOfReportResultsInnerConfig
 type ListReports200ResponseAllOfReportResultsInnerConfig struct {
-	ReportType           *string                `json:"reportType,omitempty"`
+	ReportType           NullableString         `json:"reportType,omitempty"`
 	StartDate            *string                `json:"startDate,omitempty"`
 	EndDate              *string                `json:"endDate,omitempty"`
 	CloudId              *string                `json:"cloudId,omitempty"`
@@ -46,36 +46,47 @@ func NewListReports200ResponseAllOfReportResultsInnerConfigWithDefaults() *ListR
 	return &this
 }
 
-// GetReportType returns the ReportType field value if set, zero value otherwise.
+// GetReportType returns the ReportType field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListReports200ResponseAllOfReportResultsInnerConfig) GetReportType() string {
-	if o == nil || IsNil(o.ReportType) {
+	if o == nil || IsNil(o.ReportType.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ReportType
+	return *o.ReportType.Get()
 }
 
 // GetReportTypeOk returns a tuple with the ReportType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListReports200ResponseAllOfReportResultsInnerConfig) GetReportTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.ReportType) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ReportType, true
+	return o.ReportType.Get(), o.ReportType.IsSet()
 }
 
 // IsSetReportType returns a boolean if a field has been set.
 func (o *ListReports200ResponseAllOfReportResultsInnerConfig) IsSetReportType() bool {
-	if o != nil && !IsNil(o.ReportType) {
+	if o != nil && o.ReportType.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetReportType gets a reference to the given string and assigns it to the ReportType field.
+// SetReportType gets a reference to the given NullableString and assigns it to the ReportType field.
 func (o *ListReports200ResponseAllOfReportResultsInnerConfig) SetReportType(v string) {
-	o.ReportType = &v
+	o.ReportType.Set(&v)
+}
+
+// SetReportTypeNil sets the value for ReportType to be an explicit nil
+func (o *ListReports200ResponseAllOfReportResultsInnerConfig) SetReportTypeNil() {
+	o.ReportType.Set(nil)
+}
+
+// UnsetReportType ensures that no value is present for ReportType, not even an explicit nil
+func (o *ListReports200ResponseAllOfReportResultsInnerConfig) UnsetReportType() {
+	o.ReportType.Unset()
 }
 
 // GetStartDate returns the StartDate field value if set, zero value otherwise.
@@ -184,8 +195,8 @@ func (o ListReports200ResponseAllOfReportResultsInnerConfig) MarshalJSON() ([]by
 
 func (o ListReports200ResponseAllOfReportResultsInnerConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ReportType) {
-		toSerialize["reportType"] = o.ReportType
+	if o.ReportType.IsSet() {
+		toSerialize["reportType"] = o.ReportType.Get()
 	}
 	if !IsNil(o.StartDate) {
 		toSerialize["startDate"] = o.StartDate

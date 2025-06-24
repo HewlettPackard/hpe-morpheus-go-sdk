@@ -18,17 +18,17 @@ Name | Type | Description | Notes
 **CustomMaxStorage** | Pointer to **bool** |  | [optional] 
 **CustomMaxDataStorage** | Pointer to **bool** |  | [optional] 
 **CustomCoresPerSocket** | Pointer to **bool** |  | [optional] 
-**CoresPerSocket** | Pointer to **int64** |  | [optional] 
+**CoresPerSocket** | Pointer to **NullableInt64** |  | [optional] 
 **StorageTypes** | Pointer to **[]map[string]interface{}** |  | [optional] 
 **RootStorageTypes** | Pointer to **[]map[string]interface{}** |  | [optional] 
 **AddVolumes** | Pointer to **bool** |  | [optional] 
 **CustomizeVolume** | Pointer to **bool** |  | [optional] 
 **RootDiskCustomizable** | Pointer to **bool** |  | [optional] 
-**HostDiskMode** | Pointer to **string** |  | [optional] 
-**HasDatastore** | Pointer to **string** |  | [optional] 
-**LvmSupported** | Pointer to **string** |  | [optional] 
-**MinDisk** | Pointer to **string** |  | [optional] 
-**MaxDisk** | Pointer to **string** |  | [optional] 
+**HostDiskMode** | Pointer to **NullableString** |  | [optional] 
+**HasDatastore** | Pointer to **NullableString** |  | [optional] 
+**LvmSupported** | Pointer to **NullableString** |  | [optional] 
+**MinDisk** | Pointer to **NullableString** |  | [optional] 
+**MaxDisk** | Pointer to **NullableString** |  | [optional] 
 **Datastores** | Pointer to [**ListServerServicePlans200ResponsePlansInnerDatastores**](ListServerServicePlans200ResponsePlansInnerDatastores.md) |  | [optional] 
 **SupportsAutoDatastore** | Pointer to **bool** |  | [optional] 
 **AutoOptions** | Pointer to [**[]ListInstanceServicePlans200ResponsePlansInnerAutoOptionsInner**](ListInstanceServicePlans200ResponsePlansInnerAutoOptionsInner.md) |  | [optional] 
@@ -37,7 +37,7 @@ Name | Type | Description | Notes
 **RootCustomSizeOptions** | Pointer to **map[string]interface{}** |  | [optional] 
 **CustomSizeOptions** | Pointer to **map[string]interface{}** |  | [optional] 
 **CustomCores** | Pointer to **bool** |  | [optional] 
-**MaxDisks** | Pointer to **string** |  | [optional] 
+**MaxDisks** | Pointer to **NullableString** |  | [optional] 
 **MemorySizeType** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -434,6 +434,16 @@ SetCoresPerSocket sets CoresPerSocket field to given value.
 
 HasCoresPerSocket returns a boolean if a field has been set.
 
+### SetCoresPerSocketNil
+
+`func (o *ListServerServicePlans200ResponsePlansInner) SetCoresPerSocketNil(b bool)`
+
+ SetCoresPerSocketNil sets the value for CoresPerSocket to be an explicit nil
+
+### UnsetCoresPerSocket
+`func (o *ListServerServicePlans200ResponsePlansInner) UnsetCoresPerSocket()`
+
+UnsetCoresPerSocket ensures that no value is present for CoresPerSocket, not even an explicit nil
 ### GetStorageTypes
 
 `func (o *ListServerServicePlans200ResponsePlansInner) GetStorageTypes() []map[string]interface{}`
@@ -459,6 +469,16 @@ SetStorageTypes sets StorageTypes field to given value.
 
 HasStorageTypes returns a boolean if a field has been set.
 
+### SetStorageTypesNil
+
+`func (o *ListServerServicePlans200ResponsePlansInner) SetStorageTypesNil(b bool)`
+
+ SetStorageTypesNil sets the value for StorageTypes to be an explicit nil
+
+### UnsetStorageTypes
+`func (o *ListServerServicePlans200ResponsePlansInner) UnsetStorageTypes()`
+
+UnsetStorageTypes ensures that no value is present for StorageTypes, not even an explicit nil
 ### GetRootStorageTypes
 
 `func (o *ListServerServicePlans200ResponsePlansInner) GetRootStorageTypes() []map[string]interface{}`
@@ -484,6 +504,16 @@ SetRootStorageTypes sets RootStorageTypes field to given value.
 
 HasRootStorageTypes returns a boolean if a field has been set.
 
+### SetRootStorageTypesNil
+
+`func (o *ListServerServicePlans200ResponsePlansInner) SetRootStorageTypesNil(b bool)`
+
+ SetRootStorageTypesNil sets the value for RootStorageTypes to be an explicit nil
+
+### UnsetRootStorageTypes
+`func (o *ListServerServicePlans200ResponsePlansInner) UnsetRootStorageTypes()`
+
+UnsetRootStorageTypes ensures that no value is present for RootStorageTypes, not even an explicit nil
 ### GetAddVolumes
 
 `func (o *ListServerServicePlans200ResponsePlansInner) GetAddVolumes() bool`
@@ -584,6 +614,16 @@ SetHostDiskMode sets HostDiskMode field to given value.
 
 HasHostDiskMode returns a boolean if a field has been set.
 
+### SetHostDiskModeNil
+
+`func (o *ListServerServicePlans200ResponsePlansInner) SetHostDiskModeNil(b bool)`
+
+ SetHostDiskModeNil sets the value for HostDiskMode to be an explicit nil
+
+### UnsetHostDiskMode
+`func (o *ListServerServicePlans200ResponsePlansInner) UnsetHostDiskMode()`
+
+UnsetHostDiskMode ensures that no value is present for HostDiskMode, not even an explicit nil
 ### GetHasDatastore
 
 `func (o *ListServerServicePlans200ResponsePlansInner) GetHasDatastore() string`
@@ -609,6 +649,16 @@ SetHasDatastore sets HasDatastore field to given value.
 
 HasHasDatastore returns a boolean if a field has been set.
 
+### SetHasDatastoreNil
+
+`func (o *ListServerServicePlans200ResponsePlansInner) SetHasDatastoreNil(b bool)`
+
+ SetHasDatastoreNil sets the value for HasDatastore to be an explicit nil
+
+### UnsetHasDatastore
+`func (o *ListServerServicePlans200ResponsePlansInner) UnsetHasDatastore()`
+
+UnsetHasDatastore ensures that no value is present for HasDatastore, not even an explicit nil
 ### GetLvmSupported
 
 `func (o *ListServerServicePlans200ResponsePlansInner) GetLvmSupported() string`
@@ -634,6 +684,16 @@ SetLvmSupported sets LvmSupported field to given value.
 
 HasLvmSupported returns a boolean if a field has been set.
 
+### SetLvmSupportedNil
+
+`func (o *ListServerServicePlans200ResponsePlansInner) SetLvmSupportedNil(b bool)`
+
+ SetLvmSupportedNil sets the value for LvmSupported to be an explicit nil
+
+### UnsetLvmSupported
+`func (o *ListServerServicePlans200ResponsePlansInner) UnsetLvmSupported()`
+
+UnsetLvmSupported ensures that no value is present for LvmSupported, not even an explicit nil
 ### GetMinDisk
 
 `func (o *ListServerServicePlans200ResponsePlansInner) GetMinDisk() string`
@@ -659,6 +719,16 @@ SetMinDisk sets MinDisk field to given value.
 
 HasMinDisk returns a boolean if a field has been set.
 
+### SetMinDiskNil
+
+`func (o *ListServerServicePlans200ResponsePlansInner) SetMinDiskNil(b bool)`
+
+ SetMinDiskNil sets the value for MinDisk to be an explicit nil
+
+### UnsetMinDisk
+`func (o *ListServerServicePlans200ResponsePlansInner) UnsetMinDisk()`
+
+UnsetMinDisk ensures that no value is present for MinDisk, not even an explicit nil
 ### GetMaxDisk
 
 `func (o *ListServerServicePlans200ResponsePlansInner) GetMaxDisk() string`
@@ -684,6 +754,16 @@ SetMaxDisk sets MaxDisk field to given value.
 
 HasMaxDisk returns a boolean if a field has been set.
 
+### SetMaxDiskNil
+
+`func (o *ListServerServicePlans200ResponsePlansInner) SetMaxDiskNil(b bool)`
+
+ SetMaxDiskNil sets the value for MaxDisk to be an explicit nil
+
+### UnsetMaxDisk
+`func (o *ListServerServicePlans200ResponsePlansInner) UnsetMaxDisk()`
+
+UnsetMaxDisk ensures that no value is present for MaxDisk, not even an explicit nil
 ### GetDatastores
 
 `func (o *ListServerServicePlans200ResponsePlansInner) GetDatastores() ListServerServicePlans200ResponsePlansInnerDatastores`
@@ -784,6 +864,16 @@ SetCpuOptions sets CpuOptions field to given value.
 
 HasCpuOptions returns a boolean if a field has been set.
 
+### SetCpuOptionsNil
+
+`func (o *ListServerServicePlans200ResponsePlansInner) SetCpuOptionsNil(b bool)`
+
+ SetCpuOptionsNil sets the value for CpuOptions to be an explicit nil
+
+### UnsetCpuOptions
+`func (o *ListServerServicePlans200ResponsePlansInner) UnsetCpuOptions()`
+
+UnsetCpuOptions ensures that no value is present for CpuOptions, not even an explicit nil
 ### GetMemoryOptions
 
 `func (o *ListServerServicePlans200ResponsePlansInner) GetMemoryOptions() []map[string]interface{}`
@@ -809,6 +899,16 @@ SetMemoryOptions sets MemoryOptions field to given value.
 
 HasMemoryOptions returns a boolean if a field has been set.
 
+### SetMemoryOptionsNil
+
+`func (o *ListServerServicePlans200ResponsePlansInner) SetMemoryOptionsNil(b bool)`
+
+ SetMemoryOptionsNil sets the value for MemoryOptions to be an explicit nil
+
+### UnsetMemoryOptions
+`func (o *ListServerServicePlans200ResponsePlansInner) UnsetMemoryOptions()`
+
+UnsetMemoryOptions ensures that no value is present for MemoryOptions, not even an explicit nil
 ### GetRootCustomSizeOptions
 
 `func (o *ListServerServicePlans200ResponsePlansInner) GetRootCustomSizeOptions() map[string]interface{}`
@@ -909,6 +1009,16 @@ SetMaxDisks sets MaxDisks field to given value.
 
 HasMaxDisks returns a boolean if a field has been set.
 
+### SetMaxDisksNil
+
+`func (o *ListServerServicePlans200ResponsePlansInner) SetMaxDisksNil(b bool)`
+
+ SetMaxDisksNil sets the value for MaxDisks to be an explicit nil
+
+### UnsetMaxDisks
+`func (o *ListServerServicePlans200ResponsePlansInner) UnsetMaxDisks()`
+
+UnsetMaxDisks ensures that no value is present for MaxDisks, not even an explicit nil
 ### GetMemorySizeType
 
 `func (o *ListServerServicePlans200ResponsePlansInner) GetMemorySizeType() string`

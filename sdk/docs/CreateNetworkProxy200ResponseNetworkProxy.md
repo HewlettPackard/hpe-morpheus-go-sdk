@@ -8,13 +8,13 @@ Name | Type | Description | Notes
 **Name** | Pointer to **string** |  | [optional] 
 **ProxyHost** | Pointer to **string** |  | [optional] 
 **ProxyPort** | Pointer to **int64** |  | [optional] 
-**ProxyUser** | Pointer to **string** |  | [optional] 
-**ProxyPassword** | Pointer to **string** |  | [optional] 
+**ProxyUser** | Pointer to **NullableString** |  | [optional] 
+**ProxyPassword** | Pointer to **NullableString** |  | [optional] 
 **ProxyDomain** | Pointer to **string** |  | [optional] 
-**ProxyWorkstation** | Pointer to **string** |  | [optional] 
+**ProxyWorkstation** | Pointer to **NullableString** |  | [optional] 
 **Visibility** | Pointer to **string** |  | [optional] 
-**Account** | Pointer to [**ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
-**Owner** | Pointer to [**ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
+**Account** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**Owner** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 
 ## Methods
 
@@ -160,6 +160,16 @@ SetProxyUser sets ProxyUser field to given value.
 
 HasProxyUser returns a boolean if a field has been set.
 
+### SetProxyUserNil
+
+`func (o *CreateNetworkProxy200ResponseNetworkProxy) SetProxyUserNil(b bool)`
+
+ SetProxyUserNil sets the value for ProxyUser to be an explicit nil
+
+### UnsetProxyUser
+`func (o *CreateNetworkProxy200ResponseNetworkProxy) UnsetProxyUser()`
+
+UnsetProxyUser ensures that no value is present for ProxyUser, not even an explicit nil
 ### GetProxyPassword
 
 `func (o *CreateNetworkProxy200ResponseNetworkProxy) GetProxyPassword() string`
@@ -185,6 +195,16 @@ SetProxyPassword sets ProxyPassword field to given value.
 
 HasProxyPassword returns a boolean if a field has been set.
 
+### SetProxyPasswordNil
+
+`func (o *CreateNetworkProxy200ResponseNetworkProxy) SetProxyPasswordNil(b bool)`
+
+ SetProxyPasswordNil sets the value for ProxyPassword to be an explicit nil
+
+### UnsetProxyPassword
+`func (o *CreateNetworkProxy200ResponseNetworkProxy) UnsetProxyPassword()`
+
+UnsetProxyPassword ensures that no value is present for ProxyPassword, not even an explicit nil
 ### GetProxyDomain
 
 `func (o *CreateNetworkProxy200ResponseNetworkProxy) GetProxyDomain() string`
@@ -235,6 +255,16 @@ SetProxyWorkstation sets ProxyWorkstation field to given value.
 
 HasProxyWorkstation returns a boolean if a field has been set.
 
+### SetProxyWorkstationNil
+
+`func (o *CreateNetworkProxy200ResponseNetworkProxy) SetProxyWorkstationNil(b bool)`
+
+ SetProxyWorkstationNil sets the value for ProxyWorkstation to be an explicit nil
+
+### UnsetProxyWorkstation
+`func (o *CreateNetworkProxy200ResponseNetworkProxy) UnsetProxyWorkstation()`
+
+UnsetProxyWorkstation ensures that no value is present for ProxyWorkstation, not even an explicit nil
 ### GetVisibility
 
 `func (o *CreateNetworkProxy200ResponseNetworkProxy) GetVisibility() string`
@@ -262,20 +292,20 @@ HasVisibility returns a boolean if a field has been set.
 
 ### GetAccount
 
-`func (o *CreateNetworkProxy200ResponseNetworkProxy) GetAccount() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *CreateNetworkProxy200ResponseNetworkProxy) GetAccount() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetAccount returns the Account field if non-nil, zero value otherwise.
 
 ### GetAccountOk
 
-`func (o *CreateNetworkProxy200ResponseNetworkProxy) GetAccountOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *CreateNetworkProxy200ResponseNetworkProxy) GetAccountOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetAccountOk returns a tuple with the Account field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccount
 
-`func (o *CreateNetworkProxy200ResponseNetworkProxy) SetAccount(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *CreateNetworkProxy200ResponseNetworkProxy) SetAccount(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetAccount sets Account field to given value.
 
@@ -287,20 +317,20 @@ HasAccount returns a boolean if a field has been set.
 
 ### GetOwner
 
-`func (o *CreateNetworkProxy200ResponseNetworkProxy) GetOwner() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *CreateNetworkProxy200ResponseNetworkProxy) GetOwner() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetOwner returns the Owner field if non-nil, zero value otherwise.
 
 ### GetOwnerOk
 
-`func (o *CreateNetworkProxy200ResponseNetworkProxy) GetOwnerOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *CreateNetworkProxy200ResponseNetworkProxy) GetOwnerOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOwner
 
-`func (o *CreateNetworkProxy200ResponseNetworkProxy) SetOwner(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *CreateNetworkProxy200ResponseNetworkProxy) SetOwner(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetOwner sets Owner field to given value.
 

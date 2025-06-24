@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **MaxMemory** | Pointer to **int64** |  | [optional] 
 **MaxCpu** | Pointer to **int64** |  | [optional] 
 **MaxCores** | Pointer to **int64** |  | [optional] 
-**MaxDisks** | Pointer to **string** |  | [optional] 
+**MaxDisks** | Pointer to **NullableString** |  | [optional] 
 **CoresPerSocket** | Pointer to **int64** |  | [optional] 
 **CustomCpu** | Pointer to **bool** |  | [optional] 
 **CustomCores** | Pointer to **bool** |  | [optional] 
@@ -22,11 +22,11 @@ Name | Type | Description | Notes
 **CustomMaxDataStorage** | Pointer to **bool** |  | [optional] 
 **CustomMaxMemory** | Pointer to **bool** |  | [optional] 
 **AddVolumes** | Pointer to **bool** |  | [optional] 
-**MemoryOptionSource** | Pointer to **string** |  | [optional] 
-**CpuOptionSource** | Pointer to **string** |  | [optional] 
+**MemoryOptionSource** | Pointer to **NullableString** |  | [optional] 
+**CpuOptionSource** | Pointer to **NullableString** |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
-**RegionCode** | Pointer to **string** |  | [optional] 
+**RegionCode** | Pointer to **NullableString** |  | [optional] 
 **Visibility** | Pointer to **string** |  | [optional] 
 **Editable** | Pointer to **bool** |  | [optional] 
 **ProvisionType** | Pointer to [**ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionProvisionType**](ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionProvisionType.md) |  | [optional] 
@@ -328,6 +328,16 @@ SetMaxDisks sets MaxDisks field to given value.
 
 HasMaxDisks returns a boolean if a field has been set.
 
+### SetMaxDisksNil
+
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) SetMaxDisksNil(b bool)`
+
+ SetMaxDisksNil sets the value for MaxDisks to be an explicit nil
+
+### UnsetMaxDisks
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) UnsetMaxDisks()`
+
+UnsetMaxDisks ensures that no value is present for MaxDisks, not even an explicit nil
 ### GetCoresPerSocket
 
 `func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) GetCoresPerSocket() int64`
@@ -528,6 +538,16 @@ SetMemoryOptionSource sets MemoryOptionSource field to given value.
 
 HasMemoryOptionSource returns a boolean if a field has been set.
 
+### SetMemoryOptionSourceNil
+
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) SetMemoryOptionSourceNil(b bool)`
+
+ SetMemoryOptionSourceNil sets the value for MemoryOptionSource to be an explicit nil
+
+### UnsetMemoryOptionSource
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) UnsetMemoryOptionSource()`
+
+UnsetMemoryOptionSource ensures that no value is present for MemoryOptionSource, not even an explicit nil
 ### GetCpuOptionSource
 
 `func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) GetCpuOptionSource() string`
@@ -553,6 +573,16 @@ SetCpuOptionSource sets CpuOptionSource field to given value.
 
 HasCpuOptionSource returns a boolean if a field has been set.
 
+### SetCpuOptionSourceNil
+
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) SetCpuOptionSourceNil(b bool)`
+
+ SetCpuOptionSourceNil sets the value for CpuOptionSource to be an explicit nil
+
+### UnsetCpuOptionSource
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) UnsetCpuOptionSource()`
+
+UnsetCpuOptionSource ensures that no value is present for CpuOptionSource, not even an explicit nil
 ### GetDateCreated
 
 `func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) GetDateCreated() time.Time`
@@ -628,6 +658,16 @@ SetRegionCode sets RegionCode field to given value.
 
 HasRegionCode returns a boolean if a field has been set.
 
+### SetRegionCodeNil
+
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) SetRegionCodeNil(b bool)`
+
+ SetRegionCodeNil sets the value for RegionCode to be an explicit nil
+
+### UnsetRegionCode
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) UnsetRegionCode()`
+
+UnsetRegionCode ensures that no value is present for RegionCode, not even an explicit nil
 ### GetVisibility
 
 `func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) GetVisibility() string`

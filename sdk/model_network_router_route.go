@@ -22,22 +22,22 @@ var _ MappedNullable = &NetworkRouterRoute{}
 type NetworkRouterRoute struct {
 	Id                   *int64                 `json:"id,omitempty"`
 	Name                 *string                `json:"name,omitempty"`
-	Code                 *string                `json:"code,omitempty"`
-	Description          *string                `json:"description,omitempty"`
-	Priority             *string                `json:"priority,omitempty"`
+	Code                 NullableString         `json:"code,omitempty"`
+	Description          NullableString         `json:"description,omitempty"`
+	Priority             NullableString         `json:"priority,omitempty"`
 	RouteType            *string                `json:"routeType,omitempty"`
 	Source               *string                `json:"source,omitempty"`
 	SourceType           *string                `json:"sourceType,omitempty"`
 	Destination          *string                `json:"destination,omitempty"`
 	DestinationType      *string                `json:"destinationType,omitempty"`
 	DefaultRoute         *bool                  `json:"defaultRoute,omitempty"`
-	NetworkMtu           *string                `json:"networkMtu,omitempty"`
-	ExternalInterface    *string                `json:"externalInterface,omitempty"`
-	InternalId           *string                `json:"internalId,omitempty"`
+	NetworkMtu           NullableString         `json:"networkMtu,omitempty"`
+	ExternalInterface    NullableString         `json:"externalInterface,omitempty"`
+	InternalId           NullableString         `json:"internalId,omitempty"`
 	ExternalId           *string                `json:"externalId,omitempty"`
-	UniqueId             *string                `json:"uniqueId,omitempty"`
+	UniqueId             NullableString         `json:"uniqueId,omitempty"`
 	ProviderId           *string                `json:"providerId,omitempty"`
-	ExternalType         *string                `json:"externalType,omitempty"`
+	ExternalType         NullableString         `json:"externalType,omitempty"`
 	Enabled              *bool                  `json:"enabled,omitempty"`
 	Visible              *bool                  `json:"visible,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
@@ -126,100 +126,133 @@ func (o *NetworkRouterRoute) SetName(v string) {
 	o.Name = &v
 }
 
-// GetCode returns the Code field value if set, zero value otherwise.
+// GetCode returns the Code field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NetworkRouterRoute) GetCode() string {
-	if o == nil || IsNil(o.Code) {
+	if o == nil || IsNil(o.Code.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Code
+	return *o.Code.Get()
 }
 
 // GetCodeOk returns a tuple with the Code field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NetworkRouterRoute) GetCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.Code) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Code, true
+	return o.Code.Get(), o.Code.IsSet()
 }
 
 // IsSetCode returns a boolean if a field has been set.
 func (o *NetworkRouterRoute) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
+	if o != nil && o.Code.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCode gets a reference to the given string and assigns it to the Code field.
+// SetCode gets a reference to the given NullableString and assigns it to the Code field.
 func (o *NetworkRouterRoute) SetCode(v string) {
-	o.Code = &v
+	o.Code.Set(&v)
 }
 
-// GetDescription returns the Description field value if set, zero value otherwise.
+// SetCodeNil sets the value for Code to be an explicit nil
+func (o *NetworkRouterRoute) SetCodeNil() {
+	o.Code.Set(nil)
+}
+
+// UnsetCode ensures that no value is present for Code, not even an explicit nil
+func (o *NetworkRouterRoute) UnsetCode() {
+	o.Code.Unset()
+}
+
+// GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NetworkRouterRoute) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
+	if o == nil || IsNil(o.Description.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Description
+	return *o.Description.Get()
 }
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NetworkRouterRoute) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Description, true
+	return o.Description.Get(), o.Description.IsSet()
 }
 
 // IsSetDescription returns a boolean if a field has been set.
 func (o *NetworkRouterRoute) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
+	if o != nil && o.Description.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDescription gets a reference to the given string and assigns it to the Description field.
+// SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *NetworkRouterRoute) SetDescription(v string) {
-	o.Description = &v
+	o.Description.Set(&v)
 }
 
-// GetPriority returns the Priority field value if set, zero value otherwise.
+// SetDescriptionNil sets the value for Description to be an explicit nil
+func (o *NetworkRouterRoute) SetDescriptionNil() {
+	o.Description.Set(nil)
+}
+
+// UnsetDescription ensures that no value is present for Description, not even an explicit nil
+func (o *NetworkRouterRoute) UnsetDescription() {
+	o.Description.Unset()
+}
+
+// GetPriority returns the Priority field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NetworkRouterRoute) GetPriority() string {
-	if o == nil || IsNil(o.Priority) {
+	if o == nil || IsNil(o.Priority.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Priority
+	return *o.Priority.Get()
 }
 
 // GetPriorityOk returns a tuple with the Priority field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NetworkRouterRoute) GetPriorityOk() (*string, bool) {
-	if o == nil || IsNil(o.Priority) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Priority, true
+	return o.Priority.Get(), o.Priority.IsSet()
 }
 
 // IsSetPriority returns a boolean if a field has been set.
 func (o *NetworkRouterRoute) IsSetPriority() bool {
-	if o != nil && !IsNil(o.Priority) {
+	if o != nil && o.Priority.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetPriority gets a reference to the given string and assigns it to the Priority field.
+// SetPriority gets a reference to the given NullableString and assigns it to the Priority field.
 func (o *NetworkRouterRoute) SetPriority(v string) {
-	o.Priority = &v
+	o.Priority.Set(&v)
+}
+
+// SetPriorityNil sets the value for Priority to be an explicit nil
+func (o *NetworkRouterRoute) SetPriorityNil() {
+	o.Priority.Set(nil)
+}
+
+// UnsetPriority ensures that no value is present for Priority, not even an explicit nil
+func (o *NetworkRouterRoute) UnsetPriority() {
+	o.Priority.Unset()
 }
 
 // GetRouteType returns the RouteType field value if set, zero value otherwise.
@@ -414,100 +447,133 @@ func (o *NetworkRouterRoute) SetDefaultRoute(v bool) {
 	o.DefaultRoute = &v
 }
 
-// GetNetworkMtu returns the NetworkMtu field value if set, zero value otherwise.
+// GetNetworkMtu returns the NetworkMtu field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NetworkRouterRoute) GetNetworkMtu() string {
-	if o == nil || IsNil(o.NetworkMtu) {
+	if o == nil || IsNil(o.NetworkMtu.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.NetworkMtu
+	return *o.NetworkMtu.Get()
 }
 
 // GetNetworkMtuOk returns a tuple with the NetworkMtu field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NetworkRouterRoute) GetNetworkMtuOk() (*string, bool) {
-	if o == nil || IsNil(o.NetworkMtu) {
+	if o == nil {
 		return nil, false
 	}
-	return o.NetworkMtu, true
+	return o.NetworkMtu.Get(), o.NetworkMtu.IsSet()
 }
 
 // IsSetNetworkMtu returns a boolean if a field has been set.
 func (o *NetworkRouterRoute) IsSetNetworkMtu() bool {
-	if o != nil && !IsNil(o.NetworkMtu) {
+	if o != nil && o.NetworkMtu.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetNetworkMtu gets a reference to the given string and assigns it to the NetworkMtu field.
+// SetNetworkMtu gets a reference to the given NullableString and assigns it to the NetworkMtu field.
 func (o *NetworkRouterRoute) SetNetworkMtu(v string) {
-	o.NetworkMtu = &v
+	o.NetworkMtu.Set(&v)
 }
 
-// GetExternalInterface returns the ExternalInterface field value if set, zero value otherwise.
+// SetNetworkMtuNil sets the value for NetworkMtu to be an explicit nil
+func (o *NetworkRouterRoute) SetNetworkMtuNil() {
+	o.NetworkMtu.Set(nil)
+}
+
+// UnsetNetworkMtu ensures that no value is present for NetworkMtu, not even an explicit nil
+func (o *NetworkRouterRoute) UnsetNetworkMtu() {
+	o.NetworkMtu.Unset()
+}
+
+// GetExternalInterface returns the ExternalInterface field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NetworkRouterRoute) GetExternalInterface() string {
-	if o == nil || IsNil(o.ExternalInterface) {
+	if o == nil || IsNil(o.ExternalInterface.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ExternalInterface
+	return *o.ExternalInterface.Get()
 }
 
 // GetExternalInterfaceOk returns a tuple with the ExternalInterface field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NetworkRouterRoute) GetExternalInterfaceOk() (*string, bool) {
-	if o == nil || IsNil(o.ExternalInterface) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ExternalInterface, true
+	return o.ExternalInterface.Get(), o.ExternalInterface.IsSet()
 }
 
 // IsSetExternalInterface returns a boolean if a field has been set.
 func (o *NetworkRouterRoute) IsSetExternalInterface() bool {
-	if o != nil && !IsNil(o.ExternalInterface) {
+	if o != nil && o.ExternalInterface.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetExternalInterface gets a reference to the given string and assigns it to the ExternalInterface field.
+// SetExternalInterface gets a reference to the given NullableString and assigns it to the ExternalInterface field.
 func (o *NetworkRouterRoute) SetExternalInterface(v string) {
-	o.ExternalInterface = &v
+	o.ExternalInterface.Set(&v)
 }
 
-// GetInternalId returns the InternalId field value if set, zero value otherwise.
+// SetExternalInterfaceNil sets the value for ExternalInterface to be an explicit nil
+func (o *NetworkRouterRoute) SetExternalInterfaceNil() {
+	o.ExternalInterface.Set(nil)
+}
+
+// UnsetExternalInterface ensures that no value is present for ExternalInterface, not even an explicit nil
+func (o *NetworkRouterRoute) UnsetExternalInterface() {
+	o.ExternalInterface.Unset()
+}
+
+// GetInternalId returns the InternalId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NetworkRouterRoute) GetInternalId() string {
-	if o == nil || IsNil(o.InternalId) {
+	if o == nil || IsNil(o.InternalId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.InternalId
+	return *o.InternalId.Get()
 }
 
 // GetInternalIdOk returns a tuple with the InternalId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NetworkRouterRoute) GetInternalIdOk() (*string, bool) {
-	if o == nil || IsNil(o.InternalId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.InternalId, true
+	return o.InternalId.Get(), o.InternalId.IsSet()
 }
 
 // IsSetInternalId returns a boolean if a field has been set.
 func (o *NetworkRouterRoute) IsSetInternalId() bool {
-	if o != nil && !IsNil(o.InternalId) {
+	if o != nil && o.InternalId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetInternalId gets a reference to the given string and assigns it to the InternalId field.
+// SetInternalId gets a reference to the given NullableString and assigns it to the InternalId field.
 func (o *NetworkRouterRoute) SetInternalId(v string) {
-	o.InternalId = &v
+	o.InternalId.Set(&v)
+}
+
+// SetInternalIdNil sets the value for InternalId to be an explicit nil
+func (o *NetworkRouterRoute) SetInternalIdNil() {
+	o.InternalId.Set(nil)
+}
+
+// UnsetInternalId ensures that no value is present for InternalId, not even an explicit nil
+func (o *NetworkRouterRoute) UnsetInternalId() {
+	o.InternalId.Unset()
 }
 
 // GetExternalId returns the ExternalId field value if set, zero value otherwise.
@@ -542,36 +608,47 @@ func (o *NetworkRouterRoute) SetExternalId(v string) {
 	o.ExternalId = &v
 }
 
-// GetUniqueId returns the UniqueId field value if set, zero value otherwise.
+// GetUniqueId returns the UniqueId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NetworkRouterRoute) GetUniqueId() string {
-	if o == nil || IsNil(o.UniqueId) {
+	if o == nil || IsNil(o.UniqueId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.UniqueId
+	return *o.UniqueId.Get()
 }
 
 // GetUniqueIdOk returns a tuple with the UniqueId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NetworkRouterRoute) GetUniqueIdOk() (*string, bool) {
-	if o == nil || IsNil(o.UniqueId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.UniqueId, true
+	return o.UniqueId.Get(), o.UniqueId.IsSet()
 }
 
 // IsSetUniqueId returns a boolean if a field has been set.
 func (o *NetworkRouterRoute) IsSetUniqueId() bool {
-	if o != nil && !IsNil(o.UniqueId) {
+	if o != nil && o.UniqueId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetUniqueId gets a reference to the given string and assigns it to the UniqueId field.
+// SetUniqueId gets a reference to the given NullableString and assigns it to the UniqueId field.
 func (o *NetworkRouterRoute) SetUniqueId(v string) {
-	o.UniqueId = &v
+	o.UniqueId.Set(&v)
+}
+
+// SetUniqueIdNil sets the value for UniqueId to be an explicit nil
+func (o *NetworkRouterRoute) SetUniqueIdNil() {
+	o.UniqueId.Set(nil)
+}
+
+// UnsetUniqueId ensures that no value is present for UniqueId, not even an explicit nil
+func (o *NetworkRouterRoute) UnsetUniqueId() {
+	o.UniqueId.Unset()
 }
 
 // GetProviderId returns the ProviderId field value if set, zero value otherwise.
@@ -606,36 +683,47 @@ func (o *NetworkRouterRoute) SetProviderId(v string) {
 	o.ProviderId = &v
 }
 
-// GetExternalType returns the ExternalType field value if set, zero value otherwise.
+// GetExternalType returns the ExternalType field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NetworkRouterRoute) GetExternalType() string {
-	if o == nil || IsNil(o.ExternalType) {
+	if o == nil || IsNil(o.ExternalType.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ExternalType
+	return *o.ExternalType.Get()
 }
 
 // GetExternalTypeOk returns a tuple with the ExternalType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NetworkRouterRoute) GetExternalTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.ExternalType) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ExternalType, true
+	return o.ExternalType.Get(), o.ExternalType.IsSet()
 }
 
 // IsSetExternalType returns a boolean if a field has been set.
 func (o *NetworkRouterRoute) IsSetExternalType() bool {
-	if o != nil && !IsNil(o.ExternalType) {
+	if o != nil && o.ExternalType.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetExternalType gets a reference to the given string and assigns it to the ExternalType field.
+// SetExternalType gets a reference to the given NullableString and assigns it to the ExternalType field.
 func (o *NetworkRouterRoute) SetExternalType(v string) {
-	o.ExternalType = &v
+	o.ExternalType.Set(&v)
+}
+
+// SetExternalTypeNil sets the value for ExternalType to be an explicit nil
+func (o *NetworkRouterRoute) SetExternalTypeNil() {
+	o.ExternalType.Set(nil)
+}
+
+// UnsetExternalType ensures that no value is present for ExternalType, not even an explicit nil
+func (o *NetworkRouterRoute) UnsetExternalType() {
+	o.ExternalType.Unset()
 }
 
 // GetEnabled returns the Enabled field value if set, zero value otherwise.
@@ -718,14 +806,14 @@ func (o NetworkRouterRoute) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !IsNil(o.Code) {
-		toSerialize["code"] = o.Code
+	if o.Code.IsSet() {
+		toSerialize["code"] = o.Code.Get()
 	}
-	if !IsNil(o.Description) {
-		toSerialize["description"] = o.Description
+	if o.Description.IsSet() {
+		toSerialize["description"] = o.Description.Get()
 	}
-	if !IsNil(o.Priority) {
-		toSerialize["priority"] = o.Priority
+	if o.Priority.IsSet() {
+		toSerialize["priority"] = o.Priority.Get()
 	}
 	if !IsNil(o.RouteType) {
 		toSerialize["routeType"] = o.RouteType
@@ -745,26 +833,26 @@ func (o NetworkRouterRoute) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.DefaultRoute) {
 		toSerialize["defaultRoute"] = o.DefaultRoute
 	}
-	if !IsNil(o.NetworkMtu) {
-		toSerialize["networkMtu"] = o.NetworkMtu
+	if o.NetworkMtu.IsSet() {
+		toSerialize["networkMtu"] = o.NetworkMtu.Get()
 	}
-	if !IsNil(o.ExternalInterface) {
-		toSerialize["externalInterface"] = o.ExternalInterface
+	if o.ExternalInterface.IsSet() {
+		toSerialize["externalInterface"] = o.ExternalInterface.Get()
 	}
-	if !IsNil(o.InternalId) {
-		toSerialize["internalId"] = o.InternalId
+	if o.InternalId.IsSet() {
+		toSerialize["internalId"] = o.InternalId.Get()
 	}
 	if !IsNil(o.ExternalId) {
 		toSerialize["externalId"] = o.ExternalId
 	}
-	if !IsNil(o.UniqueId) {
-		toSerialize["uniqueId"] = o.UniqueId
+	if o.UniqueId.IsSet() {
+		toSerialize["uniqueId"] = o.UniqueId.Get()
 	}
 	if !IsNil(o.ProviderId) {
 		toSerialize["providerId"] = o.ProviderId
 	}
-	if !IsNil(o.ExternalType) {
-		toSerialize["externalType"] = o.ExternalType
+	if o.ExternalType.IsSet() {
+		toSerialize["externalType"] = o.ExternalType.Get()
 	}
 	if !IsNil(o.Enabled) {
 		toSerialize["enabled"] = o.Enabled

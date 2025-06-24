@@ -8,8 +8,8 @@ Name | Type | Description | Notes
 **MaxMemory** | Pointer to **int64** |  | [optional] 
 **Server** | Pointer to [**GetAlerts200ResponseAllOfChecksInnerAccount**](GetAlerts200ResponseAllOfChecksInnerAccount.md) |  | [optional] 
 **UsedStorage** | Pointer to **int64** |  | [optional] 
-**Version** | Pointer to **string** |  | [optional] 
-**MaxCpu** | Pointer to **string** |  | [optional] 
+**Version** | Pointer to **NullableString** |  | [optional] 
+**MaxCpu** | Pointer to **NullableString** |  | [optional] 
 **UsedCores** | Pointer to **int64** |  | [optional] 
 **UsedMemory** | Pointer to **int64** |  | [optional] 
 **MaxCores** | Pointer to **int64** |  | [optional] 
@@ -159,6 +159,16 @@ SetVersion sets Version field to given value.
 
 HasVersion returns a boolean if a field has been set.
 
+### SetVersionNil
+
+`func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerCapacityInfo) SetVersionNil(b bool)`
+
+ SetVersionNil sets the value for Version to be an explicit nil
+
+### UnsetVersion
+`func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerCapacityInfo) UnsetVersion()`
+
+UnsetVersion ensures that no value is present for Version, not even an explicit nil
 ### GetMaxCpu
 
 `func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerCapacityInfo) GetMaxCpu() string`
@@ -184,6 +194,16 @@ SetMaxCpu sets MaxCpu field to given value.
 
 HasMaxCpu returns a boolean if a field has been set.
 
+### SetMaxCpuNil
+
+`func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerCapacityInfo) SetMaxCpuNil(b bool)`
+
+ SetMaxCpuNil sets the value for MaxCpu to be an explicit nil
+
+### UnsetMaxCpu
+`func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerCapacityInfo) UnsetMaxCpu()`
+
+UnsetMaxCpu ensures that no value is present for MaxCpu, not even an explicit nil
 ### GetUsedCores
 
 `func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerCapacityInfo) GetUsedCores() int64`

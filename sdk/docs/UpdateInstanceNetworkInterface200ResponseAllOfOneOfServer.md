@@ -10,14 +10,14 @@ Name | Type | Description | Notes
 **Name** | Pointer to **string** |  | [optional] 
 **DisplayName** | Pointer to **string** |  | [optional] 
 **Visibility** | Pointer to **string** |  | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **NullableString** |  | [optional] 
 **ZoneId** | Pointer to **int64** |  | [optional] 
 **SiteId** | Pointer to **int64** |  | [optional] 
 **SshHost** | Pointer to **string** |  | [optional] 
 **SshPort** | Pointer to **int64** |  | [optional] 
 **ExternalIp** | Pointer to **string** |  | [optional] 
 **InternalIp** | Pointer to **string** |  | [optional] 
-**VolumeId** | Pointer to **string** |  | [optional] 
+**VolumeId** | Pointer to **NullableString** |  | [optional] 
 **Platform** | Pointer to **string** |  | [optional] 
 **PlatformVersion** | Pointer to **string** |  | [optional] 
 **SshUsername** | Pointer to **string** |  | [optional] 
@@ -231,6 +231,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServer) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServer) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetZoneId
 
 `func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServer) GetZoneId() int64`
@@ -406,6 +416,16 @@ SetVolumeId sets VolumeId field to given value.
 
 HasVolumeId returns a boolean if a field has been set.
 
+### SetVolumeIdNil
+
+`func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServer) SetVolumeIdNil(b bool)`
+
+ SetVolumeIdNil sets the value for VolumeId to be an explicit nil
+
+### UnsetVolumeId
+`func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServer) UnsetVolumeId()`
+
+UnsetVolumeId ensures that no value is present for VolumeId, not even an explicit nil
 ### GetPlatform
 
 `func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServer) GetPlatform() string`

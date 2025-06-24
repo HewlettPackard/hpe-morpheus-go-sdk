@@ -21,22 +21,22 @@ var _ MappedNullable = &Approval{}
 
 // Approval struct for Approval
 type Approval struct {
-	Id                   *int64                                                                  `json:"id,omitempty"`
-	Name                 *string                                                                 `json:"name,omitempty"`
-	InternalId           *string                                                                 `json:"internalId,omitempty"`
-	ExternalId           *string                                                                 `json:"externalId,omitempty"`
-	ExternalName         *string                                                                 `json:"externalName,omitempty"`
-	RequestType          *string                                                                 `json:"requestType,omitempty"`
-	Account              *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"account,omitempty"`
-	Approver             *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"approver,omitempty"`
-	AccountIntegration   *string                                                                 `json:"accountIntegration,omitempty"`
-	Status               *string                                                                 `json:"status,omitempty"`
-	ErrorMessage         *string                                                                 `json:"errorMessage,omitempty"`
-	DateCreated          *time.Time                                                              `json:"dateCreated,omitempty"`
-	LastUpdated          *time.Time                                                              `json:"lastUpdated,omitempty"`
-	RequestBy            *string                                                                 `json:"requestBy,omitempty"`
-	ApprovalItems        []GetApprovalsItem200ResponseApprovalItem                               `json:"approvalItems,omitempty"`
-	AdditionalProperties map[string]interface{}                                                  `json:",remain"`
+	Id                   *int64                                             `json:"id,omitempty"`
+	Name                 *string                                            `json:"name,omitempty"`
+	InternalId           NullableString                                     `json:"internalId,omitempty"`
+	ExternalId           NullableString                                     `json:"externalId,omitempty"`
+	ExternalName         NullableString                                     `json:"externalName,omitempty"`
+	RequestType          *string                                            `json:"requestType,omitempty"`
+	Account              *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"account,omitempty"`
+	Approver             *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"approver,omitempty"`
+	AccountIntegration   NullableString                                     `json:"accountIntegration,omitempty"`
+	Status               *string                                            `json:"status,omitempty"`
+	ErrorMessage         NullableString                                     `json:"errorMessage,omitempty"`
+	DateCreated          *time.Time                                         `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                         `json:"lastUpdated,omitempty"`
+	RequestBy            *string                                            `json:"requestBy,omitempty"`
+	ApprovalItems        []GetApprovalsItem200ResponseApprovalItem          `json:"approvalItems,omitempty"`
+	AdditionalProperties map[string]interface{}                             `json:",remain"`
 }
 
 type _Approval Approval
@@ -122,100 +122,133 @@ func (o *Approval) SetName(v string) {
 	o.Name = &v
 }
 
-// GetInternalId returns the InternalId field value if set, zero value otherwise.
+// GetInternalId returns the InternalId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Approval) GetInternalId() string {
-	if o == nil || IsNil(o.InternalId) {
+	if o == nil || IsNil(o.InternalId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.InternalId
+	return *o.InternalId.Get()
 }
 
 // GetInternalIdOk returns a tuple with the InternalId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Approval) GetInternalIdOk() (*string, bool) {
-	if o == nil || IsNil(o.InternalId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.InternalId, true
+	return o.InternalId.Get(), o.InternalId.IsSet()
 }
 
 // IsSetInternalId returns a boolean if a field has been set.
 func (o *Approval) IsSetInternalId() bool {
-	if o != nil && !IsNil(o.InternalId) {
+	if o != nil && o.InternalId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetInternalId gets a reference to the given string and assigns it to the InternalId field.
+// SetInternalId gets a reference to the given NullableString and assigns it to the InternalId field.
 func (o *Approval) SetInternalId(v string) {
-	o.InternalId = &v
+	o.InternalId.Set(&v)
 }
 
-// GetExternalId returns the ExternalId field value if set, zero value otherwise.
+// SetInternalIdNil sets the value for InternalId to be an explicit nil
+func (o *Approval) SetInternalIdNil() {
+	o.InternalId.Set(nil)
+}
+
+// UnsetInternalId ensures that no value is present for InternalId, not even an explicit nil
+func (o *Approval) UnsetInternalId() {
+	o.InternalId.Unset()
+}
+
+// GetExternalId returns the ExternalId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Approval) GetExternalId() string {
-	if o == nil || IsNil(o.ExternalId) {
+	if o == nil || IsNil(o.ExternalId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ExternalId
+	return *o.ExternalId.Get()
 }
 
 // GetExternalIdOk returns a tuple with the ExternalId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Approval) GetExternalIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ExternalId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ExternalId, true
+	return o.ExternalId.Get(), o.ExternalId.IsSet()
 }
 
 // IsSetExternalId returns a boolean if a field has been set.
 func (o *Approval) IsSetExternalId() bool {
-	if o != nil && !IsNil(o.ExternalId) {
+	if o != nil && o.ExternalId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetExternalId gets a reference to the given string and assigns it to the ExternalId field.
+// SetExternalId gets a reference to the given NullableString and assigns it to the ExternalId field.
 func (o *Approval) SetExternalId(v string) {
-	o.ExternalId = &v
+	o.ExternalId.Set(&v)
 }
 
-// GetExternalName returns the ExternalName field value if set, zero value otherwise.
+// SetExternalIdNil sets the value for ExternalId to be an explicit nil
+func (o *Approval) SetExternalIdNil() {
+	o.ExternalId.Set(nil)
+}
+
+// UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
+func (o *Approval) UnsetExternalId() {
+	o.ExternalId.Unset()
+}
+
+// GetExternalName returns the ExternalName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Approval) GetExternalName() string {
-	if o == nil || IsNil(o.ExternalName) {
+	if o == nil || IsNil(o.ExternalName.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ExternalName
+	return *o.ExternalName.Get()
 }
 
 // GetExternalNameOk returns a tuple with the ExternalName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Approval) GetExternalNameOk() (*string, bool) {
-	if o == nil || IsNil(o.ExternalName) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ExternalName, true
+	return o.ExternalName.Get(), o.ExternalName.IsSet()
 }
 
 // IsSetExternalName returns a boolean if a field has been set.
 func (o *Approval) IsSetExternalName() bool {
-	if o != nil && !IsNil(o.ExternalName) {
+	if o != nil && o.ExternalName.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetExternalName gets a reference to the given string and assigns it to the ExternalName field.
+// SetExternalName gets a reference to the given NullableString and assigns it to the ExternalName field.
 func (o *Approval) SetExternalName(v string) {
-	o.ExternalName = &v
+	o.ExternalName.Set(&v)
+}
+
+// SetExternalNameNil sets the value for ExternalName to be an explicit nil
+func (o *Approval) SetExternalNameNil() {
+	o.ExternalName.Set(nil)
+}
+
+// UnsetExternalName ensures that no value is present for ExternalName, not even an explicit nil
+func (o *Approval) UnsetExternalName() {
+	o.ExternalName.Unset()
 }
 
 // GetRequestType returns the RequestType field value if set, zero value otherwise.
@@ -251,9 +284,9 @@ func (o *Approval) SetRequestType(v string) {
 }
 
 // GetAccount returns the Account field value if set, zero value otherwise.
-func (o *Approval) GetAccount() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *Approval) GetAccount() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.Account) {
-		var ret ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return *o.Account
@@ -261,7 +294,7 @@ func (o *Approval) GetAccount() ListApplianceSettings200ResponseApplianceSetting
 
 // GetAccountOk returns a tuple with the Account field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Approval) GetAccountOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *Approval) GetAccountOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.Account) {
 		return nil, false
 	}
@@ -277,15 +310,15 @@ func (o *Approval) IsSetAccount() bool {
 	return false
 }
 
-// SetAccount gets a reference to the given ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the Account field.
-func (o *Approval) SetAccount(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetAccount gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Account field.
+func (o *Approval) SetAccount(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.Account = &v
 }
 
 // GetApprover returns the Approver field value if set, zero value otherwise.
-func (o *Approval) GetApprover() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *Approval) GetApprover() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.Approver) {
-		var ret ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return *o.Approver
@@ -293,7 +326,7 @@ func (o *Approval) GetApprover() ListApplianceSettings200ResponseApplianceSettin
 
 // GetApproverOk returns a tuple with the Approver field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Approval) GetApproverOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *Approval) GetApproverOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.Approver) {
 		return nil, false
 	}
@@ -309,41 +342,52 @@ func (o *Approval) IsSetApprover() bool {
 	return false
 }
 
-// SetApprover gets a reference to the given ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the Approver field.
-func (o *Approval) SetApprover(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetApprover gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Approver field.
+func (o *Approval) SetApprover(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.Approver = &v
 }
 
-// GetAccountIntegration returns the AccountIntegration field value if set, zero value otherwise.
+// GetAccountIntegration returns the AccountIntegration field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Approval) GetAccountIntegration() string {
-	if o == nil || IsNil(o.AccountIntegration) {
+	if o == nil || IsNil(o.AccountIntegration.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.AccountIntegration
+	return *o.AccountIntegration.Get()
 }
 
 // GetAccountIntegrationOk returns a tuple with the AccountIntegration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Approval) GetAccountIntegrationOk() (*string, bool) {
-	if o == nil || IsNil(o.AccountIntegration) {
+	if o == nil {
 		return nil, false
 	}
-	return o.AccountIntegration, true
+	return o.AccountIntegration.Get(), o.AccountIntegration.IsSet()
 }
 
 // IsSetAccountIntegration returns a boolean if a field has been set.
 func (o *Approval) IsSetAccountIntegration() bool {
-	if o != nil && !IsNil(o.AccountIntegration) {
+	if o != nil && o.AccountIntegration.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetAccountIntegration gets a reference to the given string and assigns it to the AccountIntegration field.
+// SetAccountIntegration gets a reference to the given NullableString and assigns it to the AccountIntegration field.
 func (o *Approval) SetAccountIntegration(v string) {
-	o.AccountIntegration = &v
+	o.AccountIntegration.Set(&v)
+}
+
+// SetAccountIntegrationNil sets the value for AccountIntegration to be an explicit nil
+func (o *Approval) SetAccountIntegrationNil() {
+	o.AccountIntegration.Set(nil)
+}
+
+// UnsetAccountIntegration ensures that no value is present for AccountIntegration, not even an explicit nil
+func (o *Approval) UnsetAccountIntegration() {
+	o.AccountIntegration.Unset()
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
@@ -378,36 +422,47 @@ func (o *Approval) SetStatus(v string) {
 	o.Status = &v
 }
 
-// GetErrorMessage returns the ErrorMessage field value if set, zero value otherwise.
+// GetErrorMessage returns the ErrorMessage field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Approval) GetErrorMessage() string {
-	if o == nil || IsNil(o.ErrorMessage) {
+	if o == nil || IsNil(o.ErrorMessage.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ErrorMessage
+	return *o.ErrorMessage.Get()
 }
 
 // GetErrorMessageOk returns a tuple with the ErrorMessage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Approval) GetErrorMessageOk() (*string, bool) {
-	if o == nil || IsNil(o.ErrorMessage) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ErrorMessage, true
+	return o.ErrorMessage.Get(), o.ErrorMessage.IsSet()
 }
 
 // IsSetErrorMessage returns a boolean if a field has been set.
 func (o *Approval) IsSetErrorMessage() bool {
-	if o != nil && !IsNil(o.ErrorMessage) {
+	if o != nil && o.ErrorMessage.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetErrorMessage gets a reference to the given string and assigns it to the ErrorMessage field.
+// SetErrorMessage gets a reference to the given NullableString and assigns it to the ErrorMessage field.
 func (o *Approval) SetErrorMessage(v string) {
-	o.ErrorMessage = &v
+	o.ErrorMessage.Set(&v)
+}
+
+// SetErrorMessageNil sets the value for ErrorMessage to be an explicit nil
+func (o *Approval) SetErrorMessageNil() {
+	o.ErrorMessage.Set(nil)
+}
+
+// UnsetErrorMessage ensures that no value is present for ErrorMessage, not even an explicit nil
+func (o *Approval) UnsetErrorMessage() {
+	o.ErrorMessage.Unset()
 }
 
 // GetDateCreated returns the DateCreated field value if set, zero value otherwise.
@@ -554,14 +609,14 @@ func (o Approval) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !IsNil(o.InternalId) {
-		toSerialize["internalId"] = o.InternalId
+	if o.InternalId.IsSet() {
+		toSerialize["internalId"] = o.InternalId.Get()
 	}
-	if !IsNil(o.ExternalId) {
-		toSerialize["externalId"] = o.ExternalId
+	if o.ExternalId.IsSet() {
+		toSerialize["externalId"] = o.ExternalId.Get()
 	}
-	if !IsNil(o.ExternalName) {
-		toSerialize["externalName"] = o.ExternalName
+	if o.ExternalName.IsSet() {
+		toSerialize["externalName"] = o.ExternalName.Get()
 	}
 	if !IsNil(o.RequestType) {
 		toSerialize["requestType"] = o.RequestType
@@ -572,14 +627,14 @@ func (o Approval) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Approver) {
 		toSerialize["approver"] = o.Approver
 	}
-	if !IsNil(o.AccountIntegration) {
-		toSerialize["accountIntegration"] = o.AccountIntegration
+	if o.AccountIntegration.IsSet() {
+		toSerialize["accountIntegration"] = o.AccountIntegration.Get()
 	}
 	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status
 	}
-	if !IsNil(o.ErrorMessage) {
-		toSerialize["errorMessage"] = o.ErrorMessage
+	if o.ErrorMessage.IsSet() {
+		toSerialize["errorMessage"] = o.ErrorMessage.Get()
 	}
 	if !IsNil(o.DateCreated) {
 		toSerialize["dateCreated"] = o.DateCreated

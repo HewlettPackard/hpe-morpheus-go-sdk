@@ -12,14 +12,14 @@ Name | Type | Description | Notes
 **Username** | Pointer to **string** |  | [optional] 
 **Token** | Pointer to **string** |  | [optional] 
 **TokenHash** | Pointer to **string** |  | [optional] 
-**ServiceKey** | Pointer to [**ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
+**ServiceKey** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **IsPlugin** | Pointer to **bool** |  | [optional] 
 **Config** | Pointer to [**ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf7Config**](ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf7Config.md) |  | [optional] 
 **Status** | Pointer to **string** |  | [optional] 
 **StatusDate** | Pointer to **time.Time** |  | [optional] 
-**StatusMessage** | Pointer to **string** |  | [optional] 
-**LastSync** | Pointer to **string** |  | [optional] 
-**LastSyncDuration** | Pointer to **string** |  | [optional] 
+**StatusMessage** | Pointer to **NullableString** |  | [optional] 
+**LastSync** | Pointer to **NullableString** |  | [optional] 
+**LastSyncDuration** | Pointer to **NullableString** |  | [optional] 
 **Credential** | Pointer to [**ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential**](ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential.md) |  | [optional] 
 
 ## Methods
@@ -243,20 +243,20 @@ HasTokenHash returns a boolean if a field has been set.
 
 ### GetServiceKey
 
-`func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8) GetServiceKey() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8) GetServiceKey() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetServiceKey returns the ServiceKey field if non-nil, zero value otherwise.
 
 ### GetServiceKeyOk
 
-`func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8) GetServiceKeyOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8) GetServiceKeyOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetServiceKeyOk returns a tuple with the ServiceKey field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetServiceKey
 
-`func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8) SetServiceKey(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8) SetServiceKey(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetServiceKey sets ServiceKey field to given value.
 
@@ -391,6 +391,16 @@ SetStatusMessage sets StatusMessage field to given value.
 
 HasStatusMessage returns a boolean if a field has been set.
 
+### SetStatusMessageNil
+
+`func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8) SetStatusMessageNil(b bool)`
+
+ SetStatusMessageNil sets the value for StatusMessage to be an explicit nil
+
+### UnsetStatusMessage
+`func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8) UnsetStatusMessage()`
+
+UnsetStatusMessage ensures that no value is present for StatusMessage, not even an explicit nil
 ### GetLastSync
 
 `func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8) GetLastSync() string`
@@ -416,6 +426,16 @@ SetLastSync sets LastSync field to given value.
 
 HasLastSync returns a boolean if a field has been set.
 
+### SetLastSyncNil
+
+`func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8) SetLastSyncNil(b bool)`
+
+ SetLastSyncNil sets the value for LastSync to be an explicit nil
+
+### UnsetLastSync
+`func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8) UnsetLastSync()`
+
+UnsetLastSync ensures that no value is present for LastSync, not even an explicit nil
 ### GetLastSyncDuration
 
 `func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8) GetLastSyncDuration() string`
@@ -441,6 +461,16 @@ SetLastSyncDuration sets LastSyncDuration field to given value.
 
 HasLastSyncDuration returns a boolean if a field has been set.
 
+### SetLastSyncDurationNil
+
+`func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8) SetLastSyncDurationNil(b bool)`
+
+ SetLastSyncDurationNil sets the value for LastSyncDuration to be an explicit nil
+
+### UnsetLastSyncDuration
+`func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8) UnsetLastSyncDuration()`
+
+UnsetLastSyncDuration ensures that no value is present for LastSyncDuration, not even an explicit nil
 ### GetCredential
 
 `func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8) GetCredential() ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential`

@@ -21,7 +21,7 @@ var _ MappedNullable = &GetBillingInstancesIdentifier200ResponseAllOfBillingInfo
 
 // GetBillingInstancesIdentifier200ResponseAllOfBillingInfo struct for GetBillingInstancesIdentifier200ResponseAllOfBillingInfo
 type GetBillingInstancesIdentifier200ResponseAllOfBillingInfo struct {
-	InstanceId           *int64                                                                    `json:"instanceId,omitempty"`
+	InstanceId           NullableInt64                                                             `json:"instanceId,omitempty"`
 	InstanceUUID         *string                                                                   `json:"instanceUUID,omitempty"`
 	StartDate            *time.Time                                                                `json:"startDate,omitempty"`
 	EndDate              *time.Time                                                                `json:"endDate,omitempty"`
@@ -52,36 +52,47 @@ func NewGetBillingInstancesIdentifier200ResponseAllOfBillingInfoWithDefaults() *
 	return &this
 }
 
-// GetInstanceId returns the InstanceId field value if set, zero value otherwise.
+// GetInstanceId returns the InstanceId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetBillingInstancesIdentifier200ResponseAllOfBillingInfo) GetInstanceId() int64 {
-	if o == nil || IsNil(o.InstanceId) {
+	if o == nil || IsNil(o.InstanceId.Get()) {
 		var ret int64
 		return ret
 	}
-	return *o.InstanceId
+	return *o.InstanceId.Get()
 }
 
 // GetInstanceIdOk returns a tuple with the InstanceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetBillingInstancesIdentifier200ResponseAllOfBillingInfo) GetInstanceIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.InstanceId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.InstanceId, true
+	return o.InstanceId.Get(), o.InstanceId.IsSet()
 }
 
 // IsSetInstanceId returns a boolean if a field has been set.
 func (o *GetBillingInstancesIdentifier200ResponseAllOfBillingInfo) IsSetInstanceId() bool {
-	if o != nil && !IsNil(o.InstanceId) {
+	if o != nil && o.InstanceId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetInstanceId gets a reference to the given int64 and assigns it to the InstanceId field.
+// SetInstanceId gets a reference to the given NullableInt64 and assigns it to the InstanceId field.
 func (o *GetBillingInstancesIdentifier200ResponseAllOfBillingInfo) SetInstanceId(v int64) {
-	o.InstanceId = &v
+	o.InstanceId.Set(&v)
+}
+
+// SetInstanceIdNil sets the value for InstanceId to be an explicit nil
+func (o *GetBillingInstancesIdentifier200ResponseAllOfBillingInfo) SetInstanceIdNil() {
+	o.InstanceId.Set(nil)
+}
+
+// UnsetInstanceId ensures that no value is present for InstanceId, not even an explicit nil
+func (o *GetBillingInstancesIdentifier200ResponseAllOfBillingInfo) UnsetInstanceId() {
+	o.InstanceId.Unset()
 }
 
 // GetInstanceUUID returns the InstanceUUID field value if set, zero value otherwise.
@@ -350,8 +361,8 @@ func (o GetBillingInstancesIdentifier200ResponseAllOfBillingInfo) MarshalJSON() 
 
 func (o GetBillingInstancesIdentifier200ResponseAllOfBillingInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.InstanceId) {
-		toSerialize["instanceId"] = o.InstanceId
+	if o.InstanceId.IsSet() {
+		toSerialize["instanceId"] = o.InstanceId.Get()
 	}
 	if !IsNil(o.InstanceUUID) {
 		toSerialize["instanceUUID"] = o.InstanceUUID

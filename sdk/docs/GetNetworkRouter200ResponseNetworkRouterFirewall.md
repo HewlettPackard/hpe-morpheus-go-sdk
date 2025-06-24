@@ -5,9 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Enabled** | Pointer to **bool** |  | [optional] 
-**Version** | Pointer to **string** |  | [optional] 
-**DefaultPolicy** | Pointer to **string** |  | [optional] 
-**Global** | Pointer to **string** |  | [optional] 
+**Version** | Pointer to **NullableString** |  | [optional] 
+**DefaultPolicy** | Pointer to **NullableString** |  | [optional] 
+**Global** | Pointer to **NullableString** |  | [optional] 
 **RuleGroups** | Pointer to [**[]GetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInner**](GetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInner.md) |  | [optional] 
 
 ## Methods
@@ -79,6 +79,16 @@ SetVersion sets Version field to given value.
 
 HasVersion returns a boolean if a field has been set.
 
+### SetVersionNil
+
+`func (o *GetNetworkRouter200ResponseNetworkRouterFirewall) SetVersionNil(b bool)`
+
+ SetVersionNil sets the value for Version to be an explicit nil
+
+### UnsetVersion
+`func (o *GetNetworkRouter200ResponseNetworkRouterFirewall) UnsetVersion()`
+
+UnsetVersion ensures that no value is present for Version, not even an explicit nil
 ### GetDefaultPolicy
 
 `func (o *GetNetworkRouter200ResponseNetworkRouterFirewall) GetDefaultPolicy() string`
@@ -104,6 +114,16 @@ SetDefaultPolicy sets DefaultPolicy field to given value.
 
 HasDefaultPolicy returns a boolean if a field has been set.
 
+### SetDefaultPolicyNil
+
+`func (o *GetNetworkRouter200ResponseNetworkRouterFirewall) SetDefaultPolicyNil(b bool)`
+
+ SetDefaultPolicyNil sets the value for DefaultPolicy to be an explicit nil
+
+### UnsetDefaultPolicy
+`func (o *GetNetworkRouter200ResponseNetworkRouterFirewall) UnsetDefaultPolicy()`
+
+UnsetDefaultPolicy ensures that no value is present for DefaultPolicy, not even an explicit nil
 ### GetGlobal
 
 `func (o *GetNetworkRouter200ResponseNetworkRouterFirewall) GetGlobal() string`
@@ -129,6 +149,16 @@ SetGlobal sets Global field to given value.
 
 HasGlobal returns a boolean if a field has been set.
 
+### SetGlobalNil
+
+`func (o *GetNetworkRouter200ResponseNetworkRouterFirewall) SetGlobalNil(b bool)`
+
+ SetGlobalNil sets the value for Global to be an explicit nil
+
+### UnsetGlobal
+`func (o *GetNetworkRouter200ResponseNetworkRouterFirewall) UnsetGlobal()`
+
+UnsetGlobal ensures that no value is present for Global, not even an explicit nil
 ### GetRuleGroups
 
 `func (o *GetNetworkRouter200ResponseNetworkRouterFirewall) GetRuleGroups() []GetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInner`

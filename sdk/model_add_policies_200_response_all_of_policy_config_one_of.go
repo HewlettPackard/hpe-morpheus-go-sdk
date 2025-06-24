@@ -18,11 +18,19 @@ import (
 // checks if the AddPolicies200ResponseAllOfPolicyConfigOneOf type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &AddPolicies200ResponseAllOfPolicyConfigOneOf{}
 
-// AddPolicies200ResponseAllOfPolicyConfigOneOf - Max Cores
+// AddPolicies200ResponseAllOfPolicyConfigOneOf - Expiration
 type AddPolicies200ResponseAllOfPolicyConfigOneOf struct {
-	MaxCores             string                 `json:"maxCores"`
-	ExcludeContainers    *string                `json:"excludeContainers,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	LifecycleType                     string                 `json:"lifecycleType"`
+	LifecycleAge                      *string                `json:"lifecycleAge,omitempty"`
+	LifecycleRenewal                  *string                `json:"lifecycleRenewal,omitempty"`
+	LifecycleNotify                   *string                `json:"lifecycleNotify,omitempty"`
+	LifecycleMessage                  *string                `json:"lifecycleMessage,omitempty"`
+	LifecycleAutoRenew                *string                `json:"lifecycleAutoRenew,omitempty"`
+	LifecycleAllowExtend              *string                `json:"lifecycleAllowExtend,omitempty"`
+	LifecycleExtensionsBeforeApproval *string                `json:"lifecycleExtensionsBeforeApproval,omitempty"`
+	AccountIntegrationId              *string                `json:"accountIntegrationId,omitempty"`
+	LifecycleHideFixed                *bool                  `json:"lifecycleHideFixed,omitempty"`
+	AdditionalProperties              map[string]interface{} `json:",remain"`
 }
 
 type _AddPolicies200ResponseAllOfPolicyConfigOneOf AddPolicies200ResponseAllOfPolicyConfigOneOf
@@ -31,11 +39,13 @@ type _AddPolicies200ResponseAllOfPolicyConfigOneOf AddPolicies200ResponseAllOfPo
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddPolicies200ResponseAllOfPolicyConfigOneOf(maxCores string) *AddPolicies200ResponseAllOfPolicyConfigOneOf {
+func NewAddPolicies200ResponseAllOfPolicyConfigOneOf(lifecycleType string) *AddPolicies200ResponseAllOfPolicyConfigOneOf {
 	this := AddPolicies200ResponseAllOfPolicyConfigOneOf{}
-	this.MaxCores = maxCores
-	var excludeContainers string = "off"
-	this.ExcludeContainers = &excludeContainers
+	this.LifecycleType = lifecycleType
+	var lifecycleAutoRenew string = "off"
+	this.LifecycleAutoRenew = &lifecycleAutoRenew
+	var lifecycleAllowExtend string = "off"
+	this.LifecycleAllowExtend = &lifecycleAllowExtend
 	return &this
 }
 
@@ -44,65 +54,323 @@ func NewAddPolicies200ResponseAllOfPolicyConfigOneOf(maxCores string) *AddPolici
 // but it doesn't guarantee that properties required by API are set
 func NewAddPolicies200ResponseAllOfPolicyConfigOneOfWithDefaults() *AddPolicies200ResponseAllOfPolicyConfigOneOf {
 	this := AddPolicies200ResponseAllOfPolicyConfigOneOf{}
-	var excludeContainers string = "off"
-	this.ExcludeContainers = &excludeContainers
+	var lifecycleAutoRenew string = "off"
+	this.LifecycleAutoRenew = &lifecycleAutoRenew
+	var lifecycleAllowExtend string = "off"
+	this.LifecycleAllowExtend = &lifecycleAllowExtend
 	return &this
 }
 
-// GetMaxCores returns the MaxCores field value
-func (o *AddPolicies200ResponseAllOfPolicyConfigOneOf) GetMaxCores() string {
+// GetLifecycleType returns the LifecycleType field value
+func (o *AddPolicies200ResponseAllOfPolicyConfigOneOf) GetLifecycleType() string {
 	if o == nil {
 		var ret string
 		return ret
 	}
 
-	return o.MaxCores
+	return o.LifecycleType
 }
 
-// GetMaxCoresOk returns a tuple with the MaxCores field value
+// GetLifecycleTypeOk returns a tuple with the LifecycleType field value
 // and a boolean to check if the value has been set.
-func (o *AddPolicies200ResponseAllOfPolicyConfigOneOf) GetMaxCoresOk() (*string, bool) {
+func (o *AddPolicies200ResponseAllOfPolicyConfigOneOf) GetLifecycleTypeOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.MaxCores, true
+	return &o.LifecycleType, true
 }
 
-// SetMaxCores sets field value
-func (o *AddPolicies200ResponseAllOfPolicyConfigOneOf) SetMaxCores(v string) {
-	o.MaxCores = v
+// SetLifecycleType sets field value
+func (o *AddPolicies200ResponseAllOfPolicyConfigOneOf) SetLifecycleType(v string) {
+	o.LifecycleType = v
 }
 
-// GetExcludeContainers returns the ExcludeContainers field value if set, zero value otherwise.
-func (o *AddPolicies200ResponseAllOfPolicyConfigOneOf) GetExcludeContainers() string {
-	if o == nil || IsNil(o.ExcludeContainers) {
+// GetLifecycleAge returns the LifecycleAge field value if set, zero value otherwise.
+func (o *AddPolicies200ResponseAllOfPolicyConfigOneOf) GetLifecycleAge() string {
+	if o == nil || IsNil(o.LifecycleAge) {
 		var ret string
 		return ret
 	}
-	return *o.ExcludeContainers
+	return *o.LifecycleAge
 }
 
-// GetExcludeContainersOk returns a tuple with the ExcludeContainers field value if set, nil otherwise
+// GetLifecycleAgeOk returns a tuple with the LifecycleAge field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddPolicies200ResponseAllOfPolicyConfigOneOf) GetExcludeContainersOk() (*string, bool) {
-	if o == nil || IsNil(o.ExcludeContainers) {
+func (o *AddPolicies200ResponseAllOfPolicyConfigOneOf) GetLifecycleAgeOk() (*string, bool) {
+	if o == nil || IsNil(o.LifecycleAge) {
 		return nil, false
 	}
-	return o.ExcludeContainers, true
+	return o.LifecycleAge, true
 }
 
-// IsSetExcludeContainers returns a boolean if a field has been set.
-func (o *AddPolicies200ResponseAllOfPolicyConfigOneOf) IsSetExcludeContainers() bool {
-	if o != nil && !IsNil(o.ExcludeContainers) {
+// IsSetLifecycleAge returns a boolean if a field has been set.
+func (o *AddPolicies200ResponseAllOfPolicyConfigOneOf) IsSetLifecycleAge() bool {
+	if o != nil && !IsNil(o.LifecycleAge) {
 		return true
 	}
 
 	return false
 }
 
-// SetExcludeContainers gets a reference to the given string and assigns it to the ExcludeContainers field.
-func (o *AddPolicies200ResponseAllOfPolicyConfigOneOf) SetExcludeContainers(v string) {
-	o.ExcludeContainers = &v
+// SetLifecycleAge gets a reference to the given string and assigns it to the LifecycleAge field.
+func (o *AddPolicies200ResponseAllOfPolicyConfigOneOf) SetLifecycleAge(v string) {
+	o.LifecycleAge = &v
+}
+
+// GetLifecycleRenewal returns the LifecycleRenewal field value if set, zero value otherwise.
+func (o *AddPolicies200ResponseAllOfPolicyConfigOneOf) GetLifecycleRenewal() string {
+	if o == nil || IsNil(o.LifecycleRenewal) {
+		var ret string
+		return ret
+	}
+	return *o.LifecycleRenewal
+}
+
+// GetLifecycleRenewalOk returns a tuple with the LifecycleRenewal field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddPolicies200ResponseAllOfPolicyConfigOneOf) GetLifecycleRenewalOk() (*string, bool) {
+	if o == nil || IsNil(o.LifecycleRenewal) {
+		return nil, false
+	}
+	return o.LifecycleRenewal, true
+}
+
+// IsSetLifecycleRenewal returns a boolean if a field has been set.
+func (o *AddPolicies200ResponseAllOfPolicyConfigOneOf) IsSetLifecycleRenewal() bool {
+	if o != nil && !IsNil(o.LifecycleRenewal) {
+		return true
+	}
+
+	return false
+}
+
+// SetLifecycleRenewal gets a reference to the given string and assigns it to the LifecycleRenewal field.
+func (o *AddPolicies200ResponseAllOfPolicyConfigOneOf) SetLifecycleRenewal(v string) {
+	o.LifecycleRenewal = &v
+}
+
+// GetLifecycleNotify returns the LifecycleNotify field value if set, zero value otherwise.
+func (o *AddPolicies200ResponseAllOfPolicyConfigOneOf) GetLifecycleNotify() string {
+	if o == nil || IsNil(o.LifecycleNotify) {
+		var ret string
+		return ret
+	}
+	return *o.LifecycleNotify
+}
+
+// GetLifecycleNotifyOk returns a tuple with the LifecycleNotify field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddPolicies200ResponseAllOfPolicyConfigOneOf) GetLifecycleNotifyOk() (*string, bool) {
+	if o == nil || IsNil(o.LifecycleNotify) {
+		return nil, false
+	}
+	return o.LifecycleNotify, true
+}
+
+// IsSetLifecycleNotify returns a boolean if a field has been set.
+func (o *AddPolicies200ResponseAllOfPolicyConfigOneOf) IsSetLifecycleNotify() bool {
+	if o != nil && !IsNil(o.LifecycleNotify) {
+		return true
+	}
+
+	return false
+}
+
+// SetLifecycleNotify gets a reference to the given string and assigns it to the LifecycleNotify field.
+func (o *AddPolicies200ResponseAllOfPolicyConfigOneOf) SetLifecycleNotify(v string) {
+	o.LifecycleNotify = &v
+}
+
+// GetLifecycleMessage returns the LifecycleMessage field value if set, zero value otherwise.
+func (o *AddPolicies200ResponseAllOfPolicyConfigOneOf) GetLifecycleMessage() string {
+	if o == nil || IsNil(o.LifecycleMessage) {
+		var ret string
+		return ret
+	}
+	return *o.LifecycleMessage
+}
+
+// GetLifecycleMessageOk returns a tuple with the LifecycleMessage field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddPolicies200ResponseAllOfPolicyConfigOneOf) GetLifecycleMessageOk() (*string, bool) {
+	if o == nil || IsNil(o.LifecycleMessage) {
+		return nil, false
+	}
+	return o.LifecycleMessage, true
+}
+
+// IsSetLifecycleMessage returns a boolean if a field has been set.
+func (o *AddPolicies200ResponseAllOfPolicyConfigOneOf) IsSetLifecycleMessage() bool {
+	if o != nil && !IsNil(o.LifecycleMessage) {
+		return true
+	}
+
+	return false
+}
+
+// SetLifecycleMessage gets a reference to the given string and assigns it to the LifecycleMessage field.
+func (o *AddPolicies200ResponseAllOfPolicyConfigOneOf) SetLifecycleMessage(v string) {
+	o.LifecycleMessage = &v
+}
+
+// GetLifecycleAutoRenew returns the LifecycleAutoRenew field value if set, zero value otherwise.
+func (o *AddPolicies200ResponseAllOfPolicyConfigOneOf) GetLifecycleAutoRenew() string {
+	if o == nil || IsNil(o.LifecycleAutoRenew) {
+		var ret string
+		return ret
+	}
+	return *o.LifecycleAutoRenew
+}
+
+// GetLifecycleAutoRenewOk returns a tuple with the LifecycleAutoRenew field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddPolicies200ResponseAllOfPolicyConfigOneOf) GetLifecycleAutoRenewOk() (*string, bool) {
+	if o == nil || IsNil(o.LifecycleAutoRenew) {
+		return nil, false
+	}
+	return o.LifecycleAutoRenew, true
+}
+
+// IsSetLifecycleAutoRenew returns a boolean if a field has been set.
+func (o *AddPolicies200ResponseAllOfPolicyConfigOneOf) IsSetLifecycleAutoRenew() bool {
+	if o != nil && !IsNil(o.LifecycleAutoRenew) {
+		return true
+	}
+
+	return false
+}
+
+// SetLifecycleAutoRenew gets a reference to the given string and assigns it to the LifecycleAutoRenew field.
+func (o *AddPolicies200ResponseAllOfPolicyConfigOneOf) SetLifecycleAutoRenew(v string) {
+	o.LifecycleAutoRenew = &v
+}
+
+// GetLifecycleAllowExtend returns the LifecycleAllowExtend field value if set, zero value otherwise.
+func (o *AddPolicies200ResponseAllOfPolicyConfigOneOf) GetLifecycleAllowExtend() string {
+	if o == nil || IsNil(o.LifecycleAllowExtend) {
+		var ret string
+		return ret
+	}
+	return *o.LifecycleAllowExtend
+}
+
+// GetLifecycleAllowExtendOk returns a tuple with the LifecycleAllowExtend field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddPolicies200ResponseAllOfPolicyConfigOneOf) GetLifecycleAllowExtendOk() (*string, bool) {
+	if o == nil || IsNil(o.LifecycleAllowExtend) {
+		return nil, false
+	}
+	return o.LifecycleAllowExtend, true
+}
+
+// IsSetLifecycleAllowExtend returns a boolean if a field has been set.
+func (o *AddPolicies200ResponseAllOfPolicyConfigOneOf) IsSetLifecycleAllowExtend() bool {
+	if o != nil && !IsNil(o.LifecycleAllowExtend) {
+		return true
+	}
+
+	return false
+}
+
+// SetLifecycleAllowExtend gets a reference to the given string and assigns it to the LifecycleAllowExtend field.
+func (o *AddPolicies200ResponseAllOfPolicyConfigOneOf) SetLifecycleAllowExtend(v string) {
+	o.LifecycleAllowExtend = &v
+}
+
+// GetLifecycleExtensionsBeforeApproval returns the LifecycleExtensionsBeforeApproval field value if set, zero value otherwise.
+func (o *AddPolicies200ResponseAllOfPolicyConfigOneOf) GetLifecycleExtensionsBeforeApproval() string {
+	if o == nil || IsNil(o.LifecycleExtensionsBeforeApproval) {
+		var ret string
+		return ret
+	}
+	return *o.LifecycleExtensionsBeforeApproval
+}
+
+// GetLifecycleExtensionsBeforeApprovalOk returns a tuple with the LifecycleExtensionsBeforeApproval field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddPolicies200ResponseAllOfPolicyConfigOneOf) GetLifecycleExtensionsBeforeApprovalOk() (*string, bool) {
+	if o == nil || IsNil(o.LifecycleExtensionsBeforeApproval) {
+		return nil, false
+	}
+	return o.LifecycleExtensionsBeforeApproval, true
+}
+
+// IsSetLifecycleExtensionsBeforeApproval returns a boolean if a field has been set.
+func (o *AddPolicies200ResponseAllOfPolicyConfigOneOf) IsSetLifecycleExtensionsBeforeApproval() bool {
+	if o != nil && !IsNil(o.LifecycleExtensionsBeforeApproval) {
+		return true
+	}
+
+	return false
+}
+
+// SetLifecycleExtensionsBeforeApproval gets a reference to the given string and assigns it to the LifecycleExtensionsBeforeApproval field.
+func (o *AddPolicies200ResponseAllOfPolicyConfigOneOf) SetLifecycleExtensionsBeforeApproval(v string) {
+	o.LifecycleExtensionsBeforeApproval = &v
+}
+
+// GetAccountIntegrationId returns the AccountIntegrationId field value if set, zero value otherwise.
+func (o *AddPolicies200ResponseAllOfPolicyConfigOneOf) GetAccountIntegrationId() string {
+	if o == nil || IsNil(o.AccountIntegrationId) {
+		var ret string
+		return ret
+	}
+	return *o.AccountIntegrationId
+}
+
+// GetAccountIntegrationIdOk returns a tuple with the AccountIntegrationId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddPolicies200ResponseAllOfPolicyConfigOneOf) GetAccountIntegrationIdOk() (*string, bool) {
+	if o == nil || IsNil(o.AccountIntegrationId) {
+		return nil, false
+	}
+	return o.AccountIntegrationId, true
+}
+
+// IsSetAccountIntegrationId returns a boolean if a field has been set.
+func (o *AddPolicies200ResponseAllOfPolicyConfigOneOf) IsSetAccountIntegrationId() bool {
+	if o != nil && !IsNil(o.AccountIntegrationId) {
+		return true
+	}
+
+	return false
+}
+
+// SetAccountIntegrationId gets a reference to the given string and assigns it to the AccountIntegrationId field.
+func (o *AddPolicies200ResponseAllOfPolicyConfigOneOf) SetAccountIntegrationId(v string) {
+	o.AccountIntegrationId = &v
+}
+
+// GetLifecycleHideFixed returns the LifecycleHideFixed field value if set, zero value otherwise.
+func (o *AddPolicies200ResponseAllOfPolicyConfigOneOf) GetLifecycleHideFixed() bool {
+	if o == nil || IsNil(o.LifecycleHideFixed) {
+		var ret bool
+		return ret
+	}
+	return *o.LifecycleHideFixed
+}
+
+// GetLifecycleHideFixedOk returns a tuple with the LifecycleHideFixed field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddPolicies200ResponseAllOfPolicyConfigOneOf) GetLifecycleHideFixedOk() (*bool, bool) {
+	if o == nil || IsNil(o.LifecycleHideFixed) {
+		return nil, false
+	}
+	return o.LifecycleHideFixed, true
+}
+
+// IsSetLifecycleHideFixed returns a boolean if a field has been set.
+func (o *AddPolicies200ResponseAllOfPolicyConfigOneOf) IsSetLifecycleHideFixed() bool {
+	if o != nil && !IsNil(o.LifecycleHideFixed) {
+		return true
+	}
+
+	return false
+}
+
+// SetLifecycleHideFixed gets a reference to the given bool and assigns it to the LifecycleHideFixed field.
+func (o *AddPolicies200ResponseAllOfPolicyConfigOneOf) SetLifecycleHideFixed(v bool) {
+	o.LifecycleHideFixed = &v
 }
 
 func (o AddPolicies200ResponseAllOfPolicyConfigOneOf) MarshalJSON() ([]byte, error) {
@@ -115,9 +383,33 @@ func (o AddPolicies200ResponseAllOfPolicyConfigOneOf) MarshalJSON() ([]byte, err
 
 func (o AddPolicies200ResponseAllOfPolicyConfigOneOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["maxCores"] = o.MaxCores
-	if !IsNil(o.ExcludeContainers) {
-		toSerialize["excludeContainers"] = o.ExcludeContainers
+	toSerialize["lifecycleType"] = o.LifecycleType
+	if !IsNil(o.LifecycleAge) {
+		toSerialize["lifecycleAge"] = o.LifecycleAge
+	}
+	if !IsNil(o.LifecycleRenewal) {
+		toSerialize["lifecycleRenewal"] = o.LifecycleRenewal
+	}
+	if !IsNil(o.LifecycleNotify) {
+		toSerialize["lifecycleNotify"] = o.LifecycleNotify
+	}
+	if !IsNil(o.LifecycleMessage) {
+		toSerialize["lifecycleMessage"] = o.LifecycleMessage
+	}
+	if !IsNil(o.LifecycleAutoRenew) {
+		toSerialize["lifecycleAutoRenew"] = o.LifecycleAutoRenew
+	}
+	if !IsNil(o.LifecycleAllowExtend) {
+		toSerialize["lifecycleAllowExtend"] = o.LifecycleAllowExtend
+	}
+	if !IsNil(o.LifecycleExtensionsBeforeApproval) {
+		toSerialize["lifecycleExtensionsBeforeApproval"] = o.LifecycleExtensionsBeforeApproval
+	}
+	if !IsNil(o.AccountIntegrationId) {
+		toSerialize["accountIntegrationId"] = o.AccountIntegrationId
+	}
+	if !IsNil(o.LifecycleHideFixed) {
+		toSerialize["lifecycleHideFixed"] = o.LifecycleHideFixed
 	}
 
 	for key, value := range o.AdditionalProperties {

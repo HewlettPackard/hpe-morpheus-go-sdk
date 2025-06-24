@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ProjectId** | Pointer to **string** | Project ID can have lowercase letters, digits, or hyphens. It must start with a lowercase letter and end with a letter or number.  | [optional] 
+**ProjectId** | Pointer to **NullableString** | Project ID can have lowercase letters, digits, or hyphens. It must start with a lowercase letter and end with a letter or number.  | [optional] 
 **Parent** | **interface{}** |  | 
 **BillingAccount** | **string** |  | 
 
@@ -52,6 +52,16 @@ SetProjectId sets ProjectId field to given value.
 
 HasProjectId returns a boolean if a field has been set.
 
+### SetProjectIdNil
+
+`func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf1) SetProjectIdNil(b bool)`
+
+ SetProjectIdNil sets the value for ProjectId to be an explicit nil
+
+### UnsetProjectId
+`func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf1) UnsetProjectId()`
+
+UnsetProjectId ensures that no value is present for ProjectId, not even an explicit nil
 ### GetParent
 
 `func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf1) GetParent() interface{}`

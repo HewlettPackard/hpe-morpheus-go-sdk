@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **AccountName** | Pointer to **string** |  | [optional] 
 **Volumes** | Pointer to [**[]ListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInnerVolumesInner**](ListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInnerVolumesInner.md) |  | [optional] 
 **MaxMemory** | Pointer to **int64** |  | [optional] 
-**MaxCpu** | Pointer to **string** |  | [optional] 
+**MaxCpu** | Pointer to **NullableString** |  | [optional] 
 **MaxCores** | Pointer to **int64** |  | [optional] 
 **ServerExternalId** | Pointer to **string** |  | [optional] 
 **ServerInternalId** | Pointer to **string** |  | [optional] 
@@ -26,7 +26,7 @@ Name | Type | Description | Notes
 **SiteId** | Pointer to **int64** |  | [optional] 
 **SiteName** | Pointer to **string** |  | [optional] 
 **SiteUUID** | Pointer to **string** |  | [optional] 
-**SiteCode** | Pointer to **string** |  | [optional] 
+**SiteCode** | Pointer to **NullableString** |  | [optional] 
 **StartDate** | Pointer to **time.Time** |  | [optional] 
 **EndDate** | Pointer to **time.Time** |  | [optional] 
 **Status** | Pointer to **string** |  | [optional] 
@@ -231,6 +231,16 @@ SetMaxCpu sets MaxCpu field to given value.
 
 HasMaxCpu returns a boolean if a field has been set.
 
+### SetMaxCpuNil
+
+`func (o *ListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInner) SetMaxCpuNil(b bool)`
+
+ SetMaxCpuNil sets the value for MaxCpu to be an explicit nil
+
+### UnsetMaxCpu
+`func (o *ListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInner) UnsetMaxCpu()`
+
+UnsetMaxCpu ensures that no value is present for MaxCpu, not even an explicit nil
 ### GetMaxCores
 
 `func (o *ListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInner) GetMaxCores() int64`
@@ -631,6 +641,16 @@ SetSiteCode sets SiteCode field to given value.
 
 HasSiteCode returns a boolean if a field has been set.
 
+### SetSiteCodeNil
+
+`func (o *ListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInner) SetSiteCodeNil(b bool)`
+
+ SetSiteCodeNil sets the value for SiteCode to be an explicit nil
+
+### UnsetSiteCode
+`func (o *ListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInner) UnsetSiteCode()`
+
+UnsetSiteCode ensures that no value is present for SiteCode, not even an explicit nil
 ### GetStartDate
 
 `func (o *ListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInner) GetStartDate() time.Time`
@@ -731,6 +751,16 @@ SetTags sets Tags field to given value.
 
 HasTags returns a boolean if a field has been set.
 
+### SetTagsNil
+
+`func (o *ListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInner) SetTagsNil(b bool)`
+
+ SetTagsNil sets the value for Tags to be an explicit nil
+
+### UnsetTags
+`func (o *ListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInner) UnsetTags()`
+
+UnsetTags ensures that no value is present for Tags, not even an explicit nil
 ### GetApplicablePrices
 
 `func (o *ListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInner) GetApplicablePrices() []ListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInnerApplicablePricesInner`

@@ -120,6 +120,16 @@ SetLabels sets Labels field to given value.
 
 HasLabels returns a boolean if a field has been set.
 
+### SetLabelsNil
+
+`func (o *BlueprintKubernetesCreate) SetLabelsNil(b bool)`
+
+ SetLabelsNil sets the value for Labels to be an explicit nil
+
+### UnsetLabels
+`func (o *BlueprintKubernetesCreate) UnsetLabels()`
+
+UnsetLabels ensures that no value is present for Labels, not even an explicit nil
 ### GetKubernetes
 
 `func (o *BlueprintKubernetesCreate) GetKubernetes() AddBlueprintRequestOneOf3Kubernetes`

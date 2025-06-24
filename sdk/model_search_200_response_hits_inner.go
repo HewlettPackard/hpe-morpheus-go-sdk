@@ -27,10 +27,10 @@ type Search200ResponseHitsInner struct {
 	Uuid *string `json:"uuid,omitempty"`
 	// Name
 	Name                 *string                `json:"name,omitempty"`
-	Description          *string                `json:"description,omitempty"`
+	Description          NullableString         `json:"description,omitempty"`
 	Type                 *string                `json:"type,omitempty"`
-	DateCreated          *time.Time             `json:"dateCreated,omitempty"`
-	Score                *float32               `json:"score,omitempty"`
+	DateCreated          NullableTime           `json:"dateCreated,omitempty"`
+	Score                NullableFloat32        `json:"score,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -149,36 +149,47 @@ func (o *Search200ResponseHitsInner) SetName(v string) {
 	o.Name = &v
 }
 
-// GetDescription returns the Description field value if set, zero value otherwise.
+// GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Search200ResponseHitsInner) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
+	if o == nil || IsNil(o.Description.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Description
+	return *o.Description.Get()
 }
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Search200ResponseHitsInner) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Description, true
+	return o.Description.Get(), o.Description.IsSet()
 }
 
 // IsSetDescription returns a boolean if a field has been set.
 func (o *Search200ResponseHitsInner) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
+	if o != nil && o.Description.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDescription gets a reference to the given string and assigns it to the Description field.
+// SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *Search200ResponseHitsInner) SetDescription(v string) {
-	o.Description = &v
+	o.Description.Set(&v)
+}
+
+// SetDescriptionNil sets the value for Description to be an explicit nil
+func (o *Search200ResponseHitsInner) SetDescriptionNil() {
+	o.Description.Set(nil)
+}
+
+// UnsetDescription ensures that no value is present for Description, not even an explicit nil
+func (o *Search200ResponseHitsInner) UnsetDescription() {
+	o.Description.Unset()
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
@@ -213,68 +224,90 @@ func (o *Search200ResponseHitsInner) SetType(v string) {
 	o.Type = &v
 }
 
-// GetDateCreated returns the DateCreated field value if set, zero value otherwise.
+// GetDateCreated returns the DateCreated field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Search200ResponseHitsInner) GetDateCreated() time.Time {
-	if o == nil || IsNil(o.DateCreated) {
+	if o == nil || IsNil(o.DateCreated.Get()) {
 		var ret time.Time
 		return ret
 	}
-	return *o.DateCreated
+	return *o.DateCreated.Get()
 }
 
 // GetDateCreatedOk returns a tuple with the DateCreated field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Search200ResponseHitsInner) GetDateCreatedOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.DateCreated) {
+	if o == nil {
 		return nil, false
 	}
-	return o.DateCreated, true
+	return o.DateCreated.Get(), o.DateCreated.IsSet()
 }
 
 // IsSetDateCreated returns a boolean if a field has been set.
 func (o *Search200ResponseHitsInner) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
+	if o != nil && o.DateCreated.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
+// SetDateCreated gets a reference to the given NullableTime and assigns it to the DateCreated field.
 func (o *Search200ResponseHitsInner) SetDateCreated(v time.Time) {
-	o.DateCreated = &v
+	o.DateCreated.Set(&v)
 }
 
-// GetScore returns the Score field value if set, zero value otherwise.
+// SetDateCreatedNil sets the value for DateCreated to be an explicit nil
+func (o *Search200ResponseHitsInner) SetDateCreatedNil() {
+	o.DateCreated.Set(nil)
+}
+
+// UnsetDateCreated ensures that no value is present for DateCreated, not even an explicit nil
+func (o *Search200ResponseHitsInner) UnsetDateCreated() {
+	o.DateCreated.Unset()
+}
+
+// GetScore returns the Score field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Search200ResponseHitsInner) GetScore() float32 {
-	if o == nil || IsNil(o.Score) {
+	if o == nil || IsNil(o.Score.Get()) {
 		var ret float32
 		return ret
 	}
-	return *o.Score
+	return *o.Score.Get()
 }
 
 // GetScoreOk returns a tuple with the Score field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Search200ResponseHitsInner) GetScoreOk() (*float32, bool) {
-	if o == nil || IsNil(o.Score) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Score, true
+	return o.Score.Get(), o.Score.IsSet()
 }
 
 // IsSetScore returns a boolean if a field has been set.
 func (o *Search200ResponseHitsInner) IsSetScore() bool {
-	if o != nil && !IsNil(o.Score) {
+	if o != nil && o.Score.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetScore gets a reference to the given float32 and assigns it to the Score field.
+// SetScore gets a reference to the given NullableFloat32 and assigns it to the Score field.
 func (o *Search200ResponseHitsInner) SetScore(v float32) {
-	o.Score = &v
+	o.Score.Set(&v)
+}
+
+// SetScoreNil sets the value for Score to be an explicit nil
+func (o *Search200ResponseHitsInner) SetScoreNil() {
+	o.Score.Set(nil)
+}
+
+// UnsetScore ensures that no value is present for Score, not even an explicit nil
+func (o *Search200ResponseHitsInner) UnsetScore() {
+	o.Score.Unset()
 }
 
 func (o Search200ResponseHitsInner) MarshalJSON() ([]byte, error) {
@@ -296,17 +329,17 @@ func (o Search200ResponseHitsInner) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !IsNil(o.Description) {
-		toSerialize["description"] = o.Description
+	if o.Description.IsSet() {
+		toSerialize["description"] = o.Description.Get()
 	}
 	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type
 	}
-	if !IsNil(o.DateCreated) {
-		toSerialize["dateCreated"] = o.DateCreated
+	if o.DateCreated.IsSet() {
+		toSerialize["dateCreated"] = o.DateCreated.Get()
 	}
-	if !IsNil(o.Score) {
-		toSerialize["score"] = o.Score
+	if o.Score.IsSet() {
+		toSerialize["score"] = o.Score.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {

@@ -23,14 +23,14 @@ var _ fmt.Stringer
 
 // AddVirtualImageRequestVirtualImageOsType - A Map containing the id of the OS Type. This can also be passed as a string (code or name) instead.
 type AddVirtualImageRequestVirtualImageOsType struct {
-	GetAlerts200ResponseAllOfChecksInnerContainer *GetAlerts200ResponseAllOfChecksInnerContainer
-	String                                        *string
+	GetAlerts200ResponseAllOfChecksInnerAccount *GetAlerts200ResponseAllOfChecksInnerAccount
+	String                                      *string
 }
 
-// GetAlerts200ResponseAllOfChecksInnerContainerAsAddVirtualImageRequestVirtualImageOsType is a convenience function that returns GetAlerts200ResponseAllOfChecksInnerContainer wrapped in AddVirtualImageRequestVirtualImageOsType
-func GetAlerts200ResponseAllOfChecksInnerContainerAsAddVirtualImageRequestVirtualImageOsType(v *GetAlerts200ResponseAllOfChecksInnerContainer) AddVirtualImageRequestVirtualImageOsType {
+// GetAlerts200ResponseAllOfChecksInnerAccountAsAddVirtualImageRequestVirtualImageOsType is a convenience function that returns GetAlerts200ResponseAllOfChecksInnerAccount wrapped in AddVirtualImageRequestVirtualImageOsType
+func GetAlerts200ResponseAllOfChecksInnerAccountAsAddVirtualImageRequestVirtualImageOsType(v *GetAlerts200ResponseAllOfChecksInnerAccount) AddVirtualImageRequestVirtualImageOsType {
 	return AddVirtualImageRequestVirtualImageOsType{
-		GetAlerts200ResponseAllOfChecksInnerContainer: v,
+		GetAlerts200ResponseAllOfChecksInnerAccount: v,
 	}
 }
 
@@ -46,8 +46,8 @@ func (dst *AddVirtualImageRequestVirtualImageOsType) UnmarshalMapstructure(data 
 		dst = &AddVirtualImageRequestVirtualImageOsType{}
 	}
 
-	if out, ok := data.(GetAlerts200ResponseAllOfChecksInnerContainer); ok {
-		dst.GetAlerts200ResponseAllOfChecksInnerContainer = &out
+	if out, ok := data.(GetAlerts200ResponseAllOfChecksInnerAccount); ok {
+		dst.GetAlerts200ResponseAllOfChecksInnerAccount = &out
 	}
 
 	if out, ok := data.(string); ok {
@@ -61,21 +61,21 @@ func (dst *AddVirtualImageRequestVirtualImageOsType) UnmarshalMapstructure(data 
 func (dst *AddVirtualImageRequestVirtualImageOsType) UnmarshalJSON(data []byte) error {
 	var err error
 	match := 0
-	// try to unmarshal data into GetAlerts200ResponseAllOfChecksInnerContainer
-	err = newStrictDecoder(data).Decode(&dst.GetAlerts200ResponseAllOfChecksInnerContainer)
+	// try to unmarshal data into GetAlerts200ResponseAllOfChecksInnerAccount
+	err = newStrictDecoder(data).Decode(&dst.GetAlerts200ResponseAllOfChecksInnerAccount)
 	if err == nil {
-		jsonGetAlerts200ResponseAllOfChecksInnerContainer, _ := json.Marshal(dst.GetAlerts200ResponseAllOfChecksInnerContainer)
-		if string(jsonGetAlerts200ResponseAllOfChecksInnerContainer) == "{}" { // empty struct
-			dst.GetAlerts200ResponseAllOfChecksInnerContainer = nil
+		jsonGetAlerts200ResponseAllOfChecksInnerAccount, _ := json.Marshal(dst.GetAlerts200ResponseAllOfChecksInnerAccount)
+		if string(jsonGetAlerts200ResponseAllOfChecksInnerAccount) == "{}" { // empty struct
+			dst.GetAlerts200ResponseAllOfChecksInnerAccount = nil
 		} else {
-			if err = validator.Validate(dst.GetAlerts200ResponseAllOfChecksInnerContainer); err != nil {
-				dst.GetAlerts200ResponseAllOfChecksInnerContainer = nil
+			if err = validator.Validate(dst.GetAlerts200ResponseAllOfChecksInnerAccount); err != nil {
+				dst.GetAlerts200ResponseAllOfChecksInnerAccount = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.GetAlerts200ResponseAllOfChecksInnerContainer = nil
+		dst.GetAlerts200ResponseAllOfChecksInnerAccount = nil
 	}
 
 	// try to unmarshal data into String
@@ -97,7 +97,7 @@ func (dst *AddVirtualImageRequestVirtualImageOsType) UnmarshalJSON(data []byte) 
 
 	if match > 1 { // more than 1 match
 		// reset to nil
-		dst.GetAlerts200ResponseAllOfChecksInnerContainer = nil
+		dst.GetAlerts200ResponseAllOfChecksInnerAccount = nil
 		dst.String = nil
 
 		return NewResponseValidationError("data matches more than one schema in oneOf(AddVirtualImageRequestVirtualImageOsType)")
@@ -110,8 +110,8 @@ func (dst *AddVirtualImageRequestVirtualImageOsType) UnmarshalJSON(data []byte) 
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src AddVirtualImageRequestVirtualImageOsType) MarshalJSON() ([]byte, error) {
-	if src.GetAlerts200ResponseAllOfChecksInnerContainer != nil {
-		return json.Marshal(&src.GetAlerts200ResponseAllOfChecksInnerContainer)
+	if src.GetAlerts200ResponseAllOfChecksInnerAccount != nil {
+		return json.Marshal(&src.GetAlerts200ResponseAllOfChecksInnerAccount)
 	}
 
 	if src.String != nil {
@@ -126,8 +126,8 @@ func (obj *AddVirtualImageRequestVirtualImageOsType) GetActualInstance() interfa
 	if obj == nil {
 		return nil
 	}
-	if obj.GetAlerts200ResponseAllOfChecksInnerContainer != nil {
-		return obj.GetAlerts200ResponseAllOfChecksInnerContainer
+	if obj.GetAlerts200ResponseAllOfChecksInnerAccount != nil {
+		return obj.GetAlerts200ResponseAllOfChecksInnerAccount
 	}
 
 	if obj.String != nil {
@@ -140,8 +140,8 @@ func (obj *AddVirtualImageRequestVirtualImageOsType) GetActualInstance() interfa
 
 // Get the actual instance value
 func (obj AddVirtualImageRequestVirtualImageOsType) GetActualInstanceValue() interface{} {
-	if obj.GetAlerts200ResponseAllOfChecksInnerContainer != nil {
-		return *obj.GetAlerts200ResponseAllOfChecksInnerContainer
+	if obj.GetAlerts200ResponseAllOfChecksInnerAccount != nil {
+		return *obj.GetAlerts200ResponseAllOfChecksInnerAccount
 	}
 
 	if obj.String != nil {

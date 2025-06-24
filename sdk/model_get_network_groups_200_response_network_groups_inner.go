@@ -20,15 +20,15 @@ var _ MappedNullable = &GetNetworkGroups200ResponseNetworkGroupsInner{}
 
 // GetNetworkGroups200ResponseNetworkGroupsInner struct for GetNetworkGroups200ResponseNetworkGroupsInner
 type GetNetworkGroups200ResponseNetworkGroupsInner struct {
-	Id                   *int64                                                                   `json:"id,omitempty"`
-	Name                 *string                                                                  `json:"name,omitempty"`
-	Description          *string                                                                  `json:"description,omitempty"`
-	Visibility           *string                                                                  `json:"visibility,omitempty"`
-	Active               *bool                                                                    `json:"active,omitempty"`
-	Networks             []int64                                                                  `json:"networks,omitempty"`
-	Subnets              []map[string]interface{}                                                 `json:"subnets,omitempty"`
-	Tenants              []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"tenants,omitempty"`
-	AdditionalProperties map[string]interface{}                                                   `json:",remain"`
+	Id                   *int64                                              `json:"id,omitempty"`
+	Name                 *string                                             `json:"name,omitempty"`
+	Description          *string                                             `json:"description,omitempty"`
+	Visibility           *string                                             `json:"visibility,omitempty"`
+	Active               *bool                                               `json:"active,omitempty"`
+	Networks             []int64                                             `json:"networks,omitempty"`
+	Subnets              []map[string]interface{}                            `json:"subnets,omitempty"`
+	Tenants              []GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"tenants,omitempty"`
+	AdditionalProperties map[string]interface{}                              `json:",remain"`
 }
 
 type _GetNetworkGroups200ResponseNetworkGroupsInner GetNetworkGroups200ResponseNetworkGroupsInner
@@ -275,9 +275,9 @@ func (o *GetNetworkGroups200ResponseNetworkGroupsInner) SetSubnets(v []map[strin
 }
 
 // GetTenants returns the Tenants field value if set, zero value otherwise.
-func (o *GetNetworkGroups200ResponseNetworkGroupsInner) GetTenants() []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *GetNetworkGroups200ResponseNetworkGroupsInner) GetTenants() []GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.Tenants) {
-		var ret []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret []GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return o.Tenants
@@ -285,7 +285,7 @@ func (o *GetNetworkGroups200ResponseNetworkGroupsInner) GetTenants() []ListAppli
 
 // GetTenantsOk returns a tuple with the Tenants field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetNetworkGroups200ResponseNetworkGroupsInner) GetTenantsOk() ([]ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *GetNetworkGroups200ResponseNetworkGroupsInner) GetTenantsOk() ([]GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.Tenants) {
 		return nil, false
 	}
@@ -301,8 +301,8 @@ func (o *GetNetworkGroups200ResponseNetworkGroupsInner) IsSetTenants() bool {
 	return false
 }
 
-// SetTenants gets a reference to the given []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the Tenants field.
-func (o *GetNetworkGroups200ResponseNetworkGroupsInner) SetTenants(v []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetTenants gets a reference to the given []GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Tenants field.
+func (o *GetNetworkGroups200ResponseNetworkGroupsInner) SetTenants(v []GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.Tenants = v
 }
 

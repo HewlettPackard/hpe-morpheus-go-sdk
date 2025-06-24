@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Title** | Pointer to **string** |  | [optional] 
 **Message** | Pointer to **string** |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
-**FullPage** | Pointer to **bool** |  | [optional] 
+**FullPage** | Pointer to **NullableBool** |  | [optional] 
 
 ## Methods
 
@@ -128,6 +128,16 @@ SetFullPage sets FullPage field to given value.
 
 HasFullPage returns a boolean if a field has been set.
 
+### SetFullPageNil
+
+`func (o *MessageOfTheDayPolicyTypeConfigurationMotd) SetFullPageNil(b bool)`
+
+ SetFullPageNil sets the value for FullPage to be an explicit nil
+
+### UnsetFullPage
+`func (o *MessageOfTheDayPolicyTypeConfigurationMotd) UnsetFullPage()`
+
+UnsetFullPage ensures that no value is present for FullPage, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

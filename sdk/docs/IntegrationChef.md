@@ -13,10 +13,10 @@ Name | Type | Description | Notes
 **IsPlugin** | Pointer to **bool** |  | [optional] 
 **Config** | Pointer to [**ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config**](ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config.md) |  | [optional] 
 **Status** | Pointer to **string** |  | [optional] 
-**StatusDate** | Pointer to **time.Time** |  | [optional] 
-**StatusMessage** | Pointer to **string** |  | [optional] 
-**LastSync** | Pointer to **string** |  | [optional] 
-**LastSyncDuration** | Pointer to **string** |  | [optional] 
+**StatusDate** | Pointer to **NullableTime** |  | [optional] 
+**StatusMessage** | Pointer to **NullableString** |  | [optional] 
+**LastSync** | Pointer to **NullableString** |  | [optional] 
+**LastSyncDuration** | Pointer to **NullableString** |  | [optional] 
 **Credential** | Pointer to [**ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential**](ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential.md) |  | [optional] 
 
 ## Methods
@@ -288,6 +288,16 @@ SetStatusDate sets StatusDate field to given value.
 
 HasStatusDate returns a boolean if a field has been set.
 
+### SetStatusDateNil
+
+`func (o *IntegrationChef) SetStatusDateNil(b bool)`
+
+ SetStatusDateNil sets the value for StatusDate to be an explicit nil
+
+### UnsetStatusDate
+`func (o *IntegrationChef) UnsetStatusDate()`
+
+UnsetStatusDate ensures that no value is present for StatusDate, not even an explicit nil
 ### GetStatusMessage
 
 `func (o *IntegrationChef) GetStatusMessage() string`
@@ -313,6 +323,16 @@ SetStatusMessage sets StatusMessage field to given value.
 
 HasStatusMessage returns a boolean if a field has been set.
 
+### SetStatusMessageNil
+
+`func (o *IntegrationChef) SetStatusMessageNil(b bool)`
+
+ SetStatusMessageNil sets the value for StatusMessage to be an explicit nil
+
+### UnsetStatusMessage
+`func (o *IntegrationChef) UnsetStatusMessage()`
+
+UnsetStatusMessage ensures that no value is present for StatusMessage, not even an explicit nil
 ### GetLastSync
 
 `func (o *IntegrationChef) GetLastSync() string`
@@ -338,6 +358,16 @@ SetLastSync sets LastSync field to given value.
 
 HasLastSync returns a boolean if a field has been set.
 
+### SetLastSyncNil
+
+`func (o *IntegrationChef) SetLastSyncNil(b bool)`
+
+ SetLastSyncNil sets the value for LastSync to be an explicit nil
+
+### UnsetLastSync
+`func (o *IntegrationChef) UnsetLastSync()`
+
+UnsetLastSync ensures that no value is present for LastSync, not even an explicit nil
 ### GetLastSyncDuration
 
 `func (o *IntegrationChef) GetLastSyncDuration() string`
@@ -363,6 +393,16 @@ SetLastSyncDuration sets LastSyncDuration field to given value.
 
 HasLastSyncDuration returns a boolean if a field has been set.
 
+### SetLastSyncDurationNil
+
+`func (o *IntegrationChef) SetLastSyncDurationNil(b bool)`
+
+ SetLastSyncDurationNil sets the value for LastSyncDuration to be an explicit nil
+
+### UnsetLastSyncDuration
+`func (o *IntegrationChef) UnsetLastSyncDuration()`
+
+UnsetLastSyncDuration ensures that no value is present for LastSyncDuration, not even an explicit nil
 ### GetCredential
 
 `func (o *IntegrationChef) GetCredential() ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential`

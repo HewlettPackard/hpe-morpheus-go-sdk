@@ -8,10 +8,10 @@ Name | Type | Description | Notes
 **Price** | Pointer to **float32** |  | [optional] 
 **CreatedByUser** | Pointer to **string** |  | [optional] 
 **CreatedByUserId** | Pointer to **int64** |  | [optional] 
-**SiteId** | Pointer to **string** |  | [optional] 
-**SiteName** | Pointer to **string** |  | [optional] 
-**SiteUUID** | Pointer to **string** |  | [optional] 
-**SiteCode** | Pointer to **string** |  | [optional] 
+**SiteId** | Pointer to **NullableString** |  | [optional] 
+**SiteName** | Pointer to **NullableString** |  | [optional] 
+**SiteUUID** | Pointer to **NullableString** |  | [optional] 
+**SiteCode** | Pointer to **NullableString** |  | [optional] 
 **Currency** | Pointer to **string** |  | [optional] 
 **StartDate** | Pointer to **time.Time** |  | [optional] 
 **EndDate** | Pointer to **time.Time** |  | [optional] 
@@ -167,6 +167,16 @@ SetSiteId sets SiteId field to given value.
 
 HasSiteId returns a boolean if a field has been set.
 
+### SetSiteIdNil
+
+`func (o *GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInner) SetSiteIdNil(b bool)`
+
+ SetSiteIdNil sets the value for SiteId to be an explicit nil
+
+### UnsetSiteId
+`func (o *GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInner) UnsetSiteId()`
+
+UnsetSiteId ensures that no value is present for SiteId, not even an explicit nil
 ### GetSiteName
 
 `func (o *GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInner) GetSiteName() string`
@@ -192,6 +202,16 @@ SetSiteName sets SiteName field to given value.
 
 HasSiteName returns a boolean if a field has been set.
 
+### SetSiteNameNil
+
+`func (o *GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInner) SetSiteNameNil(b bool)`
+
+ SetSiteNameNil sets the value for SiteName to be an explicit nil
+
+### UnsetSiteName
+`func (o *GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInner) UnsetSiteName()`
+
+UnsetSiteName ensures that no value is present for SiteName, not even an explicit nil
 ### GetSiteUUID
 
 `func (o *GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInner) GetSiteUUID() string`
@@ -217,6 +237,16 @@ SetSiteUUID sets SiteUUID field to given value.
 
 HasSiteUUID returns a boolean if a field has been set.
 
+### SetSiteUUIDNil
+
+`func (o *GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInner) SetSiteUUIDNil(b bool)`
+
+ SetSiteUUIDNil sets the value for SiteUUID to be an explicit nil
+
+### UnsetSiteUUID
+`func (o *GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInner) UnsetSiteUUID()`
+
+UnsetSiteUUID ensures that no value is present for SiteUUID, not even an explicit nil
 ### GetSiteCode
 
 `func (o *GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInner) GetSiteCode() string`
@@ -242,6 +272,16 @@ SetSiteCode sets SiteCode field to given value.
 
 HasSiteCode returns a boolean if a field has been set.
 
+### SetSiteCodeNil
+
+`func (o *GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInner) SetSiteCodeNil(b bool)`
+
+ SetSiteCodeNil sets the value for SiteCode to be an explicit nil
+
+### UnsetSiteCode
+`func (o *GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInner) UnsetSiteCode()`
+
+UnsetSiteCode ensures that no value is present for SiteCode, not even an explicit nil
 ### GetCurrency
 
 `func (o *GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInner) GetCurrency() string`

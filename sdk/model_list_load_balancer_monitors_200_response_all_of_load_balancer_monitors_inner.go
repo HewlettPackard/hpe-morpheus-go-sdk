@@ -24,40 +24,40 @@ type ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner struct {
 	Id                   *int64                                                                         `json:"id,omitempty"`
 	LoadBalancer         *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerLoadBalancer `json:"loadBalancer,omitempty"`
 	Name                 *string                                                                        `json:"name,omitempty"`
-	Code                 *string                                                                        `json:"code,omitempty"`
-	Category             *string                                                                        `json:"category,omitempty"`
+	Code                 NullableString                                                                 `json:"code,omitempty"`
+	Category             NullableString                                                                 `json:"category,omitempty"`
 	Visibility           *string                                                                        `json:"visibility,omitempty"`
 	Description          *string                                                                        `json:"description,omitempty"`
 	MonitorType          *string                                                                        `json:"monitorType,omitempty"`
 	MonitorInterval      *int64                                                                         `json:"monitorInterval,omitempty"`
 	MonitorTimeout       *int64                                                                         `json:"monitorTimeout,omitempty"`
-	SendData             *string                                                                        `json:"sendData,omitempty"`
+	SendData             NullableString                                                                 `json:"sendData,omitempty"`
 	SendVersion          *string                                                                        `json:"sendVersion,omitempty"`
 	SendType             *string                                                                        `json:"sendType,omitempty"`
-	ReceiveData          *string                                                                        `json:"receiveData,omitempty"`
+	ReceiveData          NullableString                                                                 `json:"receiveData,omitempty"`
 	ReceiveCode          *string                                                                        `json:"receiveCode,omitempty"`
-	DisabledData         *string                                                                        `json:"disabledData,omitempty"`
-	MonitorUsername      *string                                                                        `json:"monitorUsername,omitempty"`
-	MonitorPassword      *string                                                                        `json:"monitorPassword,omitempty"`
+	DisabledData         NullableString                                                                 `json:"disabledData,omitempty"`
+	MonitorUsername      NullableString                                                                 `json:"monitorUsername,omitempty"`
+	MonitorPassword      NullableString                                                                 `json:"monitorPassword,omitempty"`
 	MonitorDestination   *string                                                                        `json:"monitorDestination,omitempty"`
 	MonitorReverse       *bool                                                                          `json:"monitorReverse,omitempty"`
 	MonitorTransparent   *bool                                                                          `json:"monitorTransparent,omitempty"`
 	MonitorAdaptive      *bool                                                                          `json:"monitorAdaptive,omitempty"`
-	AliasAddress         *string                                                                        `json:"aliasAddress,omitempty"`
+	AliasAddress         NullableString                                                                 `json:"aliasAddress,omitempty"`
 	AliasPort            *int64                                                                         `json:"aliasPort,omitempty"`
 	InternalId           *string                                                                        `json:"internalId,omitempty"`
 	ExternalId           *string                                                                        `json:"externalId,omitempty"`
 	MonitorSource        *string                                                                        `json:"monitorSource,omitempty"`
 	Status               *string                                                                        `json:"status,omitempty"`
-	StatusMessage        *string                                                                        `json:"statusMessage,omitempty"`
-	StatusDate           *time.Time                                                                     `json:"statusDate,omitempty"`
+	StatusMessage        NullableString                                                                 `json:"statusMessage,omitempty"`
+	StatusDate           NullableTime                                                                   `json:"statusDate,omitempty"`
 	Enabled              *bool                                                                          `json:"enabled,omitempty"`
 	MaxRetry             *int64                                                                         `json:"maxRetry,omitempty"`
 	FallCount            *int64                                                                         `json:"fallCount,omitempty"`
 	RiseCount            *int64                                                                         `json:"riseCount,omitempty"`
-	DataLength           *string                                                                        `json:"dataLength,omitempty"`
+	DataLength           NullableString                                                                 `json:"dataLength,omitempty"`
 	Config               map[string]interface{}                                                         `json:"config,omitempty"`
-	CreatedBy            *string                                                                        `json:"createdBy,omitempty"`
+	CreatedBy            NullableString                                                                 `json:"createdBy,omitempty"`
 	DateCreated          *time.Time                                                                     `json:"dateCreated,omitempty"`
 	LastUpdated          *time.Time                                                                     `json:"lastUpdated,omitempty"`
 	AdditionalProperties map[string]interface{}                                                         `json:",remain"`
@@ -178,68 +178,90 @@ func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) SetN
 	o.Name = &v
 }
 
-// GetCode returns the Code field value if set, zero value otherwise.
+// GetCode returns the Code field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) GetCode() string {
-	if o == nil || IsNil(o.Code) {
+	if o == nil || IsNil(o.Code.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Code
+	return *o.Code.Get()
 }
 
 // GetCodeOk returns a tuple with the Code field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) GetCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.Code) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Code, true
+	return o.Code.Get(), o.Code.IsSet()
 }
 
 // IsSetCode returns a boolean if a field has been set.
 func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
+	if o != nil && o.Code.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCode gets a reference to the given string and assigns it to the Code field.
+// SetCode gets a reference to the given NullableString and assigns it to the Code field.
 func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) SetCode(v string) {
-	o.Code = &v
+	o.Code.Set(&v)
 }
 
-// GetCategory returns the Category field value if set, zero value otherwise.
+// SetCodeNil sets the value for Code to be an explicit nil
+func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) SetCodeNil() {
+	o.Code.Set(nil)
+}
+
+// UnsetCode ensures that no value is present for Code, not even an explicit nil
+func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) UnsetCode() {
+	o.Code.Unset()
+}
+
+// GetCategory returns the Category field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) GetCategory() string {
-	if o == nil || IsNil(o.Category) {
+	if o == nil || IsNil(o.Category.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Category
+	return *o.Category.Get()
 }
 
 // GetCategoryOk returns a tuple with the Category field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) GetCategoryOk() (*string, bool) {
-	if o == nil || IsNil(o.Category) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Category, true
+	return o.Category.Get(), o.Category.IsSet()
 }
 
 // IsSetCategory returns a boolean if a field has been set.
 func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) IsSetCategory() bool {
-	if o != nil && !IsNil(o.Category) {
+	if o != nil && o.Category.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCategory gets a reference to the given string and assigns it to the Category field.
+// SetCategory gets a reference to the given NullableString and assigns it to the Category field.
 func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) SetCategory(v string) {
-	o.Category = &v
+	o.Category.Set(&v)
+}
+
+// SetCategoryNil sets the value for Category to be an explicit nil
+func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) SetCategoryNil() {
+	o.Category.Set(nil)
+}
+
+// UnsetCategory ensures that no value is present for Category, not even an explicit nil
+func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) UnsetCategory() {
+	o.Category.Unset()
 }
 
 // GetVisibility returns the Visibility field value if set, zero value otherwise.
@@ -402,36 +424,47 @@ func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) SetM
 	o.MonitorTimeout = &v
 }
 
-// GetSendData returns the SendData field value if set, zero value otherwise.
+// GetSendData returns the SendData field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) GetSendData() string {
-	if o == nil || IsNil(o.SendData) {
+	if o == nil || IsNil(o.SendData.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.SendData
+	return *o.SendData.Get()
 }
 
 // GetSendDataOk returns a tuple with the SendData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) GetSendDataOk() (*string, bool) {
-	if o == nil || IsNil(o.SendData) {
+	if o == nil {
 		return nil, false
 	}
-	return o.SendData, true
+	return o.SendData.Get(), o.SendData.IsSet()
 }
 
 // IsSetSendData returns a boolean if a field has been set.
 func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) IsSetSendData() bool {
-	if o != nil && !IsNil(o.SendData) {
+	if o != nil && o.SendData.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetSendData gets a reference to the given string and assigns it to the SendData field.
+// SetSendData gets a reference to the given NullableString and assigns it to the SendData field.
 func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) SetSendData(v string) {
-	o.SendData = &v
+	o.SendData.Set(&v)
+}
+
+// SetSendDataNil sets the value for SendData to be an explicit nil
+func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) SetSendDataNil() {
+	o.SendData.Set(nil)
+}
+
+// UnsetSendData ensures that no value is present for SendData, not even an explicit nil
+func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) UnsetSendData() {
+	o.SendData.Unset()
 }
 
 // GetSendVersion returns the SendVersion field value if set, zero value otherwise.
@@ -498,36 +531,47 @@ func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) SetS
 	o.SendType = &v
 }
 
-// GetReceiveData returns the ReceiveData field value if set, zero value otherwise.
+// GetReceiveData returns the ReceiveData field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) GetReceiveData() string {
-	if o == nil || IsNil(o.ReceiveData) {
+	if o == nil || IsNil(o.ReceiveData.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ReceiveData
+	return *o.ReceiveData.Get()
 }
 
 // GetReceiveDataOk returns a tuple with the ReceiveData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) GetReceiveDataOk() (*string, bool) {
-	if o == nil || IsNil(o.ReceiveData) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ReceiveData, true
+	return o.ReceiveData.Get(), o.ReceiveData.IsSet()
 }
 
 // IsSetReceiveData returns a boolean if a field has been set.
 func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) IsSetReceiveData() bool {
-	if o != nil && !IsNil(o.ReceiveData) {
+	if o != nil && o.ReceiveData.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetReceiveData gets a reference to the given string and assigns it to the ReceiveData field.
+// SetReceiveData gets a reference to the given NullableString and assigns it to the ReceiveData field.
 func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) SetReceiveData(v string) {
-	o.ReceiveData = &v
+	o.ReceiveData.Set(&v)
+}
+
+// SetReceiveDataNil sets the value for ReceiveData to be an explicit nil
+func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) SetReceiveDataNil() {
+	o.ReceiveData.Set(nil)
+}
+
+// UnsetReceiveData ensures that no value is present for ReceiveData, not even an explicit nil
+func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) UnsetReceiveData() {
+	o.ReceiveData.Unset()
 }
 
 // GetReceiveCode returns the ReceiveCode field value if set, zero value otherwise.
@@ -562,100 +606,133 @@ func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) SetR
 	o.ReceiveCode = &v
 }
 
-// GetDisabledData returns the DisabledData field value if set, zero value otherwise.
+// GetDisabledData returns the DisabledData field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) GetDisabledData() string {
-	if o == nil || IsNil(o.DisabledData) {
+	if o == nil || IsNil(o.DisabledData.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.DisabledData
+	return *o.DisabledData.Get()
 }
 
 // GetDisabledDataOk returns a tuple with the DisabledData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) GetDisabledDataOk() (*string, bool) {
-	if o == nil || IsNil(o.DisabledData) {
+	if o == nil {
 		return nil, false
 	}
-	return o.DisabledData, true
+	return o.DisabledData.Get(), o.DisabledData.IsSet()
 }
 
 // IsSetDisabledData returns a boolean if a field has been set.
 func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) IsSetDisabledData() bool {
-	if o != nil && !IsNil(o.DisabledData) {
+	if o != nil && o.DisabledData.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDisabledData gets a reference to the given string and assigns it to the DisabledData field.
+// SetDisabledData gets a reference to the given NullableString and assigns it to the DisabledData field.
 func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) SetDisabledData(v string) {
-	o.DisabledData = &v
+	o.DisabledData.Set(&v)
 }
 
-// GetMonitorUsername returns the MonitorUsername field value if set, zero value otherwise.
+// SetDisabledDataNil sets the value for DisabledData to be an explicit nil
+func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) SetDisabledDataNil() {
+	o.DisabledData.Set(nil)
+}
+
+// UnsetDisabledData ensures that no value is present for DisabledData, not even an explicit nil
+func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) UnsetDisabledData() {
+	o.DisabledData.Unset()
+}
+
+// GetMonitorUsername returns the MonitorUsername field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) GetMonitorUsername() string {
-	if o == nil || IsNil(o.MonitorUsername) {
+	if o == nil || IsNil(o.MonitorUsername.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.MonitorUsername
+	return *o.MonitorUsername.Get()
 }
 
 // GetMonitorUsernameOk returns a tuple with the MonitorUsername field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) GetMonitorUsernameOk() (*string, bool) {
-	if o == nil || IsNil(o.MonitorUsername) {
+	if o == nil {
 		return nil, false
 	}
-	return o.MonitorUsername, true
+	return o.MonitorUsername.Get(), o.MonitorUsername.IsSet()
 }
 
 // IsSetMonitorUsername returns a boolean if a field has been set.
 func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) IsSetMonitorUsername() bool {
-	if o != nil && !IsNil(o.MonitorUsername) {
+	if o != nil && o.MonitorUsername.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetMonitorUsername gets a reference to the given string and assigns it to the MonitorUsername field.
+// SetMonitorUsername gets a reference to the given NullableString and assigns it to the MonitorUsername field.
 func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) SetMonitorUsername(v string) {
-	o.MonitorUsername = &v
+	o.MonitorUsername.Set(&v)
 }
 
-// GetMonitorPassword returns the MonitorPassword field value if set, zero value otherwise.
+// SetMonitorUsernameNil sets the value for MonitorUsername to be an explicit nil
+func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) SetMonitorUsernameNil() {
+	o.MonitorUsername.Set(nil)
+}
+
+// UnsetMonitorUsername ensures that no value is present for MonitorUsername, not even an explicit nil
+func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) UnsetMonitorUsername() {
+	o.MonitorUsername.Unset()
+}
+
+// GetMonitorPassword returns the MonitorPassword field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) GetMonitorPassword() string {
-	if o == nil || IsNil(o.MonitorPassword) {
+	if o == nil || IsNil(o.MonitorPassword.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.MonitorPassword
+	return *o.MonitorPassword.Get()
 }
 
 // GetMonitorPasswordOk returns a tuple with the MonitorPassword field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) GetMonitorPasswordOk() (*string, bool) {
-	if o == nil || IsNil(o.MonitorPassword) {
+	if o == nil {
 		return nil, false
 	}
-	return o.MonitorPassword, true
+	return o.MonitorPassword.Get(), o.MonitorPassword.IsSet()
 }
 
 // IsSetMonitorPassword returns a boolean if a field has been set.
 func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) IsSetMonitorPassword() bool {
-	if o != nil && !IsNil(o.MonitorPassword) {
+	if o != nil && o.MonitorPassword.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetMonitorPassword gets a reference to the given string and assigns it to the MonitorPassword field.
+// SetMonitorPassword gets a reference to the given NullableString and assigns it to the MonitorPassword field.
 func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) SetMonitorPassword(v string) {
-	o.MonitorPassword = &v
+	o.MonitorPassword.Set(&v)
+}
+
+// SetMonitorPasswordNil sets the value for MonitorPassword to be an explicit nil
+func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) SetMonitorPasswordNil() {
+	o.MonitorPassword.Set(nil)
+}
+
+// UnsetMonitorPassword ensures that no value is present for MonitorPassword, not even an explicit nil
+func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) UnsetMonitorPassword() {
+	o.MonitorPassword.Unset()
 }
 
 // GetMonitorDestination returns the MonitorDestination field value if set, zero value otherwise.
@@ -786,36 +863,47 @@ func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) SetM
 	o.MonitorAdaptive = &v
 }
 
-// GetAliasAddress returns the AliasAddress field value if set, zero value otherwise.
+// GetAliasAddress returns the AliasAddress field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) GetAliasAddress() string {
-	if o == nil || IsNil(o.AliasAddress) {
+	if o == nil || IsNil(o.AliasAddress.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.AliasAddress
+	return *o.AliasAddress.Get()
 }
 
 // GetAliasAddressOk returns a tuple with the AliasAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) GetAliasAddressOk() (*string, bool) {
-	if o == nil || IsNil(o.AliasAddress) {
+	if o == nil {
 		return nil, false
 	}
-	return o.AliasAddress, true
+	return o.AliasAddress.Get(), o.AliasAddress.IsSet()
 }
 
 // IsSetAliasAddress returns a boolean if a field has been set.
 func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) IsSetAliasAddress() bool {
-	if o != nil && !IsNil(o.AliasAddress) {
+	if o != nil && o.AliasAddress.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetAliasAddress gets a reference to the given string and assigns it to the AliasAddress field.
+// SetAliasAddress gets a reference to the given NullableString and assigns it to the AliasAddress field.
 func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) SetAliasAddress(v string) {
-	o.AliasAddress = &v
+	o.AliasAddress.Set(&v)
+}
+
+// SetAliasAddressNil sets the value for AliasAddress to be an explicit nil
+func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) SetAliasAddressNil() {
+	o.AliasAddress.Set(nil)
+}
+
+// UnsetAliasAddress ensures that no value is present for AliasAddress, not even an explicit nil
+func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) UnsetAliasAddress() {
+	o.AliasAddress.Unset()
 }
 
 // GetAliasPort returns the AliasPort field value if set, zero value otherwise.
@@ -978,68 +1066,90 @@ func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) SetS
 	o.Status = &v
 }
 
-// GetStatusMessage returns the StatusMessage field value if set, zero value otherwise.
+// GetStatusMessage returns the StatusMessage field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) GetStatusMessage() string {
-	if o == nil || IsNil(o.StatusMessage) {
+	if o == nil || IsNil(o.StatusMessage.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.StatusMessage
+	return *o.StatusMessage.Get()
 }
 
 // GetStatusMessageOk returns a tuple with the StatusMessage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) GetStatusMessageOk() (*string, bool) {
-	if o == nil || IsNil(o.StatusMessage) {
+	if o == nil {
 		return nil, false
 	}
-	return o.StatusMessage, true
+	return o.StatusMessage.Get(), o.StatusMessage.IsSet()
 }
 
 // IsSetStatusMessage returns a boolean if a field has been set.
 func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) IsSetStatusMessage() bool {
-	if o != nil && !IsNil(o.StatusMessage) {
+	if o != nil && o.StatusMessage.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetStatusMessage gets a reference to the given string and assigns it to the StatusMessage field.
+// SetStatusMessage gets a reference to the given NullableString and assigns it to the StatusMessage field.
 func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) SetStatusMessage(v string) {
-	o.StatusMessage = &v
+	o.StatusMessage.Set(&v)
 }
 
-// GetStatusDate returns the StatusDate field value if set, zero value otherwise.
+// SetStatusMessageNil sets the value for StatusMessage to be an explicit nil
+func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) SetStatusMessageNil() {
+	o.StatusMessage.Set(nil)
+}
+
+// UnsetStatusMessage ensures that no value is present for StatusMessage, not even an explicit nil
+func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) UnsetStatusMessage() {
+	o.StatusMessage.Unset()
+}
+
+// GetStatusDate returns the StatusDate field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) GetStatusDate() time.Time {
-	if o == nil || IsNil(o.StatusDate) {
+	if o == nil || IsNil(o.StatusDate.Get()) {
 		var ret time.Time
 		return ret
 	}
-	return *o.StatusDate
+	return *o.StatusDate.Get()
 }
 
 // GetStatusDateOk returns a tuple with the StatusDate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) GetStatusDateOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.StatusDate) {
+	if o == nil {
 		return nil, false
 	}
-	return o.StatusDate, true
+	return o.StatusDate.Get(), o.StatusDate.IsSet()
 }
 
 // IsSetStatusDate returns a boolean if a field has been set.
 func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) IsSetStatusDate() bool {
-	if o != nil && !IsNil(o.StatusDate) {
+	if o != nil && o.StatusDate.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetStatusDate gets a reference to the given time.Time and assigns it to the StatusDate field.
+// SetStatusDate gets a reference to the given NullableTime and assigns it to the StatusDate field.
 func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) SetStatusDate(v time.Time) {
-	o.StatusDate = &v
+	o.StatusDate.Set(&v)
+}
+
+// SetStatusDateNil sets the value for StatusDate to be an explicit nil
+func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) SetStatusDateNil() {
+	o.StatusDate.Set(nil)
+}
+
+// UnsetStatusDate ensures that no value is present for StatusDate, not even an explicit nil
+func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) UnsetStatusDate() {
+	o.StatusDate.Unset()
 }
 
 // GetEnabled returns the Enabled field value if set, zero value otherwise.
@@ -1170,36 +1280,47 @@ func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) SetR
 	o.RiseCount = &v
 }
 
-// GetDataLength returns the DataLength field value if set, zero value otherwise.
+// GetDataLength returns the DataLength field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) GetDataLength() string {
-	if o == nil || IsNil(o.DataLength) {
+	if o == nil || IsNil(o.DataLength.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.DataLength
+	return *o.DataLength.Get()
 }
 
 // GetDataLengthOk returns a tuple with the DataLength field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) GetDataLengthOk() (*string, bool) {
-	if o == nil || IsNil(o.DataLength) {
+	if o == nil {
 		return nil, false
 	}
-	return o.DataLength, true
+	return o.DataLength.Get(), o.DataLength.IsSet()
 }
 
 // IsSetDataLength returns a boolean if a field has been set.
 func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) IsSetDataLength() bool {
-	if o != nil && !IsNil(o.DataLength) {
+	if o != nil && o.DataLength.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDataLength gets a reference to the given string and assigns it to the DataLength field.
+// SetDataLength gets a reference to the given NullableString and assigns it to the DataLength field.
 func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) SetDataLength(v string) {
-	o.DataLength = &v
+	o.DataLength.Set(&v)
+}
+
+// SetDataLengthNil sets the value for DataLength to be an explicit nil
+func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) SetDataLengthNil() {
+	o.DataLength.Set(nil)
+}
+
+// UnsetDataLength ensures that no value is present for DataLength, not even an explicit nil
+func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) UnsetDataLength() {
+	o.DataLength.Unset()
 }
 
 // GetConfig returns the Config field value if set, zero value otherwise.
@@ -1234,36 +1355,47 @@ func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) SetC
 	o.Config = v
 }
 
-// GetCreatedBy returns the CreatedBy field value if set, zero value otherwise.
+// GetCreatedBy returns the CreatedBy field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) GetCreatedBy() string {
-	if o == nil || IsNil(o.CreatedBy) {
+	if o == nil || IsNil(o.CreatedBy.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.CreatedBy
+	return *o.CreatedBy.Get()
 }
 
 // GetCreatedByOk returns a tuple with the CreatedBy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) GetCreatedByOk() (*string, bool) {
-	if o == nil || IsNil(o.CreatedBy) {
+	if o == nil {
 		return nil, false
 	}
-	return o.CreatedBy, true
+	return o.CreatedBy.Get(), o.CreatedBy.IsSet()
 }
 
 // IsSetCreatedBy returns a boolean if a field has been set.
 func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) IsSetCreatedBy() bool {
-	if o != nil && !IsNil(o.CreatedBy) {
+	if o != nil && o.CreatedBy.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCreatedBy gets a reference to the given string and assigns it to the CreatedBy field.
+// SetCreatedBy gets a reference to the given NullableString and assigns it to the CreatedBy field.
 func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) SetCreatedBy(v string) {
-	o.CreatedBy = &v
+	o.CreatedBy.Set(&v)
+}
+
+// SetCreatedByNil sets the value for CreatedBy to be an explicit nil
+func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) SetCreatedByNil() {
+	o.CreatedBy.Set(nil)
+}
+
+// UnsetCreatedBy ensures that no value is present for CreatedBy, not even an explicit nil
+func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) UnsetCreatedBy() {
+	o.CreatedBy.Unset()
 }
 
 // GetDateCreated returns the DateCreated field value if set, zero value otherwise.
@@ -1349,11 +1481,11 @@ func (o ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) ToMap
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !IsNil(o.Code) {
-		toSerialize["code"] = o.Code
+	if o.Code.IsSet() {
+		toSerialize["code"] = o.Code.Get()
 	}
-	if !IsNil(o.Category) {
-		toSerialize["category"] = o.Category
+	if o.Category.IsSet() {
+		toSerialize["category"] = o.Category.Get()
 	}
 	if !IsNil(o.Visibility) {
 		toSerialize["visibility"] = o.Visibility
@@ -1370,8 +1502,8 @@ func (o ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) ToMap
 	if !IsNil(o.MonitorTimeout) {
 		toSerialize["monitorTimeout"] = o.MonitorTimeout
 	}
-	if !IsNil(o.SendData) {
-		toSerialize["sendData"] = o.SendData
+	if o.SendData.IsSet() {
+		toSerialize["sendData"] = o.SendData.Get()
 	}
 	if !IsNil(o.SendVersion) {
 		toSerialize["sendVersion"] = o.SendVersion
@@ -1379,20 +1511,20 @@ func (o ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) ToMap
 	if !IsNil(o.SendType) {
 		toSerialize["sendType"] = o.SendType
 	}
-	if !IsNil(o.ReceiveData) {
-		toSerialize["receiveData"] = o.ReceiveData
+	if o.ReceiveData.IsSet() {
+		toSerialize["receiveData"] = o.ReceiveData.Get()
 	}
 	if !IsNil(o.ReceiveCode) {
 		toSerialize["receiveCode"] = o.ReceiveCode
 	}
-	if !IsNil(o.DisabledData) {
-		toSerialize["disabledData"] = o.DisabledData
+	if o.DisabledData.IsSet() {
+		toSerialize["disabledData"] = o.DisabledData.Get()
 	}
-	if !IsNil(o.MonitorUsername) {
-		toSerialize["monitorUsername"] = o.MonitorUsername
+	if o.MonitorUsername.IsSet() {
+		toSerialize["monitorUsername"] = o.MonitorUsername.Get()
 	}
-	if !IsNil(o.MonitorPassword) {
-		toSerialize["monitorPassword"] = o.MonitorPassword
+	if o.MonitorPassword.IsSet() {
+		toSerialize["monitorPassword"] = o.MonitorPassword.Get()
 	}
 	if !IsNil(o.MonitorDestination) {
 		toSerialize["monitorDestination"] = o.MonitorDestination
@@ -1406,8 +1538,8 @@ func (o ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) ToMap
 	if !IsNil(o.MonitorAdaptive) {
 		toSerialize["monitorAdaptive"] = o.MonitorAdaptive
 	}
-	if !IsNil(o.AliasAddress) {
-		toSerialize["aliasAddress"] = o.AliasAddress
+	if o.AliasAddress.IsSet() {
+		toSerialize["aliasAddress"] = o.AliasAddress.Get()
 	}
 	if !IsNil(o.AliasPort) {
 		toSerialize["aliasPort"] = o.AliasPort
@@ -1424,11 +1556,11 @@ func (o ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) ToMap
 	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status
 	}
-	if !IsNil(o.StatusMessage) {
-		toSerialize["statusMessage"] = o.StatusMessage
+	if o.StatusMessage.IsSet() {
+		toSerialize["statusMessage"] = o.StatusMessage.Get()
 	}
-	if !IsNil(o.StatusDate) {
-		toSerialize["statusDate"] = o.StatusDate
+	if o.StatusDate.IsSet() {
+		toSerialize["statusDate"] = o.StatusDate.Get()
 	}
 	if !IsNil(o.Enabled) {
 		toSerialize["enabled"] = o.Enabled
@@ -1442,14 +1574,14 @@ func (o ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) ToMap
 	if !IsNil(o.RiseCount) {
 		toSerialize["riseCount"] = o.RiseCount
 	}
-	if !IsNil(o.DataLength) {
-		toSerialize["dataLength"] = o.DataLength
+	if o.DataLength.IsSet() {
+		toSerialize["dataLength"] = o.DataLength.Get()
 	}
 	if !IsNil(o.Config) {
 		toSerialize["config"] = o.Config
 	}
-	if !IsNil(o.CreatedBy) {
-		toSerialize["createdBy"] = o.CreatedBy
+	if o.CreatedBy.IsSet() {
+		toSerialize["createdBy"] = o.CreatedBy.Get()
 	}
 	if !IsNil(o.DateCreated) {
 		toSerialize["dateCreated"] = o.DateCreated

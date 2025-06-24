@@ -20,9 +20,9 @@ var _ MappedNullable = &ListClusterContainers200ResponseAllOfContainersInnerCont
 
 // ListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet struct for ListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet
 type ListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet struct {
-	Id                   *string                `json:"id,omitempty"`
-	Code                 *string                `json:"code,omitempty"`
-	Category             *string                `json:"category,omitempty"`
+	Id                   NullableString         `json:"id,omitempty"`
+	Code                 NullableString         `json:"code,omitempty"`
+	Category             NullableString         `json:"category,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -45,100 +45,133 @@ func NewListClusterContainers200ResponseAllOfContainersInnerContainerTypeSetWith
 	return &this
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
+// GetId returns the Id field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet) GetId() string {
-	if o == nil || IsNil(o.Id) {
+	if o == nil || IsNil(o.Id.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Id
+	return *o.Id.Get()
 }
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet) GetIdOk() (*string, bool) {
-	if o == nil || IsNil(o.Id) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Id, true
+	return o.Id.Get(), o.Id.IsSet()
 }
 
 // IsSetId returns a boolean if a field has been set.
 func (o *ListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
+	if o != nil && o.Id.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetId gets a reference to the given string and assigns it to the Id field.
+// SetId gets a reference to the given NullableString and assigns it to the Id field.
 func (o *ListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet) SetId(v string) {
-	o.Id = &v
+	o.Id.Set(&v)
 }
 
-// GetCode returns the Code field value if set, zero value otherwise.
+// SetIdNil sets the value for Id to be an explicit nil
+func (o *ListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet) SetIdNil() {
+	o.Id.Set(nil)
+}
+
+// UnsetId ensures that no value is present for Id, not even an explicit nil
+func (o *ListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet) UnsetId() {
+	o.Id.Unset()
+}
+
+// GetCode returns the Code field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet) GetCode() string {
-	if o == nil || IsNil(o.Code) {
+	if o == nil || IsNil(o.Code.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Code
+	return *o.Code.Get()
 }
 
 // GetCodeOk returns a tuple with the Code field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet) GetCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.Code) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Code, true
+	return o.Code.Get(), o.Code.IsSet()
 }
 
 // IsSetCode returns a boolean if a field has been set.
 func (o *ListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
+	if o != nil && o.Code.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCode gets a reference to the given string and assigns it to the Code field.
+// SetCode gets a reference to the given NullableString and assigns it to the Code field.
 func (o *ListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet) SetCode(v string) {
-	o.Code = &v
+	o.Code.Set(&v)
 }
 
-// GetCategory returns the Category field value if set, zero value otherwise.
+// SetCodeNil sets the value for Code to be an explicit nil
+func (o *ListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet) SetCodeNil() {
+	o.Code.Set(nil)
+}
+
+// UnsetCode ensures that no value is present for Code, not even an explicit nil
+func (o *ListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet) UnsetCode() {
+	o.Code.Unset()
+}
+
+// GetCategory returns the Category field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet) GetCategory() string {
-	if o == nil || IsNil(o.Category) {
+	if o == nil || IsNil(o.Category.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Category
+	return *o.Category.Get()
 }
 
 // GetCategoryOk returns a tuple with the Category field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet) GetCategoryOk() (*string, bool) {
-	if o == nil || IsNil(o.Category) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Category, true
+	return o.Category.Get(), o.Category.IsSet()
 }
 
 // IsSetCategory returns a boolean if a field has been set.
 func (o *ListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet) IsSetCategory() bool {
-	if o != nil && !IsNil(o.Category) {
+	if o != nil && o.Category.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCategory gets a reference to the given string and assigns it to the Category field.
+// SetCategory gets a reference to the given NullableString and assigns it to the Category field.
 func (o *ListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet) SetCategory(v string) {
-	o.Category = &v
+	o.Category.Set(&v)
+}
+
+// SetCategoryNil sets the value for Category to be an explicit nil
+func (o *ListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet) SetCategoryNil() {
+	o.Category.Set(nil)
+}
+
+// UnsetCategory ensures that no value is present for Category, not even an explicit nil
+func (o *ListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet) UnsetCategory() {
+	o.Category.Unset()
 }
 
 func (o ListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet) MarshalJSON() ([]byte, error) {
@@ -151,14 +184,14 @@ func (o ListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet) Ma
 
 func (o ListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Id) {
-		toSerialize["id"] = o.Id
+	if o.Id.IsSet() {
+		toSerialize["id"] = o.Id.Get()
 	}
-	if !IsNil(o.Code) {
-		toSerialize["code"] = o.Code
+	if o.Code.IsSet() {
+		toSerialize["code"] = o.Code.Get()
 	}
-	if !IsNil(o.Category) {
-		toSerialize["category"] = o.Category
+	if o.Category.IsSet() {
+		toSerialize["category"] = o.Category.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {

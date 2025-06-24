@@ -25,7 +25,7 @@ type AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20 struct {
 	Motd                 *MessageOfTheDayPolicyTypeConfigurationMotd `json:"motd,omitempty"`
 	MotdMessage          *string                                     `json:"motd.message,omitempty"`
 	MotdType             *string                                     `json:"motd.type,omitempty"`
-	MotdFullPage         *bool                                       `json:"motd._fullPage,omitempty"`
+	MotdFullPage         NullableBool                                `json:"motd._fullPage,omitempty"`
 	MotdDate             *time.Time                                  `json:"motd.date,omitempty"`
 	AdditionalProperties map[string]interface{}                      `json:",remain"`
 }
@@ -177,36 +177,47 @@ func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20) SetMotdType(v str
 	o.MotdType = &v
 }
 
-// GetMotdFullPage returns the MotdFullPage field value if set, zero value otherwise.
+// GetMotdFullPage returns the MotdFullPage field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20) GetMotdFullPage() bool {
-	if o == nil || IsNil(o.MotdFullPage) {
+	if o == nil || IsNil(o.MotdFullPage.Get()) {
 		var ret bool
 		return ret
 	}
-	return *o.MotdFullPage
+	return *o.MotdFullPage.Get()
 }
 
 // GetMotdFullPageOk returns a tuple with the MotdFullPage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20) GetMotdFullPageOk() (*bool, bool) {
-	if o == nil || IsNil(o.MotdFullPage) {
+	if o == nil {
 		return nil, false
 	}
-	return o.MotdFullPage, true
+	return o.MotdFullPage.Get(), o.MotdFullPage.IsSet()
 }
 
 // IsSetMotdFullPage returns a boolean if a field has been set.
 func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20) IsSetMotdFullPage() bool {
-	if o != nil && !IsNil(o.MotdFullPage) {
+	if o != nil && o.MotdFullPage.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetMotdFullPage gets a reference to the given bool and assigns it to the MotdFullPage field.
+// SetMotdFullPage gets a reference to the given NullableBool and assigns it to the MotdFullPage field.
 func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20) SetMotdFullPage(v bool) {
-	o.MotdFullPage = &v
+	o.MotdFullPage.Set(&v)
+}
+
+// SetMotdFullPageNil sets the value for MotdFullPage to be an explicit nil
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20) SetMotdFullPageNil() {
+	o.MotdFullPage.Set(nil)
+}
+
+// UnsetMotdFullPage ensures that no value is present for MotdFullPage, not even an explicit nil
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20) UnsetMotdFullPage() {
+	o.MotdFullPage.Unset()
 }
 
 // GetMotdDate returns the MotdDate field value if set, zero value otherwise.
@@ -263,8 +274,8 @@ func (o AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20) ToMap() (map[strin
 	if !IsNil(o.MotdType) {
 		toSerialize["motd.type"] = o.MotdType
 	}
-	if !IsNil(o.MotdFullPage) {
-		toSerialize["motd._fullPage"] = o.MotdFullPage
+	if o.MotdFullPage.IsSet() {
+		toSerialize["motd._fullPage"] = o.MotdFullPage.Get()
 	}
 	if !IsNil(o.MotdDate) {
 		toSerialize["motd.date"] = o.MotdDate

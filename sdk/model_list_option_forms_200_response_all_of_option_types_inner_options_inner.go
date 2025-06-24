@@ -27,7 +27,7 @@ type ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner struct {
 	// The name of the option type for handy reference. By default a UUID will be used.
 	Name *string `json:"name,omitempty"`
 	// Short description of the option type
-	Description *string `json:"description,omitempty"`
+	Description NullableString `json:"description,omitempty"`
 	// Field Name, the name for user input. This along with fieldContext determines the configuration property name.  The property key for when posting this option type to a JSON POST request
 	FieldName string `json:"fieldName"`
 	// Type, the type of input. eg. text, checkbox, select, etc.
@@ -35,13 +35,13 @@ type ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner struct {
 	// Field Label, the label for user input.
 	FieldLabel string `json:"fieldLabel"`
 	// Localized Label, i18n code for the label
-	FieldCode *string `json:"fieldCode,omitempty"`
+	FieldCode NullableString `json:"fieldCode,omitempty"`
 	// Any placeholder text when nothing is yet entered
 	PlaceHolder *string `json:"placeHolder,omitempty"`
 	// This is the explaination of the input that shows typically underneath the option
-	HelpBlock *string `json:"helpBlock,omitempty"`
+	HelpBlock NullableString `json:"helpBlock,omitempty"`
 	// Localized Help Block, i18n code for the help block
-	HelpBlockFieldCode *string `json:"helpBlockFieldCode,omitempty"`
+	HelpBlockFieldCode NullableString `json:"helpBlockFieldCode,omitempty"`
 	// The default value if no user entry is specified. This value should be passed to the desired JSON Map if nothing else is entered
 	DefaultValue *string `json:"defaultValue,omitempty"`
 	// Is this field entry required for the request
@@ -60,13 +60,13 @@ type ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner struct {
 	// Exclude From Search
 	ExcludeFromSearch *bool `json:"excludeFromSearch,omitempty"`
 	// A fieldName that will trigger reloading this input
-	DependsOnCode *string `json:"dependsOnCode,omitempty"`
+	DependsOnCode NullableString `json:"dependsOnCode,omitempty"`
 	// A fieldName that will trigger visibility of this input
-	VisibleOnCode *string `json:"visibleOnCode,omitempty"`
+	VisibleOnCode NullableString `json:"visibleOnCode,omitempty"`
 	// Verify Pattern, A regexp string that validates the input, use (?i) to make the matcher case insensitive
 	VerifyPattern *string `json:"verifyPattern,omitempty"`
 	// A fieldName that will trigger required attribute of this input
-	RequireOnCode        *string                `json:"requireOnCode,omitempty"`
+	RequireOnCode        NullableString         `json:"requireOnCode,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -219,36 +219,47 @@ func (o *ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner) SetName(v 
 	o.Name = &v
 }
 
-// GetDescription returns the Description field value if set, zero value otherwise.
+// GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
+	if o == nil || IsNil(o.Description.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Description
+	return *o.Description.Get()
 }
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Description, true
+	return o.Description.Get(), o.Description.IsSet()
 }
 
 // IsSetDescription returns a boolean if a field has been set.
 func (o *ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
+	if o != nil && o.Description.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDescription gets a reference to the given string and assigns it to the Description field.
+// SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner) SetDescription(v string) {
-	o.Description = &v
+	o.Description.Set(&v)
+}
+
+// SetDescriptionNil sets the value for Description to be an explicit nil
+func (o *ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner) SetDescriptionNil() {
+	o.Description.Set(nil)
+}
+
+// UnsetDescription ensures that no value is present for Description, not even an explicit nil
+func (o *ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner) UnsetDescription() {
+	o.Description.Unset()
 }
 
 // GetFieldName returns the FieldName field value
@@ -331,36 +342,47 @@ func (o *ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner) SetFieldLa
 	o.FieldLabel = v
 }
 
-// GetFieldCode returns the FieldCode field value if set, zero value otherwise.
+// GetFieldCode returns the FieldCode field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner) GetFieldCode() string {
-	if o == nil || IsNil(o.FieldCode) {
+	if o == nil || IsNil(o.FieldCode.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.FieldCode
+	return *o.FieldCode.Get()
 }
 
 // GetFieldCodeOk returns a tuple with the FieldCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner) GetFieldCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.FieldCode) {
+	if o == nil {
 		return nil, false
 	}
-	return o.FieldCode, true
+	return o.FieldCode.Get(), o.FieldCode.IsSet()
 }
 
 // IsSetFieldCode returns a boolean if a field has been set.
 func (o *ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner) IsSetFieldCode() bool {
-	if o != nil && !IsNil(o.FieldCode) {
+	if o != nil && o.FieldCode.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetFieldCode gets a reference to the given string and assigns it to the FieldCode field.
+// SetFieldCode gets a reference to the given NullableString and assigns it to the FieldCode field.
 func (o *ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner) SetFieldCode(v string) {
-	o.FieldCode = &v
+	o.FieldCode.Set(&v)
+}
+
+// SetFieldCodeNil sets the value for FieldCode to be an explicit nil
+func (o *ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner) SetFieldCodeNil() {
+	o.FieldCode.Set(nil)
+}
+
+// UnsetFieldCode ensures that no value is present for FieldCode, not even an explicit nil
+func (o *ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner) UnsetFieldCode() {
+	o.FieldCode.Unset()
 }
 
 // GetPlaceHolder returns the PlaceHolder field value if set, zero value otherwise.
@@ -395,68 +417,90 @@ func (o *ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner) SetPlaceHo
 	o.PlaceHolder = &v
 }
 
-// GetHelpBlock returns the HelpBlock field value if set, zero value otherwise.
+// GetHelpBlock returns the HelpBlock field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner) GetHelpBlock() string {
-	if o == nil || IsNil(o.HelpBlock) {
+	if o == nil || IsNil(o.HelpBlock.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.HelpBlock
+	return *o.HelpBlock.Get()
 }
 
 // GetHelpBlockOk returns a tuple with the HelpBlock field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner) GetHelpBlockOk() (*string, bool) {
-	if o == nil || IsNil(o.HelpBlock) {
+	if o == nil {
 		return nil, false
 	}
-	return o.HelpBlock, true
+	return o.HelpBlock.Get(), o.HelpBlock.IsSet()
 }
 
 // IsSetHelpBlock returns a boolean if a field has been set.
 func (o *ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner) IsSetHelpBlock() bool {
-	if o != nil && !IsNil(o.HelpBlock) {
+	if o != nil && o.HelpBlock.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetHelpBlock gets a reference to the given string and assigns it to the HelpBlock field.
+// SetHelpBlock gets a reference to the given NullableString and assigns it to the HelpBlock field.
 func (o *ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner) SetHelpBlock(v string) {
-	o.HelpBlock = &v
+	o.HelpBlock.Set(&v)
 }
 
-// GetHelpBlockFieldCode returns the HelpBlockFieldCode field value if set, zero value otherwise.
+// SetHelpBlockNil sets the value for HelpBlock to be an explicit nil
+func (o *ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner) SetHelpBlockNil() {
+	o.HelpBlock.Set(nil)
+}
+
+// UnsetHelpBlock ensures that no value is present for HelpBlock, not even an explicit nil
+func (o *ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner) UnsetHelpBlock() {
+	o.HelpBlock.Unset()
+}
+
+// GetHelpBlockFieldCode returns the HelpBlockFieldCode field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner) GetHelpBlockFieldCode() string {
-	if o == nil || IsNil(o.HelpBlockFieldCode) {
+	if o == nil || IsNil(o.HelpBlockFieldCode.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.HelpBlockFieldCode
+	return *o.HelpBlockFieldCode.Get()
 }
 
 // GetHelpBlockFieldCodeOk returns a tuple with the HelpBlockFieldCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner) GetHelpBlockFieldCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.HelpBlockFieldCode) {
+	if o == nil {
 		return nil, false
 	}
-	return o.HelpBlockFieldCode, true
+	return o.HelpBlockFieldCode.Get(), o.HelpBlockFieldCode.IsSet()
 }
 
 // IsSetHelpBlockFieldCode returns a boolean if a field has been set.
 func (o *ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner) IsSetHelpBlockFieldCode() bool {
-	if o != nil && !IsNil(o.HelpBlockFieldCode) {
+	if o != nil && o.HelpBlockFieldCode.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetHelpBlockFieldCode gets a reference to the given string and assigns it to the HelpBlockFieldCode field.
+// SetHelpBlockFieldCode gets a reference to the given NullableString and assigns it to the HelpBlockFieldCode field.
 func (o *ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner) SetHelpBlockFieldCode(v string) {
-	o.HelpBlockFieldCode = &v
+	o.HelpBlockFieldCode.Set(&v)
+}
+
+// SetHelpBlockFieldCodeNil sets the value for HelpBlockFieldCode to be an explicit nil
+func (o *ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner) SetHelpBlockFieldCodeNil() {
+	o.HelpBlockFieldCode.Set(nil)
+}
+
+// UnsetHelpBlockFieldCode ensures that no value is present for HelpBlockFieldCode, not even an explicit nil
+func (o *ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner) UnsetHelpBlockFieldCode() {
+	o.HelpBlockFieldCode.Unset()
 }
 
 // GetDefaultValue returns the DefaultValue field value if set, zero value otherwise.
@@ -747,68 +791,90 @@ func (o *ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner) SetExclude
 	o.ExcludeFromSearch = &v
 }
 
-// GetDependsOnCode returns the DependsOnCode field value if set, zero value otherwise.
+// GetDependsOnCode returns the DependsOnCode field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner) GetDependsOnCode() string {
-	if o == nil || IsNil(o.DependsOnCode) {
+	if o == nil || IsNil(o.DependsOnCode.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.DependsOnCode
+	return *o.DependsOnCode.Get()
 }
 
 // GetDependsOnCodeOk returns a tuple with the DependsOnCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner) GetDependsOnCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.DependsOnCode) {
+	if o == nil {
 		return nil, false
 	}
-	return o.DependsOnCode, true
+	return o.DependsOnCode.Get(), o.DependsOnCode.IsSet()
 }
 
 // IsSetDependsOnCode returns a boolean if a field has been set.
 func (o *ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner) IsSetDependsOnCode() bool {
-	if o != nil && !IsNil(o.DependsOnCode) {
+	if o != nil && o.DependsOnCode.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDependsOnCode gets a reference to the given string and assigns it to the DependsOnCode field.
+// SetDependsOnCode gets a reference to the given NullableString and assigns it to the DependsOnCode field.
 func (o *ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner) SetDependsOnCode(v string) {
-	o.DependsOnCode = &v
+	o.DependsOnCode.Set(&v)
 }
 
-// GetVisibleOnCode returns the VisibleOnCode field value if set, zero value otherwise.
+// SetDependsOnCodeNil sets the value for DependsOnCode to be an explicit nil
+func (o *ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner) SetDependsOnCodeNil() {
+	o.DependsOnCode.Set(nil)
+}
+
+// UnsetDependsOnCode ensures that no value is present for DependsOnCode, not even an explicit nil
+func (o *ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner) UnsetDependsOnCode() {
+	o.DependsOnCode.Unset()
+}
+
+// GetVisibleOnCode returns the VisibleOnCode field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner) GetVisibleOnCode() string {
-	if o == nil || IsNil(o.VisibleOnCode) {
+	if o == nil || IsNil(o.VisibleOnCode.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.VisibleOnCode
+	return *o.VisibleOnCode.Get()
 }
 
 // GetVisibleOnCodeOk returns a tuple with the VisibleOnCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner) GetVisibleOnCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.VisibleOnCode) {
+	if o == nil {
 		return nil, false
 	}
-	return o.VisibleOnCode, true
+	return o.VisibleOnCode.Get(), o.VisibleOnCode.IsSet()
 }
 
 // IsSetVisibleOnCode returns a boolean if a field has been set.
 func (o *ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner) IsSetVisibleOnCode() bool {
-	if o != nil && !IsNil(o.VisibleOnCode) {
+	if o != nil && o.VisibleOnCode.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetVisibleOnCode gets a reference to the given string and assigns it to the VisibleOnCode field.
+// SetVisibleOnCode gets a reference to the given NullableString and assigns it to the VisibleOnCode field.
 func (o *ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner) SetVisibleOnCode(v string) {
-	o.VisibleOnCode = &v
+	o.VisibleOnCode.Set(&v)
+}
+
+// SetVisibleOnCodeNil sets the value for VisibleOnCode to be an explicit nil
+func (o *ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner) SetVisibleOnCodeNil() {
+	o.VisibleOnCode.Set(nil)
+}
+
+// UnsetVisibleOnCode ensures that no value is present for VisibleOnCode, not even an explicit nil
+func (o *ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner) UnsetVisibleOnCode() {
+	o.VisibleOnCode.Unset()
 }
 
 // GetVerifyPattern returns the VerifyPattern field value if set, zero value otherwise.
@@ -843,36 +909,47 @@ func (o *ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner) SetVerifyP
 	o.VerifyPattern = &v
 }
 
-// GetRequireOnCode returns the RequireOnCode field value if set, zero value otherwise.
+// GetRequireOnCode returns the RequireOnCode field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner) GetRequireOnCode() string {
-	if o == nil || IsNil(o.RequireOnCode) {
+	if o == nil || IsNil(o.RequireOnCode.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.RequireOnCode
+	return *o.RequireOnCode.Get()
 }
 
 // GetRequireOnCodeOk returns a tuple with the RequireOnCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner) GetRequireOnCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.RequireOnCode) {
+	if o == nil {
 		return nil, false
 	}
-	return o.RequireOnCode, true
+	return o.RequireOnCode.Get(), o.RequireOnCode.IsSet()
 }
 
 // IsSetRequireOnCode returns a boolean if a field has been set.
 func (o *ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner) IsSetRequireOnCode() bool {
-	if o != nil && !IsNil(o.RequireOnCode) {
+	if o != nil && o.RequireOnCode.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetRequireOnCode gets a reference to the given string and assigns it to the RequireOnCode field.
+// SetRequireOnCode gets a reference to the given NullableString and assigns it to the RequireOnCode field.
 func (o *ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner) SetRequireOnCode(v string) {
-	o.RequireOnCode = &v
+	o.RequireOnCode.Set(&v)
+}
+
+// SetRequireOnCodeNil sets the value for RequireOnCode to be an explicit nil
+func (o *ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner) SetRequireOnCodeNil() {
+	o.RequireOnCode.Set(nil)
+}
+
+// UnsetRequireOnCode ensures that no value is present for RequireOnCode, not even an explicit nil
+func (o *ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner) UnsetRequireOnCode() {
+	o.RequireOnCode.Unset()
 }
 
 func (o ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner) MarshalJSON() ([]byte, error) {
@@ -894,25 +971,25 @@ func (o ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner) ToMap() (ma
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !IsNil(o.Description) {
-		toSerialize["description"] = o.Description
+	if o.Description.IsSet() {
+		toSerialize["description"] = o.Description.Get()
 	}
 	toSerialize["fieldName"] = o.FieldName
 	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type
 	}
 	toSerialize["fieldLabel"] = o.FieldLabel
-	if !IsNil(o.FieldCode) {
-		toSerialize["fieldCode"] = o.FieldCode
+	if o.FieldCode.IsSet() {
+		toSerialize["fieldCode"] = o.FieldCode.Get()
 	}
 	if !IsNil(o.PlaceHolder) {
 		toSerialize["placeHolder"] = o.PlaceHolder
 	}
-	if !IsNil(o.HelpBlock) {
-		toSerialize["helpBlock"] = o.HelpBlock
+	if o.HelpBlock.IsSet() {
+		toSerialize["helpBlock"] = o.HelpBlock.Get()
 	}
-	if !IsNil(o.HelpBlockFieldCode) {
-		toSerialize["helpBlockFieldCode"] = o.HelpBlockFieldCode
+	if o.HelpBlockFieldCode.IsSet() {
+		toSerialize["helpBlockFieldCode"] = o.HelpBlockFieldCode.Get()
 	}
 	if !IsNil(o.DefaultValue) {
 		toSerialize["defaultValue"] = o.DefaultValue
@@ -941,17 +1018,17 @@ func (o ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner) ToMap() (ma
 	if !IsNil(o.ExcludeFromSearch) {
 		toSerialize["excludeFromSearch"] = o.ExcludeFromSearch
 	}
-	if !IsNil(o.DependsOnCode) {
-		toSerialize["dependsOnCode"] = o.DependsOnCode
+	if o.DependsOnCode.IsSet() {
+		toSerialize["dependsOnCode"] = o.DependsOnCode.Get()
 	}
-	if !IsNil(o.VisibleOnCode) {
-		toSerialize["visibleOnCode"] = o.VisibleOnCode
+	if o.VisibleOnCode.IsSet() {
+		toSerialize["visibleOnCode"] = o.VisibleOnCode.Get()
 	}
 	if !IsNil(o.VerifyPattern) {
 		toSerialize["verifyPattern"] = o.VerifyPattern
 	}
-	if !IsNil(o.RequireOnCode) {
-		toSerialize["requireOnCode"] = o.RequireOnCode
+	if o.RequireOnCode.IsSet() {
+		toSerialize["requireOnCode"] = o.RequireOnCode.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {

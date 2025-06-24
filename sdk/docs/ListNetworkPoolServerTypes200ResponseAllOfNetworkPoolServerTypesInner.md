@@ -5,13 +5,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
-**PoolService** | Pointer to **string** |  | [optional] 
+**PoolService** | Pointer to **NullableString** |  | [optional] 
 **Selectable** | Pointer to **bool** |  | [optional] 
 **Code** | Pointer to **string** |  | [optional] 
-**IntegrationCode** | Pointer to **string** |  | [optional] 
+**IntegrationCode** | Pointer to **NullableString** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **NullableString** |  | [optional] 
 **OptionTypes** | Pointer to [**[]ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner**](ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner.md) |  | [optional] 
 
 ## Methods
@@ -83,6 +83,16 @@ SetPoolService sets PoolService field to given value.
 
 HasPoolService returns a boolean if a field has been set.
 
+### SetPoolServiceNil
+
+`func (o *ListNetworkPoolServerTypes200ResponseAllOfNetworkPoolServerTypesInner) SetPoolServiceNil(b bool)`
+
+ SetPoolServiceNil sets the value for PoolService to be an explicit nil
+
+### UnsetPoolService
+`func (o *ListNetworkPoolServerTypes200ResponseAllOfNetworkPoolServerTypesInner) UnsetPoolService()`
+
+UnsetPoolService ensures that no value is present for PoolService, not even an explicit nil
 ### GetSelectable
 
 `func (o *ListNetworkPoolServerTypes200ResponseAllOfNetworkPoolServerTypesInner) GetSelectable() bool`
@@ -158,6 +168,16 @@ SetIntegrationCode sets IntegrationCode field to given value.
 
 HasIntegrationCode returns a boolean if a field has been set.
 
+### SetIntegrationCodeNil
+
+`func (o *ListNetworkPoolServerTypes200ResponseAllOfNetworkPoolServerTypesInner) SetIntegrationCodeNil(b bool)`
+
+ SetIntegrationCodeNil sets the value for IntegrationCode to be an explicit nil
+
+### UnsetIntegrationCode
+`func (o *ListNetworkPoolServerTypes200ResponseAllOfNetworkPoolServerTypesInner) UnsetIntegrationCode()`
+
+UnsetIntegrationCode ensures that no value is present for IntegrationCode, not even an explicit nil
 ### GetName
 
 `func (o *ListNetworkPoolServerTypes200ResponseAllOfNetworkPoolServerTypesInner) GetName() string`
@@ -233,6 +253,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *ListNetworkPoolServerTypes200ResponseAllOfNetworkPoolServerTypesInner) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *ListNetworkPoolServerTypes200ResponseAllOfNetworkPoolServerTypesInner) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetOptionTypes
 
 `func (o *ListNetworkPoolServerTypes200ResponseAllOfNetworkPoolServerTypesInner) GetOptionTypes() []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner`

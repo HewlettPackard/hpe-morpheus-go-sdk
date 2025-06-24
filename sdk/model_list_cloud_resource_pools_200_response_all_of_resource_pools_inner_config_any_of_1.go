@@ -21,7 +21,7 @@ var _ MappedNullable = &ListCloudResourcePools200ResponseAllOfResourcePoolsInner
 // ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf1 Type GCP
 type ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf1 struct {
 	// Project ID can have lowercase letters, digits, or hyphens. It must start with a lowercase letter and end with a letter or number.
-	ProjectId            *string                `json:"projectId,omitempty"`
+	ProjectId            NullableString         `json:"projectId,omitempty"`
 	Parent               interface{}            `json:"parent"`
 	BillingAccount       string                 `json:"billingAccount"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
@@ -48,36 +48,47 @@ func NewListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf1With
 	return &this
 }
 
-// GetProjectId returns the ProjectId field value if set, zero value otherwise.
+// GetProjectId returns the ProjectId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf1) GetProjectId() string {
-	if o == nil || IsNil(o.ProjectId) {
+	if o == nil || IsNil(o.ProjectId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ProjectId
+	return *o.ProjectId.Get()
 }
 
 // GetProjectIdOk returns a tuple with the ProjectId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf1) GetProjectIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ProjectId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ProjectId, true
+	return o.ProjectId.Get(), o.ProjectId.IsSet()
 }
 
 // IsSetProjectId returns a boolean if a field has been set.
 func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf1) IsSetProjectId() bool {
-	if o != nil && !IsNil(o.ProjectId) {
+	if o != nil && o.ProjectId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetProjectId gets a reference to the given string and assigns it to the ProjectId field.
+// SetProjectId gets a reference to the given NullableString and assigns it to the ProjectId field.
 func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf1) SetProjectId(v string) {
-	o.ProjectId = &v
+	o.ProjectId.Set(&v)
+}
+
+// SetProjectIdNil sets the value for ProjectId to be an explicit nil
+func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf1) SetProjectIdNil() {
+	o.ProjectId.Set(nil)
+}
+
+// UnsetProjectId ensures that no value is present for ProjectId, not even an explicit nil
+func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf1) UnsetProjectId() {
+	o.ProjectId.Unset()
 }
 
 // GetParent returns the Parent field value
@@ -140,8 +151,8 @@ func (o ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf1) Ma
 
 func (o ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ProjectId) {
-		toSerialize["projectId"] = o.ProjectId
+	if o.ProjectId.IsSet() {
+		toSerialize["projectId"] = o.ProjectId.Get()
 	}
 	if o.Parent != nil {
 		toSerialize["parent"] = o.Parent

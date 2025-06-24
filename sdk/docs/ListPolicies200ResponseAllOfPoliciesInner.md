@@ -6,19 +6,19 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **NullableString** |  | [optional] 
 **PolicyType** | Pointer to [**ListBackupSettings200ResponseBackupSettingsDefaultSchedule**](ListBackupSettings200ResponseBackupSettingsDefaultSchedule.md) |  | [optional] 
 **Zone** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **Site** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
-**User** | Pointer to [**GetAlerts200ResponseAllOfChecksInnerCreatedBy**](GetAlerts200ResponseAllOfChecksInnerCreatedBy.md) |  | [optional] 
+**User** | Pointer to [**ListActivity200ResponseAllOfActivityInnerActivityInnerUser**](ListActivity200ResponseAllOfActivityInnerActivityInnerUser.md) |  | [optional] 
 **Role** | Pointer to [**ListPolicies200ResponseAllOfPoliciesInnerRole**](ListPolicies200ResponseAllOfPoliciesInnerRole.md) |  | [optional] 
-**RefType** | Pointer to **string** |  | [optional] 
-**RefId** | Pointer to **string** |  | [optional] 
-**EachUser** | Pointer to **bool** |  | [optional] 
+**RefType** | Pointer to **NullableString** |  | [optional] 
+**RefId** | Pointer to **NullableString** |  | [optional] 
+**EachUser** | Pointer to **NullableBool** |  | [optional] 
 **Config** | Pointer to [**ListPolicies200ResponseAllOfPoliciesInnerConfig**](ListPolicies200ResponseAllOfPoliciesInnerConfig.md) |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
-**Owner** | Pointer to [**ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
-**Accounts** | Pointer to [**[]ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
+**Owner** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**Accounts** | Pointer to [**[]GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 
 ## Methods
 
@@ -114,6 +114,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *ListPolicies200ResponseAllOfPoliciesInner) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *ListPolicies200ResponseAllOfPoliciesInner) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetPolicyType
 
 `func (o *ListPolicies200ResponseAllOfPoliciesInner) GetPolicyType() ListBackupSettings200ResponseBackupSettingsDefaultSchedule`
@@ -191,20 +201,20 @@ HasSite returns a boolean if a field has been set.
 
 ### GetUser
 
-`func (o *ListPolicies200ResponseAllOfPoliciesInner) GetUser() GetAlerts200ResponseAllOfChecksInnerCreatedBy`
+`func (o *ListPolicies200ResponseAllOfPoliciesInner) GetUser() ListActivity200ResponseAllOfActivityInnerActivityInnerUser`
 
 GetUser returns the User field if non-nil, zero value otherwise.
 
 ### GetUserOk
 
-`func (o *ListPolicies200ResponseAllOfPoliciesInner) GetUserOk() (*GetAlerts200ResponseAllOfChecksInnerCreatedBy, bool)`
+`func (o *ListPolicies200ResponseAllOfPoliciesInner) GetUserOk() (*ListActivity200ResponseAllOfActivityInnerActivityInnerUser, bool)`
 
 GetUserOk returns a tuple with the User field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUser
 
-`func (o *ListPolicies200ResponseAllOfPoliciesInner) SetUser(v GetAlerts200ResponseAllOfChecksInnerCreatedBy)`
+`func (o *ListPolicies200ResponseAllOfPoliciesInner) SetUser(v ListActivity200ResponseAllOfActivityInnerActivityInnerUser)`
 
 SetUser sets User field to given value.
 
@@ -264,6 +274,16 @@ SetRefType sets RefType field to given value.
 
 HasRefType returns a boolean if a field has been set.
 
+### SetRefTypeNil
+
+`func (o *ListPolicies200ResponseAllOfPoliciesInner) SetRefTypeNil(b bool)`
+
+ SetRefTypeNil sets the value for RefType to be an explicit nil
+
+### UnsetRefType
+`func (o *ListPolicies200ResponseAllOfPoliciesInner) UnsetRefType()`
+
+UnsetRefType ensures that no value is present for RefType, not even an explicit nil
 ### GetRefId
 
 `func (o *ListPolicies200ResponseAllOfPoliciesInner) GetRefId() string`
@@ -289,6 +309,16 @@ SetRefId sets RefId field to given value.
 
 HasRefId returns a boolean if a field has been set.
 
+### SetRefIdNil
+
+`func (o *ListPolicies200ResponseAllOfPoliciesInner) SetRefIdNil(b bool)`
+
+ SetRefIdNil sets the value for RefId to be an explicit nil
+
+### UnsetRefId
+`func (o *ListPolicies200ResponseAllOfPoliciesInner) UnsetRefId()`
+
+UnsetRefId ensures that no value is present for RefId, not even an explicit nil
 ### GetEachUser
 
 `func (o *ListPolicies200ResponseAllOfPoliciesInner) GetEachUser() bool`
@@ -314,6 +344,16 @@ SetEachUser sets EachUser field to given value.
 
 HasEachUser returns a boolean if a field has been set.
 
+### SetEachUserNil
+
+`func (o *ListPolicies200ResponseAllOfPoliciesInner) SetEachUserNil(b bool)`
+
+ SetEachUserNil sets the value for EachUser to be an explicit nil
+
+### UnsetEachUser
+`func (o *ListPolicies200ResponseAllOfPoliciesInner) UnsetEachUser()`
+
+UnsetEachUser ensures that no value is present for EachUser, not even an explicit nil
 ### GetConfig
 
 `func (o *ListPolicies200ResponseAllOfPoliciesInner) GetConfig() ListPolicies200ResponseAllOfPoliciesInnerConfig`
@@ -366,20 +406,20 @@ HasEnabled returns a boolean if a field has been set.
 
 ### GetOwner
 
-`func (o *ListPolicies200ResponseAllOfPoliciesInner) GetOwner() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *ListPolicies200ResponseAllOfPoliciesInner) GetOwner() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetOwner returns the Owner field if non-nil, zero value otherwise.
 
 ### GetOwnerOk
 
-`func (o *ListPolicies200ResponseAllOfPoliciesInner) GetOwnerOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *ListPolicies200ResponseAllOfPoliciesInner) GetOwnerOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOwner
 
-`func (o *ListPolicies200ResponseAllOfPoliciesInner) SetOwner(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *ListPolicies200ResponseAllOfPoliciesInner) SetOwner(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetOwner sets Owner field to given value.
 
@@ -391,20 +431,20 @@ HasOwner returns a boolean if a field has been set.
 
 ### GetAccounts
 
-`func (o *ListPolicies200ResponseAllOfPoliciesInner) GetAccounts() []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *ListPolicies200ResponseAllOfPoliciesInner) GetAccounts() []GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetAccounts returns the Accounts field if non-nil, zero value otherwise.
 
 ### GetAccountsOk
 
-`func (o *ListPolicies200ResponseAllOfPoliciesInner) GetAccountsOk() (*[]ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *ListPolicies200ResponseAllOfPoliciesInner) GetAccountsOk() (*[]GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetAccountsOk returns a tuple with the Accounts field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccounts
 
-`func (o *ListPolicies200ResponseAllOfPoliciesInner) SetAccounts(v []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *ListPolicies200ResponseAllOfPoliciesInner) SetAccounts(v []GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetAccounts sets Accounts field to given value.
 
@@ -414,6 +454,16 @@ SetAccounts sets Accounts field to given value.
 
 HasAccounts returns a boolean if a field has been set.
 
+### SetAccountsNil
+
+`func (o *ListPolicies200ResponseAllOfPoliciesInner) SetAccountsNil(b bool)`
+
+ SetAccountsNil sets the value for Accounts to be an explicit nil
+
+### UnsetAccounts
+`func (o *ListPolicies200ResponseAllOfPoliciesInner) UnsetAccounts()`
+
+UnsetAccounts ensures that no value is present for Accounts, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

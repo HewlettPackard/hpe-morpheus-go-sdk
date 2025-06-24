@@ -11,17 +11,17 @@ Name | Type | Description | Notes
 **Email** | Pointer to **string** |  | [optional] 
 **LinuxUsername** | Pointer to **string** |  | [optional] 
 **LinuxPassword** | Pointer to **string** |  | [optional] 
-**LinuxKeyPairId** | Pointer to **int64** |  | [optional] 
+**LinuxKeyPairId** | Pointer to **NullableInt64** |  | [optional] 
 **WindowsUsername** | Pointer to **string** |  | [optional] 
 **WindowsPassword** | Pointer to **string** |  | [optional] 
 **Avatar** | Pointer to **string** |  | [optional] 
 **DesktopBackground** | Pointer to **string** |  | [optional] 
 **ReceiveNotifications** | Pointer to **bool** |  | [optional] 
-**DefaultGroup** | Pointer to [**ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
-**DefaultCloud** | Pointer to [**ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
+**DefaultGroup** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**DefaultCloud** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **DefaultPersona** | Pointer to [**ListBackupSettings200ResponseBackupSettingsDefaultSchedule**](ListBackupSettings200ResponseBackupSettingsDefaultSchedule.md) |  | [optional] 
 **IsUsing2FA** | Pointer to **bool** |  | [optional] 
-**Tenant** | Pointer to [**ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
+**Tenant** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 
 ## Methods
 
@@ -242,6 +242,16 @@ SetLinuxKeyPairId sets LinuxKeyPairId field to given value.
 
 HasLinuxKeyPairId returns a boolean if a field has been set.
 
+### SetLinuxKeyPairIdNil
+
+`func (o *ListUserSettings200ResponseAllOfUser) SetLinuxKeyPairIdNil(b bool)`
+
+ SetLinuxKeyPairIdNil sets the value for LinuxKeyPairId to be an explicit nil
+
+### UnsetLinuxKeyPairId
+`func (o *ListUserSettings200ResponseAllOfUser) UnsetLinuxKeyPairId()`
+
+UnsetLinuxKeyPairId ensures that no value is present for LinuxKeyPairId, not even an explicit nil
 ### GetWindowsUsername
 
 `func (o *ListUserSettings200ResponseAllOfUser) GetWindowsUsername() string`
@@ -369,20 +379,20 @@ HasReceiveNotifications returns a boolean if a field has been set.
 
 ### GetDefaultGroup
 
-`func (o *ListUserSettings200ResponseAllOfUser) GetDefaultGroup() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *ListUserSettings200ResponseAllOfUser) GetDefaultGroup() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetDefaultGroup returns the DefaultGroup field if non-nil, zero value otherwise.
 
 ### GetDefaultGroupOk
 
-`func (o *ListUserSettings200ResponseAllOfUser) GetDefaultGroupOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *ListUserSettings200ResponseAllOfUser) GetDefaultGroupOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetDefaultGroupOk returns a tuple with the DefaultGroup field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDefaultGroup
 
-`func (o *ListUserSettings200ResponseAllOfUser) SetDefaultGroup(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *ListUserSettings200ResponseAllOfUser) SetDefaultGroup(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetDefaultGroup sets DefaultGroup field to given value.
 
@@ -394,20 +404,20 @@ HasDefaultGroup returns a boolean if a field has been set.
 
 ### GetDefaultCloud
 
-`func (o *ListUserSettings200ResponseAllOfUser) GetDefaultCloud() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *ListUserSettings200ResponseAllOfUser) GetDefaultCloud() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetDefaultCloud returns the DefaultCloud field if non-nil, zero value otherwise.
 
 ### GetDefaultCloudOk
 
-`func (o *ListUserSettings200ResponseAllOfUser) GetDefaultCloudOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *ListUserSettings200ResponseAllOfUser) GetDefaultCloudOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetDefaultCloudOk returns a tuple with the DefaultCloud field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDefaultCloud
 
-`func (o *ListUserSettings200ResponseAllOfUser) SetDefaultCloud(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *ListUserSettings200ResponseAllOfUser) SetDefaultCloud(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetDefaultCloud sets DefaultCloud field to given value.
 
@@ -469,20 +479,20 @@ HasIsUsing2FA returns a boolean if a field has been set.
 
 ### GetTenant
 
-`func (o *ListUserSettings200ResponseAllOfUser) GetTenant() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *ListUserSettings200ResponseAllOfUser) GetTenant() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetTenant returns the Tenant field if non-nil, zero value otherwise.
 
 ### GetTenantOk
 
-`func (o *ListUserSettings200ResponseAllOfUser) GetTenantOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *ListUserSettings200ResponseAllOfUser) GetTenantOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetTenantOk returns a tuple with the Tenant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenant
 
-`func (o *ListUserSettings200ResponseAllOfUser) SetTenant(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *ListUserSettings200ResponseAllOfUser) SetTenant(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetTenant sets Tenant field to given value.
 

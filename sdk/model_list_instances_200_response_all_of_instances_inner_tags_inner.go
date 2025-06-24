@@ -21,7 +21,7 @@ var _ MappedNullable = &ListInstances200ResponseAllOfInstancesInnerTagsInner{}
 // ListInstances200ResponseAllOfInstancesInnerTagsInner struct for ListInstances200ResponseAllOfInstancesInnerTagsInner
 type ListInstances200ResponseAllOfInstancesInnerTagsInner struct {
 	Name                 *string                `json:"name,omitempty"`
-	Value                *string                `json:"value,omitempty"`
+	Value                NullableString         `json:"value,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -76,36 +76,47 @@ func (o *ListInstances200ResponseAllOfInstancesInnerTagsInner) SetName(v string)
 	o.Name = &v
 }
 
-// GetValue returns the Value field value if set, zero value otherwise.
+// GetValue returns the Value field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListInstances200ResponseAllOfInstancesInnerTagsInner) GetValue() string {
-	if o == nil || IsNil(o.Value) {
+	if o == nil || IsNil(o.Value.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Value
+	return *o.Value.Get()
 }
 
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListInstances200ResponseAllOfInstancesInnerTagsInner) GetValueOk() (*string, bool) {
-	if o == nil || IsNil(o.Value) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Value, true
+	return o.Value.Get(), o.Value.IsSet()
 }
 
 // IsSetValue returns a boolean if a field has been set.
 func (o *ListInstances200ResponseAllOfInstancesInnerTagsInner) IsSetValue() bool {
-	if o != nil && !IsNil(o.Value) {
+	if o != nil && o.Value.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetValue gets a reference to the given string and assigns it to the Value field.
+// SetValue gets a reference to the given NullableString and assigns it to the Value field.
 func (o *ListInstances200ResponseAllOfInstancesInnerTagsInner) SetValue(v string) {
-	o.Value = &v
+	o.Value.Set(&v)
+}
+
+// SetValueNil sets the value for Value to be an explicit nil
+func (o *ListInstances200ResponseAllOfInstancesInnerTagsInner) SetValueNil() {
+	o.Value.Set(nil)
+}
+
+// UnsetValue ensures that no value is present for Value, not even an explicit nil
+func (o *ListInstances200ResponseAllOfInstancesInnerTagsInner) UnsetValue() {
+	o.Value.Unset()
 }
 
 func (o ListInstances200ResponseAllOfInstancesInnerTagsInner) MarshalJSON() ([]byte, error) {
@@ -121,8 +132,8 @@ func (o ListInstances200ResponseAllOfInstancesInnerTagsInner) ToMap() (map[strin
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !IsNil(o.Value) {
-		toSerialize["value"] = o.Value
+	if o.Value.IsSet() {
+		toSerialize["value"] = o.Value.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {

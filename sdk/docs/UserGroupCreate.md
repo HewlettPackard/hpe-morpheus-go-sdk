@@ -5,9 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **string** |  | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **NullableString** |  | [optional] 
 **SudoUser** | Pointer to **bool** |  | [optional] 
-**ServerGroup** | Pointer to **string** |  | [optional] 
+**ServerGroup** | Pointer to **NullableString** |  | [optional] 
 **Users** | Pointer to **[]int64** | A list of IDs of users that are in the user group | [optional] 
 
 ## Methods
@@ -79,6 +79,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *UserGroupCreate) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *UserGroupCreate) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetSudoUser
 
 `func (o *UserGroupCreate) GetSudoUser() bool`
@@ -129,6 +139,16 @@ SetServerGroup sets ServerGroup field to given value.
 
 HasServerGroup returns a boolean if a field has been set.
 
+### SetServerGroupNil
+
+`func (o *UserGroupCreate) SetServerGroupNil(b bool)`
+
+ SetServerGroupNil sets the value for ServerGroup to be an explicit nil
+
+### UnsetServerGroup
+`func (o *UserGroupCreate) UnsetServerGroup()`
+
+UnsetServerGroup ensures that no value is present for ServerGroup, not even an explicit nil
 ### GetUsers
 
 `func (o *UserGroupCreate) GetUsers() []int64`

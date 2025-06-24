@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ControllerId** | Pointer to **int64** |  | [optional] 
-**DatastoreId** | Pointer to **string** |  | [optional] 
+**ControllerId** | Pointer to **NullableInt64** |  | [optional] 
+**DatastoreId** | Pointer to **NullableString** |  | [optional] 
 **DisplayOrder** | Pointer to **int64** |  | [optional] 
 **Id** | Pointer to **int64** |  | [optional] 
 **Uuid** | Pointer to **string** |  | [optional] 
-**MaxIOPS** | Pointer to **string** |  | [optional] 
+**MaxIOPS** | Pointer to **NullableString** |  | [optional] 
 **MaxStorage** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **ShortName** | Pointer to **string** |  | [optional] 
@@ -18,8 +18,8 @@ Name | Type | Description | Notes
 **RootVolume** | Pointer to **bool** |  | [optional] 
 **Size** | Pointer to **int64** |  | [optional] 
 **StorageType** | Pointer to **int64** |  | [optional] 
-**UnitNumber** | Pointer to **string** |  | [optional] 
-**ControllerMountPoint** | Pointer to **string** |  | [optional] 
+**UnitNumber** | Pointer to **NullableString** |  | [optional] 
+**ControllerMountPoint** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -65,6 +65,16 @@ SetControllerId sets ControllerId field to given value.
 
 HasControllerId returns a boolean if a field has been set.
 
+### SetControllerIdNil
+
+`func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) SetControllerIdNil(b bool)`
+
+ SetControllerIdNil sets the value for ControllerId to be an explicit nil
+
+### UnsetControllerId
+`func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) UnsetControllerId()`
+
+UnsetControllerId ensures that no value is present for ControllerId, not even an explicit nil
 ### GetDatastoreId
 
 `func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) GetDatastoreId() string`
@@ -90,6 +100,16 @@ SetDatastoreId sets DatastoreId field to given value.
 
 HasDatastoreId returns a boolean if a field has been set.
 
+### SetDatastoreIdNil
+
+`func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) SetDatastoreIdNil(b bool)`
+
+ SetDatastoreIdNil sets the value for DatastoreId to be an explicit nil
+
+### UnsetDatastoreId
+`func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) UnsetDatastoreId()`
+
+UnsetDatastoreId ensures that no value is present for DatastoreId, not even an explicit nil
 ### GetDisplayOrder
 
 `func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) GetDisplayOrder() int64`
@@ -190,6 +210,16 @@ SetMaxIOPS sets MaxIOPS field to given value.
 
 HasMaxIOPS returns a boolean if a field has been set.
 
+### SetMaxIOPSNil
+
+`func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) SetMaxIOPSNil(b bool)`
+
+ SetMaxIOPSNil sets the value for MaxIOPS to be an explicit nil
+
+### UnsetMaxIOPS
+`func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) UnsetMaxIOPS()`
+
+UnsetMaxIOPS ensures that no value is present for MaxIOPS, not even an explicit nil
 ### GetMaxStorage
 
 `func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) GetMaxStorage() int64`
@@ -415,6 +445,16 @@ SetUnitNumber sets UnitNumber field to given value.
 
 HasUnitNumber returns a boolean if a field has been set.
 
+### SetUnitNumberNil
+
+`func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) SetUnitNumberNil(b bool)`
+
+ SetUnitNumberNil sets the value for UnitNumber to be an explicit nil
+
+### UnsetUnitNumber
+`func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) UnsetUnitNumber()`
+
+UnsetUnitNumber ensures that no value is present for UnitNumber, not even an explicit nil
 ### GetControllerMountPoint
 
 `func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) GetControllerMountPoint() string`
@@ -440,6 +480,16 @@ SetControllerMountPoint sets ControllerMountPoint field to given value.
 
 HasControllerMountPoint returns a boolean if a field has been set.
 
+### SetControllerMountPointNil
+
+`func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) SetControllerMountPointNil(b bool)`
+
+ SetControllerMountPointNil sets the value for ControllerMountPoint to be an explicit nil
+
+### UnsetControllerMountPoint
+`func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) UnsetControllerMountPoint()`
+
+UnsetControllerMountPoint ensures that no value is present for ControllerMountPoint, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

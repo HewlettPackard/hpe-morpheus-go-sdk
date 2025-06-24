@@ -30,15 +30,15 @@ type AddVirtualImageRequestVirtualImage struct {
 	// Cloud Init Enabled?
 	IsCloudInit *bool `json:"isCloudInit,omitempty"`
 	// Cloud-Init User Data, a bash script
-	UserData *string `json:"userData,omitempty"`
+	UserData NullableString `json:"userData,omitempty"`
 	// Install Agent?
 	InstallAgent *bool `json:"installAgent,omitempty"`
 	// SSH Username
-	SshUsername *string `json:"sshUsername,omitempty"`
+	SshUsername NullableString `json:"sshUsername,omitempty"`
 	// SSH Password
-	SshPassword *string `json:"sshPassword,omitempty"`
+	SshPassword NullableString `json:"sshPassword,omitempty"`
 	// SSH Key
-	SshKey *string                                   `json:"sshKey,omitempty"`
+	SshKey NullableString                            `json:"sshKey,omitempty"`
 	OsType *AddVirtualImageRequestVirtualImageOsType `json:"osType,omitempty"`
 	// private or public
 	Visibility *string `json:"visibility,omitempty"`
@@ -150,9 +150,9 @@ func (o *AddVirtualImageRequestVirtualImage) SetName(v string) {
 	o.Name = &v
 }
 
-// GetLabels returns the Labels field value if set, zero value otherwise.
+// GetLabels returns the Labels field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AddVirtualImageRequestVirtualImage) GetLabels() []string {
-	if o == nil || IsNil(o.Labels) {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -161,6 +161,7 @@ func (o *AddVirtualImageRequestVirtualImage) GetLabels() []string {
 
 // GetLabelsOk returns a tuple with the Labels field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AddVirtualImageRequestVirtualImage) GetLabelsOk() ([]string, bool) {
 	if o == nil || IsNil(o.Labels) {
 		return nil, false
@@ -278,36 +279,47 @@ func (o *AddVirtualImageRequestVirtualImage) SetIsCloudInit(v bool) {
 	o.IsCloudInit = &v
 }
 
-// GetUserData returns the UserData field value if set, zero value otherwise.
+// GetUserData returns the UserData field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AddVirtualImageRequestVirtualImage) GetUserData() string {
-	if o == nil || IsNil(o.UserData) {
+	if o == nil || IsNil(o.UserData.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.UserData
+	return *o.UserData.Get()
 }
 
 // GetUserDataOk returns a tuple with the UserData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AddVirtualImageRequestVirtualImage) GetUserDataOk() (*string, bool) {
-	if o == nil || IsNil(o.UserData) {
+	if o == nil {
 		return nil, false
 	}
-	return o.UserData, true
+	return o.UserData.Get(), o.UserData.IsSet()
 }
 
 // IsSetUserData returns a boolean if a field has been set.
 func (o *AddVirtualImageRequestVirtualImage) IsSetUserData() bool {
-	if o != nil && !IsNil(o.UserData) {
+	if o != nil && o.UserData.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetUserData gets a reference to the given string and assigns it to the UserData field.
+// SetUserData gets a reference to the given NullableString and assigns it to the UserData field.
 func (o *AddVirtualImageRequestVirtualImage) SetUserData(v string) {
-	o.UserData = &v
+	o.UserData.Set(&v)
+}
+
+// SetUserDataNil sets the value for UserData to be an explicit nil
+func (o *AddVirtualImageRequestVirtualImage) SetUserDataNil() {
+	o.UserData.Set(nil)
+}
+
+// UnsetUserData ensures that no value is present for UserData, not even an explicit nil
+func (o *AddVirtualImageRequestVirtualImage) UnsetUserData() {
+	o.UserData.Unset()
 }
 
 // GetInstallAgent returns the InstallAgent field value if set, zero value otherwise.
@@ -342,100 +354,133 @@ func (o *AddVirtualImageRequestVirtualImage) SetInstallAgent(v bool) {
 	o.InstallAgent = &v
 }
 
-// GetSshUsername returns the SshUsername field value if set, zero value otherwise.
+// GetSshUsername returns the SshUsername field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AddVirtualImageRequestVirtualImage) GetSshUsername() string {
-	if o == nil || IsNil(o.SshUsername) {
+	if o == nil || IsNil(o.SshUsername.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.SshUsername
+	return *o.SshUsername.Get()
 }
 
 // GetSshUsernameOk returns a tuple with the SshUsername field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AddVirtualImageRequestVirtualImage) GetSshUsernameOk() (*string, bool) {
-	if o == nil || IsNil(o.SshUsername) {
+	if o == nil {
 		return nil, false
 	}
-	return o.SshUsername, true
+	return o.SshUsername.Get(), o.SshUsername.IsSet()
 }
 
 // IsSetSshUsername returns a boolean if a field has been set.
 func (o *AddVirtualImageRequestVirtualImage) IsSetSshUsername() bool {
-	if o != nil && !IsNil(o.SshUsername) {
+	if o != nil && o.SshUsername.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetSshUsername gets a reference to the given string and assigns it to the SshUsername field.
+// SetSshUsername gets a reference to the given NullableString and assigns it to the SshUsername field.
 func (o *AddVirtualImageRequestVirtualImage) SetSshUsername(v string) {
-	o.SshUsername = &v
+	o.SshUsername.Set(&v)
 }
 
-// GetSshPassword returns the SshPassword field value if set, zero value otherwise.
+// SetSshUsernameNil sets the value for SshUsername to be an explicit nil
+func (o *AddVirtualImageRequestVirtualImage) SetSshUsernameNil() {
+	o.SshUsername.Set(nil)
+}
+
+// UnsetSshUsername ensures that no value is present for SshUsername, not even an explicit nil
+func (o *AddVirtualImageRequestVirtualImage) UnsetSshUsername() {
+	o.SshUsername.Unset()
+}
+
+// GetSshPassword returns the SshPassword field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AddVirtualImageRequestVirtualImage) GetSshPassword() string {
-	if o == nil || IsNil(o.SshPassword) {
+	if o == nil || IsNil(o.SshPassword.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.SshPassword
+	return *o.SshPassword.Get()
 }
 
 // GetSshPasswordOk returns a tuple with the SshPassword field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AddVirtualImageRequestVirtualImage) GetSshPasswordOk() (*string, bool) {
-	if o == nil || IsNil(o.SshPassword) {
+	if o == nil {
 		return nil, false
 	}
-	return o.SshPassword, true
+	return o.SshPassword.Get(), o.SshPassword.IsSet()
 }
 
 // IsSetSshPassword returns a boolean if a field has been set.
 func (o *AddVirtualImageRequestVirtualImage) IsSetSshPassword() bool {
-	if o != nil && !IsNil(o.SshPassword) {
+	if o != nil && o.SshPassword.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetSshPassword gets a reference to the given string and assigns it to the SshPassword field.
+// SetSshPassword gets a reference to the given NullableString and assigns it to the SshPassword field.
 func (o *AddVirtualImageRequestVirtualImage) SetSshPassword(v string) {
-	o.SshPassword = &v
+	o.SshPassword.Set(&v)
 }
 
-// GetSshKey returns the SshKey field value if set, zero value otherwise.
+// SetSshPasswordNil sets the value for SshPassword to be an explicit nil
+func (o *AddVirtualImageRequestVirtualImage) SetSshPasswordNil() {
+	o.SshPassword.Set(nil)
+}
+
+// UnsetSshPassword ensures that no value is present for SshPassword, not even an explicit nil
+func (o *AddVirtualImageRequestVirtualImage) UnsetSshPassword() {
+	o.SshPassword.Unset()
+}
+
+// GetSshKey returns the SshKey field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AddVirtualImageRequestVirtualImage) GetSshKey() string {
-	if o == nil || IsNil(o.SshKey) {
+	if o == nil || IsNil(o.SshKey.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.SshKey
+	return *o.SshKey.Get()
 }
 
 // GetSshKeyOk returns a tuple with the SshKey field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AddVirtualImageRequestVirtualImage) GetSshKeyOk() (*string, bool) {
-	if o == nil || IsNil(o.SshKey) {
+	if o == nil {
 		return nil, false
 	}
-	return o.SshKey, true
+	return o.SshKey.Get(), o.SshKey.IsSet()
 }
 
 // IsSetSshKey returns a boolean if a field has been set.
 func (o *AddVirtualImageRequestVirtualImage) IsSetSshKey() bool {
-	if o != nil && !IsNil(o.SshKey) {
+	if o != nil && o.SshKey.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetSshKey gets a reference to the given string and assigns it to the SshKey field.
+// SetSshKey gets a reference to the given NullableString and assigns it to the SshKey field.
 func (o *AddVirtualImageRequestVirtualImage) SetSshKey(v string) {
-	o.SshKey = &v
+	o.SshKey.Set(&v)
+}
+
+// SetSshKeyNil sets the value for SshKey to be an explicit nil
+func (o *AddVirtualImageRequestVirtualImage) SetSshKeyNil() {
+	o.SshKey.Set(nil)
+}
+
+// UnsetSshKey ensures that no value is present for SshKey, not even an explicit nil
+func (o *AddVirtualImageRequestVirtualImage) UnsetSshKey() {
+	o.SshKey.Unset()
 }
 
 // GetOsType returns the OsType field value if set, zero value otherwise.
@@ -835,7 +880,7 @@ func (o AddVirtualImageRequestVirtualImage) ToMap() (map[string]interface{}, err
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !IsNil(o.Labels) {
+	if o.Labels != nil {
 		toSerialize["labels"] = o.Labels
 	}
 	if !IsNil(o.ImageType) {
@@ -847,20 +892,20 @@ func (o AddVirtualImageRequestVirtualImage) ToMap() (map[string]interface{}, err
 	if !IsNil(o.IsCloudInit) {
 		toSerialize["isCloudInit"] = o.IsCloudInit
 	}
-	if !IsNil(o.UserData) {
-		toSerialize["userData"] = o.UserData
+	if o.UserData.IsSet() {
+		toSerialize["userData"] = o.UserData.Get()
 	}
 	if !IsNil(o.InstallAgent) {
 		toSerialize["installAgent"] = o.InstallAgent
 	}
-	if !IsNil(o.SshUsername) {
-		toSerialize["sshUsername"] = o.SshUsername
+	if o.SshUsername.IsSet() {
+		toSerialize["sshUsername"] = o.SshUsername.Get()
 	}
-	if !IsNil(o.SshPassword) {
-		toSerialize["sshPassword"] = o.SshPassword
+	if o.SshPassword.IsSet() {
+		toSerialize["sshPassword"] = o.SshPassword.Get()
 	}
-	if !IsNil(o.SshKey) {
-		toSerialize["sshKey"] = o.SshKey
+	if o.SshKey.IsSet() {
+		toSerialize["sshKey"] = o.SshKey.Get()
 	}
 	if !IsNil(o.OsType) {
 		toSerialize["osType"] = o.OsType

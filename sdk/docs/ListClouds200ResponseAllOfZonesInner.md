@@ -6,43 +6,43 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
 **Uuid** | Pointer to **string** |  | [optional] 
-**ExternalId** | Pointer to **string** |  | [optional] 
+**ExternalId** | Pointer to **NullableString** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Code** | Pointer to **string** |  | [optional] 
 **Labels** | Pointer to **[]string** |  | [optional] 
-**Location** | Pointer to **string** |  | [optional] 
-**Owner** | Pointer to [**ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
+**Location** | Pointer to **NullableString** |  | [optional] 
+**Owner** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **AccountId** | Pointer to **int64** |  | [optional] 
-**Account** | Pointer to [**ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
+**Account** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **Visibility** | Pointer to **string** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
 **Status** | Pointer to **string** |  | [optional] 
-**StatusMessage** | Pointer to **string** |  | [optional] 
-**StatusDate** | Pointer to **time.Time** |  | [optional] 
-**CostStatus** | Pointer to **string** |  | [optional] 
-**CostStatusMessage** | Pointer to **string** |  | [optional] 
-**CostStatusDate** | Pointer to **time.Time** |  | [optional] 
-**CostLastSyncDuration** | Pointer to **int64** |  | [optional] 
-**CostLastSync** | Pointer to **time.Time** |  | [optional] 
+**StatusMessage** | Pointer to **NullableString** |  | [optional] 
+**StatusDate** | Pointer to **NullableTime** |  | [optional] 
+**CostStatus** | Pointer to **NullableString** |  | [optional] 
+**CostStatusMessage** | Pointer to **NullableString** |  | [optional] 
+**CostStatusDate** | Pointer to **NullableTime** |  | [optional] 
+**CostLastSyncDuration** | Pointer to **NullableInt64** |  | [optional] 
+**CostLastSync** | Pointer to **NullableTime** |  | [optional] 
 **ZoneType** | Pointer to [**ListBackupSettings200ResponseBackupSettingsDefaultSchedule**](ListBackupSettings200ResponseBackupSettingsDefaultSchedule.md) |  | [optional] 
 **ZoneTypeId** | Pointer to **int64** |  | [optional] 
-**GuidanceMode** | Pointer to **string** |  | [optional] 
+**GuidanceMode** | Pointer to **NullableString** |  | [optional] 
 **StorageMode** | Pointer to **string** |  | [optional] 
 **AgentMode** | Pointer to **string** |  | [optional] 
-**UserDataLinux** | Pointer to **string** |  | [optional] 
-**UserDataWindows** | Pointer to **string** |  | [optional] 
-**ConsoleKeymap** | Pointer to **string** |  | [optional] 
+**UserDataLinux** | Pointer to **NullableString** |  | [optional] 
+**UserDataWindows** | Pointer to **NullableString** |  | [optional] 
+**ConsoleKeymap** | Pointer to **NullableString** |  | [optional] 
 **ContainerMode** | Pointer to **string** |  | [optional] 
-**CostingMode** | Pointer to **string** |  | [optional] 
-**ServiceVersion** | Pointer to **string** |  | [optional] 
+**CostingMode** | Pointer to **NullableString** |  | [optional] 
+**ServiceVersion** | Pointer to **NullableString** |  | [optional] 
 **SecurityMode** | Pointer to **string** |  | [optional] 
 **InventoryLevel** | Pointer to **string** |  | [optional] 
-**Timezone** | Pointer to **string** |  | [optional] 
-**ApiProxy** | Pointer to **string** |  | [optional] 
-**ProvisioningProxy** | Pointer to **string** |  | [optional] 
+**Timezone** | Pointer to **NullableString** |  | [optional] 
+**ApiProxy** | Pointer to **NullableString** |  | [optional] 
+**ProvisioningProxy** | Pointer to **NullableString** |  | [optional] 
 **NetworkDomain** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **DomainName** | Pointer to **string** |  | [optional] 
-**RegionCode** | Pointer to **string** |  | [optional] 
+**RegionCode** | Pointer to **NullableString** |  | [optional] 
 **AutoRecoverPowerState** | Pointer to **bool** |  | [optional] 
 **ScalePriority** | Pointer to **int64** |  | [optional] 
 **DefaultDatastoreSyncActive** | Pointer to **bool** |  | [optional] 
@@ -53,13 +53,13 @@ Name | Type | Description | Notes
 **DefaultPlanSyncActive** | Pointer to **bool** |  | [optional] 
 **Config** | Pointer to [**ListClouds200ResponseAllOfZonesInnerConfig**](ListClouds200ResponseAllOfZonesInnerConfig.md) |  | [optional] 
 **Credential** | Pointer to [**ListClouds200ResponseAllOfZonesInnerCredential**](ListClouds200ResponseAllOfZonesInnerCredential.md) |  | [optional] 
-**ImagePath** | Pointer to **string** | Logo image URL | [optional] 
-**DarkImagePath** | Pointer to **string** | Dark logo image URL | [optional] 
+**ImagePath** | Pointer to **NullableString** | Logo image URL | [optional] 
+**DarkImagePath** | Pointer to **NullableString** | Dark logo image URL | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
-**LastSync** | Pointer to **time.Time** |  | [optional] 
-**LastSyncDuration** | Pointer to **int64** |  | [optional] 
-**NextRunDate** | Pointer to **time.Time** |  | [optional] 
+**LastSync** | Pointer to **NullableTime** |  | [optional] 
+**LastSyncDuration** | Pointer to **NullableInt64** |  | [optional] 
+**NextRunDate** | Pointer to **NullableTime** |  | [optional] 
 **Groups** | Pointer to [**[]ListClouds200ResponseAllOfZonesInnerGroupsInner**](ListClouds200ResponseAllOfZonesInnerGroupsInner.md) |  | [optional] 
 **SecurityServer** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **NetworkServer** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
@@ -160,6 +160,16 @@ SetExternalId sets ExternalId field to given value.
 
 HasExternalId returns a boolean if a field has been set.
 
+### SetExternalIdNil
+
+`func (o *ListClouds200ResponseAllOfZonesInner) SetExternalIdNil(b bool)`
+
+ SetExternalIdNil sets the value for ExternalId to be an explicit nil
+
+### UnsetExternalId
+`func (o *ListClouds200ResponseAllOfZonesInner) UnsetExternalId()`
+
+UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
 ### GetName
 
 `func (o *ListClouds200ResponseAllOfZonesInner) GetName() string`
@@ -260,22 +270,32 @@ SetLocation sets Location field to given value.
 
 HasLocation returns a boolean if a field has been set.
 
+### SetLocationNil
+
+`func (o *ListClouds200ResponseAllOfZonesInner) SetLocationNil(b bool)`
+
+ SetLocationNil sets the value for Location to be an explicit nil
+
+### UnsetLocation
+`func (o *ListClouds200ResponseAllOfZonesInner) UnsetLocation()`
+
+UnsetLocation ensures that no value is present for Location, not even an explicit nil
 ### GetOwner
 
-`func (o *ListClouds200ResponseAllOfZonesInner) GetOwner() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *ListClouds200ResponseAllOfZonesInner) GetOwner() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetOwner returns the Owner field if non-nil, zero value otherwise.
 
 ### GetOwnerOk
 
-`func (o *ListClouds200ResponseAllOfZonesInner) GetOwnerOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *ListClouds200ResponseAllOfZonesInner) GetOwnerOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOwner
 
-`func (o *ListClouds200ResponseAllOfZonesInner) SetOwner(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *ListClouds200ResponseAllOfZonesInner) SetOwner(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetOwner sets Owner field to given value.
 
@@ -312,20 +332,20 @@ HasAccountId returns a boolean if a field has been set.
 
 ### GetAccount
 
-`func (o *ListClouds200ResponseAllOfZonesInner) GetAccount() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *ListClouds200ResponseAllOfZonesInner) GetAccount() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetAccount returns the Account field if non-nil, zero value otherwise.
 
 ### GetAccountOk
 
-`func (o *ListClouds200ResponseAllOfZonesInner) GetAccountOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *ListClouds200ResponseAllOfZonesInner) GetAccountOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetAccountOk returns a tuple with the Account field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccount
 
-`func (o *ListClouds200ResponseAllOfZonesInner) SetAccount(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *ListClouds200ResponseAllOfZonesInner) SetAccount(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetAccount sets Account field to given value.
 
@@ -435,6 +455,16 @@ SetStatusMessage sets StatusMessage field to given value.
 
 HasStatusMessage returns a boolean if a field has been set.
 
+### SetStatusMessageNil
+
+`func (o *ListClouds200ResponseAllOfZonesInner) SetStatusMessageNil(b bool)`
+
+ SetStatusMessageNil sets the value for StatusMessage to be an explicit nil
+
+### UnsetStatusMessage
+`func (o *ListClouds200ResponseAllOfZonesInner) UnsetStatusMessage()`
+
+UnsetStatusMessage ensures that no value is present for StatusMessage, not even an explicit nil
 ### GetStatusDate
 
 `func (o *ListClouds200ResponseAllOfZonesInner) GetStatusDate() time.Time`
@@ -460,6 +490,16 @@ SetStatusDate sets StatusDate field to given value.
 
 HasStatusDate returns a boolean if a field has been set.
 
+### SetStatusDateNil
+
+`func (o *ListClouds200ResponseAllOfZonesInner) SetStatusDateNil(b bool)`
+
+ SetStatusDateNil sets the value for StatusDate to be an explicit nil
+
+### UnsetStatusDate
+`func (o *ListClouds200ResponseAllOfZonesInner) UnsetStatusDate()`
+
+UnsetStatusDate ensures that no value is present for StatusDate, not even an explicit nil
 ### GetCostStatus
 
 `func (o *ListClouds200ResponseAllOfZonesInner) GetCostStatus() string`
@@ -485,6 +525,16 @@ SetCostStatus sets CostStatus field to given value.
 
 HasCostStatus returns a boolean if a field has been set.
 
+### SetCostStatusNil
+
+`func (o *ListClouds200ResponseAllOfZonesInner) SetCostStatusNil(b bool)`
+
+ SetCostStatusNil sets the value for CostStatus to be an explicit nil
+
+### UnsetCostStatus
+`func (o *ListClouds200ResponseAllOfZonesInner) UnsetCostStatus()`
+
+UnsetCostStatus ensures that no value is present for CostStatus, not even an explicit nil
 ### GetCostStatusMessage
 
 `func (o *ListClouds200ResponseAllOfZonesInner) GetCostStatusMessage() string`
@@ -510,6 +560,16 @@ SetCostStatusMessage sets CostStatusMessage field to given value.
 
 HasCostStatusMessage returns a boolean if a field has been set.
 
+### SetCostStatusMessageNil
+
+`func (o *ListClouds200ResponseAllOfZonesInner) SetCostStatusMessageNil(b bool)`
+
+ SetCostStatusMessageNil sets the value for CostStatusMessage to be an explicit nil
+
+### UnsetCostStatusMessage
+`func (o *ListClouds200ResponseAllOfZonesInner) UnsetCostStatusMessage()`
+
+UnsetCostStatusMessage ensures that no value is present for CostStatusMessage, not even an explicit nil
 ### GetCostStatusDate
 
 `func (o *ListClouds200ResponseAllOfZonesInner) GetCostStatusDate() time.Time`
@@ -535,6 +595,16 @@ SetCostStatusDate sets CostStatusDate field to given value.
 
 HasCostStatusDate returns a boolean if a field has been set.
 
+### SetCostStatusDateNil
+
+`func (o *ListClouds200ResponseAllOfZonesInner) SetCostStatusDateNil(b bool)`
+
+ SetCostStatusDateNil sets the value for CostStatusDate to be an explicit nil
+
+### UnsetCostStatusDate
+`func (o *ListClouds200ResponseAllOfZonesInner) UnsetCostStatusDate()`
+
+UnsetCostStatusDate ensures that no value is present for CostStatusDate, not even an explicit nil
 ### GetCostLastSyncDuration
 
 `func (o *ListClouds200ResponseAllOfZonesInner) GetCostLastSyncDuration() int64`
@@ -560,6 +630,16 @@ SetCostLastSyncDuration sets CostLastSyncDuration field to given value.
 
 HasCostLastSyncDuration returns a boolean if a field has been set.
 
+### SetCostLastSyncDurationNil
+
+`func (o *ListClouds200ResponseAllOfZonesInner) SetCostLastSyncDurationNil(b bool)`
+
+ SetCostLastSyncDurationNil sets the value for CostLastSyncDuration to be an explicit nil
+
+### UnsetCostLastSyncDuration
+`func (o *ListClouds200ResponseAllOfZonesInner) UnsetCostLastSyncDuration()`
+
+UnsetCostLastSyncDuration ensures that no value is present for CostLastSyncDuration, not even an explicit nil
 ### GetCostLastSync
 
 `func (o *ListClouds200ResponseAllOfZonesInner) GetCostLastSync() time.Time`
@@ -585,6 +665,16 @@ SetCostLastSync sets CostLastSync field to given value.
 
 HasCostLastSync returns a boolean if a field has been set.
 
+### SetCostLastSyncNil
+
+`func (o *ListClouds200ResponseAllOfZonesInner) SetCostLastSyncNil(b bool)`
+
+ SetCostLastSyncNil sets the value for CostLastSync to be an explicit nil
+
+### UnsetCostLastSync
+`func (o *ListClouds200ResponseAllOfZonesInner) UnsetCostLastSync()`
+
+UnsetCostLastSync ensures that no value is present for CostLastSync, not even an explicit nil
 ### GetZoneType
 
 `func (o *ListClouds200ResponseAllOfZonesInner) GetZoneType() ListBackupSettings200ResponseBackupSettingsDefaultSchedule`
@@ -660,6 +750,16 @@ SetGuidanceMode sets GuidanceMode field to given value.
 
 HasGuidanceMode returns a boolean if a field has been set.
 
+### SetGuidanceModeNil
+
+`func (o *ListClouds200ResponseAllOfZonesInner) SetGuidanceModeNil(b bool)`
+
+ SetGuidanceModeNil sets the value for GuidanceMode to be an explicit nil
+
+### UnsetGuidanceMode
+`func (o *ListClouds200ResponseAllOfZonesInner) UnsetGuidanceMode()`
+
+UnsetGuidanceMode ensures that no value is present for GuidanceMode, not even an explicit nil
 ### GetStorageMode
 
 `func (o *ListClouds200ResponseAllOfZonesInner) GetStorageMode() string`
@@ -735,6 +835,16 @@ SetUserDataLinux sets UserDataLinux field to given value.
 
 HasUserDataLinux returns a boolean if a field has been set.
 
+### SetUserDataLinuxNil
+
+`func (o *ListClouds200ResponseAllOfZonesInner) SetUserDataLinuxNil(b bool)`
+
+ SetUserDataLinuxNil sets the value for UserDataLinux to be an explicit nil
+
+### UnsetUserDataLinux
+`func (o *ListClouds200ResponseAllOfZonesInner) UnsetUserDataLinux()`
+
+UnsetUserDataLinux ensures that no value is present for UserDataLinux, not even an explicit nil
 ### GetUserDataWindows
 
 `func (o *ListClouds200ResponseAllOfZonesInner) GetUserDataWindows() string`
@@ -760,6 +870,16 @@ SetUserDataWindows sets UserDataWindows field to given value.
 
 HasUserDataWindows returns a boolean if a field has been set.
 
+### SetUserDataWindowsNil
+
+`func (o *ListClouds200ResponseAllOfZonesInner) SetUserDataWindowsNil(b bool)`
+
+ SetUserDataWindowsNil sets the value for UserDataWindows to be an explicit nil
+
+### UnsetUserDataWindows
+`func (o *ListClouds200ResponseAllOfZonesInner) UnsetUserDataWindows()`
+
+UnsetUserDataWindows ensures that no value is present for UserDataWindows, not even an explicit nil
 ### GetConsoleKeymap
 
 `func (o *ListClouds200ResponseAllOfZonesInner) GetConsoleKeymap() string`
@@ -785,6 +905,16 @@ SetConsoleKeymap sets ConsoleKeymap field to given value.
 
 HasConsoleKeymap returns a boolean if a field has been set.
 
+### SetConsoleKeymapNil
+
+`func (o *ListClouds200ResponseAllOfZonesInner) SetConsoleKeymapNil(b bool)`
+
+ SetConsoleKeymapNil sets the value for ConsoleKeymap to be an explicit nil
+
+### UnsetConsoleKeymap
+`func (o *ListClouds200ResponseAllOfZonesInner) UnsetConsoleKeymap()`
+
+UnsetConsoleKeymap ensures that no value is present for ConsoleKeymap, not even an explicit nil
 ### GetContainerMode
 
 `func (o *ListClouds200ResponseAllOfZonesInner) GetContainerMode() string`
@@ -835,6 +965,16 @@ SetCostingMode sets CostingMode field to given value.
 
 HasCostingMode returns a boolean if a field has been set.
 
+### SetCostingModeNil
+
+`func (o *ListClouds200ResponseAllOfZonesInner) SetCostingModeNil(b bool)`
+
+ SetCostingModeNil sets the value for CostingMode to be an explicit nil
+
+### UnsetCostingMode
+`func (o *ListClouds200ResponseAllOfZonesInner) UnsetCostingMode()`
+
+UnsetCostingMode ensures that no value is present for CostingMode, not even an explicit nil
 ### GetServiceVersion
 
 `func (o *ListClouds200ResponseAllOfZonesInner) GetServiceVersion() string`
@@ -860,6 +1000,16 @@ SetServiceVersion sets ServiceVersion field to given value.
 
 HasServiceVersion returns a boolean if a field has been set.
 
+### SetServiceVersionNil
+
+`func (o *ListClouds200ResponseAllOfZonesInner) SetServiceVersionNil(b bool)`
+
+ SetServiceVersionNil sets the value for ServiceVersion to be an explicit nil
+
+### UnsetServiceVersion
+`func (o *ListClouds200ResponseAllOfZonesInner) UnsetServiceVersion()`
+
+UnsetServiceVersion ensures that no value is present for ServiceVersion, not even an explicit nil
 ### GetSecurityMode
 
 `func (o *ListClouds200ResponseAllOfZonesInner) GetSecurityMode() string`
@@ -935,6 +1085,16 @@ SetTimezone sets Timezone field to given value.
 
 HasTimezone returns a boolean if a field has been set.
 
+### SetTimezoneNil
+
+`func (o *ListClouds200ResponseAllOfZonesInner) SetTimezoneNil(b bool)`
+
+ SetTimezoneNil sets the value for Timezone to be an explicit nil
+
+### UnsetTimezone
+`func (o *ListClouds200ResponseAllOfZonesInner) UnsetTimezone()`
+
+UnsetTimezone ensures that no value is present for Timezone, not even an explicit nil
 ### GetApiProxy
 
 `func (o *ListClouds200ResponseAllOfZonesInner) GetApiProxy() string`
@@ -960,6 +1120,16 @@ SetApiProxy sets ApiProxy field to given value.
 
 HasApiProxy returns a boolean if a field has been set.
 
+### SetApiProxyNil
+
+`func (o *ListClouds200ResponseAllOfZonesInner) SetApiProxyNil(b bool)`
+
+ SetApiProxyNil sets the value for ApiProxy to be an explicit nil
+
+### UnsetApiProxy
+`func (o *ListClouds200ResponseAllOfZonesInner) UnsetApiProxy()`
+
+UnsetApiProxy ensures that no value is present for ApiProxy, not even an explicit nil
 ### GetProvisioningProxy
 
 `func (o *ListClouds200ResponseAllOfZonesInner) GetProvisioningProxy() string`
@@ -985,6 +1155,16 @@ SetProvisioningProxy sets ProvisioningProxy field to given value.
 
 HasProvisioningProxy returns a boolean if a field has been set.
 
+### SetProvisioningProxyNil
+
+`func (o *ListClouds200ResponseAllOfZonesInner) SetProvisioningProxyNil(b bool)`
+
+ SetProvisioningProxyNil sets the value for ProvisioningProxy to be an explicit nil
+
+### UnsetProvisioningProxy
+`func (o *ListClouds200ResponseAllOfZonesInner) UnsetProvisioningProxy()`
+
+UnsetProvisioningProxy ensures that no value is present for ProvisioningProxy, not even an explicit nil
 ### GetNetworkDomain
 
 `func (o *ListClouds200ResponseAllOfZonesInner) GetNetworkDomain() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
@@ -1060,6 +1240,16 @@ SetRegionCode sets RegionCode field to given value.
 
 HasRegionCode returns a boolean if a field has been set.
 
+### SetRegionCodeNil
+
+`func (o *ListClouds200ResponseAllOfZonesInner) SetRegionCodeNil(b bool)`
+
+ SetRegionCodeNil sets the value for RegionCode to be an explicit nil
+
+### UnsetRegionCode
+`func (o *ListClouds200ResponseAllOfZonesInner) UnsetRegionCode()`
+
+UnsetRegionCode ensures that no value is present for RegionCode, not even an explicit nil
 ### GetAutoRecoverPowerState
 
 `func (o *ListClouds200ResponseAllOfZonesInner) GetAutoRecoverPowerState() bool`
@@ -1335,6 +1525,16 @@ SetImagePath sets ImagePath field to given value.
 
 HasImagePath returns a boolean if a field has been set.
 
+### SetImagePathNil
+
+`func (o *ListClouds200ResponseAllOfZonesInner) SetImagePathNil(b bool)`
+
+ SetImagePathNil sets the value for ImagePath to be an explicit nil
+
+### UnsetImagePath
+`func (o *ListClouds200ResponseAllOfZonesInner) UnsetImagePath()`
+
+UnsetImagePath ensures that no value is present for ImagePath, not even an explicit nil
 ### GetDarkImagePath
 
 `func (o *ListClouds200ResponseAllOfZonesInner) GetDarkImagePath() string`
@@ -1360,6 +1560,16 @@ SetDarkImagePath sets DarkImagePath field to given value.
 
 HasDarkImagePath returns a boolean if a field has been set.
 
+### SetDarkImagePathNil
+
+`func (o *ListClouds200ResponseAllOfZonesInner) SetDarkImagePathNil(b bool)`
+
+ SetDarkImagePathNil sets the value for DarkImagePath to be an explicit nil
+
+### UnsetDarkImagePath
+`func (o *ListClouds200ResponseAllOfZonesInner) UnsetDarkImagePath()`
+
+UnsetDarkImagePath ensures that no value is present for DarkImagePath, not even an explicit nil
 ### GetDateCreated
 
 `func (o *ListClouds200ResponseAllOfZonesInner) GetDateCreated() time.Time`
@@ -1435,6 +1645,16 @@ SetLastSync sets LastSync field to given value.
 
 HasLastSync returns a boolean if a field has been set.
 
+### SetLastSyncNil
+
+`func (o *ListClouds200ResponseAllOfZonesInner) SetLastSyncNil(b bool)`
+
+ SetLastSyncNil sets the value for LastSync to be an explicit nil
+
+### UnsetLastSync
+`func (o *ListClouds200ResponseAllOfZonesInner) UnsetLastSync()`
+
+UnsetLastSync ensures that no value is present for LastSync, not even an explicit nil
 ### GetLastSyncDuration
 
 `func (o *ListClouds200ResponseAllOfZonesInner) GetLastSyncDuration() int64`
@@ -1460,6 +1680,16 @@ SetLastSyncDuration sets LastSyncDuration field to given value.
 
 HasLastSyncDuration returns a boolean if a field has been set.
 
+### SetLastSyncDurationNil
+
+`func (o *ListClouds200ResponseAllOfZonesInner) SetLastSyncDurationNil(b bool)`
+
+ SetLastSyncDurationNil sets the value for LastSyncDuration to be an explicit nil
+
+### UnsetLastSyncDuration
+`func (o *ListClouds200ResponseAllOfZonesInner) UnsetLastSyncDuration()`
+
+UnsetLastSyncDuration ensures that no value is present for LastSyncDuration, not even an explicit nil
 ### GetNextRunDate
 
 `func (o *ListClouds200ResponseAllOfZonesInner) GetNextRunDate() time.Time`
@@ -1485,6 +1715,16 @@ SetNextRunDate sets NextRunDate field to given value.
 
 HasNextRunDate returns a boolean if a field has been set.
 
+### SetNextRunDateNil
+
+`func (o *ListClouds200ResponseAllOfZonesInner) SetNextRunDateNil(b bool)`
+
+ SetNextRunDateNil sets the value for NextRunDate to be an explicit nil
+
+### UnsetNextRunDate
+`func (o *ListClouds200ResponseAllOfZonesInner) UnsetNextRunDate()`
+
+UnsetNextRunDate ensures that no value is present for NextRunDate, not even an explicit nil
 ### GetGroups
 
 `func (o *ListClouds200ResponseAllOfZonesInner) GetGroups() []ListClouds200ResponseAllOfZonesInnerGroupsInner`

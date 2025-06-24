@@ -23,11 +23,11 @@ var _ MappedNullable = &ExecuteSchedule{}
 type ExecuteSchedule struct {
 	Id                   *int64                 `json:"id,omitempty"`
 	Name                 *string                `json:"name,omitempty"`
-	Description          *string                `json:"description,omitempty"`
-	Visibility           *string                `json:"visibility,omitempty"`
+	Description          NullableString         `json:"description,omitempty"`
+	Visibility           NullableString         `json:"visibility,omitempty"`
 	Enabled              *bool                  `json:"enabled,omitempty"`
 	ScheduleType         *string                `json:"scheduleType,omitempty"`
-	ScheduleTimezone     *string                `json:"scheduleTimezone,omitempty"`
+	ScheduleTimezone     NullableString         `json:"scheduleTimezone,omitempty"`
 	Cron                 *string                `json:"cron,omitempty"`
 	DateCreated          *time.Time             `json:"dateCreated,omitempty"`
 	LastUpdated          *time.Time             `json:"lastUpdated,omitempty"`
@@ -117,68 +117,90 @@ func (o *ExecuteSchedule) SetName(v string) {
 	o.Name = &v
 }
 
-// GetDescription returns the Description field value if set, zero value otherwise.
+// GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ExecuteSchedule) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
+	if o == nil || IsNil(o.Description.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Description
+	return *o.Description.Get()
 }
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ExecuteSchedule) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Description, true
+	return o.Description.Get(), o.Description.IsSet()
 }
 
 // IsSetDescription returns a boolean if a field has been set.
 func (o *ExecuteSchedule) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
+	if o != nil && o.Description.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDescription gets a reference to the given string and assigns it to the Description field.
+// SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *ExecuteSchedule) SetDescription(v string) {
-	o.Description = &v
+	o.Description.Set(&v)
 }
 
-// GetVisibility returns the Visibility field value if set, zero value otherwise.
+// SetDescriptionNil sets the value for Description to be an explicit nil
+func (o *ExecuteSchedule) SetDescriptionNil() {
+	o.Description.Set(nil)
+}
+
+// UnsetDescription ensures that no value is present for Description, not even an explicit nil
+func (o *ExecuteSchedule) UnsetDescription() {
+	o.Description.Unset()
+}
+
+// GetVisibility returns the Visibility field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ExecuteSchedule) GetVisibility() string {
-	if o == nil || IsNil(o.Visibility) {
+	if o == nil || IsNil(o.Visibility.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Visibility
+	return *o.Visibility.Get()
 }
 
 // GetVisibilityOk returns a tuple with the Visibility field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ExecuteSchedule) GetVisibilityOk() (*string, bool) {
-	if o == nil || IsNil(o.Visibility) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Visibility, true
+	return o.Visibility.Get(), o.Visibility.IsSet()
 }
 
 // IsSetVisibility returns a boolean if a field has been set.
 func (o *ExecuteSchedule) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
+	if o != nil && o.Visibility.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetVisibility gets a reference to the given string and assigns it to the Visibility field.
+// SetVisibility gets a reference to the given NullableString and assigns it to the Visibility field.
 func (o *ExecuteSchedule) SetVisibility(v string) {
-	o.Visibility = &v
+	o.Visibility.Set(&v)
+}
+
+// SetVisibilityNil sets the value for Visibility to be an explicit nil
+func (o *ExecuteSchedule) SetVisibilityNil() {
+	o.Visibility.Set(nil)
+}
+
+// UnsetVisibility ensures that no value is present for Visibility, not even an explicit nil
+func (o *ExecuteSchedule) UnsetVisibility() {
+	o.Visibility.Unset()
 }
 
 // GetEnabled returns the Enabled field value if set, zero value otherwise.
@@ -245,36 +267,47 @@ func (o *ExecuteSchedule) SetScheduleType(v string) {
 	o.ScheduleType = &v
 }
 
-// GetScheduleTimezone returns the ScheduleTimezone field value if set, zero value otherwise.
+// GetScheduleTimezone returns the ScheduleTimezone field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ExecuteSchedule) GetScheduleTimezone() string {
-	if o == nil || IsNil(o.ScheduleTimezone) {
+	if o == nil || IsNil(o.ScheduleTimezone.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ScheduleTimezone
+	return *o.ScheduleTimezone.Get()
 }
 
 // GetScheduleTimezoneOk returns a tuple with the ScheduleTimezone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ExecuteSchedule) GetScheduleTimezoneOk() (*string, bool) {
-	if o == nil || IsNil(o.ScheduleTimezone) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ScheduleTimezone, true
+	return o.ScheduleTimezone.Get(), o.ScheduleTimezone.IsSet()
 }
 
 // IsSetScheduleTimezone returns a boolean if a field has been set.
 func (o *ExecuteSchedule) IsSetScheduleTimezone() bool {
-	if o != nil && !IsNil(o.ScheduleTimezone) {
+	if o != nil && o.ScheduleTimezone.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetScheduleTimezone gets a reference to the given string and assigns it to the ScheduleTimezone field.
+// SetScheduleTimezone gets a reference to the given NullableString and assigns it to the ScheduleTimezone field.
 func (o *ExecuteSchedule) SetScheduleTimezone(v string) {
-	o.ScheduleTimezone = &v
+	o.ScheduleTimezone.Set(&v)
+}
+
+// SetScheduleTimezoneNil sets the value for ScheduleTimezone to be an explicit nil
+func (o *ExecuteSchedule) SetScheduleTimezoneNil() {
+	o.ScheduleTimezone.Set(nil)
+}
+
+// UnsetScheduleTimezone ensures that no value is present for ScheduleTimezone, not even an explicit nil
+func (o *ExecuteSchedule) UnsetScheduleTimezone() {
+	o.ScheduleTimezone.Unset()
 }
 
 // GetCron returns the Cron field value if set, zero value otherwise.
@@ -389,11 +422,11 @@ func (o ExecuteSchedule) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !IsNil(o.Description) {
-		toSerialize["description"] = o.Description
+	if o.Description.IsSet() {
+		toSerialize["description"] = o.Description.Get()
 	}
-	if !IsNil(o.Visibility) {
-		toSerialize["visibility"] = o.Visibility
+	if o.Visibility.IsSet() {
+		toSerialize["visibility"] = o.Visibility.Get()
 	}
 	if !IsNil(o.Enabled) {
 		toSerialize["enabled"] = o.Enabled
@@ -401,8 +434,8 @@ func (o ExecuteSchedule) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ScheduleType) {
 		toSerialize["scheduleType"] = o.ScheduleType
 	}
-	if !IsNil(o.ScheduleTimezone) {
-		toSerialize["scheduleTimezone"] = o.ScheduleTimezone
+	if o.ScheduleTimezone.IsSet() {
+		toSerialize["scheduleTimezone"] = o.ScheduleTimezone.Get()
 	}
 	if !IsNil(o.Cron) {
 		toSerialize["cron"] = o.Cron

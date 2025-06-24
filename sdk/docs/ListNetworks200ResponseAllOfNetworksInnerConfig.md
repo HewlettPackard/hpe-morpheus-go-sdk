@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**VlanIDs** | Pointer to **string** |  | [optional] 
+**VlanIDs** | Pointer to **NullableString** |  | [optional] 
 **ConnectedGateway** | Pointer to **string** |  | [optional] 
 **SubnetIpManagementType** | Pointer to **string** |  | [optional] 
 **SubnetIpServerId** | Pointer to **string** |  | [optional] 
@@ -56,6 +56,16 @@ SetVlanIDs sets VlanIDs field to given value.
 
 HasVlanIDs returns a boolean if a field has been set.
 
+### SetVlanIDsNil
+
+`func (o *ListNetworks200ResponseAllOfNetworksInnerConfig) SetVlanIDsNil(b bool)`
+
+ SetVlanIDsNil sets the value for VlanIDs to be an explicit nil
+
+### UnsetVlanIDs
+`func (o *ListNetworks200ResponseAllOfNetworksInnerConfig) UnsetVlanIDs()`
+
+UnsetVlanIDs ensures that no value is present for VlanIDs, not even an explicit nil
 ### GetConnectedGateway
 
 `func (o *ListNetworks200ResponseAllOfNetworksInnerConfig) GetConnectedGateway() string`

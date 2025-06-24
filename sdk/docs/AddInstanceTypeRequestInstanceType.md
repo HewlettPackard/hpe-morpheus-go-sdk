@@ -83,6 +83,16 @@ SetLabels sets Labels field to given value.
 
 HasLabels returns a boolean if a field has been set.
 
+### SetLabelsNil
+
+`func (o *AddInstanceTypeRequestInstanceType) SetLabelsNil(b bool)`
+
+ SetLabelsNil sets the value for Labels to be an explicit nil
+
+### UnsetLabels
+`func (o *AddInstanceTypeRequestInstanceType) UnsetLabels()`
+
+UnsetLabels ensures that no value is present for Labels, not even an explicit nil
 ### GetDescription
 
 `func (o *AddInstanceTypeRequestInstanceType) GetDescription() string`

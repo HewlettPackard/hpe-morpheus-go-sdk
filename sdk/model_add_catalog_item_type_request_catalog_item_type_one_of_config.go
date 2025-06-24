@@ -438,9 +438,9 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfig) SetServicePlanOpti
 	o.ServicePlanOptions = &v
 }
 
-// GetSecurityGroups returns the SecurityGroups field value if set, zero value otherwise.
+// GetSecurityGroups returns the SecurityGroups field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfig) GetSecurityGroups() []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigSecurityGroupsInner {
-	if o == nil || IsNil(o.SecurityGroups) {
+	if o == nil {
 		var ret []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigSecurityGroupsInner
 		return ret
 	}
@@ -449,6 +449,7 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfig) GetSecurityGroups(
 
 // GetSecurityGroupsOk returns a tuple with the SecurityGroups field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfig) GetSecurityGroupsOk() ([]AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigSecurityGroupsInner, bool) {
 	if o == nil || IsNil(o.SecurityGroups) {
 		return nil, false
@@ -727,7 +728,7 @@ func (o AddCatalogItemTypeRequestCatalogItemTypeOneOfConfig) ToMap() (map[string
 	if !IsNil(o.ServicePlanOptions) {
 		toSerialize["servicePlanOptions"] = o.ServicePlanOptions
 	}
-	if !IsNil(o.SecurityGroups) {
+	if o.SecurityGroups != nil {
 		toSerialize["securityGroups"] = o.SecurityGroups
 	}
 	if !IsNil(o.NetworkInterfaces) {

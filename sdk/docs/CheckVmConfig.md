@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ContainerName** | **string** |  | 
-**ExternalId** | Pointer to **string** |  | [optional] 
+**ExternalId** | Pointer to **NullableString** |  | [optional] 
 **CheckUser** | Pointer to **string** |  | [optional] 
 **TextCheckOn** | Pointer to **string** |  | [optional] 
 **CheckPassword** | Pointer to **string** |  | [optional] 
@@ -81,6 +81,16 @@ SetExternalId sets ExternalId field to given value.
 
 HasExternalId returns a boolean if a field has been set.
 
+### SetExternalIdNil
+
+`func (o *CheckVmConfig) SetExternalIdNil(b bool)`
+
+ SetExternalIdNil sets the value for ExternalId to be an explicit nil
+
+### UnsetExternalId
+`func (o *CheckVmConfig) UnsetExternalId()`
+
+UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
 ### GetCheckUser
 
 `func (o *CheckVmConfig) GetCheckUser() string`

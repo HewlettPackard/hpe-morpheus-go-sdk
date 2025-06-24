@@ -21,18 +21,18 @@ var _ MappedNullable = &ListDeploys200ResponseAllOfAppDeploysInner{}
 
 // ListDeploys200ResponseAllOfAppDeploysInner struct for ListDeploys200ResponseAllOfAppDeploysInner
 type ListDeploys200ResponseAllOfAppDeploysInner struct {
-	Id                   *int64                                                                  `json:"id,omitempty"`
-	InstanceId           *int64                                                                  `json:"instanceId,omitempty"`
-	Instance             *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"instance,omitempty"`
-	Deployment           *ListDeploys200ResponseAllOfAppDeploysInnerDeployment                   `json:"deployment,omitempty"`
-	DeploymentVersionId  *int64                                                                  `json:"deploymentVersionId,omitempty"`
-	DeploymentVersion    *ListDeploys200ResponseAllOfAppDeploysInnerDeploymentVersion            `json:"deploymentVersion,omitempty"`
-	Config               map[string]interface{}                                                  `json:"config,omitempty"`
-	Status               *string                                                                 `json:"status,omitempty"`
-	DeployDate           *time.Time                                                              `json:"deployDate,omitempty"`
-	DateCreated          *time.Time                                                              `json:"dateCreated,omitempty"`
-	LastUpdated          *time.Time                                                              `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}                                                  `json:",remain"`
+	Id                   *int64                                                       `json:"id,omitempty"`
+	InstanceId           *int64                                                       `json:"instanceId,omitempty"`
+	Instance             *GetAlerts200ResponseAllOfCheckGroupsInnerInstance           `json:"instance,omitempty"`
+	Deployment           *ListDeploys200ResponseAllOfAppDeploysInnerDeployment        `json:"deployment,omitempty"`
+	DeploymentVersionId  *int64                                                       `json:"deploymentVersionId,omitempty"`
+	DeploymentVersion    *ListDeploys200ResponseAllOfAppDeploysInnerDeploymentVersion `json:"deploymentVersion,omitempty"`
+	Config               map[string]interface{}                                       `json:"config,omitempty"`
+	Status               *string                                                      `json:"status,omitempty"`
+	DeployDate           *time.Time                                                   `json:"deployDate,omitempty"`
+	DateCreated          *time.Time                                                   `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                                   `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}                                       `json:",remain"`
 }
 
 type _ListDeploys200ResponseAllOfAppDeploysInner ListDeploys200ResponseAllOfAppDeploysInner
@@ -119,9 +119,9 @@ func (o *ListDeploys200ResponseAllOfAppDeploysInner) SetInstanceId(v int64) {
 }
 
 // GetInstance returns the Instance field value if set, zero value otherwise.
-func (o *ListDeploys200ResponseAllOfAppDeploysInner) GetInstance() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *ListDeploys200ResponseAllOfAppDeploysInner) GetInstance() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.Instance) {
-		var ret ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return *o.Instance
@@ -129,7 +129,7 @@ func (o *ListDeploys200ResponseAllOfAppDeploysInner) GetInstance() ListAppliance
 
 // GetInstanceOk returns a tuple with the Instance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListDeploys200ResponseAllOfAppDeploysInner) GetInstanceOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *ListDeploys200ResponseAllOfAppDeploysInner) GetInstanceOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.Instance) {
 		return nil, false
 	}
@@ -145,8 +145,8 @@ func (o *ListDeploys200ResponseAllOfAppDeploysInner) IsSetInstance() bool {
 	return false
 }
 
-// SetInstance gets a reference to the given ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the Instance field.
-func (o *ListDeploys200ResponseAllOfAppDeploysInner) SetInstance(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetInstance gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Instance field.
+func (o *ListDeploys200ResponseAllOfAppDeploysInner) SetInstance(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.Instance = &v
 }
 

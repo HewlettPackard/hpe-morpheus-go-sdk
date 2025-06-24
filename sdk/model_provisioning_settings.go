@@ -20,21 +20,21 @@ var _ MappedNullable = &ProvisioningSettings{}
 
 // ProvisioningSettings struct for ProvisioningSettings
 type ProvisioningSettings struct {
-	AllowZoneSelection        *bool                                                                   `json:"allowZoneSelection,omitempty"`
-	AllowServerSelection      *bool                                                                   `json:"allowServerSelection,omitempty"`
-	RequireEnvironments       *bool                                                                   `json:"requireEnvironments,omitempty"`
-	ShowPricing               *bool                                                                   `json:"showPricing,omitempty"`
-	HideDatastoreStats        *bool                                                                   `json:"hideDatastoreStats,omitempty"`
-	CrossTenantNamingPolicies *bool                                                                   `json:"crossTenantNamingPolicies,omitempty"`
-	ReuseSequence             *bool                                                                   `json:"reuseSequence,omitempty"`
-	CloudInitUsername         *string                                                                 `json:"cloudInitUsername,omitempty"`
-	CloudInitPassword         *string                                                                 `json:"cloudInitPassword,omitempty"`
-	CloudInitKeyPair          *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"cloudInitKeyPair,omitempty"`
-	WindowsPassword           *string                                                                 `json:"windowsPassword,omitempty"`
-	PxeRootPassword           *string                                                                 `json:"pxeRootPassword,omitempty"`
-	DefaultTemplateType       *ListBackupSettings200ResponseBackupSettingsDefaultSchedule             `json:"defaultTemplateType,omitempty"`
-	DeployStorageProvider     *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"deployStorageProvider,omitempty"`
-	AdditionalProperties      map[string]interface{}                                                  `json:",remain"`
+	AllowZoneSelection        *bool                                                       `json:"allowZoneSelection,omitempty"`
+	AllowServerSelection      *bool                                                       `json:"allowServerSelection,omitempty"`
+	RequireEnvironments       *bool                                                       `json:"requireEnvironments,omitempty"`
+	ShowPricing               *bool                                                       `json:"showPricing,omitempty"`
+	HideDatastoreStats        *bool                                                       `json:"hideDatastoreStats,omitempty"`
+	CrossTenantNamingPolicies *bool                                                       `json:"crossTenantNamingPolicies,omitempty"`
+	ReuseSequence             *bool                                                       `json:"reuseSequence,omitempty"`
+	CloudInitUsername         *string                                                     `json:"cloudInitUsername,omitempty"`
+	CloudInitPassword         *string                                                     `json:"cloudInitPassword,omitempty"`
+	CloudInitKeyPair          *GetAlerts200ResponseAllOfCheckGroupsInnerInstance          `json:"cloudInitKeyPair,omitempty"`
+	WindowsPassword           NullableString                                              `json:"windowsPassword,omitempty"`
+	PxeRootPassword           NullableString                                              `json:"pxeRootPassword,omitempty"`
+	DefaultTemplateType       *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"defaultTemplateType,omitempty"`
+	DeployStorageProvider     *GetAlerts200ResponseAllOfCheckGroupsInnerInstance          `json:"deployStorageProvider,omitempty"`
+	AdditionalProperties      map[string]interface{}                                      `json:",remain"`
 }
 
 type _ProvisioningSettings ProvisioningSettings
@@ -345,9 +345,9 @@ func (o *ProvisioningSettings) SetCloudInitPassword(v string) {
 }
 
 // GetCloudInitKeyPair returns the CloudInitKeyPair field value if set, zero value otherwise.
-func (o *ProvisioningSettings) GetCloudInitKeyPair() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *ProvisioningSettings) GetCloudInitKeyPair() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.CloudInitKeyPair) {
-		var ret ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return *o.CloudInitKeyPair
@@ -355,7 +355,7 @@ func (o *ProvisioningSettings) GetCloudInitKeyPair() ListApplianceSettings200Res
 
 // GetCloudInitKeyPairOk returns a tuple with the CloudInitKeyPair field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ProvisioningSettings) GetCloudInitKeyPairOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *ProvisioningSettings) GetCloudInitKeyPairOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.CloudInitKeyPair) {
 		return nil, false
 	}
@@ -371,73 +371,95 @@ func (o *ProvisioningSettings) IsSetCloudInitKeyPair() bool {
 	return false
 }
 
-// SetCloudInitKeyPair gets a reference to the given ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the CloudInitKeyPair field.
-func (o *ProvisioningSettings) SetCloudInitKeyPair(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetCloudInitKeyPair gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the CloudInitKeyPair field.
+func (o *ProvisioningSettings) SetCloudInitKeyPair(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.CloudInitKeyPair = &v
 }
 
-// GetWindowsPassword returns the WindowsPassword field value if set, zero value otherwise.
+// GetWindowsPassword returns the WindowsPassword field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ProvisioningSettings) GetWindowsPassword() string {
-	if o == nil || IsNil(o.WindowsPassword) {
+	if o == nil || IsNil(o.WindowsPassword.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.WindowsPassword
+	return *o.WindowsPassword.Get()
 }
 
 // GetWindowsPasswordOk returns a tuple with the WindowsPassword field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ProvisioningSettings) GetWindowsPasswordOk() (*string, bool) {
-	if o == nil || IsNil(o.WindowsPassword) {
+	if o == nil {
 		return nil, false
 	}
-	return o.WindowsPassword, true
+	return o.WindowsPassword.Get(), o.WindowsPassword.IsSet()
 }
 
 // IsSetWindowsPassword returns a boolean if a field has been set.
 func (o *ProvisioningSettings) IsSetWindowsPassword() bool {
-	if o != nil && !IsNil(o.WindowsPassword) {
+	if o != nil && o.WindowsPassword.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetWindowsPassword gets a reference to the given string and assigns it to the WindowsPassword field.
+// SetWindowsPassword gets a reference to the given NullableString and assigns it to the WindowsPassword field.
 func (o *ProvisioningSettings) SetWindowsPassword(v string) {
-	o.WindowsPassword = &v
+	o.WindowsPassword.Set(&v)
 }
 
-// GetPxeRootPassword returns the PxeRootPassword field value if set, zero value otherwise.
+// SetWindowsPasswordNil sets the value for WindowsPassword to be an explicit nil
+func (o *ProvisioningSettings) SetWindowsPasswordNil() {
+	o.WindowsPassword.Set(nil)
+}
+
+// UnsetWindowsPassword ensures that no value is present for WindowsPassword, not even an explicit nil
+func (o *ProvisioningSettings) UnsetWindowsPassword() {
+	o.WindowsPassword.Unset()
+}
+
+// GetPxeRootPassword returns the PxeRootPassword field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ProvisioningSettings) GetPxeRootPassword() string {
-	if o == nil || IsNil(o.PxeRootPassword) {
+	if o == nil || IsNil(o.PxeRootPassword.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.PxeRootPassword
+	return *o.PxeRootPassword.Get()
 }
 
 // GetPxeRootPasswordOk returns a tuple with the PxeRootPassword field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ProvisioningSettings) GetPxeRootPasswordOk() (*string, bool) {
-	if o == nil || IsNil(o.PxeRootPassword) {
+	if o == nil {
 		return nil, false
 	}
-	return o.PxeRootPassword, true
+	return o.PxeRootPassword.Get(), o.PxeRootPassword.IsSet()
 }
 
 // IsSetPxeRootPassword returns a boolean if a field has been set.
 func (o *ProvisioningSettings) IsSetPxeRootPassword() bool {
-	if o != nil && !IsNil(o.PxeRootPassword) {
+	if o != nil && o.PxeRootPassword.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetPxeRootPassword gets a reference to the given string and assigns it to the PxeRootPassword field.
+// SetPxeRootPassword gets a reference to the given NullableString and assigns it to the PxeRootPassword field.
 func (o *ProvisioningSettings) SetPxeRootPassword(v string) {
-	o.PxeRootPassword = &v
+	o.PxeRootPassword.Set(&v)
+}
+
+// SetPxeRootPasswordNil sets the value for PxeRootPassword to be an explicit nil
+func (o *ProvisioningSettings) SetPxeRootPasswordNil() {
+	o.PxeRootPassword.Set(nil)
+}
+
+// UnsetPxeRootPassword ensures that no value is present for PxeRootPassword, not even an explicit nil
+func (o *ProvisioningSettings) UnsetPxeRootPassword() {
+	o.PxeRootPassword.Unset()
 }
 
 // GetDefaultTemplateType returns the DefaultTemplateType field value if set, zero value otherwise.
@@ -473,9 +495,9 @@ func (o *ProvisioningSettings) SetDefaultTemplateType(v ListBackupSettings200Res
 }
 
 // GetDeployStorageProvider returns the DeployStorageProvider field value if set, zero value otherwise.
-func (o *ProvisioningSettings) GetDeployStorageProvider() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *ProvisioningSettings) GetDeployStorageProvider() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.DeployStorageProvider) {
-		var ret ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return *o.DeployStorageProvider
@@ -483,7 +505,7 @@ func (o *ProvisioningSettings) GetDeployStorageProvider() ListApplianceSettings2
 
 // GetDeployStorageProviderOk returns a tuple with the DeployStorageProvider field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ProvisioningSettings) GetDeployStorageProviderOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *ProvisioningSettings) GetDeployStorageProviderOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.DeployStorageProvider) {
 		return nil, false
 	}
@@ -499,8 +521,8 @@ func (o *ProvisioningSettings) IsSetDeployStorageProvider() bool {
 	return false
 }
 
-// SetDeployStorageProvider gets a reference to the given ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the DeployStorageProvider field.
-func (o *ProvisioningSettings) SetDeployStorageProvider(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetDeployStorageProvider gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the DeployStorageProvider field.
+func (o *ProvisioningSettings) SetDeployStorageProvider(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.DeployStorageProvider = &v
 }
 
@@ -544,11 +566,11 @@ func (o ProvisioningSettings) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CloudInitKeyPair) {
 		toSerialize["cloudInitKeyPair"] = o.CloudInitKeyPair
 	}
-	if !IsNil(o.WindowsPassword) {
-		toSerialize["windowsPassword"] = o.WindowsPassword
+	if o.WindowsPassword.IsSet() {
+		toSerialize["windowsPassword"] = o.WindowsPassword.Get()
 	}
-	if !IsNil(o.PxeRootPassword) {
-		toSerialize["pxeRootPassword"] = o.PxeRootPassword
+	if o.PxeRootPassword.IsSet() {
+		toSerialize["pxeRootPassword"] = o.PxeRootPassword.Get()
 	}
 	if !IsNil(o.DefaultTemplateType) {
 		toSerialize["defaultTemplateType"] = o.DefaultTemplateType

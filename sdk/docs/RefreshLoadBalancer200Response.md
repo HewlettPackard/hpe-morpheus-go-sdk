@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **LoadBalancer** | Pointer to [**ListLoadBalancers200ResponseAllOfLoadBalancersInner**](ListLoadBalancers200ResponseAllOfLoadBalancersInner.md) |  | [optional] 
 **Success** | Pointer to **bool** |  | [optional] 
-**Msg** | Pointer to **string** |  | [optional] 
+**Msg** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -102,6 +102,16 @@ SetMsg sets Msg field to given value.
 
 HasMsg returns a boolean if a field has been set.
 
+### SetMsgNil
+
+`func (o *RefreshLoadBalancer200Response) SetMsgNil(b bool)`
+
+ SetMsgNil sets the value for Msg to be an explicit nil
+
+### UnsetMsg
+`func (o *RefreshLoadBalancer200Response) UnsetMsg()`
+
+UnsetMsg ensures that no value is present for Msg, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

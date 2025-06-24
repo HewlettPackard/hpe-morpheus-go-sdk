@@ -9,20 +9,20 @@ Name | Type | Description | Notes
 **NodeCount** | Pointer to **int64** |  | [optional] 
 **NodeType** | Pointer to **string** |  | [optional] 
 **MinNodeCount** | Pointer to **int64** |  | [optional] 
-**MaxNodeCount** | Pointer to **string** |  | [optional] 
+**MaxNodeCount** | Pointer to **NullableString** |  | [optional] 
 **DynamicCount** | Pointer to **bool** |  | [optional] 
 **InstallContainerRuntime** | Pointer to **bool** |  | [optional] 
 **InstallStorageRuntime** | Pointer to **bool** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Code** | Pointer to **string** |  | [optional] 
 **Category** | Pointer to **string** |  | [optional] 
-**Config** | Pointer to **string** |  | [optional] 
+**Config** | Pointer to **NullableString** |  | [optional] 
 **ContainerType** | Pointer to [**ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType**](ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType.md) |  | [optional] 
 **ComputeServerType** | Pointer to [**ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerComputeServerType**](ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerComputeServerType.md) |  | [optional] 
-**ProvisionService** | Pointer to **string** |  | [optional] 
-**PlanCategory** | Pointer to **string** |  | [optional] 
-**NamePrefix** | Pointer to **string** |  | [optional] 
-**NameSuffix** | Pointer to **string** |  | [optional] 
+**ProvisionService** | Pointer to **NullableString** |  | [optional] 
+**PlanCategory** | Pointer to **NullableString** |  | [optional] 
+**NamePrefix** | Pointer to **NullableString** |  | [optional] 
+**NameSuffix** | Pointer to **NullableString** |  | [optional] 
 **ForceNameIndex** | Pointer to **bool** |  | [optional] 
 **LoadBalance** | Pointer to **bool** |  | [optional] 
 
@@ -195,6 +195,16 @@ SetMaxNodeCount sets MaxNodeCount field to given value.
 
 HasMaxNodeCount returns a boolean if a field has been set.
 
+### SetMaxNodeCountNil
+
+`func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner) SetMaxNodeCountNil(b bool)`
+
+ SetMaxNodeCountNil sets the value for MaxNodeCount to be an explicit nil
+
+### UnsetMaxNodeCount
+`func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner) UnsetMaxNodeCount()`
+
+UnsetMaxNodeCount ensures that no value is present for MaxNodeCount, not even an explicit nil
 ### GetDynamicCount
 
 `func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner) GetDynamicCount() bool`
@@ -370,6 +380,16 @@ SetConfig sets Config field to given value.
 
 HasConfig returns a boolean if a field has been set.
 
+### SetConfigNil
+
+`func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner) SetConfigNil(b bool)`
+
+ SetConfigNil sets the value for Config to be an explicit nil
+
+### UnsetConfig
+`func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner) UnsetConfig()`
+
+UnsetConfig ensures that no value is present for Config, not even an explicit nil
 ### GetContainerType
 
 `func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner) GetContainerType() ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType`
@@ -445,6 +465,16 @@ SetProvisionService sets ProvisionService field to given value.
 
 HasProvisionService returns a boolean if a field has been set.
 
+### SetProvisionServiceNil
+
+`func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner) SetProvisionServiceNil(b bool)`
+
+ SetProvisionServiceNil sets the value for ProvisionService to be an explicit nil
+
+### UnsetProvisionService
+`func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner) UnsetProvisionService()`
+
+UnsetProvisionService ensures that no value is present for ProvisionService, not even an explicit nil
 ### GetPlanCategory
 
 `func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner) GetPlanCategory() string`
@@ -470,6 +500,16 @@ SetPlanCategory sets PlanCategory field to given value.
 
 HasPlanCategory returns a boolean if a field has been set.
 
+### SetPlanCategoryNil
+
+`func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner) SetPlanCategoryNil(b bool)`
+
+ SetPlanCategoryNil sets the value for PlanCategory to be an explicit nil
+
+### UnsetPlanCategory
+`func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner) UnsetPlanCategory()`
+
+UnsetPlanCategory ensures that no value is present for PlanCategory, not even an explicit nil
 ### GetNamePrefix
 
 `func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner) GetNamePrefix() string`
@@ -495,6 +535,16 @@ SetNamePrefix sets NamePrefix field to given value.
 
 HasNamePrefix returns a boolean if a field has been set.
 
+### SetNamePrefixNil
+
+`func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner) SetNamePrefixNil(b bool)`
+
+ SetNamePrefixNil sets the value for NamePrefix to be an explicit nil
+
+### UnsetNamePrefix
+`func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner) UnsetNamePrefix()`
+
+UnsetNamePrefix ensures that no value is present for NamePrefix, not even an explicit nil
 ### GetNameSuffix
 
 `func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner) GetNameSuffix() string`
@@ -520,6 +570,16 @@ SetNameSuffix sets NameSuffix field to given value.
 
 HasNameSuffix returns a boolean if a field has been set.
 
+### SetNameSuffixNil
+
+`func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner) SetNameSuffixNil(b bool)`
+
+ SetNameSuffixNil sets the value for NameSuffix to be an explicit nil
+
+### UnsetNameSuffix
+`func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner) UnsetNameSuffix()`
+
+UnsetNameSuffix ensures that no value is present for NameSuffix, not even an explicit nil
 ### GetForceNameIndex
 
 `func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner) GetForceNameIndex() bool`

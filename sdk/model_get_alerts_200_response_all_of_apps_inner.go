@@ -26,24 +26,24 @@ type GetAlerts200ResponseAllOfAppsInner struct {
 	Active               *bool                                                       `json:"active,omitempty"`
 	App                  *GetAlerts200ResponseAllOfCheckGroupsInnerInstance          `json:"app,omitempty"`
 	Name                 *string                                                     `json:"name,omitempty"`
-	Description          *string                                                     `json:"description,omitempty"`
+	Description          NullableString                                              `json:"description,omitempty"`
 	InUptime             *bool                                                       `json:"inUptime,omitempty"`
-	LastCheckStatus      *string                                                     `json:"lastCheckStatus,omitempty"`
-	LastWarningDate      *time.Time                                                  `json:"lastWarningDate,omitempty"`
-	LastErrorDate        *time.Time                                                  `json:"lastErrorDate,omitempty"`
-	LastSuccessDate      *time.Time                                                  `json:"lastSuccessDate,omitempty"`
-	LastRunDate          *time.Time                                                  `json:"lastRunDate,omitempty"`
-	LastError            *string                                                     `json:"lastError,omitempty"`
+	LastCheckStatus      NullableString                                              `json:"lastCheckStatus,omitempty"`
+	LastWarningDate      NullableTime                                                `json:"lastWarningDate,omitempty"`
+	LastErrorDate        NullableTime                                                `json:"lastErrorDate,omitempty"`
+	LastSuccessDate      NullableTime                                                `json:"lastSuccessDate,omitempty"`
+	LastRunDate          NullableTime                                                `json:"lastRunDate,omitempty"`
+	LastError            NullableString                                              `json:"lastError,omitempty"`
 	LastTimer            *int64                                                      `json:"lastTimer,omitempty"`
 	Health               *int64                                                      `json:"health,omitempty"`
-	History              *string                                                     `json:"history,omitempty"`
+	History              NullableString                                              `json:"history,omitempty"`
 	Severity             *string                                                     `json:"severity,omitempty"`
 	CreateIncident       *bool                                                       `json:"createIncident,omitempty"`
 	Muted                *bool                                                       `json:"muted,omitempty"`
 	CreatedBy            *ListActivity200ResponseAllOfActivityInnerActivityInnerUser `json:"createdBy,omitempty"`
 	DateCreated          *time.Time                                                  `json:"dateCreated,omitempty"`
 	LastUpdated          *time.Time                                                  `json:"lastUpdated,omitempty"`
-	Availability         *string                                                     `json:"availability,omitempty"`
+	Availability         NullableString                                              `json:"availability,omitempty"`
 	Checks               []int64                                                     `json:"checks,omitempty"`
 	CheckGroups          []int64                                                     `json:"checkGroups,omitempty"`
 	AdditionalProperties map[string]interface{}                                      `json:",remain"`
@@ -228,36 +228,47 @@ func (o *GetAlerts200ResponseAllOfAppsInner) SetName(v string) {
 	o.Name = &v
 }
 
-// GetDescription returns the Description field value if set, zero value otherwise.
+// GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetAlerts200ResponseAllOfAppsInner) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
+	if o == nil || IsNil(o.Description.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Description
+	return *o.Description.Get()
 }
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetAlerts200ResponseAllOfAppsInner) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Description, true
+	return o.Description.Get(), o.Description.IsSet()
 }
 
 // IsSetDescription returns a boolean if a field has been set.
 func (o *GetAlerts200ResponseAllOfAppsInner) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
+	if o != nil && o.Description.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDescription gets a reference to the given string and assigns it to the Description field.
+// SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *GetAlerts200ResponseAllOfAppsInner) SetDescription(v string) {
-	o.Description = &v
+	o.Description.Set(&v)
+}
+
+// SetDescriptionNil sets the value for Description to be an explicit nil
+func (o *GetAlerts200ResponseAllOfAppsInner) SetDescriptionNil() {
+	o.Description.Set(nil)
+}
+
+// UnsetDescription ensures that no value is present for Description, not even an explicit nil
+func (o *GetAlerts200ResponseAllOfAppsInner) UnsetDescription() {
+	o.Description.Unset()
 }
 
 // GetInUptime returns the InUptime field value if set, zero value otherwise.
@@ -292,196 +303,262 @@ func (o *GetAlerts200ResponseAllOfAppsInner) SetInUptime(v bool) {
 	o.InUptime = &v
 }
 
-// GetLastCheckStatus returns the LastCheckStatus field value if set, zero value otherwise.
+// GetLastCheckStatus returns the LastCheckStatus field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetAlerts200ResponseAllOfAppsInner) GetLastCheckStatus() string {
-	if o == nil || IsNil(o.LastCheckStatus) {
+	if o == nil || IsNil(o.LastCheckStatus.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.LastCheckStatus
+	return *o.LastCheckStatus.Get()
 }
 
 // GetLastCheckStatusOk returns a tuple with the LastCheckStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetAlerts200ResponseAllOfAppsInner) GetLastCheckStatusOk() (*string, bool) {
-	if o == nil || IsNil(o.LastCheckStatus) {
+	if o == nil {
 		return nil, false
 	}
-	return o.LastCheckStatus, true
+	return o.LastCheckStatus.Get(), o.LastCheckStatus.IsSet()
 }
 
 // IsSetLastCheckStatus returns a boolean if a field has been set.
 func (o *GetAlerts200ResponseAllOfAppsInner) IsSetLastCheckStatus() bool {
-	if o != nil && !IsNil(o.LastCheckStatus) {
+	if o != nil && o.LastCheckStatus.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetLastCheckStatus gets a reference to the given string and assigns it to the LastCheckStatus field.
+// SetLastCheckStatus gets a reference to the given NullableString and assigns it to the LastCheckStatus field.
 func (o *GetAlerts200ResponseAllOfAppsInner) SetLastCheckStatus(v string) {
-	o.LastCheckStatus = &v
+	o.LastCheckStatus.Set(&v)
 }
 
-// GetLastWarningDate returns the LastWarningDate field value if set, zero value otherwise.
+// SetLastCheckStatusNil sets the value for LastCheckStatus to be an explicit nil
+func (o *GetAlerts200ResponseAllOfAppsInner) SetLastCheckStatusNil() {
+	o.LastCheckStatus.Set(nil)
+}
+
+// UnsetLastCheckStatus ensures that no value is present for LastCheckStatus, not even an explicit nil
+func (o *GetAlerts200ResponseAllOfAppsInner) UnsetLastCheckStatus() {
+	o.LastCheckStatus.Unset()
+}
+
+// GetLastWarningDate returns the LastWarningDate field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetAlerts200ResponseAllOfAppsInner) GetLastWarningDate() time.Time {
-	if o == nil || IsNil(o.LastWarningDate) {
+	if o == nil || IsNil(o.LastWarningDate.Get()) {
 		var ret time.Time
 		return ret
 	}
-	return *o.LastWarningDate
+	return *o.LastWarningDate.Get()
 }
 
 // GetLastWarningDateOk returns a tuple with the LastWarningDate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetAlerts200ResponseAllOfAppsInner) GetLastWarningDateOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.LastWarningDate) {
+	if o == nil {
 		return nil, false
 	}
-	return o.LastWarningDate, true
+	return o.LastWarningDate.Get(), o.LastWarningDate.IsSet()
 }
 
 // IsSetLastWarningDate returns a boolean if a field has been set.
 func (o *GetAlerts200ResponseAllOfAppsInner) IsSetLastWarningDate() bool {
-	if o != nil && !IsNil(o.LastWarningDate) {
+	if o != nil && o.LastWarningDate.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetLastWarningDate gets a reference to the given time.Time and assigns it to the LastWarningDate field.
+// SetLastWarningDate gets a reference to the given NullableTime and assigns it to the LastWarningDate field.
 func (o *GetAlerts200ResponseAllOfAppsInner) SetLastWarningDate(v time.Time) {
-	o.LastWarningDate = &v
+	o.LastWarningDate.Set(&v)
 }
 
-// GetLastErrorDate returns the LastErrorDate field value if set, zero value otherwise.
+// SetLastWarningDateNil sets the value for LastWarningDate to be an explicit nil
+func (o *GetAlerts200ResponseAllOfAppsInner) SetLastWarningDateNil() {
+	o.LastWarningDate.Set(nil)
+}
+
+// UnsetLastWarningDate ensures that no value is present for LastWarningDate, not even an explicit nil
+func (o *GetAlerts200ResponseAllOfAppsInner) UnsetLastWarningDate() {
+	o.LastWarningDate.Unset()
+}
+
+// GetLastErrorDate returns the LastErrorDate field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetAlerts200ResponseAllOfAppsInner) GetLastErrorDate() time.Time {
-	if o == nil || IsNil(o.LastErrorDate) {
+	if o == nil || IsNil(o.LastErrorDate.Get()) {
 		var ret time.Time
 		return ret
 	}
-	return *o.LastErrorDate
+	return *o.LastErrorDate.Get()
 }
 
 // GetLastErrorDateOk returns a tuple with the LastErrorDate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetAlerts200ResponseAllOfAppsInner) GetLastErrorDateOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.LastErrorDate) {
+	if o == nil {
 		return nil, false
 	}
-	return o.LastErrorDate, true
+	return o.LastErrorDate.Get(), o.LastErrorDate.IsSet()
 }
 
 // IsSetLastErrorDate returns a boolean if a field has been set.
 func (o *GetAlerts200ResponseAllOfAppsInner) IsSetLastErrorDate() bool {
-	if o != nil && !IsNil(o.LastErrorDate) {
+	if o != nil && o.LastErrorDate.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetLastErrorDate gets a reference to the given time.Time and assigns it to the LastErrorDate field.
+// SetLastErrorDate gets a reference to the given NullableTime and assigns it to the LastErrorDate field.
 func (o *GetAlerts200ResponseAllOfAppsInner) SetLastErrorDate(v time.Time) {
-	o.LastErrorDate = &v
+	o.LastErrorDate.Set(&v)
 }
 
-// GetLastSuccessDate returns the LastSuccessDate field value if set, zero value otherwise.
+// SetLastErrorDateNil sets the value for LastErrorDate to be an explicit nil
+func (o *GetAlerts200ResponseAllOfAppsInner) SetLastErrorDateNil() {
+	o.LastErrorDate.Set(nil)
+}
+
+// UnsetLastErrorDate ensures that no value is present for LastErrorDate, not even an explicit nil
+func (o *GetAlerts200ResponseAllOfAppsInner) UnsetLastErrorDate() {
+	o.LastErrorDate.Unset()
+}
+
+// GetLastSuccessDate returns the LastSuccessDate field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetAlerts200ResponseAllOfAppsInner) GetLastSuccessDate() time.Time {
-	if o == nil || IsNil(o.LastSuccessDate) {
+	if o == nil || IsNil(o.LastSuccessDate.Get()) {
 		var ret time.Time
 		return ret
 	}
-	return *o.LastSuccessDate
+	return *o.LastSuccessDate.Get()
 }
 
 // GetLastSuccessDateOk returns a tuple with the LastSuccessDate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetAlerts200ResponseAllOfAppsInner) GetLastSuccessDateOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.LastSuccessDate) {
+	if o == nil {
 		return nil, false
 	}
-	return o.LastSuccessDate, true
+	return o.LastSuccessDate.Get(), o.LastSuccessDate.IsSet()
 }
 
 // IsSetLastSuccessDate returns a boolean if a field has been set.
 func (o *GetAlerts200ResponseAllOfAppsInner) IsSetLastSuccessDate() bool {
-	if o != nil && !IsNil(o.LastSuccessDate) {
+	if o != nil && o.LastSuccessDate.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetLastSuccessDate gets a reference to the given time.Time and assigns it to the LastSuccessDate field.
+// SetLastSuccessDate gets a reference to the given NullableTime and assigns it to the LastSuccessDate field.
 func (o *GetAlerts200ResponseAllOfAppsInner) SetLastSuccessDate(v time.Time) {
-	o.LastSuccessDate = &v
+	o.LastSuccessDate.Set(&v)
 }
 
-// GetLastRunDate returns the LastRunDate field value if set, zero value otherwise.
+// SetLastSuccessDateNil sets the value for LastSuccessDate to be an explicit nil
+func (o *GetAlerts200ResponseAllOfAppsInner) SetLastSuccessDateNil() {
+	o.LastSuccessDate.Set(nil)
+}
+
+// UnsetLastSuccessDate ensures that no value is present for LastSuccessDate, not even an explicit nil
+func (o *GetAlerts200ResponseAllOfAppsInner) UnsetLastSuccessDate() {
+	o.LastSuccessDate.Unset()
+}
+
+// GetLastRunDate returns the LastRunDate field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetAlerts200ResponseAllOfAppsInner) GetLastRunDate() time.Time {
-	if o == nil || IsNil(o.LastRunDate) {
+	if o == nil || IsNil(o.LastRunDate.Get()) {
 		var ret time.Time
 		return ret
 	}
-	return *o.LastRunDate
+	return *o.LastRunDate.Get()
 }
 
 // GetLastRunDateOk returns a tuple with the LastRunDate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetAlerts200ResponseAllOfAppsInner) GetLastRunDateOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.LastRunDate) {
+	if o == nil {
 		return nil, false
 	}
-	return o.LastRunDate, true
+	return o.LastRunDate.Get(), o.LastRunDate.IsSet()
 }
 
 // IsSetLastRunDate returns a boolean if a field has been set.
 func (o *GetAlerts200ResponseAllOfAppsInner) IsSetLastRunDate() bool {
-	if o != nil && !IsNil(o.LastRunDate) {
+	if o != nil && o.LastRunDate.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetLastRunDate gets a reference to the given time.Time and assigns it to the LastRunDate field.
+// SetLastRunDate gets a reference to the given NullableTime and assigns it to the LastRunDate field.
 func (o *GetAlerts200ResponseAllOfAppsInner) SetLastRunDate(v time.Time) {
-	o.LastRunDate = &v
+	o.LastRunDate.Set(&v)
 }
 
-// GetLastError returns the LastError field value if set, zero value otherwise.
+// SetLastRunDateNil sets the value for LastRunDate to be an explicit nil
+func (o *GetAlerts200ResponseAllOfAppsInner) SetLastRunDateNil() {
+	o.LastRunDate.Set(nil)
+}
+
+// UnsetLastRunDate ensures that no value is present for LastRunDate, not even an explicit nil
+func (o *GetAlerts200ResponseAllOfAppsInner) UnsetLastRunDate() {
+	o.LastRunDate.Unset()
+}
+
+// GetLastError returns the LastError field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetAlerts200ResponseAllOfAppsInner) GetLastError() string {
-	if o == nil || IsNil(o.LastError) {
+	if o == nil || IsNil(o.LastError.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.LastError
+	return *o.LastError.Get()
 }
 
 // GetLastErrorOk returns a tuple with the LastError field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetAlerts200ResponseAllOfAppsInner) GetLastErrorOk() (*string, bool) {
-	if o == nil || IsNil(o.LastError) {
+	if o == nil {
 		return nil, false
 	}
-	return o.LastError, true
+	return o.LastError.Get(), o.LastError.IsSet()
 }
 
 // IsSetLastError returns a boolean if a field has been set.
 func (o *GetAlerts200ResponseAllOfAppsInner) IsSetLastError() bool {
-	if o != nil && !IsNil(o.LastError) {
+	if o != nil && o.LastError.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetLastError gets a reference to the given string and assigns it to the LastError field.
+// SetLastError gets a reference to the given NullableString and assigns it to the LastError field.
 func (o *GetAlerts200ResponseAllOfAppsInner) SetLastError(v string) {
-	o.LastError = &v
+	o.LastError.Set(&v)
+}
+
+// SetLastErrorNil sets the value for LastError to be an explicit nil
+func (o *GetAlerts200ResponseAllOfAppsInner) SetLastErrorNil() {
+	o.LastError.Set(nil)
+}
+
+// UnsetLastError ensures that no value is present for LastError, not even an explicit nil
+func (o *GetAlerts200ResponseAllOfAppsInner) UnsetLastError() {
+	o.LastError.Unset()
 }
 
 // GetLastTimer returns the LastTimer field value if set, zero value otherwise.
@@ -548,36 +625,47 @@ func (o *GetAlerts200ResponseAllOfAppsInner) SetHealth(v int64) {
 	o.Health = &v
 }
 
-// GetHistory returns the History field value if set, zero value otherwise.
+// GetHistory returns the History field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetAlerts200ResponseAllOfAppsInner) GetHistory() string {
-	if o == nil || IsNil(o.History) {
+	if o == nil || IsNil(o.History.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.History
+	return *o.History.Get()
 }
 
 // GetHistoryOk returns a tuple with the History field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetAlerts200ResponseAllOfAppsInner) GetHistoryOk() (*string, bool) {
-	if o == nil || IsNil(o.History) {
+	if o == nil {
 		return nil, false
 	}
-	return o.History, true
+	return o.History.Get(), o.History.IsSet()
 }
 
 // IsSetHistory returns a boolean if a field has been set.
 func (o *GetAlerts200ResponseAllOfAppsInner) IsSetHistory() bool {
-	if o != nil && !IsNil(o.History) {
+	if o != nil && o.History.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetHistory gets a reference to the given string and assigns it to the History field.
+// SetHistory gets a reference to the given NullableString and assigns it to the History field.
 func (o *GetAlerts200ResponseAllOfAppsInner) SetHistory(v string) {
-	o.History = &v
+	o.History.Set(&v)
+}
+
+// SetHistoryNil sets the value for History to be an explicit nil
+func (o *GetAlerts200ResponseAllOfAppsInner) SetHistoryNil() {
+	o.History.Set(nil)
+}
+
+// UnsetHistory ensures that no value is present for History, not even an explicit nil
+func (o *GetAlerts200ResponseAllOfAppsInner) UnsetHistory() {
+	o.History.Unset()
 }
 
 // GetSeverity returns the Severity field value if set, zero value otherwise.
@@ -772,36 +860,47 @@ func (o *GetAlerts200ResponseAllOfAppsInner) SetLastUpdated(v time.Time) {
 	o.LastUpdated = &v
 }
 
-// GetAvailability returns the Availability field value if set, zero value otherwise.
+// GetAvailability returns the Availability field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetAlerts200ResponseAllOfAppsInner) GetAvailability() string {
-	if o == nil || IsNil(o.Availability) {
+	if o == nil || IsNil(o.Availability.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Availability
+	return *o.Availability.Get()
 }
 
 // GetAvailabilityOk returns a tuple with the Availability field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetAlerts200ResponseAllOfAppsInner) GetAvailabilityOk() (*string, bool) {
-	if o == nil || IsNil(o.Availability) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Availability, true
+	return o.Availability.Get(), o.Availability.IsSet()
 }
 
 // IsSetAvailability returns a boolean if a field has been set.
 func (o *GetAlerts200ResponseAllOfAppsInner) IsSetAvailability() bool {
-	if o != nil && !IsNil(o.Availability) {
+	if o != nil && o.Availability.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetAvailability gets a reference to the given string and assigns it to the Availability field.
+// SetAvailability gets a reference to the given NullableString and assigns it to the Availability field.
 func (o *GetAlerts200ResponseAllOfAppsInner) SetAvailability(v string) {
-	o.Availability = &v
+	o.Availability.Set(&v)
+}
+
+// SetAvailabilityNil sets the value for Availability to be an explicit nil
+func (o *GetAlerts200ResponseAllOfAppsInner) SetAvailabilityNil() {
+	o.Availability.Set(nil)
+}
+
+// UnsetAvailability ensures that no value is present for Availability, not even an explicit nil
+func (o *GetAlerts200ResponseAllOfAppsInner) UnsetAvailability() {
+	o.Availability.Unset()
 }
 
 // GetChecks returns the Checks field value if set, zero value otherwise.
@@ -893,29 +992,29 @@ func (o GetAlerts200ResponseAllOfAppsInner) ToMap() (map[string]interface{}, err
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !IsNil(o.Description) {
-		toSerialize["description"] = o.Description
+	if o.Description.IsSet() {
+		toSerialize["description"] = o.Description.Get()
 	}
 	if !IsNil(o.InUptime) {
 		toSerialize["inUptime"] = o.InUptime
 	}
-	if !IsNil(o.LastCheckStatus) {
-		toSerialize["lastCheckStatus"] = o.LastCheckStatus
+	if o.LastCheckStatus.IsSet() {
+		toSerialize["lastCheckStatus"] = o.LastCheckStatus.Get()
 	}
-	if !IsNil(o.LastWarningDate) {
-		toSerialize["lastWarningDate"] = o.LastWarningDate
+	if o.LastWarningDate.IsSet() {
+		toSerialize["lastWarningDate"] = o.LastWarningDate.Get()
 	}
-	if !IsNil(o.LastErrorDate) {
-		toSerialize["lastErrorDate"] = o.LastErrorDate
+	if o.LastErrorDate.IsSet() {
+		toSerialize["lastErrorDate"] = o.LastErrorDate.Get()
 	}
-	if !IsNil(o.LastSuccessDate) {
-		toSerialize["lastSuccessDate"] = o.LastSuccessDate
+	if o.LastSuccessDate.IsSet() {
+		toSerialize["lastSuccessDate"] = o.LastSuccessDate.Get()
 	}
-	if !IsNil(o.LastRunDate) {
-		toSerialize["lastRunDate"] = o.LastRunDate
+	if o.LastRunDate.IsSet() {
+		toSerialize["lastRunDate"] = o.LastRunDate.Get()
 	}
-	if !IsNil(o.LastError) {
-		toSerialize["lastError"] = o.LastError
+	if o.LastError.IsSet() {
+		toSerialize["lastError"] = o.LastError.Get()
 	}
 	if !IsNil(o.LastTimer) {
 		toSerialize["lastTimer"] = o.LastTimer
@@ -923,8 +1022,8 @@ func (o GetAlerts200ResponseAllOfAppsInner) ToMap() (map[string]interface{}, err
 	if !IsNil(o.Health) {
 		toSerialize["health"] = o.Health
 	}
-	if !IsNil(o.History) {
-		toSerialize["history"] = o.History
+	if o.History.IsSet() {
+		toSerialize["history"] = o.History.Get()
 	}
 	if !IsNil(o.Severity) {
 		toSerialize["severity"] = o.Severity
@@ -944,8 +1043,8 @@ func (o GetAlerts200ResponseAllOfAppsInner) ToMap() (map[string]interface{}, err
 	if !IsNil(o.LastUpdated) {
 		toSerialize["lastUpdated"] = o.LastUpdated
 	}
-	if !IsNil(o.Availability) {
-		toSerialize["availability"] = o.Availability
+	if o.Availability.IsSet() {
+		toSerialize["availability"] = o.Availability.Get()
 	}
 	if !IsNil(o.Checks) {
 		toSerialize["checks"] = o.Checks

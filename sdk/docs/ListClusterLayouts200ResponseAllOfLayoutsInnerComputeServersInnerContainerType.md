@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
-**Account** | Pointer to **string** |  | [optional] 
+**Account** | Pointer to **NullableString** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Labels** | Pointer to **[]string** |  | [optional] 
 **ShortName** | Pointer to **string** |  | [optional] 
 **Code** | Pointer to **string** |  | [optional] 
 **ContainerVersion** | Pointer to **string** |  | [optional] 
 **ProvisionType** | Pointer to [**ListBackupSettings200ResponseBackupSettingsDefaultSchedule**](ListBackupSettings200ResponseBackupSettingsDefaultSchedule.md) |  | [optional] 
-**VirtualImage** | Pointer to **string** |  | [optional] 
+**VirtualImage** | Pointer to **NullableString** |  | [optional] 
 **Category** | Pointer to **string** |  | [optional] 
 **Config** | Pointer to **map[string]interface{}** |  | [optional] 
 **ContainerPorts** | Pointer to **[]map[string]interface{}** |  | [optional] 
@@ -89,6 +89,16 @@ SetAccount sets Account field to given value.
 
 HasAccount returns a boolean if a field has been set.
 
+### SetAccountNil
+
+`func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType) SetAccountNil(b bool)`
+
+ SetAccountNil sets the value for Account to be an explicit nil
+
+### UnsetAccount
+`func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType) UnsetAccount()`
+
+UnsetAccount ensures that no value is present for Account, not even an explicit nil
 ### GetName
 
 `func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType) GetName() string`
@@ -139,6 +149,16 @@ SetLabels sets Labels field to given value.
 
 HasLabels returns a boolean if a field has been set.
 
+### SetLabelsNil
+
+`func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType) SetLabelsNil(b bool)`
+
+ SetLabelsNil sets the value for Labels to be an explicit nil
+
+### UnsetLabels
+`func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType) UnsetLabels()`
+
+UnsetLabels ensures that no value is present for Labels, not even an explicit nil
 ### GetShortName
 
 `func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType) GetShortName() string`
@@ -264,6 +284,16 @@ SetVirtualImage sets VirtualImage field to given value.
 
 HasVirtualImage returns a boolean if a field has been set.
 
+### SetVirtualImageNil
+
+`func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType) SetVirtualImageNil(b bool)`
+
+ SetVirtualImageNil sets the value for VirtualImage to be an explicit nil
+
+### UnsetVirtualImage
+`func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType) UnsetVirtualImage()`
+
+UnsetVirtualImage ensures that no value is present for VirtualImage, not even an explicit nil
 ### GetCategory
 
 `func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType) GetCategory() string`

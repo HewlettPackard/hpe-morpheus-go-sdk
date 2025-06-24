@@ -22,13 +22,13 @@ var _ MappedNullable = &ListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageCo
 type ListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner struct {
 	Id                   *int64                 `json:"id,omitempty"`
 	Name                 *string                `json:"name,omitempty"`
-	Active               *bool                  `json:"active,omitempty"`
+	Active               NullableBool           `json:"active,omitempty"`
 	TypeId               *int64                 `json:"typeId,omitempty"`
 	TypeName             *string                `json:"typeName,omitempty"`
 	UnitNumber           *string                `json:"unitNumber,omitempty"`
 	BusNumber            *string                `json:"busNumber,omitempty"`
 	MaxDevices           *float32               `json:"maxDevices,omitempty"`
-	Removable            *bool                  `json:"removable,omitempty"`
+	Removable            NullableBool           `json:"removable,omitempty"`
 	Editable             *bool                  `json:"editable,omitempty"`
 	ReservedUnitNumber   *float32               `json:"reservedUnitNumber,omitempty"`
 	Category             *string                `json:"category,omitempty"`
@@ -119,36 +119,47 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner)
 	o.Name = &v
 }
 
-// GetActive returns the Active field value if set, zero value otherwise.
+// GetActive returns the Active field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner) GetActive() bool {
-	if o == nil || IsNil(o.Active) {
+	if o == nil || IsNil(o.Active.Get()) {
 		var ret bool
 		return ret
 	}
-	return *o.Active
+	return *o.Active.Get()
 }
 
 // GetActiveOk returns a tuple with the Active field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner) GetActiveOk() (*bool, bool) {
-	if o == nil || IsNil(o.Active) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Active, true
+	return o.Active.Get(), o.Active.IsSet()
 }
 
 // IsSetActive returns a boolean if a field has been set.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner) IsSetActive() bool {
-	if o != nil && !IsNil(o.Active) {
+	if o != nil && o.Active.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetActive gets a reference to the given bool and assigns it to the Active field.
+// SetActive gets a reference to the given NullableBool and assigns it to the Active field.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner) SetActive(v bool) {
-	o.Active = &v
+	o.Active.Set(&v)
+}
+
+// SetActiveNil sets the value for Active to be an explicit nil
+func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner) SetActiveNil() {
+	o.Active.Set(nil)
+}
+
+// UnsetActive ensures that no value is present for Active, not even an explicit nil
+func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner) UnsetActive() {
+	o.Active.Unset()
 }
 
 // GetTypeId returns the TypeId field value if set, zero value otherwise.
@@ -311,36 +322,47 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner)
 	o.MaxDevices = &v
 }
 
-// GetRemovable returns the Removable field value if set, zero value otherwise.
+// GetRemovable returns the Removable field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner) GetRemovable() bool {
-	if o == nil || IsNil(o.Removable) {
+	if o == nil || IsNil(o.Removable.Get()) {
 		var ret bool
 		return ret
 	}
-	return *o.Removable
+	return *o.Removable.Get()
 }
 
 // GetRemovableOk returns a tuple with the Removable field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner) GetRemovableOk() (*bool, bool) {
-	if o == nil || IsNil(o.Removable) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Removable, true
+	return o.Removable.Get(), o.Removable.IsSet()
 }
 
 // IsSetRemovable returns a boolean if a field has been set.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner) IsSetRemovable() bool {
-	if o != nil && !IsNil(o.Removable) {
+	if o != nil && o.Removable.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetRemovable gets a reference to the given bool and assigns it to the Removable field.
+// SetRemovable gets a reference to the given NullableBool and assigns it to the Removable field.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner) SetRemovable(v bool) {
-	o.Removable = &v
+	o.Removable.Set(&v)
+}
+
+// SetRemovableNil sets the value for Removable to be an explicit nil
+func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner) SetRemovableNil() {
+	o.Removable.Set(nil)
+}
+
+// UnsetRemovable ensures that no value is present for Removable, not even an explicit nil
+func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner) UnsetRemovable() {
+	o.Removable.Unset()
 }
 
 // GetEditable returns the Editable field value if set, zero value otherwise.
@@ -487,8 +509,8 @@ func (o ListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner) 
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !IsNil(o.Active) {
-		toSerialize["active"] = o.Active
+	if o.Active.IsSet() {
+		toSerialize["active"] = o.Active.Get()
 	}
 	if !IsNil(o.TypeId) {
 		toSerialize["typeId"] = o.TypeId
@@ -505,8 +527,8 @@ func (o ListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner) 
 	if !IsNil(o.MaxDevices) {
 		toSerialize["maxDevices"] = o.MaxDevices
 	}
-	if !IsNil(o.Removable) {
-		toSerialize["removable"] = o.Removable
+	if o.Removable.IsSet() {
+		toSerialize["removable"] = o.Removable.Get()
 	}
 	if !IsNil(o.Editable) {
 		toSerialize["editable"] = o.Editable

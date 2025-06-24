@@ -6,11 +6,11 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**Code** | Pointer to **string** |  | [optional] 
+**Code** | Pointer to **NullableString** |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 **Visibility** | Pointer to **string** |  | [optional] 
-**StorageSize** | Pointer to **int64** |  | [optional] 
-**FreeSpace** | Pointer to **int64** |  | [optional] 
+**StorageSize** | Pointer to **NullableInt64** |  | [optional] 
+**FreeSpace** | Pointer to **NullableInt64** |  | [optional] 
 **DrsEnabled** | Pointer to **bool** |  | [optional] 
 **Active** | Pointer to **bool** |  | [optional] 
 **AllowWrite** | Pointer to **bool** |  | [optional] 
@@ -125,6 +125,16 @@ SetCode sets Code field to given value.
 
 HasCode returns a boolean if a field has been set.
 
+### SetCodeNil
+
+`func (o *ListClusterDatastores200ResponseAllOfDatastoresInner) SetCodeNil(b bool)`
+
+ SetCodeNil sets the value for Code to be an explicit nil
+
+### UnsetCode
+`func (o *ListClusterDatastores200ResponseAllOfDatastoresInner) UnsetCode()`
+
+UnsetCode ensures that no value is present for Code, not even an explicit nil
 ### GetType
 
 `func (o *ListClusterDatastores200ResponseAllOfDatastoresInner) GetType() string`
@@ -200,6 +210,16 @@ SetStorageSize sets StorageSize field to given value.
 
 HasStorageSize returns a boolean if a field has been set.
 
+### SetStorageSizeNil
+
+`func (o *ListClusterDatastores200ResponseAllOfDatastoresInner) SetStorageSizeNil(b bool)`
+
+ SetStorageSizeNil sets the value for StorageSize to be an explicit nil
+
+### UnsetStorageSize
+`func (o *ListClusterDatastores200ResponseAllOfDatastoresInner) UnsetStorageSize()`
+
+UnsetStorageSize ensures that no value is present for StorageSize, not even an explicit nil
 ### GetFreeSpace
 
 `func (o *ListClusterDatastores200ResponseAllOfDatastoresInner) GetFreeSpace() int64`
@@ -225,6 +245,16 @@ SetFreeSpace sets FreeSpace field to given value.
 
 HasFreeSpace returns a boolean if a field has been set.
 
+### SetFreeSpaceNil
+
+`func (o *ListClusterDatastores200ResponseAllOfDatastoresInner) SetFreeSpaceNil(b bool)`
+
+ SetFreeSpaceNil sets the value for FreeSpace to be an explicit nil
+
+### UnsetFreeSpace
+`func (o *ListClusterDatastores200ResponseAllOfDatastoresInner) UnsetFreeSpace()`
+
+UnsetFreeSpace ensures that no value is present for FreeSpace, not even an explicit nil
 ### GetDrsEnabled
 
 `func (o *ListClusterDatastores200ResponseAllOfDatastoresInner) GetDrsEnabled() bool`
@@ -650,6 +680,16 @@ SetDatastores sets Datastores field to given value.
 
 HasDatastores returns a boolean if a field has been set.
 
+### SetDatastoresNil
+
+`func (o *ListClusterDatastores200ResponseAllOfDatastoresInner) SetDatastoresNil(b bool)`
+
+ SetDatastoresNil sets the value for Datastores to be an explicit nil
+
+### UnsetDatastores
+`func (o *ListClusterDatastores200ResponseAllOfDatastoresInner) UnsetDatastores()`
+
+UnsetDatastores ensures that no value is present for Datastores, not even an explicit nil
 ### GetLocations
 
 `func (o *ListClusterDatastores200ResponseAllOfDatastoresInner) GetLocations() []ListClusterDatastores200ResponseAllOfDatastoresInnerLocationsInner`

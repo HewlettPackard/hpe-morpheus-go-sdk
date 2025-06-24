@@ -22,7 +22,7 @@ var _ MappedNullable = &GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeI
 type GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerContainerPortsInner struct {
 	Name                 *string                `json:"name,omitempty"`
 	Port                 *int64                 `json:"port,omitempty"`
-	LoadBalanceProtocol  *string                `json:"loadBalanceProtocol,omitempty"`
+	LoadBalanceProtocol  NullableString         `json:"loadBalanceProtocol,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -109,36 +109,47 @@ func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayo
 	o.Port = &v
 }
 
-// GetLoadBalanceProtocol returns the LoadBalanceProtocol field value if set, zero value otherwise.
+// GetLoadBalanceProtocol returns the LoadBalanceProtocol field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerContainerPortsInner) GetLoadBalanceProtocol() string {
-	if o == nil || IsNil(o.LoadBalanceProtocol) {
+	if o == nil || IsNil(o.LoadBalanceProtocol.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.LoadBalanceProtocol
+	return *o.LoadBalanceProtocol.Get()
 }
 
 // GetLoadBalanceProtocolOk returns a tuple with the LoadBalanceProtocol field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerContainerPortsInner) GetLoadBalanceProtocolOk() (*string, bool) {
-	if o == nil || IsNil(o.LoadBalanceProtocol) {
+	if o == nil {
 		return nil, false
 	}
-	return o.LoadBalanceProtocol, true
+	return o.LoadBalanceProtocol.Get(), o.LoadBalanceProtocol.IsSet()
 }
 
 // IsSetLoadBalanceProtocol returns a boolean if a field has been set.
 func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerContainerPortsInner) IsSetLoadBalanceProtocol() bool {
-	if o != nil && !IsNil(o.LoadBalanceProtocol) {
+	if o != nil && o.LoadBalanceProtocol.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetLoadBalanceProtocol gets a reference to the given string and assigns it to the LoadBalanceProtocol field.
+// SetLoadBalanceProtocol gets a reference to the given NullableString and assigns it to the LoadBalanceProtocol field.
 func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerContainerPortsInner) SetLoadBalanceProtocol(v string) {
-	o.LoadBalanceProtocol = &v
+	o.LoadBalanceProtocol.Set(&v)
+}
+
+// SetLoadBalanceProtocolNil sets the value for LoadBalanceProtocol to be an explicit nil
+func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerContainerPortsInner) SetLoadBalanceProtocolNil() {
+	o.LoadBalanceProtocol.Set(nil)
+}
+
+// UnsetLoadBalanceProtocol ensures that no value is present for LoadBalanceProtocol, not even an explicit nil
+func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerContainerPortsInner) UnsetLoadBalanceProtocol() {
+	o.LoadBalanceProtocol.Unset()
 }
 
 func (o GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerContainerPortsInner) MarshalJSON() ([]byte, error) {
@@ -157,8 +168,8 @@ func (o GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayou
 	if !IsNil(o.Port) {
 		toSerialize["port"] = o.Port
 	}
-	if !IsNil(o.LoadBalanceProtocol) {
-		toSerialize["loadBalanceProtocol"] = o.LoadBalanceProtocol
+	if o.LoadBalanceProtocol.IsSet() {
+		toSerialize["loadBalanceProtocol"] = o.LoadBalanceProtocol.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {

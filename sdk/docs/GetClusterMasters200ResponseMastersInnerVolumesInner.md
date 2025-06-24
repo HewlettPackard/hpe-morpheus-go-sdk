@@ -6,18 +6,18 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**ControllerId** | Pointer to **string** |  | [optional] 
-**ControllerMountPoint** | Pointer to **string** |  | [optional] 
+**ControllerId** | Pointer to **NullableString** |  | [optional] 
+**ControllerMountPoint** | Pointer to **NullableString** |  | [optional] 
 **Resizeable** | Pointer to **bool** |  | [optional] 
 **PlanResizable** | Pointer to **bool** |  | [optional] 
 **RootVolume** | Pointer to **bool** |  | [optional] 
-**UnitNumber** | Pointer to **string** |  | [optional] 
+**UnitNumber** | Pointer to **NullableString** |  | [optional] 
 **TypeId** | Pointer to **int64** |  | [optional] 
 **ConfigurableIOPS** | Pointer to **bool** |  | [optional] 
-**DatastoreId** | Pointer to **string** |  | [optional] 
+**DatastoreId** | Pointer to **NullableString** |  | [optional] 
 **MaxStorage** | Pointer to **int64** |  | [optional] 
 **DisplayOrder** | Pointer to **int64** |  | [optional] 
-**MaxIOPS** | Pointer to **string** |  | [optional] 
+**MaxIOPS** | Pointer to **NullableString** |  | [optional] 
 **Uuid** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -114,6 +114,16 @@ SetControllerId sets ControllerId field to given value.
 
 HasControllerId returns a boolean if a field has been set.
 
+### SetControllerIdNil
+
+`func (o *GetClusterMasters200ResponseMastersInnerVolumesInner) SetControllerIdNil(b bool)`
+
+ SetControllerIdNil sets the value for ControllerId to be an explicit nil
+
+### UnsetControllerId
+`func (o *GetClusterMasters200ResponseMastersInnerVolumesInner) UnsetControllerId()`
+
+UnsetControllerId ensures that no value is present for ControllerId, not even an explicit nil
 ### GetControllerMountPoint
 
 `func (o *GetClusterMasters200ResponseMastersInnerVolumesInner) GetControllerMountPoint() string`
@@ -139,6 +149,16 @@ SetControllerMountPoint sets ControllerMountPoint field to given value.
 
 HasControllerMountPoint returns a boolean if a field has been set.
 
+### SetControllerMountPointNil
+
+`func (o *GetClusterMasters200ResponseMastersInnerVolumesInner) SetControllerMountPointNil(b bool)`
+
+ SetControllerMountPointNil sets the value for ControllerMountPoint to be an explicit nil
+
+### UnsetControllerMountPoint
+`func (o *GetClusterMasters200ResponseMastersInnerVolumesInner) UnsetControllerMountPoint()`
+
+UnsetControllerMountPoint ensures that no value is present for ControllerMountPoint, not even an explicit nil
 ### GetResizeable
 
 `func (o *GetClusterMasters200ResponseMastersInnerVolumesInner) GetResizeable() bool`
@@ -239,6 +259,16 @@ SetUnitNumber sets UnitNumber field to given value.
 
 HasUnitNumber returns a boolean if a field has been set.
 
+### SetUnitNumberNil
+
+`func (o *GetClusterMasters200ResponseMastersInnerVolumesInner) SetUnitNumberNil(b bool)`
+
+ SetUnitNumberNil sets the value for UnitNumber to be an explicit nil
+
+### UnsetUnitNumber
+`func (o *GetClusterMasters200ResponseMastersInnerVolumesInner) UnsetUnitNumber()`
+
+UnsetUnitNumber ensures that no value is present for UnitNumber, not even an explicit nil
 ### GetTypeId
 
 `func (o *GetClusterMasters200ResponseMastersInnerVolumesInner) GetTypeId() int64`
@@ -314,6 +344,16 @@ SetDatastoreId sets DatastoreId field to given value.
 
 HasDatastoreId returns a boolean if a field has been set.
 
+### SetDatastoreIdNil
+
+`func (o *GetClusterMasters200ResponseMastersInnerVolumesInner) SetDatastoreIdNil(b bool)`
+
+ SetDatastoreIdNil sets the value for DatastoreId to be an explicit nil
+
+### UnsetDatastoreId
+`func (o *GetClusterMasters200ResponseMastersInnerVolumesInner) UnsetDatastoreId()`
+
+UnsetDatastoreId ensures that no value is present for DatastoreId, not even an explicit nil
 ### GetMaxStorage
 
 `func (o *GetClusterMasters200ResponseMastersInnerVolumesInner) GetMaxStorage() int64`
@@ -389,6 +429,16 @@ SetMaxIOPS sets MaxIOPS field to given value.
 
 HasMaxIOPS returns a boolean if a field has been set.
 
+### SetMaxIOPSNil
+
+`func (o *GetClusterMasters200ResponseMastersInnerVolumesInner) SetMaxIOPSNil(b bool)`
+
+ SetMaxIOPSNil sets the value for MaxIOPS to be an explicit nil
+
+### UnsetMaxIOPS
+`func (o *GetClusterMasters200ResponseMastersInnerVolumesInner) UnsetMaxIOPS()`
+
+UnsetMaxIOPS ensures that no value is present for MaxIOPS, not even an explicit nil
 ### GetUuid
 
 `func (o *GetClusterMasters200ResponseMastersInnerVolumesInner) GetUuid() string`

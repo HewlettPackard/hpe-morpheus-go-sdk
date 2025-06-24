@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Project** | Pointer to **string** | NSX Project (NSX 4.1+) | [optional] 
+**Project** | Pointer to **NullableString** | NSX Project (NSX 4.1+) | [optional] 
 
 ## Methods
 
@@ -50,6 +50,16 @@ SetProject sets Project field to given value.
 
 HasProject returns a boolean if a field has been set.
 
+### SetProjectNil
+
+`func (o *NSXNetworkServerConfig) SetProjectNil(b bool)`
+
+ SetProjectNil sets the value for Project to be an explicit nil
+
+### UnsetProject
+`func (o *NSXNetworkServerConfig) UnsetProject()`
+
+UnsetProject ensures that no value is present for Project, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

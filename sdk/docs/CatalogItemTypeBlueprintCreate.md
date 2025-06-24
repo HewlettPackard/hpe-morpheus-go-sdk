@@ -5,13 +5,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **string** | Catalog Item Type name | [optional] 
-**Code** | Pointer to **string** | Useful shortcode for provisioning naming schemes and export reference. | [optional] 
-**Category** | Pointer to **string** | Catalog Item Type category | [optional] 
+**Code** | Pointer to **NullableString** | Useful shortcode for provisioning naming schemes and export reference. | [optional] 
+**Category** | Pointer to **NullableString** | Catalog Item Type category | [optional] 
 **Description** | Pointer to **string** | Catalog Item Type description | [optional] 
 **Labels** | Pointer to **[]string** | Array of label strings, can be used for filtering. | [optional] 
 **Type** | Pointer to **string** | Type, &#x60;instance&#x60;, &#x60;blueprint&#x60; or &#x60;workflow&#x60;. This determines whether an Instance or App will be provisioned. Instance types require a config and blueprint requires a blueprint and appSpec, while workflow types requires a workflow and context. | [optional] 
 **Visibility** | Pointer to **string** | Visibility - Set to public to allow all tenants | [optional] [default to "private"]
-**LayoutCode** | Pointer to **string** | Identifier primarily used for Plugin Catalog Item Types | [optional] 
+**LayoutCode** | Pointer to **NullableString** | Identifier primarily used for Plugin Catalog Item Types | [optional] 
 **IconPath** | Pointer to **string** | Icon Path, relative location of an icon image, eg. /assets/containers-png/nginx.png. | [optional] 
 **AllowQuantity** | Pointer to **bool** | Can users order more than one of this item at a time. | [optional] 
 **Blueprint** | [**AddCatalogItemTypeRequestCatalogItemTypeOneOf1Blueprint**](AddCatalogItemTypeRequestCatalogItemTypeOneOf1Blueprint.md) |  | 
@@ -89,6 +89,16 @@ SetCode sets Code field to given value.
 
 HasCode returns a boolean if a field has been set.
 
+### SetCodeNil
+
+`func (o *CatalogItemTypeBlueprintCreate) SetCodeNil(b bool)`
+
+ SetCodeNil sets the value for Code to be an explicit nil
+
+### UnsetCode
+`func (o *CatalogItemTypeBlueprintCreate) UnsetCode()`
+
+UnsetCode ensures that no value is present for Code, not even an explicit nil
 ### GetCategory
 
 `func (o *CatalogItemTypeBlueprintCreate) GetCategory() string`
@@ -114,6 +124,16 @@ SetCategory sets Category field to given value.
 
 HasCategory returns a boolean if a field has been set.
 
+### SetCategoryNil
+
+`func (o *CatalogItemTypeBlueprintCreate) SetCategoryNil(b bool)`
+
+ SetCategoryNil sets the value for Category to be an explicit nil
+
+### UnsetCategory
+`func (o *CatalogItemTypeBlueprintCreate) UnsetCategory()`
+
+UnsetCategory ensures that no value is present for Category, not even an explicit nil
 ### GetDescription
 
 `func (o *CatalogItemTypeBlueprintCreate) GetDescription() string`
@@ -164,6 +184,16 @@ SetLabels sets Labels field to given value.
 
 HasLabels returns a boolean if a field has been set.
 
+### SetLabelsNil
+
+`func (o *CatalogItemTypeBlueprintCreate) SetLabelsNil(b bool)`
+
+ SetLabelsNil sets the value for Labels to be an explicit nil
+
+### UnsetLabels
+`func (o *CatalogItemTypeBlueprintCreate) UnsetLabels()`
+
+UnsetLabels ensures that no value is present for Labels, not even an explicit nil
 ### GetType
 
 `func (o *CatalogItemTypeBlueprintCreate) GetType() string`
@@ -239,6 +269,16 @@ SetLayoutCode sets LayoutCode field to given value.
 
 HasLayoutCode returns a boolean if a field has been set.
 
+### SetLayoutCodeNil
+
+`func (o *CatalogItemTypeBlueprintCreate) SetLayoutCodeNil(b bool)`
+
+ SetLayoutCodeNil sets the value for LayoutCode to be an explicit nil
+
+### UnsetLayoutCode
+`func (o *CatalogItemTypeBlueprintCreate) UnsetLayoutCode()`
+
+UnsetLayoutCode ensures that no value is present for LayoutCode, not even an explicit nil
 ### GetIconPath
 
 `func (o *CatalogItemTypeBlueprintCreate) GetIconPath() string`

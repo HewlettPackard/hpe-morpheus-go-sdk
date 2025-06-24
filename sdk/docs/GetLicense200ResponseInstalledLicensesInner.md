@@ -14,16 +14,16 @@ Name | Type | Description | Notes
 **MaxMemory** | Pointer to **int64** | Memory Limit. 0 is used for unlimited. | [optional] 
 **MaxStorage** | Pointer to **int64** | Storage Limit. 0 is used for unlimited. | [optional] 
 **LimitType** | Pointer to **string** | The limit type determines which limits apply to the license, the new &#39;standard&#39; or legacy &#39;workload&#39;. | [optional] 
-**MaxManagedServers** | Pointer to **int64** | Managed Servers Limit. 0 is enforced and null is used for unlimited. | [optional] 
-**MaxDiscoveredServers** | Pointer to **int64** | Discovered Servers Limit. 0 is enforced and null is used for unlimited. | [optional] 
-**MaxHosts** | Pointer to **int64** | Host Limit. 0 is enforced and null is used for unlimited. | [optional] 
-**MaxMvm** | Pointer to **int64** | HPE VM Host Limit. 0 is enforced and null is used for unlimited. | [optional] 
-**MaxMvmSockets** | Pointer to **int64** | HPE VM Host Limit. 0 is enforced and null is used for unlimited. | [optional] 
-**MaxIac** | Pointer to **int64** | IAC Deployments Limit. 0 is enforced and null is used for unlimited. | [optional] 
-**MaxXaas** | Pointer to **int64** | Xaas Instances Limit. 0 is enforced and null is used for unlimited. | [optional] 
-**MaxExecutions** | Pointer to **int64** | Execution Limit. 0 is enforced and null is used for unlimited. | [optional] 
-**MaxDistributedWorkers** | Pointer to **int64** | Distributed Workers Limit. 0 is enforced and null is used for unlimited. | [optional] 
-**MaxDiscoveredObjects** | Pointer to **int64** | Discovered Objects Limit. Not yet enforced. | [optional] 
+**MaxManagedServers** | Pointer to **NullableInt64** | Managed Servers Limit. 0 is enforced and null is used for unlimited. | [optional] 
+**MaxDiscoveredServers** | Pointer to **NullableInt64** | Discovered Servers Limit. 0 is enforced and null is used for unlimited. | [optional] 
+**MaxHosts** | Pointer to **NullableInt64** | Host Limit. 0 is enforced and null is used for unlimited. | [optional] 
+**MaxMvm** | Pointer to **NullableInt64** | HPE VM Host Limit. 0 is enforced and null is used for unlimited. | [optional] 
+**MaxMvmSockets** | Pointer to **NullableInt64** | HPE VM Host Limit. 0 is enforced and null is used for unlimited. | [optional] 
+**MaxIac** | Pointer to **NullableInt64** | IAC Deployments Limit. 0 is enforced and null is used for unlimited. | [optional] 
+**MaxXaas** | Pointer to **NullableInt64** | Xaas Instances Limit. 0 is enforced and null is used for unlimited. | [optional] 
+**MaxExecutions** | Pointer to **NullableInt64** | Execution Limit. 0 is enforced and null is used for unlimited. | [optional] 
+**MaxDistributedWorkers** | Pointer to **NullableInt64** | Distributed Workers Limit. 0 is enforced and null is used for unlimited. | [optional] 
+**MaxDiscoveredObjects** | Pointer to **NullableInt64** | Discovered Objects Limit. Not yet enforced. | [optional] 
 **HardLimit** | Pointer to **bool** | Hard Limit | [optional] 
 **FreeTrial** | Pointer to **bool** | Free Trial (Community License) | [optional] 
 **MultiTenant** | Pointer to **bool** | Multi-Tenant Enabled | [optional] 
@@ -32,12 +32,12 @@ Name | Type | Description | Notes
 **SupportLevel** | Pointer to **string** | Support Level | [optional] 
 **AccountName** | Pointer to **string** | Account Name | [optional] 
 **Config** | Pointer to **map[string]interface{}** | License Configuration Object | [optional] 
-**AmazonProductCodes** | Pointer to **string** |  | [optional] 
+**AmazonProductCodes** | Pointer to **NullableString** |  | [optional] 
 **Features** | Pointer to [**GetLicense200ResponseLicenseFeatures**](GetLicense200ResponseLicenseFeatures.md) |  | [optional] 
-**ZoneTypes** | Pointer to **string** |  | [optional] 
+**ZoneTypes** | Pointer to **NullableString** |  | [optional] 
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
-**RecalculationDate** | Pointer to **time.Time** |  | [optional] 
+**RecalculationDate** | Pointer to **NullableTime** |  | [optional] 
 
 ## Methods
 
@@ -333,6 +333,16 @@ SetMaxManagedServers sets MaxManagedServers field to given value.
 
 HasMaxManagedServers returns a boolean if a field has been set.
 
+### SetMaxManagedServersNil
+
+`func (o *GetLicense200ResponseInstalledLicensesInner) SetMaxManagedServersNil(b bool)`
+
+ SetMaxManagedServersNil sets the value for MaxManagedServers to be an explicit nil
+
+### UnsetMaxManagedServers
+`func (o *GetLicense200ResponseInstalledLicensesInner) UnsetMaxManagedServers()`
+
+UnsetMaxManagedServers ensures that no value is present for MaxManagedServers, not even an explicit nil
 ### GetMaxDiscoveredServers
 
 `func (o *GetLicense200ResponseInstalledLicensesInner) GetMaxDiscoveredServers() int64`
@@ -358,6 +368,16 @@ SetMaxDiscoveredServers sets MaxDiscoveredServers field to given value.
 
 HasMaxDiscoveredServers returns a boolean if a field has been set.
 
+### SetMaxDiscoveredServersNil
+
+`func (o *GetLicense200ResponseInstalledLicensesInner) SetMaxDiscoveredServersNil(b bool)`
+
+ SetMaxDiscoveredServersNil sets the value for MaxDiscoveredServers to be an explicit nil
+
+### UnsetMaxDiscoveredServers
+`func (o *GetLicense200ResponseInstalledLicensesInner) UnsetMaxDiscoveredServers()`
+
+UnsetMaxDiscoveredServers ensures that no value is present for MaxDiscoveredServers, not even an explicit nil
 ### GetMaxHosts
 
 `func (o *GetLicense200ResponseInstalledLicensesInner) GetMaxHosts() int64`
@@ -383,6 +403,16 @@ SetMaxHosts sets MaxHosts field to given value.
 
 HasMaxHosts returns a boolean if a field has been set.
 
+### SetMaxHostsNil
+
+`func (o *GetLicense200ResponseInstalledLicensesInner) SetMaxHostsNil(b bool)`
+
+ SetMaxHostsNil sets the value for MaxHosts to be an explicit nil
+
+### UnsetMaxHosts
+`func (o *GetLicense200ResponseInstalledLicensesInner) UnsetMaxHosts()`
+
+UnsetMaxHosts ensures that no value is present for MaxHosts, not even an explicit nil
 ### GetMaxMvm
 
 `func (o *GetLicense200ResponseInstalledLicensesInner) GetMaxMvm() int64`
@@ -408,6 +438,16 @@ SetMaxMvm sets MaxMvm field to given value.
 
 HasMaxMvm returns a boolean if a field has been set.
 
+### SetMaxMvmNil
+
+`func (o *GetLicense200ResponseInstalledLicensesInner) SetMaxMvmNil(b bool)`
+
+ SetMaxMvmNil sets the value for MaxMvm to be an explicit nil
+
+### UnsetMaxMvm
+`func (o *GetLicense200ResponseInstalledLicensesInner) UnsetMaxMvm()`
+
+UnsetMaxMvm ensures that no value is present for MaxMvm, not even an explicit nil
 ### GetMaxMvmSockets
 
 `func (o *GetLicense200ResponseInstalledLicensesInner) GetMaxMvmSockets() int64`
@@ -433,6 +473,16 @@ SetMaxMvmSockets sets MaxMvmSockets field to given value.
 
 HasMaxMvmSockets returns a boolean if a field has been set.
 
+### SetMaxMvmSocketsNil
+
+`func (o *GetLicense200ResponseInstalledLicensesInner) SetMaxMvmSocketsNil(b bool)`
+
+ SetMaxMvmSocketsNil sets the value for MaxMvmSockets to be an explicit nil
+
+### UnsetMaxMvmSockets
+`func (o *GetLicense200ResponseInstalledLicensesInner) UnsetMaxMvmSockets()`
+
+UnsetMaxMvmSockets ensures that no value is present for MaxMvmSockets, not even an explicit nil
 ### GetMaxIac
 
 `func (o *GetLicense200ResponseInstalledLicensesInner) GetMaxIac() int64`
@@ -458,6 +508,16 @@ SetMaxIac sets MaxIac field to given value.
 
 HasMaxIac returns a boolean if a field has been set.
 
+### SetMaxIacNil
+
+`func (o *GetLicense200ResponseInstalledLicensesInner) SetMaxIacNil(b bool)`
+
+ SetMaxIacNil sets the value for MaxIac to be an explicit nil
+
+### UnsetMaxIac
+`func (o *GetLicense200ResponseInstalledLicensesInner) UnsetMaxIac()`
+
+UnsetMaxIac ensures that no value is present for MaxIac, not even an explicit nil
 ### GetMaxXaas
 
 `func (o *GetLicense200ResponseInstalledLicensesInner) GetMaxXaas() int64`
@@ -483,6 +543,16 @@ SetMaxXaas sets MaxXaas field to given value.
 
 HasMaxXaas returns a boolean if a field has been set.
 
+### SetMaxXaasNil
+
+`func (o *GetLicense200ResponseInstalledLicensesInner) SetMaxXaasNil(b bool)`
+
+ SetMaxXaasNil sets the value for MaxXaas to be an explicit nil
+
+### UnsetMaxXaas
+`func (o *GetLicense200ResponseInstalledLicensesInner) UnsetMaxXaas()`
+
+UnsetMaxXaas ensures that no value is present for MaxXaas, not even an explicit nil
 ### GetMaxExecutions
 
 `func (o *GetLicense200ResponseInstalledLicensesInner) GetMaxExecutions() int64`
@@ -508,6 +578,16 @@ SetMaxExecutions sets MaxExecutions field to given value.
 
 HasMaxExecutions returns a boolean if a field has been set.
 
+### SetMaxExecutionsNil
+
+`func (o *GetLicense200ResponseInstalledLicensesInner) SetMaxExecutionsNil(b bool)`
+
+ SetMaxExecutionsNil sets the value for MaxExecutions to be an explicit nil
+
+### UnsetMaxExecutions
+`func (o *GetLicense200ResponseInstalledLicensesInner) UnsetMaxExecutions()`
+
+UnsetMaxExecutions ensures that no value is present for MaxExecutions, not even an explicit nil
 ### GetMaxDistributedWorkers
 
 `func (o *GetLicense200ResponseInstalledLicensesInner) GetMaxDistributedWorkers() int64`
@@ -533,6 +613,16 @@ SetMaxDistributedWorkers sets MaxDistributedWorkers field to given value.
 
 HasMaxDistributedWorkers returns a boolean if a field has been set.
 
+### SetMaxDistributedWorkersNil
+
+`func (o *GetLicense200ResponseInstalledLicensesInner) SetMaxDistributedWorkersNil(b bool)`
+
+ SetMaxDistributedWorkersNil sets the value for MaxDistributedWorkers to be an explicit nil
+
+### UnsetMaxDistributedWorkers
+`func (o *GetLicense200ResponseInstalledLicensesInner) UnsetMaxDistributedWorkers()`
+
+UnsetMaxDistributedWorkers ensures that no value is present for MaxDistributedWorkers, not even an explicit nil
 ### GetMaxDiscoveredObjects
 
 `func (o *GetLicense200ResponseInstalledLicensesInner) GetMaxDiscoveredObjects() int64`
@@ -558,6 +648,16 @@ SetMaxDiscoveredObjects sets MaxDiscoveredObjects field to given value.
 
 HasMaxDiscoveredObjects returns a boolean if a field has been set.
 
+### SetMaxDiscoveredObjectsNil
+
+`func (o *GetLicense200ResponseInstalledLicensesInner) SetMaxDiscoveredObjectsNil(b bool)`
+
+ SetMaxDiscoveredObjectsNil sets the value for MaxDiscoveredObjects to be an explicit nil
+
+### UnsetMaxDiscoveredObjects
+`func (o *GetLicense200ResponseInstalledLicensesInner) UnsetMaxDiscoveredObjects()`
+
+UnsetMaxDiscoveredObjects ensures that no value is present for MaxDiscoveredObjects, not even an explicit nil
 ### GetHardLimit
 
 `func (o *GetLicense200ResponseInstalledLicensesInner) GetHardLimit() bool`
@@ -758,6 +858,16 @@ SetConfig sets Config field to given value.
 
 HasConfig returns a boolean if a field has been set.
 
+### SetConfigNil
+
+`func (o *GetLicense200ResponseInstalledLicensesInner) SetConfigNil(b bool)`
+
+ SetConfigNil sets the value for Config to be an explicit nil
+
+### UnsetConfig
+`func (o *GetLicense200ResponseInstalledLicensesInner) UnsetConfig()`
+
+UnsetConfig ensures that no value is present for Config, not even an explicit nil
 ### GetAmazonProductCodes
 
 `func (o *GetLicense200ResponseInstalledLicensesInner) GetAmazonProductCodes() string`
@@ -783,6 +893,16 @@ SetAmazonProductCodes sets AmazonProductCodes field to given value.
 
 HasAmazonProductCodes returns a boolean if a field has been set.
 
+### SetAmazonProductCodesNil
+
+`func (o *GetLicense200ResponseInstalledLicensesInner) SetAmazonProductCodesNil(b bool)`
+
+ SetAmazonProductCodesNil sets the value for AmazonProductCodes to be an explicit nil
+
+### UnsetAmazonProductCodes
+`func (o *GetLicense200ResponseInstalledLicensesInner) UnsetAmazonProductCodes()`
+
+UnsetAmazonProductCodes ensures that no value is present for AmazonProductCodes, not even an explicit nil
 ### GetFeatures
 
 `func (o *GetLicense200ResponseInstalledLicensesInner) GetFeatures() GetLicense200ResponseLicenseFeatures`
@@ -833,6 +953,16 @@ SetZoneTypes sets ZoneTypes field to given value.
 
 HasZoneTypes returns a boolean if a field has been set.
 
+### SetZoneTypesNil
+
+`func (o *GetLicense200ResponseInstalledLicensesInner) SetZoneTypesNil(b bool)`
+
+ SetZoneTypesNil sets the value for ZoneTypes to be an explicit nil
+
+### UnsetZoneTypes
+`func (o *GetLicense200ResponseInstalledLicensesInner) UnsetZoneTypes()`
+
+UnsetZoneTypes ensures that no value is present for ZoneTypes, not even an explicit nil
 ### GetLastUpdated
 
 `func (o *GetLicense200ResponseInstalledLicensesInner) GetLastUpdated() time.Time`
@@ -908,6 +1038,16 @@ SetRecalculationDate sets RecalculationDate field to given value.
 
 HasRecalculationDate returns a boolean if a field has been set.
 
+### SetRecalculationDateNil
+
+`func (o *GetLicense200ResponseInstalledLicensesInner) SetRecalculationDateNil(b bool)`
+
+ SetRecalculationDateNil sets the value for RecalculationDate to be an explicit nil
+
+### UnsetRecalculationDate
+`func (o *GetLicense200ResponseInstalledLicensesInner) UnsetRecalculationDate()`
+
+UnsetRecalculationDate ensures that no value is present for RecalculationDate, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -20,15 +20,15 @@ var _ MappedNullable = &GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeI
 
 // GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerPermissionsResourcePermissions struct for GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerPermissionsResourcePermissions
 type GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerPermissionsResourcePermissions struct {
-	DefaultStore         *bool                                          `json:"defaultStore,omitempty"`
-	AllPlans             *bool                                          `json:"allPlans,omitempty"`
-	DefaultTarget        *bool                                          `json:"defaultTarget,omitempty"`
-	CanManage            *bool                                          `json:"canManage,omitempty"`
-	All                  *bool                                          `json:"all,omitempty"`
-	Account              *GetAlerts200ResponseAllOfChecksInnerContainer `json:"account,omitempty"`
-	Sites                []map[string]interface{}                       `json:"sites,omitempty"`
-	Plans                []map[string]interface{}                       `json:"plans,omitempty"`
-	AdditionalProperties map[string]interface{}                         `json:",remain"`
+	DefaultStore         *bool                                        `json:"defaultStore,omitempty"`
+	AllPlans             *bool                                        `json:"allPlans,omitempty"`
+	DefaultTarget        *bool                                        `json:"defaultTarget,omitempty"`
+	CanManage            *bool                                        `json:"canManage,omitempty"`
+	All                  *bool                                        `json:"all,omitempty"`
+	Account              *GetAlerts200ResponseAllOfChecksInnerAccount `json:"account,omitempty"`
+	Sites                []map[string]interface{}                     `json:"sites,omitempty"`
+	Plans                []map[string]interface{}                     `json:"plans,omitempty"`
+	AdditionalProperties map[string]interface{}                       `json:",remain"`
 }
 
 type _GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerPermissionsResourcePermissions GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerPermissionsResourcePermissions
@@ -211,9 +211,9 @@ func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayo
 }
 
 // GetAccount returns the Account field value if set, zero value otherwise.
-func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerPermissionsResourcePermissions) GetAccount() GetAlerts200ResponseAllOfChecksInnerContainer {
+func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerPermissionsResourcePermissions) GetAccount() GetAlerts200ResponseAllOfChecksInnerAccount {
 	if o == nil || IsNil(o.Account) {
-		var ret GetAlerts200ResponseAllOfChecksInnerContainer
+		var ret GetAlerts200ResponseAllOfChecksInnerAccount
 		return ret
 	}
 	return *o.Account
@@ -221,7 +221,7 @@ func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayo
 
 // GetAccountOk returns a tuple with the Account field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerPermissionsResourcePermissions) GetAccountOk() (*GetAlerts200ResponseAllOfChecksInnerContainer, bool) {
+func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerPermissionsResourcePermissions) GetAccountOk() (*GetAlerts200ResponseAllOfChecksInnerAccount, bool) {
 	if o == nil || IsNil(o.Account) {
 		return nil, false
 	}
@@ -237,14 +237,14 @@ func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayo
 	return false
 }
 
-// SetAccount gets a reference to the given GetAlerts200ResponseAllOfChecksInnerContainer and assigns it to the Account field.
-func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerPermissionsResourcePermissions) SetAccount(v GetAlerts200ResponseAllOfChecksInnerContainer) {
+// SetAccount gets a reference to the given GetAlerts200ResponseAllOfChecksInnerAccount and assigns it to the Account field.
+func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerPermissionsResourcePermissions) SetAccount(v GetAlerts200ResponseAllOfChecksInnerAccount) {
 	o.Account = &v
 }
 
-// GetSites returns the Sites field value if set, zero value otherwise.
+// GetSites returns the Sites field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerPermissionsResourcePermissions) GetSites() []map[string]interface{} {
-	if o == nil || IsNil(o.Sites) {
+	if o == nil {
 		var ret []map[string]interface{}
 		return ret
 	}
@@ -253,6 +253,7 @@ func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayo
 
 // GetSitesOk returns a tuple with the Sites field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerPermissionsResourcePermissions) GetSitesOk() ([]map[string]interface{}, bool) {
 	if o == nil || IsNil(o.Sites) {
 		return nil, false
@@ -274,9 +275,9 @@ func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayo
 	o.Sites = v
 }
 
-// GetPlans returns the Plans field value if set, zero value otherwise.
+// GetPlans returns the Plans field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerPermissionsResourcePermissions) GetPlans() []map[string]interface{} {
-	if o == nil || IsNil(o.Plans) {
+	if o == nil {
 		var ret []map[string]interface{}
 		return ret
 	}
@@ -285,6 +286,7 @@ func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayo
 
 // GetPlansOk returns a tuple with the Plans field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerPermissionsResourcePermissions) GetPlansOk() ([]map[string]interface{}, bool) {
 	if o == nil || IsNil(o.Plans) {
 		return nil, false
@@ -334,10 +336,10 @@ func (o GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayou
 	if !IsNil(o.Account) {
 		toSerialize["account"] = o.Account
 	}
-	if !IsNil(o.Sites) {
+	if o.Sites != nil {
 		toSerialize["sites"] = o.Sites
 	}
-	if !IsNil(o.Plans) {
+	if o.Plans != nil {
 		toSerialize["plans"] = o.Plans
 	}
 

@@ -27,9 +27,8 @@ type AddPoliciesRequestPolicy struct {
 	PolicyType  AddPoliciesRequestPolicyPolicyType `json:"policyType"`
 	Config      AddPoliciesRequestPolicyConfig     `json:"config"`
 	// Set to false to disable
-	Enabled *bool `json:"enabled,omitempty"`
-	// Scope object type.  If none specified, will default to Global (null)
-	RefType *string `json:"refType,omitempty"`
+	Enabled *bool          `json:"enabled,omitempty"`
+	RefType NullableString `json:"refType,omitempty"`
 	// Scope object ID (`group`,`cloud`,`user`, etc)
 	RefId *int64 `json:"refId,omitempty"`
 	// Array of tenants to scope the policy to
@@ -201,36 +200,47 @@ func (o *AddPoliciesRequestPolicy) SetEnabled(v bool) {
 	o.Enabled = &v
 }
 
-// GetRefType returns the RefType field value if set, zero value otherwise.
+// GetRefType returns the RefType field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AddPoliciesRequestPolicy) GetRefType() string {
-	if o == nil || IsNil(o.RefType) {
+	if o == nil || IsNil(o.RefType.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.RefType
+	return *o.RefType.Get()
 }
 
 // GetRefTypeOk returns a tuple with the RefType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AddPoliciesRequestPolicy) GetRefTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.RefType) {
+	if o == nil {
 		return nil, false
 	}
-	return o.RefType, true
+	return o.RefType.Get(), o.RefType.IsSet()
 }
 
 // IsSetRefType returns a boolean if a field has been set.
 func (o *AddPoliciesRequestPolicy) IsSetRefType() bool {
-	if o != nil && !IsNil(o.RefType) {
+	if o != nil && o.RefType.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetRefType gets a reference to the given string and assigns it to the RefType field.
+// SetRefType gets a reference to the given NullableString and assigns it to the RefType field.
 func (o *AddPoliciesRequestPolicy) SetRefType(v string) {
-	o.RefType = &v
+	o.RefType.Set(&v)
+}
+
+// SetRefTypeNil sets the value for RefType to be an explicit nil
+func (o *AddPoliciesRequestPolicy) SetRefTypeNil() {
+	o.RefType.Set(nil)
+}
+
+// UnsetRefType ensures that no value is present for RefType, not even an explicit nil
+func (o *AddPoliciesRequestPolicy) UnsetRefType() {
+	o.RefType.Unset()
 }
 
 // GetRefId returns the RefId field value if set, zero value otherwise.
@@ -348,8 +358,8 @@ func (o AddPoliciesRequestPolicy) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Enabled) {
 		toSerialize["enabled"] = o.Enabled
 	}
-	if !IsNil(o.RefType) {
-		toSerialize["refType"] = o.RefType
+	if o.RefType.IsSet() {
+		toSerialize["refType"] = o.RefType.Get()
 	}
 	if !IsNil(o.RefId) {
 		toSerialize["refId"] = o.RefId

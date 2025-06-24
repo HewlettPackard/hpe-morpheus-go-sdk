@@ -23,13 +23,13 @@ var _ MappedNullable = &Report{}
 type Report struct {
 	Id                   *int64                                                      `json:"id,omitempty"`
 	Type                 *ListClusterNetworkEndpoints200ResponseAllOfEndpointsInner  `json:"type,omitempty"`
-	ReportTitle          *string                                                     `json:"reportTitle,omitempty"`
-	FilterTitle          *string                                                     `json:"filterTitle,omitempty"`
+	ReportTitle          NullableString                                              `json:"reportTitle,omitempty"`
+	FilterTitle          NullableString                                              `json:"filterTitle,omitempty"`
 	Status               *string                                                     `json:"status,omitempty"`
 	DateCreated          *time.Time                                                  `json:"dateCreated,omitempty"`
 	LastUpdated          *time.Time                                                  `json:"lastUpdated,omitempty"`
-	StartDate            *time.Time                                                  `json:"startDate,omitempty"`
-	EndDate              *time.Time                                                  `json:"endDate,omitempty"`
+	StartDate            NullableTime                                                `json:"startDate,omitempty"`
+	EndDate              NullableTime                                                `json:"endDate,omitempty"`
 	Config               *ListReports200ResponseAllOfReportResultsInnerConfig        `json:"config,omitempty"`
 	CreatedBy            *ListActivity200ResponseAllOfActivityInnerActivityInnerUser `json:"createdBy,omitempty"`
 	Rows                 []ListReports200ResponseAllOfReportResultsInnerRowsInner    `json:"rows,omitempty"`
@@ -119,68 +119,90 @@ func (o *Report) SetType(v ListClusterNetworkEndpoints200ResponseAllOfEndpointsI
 	o.Type = &v
 }
 
-// GetReportTitle returns the ReportTitle field value if set, zero value otherwise.
+// GetReportTitle returns the ReportTitle field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Report) GetReportTitle() string {
-	if o == nil || IsNil(o.ReportTitle) {
+	if o == nil || IsNil(o.ReportTitle.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ReportTitle
+	return *o.ReportTitle.Get()
 }
 
 // GetReportTitleOk returns a tuple with the ReportTitle field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Report) GetReportTitleOk() (*string, bool) {
-	if o == nil || IsNil(o.ReportTitle) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ReportTitle, true
+	return o.ReportTitle.Get(), o.ReportTitle.IsSet()
 }
 
 // IsSetReportTitle returns a boolean if a field has been set.
 func (o *Report) IsSetReportTitle() bool {
-	if o != nil && !IsNil(o.ReportTitle) {
+	if o != nil && o.ReportTitle.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetReportTitle gets a reference to the given string and assigns it to the ReportTitle field.
+// SetReportTitle gets a reference to the given NullableString and assigns it to the ReportTitle field.
 func (o *Report) SetReportTitle(v string) {
-	o.ReportTitle = &v
+	o.ReportTitle.Set(&v)
 }
 
-// GetFilterTitle returns the FilterTitle field value if set, zero value otherwise.
+// SetReportTitleNil sets the value for ReportTitle to be an explicit nil
+func (o *Report) SetReportTitleNil() {
+	o.ReportTitle.Set(nil)
+}
+
+// UnsetReportTitle ensures that no value is present for ReportTitle, not even an explicit nil
+func (o *Report) UnsetReportTitle() {
+	o.ReportTitle.Unset()
+}
+
+// GetFilterTitle returns the FilterTitle field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Report) GetFilterTitle() string {
-	if o == nil || IsNil(o.FilterTitle) {
+	if o == nil || IsNil(o.FilterTitle.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.FilterTitle
+	return *o.FilterTitle.Get()
 }
 
 // GetFilterTitleOk returns a tuple with the FilterTitle field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Report) GetFilterTitleOk() (*string, bool) {
-	if o == nil || IsNil(o.FilterTitle) {
+	if o == nil {
 		return nil, false
 	}
-	return o.FilterTitle, true
+	return o.FilterTitle.Get(), o.FilterTitle.IsSet()
 }
 
 // IsSetFilterTitle returns a boolean if a field has been set.
 func (o *Report) IsSetFilterTitle() bool {
-	if o != nil && !IsNil(o.FilterTitle) {
+	if o != nil && o.FilterTitle.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetFilterTitle gets a reference to the given string and assigns it to the FilterTitle field.
+// SetFilterTitle gets a reference to the given NullableString and assigns it to the FilterTitle field.
 func (o *Report) SetFilterTitle(v string) {
-	o.FilterTitle = &v
+	o.FilterTitle.Set(&v)
+}
+
+// SetFilterTitleNil sets the value for FilterTitle to be an explicit nil
+func (o *Report) SetFilterTitleNil() {
+	o.FilterTitle.Set(nil)
+}
+
+// UnsetFilterTitle ensures that no value is present for FilterTitle, not even an explicit nil
+func (o *Report) UnsetFilterTitle() {
+	o.FilterTitle.Unset()
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
@@ -279,68 +301,90 @@ func (o *Report) SetLastUpdated(v time.Time) {
 	o.LastUpdated = &v
 }
 
-// GetStartDate returns the StartDate field value if set, zero value otherwise.
+// GetStartDate returns the StartDate field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Report) GetStartDate() time.Time {
-	if o == nil || IsNil(o.StartDate) {
+	if o == nil || IsNil(o.StartDate.Get()) {
 		var ret time.Time
 		return ret
 	}
-	return *o.StartDate
+	return *o.StartDate.Get()
 }
 
 // GetStartDateOk returns a tuple with the StartDate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Report) GetStartDateOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.StartDate) {
+	if o == nil {
 		return nil, false
 	}
-	return o.StartDate, true
+	return o.StartDate.Get(), o.StartDate.IsSet()
 }
 
 // IsSetStartDate returns a boolean if a field has been set.
 func (o *Report) IsSetStartDate() bool {
-	if o != nil && !IsNil(o.StartDate) {
+	if o != nil && o.StartDate.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetStartDate gets a reference to the given time.Time and assigns it to the StartDate field.
+// SetStartDate gets a reference to the given NullableTime and assigns it to the StartDate field.
 func (o *Report) SetStartDate(v time.Time) {
-	o.StartDate = &v
+	o.StartDate.Set(&v)
 }
 
-// GetEndDate returns the EndDate field value if set, zero value otherwise.
+// SetStartDateNil sets the value for StartDate to be an explicit nil
+func (o *Report) SetStartDateNil() {
+	o.StartDate.Set(nil)
+}
+
+// UnsetStartDate ensures that no value is present for StartDate, not even an explicit nil
+func (o *Report) UnsetStartDate() {
+	o.StartDate.Unset()
+}
+
+// GetEndDate returns the EndDate field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Report) GetEndDate() time.Time {
-	if o == nil || IsNil(o.EndDate) {
+	if o == nil || IsNil(o.EndDate.Get()) {
 		var ret time.Time
 		return ret
 	}
-	return *o.EndDate
+	return *o.EndDate.Get()
 }
 
 // GetEndDateOk returns a tuple with the EndDate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Report) GetEndDateOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.EndDate) {
+	if o == nil {
 		return nil, false
 	}
-	return o.EndDate, true
+	return o.EndDate.Get(), o.EndDate.IsSet()
 }
 
 // IsSetEndDate returns a boolean if a field has been set.
 func (o *Report) IsSetEndDate() bool {
-	if o != nil && !IsNil(o.EndDate) {
+	if o != nil && o.EndDate.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetEndDate gets a reference to the given time.Time and assigns it to the EndDate field.
+// SetEndDate gets a reference to the given NullableTime and assigns it to the EndDate field.
 func (o *Report) SetEndDate(v time.Time) {
-	o.EndDate = &v
+	o.EndDate.Set(&v)
+}
+
+// SetEndDateNil sets the value for EndDate to be an explicit nil
+func (o *Report) SetEndDateNil() {
+	o.EndDate.Set(nil)
+}
+
+// UnsetEndDate ensures that no value is present for EndDate, not even an explicit nil
+func (o *Report) UnsetEndDate() {
+	o.EndDate.Unset()
 }
 
 // GetConfig returns the Config field value if set, zero value otherwise.
@@ -455,11 +499,11 @@ func (o Report) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type
 	}
-	if !IsNil(o.ReportTitle) {
-		toSerialize["reportTitle"] = o.ReportTitle
+	if o.ReportTitle.IsSet() {
+		toSerialize["reportTitle"] = o.ReportTitle.Get()
 	}
-	if !IsNil(o.FilterTitle) {
-		toSerialize["filterTitle"] = o.FilterTitle
+	if o.FilterTitle.IsSet() {
+		toSerialize["filterTitle"] = o.FilterTitle.Get()
 	}
 	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status
@@ -470,11 +514,11 @@ func (o Report) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.LastUpdated) {
 		toSerialize["lastUpdated"] = o.LastUpdated
 	}
-	if !IsNil(o.StartDate) {
-		toSerialize["startDate"] = o.StartDate
+	if o.StartDate.IsSet() {
+		toSerialize["startDate"] = o.StartDate.Get()
 	}
-	if !IsNil(o.EndDate) {
-		toSerialize["endDate"] = o.EndDate
+	if o.EndDate.IsSet() {
+		toSerialize["endDate"] = o.EndDate.Get()
 	}
 	if !IsNil(o.Config) {
 		toSerialize["config"] = o.Config

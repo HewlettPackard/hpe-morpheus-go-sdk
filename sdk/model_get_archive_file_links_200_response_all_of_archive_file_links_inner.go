@@ -24,11 +24,11 @@ type GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner struct {
 	Id                   *int64                                                               `json:"id,omitempty"`
 	SecretAccessKey      *string                                                              `json:"secretAccessKey,omitempty"`
 	ArchiveFile          *GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile `json:"archiveFile,omitempty"`
-	CreatedBy            *GetArchiveBucket200ResponseArchiveFilesInnerCreatedBy               `json:"createdBy,omitempty"`
+	CreatedBy            *ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy      `json:"createdBy,omitempty"`
 	DateCreated          *time.Time                                                           `json:"dateCreated,omitempty"`
 	LastUpdated          *time.Time                                                           `json:"lastUpdated,omitempty"`
-	LastAccessDate       *time.Time                                                           `json:"lastAccessDate,omitempty"`
-	ExpirationDate       *time.Time                                                           `json:"expirationDate,omitempty"`
+	LastAccessDate       NullableTime                                                         `json:"lastAccessDate,omitempty"`
+	ExpirationDate       NullableTime                                                         `json:"expirationDate,omitempty"`
 	DownloadCount        *int64                                                               `json:"downloadCount,omitempty"`
 	AdditionalProperties map[string]interface{}                                               `json:",remain"`
 }
@@ -149,9 +149,9 @@ func (o *GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner) SetArchiveFil
 }
 
 // GetCreatedBy returns the CreatedBy field value if set, zero value otherwise.
-func (o *GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner) GetCreatedBy() GetArchiveBucket200ResponseArchiveFilesInnerCreatedBy {
+func (o *GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner) GetCreatedBy() ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy {
 	if o == nil || IsNil(o.CreatedBy) {
-		var ret GetArchiveBucket200ResponseArchiveFilesInnerCreatedBy
+		var ret ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy
 		return ret
 	}
 	return *o.CreatedBy
@@ -159,7 +159,7 @@ func (o *GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner) GetCreatedBy(
 
 // GetCreatedByOk returns a tuple with the CreatedBy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner) GetCreatedByOk() (*GetArchiveBucket200ResponseArchiveFilesInnerCreatedBy, bool) {
+func (o *GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner) GetCreatedByOk() (*ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy, bool) {
 	if o == nil || IsNil(o.CreatedBy) {
 		return nil, false
 	}
@@ -175,8 +175,8 @@ func (o *GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner) IsSetCreatedB
 	return false
 }
 
-// SetCreatedBy gets a reference to the given GetArchiveBucket200ResponseArchiveFilesInnerCreatedBy and assigns it to the CreatedBy field.
-func (o *GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner) SetCreatedBy(v GetArchiveBucket200ResponseArchiveFilesInnerCreatedBy) {
+// SetCreatedBy gets a reference to the given ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy and assigns it to the CreatedBy field.
+func (o *GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner) SetCreatedBy(v ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy) {
 	o.CreatedBy = &v
 }
 
@@ -244,68 +244,90 @@ func (o *GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner) SetLastUpdate
 	o.LastUpdated = &v
 }
 
-// GetLastAccessDate returns the LastAccessDate field value if set, zero value otherwise.
+// GetLastAccessDate returns the LastAccessDate field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner) GetLastAccessDate() time.Time {
-	if o == nil || IsNil(o.LastAccessDate) {
+	if o == nil || IsNil(o.LastAccessDate.Get()) {
 		var ret time.Time
 		return ret
 	}
-	return *o.LastAccessDate
+	return *o.LastAccessDate.Get()
 }
 
 // GetLastAccessDateOk returns a tuple with the LastAccessDate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner) GetLastAccessDateOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.LastAccessDate) {
+	if o == nil {
 		return nil, false
 	}
-	return o.LastAccessDate, true
+	return o.LastAccessDate.Get(), o.LastAccessDate.IsSet()
 }
 
 // IsSetLastAccessDate returns a boolean if a field has been set.
 func (o *GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner) IsSetLastAccessDate() bool {
-	if o != nil && !IsNil(o.LastAccessDate) {
+	if o != nil && o.LastAccessDate.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetLastAccessDate gets a reference to the given time.Time and assigns it to the LastAccessDate field.
+// SetLastAccessDate gets a reference to the given NullableTime and assigns it to the LastAccessDate field.
 func (o *GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner) SetLastAccessDate(v time.Time) {
-	o.LastAccessDate = &v
+	o.LastAccessDate.Set(&v)
 }
 
-// GetExpirationDate returns the ExpirationDate field value if set, zero value otherwise.
+// SetLastAccessDateNil sets the value for LastAccessDate to be an explicit nil
+func (o *GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner) SetLastAccessDateNil() {
+	o.LastAccessDate.Set(nil)
+}
+
+// UnsetLastAccessDate ensures that no value is present for LastAccessDate, not even an explicit nil
+func (o *GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner) UnsetLastAccessDate() {
+	o.LastAccessDate.Unset()
+}
+
+// GetExpirationDate returns the ExpirationDate field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner) GetExpirationDate() time.Time {
-	if o == nil || IsNil(o.ExpirationDate) {
+	if o == nil || IsNil(o.ExpirationDate.Get()) {
 		var ret time.Time
 		return ret
 	}
-	return *o.ExpirationDate
+	return *o.ExpirationDate.Get()
 }
 
 // GetExpirationDateOk returns a tuple with the ExpirationDate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner) GetExpirationDateOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.ExpirationDate) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ExpirationDate, true
+	return o.ExpirationDate.Get(), o.ExpirationDate.IsSet()
 }
 
 // IsSetExpirationDate returns a boolean if a field has been set.
 func (o *GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner) IsSetExpirationDate() bool {
-	if o != nil && !IsNil(o.ExpirationDate) {
+	if o != nil && o.ExpirationDate.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetExpirationDate gets a reference to the given time.Time and assigns it to the ExpirationDate field.
+// SetExpirationDate gets a reference to the given NullableTime and assigns it to the ExpirationDate field.
 func (o *GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner) SetExpirationDate(v time.Time) {
-	o.ExpirationDate = &v
+	o.ExpirationDate.Set(&v)
+}
+
+// SetExpirationDateNil sets the value for ExpirationDate to be an explicit nil
+func (o *GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner) SetExpirationDateNil() {
+	o.ExpirationDate.Set(nil)
+}
+
+// UnsetExpirationDate ensures that no value is present for ExpirationDate, not even an explicit nil
+func (o *GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner) UnsetExpirationDate() {
+	o.ExpirationDate.Unset()
 }
 
 // GetDownloadCount returns the DownloadCount field value if set, zero value otherwise.
@@ -368,11 +390,11 @@ func (o GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner) ToMap() (map[s
 	if !IsNil(o.LastUpdated) {
 		toSerialize["lastUpdated"] = o.LastUpdated
 	}
-	if !IsNil(o.LastAccessDate) {
-		toSerialize["lastAccessDate"] = o.LastAccessDate
+	if o.LastAccessDate.IsSet() {
+		toSerialize["lastAccessDate"] = o.LastAccessDate.Get()
 	}
-	if !IsNil(o.ExpirationDate) {
-		toSerialize["expirationDate"] = o.ExpirationDate
+	if o.ExpirationDate.IsSet() {
+		toSerialize["expirationDate"] = o.ExpirationDate.Get()
 	}
 	if !IsNil(o.DownloadCount) {
 		toSerialize["downloadCount"] = o.DownloadCount

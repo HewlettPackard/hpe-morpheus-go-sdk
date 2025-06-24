@@ -26,61 +26,61 @@ type NetworkServer struct {
 	// Name
 	Name *string `json:"name,omitempty"`
 	// Description
-	Description *string                                                           `json:"description,omitempty"`
+	Description NullableString                                                    `json:"description,omitempty"`
 	Type        *ListNetworkServers200ResponseAllOfNetworkServersInnerType        `json:"type,omitempty"`
 	Integration *ListNetworkServers200ResponseAllOfNetworkServersInnerIntegration `json:"integration,omitempty"`
 	Account     *ListNetworkServers200ResponseAllOfNetworkServersInnerAccount     `json:"account,omitempty"`
 	Visibility  *string                                                           `json:"visibility,omitempty"`
 	// Internal ID
-	InternalId *string `json:"internalId,omitempty"`
+	InternalId NullableString `json:"internalId,omitempty"`
 	// External ID
-	ExternalId *string `json:"externalId,omitempty"`
+	ExternalId NullableString `json:"externalId,omitempty"`
 	// Service URL
-	ServiceUrl *string `json:"serviceUrl,omitempty"`
+	ServiceUrl NullableString `json:"serviceUrl,omitempty"`
 	// Service Host
-	ServiceHost *string `json:"serviceHost,omitempty"`
+	ServiceHost NullableString `json:"serviceHost,omitempty"`
 	// Service Port
-	ServicePort *int32 `json:"servicePort,omitempty"`
+	ServicePort NullableInt32 `json:"servicePort,omitempty"`
 	// Service Mode
-	ServiceMode *string `json:"serviceMode,omitempty"`
+	ServiceMode NullableString `json:"serviceMode,omitempty"`
 	// Service Path
-	ServicePath *string `json:"servicePath,omitempty"`
+	ServicePath NullableString `json:"servicePath,omitempty"`
 	// Service Username
-	ServiceUsername *string `json:"serviceUsername,omitempty"`
+	ServiceUsername NullableString `json:"serviceUsername,omitempty"`
 	// Service Password
-	ServicePassword     *string `json:"servicePassword,omitempty"`
-	ServicePasswordHash *string `json:"servicePasswordHash,omitempty"`
+	ServicePassword     NullableString `json:"servicePassword,omitempty"`
+	ServicePasswordHash NullableString `json:"servicePasswordHash,omitempty"`
 	// Service Token
-	ServiceToken     *string `json:"serviceToken,omitempty"`
-	ServiceTokenHash *string `json:"serviceTokenHash,omitempty"`
-	ApiPort          *int32  `json:"apiPort,omitempty"`
-	AdminPort        *int32  `json:"adminPort,omitempty"`
+	ServiceToken     NullableString `json:"serviceToken,omitempty"`
+	ServiceTokenHash NullableString `json:"serviceTokenHash,omitempty"`
+	ApiPort          NullableInt32  `json:"apiPort,omitempty"`
+	AdminPort        NullableInt32  `json:"adminPort,omitempty"`
 	// Status
 	Status *string `json:"status,omitempty"`
 	// Status Message
-	StatusMessage *string    `json:"statusMessage,omitempty"`
-	StatusDate    *time.Time `json:"statusDate,omitempty"`
+	StatusMessage NullableString `json:"statusMessage,omitempty"`
+	StatusDate    NullableTime   `json:"statusDate,omitempty"`
 	// Last Sync Date
-	LastSync *time.Time `json:"lastSync,omitempty"`
+	LastSync NullableTime `json:"lastSync,omitempty"`
 	// Next Run Date
-	NextRunDate *time.Time `json:"nextRunDate,omitempty"`
+	NextRunDate NullableTime `json:"nextRunDate,omitempty"`
 	// Last Sync Duration in milliseconds
-	LastSyncDuration *int64 `json:"lastSyncDuration,omitempty"`
+	LastSyncDuration NullableInt64 `json:"lastSyncDuration,omitempty"`
 	// Config object varies with network server type.
 	Config map[string]interface{} `json:"config,omitempty"`
 	// Network Filter
-	NetworkFilter *string `json:"networkFilter,omitempty"`
+	NetworkFilter NullableString `json:"networkFilter,omitempty"`
 	// Tenant Match
-	TenantMatch *string `json:"tenantMatch,omitempty"`
+	TenantMatch NullableString `json:"tenantMatch,omitempty"`
 	// Cloud ID
-	ZoneId               *int64                                                                   `json:"zoneId,omitempty"`
-	DateCreated          *time.Time                                                               `json:"dateCreated,omitempty"`
-	LastUpdated          *time.Time                                                               `json:"lastUpdated,omitempty"`
-	Enabled              *bool                                                                    `json:"enabled,omitempty"`
-	Visible              *bool                                                                    `json:"visible,omitempty"`
-	Credential           *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential        `json:"credential,omitempty"`
-	Tenants              []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"tenants,omitempty"`
-	AdditionalProperties map[string]interface{}                                                   `json:",remain"`
+	ZoneId               NullableInt64                                                     `json:"zoneId,omitempty"`
+	DateCreated          *time.Time                                                        `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                                        `json:"lastUpdated,omitempty"`
+	Enabled              *bool                                                             `json:"enabled,omitempty"`
+	Visible              *bool                                                             `json:"visible,omitempty"`
+	Credential           *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential `json:"credential,omitempty"`
+	Tenants              []GetAlerts200ResponseAllOfCheckGroupsInnerInstance               `json:"tenants,omitempty"`
+	AdditionalProperties map[string]interface{}                                            `json:",remain"`
 }
 
 type _NetworkServer NetworkServer
@@ -166,36 +166,47 @@ func (o *NetworkServer) SetName(v string) {
 	o.Name = &v
 }
 
-// GetDescription returns the Description field value if set, zero value otherwise.
+// GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NetworkServer) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
+	if o == nil || IsNil(o.Description.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Description
+	return *o.Description.Get()
 }
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NetworkServer) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Description, true
+	return o.Description.Get(), o.Description.IsSet()
 }
 
 // IsSetDescription returns a boolean if a field has been set.
 func (o *NetworkServer) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
+	if o != nil && o.Description.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDescription gets a reference to the given string and assigns it to the Description field.
+// SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *NetworkServer) SetDescription(v string) {
-	o.Description = &v
+	o.Description.Set(&v)
+}
+
+// SetDescriptionNil sets the value for Description to be an explicit nil
+func (o *NetworkServer) SetDescriptionNil() {
+	o.Description.Set(nil)
+}
+
+// UnsetDescription ensures that no value is present for Description, not even an explicit nil
+func (o *NetworkServer) UnsetDescription() {
+	o.Description.Unset()
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
@@ -326,452 +337,606 @@ func (o *NetworkServer) SetVisibility(v string) {
 	o.Visibility = &v
 }
 
-// GetInternalId returns the InternalId field value if set, zero value otherwise.
+// GetInternalId returns the InternalId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NetworkServer) GetInternalId() string {
-	if o == nil || IsNil(o.InternalId) {
+	if o == nil || IsNil(o.InternalId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.InternalId
+	return *o.InternalId.Get()
 }
 
 // GetInternalIdOk returns a tuple with the InternalId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NetworkServer) GetInternalIdOk() (*string, bool) {
-	if o == nil || IsNil(o.InternalId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.InternalId, true
+	return o.InternalId.Get(), o.InternalId.IsSet()
 }
 
 // IsSetInternalId returns a boolean if a field has been set.
 func (o *NetworkServer) IsSetInternalId() bool {
-	if o != nil && !IsNil(o.InternalId) {
+	if o != nil && o.InternalId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetInternalId gets a reference to the given string and assigns it to the InternalId field.
+// SetInternalId gets a reference to the given NullableString and assigns it to the InternalId field.
 func (o *NetworkServer) SetInternalId(v string) {
-	o.InternalId = &v
+	o.InternalId.Set(&v)
 }
 
-// GetExternalId returns the ExternalId field value if set, zero value otherwise.
+// SetInternalIdNil sets the value for InternalId to be an explicit nil
+func (o *NetworkServer) SetInternalIdNil() {
+	o.InternalId.Set(nil)
+}
+
+// UnsetInternalId ensures that no value is present for InternalId, not even an explicit nil
+func (o *NetworkServer) UnsetInternalId() {
+	o.InternalId.Unset()
+}
+
+// GetExternalId returns the ExternalId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NetworkServer) GetExternalId() string {
-	if o == nil || IsNil(o.ExternalId) {
+	if o == nil || IsNil(o.ExternalId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ExternalId
+	return *o.ExternalId.Get()
 }
 
 // GetExternalIdOk returns a tuple with the ExternalId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NetworkServer) GetExternalIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ExternalId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ExternalId, true
+	return o.ExternalId.Get(), o.ExternalId.IsSet()
 }
 
 // IsSetExternalId returns a boolean if a field has been set.
 func (o *NetworkServer) IsSetExternalId() bool {
-	if o != nil && !IsNil(o.ExternalId) {
+	if o != nil && o.ExternalId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetExternalId gets a reference to the given string and assigns it to the ExternalId field.
+// SetExternalId gets a reference to the given NullableString and assigns it to the ExternalId field.
 func (o *NetworkServer) SetExternalId(v string) {
-	o.ExternalId = &v
+	o.ExternalId.Set(&v)
 }
 
-// GetServiceUrl returns the ServiceUrl field value if set, zero value otherwise.
+// SetExternalIdNil sets the value for ExternalId to be an explicit nil
+func (o *NetworkServer) SetExternalIdNil() {
+	o.ExternalId.Set(nil)
+}
+
+// UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
+func (o *NetworkServer) UnsetExternalId() {
+	o.ExternalId.Unset()
+}
+
+// GetServiceUrl returns the ServiceUrl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NetworkServer) GetServiceUrl() string {
-	if o == nil || IsNil(o.ServiceUrl) {
+	if o == nil || IsNil(o.ServiceUrl.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ServiceUrl
+	return *o.ServiceUrl.Get()
 }
 
 // GetServiceUrlOk returns a tuple with the ServiceUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NetworkServer) GetServiceUrlOk() (*string, bool) {
-	if o == nil || IsNil(o.ServiceUrl) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ServiceUrl, true
+	return o.ServiceUrl.Get(), o.ServiceUrl.IsSet()
 }
 
 // IsSetServiceUrl returns a boolean if a field has been set.
 func (o *NetworkServer) IsSetServiceUrl() bool {
-	if o != nil && !IsNil(o.ServiceUrl) {
+	if o != nil && o.ServiceUrl.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetServiceUrl gets a reference to the given string and assigns it to the ServiceUrl field.
+// SetServiceUrl gets a reference to the given NullableString and assigns it to the ServiceUrl field.
 func (o *NetworkServer) SetServiceUrl(v string) {
-	o.ServiceUrl = &v
+	o.ServiceUrl.Set(&v)
 }
 
-// GetServiceHost returns the ServiceHost field value if set, zero value otherwise.
+// SetServiceUrlNil sets the value for ServiceUrl to be an explicit nil
+func (o *NetworkServer) SetServiceUrlNil() {
+	o.ServiceUrl.Set(nil)
+}
+
+// UnsetServiceUrl ensures that no value is present for ServiceUrl, not even an explicit nil
+func (o *NetworkServer) UnsetServiceUrl() {
+	o.ServiceUrl.Unset()
+}
+
+// GetServiceHost returns the ServiceHost field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NetworkServer) GetServiceHost() string {
-	if o == nil || IsNil(o.ServiceHost) {
+	if o == nil || IsNil(o.ServiceHost.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ServiceHost
+	return *o.ServiceHost.Get()
 }
 
 // GetServiceHostOk returns a tuple with the ServiceHost field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NetworkServer) GetServiceHostOk() (*string, bool) {
-	if o == nil || IsNil(o.ServiceHost) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ServiceHost, true
+	return o.ServiceHost.Get(), o.ServiceHost.IsSet()
 }
 
 // IsSetServiceHost returns a boolean if a field has been set.
 func (o *NetworkServer) IsSetServiceHost() bool {
-	if o != nil && !IsNil(o.ServiceHost) {
+	if o != nil && o.ServiceHost.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetServiceHost gets a reference to the given string and assigns it to the ServiceHost field.
+// SetServiceHost gets a reference to the given NullableString and assigns it to the ServiceHost field.
 func (o *NetworkServer) SetServiceHost(v string) {
-	o.ServiceHost = &v
+	o.ServiceHost.Set(&v)
 }
 
-// GetServicePort returns the ServicePort field value if set, zero value otherwise.
+// SetServiceHostNil sets the value for ServiceHost to be an explicit nil
+func (o *NetworkServer) SetServiceHostNil() {
+	o.ServiceHost.Set(nil)
+}
+
+// UnsetServiceHost ensures that no value is present for ServiceHost, not even an explicit nil
+func (o *NetworkServer) UnsetServiceHost() {
+	o.ServiceHost.Unset()
+}
+
+// GetServicePort returns the ServicePort field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NetworkServer) GetServicePort() int32 {
-	if o == nil || IsNil(o.ServicePort) {
+	if o == nil || IsNil(o.ServicePort.Get()) {
 		var ret int32
 		return ret
 	}
-	return *o.ServicePort
+	return *o.ServicePort.Get()
 }
 
 // GetServicePortOk returns a tuple with the ServicePort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NetworkServer) GetServicePortOk() (*int32, bool) {
-	if o == nil || IsNil(o.ServicePort) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ServicePort, true
+	return o.ServicePort.Get(), o.ServicePort.IsSet()
 }
 
 // IsSetServicePort returns a boolean if a field has been set.
 func (o *NetworkServer) IsSetServicePort() bool {
-	if o != nil && !IsNil(o.ServicePort) {
+	if o != nil && o.ServicePort.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetServicePort gets a reference to the given int32 and assigns it to the ServicePort field.
+// SetServicePort gets a reference to the given NullableInt32 and assigns it to the ServicePort field.
 func (o *NetworkServer) SetServicePort(v int32) {
-	o.ServicePort = &v
+	o.ServicePort.Set(&v)
 }
 
-// GetServiceMode returns the ServiceMode field value if set, zero value otherwise.
+// SetServicePortNil sets the value for ServicePort to be an explicit nil
+func (o *NetworkServer) SetServicePortNil() {
+	o.ServicePort.Set(nil)
+}
+
+// UnsetServicePort ensures that no value is present for ServicePort, not even an explicit nil
+func (o *NetworkServer) UnsetServicePort() {
+	o.ServicePort.Unset()
+}
+
+// GetServiceMode returns the ServiceMode field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NetworkServer) GetServiceMode() string {
-	if o == nil || IsNil(o.ServiceMode) {
+	if o == nil || IsNil(o.ServiceMode.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ServiceMode
+	return *o.ServiceMode.Get()
 }
 
 // GetServiceModeOk returns a tuple with the ServiceMode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NetworkServer) GetServiceModeOk() (*string, bool) {
-	if o == nil || IsNil(o.ServiceMode) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ServiceMode, true
+	return o.ServiceMode.Get(), o.ServiceMode.IsSet()
 }
 
 // IsSetServiceMode returns a boolean if a field has been set.
 func (o *NetworkServer) IsSetServiceMode() bool {
-	if o != nil && !IsNil(o.ServiceMode) {
+	if o != nil && o.ServiceMode.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetServiceMode gets a reference to the given string and assigns it to the ServiceMode field.
+// SetServiceMode gets a reference to the given NullableString and assigns it to the ServiceMode field.
 func (o *NetworkServer) SetServiceMode(v string) {
-	o.ServiceMode = &v
+	o.ServiceMode.Set(&v)
 }
 
-// GetServicePath returns the ServicePath field value if set, zero value otherwise.
+// SetServiceModeNil sets the value for ServiceMode to be an explicit nil
+func (o *NetworkServer) SetServiceModeNil() {
+	o.ServiceMode.Set(nil)
+}
+
+// UnsetServiceMode ensures that no value is present for ServiceMode, not even an explicit nil
+func (o *NetworkServer) UnsetServiceMode() {
+	o.ServiceMode.Unset()
+}
+
+// GetServicePath returns the ServicePath field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NetworkServer) GetServicePath() string {
-	if o == nil || IsNil(o.ServicePath) {
+	if o == nil || IsNil(o.ServicePath.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ServicePath
+	return *o.ServicePath.Get()
 }
 
 // GetServicePathOk returns a tuple with the ServicePath field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NetworkServer) GetServicePathOk() (*string, bool) {
-	if o == nil || IsNil(o.ServicePath) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ServicePath, true
+	return o.ServicePath.Get(), o.ServicePath.IsSet()
 }
 
 // IsSetServicePath returns a boolean if a field has been set.
 func (o *NetworkServer) IsSetServicePath() bool {
-	if o != nil && !IsNil(o.ServicePath) {
+	if o != nil && o.ServicePath.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetServicePath gets a reference to the given string and assigns it to the ServicePath field.
+// SetServicePath gets a reference to the given NullableString and assigns it to the ServicePath field.
 func (o *NetworkServer) SetServicePath(v string) {
-	o.ServicePath = &v
+	o.ServicePath.Set(&v)
 }
 
-// GetServiceUsername returns the ServiceUsername field value if set, zero value otherwise.
+// SetServicePathNil sets the value for ServicePath to be an explicit nil
+func (o *NetworkServer) SetServicePathNil() {
+	o.ServicePath.Set(nil)
+}
+
+// UnsetServicePath ensures that no value is present for ServicePath, not even an explicit nil
+func (o *NetworkServer) UnsetServicePath() {
+	o.ServicePath.Unset()
+}
+
+// GetServiceUsername returns the ServiceUsername field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NetworkServer) GetServiceUsername() string {
-	if o == nil || IsNil(o.ServiceUsername) {
+	if o == nil || IsNil(o.ServiceUsername.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ServiceUsername
+	return *o.ServiceUsername.Get()
 }
 
 // GetServiceUsernameOk returns a tuple with the ServiceUsername field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NetworkServer) GetServiceUsernameOk() (*string, bool) {
-	if o == nil || IsNil(o.ServiceUsername) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ServiceUsername, true
+	return o.ServiceUsername.Get(), o.ServiceUsername.IsSet()
 }
 
 // IsSetServiceUsername returns a boolean if a field has been set.
 func (o *NetworkServer) IsSetServiceUsername() bool {
-	if o != nil && !IsNil(o.ServiceUsername) {
+	if o != nil && o.ServiceUsername.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetServiceUsername gets a reference to the given string and assigns it to the ServiceUsername field.
+// SetServiceUsername gets a reference to the given NullableString and assigns it to the ServiceUsername field.
 func (o *NetworkServer) SetServiceUsername(v string) {
-	o.ServiceUsername = &v
+	o.ServiceUsername.Set(&v)
 }
 
-// GetServicePassword returns the ServicePassword field value if set, zero value otherwise.
+// SetServiceUsernameNil sets the value for ServiceUsername to be an explicit nil
+func (o *NetworkServer) SetServiceUsernameNil() {
+	o.ServiceUsername.Set(nil)
+}
+
+// UnsetServiceUsername ensures that no value is present for ServiceUsername, not even an explicit nil
+func (o *NetworkServer) UnsetServiceUsername() {
+	o.ServiceUsername.Unset()
+}
+
+// GetServicePassword returns the ServicePassword field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NetworkServer) GetServicePassword() string {
-	if o == nil || IsNil(o.ServicePassword) {
+	if o == nil || IsNil(o.ServicePassword.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ServicePassword
+	return *o.ServicePassword.Get()
 }
 
 // GetServicePasswordOk returns a tuple with the ServicePassword field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NetworkServer) GetServicePasswordOk() (*string, bool) {
-	if o == nil || IsNil(o.ServicePassword) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ServicePassword, true
+	return o.ServicePassword.Get(), o.ServicePassword.IsSet()
 }
 
 // IsSetServicePassword returns a boolean if a field has been set.
 func (o *NetworkServer) IsSetServicePassword() bool {
-	if o != nil && !IsNil(o.ServicePassword) {
+	if o != nil && o.ServicePassword.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetServicePassword gets a reference to the given string and assigns it to the ServicePassword field.
+// SetServicePassword gets a reference to the given NullableString and assigns it to the ServicePassword field.
 func (o *NetworkServer) SetServicePassword(v string) {
-	o.ServicePassword = &v
+	o.ServicePassword.Set(&v)
 }
 
-// GetServicePasswordHash returns the ServicePasswordHash field value if set, zero value otherwise.
+// SetServicePasswordNil sets the value for ServicePassword to be an explicit nil
+func (o *NetworkServer) SetServicePasswordNil() {
+	o.ServicePassword.Set(nil)
+}
+
+// UnsetServicePassword ensures that no value is present for ServicePassword, not even an explicit nil
+func (o *NetworkServer) UnsetServicePassword() {
+	o.ServicePassword.Unset()
+}
+
+// GetServicePasswordHash returns the ServicePasswordHash field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NetworkServer) GetServicePasswordHash() string {
-	if o == nil || IsNil(o.ServicePasswordHash) {
+	if o == nil || IsNil(o.ServicePasswordHash.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ServicePasswordHash
+	return *o.ServicePasswordHash.Get()
 }
 
 // GetServicePasswordHashOk returns a tuple with the ServicePasswordHash field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NetworkServer) GetServicePasswordHashOk() (*string, bool) {
-	if o == nil || IsNil(o.ServicePasswordHash) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ServicePasswordHash, true
+	return o.ServicePasswordHash.Get(), o.ServicePasswordHash.IsSet()
 }
 
 // IsSetServicePasswordHash returns a boolean if a field has been set.
 func (o *NetworkServer) IsSetServicePasswordHash() bool {
-	if o != nil && !IsNil(o.ServicePasswordHash) {
+	if o != nil && o.ServicePasswordHash.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetServicePasswordHash gets a reference to the given string and assigns it to the ServicePasswordHash field.
+// SetServicePasswordHash gets a reference to the given NullableString and assigns it to the ServicePasswordHash field.
 func (o *NetworkServer) SetServicePasswordHash(v string) {
-	o.ServicePasswordHash = &v
+	o.ServicePasswordHash.Set(&v)
 }
 
-// GetServiceToken returns the ServiceToken field value if set, zero value otherwise.
+// SetServicePasswordHashNil sets the value for ServicePasswordHash to be an explicit nil
+func (o *NetworkServer) SetServicePasswordHashNil() {
+	o.ServicePasswordHash.Set(nil)
+}
+
+// UnsetServicePasswordHash ensures that no value is present for ServicePasswordHash, not even an explicit nil
+func (o *NetworkServer) UnsetServicePasswordHash() {
+	o.ServicePasswordHash.Unset()
+}
+
+// GetServiceToken returns the ServiceToken field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NetworkServer) GetServiceToken() string {
-	if o == nil || IsNil(o.ServiceToken) {
+	if o == nil || IsNil(o.ServiceToken.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ServiceToken
+	return *o.ServiceToken.Get()
 }
 
 // GetServiceTokenOk returns a tuple with the ServiceToken field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NetworkServer) GetServiceTokenOk() (*string, bool) {
-	if o == nil || IsNil(o.ServiceToken) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ServiceToken, true
+	return o.ServiceToken.Get(), o.ServiceToken.IsSet()
 }
 
 // IsSetServiceToken returns a boolean if a field has been set.
 func (o *NetworkServer) IsSetServiceToken() bool {
-	if o != nil && !IsNil(o.ServiceToken) {
+	if o != nil && o.ServiceToken.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetServiceToken gets a reference to the given string and assigns it to the ServiceToken field.
+// SetServiceToken gets a reference to the given NullableString and assigns it to the ServiceToken field.
 func (o *NetworkServer) SetServiceToken(v string) {
-	o.ServiceToken = &v
+	o.ServiceToken.Set(&v)
 }
 
-// GetServiceTokenHash returns the ServiceTokenHash field value if set, zero value otherwise.
+// SetServiceTokenNil sets the value for ServiceToken to be an explicit nil
+func (o *NetworkServer) SetServiceTokenNil() {
+	o.ServiceToken.Set(nil)
+}
+
+// UnsetServiceToken ensures that no value is present for ServiceToken, not even an explicit nil
+func (o *NetworkServer) UnsetServiceToken() {
+	o.ServiceToken.Unset()
+}
+
+// GetServiceTokenHash returns the ServiceTokenHash field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NetworkServer) GetServiceTokenHash() string {
-	if o == nil || IsNil(o.ServiceTokenHash) {
+	if o == nil || IsNil(o.ServiceTokenHash.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ServiceTokenHash
+	return *o.ServiceTokenHash.Get()
 }
 
 // GetServiceTokenHashOk returns a tuple with the ServiceTokenHash field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NetworkServer) GetServiceTokenHashOk() (*string, bool) {
-	if o == nil || IsNil(o.ServiceTokenHash) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ServiceTokenHash, true
+	return o.ServiceTokenHash.Get(), o.ServiceTokenHash.IsSet()
 }
 
 // IsSetServiceTokenHash returns a boolean if a field has been set.
 func (o *NetworkServer) IsSetServiceTokenHash() bool {
-	if o != nil && !IsNil(o.ServiceTokenHash) {
+	if o != nil && o.ServiceTokenHash.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetServiceTokenHash gets a reference to the given string and assigns it to the ServiceTokenHash field.
+// SetServiceTokenHash gets a reference to the given NullableString and assigns it to the ServiceTokenHash field.
 func (o *NetworkServer) SetServiceTokenHash(v string) {
-	o.ServiceTokenHash = &v
+	o.ServiceTokenHash.Set(&v)
 }
 
-// GetApiPort returns the ApiPort field value if set, zero value otherwise.
+// SetServiceTokenHashNil sets the value for ServiceTokenHash to be an explicit nil
+func (o *NetworkServer) SetServiceTokenHashNil() {
+	o.ServiceTokenHash.Set(nil)
+}
+
+// UnsetServiceTokenHash ensures that no value is present for ServiceTokenHash, not even an explicit nil
+func (o *NetworkServer) UnsetServiceTokenHash() {
+	o.ServiceTokenHash.Unset()
+}
+
+// GetApiPort returns the ApiPort field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NetworkServer) GetApiPort() int32 {
-	if o == nil || IsNil(o.ApiPort) {
+	if o == nil || IsNil(o.ApiPort.Get()) {
 		var ret int32
 		return ret
 	}
-	return *o.ApiPort
+	return *o.ApiPort.Get()
 }
 
 // GetApiPortOk returns a tuple with the ApiPort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NetworkServer) GetApiPortOk() (*int32, bool) {
-	if o == nil || IsNil(o.ApiPort) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ApiPort, true
+	return o.ApiPort.Get(), o.ApiPort.IsSet()
 }
 
 // IsSetApiPort returns a boolean if a field has been set.
 func (o *NetworkServer) IsSetApiPort() bool {
-	if o != nil && !IsNil(o.ApiPort) {
+	if o != nil && o.ApiPort.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetApiPort gets a reference to the given int32 and assigns it to the ApiPort field.
+// SetApiPort gets a reference to the given NullableInt32 and assigns it to the ApiPort field.
 func (o *NetworkServer) SetApiPort(v int32) {
-	o.ApiPort = &v
+	o.ApiPort.Set(&v)
 }
 
-// GetAdminPort returns the AdminPort field value if set, zero value otherwise.
+// SetApiPortNil sets the value for ApiPort to be an explicit nil
+func (o *NetworkServer) SetApiPortNil() {
+	o.ApiPort.Set(nil)
+}
+
+// UnsetApiPort ensures that no value is present for ApiPort, not even an explicit nil
+func (o *NetworkServer) UnsetApiPort() {
+	o.ApiPort.Unset()
+}
+
+// GetAdminPort returns the AdminPort field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NetworkServer) GetAdminPort() int32 {
-	if o == nil || IsNil(o.AdminPort) {
+	if o == nil || IsNil(o.AdminPort.Get()) {
 		var ret int32
 		return ret
 	}
-	return *o.AdminPort
+	return *o.AdminPort.Get()
 }
 
 // GetAdminPortOk returns a tuple with the AdminPort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NetworkServer) GetAdminPortOk() (*int32, bool) {
-	if o == nil || IsNil(o.AdminPort) {
+	if o == nil {
 		return nil, false
 	}
-	return o.AdminPort, true
+	return o.AdminPort.Get(), o.AdminPort.IsSet()
 }
 
 // IsSetAdminPort returns a boolean if a field has been set.
 func (o *NetworkServer) IsSetAdminPort() bool {
-	if o != nil && !IsNil(o.AdminPort) {
+	if o != nil && o.AdminPort.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetAdminPort gets a reference to the given int32 and assigns it to the AdminPort field.
+// SetAdminPort gets a reference to the given NullableInt32 and assigns it to the AdminPort field.
 func (o *NetworkServer) SetAdminPort(v int32) {
-	o.AdminPort = &v
+	o.AdminPort.Set(&v)
+}
+
+// SetAdminPortNil sets the value for AdminPort to be an explicit nil
+func (o *NetworkServer) SetAdminPortNil() {
+	o.AdminPort.Set(nil)
+}
+
+// UnsetAdminPort ensures that no value is present for AdminPort, not even an explicit nil
+func (o *NetworkServer) UnsetAdminPort() {
+	o.AdminPort.Unset()
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
@@ -806,164 +971,219 @@ func (o *NetworkServer) SetStatus(v string) {
 	o.Status = &v
 }
 
-// GetStatusMessage returns the StatusMessage field value if set, zero value otherwise.
+// GetStatusMessage returns the StatusMessage field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NetworkServer) GetStatusMessage() string {
-	if o == nil || IsNil(o.StatusMessage) {
+	if o == nil || IsNil(o.StatusMessage.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.StatusMessage
+	return *o.StatusMessage.Get()
 }
 
 // GetStatusMessageOk returns a tuple with the StatusMessage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NetworkServer) GetStatusMessageOk() (*string, bool) {
-	if o == nil || IsNil(o.StatusMessage) {
+	if o == nil {
 		return nil, false
 	}
-	return o.StatusMessage, true
+	return o.StatusMessage.Get(), o.StatusMessage.IsSet()
 }
 
 // IsSetStatusMessage returns a boolean if a field has been set.
 func (o *NetworkServer) IsSetStatusMessage() bool {
-	if o != nil && !IsNil(o.StatusMessage) {
+	if o != nil && o.StatusMessage.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetStatusMessage gets a reference to the given string and assigns it to the StatusMessage field.
+// SetStatusMessage gets a reference to the given NullableString and assigns it to the StatusMessage field.
 func (o *NetworkServer) SetStatusMessage(v string) {
-	o.StatusMessage = &v
+	o.StatusMessage.Set(&v)
 }
 
-// GetStatusDate returns the StatusDate field value if set, zero value otherwise.
+// SetStatusMessageNil sets the value for StatusMessage to be an explicit nil
+func (o *NetworkServer) SetStatusMessageNil() {
+	o.StatusMessage.Set(nil)
+}
+
+// UnsetStatusMessage ensures that no value is present for StatusMessage, not even an explicit nil
+func (o *NetworkServer) UnsetStatusMessage() {
+	o.StatusMessage.Unset()
+}
+
+// GetStatusDate returns the StatusDate field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NetworkServer) GetStatusDate() time.Time {
-	if o == nil || IsNil(o.StatusDate) {
+	if o == nil || IsNil(o.StatusDate.Get()) {
 		var ret time.Time
 		return ret
 	}
-	return *o.StatusDate
+	return *o.StatusDate.Get()
 }
 
 // GetStatusDateOk returns a tuple with the StatusDate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NetworkServer) GetStatusDateOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.StatusDate) {
+	if o == nil {
 		return nil, false
 	}
-	return o.StatusDate, true
+	return o.StatusDate.Get(), o.StatusDate.IsSet()
 }
 
 // IsSetStatusDate returns a boolean if a field has been set.
 func (o *NetworkServer) IsSetStatusDate() bool {
-	if o != nil && !IsNil(o.StatusDate) {
+	if o != nil && o.StatusDate.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetStatusDate gets a reference to the given time.Time and assigns it to the StatusDate field.
+// SetStatusDate gets a reference to the given NullableTime and assigns it to the StatusDate field.
 func (o *NetworkServer) SetStatusDate(v time.Time) {
-	o.StatusDate = &v
+	o.StatusDate.Set(&v)
 }
 
-// GetLastSync returns the LastSync field value if set, zero value otherwise.
+// SetStatusDateNil sets the value for StatusDate to be an explicit nil
+func (o *NetworkServer) SetStatusDateNil() {
+	o.StatusDate.Set(nil)
+}
+
+// UnsetStatusDate ensures that no value is present for StatusDate, not even an explicit nil
+func (o *NetworkServer) UnsetStatusDate() {
+	o.StatusDate.Unset()
+}
+
+// GetLastSync returns the LastSync field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NetworkServer) GetLastSync() time.Time {
-	if o == nil || IsNil(o.LastSync) {
+	if o == nil || IsNil(o.LastSync.Get()) {
 		var ret time.Time
 		return ret
 	}
-	return *o.LastSync
+	return *o.LastSync.Get()
 }
 
 // GetLastSyncOk returns a tuple with the LastSync field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NetworkServer) GetLastSyncOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.LastSync) {
+	if o == nil {
 		return nil, false
 	}
-	return o.LastSync, true
+	return o.LastSync.Get(), o.LastSync.IsSet()
 }
 
 // IsSetLastSync returns a boolean if a field has been set.
 func (o *NetworkServer) IsSetLastSync() bool {
-	if o != nil && !IsNil(o.LastSync) {
+	if o != nil && o.LastSync.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetLastSync gets a reference to the given time.Time and assigns it to the LastSync field.
+// SetLastSync gets a reference to the given NullableTime and assigns it to the LastSync field.
 func (o *NetworkServer) SetLastSync(v time.Time) {
-	o.LastSync = &v
+	o.LastSync.Set(&v)
 }
 
-// GetNextRunDate returns the NextRunDate field value if set, zero value otherwise.
+// SetLastSyncNil sets the value for LastSync to be an explicit nil
+func (o *NetworkServer) SetLastSyncNil() {
+	o.LastSync.Set(nil)
+}
+
+// UnsetLastSync ensures that no value is present for LastSync, not even an explicit nil
+func (o *NetworkServer) UnsetLastSync() {
+	o.LastSync.Unset()
+}
+
+// GetNextRunDate returns the NextRunDate field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NetworkServer) GetNextRunDate() time.Time {
-	if o == nil || IsNil(o.NextRunDate) {
+	if o == nil || IsNil(o.NextRunDate.Get()) {
 		var ret time.Time
 		return ret
 	}
-	return *o.NextRunDate
+	return *o.NextRunDate.Get()
 }
 
 // GetNextRunDateOk returns a tuple with the NextRunDate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NetworkServer) GetNextRunDateOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.NextRunDate) {
+	if o == nil {
 		return nil, false
 	}
-	return o.NextRunDate, true
+	return o.NextRunDate.Get(), o.NextRunDate.IsSet()
 }
 
 // IsSetNextRunDate returns a boolean if a field has been set.
 func (o *NetworkServer) IsSetNextRunDate() bool {
-	if o != nil && !IsNil(o.NextRunDate) {
+	if o != nil && o.NextRunDate.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetNextRunDate gets a reference to the given time.Time and assigns it to the NextRunDate field.
+// SetNextRunDate gets a reference to the given NullableTime and assigns it to the NextRunDate field.
 func (o *NetworkServer) SetNextRunDate(v time.Time) {
-	o.NextRunDate = &v
+	o.NextRunDate.Set(&v)
 }
 
-// GetLastSyncDuration returns the LastSyncDuration field value if set, zero value otherwise.
+// SetNextRunDateNil sets the value for NextRunDate to be an explicit nil
+func (o *NetworkServer) SetNextRunDateNil() {
+	o.NextRunDate.Set(nil)
+}
+
+// UnsetNextRunDate ensures that no value is present for NextRunDate, not even an explicit nil
+func (o *NetworkServer) UnsetNextRunDate() {
+	o.NextRunDate.Unset()
+}
+
+// GetLastSyncDuration returns the LastSyncDuration field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NetworkServer) GetLastSyncDuration() int64 {
-	if o == nil || IsNil(o.LastSyncDuration) {
+	if o == nil || IsNil(o.LastSyncDuration.Get()) {
 		var ret int64
 		return ret
 	}
-	return *o.LastSyncDuration
+	return *o.LastSyncDuration.Get()
 }
 
 // GetLastSyncDurationOk returns a tuple with the LastSyncDuration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NetworkServer) GetLastSyncDurationOk() (*int64, bool) {
-	if o == nil || IsNil(o.LastSyncDuration) {
+	if o == nil {
 		return nil, false
 	}
-	return o.LastSyncDuration, true
+	return o.LastSyncDuration.Get(), o.LastSyncDuration.IsSet()
 }
 
 // IsSetLastSyncDuration returns a boolean if a field has been set.
 func (o *NetworkServer) IsSetLastSyncDuration() bool {
-	if o != nil && !IsNil(o.LastSyncDuration) {
+	if o != nil && o.LastSyncDuration.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetLastSyncDuration gets a reference to the given int64 and assigns it to the LastSyncDuration field.
+// SetLastSyncDuration gets a reference to the given NullableInt64 and assigns it to the LastSyncDuration field.
 func (o *NetworkServer) SetLastSyncDuration(v int64) {
-	o.LastSyncDuration = &v
+	o.LastSyncDuration.Set(&v)
+}
+
+// SetLastSyncDurationNil sets the value for LastSyncDuration to be an explicit nil
+func (o *NetworkServer) SetLastSyncDurationNil() {
+	o.LastSyncDuration.Set(nil)
+}
+
+// UnsetLastSyncDuration ensures that no value is present for LastSyncDuration, not even an explicit nil
+func (o *NetworkServer) UnsetLastSyncDuration() {
+	o.LastSyncDuration.Unset()
 }
 
 // GetConfig returns the Config field value if set, zero value otherwise.
@@ -998,100 +1218,133 @@ func (o *NetworkServer) SetConfig(v map[string]interface{}) {
 	o.Config = v
 }
 
-// GetNetworkFilter returns the NetworkFilter field value if set, zero value otherwise.
+// GetNetworkFilter returns the NetworkFilter field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NetworkServer) GetNetworkFilter() string {
-	if o == nil || IsNil(o.NetworkFilter) {
+	if o == nil || IsNil(o.NetworkFilter.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.NetworkFilter
+	return *o.NetworkFilter.Get()
 }
 
 // GetNetworkFilterOk returns a tuple with the NetworkFilter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NetworkServer) GetNetworkFilterOk() (*string, bool) {
-	if o == nil || IsNil(o.NetworkFilter) {
+	if o == nil {
 		return nil, false
 	}
-	return o.NetworkFilter, true
+	return o.NetworkFilter.Get(), o.NetworkFilter.IsSet()
 }
 
 // IsSetNetworkFilter returns a boolean if a field has been set.
 func (o *NetworkServer) IsSetNetworkFilter() bool {
-	if o != nil && !IsNil(o.NetworkFilter) {
+	if o != nil && o.NetworkFilter.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetNetworkFilter gets a reference to the given string and assigns it to the NetworkFilter field.
+// SetNetworkFilter gets a reference to the given NullableString and assigns it to the NetworkFilter field.
 func (o *NetworkServer) SetNetworkFilter(v string) {
-	o.NetworkFilter = &v
+	o.NetworkFilter.Set(&v)
 }
 
-// GetTenantMatch returns the TenantMatch field value if set, zero value otherwise.
+// SetNetworkFilterNil sets the value for NetworkFilter to be an explicit nil
+func (o *NetworkServer) SetNetworkFilterNil() {
+	o.NetworkFilter.Set(nil)
+}
+
+// UnsetNetworkFilter ensures that no value is present for NetworkFilter, not even an explicit nil
+func (o *NetworkServer) UnsetNetworkFilter() {
+	o.NetworkFilter.Unset()
+}
+
+// GetTenantMatch returns the TenantMatch field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NetworkServer) GetTenantMatch() string {
-	if o == nil || IsNil(o.TenantMatch) {
+	if o == nil || IsNil(o.TenantMatch.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.TenantMatch
+	return *o.TenantMatch.Get()
 }
 
 // GetTenantMatchOk returns a tuple with the TenantMatch field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NetworkServer) GetTenantMatchOk() (*string, bool) {
-	if o == nil || IsNil(o.TenantMatch) {
+	if o == nil {
 		return nil, false
 	}
-	return o.TenantMatch, true
+	return o.TenantMatch.Get(), o.TenantMatch.IsSet()
 }
 
 // IsSetTenantMatch returns a boolean if a field has been set.
 func (o *NetworkServer) IsSetTenantMatch() bool {
-	if o != nil && !IsNil(o.TenantMatch) {
+	if o != nil && o.TenantMatch.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetTenantMatch gets a reference to the given string and assigns it to the TenantMatch field.
+// SetTenantMatch gets a reference to the given NullableString and assigns it to the TenantMatch field.
 func (o *NetworkServer) SetTenantMatch(v string) {
-	o.TenantMatch = &v
+	o.TenantMatch.Set(&v)
 }
 
-// GetZoneId returns the ZoneId field value if set, zero value otherwise.
+// SetTenantMatchNil sets the value for TenantMatch to be an explicit nil
+func (o *NetworkServer) SetTenantMatchNil() {
+	o.TenantMatch.Set(nil)
+}
+
+// UnsetTenantMatch ensures that no value is present for TenantMatch, not even an explicit nil
+func (o *NetworkServer) UnsetTenantMatch() {
+	o.TenantMatch.Unset()
+}
+
+// GetZoneId returns the ZoneId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NetworkServer) GetZoneId() int64 {
-	if o == nil || IsNil(o.ZoneId) {
+	if o == nil || IsNil(o.ZoneId.Get()) {
 		var ret int64
 		return ret
 	}
-	return *o.ZoneId
+	return *o.ZoneId.Get()
 }
 
 // GetZoneIdOk returns a tuple with the ZoneId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NetworkServer) GetZoneIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.ZoneId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ZoneId, true
+	return o.ZoneId.Get(), o.ZoneId.IsSet()
 }
 
 // IsSetZoneId returns a boolean if a field has been set.
 func (o *NetworkServer) IsSetZoneId() bool {
-	if o != nil && !IsNil(o.ZoneId) {
+	if o != nil && o.ZoneId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetZoneId gets a reference to the given int64 and assigns it to the ZoneId field.
+// SetZoneId gets a reference to the given NullableInt64 and assigns it to the ZoneId field.
 func (o *NetworkServer) SetZoneId(v int64) {
-	o.ZoneId = &v
+	o.ZoneId.Set(&v)
+}
+
+// SetZoneIdNil sets the value for ZoneId to be an explicit nil
+func (o *NetworkServer) SetZoneIdNil() {
+	o.ZoneId.Set(nil)
+}
+
+// UnsetZoneId ensures that no value is present for ZoneId, not even an explicit nil
+func (o *NetworkServer) UnsetZoneId() {
+	o.ZoneId.Unset()
 }
 
 // GetDateCreated returns the DateCreated field value if set, zero value otherwise.
@@ -1255,9 +1508,9 @@ func (o *NetworkServer) SetCredential(v ListIntegrations200ResponseAnyOfIntegrat
 }
 
 // GetTenants returns the Tenants field value if set, zero value otherwise.
-func (o *NetworkServer) GetTenants() []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *NetworkServer) GetTenants() []GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.Tenants) {
-		var ret []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret []GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return o.Tenants
@@ -1265,7 +1518,7 @@ func (o *NetworkServer) GetTenants() []ListApplianceSettings200ResponseAppliance
 
 // GetTenantsOk returns a tuple with the Tenants field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *NetworkServer) GetTenantsOk() ([]ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *NetworkServer) GetTenantsOk() ([]GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.Tenants) {
 		return nil, false
 	}
@@ -1281,8 +1534,8 @@ func (o *NetworkServer) IsSetTenants() bool {
 	return false
 }
 
-// SetTenants gets a reference to the given []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the Tenants field.
-func (o *NetworkServer) SetTenants(v []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetTenants gets a reference to the given []GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Tenants field.
+func (o *NetworkServer) SetTenants(v []GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.Tenants = v
 }
 
@@ -1302,8 +1555,8 @@ func (o NetworkServer) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !IsNil(o.Description) {
-		toSerialize["description"] = o.Description
+	if o.Description.IsSet() {
+		toSerialize["description"] = o.Description.Get()
 	}
 	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type
@@ -1317,77 +1570,77 @@ func (o NetworkServer) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Visibility) {
 		toSerialize["visibility"] = o.Visibility
 	}
-	if !IsNil(o.InternalId) {
-		toSerialize["internalId"] = o.InternalId
+	if o.InternalId.IsSet() {
+		toSerialize["internalId"] = o.InternalId.Get()
 	}
-	if !IsNil(o.ExternalId) {
-		toSerialize["externalId"] = o.ExternalId
+	if o.ExternalId.IsSet() {
+		toSerialize["externalId"] = o.ExternalId.Get()
 	}
-	if !IsNil(o.ServiceUrl) {
-		toSerialize["serviceUrl"] = o.ServiceUrl
+	if o.ServiceUrl.IsSet() {
+		toSerialize["serviceUrl"] = o.ServiceUrl.Get()
 	}
-	if !IsNil(o.ServiceHost) {
-		toSerialize["serviceHost"] = o.ServiceHost
+	if o.ServiceHost.IsSet() {
+		toSerialize["serviceHost"] = o.ServiceHost.Get()
 	}
-	if !IsNil(o.ServicePort) {
-		toSerialize["servicePort"] = o.ServicePort
+	if o.ServicePort.IsSet() {
+		toSerialize["servicePort"] = o.ServicePort.Get()
 	}
-	if !IsNil(o.ServiceMode) {
-		toSerialize["serviceMode"] = o.ServiceMode
+	if o.ServiceMode.IsSet() {
+		toSerialize["serviceMode"] = o.ServiceMode.Get()
 	}
-	if !IsNil(o.ServicePath) {
-		toSerialize["servicePath"] = o.ServicePath
+	if o.ServicePath.IsSet() {
+		toSerialize["servicePath"] = o.ServicePath.Get()
 	}
-	if !IsNil(o.ServiceUsername) {
-		toSerialize["serviceUsername"] = o.ServiceUsername
+	if o.ServiceUsername.IsSet() {
+		toSerialize["serviceUsername"] = o.ServiceUsername.Get()
 	}
-	if !IsNil(o.ServicePassword) {
-		toSerialize["servicePassword"] = o.ServicePassword
+	if o.ServicePassword.IsSet() {
+		toSerialize["servicePassword"] = o.ServicePassword.Get()
 	}
-	if !IsNil(o.ServicePasswordHash) {
-		toSerialize["servicePasswordHash"] = o.ServicePasswordHash
+	if o.ServicePasswordHash.IsSet() {
+		toSerialize["servicePasswordHash"] = o.ServicePasswordHash.Get()
 	}
-	if !IsNil(o.ServiceToken) {
-		toSerialize["serviceToken"] = o.ServiceToken
+	if o.ServiceToken.IsSet() {
+		toSerialize["serviceToken"] = o.ServiceToken.Get()
 	}
-	if !IsNil(o.ServiceTokenHash) {
-		toSerialize["serviceTokenHash"] = o.ServiceTokenHash
+	if o.ServiceTokenHash.IsSet() {
+		toSerialize["serviceTokenHash"] = o.ServiceTokenHash.Get()
 	}
-	if !IsNil(o.ApiPort) {
-		toSerialize["apiPort"] = o.ApiPort
+	if o.ApiPort.IsSet() {
+		toSerialize["apiPort"] = o.ApiPort.Get()
 	}
-	if !IsNil(o.AdminPort) {
-		toSerialize["adminPort"] = o.AdminPort
+	if o.AdminPort.IsSet() {
+		toSerialize["adminPort"] = o.AdminPort.Get()
 	}
 	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status
 	}
-	if !IsNil(o.StatusMessage) {
-		toSerialize["statusMessage"] = o.StatusMessage
+	if o.StatusMessage.IsSet() {
+		toSerialize["statusMessage"] = o.StatusMessage.Get()
 	}
-	if !IsNil(o.StatusDate) {
-		toSerialize["statusDate"] = o.StatusDate
+	if o.StatusDate.IsSet() {
+		toSerialize["statusDate"] = o.StatusDate.Get()
 	}
-	if !IsNil(o.LastSync) {
-		toSerialize["lastSync"] = o.LastSync
+	if o.LastSync.IsSet() {
+		toSerialize["lastSync"] = o.LastSync.Get()
 	}
-	if !IsNil(o.NextRunDate) {
-		toSerialize["nextRunDate"] = o.NextRunDate
+	if o.NextRunDate.IsSet() {
+		toSerialize["nextRunDate"] = o.NextRunDate.Get()
 	}
-	if !IsNil(o.LastSyncDuration) {
-		toSerialize["lastSyncDuration"] = o.LastSyncDuration
+	if o.LastSyncDuration.IsSet() {
+		toSerialize["lastSyncDuration"] = o.LastSyncDuration.Get()
 	}
 	if !IsNil(o.Config) {
 		toSerialize["config"] = o.Config
 	}
-	if !IsNil(o.NetworkFilter) {
-		toSerialize["networkFilter"] = o.NetworkFilter
+	if o.NetworkFilter.IsSet() {
+		toSerialize["networkFilter"] = o.NetworkFilter.Get()
 	}
-	if !IsNil(o.TenantMatch) {
-		toSerialize["tenantMatch"] = o.TenantMatch
+	if o.TenantMatch.IsSet() {
+		toSerialize["tenantMatch"] = o.TenantMatch.Get()
 	}
-	if !IsNil(o.ZoneId) {
-		toSerialize["zoneId"] = o.ZoneId
+	if o.ZoneId.IsSet() {
+		toSerialize["zoneId"] = o.ZoneId.Get()
 	}
 	if !IsNil(o.DateCreated) {
 		toSerialize["dateCreated"] = o.DateCreated

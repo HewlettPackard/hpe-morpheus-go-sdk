@@ -20,11 +20,11 @@ var _ MappedNullable = &ListVDIPools200ResponseAllOfVdiPoolsInnerConfigDisplayNe
 
 // ListVDIPools200ResponseAllOfVdiPoolsInnerConfigDisplayNetworksInner struct for ListVDIPools200ResponseAllOfVdiPoolsInnerConfigDisplayNetworksInner
 type ListVDIPools200ResponseAllOfVdiPoolsInnerConfigDisplayNetworksInner struct {
-	Name                 *string                                                                 `json:"name,omitempty"`
-	IpMode               *string                                                                 `json:"ipMode,omitempty"`
-	Pool                 *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"pool,omitempty"`
-	UsePool              *bool                                                                   `json:"usePool,omitempty"`
-	AdditionalProperties map[string]interface{}                                                  `json:",remain"`
+	Name                 *string                                            `json:"name,omitempty"`
+	IpMode               *string                                            `json:"ipMode,omitempty"`
+	Pool                 *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"pool,omitempty"`
+	UsePool              *bool                                              `json:"usePool,omitempty"`
+	AdditionalProperties map[string]interface{}                             `json:",remain"`
 }
 
 type _ListVDIPools200ResponseAllOfVdiPoolsInnerConfigDisplayNetworksInner ListVDIPools200ResponseAllOfVdiPoolsInnerConfigDisplayNetworksInner
@@ -111,9 +111,9 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigDisplayNetworksInner) Se
 }
 
 // GetPool returns the Pool field value if set, zero value otherwise.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigDisplayNetworksInner) GetPool() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigDisplayNetworksInner) GetPool() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.Pool) {
-		var ret ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return *o.Pool
@@ -121,7 +121,7 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigDisplayNetworksInner) Ge
 
 // GetPoolOk returns a tuple with the Pool field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigDisplayNetworksInner) GetPoolOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigDisplayNetworksInner) GetPoolOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.Pool) {
 		return nil, false
 	}
@@ -137,8 +137,8 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigDisplayNetworksInner) Is
 	return false
 }
 
-// SetPool gets a reference to the given ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the Pool field.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigDisplayNetworksInner) SetPool(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetPool gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Pool field.
+func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigDisplayNetworksInner) SetPool(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.Pool = &v
 }
 

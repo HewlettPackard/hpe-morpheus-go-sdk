@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Motd** | Pointer to [**MessageOfTheDayPolicyTypeConfigurationMotd**](MessageOfTheDayPolicyTypeConfigurationMotd.md) |  | [optional] 
 **MotdMessage** | Pointer to **string** |  | [optional] 
 **MotdType** | Pointer to **string** |  | [optional] 
-**MotdFullPage** | Pointer to **bool** |  | [optional] 
+**MotdFullPage** | Pointer to **NullableBool** |  | [optional] 
 **MotdDate** | Pointer to **time.Time** |  | [optional] 
 
 ## Methods
@@ -155,6 +155,16 @@ SetMotdFullPage sets MotdFullPage field to given value.
 
 HasMotdFullPage returns a boolean if a field has been set.
 
+### SetMotdFullPageNil
+
+`func (o *MessageOfTheDayPolicyTypeConfiguration) SetMotdFullPageNil(b bool)`
+
+ SetMotdFullPageNil sets the value for MotdFullPage to be an explicit nil
+
+### UnsetMotdFullPage
+`func (o *MessageOfTheDayPolicyTypeConfiguration) UnsetMotdFullPage()`
+
+UnsetMotdFullPage ensures that no value is present for MotdFullPage, not even an explicit nil
 ### GetMotdDate
 
 `func (o *MessageOfTheDayPolicyTypeConfiguration) GetMotdDate() time.Time`

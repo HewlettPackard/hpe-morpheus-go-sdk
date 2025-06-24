@@ -24,7 +24,7 @@ type ListClusterDeployments200ResponseAllOfDeploymentsInner struct {
 	Id                   *int64                                       `json:"id,omitempty"`
 	Name                 *string                                      `json:"name,omitempty"`
 	Code                 *string                                      `json:"code,omitempty"`
-	Description          *string                                      `json:"description,omitempty"`
+	Description          NullableString                               `json:"description,omitempty"`
 	Category             *string                                      `json:"category,omitempty"`
 	ResourceLevel        *string                                      `json:"resourceLevel,omitempty"`
 	ResourceType         *string                                      `json:"resourceType,omitempty"`
@@ -152,36 +152,47 @@ func (o *ListClusterDeployments200ResponseAllOfDeploymentsInner) SetCode(v strin
 	o.Code = &v
 }
 
-// GetDescription returns the Description field value if set, zero value otherwise.
+// GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListClusterDeployments200ResponseAllOfDeploymentsInner) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
+	if o == nil || IsNil(o.Description.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Description
+	return *o.Description.Get()
 }
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListClusterDeployments200ResponseAllOfDeploymentsInner) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Description, true
+	return o.Description.Get(), o.Description.IsSet()
 }
 
 // IsSetDescription returns a boolean if a field has been set.
 func (o *ListClusterDeployments200ResponseAllOfDeploymentsInner) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
+	if o != nil && o.Description.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDescription gets a reference to the given string and assigns it to the Description field.
+// SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *ListClusterDeployments200ResponseAllOfDeploymentsInner) SetDescription(v string) {
-	o.Description = &v
+	o.Description.Set(&v)
+}
+
+// SetDescriptionNil sets the value for Description to be an explicit nil
+func (o *ListClusterDeployments200ResponseAllOfDeploymentsInner) SetDescriptionNil() {
+	o.Description.Set(nil)
+}
+
+// UnsetDescription ensures that no value is present for Description, not even an explicit nil
+func (o *ListClusterDeployments200ResponseAllOfDeploymentsInner) UnsetDescription() {
+	o.Description.Unset()
 }
 
 // GetCategory returns the Category field value if set, zero value otherwise.
@@ -491,8 +502,8 @@ func (o ListClusterDeployments200ResponseAllOfDeploymentsInner) ToMap() (map[str
 	if !IsNil(o.Code) {
 		toSerialize["code"] = o.Code
 	}
-	if !IsNil(o.Description) {
-		toSerialize["description"] = o.Description
+	if o.Description.IsSet() {
+		toSerialize["description"] = o.Description.Get()
 	}
 	if !IsNil(o.Category) {
 		toSerialize["category"] = o.Category

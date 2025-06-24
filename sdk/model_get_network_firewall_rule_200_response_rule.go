@@ -20,24 +20,24 @@ var _ MappedNullable = &GetNetworkFirewallRule200ResponseRule{}
 
 // GetNetworkFirewallRule200ResponseRule struct for GetNetworkFirewallRule200ResponseRule
 type GetNetworkFirewallRule200ResponseRule struct {
-	Id                   *int32                                                          `json:"id,omitempty"`
-	Direction            *string                                                         `json:"direction,omitempty"`
-	SourceType           *string                                                         `json:"sourceType,omitempty"`
-	DestinationType      *string                                                         `json:"destinationType,omitempty"`
-	Name                 *string                                                         `json:"name,omitempty"`
-	Policy               *string                                                         `json:"policy,omitempty"`
-	Priority             *int32                                                          `json:"priority,omitempty"`
-	Enabled              *bool                                                           `json:"enabled,omitempty"`
-	RuleGroup            *SnapshotsInstance200ResponseSnapshotsInnerZone                 `json:"ruleGroup,omitempty"`
-	GroupName            *string                                                         `json:"groupName,omitempty"`
-	Config               map[string]interface{}                                          `json:"config,omitempty"`
-	Sources              []ListInstanceServicePlans200ResponsePlansInnerAutoOptionsInner `json:"sources,omitempty"`
-	Destinations         []ListInstanceServicePlans200ResponsePlansInnerAutoOptionsInner `json:"destinations,omitempty"`
-	Applications         []ListInstanceServicePlans200ResponsePlansInnerAutoOptionsInner `json:"applications,omitempty"`
-	Scopes               []ListInstanceServicePlans200ResponsePlansInnerAutoOptionsInner `json:"scopes,omitempty"`
-	Profiles             []ListInstanceServicePlans200ResponsePlansInnerAutoOptionsInner `json:"profiles,omitempty"`
-	AppliedTargets       []map[string]interface{}                                        `json:"appliedTargets,omitempty"`
-	AdditionalProperties map[string]interface{}                                          `json:",remain"`
+	Id                   *int32                                                                                                     `json:"id,omitempty"`
+	Direction            *string                                                                                                    `json:"direction,omitempty"`
+	SourceType           *string                                                                                                    `json:"sourceType,omitempty"`
+	DestinationType      *string                                                                                                    `json:"destinationType,omitempty"`
+	Name                 *string                                                                                                    `json:"name,omitempty"`
+	Policy               *string                                                                                                    `json:"policy,omitempty"`
+	Priority             *int32                                                                                                     `json:"priority,omitempty"`
+	Enabled              *bool                                                                                                      `json:"enabled,omitempty"`
+	RuleGroup            *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount `json:"ruleGroup,omitempty"`
+	GroupName            *string                                                                                                    `json:"groupName,omitempty"`
+	Config               map[string]interface{}                                                                                     `json:"config,omitempty"`
+	Sources              []ListInstanceServicePlans200ResponsePlansInnerAutoOptionsInner                                            `json:"sources,omitempty"`
+	Destinations         []ListInstanceServicePlans200ResponsePlansInnerAutoOptionsInner                                            `json:"destinations,omitempty"`
+	Applications         []ListInstanceServicePlans200ResponsePlansInnerAutoOptionsInner                                            `json:"applications,omitempty"`
+	Scopes               []ListInstanceServicePlans200ResponsePlansInnerAutoOptionsInner                                            `json:"scopes,omitempty"`
+	Profiles             []ListInstanceServicePlans200ResponsePlansInnerAutoOptionsInner                                            `json:"profiles,omitempty"`
+	AppliedTargets       []map[string]interface{}                                                                                   `json:"appliedTargets,omitempty"`
+	AdditionalProperties map[string]interface{}                                                                                     `json:",remain"`
 }
 
 type _GetNetworkFirewallRule200ResponseRule GetNetworkFirewallRule200ResponseRule
@@ -316,9 +316,9 @@ func (o *GetNetworkFirewallRule200ResponseRule) SetEnabled(v bool) {
 }
 
 // GetRuleGroup returns the RuleGroup field value if set, zero value otherwise.
-func (o *GetNetworkFirewallRule200ResponseRule) GetRuleGroup() SnapshotsInstance200ResponseSnapshotsInnerZone {
+func (o *GetNetworkFirewallRule200ResponseRule) GetRuleGroup() GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount {
 	if o == nil || IsNil(o.RuleGroup) {
-		var ret SnapshotsInstance200ResponseSnapshotsInnerZone
+		var ret GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount
 		return ret
 	}
 	return *o.RuleGroup
@@ -326,7 +326,7 @@ func (o *GetNetworkFirewallRule200ResponseRule) GetRuleGroup() SnapshotsInstance
 
 // GetRuleGroupOk returns a tuple with the RuleGroup field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetNetworkFirewallRule200ResponseRule) GetRuleGroupOk() (*SnapshotsInstance200ResponseSnapshotsInnerZone, bool) {
+func (o *GetNetworkFirewallRule200ResponseRule) GetRuleGroupOk() (*GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount, bool) {
 	if o == nil || IsNil(o.RuleGroup) {
 		return nil, false
 	}
@@ -342,8 +342,8 @@ func (o *GetNetworkFirewallRule200ResponseRule) IsSetRuleGroup() bool {
 	return false
 }
 
-// SetRuleGroup gets a reference to the given SnapshotsInstance200ResponseSnapshotsInnerZone and assigns it to the RuleGroup field.
-func (o *GetNetworkFirewallRule200ResponseRule) SetRuleGroup(v SnapshotsInstance200ResponseSnapshotsInnerZone) {
+// SetRuleGroup gets a reference to the given GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount and assigns it to the RuleGroup field.
+func (o *GetNetworkFirewallRule200ResponseRule) SetRuleGroup(v GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount) {
 	o.RuleGroup = &v
 }
 

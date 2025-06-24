@@ -7,12 +7,12 @@ Name | Type | Description | Notes
 **Id** | Pointer to **int64** | Backup ID | [optional] 
 **Name** | Pointer to **string** | Name | [optional] 
 **Schedule** | Pointer to [**ListBackups200ResponseAllOfBackupsInnerSchedule**](ListBackups200ResponseAllOfBackupsInnerSchedule.md) |  | [optional] 
-**RetentionCount** | Pointer to **int64** |  | [optional] 
-**ExternalId** | Pointer to **string** |  | [optional] 
+**RetentionCount** | Pointer to **NullableInt64** |  | [optional] 
+**ExternalId** | Pointer to **NullableString** |  | [optional] 
 **BackupProvider** | Pointer to [**ListBackups200ResponseAllOfBackupsInnerBackupProvider**](ListBackups200ResponseAllOfBackupsInnerBackupProvider.md) |  | [optional] 
 **BackupRespository** | Pointer to [**ListBackups200ResponseAllOfBackupsInnerBackupRespository**](ListBackups200ResponseAllOfBackupsInnerBackupRespository.md) |  | [optional] 
-**CronExpression** | Pointer to **string** | Cron Expression | [optional] 
-**NextFire** | Pointer to **time.Time** | Next Fire is the datetime the job will next occur on according to its schedule | [optional] 
+**CronExpression** | Pointer to **NullableString** | Cron Expression | [optional] 
+**NextFire** | Pointer to **NullableTime** | Next Fire is the datetime the job will next occur on according to its schedule | [optional] 
 **Source** | Pointer to **string** |  | [optional] 
 **Visibility** | Pointer to **string** |  | [optional] 
 **Account** | Pointer to [**ListBackupJobs200ResponseAllOfJobsInnerAccount**](ListBackupJobs200ResponseAllOfJobsInnerAccount.md) |  | [optional] 
@@ -140,6 +140,16 @@ SetRetentionCount sets RetentionCount field to given value.
 
 HasRetentionCount returns a boolean if a field has been set.
 
+### SetRetentionCountNil
+
+`func (o *BackupJob) SetRetentionCountNil(b bool)`
+
+ SetRetentionCountNil sets the value for RetentionCount to be an explicit nil
+
+### UnsetRetentionCount
+`func (o *BackupJob) UnsetRetentionCount()`
+
+UnsetRetentionCount ensures that no value is present for RetentionCount, not even an explicit nil
 ### GetExternalId
 
 `func (o *BackupJob) GetExternalId() string`
@@ -165,6 +175,16 @@ SetExternalId sets ExternalId field to given value.
 
 HasExternalId returns a boolean if a field has been set.
 
+### SetExternalIdNil
+
+`func (o *BackupJob) SetExternalIdNil(b bool)`
+
+ SetExternalIdNil sets the value for ExternalId to be an explicit nil
+
+### UnsetExternalId
+`func (o *BackupJob) UnsetExternalId()`
+
+UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
 ### GetBackupProvider
 
 `func (o *BackupJob) GetBackupProvider() ListBackups200ResponseAllOfBackupsInnerBackupProvider`
@@ -240,6 +260,16 @@ SetCronExpression sets CronExpression field to given value.
 
 HasCronExpression returns a boolean if a field has been set.
 
+### SetCronExpressionNil
+
+`func (o *BackupJob) SetCronExpressionNil(b bool)`
+
+ SetCronExpressionNil sets the value for CronExpression to be an explicit nil
+
+### UnsetCronExpression
+`func (o *BackupJob) UnsetCronExpression()`
+
+UnsetCronExpression ensures that no value is present for CronExpression, not even an explicit nil
 ### GetNextFire
 
 `func (o *BackupJob) GetNextFire() time.Time`
@@ -265,6 +295,16 @@ SetNextFire sets NextFire field to given value.
 
 HasNextFire returns a boolean if a field has been set.
 
+### SetNextFireNil
+
+`func (o *BackupJob) SetNextFireNil(b bool)`
+
+ SetNextFireNil sets the value for NextFire to be an explicit nil
+
+### UnsetNextFire
+`func (o *BackupJob) UnsetNextFire()`
+
+UnsetNextFire ensures that no value is present for NextFire, not even an explicit nil
 ### GetSource
 
 `func (o *BackupJob) GetSource() string`

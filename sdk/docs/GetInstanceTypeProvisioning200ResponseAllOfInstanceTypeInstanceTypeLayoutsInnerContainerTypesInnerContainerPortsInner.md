@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **string** |  | [optional] 
 **Port** | Pointer to **int64** |  | [optional] 
-**LoadBalanceProtocol** | Pointer to **string** |  | [optional] 
+**LoadBalanceProtocol** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -102,6 +102,16 @@ SetLoadBalanceProtocol sets LoadBalanceProtocol field to given value.
 
 HasLoadBalanceProtocol returns a boolean if a field has been set.
 
+### SetLoadBalanceProtocolNil
+
+`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerContainerPortsInner) SetLoadBalanceProtocolNil(b bool)`
+
+ SetLoadBalanceProtocolNil sets the value for LoadBalanceProtocol to be an explicit nil
+
+### UnsetLoadBalanceProtocol
+`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerContainerPortsInner) UnsetLoadBalanceProtocol()`
+
+UnsetLoadBalanceProtocol ensures that no value is present for LoadBalanceProtocol, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

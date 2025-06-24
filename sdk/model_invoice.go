@@ -21,106 +21,106 @@ var _ MappedNullable = &Invoice{}
 
 // Invoice struct for Invoice
 type Invoice struct {
-	Id                      *int64                                                                  `json:"id,omitempty"`
-	OwnerId                 *int64                                                                  `json:"ownerId,omitempty"`
-	Account                 *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"account,omitempty"`
-	Group                   map[string]interface{}                                                  `json:"group,omitempty"`
-	Cloud                   *ListInvoices200ResponseAllOfInvoicesInnerCloud                         `json:"cloud,omitempty"`
-	Instance                map[string]interface{}                                                  `json:"instance,omitempty"`
-	Server                  *string                                                                 `json:"server,omitempty"`
-	Cluster                 *string                                                                 `json:"cluster,omitempty"`
-	User                    map[string]interface{}                                                  `json:"user,omitempty"`
-	Plan                    map[string]interface{}                                                  `json:"plan,omitempty"`
-	Tags                    []map[string]interface{}                                                `json:"tags,omitempty"`
-	Project                 *string                                                                 `json:"project,omitempty"`
-	RefType                 *string                                                                 `json:"refType,omitempty"`
-	RefId                   *int64                                                                  `json:"refId,omitempty"`
-	RefUuid                 *string                                                                 `json:"refUuid,omitempty"`
-	RefName                 *string                                                                 `json:"refName,omitempty"`
-	RefCategory             *string                                                                 `json:"refCategory,omitempty"`
-	ResourceId              *string                                                                 `json:"resourceId,omitempty"`
-	ResourceUuid            *string                                                                 `json:"resourceUuid,omitempty"`
-	ResourceType            *string                                                                 `json:"resourceType,omitempty"`
-	ResourceName            *string                                                                 `json:"resourceName,omitempty"`
-	ResourceExternalId      *string                                                                 `json:"resourceExternalId,omitempty"`
-	ResourceInternalId      *string                                                                 `json:"resourceInternalId,omitempty"`
-	Interval                *string                                                                 `json:"interval,omitempty"`
-	Period                  *string                                                                 `json:"period,omitempty"`
-	Estimate                *bool                                                                   `json:"estimate,omitempty"`
-	SummaryInvoice          *bool                                                                   `json:"summaryInvoice,omitempty"`
-	Active                  *bool                                                                   `json:"active,omitempty"`
-	StartDate               *time.Time                                                              `json:"startDate,omitempty"`
-	EndDate                 *time.Time                                                              `json:"endDate,omitempty"`
-	RefStart                *time.Time                                                              `json:"refStart,omitempty"`
-	RefEnd                  *time.Time                                                              `json:"refEnd,omitempty"`
-	EstimatedComputePrice   *float32                                                                `json:"estimatedComputePrice,omitempty"`
-	EstimatedComputeCost    *float32                                                                `json:"estimatedComputeCost,omitempty"`
-	EstimatedMemoryPrice    *float32                                                                `json:"estimatedMemoryPrice,omitempty"`
-	EstimatedMemoryCost     *float32                                                                `json:"estimatedMemoryCost,omitempty"`
-	EstimatedStoragePrice   *float32                                                                `json:"estimatedStoragePrice,omitempty"`
-	EstimatedStorageCost    *float32                                                                `json:"estimatedStorageCost,omitempty"`
-	EstimatedNetworkPrice   *float32                                                                `json:"estimatedNetworkPrice,omitempty"`
-	EstimatedNetworkCost    *float32                                                                `json:"estimatedNetworkCost,omitempty"`
-	EstimatedLicensePrice   *float32                                                                `json:"estimatedLicensePrice,omitempty"`
-	EstimatedLicenseCost    *float32                                                                `json:"estimatedLicenseCost,omitempty"`
-	EstimatedExtraPrice     *float32                                                                `json:"estimatedExtraPrice,omitempty"`
-	EstimatedExtraCost      *float32                                                                `json:"estimatedExtraCost,omitempty"`
-	EstimatedTotalPrice     *float32                                                                `json:"estimatedTotalPrice,omitempty"`
-	EstimatedTotalCost      *float32                                                                `json:"estimatedTotalCost,omitempty"`
-	EstimatedRunningPrice   *float32                                                                `json:"estimatedRunningPrice,omitempty"`
-	EstimatedRunningCost    *float32                                                                `json:"estimatedRunningCost,omitempty"`
-	EstimatedCurrency       *string                                                                 `json:"estimatedCurrency,omitempty"`
-	EstimatedConversionRate *float32                                                                `json:"estimatedConversionRate,omitempty"`
-	ActualComputePrice      *float32                                                                `json:"actualComputePrice,omitempty"`
-	ActualComputeCost       *float32                                                                `json:"actualComputeCost,omitempty"`
-	ActualMemoryPrice       *float32                                                                `json:"actualMemoryPrice,omitempty"`
-	ActualMemoryCost        *float32                                                                `json:"actualMemoryCost,omitempty"`
-	ActualStoragePrice      *float32                                                                `json:"actualStoragePrice,omitempty"`
-	ActualStorageCost       *float32                                                                `json:"actualStorageCost,omitempty"`
-	ActualNetworkPrice      *float32                                                                `json:"actualNetworkPrice,omitempty"`
-	ActualNetworkCost       *float32                                                                `json:"actualNetworkCost,omitempty"`
-	ActualLicensePrice      *float32                                                                `json:"actualLicensePrice,omitempty"`
-	ActualLicenseCost       *float32                                                                `json:"actualLicenseCost,omitempty"`
-	ActualExtraPrice        *float32                                                                `json:"actualExtraPrice,omitempty"`
-	ActualExtraCost         *float32                                                                `json:"actualExtraCost,omitempty"`
-	ActualTotalPrice        *float32                                                                `json:"actualTotalPrice,omitempty"`
-	ActualTotalCost         *float32                                                                `json:"actualTotalCost,omitempty"`
-	ActualRunningPrice      *float32                                                                `json:"actualRunningPrice,omitempty"`
-	ActualRunningCost       *float32                                                                `json:"actualRunningCost,omitempty"`
-	ActualCurrency          *string                                                                 `json:"actualCurrency,omitempty"`
-	ActualConversionRate    *float32                                                                `json:"actualConversionRate,omitempty"`
-	ComputePrice            *float32                                                                `json:"computePrice,omitempty"`
-	ComputeCost             *float32                                                                `json:"computeCost,omitempty"`
-	MemoryPrice             *float32                                                                `json:"memoryPrice,omitempty"`
-	MemoryCost              *float32                                                                `json:"memoryCost,omitempty"`
-	StoragePrice            *float32                                                                `json:"storagePrice,omitempty"`
-	StorageCost             *float32                                                                `json:"storageCost,omitempty"`
-	NetworkPrice            *float32                                                                `json:"networkPrice,omitempty"`
-	NetworkCost             *float32                                                                `json:"networkCost,omitempty"`
-	LicensePrice            *float32                                                                `json:"licensePrice,omitempty"`
-	LicenseCost             *float32                                                                `json:"licenseCost,omitempty"`
-	ExtraPrice              *float32                                                                `json:"extraPrice,omitempty"`
-	ExtraCost               *float32                                                                `json:"extraCost,omitempty"`
-	TotalPrice              *float32                                                                `json:"totalPrice,omitempty"`
-	TotalCost               *float32                                                                `json:"totalCost,omitempty"`
-	RunningPrice            *float32                                                                `json:"runningPrice,omitempty"`
-	RunningCost             *float32                                                                `json:"runningCost,omitempty"`
-	Currency                *string                                                                 `json:"currency,omitempty"`
-	ConversionRate          *float32                                                                `json:"conversionRate,omitempty"`
-	CostType                *string                                                                 `json:"costType,omitempty"`
-	OffTime                 *int64                                                                  `json:"offTime,omitempty"`
-	PowerState              *string                                                                 `json:"powerState,omitempty"`
-	PowerDate               *time.Time                                                              `json:"powerDate,omitempty"`
-	RunningMultiplier       *float32                                                                `json:"runningMultiplier,omitempty"`
-	UsageType               *string                                                                 `json:"usageType,omitempty"`
-	UsageCategory           *string                                                                 `json:"usageCategory,omitempty"`
-	LastCostDate            *time.Time                                                              `json:"lastCostDate,omitempty"`
-	LastActualDate          *time.Time                                                              `json:"lastActualDate,omitempty"`
-	DateCreated             *time.Time                                                              `json:"dateCreated,omitempty"`
-	LastUpdated             *time.Time                                                              `json:"lastUpdated,omitempty"`
-	LineItemCount           *int64                                                                  `json:"lineItemCount,omitempty"`
-	LineItems               []ListInvoices200ResponseAllOfInvoicesInnerLineItemsInner               `json:"lineItems,omitempty"`
-	AdditionalProperties    map[string]interface{}                                                  `json:",remain"`
+	Id                      *int64                                                    `json:"id,omitempty"`
+	OwnerId                 *int64                                                    `json:"ownerId,omitempty"`
+	Account                 *GetAlerts200ResponseAllOfCheckGroupsInnerInstance        `json:"account,omitempty"`
+	Group                   map[string]interface{}                                    `json:"group,omitempty"`
+	Cloud                   *ListInvoices200ResponseAllOfInvoicesInnerCloud           `json:"cloud,omitempty"`
+	Instance                map[string]interface{}                                    `json:"instance,omitempty"`
+	Server                  NullableString                                            `json:"server,omitempty"`
+	Cluster                 NullableString                                            `json:"cluster,omitempty"`
+	User                    map[string]interface{}                                    `json:"user,omitempty"`
+	Plan                    map[string]interface{}                                    `json:"plan,omitempty"`
+	Tags                    []map[string]interface{}                                  `json:"tags,omitempty"`
+	Project                 NullableString                                            `json:"project,omitempty"`
+	RefType                 *string                                                   `json:"refType,omitempty"`
+	RefId                   *int64                                                    `json:"refId,omitempty"`
+	RefUuid                 NullableString                                            `json:"refUuid,omitempty"`
+	RefName                 *string                                                   `json:"refName,omitempty"`
+	RefCategory             *string                                                   `json:"refCategory,omitempty"`
+	ResourceId              NullableString                                            `json:"resourceId,omitempty"`
+	ResourceUuid            NullableString                                            `json:"resourceUuid,omitempty"`
+	ResourceType            NullableString                                            `json:"resourceType,omitempty"`
+	ResourceName            NullableString                                            `json:"resourceName,omitempty"`
+	ResourceExternalId      NullableString                                            `json:"resourceExternalId,omitempty"`
+	ResourceInternalId      NullableString                                            `json:"resourceInternalId,omitempty"`
+	Interval                *string                                                   `json:"interval,omitempty"`
+	Period                  *string                                                   `json:"period,omitempty"`
+	Estimate                *bool                                                     `json:"estimate,omitempty"`
+	SummaryInvoice          *bool                                                     `json:"summaryInvoice,omitempty"`
+	Active                  *bool                                                     `json:"active,omitempty"`
+	StartDate               *time.Time                                                `json:"startDate,omitempty"`
+	EndDate                 *time.Time                                                `json:"endDate,omitempty"`
+	RefStart                *time.Time                                                `json:"refStart,omitempty"`
+	RefEnd                  *time.Time                                                `json:"refEnd,omitempty"`
+	EstimatedComputePrice   *float32                                                  `json:"estimatedComputePrice,omitempty"`
+	EstimatedComputeCost    *float32                                                  `json:"estimatedComputeCost,omitempty"`
+	EstimatedMemoryPrice    *float32                                                  `json:"estimatedMemoryPrice,omitempty"`
+	EstimatedMemoryCost     *float32                                                  `json:"estimatedMemoryCost,omitempty"`
+	EstimatedStoragePrice   *float32                                                  `json:"estimatedStoragePrice,omitempty"`
+	EstimatedStorageCost    *float32                                                  `json:"estimatedStorageCost,omitempty"`
+	EstimatedNetworkPrice   *float32                                                  `json:"estimatedNetworkPrice,omitempty"`
+	EstimatedNetworkCost    *float32                                                  `json:"estimatedNetworkCost,omitempty"`
+	EstimatedLicensePrice   *float32                                                  `json:"estimatedLicensePrice,omitempty"`
+	EstimatedLicenseCost    *float32                                                  `json:"estimatedLicenseCost,omitempty"`
+	EstimatedExtraPrice     *float32                                                  `json:"estimatedExtraPrice,omitempty"`
+	EstimatedExtraCost      *float32                                                  `json:"estimatedExtraCost,omitempty"`
+	EstimatedTotalPrice     *float32                                                  `json:"estimatedTotalPrice,omitempty"`
+	EstimatedTotalCost      *float32                                                  `json:"estimatedTotalCost,omitempty"`
+	EstimatedRunningPrice   *float32                                                  `json:"estimatedRunningPrice,omitempty"`
+	EstimatedRunningCost    *float32                                                  `json:"estimatedRunningCost,omitempty"`
+	EstimatedCurrency       *string                                                   `json:"estimatedCurrency,omitempty"`
+	EstimatedConversionRate *float32                                                  `json:"estimatedConversionRate,omitempty"`
+	ActualComputePrice      *float32                                                  `json:"actualComputePrice,omitempty"`
+	ActualComputeCost       *float32                                                  `json:"actualComputeCost,omitempty"`
+	ActualMemoryPrice       *float32                                                  `json:"actualMemoryPrice,omitempty"`
+	ActualMemoryCost        *float32                                                  `json:"actualMemoryCost,omitempty"`
+	ActualStoragePrice      *float32                                                  `json:"actualStoragePrice,omitempty"`
+	ActualStorageCost       *float32                                                  `json:"actualStorageCost,omitempty"`
+	ActualNetworkPrice      *float32                                                  `json:"actualNetworkPrice,omitempty"`
+	ActualNetworkCost       *float32                                                  `json:"actualNetworkCost,omitempty"`
+	ActualLicensePrice      *float32                                                  `json:"actualLicensePrice,omitempty"`
+	ActualLicenseCost       *float32                                                  `json:"actualLicenseCost,omitempty"`
+	ActualExtraPrice        *float32                                                  `json:"actualExtraPrice,omitempty"`
+	ActualExtraCost         *float32                                                  `json:"actualExtraCost,omitempty"`
+	ActualTotalPrice        *float32                                                  `json:"actualTotalPrice,omitempty"`
+	ActualTotalCost         *float32                                                  `json:"actualTotalCost,omitempty"`
+	ActualRunningPrice      *float32                                                  `json:"actualRunningPrice,omitempty"`
+	ActualRunningCost       *float32                                                  `json:"actualRunningCost,omitempty"`
+	ActualCurrency          *string                                                   `json:"actualCurrency,omitempty"`
+	ActualConversionRate    *float32                                                  `json:"actualConversionRate,omitempty"`
+	ComputePrice            *float32                                                  `json:"computePrice,omitempty"`
+	ComputeCost             *float32                                                  `json:"computeCost,omitempty"`
+	MemoryPrice             *float32                                                  `json:"memoryPrice,omitempty"`
+	MemoryCost              *float32                                                  `json:"memoryCost,omitempty"`
+	StoragePrice            *float32                                                  `json:"storagePrice,omitempty"`
+	StorageCost             *float32                                                  `json:"storageCost,omitempty"`
+	NetworkPrice            *float32                                                  `json:"networkPrice,omitempty"`
+	NetworkCost             *float32                                                  `json:"networkCost,omitempty"`
+	LicensePrice            *float32                                                  `json:"licensePrice,omitempty"`
+	LicenseCost             *float32                                                  `json:"licenseCost,omitempty"`
+	ExtraPrice              *float32                                                  `json:"extraPrice,omitempty"`
+	ExtraCost               *float32                                                  `json:"extraCost,omitempty"`
+	TotalPrice              *float32                                                  `json:"totalPrice,omitempty"`
+	TotalCost               *float32                                                  `json:"totalCost,omitempty"`
+	RunningPrice            *float32                                                  `json:"runningPrice,omitempty"`
+	RunningCost             *float32                                                  `json:"runningCost,omitempty"`
+	Currency                *string                                                   `json:"currency,omitempty"`
+	ConversionRate          *float32                                                  `json:"conversionRate,omitempty"`
+	CostType                *string                                                   `json:"costType,omitempty"`
+	OffTime                 *int64                                                    `json:"offTime,omitempty"`
+	PowerState              NullableString                                            `json:"powerState,omitempty"`
+	PowerDate               *time.Time                                                `json:"powerDate,omitempty"`
+	RunningMultiplier       *float32                                                  `json:"runningMultiplier,omitempty"`
+	UsageType               NullableString                                            `json:"usageType,omitempty"`
+	UsageCategory           NullableString                                            `json:"usageCategory,omitempty"`
+	LastCostDate            NullableTime                                              `json:"lastCostDate,omitempty"`
+	LastActualDate          NullableTime                                              `json:"lastActualDate,omitempty"`
+	DateCreated             *time.Time                                                `json:"dateCreated,omitempty"`
+	LastUpdated             *time.Time                                                `json:"lastUpdated,omitempty"`
+	LineItemCount           *int64                                                    `json:"lineItemCount,omitempty"`
+	LineItems               []ListInvoices200ResponseAllOfInvoicesInnerLineItemsInner `json:"lineItems,omitempty"`
+	AdditionalProperties    map[string]interface{}                                    `json:",remain"`
 }
 
 type _Invoice Invoice
@@ -207,9 +207,9 @@ func (o *Invoice) SetOwnerId(v int64) {
 }
 
 // GetAccount returns the Account field value if set, zero value otherwise.
-func (o *Invoice) GetAccount() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *Invoice) GetAccount() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.Account) {
-		var ret ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return *o.Account
@@ -217,7 +217,7 @@ func (o *Invoice) GetAccount() ListApplianceSettings200ResponseApplianceSettings
 
 // GetAccountOk returns a tuple with the Account field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Invoice) GetAccountOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *Invoice) GetAccountOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.Account) {
 		return nil, false
 	}
@@ -233,14 +233,14 @@ func (o *Invoice) IsSetAccount() bool {
 	return false
 }
 
-// SetAccount gets a reference to the given ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the Account field.
-func (o *Invoice) SetAccount(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetAccount gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Account field.
+func (o *Invoice) SetAccount(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.Account = &v
 }
 
-// GetGroup returns the Group field value if set, zero value otherwise.
+// GetGroup returns the Group field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Invoice) GetGroup() map[string]interface{} {
-	if o == nil || IsNil(o.Group) {
+	if o == nil {
 		var ret map[string]interface{}
 		return ret
 	}
@@ -249,6 +249,7 @@ func (o *Invoice) GetGroup() map[string]interface{} {
 
 // GetGroupOk returns a tuple with the Group field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Invoice) GetGroupOk() (map[string]interface{}, bool) {
 	if o == nil || IsNil(o.Group) {
 		return map[string]interface{}{}, false
@@ -302,9 +303,9 @@ func (o *Invoice) SetCloud(v ListInvoices200ResponseAllOfInvoicesInnerCloud) {
 	o.Cloud = &v
 }
 
-// GetInstance returns the Instance field value if set, zero value otherwise.
+// GetInstance returns the Instance field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Invoice) GetInstance() map[string]interface{} {
-	if o == nil || IsNil(o.Instance) {
+	if o == nil {
 		var ret map[string]interface{}
 		return ret
 	}
@@ -313,6 +314,7 @@ func (o *Invoice) GetInstance() map[string]interface{} {
 
 // GetInstanceOk returns a tuple with the Instance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Invoice) GetInstanceOk() (map[string]interface{}, bool) {
 	if o == nil || IsNil(o.Instance) {
 		return map[string]interface{}{}, false
@@ -334,73 +336,95 @@ func (o *Invoice) SetInstance(v map[string]interface{}) {
 	o.Instance = v
 }
 
-// GetServer returns the Server field value if set, zero value otherwise.
+// GetServer returns the Server field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Invoice) GetServer() string {
-	if o == nil || IsNil(o.Server) {
+	if o == nil || IsNil(o.Server.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Server
+	return *o.Server.Get()
 }
 
 // GetServerOk returns a tuple with the Server field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Invoice) GetServerOk() (*string, bool) {
-	if o == nil || IsNil(o.Server) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Server, true
+	return o.Server.Get(), o.Server.IsSet()
 }
 
 // IsSetServer returns a boolean if a field has been set.
 func (o *Invoice) IsSetServer() bool {
-	if o != nil && !IsNil(o.Server) {
+	if o != nil && o.Server.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetServer gets a reference to the given string and assigns it to the Server field.
+// SetServer gets a reference to the given NullableString and assigns it to the Server field.
 func (o *Invoice) SetServer(v string) {
-	o.Server = &v
+	o.Server.Set(&v)
 }
 
-// GetCluster returns the Cluster field value if set, zero value otherwise.
+// SetServerNil sets the value for Server to be an explicit nil
+func (o *Invoice) SetServerNil() {
+	o.Server.Set(nil)
+}
+
+// UnsetServer ensures that no value is present for Server, not even an explicit nil
+func (o *Invoice) UnsetServer() {
+	o.Server.Unset()
+}
+
+// GetCluster returns the Cluster field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Invoice) GetCluster() string {
-	if o == nil || IsNil(o.Cluster) {
+	if o == nil || IsNil(o.Cluster.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Cluster
+	return *o.Cluster.Get()
 }
 
 // GetClusterOk returns a tuple with the Cluster field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Invoice) GetClusterOk() (*string, bool) {
-	if o == nil || IsNil(o.Cluster) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Cluster, true
+	return o.Cluster.Get(), o.Cluster.IsSet()
 }
 
 // IsSetCluster returns a boolean if a field has been set.
 func (o *Invoice) IsSetCluster() bool {
-	if o != nil && !IsNil(o.Cluster) {
+	if o != nil && o.Cluster.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCluster gets a reference to the given string and assigns it to the Cluster field.
+// SetCluster gets a reference to the given NullableString and assigns it to the Cluster field.
 func (o *Invoice) SetCluster(v string) {
-	o.Cluster = &v
+	o.Cluster.Set(&v)
 }
 
-// GetUser returns the User field value if set, zero value otherwise.
+// SetClusterNil sets the value for Cluster to be an explicit nil
+func (o *Invoice) SetClusterNil() {
+	o.Cluster.Set(nil)
+}
+
+// UnsetCluster ensures that no value is present for Cluster, not even an explicit nil
+func (o *Invoice) UnsetCluster() {
+	o.Cluster.Unset()
+}
+
+// GetUser returns the User field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Invoice) GetUser() map[string]interface{} {
-	if o == nil || IsNil(o.User) {
+	if o == nil {
 		var ret map[string]interface{}
 		return ret
 	}
@@ -409,6 +433,7 @@ func (o *Invoice) GetUser() map[string]interface{} {
 
 // GetUserOk returns a tuple with the User field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Invoice) GetUserOk() (map[string]interface{}, bool) {
 	if o == nil || IsNil(o.User) {
 		return map[string]interface{}{}, false
@@ -430,9 +455,9 @@ func (o *Invoice) SetUser(v map[string]interface{}) {
 	o.User = v
 }
 
-// GetPlan returns the Plan field value if set, zero value otherwise.
+// GetPlan returns the Plan field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Invoice) GetPlan() map[string]interface{} {
-	if o == nil || IsNil(o.Plan) {
+	if o == nil {
 		var ret map[string]interface{}
 		return ret
 	}
@@ -441,6 +466,7 @@ func (o *Invoice) GetPlan() map[string]interface{} {
 
 // GetPlanOk returns a tuple with the Plan field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Invoice) GetPlanOk() (map[string]interface{}, bool) {
 	if o == nil || IsNil(o.Plan) {
 		return map[string]interface{}{}, false
@@ -462,9 +488,9 @@ func (o *Invoice) SetPlan(v map[string]interface{}) {
 	o.Plan = v
 }
 
-// GetTags returns the Tags field value if set, zero value otherwise.
+// GetTags returns the Tags field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Invoice) GetTags() []map[string]interface{} {
-	if o == nil || IsNil(o.Tags) {
+	if o == nil {
 		var ret []map[string]interface{}
 		return ret
 	}
@@ -473,6 +499,7 @@ func (o *Invoice) GetTags() []map[string]interface{} {
 
 // GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Invoice) GetTagsOk() ([]map[string]interface{}, bool) {
 	if o == nil || IsNil(o.Tags) {
 		return nil, false
@@ -494,36 +521,47 @@ func (o *Invoice) SetTags(v []map[string]interface{}) {
 	o.Tags = v
 }
 
-// GetProject returns the Project field value if set, zero value otherwise.
+// GetProject returns the Project field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Invoice) GetProject() string {
-	if o == nil || IsNil(o.Project) {
+	if o == nil || IsNil(o.Project.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Project
+	return *o.Project.Get()
 }
 
 // GetProjectOk returns a tuple with the Project field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Invoice) GetProjectOk() (*string, bool) {
-	if o == nil || IsNil(o.Project) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Project, true
+	return o.Project.Get(), o.Project.IsSet()
 }
 
 // IsSetProject returns a boolean if a field has been set.
 func (o *Invoice) IsSetProject() bool {
-	if o != nil && !IsNil(o.Project) {
+	if o != nil && o.Project.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetProject gets a reference to the given string and assigns it to the Project field.
+// SetProject gets a reference to the given NullableString and assigns it to the Project field.
 func (o *Invoice) SetProject(v string) {
-	o.Project = &v
+	o.Project.Set(&v)
+}
+
+// SetProjectNil sets the value for Project to be an explicit nil
+func (o *Invoice) SetProjectNil() {
+	o.Project.Set(nil)
+}
+
+// UnsetProject ensures that no value is present for Project, not even an explicit nil
+func (o *Invoice) UnsetProject() {
+	o.Project.Unset()
 }
 
 // GetRefType returns the RefType field value if set, zero value otherwise.
@@ -590,36 +628,47 @@ func (o *Invoice) SetRefId(v int64) {
 	o.RefId = &v
 }
 
-// GetRefUuid returns the RefUuid field value if set, zero value otherwise.
+// GetRefUuid returns the RefUuid field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Invoice) GetRefUuid() string {
-	if o == nil || IsNil(o.RefUuid) {
+	if o == nil || IsNil(o.RefUuid.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.RefUuid
+	return *o.RefUuid.Get()
 }
 
 // GetRefUuidOk returns a tuple with the RefUuid field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Invoice) GetRefUuidOk() (*string, bool) {
-	if o == nil || IsNil(o.RefUuid) {
+	if o == nil {
 		return nil, false
 	}
-	return o.RefUuid, true
+	return o.RefUuid.Get(), o.RefUuid.IsSet()
 }
 
 // IsSetRefUuid returns a boolean if a field has been set.
 func (o *Invoice) IsSetRefUuid() bool {
-	if o != nil && !IsNil(o.RefUuid) {
+	if o != nil && o.RefUuid.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetRefUuid gets a reference to the given string and assigns it to the RefUuid field.
+// SetRefUuid gets a reference to the given NullableString and assigns it to the RefUuid field.
 func (o *Invoice) SetRefUuid(v string) {
-	o.RefUuid = &v
+	o.RefUuid.Set(&v)
+}
+
+// SetRefUuidNil sets the value for RefUuid to be an explicit nil
+func (o *Invoice) SetRefUuidNil() {
+	o.RefUuid.Set(nil)
+}
+
+// UnsetRefUuid ensures that no value is present for RefUuid, not even an explicit nil
+func (o *Invoice) UnsetRefUuid() {
+	o.RefUuid.Unset()
 }
 
 // GetRefName returns the RefName field value if set, zero value otherwise.
@@ -686,196 +735,262 @@ func (o *Invoice) SetRefCategory(v string) {
 	o.RefCategory = &v
 }
 
-// GetResourceId returns the ResourceId field value if set, zero value otherwise.
+// GetResourceId returns the ResourceId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Invoice) GetResourceId() string {
-	if o == nil || IsNil(o.ResourceId) {
+	if o == nil || IsNil(o.ResourceId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ResourceId
+	return *o.ResourceId.Get()
 }
 
 // GetResourceIdOk returns a tuple with the ResourceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Invoice) GetResourceIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ResourceId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ResourceId, true
+	return o.ResourceId.Get(), o.ResourceId.IsSet()
 }
 
 // IsSetResourceId returns a boolean if a field has been set.
 func (o *Invoice) IsSetResourceId() bool {
-	if o != nil && !IsNil(o.ResourceId) {
+	if o != nil && o.ResourceId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetResourceId gets a reference to the given string and assigns it to the ResourceId field.
+// SetResourceId gets a reference to the given NullableString and assigns it to the ResourceId field.
 func (o *Invoice) SetResourceId(v string) {
-	o.ResourceId = &v
+	o.ResourceId.Set(&v)
 }
 
-// GetResourceUuid returns the ResourceUuid field value if set, zero value otherwise.
+// SetResourceIdNil sets the value for ResourceId to be an explicit nil
+func (o *Invoice) SetResourceIdNil() {
+	o.ResourceId.Set(nil)
+}
+
+// UnsetResourceId ensures that no value is present for ResourceId, not even an explicit nil
+func (o *Invoice) UnsetResourceId() {
+	o.ResourceId.Unset()
+}
+
+// GetResourceUuid returns the ResourceUuid field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Invoice) GetResourceUuid() string {
-	if o == nil || IsNil(o.ResourceUuid) {
+	if o == nil || IsNil(o.ResourceUuid.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ResourceUuid
+	return *o.ResourceUuid.Get()
 }
 
 // GetResourceUuidOk returns a tuple with the ResourceUuid field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Invoice) GetResourceUuidOk() (*string, bool) {
-	if o == nil || IsNil(o.ResourceUuid) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ResourceUuid, true
+	return o.ResourceUuid.Get(), o.ResourceUuid.IsSet()
 }
 
 // IsSetResourceUuid returns a boolean if a field has been set.
 func (o *Invoice) IsSetResourceUuid() bool {
-	if o != nil && !IsNil(o.ResourceUuid) {
+	if o != nil && o.ResourceUuid.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetResourceUuid gets a reference to the given string and assigns it to the ResourceUuid field.
+// SetResourceUuid gets a reference to the given NullableString and assigns it to the ResourceUuid field.
 func (o *Invoice) SetResourceUuid(v string) {
-	o.ResourceUuid = &v
+	o.ResourceUuid.Set(&v)
 }
 
-// GetResourceType returns the ResourceType field value if set, zero value otherwise.
+// SetResourceUuidNil sets the value for ResourceUuid to be an explicit nil
+func (o *Invoice) SetResourceUuidNil() {
+	o.ResourceUuid.Set(nil)
+}
+
+// UnsetResourceUuid ensures that no value is present for ResourceUuid, not even an explicit nil
+func (o *Invoice) UnsetResourceUuid() {
+	o.ResourceUuid.Unset()
+}
+
+// GetResourceType returns the ResourceType field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Invoice) GetResourceType() string {
-	if o == nil || IsNil(o.ResourceType) {
+	if o == nil || IsNil(o.ResourceType.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ResourceType
+	return *o.ResourceType.Get()
 }
 
 // GetResourceTypeOk returns a tuple with the ResourceType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Invoice) GetResourceTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.ResourceType) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ResourceType, true
+	return o.ResourceType.Get(), o.ResourceType.IsSet()
 }
 
 // IsSetResourceType returns a boolean if a field has been set.
 func (o *Invoice) IsSetResourceType() bool {
-	if o != nil && !IsNil(o.ResourceType) {
+	if o != nil && o.ResourceType.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetResourceType gets a reference to the given string and assigns it to the ResourceType field.
+// SetResourceType gets a reference to the given NullableString and assigns it to the ResourceType field.
 func (o *Invoice) SetResourceType(v string) {
-	o.ResourceType = &v
+	o.ResourceType.Set(&v)
 }
 
-// GetResourceName returns the ResourceName field value if set, zero value otherwise.
+// SetResourceTypeNil sets the value for ResourceType to be an explicit nil
+func (o *Invoice) SetResourceTypeNil() {
+	o.ResourceType.Set(nil)
+}
+
+// UnsetResourceType ensures that no value is present for ResourceType, not even an explicit nil
+func (o *Invoice) UnsetResourceType() {
+	o.ResourceType.Unset()
+}
+
+// GetResourceName returns the ResourceName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Invoice) GetResourceName() string {
-	if o == nil || IsNil(o.ResourceName) {
+	if o == nil || IsNil(o.ResourceName.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ResourceName
+	return *o.ResourceName.Get()
 }
 
 // GetResourceNameOk returns a tuple with the ResourceName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Invoice) GetResourceNameOk() (*string, bool) {
-	if o == nil || IsNil(o.ResourceName) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ResourceName, true
+	return o.ResourceName.Get(), o.ResourceName.IsSet()
 }
 
 // IsSetResourceName returns a boolean if a field has been set.
 func (o *Invoice) IsSetResourceName() bool {
-	if o != nil && !IsNil(o.ResourceName) {
+	if o != nil && o.ResourceName.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetResourceName gets a reference to the given string and assigns it to the ResourceName field.
+// SetResourceName gets a reference to the given NullableString and assigns it to the ResourceName field.
 func (o *Invoice) SetResourceName(v string) {
-	o.ResourceName = &v
+	o.ResourceName.Set(&v)
 }
 
-// GetResourceExternalId returns the ResourceExternalId field value if set, zero value otherwise.
+// SetResourceNameNil sets the value for ResourceName to be an explicit nil
+func (o *Invoice) SetResourceNameNil() {
+	o.ResourceName.Set(nil)
+}
+
+// UnsetResourceName ensures that no value is present for ResourceName, not even an explicit nil
+func (o *Invoice) UnsetResourceName() {
+	o.ResourceName.Unset()
+}
+
+// GetResourceExternalId returns the ResourceExternalId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Invoice) GetResourceExternalId() string {
-	if o == nil || IsNil(o.ResourceExternalId) {
+	if o == nil || IsNil(o.ResourceExternalId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ResourceExternalId
+	return *o.ResourceExternalId.Get()
 }
 
 // GetResourceExternalIdOk returns a tuple with the ResourceExternalId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Invoice) GetResourceExternalIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ResourceExternalId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ResourceExternalId, true
+	return o.ResourceExternalId.Get(), o.ResourceExternalId.IsSet()
 }
 
 // IsSetResourceExternalId returns a boolean if a field has been set.
 func (o *Invoice) IsSetResourceExternalId() bool {
-	if o != nil && !IsNil(o.ResourceExternalId) {
+	if o != nil && o.ResourceExternalId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetResourceExternalId gets a reference to the given string and assigns it to the ResourceExternalId field.
+// SetResourceExternalId gets a reference to the given NullableString and assigns it to the ResourceExternalId field.
 func (o *Invoice) SetResourceExternalId(v string) {
-	o.ResourceExternalId = &v
+	o.ResourceExternalId.Set(&v)
 }
 
-// GetResourceInternalId returns the ResourceInternalId field value if set, zero value otherwise.
+// SetResourceExternalIdNil sets the value for ResourceExternalId to be an explicit nil
+func (o *Invoice) SetResourceExternalIdNil() {
+	o.ResourceExternalId.Set(nil)
+}
+
+// UnsetResourceExternalId ensures that no value is present for ResourceExternalId, not even an explicit nil
+func (o *Invoice) UnsetResourceExternalId() {
+	o.ResourceExternalId.Unset()
+}
+
+// GetResourceInternalId returns the ResourceInternalId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Invoice) GetResourceInternalId() string {
-	if o == nil || IsNil(o.ResourceInternalId) {
+	if o == nil || IsNil(o.ResourceInternalId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ResourceInternalId
+	return *o.ResourceInternalId.Get()
 }
 
 // GetResourceInternalIdOk returns a tuple with the ResourceInternalId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Invoice) GetResourceInternalIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ResourceInternalId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ResourceInternalId, true
+	return o.ResourceInternalId.Get(), o.ResourceInternalId.IsSet()
 }
 
 // IsSetResourceInternalId returns a boolean if a field has been set.
 func (o *Invoice) IsSetResourceInternalId() bool {
-	if o != nil && !IsNil(o.ResourceInternalId) {
+	if o != nil && o.ResourceInternalId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetResourceInternalId gets a reference to the given string and assigns it to the ResourceInternalId field.
+// SetResourceInternalId gets a reference to the given NullableString and assigns it to the ResourceInternalId field.
 func (o *Invoice) SetResourceInternalId(v string) {
-	o.ResourceInternalId = &v
+	o.ResourceInternalId.Set(&v)
+}
+
+// SetResourceInternalIdNil sets the value for ResourceInternalId to be an explicit nil
+func (o *Invoice) SetResourceInternalIdNil() {
+	o.ResourceInternalId.Set(nil)
+}
+
+// UnsetResourceInternalId ensures that no value is present for ResourceInternalId, not even an explicit nil
+func (o *Invoice) UnsetResourceInternalId() {
+	o.ResourceInternalId.Unset()
 }
 
 // GetInterval returns the Interval field value if set, zero value otherwise.
@@ -2958,36 +3073,47 @@ func (o *Invoice) SetOffTime(v int64) {
 	o.OffTime = &v
 }
 
-// GetPowerState returns the PowerState field value if set, zero value otherwise.
+// GetPowerState returns the PowerState field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Invoice) GetPowerState() string {
-	if o == nil || IsNil(o.PowerState) {
+	if o == nil || IsNil(o.PowerState.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.PowerState
+	return *o.PowerState.Get()
 }
 
 // GetPowerStateOk returns a tuple with the PowerState field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Invoice) GetPowerStateOk() (*string, bool) {
-	if o == nil || IsNil(o.PowerState) {
+	if o == nil {
 		return nil, false
 	}
-	return o.PowerState, true
+	return o.PowerState.Get(), o.PowerState.IsSet()
 }
 
 // IsSetPowerState returns a boolean if a field has been set.
 func (o *Invoice) IsSetPowerState() bool {
-	if o != nil && !IsNil(o.PowerState) {
+	if o != nil && o.PowerState.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetPowerState gets a reference to the given string and assigns it to the PowerState field.
+// SetPowerState gets a reference to the given NullableString and assigns it to the PowerState field.
 func (o *Invoice) SetPowerState(v string) {
-	o.PowerState = &v
+	o.PowerState.Set(&v)
+}
+
+// SetPowerStateNil sets the value for PowerState to be an explicit nil
+func (o *Invoice) SetPowerStateNil() {
+	o.PowerState.Set(nil)
+}
+
+// UnsetPowerState ensures that no value is present for PowerState, not even an explicit nil
+func (o *Invoice) UnsetPowerState() {
+	o.PowerState.Unset()
 }
 
 // GetPowerDate returns the PowerDate field value if set, zero value otherwise.
@@ -3054,132 +3180,176 @@ func (o *Invoice) SetRunningMultiplier(v float32) {
 	o.RunningMultiplier = &v
 }
 
-// GetUsageType returns the UsageType field value if set, zero value otherwise.
+// GetUsageType returns the UsageType field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Invoice) GetUsageType() string {
-	if o == nil || IsNil(o.UsageType) {
+	if o == nil || IsNil(o.UsageType.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.UsageType
+	return *o.UsageType.Get()
 }
 
 // GetUsageTypeOk returns a tuple with the UsageType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Invoice) GetUsageTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.UsageType) {
+	if o == nil {
 		return nil, false
 	}
-	return o.UsageType, true
+	return o.UsageType.Get(), o.UsageType.IsSet()
 }
 
 // IsSetUsageType returns a boolean if a field has been set.
 func (o *Invoice) IsSetUsageType() bool {
-	if o != nil && !IsNil(o.UsageType) {
+	if o != nil && o.UsageType.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetUsageType gets a reference to the given string and assigns it to the UsageType field.
+// SetUsageType gets a reference to the given NullableString and assigns it to the UsageType field.
 func (o *Invoice) SetUsageType(v string) {
-	o.UsageType = &v
+	o.UsageType.Set(&v)
 }
 
-// GetUsageCategory returns the UsageCategory field value if set, zero value otherwise.
+// SetUsageTypeNil sets the value for UsageType to be an explicit nil
+func (o *Invoice) SetUsageTypeNil() {
+	o.UsageType.Set(nil)
+}
+
+// UnsetUsageType ensures that no value is present for UsageType, not even an explicit nil
+func (o *Invoice) UnsetUsageType() {
+	o.UsageType.Unset()
+}
+
+// GetUsageCategory returns the UsageCategory field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Invoice) GetUsageCategory() string {
-	if o == nil || IsNil(o.UsageCategory) {
+	if o == nil || IsNil(o.UsageCategory.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.UsageCategory
+	return *o.UsageCategory.Get()
 }
 
 // GetUsageCategoryOk returns a tuple with the UsageCategory field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Invoice) GetUsageCategoryOk() (*string, bool) {
-	if o == nil || IsNil(o.UsageCategory) {
+	if o == nil {
 		return nil, false
 	}
-	return o.UsageCategory, true
+	return o.UsageCategory.Get(), o.UsageCategory.IsSet()
 }
 
 // IsSetUsageCategory returns a boolean if a field has been set.
 func (o *Invoice) IsSetUsageCategory() bool {
-	if o != nil && !IsNil(o.UsageCategory) {
+	if o != nil && o.UsageCategory.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetUsageCategory gets a reference to the given string and assigns it to the UsageCategory field.
+// SetUsageCategory gets a reference to the given NullableString and assigns it to the UsageCategory field.
 func (o *Invoice) SetUsageCategory(v string) {
-	o.UsageCategory = &v
+	o.UsageCategory.Set(&v)
 }
 
-// GetLastCostDate returns the LastCostDate field value if set, zero value otherwise.
+// SetUsageCategoryNil sets the value for UsageCategory to be an explicit nil
+func (o *Invoice) SetUsageCategoryNil() {
+	o.UsageCategory.Set(nil)
+}
+
+// UnsetUsageCategory ensures that no value is present for UsageCategory, not even an explicit nil
+func (o *Invoice) UnsetUsageCategory() {
+	o.UsageCategory.Unset()
+}
+
+// GetLastCostDate returns the LastCostDate field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Invoice) GetLastCostDate() time.Time {
-	if o == nil || IsNil(o.LastCostDate) {
+	if o == nil || IsNil(o.LastCostDate.Get()) {
 		var ret time.Time
 		return ret
 	}
-	return *o.LastCostDate
+	return *o.LastCostDate.Get()
 }
 
 // GetLastCostDateOk returns a tuple with the LastCostDate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Invoice) GetLastCostDateOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.LastCostDate) {
+	if o == nil {
 		return nil, false
 	}
-	return o.LastCostDate, true
+	return o.LastCostDate.Get(), o.LastCostDate.IsSet()
 }
 
 // IsSetLastCostDate returns a boolean if a field has been set.
 func (o *Invoice) IsSetLastCostDate() bool {
-	if o != nil && !IsNil(o.LastCostDate) {
+	if o != nil && o.LastCostDate.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetLastCostDate gets a reference to the given time.Time and assigns it to the LastCostDate field.
+// SetLastCostDate gets a reference to the given NullableTime and assigns it to the LastCostDate field.
 func (o *Invoice) SetLastCostDate(v time.Time) {
-	o.LastCostDate = &v
+	o.LastCostDate.Set(&v)
 }
 
-// GetLastActualDate returns the LastActualDate field value if set, zero value otherwise.
+// SetLastCostDateNil sets the value for LastCostDate to be an explicit nil
+func (o *Invoice) SetLastCostDateNil() {
+	o.LastCostDate.Set(nil)
+}
+
+// UnsetLastCostDate ensures that no value is present for LastCostDate, not even an explicit nil
+func (o *Invoice) UnsetLastCostDate() {
+	o.LastCostDate.Unset()
+}
+
+// GetLastActualDate returns the LastActualDate field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Invoice) GetLastActualDate() time.Time {
-	if o == nil || IsNil(o.LastActualDate) {
+	if o == nil || IsNil(o.LastActualDate.Get()) {
 		var ret time.Time
 		return ret
 	}
-	return *o.LastActualDate
+	return *o.LastActualDate.Get()
 }
 
 // GetLastActualDateOk returns a tuple with the LastActualDate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Invoice) GetLastActualDateOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.LastActualDate) {
+	if o == nil {
 		return nil, false
 	}
-	return o.LastActualDate, true
+	return o.LastActualDate.Get(), o.LastActualDate.IsSet()
 }
 
 // IsSetLastActualDate returns a boolean if a field has been set.
 func (o *Invoice) IsSetLastActualDate() bool {
-	if o != nil && !IsNil(o.LastActualDate) {
+	if o != nil && o.LastActualDate.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetLastActualDate gets a reference to the given time.Time and assigns it to the LastActualDate field.
+// SetLastActualDate gets a reference to the given NullableTime and assigns it to the LastActualDate field.
 func (o *Invoice) SetLastActualDate(v time.Time) {
-	o.LastActualDate = &v
+	o.LastActualDate.Set(&v)
+}
+
+// SetLastActualDateNil sets the value for LastActualDate to be an explicit nil
+func (o *Invoice) SetLastActualDateNil() {
+	o.LastActualDate.Set(nil)
+}
+
+// UnsetLastActualDate ensures that no value is present for LastActualDate, not even an explicit nil
+func (o *Invoice) UnsetLastActualDate() {
+	o.LastActualDate.Unset()
 }
 
 // GetDateCreated returns the DateCreated field value if set, zero value otherwise.
@@ -3329,32 +3499,32 @@ func (o Invoice) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Account) {
 		toSerialize["account"] = o.Account
 	}
-	if !IsNil(o.Group) {
+	if o.Group != nil {
 		toSerialize["group"] = o.Group
 	}
 	if !IsNil(o.Cloud) {
 		toSerialize["cloud"] = o.Cloud
 	}
-	if !IsNil(o.Instance) {
+	if o.Instance != nil {
 		toSerialize["instance"] = o.Instance
 	}
-	if !IsNil(o.Server) {
-		toSerialize["server"] = o.Server
+	if o.Server.IsSet() {
+		toSerialize["server"] = o.Server.Get()
 	}
-	if !IsNil(o.Cluster) {
-		toSerialize["cluster"] = o.Cluster
+	if o.Cluster.IsSet() {
+		toSerialize["cluster"] = o.Cluster.Get()
 	}
-	if !IsNil(o.User) {
+	if o.User != nil {
 		toSerialize["user"] = o.User
 	}
-	if !IsNil(o.Plan) {
+	if o.Plan != nil {
 		toSerialize["plan"] = o.Plan
 	}
-	if !IsNil(o.Tags) {
+	if o.Tags != nil {
 		toSerialize["tags"] = o.Tags
 	}
-	if !IsNil(o.Project) {
-		toSerialize["project"] = o.Project
+	if o.Project.IsSet() {
+		toSerialize["project"] = o.Project.Get()
 	}
 	if !IsNil(o.RefType) {
 		toSerialize["refType"] = o.RefType
@@ -3362,8 +3532,8 @@ func (o Invoice) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.RefId) {
 		toSerialize["refId"] = o.RefId
 	}
-	if !IsNil(o.RefUuid) {
-		toSerialize["refUuid"] = o.RefUuid
+	if o.RefUuid.IsSet() {
+		toSerialize["refUuid"] = o.RefUuid.Get()
 	}
 	if !IsNil(o.RefName) {
 		toSerialize["refName"] = o.RefName
@@ -3371,23 +3541,23 @@ func (o Invoice) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.RefCategory) {
 		toSerialize["refCategory"] = o.RefCategory
 	}
-	if !IsNil(o.ResourceId) {
-		toSerialize["resourceId"] = o.ResourceId
+	if o.ResourceId.IsSet() {
+		toSerialize["resourceId"] = o.ResourceId.Get()
 	}
-	if !IsNil(o.ResourceUuid) {
-		toSerialize["resourceUuid"] = o.ResourceUuid
+	if o.ResourceUuid.IsSet() {
+		toSerialize["resourceUuid"] = o.ResourceUuid.Get()
 	}
-	if !IsNil(o.ResourceType) {
-		toSerialize["resourceType"] = o.ResourceType
+	if o.ResourceType.IsSet() {
+		toSerialize["resourceType"] = o.ResourceType.Get()
 	}
-	if !IsNil(o.ResourceName) {
-		toSerialize["resourceName"] = o.ResourceName
+	if o.ResourceName.IsSet() {
+		toSerialize["resourceName"] = o.ResourceName.Get()
 	}
-	if !IsNil(o.ResourceExternalId) {
-		toSerialize["resourceExternalId"] = o.ResourceExternalId
+	if o.ResourceExternalId.IsSet() {
+		toSerialize["resourceExternalId"] = o.ResourceExternalId.Get()
 	}
-	if !IsNil(o.ResourceInternalId) {
-		toSerialize["resourceInternalId"] = o.ResourceInternalId
+	if o.ResourceInternalId.IsSet() {
+		toSerialize["resourceInternalId"] = o.ResourceInternalId.Get()
 	}
 	if !IsNil(o.Interval) {
 		toSerialize["interval"] = o.Interval
@@ -3584,8 +3754,8 @@ func (o Invoice) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.OffTime) {
 		toSerialize["offTime"] = o.OffTime
 	}
-	if !IsNil(o.PowerState) {
-		toSerialize["powerState"] = o.PowerState
+	if o.PowerState.IsSet() {
+		toSerialize["powerState"] = o.PowerState.Get()
 	}
 	if !IsNil(o.PowerDate) {
 		toSerialize["powerDate"] = o.PowerDate
@@ -3593,17 +3763,17 @@ func (o Invoice) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.RunningMultiplier) {
 		toSerialize["runningMultiplier"] = o.RunningMultiplier
 	}
-	if !IsNil(o.UsageType) {
-		toSerialize["usageType"] = o.UsageType
+	if o.UsageType.IsSet() {
+		toSerialize["usageType"] = o.UsageType.Get()
 	}
-	if !IsNil(o.UsageCategory) {
-		toSerialize["usageCategory"] = o.UsageCategory
+	if o.UsageCategory.IsSet() {
+		toSerialize["usageCategory"] = o.UsageCategory.Get()
 	}
-	if !IsNil(o.LastCostDate) {
-		toSerialize["lastCostDate"] = o.LastCostDate
+	if o.LastCostDate.IsSet() {
+		toSerialize["lastCostDate"] = o.LastCostDate.Get()
 	}
-	if !IsNil(o.LastActualDate) {
-		toSerialize["lastActualDate"] = o.LastActualDate
+	if o.LastActualDate.IsSet() {
+		toSerialize["lastActualDate"] = o.LastActualDate.Get()
 	}
 	if !IsNil(o.DateCreated) {
 		toSerialize["dateCreated"] = o.DateCreated

@@ -22,19 +22,19 @@ var _ MappedNullable = &ListCertificates200ResponseCertificatesInner{}
 type ListCertificates200ResponseCertificatesInner struct {
 	Id                   *int64                                            `json:"id,omitempty"`
 	Name                 *string                                           `json:"name,omitempty"`
-	Description          *string                                           `json:"description,omitempty"`
-	DomainName           *string                                           `json:"domainName,omitempty"`
+	Description          NullableString                                    `json:"description,omitempty"`
+	DomainName           NullableString                                    `json:"domainName,omitempty"`
 	AccountId            *int64                                            `json:"accountId,omitempty"`
-	IntegrationId        *int64                                            `json:"integrationId,omitempty"`
+	IntegrationId        NullableInt64                                     `json:"integrationId,omitempty"`
 	Enabled              *bool                                             `json:"enabled,omitempty"`
 	Generated            *bool                                             `json:"generated,omitempty"`
 	Wildcard             *bool                                             `json:"wildcard,omitempty"`
 	SelfSigned           *bool                                             `json:"selfSigned,omitempty"`
 	Type                 *ListCertificates200ResponseCertificatesInnerType `json:"type,omitempty"`
-	Category             *string                                           `json:"category,omitempty"`
-	CommonName           *string                                           `json:"commonName,omitempty"`
-	CertType             *string                                           `json:"certType,omitempty"`
-	KeyFileMD5           *string                                           `json:"keyFileMD5,omitempty"`
+	Category             NullableString                                    `json:"category,omitempty"`
+	CommonName           NullableString                                    `json:"commonName,omitempty"`
+	CertType             NullableString                                    `json:"certType,omitempty"`
+	KeyFileMD5           NullableString                                    `json:"keyFileMD5,omitempty"`
 	AdditionalProperties map[string]interface{}                            `json:",remain"`
 }
 
@@ -121,68 +121,90 @@ func (o *ListCertificates200ResponseCertificatesInner) SetName(v string) {
 	o.Name = &v
 }
 
-// GetDescription returns the Description field value if set, zero value otherwise.
+// GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListCertificates200ResponseCertificatesInner) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
+	if o == nil || IsNil(o.Description.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Description
+	return *o.Description.Get()
 }
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListCertificates200ResponseCertificatesInner) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Description, true
+	return o.Description.Get(), o.Description.IsSet()
 }
 
 // IsSetDescription returns a boolean if a field has been set.
 func (o *ListCertificates200ResponseCertificatesInner) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
+	if o != nil && o.Description.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDescription gets a reference to the given string and assigns it to the Description field.
+// SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *ListCertificates200ResponseCertificatesInner) SetDescription(v string) {
-	o.Description = &v
+	o.Description.Set(&v)
 }
 
-// GetDomainName returns the DomainName field value if set, zero value otherwise.
+// SetDescriptionNil sets the value for Description to be an explicit nil
+func (o *ListCertificates200ResponseCertificatesInner) SetDescriptionNil() {
+	o.Description.Set(nil)
+}
+
+// UnsetDescription ensures that no value is present for Description, not even an explicit nil
+func (o *ListCertificates200ResponseCertificatesInner) UnsetDescription() {
+	o.Description.Unset()
+}
+
+// GetDomainName returns the DomainName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListCertificates200ResponseCertificatesInner) GetDomainName() string {
-	if o == nil || IsNil(o.DomainName) {
+	if o == nil || IsNil(o.DomainName.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.DomainName
+	return *o.DomainName.Get()
 }
 
 // GetDomainNameOk returns a tuple with the DomainName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListCertificates200ResponseCertificatesInner) GetDomainNameOk() (*string, bool) {
-	if o == nil || IsNil(o.DomainName) {
+	if o == nil {
 		return nil, false
 	}
-	return o.DomainName, true
+	return o.DomainName.Get(), o.DomainName.IsSet()
 }
 
 // IsSetDomainName returns a boolean if a field has been set.
 func (o *ListCertificates200ResponseCertificatesInner) IsSetDomainName() bool {
-	if o != nil && !IsNil(o.DomainName) {
+	if o != nil && o.DomainName.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDomainName gets a reference to the given string and assigns it to the DomainName field.
+// SetDomainName gets a reference to the given NullableString and assigns it to the DomainName field.
 func (o *ListCertificates200ResponseCertificatesInner) SetDomainName(v string) {
-	o.DomainName = &v
+	o.DomainName.Set(&v)
+}
+
+// SetDomainNameNil sets the value for DomainName to be an explicit nil
+func (o *ListCertificates200ResponseCertificatesInner) SetDomainNameNil() {
+	o.DomainName.Set(nil)
+}
+
+// UnsetDomainName ensures that no value is present for DomainName, not even an explicit nil
+func (o *ListCertificates200ResponseCertificatesInner) UnsetDomainName() {
+	o.DomainName.Unset()
 }
 
 // GetAccountId returns the AccountId field value if set, zero value otherwise.
@@ -217,36 +239,47 @@ func (o *ListCertificates200ResponseCertificatesInner) SetAccountId(v int64) {
 	o.AccountId = &v
 }
 
-// GetIntegrationId returns the IntegrationId field value if set, zero value otherwise.
+// GetIntegrationId returns the IntegrationId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListCertificates200ResponseCertificatesInner) GetIntegrationId() int64 {
-	if o == nil || IsNil(o.IntegrationId) {
+	if o == nil || IsNil(o.IntegrationId.Get()) {
 		var ret int64
 		return ret
 	}
-	return *o.IntegrationId
+	return *o.IntegrationId.Get()
 }
 
 // GetIntegrationIdOk returns a tuple with the IntegrationId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListCertificates200ResponseCertificatesInner) GetIntegrationIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.IntegrationId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.IntegrationId, true
+	return o.IntegrationId.Get(), o.IntegrationId.IsSet()
 }
 
 // IsSetIntegrationId returns a boolean if a field has been set.
 func (o *ListCertificates200ResponseCertificatesInner) IsSetIntegrationId() bool {
-	if o != nil && !IsNil(o.IntegrationId) {
+	if o != nil && o.IntegrationId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetIntegrationId gets a reference to the given int64 and assigns it to the IntegrationId field.
+// SetIntegrationId gets a reference to the given NullableInt64 and assigns it to the IntegrationId field.
 func (o *ListCertificates200ResponseCertificatesInner) SetIntegrationId(v int64) {
-	o.IntegrationId = &v
+	o.IntegrationId.Set(&v)
+}
+
+// SetIntegrationIdNil sets the value for IntegrationId to be an explicit nil
+func (o *ListCertificates200ResponseCertificatesInner) SetIntegrationIdNil() {
+	o.IntegrationId.Set(nil)
+}
+
+// UnsetIntegrationId ensures that no value is present for IntegrationId, not even an explicit nil
+func (o *ListCertificates200ResponseCertificatesInner) UnsetIntegrationId() {
+	o.IntegrationId.Unset()
 }
 
 // GetEnabled returns the Enabled field value if set, zero value otherwise.
@@ -409,132 +442,176 @@ func (o *ListCertificates200ResponseCertificatesInner) SetType(v ListCertificate
 	o.Type = &v
 }
 
-// GetCategory returns the Category field value if set, zero value otherwise.
+// GetCategory returns the Category field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListCertificates200ResponseCertificatesInner) GetCategory() string {
-	if o == nil || IsNil(o.Category) {
+	if o == nil || IsNil(o.Category.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Category
+	return *o.Category.Get()
 }
 
 // GetCategoryOk returns a tuple with the Category field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListCertificates200ResponseCertificatesInner) GetCategoryOk() (*string, bool) {
-	if o == nil || IsNil(o.Category) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Category, true
+	return o.Category.Get(), o.Category.IsSet()
 }
 
 // IsSetCategory returns a boolean if a field has been set.
 func (o *ListCertificates200ResponseCertificatesInner) IsSetCategory() bool {
-	if o != nil && !IsNil(o.Category) {
+	if o != nil && o.Category.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCategory gets a reference to the given string and assigns it to the Category field.
+// SetCategory gets a reference to the given NullableString and assigns it to the Category field.
 func (o *ListCertificates200ResponseCertificatesInner) SetCategory(v string) {
-	o.Category = &v
+	o.Category.Set(&v)
 }
 
-// GetCommonName returns the CommonName field value if set, zero value otherwise.
+// SetCategoryNil sets the value for Category to be an explicit nil
+func (o *ListCertificates200ResponseCertificatesInner) SetCategoryNil() {
+	o.Category.Set(nil)
+}
+
+// UnsetCategory ensures that no value is present for Category, not even an explicit nil
+func (o *ListCertificates200ResponseCertificatesInner) UnsetCategory() {
+	o.Category.Unset()
+}
+
+// GetCommonName returns the CommonName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListCertificates200ResponseCertificatesInner) GetCommonName() string {
-	if o == nil || IsNil(o.CommonName) {
+	if o == nil || IsNil(o.CommonName.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.CommonName
+	return *o.CommonName.Get()
 }
 
 // GetCommonNameOk returns a tuple with the CommonName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListCertificates200ResponseCertificatesInner) GetCommonNameOk() (*string, bool) {
-	if o == nil || IsNil(o.CommonName) {
+	if o == nil {
 		return nil, false
 	}
-	return o.CommonName, true
+	return o.CommonName.Get(), o.CommonName.IsSet()
 }
 
 // IsSetCommonName returns a boolean if a field has been set.
 func (o *ListCertificates200ResponseCertificatesInner) IsSetCommonName() bool {
-	if o != nil && !IsNil(o.CommonName) {
+	if o != nil && o.CommonName.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCommonName gets a reference to the given string and assigns it to the CommonName field.
+// SetCommonName gets a reference to the given NullableString and assigns it to the CommonName field.
 func (o *ListCertificates200ResponseCertificatesInner) SetCommonName(v string) {
-	o.CommonName = &v
+	o.CommonName.Set(&v)
 }
 
-// GetCertType returns the CertType field value if set, zero value otherwise.
+// SetCommonNameNil sets the value for CommonName to be an explicit nil
+func (o *ListCertificates200ResponseCertificatesInner) SetCommonNameNil() {
+	o.CommonName.Set(nil)
+}
+
+// UnsetCommonName ensures that no value is present for CommonName, not even an explicit nil
+func (o *ListCertificates200ResponseCertificatesInner) UnsetCommonName() {
+	o.CommonName.Unset()
+}
+
+// GetCertType returns the CertType field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListCertificates200ResponseCertificatesInner) GetCertType() string {
-	if o == nil || IsNil(o.CertType) {
+	if o == nil || IsNil(o.CertType.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.CertType
+	return *o.CertType.Get()
 }
 
 // GetCertTypeOk returns a tuple with the CertType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListCertificates200ResponseCertificatesInner) GetCertTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.CertType) {
+	if o == nil {
 		return nil, false
 	}
-	return o.CertType, true
+	return o.CertType.Get(), o.CertType.IsSet()
 }
 
 // IsSetCertType returns a boolean if a field has been set.
 func (o *ListCertificates200ResponseCertificatesInner) IsSetCertType() bool {
-	if o != nil && !IsNil(o.CertType) {
+	if o != nil && o.CertType.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCertType gets a reference to the given string and assigns it to the CertType field.
+// SetCertType gets a reference to the given NullableString and assigns it to the CertType field.
 func (o *ListCertificates200ResponseCertificatesInner) SetCertType(v string) {
-	o.CertType = &v
+	o.CertType.Set(&v)
 }
 
-// GetKeyFileMD5 returns the KeyFileMD5 field value if set, zero value otherwise.
+// SetCertTypeNil sets the value for CertType to be an explicit nil
+func (o *ListCertificates200ResponseCertificatesInner) SetCertTypeNil() {
+	o.CertType.Set(nil)
+}
+
+// UnsetCertType ensures that no value is present for CertType, not even an explicit nil
+func (o *ListCertificates200ResponseCertificatesInner) UnsetCertType() {
+	o.CertType.Unset()
+}
+
+// GetKeyFileMD5 returns the KeyFileMD5 field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListCertificates200ResponseCertificatesInner) GetKeyFileMD5() string {
-	if o == nil || IsNil(o.KeyFileMD5) {
+	if o == nil || IsNil(o.KeyFileMD5.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.KeyFileMD5
+	return *o.KeyFileMD5.Get()
 }
 
 // GetKeyFileMD5Ok returns a tuple with the KeyFileMD5 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListCertificates200ResponseCertificatesInner) GetKeyFileMD5Ok() (*string, bool) {
-	if o == nil || IsNil(o.KeyFileMD5) {
+	if o == nil {
 		return nil, false
 	}
-	return o.KeyFileMD5, true
+	return o.KeyFileMD5.Get(), o.KeyFileMD5.IsSet()
 }
 
 // IsSetKeyFileMD5 returns a boolean if a field has been set.
 func (o *ListCertificates200ResponseCertificatesInner) IsSetKeyFileMD5() bool {
-	if o != nil && !IsNil(o.KeyFileMD5) {
+	if o != nil && o.KeyFileMD5.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetKeyFileMD5 gets a reference to the given string and assigns it to the KeyFileMD5 field.
+// SetKeyFileMD5 gets a reference to the given NullableString and assigns it to the KeyFileMD5 field.
 func (o *ListCertificates200ResponseCertificatesInner) SetKeyFileMD5(v string) {
-	o.KeyFileMD5 = &v
+	o.KeyFileMD5.Set(&v)
+}
+
+// SetKeyFileMD5Nil sets the value for KeyFileMD5 to be an explicit nil
+func (o *ListCertificates200ResponseCertificatesInner) SetKeyFileMD5Nil() {
+	o.KeyFileMD5.Set(nil)
+}
+
+// UnsetKeyFileMD5 ensures that no value is present for KeyFileMD5, not even an explicit nil
+func (o *ListCertificates200ResponseCertificatesInner) UnsetKeyFileMD5() {
+	o.KeyFileMD5.Unset()
 }
 
 func (o ListCertificates200ResponseCertificatesInner) MarshalJSON() ([]byte, error) {
@@ -553,17 +630,17 @@ func (o ListCertificates200ResponseCertificatesInner) ToMap() (map[string]interf
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !IsNil(o.Description) {
-		toSerialize["description"] = o.Description
+	if o.Description.IsSet() {
+		toSerialize["description"] = o.Description.Get()
 	}
-	if !IsNil(o.DomainName) {
-		toSerialize["domainName"] = o.DomainName
+	if o.DomainName.IsSet() {
+		toSerialize["domainName"] = o.DomainName.Get()
 	}
 	if !IsNil(o.AccountId) {
 		toSerialize["accountId"] = o.AccountId
 	}
-	if !IsNil(o.IntegrationId) {
-		toSerialize["integrationId"] = o.IntegrationId
+	if o.IntegrationId.IsSet() {
+		toSerialize["integrationId"] = o.IntegrationId.Get()
 	}
 	if !IsNil(o.Enabled) {
 		toSerialize["enabled"] = o.Enabled
@@ -580,17 +657,17 @@ func (o ListCertificates200ResponseCertificatesInner) ToMap() (map[string]interf
 	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type
 	}
-	if !IsNil(o.Category) {
-		toSerialize["category"] = o.Category
+	if o.Category.IsSet() {
+		toSerialize["category"] = o.Category.Get()
 	}
-	if !IsNil(o.CommonName) {
-		toSerialize["commonName"] = o.CommonName
+	if o.CommonName.IsSet() {
+		toSerialize["commonName"] = o.CommonName.Get()
 	}
-	if !IsNil(o.CertType) {
-		toSerialize["certType"] = o.CertType
+	if o.CertType.IsSet() {
+		toSerialize["certType"] = o.CertType.Get()
 	}
-	if !IsNil(o.KeyFileMD5) {
-		toSerialize["keyFileMD5"] = o.KeyFileMD5
+	if o.KeyFileMD5.IsSet() {
+		toSerialize["keyFileMD5"] = o.KeyFileMD5.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {

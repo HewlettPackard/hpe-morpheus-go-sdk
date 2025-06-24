@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**DefaultRepoAccount** | Pointer to **int32** | Default Git Account to be used when pulling images.  Default behavior is to be anonymous, which does have limits on allowed image pulls from public Docker Repos. | [optional] 
+**DefaultRepoAccount** | Pointer to **NullableInt32** | Default Git Account to be used when pulling images.  Default behavior is to be anonymous, which does have limits on allowed image pulls from public Docker Repos. | [optional] 
 
 ## Methods
 
@@ -50,6 +50,16 @@ SetDefaultRepoAccount sets DefaultRepoAccount field to given value.
 
 HasDefaultRepoAccount returns a boolean if a field has been set.
 
+### SetDefaultRepoAccountNil
+
+`func (o *AddClusterRequestClusterServerConfig) SetDefaultRepoAccountNil(b bool)`
+
+ SetDefaultRepoAccountNil sets the value for DefaultRepoAccount to be an explicit nil
+
+### UnsetDefaultRepoAccount
+`func (o *AddClusterRequestClusterServerConfig) UnsetDefaultRepoAccount()`
+
+UnsetDefaultRepoAccount ensures that no value is present for DefaultRepoAccount, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

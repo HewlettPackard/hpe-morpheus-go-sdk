@@ -5,19 +5,19 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
-**Account** | Pointer to **string** |  | [optional] 
+**Account** | Pointer to **NullableString** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Labels** | Pointer to **[]string** |  | [optional] 
 **Code** | Pointer to **string** |  | [optional] 
 **Type** | Pointer to [**ListBackupSettings200ResponseBackupSettingsDefaultSchedule**](ListBackupSettings200ResponseBackupSettingsDefaultSchedule.md) |  | [optional] 
-**ExternalId** | Pointer to **string** |  | [optional] 
-**ExternalType** | Pointer to **string** |  | [optional] 
-**DeploymentId** | Pointer to **string** |  | [optional] 
-**Status** | Pointer to **string** |  | [optional] 
+**ExternalId** | Pointer to **NullableString** |  | [optional] 
+**ExternalType** | Pointer to **NullableString** |  | [optional] 
+**DeploymentId** | Pointer to **NullableString** |  | [optional] 
+**Status** | Pointer to **NullableString** |  | [optional] 
 **File** | Pointer to [**ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile**](ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile.md) |  | [optional] 
 **Config** | Pointer to **map[string]interface{}** |  | [optional] 
-**CreatedBy** | Pointer to **string** |  | [optional] 
-**UpdatedBy** | Pointer to **string** |  | [optional] 
+**CreatedBy** | Pointer to **NullableString** |  | [optional] 
+**UpdatedBy** | Pointer to **NullableString** |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
 
@@ -90,6 +90,16 @@ SetAccount sets Account field to given value.
 
 HasAccount returns a boolean if a field has been set.
 
+### SetAccountNil
+
+`func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) SetAccountNil(b bool)`
+
+ SetAccountNil sets the value for Account to be an explicit nil
+
+### UnsetAccount
+`func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) UnsetAccount()`
+
+UnsetAccount ensures that no value is present for Account, not even an explicit nil
 ### GetName
 
 `func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) GetName() string`
@@ -140,6 +150,16 @@ SetLabels sets Labels field to given value.
 
 HasLabels returns a boolean if a field has been set.
 
+### SetLabelsNil
+
+`func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) SetLabelsNil(b bool)`
+
+ SetLabelsNil sets the value for Labels to be an explicit nil
+
+### UnsetLabels
+`func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) UnsetLabels()`
+
+UnsetLabels ensures that no value is present for Labels, not even an explicit nil
 ### GetCode
 
 `func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) GetCode() string`
@@ -215,6 +235,16 @@ SetExternalId sets ExternalId field to given value.
 
 HasExternalId returns a boolean if a field has been set.
 
+### SetExternalIdNil
+
+`func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) SetExternalIdNil(b bool)`
+
+ SetExternalIdNil sets the value for ExternalId to be an explicit nil
+
+### UnsetExternalId
+`func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) UnsetExternalId()`
+
+UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
 ### GetExternalType
 
 `func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) GetExternalType() string`
@@ -240,6 +270,16 @@ SetExternalType sets ExternalType field to given value.
 
 HasExternalType returns a boolean if a field has been set.
 
+### SetExternalTypeNil
+
+`func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) SetExternalTypeNil(b bool)`
+
+ SetExternalTypeNil sets the value for ExternalType to be an explicit nil
+
+### UnsetExternalType
+`func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) UnsetExternalType()`
+
+UnsetExternalType ensures that no value is present for ExternalType, not even an explicit nil
 ### GetDeploymentId
 
 `func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) GetDeploymentId() string`
@@ -265,6 +305,16 @@ SetDeploymentId sets DeploymentId field to given value.
 
 HasDeploymentId returns a boolean if a field has been set.
 
+### SetDeploymentIdNil
+
+`func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) SetDeploymentIdNil(b bool)`
+
+ SetDeploymentIdNil sets the value for DeploymentId to be an explicit nil
+
+### UnsetDeploymentId
+`func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) UnsetDeploymentId()`
+
+UnsetDeploymentId ensures that no value is present for DeploymentId, not even an explicit nil
 ### GetStatus
 
 `func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) GetStatus() string`
@@ -290,6 +340,16 @@ SetStatus sets Status field to given value.
 
 HasStatus returns a boolean if a field has been set.
 
+### SetStatusNil
+
+`func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) SetStatusNil(b bool)`
+
+ SetStatusNil sets the value for Status to be an explicit nil
+
+### UnsetStatus
+`func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) UnsetStatus()`
+
+UnsetStatus ensures that no value is present for Status, not even an explicit nil
 ### GetFile
 
 `func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) GetFile() ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile`
@@ -365,6 +425,16 @@ SetCreatedBy sets CreatedBy field to given value.
 
 HasCreatedBy returns a boolean if a field has been set.
 
+### SetCreatedByNil
+
+`func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) SetCreatedByNil(b bool)`
+
+ SetCreatedByNil sets the value for CreatedBy to be an explicit nil
+
+### UnsetCreatedBy
+`func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) UnsetCreatedBy()`
+
+UnsetCreatedBy ensures that no value is present for CreatedBy, not even an explicit nil
 ### GetUpdatedBy
 
 `func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) GetUpdatedBy() string`
@@ -390,6 +460,16 @@ SetUpdatedBy sets UpdatedBy field to given value.
 
 HasUpdatedBy returns a boolean if a field has been set.
 
+### SetUpdatedByNil
+
+`func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) SetUpdatedByNil(b bool)`
+
+ SetUpdatedByNil sets the value for UpdatedBy to be an explicit nil
+
+### UnsetUpdatedBy
+`func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) UnsetUpdatedBy()`
+
+UnsetUpdatedBy ensures that no value is present for UpdatedBy, not even an explicit nil
 ### GetDateCreated
 
 `func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) GetDateCreated() time.Time`

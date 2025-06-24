@@ -8,9 +8,9 @@ Name | Type | Description | Notes
 **Name** | Pointer to **string** |  | [optional] 
 **CpuTime** | Pointer to **int64** |  | [optional] 
 **BlockedTime** | Pointer to **int64** |  | [optional] 
-**LockName** | Pointer to **string** |  | [optional] 
+**LockName** | Pointer to **NullableString** |  | [optional] 
 **LockOwnerId** | Pointer to **int64** |  | [optional] 
-**LockOwnerName** | Pointer to **string** |  | [optional] 
+**LockOwnerName** | Pointer to **NullableString** |  | [optional] 
 **State** | Pointer to **string** |  | [optional] 
 **WaitedCount** | Pointer to **int64** |  | [optional] 
 **WaitedTime** | Pointer to **int64** |  | [optional] 
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **IsSuspended** | Pointer to **bool** |  | [optional] 
 **LockedMonitors** | Pointer to **[]map[string]interface{}** |  | [optional] 
 **LockedSynchronizers** | Pointer to **[]map[string]interface{}** |  | [optional] 
-**LockInfo** | Pointer to **string** |  | [optional] 
+**LockInfo** | Pointer to **NullableString** |  | [optional] 
 **CurrentLines** | Pointer to **string** |  | [optional] 
 **CpuPercent** | Pointer to **float32** |  | [optional] 
 
@@ -166,6 +166,16 @@ SetLockName sets LockName field to given value.
 
 HasLockName returns a boolean if a field has been set.
 
+### SetLockNameNil
+
+`func (o *ListHealth200ResponseAllOfHealthThreadsBusyThreadsInner) SetLockNameNil(b bool)`
+
+ SetLockNameNil sets the value for LockName to be an explicit nil
+
+### UnsetLockName
+`func (o *ListHealth200ResponseAllOfHealthThreadsBusyThreadsInner) UnsetLockName()`
+
+UnsetLockName ensures that no value is present for LockName, not even an explicit nil
 ### GetLockOwnerId
 
 `func (o *ListHealth200ResponseAllOfHealthThreadsBusyThreadsInner) GetLockOwnerId() int64`
@@ -216,6 +226,16 @@ SetLockOwnerName sets LockOwnerName field to given value.
 
 HasLockOwnerName returns a boolean if a field has been set.
 
+### SetLockOwnerNameNil
+
+`func (o *ListHealth200ResponseAllOfHealthThreadsBusyThreadsInner) SetLockOwnerNameNil(b bool)`
+
+ SetLockOwnerNameNil sets the value for LockOwnerName to be an explicit nil
+
+### UnsetLockOwnerName
+`func (o *ListHealth200ResponseAllOfHealthThreadsBusyThreadsInner) UnsetLockOwnerName()`
+
+UnsetLockOwnerName ensures that no value is present for LockOwnerName, not even an explicit nil
 ### GetState
 
 `func (o *ListHealth200ResponseAllOfHealthThreadsBusyThreadsInner) GetState() string`
@@ -366,6 +386,16 @@ SetLockedMonitors sets LockedMonitors field to given value.
 
 HasLockedMonitors returns a boolean if a field has been set.
 
+### SetLockedMonitorsNil
+
+`func (o *ListHealth200ResponseAllOfHealthThreadsBusyThreadsInner) SetLockedMonitorsNil(b bool)`
+
+ SetLockedMonitorsNil sets the value for LockedMonitors to be an explicit nil
+
+### UnsetLockedMonitors
+`func (o *ListHealth200ResponseAllOfHealthThreadsBusyThreadsInner) UnsetLockedMonitors()`
+
+UnsetLockedMonitors ensures that no value is present for LockedMonitors, not even an explicit nil
 ### GetLockedSynchronizers
 
 `func (o *ListHealth200ResponseAllOfHealthThreadsBusyThreadsInner) GetLockedSynchronizers() []map[string]interface{}`
@@ -391,6 +421,16 @@ SetLockedSynchronizers sets LockedSynchronizers field to given value.
 
 HasLockedSynchronizers returns a boolean if a field has been set.
 
+### SetLockedSynchronizersNil
+
+`func (o *ListHealth200ResponseAllOfHealthThreadsBusyThreadsInner) SetLockedSynchronizersNil(b bool)`
+
+ SetLockedSynchronizersNil sets the value for LockedSynchronizers to be an explicit nil
+
+### UnsetLockedSynchronizers
+`func (o *ListHealth200ResponseAllOfHealthThreadsBusyThreadsInner) UnsetLockedSynchronizers()`
+
+UnsetLockedSynchronizers ensures that no value is present for LockedSynchronizers, not even an explicit nil
 ### GetLockInfo
 
 `func (o *ListHealth200ResponseAllOfHealthThreadsBusyThreadsInner) GetLockInfo() string`
@@ -416,6 +456,16 @@ SetLockInfo sets LockInfo field to given value.
 
 HasLockInfo returns a boolean if a field has been set.
 
+### SetLockInfoNil
+
+`func (o *ListHealth200ResponseAllOfHealthThreadsBusyThreadsInner) SetLockInfoNil(b bool)`
+
+ SetLockInfoNil sets the value for LockInfo to be an explicit nil
+
+### UnsetLockInfo
+`func (o *ListHealth200ResponseAllOfHealthThreadsBusyThreadsInner) UnsetLockInfo()`
+
+UnsetLockInfo ensures that no value is present for LockInfo, not even an explicit nil
 ### GetCurrentLines
 
 `func (o *ListHealth200ResponseAllOfHealthThreadsBusyThreadsInner) GetCurrentLines() string`

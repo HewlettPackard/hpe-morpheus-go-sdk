@@ -21,19 +21,19 @@ var _ MappedNullable = &ListTenantSubtenantGroups200ResponseAllOfGroupsInner{}
 
 // ListTenantSubtenantGroups200ResponseAllOfGroupsInner struct for ListTenantSubtenantGroups200ResponseAllOfGroupsInner
 type ListTenantSubtenantGroups200ResponseAllOfGroupsInner struct {
-	Id                   *int64                                                                   `json:"id,omitempty"`
-	Name                 *string                                                                  `json:"name,omitempty"`
-	Code                 *string                                                                  `json:"code,omitempty"`
-	Location             *string                                                                  `json:"location,omitempty"`
-	AccountId            *int64                                                                   `json:"accountId,omitempty"`
-	Visibility           *string                                                                  `json:"visibility,omitempty"`
-	Active               *bool                                                                    `json:"active,omitempty"`
-	DateCreated          *time.Time                                                               `json:"dateCreated,omitempty"`
-	LastUpdated          *time.Time                                                               `json:"lastUpdated,omitempty"`
-	Zones                []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"zones,omitempty"`
-	Stats                *ListGroups200ResponseAllOfGroupsInnerStats                              `json:"stats,omitempty"`
-	ServerCount          *int64                                                                   `json:"serverCount,omitempty"`
-	AdditionalProperties map[string]interface{}                                                   `json:",remain"`
+	Id                   *int64                                              `json:"id,omitempty"`
+	Name                 *string                                             `json:"name,omitempty"`
+	Code                 NullableString                                      `json:"code,omitempty"`
+	Location             NullableString                                      `json:"location,omitempty"`
+	AccountId            *int64                                              `json:"accountId,omitempty"`
+	Visibility           *string                                             `json:"visibility,omitempty"`
+	Active               *bool                                               `json:"active,omitempty"`
+	DateCreated          *time.Time                                          `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                          `json:"lastUpdated,omitempty"`
+	Zones                []GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"zones,omitempty"`
+	Stats                *ListGroups200ResponseAllOfGroupsInnerStats         `json:"stats,omitempty"`
+	ServerCount          *int64                                              `json:"serverCount,omitempty"`
+	AdditionalProperties map[string]interface{}                              `json:",remain"`
 }
 
 type _ListTenantSubtenantGroups200ResponseAllOfGroupsInner ListTenantSubtenantGroups200ResponseAllOfGroupsInner
@@ -119,68 +119,90 @@ func (o *ListTenantSubtenantGroups200ResponseAllOfGroupsInner) SetName(v string)
 	o.Name = &v
 }
 
-// GetCode returns the Code field value if set, zero value otherwise.
+// GetCode returns the Code field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListTenantSubtenantGroups200ResponseAllOfGroupsInner) GetCode() string {
-	if o == nil || IsNil(o.Code) {
+	if o == nil || IsNil(o.Code.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Code
+	return *o.Code.Get()
 }
 
 // GetCodeOk returns a tuple with the Code field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListTenantSubtenantGroups200ResponseAllOfGroupsInner) GetCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.Code) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Code, true
+	return o.Code.Get(), o.Code.IsSet()
 }
 
 // IsSetCode returns a boolean if a field has been set.
 func (o *ListTenantSubtenantGroups200ResponseAllOfGroupsInner) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
+	if o != nil && o.Code.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCode gets a reference to the given string and assigns it to the Code field.
+// SetCode gets a reference to the given NullableString and assigns it to the Code field.
 func (o *ListTenantSubtenantGroups200ResponseAllOfGroupsInner) SetCode(v string) {
-	o.Code = &v
+	o.Code.Set(&v)
 }
 
-// GetLocation returns the Location field value if set, zero value otherwise.
+// SetCodeNil sets the value for Code to be an explicit nil
+func (o *ListTenantSubtenantGroups200ResponseAllOfGroupsInner) SetCodeNil() {
+	o.Code.Set(nil)
+}
+
+// UnsetCode ensures that no value is present for Code, not even an explicit nil
+func (o *ListTenantSubtenantGroups200ResponseAllOfGroupsInner) UnsetCode() {
+	o.Code.Unset()
+}
+
+// GetLocation returns the Location field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListTenantSubtenantGroups200ResponseAllOfGroupsInner) GetLocation() string {
-	if o == nil || IsNil(o.Location) {
+	if o == nil || IsNil(o.Location.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Location
+	return *o.Location.Get()
 }
 
 // GetLocationOk returns a tuple with the Location field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListTenantSubtenantGroups200ResponseAllOfGroupsInner) GetLocationOk() (*string, bool) {
-	if o == nil || IsNil(o.Location) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Location, true
+	return o.Location.Get(), o.Location.IsSet()
 }
 
 // IsSetLocation returns a boolean if a field has been set.
 func (o *ListTenantSubtenantGroups200ResponseAllOfGroupsInner) IsSetLocation() bool {
-	if o != nil && !IsNil(o.Location) {
+	if o != nil && o.Location.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetLocation gets a reference to the given string and assigns it to the Location field.
+// SetLocation gets a reference to the given NullableString and assigns it to the Location field.
 func (o *ListTenantSubtenantGroups200ResponseAllOfGroupsInner) SetLocation(v string) {
-	o.Location = &v
+	o.Location.Set(&v)
+}
+
+// SetLocationNil sets the value for Location to be an explicit nil
+func (o *ListTenantSubtenantGroups200ResponseAllOfGroupsInner) SetLocationNil() {
+	o.Location.Set(nil)
+}
+
+// UnsetLocation ensures that no value is present for Location, not even an explicit nil
+func (o *ListTenantSubtenantGroups200ResponseAllOfGroupsInner) UnsetLocation() {
+	o.Location.Unset()
 }
 
 // GetAccountId returns the AccountId field value if set, zero value otherwise.
@@ -344,9 +366,9 @@ func (o *ListTenantSubtenantGroups200ResponseAllOfGroupsInner) SetLastUpdated(v 
 }
 
 // GetZones returns the Zones field value if set, zero value otherwise.
-func (o *ListTenantSubtenantGroups200ResponseAllOfGroupsInner) GetZones() []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *ListTenantSubtenantGroups200ResponseAllOfGroupsInner) GetZones() []GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.Zones) {
-		var ret []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret []GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return o.Zones
@@ -354,7 +376,7 @@ func (o *ListTenantSubtenantGroups200ResponseAllOfGroupsInner) GetZones() []List
 
 // GetZonesOk returns a tuple with the Zones field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListTenantSubtenantGroups200ResponseAllOfGroupsInner) GetZonesOk() ([]ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *ListTenantSubtenantGroups200ResponseAllOfGroupsInner) GetZonesOk() ([]GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.Zones) {
 		return nil, false
 	}
@@ -370,8 +392,8 @@ func (o *ListTenantSubtenantGroups200ResponseAllOfGroupsInner) IsSetZones() bool
 	return false
 }
 
-// SetZones gets a reference to the given []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the Zones field.
-func (o *ListTenantSubtenantGroups200ResponseAllOfGroupsInner) SetZones(v []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetZones gets a reference to the given []GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Zones field.
+func (o *ListTenantSubtenantGroups200ResponseAllOfGroupsInner) SetZones(v []GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.Zones = v
 }
 
@@ -455,11 +477,11 @@ func (o ListTenantSubtenantGroups200ResponseAllOfGroupsInner) ToMap() (map[strin
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !IsNil(o.Code) {
-		toSerialize["code"] = o.Code
+	if o.Code.IsSet() {
+		toSerialize["code"] = o.Code.Get()
 	}
-	if !IsNil(o.Location) {
-		toSerialize["location"] = o.Location
+	if o.Location.IsSet() {
+		toSerialize["location"] = o.Location.Get()
 	}
 	if !IsNil(o.AccountId) {
 		toSerialize["accountId"] = o.AccountId

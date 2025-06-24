@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **Cost** | Pointer to **float32** |  | [optional] 
 **Price** | Pointer to **float32** |  | [optional] 
 **Quantity** | Pointer to **int64** |  | [optional] 
-**DatastoreId** | Pointer to **string** |  | [optional] 
+**DatastoreId** | Pointer to **NullableString** |  | [optional] 
 **VolumeType** | Pointer to **string** |  | [optional] 
 **Datastore** | Pointer to **string** |  | [optional] 
 
@@ -208,6 +208,16 @@ SetDatastoreId sets DatastoreId field to given value.
 
 HasDatastoreId returns a boolean if a field has been set.
 
+### SetDatastoreIdNil
+
+`func (o *GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInnerApplicablePricesInnerPricesInner) SetDatastoreIdNil(b bool)`
+
+ SetDatastoreIdNil sets the value for DatastoreId to be an explicit nil
+
+### UnsetDatastoreId
+`func (o *GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInnerApplicablePricesInnerPricesInner) UnsetDatastoreId()`
+
+UnsetDatastoreId ensures that no value is present for DatastoreId, not even an explicit nil
 ### GetVolumeType
 
 `func (o *GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInnerApplicablePricesInnerPricesInner) GetVolumeType() string`

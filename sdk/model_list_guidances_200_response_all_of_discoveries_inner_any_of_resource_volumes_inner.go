@@ -33,7 +33,7 @@ type ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceVolumesInner stru
 	DatastoreId          *int64                 `json:"datastoreId,omitempty"`
 	MaxStorage           *int64                 `json:"maxStorage,omitempty"`
 	DisplayOrder         *int64                 `json:"displayOrder,omitempty"`
-	MaxIOPS              *string                `json:"maxIOPS,omitempty"`
+	MaxIOPS              NullableString         `json:"maxIOPS,omitempty"`
 	Uuid                 *string                `json:"uuid,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
@@ -473,36 +473,47 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceVolumesInner)
 	o.DisplayOrder = &v
 }
 
-// GetMaxIOPS returns the MaxIOPS field value if set, zero value otherwise.
+// GetMaxIOPS returns the MaxIOPS field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceVolumesInner) GetMaxIOPS() string {
-	if o == nil || IsNil(o.MaxIOPS) {
+	if o == nil || IsNil(o.MaxIOPS.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.MaxIOPS
+	return *o.MaxIOPS.Get()
 }
 
 // GetMaxIOPSOk returns a tuple with the MaxIOPS field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceVolumesInner) GetMaxIOPSOk() (*string, bool) {
-	if o == nil || IsNil(o.MaxIOPS) {
+	if o == nil {
 		return nil, false
 	}
-	return o.MaxIOPS, true
+	return o.MaxIOPS.Get(), o.MaxIOPS.IsSet()
 }
 
 // IsSetMaxIOPS returns a boolean if a field has been set.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceVolumesInner) IsSetMaxIOPS() bool {
-	if o != nil && !IsNil(o.MaxIOPS) {
+	if o != nil && o.MaxIOPS.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetMaxIOPS gets a reference to the given string and assigns it to the MaxIOPS field.
+// SetMaxIOPS gets a reference to the given NullableString and assigns it to the MaxIOPS field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceVolumesInner) SetMaxIOPS(v string) {
-	o.MaxIOPS = &v
+	o.MaxIOPS.Set(&v)
+}
+
+// SetMaxIOPSNil sets the value for MaxIOPS to be an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceVolumesInner) SetMaxIOPSNil() {
+	o.MaxIOPS.Set(nil)
+}
+
+// UnsetMaxIOPS ensures that no value is present for MaxIOPS, not even an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceVolumesInner) UnsetMaxIOPS() {
+	o.MaxIOPS.Unset()
 }
 
 // GetUuid returns the Uuid field value if set, zero value otherwise.
@@ -586,8 +597,8 @@ func (o ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceVolumesInner) 
 	if !IsNil(o.DisplayOrder) {
 		toSerialize["displayOrder"] = o.DisplayOrder
 	}
-	if !IsNil(o.MaxIOPS) {
-		toSerialize["maxIOPS"] = o.MaxIOPS
+	if o.MaxIOPS.IsSet() {
+		toSerialize["maxIOPS"] = o.MaxIOPS.Get()
 	}
 	if !IsNil(o.Uuid) {
 		toSerialize["uuid"] = o.Uuid

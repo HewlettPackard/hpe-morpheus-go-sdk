@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **DefaultType** | Pointer to **bool** |  | [optional] 
 **CustomLabel** | Pointer to **bool** |  | [optional] 
 **CustomSize** | Pointer to **bool** |  | [optional] 
-**CustomSizeOptions** | Pointer to **string** |  | [optional] 
+**CustomSizeOptions** | Pointer to **NullableString** |  | [optional] 
 **ConfigurableIOPS** | Pointer to **bool** |  | [optional] 
 **HasDatastore** | Pointer to **bool** |  | [optional] 
 **Category** | Pointer to **string** |  | [optional] 
@@ -263,6 +263,16 @@ SetCustomSizeOptions sets CustomSizeOptions field to given value.
 
 HasCustomSizeOptions returns a boolean if a field has been set.
 
+### SetCustomSizeOptionsNil
+
+`func (o *ListStorageVolumeTypes200ResponseAllOfStorageVolumeTypesInner) SetCustomSizeOptionsNil(b bool)`
+
+ SetCustomSizeOptionsNil sets the value for CustomSizeOptions to be an explicit nil
+
+### UnsetCustomSizeOptions
+`func (o *ListStorageVolumeTypes200ResponseAllOfStorageVolumeTypesInner) UnsetCustomSizeOptions()`
+
+UnsetCustomSizeOptions ensures that no value is present for CustomSizeOptions, not even an explicit nil
 ### GetConfigurableIOPS
 
 `func (o *ListStorageVolumeTypes200ResponseAllOfStorageVolumeTypesInner) GetConfigurableIOPS() bool`
@@ -388,6 +398,16 @@ SetOptionTypes sets OptionTypes field to given value.
 
 HasOptionTypes returns a boolean if a field has been set.
 
+### SetOptionTypesNil
+
+`func (o *ListStorageVolumeTypes200ResponseAllOfStorageVolumeTypesInner) SetOptionTypesNil(b bool)`
+
+ SetOptionTypesNil sets the value for OptionTypes to be an explicit nil
+
+### UnsetOptionTypes
+`func (o *ListStorageVolumeTypes200ResponseAllOfStorageVolumeTypesInner) UnsetOptionTypes()`
+
+UnsetOptionTypes ensures that no value is present for OptionTypes, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -20,8 +20,8 @@ var _ MappedNullable = &ListServicePlans200ResponseAllOfServicePlansInnerConfig{
 
 // ListServicePlans200ResponseAllOfServicePlansInnerConfig struct for ListServicePlans200ResponseAllOfServicePlansInnerConfig
 type ListServicePlans200ResponseAllOfServicePlansInnerConfig struct {
-	StorageSizeType      *string                                                        `json:"storageSizeType,omitempty"`
-	MemorySizeType       *string                                                        `json:"memorySizeType,omitempty"`
+	StorageSizeType      NullableString                                                 `json:"storageSizeType,omitempty"`
+	MemorySizeType       NullableString                                                 `json:"memorySizeType,omitempty"`
 	Ranges               *ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges `json:"ranges,omitempty"`
 	AdditionalProperties map[string]interface{}                                         `json:",remain"`
 }
@@ -45,68 +45,90 @@ func NewListServicePlans200ResponseAllOfServicePlansInnerConfigWithDefaults() *L
 	return &this
 }
 
-// GetStorageSizeType returns the StorageSizeType field value if set, zero value otherwise.
+// GetStorageSizeType returns the StorageSizeType field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfig) GetStorageSizeType() string {
-	if o == nil || IsNil(o.StorageSizeType) {
+	if o == nil || IsNil(o.StorageSizeType.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.StorageSizeType
+	return *o.StorageSizeType.Get()
 }
 
 // GetStorageSizeTypeOk returns a tuple with the StorageSizeType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfig) GetStorageSizeTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.StorageSizeType) {
+	if o == nil {
 		return nil, false
 	}
-	return o.StorageSizeType, true
+	return o.StorageSizeType.Get(), o.StorageSizeType.IsSet()
 }
 
 // IsSetStorageSizeType returns a boolean if a field has been set.
 func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfig) IsSetStorageSizeType() bool {
-	if o != nil && !IsNil(o.StorageSizeType) {
+	if o != nil && o.StorageSizeType.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetStorageSizeType gets a reference to the given string and assigns it to the StorageSizeType field.
+// SetStorageSizeType gets a reference to the given NullableString and assigns it to the StorageSizeType field.
 func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfig) SetStorageSizeType(v string) {
-	o.StorageSizeType = &v
+	o.StorageSizeType.Set(&v)
 }
 
-// GetMemorySizeType returns the MemorySizeType field value if set, zero value otherwise.
+// SetStorageSizeTypeNil sets the value for StorageSizeType to be an explicit nil
+func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfig) SetStorageSizeTypeNil() {
+	o.StorageSizeType.Set(nil)
+}
+
+// UnsetStorageSizeType ensures that no value is present for StorageSizeType, not even an explicit nil
+func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfig) UnsetStorageSizeType() {
+	o.StorageSizeType.Unset()
+}
+
+// GetMemorySizeType returns the MemorySizeType field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfig) GetMemorySizeType() string {
-	if o == nil || IsNil(o.MemorySizeType) {
+	if o == nil || IsNil(o.MemorySizeType.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.MemorySizeType
+	return *o.MemorySizeType.Get()
 }
 
 // GetMemorySizeTypeOk returns a tuple with the MemorySizeType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfig) GetMemorySizeTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.MemorySizeType) {
+	if o == nil {
 		return nil, false
 	}
-	return o.MemorySizeType, true
+	return o.MemorySizeType.Get(), o.MemorySizeType.IsSet()
 }
 
 // IsSetMemorySizeType returns a boolean if a field has been set.
 func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfig) IsSetMemorySizeType() bool {
-	if o != nil && !IsNil(o.MemorySizeType) {
+	if o != nil && o.MemorySizeType.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetMemorySizeType gets a reference to the given string and assigns it to the MemorySizeType field.
+// SetMemorySizeType gets a reference to the given NullableString and assigns it to the MemorySizeType field.
 func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfig) SetMemorySizeType(v string) {
-	o.MemorySizeType = &v
+	o.MemorySizeType.Set(&v)
+}
+
+// SetMemorySizeTypeNil sets the value for MemorySizeType to be an explicit nil
+func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfig) SetMemorySizeTypeNil() {
+	o.MemorySizeType.Set(nil)
+}
+
+// UnsetMemorySizeType ensures that no value is present for MemorySizeType, not even an explicit nil
+func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfig) UnsetMemorySizeType() {
+	o.MemorySizeType.Unset()
 }
 
 // GetRanges returns the Ranges field value if set, zero value otherwise.
@@ -151,11 +173,11 @@ func (o ListServicePlans200ResponseAllOfServicePlansInnerConfig) MarshalJSON() (
 
 func (o ListServicePlans200ResponseAllOfServicePlansInnerConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.StorageSizeType) {
-		toSerialize["storageSizeType"] = o.StorageSizeType
+	if o.StorageSizeType.IsSet() {
+		toSerialize["storageSizeType"] = o.StorageSizeType.Get()
 	}
-	if !IsNil(o.MemorySizeType) {
-		toSerialize["memorySizeType"] = o.MemorySizeType
+	if o.MemorySizeType.IsSet() {
+		toSerialize["memorySizeType"] = o.MemorySizeType.Get()
 	}
 	if !IsNil(o.Ranges) {
 		toSerialize["ranges"] = o.Ranges

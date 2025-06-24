@@ -28,11 +28,11 @@ type GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsI
 	// Array of label strings, can be used for filtering.
 	Labels                   []string                                                                                             `json:"labels,omitempty"`
 	InstanceVersion          *string                                                                                              `json:"instanceVersion,omitempty"`
-	Description              *string                                                                                              `json:"description,omitempty"`
+	Description              NullableString                                                                                       `json:"description,omitempty"`
 	Creatable                *bool                                                                                                `json:"creatable,omitempty"`
-	MemoryRequirement        *int64                                                                                               `json:"memoryRequirement,omitempty"`
+	MemoryRequirement        NullableInt64                                                                                        `json:"memoryRequirement,omitempty"`
 	SortOrder                *int64                                                                                               `json:"sortOrder,omitempty"`
-	SupportsConvertToManaged *bool                                                                                                `json:"supportsConvertToManaged,omitempty"`
+	SupportsConvertToManaged NullableBool                                                                                         `json:"supportsConvertToManaged,omitempty"`
 	ProvisionType            *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionType        `json:"provisionType,omitempty"`
 	TaskSets                 []map[string]interface{}                                                                             `json:"taskSets,omitempty"`
 	ContainerTypes           []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInner `json:"containerTypes,omitempty"`
@@ -42,7 +42,7 @@ type GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsI
 	EnvironmentVariables     []map[string]interface{}                                                                             `json:"environmentVariables,omitempty"`
 	PriceSets                []map[string]interface{}                                                                             `json:"priceSets,omitempty"`
 	SpecTemplates            []map[string]interface{}                                                                             `json:"specTemplates,omitempty"`
-	TfvarSecret              *string                                                                                              `json:"tfvarSecret,omitempty"`
+	TfvarSecret              NullableString                                                                                       `json:"tfvarSecret,omitempty"`
 	Permissions              *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerPermissions          `json:"permissions,omitempty"`
 	AdditionalProperties     map[string]interface{}                                                                               `json:",remain"`
 }
@@ -226,9 +226,9 @@ func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayo
 	o.Name = &v
 }
 
-// GetLabels returns the Labels field value if set, zero value otherwise.
+// GetLabels returns the Labels field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner) GetLabels() []string {
-	if o == nil || IsNil(o.Labels) {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -237,6 +237,7 @@ func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayo
 
 // GetLabelsOk returns a tuple with the Labels field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner) GetLabelsOk() ([]string, bool) {
 	if o == nil || IsNil(o.Labels) {
 		return nil, false
@@ -290,36 +291,47 @@ func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayo
 	o.InstanceVersion = &v
 }
 
-// GetDescription returns the Description field value if set, zero value otherwise.
+// GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
+	if o == nil || IsNil(o.Description.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Description
+	return *o.Description.Get()
 }
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Description, true
+	return o.Description.Get(), o.Description.IsSet()
 }
 
 // IsSetDescription returns a boolean if a field has been set.
 func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
+	if o != nil && o.Description.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDescription gets a reference to the given string and assigns it to the Description field.
+// SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner) SetDescription(v string) {
-	o.Description = &v
+	o.Description.Set(&v)
+}
+
+// SetDescriptionNil sets the value for Description to be an explicit nil
+func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner) SetDescriptionNil() {
+	o.Description.Set(nil)
+}
+
+// UnsetDescription ensures that no value is present for Description, not even an explicit nil
+func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner) UnsetDescription() {
+	o.Description.Unset()
 }
 
 // GetCreatable returns the Creatable field value if set, zero value otherwise.
@@ -354,36 +366,47 @@ func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayo
 	o.Creatable = &v
 }
 
-// GetMemoryRequirement returns the MemoryRequirement field value if set, zero value otherwise.
+// GetMemoryRequirement returns the MemoryRequirement field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner) GetMemoryRequirement() int64 {
-	if o == nil || IsNil(o.MemoryRequirement) {
+	if o == nil || IsNil(o.MemoryRequirement.Get()) {
 		var ret int64
 		return ret
 	}
-	return *o.MemoryRequirement
+	return *o.MemoryRequirement.Get()
 }
 
 // GetMemoryRequirementOk returns a tuple with the MemoryRequirement field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner) GetMemoryRequirementOk() (*int64, bool) {
-	if o == nil || IsNil(o.MemoryRequirement) {
+	if o == nil {
 		return nil, false
 	}
-	return o.MemoryRequirement, true
+	return o.MemoryRequirement.Get(), o.MemoryRequirement.IsSet()
 }
 
 // IsSetMemoryRequirement returns a boolean if a field has been set.
 func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner) IsSetMemoryRequirement() bool {
-	if o != nil && !IsNil(o.MemoryRequirement) {
+	if o != nil && o.MemoryRequirement.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetMemoryRequirement gets a reference to the given int64 and assigns it to the MemoryRequirement field.
+// SetMemoryRequirement gets a reference to the given NullableInt64 and assigns it to the MemoryRequirement field.
 func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner) SetMemoryRequirement(v int64) {
-	o.MemoryRequirement = &v
+	o.MemoryRequirement.Set(&v)
+}
+
+// SetMemoryRequirementNil sets the value for MemoryRequirement to be an explicit nil
+func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner) SetMemoryRequirementNil() {
+	o.MemoryRequirement.Set(nil)
+}
+
+// UnsetMemoryRequirement ensures that no value is present for MemoryRequirement, not even an explicit nil
+func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner) UnsetMemoryRequirement() {
+	o.MemoryRequirement.Unset()
 }
 
 // GetSortOrder returns the SortOrder field value if set, zero value otherwise.
@@ -418,36 +441,47 @@ func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayo
 	o.SortOrder = &v
 }
 
-// GetSupportsConvertToManaged returns the SupportsConvertToManaged field value if set, zero value otherwise.
+// GetSupportsConvertToManaged returns the SupportsConvertToManaged field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner) GetSupportsConvertToManaged() bool {
-	if o == nil || IsNil(o.SupportsConvertToManaged) {
+	if o == nil || IsNil(o.SupportsConvertToManaged.Get()) {
 		var ret bool
 		return ret
 	}
-	return *o.SupportsConvertToManaged
+	return *o.SupportsConvertToManaged.Get()
 }
 
 // GetSupportsConvertToManagedOk returns a tuple with the SupportsConvertToManaged field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner) GetSupportsConvertToManagedOk() (*bool, bool) {
-	if o == nil || IsNil(o.SupportsConvertToManaged) {
+	if o == nil {
 		return nil, false
 	}
-	return o.SupportsConvertToManaged, true
+	return o.SupportsConvertToManaged.Get(), o.SupportsConvertToManaged.IsSet()
 }
 
 // IsSetSupportsConvertToManaged returns a boolean if a field has been set.
 func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner) IsSetSupportsConvertToManaged() bool {
-	if o != nil && !IsNil(o.SupportsConvertToManaged) {
+	if o != nil && o.SupportsConvertToManaged.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetSupportsConvertToManaged gets a reference to the given bool and assigns it to the SupportsConvertToManaged field.
+// SetSupportsConvertToManaged gets a reference to the given NullableBool and assigns it to the SupportsConvertToManaged field.
 func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner) SetSupportsConvertToManaged(v bool) {
-	o.SupportsConvertToManaged = &v
+	o.SupportsConvertToManaged.Set(&v)
+}
+
+// SetSupportsConvertToManagedNil sets the value for SupportsConvertToManaged to be an explicit nil
+func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner) SetSupportsConvertToManagedNil() {
+	o.SupportsConvertToManaged.Set(nil)
+}
+
+// UnsetSupportsConvertToManaged ensures that no value is present for SupportsConvertToManaged, not even an explicit nil
+func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner) UnsetSupportsConvertToManaged() {
+	o.SupportsConvertToManaged.Unset()
 }
 
 // GetProvisionType returns the ProvisionType field value if set, zero value otherwise.
@@ -482,9 +516,9 @@ func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayo
 	o.ProvisionType = &v
 }
 
-// GetTaskSets returns the TaskSets field value if set, zero value otherwise.
+// GetTaskSets returns the TaskSets field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner) GetTaskSets() []map[string]interface{} {
-	if o == nil || IsNil(o.TaskSets) {
+	if o == nil {
 		var ret []map[string]interface{}
 		return ret
 	}
@@ -493,6 +527,7 @@ func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayo
 
 // GetTaskSetsOk returns a tuple with the TaskSets field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner) GetTaskSetsOk() ([]map[string]interface{}, bool) {
 	if o == nil || IsNil(o.TaskSets) {
 		return nil, false
@@ -546,9 +581,9 @@ func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayo
 	o.ContainerTypes = v
 }
 
-// GetMounts returns the Mounts field value if set, zero value otherwise.
+// GetMounts returns the Mounts field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner) GetMounts() []map[string]interface{} {
-	if o == nil || IsNil(o.Mounts) {
+	if o == nil {
 		var ret []map[string]interface{}
 		return ret
 	}
@@ -557,6 +592,7 @@ func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayo
 
 // GetMountsOk returns a tuple with the Mounts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner) GetMountsOk() ([]map[string]interface{}, bool) {
 	if o == nil || IsNil(o.Mounts) {
 		return nil, false
@@ -578,9 +614,9 @@ func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayo
 	o.Mounts = v
 }
 
-// GetPorts returns the Ports field value if set, zero value otherwise.
+// GetPorts returns the Ports field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner) GetPorts() []map[string]interface{} {
-	if o == nil || IsNil(o.Ports) {
+	if o == nil {
 		var ret []map[string]interface{}
 		return ret
 	}
@@ -589,6 +625,7 @@ func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayo
 
 // GetPortsOk returns a tuple with the Ports field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner) GetPortsOk() ([]map[string]interface{}, bool) {
 	if o == nil || IsNil(o.Ports) {
 		return nil, false
@@ -610,9 +647,9 @@ func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayo
 	o.Ports = v
 }
 
-// GetOptionTypes returns the OptionTypes field value if set, zero value otherwise.
+// GetOptionTypes returns the OptionTypes field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner) GetOptionTypes() []map[string]interface{} {
-	if o == nil || IsNil(o.OptionTypes) {
+	if o == nil {
 		var ret []map[string]interface{}
 		return ret
 	}
@@ -621,6 +658,7 @@ func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayo
 
 // GetOptionTypesOk returns a tuple with the OptionTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner) GetOptionTypesOk() ([]map[string]interface{}, bool) {
 	if o == nil || IsNil(o.OptionTypes) {
 		return nil, false
@@ -642,9 +680,9 @@ func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayo
 	o.OptionTypes = v
 }
 
-// GetEnvironmentVariables returns the EnvironmentVariables field value if set, zero value otherwise.
+// GetEnvironmentVariables returns the EnvironmentVariables field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner) GetEnvironmentVariables() []map[string]interface{} {
-	if o == nil || IsNil(o.EnvironmentVariables) {
+	if o == nil {
 		var ret []map[string]interface{}
 		return ret
 	}
@@ -653,6 +691,7 @@ func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayo
 
 // GetEnvironmentVariablesOk returns a tuple with the EnvironmentVariables field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner) GetEnvironmentVariablesOk() ([]map[string]interface{}, bool) {
 	if o == nil || IsNil(o.EnvironmentVariables) {
 		return nil, false
@@ -674,9 +713,9 @@ func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayo
 	o.EnvironmentVariables = v
 }
 
-// GetPriceSets returns the PriceSets field value if set, zero value otherwise.
+// GetPriceSets returns the PriceSets field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner) GetPriceSets() []map[string]interface{} {
-	if o == nil || IsNil(o.PriceSets) {
+	if o == nil {
 		var ret []map[string]interface{}
 		return ret
 	}
@@ -685,6 +724,7 @@ func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayo
 
 // GetPriceSetsOk returns a tuple with the PriceSets field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner) GetPriceSetsOk() ([]map[string]interface{}, bool) {
 	if o == nil || IsNil(o.PriceSets) {
 		return nil, false
@@ -706,9 +746,9 @@ func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayo
 	o.PriceSets = v
 }
 
-// GetSpecTemplates returns the SpecTemplates field value if set, zero value otherwise.
+// GetSpecTemplates returns the SpecTemplates field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner) GetSpecTemplates() []map[string]interface{} {
-	if o == nil || IsNil(o.SpecTemplates) {
+	if o == nil {
 		var ret []map[string]interface{}
 		return ret
 	}
@@ -717,6 +757,7 @@ func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayo
 
 // GetSpecTemplatesOk returns a tuple with the SpecTemplates field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner) GetSpecTemplatesOk() ([]map[string]interface{}, bool) {
 	if o == nil || IsNil(o.SpecTemplates) {
 		return nil, false
@@ -738,36 +779,47 @@ func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayo
 	o.SpecTemplates = v
 }
 
-// GetTfvarSecret returns the TfvarSecret field value if set, zero value otherwise.
+// GetTfvarSecret returns the TfvarSecret field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner) GetTfvarSecret() string {
-	if o == nil || IsNil(o.TfvarSecret) {
+	if o == nil || IsNil(o.TfvarSecret.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.TfvarSecret
+	return *o.TfvarSecret.Get()
 }
 
 // GetTfvarSecretOk returns a tuple with the TfvarSecret field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner) GetTfvarSecretOk() (*string, bool) {
-	if o == nil || IsNil(o.TfvarSecret) {
+	if o == nil {
 		return nil, false
 	}
-	return o.TfvarSecret, true
+	return o.TfvarSecret.Get(), o.TfvarSecret.IsSet()
 }
 
 // IsSetTfvarSecret returns a boolean if a field has been set.
 func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner) IsSetTfvarSecret() bool {
-	if o != nil && !IsNil(o.TfvarSecret) {
+	if o != nil && o.TfvarSecret.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetTfvarSecret gets a reference to the given string and assigns it to the TfvarSecret field.
+// SetTfvarSecret gets a reference to the given NullableString and assigns it to the TfvarSecret field.
 func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner) SetTfvarSecret(v string) {
-	o.TfvarSecret = &v
+	o.TfvarSecret.Set(&v)
+}
+
+// SetTfvarSecretNil sets the value for TfvarSecret to be an explicit nil
+func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner) SetTfvarSecretNil() {
+	o.TfvarSecret.Set(nil)
+}
+
+// UnsetTfvarSecret ensures that no value is present for TfvarSecret, not even an explicit nil
+func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner) UnsetTfvarSecret() {
+	o.TfvarSecret.Unset()
 }
 
 // GetPermissions returns the Permissions field value if set, zero value otherwise.
@@ -827,56 +879,56 @@ func (o GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayou
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !IsNil(o.Labels) {
+	if o.Labels != nil {
 		toSerialize["labels"] = o.Labels
 	}
 	if !IsNil(o.InstanceVersion) {
 		toSerialize["instanceVersion"] = o.InstanceVersion
 	}
-	if !IsNil(o.Description) {
-		toSerialize["description"] = o.Description
+	if o.Description.IsSet() {
+		toSerialize["description"] = o.Description.Get()
 	}
 	if !IsNil(o.Creatable) {
 		toSerialize["creatable"] = o.Creatable
 	}
-	if !IsNil(o.MemoryRequirement) {
-		toSerialize["memoryRequirement"] = o.MemoryRequirement
+	if o.MemoryRequirement.IsSet() {
+		toSerialize["memoryRequirement"] = o.MemoryRequirement.Get()
 	}
 	if !IsNil(o.SortOrder) {
 		toSerialize["sortOrder"] = o.SortOrder
 	}
-	if !IsNil(o.SupportsConvertToManaged) {
-		toSerialize["supportsConvertToManaged"] = o.SupportsConvertToManaged
+	if o.SupportsConvertToManaged.IsSet() {
+		toSerialize["supportsConvertToManaged"] = o.SupportsConvertToManaged.Get()
 	}
 	if !IsNil(o.ProvisionType) {
 		toSerialize["provisionType"] = o.ProvisionType
 	}
-	if !IsNil(o.TaskSets) {
+	if o.TaskSets != nil {
 		toSerialize["taskSets"] = o.TaskSets
 	}
 	if !IsNil(o.ContainerTypes) {
 		toSerialize["containerTypes"] = o.ContainerTypes
 	}
-	if !IsNil(o.Mounts) {
+	if o.Mounts != nil {
 		toSerialize["mounts"] = o.Mounts
 	}
-	if !IsNil(o.Ports) {
+	if o.Ports != nil {
 		toSerialize["ports"] = o.Ports
 	}
-	if !IsNil(o.OptionTypes) {
+	if o.OptionTypes != nil {
 		toSerialize["optionTypes"] = o.OptionTypes
 	}
-	if !IsNil(o.EnvironmentVariables) {
+	if o.EnvironmentVariables != nil {
 		toSerialize["environmentVariables"] = o.EnvironmentVariables
 	}
-	if !IsNil(o.PriceSets) {
+	if o.PriceSets != nil {
 		toSerialize["priceSets"] = o.PriceSets
 	}
-	if !IsNil(o.SpecTemplates) {
+	if o.SpecTemplates != nil {
 		toSerialize["specTemplates"] = o.SpecTemplates
 	}
-	if !IsNil(o.TfvarSecret) {
-		toSerialize["tfvarSecret"] = o.TfvarSecret
+	if o.TfvarSecret.IsSet() {
+		toSerialize["tfvarSecret"] = o.TfvarSecret.Get()
 	}
 	if !IsNil(o.Permissions) {
 		toSerialize["permissions"] = o.Permissions

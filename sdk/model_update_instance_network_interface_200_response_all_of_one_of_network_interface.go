@@ -22,39 +22,39 @@ var _ MappedNullable = &UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetwo
 type UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface struct {
 	Id                   *int64                                       `json:"id,omitempty"`
 	Addresses            []map[string]interface{}                     `json:"addresses,omitempty"`
-	InternalId           *string                                      `json:"internalId,omitempty"`
-	InterfaceId          *string                                      `json:"interfaceId,omitempty"`
+	InternalId           NullableString                               `json:"internalId,omitempty"`
+	InterfaceId          NullableString                               `json:"interfaceId,omitempty"`
 	DisplayOrder         *int64                                       `json:"displayOrder,omitempty"`
 	NetworkPool          map[string]interface{}                       `json:"networkPool,omitempty"`
 	Dhcp                 *bool                                        `json:"dhcp,omitempty"`
 	Uuid                 *string                                      `json:"uuid,omitempty"`
 	Active               *bool                                        `json:"active,omitempty"`
 	UniqueId             *string                                      `json:"uniqueId,omitempty"`
-	Subnet               *string                                      `json:"subnet,omitempty"`
+	Subnet               NullableString                               `json:"subnet,omitempty"`
 	ReplaceHostRecord    *bool                                        `json:"replaceHostRecord,omitempty"`
 	IpMode               *string                                      `json:"ipMode,omitempty"`
-	Version              *string                                      `json:"version,omitempty"`
-	IpSubnet             *string                                      `json:"ipSubnet,omitempty"`
-	Config               *string                                      `json:"config,omitempty"`
+	Version              NullableString                               `json:"version,omitempty"`
+	IpSubnet             NullableString                               `json:"ipSubnet,omitempty"`
+	Config               NullableString                               `json:"config,omitempty"`
 	PublicIpAddress      *string                                      `json:"publicIpAddress,omitempty"`
-	FabricId             *string                                      `json:"fabricId,omitempty"`
-	Ipv6Subnet           *string                                      `json:"ipv6Subnet,omitempty"`
+	FabricId             NullableString                               `json:"fabricId,omitempty"`
+	Ipv6Subnet           NullableString                               `json:"ipv6Subnet,omitempty"`
 	MacAddress           *string                                      `json:"macAddress,omitempty"`
-	PublicIpv6Address    *string                                      `json:"publicIpv6Address,omitempty"`
-	RefType              *string                                      `json:"refType,omitempty"`
-	NetworkGroup         *string                                      `json:"networkGroup,omitempty"`
-	RefId                *string                                      `json:"refId,omitempty"`
-	NetworkDomain        *string                                      `json:"networkDomain,omitempty"`
+	PublicIpv6Address    NullableString                               `json:"publicIpv6Address,omitempty"`
+	RefType              NullableString                               `json:"refType,omitempty"`
+	NetworkGroup         NullableString                               `json:"networkGroup,omitempty"`
+	RefId                NullableString                               `json:"refId,omitempty"`
+	NetworkDomain        NullableString                               `json:"networkDomain,omitempty"`
 	Name                 *string                                      `json:"name,omitempty"`
 	PrimaryInterface     *bool                                        `json:"primaryInterface,omitempty"`
 	NetworkPoolIPv6      map[string]interface{}                       `json:"networkPoolIPv6,omitempty"`
 	Network              *GetAlerts200ResponseAllOfChecksInnerAccount `json:"network,omitempty"`
-	VlanId               *string                                      `json:"vlanId,omitempty"`
+	VlanId               NullableString                               `json:"vlanId,omitempty"`
 	Type                 *GetAlerts200ResponseAllOfChecksInnerAccount `json:"type,omitempty"`
-	NetworkPosition      *string                                      `json:"networkPosition,omitempty"`
+	NetworkPosition      NullableString                               `json:"networkPosition,omitempty"`
 	PoolAssigned         *bool                                        `json:"poolAssigned,omitempty"`
 	Description          *string                                      `json:"description,omitempty"`
-	ExternalType         *string                                      `json:"externalType,omitempty"`
+	ExternalType         NullableString                               `json:"externalType,omitempty"`
 	ExternalId           *string                                      `json:"externalId,omitempty"`
 	AdditionalProperties map[string]interface{}                       `json:",remain"`
 }
@@ -142,68 +142,90 @@ func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) Se
 	o.Addresses = v
 }
 
-// GetInternalId returns the InternalId field value if set, zero value otherwise.
+// GetInternalId returns the InternalId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) GetInternalId() string {
-	if o == nil || IsNil(o.InternalId) {
+	if o == nil || IsNil(o.InternalId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.InternalId
+	return *o.InternalId.Get()
 }
 
 // GetInternalIdOk returns a tuple with the InternalId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) GetInternalIdOk() (*string, bool) {
-	if o == nil || IsNil(o.InternalId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.InternalId, true
+	return o.InternalId.Get(), o.InternalId.IsSet()
 }
 
 // IsSetInternalId returns a boolean if a field has been set.
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) IsSetInternalId() bool {
-	if o != nil && !IsNil(o.InternalId) {
+	if o != nil && o.InternalId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetInternalId gets a reference to the given string and assigns it to the InternalId field.
+// SetInternalId gets a reference to the given NullableString and assigns it to the InternalId field.
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) SetInternalId(v string) {
-	o.InternalId = &v
+	o.InternalId.Set(&v)
 }
 
-// GetInterfaceId returns the InterfaceId field value if set, zero value otherwise.
+// SetInternalIdNil sets the value for InternalId to be an explicit nil
+func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) SetInternalIdNil() {
+	o.InternalId.Set(nil)
+}
+
+// UnsetInternalId ensures that no value is present for InternalId, not even an explicit nil
+func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) UnsetInternalId() {
+	o.InternalId.Unset()
+}
+
+// GetInterfaceId returns the InterfaceId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) GetInterfaceId() string {
-	if o == nil || IsNil(o.InterfaceId) {
+	if o == nil || IsNil(o.InterfaceId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.InterfaceId
+	return *o.InterfaceId.Get()
 }
 
 // GetInterfaceIdOk returns a tuple with the InterfaceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) GetInterfaceIdOk() (*string, bool) {
-	if o == nil || IsNil(o.InterfaceId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.InterfaceId, true
+	return o.InterfaceId.Get(), o.InterfaceId.IsSet()
 }
 
 // IsSetInterfaceId returns a boolean if a field has been set.
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) IsSetInterfaceId() bool {
-	if o != nil && !IsNil(o.InterfaceId) {
+	if o != nil && o.InterfaceId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetInterfaceId gets a reference to the given string and assigns it to the InterfaceId field.
+// SetInterfaceId gets a reference to the given NullableString and assigns it to the InterfaceId field.
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) SetInterfaceId(v string) {
-	o.InterfaceId = &v
+	o.InterfaceId.Set(&v)
+}
+
+// SetInterfaceIdNil sets the value for InterfaceId to be an explicit nil
+func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) SetInterfaceIdNil() {
+	o.InterfaceId.Set(nil)
+}
+
+// UnsetInterfaceId ensures that no value is present for InterfaceId, not even an explicit nil
+func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) UnsetInterfaceId() {
+	o.InterfaceId.Unset()
 }
 
 // GetDisplayOrder returns the DisplayOrder field value if set, zero value otherwise.
@@ -238,9 +260,9 @@ func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) Se
 	o.DisplayOrder = &v
 }
 
-// GetNetworkPool returns the NetworkPool field value if set, zero value otherwise.
+// GetNetworkPool returns the NetworkPool field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) GetNetworkPool() map[string]interface{} {
-	if o == nil || IsNil(o.NetworkPool) {
+	if o == nil {
 		var ret map[string]interface{}
 		return ret
 	}
@@ -249,6 +271,7 @@ func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) Ge
 
 // GetNetworkPoolOk returns a tuple with the NetworkPool field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) GetNetworkPoolOk() (map[string]interface{}, bool) {
 	if o == nil || IsNil(o.NetworkPool) {
 		return map[string]interface{}{}, false
@@ -398,36 +421,47 @@ func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) Se
 	o.UniqueId = &v
 }
 
-// GetSubnet returns the Subnet field value if set, zero value otherwise.
+// GetSubnet returns the Subnet field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) GetSubnet() string {
-	if o == nil || IsNil(o.Subnet) {
+	if o == nil || IsNil(o.Subnet.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Subnet
+	return *o.Subnet.Get()
 }
 
 // GetSubnetOk returns a tuple with the Subnet field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) GetSubnetOk() (*string, bool) {
-	if o == nil || IsNil(o.Subnet) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Subnet, true
+	return o.Subnet.Get(), o.Subnet.IsSet()
 }
 
 // IsSetSubnet returns a boolean if a field has been set.
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) IsSetSubnet() bool {
-	if o != nil && !IsNil(o.Subnet) {
+	if o != nil && o.Subnet.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetSubnet gets a reference to the given string and assigns it to the Subnet field.
+// SetSubnet gets a reference to the given NullableString and assigns it to the Subnet field.
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) SetSubnet(v string) {
-	o.Subnet = &v
+	o.Subnet.Set(&v)
+}
+
+// SetSubnetNil sets the value for Subnet to be an explicit nil
+func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) SetSubnetNil() {
+	o.Subnet.Set(nil)
+}
+
+// UnsetSubnet ensures that no value is present for Subnet, not even an explicit nil
+func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) UnsetSubnet() {
+	o.Subnet.Unset()
 }
 
 // GetReplaceHostRecord returns the ReplaceHostRecord field value if set, zero value otherwise.
@@ -494,100 +528,133 @@ func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) Se
 	o.IpMode = &v
 }
 
-// GetVersion returns the Version field value if set, zero value otherwise.
+// GetVersion returns the Version field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) GetVersion() string {
-	if o == nil || IsNil(o.Version) {
+	if o == nil || IsNil(o.Version.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Version
+	return *o.Version.Get()
 }
 
 // GetVersionOk returns a tuple with the Version field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) GetVersionOk() (*string, bool) {
-	if o == nil || IsNil(o.Version) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Version, true
+	return o.Version.Get(), o.Version.IsSet()
 }
 
 // IsSetVersion returns a boolean if a field has been set.
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) IsSetVersion() bool {
-	if o != nil && !IsNil(o.Version) {
+	if o != nil && o.Version.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetVersion gets a reference to the given string and assigns it to the Version field.
+// SetVersion gets a reference to the given NullableString and assigns it to the Version field.
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) SetVersion(v string) {
-	o.Version = &v
+	o.Version.Set(&v)
 }
 
-// GetIpSubnet returns the IpSubnet field value if set, zero value otherwise.
+// SetVersionNil sets the value for Version to be an explicit nil
+func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) SetVersionNil() {
+	o.Version.Set(nil)
+}
+
+// UnsetVersion ensures that no value is present for Version, not even an explicit nil
+func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) UnsetVersion() {
+	o.Version.Unset()
+}
+
+// GetIpSubnet returns the IpSubnet field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) GetIpSubnet() string {
-	if o == nil || IsNil(o.IpSubnet) {
+	if o == nil || IsNil(o.IpSubnet.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.IpSubnet
+	return *o.IpSubnet.Get()
 }
 
 // GetIpSubnetOk returns a tuple with the IpSubnet field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) GetIpSubnetOk() (*string, bool) {
-	if o == nil || IsNil(o.IpSubnet) {
+	if o == nil {
 		return nil, false
 	}
-	return o.IpSubnet, true
+	return o.IpSubnet.Get(), o.IpSubnet.IsSet()
 }
 
 // IsSetIpSubnet returns a boolean if a field has been set.
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) IsSetIpSubnet() bool {
-	if o != nil && !IsNil(o.IpSubnet) {
+	if o != nil && o.IpSubnet.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetIpSubnet gets a reference to the given string and assigns it to the IpSubnet field.
+// SetIpSubnet gets a reference to the given NullableString and assigns it to the IpSubnet field.
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) SetIpSubnet(v string) {
-	o.IpSubnet = &v
+	o.IpSubnet.Set(&v)
 }
 
-// GetConfig returns the Config field value if set, zero value otherwise.
+// SetIpSubnetNil sets the value for IpSubnet to be an explicit nil
+func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) SetIpSubnetNil() {
+	o.IpSubnet.Set(nil)
+}
+
+// UnsetIpSubnet ensures that no value is present for IpSubnet, not even an explicit nil
+func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) UnsetIpSubnet() {
+	o.IpSubnet.Unset()
+}
+
+// GetConfig returns the Config field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) GetConfig() string {
-	if o == nil || IsNil(o.Config) {
+	if o == nil || IsNil(o.Config.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Config
+	return *o.Config.Get()
 }
 
 // GetConfigOk returns a tuple with the Config field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) GetConfigOk() (*string, bool) {
-	if o == nil || IsNil(o.Config) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Config, true
+	return o.Config.Get(), o.Config.IsSet()
 }
 
 // IsSetConfig returns a boolean if a field has been set.
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
+	if o != nil && o.Config.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetConfig gets a reference to the given string and assigns it to the Config field.
+// SetConfig gets a reference to the given NullableString and assigns it to the Config field.
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) SetConfig(v string) {
-	o.Config = &v
+	o.Config.Set(&v)
+}
+
+// SetConfigNil sets the value for Config to be an explicit nil
+func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) SetConfigNil() {
+	o.Config.Set(nil)
+}
+
+// UnsetConfig ensures that no value is present for Config, not even an explicit nil
+func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) UnsetConfig() {
+	o.Config.Unset()
 }
 
 // GetPublicIpAddress returns the PublicIpAddress field value if set, zero value otherwise.
@@ -622,68 +689,90 @@ func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) Se
 	o.PublicIpAddress = &v
 }
 
-// GetFabricId returns the FabricId field value if set, zero value otherwise.
+// GetFabricId returns the FabricId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) GetFabricId() string {
-	if o == nil || IsNil(o.FabricId) {
+	if o == nil || IsNil(o.FabricId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.FabricId
+	return *o.FabricId.Get()
 }
 
 // GetFabricIdOk returns a tuple with the FabricId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) GetFabricIdOk() (*string, bool) {
-	if o == nil || IsNil(o.FabricId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.FabricId, true
+	return o.FabricId.Get(), o.FabricId.IsSet()
 }
 
 // IsSetFabricId returns a boolean if a field has been set.
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) IsSetFabricId() bool {
-	if o != nil && !IsNil(o.FabricId) {
+	if o != nil && o.FabricId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetFabricId gets a reference to the given string and assigns it to the FabricId field.
+// SetFabricId gets a reference to the given NullableString and assigns it to the FabricId field.
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) SetFabricId(v string) {
-	o.FabricId = &v
+	o.FabricId.Set(&v)
 }
 
-// GetIpv6Subnet returns the Ipv6Subnet field value if set, zero value otherwise.
+// SetFabricIdNil sets the value for FabricId to be an explicit nil
+func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) SetFabricIdNil() {
+	o.FabricId.Set(nil)
+}
+
+// UnsetFabricId ensures that no value is present for FabricId, not even an explicit nil
+func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) UnsetFabricId() {
+	o.FabricId.Unset()
+}
+
+// GetIpv6Subnet returns the Ipv6Subnet field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) GetIpv6Subnet() string {
-	if o == nil || IsNil(o.Ipv6Subnet) {
+	if o == nil || IsNil(o.Ipv6Subnet.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Ipv6Subnet
+	return *o.Ipv6Subnet.Get()
 }
 
 // GetIpv6SubnetOk returns a tuple with the Ipv6Subnet field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) GetIpv6SubnetOk() (*string, bool) {
-	if o == nil || IsNil(o.Ipv6Subnet) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Ipv6Subnet, true
+	return o.Ipv6Subnet.Get(), o.Ipv6Subnet.IsSet()
 }
 
 // IsSetIpv6Subnet returns a boolean if a field has been set.
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) IsSetIpv6Subnet() bool {
-	if o != nil && !IsNil(o.Ipv6Subnet) {
+	if o != nil && o.Ipv6Subnet.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetIpv6Subnet gets a reference to the given string and assigns it to the Ipv6Subnet field.
+// SetIpv6Subnet gets a reference to the given NullableString and assigns it to the Ipv6Subnet field.
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) SetIpv6Subnet(v string) {
-	o.Ipv6Subnet = &v
+	o.Ipv6Subnet.Set(&v)
+}
+
+// SetIpv6SubnetNil sets the value for Ipv6Subnet to be an explicit nil
+func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) SetIpv6SubnetNil() {
+	o.Ipv6Subnet.Set(nil)
+}
+
+// UnsetIpv6Subnet ensures that no value is present for Ipv6Subnet, not even an explicit nil
+func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) UnsetIpv6Subnet() {
+	o.Ipv6Subnet.Unset()
 }
 
 // GetMacAddress returns the MacAddress field value if set, zero value otherwise.
@@ -718,164 +807,219 @@ func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) Se
 	o.MacAddress = &v
 }
 
-// GetPublicIpv6Address returns the PublicIpv6Address field value if set, zero value otherwise.
+// GetPublicIpv6Address returns the PublicIpv6Address field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) GetPublicIpv6Address() string {
-	if o == nil || IsNil(o.PublicIpv6Address) {
+	if o == nil || IsNil(o.PublicIpv6Address.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.PublicIpv6Address
+	return *o.PublicIpv6Address.Get()
 }
 
 // GetPublicIpv6AddressOk returns a tuple with the PublicIpv6Address field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) GetPublicIpv6AddressOk() (*string, bool) {
-	if o == nil || IsNil(o.PublicIpv6Address) {
+	if o == nil {
 		return nil, false
 	}
-	return o.PublicIpv6Address, true
+	return o.PublicIpv6Address.Get(), o.PublicIpv6Address.IsSet()
 }
 
 // IsSetPublicIpv6Address returns a boolean if a field has been set.
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) IsSetPublicIpv6Address() bool {
-	if o != nil && !IsNil(o.PublicIpv6Address) {
+	if o != nil && o.PublicIpv6Address.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetPublicIpv6Address gets a reference to the given string and assigns it to the PublicIpv6Address field.
+// SetPublicIpv6Address gets a reference to the given NullableString and assigns it to the PublicIpv6Address field.
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) SetPublicIpv6Address(v string) {
-	o.PublicIpv6Address = &v
+	o.PublicIpv6Address.Set(&v)
 }
 
-// GetRefType returns the RefType field value if set, zero value otherwise.
+// SetPublicIpv6AddressNil sets the value for PublicIpv6Address to be an explicit nil
+func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) SetPublicIpv6AddressNil() {
+	o.PublicIpv6Address.Set(nil)
+}
+
+// UnsetPublicIpv6Address ensures that no value is present for PublicIpv6Address, not even an explicit nil
+func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) UnsetPublicIpv6Address() {
+	o.PublicIpv6Address.Unset()
+}
+
+// GetRefType returns the RefType field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) GetRefType() string {
-	if o == nil || IsNil(o.RefType) {
+	if o == nil || IsNil(o.RefType.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.RefType
+	return *o.RefType.Get()
 }
 
 // GetRefTypeOk returns a tuple with the RefType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) GetRefTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.RefType) {
+	if o == nil {
 		return nil, false
 	}
-	return o.RefType, true
+	return o.RefType.Get(), o.RefType.IsSet()
 }
 
 // IsSetRefType returns a boolean if a field has been set.
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) IsSetRefType() bool {
-	if o != nil && !IsNil(o.RefType) {
+	if o != nil && o.RefType.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetRefType gets a reference to the given string and assigns it to the RefType field.
+// SetRefType gets a reference to the given NullableString and assigns it to the RefType field.
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) SetRefType(v string) {
-	o.RefType = &v
+	o.RefType.Set(&v)
 }
 
-// GetNetworkGroup returns the NetworkGroup field value if set, zero value otherwise.
+// SetRefTypeNil sets the value for RefType to be an explicit nil
+func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) SetRefTypeNil() {
+	o.RefType.Set(nil)
+}
+
+// UnsetRefType ensures that no value is present for RefType, not even an explicit nil
+func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) UnsetRefType() {
+	o.RefType.Unset()
+}
+
+// GetNetworkGroup returns the NetworkGroup field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) GetNetworkGroup() string {
-	if o == nil || IsNil(o.NetworkGroup) {
+	if o == nil || IsNil(o.NetworkGroup.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.NetworkGroup
+	return *o.NetworkGroup.Get()
 }
 
 // GetNetworkGroupOk returns a tuple with the NetworkGroup field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) GetNetworkGroupOk() (*string, bool) {
-	if o == nil || IsNil(o.NetworkGroup) {
+	if o == nil {
 		return nil, false
 	}
-	return o.NetworkGroup, true
+	return o.NetworkGroup.Get(), o.NetworkGroup.IsSet()
 }
 
 // IsSetNetworkGroup returns a boolean if a field has been set.
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) IsSetNetworkGroup() bool {
-	if o != nil && !IsNil(o.NetworkGroup) {
+	if o != nil && o.NetworkGroup.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetNetworkGroup gets a reference to the given string and assigns it to the NetworkGroup field.
+// SetNetworkGroup gets a reference to the given NullableString and assigns it to the NetworkGroup field.
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) SetNetworkGroup(v string) {
-	o.NetworkGroup = &v
+	o.NetworkGroup.Set(&v)
 }
 
-// GetRefId returns the RefId field value if set, zero value otherwise.
+// SetNetworkGroupNil sets the value for NetworkGroup to be an explicit nil
+func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) SetNetworkGroupNil() {
+	o.NetworkGroup.Set(nil)
+}
+
+// UnsetNetworkGroup ensures that no value is present for NetworkGroup, not even an explicit nil
+func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) UnsetNetworkGroup() {
+	o.NetworkGroup.Unset()
+}
+
+// GetRefId returns the RefId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) GetRefId() string {
-	if o == nil || IsNil(o.RefId) {
+	if o == nil || IsNil(o.RefId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.RefId
+	return *o.RefId.Get()
 }
 
 // GetRefIdOk returns a tuple with the RefId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) GetRefIdOk() (*string, bool) {
-	if o == nil || IsNil(o.RefId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.RefId, true
+	return o.RefId.Get(), o.RefId.IsSet()
 }
 
 // IsSetRefId returns a boolean if a field has been set.
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) IsSetRefId() bool {
-	if o != nil && !IsNil(o.RefId) {
+	if o != nil && o.RefId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetRefId gets a reference to the given string and assigns it to the RefId field.
+// SetRefId gets a reference to the given NullableString and assigns it to the RefId field.
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) SetRefId(v string) {
-	o.RefId = &v
+	o.RefId.Set(&v)
 }
 
-// GetNetworkDomain returns the NetworkDomain field value if set, zero value otherwise.
+// SetRefIdNil sets the value for RefId to be an explicit nil
+func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) SetRefIdNil() {
+	o.RefId.Set(nil)
+}
+
+// UnsetRefId ensures that no value is present for RefId, not even an explicit nil
+func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) UnsetRefId() {
+	o.RefId.Unset()
+}
+
+// GetNetworkDomain returns the NetworkDomain field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) GetNetworkDomain() string {
-	if o == nil || IsNil(o.NetworkDomain) {
+	if o == nil || IsNil(o.NetworkDomain.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.NetworkDomain
+	return *o.NetworkDomain.Get()
 }
 
 // GetNetworkDomainOk returns a tuple with the NetworkDomain field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) GetNetworkDomainOk() (*string, bool) {
-	if o == nil || IsNil(o.NetworkDomain) {
+	if o == nil {
 		return nil, false
 	}
-	return o.NetworkDomain, true
+	return o.NetworkDomain.Get(), o.NetworkDomain.IsSet()
 }
 
 // IsSetNetworkDomain returns a boolean if a field has been set.
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) IsSetNetworkDomain() bool {
-	if o != nil && !IsNil(o.NetworkDomain) {
+	if o != nil && o.NetworkDomain.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetNetworkDomain gets a reference to the given string and assigns it to the NetworkDomain field.
+// SetNetworkDomain gets a reference to the given NullableString and assigns it to the NetworkDomain field.
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) SetNetworkDomain(v string) {
-	o.NetworkDomain = &v
+	o.NetworkDomain.Set(&v)
+}
+
+// SetNetworkDomainNil sets the value for NetworkDomain to be an explicit nil
+func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) SetNetworkDomainNil() {
+	o.NetworkDomain.Set(nil)
+}
+
+// UnsetNetworkDomain ensures that no value is present for NetworkDomain, not even an explicit nil
+func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) UnsetNetworkDomain() {
+	o.NetworkDomain.Unset()
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -942,9 +1086,9 @@ func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) Se
 	o.PrimaryInterface = &v
 }
 
-// GetNetworkPoolIPv6 returns the NetworkPoolIPv6 field value if set, zero value otherwise.
+// GetNetworkPoolIPv6 returns the NetworkPoolIPv6 field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) GetNetworkPoolIPv6() map[string]interface{} {
-	if o == nil || IsNil(o.NetworkPoolIPv6) {
+	if o == nil {
 		var ret map[string]interface{}
 		return ret
 	}
@@ -953,6 +1097,7 @@ func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) Ge
 
 // GetNetworkPoolIPv6Ok returns a tuple with the NetworkPoolIPv6 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) GetNetworkPoolIPv6Ok() (map[string]interface{}, bool) {
 	if o == nil || IsNil(o.NetworkPoolIPv6) {
 		return map[string]interface{}{}, false
@@ -1006,36 +1151,47 @@ func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) Se
 	o.Network = &v
 }
 
-// GetVlanId returns the VlanId field value if set, zero value otherwise.
+// GetVlanId returns the VlanId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) GetVlanId() string {
-	if o == nil || IsNil(o.VlanId) {
+	if o == nil || IsNil(o.VlanId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.VlanId
+	return *o.VlanId.Get()
 }
 
 // GetVlanIdOk returns a tuple with the VlanId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) GetVlanIdOk() (*string, bool) {
-	if o == nil || IsNil(o.VlanId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.VlanId, true
+	return o.VlanId.Get(), o.VlanId.IsSet()
 }
 
 // IsSetVlanId returns a boolean if a field has been set.
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) IsSetVlanId() bool {
-	if o != nil && !IsNil(o.VlanId) {
+	if o != nil && o.VlanId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetVlanId gets a reference to the given string and assigns it to the VlanId field.
+// SetVlanId gets a reference to the given NullableString and assigns it to the VlanId field.
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) SetVlanId(v string) {
-	o.VlanId = &v
+	o.VlanId.Set(&v)
+}
+
+// SetVlanIdNil sets the value for VlanId to be an explicit nil
+func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) SetVlanIdNil() {
+	o.VlanId.Set(nil)
+}
+
+// UnsetVlanId ensures that no value is present for VlanId, not even an explicit nil
+func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) UnsetVlanId() {
+	o.VlanId.Unset()
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
@@ -1070,36 +1226,47 @@ func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) Se
 	o.Type = &v
 }
 
-// GetNetworkPosition returns the NetworkPosition field value if set, zero value otherwise.
+// GetNetworkPosition returns the NetworkPosition field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) GetNetworkPosition() string {
-	if o == nil || IsNil(o.NetworkPosition) {
+	if o == nil || IsNil(o.NetworkPosition.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.NetworkPosition
+	return *o.NetworkPosition.Get()
 }
 
 // GetNetworkPositionOk returns a tuple with the NetworkPosition field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) GetNetworkPositionOk() (*string, bool) {
-	if o == nil || IsNil(o.NetworkPosition) {
+	if o == nil {
 		return nil, false
 	}
-	return o.NetworkPosition, true
+	return o.NetworkPosition.Get(), o.NetworkPosition.IsSet()
 }
 
 // IsSetNetworkPosition returns a boolean if a field has been set.
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) IsSetNetworkPosition() bool {
-	if o != nil && !IsNil(o.NetworkPosition) {
+	if o != nil && o.NetworkPosition.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetNetworkPosition gets a reference to the given string and assigns it to the NetworkPosition field.
+// SetNetworkPosition gets a reference to the given NullableString and assigns it to the NetworkPosition field.
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) SetNetworkPosition(v string) {
-	o.NetworkPosition = &v
+	o.NetworkPosition.Set(&v)
+}
+
+// SetNetworkPositionNil sets the value for NetworkPosition to be an explicit nil
+func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) SetNetworkPositionNil() {
+	o.NetworkPosition.Set(nil)
+}
+
+// UnsetNetworkPosition ensures that no value is present for NetworkPosition, not even an explicit nil
+func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) UnsetNetworkPosition() {
+	o.NetworkPosition.Unset()
 }
 
 // GetPoolAssigned returns the PoolAssigned field value if set, zero value otherwise.
@@ -1166,36 +1333,47 @@ func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) Se
 	o.Description = &v
 }
 
-// GetExternalType returns the ExternalType field value if set, zero value otherwise.
+// GetExternalType returns the ExternalType field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) GetExternalType() string {
-	if o == nil || IsNil(o.ExternalType) {
+	if o == nil || IsNil(o.ExternalType.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ExternalType
+	return *o.ExternalType.Get()
 }
 
 // GetExternalTypeOk returns a tuple with the ExternalType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) GetExternalTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.ExternalType) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ExternalType, true
+	return o.ExternalType.Get(), o.ExternalType.IsSet()
 }
 
 // IsSetExternalType returns a boolean if a field has been set.
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) IsSetExternalType() bool {
-	if o != nil && !IsNil(o.ExternalType) {
+	if o != nil && o.ExternalType.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetExternalType gets a reference to the given string and assigns it to the ExternalType field.
+// SetExternalType gets a reference to the given NullableString and assigns it to the ExternalType field.
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) SetExternalType(v string) {
-	o.ExternalType = &v
+	o.ExternalType.Set(&v)
+}
+
+// SetExternalTypeNil sets the value for ExternalType to be an explicit nil
+func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) SetExternalTypeNil() {
+	o.ExternalType.Set(nil)
+}
+
+// UnsetExternalType ensures that no value is present for ExternalType, not even an explicit nil
+func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) UnsetExternalType() {
+	o.ExternalType.Unset()
 }
 
 // GetExternalId returns the ExternalId field value if set, zero value otherwise.
@@ -1246,16 +1424,16 @@ func (o UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) ToM
 	if !IsNil(o.Addresses) {
 		toSerialize["addresses"] = o.Addresses
 	}
-	if !IsNil(o.InternalId) {
-		toSerialize["internalId"] = o.InternalId
+	if o.InternalId.IsSet() {
+		toSerialize["internalId"] = o.InternalId.Get()
 	}
-	if !IsNil(o.InterfaceId) {
-		toSerialize["interfaceId"] = o.InterfaceId
+	if o.InterfaceId.IsSet() {
+		toSerialize["interfaceId"] = o.InterfaceId.Get()
 	}
 	if !IsNil(o.DisplayOrder) {
 		toSerialize["displayOrder"] = o.DisplayOrder
 	}
-	if !IsNil(o.NetworkPool) {
+	if o.NetworkPool != nil {
 		toSerialize["networkPool"] = o.NetworkPool
 	}
 	if !IsNil(o.Dhcp) {
@@ -1270,8 +1448,8 @@ func (o UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) ToM
 	if !IsNil(o.UniqueId) {
 		toSerialize["uniqueId"] = o.UniqueId
 	}
-	if !IsNil(o.Subnet) {
-		toSerialize["subnet"] = o.Subnet
+	if o.Subnet.IsSet() {
+		toSerialize["subnet"] = o.Subnet.Get()
 	}
 	if !IsNil(o.ReplaceHostRecord) {
 		toSerialize["replaceHostRecord"] = o.ReplaceHostRecord
@@ -1279,41 +1457,41 @@ func (o UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) ToM
 	if !IsNil(o.IpMode) {
 		toSerialize["ipMode"] = o.IpMode
 	}
-	if !IsNil(o.Version) {
-		toSerialize["version"] = o.Version
+	if o.Version.IsSet() {
+		toSerialize["version"] = o.Version.Get()
 	}
-	if !IsNil(o.IpSubnet) {
-		toSerialize["ipSubnet"] = o.IpSubnet
+	if o.IpSubnet.IsSet() {
+		toSerialize["ipSubnet"] = o.IpSubnet.Get()
 	}
-	if !IsNil(o.Config) {
-		toSerialize["config"] = o.Config
+	if o.Config.IsSet() {
+		toSerialize["config"] = o.Config.Get()
 	}
 	if !IsNil(o.PublicIpAddress) {
 		toSerialize["publicIpAddress"] = o.PublicIpAddress
 	}
-	if !IsNil(o.FabricId) {
-		toSerialize["fabricId"] = o.FabricId
+	if o.FabricId.IsSet() {
+		toSerialize["fabricId"] = o.FabricId.Get()
 	}
-	if !IsNil(o.Ipv6Subnet) {
-		toSerialize["ipv6Subnet"] = o.Ipv6Subnet
+	if o.Ipv6Subnet.IsSet() {
+		toSerialize["ipv6Subnet"] = o.Ipv6Subnet.Get()
 	}
 	if !IsNil(o.MacAddress) {
 		toSerialize["macAddress"] = o.MacAddress
 	}
-	if !IsNil(o.PublicIpv6Address) {
-		toSerialize["publicIpv6Address"] = o.PublicIpv6Address
+	if o.PublicIpv6Address.IsSet() {
+		toSerialize["publicIpv6Address"] = o.PublicIpv6Address.Get()
 	}
-	if !IsNil(o.RefType) {
-		toSerialize["refType"] = o.RefType
+	if o.RefType.IsSet() {
+		toSerialize["refType"] = o.RefType.Get()
 	}
-	if !IsNil(o.NetworkGroup) {
-		toSerialize["networkGroup"] = o.NetworkGroup
+	if o.NetworkGroup.IsSet() {
+		toSerialize["networkGroup"] = o.NetworkGroup.Get()
 	}
-	if !IsNil(o.RefId) {
-		toSerialize["refId"] = o.RefId
+	if o.RefId.IsSet() {
+		toSerialize["refId"] = o.RefId.Get()
 	}
-	if !IsNil(o.NetworkDomain) {
-		toSerialize["networkDomain"] = o.NetworkDomain
+	if o.NetworkDomain.IsSet() {
+		toSerialize["networkDomain"] = o.NetworkDomain.Get()
 	}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
@@ -1321,20 +1499,20 @@ func (o UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) ToM
 	if !IsNil(o.PrimaryInterface) {
 		toSerialize["primaryInterface"] = o.PrimaryInterface
 	}
-	if !IsNil(o.NetworkPoolIPv6) {
+	if o.NetworkPoolIPv6 != nil {
 		toSerialize["networkPoolIPv6"] = o.NetworkPoolIPv6
 	}
 	if !IsNil(o.Network) {
 		toSerialize["network"] = o.Network
 	}
-	if !IsNil(o.VlanId) {
-		toSerialize["vlanId"] = o.VlanId
+	if o.VlanId.IsSet() {
+		toSerialize["vlanId"] = o.VlanId.Get()
 	}
 	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type
 	}
-	if !IsNil(o.NetworkPosition) {
-		toSerialize["networkPosition"] = o.NetworkPosition
+	if o.NetworkPosition.IsSet() {
+		toSerialize["networkPosition"] = o.NetworkPosition.Get()
 	}
 	if !IsNil(o.PoolAssigned) {
 		toSerialize["poolAssigned"] = o.PoolAssigned
@@ -1342,8 +1520,8 @@ func (o UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) ToM
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
-	if !IsNil(o.ExternalType) {
-		toSerialize["externalType"] = o.ExternalType
+	if o.ExternalType.IsSet() {
+		toSerialize["externalType"] = o.ExternalType.Get()
 	}
 	if !IsNil(o.ExternalId) {
 		toSerialize["externalId"] = o.ExternalId

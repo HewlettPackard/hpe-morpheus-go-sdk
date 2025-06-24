@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **NullableString** |  | [optional] 
 **Priority** | Pointer to **int64** |  | [optional] 
 **GroupLayer** | Pointer to **string** |  | [optional] 
 **Rules** | Pointer to [**[]GetNetworkFirewallRuleGroup200ResponseRuleGroupRulesInner**](GetNetworkFirewallRuleGroup200ResponseRuleGroupRulesInner.md) |  | [optional] 
@@ -105,6 +105,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *GetNetworkFirewallRuleGroup200ResponseRuleGroup) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *GetNetworkFirewallRuleGroup200ResponseRuleGroup) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetPriority
 
 `func (o *GetNetworkFirewallRuleGroup200ResponseRuleGroup) GetPriority() int64`

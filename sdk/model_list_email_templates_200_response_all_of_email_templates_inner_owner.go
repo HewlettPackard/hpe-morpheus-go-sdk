@@ -20,8 +20,8 @@ var _ MappedNullable = &ListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwn
 
 // ListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner The account that owns the email template is associated with. This is set by morpheus.
 type ListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner struct {
-	Id                   *int64                 `json:"id,omitempty"`
-	Name                 *string                `json:"name,omitempty"`
+	Id                   NullableInt64          `json:"id,omitempty"`
+	Name                 NullableString         `json:"name,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -44,68 +44,90 @@ func NewListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwnerWithDefaults()
 	return &this
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
+// GetId returns the Id field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
+	if o == nil || IsNil(o.Id.Get()) {
 		var ret int64
 		return ret
 	}
-	return *o.Id
+	return *o.Id.Get()
 }
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Id, true
+	return o.Id.Get(), o.Id.IsSet()
 }
 
 // IsSetId returns a boolean if a field has been set.
 func (o *ListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
+	if o != nil && o.Id.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetId gets a reference to the given int64 and assigns it to the Id field.
+// SetId gets a reference to the given NullableInt64 and assigns it to the Id field.
 func (o *ListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner) SetId(v int64) {
-	o.Id = &v
+	o.Id.Set(&v)
 }
 
-// GetName returns the Name field value if set, zero value otherwise.
+// SetIdNil sets the value for Id to be an explicit nil
+func (o *ListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner) SetIdNil() {
+	o.Id.Set(nil)
+}
+
+// UnsetId ensures that no value is present for Id, not even an explicit nil
+func (o *ListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner) UnsetId() {
+	o.Id.Unset()
+}
+
+// GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner) GetName() string {
-	if o == nil || IsNil(o.Name) {
+	if o == nil || IsNil(o.Name.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Name
+	return *o.Name.Get()
 }
 
 // GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Name, true
+	return o.Name.Get(), o.Name.IsSet()
 }
 
 // IsSetName returns a boolean if a field has been set.
 func (o *ListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
+	if o != nil && o.Name.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetName gets a reference to the given string and assigns it to the Name field.
+// SetName gets a reference to the given NullableString and assigns it to the Name field.
 func (o *ListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner) SetName(v string) {
-	o.Name = &v
+	o.Name.Set(&v)
+}
+
+// SetNameNil sets the value for Name to be an explicit nil
+func (o *ListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner) SetNameNil() {
+	o.Name.Set(nil)
+}
+
+// UnsetName ensures that no value is present for Name, not even an explicit nil
+func (o *ListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner) UnsetName() {
+	o.Name.Unset()
 }
 
 func (o ListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner) MarshalJSON() ([]byte, error) {
@@ -118,11 +140,11 @@ func (o ListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner) MarshalJSON(
 
 func (o ListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Id) {
-		toSerialize["id"] = o.Id
+	if o.Id.IsSet() {
+		toSerialize["id"] = o.Id.Get()
 	}
-	if !IsNil(o.Name) {
-		toSerialize["name"] = o.Name
+	if o.Name.IsSet() {
+		toSerialize["name"] = o.Name.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {

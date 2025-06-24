@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **string** | Unique name scoped to your account for the check | [optional] 
-**Description** | Pointer to **string** | Optional description field | [optional] 
+**Description** | Pointer to **NullableString** | Optional description field | [optional] 
 **CheckType** | Pointer to [**AddChecksRequestCheckOneOf2CheckType**](AddChecksRequestCheckOneOf2CheckType.md) |  | [optional] 
 **CheckInterval** | Pointer to **int32** | Number of seconds you want between check executions (minimum value is 60, depending on your subscription plan) | [optional] [default to 300]
 **InUptime** | Pointer to **bool** | Used to determine if check should affect account wide availability calculations | [optional] [default to true]
@@ -82,6 +82,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *CheckSocket) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *CheckSocket) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetCheckType
 
 `func (o *CheckSocket) GetCheckType() AddChecksRequestCheckOneOf2CheckType`

@@ -7,9 +7,9 @@ Name | Type | Description | Notes
 **Version** | Pointer to **string** | Version number (userVersion), a unique version identifier for the deployment version. | [optional] 
 **UserVersion** | Pointer to **string** | Alias for version | [optional] 
 **DeployType** | Pointer to **string** | Deploy Type, eg. file, git, fetch | [optional] 
-**GitUrl** | Pointer to **string** |  | [optional] 
-**GitRef** | Pointer to **string** |  | [optional] 
-**FetchUrl** | Pointer to **string** |  | [optional] 
+**GitUrl** | Pointer to **NullableString** |  | [optional] 
+**GitRef** | Pointer to **NullableString** |  | [optional] 
+**FetchUrl** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -130,6 +130,16 @@ SetGitUrl sets GitUrl field to given value.
 
 HasGitUrl returns a boolean if a field has been set.
 
+### SetGitUrlNil
+
+`func (o *DeploymentVersionCreate) SetGitUrlNil(b bool)`
+
+ SetGitUrlNil sets the value for GitUrl to be an explicit nil
+
+### UnsetGitUrl
+`func (o *DeploymentVersionCreate) UnsetGitUrl()`
+
+UnsetGitUrl ensures that no value is present for GitUrl, not even an explicit nil
 ### GetGitRef
 
 `func (o *DeploymentVersionCreate) GetGitRef() string`
@@ -155,6 +165,16 @@ SetGitRef sets GitRef field to given value.
 
 HasGitRef returns a boolean if a field has been set.
 
+### SetGitRefNil
+
+`func (o *DeploymentVersionCreate) SetGitRefNil(b bool)`
+
+ SetGitRefNil sets the value for GitRef to be an explicit nil
+
+### UnsetGitRef
+`func (o *DeploymentVersionCreate) UnsetGitRef()`
+
+UnsetGitRef ensures that no value is present for GitRef, not even an explicit nil
 ### GetFetchUrl
 
 `func (o *DeploymentVersionCreate) GetFetchUrl() string`
@@ -180,6 +200,16 @@ SetFetchUrl sets FetchUrl field to given value.
 
 HasFetchUrl returns a boolean if a field has been set.
 
+### SetFetchUrlNil
+
+`func (o *DeploymentVersionCreate) SetFetchUrlNil(b bool)`
+
+ SetFetchUrlNil sets the value for FetchUrl to be an explicit nil
+
+### UnsetFetchUrl
+`func (o *DeploymentVersionCreate) UnsetFetchUrl()`
+
+UnsetFetchUrl ensures that no value is present for FetchUrl, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

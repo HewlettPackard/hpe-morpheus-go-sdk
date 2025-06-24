@@ -6,39 +6,39 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
 **Addresses** | Pointer to **[]map[string]interface{}** |  | [optional] 
-**InternalId** | Pointer to **string** |  | [optional] 
-**InterfaceId** | Pointer to **string** |  | [optional] 
+**InternalId** | Pointer to **NullableString** |  | [optional] 
+**InterfaceId** | Pointer to **NullableString** |  | [optional] 
 **DisplayOrder** | Pointer to **int64** |  | [optional] 
 **NetworkPool** | Pointer to **map[string]interface{}** |  | [optional] 
 **Dhcp** | Pointer to **bool** |  | [optional] 
 **Uuid** | Pointer to **string** |  | [optional] 
 **Active** | Pointer to **bool** |  | [optional] 
 **UniqueId** | Pointer to **string** |  | [optional] 
-**Subnet** | Pointer to **string** |  | [optional] 
+**Subnet** | Pointer to **NullableString** |  | [optional] 
 **ReplaceHostRecord** | Pointer to **bool** |  | [optional] 
 **IpMode** | Pointer to **string** |  | [optional] 
-**Version** | Pointer to **string** |  | [optional] 
-**IpSubnet** | Pointer to **string** |  | [optional] 
-**Config** | Pointer to **string** |  | [optional] 
+**Version** | Pointer to **NullableString** |  | [optional] 
+**IpSubnet** | Pointer to **NullableString** |  | [optional] 
+**Config** | Pointer to **NullableString** |  | [optional] 
 **PublicIpAddress** | Pointer to **string** |  | [optional] 
-**FabricId** | Pointer to **string** |  | [optional] 
-**Ipv6Subnet** | Pointer to **string** |  | [optional] 
+**FabricId** | Pointer to **NullableString** |  | [optional] 
+**Ipv6Subnet** | Pointer to **NullableString** |  | [optional] 
 **MacAddress** | Pointer to **string** |  | [optional] 
-**PublicIpv6Address** | Pointer to **string** |  | [optional] 
-**RefType** | Pointer to **string** |  | [optional] 
-**NetworkGroup** | Pointer to **string** |  | [optional] 
-**RefId** | Pointer to **string** |  | [optional] 
-**NetworkDomain** | Pointer to **string** |  | [optional] 
+**PublicIpv6Address** | Pointer to **NullableString** |  | [optional] 
+**RefType** | Pointer to **NullableString** |  | [optional] 
+**NetworkGroup** | Pointer to **NullableString** |  | [optional] 
+**RefId** | Pointer to **NullableString** |  | [optional] 
+**NetworkDomain** | Pointer to **NullableString** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **PrimaryInterface** | Pointer to **bool** |  | [optional] 
 **NetworkPoolIPv6** | Pointer to **map[string]interface{}** |  | [optional] 
 **Network** | Pointer to [**GetAlerts200ResponseAllOfChecksInnerAccount**](GetAlerts200ResponseAllOfChecksInnerAccount.md) |  | [optional] 
-**VlanId** | Pointer to **string** |  | [optional] 
+**VlanId** | Pointer to **NullableString** |  | [optional] 
 **Type** | Pointer to [**GetAlerts200ResponseAllOfChecksInnerAccount**](GetAlerts200ResponseAllOfChecksInnerAccount.md) |  | [optional] 
-**NetworkPosition** | Pointer to **string** |  | [optional] 
+**NetworkPosition** | Pointer to **NullableString** |  | [optional] 
 **PoolAssigned** | Pointer to **bool** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
-**ExternalType** | Pointer to **string** |  | [optional] 
+**ExternalType** | Pointer to **NullableString** |  | [optional] 
 **ExternalId** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -135,6 +135,16 @@ SetInternalId sets InternalId field to given value.
 
 HasInternalId returns a boolean if a field has been set.
 
+### SetInternalIdNil
+
+`func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) SetInternalIdNil(b bool)`
+
+ SetInternalIdNil sets the value for InternalId to be an explicit nil
+
+### UnsetInternalId
+`func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) UnsetInternalId()`
+
+UnsetInternalId ensures that no value is present for InternalId, not even an explicit nil
 ### GetInterfaceId
 
 `func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) GetInterfaceId() string`
@@ -160,6 +170,16 @@ SetInterfaceId sets InterfaceId field to given value.
 
 HasInterfaceId returns a boolean if a field has been set.
 
+### SetInterfaceIdNil
+
+`func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) SetInterfaceIdNil(b bool)`
+
+ SetInterfaceIdNil sets the value for InterfaceId to be an explicit nil
+
+### UnsetInterfaceId
+`func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) UnsetInterfaceId()`
+
+UnsetInterfaceId ensures that no value is present for InterfaceId, not even an explicit nil
 ### GetDisplayOrder
 
 `func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) GetDisplayOrder() int64`
@@ -210,6 +230,16 @@ SetNetworkPool sets NetworkPool field to given value.
 
 HasNetworkPool returns a boolean if a field has been set.
 
+### SetNetworkPoolNil
+
+`func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) SetNetworkPoolNil(b bool)`
+
+ SetNetworkPoolNil sets the value for NetworkPool to be an explicit nil
+
+### UnsetNetworkPool
+`func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) UnsetNetworkPool()`
+
+UnsetNetworkPool ensures that no value is present for NetworkPool, not even an explicit nil
 ### GetDhcp
 
 `func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) GetDhcp() bool`
@@ -335,6 +365,16 @@ SetSubnet sets Subnet field to given value.
 
 HasSubnet returns a boolean if a field has been set.
 
+### SetSubnetNil
+
+`func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) SetSubnetNil(b bool)`
+
+ SetSubnetNil sets the value for Subnet to be an explicit nil
+
+### UnsetSubnet
+`func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) UnsetSubnet()`
+
+UnsetSubnet ensures that no value is present for Subnet, not even an explicit nil
 ### GetReplaceHostRecord
 
 `func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) GetReplaceHostRecord() bool`
@@ -410,6 +450,16 @@ SetVersion sets Version field to given value.
 
 HasVersion returns a boolean if a field has been set.
 
+### SetVersionNil
+
+`func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) SetVersionNil(b bool)`
+
+ SetVersionNil sets the value for Version to be an explicit nil
+
+### UnsetVersion
+`func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) UnsetVersion()`
+
+UnsetVersion ensures that no value is present for Version, not even an explicit nil
 ### GetIpSubnet
 
 `func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) GetIpSubnet() string`
@@ -435,6 +485,16 @@ SetIpSubnet sets IpSubnet field to given value.
 
 HasIpSubnet returns a boolean if a field has been set.
 
+### SetIpSubnetNil
+
+`func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) SetIpSubnetNil(b bool)`
+
+ SetIpSubnetNil sets the value for IpSubnet to be an explicit nil
+
+### UnsetIpSubnet
+`func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) UnsetIpSubnet()`
+
+UnsetIpSubnet ensures that no value is present for IpSubnet, not even an explicit nil
 ### GetConfig
 
 `func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) GetConfig() string`
@@ -460,6 +520,16 @@ SetConfig sets Config field to given value.
 
 HasConfig returns a boolean if a field has been set.
 
+### SetConfigNil
+
+`func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) SetConfigNil(b bool)`
+
+ SetConfigNil sets the value for Config to be an explicit nil
+
+### UnsetConfig
+`func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) UnsetConfig()`
+
+UnsetConfig ensures that no value is present for Config, not even an explicit nil
 ### GetPublicIpAddress
 
 `func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) GetPublicIpAddress() string`
@@ -510,6 +580,16 @@ SetFabricId sets FabricId field to given value.
 
 HasFabricId returns a boolean if a field has been set.
 
+### SetFabricIdNil
+
+`func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) SetFabricIdNil(b bool)`
+
+ SetFabricIdNil sets the value for FabricId to be an explicit nil
+
+### UnsetFabricId
+`func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) UnsetFabricId()`
+
+UnsetFabricId ensures that no value is present for FabricId, not even an explicit nil
 ### GetIpv6Subnet
 
 `func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) GetIpv6Subnet() string`
@@ -535,6 +615,16 @@ SetIpv6Subnet sets Ipv6Subnet field to given value.
 
 HasIpv6Subnet returns a boolean if a field has been set.
 
+### SetIpv6SubnetNil
+
+`func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) SetIpv6SubnetNil(b bool)`
+
+ SetIpv6SubnetNil sets the value for Ipv6Subnet to be an explicit nil
+
+### UnsetIpv6Subnet
+`func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) UnsetIpv6Subnet()`
+
+UnsetIpv6Subnet ensures that no value is present for Ipv6Subnet, not even an explicit nil
 ### GetMacAddress
 
 `func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) GetMacAddress() string`
@@ -585,6 +675,16 @@ SetPublicIpv6Address sets PublicIpv6Address field to given value.
 
 HasPublicIpv6Address returns a boolean if a field has been set.
 
+### SetPublicIpv6AddressNil
+
+`func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) SetPublicIpv6AddressNil(b bool)`
+
+ SetPublicIpv6AddressNil sets the value for PublicIpv6Address to be an explicit nil
+
+### UnsetPublicIpv6Address
+`func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) UnsetPublicIpv6Address()`
+
+UnsetPublicIpv6Address ensures that no value is present for PublicIpv6Address, not even an explicit nil
 ### GetRefType
 
 `func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) GetRefType() string`
@@ -610,6 +710,16 @@ SetRefType sets RefType field to given value.
 
 HasRefType returns a boolean if a field has been set.
 
+### SetRefTypeNil
+
+`func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) SetRefTypeNil(b bool)`
+
+ SetRefTypeNil sets the value for RefType to be an explicit nil
+
+### UnsetRefType
+`func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) UnsetRefType()`
+
+UnsetRefType ensures that no value is present for RefType, not even an explicit nil
 ### GetNetworkGroup
 
 `func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) GetNetworkGroup() string`
@@ -635,6 +745,16 @@ SetNetworkGroup sets NetworkGroup field to given value.
 
 HasNetworkGroup returns a boolean if a field has been set.
 
+### SetNetworkGroupNil
+
+`func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) SetNetworkGroupNil(b bool)`
+
+ SetNetworkGroupNil sets the value for NetworkGroup to be an explicit nil
+
+### UnsetNetworkGroup
+`func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) UnsetNetworkGroup()`
+
+UnsetNetworkGroup ensures that no value is present for NetworkGroup, not even an explicit nil
 ### GetRefId
 
 `func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) GetRefId() string`
@@ -660,6 +780,16 @@ SetRefId sets RefId field to given value.
 
 HasRefId returns a boolean if a field has been set.
 
+### SetRefIdNil
+
+`func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) SetRefIdNil(b bool)`
+
+ SetRefIdNil sets the value for RefId to be an explicit nil
+
+### UnsetRefId
+`func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) UnsetRefId()`
+
+UnsetRefId ensures that no value is present for RefId, not even an explicit nil
 ### GetNetworkDomain
 
 `func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) GetNetworkDomain() string`
@@ -685,6 +815,16 @@ SetNetworkDomain sets NetworkDomain field to given value.
 
 HasNetworkDomain returns a boolean if a field has been set.
 
+### SetNetworkDomainNil
+
+`func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) SetNetworkDomainNil(b bool)`
+
+ SetNetworkDomainNil sets the value for NetworkDomain to be an explicit nil
+
+### UnsetNetworkDomain
+`func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) UnsetNetworkDomain()`
+
+UnsetNetworkDomain ensures that no value is present for NetworkDomain, not even an explicit nil
 ### GetName
 
 `func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) GetName() string`
@@ -760,6 +900,16 @@ SetNetworkPoolIPv6 sets NetworkPoolIPv6 field to given value.
 
 HasNetworkPoolIPv6 returns a boolean if a field has been set.
 
+### SetNetworkPoolIPv6Nil
+
+`func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) SetNetworkPoolIPv6Nil(b bool)`
+
+ SetNetworkPoolIPv6Nil sets the value for NetworkPoolIPv6 to be an explicit nil
+
+### UnsetNetworkPoolIPv6
+`func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) UnsetNetworkPoolIPv6()`
+
+UnsetNetworkPoolIPv6 ensures that no value is present for NetworkPoolIPv6, not even an explicit nil
 ### GetNetwork
 
 `func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) GetNetwork() GetAlerts200ResponseAllOfChecksInnerAccount`
@@ -810,6 +960,16 @@ SetVlanId sets VlanId field to given value.
 
 HasVlanId returns a boolean if a field has been set.
 
+### SetVlanIdNil
+
+`func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) SetVlanIdNil(b bool)`
+
+ SetVlanIdNil sets the value for VlanId to be an explicit nil
+
+### UnsetVlanId
+`func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) UnsetVlanId()`
+
+UnsetVlanId ensures that no value is present for VlanId, not even an explicit nil
 ### GetType
 
 `func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) GetType() GetAlerts200ResponseAllOfChecksInnerAccount`
@@ -860,6 +1020,16 @@ SetNetworkPosition sets NetworkPosition field to given value.
 
 HasNetworkPosition returns a boolean if a field has been set.
 
+### SetNetworkPositionNil
+
+`func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) SetNetworkPositionNil(b bool)`
+
+ SetNetworkPositionNil sets the value for NetworkPosition to be an explicit nil
+
+### UnsetNetworkPosition
+`func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) UnsetNetworkPosition()`
+
+UnsetNetworkPosition ensures that no value is present for NetworkPosition, not even an explicit nil
 ### GetPoolAssigned
 
 `func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) GetPoolAssigned() bool`
@@ -935,6 +1105,16 @@ SetExternalType sets ExternalType field to given value.
 
 HasExternalType returns a boolean if a field has been set.
 
+### SetExternalTypeNil
+
+`func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) SetExternalTypeNil(b bool)`
+
+ SetExternalTypeNil sets the value for ExternalType to be an explicit nil
+
+### UnsetExternalType
+`func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) UnsetExternalType()`
+
+UnsetExternalType ensures that no value is present for ExternalType, not even an explicit nil
 ### GetExternalId
 
 `func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) GetExternalId() string`

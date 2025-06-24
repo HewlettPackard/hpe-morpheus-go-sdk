@@ -32,7 +32,7 @@ type IdentitySourcesJumpCloudConfig struct {
 	ExternalLogin        *bool                                                                        `json:"externalLogin,omitempty"`
 	AllowCustomMappings  *bool                                                                        `json:"allowCustomMappings,omitempty"`
 	ManualRoleAssignment *bool                                                                        `json:"manualRoleAssignment,omitempty"`
-	Account              *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner      `json:"account,omitempty"`
+	Account              *GetAlerts200ResponseAllOfCheckGroupsInnerInstance                           `json:"account,omitempty"`
 	DefaultAccountRole   *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfDefaultAccountRole  `json:"defaultAccountRole,omitempty"`
 	Config               *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1Config             `json:"config,omitempty"`
 	RoleMappings         []ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1RoleMappingsInner `json:"roleMappings,omitempty"`
@@ -416,9 +416,9 @@ func (o *IdentitySourcesJumpCloudConfig) SetManualRoleAssignment(v bool) {
 }
 
 // GetAccount returns the Account field value if set, zero value otherwise.
-func (o *IdentitySourcesJumpCloudConfig) GetAccount() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *IdentitySourcesJumpCloudConfig) GetAccount() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.Account) {
-		var ret ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return *o.Account
@@ -426,7 +426,7 @@ func (o *IdentitySourcesJumpCloudConfig) GetAccount() ListApplianceSettings200Re
 
 // GetAccountOk returns a tuple with the Account field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *IdentitySourcesJumpCloudConfig) GetAccountOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *IdentitySourcesJumpCloudConfig) GetAccountOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.Account) {
 		return nil, false
 	}
@@ -442,8 +442,8 @@ func (o *IdentitySourcesJumpCloudConfig) IsSetAccount() bool {
 	return false
 }
 
-// SetAccount gets a reference to the given ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the Account field.
-func (o *IdentitySourcesJumpCloudConfig) SetAccount(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetAccount gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Account field.
+func (o *IdentitySourcesJumpCloudConfig) SetAccount(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.Account = &v
 }
 

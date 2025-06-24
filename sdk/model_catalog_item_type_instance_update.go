@@ -23,9 +23,9 @@ type CatalogItemTypeInstanceUpdate struct {
 	// Catalog Item Type name
 	Name *string `json:"name,omitempty"`
 	// Useful shortcode for provisioning naming schemes and export reference.
-	Code *string `json:"code,omitempty"`
+	Code NullableString `json:"code,omitempty"`
 	// Catalog Item Type category
-	Category *string `json:"category,omitempty"`
+	Category NullableString `json:"category,omitempty"`
 	// Catalog Item Type description
 	Description *string `json:"description,omitempty"`
 	// Array of label strings, can be used for filtering.
@@ -35,7 +35,7 @@ type CatalogItemTypeInstanceUpdate struct {
 	// Visibility - Set to public to allow all tenants
 	Visibility *string `json:"visibility,omitempty"`
 	// Identifier primarily used for Plugin Catalog Item Types
-	LayoutCode *string `json:"layoutCode,omitempty"`
+	LayoutCode NullableString `json:"layoutCode,omitempty"`
 	// Icon Path, relative location of an icon image, eg. /assets/containers-png/nginx.png.
 	IconPath *string `json:"iconPath,omitempty"`
 	// Can be used to enable / disable the catalog item type.
@@ -128,68 +128,90 @@ func (o *CatalogItemTypeInstanceUpdate) SetName(v string) {
 	o.Name = &v
 }
 
-// GetCode returns the Code field value if set, zero value otherwise.
+// GetCode returns the Code field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CatalogItemTypeInstanceUpdate) GetCode() string {
-	if o == nil || IsNil(o.Code) {
+	if o == nil || IsNil(o.Code.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Code
+	return *o.Code.Get()
 }
 
 // GetCodeOk returns a tuple with the Code field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CatalogItemTypeInstanceUpdate) GetCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.Code) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Code, true
+	return o.Code.Get(), o.Code.IsSet()
 }
 
 // IsSetCode returns a boolean if a field has been set.
 func (o *CatalogItemTypeInstanceUpdate) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
+	if o != nil && o.Code.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCode gets a reference to the given string and assigns it to the Code field.
+// SetCode gets a reference to the given NullableString and assigns it to the Code field.
 func (o *CatalogItemTypeInstanceUpdate) SetCode(v string) {
-	o.Code = &v
+	o.Code.Set(&v)
 }
 
-// GetCategory returns the Category field value if set, zero value otherwise.
+// SetCodeNil sets the value for Code to be an explicit nil
+func (o *CatalogItemTypeInstanceUpdate) SetCodeNil() {
+	o.Code.Set(nil)
+}
+
+// UnsetCode ensures that no value is present for Code, not even an explicit nil
+func (o *CatalogItemTypeInstanceUpdate) UnsetCode() {
+	o.Code.Unset()
+}
+
+// GetCategory returns the Category field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CatalogItemTypeInstanceUpdate) GetCategory() string {
-	if o == nil || IsNil(o.Category) {
+	if o == nil || IsNil(o.Category.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Category
+	return *o.Category.Get()
 }
 
 // GetCategoryOk returns a tuple with the Category field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CatalogItemTypeInstanceUpdate) GetCategoryOk() (*string, bool) {
-	if o == nil || IsNil(o.Category) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Category, true
+	return o.Category.Get(), o.Category.IsSet()
 }
 
 // IsSetCategory returns a boolean if a field has been set.
 func (o *CatalogItemTypeInstanceUpdate) IsSetCategory() bool {
-	if o != nil && !IsNil(o.Category) {
+	if o != nil && o.Category.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCategory gets a reference to the given string and assigns it to the Category field.
+// SetCategory gets a reference to the given NullableString and assigns it to the Category field.
 func (o *CatalogItemTypeInstanceUpdate) SetCategory(v string) {
-	o.Category = &v
+	o.Category.Set(&v)
+}
+
+// SetCategoryNil sets the value for Category to be an explicit nil
+func (o *CatalogItemTypeInstanceUpdate) SetCategoryNil() {
+	o.Category.Set(nil)
+}
+
+// UnsetCategory ensures that no value is present for Category, not even an explicit nil
+func (o *CatalogItemTypeInstanceUpdate) UnsetCategory() {
+	o.Category.Unset()
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise.
@@ -224,9 +246,9 @@ func (o *CatalogItemTypeInstanceUpdate) SetDescription(v string) {
 	o.Description = &v
 }
 
-// GetLabels returns the Labels field value if set, zero value otherwise.
+// GetLabels returns the Labels field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CatalogItemTypeInstanceUpdate) GetLabels() []string {
-	if o == nil || IsNil(o.Labels) {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -235,6 +257,7 @@ func (o *CatalogItemTypeInstanceUpdate) GetLabels() []string {
 
 // GetLabelsOk returns a tuple with the Labels field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CatalogItemTypeInstanceUpdate) GetLabelsOk() ([]string, bool) {
 	if o == nil || IsNil(o.Labels) {
 		return nil, false
@@ -320,36 +343,47 @@ func (o *CatalogItemTypeInstanceUpdate) SetVisibility(v string) {
 	o.Visibility = &v
 }
 
-// GetLayoutCode returns the LayoutCode field value if set, zero value otherwise.
+// GetLayoutCode returns the LayoutCode field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CatalogItemTypeInstanceUpdate) GetLayoutCode() string {
-	if o == nil || IsNil(o.LayoutCode) {
+	if o == nil || IsNil(o.LayoutCode.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.LayoutCode
+	return *o.LayoutCode.Get()
 }
 
 // GetLayoutCodeOk returns a tuple with the LayoutCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CatalogItemTypeInstanceUpdate) GetLayoutCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.LayoutCode) {
+	if o == nil {
 		return nil, false
 	}
-	return o.LayoutCode, true
+	return o.LayoutCode.Get(), o.LayoutCode.IsSet()
 }
 
 // IsSetLayoutCode returns a boolean if a field has been set.
 func (o *CatalogItemTypeInstanceUpdate) IsSetLayoutCode() bool {
-	if o != nil && !IsNil(o.LayoutCode) {
+	if o != nil && o.LayoutCode.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetLayoutCode gets a reference to the given string and assigns it to the LayoutCode field.
+// SetLayoutCode gets a reference to the given NullableString and assigns it to the LayoutCode field.
 func (o *CatalogItemTypeInstanceUpdate) SetLayoutCode(v string) {
-	o.LayoutCode = &v
+	o.LayoutCode.Set(&v)
+}
+
+// SetLayoutCodeNil sets the value for LayoutCode to be an explicit nil
+func (o *CatalogItemTypeInstanceUpdate) SetLayoutCodeNil() {
+	o.LayoutCode.Set(nil)
+}
+
+// UnsetLayoutCode ensures that no value is present for LayoutCode, not even an explicit nil
+func (o *CatalogItemTypeInstanceUpdate) UnsetLayoutCode() {
+	o.LayoutCode.Unset()
 }
 
 // GetIconPath returns the IconPath field value if set, zero value otherwise.
@@ -685,16 +719,16 @@ func (o CatalogItemTypeInstanceUpdate) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !IsNil(o.Code) {
-		toSerialize["code"] = o.Code
+	if o.Code.IsSet() {
+		toSerialize["code"] = o.Code.Get()
 	}
-	if !IsNil(o.Category) {
-		toSerialize["category"] = o.Category
+	if o.Category.IsSet() {
+		toSerialize["category"] = o.Category.Get()
 	}
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
-	if !IsNil(o.Labels) {
+	if o.Labels != nil {
 		toSerialize["labels"] = o.Labels
 	}
 	if !IsNil(o.Type) {
@@ -703,8 +737,8 @@ func (o CatalogItemTypeInstanceUpdate) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Visibility) {
 		toSerialize["visibility"] = o.Visibility
 	}
-	if !IsNil(o.LayoutCode) {
-		toSerialize["layoutCode"] = o.LayoutCode
+	if o.LayoutCode.IsSet() {
+		toSerialize["layoutCode"] = o.LayoutCode.Get()
 	}
 	if !IsNil(o.IconPath) {
 		toSerialize["iconPath"] = o.IconPath

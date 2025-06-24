@@ -20,13 +20,13 @@ var _ MappedNullable = &BackupSettings{}
 
 // BackupSettings struct for BackupSettings
 type BackupSettings struct {
-	BackupsEnabled       *bool                                                                   `json:"backupsEnabled,omitempty"`
-	CreateBackups        *bool                                                                   `json:"createBackups,omitempty"`
-	BackupAppliance      *bool                                                                   `json:"backupAppliance,omitempty"`
-	DefaultStorageBucket *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"defaultStorageBucket,omitempty"`
-	DefaultSchedule      *ListBackupSettings200ResponseBackupSettingsDefaultSchedule             `json:"defaultSchedule,omitempty"`
-	RetentionCount       *int64                                                                  `json:"retentionCount,omitempty"`
-	AdditionalProperties map[string]interface{}                                                  `json:",remain"`
+	BackupsEnabled       *bool                                                       `json:"backupsEnabled,omitempty"`
+	CreateBackups        *bool                                                       `json:"createBackups,omitempty"`
+	BackupAppliance      *bool                                                       `json:"backupAppliance,omitempty"`
+	DefaultStorageBucket *GetAlerts200ResponseAllOfCheckGroupsInnerInstance          `json:"defaultStorageBucket,omitempty"`
+	DefaultSchedule      *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"defaultSchedule,omitempty"`
+	RetentionCount       *int64                                                      `json:"retentionCount,omitempty"`
+	AdditionalProperties map[string]interface{}                                      `json:",remain"`
 }
 
 type _BackupSettings BackupSettings
@@ -145,9 +145,9 @@ func (o *BackupSettings) SetBackupAppliance(v bool) {
 }
 
 // GetDefaultStorageBucket returns the DefaultStorageBucket field value if set, zero value otherwise.
-func (o *BackupSettings) GetDefaultStorageBucket() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *BackupSettings) GetDefaultStorageBucket() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.DefaultStorageBucket) {
-		var ret ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return *o.DefaultStorageBucket
@@ -155,7 +155,7 @@ func (o *BackupSettings) GetDefaultStorageBucket() ListApplianceSettings200Respo
 
 // GetDefaultStorageBucketOk returns a tuple with the DefaultStorageBucket field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BackupSettings) GetDefaultStorageBucketOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *BackupSettings) GetDefaultStorageBucketOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.DefaultStorageBucket) {
 		return nil, false
 	}
@@ -171,8 +171,8 @@ func (o *BackupSettings) IsSetDefaultStorageBucket() bool {
 	return false
 }
 
-// SetDefaultStorageBucket gets a reference to the given ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the DefaultStorageBucket field.
-func (o *BackupSettings) SetDefaultStorageBucket(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetDefaultStorageBucket gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the DefaultStorageBucket field.
+func (o *BackupSettings) SetDefaultStorageBucket(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.DefaultStorageBucket = &v
 }
 

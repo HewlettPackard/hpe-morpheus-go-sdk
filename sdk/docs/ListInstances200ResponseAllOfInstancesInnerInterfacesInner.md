@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **string** |  | [optional] 
+**Id** | Pointer to **NullableString** |  | [optional] 
 **Network** | Pointer to [**ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork**](ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork.md) |  | [optional] 
-**IpAddress** | Pointer to **string** |  | [optional] 
-**NetworkInterfaceTypeId** | Pointer to **int64** |  | [optional] 
-**IpMode** | Pointer to **string** |  | [optional] 
+**IpAddress** | Pointer to **NullableString** |  | [optional] 
+**NetworkInterfaceTypeId** | Pointer to **NullableInt64** |  | [optional] 
+**IpMode** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -54,6 +54,16 @@ SetId sets Id field to given value.
 
 HasId returns a boolean if a field has been set.
 
+### SetIdNil
+
+`func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) SetIdNil(b bool)`
+
+ SetIdNil sets the value for Id to be an explicit nil
+
+### UnsetId
+`func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) UnsetId()`
+
+UnsetId ensures that no value is present for Id, not even an explicit nil
 ### GetNetwork
 
 `func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) GetNetwork() ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork`
@@ -104,6 +114,16 @@ SetIpAddress sets IpAddress field to given value.
 
 HasIpAddress returns a boolean if a field has been set.
 
+### SetIpAddressNil
+
+`func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) SetIpAddressNil(b bool)`
+
+ SetIpAddressNil sets the value for IpAddress to be an explicit nil
+
+### UnsetIpAddress
+`func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) UnsetIpAddress()`
+
+UnsetIpAddress ensures that no value is present for IpAddress, not even an explicit nil
 ### GetNetworkInterfaceTypeId
 
 `func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) GetNetworkInterfaceTypeId() int64`
@@ -129,6 +149,16 @@ SetNetworkInterfaceTypeId sets NetworkInterfaceTypeId field to given value.
 
 HasNetworkInterfaceTypeId returns a boolean if a field has been set.
 
+### SetNetworkInterfaceTypeIdNil
+
+`func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) SetNetworkInterfaceTypeIdNil(b bool)`
+
+ SetNetworkInterfaceTypeIdNil sets the value for NetworkInterfaceTypeId to be an explicit nil
+
+### UnsetNetworkInterfaceTypeId
+`func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) UnsetNetworkInterfaceTypeId()`
+
+UnsetNetworkInterfaceTypeId ensures that no value is present for NetworkInterfaceTypeId, not even an explicit nil
 ### GetIpMode
 
 `func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) GetIpMode() string`
@@ -154,6 +184,16 @@ SetIpMode sets IpMode field to given value.
 
 HasIpMode returns a boolean if a field has been set.
 
+### SetIpModeNil
+
+`func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) SetIpModeNil(b bool)`
+
+ SetIpModeNil sets the value for IpMode to be an explicit nil
+
+### UnsetIpMode
+`func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) UnsetIpMode()`
+
+UnsetIpMode ensures that no value is present for IpMode, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

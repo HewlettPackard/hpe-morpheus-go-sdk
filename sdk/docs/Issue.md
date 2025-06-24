@@ -6,18 +6,18 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
 **AttachmentType** | Pointer to **string** |  | [optional] 
-**App** | Pointer to **string** |  | [optional] 
+**App** | Pointer to **NullableString** |  | [optional] 
 **Available** | Pointer to **bool** |  | [optional] 
-**Check** | Pointer to **string** |  | [optional] 
-**CheckGroup** | Pointer to [**ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
-**CheckStatus** | Pointer to **string** |  | [optional] 
-**EndDate** | Pointer to **time.Time** |  | [optional] 
+**Check** | Pointer to **NullableString** |  | [optional] 
+**CheckGroup** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**CheckStatus** | Pointer to **NullableString** |  | [optional] 
+**EndDate** | Pointer to **NullableTime** |  | [optional] 
 **Health** | Pointer to **int64** |  | [optional] 
 **InUptime** | Pointer to **bool** |  | [optional] 
 **Incident** | Pointer to [**GetAlerts200ResponseAllOfChecksInnerAccount**](GetAlerts200ResponseAllOfChecksInnerAccount.md) |  | [optional] 
-**LastCheckTime** | Pointer to **time.Time** |  | [optional] 
-**LastError** | Pointer to **string** |  | [optional] 
-**LastMessage** | Pointer to **string** |  | [optional] 
+**LastCheckTime** | Pointer to **NullableTime** |  | [optional] 
+**LastError** | Pointer to **NullableString** |  | [optional] 
+**LastMessage** | Pointer to **NullableString** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Severity** | Pointer to **string** |  | [optional] 
 **SeverityId** | Pointer to **int64** |  | [optional] 
@@ -118,6 +118,16 @@ SetApp sets App field to given value.
 
 HasApp returns a boolean if a field has been set.
 
+### SetAppNil
+
+`func (o *Issue) SetAppNil(b bool)`
+
+ SetAppNil sets the value for App to be an explicit nil
+
+### UnsetApp
+`func (o *Issue) UnsetApp()`
+
+UnsetApp ensures that no value is present for App, not even an explicit nil
 ### GetAvailable
 
 `func (o *Issue) GetAvailable() bool`
@@ -168,22 +178,32 @@ SetCheck sets Check field to given value.
 
 HasCheck returns a boolean if a field has been set.
 
+### SetCheckNil
+
+`func (o *Issue) SetCheckNil(b bool)`
+
+ SetCheckNil sets the value for Check to be an explicit nil
+
+### UnsetCheck
+`func (o *Issue) UnsetCheck()`
+
+UnsetCheck ensures that no value is present for Check, not even an explicit nil
 ### GetCheckGroup
 
-`func (o *Issue) GetCheckGroup() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *Issue) GetCheckGroup() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetCheckGroup returns the CheckGroup field if non-nil, zero value otherwise.
 
 ### GetCheckGroupOk
 
-`func (o *Issue) GetCheckGroupOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *Issue) GetCheckGroupOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetCheckGroupOk returns a tuple with the CheckGroup field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCheckGroup
 
-`func (o *Issue) SetCheckGroup(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *Issue) SetCheckGroup(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetCheckGroup sets CheckGroup field to given value.
 
@@ -218,6 +238,16 @@ SetCheckStatus sets CheckStatus field to given value.
 
 HasCheckStatus returns a boolean if a field has been set.
 
+### SetCheckStatusNil
+
+`func (o *Issue) SetCheckStatusNil(b bool)`
+
+ SetCheckStatusNil sets the value for CheckStatus to be an explicit nil
+
+### UnsetCheckStatus
+`func (o *Issue) UnsetCheckStatus()`
+
+UnsetCheckStatus ensures that no value is present for CheckStatus, not even an explicit nil
 ### GetEndDate
 
 `func (o *Issue) GetEndDate() time.Time`
@@ -243,6 +273,16 @@ SetEndDate sets EndDate field to given value.
 
 HasEndDate returns a boolean if a field has been set.
 
+### SetEndDateNil
+
+`func (o *Issue) SetEndDateNil(b bool)`
+
+ SetEndDateNil sets the value for EndDate to be an explicit nil
+
+### UnsetEndDate
+`func (o *Issue) UnsetEndDate()`
+
+UnsetEndDate ensures that no value is present for EndDate, not even an explicit nil
 ### GetHealth
 
 `func (o *Issue) GetHealth() int64`
@@ -343,6 +383,16 @@ SetLastCheckTime sets LastCheckTime field to given value.
 
 HasLastCheckTime returns a boolean if a field has been set.
 
+### SetLastCheckTimeNil
+
+`func (o *Issue) SetLastCheckTimeNil(b bool)`
+
+ SetLastCheckTimeNil sets the value for LastCheckTime to be an explicit nil
+
+### UnsetLastCheckTime
+`func (o *Issue) UnsetLastCheckTime()`
+
+UnsetLastCheckTime ensures that no value is present for LastCheckTime, not even an explicit nil
 ### GetLastError
 
 `func (o *Issue) GetLastError() string`
@@ -368,6 +418,16 @@ SetLastError sets LastError field to given value.
 
 HasLastError returns a boolean if a field has been set.
 
+### SetLastErrorNil
+
+`func (o *Issue) SetLastErrorNil(b bool)`
+
+ SetLastErrorNil sets the value for LastError to be an explicit nil
+
+### UnsetLastError
+`func (o *Issue) UnsetLastError()`
+
+UnsetLastError ensures that no value is present for LastError, not even an explicit nil
 ### GetLastMessage
 
 `func (o *Issue) GetLastMessage() string`
@@ -393,6 +453,16 @@ SetLastMessage sets LastMessage field to given value.
 
 HasLastMessage returns a boolean if a field has been set.
 
+### SetLastMessageNil
+
+`func (o *Issue) SetLastMessageNil(b bool)`
+
+ SetLastMessageNil sets the value for LastMessage to be an explicit nil
+
+### UnsetLastMessage
+`func (o *Issue) UnsetLastMessage()`
+
+UnsetLastMessage ensures that no value is present for LastMessage, not even an explicit nil
 ### GetName
 
 `func (o *Issue) GetName() string`

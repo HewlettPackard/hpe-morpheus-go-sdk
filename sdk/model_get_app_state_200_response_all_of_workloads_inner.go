@@ -24,7 +24,7 @@ type GetAppState200ResponseAllOfWorkloadsInner struct {
 	RefType              *string                `json:"refType,omitempty"`
 	RefId                *int64                 `json:"refId,omitempty"`
 	RefName              *string                `json:"refName,omitempty"`
-	SubRefName           *string                `json:"subRefName,omitempty"`
+	SubRefName           NullableString         `json:"subRefName,omitempty"`
 	StateDate            *time.Time             `json:"stateDate,omitempty"`
 	Status               *string                `json:"status,omitempty"`
 	IacDrift             *bool                  `json:"iacDrift,omitempty"`
@@ -146,36 +146,47 @@ func (o *GetAppState200ResponseAllOfWorkloadsInner) SetRefName(v string) {
 	o.RefName = &v
 }
 
-// GetSubRefName returns the SubRefName field value if set, zero value otherwise.
+// GetSubRefName returns the SubRefName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetAppState200ResponseAllOfWorkloadsInner) GetSubRefName() string {
-	if o == nil || IsNil(o.SubRefName) {
+	if o == nil || IsNil(o.SubRefName.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.SubRefName
+	return *o.SubRefName.Get()
 }
 
 // GetSubRefNameOk returns a tuple with the SubRefName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetAppState200ResponseAllOfWorkloadsInner) GetSubRefNameOk() (*string, bool) {
-	if o == nil || IsNil(o.SubRefName) {
+	if o == nil {
 		return nil, false
 	}
-	return o.SubRefName, true
+	return o.SubRefName.Get(), o.SubRefName.IsSet()
 }
 
 // IsSetSubRefName returns a boolean if a field has been set.
 func (o *GetAppState200ResponseAllOfWorkloadsInner) IsSetSubRefName() bool {
-	if o != nil && !IsNil(o.SubRefName) {
+	if o != nil && o.SubRefName.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetSubRefName gets a reference to the given string and assigns it to the SubRefName field.
+// SetSubRefName gets a reference to the given NullableString and assigns it to the SubRefName field.
 func (o *GetAppState200ResponseAllOfWorkloadsInner) SetSubRefName(v string) {
-	o.SubRefName = &v
+	o.SubRefName.Set(&v)
+}
+
+// SetSubRefNameNil sets the value for SubRefName to be an explicit nil
+func (o *GetAppState200ResponseAllOfWorkloadsInner) SetSubRefNameNil() {
+	o.SubRefName.Set(nil)
+}
+
+// UnsetSubRefName ensures that no value is present for SubRefName, not even an explicit nil
+func (o *GetAppState200ResponseAllOfWorkloadsInner) UnsetSubRefName() {
+	o.SubRefName.Unset()
 }
 
 // GetStateDate returns the StateDate field value if set, zero value otherwise.
@@ -293,8 +304,8 @@ func (o GetAppState200ResponseAllOfWorkloadsInner) ToMap() (map[string]interface
 	if !IsNil(o.RefName) {
 		toSerialize["refName"] = o.RefName
 	}
-	if !IsNil(o.SubRefName) {
-		toSerialize["subRefName"] = o.SubRefName
+	if o.SubRefName.IsSet() {
+		toSerialize["subRefName"] = o.SubRefName.Get()
 	}
 	if !IsNil(o.StateDate) {
 		toSerialize["stateDate"] = o.StateDate

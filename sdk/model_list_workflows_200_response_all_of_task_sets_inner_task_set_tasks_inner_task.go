@@ -24,12 +24,12 @@ type ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTask struct {
 	Id                   *int64                                                                      `json:"id,omitempty"`
 	AccountId            *int64                                                                      `json:"accountId,omitempty"`
 	Name                 *string                                                                     `json:"name,omitempty"`
-	Code                 *string                                                                     `json:"code,omitempty"`
-	TaskType             *ListPriceSets200ResponseAllOfPriceSetsInnerPricesInnerVolumeType           `json:"taskType,omitempty"`
+	Code                 NullableString                                                              `json:"code,omitempty"`
+	TaskType             *ListBackupSettings200ResponseBackupSettingsDefaultSchedule                 `json:"taskType,omitempty"`
 	Labels               []string                                                                    `json:"labels,omitempty"`
 	TaskOptions          *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskTaskOptions `json:"taskOptions,omitempty"`
 	File                 *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskFile        `json:"file,omitempty"`
-	ResultType           *string                                                                     `json:"resultType,omitempty"`
+	ResultType           NullableString                                                              `json:"resultType,omitempty"`
 	ExecuteTarget        *string                                                                     `json:"executeTarget,omitempty"`
 	Retryable            *bool                                                                       `json:"retryable,omitempty"`
 	RetryCount           *int64                                                                      `json:"retryCount,omitempty"`
@@ -155,42 +155,53 @@ func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTask) SetNam
 	o.Name = &v
 }
 
-// GetCode returns the Code field value if set, zero value otherwise.
+// GetCode returns the Code field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTask) GetCode() string {
-	if o == nil || IsNil(o.Code) {
+	if o == nil || IsNil(o.Code.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Code
+	return *o.Code.Get()
 }
 
 // GetCodeOk returns a tuple with the Code field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTask) GetCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.Code) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Code, true
+	return o.Code.Get(), o.Code.IsSet()
 }
 
 // IsSetCode returns a boolean if a field has been set.
 func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTask) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
+	if o != nil && o.Code.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCode gets a reference to the given string and assigns it to the Code field.
+// SetCode gets a reference to the given NullableString and assigns it to the Code field.
 func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTask) SetCode(v string) {
-	o.Code = &v
+	o.Code.Set(&v)
+}
+
+// SetCodeNil sets the value for Code to be an explicit nil
+func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTask) SetCodeNil() {
+	o.Code.Set(nil)
+}
+
+// UnsetCode ensures that no value is present for Code, not even an explicit nil
+func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTask) UnsetCode() {
+	o.Code.Unset()
 }
 
 // GetTaskType returns the TaskType field value if set, zero value otherwise.
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTask) GetTaskType() ListPriceSets200ResponseAllOfPriceSetsInnerPricesInnerVolumeType {
+func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTask) GetTaskType() ListBackupSettings200ResponseBackupSettingsDefaultSchedule {
 	if o == nil || IsNil(o.TaskType) {
-		var ret ListPriceSets200ResponseAllOfPriceSetsInnerPricesInnerVolumeType
+		var ret ListBackupSettings200ResponseBackupSettingsDefaultSchedule
 		return ret
 	}
 	return *o.TaskType
@@ -198,7 +209,7 @@ func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTask) GetTas
 
 // GetTaskTypeOk returns a tuple with the TaskType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTask) GetTaskTypeOk() (*ListPriceSets200ResponseAllOfPriceSetsInnerPricesInnerVolumeType, bool) {
+func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTask) GetTaskTypeOk() (*ListBackupSettings200ResponseBackupSettingsDefaultSchedule, bool) {
 	if o == nil || IsNil(o.TaskType) {
 		return nil, false
 	}
@@ -214,14 +225,14 @@ func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTask) IsSetT
 	return false
 }
 
-// SetTaskType gets a reference to the given ListPriceSets200ResponseAllOfPriceSetsInnerPricesInnerVolumeType and assigns it to the TaskType field.
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTask) SetTaskType(v ListPriceSets200ResponseAllOfPriceSetsInnerPricesInnerVolumeType) {
+// SetTaskType gets a reference to the given ListBackupSettings200ResponseBackupSettingsDefaultSchedule and assigns it to the TaskType field.
+func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTask) SetTaskType(v ListBackupSettings200ResponseBackupSettingsDefaultSchedule) {
 	o.TaskType = &v
 }
 
-// GetLabels returns the Labels field value if set, zero value otherwise.
+// GetLabels returns the Labels field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTask) GetLabels() []string {
-	if o == nil || IsNil(o.Labels) {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -230,6 +241,7 @@ func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTask) GetLab
 
 // GetLabelsOk returns a tuple with the Labels field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTask) GetLabelsOk() ([]string, bool) {
 	if o == nil || IsNil(o.Labels) {
 		return nil, false
@@ -315,36 +327,47 @@ func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTask) SetFil
 	o.File = &v
 }
 
-// GetResultType returns the ResultType field value if set, zero value otherwise.
+// GetResultType returns the ResultType field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTask) GetResultType() string {
-	if o == nil || IsNil(o.ResultType) {
+	if o == nil || IsNil(o.ResultType.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ResultType
+	return *o.ResultType.Get()
 }
 
 // GetResultTypeOk returns a tuple with the ResultType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTask) GetResultTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.ResultType) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ResultType, true
+	return o.ResultType.Get(), o.ResultType.IsSet()
 }
 
 // IsSetResultType returns a boolean if a field has been set.
 func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTask) IsSetResultType() bool {
-	if o != nil && !IsNil(o.ResultType) {
+	if o != nil && o.ResultType.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetResultType gets a reference to the given string and assigns it to the ResultType field.
+// SetResultType gets a reference to the given NullableString and assigns it to the ResultType field.
 func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTask) SetResultType(v string) {
-	o.ResultType = &v
+	o.ResultType.Set(&v)
+}
+
+// SetResultTypeNil sets the value for ResultType to be an explicit nil
+func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTask) SetResultTypeNil() {
+	o.ResultType.Set(nil)
+}
+
+// UnsetResultType ensures that no value is present for ResultType, not even an explicit nil
+func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTask) UnsetResultType() {
+	o.ResultType.Unset()
 }
 
 // GetExecuteTarget returns the ExecuteTarget field value if set, zero value otherwise.
@@ -590,13 +613,13 @@ func (o ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTask) ToMap()
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !IsNil(o.Code) {
-		toSerialize["code"] = o.Code
+	if o.Code.IsSet() {
+		toSerialize["code"] = o.Code.Get()
 	}
 	if !IsNil(o.TaskType) {
 		toSerialize["taskType"] = o.TaskType
 	}
-	if !IsNil(o.Labels) {
+	if o.Labels != nil {
 		toSerialize["labels"] = o.Labels
 	}
 	if !IsNil(o.TaskOptions) {
@@ -605,8 +628,8 @@ func (o ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTask) ToMap()
 	if !IsNil(o.File) {
 		toSerialize["file"] = o.File
 	}
-	if !IsNil(o.ResultType) {
-		toSerialize["resultType"] = o.ResultType
+	if o.ResultType.IsSet() {
+		toSerialize["resultType"] = o.ResultType.Get()
 	}
 	if !IsNil(o.ExecuteTarget) {
 		toSerialize["executeTarget"] = o.ExecuteTarget

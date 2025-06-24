@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **NullableString** |  | [optional] 
 **Code** | Pointer to **string** |  | [optional] 
 **AclEnabled** | Pointer to **bool** |  | [optional] 
 **MultiTenant** | Pointer to **bool** |  | [optional] 
@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **CustomSupported** | Pointer to **bool** |  | [optional] 
 **MapPorts** | Pointer to **bool** |  | [optional] 
 **ExportServer** | Pointer to **bool** |  | [optional] 
-**ViewSet** | Pointer to **string** |  | [optional] 
+**ViewSet** | Pointer to **NullableString** |  | [optional] 
 **ServerType** | Pointer to **string** |  | [optional] 
 **HostType** | Pointer to **string** |  | [optional] 
 **AddVolumes** | Pointer to **bool** |  | [optional] 
@@ -30,20 +30,20 @@ Name | Type | Description | Notes
 **LvmSupported** | Pointer to **bool** |  | [optional] 
 **HostDiskMode** | Pointer to **string** |  | [optional] 
 **MinDisk** | Pointer to **int64** |  | [optional] 
-**MaxDisk** | Pointer to **string** |  | [optional] 
+**MaxDisk** | Pointer to **NullableString** |  | [optional] 
 **ResizeCopiesVolumes** | Pointer to **bool** |  | [optional] 
 **SupportsAutoDatastore** | Pointer to **bool** |  | [optional] 
 **HasZonePools** | Pointer to **bool** |  | [optional] 
 **HasSecurityGroups** | Pointer to **bool** |  | [optional] 
 **HasParameters** | Pointer to **bool** |  | [optional] 
-**CanEnforceTags** | Pointer to **bool** |  | [optional] 
+**CanEnforceTags** | Pointer to **NullableBool** |  | [optional] 
 **DisableRootDatastore** | Pointer to **bool** |  | [optional] 
 **HasSnapshots** | Pointer to **bool** |  | [optional] 
 **HasSpecTemplates** | Pointer to **bool** |  | [optional] 
 **HasPreview** | Pointer to **bool** |  | [optional] 
 **ZonePoolRequired** | Pointer to **bool** |  | [optional] 
 **PlanRequiresPool** | Pointer to **bool** |  | [optional] 
-**HasFolders** | Pointer to **bool** |  | [optional] 
+**HasFolders** | Pointer to **NullableBool** |  | [optional] 
 **OptionTypes** | Pointer to [**[]ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner**](ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner.md) |  | [optional] 
 **CustomOptionTypes** | Pointer to [**[]ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner**](ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner.md) |  | [optional] 
 **NetworkTypes** | Pointer to [**[]GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner**](GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner.md) |  | [optional] 
@@ -145,6 +145,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *ProvisionTypes) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *ProvisionTypes) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetCode
 
 `func (o *ProvisionTypes) GetCode() string`
@@ -370,6 +380,16 @@ SetViewSet sets ViewSet field to given value.
 
 HasViewSet returns a boolean if a field has been set.
 
+### SetViewSetNil
+
+`func (o *ProvisionTypes) SetViewSetNil(b bool)`
+
+ SetViewSetNil sets the value for ViewSet to be an explicit nil
+
+### UnsetViewSet
+`func (o *ProvisionTypes) UnsetViewSet()`
+
+UnsetViewSet ensures that no value is present for ViewSet, not even an explicit nil
 ### GetServerType
 
 `func (o *ProvisionTypes) GetServerType() string`
@@ -745,6 +765,16 @@ SetMaxDisk sets MaxDisk field to given value.
 
 HasMaxDisk returns a boolean if a field has been set.
 
+### SetMaxDiskNil
+
+`func (o *ProvisionTypes) SetMaxDiskNil(b bool)`
+
+ SetMaxDiskNil sets the value for MaxDisk to be an explicit nil
+
+### UnsetMaxDisk
+`func (o *ProvisionTypes) UnsetMaxDisk()`
+
+UnsetMaxDisk ensures that no value is present for MaxDisk, not even an explicit nil
 ### GetResizeCopiesVolumes
 
 `func (o *ProvisionTypes) GetResizeCopiesVolumes() bool`
@@ -895,6 +925,16 @@ SetCanEnforceTags sets CanEnforceTags field to given value.
 
 HasCanEnforceTags returns a boolean if a field has been set.
 
+### SetCanEnforceTagsNil
+
+`func (o *ProvisionTypes) SetCanEnforceTagsNil(b bool)`
+
+ SetCanEnforceTagsNil sets the value for CanEnforceTags to be an explicit nil
+
+### UnsetCanEnforceTags
+`func (o *ProvisionTypes) UnsetCanEnforceTags()`
+
+UnsetCanEnforceTags ensures that no value is present for CanEnforceTags, not even an explicit nil
 ### GetDisableRootDatastore
 
 `func (o *ProvisionTypes) GetDisableRootDatastore() bool`
@@ -1070,6 +1110,16 @@ SetHasFolders sets HasFolders field to given value.
 
 HasHasFolders returns a boolean if a field has been set.
 
+### SetHasFoldersNil
+
+`func (o *ProvisionTypes) SetHasFoldersNil(b bool)`
+
+ SetHasFoldersNil sets the value for HasFolders to be an explicit nil
+
+### UnsetHasFolders
+`func (o *ProvisionTypes) UnsetHasFolders()`
+
+UnsetHasFolders ensures that no value is present for HasFolders, not even an explicit nil
 ### GetOptionTypes
 
 `func (o *ProvisionTypes) GetOptionTypes() []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner`
@@ -1095,6 +1145,16 @@ SetOptionTypes sets OptionTypes field to given value.
 
 HasOptionTypes returns a boolean if a field has been set.
 
+### SetOptionTypesNil
+
+`func (o *ProvisionTypes) SetOptionTypesNil(b bool)`
+
+ SetOptionTypesNil sets the value for OptionTypes to be an explicit nil
+
+### UnsetOptionTypes
+`func (o *ProvisionTypes) UnsetOptionTypes()`
+
+UnsetOptionTypes ensures that no value is present for OptionTypes, not even an explicit nil
 ### GetCustomOptionTypes
 
 `func (o *ProvisionTypes) GetCustomOptionTypes() []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner`
@@ -1120,6 +1180,16 @@ SetCustomOptionTypes sets CustomOptionTypes field to given value.
 
 HasCustomOptionTypes returns a boolean if a field has been set.
 
+### SetCustomOptionTypesNil
+
+`func (o *ProvisionTypes) SetCustomOptionTypesNil(b bool)`
+
+ SetCustomOptionTypesNil sets the value for CustomOptionTypes to be an explicit nil
+
+### UnsetCustomOptionTypes
+`func (o *ProvisionTypes) UnsetCustomOptionTypes()`
+
+UnsetCustomOptionTypes ensures that no value is present for CustomOptionTypes, not even an explicit nil
 ### GetNetworkTypes
 
 `func (o *ProvisionTypes) GetNetworkTypes() []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner`
@@ -1145,6 +1215,16 @@ SetNetworkTypes sets NetworkTypes field to given value.
 
 HasNetworkTypes returns a boolean if a field has been set.
 
+### SetNetworkTypesNil
+
+`func (o *ProvisionTypes) SetNetworkTypesNil(b bool)`
+
+ SetNetworkTypesNil sets the value for NetworkTypes to be an explicit nil
+
+### UnsetNetworkTypes
+`func (o *ProvisionTypes) UnsetNetworkTypes()`
+
+UnsetNetworkTypes ensures that no value is present for NetworkTypes, not even an explicit nil
 ### GetStorageTypes
 
 `func (o *ProvisionTypes) GetStorageTypes() []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageTypesInner`
@@ -1170,6 +1250,16 @@ SetStorageTypes sets StorageTypes field to given value.
 
 HasStorageTypes returns a boolean if a field has been set.
 
+### SetStorageTypesNil
+
+`func (o *ProvisionTypes) SetStorageTypesNil(b bool)`
+
+ SetStorageTypesNil sets the value for StorageTypes to be an explicit nil
+
+### UnsetStorageTypes
+`func (o *ProvisionTypes) UnsetStorageTypes()`
+
+UnsetStorageTypes ensures that no value is present for StorageTypes, not even an explicit nil
 ### GetRootStorageTypes
 
 `func (o *ProvisionTypes) GetRootStorageTypes() []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageTypesInner`
@@ -1195,6 +1285,16 @@ SetRootStorageTypes sets RootStorageTypes field to given value.
 
 HasRootStorageTypes returns a boolean if a field has been set.
 
+### SetRootStorageTypesNil
+
+`func (o *ProvisionTypes) SetRootStorageTypesNil(b bool)`
+
+ SetRootStorageTypesNil sets the value for RootStorageTypes to be an explicit nil
+
+### UnsetRootStorageTypes
+`func (o *ProvisionTypes) UnsetRootStorageTypes()`
+
+UnsetRootStorageTypes ensures that no value is present for RootStorageTypes, not even an explicit nil
 ### GetControllerTypes
 
 `func (o *ProvisionTypes) GetControllerTypes() []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeControllerTypesInner`
@@ -1220,6 +1320,16 @@ SetControllerTypes sets ControllerTypes field to given value.
 
 HasControllerTypes returns a boolean if a field has been set.
 
+### SetControllerTypesNil
+
+`func (o *ProvisionTypes) SetControllerTypesNil(b bool)`
+
+ SetControllerTypesNil sets the value for ControllerTypes to be an explicit nil
+
+### UnsetControllerTypes
+`func (o *ProvisionTypes) UnsetControllerTypes()`
+
+UnsetControllerTypes ensures that no value is present for ControllerTypes, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

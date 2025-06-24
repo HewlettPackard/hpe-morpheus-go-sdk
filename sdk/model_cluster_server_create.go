@@ -36,9 +36,9 @@ type ClusterServerCreate struct {
 	Visibility *string                                  `json:"visibility,omitempty"`
 	UserGroup  *AddClusterRequestClusterServerUserGroup `json:"userGroup,omitempty"`
 	// Network domain
-	NetworkDomain *string `json:"networkDomain,omitempty"`
+	NetworkDomain NullableString `json:"networkDomain,omitempty"`
 	// Hostname for server host
-	Hostname *string `json:"hostname,omitempty"`
+	Hostname NullableString `json:"hostname,omitempty"`
 	// Number of workers or hosts
 	NodeCount *int64 `json:"nodeCount,omitempty"`
 	// Metadata tags, Array of objects having a name and value.
@@ -50,7 +50,7 @@ type ClusterServerCreate struct {
 	// SSH Username
 	SshUsername *string `json:"sshUsername,omitempty"`
 	// SSH Password
-	SshPassword          *string                                   `json:"sshPassword,omitempty"`
+	SshPassword          NullableString                            `json:"sshPassword,omitempty"`
 	SshKeyPair           *AddClusterRequestClusterServerSshKeyPair `json:"sshKeyPair,omitempty"`
 	AdditionalProperties map[string]interface{}                    `json:",remain"`
 }
@@ -377,68 +377,90 @@ func (o *ClusterServerCreate) SetUserGroup(v AddClusterRequestClusterServerUserG
 	o.UserGroup = &v
 }
 
-// GetNetworkDomain returns the NetworkDomain field value if set, zero value otherwise.
+// GetNetworkDomain returns the NetworkDomain field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ClusterServerCreate) GetNetworkDomain() string {
-	if o == nil || IsNil(o.NetworkDomain) {
+	if o == nil || IsNil(o.NetworkDomain.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.NetworkDomain
+	return *o.NetworkDomain.Get()
 }
 
 // GetNetworkDomainOk returns a tuple with the NetworkDomain field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ClusterServerCreate) GetNetworkDomainOk() (*string, bool) {
-	if o == nil || IsNil(o.NetworkDomain) {
+	if o == nil {
 		return nil, false
 	}
-	return o.NetworkDomain, true
+	return o.NetworkDomain.Get(), o.NetworkDomain.IsSet()
 }
 
 // IsSetNetworkDomain returns a boolean if a field has been set.
 func (o *ClusterServerCreate) IsSetNetworkDomain() bool {
-	if o != nil && !IsNil(o.NetworkDomain) {
+	if o != nil && o.NetworkDomain.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetNetworkDomain gets a reference to the given string and assigns it to the NetworkDomain field.
+// SetNetworkDomain gets a reference to the given NullableString and assigns it to the NetworkDomain field.
 func (o *ClusterServerCreate) SetNetworkDomain(v string) {
-	o.NetworkDomain = &v
+	o.NetworkDomain.Set(&v)
 }
 
-// GetHostname returns the Hostname field value if set, zero value otherwise.
+// SetNetworkDomainNil sets the value for NetworkDomain to be an explicit nil
+func (o *ClusterServerCreate) SetNetworkDomainNil() {
+	o.NetworkDomain.Set(nil)
+}
+
+// UnsetNetworkDomain ensures that no value is present for NetworkDomain, not even an explicit nil
+func (o *ClusterServerCreate) UnsetNetworkDomain() {
+	o.NetworkDomain.Unset()
+}
+
+// GetHostname returns the Hostname field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ClusterServerCreate) GetHostname() string {
-	if o == nil || IsNil(o.Hostname) {
+	if o == nil || IsNil(o.Hostname.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Hostname
+	return *o.Hostname.Get()
 }
 
 // GetHostnameOk returns a tuple with the Hostname field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ClusterServerCreate) GetHostnameOk() (*string, bool) {
-	if o == nil || IsNil(o.Hostname) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Hostname, true
+	return o.Hostname.Get(), o.Hostname.IsSet()
 }
 
 // IsSetHostname returns a boolean if a field has been set.
 func (o *ClusterServerCreate) IsSetHostname() bool {
-	if o != nil && !IsNil(o.Hostname) {
+	if o != nil && o.Hostname.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetHostname gets a reference to the given string and assigns it to the Hostname field.
+// SetHostname gets a reference to the given NullableString and assigns it to the Hostname field.
 func (o *ClusterServerCreate) SetHostname(v string) {
-	o.Hostname = &v
+	o.Hostname.Set(&v)
+}
+
+// SetHostnameNil sets the value for Hostname to be an explicit nil
+func (o *ClusterServerCreate) SetHostnameNil() {
+	o.Hostname.Set(nil)
+}
+
+// UnsetHostname ensures that no value is present for Hostname, not even an explicit nil
+func (o *ClusterServerCreate) UnsetHostname() {
+	o.Hostname.Unset()
 }
 
 // GetNodeCount returns the NodeCount field value if set, zero value otherwise.
@@ -601,36 +623,47 @@ func (o *ClusterServerCreate) SetSshUsername(v string) {
 	o.SshUsername = &v
 }
 
-// GetSshPassword returns the SshPassword field value if set, zero value otherwise.
+// GetSshPassword returns the SshPassword field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ClusterServerCreate) GetSshPassword() string {
-	if o == nil || IsNil(o.SshPassword) {
+	if o == nil || IsNil(o.SshPassword.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.SshPassword
+	return *o.SshPassword.Get()
 }
 
 // GetSshPasswordOk returns a tuple with the SshPassword field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ClusterServerCreate) GetSshPasswordOk() (*string, bool) {
-	if o == nil || IsNil(o.SshPassword) {
+	if o == nil {
 		return nil, false
 	}
-	return o.SshPassword, true
+	return o.SshPassword.Get(), o.SshPassword.IsSet()
 }
 
 // IsSetSshPassword returns a boolean if a field has been set.
 func (o *ClusterServerCreate) IsSetSshPassword() bool {
-	if o != nil && !IsNil(o.SshPassword) {
+	if o != nil && o.SshPassword.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetSshPassword gets a reference to the given string and assigns it to the SshPassword field.
+// SetSshPassword gets a reference to the given NullableString and assigns it to the SshPassword field.
 func (o *ClusterServerCreate) SetSshPassword(v string) {
-	o.SshPassword = &v
+	o.SshPassword.Set(&v)
+}
+
+// SetSshPasswordNil sets the value for SshPassword to be an explicit nil
+func (o *ClusterServerCreate) SetSshPasswordNil() {
+	o.SshPassword.Set(nil)
+}
+
+// UnsetSshPassword ensures that no value is present for SshPassword, not even an explicit nil
+func (o *ClusterServerCreate) UnsetSshPassword() {
+	o.SshPassword.Unset()
 }
 
 // GetSshKeyPair returns the SshKeyPair field value if set, zero value otherwise.
@@ -699,11 +732,11 @@ func (o ClusterServerCreate) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.UserGroup) {
 		toSerialize["userGroup"] = o.UserGroup
 	}
-	if !IsNil(o.NetworkDomain) {
-		toSerialize["networkDomain"] = o.NetworkDomain
+	if o.NetworkDomain.IsSet() {
+		toSerialize["networkDomain"] = o.NetworkDomain.Get()
 	}
-	if !IsNil(o.Hostname) {
-		toSerialize["hostname"] = o.Hostname
+	if o.Hostname.IsSet() {
+		toSerialize["hostname"] = o.Hostname.Get()
 	}
 	if !IsNil(o.NodeCount) {
 		toSerialize["nodeCount"] = o.NodeCount
@@ -720,8 +753,8 @@ func (o ClusterServerCreate) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.SshUsername) {
 		toSerialize["sshUsername"] = o.SshUsername
 	}
-	if !IsNil(o.SshPassword) {
-		toSerialize["sshPassword"] = o.SshPassword
+	if o.SshPassword.IsSet() {
+		toSerialize["sshPassword"] = o.SshPassword.Get()
 	}
 	if !IsNil(o.SshKeyPair) {
 		toSerialize["sshKeyPair"] = o.SshKeyPair

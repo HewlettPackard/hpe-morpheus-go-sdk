@@ -6,13 +6,13 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**Code** | Pointer to **string** |  | [optional] 
+**Code** | Pointer to **NullableString** |  | [optional] 
 **DatastoreType** | Pointer to [**GetAlerts200ResponseAllOfChecksInnerAccount**](GetAlerts200ResponseAllOfChecksInnerAccount.md) |  | [optional] 
 **StorageServer** | Pointer to [**GetAlerts200ResponseAllOfChecksInnerAccount**](GetAlerts200ResponseAllOfChecksInnerAccount.md) |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 **Visibility** | Pointer to **string** |  | [optional] 
-**StorageSize** | Pointer to **int64** |  | [optional] 
-**FreeSpace** | Pointer to **int64** |  | [optional] 
+**StorageSize** | Pointer to **NullableInt64** |  | [optional] 
+**FreeSpace** | Pointer to **NullableInt64** |  | [optional] 
 **DrsEnabled** | Pointer to **bool** |  | [optional] 
 **Active** | Pointer to **bool** |  | [optional] 
 **AllowWrite** | Pointer to **bool** |  | [optional] 
@@ -125,6 +125,16 @@ SetCode sets Code field to given value.
 
 HasCode returns a boolean if a field has been set.
 
+### SetCodeNil
+
+`func (o *UpdateDatastores200ResponseDatastore) SetCodeNil(b bool)`
+
+ SetCodeNil sets the value for Code to be an explicit nil
+
+### UnsetCode
+`func (o *UpdateDatastores200ResponseDatastore) UnsetCode()`
+
+UnsetCode ensures that no value is present for Code, not even an explicit nil
 ### GetDatastoreType
 
 `func (o *UpdateDatastores200ResponseDatastore) GetDatastoreType() GetAlerts200ResponseAllOfChecksInnerAccount`
@@ -250,6 +260,16 @@ SetStorageSize sets StorageSize field to given value.
 
 HasStorageSize returns a boolean if a field has been set.
 
+### SetStorageSizeNil
+
+`func (o *UpdateDatastores200ResponseDatastore) SetStorageSizeNil(b bool)`
+
+ SetStorageSizeNil sets the value for StorageSize to be an explicit nil
+
+### UnsetStorageSize
+`func (o *UpdateDatastores200ResponseDatastore) UnsetStorageSize()`
+
+UnsetStorageSize ensures that no value is present for StorageSize, not even an explicit nil
 ### GetFreeSpace
 
 `func (o *UpdateDatastores200ResponseDatastore) GetFreeSpace() int64`
@@ -275,6 +295,16 @@ SetFreeSpace sets FreeSpace field to given value.
 
 HasFreeSpace returns a boolean if a field has been set.
 
+### SetFreeSpaceNil
+
+`func (o *UpdateDatastores200ResponseDatastore) SetFreeSpaceNil(b bool)`
+
+ SetFreeSpaceNil sets the value for FreeSpace to be an explicit nil
+
+### UnsetFreeSpace
+`func (o *UpdateDatastores200ResponseDatastore) UnsetFreeSpace()`
+
+UnsetFreeSpace ensures that no value is present for FreeSpace, not even an explicit nil
 ### GetDrsEnabled
 
 `func (o *UpdateDatastores200ResponseDatastore) GetDrsEnabled() bool`

@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **int64** |  | [optional] 
-**SourceType** | Pointer to **string** |  | [optional] 
-**ContentRef** | Pointer to **string** |  | [optional] 
-**ContentPath** | Pointer to **string** |  | [optional] 
+**Id** | Pointer to **NullableInt64** |  | [optional] 
+**SourceType** | Pointer to **NullableString** |  | [optional] 
+**ContentRef** | Pointer to **NullableString** |  | [optional] 
+**ContentPath** | Pointer to **NullableString** |  | [optional] 
 **Repository** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
-**Content** | Pointer to **string** |  | [optional] 
+**Content** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -55,6 +55,16 @@ SetId sets Id field to given value.
 
 HasId returns a boolean if a field has been set.
 
+### SetIdNil
+
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOfFile) SetIdNil(b bool)`
+
+ SetIdNil sets the value for Id to be an explicit nil
+
+### UnsetId
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOfFile) UnsetId()`
+
+UnsetId ensures that no value is present for Id, not even an explicit nil
 ### GetSourceType
 
 `func (o *ListTasks200ResponseAllOfTasksInnerAnyOfFile) GetSourceType() string`
@@ -80,6 +90,16 @@ SetSourceType sets SourceType field to given value.
 
 HasSourceType returns a boolean if a field has been set.
 
+### SetSourceTypeNil
+
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOfFile) SetSourceTypeNil(b bool)`
+
+ SetSourceTypeNil sets the value for SourceType to be an explicit nil
+
+### UnsetSourceType
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOfFile) UnsetSourceType()`
+
+UnsetSourceType ensures that no value is present for SourceType, not even an explicit nil
 ### GetContentRef
 
 `func (o *ListTasks200ResponseAllOfTasksInnerAnyOfFile) GetContentRef() string`
@@ -105,6 +125,16 @@ SetContentRef sets ContentRef field to given value.
 
 HasContentRef returns a boolean if a field has been set.
 
+### SetContentRefNil
+
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOfFile) SetContentRefNil(b bool)`
+
+ SetContentRefNil sets the value for ContentRef to be an explicit nil
+
+### UnsetContentRef
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOfFile) UnsetContentRef()`
+
+UnsetContentRef ensures that no value is present for ContentRef, not even an explicit nil
 ### GetContentPath
 
 `func (o *ListTasks200ResponseAllOfTasksInnerAnyOfFile) GetContentPath() string`
@@ -130,6 +160,16 @@ SetContentPath sets ContentPath field to given value.
 
 HasContentPath returns a boolean if a field has been set.
 
+### SetContentPathNil
+
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOfFile) SetContentPathNil(b bool)`
+
+ SetContentPathNil sets the value for ContentPath to be an explicit nil
+
+### UnsetContentPath
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOfFile) UnsetContentPath()`
+
+UnsetContentPath ensures that no value is present for ContentPath, not even an explicit nil
 ### GetRepository
 
 `func (o *ListTasks200ResponseAllOfTasksInnerAnyOfFile) GetRepository() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
@@ -180,6 +220,16 @@ SetContent sets Content field to given value.
 
 HasContent returns a boolean if a field has been set.
 
+### SetContentNil
+
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOfFile) SetContentNil(b bool)`
+
+ SetContentNil sets the value for Content to be an explicit nil
+
+### UnsetContent
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOfFile) UnsetContent()`
+
+UnsetContent ensures that no value is present for Content, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

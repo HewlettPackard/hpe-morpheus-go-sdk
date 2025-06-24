@@ -24,15 +24,15 @@ type ListTaskTypes200ResponseTaskTypesInner struct {
 	Code                 *string                                                  `json:"code,omitempty"`
 	Name                 *string                                                  `json:"name,omitempty"`
 	Category             *string                                                  `json:"category,omitempty"`
-	Description          *string                                                  `json:"description,omitempty"`
+	Description          NullableString                                           `json:"description,omitempty"`
 	Scriptable           *bool                                                    `json:"scriptable,omitempty"`
 	Enabled              *bool                                                    `json:"enabled,omitempty"`
 	HasResults           *bool                                                    `json:"hasResults,omitempty"`
-	AllowExecuteLocal    *bool                                                    `json:"allowExecuteLocal,omitempty"`
-	AllowExecuteRemote   *bool                                                    `json:"allowExecuteRemote,omitempty"`
-	AllowExecuteResource *bool                                                    `json:"allowExecuteResource,omitempty"`
-	AllowLocalRepo       *bool                                                    `json:"allowLocalRepo,omitempty"`
-	AllowRemoteKeyAuth   *bool                                                    `json:"allowRemoteKeyAuth,omitempty"`
+	AllowExecuteLocal    NullableBool                                             `json:"allowExecuteLocal,omitempty"`
+	AllowExecuteRemote   NullableBool                                             `json:"allowExecuteRemote,omitempty"`
+	AllowExecuteResource NullableBool                                             `json:"allowExecuteResource,omitempty"`
+	AllowLocalRepo       NullableBool                                             `json:"allowLocalRepo,omitempty"`
+	AllowRemoteKeyAuth   NullableBool                                             `json:"allowRemoteKeyAuth,omitempty"`
 	OptionTypes          []ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
 	AdditionalProperties map[string]interface{}                                   `json:",remain"`
 }
@@ -184,36 +184,47 @@ func (o *ListTaskTypes200ResponseTaskTypesInner) SetCategory(v string) {
 	o.Category = &v
 }
 
-// GetDescription returns the Description field value if set, zero value otherwise.
+// GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListTaskTypes200ResponseTaskTypesInner) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
+	if o == nil || IsNil(o.Description.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Description
+	return *o.Description.Get()
 }
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListTaskTypes200ResponseTaskTypesInner) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Description, true
+	return o.Description.Get(), o.Description.IsSet()
 }
 
 // IsSetDescription returns a boolean if a field has been set.
 func (o *ListTaskTypes200ResponseTaskTypesInner) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
+	if o != nil && o.Description.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDescription gets a reference to the given string and assigns it to the Description field.
+// SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *ListTaskTypes200ResponseTaskTypesInner) SetDescription(v string) {
-	o.Description = &v
+	o.Description.Set(&v)
+}
+
+// SetDescriptionNil sets the value for Description to be an explicit nil
+func (o *ListTaskTypes200ResponseTaskTypesInner) SetDescriptionNil() {
+	o.Description.Set(nil)
+}
+
+// UnsetDescription ensures that no value is present for Description, not even an explicit nil
+func (o *ListTaskTypes200ResponseTaskTypesInner) UnsetDescription() {
+	o.Description.Unset()
 }
 
 // GetScriptable returns the Scriptable field value if set, zero value otherwise.
@@ -312,164 +323,219 @@ func (o *ListTaskTypes200ResponseTaskTypesInner) SetHasResults(v bool) {
 	o.HasResults = &v
 }
 
-// GetAllowExecuteLocal returns the AllowExecuteLocal field value if set, zero value otherwise.
+// GetAllowExecuteLocal returns the AllowExecuteLocal field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListTaskTypes200ResponseTaskTypesInner) GetAllowExecuteLocal() bool {
-	if o == nil || IsNil(o.AllowExecuteLocal) {
+	if o == nil || IsNil(o.AllowExecuteLocal.Get()) {
 		var ret bool
 		return ret
 	}
-	return *o.AllowExecuteLocal
+	return *o.AllowExecuteLocal.Get()
 }
 
 // GetAllowExecuteLocalOk returns a tuple with the AllowExecuteLocal field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListTaskTypes200ResponseTaskTypesInner) GetAllowExecuteLocalOk() (*bool, bool) {
-	if o == nil || IsNil(o.AllowExecuteLocal) {
+	if o == nil {
 		return nil, false
 	}
-	return o.AllowExecuteLocal, true
+	return o.AllowExecuteLocal.Get(), o.AllowExecuteLocal.IsSet()
 }
 
 // IsSetAllowExecuteLocal returns a boolean if a field has been set.
 func (o *ListTaskTypes200ResponseTaskTypesInner) IsSetAllowExecuteLocal() bool {
-	if o != nil && !IsNil(o.AllowExecuteLocal) {
+	if o != nil && o.AllowExecuteLocal.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetAllowExecuteLocal gets a reference to the given bool and assigns it to the AllowExecuteLocal field.
+// SetAllowExecuteLocal gets a reference to the given NullableBool and assigns it to the AllowExecuteLocal field.
 func (o *ListTaskTypes200ResponseTaskTypesInner) SetAllowExecuteLocal(v bool) {
-	o.AllowExecuteLocal = &v
+	o.AllowExecuteLocal.Set(&v)
 }
 
-// GetAllowExecuteRemote returns the AllowExecuteRemote field value if set, zero value otherwise.
+// SetAllowExecuteLocalNil sets the value for AllowExecuteLocal to be an explicit nil
+func (o *ListTaskTypes200ResponseTaskTypesInner) SetAllowExecuteLocalNil() {
+	o.AllowExecuteLocal.Set(nil)
+}
+
+// UnsetAllowExecuteLocal ensures that no value is present for AllowExecuteLocal, not even an explicit nil
+func (o *ListTaskTypes200ResponseTaskTypesInner) UnsetAllowExecuteLocal() {
+	o.AllowExecuteLocal.Unset()
+}
+
+// GetAllowExecuteRemote returns the AllowExecuteRemote field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListTaskTypes200ResponseTaskTypesInner) GetAllowExecuteRemote() bool {
-	if o == nil || IsNil(o.AllowExecuteRemote) {
+	if o == nil || IsNil(o.AllowExecuteRemote.Get()) {
 		var ret bool
 		return ret
 	}
-	return *o.AllowExecuteRemote
+	return *o.AllowExecuteRemote.Get()
 }
 
 // GetAllowExecuteRemoteOk returns a tuple with the AllowExecuteRemote field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListTaskTypes200ResponseTaskTypesInner) GetAllowExecuteRemoteOk() (*bool, bool) {
-	if o == nil || IsNil(o.AllowExecuteRemote) {
+	if o == nil {
 		return nil, false
 	}
-	return o.AllowExecuteRemote, true
+	return o.AllowExecuteRemote.Get(), o.AllowExecuteRemote.IsSet()
 }
 
 // IsSetAllowExecuteRemote returns a boolean if a field has been set.
 func (o *ListTaskTypes200ResponseTaskTypesInner) IsSetAllowExecuteRemote() bool {
-	if o != nil && !IsNil(o.AllowExecuteRemote) {
+	if o != nil && o.AllowExecuteRemote.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetAllowExecuteRemote gets a reference to the given bool and assigns it to the AllowExecuteRemote field.
+// SetAllowExecuteRemote gets a reference to the given NullableBool and assigns it to the AllowExecuteRemote field.
 func (o *ListTaskTypes200ResponseTaskTypesInner) SetAllowExecuteRemote(v bool) {
-	o.AllowExecuteRemote = &v
+	o.AllowExecuteRemote.Set(&v)
 }
 
-// GetAllowExecuteResource returns the AllowExecuteResource field value if set, zero value otherwise.
+// SetAllowExecuteRemoteNil sets the value for AllowExecuteRemote to be an explicit nil
+func (o *ListTaskTypes200ResponseTaskTypesInner) SetAllowExecuteRemoteNil() {
+	o.AllowExecuteRemote.Set(nil)
+}
+
+// UnsetAllowExecuteRemote ensures that no value is present for AllowExecuteRemote, not even an explicit nil
+func (o *ListTaskTypes200ResponseTaskTypesInner) UnsetAllowExecuteRemote() {
+	o.AllowExecuteRemote.Unset()
+}
+
+// GetAllowExecuteResource returns the AllowExecuteResource field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListTaskTypes200ResponseTaskTypesInner) GetAllowExecuteResource() bool {
-	if o == nil || IsNil(o.AllowExecuteResource) {
+	if o == nil || IsNil(o.AllowExecuteResource.Get()) {
 		var ret bool
 		return ret
 	}
-	return *o.AllowExecuteResource
+	return *o.AllowExecuteResource.Get()
 }
 
 // GetAllowExecuteResourceOk returns a tuple with the AllowExecuteResource field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListTaskTypes200ResponseTaskTypesInner) GetAllowExecuteResourceOk() (*bool, bool) {
-	if o == nil || IsNil(o.AllowExecuteResource) {
+	if o == nil {
 		return nil, false
 	}
-	return o.AllowExecuteResource, true
+	return o.AllowExecuteResource.Get(), o.AllowExecuteResource.IsSet()
 }
 
 // IsSetAllowExecuteResource returns a boolean if a field has been set.
 func (o *ListTaskTypes200ResponseTaskTypesInner) IsSetAllowExecuteResource() bool {
-	if o != nil && !IsNil(o.AllowExecuteResource) {
+	if o != nil && o.AllowExecuteResource.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetAllowExecuteResource gets a reference to the given bool and assigns it to the AllowExecuteResource field.
+// SetAllowExecuteResource gets a reference to the given NullableBool and assigns it to the AllowExecuteResource field.
 func (o *ListTaskTypes200ResponseTaskTypesInner) SetAllowExecuteResource(v bool) {
-	o.AllowExecuteResource = &v
+	o.AllowExecuteResource.Set(&v)
 }
 
-// GetAllowLocalRepo returns the AllowLocalRepo field value if set, zero value otherwise.
+// SetAllowExecuteResourceNil sets the value for AllowExecuteResource to be an explicit nil
+func (o *ListTaskTypes200ResponseTaskTypesInner) SetAllowExecuteResourceNil() {
+	o.AllowExecuteResource.Set(nil)
+}
+
+// UnsetAllowExecuteResource ensures that no value is present for AllowExecuteResource, not even an explicit nil
+func (o *ListTaskTypes200ResponseTaskTypesInner) UnsetAllowExecuteResource() {
+	o.AllowExecuteResource.Unset()
+}
+
+// GetAllowLocalRepo returns the AllowLocalRepo field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListTaskTypes200ResponseTaskTypesInner) GetAllowLocalRepo() bool {
-	if o == nil || IsNil(o.AllowLocalRepo) {
+	if o == nil || IsNil(o.AllowLocalRepo.Get()) {
 		var ret bool
 		return ret
 	}
-	return *o.AllowLocalRepo
+	return *o.AllowLocalRepo.Get()
 }
 
 // GetAllowLocalRepoOk returns a tuple with the AllowLocalRepo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListTaskTypes200ResponseTaskTypesInner) GetAllowLocalRepoOk() (*bool, bool) {
-	if o == nil || IsNil(o.AllowLocalRepo) {
+	if o == nil {
 		return nil, false
 	}
-	return o.AllowLocalRepo, true
+	return o.AllowLocalRepo.Get(), o.AllowLocalRepo.IsSet()
 }
 
 // IsSetAllowLocalRepo returns a boolean if a field has been set.
 func (o *ListTaskTypes200ResponseTaskTypesInner) IsSetAllowLocalRepo() bool {
-	if o != nil && !IsNil(o.AllowLocalRepo) {
+	if o != nil && o.AllowLocalRepo.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetAllowLocalRepo gets a reference to the given bool and assigns it to the AllowLocalRepo field.
+// SetAllowLocalRepo gets a reference to the given NullableBool and assigns it to the AllowLocalRepo field.
 func (o *ListTaskTypes200ResponseTaskTypesInner) SetAllowLocalRepo(v bool) {
-	o.AllowLocalRepo = &v
+	o.AllowLocalRepo.Set(&v)
 }
 
-// GetAllowRemoteKeyAuth returns the AllowRemoteKeyAuth field value if set, zero value otherwise.
+// SetAllowLocalRepoNil sets the value for AllowLocalRepo to be an explicit nil
+func (o *ListTaskTypes200ResponseTaskTypesInner) SetAllowLocalRepoNil() {
+	o.AllowLocalRepo.Set(nil)
+}
+
+// UnsetAllowLocalRepo ensures that no value is present for AllowLocalRepo, not even an explicit nil
+func (o *ListTaskTypes200ResponseTaskTypesInner) UnsetAllowLocalRepo() {
+	o.AllowLocalRepo.Unset()
+}
+
+// GetAllowRemoteKeyAuth returns the AllowRemoteKeyAuth field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListTaskTypes200ResponseTaskTypesInner) GetAllowRemoteKeyAuth() bool {
-	if o == nil || IsNil(o.AllowRemoteKeyAuth) {
+	if o == nil || IsNil(o.AllowRemoteKeyAuth.Get()) {
 		var ret bool
 		return ret
 	}
-	return *o.AllowRemoteKeyAuth
+	return *o.AllowRemoteKeyAuth.Get()
 }
 
 // GetAllowRemoteKeyAuthOk returns a tuple with the AllowRemoteKeyAuth field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListTaskTypes200ResponseTaskTypesInner) GetAllowRemoteKeyAuthOk() (*bool, bool) {
-	if o == nil || IsNil(o.AllowRemoteKeyAuth) {
+	if o == nil {
 		return nil, false
 	}
-	return o.AllowRemoteKeyAuth, true
+	return o.AllowRemoteKeyAuth.Get(), o.AllowRemoteKeyAuth.IsSet()
 }
 
 // IsSetAllowRemoteKeyAuth returns a boolean if a field has been set.
 func (o *ListTaskTypes200ResponseTaskTypesInner) IsSetAllowRemoteKeyAuth() bool {
-	if o != nil && !IsNil(o.AllowRemoteKeyAuth) {
+	if o != nil && o.AllowRemoteKeyAuth.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetAllowRemoteKeyAuth gets a reference to the given bool and assigns it to the AllowRemoteKeyAuth field.
+// SetAllowRemoteKeyAuth gets a reference to the given NullableBool and assigns it to the AllowRemoteKeyAuth field.
 func (o *ListTaskTypes200ResponseTaskTypesInner) SetAllowRemoteKeyAuth(v bool) {
-	o.AllowRemoteKeyAuth = &v
+	o.AllowRemoteKeyAuth.Set(&v)
+}
+
+// SetAllowRemoteKeyAuthNil sets the value for AllowRemoteKeyAuth to be an explicit nil
+func (o *ListTaskTypes200ResponseTaskTypesInner) SetAllowRemoteKeyAuthNil() {
+	o.AllowRemoteKeyAuth.Set(nil)
+}
+
+// UnsetAllowRemoteKeyAuth ensures that no value is present for AllowRemoteKeyAuth, not even an explicit nil
+func (o *ListTaskTypes200ResponseTaskTypesInner) UnsetAllowRemoteKeyAuth() {
+	o.AllowRemoteKeyAuth.Unset()
 }
 
 // GetOptionTypes returns the OptionTypes field value if set, zero value otherwise.
@@ -526,8 +592,8 @@ func (o ListTaskTypes200ResponseTaskTypesInner) ToMap() (map[string]interface{},
 	if !IsNil(o.Category) {
 		toSerialize["category"] = o.Category
 	}
-	if !IsNil(o.Description) {
-		toSerialize["description"] = o.Description
+	if o.Description.IsSet() {
+		toSerialize["description"] = o.Description.Get()
 	}
 	if !IsNil(o.Scriptable) {
 		toSerialize["scriptable"] = o.Scriptable
@@ -538,20 +604,20 @@ func (o ListTaskTypes200ResponseTaskTypesInner) ToMap() (map[string]interface{},
 	if !IsNil(o.HasResults) {
 		toSerialize["hasResults"] = o.HasResults
 	}
-	if !IsNil(o.AllowExecuteLocal) {
-		toSerialize["allowExecuteLocal"] = o.AllowExecuteLocal
+	if o.AllowExecuteLocal.IsSet() {
+		toSerialize["allowExecuteLocal"] = o.AllowExecuteLocal.Get()
 	}
-	if !IsNil(o.AllowExecuteRemote) {
-		toSerialize["allowExecuteRemote"] = o.AllowExecuteRemote
+	if o.AllowExecuteRemote.IsSet() {
+		toSerialize["allowExecuteRemote"] = o.AllowExecuteRemote.Get()
 	}
-	if !IsNil(o.AllowExecuteResource) {
-		toSerialize["allowExecuteResource"] = o.AllowExecuteResource
+	if o.AllowExecuteResource.IsSet() {
+		toSerialize["allowExecuteResource"] = o.AllowExecuteResource.Get()
 	}
-	if !IsNil(o.AllowLocalRepo) {
-		toSerialize["allowLocalRepo"] = o.AllowLocalRepo
+	if o.AllowLocalRepo.IsSet() {
+		toSerialize["allowLocalRepo"] = o.AllowLocalRepo.Get()
 	}
-	if !IsNil(o.AllowRemoteKeyAuth) {
-		toSerialize["allowRemoteKeyAuth"] = o.AllowRemoteKeyAuth
+	if o.AllowRemoteKeyAuth.IsSet() {
+		toSerialize["allowRemoteKeyAuth"] = o.AllowRemoteKeyAuth.Get()
 	}
 	if !IsNil(o.OptionTypes) {
 		toSerialize["optionTypes"] = o.OptionTypes

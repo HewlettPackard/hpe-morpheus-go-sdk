@@ -9,24 +9,24 @@ Name | Type | Description | Notes
 **Active** | Pointer to **bool** |  | [optional] 
 **App** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **NullableString** |  | [optional] 
 **InUptime** | Pointer to **bool** |  | [optional] 
-**LastCheckStatus** | Pointer to **string** |  | [optional] 
-**LastWarningDate** | Pointer to **time.Time** |  | [optional] 
-**LastErrorDate** | Pointer to **time.Time** |  | [optional] 
-**LastSuccessDate** | Pointer to **time.Time** |  | [optional] 
-**LastRunDate** | Pointer to **time.Time** |  | [optional] 
-**LastError** | Pointer to **string** |  | [optional] 
+**LastCheckStatus** | Pointer to **NullableString** |  | [optional] 
+**LastWarningDate** | Pointer to **NullableTime** |  | [optional] 
+**LastErrorDate** | Pointer to **NullableTime** |  | [optional] 
+**LastSuccessDate** | Pointer to **NullableTime** |  | [optional] 
+**LastRunDate** | Pointer to **NullableTime** |  | [optional] 
+**LastError** | Pointer to **NullableString** |  | [optional] 
 **LastTimer** | Pointer to **int64** |  | [optional] 
 **Health** | Pointer to **int64** |  | [optional] 
-**History** | Pointer to **string** |  | [optional] 
+**History** | Pointer to **NullableString** |  | [optional] 
 **Severity** | Pointer to **string** |  | [optional] 
 **CreateIncident** | Pointer to **bool** |  | [optional] 
 **Muted** | Pointer to **bool** |  | [optional] 
 **CreatedBy** | Pointer to [**ListActivity200ResponseAllOfActivityInnerActivityInnerUser**](ListActivity200ResponseAllOfActivityInnerActivityInnerUser.md) |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
-**Availability** | Pointer to **string** |  | [optional] 
+**Availability** | Pointer to **NullableString** |  | [optional] 
 **Checks** | Pointer to **[]int64** |  | [optional] 
 **CheckGroups** | Pointer to **[]int64** |  | [optional] 
 
@@ -199,6 +199,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *GetAlerts200ResponseAllOfAppsInner) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *GetAlerts200ResponseAllOfAppsInner) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetInUptime
 
 `func (o *GetAlerts200ResponseAllOfAppsInner) GetInUptime() bool`
@@ -249,6 +259,16 @@ SetLastCheckStatus sets LastCheckStatus field to given value.
 
 HasLastCheckStatus returns a boolean if a field has been set.
 
+### SetLastCheckStatusNil
+
+`func (o *GetAlerts200ResponseAllOfAppsInner) SetLastCheckStatusNil(b bool)`
+
+ SetLastCheckStatusNil sets the value for LastCheckStatus to be an explicit nil
+
+### UnsetLastCheckStatus
+`func (o *GetAlerts200ResponseAllOfAppsInner) UnsetLastCheckStatus()`
+
+UnsetLastCheckStatus ensures that no value is present for LastCheckStatus, not even an explicit nil
 ### GetLastWarningDate
 
 `func (o *GetAlerts200ResponseAllOfAppsInner) GetLastWarningDate() time.Time`
@@ -274,6 +294,16 @@ SetLastWarningDate sets LastWarningDate field to given value.
 
 HasLastWarningDate returns a boolean if a field has been set.
 
+### SetLastWarningDateNil
+
+`func (o *GetAlerts200ResponseAllOfAppsInner) SetLastWarningDateNil(b bool)`
+
+ SetLastWarningDateNil sets the value for LastWarningDate to be an explicit nil
+
+### UnsetLastWarningDate
+`func (o *GetAlerts200ResponseAllOfAppsInner) UnsetLastWarningDate()`
+
+UnsetLastWarningDate ensures that no value is present for LastWarningDate, not even an explicit nil
 ### GetLastErrorDate
 
 `func (o *GetAlerts200ResponseAllOfAppsInner) GetLastErrorDate() time.Time`
@@ -299,6 +329,16 @@ SetLastErrorDate sets LastErrorDate field to given value.
 
 HasLastErrorDate returns a boolean if a field has been set.
 
+### SetLastErrorDateNil
+
+`func (o *GetAlerts200ResponseAllOfAppsInner) SetLastErrorDateNil(b bool)`
+
+ SetLastErrorDateNil sets the value for LastErrorDate to be an explicit nil
+
+### UnsetLastErrorDate
+`func (o *GetAlerts200ResponseAllOfAppsInner) UnsetLastErrorDate()`
+
+UnsetLastErrorDate ensures that no value is present for LastErrorDate, not even an explicit nil
 ### GetLastSuccessDate
 
 `func (o *GetAlerts200ResponseAllOfAppsInner) GetLastSuccessDate() time.Time`
@@ -324,6 +364,16 @@ SetLastSuccessDate sets LastSuccessDate field to given value.
 
 HasLastSuccessDate returns a boolean if a field has been set.
 
+### SetLastSuccessDateNil
+
+`func (o *GetAlerts200ResponseAllOfAppsInner) SetLastSuccessDateNil(b bool)`
+
+ SetLastSuccessDateNil sets the value for LastSuccessDate to be an explicit nil
+
+### UnsetLastSuccessDate
+`func (o *GetAlerts200ResponseAllOfAppsInner) UnsetLastSuccessDate()`
+
+UnsetLastSuccessDate ensures that no value is present for LastSuccessDate, not even an explicit nil
 ### GetLastRunDate
 
 `func (o *GetAlerts200ResponseAllOfAppsInner) GetLastRunDate() time.Time`
@@ -349,6 +399,16 @@ SetLastRunDate sets LastRunDate field to given value.
 
 HasLastRunDate returns a boolean if a field has been set.
 
+### SetLastRunDateNil
+
+`func (o *GetAlerts200ResponseAllOfAppsInner) SetLastRunDateNil(b bool)`
+
+ SetLastRunDateNil sets the value for LastRunDate to be an explicit nil
+
+### UnsetLastRunDate
+`func (o *GetAlerts200ResponseAllOfAppsInner) UnsetLastRunDate()`
+
+UnsetLastRunDate ensures that no value is present for LastRunDate, not even an explicit nil
 ### GetLastError
 
 `func (o *GetAlerts200ResponseAllOfAppsInner) GetLastError() string`
@@ -374,6 +434,16 @@ SetLastError sets LastError field to given value.
 
 HasLastError returns a boolean if a field has been set.
 
+### SetLastErrorNil
+
+`func (o *GetAlerts200ResponseAllOfAppsInner) SetLastErrorNil(b bool)`
+
+ SetLastErrorNil sets the value for LastError to be an explicit nil
+
+### UnsetLastError
+`func (o *GetAlerts200ResponseAllOfAppsInner) UnsetLastError()`
+
+UnsetLastError ensures that no value is present for LastError, not even an explicit nil
 ### GetLastTimer
 
 `func (o *GetAlerts200ResponseAllOfAppsInner) GetLastTimer() int64`
@@ -449,6 +519,16 @@ SetHistory sets History field to given value.
 
 HasHistory returns a boolean if a field has been set.
 
+### SetHistoryNil
+
+`func (o *GetAlerts200ResponseAllOfAppsInner) SetHistoryNil(b bool)`
+
+ SetHistoryNil sets the value for History to be an explicit nil
+
+### UnsetHistory
+`func (o *GetAlerts200ResponseAllOfAppsInner) UnsetHistory()`
+
+UnsetHistory ensures that no value is present for History, not even an explicit nil
 ### GetSeverity
 
 `func (o *GetAlerts200ResponseAllOfAppsInner) GetSeverity() string`
@@ -624,6 +704,16 @@ SetAvailability sets Availability field to given value.
 
 HasAvailability returns a boolean if a field has been set.
 
+### SetAvailabilityNil
+
+`func (o *GetAlerts200ResponseAllOfAppsInner) SetAvailabilityNil(b bool)`
+
+ SetAvailabilityNil sets the value for Availability to be an explicit nil
+
+### UnsetAvailability
+`func (o *GetAlerts200ResponseAllOfAppsInner) UnsetAvailability()`
+
+UnsetAvailability ensures that no value is present for Availability, not even an explicit nil
 ### GetChecks
 
 `func (o *GetAlerts200ResponseAllOfAppsInner) GetChecks() []int64`

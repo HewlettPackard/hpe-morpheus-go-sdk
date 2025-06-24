@@ -21,7 +21,7 @@ var _ MappedNullable = &BillingInstance{}
 
 // BillingInstance struct for BillingInstance
 type BillingInstance struct {
-	InstanceId           *int64                                                                    `json:"instanceId,omitempty"`
+	InstanceId           NullableInt64                                                             `json:"instanceId,omitempty"`
 	InstanceUUID         *string                                                                   `json:"instanceUUID,omitempty"`
 	StartDate            *time.Time                                                                `json:"startDate,omitempty"`
 	EndDate              *time.Time                                                                `json:"endDate,omitempty"`
@@ -52,36 +52,47 @@ func NewBillingInstanceWithDefaults() *BillingInstance {
 	return &this
 }
 
-// GetInstanceId returns the InstanceId field value if set, zero value otherwise.
+// GetInstanceId returns the InstanceId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *BillingInstance) GetInstanceId() int64 {
-	if o == nil || IsNil(o.InstanceId) {
+	if o == nil || IsNil(o.InstanceId.Get()) {
 		var ret int64
 		return ret
 	}
-	return *o.InstanceId
+	return *o.InstanceId.Get()
 }
 
 // GetInstanceIdOk returns a tuple with the InstanceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BillingInstance) GetInstanceIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.InstanceId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.InstanceId, true
+	return o.InstanceId.Get(), o.InstanceId.IsSet()
 }
 
 // IsSetInstanceId returns a boolean if a field has been set.
 func (o *BillingInstance) IsSetInstanceId() bool {
-	if o != nil && !IsNil(o.InstanceId) {
+	if o != nil && o.InstanceId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetInstanceId gets a reference to the given int64 and assigns it to the InstanceId field.
+// SetInstanceId gets a reference to the given NullableInt64 and assigns it to the InstanceId field.
 func (o *BillingInstance) SetInstanceId(v int64) {
-	o.InstanceId = &v
+	o.InstanceId.Set(&v)
+}
+
+// SetInstanceIdNil sets the value for InstanceId to be an explicit nil
+func (o *BillingInstance) SetInstanceIdNil() {
+	o.InstanceId.Set(nil)
+}
+
+// UnsetInstanceId ensures that no value is present for InstanceId, not even an explicit nil
+func (o *BillingInstance) UnsetInstanceId() {
+	o.InstanceId.Unset()
 }
 
 // GetInstanceUUID returns the InstanceUUID field value if set, zero value otherwise.
@@ -350,8 +361,8 @@ func (o BillingInstance) MarshalJSON() ([]byte, error) {
 
 func (o BillingInstance) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.InstanceId) {
-		toSerialize["instanceId"] = o.InstanceId
+	if o.InstanceId.IsSet() {
+		toSerialize["instanceId"] = o.InstanceId.Get()
 	}
 	if !IsNil(o.InstanceUUID) {
 		toSerialize["instanceUUID"] = o.InstanceUUID

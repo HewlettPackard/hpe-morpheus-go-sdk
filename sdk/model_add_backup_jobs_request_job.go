@@ -25,7 +25,7 @@ type AddBackupJobsRequestJob struct {
 	// A code for the backup job
 	Code *string `json:"code,omitempty"`
 	// Execute Schedule ID to use for the backup job
-	ScheduleId *int64 `json:"scheduleId,omitempty"`
+	ScheduleId NullableInt64 `json:"scheduleId,omitempty"`
 	// Retention Count. By default the backup settings value will be used.
 	RetentionCount       *int64                 `json:"retentionCount,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
@@ -107,36 +107,47 @@ func (o *AddBackupJobsRequestJob) SetCode(v string) {
 	o.Code = &v
 }
 
-// GetScheduleId returns the ScheduleId field value if set, zero value otherwise.
+// GetScheduleId returns the ScheduleId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AddBackupJobsRequestJob) GetScheduleId() int64 {
-	if o == nil || IsNil(o.ScheduleId) {
+	if o == nil || IsNil(o.ScheduleId.Get()) {
 		var ret int64
 		return ret
 	}
-	return *o.ScheduleId
+	return *o.ScheduleId.Get()
 }
 
 // GetScheduleIdOk returns a tuple with the ScheduleId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AddBackupJobsRequestJob) GetScheduleIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.ScheduleId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ScheduleId, true
+	return o.ScheduleId.Get(), o.ScheduleId.IsSet()
 }
 
 // IsSetScheduleId returns a boolean if a field has been set.
 func (o *AddBackupJobsRequestJob) IsSetScheduleId() bool {
-	if o != nil && !IsNil(o.ScheduleId) {
+	if o != nil && o.ScheduleId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetScheduleId gets a reference to the given int64 and assigns it to the ScheduleId field.
+// SetScheduleId gets a reference to the given NullableInt64 and assigns it to the ScheduleId field.
 func (o *AddBackupJobsRequestJob) SetScheduleId(v int64) {
-	o.ScheduleId = &v
+	o.ScheduleId.Set(&v)
+}
+
+// SetScheduleIdNil sets the value for ScheduleId to be an explicit nil
+func (o *AddBackupJobsRequestJob) SetScheduleIdNil() {
+	o.ScheduleId.Set(nil)
+}
+
+// UnsetScheduleId ensures that no value is present for ScheduleId, not even an explicit nil
+func (o *AddBackupJobsRequestJob) UnsetScheduleId() {
+	o.ScheduleId.Unset()
 }
 
 // GetRetentionCount returns the RetentionCount field value if set, zero value otherwise.
@@ -185,8 +196,8 @@ func (o AddBackupJobsRequestJob) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Code) {
 		toSerialize["code"] = o.Code
 	}
-	if !IsNil(o.ScheduleId) {
-		toSerialize["scheduleId"] = o.ScheduleId
+	if o.ScheduleId.IsSet() {
+		toSerialize["scheduleId"] = o.ScheduleId.Get()
 	}
 	if !IsNil(o.RetentionCount) {
 		toSerialize["retentionCount"] = o.RetentionCount

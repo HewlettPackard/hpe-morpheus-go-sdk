@@ -7,12 +7,12 @@ Name | Type | Description | Notes
 **Id** | Pointer to **int64** |  | [optional] 
 **AccountId** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **NullableString** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
 **SudoUser** | Pointer to **bool** |  | [optional] 
-**ServerGroup** | Pointer to **string** |  | [optional] 
+**ServerGroup** | Pointer to **NullableString** |  | [optional] 
 **Users** | Pointer to [**[]ListCredentials200ResponseAllOfCredentialsInnerUser**](ListCredentials200ResponseAllOfCredentialsInnerUser.md) |  | [optional] 
-**Account** | Pointer to [**ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
+**Account** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
 
@@ -135,6 +135,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *ListUserGroups200ResponseAllOfUserGroupsInner) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *ListUserGroups200ResponseAllOfUserGroupsInner) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetEnabled
 
 `func (o *ListUserGroups200ResponseAllOfUserGroupsInner) GetEnabled() bool`
@@ -210,6 +220,16 @@ SetServerGroup sets ServerGroup field to given value.
 
 HasServerGroup returns a boolean if a field has been set.
 
+### SetServerGroupNil
+
+`func (o *ListUserGroups200ResponseAllOfUserGroupsInner) SetServerGroupNil(b bool)`
+
+ SetServerGroupNil sets the value for ServerGroup to be an explicit nil
+
+### UnsetServerGroup
+`func (o *ListUserGroups200ResponseAllOfUserGroupsInner) UnsetServerGroup()`
+
+UnsetServerGroup ensures that no value is present for ServerGroup, not even an explicit nil
 ### GetUsers
 
 `func (o *ListUserGroups200ResponseAllOfUserGroupsInner) GetUsers() []ListCredentials200ResponseAllOfCredentialsInnerUser`
@@ -237,20 +257,20 @@ HasUsers returns a boolean if a field has been set.
 
 ### GetAccount
 
-`func (o *ListUserGroups200ResponseAllOfUserGroupsInner) GetAccount() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *ListUserGroups200ResponseAllOfUserGroupsInner) GetAccount() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetAccount returns the Account field if non-nil, zero value otherwise.
 
 ### GetAccountOk
 
-`func (o *ListUserGroups200ResponseAllOfUserGroupsInner) GetAccountOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *ListUserGroups200ResponseAllOfUserGroupsInner) GetAccountOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetAccountOk returns a tuple with the Account field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccount
 
-`func (o *ListUserGroups200ResponseAllOfUserGroupsInner) SetAccount(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *ListUserGroups200ResponseAllOfUserGroupsInner) SetAccount(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetAccount sets Account field to given value.
 

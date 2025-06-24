@@ -76,9 +76,9 @@ func (o *SuccessError) SetSuccess(v bool) {
 	o.Success = &v
 }
 
-// GetErrors returns the Errors field value if set, zero value otherwise.
+// GetErrors returns the Errors field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SuccessError) GetErrors() map[string]interface{} {
-	if o == nil || IsNil(o.Errors) {
+	if o == nil {
 		var ret map[string]interface{}
 		return ret
 	}
@@ -87,6 +87,7 @@ func (o *SuccessError) GetErrors() map[string]interface{} {
 
 // GetErrorsOk returns a tuple with the Errors field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SuccessError) GetErrorsOk() (map[string]interface{}, bool) {
 	if o == nil || IsNil(o.Errors) {
 		return map[string]interface{}{}, false
@@ -121,7 +122,7 @@ func (o SuccessError) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Success) {
 		toSerialize["success"] = o.Success
 	}
-	if !IsNil(o.Errors) {
+	if o.Errors != nil {
 		toSerialize["errors"] = o.Errors
 	}
 

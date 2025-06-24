@@ -6,23 +6,23 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **NullableString** |  | [optional] 
 **Labels** | Pointer to **[]string** |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 **SourceUrl** | Pointer to **string** |  | [optional] 
 **SourceMethod** | Pointer to **string** |  | [optional] 
-**ApiType** | Pointer to **string** |  | [optional] 
+**ApiType** | Pointer to **NullableString** |  | [optional] 
 **IgnoreSSLErrors** | Pointer to **bool** |  | [optional] 
 **RealTime** | Pointer to **bool** |  | [optional] 
 **Visibility** | Pointer to **string** |  | [optional] 
 **Config** | Pointer to [**ListOptionLists200ResponseAllOfOptionTypesInnerConfig**](ListOptionLists200ResponseAllOfOptionTypesInnerConfig.md) |  | [optional] 
 **Credential** | Pointer to [**ListClouds200ResponseAllOfZonesInnerCredentialAnyOf**](ListClouds200ResponseAllOfZonesInnerCredentialAnyOf.md) |  | [optional] 
-**ServiceUsername** | Pointer to **string** |  | [optional] 
-**ServicePassword** | Pointer to **string** |  | [optional] 
-**InitialDataset** | Pointer to **string** |  | [optional] 
+**ServiceUsername** | Pointer to **NullableString** |  | [optional] 
+**ServicePassword** | Pointer to **NullableString** |  | [optional] 
+**InitialDataset** | Pointer to **NullableString** |  | [optional] 
 **TranslationScript** | Pointer to **string** |  | [optional] 
-**RequestScript** | Pointer to **string** |  | [optional] 
-**Account** | Pointer to [**ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
+**RequestScript** | Pointer to **NullableString** |  | [optional] 
+**Account** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 
 ## Methods
 
@@ -118,6 +118,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *ListOptionLists200ResponseAllOfOptionTypesInner) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *ListOptionLists200ResponseAllOfOptionTypesInner) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetLabels
 
 `func (o *ListOptionLists200ResponseAllOfOptionTypesInner) GetLabels() []string`
@@ -243,6 +253,16 @@ SetApiType sets ApiType field to given value.
 
 HasApiType returns a boolean if a field has been set.
 
+### SetApiTypeNil
+
+`func (o *ListOptionLists200ResponseAllOfOptionTypesInner) SetApiTypeNil(b bool)`
+
+ SetApiTypeNil sets the value for ApiType to be an explicit nil
+
+### UnsetApiType
+`func (o *ListOptionLists200ResponseAllOfOptionTypesInner) UnsetApiType()`
+
+UnsetApiType ensures that no value is present for ApiType, not even an explicit nil
 ### GetIgnoreSSLErrors
 
 `func (o *ListOptionLists200ResponseAllOfOptionTypesInner) GetIgnoreSSLErrors() bool`
@@ -393,6 +413,16 @@ SetServiceUsername sets ServiceUsername field to given value.
 
 HasServiceUsername returns a boolean if a field has been set.
 
+### SetServiceUsernameNil
+
+`func (o *ListOptionLists200ResponseAllOfOptionTypesInner) SetServiceUsernameNil(b bool)`
+
+ SetServiceUsernameNil sets the value for ServiceUsername to be an explicit nil
+
+### UnsetServiceUsername
+`func (o *ListOptionLists200ResponseAllOfOptionTypesInner) UnsetServiceUsername()`
+
+UnsetServiceUsername ensures that no value is present for ServiceUsername, not even an explicit nil
 ### GetServicePassword
 
 `func (o *ListOptionLists200ResponseAllOfOptionTypesInner) GetServicePassword() string`
@@ -418,6 +448,16 @@ SetServicePassword sets ServicePassword field to given value.
 
 HasServicePassword returns a boolean if a field has been set.
 
+### SetServicePasswordNil
+
+`func (o *ListOptionLists200ResponseAllOfOptionTypesInner) SetServicePasswordNil(b bool)`
+
+ SetServicePasswordNil sets the value for ServicePassword to be an explicit nil
+
+### UnsetServicePassword
+`func (o *ListOptionLists200ResponseAllOfOptionTypesInner) UnsetServicePassword()`
+
+UnsetServicePassword ensures that no value is present for ServicePassword, not even an explicit nil
 ### GetInitialDataset
 
 `func (o *ListOptionLists200ResponseAllOfOptionTypesInner) GetInitialDataset() string`
@@ -443,6 +483,16 @@ SetInitialDataset sets InitialDataset field to given value.
 
 HasInitialDataset returns a boolean if a field has been set.
 
+### SetInitialDatasetNil
+
+`func (o *ListOptionLists200ResponseAllOfOptionTypesInner) SetInitialDatasetNil(b bool)`
+
+ SetInitialDatasetNil sets the value for InitialDataset to be an explicit nil
+
+### UnsetInitialDataset
+`func (o *ListOptionLists200ResponseAllOfOptionTypesInner) UnsetInitialDataset()`
+
+UnsetInitialDataset ensures that no value is present for InitialDataset, not even an explicit nil
 ### GetTranslationScript
 
 `func (o *ListOptionLists200ResponseAllOfOptionTypesInner) GetTranslationScript() string`
@@ -493,22 +543,32 @@ SetRequestScript sets RequestScript field to given value.
 
 HasRequestScript returns a boolean if a field has been set.
 
+### SetRequestScriptNil
+
+`func (o *ListOptionLists200ResponseAllOfOptionTypesInner) SetRequestScriptNil(b bool)`
+
+ SetRequestScriptNil sets the value for RequestScript to be an explicit nil
+
+### UnsetRequestScript
+`func (o *ListOptionLists200ResponseAllOfOptionTypesInner) UnsetRequestScript()`
+
+UnsetRequestScript ensures that no value is present for RequestScript, not even an explicit nil
 ### GetAccount
 
-`func (o *ListOptionLists200ResponseAllOfOptionTypesInner) GetAccount() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *ListOptionLists200ResponseAllOfOptionTypesInner) GetAccount() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetAccount returns the Account field if non-nil, zero value otherwise.
 
 ### GetAccountOk
 
-`func (o *ListOptionLists200ResponseAllOfOptionTypesInner) GetAccountOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *ListOptionLists200ResponseAllOfOptionTypesInner) GetAccountOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetAccountOk returns a tuple with the Account field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccount
 
-`func (o *ListOptionLists200ResponseAllOfOptionTypesInner) SetAccount(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *ListOptionLists200ResponseAllOfOptionTypesInner) SetAccount(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetAccount sets Account field to given value.
 

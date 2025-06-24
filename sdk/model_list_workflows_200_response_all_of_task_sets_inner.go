@@ -24,12 +24,12 @@ type ListWorkflows200ResponseAllOfTaskSetsInner struct {
 	Id                   *int64                                                        `json:"id,omitempty"`
 	Name                 *string                                                       `json:"name,omitempty"`
 	Type                 *string                                                       `json:"type,omitempty"`
-	Description          *string                                                       `json:"description,omitempty"`
+	Description          NullableString                                                `json:"description,omitempty"`
 	Labels               []string                                                      `json:"labels,omitempty"`
 	DateCreated          *time.Time                                                    `json:"dateCreated,omitempty"`
 	LastUpdated          *time.Time                                                    `json:"lastUpdated,omitempty"`
 	AccountId            *int64                                                        `json:"accountId,omitempty"`
-	Platform             *string                                                       `json:"platform,omitempty"`
+	Platform             NullableString                                                `json:"platform,omitempty"`
 	Visibility           *string                                                       `json:"visibility,omitempty"`
 	AllowCustomConfig    *bool                                                         `json:"allowCustomConfig,omitempty"`
 	Tasks                []int64                                                       `json:"tasks,omitempty"`
@@ -153,41 +153,52 @@ func (o *ListWorkflows200ResponseAllOfTaskSetsInner) SetType(v string) {
 	o.Type = &v
 }
 
-// GetDescription returns the Description field value if set, zero value otherwise.
+// GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListWorkflows200ResponseAllOfTaskSetsInner) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
+	if o == nil || IsNil(o.Description.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Description
+	return *o.Description.Get()
 }
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListWorkflows200ResponseAllOfTaskSetsInner) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Description, true
+	return o.Description.Get(), o.Description.IsSet()
 }
 
 // IsSetDescription returns a boolean if a field has been set.
 func (o *ListWorkflows200ResponseAllOfTaskSetsInner) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
+	if o != nil && o.Description.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDescription gets a reference to the given string and assigns it to the Description field.
+// SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *ListWorkflows200ResponseAllOfTaskSetsInner) SetDescription(v string) {
-	o.Description = &v
+	o.Description.Set(&v)
 }
 
-// GetLabels returns the Labels field value if set, zero value otherwise.
+// SetDescriptionNil sets the value for Description to be an explicit nil
+func (o *ListWorkflows200ResponseAllOfTaskSetsInner) SetDescriptionNil() {
+	o.Description.Set(nil)
+}
+
+// UnsetDescription ensures that no value is present for Description, not even an explicit nil
+func (o *ListWorkflows200ResponseAllOfTaskSetsInner) UnsetDescription() {
+	o.Description.Unset()
+}
+
+// GetLabels returns the Labels field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListWorkflows200ResponseAllOfTaskSetsInner) GetLabels() []string {
-	if o == nil || IsNil(o.Labels) {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -196,6 +207,7 @@ func (o *ListWorkflows200ResponseAllOfTaskSetsInner) GetLabels() []string {
 
 // GetLabelsOk returns a tuple with the Labels field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListWorkflows200ResponseAllOfTaskSetsInner) GetLabelsOk() ([]string, bool) {
 	if o == nil || IsNil(o.Labels) {
 		return nil, false
@@ -313,36 +325,47 @@ func (o *ListWorkflows200ResponseAllOfTaskSetsInner) SetAccountId(v int64) {
 	o.AccountId = &v
 }
 
-// GetPlatform returns the Platform field value if set, zero value otherwise.
+// GetPlatform returns the Platform field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListWorkflows200ResponseAllOfTaskSetsInner) GetPlatform() string {
-	if o == nil || IsNil(o.Platform) {
+	if o == nil || IsNil(o.Platform.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Platform
+	return *o.Platform.Get()
 }
 
 // GetPlatformOk returns a tuple with the Platform field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListWorkflows200ResponseAllOfTaskSetsInner) GetPlatformOk() (*string, bool) {
-	if o == nil || IsNil(o.Platform) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Platform, true
+	return o.Platform.Get(), o.Platform.IsSet()
 }
 
 // IsSetPlatform returns a boolean if a field has been set.
 func (o *ListWorkflows200ResponseAllOfTaskSetsInner) IsSetPlatform() bool {
-	if o != nil && !IsNil(o.Platform) {
+	if o != nil && o.Platform.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetPlatform gets a reference to the given string and assigns it to the Platform field.
+// SetPlatform gets a reference to the given NullableString and assigns it to the Platform field.
 func (o *ListWorkflows200ResponseAllOfTaskSetsInner) SetPlatform(v string) {
-	o.Platform = &v
+	o.Platform.Set(&v)
+}
+
+// SetPlatformNil sets the value for Platform to be an explicit nil
+func (o *ListWorkflows200ResponseAllOfTaskSetsInner) SetPlatformNil() {
+	o.Platform.Set(nil)
+}
+
+// UnsetPlatform ensures that no value is present for Platform, not even an explicit nil
+func (o *ListWorkflows200ResponseAllOfTaskSetsInner) UnsetPlatform() {
+	o.Platform.Unset()
 }
 
 // GetVisibility returns the Visibility field value if set, zero value otherwise.
@@ -441,9 +464,9 @@ func (o *ListWorkflows200ResponseAllOfTaskSetsInner) SetTasks(v []int64) {
 	o.Tasks = v
 }
 
-// GetOptionTypes returns the OptionTypes field value if set, zero value otherwise.
+// GetOptionTypes returns the OptionTypes field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListWorkflows200ResponseAllOfTaskSetsInner) GetOptionTypes() []ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner {
-	if o == nil || IsNil(o.OptionTypes) {
+	if o == nil {
 		var ret []ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner
 		return ret
 	}
@@ -452,6 +475,7 @@ func (o *ListWorkflows200ResponseAllOfTaskSetsInner) GetOptionTypes() []ListWork
 
 // GetOptionTypesOk returns a tuple with the OptionTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListWorkflows200ResponseAllOfTaskSetsInner) GetOptionTypesOk() ([]ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner, bool) {
 	if o == nil || IsNil(o.OptionTypes) {
 		return nil, false
@@ -524,10 +548,10 @@ func (o ListWorkflows200ResponseAllOfTaskSetsInner) ToMap() (map[string]interfac
 	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type
 	}
-	if !IsNil(o.Description) {
-		toSerialize["description"] = o.Description
+	if o.Description.IsSet() {
+		toSerialize["description"] = o.Description.Get()
 	}
-	if !IsNil(o.Labels) {
+	if o.Labels != nil {
 		toSerialize["labels"] = o.Labels
 	}
 	if !IsNil(o.DateCreated) {
@@ -539,8 +563,8 @@ func (o ListWorkflows200ResponseAllOfTaskSetsInner) ToMap() (map[string]interfac
 	if !IsNil(o.AccountId) {
 		toSerialize["accountId"] = o.AccountId
 	}
-	if !IsNil(o.Platform) {
-		toSerialize["platform"] = o.Platform
+	if o.Platform.IsSet() {
+		toSerialize["platform"] = o.Platform.Get()
 	}
 	if !IsNil(o.Visibility) {
 		toSerialize["visibility"] = o.Visibility
@@ -551,7 +575,7 @@ func (o ListWorkflows200ResponseAllOfTaskSetsInner) ToMap() (map[string]interfac
 	if !IsNil(o.Tasks) {
 		toSerialize["tasks"] = o.Tasks
 	}
-	if !IsNil(o.OptionTypes) {
+	if o.OptionTypes != nil {
 		toSerialize["optionTypes"] = o.OptionTypes
 	}
 	if !IsNil(o.TaskSetTasks) {

@@ -20,13 +20,13 @@ var _ MappedNullable = &GetAlerts200ResponseAllOfChecksInnerConfigAnyOf4{}
 
 // GetAlerts200ResponseAllOfChecksInnerConfigAnyOf4 struct for GetAlerts200ResponseAllOfChecksInnerConfigAnyOf4
 type GetAlerts200ResponseAllOfChecksInnerConfigAnyOf4 struct {
-	ContainerName     string  `json:"containerName"`
-	ExternalId        *string `json:"externalId,omitempty"`
-	CheckUser         *string `json:"checkUser,omitempty"`
-	TextCheckOn       *string `json:"textCheckOn,omitempty"`
-	CheckPassword     *string `json:"checkPassword,omitempty"`
-	WebTextMatch      *string `json:"webTextMatch,omitempty"`
-	CheckPasswordHash *string `json:"checkPasswordHash,omitempty"`
+	ContainerName     string         `json:"containerName"`
+	ExternalId        NullableString `json:"externalId,omitempty"`
+	CheckUser         *string        `json:"checkUser,omitempty"`
+	TextCheckOn       *string        `json:"textCheckOn,omitempty"`
+	CheckPassword     *string        `json:"checkPassword,omitempty"`
+	WebTextMatch      *string        `json:"webTextMatch,omitempty"`
+	CheckPasswordHash *string        `json:"checkPasswordHash,omitempty"`
 	// Set to on to turn on tunneling
 	TunnelOn *string `json:"tunnelOn,omitempty"`
 	// Hostname or IP address of the proxy host
@@ -88,36 +88,47 @@ func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf4) SetContainerName(v st
 	o.ContainerName = v
 }
 
-// GetExternalId returns the ExternalId field value if set, zero value otherwise.
+// GetExternalId returns the ExternalId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf4) GetExternalId() string {
-	if o == nil || IsNil(o.ExternalId) {
+	if o == nil || IsNil(o.ExternalId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ExternalId
+	return *o.ExternalId.Get()
 }
 
 // GetExternalIdOk returns a tuple with the ExternalId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf4) GetExternalIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ExternalId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ExternalId, true
+	return o.ExternalId.Get(), o.ExternalId.IsSet()
 }
 
 // IsSetExternalId returns a boolean if a field has been set.
 func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf4) IsSetExternalId() bool {
-	if o != nil && !IsNil(o.ExternalId) {
+	if o != nil && o.ExternalId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetExternalId gets a reference to the given string and assigns it to the ExternalId field.
+// SetExternalId gets a reference to the given NullableString and assigns it to the ExternalId field.
 func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf4) SetExternalId(v string) {
-	o.ExternalId = &v
+	o.ExternalId.Set(&v)
+}
+
+// SetExternalIdNil sets the value for ExternalId to be an explicit nil
+func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf4) SetExternalIdNil() {
+	o.ExternalId.Set(nil)
+}
+
+// UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
+func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf4) UnsetExternalId() {
+	o.ExternalId.Unset()
 }
 
 // GetCheckUser returns the CheckUser field value if set, zero value otherwise.
@@ -451,8 +462,8 @@ func (o GetAlerts200ResponseAllOfChecksInnerConfigAnyOf4) MarshalJSON() ([]byte,
 func (o GetAlerts200ResponseAllOfChecksInnerConfigAnyOf4) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["containerName"] = o.ContainerName
-	if !IsNil(o.ExternalId) {
-		toSerialize["externalId"] = o.ExternalId
+	if o.ExternalId.IsSet() {
+		toSerialize["externalId"] = o.ExternalId.Get()
 	}
 	if !IsNil(o.CheckUser) {
 		toSerialize["checkUser"] = o.CheckUser

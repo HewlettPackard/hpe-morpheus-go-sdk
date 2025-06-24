@@ -16,10 +16,10 @@ Name | Type | Description | Notes
 **Enabled** | Pointer to **bool** |  | [optional] 
 **ExternalId** | Pointer to **string** |  | [optional] 
 **Config** | Pointer to [**GetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig**](GetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig.md) |  | [optional] 
-**Owner** | Pointer to [**CreateLoadBalancerRequestLoadBalancerTenantsInner**](CreateLoadBalancerRequestLoadBalancerTenantsInner.md) |  | [optional] 
-**NetworkServer** | Pointer to [**CreateLoadBalancerRequestLoadBalancerTenantsInner**](CreateLoadBalancerRequestLoadBalancerTenantsInner.md) |  | [optional] 
-**Zone** | Pointer to [**CreateLoadBalancerRequestLoadBalancerTenantsInner**](CreateLoadBalancerRequestLoadBalancerTenantsInner.md) |  | [optional] 
-**Tenants** | Pointer to [**[]SnapshotsInstance200ResponseSnapshotsInnerZone**](SnapshotsInstance200ResponseSnapshotsInnerZone.md) |  | [optional] 
+**Owner** | Pointer to [**SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume**](SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume.md) |  | [optional] 
+**NetworkServer** | Pointer to [**SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume**](SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume.md) |  | [optional] 
+**Zone** | Pointer to [**SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume**](SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume.md) |  | [optional] 
+**Tenants** | Pointer to [**[]GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount**](GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount.md) |  | [optional] 
 
 ## Methods
 
@@ -342,20 +342,20 @@ HasConfig returns a boolean if a field has been set.
 
 ### GetOwner
 
-`func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) GetOwner() CreateLoadBalancerRequestLoadBalancerTenantsInner`
+`func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) GetOwner() SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume`
 
 GetOwner returns the Owner field if non-nil, zero value otherwise.
 
 ### GetOwnerOk
 
-`func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) GetOwnerOk() (*CreateLoadBalancerRequestLoadBalancerTenantsInner, bool)`
+`func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) GetOwnerOk() (*SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume, bool)`
 
 GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOwner
 
-`func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) SetOwner(v CreateLoadBalancerRequestLoadBalancerTenantsInner)`
+`func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) SetOwner(v SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume)`
 
 SetOwner sets Owner field to given value.
 
@@ -367,20 +367,20 @@ HasOwner returns a boolean if a field has been set.
 
 ### GetNetworkServer
 
-`func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) GetNetworkServer() CreateLoadBalancerRequestLoadBalancerTenantsInner`
+`func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) GetNetworkServer() SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume`
 
 GetNetworkServer returns the NetworkServer field if non-nil, zero value otherwise.
 
 ### GetNetworkServerOk
 
-`func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) GetNetworkServerOk() (*CreateLoadBalancerRequestLoadBalancerTenantsInner, bool)`
+`func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) GetNetworkServerOk() (*SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume, bool)`
 
 GetNetworkServerOk returns a tuple with the NetworkServer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNetworkServer
 
-`func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) SetNetworkServer(v CreateLoadBalancerRequestLoadBalancerTenantsInner)`
+`func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) SetNetworkServer(v SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume)`
 
 SetNetworkServer sets NetworkServer field to given value.
 
@@ -392,20 +392,20 @@ HasNetworkServer returns a boolean if a field has been set.
 
 ### GetZone
 
-`func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) GetZone() CreateLoadBalancerRequestLoadBalancerTenantsInner`
+`func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) GetZone() SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume`
 
 GetZone returns the Zone field if non-nil, zero value otherwise.
 
 ### GetZoneOk
 
-`func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) GetZoneOk() (*CreateLoadBalancerRequestLoadBalancerTenantsInner, bool)`
+`func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) GetZoneOk() (*SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume, bool)`
 
 GetZoneOk returns a tuple with the Zone field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetZone
 
-`func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) SetZone(v CreateLoadBalancerRequestLoadBalancerTenantsInner)`
+`func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) SetZone(v SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume)`
 
 SetZone sets Zone field to given value.
 
@@ -417,20 +417,20 @@ HasZone returns a boolean if a field has been set.
 
 ### GetTenants
 
-`func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) GetTenants() []SnapshotsInstance200ResponseSnapshotsInnerZone`
+`func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) GetTenants() []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount`
 
 GetTenants returns the Tenants field if non-nil, zero value otherwise.
 
 ### GetTenantsOk
 
-`func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) GetTenantsOk() (*[]SnapshotsInstance200ResponseSnapshotsInnerZone, bool)`
+`func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) GetTenantsOk() (*[]GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount, bool)`
 
 GetTenantsOk returns a tuple with the Tenants field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenants
 
-`func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) SetTenants(v []SnapshotsInstance200ResponseSnapshotsInnerZone)`
+`func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) SetTenants(v []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount)`
 
 SetTenants sets Tenants field to given value.
 

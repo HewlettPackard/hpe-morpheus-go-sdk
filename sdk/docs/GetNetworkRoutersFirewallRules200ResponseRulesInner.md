@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**Code** | Pointer to **string** |  | [optional] 
+**Code** | Pointer to **NullableString** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
 **Priority** | Pointer to **int64** |  | [optional] 
 **GroupName** | Pointer to **string** |  | [optional] 
@@ -18,15 +18,15 @@ Name | Type | Description | Notes
 **Destination** | Pointer to **[]string** |  | [optional] 
 **DestinationType** | Pointer to **string** |  | [optional] 
 **Profiles** | Pointer to **[]string** |  | [optional] 
-**Protocol** | Pointer to **string** |  | [optional] 
-**Application** | Pointer to **string** |  | [optional] 
+**Protocol** | Pointer to **NullableString** |  | [optional] 
+**Application** | Pointer to **NullableString** |  | [optional] 
 **ApplicationType** | Pointer to **string** |  | [optional] 
-**PortRange** | Pointer to **string** |  | [optional] 
-**SourcePortRange** | Pointer to **string** |  | [optional] 
-**DestinationPortRange** | Pointer to **string** |  | [optional] 
-**SourceGroup** | Pointer to **string** |  | [optional] 
-**SourceTier** | Pointer to **string** |  | [optional] 
-**Applications** | Pointer to [**[]ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
+**PortRange** | Pointer to **NullableString** |  | [optional] 
+**SourcePortRange** | Pointer to **NullableString** |  | [optional] 
+**DestinationPortRange** | Pointer to **NullableString** |  | [optional] 
+**SourceGroup** | Pointer to **NullableString** |  | [optional] 
+**SourceTier** | Pointer to **NullableString** |  | [optional] 
+**Applications** | Pointer to [**[]GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 
 ## Methods
 
@@ -122,6 +122,16 @@ SetCode sets Code field to given value.
 
 HasCode returns a boolean if a field has been set.
 
+### SetCodeNil
+
+`func (o *GetNetworkRoutersFirewallRules200ResponseRulesInner) SetCodeNil(b bool)`
+
+ SetCodeNil sets the value for Code to be an explicit nil
+
+### UnsetCode
+`func (o *GetNetworkRoutersFirewallRules200ResponseRulesInner) UnsetCode()`
+
+UnsetCode ensures that no value is present for Code, not even an explicit nil
 ### GetEnabled
 
 `func (o *GetNetworkRoutersFirewallRules200ResponseRulesInner) GetEnabled() bool`
@@ -422,6 +432,16 @@ SetProtocol sets Protocol field to given value.
 
 HasProtocol returns a boolean if a field has been set.
 
+### SetProtocolNil
+
+`func (o *GetNetworkRoutersFirewallRules200ResponseRulesInner) SetProtocolNil(b bool)`
+
+ SetProtocolNil sets the value for Protocol to be an explicit nil
+
+### UnsetProtocol
+`func (o *GetNetworkRoutersFirewallRules200ResponseRulesInner) UnsetProtocol()`
+
+UnsetProtocol ensures that no value is present for Protocol, not even an explicit nil
 ### GetApplication
 
 `func (o *GetNetworkRoutersFirewallRules200ResponseRulesInner) GetApplication() string`
@@ -447,6 +467,16 @@ SetApplication sets Application field to given value.
 
 HasApplication returns a boolean if a field has been set.
 
+### SetApplicationNil
+
+`func (o *GetNetworkRoutersFirewallRules200ResponseRulesInner) SetApplicationNil(b bool)`
+
+ SetApplicationNil sets the value for Application to be an explicit nil
+
+### UnsetApplication
+`func (o *GetNetworkRoutersFirewallRules200ResponseRulesInner) UnsetApplication()`
+
+UnsetApplication ensures that no value is present for Application, not even an explicit nil
 ### GetApplicationType
 
 `func (o *GetNetworkRoutersFirewallRules200ResponseRulesInner) GetApplicationType() string`
@@ -497,6 +527,16 @@ SetPortRange sets PortRange field to given value.
 
 HasPortRange returns a boolean if a field has been set.
 
+### SetPortRangeNil
+
+`func (o *GetNetworkRoutersFirewallRules200ResponseRulesInner) SetPortRangeNil(b bool)`
+
+ SetPortRangeNil sets the value for PortRange to be an explicit nil
+
+### UnsetPortRange
+`func (o *GetNetworkRoutersFirewallRules200ResponseRulesInner) UnsetPortRange()`
+
+UnsetPortRange ensures that no value is present for PortRange, not even an explicit nil
 ### GetSourcePortRange
 
 `func (o *GetNetworkRoutersFirewallRules200ResponseRulesInner) GetSourcePortRange() string`
@@ -522,6 +562,16 @@ SetSourcePortRange sets SourcePortRange field to given value.
 
 HasSourcePortRange returns a boolean if a field has been set.
 
+### SetSourcePortRangeNil
+
+`func (o *GetNetworkRoutersFirewallRules200ResponseRulesInner) SetSourcePortRangeNil(b bool)`
+
+ SetSourcePortRangeNil sets the value for SourcePortRange to be an explicit nil
+
+### UnsetSourcePortRange
+`func (o *GetNetworkRoutersFirewallRules200ResponseRulesInner) UnsetSourcePortRange()`
+
+UnsetSourcePortRange ensures that no value is present for SourcePortRange, not even an explicit nil
 ### GetDestinationPortRange
 
 `func (o *GetNetworkRoutersFirewallRules200ResponseRulesInner) GetDestinationPortRange() string`
@@ -547,6 +597,16 @@ SetDestinationPortRange sets DestinationPortRange field to given value.
 
 HasDestinationPortRange returns a boolean if a field has been set.
 
+### SetDestinationPortRangeNil
+
+`func (o *GetNetworkRoutersFirewallRules200ResponseRulesInner) SetDestinationPortRangeNil(b bool)`
+
+ SetDestinationPortRangeNil sets the value for DestinationPortRange to be an explicit nil
+
+### UnsetDestinationPortRange
+`func (o *GetNetworkRoutersFirewallRules200ResponseRulesInner) UnsetDestinationPortRange()`
+
+UnsetDestinationPortRange ensures that no value is present for DestinationPortRange, not even an explicit nil
 ### GetSourceGroup
 
 `func (o *GetNetworkRoutersFirewallRules200ResponseRulesInner) GetSourceGroup() string`
@@ -572,6 +632,16 @@ SetSourceGroup sets SourceGroup field to given value.
 
 HasSourceGroup returns a boolean if a field has been set.
 
+### SetSourceGroupNil
+
+`func (o *GetNetworkRoutersFirewallRules200ResponseRulesInner) SetSourceGroupNil(b bool)`
+
+ SetSourceGroupNil sets the value for SourceGroup to be an explicit nil
+
+### UnsetSourceGroup
+`func (o *GetNetworkRoutersFirewallRules200ResponseRulesInner) UnsetSourceGroup()`
+
+UnsetSourceGroup ensures that no value is present for SourceGroup, not even an explicit nil
 ### GetSourceTier
 
 `func (o *GetNetworkRoutersFirewallRules200ResponseRulesInner) GetSourceTier() string`
@@ -597,22 +667,32 @@ SetSourceTier sets SourceTier field to given value.
 
 HasSourceTier returns a boolean if a field has been set.
 
+### SetSourceTierNil
+
+`func (o *GetNetworkRoutersFirewallRules200ResponseRulesInner) SetSourceTierNil(b bool)`
+
+ SetSourceTierNil sets the value for SourceTier to be an explicit nil
+
+### UnsetSourceTier
+`func (o *GetNetworkRoutersFirewallRules200ResponseRulesInner) UnsetSourceTier()`
+
+UnsetSourceTier ensures that no value is present for SourceTier, not even an explicit nil
 ### GetApplications
 
-`func (o *GetNetworkRoutersFirewallRules200ResponseRulesInner) GetApplications() []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *GetNetworkRoutersFirewallRules200ResponseRulesInner) GetApplications() []GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetApplications returns the Applications field if non-nil, zero value otherwise.
 
 ### GetApplicationsOk
 
-`func (o *GetNetworkRoutersFirewallRules200ResponseRulesInner) GetApplicationsOk() (*[]ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *GetNetworkRoutersFirewallRules200ResponseRulesInner) GetApplicationsOk() (*[]GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetApplicationsOk returns a tuple with the Applications field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetApplications
 
-`func (o *GetNetworkRoutersFirewallRules200ResponseRulesInner) SetApplications(v []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *GetNetworkRoutersFirewallRules200ResponseRulesInner) SetApplications(v []GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetApplications sets Applications field to given value.
 

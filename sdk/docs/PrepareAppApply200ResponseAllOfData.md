@@ -11,10 +11,10 @@ Name | Type | Description | Notes
 **Type** | Pointer to **string** |  | [optional] 
 **Config** | Pointer to **map[string]interface{}** |  | [optional] 
 **BlueprintName** | Pointer to **string** |  | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **NullableString** |  | [optional] 
 **TemplateId** | Pointer to **int64** |  | [optional] 
 **BlueprintId** | Pointer to **int64** |  | [optional] 
-**Group** | Pointer to [**ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
+**Group** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 
 ## Methods
 
@@ -235,6 +235,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *PrepareAppApply200ResponseAllOfData) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *PrepareAppApply200ResponseAllOfData) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetTemplateId
 
 `func (o *PrepareAppApply200ResponseAllOfData) GetTemplateId() int64`
@@ -287,20 +297,20 @@ HasBlueprintId returns a boolean if a field has been set.
 
 ### GetGroup
 
-`func (o *PrepareAppApply200ResponseAllOfData) GetGroup() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *PrepareAppApply200ResponseAllOfData) GetGroup() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetGroup returns the Group field if non-nil, zero value otherwise.
 
 ### GetGroupOk
 
-`func (o *PrepareAppApply200ResponseAllOfData) GetGroupOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *PrepareAppApply200ResponseAllOfData) GetGroupOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetGroupOk returns a tuple with the Group field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGroup
 
-`func (o *PrepareAppApply200ResponseAllOfData) SetGroup(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *PrepareAppApply200ResponseAllOfData) SetGroup(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetGroup sets Group field to given value.
 

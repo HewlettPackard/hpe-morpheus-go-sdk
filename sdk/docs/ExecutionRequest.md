@@ -6,21 +6,21 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
 **UniqueId** | Pointer to **string** |  | [optional] 
-**ContainerId** | Pointer to **string** |  | [optional] 
-**ServerId** | Pointer to **string** |  | [optional] 
+**ContainerId** | Pointer to **NullableString** |  | [optional] 
+**ServerId** | Pointer to **NullableString** |  | [optional] 
 **InstanceId** | Pointer to **int64** |  | [optional] 
-**ResourceId** | Pointer to **string** |  | [optional] 
-**AppId** | Pointer to **string** |  | [optional] 
+**ResourceId** | Pointer to **NullableString** |  | [optional] 
+**AppId** | Pointer to **NullableString** |  | [optional] 
 **StdOut** | Pointer to **string** |  | [optional] 
 **StdErr** | Pointer to **string** |  | [optional] 
 **ExitCode** | Pointer to **int64** |  | [optional] 
 **Status** | Pointer to **string** |  | [optional] 
 **ExpiresAt** | Pointer to **time.Time** |  | [optional] 
 **CreatedById** | Pointer to **int64** |  | [optional] 
-**StatusMessage** | Pointer to **string** |  | [optional] 
-**ErrorMessage** | Pointer to **string** |  | [optional] 
+**StatusMessage** | Pointer to **NullableString** |  | [optional] 
+**ErrorMessage** | Pointer to **NullableString** |  | [optional] 
 **Config** | Pointer to **map[string]interface{}** |  | [optional] 
-**RawData** | Pointer to **string** |  | [optional] 
+**RawData** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -116,6 +116,16 @@ SetContainerId sets ContainerId field to given value.
 
 HasContainerId returns a boolean if a field has been set.
 
+### SetContainerIdNil
+
+`func (o *ExecutionRequest) SetContainerIdNil(b bool)`
+
+ SetContainerIdNil sets the value for ContainerId to be an explicit nil
+
+### UnsetContainerId
+`func (o *ExecutionRequest) UnsetContainerId()`
+
+UnsetContainerId ensures that no value is present for ContainerId, not even an explicit nil
 ### GetServerId
 
 `func (o *ExecutionRequest) GetServerId() string`
@@ -141,6 +151,16 @@ SetServerId sets ServerId field to given value.
 
 HasServerId returns a boolean if a field has been set.
 
+### SetServerIdNil
+
+`func (o *ExecutionRequest) SetServerIdNil(b bool)`
+
+ SetServerIdNil sets the value for ServerId to be an explicit nil
+
+### UnsetServerId
+`func (o *ExecutionRequest) UnsetServerId()`
+
+UnsetServerId ensures that no value is present for ServerId, not even an explicit nil
 ### GetInstanceId
 
 `func (o *ExecutionRequest) GetInstanceId() int64`
@@ -191,6 +211,16 @@ SetResourceId sets ResourceId field to given value.
 
 HasResourceId returns a boolean if a field has been set.
 
+### SetResourceIdNil
+
+`func (o *ExecutionRequest) SetResourceIdNil(b bool)`
+
+ SetResourceIdNil sets the value for ResourceId to be an explicit nil
+
+### UnsetResourceId
+`func (o *ExecutionRequest) UnsetResourceId()`
+
+UnsetResourceId ensures that no value is present for ResourceId, not even an explicit nil
 ### GetAppId
 
 `func (o *ExecutionRequest) GetAppId() string`
@@ -216,6 +246,16 @@ SetAppId sets AppId field to given value.
 
 HasAppId returns a boolean if a field has been set.
 
+### SetAppIdNil
+
+`func (o *ExecutionRequest) SetAppIdNil(b bool)`
+
+ SetAppIdNil sets the value for AppId to be an explicit nil
+
+### UnsetAppId
+`func (o *ExecutionRequest) UnsetAppId()`
+
+UnsetAppId ensures that no value is present for AppId, not even an explicit nil
 ### GetStdOut
 
 `func (o *ExecutionRequest) GetStdOut() string`
@@ -391,6 +431,16 @@ SetStatusMessage sets StatusMessage field to given value.
 
 HasStatusMessage returns a boolean if a field has been set.
 
+### SetStatusMessageNil
+
+`func (o *ExecutionRequest) SetStatusMessageNil(b bool)`
+
+ SetStatusMessageNil sets the value for StatusMessage to be an explicit nil
+
+### UnsetStatusMessage
+`func (o *ExecutionRequest) UnsetStatusMessage()`
+
+UnsetStatusMessage ensures that no value is present for StatusMessage, not even an explicit nil
 ### GetErrorMessage
 
 `func (o *ExecutionRequest) GetErrorMessage() string`
@@ -416,6 +466,16 @@ SetErrorMessage sets ErrorMessage field to given value.
 
 HasErrorMessage returns a boolean if a field has been set.
 
+### SetErrorMessageNil
+
+`func (o *ExecutionRequest) SetErrorMessageNil(b bool)`
+
+ SetErrorMessageNil sets the value for ErrorMessage to be an explicit nil
+
+### UnsetErrorMessage
+`func (o *ExecutionRequest) UnsetErrorMessage()`
+
+UnsetErrorMessage ensures that no value is present for ErrorMessage, not even an explicit nil
 ### GetConfig
 
 `func (o *ExecutionRequest) GetConfig() map[string]interface{}`
@@ -466,6 +526,16 @@ SetRawData sets RawData field to given value.
 
 HasRawData returns a boolean if a field has been set.
 
+### SetRawDataNil
+
+`func (o *ExecutionRequest) SetRawDataNil(b bool)`
+
+ SetRawDataNil sets the value for RawData to be an explicit nil
+
+### UnsetRawData
+`func (o *ExecutionRequest) UnsetRawData()`
+
+UnsetRawData ensures that no value is present for RawData, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

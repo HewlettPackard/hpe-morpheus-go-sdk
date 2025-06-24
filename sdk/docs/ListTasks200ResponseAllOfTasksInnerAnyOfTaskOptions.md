@@ -4,20 +4,20 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AnsibleOptions** | Pointer to **string** |  | [optional] 
-**AnsiblePlaybook** | Pointer to **string** |  | [optional] 
-**SshKey** | Pointer to **string** |  | [optional] 
-**Port** | Pointer to **string** |  | [optional] 
-**LocalScriptGitRef** | Pointer to **string** |  | [optional] 
-**Password** | Pointer to **string** |  | [optional] 
-**PasswordHash** | Pointer to **string** |  | [optional] 
-**LocalScriptGitId** | Pointer to **string** |  | [optional] 
+**AnsibleOptions** | Pointer to **NullableString** |  | [optional] 
+**AnsiblePlaybook** | Pointer to **NullableString** |  | [optional] 
+**SshKey** | Pointer to **NullableString** |  | [optional] 
+**Port** | Pointer to **NullableString** |  | [optional] 
+**LocalScriptGitRef** | Pointer to **NullableString** |  | [optional] 
+**Password** | Pointer to **NullableString** |  | [optional] 
+**PasswordHash** | Pointer to **NullableString** |  | [optional] 
+**LocalScriptGitId** | Pointer to **NullableString** |  | [optional] 
 **AnsibleGitId** | Pointer to **string** |  | [optional] 
-**Host** | Pointer to **string** |  | [optional] 
-**AnsibleSkipTags** | Pointer to **string** |  | [optional] 
-**AnsibleTags** | Pointer to **string** |  | [optional] 
-**Username** | Pointer to **string** |  | [optional] 
-**AnsibleGitRef** | Pointer to **string** |  | [optional] 
+**Host** | Pointer to **NullableString** |  | [optional] 
+**AnsibleSkipTags** | Pointer to **NullableString** |  | [optional] 
+**AnsibleTags** | Pointer to **NullableString** |  | [optional] 
+**Username** | Pointer to **NullableString** |  | [optional] 
+**AnsibleGitRef** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -63,6 +63,16 @@ SetAnsibleOptions sets AnsibleOptions field to given value.
 
 HasAnsibleOptions returns a boolean if a field has been set.
 
+### SetAnsibleOptionsNil
+
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) SetAnsibleOptionsNil(b bool)`
+
+ SetAnsibleOptionsNil sets the value for AnsibleOptions to be an explicit nil
+
+### UnsetAnsibleOptions
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) UnsetAnsibleOptions()`
+
+UnsetAnsibleOptions ensures that no value is present for AnsibleOptions, not even an explicit nil
 ### GetAnsiblePlaybook
 
 `func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) GetAnsiblePlaybook() string`
@@ -88,6 +98,16 @@ SetAnsiblePlaybook sets AnsiblePlaybook field to given value.
 
 HasAnsiblePlaybook returns a boolean if a field has been set.
 
+### SetAnsiblePlaybookNil
+
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) SetAnsiblePlaybookNil(b bool)`
+
+ SetAnsiblePlaybookNil sets the value for AnsiblePlaybook to be an explicit nil
+
+### UnsetAnsiblePlaybook
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) UnsetAnsiblePlaybook()`
+
+UnsetAnsiblePlaybook ensures that no value is present for AnsiblePlaybook, not even an explicit nil
 ### GetSshKey
 
 `func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) GetSshKey() string`
@@ -113,6 +133,16 @@ SetSshKey sets SshKey field to given value.
 
 HasSshKey returns a boolean if a field has been set.
 
+### SetSshKeyNil
+
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) SetSshKeyNil(b bool)`
+
+ SetSshKeyNil sets the value for SshKey to be an explicit nil
+
+### UnsetSshKey
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) UnsetSshKey()`
+
+UnsetSshKey ensures that no value is present for SshKey, not even an explicit nil
 ### GetPort
 
 `func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) GetPort() string`
@@ -138,6 +168,16 @@ SetPort sets Port field to given value.
 
 HasPort returns a boolean if a field has been set.
 
+### SetPortNil
+
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) SetPortNil(b bool)`
+
+ SetPortNil sets the value for Port to be an explicit nil
+
+### UnsetPort
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) UnsetPort()`
+
+UnsetPort ensures that no value is present for Port, not even an explicit nil
 ### GetLocalScriptGitRef
 
 `func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) GetLocalScriptGitRef() string`
@@ -163,6 +203,16 @@ SetLocalScriptGitRef sets LocalScriptGitRef field to given value.
 
 HasLocalScriptGitRef returns a boolean if a field has been set.
 
+### SetLocalScriptGitRefNil
+
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) SetLocalScriptGitRefNil(b bool)`
+
+ SetLocalScriptGitRefNil sets the value for LocalScriptGitRef to be an explicit nil
+
+### UnsetLocalScriptGitRef
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) UnsetLocalScriptGitRef()`
+
+UnsetLocalScriptGitRef ensures that no value is present for LocalScriptGitRef, not even an explicit nil
 ### GetPassword
 
 `func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) GetPassword() string`
@@ -188,6 +238,16 @@ SetPassword sets Password field to given value.
 
 HasPassword returns a boolean if a field has been set.
 
+### SetPasswordNil
+
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) SetPasswordNil(b bool)`
+
+ SetPasswordNil sets the value for Password to be an explicit nil
+
+### UnsetPassword
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) UnsetPassword()`
+
+UnsetPassword ensures that no value is present for Password, not even an explicit nil
 ### GetPasswordHash
 
 `func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) GetPasswordHash() string`
@@ -213,6 +273,16 @@ SetPasswordHash sets PasswordHash field to given value.
 
 HasPasswordHash returns a boolean if a field has been set.
 
+### SetPasswordHashNil
+
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) SetPasswordHashNil(b bool)`
+
+ SetPasswordHashNil sets the value for PasswordHash to be an explicit nil
+
+### UnsetPasswordHash
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) UnsetPasswordHash()`
+
+UnsetPasswordHash ensures that no value is present for PasswordHash, not even an explicit nil
 ### GetLocalScriptGitId
 
 `func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) GetLocalScriptGitId() string`
@@ -238,6 +308,16 @@ SetLocalScriptGitId sets LocalScriptGitId field to given value.
 
 HasLocalScriptGitId returns a boolean if a field has been set.
 
+### SetLocalScriptGitIdNil
+
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) SetLocalScriptGitIdNil(b bool)`
+
+ SetLocalScriptGitIdNil sets the value for LocalScriptGitId to be an explicit nil
+
+### UnsetLocalScriptGitId
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) UnsetLocalScriptGitId()`
+
+UnsetLocalScriptGitId ensures that no value is present for LocalScriptGitId, not even an explicit nil
 ### GetAnsibleGitId
 
 `func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) GetAnsibleGitId() string`
@@ -288,6 +368,16 @@ SetHost sets Host field to given value.
 
 HasHost returns a boolean if a field has been set.
 
+### SetHostNil
+
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) SetHostNil(b bool)`
+
+ SetHostNil sets the value for Host to be an explicit nil
+
+### UnsetHost
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) UnsetHost()`
+
+UnsetHost ensures that no value is present for Host, not even an explicit nil
 ### GetAnsibleSkipTags
 
 `func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) GetAnsibleSkipTags() string`
@@ -313,6 +403,16 @@ SetAnsibleSkipTags sets AnsibleSkipTags field to given value.
 
 HasAnsibleSkipTags returns a boolean if a field has been set.
 
+### SetAnsibleSkipTagsNil
+
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) SetAnsibleSkipTagsNil(b bool)`
+
+ SetAnsibleSkipTagsNil sets the value for AnsibleSkipTags to be an explicit nil
+
+### UnsetAnsibleSkipTags
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) UnsetAnsibleSkipTags()`
+
+UnsetAnsibleSkipTags ensures that no value is present for AnsibleSkipTags, not even an explicit nil
 ### GetAnsibleTags
 
 `func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) GetAnsibleTags() string`
@@ -338,6 +438,16 @@ SetAnsibleTags sets AnsibleTags field to given value.
 
 HasAnsibleTags returns a boolean if a field has been set.
 
+### SetAnsibleTagsNil
+
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) SetAnsibleTagsNil(b bool)`
+
+ SetAnsibleTagsNil sets the value for AnsibleTags to be an explicit nil
+
+### UnsetAnsibleTags
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) UnsetAnsibleTags()`
+
+UnsetAnsibleTags ensures that no value is present for AnsibleTags, not even an explicit nil
 ### GetUsername
 
 `func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) GetUsername() string`
@@ -363,6 +473,16 @@ SetUsername sets Username field to given value.
 
 HasUsername returns a boolean if a field has been set.
 
+### SetUsernameNil
+
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) SetUsernameNil(b bool)`
+
+ SetUsernameNil sets the value for Username to be an explicit nil
+
+### UnsetUsername
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) UnsetUsername()`
+
+UnsetUsername ensures that no value is present for Username, not even an explicit nil
 ### GetAnsibleGitRef
 
 `func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) GetAnsibleGitRef() string`
@@ -388,6 +508,16 @@ SetAnsibleGitRef sets AnsibleGitRef field to given value.
 
 HasAnsibleGitRef returns a boolean if a field has been set.
 
+### SetAnsibleGitRefNil
+
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) SetAnsibleGitRefNil(b bool)`
+
+ SetAnsibleGitRefNil sets the value for AnsibleGitRef to be an explicit nil
+
+### UnsetAnsibleGitRef
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) UnsetAnsibleGitRef()`
+
+UnsetAnsibleGitRef ensures that no value is present for AnsibleGitRef, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

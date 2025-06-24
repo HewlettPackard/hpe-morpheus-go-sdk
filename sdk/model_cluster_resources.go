@@ -21,20 +21,20 @@ var _ MappedNullable = &ClusterResources{}
 
 // ClusterResources struct for ClusterResources
 type ClusterResources struct {
-	Id                   *int64                                         `json:"id,omitempty"`
-	Name                 *string                                        `json:"name,omitempty"`
-	Code                 *string                                        `json:"code,omitempty"`
-	Description          *string                                        `json:"description,omitempty"`
-	Category             *string                                        `json:"category,omitempty"`
-	ResourceLevel        *string                                        `json:"resourceLevel,omitempty"`
-	ResourceType         *string                                        `json:"resourceType,omitempty"`
-	Managed              *bool                                          `json:"managed,omitempty"`
-	Status               *string                                        `json:"status,omitempty"`
-	LastUpdated          *time.Time                                     `json:"lastUpdated,omitempty"`
-	Owner                *GetAlerts200ResponseAllOfChecksInnerContainer `json:"owner,omitempty"`
-	TotalCpuUsage        *int64                                         `json:"totalCpuUsage,omitempty"`
-	Stats                map[string]interface{}                         `json:"stats,omitempty"`
-	AdditionalProperties map[string]interface{}                         `json:",remain"`
+	Id                   *int64                                       `json:"id,omitempty"`
+	Name                 *string                                      `json:"name,omitempty"`
+	Code                 *string                                      `json:"code,omitempty"`
+	Description          NullableString                               `json:"description,omitempty"`
+	Category             *string                                      `json:"category,omitempty"`
+	ResourceLevel        NullableString                               `json:"resourceLevel,omitempty"`
+	ResourceType         *string                                      `json:"resourceType,omitempty"`
+	Managed              NullableBool                                 `json:"managed,omitempty"`
+	Status               *string                                      `json:"status,omitempty"`
+	LastUpdated          NullableTime                                 `json:"lastUpdated,omitempty"`
+	Owner                *GetAlerts200ResponseAllOfChecksInnerAccount `json:"owner,omitempty"`
+	TotalCpuUsage        NullableInt64                                `json:"totalCpuUsage,omitempty"`
+	Stats                map[string]interface{}                       `json:"stats,omitempty"`
+	AdditionalProperties map[string]interface{}                       `json:",remain"`
 }
 
 type _ClusterResources ClusterResources
@@ -152,36 +152,47 @@ func (o *ClusterResources) SetCode(v string) {
 	o.Code = &v
 }
 
-// GetDescription returns the Description field value if set, zero value otherwise.
+// GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ClusterResources) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
+	if o == nil || IsNil(o.Description.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Description
+	return *o.Description.Get()
 }
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ClusterResources) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Description, true
+	return o.Description.Get(), o.Description.IsSet()
 }
 
 // IsSetDescription returns a boolean if a field has been set.
 func (o *ClusterResources) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
+	if o != nil && o.Description.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDescription gets a reference to the given string and assigns it to the Description field.
+// SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *ClusterResources) SetDescription(v string) {
-	o.Description = &v
+	o.Description.Set(&v)
+}
+
+// SetDescriptionNil sets the value for Description to be an explicit nil
+func (o *ClusterResources) SetDescriptionNil() {
+	o.Description.Set(nil)
+}
+
+// UnsetDescription ensures that no value is present for Description, not even an explicit nil
+func (o *ClusterResources) UnsetDescription() {
+	o.Description.Unset()
 }
 
 // GetCategory returns the Category field value if set, zero value otherwise.
@@ -216,36 +227,47 @@ func (o *ClusterResources) SetCategory(v string) {
 	o.Category = &v
 }
 
-// GetResourceLevel returns the ResourceLevel field value if set, zero value otherwise.
+// GetResourceLevel returns the ResourceLevel field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ClusterResources) GetResourceLevel() string {
-	if o == nil || IsNil(o.ResourceLevel) {
+	if o == nil || IsNil(o.ResourceLevel.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ResourceLevel
+	return *o.ResourceLevel.Get()
 }
 
 // GetResourceLevelOk returns a tuple with the ResourceLevel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ClusterResources) GetResourceLevelOk() (*string, bool) {
-	if o == nil || IsNil(o.ResourceLevel) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ResourceLevel, true
+	return o.ResourceLevel.Get(), o.ResourceLevel.IsSet()
 }
 
 // IsSetResourceLevel returns a boolean if a field has been set.
 func (o *ClusterResources) IsSetResourceLevel() bool {
-	if o != nil && !IsNil(o.ResourceLevel) {
+	if o != nil && o.ResourceLevel.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetResourceLevel gets a reference to the given string and assigns it to the ResourceLevel field.
+// SetResourceLevel gets a reference to the given NullableString and assigns it to the ResourceLevel field.
 func (o *ClusterResources) SetResourceLevel(v string) {
-	o.ResourceLevel = &v
+	o.ResourceLevel.Set(&v)
+}
+
+// SetResourceLevelNil sets the value for ResourceLevel to be an explicit nil
+func (o *ClusterResources) SetResourceLevelNil() {
+	o.ResourceLevel.Set(nil)
+}
+
+// UnsetResourceLevel ensures that no value is present for ResourceLevel, not even an explicit nil
+func (o *ClusterResources) UnsetResourceLevel() {
+	o.ResourceLevel.Unset()
 }
 
 // GetResourceType returns the ResourceType field value if set, zero value otherwise.
@@ -280,36 +302,47 @@ func (o *ClusterResources) SetResourceType(v string) {
 	o.ResourceType = &v
 }
 
-// GetManaged returns the Managed field value if set, zero value otherwise.
+// GetManaged returns the Managed field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ClusterResources) GetManaged() bool {
-	if o == nil || IsNil(o.Managed) {
+	if o == nil || IsNil(o.Managed.Get()) {
 		var ret bool
 		return ret
 	}
-	return *o.Managed
+	return *o.Managed.Get()
 }
 
 // GetManagedOk returns a tuple with the Managed field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ClusterResources) GetManagedOk() (*bool, bool) {
-	if o == nil || IsNil(o.Managed) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Managed, true
+	return o.Managed.Get(), o.Managed.IsSet()
 }
 
 // IsSetManaged returns a boolean if a field has been set.
 func (o *ClusterResources) IsSetManaged() bool {
-	if o != nil && !IsNil(o.Managed) {
+	if o != nil && o.Managed.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetManaged gets a reference to the given bool and assigns it to the Managed field.
+// SetManaged gets a reference to the given NullableBool and assigns it to the Managed field.
 func (o *ClusterResources) SetManaged(v bool) {
-	o.Managed = &v
+	o.Managed.Set(&v)
+}
+
+// SetManagedNil sets the value for Managed to be an explicit nil
+func (o *ClusterResources) SetManagedNil() {
+	o.Managed.Set(nil)
+}
+
+// UnsetManaged ensures that no value is present for Managed, not even an explicit nil
+func (o *ClusterResources) UnsetManaged() {
+	o.Managed.Unset()
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
@@ -344,42 +377,53 @@ func (o *ClusterResources) SetStatus(v string) {
 	o.Status = &v
 }
 
-// GetLastUpdated returns the LastUpdated field value if set, zero value otherwise.
+// GetLastUpdated returns the LastUpdated field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ClusterResources) GetLastUpdated() time.Time {
-	if o == nil || IsNil(o.LastUpdated) {
+	if o == nil || IsNil(o.LastUpdated.Get()) {
 		var ret time.Time
 		return ret
 	}
-	return *o.LastUpdated
+	return *o.LastUpdated.Get()
 }
 
 // GetLastUpdatedOk returns a tuple with the LastUpdated field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ClusterResources) GetLastUpdatedOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.LastUpdated) {
+	if o == nil {
 		return nil, false
 	}
-	return o.LastUpdated, true
+	return o.LastUpdated.Get(), o.LastUpdated.IsSet()
 }
 
 // IsSetLastUpdated returns a boolean if a field has been set.
 func (o *ClusterResources) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
+	if o != nil && o.LastUpdated.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.
+// SetLastUpdated gets a reference to the given NullableTime and assigns it to the LastUpdated field.
 func (o *ClusterResources) SetLastUpdated(v time.Time) {
-	o.LastUpdated = &v
+	o.LastUpdated.Set(&v)
+}
+
+// SetLastUpdatedNil sets the value for LastUpdated to be an explicit nil
+func (o *ClusterResources) SetLastUpdatedNil() {
+	o.LastUpdated.Set(nil)
+}
+
+// UnsetLastUpdated ensures that no value is present for LastUpdated, not even an explicit nil
+func (o *ClusterResources) UnsetLastUpdated() {
+	o.LastUpdated.Unset()
 }
 
 // GetOwner returns the Owner field value if set, zero value otherwise.
-func (o *ClusterResources) GetOwner() GetAlerts200ResponseAllOfChecksInnerContainer {
+func (o *ClusterResources) GetOwner() GetAlerts200ResponseAllOfChecksInnerAccount {
 	if o == nil || IsNil(o.Owner) {
-		var ret GetAlerts200ResponseAllOfChecksInnerContainer
+		var ret GetAlerts200ResponseAllOfChecksInnerAccount
 		return ret
 	}
 	return *o.Owner
@@ -387,7 +431,7 @@ func (o *ClusterResources) GetOwner() GetAlerts200ResponseAllOfChecksInnerContai
 
 // GetOwnerOk returns a tuple with the Owner field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ClusterResources) GetOwnerOk() (*GetAlerts200ResponseAllOfChecksInnerContainer, bool) {
+func (o *ClusterResources) GetOwnerOk() (*GetAlerts200ResponseAllOfChecksInnerAccount, bool) {
 	if o == nil || IsNil(o.Owner) {
 		return nil, false
 	}
@@ -403,46 +447,57 @@ func (o *ClusterResources) IsSetOwner() bool {
 	return false
 }
 
-// SetOwner gets a reference to the given GetAlerts200ResponseAllOfChecksInnerContainer and assigns it to the Owner field.
-func (o *ClusterResources) SetOwner(v GetAlerts200ResponseAllOfChecksInnerContainer) {
+// SetOwner gets a reference to the given GetAlerts200ResponseAllOfChecksInnerAccount and assigns it to the Owner field.
+func (o *ClusterResources) SetOwner(v GetAlerts200ResponseAllOfChecksInnerAccount) {
 	o.Owner = &v
 }
 
-// GetTotalCpuUsage returns the TotalCpuUsage field value if set, zero value otherwise.
+// GetTotalCpuUsage returns the TotalCpuUsage field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ClusterResources) GetTotalCpuUsage() int64 {
-	if o == nil || IsNil(o.TotalCpuUsage) {
+	if o == nil || IsNil(o.TotalCpuUsage.Get()) {
 		var ret int64
 		return ret
 	}
-	return *o.TotalCpuUsage
+	return *o.TotalCpuUsage.Get()
 }
 
 // GetTotalCpuUsageOk returns a tuple with the TotalCpuUsage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ClusterResources) GetTotalCpuUsageOk() (*int64, bool) {
-	if o == nil || IsNil(o.TotalCpuUsage) {
+	if o == nil {
 		return nil, false
 	}
-	return o.TotalCpuUsage, true
+	return o.TotalCpuUsage.Get(), o.TotalCpuUsage.IsSet()
 }
 
 // IsSetTotalCpuUsage returns a boolean if a field has been set.
 func (o *ClusterResources) IsSetTotalCpuUsage() bool {
-	if o != nil && !IsNil(o.TotalCpuUsage) {
+	if o != nil && o.TotalCpuUsage.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetTotalCpuUsage gets a reference to the given int64 and assigns it to the TotalCpuUsage field.
+// SetTotalCpuUsage gets a reference to the given NullableInt64 and assigns it to the TotalCpuUsage field.
 func (o *ClusterResources) SetTotalCpuUsage(v int64) {
-	o.TotalCpuUsage = &v
+	o.TotalCpuUsage.Set(&v)
 }
 
-// GetStats returns the Stats field value if set, zero value otherwise.
+// SetTotalCpuUsageNil sets the value for TotalCpuUsage to be an explicit nil
+func (o *ClusterResources) SetTotalCpuUsageNil() {
+	o.TotalCpuUsage.Set(nil)
+}
+
+// UnsetTotalCpuUsage ensures that no value is present for TotalCpuUsage, not even an explicit nil
+func (o *ClusterResources) UnsetTotalCpuUsage() {
+	o.TotalCpuUsage.Unset()
+}
+
+// GetStats returns the Stats field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ClusterResources) GetStats() map[string]interface{} {
-	if o == nil || IsNil(o.Stats) {
+	if o == nil {
 		var ret map[string]interface{}
 		return ret
 	}
@@ -451,6 +506,7 @@ func (o *ClusterResources) GetStats() map[string]interface{} {
 
 // GetStatsOk returns a tuple with the Stats field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ClusterResources) GetStatsOk() (map[string]interface{}, bool) {
 	if o == nil || IsNil(o.Stats) {
 		return map[string]interface{}{}, false
@@ -491,34 +547,34 @@ func (o ClusterResources) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Code) {
 		toSerialize["code"] = o.Code
 	}
-	if !IsNil(o.Description) {
-		toSerialize["description"] = o.Description
+	if o.Description.IsSet() {
+		toSerialize["description"] = o.Description.Get()
 	}
 	if !IsNil(o.Category) {
 		toSerialize["category"] = o.Category
 	}
-	if !IsNil(o.ResourceLevel) {
-		toSerialize["resourceLevel"] = o.ResourceLevel
+	if o.ResourceLevel.IsSet() {
+		toSerialize["resourceLevel"] = o.ResourceLevel.Get()
 	}
 	if !IsNil(o.ResourceType) {
 		toSerialize["resourceType"] = o.ResourceType
 	}
-	if !IsNil(o.Managed) {
-		toSerialize["managed"] = o.Managed
+	if o.Managed.IsSet() {
+		toSerialize["managed"] = o.Managed.Get()
 	}
 	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status
 	}
-	if !IsNil(o.LastUpdated) {
-		toSerialize["lastUpdated"] = o.LastUpdated
+	if o.LastUpdated.IsSet() {
+		toSerialize["lastUpdated"] = o.LastUpdated.Get()
 	}
 	if !IsNil(o.Owner) {
 		toSerialize["owner"] = o.Owner
 	}
-	if !IsNil(o.TotalCpuUsage) {
-		toSerialize["totalCpuUsage"] = o.TotalCpuUsage
+	if o.TotalCpuUsage.IsSet() {
+		toSerialize["totalCpuUsage"] = o.TotalCpuUsage.Get()
 	}
-	if !IsNil(o.Stats) {
+	if o.Stats != nil {
 		toSerialize["stats"] = o.Stats
 	}
 

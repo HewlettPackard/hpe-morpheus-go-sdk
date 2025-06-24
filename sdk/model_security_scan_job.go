@@ -29,9 +29,9 @@ type SecurityScanJob struct {
 	Enabled         *bool                  `json:"enabled,omitempty"`
 	SecurityPackage WorkflowJobPayloadTask `json:"securityPackage"`
 	// Scan Checklist
-	ScanPath *string `json:"scanPath,omitempty"`
+	ScanPath NullableString `json:"scanPath,omitempty"`
 	// Security Profile
-	SecurityProfile *string `json:"securityProfile,omitempty"`
+	SecurityProfile NullableString `json:"securityProfile,omitempty"`
 	// Target type where job will execute
 	TargetType   string                           `json:"targetType"`
 	Targets      []WorkflowJobPayloadTargetsInner `json:"targets"`
@@ -99,9 +99,9 @@ func (o *SecurityScanJob) SetName(v string) {
 	o.Name = v
 }
 
-// GetLabels returns the Labels field value if set, zero value otherwise.
+// GetLabels returns the Labels field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SecurityScanJob) GetLabels() []string {
-	if o == nil || IsNil(o.Labels) {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -110,6 +110,7 @@ func (o *SecurityScanJob) GetLabels() []string {
 
 // GetLabelsOk returns a tuple with the Labels field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SecurityScanJob) GetLabelsOk() ([]string, bool) {
 	if o == nil || IsNil(o.Labels) {
 		return nil, false
@@ -187,68 +188,90 @@ func (o *SecurityScanJob) SetSecurityPackage(v WorkflowJobPayloadTask) {
 	o.SecurityPackage = v
 }
 
-// GetScanPath returns the ScanPath field value if set, zero value otherwise.
+// GetScanPath returns the ScanPath field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SecurityScanJob) GetScanPath() string {
-	if o == nil || IsNil(o.ScanPath) {
+	if o == nil || IsNil(o.ScanPath.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ScanPath
+	return *o.ScanPath.Get()
 }
 
 // GetScanPathOk returns a tuple with the ScanPath field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SecurityScanJob) GetScanPathOk() (*string, bool) {
-	if o == nil || IsNil(o.ScanPath) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ScanPath, true
+	return o.ScanPath.Get(), o.ScanPath.IsSet()
 }
 
 // IsSetScanPath returns a boolean if a field has been set.
 func (o *SecurityScanJob) IsSetScanPath() bool {
-	if o != nil && !IsNil(o.ScanPath) {
+	if o != nil && o.ScanPath.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetScanPath gets a reference to the given string and assigns it to the ScanPath field.
+// SetScanPath gets a reference to the given NullableString and assigns it to the ScanPath field.
 func (o *SecurityScanJob) SetScanPath(v string) {
-	o.ScanPath = &v
+	o.ScanPath.Set(&v)
 }
 
-// GetSecurityProfile returns the SecurityProfile field value if set, zero value otherwise.
+// SetScanPathNil sets the value for ScanPath to be an explicit nil
+func (o *SecurityScanJob) SetScanPathNil() {
+	o.ScanPath.Set(nil)
+}
+
+// UnsetScanPath ensures that no value is present for ScanPath, not even an explicit nil
+func (o *SecurityScanJob) UnsetScanPath() {
+	o.ScanPath.Unset()
+}
+
+// GetSecurityProfile returns the SecurityProfile field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SecurityScanJob) GetSecurityProfile() string {
-	if o == nil || IsNil(o.SecurityProfile) {
+	if o == nil || IsNil(o.SecurityProfile.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.SecurityProfile
+	return *o.SecurityProfile.Get()
 }
 
 // GetSecurityProfileOk returns a tuple with the SecurityProfile field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SecurityScanJob) GetSecurityProfileOk() (*string, bool) {
-	if o == nil || IsNil(o.SecurityProfile) {
+	if o == nil {
 		return nil, false
 	}
-	return o.SecurityProfile, true
+	return o.SecurityProfile.Get(), o.SecurityProfile.IsSet()
 }
 
 // IsSetSecurityProfile returns a boolean if a field has been set.
 func (o *SecurityScanJob) IsSetSecurityProfile() bool {
-	if o != nil && !IsNil(o.SecurityProfile) {
+	if o != nil && o.SecurityProfile.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetSecurityProfile gets a reference to the given string and assigns it to the SecurityProfile field.
+// SetSecurityProfile gets a reference to the given NullableString and assigns it to the SecurityProfile field.
 func (o *SecurityScanJob) SetSecurityProfile(v string) {
-	o.SecurityProfile = &v
+	o.SecurityProfile.Set(&v)
+}
+
+// SetSecurityProfileNil sets the value for SecurityProfile to be an explicit nil
+func (o *SecurityScanJob) SetSecurityProfileNil() {
+	o.SecurityProfile.Set(nil)
+}
+
+// UnsetSecurityProfile ensures that no value is present for SecurityProfile, not even an explicit nil
+func (o *SecurityScanJob) UnsetSecurityProfile() {
+	o.SecurityProfile.Unset()
 }
 
 // GetTargetType returns the TargetType field value
@@ -276,6 +299,7 @@ func (o *SecurityScanJob) SetTargetType(v string) {
 }
 
 // GetTargets returns the Targets field value
+// If the value is explicit nil, the zero value for []WorkflowJobPayloadTargetsInner will be returned
 func (o *SecurityScanJob) GetTargets() []WorkflowJobPayloadTargetsInner {
 	if o == nil {
 		var ret []WorkflowJobPayloadTargetsInner
@@ -287,8 +311,9 @@ func (o *SecurityScanJob) GetTargets() []WorkflowJobPayloadTargetsInner {
 
 // GetTargetsOk returns a tuple with the Targets field value
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SecurityScanJob) GetTargetsOk() ([]WorkflowJobPayloadTargetsInner, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Targets) {
 		return nil, false
 	}
 	return o.Targets, true
@@ -462,21 +487,23 @@ func (o SecurityScanJob) MarshalJSON() ([]byte, error) {
 func (o SecurityScanJob) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["name"] = o.Name
-	if !IsNil(o.Labels) {
+	if o.Labels != nil {
 		toSerialize["labels"] = o.Labels
 	}
 	if !IsNil(o.Enabled) {
 		toSerialize["enabled"] = o.Enabled
 	}
 	toSerialize["securityPackage"] = o.SecurityPackage
-	if !IsNil(o.ScanPath) {
-		toSerialize["scanPath"] = o.ScanPath
+	if o.ScanPath.IsSet() {
+		toSerialize["scanPath"] = o.ScanPath.Get()
 	}
-	if !IsNil(o.SecurityProfile) {
-		toSerialize["securityProfile"] = o.SecurityProfile
+	if o.SecurityProfile.IsSet() {
+		toSerialize["securityProfile"] = o.SecurityProfile.Get()
 	}
 	toSerialize["targetType"] = o.TargetType
-	toSerialize["targets"] = o.Targets
+	if o.Targets != nil {
+		toSerialize["targets"] = o.Targets
+	}
 	toSerialize["scheduleMode"] = o.ScheduleMode
 	if !IsNil(o.CustomOptions) {
 		toSerialize["customOptions"] = o.CustomOptions

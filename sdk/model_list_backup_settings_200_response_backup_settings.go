@@ -20,13 +20,13 @@ var _ MappedNullable = &ListBackupSettings200ResponseBackupSettings{}
 
 // ListBackupSettings200ResponseBackupSettings struct for ListBackupSettings200ResponseBackupSettings
 type ListBackupSettings200ResponseBackupSettings struct {
-	BackupsEnabled       *bool                                                                   `json:"backupsEnabled,omitempty"`
-	CreateBackups        *bool                                                                   `json:"createBackups,omitempty"`
-	BackupAppliance      *bool                                                                   `json:"backupAppliance,omitempty"`
-	DefaultStorageBucket *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"defaultStorageBucket,omitempty"`
-	DefaultSchedule      *ListBackupSettings200ResponseBackupSettingsDefaultSchedule             `json:"defaultSchedule,omitempty"`
-	RetentionCount       *int64                                                                  `json:"retentionCount,omitempty"`
-	AdditionalProperties map[string]interface{}                                                  `json:",remain"`
+	BackupsEnabled       *bool                                                       `json:"backupsEnabled,omitempty"`
+	CreateBackups        *bool                                                       `json:"createBackups,omitempty"`
+	BackupAppliance      *bool                                                       `json:"backupAppliance,omitempty"`
+	DefaultStorageBucket *GetAlerts200ResponseAllOfCheckGroupsInnerInstance          `json:"defaultStorageBucket,omitempty"`
+	DefaultSchedule      *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"defaultSchedule,omitempty"`
+	RetentionCount       *int64                                                      `json:"retentionCount,omitempty"`
+	AdditionalProperties map[string]interface{}                                      `json:",remain"`
 }
 
 type _ListBackupSettings200ResponseBackupSettings ListBackupSettings200ResponseBackupSettings
@@ -145,9 +145,9 @@ func (o *ListBackupSettings200ResponseBackupSettings) SetBackupAppliance(v bool)
 }
 
 // GetDefaultStorageBucket returns the DefaultStorageBucket field value if set, zero value otherwise.
-func (o *ListBackupSettings200ResponseBackupSettings) GetDefaultStorageBucket() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *ListBackupSettings200ResponseBackupSettings) GetDefaultStorageBucket() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.DefaultStorageBucket) {
-		var ret ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return *o.DefaultStorageBucket
@@ -155,7 +155,7 @@ func (o *ListBackupSettings200ResponseBackupSettings) GetDefaultStorageBucket() 
 
 // GetDefaultStorageBucketOk returns a tuple with the DefaultStorageBucket field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListBackupSettings200ResponseBackupSettings) GetDefaultStorageBucketOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *ListBackupSettings200ResponseBackupSettings) GetDefaultStorageBucketOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.DefaultStorageBucket) {
 		return nil, false
 	}
@@ -171,8 +171,8 @@ func (o *ListBackupSettings200ResponseBackupSettings) IsSetDefaultStorageBucket(
 	return false
 }
 
-// SetDefaultStorageBucket gets a reference to the given ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the DefaultStorageBucket field.
-func (o *ListBackupSettings200ResponseBackupSettings) SetDefaultStorageBucket(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetDefaultStorageBucket gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the DefaultStorageBucket field.
+func (o *ListBackupSettings200ResponseBackupSettings) SetDefaultStorageBucket(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.DefaultStorageBucket = &v
 }
 

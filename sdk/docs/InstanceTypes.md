@@ -9,8 +9,8 @@ Name | Type | Description | Notes
 **Name** | Pointer to **string** |  | [optional] 
 **Labels** | Pointer to **[]string** |  | [optional] 
 **Code** | Pointer to **string** |  | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
-**ProvisionTypeCode** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **NullableString** |  | [optional] 
+**ProvisionTypeCode** | Pointer to **NullableString** |  | [optional] 
 **Category** | Pointer to **string** |  | [optional] 
 **Active** | Pointer to **bool** |  | [optional] 
 **EnvironmentPrefix** | Pointer to **string** |  | [optional] 
@@ -18,8 +18,8 @@ Name | Type | Description | Notes
 **Featured** | Pointer to **bool** |  | [optional] 
 **Versions** | Pointer to **[]string** |  | [optional] 
 **InstanceTypeLayouts** | Pointer to [**[]ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInnerInstanceTypeLayoutsInner**](ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInnerInstanceTypeLayoutsInner.md) |  | [optional] 
-**ImagePath** | Pointer to **string** | Logo image URL | [optional] 
-**DarkImagePath** | Pointer to **string** | Dark logo image URL | [optional] 
+**ImagePath** | Pointer to **NullableString** | Logo image URL | [optional] 
+**DarkImagePath** | Pointer to **NullableString** | Dark logo image URL | [optional] 
 
 ## Methods
 
@@ -140,6 +140,16 @@ SetLabels sets Labels field to given value.
 
 HasLabels returns a boolean if a field has been set.
 
+### SetLabelsNil
+
+`func (o *InstanceTypes) SetLabelsNil(b bool)`
+
+ SetLabelsNil sets the value for Labels to be an explicit nil
+
+### UnsetLabels
+`func (o *InstanceTypes) UnsetLabels()`
+
+UnsetLabels ensures that no value is present for Labels, not even an explicit nil
 ### GetCode
 
 `func (o *InstanceTypes) GetCode() string`
@@ -190,6 +200,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *InstanceTypes) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *InstanceTypes) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetProvisionTypeCode
 
 `func (o *InstanceTypes) GetProvisionTypeCode() string`
@@ -215,6 +235,16 @@ SetProvisionTypeCode sets ProvisionTypeCode field to given value.
 
 HasProvisionTypeCode returns a boolean if a field has been set.
 
+### SetProvisionTypeCodeNil
+
+`func (o *InstanceTypes) SetProvisionTypeCodeNil(b bool)`
+
+ SetProvisionTypeCodeNil sets the value for ProvisionTypeCode to be an explicit nil
+
+### UnsetProvisionTypeCode
+`func (o *InstanceTypes) UnsetProvisionTypeCode()`
+
+UnsetProvisionTypeCode ensures that no value is present for ProvisionTypeCode, not even an explicit nil
 ### GetCategory
 
 `func (o *InstanceTypes) GetCategory() string`
@@ -415,6 +445,16 @@ SetImagePath sets ImagePath field to given value.
 
 HasImagePath returns a boolean if a field has been set.
 
+### SetImagePathNil
+
+`func (o *InstanceTypes) SetImagePathNil(b bool)`
+
+ SetImagePathNil sets the value for ImagePath to be an explicit nil
+
+### UnsetImagePath
+`func (o *InstanceTypes) UnsetImagePath()`
+
+UnsetImagePath ensures that no value is present for ImagePath, not even an explicit nil
 ### GetDarkImagePath
 
 `func (o *InstanceTypes) GetDarkImagePath() string`
@@ -440,6 +480,16 @@ SetDarkImagePath sets DarkImagePath field to given value.
 
 HasDarkImagePath returns a boolean if a field has been set.
 
+### SetDarkImagePathNil
+
+`func (o *InstanceTypes) SetDarkImagePathNil(b bool)`
+
+ SetDarkImagePathNil sets the value for DarkImagePath to be an explicit nil
+
+### UnsetDarkImagePath
+`func (o *InstanceTypes) UnsetDarkImagePath()`
+
+UnsetDarkImagePath ensures that no value is present for DarkImagePath, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Network** | Pointer to [**ListNetworks200ResponseAllOfNetworksInner**](ListNetworks200ResponseAllOfNetworksInner.md) |  | [optional] 
 **Errors** | Pointer to **map[string]interface{}** |  | [optional] 
 **Success** | Pointer to **bool** |  | [optional] 
-**Msg** | Pointer to **string** |  | [optional] 
+**Msg** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -128,6 +128,16 @@ SetMsg sets Msg field to given value.
 
 HasMsg returns a boolean if a field has been set.
 
+### SetMsgNil
+
+`func (o *CreateNetworks200Response) SetMsgNil(b bool)`
+
+ SetMsgNil sets the value for Msg to be an explicit nil
+
+### UnsetMsg
+`func (o *CreateNetworks200Response) UnsetMsg()`
+
+UnsetMsg ensures that no value is present for Msg, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

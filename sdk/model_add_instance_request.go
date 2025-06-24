@@ -266,9 +266,9 @@ func (o *AddInstanceRequest) SetServicePlanOptions(v map[string]interface{}) {
 	o.ServicePlanOptions = v
 }
 
-// GetSecurityGroups returns the SecurityGroups field value if set, zero value otherwise.
+// GetSecurityGroups returns the SecurityGroups field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AddInstanceRequest) GetSecurityGroups() []map[string]interface{} {
-	if o == nil || IsNil(o.SecurityGroups) {
+	if o == nil {
 		var ret []map[string]interface{}
 		return ret
 	}
@@ -277,6 +277,7 @@ func (o *AddInstanceRequest) GetSecurityGroups() []map[string]interface{} {
 
 // GetSecurityGroupsOk returns a tuple with the SecurityGroups field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AddInstanceRequest) GetSecurityGroupsOk() ([]map[string]interface{}, bool) {
 	if o == nil || IsNil(o.SecurityGroups) {
 		return nil, false
@@ -604,7 +605,7 @@ func (o AddInstanceRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ServicePlanOptions) {
 		toSerialize["servicePlanOptions"] = o.ServicePlanOptions
 	}
-	if !IsNil(o.SecurityGroups) {
+	if o.SecurityGroups != nil {
 		toSerialize["securityGroups"] = o.SecurityGroups
 	}
 	if !IsNil(o.Volumes) {

@@ -33,7 +33,7 @@ type HostUpdate struct {
 	// SSH Username
 	SshUsername *string `json:"sshUsername,omitempty"`
 	// SSH Password
-	SshPassword *string                                   `json:"sshPassword,omitempty"`
+	SshPassword NullableString                            `json:"sshPassword,omitempty"`
 	SshKeyPair  *AddClusterRequestClusterServerSshKeyPair `json:"sshKeyPair,omitempty"`
 	// Power schedule ID.
 	PowerScheduleType *int64   `json:"powerScheduleType,omitempty"`
@@ -284,36 +284,47 @@ func (o *HostUpdate) SetSshUsername(v string) {
 	o.SshUsername = &v
 }
 
-// GetSshPassword returns the SshPassword field value if set, zero value otherwise.
+// GetSshPassword returns the SshPassword field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HostUpdate) GetSshPassword() string {
-	if o == nil || IsNil(o.SshPassword) {
+	if o == nil || IsNil(o.SshPassword.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.SshPassword
+	return *o.SshPassword.Get()
 }
 
 // GetSshPasswordOk returns a tuple with the SshPassword field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HostUpdate) GetSshPasswordOk() (*string, bool) {
-	if o == nil || IsNil(o.SshPassword) {
+	if o == nil {
 		return nil, false
 	}
-	return o.SshPassword, true
+	return o.SshPassword.Get(), o.SshPassword.IsSet()
 }
 
 // IsSetSshPassword returns a boolean if a field has been set.
 func (o *HostUpdate) IsSetSshPassword() bool {
-	if o != nil && !IsNil(o.SshPassword) {
+	if o != nil && o.SshPassword.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetSshPassword gets a reference to the given string and assigns it to the SshPassword field.
+// SetSshPassword gets a reference to the given NullableString and assigns it to the SshPassword field.
 func (o *HostUpdate) SetSshPassword(v string) {
-	o.SshPassword = &v
+	o.SshPassword.Set(&v)
+}
+
+// SetSshPasswordNil sets the value for SshPassword to be an explicit nil
+func (o *HostUpdate) SetSshPasswordNil() {
+	o.SshPassword.Set(nil)
+}
+
+// UnsetSshPassword ensures that no value is present for SshPassword, not even an explicit nil
+func (o *HostUpdate) UnsetSshPassword() {
+	o.SshPassword.Unset()
 }
 
 // GetSshKeyPair returns the SshKeyPair field value if set, zero value otherwise.
@@ -696,8 +707,8 @@ func (o HostUpdate) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.SshUsername) {
 		toSerialize["sshUsername"] = o.SshUsername
 	}
-	if !IsNil(o.SshPassword) {
-		toSerialize["sshPassword"] = o.SshPassword
+	if o.SshPassword.IsSet() {
+		toSerialize["sshPassword"] = o.SshPassword.Get()
 	}
 	if !IsNil(o.SshKeyPair) {
 		toSerialize["sshKeyPair"] = o.SshKeyPair

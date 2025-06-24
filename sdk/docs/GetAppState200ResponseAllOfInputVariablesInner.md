@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **string** |  | [optional] 
-**Value** | Pointer to **string** |  | [optional] 
+**Value** | Pointer to **NullableString** |  | [optional] 
 **Sensitive** | Pointer to **bool** |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 
@@ -78,6 +78,16 @@ SetValue sets Value field to given value.
 
 HasValue returns a boolean if a field has been set.
 
+### SetValueNil
+
+`func (o *GetAppState200ResponseAllOfInputVariablesInner) SetValueNil(b bool)`
+
+ SetValueNil sets the value for Value to be an explicit nil
+
+### UnsetValue
+`func (o *GetAppState200ResponseAllOfInputVariablesInner) UnsetValue()`
+
+UnsetValue ensures that no value is present for Value, not even an explicit nil
 ### GetSensitive
 
 `func (o *GetAppState200ResponseAllOfInputVariablesInner) GetSensitive() bool`

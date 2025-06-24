@@ -16,9 +16,9 @@ Name | Type | Description | Notes
 **Config** | Pointer to **map[string]interface{}** |  | [optional] 
 **Status** | Pointer to **string** |  | [optional] 
 **StatusDate** | Pointer to **time.Time** |  | [optional] 
-**StatusMessage** | Pointer to **string** |  | [optional] 
-**LastSync** | Pointer to **string** |  | [optional] 
-**LastSyncDuration** | Pointer to **string** |  | [optional] 
+**StatusMessage** | Pointer to **NullableString** |  | [optional] 
+**LastSync** | Pointer to **NullableString** |  | [optional] 
+**LastSyncDuration** | Pointer to **NullableString** |  | [optional] 
 **Credential** | Pointer to [**ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential**](ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential.md) |  | [optional] 
 
 ## Methods
@@ -290,6 +290,16 @@ SetConfig sets Config field to given value.
 
 HasConfig returns a boolean if a field has been set.
 
+### SetConfigNil
+
+`func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf5) SetConfigNil(b bool)`
+
+ SetConfigNil sets the value for Config to be an explicit nil
+
+### UnsetConfig
+`func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf5) UnsetConfig()`
+
+UnsetConfig ensures that no value is present for Config, not even an explicit nil
 ### GetStatus
 
 `func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf5) GetStatus() string`
@@ -365,6 +375,16 @@ SetStatusMessage sets StatusMessage field to given value.
 
 HasStatusMessage returns a boolean if a field has been set.
 
+### SetStatusMessageNil
+
+`func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf5) SetStatusMessageNil(b bool)`
+
+ SetStatusMessageNil sets the value for StatusMessage to be an explicit nil
+
+### UnsetStatusMessage
+`func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf5) UnsetStatusMessage()`
+
+UnsetStatusMessage ensures that no value is present for StatusMessage, not even an explicit nil
 ### GetLastSync
 
 `func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf5) GetLastSync() string`
@@ -390,6 +410,16 @@ SetLastSync sets LastSync field to given value.
 
 HasLastSync returns a boolean if a field has been set.
 
+### SetLastSyncNil
+
+`func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf5) SetLastSyncNil(b bool)`
+
+ SetLastSyncNil sets the value for LastSync to be an explicit nil
+
+### UnsetLastSync
+`func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf5) UnsetLastSync()`
+
+UnsetLastSync ensures that no value is present for LastSync, not even an explicit nil
 ### GetLastSyncDuration
 
 `func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf5) GetLastSyncDuration() string`
@@ -415,6 +445,16 @@ SetLastSyncDuration sets LastSyncDuration field to given value.
 
 HasLastSyncDuration returns a boolean if a field has been set.
 
+### SetLastSyncDurationNil
+
+`func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf5) SetLastSyncDurationNil(b bool)`
+
+ SetLastSyncDurationNil sets the value for LastSyncDuration to be an explicit nil
+
+### UnsetLastSyncDuration
+`func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf5) UnsetLastSyncDuration()`
+
+UnsetLastSyncDuration ensures that no value is present for LastSyncDuration, not even an explicit nil
 ### GetCredential
 
 `func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf5) GetCredential() ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential`

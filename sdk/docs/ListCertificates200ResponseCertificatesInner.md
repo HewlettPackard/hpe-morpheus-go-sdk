@@ -6,19 +6,19 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
-**DomainName** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **NullableString** |  | [optional] 
+**DomainName** | Pointer to **NullableString** |  | [optional] 
 **AccountId** | Pointer to **int64** |  | [optional] 
-**IntegrationId** | Pointer to **int64** |  | [optional] 
+**IntegrationId** | Pointer to **NullableInt64** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
 **Generated** | Pointer to **bool** |  | [optional] 
 **Wildcard** | Pointer to **bool** |  | [optional] 
 **SelfSigned** | Pointer to **bool** |  | [optional] 
 **Type** | Pointer to [**ListCertificates200ResponseCertificatesInnerType**](ListCertificates200ResponseCertificatesInnerType.md) |  | [optional] 
-**Category** | Pointer to **string** |  | [optional] 
-**CommonName** | Pointer to **string** |  | [optional] 
-**CertType** | Pointer to **string** |  | [optional] 
-**KeyFileMD5** | Pointer to **string** |  | [optional] 
+**Category** | Pointer to **NullableString** |  | [optional] 
+**CommonName** | Pointer to **NullableString** |  | [optional] 
+**CertType** | Pointer to **NullableString** |  | [optional] 
+**KeyFileMD5** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -114,6 +114,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *ListCertificates200ResponseCertificatesInner) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *ListCertificates200ResponseCertificatesInner) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetDomainName
 
 `func (o *ListCertificates200ResponseCertificatesInner) GetDomainName() string`
@@ -139,6 +149,16 @@ SetDomainName sets DomainName field to given value.
 
 HasDomainName returns a boolean if a field has been set.
 
+### SetDomainNameNil
+
+`func (o *ListCertificates200ResponseCertificatesInner) SetDomainNameNil(b bool)`
+
+ SetDomainNameNil sets the value for DomainName to be an explicit nil
+
+### UnsetDomainName
+`func (o *ListCertificates200ResponseCertificatesInner) UnsetDomainName()`
+
+UnsetDomainName ensures that no value is present for DomainName, not even an explicit nil
 ### GetAccountId
 
 `func (o *ListCertificates200ResponseCertificatesInner) GetAccountId() int64`
@@ -189,6 +209,16 @@ SetIntegrationId sets IntegrationId field to given value.
 
 HasIntegrationId returns a boolean if a field has been set.
 
+### SetIntegrationIdNil
+
+`func (o *ListCertificates200ResponseCertificatesInner) SetIntegrationIdNil(b bool)`
+
+ SetIntegrationIdNil sets the value for IntegrationId to be an explicit nil
+
+### UnsetIntegrationId
+`func (o *ListCertificates200ResponseCertificatesInner) UnsetIntegrationId()`
+
+UnsetIntegrationId ensures that no value is present for IntegrationId, not even an explicit nil
 ### GetEnabled
 
 `func (o *ListCertificates200ResponseCertificatesInner) GetEnabled() bool`
@@ -339,6 +369,16 @@ SetCategory sets Category field to given value.
 
 HasCategory returns a boolean if a field has been set.
 
+### SetCategoryNil
+
+`func (o *ListCertificates200ResponseCertificatesInner) SetCategoryNil(b bool)`
+
+ SetCategoryNil sets the value for Category to be an explicit nil
+
+### UnsetCategory
+`func (o *ListCertificates200ResponseCertificatesInner) UnsetCategory()`
+
+UnsetCategory ensures that no value is present for Category, not even an explicit nil
 ### GetCommonName
 
 `func (o *ListCertificates200ResponseCertificatesInner) GetCommonName() string`
@@ -364,6 +404,16 @@ SetCommonName sets CommonName field to given value.
 
 HasCommonName returns a boolean if a field has been set.
 
+### SetCommonNameNil
+
+`func (o *ListCertificates200ResponseCertificatesInner) SetCommonNameNil(b bool)`
+
+ SetCommonNameNil sets the value for CommonName to be an explicit nil
+
+### UnsetCommonName
+`func (o *ListCertificates200ResponseCertificatesInner) UnsetCommonName()`
+
+UnsetCommonName ensures that no value is present for CommonName, not even an explicit nil
 ### GetCertType
 
 `func (o *ListCertificates200ResponseCertificatesInner) GetCertType() string`
@@ -389,6 +439,16 @@ SetCertType sets CertType field to given value.
 
 HasCertType returns a boolean if a field has been set.
 
+### SetCertTypeNil
+
+`func (o *ListCertificates200ResponseCertificatesInner) SetCertTypeNil(b bool)`
+
+ SetCertTypeNil sets the value for CertType to be an explicit nil
+
+### UnsetCertType
+`func (o *ListCertificates200ResponseCertificatesInner) UnsetCertType()`
+
+UnsetCertType ensures that no value is present for CertType, not even an explicit nil
 ### GetKeyFileMD5
 
 `func (o *ListCertificates200ResponseCertificatesInner) GetKeyFileMD5() string`
@@ -414,6 +474,16 @@ SetKeyFileMD5 sets KeyFileMD5 field to given value.
 
 HasKeyFileMD5 returns a boolean if a field has been set.
 
+### SetKeyFileMD5Nil
+
+`func (o *ListCertificates200ResponseCertificatesInner) SetKeyFileMD5Nil(b bool)`
+
+ SetKeyFileMD5Nil sets the value for KeyFileMD5 to be an explicit nil
+
+### UnsetKeyFileMD5
+`func (o *ListCertificates200ResponseCertificatesInner) UnsetKeyFileMD5()`
+
+UnsetKeyFileMD5 ensures that no value is present for KeyFileMD5, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

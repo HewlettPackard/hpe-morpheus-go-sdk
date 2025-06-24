@@ -6,11 +6,11 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Storage** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**Controller** | Pointer to **string** |  | [optional] 
+**Controller** | Pointer to **NullableString** |  | [optional] 
 **Datastore** | Pointer to **string** |  | [optional] 
-**DisplayOrder** | Pointer to **string** |  | [optional] 
+**DisplayOrder** | Pointer to **NullableString** |  | [optional] 
 **Size** | Pointer to **int64** |  | [optional] 
-**MountPoint** | Pointer to **string** |  | [optional] 
+**MountPoint** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -106,6 +106,16 @@ SetController sets Controller field to given value.
 
 HasController returns a boolean if a field has been set.
 
+### SetControllerNil
+
+`func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner) SetControllerNil(b bool)`
+
+ SetControllerNil sets the value for Controller to be an explicit nil
+
+### UnsetController
+`func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner) UnsetController()`
+
+UnsetController ensures that no value is present for Controller, not even an explicit nil
 ### GetDatastore
 
 `func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner) GetDatastore() string`
@@ -156,6 +166,16 @@ SetDisplayOrder sets DisplayOrder field to given value.
 
 HasDisplayOrder returns a boolean if a field has been set.
 
+### SetDisplayOrderNil
+
+`func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner) SetDisplayOrderNil(b bool)`
+
+ SetDisplayOrderNil sets the value for DisplayOrder to be an explicit nil
+
+### UnsetDisplayOrder
+`func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner) UnsetDisplayOrder()`
+
+UnsetDisplayOrder ensures that no value is present for DisplayOrder, not even an explicit nil
 ### GetSize
 
 `func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner) GetSize() int64`
@@ -206,6 +226,16 @@ SetMountPoint sets MountPoint field to given value.
 
 HasMountPoint returns a boolean if a field has been set.
 
+### SetMountPointNil
+
+`func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner) SetMountPointNil(b bool)`
+
+ SetMountPointNil sets the value for MountPoint to be an explicit nil
+
+### UnsetMountPoint
+`func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner) UnsetMountPoint()`
+
+UnsetMountPoint ensures that no value is present for MountPoint, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

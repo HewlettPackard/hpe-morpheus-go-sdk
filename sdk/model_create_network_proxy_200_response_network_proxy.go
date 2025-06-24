@@ -20,18 +20,18 @@ var _ MappedNullable = &CreateNetworkProxy200ResponseNetworkProxy{}
 
 // CreateNetworkProxy200ResponseNetworkProxy struct for CreateNetworkProxy200ResponseNetworkProxy
 type CreateNetworkProxy200ResponseNetworkProxy struct {
-	Id                   *int64                                                                  `json:"id,omitempty"`
-	Name                 *string                                                                 `json:"name,omitempty"`
-	ProxyHost            *string                                                                 `json:"proxyHost,omitempty"`
-	ProxyPort            *int64                                                                  `json:"proxyPort,omitempty"`
-	ProxyUser            *string                                                                 `json:"proxyUser,omitempty"`
-	ProxyPassword        *string                                                                 `json:"proxyPassword,omitempty"`
-	ProxyDomain          *string                                                                 `json:"proxyDomain,omitempty"`
-	ProxyWorkstation     *string                                                                 `json:"proxyWorkstation,omitempty"`
-	Visibility           *string                                                                 `json:"visibility,omitempty"`
-	Account              *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"account,omitempty"`
-	Owner                *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"owner,omitempty"`
-	AdditionalProperties map[string]interface{}                                                  `json:",remain"`
+	Id                   *int64                                             `json:"id,omitempty"`
+	Name                 *string                                            `json:"name,omitempty"`
+	ProxyHost            *string                                            `json:"proxyHost,omitempty"`
+	ProxyPort            *int64                                             `json:"proxyPort,omitempty"`
+	ProxyUser            NullableString                                     `json:"proxyUser,omitempty"`
+	ProxyPassword        NullableString                                     `json:"proxyPassword,omitempty"`
+	ProxyDomain          *string                                            `json:"proxyDomain,omitempty"`
+	ProxyWorkstation     NullableString                                     `json:"proxyWorkstation,omitempty"`
+	Visibility           *string                                            `json:"visibility,omitempty"`
+	Account              *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"account,omitempty"`
+	Owner                *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"owner,omitempty"`
+	AdditionalProperties map[string]interface{}                             `json:",remain"`
 }
 
 type _CreateNetworkProxy200ResponseNetworkProxy CreateNetworkProxy200ResponseNetworkProxy
@@ -181,68 +181,90 @@ func (o *CreateNetworkProxy200ResponseNetworkProxy) SetProxyPort(v int64) {
 	o.ProxyPort = &v
 }
 
-// GetProxyUser returns the ProxyUser field value if set, zero value otherwise.
+// GetProxyUser returns the ProxyUser field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CreateNetworkProxy200ResponseNetworkProxy) GetProxyUser() string {
-	if o == nil || IsNil(o.ProxyUser) {
+	if o == nil || IsNil(o.ProxyUser.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ProxyUser
+	return *o.ProxyUser.Get()
 }
 
 // GetProxyUserOk returns a tuple with the ProxyUser field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CreateNetworkProxy200ResponseNetworkProxy) GetProxyUserOk() (*string, bool) {
-	if o == nil || IsNil(o.ProxyUser) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ProxyUser, true
+	return o.ProxyUser.Get(), o.ProxyUser.IsSet()
 }
 
 // IsSetProxyUser returns a boolean if a field has been set.
 func (o *CreateNetworkProxy200ResponseNetworkProxy) IsSetProxyUser() bool {
-	if o != nil && !IsNil(o.ProxyUser) {
+	if o != nil && o.ProxyUser.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetProxyUser gets a reference to the given string and assigns it to the ProxyUser field.
+// SetProxyUser gets a reference to the given NullableString and assigns it to the ProxyUser field.
 func (o *CreateNetworkProxy200ResponseNetworkProxy) SetProxyUser(v string) {
-	o.ProxyUser = &v
+	o.ProxyUser.Set(&v)
 }
 
-// GetProxyPassword returns the ProxyPassword field value if set, zero value otherwise.
+// SetProxyUserNil sets the value for ProxyUser to be an explicit nil
+func (o *CreateNetworkProxy200ResponseNetworkProxy) SetProxyUserNil() {
+	o.ProxyUser.Set(nil)
+}
+
+// UnsetProxyUser ensures that no value is present for ProxyUser, not even an explicit nil
+func (o *CreateNetworkProxy200ResponseNetworkProxy) UnsetProxyUser() {
+	o.ProxyUser.Unset()
+}
+
+// GetProxyPassword returns the ProxyPassword field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CreateNetworkProxy200ResponseNetworkProxy) GetProxyPassword() string {
-	if o == nil || IsNil(o.ProxyPassword) {
+	if o == nil || IsNil(o.ProxyPassword.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ProxyPassword
+	return *o.ProxyPassword.Get()
 }
 
 // GetProxyPasswordOk returns a tuple with the ProxyPassword field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CreateNetworkProxy200ResponseNetworkProxy) GetProxyPasswordOk() (*string, bool) {
-	if o == nil || IsNil(o.ProxyPassword) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ProxyPassword, true
+	return o.ProxyPassword.Get(), o.ProxyPassword.IsSet()
 }
 
 // IsSetProxyPassword returns a boolean if a field has been set.
 func (o *CreateNetworkProxy200ResponseNetworkProxy) IsSetProxyPassword() bool {
-	if o != nil && !IsNil(o.ProxyPassword) {
+	if o != nil && o.ProxyPassword.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetProxyPassword gets a reference to the given string and assigns it to the ProxyPassword field.
+// SetProxyPassword gets a reference to the given NullableString and assigns it to the ProxyPassword field.
 func (o *CreateNetworkProxy200ResponseNetworkProxy) SetProxyPassword(v string) {
-	o.ProxyPassword = &v
+	o.ProxyPassword.Set(&v)
+}
+
+// SetProxyPasswordNil sets the value for ProxyPassword to be an explicit nil
+func (o *CreateNetworkProxy200ResponseNetworkProxy) SetProxyPasswordNil() {
+	o.ProxyPassword.Set(nil)
+}
+
+// UnsetProxyPassword ensures that no value is present for ProxyPassword, not even an explicit nil
+func (o *CreateNetworkProxy200ResponseNetworkProxy) UnsetProxyPassword() {
+	o.ProxyPassword.Unset()
 }
 
 // GetProxyDomain returns the ProxyDomain field value if set, zero value otherwise.
@@ -277,36 +299,47 @@ func (o *CreateNetworkProxy200ResponseNetworkProxy) SetProxyDomain(v string) {
 	o.ProxyDomain = &v
 }
 
-// GetProxyWorkstation returns the ProxyWorkstation field value if set, zero value otherwise.
+// GetProxyWorkstation returns the ProxyWorkstation field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CreateNetworkProxy200ResponseNetworkProxy) GetProxyWorkstation() string {
-	if o == nil || IsNil(o.ProxyWorkstation) {
+	if o == nil || IsNil(o.ProxyWorkstation.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ProxyWorkstation
+	return *o.ProxyWorkstation.Get()
 }
 
 // GetProxyWorkstationOk returns a tuple with the ProxyWorkstation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CreateNetworkProxy200ResponseNetworkProxy) GetProxyWorkstationOk() (*string, bool) {
-	if o == nil || IsNil(o.ProxyWorkstation) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ProxyWorkstation, true
+	return o.ProxyWorkstation.Get(), o.ProxyWorkstation.IsSet()
 }
 
 // IsSetProxyWorkstation returns a boolean if a field has been set.
 func (o *CreateNetworkProxy200ResponseNetworkProxy) IsSetProxyWorkstation() bool {
-	if o != nil && !IsNil(o.ProxyWorkstation) {
+	if o != nil && o.ProxyWorkstation.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetProxyWorkstation gets a reference to the given string and assigns it to the ProxyWorkstation field.
+// SetProxyWorkstation gets a reference to the given NullableString and assigns it to the ProxyWorkstation field.
 func (o *CreateNetworkProxy200ResponseNetworkProxy) SetProxyWorkstation(v string) {
-	o.ProxyWorkstation = &v
+	o.ProxyWorkstation.Set(&v)
+}
+
+// SetProxyWorkstationNil sets the value for ProxyWorkstation to be an explicit nil
+func (o *CreateNetworkProxy200ResponseNetworkProxy) SetProxyWorkstationNil() {
+	o.ProxyWorkstation.Set(nil)
+}
+
+// UnsetProxyWorkstation ensures that no value is present for ProxyWorkstation, not even an explicit nil
+func (o *CreateNetworkProxy200ResponseNetworkProxy) UnsetProxyWorkstation() {
+	o.ProxyWorkstation.Unset()
 }
 
 // GetVisibility returns the Visibility field value if set, zero value otherwise.
@@ -342,9 +375,9 @@ func (o *CreateNetworkProxy200ResponseNetworkProxy) SetVisibility(v string) {
 }
 
 // GetAccount returns the Account field value if set, zero value otherwise.
-func (o *CreateNetworkProxy200ResponseNetworkProxy) GetAccount() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *CreateNetworkProxy200ResponseNetworkProxy) GetAccount() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.Account) {
-		var ret ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return *o.Account
@@ -352,7 +385,7 @@ func (o *CreateNetworkProxy200ResponseNetworkProxy) GetAccount() ListApplianceSe
 
 // GetAccountOk returns a tuple with the Account field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CreateNetworkProxy200ResponseNetworkProxy) GetAccountOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *CreateNetworkProxy200ResponseNetworkProxy) GetAccountOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.Account) {
 		return nil, false
 	}
@@ -368,15 +401,15 @@ func (o *CreateNetworkProxy200ResponseNetworkProxy) IsSetAccount() bool {
 	return false
 }
 
-// SetAccount gets a reference to the given ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the Account field.
-func (o *CreateNetworkProxy200ResponseNetworkProxy) SetAccount(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetAccount gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Account field.
+func (o *CreateNetworkProxy200ResponseNetworkProxy) SetAccount(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.Account = &v
 }
 
 // GetOwner returns the Owner field value if set, zero value otherwise.
-func (o *CreateNetworkProxy200ResponseNetworkProxy) GetOwner() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *CreateNetworkProxy200ResponseNetworkProxy) GetOwner() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.Owner) {
-		var ret ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return *o.Owner
@@ -384,7 +417,7 @@ func (o *CreateNetworkProxy200ResponseNetworkProxy) GetOwner() ListApplianceSett
 
 // GetOwnerOk returns a tuple with the Owner field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CreateNetworkProxy200ResponseNetworkProxy) GetOwnerOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *CreateNetworkProxy200ResponseNetworkProxy) GetOwnerOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.Owner) {
 		return nil, false
 	}
@@ -400,8 +433,8 @@ func (o *CreateNetworkProxy200ResponseNetworkProxy) IsSetOwner() bool {
 	return false
 }
 
-// SetOwner gets a reference to the given ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the Owner field.
-func (o *CreateNetworkProxy200ResponseNetworkProxy) SetOwner(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetOwner gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Owner field.
+func (o *CreateNetworkProxy200ResponseNetworkProxy) SetOwner(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.Owner = &v
 }
 
@@ -427,17 +460,17 @@ func (o CreateNetworkProxy200ResponseNetworkProxy) ToMap() (map[string]interface
 	if !IsNil(o.ProxyPort) {
 		toSerialize["proxyPort"] = o.ProxyPort
 	}
-	if !IsNil(o.ProxyUser) {
-		toSerialize["proxyUser"] = o.ProxyUser
+	if o.ProxyUser.IsSet() {
+		toSerialize["proxyUser"] = o.ProxyUser.Get()
 	}
-	if !IsNil(o.ProxyPassword) {
-		toSerialize["proxyPassword"] = o.ProxyPassword
+	if o.ProxyPassword.IsSet() {
+		toSerialize["proxyPassword"] = o.ProxyPassword.Get()
 	}
 	if !IsNil(o.ProxyDomain) {
 		toSerialize["proxyDomain"] = o.ProxyDomain
 	}
-	if !IsNil(o.ProxyWorkstation) {
-		toSerialize["proxyWorkstation"] = o.ProxyWorkstation
+	if o.ProxyWorkstation.IsSet() {
+		toSerialize["proxyWorkstation"] = o.ProxyWorkstation.Get()
 	}
 	if !IsNil(o.Visibility) {
 		toSerialize["visibility"] = o.Visibility

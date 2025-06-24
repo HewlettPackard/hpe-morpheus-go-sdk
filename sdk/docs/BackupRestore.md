@@ -7,18 +7,18 @@ Name | Type | Description | Notes
 **Id** | Pointer to **int64** | Backup Result ID | [optional] 
 **BackupResultId** | Pointer to **int64** |  | [optional] 
 **BackupId** | Pointer to **int64** |  | [optional] 
-**Backup** | Pointer to [**ListBackupRestores200ResponseAllOfRestoresInnerBackup**](ListBackupRestores200ResponseAllOfRestoresInnerBackup.md) |  | [optional] 
-**ContainerId** | Pointer to **int64** |  | [optional] 
+**Backup** | Pointer to [**ListBackupJobs200ResponseAllOfJobsInnerBackupsInner**](ListBackupJobs200ResponseAllOfJobsInnerBackupsInner.md) |  | [optional] 
+**ContainerId** | Pointer to **NullableInt64** |  | [optional] 
 **Container** | Pointer to [**ListBackupRestores200ResponseAllOfRestoresInnerContainer**](ListBackupRestores200ResponseAllOfRestoresInnerContainer.md) |  | [optional] 
 **Instance** | Pointer to [**ListBackups200ResponseAllOfBackupsInnerInstance**](ListBackups200ResponseAllOfBackupsInnerInstance.md) |  | [optional] 
 **RestoreToNew** | Pointer to **bool** |  | [optional] 
-**Status** | Pointer to **string** |  | [optional] 
-**ErrorMessage** | Pointer to **string** |  | [optional] 
-**StartDate** | Pointer to **time.Time** |  | [optional] 
-**EndDate** | Pointer to **time.Time** |  | [optional] 
-**DurationMillis** | Pointer to **int64** |  | [optional] 
-**ExternalId** | Pointer to **string** |  | [optional] 
-**ExternalStatusRef** | Pointer to **string** |  | [optional] 
+**Status** | Pointer to **NullableString** |  | [optional] 
+**ErrorMessage** | Pointer to **NullableString** |  | [optional] 
+**StartDate** | Pointer to **NullableTime** |  | [optional] 
+**EndDate** | Pointer to **NullableTime** |  | [optional] 
+**DurationMillis** | Pointer to **NullableInt64** |  | [optional] 
+**ExternalId** | Pointer to **NullableString** |  | [optional] 
+**ExternalStatusRef** | Pointer to **NullableString** |  | [optional] 
 **DateCreated** | Pointer to **time.Time** | Date Created | [optional] 
 **LastUpdated** | Pointer to **time.Time** | Last Updated | [optional] 
 
@@ -118,20 +118,20 @@ HasBackupId returns a boolean if a field has been set.
 
 ### GetBackup
 
-`func (o *BackupRestore) GetBackup() ListBackupRestores200ResponseAllOfRestoresInnerBackup`
+`func (o *BackupRestore) GetBackup() ListBackupJobs200ResponseAllOfJobsInnerBackupsInner`
 
 GetBackup returns the Backup field if non-nil, zero value otherwise.
 
 ### GetBackupOk
 
-`func (o *BackupRestore) GetBackupOk() (*ListBackupRestores200ResponseAllOfRestoresInnerBackup, bool)`
+`func (o *BackupRestore) GetBackupOk() (*ListBackupJobs200ResponseAllOfJobsInnerBackupsInner, bool)`
 
 GetBackupOk returns a tuple with the Backup field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBackup
 
-`func (o *BackupRestore) SetBackup(v ListBackupRestores200ResponseAllOfRestoresInnerBackup)`
+`func (o *BackupRestore) SetBackup(v ListBackupJobs200ResponseAllOfJobsInnerBackupsInner)`
 
 SetBackup sets Backup field to given value.
 
@@ -166,6 +166,16 @@ SetContainerId sets ContainerId field to given value.
 
 HasContainerId returns a boolean if a field has been set.
 
+### SetContainerIdNil
+
+`func (o *BackupRestore) SetContainerIdNil(b bool)`
+
+ SetContainerIdNil sets the value for ContainerId to be an explicit nil
+
+### UnsetContainerId
+`func (o *BackupRestore) UnsetContainerId()`
+
+UnsetContainerId ensures that no value is present for ContainerId, not even an explicit nil
 ### GetContainer
 
 `func (o *BackupRestore) GetContainer() ListBackupRestores200ResponseAllOfRestoresInnerContainer`
@@ -266,6 +276,16 @@ SetStatus sets Status field to given value.
 
 HasStatus returns a boolean if a field has been set.
 
+### SetStatusNil
+
+`func (o *BackupRestore) SetStatusNil(b bool)`
+
+ SetStatusNil sets the value for Status to be an explicit nil
+
+### UnsetStatus
+`func (o *BackupRestore) UnsetStatus()`
+
+UnsetStatus ensures that no value is present for Status, not even an explicit nil
 ### GetErrorMessage
 
 `func (o *BackupRestore) GetErrorMessage() string`
@@ -291,6 +311,16 @@ SetErrorMessage sets ErrorMessage field to given value.
 
 HasErrorMessage returns a boolean if a field has been set.
 
+### SetErrorMessageNil
+
+`func (o *BackupRestore) SetErrorMessageNil(b bool)`
+
+ SetErrorMessageNil sets the value for ErrorMessage to be an explicit nil
+
+### UnsetErrorMessage
+`func (o *BackupRestore) UnsetErrorMessage()`
+
+UnsetErrorMessage ensures that no value is present for ErrorMessage, not even an explicit nil
 ### GetStartDate
 
 `func (o *BackupRestore) GetStartDate() time.Time`
@@ -316,6 +346,16 @@ SetStartDate sets StartDate field to given value.
 
 HasStartDate returns a boolean if a field has been set.
 
+### SetStartDateNil
+
+`func (o *BackupRestore) SetStartDateNil(b bool)`
+
+ SetStartDateNil sets the value for StartDate to be an explicit nil
+
+### UnsetStartDate
+`func (o *BackupRestore) UnsetStartDate()`
+
+UnsetStartDate ensures that no value is present for StartDate, not even an explicit nil
 ### GetEndDate
 
 `func (o *BackupRestore) GetEndDate() time.Time`
@@ -341,6 +381,16 @@ SetEndDate sets EndDate field to given value.
 
 HasEndDate returns a boolean if a field has been set.
 
+### SetEndDateNil
+
+`func (o *BackupRestore) SetEndDateNil(b bool)`
+
+ SetEndDateNil sets the value for EndDate to be an explicit nil
+
+### UnsetEndDate
+`func (o *BackupRestore) UnsetEndDate()`
+
+UnsetEndDate ensures that no value is present for EndDate, not even an explicit nil
 ### GetDurationMillis
 
 `func (o *BackupRestore) GetDurationMillis() int64`
@@ -366,6 +416,16 @@ SetDurationMillis sets DurationMillis field to given value.
 
 HasDurationMillis returns a boolean if a field has been set.
 
+### SetDurationMillisNil
+
+`func (o *BackupRestore) SetDurationMillisNil(b bool)`
+
+ SetDurationMillisNil sets the value for DurationMillis to be an explicit nil
+
+### UnsetDurationMillis
+`func (o *BackupRestore) UnsetDurationMillis()`
+
+UnsetDurationMillis ensures that no value is present for DurationMillis, not even an explicit nil
 ### GetExternalId
 
 `func (o *BackupRestore) GetExternalId() string`
@@ -391,6 +451,16 @@ SetExternalId sets ExternalId field to given value.
 
 HasExternalId returns a boolean if a field has been set.
 
+### SetExternalIdNil
+
+`func (o *BackupRestore) SetExternalIdNil(b bool)`
+
+ SetExternalIdNil sets the value for ExternalId to be an explicit nil
+
+### UnsetExternalId
+`func (o *BackupRestore) UnsetExternalId()`
+
+UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
 ### GetExternalStatusRef
 
 `func (o *BackupRestore) GetExternalStatusRef() string`
@@ -416,6 +486,16 @@ SetExternalStatusRef sets ExternalStatusRef field to given value.
 
 HasExternalStatusRef returns a boolean if a field has been set.
 
+### SetExternalStatusRefNil
+
+`func (o *BackupRestore) SetExternalStatusRefNil(b bool)`
+
+ SetExternalStatusRefNil sets the value for ExternalStatusRef to be an explicit nil
+
+### UnsetExternalStatusRef
+`func (o *BackupRestore) UnsetExternalStatusRef()`
+
+UnsetExternalStatusRef ensures that no value is present for ExternalStatusRef, not even an explicit nil
 ### GetDateCreated
 
 `func (o *BackupRestore) GetDateCreated() time.Time`

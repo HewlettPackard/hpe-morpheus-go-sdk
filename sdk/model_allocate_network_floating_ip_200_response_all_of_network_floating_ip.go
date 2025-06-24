@@ -22,14 +22,14 @@ var _ MappedNullable = &AllocateNetworkFloatingIp200ResponseAllOfNetworkFloating
 // AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp struct for AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp
 type AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp struct {
 	Id         *int64                                                            `json:"id,omitempty"`
-	ExternalId *string                                                           `json:"externalId,omitempty"`
+	ExternalId NullableString                                                    `json:"externalId,omitempty"`
 	Cloud      *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIpCloud  `json:"cloud,omitempty"`
 	Server     *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIpServer `json:"server,omitempty"`
 	IpStatus   *string                                                           `json:"ipStatus,omitempty"`
 	// IP Address
 	IpAddress            *string                                                 `json:"ipAddress,omitempty"`
-	IpRange              *string                                                 `json:"ipRange,omitempty"`
-	PtrId                *string                                                 `json:"ptrId,omitempty"`
+	IpRange              NullableString                                          `json:"ipRange,omitempty"`
+	PtrId                NullableString                                          `json:"ptrId,omitempty"`
 	NetworkDomain        *ListNetworks200ResponseAllOfNetworksInnerNetworkDomain `json:"networkDomain,omitempty"`
 	CreatedBy            *ListBackupResults200ResponseAllOfResultsInnerCreatedBy `json:"createdBy,omitempty"`
 	DateCreated          *time.Time                                              `json:"dateCreated,omitempty"`
@@ -88,36 +88,47 @@ func (o *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp) SetId(v int
 	o.Id = &v
 }
 
-// GetExternalId returns the ExternalId field value if set, zero value otherwise.
+// GetExternalId returns the ExternalId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp) GetExternalId() string {
-	if o == nil || IsNil(o.ExternalId) {
+	if o == nil || IsNil(o.ExternalId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ExternalId
+	return *o.ExternalId.Get()
 }
 
 // GetExternalIdOk returns a tuple with the ExternalId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp) GetExternalIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ExternalId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ExternalId, true
+	return o.ExternalId.Get(), o.ExternalId.IsSet()
 }
 
 // IsSetExternalId returns a boolean if a field has been set.
 func (o *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp) IsSetExternalId() bool {
-	if o != nil && !IsNil(o.ExternalId) {
+	if o != nil && o.ExternalId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetExternalId gets a reference to the given string and assigns it to the ExternalId field.
+// SetExternalId gets a reference to the given NullableString and assigns it to the ExternalId field.
 func (o *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp) SetExternalId(v string) {
-	o.ExternalId = &v
+	o.ExternalId.Set(&v)
+}
+
+// SetExternalIdNil sets the value for ExternalId to be an explicit nil
+func (o *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp) SetExternalIdNil() {
+	o.ExternalId.Set(nil)
+}
+
+// UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
+func (o *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp) UnsetExternalId() {
+	o.ExternalId.Unset()
 }
 
 // GetCloud returns the Cloud field value if set, zero value otherwise.
@@ -248,68 +259,90 @@ func (o *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp) SetIpAddres
 	o.IpAddress = &v
 }
 
-// GetIpRange returns the IpRange field value if set, zero value otherwise.
+// GetIpRange returns the IpRange field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp) GetIpRange() string {
-	if o == nil || IsNil(o.IpRange) {
+	if o == nil || IsNil(o.IpRange.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.IpRange
+	return *o.IpRange.Get()
 }
 
 // GetIpRangeOk returns a tuple with the IpRange field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp) GetIpRangeOk() (*string, bool) {
-	if o == nil || IsNil(o.IpRange) {
+	if o == nil {
 		return nil, false
 	}
-	return o.IpRange, true
+	return o.IpRange.Get(), o.IpRange.IsSet()
 }
 
 // IsSetIpRange returns a boolean if a field has been set.
 func (o *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp) IsSetIpRange() bool {
-	if o != nil && !IsNil(o.IpRange) {
+	if o != nil && o.IpRange.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetIpRange gets a reference to the given string and assigns it to the IpRange field.
+// SetIpRange gets a reference to the given NullableString and assigns it to the IpRange field.
 func (o *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp) SetIpRange(v string) {
-	o.IpRange = &v
+	o.IpRange.Set(&v)
 }
 
-// GetPtrId returns the PtrId field value if set, zero value otherwise.
+// SetIpRangeNil sets the value for IpRange to be an explicit nil
+func (o *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp) SetIpRangeNil() {
+	o.IpRange.Set(nil)
+}
+
+// UnsetIpRange ensures that no value is present for IpRange, not even an explicit nil
+func (o *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp) UnsetIpRange() {
+	o.IpRange.Unset()
+}
+
+// GetPtrId returns the PtrId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp) GetPtrId() string {
-	if o == nil || IsNil(o.PtrId) {
+	if o == nil || IsNil(o.PtrId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.PtrId
+	return *o.PtrId.Get()
 }
 
 // GetPtrIdOk returns a tuple with the PtrId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp) GetPtrIdOk() (*string, bool) {
-	if o == nil || IsNil(o.PtrId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.PtrId, true
+	return o.PtrId.Get(), o.PtrId.IsSet()
 }
 
 // IsSetPtrId returns a boolean if a field has been set.
 func (o *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp) IsSetPtrId() bool {
-	if o != nil && !IsNil(o.PtrId) {
+	if o != nil && o.PtrId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetPtrId gets a reference to the given string and assigns it to the PtrId field.
+// SetPtrId gets a reference to the given NullableString and assigns it to the PtrId field.
 func (o *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp) SetPtrId(v string) {
-	o.PtrId = &v
+	o.PtrId.Set(&v)
+}
+
+// SetPtrIdNil sets the value for PtrId to be an explicit nil
+func (o *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp) SetPtrIdNil() {
+	o.PtrId.Set(nil)
+}
+
+// UnsetPtrId ensures that no value is present for PtrId, not even an explicit nil
+func (o *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp) UnsetPtrId() {
+	o.PtrId.Unset()
 }
 
 // GetNetworkDomain returns the NetworkDomain field value if set, zero value otherwise.
@@ -453,8 +486,8 @@ func (o AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp) ToMap() (map
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
-	if !IsNil(o.ExternalId) {
-		toSerialize["externalId"] = o.ExternalId
+	if o.ExternalId.IsSet() {
+		toSerialize["externalId"] = o.ExternalId.Get()
 	}
 	if !IsNil(o.Cloud) {
 		toSerialize["cloud"] = o.Cloud
@@ -468,11 +501,11 @@ func (o AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp) ToMap() (map
 	if !IsNil(o.IpAddress) {
 		toSerialize["ipAddress"] = o.IpAddress
 	}
-	if !IsNil(o.IpRange) {
-		toSerialize["ipRange"] = o.IpRange
+	if o.IpRange.IsSet() {
+		toSerialize["ipRange"] = o.IpRange.Get()
 	}
-	if !IsNil(o.PtrId) {
-		toSerialize["ptrId"] = o.PtrId
+	if o.PtrId.IsSet() {
+		toSerialize["ptrId"] = o.PtrId.Get()
 	}
 	if !IsNil(o.NetworkDomain) {
 		toSerialize["networkDomain"] = o.NetworkDomain

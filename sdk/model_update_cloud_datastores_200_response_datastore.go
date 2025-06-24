@@ -20,18 +20,18 @@ var _ MappedNullable = &UpdateCloudDatastores200ResponseDatastore{}
 
 // UpdateCloudDatastores200ResponseDatastore struct for UpdateCloudDatastores200ResponseDatastore
 type UpdateCloudDatastores200ResponseDatastore struct {
-	Id                   *int64                                                                  `json:"id,omitempty"`
-	Name                 *string                                                                 `json:"name,omitempty"`
-	Zone                 *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"zone,omitempty"`
-	Type                 *string                                                                 `json:"type,omitempty"`
-	FreeSpace            *int64                                                                  `json:"freeSpace,omitempty"`
-	Online               *bool                                                                   `json:"online,omitempty"`
-	Active               *bool                                                                   `json:"active,omitempty"`
-	Visibility           *string                                                                 `json:"visibility,omitempty"`
-	Tenants              []ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner        `json:"tenants,omitempty"`
-	ResourcePermission   *ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission   `json:"resourcePermission,omitempty"`
-	Success              *bool                                                                   `json:"success,omitempty"`
-	AdditionalProperties map[string]interface{}                                                  `json:",remain"`
+	Id                   *int64                                                                `json:"id,omitempty"`
+	Name                 *string                                                               `json:"name,omitempty"`
+	Zone                 *GetAlerts200ResponseAllOfCheckGroupsInnerInstance                    `json:"zone,omitempty"`
+	Type                 *string                                                               `json:"type,omitempty"`
+	FreeSpace            *int64                                                                `json:"freeSpace,omitempty"`
+	Online               *bool                                                                 `json:"online,omitempty"`
+	Active               *bool                                                                 `json:"active,omitempty"`
+	Visibility           *string                                                               `json:"visibility,omitempty"`
+	Tenants              []ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner      `json:"tenants,omitempty"`
+	ResourcePermission   *ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission `json:"resourcePermission,omitempty"`
+	Success              *bool                                                                 `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{}                                                `json:",remain"`
 }
 
 type _UpdateCloudDatastores200ResponseDatastore UpdateCloudDatastores200ResponseDatastore
@@ -118,9 +118,9 @@ func (o *UpdateCloudDatastores200ResponseDatastore) SetName(v string) {
 }
 
 // GetZone returns the Zone field value if set, zero value otherwise.
-func (o *UpdateCloudDatastores200ResponseDatastore) GetZone() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *UpdateCloudDatastores200ResponseDatastore) GetZone() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.Zone) {
-		var ret ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return *o.Zone
@@ -128,7 +128,7 @@ func (o *UpdateCloudDatastores200ResponseDatastore) GetZone() ListApplianceSetti
 
 // GetZoneOk returns a tuple with the Zone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UpdateCloudDatastores200ResponseDatastore) GetZoneOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *UpdateCloudDatastores200ResponseDatastore) GetZoneOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.Zone) {
 		return nil, false
 	}
@@ -144,8 +144,8 @@ func (o *UpdateCloudDatastores200ResponseDatastore) IsSetZone() bool {
 	return false
 }
 
-// SetZone gets a reference to the given ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the Zone field.
-func (o *UpdateCloudDatastores200ResponseDatastore) SetZone(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetZone gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Zone field.
+func (o *UpdateCloudDatastores200ResponseDatastore) SetZone(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.Zone = &v
 }
 
@@ -309,9 +309,9 @@ func (o *UpdateCloudDatastores200ResponseDatastore) SetVisibility(v string) {
 	o.Visibility = &v
 }
 
-// GetTenants returns the Tenants field value if set, zero value otherwise.
+// GetTenants returns the Tenants field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UpdateCloudDatastores200ResponseDatastore) GetTenants() []ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner {
-	if o == nil || IsNil(o.Tenants) {
+	if o == nil {
 		var ret []ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner
 		return ret
 	}
@@ -320,6 +320,7 @@ func (o *UpdateCloudDatastores200ResponseDatastore) GetTenants() []ListCloudData
 
 // GetTenantsOk returns a tuple with the Tenants field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *UpdateCloudDatastores200ResponseDatastore) GetTenantsOk() ([]ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner, bool) {
 	if o == nil || IsNil(o.Tenants) {
 		return nil, false
@@ -439,7 +440,7 @@ func (o UpdateCloudDatastores200ResponseDatastore) ToMap() (map[string]interface
 	if !IsNil(o.Visibility) {
 		toSerialize["visibility"] = o.Visibility
 	}
-	if !IsNil(o.Tenants) {
+	if o.Tenants != nil {
 		toSerialize["tenants"] = o.Tenants
 	}
 	if !IsNil(o.ResourcePermission) {

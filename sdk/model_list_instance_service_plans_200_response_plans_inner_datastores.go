@@ -20,9 +20,9 @@ var _ MappedNullable = &ListInstanceServicePlans200ResponsePlansInnerDatastores{
 
 // ListInstanceServicePlans200ResponsePlansInnerDatastores struct for ListInstanceServicePlans200ResponsePlansInnerDatastores
 type ListInstanceServicePlans200ResponsePlansInnerDatastores struct {
-	Cluster              []SnapshotsInstance200ResponseSnapshotsInnerZone `json:"cluster,omitempty"`
-	Store                []SnapshotsInstance200ResponseSnapshotsInnerZone `json:"store,omitempty"`
-	AdditionalProperties map[string]interface{}                           `json:",remain"`
+	Cluster              []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount `json:"cluster,omitempty"`
+	Store                []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount `json:"store,omitempty"`
+	AdditionalProperties map[string]interface{}                                                                                      `json:",remain"`
 }
 
 type _ListInstanceServicePlans200ResponsePlansInnerDatastores ListInstanceServicePlans200ResponsePlansInnerDatastores
@@ -45,9 +45,9 @@ func NewListInstanceServicePlans200ResponsePlansInnerDatastoresWithDefaults() *L
 }
 
 // GetCluster returns the Cluster field value if set, zero value otherwise.
-func (o *ListInstanceServicePlans200ResponsePlansInnerDatastores) GetCluster() []SnapshotsInstance200ResponseSnapshotsInnerZone {
+func (o *ListInstanceServicePlans200ResponsePlansInnerDatastores) GetCluster() []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount {
 	if o == nil || IsNil(o.Cluster) {
-		var ret []SnapshotsInstance200ResponseSnapshotsInnerZone
+		var ret []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount
 		return ret
 	}
 	return o.Cluster
@@ -55,7 +55,7 @@ func (o *ListInstanceServicePlans200ResponsePlansInnerDatastores) GetCluster() [
 
 // GetClusterOk returns a tuple with the Cluster field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListInstanceServicePlans200ResponsePlansInnerDatastores) GetClusterOk() ([]SnapshotsInstance200ResponseSnapshotsInnerZone, bool) {
+func (o *ListInstanceServicePlans200ResponsePlansInnerDatastores) GetClusterOk() ([]GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount, bool) {
 	if o == nil || IsNil(o.Cluster) {
 		return nil, false
 	}
@@ -71,15 +71,15 @@ func (o *ListInstanceServicePlans200ResponsePlansInnerDatastores) IsSetCluster()
 	return false
 }
 
-// SetCluster gets a reference to the given []SnapshotsInstance200ResponseSnapshotsInnerZone and assigns it to the Cluster field.
-func (o *ListInstanceServicePlans200ResponsePlansInnerDatastores) SetCluster(v []SnapshotsInstance200ResponseSnapshotsInnerZone) {
+// SetCluster gets a reference to the given []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount and assigns it to the Cluster field.
+func (o *ListInstanceServicePlans200ResponsePlansInnerDatastores) SetCluster(v []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount) {
 	o.Cluster = v
 }
 
 // GetStore returns the Store field value if set, zero value otherwise.
-func (o *ListInstanceServicePlans200ResponsePlansInnerDatastores) GetStore() []SnapshotsInstance200ResponseSnapshotsInnerZone {
+func (o *ListInstanceServicePlans200ResponsePlansInnerDatastores) GetStore() []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount {
 	if o == nil || IsNil(o.Store) {
-		var ret []SnapshotsInstance200ResponseSnapshotsInnerZone
+		var ret []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount
 		return ret
 	}
 	return o.Store
@@ -87,7 +87,7 @@ func (o *ListInstanceServicePlans200ResponsePlansInnerDatastores) GetStore() []S
 
 // GetStoreOk returns a tuple with the Store field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListInstanceServicePlans200ResponsePlansInnerDatastores) GetStoreOk() ([]SnapshotsInstance200ResponseSnapshotsInnerZone, bool) {
+func (o *ListInstanceServicePlans200ResponsePlansInnerDatastores) GetStoreOk() ([]GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount, bool) {
 	if o == nil || IsNil(o.Store) {
 		return nil, false
 	}
@@ -103,8 +103,8 @@ func (o *ListInstanceServicePlans200ResponsePlansInnerDatastores) IsSetStore() b
 	return false
 }
 
-// SetStore gets a reference to the given []SnapshotsInstance200ResponseSnapshotsInnerZone and assigns it to the Store field.
-func (o *ListInstanceServicePlans200ResponsePlansInnerDatastores) SetStore(v []SnapshotsInstance200ResponseSnapshotsInnerZone) {
+// SetStore gets a reference to the given []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount and assigns it to the Store field.
+func (o *ListInstanceServicePlans200ResponsePlansInnerDatastores) SetStore(v []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount) {
 	o.Store = v
 }
 

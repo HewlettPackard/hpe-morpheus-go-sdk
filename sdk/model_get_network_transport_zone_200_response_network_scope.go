@@ -21,25 +21,25 @@ var _ MappedNullable = &GetNetworkTransportZone200ResponseNetworkScope{}
 
 // GetNetworkTransportZone200ResponseNetworkScope struct for GetNetworkTransportZone200ResponseNetworkScope
 type GetNetworkTransportZone200ResponseNetworkScope struct {
-	Id                   *int64                                                                   `json:"id,omitempty"`
-	InternalId           *string                                                                  `json:"internalId,omitempty"`
-	Visibility           *string                                                                  `json:"visibility,omitempty"`
-	DateCreated          *time.Time                                                               `json:"dateCreated,omitempty"`
-	ProviderId           *string                                                                  `json:"providerId,omitempty"`
-	LastUpdated          *time.Time                                                               `json:"lastUpdated,omitempty"`
-	Active               *bool                                                                    `json:"active,omitempty"`
-	StreamType           *string                                                                  `json:"streamType,omitempty"`
-	DisplayName          *string                                                                  `json:"displayName,omitempty"`
-	Name                 *string                                                                  `json:"name,omitempty"`
-	Status               *string                                                                  `json:"status,omitempty"`
-	Enabled              *bool                                                                    `json:"enabled,omitempty"`
-	ExternalId           *string                                                                  `json:"externalId,omitempty"`
-	Config               *GetNetworkTransportZone200ResponseNetworkScopeConfig                    `json:"config,omitempty"`
-	Owner                *GetAlerts200ResponseAllOfChecksInnerAccount                             `json:"owner,omitempty"`
-	NetworkServer        *GetAlerts200ResponseAllOfChecksInnerAccount                             `json:"networkServer,omitempty"`
-	Zone                 *GetAlerts200ResponseAllOfChecksInnerAccount                             `json:"zone,omitempty"`
-	Tenants              []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"tenants,omitempty"`
-	AdditionalProperties map[string]interface{}                                                   `json:",remain"`
+	Id                   *int64                                                `json:"id,omitempty"`
+	InternalId           *string                                               `json:"internalId,omitempty"`
+	Visibility           *string                                               `json:"visibility,omitempty"`
+	DateCreated          *time.Time                                            `json:"dateCreated,omitempty"`
+	ProviderId           *string                                               `json:"providerId,omitempty"`
+	LastUpdated          *time.Time                                            `json:"lastUpdated,omitempty"`
+	Active               *bool                                                 `json:"active,omitempty"`
+	StreamType           *string                                               `json:"streamType,omitempty"`
+	DisplayName          *string                                               `json:"displayName,omitempty"`
+	Name                 *string                                               `json:"name,omitempty"`
+	Status               *string                                               `json:"status,omitempty"`
+	Enabled              *bool                                                 `json:"enabled,omitempty"`
+	ExternalId           *string                                               `json:"externalId,omitempty"`
+	Config               *GetNetworkTransportZone200ResponseNetworkScopeConfig `json:"config,omitempty"`
+	Owner                *GetAlerts200ResponseAllOfChecksInnerAccount          `json:"owner,omitempty"`
+	NetworkServer        *GetAlerts200ResponseAllOfChecksInnerAccount          `json:"networkServer,omitempty"`
+	Zone                 *GetAlerts200ResponseAllOfChecksInnerAccount          `json:"zone,omitempty"`
+	Tenants              []GetAlerts200ResponseAllOfCheckGroupsInnerInstance   `json:"tenants,omitempty"`
+	AdditionalProperties map[string]interface{}                                `json:",remain"`
 }
 
 type _GetNetworkTransportZone200ResponseNetworkScope GetNetworkTransportZone200ResponseNetworkScope
@@ -606,9 +606,9 @@ func (o *GetNetworkTransportZone200ResponseNetworkScope) SetZone(v GetAlerts200R
 }
 
 // GetTenants returns the Tenants field value if set, zero value otherwise.
-func (o *GetNetworkTransportZone200ResponseNetworkScope) GetTenants() []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *GetNetworkTransportZone200ResponseNetworkScope) GetTenants() []GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.Tenants) {
-		var ret []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret []GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return o.Tenants
@@ -616,7 +616,7 @@ func (o *GetNetworkTransportZone200ResponseNetworkScope) GetTenants() []ListAppl
 
 // GetTenantsOk returns a tuple with the Tenants field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetNetworkTransportZone200ResponseNetworkScope) GetTenantsOk() ([]ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *GetNetworkTransportZone200ResponseNetworkScope) GetTenantsOk() ([]GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.Tenants) {
 		return nil, false
 	}
@@ -632,8 +632,8 @@ func (o *GetNetworkTransportZone200ResponseNetworkScope) IsSetTenants() bool {
 	return false
 }
 
-// SetTenants gets a reference to the given []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the Tenants field.
-func (o *GetNetworkTransportZone200ResponseNetworkScope) SetTenants(v []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetTenants gets a reference to the given []GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Tenants field.
+func (o *GetNetworkTransportZone200ResponseNetworkScope) SetTenants(v []GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.Tenants = v
 }
 

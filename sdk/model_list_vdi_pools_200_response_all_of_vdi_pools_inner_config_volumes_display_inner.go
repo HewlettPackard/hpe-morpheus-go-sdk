@@ -22,11 +22,11 @@ var _ MappedNullable = &ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDi
 type ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner struct {
 	Storage              *string                `json:"storage,omitempty"`
 	Name                 *string                `json:"name,omitempty"`
-	Controller           *string                `json:"controller,omitempty"`
+	Controller           NullableString         `json:"controller,omitempty"`
 	Datastore            *string                `json:"datastore,omitempty"`
-	DisplayOrder         *string                `json:"displayOrder,omitempty"`
+	DisplayOrder         NullableString         `json:"displayOrder,omitempty"`
 	Size                 *int64                 `json:"size,omitempty"`
-	MountPoint           *string                `json:"mountPoint,omitempty"`
+	MountPoint           NullableString         `json:"mountPoint,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -113,36 +113,47 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner) Set
 	o.Name = &v
 }
 
-// GetController returns the Controller field value if set, zero value otherwise.
+// GetController returns the Controller field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner) GetController() string {
-	if o == nil || IsNil(o.Controller) {
+	if o == nil || IsNil(o.Controller.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Controller
+	return *o.Controller.Get()
 }
 
 // GetControllerOk returns a tuple with the Controller field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner) GetControllerOk() (*string, bool) {
-	if o == nil || IsNil(o.Controller) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Controller, true
+	return o.Controller.Get(), o.Controller.IsSet()
 }
 
 // IsSetController returns a boolean if a field has been set.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner) IsSetController() bool {
-	if o != nil && !IsNil(o.Controller) {
+	if o != nil && o.Controller.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetController gets a reference to the given string and assigns it to the Controller field.
+// SetController gets a reference to the given NullableString and assigns it to the Controller field.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner) SetController(v string) {
-	o.Controller = &v
+	o.Controller.Set(&v)
+}
+
+// SetControllerNil sets the value for Controller to be an explicit nil
+func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner) SetControllerNil() {
+	o.Controller.Set(nil)
+}
+
+// UnsetController ensures that no value is present for Controller, not even an explicit nil
+func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner) UnsetController() {
+	o.Controller.Unset()
 }
 
 // GetDatastore returns the Datastore field value if set, zero value otherwise.
@@ -177,36 +188,47 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner) Set
 	o.Datastore = &v
 }
 
-// GetDisplayOrder returns the DisplayOrder field value if set, zero value otherwise.
+// GetDisplayOrder returns the DisplayOrder field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner) GetDisplayOrder() string {
-	if o == nil || IsNil(o.DisplayOrder) {
+	if o == nil || IsNil(o.DisplayOrder.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.DisplayOrder
+	return *o.DisplayOrder.Get()
 }
 
 // GetDisplayOrderOk returns a tuple with the DisplayOrder field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner) GetDisplayOrderOk() (*string, bool) {
-	if o == nil || IsNil(o.DisplayOrder) {
+	if o == nil {
 		return nil, false
 	}
-	return o.DisplayOrder, true
+	return o.DisplayOrder.Get(), o.DisplayOrder.IsSet()
 }
 
 // IsSetDisplayOrder returns a boolean if a field has been set.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner) IsSetDisplayOrder() bool {
-	if o != nil && !IsNil(o.DisplayOrder) {
+	if o != nil && o.DisplayOrder.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDisplayOrder gets a reference to the given string and assigns it to the DisplayOrder field.
+// SetDisplayOrder gets a reference to the given NullableString and assigns it to the DisplayOrder field.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner) SetDisplayOrder(v string) {
-	o.DisplayOrder = &v
+	o.DisplayOrder.Set(&v)
+}
+
+// SetDisplayOrderNil sets the value for DisplayOrder to be an explicit nil
+func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner) SetDisplayOrderNil() {
+	o.DisplayOrder.Set(nil)
+}
+
+// UnsetDisplayOrder ensures that no value is present for DisplayOrder, not even an explicit nil
+func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner) UnsetDisplayOrder() {
+	o.DisplayOrder.Unset()
 }
 
 // GetSize returns the Size field value if set, zero value otherwise.
@@ -241,36 +263,47 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner) Set
 	o.Size = &v
 }
 
-// GetMountPoint returns the MountPoint field value if set, zero value otherwise.
+// GetMountPoint returns the MountPoint field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner) GetMountPoint() string {
-	if o == nil || IsNil(o.MountPoint) {
+	if o == nil || IsNil(o.MountPoint.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.MountPoint
+	return *o.MountPoint.Get()
 }
 
 // GetMountPointOk returns a tuple with the MountPoint field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner) GetMountPointOk() (*string, bool) {
-	if o == nil || IsNil(o.MountPoint) {
+	if o == nil {
 		return nil, false
 	}
-	return o.MountPoint, true
+	return o.MountPoint.Get(), o.MountPoint.IsSet()
 }
 
 // IsSetMountPoint returns a boolean if a field has been set.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner) IsSetMountPoint() bool {
-	if o != nil && !IsNil(o.MountPoint) {
+	if o != nil && o.MountPoint.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetMountPoint gets a reference to the given string and assigns it to the MountPoint field.
+// SetMountPoint gets a reference to the given NullableString and assigns it to the MountPoint field.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner) SetMountPoint(v string) {
-	o.MountPoint = &v
+	o.MountPoint.Set(&v)
+}
+
+// SetMountPointNil sets the value for MountPoint to be an explicit nil
+func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner) SetMountPointNil() {
+	o.MountPoint.Set(nil)
+}
+
+// UnsetMountPoint ensures that no value is present for MountPoint, not even an explicit nil
+func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner) UnsetMountPoint() {
+	o.MountPoint.Unset()
 }
 
 func (o ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner) MarshalJSON() ([]byte, error) {
@@ -289,20 +322,20 @@ func (o ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner) ToMa
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !IsNil(o.Controller) {
-		toSerialize["controller"] = o.Controller
+	if o.Controller.IsSet() {
+		toSerialize["controller"] = o.Controller.Get()
 	}
 	if !IsNil(o.Datastore) {
 		toSerialize["datastore"] = o.Datastore
 	}
-	if !IsNil(o.DisplayOrder) {
-		toSerialize["displayOrder"] = o.DisplayOrder
+	if o.DisplayOrder.IsSet() {
+		toSerialize["displayOrder"] = o.DisplayOrder.Get()
 	}
 	if !IsNil(o.Size) {
 		toSerialize["size"] = o.Size
 	}
-	if !IsNil(o.MountPoint) {
-		toSerialize["mountPoint"] = o.MountPoint
+	if o.MountPoint.IsSet() {
+		toSerialize["mountPoint"] = o.MountPoint.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {

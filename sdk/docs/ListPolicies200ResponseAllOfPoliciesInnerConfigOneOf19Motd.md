@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Title** | Pointer to **string** |  | [optional] 
 **Message** | Pointer to **string** |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
-**FullPage** | Pointer to **string** |  | [optional] 
+**FullPage** | Pointer to [**ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19MotdFullPage**](ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19MotdFullPage.md) |  | [optional] 
 
 ## Methods
 
@@ -105,20 +105,20 @@ HasType returns a boolean if a field has been set.
 
 ### GetFullPage
 
-`func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19Motd) GetFullPage() string`
+`func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19Motd) GetFullPage() ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19MotdFullPage`
 
 GetFullPage returns the FullPage field if non-nil, zero value otherwise.
 
 ### GetFullPageOk
 
-`func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19Motd) GetFullPageOk() (*string, bool)`
+`func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19Motd) GetFullPageOk() (*ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19MotdFullPage, bool)`
 
 GetFullPageOk returns a tuple with the FullPage field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetFullPage
 
-`func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19Motd) SetFullPage(v string)`
+`func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19Motd) SetFullPage(v ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19MotdFullPage)`
 
 SetFullPage sets FullPage field to given value.
 

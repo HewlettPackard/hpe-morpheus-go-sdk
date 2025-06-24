@@ -9,11 +9,11 @@ Name | Type | Description | Notes
 **ImageType** | Pointer to **string** | Code of image type. eg. vmware, ami, etc. | [optional] 
 **StorageProvider** | Pointer to [**AddVirtualImageRequestVirtualImageStorageProvider**](AddVirtualImageRequestVirtualImageStorageProvider.md) |  | [optional] 
 **IsCloudInit** | Pointer to **bool** | Cloud Init Enabled? | [optional] [default to false]
-**UserData** | Pointer to **string** | Cloud-Init User Data, a bash script | [optional] 
+**UserData** | Pointer to **NullableString** | Cloud-Init User Data, a bash script | [optional] 
 **InstallAgent** | Pointer to **bool** | Install Agent? | [optional] [default to false]
-**SshUsername** | Pointer to **string** | SSH Username | [optional] 
-**SshPassword** | Pointer to **string** | SSH Password | [optional] 
-**SshKey** | Pointer to **string** | SSH Key | [optional] 
+**SshUsername** | Pointer to **NullableString** | SSH Username | [optional] 
+**SshPassword** | Pointer to **NullableString** | SSH Password | [optional] 
+**SshKey** | Pointer to **NullableString** | SSH Key | [optional] 
 **OsType** | Pointer to [**AddVirtualImageRequestVirtualImageOsType**](AddVirtualImageRequestVirtualImageOsType.md) |  | [optional] 
 **Visibility** | Pointer to **string** | private or public | [optional] [default to "private"]
 **Accounts** | Pointer to **[]int64** |  | [optional] 
@@ -97,6 +97,16 @@ SetLabels sets Labels field to given value.
 
 HasLabels returns a boolean if a field has been set.
 
+### SetLabelsNil
+
+`func (o *VirtualImageUpdate) SetLabelsNil(b bool)`
+
+ SetLabelsNil sets the value for Labels to be an explicit nil
+
+### UnsetLabels
+`func (o *VirtualImageUpdate) UnsetLabels()`
+
+UnsetLabels ensures that no value is present for Labels, not even an explicit nil
 ### GetImageType
 
 `func (o *VirtualImageUpdate) GetImageType() string`
@@ -197,6 +207,16 @@ SetUserData sets UserData field to given value.
 
 HasUserData returns a boolean if a field has been set.
 
+### SetUserDataNil
+
+`func (o *VirtualImageUpdate) SetUserDataNil(b bool)`
+
+ SetUserDataNil sets the value for UserData to be an explicit nil
+
+### UnsetUserData
+`func (o *VirtualImageUpdate) UnsetUserData()`
+
+UnsetUserData ensures that no value is present for UserData, not even an explicit nil
 ### GetInstallAgent
 
 `func (o *VirtualImageUpdate) GetInstallAgent() bool`
@@ -247,6 +267,16 @@ SetSshUsername sets SshUsername field to given value.
 
 HasSshUsername returns a boolean if a field has been set.
 
+### SetSshUsernameNil
+
+`func (o *VirtualImageUpdate) SetSshUsernameNil(b bool)`
+
+ SetSshUsernameNil sets the value for SshUsername to be an explicit nil
+
+### UnsetSshUsername
+`func (o *VirtualImageUpdate) UnsetSshUsername()`
+
+UnsetSshUsername ensures that no value is present for SshUsername, not even an explicit nil
 ### GetSshPassword
 
 `func (o *VirtualImageUpdate) GetSshPassword() string`
@@ -272,6 +302,16 @@ SetSshPassword sets SshPassword field to given value.
 
 HasSshPassword returns a boolean if a field has been set.
 
+### SetSshPasswordNil
+
+`func (o *VirtualImageUpdate) SetSshPasswordNil(b bool)`
+
+ SetSshPasswordNil sets the value for SshPassword to be an explicit nil
+
+### UnsetSshPassword
+`func (o *VirtualImageUpdate) UnsetSshPassword()`
+
+UnsetSshPassword ensures that no value is present for SshPassword, not even an explicit nil
 ### GetSshKey
 
 `func (o *VirtualImageUpdate) GetSshKey() string`
@@ -297,6 +337,16 @@ SetSshKey sets SshKey field to given value.
 
 HasSshKey returns a boolean if a field has been set.
 
+### SetSshKeyNil
+
+`func (o *VirtualImageUpdate) SetSshKeyNil(b bool)`
+
+ SetSshKeyNil sets the value for SshKey to be an explicit nil
+
+### UnsetSshKey
+`func (o *VirtualImageUpdate) UnsetSshKey()`
+
+UnsetSshKey ensures that no value is present for SshKey, not even an explicit nil
 ### GetOsType
 
 `func (o *VirtualImageUpdate) GetOsType() AddVirtualImageRequestVirtualImageOsType`

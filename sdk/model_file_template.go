@@ -28,18 +28,18 @@ type FileTemplate struct {
 	Labels               []string                                           `json:"labels,omitempty"`
 	FileName             *string                                            `json:"fileName,omitempty"`
 	FilePath             *string                                            `json:"filePath,omitempty"`
-	TemplateType         *string                                            `json:"templateType,omitempty"`
+	TemplateType         NullableString                                     `json:"templateType,omitempty"`
 	TemplatePhase        *string                                            `json:"templatePhase,omitempty"`
 	Template             *string                                            `json:"template,omitempty"`
-	Category             *string                                            `json:"category,omitempty"`
-	SettingCategory      *string                                            `json:"settingCategory,omitempty"`
-	SettingName          *string                                            `json:"settingName,omitempty"`
+	Category             NullableString                                     `json:"category,omitempty"`
+	SettingCategory      NullableString                                     `json:"settingCategory,omitempty"`
+	SettingName          NullableString                                     `json:"settingName,omitempty"`
 	AutoRun              *bool                                              `json:"autoRun,omitempty"`
-	RunOnScale           *bool                                              `json:"runOnScale,omitempty"`
-	RunOnDeploy          *bool                                              `json:"runOnDeploy,omitempty"`
-	FileOwner            *string                                            `json:"fileOwner,omitempty"`
-	FileGroup            *string                                            `json:"fileGroup,omitempty"`
-	Permissions          *string                                            `json:"permissions,omitempty"`
+	RunOnScale           NullableBool                                       `json:"runOnScale,omitempty"`
+	RunOnDeploy          NullableBool                                       `json:"runOnDeploy,omitempty"`
+	FileOwner            NullableString                                     `json:"fileOwner,omitempty"`
+	FileGroup            NullableString                                     `json:"fileGroup,omitempty"`
+	Permissions          NullableString                                     `json:"permissions,omitempty"`
 	DateCreated          *time.Time                                         `json:"dateCreated,omitempty"`
 	LastUpdated          *time.Time                                         `json:"lastUpdated,omitempty"`
 	AdditionalProperties map[string]interface{}                             `json:",remain"`
@@ -192,9 +192,9 @@ func (o *FileTemplate) SetName(v string) {
 	o.Name = &v
 }
 
-// GetLabels returns the Labels field value if set, zero value otherwise.
+// GetLabels returns the Labels field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *FileTemplate) GetLabels() []string {
-	if o == nil || IsNil(o.Labels) {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -203,6 +203,7 @@ func (o *FileTemplate) GetLabels() []string {
 
 // GetLabelsOk returns a tuple with the Labels field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *FileTemplate) GetLabelsOk() ([]string, bool) {
 	if o == nil || IsNil(o.Labels) {
 		return nil, false
@@ -288,36 +289,47 @@ func (o *FileTemplate) SetFilePath(v string) {
 	o.FilePath = &v
 }
 
-// GetTemplateType returns the TemplateType field value if set, zero value otherwise.
+// GetTemplateType returns the TemplateType field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *FileTemplate) GetTemplateType() string {
-	if o == nil || IsNil(o.TemplateType) {
+	if o == nil || IsNil(o.TemplateType.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.TemplateType
+	return *o.TemplateType.Get()
 }
 
 // GetTemplateTypeOk returns a tuple with the TemplateType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *FileTemplate) GetTemplateTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.TemplateType) {
+	if o == nil {
 		return nil, false
 	}
-	return o.TemplateType, true
+	return o.TemplateType.Get(), o.TemplateType.IsSet()
 }
 
 // IsSetTemplateType returns a boolean if a field has been set.
 func (o *FileTemplate) IsSetTemplateType() bool {
-	if o != nil && !IsNil(o.TemplateType) {
+	if o != nil && o.TemplateType.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetTemplateType gets a reference to the given string and assigns it to the TemplateType field.
+// SetTemplateType gets a reference to the given NullableString and assigns it to the TemplateType field.
 func (o *FileTemplate) SetTemplateType(v string) {
-	o.TemplateType = &v
+	o.TemplateType.Set(&v)
+}
+
+// SetTemplateTypeNil sets the value for TemplateType to be an explicit nil
+func (o *FileTemplate) SetTemplateTypeNil() {
+	o.TemplateType.Set(nil)
+}
+
+// UnsetTemplateType ensures that no value is present for TemplateType, not even an explicit nil
+func (o *FileTemplate) UnsetTemplateType() {
+	o.TemplateType.Unset()
 }
 
 // GetTemplatePhase returns the TemplatePhase field value if set, zero value otherwise.
@@ -384,100 +396,133 @@ func (o *FileTemplate) SetTemplate(v string) {
 	o.Template = &v
 }
 
-// GetCategory returns the Category field value if set, zero value otherwise.
+// GetCategory returns the Category field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *FileTemplate) GetCategory() string {
-	if o == nil || IsNil(o.Category) {
+	if o == nil || IsNil(o.Category.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Category
+	return *o.Category.Get()
 }
 
 // GetCategoryOk returns a tuple with the Category field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *FileTemplate) GetCategoryOk() (*string, bool) {
-	if o == nil || IsNil(o.Category) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Category, true
+	return o.Category.Get(), o.Category.IsSet()
 }
 
 // IsSetCategory returns a boolean if a field has been set.
 func (o *FileTemplate) IsSetCategory() bool {
-	if o != nil && !IsNil(o.Category) {
+	if o != nil && o.Category.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCategory gets a reference to the given string and assigns it to the Category field.
+// SetCategory gets a reference to the given NullableString and assigns it to the Category field.
 func (o *FileTemplate) SetCategory(v string) {
-	o.Category = &v
+	o.Category.Set(&v)
 }
 
-// GetSettingCategory returns the SettingCategory field value if set, zero value otherwise.
+// SetCategoryNil sets the value for Category to be an explicit nil
+func (o *FileTemplate) SetCategoryNil() {
+	o.Category.Set(nil)
+}
+
+// UnsetCategory ensures that no value is present for Category, not even an explicit nil
+func (o *FileTemplate) UnsetCategory() {
+	o.Category.Unset()
+}
+
+// GetSettingCategory returns the SettingCategory field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *FileTemplate) GetSettingCategory() string {
-	if o == nil || IsNil(o.SettingCategory) {
+	if o == nil || IsNil(o.SettingCategory.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.SettingCategory
+	return *o.SettingCategory.Get()
 }
 
 // GetSettingCategoryOk returns a tuple with the SettingCategory field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *FileTemplate) GetSettingCategoryOk() (*string, bool) {
-	if o == nil || IsNil(o.SettingCategory) {
+	if o == nil {
 		return nil, false
 	}
-	return o.SettingCategory, true
+	return o.SettingCategory.Get(), o.SettingCategory.IsSet()
 }
 
 // IsSetSettingCategory returns a boolean if a field has been set.
 func (o *FileTemplate) IsSetSettingCategory() bool {
-	if o != nil && !IsNil(o.SettingCategory) {
+	if o != nil && o.SettingCategory.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetSettingCategory gets a reference to the given string and assigns it to the SettingCategory field.
+// SetSettingCategory gets a reference to the given NullableString and assigns it to the SettingCategory field.
 func (o *FileTemplate) SetSettingCategory(v string) {
-	o.SettingCategory = &v
+	o.SettingCategory.Set(&v)
 }
 
-// GetSettingName returns the SettingName field value if set, zero value otherwise.
+// SetSettingCategoryNil sets the value for SettingCategory to be an explicit nil
+func (o *FileTemplate) SetSettingCategoryNil() {
+	o.SettingCategory.Set(nil)
+}
+
+// UnsetSettingCategory ensures that no value is present for SettingCategory, not even an explicit nil
+func (o *FileTemplate) UnsetSettingCategory() {
+	o.SettingCategory.Unset()
+}
+
+// GetSettingName returns the SettingName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *FileTemplate) GetSettingName() string {
-	if o == nil || IsNil(o.SettingName) {
+	if o == nil || IsNil(o.SettingName.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.SettingName
+	return *o.SettingName.Get()
 }
 
 // GetSettingNameOk returns a tuple with the SettingName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *FileTemplate) GetSettingNameOk() (*string, bool) {
-	if o == nil || IsNil(o.SettingName) {
+	if o == nil {
 		return nil, false
 	}
-	return o.SettingName, true
+	return o.SettingName.Get(), o.SettingName.IsSet()
 }
 
 // IsSetSettingName returns a boolean if a field has been set.
 func (o *FileTemplate) IsSetSettingName() bool {
-	if o != nil && !IsNil(o.SettingName) {
+	if o != nil && o.SettingName.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetSettingName gets a reference to the given string and assigns it to the SettingName field.
+// SetSettingName gets a reference to the given NullableString and assigns it to the SettingName field.
 func (o *FileTemplate) SetSettingName(v string) {
-	o.SettingName = &v
+	o.SettingName.Set(&v)
+}
+
+// SetSettingNameNil sets the value for SettingName to be an explicit nil
+func (o *FileTemplate) SetSettingNameNil() {
+	o.SettingName.Set(nil)
+}
+
+// UnsetSettingName ensures that no value is present for SettingName, not even an explicit nil
+func (o *FileTemplate) UnsetSettingName() {
+	o.SettingName.Unset()
 }
 
 // GetAutoRun returns the AutoRun field value if set, zero value otherwise.
@@ -512,164 +557,219 @@ func (o *FileTemplate) SetAutoRun(v bool) {
 	o.AutoRun = &v
 }
 
-// GetRunOnScale returns the RunOnScale field value if set, zero value otherwise.
+// GetRunOnScale returns the RunOnScale field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *FileTemplate) GetRunOnScale() bool {
-	if o == nil || IsNil(o.RunOnScale) {
+	if o == nil || IsNil(o.RunOnScale.Get()) {
 		var ret bool
 		return ret
 	}
-	return *o.RunOnScale
+	return *o.RunOnScale.Get()
 }
 
 // GetRunOnScaleOk returns a tuple with the RunOnScale field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *FileTemplate) GetRunOnScaleOk() (*bool, bool) {
-	if o == nil || IsNil(o.RunOnScale) {
+	if o == nil {
 		return nil, false
 	}
-	return o.RunOnScale, true
+	return o.RunOnScale.Get(), o.RunOnScale.IsSet()
 }
 
 // IsSetRunOnScale returns a boolean if a field has been set.
 func (o *FileTemplate) IsSetRunOnScale() bool {
-	if o != nil && !IsNil(o.RunOnScale) {
+	if o != nil && o.RunOnScale.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetRunOnScale gets a reference to the given bool and assigns it to the RunOnScale field.
+// SetRunOnScale gets a reference to the given NullableBool and assigns it to the RunOnScale field.
 func (o *FileTemplate) SetRunOnScale(v bool) {
-	o.RunOnScale = &v
+	o.RunOnScale.Set(&v)
 }
 
-// GetRunOnDeploy returns the RunOnDeploy field value if set, zero value otherwise.
+// SetRunOnScaleNil sets the value for RunOnScale to be an explicit nil
+func (o *FileTemplate) SetRunOnScaleNil() {
+	o.RunOnScale.Set(nil)
+}
+
+// UnsetRunOnScale ensures that no value is present for RunOnScale, not even an explicit nil
+func (o *FileTemplate) UnsetRunOnScale() {
+	o.RunOnScale.Unset()
+}
+
+// GetRunOnDeploy returns the RunOnDeploy field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *FileTemplate) GetRunOnDeploy() bool {
-	if o == nil || IsNil(o.RunOnDeploy) {
+	if o == nil || IsNil(o.RunOnDeploy.Get()) {
 		var ret bool
 		return ret
 	}
-	return *o.RunOnDeploy
+	return *o.RunOnDeploy.Get()
 }
 
 // GetRunOnDeployOk returns a tuple with the RunOnDeploy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *FileTemplate) GetRunOnDeployOk() (*bool, bool) {
-	if o == nil || IsNil(o.RunOnDeploy) {
+	if o == nil {
 		return nil, false
 	}
-	return o.RunOnDeploy, true
+	return o.RunOnDeploy.Get(), o.RunOnDeploy.IsSet()
 }
 
 // IsSetRunOnDeploy returns a boolean if a field has been set.
 func (o *FileTemplate) IsSetRunOnDeploy() bool {
-	if o != nil && !IsNil(o.RunOnDeploy) {
+	if o != nil && o.RunOnDeploy.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetRunOnDeploy gets a reference to the given bool and assigns it to the RunOnDeploy field.
+// SetRunOnDeploy gets a reference to the given NullableBool and assigns it to the RunOnDeploy field.
 func (o *FileTemplate) SetRunOnDeploy(v bool) {
-	o.RunOnDeploy = &v
+	o.RunOnDeploy.Set(&v)
 }
 
-// GetFileOwner returns the FileOwner field value if set, zero value otherwise.
+// SetRunOnDeployNil sets the value for RunOnDeploy to be an explicit nil
+func (o *FileTemplate) SetRunOnDeployNil() {
+	o.RunOnDeploy.Set(nil)
+}
+
+// UnsetRunOnDeploy ensures that no value is present for RunOnDeploy, not even an explicit nil
+func (o *FileTemplate) UnsetRunOnDeploy() {
+	o.RunOnDeploy.Unset()
+}
+
+// GetFileOwner returns the FileOwner field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *FileTemplate) GetFileOwner() string {
-	if o == nil || IsNil(o.FileOwner) {
+	if o == nil || IsNil(o.FileOwner.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.FileOwner
+	return *o.FileOwner.Get()
 }
 
 // GetFileOwnerOk returns a tuple with the FileOwner field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *FileTemplate) GetFileOwnerOk() (*string, bool) {
-	if o == nil || IsNil(o.FileOwner) {
+	if o == nil {
 		return nil, false
 	}
-	return o.FileOwner, true
+	return o.FileOwner.Get(), o.FileOwner.IsSet()
 }
 
 // IsSetFileOwner returns a boolean if a field has been set.
 func (o *FileTemplate) IsSetFileOwner() bool {
-	if o != nil && !IsNil(o.FileOwner) {
+	if o != nil && o.FileOwner.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetFileOwner gets a reference to the given string and assigns it to the FileOwner field.
+// SetFileOwner gets a reference to the given NullableString and assigns it to the FileOwner field.
 func (o *FileTemplate) SetFileOwner(v string) {
-	o.FileOwner = &v
+	o.FileOwner.Set(&v)
 }
 
-// GetFileGroup returns the FileGroup field value if set, zero value otherwise.
+// SetFileOwnerNil sets the value for FileOwner to be an explicit nil
+func (o *FileTemplate) SetFileOwnerNil() {
+	o.FileOwner.Set(nil)
+}
+
+// UnsetFileOwner ensures that no value is present for FileOwner, not even an explicit nil
+func (o *FileTemplate) UnsetFileOwner() {
+	o.FileOwner.Unset()
+}
+
+// GetFileGroup returns the FileGroup field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *FileTemplate) GetFileGroup() string {
-	if o == nil || IsNil(o.FileGroup) {
+	if o == nil || IsNil(o.FileGroup.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.FileGroup
+	return *o.FileGroup.Get()
 }
 
 // GetFileGroupOk returns a tuple with the FileGroup field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *FileTemplate) GetFileGroupOk() (*string, bool) {
-	if o == nil || IsNil(o.FileGroup) {
+	if o == nil {
 		return nil, false
 	}
-	return o.FileGroup, true
+	return o.FileGroup.Get(), o.FileGroup.IsSet()
 }
 
 // IsSetFileGroup returns a boolean if a field has been set.
 func (o *FileTemplate) IsSetFileGroup() bool {
-	if o != nil && !IsNil(o.FileGroup) {
+	if o != nil && o.FileGroup.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetFileGroup gets a reference to the given string and assigns it to the FileGroup field.
+// SetFileGroup gets a reference to the given NullableString and assigns it to the FileGroup field.
 func (o *FileTemplate) SetFileGroup(v string) {
-	o.FileGroup = &v
+	o.FileGroup.Set(&v)
 }
 
-// GetPermissions returns the Permissions field value if set, zero value otherwise.
+// SetFileGroupNil sets the value for FileGroup to be an explicit nil
+func (o *FileTemplate) SetFileGroupNil() {
+	o.FileGroup.Set(nil)
+}
+
+// UnsetFileGroup ensures that no value is present for FileGroup, not even an explicit nil
+func (o *FileTemplate) UnsetFileGroup() {
+	o.FileGroup.Unset()
+}
+
+// GetPermissions returns the Permissions field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *FileTemplate) GetPermissions() string {
-	if o == nil || IsNil(o.Permissions) {
+	if o == nil || IsNil(o.Permissions.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Permissions
+	return *o.Permissions.Get()
 }
 
 // GetPermissionsOk returns a tuple with the Permissions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *FileTemplate) GetPermissionsOk() (*string, bool) {
-	if o == nil || IsNil(o.Permissions) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Permissions, true
+	return o.Permissions.Get(), o.Permissions.IsSet()
 }
 
 // IsSetPermissions returns a boolean if a field has been set.
 func (o *FileTemplate) IsSetPermissions() bool {
-	if o != nil && !IsNil(o.Permissions) {
+	if o != nil && o.Permissions.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetPermissions gets a reference to the given string and assigns it to the Permissions field.
+// SetPermissions gets a reference to the given NullableString and assigns it to the Permissions field.
 func (o *FileTemplate) SetPermissions(v string) {
-	o.Permissions = &v
+	o.Permissions.Set(&v)
+}
+
+// SetPermissionsNil sets the value for Permissions to be an explicit nil
+func (o *FileTemplate) SetPermissionsNil() {
+	o.Permissions.Set(nil)
+}
+
+// UnsetPermissions ensures that no value is present for Permissions, not even an explicit nil
+func (o *FileTemplate) UnsetPermissions() {
+	o.Permissions.Unset()
 }
 
 // GetDateCreated returns the DateCreated field value if set, zero value otherwise.
@@ -758,7 +858,7 @@ func (o FileTemplate) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !IsNil(o.Labels) {
+	if o.Labels != nil {
 		toSerialize["labels"] = o.Labels
 	}
 	if !IsNil(o.FileName) {
@@ -767,8 +867,8 @@ func (o FileTemplate) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.FilePath) {
 		toSerialize["filePath"] = o.FilePath
 	}
-	if !IsNil(o.TemplateType) {
-		toSerialize["templateType"] = o.TemplateType
+	if o.TemplateType.IsSet() {
+		toSerialize["templateType"] = o.TemplateType.Get()
 	}
 	if !IsNil(o.TemplatePhase) {
 		toSerialize["templatePhase"] = o.TemplatePhase
@@ -776,32 +876,32 @@ func (o FileTemplate) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Template) {
 		toSerialize["template"] = o.Template
 	}
-	if !IsNil(o.Category) {
-		toSerialize["category"] = o.Category
+	if o.Category.IsSet() {
+		toSerialize["category"] = o.Category.Get()
 	}
-	if !IsNil(o.SettingCategory) {
-		toSerialize["settingCategory"] = o.SettingCategory
+	if o.SettingCategory.IsSet() {
+		toSerialize["settingCategory"] = o.SettingCategory.Get()
 	}
-	if !IsNil(o.SettingName) {
-		toSerialize["settingName"] = o.SettingName
+	if o.SettingName.IsSet() {
+		toSerialize["settingName"] = o.SettingName.Get()
 	}
 	if !IsNil(o.AutoRun) {
 		toSerialize["autoRun"] = o.AutoRun
 	}
-	if !IsNil(o.RunOnScale) {
-		toSerialize["runOnScale"] = o.RunOnScale
+	if o.RunOnScale.IsSet() {
+		toSerialize["runOnScale"] = o.RunOnScale.Get()
 	}
-	if !IsNil(o.RunOnDeploy) {
-		toSerialize["runOnDeploy"] = o.RunOnDeploy
+	if o.RunOnDeploy.IsSet() {
+		toSerialize["runOnDeploy"] = o.RunOnDeploy.Get()
 	}
-	if !IsNil(o.FileOwner) {
-		toSerialize["fileOwner"] = o.FileOwner
+	if o.FileOwner.IsSet() {
+		toSerialize["fileOwner"] = o.FileOwner.Get()
 	}
-	if !IsNil(o.FileGroup) {
-		toSerialize["fileGroup"] = o.FileGroup
+	if o.FileGroup.IsSet() {
+		toSerialize["fileGroup"] = o.FileGroup.Get()
 	}
-	if !IsNil(o.Permissions) {
-		toSerialize["permissions"] = o.Permissions
+	if o.Permissions.IsSet() {
+		toSerialize["permissions"] = o.Permissions.Get()
 	}
 	if !IsNil(o.DateCreated) {
 		toSerialize["dateCreated"] = o.DateCreated

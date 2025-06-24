@@ -20,11 +20,11 @@ var _ MappedNullable = &AddPolicies200ResponseAllOfPolicyConfigOneOf1Motd{}
 
 // AddPolicies200ResponseAllOfPolicyConfigOneOf1Motd struct for AddPolicies200ResponseAllOfPolicyConfigOneOf1Motd
 type AddPolicies200ResponseAllOfPolicyConfigOneOf1Motd struct {
-	Title                *string                `json:"title,omitempty"`
-	Message              *string                `json:"message,omitempty"`
-	Type                 *string                `json:"type,omitempty"`
-	FullPage             *string                `json:"_fullPage,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Title                *string                                                             `json:"title,omitempty"`
+	Message              *string                                                             `json:"message,omitempty"`
+	Type                 *string                                                             `json:"type,omitempty"`
+	FullPage             *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19MotdFullPage `json:"_fullPage,omitempty"`
+	AdditionalProperties map[string]interface{}                                              `json:",remain"`
 }
 
 type _AddPolicies200ResponseAllOfPolicyConfigOneOf1Motd AddPolicies200ResponseAllOfPolicyConfigOneOf1Motd
@@ -143,9 +143,9 @@ func (o *AddPolicies200ResponseAllOfPolicyConfigOneOf1Motd) SetType(v string) {
 }
 
 // GetFullPage returns the FullPage field value if set, zero value otherwise.
-func (o *AddPolicies200ResponseAllOfPolicyConfigOneOf1Motd) GetFullPage() string {
+func (o *AddPolicies200ResponseAllOfPolicyConfigOneOf1Motd) GetFullPage() ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19MotdFullPage {
 	if o == nil || IsNil(o.FullPage) {
-		var ret string
+		var ret ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19MotdFullPage
 		return ret
 	}
 	return *o.FullPage
@@ -153,7 +153,7 @@ func (o *AddPolicies200ResponseAllOfPolicyConfigOneOf1Motd) GetFullPage() string
 
 // GetFullPageOk returns a tuple with the FullPage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddPolicies200ResponseAllOfPolicyConfigOneOf1Motd) GetFullPageOk() (*string, bool) {
+func (o *AddPolicies200ResponseAllOfPolicyConfigOneOf1Motd) GetFullPageOk() (*ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19MotdFullPage, bool) {
 	if o == nil || IsNil(o.FullPage) {
 		return nil, false
 	}
@@ -169,8 +169,8 @@ func (o *AddPolicies200ResponseAllOfPolicyConfigOneOf1Motd) IsSetFullPage() bool
 	return false
 }
 
-// SetFullPage gets a reference to the given string and assigns it to the FullPage field.
-func (o *AddPolicies200ResponseAllOfPolicyConfigOneOf1Motd) SetFullPage(v string) {
+// SetFullPage gets a reference to the given ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19MotdFullPage and assigns it to the FullPage field.
+func (o *AddPolicies200ResponseAllOfPolicyConfigOneOf1Motd) SetFullPage(v ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19MotdFullPage) {
 	o.FullPage = &v
 }
 

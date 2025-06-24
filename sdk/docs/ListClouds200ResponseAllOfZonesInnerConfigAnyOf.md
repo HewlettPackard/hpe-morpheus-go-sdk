@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ApiUrl** | Pointer to **string** |  | [optional] 
 **Username** | Pointer to **string** |  | [optional] 
-**Password** | Pointer to **string** |  | [optional] 
+**Password** | Pointer to **NullableString** |  | [optional] 
 **Datacenter** | Pointer to **string** |  | [optional] 
 **Cluster** | Pointer to **string** |  | [optional] 
 **ResourcePoolId** | Pointer to **string** |  | [optional] 
@@ -15,29 +15,29 @@ Name | Type | Description | Notes
 **HideHostSelection** | Pointer to **string** |  | [optional] 
 **ImportExisting** | Pointer to **string** |  | [optional] 
 **EnableVnc** | Pointer to **string** |  | [optional] 
-**EnableDiskTypeSelection** | Pointer to **string** |  | [optional] 
+**EnableDiskTypeSelection** | Pointer to **NullableString** |  | [optional] 
 **EnableNetworkTypeSelection** | Pointer to **string** |  | [optional] 
-**DiskStorageType** | Pointer to **string** |  | [optional] 
-**ApplianceUrl** | Pointer to **string** |  | [optional] 
-**DatacenterName** | Pointer to **string** |  | [optional] 
+**DiskStorageType** | Pointer to **NullableString** |  | [optional] 
+**ApplianceUrl** | Pointer to **NullableString** |  | [optional] 
+**DatacenterName** | Pointer to **NullableString** |  | [optional] 
 **NetworkServerId** | Pointer to **string** |  | [optional] 
 **NetworkServer** | Pointer to [**ListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer**](ListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer.md) |  | [optional] 
 **SecurityMode** | Pointer to **string** |  | [optional] 
-**CertificateProvider** | Pointer to **string** |  | [optional] 
-**BackupMode** | Pointer to **string** |  | [optional] 
-**ReplicationMode** | Pointer to **string** |  | [optional] 
-**DnsIntegrationId** | Pointer to **string** |  | [optional] 
-**ConfigCmdbId** | Pointer to **string** |  | [optional] 
-**ConfigManagementId** | Pointer to **string** |  | [optional] 
-**ConfigCmId** | Pointer to **string** |  | [optional] 
-**SecurityServer** | Pointer to **string** |  | [optional] 
-**ServiceRegistryId** | Pointer to **string** |  | [optional] 
-**KubeUrl** | Pointer to **string** |  | [optional] 
-**ApiVersion** | Pointer to **string** |  | [optional] 
-**DatacenterId** | Pointer to **string** |  | [optional] 
+**CertificateProvider** | Pointer to **NullableString** |  | [optional] 
+**BackupMode** | Pointer to **NullableString** |  | [optional] 
+**ReplicationMode** | Pointer to **NullableString** |  | [optional] 
+**DnsIntegrationId** | Pointer to **NullableString** |  | [optional] 
+**ConfigCmdbId** | Pointer to **NullableString** |  | [optional] 
+**ConfigManagementId** | Pointer to **NullableString** |  | [optional] 
+**ConfigCmId** | Pointer to **NullableString** |  | [optional] 
+**SecurityServer** | Pointer to **NullableString** |  | [optional] 
+**ServiceRegistryId** | Pointer to **NullableString** |  | [optional] 
+**KubeUrl** | Pointer to **NullableString** |  | [optional] 
+**ApiVersion** | Pointer to **NullableString** |  | [optional] 
+**DatacenterId** | Pointer to **NullableString** |  | [optional] 
 **ConfigCmdbDiscovery** | Pointer to **bool** |  | [optional] 
-**DistributedWorkerId** | Pointer to **string** |  | [optional] 
-**PasswordHash** | Pointer to **string** |  | [optional] 
+**DistributedWorkerId** | Pointer to **NullableString** |  | [optional] 
+**PasswordHash** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -133,6 +133,16 @@ SetPassword sets Password field to given value.
 
 HasPassword returns a boolean if a field has been set.
 
+### SetPasswordNil
+
+`func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf) SetPasswordNil(b bool)`
+
+ SetPasswordNil sets the value for Password to be an explicit nil
+
+### UnsetPassword
+`func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf) UnsetPassword()`
+
+UnsetPassword ensures that no value is present for Password, not even an explicit nil
 ### GetDatacenter
 
 `func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf) GetDatacenter() string`
@@ -358,6 +368,16 @@ SetEnableDiskTypeSelection sets EnableDiskTypeSelection field to given value.
 
 HasEnableDiskTypeSelection returns a boolean if a field has been set.
 
+### SetEnableDiskTypeSelectionNil
+
+`func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf) SetEnableDiskTypeSelectionNil(b bool)`
+
+ SetEnableDiskTypeSelectionNil sets the value for EnableDiskTypeSelection to be an explicit nil
+
+### UnsetEnableDiskTypeSelection
+`func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf) UnsetEnableDiskTypeSelection()`
+
+UnsetEnableDiskTypeSelection ensures that no value is present for EnableDiskTypeSelection, not even an explicit nil
 ### GetEnableNetworkTypeSelection
 
 `func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf) GetEnableNetworkTypeSelection() string`
@@ -408,6 +428,16 @@ SetDiskStorageType sets DiskStorageType field to given value.
 
 HasDiskStorageType returns a boolean if a field has been set.
 
+### SetDiskStorageTypeNil
+
+`func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf) SetDiskStorageTypeNil(b bool)`
+
+ SetDiskStorageTypeNil sets the value for DiskStorageType to be an explicit nil
+
+### UnsetDiskStorageType
+`func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf) UnsetDiskStorageType()`
+
+UnsetDiskStorageType ensures that no value is present for DiskStorageType, not even an explicit nil
 ### GetApplianceUrl
 
 `func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf) GetApplianceUrl() string`
@@ -433,6 +463,16 @@ SetApplianceUrl sets ApplianceUrl field to given value.
 
 HasApplianceUrl returns a boolean if a field has been set.
 
+### SetApplianceUrlNil
+
+`func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf) SetApplianceUrlNil(b bool)`
+
+ SetApplianceUrlNil sets the value for ApplianceUrl to be an explicit nil
+
+### UnsetApplianceUrl
+`func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf) UnsetApplianceUrl()`
+
+UnsetApplianceUrl ensures that no value is present for ApplianceUrl, not even an explicit nil
 ### GetDatacenterName
 
 `func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf) GetDatacenterName() string`
@@ -458,6 +498,16 @@ SetDatacenterName sets DatacenterName field to given value.
 
 HasDatacenterName returns a boolean if a field has been set.
 
+### SetDatacenterNameNil
+
+`func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf) SetDatacenterNameNil(b bool)`
+
+ SetDatacenterNameNil sets the value for DatacenterName to be an explicit nil
+
+### UnsetDatacenterName
+`func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf) UnsetDatacenterName()`
+
+UnsetDatacenterName ensures that no value is present for DatacenterName, not even an explicit nil
 ### GetNetworkServerId
 
 `func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf) GetNetworkServerId() string`
@@ -558,6 +608,16 @@ SetCertificateProvider sets CertificateProvider field to given value.
 
 HasCertificateProvider returns a boolean if a field has been set.
 
+### SetCertificateProviderNil
+
+`func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf) SetCertificateProviderNil(b bool)`
+
+ SetCertificateProviderNil sets the value for CertificateProvider to be an explicit nil
+
+### UnsetCertificateProvider
+`func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf) UnsetCertificateProvider()`
+
+UnsetCertificateProvider ensures that no value is present for CertificateProvider, not even an explicit nil
 ### GetBackupMode
 
 `func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf) GetBackupMode() string`
@@ -583,6 +643,16 @@ SetBackupMode sets BackupMode field to given value.
 
 HasBackupMode returns a boolean if a field has been set.
 
+### SetBackupModeNil
+
+`func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf) SetBackupModeNil(b bool)`
+
+ SetBackupModeNil sets the value for BackupMode to be an explicit nil
+
+### UnsetBackupMode
+`func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf) UnsetBackupMode()`
+
+UnsetBackupMode ensures that no value is present for BackupMode, not even an explicit nil
 ### GetReplicationMode
 
 `func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf) GetReplicationMode() string`
@@ -608,6 +678,16 @@ SetReplicationMode sets ReplicationMode field to given value.
 
 HasReplicationMode returns a boolean if a field has been set.
 
+### SetReplicationModeNil
+
+`func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf) SetReplicationModeNil(b bool)`
+
+ SetReplicationModeNil sets the value for ReplicationMode to be an explicit nil
+
+### UnsetReplicationMode
+`func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf) UnsetReplicationMode()`
+
+UnsetReplicationMode ensures that no value is present for ReplicationMode, not even an explicit nil
 ### GetDnsIntegrationId
 
 `func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf) GetDnsIntegrationId() string`
@@ -633,6 +713,16 @@ SetDnsIntegrationId sets DnsIntegrationId field to given value.
 
 HasDnsIntegrationId returns a boolean if a field has been set.
 
+### SetDnsIntegrationIdNil
+
+`func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf) SetDnsIntegrationIdNil(b bool)`
+
+ SetDnsIntegrationIdNil sets the value for DnsIntegrationId to be an explicit nil
+
+### UnsetDnsIntegrationId
+`func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf) UnsetDnsIntegrationId()`
+
+UnsetDnsIntegrationId ensures that no value is present for DnsIntegrationId, not even an explicit nil
 ### GetConfigCmdbId
 
 `func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf) GetConfigCmdbId() string`
@@ -658,6 +748,16 @@ SetConfigCmdbId sets ConfigCmdbId field to given value.
 
 HasConfigCmdbId returns a boolean if a field has been set.
 
+### SetConfigCmdbIdNil
+
+`func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf) SetConfigCmdbIdNil(b bool)`
+
+ SetConfigCmdbIdNil sets the value for ConfigCmdbId to be an explicit nil
+
+### UnsetConfigCmdbId
+`func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf) UnsetConfigCmdbId()`
+
+UnsetConfigCmdbId ensures that no value is present for ConfigCmdbId, not even an explicit nil
 ### GetConfigManagementId
 
 `func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf) GetConfigManagementId() string`
@@ -683,6 +783,16 @@ SetConfigManagementId sets ConfigManagementId field to given value.
 
 HasConfigManagementId returns a boolean if a field has been set.
 
+### SetConfigManagementIdNil
+
+`func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf) SetConfigManagementIdNil(b bool)`
+
+ SetConfigManagementIdNil sets the value for ConfigManagementId to be an explicit nil
+
+### UnsetConfigManagementId
+`func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf) UnsetConfigManagementId()`
+
+UnsetConfigManagementId ensures that no value is present for ConfigManagementId, not even an explicit nil
 ### GetConfigCmId
 
 `func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf) GetConfigCmId() string`
@@ -708,6 +818,16 @@ SetConfigCmId sets ConfigCmId field to given value.
 
 HasConfigCmId returns a boolean if a field has been set.
 
+### SetConfigCmIdNil
+
+`func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf) SetConfigCmIdNil(b bool)`
+
+ SetConfigCmIdNil sets the value for ConfigCmId to be an explicit nil
+
+### UnsetConfigCmId
+`func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf) UnsetConfigCmId()`
+
+UnsetConfigCmId ensures that no value is present for ConfigCmId, not even an explicit nil
 ### GetSecurityServer
 
 `func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf) GetSecurityServer() string`
@@ -733,6 +853,16 @@ SetSecurityServer sets SecurityServer field to given value.
 
 HasSecurityServer returns a boolean if a field has been set.
 
+### SetSecurityServerNil
+
+`func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf) SetSecurityServerNil(b bool)`
+
+ SetSecurityServerNil sets the value for SecurityServer to be an explicit nil
+
+### UnsetSecurityServer
+`func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf) UnsetSecurityServer()`
+
+UnsetSecurityServer ensures that no value is present for SecurityServer, not even an explicit nil
 ### GetServiceRegistryId
 
 `func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf) GetServiceRegistryId() string`
@@ -758,6 +888,16 @@ SetServiceRegistryId sets ServiceRegistryId field to given value.
 
 HasServiceRegistryId returns a boolean if a field has been set.
 
+### SetServiceRegistryIdNil
+
+`func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf) SetServiceRegistryIdNil(b bool)`
+
+ SetServiceRegistryIdNil sets the value for ServiceRegistryId to be an explicit nil
+
+### UnsetServiceRegistryId
+`func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf) UnsetServiceRegistryId()`
+
+UnsetServiceRegistryId ensures that no value is present for ServiceRegistryId, not even an explicit nil
 ### GetKubeUrl
 
 `func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf) GetKubeUrl() string`
@@ -783,6 +923,16 @@ SetKubeUrl sets KubeUrl field to given value.
 
 HasKubeUrl returns a boolean if a field has been set.
 
+### SetKubeUrlNil
+
+`func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf) SetKubeUrlNil(b bool)`
+
+ SetKubeUrlNil sets the value for KubeUrl to be an explicit nil
+
+### UnsetKubeUrl
+`func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf) UnsetKubeUrl()`
+
+UnsetKubeUrl ensures that no value is present for KubeUrl, not even an explicit nil
 ### GetApiVersion
 
 `func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf) GetApiVersion() string`
@@ -808,6 +958,16 @@ SetApiVersion sets ApiVersion field to given value.
 
 HasApiVersion returns a boolean if a field has been set.
 
+### SetApiVersionNil
+
+`func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf) SetApiVersionNil(b bool)`
+
+ SetApiVersionNil sets the value for ApiVersion to be an explicit nil
+
+### UnsetApiVersion
+`func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf) UnsetApiVersion()`
+
+UnsetApiVersion ensures that no value is present for ApiVersion, not even an explicit nil
 ### GetDatacenterId
 
 `func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf) GetDatacenterId() string`
@@ -833,6 +993,16 @@ SetDatacenterId sets DatacenterId field to given value.
 
 HasDatacenterId returns a boolean if a field has been set.
 
+### SetDatacenterIdNil
+
+`func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf) SetDatacenterIdNil(b bool)`
+
+ SetDatacenterIdNil sets the value for DatacenterId to be an explicit nil
+
+### UnsetDatacenterId
+`func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf) UnsetDatacenterId()`
+
+UnsetDatacenterId ensures that no value is present for DatacenterId, not even an explicit nil
 ### GetConfigCmdbDiscovery
 
 `func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf) GetConfigCmdbDiscovery() bool`
@@ -883,6 +1053,16 @@ SetDistributedWorkerId sets DistributedWorkerId field to given value.
 
 HasDistributedWorkerId returns a boolean if a field has been set.
 
+### SetDistributedWorkerIdNil
+
+`func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf) SetDistributedWorkerIdNil(b bool)`
+
+ SetDistributedWorkerIdNil sets the value for DistributedWorkerId to be an explicit nil
+
+### UnsetDistributedWorkerId
+`func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf) UnsetDistributedWorkerId()`
+
+UnsetDistributedWorkerId ensures that no value is present for DistributedWorkerId, not even an explicit nil
 ### GetPasswordHash
 
 `func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf) GetPasswordHash() string`
@@ -908,6 +1088,16 @@ SetPasswordHash sets PasswordHash field to given value.
 
 HasPasswordHash returns a boolean if a field has been set.
 
+### SetPasswordHashNil
+
+`func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf) SetPasswordHashNil(b bool)`
+
+ SetPasswordHashNil sets the value for PasswordHash to be an explicit nil
+
+### UnsetPasswordHash
+`func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf) UnsetPasswordHash()`
+
+UnsetPasswordHash ensures that no value is present for PasswordHash, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

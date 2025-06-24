@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**InstanceId** | Pointer to **int64** |  | [optional] 
+**InstanceId** | Pointer to **NullableInt64** |  | [optional] 
 **InstanceUUID** | Pointer to **string** |  | [optional] 
 **StartDate** | Pointer to **time.Time** |  | [optional] 
 **EndDate** | Pointer to **time.Time** |  | [optional] 
@@ -58,6 +58,16 @@ SetInstanceId sets InstanceId field to given value.
 
 HasInstanceId returns a boolean if a field has been set.
 
+### SetInstanceIdNil
+
+`func (o *BillingInstance) SetInstanceIdNil(b bool)`
+
+ SetInstanceIdNil sets the value for InstanceId to be an explicit nil
+
+### UnsetInstanceId
+`func (o *BillingInstance) UnsetInstanceId()`
+
+UnsetInstanceId ensures that no value is present for InstanceId, not even an explicit nil
 ### GetInstanceUUID
 
 `func (o *BillingInstance) GetInstanceUUID() string`

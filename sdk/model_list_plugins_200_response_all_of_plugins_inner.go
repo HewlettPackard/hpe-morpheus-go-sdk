@@ -27,14 +27,14 @@ type ListPlugins200ResponseAllOfPluginsInner struct {
 	Description           *string                                                                     `json:"description,omitempty"`
 	Version               *string                                                                     `json:"version,omitempty"`
 	Enabled               *bool                                                                       `json:"enabled,omitempty"`
-	Author                *string                                                                     `json:"author,omitempty"`
-	WebsiteUrl            *string                                                                     `json:"websiteUrl,omitempty"`
-	SourceCodeLocationUrl *string                                                                     `json:"sourceCodeLocationUrl,omitempty"`
-	IssueTrackerUrl       *string                                                                     `json:"issueTrackerUrl,omitempty"`
+	Author                NullableString                                                              `json:"author,omitempty"`
+	WebsiteUrl            NullableString                                                              `json:"websiteUrl,omitempty"`
+	SourceCodeLocationUrl NullableString                                                              `json:"sourceCodeLocationUrl,omitempty"`
+	IssueTrackerUrl       NullableString                                                              `json:"issueTrackerUrl,omitempty"`
 	Valid                 *bool                                                                       `json:"valid,omitempty"`
 	HasValidUpdate        *bool                                                                       `json:"hasValidUpdate,omitempty"`
 	Status                *string                                                                     `json:"status,omitempty"`
-	StatusMessage         *string                                                                     `json:"statusMessage,omitempty"`
+	StatusMessage         NullableString                                                              `json:"statusMessage,omitempty"`
 	Providers             []GetAppState200ResponseAllOfSpecsInnerTemplate                             `json:"providers,omitempty"`
 	Config                map[string]interface{}                                                      `json:"config,omitempty"`
 	OptionTypes           []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
@@ -254,132 +254,176 @@ func (o *ListPlugins200ResponseAllOfPluginsInner) SetEnabled(v bool) {
 	o.Enabled = &v
 }
 
-// GetAuthor returns the Author field value if set, zero value otherwise.
+// GetAuthor returns the Author field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListPlugins200ResponseAllOfPluginsInner) GetAuthor() string {
-	if o == nil || IsNil(o.Author) {
+	if o == nil || IsNil(o.Author.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Author
+	return *o.Author.Get()
 }
 
 // GetAuthorOk returns a tuple with the Author field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListPlugins200ResponseAllOfPluginsInner) GetAuthorOk() (*string, bool) {
-	if o == nil || IsNil(o.Author) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Author, true
+	return o.Author.Get(), o.Author.IsSet()
 }
 
 // IsSetAuthor returns a boolean if a field has been set.
 func (o *ListPlugins200ResponseAllOfPluginsInner) IsSetAuthor() bool {
-	if o != nil && !IsNil(o.Author) {
+	if o != nil && o.Author.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetAuthor gets a reference to the given string and assigns it to the Author field.
+// SetAuthor gets a reference to the given NullableString and assigns it to the Author field.
 func (o *ListPlugins200ResponseAllOfPluginsInner) SetAuthor(v string) {
-	o.Author = &v
+	o.Author.Set(&v)
 }
 
-// GetWebsiteUrl returns the WebsiteUrl field value if set, zero value otherwise.
+// SetAuthorNil sets the value for Author to be an explicit nil
+func (o *ListPlugins200ResponseAllOfPluginsInner) SetAuthorNil() {
+	o.Author.Set(nil)
+}
+
+// UnsetAuthor ensures that no value is present for Author, not even an explicit nil
+func (o *ListPlugins200ResponseAllOfPluginsInner) UnsetAuthor() {
+	o.Author.Unset()
+}
+
+// GetWebsiteUrl returns the WebsiteUrl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListPlugins200ResponseAllOfPluginsInner) GetWebsiteUrl() string {
-	if o == nil || IsNil(o.WebsiteUrl) {
+	if o == nil || IsNil(o.WebsiteUrl.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.WebsiteUrl
+	return *o.WebsiteUrl.Get()
 }
 
 // GetWebsiteUrlOk returns a tuple with the WebsiteUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListPlugins200ResponseAllOfPluginsInner) GetWebsiteUrlOk() (*string, bool) {
-	if o == nil || IsNil(o.WebsiteUrl) {
+	if o == nil {
 		return nil, false
 	}
-	return o.WebsiteUrl, true
+	return o.WebsiteUrl.Get(), o.WebsiteUrl.IsSet()
 }
 
 // IsSetWebsiteUrl returns a boolean if a field has been set.
 func (o *ListPlugins200ResponseAllOfPluginsInner) IsSetWebsiteUrl() bool {
-	if o != nil && !IsNil(o.WebsiteUrl) {
+	if o != nil && o.WebsiteUrl.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetWebsiteUrl gets a reference to the given string and assigns it to the WebsiteUrl field.
+// SetWebsiteUrl gets a reference to the given NullableString and assigns it to the WebsiteUrl field.
 func (o *ListPlugins200ResponseAllOfPluginsInner) SetWebsiteUrl(v string) {
-	o.WebsiteUrl = &v
+	o.WebsiteUrl.Set(&v)
 }
 
-// GetSourceCodeLocationUrl returns the SourceCodeLocationUrl field value if set, zero value otherwise.
+// SetWebsiteUrlNil sets the value for WebsiteUrl to be an explicit nil
+func (o *ListPlugins200ResponseAllOfPluginsInner) SetWebsiteUrlNil() {
+	o.WebsiteUrl.Set(nil)
+}
+
+// UnsetWebsiteUrl ensures that no value is present for WebsiteUrl, not even an explicit nil
+func (o *ListPlugins200ResponseAllOfPluginsInner) UnsetWebsiteUrl() {
+	o.WebsiteUrl.Unset()
+}
+
+// GetSourceCodeLocationUrl returns the SourceCodeLocationUrl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListPlugins200ResponseAllOfPluginsInner) GetSourceCodeLocationUrl() string {
-	if o == nil || IsNil(o.SourceCodeLocationUrl) {
+	if o == nil || IsNil(o.SourceCodeLocationUrl.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.SourceCodeLocationUrl
+	return *o.SourceCodeLocationUrl.Get()
 }
 
 // GetSourceCodeLocationUrlOk returns a tuple with the SourceCodeLocationUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListPlugins200ResponseAllOfPluginsInner) GetSourceCodeLocationUrlOk() (*string, bool) {
-	if o == nil || IsNil(o.SourceCodeLocationUrl) {
+	if o == nil {
 		return nil, false
 	}
-	return o.SourceCodeLocationUrl, true
+	return o.SourceCodeLocationUrl.Get(), o.SourceCodeLocationUrl.IsSet()
 }
 
 // IsSetSourceCodeLocationUrl returns a boolean if a field has been set.
 func (o *ListPlugins200ResponseAllOfPluginsInner) IsSetSourceCodeLocationUrl() bool {
-	if o != nil && !IsNil(o.SourceCodeLocationUrl) {
+	if o != nil && o.SourceCodeLocationUrl.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetSourceCodeLocationUrl gets a reference to the given string and assigns it to the SourceCodeLocationUrl field.
+// SetSourceCodeLocationUrl gets a reference to the given NullableString and assigns it to the SourceCodeLocationUrl field.
 func (o *ListPlugins200ResponseAllOfPluginsInner) SetSourceCodeLocationUrl(v string) {
-	o.SourceCodeLocationUrl = &v
+	o.SourceCodeLocationUrl.Set(&v)
 }
 
-// GetIssueTrackerUrl returns the IssueTrackerUrl field value if set, zero value otherwise.
+// SetSourceCodeLocationUrlNil sets the value for SourceCodeLocationUrl to be an explicit nil
+func (o *ListPlugins200ResponseAllOfPluginsInner) SetSourceCodeLocationUrlNil() {
+	o.SourceCodeLocationUrl.Set(nil)
+}
+
+// UnsetSourceCodeLocationUrl ensures that no value is present for SourceCodeLocationUrl, not even an explicit nil
+func (o *ListPlugins200ResponseAllOfPluginsInner) UnsetSourceCodeLocationUrl() {
+	o.SourceCodeLocationUrl.Unset()
+}
+
+// GetIssueTrackerUrl returns the IssueTrackerUrl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListPlugins200ResponseAllOfPluginsInner) GetIssueTrackerUrl() string {
-	if o == nil || IsNil(o.IssueTrackerUrl) {
+	if o == nil || IsNil(o.IssueTrackerUrl.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.IssueTrackerUrl
+	return *o.IssueTrackerUrl.Get()
 }
 
 // GetIssueTrackerUrlOk returns a tuple with the IssueTrackerUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListPlugins200ResponseAllOfPluginsInner) GetIssueTrackerUrlOk() (*string, bool) {
-	if o == nil || IsNil(o.IssueTrackerUrl) {
+	if o == nil {
 		return nil, false
 	}
-	return o.IssueTrackerUrl, true
+	return o.IssueTrackerUrl.Get(), o.IssueTrackerUrl.IsSet()
 }
 
 // IsSetIssueTrackerUrl returns a boolean if a field has been set.
 func (o *ListPlugins200ResponseAllOfPluginsInner) IsSetIssueTrackerUrl() bool {
-	if o != nil && !IsNil(o.IssueTrackerUrl) {
+	if o != nil && o.IssueTrackerUrl.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetIssueTrackerUrl gets a reference to the given string and assigns it to the IssueTrackerUrl field.
+// SetIssueTrackerUrl gets a reference to the given NullableString and assigns it to the IssueTrackerUrl field.
 func (o *ListPlugins200ResponseAllOfPluginsInner) SetIssueTrackerUrl(v string) {
-	o.IssueTrackerUrl = &v
+	o.IssueTrackerUrl.Set(&v)
+}
+
+// SetIssueTrackerUrlNil sets the value for IssueTrackerUrl to be an explicit nil
+func (o *ListPlugins200ResponseAllOfPluginsInner) SetIssueTrackerUrlNil() {
+	o.IssueTrackerUrl.Set(nil)
+}
+
+// UnsetIssueTrackerUrl ensures that no value is present for IssueTrackerUrl, not even an explicit nil
+func (o *ListPlugins200ResponseAllOfPluginsInner) UnsetIssueTrackerUrl() {
+	o.IssueTrackerUrl.Unset()
 }
 
 // GetValid returns the Valid field value if set, zero value otherwise.
@@ -478,36 +522,47 @@ func (o *ListPlugins200ResponseAllOfPluginsInner) SetStatus(v string) {
 	o.Status = &v
 }
 
-// GetStatusMessage returns the StatusMessage field value if set, zero value otherwise.
+// GetStatusMessage returns the StatusMessage field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListPlugins200ResponseAllOfPluginsInner) GetStatusMessage() string {
-	if o == nil || IsNil(o.StatusMessage) {
+	if o == nil || IsNil(o.StatusMessage.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.StatusMessage
+	return *o.StatusMessage.Get()
 }
 
 // GetStatusMessageOk returns a tuple with the StatusMessage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListPlugins200ResponseAllOfPluginsInner) GetStatusMessageOk() (*string, bool) {
-	if o == nil || IsNil(o.StatusMessage) {
+	if o == nil {
 		return nil, false
 	}
-	return o.StatusMessage, true
+	return o.StatusMessage.Get(), o.StatusMessage.IsSet()
 }
 
 // IsSetStatusMessage returns a boolean if a field has been set.
 func (o *ListPlugins200ResponseAllOfPluginsInner) IsSetStatusMessage() bool {
-	if o != nil && !IsNil(o.StatusMessage) {
+	if o != nil && o.StatusMessage.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetStatusMessage gets a reference to the given string and assigns it to the StatusMessage field.
+// SetStatusMessage gets a reference to the given NullableString and assigns it to the StatusMessage field.
 func (o *ListPlugins200ResponseAllOfPluginsInner) SetStatusMessage(v string) {
-	o.StatusMessage = &v
+	o.StatusMessage.Set(&v)
+}
+
+// SetStatusMessageNil sets the value for StatusMessage to be an explicit nil
+func (o *ListPlugins200ResponseAllOfPluginsInner) SetStatusMessageNil() {
+	o.StatusMessage.Set(nil)
+}
+
+// UnsetStatusMessage ensures that no value is present for StatusMessage, not even an explicit nil
+func (o *ListPlugins200ResponseAllOfPluginsInner) UnsetStatusMessage() {
+	o.StatusMessage.Unset()
 }
 
 // GetProviders returns the Providers field value if set, zero value otherwise.
@@ -698,17 +753,17 @@ func (o ListPlugins200ResponseAllOfPluginsInner) ToMap() (map[string]interface{}
 	if !IsNil(o.Enabled) {
 		toSerialize["enabled"] = o.Enabled
 	}
-	if !IsNil(o.Author) {
-		toSerialize["author"] = o.Author
+	if o.Author.IsSet() {
+		toSerialize["author"] = o.Author.Get()
 	}
-	if !IsNil(o.WebsiteUrl) {
-		toSerialize["websiteUrl"] = o.WebsiteUrl
+	if o.WebsiteUrl.IsSet() {
+		toSerialize["websiteUrl"] = o.WebsiteUrl.Get()
 	}
-	if !IsNil(o.SourceCodeLocationUrl) {
-		toSerialize["sourceCodeLocationUrl"] = o.SourceCodeLocationUrl
+	if o.SourceCodeLocationUrl.IsSet() {
+		toSerialize["sourceCodeLocationUrl"] = o.SourceCodeLocationUrl.Get()
 	}
-	if !IsNil(o.IssueTrackerUrl) {
-		toSerialize["issueTrackerUrl"] = o.IssueTrackerUrl
+	if o.IssueTrackerUrl.IsSet() {
+		toSerialize["issueTrackerUrl"] = o.IssueTrackerUrl.Get()
 	}
 	if !IsNil(o.Valid) {
 		toSerialize["valid"] = o.Valid
@@ -719,8 +774,8 @@ func (o ListPlugins200ResponseAllOfPluginsInner) ToMap() (map[string]interface{}
 	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status
 	}
-	if !IsNil(o.StatusMessage) {
-		toSerialize["statusMessage"] = o.StatusMessage
+	if o.StatusMessage.IsSet() {
+		toSerialize["statusMessage"] = o.StatusMessage.Get()
 	}
 	if !IsNil(o.Providers) {
 		toSerialize["providers"] = o.Providers

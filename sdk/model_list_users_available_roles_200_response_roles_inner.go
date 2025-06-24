@@ -20,12 +20,12 @@ var _ MappedNullable = &ListUsersAvailableRoles200ResponseRolesInner{}
 
 // ListUsersAvailableRoles200ResponseRolesInner struct for ListUsersAvailableRoles200ResponseRolesInner
 type ListUsersAvailableRoles200ResponseRolesInner struct {
-	Id                   *int64                                                                  `json:"id,omitempty"`
-	Authority            *string                                                                 `json:"authority,omitempty"`
-	Description          *string                                                                 `json:"description,omitempty"`
-	RoleType             *string                                                                 `json:"roleType,omitempty"`
-	Owner                *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"owner,omitempty"`
-	AdditionalProperties map[string]interface{}                                                  `json:",remain"`
+	Id                   *int64                                             `json:"id,omitempty"`
+	Authority            *string                                            `json:"authority,omitempty"`
+	Description          NullableString                                     `json:"description,omitempty"`
+	RoleType             *string                                            `json:"roleType,omitempty"`
+	Owner                *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"owner,omitempty"`
+	AdditionalProperties map[string]interface{}                             `json:",remain"`
 }
 
 type _ListUsersAvailableRoles200ResponseRolesInner ListUsersAvailableRoles200ResponseRolesInner
@@ -111,36 +111,47 @@ func (o *ListUsersAvailableRoles200ResponseRolesInner) SetAuthority(v string) {
 	o.Authority = &v
 }
 
-// GetDescription returns the Description field value if set, zero value otherwise.
+// GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListUsersAvailableRoles200ResponseRolesInner) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
+	if o == nil || IsNil(o.Description.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Description
+	return *o.Description.Get()
 }
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListUsersAvailableRoles200ResponseRolesInner) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Description, true
+	return o.Description.Get(), o.Description.IsSet()
 }
 
 // IsSetDescription returns a boolean if a field has been set.
 func (o *ListUsersAvailableRoles200ResponseRolesInner) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
+	if o != nil && o.Description.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDescription gets a reference to the given string and assigns it to the Description field.
+// SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *ListUsersAvailableRoles200ResponseRolesInner) SetDescription(v string) {
-	o.Description = &v
+	o.Description.Set(&v)
+}
+
+// SetDescriptionNil sets the value for Description to be an explicit nil
+func (o *ListUsersAvailableRoles200ResponseRolesInner) SetDescriptionNil() {
+	o.Description.Set(nil)
+}
+
+// UnsetDescription ensures that no value is present for Description, not even an explicit nil
+func (o *ListUsersAvailableRoles200ResponseRolesInner) UnsetDescription() {
+	o.Description.Unset()
 }
 
 // GetRoleType returns the RoleType field value if set, zero value otherwise.
@@ -176,9 +187,9 @@ func (o *ListUsersAvailableRoles200ResponseRolesInner) SetRoleType(v string) {
 }
 
 // GetOwner returns the Owner field value if set, zero value otherwise.
-func (o *ListUsersAvailableRoles200ResponseRolesInner) GetOwner() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *ListUsersAvailableRoles200ResponseRolesInner) GetOwner() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.Owner) {
-		var ret ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return *o.Owner
@@ -186,7 +197,7 @@ func (o *ListUsersAvailableRoles200ResponseRolesInner) GetOwner() ListApplianceS
 
 // GetOwnerOk returns a tuple with the Owner field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListUsersAvailableRoles200ResponseRolesInner) GetOwnerOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *ListUsersAvailableRoles200ResponseRolesInner) GetOwnerOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.Owner) {
 		return nil, false
 	}
@@ -202,8 +213,8 @@ func (o *ListUsersAvailableRoles200ResponseRolesInner) IsSetOwner() bool {
 	return false
 }
 
-// SetOwner gets a reference to the given ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the Owner field.
-func (o *ListUsersAvailableRoles200ResponseRolesInner) SetOwner(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetOwner gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Owner field.
+func (o *ListUsersAvailableRoles200ResponseRolesInner) SetOwner(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.Owner = &v
 }
 
@@ -223,8 +234,8 @@ func (o ListUsersAvailableRoles200ResponseRolesInner) ToMap() (map[string]interf
 	if !IsNil(o.Authority) {
 		toSerialize["authority"] = o.Authority
 	}
-	if !IsNil(o.Description) {
-		toSerialize["description"] = o.Description
+	if o.Description.IsSet() {
+		toSerialize["description"] = o.Description.Get()
 	}
 	if !IsNil(o.RoleType) {
 		toSerialize["roleType"] = o.RoleType

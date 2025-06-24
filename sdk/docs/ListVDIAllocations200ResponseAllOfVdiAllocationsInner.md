@@ -5,16 +5,16 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
-**Pool** | Pointer to [**ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
+**Pool** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **Instance** | Pointer to [**ListVDIAllocations200ResponseAllOfVdiAllocationsInnerInstance**](ListVDIAllocations200ResponseAllOfVdiAllocationsInnerInstance.md) |  | [optional] 
-**User** | Pointer to [**ListVDIAllocations200ResponseAllOfVdiAllocationsInnerUser**](ListVDIAllocations200ResponseAllOfVdiAllocationsInnerUser.md) |  | [optional] 
+**User** | Pointer to [**ListVDIPools200ResponseAllOfVdiPoolsInnerOwner**](ListVDIPools200ResponseAllOfVdiPoolsInnerOwner.md) |  | [optional] 
 **LocalUserCreated** | Pointer to **bool** |  | [optional] 
 **Persistent** | Pointer to **bool** |  | [optional] 
 **Status** | Pointer to **string** |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
-**LastUpdated** | Pointer to **time.Time** |  | [optional] 
-**LastReserved** | Pointer to **time.Time** |  | [optional] 
-**ReleaseDate** | Pointer to **time.Time** |  | [optional] 
+**LastUpdated** | Pointer to **NullableTime** |  | [optional] 
+**LastReserved** | Pointer to **NullableTime** |  | [optional] 
+**ReleaseDate** | Pointer to **NullableTime** |  | [optional] 
 
 ## Methods
 
@@ -62,20 +62,20 @@ HasId returns a boolean if a field has been set.
 
 ### GetPool
 
-`func (o *ListVDIAllocations200ResponseAllOfVdiAllocationsInner) GetPool() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *ListVDIAllocations200ResponseAllOfVdiAllocationsInner) GetPool() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetPool returns the Pool field if non-nil, zero value otherwise.
 
 ### GetPoolOk
 
-`func (o *ListVDIAllocations200ResponseAllOfVdiAllocationsInner) GetPoolOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *ListVDIAllocations200ResponseAllOfVdiAllocationsInner) GetPoolOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetPoolOk returns a tuple with the Pool field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPool
 
-`func (o *ListVDIAllocations200ResponseAllOfVdiAllocationsInner) SetPool(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *ListVDIAllocations200ResponseAllOfVdiAllocationsInner) SetPool(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetPool sets Pool field to given value.
 
@@ -112,20 +112,20 @@ HasInstance returns a boolean if a field has been set.
 
 ### GetUser
 
-`func (o *ListVDIAllocations200ResponseAllOfVdiAllocationsInner) GetUser() ListVDIAllocations200ResponseAllOfVdiAllocationsInnerUser`
+`func (o *ListVDIAllocations200ResponseAllOfVdiAllocationsInner) GetUser() ListVDIPools200ResponseAllOfVdiPoolsInnerOwner`
 
 GetUser returns the User field if non-nil, zero value otherwise.
 
 ### GetUserOk
 
-`func (o *ListVDIAllocations200ResponseAllOfVdiAllocationsInner) GetUserOk() (*ListVDIAllocations200ResponseAllOfVdiAllocationsInnerUser, bool)`
+`func (o *ListVDIAllocations200ResponseAllOfVdiAllocationsInner) GetUserOk() (*ListVDIPools200ResponseAllOfVdiPoolsInnerOwner, bool)`
 
 GetUserOk returns a tuple with the User field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUser
 
-`func (o *ListVDIAllocations200ResponseAllOfVdiAllocationsInner) SetUser(v ListVDIAllocations200ResponseAllOfVdiAllocationsInnerUser)`
+`func (o *ListVDIAllocations200ResponseAllOfVdiAllocationsInner) SetUser(v ListVDIPools200ResponseAllOfVdiPoolsInnerOwner)`
 
 SetUser sets User field to given value.
 
@@ -260,6 +260,16 @@ SetLastUpdated sets LastUpdated field to given value.
 
 HasLastUpdated returns a boolean if a field has been set.
 
+### SetLastUpdatedNil
+
+`func (o *ListVDIAllocations200ResponseAllOfVdiAllocationsInner) SetLastUpdatedNil(b bool)`
+
+ SetLastUpdatedNil sets the value for LastUpdated to be an explicit nil
+
+### UnsetLastUpdated
+`func (o *ListVDIAllocations200ResponseAllOfVdiAllocationsInner) UnsetLastUpdated()`
+
+UnsetLastUpdated ensures that no value is present for LastUpdated, not even an explicit nil
 ### GetLastReserved
 
 `func (o *ListVDIAllocations200ResponseAllOfVdiAllocationsInner) GetLastReserved() time.Time`
@@ -285,6 +295,16 @@ SetLastReserved sets LastReserved field to given value.
 
 HasLastReserved returns a boolean if a field has been set.
 
+### SetLastReservedNil
+
+`func (o *ListVDIAllocations200ResponseAllOfVdiAllocationsInner) SetLastReservedNil(b bool)`
+
+ SetLastReservedNil sets the value for LastReserved to be an explicit nil
+
+### UnsetLastReserved
+`func (o *ListVDIAllocations200ResponseAllOfVdiAllocationsInner) UnsetLastReserved()`
+
+UnsetLastReserved ensures that no value is present for LastReserved, not even an explicit nil
 ### GetReleaseDate
 
 `func (o *ListVDIAllocations200ResponseAllOfVdiAllocationsInner) GetReleaseDate() time.Time`
@@ -310,6 +330,16 @@ SetReleaseDate sets ReleaseDate field to given value.
 
 HasReleaseDate returns a boolean if a field has been set.
 
+### SetReleaseDateNil
+
+`func (o *ListVDIAllocations200ResponseAllOfVdiAllocationsInner) SetReleaseDateNil(b bool)`
+
+ SetReleaseDateNil sets the value for ReleaseDate to be an explicit nil
+
+### UnsetReleaseDate
+`func (o *ListVDIAllocations200ResponseAllOfVdiAllocationsInner) UnsetReleaseDate()`
+
+UnsetReleaseDate ensures that no value is present for ReleaseDate, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

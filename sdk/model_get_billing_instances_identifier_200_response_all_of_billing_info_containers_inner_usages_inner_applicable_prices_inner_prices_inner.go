@@ -25,7 +25,7 @@ type GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerUsag
 	CostPerUnit          *float32               `json:"costPerUnit,omitempty"`
 	Cost                 *float32               `json:"cost,omitempty"`
 	Price                *float32               `json:"price,omitempty"`
-	Quantity             *int64                 `json:"quantity,omitempty"`
+	Quantity             NullableInt64          `json:"quantity,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -208,36 +208,47 @@ func (o *GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInner
 	o.Price = &v
 }
 
-// GetQuantity returns the Quantity field value if set, zero value otherwise.
+// GetQuantity returns the Quantity field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerUsagesInnerApplicablePricesInnerPricesInner) GetQuantity() int64 {
-	if o == nil || IsNil(o.Quantity) {
+	if o == nil || IsNil(o.Quantity.Get()) {
 		var ret int64
 		return ret
 	}
-	return *o.Quantity
+	return *o.Quantity.Get()
 }
 
 // GetQuantityOk returns a tuple with the Quantity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerUsagesInnerApplicablePricesInnerPricesInner) GetQuantityOk() (*int64, bool) {
-	if o == nil || IsNil(o.Quantity) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Quantity, true
+	return o.Quantity.Get(), o.Quantity.IsSet()
 }
 
 // IsSetQuantity returns a boolean if a field has been set.
 func (o *GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerUsagesInnerApplicablePricesInnerPricesInner) IsSetQuantity() bool {
-	if o != nil && !IsNil(o.Quantity) {
+	if o != nil && o.Quantity.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetQuantity gets a reference to the given int64 and assigns it to the Quantity field.
+// SetQuantity gets a reference to the given NullableInt64 and assigns it to the Quantity field.
 func (o *GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerUsagesInnerApplicablePricesInnerPricesInner) SetQuantity(v int64) {
-	o.Quantity = &v
+	o.Quantity.Set(&v)
+}
+
+// SetQuantityNil sets the value for Quantity to be an explicit nil
+func (o *GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerUsagesInnerApplicablePricesInnerPricesInner) SetQuantityNil() {
+	o.Quantity.Set(nil)
+}
+
+// UnsetQuantity ensures that no value is present for Quantity, not even an explicit nil
+func (o *GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerUsagesInnerApplicablePricesInnerPricesInner) UnsetQuantity() {
+	o.Quantity.Unset()
 }
 
 func (o GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerUsagesInnerApplicablePricesInnerPricesInner) MarshalJSON() ([]byte, error) {
@@ -265,8 +276,8 @@ func (o GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerU
 	if !IsNil(o.Price) {
 		toSerialize["price"] = o.Price
 	}
-	if !IsNil(o.Quantity) {
-		toSerialize["quantity"] = o.Quantity
+	if o.Quantity.IsSet() {
+		toSerialize["quantity"] = o.Quantity.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {

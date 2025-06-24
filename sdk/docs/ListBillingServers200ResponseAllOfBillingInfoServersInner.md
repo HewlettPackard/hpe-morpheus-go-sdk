@@ -21,11 +21,11 @@ Name | Type | Description | Notes
 **FoundPricing** | Pointer to **bool** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **ServerUUID** | Pointer to **string** |  | [optional] 
-**ServerUniqueId** | Pointer to **string** |  | [optional] 
-**ServerExternalId** | Pointer to **string** |  | [optional] 
-**ServerInternalId** | Pointer to **string** |  | [optional] 
-**ResourcePoolId** | Pointer to **string** |  | [optional] 
-**ResourcePoolName** | Pointer to **string** |  | [optional] 
+**ServerUniqueId** | Pointer to **NullableString** |  | [optional] 
+**ServerExternalId** | Pointer to **NullableString** |  | [optional] 
+**ServerInternalId** | Pointer to **NullableString** |  | [optional] 
+**ResourcePoolId** | Pointer to **NullableString** |  | [optional] 
+**ResourcePoolName** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -496,6 +496,16 @@ SetServerUniqueId sets ServerUniqueId field to given value.
 
 HasServerUniqueId returns a boolean if a field has been set.
 
+### SetServerUniqueIdNil
+
+`func (o *ListBillingServers200ResponseAllOfBillingInfoServersInner) SetServerUniqueIdNil(b bool)`
+
+ SetServerUniqueIdNil sets the value for ServerUniqueId to be an explicit nil
+
+### UnsetServerUniqueId
+`func (o *ListBillingServers200ResponseAllOfBillingInfoServersInner) UnsetServerUniqueId()`
+
+UnsetServerUniqueId ensures that no value is present for ServerUniqueId, not even an explicit nil
 ### GetServerExternalId
 
 `func (o *ListBillingServers200ResponseAllOfBillingInfoServersInner) GetServerExternalId() string`
@@ -521,6 +531,16 @@ SetServerExternalId sets ServerExternalId field to given value.
 
 HasServerExternalId returns a boolean if a field has been set.
 
+### SetServerExternalIdNil
+
+`func (o *ListBillingServers200ResponseAllOfBillingInfoServersInner) SetServerExternalIdNil(b bool)`
+
+ SetServerExternalIdNil sets the value for ServerExternalId to be an explicit nil
+
+### UnsetServerExternalId
+`func (o *ListBillingServers200ResponseAllOfBillingInfoServersInner) UnsetServerExternalId()`
+
+UnsetServerExternalId ensures that no value is present for ServerExternalId, not even an explicit nil
 ### GetServerInternalId
 
 `func (o *ListBillingServers200ResponseAllOfBillingInfoServersInner) GetServerInternalId() string`
@@ -546,6 +566,16 @@ SetServerInternalId sets ServerInternalId field to given value.
 
 HasServerInternalId returns a boolean if a field has been set.
 
+### SetServerInternalIdNil
+
+`func (o *ListBillingServers200ResponseAllOfBillingInfoServersInner) SetServerInternalIdNil(b bool)`
+
+ SetServerInternalIdNil sets the value for ServerInternalId to be an explicit nil
+
+### UnsetServerInternalId
+`func (o *ListBillingServers200ResponseAllOfBillingInfoServersInner) UnsetServerInternalId()`
+
+UnsetServerInternalId ensures that no value is present for ServerInternalId, not even an explicit nil
 ### GetResourcePoolId
 
 `func (o *ListBillingServers200ResponseAllOfBillingInfoServersInner) GetResourcePoolId() string`
@@ -571,6 +601,16 @@ SetResourcePoolId sets ResourcePoolId field to given value.
 
 HasResourcePoolId returns a boolean if a field has been set.
 
+### SetResourcePoolIdNil
+
+`func (o *ListBillingServers200ResponseAllOfBillingInfoServersInner) SetResourcePoolIdNil(b bool)`
+
+ SetResourcePoolIdNil sets the value for ResourcePoolId to be an explicit nil
+
+### UnsetResourcePoolId
+`func (o *ListBillingServers200ResponseAllOfBillingInfoServersInner) UnsetResourcePoolId()`
+
+UnsetResourcePoolId ensures that no value is present for ResourcePoolId, not even an explicit nil
 ### GetResourcePoolName
 
 `func (o *ListBillingServers200ResponseAllOfBillingInfoServersInner) GetResourcePoolName() string`
@@ -596,6 +636,16 @@ SetResourcePoolName sets ResourcePoolName field to given value.
 
 HasResourcePoolName returns a boolean if a field has been set.
 
+### SetResourcePoolNameNil
+
+`func (o *ListBillingServers200ResponseAllOfBillingInfoServersInner) SetResourcePoolNameNil(b bool)`
+
+ SetResourcePoolNameNil sets the value for ResourcePoolName to be an explicit nil
+
+### UnsetResourcePoolName
+`func (o *ListBillingServers200ResponseAllOfBillingInfoServersInner) UnsetResourcePoolName()`
+
+UnsetResourcePoolName ensures that no value is present for ResourcePoolName, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

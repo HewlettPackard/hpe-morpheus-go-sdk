@@ -25,10 +25,10 @@ type GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInner struct {
 	Price                *float32                                                                                 `json:"price,omitempty"`
 	CreatedByUser        *string                                                                                  `json:"createdByUser,omitempty"`
 	CreatedByUserId      *int64                                                                                   `json:"createdByUserId,omitempty"`
-	SiteId               *string                                                                                  `json:"siteId,omitempty"`
-	SiteName             *string                                                                                  `json:"siteName,omitempty"`
-	SiteUUID             *string                                                                                  `json:"siteUUID,omitempty"`
-	SiteCode             *string                                                                                  `json:"siteCode,omitempty"`
+	SiteId               NullableString                                                                           `json:"siteId,omitempty"`
+	SiteName             NullableString                                                                           `json:"siteName,omitempty"`
+	SiteUUID             NullableString                                                                           `json:"siteUUID,omitempty"`
+	SiteCode             NullableString                                                                           `json:"siteCode,omitempty"`
 	Currency             *string                                                                                  `json:"currency,omitempty"`
 	StartDate            *time.Time                                                                               `json:"startDate,omitempty"`
 	EndDate              *time.Time                                                                               `json:"endDate,omitempty"`
@@ -189,132 +189,176 @@ func (o *GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInner) SetC
 	o.CreatedByUserId = &v
 }
 
-// GetSiteId returns the SiteId field value if set, zero value otherwise.
+// GetSiteId returns the SiteId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInner) GetSiteId() string {
-	if o == nil || IsNil(o.SiteId) {
+	if o == nil || IsNil(o.SiteId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.SiteId
+	return *o.SiteId.Get()
 }
 
 // GetSiteIdOk returns a tuple with the SiteId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInner) GetSiteIdOk() (*string, bool) {
-	if o == nil || IsNil(o.SiteId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.SiteId, true
+	return o.SiteId.Get(), o.SiteId.IsSet()
 }
 
 // IsSetSiteId returns a boolean if a field has been set.
 func (o *GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInner) IsSetSiteId() bool {
-	if o != nil && !IsNil(o.SiteId) {
+	if o != nil && o.SiteId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetSiteId gets a reference to the given string and assigns it to the SiteId field.
+// SetSiteId gets a reference to the given NullableString and assigns it to the SiteId field.
 func (o *GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInner) SetSiteId(v string) {
-	o.SiteId = &v
+	o.SiteId.Set(&v)
 }
 
-// GetSiteName returns the SiteName field value if set, zero value otherwise.
+// SetSiteIdNil sets the value for SiteId to be an explicit nil
+func (o *GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInner) SetSiteIdNil() {
+	o.SiteId.Set(nil)
+}
+
+// UnsetSiteId ensures that no value is present for SiteId, not even an explicit nil
+func (o *GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInner) UnsetSiteId() {
+	o.SiteId.Unset()
+}
+
+// GetSiteName returns the SiteName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInner) GetSiteName() string {
-	if o == nil || IsNil(o.SiteName) {
+	if o == nil || IsNil(o.SiteName.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.SiteName
+	return *o.SiteName.Get()
 }
 
 // GetSiteNameOk returns a tuple with the SiteName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInner) GetSiteNameOk() (*string, bool) {
-	if o == nil || IsNil(o.SiteName) {
+	if o == nil {
 		return nil, false
 	}
-	return o.SiteName, true
+	return o.SiteName.Get(), o.SiteName.IsSet()
 }
 
 // IsSetSiteName returns a boolean if a field has been set.
 func (o *GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInner) IsSetSiteName() bool {
-	if o != nil && !IsNil(o.SiteName) {
+	if o != nil && o.SiteName.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetSiteName gets a reference to the given string and assigns it to the SiteName field.
+// SetSiteName gets a reference to the given NullableString and assigns it to the SiteName field.
 func (o *GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInner) SetSiteName(v string) {
-	o.SiteName = &v
+	o.SiteName.Set(&v)
 }
 
-// GetSiteUUID returns the SiteUUID field value if set, zero value otherwise.
+// SetSiteNameNil sets the value for SiteName to be an explicit nil
+func (o *GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInner) SetSiteNameNil() {
+	o.SiteName.Set(nil)
+}
+
+// UnsetSiteName ensures that no value is present for SiteName, not even an explicit nil
+func (o *GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInner) UnsetSiteName() {
+	o.SiteName.Unset()
+}
+
+// GetSiteUUID returns the SiteUUID field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInner) GetSiteUUID() string {
-	if o == nil || IsNil(o.SiteUUID) {
+	if o == nil || IsNil(o.SiteUUID.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.SiteUUID
+	return *o.SiteUUID.Get()
 }
 
 // GetSiteUUIDOk returns a tuple with the SiteUUID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInner) GetSiteUUIDOk() (*string, bool) {
-	if o == nil || IsNil(o.SiteUUID) {
+	if o == nil {
 		return nil, false
 	}
-	return o.SiteUUID, true
+	return o.SiteUUID.Get(), o.SiteUUID.IsSet()
 }
 
 // IsSetSiteUUID returns a boolean if a field has been set.
 func (o *GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInner) IsSetSiteUUID() bool {
-	if o != nil && !IsNil(o.SiteUUID) {
+	if o != nil && o.SiteUUID.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetSiteUUID gets a reference to the given string and assigns it to the SiteUUID field.
+// SetSiteUUID gets a reference to the given NullableString and assigns it to the SiteUUID field.
 func (o *GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInner) SetSiteUUID(v string) {
-	o.SiteUUID = &v
+	o.SiteUUID.Set(&v)
 }
 
-// GetSiteCode returns the SiteCode field value if set, zero value otherwise.
+// SetSiteUUIDNil sets the value for SiteUUID to be an explicit nil
+func (o *GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInner) SetSiteUUIDNil() {
+	o.SiteUUID.Set(nil)
+}
+
+// UnsetSiteUUID ensures that no value is present for SiteUUID, not even an explicit nil
+func (o *GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInner) UnsetSiteUUID() {
+	o.SiteUUID.Unset()
+}
+
+// GetSiteCode returns the SiteCode field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInner) GetSiteCode() string {
-	if o == nil || IsNil(o.SiteCode) {
+	if o == nil || IsNil(o.SiteCode.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.SiteCode
+	return *o.SiteCode.Get()
 }
 
 // GetSiteCodeOk returns a tuple with the SiteCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInner) GetSiteCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.SiteCode) {
+	if o == nil {
 		return nil, false
 	}
-	return o.SiteCode, true
+	return o.SiteCode.Get(), o.SiteCode.IsSet()
 }
 
 // IsSetSiteCode returns a boolean if a field has been set.
 func (o *GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInner) IsSetSiteCode() bool {
-	if o != nil && !IsNil(o.SiteCode) {
+	if o != nil && o.SiteCode.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetSiteCode gets a reference to the given string and assigns it to the SiteCode field.
+// SetSiteCode gets a reference to the given NullableString and assigns it to the SiteCode field.
 func (o *GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInner) SetSiteCode(v string) {
-	o.SiteCode = &v
+	o.SiteCode.Set(&v)
+}
+
+// SetSiteCodeNil sets the value for SiteCode to be an explicit nil
+func (o *GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInner) SetSiteCodeNil() {
+	o.SiteCode.Set(nil)
+}
+
+// UnsetSiteCode ensures that no value is present for SiteCode, not even an explicit nil
+func (o *GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInner) UnsetSiteCode() {
+	o.SiteCode.Unset()
 }
 
 // GetCurrency returns the Currency field value if set, zero value otherwise.
@@ -659,17 +703,17 @@ func (o GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInner) ToMap
 	if !IsNil(o.CreatedByUserId) {
 		toSerialize["createdByUserId"] = o.CreatedByUserId
 	}
-	if !IsNil(o.SiteId) {
-		toSerialize["siteId"] = o.SiteId
+	if o.SiteId.IsSet() {
+		toSerialize["siteId"] = o.SiteId.Get()
 	}
-	if !IsNil(o.SiteName) {
-		toSerialize["siteName"] = o.SiteName
+	if o.SiteName.IsSet() {
+		toSerialize["siteName"] = o.SiteName.Get()
 	}
-	if !IsNil(o.SiteUUID) {
-		toSerialize["siteUUID"] = o.SiteUUID
+	if o.SiteUUID.IsSet() {
+		toSerialize["siteUUID"] = o.SiteUUID.Get()
 	}
-	if !IsNil(o.SiteCode) {
-		toSerialize["siteCode"] = o.SiteCode
+	if o.SiteCode.IsSet() {
+		toSerialize["siteCode"] = o.SiteCode.Get()
 	}
 	if !IsNil(o.Currency) {
 		toSerialize["currency"] = o.Currency

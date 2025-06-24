@@ -29,11 +29,11 @@ type AddClusterRequestClusterServerVolumesInner struct {
 	// Size of the LV to be created in GBs  Default is from the service plan
 	Size *int64 `json:"size,omitempty"`
 	// Can be used to select pre-existing LV choices from Morpheus
-	SizeId *string `json:"sizeId,omitempty"`
+	SizeId NullableString `json:"sizeId,omitempty"`
 	// Identifier for LV type
 	StorageType *int64 `json:"storageType,omitempty"`
 	// The ID of the specific datastore. Auto selection can be specified as auto or `autoCluster` (for clusters).
-	DatastoreId          string                 `json:"datastoreId"`
+	DatastoreId          NullableString         `json:"datastoreId"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -43,7 +43,7 @@ type _AddClusterRequestClusterServerVolumesInner AddClusterRequestClusterServerV
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddClusterRequestClusterServerVolumesInner(name string, datastoreId string) *AddClusterRequestClusterServerVolumesInner {
+func NewAddClusterRequestClusterServerVolumesInner(name string, datastoreId NullableString) *AddClusterRequestClusterServerVolumesInner {
 	this := AddClusterRequestClusterServerVolumesInner{}
 	var id int64 = -1
 	this.Id = &id
@@ -188,36 +188,47 @@ func (o *AddClusterRequestClusterServerVolumesInner) SetSize(v int64) {
 	o.Size = &v
 }
 
-// GetSizeId returns the SizeId field value if set, zero value otherwise.
+// GetSizeId returns the SizeId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AddClusterRequestClusterServerVolumesInner) GetSizeId() string {
-	if o == nil || IsNil(o.SizeId) {
+	if o == nil || IsNil(o.SizeId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.SizeId
+	return *o.SizeId.Get()
 }
 
 // GetSizeIdOk returns a tuple with the SizeId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AddClusterRequestClusterServerVolumesInner) GetSizeIdOk() (*string, bool) {
-	if o == nil || IsNil(o.SizeId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.SizeId, true
+	return o.SizeId.Get(), o.SizeId.IsSet()
 }
 
 // IsSetSizeId returns a boolean if a field has been set.
 func (o *AddClusterRequestClusterServerVolumesInner) IsSetSizeId() bool {
-	if o != nil && !IsNil(o.SizeId) {
+	if o != nil && o.SizeId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetSizeId gets a reference to the given string and assigns it to the SizeId field.
+// SetSizeId gets a reference to the given NullableString and assigns it to the SizeId field.
 func (o *AddClusterRequestClusterServerVolumesInner) SetSizeId(v string) {
-	o.SizeId = &v
+	o.SizeId.Set(&v)
+}
+
+// SetSizeIdNil sets the value for SizeId to be an explicit nil
+func (o *AddClusterRequestClusterServerVolumesInner) SetSizeIdNil() {
+	o.SizeId.Set(nil)
+}
+
+// UnsetSizeId ensures that no value is present for SizeId, not even an explicit nil
+func (o *AddClusterRequestClusterServerVolumesInner) UnsetSizeId() {
+	o.SizeId.Unset()
 }
 
 // GetStorageType returns the StorageType field value if set, zero value otherwise.
@@ -253,27 +264,29 @@ func (o *AddClusterRequestClusterServerVolumesInner) SetStorageType(v int64) {
 }
 
 // GetDatastoreId returns the DatastoreId field value
+// If the value is explicit nil, the zero value for string will be returned
 func (o *AddClusterRequestClusterServerVolumesInner) GetDatastoreId() string {
-	if o == nil {
+	if o == nil || o.DatastoreId.Get() == nil {
 		var ret string
 		return ret
 	}
 
-	return o.DatastoreId
+	return *o.DatastoreId.Get()
 }
 
 // GetDatastoreIdOk returns a tuple with the DatastoreId field value
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AddClusterRequestClusterServerVolumesInner) GetDatastoreIdOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.DatastoreId, true
+	return o.DatastoreId.Get(), o.DatastoreId.IsSet()
 }
 
 // SetDatastoreId sets field value
 func (o *AddClusterRequestClusterServerVolumesInner) SetDatastoreId(v string) {
-	o.DatastoreId = v
+	o.DatastoreId.Set(&v)
 }
 
 func (o AddClusterRequestClusterServerVolumesInner) MarshalJSON() ([]byte, error) {
@@ -296,13 +309,13 @@ func (o AddClusterRequestClusterServerVolumesInner) ToMap() (map[string]interfac
 	if !IsNil(o.Size) {
 		toSerialize["size"] = o.Size
 	}
-	if !IsNil(o.SizeId) {
-		toSerialize["sizeId"] = o.SizeId
+	if o.SizeId.IsSet() {
+		toSerialize["sizeId"] = o.SizeId.Get()
 	}
 	if !IsNil(o.StorageType) {
 		toSerialize["storageType"] = o.StorageType
 	}
-	toSerialize["datastoreId"] = o.DatastoreId
+	toSerialize["datastoreId"] = o.DatastoreId.Get()
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value

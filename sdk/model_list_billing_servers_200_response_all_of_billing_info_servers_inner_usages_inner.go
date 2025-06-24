@@ -26,10 +26,10 @@ type ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner struct
 	AccountName          *string                                                                                     `json:"accountName,omitempty"`
 	Volumes              []ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolumesInner          `json:"volumes,omitempty"`
 	MaxMemory            *int64                                                                                      `json:"maxMemory,omitempty"`
-	MaxCpu               *string                                                                                     `json:"maxCpu,omitempty"`
+	MaxCpu               NullableString                                                                              `json:"maxCpu,omitempty"`
 	MaxCores             *int64                                                                                      `json:"maxCores,omitempty"`
-	ServerExternalId     *string                                                                                     `json:"serverExternalId,omitempty"`
-	ServerInternalId     *string                                                                                     `json:"serverInternalId,omitempty"`
+	ServerExternalId     NullableString                                                                              `json:"serverExternalId,omitempty"`
+	ServerInternalId     NullableString                                                                              `json:"serverInternalId,omitempty"`
 	PlanName             *string                                                                                     `json:"planName,omitempty"`
 	HourlyPrice          *float32                                                                                    `json:"hourlyPrice,omitempty"`
 	HourlyCost           *float32                                                                                    `json:"hourlyCost,omitempty"`
@@ -39,10 +39,10 @@ type ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner struct
 	Price                *float32                                                                                    `json:"price,omitempty"`
 	CreatedByUser        *string                                                                                     `json:"createdByUser,omitempty"`
 	CreatedByUserId      *int64                                                                                      `json:"createdByUserId,omitempty"`
-	SiteId               *string                                                                                     `json:"siteId,omitempty"`
-	SiteName             *string                                                                                     `json:"siteName,omitempty"`
-	SiteUUID             *string                                                                                     `json:"siteUUID,omitempty"`
-	SiteCode             *string                                                                                     `json:"siteCode,omitempty"`
+	SiteId               NullableString                                                                              `json:"siteId,omitempty"`
+	SiteName             NullableString                                                                              `json:"siteName,omitempty"`
+	SiteUUID             NullableString                                                                              `json:"siteUUID,omitempty"`
+	SiteCode             NullableString                                                                              `json:"siteCode,omitempty"`
 	StartDate            *time.Time                                                                                  `json:"startDate,omitempty"`
 	EndDate              *time.Time                                                                                  `json:"endDate,omitempty"`
 	Status               *string                                                                                     `json:"status,omitempty"`
@@ -50,8 +50,8 @@ type ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner struct
 	ApplicablePrices     []ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerApplicablePricesInner `json:"applicablePrices,omitempty"`
 	ServicePlanId        *int64                                                                                      `json:"servicePlanId,omitempty"`
 	ServicePlanName      *string                                                                                     `json:"servicePlanName,omitempty"`
-	ResourcePoolId       *string                                                                                     `json:"resourcePoolId,omitempty"`
-	ResourcePoolName     *string                                                                                     `json:"resourcePoolName,omitempty"`
+	ResourcePoolId       NullableString                                                                              `json:"resourcePoolId,omitempty"`
+	ResourcePoolName     NullableString                                                                              `json:"resourcePoolName,omitempty"`
 	AdditionalProperties map[string]interface{}                                                                      `json:",remain"`
 }
 
@@ -234,36 +234,47 @@ func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) S
 	o.MaxMemory = &v
 }
 
-// GetMaxCpu returns the MaxCpu field value if set, zero value otherwise.
+// GetMaxCpu returns the MaxCpu field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) GetMaxCpu() string {
-	if o == nil || IsNil(o.MaxCpu) {
+	if o == nil || IsNil(o.MaxCpu.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.MaxCpu
+	return *o.MaxCpu.Get()
 }
 
 // GetMaxCpuOk returns a tuple with the MaxCpu field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) GetMaxCpuOk() (*string, bool) {
-	if o == nil || IsNil(o.MaxCpu) {
+	if o == nil {
 		return nil, false
 	}
-	return o.MaxCpu, true
+	return o.MaxCpu.Get(), o.MaxCpu.IsSet()
 }
 
 // IsSetMaxCpu returns a boolean if a field has been set.
 func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) IsSetMaxCpu() bool {
-	if o != nil && !IsNil(o.MaxCpu) {
+	if o != nil && o.MaxCpu.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetMaxCpu gets a reference to the given string and assigns it to the MaxCpu field.
+// SetMaxCpu gets a reference to the given NullableString and assigns it to the MaxCpu field.
 func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) SetMaxCpu(v string) {
-	o.MaxCpu = &v
+	o.MaxCpu.Set(&v)
+}
+
+// SetMaxCpuNil sets the value for MaxCpu to be an explicit nil
+func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) SetMaxCpuNil() {
+	o.MaxCpu.Set(nil)
+}
+
+// UnsetMaxCpu ensures that no value is present for MaxCpu, not even an explicit nil
+func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) UnsetMaxCpu() {
+	o.MaxCpu.Unset()
 }
 
 // GetMaxCores returns the MaxCores field value if set, zero value otherwise.
@@ -298,68 +309,90 @@ func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) S
 	o.MaxCores = &v
 }
 
-// GetServerExternalId returns the ServerExternalId field value if set, zero value otherwise.
+// GetServerExternalId returns the ServerExternalId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) GetServerExternalId() string {
-	if o == nil || IsNil(o.ServerExternalId) {
+	if o == nil || IsNil(o.ServerExternalId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ServerExternalId
+	return *o.ServerExternalId.Get()
 }
 
 // GetServerExternalIdOk returns a tuple with the ServerExternalId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) GetServerExternalIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ServerExternalId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ServerExternalId, true
+	return o.ServerExternalId.Get(), o.ServerExternalId.IsSet()
 }
 
 // IsSetServerExternalId returns a boolean if a field has been set.
 func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) IsSetServerExternalId() bool {
-	if o != nil && !IsNil(o.ServerExternalId) {
+	if o != nil && o.ServerExternalId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetServerExternalId gets a reference to the given string and assigns it to the ServerExternalId field.
+// SetServerExternalId gets a reference to the given NullableString and assigns it to the ServerExternalId field.
 func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) SetServerExternalId(v string) {
-	o.ServerExternalId = &v
+	o.ServerExternalId.Set(&v)
 }
 
-// GetServerInternalId returns the ServerInternalId field value if set, zero value otherwise.
+// SetServerExternalIdNil sets the value for ServerExternalId to be an explicit nil
+func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) SetServerExternalIdNil() {
+	o.ServerExternalId.Set(nil)
+}
+
+// UnsetServerExternalId ensures that no value is present for ServerExternalId, not even an explicit nil
+func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) UnsetServerExternalId() {
+	o.ServerExternalId.Unset()
+}
+
+// GetServerInternalId returns the ServerInternalId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) GetServerInternalId() string {
-	if o == nil || IsNil(o.ServerInternalId) {
+	if o == nil || IsNil(o.ServerInternalId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ServerInternalId
+	return *o.ServerInternalId.Get()
 }
 
 // GetServerInternalIdOk returns a tuple with the ServerInternalId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) GetServerInternalIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ServerInternalId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ServerInternalId, true
+	return o.ServerInternalId.Get(), o.ServerInternalId.IsSet()
 }
 
 // IsSetServerInternalId returns a boolean if a field has been set.
 func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) IsSetServerInternalId() bool {
-	if o != nil && !IsNil(o.ServerInternalId) {
+	if o != nil && o.ServerInternalId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetServerInternalId gets a reference to the given string and assigns it to the ServerInternalId field.
+// SetServerInternalId gets a reference to the given NullableString and assigns it to the ServerInternalId field.
 func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) SetServerInternalId(v string) {
-	o.ServerInternalId = &v
+	o.ServerInternalId.Set(&v)
+}
+
+// SetServerInternalIdNil sets the value for ServerInternalId to be an explicit nil
+func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) SetServerInternalIdNil() {
+	o.ServerInternalId.Set(nil)
+}
+
+// UnsetServerInternalId ensures that no value is present for ServerInternalId, not even an explicit nil
+func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) UnsetServerInternalId() {
+	o.ServerInternalId.Unset()
 }
 
 // GetPlanName returns the PlanName field value if set, zero value otherwise.
@@ -650,132 +683,176 @@ func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) S
 	o.CreatedByUserId = &v
 }
 
-// GetSiteId returns the SiteId field value if set, zero value otherwise.
+// GetSiteId returns the SiteId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) GetSiteId() string {
-	if o == nil || IsNil(o.SiteId) {
+	if o == nil || IsNil(o.SiteId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.SiteId
+	return *o.SiteId.Get()
 }
 
 // GetSiteIdOk returns a tuple with the SiteId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) GetSiteIdOk() (*string, bool) {
-	if o == nil || IsNil(o.SiteId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.SiteId, true
+	return o.SiteId.Get(), o.SiteId.IsSet()
 }
 
 // IsSetSiteId returns a boolean if a field has been set.
 func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) IsSetSiteId() bool {
-	if o != nil && !IsNil(o.SiteId) {
+	if o != nil && o.SiteId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetSiteId gets a reference to the given string and assigns it to the SiteId field.
+// SetSiteId gets a reference to the given NullableString and assigns it to the SiteId field.
 func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) SetSiteId(v string) {
-	o.SiteId = &v
+	o.SiteId.Set(&v)
 }
 
-// GetSiteName returns the SiteName field value if set, zero value otherwise.
+// SetSiteIdNil sets the value for SiteId to be an explicit nil
+func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) SetSiteIdNil() {
+	o.SiteId.Set(nil)
+}
+
+// UnsetSiteId ensures that no value is present for SiteId, not even an explicit nil
+func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) UnsetSiteId() {
+	o.SiteId.Unset()
+}
+
+// GetSiteName returns the SiteName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) GetSiteName() string {
-	if o == nil || IsNil(o.SiteName) {
+	if o == nil || IsNil(o.SiteName.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.SiteName
+	return *o.SiteName.Get()
 }
 
 // GetSiteNameOk returns a tuple with the SiteName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) GetSiteNameOk() (*string, bool) {
-	if o == nil || IsNil(o.SiteName) {
+	if o == nil {
 		return nil, false
 	}
-	return o.SiteName, true
+	return o.SiteName.Get(), o.SiteName.IsSet()
 }
 
 // IsSetSiteName returns a boolean if a field has been set.
 func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) IsSetSiteName() bool {
-	if o != nil && !IsNil(o.SiteName) {
+	if o != nil && o.SiteName.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetSiteName gets a reference to the given string and assigns it to the SiteName field.
+// SetSiteName gets a reference to the given NullableString and assigns it to the SiteName field.
 func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) SetSiteName(v string) {
-	o.SiteName = &v
+	o.SiteName.Set(&v)
 }
 
-// GetSiteUUID returns the SiteUUID field value if set, zero value otherwise.
+// SetSiteNameNil sets the value for SiteName to be an explicit nil
+func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) SetSiteNameNil() {
+	o.SiteName.Set(nil)
+}
+
+// UnsetSiteName ensures that no value is present for SiteName, not even an explicit nil
+func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) UnsetSiteName() {
+	o.SiteName.Unset()
+}
+
+// GetSiteUUID returns the SiteUUID field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) GetSiteUUID() string {
-	if o == nil || IsNil(o.SiteUUID) {
+	if o == nil || IsNil(o.SiteUUID.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.SiteUUID
+	return *o.SiteUUID.Get()
 }
 
 // GetSiteUUIDOk returns a tuple with the SiteUUID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) GetSiteUUIDOk() (*string, bool) {
-	if o == nil || IsNil(o.SiteUUID) {
+	if o == nil {
 		return nil, false
 	}
-	return o.SiteUUID, true
+	return o.SiteUUID.Get(), o.SiteUUID.IsSet()
 }
 
 // IsSetSiteUUID returns a boolean if a field has been set.
 func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) IsSetSiteUUID() bool {
-	if o != nil && !IsNil(o.SiteUUID) {
+	if o != nil && o.SiteUUID.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetSiteUUID gets a reference to the given string and assigns it to the SiteUUID field.
+// SetSiteUUID gets a reference to the given NullableString and assigns it to the SiteUUID field.
 func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) SetSiteUUID(v string) {
-	o.SiteUUID = &v
+	o.SiteUUID.Set(&v)
 }
 
-// GetSiteCode returns the SiteCode field value if set, zero value otherwise.
+// SetSiteUUIDNil sets the value for SiteUUID to be an explicit nil
+func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) SetSiteUUIDNil() {
+	o.SiteUUID.Set(nil)
+}
+
+// UnsetSiteUUID ensures that no value is present for SiteUUID, not even an explicit nil
+func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) UnsetSiteUUID() {
+	o.SiteUUID.Unset()
+}
+
+// GetSiteCode returns the SiteCode field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) GetSiteCode() string {
-	if o == nil || IsNil(o.SiteCode) {
+	if o == nil || IsNil(o.SiteCode.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.SiteCode
+	return *o.SiteCode.Get()
 }
 
 // GetSiteCodeOk returns a tuple with the SiteCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) GetSiteCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.SiteCode) {
+	if o == nil {
 		return nil, false
 	}
-	return o.SiteCode, true
+	return o.SiteCode.Get(), o.SiteCode.IsSet()
 }
 
 // IsSetSiteCode returns a boolean if a field has been set.
 func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) IsSetSiteCode() bool {
-	if o != nil && !IsNil(o.SiteCode) {
+	if o != nil && o.SiteCode.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetSiteCode gets a reference to the given string and assigns it to the SiteCode field.
+// SetSiteCode gets a reference to the given NullableString and assigns it to the SiteCode field.
 func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) SetSiteCode(v string) {
-	o.SiteCode = &v
+	o.SiteCode.Set(&v)
+}
+
+// SetSiteCodeNil sets the value for SiteCode to be an explicit nil
+func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) SetSiteCodeNil() {
+	o.SiteCode.Set(nil)
+}
+
+// UnsetSiteCode ensures that no value is present for SiteCode, not even an explicit nil
+func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) UnsetSiteCode() {
+	o.SiteCode.Unset()
 }
 
 // GetStartDate returns the StartDate field value if set, zero value otherwise.
@@ -1002,68 +1079,90 @@ func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) S
 	o.ServicePlanName = &v
 }
 
-// GetResourcePoolId returns the ResourcePoolId field value if set, zero value otherwise.
+// GetResourcePoolId returns the ResourcePoolId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) GetResourcePoolId() string {
-	if o == nil || IsNil(o.ResourcePoolId) {
+	if o == nil || IsNil(o.ResourcePoolId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ResourcePoolId
+	return *o.ResourcePoolId.Get()
 }
 
 // GetResourcePoolIdOk returns a tuple with the ResourcePoolId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) GetResourcePoolIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ResourcePoolId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ResourcePoolId, true
+	return o.ResourcePoolId.Get(), o.ResourcePoolId.IsSet()
 }
 
 // IsSetResourcePoolId returns a boolean if a field has been set.
 func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) IsSetResourcePoolId() bool {
-	if o != nil && !IsNil(o.ResourcePoolId) {
+	if o != nil && o.ResourcePoolId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetResourcePoolId gets a reference to the given string and assigns it to the ResourcePoolId field.
+// SetResourcePoolId gets a reference to the given NullableString and assigns it to the ResourcePoolId field.
 func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) SetResourcePoolId(v string) {
-	o.ResourcePoolId = &v
+	o.ResourcePoolId.Set(&v)
 }
 
-// GetResourcePoolName returns the ResourcePoolName field value if set, zero value otherwise.
+// SetResourcePoolIdNil sets the value for ResourcePoolId to be an explicit nil
+func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) SetResourcePoolIdNil() {
+	o.ResourcePoolId.Set(nil)
+}
+
+// UnsetResourcePoolId ensures that no value is present for ResourcePoolId, not even an explicit nil
+func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) UnsetResourcePoolId() {
+	o.ResourcePoolId.Unset()
+}
+
+// GetResourcePoolName returns the ResourcePoolName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) GetResourcePoolName() string {
-	if o == nil || IsNil(o.ResourcePoolName) {
+	if o == nil || IsNil(o.ResourcePoolName.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ResourcePoolName
+	return *o.ResourcePoolName.Get()
 }
 
 // GetResourcePoolNameOk returns a tuple with the ResourcePoolName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) GetResourcePoolNameOk() (*string, bool) {
-	if o == nil || IsNil(o.ResourcePoolName) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ResourcePoolName, true
+	return o.ResourcePoolName.Get(), o.ResourcePoolName.IsSet()
 }
 
 // IsSetResourcePoolName returns a boolean if a field has been set.
 func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) IsSetResourcePoolName() bool {
-	if o != nil && !IsNil(o.ResourcePoolName) {
+	if o != nil && o.ResourcePoolName.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetResourcePoolName gets a reference to the given string and assigns it to the ResourcePoolName field.
+// SetResourcePoolName gets a reference to the given NullableString and assigns it to the ResourcePoolName field.
 func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) SetResourcePoolName(v string) {
-	o.ResourcePoolName = &v
+	o.ResourcePoolName.Set(&v)
+}
+
+// SetResourcePoolNameNil sets the value for ResourcePoolName to be an explicit nil
+func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) SetResourcePoolNameNil() {
+	o.ResourcePoolName.Set(nil)
+}
+
+// UnsetResourcePoolName ensures that no value is present for ResourcePoolName, not even an explicit nil
+func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) UnsetResourcePoolName() {
+	o.ResourcePoolName.Unset()
 }
 
 func (o ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) MarshalJSON() ([]byte, error) {
@@ -1091,17 +1190,17 @@ func (o ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) To
 	if !IsNil(o.MaxMemory) {
 		toSerialize["maxMemory"] = o.MaxMemory
 	}
-	if !IsNil(o.MaxCpu) {
-		toSerialize["maxCpu"] = o.MaxCpu
+	if o.MaxCpu.IsSet() {
+		toSerialize["maxCpu"] = o.MaxCpu.Get()
 	}
 	if !IsNil(o.MaxCores) {
 		toSerialize["maxCores"] = o.MaxCores
 	}
-	if !IsNil(o.ServerExternalId) {
-		toSerialize["serverExternalId"] = o.ServerExternalId
+	if o.ServerExternalId.IsSet() {
+		toSerialize["serverExternalId"] = o.ServerExternalId.Get()
 	}
-	if !IsNil(o.ServerInternalId) {
-		toSerialize["serverInternalId"] = o.ServerInternalId
+	if o.ServerInternalId.IsSet() {
+		toSerialize["serverInternalId"] = o.ServerInternalId.Get()
 	}
 	if !IsNil(o.PlanName) {
 		toSerialize["planName"] = o.PlanName
@@ -1130,17 +1229,17 @@ func (o ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) To
 	if !IsNil(o.CreatedByUserId) {
 		toSerialize["createdByUserId"] = o.CreatedByUserId
 	}
-	if !IsNil(o.SiteId) {
-		toSerialize["siteId"] = o.SiteId
+	if o.SiteId.IsSet() {
+		toSerialize["siteId"] = o.SiteId.Get()
 	}
-	if !IsNil(o.SiteName) {
-		toSerialize["siteName"] = o.SiteName
+	if o.SiteName.IsSet() {
+		toSerialize["siteName"] = o.SiteName.Get()
 	}
-	if !IsNil(o.SiteUUID) {
-		toSerialize["siteUUID"] = o.SiteUUID
+	if o.SiteUUID.IsSet() {
+		toSerialize["siteUUID"] = o.SiteUUID.Get()
 	}
-	if !IsNil(o.SiteCode) {
-		toSerialize["siteCode"] = o.SiteCode
+	if o.SiteCode.IsSet() {
+		toSerialize["siteCode"] = o.SiteCode.Get()
 	}
 	if !IsNil(o.StartDate) {
 		toSerialize["startDate"] = o.StartDate
@@ -1163,11 +1262,11 @@ func (o ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInner) To
 	if !IsNil(o.ServicePlanName) {
 		toSerialize["servicePlanName"] = o.ServicePlanName
 	}
-	if !IsNil(o.ResourcePoolId) {
-		toSerialize["resourcePoolId"] = o.ResourcePoolId
+	if o.ResourcePoolId.IsSet() {
+		toSerialize["resourcePoolId"] = o.ResourcePoolId.Get()
 	}
-	if !IsNil(o.ResourcePoolName) {
-		toSerialize["resourcePoolName"] = o.ResourcePoolName
+	if o.ResourcePoolName.IsSet() {
+		toSerialize["resourcePoolName"] = o.ResourcePoolName.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {

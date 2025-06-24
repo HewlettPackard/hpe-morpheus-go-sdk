@@ -22,7 +22,7 @@ var _ MappedNullable = &GetArchiveBucket200Response{}
 type GetArchiveBucket200Response struct {
 	ArchiveBucket        *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner `json:"archiveBucket,omitempty"`
 	IsOwner              *bool                                                  `json:"isOwner,omitempty"`
-	ParentDirectory      *string                                                `json:"parentDirectory,omitempty"`
+	ParentDirectory      NullableString                                         `json:"parentDirectory,omitempty"`
 	ArchiveFiles         []GetArchiveBucket200ResponseArchiveFilesInner         `json:"archiveFiles,omitempty"`
 	ArchiveFileCount     *int64                                                 `json:"archiveFileCount,omitempty"`
 	AdditionalProperties map[string]interface{}                                 `json:",remain"`
@@ -111,36 +111,47 @@ func (o *GetArchiveBucket200Response) SetIsOwner(v bool) {
 	o.IsOwner = &v
 }
 
-// GetParentDirectory returns the ParentDirectory field value if set, zero value otherwise.
+// GetParentDirectory returns the ParentDirectory field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetArchiveBucket200Response) GetParentDirectory() string {
-	if o == nil || IsNil(o.ParentDirectory) {
+	if o == nil || IsNil(o.ParentDirectory.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ParentDirectory
+	return *o.ParentDirectory.Get()
 }
 
 // GetParentDirectoryOk returns a tuple with the ParentDirectory field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetArchiveBucket200Response) GetParentDirectoryOk() (*string, bool) {
-	if o == nil || IsNil(o.ParentDirectory) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ParentDirectory, true
+	return o.ParentDirectory.Get(), o.ParentDirectory.IsSet()
 }
 
 // IsSetParentDirectory returns a boolean if a field has been set.
 func (o *GetArchiveBucket200Response) IsSetParentDirectory() bool {
-	if o != nil && !IsNil(o.ParentDirectory) {
+	if o != nil && o.ParentDirectory.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetParentDirectory gets a reference to the given string and assigns it to the ParentDirectory field.
+// SetParentDirectory gets a reference to the given NullableString and assigns it to the ParentDirectory field.
 func (o *GetArchiveBucket200Response) SetParentDirectory(v string) {
-	o.ParentDirectory = &v
+	o.ParentDirectory.Set(&v)
+}
+
+// SetParentDirectoryNil sets the value for ParentDirectory to be an explicit nil
+func (o *GetArchiveBucket200Response) SetParentDirectoryNil() {
+	o.ParentDirectory.Set(nil)
+}
+
+// UnsetParentDirectory ensures that no value is present for ParentDirectory, not even an explicit nil
+func (o *GetArchiveBucket200Response) UnsetParentDirectory() {
+	o.ParentDirectory.Unset()
 }
 
 // GetArchiveFiles returns the ArchiveFiles field value if set, zero value otherwise.
@@ -223,8 +234,8 @@ func (o GetArchiveBucket200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.IsOwner) {
 		toSerialize["isOwner"] = o.IsOwner
 	}
-	if !IsNil(o.ParentDirectory) {
-		toSerialize["parentDirectory"] = o.ParentDirectory
+	if o.ParentDirectory.IsSet() {
+		toSerialize["parentDirectory"] = o.ParentDirectory.Get()
 	}
 	if !IsNil(o.ArchiveFiles) {
 		toSerialize["archiveFiles"] = o.ArchiveFiles

@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **ProvisionType** | Pointer to [**GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerProvisionType**](GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerProvisionType.md) |  | [optional] 
 **VirtualImage** | Pointer to [**GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount**](GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount.md) |  | [optional] 
 **OsType** | Pointer to [**GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount**](GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount.md) |  | [optional] 
-**Category** | Pointer to **string** |  | [optional] 
+**Category** | Pointer to **NullableString** |  | [optional] 
 **Config** | Pointer to **map[string]interface{}** |  | [optional] 
 **ContainerPorts** | Pointer to [**[]GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerContainerPortsInner**](GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerContainerPortsInner.md) |  | [optional] 
 **ContainerScripts** | Pointer to **[]map[string]interface{}** |  | [optional] 
@@ -315,6 +315,16 @@ SetCategory sets Category field to given value.
 
 HasCategory returns a boolean if a field has been set.
 
+### SetCategoryNil
+
+`func (o *ContainerType) SetCategoryNil(b bool)`
+
+ SetCategoryNil sets the value for Category to be an explicit nil
+
+### UnsetCategory
+`func (o *ContainerType) UnsetCategory()`
+
+UnsetCategory ensures that no value is present for Category, not even an explicit nil
 ### GetConfig
 
 `func (o *ContainerType) GetConfig() map[string]interface{}`
@@ -340,6 +350,16 @@ SetConfig sets Config field to given value.
 
 HasConfig returns a boolean if a field has been set.
 
+### SetConfigNil
+
+`func (o *ContainerType) SetConfigNil(b bool)`
+
+ SetConfigNil sets the value for Config to be an explicit nil
+
+### UnsetConfig
+`func (o *ContainerType) UnsetConfig()`
+
+UnsetConfig ensures that no value is present for Config, not even an explicit nil
 ### GetContainerPorts
 
 `func (o *ContainerType) GetContainerPorts() []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerContainerPortsInner`
@@ -365,6 +385,16 @@ SetContainerPorts sets ContainerPorts field to given value.
 
 HasContainerPorts returns a boolean if a field has been set.
 
+### SetContainerPortsNil
+
+`func (o *ContainerType) SetContainerPortsNil(b bool)`
+
+ SetContainerPortsNil sets the value for ContainerPorts to be an explicit nil
+
+### UnsetContainerPorts
+`func (o *ContainerType) UnsetContainerPorts()`
+
+UnsetContainerPorts ensures that no value is present for ContainerPorts, not even an explicit nil
 ### GetContainerScripts
 
 `func (o *ContainerType) GetContainerScripts() []map[string]interface{}`
@@ -390,6 +420,16 @@ SetContainerScripts sets ContainerScripts field to given value.
 
 HasContainerScripts returns a boolean if a field has been set.
 
+### SetContainerScriptsNil
+
+`func (o *ContainerType) SetContainerScriptsNil(b bool)`
+
+ SetContainerScriptsNil sets the value for ContainerScripts to be an explicit nil
+
+### UnsetContainerScripts
+`func (o *ContainerType) UnsetContainerScripts()`
+
+UnsetContainerScripts ensures that no value is present for ContainerScripts, not even an explicit nil
 ### GetContainerTemplates
 
 `func (o *ContainerType) GetContainerTemplates() []map[string]interface{}`
@@ -415,6 +455,16 @@ SetContainerTemplates sets ContainerTemplates field to given value.
 
 HasContainerTemplates returns a boolean if a field has been set.
 
+### SetContainerTemplatesNil
+
+`func (o *ContainerType) SetContainerTemplatesNil(b bool)`
+
+ SetContainerTemplatesNil sets the value for ContainerTemplates to be an explicit nil
+
+### UnsetContainerTemplates
+`func (o *ContainerType) UnsetContainerTemplates()`
+
+UnsetContainerTemplates ensures that no value is present for ContainerTemplates, not even an explicit nil
 ### GetEnvironmentVariables
 
 `func (o *ContainerType) GetEnvironmentVariables() []map[string]interface{}`
@@ -440,6 +490,16 @@ SetEnvironmentVariables sets EnvironmentVariables field to given value.
 
 HasEnvironmentVariables returns a boolean if a field has been set.
 
+### SetEnvironmentVariablesNil
+
+`func (o *ContainerType) SetEnvironmentVariablesNil(b bool)`
+
+ SetEnvironmentVariablesNil sets the value for EnvironmentVariables to be an explicit nil
+
+### UnsetEnvironmentVariables
+`func (o *ContainerType) UnsetEnvironmentVariables()`
+
+UnsetEnvironmentVariables ensures that no value is present for EnvironmentVariables, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

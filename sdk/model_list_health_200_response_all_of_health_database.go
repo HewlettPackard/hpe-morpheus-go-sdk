@@ -22,12 +22,12 @@ var _ MappedNullable = &ListHealth200ResponseAllOfHealthDatabase{}
 type ListHealth200ResponseAllOfHealthDatabase struct {
 	Success              *bool                                                      `json:"success,omitempty"`
 	ConnectionList       []map[string]interface{}                                   `json:"connectionList,omitempty"`
-	BusyConnections      []string                                                   `json:"busyConnections,omitempty"`
+	BusyConnections      []*string                                                  `json:"busyConnections,omitempty"`
 	MaxConnections       *int64                                                     `json:"maxConnections,omitempty"`
 	MaxUsedConnections   *int64                                                     `json:"maxUsedConnections,omitempty"`
 	UsedConnections      *int64                                                     `json:"usedConnections,omitempty"`
 	AbortedConnections   *int64                                                     `json:"abortedConnections,omitempty"`
-	InnodbStatus         *string                                                    `json:"innodbStatus,omitempty"`
+	InnodbStatus         NullableString                                             `json:"innodbStatus,omitempty"`
 	Stats                *ListHealth200ResponseAllOfHealthDatabaseStats             `json:"stats,omitempty"`
 	Scans                *ListHealth200ResponseAllOfHealthDatabaseScans             `json:"scans,omitempty"`
 	SlowQueries          []ListHealth200ResponseAllOfHealthDatabaseSlowQueriesInner `json:"slowQueries,omitempty"`
@@ -88,9 +88,9 @@ func (o *ListHealth200ResponseAllOfHealthDatabase) SetSuccess(v bool) {
 	o.Success = &v
 }
 
-// GetConnectionList returns the ConnectionList field value if set, zero value otherwise.
+// GetConnectionList returns the ConnectionList field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListHealth200ResponseAllOfHealthDatabase) GetConnectionList() []map[string]interface{} {
-	if o == nil || IsNil(o.ConnectionList) {
+	if o == nil {
 		var ret []map[string]interface{}
 		return ret
 	}
@@ -99,6 +99,7 @@ func (o *ListHealth200ResponseAllOfHealthDatabase) GetConnectionList() []map[str
 
 // GetConnectionListOk returns a tuple with the ConnectionList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListHealth200ResponseAllOfHealthDatabase) GetConnectionListOk() ([]map[string]interface{}, bool) {
 	if o == nil || IsNil(o.ConnectionList) {
 		return nil, false
@@ -121,9 +122,9 @@ func (o *ListHealth200ResponseAllOfHealthDatabase) SetConnectionList(v []map[str
 }
 
 // GetBusyConnections returns the BusyConnections field value if set, zero value otherwise.
-func (o *ListHealth200ResponseAllOfHealthDatabase) GetBusyConnections() []string {
+func (o *ListHealth200ResponseAllOfHealthDatabase) GetBusyConnections() []*string {
 	if o == nil || IsNil(o.BusyConnections) {
-		var ret []string
+		var ret []*string
 		return ret
 	}
 	return o.BusyConnections
@@ -131,7 +132,7 @@ func (o *ListHealth200ResponseAllOfHealthDatabase) GetBusyConnections() []string
 
 // GetBusyConnectionsOk returns a tuple with the BusyConnections field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListHealth200ResponseAllOfHealthDatabase) GetBusyConnectionsOk() ([]string, bool) {
+func (o *ListHealth200ResponseAllOfHealthDatabase) GetBusyConnectionsOk() ([]*string, bool) {
 	if o == nil || IsNil(o.BusyConnections) {
 		return nil, false
 	}
@@ -147,8 +148,8 @@ func (o *ListHealth200ResponseAllOfHealthDatabase) IsSetBusyConnections() bool {
 	return false
 }
 
-// SetBusyConnections gets a reference to the given []string and assigns it to the BusyConnections field.
-func (o *ListHealth200ResponseAllOfHealthDatabase) SetBusyConnections(v []string) {
+// SetBusyConnections gets a reference to the given []*string and assigns it to the BusyConnections field.
+func (o *ListHealth200ResponseAllOfHealthDatabase) SetBusyConnections(v []*string) {
 	o.BusyConnections = v
 }
 
@@ -280,36 +281,47 @@ func (o *ListHealth200ResponseAllOfHealthDatabase) SetAbortedConnections(v int64
 	o.AbortedConnections = &v
 }
 
-// GetInnodbStatus returns the InnodbStatus field value if set, zero value otherwise.
+// GetInnodbStatus returns the InnodbStatus field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListHealth200ResponseAllOfHealthDatabase) GetInnodbStatus() string {
-	if o == nil || IsNil(o.InnodbStatus) {
+	if o == nil || IsNil(o.InnodbStatus.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.InnodbStatus
+	return *o.InnodbStatus.Get()
 }
 
 // GetInnodbStatusOk returns a tuple with the InnodbStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListHealth200ResponseAllOfHealthDatabase) GetInnodbStatusOk() (*string, bool) {
-	if o == nil || IsNil(o.InnodbStatus) {
+	if o == nil {
 		return nil, false
 	}
-	return o.InnodbStatus, true
+	return o.InnodbStatus.Get(), o.InnodbStatus.IsSet()
 }
 
 // IsSetInnodbStatus returns a boolean if a field has been set.
 func (o *ListHealth200ResponseAllOfHealthDatabase) IsSetInnodbStatus() bool {
-	if o != nil && !IsNil(o.InnodbStatus) {
+	if o != nil && o.InnodbStatus.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetInnodbStatus gets a reference to the given string and assigns it to the InnodbStatus field.
+// SetInnodbStatus gets a reference to the given NullableString and assigns it to the InnodbStatus field.
 func (o *ListHealth200ResponseAllOfHealthDatabase) SetInnodbStatus(v string) {
-	o.InnodbStatus = &v
+	o.InnodbStatus.Set(&v)
+}
+
+// SetInnodbStatusNil sets the value for InnodbStatus to be an explicit nil
+func (o *ListHealth200ResponseAllOfHealthDatabase) SetInnodbStatusNil() {
+	o.InnodbStatus.Set(nil)
+}
+
+// UnsetInnodbStatus ensures that no value is present for InnodbStatus, not even an explicit nil
+func (o *ListHealth200ResponseAllOfHealthDatabase) UnsetInnodbStatus() {
+	o.InnodbStatus.Unset()
 }
 
 // GetStats returns the Stats field value if set, zero value otherwise.
@@ -517,7 +529,7 @@ func (o ListHealth200ResponseAllOfHealthDatabase) ToMap() (map[string]interface{
 	if !IsNil(o.Success) {
 		toSerialize["success"] = o.Success
 	}
-	if !IsNil(o.ConnectionList) {
+	if o.ConnectionList != nil {
 		toSerialize["connectionList"] = o.ConnectionList
 	}
 	if !IsNil(o.BusyConnections) {
@@ -535,8 +547,8 @@ func (o ListHealth200ResponseAllOfHealthDatabase) ToMap() (map[string]interface{
 	if !IsNil(o.AbortedConnections) {
 		toSerialize["abortedConnections"] = o.AbortedConnections
 	}
-	if !IsNil(o.InnodbStatus) {
-		toSerialize["innodbStatus"] = o.InnodbStatus
+	if o.InnodbStatus.IsSet() {
+		toSerialize["innodbStatus"] = o.InnodbStatus.Get()
 	}
 	if !IsNil(o.Stats) {
 		toSerialize["stats"] = o.Stats

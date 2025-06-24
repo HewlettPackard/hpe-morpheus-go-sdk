@@ -6,15 +6,15 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
-**StorageProvider** | Pointer to [**ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
-**Owner** | Pointer to [**ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
+**Description** | Pointer to **NullableString** |  | [optional] 
+**StorageProvider** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**Owner** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **CreatedBy** | Pointer to [**ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy**](ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy.md) |  | [optional] 
 **IsPublic** | Pointer to **bool** |  | [optional] 
 **Visibility** | Pointer to **string** |  | [optional] 
 **Code** | Pointer to **string** |  | [optional] 
 **FilePath** | Pointer to **string** |  | [optional] 
-**RawSize** | Pointer to **int64** |  | [optional] 
+**RawSize** | Pointer to **NullableInt64** |  | [optional] 
 **FileCount** | Pointer to **int64** |  | [optional] 
 **Accounts** | Pointer to **[]map[string]interface{}** |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
@@ -114,22 +114,32 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetStorageProvider
 
-`func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) GetStorageProvider() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) GetStorageProvider() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetStorageProvider returns the StorageProvider field if non-nil, zero value otherwise.
 
 ### GetStorageProviderOk
 
-`func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) GetStorageProviderOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) GetStorageProviderOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetStorageProviderOk returns a tuple with the StorageProvider field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStorageProvider
 
-`func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) SetStorageProvider(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) SetStorageProvider(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetStorageProvider sets StorageProvider field to given value.
 
@@ -141,20 +151,20 @@ HasStorageProvider returns a boolean if a field has been set.
 
 ### GetOwner
 
-`func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) GetOwner() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) GetOwner() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetOwner returns the Owner field if non-nil, zero value otherwise.
 
 ### GetOwnerOk
 
-`func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) GetOwnerOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) GetOwnerOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOwner
 
-`func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) SetOwner(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) SetOwner(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetOwner sets Owner field to given value.
 
@@ -314,6 +324,16 @@ SetRawSize sets RawSize field to given value.
 
 HasRawSize returns a boolean if a field has been set.
 
+### SetRawSizeNil
+
+`func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) SetRawSizeNil(b bool)`
+
+ SetRawSizeNil sets the value for RawSize to be an explicit nil
+
+### UnsetRawSize
+`func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) UnsetRawSize()`
+
+UnsetRawSize ensures that no value is present for RawSize, not even an explicit nil
 ### GetFileCount
 
 `func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) GetFileCount() int64`

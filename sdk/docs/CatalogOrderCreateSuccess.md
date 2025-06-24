@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
-**Name** | Pointer to **string** |  | [optional] 
+**Name** | Pointer to **NullableString** |  | [optional] 
 **Items** | Pointer to [**[]AddCatalogOrder200ResponseAllOfOrderItemsInner**](AddCatalogOrder200ResponseAllOfOrderItemsInner.md) |  | [optional] 
 **Stats** | Pointer to [**ListCatalogCart200ResponseCartStats**](ListCatalogCart200ResponseCartStats.md) |  | [optional] 
 
@@ -78,6 +78,16 @@ SetName sets Name field to given value.
 
 HasName returns a boolean if a field has been set.
 
+### SetNameNil
+
+`func (o *CatalogOrderCreateSuccess) SetNameNil(b bool)`
+
+ SetNameNil sets the value for Name to be an explicit nil
+
+### UnsetName
+`func (o *CatalogOrderCreateSuccess) UnsetName()`
+
+UnsetName ensures that no value is present for Name, not even an explicit nil
 ### GetItems
 
 `func (o *CatalogOrderCreateSuccess) GetItems() []AddCatalogOrder200ResponseAllOfOrderItemsInner`

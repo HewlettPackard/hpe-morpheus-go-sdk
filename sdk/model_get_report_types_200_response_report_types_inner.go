@@ -30,7 +30,7 @@ type GetReportTypes200ResponseReportTypesInner struct {
 	MasterOnly           *bool                                                        `json:"masterOnly,omitempty"`
 	OwnerOnly            *bool                                                        `json:"ownerOnly,omitempty"`
 	SupportsAllZoneTypes *bool                                                        `json:"supportsAllZoneTypes,omitempty"`
-	IsPlugin             *bool                                                        `json:"isPlugin,omitempty"`
+	IsPlugin             NullableBool                                                 `json:"isPlugin,omitempty"`
 	DateCreated          *time.Time                                                   `json:"dateCreated,omitempty"`
 	OptionTypes          []GetReportTypes200ResponseReportTypesInnerOptionTypesInner  `json:"optionTypes,omitempty"`
 	SupportedZoneTypes   []ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"supportedZoneTypes,omitempty"`
@@ -344,36 +344,47 @@ func (o *GetReportTypes200ResponseReportTypesInner) SetSupportsAllZoneTypes(v bo
 	o.SupportsAllZoneTypes = &v
 }
 
-// GetIsPlugin returns the IsPlugin field value if set, zero value otherwise.
+// GetIsPlugin returns the IsPlugin field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetReportTypes200ResponseReportTypesInner) GetIsPlugin() bool {
-	if o == nil || IsNil(o.IsPlugin) {
+	if o == nil || IsNil(o.IsPlugin.Get()) {
 		var ret bool
 		return ret
 	}
-	return *o.IsPlugin
+	return *o.IsPlugin.Get()
 }
 
 // GetIsPluginOk returns a tuple with the IsPlugin field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetReportTypes200ResponseReportTypesInner) GetIsPluginOk() (*bool, bool) {
-	if o == nil || IsNil(o.IsPlugin) {
+	if o == nil {
 		return nil, false
 	}
-	return o.IsPlugin, true
+	return o.IsPlugin.Get(), o.IsPlugin.IsSet()
 }
 
 // IsSetIsPlugin returns a boolean if a field has been set.
 func (o *GetReportTypes200ResponseReportTypesInner) IsSetIsPlugin() bool {
-	if o != nil && !IsNil(o.IsPlugin) {
+	if o != nil && o.IsPlugin.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetIsPlugin gets a reference to the given bool and assigns it to the IsPlugin field.
+// SetIsPlugin gets a reference to the given NullableBool and assigns it to the IsPlugin field.
 func (o *GetReportTypes200ResponseReportTypesInner) SetIsPlugin(v bool) {
-	o.IsPlugin = &v
+	o.IsPlugin.Set(&v)
+}
+
+// SetIsPluginNil sets the value for IsPlugin to be an explicit nil
+func (o *GetReportTypes200ResponseReportTypesInner) SetIsPluginNil() {
+	o.IsPlugin.Set(nil)
+}
+
+// UnsetIsPlugin ensures that no value is present for IsPlugin, not even an explicit nil
+func (o *GetReportTypes200ResponseReportTypesInner) UnsetIsPlugin() {
+	o.IsPlugin.Unset()
 }
 
 // GetDateCreated returns the DateCreated field value if set, zero value otherwise.
@@ -509,8 +520,8 @@ func (o GetReportTypes200ResponseReportTypesInner) ToMap() (map[string]interface
 	if !IsNil(o.SupportsAllZoneTypes) {
 		toSerialize["supportsAllZoneTypes"] = o.SupportsAllZoneTypes
 	}
-	if !IsNil(o.IsPlugin) {
-		toSerialize["isPlugin"] = o.IsPlugin
+	if o.IsPlugin.IsSet() {
+		toSerialize["isPlugin"] = o.IsPlugin.Get()
 	}
 	if !IsNil(o.DateCreated) {
 		toSerialize["dateCreated"] = o.DateCreated

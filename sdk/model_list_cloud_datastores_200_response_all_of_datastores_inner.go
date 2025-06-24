@@ -20,17 +20,17 @@ var _ MappedNullable = &ListCloudDatastores200ResponseAllOfDatastoresInner{}
 
 // ListCloudDatastores200ResponseAllOfDatastoresInner struct for ListCloudDatastores200ResponseAllOfDatastoresInner
 type ListCloudDatastores200ResponseAllOfDatastoresInner struct {
-	Id                   *int64                                                                  `json:"id,omitempty"`
-	Name                 *string                                                                 `json:"name,omitempty"`
-	Zone                 *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"zone,omitempty"`
-	Type                 *string                                                                 `json:"type,omitempty"`
-	FreeSpace            *int64                                                                  `json:"freeSpace,omitempty"`
-	Online               *bool                                                                   `json:"online,omitempty"`
-	Active               *bool                                                                   `json:"active,omitempty"`
-	Visibility           *string                                                                 `json:"visibility,omitempty"`
-	Tenants              []ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner        `json:"tenants,omitempty"`
-	ResourcePermission   *ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission   `json:"resourcePermission,omitempty"`
-	AdditionalProperties map[string]interface{}                                                  `json:",remain"`
+	Id                   *int64                                                                `json:"id,omitempty"`
+	Name                 *string                                                               `json:"name,omitempty"`
+	Zone                 *GetAlerts200ResponseAllOfCheckGroupsInnerInstance                    `json:"zone,omitempty"`
+	Type                 *string                                                               `json:"type,omitempty"`
+	FreeSpace            *int64                                                                `json:"freeSpace,omitempty"`
+	Online               *bool                                                                 `json:"online,omitempty"`
+	Active               *bool                                                                 `json:"active,omitempty"`
+	Visibility           *string                                                               `json:"visibility,omitempty"`
+	Tenants              []ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner      `json:"tenants,omitempty"`
+	ResourcePermission   *ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission `json:"resourcePermission,omitempty"`
+	AdditionalProperties map[string]interface{}                                                `json:",remain"`
 }
 
 type _ListCloudDatastores200ResponseAllOfDatastoresInner ListCloudDatastores200ResponseAllOfDatastoresInner
@@ -117,9 +117,9 @@ func (o *ListCloudDatastores200ResponseAllOfDatastoresInner) SetName(v string) {
 }
 
 // GetZone returns the Zone field value if set, zero value otherwise.
-func (o *ListCloudDatastores200ResponseAllOfDatastoresInner) GetZone() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *ListCloudDatastores200ResponseAllOfDatastoresInner) GetZone() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.Zone) {
-		var ret ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return *o.Zone
@@ -127,7 +127,7 @@ func (o *ListCloudDatastores200ResponseAllOfDatastoresInner) GetZone() ListAppli
 
 // GetZoneOk returns a tuple with the Zone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListCloudDatastores200ResponseAllOfDatastoresInner) GetZoneOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *ListCloudDatastores200ResponseAllOfDatastoresInner) GetZoneOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.Zone) {
 		return nil, false
 	}
@@ -143,8 +143,8 @@ func (o *ListCloudDatastores200ResponseAllOfDatastoresInner) IsSetZone() bool {
 	return false
 }
 
-// SetZone gets a reference to the given ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the Zone field.
-func (o *ListCloudDatastores200ResponseAllOfDatastoresInner) SetZone(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetZone gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Zone field.
+func (o *ListCloudDatastores200ResponseAllOfDatastoresInner) SetZone(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.Zone = &v
 }
 
@@ -308,9 +308,9 @@ func (o *ListCloudDatastores200ResponseAllOfDatastoresInner) SetVisibility(v str
 	o.Visibility = &v
 }
 
-// GetTenants returns the Tenants field value if set, zero value otherwise.
+// GetTenants returns the Tenants field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListCloudDatastores200ResponseAllOfDatastoresInner) GetTenants() []ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner {
-	if o == nil || IsNil(o.Tenants) {
+	if o == nil {
 		var ret []ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner
 		return ret
 	}
@@ -319,6 +319,7 @@ func (o *ListCloudDatastores200ResponseAllOfDatastoresInner) GetTenants() []List
 
 // GetTenantsOk returns a tuple with the Tenants field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListCloudDatastores200ResponseAllOfDatastoresInner) GetTenantsOk() ([]ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner, bool) {
 	if o == nil || IsNil(o.Tenants) {
 		return nil, false
@@ -406,7 +407,7 @@ func (o ListCloudDatastores200ResponseAllOfDatastoresInner) ToMap() (map[string]
 	if !IsNil(o.Visibility) {
 		toSerialize["visibility"] = o.Visibility
 	}
-	if !IsNil(o.Tenants) {
+	if o.Tenants != nil {
 		toSerialize["tenants"] = o.Tenants
 	}
 	if !IsNil(o.ResourcePermission) {

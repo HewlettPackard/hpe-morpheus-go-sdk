@@ -5,13 +5,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
-**ExternalId** | Pointer to **string** |  | [optional] 
+**ExternalId** | Pointer to **NullableString** |  | [optional] 
 **Cloud** | Pointer to [**AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIpCloud**](AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIpCloud.md) |  | [optional] 
 **Server** | Pointer to [**AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIpServer**](AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIpServer.md) |  | [optional] 
 **IpStatus** | Pointer to **string** |  | [optional] 
 **IpAddress** | Pointer to **string** | IP Address | [optional] 
-**IpRange** | Pointer to **string** |  | [optional] 
-**PtrId** | Pointer to **string** |  | [optional] 
+**IpRange** | Pointer to **NullableString** |  | [optional] 
+**PtrId** | Pointer to **NullableString** |  | [optional] 
 **NetworkDomain** | Pointer to [**ListNetworks200ResponseAllOfNetworksInnerNetworkDomain**](ListNetworks200ResponseAllOfNetworksInnerNetworkDomain.md) |  | [optional] 
 **CreatedBy** | Pointer to [**ListBackupResults200ResponseAllOfResultsInnerCreatedBy**](ListBackupResults200ResponseAllOfResultsInnerCreatedBy.md) |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
@@ -86,6 +86,16 @@ SetExternalId sets ExternalId field to given value.
 
 HasExternalId returns a boolean if a field has been set.
 
+### SetExternalIdNil
+
+`func (o *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp) SetExternalIdNil(b bool)`
+
+ SetExternalIdNil sets the value for ExternalId to be an explicit nil
+
+### UnsetExternalId
+`func (o *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp) UnsetExternalId()`
+
+UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
 ### GetCloud
 
 `func (o *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp) GetCloud() AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIpCloud`
@@ -211,6 +221,16 @@ SetIpRange sets IpRange field to given value.
 
 HasIpRange returns a boolean if a field has been set.
 
+### SetIpRangeNil
+
+`func (o *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp) SetIpRangeNil(b bool)`
+
+ SetIpRangeNil sets the value for IpRange to be an explicit nil
+
+### UnsetIpRange
+`func (o *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp) UnsetIpRange()`
+
+UnsetIpRange ensures that no value is present for IpRange, not even an explicit nil
 ### GetPtrId
 
 `func (o *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp) GetPtrId() string`
@@ -236,6 +256,16 @@ SetPtrId sets PtrId field to given value.
 
 HasPtrId returns a boolean if a field has been set.
 
+### SetPtrIdNil
+
+`func (o *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp) SetPtrIdNil(b bool)`
+
+ SetPtrIdNil sets the value for PtrId to be an explicit nil
+
+### UnsetPtrId
+`func (o *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp) UnsetPtrId()`
+
+UnsetPtrId ensures that no value is present for PtrId, not even an explicit nil
 ### GetNetworkDomain
 
 `func (o *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp) GetNetworkDomain() ListNetworks200ResponseAllOfNetworksInnerNetworkDomain`

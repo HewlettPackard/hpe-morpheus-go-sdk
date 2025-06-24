@@ -20,7 +20,7 @@ var _ MappedNullable = &ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf
 
 // ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfRoleMappingsInner struct for ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfRoleMappingsInner
 type ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfRoleMappingsInner struct {
-	SourceRoleName       *string                                                                     `json:"sourceRoleName,omitempty"`
+	SourceRoleName       NullableString                                                              `json:"sourceRoleName,omitempty"`
 	SourceRoleFqn        *string                                                                     `json:"sourceRoleFqn,omitempty"`
 	MappedRole           *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfDefaultAccountRole `json:"mappedRole,omitempty"`
 	AdditionalProperties map[string]interface{}                                                      `json:",remain"`
@@ -45,36 +45,47 @@ func NewListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfRoleMappingsInne
 	return &this
 }
 
-// GetSourceRoleName returns the SourceRoleName field value if set, zero value otherwise.
+// GetSourceRoleName returns the SourceRoleName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfRoleMappingsInner) GetSourceRoleName() string {
-	if o == nil || IsNil(o.SourceRoleName) {
+	if o == nil || IsNil(o.SourceRoleName.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.SourceRoleName
+	return *o.SourceRoleName.Get()
 }
 
 // GetSourceRoleNameOk returns a tuple with the SourceRoleName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfRoleMappingsInner) GetSourceRoleNameOk() (*string, bool) {
-	if o == nil || IsNil(o.SourceRoleName) {
+	if o == nil {
 		return nil, false
 	}
-	return o.SourceRoleName, true
+	return o.SourceRoleName.Get(), o.SourceRoleName.IsSet()
 }
 
 // IsSetSourceRoleName returns a boolean if a field has been set.
 func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfRoleMappingsInner) IsSetSourceRoleName() bool {
-	if o != nil && !IsNil(o.SourceRoleName) {
+	if o != nil && o.SourceRoleName.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetSourceRoleName gets a reference to the given string and assigns it to the SourceRoleName field.
+// SetSourceRoleName gets a reference to the given NullableString and assigns it to the SourceRoleName field.
 func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfRoleMappingsInner) SetSourceRoleName(v string) {
-	o.SourceRoleName = &v
+	o.SourceRoleName.Set(&v)
+}
+
+// SetSourceRoleNameNil sets the value for SourceRoleName to be an explicit nil
+func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfRoleMappingsInner) SetSourceRoleNameNil() {
+	o.SourceRoleName.Set(nil)
+}
+
+// UnsetSourceRoleName ensures that no value is present for SourceRoleName, not even an explicit nil
+func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfRoleMappingsInner) UnsetSourceRoleName() {
+	o.SourceRoleName.Unset()
 }
 
 // GetSourceRoleFqn returns the SourceRoleFqn field value if set, zero value otherwise.
@@ -151,8 +162,8 @@ func (o ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfRoleMappingsInne
 
 func (o ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfRoleMappingsInner) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.SourceRoleName) {
-		toSerialize["sourceRoleName"] = o.SourceRoleName
+	if o.SourceRoleName.IsSet() {
+		toSerialize["sourceRoleName"] = o.SourceRoleName.Get()
 	}
 	if !IsNil(o.SourceRoleFqn) {
 		toSerialize["sourceRoleFqn"] = o.SourceRoleFqn

@@ -21,20 +21,20 @@ var _ MappedNullable = &ListImageBuilds200ResponseAllOfImageBuildsInnerLastResul
 
 // ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult struct for ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult
 type ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult struct {
-	Id                   *int64                                                                  `json:"id,omitempty"`
-	ImageBuild           *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"imageBuild,omitempty"`
-	BuildNumber          *int64                                                                  `json:"buildNumber,omitempty"`
-	StartDate            *time.Time                                                              `json:"startDate,omitempty"`
-	EndDate              *time.Time                                                              `json:"endDate,omitempty"`
-	StatusMessage        *string                                                                 `json:"statusMessage,omitempty"`
-	StatusPercent        *int64                                                                  `json:"statusPercent,omitempty"`
-	StatusEta            *string                                                                 `json:"statusEta,omitempty"`
-	Status               *string                                                                 `json:"status,omitempty"`
-	ErrorMessage         *string                                                                 `json:"errorMessage,omitempty"`
-	CreatedBy            *GetArchiveBucket200ResponseArchiveFilesInnerCreatedBy                  `json:"createdBy,omitempty"`
-	TempInstance         *string                                                                 `json:"tempInstance,omitempty"`
-	VirtualImages        []map[string]interface{}                                                `json:"virtualImages,omitempty"`
-	AdditionalProperties map[string]interface{}                                                  `json:",remain"`
+	Id                   *int64                                                          `json:"id,omitempty"`
+	ImageBuild           *GetAlerts200ResponseAllOfCheckGroupsInnerInstance              `json:"imageBuild,omitempty"`
+	BuildNumber          *int64                                                          `json:"buildNumber,omitempty"`
+	StartDate            *time.Time                                                      `json:"startDate,omitempty"`
+	EndDate              NullableTime                                                    `json:"endDate,omitempty"`
+	StatusMessage        *string                                                         `json:"statusMessage,omitempty"`
+	StatusPercent        *int64                                                          `json:"statusPercent,omitempty"`
+	StatusEta            NullableString                                                  `json:"statusEta,omitempty"`
+	Status               *string                                                         `json:"status,omitempty"`
+	ErrorMessage         NullableString                                                  `json:"errorMessage,omitempty"`
+	CreatedBy            *ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy `json:"createdBy,omitempty"`
+	TempInstance         NullableString                                                  `json:"tempInstance,omitempty"`
+	VirtualImages        []map[string]interface{}                                        `json:"virtualImages,omitempty"`
+	AdditionalProperties map[string]interface{}                                          `json:",remain"`
 }
 
 type _ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult
@@ -89,9 +89,9 @@ func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult) SetId(v int6
 }
 
 // GetImageBuild returns the ImageBuild field value if set, zero value otherwise.
-func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult) GetImageBuild() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult) GetImageBuild() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.ImageBuild) {
-		var ret ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return *o.ImageBuild
@@ -99,7 +99,7 @@ func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult) GetImageBuil
 
 // GetImageBuildOk returns a tuple with the ImageBuild field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult) GetImageBuildOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult) GetImageBuildOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.ImageBuild) {
 		return nil, false
 	}
@@ -115,8 +115,8 @@ func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult) IsSetImageBu
 	return false
 }
 
-// SetImageBuild gets a reference to the given ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the ImageBuild field.
-func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult) SetImageBuild(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetImageBuild gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the ImageBuild field.
+func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult) SetImageBuild(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.ImageBuild = &v
 }
 
@@ -184,36 +184,47 @@ func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult) SetStartDate
 	o.StartDate = &v
 }
 
-// GetEndDate returns the EndDate field value if set, zero value otherwise.
+// GetEndDate returns the EndDate field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult) GetEndDate() time.Time {
-	if o == nil || IsNil(o.EndDate) {
+	if o == nil || IsNil(o.EndDate.Get()) {
 		var ret time.Time
 		return ret
 	}
-	return *o.EndDate
+	return *o.EndDate.Get()
 }
 
 // GetEndDateOk returns a tuple with the EndDate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult) GetEndDateOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.EndDate) {
+	if o == nil {
 		return nil, false
 	}
-	return o.EndDate, true
+	return o.EndDate.Get(), o.EndDate.IsSet()
 }
 
 // IsSetEndDate returns a boolean if a field has been set.
 func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult) IsSetEndDate() bool {
-	if o != nil && !IsNil(o.EndDate) {
+	if o != nil && o.EndDate.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetEndDate gets a reference to the given time.Time and assigns it to the EndDate field.
+// SetEndDate gets a reference to the given NullableTime and assigns it to the EndDate field.
 func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult) SetEndDate(v time.Time) {
-	o.EndDate = &v
+	o.EndDate.Set(&v)
+}
+
+// SetEndDateNil sets the value for EndDate to be an explicit nil
+func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult) SetEndDateNil() {
+	o.EndDate.Set(nil)
+}
+
+// UnsetEndDate ensures that no value is present for EndDate, not even an explicit nil
+func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult) UnsetEndDate() {
+	o.EndDate.Unset()
 }
 
 // GetStatusMessage returns the StatusMessage field value if set, zero value otherwise.
@@ -280,36 +291,47 @@ func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult) SetStatusPer
 	o.StatusPercent = &v
 }
 
-// GetStatusEta returns the StatusEta field value if set, zero value otherwise.
+// GetStatusEta returns the StatusEta field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult) GetStatusEta() string {
-	if o == nil || IsNil(o.StatusEta) {
+	if o == nil || IsNil(o.StatusEta.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.StatusEta
+	return *o.StatusEta.Get()
 }
 
 // GetStatusEtaOk returns a tuple with the StatusEta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult) GetStatusEtaOk() (*string, bool) {
-	if o == nil || IsNil(o.StatusEta) {
+	if o == nil {
 		return nil, false
 	}
-	return o.StatusEta, true
+	return o.StatusEta.Get(), o.StatusEta.IsSet()
 }
 
 // IsSetStatusEta returns a boolean if a field has been set.
 func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult) IsSetStatusEta() bool {
-	if o != nil && !IsNil(o.StatusEta) {
+	if o != nil && o.StatusEta.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetStatusEta gets a reference to the given string and assigns it to the StatusEta field.
+// SetStatusEta gets a reference to the given NullableString and assigns it to the StatusEta field.
 func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult) SetStatusEta(v string) {
-	o.StatusEta = &v
+	o.StatusEta.Set(&v)
+}
+
+// SetStatusEtaNil sets the value for StatusEta to be an explicit nil
+func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult) SetStatusEtaNil() {
+	o.StatusEta.Set(nil)
+}
+
+// UnsetStatusEta ensures that no value is present for StatusEta, not even an explicit nil
+func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult) UnsetStatusEta() {
+	o.StatusEta.Unset()
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
@@ -344,42 +366,53 @@ func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult) SetStatus(v 
 	o.Status = &v
 }
 
-// GetErrorMessage returns the ErrorMessage field value if set, zero value otherwise.
+// GetErrorMessage returns the ErrorMessage field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult) GetErrorMessage() string {
-	if o == nil || IsNil(o.ErrorMessage) {
+	if o == nil || IsNil(o.ErrorMessage.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ErrorMessage
+	return *o.ErrorMessage.Get()
 }
 
 // GetErrorMessageOk returns a tuple with the ErrorMessage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult) GetErrorMessageOk() (*string, bool) {
-	if o == nil || IsNil(o.ErrorMessage) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ErrorMessage, true
+	return o.ErrorMessage.Get(), o.ErrorMessage.IsSet()
 }
 
 // IsSetErrorMessage returns a boolean if a field has been set.
 func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult) IsSetErrorMessage() bool {
-	if o != nil && !IsNil(o.ErrorMessage) {
+	if o != nil && o.ErrorMessage.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetErrorMessage gets a reference to the given string and assigns it to the ErrorMessage field.
+// SetErrorMessage gets a reference to the given NullableString and assigns it to the ErrorMessage field.
 func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult) SetErrorMessage(v string) {
-	o.ErrorMessage = &v
+	o.ErrorMessage.Set(&v)
+}
+
+// SetErrorMessageNil sets the value for ErrorMessage to be an explicit nil
+func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult) SetErrorMessageNil() {
+	o.ErrorMessage.Set(nil)
+}
+
+// UnsetErrorMessage ensures that no value is present for ErrorMessage, not even an explicit nil
+func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult) UnsetErrorMessage() {
+	o.ErrorMessage.Unset()
 }
 
 // GetCreatedBy returns the CreatedBy field value if set, zero value otherwise.
-func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult) GetCreatedBy() GetArchiveBucket200ResponseArchiveFilesInnerCreatedBy {
+func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult) GetCreatedBy() ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy {
 	if o == nil || IsNil(o.CreatedBy) {
-		var ret GetArchiveBucket200ResponseArchiveFilesInnerCreatedBy
+		var ret ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy
 		return ret
 	}
 	return *o.CreatedBy
@@ -387,7 +420,7 @@ func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult) GetCreatedBy
 
 // GetCreatedByOk returns a tuple with the CreatedBy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult) GetCreatedByOk() (*GetArchiveBucket200ResponseArchiveFilesInnerCreatedBy, bool) {
+func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult) GetCreatedByOk() (*ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy, bool) {
 	if o == nil || IsNil(o.CreatedBy) {
 		return nil, false
 	}
@@ -403,41 +436,52 @@ func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult) IsSetCreated
 	return false
 }
 
-// SetCreatedBy gets a reference to the given GetArchiveBucket200ResponseArchiveFilesInnerCreatedBy and assigns it to the CreatedBy field.
-func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult) SetCreatedBy(v GetArchiveBucket200ResponseArchiveFilesInnerCreatedBy) {
+// SetCreatedBy gets a reference to the given ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy and assigns it to the CreatedBy field.
+func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult) SetCreatedBy(v ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy) {
 	o.CreatedBy = &v
 }
 
-// GetTempInstance returns the TempInstance field value if set, zero value otherwise.
+// GetTempInstance returns the TempInstance field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult) GetTempInstance() string {
-	if o == nil || IsNil(o.TempInstance) {
+	if o == nil || IsNil(o.TempInstance.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.TempInstance
+	return *o.TempInstance.Get()
 }
 
 // GetTempInstanceOk returns a tuple with the TempInstance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult) GetTempInstanceOk() (*string, bool) {
-	if o == nil || IsNil(o.TempInstance) {
+	if o == nil {
 		return nil, false
 	}
-	return o.TempInstance, true
+	return o.TempInstance.Get(), o.TempInstance.IsSet()
 }
 
 // IsSetTempInstance returns a boolean if a field has been set.
 func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult) IsSetTempInstance() bool {
-	if o != nil && !IsNil(o.TempInstance) {
+	if o != nil && o.TempInstance.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetTempInstance gets a reference to the given string and assigns it to the TempInstance field.
+// SetTempInstance gets a reference to the given NullableString and assigns it to the TempInstance field.
 func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult) SetTempInstance(v string) {
-	o.TempInstance = &v
+	o.TempInstance.Set(&v)
+}
+
+// SetTempInstanceNil sets the value for TempInstance to be an explicit nil
+func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult) SetTempInstanceNil() {
+	o.TempInstance.Set(nil)
+}
+
+// UnsetTempInstance ensures that no value is present for TempInstance, not even an explicit nil
+func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult) UnsetTempInstance() {
+	o.TempInstance.Unset()
 }
 
 // GetVirtualImages returns the VirtualImages field value if set, zero value otherwise.
@@ -494,8 +538,8 @@ func (o ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult) ToMap() (map[
 	if !IsNil(o.StartDate) {
 		toSerialize["startDate"] = o.StartDate
 	}
-	if !IsNil(o.EndDate) {
-		toSerialize["endDate"] = o.EndDate
+	if o.EndDate.IsSet() {
+		toSerialize["endDate"] = o.EndDate.Get()
 	}
 	if !IsNil(o.StatusMessage) {
 		toSerialize["statusMessage"] = o.StatusMessage
@@ -503,20 +547,20 @@ func (o ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult) ToMap() (map[
 	if !IsNil(o.StatusPercent) {
 		toSerialize["statusPercent"] = o.StatusPercent
 	}
-	if !IsNil(o.StatusEta) {
-		toSerialize["statusEta"] = o.StatusEta
+	if o.StatusEta.IsSet() {
+		toSerialize["statusEta"] = o.StatusEta.Get()
 	}
 	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status
 	}
-	if !IsNil(o.ErrorMessage) {
-		toSerialize["errorMessage"] = o.ErrorMessage
+	if o.ErrorMessage.IsSet() {
+		toSerialize["errorMessage"] = o.ErrorMessage.Get()
 	}
 	if !IsNil(o.CreatedBy) {
 		toSerialize["createdBy"] = o.CreatedBy
 	}
-	if !IsNil(o.TempInstance) {
-		toSerialize["tempInstance"] = o.TempInstance
+	if o.TempInstance.IsSet() {
+		toSerialize["tempInstance"] = o.TempInstance.Get()
 	}
 	if !IsNil(o.VirtualImages) {
 		toSerialize["virtualImages"] = o.VirtualImages

@@ -6,11 +6,11 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **NullableString** |  | [optional] 
 **AccountId** | Pointer to **int64** |  | [optional] 
-**GroupSource** | Pointer to **string** |  | [optional] 
-**ExternalId** | Pointer to **string** |  | [optional] 
-**Enabled** | Pointer to **string** |  | [optional] 
+**GroupSource** | Pointer to **NullableString** |  | [optional] 
+**ExternalId** | Pointer to **NullableString** |  | [optional] 
+**Enabled** | Pointer to **NullableString** |  | [optional] 
 **SyncSource** | Pointer to **string** |  | [optional] 
 **Visibility** | Pointer to **string** |  | [optional] 
 **Active** | Pointer to **bool** |  | [optional] 
@@ -115,6 +115,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *AddSecurityGroups200ResponseSecurityGroup) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *AddSecurityGroups200ResponseSecurityGroup) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetAccountId
 
 `func (o *AddSecurityGroups200ResponseSecurityGroup) GetAccountId() int64`
@@ -165,6 +175,16 @@ SetGroupSource sets GroupSource field to given value.
 
 HasGroupSource returns a boolean if a field has been set.
 
+### SetGroupSourceNil
+
+`func (o *AddSecurityGroups200ResponseSecurityGroup) SetGroupSourceNil(b bool)`
+
+ SetGroupSourceNil sets the value for GroupSource to be an explicit nil
+
+### UnsetGroupSource
+`func (o *AddSecurityGroups200ResponseSecurityGroup) UnsetGroupSource()`
+
+UnsetGroupSource ensures that no value is present for GroupSource, not even an explicit nil
 ### GetExternalId
 
 `func (o *AddSecurityGroups200ResponseSecurityGroup) GetExternalId() string`
@@ -190,6 +210,16 @@ SetExternalId sets ExternalId field to given value.
 
 HasExternalId returns a boolean if a field has been set.
 
+### SetExternalIdNil
+
+`func (o *AddSecurityGroups200ResponseSecurityGroup) SetExternalIdNil(b bool)`
+
+ SetExternalIdNil sets the value for ExternalId to be an explicit nil
+
+### UnsetExternalId
+`func (o *AddSecurityGroups200ResponseSecurityGroup) UnsetExternalId()`
+
+UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
 ### GetEnabled
 
 `func (o *AddSecurityGroups200ResponseSecurityGroup) GetEnabled() string`
@@ -215,6 +245,16 @@ SetEnabled sets Enabled field to given value.
 
 HasEnabled returns a boolean if a field has been set.
 
+### SetEnabledNil
+
+`func (o *AddSecurityGroups200ResponseSecurityGroup) SetEnabledNil(b bool)`
+
+ SetEnabledNil sets the value for Enabled to be an explicit nil
+
+### UnsetEnabled
+`func (o *AddSecurityGroups200ResponseSecurityGroup) UnsetEnabled()`
+
+UnsetEnabled ensures that no value is present for Enabled, not even an explicit nil
 ### GetSyncSource
 
 `func (o *AddSecurityGroups200ResponseSecurityGroup) GetSyncSource() string`

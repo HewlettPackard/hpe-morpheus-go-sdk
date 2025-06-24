@@ -5,9 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Authority** | Pointer to **string** | Authority (Name) | [optional] 
-**Description** | Pointer to **string** | Description | [optional] 
-**LandingUrl** | Pointer to **string** | An optional override for the default landing page after login for a user. | [optional] 
-**DefaultPersona** | Pointer to **string** | Set the default persona by code. | [optional] 
+**Description** | Pointer to **NullableString** | Description | [optional] 
+**LandingUrl** | Pointer to **NullableString** | An optional override for the default landing page after login for a user. | [optional] 
+**DefaultPersona** | Pointer to **NullableString** |  | [optional] 
 **Permissions** | Pointer to [**[]AddRolesRequestRoleFeaturePermissionsInner**](AddRolesRequestRoleFeaturePermissionsInner.md) | Set the access level for the specified permissions. | [optional] 
 **GlobalSiteAccess** | Pointer to **string** | Set the default access level for for groups (sites). Only applies to user roles. | [optional] 
 **Sites** | Pointer to [**[]AddRolesRequestRoleSitesInner**](AddRolesRequestRoleSitesInner.md) | Set the access level for the specified groups (sites). Only applies to user roles. | [optional] 
@@ -99,6 +99,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *UpdateRoleRequestRole) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *UpdateRoleRequestRole) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetLandingUrl
 
 `func (o *UpdateRoleRequestRole) GetLandingUrl() string`
@@ -124,6 +134,16 @@ SetLandingUrl sets LandingUrl field to given value.
 
 HasLandingUrl returns a boolean if a field has been set.
 
+### SetLandingUrlNil
+
+`func (o *UpdateRoleRequestRole) SetLandingUrlNil(b bool)`
+
+ SetLandingUrlNil sets the value for LandingUrl to be an explicit nil
+
+### UnsetLandingUrl
+`func (o *UpdateRoleRequestRole) UnsetLandingUrl()`
+
+UnsetLandingUrl ensures that no value is present for LandingUrl, not even an explicit nil
 ### GetDefaultPersona
 
 `func (o *UpdateRoleRequestRole) GetDefaultPersona() string`
@@ -149,6 +169,16 @@ SetDefaultPersona sets DefaultPersona field to given value.
 
 HasDefaultPersona returns a boolean if a field has been set.
 
+### SetDefaultPersonaNil
+
+`func (o *UpdateRoleRequestRole) SetDefaultPersonaNil(b bool)`
+
+ SetDefaultPersonaNil sets the value for DefaultPersona to be an explicit nil
+
+### UnsetDefaultPersona
+`func (o *UpdateRoleRequestRole) UnsetDefaultPersona()`
+
+UnsetDefaultPersona ensures that no value is present for DefaultPersona, not even an explicit nil
 ### GetPermissions
 
 `func (o *UpdateRoleRequestRole) GetPermissions() []AddRolesRequestRoleFeaturePermissionsInner`

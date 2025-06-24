@@ -232,6 +232,16 @@ SetPlans sets Plans field to given value.
 
 HasPlans returns a boolean if a field has been set.
 
+### SetPlansNil
+
+`func (o *AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions) SetPlansNil(b bool)`
+
+ SetPlansNil sets the value for Plans to be an explicit nil
+
+### UnsetPlans
+`func (o *AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions) UnsetPlans()`
+
+UnsetPlans ensures that no value is present for Plans, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

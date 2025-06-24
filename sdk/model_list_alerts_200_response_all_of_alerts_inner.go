@@ -377,9 +377,9 @@ func (o *ListAlerts200ResponseAllOfAlertsInner) SetLastUpdated(v time.Time) {
 	o.LastUpdated = &v
 }
 
-// GetChecks returns the Checks field value if set, zero value otherwise.
+// GetChecks returns the Checks field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListAlerts200ResponseAllOfAlertsInner) GetChecks() []int32 {
-	if o == nil || IsNil(o.Checks) {
+	if o == nil {
 		var ret []int32
 		return ret
 	}
@@ -388,6 +388,7 @@ func (o *ListAlerts200ResponseAllOfAlertsInner) GetChecks() []int32 {
 
 // GetChecksOk returns a tuple with the Checks field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListAlerts200ResponseAllOfAlertsInner) GetChecksOk() ([]int32, bool) {
 	if o == nil || IsNil(o.Checks) {
 		return nil, false
@@ -409,9 +410,9 @@ func (o *ListAlerts200ResponseAllOfAlertsInner) SetChecks(v []int32) {
 	o.Checks = v
 }
 
-// GetCheckGroups returns the CheckGroups field value if set, zero value otherwise.
+// GetCheckGroups returns the CheckGroups field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListAlerts200ResponseAllOfAlertsInner) GetCheckGroups() []int32 {
-	if o == nil || IsNil(o.CheckGroups) {
+	if o == nil {
 		var ret []int32
 		return ret
 	}
@@ -420,6 +421,7 @@ func (o *ListAlerts200ResponseAllOfAlertsInner) GetCheckGroups() []int32 {
 
 // GetCheckGroupsOk returns a tuple with the CheckGroups field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListAlerts200ResponseAllOfAlertsInner) GetCheckGroupsOk() ([]int32, bool) {
 	if o == nil || IsNil(o.CheckGroups) {
 		return nil, false
@@ -441,9 +443,9 @@ func (o *ListAlerts200ResponseAllOfAlertsInner) SetCheckGroups(v []int32) {
 	o.CheckGroups = v
 }
 
-// GetApps returns the Apps field value if set, zero value otherwise.
+// GetApps returns the Apps field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListAlerts200ResponseAllOfAlertsInner) GetApps() []int32 {
-	if o == nil || IsNil(o.Apps) {
+	if o == nil {
 		var ret []int32
 		return ret
 	}
@@ -452,6 +454,7 @@ func (o *ListAlerts200ResponseAllOfAlertsInner) GetApps() []int32 {
 
 // GetAppsOk returns a tuple with the Apps field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListAlerts200ResponseAllOfAlertsInner) GetAppsOk() ([]int32, bool) {
 	if o == nil || IsNil(o.Apps) {
 		return nil, false
@@ -545,13 +548,13 @@ func (o ListAlerts200ResponseAllOfAlertsInner) ToMap() (map[string]interface{}, 
 	if !IsNil(o.LastUpdated) {
 		toSerialize["lastUpdated"] = o.LastUpdated
 	}
-	if !IsNil(o.Checks) {
+	if o.Checks != nil {
 		toSerialize["checks"] = o.Checks
 	}
-	if !IsNil(o.CheckGroups) {
+	if o.CheckGroups != nil {
 		toSerialize["checkGroups"] = o.CheckGroups
 	}
-	if !IsNil(o.Apps) {
+	if o.Apps != nil {
 		toSerialize["apps"] = o.Apps
 	}
 	if !IsNil(o.Contacts) {

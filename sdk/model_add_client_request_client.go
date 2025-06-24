@@ -25,9 +25,9 @@ type AddClientRequestClient struct {
 	// Client Secret
 	ClientSecret *string `json:"clientSecret,omitempty"`
 	// Length of time accessToken is valid in seconds.
-	AccessTokenValiditySeconds int32 `json:"accessTokenValiditySeconds"`
+	AccessTokenValiditySeconds NullableInt32 `json:"accessTokenValiditySeconds"`
 	// Length of time refreshToken is valid in seconds.
-	RefreshTokenValiditySeconds int32 `json:"refreshTokenValiditySeconds"`
+	RefreshTokenValiditySeconds NullableInt32 `json:"refreshTokenValiditySeconds"`
 	// List of Redirect URIs for use with the OpenID Authorization Code Flow
 	RedirectUris         []string               `json:"redirectUris,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
@@ -39,7 +39,7 @@ type _AddClientRequestClient AddClientRequestClient
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddClientRequestClient(clientId string, accessTokenValiditySeconds int32, refreshTokenValiditySeconds int32) *AddClientRequestClient {
+func NewAddClientRequestClient(clientId string, accessTokenValiditySeconds NullableInt32, refreshTokenValiditySeconds NullableInt32) *AddClientRequestClient {
 	this := AddClientRequestClient{}
 	this.ClientId = clientId
 	this.AccessTokenValiditySeconds = accessTokenValiditySeconds
@@ -112,51 +112,55 @@ func (o *AddClientRequestClient) SetClientSecret(v string) {
 }
 
 // GetAccessTokenValiditySeconds returns the AccessTokenValiditySeconds field value
+// If the value is explicit nil, the zero value for int32 will be returned
 func (o *AddClientRequestClient) GetAccessTokenValiditySeconds() int32 {
-	if o == nil {
+	if o == nil || o.AccessTokenValiditySeconds.Get() == nil {
 		var ret int32
 		return ret
 	}
 
-	return o.AccessTokenValiditySeconds
+	return *o.AccessTokenValiditySeconds.Get()
 }
 
 // GetAccessTokenValiditySecondsOk returns a tuple with the AccessTokenValiditySeconds field value
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AddClientRequestClient) GetAccessTokenValiditySecondsOk() (*int32, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.AccessTokenValiditySeconds, true
+	return o.AccessTokenValiditySeconds.Get(), o.AccessTokenValiditySeconds.IsSet()
 }
 
 // SetAccessTokenValiditySeconds sets field value
 func (o *AddClientRequestClient) SetAccessTokenValiditySeconds(v int32) {
-	o.AccessTokenValiditySeconds = v
+	o.AccessTokenValiditySeconds.Set(&v)
 }
 
 // GetRefreshTokenValiditySeconds returns the RefreshTokenValiditySeconds field value
+// If the value is explicit nil, the zero value for int32 will be returned
 func (o *AddClientRequestClient) GetRefreshTokenValiditySeconds() int32 {
-	if o == nil {
+	if o == nil || o.RefreshTokenValiditySeconds.Get() == nil {
 		var ret int32
 		return ret
 	}
 
-	return o.RefreshTokenValiditySeconds
+	return *o.RefreshTokenValiditySeconds.Get()
 }
 
 // GetRefreshTokenValiditySecondsOk returns a tuple with the RefreshTokenValiditySeconds field value
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AddClientRequestClient) GetRefreshTokenValiditySecondsOk() (*int32, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.RefreshTokenValiditySeconds, true
+	return o.RefreshTokenValiditySeconds.Get(), o.RefreshTokenValiditySeconds.IsSet()
 }
 
 // SetRefreshTokenValiditySeconds sets field value
 func (o *AddClientRequestClient) SetRefreshTokenValiditySeconds(v int32) {
-	o.RefreshTokenValiditySeconds = v
+	o.RefreshTokenValiditySeconds.Set(&v)
 }
 
 // GetRedirectUris returns the RedirectUris field value if set, zero value otherwise.
@@ -205,8 +209,8 @@ func (o AddClientRequestClient) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ClientSecret) {
 		toSerialize["clientSecret"] = o.ClientSecret
 	}
-	toSerialize["accessTokenValiditySeconds"] = o.AccessTokenValiditySeconds
-	toSerialize["refreshTokenValiditySeconds"] = o.RefreshTokenValiditySeconds
+	toSerialize["accessTokenValiditySeconds"] = o.AccessTokenValiditySeconds.Get()
+	toSerialize["refreshTokenValiditySeconds"] = o.RefreshTokenValiditySeconds.Get()
 	if !IsNil(o.RedirectUris) {
 		toSerialize["redirectUris"] = o.RedirectUris
 	}

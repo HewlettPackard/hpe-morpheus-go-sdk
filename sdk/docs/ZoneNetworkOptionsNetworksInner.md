@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Name** | Pointer to **string** |  | [optional] 
 **DhcpServer** | Pointer to **bool** |  | [optional] 
 **AllowStaticOverride** | Pointer to **bool** |  | [optional] 
-**Pool** | Pointer to **string** |  | [optional] 
+**Pool** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -154,6 +154,16 @@ SetPool sets Pool field to given value.
 
 HasPool returns a boolean if a field has been set.
 
+### SetPoolNil
+
+`func (o *ZoneNetworkOptionsNetworksInner) SetPoolNil(b bool)`
+
+ SetPoolNil sets the value for Pool to be an explicit nil
+
+### UnsetPool
+`func (o *ZoneNetworkOptionsNetworksInner) UnsetPool()`
+
+UnsetPool ensures that no value is present for Pool, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

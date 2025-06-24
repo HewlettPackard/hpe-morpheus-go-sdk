@@ -21,19 +21,19 @@ var _ MappedNullable = &ArchiveBucketFile{}
 
 // ArchiveBucketFile struct for ArchiveBucketFile
 type ArchiveBucketFile struct {
-	Id                   *int64                                                     `json:"id,omitempty"`
-	Name                 *string                                                    `json:"name,omitempty"`
-	FilePath             *string                                                    `json:"filePath,omitempty"`
-	ArchiveBucket        *GetArchiveBucket200ResponseArchiveFilesInnerArchiveBucket `json:"archiveBucket,omitempty"`
-	CreatedBy            *GetArchiveBucket200ResponseArchiveFilesInnerCreatedBy     `json:"createdBy,omitempty"`
-	IsDirectory          *bool                                                      `json:"isDirectory,omitempty"`
-	Status               *string                                                    `json:"status,omitempty"`
-	RawSize              *int64                                                     `json:"rawSize,omitempty"`
-	ContentType          *string                                                    `json:"contentType,omitempty"`
-	DownloadCount        *int64                                                     `json:"downloadCount,omitempty"`
-	DateCreated          *time.Time                                                 `json:"dateCreated,omitempty"`
-	LastUpdated          *time.Time                                                 `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}                                     `json:",remain"`
+	Id                   *int64                                                          `json:"id,omitempty"`
+	Name                 *string                                                         `json:"name,omitempty"`
+	FilePath             *string                                                         `json:"filePath,omitempty"`
+	ArchiveBucket        *GetArchiveBucket200ResponseArchiveFilesInnerArchiveBucket      `json:"archiveBucket,omitempty"`
+	CreatedBy            *ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy `json:"createdBy,omitempty"`
+	IsDirectory          *bool                                                           `json:"isDirectory,omitempty"`
+	Status               *string                                                         `json:"status,omitempty"`
+	RawSize              *int64                                                          `json:"rawSize,omitempty"`
+	ContentType          NullableString                                                  `json:"contentType,omitempty"`
+	DownloadCount        *int64                                                          `json:"downloadCount,omitempty"`
+	DateCreated          *time.Time                                                      `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                                      `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}                                          `json:",remain"`
 }
 
 type _ArchiveBucketFile ArchiveBucketFile
@@ -184,9 +184,9 @@ func (o *ArchiveBucketFile) SetArchiveBucket(v GetArchiveBucket200ResponseArchiv
 }
 
 // GetCreatedBy returns the CreatedBy field value if set, zero value otherwise.
-func (o *ArchiveBucketFile) GetCreatedBy() GetArchiveBucket200ResponseArchiveFilesInnerCreatedBy {
+func (o *ArchiveBucketFile) GetCreatedBy() ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy {
 	if o == nil || IsNil(o.CreatedBy) {
-		var ret GetArchiveBucket200ResponseArchiveFilesInnerCreatedBy
+		var ret ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy
 		return ret
 	}
 	return *o.CreatedBy
@@ -194,7 +194,7 @@ func (o *ArchiveBucketFile) GetCreatedBy() GetArchiveBucket200ResponseArchiveFil
 
 // GetCreatedByOk returns a tuple with the CreatedBy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ArchiveBucketFile) GetCreatedByOk() (*GetArchiveBucket200ResponseArchiveFilesInnerCreatedBy, bool) {
+func (o *ArchiveBucketFile) GetCreatedByOk() (*ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy, bool) {
 	if o == nil || IsNil(o.CreatedBy) {
 		return nil, false
 	}
@@ -210,8 +210,8 @@ func (o *ArchiveBucketFile) IsSetCreatedBy() bool {
 	return false
 }
 
-// SetCreatedBy gets a reference to the given GetArchiveBucket200ResponseArchiveFilesInnerCreatedBy and assigns it to the CreatedBy field.
-func (o *ArchiveBucketFile) SetCreatedBy(v GetArchiveBucket200ResponseArchiveFilesInnerCreatedBy) {
+// SetCreatedBy gets a reference to the given ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy and assigns it to the CreatedBy field.
+func (o *ArchiveBucketFile) SetCreatedBy(v ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy) {
 	o.CreatedBy = &v
 }
 
@@ -311,36 +311,47 @@ func (o *ArchiveBucketFile) SetRawSize(v int64) {
 	o.RawSize = &v
 }
 
-// GetContentType returns the ContentType field value if set, zero value otherwise.
+// GetContentType returns the ContentType field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ArchiveBucketFile) GetContentType() string {
-	if o == nil || IsNil(o.ContentType) {
+	if o == nil || IsNil(o.ContentType.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ContentType
+	return *o.ContentType.Get()
 }
 
 // GetContentTypeOk returns a tuple with the ContentType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ArchiveBucketFile) GetContentTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.ContentType) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ContentType, true
+	return o.ContentType.Get(), o.ContentType.IsSet()
 }
 
 // IsSetContentType returns a boolean if a field has been set.
 func (o *ArchiveBucketFile) IsSetContentType() bool {
-	if o != nil && !IsNil(o.ContentType) {
+	if o != nil && o.ContentType.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetContentType gets a reference to the given string and assigns it to the ContentType field.
+// SetContentType gets a reference to the given NullableString and assigns it to the ContentType field.
 func (o *ArchiveBucketFile) SetContentType(v string) {
-	o.ContentType = &v
+	o.ContentType.Set(&v)
+}
+
+// SetContentTypeNil sets the value for ContentType to be an explicit nil
+func (o *ArchiveBucketFile) SetContentTypeNil() {
+	o.ContentType.Set(nil)
+}
+
+// UnsetContentType ensures that no value is present for ContentType, not even an explicit nil
+func (o *ArchiveBucketFile) UnsetContentType() {
+	o.ContentType.Unset()
 }
 
 // GetDownloadCount returns the DownloadCount field value if set, zero value otherwise.
@@ -473,8 +484,8 @@ func (o ArchiveBucketFile) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.RawSize) {
 		toSerialize["rawSize"] = o.RawSize
 	}
-	if !IsNil(o.ContentType) {
-		toSerialize["contentType"] = o.ContentType
+	if o.ContentType.IsSet() {
+		toSerialize["contentType"] = o.ContentType.Get()
 	}
 	if !IsNil(o.DownloadCount) {
 		toSerialize["downloadCount"] = o.DownloadCount

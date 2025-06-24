@@ -25,22 +25,22 @@ type ListRoles200ResponseAllOfRolesInner struct {
 	// a unique name of the role
 	Name *string `json:"name,omitempty"`
 	// Alias for name
-	Authority   *string `json:"authority,omitempty"`
-	Description *string `json:"description,omitempty"`
+	Authority   *string        `json:"authority,omitempty"`
+	Description NullableString `json:"description,omitempty"`
 	// An optional override for the default landing page after login for a user.
-	LandingUrl           *string                                                                 `json:"landingUrl,omitempty"`
-	Scope                *string                                                                 `json:"scope,omitempty"`
-	RoleType             *string                                                                 `json:"roleType,omitempty"`
-	Multitenant          *bool                                                                   `json:"multitenant,omitempty"`
-	MultitenantLocked    *bool                                                                   `json:"multitenantLocked,omitempty"`
-	ParentRoleId         *string                                                                 `json:"parentRoleId,omitempty"`
-	Diverged             *bool                                                                   `json:"diverged,omitempty"`
-	OwnerId              *int64                                                                  `json:"ownerId,omitempty"`
-	Owner                *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"owner,omitempty"`
-	DefaultPersona       *string                                                                 `json:"defaultPersona,omitempty"`
-	DateCreated          *time.Time                                                              `json:"dateCreated,omitempty"`
-	LastUpdated          *time.Time                                                              `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}                                                  `json:",remain"`
+	LandingUrl           NullableString                                     `json:"landingUrl,omitempty"`
+	Scope                *string                                            `json:"scope,omitempty"`
+	RoleType             *string                                            `json:"roleType,omitempty"`
+	Multitenant          *bool                                              `json:"multitenant,omitempty"`
+	MultitenantLocked    *bool                                              `json:"multitenantLocked,omitempty"`
+	ParentRoleId         NullableString                                     `json:"parentRoleId,omitempty"`
+	Diverged             *bool                                              `json:"diverged,omitempty"`
+	OwnerId              *int64                                             `json:"ownerId,omitempty"`
+	Owner                *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"owner,omitempty"`
+	DefaultPersona       NullableString                                     `json:"defaultPersona,omitempty"`
+	DateCreated          *time.Time                                         `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                         `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}                             `json:",remain"`
 }
 
 type _ListRoles200ResponseAllOfRolesInner ListRoles200ResponseAllOfRolesInner
@@ -158,68 +158,90 @@ func (o *ListRoles200ResponseAllOfRolesInner) SetAuthority(v string) {
 	o.Authority = &v
 }
 
-// GetDescription returns the Description field value if set, zero value otherwise.
+// GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListRoles200ResponseAllOfRolesInner) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
+	if o == nil || IsNil(o.Description.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Description
+	return *o.Description.Get()
 }
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListRoles200ResponseAllOfRolesInner) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Description, true
+	return o.Description.Get(), o.Description.IsSet()
 }
 
 // IsSetDescription returns a boolean if a field has been set.
 func (o *ListRoles200ResponseAllOfRolesInner) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
+	if o != nil && o.Description.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDescription gets a reference to the given string and assigns it to the Description field.
+// SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *ListRoles200ResponseAllOfRolesInner) SetDescription(v string) {
-	o.Description = &v
+	o.Description.Set(&v)
 }
 
-// GetLandingUrl returns the LandingUrl field value if set, zero value otherwise.
+// SetDescriptionNil sets the value for Description to be an explicit nil
+func (o *ListRoles200ResponseAllOfRolesInner) SetDescriptionNil() {
+	o.Description.Set(nil)
+}
+
+// UnsetDescription ensures that no value is present for Description, not even an explicit nil
+func (o *ListRoles200ResponseAllOfRolesInner) UnsetDescription() {
+	o.Description.Unset()
+}
+
+// GetLandingUrl returns the LandingUrl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListRoles200ResponseAllOfRolesInner) GetLandingUrl() string {
-	if o == nil || IsNil(o.LandingUrl) {
+	if o == nil || IsNil(o.LandingUrl.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.LandingUrl
+	return *o.LandingUrl.Get()
 }
 
 // GetLandingUrlOk returns a tuple with the LandingUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListRoles200ResponseAllOfRolesInner) GetLandingUrlOk() (*string, bool) {
-	if o == nil || IsNil(o.LandingUrl) {
+	if o == nil {
 		return nil, false
 	}
-	return o.LandingUrl, true
+	return o.LandingUrl.Get(), o.LandingUrl.IsSet()
 }
 
 // IsSetLandingUrl returns a boolean if a field has been set.
 func (o *ListRoles200ResponseAllOfRolesInner) IsSetLandingUrl() bool {
-	if o != nil && !IsNil(o.LandingUrl) {
+	if o != nil && o.LandingUrl.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetLandingUrl gets a reference to the given string and assigns it to the LandingUrl field.
+// SetLandingUrl gets a reference to the given NullableString and assigns it to the LandingUrl field.
 func (o *ListRoles200ResponseAllOfRolesInner) SetLandingUrl(v string) {
-	o.LandingUrl = &v
+	o.LandingUrl.Set(&v)
+}
+
+// SetLandingUrlNil sets the value for LandingUrl to be an explicit nil
+func (o *ListRoles200ResponseAllOfRolesInner) SetLandingUrlNil() {
+	o.LandingUrl.Set(nil)
+}
+
+// UnsetLandingUrl ensures that no value is present for LandingUrl, not even an explicit nil
+func (o *ListRoles200ResponseAllOfRolesInner) UnsetLandingUrl() {
+	o.LandingUrl.Unset()
 }
 
 // GetScope returns the Scope field value if set, zero value otherwise.
@@ -350,36 +372,47 @@ func (o *ListRoles200ResponseAllOfRolesInner) SetMultitenantLocked(v bool) {
 	o.MultitenantLocked = &v
 }
 
-// GetParentRoleId returns the ParentRoleId field value if set, zero value otherwise.
+// GetParentRoleId returns the ParentRoleId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListRoles200ResponseAllOfRolesInner) GetParentRoleId() string {
-	if o == nil || IsNil(o.ParentRoleId) {
+	if o == nil || IsNil(o.ParentRoleId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ParentRoleId
+	return *o.ParentRoleId.Get()
 }
 
 // GetParentRoleIdOk returns a tuple with the ParentRoleId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListRoles200ResponseAllOfRolesInner) GetParentRoleIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ParentRoleId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ParentRoleId, true
+	return o.ParentRoleId.Get(), o.ParentRoleId.IsSet()
 }
 
 // IsSetParentRoleId returns a boolean if a field has been set.
 func (o *ListRoles200ResponseAllOfRolesInner) IsSetParentRoleId() bool {
-	if o != nil && !IsNil(o.ParentRoleId) {
+	if o != nil && o.ParentRoleId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetParentRoleId gets a reference to the given string and assigns it to the ParentRoleId field.
+// SetParentRoleId gets a reference to the given NullableString and assigns it to the ParentRoleId field.
 func (o *ListRoles200ResponseAllOfRolesInner) SetParentRoleId(v string) {
-	o.ParentRoleId = &v
+	o.ParentRoleId.Set(&v)
+}
+
+// SetParentRoleIdNil sets the value for ParentRoleId to be an explicit nil
+func (o *ListRoles200ResponseAllOfRolesInner) SetParentRoleIdNil() {
+	o.ParentRoleId.Set(nil)
+}
+
+// UnsetParentRoleId ensures that no value is present for ParentRoleId, not even an explicit nil
+func (o *ListRoles200ResponseAllOfRolesInner) UnsetParentRoleId() {
+	o.ParentRoleId.Unset()
 }
 
 // GetDiverged returns the Diverged field value if set, zero value otherwise.
@@ -447,9 +480,9 @@ func (o *ListRoles200ResponseAllOfRolesInner) SetOwnerId(v int64) {
 }
 
 // GetOwner returns the Owner field value if set, zero value otherwise.
-func (o *ListRoles200ResponseAllOfRolesInner) GetOwner() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *ListRoles200ResponseAllOfRolesInner) GetOwner() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.Owner) {
-		var ret ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return *o.Owner
@@ -457,7 +490,7 @@ func (o *ListRoles200ResponseAllOfRolesInner) GetOwner() ListApplianceSettings20
 
 // GetOwnerOk returns a tuple with the Owner field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListRoles200ResponseAllOfRolesInner) GetOwnerOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *ListRoles200ResponseAllOfRolesInner) GetOwnerOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.Owner) {
 		return nil, false
 	}
@@ -473,41 +506,52 @@ func (o *ListRoles200ResponseAllOfRolesInner) IsSetOwner() bool {
 	return false
 }
 
-// SetOwner gets a reference to the given ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the Owner field.
-func (o *ListRoles200ResponseAllOfRolesInner) SetOwner(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetOwner gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Owner field.
+func (o *ListRoles200ResponseAllOfRolesInner) SetOwner(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.Owner = &v
 }
 
-// GetDefaultPersona returns the DefaultPersona field value if set, zero value otherwise.
+// GetDefaultPersona returns the DefaultPersona field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListRoles200ResponseAllOfRolesInner) GetDefaultPersona() string {
-	if o == nil || IsNil(o.DefaultPersona) {
+	if o == nil || IsNil(o.DefaultPersona.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.DefaultPersona
+	return *o.DefaultPersona.Get()
 }
 
 // GetDefaultPersonaOk returns a tuple with the DefaultPersona field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListRoles200ResponseAllOfRolesInner) GetDefaultPersonaOk() (*string, bool) {
-	if o == nil || IsNil(o.DefaultPersona) {
+	if o == nil {
 		return nil, false
 	}
-	return o.DefaultPersona, true
+	return o.DefaultPersona.Get(), o.DefaultPersona.IsSet()
 }
 
 // IsSetDefaultPersona returns a boolean if a field has been set.
 func (o *ListRoles200ResponseAllOfRolesInner) IsSetDefaultPersona() bool {
-	if o != nil && !IsNil(o.DefaultPersona) {
+	if o != nil && o.DefaultPersona.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDefaultPersona gets a reference to the given string and assigns it to the DefaultPersona field.
+// SetDefaultPersona gets a reference to the given NullableString and assigns it to the DefaultPersona field.
 func (o *ListRoles200ResponseAllOfRolesInner) SetDefaultPersona(v string) {
-	o.DefaultPersona = &v
+	o.DefaultPersona.Set(&v)
+}
+
+// SetDefaultPersonaNil sets the value for DefaultPersona to be an explicit nil
+func (o *ListRoles200ResponseAllOfRolesInner) SetDefaultPersonaNil() {
+	o.DefaultPersona.Set(nil)
+}
+
+// UnsetDefaultPersona ensures that no value is present for DefaultPersona, not even an explicit nil
+func (o *ListRoles200ResponseAllOfRolesInner) UnsetDefaultPersona() {
+	o.DefaultPersona.Unset()
 }
 
 // GetDateCreated returns the DateCreated field value if set, zero value otherwise.
@@ -593,11 +637,11 @@ func (o ListRoles200ResponseAllOfRolesInner) ToMap() (map[string]interface{}, er
 	if !IsNil(o.Authority) {
 		toSerialize["authority"] = o.Authority
 	}
-	if !IsNil(o.Description) {
-		toSerialize["description"] = o.Description
+	if o.Description.IsSet() {
+		toSerialize["description"] = o.Description.Get()
 	}
-	if !IsNil(o.LandingUrl) {
-		toSerialize["landingUrl"] = o.LandingUrl
+	if o.LandingUrl.IsSet() {
+		toSerialize["landingUrl"] = o.LandingUrl.Get()
 	}
 	if !IsNil(o.Scope) {
 		toSerialize["scope"] = o.Scope
@@ -611,8 +655,8 @@ func (o ListRoles200ResponseAllOfRolesInner) ToMap() (map[string]interface{}, er
 	if !IsNil(o.MultitenantLocked) {
 		toSerialize["multitenantLocked"] = o.MultitenantLocked
 	}
-	if !IsNil(o.ParentRoleId) {
-		toSerialize["parentRoleId"] = o.ParentRoleId
+	if o.ParentRoleId.IsSet() {
+		toSerialize["parentRoleId"] = o.ParentRoleId.Get()
 	}
 	if !IsNil(o.Diverged) {
 		toSerialize["diverged"] = o.Diverged
@@ -623,8 +667,8 @@ func (o ListRoles200ResponseAllOfRolesInner) ToMap() (map[string]interface{}, er
 	if !IsNil(o.Owner) {
 		toSerialize["owner"] = o.Owner
 	}
-	if !IsNil(o.DefaultPersona) {
-		toSerialize["defaultPersona"] = o.DefaultPersona
+	if o.DefaultPersona.IsSet() {
+		toSerialize["defaultPersona"] = o.DefaultPersona.Get()
 	}
 	if !IsNil(o.DateCreated) {
 		toSerialize["dateCreated"] = o.DateCreated

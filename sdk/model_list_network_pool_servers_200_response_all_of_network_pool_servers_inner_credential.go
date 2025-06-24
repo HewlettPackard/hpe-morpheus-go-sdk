@@ -20,8 +20,8 @@ var _ MappedNullable = &ListNetworkPoolServers200ResponseAllOfNetworkPoolServers
 
 // ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInnerCredential struct for ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInnerCredential
 type ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInnerCredential struct {
-	Id                   *int64                 `json:"id,omitempty"`
-	Name                 *string                `json:"name,omitempty"`
+	Id                   NullableInt64          `json:"id,omitempty"`
+	Name                 NullableString         `json:"name,omitempty"`
 	Type                 *string                `json:"type,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
@@ -45,68 +45,90 @@ func NewListNetworkPoolServers200ResponseAllOfNetworkPoolServersInnerCredentialW
 	return &this
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
+// GetId returns the Id field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInnerCredential) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
+	if o == nil || IsNil(o.Id.Get()) {
 		var ret int64
 		return ret
 	}
-	return *o.Id
+	return *o.Id.Get()
 }
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInnerCredential) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Id, true
+	return o.Id.Get(), o.Id.IsSet()
 }
 
 // IsSetId returns a boolean if a field has been set.
 func (o *ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInnerCredential) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
+	if o != nil && o.Id.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetId gets a reference to the given int64 and assigns it to the Id field.
+// SetId gets a reference to the given NullableInt64 and assigns it to the Id field.
 func (o *ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInnerCredential) SetId(v int64) {
-	o.Id = &v
+	o.Id.Set(&v)
 }
 
-// GetName returns the Name field value if set, zero value otherwise.
+// SetIdNil sets the value for Id to be an explicit nil
+func (o *ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInnerCredential) SetIdNil() {
+	o.Id.Set(nil)
+}
+
+// UnsetId ensures that no value is present for Id, not even an explicit nil
+func (o *ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInnerCredential) UnsetId() {
+	o.Id.Unset()
+}
+
+// GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInnerCredential) GetName() string {
-	if o == nil || IsNil(o.Name) {
+	if o == nil || IsNil(o.Name.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Name
+	return *o.Name.Get()
 }
 
 // GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInnerCredential) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Name, true
+	return o.Name.Get(), o.Name.IsSet()
 }
 
 // IsSetName returns a boolean if a field has been set.
 func (o *ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInnerCredential) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
+	if o != nil && o.Name.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetName gets a reference to the given string and assigns it to the Name field.
+// SetName gets a reference to the given NullableString and assigns it to the Name field.
 func (o *ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInnerCredential) SetName(v string) {
-	o.Name = &v
+	o.Name.Set(&v)
+}
+
+// SetNameNil sets the value for Name to be an explicit nil
+func (o *ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInnerCredential) SetNameNil() {
+	o.Name.Set(nil)
+}
+
+// UnsetName ensures that no value is present for Name, not even an explicit nil
+func (o *ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInnerCredential) UnsetName() {
+	o.Name.Unset()
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
@@ -151,11 +173,11 @@ func (o ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInnerCredential)
 
 func (o ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInnerCredential) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Id) {
-		toSerialize["id"] = o.Id
+	if o.Id.IsSet() {
+		toSerialize["id"] = o.Id.Get()
 	}
-	if !IsNil(o.Name) {
-		toSerialize["name"] = o.Name
+	if o.Name.IsSet() {
+		toSerialize["name"] = o.Name.Get()
 	}
 	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type

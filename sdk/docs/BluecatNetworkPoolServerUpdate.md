@@ -6,12 +6,12 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **string** | Name | [optional] 
 **Enabled** | Pointer to **bool** | Can be used to enable / disable the network pool server. | [optional] [default to true]
-**ServiceUrl** | Pointer to **string** | URL | [optional] 
-**ServiceUsername** | Pointer to **string** | Username | [optional] 
-**ServicePassword** | Pointer to **string** | Password | [optional] 
-**ServiceThrottleRate** | Pointer to **int64** | Throttle Rate | [optional] [default to 0]
+**ServiceUrl** | Pointer to **NullableString** | URL | [optional] 
+**ServiceUsername** | Pointer to **NullableString** | Username | [optional] 
+**ServicePassword** | Pointer to **NullableString** | Password | [optional] 
+**ServiceThrottleRate** | Pointer to **NullableInt64** | Throttle Rate | [optional] [default to 0]
 **IgnoreSsl** | Pointer to **bool** | Disable SSL SNI Verification | [optional] 
-**NetworkFilter** | Pointer to **string** | Network Filter | [optional] 
+**NetworkFilter** | Pointer to **NullableString** | Network Filter | [optional] 
 **Config** | Pointer to [**BluecatNetworkPoolServerConfig**](BluecatNetworkPoolServerConfig.md) |  | [optional] 
 **Credential** | Pointer to [**NSXNetworkServerCredential**](NSXNetworkServerCredential.md) |  | [optional] 
 
@@ -109,6 +109,16 @@ SetServiceUrl sets ServiceUrl field to given value.
 
 HasServiceUrl returns a boolean if a field has been set.
 
+### SetServiceUrlNil
+
+`func (o *BluecatNetworkPoolServerUpdate) SetServiceUrlNil(b bool)`
+
+ SetServiceUrlNil sets the value for ServiceUrl to be an explicit nil
+
+### UnsetServiceUrl
+`func (o *BluecatNetworkPoolServerUpdate) UnsetServiceUrl()`
+
+UnsetServiceUrl ensures that no value is present for ServiceUrl, not even an explicit nil
 ### GetServiceUsername
 
 `func (o *BluecatNetworkPoolServerUpdate) GetServiceUsername() string`
@@ -134,6 +144,16 @@ SetServiceUsername sets ServiceUsername field to given value.
 
 HasServiceUsername returns a boolean if a field has been set.
 
+### SetServiceUsernameNil
+
+`func (o *BluecatNetworkPoolServerUpdate) SetServiceUsernameNil(b bool)`
+
+ SetServiceUsernameNil sets the value for ServiceUsername to be an explicit nil
+
+### UnsetServiceUsername
+`func (o *BluecatNetworkPoolServerUpdate) UnsetServiceUsername()`
+
+UnsetServiceUsername ensures that no value is present for ServiceUsername, not even an explicit nil
 ### GetServicePassword
 
 `func (o *BluecatNetworkPoolServerUpdate) GetServicePassword() string`
@@ -159,6 +179,16 @@ SetServicePassword sets ServicePassword field to given value.
 
 HasServicePassword returns a boolean if a field has been set.
 
+### SetServicePasswordNil
+
+`func (o *BluecatNetworkPoolServerUpdate) SetServicePasswordNil(b bool)`
+
+ SetServicePasswordNil sets the value for ServicePassword to be an explicit nil
+
+### UnsetServicePassword
+`func (o *BluecatNetworkPoolServerUpdate) UnsetServicePassword()`
+
+UnsetServicePassword ensures that no value is present for ServicePassword, not even an explicit nil
 ### GetServiceThrottleRate
 
 `func (o *BluecatNetworkPoolServerUpdate) GetServiceThrottleRate() int64`
@@ -184,6 +214,16 @@ SetServiceThrottleRate sets ServiceThrottleRate field to given value.
 
 HasServiceThrottleRate returns a boolean if a field has been set.
 
+### SetServiceThrottleRateNil
+
+`func (o *BluecatNetworkPoolServerUpdate) SetServiceThrottleRateNil(b bool)`
+
+ SetServiceThrottleRateNil sets the value for ServiceThrottleRate to be an explicit nil
+
+### UnsetServiceThrottleRate
+`func (o *BluecatNetworkPoolServerUpdate) UnsetServiceThrottleRate()`
+
+UnsetServiceThrottleRate ensures that no value is present for ServiceThrottleRate, not even an explicit nil
 ### GetIgnoreSsl
 
 `func (o *BluecatNetworkPoolServerUpdate) GetIgnoreSsl() bool`
@@ -234,6 +274,16 @@ SetNetworkFilter sets NetworkFilter field to given value.
 
 HasNetworkFilter returns a boolean if a field has been set.
 
+### SetNetworkFilterNil
+
+`func (o *BluecatNetworkPoolServerUpdate) SetNetworkFilterNil(b bool)`
+
+ SetNetworkFilterNil sets the value for NetworkFilter to be an explicit nil
+
+### UnsetNetworkFilter
+`func (o *BluecatNetworkPoolServerUpdate) UnsetNetworkFilter()`
+
+UnsetNetworkFilter ensures that no value is present for NetworkFilter, not even an explicit nil
 ### GetConfig
 
 `func (o *BluecatNetworkPoolServerUpdate) GetConfig() BluecatNetworkPoolServerConfig`

@@ -21,41 +21,41 @@ var _ MappedNullable = &GetBudgets200ResponseAllOfBudget{}
 
 // GetBudgets200ResponseAllOfBudget struct for GetBudgets200ResponseAllOfBudget
 type GetBudgets200ResponseAllOfBudget struct {
-	Id                   *int64                                                                  `json:"id,omitempty"`
-	Name                 *string                                                                 `json:"name,omitempty"`
-	Description          *string                                                                 `json:"description,omitempty"`
-	Account              *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"account,omitempty"`
-	ForecastType         *GetBudgets200ResponseAllOfBudgetForecastType                           `json:"forecastType,omitempty"`
-	Enabled              *bool                                                                   `json:"enabled,omitempty"`
-	RefScope             *string                                                                 `json:"refScope,omitempty"`
-	RefType              *string                                                                 `json:"refType,omitempty"`
-	RefId                *int64                                                                  `json:"refId,omitempty"`
-	RefName              *string                                                                 `json:"refName,omitempty"`
-	Period               *string                                                                 `json:"period,omitempty"`
-	Year                 *string                                                                 `json:"year,omitempty"`
-	ResourceType         *string                                                                 `json:"resourceType,omitempty"`
-	Timezone             *string                                                                 `json:"timezone,omitempty"`
-	StartDate            *time.Time                                                              `json:"startDate,omitempty"`
-	EndDate              *time.Time                                                              `json:"endDate,omitempty"`
-	Interval             *string                                                                 `json:"interval,omitempty"`
-	Costs                []int64                                                                 `json:"costs,omitempty"`
-	IsFiscal             *bool                                                                   `json:"isFiscal,omitempty"`
-	AverageCost          *int64                                                                  `json:"averageCost,omitempty"`
-	TotalCost            *int64                                                                  `json:"totalCost,omitempty"`
-	Currency             *string                                                                 `json:"currency,omitempty"`
-	Rollover             *bool                                                                   `json:"rollover,omitempty"`
-	WarningLimit         *string                                                                 `json:"warningLimit,omitempty"`
-	OverLimit            *string                                                                 `json:"overLimit,omitempty"`
-	ExternalId           *string                                                                 `json:"externalId,omitempty"`
-	InternalId           *string                                                                 `json:"internalId,omitempty"`
-	CreatedById          *int64                                                                  `json:"createdById,omitempty"`
-	CreatedByName        *string                                                                 `json:"createdByName,omitempty"`
-	UpdatedById          *string                                                                 `json:"updatedById,omitempty"`
-	UpdatedByName        *string                                                                 `json:"updatedByName,omitempty"`
-	DateCreated          *time.Time                                                              `json:"dateCreated,omitempty"`
-	LastUpdated          *time.Time                                                              `json:"lastUpdated,omitempty"`
-	Stats                *GetBudgets200ResponseAllOfBudgetStats                                  `json:"stats,omitempty"`
-	AdditionalProperties map[string]interface{}                                                  `json:",remain"`
+	Id                   *int64                                             `json:"id,omitempty"`
+	Name                 *string                                            `json:"name,omitempty"`
+	Description          NullableString                                     `json:"description,omitempty"`
+	Account              *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"account,omitempty"`
+	ForecastType         *GetBudgets200ResponseAllOfBudgetForecastType      `json:"forecastType,omitempty"`
+	Enabled              *bool                                              `json:"enabled,omitempty"`
+	RefScope             *string                                            `json:"refScope,omitempty"`
+	RefType              *string                                            `json:"refType,omitempty"`
+	RefId                *int64                                             `json:"refId,omitempty"`
+	RefName              *string                                            `json:"refName,omitempty"`
+	Period               *string                                            `json:"period,omitempty"`
+	Year                 *string                                            `json:"year,omitempty"`
+	ResourceType         *string                                            `json:"resourceType,omitempty"`
+	Timezone             *string                                            `json:"timezone,omitempty"`
+	StartDate            *time.Time                                         `json:"startDate,omitempty"`
+	EndDate              *time.Time                                         `json:"endDate,omitempty"`
+	Interval             *string                                            `json:"interval,omitempty"`
+	Costs                []int64                                            `json:"costs,omitempty"`
+	IsFiscal             *bool                                              `json:"isFiscal,omitempty"`
+	AverageCost          *int64                                             `json:"averageCost,omitempty"`
+	TotalCost            *int64                                             `json:"totalCost,omitempty"`
+	Currency             *string                                            `json:"currency,omitempty"`
+	Rollover             *bool                                              `json:"rollover,omitempty"`
+	WarningLimit         NullableString                                     `json:"warningLimit,omitempty"`
+	OverLimit            NullableString                                     `json:"overLimit,omitempty"`
+	ExternalId           NullableString                                     `json:"externalId,omitempty"`
+	InternalId           NullableString                                     `json:"internalId,omitempty"`
+	CreatedById          *int64                                             `json:"createdById,omitempty"`
+	CreatedByName        *string                                            `json:"createdByName,omitempty"`
+	UpdatedById          NullableString                                     `json:"updatedById,omitempty"`
+	UpdatedByName        NullableString                                     `json:"updatedByName,omitempty"`
+	DateCreated          *time.Time                                         `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                         `json:"lastUpdated,omitempty"`
+	Stats                *GetBudgets200ResponseAllOfBudgetStats             `json:"stats,omitempty"`
+	AdditionalProperties map[string]interface{}                             `json:",remain"`
 }
 
 type _GetBudgets200ResponseAllOfBudget GetBudgets200ResponseAllOfBudget
@@ -141,42 +141,53 @@ func (o *GetBudgets200ResponseAllOfBudget) SetName(v string) {
 	o.Name = &v
 }
 
-// GetDescription returns the Description field value if set, zero value otherwise.
+// GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetBudgets200ResponseAllOfBudget) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
+	if o == nil || IsNil(o.Description.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Description
+	return *o.Description.Get()
 }
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetBudgets200ResponseAllOfBudget) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Description, true
+	return o.Description.Get(), o.Description.IsSet()
 }
 
 // IsSetDescription returns a boolean if a field has been set.
 func (o *GetBudgets200ResponseAllOfBudget) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
+	if o != nil && o.Description.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDescription gets a reference to the given string and assigns it to the Description field.
+// SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *GetBudgets200ResponseAllOfBudget) SetDescription(v string) {
-	o.Description = &v
+	o.Description.Set(&v)
+}
+
+// SetDescriptionNil sets the value for Description to be an explicit nil
+func (o *GetBudgets200ResponseAllOfBudget) SetDescriptionNil() {
+	o.Description.Set(nil)
+}
+
+// UnsetDescription ensures that no value is present for Description, not even an explicit nil
+func (o *GetBudgets200ResponseAllOfBudget) UnsetDescription() {
+	o.Description.Unset()
 }
 
 // GetAccount returns the Account field value if set, zero value otherwise.
-func (o *GetBudgets200ResponseAllOfBudget) GetAccount() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *GetBudgets200ResponseAllOfBudget) GetAccount() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.Account) {
-		var ret ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return *o.Account
@@ -184,7 +195,7 @@ func (o *GetBudgets200ResponseAllOfBudget) GetAccount() ListApplianceSettings200
 
 // GetAccountOk returns a tuple with the Account field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetBudgets200ResponseAllOfBudget) GetAccountOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *GetBudgets200ResponseAllOfBudget) GetAccountOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.Account) {
 		return nil, false
 	}
@@ -200,8 +211,8 @@ func (o *GetBudgets200ResponseAllOfBudget) IsSetAccount() bool {
 	return false
 }
 
-// SetAccount gets a reference to the given ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the Account field.
-func (o *GetBudgets200ResponseAllOfBudget) SetAccount(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetAccount gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Account field.
+func (o *GetBudgets200ResponseAllOfBudget) SetAccount(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.Account = &v
 }
 
@@ -813,132 +824,176 @@ func (o *GetBudgets200ResponseAllOfBudget) SetRollover(v bool) {
 	o.Rollover = &v
 }
 
-// GetWarningLimit returns the WarningLimit field value if set, zero value otherwise.
+// GetWarningLimit returns the WarningLimit field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetBudgets200ResponseAllOfBudget) GetWarningLimit() string {
-	if o == nil || IsNil(o.WarningLimit) {
+	if o == nil || IsNil(o.WarningLimit.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.WarningLimit
+	return *o.WarningLimit.Get()
 }
 
 // GetWarningLimitOk returns a tuple with the WarningLimit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetBudgets200ResponseAllOfBudget) GetWarningLimitOk() (*string, bool) {
-	if o == nil || IsNil(o.WarningLimit) {
+	if o == nil {
 		return nil, false
 	}
-	return o.WarningLimit, true
+	return o.WarningLimit.Get(), o.WarningLimit.IsSet()
 }
 
 // IsSetWarningLimit returns a boolean if a field has been set.
 func (o *GetBudgets200ResponseAllOfBudget) IsSetWarningLimit() bool {
-	if o != nil && !IsNil(o.WarningLimit) {
+	if o != nil && o.WarningLimit.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetWarningLimit gets a reference to the given string and assigns it to the WarningLimit field.
+// SetWarningLimit gets a reference to the given NullableString and assigns it to the WarningLimit field.
 func (o *GetBudgets200ResponseAllOfBudget) SetWarningLimit(v string) {
-	o.WarningLimit = &v
+	o.WarningLimit.Set(&v)
 }
 
-// GetOverLimit returns the OverLimit field value if set, zero value otherwise.
+// SetWarningLimitNil sets the value for WarningLimit to be an explicit nil
+func (o *GetBudgets200ResponseAllOfBudget) SetWarningLimitNil() {
+	o.WarningLimit.Set(nil)
+}
+
+// UnsetWarningLimit ensures that no value is present for WarningLimit, not even an explicit nil
+func (o *GetBudgets200ResponseAllOfBudget) UnsetWarningLimit() {
+	o.WarningLimit.Unset()
+}
+
+// GetOverLimit returns the OverLimit field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetBudgets200ResponseAllOfBudget) GetOverLimit() string {
-	if o == nil || IsNil(o.OverLimit) {
+	if o == nil || IsNil(o.OverLimit.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.OverLimit
+	return *o.OverLimit.Get()
 }
 
 // GetOverLimitOk returns a tuple with the OverLimit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetBudgets200ResponseAllOfBudget) GetOverLimitOk() (*string, bool) {
-	if o == nil || IsNil(o.OverLimit) {
+	if o == nil {
 		return nil, false
 	}
-	return o.OverLimit, true
+	return o.OverLimit.Get(), o.OverLimit.IsSet()
 }
 
 // IsSetOverLimit returns a boolean if a field has been set.
 func (o *GetBudgets200ResponseAllOfBudget) IsSetOverLimit() bool {
-	if o != nil && !IsNil(o.OverLimit) {
+	if o != nil && o.OverLimit.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetOverLimit gets a reference to the given string and assigns it to the OverLimit field.
+// SetOverLimit gets a reference to the given NullableString and assigns it to the OverLimit field.
 func (o *GetBudgets200ResponseAllOfBudget) SetOverLimit(v string) {
-	o.OverLimit = &v
+	o.OverLimit.Set(&v)
 }
 
-// GetExternalId returns the ExternalId field value if set, zero value otherwise.
+// SetOverLimitNil sets the value for OverLimit to be an explicit nil
+func (o *GetBudgets200ResponseAllOfBudget) SetOverLimitNil() {
+	o.OverLimit.Set(nil)
+}
+
+// UnsetOverLimit ensures that no value is present for OverLimit, not even an explicit nil
+func (o *GetBudgets200ResponseAllOfBudget) UnsetOverLimit() {
+	o.OverLimit.Unset()
+}
+
+// GetExternalId returns the ExternalId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetBudgets200ResponseAllOfBudget) GetExternalId() string {
-	if o == nil || IsNil(o.ExternalId) {
+	if o == nil || IsNil(o.ExternalId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ExternalId
+	return *o.ExternalId.Get()
 }
 
 // GetExternalIdOk returns a tuple with the ExternalId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetBudgets200ResponseAllOfBudget) GetExternalIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ExternalId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ExternalId, true
+	return o.ExternalId.Get(), o.ExternalId.IsSet()
 }
 
 // IsSetExternalId returns a boolean if a field has been set.
 func (o *GetBudgets200ResponseAllOfBudget) IsSetExternalId() bool {
-	if o != nil && !IsNil(o.ExternalId) {
+	if o != nil && o.ExternalId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetExternalId gets a reference to the given string and assigns it to the ExternalId field.
+// SetExternalId gets a reference to the given NullableString and assigns it to the ExternalId field.
 func (o *GetBudgets200ResponseAllOfBudget) SetExternalId(v string) {
-	o.ExternalId = &v
+	o.ExternalId.Set(&v)
 }
 
-// GetInternalId returns the InternalId field value if set, zero value otherwise.
+// SetExternalIdNil sets the value for ExternalId to be an explicit nil
+func (o *GetBudgets200ResponseAllOfBudget) SetExternalIdNil() {
+	o.ExternalId.Set(nil)
+}
+
+// UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
+func (o *GetBudgets200ResponseAllOfBudget) UnsetExternalId() {
+	o.ExternalId.Unset()
+}
+
+// GetInternalId returns the InternalId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetBudgets200ResponseAllOfBudget) GetInternalId() string {
-	if o == nil || IsNil(o.InternalId) {
+	if o == nil || IsNil(o.InternalId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.InternalId
+	return *o.InternalId.Get()
 }
 
 // GetInternalIdOk returns a tuple with the InternalId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetBudgets200ResponseAllOfBudget) GetInternalIdOk() (*string, bool) {
-	if o == nil || IsNil(o.InternalId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.InternalId, true
+	return o.InternalId.Get(), o.InternalId.IsSet()
 }
 
 // IsSetInternalId returns a boolean if a field has been set.
 func (o *GetBudgets200ResponseAllOfBudget) IsSetInternalId() bool {
-	if o != nil && !IsNil(o.InternalId) {
+	if o != nil && o.InternalId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetInternalId gets a reference to the given string and assigns it to the InternalId field.
+// SetInternalId gets a reference to the given NullableString and assigns it to the InternalId field.
 func (o *GetBudgets200ResponseAllOfBudget) SetInternalId(v string) {
-	o.InternalId = &v
+	o.InternalId.Set(&v)
+}
+
+// SetInternalIdNil sets the value for InternalId to be an explicit nil
+func (o *GetBudgets200ResponseAllOfBudget) SetInternalIdNil() {
+	o.InternalId.Set(nil)
+}
+
+// UnsetInternalId ensures that no value is present for InternalId, not even an explicit nil
+func (o *GetBudgets200ResponseAllOfBudget) UnsetInternalId() {
+	o.InternalId.Unset()
 }
 
 // GetCreatedById returns the CreatedById field value if set, zero value otherwise.
@@ -1005,68 +1060,90 @@ func (o *GetBudgets200ResponseAllOfBudget) SetCreatedByName(v string) {
 	o.CreatedByName = &v
 }
 
-// GetUpdatedById returns the UpdatedById field value if set, zero value otherwise.
+// GetUpdatedById returns the UpdatedById field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetBudgets200ResponseAllOfBudget) GetUpdatedById() string {
-	if o == nil || IsNil(o.UpdatedById) {
+	if o == nil || IsNil(o.UpdatedById.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.UpdatedById
+	return *o.UpdatedById.Get()
 }
 
 // GetUpdatedByIdOk returns a tuple with the UpdatedById field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetBudgets200ResponseAllOfBudget) GetUpdatedByIdOk() (*string, bool) {
-	if o == nil || IsNil(o.UpdatedById) {
+	if o == nil {
 		return nil, false
 	}
-	return o.UpdatedById, true
+	return o.UpdatedById.Get(), o.UpdatedById.IsSet()
 }
 
 // IsSetUpdatedById returns a boolean if a field has been set.
 func (o *GetBudgets200ResponseAllOfBudget) IsSetUpdatedById() bool {
-	if o != nil && !IsNil(o.UpdatedById) {
+	if o != nil && o.UpdatedById.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetUpdatedById gets a reference to the given string and assigns it to the UpdatedById field.
+// SetUpdatedById gets a reference to the given NullableString and assigns it to the UpdatedById field.
 func (o *GetBudgets200ResponseAllOfBudget) SetUpdatedById(v string) {
-	o.UpdatedById = &v
+	o.UpdatedById.Set(&v)
 }
 
-// GetUpdatedByName returns the UpdatedByName field value if set, zero value otherwise.
+// SetUpdatedByIdNil sets the value for UpdatedById to be an explicit nil
+func (o *GetBudgets200ResponseAllOfBudget) SetUpdatedByIdNil() {
+	o.UpdatedById.Set(nil)
+}
+
+// UnsetUpdatedById ensures that no value is present for UpdatedById, not even an explicit nil
+func (o *GetBudgets200ResponseAllOfBudget) UnsetUpdatedById() {
+	o.UpdatedById.Unset()
+}
+
+// GetUpdatedByName returns the UpdatedByName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetBudgets200ResponseAllOfBudget) GetUpdatedByName() string {
-	if o == nil || IsNil(o.UpdatedByName) {
+	if o == nil || IsNil(o.UpdatedByName.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.UpdatedByName
+	return *o.UpdatedByName.Get()
 }
 
 // GetUpdatedByNameOk returns a tuple with the UpdatedByName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetBudgets200ResponseAllOfBudget) GetUpdatedByNameOk() (*string, bool) {
-	if o == nil || IsNil(o.UpdatedByName) {
+	if o == nil {
 		return nil, false
 	}
-	return o.UpdatedByName, true
+	return o.UpdatedByName.Get(), o.UpdatedByName.IsSet()
 }
 
 // IsSetUpdatedByName returns a boolean if a field has been set.
 func (o *GetBudgets200ResponseAllOfBudget) IsSetUpdatedByName() bool {
-	if o != nil && !IsNil(o.UpdatedByName) {
+	if o != nil && o.UpdatedByName.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetUpdatedByName gets a reference to the given string and assigns it to the UpdatedByName field.
+// SetUpdatedByName gets a reference to the given NullableString and assigns it to the UpdatedByName field.
 func (o *GetBudgets200ResponseAllOfBudget) SetUpdatedByName(v string) {
-	o.UpdatedByName = &v
+	o.UpdatedByName.Set(&v)
+}
+
+// SetUpdatedByNameNil sets the value for UpdatedByName to be an explicit nil
+func (o *GetBudgets200ResponseAllOfBudget) SetUpdatedByNameNil() {
+	o.UpdatedByName.Set(nil)
+}
+
+// UnsetUpdatedByName ensures that no value is present for UpdatedByName, not even an explicit nil
+func (o *GetBudgets200ResponseAllOfBudget) UnsetUpdatedByName() {
+	o.UpdatedByName.Unset()
 }
 
 // GetDateCreated returns the DateCreated field value if set, zero value otherwise.
@@ -1181,8 +1258,8 @@ func (o GetBudgets200ResponseAllOfBudget) ToMap() (map[string]interface{}, error
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !IsNil(o.Description) {
-		toSerialize["description"] = o.Description
+	if o.Description.IsSet() {
+		toSerialize["description"] = o.Description.Get()
 	}
 	if !IsNil(o.Account) {
 		toSerialize["account"] = o.Account
@@ -1244,17 +1321,17 @@ func (o GetBudgets200ResponseAllOfBudget) ToMap() (map[string]interface{}, error
 	if !IsNil(o.Rollover) {
 		toSerialize["rollover"] = o.Rollover
 	}
-	if !IsNil(o.WarningLimit) {
-		toSerialize["warningLimit"] = o.WarningLimit
+	if o.WarningLimit.IsSet() {
+		toSerialize["warningLimit"] = o.WarningLimit.Get()
 	}
-	if !IsNil(o.OverLimit) {
-		toSerialize["overLimit"] = o.OverLimit
+	if o.OverLimit.IsSet() {
+		toSerialize["overLimit"] = o.OverLimit.Get()
 	}
-	if !IsNil(o.ExternalId) {
-		toSerialize["externalId"] = o.ExternalId
+	if o.ExternalId.IsSet() {
+		toSerialize["externalId"] = o.ExternalId.Get()
 	}
-	if !IsNil(o.InternalId) {
-		toSerialize["internalId"] = o.InternalId
+	if o.InternalId.IsSet() {
+		toSerialize["internalId"] = o.InternalId.Get()
 	}
 	if !IsNil(o.CreatedById) {
 		toSerialize["createdById"] = o.CreatedById
@@ -1262,11 +1339,11 @@ func (o GetBudgets200ResponseAllOfBudget) ToMap() (map[string]interface{}, error
 	if !IsNil(o.CreatedByName) {
 		toSerialize["createdByName"] = o.CreatedByName
 	}
-	if !IsNil(o.UpdatedById) {
-		toSerialize["updatedById"] = o.UpdatedById
+	if o.UpdatedById.IsSet() {
+		toSerialize["updatedById"] = o.UpdatedById.Get()
 	}
-	if !IsNil(o.UpdatedByName) {
-		toSerialize["updatedByName"] = o.UpdatedByName
+	if o.UpdatedByName.IsSet() {
+		toSerialize["updatedByName"] = o.UpdatedByName.Get()
 	}
 	if !IsNil(o.DateCreated) {
 		toSerialize["dateCreated"] = o.DateCreated

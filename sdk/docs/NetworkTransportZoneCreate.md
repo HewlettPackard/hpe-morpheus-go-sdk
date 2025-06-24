@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** | Network transport zone name | 
-**Description** | Pointer to **string** | Network transport zone description | [optional] 
+**Description** | Pointer to **NullableString** | Network transport zone description | [optional] 
 **Visibility** | Pointer to **string** | private or public | [optional] 
 **Tenants** | Pointer to [**[]GetAlerts200ResponseAllOfChecksInnerAccount**](GetAlerts200ResponseAllOfChecksInnerAccount.md) | Array of tenant account ids that are allowed access | [optional] 
 
@@ -73,6 +73,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *NetworkTransportZoneCreate) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *NetworkTransportZoneCreate) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetVisibility
 
 `func (o *NetworkTransportZoneCreate) GetVisibility() string`

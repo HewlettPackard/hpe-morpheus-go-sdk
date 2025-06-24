@@ -6,11 +6,11 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **NullableString** |  | [optional] 
 **ExternalId** | Pointer to **string** |  | [optional] 
-**IacId** | Pointer to **string** |  | [optional] 
-**Zone** | Pointer to **string** |  | [optional] 
-**ZonePool** | Pointer to **string** |  | [optional] 
+**IacId** | Pointer to **NullableString** |  | [optional] 
+**Zone** | Pointer to **NullableString** |  | [optional] 
+**ZonePool** | Pointer to **NullableString** |  | [optional] 
 **Status** | Pointer to **string** |  | [optional] 
 **Priority** | Pointer to **int64** |  | [optional] 
 **GroupLayer** | Pointer to **string** |  | [optional] 
@@ -110,6 +110,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *GetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInner) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *GetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInner) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetExternalId
 
 `func (o *GetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInner) GetExternalId() string`
@@ -160,6 +170,16 @@ SetIacId sets IacId field to given value.
 
 HasIacId returns a boolean if a field has been set.
 
+### SetIacIdNil
+
+`func (o *GetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInner) SetIacIdNil(b bool)`
+
+ SetIacIdNil sets the value for IacId to be an explicit nil
+
+### UnsetIacId
+`func (o *GetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInner) UnsetIacId()`
+
+UnsetIacId ensures that no value is present for IacId, not even an explicit nil
 ### GetZone
 
 `func (o *GetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInner) GetZone() string`
@@ -185,6 +205,16 @@ SetZone sets Zone field to given value.
 
 HasZone returns a boolean if a field has been set.
 
+### SetZoneNil
+
+`func (o *GetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInner) SetZoneNil(b bool)`
+
+ SetZoneNil sets the value for Zone to be an explicit nil
+
+### UnsetZone
+`func (o *GetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInner) UnsetZone()`
+
+UnsetZone ensures that no value is present for Zone, not even an explicit nil
 ### GetZonePool
 
 `func (o *GetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInner) GetZonePool() string`
@@ -210,6 +240,16 @@ SetZonePool sets ZonePool field to given value.
 
 HasZonePool returns a boolean if a field has been set.
 
+### SetZonePoolNil
+
+`func (o *GetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInner) SetZonePoolNil(b bool)`
+
+ SetZonePoolNil sets the value for ZonePool to be an explicit nil
+
+### UnsetZonePool
+`func (o *GetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInner) UnsetZonePool()`
+
+UnsetZonePool ensures that no value is present for ZonePool, not even an explicit nil
 ### GetStatus
 
 `func (o *GetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInner) GetStatus() string`

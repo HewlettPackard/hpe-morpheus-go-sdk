@@ -5,21 +5,21 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** | Name | 
-**Description** | Pointer to **string** | Description | [optional] 
+**Description** | Pointer to **NullableString** | Description | [optional] 
 **Labels** | Pointer to **[]string** | Array of label strings, can be used for filtering. | [optional] 
 **Type** | Pointer to **string** | Option List Type eg. &#x60;rest&#x60;, &#x60;api&#x60;, &#x60;ldap&#x60; or &#x60;manual&#x60;. | [optional] [default to "rest"]
 **SourceUrl** | Pointer to **string** | Source URL, the http(s) URL to request data from. Required when type is rest. | [optional] 
 **Visibility** | Pointer to **string** | Visibility | [optional] [default to "private"]
 **SourceMethod** | Pointer to **string** | Source Method, the HTTP method. | [optional] [default to "GET"]
-**ApiType** | Pointer to **string** | Api Type, The code of the api option list to use, eg. clouds, environments, groups, instances, instance-wiki, networks, servicePlans, resourcePools, securityGroups, servers, server-wiki. Required when type is api. | [optional] 
+**ApiType** | Pointer to **NullableString** | Api Type, The code of the api option list to use, eg. clouds, environments, groups, instances, instance-wiki, networks, servicePlans, resourcePools, securityGroups, servers, server-wiki. Required when type is api. | [optional] 
 **IgnoreSSLErrors** | Pointer to **bool** | Ignore SSL Errors. | [optional] [default to false]
 **RealTime** | Pointer to **bool** | Real Time. | [optional] [default to false]
 **Credential** | Pointer to [**AddOptionListRequestOptionTypeListCredential**](AddOptionListRequestOptionTypeListCredential.md) |  | [optional] 
-**ServiceUsername** | Pointer to **string** | Username for authenticating with Basic Auth when type is rest or ldap username. | [optional] 
-**ServicePassword** | Pointer to **string** | Password for authenticating with Basic Auth when type is rest or ldap password. | [optional] 
-**InitialDataset** | Pointer to **string** | Initial Dataset. Create an initial JSON or CSV dataset to be used as the collection for this option list. It should be a list containing objects with properties &#39;name&#39;, and &#39;value&#39;. Required when type is manual. | [optional] 
-**TranslationScript** | Pointer to **string** | Translation Script. Create a js script to translate the result data object into an Array containing objects with properties &#39;name&#39; and &#39;value&#39;. The input data is provided as data and the result should be put on the global variable results. | [optional] 
-**RequestScript** | Pointer to **string** | Request Script. Create a js script to prepare the request. Return a data object as the body for a post, and return an array containing properties &#39;name&#39; and &#39;value&#39; for a get. The input data is provided as data and the result should be put on the global variable results. | [optional] 
+**ServiceUsername** | Pointer to **NullableString** | Username for authenticating with Basic Auth when type is rest or ldap username. | [optional] 
+**ServicePassword** | Pointer to **NullableString** | Password for authenticating with Basic Auth when type is rest or ldap password. | [optional] 
+**InitialDataset** | Pointer to **NullableString** | Initial Dataset. Create an initial JSON or CSV dataset to be used as the collection for this option list. It should be a list containing objects with properties &#39;name&#39;, and &#39;value&#39;. Required when type is manual. | [optional] 
+**TranslationScript** | Pointer to **NullableString** | Translation Script. Create a js script to translate the result data object into an Array containing objects with properties &#39;name&#39; and &#39;value&#39;. The input data is provided as data and the result should be put on the global variable results. | [optional] 
+**RequestScript** | Pointer to **NullableString** | Request Script. Create a js script to prepare the request. Return a data object as the body for a post, and return an array containing properties &#39;name&#39; and &#39;value&#39; for a get. The input data is provided as data and the result should be put on the global variable results. | [optional] 
 **Config** | Pointer to [**AddOptionListRequestOptionTypeListConfig**](AddOptionListRequestOptionTypeListConfig.md) |  | [optional] 
 
 ## Methods
@@ -86,6 +86,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *OptionTypeListCreate) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *OptionTypeListCreate) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetLabels
 
 `func (o *OptionTypeListCreate) GetLabels() []string`
@@ -111,6 +121,16 @@ SetLabels sets Labels field to given value.
 
 HasLabels returns a boolean if a field has been set.
 
+### SetLabelsNil
+
+`func (o *OptionTypeListCreate) SetLabelsNil(b bool)`
+
+ SetLabelsNil sets the value for Labels to be an explicit nil
+
+### UnsetLabels
+`func (o *OptionTypeListCreate) UnsetLabels()`
+
+UnsetLabels ensures that no value is present for Labels, not even an explicit nil
 ### GetType
 
 `func (o *OptionTypeListCreate) GetType() string`
@@ -236,6 +256,16 @@ SetApiType sets ApiType field to given value.
 
 HasApiType returns a boolean if a field has been set.
 
+### SetApiTypeNil
+
+`func (o *OptionTypeListCreate) SetApiTypeNil(b bool)`
+
+ SetApiTypeNil sets the value for ApiType to be an explicit nil
+
+### UnsetApiType
+`func (o *OptionTypeListCreate) UnsetApiType()`
+
+UnsetApiType ensures that no value is present for ApiType, not even an explicit nil
 ### GetIgnoreSSLErrors
 
 `func (o *OptionTypeListCreate) GetIgnoreSSLErrors() bool`
@@ -336,6 +366,16 @@ SetServiceUsername sets ServiceUsername field to given value.
 
 HasServiceUsername returns a boolean if a field has been set.
 
+### SetServiceUsernameNil
+
+`func (o *OptionTypeListCreate) SetServiceUsernameNil(b bool)`
+
+ SetServiceUsernameNil sets the value for ServiceUsername to be an explicit nil
+
+### UnsetServiceUsername
+`func (o *OptionTypeListCreate) UnsetServiceUsername()`
+
+UnsetServiceUsername ensures that no value is present for ServiceUsername, not even an explicit nil
 ### GetServicePassword
 
 `func (o *OptionTypeListCreate) GetServicePassword() string`
@@ -361,6 +401,16 @@ SetServicePassword sets ServicePassword field to given value.
 
 HasServicePassword returns a boolean if a field has been set.
 
+### SetServicePasswordNil
+
+`func (o *OptionTypeListCreate) SetServicePasswordNil(b bool)`
+
+ SetServicePasswordNil sets the value for ServicePassword to be an explicit nil
+
+### UnsetServicePassword
+`func (o *OptionTypeListCreate) UnsetServicePassword()`
+
+UnsetServicePassword ensures that no value is present for ServicePassword, not even an explicit nil
 ### GetInitialDataset
 
 `func (o *OptionTypeListCreate) GetInitialDataset() string`
@@ -386,6 +436,16 @@ SetInitialDataset sets InitialDataset field to given value.
 
 HasInitialDataset returns a boolean if a field has been set.
 
+### SetInitialDatasetNil
+
+`func (o *OptionTypeListCreate) SetInitialDatasetNil(b bool)`
+
+ SetInitialDatasetNil sets the value for InitialDataset to be an explicit nil
+
+### UnsetInitialDataset
+`func (o *OptionTypeListCreate) UnsetInitialDataset()`
+
+UnsetInitialDataset ensures that no value is present for InitialDataset, not even an explicit nil
 ### GetTranslationScript
 
 `func (o *OptionTypeListCreate) GetTranslationScript() string`
@@ -411,6 +471,16 @@ SetTranslationScript sets TranslationScript field to given value.
 
 HasTranslationScript returns a boolean if a field has been set.
 
+### SetTranslationScriptNil
+
+`func (o *OptionTypeListCreate) SetTranslationScriptNil(b bool)`
+
+ SetTranslationScriptNil sets the value for TranslationScript to be an explicit nil
+
+### UnsetTranslationScript
+`func (o *OptionTypeListCreate) UnsetTranslationScript()`
+
+UnsetTranslationScript ensures that no value is present for TranslationScript, not even an explicit nil
 ### GetRequestScript
 
 `func (o *OptionTypeListCreate) GetRequestScript() string`
@@ -436,6 +506,16 @@ SetRequestScript sets RequestScript field to given value.
 
 HasRequestScript returns a boolean if a field has been set.
 
+### SetRequestScriptNil
+
+`func (o *OptionTypeListCreate) SetRequestScriptNil(b bool)`
+
+ SetRequestScriptNil sets the value for RequestScript to be an explicit nil
+
+### UnsetRequestScript
+`func (o *OptionTypeListCreate) UnsetRequestScript()`
+
+UnsetRequestScript ensures that no value is present for RequestScript, not even an explicit nil
 ### GetConfig
 
 `func (o *OptionTypeListCreate) GetConfig() AddOptionListRequestOptionTypeListConfig`

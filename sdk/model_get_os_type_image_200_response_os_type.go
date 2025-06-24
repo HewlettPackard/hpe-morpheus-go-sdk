@@ -26,13 +26,13 @@ type GetOsTypeImage200ResponseOsType struct {
 	// The name of the virtual image.
 	VirtualImageName *string `json:"virtualImageName,omitempty"`
 	// The account attached to the osTypeImage.
-	Account *int64 `json:"account,omitempty"`
+	Account NullableInt64 `json:"account,omitempty"`
 	// The Provision Type of the osTypeImage.
-	ProvisionType *int64 `json:"provisionType,omitempty"`
+	ProvisionType NullableInt64 `json:"provisionType,omitempty"`
 	// The zone type of the osTypeImage.
-	ComputeZoneType *int64 `json:"computeZoneType,omitempty"`
+	ComputeZoneType NullableInt64 `json:"computeZoneType,omitempty"`
 	// The cloud that is attached to osTypeImage.
-	Zone                 *int64                 `json:"zone,omitempty"`
+	Zone                 NullableInt64          `json:"zone,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -151,132 +151,176 @@ func (o *GetOsTypeImage200ResponseOsType) SetVirtualImageName(v string) {
 	o.VirtualImageName = &v
 }
 
-// GetAccount returns the Account field value if set, zero value otherwise.
+// GetAccount returns the Account field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetOsTypeImage200ResponseOsType) GetAccount() int64 {
-	if o == nil || IsNil(o.Account) {
+	if o == nil || IsNil(o.Account.Get()) {
 		var ret int64
 		return ret
 	}
-	return *o.Account
+	return *o.Account.Get()
 }
 
 // GetAccountOk returns a tuple with the Account field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetOsTypeImage200ResponseOsType) GetAccountOk() (*int64, bool) {
-	if o == nil || IsNil(o.Account) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Account, true
+	return o.Account.Get(), o.Account.IsSet()
 }
 
 // IsSetAccount returns a boolean if a field has been set.
 func (o *GetOsTypeImage200ResponseOsType) IsSetAccount() bool {
-	if o != nil && !IsNil(o.Account) {
+	if o != nil && o.Account.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetAccount gets a reference to the given int64 and assigns it to the Account field.
+// SetAccount gets a reference to the given NullableInt64 and assigns it to the Account field.
 func (o *GetOsTypeImage200ResponseOsType) SetAccount(v int64) {
-	o.Account = &v
+	o.Account.Set(&v)
 }
 
-// GetProvisionType returns the ProvisionType field value if set, zero value otherwise.
+// SetAccountNil sets the value for Account to be an explicit nil
+func (o *GetOsTypeImage200ResponseOsType) SetAccountNil() {
+	o.Account.Set(nil)
+}
+
+// UnsetAccount ensures that no value is present for Account, not even an explicit nil
+func (o *GetOsTypeImage200ResponseOsType) UnsetAccount() {
+	o.Account.Unset()
+}
+
+// GetProvisionType returns the ProvisionType field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetOsTypeImage200ResponseOsType) GetProvisionType() int64 {
-	if o == nil || IsNil(o.ProvisionType) {
+	if o == nil || IsNil(o.ProvisionType.Get()) {
 		var ret int64
 		return ret
 	}
-	return *o.ProvisionType
+	return *o.ProvisionType.Get()
 }
 
 // GetProvisionTypeOk returns a tuple with the ProvisionType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetOsTypeImage200ResponseOsType) GetProvisionTypeOk() (*int64, bool) {
-	if o == nil || IsNil(o.ProvisionType) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ProvisionType, true
+	return o.ProvisionType.Get(), o.ProvisionType.IsSet()
 }
 
 // IsSetProvisionType returns a boolean if a field has been set.
 func (o *GetOsTypeImage200ResponseOsType) IsSetProvisionType() bool {
-	if o != nil && !IsNil(o.ProvisionType) {
+	if o != nil && o.ProvisionType.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetProvisionType gets a reference to the given int64 and assigns it to the ProvisionType field.
+// SetProvisionType gets a reference to the given NullableInt64 and assigns it to the ProvisionType field.
 func (o *GetOsTypeImage200ResponseOsType) SetProvisionType(v int64) {
-	o.ProvisionType = &v
+	o.ProvisionType.Set(&v)
 }
 
-// GetComputeZoneType returns the ComputeZoneType field value if set, zero value otherwise.
+// SetProvisionTypeNil sets the value for ProvisionType to be an explicit nil
+func (o *GetOsTypeImage200ResponseOsType) SetProvisionTypeNil() {
+	o.ProvisionType.Set(nil)
+}
+
+// UnsetProvisionType ensures that no value is present for ProvisionType, not even an explicit nil
+func (o *GetOsTypeImage200ResponseOsType) UnsetProvisionType() {
+	o.ProvisionType.Unset()
+}
+
+// GetComputeZoneType returns the ComputeZoneType field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetOsTypeImage200ResponseOsType) GetComputeZoneType() int64 {
-	if o == nil || IsNil(o.ComputeZoneType) {
+	if o == nil || IsNil(o.ComputeZoneType.Get()) {
 		var ret int64
 		return ret
 	}
-	return *o.ComputeZoneType
+	return *o.ComputeZoneType.Get()
 }
 
 // GetComputeZoneTypeOk returns a tuple with the ComputeZoneType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetOsTypeImage200ResponseOsType) GetComputeZoneTypeOk() (*int64, bool) {
-	if o == nil || IsNil(o.ComputeZoneType) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ComputeZoneType, true
+	return o.ComputeZoneType.Get(), o.ComputeZoneType.IsSet()
 }
 
 // IsSetComputeZoneType returns a boolean if a field has been set.
 func (o *GetOsTypeImage200ResponseOsType) IsSetComputeZoneType() bool {
-	if o != nil && !IsNil(o.ComputeZoneType) {
+	if o != nil && o.ComputeZoneType.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetComputeZoneType gets a reference to the given int64 and assigns it to the ComputeZoneType field.
+// SetComputeZoneType gets a reference to the given NullableInt64 and assigns it to the ComputeZoneType field.
 func (o *GetOsTypeImage200ResponseOsType) SetComputeZoneType(v int64) {
-	o.ComputeZoneType = &v
+	o.ComputeZoneType.Set(&v)
 }
 
-// GetZone returns the Zone field value if set, zero value otherwise.
+// SetComputeZoneTypeNil sets the value for ComputeZoneType to be an explicit nil
+func (o *GetOsTypeImage200ResponseOsType) SetComputeZoneTypeNil() {
+	o.ComputeZoneType.Set(nil)
+}
+
+// UnsetComputeZoneType ensures that no value is present for ComputeZoneType, not even an explicit nil
+func (o *GetOsTypeImage200ResponseOsType) UnsetComputeZoneType() {
+	o.ComputeZoneType.Unset()
+}
+
+// GetZone returns the Zone field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetOsTypeImage200ResponseOsType) GetZone() int64 {
-	if o == nil || IsNil(o.Zone) {
+	if o == nil || IsNil(o.Zone.Get()) {
 		var ret int64
 		return ret
 	}
-	return *o.Zone
+	return *o.Zone.Get()
 }
 
 // GetZoneOk returns a tuple with the Zone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetOsTypeImage200ResponseOsType) GetZoneOk() (*int64, bool) {
-	if o == nil || IsNil(o.Zone) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Zone, true
+	return o.Zone.Get(), o.Zone.IsSet()
 }
 
 // IsSetZone returns a boolean if a field has been set.
 func (o *GetOsTypeImage200ResponseOsType) IsSetZone() bool {
-	if o != nil && !IsNil(o.Zone) {
+	if o != nil && o.Zone.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetZone gets a reference to the given int64 and assigns it to the Zone field.
+// SetZone gets a reference to the given NullableInt64 and assigns it to the Zone field.
 func (o *GetOsTypeImage200ResponseOsType) SetZone(v int64) {
-	o.Zone = &v
+	o.Zone.Set(&v)
+}
+
+// SetZoneNil sets the value for Zone to be an explicit nil
+func (o *GetOsTypeImage200ResponseOsType) SetZoneNil() {
+	o.Zone.Set(nil)
+}
+
+// UnsetZone ensures that no value is present for Zone, not even an explicit nil
+func (o *GetOsTypeImage200ResponseOsType) UnsetZone() {
+	o.Zone.Unset()
 }
 
 func (o GetOsTypeImage200ResponseOsType) MarshalJSON() ([]byte, error) {
@@ -298,17 +342,17 @@ func (o GetOsTypeImage200ResponseOsType) ToMap() (map[string]interface{}, error)
 	if !IsNil(o.VirtualImageName) {
 		toSerialize["virtualImageName"] = o.VirtualImageName
 	}
-	if !IsNil(o.Account) {
-		toSerialize["account"] = o.Account
+	if o.Account.IsSet() {
+		toSerialize["account"] = o.Account.Get()
 	}
-	if !IsNil(o.ProvisionType) {
-		toSerialize["provisionType"] = o.ProvisionType
+	if o.ProvisionType.IsSet() {
+		toSerialize["provisionType"] = o.ProvisionType.Get()
 	}
-	if !IsNil(o.ComputeZoneType) {
-		toSerialize["computeZoneType"] = o.ComputeZoneType
+	if o.ComputeZoneType.IsSet() {
+		toSerialize["computeZoneType"] = o.ComputeZoneType.Get()
 	}
-	if !IsNil(o.Zone) {
-		toSerialize["zone"] = o.Zone
+	if o.Zone.IsSet() {
+		toSerialize["zone"] = o.Zone.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {

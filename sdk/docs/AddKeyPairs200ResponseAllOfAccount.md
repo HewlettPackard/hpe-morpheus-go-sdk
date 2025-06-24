@@ -7,11 +7,11 @@ Name | Type | Description | Notes
 **Id** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **AccountId** | Pointer to **int64** |  | [optional] 
-**PublicKey** | Pointer to **string** |  | [optional] 
+**PublicKey** | Pointer to **NullableString** |  | [optional] 
 **HasPrivateKey** | Pointer to **bool** |  | [optional] 
-**PrivateKeyHash** | Pointer to **string** |  | [optional] 
-**PrivateKey** | Pointer to **string** | Only present in response to generate | [optional] 
-**Fingerprint** | Pointer to **string** |  | [optional] 
+**PrivateKeyHash** | Pointer to **NullableString** |  | [optional] 
+**PrivateKey** | Pointer to **NullableString** | Only present in response to generate | [optional] 
+**Fingerprint** | Pointer to **NullableString** |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
 
@@ -134,6 +134,16 @@ SetPublicKey sets PublicKey field to given value.
 
 HasPublicKey returns a boolean if a field has been set.
 
+### SetPublicKeyNil
+
+`func (o *AddKeyPairs200ResponseAllOfAccount) SetPublicKeyNil(b bool)`
+
+ SetPublicKeyNil sets the value for PublicKey to be an explicit nil
+
+### UnsetPublicKey
+`func (o *AddKeyPairs200ResponseAllOfAccount) UnsetPublicKey()`
+
+UnsetPublicKey ensures that no value is present for PublicKey, not even an explicit nil
 ### GetHasPrivateKey
 
 `func (o *AddKeyPairs200ResponseAllOfAccount) GetHasPrivateKey() bool`
@@ -184,6 +194,16 @@ SetPrivateKeyHash sets PrivateKeyHash field to given value.
 
 HasPrivateKeyHash returns a boolean if a field has been set.
 
+### SetPrivateKeyHashNil
+
+`func (o *AddKeyPairs200ResponseAllOfAccount) SetPrivateKeyHashNil(b bool)`
+
+ SetPrivateKeyHashNil sets the value for PrivateKeyHash to be an explicit nil
+
+### UnsetPrivateKeyHash
+`func (o *AddKeyPairs200ResponseAllOfAccount) UnsetPrivateKeyHash()`
+
+UnsetPrivateKeyHash ensures that no value is present for PrivateKeyHash, not even an explicit nil
 ### GetPrivateKey
 
 `func (o *AddKeyPairs200ResponseAllOfAccount) GetPrivateKey() string`
@@ -209,6 +229,16 @@ SetPrivateKey sets PrivateKey field to given value.
 
 HasPrivateKey returns a boolean if a field has been set.
 
+### SetPrivateKeyNil
+
+`func (o *AddKeyPairs200ResponseAllOfAccount) SetPrivateKeyNil(b bool)`
+
+ SetPrivateKeyNil sets the value for PrivateKey to be an explicit nil
+
+### UnsetPrivateKey
+`func (o *AddKeyPairs200ResponseAllOfAccount) UnsetPrivateKey()`
+
+UnsetPrivateKey ensures that no value is present for PrivateKey, not even an explicit nil
 ### GetFingerprint
 
 `func (o *AddKeyPairs200ResponseAllOfAccount) GetFingerprint() string`
@@ -234,6 +264,16 @@ SetFingerprint sets Fingerprint field to given value.
 
 HasFingerprint returns a boolean if a field has been set.
 
+### SetFingerprintNil
+
+`func (o *AddKeyPairs200ResponseAllOfAccount) SetFingerprintNil(b bool)`
+
+ SetFingerprintNil sets the value for Fingerprint to be an explicit nil
+
+### UnsetFingerprint
+`func (o *AddKeyPairs200ResponseAllOfAccount) UnsetFingerprint()`
+
+UnsetFingerprint ensures that no value is present for Fingerprint, not even an explicit nil
 ### GetDateCreated
 
 `func (o *AddKeyPairs200ResponseAllOfAccount) GetDateCreated() time.Time`

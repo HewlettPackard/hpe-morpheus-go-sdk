@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Id** | Pointer to **int64** |  | [optional] 
 **Section** | Pointer to **string** |  | [optional] 
 **Data** | Pointer to **string** |  | [optional] 
-**DisplayOrder** | Pointer to **string** |  | [optional] 
+**DisplayOrder** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -128,6 +128,16 @@ SetDisplayOrder sets DisplayOrder field to given value.
 
 HasDisplayOrder returns a boolean if a field has been set.
 
+### SetDisplayOrderNil
+
+`func (o *ListReports200ResponseAllOfReportResultsInnerRowsInner) SetDisplayOrderNil(b bool)`
+
+ SetDisplayOrderNil sets the value for DisplayOrder to be an explicit nil
+
+### UnsetDisplayOrder
+`func (o *ListReports200ResponseAllOfReportResultsInnerRowsInner) UnsetDisplayOrder()`
+
+UnsetDisplayOrder ensures that no value is present for DisplayOrder, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

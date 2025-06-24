@@ -20,10 +20,10 @@ var _ MappedNullable = &GetInstanceThreshold200Response{}
 
 // GetInstanceThreshold200Response struct for GetInstanceThreshold200Response
 type GetInstanceThreshold200Response struct {
-	Instance             *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"instance,omitempty"`
-	InstanceThreshold    *GetInstanceThreshold200ResponseInstanceThreshold                       `json:"instanceThreshold,omitempty"`
-	InstanceSchedules    []GetInstanceThreshold200ResponseInstanceSchedulesInner                 `json:"instanceSchedules,omitempty"`
-	AdditionalProperties map[string]interface{}                                                  `json:",remain"`
+	Instance             *GetAlerts200ResponseAllOfCheckGroupsInnerInstance      `json:"instance,omitempty"`
+	InstanceThreshold    *GetInstanceThreshold200ResponseInstanceThreshold       `json:"instanceThreshold,omitempty"`
+	InstanceSchedules    []GetInstanceThreshold200ResponseInstanceSchedulesInner `json:"instanceSchedules,omitempty"`
+	AdditionalProperties map[string]interface{}                                  `json:",remain"`
 }
 
 type _GetInstanceThreshold200Response GetInstanceThreshold200Response
@@ -46,9 +46,9 @@ func NewGetInstanceThreshold200ResponseWithDefaults() *GetInstanceThreshold200Re
 }
 
 // GetInstance returns the Instance field value if set, zero value otherwise.
-func (o *GetInstanceThreshold200Response) GetInstance() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *GetInstanceThreshold200Response) GetInstance() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.Instance) {
-		var ret ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return *o.Instance
@@ -56,7 +56,7 @@ func (o *GetInstanceThreshold200Response) GetInstance() ListApplianceSettings200
 
 // GetInstanceOk returns a tuple with the Instance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetInstanceThreshold200Response) GetInstanceOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *GetInstanceThreshold200Response) GetInstanceOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.Instance) {
 		return nil, false
 	}
@@ -72,8 +72,8 @@ func (o *GetInstanceThreshold200Response) IsSetInstance() bool {
 	return false
 }
 
-// SetInstance gets a reference to the given ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the Instance field.
-func (o *GetInstanceThreshold200Response) SetInstance(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetInstance gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Instance field.
+func (o *GetInstanceThreshold200Response) SetInstance(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.Instance = &v
 }
 

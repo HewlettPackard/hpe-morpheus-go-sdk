@@ -20,25 +20,25 @@ var _ MappedNullable = &ListUserSettings200ResponseAllOfUser{}
 
 // ListUserSettings200ResponseAllOfUser struct for ListUserSettings200ResponseAllOfUser
 type ListUserSettings200ResponseAllOfUser struct {
-	Id                   *int64                                                                  `json:"id,omitempty"`
-	Username             *string                                                                 `json:"username,omitempty"`
-	FirstName            *string                                                                 `json:"firstName,omitempty"`
-	LastName             *string                                                                 `json:"lastName,omitempty"`
-	Email                *string                                                                 `json:"email,omitempty"`
-	LinuxUsername        *string                                                                 `json:"linuxUsername,omitempty"`
-	LinuxPassword        *string                                                                 `json:"linuxPassword,omitempty"`
-	LinuxKeyPairId       *int64                                                                  `json:"linuxKeyPairId,omitempty"`
-	WindowsUsername      *string                                                                 `json:"windowsUsername,omitempty"`
-	WindowsPassword      *string                                                                 `json:"windowsPassword,omitempty"`
-	Avatar               *string                                                                 `json:"avatar,omitempty"`
-	DesktopBackground    *string                                                                 `json:"desktopBackground,omitempty"`
-	ReceiveNotifications *bool                                                                   `json:"receiveNotifications,omitempty"`
-	DefaultGroup         *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"defaultGroup,omitempty"`
-	DefaultCloud         *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"defaultCloud,omitempty"`
-	DefaultPersona       *ListBackupSettings200ResponseBackupSettingsDefaultSchedule             `json:"defaultPersona,omitempty"`
-	IsUsing2FA           *bool                                                                   `json:"isUsing2FA,omitempty"`
-	Tenant               *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"tenant,omitempty"`
-	AdditionalProperties map[string]interface{}                                                  `json:",remain"`
+	Id                   *int64                                                      `json:"id,omitempty"`
+	Username             *string                                                     `json:"username,omitempty"`
+	FirstName            *string                                                     `json:"firstName,omitempty"`
+	LastName             *string                                                     `json:"lastName,omitempty"`
+	Email                *string                                                     `json:"email,omitempty"`
+	LinuxUsername        *string                                                     `json:"linuxUsername,omitempty"`
+	LinuxPassword        *string                                                     `json:"linuxPassword,omitempty"`
+	LinuxKeyPairId       NullableInt64                                               `json:"linuxKeyPairId,omitempty"`
+	WindowsUsername      *string                                                     `json:"windowsUsername,omitempty"`
+	WindowsPassword      *string                                                     `json:"windowsPassword,omitempty"`
+	Avatar               *string                                                     `json:"avatar,omitempty"`
+	DesktopBackground    *string                                                     `json:"desktopBackground,omitempty"`
+	ReceiveNotifications *bool                                                       `json:"receiveNotifications,omitempty"`
+	DefaultGroup         *GetAlerts200ResponseAllOfCheckGroupsInnerInstance          `json:"defaultGroup,omitempty"`
+	DefaultCloud         *GetAlerts200ResponseAllOfCheckGroupsInnerInstance          `json:"defaultCloud,omitempty"`
+	DefaultPersona       *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"defaultPersona,omitempty"`
+	IsUsing2FA           *bool                                                       `json:"isUsing2FA,omitempty"`
+	Tenant               *GetAlerts200ResponseAllOfCheckGroupsInnerInstance          `json:"tenant,omitempty"`
+	AdditionalProperties map[string]interface{}                                      `json:",remain"`
 }
 
 type _ListUserSettings200ResponseAllOfUser ListUserSettings200ResponseAllOfUser
@@ -284,36 +284,47 @@ func (o *ListUserSettings200ResponseAllOfUser) SetLinuxPassword(v string) {
 	o.LinuxPassword = &v
 }
 
-// GetLinuxKeyPairId returns the LinuxKeyPairId field value if set, zero value otherwise.
+// GetLinuxKeyPairId returns the LinuxKeyPairId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListUserSettings200ResponseAllOfUser) GetLinuxKeyPairId() int64 {
-	if o == nil || IsNil(o.LinuxKeyPairId) {
+	if o == nil || IsNil(o.LinuxKeyPairId.Get()) {
 		var ret int64
 		return ret
 	}
-	return *o.LinuxKeyPairId
+	return *o.LinuxKeyPairId.Get()
 }
 
 // GetLinuxKeyPairIdOk returns a tuple with the LinuxKeyPairId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListUserSettings200ResponseAllOfUser) GetLinuxKeyPairIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.LinuxKeyPairId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.LinuxKeyPairId, true
+	return o.LinuxKeyPairId.Get(), o.LinuxKeyPairId.IsSet()
 }
 
 // IsSetLinuxKeyPairId returns a boolean if a field has been set.
 func (o *ListUserSettings200ResponseAllOfUser) IsSetLinuxKeyPairId() bool {
-	if o != nil && !IsNil(o.LinuxKeyPairId) {
+	if o != nil && o.LinuxKeyPairId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetLinuxKeyPairId gets a reference to the given int64 and assigns it to the LinuxKeyPairId field.
+// SetLinuxKeyPairId gets a reference to the given NullableInt64 and assigns it to the LinuxKeyPairId field.
 func (o *ListUserSettings200ResponseAllOfUser) SetLinuxKeyPairId(v int64) {
-	o.LinuxKeyPairId = &v
+	o.LinuxKeyPairId.Set(&v)
+}
+
+// SetLinuxKeyPairIdNil sets the value for LinuxKeyPairId to be an explicit nil
+func (o *ListUserSettings200ResponseAllOfUser) SetLinuxKeyPairIdNil() {
+	o.LinuxKeyPairId.Set(nil)
+}
+
+// UnsetLinuxKeyPairId ensures that no value is present for LinuxKeyPairId, not even an explicit nil
+func (o *ListUserSettings200ResponseAllOfUser) UnsetLinuxKeyPairId() {
+	o.LinuxKeyPairId.Unset()
 }
 
 // GetWindowsUsername returns the WindowsUsername field value if set, zero value otherwise.
@@ -477,9 +488,9 @@ func (o *ListUserSettings200ResponseAllOfUser) SetReceiveNotifications(v bool) {
 }
 
 // GetDefaultGroup returns the DefaultGroup field value if set, zero value otherwise.
-func (o *ListUserSettings200ResponseAllOfUser) GetDefaultGroup() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *ListUserSettings200ResponseAllOfUser) GetDefaultGroup() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.DefaultGroup) {
-		var ret ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return *o.DefaultGroup
@@ -487,7 +498,7 @@ func (o *ListUserSettings200ResponseAllOfUser) GetDefaultGroup() ListApplianceSe
 
 // GetDefaultGroupOk returns a tuple with the DefaultGroup field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListUserSettings200ResponseAllOfUser) GetDefaultGroupOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *ListUserSettings200ResponseAllOfUser) GetDefaultGroupOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.DefaultGroup) {
 		return nil, false
 	}
@@ -503,15 +514,15 @@ func (o *ListUserSettings200ResponseAllOfUser) IsSetDefaultGroup() bool {
 	return false
 }
 
-// SetDefaultGroup gets a reference to the given ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the DefaultGroup field.
-func (o *ListUserSettings200ResponseAllOfUser) SetDefaultGroup(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetDefaultGroup gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the DefaultGroup field.
+func (o *ListUserSettings200ResponseAllOfUser) SetDefaultGroup(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.DefaultGroup = &v
 }
 
 // GetDefaultCloud returns the DefaultCloud field value if set, zero value otherwise.
-func (o *ListUserSettings200ResponseAllOfUser) GetDefaultCloud() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *ListUserSettings200ResponseAllOfUser) GetDefaultCloud() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.DefaultCloud) {
-		var ret ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return *o.DefaultCloud
@@ -519,7 +530,7 @@ func (o *ListUserSettings200ResponseAllOfUser) GetDefaultCloud() ListApplianceSe
 
 // GetDefaultCloudOk returns a tuple with the DefaultCloud field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListUserSettings200ResponseAllOfUser) GetDefaultCloudOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *ListUserSettings200ResponseAllOfUser) GetDefaultCloudOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.DefaultCloud) {
 		return nil, false
 	}
@@ -535,8 +546,8 @@ func (o *ListUserSettings200ResponseAllOfUser) IsSetDefaultCloud() bool {
 	return false
 }
 
-// SetDefaultCloud gets a reference to the given ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the DefaultCloud field.
-func (o *ListUserSettings200ResponseAllOfUser) SetDefaultCloud(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetDefaultCloud gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the DefaultCloud field.
+func (o *ListUserSettings200ResponseAllOfUser) SetDefaultCloud(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.DefaultCloud = &v
 }
 
@@ -605,9 +616,9 @@ func (o *ListUserSettings200ResponseAllOfUser) SetIsUsing2FA(v bool) {
 }
 
 // GetTenant returns the Tenant field value if set, zero value otherwise.
-func (o *ListUserSettings200ResponseAllOfUser) GetTenant() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *ListUserSettings200ResponseAllOfUser) GetTenant() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.Tenant) {
-		var ret ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return *o.Tenant
@@ -615,7 +626,7 @@ func (o *ListUserSettings200ResponseAllOfUser) GetTenant() ListApplianceSettings
 
 // GetTenantOk returns a tuple with the Tenant field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListUserSettings200ResponseAllOfUser) GetTenantOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *ListUserSettings200ResponseAllOfUser) GetTenantOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.Tenant) {
 		return nil, false
 	}
@@ -631,8 +642,8 @@ func (o *ListUserSettings200ResponseAllOfUser) IsSetTenant() bool {
 	return false
 }
 
-// SetTenant gets a reference to the given ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the Tenant field.
-func (o *ListUserSettings200ResponseAllOfUser) SetTenant(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetTenant gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Tenant field.
+func (o *ListUserSettings200ResponseAllOfUser) SetTenant(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.Tenant = &v
 }
 
@@ -667,8 +678,8 @@ func (o ListUserSettings200ResponseAllOfUser) ToMap() (map[string]interface{}, e
 	if !IsNil(o.LinuxPassword) {
 		toSerialize["linuxPassword"] = o.LinuxPassword
 	}
-	if !IsNil(o.LinuxKeyPairId) {
-		toSerialize["linuxKeyPairId"] = o.LinuxKeyPairId
+	if o.LinuxKeyPairId.IsSet() {
+		toSerialize["linuxKeyPairId"] = o.LinuxKeyPairId.Get()
 	}
 	if !IsNil(o.WindowsUsername) {
 		toSerialize["windowsUsername"] = o.WindowsUsername

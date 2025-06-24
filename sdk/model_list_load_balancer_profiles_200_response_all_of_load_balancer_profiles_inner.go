@@ -31,20 +31,20 @@ type ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner struct {
 	Description           *string                                                                        `json:"description,omitempty"`
 	InternalId            *string                                                                        `json:"internalId,omitempty"`
 	ExternalId            *string                                                                        `json:"externalId,omitempty"`
-	ProxyType             *string                                                                        `json:"proxyType,omitempty"`
-	RedirectRewrite       *string                                                                        `json:"redirectRewrite,omitempty"`
-	PersistenceType       *string                                                                        `json:"persistenceType,omitempty"`
-	SslEnabled            *string                                                                        `json:"sslEnabled,omitempty"`
-	SslCert               *string                                                                        `json:"sslCert,omitempty"`
-	AccountCertificate    *string                                                                        `json:"accountCertificate,omitempty"`
+	ProxyType             NullableString                                                                 `json:"proxyType,omitempty"`
+	RedirectRewrite       NullableString                                                                 `json:"redirectRewrite,omitempty"`
+	PersistenceType       NullableString                                                                 `json:"persistenceType,omitempty"`
+	SslEnabled            NullableString                                                                 `json:"sslEnabled,omitempty"`
+	SslCert               NullableString                                                                 `json:"sslCert,omitempty"`
+	AccountCertificate    NullableString                                                                 `json:"accountCertificate,omitempty"`
 	Enabled               *bool                                                                          `json:"enabled,omitempty"`
-	RedirectUrl           *string                                                                        `json:"redirectUrl,omitempty"`
+	RedirectUrl           NullableString                                                                 `json:"redirectUrl,omitempty"`
 	InsertXforwardedFor   *bool                                                                          `json:"insertXforwardedFor,omitempty"`
-	PersistenceCookieName *string                                                                        `json:"persistenceCookieName,omitempty"`
-	PersistenceExpiresIn  *string                                                                        `json:"persistenceExpiresIn,omitempty"`
+	PersistenceCookieName NullableString                                                                 `json:"persistenceCookieName,omitempty"`
+	PersistenceExpiresIn  NullableString                                                                 `json:"persistenceExpiresIn,omitempty"`
 	Editable              *bool                                                                          `json:"editable,omitempty"`
 	Config                map[string]interface{}                                                         `json:"config,omitempty"`
-	CreatedBy             *string                                                                        `json:"createdBy,omitempty"`
+	CreatedBy             NullableString                                                                 `json:"createdBy,omitempty"`
 	DateCreated           *time.Time                                                                     `json:"dateCreated,omitempty"`
 	LastUpdated           *time.Time                                                                     `json:"lastUpdated,omitempty"`
 	AdditionalProperties  map[string]interface{}                                                         `json:",remain"`
@@ -389,196 +389,262 @@ func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) SetE
 	o.ExternalId = &v
 }
 
-// GetProxyType returns the ProxyType field value if set, zero value otherwise.
+// GetProxyType returns the ProxyType field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) GetProxyType() string {
-	if o == nil || IsNil(o.ProxyType) {
+	if o == nil || IsNil(o.ProxyType.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ProxyType
+	return *o.ProxyType.Get()
 }
 
 // GetProxyTypeOk returns a tuple with the ProxyType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) GetProxyTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.ProxyType) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ProxyType, true
+	return o.ProxyType.Get(), o.ProxyType.IsSet()
 }
 
 // IsSetProxyType returns a boolean if a field has been set.
 func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) IsSetProxyType() bool {
-	if o != nil && !IsNil(o.ProxyType) {
+	if o != nil && o.ProxyType.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetProxyType gets a reference to the given string and assigns it to the ProxyType field.
+// SetProxyType gets a reference to the given NullableString and assigns it to the ProxyType field.
 func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) SetProxyType(v string) {
-	o.ProxyType = &v
+	o.ProxyType.Set(&v)
 }
 
-// GetRedirectRewrite returns the RedirectRewrite field value if set, zero value otherwise.
+// SetProxyTypeNil sets the value for ProxyType to be an explicit nil
+func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) SetProxyTypeNil() {
+	o.ProxyType.Set(nil)
+}
+
+// UnsetProxyType ensures that no value is present for ProxyType, not even an explicit nil
+func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) UnsetProxyType() {
+	o.ProxyType.Unset()
+}
+
+// GetRedirectRewrite returns the RedirectRewrite field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) GetRedirectRewrite() string {
-	if o == nil || IsNil(o.RedirectRewrite) {
+	if o == nil || IsNil(o.RedirectRewrite.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.RedirectRewrite
+	return *o.RedirectRewrite.Get()
 }
 
 // GetRedirectRewriteOk returns a tuple with the RedirectRewrite field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) GetRedirectRewriteOk() (*string, bool) {
-	if o == nil || IsNil(o.RedirectRewrite) {
+	if o == nil {
 		return nil, false
 	}
-	return o.RedirectRewrite, true
+	return o.RedirectRewrite.Get(), o.RedirectRewrite.IsSet()
 }
 
 // IsSetRedirectRewrite returns a boolean if a field has been set.
 func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) IsSetRedirectRewrite() bool {
-	if o != nil && !IsNil(o.RedirectRewrite) {
+	if o != nil && o.RedirectRewrite.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetRedirectRewrite gets a reference to the given string and assigns it to the RedirectRewrite field.
+// SetRedirectRewrite gets a reference to the given NullableString and assigns it to the RedirectRewrite field.
 func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) SetRedirectRewrite(v string) {
-	o.RedirectRewrite = &v
+	o.RedirectRewrite.Set(&v)
 }
 
-// GetPersistenceType returns the PersistenceType field value if set, zero value otherwise.
+// SetRedirectRewriteNil sets the value for RedirectRewrite to be an explicit nil
+func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) SetRedirectRewriteNil() {
+	o.RedirectRewrite.Set(nil)
+}
+
+// UnsetRedirectRewrite ensures that no value is present for RedirectRewrite, not even an explicit nil
+func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) UnsetRedirectRewrite() {
+	o.RedirectRewrite.Unset()
+}
+
+// GetPersistenceType returns the PersistenceType field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) GetPersistenceType() string {
-	if o == nil || IsNil(o.PersistenceType) {
+	if o == nil || IsNil(o.PersistenceType.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.PersistenceType
+	return *o.PersistenceType.Get()
 }
 
 // GetPersistenceTypeOk returns a tuple with the PersistenceType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) GetPersistenceTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.PersistenceType) {
+	if o == nil {
 		return nil, false
 	}
-	return o.PersistenceType, true
+	return o.PersistenceType.Get(), o.PersistenceType.IsSet()
 }
 
 // IsSetPersistenceType returns a boolean if a field has been set.
 func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) IsSetPersistenceType() bool {
-	if o != nil && !IsNil(o.PersistenceType) {
+	if o != nil && o.PersistenceType.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetPersistenceType gets a reference to the given string and assigns it to the PersistenceType field.
+// SetPersistenceType gets a reference to the given NullableString and assigns it to the PersistenceType field.
 func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) SetPersistenceType(v string) {
-	o.PersistenceType = &v
+	o.PersistenceType.Set(&v)
 }
 
-// GetSslEnabled returns the SslEnabled field value if set, zero value otherwise.
+// SetPersistenceTypeNil sets the value for PersistenceType to be an explicit nil
+func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) SetPersistenceTypeNil() {
+	o.PersistenceType.Set(nil)
+}
+
+// UnsetPersistenceType ensures that no value is present for PersistenceType, not even an explicit nil
+func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) UnsetPersistenceType() {
+	o.PersistenceType.Unset()
+}
+
+// GetSslEnabled returns the SslEnabled field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) GetSslEnabled() string {
-	if o == nil || IsNil(o.SslEnabled) {
+	if o == nil || IsNil(o.SslEnabled.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.SslEnabled
+	return *o.SslEnabled.Get()
 }
 
 // GetSslEnabledOk returns a tuple with the SslEnabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) GetSslEnabledOk() (*string, bool) {
-	if o == nil || IsNil(o.SslEnabled) {
+	if o == nil {
 		return nil, false
 	}
-	return o.SslEnabled, true
+	return o.SslEnabled.Get(), o.SslEnabled.IsSet()
 }
 
 // IsSetSslEnabled returns a boolean if a field has been set.
 func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) IsSetSslEnabled() bool {
-	if o != nil && !IsNil(o.SslEnabled) {
+	if o != nil && o.SslEnabled.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetSslEnabled gets a reference to the given string and assigns it to the SslEnabled field.
+// SetSslEnabled gets a reference to the given NullableString and assigns it to the SslEnabled field.
 func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) SetSslEnabled(v string) {
-	o.SslEnabled = &v
+	o.SslEnabled.Set(&v)
 }
 
-// GetSslCert returns the SslCert field value if set, zero value otherwise.
+// SetSslEnabledNil sets the value for SslEnabled to be an explicit nil
+func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) SetSslEnabledNil() {
+	o.SslEnabled.Set(nil)
+}
+
+// UnsetSslEnabled ensures that no value is present for SslEnabled, not even an explicit nil
+func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) UnsetSslEnabled() {
+	o.SslEnabled.Unset()
+}
+
+// GetSslCert returns the SslCert field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) GetSslCert() string {
-	if o == nil || IsNil(o.SslCert) {
+	if o == nil || IsNil(o.SslCert.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.SslCert
+	return *o.SslCert.Get()
 }
 
 // GetSslCertOk returns a tuple with the SslCert field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) GetSslCertOk() (*string, bool) {
-	if o == nil || IsNil(o.SslCert) {
+	if o == nil {
 		return nil, false
 	}
-	return o.SslCert, true
+	return o.SslCert.Get(), o.SslCert.IsSet()
 }
 
 // IsSetSslCert returns a boolean if a field has been set.
 func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) IsSetSslCert() bool {
-	if o != nil && !IsNil(o.SslCert) {
+	if o != nil && o.SslCert.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetSslCert gets a reference to the given string and assigns it to the SslCert field.
+// SetSslCert gets a reference to the given NullableString and assigns it to the SslCert field.
 func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) SetSslCert(v string) {
-	o.SslCert = &v
+	o.SslCert.Set(&v)
 }
 
-// GetAccountCertificate returns the AccountCertificate field value if set, zero value otherwise.
+// SetSslCertNil sets the value for SslCert to be an explicit nil
+func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) SetSslCertNil() {
+	o.SslCert.Set(nil)
+}
+
+// UnsetSslCert ensures that no value is present for SslCert, not even an explicit nil
+func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) UnsetSslCert() {
+	o.SslCert.Unset()
+}
+
+// GetAccountCertificate returns the AccountCertificate field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) GetAccountCertificate() string {
-	if o == nil || IsNil(o.AccountCertificate) {
+	if o == nil || IsNil(o.AccountCertificate.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.AccountCertificate
+	return *o.AccountCertificate.Get()
 }
 
 // GetAccountCertificateOk returns a tuple with the AccountCertificate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) GetAccountCertificateOk() (*string, bool) {
-	if o == nil || IsNil(o.AccountCertificate) {
+	if o == nil {
 		return nil, false
 	}
-	return o.AccountCertificate, true
+	return o.AccountCertificate.Get(), o.AccountCertificate.IsSet()
 }
 
 // IsSetAccountCertificate returns a boolean if a field has been set.
 func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) IsSetAccountCertificate() bool {
-	if o != nil && !IsNil(o.AccountCertificate) {
+	if o != nil && o.AccountCertificate.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetAccountCertificate gets a reference to the given string and assigns it to the AccountCertificate field.
+// SetAccountCertificate gets a reference to the given NullableString and assigns it to the AccountCertificate field.
 func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) SetAccountCertificate(v string) {
-	o.AccountCertificate = &v
+	o.AccountCertificate.Set(&v)
+}
+
+// SetAccountCertificateNil sets the value for AccountCertificate to be an explicit nil
+func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) SetAccountCertificateNil() {
+	o.AccountCertificate.Set(nil)
+}
+
+// UnsetAccountCertificate ensures that no value is present for AccountCertificate, not even an explicit nil
+func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) UnsetAccountCertificate() {
+	o.AccountCertificate.Unset()
 }
 
 // GetEnabled returns the Enabled field value if set, zero value otherwise.
@@ -613,36 +679,47 @@ func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) SetE
 	o.Enabled = &v
 }
 
-// GetRedirectUrl returns the RedirectUrl field value if set, zero value otherwise.
+// GetRedirectUrl returns the RedirectUrl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) GetRedirectUrl() string {
-	if o == nil || IsNil(o.RedirectUrl) {
+	if o == nil || IsNil(o.RedirectUrl.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.RedirectUrl
+	return *o.RedirectUrl.Get()
 }
 
 // GetRedirectUrlOk returns a tuple with the RedirectUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) GetRedirectUrlOk() (*string, bool) {
-	if o == nil || IsNil(o.RedirectUrl) {
+	if o == nil {
 		return nil, false
 	}
-	return o.RedirectUrl, true
+	return o.RedirectUrl.Get(), o.RedirectUrl.IsSet()
 }
 
 // IsSetRedirectUrl returns a boolean if a field has been set.
 func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) IsSetRedirectUrl() bool {
-	if o != nil && !IsNil(o.RedirectUrl) {
+	if o != nil && o.RedirectUrl.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetRedirectUrl gets a reference to the given string and assigns it to the RedirectUrl field.
+// SetRedirectUrl gets a reference to the given NullableString and assigns it to the RedirectUrl field.
 func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) SetRedirectUrl(v string) {
-	o.RedirectUrl = &v
+	o.RedirectUrl.Set(&v)
+}
+
+// SetRedirectUrlNil sets the value for RedirectUrl to be an explicit nil
+func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) SetRedirectUrlNil() {
+	o.RedirectUrl.Set(nil)
+}
+
+// UnsetRedirectUrl ensures that no value is present for RedirectUrl, not even an explicit nil
+func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) UnsetRedirectUrl() {
+	o.RedirectUrl.Unset()
 }
 
 // GetInsertXforwardedFor returns the InsertXforwardedFor field value if set, zero value otherwise.
@@ -677,68 +754,90 @@ func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) SetI
 	o.InsertXforwardedFor = &v
 }
 
-// GetPersistenceCookieName returns the PersistenceCookieName field value if set, zero value otherwise.
+// GetPersistenceCookieName returns the PersistenceCookieName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) GetPersistenceCookieName() string {
-	if o == nil || IsNil(o.PersistenceCookieName) {
+	if o == nil || IsNil(o.PersistenceCookieName.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.PersistenceCookieName
+	return *o.PersistenceCookieName.Get()
 }
 
 // GetPersistenceCookieNameOk returns a tuple with the PersistenceCookieName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) GetPersistenceCookieNameOk() (*string, bool) {
-	if o == nil || IsNil(o.PersistenceCookieName) {
+	if o == nil {
 		return nil, false
 	}
-	return o.PersistenceCookieName, true
+	return o.PersistenceCookieName.Get(), o.PersistenceCookieName.IsSet()
 }
 
 // IsSetPersistenceCookieName returns a boolean if a field has been set.
 func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) IsSetPersistenceCookieName() bool {
-	if o != nil && !IsNil(o.PersistenceCookieName) {
+	if o != nil && o.PersistenceCookieName.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetPersistenceCookieName gets a reference to the given string and assigns it to the PersistenceCookieName field.
+// SetPersistenceCookieName gets a reference to the given NullableString and assigns it to the PersistenceCookieName field.
 func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) SetPersistenceCookieName(v string) {
-	o.PersistenceCookieName = &v
+	o.PersistenceCookieName.Set(&v)
 }
 
-// GetPersistenceExpiresIn returns the PersistenceExpiresIn field value if set, zero value otherwise.
+// SetPersistenceCookieNameNil sets the value for PersistenceCookieName to be an explicit nil
+func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) SetPersistenceCookieNameNil() {
+	o.PersistenceCookieName.Set(nil)
+}
+
+// UnsetPersistenceCookieName ensures that no value is present for PersistenceCookieName, not even an explicit nil
+func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) UnsetPersistenceCookieName() {
+	o.PersistenceCookieName.Unset()
+}
+
+// GetPersistenceExpiresIn returns the PersistenceExpiresIn field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) GetPersistenceExpiresIn() string {
-	if o == nil || IsNil(o.PersistenceExpiresIn) {
+	if o == nil || IsNil(o.PersistenceExpiresIn.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.PersistenceExpiresIn
+	return *o.PersistenceExpiresIn.Get()
 }
 
 // GetPersistenceExpiresInOk returns a tuple with the PersistenceExpiresIn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) GetPersistenceExpiresInOk() (*string, bool) {
-	if o == nil || IsNil(o.PersistenceExpiresIn) {
+	if o == nil {
 		return nil, false
 	}
-	return o.PersistenceExpiresIn, true
+	return o.PersistenceExpiresIn.Get(), o.PersistenceExpiresIn.IsSet()
 }
 
 // IsSetPersistenceExpiresIn returns a boolean if a field has been set.
 func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) IsSetPersistenceExpiresIn() bool {
-	if o != nil && !IsNil(o.PersistenceExpiresIn) {
+	if o != nil && o.PersistenceExpiresIn.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetPersistenceExpiresIn gets a reference to the given string and assigns it to the PersistenceExpiresIn field.
+// SetPersistenceExpiresIn gets a reference to the given NullableString and assigns it to the PersistenceExpiresIn field.
 func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) SetPersistenceExpiresIn(v string) {
-	o.PersistenceExpiresIn = &v
+	o.PersistenceExpiresIn.Set(&v)
+}
+
+// SetPersistenceExpiresInNil sets the value for PersistenceExpiresIn to be an explicit nil
+func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) SetPersistenceExpiresInNil() {
+	o.PersistenceExpiresIn.Set(nil)
+}
+
+// UnsetPersistenceExpiresIn ensures that no value is present for PersistenceExpiresIn, not even an explicit nil
+func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) UnsetPersistenceExpiresIn() {
+	o.PersistenceExpiresIn.Unset()
 }
 
 // GetEditable returns the Editable field value if set, zero value otherwise.
@@ -805,36 +904,47 @@ func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) SetC
 	o.Config = v
 }
 
-// GetCreatedBy returns the CreatedBy field value if set, zero value otherwise.
+// GetCreatedBy returns the CreatedBy field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) GetCreatedBy() string {
-	if o == nil || IsNil(o.CreatedBy) {
+	if o == nil || IsNil(o.CreatedBy.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.CreatedBy
+	return *o.CreatedBy.Get()
 }
 
 // GetCreatedByOk returns a tuple with the CreatedBy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) GetCreatedByOk() (*string, bool) {
-	if o == nil || IsNil(o.CreatedBy) {
+	if o == nil {
 		return nil, false
 	}
-	return o.CreatedBy, true
+	return o.CreatedBy.Get(), o.CreatedBy.IsSet()
 }
 
 // IsSetCreatedBy returns a boolean if a field has been set.
 func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) IsSetCreatedBy() bool {
-	if o != nil && !IsNil(o.CreatedBy) {
+	if o != nil && o.CreatedBy.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCreatedBy gets a reference to the given string and assigns it to the CreatedBy field.
+// SetCreatedBy gets a reference to the given NullableString and assigns it to the CreatedBy field.
 func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) SetCreatedBy(v string) {
-	o.CreatedBy = &v
+	o.CreatedBy.Set(&v)
+}
+
+// SetCreatedByNil sets the value for CreatedBy to be an explicit nil
+func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) SetCreatedByNil() {
+	o.CreatedBy.Set(nil)
+}
+
+// UnsetCreatedBy ensures that no value is present for CreatedBy, not even an explicit nil
+func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) UnsetCreatedBy() {
+	o.CreatedBy.Unset()
 }
 
 // GetDateCreated returns the DateCreated field value if set, zero value otherwise.
@@ -941,38 +1051,38 @@ func (o ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) ToMap
 	if !IsNil(o.ExternalId) {
 		toSerialize["externalId"] = o.ExternalId
 	}
-	if !IsNil(o.ProxyType) {
-		toSerialize["proxyType"] = o.ProxyType
+	if o.ProxyType.IsSet() {
+		toSerialize["proxyType"] = o.ProxyType.Get()
 	}
-	if !IsNil(o.RedirectRewrite) {
-		toSerialize["redirectRewrite"] = o.RedirectRewrite
+	if o.RedirectRewrite.IsSet() {
+		toSerialize["redirectRewrite"] = o.RedirectRewrite.Get()
 	}
-	if !IsNil(o.PersistenceType) {
-		toSerialize["persistenceType"] = o.PersistenceType
+	if o.PersistenceType.IsSet() {
+		toSerialize["persistenceType"] = o.PersistenceType.Get()
 	}
-	if !IsNil(o.SslEnabled) {
-		toSerialize["sslEnabled"] = o.SslEnabled
+	if o.SslEnabled.IsSet() {
+		toSerialize["sslEnabled"] = o.SslEnabled.Get()
 	}
-	if !IsNil(o.SslCert) {
-		toSerialize["sslCert"] = o.SslCert
+	if o.SslCert.IsSet() {
+		toSerialize["sslCert"] = o.SslCert.Get()
 	}
-	if !IsNil(o.AccountCertificate) {
-		toSerialize["accountCertificate"] = o.AccountCertificate
+	if o.AccountCertificate.IsSet() {
+		toSerialize["accountCertificate"] = o.AccountCertificate.Get()
 	}
 	if !IsNil(o.Enabled) {
 		toSerialize["enabled"] = o.Enabled
 	}
-	if !IsNil(o.RedirectUrl) {
-		toSerialize["redirectUrl"] = o.RedirectUrl
+	if o.RedirectUrl.IsSet() {
+		toSerialize["redirectUrl"] = o.RedirectUrl.Get()
 	}
 	if !IsNil(o.InsertXforwardedFor) {
 		toSerialize["insertXforwardedFor"] = o.InsertXforwardedFor
 	}
-	if !IsNil(o.PersistenceCookieName) {
-		toSerialize["persistenceCookieName"] = o.PersistenceCookieName
+	if o.PersistenceCookieName.IsSet() {
+		toSerialize["persistenceCookieName"] = o.PersistenceCookieName.Get()
 	}
-	if !IsNil(o.PersistenceExpiresIn) {
-		toSerialize["persistenceExpiresIn"] = o.PersistenceExpiresIn
+	if o.PersistenceExpiresIn.IsSet() {
+		toSerialize["persistenceExpiresIn"] = o.PersistenceExpiresIn.Get()
 	}
 	if !IsNil(o.Editable) {
 		toSerialize["editable"] = o.Editable
@@ -980,8 +1090,8 @@ func (o ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) ToMap
 	if !IsNil(o.Config) {
 		toSerialize["config"] = o.Config
 	}
-	if !IsNil(o.CreatedBy) {
-		toSerialize["createdBy"] = o.CreatedBy
+	if o.CreatedBy.IsSet() {
+		toSerialize["createdBy"] = o.CreatedBy.Get()
 	}
 	if !IsNil(o.DateCreated) {
 		toSerialize["dateCreated"] = o.DateCreated

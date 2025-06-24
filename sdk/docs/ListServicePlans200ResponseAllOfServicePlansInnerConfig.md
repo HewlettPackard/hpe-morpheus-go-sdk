@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**StorageSizeType** | Pointer to **string** |  | [optional] 
-**MemorySizeType** | Pointer to **string** |  | [optional] 
+**StorageSizeType** | Pointer to **NullableString** |  | [optional] 
+**MemorySizeType** | Pointer to **NullableString** |  | [optional] 
 **Ranges** | Pointer to [**ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges**](ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges.md) |  | [optional] 
 
 ## Methods
@@ -52,6 +52,16 @@ SetStorageSizeType sets StorageSizeType field to given value.
 
 HasStorageSizeType returns a boolean if a field has been set.
 
+### SetStorageSizeTypeNil
+
+`func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfig) SetStorageSizeTypeNil(b bool)`
+
+ SetStorageSizeTypeNil sets the value for StorageSizeType to be an explicit nil
+
+### UnsetStorageSizeType
+`func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfig) UnsetStorageSizeType()`
+
+UnsetStorageSizeType ensures that no value is present for StorageSizeType, not even an explicit nil
 ### GetMemorySizeType
 
 `func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfig) GetMemorySizeType() string`
@@ -77,6 +87,16 @@ SetMemorySizeType sets MemorySizeType field to given value.
 
 HasMemorySizeType returns a boolean if a field has been set.
 
+### SetMemorySizeTypeNil
+
+`func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfig) SetMemorySizeTypeNil(b bool)`
+
+ SetMemorySizeTypeNil sets the value for MemorySizeType to be an explicit nil
+
+### UnsetMemorySizeType
+`func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfig) UnsetMemorySizeType()`
+
+UnsetMemorySizeType ensures that no value is present for MemorySizeType, not even an explicit nil
 ### GetRanges
 
 `func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfig) GetRanges() ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges`

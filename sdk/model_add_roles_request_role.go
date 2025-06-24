@@ -23,9 +23,9 @@ type AddRolesRequestRole struct {
 	// Authority (Name)
 	Authority string `json:"authority"`
 	// Description
-	Description *string `json:"description,omitempty"`
+	Description NullableString `json:"description,omitempty"`
 	// An optional override for the default landing page after login for a user.
-	LandingUrl *string `json:"landingUrl,omitempty"`
+	LandingUrl NullableString `json:"landingUrl,omitempty"`
 	// Role type
 	RoleType *string `json:"roleType,omitempty"`
 	// Base Role ID. Create the new role with the same permissions and access levels that the specified base role has. If this is not passed, the role is create without any permissions.
@@ -33,8 +33,8 @@ type AddRolesRequestRole struct {
 	// Multitenant roles are copied to all tenant accounts and kept in sync until a sub-tenant user modifies their copy of the role. *Only available to master tenant*
 	Multitenant *bool `json:"multitenant,omitempty"`
 	// Multitenant Locked, prevents sub-tenant users from modifying their copy of multienant roles. *Only available to master tenant*
-	MultitenantLocked *bool   `json:"multitenantLocked,omitempty"`
-	DefaultPersona    *string `json:"defaultPersona,omitempty"`
+	MultitenantLocked *bool          `json:"multitenantLocked,omitempty"`
+	DefaultPersona    NullableString `json:"defaultPersona,omitempty"`
 	// Set the access level for the specified permissions.
 	FeaturePermissions []AddRolesRequestRoleFeaturePermissionsInner `json:"featurePermissions,omitempty"`
 	// Set the default access level for for groups (sites). Only applies to user roles.
@@ -138,68 +138,90 @@ func (o *AddRolesRequestRole) SetAuthority(v string) {
 	o.Authority = v
 }
 
-// GetDescription returns the Description field value if set, zero value otherwise.
+// GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AddRolesRequestRole) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
+	if o == nil || IsNil(o.Description.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Description
+	return *o.Description.Get()
 }
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AddRolesRequestRole) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Description, true
+	return o.Description.Get(), o.Description.IsSet()
 }
 
 // IsSetDescription returns a boolean if a field has been set.
 func (o *AddRolesRequestRole) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
+	if o != nil && o.Description.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDescription gets a reference to the given string and assigns it to the Description field.
+// SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *AddRolesRequestRole) SetDescription(v string) {
-	o.Description = &v
+	o.Description.Set(&v)
 }
 
-// GetLandingUrl returns the LandingUrl field value if set, zero value otherwise.
+// SetDescriptionNil sets the value for Description to be an explicit nil
+func (o *AddRolesRequestRole) SetDescriptionNil() {
+	o.Description.Set(nil)
+}
+
+// UnsetDescription ensures that no value is present for Description, not even an explicit nil
+func (o *AddRolesRequestRole) UnsetDescription() {
+	o.Description.Unset()
+}
+
+// GetLandingUrl returns the LandingUrl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AddRolesRequestRole) GetLandingUrl() string {
-	if o == nil || IsNil(o.LandingUrl) {
+	if o == nil || IsNil(o.LandingUrl.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.LandingUrl
+	return *o.LandingUrl.Get()
 }
 
 // GetLandingUrlOk returns a tuple with the LandingUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AddRolesRequestRole) GetLandingUrlOk() (*string, bool) {
-	if o == nil || IsNil(o.LandingUrl) {
+	if o == nil {
 		return nil, false
 	}
-	return o.LandingUrl, true
+	return o.LandingUrl.Get(), o.LandingUrl.IsSet()
 }
 
 // IsSetLandingUrl returns a boolean if a field has been set.
 func (o *AddRolesRequestRole) IsSetLandingUrl() bool {
-	if o != nil && !IsNil(o.LandingUrl) {
+	if o != nil && o.LandingUrl.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetLandingUrl gets a reference to the given string and assigns it to the LandingUrl field.
+// SetLandingUrl gets a reference to the given NullableString and assigns it to the LandingUrl field.
 func (o *AddRolesRequestRole) SetLandingUrl(v string) {
-	o.LandingUrl = &v
+	o.LandingUrl.Set(&v)
+}
+
+// SetLandingUrlNil sets the value for LandingUrl to be an explicit nil
+func (o *AddRolesRequestRole) SetLandingUrlNil() {
+	o.LandingUrl.Set(nil)
+}
+
+// UnsetLandingUrl ensures that no value is present for LandingUrl, not even an explicit nil
+func (o *AddRolesRequestRole) UnsetLandingUrl() {
+	o.LandingUrl.Unset()
 }
 
 // GetRoleType returns the RoleType field value if set, zero value otherwise.
@@ -330,36 +352,47 @@ func (o *AddRolesRequestRole) SetMultitenantLocked(v bool) {
 	o.MultitenantLocked = &v
 }
 
-// GetDefaultPersona returns the DefaultPersona field value if set, zero value otherwise.
+// GetDefaultPersona returns the DefaultPersona field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AddRolesRequestRole) GetDefaultPersona() string {
-	if o == nil || IsNil(o.DefaultPersona) {
+	if o == nil || IsNil(o.DefaultPersona.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.DefaultPersona
+	return *o.DefaultPersona.Get()
 }
 
 // GetDefaultPersonaOk returns a tuple with the DefaultPersona field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AddRolesRequestRole) GetDefaultPersonaOk() (*string, bool) {
-	if o == nil || IsNil(o.DefaultPersona) {
+	if o == nil {
 		return nil, false
 	}
-	return o.DefaultPersona, true
+	return o.DefaultPersona.Get(), o.DefaultPersona.IsSet()
 }
 
 // IsSetDefaultPersona returns a boolean if a field has been set.
 func (o *AddRolesRequestRole) IsSetDefaultPersona() bool {
-	if o != nil && !IsNil(o.DefaultPersona) {
+	if o != nil && o.DefaultPersona.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDefaultPersona gets a reference to the given string and assigns it to the DefaultPersona field.
+// SetDefaultPersona gets a reference to the given NullableString and assigns it to the DefaultPersona field.
 func (o *AddRolesRequestRole) SetDefaultPersona(v string) {
-	o.DefaultPersona = &v
+	o.DefaultPersona.Set(&v)
+}
+
+// SetDefaultPersonaNil sets the value for DefaultPersona to be an explicit nil
+func (o *AddRolesRequestRole) SetDefaultPersonaNil() {
+	o.DefaultPersona.Set(nil)
+}
+
+// UnsetDefaultPersona ensures that no value is present for DefaultPersona, not even an explicit nil
+func (o *AddRolesRequestRole) UnsetDefaultPersona() {
+	o.DefaultPersona.Unset()
 }
 
 // GetFeaturePermissions returns the FeaturePermissions field value if set, zero value otherwise.
@@ -1077,11 +1110,11 @@ func (o AddRolesRequestRole) MarshalJSON() ([]byte, error) {
 func (o AddRolesRequestRole) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["authority"] = o.Authority
-	if !IsNil(o.Description) {
-		toSerialize["description"] = o.Description
+	if o.Description.IsSet() {
+		toSerialize["description"] = o.Description.Get()
 	}
-	if !IsNil(o.LandingUrl) {
-		toSerialize["landingUrl"] = o.LandingUrl
+	if o.LandingUrl.IsSet() {
+		toSerialize["landingUrl"] = o.LandingUrl.Get()
 	}
 	if !IsNil(o.RoleType) {
 		toSerialize["roleType"] = o.RoleType
@@ -1095,8 +1128,8 @@ func (o AddRolesRequestRole) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.MultitenantLocked) {
 		toSerialize["multitenantLocked"] = o.MultitenantLocked
 	}
-	if !IsNil(o.DefaultPersona) {
-		toSerialize["defaultPersona"] = o.DefaultPersona
+	if o.DefaultPersona.IsSet() {
+		toSerialize["defaultPersona"] = o.DefaultPersona.Get()
 	}
 	if !IsNil(o.FeaturePermissions) {
 		toSerialize["featurePermissions"] = o.FeaturePermissions

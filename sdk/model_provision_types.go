@@ -22,7 +22,7 @@ var _ MappedNullable = &ProvisionTypes{}
 type ProvisionTypes struct {
 	Id                    *int64                                                                                                             `json:"id,omitempty"`
 	Name                  *string                                                                                                            `json:"name,omitempty"`
-	Description           *string                                                                                                            `json:"description,omitempty"`
+	Description           NullableString                                                                                                     `json:"description,omitempty"`
 	Code                  *string                                                                                                            `json:"code,omitempty"`
 	AclEnabled            *bool                                                                                                              `json:"aclEnabled,omitempty"`
 	MultiTenant           *bool                                                                                                              `json:"multiTenant,omitempty"`
@@ -31,7 +31,7 @@ type ProvisionTypes struct {
 	CustomSupported       *bool                                                                                                              `json:"customSupported,omitempty"`
 	MapPorts              *bool                                                                                                              `json:"mapPorts,omitempty"`
 	ExportServer          *bool                                                                                                              `json:"exportServer,omitempty"`
-	ViewSet               *string                                                                                                            `json:"viewSet,omitempty"`
+	ViewSet               NullableString                                                                                                     `json:"viewSet,omitempty"`
 	ServerType            *string                                                                                                            `json:"serverType,omitempty"`
 	HostType              *string                                                                                                            `json:"hostType,omitempty"`
 	AddVolumes            *bool                                                                                                              `json:"addVolumes,omitempty"`
@@ -46,20 +46,20 @@ type ProvisionTypes struct {
 	LvmSupported          *bool                                                                                                              `json:"lvmSupported,omitempty"`
 	HostDiskMode          *string                                                                                                            `json:"hostDiskMode,omitempty"`
 	MinDisk               *int64                                                                                                             `json:"minDisk,omitempty"`
-	MaxDisk               *string                                                                                                            `json:"maxDisk,omitempty"`
+	MaxDisk               NullableString                                                                                                     `json:"maxDisk,omitempty"`
 	ResizeCopiesVolumes   *bool                                                                                                              `json:"resizeCopiesVolumes,omitempty"`
 	SupportsAutoDatastore *bool                                                                                                              `json:"supportsAutoDatastore,omitempty"`
 	HasZonePools          *bool                                                                                                              `json:"hasZonePools,omitempty"`
 	HasSecurityGroups     *bool                                                                                                              `json:"hasSecurityGroups,omitempty"`
 	HasParameters         *bool                                                                                                              `json:"hasParameters,omitempty"`
-	CanEnforceTags        *bool                                                                                                              `json:"canEnforceTags,omitempty"`
+	CanEnforceTags        NullableBool                                                                                                       `json:"canEnforceTags,omitempty"`
 	DisableRootDatastore  *bool                                                                                                              `json:"disableRootDatastore,omitempty"`
 	HasSnapshots          *bool                                                                                                              `json:"hasSnapshots,omitempty"`
 	HasSpecTemplates      *bool                                                                                                              `json:"hasSpecTemplates,omitempty"`
 	HasPreview            *bool                                                                                                              `json:"hasPreview,omitempty"`
 	ZonePoolRequired      *bool                                                                                                              `json:"zonePoolRequired,omitempty"`
 	PlanRequiresPool      *bool                                                                                                              `json:"planRequiresPool,omitempty"`
-	HasFolders            *bool                                                                                                              `json:"hasFolders,omitempty"`
+	HasFolders            NullableBool                                                                                                       `json:"hasFolders,omitempty"`
 	OptionTypes           []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner                                        `json:"optionTypes,omitempty"`
 	CustomOptionTypes     []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner                                        `json:"customOptionTypes,omitempty"`
 	NetworkTypes          []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner    `json:"networkTypes,omitempty"`
@@ -152,36 +152,47 @@ func (o *ProvisionTypes) SetName(v string) {
 	o.Name = &v
 }
 
-// GetDescription returns the Description field value if set, zero value otherwise.
+// GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ProvisionTypes) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
+	if o == nil || IsNil(o.Description.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Description
+	return *o.Description.Get()
 }
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ProvisionTypes) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Description, true
+	return o.Description.Get(), o.Description.IsSet()
 }
 
 // IsSetDescription returns a boolean if a field has been set.
 func (o *ProvisionTypes) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
+	if o != nil && o.Description.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDescription gets a reference to the given string and assigns it to the Description field.
+// SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *ProvisionTypes) SetDescription(v string) {
-	o.Description = &v
+	o.Description.Set(&v)
+}
+
+// SetDescriptionNil sets the value for Description to be an explicit nil
+func (o *ProvisionTypes) SetDescriptionNil() {
+	o.Description.Set(nil)
+}
+
+// UnsetDescription ensures that no value is present for Description, not even an explicit nil
+func (o *ProvisionTypes) UnsetDescription() {
+	o.Description.Unset()
 }
 
 // GetCode returns the Code field value if set, zero value otherwise.
@@ -440,36 +451,47 @@ func (o *ProvisionTypes) SetExportServer(v bool) {
 	o.ExportServer = &v
 }
 
-// GetViewSet returns the ViewSet field value if set, zero value otherwise.
+// GetViewSet returns the ViewSet field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ProvisionTypes) GetViewSet() string {
-	if o == nil || IsNil(o.ViewSet) {
+	if o == nil || IsNil(o.ViewSet.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ViewSet
+	return *o.ViewSet.Get()
 }
 
 // GetViewSetOk returns a tuple with the ViewSet field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ProvisionTypes) GetViewSetOk() (*string, bool) {
-	if o == nil || IsNil(o.ViewSet) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ViewSet, true
+	return o.ViewSet.Get(), o.ViewSet.IsSet()
 }
 
 // IsSetViewSet returns a boolean if a field has been set.
 func (o *ProvisionTypes) IsSetViewSet() bool {
-	if o != nil && !IsNil(o.ViewSet) {
+	if o != nil && o.ViewSet.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetViewSet gets a reference to the given string and assigns it to the ViewSet field.
+// SetViewSet gets a reference to the given NullableString and assigns it to the ViewSet field.
 func (o *ProvisionTypes) SetViewSet(v string) {
-	o.ViewSet = &v
+	o.ViewSet.Set(&v)
+}
+
+// SetViewSetNil sets the value for ViewSet to be an explicit nil
+func (o *ProvisionTypes) SetViewSetNil() {
+	o.ViewSet.Set(nil)
+}
+
+// UnsetViewSet ensures that no value is present for ViewSet, not even an explicit nil
+func (o *ProvisionTypes) UnsetViewSet() {
+	o.ViewSet.Unset()
 }
 
 // GetServerType returns the ServerType field value if set, zero value otherwise.
@@ -920,36 +942,47 @@ func (o *ProvisionTypes) SetMinDisk(v int64) {
 	o.MinDisk = &v
 }
 
-// GetMaxDisk returns the MaxDisk field value if set, zero value otherwise.
+// GetMaxDisk returns the MaxDisk field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ProvisionTypes) GetMaxDisk() string {
-	if o == nil || IsNil(o.MaxDisk) {
+	if o == nil || IsNil(o.MaxDisk.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.MaxDisk
+	return *o.MaxDisk.Get()
 }
 
 // GetMaxDiskOk returns a tuple with the MaxDisk field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ProvisionTypes) GetMaxDiskOk() (*string, bool) {
-	if o == nil || IsNil(o.MaxDisk) {
+	if o == nil {
 		return nil, false
 	}
-	return o.MaxDisk, true
+	return o.MaxDisk.Get(), o.MaxDisk.IsSet()
 }
 
 // IsSetMaxDisk returns a boolean if a field has been set.
 func (o *ProvisionTypes) IsSetMaxDisk() bool {
-	if o != nil && !IsNil(o.MaxDisk) {
+	if o != nil && o.MaxDisk.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetMaxDisk gets a reference to the given string and assigns it to the MaxDisk field.
+// SetMaxDisk gets a reference to the given NullableString and assigns it to the MaxDisk field.
 func (o *ProvisionTypes) SetMaxDisk(v string) {
-	o.MaxDisk = &v
+	o.MaxDisk.Set(&v)
+}
+
+// SetMaxDiskNil sets the value for MaxDisk to be an explicit nil
+func (o *ProvisionTypes) SetMaxDiskNil() {
+	o.MaxDisk.Set(nil)
+}
+
+// UnsetMaxDisk ensures that no value is present for MaxDisk, not even an explicit nil
+func (o *ProvisionTypes) UnsetMaxDisk() {
+	o.MaxDisk.Unset()
 }
 
 // GetResizeCopiesVolumes returns the ResizeCopiesVolumes field value if set, zero value otherwise.
@@ -1112,36 +1145,47 @@ func (o *ProvisionTypes) SetHasParameters(v bool) {
 	o.HasParameters = &v
 }
 
-// GetCanEnforceTags returns the CanEnforceTags field value if set, zero value otherwise.
+// GetCanEnforceTags returns the CanEnforceTags field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ProvisionTypes) GetCanEnforceTags() bool {
-	if o == nil || IsNil(o.CanEnforceTags) {
+	if o == nil || IsNil(o.CanEnforceTags.Get()) {
 		var ret bool
 		return ret
 	}
-	return *o.CanEnforceTags
+	return *o.CanEnforceTags.Get()
 }
 
 // GetCanEnforceTagsOk returns a tuple with the CanEnforceTags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ProvisionTypes) GetCanEnforceTagsOk() (*bool, bool) {
-	if o == nil || IsNil(o.CanEnforceTags) {
+	if o == nil {
 		return nil, false
 	}
-	return o.CanEnforceTags, true
+	return o.CanEnforceTags.Get(), o.CanEnforceTags.IsSet()
 }
 
 // IsSetCanEnforceTags returns a boolean if a field has been set.
 func (o *ProvisionTypes) IsSetCanEnforceTags() bool {
-	if o != nil && !IsNil(o.CanEnforceTags) {
+	if o != nil && o.CanEnforceTags.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCanEnforceTags gets a reference to the given bool and assigns it to the CanEnforceTags field.
+// SetCanEnforceTags gets a reference to the given NullableBool and assigns it to the CanEnforceTags field.
 func (o *ProvisionTypes) SetCanEnforceTags(v bool) {
-	o.CanEnforceTags = &v
+	o.CanEnforceTags.Set(&v)
+}
+
+// SetCanEnforceTagsNil sets the value for CanEnforceTags to be an explicit nil
+func (o *ProvisionTypes) SetCanEnforceTagsNil() {
+	o.CanEnforceTags.Set(nil)
+}
+
+// UnsetCanEnforceTags ensures that no value is present for CanEnforceTags, not even an explicit nil
+func (o *ProvisionTypes) UnsetCanEnforceTags() {
+	o.CanEnforceTags.Unset()
 }
 
 // GetDisableRootDatastore returns the DisableRootDatastore field value if set, zero value otherwise.
@@ -1336,41 +1380,52 @@ func (o *ProvisionTypes) SetPlanRequiresPool(v bool) {
 	o.PlanRequiresPool = &v
 }
 
-// GetHasFolders returns the HasFolders field value if set, zero value otherwise.
+// GetHasFolders returns the HasFolders field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ProvisionTypes) GetHasFolders() bool {
-	if o == nil || IsNil(o.HasFolders) {
+	if o == nil || IsNil(o.HasFolders.Get()) {
 		var ret bool
 		return ret
 	}
-	return *o.HasFolders
+	return *o.HasFolders.Get()
 }
 
 // GetHasFoldersOk returns a tuple with the HasFolders field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ProvisionTypes) GetHasFoldersOk() (*bool, bool) {
-	if o == nil || IsNil(o.HasFolders) {
+	if o == nil {
 		return nil, false
 	}
-	return o.HasFolders, true
+	return o.HasFolders.Get(), o.HasFolders.IsSet()
 }
 
 // IsSetHasFolders returns a boolean if a field has been set.
 func (o *ProvisionTypes) IsSetHasFolders() bool {
-	if o != nil && !IsNil(o.HasFolders) {
+	if o != nil && o.HasFolders.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetHasFolders gets a reference to the given bool and assigns it to the HasFolders field.
+// SetHasFolders gets a reference to the given NullableBool and assigns it to the HasFolders field.
 func (o *ProvisionTypes) SetHasFolders(v bool) {
-	o.HasFolders = &v
+	o.HasFolders.Set(&v)
 }
 
-// GetOptionTypes returns the OptionTypes field value if set, zero value otherwise.
+// SetHasFoldersNil sets the value for HasFolders to be an explicit nil
+func (o *ProvisionTypes) SetHasFoldersNil() {
+	o.HasFolders.Set(nil)
+}
+
+// UnsetHasFolders ensures that no value is present for HasFolders, not even an explicit nil
+func (o *ProvisionTypes) UnsetHasFolders() {
+	o.HasFolders.Unset()
+}
+
+// GetOptionTypes returns the OptionTypes field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ProvisionTypes) GetOptionTypes() []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner {
-	if o == nil || IsNil(o.OptionTypes) {
+	if o == nil {
 		var ret []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner
 		return ret
 	}
@@ -1379,6 +1434,7 @@ func (o *ProvisionTypes) GetOptionTypes() []ListCatalogItemTypes200ResponseAllOf
 
 // GetOptionTypesOk returns a tuple with the OptionTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ProvisionTypes) GetOptionTypesOk() ([]ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner, bool) {
 	if o == nil || IsNil(o.OptionTypes) {
 		return nil, false
@@ -1400,9 +1456,9 @@ func (o *ProvisionTypes) SetOptionTypes(v []ListCatalogItemTypes200ResponseAllOf
 	o.OptionTypes = v
 }
 
-// GetCustomOptionTypes returns the CustomOptionTypes field value if set, zero value otherwise.
+// GetCustomOptionTypes returns the CustomOptionTypes field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ProvisionTypes) GetCustomOptionTypes() []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner {
-	if o == nil || IsNil(o.CustomOptionTypes) {
+	if o == nil {
 		var ret []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner
 		return ret
 	}
@@ -1411,6 +1467,7 @@ func (o *ProvisionTypes) GetCustomOptionTypes() []ListCatalogItemTypes200Respons
 
 // GetCustomOptionTypesOk returns a tuple with the CustomOptionTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ProvisionTypes) GetCustomOptionTypesOk() ([]ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner, bool) {
 	if o == nil || IsNil(o.CustomOptionTypes) {
 		return nil, false
@@ -1432,9 +1489,9 @@ func (o *ProvisionTypes) SetCustomOptionTypes(v []ListCatalogItemTypes200Respons
 	o.CustomOptionTypes = v
 }
 
-// GetNetworkTypes returns the NetworkTypes field value if set, zero value otherwise.
+// GetNetworkTypes returns the NetworkTypes field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ProvisionTypes) GetNetworkTypes() []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner {
-	if o == nil || IsNil(o.NetworkTypes) {
+	if o == nil {
 		var ret []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner
 		return ret
 	}
@@ -1443,6 +1500,7 @@ func (o *ProvisionTypes) GetNetworkTypes() []GetInstanceTypeProvisioning200Respo
 
 // GetNetworkTypesOk returns a tuple with the NetworkTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ProvisionTypes) GetNetworkTypesOk() ([]GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner, bool) {
 	if o == nil || IsNil(o.NetworkTypes) {
 		return nil, false
@@ -1464,9 +1522,9 @@ func (o *ProvisionTypes) SetNetworkTypes(v []GetInstanceTypeProvisioning200Respo
 	o.NetworkTypes = v
 }
 
-// GetStorageTypes returns the StorageTypes field value if set, zero value otherwise.
+// GetStorageTypes returns the StorageTypes field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ProvisionTypes) GetStorageTypes() []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageTypesInner {
-	if o == nil || IsNil(o.StorageTypes) {
+	if o == nil {
 		var ret []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageTypesInner
 		return ret
 	}
@@ -1475,6 +1533,7 @@ func (o *ProvisionTypes) GetStorageTypes() []GetInstanceTypeProvisioning200Respo
 
 // GetStorageTypesOk returns a tuple with the StorageTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ProvisionTypes) GetStorageTypesOk() ([]GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageTypesInner, bool) {
 	if o == nil || IsNil(o.StorageTypes) {
 		return nil, false
@@ -1496,9 +1555,9 @@ func (o *ProvisionTypes) SetStorageTypes(v []GetInstanceTypeProvisioning200Respo
 	o.StorageTypes = v
 }
 
-// GetRootStorageTypes returns the RootStorageTypes field value if set, zero value otherwise.
+// GetRootStorageTypes returns the RootStorageTypes field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ProvisionTypes) GetRootStorageTypes() []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageTypesInner {
-	if o == nil || IsNil(o.RootStorageTypes) {
+	if o == nil {
 		var ret []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageTypesInner
 		return ret
 	}
@@ -1507,6 +1566,7 @@ func (o *ProvisionTypes) GetRootStorageTypes() []GetInstanceTypeProvisioning200R
 
 // GetRootStorageTypesOk returns a tuple with the RootStorageTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ProvisionTypes) GetRootStorageTypesOk() ([]GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageTypesInner, bool) {
 	if o == nil || IsNil(o.RootStorageTypes) {
 		return nil, false
@@ -1528,9 +1588,9 @@ func (o *ProvisionTypes) SetRootStorageTypes(v []GetInstanceTypeProvisioning200R
 	o.RootStorageTypes = v
 }
 
-// GetControllerTypes returns the ControllerTypes field value if set, zero value otherwise.
+// GetControllerTypes returns the ControllerTypes field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ProvisionTypes) GetControllerTypes() []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeControllerTypesInner {
-	if o == nil || IsNil(o.ControllerTypes) {
+	if o == nil {
 		var ret []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeControllerTypesInner
 		return ret
 	}
@@ -1539,6 +1599,7 @@ func (o *ProvisionTypes) GetControllerTypes() []GetInstanceTypeProvisioning200Re
 
 // GetControllerTypesOk returns a tuple with the ControllerTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ProvisionTypes) GetControllerTypesOk() ([]GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeControllerTypesInner, bool) {
 	if o == nil || IsNil(o.ControllerTypes) {
 		return nil, false
@@ -1576,8 +1637,8 @@ func (o ProvisionTypes) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !IsNil(o.Description) {
-		toSerialize["description"] = o.Description
+	if o.Description.IsSet() {
+		toSerialize["description"] = o.Description.Get()
 	}
 	if !IsNil(o.Code) {
 		toSerialize["code"] = o.Code
@@ -1603,8 +1664,8 @@ func (o ProvisionTypes) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ExportServer) {
 		toSerialize["exportServer"] = o.ExportServer
 	}
-	if !IsNil(o.ViewSet) {
-		toSerialize["viewSet"] = o.ViewSet
+	if o.ViewSet.IsSet() {
+		toSerialize["viewSet"] = o.ViewSet.Get()
 	}
 	if !IsNil(o.ServerType) {
 		toSerialize["serverType"] = o.ServerType
@@ -1648,8 +1709,8 @@ func (o ProvisionTypes) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.MinDisk) {
 		toSerialize["minDisk"] = o.MinDisk
 	}
-	if !IsNil(o.MaxDisk) {
-		toSerialize["maxDisk"] = o.MaxDisk
+	if o.MaxDisk.IsSet() {
+		toSerialize["maxDisk"] = o.MaxDisk.Get()
 	}
 	if !IsNil(o.ResizeCopiesVolumes) {
 		toSerialize["resizeCopiesVolumes"] = o.ResizeCopiesVolumes
@@ -1666,8 +1727,8 @@ func (o ProvisionTypes) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.HasParameters) {
 		toSerialize["hasParameters"] = o.HasParameters
 	}
-	if !IsNil(o.CanEnforceTags) {
-		toSerialize["canEnforceTags"] = o.CanEnforceTags
+	if o.CanEnforceTags.IsSet() {
+		toSerialize["canEnforceTags"] = o.CanEnforceTags.Get()
 	}
 	if !IsNil(o.DisableRootDatastore) {
 		toSerialize["disableRootDatastore"] = o.DisableRootDatastore
@@ -1687,25 +1748,25 @@ func (o ProvisionTypes) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.PlanRequiresPool) {
 		toSerialize["planRequiresPool"] = o.PlanRequiresPool
 	}
-	if !IsNil(o.HasFolders) {
-		toSerialize["hasFolders"] = o.HasFolders
+	if o.HasFolders.IsSet() {
+		toSerialize["hasFolders"] = o.HasFolders.Get()
 	}
-	if !IsNil(o.OptionTypes) {
+	if o.OptionTypes != nil {
 		toSerialize["optionTypes"] = o.OptionTypes
 	}
-	if !IsNil(o.CustomOptionTypes) {
+	if o.CustomOptionTypes != nil {
 		toSerialize["customOptionTypes"] = o.CustomOptionTypes
 	}
-	if !IsNil(o.NetworkTypes) {
+	if o.NetworkTypes != nil {
 		toSerialize["networkTypes"] = o.NetworkTypes
 	}
-	if !IsNil(o.StorageTypes) {
+	if o.StorageTypes != nil {
 		toSerialize["storageTypes"] = o.StorageTypes
 	}
-	if !IsNil(o.RootStorageTypes) {
+	if o.RootStorageTypes != nil {
 		toSerialize["rootStorageTypes"] = o.RootStorageTypes
 	}
-	if !IsNil(o.ControllerTypes) {
+	if o.ControllerTypes != nil {
 		toSerialize["controllerTypes"] = o.ControllerTypes
 	}
 

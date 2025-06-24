@@ -25,18 +25,18 @@ type BackupRestore struct {
 	Id                *int64                                                    `json:"id,omitempty"`
 	BackupResultId    *int64                                                    `json:"backupResultId,omitempty"`
 	BackupId          *int64                                                    `json:"backupId,omitempty"`
-	Backup            *ListBackupRestores200ResponseAllOfRestoresInnerBackup    `json:"backup,omitempty"`
-	ContainerId       *int64                                                    `json:"containerId,omitempty"`
+	Backup            *ListBackupJobs200ResponseAllOfJobsInnerBackupsInner      `json:"backup,omitempty"`
+	ContainerId       NullableInt64                                             `json:"containerId,omitempty"`
 	Container         *ListBackupRestores200ResponseAllOfRestoresInnerContainer `json:"container,omitempty"`
 	Instance          *ListBackups200ResponseAllOfBackupsInnerInstance          `json:"instance,omitempty"`
 	RestoreToNew      *bool                                                     `json:"restoreToNew,omitempty"`
-	Status            *string                                                   `json:"status,omitempty"`
-	ErrorMessage      *string                                                   `json:"errorMessage,omitempty"`
-	StartDate         *time.Time                                                `json:"startDate,omitempty"`
-	EndDate           *time.Time                                                `json:"endDate,omitempty"`
-	DurationMillis    *int64                                                    `json:"durationMillis,omitempty"`
-	ExternalId        *string                                                   `json:"externalId,omitempty"`
-	ExternalStatusRef *string                                                   `json:"externalStatusRef,omitempty"`
+	Status            NullableString                                            `json:"status,omitempty"`
+	ErrorMessage      NullableString                                            `json:"errorMessage,omitempty"`
+	StartDate         NullableTime                                              `json:"startDate,omitempty"`
+	EndDate           NullableTime                                              `json:"endDate,omitempty"`
+	DurationMillis    NullableInt64                                             `json:"durationMillis,omitempty"`
+	ExternalId        NullableString                                            `json:"externalId,omitempty"`
+	ExternalStatusRef NullableString                                            `json:"externalStatusRef,omitempty"`
 	// Date Created
 	DateCreated *time.Time `json:"dateCreated,omitempty"`
 	// Last Updated
@@ -160,9 +160,9 @@ func (o *BackupRestore) SetBackupId(v int64) {
 }
 
 // GetBackup returns the Backup field value if set, zero value otherwise.
-func (o *BackupRestore) GetBackup() ListBackupRestores200ResponseAllOfRestoresInnerBackup {
+func (o *BackupRestore) GetBackup() ListBackupJobs200ResponseAllOfJobsInnerBackupsInner {
 	if o == nil || IsNil(o.Backup) {
-		var ret ListBackupRestores200ResponseAllOfRestoresInnerBackup
+		var ret ListBackupJobs200ResponseAllOfJobsInnerBackupsInner
 		return ret
 	}
 	return *o.Backup
@@ -170,7 +170,7 @@ func (o *BackupRestore) GetBackup() ListBackupRestores200ResponseAllOfRestoresIn
 
 // GetBackupOk returns a tuple with the Backup field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BackupRestore) GetBackupOk() (*ListBackupRestores200ResponseAllOfRestoresInnerBackup, bool) {
+func (o *BackupRestore) GetBackupOk() (*ListBackupJobs200ResponseAllOfJobsInnerBackupsInner, bool) {
 	if o == nil || IsNil(o.Backup) {
 		return nil, false
 	}
@@ -186,41 +186,52 @@ func (o *BackupRestore) IsSetBackup() bool {
 	return false
 }
 
-// SetBackup gets a reference to the given ListBackupRestores200ResponseAllOfRestoresInnerBackup and assigns it to the Backup field.
-func (o *BackupRestore) SetBackup(v ListBackupRestores200ResponseAllOfRestoresInnerBackup) {
+// SetBackup gets a reference to the given ListBackupJobs200ResponseAllOfJobsInnerBackupsInner and assigns it to the Backup field.
+func (o *BackupRestore) SetBackup(v ListBackupJobs200ResponseAllOfJobsInnerBackupsInner) {
 	o.Backup = &v
 }
 
-// GetContainerId returns the ContainerId field value if set, zero value otherwise.
+// GetContainerId returns the ContainerId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *BackupRestore) GetContainerId() int64 {
-	if o == nil || IsNil(o.ContainerId) {
+	if o == nil || IsNil(o.ContainerId.Get()) {
 		var ret int64
 		return ret
 	}
-	return *o.ContainerId
+	return *o.ContainerId.Get()
 }
 
 // GetContainerIdOk returns a tuple with the ContainerId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BackupRestore) GetContainerIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.ContainerId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ContainerId, true
+	return o.ContainerId.Get(), o.ContainerId.IsSet()
 }
 
 // IsSetContainerId returns a boolean if a field has been set.
 func (o *BackupRestore) IsSetContainerId() bool {
-	if o != nil && !IsNil(o.ContainerId) {
+	if o != nil && o.ContainerId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetContainerId gets a reference to the given int64 and assigns it to the ContainerId field.
+// SetContainerId gets a reference to the given NullableInt64 and assigns it to the ContainerId field.
 func (o *BackupRestore) SetContainerId(v int64) {
-	o.ContainerId = &v
+	o.ContainerId.Set(&v)
+}
+
+// SetContainerIdNil sets the value for ContainerId to be an explicit nil
+func (o *BackupRestore) SetContainerIdNil() {
+	o.ContainerId.Set(nil)
+}
+
+// UnsetContainerId ensures that no value is present for ContainerId, not even an explicit nil
+func (o *BackupRestore) UnsetContainerId() {
+	o.ContainerId.Unset()
 }
 
 // GetContainer returns the Container field value if set, zero value otherwise.
@@ -319,228 +330,305 @@ func (o *BackupRestore) SetRestoreToNew(v bool) {
 	o.RestoreToNew = &v
 }
 
-// GetStatus returns the Status field value if set, zero value otherwise.
+// GetStatus returns the Status field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *BackupRestore) GetStatus() string {
-	if o == nil || IsNil(o.Status) {
+	if o == nil || IsNil(o.Status.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Status
+	return *o.Status.Get()
 }
 
 // GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BackupRestore) GetStatusOk() (*string, bool) {
-	if o == nil || IsNil(o.Status) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Status, true
+	return o.Status.Get(), o.Status.IsSet()
 }
 
 // IsSetStatus returns a boolean if a field has been set.
 func (o *BackupRestore) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
+	if o != nil && o.Status.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetStatus gets a reference to the given string and assigns it to the Status field.
+// SetStatus gets a reference to the given NullableString and assigns it to the Status field.
 func (o *BackupRestore) SetStatus(v string) {
-	o.Status = &v
+	o.Status.Set(&v)
 }
 
-// GetErrorMessage returns the ErrorMessage field value if set, zero value otherwise.
+// SetStatusNil sets the value for Status to be an explicit nil
+func (o *BackupRestore) SetStatusNil() {
+	o.Status.Set(nil)
+}
+
+// UnsetStatus ensures that no value is present for Status, not even an explicit nil
+func (o *BackupRestore) UnsetStatus() {
+	o.Status.Unset()
+}
+
+// GetErrorMessage returns the ErrorMessage field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *BackupRestore) GetErrorMessage() string {
-	if o == nil || IsNil(o.ErrorMessage) {
+	if o == nil || IsNil(o.ErrorMessage.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ErrorMessage
+	return *o.ErrorMessage.Get()
 }
 
 // GetErrorMessageOk returns a tuple with the ErrorMessage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BackupRestore) GetErrorMessageOk() (*string, bool) {
-	if o == nil || IsNil(o.ErrorMessage) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ErrorMessage, true
+	return o.ErrorMessage.Get(), o.ErrorMessage.IsSet()
 }
 
 // IsSetErrorMessage returns a boolean if a field has been set.
 func (o *BackupRestore) IsSetErrorMessage() bool {
-	if o != nil && !IsNil(o.ErrorMessage) {
+	if o != nil && o.ErrorMessage.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetErrorMessage gets a reference to the given string and assigns it to the ErrorMessage field.
+// SetErrorMessage gets a reference to the given NullableString and assigns it to the ErrorMessage field.
 func (o *BackupRestore) SetErrorMessage(v string) {
-	o.ErrorMessage = &v
+	o.ErrorMessage.Set(&v)
 }
 
-// GetStartDate returns the StartDate field value if set, zero value otherwise.
+// SetErrorMessageNil sets the value for ErrorMessage to be an explicit nil
+func (o *BackupRestore) SetErrorMessageNil() {
+	o.ErrorMessage.Set(nil)
+}
+
+// UnsetErrorMessage ensures that no value is present for ErrorMessage, not even an explicit nil
+func (o *BackupRestore) UnsetErrorMessage() {
+	o.ErrorMessage.Unset()
+}
+
+// GetStartDate returns the StartDate field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *BackupRestore) GetStartDate() time.Time {
-	if o == nil || IsNil(o.StartDate) {
+	if o == nil || IsNil(o.StartDate.Get()) {
 		var ret time.Time
 		return ret
 	}
-	return *o.StartDate
+	return *o.StartDate.Get()
 }
 
 // GetStartDateOk returns a tuple with the StartDate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BackupRestore) GetStartDateOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.StartDate) {
+	if o == nil {
 		return nil, false
 	}
-	return o.StartDate, true
+	return o.StartDate.Get(), o.StartDate.IsSet()
 }
 
 // IsSetStartDate returns a boolean if a field has been set.
 func (o *BackupRestore) IsSetStartDate() bool {
-	if o != nil && !IsNil(o.StartDate) {
+	if o != nil && o.StartDate.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetStartDate gets a reference to the given time.Time and assigns it to the StartDate field.
+// SetStartDate gets a reference to the given NullableTime and assigns it to the StartDate field.
 func (o *BackupRestore) SetStartDate(v time.Time) {
-	o.StartDate = &v
+	o.StartDate.Set(&v)
 }
 
-// GetEndDate returns the EndDate field value if set, zero value otherwise.
+// SetStartDateNil sets the value for StartDate to be an explicit nil
+func (o *BackupRestore) SetStartDateNil() {
+	o.StartDate.Set(nil)
+}
+
+// UnsetStartDate ensures that no value is present for StartDate, not even an explicit nil
+func (o *BackupRestore) UnsetStartDate() {
+	o.StartDate.Unset()
+}
+
+// GetEndDate returns the EndDate field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *BackupRestore) GetEndDate() time.Time {
-	if o == nil || IsNil(o.EndDate) {
+	if o == nil || IsNil(o.EndDate.Get()) {
 		var ret time.Time
 		return ret
 	}
-	return *o.EndDate
+	return *o.EndDate.Get()
 }
 
 // GetEndDateOk returns a tuple with the EndDate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BackupRestore) GetEndDateOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.EndDate) {
+	if o == nil {
 		return nil, false
 	}
-	return o.EndDate, true
+	return o.EndDate.Get(), o.EndDate.IsSet()
 }
 
 // IsSetEndDate returns a boolean if a field has been set.
 func (o *BackupRestore) IsSetEndDate() bool {
-	if o != nil && !IsNil(o.EndDate) {
+	if o != nil && o.EndDate.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetEndDate gets a reference to the given time.Time and assigns it to the EndDate field.
+// SetEndDate gets a reference to the given NullableTime and assigns it to the EndDate field.
 func (o *BackupRestore) SetEndDate(v time.Time) {
-	o.EndDate = &v
+	o.EndDate.Set(&v)
 }
 
-// GetDurationMillis returns the DurationMillis field value if set, zero value otherwise.
+// SetEndDateNil sets the value for EndDate to be an explicit nil
+func (o *BackupRestore) SetEndDateNil() {
+	o.EndDate.Set(nil)
+}
+
+// UnsetEndDate ensures that no value is present for EndDate, not even an explicit nil
+func (o *BackupRestore) UnsetEndDate() {
+	o.EndDate.Unset()
+}
+
+// GetDurationMillis returns the DurationMillis field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *BackupRestore) GetDurationMillis() int64 {
-	if o == nil || IsNil(o.DurationMillis) {
+	if o == nil || IsNil(o.DurationMillis.Get()) {
 		var ret int64
 		return ret
 	}
-	return *o.DurationMillis
+	return *o.DurationMillis.Get()
 }
 
 // GetDurationMillisOk returns a tuple with the DurationMillis field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BackupRestore) GetDurationMillisOk() (*int64, bool) {
-	if o == nil || IsNil(o.DurationMillis) {
+	if o == nil {
 		return nil, false
 	}
-	return o.DurationMillis, true
+	return o.DurationMillis.Get(), o.DurationMillis.IsSet()
 }
 
 // IsSetDurationMillis returns a boolean if a field has been set.
 func (o *BackupRestore) IsSetDurationMillis() bool {
-	if o != nil && !IsNil(o.DurationMillis) {
+	if o != nil && o.DurationMillis.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDurationMillis gets a reference to the given int64 and assigns it to the DurationMillis field.
+// SetDurationMillis gets a reference to the given NullableInt64 and assigns it to the DurationMillis field.
 func (o *BackupRestore) SetDurationMillis(v int64) {
-	o.DurationMillis = &v
+	o.DurationMillis.Set(&v)
 }
 
-// GetExternalId returns the ExternalId field value if set, zero value otherwise.
+// SetDurationMillisNil sets the value for DurationMillis to be an explicit nil
+func (o *BackupRestore) SetDurationMillisNil() {
+	o.DurationMillis.Set(nil)
+}
+
+// UnsetDurationMillis ensures that no value is present for DurationMillis, not even an explicit nil
+func (o *BackupRestore) UnsetDurationMillis() {
+	o.DurationMillis.Unset()
+}
+
+// GetExternalId returns the ExternalId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *BackupRestore) GetExternalId() string {
-	if o == nil || IsNil(o.ExternalId) {
+	if o == nil || IsNil(o.ExternalId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ExternalId
+	return *o.ExternalId.Get()
 }
 
 // GetExternalIdOk returns a tuple with the ExternalId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BackupRestore) GetExternalIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ExternalId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ExternalId, true
+	return o.ExternalId.Get(), o.ExternalId.IsSet()
 }
 
 // IsSetExternalId returns a boolean if a field has been set.
 func (o *BackupRestore) IsSetExternalId() bool {
-	if o != nil && !IsNil(o.ExternalId) {
+	if o != nil && o.ExternalId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetExternalId gets a reference to the given string and assigns it to the ExternalId field.
+// SetExternalId gets a reference to the given NullableString and assigns it to the ExternalId field.
 func (o *BackupRestore) SetExternalId(v string) {
-	o.ExternalId = &v
+	o.ExternalId.Set(&v)
 }
 
-// GetExternalStatusRef returns the ExternalStatusRef field value if set, zero value otherwise.
+// SetExternalIdNil sets the value for ExternalId to be an explicit nil
+func (o *BackupRestore) SetExternalIdNil() {
+	o.ExternalId.Set(nil)
+}
+
+// UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
+func (o *BackupRestore) UnsetExternalId() {
+	o.ExternalId.Unset()
+}
+
+// GetExternalStatusRef returns the ExternalStatusRef field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *BackupRestore) GetExternalStatusRef() string {
-	if o == nil || IsNil(o.ExternalStatusRef) {
+	if o == nil || IsNil(o.ExternalStatusRef.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ExternalStatusRef
+	return *o.ExternalStatusRef.Get()
 }
 
 // GetExternalStatusRefOk returns a tuple with the ExternalStatusRef field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BackupRestore) GetExternalStatusRefOk() (*string, bool) {
-	if o == nil || IsNil(o.ExternalStatusRef) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ExternalStatusRef, true
+	return o.ExternalStatusRef.Get(), o.ExternalStatusRef.IsSet()
 }
 
 // IsSetExternalStatusRef returns a boolean if a field has been set.
 func (o *BackupRestore) IsSetExternalStatusRef() bool {
-	if o != nil && !IsNil(o.ExternalStatusRef) {
+	if o != nil && o.ExternalStatusRef.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetExternalStatusRef gets a reference to the given string and assigns it to the ExternalStatusRef field.
+// SetExternalStatusRef gets a reference to the given NullableString and assigns it to the ExternalStatusRef field.
 func (o *BackupRestore) SetExternalStatusRef(v string) {
-	o.ExternalStatusRef = &v
+	o.ExternalStatusRef.Set(&v)
+}
+
+// SetExternalStatusRefNil sets the value for ExternalStatusRef to be an explicit nil
+func (o *BackupRestore) SetExternalStatusRefNil() {
+	o.ExternalStatusRef.Set(nil)
+}
+
+// UnsetExternalStatusRef ensures that no value is present for ExternalStatusRef, not even an explicit nil
+func (o *BackupRestore) UnsetExternalStatusRef() {
+	o.ExternalStatusRef.Unset()
 }
 
 // GetDateCreated returns the DateCreated field value if set, zero value otherwise.
@@ -629,8 +717,8 @@ func (o BackupRestore) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Backup) {
 		toSerialize["backup"] = o.Backup
 	}
-	if !IsNil(o.ContainerId) {
-		toSerialize["containerId"] = o.ContainerId
+	if o.ContainerId.IsSet() {
+		toSerialize["containerId"] = o.ContainerId.Get()
 	}
 	if !IsNil(o.Container) {
 		toSerialize["container"] = o.Container
@@ -641,26 +729,26 @@ func (o BackupRestore) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.RestoreToNew) {
 		toSerialize["restoreToNew"] = o.RestoreToNew
 	}
-	if !IsNil(o.Status) {
-		toSerialize["status"] = o.Status
+	if o.Status.IsSet() {
+		toSerialize["status"] = o.Status.Get()
 	}
-	if !IsNil(o.ErrorMessage) {
-		toSerialize["errorMessage"] = o.ErrorMessage
+	if o.ErrorMessage.IsSet() {
+		toSerialize["errorMessage"] = o.ErrorMessage.Get()
 	}
-	if !IsNil(o.StartDate) {
-		toSerialize["startDate"] = o.StartDate
+	if o.StartDate.IsSet() {
+		toSerialize["startDate"] = o.StartDate.Get()
 	}
-	if !IsNil(o.EndDate) {
-		toSerialize["endDate"] = o.EndDate
+	if o.EndDate.IsSet() {
+		toSerialize["endDate"] = o.EndDate.Get()
 	}
-	if !IsNil(o.DurationMillis) {
-		toSerialize["durationMillis"] = o.DurationMillis
+	if o.DurationMillis.IsSet() {
+		toSerialize["durationMillis"] = o.DurationMillis.Get()
 	}
-	if !IsNil(o.ExternalId) {
-		toSerialize["externalId"] = o.ExternalId
+	if o.ExternalId.IsSet() {
+		toSerialize["externalId"] = o.ExternalId.Get()
 	}
-	if !IsNil(o.ExternalStatusRef) {
-		toSerialize["externalStatusRef"] = o.ExternalStatusRef
+	if o.ExternalStatusRef.IsSet() {
+		toSerialize["externalStatusRef"] = o.ExternalStatusRef.Get()
 	}
 	if !IsNil(o.DateCreated) {
 		toSerialize["dateCreated"] = o.DateCreated

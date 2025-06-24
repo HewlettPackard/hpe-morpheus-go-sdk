@@ -22,10 +22,10 @@ var _ MappedNullable = &ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksIn
 type ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskFile struct {
 	Id                   *int64                                             `json:"id,omitempty"`
 	SourceType           *string                                            `json:"sourceType,omitempty"`
-	ContentRef           *string                                            `json:"contentRef,omitempty"`
-	ContentPath          *string                                            `json:"contentPath,omitempty"`
+	ContentRef           NullableString                                     `json:"contentRef,omitempty"`
+	ContentPath          NullableString                                     `json:"contentPath,omitempty"`
 	Repository           *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"repository,omitempty"`
-	Content              *string                                            `json:"content,omitempty"`
+	Content              NullableString                                     `json:"content,omitempty"`
 	AdditionalProperties map[string]interface{}                             `json:",remain"`
 }
 
@@ -112,68 +112,90 @@ func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskFile) Se
 	o.SourceType = &v
 }
 
-// GetContentRef returns the ContentRef field value if set, zero value otherwise.
+// GetContentRef returns the ContentRef field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskFile) GetContentRef() string {
-	if o == nil || IsNil(o.ContentRef) {
+	if o == nil || IsNil(o.ContentRef.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ContentRef
+	return *o.ContentRef.Get()
 }
 
 // GetContentRefOk returns a tuple with the ContentRef field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskFile) GetContentRefOk() (*string, bool) {
-	if o == nil || IsNil(o.ContentRef) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ContentRef, true
+	return o.ContentRef.Get(), o.ContentRef.IsSet()
 }
 
 // IsSetContentRef returns a boolean if a field has been set.
 func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskFile) IsSetContentRef() bool {
-	if o != nil && !IsNil(o.ContentRef) {
+	if o != nil && o.ContentRef.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetContentRef gets a reference to the given string and assigns it to the ContentRef field.
+// SetContentRef gets a reference to the given NullableString and assigns it to the ContentRef field.
 func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskFile) SetContentRef(v string) {
-	o.ContentRef = &v
+	o.ContentRef.Set(&v)
 }
 
-// GetContentPath returns the ContentPath field value if set, zero value otherwise.
+// SetContentRefNil sets the value for ContentRef to be an explicit nil
+func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskFile) SetContentRefNil() {
+	o.ContentRef.Set(nil)
+}
+
+// UnsetContentRef ensures that no value is present for ContentRef, not even an explicit nil
+func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskFile) UnsetContentRef() {
+	o.ContentRef.Unset()
+}
+
+// GetContentPath returns the ContentPath field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskFile) GetContentPath() string {
-	if o == nil || IsNil(o.ContentPath) {
+	if o == nil || IsNil(o.ContentPath.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ContentPath
+	return *o.ContentPath.Get()
 }
 
 // GetContentPathOk returns a tuple with the ContentPath field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskFile) GetContentPathOk() (*string, bool) {
-	if o == nil || IsNil(o.ContentPath) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ContentPath, true
+	return o.ContentPath.Get(), o.ContentPath.IsSet()
 }
 
 // IsSetContentPath returns a boolean if a field has been set.
 func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskFile) IsSetContentPath() bool {
-	if o != nil && !IsNil(o.ContentPath) {
+	if o != nil && o.ContentPath.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetContentPath gets a reference to the given string and assigns it to the ContentPath field.
+// SetContentPath gets a reference to the given NullableString and assigns it to the ContentPath field.
 func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskFile) SetContentPath(v string) {
-	o.ContentPath = &v
+	o.ContentPath.Set(&v)
+}
+
+// SetContentPathNil sets the value for ContentPath to be an explicit nil
+func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskFile) SetContentPathNil() {
+	o.ContentPath.Set(nil)
+}
+
+// UnsetContentPath ensures that no value is present for ContentPath, not even an explicit nil
+func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskFile) UnsetContentPath() {
+	o.ContentPath.Unset()
 }
 
 // GetRepository returns the Repository field value if set, zero value otherwise.
@@ -208,36 +230,47 @@ func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskFile) Se
 	o.Repository = &v
 }
 
-// GetContent returns the Content field value if set, zero value otherwise.
+// GetContent returns the Content field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskFile) GetContent() string {
-	if o == nil || IsNil(o.Content) {
+	if o == nil || IsNil(o.Content.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Content
+	return *o.Content.Get()
 }
 
 // GetContentOk returns a tuple with the Content field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskFile) GetContentOk() (*string, bool) {
-	if o == nil || IsNil(o.Content) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Content, true
+	return o.Content.Get(), o.Content.IsSet()
 }
 
 // IsSetContent returns a boolean if a field has been set.
 func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskFile) IsSetContent() bool {
-	if o != nil && !IsNil(o.Content) {
+	if o != nil && o.Content.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetContent gets a reference to the given string and assigns it to the Content field.
+// SetContent gets a reference to the given NullableString and assigns it to the Content field.
 func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskFile) SetContent(v string) {
-	o.Content = &v
+	o.Content.Set(&v)
+}
+
+// SetContentNil sets the value for Content to be an explicit nil
+func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskFile) SetContentNil() {
+	o.Content.Set(nil)
+}
+
+// UnsetContent ensures that no value is present for Content, not even an explicit nil
+func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskFile) UnsetContent() {
+	o.Content.Unset()
 }
 
 func (o ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskFile) MarshalJSON() ([]byte, error) {
@@ -256,17 +289,17 @@ func (o ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskFile) ToM
 	if !IsNil(o.SourceType) {
 		toSerialize["sourceType"] = o.SourceType
 	}
-	if !IsNil(o.ContentRef) {
-		toSerialize["contentRef"] = o.ContentRef
+	if o.ContentRef.IsSet() {
+		toSerialize["contentRef"] = o.ContentRef.Get()
 	}
-	if !IsNil(o.ContentPath) {
-		toSerialize["contentPath"] = o.ContentPath
+	if o.ContentPath.IsSet() {
+		toSerialize["contentPath"] = o.ContentPath.Get()
 	}
 	if !IsNil(o.Repository) {
 		toSerialize["repository"] = o.Repository
 	}
-	if !IsNil(o.Content) {
-		toSerialize["content"] = o.Content
+	if o.Content.IsSet() {
+		toSerialize["content"] = o.Content.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {

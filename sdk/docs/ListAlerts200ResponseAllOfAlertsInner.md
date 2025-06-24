@@ -313,6 +313,16 @@ SetChecks sets Checks field to given value.
 
 HasChecks returns a boolean if a field has been set.
 
+### SetChecksNil
+
+`func (o *ListAlerts200ResponseAllOfAlertsInner) SetChecksNil(b bool)`
+
+ SetChecksNil sets the value for Checks to be an explicit nil
+
+### UnsetChecks
+`func (o *ListAlerts200ResponseAllOfAlertsInner) UnsetChecks()`
+
+UnsetChecks ensures that no value is present for Checks, not even an explicit nil
 ### GetCheckGroups
 
 `func (o *ListAlerts200ResponseAllOfAlertsInner) GetCheckGroups() []int32`
@@ -338,6 +348,16 @@ SetCheckGroups sets CheckGroups field to given value.
 
 HasCheckGroups returns a boolean if a field has been set.
 
+### SetCheckGroupsNil
+
+`func (o *ListAlerts200ResponseAllOfAlertsInner) SetCheckGroupsNil(b bool)`
+
+ SetCheckGroupsNil sets the value for CheckGroups to be an explicit nil
+
+### UnsetCheckGroups
+`func (o *ListAlerts200ResponseAllOfAlertsInner) UnsetCheckGroups()`
+
+UnsetCheckGroups ensures that no value is present for CheckGroups, not even an explicit nil
 ### GetApps
 
 `func (o *ListAlerts200ResponseAllOfAlertsInner) GetApps() []int32`
@@ -363,6 +383,16 @@ SetApps sets Apps field to given value.
 
 HasApps returns a boolean if a field has been set.
 
+### SetAppsNil
+
+`func (o *ListAlerts200ResponseAllOfAlertsInner) SetAppsNil(b bool)`
+
+ SetAppsNil sets the value for Apps to be an explicit nil
+
+### UnsetApps
+`func (o *ListAlerts200ResponseAllOfAlertsInner) UnsetApps()`
+
+UnsetApps ensures that no value is present for Apps, not even an explicit nil
 ### GetContacts
 
 `func (o *ListAlerts200ResponseAllOfAlertsInner) GetContacts() []ListAlerts200ResponseAllOfAlertsInnerContactsInner`

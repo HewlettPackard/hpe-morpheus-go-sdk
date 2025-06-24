@@ -6,9 +6,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **RuleGroup** | Pointer to [**CreateNetworkFirewallRuleRequestRuleRuleGroup**](CreateNetworkFirewallRuleRequestRuleRuleGroup.md) |  | [optional] 
 **Name** | **string** | Network firewall rule name | 
-**Description** | Pointer to **string** | Network firewall rule description | [optional] 
+**Description** | Pointer to **NullableString** | Network firewall rule description | [optional] 
 **Enabled** | Pointer to **bool** | Use this to set enabled state | [optional] 
-**Priority** | Pointer to **string** | Network firewall rule priority | [optional] 
+**Priority** | Pointer to **NullableString** | Network firewall rule priority | [optional] 
 **Direction** | Pointer to **string** |  | [optional] 
 **Sources** | Pointer to [**CreateNetworkFirewallRuleRequestRuleSources**](CreateNetworkFirewallRuleRequestRuleSources.md) |  | [optional] 
 **Destinations** | Pointer to [**CreateNetworkFirewallRuleRequestRuleSources**](CreateNetworkFirewallRuleRequestRuleSources.md) |  | [optional] 
@@ -105,6 +105,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *CreateNetworkFirewallRuleRequestRule) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *CreateNetworkFirewallRuleRequestRule) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetEnabled
 
 `func (o *CreateNetworkFirewallRuleRequestRule) GetEnabled() bool`
@@ -155,6 +165,16 @@ SetPriority sets Priority field to given value.
 
 HasPriority returns a boolean if a field has been set.
 
+### SetPriorityNil
+
+`func (o *CreateNetworkFirewallRuleRequestRule) SetPriorityNil(b bool)`
+
+ SetPriorityNil sets the value for Priority to be an explicit nil
+
+### UnsetPriority
+`func (o *CreateNetworkFirewallRuleRequestRule) UnsetPriority()`
+
+UnsetPriority ensures that no value is present for Priority, not even an explicit nil
 ### GetDirection
 
 `func (o *CreateNetworkFirewallRuleRequestRule) GetDirection() string`

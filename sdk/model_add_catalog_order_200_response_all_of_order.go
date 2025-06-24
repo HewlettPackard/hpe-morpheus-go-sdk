@@ -21,7 +21,7 @@ var _ MappedNullable = &AddCatalogOrder200ResponseAllOfOrder{}
 // AddCatalogOrder200ResponseAllOfOrder struct for AddCatalogOrder200ResponseAllOfOrder
 type AddCatalogOrder200ResponseAllOfOrder struct {
 	Id                   *int64                                           `json:"id,omitempty"`
-	Name                 *string                                          `json:"name,omitempty"`
+	Name                 NullableString                                   `json:"name,omitempty"`
 	Items                []AddCatalogOrder200ResponseAllOfOrderItemsInner `json:"items,omitempty"`
 	Stats                *ListCatalogCart200ResponseCartStats             `json:"stats,omitempty"`
 	AdditionalProperties map[string]interface{}                           `json:",remain"`
@@ -78,36 +78,47 @@ func (o *AddCatalogOrder200ResponseAllOfOrder) SetId(v int64) {
 	o.Id = &v
 }
 
-// GetName returns the Name field value if set, zero value otherwise.
+// GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AddCatalogOrder200ResponseAllOfOrder) GetName() string {
-	if o == nil || IsNil(o.Name) {
+	if o == nil || IsNil(o.Name.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Name
+	return *o.Name.Get()
 }
 
 // GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AddCatalogOrder200ResponseAllOfOrder) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Name, true
+	return o.Name.Get(), o.Name.IsSet()
 }
 
 // IsSetName returns a boolean if a field has been set.
 func (o *AddCatalogOrder200ResponseAllOfOrder) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
+	if o != nil && o.Name.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetName gets a reference to the given string and assigns it to the Name field.
+// SetName gets a reference to the given NullableString and assigns it to the Name field.
 func (o *AddCatalogOrder200ResponseAllOfOrder) SetName(v string) {
-	o.Name = &v
+	o.Name.Set(&v)
+}
+
+// SetNameNil sets the value for Name to be an explicit nil
+func (o *AddCatalogOrder200ResponseAllOfOrder) SetNameNil() {
+	o.Name.Set(nil)
+}
+
+// UnsetName ensures that no value is present for Name, not even an explicit nil
+func (o *AddCatalogOrder200ResponseAllOfOrder) UnsetName() {
+	o.Name.Unset()
 }
 
 // GetItems returns the Items field value if set, zero value otherwise.
@@ -187,8 +198,8 @@ func (o AddCatalogOrder200ResponseAllOfOrder) ToMap() (map[string]interface{}, e
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
-	if !IsNil(o.Name) {
-		toSerialize["name"] = o.Name
+	if o.Name.IsSet() {
+		toSerialize["name"] = o.Name.Get()
 	}
 	if !IsNil(o.Items) {
 		toSerialize["items"] = o.Items

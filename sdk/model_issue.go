@@ -21,26 +21,26 @@ var _ MappedNullable = &Issue{}
 
 // Issue struct for Issue
 type Issue struct {
-	Id                   *int64                                                                  `json:"id,omitempty"`
-	AttachmentType       *string                                                                 `json:"attachmentType,omitempty"`
-	App                  *string                                                                 `json:"app,omitempty"`
-	Available            *bool                                                                   `json:"available,omitempty"`
-	Check                *string                                                                 `json:"check,omitempty"`
-	CheckGroup           *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"checkGroup,omitempty"`
-	CheckStatus          *string                                                                 `json:"checkStatus,omitempty"`
-	EndDate              *time.Time                                                              `json:"endDate,omitempty"`
-	Health               *int64                                                                  `json:"health,omitempty"`
-	InUptime             *bool                                                                   `json:"inUptime,omitempty"`
-	Incident             *GetAlerts200ResponseAllOfChecksInnerAccount                            `json:"incident,omitempty"`
-	LastCheckTime        *time.Time                                                              `json:"lastCheckTime,omitempty"`
-	LastError            *string                                                                 `json:"lastError,omitempty"`
-	LastMessage          *string                                                                 `json:"lastMessage,omitempty"`
-	Name                 *string                                                                 `json:"name,omitempty"`
-	Severity             *string                                                                 `json:"severity,omitempty"`
-	SeverityId           *int64                                                                  `json:"severityId,omitempty"`
-	StartDate            *time.Time                                                              `json:"startDate,omitempty"`
-	Status               *string                                                                 `json:"status,omitempty"`
-	AdditionalProperties map[string]interface{}                                                  `json:",remain"`
+	Id                   *int64                                             `json:"id,omitempty"`
+	AttachmentType       *string                                            `json:"attachmentType,omitempty"`
+	App                  NullableString                                     `json:"app,omitempty"`
+	Available            *bool                                              `json:"available,omitempty"`
+	Check                NullableString                                     `json:"check,omitempty"`
+	CheckGroup           *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"checkGroup,omitempty"`
+	CheckStatus          NullableString                                     `json:"checkStatus,omitempty"`
+	EndDate              NullableTime                                       `json:"endDate,omitempty"`
+	Health               *int64                                             `json:"health,omitempty"`
+	InUptime             *bool                                              `json:"inUptime,omitempty"`
+	Incident             *GetAlerts200ResponseAllOfChecksInnerAccount       `json:"incident,omitempty"`
+	LastCheckTime        NullableTime                                       `json:"lastCheckTime,omitempty"`
+	LastError            NullableString                                     `json:"lastError,omitempty"`
+	LastMessage          NullableString                                     `json:"lastMessage,omitempty"`
+	Name                 *string                                            `json:"name,omitempty"`
+	Severity             *string                                            `json:"severity,omitempty"`
+	SeverityId           *int64                                             `json:"severityId,omitempty"`
+	StartDate            *time.Time                                         `json:"startDate,omitempty"`
+	Status               *string                                            `json:"status,omitempty"`
+	AdditionalProperties map[string]interface{}                             `json:",remain"`
 }
 
 type _Issue Issue
@@ -126,36 +126,47 @@ func (o *Issue) SetAttachmentType(v string) {
 	o.AttachmentType = &v
 }
 
-// GetApp returns the App field value if set, zero value otherwise.
+// GetApp returns the App field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Issue) GetApp() string {
-	if o == nil || IsNil(o.App) {
+	if o == nil || IsNil(o.App.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.App
+	return *o.App.Get()
 }
 
 // GetAppOk returns a tuple with the App field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Issue) GetAppOk() (*string, bool) {
-	if o == nil || IsNil(o.App) {
+	if o == nil {
 		return nil, false
 	}
-	return o.App, true
+	return o.App.Get(), o.App.IsSet()
 }
 
 // IsSetApp returns a boolean if a field has been set.
 func (o *Issue) IsSetApp() bool {
-	if o != nil && !IsNil(o.App) {
+	if o != nil && o.App.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetApp gets a reference to the given string and assigns it to the App field.
+// SetApp gets a reference to the given NullableString and assigns it to the App field.
 func (o *Issue) SetApp(v string) {
-	o.App = &v
+	o.App.Set(&v)
+}
+
+// SetAppNil sets the value for App to be an explicit nil
+func (o *Issue) SetAppNil() {
+	o.App.Set(nil)
+}
+
+// UnsetApp ensures that no value is present for App, not even an explicit nil
+func (o *Issue) UnsetApp() {
+	o.App.Unset()
 }
 
 // GetAvailable returns the Available field value if set, zero value otherwise.
@@ -190,42 +201,53 @@ func (o *Issue) SetAvailable(v bool) {
 	o.Available = &v
 }
 
-// GetCheck returns the Check field value if set, zero value otherwise.
+// GetCheck returns the Check field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Issue) GetCheck() string {
-	if o == nil || IsNil(o.Check) {
+	if o == nil || IsNil(o.Check.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Check
+	return *o.Check.Get()
 }
 
 // GetCheckOk returns a tuple with the Check field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Issue) GetCheckOk() (*string, bool) {
-	if o == nil || IsNil(o.Check) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Check, true
+	return o.Check.Get(), o.Check.IsSet()
 }
 
 // IsSetCheck returns a boolean if a field has been set.
 func (o *Issue) IsSetCheck() bool {
-	if o != nil && !IsNil(o.Check) {
+	if o != nil && o.Check.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCheck gets a reference to the given string and assigns it to the Check field.
+// SetCheck gets a reference to the given NullableString and assigns it to the Check field.
 func (o *Issue) SetCheck(v string) {
-	o.Check = &v
+	o.Check.Set(&v)
+}
+
+// SetCheckNil sets the value for Check to be an explicit nil
+func (o *Issue) SetCheckNil() {
+	o.Check.Set(nil)
+}
+
+// UnsetCheck ensures that no value is present for Check, not even an explicit nil
+func (o *Issue) UnsetCheck() {
+	o.Check.Unset()
 }
 
 // GetCheckGroup returns the CheckGroup field value if set, zero value otherwise.
-func (o *Issue) GetCheckGroup() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *Issue) GetCheckGroup() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.CheckGroup) {
-		var ret ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return *o.CheckGroup
@@ -233,7 +255,7 @@ func (o *Issue) GetCheckGroup() ListApplianceSettings200ResponseApplianceSetting
 
 // GetCheckGroupOk returns a tuple with the CheckGroup field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Issue) GetCheckGroupOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *Issue) GetCheckGroupOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.CheckGroup) {
 		return nil, false
 	}
@@ -249,73 +271,95 @@ func (o *Issue) IsSetCheckGroup() bool {
 	return false
 }
 
-// SetCheckGroup gets a reference to the given ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the CheckGroup field.
-func (o *Issue) SetCheckGroup(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetCheckGroup gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the CheckGroup field.
+func (o *Issue) SetCheckGroup(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.CheckGroup = &v
 }
 
-// GetCheckStatus returns the CheckStatus field value if set, zero value otherwise.
+// GetCheckStatus returns the CheckStatus field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Issue) GetCheckStatus() string {
-	if o == nil || IsNil(o.CheckStatus) {
+	if o == nil || IsNil(o.CheckStatus.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.CheckStatus
+	return *o.CheckStatus.Get()
 }
 
 // GetCheckStatusOk returns a tuple with the CheckStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Issue) GetCheckStatusOk() (*string, bool) {
-	if o == nil || IsNil(o.CheckStatus) {
+	if o == nil {
 		return nil, false
 	}
-	return o.CheckStatus, true
+	return o.CheckStatus.Get(), o.CheckStatus.IsSet()
 }
 
 // IsSetCheckStatus returns a boolean if a field has been set.
 func (o *Issue) IsSetCheckStatus() bool {
-	if o != nil && !IsNil(o.CheckStatus) {
+	if o != nil && o.CheckStatus.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCheckStatus gets a reference to the given string and assigns it to the CheckStatus field.
+// SetCheckStatus gets a reference to the given NullableString and assigns it to the CheckStatus field.
 func (o *Issue) SetCheckStatus(v string) {
-	o.CheckStatus = &v
+	o.CheckStatus.Set(&v)
 }
 
-// GetEndDate returns the EndDate field value if set, zero value otherwise.
+// SetCheckStatusNil sets the value for CheckStatus to be an explicit nil
+func (o *Issue) SetCheckStatusNil() {
+	o.CheckStatus.Set(nil)
+}
+
+// UnsetCheckStatus ensures that no value is present for CheckStatus, not even an explicit nil
+func (o *Issue) UnsetCheckStatus() {
+	o.CheckStatus.Unset()
+}
+
+// GetEndDate returns the EndDate field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Issue) GetEndDate() time.Time {
-	if o == nil || IsNil(o.EndDate) {
+	if o == nil || IsNil(o.EndDate.Get()) {
 		var ret time.Time
 		return ret
 	}
-	return *o.EndDate
+	return *o.EndDate.Get()
 }
 
 // GetEndDateOk returns a tuple with the EndDate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Issue) GetEndDateOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.EndDate) {
+	if o == nil {
 		return nil, false
 	}
-	return o.EndDate, true
+	return o.EndDate.Get(), o.EndDate.IsSet()
 }
 
 // IsSetEndDate returns a boolean if a field has been set.
 func (o *Issue) IsSetEndDate() bool {
-	if o != nil && !IsNil(o.EndDate) {
+	if o != nil && o.EndDate.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetEndDate gets a reference to the given time.Time and assigns it to the EndDate field.
+// SetEndDate gets a reference to the given NullableTime and assigns it to the EndDate field.
 func (o *Issue) SetEndDate(v time.Time) {
-	o.EndDate = &v
+	o.EndDate.Set(&v)
+}
+
+// SetEndDateNil sets the value for EndDate to be an explicit nil
+func (o *Issue) SetEndDateNil() {
+	o.EndDate.Set(nil)
+}
+
+// UnsetEndDate ensures that no value is present for EndDate, not even an explicit nil
+func (o *Issue) UnsetEndDate() {
+	o.EndDate.Unset()
 }
 
 // GetHealth returns the Health field value if set, zero value otherwise.
@@ -414,100 +458,133 @@ func (o *Issue) SetIncident(v GetAlerts200ResponseAllOfChecksInnerAccount) {
 	o.Incident = &v
 }
 
-// GetLastCheckTime returns the LastCheckTime field value if set, zero value otherwise.
+// GetLastCheckTime returns the LastCheckTime field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Issue) GetLastCheckTime() time.Time {
-	if o == nil || IsNil(o.LastCheckTime) {
+	if o == nil || IsNil(o.LastCheckTime.Get()) {
 		var ret time.Time
 		return ret
 	}
-	return *o.LastCheckTime
+	return *o.LastCheckTime.Get()
 }
 
 // GetLastCheckTimeOk returns a tuple with the LastCheckTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Issue) GetLastCheckTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.LastCheckTime) {
+	if o == nil {
 		return nil, false
 	}
-	return o.LastCheckTime, true
+	return o.LastCheckTime.Get(), o.LastCheckTime.IsSet()
 }
 
 // IsSetLastCheckTime returns a boolean if a field has been set.
 func (o *Issue) IsSetLastCheckTime() bool {
-	if o != nil && !IsNil(o.LastCheckTime) {
+	if o != nil && o.LastCheckTime.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetLastCheckTime gets a reference to the given time.Time and assigns it to the LastCheckTime field.
+// SetLastCheckTime gets a reference to the given NullableTime and assigns it to the LastCheckTime field.
 func (o *Issue) SetLastCheckTime(v time.Time) {
-	o.LastCheckTime = &v
+	o.LastCheckTime.Set(&v)
 }
 
-// GetLastError returns the LastError field value if set, zero value otherwise.
+// SetLastCheckTimeNil sets the value for LastCheckTime to be an explicit nil
+func (o *Issue) SetLastCheckTimeNil() {
+	o.LastCheckTime.Set(nil)
+}
+
+// UnsetLastCheckTime ensures that no value is present for LastCheckTime, not even an explicit nil
+func (o *Issue) UnsetLastCheckTime() {
+	o.LastCheckTime.Unset()
+}
+
+// GetLastError returns the LastError field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Issue) GetLastError() string {
-	if o == nil || IsNil(o.LastError) {
+	if o == nil || IsNil(o.LastError.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.LastError
+	return *o.LastError.Get()
 }
 
 // GetLastErrorOk returns a tuple with the LastError field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Issue) GetLastErrorOk() (*string, bool) {
-	if o == nil || IsNil(o.LastError) {
+	if o == nil {
 		return nil, false
 	}
-	return o.LastError, true
+	return o.LastError.Get(), o.LastError.IsSet()
 }
 
 // IsSetLastError returns a boolean if a field has been set.
 func (o *Issue) IsSetLastError() bool {
-	if o != nil && !IsNil(o.LastError) {
+	if o != nil && o.LastError.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetLastError gets a reference to the given string and assigns it to the LastError field.
+// SetLastError gets a reference to the given NullableString and assigns it to the LastError field.
 func (o *Issue) SetLastError(v string) {
-	o.LastError = &v
+	o.LastError.Set(&v)
 }
 
-// GetLastMessage returns the LastMessage field value if set, zero value otherwise.
+// SetLastErrorNil sets the value for LastError to be an explicit nil
+func (o *Issue) SetLastErrorNil() {
+	o.LastError.Set(nil)
+}
+
+// UnsetLastError ensures that no value is present for LastError, not even an explicit nil
+func (o *Issue) UnsetLastError() {
+	o.LastError.Unset()
+}
+
+// GetLastMessage returns the LastMessage field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Issue) GetLastMessage() string {
-	if o == nil || IsNil(o.LastMessage) {
+	if o == nil || IsNil(o.LastMessage.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.LastMessage
+	return *o.LastMessage.Get()
 }
 
 // GetLastMessageOk returns a tuple with the LastMessage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Issue) GetLastMessageOk() (*string, bool) {
-	if o == nil || IsNil(o.LastMessage) {
+	if o == nil {
 		return nil, false
 	}
-	return o.LastMessage, true
+	return o.LastMessage.Get(), o.LastMessage.IsSet()
 }
 
 // IsSetLastMessage returns a boolean if a field has been set.
 func (o *Issue) IsSetLastMessage() bool {
-	if o != nil && !IsNil(o.LastMessage) {
+	if o != nil && o.LastMessage.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetLastMessage gets a reference to the given string and assigns it to the LastMessage field.
+// SetLastMessage gets a reference to the given NullableString and assigns it to the LastMessage field.
 func (o *Issue) SetLastMessage(v string) {
-	o.LastMessage = &v
+	o.LastMessage.Set(&v)
+}
+
+// SetLastMessageNil sets the value for LastMessage to be an explicit nil
+func (o *Issue) SetLastMessageNil() {
+	o.LastMessage.Set(nil)
+}
+
+// UnsetLastMessage ensures that no value is present for LastMessage, not even an explicit nil
+func (o *Issue) UnsetLastMessage() {
+	o.LastMessage.Unset()
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -686,23 +763,23 @@ func (o Issue) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.AttachmentType) {
 		toSerialize["attachmentType"] = o.AttachmentType
 	}
-	if !IsNil(o.App) {
-		toSerialize["app"] = o.App
+	if o.App.IsSet() {
+		toSerialize["app"] = o.App.Get()
 	}
 	if !IsNil(o.Available) {
 		toSerialize["available"] = o.Available
 	}
-	if !IsNil(o.Check) {
-		toSerialize["check"] = o.Check
+	if o.Check.IsSet() {
+		toSerialize["check"] = o.Check.Get()
 	}
 	if !IsNil(o.CheckGroup) {
 		toSerialize["checkGroup"] = o.CheckGroup
 	}
-	if !IsNil(o.CheckStatus) {
-		toSerialize["checkStatus"] = o.CheckStatus
+	if o.CheckStatus.IsSet() {
+		toSerialize["checkStatus"] = o.CheckStatus.Get()
 	}
-	if !IsNil(o.EndDate) {
-		toSerialize["endDate"] = o.EndDate
+	if o.EndDate.IsSet() {
+		toSerialize["endDate"] = o.EndDate.Get()
 	}
 	if !IsNil(o.Health) {
 		toSerialize["health"] = o.Health
@@ -713,14 +790,14 @@ func (o Issue) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Incident) {
 		toSerialize["incident"] = o.Incident
 	}
-	if !IsNil(o.LastCheckTime) {
-		toSerialize["lastCheckTime"] = o.LastCheckTime
+	if o.LastCheckTime.IsSet() {
+		toSerialize["lastCheckTime"] = o.LastCheckTime.Get()
 	}
-	if !IsNil(o.LastError) {
-		toSerialize["lastError"] = o.LastError
+	if o.LastError.IsSet() {
+		toSerialize["lastError"] = o.LastError.Get()
 	}
-	if !IsNil(o.LastMessage) {
-		toSerialize["lastMessage"] = o.LastMessage
+	if o.LastMessage.IsSet() {
+		toSerialize["lastMessage"] = o.LastMessage.Get()
 	}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name

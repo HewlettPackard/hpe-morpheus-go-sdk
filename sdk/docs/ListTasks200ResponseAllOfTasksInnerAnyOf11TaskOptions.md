@@ -4,16 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Port** | Pointer to **string** |  | [optional] 
-**Host** | Pointer to **string** |  | [optional] 
-**Username** | Pointer to **string** |  | [optional] 
-**PuppetEnvironment** | Pointer to **string** |  | [optional] 
-**PuppetNodeName** | Pointer to **string** |  | [optional] 
-**SshKey** | Pointer to **string** |  | [optional] 
-**LocalScriptGitId** | Pointer to **string** |  | [optional] 
-**LocalScriptGitRef** | Pointer to **string** |  | [optional] 
-**Password** | Pointer to **string** |  | [optional] 
-**PasswordHash** | Pointer to **string** |  | [optional] 
+**Port** | Pointer to **NullableString** |  | [optional] 
+**Host** | Pointer to **NullableString** |  | [optional] 
+**Username** | Pointer to **NullableString** |  | [optional] 
+**PuppetEnvironment** | Pointer to **NullableString** |  | [optional] 
+**PuppetNodeName** | Pointer to **NullableString** |  | [optional] 
+**SshKey** | Pointer to **NullableString** |  | [optional] 
+**LocalScriptGitId** | Pointer to **NullableString** |  | [optional] 
+**LocalScriptGitRef** | Pointer to **NullableString** |  | [optional] 
+**Password** | Pointer to **NullableString** |  | [optional] 
+**PasswordHash** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -59,6 +59,16 @@ SetPort sets Port field to given value.
 
 HasPort returns a boolean if a field has been set.
 
+### SetPortNil
+
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOf11TaskOptions) SetPortNil(b bool)`
+
+ SetPortNil sets the value for Port to be an explicit nil
+
+### UnsetPort
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOf11TaskOptions) UnsetPort()`
+
+UnsetPort ensures that no value is present for Port, not even an explicit nil
 ### GetHost
 
 `func (o *ListTasks200ResponseAllOfTasksInnerAnyOf11TaskOptions) GetHost() string`
@@ -84,6 +94,16 @@ SetHost sets Host field to given value.
 
 HasHost returns a boolean if a field has been set.
 
+### SetHostNil
+
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOf11TaskOptions) SetHostNil(b bool)`
+
+ SetHostNil sets the value for Host to be an explicit nil
+
+### UnsetHost
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOf11TaskOptions) UnsetHost()`
+
+UnsetHost ensures that no value is present for Host, not even an explicit nil
 ### GetUsername
 
 `func (o *ListTasks200ResponseAllOfTasksInnerAnyOf11TaskOptions) GetUsername() string`
@@ -109,6 +129,16 @@ SetUsername sets Username field to given value.
 
 HasUsername returns a boolean if a field has been set.
 
+### SetUsernameNil
+
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOf11TaskOptions) SetUsernameNil(b bool)`
+
+ SetUsernameNil sets the value for Username to be an explicit nil
+
+### UnsetUsername
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOf11TaskOptions) UnsetUsername()`
+
+UnsetUsername ensures that no value is present for Username, not even an explicit nil
 ### GetPuppetEnvironment
 
 `func (o *ListTasks200ResponseAllOfTasksInnerAnyOf11TaskOptions) GetPuppetEnvironment() string`
@@ -134,6 +164,16 @@ SetPuppetEnvironment sets PuppetEnvironment field to given value.
 
 HasPuppetEnvironment returns a boolean if a field has been set.
 
+### SetPuppetEnvironmentNil
+
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOf11TaskOptions) SetPuppetEnvironmentNil(b bool)`
+
+ SetPuppetEnvironmentNil sets the value for PuppetEnvironment to be an explicit nil
+
+### UnsetPuppetEnvironment
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOf11TaskOptions) UnsetPuppetEnvironment()`
+
+UnsetPuppetEnvironment ensures that no value is present for PuppetEnvironment, not even an explicit nil
 ### GetPuppetNodeName
 
 `func (o *ListTasks200ResponseAllOfTasksInnerAnyOf11TaskOptions) GetPuppetNodeName() string`
@@ -159,6 +199,16 @@ SetPuppetNodeName sets PuppetNodeName field to given value.
 
 HasPuppetNodeName returns a boolean if a field has been set.
 
+### SetPuppetNodeNameNil
+
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOf11TaskOptions) SetPuppetNodeNameNil(b bool)`
+
+ SetPuppetNodeNameNil sets the value for PuppetNodeName to be an explicit nil
+
+### UnsetPuppetNodeName
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOf11TaskOptions) UnsetPuppetNodeName()`
+
+UnsetPuppetNodeName ensures that no value is present for PuppetNodeName, not even an explicit nil
 ### GetSshKey
 
 `func (o *ListTasks200ResponseAllOfTasksInnerAnyOf11TaskOptions) GetSshKey() string`
@@ -184,6 +234,16 @@ SetSshKey sets SshKey field to given value.
 
 HasSshKey returns a boolean if a field has been set.
 
+### SetSshKeyNil
+
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOf11TaskOptions) SetSshKeyNil(b bool)`
+
+ SetSshKeyNil sets the value for SshKey to be an explicit nil
+
+### UnsetSshKey
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOf11TaskOptions) UnsetSshKey()`
+
+UnsetSshKey ensures that no value is present for SshKey, not even an explicit nil
 ### GetLocalScriptGitId
 
 `func (o *ListTasks200ResponseAllOfTasksInnerAnyOf11TaskOptions) GetLocalScriptGitId() string`
@@ -209,6 +269,16 @@ SetLocalScriptGitId sets LocalScriptGitId field to given value.
 
 HasLocalScriptGitId returns a boolean if a field has been set.
 
+### SetLocalScriptGitIdNil
+
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOf11TaskOptions) SetLocalScriptGitIdNil(b bool)`
+
+ SetLocalScriptGitIdNil sets the value for LocalScriptGitId to be an explicit nil
+
+### UnsetLocalScriptGitId
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOf11TaskOptions) UnsetLocalScriptGitId()`
+
+UnsetLocalScriptGitId ensures that no value is present for LocalScriptGitId, not even an explicit nil
 ### GetLocalScriptGitRef
 
 `func (o *ListTasks200ResponseAllOfTasksInnerAnyOf11TaskOptions) GetLocalScriptGitRef() string`
@@ -234,6 +304,16 @@ SetLocalScriptGitRef sets LocalScriptGitRef field to given value.
 
 HasLocalScriptGitRef returns a boolean if a field has been set.
 
+### SetLocalScriptGitRefNil
+
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOf11TaskOptions) SetLocalScriptGitRefNil(b bool)`
+
+ SetLocalScriptGitRefNil sets the value for LocalScriptGitRef to be an explicit nil
+
+### UnsetLocalScriptGitRef
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOf11TaskOptions) UnsetLocalScriptGitRef()`
+
+UnsetLocalScriptGitRef ensures that no value is present for LocalScriptGitRef, not even an explicit nil
 ### GetPassword
 
 `func (o *ListTasks200ResponseAllOfTasksInnerAnyOf11TaskOptions) GetPassword() string`
@@ -259,6 +339,16 @@ SetPassword sets Password field to given value.
 
 HasPassword returns a boolean if a field has been set.
 
+### SetPasswordNil
+
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOf11TaskOptions) SetPasswordNil(b bool)`
+
+ SetPasswordNil sets the value for Password to be an explicit nil
+
+### UnsetPassword
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOf11TaskOptions) UnsetPassword()`
+
+UnsetPassword ensures that no value is present for Password, not even an explicit nil
 ### GetPasswordHash
 
 `func (o *ListTasks200ResponseAllOfTasksInnerAnyOf11TaskOptions) GetPasswordHash() string`
@@ -284,6 +374,16 @@ SetPasswordHash sets PasswordHash field to given value.
 
 HasPasswordHash returns a boolean if a field has been set.
 
+### SetPasswordHashNil
+
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOf11TaskOptions) SetPasswordHashNil(b bool)`
+
+ SetPasswordHashNil sets the value for PasswordHash to be an explicit nil
+
+### UnsetPasswordHash
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOf11TaskOptions) UnsetPasswordHash()`
+
+UnsetPasswordHash ensures that no value is present for PasswordHash, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

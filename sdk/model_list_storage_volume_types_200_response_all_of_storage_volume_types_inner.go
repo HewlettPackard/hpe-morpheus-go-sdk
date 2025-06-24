@@ -28,7 +28,7 @@ type ListStorageVolumeTypes200ResponseAllOfStorageVolumeTypesInner struct {
 	DefaultType          *bool                                                                           `json:"defaultType,omitempty"`
 	CustomLabel          *bool                                                                           `json:"customLabel,omitempty"`
 	CustomSize           *bool                                                                           `json:"customSize,omitempty"`
-	CustomSizeOptions    *string                                                                         `json:"customSizeOptions,omitempty"`
+	CustomSizeOptions    NullableString                                                                  `json:"customSizeOptions,omitempty"`
 	ConfigurableIOPS     *bool                                                                           `json:"configurableIOPS,omitempty"`
 	HasDatastore         *bool                                                                           `json:"hasDatastore,omitempty"`
 	Category             *string                                                                         `json:"category,omitempty"`
@@ -312,36 +312,47 @@ func (o *ListStorageVolumeTypes200ResponseAllOfStorageVolumeTypesInner) SetCusto
 	o.CustomSize = &v
 }
 
-// GetCustomSizeOptions returns the CustomSizeOptions field value if set, zero value otherwise.
+// GetCustomSizeOptions returns the CustomSizeOptions field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListStorageVolumeTypes200ResponseAllOfStorageVolumeTypesInner) GetCustomSizeOptions() string {
-	if o == nil || IsNil(o.CustomSizeOptions) {
+	if o == nil || IsNil(o.CustomSizeOptions.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.CustomSizeOptions
+	return *o.CustomSizeOptions.Get()
 }
 
 // GetCustomSizeOptionsOk returns a tuple with the CustomSizeOptions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListStorageVolumeTypes200ResponseAllOfStorageVolumeTypesInner) GetCustomSizeOptionsOk() (*string, bool) {
-	if o == nil || IsNil(o.CustomSizeOptions) {
+	if o == nil {
 		return nil, false
 	}
-	return o.CustomSizeOptions, true
+	return o.CustomSizeOptions.Get(), o.CustomSizeOptions.IsSet()
 }
 
 // IsSetCustomSizeOptions returns a boolean if a field has been set.
 func (o *ListStorageVolumeTypes200ResponseAllOfStorageVolumeTypesInner) IsSetCustomSizeOptions() bool {
-	if o != nil && !IsNil(o.CustomSizeOptions) {
+	if o != nil && o.CustomSizeOptions.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCustomSizeOptions gets a reference to the given string and assigns it to the CustomSizeOptions field.
+// SetCustomSizeOptions gets a reference to the given NullableString and assigns it to the CustomSizeOptions field.
 func (o *ListStorageVolumeTypes200ResponseAllOfStorageVolumeTypesInner) SetCustomSizeOptions(v string) {
-	o.CustomSizeOptions = &v
+	o.CustomSizeOptions.Set(&v)
+}
+
+// SetCustomSizeOptionsNil sets the value for CustomSizeOptions to be an explicit nil
+func (o *ListStorageVolumeTypes200ResponseAllOfStorageVolumeTypesInner) SetCustomSizeOptionsNil() {
+	o.CustomSizeOptions.Set(nil)
+}
+
+// UnsetCustomSizeOptions ensures that no value is present for CustomSizeOptions, not even an explicit nil
+func (o *ListStorageVolumeTypes200ResponseAllOfStorageVolumeTypesInner) UnsetCustomSizeOptions() {
+	o.CustomSizeOptions.Unset()
 }
 
 // GetConfigurableIOPS returns the ConfigurableIOPS field value if set, zero value otherwise.
@@ -472,9 +483,9 @@ func (o *ListStorageVolumeTypes200ResponseAllOfStorageVolumeTypesInner) SetEnabl
 	o.Enabled = &v
 }
 
-// GetOptionTypes returns the OptionTypes field value if set, zero value otherwise.
+// GetOptionTypes returns the OptionTypes field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListStorageVolumeTypes200ResponseAllOfStorageVolumeTypesInner) GetOptionTypes() []ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerOptionTypesInner {
-	if o == nil || IsNil(o.OptionTypes) {
+	if o == nil {
 		var ret []ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerOptionTypesInner
 		return ret
 	}
@@ -483,6 +494,7 @@ func (o *ListStorageVolumeTypes200ResponseAllOfStorageVolumeTypesInner) GetOptio
 
 // GetOptionTypesOk returns a tuple with the OptionTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListStorageVolumeTypes200ResponseAllOfStorageVolumeTypesInner) GetOptionTypesOk() ([]ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerOptionTypesInner, bool) {
 	if o == nil || IsNil(o.OptionTypes) {
 		return nil, false
@@ -538,8 +550,8 @@ func (o ListStorageVolumeTypes200ResponseAllOfStorageVolumeTypesInner) ToMap() (
 	if !IsNil(o.CustomSize) {
 		toSerialize["customSize"] = o.CustomSize
 	}
-	if !IsNil(o.CustomSizeOptions) {
-		toSerialize["customSizeOptions"] = o.CustomSizeOptions
+	if o.CustomSizeOptions.IsSet() {
+		toSerialize["customSizeOptions"] = o.CustomSizeOptions.Get()
 	}
 	if !IsNil(o.ConfigurableIOPS) {
 		toSerialize["configurableIOPS"] = o.ConfigurableIOPS
@@ -553,7 +565,7 @@ func (o ListStorageVolumeTypes200ResponseAllOfStorageVolumeTypesInner) ToMap() (
 	if !IsNil(o.Enabled) {
 		toSerialize["enabled"] = o.Enabled
 	}
-	if !IsNil(o.OptionTypes) {
+	if o.OptionTypes != nil {
 		toSerialize["optionTypes"] = o.OptionTypes
 	}
 

@@ -7,12 +7,12 @@ Name | Type | Description | Notes
 **Id** | Pointer to **int64** |  | [optional] 
 **Code** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **NullableString** |  | [optional] 
 **Category** | Pointer to **string** |  | [optional] 
-**LoadMethod** | Pointer to **string** |  | [optional] 
-**EnforceMethod** | Pointer to **string** |  | [optional] 
-**PrepareMethod** | Pointer to **string** |  | [optional] 
-**ValidateMethod** | Pointer to **string** |  | [optional] 
+**LoadMethod** | Pointer to **NullableString** |  | [optional] 
+**EnforceMethod** | Pointer to **NullableString** |  | [optional] 
+**PrepareMethod** | Pointer to **NullableString** |  | [optional] 
+**ValidateMethod** | Pointer to **NullableString** |  | [optional] 
 **EnforceOnProvision** | Pointer to **bool** |  | [optional] 
 **EnforceOnManaged** | Pointer to **bool** |  | [optional] 
 **OptionTypes** | Pointer to [**[]ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner**](ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner.md) |  | [optional] 
@@ -136,6 +136,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *ListPolicyTypes200ResponseAllOfPolicyTypesInner) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *ListPolicyTypes200ResponseAllOfPolicyTypesInner) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetCategory
 
 `func (o *ListPolicyTypes200ResponseAllOfPolicyTypesInner) GetCategory() string`
@@ -186,6 +196,16 @@ SetLoadMethod sets LoadMethod field to given value.
 
 HasLoadMethod returns a boolean if a field has been set.
 
+### SetLoadMethodNil
+
+`func (o *ListPolicyTypes200ResponseAllOfPolicyTypesInner) SetLoadMethodNil(b bool)`
+
+ SetLoadMethodNil sets the value for LoadMethod to be an explicit nil
+
+### UnsetLoadMethod
+`func (o *ListPolicyTypes200ResponseAllOfPolicyTypesInner) UnsetLoadMethod()`
+
+UnsetLoadMethod ensures that no value is present for LoadMethod, not even an explicit nil
 ### GetEnforceMethod
 
 `func (o *ListPolicyTypes200ResponseAllOfPolicyTypesInner) GetEnforceMethod() string`
@@ -211,6 +231,16 @@ SetEnforceMethod sets EnforceMethod field to given value.
 
 HasEnforceMethod returns a boolean if a field has been set.
 
+### SetEnforceMethodNil
+
+`func (o *ListPolicyTypes200ResponseAllOfPolicyTypesInner) SetEnforceMethodNil(b bool)`
+
+ SetEnforceMethodNil sets the value for EnforceMethod to be an explicit nil
+
+### UnsetEnforceMethod
+`func (o *ListPolicyTypes200ResponseAllOfPolicyTypesInner) UnsetEnforceMethod()`
+
+UnsetEnforceMethod ensures that no value is present for EnforceMethod, not even an explicit nil
 ### GetPrepareMethod
 
 `func (o *ListPolicyTypes200ResponseAllOfPolicyTypesInner) GetPrepareMethod() string`
@@ -236,6 +266,16 @@ SetPrepareMethod sets PrepareMethod field to given value.
 
 HasPrepareMethod returns a boolean if a field has been set.
 
+### SetPrepareMethodNil
+
+`func (o *ListPolicyTypes200ResponseAllOfPolicyTypesInner) SetPrepareMethodNil(b bool)`
+
+ SetPrepareMethodNil sets the value for PrepareMethod to be an explicit nil
+
+### UnsetPrepareMethod
+`func (o *ListPolicyTypes200ResponseAllOfPolicyTypesInner) UnsetPrepareMethod()`
+
+UnsetPrepareMethod ensures that no value is present for PrepareMethod, not even an explicit nil
 ### GetValidateMethod
 
 `func (o *ListPolicyTypes200ResponseAllOfPolicyTypesInner) GetValidateMethod() string`
@@ -261,6 +301,16 @@ SetValidateMethod sets ValidateMethod field to given value.
 
 HasValidateMethod returns a boolean if a field has been set.
 
+### SetValidateMethodNil
+
+`func (o *ListPolicyTypes200ResponseAllOfPolicyTypesInner) SetValidateMethodNil(b bool)`
+
+ SetValidateMethodNil sets the value for ValidateMethod to be an explicit nil
+
+### UnsetValidateMethod
+`func (o *ListPolicyTypes200ResponseAllOfPolicyTypesInner) UnsetValidateMethod()`
+
+UnsetValidateMethod ensures that no value is present for ValidateMethod, not even an explicit nil
 ### GetEnforceOnProvision
 
 `func (o *ListPolicyTypes200ResponseAllOfPolicyTypesInner) GetEnforceOnProvision() bool`

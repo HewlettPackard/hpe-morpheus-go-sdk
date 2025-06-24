@@ -22,19 +22,19 @@ var _ MappedNullable = &ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTempla
 // ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner struct for ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner
 type ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner struct {
 	Id                   *int64                                                                `json:"id,omitempty"`
-	Account              *string                                                               `json:"account,omitempty"`
+	Account              NullableString                                                        `json:"account,omitempty"`
 	Name                 *string                                                               `json:"name,omitempty"`
 	Labels               []string                                                              `json:"labels,omitempty"`
 	Code                 *string                                                               `json:"code,omitempty"`
 	Type                 *ListBackupSettings200ResponseBackupSettingsDefaultSchedule           `json:"type,omitempty"`
-	ExternalId           *string                                                               `json:"externalId,omitempty"`
-	ExternalType         *string                                                               `json:"externalType,omitempty"`
-	DeploymentId         *string                                                               `json:"deploymentId,omitempty"`
-	Status               *string                                                               `json:"status,omitempty"`
+	ExternalId           NullableString                                                        `json:"externalId,omitempty"`
+	ExternalType         NullableString                                                        `json:"externalType,omitempty"`
+	DeploymentId         NullableString                                                        `json:"deploymentId,omitempty"`
+	Status               NullableString                                                        `json:"status,omitempty"`
 	File                 *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile `json:"file,omitempty"`
 	Config               map[string]interface{}                                                `json:"config,omitempty"`
-	CreatedBy            *string                                                               `json:"createdBy,omitempty"`
-	UpdatedBy            *string                                                               `json:"updatedBy,omitempty"`
+	CreatedBy            NullableString                                                        `json:"createdBy,omitempty"`
+	UpdatedBy            NullableString                                                        `json:"updatedBy,omitempty"`
 	DateCreated          *time.Time                                                            `json:"dateCreated,omitempty"`
 	LastUpdated          *time.Time                                                            `json:"lastUpdated,omitempty"`
 	AdditionalProperties map[string]interface{}                                                `json:",remain"`
@@ -91,36 +91,47 @@ func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) SetId
 	o.Id = &v
 }
 
-// GetAccount returns the Account field value if set, zero value otherwise.
+// GetAccount returns the Account field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) GetAccount() string {
-	if o == nil || IsNil(o.Account) {
+	if o == nil || IsNil(o.Account.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Account
+	return *o.Account.Get()
 }
 
 // GetAccountOk returns a tuple with the Account field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) GetAccountOk() (*string, bool) {
-	if o == nil || IsNil(o.Account) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Account, true
+	return o.Account.Get(), o.Account.IsSet()
 }
 
 // IsSetAccount returns a boolean if a field has been set.
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) IsSetAccount() bool {
-	if o != nil && !IsNil(o.Account) {
+	if o != nil && o.Account.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetAccount gets a reference to the given string and assigns it to the Account field.
+// SetAccount gets a reference to the given NullableString and assigns it to the Account field.
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) SetAccount(v string) {
-	o.Account = &v
+	o.Account.Set(&v)
+}
+
+// SetAccountNil sets the value for Account to be an explicit nil
+func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) SetAccountNil() {
+	o.Account.Set(nil)
+}
+
+// UnsetAccount ensures that no value is present for Account, not even an explicit nil
+func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) UnsetAccount() {
+	o.Account.Unset()
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -155,9 +166,9 @@ func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) SetNa
 	o.Name = &v
 }
 
-// GetLabels returns the Labels field value if set, zero value otherwise.
+// GetLabels returns the Labels field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) GetLabels() []string {
-	if o == nil || IsNil(o.Labels) {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -166,6 +177,7 @@ func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) GetLa
 
 // GetLabelsOk returns a tuple with the Labels field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) GetLabelsOk() ([]string, bool) {
 	if o == nil || IsNil(o.Labels) {
 		return nil, false
@@ -251,132 +263,176 @@ func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) SetTy
 	o.Type = &v
 }
 
-// GetExternalId returns the ExternalId field value if set, zero value otherwise.
+// GetExternalId returns the ExternalId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) GetExternalId() string {
-	if o == nil || IsNil(o.ExternalId) {
+	if o == nil || IsNil(o.ExternalId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ExternalId
+	return *o.ExternalId.Get()
 }
 
 // GetExternalIdOk returns a tuple with the ExternalId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) GetExternalIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ExternalId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ExternalId, true
+	return o.ExternalId.Get(), o.ExternalId.IsSet()
 }
 
 // IsSetExternalId returns a boolean if a field has been set.
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) IsSetExternalId() bool {
-	if o != nil && !IsNil(o.ExternalId) {
+	if o != nil && o.ExternalId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetExternalId gets a reference to the given string and assigns it to the ExternalId field.
+// SetExternalId gets a reference to the given NullableString and assigns it to the ExternalId field.
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) SetExternalId(v string) {
-	o.ExternalId = &v
+	o.ExternalId.Set(&v)
 }
 
-// GetExternalType returns the ExternalType field value if set, zero value otherwise.
+// SetExternalIdNil sets the value for ExternalId to be an explicit nil
+func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) SetExternalIdNil() {
+	o.ExternalId.Set(nil)
+}
+
+// UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
+func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) UnsetExternalId() {
+	o.ExternalId.Unset()
+}
+
+// GetExternalType returns the ExternalType field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) GetExternalType() string {
-	if o == nil || IsNil(o.ExternalType) {
+	if o == nil || IsNil(o.ExternalType.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ExternalType
+	return *o.ExternalType.Get()
 }
 
 // GetExternalTypeOk returns a tuple with the ExternalType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) GetExternalTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.ExternalType) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ExternalType, true
+	return o.ExternalType.Get(), o.ExternalType.IsSet()
 }
 
 // IsSetExternalType returns a boolean if a field has been set.
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) IsSetExternalType() bool {
-	if o != nil && !IsNil(o.ExternalType) {
+	if o != nil && o.ExternalType.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetExternalType gets a reference to the given string and assigns it to the ExternalType field.
+// SetExternalType gets a reference to the given NullableString and assigns it to the ExternalType field.
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) SetExternalType(v string) {
-	o.ExternalType = &v
+	o.ExternalType.Set(&v)
 }
 
-// GetDeploymentId returns the DeploymentId field value if set, zero value otherwise.
+// SetExternalTypeNil sets the value for ExternalType to be an explicit nil
+func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) SetExternalTypeNil() {
+	o.ExternalType.Set(nil)
+}
+
+// UnsetExternalType ensures that no value is present for ExternalType, not even an explicit nil
+func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) UnsetExternalType() {
+	o.ExternalType.Unset()
+}
+
+// GetDeploymentId returns the DeploymentId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) GetDeploymentId() string {
-	if o == nil || IsNil(o.DeploymentId) {
+	if o == nil || IsNil(o.DeploymentId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.DeploymentId
+	return *o.DeploymentId.Get()
 }
 
 // GetDeploymentIdOk returns a tuple with the DeploymentId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) GetDeploymentIdOk() (*string, bool) {
-	if o == nil || IsNil(o.DeploymentId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.DeploymentId, true
+	return o.DeploymentId.Get(), o.DeploymentId.IsSet()
 }
 
 // IsSetDeploymentId returns a boolean if a field has been set.
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) IsSetDeploymentId() bool {
-	if o != nil && !IsNil(o.DeploymentId) {
+	if o != nil && o.DeploymentId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDeploymentId gets a reference to the given string and assigns it to the DeploymentId field.
+// SetDeploymentId gets a reference to the given NullableString and assigns it to the DeploymentId field.
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) SetDeploymentId(v string) {
-	o.DeploymentId = &v
+	o.DeploymentId.Set(&v)
 }
 
-// GetStatus returns the Status field value if set, zero value otherwise.
+// SetDeploymentIdNil sets the value for DeploymentId to be an explicit nil
+func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) SetDeploymentIdNil() {
+	o.DeploymentId.Set(nil)
+}
+
+// UnsetDeploymentId ensures that no value is present for DeploymentId, not even an explicit nil
+func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) UnsetDeploymentId() {
+	o.DeploymentId.Unset()
+}
+
+// GetStatus returns the Status field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) GetStatus() string {
-	if o == nil || IsNil(o.Status) {
+	if o == nil || IsNil(o.Status.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Status
+	return *o.Status.Get()
 }
 
 // GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) GetStatusOk() (*string, bool) {
-	if o == nil || IsNil(o.Status) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Status, true
+	return o.Status.Get(), o.Status.IsSet()
 }
 
 // IsSetStatus returns a boolean if a field has been set.
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
+	if o != nil && o.Status.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetStatus gets a reference to the given string and assigns it to the Status field.
+// SetStatus gets a reference to the given NullableString and assigns it to the Status field.
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) SetStatus(v string) {
-	o.Status = &v
+	o.Status.Set(&v)
+}
+
+// SetStatusNil sets the value for Status to be an explicit nil
+func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) SetStatusNil() {
+	o.Status.Set(nil)
+}
+
+// UnsetStatus ensures that no value is present for Status, not even an explicit nil
+func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) UnsetStatus() {
+	o.Status.Unset()
 }
 
 // GetFile returns the File field value if set, zero value otherwise.
@@ -443,68 +499,90 @@ func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) SetCo
 	o.Config = v
 }
 
-// GetCreatedBy returns the CreatedBy field value if set, zero value otherwise.
+// GetCreatedBy returns the CreatedBy field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) GetCreatedBy() string {
-	if o == nil || IsNil(o.CreatedBy) {
+	if o == nil || IsNil(o.CreatedBy.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.CreatedBy
+	return *o.CreatedBy.Get()
 }
 
 // GetCreatedByOk returns a tuple with the CreatedBy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) GetCreatedByOk() (*string, bool) {
-	if o == nil || IsNil(o.CreatedBy) {
+	if o == nil {
 		return nil, false
 	}
-	return o.CreatedBy, true
+	return o.CreatedBy.Get(), o.CreatedBy.IsSet()
 }
 
 // IsSetCreatedBy returns a boolean if a field has been set.
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) IsSetCreatedBy() bool {
-	if o != nil && !IsNil(o.CreatedBy) {
+	if o != nil && o.CreatedBy.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCreatedBy gets a reference to the given string and assigns it to the CreatedBy field.
+// SetCreatedBy gets a reference to the given NullableString and assigns it to the CreatedBy field.
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) SetCreatedBy(v string) {
-	o.CreatedBy = &v
+	o.CreatedBy.Set(&v)
 }
 
-// GetUpdatedBy returns the UpdatedBy field value if set, zero value otherwise.
+// SetCreatedByNil sets the value for CreatedBy to be an explicit nil
+func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) SetCreatedByNil() {
+	o.CreatedBy.Set(nil)
+}
+
+// UnsetCreatedBy ensures that no value is present for CreatedBy, not even an explicit nil
+func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) UnsetCreatedBy() {
+	o.CreatedBy.Unset()
+}
+
+// GetUpdatedBy returns the UpdatedBy field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) GetUpdatedBy() string {
-	if o == nil || IsNil(o.UpdatedBy) {
+	if o == nil || IsNil(o.UpdatedBy.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.UpdatedBy
+	return *o.UpdatedBy.Get()
 }
 
 // GetUpdatedByOk returns a tuple with the UpdatedBy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) GetUpdatedByOk() (*string, bool) {
-	if o == nil || IsNil(o.UpdatedBy) {
+	if o == nil {
 		return nil, false
 	}
-	return o.UpdatedBy, true
+	return o.UpdatedBy.Get(), o.UpdatedBy.IsSet()
 }
 
 // IsSetUpdatedBy returns a boolean if a field has been set.
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) IsSetUpdatedBy() bool {
-	if o != nil && !IsNil(o.UpdatedBy) {
+	if o != nil && o.UpdatedBy.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetUpdatedBy gets a reference to the given string and assigns it to the UpdatedBy field.
+// SetUpdatedBy gets a reference to the given NullableString and assigns it to the UpdatedBy field.
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) SetUpdatedBy(v string) {
-	o.UpdatedBy = &v
+	o.UpdatedBy.Set(&v)
+}
+
+// SetUpdatedByNil sets the value for UpdatedBy to be an explicit nil
+func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) SetUpdatedByNil() {
+	o.UpdatedBy.Set(nil)
+}
+
+// UnsetUpdatedBy ensures that no value is present for UpdatedBy, not even an explicit nil
+func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) UnsetUpdatedBy() {
+	o.UpdatedBy.Unset()
 }
 
 // GetDateCreated returns the DateCreated field value if set, zero value otherwise.
@@ -584,13 +662,13 @@ func (o ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) ToMap(
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
-	if !IsNil(o.Account) {
-		toSerialize["account"] = o.Account
+	if o.Account.IsSet() {
+		toSerialize["account"] = o.Account.Get()
 	}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !IsNil(o.Labels) {
+	if o.Labels != nil {
 		toSerialize["labels"] = o.Labels
 	}
 	if !IsNil(o.Code) {
@@ -599,17 +677,17 @@ func (o ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) ToMap(
 	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type
 	}
-	if !IsNil(o.ExternalId) {
-		toSerialize["externalId"] = o.ExternalId
+	if o.ExternalId.IsSet() {
+		toSerialize["externalId"] = o.ExternalId.Get()
 	}
-	if !IsNil(o.ExternalType) {
-		toSerialize["externalType"] = o.ExternalType
+	if o.ExternalType.IsSet() {
+		toSerialize["externalType"] = o.ExternalType.Get()
 	}
-	if !IsNil(o.DeploymentId) {
-		toSerialize["deploymentId"] = o.DeploymentId
+	if o.DeploymentId.IsSet() {
+		toSerialize["deploymentId"] = o.DeploymentId.Get()
 	}
-	if !IsNil(o.Status) {
-		toSerialize["status"] = o.Status
+	if o.Status.IsSet() {
+		toSerialize["status"] = o.Status.Get()
 	}
 	if !IsNil(o.File) {
 		toSerialize["file"] = o.File
@@ -617,11 +695,11 @@ func (o ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) ToMap(
 	if !IsNil(o.Config) {
 		toSerialize["config"] = o.Config
 	}
-	if !IsNil(o.CreatedBy) {
-		toSerialize["createdBy"] = o.CreatedBy
+	if o.CreatedBy.IsSet() {
+		toSerialize["createdBy"] = o.CreatedBy.Get()
 	}
-	if !IsNil(o.UpdatedBy) {
-		toSerialize["updatedBy"] = o.UpdatedBy
+	if o.UpdatedBy.IsSet() {
+		toSerialize["updatedBy"] = o.UpdatedBy.Get()
 	}
 	if !IsNil(o.DateCreated) {
 		toSerialize["dateCreated"] = o.DateCreated

@@ -7,15 +7,15 @@ Name | Type | Description | Notes
 **Id** | Pointer to **int64** |  | [optional] 
 **Uuid** | Pointer to **string** |  | [optional] 
 **ExternalId** | Pointer to **string** |  | [optional] 
-**InternalId** | Pointer to **string** |  | [optional] 
-**ExternalUniqueId** | Pointer to **string** |  | [optional] 
+**InternalId** | Pointer to **NullableString** |  | [optional] 
+**ExternalUniqueId** | Pointer to **NullableString** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **ExternalName** | Pointer to **string** |  | [optional] 
 **Hostname** | Pointer to **string** |  | [optional] 
 **AccountId** | Pointer to **int64** |  | [optional] 
-**Account** | Pointer to [**ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
+**Account** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **Owner** | Pointer to [**ListActivity200ResponseAllOfActivityInnerActivityInnerUser**](ListActivity200ResponseAllOfActivityInnerActivityInnerUser.md) |  | [optional] 
-**Zone** | Pointer to [**ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
+**Zone** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **Plan** | Pointer to [**ListBackupSettings200ResponseBackupSettingsDefaultSchedule**](ListBackupSettings200ResponseBackupSettingsDefaultSchedule.md) |  | [optional] 
 **ComputeServerType** | Pointer to [**ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerComputeServerType**](ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerComputeServerType.md) |  | [optional] 
 **Visibility** | Pointer to **string** |  | [optional] 
@@ -23,12 +23,12 @@ Name | Type | Description | Notes
 **ZoneId** | Pointer to **int64** |  | [optional] 
 **SiteId** | Pointer to **int64** |  | [optional] 
 **ResourcePoolId** | Pointer to **int64** |  | [optional] 
-**FolderId** | Pointer to **string** |  | [optional] 
+**FolderId** | Pointer to **NullableString** |  | [optional] 
 **SshHost** | Pointer to **string** |  | [optional] 
 **SshPort** | Pointer to **int64** |  | [optional] 
 **ExternalIp** | Pointer to **string** |  | [optional] 
 **InternalIp** | Pointer to **string** |  | [optional] 
-**VolumeId** | Pointer to **string** |  | [optional] 
+**VolumeId** | Pointer to **NullableString** |  | [optional] 
 **Platform** | Pointer to **string** |  | [optional] 
 **PlatformVersion** | Pointer to **string** |  | [optional] 
 **SshUsername** | Pointer to **string** |  | [optional] 
@@ -44,37 +44,37 @@ Name | Type | Description | Notes
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
 **Stats** | Pointer to [**GetClusterMasters200ResponseMastersInnerStats**](GetClusterMasters200ResponseMastersInnerStats.md) |  | [optional] 
 **Status** | Pointer to **string** |  | [optional] 
-**StatusMessage** | Pointer to **string** |  | [optional] 
-**ErrorMessage** | Pointer to **string** |  | [optional] 
-**StatusDate** | Pointer to **string** |  | [optional] 
-**StatusPercent** | Pointer to **string** |  | [optional] 
-**StatusEta** | Pointer to **string** |  | [optional] 
+**StatusMessage** | Pointer to **NullableString** |  | [optional] 
+**ErrorMessage** | Pointer to **NullableString** |  | [optional] 
+**StatusDate** | Pointer to **NullableString** |  | [optional] 
+**StatusPercent** | Pointer to **NullableString** |  | [optional] 
+**StatusEta** | Pointer to **NullableString** |  | [optional] 
 **PowerState** | Pointer to **string** |  | [optional] 
 **AgentInstalled** | Pointer to **bool** |  | [optional] 
 **LastAgentUpdate** | Pointer to **time.Time** |  | [optional] 
 **AgentVersion** | Pointer to **string** |  | [optional] 
 **MaxCores** | Pointer to **int64** |  | [optional] 
-**CoresPerSocket** | Pointer to **string** |  | [optional] 
+**CoresPerSocket** | Pointer to **NullableString** |  | [optional] 
 **MaxMemory** | Pointer to **int64** |  | [optional] 
 **MaxStorage** | Pointer to **int64** |  | [optional] 
 **MaxCpu** | Pointer to **int64** |  | [optional] 
 **HourlyPrice** | Pointer to **float32** |  | [optional] 
 **SourceImage** | Pointer to [**ListBackupSettings200ResponseBackupSettingsDefaultSchedule**](ListBackupSettings200ResponseBackupSettingsDefaultSchedule.md) |  | [optional] 
-**ServerOs** | Pointer to **string** |  | [optional] 
+**ServerOs** | Pointer to **NullableString** |  | [optional] 
 **Volumes** | Pointer to [**[]GetClusterMasters200ResponseMastersInnerVolumesInner**](GetClusterMasters200ResponseMastersInnerVolumesInner.md) |  | [optional] 
 **Controllers** | Pointer to **[]map[string]interface{}** |  | [optional] 
 **Interfaces** | Pointer to [**[]GetClusterMasters200ResponseMastersInnerInterfacesInner**](GetClusterMasters200ResponseMastersInnerInterfacesInner.md) |  | [optional] 
 **Labels** | Pointer to **[]string** |  | [optional] 
 **Tags** | Pointer to [**[]AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner**](AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner.md) |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
-**TagCompliant** | Pointer to **string** |  | [optional] 
+**TagCompliant** | Pointer to **NullableString** |  | [optional] 
 **Containers** | Pointer to **[]int64** |  | [optional] 
 **GuestConsolePreferred** | Pointer to **bool** |  | [optional] 
-**GuestConsoleType** | Pointer to **string** |  | [optional] 
-**GuestConsoleUsername** | Pointer to **string** |  | [optional] 
-**GuestConsolePassword** | Pointer to **string** |  | [optional] 
-**GuestConsolePasswordHash** | Pointer to **string** |  | [optional] 
-**GuestConsolePort** | Pointer to **string** |  | [optional] 
+**GuestConsoleType** | Pointer to **NullableString** |  | [optional] 
+**GuestConsoleUsername** | Pointer to **NullableString** |  | [optional] 
+**GuestConsolePassword** | Pointer to **NullableString** |  | [optional] 
+**GuestConsolePasswordHash** | Pointer to **NullableString** |  | [optional] 
+**GuestConsolePort** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -195,6 +195,16 @@ SetInternalId sets InternalId field to given value.
 
 HasInternalId returns a boolean if a field has been set.
 
+### SetInternalIdNil
+
+`func (o *ClusterMasters) SetInternalIdNil(b bool)`
+
+ SetInternalIdNil sets the value for InternalId to be an explicit nil
+
+### UnsetInternalId
+`func (o *ClusterMasters) UnsetInternalId()`
+
+UnsetInternalId ensures that no value is present for InternalId, not even an explicit nil
 ### GetExternalUniqueId
 
 `func (o *ClusterMasters) GetExternalUniqueId() string`
@@ -220,6 +230,16 @@ SetExternalUniqueId sets ExternalUniqueId field to given value.
 
 HasExternalUniqueId returns a boolean if a field has been set.
 
+### SetExternalUniqueIdNil
+
+`func (o *ClusterMasters) SetExternalUniqueIdNil(b bool)`
+
+ SetExternalUniqueIdNil sets the value for ExternalUniqueId to be an explicit nil
+
+### UnsetExternalUniqueId
+`func (o *ClusterMasters) UnsetExternalUniqueId()`
+
+UnsetExternalUniqueId ensures that no value is present for ExternalUniqueId, not even an explicit nil
 ### GetName
 
 `func (o *ClusterMasters) GetName() string`
@@ -322,20 +342,20 @@ HasAccountId returns a boolean if a field has been set.
 
 ### GetAccount
 
-`func (o *ClusterMasters) GetAccount() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *ClusterMasters) GetAccount() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetAccount returns the Account field if non-nil, zero value otherwise.
 
 ### GetAccountOk
 
-`func (o *ClusterMasters) GetAccountOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *ClusterMasters) GetAccountOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetAccountOk returns a tuple with the Account field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccount
 
-`func (o *ClusterMasters) SetAccount(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *ClusterMasters) SetAccount(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetAccount sets Account field to given value.
 
@@ -372,20 +392,20 @@ HasOwner returns a boolean if a field has been set.
 
 ### GetZone
 
-`func (o *ClusterMasters) GetZone() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *ClusterMasters) GetZone() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetZone returns the Zone field if non-nil, zero value otherwise.
 
 ### GetZoneOk
 
-`func (o *ClusterMasters) GetZoneOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *ClusterMasters) GetZoneOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetZoneOk returns a tuple with the Zone field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetZone
 
-`func (o *ClusterMasters) SetZone(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *ClusterMasters) SetZone(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetZone sets Zone field to given value.
 
@@ -595,6 +615,16 @@ SetFolderId sets FolderId field to given value.
 
 HasFolderId returns a boolean if a field has been set.
 
+### SetFolderIdNil
+
+`func (o *ClusterMasters) SetFolderIdNil(b bool)`
+
+ SetFolderIdNil sets the value for FolderId to be an explicit nil
+
+### UnsetFolderId
+`func (o *ClusterMasters) UnsetFolderId()`
+
+UnsetFolderId ensures that no value is present for FolderId, not even an explicit nil
 ### GetSshHost
 
 `func (o *ClusterMasters) GetSshHost() string`
@@ -720,6 +750,16 @@ SetVolumeId sets VolumeId field to given value.
 
 HasVolumeId returns a boolean if a field has been set.
 
+### SetVolumeIdNil
+
+`func (o *ClusterMasters) SetVolumeIdNil(b bool)`
+
+ SetVolumeIdNil sets the value for VolumeId to be an explicit nil
+
+### UnsetVolumeId
+`func (o *ClusterMasters) UnsetVolumeId()`
+
+UnsetVolumeId ensures that no value is present for VolumeId, not even an explicit nil
 ### GetPlatform
 
 `func (o *ClusterMasters) GetPlatform() string`
@@ -1120,6 +1160,16 @@ SetStatusMessage sets StatusMessage field to given value.
 
 HasStatusMessage returns a boolean if a field has been set.
 
+### SetStatusMessageNil
+
+`func (o *ClusterMasters) SetStatusMessageNil(b bool)`
+
+ SetStatusMessageNil sets the value for StatusMessage to be an explicit nil
+
+### UnsetStatusMessage
+`func (o *ClusterMasters) UnsetStatusMessage()`
+
+UnsetStatusMessage ensures that no value is present for StatusMessage, not even an explicit nil
 ### GetErrorMessage
 
 `func (o *ClusterMasters) GetErrorMessage() string`
@@ -1145,6 +1195,16 @@ SetErrorMessage sets ErrorMessage field to given value.
 
 HasErrorMessage returns a boolean if a field has been set.
 
+### SetErrorMessageNil
+
+`func (o *ClusterMasters) SetErrorMessageNil(b bool)`
+
+ SetErrorMessageNil sets the value for ErrorMessage to be an explicit nil
+
+### UnsetErrorMessage
+`func (o *ClusterMasters) UnsetErrorMessage()`
+
+UnsetErrorMessage ensures that no value is present for ErrorMessage, not even an explicit nil
 ### GetStatusDate
 
 `func (o *ClusterMasters) GetStatusDate() string`
@@ -1170,6 +1230,16 @@ SetStatusDate sets StatusDate field to given value.
 
 HasStatusDate returns a boolean if a field has been set.
 
+### SetStatusDateNil
+
+`func (o *ClusterMasters) SetStatusDateNil(b bool)`
+
+ SetStatusDateNil sets the value for StatusDate to be an explicit nil
+
+### UnsetStatusDate
+`func (o *ClusterMasters) UnsetStatusDate()`
+
+UnsetStatusDate ensures that no value is present for StatusDate, not even an explicit nil
 ### GetStatusPercent
 
 `func (o *ClusterMasters) GetStatusPercent() string`
@@ -1195,6 +1265,16 @@ SetStatusPercent sets StatusPercent field to given value.
 
 HasStatusPercent returns a boolean if a field has been set.
 
+### SetStatusPercentNil
+
+`func (o *ClusterMasters) SetStatusPercentNil(b bool)`
+
+ SetStatusPercentNil sets the value for StatusPercent to be an explicit nil
+
+### UnsetStatusPercent
+`func (o *ClusterMasters) UnsetStatusPercent()`
+
+UnsetStatusPercent ensures that no value is present for StatusPercent, not even an explicit nil
 ### GetStatusEta
 
 `func (o *ClusterMasters) GetStatusEta() string`
@@ -1220,6 +1300,16 @@ SetStatusEta sets StatusEta field to given value.
 
 HasStatusEta returns a boolean if a field has been set.
 
+### SetStatusEtaNil
+
+`func (o *ClusterMasters) SetStatusEtaNil(b bool)`
+
+ SetStatusEtaNil sets the value for StatusEta to be an explicit nil
+
+### UnsetStatusEta
+`func (o *ClusterMasters) UnsetStatusEta()`
+
+UnsetStatusEta ensures that no value is present for StatusEta, not even an explicit nil
 ### GetPowerState
 
 `func (o *ClusterMasters) GetPowerState() string`
@@ -1370,6 +1460,16 @@ SetCoresPerSocket sets CoresPerSocket field to given value.
 
 HasCoresPerSocket returns a boolean if a field has been set.
 
+### SetCoresPerSocketNil
+
+`func (o *ClusterMasters) SetCoresPerSocketNil(b bool)`
+
+ SetCoresPerSocketNil sets the value for CoresPerSocket to be an explicit nil
+
+### UnsetCoresPerSocket
+`func (o *ClusterMasters) UnsetCoresPerSocket()`
+
+UnsetCoresPerSocket ensures that no value is present for CoresPerSocket, not even an explicit nil
 ### GetMaxMemory
 
 `func (o *ClusterMasters) GetMaxMemory() int64`
@@ -1520,6 +1620,16 @@ SetServerOs sets ServerOs field to given value.
 
 HasServerOs returns a boolean if a field has been set.
 
+### SetServerOsNil
+
+`func (o *ClusterMasters) SetServerOsNil(b bool)`
+
+ SetServerOsNil sets the value for ServerOs to be an explicit nil
+
+### UnsetServerOs
+`func (o *ClusterMasters) UnsetServerOs()`
+
+UnsetServerOs ensures that no value is present for ServerOs, not even an explicit nil
 ### GetVolumes
 
 `func (o *ClusterMasters) GetVolumes() []GetClusterMasters200ResponseMastersInnerVolumesInner`
@@ -1695,6 +1805,16 @@ SetTagCompliant sets TagCompliant field to given value.
 
 HasTagCompliant returns a boolean if a field has been set.
 
+### SetTagCompliantNil
+
+`func (o *ClusterMasters) SetTagCompliantNil(b bool)`
+
+ SetTagCompliantNil sets the value for TagCompliant to be an explicit nil
+
+### UnsetTagCompliant
+`func (o *ClusterMasters) UnsetTagCompliant()`
+
+UnsetTagCompliant ensures that no value is present for TagCompliant, not even an explicit nil
 ### GetContainers
 
 `func (o *ClusterMasters) GetContainers() []int64`
@@ -1770,6 +1890,16 @@ SetGuestConsoleType sets GuestConsoleType field to given value.
 
 HasGuestConsoleType returns a boolean if a field has been set.
 
+### SetGuestConsoleTypeNil
+
+`func (o *ClusterMasters) SetGuestConsoleTypeNil(b bool)`
+
+ SetGuestConsoleTypeNil sets the value for GuestConsoleType to be an explicit nil
+
+### UnsetGuestConsoleType
+`func (o *ClusterMasters) UnsetGuestConsoleType()`
+
+UnsetGuestConsoleType ensures that no value is present for GuestConsoleType, not even an explicit nil
 ### GetGuestConsoleUsername
 
 `func (o *ClusterMasters) GetGuestConsoleUsername() string`
@@ -1795,6 +1925,16 @@ SetGuestConsoleUsername sets GuestConsoleUsername field to given value.
 
 HasGuestConsoleUsername returns a boolean if a field has been set.
 
+### SetGuestConsoleUsernameNil
+
+`func (o *ClusterMasters) SetGuestConsoleUsernameNil(b bool)`
+
+ SetGuestConsoleUsernameNil sets the value for GuestConsoleUsername to be an explicit nil
+
+### UnsetGuestConsoleUsername
+`func (o *ClusterMasters) UnsetGuestConsoleUsername()`
+
+UnsetGuestConsoleUsername ensures that no value is present for GuestConsoleUsername, not even an explicit nil
 ### GetGuestConsolePassword
 
 `func (o *ClusterMasters) GetGuestConsolePassword() string`
@@ -1820,6 +1960,16 @@ SetGuestConsolePassword sets GuestConsolePassword field to given value.
 
 HasGuestConsolePassword returns a boolean if a field has been set.
 
+### SetGuestConsolePasswordNil
+
+`func (o *ClusterMasters) SetGuestConsolePasswordNil(b bool)`
+
+ SetGuestConsolePasswordNil sets the value for GuestConsolePassword to be an explicit nil
+
+### UnsetGuestConsolePassword
+`func (o *ClusterMasters) UnsetGuestConsolePassword()`
+
+UnsetGuestConsolePassword ensures that no value is present for GuestConsolePassword, not even an explicit nil
 ### GetGuestConsolePasswordHash
 
 `func (o *ClusterMasters) GetGuestConsolePasswordHash() string`
@@ -1845,6 +1995,16 @@ SetGuestConsolePasswordHash sets GuestConsolePasswordHash field to given value.
 
 HasGuestConsolePasswordHash returns a boolean if a field has been set.
 
+### SetGuestConsolePasswordHashNil
+
+`func (o *ClusterMasters) SetGuestConsolePasswordHashNil(b bool)`
+
+ SetGuestConsolePasswordHashNil sets the value for GuestConsolePasswordHash to be an explicit nil
+
+### UnsetGuestConsolePasswordHash
+`func (o *ClusterMasters) UnsetGuestConsolePasswordHash()`
+
+UnsetGuestConsolePasswordHash ensures that no value is present for GuestConsolePasswordHash, not even an explicit nil
 ### GetGuestConsolePort
 
 `func (o *ClusterMasters) GetGuestConsolePort() string`
@@ -1870,6 +2030,16 @@ SetGuestConsolePort sets GuestConsolePort field to given value.
 
 HasGuestConsolePort returns a boolean if a field has been set.
 
+### SetGuestConsolePortNil
+
+`func (o *ClusterMasters) SetGuestConsolePortNil(b bool)`
+
+ SetGuestConsolePortNil sets the value for GuestConsolePort to be an explicit nil
+
+### UnsetGuestConsolePort
+`func (o *ClusterMasters) UnsetGuestConsolePort()`
+
+UnsetGuestConsolePort ensures that no value is present for GuestConsolePort, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

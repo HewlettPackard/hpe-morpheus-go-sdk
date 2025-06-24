@@ -23,7 +23,7 @@ type ImageBuildCreate struct {
 	// A name for the image build
 	Name *string `json:"name,omitempty"`
 	// A description for the image build
-	Description *string `json:"description,omitempty"`
+	Description NullableString `json:"description,omitempty"`
 	// The image builder type.
 	Type *string                             `json:"type,omitempty"`
 	Site *AddImageBuildRequestImageBuildSite `json:"site,omitempty"`
@@ -37,11 +37,11 @@ type ImageBuildCreate struct {
 	// SSH Password
 	SshPassword *string `json:"sshPassword,omitempty"`
 	// Storage Provider
-	StorageProvider *string `json:"storageProvider,omitempty"`
+	StorageProvider NullableString `json:"storageProvider,omitempty"`
 	// Cloud Init
 	IsCloudInit *string `json:"isCloudInit,omitempty"`
 	// Build Output Name
-	BuildOutputName   *string        `json:"buildOutputName,omitempty"`
+	BuildOutputName   NullableString `json:"buildOutputName,omitempty"`
 	ConversionFormats NullableString `json:"conversionFormats,omitempty"`
 	// Keep Results - Keep only the most recent builds. Older executions will be deleted along with their associated Virtual Images. The value 0 disables this functionality.
 	KeepResults          *int64                 `json:"keepResults,omitempty"`
@@ -103,36 +103,47 @@ func (o *ImageBuildCreate) SetName(v string) {
 	o.Name = &v
 }
 
-// GetDescription returns the Description field value if set, zero value otherwise.
+// GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ImageBuildCreate) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
+	if o == nil || IsNil(o.Description.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Description
+	return *o.Description.Get()
 }
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ImageBuildCreate) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Description, true
+	return o.Description.Get(), o.Description.IsSet()
 }
 
 // IsSetDescription returns a boolean if a field has been set.
 func (o *ImageBuildCreate) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
+	if o != nil && o.Description.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDescription gets a reference to the given string and assigns it to the Description field.
+// SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *ImageBuildCreate) SetDescription(v string) {
-	o.Description = &v
+	o.Description.Set(&v)
+}
+
+// SetDescriptionNil sets the value for Description to be an explicit nil
+func (o *ImageBuildCreate) SetDescriptionNil() {
+	o.Description.Set(nil)
+}
+
+// UnsetDescription ensures that no value is present for Description, not even an explicit nil
+func (o *ImageBuildCreate) UnsetDescription() {
+	o.Description.Unset()
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
@@ -391,36 +402,47 @@ func (o *ImageBuildCreate) SetSshPassword(v string) {
 	o.SshPassword = &v
 }
 
-// GetStorageProvider returns the StorageProvider field value if set, zero value otherwise.
+// GetStorageProvider returns the StorageProvider field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ImageBuildCreate) GetStorageProvider() string {
-	if o == nil || IsNil(o.StorageProvider) {
+	if o == nil || IsNil(o.StorageProvider.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.StorageProvider
+	return *o.StorageProvider.Get()
 }
 
 // GetStorageProviderOk returns a tuple with the StorageProvider field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ImageBuildCreate) GetStorageProviderOk() (*string, bool) {
-	if o == nil || IsNil(o.StorageProvider) {
+	if o == nil {
 		return nil, false
 	}
-	return o.StorageProvider, true
+	return o.StorageProvider.Get(), o.StorageProvider.IsSet()
 }
 
 // IsSetStorageProvider returns a boolean if a field has been set.
 func (o *ImageBuildCreate) IsSetStorageProvider() bool {
-	if o != nil && !IsNil(o.StorageProvider) {
+	if o != nil && o.StorageProvider.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetStorageProvider gets a reference to the given string and assigns it to the StorageProvider field.
+// SetStorageProvider gets a reference to the given NullableString and assigns it to the StorageProvider field.
 func (o *ImageBuildCreate) SetStorageProvider(v string) {
-	o.StorageProvider = &v
+	o.StorageProvider.Set(&v)
+}
+
+// SetStorageProviderNil sets the value for StorageProvider to be an explicit nil
+func (o *ImageBuildCreate) SetStorageProviderNil() {
+	o.StorageProvider.Set(nil)
+}
+
+// UnsetStorageProvider ensures that no value is present for StorageProvider, not even an explicit nil
+func (o *ImageBuildCreate) UnsetStorageProvider() {
+	o.StorageProvider.Unset()
 }
 
 // GetIsCloudInit returns the IsCloudInit field value if set, zero value otherwise.
@@ -455,36 +477,47 @@ func (o *ImageBuildCreate) SetIsCloudInit(v string) {
 	o.IsCloudInit = &v
 }
 
-// GetBuildOutputName returns the BuildOutputName field value if set, zero value otherwise.
+// GetBuildOutputName returns the BuildOutputName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ImageBuildCreate) GetBuildOutputName() string {
-	if o == nil || IsNil(o.BuildOutputName) {
+	if o == nil || IsNil(o.BuildOutputName.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.BuildOutputName
+	return *o.BuildOutputName.Get()
 }
 
 // GetBuildOutputNameOk returns a tuple with the BuildOutputName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ImageBuildCreate) GetBuildOutputNameOk() (*string, bool) {
-	if o == nil || IsNil(o.BuildOutputName) {
+	if o == nil {
 		return nil, false
 	}
-	return o.BuildOutputName, true
+	return o.BuildOutputName.Get(), o.BuildOutputName.IsSet()
 }
 
 // IsSetBuildOutputName returns a boolean if a field has been set.
 func (o *ImageBuildCreate) IsSetBuildOutputName() bool {
-	if o != nil && !IsNil(o.BuildOutputName) {
+	if o != nil && o.BuildOutputName.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetBuildOutputName gets a reference to the given string and assigns it to the BuildOutputName field.
+// SetBuildOutputName gets a reference to the given NullableString and assigns it to the BuildOutputName field.
 func (o *ImageBuildCreate) SetBuildOutputName(v string) {
-	o.BuildOutputName = &v
+	o.BuildOutputName.Set(&v)
+}
+
+// SetBuildOutputNameNil sets the value for BuildOutputName to be an explicit nil
+func (o *ImageBuildCreate) SetBuildOutputNameNil() {
+	o.BuildOutputName.Set(nil)
+}
+
+// UnsetBuildOutputName ensures that no value is present for BuildOutputName, not even an explicit nil
+func (o *ImageBuildCreate) UnsetBuildOutputName() {
+	o.BuildOutputName.Unset()
 }
 
 // GetConversionFormats returns the ConversionFormats field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -575,8 +608,8 @@ func (o ImageBuildCreate) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !IsNil(o.Description) {
-		toSerialize["description"] = o.Description
+	if o.Description.IsSet() {
+		toSerialize["description"] = o.Description.Get()
 	}
 	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type
@@ -602,14 +635,14 @@ func (o ImageBuildCreate) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.SshPassword) {
 		toSerialize["sshPassword"] = o.SshPassword
 	}
-	if !IsNil(o.StorageProvider) {
-		toSerialize["storageProvider"] = o.StorageProvider
+	if o.StorageProvider.IsSet() {
+		toSerialize["storageProvider"] = o.StorageProvider.Get()
 	}
 	if !IsNil(o.IsCloudInit) {
 		toSerialize["isCloudInit"] = o.IsCloudInit
 	}
-	if !IsNil(o.BuildOutputName) {
-		toSerialize["buildOutputName"] = o.BuildOutputName
+	if o.BuildOutputName.IsSet() {
+		toSerialize["buildOutputName"] = o.BuildOutputName.Get()
 	}
 	if o.ConversionFormats.IsSet() {
 		toSerialize["conversionFormats"] = o.ConversionFormats.Get()

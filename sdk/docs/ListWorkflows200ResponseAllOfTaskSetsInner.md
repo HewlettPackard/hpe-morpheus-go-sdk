@@ -7,12 +7,12 @@ Name | Type | Description | Notes
 **Id** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **NullableString** |  | [optional] 
 **Labels** | Pointer to **[]string** |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
 **AccountId** | Pointer to **int64** |  | [optional] 
-**Platform** | Pointer to **string** |  | [optional] 
+**Platform** | Pointer to **NullableString** |  | [optional] 
 **Visibility** | Pointer to **string** |  | [optional] 
 **AllowCustomConfig** | Pointer to **bool** |  | [optional] 
 **Tasks** | Pointer to **[]int64** |  | [optional] 
@@ -138,6 +138,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *ListWorkflows200ResponseAllOfTaskSetsInner) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *ListWorkflows200ResponseAllOfTaskSetsInner) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetLabels
 
 `func (o *ListWorkflows200ResponseAllOfTaskSetsInner) GetLabels() []string`
@@ -163,6 +173,16 @@ SetLabels sets Labels field to given value.
 
 HasLabels returns a boolean if a field has been set.
 
+### SetLabelsNil
+
+`func (o *ListWorkflows200ResponseAllOfTaskSetsInner) SetLabelsNil(b bool)`
+
+ SetLabelsNil sets the value for Labels to be an explicit nil
+
+### UnsetLabels
+`func (o *ListWorkflows200ResponseAllOfTaskSetsInner) UnsetLabels()`
+
+UnsetLabels ensures that no value is present for Labels, not even an explicit nil
 ### GetDateCreated
 
 `func (o *ListWorkflows200ResponseAllOfTaskSetsInner) GetDateCreated() time.Time`
@@ -263,6 +283,16 @@ SetPlatform sets Platform field to given value.
 
 HasPlatform returns a boolean if a field has been set.
 
+### SetPlatformNil
+
+`func (o *ListWorkflows200ResponseAllOfTaskSetsInner) SetPlatformNil(b bool)`
+
+ SetPlatformNil sets the value for Platform to be an explicit nil
+
+### UnsetPlatform
+`func (o *ListWorkflows200ResponseAllOfTaskSetsInner) UnsetPlatform()`
+
+UnsetPlatform ensures that no value is present for Platform, not even an explicit nil
 ### GetVisibility
 
 `func (o *ListWorkflows200ResponseAllOfTaskSetsInner) GetVisibility() string`
@@ -363,6 +393,16 @@ SetOptionTypes sets OptionTypes field to given value.
 
 HasOptionTypes returns a boolean if a field has been set.
 
+### SetOptionTypesNil
+
+`func (o *ListWorkflows200ResponseAllOfTaskSetsInner) SetOptionTypesNil(b bool)`
+
+ SetOptionTypesNil sets the value for OptionTypes to be an explicit nil
+
+### UnsetOptionTypes
+`func (o *ListWorkflows200ResponseAllOfTaskSetsInner) UnsetOptionTypes()`
+
+UnsetOptionTypes ensures that no value is present for OptionTypes, not even an explicit nil
 ### GetTaskSetTasks
 
 `func (o *ListWorkflows200ResponseAllOfTaskSetsInner) GetTaskSetTasks() []ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInner`

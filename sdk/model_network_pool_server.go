@@ -28,40 +28,40 @@ type NetworkPoolServer struct {
 	Name    *string `json:"name,omitempty"`
 	Enabled *bool   `json:"enabled,omitempty"`
 	// Service URL
-	ServiceUrl *string `json:"serviceUrl,omitempty"`
+	ServiceUrl NullableString `json:"serviceUrl,omitempty"`
 	// Service Host
-	ServiceHost *string `json:"serviceHost,omitempty"`
+	ServiceHost NullableString `json:"serviceHost,omitempty"`
 	// Service Port
-	ServicePort *int32 `json:"servicePort,omitempty"`
+	ServicePort NullableInt32 `json:"servicePort,omitempty"`
 	// Service Mode
-	ServiceMode *string `json:"serviceMode,omitempty"`
+	ServiceMode NullableString `json:"serviceMode,omitempty"`
 	// Service Username
-	ServiceUsername *string `json:"serviceUsername,omitempty"`
+	ServiceUsername NullableString `json:"serviceUsername,omitempty"`
 	// Service Password
-	ServicePassword     *string `json:"servicePassword,omitempty"`
-	ServicePasswordHash *string `json:"servicePasswordHash,omitempty"`
+	ServicePassword     NullableString `json:"servicePassword,omitempty"`
+	ServicePasswordHash *string        `json:"servicePasswordHash,omitempty"`
 	// Throttle Rate
-	ServiceThrottleRate *int64 `json:"serviceThrottleRate,omitempty"`
+	ServiceThrottleRate NullableInt64 `json:"serviceThrottleRate,omitempty"`
 	// Disable SSL SNI Verification
-	IgnoreSsl *bool `json:"ignoreSsl,omitempty"`
+	IgnoreSsl NullableBool `json:"ignoreSsl,omitempty"`
 	// Status
 	Status *string `json:"status,omitempty"`
 	// Status Message
-	StatusMessage *string    `json:"statusMessage,omitempty"`
-	StatusDate    *time.Time `json:"statusDate,omitempty"`
+	StatusMessage NullableString `json:"statusMessage,omitempty"`
+	StatusDate    NullableTime   `json:"statusDate,omitempty"`
 	// Config object varies with pool server type.
 	Config map[string]interface{} `json:"config,omitempty"`
 	// Network Filter
-	NetworkFilter *string `json:"networkFilter,omitempty"`
+	NetworkFilter NullableString `json:"networkFilter,omitempty"`
 	// Zone Filter
-	ZoneFilter *string `json:"zoneFilter,omitempty"`
+	ZoneFilter NullableString `json:"zoneFilter,omitempty"`
 	// Tenant Match
-	TenantMatch          *string                                                                   `json:"tenantMatch,omitempty"`
+	TenantMatch          NullableString                                                            `json:"tenantMatch,omitempty"`
 	DateCreated          *time.Time                                                                `json:"dateCreated,omitempty"`
 	LastUpdated          *time.Time                                                                `json:"lastUpdated,omitempty"`
-	Account              *ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInnerAccount     `json:"account,omitempty"`
+	Account              *ListNetworkServers200ResponseAllOfNetworkServersInnerAccount             `json:"account,omitempty"`
 	Integration          *ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInnerIntegration `json:"integration,omitempty"`
-	Pools                []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner  `json:"pools,omitempty"`
+	Pools                []GetAlerts200ResponseAllOfCheckGroupsInnerInstance                       `json:"pools,omitempty"`
 	Credential           *ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInnerCredential  `json:"credential,omitempty"`
 	AdditionalProperties map[string]interface{}                                                    `json:",remain"`
 }
@@ -75,9 +75,9 @@ type _NetworkPoolServer NetworkPoolServer
 func NewNetworkPoolServer() *NetworkPoolServer {
 	this := NetworkPoolServer{}
 	var serviceThrottleRate int64 = 0
-	this.ServiceThrottleRate = &serviceThrottleRate
+	this.ServiceThrottleRate = *NewNullableInt64(&serviceThrottleRate)
 	var ignoreSsl bool = true
-	this.IgnoreSsl = &ignoreSsl
+	this.IgnoreSsl = *NewNullableBool(&ignoreSsl)
 	return &this
 }
 
@@ -87,9 +87,9 @@ func NewNetworkPoolServer() *NetworkPoolServer {
 func NewNetworkPoolServerWithDefaults() *NetworkPoolServer {
 	this := NetworkPoolServer{}
 	var serviceThrottleRate int64 = 0
-	this.ServiceThrottleRate = &serviceThrottleRate
+	this.ServiceThrottleRate = *NewNullableInt64(&serviceThrottleRate)
 	var ignoreSsl bool = true
-	this.IgnoreSsl = &ignoreSsl
+	this.IgnoreSsl = *NewNullableBool(&ignoreSsl)
 	return &this
 }
 
@@ -221,196 +221,262 @@ func (o *NetworkPoolServer) SetEnabled(v bool) {
 	o.Enabled = &v
 }
 
-// GetServiceUrl returns the ServiceUrl field value if set, zero value otherwise.
+// GetServiceUrl returns the ServiceUrl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NetworkPoolServer) GetServiceUrl() string {
-	if o == nil || IsNil(o.ServiceUrl) {
+	if o == nil || IsNil(o.ServiceUrl.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ServiceUrl
+	return *o.ServiceUrl.Get()
 }
 
 // GetServiceUrlOk returns a tuple with the ServiceUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NetworkPoolServer) GetServiceUrlOk() (*string, bool) {
-	if o == nil || IsNil(o.ServiceUrl) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ServiceUrl, true
+	return o.ServiceUrl.Get(), o.ServiceUrl.IsSet()
 }
 
 // IsSetServiceUrl returns a boolean if a field has been set.
 func (o *NetworkPoolServer) IsSetServiceUrl() bool {
-	if o != nil && !IsNil(o.ServiceUrl) {
+	if o != nil && o.ServiceUrl.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetServiceUrl gets a reference to the given string and assigns it to the ServiceUrl field.
+// SetServiceUrl gets a reference to the given NullableString and assigns it to the ServiceUrl field.
 func (o *NetworkPoolServer) SetServiceUrl(v string) {
-	o.ServiceUrl = &v
+	o.ServiceUrl.Set(&v)
 }
 
-// GetServiceHost returns the ServiceHost field value if set, zero value otherwise.
+// SetServiceUrlNil sets the value for ServiceUrl to be an explicit nil
+func (o *NetworkPoolServer) SetServiceUrlNil() {
+	o.ServiceUrl.Set(nil)
+}
+
+// UnsetServiceUrl ensures that no value is present for ServiceUrl, not even an explicit nil
+func (o *NetworkPoolServer) UnsetServiceUrl() {
+	o.ServiceUrl.Unset()
+}
+
+// GetServiceHost returns the ServiceHost field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NetworkPoolServer) GetServiceHost() string {
-	if o == nil || IsNil(o.ServiceHost) {
+	if o == nil || IsNil(o.ServiceHost.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ServiceHost
+	return *o.ServiceHost.Get()
 }
 
 // GetServiceHostOk returns a tuple with the ServiceHost field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NetworkPoolServer) GetServiceHostOk() (*string, bool) {
-	if o == nil || IsNil(o.ServiceHost) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ServiceHost, true
+	return o.ServiceHost.Get(), o.ServiceHost.IsSet()
 }
 
 // IsSetServiceHost returns a boolean if a field has been set.
 func (o *NetworkPoolServer) IsSetServiceHost() bool {
-	if o != nil && !IsNil(o.ServiceHost) {
+	if o != nil && o.ServiceHost.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetServiceHost gets a reference to the given string and assigns it to the ServiceHost field.
+// SetServiceHost gets a reference to the given NullableString and assigns it to the ServiceHost field.
 func (o *NetworkPoolServer) SetServiceHost(v string) {
-	o.ServiceHost = &v
+	o.ServiceHost.Set(&v)
 }
 
-// GetServicePort returns the ServicePort field value if set, zero value otherwise.
+// SetServiceHostNil sets the value for ServiceHost to be an explicit nil
+func (o *NetworkPoolServer) SetServiceHostNil() {
+	o.ServiceHost.Set(nil)
+}
+
+// UnsetServiceHost ensures that no value is present for ServiceHost, not even an explicit nil
+func (o *NetworkPoolServer) UnsetServiceHost() {
+	o.ServiceHost.Unset()
+}
+
+// GetServicePort returns the ServicePort field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NetworkPoolServer) GetServicePort() int32 {
-	if o == nil || IsNil(o.ServicePort) {
+	if o == nil || IsNil(o.ServicePort.Get()) {
 		var ret int32
 		return ret
 	}
-	return *o.ServicePort
+	return *o.ServicePort.Get()
 }
 
 // GetServicePortOk returns a tuple with the ServicePort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NetworkPoolServer) GetServicePortOk() (*int32, bool) {
-	if o == nil || IsNil(o.ServicePort) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ServicePort, true
+	return o.ServicePort.Get(), o.ServicePort.IsSet()
 }
 
 // IsSetServicePort returns a boolean if a field has been set.
 func (o *NetworkPoolServer) IsSetServicePort() bool {
-	if o != nil && !IsNil(o.ServicePort) {
+	if o != nil && o.ServicePort.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetServicePort gets a reference to the given int32 and assigns it to the ServicePort field.
+// SetServicePort gets a reference to the given NullableInt32 and assigns it to the ServicePort field.
 func (o *NetworkPoolServer) SetServicePort(v int32) {
-	o.ServicePort = &v
+	o.ServicePort.Set(&v)
 }
 
-// GetServiceMode returns the ServiceMode field value if set, zero value otherwise.
+// SetServicePortNil sets the value for ServicePort to be an explicit nil
+func (o *NetworkPoolServer) SetServicePortNil() {
+	o.ServicePort.Set(nil)
+}
+
+// UnsetServicePort ensures that no value is present for ServicePort, not even an explicit nil
+func (o *NetworkPoolServer) UnsetServicePort() {
+	o.ServicePort.Unset()
+}
+
+// GetServiceMode returns the ServiceMode field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NetworkPoolServer) GetServiceMode() string {
-	if o == nil || IsNil(o.ServiceMode) {
+	if o == nil || IsNil(o.ServiceMode.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ServiceMode
+	return *o.ServiceMode.Get()
 }
 
 // GetServiceModeOk returns a tuple with the ServiceMode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NetworkPoolServer) GetServiceModeOk() (*string, bool) {
-	if o == nil || IsNil(o.ServiceMode) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ServiceMode, true
+	return o.ServiceMode.Get(), o.ServiceMode.IsSet()
 }
 
 // IsSetServiceMode returns a boolean if a field has been set.
 func (o *NetworkPoolServer) IsSetServiceMode() bool {
-	if o != nil && !IsNil(o.ServiceMode) {
+	if o != nil && o.ServiceMode.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetServiceMode gets a reference to the given string and assigns it to the ServiceMode field.
+// SetServiceMode gets a reference to the given NullableString and assigns it to the ServiceMode field.
 func (o *NetworkPoolServer) SetServiceMode(v string) {
-	o.ServiceMode = &v
+	o.ServiceMode.Set(&v)
 }
 
-// GetServiceUsername returns the ServiceUsername field value if set, zero value otherwise.
+// SetServiceModeNil sets the value for ServiceMode to be an explicit nil
+func (o *NetworkPoolServer) SetServiceModeNil() {
+	o.ServiceMode.Set(nil)
+}
+
+// UnsetServiceMode ensures that no value is present for ServiceMode, not even an explicit nil
+func (o *NetworkPoolServer) UnsetServiceMode() {
+	o.ServiceMode.Unset()
+}
+
+// GetServiceUsername returns the ServiceUsername field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NetworkPoolServer) GetServiceUsername() string {
-	if o == nil || IsNil(o.ServiceUsername) {
+	if o == nil || IsNil(o.ServiceUsername.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ServiceUsername
+	return *o.ServiceUsername.Get()
 }
 
 // GetServiceUsernameOk returns a tuple with the ServiceUsername field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NetworkPoolServer) GetServiceUsernameOk() (*string, bool) {
-	if o == nil || IsNil(o.ServiceUsername) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ServiceUsername, true
+	return o.ServiceUsername.Get(), o.ServiceUsername.IsSet()
 }
 
 // IsSetServiceUsername returns a boolean if a field has been set.
 func (o *NetworkPoolServer) IsSetServiceUsername() bool {
-	if o != nil && !IsNil(o.ServiceUsername) {
+	if o != nil && o.ServiceUsername.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetServiceUsername gets a reference to the given string and assigns it to the ServiceUsername field.
+// SetServiceUsername gets a reference to the given NullableString and assigns it to the ServiceUsername field.
 func (o *NetworkPoolServer) SetServiceUsername(v string) {
-	o.ServiceUsername = &v
+	o.ServiceUsername.Set(&v)
 }
 
-// GetServicePassword returns the ServicePassword field value if set, zero value otherwise.
+// SetServiceUsernameNil sets the value for ServiceUsername to be an explicit nil
+func (o *NetworkPoolServer) SetServiceUsernameNil() {
+	o.ServiceUsername.Set(nil)
+}
+
+// UnsetServiceUsername ensures that no value is present for ServiceUsername, not even an explicit nil
+func (o *NetworkPoolServer) UnsetServiceUsername() {
+	o.ServiceUsername.Unset()
+}
+
+// GetServicePassword returns the ServicePassword field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NetworkPoolServer) GetServicePassword() string {
-	if o == nil || IsNil(o.ServicePassword) {
+	if o == nil || IsNil(o.ServicePassword.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ServicePassword
+	return *o.ServicePassword.Get()
 }
 
 // GetServicePasswordOk returns a tuple with the ServicePassword field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NetworkPoolServer) GetServicePasswordOk() (*string, bool) {
-	if o == nil || IsNil(o.ServicePassword) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ServicePassword, true
+	return o.ServicePassword.Get(), o.ServicePassword.IsSet()
 }
 
 // IsSetServicePassword returns a boolean if a field has been set.
 func (o *NetworkPoolServer) IsSetServicePassword() bool {
-	if o != nil && !IsNil(o.ServicePassword) {
+	if o != nil && o.ServicePassword.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetServicePassword gets a reference to the given string and assigns it to the ServicePassword field.
+// SetServicePassword gets a reference to the given NullableString and assigns it to the ServicePassword field.
 func (o *NetworkPoolServer) SetServicePassword(v string) {
-	o.ServicePassword = &v
+	o.ServicePassword.Set(&v)
+}
+
+// SetServicePasswordNil sets the value for ServicePassword to be an explicit nil
+func (o *NetworkPoolServer) SetServicePasswordNil() {
+	o.ServicePassword.Set(nil)
+}
+
+// UnsetServicePassword ensures that no value is present for ServicePassword, not even an explicit nil
+func (o *NetworkPoolServer) UnsetServicePassword() {
+	o.ServicePassword.Unset()
 }
 
 // GetServicePasswordHash returns the ServicePasswordHash field value if set, zero value otherwise.
@@ -445,68 +511,90 @@ func (o *NetworkPoolServer) SetServicePasswordHash(v string) {
 	o.ServicePasswordHash = &v
 }
 
-// GetServiceThrottleRate returns the ServiceThrottleRate field value if set, zero value otherwise.
+// GetServiceThrottleRate returns the ServiceThrottleRate field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NetworkPoolServer) GetServiceThrottleRate() int64 {
-	if o == nil || IsNil(o.ServiceThrottleRate) {
+	if o == nil || IsNil(o.ServiceThrottleRate.Get()) {
 		var ret int64
 		return ret
 	}
-	return *o.ServiceThrottleRate
+	return *o.ServiceThrottleRate.Get()
 }
 
 // GetServiceThrottleRateOk returns a tuple with the ServiceThrottleRate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NetworkPoolServer) GetServiceThrottleRateOk() (*int64, bool) {
-	if o == nil || IsNil(o.ServiceThrottleRate) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ServiceThrottleRate, true
+	return o.ServiceThrottleRate.Get(), o.ServiceThrottleRate.IsSet()
 }
 
 // IsSetServiceThrottleRate returns a boolean if a field has been set.
 func (o *NetworkPoolServer) IsSetServiceThrottleRate() bool {
-	if o != nil && !IsNil(o.ServiceThrottleRate) {
+	if o != nil && o.ServiceThrottleRate.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetServiceThrottleRate gets a reference to the given int64 and assigns it to the ServiceThrottleRate field.
+// SetServiceThrottleRate gets a reference to the given NullableInt64 and assigns it to the ServiceThrottleRate field.
 func (o *NetworkPoolServer) SetServiceThrottleRate(v int64) {
-	o.ServiceThrottleRate = &v
+	o.ServiceThrottleRate.Set(&v)
 }
 
-// GetIgnoreSsl returns the IgnoreSsl field value if set, zero value otherwise.
+// SetServiceThrottleRateNil sets the value for ServiceThrottleRate to be an explicit nil
+func (o *NetworkPoolServer) SetServiceThrottleRateNil() {
+	o.ServiceThrottleRate.Set(nil)
+}
+
+// UnsetServiceThrottleRate ensures that no value is present for ServiceThrottleRate, not even an explicit nil
+func (o *NetworkPoolServer) UnsetServiceThrottleRate() {
+	o.ServiceThrottleRate.Unset()
+}
+
+// GetIgnoreSsl returns the IgnoreSsl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NetworkPoolServer) GetIgnoreSsl() bool {
-	if o == nil || IsNil(o.IgnoreSsl) {
+	if o == nil || IsNil(o.IgnoreSsl.Get()) {
 		var ret bool
 		return ret
 	}
-	return *o.IgnoreSsl
+	return *o.IgnoreSsl.Get()
 }
 
 // GetIgnoreSslOk returns a tuple with the IgnoreSsl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NetworkPoolServer) GetIgnoreSslOk() (*bool, bool) {
-	if o == nil || IsNil(o.IgnoreSsl) {
+	if o == nil {
 		return nil, false
 	}
-	return o.IgnoreSsl, true
+	return o.IgnoreSsl.Get(), o.IgnoreSsl.IsSet()
 }
 
 // IsSetIgnoreSsl returns a boolean if a field has been set.
 func (o *NetworkPoolServer) IsSetIgnoreSsl() bool {
-	if o != nil && !IsNil(o.IgnoreSsl) {
+	if o != nil && o.IgnoreSsl.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetIgnoreSsl gets a reference to the given bool and assigns it to the IgnoreSsl field.
+// SetIgnoreSsl gets a reference to the given NullableBool and assigns it to the IgnoreSsl field.
 func (o *NetworkPoolServer) SetIgnoreSsl(v bool) {
-	o.IgnoreSsl = &v
+	o.IgnoreSsl.Set(&v)
+}
+
+// SetIgnoreSslNil sets the value for IgnoreSsl to be an explicit nil
+func (o *NetworkPoolServer) SetIgnoreSslNil() {
+	o.IgnoreSsl.Set(nil)
+}
+
+// UnsetIgnoreSsl ensures that no value is present for IgnoreSsl, not even an explicit nil
+func (o *NetworkPoolServer) UnsetIgnoreSsl() {
+	o.IgnoreSsl.Unset()
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
@@ -541,68 +629,90 @@ func (o *NetworkPoolServer) SetStatus(v string) {
 	o.Status = &v
 }
 
-// GetStatusMessage returns the StatusMessage field value if set, zero value otherwise.
+// GetStatusMessage returns the StatusMessage field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NetworkPoolServer) GetStatusMessage() string {
-	if o == nil || IsNil(o.StatusMessage) {
+	if o == nil || IsNil(o.StatusMessage.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.StatusMessage
+	return *o.StatusMessage.Get()
 }
 
 // GetStatusMessageOk returns a tuple with the StatusMessage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NetworkPoolServer) GetStatusMessageOk() (*string, bool) {
-	if o == nil || IsNil(o.StatusMessage) {
+	if o == nil {
 		return nil, false
 	}
-	return o.StatusMessage, true
+	return o.StatusMessage.Get(), o.StatusMessage.IsSet()
 }
 
 // IsSetStatusMessage returns a boolean if a field has been set.
 func (o *NetworkPoolServer) IsSetStatusMessage() bool {
-	if o != nil && !IsNil(o.StatusMessage) {
+	if o != nil && o.StatusMessage.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetStatusMessage gets a reference to the given string and assigns it to the StatusMessage field.
+// SetStatusMessage gets a reference to the given NullableString and assigns it to the StatusMessage field.
 func (o *NetworkPoolServer) SetStatusMessage(v string) {
-	o.StatusMessage = &v
+	o.StatusMessage.Set(&v)
 }
 
-// GetStatusDate returns the StatusDate field value if set, zero value otherwise.
+// SetStatusMessageNil sets the value for StatusMessage to be an explicit nil
+func (o *NetworkPoolServer) SetStatusMessageNil() {
+	o.StatusMessage.Set(nil)
+}
+
+// UnsetStatusMessage ensures that no value is present for StatusMessage, not even an explicit nil
+func (o *NetworkPoolServer) UnsetStatusMessage() {
+	o.StatusMessage.Unset()
+}
+
+// GetStatusDate returns the StatusDate field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NetworkPoolServer) GetStatusDate() time.Time {
-	if o == nil || IsNil(o.StatusDate) {
+	if o == nil || IsNil(o.StatusDate.Get()) {
 		var ret time.Time
 		return ret
 	}
-	return *o.StatusDate
+	return *o.StatusDate.Get()
 }
 
 // GetStatusDateOk returns a tuple with the StatusDate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NetworkPoolServer) GetStatusDateOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.StatusDate) {
+	if o == nil {
 		return nil, false
 	}
-	return o.StatusDate, true
+	return o.StatusDate.Get(), o.StatusDate.IsSet()
 }
 
 // IsSetStatusDate returns a boolean if a field has been set.
 func (o *NetworkPoolServer) IsSetStatusDate() bool {
-	if o != nil && !IsNil(o.StatusDate) {
+	if o != nil && o.StatusDate.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetStatusDate gets a reference to the given time.Time and assigns it to the StatusDate field.
+// SetStatusDate gets a reference to the given NullableTime and assigns it to the StatusDate field.
 func (o *NetworkPoolServer) SetStatusDate(v time.Time) {
-	o.StatusDate = &v
+	o.StatusDate.Set(&v)
+}
+
+// SetStatusDateNil sets the value for StatusDate to be an explicit nil
+func (o *NetworkPoolServer) SetStatusDateNil() {
+	o.StatusDate.Set(nil)
+}
+
+// UnsetStatusDate ensures that no value is present for StatusDate, not even an explicit nil
+func (o *NetworkPoolServer) UnsetStatusDate() {
+	o.StatusDate.Unset()
 }
 
 // GetConfig returns the Config field value if set, zero value otherwise.
@@ -637,100 +747,133 @@ func (o *NetworkPoolServer) SetConfig(v map[string]interface{}) {
 	o.Config = v
 }
 
-// GetNetworkFilter returns the NetworkFilter field value if set, zero value otherwise.
+// GetNetworkFilter returns the NetworkFilter field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NetworkPoolServer) GetNetworkFilter() string {
-	if o == nil || IsNil(o.NetworkFilter) {
+	if o == nil || IsNil(o.NetworkFilter.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.NetworkFilter
+	return *o.NetworkFilter.Get()
 }
 
 // GetNetworkFilterOk returns a tuple with the NetworkFilter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NetworkPoolServer) GetNetworkFilterOk() (*string, bool) {
-	if o == nil || IsNil(o.NetworkFilter) {
+	if o == nil {
 		return nil, false
 	}
-	return o.NetworkFilter, true
+	return o.NetworkFilter.Get(), o.NetworkFilter.IsSet()
 }
 
 // IsSetNetworkFilter returns a boolean if a field has been set.
 func (o *NetworkPoolServer) IsSetNetworkFilter() bool {
-	if o != nil && !IsNil(o.NetworkFilter) {
+	if o != nil && o.NetworkFilter.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetNetworkFilter gets a reference to the given string and assigns it to the NetworkFilter field.
+// SetNetworkFilter gets a reference to the given NullableString and assigns it to the NetworkFilter field.
 func (o *NetworkPoolServer) SetNetworkFilter(v string) {
-	o.NetworkFilter = &v
+	o.NetworkFilter.Set(&v)
 }
 
-// GetZoneFilter returns the ZoneFilter field value if set, zero value otherwise.
+// SetNetworkFilterNil sets the value for NetworkFilter to be an explicit nil
+func (o *NetworkPoolServer) SetNetworkFilterNil() {
+	o.NetworkFilter.Set(nil)
+}
+
+// UnsetNetworkFilter ensures that no value is present for NetworkFilter, not even an explicit nil
+func (o *NetworkPoolServer) UnsetNetworkFilter() {
+	o.NetworkFilter.Unset()
+}
+
+// GetZoneFilter returns the ZoneFilter field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NetworkPoolServer) GetZoneFilter() string {
-	if o == nil || IsNil(o.ZoneFilter) {
+	if o == nil || IsNil(o.ZoneFilter.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ZoneFilter
+	return *o.ZoneFilter.Get()
 }
 
 // GetZoneFilterOk returns a tuple with the ZoneFilter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NetworkPoolServer) GetZoneFilterOk() (*string, bool) {
-	if o == nil || IsNil(o.ZoneFilter) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ZoneFilter, true
+	return o.ZoneFilter.Get(), o.ZoneFilter.IsSet()
 }
 
 // IsSetZoneFilter returns a boolean if a field has been set.
 func (o *NetworkPoolServer) IsSetZoneFilter() bool {
-	if o != nil && !IsNil(o.ZoneFilter) {
+	if o != nil && o.ZoneFilter.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetZoneFilter gets a reference to the given string and assigns it to the ZoneFilter field.
+// SetZoneFilter gets a reference to the given NullableString and assigns it to the ZoneFilter field.
 func (o *NetworkPoolServer) SetZoneFilter(v string) {
-	o.ZoneFilter = &v
+	o.ZoneFilter.Set(&v)
 }
 
-// GetTenantMatch returns the TenantMatch field value if set, zero value otherwise.
+// SetZoneFilterNil sets the value for ZoneFilter to be an explicit nil
+func (o *NetworkPoolServer) SetZoneFilterNil() {
+	o.ZoneFilter.Set(nil)
+}
+
+// UnsetZoneFilter ensures that no value is present for ZoneFilter, not even an explicit nil
+func (o *NetworkPoolServer) UnsetZoneFilter() {
+	o.ZoneFilter.Unset()
+}
+
+// GetTenantMatch returns the TenantMatch field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NetworkPoolServer) GetTenantMatch() string {
-	if o == nil || IsNil(o.TenantMatch) {
+	if o == nil || IsNil(o.TenantMatch.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.TenantMatch
+	return *o.TenantMatch.Get()
 }
 
 // GetTenantMatchOk returns a tuple with the TenantMatch field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NetworkPoolServer) GetTenantMatchOk() (*string, bool) {
-	if o == nil || IsNil(o.TenantMatch) {
+	if o == nil {
 		return nil, false
 	}
-	return o.TenantMatch, true
+	return o.TenantMatch.Get(), o.TenantMatch.IsSet()
 }
 
 // IsSetTenantMatch returns a boolean if a field has been set.
 func (o *NetworkPoolServer) IsSetTenantMatch() bool {
-	if o != nil && !IsNil(o.TenantMatch) {
+	if o != nil && o.TenantMatch.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetTenantMatch gets a reference to the given string and assigns it to the TenantMatch field.
+// SetTenantMatch gets a reference to the given NullableString and assigns it to the TenantMatch field.
 func (o *NetworkPoolServer) SetTenantMatch(v string) {
-	o.TenantMatch = &v
+	o.TenantMatch.Set(&v)
+}
+
+// SetTenantMatchNil sets the value for TenantMatch to be an explicit nil
+func (o *NetworkPoolServer) SetTenantMatchNil() {
+	o.TenantMatch.Set(nil)
+}
+
+// UnsetTenantMatch ensures that no value is present for TenantMatch, not even an explicit nil
+func (o *NetworkPoolServer) UnsetTenantMatch() {
+	o.TenantMatch.Unset()
 }
 
 // GetDateCreated returns the DateCreated field value if set, zero value otherwise.
@@ -798,9 +941,9 @@ func (o *NetworkPoolServer) SetLastUpdated(v time.Time) {
 }
 
 // GetAccount returns the Account field value if set, zero value otherwise.
-func (o *NetworkPoolServer) GetAccount() ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInnerAccount {
+func (o *NetworkPoolServer) GetAccount() ListNetworkServers200ResponseAllOfNetworkServersInnerAccount {
 	if o == nil || IsNil(o.Account) {
-		var ret ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInnerAccount
+		var ret ListNetworkServers200ResponseAllOfNetworkServersInnerAccount
 		return ret
 	}
 	return *o.Account
@@ -808,7 +951,7 @@ func (o *NetworkPoolServer) GetAccount() ListNetworkPoolServers200ResponseAllOfN
 
 // GetAccountOk returns a tuple with the Account field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *NetworkPoolServer) GetAccountOk() (*ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInnerAccount, bool) {
+func (o *NetworkPoolServer) GetAccountOk() (*ListNetworkServers200ResponseAllOfNetworkServersInnerAccount, bool) {
 	if o == nil || IsNil(o.Account) {
 		return nil, false
 	}
@@ -824,8 +967,8 @@ func (o *NetworkPoolServer) IsSetAccount() bool {
 	return false
 }
 
-// SetAccount gets a reference to the given ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInnerAccount and assigns it to the Account field.
-func (o *NetworkPoolServer) SetAccount(v ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInnerAccount) {
+// SetAccount gets a reference to the given ListNetworkServers200ResponseAllOfNetworkServersInnerAccount and assigns it to the Account field.
+func (o *NetworkPoolServer) SetAccount(v ListNetworkServers200ResponseAllOfNetworkServersInnerAccount) {
 	o.Account = &v
 }
 
@@ -862,9 +1005,9 @@ func (o *NetworkPoolServer) SetIntegration(v ListNetworkPoolServers200ResponseAl
 }
 
 // GetPools returns the Pools field value if set, zero value otherwise.
-func (o *NetworkPoolServer) GetPools() []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *NetworkPoolServer) GetPools() []GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.Pools) {
-		var ret []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret []GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return o.Pools
@@ -872,7 +1015,7 @@ func (o *NetworkPoolServer) GetPools() []ListApplianceSettings200ResponseApplian
 
 // GetPoolsOk returns a tuple with the Pools field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *NetworkPoolServer) GetPoolsOk() ([]ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *NetworkPoolServer) GetPoolsOk() ([]GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.Pools) {
 		return nil, false
 	}
@@ -888,8 +1031,8 @@ func (o *NetworkPoolServer) IsSetPools() bool {
 	return false
 }
 
-// SetPools gets a reference to the given []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the Pools field.
-func (o *NetworkPoolServer) SetPools(v []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetPools gets a reference to the given []GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Pools field.
+func (o *NetworkPoolServer) SetPools(v []GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.Pools = v
 }
 
@@ -947,53 +1090,53 @@ func (o NetworkPoolServer) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Enabled) {
 		toSerialize["enabled"] = o.Enabled
 	}
-	if !IsNil(o.ServiceUrl) {
-		toSerialize["serviceUrl"] = o.ServiceUrl
+	if o.ServiceUrl.IsSet() {
+		toSerialize["serviceUrl"] = o.ServiceUrl.Get()
 	}
-	if !IsNil(o.ServiceHost) {
-		toSerialize["serviceHost"] = o.ServiceHost
+	if o.ServiceHost.IsSet() {
+		toSerialize["serviceHost"] = o.ServiceHost.Get()
 	}
-	if !IsNil(o.ServicePort) {
-		toSerialize["servicePort"] = o.ServicePort
+	if o.ServicePort.IsSet() {
+		toSerialize["servicePort"] = o.ServicePort.Get()
 	}
-	if !IsNil(o.ServiceMode) {
-		toSerialize["serviceMode"] = o.ServiceMode
+	if o.ServiceMode.IsSet() {
+		toSerialize["serviceMode"] = o.ServiceMode.Get()
 	}
-	if !IsNil(o.ServiceUsername) {
-		toSerialize["serviceUsername"] = o.ServiceUsername
+	if o.ServiceUsername.IsSet() {
+		toSerialize["serviceUsername"] = o.ServiceUsername.Get()
 	}
-	if !IsNil(o.ServicePassword) {
-		toSerialize["servicePassword"] = o.ServicePassword
+	if o.ServicePassword.IsSet() {
+		toSerialize["servicePassword"] = o.ServicePassword.Get()
 	}
 	if !IsNil(o.ServicePasswordHash) {
 		toSerialize["servicePasswordHash"] = o.ServicePasswordHash
 	}
-	if !IsNil(o.ServiceThrottleRate) {
-		toSerialize["serviceThrottleRate"] = o.ServiceThrottleRate
+	if o.ServiceThrottleRate.IsSet() {
+		toSerialize["serviceThrottleRate"] = o.ServiceThrottleRate.Get()
 	}
-	if !IsNil(o.IgnoreSsl) {
-		toSerialize["ignoreSsl"] = o.IgnoreSsl
+	if o.IgnoreSsl.IsSet() {
+		toSerialize["ignoreSsl"] = o.IgnoreSsl.Get()
 	}
 	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status
 	}
-	if !IsNil(o.StatusMessage) {
-		toSerialize["statusMessage"] = o.StatusMessage
+	if o.StatusMessage.IsSet() {
+		toSerialize["statusMessage"] = o.StatusMessage.Get()
 	}
-	if !IsNil(o.StatusDate) {
-		toSerialize["statusDate"] = o.StatusDate
+	if o.StatusDate.IsSet() {
+		toSerialize["statusDate"] = o.StatusDate.Get()
 	}
 	if !IsNil(o.Config) {
 		toSerialize["config"] = o.Config
 	}
-	if !IsNil(o.NetworkFilter) {
-		toSerialize["networkFilter"] = o.NetworkFilter
+	if o.NetworkFilter.IsSet() {
+		toSerialize["networkFilter"] = o.NetworkFilter.Get()
 	}
-	if !IsNil(o.ZoneFilter) {
-		toSerialize["zoneFilter"] = o.ZoneFilter
+	if o.ZoneFilter.IsSet() {
+		toSerialize["zoneFilter"] = o.ZoneFilter.Get()
 	}
-	if !IsNil(o.TenantMatch) {
-		toSerialize["tenantMatch"] = o.TenantMatch
+	if o.TenantMatch.IsSet() {
+		toSerialize["tenantMatch"] = o.TenantMatch.Get()
 	}
 	if !IsNil(o.DateCreated) {
 		toSerialize["dateCreated"] = o.DateCreated

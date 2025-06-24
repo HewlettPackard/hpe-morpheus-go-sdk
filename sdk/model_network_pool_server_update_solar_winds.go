@@ -25,13 +25,13 @@ type NetworkPoolServerUpdateSolarWinds struct {
 	// Can be used to enable / disable the network pool server.
 	Enabled *bool `json:"enabled,omitempty"`
 	// URL
-	ServiceUrl *string `json:"serviceUrl,omitempty"`
+	ServiceUrl NullableString `json:"serviceUrl,omitempty"`
 	// Username
-	ServiceUsername *string `json:"serviceUsername,omitempty"`
+	ServiceUsername NullableString `json:"serviceUsername,omitempty"`
 	// Password
-	ServicePassword *string `json:"servicePassword,omitempty"`
+	ServicePassword NullableString `json:"servicePassword,omitempty"`
 	// Throttle Rate
-	ServiceThrottleRate *int64 `json:"serviceThrottleRate,omitempty"`
+	ServiceThrottleRate NullableInt64 `json:"serviceThrottleRate,omitempty"`
 	// Disable SSL SNI Verification
 	IgnoreSsl            *bool                           `json:"ignoreSsl,omitempty"`
 	Config               *BluecatNetworkPoolServerConfig `json:"config,omitempty"`
@@ -50,7 +50,7 @@ func NewNetworkPoolServerUpdateSolarWinds() *NetworkPoolServerUpdateSolarWinds {
 	var enabled bool = true
 	this.Enabled = &enabled
 	var serviceThrottleRate int64 = 0
-	this.ServiceThrottleRate = &serviceThrottleRate
+	this.ServiceThrottleRate = *NewNullableInt64(&serviceThrottleRate)
 	return &this
 }
 
@@ -62,7 +62,7 @@ func NewNetworkPoolServerUpdateSolarWindsWithDefaults() *NetworkPoolServerUpdate
 	var enabled bool = true
 	this.Enabled = &enabled
 	var serviceThrottleRate int64 = 0
-	this.ServiceThrottleRate = &serviceThrottleRate
+	this.ServiceThrottleRate = *NewNullableInt64(&serviceThrottleRate)
 	return &this
 }
 
@@ -130,132 +130,176 @@ func (o *NetworkPoolServerUpdateSolarWinds) SetEnabled(v bool) {
 	o.Enabled = &v
 }
 
-// GetServiceUrl returns the ServiceUrl field value if set, zero value otherwise.
+// GetServiceUrl returns the ServiceUrl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NetworkPoolServerUpdateSolarWinds) GetServiceUrl() string {
-	if o == nil || IsNil(o.ServiceUrl) {
+	if o == nil || IsNil(o.ServiceUrl.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ServiceUrl
+	return *o.ServiceUrl.Get()
 }
 
 // GetServiceUrlOk returns a tuple with the ServiceUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NetworkPoolServerUpdateSolarWinds) GetServiceUrlOk() (*string, bool) {
-	if o == nil || IsNil(o.ServiceUrl) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ServiceUrl, true
+	return o.ServiceUrl.Get(), o.ServiceUrl.IsSet()
 }
 
 // IsSetServiceUrl returns a boolean if a field has been set.
 func (o *NetworkPoolServerUpdateSolarWinds) IsSetServiceUrl() bool {
-	if o != nil && !IsNil(o.ServiceUrl) {
+	if o != nil && o.ServiceUrl.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetServiceUrl gets a reference to the given string and assigns it to the ServiceUrl field.
+// SetServiceUrl gets a reference to the given NullableString and assigns it to the ServiceUrl field.
 func (o *NetworkPoolServerUpdateSolarWinds) SetServiceUrl(v string) {
-	o.ServiceUrl = &v
+	o.ServiceUrl.Set(&v)
 }
 
-// GetServiceUsername returns the ServiceUsername field value if set, zero value otherwise.
+// SetServiceUrlNil sets the value for ServiceUrl to be an explicit nil
+func (o *NetworkPoolServerUpdateSolarWinds) SetServiceUrlNil() {
+	o.ServiceUrl.Set(nil)
+}
+
+// UnsetServiceUrl ensures that no value is present for ServiceUrl, not even an explicit nil
+func (o *NetworkPoolServerUpdateSolarWinds) UnsetServiceUrl() {
+	o.ServiceUrl.Unset()
+}
+
+// GetServiceUsername returns the ServiceUsername field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NetworkPoolServerUpdateSolarWinds) GetServiceUsername() string {
-	if o == nil || IsNil(o.ServiceUsername) {
+	if o == nil || IsNil(o.ServiceUsername.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ServiceUsername
+	return *o.ServiceUsername.Get()
 }
 
 // GetServiceUsernameOk returns a tuple with the ServiceUsername field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NetworkPoolServerUpdateSolarWinds) GetServiceUsernameOk() (*string, bool) {
-	if o == nil || IsNil(o.ServiceUsername) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ServiceUsername, true
+	return o.ServiceUsername.Get(), o.ServiceUsername.IsSet()
 }
 
 // IsSetServiceUsername returns a boolean if a field has been set.
 func (o *NetworkPoolServerUpdateSolarWinds) IsSetServiceUsername() bool {
-	if o != nil && !IsNil(o.ServiceUsername) {
+	if o != nil && o.ServiceUsername.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetServiceUsername gets a reference to the given string and assigns it to the ServiceUsername field.
+// SetServiceUsername gets a reference to the given NullableString and assigns it to the ServiceUsername field.
 func (o *NetworkPoolServerUpdateSolarWinds) SetServiceUsername(v string) {
-	o.ServiceUsername = &v
+	o.ServiceUsername.Set(&v)
 }
 
-// GetServicePassword returns the ServicePassword field value if set, zero value otherwise.
+// SetServiceUsernameNil sets the value for ServiceUsername to be an explicit nil
+func (o *NetworkPoolServerUpdateSolarWinds) SetServiceUsernameNil() {
+	o.ServiceUsername.Set(nil)
+}
+
+// UnsetServiceUsername ensures that no value is present for ServiceUsername, not even an explicit nil
+func (o *NetworkPoolServerUpdateSolarWinds) UnsetServiceUsername() {
+	o.ServiceUsername.Unset()
+}
+
+// GetServicePassword returns the ServicePassword field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NetworkPoolServerUpdateSolarWinds) GetServicePassword() string {
-	if o == nil || IsNil(o.ServicePassword) {
+	if o == nil || IsNil(o.ServicePassword.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ServicePassword
+	return *o.ServicePassword.Get()
 }
 
 // GetServicePasswordOk returns a tuple with the ServicePassword field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NetworkPoolServerUpdateSolarWinds) GetServicePasswordOk() (*string, bool) {
-	if o == nil || IsNil(o.ServicePassword) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ServicePassword, true
+	return o.ServicePassword.Get(), o.ServicePassword.IsSet()
 }
 
 // IsSetServicePassword returns a boolean if a field has been set.
 func (o *NetworkPoolServerUpdateSolarWinds) IsSetServicePassword() bool {
-	if o != nil && !IsNil(o.ServicePassword) {
+	if o != nil && o.ServicePassword.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetServicePassword gets a reference to the given string and assigns it to the ServicePassword field.
+// SetServicePassword gets a reference to the given NullableString and assigns it to the ServicePassword field.
 func (o *NetworkPoolServerUpdateSolarWinds) SetServicePassword(v string) {
-	o.ServicePassword = &v
+	o.ServicePassword.Set(&v)
 }
 
-// GetServiceThrottleRate returns the ServiceThrottleRate field value if set, zero value otherwise.
+// SetServicePasswordNil sets the value for ServicePassword to be an explicit nil
+func (o *NetworkPoolServerUpdateSolarWinds) SetServicePasswordNil() {
+	o.ServicePassword.Set(nil)
+}
+
+// UnsetServicePassword ensures that no value is present for ServicePassword, not even an explicit nil
+func (o *NetworkPoolServerUpdateSolarWinds) UnsetServicePassword() {
+	o.ServicePassword.Unset()
+}
+
+// GetServiceThrottleRate returns the ServiceThrottleRate field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NetworkPoolServerUpdateSolarWinds) GetServiceThrottleRate() int64 {
-	if o == nil || IsNil(o.ServiceThrottleRate) {
+	if o == nil || IsNil(o.ServiceThrottleRate.Get()) {
 		var ret int64
 		return ret
 	}
-	return *o.ServiceThrottleRate
+	return *o.ServiceThrottleRate.Get()
 }
 
 // GetServiceThrottleRateOk returns a tuple with the ServiceThrottleRate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NetworkPoolServerUpdateSolarWinds) GetServiceThrottleRateOk() (*int64, bool) {
-	if o == nil || IsNil(o.ServiceThrottleRate) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ServiceThrottleRate, true
+	return o.ServiceThrottleRate.Get(), o.ServiceThrottleRate.IsSet()
 }
 
 // IsSetServiceThrottleRate returns a boolean if a field has been set.
 func (o *NetworkPoolServerUpdateSolarWinds) IsSetServiceThrottleRate() bool {
-	if o != nil && !IsNil(o.ServiceThrottleRate) {
+	if o != nil && o.ServiceThrottleRate.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetServiceThrottleRate gets a reference to the given int64 and assigns it to the ServiceThrottleRate field.
+// SetServiceThrottleRate gets a reference to the given NullableInt64 and assigns it to the ServiceThrottleRate field.
 func (o *NetworkPoolServerUpdateSolarWinds) SetServiceThrottleRate(v int64) {
-	o.ServiceThrottleRate = &v
+	o.ServiceThrottleRate.Set(&v)
+}
+
+// SetServiceThrottleRateNil sets the value for ServiceThrottleRate to be an explicit nil
+func (o *NetworkPoolServerUpdateSolarWinds) SetServiceThrottleRateNil() {
+	o.ServiceThrottleRate.Set(nil)
+}
+
+// UnsetServiceThrottleRate ensures that no value is present for ServiceThrottleRate, not even an explicit nil
+func (o *NetworkPoolServerUpdateSolarWinds) UnsetServiceThrottleRate() {
+	o.ServiceThrottleRate.Unset()
 }
 
 // GetIgnoreSsl returns the IgnoreSsl field value if set, zero value otherwise.
@@ -370,17 +414,17 @@ func (o NetworkPoolServerUpdateSolarWinds) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.Enabled) {
 		toSerialize["enabled"] = o.Enabled
 	}
-	if !IsNil(o.ServiceUrl) {
-		toSerialize["serviceUrl"] = o.ServiceUrl
+	if o.ServiceUrl.IsSet() {
+		toSerialize["serviceUrl"] = o.ServiceUrl.Get()
 	}
-	if !IsNil(o.ServiceUsername) {
-		toSerialize["serviceUsername"] = o.ServiceUsername
+	if o.ServiceUsername.IsSet() {
+		toSerialize["serviceUsername"] = o.ServiceUsername.Get()
 	}
-	if !IsNil(o.ServicePassword) {
-		toSerialize["servicePassword"] = o.ServicePassword
+	if o.ServicePassword.IsSet() {
+		toSerialize["servicePassword"] = o.ServicePassword.Get()
 	}
-	if !IsNil(o.ServiceThrottleRate) {
-		toSerialize["serviceThrottleRate"] = o.ServiceThrottleRate
+	if o.ServiceThrottleRate.IsSet() {
+		toSerialize["serviceThrottleRate"] = o.ServiceThrottleRate.Get()
 	}
 	if !IsNil(o.IgnoreSsl) {
 		toSerialize["ignoreSsl"] = o.IgnoreSsl

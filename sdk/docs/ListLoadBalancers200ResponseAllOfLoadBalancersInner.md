@@ -8,26 +8,26 @@ Name | Type | Description | Notes
 **Uuid** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **AccountId** | Pointer to **int64** |  | [optional] 
-**Cloud** | Pointer to [**ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
+**Cloud** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **Type** | Pointer to [**ListBackupSettings200ResponseBackupSettingsDefaultSchedule**](ListBackupSettings200ResponseBackupSettingsDefaultSchedule.md) |  | [optional] 
 **Owner** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **Visibility** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Host** | Pointer to **string** |  | [optional] 
 **Port** | Pointer to **int64** |  | [optional] 
-**Username** | Pointer to **string** |  | [optional] 
+**Username** | Pointer to **NullableString** |  | [optional] 
 **Ip** | Pointer to **string** |  | [optional] 
-**InternalIp** | Pointer to **string** |  | [optional] 
-**ExternalIp** | Pointer to **string** |  | [optional] 
-**ApiPort** | Pointer to **string** |  | [optional] 
-**AdminPort** | Pointer to **string** |  | [optional] 
-**SslEnabled** | Pointer to **bool** |  | [optional] 
-**SslCert** | Pointer to **string** |  | [optional] 
+**InternalIp** | Pointer to **NullableString** |  | [optional] 
+**ExternalIp** | Pointer to **NullableString** |  | [optional] 
+**ApiPort** | Pointer to **NullableString** |  | [optional] 
+**AdminPort** | Pointer to **NullableString** |  | [optional] 
+**SslEnabled** | Pointer to **NullableBool** |  | [optional] 
+**SslCert** | Pointer to **NullableString** |  | [optional] 
 **Config** | Pointer to **map[string]interface{}** |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
 **Credential** | Pointer to [**ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential**](ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential.md) |  | [optional] 
-**Tenants** | Pointer to [**[]ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
+**Tenants** | Pointer to [**[]GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **ResourcePermission** | Pointer to [**ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission**](ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission.md) |  | [optional] 
 
 ## Methods
@@ -151,20 +151,20 @@ HasAccountId returns a boolean if a field has been set.
 
 ### GetCloud
 
-`func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) GetCloud() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) GetCloud() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetCloud returns the Cloud field if non-nil, zero value otherwise.
 
 ### GetCloudOk
 
-`func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) GetCloudOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) GetCloudOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetCloudOk returns a tuple with the Cloud field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCloud
 
-`func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) SetCloud(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) SetCloud(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetCloud sets Cloud field to given value.
 
@@ -349,6 +349,16 @@ SetUsername sets Username field to given value.
 
 HasUsername returns a boolean if a field has been set.
 
+### SetUsernameNil
+
+`func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) SetUsernameNil(b bool)`
+
+ SetUsernameNil sets the value for Username to be an explicit nil
+
+### UnsetUsername
+`func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) UnsetUsername()`
+
+UnsetUsername ensures that no value is present for Username, not even an explicit nil
 ### GetIp
 
 `func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) GetIp() string`
@@ -399,6 +409,16 @@ SetInternalIp sets InternalIp field to given value.
 
 HasInternalIp returns a boolean if a field has been set.
 
+### SetInternalIpNil
+
+`func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) SetInternalIpNil(b bool)`
+
+ SetInternalIpNil sets the value for InternalIp to be an explicit nil
+
+### UnsetInternalIp
+`func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) UnsetInternalIp()`
+
+UnsetInternalIp ensures that no value is present for InternalIp, not even an explicit nil
 ### GetExternalIp
 
 `func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) GetExternalIp() string`
@@ -424,6 +444,16 @@ SetExternalIp sets ExternalIp field to given value.
 
 HasExternalIp returns a boolean if a field has been set.
 
+### SetExternalIpNil
+
+`func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) SetExternalIpNil(b bool)`
+
+ SetExternalIpNil sets the value for ExternalIp to be an explicit nil
+
+### UnsetExternalIp
+`func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) UnsetExternalIp()`
+
+UnsetExternalIp ensures that no value is present for ExternalIp, not even an explicit nil
 ### GetApiPort
 
 `func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) GetApiPort() string`
@@ -449,6 +479,16 @@ SetApiPort sets ApiPort field to given value.
 
 HasApiPort returns a boolean if a field has been set.
 
+### SetApiPortNil
+
+`func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) SetApiPortNil(b bool)`
+
+ SetApiPortNil sets the value for ApiPort to be an explicit nil
+
+### UnsetApiPort
+`func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) UnsetApiPort()`
+
+UnsetApiPort ensures that no value is present for ApiPort, not even an explicit nil
 ### GetAdminPort
 
 `func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) GetAdminPort() string`
@@ -474,6 +514,16 @@ SetAdminPort sets AdminPort field to given value.
 
 HasAdminPort returns a boolean if a field has been set.
 
+### SetAdminPortNil
+
+`func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) SetAdminPortNil(b bool)`
+
+ SetAdminPortNil sets the value for AdminPort to be an explicit nil
+
+### UnsetAdminPort
+`func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) UnsetAdminPort()`
+
+UnsetAdminPort ensures that no value is present for AdminPort, not even an explicit nil
 ### GetSslEnabled
 
 `func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) GetSslEnabled() bool`
@@ -499,6 +549,16 @@ SetSslEnabled sets SslEnabled field to given value.
 
 HasSslEnabled returns a boolean if a field has been set.
 
+### SetSslEnabledNil
+
+`func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) SetSslEnabledNil(b bool)`
+
+ SetSslEnabledNil sets the value for SslEnabled to be an explicit nil
+
+### UnsetSslEnabled
+`func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) UnsetSslEnabled()`
+
+UnsetSslEnabled ensures that no value is present for SslEnabled, not even an explicit nil
 ### GetSslCert
 
 `func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) GetSslCert() string`
@@ -524,6 +584,16 @@ SetSslCert sets SslCert field to given value.
 
 HasSslCert returns a boolean if a field has been set.
 
+### SetSslCertNil
+
+`func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) SetSslCertNil(b bool)`
+
+ SetSslCertNil sets the value for SslCert to be an explicit nil
+
+### UnsetSslCert
+`func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) UnsetSslCert()`
+
+UnsetSslCert ensures that no value is present for SslCert, not even an explicit nil
 ### GetConfig
 
 `func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) GetConfig() map[string]interface{}`
@@ -626,20 +696,20 @@ HasCredential returns a boolean if a field has been set.
 
 ### GetTenants
 
-`func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) GetTenants() []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) GetTenants() []GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetTenants returns the Tenants field if non-nil, zero value otherwise.
 
 ### GetTenantsOk
 
-`func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) GetTenantsOk() (*[]ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) GetTenantsOk() (*[]GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetTenantsOk returns a tuple with the Tenants field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenants
 
-`func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) SetTenants(v []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) SetTenants(v []GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetTenants sets Tenants field to given value.
 

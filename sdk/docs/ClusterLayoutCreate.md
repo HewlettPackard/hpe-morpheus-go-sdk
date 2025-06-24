@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** | Cluster layout name | 
-**Description** | Pointer to **string** | Cluster layout description | [optional] 
+**Description** | Pointer to **NullableString** | Cluster layout description | [optional] 
 **Labels** | Pointer to **[]string** |  | [optional] 
 **ComputeVersion** | **string** | Version of the cluster layout | 
 **Creatable** | Pointer to **bool** | Can be used to enable / disable the creatability of the cluster layout. | [optional] [default to true]
@@ -84,6 +84,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *ClusterLayoutCreate) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *ClusterLayoutCreate) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetLabels
 
 `func (o *ClusterLayoutCreate) GetLabels() []string`
@@ -109,6 +119,16 @@ SetLabels sets Labels field to given value.
 
 HasLabels returns a boolean if a field has been set.
 
+### SetLabelsNil
+
+`func (o *ClusterLayoutCreate) SetLabelsNil(b bool)`
+
+ SetLabelsNil sets the value for Labels to be an explicit nil
+
+### UnsetLabels
+`func (o *ClusterLayoutCreate) UnsetLabels()`
+
+UnsetLabels ensures that no value is present for Labels, not even an explicit nil
 ### GetComputeVersion
 
 `func (o *ClusterLayoutCreate) GetComputeVersion() string`

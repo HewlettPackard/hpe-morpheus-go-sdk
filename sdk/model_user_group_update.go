@@ -20,10 +20,10 @@ var _ MappedNullable = &UserGroupUpdate{}
 
 // UserGroupUpdate struct for UserGroupUpdate
 type UserGroupUpdate struct {
-	Name        *string `json:"name,omitempty"`
-	Description *string `json:"description,omitempty"`
-	SudoUser    *bool   `json:"sudoUser,omitempty"`
-	ServerGroup *string `json:"serverGroup,omitempty"`
+	Name        *string        `json:"name,omitempty"`
+	Description NullableString `json:"description,omitempty"`
+	SudoUser    *bool          `json:"sudoUser,omitempty"`
+	ServerGroup NullableString `json:"serverGroup,omitempty"`
 	// A list of IDs of users that are in the user group
 	Users                []int64                `json:"users,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
@@ -80,36 +80,47 @@ func (o *UserGroupUpdate) SetName(v string) {
 	o.Name = &v
 }
 
-// GetDescription returns the Description field value if set, zero value otherwise.
+// GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UserGroupUpdate) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
+	if o == nil || IsNil(o.Description.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Description
+	return *o.Description.Get()
 }
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *UserGroupUpdate) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Description, true
+	return o.Description.Get(), o.Description.IsSet()
 }
 
 // IsSetDescription returns a boolean if a field has been set.
 func (o *UserGroupUpdate) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
+	if o != nil && o.Description.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDescription gets a reference to the given string and assigns it to the Description field.
+// SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *UserGroupUpdate) SetDescription(v string) {
-	o.Description = &v
+	o.Description.Set(&v)
+}
+
+// SetDescriptionNil sets the value for Description to be an explicit nil
+func (o *UserGroupUpdate) SetDescriptionNil() {
+	o.Description.Set(nil)
+}
+
+// UnsetDescription ensures that no value is present for Description, not even an explicit nil
+func (o *UserGroupUpdate) UnsetDescription() {
+	o.Description.Unset()
 }
 
 // GetSudoUser returns the SudoUser field value if set, zero value otherwise.
@@ -144,36 +155,47 @@ func (o *UserGroupUpdate) SetSudoUser(v bool) {
 	o.SudoUser = &v
 }
 
-// GetServerGroup returns the ServerGroup field value if set, zero value otherwise.
+// GetServerGroup returns the ServerGroup field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UserGroupUpdate) GetServerGroup() string {
-	if o == nil || IsNil(o.ServerGroup) {
+	if o == nil || IsNil(o.ServerGroup.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ServerGroup
+	return *o.ServerGroup.Get()
 }
 
 // GetServerGroupOk returns a tuple with the ServerGroup field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *UserGroupUpdate) GetServerGroupOk() (*string, bool) {
-	if o == nil || IsNil(o.ServerGroup) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ServerGroup, true
+	return o.ServerGroup.Get(), o.ServerGroup.IsSet()
 }
 
 // IsSetServerGroup returns a boolean if a field has been set.
 func (o *UserGroupUpdate) IsSetServerGroup() bool {
-	if o != nil && !IsNil(o.ServerGroup) {
+	if o != nil && o.ServerGroup.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetServerGroup gets a reference to the given string and assigns it to the ServerGroup field.
+// SetServerGroup gets a reference to the given NullableString and assigns it to the ServerGroup field.
 func (o *UserGroupUpdate) SetServerGroup(v string) {
-	o.ServerGroup = &v
+	o.ServerGroup.Set(&v)
+}
+
+// SetServerGroupNil sets the value for ServerGroup to be an explicit nil
+func (o *UserGroupUpdate) SetServerGroupNil() {
+	o.ServerGroup.Set(nil)
+}
+
+// UnsetServerGroup ensures that no value is present for ServerGroup, not even an explicit nil
+func (o *UserGroupUpdate) UnsetServerGroup() {
+	o.ServerGroup.Unset()
 }
 
 // GetUsers returns the Users field value if set, zero value otherwise.
@@ -221,14 +243,14 @@ func (o UserGroupUpdate) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !IsNil(o.Description) {
-		toSerialize["description"] = o.Description
+	if o.Description.IsSet() {
+		toSerialize["description"] = o.Description.Get()
 	}
 	if !IsNil(o.SudoUser) {
 		toSerialize["sudoUser"] = o.SudoUser
 	}
-	if !IsNil(o.ServerGroup) {
-		toSerialize["serverGroup"] = o.ServerGroup
+	if o.ServerGroup.IsSet() {
+		toSerialize["serverGroup"] = o.ServerGroup.Get()
 	}
 	if !IsNil(o.Users) {
 		toSerialize["users"] = o.Users

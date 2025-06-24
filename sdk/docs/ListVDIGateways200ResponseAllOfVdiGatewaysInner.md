@@ -6,9 +6,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
-**GatewayUrl** | Pointer to **string** |  | [optional] 
-**ApiKey** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **NullableString** |  | [optional] 
+**GatewayUrl** | Pointer to **NullableString** |  | [optional] 
+**ApiKey** | Pointer to **NullableString** |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
 
@@ -106,6 +106,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *ListVDIGateways200ResponseAllOfVdiGatewaysInner) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *ListVDIGateways200ResponseAllOfVdiGatewaysInner) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetGatewayUrl
 
 `func (o *ListVDIGateways200ResponseAllOfVdiGatewaysInner) GetGatewayUrl() string`
@@ -131,6 +141,16 @@ SetGatewayUrl sets GatewayUrl field to given value.
 
 HasGatewayUrl returns a boolean if a field has been set.
 
+### SetGatewayUrlNil
+
+`func (o *ListVDIGateways200ResponseAllOfVdiGatewaysInner) SetGatewayUrlNil(b bool)`
+
+ SetGatewayUrlNil sets the value for GatewayUrl to be an explicit nil
+
+### UnsetGatewayUrl
+`func (o *ListVDIGateways200ResponseAllOfVdiGatewaysInner) UnsetGatewayUrl()`
+
+UnsetGatewayUrl ensures that no value is present for GatewayUrl, not even an explicit nil
 ### GetApiKey
 
 `func (o *ListVDIGateways200ResponseAllOfVdiGatewaysInner) GetApiKey() string`
@@ -156,6 +176,16 @@ SetApiKey sets ApiKey field to given value.
 
 HasApiKey returns a boolean if a field has been set.
 
+### SetApiKeyNil
+
+`func (o *ListVDIGateways200ResponseAllOfVdiGatewaysInner) SetApiKeyNil(b bool)`
+
+ SetApiKeyNil sets the value for ApiKey to be an explicit nil
+
+### UnsetApiKey
+`func (o *ListVDIGateways200ResponseAllOfVdiGatewaysInner) UnsetApiKey()`
+
+UnsetApiKey ensures that no value is present for ApiKey, not even an explicit nil
 ### GetDateCreated
 
 `func (o *ListVDIGateways200ResponseAllOfVdiGatewaysInner) GetDateCreated() time.Time`

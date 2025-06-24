@@ -21,23 +21,23 @@ var _ MappedNullable = &GetNetworkEdgeCluster200ResponseNetworkEdgeCluster{}
 
 // GetNetworkEdgeCluster200ResponseNetworkEdgeCluster struct for GetNetworkEdgeCluster200ResponseNetworkEdgeCluster
 type GetNetworkEdgeCluster200ResponseNetworkEdgeCluster struct {
-	Id                   *int32                                                    `json:"id,omitempty"`
-	InternalId           *string                                                   `json:"internalId,omitempty"`
-	Visibility           *string                                                   `json:"visibility,omitempty"`
-	DateCreated          *time.Time                                                `json:"dateCreated,omitempty"`
-	ProviderId           *string                                                   `json:"providerId,omitempty"`
-	LastUpdated          *time.Time                                                `json:"lastUpdated,omitempty"`
-	Active               *bool                                                     `json:"active,omitempty"`
-	DisplayName          *string                                                   `json:"displayName,omitempty"`
-	Name                 *string                                                   `json:"name,omitempty"`
-	Enabled              *bool                                                     `json:"enabled,omitempty"`
-	ExternalId           *string                                                   `json:"externalId,omitempty"`
-	Config               *GetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig `json:"config,omitempty"`
-	Owner                *CreateLoadBalancerRequestLoadBalancerTenantsInner        `json:"owner,omitempty"`
-	NetworkServer        *CreateLoadBalancerRequestLoadBalancerTenantsInner        `json:"networkServer,omitempty"`
-	Zone                 *CreateLoadBalancerRequestLoadBalancerTenantsInner        `json:"zone,omitempty"`
-	Tenants              []SnapshotsInstance200ResponseSnapshotsInnerZone          `json:"tenants,omitempty"`
-	AdditionalProperties map[string]interface{}                                    `json:",remain"`
+	Id                   *int32                                                                                                      `json:"id,omitempty"`
+	InternalId           *string                                                                                                     `json:"internalId,omitempty"`
+	Visibility           *string                                                                                                     `json:"visibility,omitempty"`
+	DateCreated          *time.Time                                                                                                  `json:"dateCreated,omitempty"`
+	ProviderId           *string                                                                                                     `json:"providerId,omitempty"`
+	LastUpdated          *time.Time                                                                                                  `json:"lastUpdated,omitempty"`
+	Active               *bool                                                                                                       `json:"active,omitempty"`
+	DisplayName          *string                                                                                                     `json:"displayName,omitempty"`
+	Name                 *string                                                                                                     `json:"name,omitempty"`
+	Enabled              *bool                                                                                                       `json:"enabled,omitempty"`
+	ExternalId           *string                                                                                                     `json:"externalId,omitempty"`
+	Config               *GetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig                                                   `json:"config,omitempty"`
+	Owner                *SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume                                         `json:"owner,omitempty"`
+	NetworkServer        *SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume                                         `json:"networkServer,omitempty"`
+	Zone                 *SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume                                         `json:"zone,omitempty"`
+	Tenants              []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount `json:"tenants,omitempty"`
+	AdditionalProperties map[string]interface{}                                                                                      `json:",remain"`
 }
 
 type _GetNetworkEdgeCluster200ResponseNetworkEdgeCluster GetNetworkEdgeCluster200ResponseNetworkEdgeCluster
@@ -444,9 +444,9 @@ func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) SetConfig(v GetNetw
 }
 
 // GetOwner returns the Owner field value if set, zero value otherwise.
-func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) GetOwner() CreateLoadBalancerRequestLoadBalancerTenantsInner {
+func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) GetOwner() SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume {
 	if o == nil || IsNil(o.Owner) {
-		var ret CreateLoadBalancerRequestLoadBalancerTenantsInner
+		var ret SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume
 		return ret
 	}
 	return *o.Owner
@@ -454,7 +454,7 @@ func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) GetOwner() CreateLo
 
 // GetOwnerOk returns a tuple with the Owner field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) GetOwnerOk() (*CreateLoadBalancerRequestLoadBalancerTenantsInner, bool) {
+func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) GetOwnerOk() (*SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume, bool) {
 	if o == nil || IsNil(o.Owner) {
 		return nil, false
 	}
@@ -470,15 +470,15 @@ func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) IsSetOwner() bool {
 	return false
 }
 
-// SetOwner gets a reference to the given CreateLoadBalancerRequestLoadBalancerTenantsInner and assigns it to the Owner field.
-func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) SetOwner(v CreateLoadBalancerRequestLoadBalancerTenantsInner) {
+// SetOwner gets a reference to the given SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume and assigns it to the Owner field.
+func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) SetOwner(v SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume) {
 	o.Owner = &v
 }
 
 // GetNetworkServer returns the NetworkServer field value if set, zero value otherwise.
-func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) GetNetworkServer() CreateLoadBalancerRequestLoadBalancerTenantsInner {
+func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) GetNetworkServer() SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume {
 	if o == nil || IsNil(o.NetworkServer) {
-		var ret CreateLoadBalancerRequestLoadBalancerTenantsInner
+		var ret SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume
 		return ret
 	}
 	return *o.NetworkServer
@@ -486,7 +486,7 @@ func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) GetNetworkServer() 
 
 // GetNetworkServerOk returns a tuple with the NetworkServer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) GetNetworkServerOk() (*CreateLoadBalancerRequestLoadBalancerTenantsInner, bool) {
+func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) GetNetworkServerOk() (*SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume, bool) {
 	if o == nil || IsNil(o.NetworkServer) {
 		return nil, false
 	}
@@ -502,15 +502,15 @@ func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) IsSetNetworkServer(
 	return false
 }
 
-// SetNetworkServer gets a reference to the given CreateLoadBalancerRequestLoadBalancerTenantsInner and assigns it to the NetworkServer field.
-func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) SetNetworkServer(v CreateLoadBalancerRequestLoadBalancerTenantsInner) {
+// SetNetworkServer gets a reference to the given SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume and assigns it to the NetworkServer field.
+func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) SetNetworkServer(v SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume) {
 	o.NetworkServer = &v
 }
 
 // GetZone returns the Zone field value if set, zero value otherwise.
-func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) GetZone() CreateLoadBalancerRequestLoadBalancerTenantsInner {
+func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) GetZone() SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume {
 	if o == nil || IsNil(o.Zone) {
-		var ret CreateLoadBalancerRequestLoadBalancerTenantsInner
+		var ret SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume
 		return ret
 	}
 	return *o.Zone
@@ -518,7 +518,7 @@ func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) GetZone() CreateLoa
 
 // GetZoneOk returns a tuple with the Zone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) GetZoneOk() (*CreateLoadBalancerRequestLoadBalancerTenantsInner, bool) {
+func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) GetZoneOk() (*SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume, bool) {
 	if o == nil || IsNil(o.Zone) {
 		return nil, false
 	}
@@ -534,15 +534,15 @@ func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) IsSetZone() bool {
 	return false
 }
 
-// SetZone gets a reference to the given CreateLoadBalancerRequestLoadBalancerTenantsInner and assigns it to the Zone field.
-func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) SetZone(v CreateLoadBalancerRequestLoadBalancerTenantsInner) {
+// SetZone gets a reference to the given SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume and assigns it to the Zone field.
+func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) SetZone(v SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume) {
 	o.Zone = &v
 }
 
 // GetTenants returns the Tenants field value if set, zero value otherwise.
-func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) GetTenants() []SnapshotsInstance200ResponseSnapshotsInnerZone {
+func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) GetTenants() []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount {
 	if o == nil || IsNil(o.Tenants) {
-		var ret []SnapshotsInstance200ResponseSnapshotsInnerZone
+		var ret []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount
 		return ret
 	}
 	return o.Tenants
@@ -550,7 +550,7 @@ func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) GetTenants() []Snap
 
 // GetTenantsOk returns a tuple with the Tenants field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) GetTenantsOk() ([]SnapshotsInstance200ResponseSnapshotsInnerZone, bool) {
+func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) GetTenantsOk() ([]GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount, bool) {
 	if o == nil || IsNil(o.Tenants) {
 		return nil, false
 	}
@@ -566,8 +566,8 @@ func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) IsSetTenants() bool
 	return false
 }
 
-// SetTenants gets a reference to the given []SnapshotsInstance200ResponseSnapshotsInnerZone and assigns it to the Tenants field.
-func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) SetTenants(v []SnapshotsInstance200ResponseSnapshotsInnerZone) {
+// SetTenants gets a reference to the given []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount and assigns it to the Tenants field.
+func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) SetTenants(v []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount) {
 	o.Tenants = v
 }
 

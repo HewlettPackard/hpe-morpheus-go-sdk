@@ -6,17 +6,17 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
-**Account** | Pointer to **int64** |  | [optional] 
+**Description** | Pointer to **NullableString** |  | [optional] 
+**Account** | Pointer to **NullableInt64** |  | [optional] 
 **Code** | Pointer to **string** |  | [optional] 
 **RepeatInstall** | Pointer to **bool** |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 **PackageType** | Pointer to **string** |  | [optional] 
 **PackageVersion** | Pointer to **string** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
-**IconPath** | Pointer to **string** |  | [optional] 
-**ImagePath** | Pointer to **string** |  | [optional] 
-**DarkImagePath** | Pointer to **string** |  | [optional] 
+**IconPath** | Pointer to **NullableString** |  | [optional] 
+**ImagePath** | Pointer to **NullableString** |  | [optional] 
+**DarkImagePath** | Pointer to **NullableString** |  | [optional] 
 **SpecTemplates** | Pointer to [**[]ListBackupSettings200ResponseBackupSettingsDefaultSchedule**](ListBackupSettings200ResponseBackupSettingsDefaultSchedule.md) |  | [optional] 
 
 ## Methods
@@ -113,6 +113,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *ListClusterPackages200ResponseAllOfClusterPackagesInner) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *ListClusterPackages200ResponseAllOfClusterPackagesInner) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetAccount
 
 `func (o *ListClusterPackages200ResponseAllOfClusterPackagesInner) GetAccount() int64`
@@ -138,6 +148,16 @@ SetAccount sets Account field to given value.
 
 HasAccount returns a boolean if a field has been set.
 
+### SetAccountNil
+
+`func (o *ListClusterPackages200ResponseAllOfClusterPackagesInner) SetAccountNil(b bool)`
+
+ SetAccountNil sets the value for Account to be an explicit nil
+
+### UnsetAccount
+`func (o *ListClusterPackages200ResponseAllOfClusterPackagesInner) UnsetAccount()`
+
+UnsetAccount ensures that no value is present for Account, not even an explicit nil
 ### GetCode
 
 `func (o *ListClusterPackages200ResponseAllOfClusterPackagesInner) GetCode() string`
@@ -313,6 +333,16 @@ SetIconPath sets IconPath field to given value.
 
 HasIconPath returns a boolean if a field has been set.
 
+### SetIconPathNil
+
+`func (o *ListClusterPackages200ResponseAllOfClusterPackagesInner) SetIconPathNil(b bool)`
+
+ SetIconPathNil sets the value for IconPath to be an explicit nil
+
+### UnsetIconPath
+`func (o *ListClusterPackages200ResponseAllOfClusterPackagesInner) UnsetIconPath()`
+
+UnsetIconPath ensures that no value is present for IconPath, not even an explicit nil
 ### GetImagePath
 
 `func (o *ListClusterPackages200ResponseAllOfClusterPackagesInner) GetImagePath() string`
@@ -338,6 +368,16 @@ SetImagePath sets ImagePath field to given value.
 
 HasImagePath returns a boolean if a field has been set.
 
+### SetImagePathNil
+
+`func (o *ListClusterPackages200ResponseAllOfClusterPackagesInner) SetImagePathNil(b bool)`
+
+ SetImagePathNil sets the value for ImagePath to be an explicit nil
+
+### UnsetImagePath
+`func (o *ListClusterPackages200ResponseAllOfClusterPackagesInner) UnsetImagePath()`
+
+UnsetImagePath ensures that no value is present for ImagePath, not even an explicit nil
 ### GetDarkImagePath
 
 `func (o *ListClusterPackages200ResponseAllOfClusterPackagesInner) GetDarkImagePath() string`
@@ -363,6 +403,16 @@ SetDarkImagePath sets DarkImagePath field to given value.
 
 HasDarkImagePath returns a boolean if a field has been set.
 
+### SetDarkImagePathNil
+
+`func (o *ListClusterPackages200ResponseAllOfClusterPackagesInner) SetDarkImagePathNil(b bool)`
+
+ SetDarkImagePathNil sets the value for DarkImagePath to be an explicit nil
+
+### UnsetDarkImagePath
+`func (o *ListClusterPackages200ResponseAllOfClusterPackagesInner) UnsetDarkImagePath()`
+
+UnsetDarkImagePath ensures that no value is present for DarkImagePath, not even an explicit nil
 ### GetSpecTemplates
 
 `func (o *ListClusterPackages200ResponseAllOfClusterPackagesInner) GetSpecTemplates() []ListBackupSettings200ResponseBackupSettingsDefaultSchedule`

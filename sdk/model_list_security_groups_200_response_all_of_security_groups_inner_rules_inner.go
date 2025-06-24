@@ -21,24 +21,24 @@ var _ MappedNullable = &ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRul
 // ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner struct for ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner
 type ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner struct {
 	Id                   *int64                 `json:"id,omitempty"`
-	Name                 *string                `json:"name,omitempty"`
+	Name                 NullableString         `json:"name,omitempty"`
 	RuleType             *string                `json:"ruleType,omitempty"`
 	CustomRule           *bool                  `json:"customRule,omitempty"`
-	InstanceTypeId       *string                `json:"instanceTypeId,omitempty"`
+	InstanceTypeId       NullableString         `json:"instanceTypeId,omitempty"`
 	Direction            *string                `json:"direction,omitempty"`
 	Policy               *string                `json:"policy,omitempty"`
 	SourceType           *string                `json:"sourceType,omitempty"`
-	Source               *string                `json:"source,omitempty"`
-	SourceGroup          *string                `json:"sourceGroup,omitempty"`
-	SourceTier           *string                `json:"sourceTier,omitempty"`
-	PortRange            *string                `json:"portRange,omitempty"`
+	Source               NullableString         `json:"source,omitempty"`
+	SourceGroup          NullableString         `json:"sourceGroup,omitempty"`
+	SourceTier           NullableString         `json:"sourceTier,omitempty"`
+	PortRange            NullableString         `json:"portRange,omitempty"`
 	Protocol             *string                `json:"protocol,omitempty"`
 	DestinationType      *string                `json:"destinationType,omitempty"`
-	Destination          *string                `json:"destination,omitempty"`
-	DestinationGroup     *string                `json:"destinationGroup,omitempty"`
-	DestinationTier      *string                `json:"destinationTier,omitempty"`
+	Destination          NullableString         `json:"destination,omitempty"`
+	DestinationGroup     NullableString         `json:"destinationGroup,omitempty"`
+	DestinationTier      NullableString         `json:"destinationTier,omitempty"`
 	ExternalId           *string                `json:"externalId,omitempty"`
-	Enabled              *string                `json:"enabled,omitempty"`
+	Enabled              NullableString         `json:"enabled,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -93,36 +93,47 @@ func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) SetId(
 	o.Id = &v
 }
 
-// GetName returns the Name field value if set, zero value otherwise.
+// GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) GetName() string {
-	if o == nil || IsNil(o.Name) {
+	if o == nil || IsNil(o.Name.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Name
+	return *o.Name.Get()
 }
 
 // GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Name, true
+	return o.Name.Get(), o.Name.IsSet()
 }
 
 // IsSetName returns a boolean if a field has been set.
 func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
+	if o != nil && o.Name.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetName gets a reference to the given string and assigns it to the Name field.
+// SetName gets a reference to the given NullableString and assigns it to the Name field.
 func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) SetName(v string) {
-	o.Name = &v
+	o.Name.Set(&v)
+}
+
+// SetNameNil sets the value for Name to be an explicit nil
+func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) SetNameNil() {
+	o.Name.Set(nil)
+}
+
+// UnsetName ensures that no value is present for Name, not even an explicit nil
+func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) UnsetName() {
+	o.Name.Unset()
 }
 
 // GetRuleType returns the RuleType field value if set, zero value otherwise.
@@ -189,36 +200,47 @@ func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) SetCus
 	o.CustomRule = &v
 }
 
-// GetInstanceTypeId returns the InstanceTypeId field value if set, zero value otherwise.
+// GetInstanceTypeId returns the InstanceTypeId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) GetInstanceTypeId() string {
-	if o == nil || IsNil(o.InstanceTypeId) {
+	if o == nil || IsNil(o.InstanceTypeId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.InstanceTypeId
+	return *o.InstanceTypeId.Get()
 }
 
 // GetInstanceTypeIdOk returns a tuple with the InstanceTypeId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) GetInstanceTypeIdOk() (*string, bool) {
-	if o == nil || IsNil(o.InstanceTypeId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.InstanceTypeId, true
+	return o.InstanceTypeId.Get(), o.InstanceTypeId.IsSet()
 }
 
 // IsSetInstanceTypeId returns a boolean if a field has been set.
 func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) IsSetInstanceTypeId() bool {
-	if o != nil && !IsNil(o.InstanceTypeId) {
+	if o != nil && o.InstanceTypeId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetInstanceTypeId gets a reference to the given string and assigns it to the InstanceTypeId field.
+// SetInstanceTypeId gets a reference to the given NullableString and assigns it to the InstanceTypeId field.
 func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) SetInstanceTypeId(v string) {
-	o.InstanceTypeId = &v
+	o.InstanceTypeId.Set(&v)
+}
+
+// SetInstanceTypeIdNil sets the value for InstanceTypeId to be an explicit nil
+func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) SetInstanceTypeIdNil() {
+	o.InstanceTypeId.Set(nil)
+}
+
+// UnsetInstanceTypeId ensures that no value is present for InstanceTypeId, not even an explicit nil
+func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) UnsetInstanceTypeId() {
+	o.InstanceTypeId.Unset()
 }
 
 // GetDirection returns the Direction field value if set, zero value otherwise.
@@ -317,132 +339,176 @@ func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) SetSou
 	o.SourceType = &v
 }
 
-// GetSource returns the Source field value if set, zero value otherwise.
+// GetSource returns the Source field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) GetSource() string {
-	if o == nil || IsNil(o.Source) {
+	if o == nil || IsNil(o.Source.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Source
+	return *o.Source.Get()
 }
 
 // GetSourceOk returns a tuple with the Source field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) GetSourceOk() (*string, bool) {
-	if o == nil || IsNil(o.Source) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Source, true
+	return o.Source.Get(), o.Source.IsSet()
 }
 
 // IsSetSource returns a boolean if a field has been set.
 func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) IsSetSource() bool {
-	if o != nil && !IsNil(o.Source) {
+	if o != nil && o.Source.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetSource gets a reference to the given string and assigns it to the Source field.
+// SetSource gets a reference to the given NullableString and assigns it to the Source field.
 func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) SetSource(v string) {
-	o.Source = &v
+	o.Source.Set(&v)
 }
 
-// GetSourceGroup returns the SourceGroup field value if set, zero value otherwise.
+// SetSourceNil sets the value for Source to be an explicit nil
+func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) SetSourceNil() {
+	o.Source.Set(nil)
+}
+
+// UnsetSource ensures that no value is present for Source, not even an explicit nil
+func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) UnsetSource() {
+	o.Source.Unset()
+}
+
+// GetSourceGroup returns the SourceGroup field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) GetSourceGroup() string {
-	if o == nil || IsNil(o.SourceGroup) {
+	if o == nil || IsNil(o.SourceGroup.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.SourceGroup
+	return *o.SourceGroup.Get()
 }
 
 // GetSourceGroupOk returns a tuple with the SourceGroup field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) GetSourceGroupOk() (*string, bool) {
-	if o == nil || IsNil(o.SourceGroup) {
+	if o == nil {
 		return nil, false
 	}
-	return o.SourceGroup, true
+	return o.SourceGroup.Get(), o.SourceGroup.IsSet()
 }
 
 // IsSetSourceGroup returns a boolean if a field has been set.
 func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) IsSetSourceGroup() bool {
-	if o != nil && !IsNil(o.SourceGroup) {
+	if o != nil && o.SourceGroup.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetSourceGroup gets a reference to the given string and assigns it to the SourceGroup field.
+// SetSourceGroup gets a reference to the given NullableString and assigns it to the SourceGroup field.
 func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) SetSourceGroup(v string) {
-	o.SourceGroup = &v
+	o.SourceGroup.Set(&v)
 }
 
-// GetSourceTier returns the SourceTier field value if set, zero value otherwise.
+// SetSourceGroupNil sets the value for SourceGroup to be an explicit nil
+func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) SetSourceGroupNil() {
+	o.SourceGroup.Set(nil)
+}
+
+// UnsetSourceGroup ensures that no value is present for SourceGroup, not even an explicit nil
+func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) UnsetSourceGroup() {
+	o.SourceGroup.Unset()
+}
+
+// GetSourceTier returns the SourceTier field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) GetSourceTier() string {
-	if o == nil || IsNil(o.SourceTier) {
+	if o == nil || IsNil(o.SourceTier.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.SourceTier
+	return *o.SourceTier.Get()
 }
 
 // GetSourceTierOk returns a tuple with the SourceTier field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) GetSourceTierOk() (*string, bool) {
-	if o == nil || IsNil(o.SourceTier) {
+	if o == nil {
 		return nil, false
 	}
-	return o.SourceTier, true
+	return o.SourceTier.Get(), o.SourceTier.IsSet()
 }
 
 // IsSetSourceTier returns a boolean if a field has been set.
 func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) IsSetSourceTier() bool {
-	if o != nil && !IsNil(o.SourceTier) {
+	if o != nil && o.SourceTier.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetSourceTier gets a reference to the given string and assigns it to the SourceTier field.
+// SetSourceTier gets a reference to the given NullableString and assigns it to the SourceTier field.
 func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) SetSourceTier(v string) {
-	o.SourceTier = &v
+	o.SourceTier.Set(&v)
 }
 
-// GetPortRange returns the PortRange field value if set, zero value otherwise.
+// SetSourceTierNil sets the value for SourceTier to be an explicit nil
+func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) SetSourceTierNil() {
+	o.SourceTier.Set(nil)
+}
+
+// UnsetSourceTier ensures that no value is present for SourceTier, not even an explicit nil
+func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) UnsetSourceTier() {
+	o.SourceTier.Unset()
+}
+
+// GetPortRange returns the PortRange field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) GetPortRange() string {
-	if o == nil || IsNil(o.PortRange) {
+	if o == nil || IsNil(o.PortRange.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.PortRange
+	return *o.PortRange.Get()
 }
 
 // GetPortRangeOk returns a tuple with the PortRange field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) GetPortRangeOk() (*string, bool) {
-	if o == nil || IsNil(o.PortRange) {
+	if o == nil {
 		return nil, false
 	}
-	return o.PortRange, true
+	return o.PortRange.Get(), o.PortRange.IsSet()
 }
 
 // IsSetPortRange returns a boolean if a field has been set.
 func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) IsSetPortRange() bool {
-	if o != nil && !IsNil(o.PortRange) {
+	if o != nil && o.PortRange.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetPortRange gets a reference to the given string and assigns it to the PortRange field.
+// SetPortRange gets a reference to the given NullableString and assigns it to the PortRange field.
 func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) SetPortRange(v string) {
-	o.PortRange = &v
+	o.PortRange.Set(&v)
+}
+
+// SetPortRangeNil sets the value for PortRange to be an explicit nil
+func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) SetPortRangeNil() {
+	o.PortRange.Set(nil)
+}
+
+// UnsetPortRange ensures that no value is present for PortRange, not even an explicit nil
+func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) UnsetPortRange() {
+	o.PortRange.Unset()
 }
 
 // GetProtocol returns the Protocol field value if set, zero value otherwise.
@@ -509,100 +575,133 @@ func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) SetDes
 	o.DestinationType = &v
 }
 
-// GetDestination returns the Destination field value if set, zero value otherwise.
+// GetDestination returns the Destination field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) GetDestination() string {
-	if o == nil || IsNil(o.Destination) {
+	if o == nil || IsNil(o.Destination.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Destination
+	return *o.Destination.Get()
 }
 
 // GetDestinationOk returns a tuple with the Destination field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) GetDestinationOk() (*string, bool) {
-	if o == nil || IsNil(o.Destination) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Destination, true
+	return o.Destination.Get(), o.Destination.IsSet()
 }
 
 // IsSetDestination returns a boolean if a field has been set.
 func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) IsSetDestination() bool {
-	if o != nil && !IsNil(o.Destination) {
+	if o != nil && o.Destination.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDestination gets a reference to the given string and assigns it to the Destination field.
+// SetDestination gets a reference to the given NullableString and assigns it to the Destination field.
 func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) SetDestination(v string) {
-	o.Destination = &v
+	o.Destination.Set(&v)
 }
 
-// GetDestinationGroup returns the DestinationGroup field value if set, zero value otherwise.
+// SetDestinationNil sets the value for Destination to be an explicit nil
+func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) SetDestinationNil() {
+	o.Destination.Set(nil)
+}
+
+// UnsetDestination ensures that no value is present for Destination, not even an explicit nil
+func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) UnsetDestination() {
+	o.Destination.Unset()
+}
+
+// GetDestinationGroup returns the DestinationGroup field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) GetDestinationGroup() string {
-	if o == nil || IsNil(o.DestinationGroup) {
+	if o == nil || IsNil(o.DestinationGroup.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.DestinationGroup
+	return *o.DestinationGroup.Get()
 }
 
 // GetDestinationGroupOk returns a tuple with the DestinationGroup field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) GetDestinationGroupOk() (*string, bool) {
-	if o == nil || IsNil(o.DestinationGroup) {
+	if o == nil {
 		return nil, false
 	}
-	return o.DestinationGroup, true
+	return o.DestinationGroup.Get(), o.DestinationGroup.IsSet()
 }
 
 // IsSetDestinationGroup returns a boolean if a field has been set.
 func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) IsSetDestinationGroup() bool {
-	if o != nil && !IsNil(o.DestinationGroup) {
+	if o != nil && o.DestinationGroup.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDestinationGroup gets a reference to the given string and assigns it to the DestinationGroup field.
+// SetDestinationGroup gets a reference to the given NullableString and assigns it to the DestinationGroup field.
 func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) SetDestinationGroup(v string) {
-	o.DestinationGroup = &v
+	o.DestinationGroup.Set(&v)
 }
 
-// GetDestinationTier returns the DestinationTier field value if set, zero value otherwise.
+// SetDestinationGroupNil sets the value for DestinationGroup to be an explicit nil
+func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) SetDestinationGroupNil() {
+	o.DestinationGroup.Set(nil)
+}
+
+// UnsetDestinationGroup ensures that no value is present for DestinationGroup, not even an explicit nil
+func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) UnsetDestinationGroup() {
+	o.DestinationGroup.Unset()
+}
+
+// GetDestinationTier returns the DestinationTier field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) GetDestinationTier() string {
-	if o == nil || IsNil(o.DestinationTier) {
+	if o == nil || IsNil(o.DestinationTier.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.DestinationTier
+	return *o.DestinationTier.Get()
 }
 
 // GetDestinationTierOk returns a tuple with the DestinationTier field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) GetDestinationTierOk() (*string, bool) {
-	if o == nil || IsNil(o.DestinationTier) {
+	if o == nil {
 		return nil, false
 	}
-	return o.DestinationTier, true
+	return o.DestinationTier.Get(), o.DestinationTier.IsSet()
 }
 
 // IsSetDestinationTier returns a boolean if a field has been set.
 func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) IsSetDestinationTier() bool {
-	if o != nil && !IsNil(o.DestinationTier) {
+	if o != nil && o.DestinationTier.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDestinationTier gets a reference to the given string and assigns it to the DestinationTier field.
+// SetDestinationTier gets a reference to the given NullableString and assigns it to the DestinationTier field.
 func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) SetDestinationTier(v string) {
-	o.DestinationTier = &v
+	o.DestinationTier.Set(&v)
+}
+
+// SetDestinationTierNil sets the value for DestinationTier to be an explicit nil
+func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) SetDestinationTierNil() {
+	o.DestinationTier.Set(nil)
+}
+
+// UnsetDestinationTier ensures that no value is present for DestinationTier, not even an explicit nil
+func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) UnsetDestinationTier() {
+	o.DestinationTier.Unset()
 }
 
 // GetExternalId returns the ExternalId field value if set, zero value otherwise.
@@ -637,36 +736,47 @@ func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) SetExt
 	o.ExternalId = &v
 }
 
-// GetEnabled returns the Enabled field value if set, zero value otherwise.
+// GetEnabled returns the Enabled field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) GetEnabled() string {
-	if o == nil || IsNil(o.Enabled) {
+	if o == nil || IsNil(o.Enabled.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Enabled
+	return *o.Enabled.Get()
 }
 
 // GetEnabledOk returns a tuple with the Enabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) GetEnabledOk() (*string, bool) {
-	if o == nil || IsNil(o.Enabled) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Enabled, true
+	return o.Enabled.Get(), o.Enabled.IsSet()
 }
 
 // IsSetEnabled returns a boolean if a field has been set.
 func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
+	if o != nil && o.Enabled.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetEnabled gets a reference to the given string and assigns it to the Enabled field.
+// SetEnabled gets a reference to the given NullableString and assigns it to the Enabled field.
 func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) SetEnabled(v string) {
-	o.Enabled = &v
+	o.Enabled.Set(&v)
+}
+
+// SetEnabledNil sets the value for Enabled to be an explicit nil
+func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) SetEnabledNil() {
+	o.Enabled.Set(nil)
+}
+
+// UnsetEnabled ensures that no value is present for Enabled, not even an explicit nil
+func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) UnsetEnabled() {
+	o.Enabled.Unset()
 }
 
 func (o ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) MarshalJSON() ([]byte, error) {
@@ -682,8 +792,8 @@ func (o ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) ToMap()
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
-	if !IsNil(o.Name) {
-		toSerialize["name"] = o.Name
+	if o.Name.IsSet() {
+		toSerialize["name"] = o.Name.Get()
 	}
 	if !IsNil(o.RuleType) {
 		toSerialize["ruleType"] = o.RuleType
@@ -691,8 +801,8 @@ func (o ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) ToMap()
 	if !IsNil(o.CustomRule) {
 		toSerialize["customRule"] = o.CustomRule
 	}
-	if !IsNil(o.InstanceTypeId) {
-		toSerialize["instanceTypeId"] = o.InstanceTypeId
+	if o.InstanceTypeId.IsSet() {
+		toSerialize["instanceTypeId"] = o.InstanceTypeId.Get()
 	}
 	if !IsNil(o.Direction) {
 		toSerialize["direction"] = o.Direction
@@ -703,17 +813,17 @@ func (o ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) ToMap()
 	if !IsNil(o.SourceType) {
 		toSerialize["sourceType"] = o.SourceType
 	}
-	if !IsNil(o.Source) {
-		toSerialize["source"] = o.Source
+	if o.Source.IsSet() {
+		toSerialize["source"] = o.Source.Get()
 	}
-	if !IsNil(o.SourceGroup) {
-		toSerialize["sourceGroup"] = o.SourceGroup
+	if o.SourceGroup.IsSet() {
+		toSerialize["sourceGroup"] = o.SourceGroup.Get()
 	}
-	if !IsNil(o.SourceTier) {
-		toSerialize["sourceTier"] = o.SourceTier
+	if o.SourceTier.IsSet() {
+		toSerialize["sourceTier"] = o.SourceTier.Get()
 	}
-	if !IsNil(o.PortRange) {
-		toSerialize["portRange"] = o.PortRange
+	if o.PortRange.IsSet() {
+		toSerialize["portRange"] = o.PortRange.Get()
 	}
 	if !IsNil(o.Protocol) {
 		toSerialize["protocol"] = o.Protocol
@@ -721,20 +831,20 @@ func (o ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) ToMap()
 	if !IsNil(o.DestinationType) {
 		toSerialize["destinationType"] = o.DestinationType
 	}
-	if !IsNil(o.Destination) {
-		toSerialize["destination"] = o.Destination
+	if o.Destination.IsSet() {
+		toSerialize["destination"] = o.Destination.Get()
 	}
-	if !IsNil(o.DestinationGroup) {
-		toSerialize["destinationGroup"] = o.DestinationGroup
+	if o.DestinationGroup.IsSet() {
+		toSerialize["destinationGroup"] = o.DestinationGroup.Get()
 	}
-	if !IsNil(o.DestinationTier) {
-		toSerialize["destinationTier"] = o.DestinationTier
+	if o.DestinationTier.IsSet() {
+		toSerialize["destinationTier"] = o.DestinationTier.Get()
 	}
 	if !IsNil(o.ExternalId) {
 		toSerialize["externalId"] = o.ExternalId
 	}
-	if !IsNil(o.Enabled) {
-		toSerialize["enabled"] = o.Enabled
+	if o.Enabled.IsSet() {
+		toSerialize["enabled"] = o.Enabled.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {

@@ -6,13 +6,13 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **NullableString** |  | [optional] 
 **Controller** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
-**ControllerId** | Pointer to **int64** |  | [optional] 
-**ControllerMountPoint** | Pointer to **string** |  | [optional] 
-**Resizeable** | Pointer to **bool** |  | [optional] 
+**ControllerId** | Pointer to **NullableInt64** |  | [optional] 
+**ControllerMountPoint** | Pointer to **NullableString** |  | [optional] 
+**Resizeable** | Pointer to **NullableBool** |  | [optional] 
 **RootVolume** | Pointer to **bool** |  | [optional] 
-**UnitNumber** | Pointer to **string** |  | [optional] 
+**UnitNumber** | Pointer to **NullableString** |  | [optional] 
 **DeviceName** | Pointer to **string** |  | [optional] 
 **DeviceDisplayName** | Pointer to **string** |  | [optional] 
 **VolumeName** | Pointer to **string** |  | [optional] 
@@ -26,42 +26,42 @@ Name | Type | Description | Notes
 **TypeId** | Pointer to **int64** |  | [optional] 
 **Category** | Pointer to **string** |  | [optional] 
 **Status** | Pointer to **string** |  | [optional] 
-**StatusMessage** | Pointer to **string** |  | [optional] 
+**StatusMessage** | Pointer to **NullableString** |  | [optional] 
 **ConfigurableIOPS** | Pointer to **bool** |  | [optional] 
 **MaxStorage** | Pointer to **int64** |  | [optional] 
 **UsedStorage** | Pointer to **int64** |  | [optional] 
 **DisplayOrder** | Pointer to **int64** |  | [optional] 
-**MaxIOPS** | Pointer to **string** |  | [optional] 
+**MaxIOPS** | Pointer to **NullableString** |  | [optional] 
 **Uuid** | Pointer to **string** |  | [optional] 
 **Active** | Pointer to **bool** |  | [optional] 
 **ReadOnly** | Pointer to **bool** |  | [optional] 
 **Removable** | Pointer to **bool** |  | [optional] 
 **PoolName** | Pointer to **string** |  | [optional] 
-**Zone** | Pointer to [**ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
+**Zone** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **ZoneId** | Pointer to **int64** |  | [optional] 
-**Datastore** | Pointer to [**ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
-**DatastoreId** | Pointer to **int64** |  | [optional] 
+**Datastore** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**DatastoreId** | Pointer to **NullableInt64** |  | [optional] 
 **DatastoreOption** | Pointer to **string** |  | [optional] 
-**StorageGroup** | Pointer to **string** |  | [optional] 
-**Namespace** | Pointer to **string** |  | [optional] 
-**StorageServer** | Pointer to **string** |  | [optional] 
+**StorageGroup** | Pointer to **NullableString** |  | [optional] 
+**Namespace** | Pointer to **NullableString** |  | [optional] 
+**StorageServer** | Pointer to **NullableString** |  | [optional] 
 **Source** | Pointer to **string** |  | [optional] 
-**UniqueId** | Pointer to **string** |  | [optional] 
-**InternalId** | Pointer to **string** |  | [optional] 
+**UniqueId** | Pointer to **NullableString** |  | [optional] 
+**InternalId** | Pointer to **NullableString** |  | [optional] 
 **ExternalId** | Pointer to **string** |  | [optional] 
-**ProvisionType** | Pointer to **string** |  | [optional] 
-**CopyType** | Pointer to **string** |  | [optional] 
-**FiberWwn** | Pointer to **string** |  | [optional] 
-**FileName** | Pointer to **string** |  | [optional] 
-**ClaimName** | Pointer to **string** |  | [optional] 
-**SharePath** | Pointer to **string** |  | [optional] 
+**ProvisionType** | Pointer to **NullableString** |  | [optional] 
+**CopyType** | Pointer to **NullableString** |  | [optional] 
+**FiberWwn** | Pointer to **NullableString** |  | [optional] 
+**FileName** | Pointer to **NullableString** |  | [optional] 
+**ClaimName** | Pointer to **NullableString** |  | [optional] 
+**SharePath** | Pointer to **NullableString** |  | [optional] 
 **SourceId** | Pointer to **string** |  | [optional] 
 **SourceImage** | Pointer to **string** |  | [optional] 
 **ImageType** | Pointer to **string** |  | [optional] 
 **Online** | Pointer to **bool** |  | [optional] 
 **RawData** | Pointer to **string** |  | [optional] 
-**Account** | Pointer to [**ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
-**Owner** | Pointer to [**ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
+**Account** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**Owner** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 
 ## Methods
 
@@ -157,6 +157,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *StorageVolume) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *StorageVolume) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetController
 
 `func (o *StorageVolume) GetController() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
@@ -207,6 +217,16 @@ SetControllerId sets ControllerId field to given value.
 
 HasControllerId returns a boolean if a field has been set.
 
+### SetControllerIdNil
+
+`func (o *StorageVolume) SetControllerIdNil(b bool)`
+
+ SetControllerIdNil sets the value for ControllerId to be an explicit nil
+
+### UnsetControllerId
+`func (o *StorageVolume) UnsetControllerId()`
+
+UnsetControllerId ensures that no value is present for ControllerId, not even an explicit nil
 ### GetControllerMountPoint
 
 `func (o *StorageVolume) GetControllerMountPoint() string`
@@ -232,6 +252,16 @@ SetControllerMountPoint sets ControllerMountPoint field to given value.
 
 HasControllerMountPoint returns a boolean if a field has been set.
 
+### SetControllerMountPointNil
+
+`func (o *StorageVolume) SetControllerMountPointNil(b bool)`
+
+ SetControllerMountPointNil sets the value for ControllerMountPoint to be an explicit nil
+
+### UnsetControllerMountPoint
+`func (o *StorageVolume) UnsetControllerMountPoint()`
+
+UnsetControllerMountPoint ensures that no value is present for ControllerMountPoint, not even an explicit nil
 ### GetResizeable
 
 `func (o *StorageVolume) GetResizeable() bool`
@@ -257,6 +287,16 @@ SetResizeable sets Resizeable field to given value.
 
 HasResizeable returns a boolean if a field has been set.
 
+### SetResizeableNil
+
+`func (o *StorageVolume) SetResizeableNil(b bool)`
+
+ SetResizeableNil sets the value for Resizeable to be an explicit nil
+
+### UnsetResizeable
+`func (o *StorageVolume) UnsetResizeable()`
+
+UnsetResizeable ensures that no value is present for Resizeable, not even an explicit nil
 ### GetRootVolume
 
 `func (o *StorageVolume) GetRootVolume() bool`
@@ -307,6 +347,16 @@ SetUnitNumber sets UnitNumber field to given value.
 
 HasUnitNumber returns a boolean if a field has been set.
 
+### SetUnitNumberNil
+
+`func (o *StorageVolume) SetUnitNumberNil(b bool)`
+
+ SetUnitNumberNil sets the value for UnitNumber to be an explicit nil
+
+### UnsetUnitNumber
+`func (o *StorageVolume) UnsetUnitNumber()`
+
+UnsetUnitNumber ensures that no value is present for UnitNumber, not even an explicit nil
 ### GetDeviceName
 
 `func (o *StorageVolume) GetDeviceName() string`
@@ -657,6 +707,16 @@ SetStatusMessage sets StatusMessage field to given value.
 
 HasStatusMessage returns a boolean if a field has been set.
 
+### SetStatusMessageNil
+
+`func (o *StorageVolume) SetStatusMessageNil(b bool)`
+
+ SetStatusMessageNil sets the value for StatusMessage to be an explicit nil
+
+### UnsetStatusMessage
+`func (o *StorageVolume) UnsetStatusMessage()`
+
+UnsetStatusMessage ensures that no value is present for StatusMessage, not even an explicit nil
 ### GetConfigurableIOPS
 
 `func (o *StorageVolume) GetConfigurableIOPS() bool`
@@ -782,6 +842,16 @@ SetMaxIOPS sets MaxIOPS field to given value.
 
 HasMaxIOPS returns a boolean if a field has been set.
 
+### SetMaxIOPSNil
+
+`func (o *StorageVolume) SetMaxIOPSNil(b bool)`
+
+ SetMaxIOPSNil sets the value for MaxIOPS to be an explicit nil
+
+### UnsetMaxIOPS
+`func (o *StorageVolume) UnsetMaxIOPS()`
+
+UnsetMaxIOPS ensures that no value is present for MaxIOPS, not even an explicit nil
 ### GetUuid
 
 `func (o *StorageVolume) GetUuid() string`
@@ -909,20 +979,20 @@ HasPoolName returns a boolean if a field has been set.
 
 ### GetZone
 
-`func (o *StorageVolume) GetZone() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *StorageVolume) GetZone() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetZone returns the Zone field if non-nil, zero value otherwise.
 
 ### GetZoneOk
 
-`func (o *StorageVolume) GetZoneOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *StorageVolume) GetZoneOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetZoneOk returns a tuple with the Zone field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetZone
 
-`func (o *StorageVolume) SetZone(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *StorageVolume) SetZone(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetZone sets Zone field to given value.
 
@@ -959,20 +1029,20 @@ HasZoneId returns a boolean if a field has been set.
 
 ### GetDatastore
 
-`func (o *StorageVolume) GetDatastore() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *StorageVolume) GetDatastore() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetDatastore returns the Datastore field if non-nil, zero value otherwise.
 
 ### GetDatastoreOk
 
-`func (o *StorageVolume) GetDatastoreOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *StorageVolume) GetDatastoreOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetDatastoreOk returns a tuple with the Datastore field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDatastore
 
-`func (o *StorageVolume) SetDatastore(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *StorageVolume) SetDatastore(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetDatastore sets Datastore field to given value.
 
@@ -1007,6 +1077,16 @@ SetDatastoreId sets DatastoreId field to given value.
 
 HasDatastoreId returns a boolean if a field has been set.
 
+### SetDatastoreIdNil
+
+`func (o *StorageVolume) SetDatastoreIdNil(b bool)`
+
+ SetDatastoreIdNil sets the value for DatastoreId to be an explicit nil
+
+### UnsetDatastoreId
+`func (o *StorageVolume) UnsetDatastoreId()`
+
+UnsetDatastoreId ensures that no value is present for DatastoreId, not even an explicit nil
 ### GetDatastoreOption
 
 `func (o *StorageVolume) GetDatastoreOption() string`
@@ -1057,6 +1137,16 @@ SetStorageGroup sets StorageGroup field to given value.
 
 HasStorageGroup returns a boolean if a field has been set.
 
+### SetStorageGroupNil
+
+`func (o *StorageVolume) SetStorageGroupNil(b bool)`
+
+ SetStorageGroupNil sets the value for StorageGroup to be an explicit nil
+
+### UnsetStorageGroup
+`func (o *StorageVolume) UnsetStorageGroup()`
+
+UnsetStorageGroup ensures that no value is present for StorageGroup, not even an explicit nil
 ### GetNamespace
 
 `func (o *StorageVolume) GetNamespace() string`
@@ -1082,6 +1172,16 @@ SetNamespace sets Namespace field to given value.
 
 HasNamespace returns a boolean if a field has been set.
 
+### SetNamespaceNil
+
+`func (o *StorageVolume) SetNamespaceNil(b bool)`
+
+ SetNamespaceNil sets the value for Namespace to be an explicit nil
+
+### UnsetNamespace
+`func (o *StorageVolume) UnsetNamespace()`
+
+UnsetNamespace ensures that no value is present for Namespace, not even an explicit nil
 ### GetStorageServer
 
 `func (o *StorageVolume) GetStorageServer() string`
@@ -1107,6 +1207,16 @@ SetStorageServer sets StorageServer field to given value.
 
 HasStorageServer returns a boolean if a field has been set.
 
+### SetStorageServerNil
+
+`func (o *StorageVolume) SetStorageServerNil(b bool)`
+
+ SetStorageServerNil sets the value for StorageServer to be an explicit nil
+
+### UnsetStorageServer
+`func (o *StorageVolume) UnsetStorageServer()`
+
+UnsetStorageServer ensures that no value is present for StorageServer, not even an explicit nil
 ### GetSource
 
 `func (o *StorageVolume) GetSource() string`
@@ -1157,6 +1267,16 @@ SetUniqueId sets UniqueId field to given value.
 
 HasUniqueId returns a boolean if a field has been set.
 
+### SetUniqueIdNil
+
+`func (o *StorageVolume) SetUniqueIdNil(b bool)`
+
+ SetUniqueIdNil sets the value for UniqueId to be an explicit nil
+
+### UnsetUniqueId
+`func (o *StorageVolume) UnsetUniqueId()`
+
+UnsetUniqueId ensures that no value is present for UniqueId, not even an explicit nil
 ### GetInternalId
 
 `func (o *StorageVolume) GetInternalId() string`
@@ -1182,6 +1302,16 @@ SetInternalId sets InternalId field to given value.
 
 HasInternalId returns a boolean if a field has been set.
 
+### SetInternalIdNil
+
+`func (o *StorageVolume) SetInternalIdNil(b bool)`
+
+ SetInternalIdNil sets the value for InternalId to be an explicit nil
+
+### UnsetInternalId
+`func (o *StorageVolume) UnsetInternalId()`
+
+UnsetInternalId ensures that no value is present for InternalId, not even an explicit nil
 ### GetExternalId
 
 `func (o *StorageVolume) GetExternalId() string`
@@ -1232,6 +1362,16 @@ SetProvisionType sets ProvisionType field to given value.
 
 HasProvisionType returns a boolean if a field has been set.
 
+### SetProvisionTypeNil
+
+`func (o *StorageVolume) SetProvisionTypeNil(b bool)`
+
+ SetProvisionTypeNil sets the value for ProvisionType to be an explicit nil
+
+### UnsetProvisionType
+`func (o *StorageVolume) UnsetProvisionType()`
+
+UnsetProvisionType ensures that no value is present for ProvisionType, not even an explicit nil
 ### GetCopyType
 
 `func (o *StorageVolume) GetCopyType() string`
@@ -1257,6 +1397,16 @@ SetCopyType sets CopyType field to given value.
 
 HasCopyType returns a boolean if a field has been set.
 
+### SetCopyTypeNil
+
+`func (o *StorageVolume) SetCopyTypeNil(b bool)`
+
+ SetCopyTypeNil sets the value for CopyType to be an explicit nil
+
+### UnsetCopyType
+`func (o *StorageVolume) UnsetCopyType()`
+
+UnsetCopyType ensures that no value is present for CopyType, not even an explicit nil
 ### GetFiberWwn
 
 `func (o *StorageVolume) GetFiberWwn() string`
@@ -1282,6 +1432,16 @@ SetFiberWwn sets FiberWwn field to given value.
 
 HasFiberWwn returns a boolean if a field has been set.
 
+### SetFiberWwnNil
+
+`func (o *StorageVolume) SetFiberWwnNil(b bool)`
+
+ SetFiberWwnNil sets the value for FiberWwn to be an explicit nil
+
+### UnsetFiberWwn
+`func (o *StorageVolume) UnsetFiberWwn()`
+
+UnsetFiberWwn ensures that no value is present for FiberWwn, not even an explicit nil
 ### GetFileName
 
 `func (o *StorageVolume) GetFileName() string`
@@ -1307,6 +1467,16 @@ SetFileName sets FileName field to given value.
 
 HasFileName returns a boolean if a field has been set.
 
+### SetFileNameNil
+
+`func (o *StorageVolume) SetFileNameNil(b bool)`
+
+ SetFileNameNil sets the value for FileName to be an explicit nil
+
+### UnsetFileName
+`func (o *StorageVolume) UnsetFileName()`
+
+UnsetFileName ensures that no value is present for FileName, not even an explicit nil
 ### GetClaimName
 
 `func (o *StorageVolume) GetClaimName() string`
@@ -1332,6 +1502,16 @@ SetClaimName sets ClaimName field to given value.
 
 HasClaimName returns a boolean if a field has been set.
 
+### SetClaimNameNil
+
+`func (o *StorageVolume) SetClaimNameNil(b bool)`
+
+ SetClaimNameNil sets the value for ClaimName to be an explicit nil
+
+### UnsetClaimName
+`func (o *StorageVolume) UnsetClaimName()`
+
+UnsetClaimName ensures that no value is present for ClaimName, not even an explicit nil
 ### GetSharePath
 
 `func (o *StorageVolume) GetSharePath() string`
@@ -1357,6 +1537,16 @@ SetSharePath sets SharePath field to given value.
 
 HasSharePath returns a boolean if a field has been set.
 
+### SetSharePathNil
+
+`func (o *StorageVolume) SetSharePathNil(b bool)`
+
+ SetSharePathNil sets the value for SharePath to be an explicit nil
+
+### UnsetSharePath
+`func (o *StorageVolume) UnsetSharePath()`
+
+UnsetSharePath ensures that no value is present for SharePath, not even an explicit nil
 ### GetSourceId
 
 `func (o *StorageVolume) GetSourceId() string`
@@ -1484,20 +1674,20 @@ HasRawData returns a boolean if a field has been set.
 
 ### GetAccount
 
-`func (o *StorageVolume) GetAccount() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *StorageVolume) GetAccount() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetAccount returns the Account field if non-nil, zero value otherwise.
 
 ### GetAccountOk
 
-`func (o *StorageVolume) GetAccountOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *StorageVolume) GetAccountOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetAccountOk returns a tuple with the Account field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccount
 
-`func (o *StorageVolume) SetAccount(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *StorageVolume) SetAccount(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetAccount sets Account field to given value.
 
@@ -1509,20 +1699,20 @@ HasAccount returns a boolean if a field has been set.
 
 ### GetOwner
 
-`func (o *StorageVolume) GetOwner() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *StorageVolume) GetOwner() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetOwner returns the Owner field if non-nil, zero value otherwise.
 
 ### GetOwnerOk
 
-`func (o *StorageVolume) GetOwnerOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *StorageVolume) GetOwnerOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOwner
 
-`func (o *StorageVolume) SetOwner(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *StorageVolume) SetOwner(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetOwner sets Owner field to given value.
 

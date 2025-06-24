@@ -5,9 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** | Name | 
-**Description** | Pointer to **string** | Description | [optional] 
+**Description** | Pointer to **NullableString** | Description | [optional] 
 **Role** | Pointer to [**AddTenantRequestAccountRole**](AddTenantRequestAccountRole.md) |  | [optional] 
-**Subdomain** | Pointer to **string** | The subdomain. This will be part of the login URL and username for sub tenant users. | [optional] 
+**Subdomain** | Pointer to **NullableString** | The subdomain. This will be part of the login URL and username for sub tenant users. | [optional] 
 **Currency** | Pointer to **string** | Currency Code (ISO 4217) | [optional] [default to "USD"]
 
 ## Methods
@@ -74,6 +74,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *AddTenantRequestAccount) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *AddTenantRequestAccount) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetRole
 
 `func (o *AddTenantRequestAccount) GetRole() AddTenantRequestAccountRole`
@@ -124,6 +134,16 @@ SetSubdomain sets Subdomain field to given value.
 
 HasSubdomain returns a boolean if a field has been set.
 
+### SetSubdomainNil
+
+`func (o *AddTenantRequestAccount) SetSubdomainNil(b bool)`
+
+ SetSubdomainNil sets the value for Subdomain to be an explicit nil
+
+### UnsetSubdomain
+`func (o *AddTenantRequestAccount) UnsetSubdomain()`
+
+UnsetSubdomain ensures that no value is present for Subdomain, not even an explicit nil
 ### GetCurrency
 
 `func (o *AddTenantRequestAccount) GetCurrency() string`

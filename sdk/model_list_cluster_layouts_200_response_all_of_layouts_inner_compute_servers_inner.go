@@ -25,20 +25,20 @@ type ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner struct {
 	NodeCount               *int64                                                                              `json:"nodeCount,omitempty"`
 	NodeType                *string                                                                             `json:"nodeType,omitempty"`
 	MinNodeCount            *int64                                                                              `json:"minNodeCount,omitempty"`
-	MaxNodeCount            *string                                                                             `json:"maxNodeCount,omitempty"`
+	MaxNodeCount            NullableString                                                                      `json:"maxNodeCount,omitempty"`
 	DynamicCount            *bool                                                                               `json:"dynamicCount,omitempty"`
 	InstallContainerRuntime *bool                                                                               `json:"installContainerRuntime,omitempty"`
 	InstallStorageRuntime   *bool                                                                               `json:"installStorageRuntime,omitempty"`
 	Name                    *string                                                                             `json:"name,omitempty"`
 	Code                    *string                                                                             `json:"code,omitempty"`
 	Category                *string                                                                             `json:"category,omitempty"`
-	Config                  *string                                                                             `json:"config,omitempty"`
+	Config                  NullableString                                                                      `json:"config,omitempty"`
 	ContainerType           *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType     `json:"containerType,omitempty"`
 	ComputeServerType       *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerComputeServerType `json:"computeServerType,omitempty"`
-	ProvisionService        *string                                                                             `json:"provisionService,omitempty"`
-	PlanCategory            *string                                                                             `json:"planCategory,omitempty"`
-	NamePrefix              *string                                                                             `json:"namePrefix,omitempty"`
-	NameSuffix              *string                                                                             `json:"nameSuffix,omitempty"`
+	ProvisionService        NullableString                                                                      `json:"provisionService,omitempty"`
+	PlanCategory            NullableString                                                                      `json:"planCategory,omitempty"`
+	NamePrefix              NullableString                                                                      `json:"namePrefix,omitempty"`
+	NameSuffix              NullableString                                                                      `json:"nameSuffix,omitempty"`
 	ForceNameIndex          *bool                                                                               `json:"forceNameIndex,omitempty"`
 	LoadBalance             *bool                                                                               `json:"loadBalance,omitempty"`
 	AdditionalProperties    map[string]interface{}                                                              `json:",remain"`
@@ -223,36 +223,47 @@ func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner) SetM
 	o.MinNodeCount = &v
 }
 
-// GetMaxNodeCount returns the MaxNodeCount field value if set, zero value otherwise.
+// GetMaxNodeCount returns the MaxNodeCount field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner) GetMaxNodeCount() string {
-	if o == nil || IsNil(o.MaxNodeCount) {
+	if o == nil || IsNil(o.MaxNodeCount.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.MaxNodeCount
+	return *o.MaxNodeCount.Get()
 }
 
 // GetMaxNodeCountOk returns a tuple with the MaxNodeCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner) GetMaxNodeCountOk() (*string, bool) {
-	if o == nil || IsNil(o.MaxNodeCount) {
+	if o == nil {
 		return nil, false
 	}
-	return o.MaxNodeCount, true
+	return o.MaxNodeCount.Get(), o.MaxNodeCount.IsSet()
 }
 
 // IsSetMaxNodeCount returns a boolean if a field has been set.
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner) IsSetMaxNodeCount() bool {
-	if o != nil && !IsNil(o.MaxNodeCount) {
+	if o != nil && o.MaxNodeCount.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetMaxNodeCount gets a reference to the given string and assigns it to the MaxNodeCount field.
+// SetMaxNodeCount gets a reference to the given NullableString and assigns it to the MaxNodeCount field.
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner) SetMaxNodeCount(v string) {
-	o.MaxNodeCount = &v
+	o.MaxNodeCount.Set(&v)
+}
+
+// SetMaxNodeCountNil sets the value for MaxNodeCount to be an explicit nil
+func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner) SetMaxNodeCountNil() {
+	o.MaxNodeCount.Set(nil)
+}
+
+// UnsetMaxNodeCount ensures that no value is present for MaxNodeCount, not even an explicit nil
+func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner) UnsetMaxNodeCount() {
+	o.MaxNodeCount.Unset()
 }
 
 // GetDynamicCount returns the DynamicCount field value if set, zero value otherwise.
@@ -447,36 +458,47 @@ func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner) SetC
 	o.Category = &v
 }
 
-// GetConfig returns the Config field value if set, zero value otherwise.
+// GetConfig returns the Config field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner) GetConfig() string {
-	if o == nil || IsNil(o.Config) {
+	if o == nil || IsNil(o.Config.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Config
+	return *o.Config.Get()
 }
 
 // GetConfigOk returns a tuple with the Config field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner) GetConfigOk() (*string, bool) {
-	if o == nil || IsNil(o.Config) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Config, true
+	return o.Config.Get(), o.Config.IsSet()
 }
 
 // IsSetConfig returns a boolean if a field has been set.
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
+	if o != nil && o.Config.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetConfig gets a reference to the given string and assigns it to the Config field.
+// SetConfig gets a reference to the given NullableString and assigns it to the Config field.
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner) SetConfig(v string) {
-	o.Config = &v
+	o.Config.Set(&v)
+}
+
+// SetConfigNil sets the value for Config to be an explicit nil
+func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner) SetConfigNil() {
+	o.Config.Set(nil)
+}
+
+// UnsetConfig ensures that no value is present for Config, not even an explicit nil
+func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner) UnsetConfig() {
+	o.Config.Unset()
 }
 
 // GetContainerType returns the ContainerType field value if set, zero value otherwise.
@@ -543,132 +565,176 @@ func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner) SetC
 	o.ComputeServerType = &v
 }
 
-// GetProvisionService returns the ProvisionService field value if set, zero value otherwise.
+// GetProvisionService returns the ProvisionService field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner) GetProvisionService() string {
-	if o == nil || IsNil(o.ProvisionService) {
+	if o == nil || IsNil(o.ProvisionService.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ProvisionService
+	return *o.ProvisionService.Get()
 }
 
 // GetProvisionServiceOk returns a tuple with the ProvisionService field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner) GetProvisionServiceOk() (*string, bool) {
-	if o == nil || IsNil(o.ProvisionService) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ProvisionService, true
+	return o.ProvisionService.Get(), o.ProvisionService.IsSet()
 }
 
 // IsSetProvisionService returns a boolean if a field has been set.
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner) IsSetProvisionService() bool {
-	if o != nil && !IsNil(o.ProvisionService) {
+	if o != nil && o.ProvisionService.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetProvisionService gets a reference to the given string and assigns it to the ProvisionService field.
+// SetProvisionService gets a reference to the given NullableString and assigns it to the ProvisionService field.
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner) SetProvisionService(v string) {
-	o.ProvisionService = &v
+	o.ProvisionService.Set(&v)
 }
 
-// GetPlanCategory returns the PlanCategory field value if set, zero value otherwise.
+// SetProvisionServiceNil sets the value for ProvisionService to be an explicit nil
+func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner) SetProvisionServiceNil() {
+	o.ProvisionService.Set(nil)
+}
+
+// UnsetProvisionService ensures that no value is present for ProvisionService, not even an explicit nil
+func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner) UnsetProvisionService() {
+	o.ProvisionService.Unset()
+}
+
+// GetPlanCategory returns the PlanCategory field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner) GetPlanCategory() string {
-	if o == nil || IsNil(o.PlanCategory) {
+	if o == nil || IsNil(o.PlanCategory.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.PlanCategory
+	return *o.PlanCategory.Get()
 }
 
 // GetPlanCategoryOk returns a tuple with the PlanCategory field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner) GetPlanCategoryOk() (*string, bool) {
-	if o == nil || IsNil(o.PlanCategory) {
+	if o == nil {
 		return nil, false
 	}
-	return o.PlanCategory, true
+	return o.PlanCategory.Get(), o.PlanCategory.IsSet()
 }
 
 // IsSetPlanCategory returns a boolean if a field has been set.
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner) IsSetPlanCategory() bool {
-	if o != nil && !IsNil(o.PlanCategory) {
+	if o != nil && o.PlanCategory.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetPlanCategory gets a reference to the given string and assigns it to the PlanCategory field.
+// SetPlanCategory gets a reference to the given NullableString and assigns it to the PlanCategory field.
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner) SetPlanCategory(v string) {
-	o.PlanCategory = &v
+	o.PlanCategory.Set(&v)
 }
 
-// GetNamePrefix returns the NamePrefix field value if set, zero value otherwise.
+// SetPlanCategoryNil sets the value for PlanCategory to be an explicit nil
+func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner) SetPlanCategoryNil() {
+	o.PlanCategory.Set(nil)
+}
+
+// UnsetPlanCategory ensures that no value is present for PlanCategory, not even an explicit nil
+func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner) UnsetPlanCategory() {
+	o.PlanCategory.Unset()
+}
+
+// GetNamePrefix returns the NamePrefix field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner) GetNamePrefix() string {
-	if o == nil || IsNil(o.NamePrefix) {
+	if o == nil || IsNil(o.NamePrefix.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.NamePrefix
+	return *o.NamePrefix.Get()
 }
 
 // GetNamePrefixOk returns a tuple with the NamePrefix field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner) GetNamePrefixOk() (*string, bool) {
-	if o == nil || IsNil(o.NamePrefix) {
+	if o == nil {
 		return nil, false
 	}
-	return o.NamePrefix, true
+	return o.NamePrefix.Get(), o.NamePrefix.IsSet()
 }
 
 // IsSetNamePrefix returns a boolean if a field has been set.
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner) IsSetNamePrefix() bool {
-	if o != nil && !IsNil(o.NamePrefix) {
+	if o != nil && o.NamePrefix.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetNamePrefix gets a reference to the given string and assigns it to the NamePrefix field.
+// SetNamePrefix gets a reference to the given NullableString and assigns it to the NamePrefix field.
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner) SetNamePrefix(v string) {
-	o.NamePrefix = &v
+	o.NamePrefix.Set(&v)
 }
 
-// GetNameSuffix returns the NameSuffix field value if set, zero value otherwise.
+// SetNamePrefixNil sets the value for NamePrefix to be an explicit nil
+func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner) SetNamePrefixNil() {
+	o.NamePrefix.Set(nil)
+}
+
+// UnsetNamePrefix ensures that no value is present for NamePrefix, not even an explicit nil
+func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner) UnsetNamePrefix() {
+	o.NamePrefix.Unset()
+}
+
+// GetNameSuffix returns the NameSuffix field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner) GetNameSuffix() string {
-	if o == nil || IsNil(o.NameSuffix) {
+	if o == nil || IsNil(o.NameSuffix.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.NameSuffix
+	return *o.NameSuffix.Get()
 }
 
 // GetNameSuffixOk returns a tuple with the NameSuffix field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner) GetNameSuffixOk() (*string, bool) {
-	if o == nil || IsNil(o.NameSuffix) {
+	if o == nil {
 		return nil, false
 	}
-	return o.NameSuffix, true
+	return o.NameSuffix.Get(), o.NameSuffix.IsSet()
 }
 
 // IsSetNameSuffix returns a boolean if a field has been set.
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner) IsSetNameSuffix() bool {
-	if o != nil && !IsNil(o.NameSuffix) {
+	if o != nil && o.NameSuffix.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetNameSuffix gets a reference to the given string and assigns it to the NameSuffix field.
+// SetNameSuffix gets a reference to the given NullableString and assigns it to the NameSuffix field.
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner) SetNameSuffix(v string) {
-	o.NameSuffix = &v
+	o.NameSuffix.Set(&v)
+}
+
+// SetNameSuffixNil sets the value for NameSuffix to be an explicit nil
+func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner) SetNameSuffixNil() {
+	o.NameSuffix.Set(nil)
+}
+
+// UnsetNameSuffix ensures that no value is present for NameSuffix, not even an explicit nil
+func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner) UnsetNameSuffix() {
+	o.NameSuffix.Unset()
 }
 
 // GetForceNameIndex returns the ForceNameIndex field value if set, zero value otherwise.
@@ -760,8 +826,8 @@ func (o ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner) ToMap
 	if !IsNil(o.MinNodeCount) {
 		toSerialize["minNodeCount"] = o.MinNodeCount
 	}
-	if !IsNil(o.MaxNodeCount) {
-		toSerialize["maxNodeCount"] = o.MaxNodeCount
+	if o.MaxNodeCount.IsSet() {
+		toSerialize["maxNodeCount"] = o.MaxNodeCount.Get()
 	}
 	if !IsNil(o.DynamicCount) {
 		toSerialize["dynamicCount"] = o.DynamicCount
@@ -781,8 +847,8 @@ func (o ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner) ToMap
 	if !IsNil(o.Category) {
 		toSerialize["category"] = o.Category
 	}
-	if !IsNil(o.Config) {
-		toSerialize["config"] = o.Config
+	if o.Config.IsSet() {
+		toSerialize["config"] = o.Config.Get()
 	}
 	if !IsNil(o.ContainerType) {
 		toSerialize["containerType"] = o.ContainerType
@@ -790,17 +856,17 @@ func (o ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner) ToMap
 	if !IsNil(o.ComputeServerType) {
 		toSerialize["computeServerType"] = o.ComputeServerType
 	}
-	if !IsNil(o.ProvisionService) {
-		toSerialize["provisionService"] = o.ProvisionService
+	if o.ProvisionService.IsSet() {
+		toSerialize["provisionService"] = o.ProvisionService.Get()
 	}
-	if !IsNil(o.PlanCategory) {
-		toSerialize["planCategory"] = o.PlanCategory
+	if o.PlanCategory.IsSet() {
+		toSerialize["planCategory"] = o.PlanCategory.Get()
 	}
-	if !IsNil(o.NamePrefix) {
-		toSerialize["namePrefix"] = o.NamePrefix
+	if o.NamePrefix.IsSet() {
+		toSerialize["namePrefix"] = o.NamePrefix.Get()
 	}
-	if !IsNil(o.NameSuffix) {
-		toSerialize["nameSuffix"] = o.NameSuffix
+	if o.NameSuffix.IsSet() {
+		toSerialize["nameSuffix"] = o.NameSuffix.Get()
 	}
 	if !IsNil(o.ForceNameIndex) {
 		toSerialize["forceNameIndex"] = o.ForceNameIndex

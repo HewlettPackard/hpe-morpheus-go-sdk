@@ -23,29 +23,29 @@ type OsTypeCreate struct {
 	// The name of the osType.
 	Name string `json:"name"`
 	// The description of the osType.
-	Description *string `json:"description,omitempty"`
+	Description NullableString `json:"description,omitempty"`
 	// The platform of the osType.
 	Platform string `json:"platform"`
 	// The code morph uses as an identifier
 	Code string `json:"code"`
 	// The category of the osType.
-	Category *string `json:"category,omitempty"`
+	Category NullableString `json:"category,omitempty"`
 	// The vendor of the osType.
-	Vendor *string `json:"vendor,omitempty"`
+	Vendor NullableString `json:"vendor,omitempty"`
 	// The osName of the osType.
-	OsName *string `json:"osName,omitempty"`
+	OsName NullableString `json:"osName,omitempty"`
 	// The osVersion of the osType.
-	OsVersion *string `json:"osVersion,omitempty"`
+	OsVersion NullableString `json:"osVersion,omitempty"`
 	// The osCodename of the osType.
-	OsCodename *string `json:"osCodename,omitempty"`
+	OsCodename NullableString `json:"osCodename,omitempty"`
 	// The family of the osType.
-	OsFamily *string `json:"osFamily,omitempty"`
+	OsFamily NullableString `json:"osFamily,omitempty"`
 	// The bitCount/architecture of the osType.
 	BitCount int64 `json:"bitCount"`
 	// The version of CloudInit being used.
 	CloudInitVersion *string `json:"cloudInitVersion,omitempty"`
 	// Whether the morpheus agent is installed.
-	InstallAgent         *bool                  `json:"installAgent,omitempty"`
+	InstallAgent         NullableBool           `json:"installAgent,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -96,36 +96,47 @@ func (o *OsTypeCreate) SetName(v string) {
 	o.Name = v
 }
 
-// GetDescription returns the Description field value if set, zero value otherwise.
+// GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *OsTypeCreate) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
+	if o == nil || IsNil(o.Description.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Description
+	return *o.Description.Get()
 }
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OsTypeCreate) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Description, true
+	return o.Description.Get(), o.Description.IsSet()
 }
 
 // IsSetDescription returns a boolean if a field has been set.
 func (o *OsTypeCreate) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
+	if o != nil && o.Description.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDescription gets a reference to the given string and assigns it to the Description field.
+// SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *OsTypeCreate) SetDescription(v string) {
-	o.Description = &v
+	o.Description.Set(&v)
+}
+
+// SetDescriptionNil sets the value for Description to be an explicit nil
+func (o *OsTypeCreate) SetDescriptionNil() {
+	o.Description.Set(nil)
+}
+
+// UnsetDescription ensures that no value is present for Description, not even an explicit nil
+func (o *OsTypeCreate) UnsetDescription() {
+	o.Description.Unset()
 }
 
 // GetPlatform returns the Platform field value
@@ -176,196 +187,262 @@ func (o *OsTypeCreate) SetCode(v string) {
 	o.Code = v
 }
 
-// GetCategory returns the Category field value if set, zero value otherwise.
+// GetCategory returns the Category field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *OsTypeCreate) GetCategory() string {
-	if o == nil || IsNil(o.Category) {
+	if o == nil || IsNil(o.Category.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Category
+	return *o.Category.Get()
 }
 
 // GetCategoryOk returns a tuple with the Category field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OsTypeCreate) GetCategoryOk() (*string, bool) {
-	if o == nil || IsNil(o.Category) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Category, true
+	return o.Category.Get(), o.Category.IsSet()
 }
 
 // IsSetCategory returns a boolean if a field has been set.
 func (o *OsTypeCreate) IsSetCategory() bool {
-	if o != nil && !IsNil(o.Category) {
+	if o != nil && o.Category.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCategory gets a reference to the given string and assigns it to the Category field.
+// SetCategory gets a reference to the given NullableString and assigns it to the Category field.
 func (o *OsTypeCreate) SetCategory(v string) {
-	o.Category = &v
+	o.Category.Set(&v)
 }
 
-// GetVendor returns the Vendor field value if set, zero value otherwise.
+// SetCategoryNil sets the value for Category to be an explicit nil
+func (o *OsTypeCreate) SetCategoryNil() {
+	o.Category.Set(nil)
+}
+
+// UnsetCategory ensures that no value is present for Category, not even an explicit nil
+func (o *OsTypeCreate) UnsetCategory() {
+	o.Category.Unset()
+}
+
+// GetVendor returns the Vendor field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *OsTypeCreate) GetVendor() string {
-	if o == nil || IsNil(o.Vendor) {
+	if o == nil || IsNil(o.Vendor.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Vendor
+	return *o.Vendor.Get()
 }
 
 // GetVendorOk returns a tuple with the Vendor field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OsTypeCreate) GetVendorOk() (*string, bool) {
-	if o == nil || IsNil(o.Vendor) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Vendor, true
+	return o.Vendor.Get(), o.Vendor.IsSet()
 }
 
 // IsSetVendor returns a boolean if a field has been set.
 func (o *OsTypeCreate) IsSetVendor() bool {
-	if o != nil && !IsNil(o.Vendor) {
+	if o != nil && o.Vendor.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetVendor gets a reference to the given string and assigns it to the Vendor field.
+// SetVendor gets a reference to the given NullableString and assigns it to the Vendor field.
 func (o *OsTypeCreate) SetVendor(v string) {
-	o.Vendor = &v
+	o.Vendor.Set(&v)
 }
 
-// GetOsName returns the OsName field value if set, zero value otherwise.
+// SetVendorNil sets the value for Vendor to be an explicit nil
+func (o *OsTypeCreate) SetVendorNil() {
+	o.Vendor.Set(nil)
+}
+
+// UnsetVendor ensures that no value is present for Vendor, not even an explicit nil
+func (o *OsTypeCreate) UnsetVendor() {
+	o.Vendor.Unset()
+}
+
+// GetOsName returns the OsName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *OsTypeCreate) GetOsName() string {
-	if o == nil || IsNil(o.OsName) {
+	if o == nil || IsNil(o.OsName.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.OsName
+	return *o.OsName.Get()
 }
 
 // GetOsNameOk returns a tuple with the OsName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OsTypeCreate) GetOsNameOk() (*string, bool) {
-	if o == nil || IsNil(o.OsName) {
+	if o == nil {
 		return nil, false
 	}
-	return o.OsName, true
+	return o.OsName.Get(), o.OsName.IsSet()
 }
 
 // IsSetOsName returns a boolean if a field has been set.
 func (o *OsTypeCreate) IsSetOsName() bool {
-	if o != nil && !IsNil(o.OsName) {
+	if o != nil && o.OsName.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetOsName gets a reference to the given string and assigns it to the OsName field.
+// SetOsName gets a reference to the given NullableString and assigns it to the OsName field.
 func (o *OsTypeCreate) SetOsName(v string) {
-	o.OsName = &v
+	o.OsName.Set(&v)
 }
 
-// GetOsVersion returns the OsVersion field value if set, zero value otherwise.
+// SetOsNameNil sets the value for OsName to be an explicit nil
+func (o *OsTypeCreate) SetOsNameNil() {
+	o.OsName.Set(nil)
+}
+
+// UnsetOsName ensures that no value is present for OsName, not even an explicit nil
+func (o *OsTypeCreate) UnsetOsName() {
+	o.OsName.Unset()
+}
+
+// GetOsVersion returns the OsVersion field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *OsTypeCreate) GetOsVersion() string {
-	if o == nil || IsNil(o.OsVersion) {
+	if o == nil || IsNil(o.OsVersion.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.OsVersion
+	return *o.OsVersion.Get()
 }
 
 // GetOsVersionOk returns a tuple with the OsVersion field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OsTypeCreate) GetOsVersionOk() (*string, bool) {
-	if o == nil || IsNil(o.OsVersion) {
+	if o == nil {
 		return nil, false
 	}
-	return o.OsVersion, true
+	return o.OsVersion.Get(), o.OsVersion.IsSet()
 }
 
 // IsSetOsVersion returns a boolean if a field has been set.
 func (o *OsTypeCreate) IsSetOsVersion() bool {
-	if o != nil && !IsNil(o.OsVersion) {
+	if o != nil && o.OsVersion.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetOsVersion gets a reference to the given string and assigns it to the OsVersion field.
+// SetOsVersion gets a reference to the given NullableString and assigns it to the OsVersion field.
 func (o *OsTypeCreate) SetOsVersion(v string) {
-	o.OsVersion = &v
+	o.OsVersion.Set(&v)
 }
 
-// GetOsCodename returns the OsCodename field value if set, zero value otherwise.
+// SetOsVersionNil sets the value for OsVersion to be an explicit nil
+func (o *OsTypeCreate) SetOsVersionNil() {
+	o.OsVersion.Set(nil)
+}
+
+// UnsetOsVersion ensures that no value is present for OsVersion, not even an explicit nil
+func (o *OsTypeCreate) UnsetOsVersion() {
+	o.OsVersion.Unset()
+}
+
+// GetOsCodename returns the OsCodename field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *OsTypeCreate) GetOsCodename() string {
-	if o == nil || IsNil(o.OsCodename) {
+	if o == nil || IsNil(o.OsCodename.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.OsCodename
+	return *o.OsCodename.Get()
 }
 
 // GetOsCodenameOk returns a tuple with the OsCodename field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OsTypeCreate) GetOsCodenameOk() (*string, bool) {
-	if o == nil || IsNil(o.OsCodename) {
+	if o == nil {
 		return nil, false
 	}
-	return o.OsCodename, true
+	return o.OsCodename.Get(), o.OsCodename.IsSet()
 }
 
 // IsSetOsCodename returns a boolean if a field has been set.
 func (o *OsTypeCreate) IsSetOsCodename() bool {
-	if o != nil && !IsNil(o.OsCodename) {
+	if o != nil && o.OsCodename.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetOsCodename gets a reference to the given string and assigns it to the OsCodename field.
+// SetOsCodename gets a reference to the given NullableString and assigns it to the OsCodename field.
 func (o *OsTypeCreate) SetOsCodename(v string) {
-	o.OsCodename = &v
+	o.OsCodename.Set(&v)
 }
 
-// GetOsFamily returns the OsFamily field value if set, zero value otherwise.
+// SetOsCodenameNil sets the value for OsCodename to be an explicit nil
+func (o *OsTypeCreate) SetOsCodenameNil() {
+	o.OsCodename.Set(nil)
+}
+
+// UnsetOsCodename ensures that no value is present for OsCodename, not even an explicit nil
+func (o *OsTypeCreate) UnsetOsCodename() {
+	o.OsCodename.Unset()
+}
+
+// GetOsFamily returns the OsFamily field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *OsTypeCreate) GetOsFamily() string {
-	if o == nil || IsNil(o.OsFamily) {
+	if o == nil || IsNil(o.OsFamily.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.OsFamily
+	return *o.OsFamily.Get()
 }
 
 // GetOsFamilyOk returns a tuple with the OsFamily field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OsTypeCreate) GetOsFamilyOk() (*string, bool) {
-	if o == nil || IsNil(o.OsFamily) {
+	if o == nil {
 		return nil, false
 	}
-	return o.OsFamily, true
+	return o.OsFamily.Get(), o.OsFamily.IsSet()
 }
 
 // IsSetOsFamily returns a boolean if a field has been set.
 func (o *OsTypeCreate) IsSetOsFamily() bool {
-	if o != nil && !IsNil(o.OsFamily) {
+	if o != nil && o.OsFamily.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetOsFamily gets a reference to the given string and assigns it to the OsFamily field.
+// SetOsFamily gets a reference to the given NullableString and assigns it to the OsFamily field.
 func (o *OsTypeCreate) SetOsFamily(v string) {
-	o.OsFamily = &v
+	o.OsFamily.Set(&v)
+}
+
+// SetOsFamilyNil sets the value for OsFamily to be an explicit nil
+func (o *OsTypeCreate) SetOsFamilyNil() {
+	o.OsFamily.Set(nil)
+}
+
+// UnsetOsFamily ensures that no value is present for OsFamily, not even an explicit nil
+func (o *OsTypeCreate) UnsetOsFamily() {
+	o.OsFamily.Unset()
 }
 
 // GetBitCount returns the BitCount field value
@@ -424,36 +501,47 @@ func (o *OsTypeCreate) SetCloudInitVersion(v string) {
 	o.CloudInitVersion = &v
 }
 
-// GetInstallAgent returns the InstallAgent field value if set, zero value otherwise.
+// GetInstallAgent returns the InstallAgent field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *OsTypeCreate) GetInstallAgent() bool {
-	if o == nil || IsNil(o.InstallAgent) {
+	if o == nil || IsNil(o.InstallAgent.Get()) {
 		var ret bool
 		return ret
 	}
-	return *o.InstallAgent
+	return *o.InstallAgent.Get()
 }
 
 // GetInstallAgentOk returns a tuple with the InstallAgent field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OsTypeCreate) GetInstallAgentOk() (*bool, bool) {
-	if o == nil || IsNil(o.InstallAgent) {
+	if o == nil {
 		return nil, false
 	}
-	return o.InstallAgent, true
+	return o.InstallAgent.Get(), o.InstallAgent.IsSet()
 }
 
 // IsSetInstallAgent returns a boolean if a field has been set.
 func (o *OsTypeCreate) IsSetInstallAgent() bool {
-	if o != nil && !IsNil(o.InstallAgent) {
+	if o != nil && o.InstallAgent.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetInstallAgent gets a reference to the given bool and assigns it to the InstallAgent field.
+// SetInstallAgent gets a reference to the given NullableBool and assigns it to the InstallAgent field.
 func (o *OsTypeCreate) SetInstallAgent(v bool) {
-	o.InstallAgent = &v
+	o.InstallAgent.Set(&v)
+}
+
+// SetInstallAgentNil sets the value for InstallAgent to be an explicit nil
+func (o *OsTypeCreate) SetInstallAgentNil() {
+	o.InstallAgent.Set(nil)
+}
+
+// UnsetInstallAgent ensures that no value is present for InstallAgent, not even an explicit nil
+func (o *OsTypeCreate) UnsetInstallAgent() {
+	o.InstallAgent.Unset()
 }
 
 func (o OsTypeCreate) MarshalJSON() ([]byte, error) {
@@ -467,35 +555,35 @@ func (o OsTypeCreate) MarshalJSON() ([]byte, error) {
 func (o OsTypeCreate) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["name"] = o.Name
-	if !IsNil(o.Description) {
-		toSerialize["description"] = o.Description
+	if o.Description.IsSet() {
+		toSerialize["description"] = o.Description.Get()
 	}
 	toSerialize["platform"] = o.Platform
 	toSerialize["code"] = o.Code
-	if !IsNil(o.Category) {
-		toSerialize["category"] = o.Category
+	if o.Category.IsSet() {
+		toSerialize["category"] = o.Category.Get()
 	}
-	if !IsNil(o.Vendor) {
-		toSerialize["vendor"] = o.Vendor
+	if o.Vendor.IsSet() {
+		toSerialize["vendor"] = o.Vendor.Get()
 	}
-	if !IsNil(o.OsName) {
-		toSerialize["osName"] = o.OsName
+	if o.OsName.IsSet() {
+		toSerialize["osName"] = o.OsName.Get()
 	}
-	if !IsNil(o.OsVersion) {
-		toSerialize["osVersion"] = o.OsVersion
+	if o.OsVersion.IsSet() {
+		toSerialize["osVersion"] = o.OsVersion.Get()
 	}
-	if !IsNil(o.OsCodename) {
-		toSerialize["osCodename"] = o.OsCodename
+	if o.OsCodename.IsSet() {
+		toSerialize["osCodename"] = o.OsCodename.Get()
 	}
-	if !IsNil(o.OsFamily) {
-		toSerialize["osFamily"] = o.OsFamily
+	if o.OsFamily.IsSet() {
+		toSerialize["osFamily"] = o.OsFamily.Get()
 	}
 	toSerialize["bitCount"] = o.BitCount
 	if !IsNil(o.CloudInitVersion) {
 		toSerialize["cloudInitVersion"] = o.CloudInitVersion
 	}
-	if !IsNil(o.InstallAgent) {
-		toSerialize["installAgent"] = o.InstallAgent
+	if o.InstallAgent.IsSet() {
+		toSerialize["installAgent"] = o.InstallAgent.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {

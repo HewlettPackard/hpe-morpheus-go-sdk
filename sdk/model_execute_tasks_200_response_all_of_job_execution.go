@@ -21,7 +21,7 @@ var _ MappedNullable = &ExecuteTasks200ResponseAllOfJobExecution{}
 // ExecuteTasks200ResponseAllOfJobExecution struct for ExecuteTasks200ResponseAllOfJobExecution
 type ExecuteTasks200ResponseAllOfJobExecution struct {
 	Id                   *int64                 `json:"id,omitempty"`
-	ProcessId            *string                `json:"processId,omitempty"`
+	ProcessId            NullableString         `json:"processId,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -76,36 +76,47 @@ func (o *ExecuteTasks200ResponseAllOfJobExecution) SetId(v int64) {
 	o.Id = &v
 }
 
-// GetProcessId returns the ProcessId field value if set, zero value otherwise.
+// GetProcessId returns the ProcessId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ExecuteTasks200ResponseAllOfJobExecution) GetProcessId() string {
-	if o == nil || IsNil(o.ProcessId) {
+	if o == nil || IsNil(o.ProcessId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ProcessId
+	return *o.ProcessId.Get()
 }
 
 // GetProcessIdOk returns a tuple with the ProcessId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ExecuteTasks200ResponseAllOfJobExecution) GetProcessIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ProcessId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ProcessId, true
+	return o.ProcessId.Get(), o.ProcessId.IsSet()
 }
 
 // IsSetProcessId returns a boolean if a field has been set.
 func (o *ExecuteTasks200ResponseAllOfJobExecution) IsSetProcessId() bool {
-	if o != nil && !IsNil(o.ProcessId) {
+	if o != nil && o.ProcessId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetProcessId gets a reference to the given string and assigns it to the ProcessId field.
+// SetProcessId gets a reference to the given NullableString and assigns it to the ProcessId field.
 func (o *ExecuteTasks200ResponseAllOfJobExecution) SetProcessId(v string) {
-	o.ProcessId = &v
+	o.ProcessId.Set(&v)
+}
+
+// SetProcessIdNil sets the value for ProcessId to be an explicit nil
+func (o *ExecuteTasks200ResponseAllOfJobExecution) SetProcessIdNil() {
+	o.ProcessId.Set(nil)
+}
+
+// UnsetProcessId ensures that no value is present for ProcessId, not even an explicit nil
+func (o *ExecuteTasks200ResponseAllOfJobExecution) UnsetProcessId() {
+	o.ProcessId.Unset()
 }
 
 func (o ExecuteTasks200ResponseAllOfJobExecution) MarshalJSON() ([]byte, error) {
@@ -121,8 +132,8 @@ func (o ExecuteTasks200ResponseAllOfJobExecution) ToMap() (map[string]interface{
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
-	if !IsNil(o.ProcessId) {
-		toSerialize["processId"] = o.ProcessId
+	if o.ProcessId.IsSet() {
+		toSerialize["processId"] = o.ProcessId.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {

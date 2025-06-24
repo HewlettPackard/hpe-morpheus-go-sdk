@@ -7,12 +7,12 @@ Name | Type | Description | Notes
 **Id** | Pointer to **int64** |  | [optional] 
 **Category** | Pointer to **string** |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
-**MemberName** | Pointer to **string** |  | [optional] 
-**MemberType** | Pointer to **string** |  | [optional] 
-**MemberValue** | Pointer to **string** |  | [optional] 
-**MemberExpression** | Pointer to **string** |  | [optional] 
+**MemberName** | Pointer to **NullableString** |  | [optional] 
+**MemberType** | Pointer to **NullableString** |  | [optional] 
+**MemberValue** | Pointer to **NullableString** |  | [optional] 
+**MemberExpression** | Pointer to **NullableString** |  | [optional] 
 **DisplayOrder** | Pointer to **int64** |  | [optional] 
-**InternalId** | Pointer to **string** |  | [optional] 
+**InternalId** | Pointer to **NullableString** |  | [optional] 
 **ExternalId** | Pointer to **string** |  | [optional] 
 **Members** | Pointer to **[]map[string]interface{}** |  | [optional] 
 
@@ -135,6 +135,16 @@ SetMemberName sets MemberName field to given value.
 
 HasMemberName returns a boolean if a field has been set.
 
+### SetMemberNameNil
+
+`func (o *NetworkServerGroupMember) SetMemberNameNil(b bool)`
+
+ SetMemberNameNil sets the value for MemberName to be an explicit nil
+
+### UnsetMemberName
+`func (o *NetworkServerGroupMember) UnsetMemberName()`
+
+UnsetMemberName ensures that no value is present for MemberName, not even an explicit nil
 ### GetMemberType
 
 `func (o *NetworkServerGroupMember) GetMemberType() string`
@@ -160,6 +170,16 @@ SetMemberType sets MemberType field to given value.
 
 HasMemberType returns a boolean if a field has been set.
 
+### SetMemberTypeNil
+
+`func (o *NetworkServerGroupMember) SetMemberTypeNil(b bool)`
+
+ SetMemberTypeNil sets the value for MemberType to be an explicit nil
+
+### UnsetMemberType
+`func (o *NetworkServerGroupMember) UnsetMemberType()`
+
+UnsetMemberType ensures that no value is present for MemberType, not even an explicit nil
 ### GetMemberValue
 
 `func (o *NetworkServerGroupMember) GetMemberValue() string`
@@ -185,6 +205,16 @@ SetMemberValue sets MemberValue field to given value.
 
 HasMemberValue returns a boolean if a field has been set.
 
+### SetMemberValueNil
+
+`func (o *NetworkServerGroupMember) SetMemberValueNil(b bool)`
+
+ SetMemberValueNil sets the value for MemberValue to be an explicit nil
+
+### UnsetMemberValue
+`func (o *NetworkServerGroupMember) UnsetMemberValue()`
+
+UnsetMemberValue ensures that no value is present for MemberValue, not even an explicit nil
 ### GetMemberExpression
 
 `func (o *NetworkServerGroupMember) GetMemberExpression() string`
@@ -210,6 +240,16 @@ SetMemberExpression sets MemberExpression field to given value.
 
 HasMemberExpression returns a boolean if a field has been set.
 
+### SetMemberExpressionNil
+
+`func (o *NetworkServerGroupMember) SetMemberExpressionNil(b bool)`
+
+ SetMemberExpressionNil sets the value for MemberExpression to be an explicit nil
+
+### UnsetMemberExpression
+`func (o *NetworkServerGroupMember) UnsetMemberExpression()`
+
+UnsetMemberExpression ensures that no value is present for MemberExpression, not even an explicit nil
 ### GetDisplayOrder
 
 `func (o *NetworkServerGroupMember) GetDisplayOrder() int64`
@@ -260,6 +300,16 @@ SetInternalId sets InternalId field to given value.
 
 HasInternalId returns a boolean if a field has been set.
 
+### SetInternalIdNil
+
+`func (o *NetworkServerGroupMember) SetInternalIdNil(b bool)`
+
+ SetInternalIdNil sets the value for InternalId to be an explicit nil
+
+### UnsetInternalId
+`func (o *NetworkServerGroupMember) UnsetInternalId()`
+
+UnsetInternalId ensures that no value is present for InternalId, not even an explicit nil
 ### GetExternalId
 
 `func (o *NetworkServerGroupMember) GetExternalId() string`

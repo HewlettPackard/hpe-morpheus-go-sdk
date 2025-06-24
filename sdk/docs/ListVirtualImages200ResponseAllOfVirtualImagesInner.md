@@ -6,41 +6,41 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **NullableString** |  | [optional] 
 **Labels** | Pointer to **[]string** |  | [optional] 
 **OwnerId** | Pointer to **int64** |  | [optional] 
-**Tenant** | Pointer to [**ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
+**Tenant** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **ImageType** | Pointer to **string** |  | [optional] 
 **UserUploaded** | Pointer to **bool** |  | [optional] 
 **UserDefined** | Pointer to **bool** |  | [optional] 
 **SystemImage** | Pointer to **bool** |  | [optional] 
 **IsCloudInit** | Pointer to **bool** |  | [optional] 
-**SshUsername** | Pointer to **string** |  | [optional] 
-**SshPassword** | Pointer to **string** |  | [optional] 
-**SshPasswordHash** | Pointer to **string** |  | [optional] 
-**SshKey** | Pointer to **string** |  | [optional] 
-**OsType** | Pointer to [**ListVirtualImages200ResponseAllOfVirtualImagesInnerOsType**](ListVirtualImages200ResponseAllOfVirtualImagesInnerOsType.md) |  | [optional] 
-**MinRam** | Pointer to **int64** |  | [optional] 
-**MinRamGB** | Pointer to **int64** |  | [optional] 
-**MinDisk** | Pointer to **string** |  | [optional] 
-**MinDiskGB** | Pointer to **string** |  | [optional] 
-**RawSize** | Pointer to **int64** |  | [optional] 
-**RawSizeGB** | Pointer to **float32** |  | [optional] 
+**SshUsername** | Pointer to **NullableString** |  | [optional] 
+**SshPassword** | Pointer to **NullableString** |  | [optional] 
+**SshPasswordHash** | Pointer to **NullableString** |  | [optional] 
+**SshKey** | Pointer to **NullableString** |  | [optional] 
+**OsType** | Pointer to [**ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceServerOs**](ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceServerOs.md) |  | [optional] 
+**MinRam** | Pointer to **NullableInt64** |  | [optional] 
+**MinRamGB** | Pointer to **NullableInt64** |  | [optional] 
+**MinDisk** | Pointer to **NullableString** |  | [optional] 
+**MinDiskGB** | Pointer to **NullableString** |  | [optional] 
+**RawSize** | Pointer to **NullableInt64** |  | [optional] 
+**RawSizeGB** | Pointer to **NullableFloat32** |  | [optional] 
 **TrialVersion** | Pointer to **bool** |  | [optional] 
 **VirtioSupported** | Pointer to **bool** |  | [optional] 
-**Uefi** | Pointer to **string** |  | [optional] 
+**Uefi** | Pointer to **NullableString** |  | [optional] 
 **IsAutoJoinDomain** | Pointer to **bool** |  | [optional] 
 **VmToolsInstalled** | Pointer to **bool** |  | [optional] 
 **InstallAgent** | Pointer to **bool** |  | [optional] 
 **IsForceCustomization** | Pointer to **bool** |  | [optional] 
 **IsSysprep** | Pointer to **bool** |  | [optional] 
 **FipsEnabled** | Pointer to **bool** |  | [optional] 
-**UserData** | Pointer to **string** |  | [optional] 
-**ConsoleKeymap** | Pointer to **string** |  | [optional] 
-**StorageProvider** | Pointer to **string** |  | [optional] 
-**ExternalId** | Pointer to **string** |  | [optional] 
+**UserData** | Pointer to **NullableString** |  | [optional] 
+**ConsoleKeymap** | Pointer to **NullableString** |  | [optional] 
+**StorageProvider** | Pointer to **NullableString** |  | [optional] 
+**ExternalId** | Pointer to **NullableString** |  | [optional] 
 **Visibility** | Pointer to **string** |  | [optional] 
-**Accounts** | Pointer to [**[]ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
+**Accounts** | Pointer to [**[]GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **Config** | Pointer to [**ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig**](ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig.md) |  | [optional] 
 **Volumes** | Pointer to **[]map[string]interface{}** |  | [optional] 
 **StorageControllers** | Pointer to **[]map[string]interface{}** |  | [optional] 
@@ -145,6 +145,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetLabels
 
 `func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetLabels() []string`
@@ -197,20 +207,20 @@ HasOwnerId returns a boolean if a field has been set.
 
 ### GetTenant
 
-`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetTenant() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetTenant() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetTenant returns the Tenant field if non-nil, zero value otherwise.
 
 ### GetTenantOk
 
-`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetTenantOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetTenantOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetTenantOk returns a tuple with the Tenant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenant
 
-`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetTenant(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetTenant(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetTenant sets Tenant field to given value.
 
@@ -370,6 +380,16 @@ SetSshUsername sets SshUsername field to given value.
 
 HasSshUsername returns a boolean if a field has been set.
 
+### SetSshUsernameNil
+
+`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetSshUsernameNil(b bool)`
+
+ SetSshUsernameNil sets the value for SshUsername to be an explicit nil
+
+### UnsetSshUsername
+`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) UnsetSshUsername()`
+
+UnsetSshUsername ensures that no value is present for SshUsername, not even an explicit nil
 ### GetSshPassword
 
 `func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetSshPassword() string`
@@ -395,6 +415,16 @@ SetSshPassword sets SshPassword field to given value.
 
 HasSshPassword returns a boolean if a field has been set.
 
+### SetSshPasswordNil
+
+`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetSshPasswordNil(b bool)`
+
+ SetSshPasswordNil sets the value for SshPassword to be an explicit nil
+
+### UnsetSshPassword
+`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) UnsetSshPassword()`
+
+UnsetSshPassword ensures that no value is present for SshPassword, not even an explicit nil
 ### GetSshPasswordHash
 
 `func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetSshPasswordHash() string`
@@ -420,6 +450,16 @@ SetSshPasswordHash sets SshPasswordHash field to given value.
 
 HasSshPasswordHash returns a boolean if a field has been set.
 
+### SetSshPasswordHashNil
+
+`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetSshPasswordHashNil(b bool)`
+
+ SetSshPasswordHashNil sets the value for SshPasswordHash to be an explicit nil
+
+### UnsetSshPasswordHash
+`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) UnsetSshPasswordHash()`
+
+UnsetSshPasswordHash ensures that no value is present for SshPasswordHash, not even an explicit nil
 ### GetSshKey
 
 `func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetSshKey() string`
@@ -445,22 +485,32 @@ SetSshKey sets SshKey field to given value.
 
 HasSshKey returns a boolean if a field has been set.
 
+### SetSshKeyNil
+
+`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetSshKeyNil(b bool)`
+
+ SetSshKeyNil sets the value for SshKey to be an explicit nil
+
+### UnsetSshKey
+`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) UnsetSshKey()`
+
+UnsetSshKey ensures that no value is present for SshKey, not even an explicit nil
 ### GetOsType
 
-`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetOsType() ListVirtualImages200ResponseAllOfVirtualImagesInnerOsType`
+`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetOsType() ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceServerOs`
 
 GetOsType returns the OsType field if non-nil, zero value otherwise.
 
 ### GetOsTypeOk
 
-`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetOsTypeOk() (*ListVirtualImages200ResponseAllOfVirtualImagesInnerOsType, bool)`
+`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetOsTypeOk() (*ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceServerOs, bool)`
 
 GetOsTypeOk returns a tuple with the OsType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOsType
 
-`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetOsType(v ListVirtualImages200ResponseAllOfVirtualImagesInnerOsType)`
+`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetOsType(v ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceServerOs)`
 
 SetOsType sets OsType field to given value.
 
@@ -495,6 +545,16 @@ SetMinRam sets MinRam field to given value.
 
 HasMinRam returns a boolean if a field has been set.
 
+### SetMinRamNil
+
+`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetMinRamNil(b bool)`
+
+ SetMinRamNil sets the value for MinRam to be an explicit nil
+
+### UnsetMinRam
+`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) UnsetMinRam()`
+
+UnsetMinRam ensures that no value is present for MinRam, not even an explicit nil
 ### GetMinRamGB
 
 `func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetMinRamGB() int64`
@@ -520,6 +580,16 @@ SetMinRamGB sets MinRamGB field to given value.
 
 HasMinRamGB returns a boolean if a field has been set.
 
+### SetMinRamGBNil
+
+`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetMinRamGBNil(b bool)`
+
+ SetMinRamGBNil sets the value for MinRamGB to be an explicit nil
+
+### UnsetMinRamGB
+`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) UnsetMinRamGB()`
+
+UnsetMinRamGB ensures that no value is present for MinRamGB, not even an explicit nil
 ### GetMinDisk
 
 `func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetMinDisk() string`
@@ -545,6 +615,16 @@ SetMinDisk sets MinDisk field to given value.
 
 HasMinDisk returns a boolean if a field has been set.
 
+### SetMinDiskNil
+
+`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetMinDiskNil(b bool)`
+
+ SetMinDiskNil sets the value for MinDisk to be an explicit nil
+
+### UnsetMinDisk
+`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) UnsetMinDisk()`
+
+UnsetMinDisk ensures that no value is present for MinDisk, not even an explicit nil
 ### GetMinDiskGB
 
 `func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetMinDiskGB() string`
@@ -570,6 +650,16 @@ SetMinDiskGB sets MinDiskGB field to given value.
 
 HasMinDiskGB returns a boolean if a field has been set.
 
+### SetMinDiskGBNil
+
+`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetMinDiskGBNil(b bool)`
+
+ SetMinDiskGBNil sets the value for MinDiskGB to be an explicit nil
+
+### UnsetMinDiskGB
+`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) UnsetMinDiskGB()`
+
+UnsetMinDiskGB ensures that no value is present for MinDiskGB, not even an explicit nil
 ### GetRawSize
 
 `func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetRawSize() int64`
@@ -595,6 +685,16 @@ SetRawSize sets RawSize field to given value.
 
 HasRawSize returns a boolean if a field has been set.
 
+### SetRawSizeNil
+
+`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetRawSizeNil(b bool)`
+
+ SetRawSizeNil sets the value for RawSize to be an explicit nil
+
+### UnsetRawSize
+`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) UnsetRawSize()`
+
+UnsetRawSize ensures that no value is present for RawSize, not even an explicit nil
 ### GetRawSizeGB
 
 `func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetRawSizeGB() float32`
@@ -620,6 +720,16 @@ SetRawSizeGB sets RawSizeGB field to given value.
 
 HasRawSizeGB returns a boolean if a field has been set.
 
+### SetRawSizeGBNil
+
+`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetRawSizeGBNil(b bool)`
+
+ SetRawSizeGBNil sets the value for RawSizeGB to be an explicit nil
+
+### UnsetRawSizeGB
+`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) UnsetRawSizeGB()`
+
+UnsetRawSizeGB ensures that no value is present for RawSizeGB, not even an explicit nil
 ### GetTrialVersion
 
 `func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetTrialVersion() bool`
@@ -695,6 +805,16 @@ SetUefi sets Uefi field to given value.
 
 HasUefi returns a boolean if a field has been set.
 
+### SetUefiNil
+
+`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetUefiNil(b bool)`
+
+ SetUefiNil sets the value for Uefi to be an explicit nil
+
+### UnsetUefi
+`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) UnsetUefi()`
+
+UnsetUefi ensures that no value is present for Uefi, not even an explicit nil
 ### GetIsAutoJoinDomain
 
 `func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetIsAutoJoinDomain() bool`
@@ -870,6 +990,16 @@ SetUserData sets UserData field to given value.
 
 HasUserData returns a boolean if a field has been set.
 
+### SetUserDataNil
+
+`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetUserDataNil(b bool)`
+
+ SetUserDataNil sets the value for UserData to be an explicit nil
+
+### UnsetUserData
+`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) UnsetUserData()`
+
+UnsetUserData ensures that no value is present for UserData, not even an explicit nil
 ### GetConsoleKeymap
 
 `func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetConsoleKeymap() string`
@@ -895,6 +1025,16 @@ SetConsoleKeymap sets ConsoleKeymap field to given value.
 
 HasConsoleKeymap returns a boolean if a field has been set.
 
+### SetConsoleKeymapNil
+
+`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetConsoleKeymapNil(b bool)`
+
+ SetConsoleKeymapNil sets the value for ConsoleKeymap to be an explicit nil
+
+### UnsetConsoleKeymap
+`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) UnsetConsoleKeymap()`
+
+UnsetConsoleKeymap ensures that no value is present for ConsoleKeymap, not even an explicit nil
 ### GetStorageProvider
 
 `func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetStorageProvider() string`
@@ -920,6 +1060,16 @@ SetStorageProvider sets StorageProvider field to given value.
 
 HasStorageProvider returns a boolean if a field has been set.
 
+### SetStorageProviderNil
+
+`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetStorageProviderNil(b bool)`
+
+ SetStorageProviderNil sets the value for StorageProvider to be an explicit nil
+
+### UnsetStorageProvider
+`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) UnsetStorageProvider()`
+
+UnsetStorageProvider ensures that no value is present for StorageProvider, not even an explicit nil
 ### GetExternalId
 
 `func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetExternalId() string`
@@ -945,6 +1095,16 @@ SetExternalId sets ExternalId field to given value.
 
 HasExternalId returns a boolean if a field has been set.
 
+### SetExternalIdNil
+
+`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetExternalIdNil(b bool)`
+
+ SetExternalIdNil sets the value for ExternalId to be an explicit nil
+
+### UnsetExternalId
+`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) UnsetExternalId()`
+
+UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
 ### GetVisibility
 
 `func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetVisibility() string`
@@ -972,20 +1132,20 @@ HasVisibility returns a boolean if a field has been set.
 
 ### GetAccounts
 
-`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetAccounts() []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetAccounts() []GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetAccounts returns the Accounts field if non-nil, zero value otherwise.
 
 ### GetAccountsOk
 
-`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetAccountsOk() (*[]ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetAccountsOk() (*[]GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetAccountsOk returns a tuple with the Accounts field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccounts
 
-`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetAccounts(v []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetAccounts(v []GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetAccounts sets Accounts field to given value.
 

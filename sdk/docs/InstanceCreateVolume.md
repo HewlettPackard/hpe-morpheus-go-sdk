@@ -8,10 +8,10 @@ Name | Type | Description | Notes
 **RootVolume** | Pointer to **bool** | If set to false then a non-root LV will be created. | [optional] [default to true]
 **Name** | Pointer to **string** | Name/type of the LV being created. | [optional] [default to "root"]
 **Size** | Pointer to **int64** | Size of the LV to be created in GBs.  Uses default from service plan. | [optional] 
-**SizeId** | Pointer to **int64** | Can be used to select pre-existing LV choices from Morpheus. | [optional] 
-**StorageType** | Pointer to **int64** | Identifier for LV type | [optional] 
+**SizeId** | Pointer to **NullableInt64** | Can be used to select pre-existing LV choices from Morpheus. | [optional] 
+**StorageType** | Pointer to **NullableInt64** | Identifier for LV type | [optional] 
 **DatastoreId** | Pointer to [**AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInnerDatastoreId**](AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInnerDatastoreId.md) |  | [optional] 
-**ControllerMountPoint** | Pointer to **string** | The controller mount point specification for this volume in the format: &#x60;\&quot;id:busNumber:typeId:unitNumber\&quot;&#x60; For new storage controllers the id is passed as -1, so an example value would be: &#x60;\&quot;-1:1:6:0\&quot;&#x60; which translates to id: -1 (new), busNumber: 1, storage controller type id: 6 (SCSI VMware Paravirtual), unit number: 0. The current list of storage controllers is returned for instances and servers for determining existing id values. Use &#x60;/api/provision-types?code&#x3D;vmware&#x60; to see the available &#x60;controllerTypes&#x60; for vmware.  | [optional] 
+**ControllerMountPoint** | Pointer to **string** | The controller mount point specification for this volume in the format: &#x60;\&quot;id:busNumber:typeId:unitNumber\&quot;&#x60; For new storage controllers the id is passed as -1, so an example value would be: &#x60;\&quot;-1:1:6:0\&quot;&#x60; which translates to id: -1 (new), busNumber: 1, storage controller type id: 6 (SCSI VMware Paravirtual), unit number: 0. The current list of storage controllers is returned for instances and servers for determining existing id values. Use &#x60;/api/provision-types?code&#x3D;vmware&#x60; to see the available &#x60;controllerTypes&#x60; for vmware. | [optional] 
 
 ## Methods
 
@@ -157,6 +157,16 @@ SetSizeId sets SizeId field to given value.
 
 HasSizeId returns a boolean if a field has been set.
 
+### SetSizeIdNil
+
+`func (o *InstanceCreateVolume) SetSizeIdNil(b bool)`
+
+ SetSizeIdNil sets the value for SizeId to be an explicit nil
+
+### UnsetSizeId
+`func (o *InstanceCreateVolume) UnsetSizeId()`
+
+UnsetSizeId ensures that no value is present for SizeId, not even an explicit nil
 ### GetStorageType
 
 `func (o *InstanceCreateVolume) GetStorageType() int64`
@@ -182,6 +192,16 @@ SetStorageType sets StorageType field to given value.
 
 HasStorageType returns a boolean if a field has been set.
 
+### SetStorageTypeNil
+
+`func (o *InstanceCreateVolume) SetStorageTypeNil(b bool)`
+
+ SetStorageTypeNil sets the value for StorageType to be an explicit nil
+
+### UnsetStorageType
+`func (o *InstanceCreateVolume) UnsetStorageType()`
+
+UnsetStorageType ensures that no value is present for StorageType, not even an explicit nil
 ### GetDatastoreId
 
 `func (o *InstanceCreateVolume) GetDatastoreId() AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInnerDatastoreId`

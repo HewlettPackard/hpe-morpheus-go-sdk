@@ -11,25 +11,25 @@ Name | Type | Description | Notes
 **Creatable** | Pointer to **bool** |  | [optional] 
 **UserVisible** | Pointer to **bool** |  | [optional] 
 **HasScopes** | Pointer to **bool** |  | [optional] 
-**TitleScopes** | Pointer to **string** |  | [optional] 
+**TitleScopes** | Pointer to **NullableString** |  | [optional] 
 **HasNetworks** | Pointer to **bool** |  | [optional] 
-**TitleNetworks** | Pointer to **string** |  | [optional] 
+**TitleNetworks** | Pointer to **NullableString** |  | [optional] 
 **HasSwitches** | Pointer to **bool** |  | [optional] 
-**TitleSwitches** | Pointer to **string** |  | [optional] 
+**TitleSwitches** | Pointer to **NullableString** |  | [optional] 
 **HasGateways** | Pointer to **bool** |  | [optional] 
-**TitleGateways** | Pointer to **string** |  | [optional] 
+**TitleGateways** | Pointer to **NullableString** |  | [optional] 
 **HasRouters** | Pointer to **bool** |  | [optional] 
-**TitleRouters** | Pointer to **string** |  | [optional] 
+**TitleRouters** | Pointer to **NullableString** |  | [optional] 
 **HasSecurityGroups** | Pointer to **bool** |  | [optional] 
-**TitleSecurityGroups** | Pointer to **string** |  | [optional] 
+**TitleSecurityGroups** | Pointer to **NullableString** |  | [optional] 
 **HasLoadBalancers** | Pointer to **bool** |  | [optional] 
-**TitleLoadBalancers** | Pointer to **string** |  | [optional] 
+**TitleLoadBalancers** | Pointer to **NullableString** |  | [optional] 
 **HasRouteTables** | Pointer to **bool** |  | [optional] 
-**TitleRouteTables** | Pointer to **string** |  | [optional] 
+**TitleRouteTables** | Pointer to **NullableString** |  | [optional] 
 **HasFirewall** | Pointer to **bool** |  | [optional] 
-**TitleFirewall** | Pointer to **string** |  | [optional] 
+**TitleFirewall** | Pointer to **NullableString** |  | [optional] 
 **HasFirewallGroups** | Pointer to **bool** |  | [optional] 
-**TitleFirewallGroups** | Pointer to **string** |  | [optional] 
+**TitleFirewallGroups** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -250,6 +250,16 @@ SetTitleScopes sets TitleScopes field to given value.
 
 HasTitleScopes returns a boolean if a field has been set.
 
+### SetTitleScopesNil
+
+`func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServerType) SetTitleScopesNil(b bool)`
+
+ SetTitleScopesNil sets the value for TitleScopes to be an explicit nil
+
+### UnsetTitleScopes
+`func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServerType) UnsetTitleScopes()`
+
+UnsetTitleScopes ensures that no value is present for TitleScopes, not even an explicit nil
 ### GetHasNetworks
 
 `func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServerType) GetHasNetworks() bool`
@@ -300,6 +310,16 @@ SetTitleNetworks sets TitleNetworks field to given value.
 
 HasTitleNetworks returns a boolean if a field has been set.
 
+### SetTitleNetworksNil
+
+`func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServerType) SetTitleNetworksNil(b bool)`
+
+ SetTitleNetworksNil sets the value for TitleNetworks to be an explicit nil
+
+### UnsetTitleNetworks
+`func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServerType) UnsetTitleNetworks()`
+
+UnsetTitleNetworks ensures that no value is present for TitleNetworks, not even an explicit nil
 ### GetHasSwitches
 
 `func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServerType) GetHasSwitches() bool`
@@ -350,6 +370,16 @@ SetTitleSwitches sets TitleSwitches field to given value.
 
 HasTitleSwitches returns a boolean if a field has been set.
 
+### SetTitleSwitchesNil
+
+`func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServerType) SetTitleSwitchesNil(b bool)`
+
+ SetTitleSwitchesNil sets the value for TitleSwitches to be an explicit nil
+
+### UnsetTitleSwitches
+`func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServerType) UnsetTitleSwitches()`
+
+UnsetTitleSwitches ensures that no value is present for TitleSwitches, not even an explicit nil
 ### GetHasGateways
 
 `func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServerType) GetHasGateways() bool`
@@ -400,6 +430,16 @@ SetTitleGateways sets TitleGateways field to given value.
 
 HasTitleGateways returns a boolean if a field has been set.
 
+### SetTitleGatewaysNil
+
+`func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServerType) SetTitleGatewaysNil(b bool)`
+
+ SetTitleGatewaysNil sets the value for TitleGateways to be an explicit nil
+
+### UnsetTitleGateways
+`func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServerType) UnsetTitleGateways()`
+
+UnsetTitleGateways ensures that no value is present for TitleGateways, not even an explicit nil
 ### GetHasRouters
 
 `func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServerType) GetHasRouters() bool`
@@ -450,6 +490,16 @@ SetTitleRouters sets TitleRouters field to given value.
 
 HasTitleRouters returns a boolean if a field has been set.
 
+### SetTitleRoutersNil
+
+`func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServerType) SetTitleRoutersNil(b bool)`
+
+ SetTitleRoutersNil sets the value for TitleRouters to be an explicit nil
+
+### UnsetTitleRouters
+`func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServerType) UnsetTitleRouters()`
+
+UnsetTitleRouters ensures that no value is present for TitleRouters, not even an explicit nil
 ### GetHasSecurityGroups
 
 `func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServerType) GetHasSecurityGroups() bool`
@@ -500,6 +550,16 @@ SetTitleSecurityGroups sets TitleSecurityGroups field to given value.
 
 HasTitleSecurityGroups returns a boolean if a field has been set.
 
+### SetTitleSecurityGroupsNil
+
+`func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServerType) SetTitleSecurityGroupsNil(b bool)`
+
+ SetTitleSecurityGroupsNil sets the value for TitleSecurityGroups to be an explicit nil
+
+### UnsetTitleSecurityGroups
+`func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServerType) UnsetTitleSecurityGroups()`
+
+UnsetTitleSecurityGroups ensures that no value is present for TitleSecurityGroups, not even an explicit nil
 ### GetHasLoadBalancers
 
 `func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServerType) GetHasLoadBalancers() bool`
@@ -550,6 +610,16 @@ SetTitleLoadBalancers sets TitleLoadBalancers field to given value.
 
 HasTitleLoadBalancers returns a boolean if a field has been set.
 
+### SetTitleLoadBalancersNil
+
+`func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServerType) SetTitleLoadBalancersNil(b bool)`
+
+ SetTitleLoadBalancersNil sets the value for TitleLoadBalancers to be an explicit nil
+
+### UnsetTitleLoadBalancers
+`func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServerType) UnsetTitleLoadBalancers()`
+
+UnsetTitleLoadBalancers ensures that no value is present for TitleLoadBalancers, not even an explicit nil
 ### GetHasRouteTables
 
 `func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServerType) GetHasRouteTables() bool`
@@ -600,6 +670,16 @@ SetTitleRouteTables sets TitleRouteTables field to given value.
 
 HasTitleRouteTables returns a boolean if a field has been set.
 
+### SetTitleRouteTablesNil
+
+`func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServerType) SetTitleRouteTablesNil(b bool)`
+
+ SetTitleRouteTablesNil sets the value for TitleRouteTables to be an explicit nil
+
+### UnsetTitleRouteTables
+`func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServerType) UnsetTitleRouteTables()`
+
+UnsetTitleRouteTables ensures that no value is present for TitleRouteTables, not even an explicit nil
 ### GetHasFirewall
 
 `func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServerType) GetHasFirewall() bool`
@@ -650,6 +730,16 @@ SetTitleFirewall sets TitleFirewall field to given value.
 
 HasTitleFirewall returns a boolean if a field has been set.
 
+### SetTitleFirewallNil
+
+`func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServerType) SetTitleFirewallNil(b bool)`
+
+ SetTitleFirewallNil sets the value for TitleFirewall to be an explicit nil
+
+### UnsetTitleFirewall
+`func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServerType) UnsetTitleFirewall()`
+
+UnsetTitleFirewall ensures that no value is present for TitleFirewall, not even an explicit nil
 ### GetHasFirewallGroups
 
 `func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServerType) GetHasFirewallGroups() bool`
@@ -700,6 +790,16 @@ SetTitleFirewallGroups sets TitleFirewallGroups field to given value.
 
 HasTitleFirewallGroups returns a boolean if a field has been set.
 
+### SetTitleFirewallGroupsNil
+
+`func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServerType) SetTitleFirewallGroupsNil(b bool)`
+
+ SetTitleFirewallGroupsNil sets the value for TitleFirewallGroups to be an explicit nil
+
+### UnsetTitleFirewallGroups
+`func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServerType) UnsetTitleFirewallGroups()`
+
+UnsetTitleFirewallGroups ensures that no value is present for TitleFirewallGroups, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

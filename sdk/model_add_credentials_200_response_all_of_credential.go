@@ -21,31 +21,31 @@ var _ MappedNullable = &AddCredentials200ResponseAllOfCredential{}
 
 // AddCredentials200ResponseAllOfCredential struct for AddCredentials200ResponseAllOfCredential
 type AddCredentials200ResponseAllOfCredential struct {
-	Id                   *int64                                                                  `json:"id,omitempty"`
-	Name                 *string                                                                 `json:"name,omitempty"`
-	Type                 *ListBackupSettings200ResponseBackupSettingsDefaultSchedule             `json:"type,omitempty"`
-	Integration          *string                                                                 `json:"integration,omitempty"`
-	Description          *string                                                                 `json:"description,omitempty"`
-	Username             *string                                                                 `json:"username,omitempty"`
-	Password             *string                                                                 `json:"password,omitempty"`
-	PasswordHash         *string                                                                 `json:"passwordHash,omitempty"`
-	AuthKey              *GetAlerts200ResponseAllOfCheckGroupsInnerInstance                      `json:"authKey,omitempty"`
-	AuthPath             *string                                                                 `json:"authPath,omitempty"`
-	ExternalId           *string                                                                 `json:"externalId,omitempty"`
-	RefType              *string                                                                 `json:"refType,omitempty"`
-	RefId                *string                                                                 `json:"refId,omitempty"`
-	Category             *string                                                                 `json:"category,omitempty"`
-	Scope                *string                                                                 `json:"scope,omitempty"`
-	Status               *string                                                                 `json:"status,omitempty"`
-	StatusMessage        *string                                                                 `json:"statusMessage,omitempty"`
-	StatusDate           *time.Time                                                              `json:"statusDate,omitempty"`
-	Enabled              *bool                                                                   `json:"enabled,omitempty"`
-	Account              *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"account,omitempty"`
-	User                 *ListCredentials200ResponseAllOfCredentialsInnerUser                    `json:"user,omitempty"`
-	DateCreated          *time.Time                                                              `json:"dateCreated,omitempty"`
-	LastUpdated          *time.Time                                                              `json:"lastUpdated,omitempty"`
-	Config               *AddCredentials200ResponseAllOfCredentialConfig                         `json:"config,omitempty"`
-	AdditionalProperties map[string]interface{}                                                  `json:",remain"`
+	Id                   *int64                                                      `json:"id,omitempty"`
+	Name                 *string                                                     `json:"name,omitempty"`
+	Type                 *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"type,omitempty"`
+	Integration          NullableString                                              `json:"integration,omitempty"`
+	Description          NullableString                                              `json:"description,omitempty"`
+	Username             NullableString                                              `json:"username,omitempty"`
+	Password             NullableString                                              `json:"password,omitempty"`
+	PasswordHash         NullableString                                              `json:"passwordHash,omitempty"`
+	AuthKey              *GetAlerts200ResponseAllOfCheckGroupsInnerInstance          `json:"authKey,omitempty"`
+	AuthPath             NullableString                                              `json:"authPath,omitempty"`
+	ExternalId           NullableString                                              `json:"externalId,omitempty"`
+	RefType              NullableString                                              `json:"refType,omitempty"`
+	RefId                NullableString                                              `json:"refId,omitempty"`
+	Category             NullableString                                              `json:"category,omitempty"`
+	Scope                *string                                                     `json:"scope,omitempty"`
+	Status               *string                                                     `json:"status,omitempty"`
+	StatusMessage        NullableString                                              `json:"statusMessage,omitempty"`
+	StatusDate           NullableTime                                                `json:"statusDate,omitempty"`
+	Enabled              *bool                                                       `json:"enabled,omitempty"`
+	Account              *GetAlerts200ResponseAllOfCheckGroupsInnerInstance          `json:"account,omitempty"`
+	User                 *ListCredentials200ResponseAllOfCredentialsInnerUser        `json:"user,omitempty"`
+	DateCreated          *time.Time                                                  `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                                  `json:"lastUpdated,omitempty"`
+	Config               *AddCredentials200ResponseAllOfCredentialConfig             `json:"config,omitempty"`
+	AdditionalProperties map[string]interface{}                                      `json:",remain"`
 }
 
 type _AddCredentials200ResponseAllOfCredential AddCredentials200ResponseAllOfCredential
@@ -163,164 +163,219 @@ func (o *AddCredentials200ResponseAllOfCredential) SetType(v ListBackupSettings2
 	o.Type = &v
 }
 
-// GetIntegration returns the Integration field value if set, zero value otherwise.
+// GetIntegration returns the Integration field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AddCredentials200ResponseAllOfCredential) GetIntegration() string {
-	if o == nil || IsNil(o.Integration) {
+	if o == nil || IsNil(o.Integration.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Integration
+	return *o.Integration.Get()
 }
 
 // GetIntegrationOk returns a tuple with the Integration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AddCredentials200ResponseAllOfCredential) GetIntegrationOk() (*string, bool) {
-	if o == nil || IsNil(o.Integration) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Integration, true
+	return o.Integration.Get(), o.Integration.IsSet()
 }
 
 // IsSetIntegration returns a boolean if a field has been set.
 func (o *AddCredentials200ResponseAllOfCredential) IsSetIntegration() bool {
-	if o != nil && !IsNil(o.Integration) {
+	if o != nil && o.Integration.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetIntegration gets a reference to the given string and assigns it to the Integration field.
+// SetIntegration gets a reference to the given NullableString and assigns it to the Integration field.
 func (o *AddCredentials200ResponseAllOfCredential) SetIntegration(v string) {
-	o.Integration = &v
+	o.Integration.Set(&v)
 }
 
-// GetDescription returns the Description field value if set, zero value otherwise.
+// SetIntegrationNil sets the value for Integration to be an explicit nil
+func (o *AddCredentials200ResponseAllOfCredential) SetIntegrationNil() {
+	o.Integration.Set(nil)
+}
+
+// UnsetIntegration ensures that no value is present for Integration, not even an explicit nil
+func (o *AddCredentials200ResponseAllOfCredential) UnsetIntegration() {
+	o.Integration.Unset()
+}
+
+// GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AddCredentials200ResponseAllOfCredential) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
+	if o == nil || IsNil(o.Description.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Description
+	return *o.Description.Get()
 }
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AddCredentials200ResponseAllOfCredential) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Description, true
+	return o.Description.Get(), o.Description.IsSet()
 }
 
 // IsSetDescription returns a boolean if a field has been set.
 func (o *AddCredentials200ResponseAllOfCredential) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
+	if o != nil && o.Description.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDescription gets a reference to the given string and assigns it to the Description field.
+// SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *AddCredentials200ResponseAllOfCredential) SetDescription(v string) {
-	o.Description = &v
+	o.Description.Set(&v)
 }
 
-// GetUsername returns the Username field value if set, zero value otherwise.
+// SetDescriptionNil sets the value for Description to be an explicit nil
+func (o *AddCredentials200ResponseAllOfCredential) SetDescriptionNil() {
+	o.Description.Set(nil)
+}
+
+// UnsetDescription ensures that no value is present for Description, not even an explicit nil
+func (o *AddCredentials200ResponseAllOfCredential) UnsetDescription() {
+	o.Description.Unset()
+}
+
+// GetUsername returns the Username field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AddCredentials200ResponseAllOfCredential) GetUsername() string {
-	if o == nil || IsNil(o.Username) {
+	if o == nil || IsNil(o.Username.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Username
+	return *o.Username.Get()
 }
 
 // GetUsernameOk returns a tuple with the Username field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AddCredentials200ResponseAllOfCredential) GetUsernameOk() (*string, bool) {
-	if o == nil || IsNil(o.Username) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Username, true
+	return o.Username.Get(), o.Username.IsSet()
 }
 
 // IsSetUsername returns a boolean if a field has been set.
 func (o *AddCredentials200ResponseAllOfCredential) IsSetUsername() bool {
-	if o != nil && !IsNil(o.Username) {
+	if o != nil && o.Username.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetUsername gets a reference to the given string and assigns it to the Username field.
+// SetUsername gets a reference to the given NullableString and assigns it to the Username field.
 func (o *AddCredentials200ResponseAllOfCredential) SetUsername(v string) {
-	o.Username = &v
+	o.Username.Set(&v)
 }
 
-// GetPassword returns the Password field value if set, zero value otherwise.
+// SetUsernameNil sets the value for Username to be an explicit nil
+func (o *AddCredentials200ResponseAllOfCredential) SetUsernameNil() {
+	o.Username.Set(nil)
+}
+
+// UnsetUsername ensures that no value is present for Username, not even an explicit nil
+func (o *AddCredentials200ResponseAllOfCredential) UnsetUsername() {
+	o.Username.Unset()
+}
+
+// GetPassword returns the Password field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AddCredentials200ResponseAllOfCredential) GetPassword() string {
-	if o == nil || IsNil(o.Password) {
+	if o == nil || IsNil(o.Password.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Password
+	return *o.Password.Get()
 }
 
 // GetPasswordOk returns a tuple with the Password field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AddCredentials200ResponseAllOfCredential) GetPasswordOk() (*string, bool) {
-	if o == nil || IsNil(o.Password) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Password, true
+	return o.Password.Get(), o.Password.IsSet()
 }
 
 // IsSetPassword returns a boolean if a field has been set.
 func (o *AddCredentials200ResponseAllOfCredential) IsSetPassword() bool {
-	if o != nil && !IsNil(o.Password) {
+	if o != nil && o.Password.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetPassword gets a reference to the given string and assigns it to the Password field.
+// SetPassword gets a reference to the given NullableString and assigns it to the Password field.
 func (o *AddCredentials200ResponseAllOfCredential) SetPassword(v string) {
-	o.Password = &v
+	o.Password.Set(&v)
 }
 
-// GetPasswordHash returns the PasswordHash field value if set, zero value otherwise.
+// SetPasswordNil sets the value for Password to be an explicit nil
+func (o *AddCredentials200ResponseAllOfCredential) SetPasswordNil() {
+	o.Password.Set(nil)
+}
+
+// UnsetPassword ensures that no value is present for Password, not even an explicit nil
+func (o *AddCredentials200ResponseAllOfCredential) UnsetPassword() {
+	o.Password.Unset()
+}
+
+// GetPasswordHash returns the PasswordHash field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AddCredentials200ResponseAllOfCredential) GetPasswordHash() string {
-	if o == nil || IsNil(o.PasswordHash) {
+	if o == nil || IsNil(o.PasswordHash.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.PasswordHash
+	return *o.PasswordHash.Get()
 }
 
 // GetPasswordHashOk returns a tuple with the PasswordHash field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AddCredentials200ResponseAllOfCredential) GetPasswordHashOk() (*string, bool) {
-	if o == nil || IsNil(o.PasswordHash) {
+	if o == nil {
 		return nil, false
 	}
-	return o.PasswordHash, true
+	return o.PasswordHash.Get(), o.PasswordHash.IsSet()
 }
 
 // IsSetPasswordHash returns a boolean if a field has been set.
 func (o *AddCredentials200ResponseAllOfCredential) IsSetPasswordHash() bool {
-	if o != nil && !IsNil(o.PasswordHash) {
+	if o != nil && o.PasswordHash.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetPasswordHash gets a reference to the given string and assigns it to the PasswordHash field.
+// SetPasswordHash gets a reference to the given NullableString and assigns it to the PasswordHash field.
 func (o *AddCredentials200ResponseAllOfCredential) SetPasswordHash(v string) {
-	o.PasswordHash = &v
+	o.PasswordHash.Set(&v)
+}
+
+// SetPasswordHashNil sets the value for PasswordHash to be an explicit nil
+func (o *AddCredentials200ResponseAllOfCredential) SetPasswordHashNil() {
+	o.PasswordHash.Set(nil)
+}
+
+// UnsetPasswordHash ensures that no value is present for PasswordHash, not even an explicit nil
+func (o *AddCredentials200ResponseAllOfCredential) UnsetPasswordHash() {
+	o.PasswordHash.Unset()
 }
 
 // GetAuthKey returns the AuthKey field value if set, zero value otherwise.
@@ -355,164 +410,219 @@ func (o *AddCredentials200ResponseAllOfCredential) SetAuthKey(v GetAlerts200Resp
 	o.AuthKey = &v
 }
 
-// GetAuthPath returns the AuthPath field value if set, zero value otherwise.
+// GetAuthPath returns the AuthPath field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AddCredentials200ResponseAllOfCredential) GetAuthPath() string {
-	if o == nil || IsNil(o.AuthPath) {
+	if o == nil || IsNil(o.AuthPath.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.AuthPath
+	return *o.AuthPath.Get()
 }
 
 // GetAuthPathOk returns a tuple with the AuthPath field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AddCredentials200ResponseAllOfCredential) GetAuthPathOk() (*string, bool) {
-	if o == nil || IsNil(o.AuthPath) {
+	if o == nil {
 		return nil, false
 	}
-	return o.AuthPath, true
+	return o.AuthPath.Get(), o.AuthPath.IsSet()
 }
 
 // IsSetAuthPath returns a boolean if a field has been set.
 func (o *AddCredentials200ResponseAllOfCredential) IsSetAuthPath() bool {
-	if o != nil && !IsNil(o.AuthPath) {
+	if o != nil && o.AuthPath.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetAuthPath gets a reference to the given string and assigns it to the AuthPath field.
+// SetAuthPath gets a reference to the given NullableString and assigns it to the AuthPath field.
 func (o *AddCredentials200ResponseAllOfCredential) SetAuthPath(v string) {
-	o.AuthPath = &v
+	o.AuthPath.Set(&v)
 }
 
-// GetExternalId returns the ExternalId field value if set, zero value otherwise.
+// SetAuthPathNil sets the value for AuthPath to be an explicit nil
+func (o *AddCredentials200ResponseAllOfCredential) SetAuthPathNil() {
+	o.AuthPath.Set(nil)
+}
+
+// UnsetAuthPath ensures that no value is present for AuthPath, not even an explicit nil
+func (o *AddCredentials200ResponseAllOfCredential) UnsetAuthPath() {
+	o.AuthPath.Unset()
+}
+
+// GetExternalId returns the ExternalId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AddCredentials200ResponseAllOfCredential) GetExternalId() string {
-	if o == nil || IsNil(o.ExternalId) {
+	if o == nil || IsNil(o.ExternalId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ExternalId
+	return *o.ExternalId.Get()
 }
 
 // GetExternalIdOk returns a tuple with the ExternalId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AddCredentials200ResponseAllOfCredential) GetExternalIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ExternalId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ExternalId, true
+	return o.ExternalId.Get(), o.ExternalId.IsSet()
 }
 
 // IsSetExternalId returns a boolean if a field has been set.
 func (o *AddCredentials200ResponseAllOfCredential) IsSetExternalId() bool {
-	if o != nil && !IsNil(o.ExternalId) {
+	if o != nil && o.ExternalId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetExternalId gets a reference to the given string and assigns it to the ExternalId field.
+// SetExternalId gets a reference to the given NullableString and assigns it to the ExternalId field.
 func (o *AddCredentials200ResponseAllOfCredential) SetExternalId(v string) {
-	o.ExternalId = &v
+	o.ExternalId.Set(&v)
 }
 
-// GetRefType returns the RefType field value if set, zero value otherwise.
+// SetExternalIdNil sets the value for ExternalId to be an explicit nil
+func (o *AddCredentials200ResponseAllOfCredential) SetExternalIdNil() {
+	o.ExternalId.Set(nil)
+}
+
+// UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
+func (o *AddCredentials200ResponseAllOfCredential) UnsetExternalId() {
+	o.ExternalId.Unset()
+}
+
+// GetRefType returns the RefType field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AddCredentials200ResponseAllOfCredential) GetRefType() string {
-	if o == nil || IsNil(o.RefType) {
+	if o == nil || IsNil(o.RefType.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.RefType
+	return *o.RefType.Get()
 }
 
 // GetRefTypeOk returns a tuple with the RefType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AddCredentials200ResponseAllOfCredential) GetRefTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.RefType) {
+	if o == nil {
 		return nil, false
 	}
-	return o.RefType, true
+	return o.RefType.Get(), o.RefType.IsSet()
 }
 
 // IsSetRefType returns a boolean if a field has been set.
 func (o *AddCredentials200ResponseAllOfCredential) IsSetRefType() bool {
-	if o != nil && !IsNil(o.RefType) {
+	if o != nil && o.RefType.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetRefType gets a reference to the given string and assigns it to the RefType field.
+// SetRefType gets a reference to the given NullableString and assigns it to the RefType field.
 func (o *AddCredentials200ResponseAllOfCredential) SetRefType(v string) {
-	o.RefType = &v
+	o.RefType.Set(&v)
 }
 
-// GetRefId returns the RefId field value if set, zero value otherwise.
+// SetRefTypeNil sets the value for RefType to be an explicit nil
+func (o *AddCredentials200ResponseAllOfCredential) SetRefTypeNil() {
+	o.RefType.Set(nil)
+}
+
+// UnsetRefType ensures that no value is present for RefType, not even an explicit nil
+func (o *AddCredentials200ResponseAllOfCredential) UnsetRefType() {
+	o.RefType.Unset()
+}
+
+// GetRefId returns the RefId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AddCredentials200ResponseAllOfCredential) GetRefId() string {
-	if o == nil || IsNil(o.RefId) {
+	if o == nil || IsNil(o.RefId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.RefId
+	return *o.RefId.Get()
 }
 
 // GetRefIdOk returns a tuple with the RefId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AddCredentials200ResponseAllOfCredential) GetRefIdOk() (*string, bool) {
-	if o == nil || IsNil(o.RefId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.RefId, true
+	return o.RefId.Get(), o.RefId.IsSet()
 }
 
 // IsSetRefId returns a boolean if a field has been set.
 func (o *AddCredentials200ResponseAllOfCredential) IsSetRefId() bool {
-	if o != nil && !IsNil(o.RefId) {
+	if o != nil && o.RefId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetRefId gets a reference to the given string and assigns it to the RefId field.
+// SetRefId gets a reference to the given NullableString and assigns it to the RefId field.
 func (o *AddCredentials200ResponseAllOfCredential) SetRefId(v string) {
-	o.RefId = &v
+	o.RefId.Set(&v)
 }
 
-// GetCategory returns the Category field value if set, zero value otherwise.
+// SetRefIdNil sets the value for RefId to be an explicit nil
+func (o *AddCredentials200ResponseAllOfCredential) SetRefIdNil() {
+	o.RefId.Set(nil)
+}
+
+// UnsetRefId ensures that no value is present for RefId, not even an explicit nil
+func (o *AddCredentials200ResponseAllOfCredential) UnsetRefId() {
+	o.RefId.Unset()
+}
+
+// GetCategory returns the Category field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AddCredentials200ResponseAllOfCredential) GetCategory() string {
-	if o == nil || IsNil(o.Category) {
+	if o == nil || IsNil(o.Category.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Category
+	return *o.Category.Get()
 }
 
 // GetCategoryOk returns a tuple with the Category field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AddCredentials200ResponseAllOfCredential) GetCategoryOk() (*string, bool) {
-	if o == nil || IsNil(o.Category) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Category, true
+	return o.Category.Get(), o.Category.IsSet()
 }
 
 // IsSetCategory returns a boolean if a field has been set.
 func (o *AddCredentials200ResponseAllOfCredential) IsSetCategory() bool {
-	if o != nil && !IsNil(o.Category) {
+	if o != nil && o.Category.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCategory gets a reference to the given string and assigns it to the Category field.
+// SetCategory gets a reference to the given NullableString and assigns it to the Category field.
 func (o *AddCredentials200ResponseAllOfCredential) SetCategory(v string) {
-	o.Category = &v
+	o.Category.Set(&v)
+}
+
+// SetCategoryNil sets the value for Category to be an explicit nil
+func (o *AddCredentials200ResponseAllOfCredential) SetCategoryNil() {
+	o.Category.Set(nil)
+}
+
+// UnsetCategory ensures that no value is present for Category, not even an explicit nil
+func (o *AddCredentials200ResponseAllOfCredential) UnsetCategory() {
+	o.Category.Unset()
 }
 
 // GetScope returns the Scope field value if set, zero value otherwise.
@@ -579,68 +689,90 @@ func (o *AddCredentials200ResponseAllOfCredential) SetStatus(v string) {
 	o.Status = &v
 }
 
-// GetStatusMessage returns the StatusMessage field value if set, zero value otherwise.
+// GetStatusMessage returns the StatusMessage field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AddCredentials200ResponseAllOfCredential) GetStatusMessage() string {
-	if o == nil || IsNil(o.StatusMessage) {
+	if o == nil || IsNil(o.StatusMessage.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.StatusMessage
+	return *o.StatusMessage.Get()
 }
 
 // GetStatusMessageOk returns a tuple with the StatusMessage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AddCredentials200ResponseAllOfCredential) GetStatusMessageOk() (*string, bool) {
-	if o == nil || IsNil(o.StatusMessage) {
+	if o == nil {
 		return nil, false
 	}
-	return o.StatusMessage, true
+	return o.StatusMessage.Get(), o.StatusMessage.IsSet()
 }
 
 // IsSetStatusMessage returns a boolean if a field has been set.
 func (o *AddCredentials200ResponseAllOfCredential) IsSetStatusMessage() bool {
-	if o != nil && !IsNil(o.StatusMessage) {
+	if o != nil && o.StatusMessage.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetStatusMessage gets a reference to the given string and assigns it to the StatusMessage field.
+// SetStatusMessage gets a reference to the given NullableString and assigns it to the StatusMessage field.
 func (o *AddCredentials200ResponseAllOfCredential) SetStatusMessage(v string) {
-	o.StatusMessage = &v
+	o.StatusMessage.Set(&v)
 }
 
-// GetStatusDate returns the StatusDate field value if set, zero value otherwise.
+// SetStatusMessageNil sets the value for StatusMessage to be an explicit nil
+func (o *AddCredentials200ResponseAllOfCredential) SetStatusMessageNil() {
+	o.StatusMessage.Set(nil)
+}
+
+// UnsetStatusMessage ensures that no value is present for StatusMessage, not even an explicit nil
+func (o *AddCredentials200ResponseAllOfCredential) UnsetStatusMessage() {
+	o.StatusMessage.Unset()
+}
+
+// GetStatusDate returns the StatusDate field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AddCredentials200ResponseAllOfCredential) GetStatusDate() time.Time {
-	if o == nil || IsNil(o.StatusDate) {
+	if o == nil || IsNil(o.StatusDate.Get()) {
 		var ret time.Time
 		return ret
 	}
-	return *o.StatusDate
+	return *o.StatusDate.Get()
 }
 
 // GetStatusDateOk returns a tuple with the StatusDate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AddCredentials200ResponseAllOfCredential) GetStatusDateOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.StatusDate) {
+	if o == nil {
 		return nil, false
 	}
-	return o.StatusDate, true
+	return o.StatusDate.Get(), o.StatusDate.IsSet()
 }
 
 // IsSetStatusDate returns a boolean if a field has been set.
 func (o *AddCredentials200ResponseAllOfCredential) IsSetStatusDate() bool {
-	if o != nil && !IsNil(o.StatusDate) {
+	if o != nil && o.StatusDate.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetStatusDate gets a reference to the given time.Time and assigns it to the StatusDate field.
+// SetStatusDate gets a reference to the given NullableTime and assigns it to the StatusDate field.
 func (o *AddCredentials200ResponseAllOfCredential) SetStatusDate(v time.Time) {
-	o.StatusDate = &v
+	o.StatusDate.Set(&v)
+}
+
+// SetStatusDateNil sets the value for StatusDate to be an explicit nil
+func (o *AddCredentials200ResponseAllOfCredential) SetStatusDateNil() {
+	o.StatusDate.Set(nil)
+}
+
+// UnsetStatusDate ensures that no value is present for StatusDate, not even an explicit nil
+func (o *AddCredentials200ResponseAllOfCredential) UnsetStatusDate() {
+	o.StatusDate.Unset()
 }
 
 // GetEnabled returns the Enabled field value if set, zero value otherwise.
@@ -676,9 +808,9 @@ func (o *AddCredentials200ResponseAllOfCredential) SetEnabled(v bool) {
 }
 
 // GetAccount returns the Account field value if set, zero value otherwise.
-func (o *AddCredentials200ResponseAllOfCredential) GetAccount() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *AddCredentials200ResponseAllOfCredential) GetAccount() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.Account) {
-		var ret ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return *o.Account
@@ -686,7 +818,7 @@ func (o *AddCredentials200ResponseAllOfCredential) GetAccount() ListApplianceSet
 
 // GetAccountOk returns a tuple with the Account field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddCredentials200ResponseAllOfCredential) GetAccountOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *AddCredentials200ResponseAllOfCredential) GetAccountOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.Account) {
 		return nil, false
 	}
@@ -702,8 +834,8 @@ func (o *AddCredentials200ResponseAllOfCredential) IsSetAccount() bool {
 	return false
 }
 
-// SetAccount gets a reference to the given ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the Account field.
-func (o *AddCredentials200ResponseAllOfCredential) SetAccount(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetAccount gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Account field.
+func (o *AddCredentials200ResponseAllOfCredential) SetAccount(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.Account = &v
 }
 
@@ -854,38 +986,38 @@ func (o AddCredentials200ResponseAllOfCredential) ToMap() (map[string]interface{
 	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type
 	}
-	if !IsNil(o.Integration) {
-		toSerialize["integration"] = o.Integration
+	if o.Integration.IsSet() {
+		toSerialize["integration"] = o.Integration.Get()
 	}
-	if !IsNil(o.Description) {
-		toSerialize["description"] = o.Description
+	if o.Description.IsSet() {
+		toSerialize["description"] = o.Description.Get()
 	}
-	if !IsNil(o.Username) {
-		toSerialize["username"] = o.Username
+	if o.Username.IsSet() {
+		toSerialize["username"] = o.Username.Get()
 	}
-	if !IsNil(o.Password) {
-		toSerialize["password"] = o.Password
+	if o.Password.IsSet() {
+		toSerialize["password"] = o.Password.Get()
 	}
-	if !IsNil(o.PasswordHash) {
-		toSerialize["passwordHash"] = o.PasswordHash
+	if o.PasswordHash.IsSet() {
+		toSerialize["passwordHash"] = o.PasswordHash.Get()
 	}
 	if !IsNil(o.AuthKey) {
 		toSerialize["authKey"] = o.AuthKey
 	}
-	if !IsNil(o.AuthPath) {
-		toSerialize["authPath"] = o.AuthPath
+	if o.AuthPath.IsSet() {
+		toSerialize["authPath"] = o.AuthPath.Get()
 	}
-	if !IsNil(o.ExternalId) {
-		toSerialize["externalId"] = o.ExternalId
+	if o.ExternalId.IsSet() {
+		toSerialize["externalId"] = o.ExternalId.Get()
 	}
-	if !IsNil(o.RefType) {
-		toSerialize["refType"] = o.RefType
+	if o.RefType.IsSet() {
+		toSerialize["refType"] = o.RefType.Get()
 	}
-	if !IsNil(o.RefId) {
-		toSerialize["refId"] = o.RefId
+	if o.RefId.IsSet() {
+		toSerialize["refId"] = o.RefId.Get()
 	}
-	if !IsNil(o.Category) {
-		toSerialize["category"] = o.Category
+	if o.Category.IsSet() {
+		toSerialize["category"] = o.Category.Get()
 	}
 	if !IsNil(o.Scope) {
 		toSerialize["scope"] = o.Scope
@@ -893,11 +1025,11 @@ func (o AddCredentials200ResponseAllOfCredential) ToMap() (map[string]interface{
 	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status
 	}
-	if !IsNil(o.StatusMessage) {
-		toSerialize["statusMessage"] = o.StatusMessage
+	if o.StatusMessage.IsSet() {
+		toSerialize["statusMessage"] = o.StatusMessage.Get()
 	}
-	if !IsNil(o.StatusDate) {
-		toSerialize["statusDate"] = o.StatusDate
+	if o.StatusDate.IsSet() {
+		toSerialize["statusDate"] = o.StatusDate.Get()
 	}
 	if !IsNil(o.Enabled) {
 		toSerialize["enabled"] = o.Enabled

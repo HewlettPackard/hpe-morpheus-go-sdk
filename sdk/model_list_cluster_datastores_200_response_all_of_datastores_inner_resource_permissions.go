@@ -242,9 +242,9 @@ func (o *ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions
 	o.Account = &v
 }
 
-// GetSites returns the Sites field value if set, zero value otherwise.
+// GetSites returns the Sites field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions) GetSites() []ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner {
-	if o == nil || IsNil(o.Sites) {
+	if o == nil {
 		var ret []ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner
 		return ret
 	}
@@ -253,6 +253,7 @@ func (o *ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions
 
 // GetSitesOk returns a tuple with the Sites field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions) GetSitesOk() ([]ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner, bool) {
 	if o == nil || IsNil(o.Sites) {
 		return nil, false
@@ -274,9 +275,9 @@ func (o *ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions
 	o.Sites = v
 }
 
-// GetPlans returns the Plans field value if set, zero value otherwise.
+// GetPlans returns the Plans field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions) GetPlans() []ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner {
-	if o == nil || IsNil(o.Plans) {
+	if o == nil {
 		var ret []ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner
 		return ret
 	}
@@ -285,6 +286,7 @@ func (o *ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions
 
 // GetPlansOk returns a tuple with the Plans field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions) GetPlansOk() ([]ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner, bool) {
 	if o == nil || IsNil(o.Plans) {
 		return nil, false
@@ -334,10 +336,10 @@ func (o ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions)
 	if !IsNil(o.Account) {
 		toSerialize["account"] = o.Account
 	}
-	if !IsNil(o.Sites) {
+	if o.Sites != nil {
 		toSerialize["sites"] = o.Sites
 	}
-	if !IsNil(o.Plans) {
+	if o.Plans != nil {
 		toSerialize["plans"] = o.Plans
 	}
 

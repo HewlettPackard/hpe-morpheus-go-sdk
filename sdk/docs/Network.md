@@ -11,62 +11,62 @@ Name | Type | Description | Notes
 **Zone** | Pointer to [**ListNetworks200ResponseAllOfNetworksInnerZone**](ListNetworks200ResponseAllOfNetworksInnerZone.md) |  | [optional] 
 **Type** | Pointer to [**ListNetworks200ResponseAllOfNetworksInnerType**](ListNetworks200ResponseAllOfNetworksInnerType.md) |  | [optional] 
 **Owner** | Pointer to [**ListNetworks200ResponseAllOfNetworksInnerOwner**](ListNetworks200ResponseAllOfNetworksInnerOwner.md) |  | [optional] 
-**Code** | Pointer to **string** | Network Code | [optional] 
+**Code** | Pointer to **NullableString** | Network Code | [optional] 
 **Ipv4Enabled** | Pointer to **bool** |  | [optional] 
 **Ipv6Enabled** | Pointer to **bool** |  | [optional] 
-**Category** | Pointer to **string** | Network Category | [optional] 
-**InterfaceName** | Pointer to **string** |  | [optional] 
-**BridgeName** | Pointer to **string** |  | [optional] 
-**BridgeInterface** | Pointer to **string** |  | [optional] 
-**Description** | Pointer to **string** | Description | [optional] 
-**ExternalId** | Pointer to **string** |  | [optional] 
-**InternalId** | Pointer to **string** |  | [optional] 
-**UniqueId** | Pointer to **string** |  | [optional] 
+**Category** | Pointer to **NullableString** | Network Category | [optional] 
+**InterfaceName** | Pointer to **NullableString** |  | [optional] 
+**BridgeName** | Pointer to **NullableString** |  | [optional] 
+**BridgeInterface** | Pointer to **NullableString** |  | [optional] 
+**Description** | Pointer to **NullableString** | Description | [optional] 
+**ExternalId** | Pointer to **NullableString** |  | [optional] 
+**InternalId** | Pointer to **NullableString** |  | [optional] 
+**UniqueId** | Pointer to **NullableString** |  | [optional] 
 **ExternalType** | Pointer to **string** |  | [optional] 
-**RefUrl** | Pointer to **string** |  | [optional] 
+**RefUrl** | Pointer to **NullableString** |  | [optional] 
 **RefType** | Pointer to **string** |  | [optional] 
 **RefId** | Pointer to **int64** |  | [optional] 
-**VlanId** | Pointer to **int64** |  | [optional] 
-**VswitchName** | Pointer to **string** |  | [optional] 
+**VlanId** | Pointer to **NullableInt64** |  | [optional] 
+**VswitchName** | Pointer to **NullableString** |  | [optional] 
 **DhcpServer** | Pointer to **bool** |  | [optional] 
-**DhcpIp** | Pointer to **string** |  | [optional] 
+**DhcpIp** | Pointer to **NullableString** |  | [optional] 
 **DhcpServerIPv6** | Pointer to **bool** |  | [optional] 
-**Gateway** | Pointer to **string** | Network Gateway | [optional] 
-**Netmask** | Pointer to **string** |  | [optional] 
-**Broadcast** | Pointer to **string** |  | [optional] 
-**SubnetAddress** | Pointer to **string** |  | [optional] 
-**DnsPrimary** | Pointer to **string** | Primary DNS Server | [optional] 
-**DnsSecondary** | Pointer to **string** | Secondary DNS Server | [optional] 
+**Gateway** | Pointer to **NullableString** | Network Gateway | [optional] 
+**Netmask** | Pointer to **NullableString** |  | [optional] 
+**Broadcast** | Pointer to **NullableString** |  | [optional] 
+**SubnetAddress** | Pointer to **NullableString** |  | [optional] 
+**DnsPrimary** | Pointer to **NullableString** | Primary DNS Server | [optional] 
+**DnsSecondary** | Pointer to **NullableString** | Secondary DNS Server | [optional] 
 **Cidr** | Pointer to **string** | Network CIDR | [optional] 
-**GatewayIPv6** | Pointer to **string** | IPv6 Network Gateway | [optional] 
-**NetmaskIPv6** | Pointer to **string** |  | [optional] 
-**DnsPrimaryIPv6** | Pointer to **string** | Primary IPv6 DNS Server | [optional] 
-**DnsSecondaryIPv6** | Pointer to **string** | Secondary IPv6 DNS Server | [optional] 
-**CidrIPv6** | Pointer to **string** | IPv6 Network CIDR | [optional] 
-**TftpServer** | Pointer to **string** |  | [optional] 
-**BootFile** | Pointer to **string** |  | [optional] 
-**SwitchId** | Pointer to **string** |  | [optional] 
-**FabricId** | Pointer to **string** |  | [optional] 
-**NetworkRole** | Pointer to **string** |  | [optional] 
+**GatewayIPv6** | Pointer to **NullableString** | IPv6 Network Gateway | [optional] 
+**NetmaskIPv6** | Pointer to **NullableString** |  | [optional] 
+**DnsPrimaryIPv6** | Pointer to **NullableString** | Primary IPv6 DNS Server | [optional] 
+**DnsSecondaryIPv6** | Pointer to **NullableString** | Secondary IPv6 DNS Server | [optional] 
+**CidrIPv6** | Pointer to **NullableString** | IPv6 Network CIDR | [optional] 
+**TftpServer** | Pointer to **NullableString** |  | [optional] 
+**BootFile** | Pointer to **NullableString** |  | [optional] 
+**SwitchId** | Pointer to **NullableString** |  | [optional] 
+**FabricId** | Pointer to **NullableString** |  | [optional] 
+**NetworkRole** | Pointer to **NullableString** |  | [optional] 
 **Status** | Pointer to **string** |  | [optional] 
-**AvailabilityZone** | Pointer to **string** |  | [optional] 
+**AvailabilityZone** | Pointer to **NullableString** |  | [optional] 
 **Pool** | Pointer to **map[string]interface{}** |  | [optional] 
 **PoolIPv6** | Pointer to **map[string]interface{}** |  | [optional] 
 **NetworkProxy** | Pointer to [**ListNetworks200ResponseAllOfNetworksInnerNetworkProxy**](ListNetworks200ResponseAllOfNetworksInnerNetworkProxy.md) |  | [optional] 
 **NetworkDomain** | Pointer to [**ListNetworks200ResponseAllOfNetworksInnerNetworkDomain**](ListNetworks200ResponseAllOfNetworksInnerNetworkDomain.md) |  | [optional] 
-**SearchDomains** | Pointer to **string** |  | [optional] 
-**PrefixLength** | Pointer to **string** |  | [optional] 
+**SearchDomains** | Pointer to **NullableString** |  | [optional] 
+**PrefixLength** | Pointer to **NullableString** |  | [optional] 
 **Visibility** | Pointer to **string** |  | [optional] 
 **EnableAdmin** | Pointer to **bool** |  | [optional] 
 **Active** | Pointer to **bool** |  | [optional] 
 **DefaultNetwork** | Pointer to **bool** |  | [optional] 
 **AssignPublicIp** | Pointer to **bool** |  | [optional] 
-**NoProxy** | Pointer to **string** |  | [optional] 
+**NoProxy** | Pointer to **NullableString** |  | [optional] 
 **ApplianceUrlProxyBypass** | Pointer to **bool** |  | [optional] 
 **ZonePool** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **AllowStaticOverride** | Pointer to **bool** |  | [optional] 
 **Config** | Pointer to [**ListNetworks200ResponseAllOfNetworksInnerConfig**](ListNetworks200ResponseAllOfNetworksInnerConfig.md) |  | [optional] 
-**Tenants** | Pointer to [**[]ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
+**Tenants** | Pointer to [**[]GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 
 ## Methods
 
@@ -187,6 +187,16 @@ SetLabels sets Labels field to given value.
 
 HasLabels returns a boolean if a field has been set.
 
+### SetLabelsNil
+
+`func (o *Network) SetLabelsNil(b bool)`
+
+ SetLabelsNil sets the value for Labels to be an explicit nil
+
+### UnsetLabels
+`func (o *Network) UnsetLabels()`
+
+UnsetLabels ensures that no value is present for Labels, not even an explicit nil
 ### GetZone
 
 `func (o *Network) GetZone() ListNetworks200ResponseAllOfNetworksInnerZone`
@@ -287,6 +297,16 @@ SetCode sets Code field to given value.
 
 HasCode returns a boolean if a field has been set.
 
+### SetCodeNil
+
+`func (o *Network) SetCodeNil(b bool)`
+
+ SetCodeNil sets the value for Code to be an explicit nil
+
+### UnsetCode
+`func (o *Network) UnsetCode()`
+
+UnsetCode ensures that no value is present for Code, not even an explicit nil
 ### GetIpv4Enabled
 
 `func (o *Network) GetIpv4Enabled() bool`
@@ -362,6 +382,16 @@ SetCategory sets Category field to given value.
 
 HasCategory returns a boolean if a field has been set.
 
+### SetCategoryNil
+
+`func (o *Network) SetCategoryNil(b bool)`
+
+ SetCategoryNil sets the value for Category to be an explicit nil
+
+### UnsetCategory
+`func (o *Network) UnsetCategory()`
+
+UnsetCategory ensures that no value is present for Category, not even an explicit nil
 ### GetInterfaceName
 
 `func (o *Network) GetInterfaceName() string`
@@ -387,6 +417,16 @@ SetInterfaceName sets InterfaceName field to given value.
 
 HasInterfaceName returns a boolean if a field has been set.
 
+### SetInterfaceNameNil
+
+`func (o *Network) SetInterfaceNameNil(b bool)`
+
+ SetInterfaceNameNil sets the value for InterfaceName to be an explicit nil
+
+### UnsetInterfaceName
+`func (o *Network) UnsetInterfaceName()`
+
+UnsetInterfaceName ensures that no value is present for InterfaceName, not even an explicit nil
 ### GetBridgeName
 
 `func (o *Network) GetBridgeName() string`
@@ -412,6 +452,16 @@ SetBridgeName sets BridgeName field to given value.
 
 HasBridgeName returns a boolean if a field has been set.
 
+### SetBridgeNameNil
+
+`func (o *Network) SetBridgeNameNil(b bool)`
+
+ SetBridgeNameNil sets the value for BridgeName to be an explicit nil
+
+### UnsetBridgeName
+`func (o *Network) UnsetBridgeName()`
+
+UnsetBridgeName ensures that no value is present for BridgeName, not even an explicit nil
 ### GetBridgeInterface
 
 `func (o *Network) GetBridgeInterface() string`
@@ -437,6 +487,16 @@ SetBridgeInterface sets BridgeInterface field to given value.
 
 HasBridgeInterface returns a boolean if a field has been set.
 
+### SetBridgeInterfaceNil
+
+`func (o *Network) SetBridgeInterfaceNil(b bool)`
+
+ SetBridgeInterfaceNil sets the value for BridgeInterface to be an explicit nil
+
+### UnsetBridgeInterface
+`func (o *Network) UnsetBridgeInterface()`
+
+UnsetBridgeInterface ensures that no value is present for BridgeInterface, not even an explicit nil
 ### GetDescription
 
 `func (o *Network) GetDescription() string`
@@ -462,6 +522,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *Network) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *Network) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetExternalId
 
 `func (o *Network) GetExternalId() string`
@@ -487,6 +557,16 @@ SetExternalId sets ExternalId field to given value.
 
 HasExternalId returns a boolean if a field has been set.
 
+### SetExternalIdNil
+
+`func (o *Network) SetExternalIdNil(b bool)`
+
+ SetExternalIdNil sets the value for ExternalId to be an explicit nil
+
+### UnsetExternalId
+`func (o *Network) UnsetExternalId()`
+
+UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
 ### GetInternalId
 
 `func (o *Network) GetInternalId() string`
@@ -512,6 +592,16 @@ SetInternalId sets InternalId field to given value.
 
 HasInternalId returns a boolean if a field has been set.
 
+### SetInternalIdNil
+
+`func (o *Network) SetInternalIdNil(b bool)`
+
+ SetInternalIdNil sets the value for InternalId to be an explicit nil
+
+### UnsetInternalId
+`func (o *Network) UnsetInternalId()`
+
+UnsetInternalId ensures that no value is present for InternalId, not even an explicit nil
 ### GetUniqueId
 
 `func (o *Network) GetUniqueId() string`
@@ -537,6 +627,16 @@ SetUniqueId sets UniqueId field to given value.
 
 HasUniqueId returns a boolean if a field has been set.
 
+### SetUniqueIdNil
+
+`func (o *Network) SetUniqueIdNil(b bool)`
+
+ SetUniqueIdNil sets the value for UniqueId to be an explicit nil
+
+### UnsetUniqueId
+`func (o *Network) UnsetUniqueId()`
+
+UnsetUniqueId ensures that no value is present for UniqueId, not even an explicit nil
 ### GetExternalType
 
 `func (o *Network) GetExternalType() string`
@@ -587,6 +687,16 @@ SetRefUrl sets RefUrl field to given value.
 
 HasRefUrl returns a boolean if a field has been set.
 
+### SetRefUrlNil
+
+`func (o *Network) SetRefUrlNil(b bool)`
+
+ SetRefUrlNil sets the value for RefUrl to be an explicit nil
+
+### UnsetRefUrl
+`func (o *Network) UnsetRefUrl()`
+
+UnsetRefUrl ensures that no value is present for RefUrl, not even an explicit nil
 ### GetRefType
 
 `func (o *Network) GetRefType() string`
@@ -662,6 +772,16 @@ SetVlanId sets VlanId field to given value.
 
 HasVlanId returns a boolean if a field has been set.
 
+### SetVlanIdNil
+
+`func (o *Network) SetVlanIdNil(b bool)`
+
+ SetVlanIdNil sets the value for VlanId to be an explicit nil
+
+### UnsetVlanId
+`func (o *Network) UnsetVlanId()`
+
+UnsetVlanId ensures that no value is present for VlanId, not even an explicit nil
 ### GetVswitchName
 
 `func (o *Network) GetVswitchName() string`
@@ -687,6 +807,16 @@ SetVswitchName sets VswitchName field to given value.
 
 HasVswitchName returns a boolean if a field has been set.
 
+### SetVswitchNameNil
+
+`func (o *Network) SetVswitchNameNil(b bool)`
+
+ SetVswitchNameNil sets the value for VswitchName to be an explicit nil
+
+### UnsetVswitchName
+`func (o *Network) UnsetVswitchName()`
+
+UnsetVswitchName ensures that no value is present for VswitchName, not even an explicit nil
 ### GetDhcpServer
 
 `func (o *Network) GetDhcpServer() bool`
@@ -737,6 +867,16 @@ SetDhcpIp sets DhcpIp field to given value.
 
 HasDhcpIp returns a boolean if a field has been set.
 
+### SetDhcpIpNil
+
+`func (o *Network) SetDhcpIpNil(b bool)`
+
+ SetDhcpIpNil sets the value for DhcpIp to be an explicit nil
+
+### UnsetDhcpIp
+`func (o *Network) UnsetDhcpIp()`
+
+UnsetDhcpIp ensures that no value is present for DhcpIp, not even an explicit nil
 ### GetDhcpServerIPv6
 
 `func (o *Network) GetDhcpServerIPv6() bool`
@@ -787,6 +927,16 @@ SetGateway sets Gateway field to given value.
 
 HasGateway returns a boolean if a field has been set.
 
+### SetGatewayNil
+
+`func (o *Network) SetGatewayNil(b bool)`
+
+ SetGatewayNil sets the value for Gateway to be an explicit nil
+
+### UnsetGateway
+`func (o *Network) UnsetGateway()`
+
+UnsetGateway ensures that no value is present for Gateway, not even an explicit nil
 ### GetNetmask
 
 `func (o *Network) GetNetmask() string`
@@ -812,6 +962,16 @@ SetNetmask sets Netmask field to given value.
 
 HasNetmask returns a boolean if a field has been set.
 
+### SetNetmaskNil
+
+`func (o *Network) SetNetmaskNil(b bool)`
+
+ SetNetmaskNil sets the value for Netmask to be an explicit nil
+
+### UnsetNetmask
+`func (o *Network) UnsetNetmask()`
+
+UnsetNetmask ensures that no value is present for Netmask, not even an explicit nil
 ### GetBroadcast
 
 `func (o *Network) GetBroadcast() string`
@@ -837,6 +997,16 @@ SetBroadcast sets Broadcast field to given value.
 
 HasBroadcast returns a boolean if a field has been set.
 
+### SetBroadcastNil
+
+`func (o *Network) SetBroadcastNil(b bool)`
+
+ SetBroadcastNil sets the value for Broadcast to be an explicit nil
+
+### UnsetBroadcast
+`func (o *Network) UnsetBroadcast()`
+
+UnsetBroadcast ensures that no value is present for Broadcast, not even an explicit nil
 ### GetSubnetAddress
 
 `func (o *Network) GetSubnetAddress() string`
@@ -862,6 +1032,16 @@ SetSubnetAddress sets SubnetAddress field to given value.
 
 HasSubnetAddress returns a boolean if a field has been set.
 
+### SetSubnetAddressNil
+
+`func (o *Network) SetSubnetAddressNil(b bool)`
+
+ SetSubnetAddressNil sets the value for SubnetAddress to be an explicit nil
+
+### UnsetSubnetAddress
+`func (o *Network) UnsetSubnetAddress()`
+
+UnsetSubnetAddress ensures that no value is present for SubnetAddress, not even an explicit nil
 ### GetDnsPrimary
 
 `func (o *Network) GetDnsPrimary() string`
@@ -887,6 +1067,16 @@ SetDnsPrimary sets DnsPrimary field to given value.
 
 HasDnsPrimary returns a boolean if a field has been set.
 
+### SetDnsPrimaryNil
+
+`func (o *Network) SetDnsPrimaryNil(b bool)`
+
+ SetDnsPrimaryNil sets the value for DnsPrimary to be an explicit nil
+
+### UnsetDnsPrimary
+`func (o *Network) UnsetDnsPrimary()`
+
+UnsetDnsPrimary ensures that no value is present for DnsPrimary, not even an explicit nil
 ### GetDnsSecondary
 
 `func (o *Network) GetDnsSecondary() string`
@@ -912,6 +1102,16 @@ SetDnsSecondary sets DnsSecondary field to given value.
 
 HasDnsSecondary returns a boolean if a field has been set.
 
+### SetDnsSecondaryNil
+
+`func (o *Network) SetDnsSecondaryNil(b bool)`
+
+ SetDnsSecondaryNil sets the value for DnsSecondary to be an explicit nil
+
+### UnsetDnsSecondary
+`func (o *Network) UnsetDnsSecondary()`
+
+UnsetDnsSecondary ensures that no value is present for DnsSecondary, not even an explicit nil
 ### GetCidr
 
 `func (o *Network) GetCidr() string`
@@ -962,6 +1162,16 @@ SetGatewayIPv6 sets GatewayIPv6 field to given value.
 
 HasGatewayIPv6 returns a boolean if a field has been set.
 
+### SetGatewayIPv6Nil
+
+`func (o *Network) SetGatewayIPv6Nil(b bool)`
+
+ SetGatewayIPv6Nil sets the value for GatewayIPv6 to be an explicit nil
+
+### UnsetGatewayIPv6
+`func (o *Network) UnsetGatewayIPv6()`
+
+UnsetGatewayIPv6 ensures that no value is present for GatewayIPv6, not even an explicit nil
 ### GetNetmaskIPv6
 
 `func (o *Network) GetNetmaskIPv6() string`
@@ -987,6 +1197,16 @@ SetNetmaskIPv6 sets NetmaskIPv6 field to given value.
 
 HasNetmaskIPv6 returns a boolean if a field has been set.
 
+### SetNetmaskIPv6Nil
+
+`func (o *Network) SetNetmaskIPv6Nil(b bool)`
+
+ SetNetmaskIPv6Nil sets the value for NetmaskIPv6 to be an explicit nil
+
+### UnsetNetmaskIPv6
+`func (o *Network) UnsetNetmaskIPv6()`
+
+UnsetNetmaskIPv6 ensures that no value is present for NetmaskIPv6, not even an explicit nil
 ### GetDnsPrimaryIPv6
 
 `func (o *Network) GetDnsPrimaryIPv6() string`
@@ -1012,6 +1232,16 @@ SetDnsPrimaryIPv6 sets DnsPrimaryIPv6 field to given value.
 
 HasDnsPrimaryIPv6 returns a boolean if a field has been set.
 
+### SetDnsPrimaryIPv6Nil
+
+`func (o *Network) SetDnsPrimaryIPv6Nil(b bool)`
+
+ SetDnsPrimaryIPv6Nil sets the value for DnsPrimaryIPv6 to be an explicit nil
+
+### UnsetDnsPrimaryIPv6
+`func (o *Network) UnsetDnsPrimaryIPv6()`
+
+UnsetDnsPrimaryIPv6 ensures that no value is present for DnsPrimaryIPv6, not even an explicit nil
 ### GetDnsSecondaryIPv6
 
 `func (o *Network) GetDnsSecondaryIPv6() string`
@@ -1037,6 +1267,16 @@ SetDnsSecondaryIPv6 sets DnsSecondaryIPv6 field to given value.
 
 HasDnsSecondaryIPv6 returns a boolean if a field has been set.
 
+### SetDnsSecondaryIPv6Nil
+
+`func (o *Network) SetDnsSecondaryIPv6Nil(b bool)`
+
+ SetDnsSecondaryIPv6Nil sets the value for DnsSecondaryIPv6 to be an explicit nil
+
+### UnsetDnsSecondaryIPv6
+`func (o *Network) UnsetDnsSecondaryIPv6()`
+
+UnsetDnsSecondaryIPv6 ensures that no value is present for DnsSecondaryIPv6, not even an explicit nil
 ### GetCidrIPv6
 
 `func (o *Network) GetCidrIPv6() string`
@@ -1062,6 +1302,16 @@ SetCidrIPv6 sets CidrIPv6 field to given value.
 
 HasCidrIPv6 returns a boolean if a field has been set.
 
+### SetCidrIPv6Nil
+
+`func (o *Network) SetCidrIPv6Nil(b bool)`
+
+ SetCidrIPv6Nil sets the value for CidrIPv6 to be an explicit nil
+
+### UnsetCidrIPv6
+`func (o *Network) UnsetCidrIPv6()`
+
+UnsetCidrIPv6 ensures that no value is present for CidrIPv6, not even an explicit nil
 ### GetTftpServer
 
 `func (o *Network) GetTftpServer() string`
@@ -1087,6 +1337,16 @@ SetTftpServer sets TftpServer field to given value.
 
 HasTftpServer returns a boolean if a field has been set.
 
+### SetTftpServerNil
+
+`func (o *Network) SetTftpServerNil(b bool)`
+
+ SetTftpServerNil sets the value for TftpServer to be an explicit nil
+
+### UnsetTftpServer
+`func (o *Network) UnsetTftpServer()`
+
+UnsetTftpServer ensures that no value is present for TftpServer, not even an explicit nil
 ### GetBootFile
 
 `func (o *Network) GetBootFile() string`
@@ -1112,6 +1372,16 @@ SetBootFile sets BootFile field to given value.
 
 HasBootFile returns a boolean if a field has been set.
 
+### SetBootFileNil
+
+`func (o *Network) SetBootFileNil(b bool)`
+
+ SetBootFileNil sets the value for BootFile to be an explicit nil
+
+### UnsetBootFile
+`func (o *Network) UnsetBootFile()`
+
+UnsetBootFile ensures that no value is present for BootFile, not even an explicit nil
 ### GetSwitchId
 
 `func (o *Network) GetSwitchId() string`
@@ -1137,6 +1407,16 @@ SetSwitchId sets SwitchId field to given value.
 
 HasSwitchId returns a boolean if a field has been set.
 
+### SetSwitchIdNil
+
+`func (o *Network) SetSwitchIdNil(b bool)`
+
+ SetSwitchIdNil sets the value for SwitchId to be an explicit nil
+
+### UnsetSwitchId
+`func (o *Network) UnsetSwitchId()`
+
+UnsetSwitchId ensures that no value is present for SwitchId, not even an explicit nil
 ### GetFabricId
 
 `func (o *Network) GetFabricId() string`
@@ -1162,6 +1442,16 @@ SetFabricId sets FabricId field to given value.
 
 HasFabricId returns a boolean if a field has been set.
 
+### SetFabricIdNil
+
+`func (o *Network) SetFabricIdNil(b bool)`
+
+ SetFabricIdNil sets the value for FabricId to be an explicit nil
+
+### UnsetFabricId
+`func (o *Network) UnsetFabricId()`
+
+UnsetFabricId ensures that no value is present for FabricId, not even an explicit nil
 ### GetNetworkRole
 
 `func (o *Network) GetNetworkRole() string`
@@ -1187,6 +1477,16 @@ SetNetworkRole sets NetworkRole field to given value.
 
 HasNetworkRole returns a boolean if a field has been set.
 
+### SetNetworkRoleNil
+
+`func (o *Network) SetNetworkRoleNil(b bool)`
+
+ SetNetworkRoleNil sets the value for NetworkRole to be an explicit nil
+
+### UnsetNetworkRole
+`func (o *Network) UnsetNetworkRole()`
+
+UnsetNetworkRole ensures that no value is present for NetworkRole, not even an explicit nil
 ### GetStatus
 
 `func (o *Network) GetStatus() string`
@@ -1237,6 +1537,16 @@ SetAvailabilityZone sets AvailabilityZone field to given value.
 
 HasAvailabilityZone returns a boolean if a field has been set.
 
+### SetAvailabilityZoneNil
+
+`func (o *Network) SetAvailabilityZoneNil(b bool)`
+
+ SetAvailabilityZoneNil sets the value for AvailabilityZone to be an explicit nil
+
+### UnsetAvailabilityZone
+`func (o *Network) UnsetAvailabilityZone()`
+
+UnsetAvailabilityZone ensures that no value is present for AvailabilityZone, not even an explicit nil
 ### GetPool
 
 `func (o *Network) GetPool() map[string]interface{}`
@@ -1262,6 +1572,16 @@ SetPool sets Pool field to given value.
 
 HasPool returns a boolean if a field has been set.
 
+### SetPoolNil
+
+`func (o *Network) SetPoolNil(b bool)`
+
+ SetPoolNil sets the value for Pool to be an explicit nil
+
+### UnsetPool
+`func (o *Network) UnsetPool()`
+
+UnsetPool ensures that no value is present for Pool, not even an explicit nil
 ### GetPoolIPv6
 
 `func (o *Network) GetPoolIPv6() map[string]interface{}`
@@ -1287,6 +1607,16 @@ SetPoolIPv6 sets PoolIPv6 field to given value.
 
 HasPoolIPv6 returns a boolean if a field has been set.
 
+### SetPoolIPv6Nil
+
+`func (o *Network) SetPoolIPv6Nil(b bool)`
+
+ SetPoolIPv6Nil sets the value for PoolIPv6 to be an explicit nil
+
+### UnsetPoolIPv6
+`func (o *Network) UnsetPoolIPv6()`
+
+UnsetPoolIPv6 ensures that no value is present for PoolIPv6, not even an explicit nil
 ### GetNetworkProxy
 
 `func (o *Network) GetNetworkProxy() ListNetworks200ResponseAllOfNetworksInnerNetworkProxy`
@@ -1362,6 +1692,16 @@ SetSearchDomains sets SearchDomains field to given value.
 
 HasSearchDomains returns a boolean if a field has been set.
 
+### SetSearchDomainsNil
+
+`func (o *Network) SetSearchDomainsNil(b bool)`
+
+ SetSearchDomainsNil sets the value for SearchDomains to be an explicit nil
+
+### UnsetSearchDomains
+`func (o *Network) UnsetSearchDomains()`
+
+UnsetSearchDomains ensures that no value is present for SearchDomains, not even an explicit nil
 ### GetPrefixLength
 
 `func (o *Network) GetPrefixLength() string`
@@ -1387,6 +1727,16 @@ SetPrefixLength sets PrefixLength field to given value.
 
 HasPrefixLength returns a boolean if a field has been set.
 
+### SetPrefixLengthNil
+
+`func (o *Network) SetPrefixLengthNil(b bool)`
+
+ SetPrefixLengthNil sets the value for PrefixLength to be an explicit nil
+
+### UnsetPrefixLength
+`func (o *Network) UnsetPrefixLength()`
+
+UnsetPrefixLength ensures that no value is present for PrefixLength, not even an explicit nil
 ### GetVisibility
 
 `func (o *Network) GetVisibility() string`
@@ -1537,6 +1887,16 @@ SetNoProxy sets NoProxy field to given value.
 
 HasNoProxy returns a boolean if a field has been set.
 
+### SetNoProxyNil
+
+`func (o *Network) SetNoProxyNil(b bool)`
+
+ SetNoProxyNil sets the value for NoProxy to be an explicit nil
+
+### UnsetNoProxy
+`func (o *Network) UnsetNoProxy()`
+
+UnsetNoProxy ensures that no value is present for NoProxy, not even an explicit nil
 ### GetApplianceUrlProxyBypass
 
 `func (o *Network) GetApplianceUrlProxyBypass() bool`
@@ -1639,20 +1999,20 @@ HasConfig returns a boolean if a field has been set.
 
 ### GetTenants
 
-`func (o *Network) GetTenants() []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *Network) GetTenants() []GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetTenants returns the Tenants field if non-nil, zero value otherwise.
 
 ### GetTenantsOk
 
-`func (o *Network) GetTenantsOk() (*[]ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *Network) GetTenantsOk() (*[]GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetTenantsOk returns a tuple with the Tenants field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenants
 
-`func (o *Network) SetTenants(v []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *Network) SetTenants(v []GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetTenants sets Tenants field to given value.
 

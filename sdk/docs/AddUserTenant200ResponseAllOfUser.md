@@ -21,12 +21,12 @@ Name | Type | Description | Notes
 **LoginAttempts** | Pointer to **int64** |  | [optional] 
 **LastLoginDate** | Pointer to **time.Time** |  | [optional] 
 **Roles** | Pointer to [**[]AddUserTenant200ResponseAllOfUserRolesInner**](AddUserTenant200ResponseAllOfUserRolesInner.md) |  | [optional] 
-**Account** | Pointer to [**ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
-**LinuxUsername** | Pointer to **string** |  | [optional] 
-**LinuxPassword** | Pointer to **string** |  | [optional] 
-**LinuxKeyPairId** | Pointer to **int64** |  | [optional] 
-**WindowsUsername** | Pointer to **string** |  | [optional] 
-**WindowsPassword** | Pointer to **string** |  | [optional] 
+**Account** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**LinuxUsername** | Pointer to **NullableString** |  | [optional] 
+**LinuxPassword** | Pointer to **NullableString** |  | [optional] 
+**LinuxKeyPairId** | Pointer to **NullableInt64** |  | [optional] 
+**WindowsUsername** | Pointer to **NullableString** |  | [optional] 
+**WindowsPassword** | Pointer to **NullableString** |  | [optional] 
 **DefaultPersona** | Pointer to [**ListBackupSettings200ResponseBackupSettingsDefaultSchedule**](ListBackupSettings200ResponseBackupSettingsDefaultSchedule.md) |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
@@ -478,20 +478,20 @@ HasRoles returns a boolean if a field has been set.
 
 ### GetAccount
 
-`func (o *AddUserTenant200ResponseAllOfUser) GetAccount() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *AddUserTenant200ResponseAllOfUser) GetAccount() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetAccount returns the Account field if non-nil, zero value otherwise.
 
 ### GetAccountOk
 
-`func (o *AddUserTenant200ResponseAllOfUser) GetAccountOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *AddUserTenant200ResponseAllOfUser) GetAccountOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetAccountOk returns a tuple with the Account field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccount
 
-`func (o *AddUserTenant200ResponseAllOfUser) SetAccount(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *AddUserTenant200ResponseAllOfUser) SetAccount(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetAccount sets Account field to given value.
 
@@ -526,6 +526,16 @@ SetLinuxUsername sets LinuxUsername field to given value.
 
 HasLinuxUsername returns a boolean if a field has been set.
 
+### SetLinuxUsernameNil
+
+`func (o *AddUserTenant200ResponseAllOfUser) SetLinuxUsernameNil(b bool)`
+
+ SetLinuxUsernameNil sets the value for LinuxUsername to be an explicit nil
+
+### UnsetLinuxUsername
+`func (o *AddUserTenant200ResponseAllOfUser) UnsetLinuxUsername()`
+
+UnsetLinuxUsername ensures that no value is present for LinuxUsername, not even an explicit nil
 ### GetLinuxPassword
 
 `func (o *AddUserTenant200ResponseAllOfUser) GetLinuxPassword() string`
@@ -551,6 +561,16 @@ SetLinuxPassword sets LinuxPassword field to given value.
 
 HasLinuxPassword returns a boolean if a field has been set.
 
+### SetLinuxPasswordNil
+
+`func (o *AddUserTenant200ResponseAllOfUser) SetLinuxPasswordNil(b bool)`
+
+ SetLinuxPasswordNil sets the value for LinuxPassword to be an explicit nil
+
+### UnsetLinuxPassword
+`func (o *AddUserTenant200ResponseAllOfUser) UnsetLinuxPassword()`
+
+UnsetLinuxPassword ensures that no value is present for LinuxPassword, not even an explicit nil
 ### GetLinuxKeyPairId
 
 `func (o *AddUserTenant200ResponseAllOfUser) GetLinuxKeyPairId() int64`
@@ -576,6 +596,16 @@ SetLinuxKeyPairId sets LinuxKeyPairId field to given value.
 
 HasLinuxKeyPairId returns a boolean if a field has been set.
 
+### SetLinuxKeyPairIdNil
+
+`func (o *AddUserTenant200ResponseAllOfUser) SetLinuxKeyPairIdNil(b bool)`
+
+ SetLinuxKeyPairIdNil sets the value for LinuxKeyPairId to be an explicit nil
+
+### UnsetLinuxKeyPairId
+`func (o *AddUserTenant200ResponseAllOfUser) UnsetLinuxKeyPairId()`
+
+UnsetLinuxKeyPairId ensures that no value is present for LinuxKeyPairId, not even an explicit nil
 ### GetWindowsUsername
 
 `func (o *AddUserTenant200ResponseAllOfUser) GetWindowsUsername() string`
@@ -601,6 +631,16 @@ SetWindowsUsername sets WindowsUsername field to given value.
 
 HasWindowsUsername returns a boolean if a field has been set.
 
+### SetWindowsUsernameNil
+
+`func (o *AddUserTenant200ResponseAllOfUser) SetWindowsUsernameNil(b bool)`
+
+ SetWindowsUsernameNil sets the value for WindowsUsername to be an explicit nil
+
+### UnsetWindowsUsername
+`func (o *AddUserTenant200ResponseAllOfUser) UnsetWindowsUsername()`
+
+UnsetWindowsUsername ensures that no value is present for WindowsUsername, not even an explicit nil
 ### GetWindowsPassword
 
 `func (o *AddUserTenant200ResponseAllOfUser) GetWindowsPassword() string`
@@ -626,6 +666,16 @@ SetWindowsPassword sets WindowsPassword field to given value.
 
 HasWindowsPassword returns a boolean if a field has been set.
 
+### SetWindowsPasswordNil
+
+`func (o *AddUserTenant200ResponseAllOfUser) SetWindowsPasswordNil(b bool)`
+
+ SetWindowsPasswordNil sets the value for WindowsPassword to be an explicit nil
+
+### UnsetWindowsPassword
+`func (o *AddUserTenant200ResponseAllOfUser) UnsetWindowsPassword()`
+
+UnsetWindowsPassword ensures that no value is present for WindowsPassword, not even an explicit nil
 ### GetDefaultPersona
 
 `func (o *AddUserTenant200ResponseAllOfUser) GetDefaultPersona() ListBackupSettings200ResponseBackupSettingsDefaultSchedule`

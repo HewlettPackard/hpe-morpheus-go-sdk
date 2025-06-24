@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **DnsIntegrationId** | Pointer to **string** |  | [optional] 
 **ConfigManagementId** | Pointer to **string** |  | [optional] 
 **ConfigCmdbId** | Pointer to **string** |  | [optional] 
-**SecurityServer** | Pointer to **string** |  | [optional] 
+**SecurityServer** | Pointer to **NullableString** |  | [optional] 
 **AccountType** | Pointer to **string** |  | [optional] 
 **ServiceRegistryId** | Pointer to **string** |  | [optional] 
 **CloudType** | Pointer to **string** |  | [optional] 
@@ -31,12 +31,12 @@ Name | Type | Description | Notes
 **EncryptionSet** | Pointer to **string** |  | [optional] 
 **CspTenantId** | Pointer to **string** |  | [optional] 
 **CspClientId** | Pointer to **string** |  | [optional] 
-**CspClientSecret** | Pointer to **string** |  | [optional] 
-**CspCustomer** | Pointer to **string** |  | [optional] 
+**CspClientSecret** | Pointer to **NullableString** |  | [optional] 
+**CspCustomer** | Pointer to **NullableString** |  | [optional] 
 **ConfigCmdbDiscovery** | Pointer to **bool** |  | [optional] 
 **AzureCostingMode** | Pointer to **string** |  | [optional] 
 **ClientSecretHash** | Pointer to **string** |  | [optional] 
-**CspClientSecretHash** | Pointer to **string** |  | [optional] 
+**CspClientSecretHash** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -532,6 +532,16 @@ SetSecurityServer sets SecurityServer field to given value.
 
 HasSecurityServer returns a boolean if a field has been set.
 
+### SetSecurityServerNil
+
+`func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf2) SetSecurityServerNil(b bool)`
+
+ SetSecurityServerNil sets the value for SecurityServer to be an explicit nil
+
+### UnsetSecurityServer
+`func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf2) UnsetSecurityServer()`
+
+UnsetSecurityServer ensures that no value is present for SecurityServer, not even an explicit nil
 ### GetAccountType
 
 `func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf2) GetAccountType() string`
@@ -757,6 +767,16 @@ SetCspClientSecret sets CspClientSecret field to given value.
 
 HasCspClientSecret returns a boolean if a field has been set.
 
+### SetCspClientSecretNil
+
+`func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf2) SetCspClientSecretNil(b bool)`
+
+ SetCspClientSecretNil sets the value for CspClientSecret to be an explicit nil
+
+### UnsetCspClientSecret
+`func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf2) UnsetCspClientSecret()`
+
+UnsetCspClientSecret ensures that no value is present for CspClientSecret, not even an explicit nil
 ### GetCspCustomer
 
 `func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf2) GetCspCustomer() string`
@@ -782,6 +802,16 @@ SetCspCustomer sets CspCustomer field to given value.
 
 HasCspCustomer returns a boolean if a field has been set.
 
+### SetCspCustomerNil
+
+`func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf2) SetCspCustomerNil(b bool)`
+
+ SetCspCustomerNil sets the value for CspCustomer to be an explicit nil
+
+### UnsetCspCustomer
+`func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf2) UnsetCspCustomer()`
+
+UnsetCspCustomer ensures that no value is present for CspCustomer, not even an explicit nil
 ### GetConfigCmdbDiscovery
 
 `func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf2) GetConfigCmdbDiscovery() bool`
@@ -882,6 +912,16 @@ SetCspClientSecretHash sets CspClientSecretHash field to given value.
 
 HasCspClientSecretHash returns a boolean if a field has been set.
 
+### SetCspClientSecretHashNil
+
+`func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf2) SetCspClientSecretHashNil(b bool)`
+
+ SetCspClientSecretHashNil sets the value for CspClientSecretHash to be an explicit nil
+
+### UnsetCspClientSecretHash
+`func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf2) UnsetCspClientSecretHash()`
+
+UnsetCspClientSecretHash ensures that no value is present for CspClientSecretHash, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -21,7 +21,7 @@ var _ MappedNullable = &AddClusterRequestClusterServerConfig{}
 // AddClusterRequestClusterServerConfig Key for specific host type configuration  The config parameter is for configuration options that are specific to each Provision Type. The Provision Types api can be used to see which options are available.
 type AddClusterRequestClusterServerConfig struct {
 	// Default Git Account to be used when pulling images.  Default behavior is to be anonymous, which does have limits on allowed image pulls from public Docker Repos.
-	DefaultRepoAccount   *int32                 `json:"defaultRepoAccount,omitempty"`
+	DefaultRepoAccount   NullableInt32          `json:"defaultRepoAccount,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -44,36 +44,47 @@ func NewAddClusterRequestClusterServerConfigWithDefaults() *AddClusterRequestClu
 	return &this
 }
 
-// GetDefaultRepoAccount returns the DefaultRepoAccount field value if set, zero value otherwise.
+// GetDefaultRepoAccount returns the DefaultRepoAccount field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AddClusterRequestClusterServerConfig) GetDefaultRepoAccount() int32 {
-	if o == nil || IsNil(o.DefaultRepoAccount) {
+	if o == nil || IsNil(o.DefaultRepoAccount.Get()) {
 		var ret int32
 		return ret
 	}
-	return *o.DefaultRepoAccount
+	return *o.DefaultRepoAccount.Get()
 }
 
 // GetDefaultRepoAccountOk returns a tuple with the DefaultRepoAccount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AddClusterRequestClusterServerConfig) GetDefaultRepoAccountOk() (*int32, bool) {
-	if o == nil || IsNil(o.DefaultRepoAccount) {
+	if o == nil {
 		return nil, false
 	}
-	return o.DefaultRepoAccount, true
+	return o.DefaultRepoAccount.Get(), o.DefaultRepoAccount.IsSet()
 }
 
 // IsSetDefaultRepoAccount returns a boolean if a field has been set.
 func (o *AddClusterRequestClusterServerConfig) IsSetDefaultRepoAccount() bool {
-	if o != nil && !IsNil(o.DefaultRepoAccount) {
+	if o != nil && o.DefaultRepoAccount.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDefaultRepoAccount gets a reference to the given int32 and assigns it to the DefaultRepoAccount field.
+// SetDefaultRepoAccount gets a reference to the given NullableInt32 and assigns it to the DefaultRepoAccount field.
 func (o *AddClusterRequestClusterServerConfig) SetDefaultRepoAccount(v int32) {
-	o.DefaultRepoAccount = &v
+	o.DefaultRepoAccount.Set(&v)
+}
+
+// SetDefaultRepoAccountNil sets the value for DefaultRepoAccount to be an explicit nil
+func (o *AddClusterRequestClusterServerConfig) SetDefaultRepoAccountNil() {
+	o.DefaultRepoAccount.Set(nil)
+}
+
+// UnsetDefaultRepoAccount ensures that no value is present for DefaultRepoAccount, not even an explicit nil
+func (o *AddClusterRequestClusterServerConfig) UnsetDefaultRepoAccount() {
+	o.DefaultRepoAccount.Unset()
 }
 
 func (o AddClusterRequestClusterServerConfig) MarshalJSON() ([]byte, error) {
@@ -86,8 +97,8 @@ func (o AddClusterRequestClusterServerConfig) MarshalJSON() ([]byte, error) {
 
 func (o AddClusterRequestClusterServerConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.DefaultRepoAccount) {
-		toSerialize["defaultRepoAccount"] = o.DefaultRepoAccount
+	if o.DefaultRepoAccount.IsSet() {
+		toSerialize["defaultRepoAccount"] = o.DefaultRepoAccount.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {

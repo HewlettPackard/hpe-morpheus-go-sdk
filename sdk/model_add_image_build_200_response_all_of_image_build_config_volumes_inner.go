@@ -22,7 +22,7 @@ var _ MappedNullable = &AddImageBuild200ResponseAllOfImageBuildConfigVolumesInne
 type AddImageBuild200ResponseAllOfImageBuildConfigVolumesInner struct {
 	Id                   *int64                 `json:"id,omitempty"`
 	Size                 *int64                 `json:"size,omitempty"`
-	MaxIOPS              *string                `json:"maxIOPS,omitempty"`
+	MaxIOPS              NullableString         `json:"maxIOPS,omitempty"`
 	Name                 *string                `json:"name,omitempty"`
 	RootVolume           *bool                  `json:"rootVolume,omitempty"`
 	StorageType          *int64                 `json:"storageType,omitempty"`
@@ -113,36 +113,47 @@ func (o *AddImageBuild200ResponseAllOfImageBuildConfigVolumesInner) SetSize(v in
 	o.Size = &v
 }
 
-// GetMaxIOPS returns the MaxIOPS field value if set, zero value otherwise.
+// GetMaxIOPS returns the MaxIOPS field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AddImageBuild200ResponseAllOfImageBuildConfigVolumesInner) GetMaxIOPS() string {
-	if o == nil || IsNil(o.MaxIOPS) {
+	if o == nil || IsNil(o.MaxIOPS.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.MaxIOPS
+	return *o.MaxIOPS.Get()
 }
 
 // GetMaxIOPSOk returns a tuple with the MaxIOPS field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AddImageBuild200ResponseAllOfImageBuildConfigVolumesInner) GetMaxIOPSOk() (*string, bool) {
-	if o == nil || IsNil(o.MaxIOPS) {
+	if o == nil {
 		return nil, false
 	}
-	return o.MaxIOPS, true
+	return o.MaxIOPS.Get(), o.MaxIOPS.IsSet()
 }
 
 // IsSetMaxIOPS returns a boolean if a field has been set.
 func (o *AddImageBuild200ResponseAllOfImageBuildConfigVolumesInner) IsSetMaxIOPS() bool {
-	if o != nil && !IsNil(o.MaxIOPS) {
+	if o != nil && o.MaxIOPS.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetMaxIOPS gets a reference to the given string and assigns it to the MaxIOPS field.
+// SetMaxIOPS gets a reference to the given NullableString and assigns it to the MaxIOPS field.
 func (o *AddImageBuild200ResponseAllOfImageBuildConfigVolumesInner) SetMaxIOPS(v string) {
-	o.MaxIOPS = &v
+	o.MaxIOPS.Set(&v)
+}
+
+// SetMaxIOPSNil sets the value for MaxIOPS to be an explicit nil
+func (o *AddImageBuild200ResponseAllOfImageBuildConfigVolumesInner) SetMaxIOPSNil() {
+	o.MaxIOPS.Set(nil)
+}
+
+// UnsetMaxIOPS ensures that no value is present for MaxIOPS, not even an explicit nil
+func (o *AddImageBuild200ResponseAllOfImageBuildConfigVolumesInner) UnsetMaxIOPS() {
+	o.MaxIOPS.Unset()
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -289,8 +300,8 @@ func (o AddImageBuild200ResponseAllOfImageBuildConfigVolumesInner) ToMap() (map[
 	if !IsNil(o.Size) {
 		toSerialize["size"] = o.Size
 	}
-	if !IsNil(o.MaxIOPS) {
-		toSerialize["maxIOPS"] = o.MaxIOPS
+	if o.MaxIOPS.IsSet() {
+		toSerialize["maxIOPS"] = o.MaxIOPS.Get()
 	}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name

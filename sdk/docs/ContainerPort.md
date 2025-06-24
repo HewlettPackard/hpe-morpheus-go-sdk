@@ -17,8 +17,8 @@ Name | Type | Description | Notes
 **LoadBalance** | Pointer to **bool** |  | [optional] 
 **Protocol** | Pointer to **string** |  | [optional] 
 **Link** | Pointer to **bool** |  | [optional] 
-**ExternalIp** | Pointer to **string** |  | [optional] 
-**InternalIp** | Pointer to **string** |  | [optional] 
+**ExternalIp** | Pointer to **NullableString** |  | [optional] 
+**InternalIp** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -389,6 +389,16 @@ SetExternalIp sets ExternalIp field to given value.
 
 HasExternalIp returns a boolean if a field has been set.
 
+### SetExternalIpNil
+
+`func (o *ContainerPort) SetExternalIpNil(b bool)`
+
+ SetExternalIpNil sets the value for ExternalIp to be an explicit nil
+
+### UnsetExternalIp
+`func (o *ContainerPort) UnsetExternalIp()`
+
+UnsetExternalIp ensures that no value is present for ExternalIp, not even an explicit nil
 ### GetInternalIp
 
 `func (o *ContainerPort) GetInternalIp() string`
@@ -414,6 +424,16 @@ SetInternalIp sets InternalIp field to given value.
 
 HasInternalIp returns a boolean if a field has been set.
 
+### SetInternalIpNil
+
+`func (o *ContainerPort) SetInternalIpNil(b bool)`
+
+ SetInternalIpNil sets the value for InternalIp to be an explicit nil
+
+### UnsetInternalIp
+`func (o *ContainerPort) UnsetInternalIp()`
+
+UnsetInternalIp ensures that no value is present for InternalIp, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

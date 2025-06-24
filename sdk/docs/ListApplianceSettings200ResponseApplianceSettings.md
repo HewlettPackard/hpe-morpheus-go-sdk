@@ -11,30 +11,30 @@ Name | Type | Description | Notes
 **CorsAllowed** | Pointer to **string** |  | [optional] 
 **RegistrationEnabled** | Pointer to **bool** |  | [optional] 
 **DefaultRoleId** | Pointer to **string** |  | [optional] 
-**DefaultUserRoleId** | Pointer to **string** |  | [optional] 
+**DefaultUserRoleId** | Pointer to **NullableString** |  | [optional] 
 **DockerPrivilegedMode** | Pointer to **bool** |  | [optional] 
-**ExpirePwdDays** | Pointer to **string** |  | [optional] 
-**DisableAfterAttempts** | Pointer to **string** |  | [optional] 
-**DisableAfterDaysInactive** | Pointer to **string** |  | [optional] 
-**WarnUserDaysBefore** | Pointer to **string** |  | [optional] 
-**SmtpMailFrom** | Pointer to **string** |  | [optional] 
-**SmtpServer** | Pointer to **string** |  | [optional] 
-**SmtpPort** | Pointer to **string** |  | [optional] 
+**ExpirePwdDays** | Pointer to **NullableString** |  | [optional] 
+**DisableAfterAttempts** | Pointer to **NullableString** |  | [optional] 
+**DisableAfterDaysInactive** | Pointer to **NullableString** |  | [optional] 
+**WarnUserDaysBefore** | Pointer to **NullableString** |  | [optional] 
+**SmtpMailFrom** | Pointer to **NullableString** |  | [optional] 
+**SmtpServer** | Pointer to **NullableString** |  | [optional] 
+**SmtpPort** | Pointer to **NullableString** |  | [optional] 
 **SmtpSSL** | Pointer to **bool** |  | [optional] 
 **SmtpTLS** | Pointer to **bool** |  | [optional] 
-**SmtpUser** | Pointer to **string** |  | [optional] 
-**SmtpPassword** | Pointer to **string** |  | [optional] 
-**SmtpPasswordHash** | Pointer to **string** |  | [optional] 
-**ProxyHost** | Pointer to **string** |  | [optional] 
-**ProxyPort** | Pointer to **string** |  | [optional] 
-**ProxyUser** | Pointer to **string** |  | [optional] 
-**ProxyPassword** | Pointer to **string** |  | [optional] 
-**ProxyPasswordHash** | Pointer to **string** |  | [optional] 
-**ProxyDomain** | Pointer to **string** |  | [optional] 
-**ProxyWorkstation** | Pointer to **string** |  | [optional] 
-**CurrencyProvider** | Pointer to **string** |  | [optional] 
-**CurrencyKey** | Pointer to **string** |  | [optional] 
-**EnabledZoneTypes** | Pointer to [**[]ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
+**SmtpUser** | Pointer to **NullableString** |  | [optional] 
+**SmtpPassword** | Pointer to **NullableString** |  | [optional] 
+**SmtpPasswordHash** | Pointer to **NullableString** |  | [optional] 
+**ProxyHost** | Pointer to **NullableString** |  | [optional] 
+**ProxyPort** | Pointer to **NullableString** |  | [optional] 
+**ProxyUser** | Pointer to **NullableString** |  | [optional] 
+**ProxyPassword** | Pointer to **NullableString** |  | [optional] 
+**ProxyPasswordHash** | Pointer to **NullableString** |  | [optional] 
+**ProxyDomain** | Pointer to **NullableString** |  | [optional] 
+**ProxyWorkstation** | Pointer to **NullableString** |  | [optional] 
+**CurrencyProvider** | Pointer to **NullableString** |  | [optional] 
+**CurrencyKey** | Pointer to **NullableString** |  | [optional] 
+**EnabledZoneTypes** | Pointer to [**[]GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **StatsRetainmentPeriod** | Pointer to **int64** |  | [optional] 
 
 ## Methods
@@ -256,6 +256,16 @@ SetDefaultUserRoleId sets DefaultUserRoleId field to given value.
 
 HasDefaultUserRoleId returns a boolean if a field has been set.
 
+### SetDefaultUserRoleIdNil
+
+`func (o *ListApplianceSettings200ResponseApplianceSettings) SetDefaultUserRoleIdNil(b bool)`
+
+ SetDefaultUserRoleIdNil sets the value for DefaultUserRoleId to be an explicit nil
+
+### UnsetDefaultUserRoleId
+`func (o *ListApplianceSettings200ResponseApplianceSettings) UnsetDefaultUserRoleId()`
+
+UnsetDefaultUserRoleId ensures that no value is present for DefaultUserRoleId, not even an explicit nil
 ### GetDockerPrivilegedMode
 
 `func (o *ListApplianceSettings200ResponseApplianceSettings) GetDockerPrivilegedMode() bool`
@@ -306,6 +316,16 @@ SetExpirePwdDays sets ExpirePwdDays field to given value.
 
 HasExpirePwdDays returns a boolean if a field has been set.
 
+### SetExpirePwdDaysNil
+
+`func (o *ListApplianceSettings200ResponseApplianceSettings) SetExpirePwdDaysNil(b bool)`
+
+ SetExpirePwdDaysNil sets the value for ExpirePwdDays to be an explicit nil
+
+### UnsetExpirePwdDays
+`func (o *ListApplianceSettings200ResponseApplianceSettings) UnsetExpirePwdDays()`
+
+UnsetExpirePwdDays ensures that no value is present for ExpirePwdDays, not even an explicit nil
 ### GetDisableAfterAttempts
 
 `func (o *ListApplianceSettings200ResponseApplianceSettings) GetDisableAfterAttempts() string`
@@ -331,6 +351,16 @@ SetDisableAfterAttempts sets DisableAfterAttempts field to given value.
 
 HasDisableAfterAttempts returns a boolean if a field has been set.
 
+### SetDisableAfterAttemptsNil
+
+`func (o *ListApplianceSettings200ResponseApplianceSettings) SetDisableAfterAttemptsNil(b bool)`
+
+ SetDisableAfterAttemptsNil sets the value for DisableAfterAttempts to be an explicit nil
+
+### UnsetDisableAfterAttempts
+`func (o *ListApplianceSettings200ResponseApplianceSettings) UnsetDisableAfterAttempts()`
+
+UnsetDisableAfterAttempts ensures that no value is present for DisableAfterAttempts, not even an explicit nil
 ### GetDisableAfterDaysInactive
 
 `func (o *ListApplianceSettings200ResponseApplianceSettings) GetDisableAfterDaysInactive() string`
@@ -356,6 +386,16 @@ SetDisableAfterDaysInactive sets DisableAfterDaysInactive field to given value.
 
 HasDisableAfterDaysInactive returns a boolean if a field has been set.
 
+### SetDisableAfterDaysInactiveNil
+
+`func (o *ListApplianceSettings200ResponseApplianceSettings) SetDisableAfterDaysInactiveNil(b bool)`
+
+ SetDisableAfterDaysInactiveNil sets the value for DisableAfterDaysInactive to be an explicit nil
+
+### UnsetDisableAfterDaysInactive
+`func (o *ListApplianceSettings200ResponseApplianceSettings) UnsetDisableAfterDaysInactive()`
+
+UnsetDisableAfterDaysInactive ensures that no value is present for DisableAfterDaysInactive, not even an explicit nil
 ### GetWarnUserDaysBefore
 
 `func (o *ListApplianceSettings200ResponseApplianceSettings) GetWarnUserDaysBefore() string`
@@ -381,6 +421,16 @@ SetWarnUserDaysBefore sets WarnUserDaysBefore field to given value.
 
 HasWarnUserDaysBefore returns a boolean if a field has been set.
 
+### SetWarnUserDaysBeforeNil
+
+`func (o *ListApplianceSettings200ResponseApplianceSettings) SetWarnUserDaysBeforeNil(b bool)`
+
+ SetWarnUserDaysBeforeNil sets the value for WarnUserDaysBefore to be an explicit nil
+
+### UnsetWarnUserDaysBefore
+`func (o *ListApplianceSettings200ResponseApplianceSettings) UnsetWarnUserDaysBefore()`
+
+UnsetWarnUserDaysBefore ensures that no value is present for WarnUserDaysBefore, not even an explicit nil
 ### GetSmtpMailFrom
 
 `func (o *ListApplianceSettings200ResponseApplianceSettings) GetSmtpMailFrom() string`
@@ -406,6 +456,16 @@ SetSmtpMailFrom sets SmtpMailFrom field to given value.
 
 HasSmtpMailFrom returns a boolean if a field has been set.
 
+### SetSmtpMailFromNil
+
+`func (o *ListApplianceSettings200ResponseApplianceSettings) SetSmtpMailFromNil(b bool)`
+
+ SetSmtpMailFromNil sets the value for SmtpMailFrom to be an explicit nil
+
+### UnsetSmtpMailFrom
+`func (o *ListApplianceSettings200ResponseApplianceSettings) UnsetSmtpMailFrom()`
+
+UnsetSmtpMailFrom ensures that no value is present for SmtpMailFrom, not even an explicit nil
 ### GetSmtpServer
 
 `func (o *ListApplianceSettings200ResponseApplianceSettings) GetSmtpServer() string`
@@ -431,6 +491,16 @@ SetSmtpServer sets SmtpServer field to given value.
 
 HasSmtpServer returns a boolean if a field has been set.
 
+### SetSmtpServerNil
+
+`func (o *ListApplianceSettings200ResponseApplianceSettings) SetSmtpServerNil(b bool)`
+
+ SetSmtpServerNil sets the value for SmtpServer to be an explicit nil
+
+### UnsetSmtpServer
+`func (o *ListApplianceSettings200ResponseApplianceSettings) UnsetSmtpServer()`
+
+UnsetSmtpServer ensures that no value is present for SmtpServer, not even an explicit nil
 ### GetSmtpPort
 
 `func (o *ListApplianceSettings200ResponseApplianceSettings) GetSmtpPort() string`
@@ -456,6 +526,16 @@ SetSmtpPort sets SmtpPort field to given value.
 
 HasSmtpPort returns a boolean if a field has been set.
 
+### SetSmtpPortNil
+
+`func (o *ListApplianceSettings200ResponseApplianceSettings) SetSmtpPortNil(b bool)`
+
+ SetSmtpPortNil sets the value for SmtpPort to be an explicit nil
+
+### UnsetSmtpPort
+`func (o *ListApplianceSettings200ResponseApplianceSettings) UnsetSmtpPort()`
+
+UnsetSmtpPort ensures that no value is present for SmtpPort, not even an explicit nil
 ### GetSmtpSSL
 
 `func (o *ListApplianceSettings200ResponseApplianceSettings) GetSmtpSSL() bool`
@@ -531,6 +611,16 @@ SetSmtpUser sets SmtpUser field to given value.
 
 HasSmtpUser returns a boolean if a field has been set.
 
+### SetSmtpUserNil
+
+`func (o *ListApplianceSettings200ResponseApplianceSettings) SetSmtpUserNil(b bool)`
+
+ SetSmtpUserNil sets the value for SmtpUser to be an explicit nil
+
+### UnsetSmtpUser
+`func (o *ListApplianceSettings200ResponseApplianceSettings) UnsetSmtpUser()`
+
+UnsetSmtpUser ensures that no value is present for SmtpUser, not even an explicit nil
 ### GetSmtpPassword
 
 `func (o *ListApplianceSettings200ResponseApplianceSettings) GetSmtpPassword() string`
@@ -556,6 +646,16 @@ SetSmtpPassword sets SmtpPassword field to given value.
 
 HasSmtpPassword returns a boolean if a field has been set.
 
+### SetSmtpPasswordNil
+
+`func (o *ListApplianceSettings200ResponseApplianceSettings) SetSmtpPasswordNil(b bool)`
+
+ SetSmtpPasswordNil sets the value for SmtpPassword to be an explicit nil
+
+### UnsetSmtpPassword
+`func (o *ListApplianceSettings200ResponseApplianceSettings) UnsetSmtpPassword()`
+
+UnsetSmtpPassword ensures that no value is present for SmtpPassword, not even an explicit nil
 ### GetSmtpPasswordHash
 
 `func (o *ListApplianceSettings200ResponseApplianceSettings) GetSmtpPasswordHash() string`
@@ -581,6 +681,16 @@ SetSmtpPasswordHash sets SmtpPasswordHash field to given value.
 
 HasSmtpPasswordHash returns a boolean if a field has been set.
 
+### SetSmtpPasswordHashNil
+
+`func (o *ListApplianceSettings200ResponseApplianceSettings) SetSmtpPasswordHashNil(b bool)`
+
+ SetSmtpPasswordHashNil sets the value for SmtpPasswordHash to be an explicit nil
+
+### UnsetSmtpPasswordHash
+`func (o *ListApplianceSettings200ResponseApplianceSettings) UnsetSmtpPasswordHash()`
+
+UnsetSmtpPasswordHash ensures that no value is present for SmtpPasswordHash, not even an explicit nil
 ### GetProxyHost
 
 `func (o *ListApplianceSettings200ResponseApplianceSettings) GetProxyHost() string`
@@ -606,6 +716,16 @@ SetProxyHost sets ProxyHost field to given value.
 
 HasProxyHost returns a boolean if a field has been set.
 
+### SetProxyHostNil
+
+`func (o *ListApplianceSettings200ResponseApplianceSettings) SetProxyHostNil(b bool)`
+
+ SetProxyHostNil sets the value for ProxyHost to be an explicit nil
+
+### UnsetProxyHost
+`func (o *ListApplianceSettings200ResponseApplianceSettings) UnsetProxyHost()`
+
+UnsetProxyHost ensures that no value is present for ProxyHost, not even an explicit nil
 ### GetProxyPort
 
 `func (o *ListApplianceSettings200ResponseApplianceSettings) GetProxyPort() string`
@@ -631,6 +751,16 @@ SetProxyPort sets ProxyPort field to given value.
 
 HasProxyPort returns a boolean if a field has been set.
 
+### SetProxyPortNil
+
+`func (o *ListApplianceSettings200ResponseApplianceSettings) SetProxyPortNil(b bool)`
+
+ SetProxyPortNil sets the value for ProxyPort to be an explicit nil
+
+### UnsetProxyPort
+`func (o *ListApplianceSettings200ResponseApplianceSettings) UnsetProxyPort()`
+
+UnsetProxyPort ensures that no value is present for ProxyPort, not even an explicit nil
 ### GetProxyUser
 
 `func (o *ListApplianceSettings200ResponseApplianceSettings) GetProxyUser() string`
@@ -656,6 +786,16 @@ SetProxyUser sets ProxyUser field to given value.
 
 HasProxyUser returns a boolean if a field has been set.
 
+### SetProxyUserNil
+
+`func (o *ListApplianceSettings200ResponseApplianceSettings) SetProxyUserNil(b bool)`
+
+ SetProxyUserNil sets the value for ProxyUser to be an explicit nil
+
+### UnsetProxyUser
+`func (o *ListApplianceSettings200ResponseApplianceSettings) UnsetProxyUser()`
+
+UnsetProxyUser ensures that no value is present for ProxyUser, not even an explicit nil
 ### GetProxyPassword
 
 `func (o *ListApplianceSettings200ResponseApplianceSettings) GetProxyPassword() string`
@@ -681,6 +821,16 @@ SetProxyPassword sets ProxyPassword field to given value.
 
 HasProxyPassword returns a boolean if a field has been set.
 
+### SetProxyPasswordNil
+
+`func (o *ListApplianceSettings200ResponseApplianceSettings) SetProxyPasswordNil(b bool)`
+
+ SetProxyPasswordNil sets the value for ProxyPassword to be an explicit nil
+
+### UnsetProxyPassword
+`func (o *ListApplianceSettings200ResponseApplianceSettings) UnsetProxyPassword()`
+
+UnsetProxyPassword ensures that no value is present for ProxyPassword, not even an explicit nil
 ### GetProxyPasswordHash
 
 `func (o *ListApplianceSettings200ResponseApplianceSettings) GetProxyPasswordHash() string`
@@ -706,6 +856,16 @@ SetProxyPasswordHash sets ProxyPasswordHash field to given value.
 
 HasProxyPasswordHash returns a boolean if a field has been set.
 
+### SetProxyPasswordHashNil
+
+`func (o *ListApplianceSettings200ResponseApplianceSettings) SetProxyPasswordHashNil(b bool)`
+
+ SetProxyPasswordHashNil sets the value for ProxyPasswordHash to be an explicit nil
+
+### UnsetProxyPasswordHash
+`func (o *ListApplianceSettings200ResponseApplianceSettings) UnsetProxyPasswordHash()`
+
+UnsetProxyPasswordHash ensures that no value is present for ProxyPasswordHash, not even an explicit nil
 ### GetProxyDomain
 
 `func (o *ListApplianceSettings200ResponseApplianceSettings) GetProxyDomain() string`
@@ -731,6 +891,16 @@ SetProxyDomain sets ProxyDomain field to given value.
 
 HasProxyDomain returns a boolean if a field has been set.
 
+### SetProxyDomainNil
+
+`func (o *ListApplianceSettings200ResponseApplianceSettings) SetProxyDomainNil(b bool)`
+
+ SetProxyDomainNil sets the value for ProxyDomain to be an explicit nil
+
+### UnsetProxyDomain
+`func (o *ListApplianceSettings200ResponseApplianceSettings) UnsetProxyDomain()`
+
+UnsetProxyDomain ensures that no value is present for ProxyDomain, not even an explicit nil
 ### GetProxyWorkstation
 
 `func (o *ListApplianceSettings200ResponseApplianceSettings) GetProxyWorkstation() string`
@@ -756,6 +926,16 @@ SetProxyWorkstation sets ProxyWorkstation field to given value.
 
 HasProxyWorkstation returns a boolean if a field has been set.
 
+### SetProxyWorkstationNil
+
+`func (o *ListApplianceSettings200ResponseApplianceSettings) SetProxyWorkstationNil(b bool)`
+
+ SetProxyWorkstationNil sets the value for ProxyWorkstation to be an explicit nil
+
+### UnsetProxyWorkstation
+`func (o *ListApplianceSettings200ResponseApplianceSettings) UnsetProxyWorkstation()`
+
+UnsetProxyWorkstation ensures that no value is present for ProxyWorkstation, not even an explicit nil
 ### GetCurrencyProvider
 
 `func (o *ListApplianceSettings200ResponseApplianceSettings) GetCurrencyProvider() string`
@@ -781,6 +961,16 @@ SetCurrencyProvider sets CurrencyProvider field to given value.
 
 HasCurrencyProvider returns a boolean if a field has been set.
 
+### SetCurrencyProviderNil
+
+`func (o *ListApplianceSettings200ResponseApplianceSettings) SetCurrencyProviderNil(b bool)`
+
+ SetCurrencyProviderNil sets the value for CurrencyProvider to be an explicit nil
+
+### UnsetCurrencyProvider
+`func (o *ListApplianceSettings200ResponseApplianceSettings) UnsetCurrencyProvider()`
+
+UnsetCurrencyProvider ensures that no value is present for CurrencyProvider, not even an explicit nil
 ### GetCurrencyKey
 
 `func (o *ListApplianceSettings200ResponseApplianceSettings) GetCurrencyKey() string`
@@ -806,22 +996,32 @@ SetCurrencyKey sets CurrencyKey field to given value.
 
 HasCurrencyKey returns a boolean if a field has been set.
 
+### SetCurrencyKeyNil
+
+`func (o *ListApplianceSettings200ResponseApplianceSettings) SetCurrencyKeyNil(b bool)`
+
+ SetCurrencyKeyNil sets the value for CurrencyKey to be an explicit nil
+
+### UnsetCurrencyKey
+`func (o *ListApplianceSettings200ResponseApplianceSettings) UnsetCurrencyKey()`
+
+UnsetCurrencyKey ensures that no value is present for CurrencyKey, not even an explicit nil
 ### GetEnabledZoneTypes
 
-`func (o *ListApplianceSettings200ResponseApplianceSettings) GetEnabledZoneTypes() []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *ListApplianceSettings200ResponseApplianceSettings) GetEnabledZoneTypes() []GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetEnabledZoneTypes returns the EnabledZoneTypes field if non-nil, zero value otherwise.
 
 ### GetEnabledZoneTypesOk
 
-`func (o *ListApplianceSettings200ResponseApplianceSettings) GetEnabledZoneTypesOk() (*[]ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *ListApplianceSettings200ResponseApplianceSettings) GetEnabledZoneTypesOk() (*[]GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetEnabledZoneTypesOk returns a tuple with the EnabledZoneTypes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEnabledZoneTypes
 
-`func (o *ListApplianceSettings200ResponseApplianceSettings) SetEnabledZoneTypes(v []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *ListApplianceSettings200ResponseApplianceSettings) SetEnabledZoneTypes(v []GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetEnabledZoneTypes sets EnabledZoneTypes field to given value.
 
@@ -831,6 +1031,16 @@ SetEnabledZoneTypes sets EnabledZoneTypes field to given value.
 
 HasEnabledZoneTypes returns a boolean if a field has been set.
 
+### SetEnabledZoneTypesNil
+
+`func (o *ListApplianceSettings200ResponseApplianceSettings) SetEnabledZoneTypesNil(b bool)`
+
+ SetEnabledZoneTypesNil sets the value for EnabledZoneTypes to be an explicit nil
+
+### UnsetEnabledZoneTypes
+`func (o *ListApplianceSettings200ResponseApplianceSettings) UnsetEnabledZoneTypes()`
+
+UnsetEnabledZoneTypes ensures that no value is present for EnabledZoneTypes, not even an explicit nil
 ### GetStatsRetainmentPeriod
 
 `func (o *ListApplianceSettings200ResponseApplianceSettings) GetStatsRetainmentPeriod() int64`

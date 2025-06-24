@@ -20,12 +20,12 @@ var _ MappedNullable = &ListInstances200ResponseAllOfInstancesInnerVolumesInner{
 
 // ListInstances200ResponseAllOfInstancesInnerVolumesInner struct for ListInstances200ResponseAllOfInstancesInnerVolumesInner
 type ListInstances200ResponseAllOfInstancesInnerVolumesInner struct {
-	ControllerId         *int64                 `json:"controllerId,omitempty"`
-	DatastoreId          *string                `json:"datastoreId,omitempty"`
+	ControllerId         NullableInt64          `json:"controllerId,omitempty"`
+	DatastoreId          NullableString         `json:"datastoreId,omitempty"`
 	DisplayOrder         *int64                 `json:"displayOrder,omitempty"`
 	Id                   *int64                 `json:"id,omitempty"`
 	Uuid                 *string                `json:"uuid,omitempty"`
-	MaxIOPS              *string                `json:"maxIOPS,omitempty"`
+	MaxIOPS              NullableString         `json:"maxIOPS,omitempty"`
 	MaxStorage           *int64                 `json:"maxStorage,omitempty"`
 	Name                 *string                `json:"name,omitempty"`
 	ShortName            *string                `json:"shortName,omitempty"`
@@ -34,8 +34,8 @@ type ListInstances200ResponseAllOfInstancesInnerVolumesInner struct {
 	RootVolume           *bool                  `json:"rootVolume,omitempty"`
 	Size                 *int64                 `json:"size,omitempty"`
 	StorageType          *int64                 `json:"storageType,omitempty"`
-	UnitNumber           *string                `json:"unitNumber,omitempty"`
-	ControllerMountPoint *string                `json:"controllerMountPoint,omitempty"`
+	UnitNumber           NullableString         `json:"unitNumber,omitempty"`
+	ControllerMountPoint NullableString         `json:"controllerMountPoint,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -58,68 +58,90 @@ func NewListInstances200ResponseAllOfInstancesInnerVolumesInnerWithDefaults() *L
 	return &this
 }
 
-// GetControllerId returns the ControllerId field value if set, zero value otherwise.
+// GetControllerId returns the ControllerId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) GetControllerId() int64 {
-	if o == nil || IsNil(o.ControllerId) {
+	if o == nil || IsNil(o.ControllerId.Get()) {
 		var ret int64
 		return ret
 	}
-	return *o.ControllerId
+	return *o.ControllerId.Get()
 }
 
 // GetControllerIdOk returns a tuple with the ControllerId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) GetControllerIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.ControllerId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ControllerId, true
+	return o.ControllerId.Get(), o.ControllerId.IsSet()
 }
 
 // IsSetControllerId returns a boolean if a field has been set.
 func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) IsSetControllerId() bool {
-	if o != nil && !IsNil(o.ControllerId) {
+	if o != nil && o.ControllerId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetControllerId gets a reference to the given int64 and assigns it to the ControllerId field.
+// SetControllerId gets a reference to the given NullableInt64 and assigns it to the ControllerId field.
 func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) SetControllerId(v int64) {
-	o.ControllerId = &v
+	o.ControllerId.Set(&v)
 }
 
-// GetDatastoreId returns the DatastoreId field value if set, zero value otherwise.
+// SetControllerIdNil sets the value for ControllerId to be an explicit nil
+func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) SetControllerIdNil() {
+	o.ControllerId.Set(nil)
+}
+
+// UnsetControllerId ensures that no value is present for ControllerId, not even an explicit nil
+func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) UnsetControllerId() {
+	o.ControllerId.Unset()
+}
+
+// GetDatastoreId returns the DatastoreId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) GetDatastoreId() string {
-	if o == nil || IsNil(o.DatastoreId) {
+	if o == nil || IsNil(o.DatastoreId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.DatastoreId
+	return *o.DatastoreId.Get()
 }
 
 // GetDatastoreIdOk returns a tuple with the DatastoreId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) GetDatastoreIdOk() (*string, bool) {
-	if o == nil || IsNil(o.DatastoreId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.DatastoreId, true
+	return o.DatastoreId.Get(), o.DatastoreId.IsSet()
 }
 
 // IsSetDatastoreId returns a boolean if a field has been set.
 func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) IsSetDatastoreId() bool {
-	if o != nil && !IsNil(o.DatastoreId) {
+	if o != nil && o.DatastoreId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDatastoreId gets a reference to the given string and assigns it to the DatastoreId field.
+// SetDatastoreId gets a reference to the given NullableString and assigns it to the DatastoreId field.
 func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) SetDatastoreId(v string) {
-	o.DatastoreId = &v
+	o.DatastoreId.Set(&v)
+}
+
+// SetDatastoreIdNil sets the value for DatastoreId to be an explicit nil
+func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) SetDatastoreIdNil() {
+	o.DatastoreId.Set(nil)
+}
+
+// UnsetDatastoreId ensures that no value is present for DatastoreId, not even an explicit nil
+func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) UnsetDatastoreId() {
+	o.DatastoreId.Unset()
 }
 
 // GetDisplayOrder returns the DisplayOrder field value if set, zero value otherwise.
@@ -218,36 +240,47 @@ func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) SetUuid(v stri
 	o.Uuid = &v
 }
 
-// GetMaxIOPS returns the MaxIOPS field value if set, zero value otherwise.
+// GetMaxIOPS returns the MaxIOPS field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) GetMaxIOPS() string {
-	if o == nil || IsNil(o.MaxIOPS) {
+	if o == nil || IsNil(o.MaxIOPS.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.MaxIOPS
+	return *o.MaxIOPS.Get()
 }
 
 // GetMaxIOPSOk returns a tuple with the MaxIOPS field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) GetMaxIOPSOk() (*string, bool) {
-	if o == nil || IsNil(o.MaxIOPS) {
+	if o == nil {
 		return nil, false
 	}
-	return o.MaxIOPS, true
+	return o.MaxIOPS.Get(), o.MaxIOPS.IsSet()
 }
 
 // IsSetMaxIOPS returns a boolean if a field has been set.
 func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) IsSetMaxIOPS() bool {
-	if o != nil && !IsNil(o.MaxIOPS) {
+	if o != nil && o.MaxIOPS.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetMaxIOPS gets a reference to the given string and assigns it to the MaxIOPS field.
+// SetMaxIOPS gets a reference to the given NullableString and assigns it to the MaxIOPS field.
 func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) SetMaxIOPS(v string) {
-	o.MaxIOPS = &v
+	o.MaxIOPS.Set(&v)
+}
+
+// SetMaxIOPSNil sets the value for MaxIOPS to be an explicit nil
+func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) SetMaxIOPSNil() {
+	o.MaxIOPS.Set(nil)
+}
+
+// UnsetMaxIOPS ensures that no value is present for MaxIOPS, not even an explicit nil
+func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) UnsetMaxIOPS() {
+	o.MaxIOPS.Unset()
 }
 
 // GetMaxStorage returns the MaxStorage field value if set, zero value otherwise.
@@ -506,68 +539,90 @@ func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) SetStorageType
 	o.StorageType = &v
 }
 
-// GetUnitNumber returns the UnitNumber field value if set, zero value otherwise.
+// GetUnitNumber returns the UnitNumber field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) GetUnitNumber() string {
-	if o == nil || IsNil(o.UnitNumber) {
+	if o == nil || IsNil(o.UnitNumber.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.UnitNumber
+	return *o.UnitNumber.Get()
 }
 
 // GetUnitNumberOk returns a tuple with the UnitNumber field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) GetUnitNumberOk() (*string, bool) {
-	if o == nil || IsNil(o.UnitNumber) {
+	if o == nil {
 		return nil, false
 	}
-	return o.UnitNumber, true
+	return o.UnitNumber.Get(), o.UnitNumber.IsSet()
 }
 
 // IsSetUnitNumber returns a boolean if a field has been set.
 func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) IsSetUnitNumber() bool {
-	if o != nil && !IsNil(o.UnitNumber) {
+	if o != nil && o.UnitNumber.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetUnitNumber gets a reference to the given string and assigns it to the UnitNumber field.
+// SetUnitNumber gets a reference to the given NullableString and assigns it to the UnitNumber field.
 func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) SetUnitNumber(v string) {
-	o.UnitNumber = &v
+	o.UnitNumber.Set(&v)
 }
 
-// GetControllerMountPoint returns the ControllerMountPoint field value if set, zero value otherwise.
+// SetUnitNumberNil sets the value for UnitNumber to be an explicit nil
+func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) SetUnitNumberNil() {
+	o.UnitNumber.Set(nil)
+}
+
+// UnsetUnitNumber ensures that no value is present for UnitNumber, not even an explicit nil
+func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) UnsetUnitNumber() {
+	o.UnitNumber.Unset()
+}
+
+// GetControllerMountPoint returns the ControllerMountPoint field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) GetControllerMountPoint() string {
-	if o == nil || IsNil(o.ControllerMountPoint) {
+	if o == nil || IsNil(o.ControllerMountPoint.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ControllerMountPoint
+	return *o.ControllerMountPoint.Get()
 }
 
 // GetControllerMountPointOk returns a tuple with the ControllerMountPoint field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) GetControllerMountPointOk() (*string, bool) {
-	if o == nil || IsNil(o.ControllerMountPoint) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ControllerMountPoint, true
+	return o.ControllerMountPoint.Get(), o.ControllerMountPoint.IsSet()
 }
 
 // IsSetControllerMountPoint returns a boolean if a field has been set.
 func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) IsSetControllerMountPoint() bool {
-	if o != nil && !IsNil(o.ControllerMountPoint) {
+	if o != nil && o.ControllerMountPoint.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetControllerMountPoint gets a reference to the given string and assigns it to the ControllerMountPoint field.
+// SetControllerMountPoint gets a reference to the given NullableString and assigns it to the ControllerMountPoint field.
 func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) SetControllerMountPoint(v string) {
-	o.ControllerMountPoint = &v
+	o.ControllerMountPoint.Set(&v)
+}
+
+// SetControllerMountPointNil sets the value for ControllerMountPoint to be an explicit nil
+func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) SetControllerMountPointNil() {
+	o.ControllerMountPoint.Set(nil)
+}
+
+// UnsetControllerMountPoint ensures that no value is present for ControllerMountPoint, not even an explicit nil
+func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) UnsetControllerMountPoint() {
+	o.ControllerMountPoint.Unset()
 }
 
 func (o ListInstances200ResponseAllOfInstancesInnerVolumesInner) MarshalJSON() ([]byte, error) {
@@ -580,11 +635,11 @@ func (o ListInstances200ResponseAllOfInstancesInnerVolumesInner) MarshalJSON() (
 
 func (o ListInstances200ResponseAllOfInstancesInnerVolumesInner) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ControllerId) {
-		toSerialize["controllerId"] = o.ControllerId
+	if o.ControllerId.IsSet() {
+		toSerialize["controllerId"] = o.ControllerId.Get()
 	}
-	if !IsNil(o.DatastoreId) {
-		toSerialize["datastoreId"] = o.DatastoreId
+	if o.DatastoreId.IsSet() {
+		toSerialize["datastoreId"] = o.DatastoreId.Get()
 	}
 	if !IsNil(o.DisplayOrder) {
 		toSerialize["displayOrder"] = o.DisplayOrder
@@ -595,8 +650,8 @@ func (o ListInstances200ResponseAllOfInstancesInnerVolumesInner) ToMap() (map[st
 	if !IsNil(o.Uuid) {
 		toSerialize["uuid"] = o.Uuid
 	}
-	if !IsNil(o.MaxIOPS) {
-		toSerialize["maxIOPS"] = o.MaxIOPS
+	if o.MaxIOPS.IsSet() {
+		toSerialize["maxIOPS"] = o.MaxIOPS.Get()
 	}
 	if !IsNil(o.MaxStorage) {
 		toSerialize["maxStorage"] = o.MaxStorage
@@ -622,11 +677,11 @@ func (o ListInstances200ResponseAllOfInstancesInnerVolumesInner) ToMap() (map[st
 	if !IsNil(o.StorageType) {
 		toSerialize["storageType"] = o.StorageType
 	}
-	if !IsNil(o.UnitNumber) {
-		toSerialize["unitNumber"] = o.UnitNumber
+	if o.UnitNumber.IsSet() {
+		toSerialize["unitNumber"] = o.UnitNumber.Get()
 	}
-	if !IsNil(o.ControllerMountPoint) {
-		toSerialize["controllerMountPoint"] = o.ControllerMountPoint
+	if o.ControllerMountPoint.IsSet() {
+		toSerialize["controllerMountPoint"] = o.ControllerMountPoint.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {

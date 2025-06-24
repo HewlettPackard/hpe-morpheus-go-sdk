@@ -27,14 +27,14 @@ type UpdateInstanceNetworkInterface200ResponseAllOfOneOfServer struct {
 	Name                 *string                                                                     `json:"name,omitempty"`
 	DisplayName          *string                                                                     `json:"displayName,omitempty"`
 	Visibility           *string                                                                     `json:"visibility,omitempty"`
-	Description          *string                                                                     `json:"description,omitempty"`
+	Description          NullableString                                                              `json:"description,omitempty"`
 	ZoneId               *int64                                                                      `json:"zoneId,omitempty"`
 	SiteId               *int64                                                                      `json:"siteId,omitempty"`
 	SshHost              *string                                                                     `json:"sshHost,omitempty"`
 	SshPort              *int64                                                                      `json:"sshPort,omitempty"`
 	ExternalIp           *string                                                                     `json:"externalIp,omitempty"`
 	InternalIp           *string                                                                     `json:"internalIp,omitempty"`
-	VolumeId             *string                                                                     `json:"volumeId,omitempty"`
+	VolumeId             NullableString                                                              `json:"volumeId,omitempty"`
 	Platform             *string                                                                     `json:"platform,omitempty"`
 	PlatformVersion      *string                                                                     `json:"platformVersion,omitempty"`
 	SshUsername          *string                                                                     `json:"sshUsername,omitempty"`
@@ -267,36 +267,47 @@ func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServer) SetVisibilit
 	o.Visibility = &v
 }
 
-// GetDescription returns the Description field value if set, zero value otherwise.
+// GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServer) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
+	if o == nil || IsNil(o.Description.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Description
+	return *o.Description.Get()
 }
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServer) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Description, true
+	return o.Description.Get(), o.Description.IsSet()
 }
 
 // IsSetDescription returns a boolean if a field has been set.
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServer) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
+	if o != nil && o.Description.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDescription gets a reference to the given string and assigns it to the Description field.
+// SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServer) SetDescription(v string) {
-	o.Description = &v
+	o.Description.Set(&v)
+}
+
+// SetDescriptionNil sets the value for Description to be an explicit nil
+func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServer) SetDescriptionNil() {
+	o.Description.Set(nil)
+}
+
+// UnsetDescription ensures that no value is present for Description, not even an explicit nil
+func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServer) UnsetDescription() {
+	o.Description.Unset()
 }
 
 // GetZoneId returns the ZoneId field value if set, zero value otherwise.
@@ -491,36 +502,47 @@ func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServer) SetInternalI
 	o.InternalIp = &v
 }
 
-// GetVolumeId returns the VolumeId field value if set, zero value otherwise.
+// GetVolumeId returns the VolumeId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServer) GetVolumeId() string {
-	if o == nil || IsNil(o.VolumeId) {
+	if o == nil || IsNil(o.VolumeId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.VolumeId
+	return *o.VolumeId.Get()
 }
 
 // GetVolumeIdOk returns a tuple with the VolumeId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServer) GetVolumeIdOk() (*string, bool) {
-	if o == nil || IsNil(o.VolumeId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.VolumeId, true
+	return o.VolumeId.Get(), o.VolumeId.IsSet()
 }
 
 // IsSetVolumeId returns a boolean if a field has been set.
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServer) IsSetVolumeId() bool {
-	if o != nil && !IsNil(o.VolumeId) {
+	if o != nil && o.VolumeId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetVolumeId gets a reference to the given string and assigns it to the VolumeId field.
+// SetVolumeId gets a reference to the given NullableString and assigns it to the VolumeId field.
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServer) SetVolumeId(v string) {
-	o.VolumeId = &v
+	o.VolumeId.Set(&v)
+}
+
+// SetVolumeIdNil sets the value for VolumeId to be an explicit nil
+func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServer) SetVolumeIdNil() {
+	o.VolumeId.Set(nil)
+}
+
+// UnsetVolumeId ensures that no value is present for VolumeId, not even an explicit nil
+func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServer) UnsetVolumeId() {
+	o.VolumeId.Unset()
 }
 
 // GetPlatform returns the Platform field value if set, zero value otherwise.
@@ -1127,8 +1149,8 @@ func (o UpdateInstanceNetworkInterface200ResponseAllOfOneOfServer) ToMap() (map[
 	if !IsNil(o.Visibility) {
 		toSerialize["visibility"] = o.Visibility
 	}
-	if !IsNil(o.Description) {
-		toSerialize["description"] = o.Description
+	if o.Description.IsSet() {
+		toSerialize["description"] = o.Description.Get()
 	}
 	if !IsNil(o.ZoneId) {
 		toSerialize["zoneId"] = o.ZoneId
@@ -1148,8 +1170,8 @@ func (o UpdateInstanceNetworkInterface200ResponseAllOfOneOfServer) ToMap() (map[
 	if !IsNil(o.InternalIp) {
 		toSerialize["internalIp"] = o.InternalIp
 	}
-	if !IsNil(o.VolumeId) {
-		toSerialize["volumeId"] = o.VolumeId
+	if o.VolumeId.IsSet() {
+		toSerialize["volumeId"] = o.VolumeId.Get()
 	}
 	if !IsNil(o.Platform) {
 		toSerialize["platform"] = o.Platform

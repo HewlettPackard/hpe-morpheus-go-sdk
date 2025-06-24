@@ -182,6 +182,16 @@ SetSpec sets Spec field to given value.
 
 HasSpec returns a boolean if a field has been set.
 
+### SetSpecNil
+
+`func (o *ClusterResource) SetSpecNil(b bool)`
+
+ SetSpecNil sets the value for Spec to be an explicit nil
+
+### UnsetSpec
+`func (o *ClusterResource) UnsetSpec()`
+
+UnsetSpec ensures that no value is present for Spec, not even an explicit nil
 ### GetConfig
 
 `func (o *ClusterResource) GetConfig() map[string]interface{}`
@@ -207,6 +217,16 @@ SetConfig sets Config field to given value.
 
 HasConfig returns a boolean if a field has been set.
 
+### SetConfigNil
+
+`func (o *ClusterResource) SetConfigNil(b bool)`
+
+ SetConfigNil sets the value for Config to be an explicit nil
+
+### UnsetConfig
+`func (o *ClusterResource) UnsetConfig()`
+
+UnsetConfig ensures that no value is present for Config, not even an explicit nil
 ### GetRawSec
 
 `func (o *ClusterResource) GetRawSec() map[string]interface{}`
@@ -232,6 +252,16 @@ SetRawSec sets RawSec field to given value.
 
 HasRawSec returns a boolean if a field has been set.
 
+### SetRawSecNil
+
+`func (o *ClusterResource) SetRawSecNil(b bool)`
+
+ SetRawSecNil sets the value for RawSec to be an explicit nil
+
+### UnsetRawSec
+`func (o *ClusterResource) UnsetRawSec()`
+
+UnsetRawSec ensures that no value is present for RawSec, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

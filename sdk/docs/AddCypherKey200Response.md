@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Data** | Pointer to **string** |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
-**LeaseDuration** | Pointer to **int64** |  | [optional] 
+**LeaseDuration** | Pointer to **NullableInt64** |  | [optional] 
 **Cypher** | Pointer to [**ListCypherKeys200ResponseAllOfCyphersInner**](ListCypherKeys200ResponseAllOfCyphersInner.md) |  | [optional] 
 **Success** | Pointer to **bool** |  | [optional] 
 
@@ -104,6 +104,16 @@ SetLeaseDuration sets LeaseDuration field to given value.
 
 HasLeaseDuration returns a boolean if a field has been set.
 
+### SetLeaseDurationNil
+
+`func (o *AddCypherKey200Response) SetLeaseDurationNil(b bool)`
+
+ SetLeaseDurationNil sets the value for LeaseDuration to be an explicit nil
+
+### UnsetLeaseDuration
+`func (o *AddCypherKey200Response) UnsetLeaseDuration()`
+
+UnsetLeaseDuration ensures that no value is present for LeaseDuration, not even an explicit nil
 ### GetCypher
 
 `func (o *AddCypherKey200Response) GetCypher() ListCypherKeys200ResponseAllOfCyphersInner`

@@ -21,7 +21,7 @@ var _ MappedNullable = &NSXNetworkServerConfig{}
 // NSXNetworkServerConfig struct for NSXNetworkServerConfig
 type NSXNetworkServerConfig struct {
 	// NSX Project (NSX 4.1+)
-	Project              *string                `json:"project,omitempty"`
+	Project              NullableString         `json:"project,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -44,36 +44,47 @@ func NewNSXNetworkServerConfigWithDefaults() *NSXNetworkServerConfig {
 	return &this
 }
 
-// GetProject returns the Project field value if set, zero value otherwise.
+// GetProject returns the Project field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NSXNetworkServerConfig) GetProject() string {
-	if o == nil || IsNil(o.Project) {
+	if o == nil || IsNil(o.Project.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Project
+	return *o.Project.Get()
 }
 
 // GetProjectOk returns a tuple with the Project field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NSXNetworkServerConfig) GetProjectOk() (*string, bool) {
-	if o == nil || IsNil(o.Project) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Project, true
+	return o.Project.Get(), o.Project.IsSet()
 }
 
 // IsSetProject returns a boolean if a field has been set.
 func (o *NSXNetworkServerConfig) IsSetProject() bool {
-	if o != nil && !IsNil(o.Project) {
+	if o != nil && o.Project.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetProject gets a reference to the given string and assigns it to the Project field.
+// SetProject gets a reference to the given NullableString and assigns it to the Project field.
 func (o *NSXNetworkServerConfig) SetProject(v string) {
-	o.Project = &v
+	o.Project.Set(&v)
+}
+
+// SetProjectNil sets the value for Project to be an explicit nil
+func (o *NSXNetworkServerConfig) SetProjectNil() {
+	o.Project.Set(nil)
+}
+
+// UnsetProject ensures that no value is present for Project, not even an explicit nil
+func (o *NSXNetworkServerConfig) UnsetProject() {
+	o.Project.Unset()
 }
 
 func (o NSXNetworkServerConfig) MarshalJSON() ([]byte, error) {
@@ -86,8 +97,8 @@ func (o NSXNetworkServerConfig) MarshalJSON() ([]byte, error) {
 
 func (o NSXNetworkServerConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Project) {
-		toSerialize["project"] = o.Project
+	if o.Project.IsSet() {
+		toSerialize["project"] = o.Project.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {

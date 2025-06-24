@@ -26,24 +26,24 @@ Name | Type | Description | Notes
 **StatsEnabled** | Pointer to **bool** |  | [optional] 
 **Status** | Pointer to **string** |  | [optional] 
 **UserStatus** | Pointer to **string** |  | [optional] 
-**EnvironmentPrefix** | Pointer to **string** |  | [optional] 
+**EnvironmentPrefix** | Pointer to **NullableString** |  | [optional] 
 **Stats** | Pointer to [**GetContainer200ResponseContainerStats**](GetContainer200ResponseContainerStats.md) |  | [optional] 
 **RuntimeInfo** | Pointer to **map[string]interface{}** |  | [optional] 
-**ContainerVersion** | Pointer to **string** |  | [optional] 
-**RepositoryImage** | Pointer to **string** |  | [optional] 
-**PlanCategory** | Pointer to **string** |  | [optional] 
+**ContainerVersion** | Pointer to **NullableString** |  | [optional] 
+**RepositoryImage** | Pointer to **NullableString** |  | [optional] 
+**PlanCategory** | Pointer to **NullableString** |  | [optional] 
 **Hostname** | Pointer to **string** |  | [optional] 
-**DomainName** | Pointer to **string** |  | [optional] 
+**DomainName** | Pointer to **NullableString** |  | [optional] 
 **VolumeCreated** | Pointer to **bool** |  | [optional] 
 **ContainerCreated** | Pointer to **bool** |  | [optional] 
 **MaxStorage** | Pointer to **int32** |  | [optional] 
 **MaxMemory** | Pointer to **int32** |  | [optional] 
 **MaxCores** | Pointer to **int32** |  | [optional] 
-**MaxCpu** | Pointer to **int32** |  | [optional] 
+**MaxCpu** | Pointer to **NullableInt32** |  | [optional] 
 **AvailableActions** | Pointer to **[]map[string]interface{}** |  | [optional] 
-**ConfigGroup** | Pointer to **string** |  | [optional] 
-**ConfigId** | Pointer to **string** |  | [optional] 
-**ConfigRole** | Pointer to **string** |  | [optional] 
+**ConfigGroup** | Pointer to **NullableString** |  | [optional] 
+**ConfigId** | Pointer to **NullableString** |  | [optional] 
+**ConfigRole** | Pointer to **NullableString** |  | [optional] 
 **HourlyCost** | Pointer to **float64** |  | [optional] 
 **HourlyPrice** | Pointer to **float64** |  | [optional] 
 
@@ -466,6 +466,16 @@ SetPorts sets Ports field to given value.
 
 HasPorts returns a boolean if a field has been set.
 
+### SetPortsNil
+
+`func (o *GetContainer200ResponseContainer) SetPortsNil(b bool)`
+
+ SetPortsNil sets the value for Ports to be an explicit nil
+
+### UnsetPorts
+`func (o *GetContainer200ResponseContainer) UnsetPorts()`
+
+UnsetPorts ensures that no value is present for Ports, not even an explicit nil
 ### GetPlan
 
 `func (o *GetContainer200ResponseContainer) GetPlan() GetContainer200ResponseContainerPlan`
@@ -641,6 +651,16 @@ SetEnvironmentPrefix sets EnvironmentPrefix field to given value.
 
 HasEnvironmentPrefix returns a boolean if a field has been set.
 
+### SetEnvironmentPrefixNil
+
+`func (o *GetContainer200ResponseContainer) SetEnvironmentPrefixNil(b bool)`
+
+ SetEnvironmentPrefixNil sets the value for EnvironmentPrefix to be an explicit nil
+
+### UnsetEnvironmentPrefix
+`func (o *GetContainer200ResponseContainer) UnsetEnvironmentPrefix()`
+
+UnsetEnvironmentPrefix ensures that no value is present for EnvironmentPrefix, not even an explicit nil
 ### GetStats
 
 `func (o *GetContainer200ResponseContainer) GetStats() GetContainer200ResponseContainerStats`
@@ -716,6 +736,16 @@ SetContainerVersion sets ContainerVersion field to given value.
 
 HasContainerVersion returns a boolean if a field has been set.
 
+### SetContainerVersionNil
+
+`func (o *GetContainer200ResponseContainer) SetContainerVersionNil(b bool)`
+
+ SetContainerVersionNil sets the value for ContainerVersion to be an explicit nil
+
+### UnsetContainerVersion
+`func (o *GetContainer200ResponseContainer) UnsetContainerVersion()`
+
+UnsetContainerVersion ensures that no value is present for ContainerVersion, not even an explicit nil
 ### GetRepositoryImage
 
 `func (o *GetContainer200ResponseContainer) GetRepositoryImage() string`
@@ -741,6 +771,16 @@ SetRepositoryImage sets RepositoryImage field to given value.
 
 HasRepositoryImage returns a boolean if a field has been set.
 
+### SetRepositoryImageNil
+
+`func (o *GetContainer200ResponseContainer) SetRepositoryImageNil(b bool)`
+
+ SetRepositoryImageNil sets the value for RepositoryImage to be an explicit nil
+
+### UnsetRepositoryImage
+`func (o *GetContainer200ResponseContainer) UnsetRepositoryImage()`
+
+UnsetRepositoryImage ensures that no value is present for RepositoryImage, not even an explicit nil
 ### GetPlanCategory
 
 `func (o *GetContainer200ResponseContainer) GetPlanCategory() string`
@@ -766,6 +806,16 @@ SetPlanCategory sets PlanCategory field to given value.
 
 HasPlanCategory returns a boolean if a field has been set.
 
+### SetPlanCategoryNil
+
+`func (o *GetContainer200ResponseContainer) SetPlanCategoryNil(b bool)`
+
+ SetPlanCategoryNil sets the value for PlanCategory to be an explicit nil
+
+### UnsetPlanCategory
+`func (o *GetContainer200ResponseContainer) UnsetPlanCategory()`
+
+UnsetPlanCategory ensures that no value is present for PlanCategory, not even an explicit nil
 ### GetHostname
 
 `func (o *GetContainer200ResponseContainer) GetHostname() string`
@@ -816,6 +866,16 @@ SetDomainName sets DomainName field to given value.
 
 HasDomainName returns a boolean if a field has been set.
 
+### SetDomainNameNil
+
+`func (o *GetContainer200ResponseContainer) SetDomainNameNil(b bool)`
+
+ SetDomainNameNil sets the value for DomainName to be an explicit nil
+
+### UnsetDomainName
+`func (o *GetContainer200ResponseContainer) UnsetDomainName()`
+
+UnsetDomainName ensures that no value is present for DomainName, not even an explicit nil
 ### GetVolumeCreated
 
 `func (o *GetContainer200ResponseContainer) GetVolumeCreated() bool`
@@ -966,6 +1026,16 @@ SetMaxCpu sets MaxCpu field to given value.
 
 HasMaxCpu returns a boolean if a field has been set.
 
+### SetMaxCpuNil
+
+`func (o *GetContainer200ResponseContainer) SetMaxCpuNil(b bool)`
+
+ SetMaxCpuNil sets the value for MaxCpu to be an explicit nil
+
+### UnsetMaxCpu
+`func (o *GetContainer200ResponseContainer) UnsetMaxCpu()`
+
+UnsetMaxCpu ensures that no value is present for MaxCpu, not even an explicit nil
 ### GetAvailableActions
 
 `func (o *GetContainer200ResponseContainer) GetAvailableActions() []map[string]interface{}`
@@ -991,6 +1061,16 @@ SetAvailableActions sets AvailableActions field to given value.
 
 HasAvailableActions returns a boolean if a field has been set.
 
+### SetAvailableActionsNil
+
+`func (o *GetContainer200ResponseContainer) SetAvailableActionsNil(b bool)`
+
+ SetAvailableActionsNil sets the value for AvailableActions to be an explicit nil
+
+### UnsetAvailableActions
+`func (o *GetContainer200ResponseContainer) UnsetAvailableActions()`
+
+UnsetAvailableActions ensures that no value is present for AvailableActions, not even an explicit nil
 ### GetConfigGroup
 
 `func (o *GetContainer200ResponseContainer) GetConfigGroup() string`
@@ -1016,6 +1096,16 @@ SetConfigGroup sets ConfigGroup field to given value.
 
 HasConfigGroup returns a boolean if a field has been set.
 
+### SetConfigGroupNil
+
+`func (o *GetContainer200ResponseContainer) SetConfigGroupNil(b bool)`
+
+ SetConfigGroupNil sets the value for ConfigGroup to be an explicit nil
+
+### UnsetConfigGroup
+`func (o *GetContainer200ResponseContainer) UnsetConfigGroup()`
+
+UnsetConfigGroup ensures that no value is present for ConfigGroup, not even an explicit nil
 ### GetConfigId
 
 `func (o *GetContainer200ResponseContainer) GetConfigId() string`
@@ -1041,6 +1131,16 @@ SetConfigId sets ConfigId field to given value.
 
 HasConfigId returns a boolean if a field has been set.
 
+### SetConfigIdNil
+
+`func (o *GetContainer200ResponseContainer) SetConfigIdNil(b bool)`
+
+ SetConfigIdNil sets the value for ConfigId to be an explicit nil
+
+### UnsetConfigId
+`func (o *GetContainer200ResponseContainer) UnsetConfigId()`
+
+UnsetConfigId ensures that no value is present for ConfigId, not even an explicit nil
 ### GetConfigRole
 
 `func (o *GetContainer200ResponseContainer) GetConfigRole() string`
@@ -1066,6 +1166,16 @@ SetConfigRole sets ConfigRole field to given value.
 
 HasConfigRole returns a boolean if a field has been set.
 
+### SetConfigRoleNil
+
+`func (o *GetContainer200ResponseContainer) SetConfigRoleNil(b bool)`
+
+ SetConfigRoleNil sets the value for ConfigRole to be an explicit nil
+
+### UnsetConfigRole
+`func (o *GetContainer200ResponseContainer) UnsetConfigRole()`
+
+UnsetConfigRole ensures that no value is present for ConfigRole, not even an explicit nil
 ### GetHourlyCost
 
 `func (o *GetContainer200ResponseContainer) GetHourlyCost() float64`

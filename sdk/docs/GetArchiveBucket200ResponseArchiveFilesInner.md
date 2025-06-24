@@ -8,11 +8,11 @@ Name | Type | Description | Notes
 **Name** | Pointer to **string** |  | [optional] 
 **FilePath** | Pointer to **string** |  | [optional] 
 **ArchiveBucket** | Pointer to [**GetArchiveBucket200ResponseArchiveFilesInnerArchiveBucket**](GetArchiveBucket200ResponseArchiveFilesInnerArchiveBucket.md) |  | [optional] 
-**CreatedBy** | Pointer to [**GetArchiveBucket200ResponseArchiveFilesInnerCreatedBy**](GetArchiveBucket200ResponseArchiveFilesInnerCreatedBy.md) |  | [optional] 
+**CreatedBy** | Pointer to [**ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy**](ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy.md) |  | [optional] 
 **IsDirectory** | Pointer to **bool** |  | [optional] 
 **Status** | Pointer to **string** |  | [optional] 
 **RawSize** | Pointer to **int64** |  | [optional] 
-**ContentType** | Pointer to **string** |  | [optional] 
+**ContentType** | Pointer to **NullableString** |  | [optional] 
 **DownloadCount** | Pointer to **int64** |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
@@ -138,20 +138,20 @@ HasArchiveBucket returns a boolean if a field has been set.
 
 ### GetCreatedBy
 
-`func (o *GetArchiveBucket200ResponseArchiveFilesInner) GetCreatedBy() GetArchiveBucket200ResponseArchiveFilesInnerCreatedBy`
+`func (o *GetArchiveBucket200ResponseArchiveFilesInner) GetCreatedBy() ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy`
 
 GetCreatedBy returns the CreatedBy field if non-nil, zero value otherwise.
 
 ### GetCreatedByOk
 
-`func (o *GetArchiveBucket200ResponseArchiveFilesInner) GetCreatedByOk() (*GetArchiveBucket200ResponseArchiveFilesInnerCreatedBy, bool)`
+`func (o *GetArchiveBucket200ResponseArchiveFilesInner) GetCreatedByOk() (*ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy, bool)`
 
 GetCreatedByOk returns a tuple with the CreatedBy field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCreatedBy
 
-`func (o *GetArchiveBucket200ResponseArchiveFilesInner) SetCreatedBy(v GetArchiveBucket200ResponseArchiveFilesInnerCreatedBy)`
+`func (o *GetArchiveBucket200ResponseArchiveFilesInner) SetCreatedBy(v ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy)`
 
 SetCreatedBy sets CreatedBy field to given value.
 
@@ -261,6 +261,16 @@ SetContentType sets ContentType field to given value.
 
 HasContentType returns a boolean if a field has been set.
 
+### SetContentTypeNil
+
+`func (o *GetArchiveBucket200ResponseArchiveFilesInner) SetContentTypeNil(b bool)`
+
+ SetContentTypeNil sets the value for ContentType to be an explicit nil
+
+### UnsetContentType
+`func (o *GetArchiveBucket200ResponseArchiveFilesInner) UnsetContentType()`
+
+UnsetContentType ensures that no value is present for ContentType, not even an explicit nil
 ### GetDownloadCount
 
 `func (o *GetArchiveBucket200ResponseArchiveFilesInner) GetDownloadCount() int64`

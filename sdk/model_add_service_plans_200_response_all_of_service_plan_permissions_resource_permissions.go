@@ -274,9 +274,9 @@ func (o *AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermission
 	o.Sites = v
 }
 
-// GetPlans returns the Plans field value if set, zero value otherwise.
+// GetPlans returns the Plans field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions) GetPlans() []map[string]interface{} {
-	if o == nil || IsNil(o.Plans) {
+	if o == nil {
 		var ret []map[string]interface{}
 		return ret
 	}
@@ -285,6 +285,7 @@ func (o *AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermission
 
 // GetPlansOk returns a tuple with the Plans field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions) GetPlansOk() ([]map[string]interface{}, bool) {
 	if o == nil || IsNil(o.Plans) {
 		return nil, false
@@ -337,7 +338,7 @@ func (o AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions
 	if !IsNil(o.Sites) {
 		toSerialize["sites"] = o.Sites
 	}
-	if !IsNil(o.Plans) {
+	if o.Plans != nil {
 		toSerialize["plans"] = o.Plans
 	}
 

@@ -23,7 +23,7 @@ type ListActivity4XXResponse struct {
 	// Success indicator, true when the request succeeded and false when an error occurred
 	Success *bool `json:"success,omitempty"`
 	// Message containing a description of the result, usually a message about the error that occurred
-	Msg *string `json:"msg,omitempty"`
+	Msg NullableString `json:"msg,omitempty"`
 	// Validation errors, with a key for Object containing error messages for each invalid parameter (key)
 	Errors               map[string]interface{} `json:"errors,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
@@ -84,41 +84,52 @@ func (o *ListActivity4XXResponse) SetSuccess(v bool) {
 	o.Success = &v
 }
 
-// GetMsg returns the Msg field value if set, zero value otherwise.
+// GetMsg returns the Msg field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListActivity4XXResponse) GetMsg() string {
-	if o == nil || IsNil(o.Msg) {
+	if o == nil || IsNil(o.Msg.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Msg
+	return *o.Msg.Get()
 }
 
 // GetMsgOk returns a tuple with the Msg field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListActivity4XXResponse) GetMsgOk() (*string, bool) {
-	if o == nil || IsNil(o.Msg) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Msg, true
+	return o.Msg.Get(), o.Msg.IsSet()
 }
 
 // IsSetMsg returns a boolean if a field has been set.
 func (o *ListActivity4XXResponse) IsSetMsg() bool {
-	if o != nil && !IsNil(o.Msg) {
+	if o != nil && o.Msg.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetMsg gets a reference to the given string and assigns it to the Msg field.
+// SetMsg gets a reference to the given NullableString and assigns it to the Msg field.
 func (o *ListActivity4XXResponse) SetMsg(v string) {
-	o.Msg = &v
+	o.Msg.Set(&v)
 }
 
-// GetErrors returns the Errors field value if set, zero value otherwise.
+// SetMsgNil sets the value for Msg to be an explicit nil
+func (o *ListActivity4XXResponse) SetMsgNil() {
+	o.Msg.Set(nil)
+}
+
+// UnsetMsg ensures that no value is present for Msg, not even an explicit nil
+func (o *ListActivity4XXResponse) UnsetMsg() {
+	o.Msg.Unset()
+}
+
+// GetErrors returns the Errors field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListActivity4XXResponse) GetErrors() map[string]interface{} {
-	if o == nil || IsNil(o.Errors) {
+	if o == nil {
 		var ret map[string]interface{}
 		return ret
 	}
@@ -127,6 +138,7 @@ func (o *ListActivity4XXResponse) GetErrors() map[string]interface{} {
 
 // GetErrorsOk returns a tuple with the Errors field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListActivity4XXResponse) GetErrorsOk() (map[string]interface{}, bool) {
 	if o == nil || IsNil(o.Errors) {
 		return map[string]interface{}{}, false
@@ -161,10 +173,10 @@ func (o ListActivity4XXResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Success) {
 		toSerialize["success"] = o.Success
 	}
-	if !IsNil(o.Msg) {
-		toSerialize["msg"] = o.Msg
+	if o.Msg.IsSet() {
+		toSerialize["msg"] = o.Msg.Get()
 	}
-	if !IsNil(o.Errors) {
+	if o.Errors != nil {
 		toSerialize["errors"] = o.Errors
 	}
 

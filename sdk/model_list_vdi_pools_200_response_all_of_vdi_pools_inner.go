@@ -21,43 +21,43 @@ var _ MappedNullable = &ListVDIPools200ResponseAllOfVdiPoolsInner{}
 
 // ListVDIPools200ResponseAllOfVdiPoolsInner struct for ListVDIPools200ResponseAllOfVdiPoolsInner
 type ListVDIPools200ResponseAllOfVdiPoolsInner struct {
-	Id                               *int64                                                                   `json:"id,omitempty"`
-	Name                             *string                                                                  `json:"name,omitempty"`
-	Description                      *string                                                                  `json:"description,omitempty"`
-	MinIdle                          *int64                                                                   `json:"minIdle,omitempty"`
-	MaxIdle                          *int64                                                                   `json:"maxIdle,omitempty"`
-	InitialPoolSize                  *int64                                                                   `json:"initialPoolSize,omitempty"`
-	MaxPoolSize                      *int64                                                                   `json:"maxPoolSize,omitempty"`
-	AllocationTimeoutMinutes         *int64                                                                   `json:"allocationTimeoutMinutes,omitempty"`
-	PersistentUser                   *bool                                                                    `json:"persistentUser,omitempty"`
-	Recyclable                       *bool                                                                    `json:"recyclable,omitempty"`
-	Enabled                          *bool                                                                    `json:"enabled,omitempty"`
-	AutoCreateLocalUserOnReservation *bool                                                                    `json:"autoCreateLocalUserOnReservation,omitempty"`
-	AllowHypervisorConsole           *bool                                                                    `json:"allowHypervisorConsole,omitempty"`
-	AllowCopy                        *bool                                                                    `json:"allowCopy,omitempty"`
-	AllowPrinter                     *bool                                                                    `json:"allowPrinter,omitempty"`
-	AllowFileshare                   *bool                                                                    `json:"allowFileshare,omitempty"`
-	GuestConsoleJumpHost             *string                                                                  `json:"guestConsoleJumpHost,omitempty"`
-	GuestConsoleJumpPort             *string                                                                  `json:"guestConsoleJumpPort,omitempty"`
-	GuestConsoleJumpUsername         *string                                                                  `json:"guestConsoleJumpUsername,omitempty"`
-	GuestConsoleJumpPassword         *string                                                                  `json:"guestConsoleJumpPassword,omitempty"`
-	GuestConsoleJumpKeypair          *string                                                                  `json:"guestConsoleJumpKeypair,omitempty"`
-	Gateway                          *GetAlerts200ResponseAllOfCheckGroupsInnerInstance                       `json:"gateway,omitempty"`
-	IconPath                         *string                                                                  `json:"iconPath,omitempty"`
-	Logo                             *string                                                                  `json:"logo,omitempty"`
-	Apps                             []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"apps,omitempty"`
-	Owner                            *ListVDIPools200ResponseAllOfVdiPoolsInnerOwner                          `json:"owner,omitempty"`
-	Config                           *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig                         `json:"config,omitempty"`
-	Group                            *GetAlerts200ResponseAllOfCheckGroupsInnerInstance                       `json:"group,omitempty"`
-	Cloud                            *GetAlerts200ResponseAllOfCheckGroupsInnerInstance                       `json:"cloud,omitempty"`
-	UsedCount                        *int64                                                                   `json:"usedCount,omitempty"`
-	ReservedCount                    *int64                                                                   `json:"reservedCount,omitempty"`
-	PreparingCount                   *int64                                                                   `json:"preparingCount,omitempty"`
-	IdleCount                        *int64                                                                   `json:"idleCount,omitempty"`
-	Status                           *string                                                                  `json:"status,omitempty"`
-	DateCreated                      *time.Time                                                               `json:"dateCreated,omitempty"`
-	LastUpdated                      *time.Time                                                               `json:"lastUpdated,omitempty"`
-	AdditionalProperties             map[string]interface{}                                                   `json:",remain"`
+	Id                               *int64                                              `json:"id,omitempty"`
+	Name                             *string                                             `json:"name,omitempty"`
+	Description                      NullableString                                      `json:"description,omitempty"`
+	MinIdle                          *int64                                              `json:"minIdle,omitempty"`
+	MaxIdle                          *int64                                              `json:"maxIdle,omitempty"`
+	InitialPoolSize                  *int64                                              `json:"initialPoolSize,omitempty"`
+	MaxPoolSize                      *int64                                              `json:"maxPoolSize,omitempty"`
+	AllocationTimeoutMinutes         *int64                                              `json:"allocationTimeoutMinutes,omitempty"`
+	PersistentUser                   NullableBool                                        `json:"persistentUser,omitempty"`
+	Recyclable                       NullableBool                                        `json:"recyclable,omitempty"`
+	Enabled                          *bool                                               `json:"enabled,omitempty"`
+	AutoCreateLocalUserOnReservation *bool                                               `json:"autoCreateLocalUserOnReservation,omitempty"`
+	AllowHypervisorConsole           NullableBool                                        `json:"allowHypervisorConsole,omitempty"`
+	AllowCopy                        NullableBool                                        `json:"allowCopy,omitempty"`
+	AllowPrinter                     NullableBool                                        `json:"allowPrinter,omitempty"`
+	AllowFileshare                   NullableBool                                        `json:"allowFileshare,omitempty"`
+	GuestConsoleJumpHost             NullableString                                      `json:"guestConsoleJumpHost,omitempty"`
+	GuestConsoleJumpPort             NullableString                                      `json:"guestConsoleJumpPort,omitempty"`
+	GuestConsoleJumpUsername         NullableString                                      `json:"guestConsoleJumpUsername,omitempty"`
+	GuestConsoleJumpPassword         NullableString                                      `json:"guestConsoleJumpPassword,omitempty"`
+	GuestConsoleJumpKeypair          NullableString                                      `json:"guestConsoleJumpKeypair,omitempty"`
+	Gateway                          *GetAlerts200ResponseAllOfCheckGroupsInnerInstance  `json:"gateway,omitempty"`
+	IconPath                         *string                                             `json:"iconPath,omitempty"`
+	Logo                             *string                                             `json:"logo,omitempty"`
+	Apps                             []GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"apps,omitempty"`
+	Owner                            *ListVDIPools200ResponseAllOfVdiPoolsInnerOwner     `json:"owner,omitempty"`
+	Config                           *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig    `json:"config,omitempty"`
+	Group                            *GetAlerts200ResponseAllOfCheckGroupsInnerInstance  `json:"group,omitempty"`
+	Cloud                            *GetAlerts200ResponseAllOfCheckGroupsInnerInstance  `json:"cloud,omitempty"`
+	UsedCount                        *int64                                              `json:"usedCount,omitempty"`
+	ReservedCount                    *int64                                              `json:"reservedCount,omitempty"`
+	PreparingCount                   *int64                                              `json:"preparingCount,omitempty"`
+	IdleCount                        *int64                                              `json:"idleCount,omitempty"`
+	Status                           *string                                             `json:"status,omitempty"`
+	DateCreated                      *time.Time                                          `json:"dateCreated,omitempty"`
+	LastUpdated                      *time.Time                                          `json:"lastUpdated,omitempty"`
+	AdditionalProperties             map[string]interface{}                              `json:",remain"`
 }
 
 type _ListVDIPools200ResponseAllOfVdiPoolsInner ListVDIPools200ResponseAllOfVdiPoolsInner
@@ -143,36 +143,47 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) SetName(v string) {
 	o.Name = &v
 }
 
-// GetDescription returns the Description field value if set, zero value otherwise.
+// GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
+	if o == nil || IsNil(o.Description.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Description
+	return *o.Description.Get()
 }
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Description, true
+	return o.Description.Get(), o.Description.IsSet()
 }
 
 // IsSetDescription returns a boolean if a field has been set.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
+	if o != nil && o.Description.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDescription gets a reference to the given string and assigns it to the Description field.
+// SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) SetDescription(v string) {
-	o.Description = &v
+	o.Description.Set(&v)
+}
+
+// SetDescriptionNil sets the value for Description to be an explicit nil
+func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) SetDescriptionNil() {
+	o.Description.Set(nil)
+}
+
+// UnsetDescription ensures that no value is present for Description, not even an explicit nil
+func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) UnsetDescription() {
+	o.Description.Unset()
 }
 
 // GetMinIdle returns the MinIdle field value if set, zero value otherwise.
@@ -335,68 +346,90 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) SetAllocationTimeoutMinutes(
 	o.AllocationTimeoutMinutes = &v
 }
 
-// GetPersistentUser returns the PersistentUser field value if set, zero value otherwise.
+// GetPersistentUser returns the PersistentUser field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) GetPersistentUser() bool {
-	if o == nil || IsNil(o.PersistentUser) {
+	if o == nil || IsNil(o.PersistentUser.Get()) {
 		var ret bool
 		return ret
 	}
-	return *o.PersistentUser
+	return *o.PersistentUser.Get()
 }
 
 // GetPersistentUserOk returns a tuple with the PersistentUser field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) GetPersistentUserOk() (*bool, bool) {
-	if o == nil || IsNil(o.PersistentUser) {
+	if o == nil {
 		return nil, false
 	}
-	return o.PersistentUser, true
+	return o.PersistentUser.Get(), o.PersistentUser.IsSet()
 }
 
 // IsSetPersistentUser returns a boolean if a field has been set.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) IsSetPersistentUser() bool {
-	if o != nil && !IsNil(o.PersistentUser) {
+	if o != nil && o.PersistentUser.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetPersistentUser gets a reference to the given bool and assigns it to the PersistentUser field.
+// SetPersistentUser gets a reference to the given NullableBool and assigns it to the PersistentUser field.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) SetPersistentUser(v bool) {
-	o.PersistentUser = &v
+	o.PersistentUser.Set(&v)
 }
 
-// GetRecyclable returns the Recyclable field value if set, zero value otherwise.
+// SetPersistentUserNil sets the value for PersistentUser to be an explicit nil
+func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) SetPersistentUserNil() {
+	o.PersistentUser.Set(nil)
+}
+
+// UnsetPersistentUser ensures that no value is present for PersistentUser, not even an explicit nil
+func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) UnsetPersistentUser() {
+	o.PersistentUser.Unset()
+}
+
+// GetRecyclable returns the Recyclable field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) GetRecyclable() bool {
-	if o == nil || IsNil(o.Recyclable) {
+	if o == nil || IsNil(o.Recyclable.Get()) {
 		var ret bool
 		return ret
 	}
-	return *o.Recyclable
+	return *o.Recyclable.Get()
 }
 
 // GetRecyclableOk returns a tuple with the Recyclable field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) GetRecyclableOk() (*bool, bool) {
-	if o == nil || IsNil(o.Recyclable) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Recyclable, true
+	return o.Recyclable.Get(), o.Recyclable.IsSet()
 }
 
 // IsSetRecyclable returns a boolean if a field has been set.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) IsSetRecyclable() bool {
-	if o != nil && !IsNil(o.Recyclable) {
+	if o != nil && o.Recyclable.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetRecyclable gets a reference to the given bool and assigns it to the Recyclable field.
+// SetRecyclable gets a reference to the given NullableBool and assigns it to the Recyclable field.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) SetRecyclable(v bool) {
-	o.Recyclable = &v
+	o.Recyclable.Set(&v)
+}
+
+// SetRecyclableNil sets the value for Recyclable to be an explicit nil
+func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) SetRecyclableNil() {
+	o.Recyclable.Set(nil)
+}
+
+// UnsetRecyclable ensures that no value is present for Recyclable, not even an explicit nil
+func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) UnsetRecyclable() {
+	o.Recyclable.Unset()
 }
 
 // GetEnabled returns the Enabled field value if set, zero value otherwise.
@@ -463,292 +496,391 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) SetAutoCreateLocalUserOnRese
 	o.AutoCreateLocalUserOnReservation = &v
 }
 
-// GetAllowHypervisorConsole returns the AllowHypervisorConsole field value if set, zero value otherwise.
+// GetAllowHypervisorConsole returns the AllowHypervisorConsole field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) GetAllowHypervisorConsole() bool {
-	if o == nil || IsNil(o.AllowHypervisorConsole) {
+	if o == nil || IsNil(o.AllowHypervisorConsole.Get()) {
 		var ret bool
 		return ret
 	}
-	return *o.AllowHypervisorConsole
+	return *o.AllowHypervisorConsole.Get()
 }
 
 // GetAllowHypervisorConsoleOk returns a tuple with the AllowHypervisorConsole field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) GetAllowHypervisorConsoleOk() (*bool, bool) {
-	if o == nil || IsNil(o.AllowHypervisorConsole) {
+	if o == nil {
 		return nil, false
 	}
-	return o.AllowHypervisorConsole, true
+	return o.AllowHypervisorConsole.Get(), o.AllowHypervisorConsole.IsSet()
 }
 
 // IsSetAllowHypervisorConsole returns a boolean if a field has been set.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) IsSetAllowHypervisorConsole() bool {
-	if o != nil && !IsNil(o.AllowHypervisorConsole) {
+	if o != nil && o.AllowHypervisorConsole.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetAllowHypervisorConsole gets a reference to the given bool and assigns it to the AllowHypervisorConsole field.
+// SetAllowHypervisorConsole gets a reference to the given NullableBool and assigns it to the AllowHypervisorConsole field.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) SetAllowHypervisorConsole(v bool) {
-	o.AllowHypervisorConsole = &v
+	o.AllowHypervisorConsole.Set(&v)
 }
 
-// GetAllowCopy returns the AllowCopy field value if set, zero value otherwise.
+// SetAllowHypervisorConsoleNil sets the value for AllowHypervisorConsole to be an explicit nil
+func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) SetAllowHypervisorConsoleNil() {
+	o.AllowHypervisorConsole.Set(nil)
+}
+
+// UnsetAllowHypervisorConsole ensures that no value is present for AllowHypervisorConsole, not even an explicit nil
+func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) UnsetAllowHypervisorConsole() {
+	o.AllowHypervisorConsole.Unset()
+}
+
+// GetAllowCopy returns the AllowCopy field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) GetAllowCopy() bool {
-	if o == nil || IsNil(o.AllowCopy) {
+	if o == nil || IsNil(o.AllowCopy.Get()) {
 		var ret bool
 		return ret
 	}
-	return *o.AllowCopy
+	return *o.AllowCopy.Get()
 }
 
 // GetAllowCopyOk returns a tuple with the AllowCopy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) GetAllowCopyOk() (*bool, bool) {
-	if o == nil || IsNil(o.AllowCopy) {
+	if o == nil {
 		return nil, false
 	}
-	return o.AllowCopy, true
+	return o.AllowCopy.Get(), o.AllowCopy.IsSet()
 }
 
 // IsSetAllowCopy returns a boolean if a field has been set.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) IsSetAllowCopy() bool {
-	if o != nil && !IsNil(o.AllowCopy) {
+	if o != nil && o.AllowCopy.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetAllowCopy gets a reference to the given bool and assigns it to the AllowCopy field.
+// SetAllowCopy gets a reference to the given NullableBool and assigns it to the AllowCopy field.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) SetAllowCopy(v bool) {
-	o.AllowCopy = &v
+	o.AllowCopy.Set(&v)
 }
 
-// GetAllowPrinter returns the AllowPrinter field value if set, zero value otherwise.
+// SetAllowCopyNil sets the value for AllowCopy to be an explicit nil
+func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) SetAllowCopyNil() {
+	o.AllowCopy.Set(nil)
+}
+
+// UnsetAllowCopy ensures that no value is present for AllowCopy, not even an explicit nil
+func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) UnsetAllowCopy() {
+	o.AllowCopy.Unset()
+}
+
+// GetAllowPrinter returns the AllowPrinter field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) GetAllowPrinter() bool {
-	if o == nil || IsNil(o.AllowPrinter) {
+	if o == nil || IsNil(o.AllowPrinter.Get()) {
 		var ret bool
 		return ret
 	}
-	return *o.AllowPrinter
+	return *o.AllowPrinter.Get()
 }
 
 // GetAllowPrinterOk returns a tuple with the AllowPrinter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) GetAllowPrinterOk() (*bool, bool) {
-	if o == nil || IsNil(o.AllowPrinter) {
+	if o == nil {
 		return nil, false
 	}
-	return o.AllowPrinter, true
+	return o.AllowPrinter.Get(), o.AllowPrinter.IsSet()
 }
 
 // IsSetAllowPrinter returns a boolean if a field has been set.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) IsSetAllowPrinter() bool {
-	if o != nil && !IsNil(o.AllowPrinter) {
+	if o != nil && o.AllowPrinter.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetAllowPrinter gets a reference to the given bool and assigns it to the AllowPrinter field.
+// SetAllowPrinter gets a reference to the given NullableBool and assigns it to the AllowPrinter field.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) SetAllowPrinter(v bool) {
-	o.AllowPrinter = &v
+	o.AllowPrinter.Set(&v)
 }
 
-// GetAllowFileshare returns the AllowFileshare field value if set, zero value otherwise.
+// SetAllowPrinterNil sets the value for AllowPrinter to be an explicit nil
+func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) SetAllowPrinterNil() {
+	o.AllowPrinter.Set(nil)
+}
+
+// UnsetAllowPrinter ensures that no value is present for AllowPrinter, not even an explicit nil
+func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) UnsetAllowPrinter() {
+	o.AllowPrinter.Unset()
+}
+
+// GetAllowFileshare returns the AllowFileshare field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) GetAllowFileshare() bool {
-	if o == nil || IsNil(o.AllowFileshare) {
+	if o == nil || IsNil(o.AllowFileshare.Get()) {
 		var ret bool
 		return ret
 	}
-	return *o.AllowFileshare
+	return *o.AllowFileshare.Get()
 }
 
 // GetAllowFileshareOk returns a tuple with the AllowFileshare field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) GetAllowFileshareOk() (*bool, bool) {
-	if o == nil || IsNil(o.AllowFileshare) {
+	if o == nil {
 		return nil, false
 	}
-	return o.AllowFileshare, true
+	return o.AllowFileshare.Get(), o.AllowFileshare.IsSet()
 }
 
 // IsSetAllowFileshare returns a boolean if a field has been set.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) IsSetAllowFileshare() bool {
-	if o != nil && !IsNil(o.AllowFileshare) {
+	if o != nil && o.AllowFileshare.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetAllowFileshare gets a reference to the given bool and assigns it to the AllowFileshare field.
+// SetAllowFileshare gets a reference to the given NullableBool and assigns it to the AllowFileshare field.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) SetAllowFileshare(v bool) {
-	o.AllowFileshare = &v
+	o.AllowFileshare.Set(&v)
 }
 
-// GetGuestConsoleJumpHost returns the GuestConsoleJumpHost field value if set, zero value otherwise.
+// SetAllowFileshareNil sets the value for AllowFileshare to be an explicit nil
+func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) SetAllowFileshareNil() {
+	o.AllowFileshare.Set(nil)
+}
+
+// UnsetAllowFileshare ensures that no value is present for AllowFileshare, not even an explicit nil
+func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) UnsetAllowFileshare() {
+	o.AllowFileshare.Unset()
+}
+
+// GetGuestConsoleJumpHost returns the GuestConsoleJumpHost field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) GetGuestConsoleJumpHost() string {
-	if o == nil || IsNil(o.GuestConsoleJumpHost) {
+	if o == nil || IsNil(o.GuestConsoleJumpHost.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.GuestConsoleJumpHost
+	return *o.GuestConsoleJumpHost.Get()
 }
 
 // GetGuestConsoleJumpHostOk returns a tuple with the GuestConsoleJumpHost field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) GetGuestConsoleJumpHostOk() (*string, bool) {
-	if o == nil || IsNil(o.GuestConsoleJumpHost) {
+	if o == nil {
 		return nil, false
 	}
-	return o.GuestConsoleJumpHost, true
+	return o.GuestConsoleJumpHost.Get(), o.GuestConsoleJumpHost.IsSet()
 }
 
 // IsSetGuestConsoleJumpHost returns a boolean if a field has been set.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) IsSetGuestConsoleJumpHost() bool {
-	if o != nil && !IsNil(o.GuestConsoleJumpHost) {
+	if o != nil && o.GuestConsoleJumpHost.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetGuestConsoleJumpHost gets a reference to the given string and assigns it to the GuestConsoleJumpHost field.
+// SetGuestConsoleJumpHost gets a reference to the given NullableString and assigns it to the GuestConsoleJumpHost field.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) SetGuestConsoleJumpHost(v string) {
-	o.GuestConsoleJumpHost = &v
+	o.GuestConsoleJumpHost.Set(&v)
 }
 
-// GetGuestConsoleJumpPort returns the GuestConsoleJumpPort field value if set, zero value otherwise.
+// SetGuestConsoleJumpHostNil sets the value for GuestConsoleJumpHost to be an explicit nil
+func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) SetGuestConsoleJumpHostNil() {
+	o.GuestConsoleJumpHost.Set(nil)
+}
+
+// UnsetGuestConsoleJumpHost ensures that no value is present for GuestConsoleJumpHost, not even an explicit nil
+func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) UnsetGuestConsoleJumpHost() {
+	o.GuestConsoleJumpHost.Unset()
+}
+
+// GetGuestConsoleJumpPort returns the GuestConsoleJumpPort field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) GetGuestConsoleJumpPort() string {
-	if o == nil || IsNil(o.GuestConsoleJumpPort) {
+	if o == nil || IsNil(o.GuestConsoleJumpPort.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.GuestConsoleJumpPort
+	return *o.GuestConsoleJumpPort.Get()
 }
 
 // GetGuestConsoleJumpPortOk returns a tuple with the GuestConsoleJumpPort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) GetGuestConsoleJumpPortOk() (*string, bool) {
-	if o == nil || IsNil(o.GuestConsoleJumpPort) {
+	if o == nil {
 		return nil, false
 	}
-	return o.GuestConsoleJumpPort, true
+	return o.GuestConsoleJumpPort.Get(), o.GuestConsoleJumpPort.IsSet()
 }
 
 // IsSetGuestConsoleJumpPort returns a boolean if a field has been set.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) IsSetGuestConsoleJumpPort() bool {
-	if o != nil && !IsNil(o.GuestConsoleJumpPort) {
+	if o != nil && o.GuestConsoleJumpPort.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetGuestConsoleJumpPort gets a reference to the given string and assigns it to the GuestConsoleJumpPort field.
+// SetGuestConsoleJumpPort gets a reference to the given NullableString and assigns it to the GuestConsoleJumpPort field.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) SetGuestConsoleJumpPort(v string) {
-	o.GuestConsoleJumpPort = &v
+	o.GuestConsoleJumpPort.Set(&v)
 }
 
-// GetGuestConsoleJumpUsername returns the GuestConsoleJumpUsername field value if set, zero value otherwise.
+// SetGuestConsoleJumpPortNil sets the value for GuestConsoleJumpPort to be an explicit nil
+func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) SetGuestConsoleJumpPortNil() {
+	o.GuestConsoleJumpPort.Set(nil)
+}
+
+// UnsetGuestConsoleJumpPort ensures that no value is present for GuestConsoleJumpPort, not even an explicit nil
+func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) UnsetGuestConsoleJumpPort() {
+	o.GuestConsoleJumpPort.Unset()
+}
+
+// GetGuestConsoleJumpUsername returns the GuestConsoleJumpUsername field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) GetGuestConsoleJumpUsername() string {
-	if o == nil || IsNil(o.GuestConsoleJumpUsername) {
+	if o == nil || IsNil(o.GuestConsoleJumpUsername.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.GuestConsoleJumpUsername
+	return *o.GuestConsoleJumpUsername.Get()
 }
 
 // GetGuestConsoleJumpUsernameOk returns a tuple with the GuestConsoleJumpUsername field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) GetGuestConsoleJumpUsernameOk() (*string, bool) {
-	if o == nil || IsNil(o.GuestConsoleJumpUsername) {
+	if o == nil {
 		return nil, false
 	}
-	return o.GuestConsoleJumpUsername, true
+	return o.GuestConsoleJumpUsername.Get(), o.GuestConsoleJumpUsername.IsSet()
 }
 
 // IsSetGuestConsoleJumpUsername returns a boolean if a field has been set.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) IsSetGuestConsoleJumpUsername() bool {
-	if o != nil && !IsNil(o.GuestConsoleJumpUsername) {
+	if o != nil && o.GuestConsoleJumpUsername.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetGuestConsoleJumpUsername gets a reference to the given string and assigns it to the GuestConsoleJumpUsername field.
+// SetGuestConsoleJumpUsername gets a reference to the given NullableString and assigns it to the GuestConsoleJumpUsername field.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) SetGuestConsoleJumpUsername(v string) {
-	o.GuestConsoleJumpUsername = &v
+	o.GuestConsoleJumpUsername.Set(&v)
 }
 
-// GetGuestConsoleJumpPassword returns the GuestConsoleJumpPassword field value if set, zero value otherwise.
+// SetGuestConsoleJumpUsernameNil sets the value for GuestConsoleJumpUsername to be an explicit nil
+func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) SetGuestConsoleJumpUsernameNil() {
+	o.GuestConsoleJumpUsername.Set(nil)
+}
+
+// UnsetGuestConsoleJumpUsername ensures that no value is present for GuestConsoleJumpUsername, not even an explicit nil
+func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) UnsetGuestConsoleJumpUsername() {
+	o.GuestConsoleJumpUsername.Unset()
+}
+
+// GetGuestConsoleJumpPassword returns the GuestConsoleJumpPassword field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) GetGuestConsoleJumpPassword() string {
-	if o == nil || IsNil(o.GuestConsoleJumpPassword) {
+	if o == nil || IsNil(o.GuestConsoleJumpPassword.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.GuestConsoleJumpPassword
+	return *o.GuestConsoleJumpPassword.Get()
 }
 
 // GetGuestConsoleJumpPasswordOk returns a tuple with the GuestConsoleJumpPassword field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) GetGuestConsoleJumpPasswordOk() (*string, bool) {
-	if o == nil || IsNil(o.GuestConsoleJumpPassword) {
+	if o == nil {
 		return nil, false
 	}
-	return o.GuestConsoleJumpPassword, true
+	return o.GuestConsoleJumpPassword.Get(), o.GuestConsoleJumpPassword.IsSet()
 }
 
 // IsSetGuestConsoleJumpPassword returns a boolean if a field has been set.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) IsSetGuestConsoleJumpPassword() bool {
-	if o != nil && !IsNil(o.GuestConsoleJumpPassword) {
+	if o != nil && o.GuestConsoleJumpPassword.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetGuestConsoleJumpPassword gets a reference to the given string and assigns it to the GuestConsoleJumpPassword field.
+// SetGuestConsoleJumpPassword gets a reference to the given NullableString and assigns it to the GuestConsoleJumpPassword field.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) SetGuestConsoleJumpPassword(v string) {
-	o.GuestConsoleJumpPassword = &v
+	o.GuestConsoleJumpPassword.Set(&v)
 }
 
-// GetGuestConsoleJumpKeypair returns the GuestConsoleJumpKeypair field value if set, zero value otherwise.
+// SetGuestConsoleJumpPasswordNil sets the value for GuestConsoleJumpPassword to be an explicit nil
+func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) SetGuestConsoleJumpPasswordNil() {
+	o.GuestConsoleJumpPassword.Set(nil)
+}
+
+// UnsetGuestConsoleJumpPassword ensures that no value is present for GuestConsoleJumpPassword, not even an explicit nil
+func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) UnsetGuestConsoleJumpPassword() {
+	o.GuestConsoleJumpPassword.Unset()
+}
+
+// GetGuestConsoleJumpKeypair returns the GuestConsoleJumpKeypair field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) GetGuestConsoleJumpKeypair() string {
-	if o == nil || IsNil(o.GuestConsoleJumpKeypair) {
+	if o == nil || IsNil(o.GuestConsoleJumpKeypair.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.GuestConsoleJumpKeypair
+	return *o.GuestConsoleJumpKeypair.Get()
 }
 
 // GetGuestConsoleJumpKeypairOk returns a tuple with the GuestConsoleJumpKeypair field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) GetGuestConsoleJumpKeypairOk() (*string, bool) {
-	if o == nil || IsNil(o.GuestConsoleJumpKeypair) {
+	if o == nil {
 		return nil, false
 	}
-	return o.GuestConsoleJumpKeypair, true
+	return o.GuestConsoleJumpKeypair.Get(), o.GuestConsoleJumpKeypair.IsSet()
 }
 
 // IsSetGuestConsoleJumpKeypair returns a boolean if a field has been set.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) IsSetGuestConsoleJumpKeypair() bool {
-	if o != nil && !IsNil(o.GuestConsoleJumpKeypair) {
+	if o != nil && o.GuestConsoleJumpKeypair.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetGuestConsoleJumpKeypair gets a reference to the given string and assigns it to the GuestConsoleJumpKeypair field.
+// SetGuestConsoleJumpKeypair gets a reference to the given NullableString and assigns it to the GuestConsoleJumpKeypair field.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) SetGuestConsoleJumpKeypair(v string) {
-	o.GuestConsoleJumpKeypair = &v
+	o.GuestConsoleJumpKeypair.Set(&v)
+}
+
+// SetGuestConsoleJumpKeypairNil sets the value for GuestConsoleJumpKeypair to be an explicit nil
+func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) SetGuestConsoleJumpKeypairNil() {
+	o.GuestConsoleJumpKeypair.Set(nil)
+}
+
+// UnsetGuestConsoleJumpKeypair ensures that no value is present for GuestConsoleJumpKeypair, not even an explicit nil
+func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) UnsetGuestConsoleJumpKeypair() {
+	o.GuestConsoleJumpKeypair.Unset()
 }
 
 // GetGateway returns the Gateway field value if set, zero value otherwise.
@@ -848,9 +980,9 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) SetLogo(v string) {
 }
 
 // GetApps returns the Apps field value if set, zero value otherwise.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) GetApps() []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) GetApps() []GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.Apps) {
-		var ret []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret []GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return o.Apps
@@ -858,7 +990,7 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) GetApps() []ListApplianceSet
 
 // GetAppsOk returns a tuple with the Apps field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) GetAppsOk() ([]ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) GetAppsOk() ([]GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.Apps) {
 		return nil, false
 	}
@@ -874,8 +1006,8 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) IsSetApps() bool {
 	return false
 }
 
-// SetApps gets a reference to the given []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the Apps field.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) SetApps(v []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetApps gets a reference to the given []GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Apps field.
+func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) SetApps(v []GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.Apps = v
 }
 
@@ -1247,8 +1379,8 @@ func (o ListVDIPools200ResponseAllOfVdiPoolsInner) ToMap() (map[string]interface
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !IsNil(o.Description) {
-		toSerialize["description"] = o.Description
+	if o.Description.IsSet() {
+		toSerialize["description"] = o.Description.Get()
 	}
 	if !IsNil(o.MinIdle) {
 		toSerialize["minIdle"] = o.MinIdle
@@ -1265,11 +1397,11 @@ func (o ListVDIPools200ResponseAllOfVdiPoolsInner) ToMap() (map[string]interface
 	if !IsNil(o.AllocationTimeoutMinutes) {
 		toSerialize["allocationTimeoutMinutes"] = o.AllocationTimeoutMinutes
 	}
-	if !IsNil(o.PersistentUser) {
-		toSerialize["persistentUser"] = o.PersistentUser
+	if o.PersistentUser.IsSet() {
+		toSerialize["persistentUser"] = o.PersistentUser.Get()
 	}
-	if !IsNil(o.Recyclable) {
-		toSerialize["recyclable"] = o.Recyclable
+	if o.Recyclable.IsSet() {
+		toSerialize["recyclable"] = o.Recyclable.Get()
 	}
 	if !IsNil(o.Enabled) {
 		toSerialize["enabled"] = o.Enabled
@@ -1277,32 +1409,32 @@ func (o ListVDIPools200ResponseAllOfVdiPoolsInner) ToMap() (map[string]interface
 	if !IsNil(o.AutoCreateLocalUserOnReservation) {
 		toSerialize["autoCreateLocalUserOnReservation"] = o.AutoCreateLocalUserOnReservation
 	}
-	if !IsNil(o.AllowHypervisorConsole) {
-		toSerialize["allowHypervisorConsole"] = o.AllowHypervisorConsole
+	if o.AllowHypervisorConsole.IsSet() {
+		toSerialize["allowHypervisorConsole"] = o.AllowHypervisorConsole.Get()
 	}
-	if !IsNil(o.AllowCopy) {
-		toSerialize["allowCopy"] = o.AllowCopy
+	if o.AllowCopy.IsSet() {
+		toSerialize["allowCopy"] = o.AllowCopy.Get()
 	}
-	if !IsNil(o.AllowPrinter) {
-		toSerialize["allowPrinter"] = o.AllowPrinter
+	if o.AllowPrinter.IsSet() {
+		toSerialize["allowPrinter"] = o.AllowPrinter.Get()
 	}
-	if !IsNil(o.AllowFileshare) {
-		toSerialize["allowFileshare"] = o.AllowFileshare
+	if o.AllowFileshare.IsSet() {
+		toSerialize["allowFileshare"] = o.AllowFileshare.Get()
 	}
-	if !IsNil(o.GuestConsoleJumpHost) {
-		toSerialize["guestConsoleJumpHost"] = o.GuestConsoleJumpHost
+	if o.GuestConsoleJumpHost.IsSet() {
+		toSerialize["guestConsoleJumpHost"] = o.GuestConsoleJumpHost.Get()
 	}
-	if !IsNil(o.GuestConsoleJumpPort) {
-		toSerialize["guestConsoleJumpPort"] = o.GuestConsoleJumpPort
+	if o.GuestConsoleJumpPort.IsSet() {
+		toSerialize["guestConsoleJumpPort"] = o.GuestConsoleJumpPort.Get()
 	}
-	if !IsNil(o.GuestConsoleJumpUsername) {
-		toSerialize["guestConsoleJumpUsername"] = o.GuestConsoleJumpUsername
+	if o.GuestConsoleJumpUsername.IsSet() {
+		toSerialize["guestConsoleJumpUsername"] = o.GuestConsoleJumpUsername.Get()
 	}
-	if !IsNil(o.GuestConsoleJumpPassword) {
-		toSerialize["guestConsoleJumpPassword"] = o.GuestConsoleJumpPassword
+	if o.GuestConsoleJumpPassword.IsSet() {
+		toSerialize["guestConsoleJumpPassword"] = o.GuestConsoleJumpPassword.Get()
 	}
-	if !IsNil(o.GuestConsoleJumpKeypair) {
-		toSerialize["guestConsoleJumpKeypair"] = o.GuestConsoleJumpKeypair
+	if o.GuestConsoleJumpKeypair.IsSet() {
+		toSerialize["guestConsoleJumpKeypair"] = o.GuestConsoleJumpKeypair.Get()
 	}
 	if !IsNil(o.Gateway) {
 		toSerialize["gateway"] = o.Gateway

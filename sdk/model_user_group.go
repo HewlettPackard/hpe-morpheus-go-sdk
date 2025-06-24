@@ -21,18 +21,18 @@ var _ MappedNullable = &UserGroup{}
 
 // UserGroup struct for UserGroup
 type UserGroup struct {
-	Id                   *int64                                                                  `json:"id,omitempty"`
-	AccountId            *int64                                                                  `json:"accountId,omitempty"`
-	Name                 *string                                                                 `json:"name,omitempty"`
-	Description          *string                                                                 `json:"description,omitempty"`
-	Enabled              *bool                                                                   `json:"enabled,omitempty"`
-	SudoUser             *bool                                                                   `json:"sudoUser,omitempty"`
-	ServerGroup          *string                                                                 `json:"serverGroup,omitempty"`
-	Users                []ListCredentials200ResponseAllOfCredentialsInnerUser                   `json:"users,omitempty"`
-	Account              *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"account,omitempty"`
-	DateCreated          *time.Time                                                              `json:"dateCreated,omitempty"`
-	LastUpdated          *time.Time                                                              `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}                                                  `json:",remain"`
+	Id                   *int64                                                `json:"id,omitempty"`
+	AccountId            *int64                                                `json:"accountId,omitempty"`
+	Name                 *string                                               `json:"name,omitempty"`
+	Description          NullableString                                        `json:"description,omitempty"`
+	Enabled              *bool                                                 `json:"enabled,omitempty"`
+	SudoUser             *bool                                                 `json:"sudoUser,omitempty"`
+	ServerGroup          NullableString                                        `json:"serverGroup,omitempty"`
+	Users                []ListCredentials200ResponseAllOfCredentialsInnerUser `json:"users,omitempty"`
+	Account              *GetAlerts200ResponseAllOfCheckGroupsInnerInstance    `json:"account,omitempty"`
+	DateCreated          *time.Time                                            `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                            `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}                                `json:",remain"`
 }
 
 type _UserGroup UserGroup
@@ -150,36 +150,47 @@ func (o *UserGroup) SetName(v string) {
 	o.Name = &v
 }
 
-// GetDescription returns the Description field value if set, zero value otherwise.
+// GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UserGroup) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
+	if o == nil || IsNil(o.Description.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Description
+	return *o.Description.Get()
 }
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *UserGroup) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Description, true
+	return o.Description.Get(), o.Description.IsSet()
 }
 
 // IsSetDescription returns a boolean if a field has been set.
 func (o *UserGroup) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
+	if o != nil && o.Description.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDescription gets a reference to the given string and assigns it to the Description field.
+// SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *UserGroup) SetDescription(v string) {
-	o.Description = &v
+	o.Description.Set(&v)
+}
+
+// SetDescriptionNil sets the value for Description to be an explicit nil
+func (o *UserGroup) SetDescriptionNil() {
+	o.Description.Set(nil)
+}
+
+// UnsetDescription ensures that no value is present for Description, not even an explicit nil
+func (o *UserGroup) UnsetDescription() {
+	o.Description.Unset()
 }
 
 // GetEnabled returns the Enabled field value if set, zero value otherwise.
@@ -246,36 +257,47 @@ func (o *UserGroup) SetSudoUser(v bool) {
 	o.SudoUser = &v
 }
 
-// GetServerGroup returns the ServerGroup field value if set, zero value otherwise.
+// GetServerGroup returns the ServerGroup field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UserGroup) GetServerGroup() string {
-	if o == nil || IsNil(o.ServerGroup) {
+	if o == nil || IsNil(o.ServerGroup.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ServerGroup
+	return *o.ServerGroup.Get()
 }
 
 // GetServerGroupOk returns a tuple with the ServerGroup field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *UserGroup) GetServerGroupOk() (*string, bool) {
-	if o == nil || IsNil(o.ServerGroup) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ServerGroup, true
+	return o.ServerGroup.Get(), o.ServerGroup.IsSet()
 }
 
 // IsSetServerGroup returns a boolean if a field has been set.
 func (o *UserGroup) IsSetServerGroup() bool {
-	if o != nil && !IsNil(o.ServerGroup) {
+	if o != nil && o.ServerGroup.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetServerGroup gets a reference to the given string and assigns it to the ServerGroup field.
+// SetServerGroup gets a reference to the given NullableString and assigns it to the ServerGroup field.
 func (o *UserGroup) SetServerGroup(v string) {
-	o.ServerGroup = &v
+	o.ServerGroup.Set(&v)
+}
+
+// SetServerGroupNil sets the value for ServerGroup to be an explicit nil
+func (o *UserGroup) SetServerGroupNil() {
+	o.ServerGroup.Set(nil)
+}
+
+// UnsetServerGroup ensures that no value is present for ServerGroup, not even an explicit nil
+func (o *UserGroup) UnsetServerGroup() {
+	o.ServerGroup.Unset()
 }
 
 // GetUsers returns the Users field value if set, zero value otherwise.
@@ -311,9 +333,9 @@ func (o *UserGroup) SetUsers(v []ListCredentials200ResponseAllOfCredentialsInner
 }
 
 // GetAccount returns the Account field value if set, zero value otherwise.
-func (o *UserGroup) GetAccount() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *UserGroup) GetAccount() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.Account) {
-		var ret ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return *o.Account
@@ -321,7 +343,7 @@ func (o *UserGroup) GetAccount() ListApplianceSettings200ResponseApplianceSettin
 
 // GetAccountOk returns a tuple with the Account field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UserGroup) GetAccountOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *UserGroup) GetAccountOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.Account) {
 		return nil, false
 	}
@@ -337,8 +359,8 @@ func (o *UserGroup) IsSetAccount() bool {
 	return false
 }
 
-// SetAccount gets a reference to the given ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the Account field.
-func (o *UserGroup) SetAccount(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetAccount gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Account field.
+func (o *UserGroup) SetAccount(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.Account = &v
 }
 
@@ -425,8 +447,8 @@ func (o UserGroup) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !IsNil(o.Description) {
-		toSerialize["description"] = o.Description
+	if o.Description.IsSet() {
+		toSerialize["description"] = o.Description.Get()
 	}
 	if !IsNil(o.Enabled) {
 		toSerialize["enabled"] = o.Enabled
@@ -434,8 +456,8 @@ func (o UserGroup) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.SudoUser) {
 		toSerialize["sudoUser"] = o.SudoUser
 	}
-	if !IsNil(o.ServerGroup) {
-		toSerialize["serverGroup"] = o.ServerGroup
+	if o.ServerGroup.IsSet() {
+		toSerialize["serverGroup"] = o.ServerGroup.Get()
 	}
 	if !IsNil(o.Users) {
 		toSerialize["users"] = o.Users

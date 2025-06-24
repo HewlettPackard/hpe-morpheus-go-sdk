@@ -20,13 +20,13 @@ var _ MappedNullable = &ListPreseedScripts200ResponseAllOfPreseedScriptsInner{}
 
 // ListPreseedScripts200ResponseAllOfPreseedScriptsInner struct for ListPreseedScripts200ResponseAllOfPreseedScriptsInner
 type ListPreseedScripts200ResponseAllOfPreseedScriptsInner struct {
-	Id                   *int64                                                                  `json:"id,omitempty"`
-	Account              *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"account,omitempty"`
-	FileName             *string                                                                 `json:"fileName,omitempty"`
-	Description          *string                                                                 `json:"description,omitempty"`
-	Content              *string                                                                 `json:"content,omitempty"`
-	CreatedBy            *GetArchiveBucket200ResponseArchiveFilesInnerCreatedBy                  `json:"createdBy,omitempty"`
-	AdditionalProperties map[string]interface{}                                                  `json:",remain"`
+	Id                   *int64                                                          `json:"id,omitempty"`
+	Account              *GetAlerts200ResponseAllOfCheckGroupsInnerInstance              `json:"account,omitempty"`
+	FileName             *string                                                         `json:"fileName,omitempty"`
+	Description          NullableString                                                  `json:"description,omitempty"`
+	Content              *string                                                         `json:"content,omitempty"`
+	CreatedBy            *ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy `json:"createdBy,omitempty"`
+	AdditionalProperties map[string]interface{}                                          `json:",remain"`
 }
 
 type _ListPreseedScripts200ResponseAllOfPreseedScriptsInner ListPreseedScripts200ResponseAllOfPreseedScriptsInner
@@ -81,9 +81,9 @@ func (o *ListPreseedScripts200ResponseAllOfPreseedScriptsInner) SetId(v int64) {
 }
 
 // GetAccount returns the Account field value if set, zero value otherwise.
-func (o *ListPreseedScripts200ResponseAllOfPreseedScriptsInner) GetAccount() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *ListPreseedScripts200ResponseAllOfPreseedScriptsInner) GetAccount() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.Account) {
-		var ret ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return *o.Account
@@ -91,7 +91,7 @@ func (o *ListPreseedScripts200ResponseAllOfPreseedScriptsInner) GetAccount() Lis
 
 // GetAccountOk returns a tuple with the Account field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListPreseedScripts200ResponseAllOfPreseedScriptsInner) GetAccountOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *ListPreseedScripts200ResponseAllOfPreseedScriptsInner) GetAccountOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.Account) {
 		return nil, false
 	}
@@ -107,8 +107,8 @@ func (o *ListPreseedScripts200ResponseAllOfPreseedScriptsInner) IsSetAccount() b
 	return false
 }
 
-// SetAccount gets a reference to the given ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the Account field.
-func (o *ListPreseedScripts200ResponseAllOfPreseedScriptsInner) SetAccount(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetAccount gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Account field.
+func (o *ListPreseedScripts200ResponseAllOfPreseedScriptsInner) SetAccount(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.Account = &v
 }
 
@@ -144,36 +144,47 @@ func (o *ListPreseedScripts200ResponseAllOfPreseedScriptsInner) SetFileName(v st
 	o.FileName = &v
 }
 
-// GetDescription returns the Description field value if set, zero value otherwise.
+// GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListPreseedScripts200ResponseAllOfPreseedScriptsInner) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
+	if o == nil || IsNil(o.Description.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Description
+	return *o.Description.Get()
 }
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListPreseedScripts200ResponseAllOfPreseedScriptsInner) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Description, true
+	return o.Description.Get(), o.Description.IsSet()
 }
 
 // IsSetDescription returns a boolean if a field has been set.
 func (o *ListPreseedScripts200ResponseAllOfPreseedScriptsInner) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
+	if o != nil && o.Description.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDescription gets a reference to the given string and assigns it to the Description field.
+// SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *ListPreseedScripts200ResponseAllOfPreseedScriptsInner) SetDescription(v string) {
-	o.Description = &v
+	o.Description.Set(&v)
+}
+
+// SetDescriptionNil sets the value for Description to be an explicit nil
+func (o *ListPreseedScripts200ResponseAllOfPreseedScriptsInner) SetDescriptionNil() {
+	o.Description.Set(nil)
+}
+
+// UnsetDescription ensures that no value is present for Description, not even an explicit nil
+func (o *ListPreseedScripts200ResponseAllOfPreseedScriptsInner) UnsetDescription() {
+	o.Description.Unset()
 }
 
 // GetContent returns the Content field value if set, zero value otherwise.
@@ -209,9 +220,9 @@ func (o *ListPreseedScripts200ResponseAllOfPreseedScriptsInner) SetContent(v str
 }
 
 // GetCreatedBy returns the CreatedBy field value if set, zero value otherwise.
-func (o *ListPreseedScripts200ResponseAllOfPreseedScriptsInner) GetCreatedBy() GetArchiveBucket200ResponseArchiveFilesInnerCreatedBy {
+func (o *ListPreseedScripts200ResponseAllOfPreseedScriptsInner) GetCreatedBy() ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy {
 	if o == nil || IsNil(o.CreatedBy) {
-		var ret GetArchiveBucket200ResponseArchiveFilesInnerCreatedBy
+		var ret ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy
 		return ret
 	}
 	return *o.CreatedBy
@@ -219,7 +230,7 @@ func (o *ListPreseedScripts200ResponseAllOfPreseedScriptsInner) GetCreatedBy() G
 
 // GetCreatedByOk returns a tuple with the CreatedBy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListPreseedScripts200ResponseAllOfPreseedScriptsInner) GetCreatedByOk() (*GetArchiveBucket200ResponseArchiveFilesInnerCreatedBy, bool) {
+func (o *ListPreseedScripts200ResponseAllOfPreseedScriptsInner) GetCreatedByOk() (*ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy, bool) {
 	if o == nil || IsNil(o.CreatedBy) {
 		return nil, false
 	}
@@ -235,8 +246,8 @@ func (o *ListPreseedScripts200ResponseAllOfPreseedScriptsInner) IsSetCreatedBy()
 	return false
 }
 
-// SetCreatedBy gets a reference to the given GetArchiveBucket200ResponseArchiveFilesInnerCreatedBy and assigns it to the CreatedBy field.
-func (o *ListPreseedScripts200ResponseAllOfPreseedScriptsInner) SetCreatedBy(v GetArchiveBucket200ResponseArchiveFilesInnerCreatedBy) {
+// SetCreatedBy gets a reference to the given ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy and assigns it to the CreatedBy field.
+func (o *ListPreseedScripts200ResponseAllOfPreseedScriptsInner) SetCreatedBy(v ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy) {
 	o.CreatedBy = &v
 }
 
@@ -259,8 +270,8 @@ func (o ListPreseedScripts200ResponseAllOfPreseedScriptsInner) ToMap() (map[stri
 	if !IsNil(o.FileName) {
 		toSerialize["fileName"] = o.FileName
 	}
-	if !IsNil(o.Description) {
-		toSerialize["description"] = o.Description
+	if o.Description.IsSet() {
+		toSerialize["description"] = o.Description.Get()
 	}
 	if !IsNil(o.Content) {
 		toSerialize["content"] = o.Content

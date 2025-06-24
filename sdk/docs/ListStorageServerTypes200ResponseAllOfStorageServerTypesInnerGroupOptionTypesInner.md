@@ -6,25 +6,25 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **NullableString** |  | [optional] 
 **Code** | Pointer to **string** |  | [optional] 
 **FieldName** | Pointer to **string** |  | [optional] 
 **FieldLabel** | Pointer to **string** |  | [optional] 
 **FieldCode** | Pointer to **string** |  | [optional] 
 **FieldContext** | Pointer to **string** |  | [optional] 
 **FieldGroup** | Pointer to **string** |  | [optional] 
-**FieldClass** | Pointer to **string** |  | [optional] 
-**FieldAddOn** | Pointer to **string** |  | [optional] 
-**FieldComponent** | Pointer to **string** |  | [optional] 
-**FieldInput** | Pointer to **string** |  | [optional] 
-**PlaceHolder** | Pointer to **string** |  | [optional] 
-**VerifyPattern** | Pointer to **string** |  | [optional] 
+**FieldClass** | Pointer to **NullableString** |  | [optional] 
+**FieldAddOn** | Pointer to **NullableString** |  | [optional] 
+**FieldComponent** | Pointer to **NullableString** |  | [optional] 
+**FieldInput** | Pointer to **NullableString** |  | [optional] 
+**PlaceHolder** | Pointer to **NullableString** |  | [optional] 
+**VerifyPattern** | Pointer to **NullableString** |  | [optional] 
 **HelpBlock** | Pointer to **string** |  | [optional] 
-**HelpBlockFieldCode** | Pointer to **string** |  | [optional] 
-**DefaultValue** | Pointer to **string** |  | [optional] 
-**OptionSource** | Pointer to **string** |  | [optional] 
-**OptionSourceType** | Pointer to **string** |  | [optional] 
-**OptionList** | Pointer to **string** |  | [optional] 
+**HelpBlockFieldCode** | Pointer to **NullableString** |  | [optional] 
+**DefaultValue** | Pointer to **NullableString** |  | [optional] 
+**OptionSource** | Pointer to **NullableString** |  | [optional] 
+**OptionSourceType** | Pointer to **NullableString** |  | [optional] 
+**OptionList** | Pointer to **NullableString** |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 **Advanced** | Pointer to **bool** |  | [optional] 
 **Required** | Pointer to **bool** |  | [optional] 
@@ -33,17 +33,17 @@ Name | Type | Description | Notes
 **Creatable** | Pointer to **bool** |  | [optional] 
 **Config** | Pointer to **map[string]interface{}** |  | [optional] 
 **DisplayOrder** | Pointer to **int64** |  | [optional] 
-**WrapperClass** | Pointer to **string** |  | [optional] 
+**WrapperClass** | Pointer to **NullableString** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
 **NoBlank** | Pointer to **bool** |  | [optional] 
-**DependsOnCode** | Pointer to **string** |  | [optional] 
-**VisibleOnCode** | Pointer to **string** |  | [optional] 
-**RequireOnCode** | Pointer to **string** |  | [optional] 
+**DependsOnCode** | Pointer to **NullableString** |  | [optional] 
+**VisibleOnCode** | Pointer to **NullableString** |  | [optional] 
+**RequireOnCode** | Pointer to **NullableString** |  | [optional] 
 **ContextualDefault** | Pointer to **bool** |  | [optional] 
-**DisplayValueOnDetails** | Pointer to **bool** |  | [optional] 
-**ShowOnCreate** | Pointer to **bool** |  | [optional] 
-**ShowOnEdit** | Pointer to **bool** |  | [optional] 
-**LocalCredential** | Pointer to **bool** |  | [optional] 
+**DisplayValueOnDetails** | Pointer to **NullableBool** |  | [optional] 
+**ShowOnCreate** | Pointer to **NullableBool** |  | [optional] 
+**ShowOnEdit** | Pointer to **NullableBool** |  | [optional] 
+**LocalCredential** | Pointer to **NullableBool** |  | [optional] 
 
 ## Methods
 
@@ -139,6 +139,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetCode
 
 `func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner) GetCode() string`
@@ -314,6 +324,16 @@ SetFieldClass sets FieldClass field to given value.
 
 HasFieldClass returns a boolean if a field has been set.
 
+### SetFieldClassNil
+
+`func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner) SetFieldClassNil(b bool)`
+
+ SetFieldClassNil sets the value for FieldClass to be an explicit nil
+
+### UnsetFieldClass
+`func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner) UnsetFieldClass()`
+
+UnsetFieldClass ensures that no value is present for FieldClass, not even an explicit nil
 ### GetFieldAddOn
 
 `func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner) GetFieldAddOn() string`
@@ -339,6 +359,16 @@ SetFieldAddOn sets FieldAddOn field to given value.
 
 HasFieldAddOn returns a boolean if a field has been set.
 
+### SetFieldAddOnNil
+
+`func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner) SetFieldAddOnNil(b bool)`
+
+ SetFieldAddOnNil sets the value for FieldAddOn to be an explicit nil
+
+### UnsetFieldAddOn
+`func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner) UnsetFieldAddOn()`
+
+UnsetFieldAddOn ensures that no value is present for FieldAddOn, not even an explicit nil
 ### GetFieldComponent
 
 `func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner) GetFieldComponent() string`
@@ -364,6 +394,16 @@ SetFieldComponent sets FieldComponent field to given value.
 
 HasFieldComponent returns a boolean if a field has been set.
 
+### SetFieldComponentNil
+
+`func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner) SetFieldComponentNil(b bool)`
+
+ SetFieldComponentNil sets the value for FieldComponent to be an explicit nil
+
+### UnsetFieldComponent
+`func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner) UnsetFieldComponent()`
+
+UnsetFieldComponent ensures that no value is present for FieldComponent, not even an explicit nil
 ### GetFieldInput
 
 `func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner) GetFieldInput() string`
@@ -389,6 +429,16 @@ SetFieldInput sets FieldInput field to given value.
 
 HasFieldInput returns a boolean if a field has been set.
 
+### SetFieldInputNil
+
+`func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner) SetFieldInputNil(b bool)`
+
+ SetFieldInputNil sets the value for FieldInput to be an explicit nil
+
+### UnsetFieldInput
+`func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner) UnsetFieldInput()`
+
+UnsetFieldInput ensures that no value is present for FieldInput, not even an explicit nil
 ### GetPlaceHolder
 
 `func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner) GetPlaceHolder() string`
@@ -414,6 +464,16 @@ SetPlaceHolder sets PlaceHolder field to given value.
 
 HasPlaceHolder returns a boolean if a field has been set.
 
+### SetPlaceHolderNil
+
+`func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner) SetPlaceHolderNil(b bool)`
+
+ SetPlaceHolderNil sets the value for PlaceHolder to be an explicit nil
+
+### UnsetPlaceHolder
+`func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner) UnsetPlaceHolder()`
+
+UnsetPlaceHolder ensures that no value is present for PlaceHolder, not even an explicit nil
 ### GetVerifyPattern
 
 `func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner) GetVerifyPattern() string`
@@ -439,6 +499,16 @@ SetVerifyPattern sets VerifyPattern field to given value.
 
 HasVerifyPattern returns a boolean if a field has been set.
 
+### SetVerifyPatternNil
+
+`func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner) SetVerifyPatternNil(b bool)`
+
+ SetVerifyPatternNil sets the value for VerifyPattern to be an explicit nil
+
+### UnsetVerifyPattern
+`func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner) UnsetVerifyPattern()`
+
+UnsetVerifyPattern ensures that no value is present for VerifyPattern, not even an explicit nil
 ### GetHelpBlock
 
 `func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner) GetHelpBlock() string`
@@ -489,6 +559,16 @@ SetHelpBlockFieldCode sets HelpBlockFieldCode field to given value.
 
 HasHelpBlockFieldCode returns a boolean if a field has been set.
 
+### SetHelpBlockFieldCodeNil
+
+`func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner) SetHelpBlockFieldCodeNil(b bool)`
+
+ SetHelpBlockFieldCodeNil sets the value for HelpBlockFieldCode to be an explicit nil
+
+### UnsetHelpBlockFieldCode
+`func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner) UnsetHelpBlockFieldCode()`
+
+UnsetHelpBlockFieldCode ensures that no value is present for HelpBlockFieldCode, not even an explicit nil
 ### GetDefaultValue
 
 `func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner) GetDefaultValue() string`
@@ -514,6 +594,16 @@ SetDefaultValue sets DefaultValue field to given value.
 
 HasDefaultValue returns a boolean if a field has been set.
 
+### SetDefaultValueNil
+
+`func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner) SetDefaultValueNil(b bool)`
+
+ SetDefaultValueNil sets the value for DefaultValue to be an explicit nil
+
+### UnsetDefaultValue
+`func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner) UnsetDefaultValue()`
+
+UnsetDefaultValue ensures that no value is present for DefaultValue, not even an explicit nil
 ### GetOptionSource
 
 `func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner) GetOptionSource() string`
@@ -539,6 +629,16 @@ SetOptionSource sets OptionSource field to given value.
 
 HasOptionSource returns a boolean if a field has been set.
 
+### SetOptionSourceNil
+
+`func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner) SetOptionSourceNil(b bool)`
+
+ SetOptionSourceNil sets the value for OptionSource to be an explicit nil
+
+### UnsetOptionSource
+`func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner) UnsetOptionSource()`
+
+UnsetOptionSource ensures that no value is present for OptionSource, not even an explicit nil
 ### GetOptionSourceType
 
 `func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner) GetOptionSourceType() string`
@@ -564,6 +664,16 @@ SetOptionSourceType sets OptionSourceType field to given value.
 
 HasOptionSourceType returns a boolean if a field has been set.
 
+### SetOptionSourceTypeNil
+
+`func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner) SetOptionSourceTypeNil(b bool)`
+
+ SetOptionSourceTypeNil sets the value for OptionSourceType to be an explicit nil
+
+### UnsetOptionSourceType
+`func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner) UnsetOptionSourceType()`
+
+UnsetOptionSourceType ensures that no value is present for OptionSourceType, not even an explicit nil
 ### GetOptionList
 
 `func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner) GetOptionList() string`
@@ -589,6 +699,16 @@ SetOptionList sets OptionList field to given value.
 
 HasOptionList returns a boolean if a field has been set.
 
+### SetOptionListNil
+
+`func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner) SetOptionListNil(b bool)`
+
+ SetOptionListNil sets the value for OptionList to be an explicit nil
+
+### UnsetOptionList
+`func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner) UnsetOptionList()`
+
+UnsetOptionList ensures that no value is present for OptionList, not even an explicit nil
 ### GetType
 
 `func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner) GetType() string`
@@ -764,6 +884,16 @@ SetConfig sets Config field to given value.
 
 HasConfig returns a boolean if a field has been set.
 
+### SetConfigNil
+
+`func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner) SetConfigNil(b bool)`
+
+ SetConfigNil sets the value for Config to be an explicit nil
+
+### UnsetConfig
+`func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner) UnsetConfig()`
+
+UnsetConfig ensures that no value is present for Config, not even an explicit nil
 ### GetDisplayOrder
 
 `func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner) GetDisplayOrder() int64`
@@ -814,6 +944,16 @@ SetWrapperClass sets WrapperClass field to given value.
 
 HasWrapperClass returns a boolean if a field has been set.
 
+### SetWrapperClassNil
+
+`func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner) SetWrapperClassNil(b bool)`
+
+ SetWrapperClassNil sets the value for WrapperClass to be an explicit nil
+
+### UnsetWrapperClass
+`func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner) UnsetWrapperClass()`
+
+UnsetWrapperClass ensures that no value is present for WrapperClass, not even an explicit nil
 ### GetEnabled
 
 `func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner) GetEnabled() bool`
@@ -889,6 +1029,16 @@ SetDependsOnCode sets DependsOnCode field to given value.
 
 HasDependsOnCode returns a boolean if a field has been set.
 
+### SetDependsOnCodeNil
+
+`func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner) SetDependsOnCodeNil(b bool)`
+
+ SetDependsOnCodeNil sets the value for DependsOnCode to be an explicit nil
+
+### UnsetDependsOnCode
+`func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner) UnsetDependsOnCode()`
+
+UnsetDependsOnCode ensures that no value is present for DependsOnCode, not even an explicit nil
 ### GetVisibleOnCode
 
 `func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner) GetVisibleOnCode() string`
@@ -914,6 +1064,16 @@ SetVisibleOnCode sets VisibleOnCode field to given value.
 
 HasVisibleOnCode returns a boolean if a field has been set.
 
+### SetVisibleOnCodeNil
+
+`func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner) SetVisibleOnCodeNil(b bool)`
+
+ SetVisibleOnCodeNil sets the value for VisibleOnCode to be an explicit nil
+
+### UnsetVisibleOnCode
+`func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner) UnsetVisibleOnCode()`
+
+UnsetVisibleOnCode ensures that no value is present for VisibleOnCode, not even an explicit nil
 ### GetRequireOnCode
 
 `func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner) GetRequireOnCode() string`
@@ -939,6 +1099,16 @@ SetRequireOnCode sets RequireOnCode field to given value.
 
 HasRequireOnCode returns a boolean if a field has been set.
 
+### SetRequireOnCodeNil
+
+`func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner) SetRequireOnCodeNil(b bool)`
+
+ SetRequireOnCodeNil sets the value for RequireOnCode to be an explicit nil
+
+### UnsetRequireOnCode
+`func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner) UnsetRequireOnCode()`
+
+UnsetRequireOnCode ensures that no value is present for RequireOnCode, not even an explicit nil
 ### GetContextualDefault
 
 `func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner) GetContextualDefault() bool`
@@ -989,6 +1159,16 @@ SetDisplayValueOnDetails sets DisplayValueOnDetails field to given value.
 
 HasDisplayValueOnDetails returns a boolean if a field has been set.
 
+### SetDisplayValueOnDetailsNil
+
+`func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner) SetDisplayValueOnDetailsNil(b bool)`
+
+ SetDisplayValueOnDetailsNil sets the value for DisplayValueOnDetails to be an explicit nil
+
+### UnsetDisplayValueOnDetails
+`func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner) UnsetDisplayValueOnDetails()`
+
+UnsetDisplayValueOnDetails ensures that no value is present for DisplayValueOnDetails, not even an explicit nil
 ### GetShowOnCreate
 
 `func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner) GetShowOnCreate() bool`
@@ -1014,6 +1194,16 @@ SetShowOnCreate sets ShowOnCreate field to given value.
 
 HasShowOnCreate returns a boolean if a field has been set.
 
+### SetShowOnCreateNil
+
+`func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner) SetShowOnCreateNil(b bool)`
+
+ SetShowOnCreateNil sets the value for ShowOnCreate to be an explicit nil
+
+### UnsetShowOnCreate
+`func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner) UnsetShowOnCreate()`
+
+UnsetShowOnCreate ensures that no value is present for ShowOnCreate, not even an explicit nil
 ### GetShowOnEdit
 
 `func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner) GetShowOnEdit() bool`
@@ -1039,6 +1229,16 @@ SetShowOnEdit sets ShowOnEdit field to given value.
 
 HasShowOnEdit returns a boolean if a field has been set.
 
+### SetShowOnEditNil
+
+`func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner) SetShowOnEditNil(b bool)`
+
+ SetShowOnEditNil sets the value for ShowOnEdit to be an explicit nil
+
+### UnsetShowOnEdit
+`func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner) UnsetShowOnEdit()`
+
+UnsetShowOnEdit ensures that no value is present for ShowOnEdit, not even an explicit nil
 ### GetLocalCredential
 
 `func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner) GetLocalCredential() bool`
@@ -1064,6 +1264,16 @@ SetLocalCredential sets LocalCredential field to given value.
 
 HasLocalCredential returns a boolean if a field has been set.
 
+### SetLocalCredentialNil
+
+`func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner) SetLocalCredentialNil(b bool)`
+
+ SetLocalCredentialNil sets the value for LocalCredential to be an explicit nil
+
+### UnsetLocalCredential
+`func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner) UnsetLocalCredential()`
+
+UnsetLocalCredential ensures that no value is present for LocalCredential, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

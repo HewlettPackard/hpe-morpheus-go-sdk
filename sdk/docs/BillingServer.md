@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **RefType** | Pointer to **string** |  | [optional] 
 **RefUUID** | Pointer to **string** |  | [optional] 
-**RefId** | Pointer to **string** |  | [optional] 
+**RefId** | Pointer to **NullableString** |  | [optional] 
 **StartDate** | Pointer to **time.Time** |  | [optional] 
 **EndDate** | Pointer to **time.Time** |  | [optional] 
 **Cost** | Pointer to **float32** |  | [optional] 
@@ -21,9 +21,9 @@ Name | Type | Description | Notes
 **FoundPricing** | Pointer to **bool** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **ServerUUID** | Pointer to **string** |  | [optional] 
-**ServerUniqueId** | Pointer to **string** |  | [optional] 
+**ServerUniqueId** | Pointer to **NullableString** |  | [optional] 
 **ServerExternalId** | Pointer to **string** |  | [optional] 
-**ServerInternalId** | Pointer to **string** |  | [optional] 
+**ServerInternalId** | Pointer to **NullableString** |  | [optional] 
 **ResourcePoolId** | Pointer to **int64** |  | [optional] 
 **ResourcePoolName** | Pointer to **string** |  | [optional] 
 
@@ -121,6 +121,16 @@ SetRefId sets RefId field to given value.
 
 HasRefId returns a boolean if a field has been set.
 
+### SetRefIdNil
+
+`func (o *BillingServer) SetRefIdNil(b bool)`
+
+ SetRefIdNil sets the value for RefId to be an explicit nil
+
+### UnsetRefId
+`func (o *BillingServer) UnsetRefId()`
+
+UnsetRefId ensures that no value is present for RefId, not even an explicit nil
 ### GetStartDate
 
 `func (o *BillingServer) GetStartDate() time.Time`
@@ -496,6 +506,16 @@ SetServerUniqueId sets ServerUniqueId field to given value.
 
 HasServerUniqueId returns a boolean if a field has been set.
 
+### SetServerUniqueIdNil
+
+`func (o *BillingServer) SetServerUniqueIdNil(b bool)`
+
+ SetServerUniqueIdNil sets the value for ServerUniqueId to be an explicit nil
+
+### UnsetServerUniqueId
+`func (o *BillingServer) UnsetServerUniqueId()`
+
+UnsetServerUniqueId ensures that no value is present for ServerUniqueId, not even an explicit nil
 ### GetServerExternalId
 
 `func (o *BillingServer) GetServerExternalId() string`
@@ -546,6 +566,16 @@ SetServerInternalId sets ServerInternalId field to given value.
 
 HasServerInternalId returns a boolean if a field has been set.
 
+### SetServerInternalIdNil
+
+`func (o *BillingServer) SetServerInternalIdNil(b bool)`
+
+ SetServerInternalIdNil sets the value for ServerInternalId to be an explicit nil
+
+### UnsetServerInternalId
+`func (o *BillingServer) UnsetServerInternalId()`
+
+UnsetServerInternalId ensures that no value is present for ServerInternalId, not even an explicit nil
 ### GetResourcePoolId
 
 `func (o *BillingServer) GetResourcePoolId() int64`

@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Enabled** | Pointer to **bool** | Activate (true) or disable (false) | [optional] 
 **Config** | Pointer to **map[string]interface{}** | Configuration object with parameters that vary by load balancer type. | [optional] 
 **Visibility** | Pointer to **string** | private or public | [optional] [default to "public"]
-**Tenants** | Pointer to [**[]CreateLoadBalancerRequestLoadBalancerTenantsInner**](CreateLoadBalancerRequestLoadBalancerTenantsInner.md) | Array of tenant account ids that are allowed access | [optional] 
+**Tenants** | Pointer to [**[]SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume**](SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume.md) | Array of tenant account ids that are allowed access | [optional] 
 **ResourcePermission** | Pointer to [**CreateLoadBalancerRequestLoadBalancerResourcePermission**](CreateLoadBalancerRequestLoadBalancerResourcePermission.md) |  | [optional] 
 
 ## Methods
@@ -158,20 +158,20 @@ HasVisibility returns a boolean if a field has been set.
 
 ### GetTenants
 
-`func (o *UpdateLoadBalancerRequestLoadBalancer) GetTenants() []CreateLoadBalancerRequestLoadBalancerTenantsInner`
+`func (o *UpdateLoadBalancerRequestLoadBalancer) GetTenants() []SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume`
 
 GetTenants returns the Tenants field if non-nil, zero value otherwise.
 
 ### GetTenantsOk
 
-`func (o *UpdateLoadBalancerRequestLoadBalancer) GetTenantsOk() (*[]CreateLoadBalancerRequestLoadBalancerTenantsInner, bool)`
+`func (o *UpdateLoadBalancerRequestLoadBalancer) GetTenantsOk() (*[]SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume, bool)`
 
 GetTenantsOk returns a tuple with the Tenants field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenants
 
-`func (o *UpdateLoadBalancerRequestLoadBalancer) SetTenants(v []CreateLoadBalancerRequestLoadBalancerTenantsInner)`
+`func (o *UpdateLoadBalancerRequestLoadBalancer) SetTenants(v []SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume)`
 
 SetTenants sets Tenants field to given value.
 

@@ -6,13 +6,13 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
 **IpAddress** | Pointer to **string** |  | [optional] 
-**ForwardingAddress** | Pointer to **string** |  | [optional] 
-**ProtocolAddress** | Pointer to **string** |  | [optional] 
+**ForwardingAddress** | Pointer to **NullableString** |  | [optional] 
+**ProtocolAddress** | Pointer to **NullableString** |  | [optional] 
 **RemoteAs** | Pointer to **string** |  | [optional] 
 **Weight** | Pointer to **int64** |  | [optional] 
 **KeepAlive** | Pointer to **int64** |  | [optional] 
 **HoldDown** | Pointer to **int64** |  | [optional] 
-**Password** | Pointer to **string** |  | [optional] 
+**Password** | Pointer to **NullableString** |  | [optional] 
 **RouteFilteringType** | Pointer to **string** |  | [optional] 
 **RouteFilteringIn** | Pointer to **string** |  | [optional] 
 **RouteFilteringOut** | Pointer to **string** |  | [optional] 
@@ -24,10 +24,10 @@ Name | Type | Description | Notes
 **RestartMode** | Pointer to **string** |  | [optional] 
 **ProviderId** | Pointer to **string** |  | [optional] 
 **SyncSource** | Pointer to **string** |  | [optional] 
-**InternalId** | Pointer to **string** |  | [optional] 
+**InternalId** | Pointer to **NullableString** |  | [optional] 
 **ExternalId** | Pointer to **string** |  | [optional] 
-**RefType** | Pointer to **string** |  | [optional] 
-**RefId** | Pointer to **string** |  | [optional] 
+**RefType** | Pointer to **NullableString** |  | [optional] 
+**RefId** | Pointer to **NullableString** |  | [optional] 
 **Config** | Pointer to [**GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInnerConfig**](GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInnerConfig.md) |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
@@ -126,6 +126,16 @@ SetForwardingAddress sets ForwardingAddress field to given value.
 
 HasForwardingAddress returns a boolean if a field has been set.
 
+### SetForwardingAddressNil
+
+`func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) SetForwardingAddressNil(b bool)`
+
+ SetForwardingAddressNil sets the value for ForwardingAddress to be an explicit nil
+
+### UnsetForwardingAddress
+`func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) UnsetForwardingAddress()`
+
+UnsetForwardingAddress ensures that no value is present for ForwardingAddress, not even an explicit nil
 ### GetProtocolAddress
 
 `func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) GetProtocolAddress() string`
@@ -151,6 +161,16 @@ SetProtocolAddress sets ProtocolAddress field to given value.
 
 HasProtocolAddress returns a boolean if a field has been set.
 
+### SetProtocolAddressNil
+
+`func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) SetProtocolAddressNil(b bool)`
+
+ SetProtocolAddressNil sets the value for ProtocolAddress to be an explicit nil
+
+### UnsetProtocolAddress
+`func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) UnsetProtocolAddress()`
+
+UnsetProtocolAddress ensures that no value is present for ProtocolAddress, not even an explicit nil
 ### GetRemoteAs
 
 `func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) GetRemoteAs() string`
@@ -276,6 +296,16 @@ SetPassword sets Password field to given value.
 
 HasPassword returns a boolean if a field has been set.
 
+### SetPasswordNil
+
+`func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) SetPasswordNil(b bool)`
+
+ SetPasswordNil sets the value for Password to be an explicit nil
+
+### UnsetPassword
+`func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) UnsetPassword()`
+
+UnsetPassword ensures that no value is present for Password, not even an explicit nil
 ### GetRouteFilteringType
 
 `func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) GetRouteFilteringType() string`
@@ -576,6 +606,16 @@ SetInternalId sets InternalId field to given value.
 
 HasInternalId returns a boolean if a field has been set.
 
+### SetInternalIdNil
+
+`func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) SetInternalIdNil(b bool)`
+
+ SetInternalIdNil sets the value for InternalId to be an explicit nil
+
+### UnsetInternalId
+`func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) UnsetInternalId()`
+
+UnsetInternalId ensures that no value is present for InternalId, not even an explicit nil
 ### GetExternalId
 
 `func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) GetExternalId() string`
@@ -626,6 +666,16 @@ SetRefType sets RefType field to given value.
 
 HasRefType returns a boolean if a field has been set.
 
+### SetRefTypeNil
+
+`func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) SetRefTypeNil(b bool)`
+
+ SetRefTypeNil sets the value for RefType to be an explicit nil
+
+### UnsetRefType
+`func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) UnsetRefType()`
+
+UnsetRefType ensures that no value is present for RefType, not even an explicit nil
 ### GetRefId
 
 `func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) GetRefId() string`
@@ -651,6 +701,16 @@ SetRefId sets RefId field to given value.
 
 HasRefId returns a boolean if a field has been set.
 
+### SetRefIdNil
+
+`func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) SetRefIdNil(b bool)`
+
+ SetRefIdNil sets the value for RefId to be an explicit nil
+
+### UnsetRefId
+`func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) UnsetRefId()`
+
+UnsetRefId ensures that no value is present for RefId, not even an explicit nil
 ### GetConfig
 
 `func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) GetConfig() GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInnerConfig`

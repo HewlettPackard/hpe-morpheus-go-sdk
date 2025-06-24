@@ -22,17 +22,17 @@ var _ MappedNullable = &ClusterPackage{}
 type ClusterPackage struct {
 	Id                   *int64                                                       `json:"id,omitempty"`
 	Name                 *string                                                      `json:"name,omitempty"`
-	Description          *string                                                      `json:"description,omitempty"`
-	Account              *int64                                                       `json:"account,omitempty"`
+	Description          NullableString                                               `json:"description,omitempty"`
+	Account              NullableInt64                                                `json:"account,omitempty"`
 	Code                 *string                                                      `json:"code,omitempty"`
 	RepeatInstall        *bool                                                        `json:"repeatInstall,omitempty"`
 	Type                 *string                                                      `json:"type,omitempty"`
 	PackageType          *string                                                      `json:"packageType,omitempty"`
 	PackageVersion       *string                                                      `json:"packageVersion,omitempty"`
 	Enabled              *bool                                                        `json:"enabled,omitempty"`
-	IconPath             *string                                                      `json:"iconPath,omitempty"`
-	ImagePath            *string                                                      `json:"imagePath,omitempty"`
-	DarkImagePath        *string                                                      `json:"darkImagePath,omitempty"`
+	IconPath             NullableString                                               `json:"iconPath,omitempty"`
+	ImagePath            NullableString                                               `json:"imagePath,omitempty"`
+	DarkImagePath        NullableString                                               `json:"darkImagePath,omitempty"`
 	SpecTemplates        []ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"specTemplates,omitempty"`
 	AdditionalProperties map[string]interface{}                                       `json:",remain"`
 }
@@ -120,68 +120,90 @@ func (o *ClusterPackage) SetName(v string) {
 	o.Name = &v
 }
 
-// GetDescription returns the Description field value if set, zero value otherwise.
+// GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ClusterPackage) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
+	if o == nil || IsNil(o.Description.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Description
+	return *o.Description.Get()
 }
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ClusterPackage) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Description, true
+	return o.Description.Get(), o.Description.IsSet()
 }
 
 // IsSetDescription returns a boolean if a field has been set.
 func (o *ClusterPackage) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
+	if o != nil && o.Description.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDescription gets a reference to the given string and assigns it to the Description field.
+// SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *ClusterPackage) SetDescription(v string) {
-	o.Description = &v
+	o.Description.Set(&v)
 }
 
-// GetAccount returns the Account field value if set, zero value otherwise.
+// SetDescriptionNil sets the value for Description to be an explicit nil
+func (o *ClusterPackage) SetDescriptionNil() {
+	o.Description.Set(nil)
+}
+
+// UnsetDescription ensures that no value is present for Description, not even an explicit nil
+func (o *ClusterPackage) UnsetDescription() {
+	o.Description.Unset()
+}
+
+// GetAccount returns the Account field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ClusterPackage) GetAccount() int64 {
-	if o == nil || IsNil(o.Account) {
+	if o == nil || IsNil(o.Account.Get()) {
 		var ret int64
 		return ret
 	}
-	return *o.Account
+	return *o.Account.Get()
 }
 
 // GetAccountOk returns a tuple with the Account field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ClusterPackage) GetAccountOk() (*int64, bool) {
-	if o == nil || IsNil(o.Account) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Account, true
+	return o.Account.Get(), o.Account.IsSet()
 }
 
 // IsSetAccount returns a boolean if a field has been set.
 func (o *ClusterPackage) IsSetAccount() bool {
-	if o != nil && !IsNil(o.Account) {
+	if o != nil && o.Account.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetAccount gets a reference to the given int64 and assigns it to the Account field.
+// SetAccount gets a reference to the given NullableInt64 and assigns it to the Account field.
 func (o *ClusterPackage) SetAccount(v int64) {
-	o.Account = &v
+	o.Account.Set(&v)
+}
+
+// SetAccountNil sets the value for Account to be an explicit nil
+func (o *ClusterPackage) SetAccountNil() {
+	o.Account.Set(nil)
+}
+
+// UnsetAccount ensures that no value is present for Account, not even an explicit nil
+func (o *ClusterPackage) UnsetAccount() {
+	o.Account.Unset()
 }
 
 // GetCode returns the Code field value if set, zero value otherwise.
@@ -376,100 +398,133 @@ func (o *ClusterPackage) SetEnabled(v bool) {
 	o.Enabled = &v
 }
 
-// GetIconPath returns the IconPath field value if set, zero value otherwise.
+// GetIconPath returns the IconPath field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ClusterPackage) GetIconPath() string {
-	if o == nil || IsNil(o.IconPath) {
+	if o == nil || IsNil(o.IconPath.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.IconPath
+	return *o.IconPath.Get()
 }
 
 // GetIconPathOk returns a tuple with the IconPath field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ClusterPackage) GetIconPathOk() (*string, bool) {
-	if o == nil || IsNil(o.IconPath) {
+	if o == nil {
 		return nil, false
 	}
-	return o.IconPath, true
+	return o.IconPath.Get(), o.IconPath.IsSet()
 }
 
 // IsSetIconPath returns a boolean if a field has been set.
 func (o *ClusterPackage) IsSetIconPath() bool {
-	if o != nil && !IsNil(o.IconPath) {
+	if o != nil && o.IconPath.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetIconPath gets a reference to the given string and assigns it to the IconPath field.
+// SetIconPath gets a reference to the given NullableString and assigns it to the IconPath field.
 func (o *ClusterPackage) SetIconPath(v string) {
-	o.IconPath = &v
+	o.IconPath.Set(&v)
 }
 
-// GetImagePath returns the ImagePath field value if set, zero value otherwise.
+// SetIconPathNil sets the value for IconPath to be an explicit nil
+func (o *ClusterPackage) SetIconPathNil() {
+	o.IconPath.Set(nil)
+}
+
+// UnsetIconPath ensures that no value is present for IconPath, not even an explicit nil
+func (o *ClusterPackage) UnsetIconPath() {
+	o.IconPath.Unset()
+}
+
+// GetImagePath returns the ImagePath field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ClusterPackage) GetImagePath() string {
-	if o == nil || IsNil(o.ImagePath) {
+	if o == nil || IsNil(o.ImagePath.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ImagePath
+	return *o.ImagePath.Get()
 }
 
 // GetImagePathOk returns a tuple with the ImagePath field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ClusterPackage) GetImagePathOk() (*string, bool) {
-	if o == nil || IsNil(o.ImagePath) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ImagePath, true
+	return o.ImagePath.Get(), o.ImagePath.IsSet()
 }
 
 // IsSetImagePath returns a boolean if a field has been set.
 func (o *ClusterPackage) IsSetImagePath() bool {
-	if o != nil && !IsNil(o.ImagePath) {
+	if o != nil && o.ImagePath.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetImagePath gets a reference to the given string and assigns it to the ImagePath field.
+// SetImagePath gets a reference to the given NullableString and assigns it to the ImagePath field.
 func (o *ClusterPackage) SetImagePath(v string) {
-	o.ImagePath = &v
+	o.ImagePath.Set(&v)
 }
 
-// GetDarkImagePath returns the DarkImagePath field value if set, zero value otherwise.
+// SetImagePathNil sets the value for ImagePath to be an explicit nil
+func (o *ClusterPackage) SetImagePathNil() {
+	o.ImagePath.Set(nil)
+}
+
+// UnsetImagePath ensures that no value is present for ImagePath, not even an explicit nil
+func (o *ClusterPackage) UnsetImagePath() {
+	o.ImagePath.Unset()
+}
+
+// GetDarkImagePath returns the DarkImagePath field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ClusterPackage) GetDarkImagePath() string {
-	if o == nil || IsNil(o.DarkImagePath) {
+	if o == nil || IsNil(o.DarkImagePath.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.DarkImagePath
+	return *o.DarkImagePath.Get()
 }
 
 // GetDarkImagePathOk returns a tuple with the DarkImagePath field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ClusterPackage) GetDarkImagePathOk() (*string, bool) {
-	if o == nil || IsNil(o.DarkImagePath) {
+	if o == nil {
 		return nil, false
 	}
-	return o.DarkImagePath, true
+	return o.DarkImagePath.Get(), o.DarkImagePath.IsSet()
 }
 
 // IsSetDarkImagePath returns a boolean if a field has been set.
 func (o *ClusterPackage) IsSetDarkImagePath() bool {
-	if o != nil && !IsNil(o.DarkImagePath) {
+	if o != nil && o.DarkImagePath.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDarkImagePath gets a reference to the given string and assigns it to the DarkImagePath field.
+// SetDarkImagePath gets a reference to the given NullableString and assigns it to the DarkImagePath field.
 func (o *ClusterPackage) SetDarkImagePath(v string) {
-	o.DarkImagePath = &v
+	o.DarkImagePath.Set(&v)
+}
+
+// SetDarkImagePathNil sets the value for DarkImagePath to be an explicit nil
+func (o *ClusterPackage) SetDarkImagePathNil() {
+	o.DarkImagePath.Set(nil)
+}
+
+// UnsetDarkImagePath ensures that no value is present for DarkImagePath, not even an explicit nil
+func (o *ClusterPackage) UnsetDarkImagePath() {
+	o.DarkImagePath.Unset()
 }
 
 // GetSpecTemplates returns the SpecTemplates field value if set, zero value otherwise.
@@ -520,11 +575,11 @@ func (o ClusterPackage) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !IsNil(o.Description) {
-		toSerialize["description"] = o.Description
+	if o.Description.IsSet() {
+		toSerialize["description"] = o.Description.Get()
 	}
-	if !IsNil(o.Account) {
-		toSerialize["account"] = o.Account
+	if o.Account.IsSet() {
+		toSerialize["account"] = o.Account.Get()
 	}
 	if !IsNil(o.Code) {
 		toSerialize["code"] = o.Code
@@ -544,14 +599,14 @@ func (o ClusterPackage) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Enabled) {
 		toSerialize["enabled"] = o.Enabled
 	}
-	if !IsNil(o.IconPath) {
-		toSerialize["iconPath"] = o.IconPath
+	if o.IconPath.IsSet() {
+		toSerialize["iconPath"] = o.IconPath.Get()
 	}
-	if !IsNil(o.ImagePath) {
-		toSerialize["imagePath"] = o.ImagePath
+	if o.ImagePath.IsSet() {
+		toSerialize["imagePath"] = o.ImagePath.Get()
 	}
-	if !IsNil(o.DarkImagePath) {
-		toSerialize["darkImagePath"] = o.DarkImagePath
+	if o.DarkImagePath.IsSet() {
+		toSerialize["darkImagePath"] = o.DarkImagePath.Get()
 	}
 	if !IsNil(o.SpecTemplates) {
 		toSerialize["specTemplates"] = o.SpecTemplates

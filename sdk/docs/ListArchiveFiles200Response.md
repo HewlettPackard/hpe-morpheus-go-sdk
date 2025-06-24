@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ArchiveBucket** | Pointer to [**ListArchiveBuckets200ResponseAllOfArchiveBucketsInner**](ListArchiveBuckets200ResponseAllOfArchiveBucketsInner.md) |  | [optional] 
 **IsOwner** | Pointer to **bool** |  | [optional] 
-**ParentDirectory** | Pointer to **string** |  | [optional] 
+**ParentDirectory** | Pointer to **NullableString** |  | [optional] 
 **ArchiveFiles** | Pointer to [**[]GetArchiveBucket200ResponseArchiveFilesInner**](GetArchiveBucket200ResponseArchiveFilesInner.md) |  | [optional] 
 **Meta** | Pointer to [**ListActivity200ResponseAllOfMeta**](ListActivity200ResponseAllOfMeta.md) |  | [optional] 
 
@@ -104,6 +104,16 @@ SetParentDirectory sets ParentDirectory field to given value.
 
 HasParentDirectory returns a boolean if a field has been set.
 
+### SetParentDirectoryNil
+
+`func (o *ListArchiveFiles200Response) SetParentDirectoryNil(b bool)`
+
+ SetParentDirectoryNil sets the value for ParentDirectory to be an explicit nil
+
+### UnsetParentDirectory
+`func (o *ListArchiveFiles200Response) UnsetParentDirectory()`
+
+UnsetParentDirectory ensures that no value is present for ParentDirectory, not even an explicit nil
 ### GetArchiveFiles
 
 `func (o *ListArchiveFiles200Response) GetArchiveFiles() []GetArchiveBucket200ResponseArchiveFilesInner`

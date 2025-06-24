@@ -26,9 +26,9 @@ type AddDeploymentVersionRequestVersion struct {
 	UserVersion *string `json:"userVersion,omitempty"`
 	// Deploy Type, eg. file, git, fetch
 	DeployType           *string                `json:"deployType,omitempty"`
-	GitUrl               *string                `json:"gitUrl,omitempty"`
-	GitRef               *string                `json:"gitRef,omitempty"`
-	FetchUrl             *string                `json:"fetchUrl,omitempty"`
+	GitUrl               NullableString         `json:"gitUrl,omitempty"`
+	GitRef               NullableString         `json:"gitRef,omitempty"`
+	FetchUrl             NullableString         `json:"fetchUrl,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -147,100 +147,133 @@ func (o *AddDeploymentVersionRequestVersion) SetDeployType(v string) {
 	o.DeployType = &v
 }
 
-// GetGitUrl returns the GitUrl field value if set, zero value otherwise.
+// GetGitUrl returns the GitUrl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AddDeploymentVersionRequestVersion) GetGitUrl() string {
-	if o == nil || IsNil(o.GitUrl) {
+	if o == nil || IsNil(o.GitUrl.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.GitUrl
+	return *o.GitUrl.Get()
 }
 
 // GetGitUrlOk returns a tuple with the GitUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AddDeploymentVersionRequestVersion) GetGitUrlOk() (*string, bool) {
-	if o == nil || IsNil(o.GitUrl) {
+	if o == nil {
 		return nil, false
 	}
-	return o.GitUrl, true
+	return o.GitUrl.Get(), o.GitUrl.IsSet()
 }
 
 // IsSetGitUrl returns a boolean if a field has been set.
 func (o *AddDeploymentVersionRequestVersion) IsSetGitUrl() bool {
-	if o != nil && !IsNil(o.GitUrl) {
+	if o != nil && o.GitUrl.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetGitUrl gets a reference to the given string and assigns it to the GitUrl field.
+// SetGitUrl gets a reference to the given NullableString and assigns it to the GitUrl field.
 func (o *AddDeploymentVersionRequestVersion) SetGitUrl(v string) {
-	o.GitUrl = &v
+	o.GitUrl.Set(&v)
 }
 
-// GetGitRef returns the GitRef field value if set, zero value otherwise.
+// SetGitUrlNil sets the value for GitUrl to be an explicit nil
+func (o *AddDeploymentVersionRequestVersion) SetGitUrlNil() {
+	o.GitUrl.Set(nil)
+}
+
+// UnsetGitUrl ensures that no value is present for GitUrl, not even an explicit nil
+func (o *AddDeploymentVersionRequestVersion) UnsetGitUrl() {
+	o.GitUrl.Unset()
+}
+
+// GetGitRef returns the GitRef field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AddDeploymentVersionRequestVersion) GetGitRef() string {
-	if o == nil || IsNil(o.GitRef) {
+	if o == nil || IsNil(o.GitRef.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.GitRef
+	return *o.GitRef.Get()
 }
 
 // GetGitRefOk returns a tuple with the GitRef field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AddDeploymentVersionRequestVersion) GetGitRefOk() (*string, bool) {
-	if o == nil || IsNil(o.GitRef) {
+	if o == nil {
 		return nil, false
 	}
-	return o.GitRef, true
+	return o.GitRef.Get(), o.GitRef.IsSet()
 }
 
 // IsSetGitRef returns a boolean if a field has been set.
 func (o *AddDeploymentVersionRequestVersion) IsSetGitRef() bool {
-	if o != nil && !IsNil(o.GitRef) {
+	if o != nil && o.GitRef.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetGitRef gets a reference to the given string and assigns it to the GitRef field.
+// SetGitRef gets a reference to the given NullableString and assigns it to the GitRef field.
 func (o *AddDeploymentVersionRequestVersion) SetGitRef(v string) {
-	o.GitRef = &v
+	o.GitRef.Set(&v)
 }
 
-// GetFetchUrl returns the FetchUrl field value if set, zero value otherwise.
+// SetGitRefNil sets the value for GitRef to be an explicit nil
+func (o *AddDeploymentVersionRequestVersion) SetGitRefNil() {
+	o.GitRef.Set(nil)
+}
+
+// UnsetGitRef ensures that no value is present for GitRef, not even an explicit nil
+func (o *AddDeploymentVersionRequestVersion) UnsetGitRef() {
+	o.GitRef.Unset()
+}
+
+// GetFetchUrl returns the FetchUrl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AddDeploymentVersionRequestVersion) GetFetchUrl() string {
-	if o == nil || IsNil(o.FetchUrl) {
+	if o == nil || IsNil(o.FetchUrl.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.FetchUrl
+	return *o.FetchUrl.Get()
 }
 
 // GetFetchUrlOk returns a tuple with the FetchUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AddDeploymentVersionRequestVersion) GetFetchUrlOk() (*string, bool) {
-	if o == nil || IsNil(o.FetchUrl) {
+	if o == nil {
 		return nil, false
 	}
-	return o.FetchUrl, true
+	return o.FetchUrl.Get(), o.FetchUrl.IsSet()
 }
 
 // IsSetFetchUrl returns a boolean if a field has been set.
 func (o *AddDeploymentVersionRequestVersion) IsSetFetchUrl() bool {
-	if o != nil && !IsNil(o.FetchUrl) {
+	if o != nil && o.FetchUrl.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetFetchUrl gets a reference to the given string and assigns it to the FetchUrl field.
+// SetFetchUrl gets a reference to the given NullableString and assigns it to the FetchUrl field.
 func (o *AddDeploymentVersionRequestVersion) SetFetchUrl(v string) {
-	o.FetchUrl = &v
+	o.FetchUrl.Set(&v)
+}
+
+// SetFetchUrlNil sets the value for FetchUrl to be an explicit nil
+func (o *AddDeploymentVersionRequestVersion) SetFetchUrlNil() {
+	o.FetchUrl.Set(nil)
+}
+
+// UnsetFetchUrl ensures that no value is present for FetchUrl, not even an explicit nil
+func (o *AddDeploymentVersionRequestVersion) UnsetFetchUrl() {
+	o.FetchUrl.Unset()
 }
 
 func (o AddDeploymentVersionRequestVersion) MarshalJSON() ([]byte, error) {
@@ -262,14 +295,14 @@ func (o AddDeploymentVersionRequestVersion) ToMap() (map[string]interface{}, err
 	if !IsNil(o.DeployType) {
 		toSerialize["deployType"] = o.DeployType
 	}
-	if !IsNil(o.GitUrl) {
-		toSerialize["gitUrl"] = o.GitUrl
+	if o.GitUrl.IsSet() {
+		toSerialize["gitUrl"] = o.GitUrl.Get()
 	}
-	if !IsNil(o.GitRef) {
-		toSerialize["gitRef"] = o.GitRef
+	if o.GitRef.IsSet() {
+		toSerialize["gitRef"] = o.GitRef.Get()
 	}
-	if !IsNil(o.FetchUrl) {
-		toSerialize["fetchUrl"] = o.FetchUrl
+	if o.FetchUrl.IsSet() {
+		toSerialize["fetchUrl"] = o.FetchUrl.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {

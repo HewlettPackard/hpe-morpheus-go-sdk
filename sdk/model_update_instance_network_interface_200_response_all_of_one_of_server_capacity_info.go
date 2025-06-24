@@ -24,8 +24,8 @@ type UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerCapacityInfo struc
 	MaxMemory            *int64                                       `json:"maxMemory,omitempty"`
 	Server               *GetAlerts200ResponseAllOfChecksInnerAccount `json:"server,omitempty"`
 	UsedStorage          *int64                                       `json:"usedStorage,omitempty"`
-	Version              *string                                      `json:"version,omitempty"`
-	MaxCpu               *string                                      `json:"maxCpu,omitempty"`
+	Version              NullableString                               `json:"version,omitempty"`
+	MaxCpu               NullableString                               `json:"maxCpu,omitempty"`
 	UsedCores            *int64                                       `json:"usedCores,omitempty"`
 	UsedMemory           *int64                                       `json:"usedMemory,omitempty"`
 	MaxCores             *int64                                       `json:"maxCores,omitempty"`
@@ -180,68 +180,90 @@ func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerCapacityInfo) 
 	o.UsedStorage = &v
 }
 
-// GetVersion returns the Version field value if set, zero value otherwise.
+// GetVersion returns the Version field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerCapacityInfo) GetVersion() string {
-	if o == nil || IsNil(o.Version) {
+	if o == nil || IsNil(o.Version.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Version
+	return *o.Version.Get()
 }
 
 // GetVersionOk returns a tuple with the Version field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerCapacityInfo) GetVersionOk() (*string, bool) {
-	if o == nil || IsNil(o.Version) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Version, true
+	return o.Version.Get(), o.Version.IsSet()
 }
 
 // IsSetVersion returns a boolean if a field has been set.
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerCapacityInfo) IsSetVersion() bool {
-	if o != nil && !IsNil(o.Version) {
+	if o != nil && o.Version.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetVersion gets a reference to the given string and assigns it to the Version field.
+// SetVersion gets a reference to the given NullableString and assigns it to the Version field.
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerCapacityInfo) SetVersion(v string) {
-	o.Version = &v
+	o.Version.Set(&v)
 }
 
-// GetMaxCpu returns the MaxCpu field value if set, zero value otherwise.
+// SetVersionNil sets the value for Version to be an explicit nil
+func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerCapacityInfo) SetVersionNil() {
+	o.Version.Set(nil)
+}
+
+// UnsetVersion ensures that no value is present for Version, not even an explicit nil
+func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerCapacityInfo) UnsetVersion() {
+	o.Version.Unset()
+}
+
+// GetMaxCpu returns the MaxCpu field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerCapacityInfo) GetMaxCpu() string {
-	if o == nil || IsNil(o.MaxCpu) {
+	if o == nil || IsNil(o.MaxCpu.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.MaxCpu
+	return *o.MaxCpu.Get()
 }
 
 // GetMaxCpuOk returns a tuple with the MaxCpu field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerCapacityInfo) GetMaxCpuOk() (*string, bool) {
-	if o == nil || IsNil(o.MaxCpu) {
+	if o == nil {
 		return nil, false
 	}
-	return o.MaxCpu, true
+	return o.MaxCpu.Get(), o.MaxCpu.IsSet()
 }
 
 // IsSetMaxCpu returns a boolean if a field has been set.
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerCapacityInfo) IsSetMaxCpu() bool {
-	if o != nil && !IsNil(o.MaxCpu) {
+	if o != nil && o.MaxCpu.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetMaxCpu gets a reference to the given string and assigns it to the MaxCpu field.
+// SetMaxCpu gets a reference to the given NullableString and assigns it to the MaxCpu field.
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerCapacityInfo) SetMaxCpu(v string) {
-	o.MaxCpu = &v
+	o.MaxCpu.Set(&v)
+}
+
+// SetMaxCpuNil sets the value for MaxCpu to be an explicit nil
+func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerCapacityInfo) SetMaxCpuNil() {
+	o.MaxCpu.Set(nil)
+}
+
+// UnsetMaxCpu ensures that no value is present for MaxCpu, not even an explicit nil
+func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerCapacityInfo) UnsetMaxCpu() {
+	o.MaxCpu.Unset()
 }
 
 // GetUsedCores returns the UsedCores field value if set, zero value otherwise.
@@ -394,11 +416,11 @@ func (o UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerCapacityInfo) T
 	if !IsNil(o.UsedStorage) {
 		toSerialize["usedStorage"] = o.UsedStorage
 	}
-	if !IsNil(o.Version) {
-		toSerialize["version"] = o.Version
+	if o.Version.IsSet() {
+		toSerialize["version"] = o.Version.Get()
 	}
-	if !IsNil(o.MaxCpu) {
-		toSerialize["maxCpu"] = o.MaxCpu
+	if o.MaxCpu.IsSet() {
+		toSerialize["maxCpu"] = o.MaxCpu.Get()
 	}
 	if !IsNil(o.UsedCores) {
 		toSerialize["usedCores"] = o.UsedCores

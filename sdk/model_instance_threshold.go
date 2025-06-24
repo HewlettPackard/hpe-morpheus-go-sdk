@@ -36,13 +36,13 @@ type InstanceThreshold struct {
 	DiskEnabled          *bool                  `json:"diskEnabled,omitempty"`
 	MinDisk              *int64                 `json:"minDisk,omitempty"`
 	MaxDisk              *int64                 `json:"maxDisk,omitempty"`
-	MinNetwork           *string                `json:"minNetwork,omitempty"`
+	MinNetwork           NullableString         `json:"minNetwork,omitempty"`
 	NetworkEnabled       *bool                  `json:"networkEnabled,omitempty"`
 	IopsEnabled          *bool                  `json:"iopsEnabled,omitempty"`
-	MinIops              *string                `json:"minIops,omitempty"`
-	MaxIops              *string                `json:"maxIops,omitempty"`
-	Comment              *string                `json:"comment,omitempty"`
-	ZoneId               *int64                 `json:"zoneId,omitempty"`
+	MinIops              NullableString         `json:"minIops,omitempty"`
+	MaxIops              NullableString         `json:"maxIops,omitempty"`
+	Comment              NullableString         `json:"comment,omitempty"`
+	ZoneId               NullableInt64          `json:"zoneId,omitempty"`
 	DateCreated          *time.Time             `json:"dateCreated,omitempty"`
 	LastUpdated          *time.Time             `json:"lastUpdated,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
@@ -547,36 +547,47 @@ func (o *InstanceThreshold) SetMaxDisk(v int64) {
 	o.MaxDisk = &v
 }
 
-// GetMinNetwork returns the MinNetwork field value if set, zero value otherwise.
+// GetMinNetwork returns the MinNetwork field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *InstanceThreshold) GetMinNetwork() string {
-	if o == nil || IsNil(o.MinNetwork) {
+	if o == nil || IsNil(o.MinNetwork.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.MinNetwork
+	return *o.MinNetwork.Get()
 }
 
 // GetMinNetworkOk returns a tuple with the MinNetwork field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *InstanceThreshold) GetMinNetworkOk() (*string, bool) {
-	if o == nil || IsNil(o.MinNetwork) {
+	if o == nil {
 		return nil, false
 	}
-	return o.MinNetwork, true
+	return o.MinNetwork.Get(), o.MinNetwork.IsSet()
 }
 
 // IsSetMinNetwork returns a boolean if a field has been set.
 func (o *InstanceThreshold) IsSetMinNetwork() bool {
-	if o != nil && !IsNil(o.MinNetwork) {
+	if o != nil && o.MinNetwork.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetMinNetwork gets a reference to the given string and assigns it to the MinNetwork field.
+// SetMinNetwork gets a reference to the given NullableString and assigns it to the MinNetwork field.
 func (o *InstanceThreshold) SetMinNetwork(v string) {
-	o.MinNetwork = &v
+	o.MinNetwork.Set(&v)
+}
+
+// SetMinNetworkNil sets the value for MinNetwork to be an explicit nil
+func (o *InstanceThreshold) SetMinNetworkNil() {
+	o.MinNetwork.Set(nil)
+}
+
+// UnsetMinNetwork ensures that no value is present for MinNetwork, not even an explicit nil
+func (o *InstanceThreshold) UnsetMinNetwork() {
+	o.MinNetwork.Unset()
 }
 
 // GetNetworkEnabled returns the NetworkEnabled field value if set, zero value otherwise.
@@ -643,132 +654,176 @@ func (o *InstanceThreshold) SetIopsEnabled(v bool) {
 	o.IopsEnabled = &v
 }
 
-// GetMinIops returns the MinIops field value if set, zero value otherwise.
+// GetMinIops returns the MinIops field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *InstanceThreshold) GetMinIops() string {
-	if o == nil || IsNil(o.MinIops) {
+	if o == nil || IsNil(o.MinIops.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.MinIops
+	return *o.MinIops.Get()
 }
 
 // GetMinIopsOk returns a tuple with the MinIops field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *InstanceThreshold) GetMinIopsOk() (*string, bool) {
-	if o == nil || IsNil(o.MinIops) {
+	if o == nil {
 		return nil, false
 	}
-	return o.MinIops, true
+	return o.MinIops.Get(), o.MinIops.IsSet()
 }
 
 // IsSetMinIops returns a boolean if a field has been set.
 func (o *InstanceThreshold) IsSetMinIops() bool {
-	if o != nil && !IsNil(o.MinIops) {
+	if o != nil && o.MinIops.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetMinIops gets a reference to the given string and assigns it to the MinIops field.
+// SetMinIops gets a reference to the given NullableString and assigns it to the MinIops field.
 func (o *InstanceThreshold) SetMinIops(v string) {
-	o.MinIops = &v
+	o.MinIops.Set(&v)
 }
 
-// GetMaxIops returns the MaxIops field value if set, zero value otherwise.
+// SetMinIopsNil sets the value for MinIops to be an explicit nil
+func (o *InstanceThreshold) SetMinIopsNil() {
+	o.MinIops.Set(nil)
+}
+
+// UnsetMinIops ensures that no value is present for MinIops, not even an explicit nil
+func (o *InstanceThreshold) UnsetMinIops() {
+	o.MinIops.Unset()
+}
+
+// GetMaxIops returns the MaxIops field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *InstanceThreshold) GetMaxIops() string {
-	if o == nil || IsNil(o.MaxIops) {
+	if o == nil || IsNil(o.MaxIops.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.MaxIops
+	return *o.MaxIops.Get()
 }
 
 // GetMaxIopsOk returns a tuple with the MaxIops field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *InstanceThreshold) GetMaxIopsOk() (*string, bool) {
-	if o == nil || IsNil(o.MaxIops) {
+	if o == nil {
 		return nil, false
 	}
-	return o.MaxIops, true
+	return o.MaxIops.Get(), o.MaxIops.IsSet()
 }
 
 // IsSetMaxIops returns a boolean if a field has been set.
 func (o *InstanceThreshold) IsSetMaxIops() bool {
-	if o != nil && !IsNil(o.MaxIops) {
+	if o != nil && o.MaxIops.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetMaxIops gets a reference to the given string and assigns it to the MaxIops field.
+// SetMaxIops gets a reference to the given NullableString and assigns it to the MaxIops field.
 func (o *InstanceThreshold) SetMaxIops(v string) {
-	o.MaxIops = &v
+	o.MaxIops.Set(&v)
 }
 
-// GetComment returns the Comment field value if set, zero value otherwise.
+// SetMaxIopsNil sets the value for MaxIops to be an explicit nil
+func (o *InstanceThreshold) SetMaxIopsNil() {
+	o.MaxIops.Set(nil)
+}
+
+// UnsetMaxIops ensures that no value is present for MaxIops, not even an explicit nil
+func (o *InstanceThreshold) UnsetMaxIops() {
+	o.MaxIops.Unset()
+}
+
+// GetComment returns the Comment field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *InstanceThreshold) GetComment() string {
-	if o == nil || IsNil(o.Comment) {
+	if o == nil || IsNil(o.Comment.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Comment
+	return *o.Comment.Get()
 }
 
 // GetCommentOk returns a tuple with the Comment field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *InstanceThreshold) GetCommentOk() (*string, bool) {
-	if o == nil || IsNil(o.Comment) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Comment, true
+	return o.Comment.Get(), o.Comment.IsSet()
 }
 
 // IsSetComment returns a boolean if a field has been set.
 func (o *InstanceThreshold) IsSetComment() bool {
-	if o != nil && !IsNil(o.Comment) {
+	if o != nil && o.Comment.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetComment gets a reference to the given string and assigns it to the Comment field.
+// SetComment gets a reference to the given NullableString and assigns it to the Comment field.
 func (o *InstanceThreshold) SetComment(v string) {
-	o.Comment = &v
+	o.Comment.Set(&v)
 }
 
-// GetZoneId returns the ZoneId field value if set, zero value otherwise.
+// SetCommentNil sets the value for Comment to be an explicit nil
+func (o *InstanceThreshold) SetCommentNil() {
+	o.Comment.Set(nil)
+}
+
+// UnsetComment ensures that no value is present for Comment, not even an explicit nil
+func (o *InstanceThreshold) UnsetComment() {
+	o.Comment.Unset()
+}
+
+// GetZoneId returns the ZoneId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *InstanceThreshold) GetZoneId() int64 {
-	if o == nil || IsNil(o.ZoneId) {
+	if o == nil || IsNil(o.ZoneId.Get()) {
 		var ret int64
 		return ret
 	}
-	return *o.ZoneId
+	return *o.ZoneId.Get()
 }
 
 // GetZoneIdOk returns a tuple with the ZoneId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *InstanceThreshold) GetZoneIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.ZoneId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ZoneId, true
+	return o.ZoneId.Get(), o.ZoneId.IsSet()
 }
 
 // IsSetZoneId returns a boolean if a field has been set.
 func (o *InstanceThreshold) IsSetZoneId() bool {
-	if o != nil && !IsNil(o.ZoneId) {
+	if o != nil && o.ZoneId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetZoneId gets a reference to the given int64 and assigns it to the ZoneId field.
+// SetZoneId gets a reference to the given NullableInt64 and assigns it to the ZoneId field.
 func (o *InstanceThreshold) SetZoneId(v int64) {
-	o.ZoneId = &v
+	o.ZoneId.Set(&v)
+}
+
+// SetZoneIdNil sets the value for ZoneId to be an explicit nil
+func (o *InstanceThreshold) SetZoneIdNil() {
+	o.ZoneId.Set(nil)
+}
+
+// UnsetZoneId ensures that no value is present for ZoneId, not even an explicit nil
+func (o *InstanceThreshold) UnsetZoneId() {
+	o.ZoneId.Unset()
 }
 
 // GetDateCreated returns the DateCreated field value if set, zero value otherwise.
@@ -890,8 +945,8 @@ func (o InstanceThreshold) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.MaxDisk) {
 		toSerialize["maxDisk"] = o.MaxDisk
 	}
-	if !IsNil(o.MinNetwork) {
-		toSerialize["minNetwork"] = o.MinNetwork
+	if o.MinNetwork.IsSet() {
+		toSerialize["minNetwork"] = o.MinNetwork.Get()
 	}
 	if !IsNil(o.NetworkEnabled) {
 		toSerialize["networkEnabled"] = o.NetworkEnabled
@@ -899,17 +954,17 @@ func (o InstanceThreshold) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.IopsEnabled) {
 		toSerialize["iopsEnabled"] = o.IopsEnabled
 	}
-	if !IsNil(o.MinIops) {
-		toSerialize["minIops"] = o.MinIops
+	if o.MinIops.IsSet() {
+		toSerialize["minIops"] = o.MinIops.Get()
 	}
-	if !IsNil(o.MaxIops) {
-		toSerialize["maxIops"] = o.MaxIops
+	if o.MaxIops.IsSet() {
+		toSerialize["maxIops"] = o.MaxIops.Get()
 	}
-	if !IsNil(o.Comment) {
-		toSerialize["comment"] = o.Comment
+	if o.Comment.IsSet() {
+		toSerialize["comment"] = o.Comment.Get()
 	}
-	if !IsNil(o.ZoneId) {
-		toSerialize["zoneId"] = o.ZoneId
+	if o.ZoneId.IsSet() {
+		toSerialize["zoneId"] = o.ZoneId.Get()
 	}
 	if !IsNil(o.DateCreated) {
 		toSerialize["dateCreated"] = o.DateCreated

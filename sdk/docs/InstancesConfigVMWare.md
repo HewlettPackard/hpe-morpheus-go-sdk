@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**NoAgent** | Pointer to **bool** | Skipping Agent installation will result in a lack of logging and guest operating system statistics. Automation scripts may also be adversely affected. | [optional] [default to false]
+**NoAgent** | Pointer to **NullableBool** | Skipping Agent installation will result in a lack of logging and guest operating system statistics. Automation scripts may also be adversely affected. | [optional] [default to false]
 **ResourcePoolId** | Pointer to **string** | id of the resource group to be used, can be prefixed with &#x60;pool-&#x60;. A resource pool group can be specified instead by prefixing its ID with &#x60;poolGroup-&#x60;. | [optional] 
 **HostId** | Pointer to **string** | Specific host to deploy to if so desired. | [optional] 
 **SmbiosAssetTag** | Pointer to **string** | Sets the asset tag on the SMBIOS for use by the guest operating system. If left blank, the virtual machine name will be used. | [optional] 
@@ -55,6 +55,16 @@ SetNoAgent sets NoAgent field to given value.
 
 HasNoAgent returns a boolean if a field has been set.
 
+### SetNoAgentNil
+
+`func (o *InstancesConfigVMWare) SetNoAgentNil(b bool)`
+
+ SetNoAgentNil sets the value for NoAgent to be an explicit nil
+
+### UnsetNoAgent
+`func (o *InstancesConfigVMWare) UnsetNoAgent()`
+
+UnsetNoAgent ensures that no value is present for NoAgent, not even an explicit nil
 ### GetResourcePoolId
 
 `func (o *InstancesConfigVMWare) GetResourcePoolId() string`

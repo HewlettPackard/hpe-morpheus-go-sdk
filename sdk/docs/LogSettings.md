@@ -103,6 +103,16 @@ SetSyslogRules sets SyslogRules field to given value.
 
 HasSyslogRules returns a boolean if a field has been set.
 
+### SetSyslogRulesNil
+
+`func (o *LogSettings) SetSyslogRulesNil(b bool)`
+
+ SetSyslogRulesNil sets the value for SyslogRules to be an explicit nil
+
+### UnsetSyslogRules
+`func (o *LogSettings) UnsetSyslogRules()`
+
+UnsetSyslogRules ensures that no value is present for SyslogRules, not even an explicit nil
 ### GetIntegrations
 
 `func (o *LogSettings) GetIntegrations() []map[string]interface{}`
@@ -128,6 +138,16 @@ SetIntegrations sets Integrations field to given value.
 
 HasIntegrations returns a boolean if a field has been set.
 
+### SetIntegrationsNil
+
+`func (o *LogSettings) SetIntegrationsNil(b bool)`
+
+ SetIntegrationsNil sets the value for Integrations to be an explicit nil
+
+### UnsetIntegrations
+`func (o *LogSettings) UnsetIntegrations()`
+
+UnsetIntegrations ensures that no value is present for Integrations, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -7,13 +7,13 @@ Name | Type | Description | Notes
 **Id** | Pointer to **int64** |  | [optional] 
 **AccountId** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**Code** | Pointer to **string** |  | [optional] 
+**Code** | Pointer to **NullableString** |  | [optional] 
 **TaskType** | Pointer to [**ListTasks200ResponseAllOfTasksInnerAnyOf1TaskType**](ListTasks200ResponseAllOfTasksInnerAnyOf1TaskType.md) |  | [optional] 
 **Labels** | Pointer to **[]string** |  | [optional] 
 **Visibility** | Pointer to **string** |  | [optional] 
 **TaskOptions** | Pointer to [**ListTasks200ResponseAllOfTasksInnerAnyOf1TaskOptions**](ListTasks200ResponseAllOfTasksInnerAnyOf1TaskOptions.md) |  | [optional] 
 **File** | Pointer to [**ListTasks200ResponseAllOfTasksInnerAnyOfFile**](ListTasks200ResponseAllOfTasksInnerAnyOfFile.md) |  | [optional] 
-**ResultType** | Pointer to **string** |  | [optional] 
+**ResultType** | Pointer to **NullableString** |  | [optional] 
 **ExecuteTarget** | Pointer to **string** |  | [optional] 
 **Retryable** | Pointer to **bool** |  | [optional] 
 **RetryCount** | Pointer to **int64** |  | [optional] 
@@ -142,6 +142,16 @@ SetCode sets Code field to given value.
 
 HasCode returns a boolean if a field has been set.
 
+### SetCodeNil
+
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOf1) SetCodeNil(b bool)`
+
+ SetCodeNil sets the value for Code to be an explicit nil
+
+### UnsetCode
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOf1) UnsetCode()`
+
+UnsetCode ensures that no value is present for Code, not even an explicit nil
 ### GetTaskType
 
 `func (o *ListTasks200ResponseAllOfTasksInnerAnyOf1) GetTaskType() ListTasks200ResponseAllOfTasksInnerAnyOf1TaskType`
@@ -192,6 +202,16 @@ SetLabels sets Labels field to given value.
 
 HasLabels returns a boolean if a field has been set.
 
+### SetLabelsNil
+
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOf1) SetLabelsNil(b bool)`
+
+ SetLabelsNil sets the value for Labels to be an explicit nil
+
+### UnsetLabels
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOf1) UnsetLabels()`
+
+UnsetLabels ensures that no value is present for Labels, not even an explicit nil
 ### GetVisibility
 
 `func (o *ListTasks200ResponseAllOfTasksInnerAnyOf1) GetVisibility() string`
@@ -292,6 +312,16 @@ SetResultType sets ResultType field to given value.
 
 HasResultType returns a boolean if a field has been set.
 
+### SetResultTypeNil
+
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOf1) SetResultTypeNil(b bool)`
+
+ SetResultTypeNil sets the value for ResultType to be an explicit nil
+
+### UnsetResultType
+`func (o *ListTasks200ResponseAllOfTasksInnerAnyOf1) UnsetResultType()`
+
+UnsetResultType ensures that no value is present for ResultType, not even an explicit nil
 ### GetExecuteTarget
 
 `func (o *ListTasks200ResponseAllOfTasksInnerAnyOf1) GetExecuteTarget() string`

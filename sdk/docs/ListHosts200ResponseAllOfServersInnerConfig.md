@@ -4,17 +4,17 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**PoolProviderType** | Pointer to **string** |  | [optional] 
+**PoolProviderType** | Pointer to **NullableString** |  | [optional] 
 **IsVpcSelectable** | Pointer to **bool** |  | [optional] 
-**SmbiosAssetTag** | Pointer to **string** |  | [optional] 
+**SmbiosAssetTag** | Pointer to **NullableString** |  | [optional] 
 **IsEC2** | Pointer to **bool** |  | [optional] 
 **ResourcePoolId** | Pointer to **int64** |  | [optional] 
-**HostId** | Pointer to **int64** |  | [optional] 
+**HostId** | Pointer to **NullableInt64** |  | [optional] 
 **CreateUser** | Pointer to [**ListHosts200ResponseAllOfServersInnerConfigCreateUser**](ListHosts200ResponseAllOfServersInnerConfigCreateUser.md) |  | [optional] 
-**NestedVirtualization** | Pointer to **string** |  | [optional] 
+**NestedVirtualization** | Pointer to **NullableString** |  | [optional] 
 **VmwareFolderId** | Pointer to **string** |  | [optional] 
 **NoAgent** | Pointer to **bool** |  | [optional] 
-**PowerScheduleType** | Pointer to **int64** |  | [optional] 
+**PowerScheduleType** | Pointer to **NullableInt64** |  | [optional] 
 
 ## Methods
 
@@ -60,6 +60,16 @@ SetPoolProviderType sets PoolProviderType field to given value.
 
 HasPoolProviderType returns a boolean if a field has been set.
 
+### SetPoolProviderTypeNil
+
+`func (o *ListHosts200ResponseAllOfServersInnerConfig) SetPoolProviderTypeNil(b bool)`
+
+ SetPoolProviderTypeNil sets the value for PoolProviderType to be an explicit nil
+
+### UnsetPoolProviderType
+`func (o *ListHosts200ResponseAllOfServersInnerConfig) UnsetPoolProviderType()`
+
+UnsetPoolProviderType ensures that no value is present for PoolProviderType, not even an explicit nil
 ### GetIsVpcSelectable
 
 `func (o *ListHosts200ResponseAllOfServersInnerConfig) GetIsVpcSelectable() bool`
@@ -110,6 +120,16 @@ SetSmbiosAssetTag sets SmbiosAssetTag field to given value.
 
 HasSmbiosAssetTag returns a boolean if a field has been set.
 
+### SetSmbiosAssetTagNil
+
+`func (o *ListHosts200ResponseAllOfServersInnerConfig) SetSmbiosAssetTagNil(b bool)`
+
+ SetSmbiosAssetTagNil sets the value for SmbiosAssetTag to be an explicit nil
+
+### UnsetSmbiosAssetTag
+`func (o *ListHosts200ResponseAllOfServersInnerConfig) UnsetSmbiosAssetTag()`
+
+UnsetSmbiosAssetTag ensures that no value is present for SmbiosAssetTag, not even an explicit nil
 ### GetIsEC2
 
 `func (o *ListHosts200ResponseAllOfServersInnerConfig) GetIsEC2() bool`
@@ -185,6 +205,16 @@ SetHostId sets HostId field to given value.
 
 HasHostId returns a boolean if a field has been set.
 
+### SetHostIdNil
+
+`func (o *ListHosts200ResponseAllOfServersInnerConfig) SetHostIdNil(b bool)`
+
+ SetHostIdNil sets the value for HostId to be an explicit nil
+
+### UnsetHostId
+`func (o *ListHosts200ResponseAllOfServersInnerConfig) UnsetHostId()`
+
+UnsetHostId ensures that no value is present for HostId, not even an explicit nil
 ### GetCreateUser
 
 `func (o *ListHosts200ResponseAllOfServersInnerConfig) GetCreateUser() ListHosts200ResponseAllOfServersInnerConfigCreateUser`
@@ -235,6 +265,16 @@ SetNestedVirtualization sets NestedVirtualization field to given value.
 
 HasNestedVirtualization returns a boolean if a field has been set.
 
+### SetNestedVirtualizationNil
+
+`func (o *ListHosts200ResponseAllOfServersInnerConfig) SetNestedVirtualizationNil(b bool)`
+
+ SetNestedVirtualizationNil sets the value for NestedVirtualization to be an explicit nil
+
+### UnsetNestedVirtualization
+`func (o *ListHosts200ResponseAllOfServersInnerConfig) UnsetNestedVirtualization()`
+
+UnsetNestedVirtualization ensures that no value is present for NestedVirtualization, not even an explicit nil
 ### GetVmwareFolderId
 
 `func (o *ListHosts200ResponseAllOfServersInnerConfig) GetVmwareFolderId() string`
@@ -310,6 +350,16 @@ SetPowerScheduleType sets PowerScheduleType field to given value.
 
 HasPowerScheduleType returns a boolean if a field has been set.
 
+### SetPowerScheduleTypeNil
+
+`func (o *ListHosts200ResponseAllOfServersInnerConfig) SetPowerScheduleTypeNil(b bool)`
+
+ SetPowerScheduleTypeNil sets the value for PowerScheduleType to be an explicit nil
+
+### UnsetPowerScheduleType
+`func (o *ListHosts200ResponseAllOfServersInnerConfig) UnsetPowerScheduleType()`
+
+UnsetPowerScheduleType ensures that no value is present for PowerScheduleType, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

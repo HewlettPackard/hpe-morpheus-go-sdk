@@ -26,7 +26,7 @@ Name | Type | Description | Notes
 **CreateDatastore** | Pointer to **bool** |  | [optional] 
 **CreateDisk** | Pointer to **bool** |  | [optional] 
 **CreateHost** | Pointer to **bool** |  | [optional] 
-**IconCode** | Pointer to **string** |  | [optional] 
+**IconCode** | Pointer to **NullableString** |  | [optional] 
 **HasFileBrowser** | Pointer to **bool** |  | [optional] 
 **OptionTypes** | Pointer to [**[]ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerOptionTypesInner**](ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerOptionTypesInner.md) |  | [optional] 
 **GroupOptionTypes** | Pointer to [**[]ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner**](ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner.md) |  | [optional] 
@@ -629,6 +629,16 @@ SetIconCode sets IconCode field to given value.
 
 HasIconCode returns a boolean if a field has been set.
 
+### SetIconCodeNil
+
+`func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInner) SetIconCodeNil(b bool)`
+
+ SetIconCodeNil sets the value for IconCode to be an explicit nil
+
+### UnsetIconCode
+`func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInner) UnsetIconCode()`
+
+UnsetIconCode ensures that no value is present for IconCode, not even an explicit nil
 ### GetHasFileBrowser
 
 `func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInner) GetHasFileBrowser() bool`
@@ -729,6 +739,16 @@ SetBucketOptionTypes sets BucketOptionTypes field to given value.
 
 HasBucketOptionTypes returns a boolean if a field has been set.
 
+### SetBucketOptionTypesNil
+
+`func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInner) SetBucketOptionTypesNil(b bool)`
+
+ SetBucketOptionTypesNil sets the value for BucketOptionTypes to be an explicit nil
+
+### UnsetBucketOptionTypes
+`func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInner) UnsetBucketOptionTypes()`
+
+UnsetBucketOptionTypes ensures that no value is present for BucketOptionTypes, not even an explicit nil
 ### GetShareOptionTypes
 
 `func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInner) GetShareOptionTypes() []map[string]interface{}`
@@ -754,6 +774,16 @@ SetShareOptionTypes sets ShareOptionTypes field to given value.
 
 HasShareOptionTypes returns a boolean if a field has been set.
 
+### SetShareOptionTypesNil
+
+`func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInner) SetShareOptionTypesNil(b bool)`
+
+ SetShareOptionTypesNil sets the value for ShareOptionTypes to be an explicit nil
+
+### UnsetShareOptionTypes
+`func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInner) UnsetShareOptionTypes()`
+
+UnsetShareOptionTypes ensures that no value is present for ShareOptionTypes, not even an explicit nil
 ### GetShareAccessOptionTypes
 
 `func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInner) GetShareAccessOptionTypes() []map[string]interface{}`
@@ -779,6 +809,16 @@ SetShareAccessOptionTypes sets ShareAccessOptionTypes field to given value.
 
 HasShareAccessOptionTypes returns a boolean if a field has been set.
 
+### SetShareAccessOptionTypesNil
+
+`func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInner) SetShareAccessOptionTypesNil(b bool)`
+
+ SetShareAccessOptionTypesNil sets the value for ShareAccessOptionTypes to be an explicit nil
+
+### UnsetShareAccessOptionTypes
+`func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInner) UnsetShareAccessOptionTypes()`
+
+UnsetShareAccessOptionTypes ensures that no value is present for ShareAccessOptionTypes, not even an explicit nil
 ### GetStorageVolumeTypes
 
 `func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInner) GetStorageVolumeTypes() []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageTypesInner`

@@ -24,10 +24,10 @@ type ZoneNetworkOptions struct {
 	NetworkGroups              []ListInstanceServicePlans200ResponsePlansInnerAutoOptionsInner `json:"networkGroups,omitempty"`
 	NetworkTypes               []ZoneNetworkOptionsNetworkTypesInner                           `json:"networkTypes,omitempty"`
 	NetworkSubnets             []ZoneNetworkOptionsNetworkSubnetsInner                         `json:"networkSubnets,omitempty"`
-	HasNetworks                *bool                                                           `json:"hasNetworks,omitempty"`
-	MaxNetworks                *int64                                                          `json:"maxNetworks,omitempty"`
-	EnableNetworkTypeSelection *string                                                         `json:"enableNetworkTypeSelection,omitempty"`
-	SupportsNetworkSelection   *bool                                                           `json:"supportsNetworkSelection,omitempty"`
+	HasNetworks                NullableBool                                                    `json:"hasNetworks,omitempty"`
+	MaxNetworks                NullableInt64                                                   `json:"maxNetworks,omitempty"`
+	EnableNetworkTypeSelection NullableString                                                  `json:"enableNetworkTypeSelection,omitempty"`
+	SupportsNetworkSelection   NullableBool                                                    `json:"supportsNetworkSelection,omitempty"`
 	AdditionalProperties       map[string]interface{}                                          `json:",remain"`
 }
 
@@ -178,132 +178,176 @@ func (o *ZoneNetworkOptions) SetNetworkSubnets(v []ZoneNetworkOptionsNetworkSubn
 	o.NetworkSubnets = v
 }
 
-// GetHasNetworks returns the HasNetworks field value if set, zero value otherwise.
+// GetHasNetworks returns the HasNetworks field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ZoneNetworkOptions) GetHasNetworks() bool {
-	if o == nil || IsNil(o.HasNetworks) {
+	if o == nil || IsNil(o.HasNetworks.Get()) {
 		var ret bool
 		return ret
 	}
-	return *o.HasNetworks
+	return *o.HasNetworks.Get()
 }
 
 // GetHasNetworksOk returns a tuple with the HasNetworks field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ZoneNetworkOptions) GetHasNetworksOk() (*bool, bool) {
-	if o == nil || IsNil(o.HasNetworks) {
+	if o == nil {
 		return nil, false
 	}
-	return o.HasNetworks, true
+	return o.HasNetworks.Get(), o.HasNetworks.IsSet()
 }
 
 // IsSetHasNetworks returns a boolean if a field has been set.
 func (o *ZoneNetworkOptions) IsSetHasNetworks() bool {
-	if o != nil && !IsNil(o.HasNetworks) {
+	if o != nil && o.HasNetworks.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetHasNetworks gets a reference to the given bool and assigns it to the HasNetworks field.
+// SetHasNetworks gets a reference to the given NullableBool and assigns it to the HasNetworks field.
 func (o *ZoneNetworkOptions) SetHasNetworks(v bool) {
-	o.HasNetworks = &v
+	o.HasNetworks.Set(&v)
 }
 
-// GetMaxNetworks returns the MaxNetworks field value if set, zero value otherwise.
+// SetHasNetworksNil sets the value for HasNetworks to be an explicit nil
+func (o *ZoneNetworkOptions) SetHasNetworksNil() {
+	o.HasNetworks.Set(nil)
+}
+
+// UnsetHasNetworks ensures that no value is present for HasNetworks, not even an explicit nil
+func (o *ZoneNetworkOptions) UnsetHasNetworks() {
+	o.HasNetworks.Unset()
+}
+
+// GetMaxNetworks returns the MaxNetworks field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ZoneNetworkOptions) GetMaxNetworks() int64 {
-	if o == nil || IsNil(o.MaxNetworks) {
+	if o == nil || IsNil(o.MaxNetworks.Get()) {
 		var ret int64
 		return ret
 	}
-	return *o.MaxNetworks
+	return *o.MaxNetworks.Get()
 }
 
 // GetMaxNetworksOk returns a tuple with the MaxNetworks field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ZoneNetworkOptions) GetMaxNetworksOk() (*int64, bool) {
-	if o == nil || IsNil(o.MaxNetworks) {
+	if o == nil {
 		return nil, false
 	}
-	return o.MaxNetworks, true
+	return o.MaxNetworks.Get(), o.MaxNetworks.IsSet()
 }
 
 // IsSetMaxNetworks returns a boolean if a field has been set.
 func (o *ZoneNetworkOptions) IsSetMaxNetworks() bool {
-	if o != nil && !IsNil(o.MaxNetworks) {
+	if o != nil && o.MaxNetworks.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetMaxNetworks gets a reference to the given int64 and assigns it to the MaxNetworks field.
+// SetMaxNetworks gets a reference to the given NullableInt64 and assigns it to the MaxNetworks field.
 func (o *ZoneNetworkOptions) SetMaxNetworks(v int64) {
-	o.MaxNetworks = &v
+	o.MaxNetworks.Set(&v)
 }
 
-// GetEnableNetworkTypeSelection returns the EnableNetworkTypeSelection field value if set, zero value otherwise.
+// SetMaxNetworksNil sets the value for MaxNetworks to be an explicit nil
+func (o *ZoneNetworkOptions) SetMaxNetworksNil() {
+	o.MaxNetworks.Set(nil)
+}
+
+// UnsetMaxNetworks ensures that no value is present for MaxNetworks, not even an explicit nil
+func (o *ZoneNetworkOptions) UnsetMaxNetworks() {
+	o.MaxNetworks.Unset()
+}
+
+// GetEnableNetworkTypeSelection returns the EnableNetworkTypeSelection field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ZoneNetworkOptions) GetEnableNetworkTypeSelection() string {
-	if o == nil || IsNil(o.EnableNetworkTypeSelection) {
+	if o == nil || IsNil(o.EnableNetworkTypeSelection.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.EnableNetworkTypeSelection
+	return *o.EnableNetworkTypeSelection.Get()
 }
 
 // GetEnableNetworkTypeSelectionOk returns a tuple with the EnableNetworkTypeSelection field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ZoneNetworkOptions) GetEnableNetworkTypeSelectionOk() (*string, bool) {
-	if o == nil || IsNil(o.EnableNetworkTypeSelection) {
+	if o == nil {
 		return nil, false
 	}
-	return o.EnableNetworkTypeSelection, true
+	return o.EnableNetworkTypeSelection.Get(), o.EnableNetworkTypeSelection.IsSet()
 }
 
 // IsSetEnableNetworkTypeSelection returns a boolean if a field has been set.
 func (o *ZoneNetworkOptions) IsSetEnableNetworkTypeSelection() bool {
-	if o != nil && !IsNil(o.EnableNetworkTypeSelection) {
+	if o != nil && o.EnableNetworkTypeSelection.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetEnableNetworkTypeSelection gets a reference to the given string and assigns it to the EnableNetworkTypeSelection field.
+// SetEnableNetworkTypeSelection gets a reference to the given NullableString and assigns it to the EnableNetworkTypeSelection field.
 func (o *ZoneNetworkOptions) SetEnableNetworkTypeSelection(v string) {
-	o.EnableNetworkTypeSelection = &v
+	o.EnableNetworkTypeSelection.Set(&v)
 }
 
-// GetSupportsNetworkSelection returns the SupportsNetworkSelection field value if set, zero value otherwise.
+// SetEnableNetworkTypeSelectionNil sets the value for EnableNetworkTypeSelection to be an explicit nil
+func (o *ZoneNetworkOptions) SetEnableNetworkTypeSelectionNil() {
+	o.EnableNetworkTypeSelection.Set(nil)
+}
+
+// UnsetEnableNetworkTypeSelection ensures that no value is present for EnableNetworkTypeSelection, not even an explicit nil
+func (o *ZoneNetworkOptions) UnsetEnableNetworkTypeSelection() {
+	o.EnableNetworkTypeSelection.Unset()
+}
+
+// GetSupportsNetworkSelection returns the SupportsNetworkSelection field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ZoneNetworkOptions) GetSupportsNetworkSelection() bool {
-	if o == nil || IsNil(o.SupportsNetworkSelection) {
+	if o == nil || IsNil(o.SupportsNetworkSelection.Get()) {
 		var ret bool
 		return ret
 	}
-	return *o.SupportsNetworkSelection
+	return *o.SupportsNetworkSelection.Get()
 }
 
 // GetSupportsNetworkSelectionOk returns a tuple with the SupportsNetworkSelection field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ZoneNetworkOptions) GetSupportsNetworkSelectionOk() (*bool, bool) {
-	if o == nil || IsNil(o.SupportsNetworkSelection) {
+	if o == nil {
 		return nil, false
 	}
-	return o.SupportsNetworkSelection, true
+	return o.SupportsNetworkSelection.Get(), o.SupportsNetworkSelection.IsSet()
 }
 
 // IsSetSupportsNetworkSelection returns a boolean if a field has been set.
 func (o *ZoneNetworkOptions) IsSetSupportsNetworkSelection() bool {
-	if o != nil && !IsNil(o.SupportsNetworkSelection) {
+	if o != nil && o.SupportsNetworkSelection.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetSupportsNetworkSelection gets a reference to the given bool and assigns it to the SupportsNetworkSelection field.
+// SetSupportsNetworkSelection gets a reference to the given NullableBool and assigns it to the SupportsNetworkSelection field.
 func (o *ZoneNetworkOptions) SetSupportsNetworkSelection(v bool) {
-	o.SupportsNetworkSelection = &v
+	o.SupportsNetworkSelection.Set(&v)
+}
+
+// SetSupportsNetworkSelectionNil sets the value for SupportsNetworkSelection to be an explicit nil
+func (o *ZoneNetworkOptions) SetSupportsNetworkSelectionNil() {
+	o.SupportsNetworkSelection.Set(nil)
+}
+
+// UnsetSupportsNetworkSelection ensures that no value is present for SupportsNetworkSelection, not even an explicit nil
+func (o *ZoneNetworkOptions) UnsetSupportsNetworkSelection() {
+	o.SupportsNetworkSelection.Unset()
 }
 
 func (o ZoneNetworkOptions) MarshalJSON() ([]byte, error) {
@@ -328,17 +372,17 @@ func (o ZoneNetworkOptions) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.NetworkSubnets) {
 		toSerialize["networkSubnets"] = o.NetworkSubnets
 	}
-	if !IsNil(o.HasNetworks) {
-		toSerialize["hasNetworks"] = o.HasNetworks
+	if o.HasNetworks.IsSet() {
+		toSerialize["hasNetworks"] = o.HasNetworks.Get()
 	}
-	if !IsNil(o.MaxNetworks) {
-		toSerialize["maxNetworks"] = o.MaxNetworks
+	if o.MaxNetworks.IsSet() {
+		toSerialize["maxNetworks"] = o.MaxNetworks.Get()
 	}
-	if !IsNil(o.EnableNetworkTypeSelection) {
-		toSerialize["enableNetworkTypeSelection"] = o.EnableNetworkTypeSelection
+	if o.EnableNetworkTypeSelection.IsSet() {
+		toSerialize["enableNetworkTypeSelection"] = o.EnableNetworkTypeSelection.Get()
 	}
-	if !IsNil(o.SupportsNetworkSelection) {
-		toSerialize["supportsNetworkSelection"] = o.SupportsNetworkSelection
+	if o.SupportsNetworkSelection.IsSet() {
+		toSerialize["supportsNetworkSelection"] = o.SupportsNetworkSelection.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {

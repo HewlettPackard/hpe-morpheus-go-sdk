@@ -7,15 +7,15 @@ Name | Type | Description | Notes
 **Id** | Pointer to **int64** |  | [optional] 
 **Uuid** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**Code** | Pointer to **string** |  | [optional] 
+**Code** | Pointer to **NullableString** |  | [optional] 
 **Labels** | Pointer to **[]string** |  | [optional] 
-**Location** | Pointer to **string** |  | [optional] 
+**Location** | Pointer to **NullableString** |  | [optional] 
 **AccountId** | Pointer to **int64** |  | [optional] 
 **Active** | Pointer to **bool** |  | [optional] 
 **Config** | Pointer to [**ListGroups200ResponseAllOfGroupsInnerConfig**](ListGroups200ResponseAllOfGroupsInnerConfig.md) |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
-**Zones** | Pointer to [**[]ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
+**Zones** | Pointer to [**[]GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **Stats** | Pointer to [**ListGroups200ResponseAllOfGroupsInnerStats**](ListGroups200ResponseAllOfGroupsInnerStats.md) |  | [optional] 
 **ServerCount** | Pointer to **int64** |  | [optional] 
 **Success** | Pointer to **bool** |  | [optional] 
@@ -139,6 +139,16 @@ SetCode sets Code field to given value.
 
 HasCode returns a boolean if a field has been set.
 
+### SetCodeNil
+
+`func (o *UpdateGroups200ResponseGroup) SetCodeNil(b bool)`
+
+ SetCodeNil sets the value for Code to be an explicit nil
+
+### UnsetCode
+`func (o *UpdateGroups200ResponseGroup) UnsetCode()`
+
+UnsetCode ensures that no value is present for Code, not even an explicit nil
 ### GetLabels
 
 `func (o *UpdateGroups200ResponseGroup) GetLabels() []string`
@@ -189,6 +199,16 @@ SetLocation sets Location field to given value.
 
 HasLocation returns a boolean if a field has been set.
 
+### SetLocationNil
+
+`func (o *UpdateGroups200ResponseGroup) SetLocationNil(b bool)`
+
+ SetLocationNil sets the value for Location to be an explicit nil
+
+### UnsetLocation
+`func (o *UpdateGroups200ResponseGroup) UnsetLocation()`
+
+UnsetLocation ensures that no value is present for Location, not even an explicit nil
 ### GetAccountId
 
 `func (o *UpdateGroups200ResponseGroup) GetAccountId() int64`
@@ -316,20 +336,20 @@ HasLastUpdated returns a boolean if a field has been set.
 
 ### GetZones
 
-`func (o *UpdateGroups200ResponseGroup) GetZones() []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *UpdateGroups200ResponseGroup) GetZones() []GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetZones returns the Zones field if non-nil, zero value otherwise.
 
 ### GetZonesOk
 
-`func (o *UpdateGroups200ResponseGroup) GetZonesOk() (*[]ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *UpdateGroups200ResponseGroup) GetZonesOk() (*[]GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetZonesOk returns a tuple with the Zones field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetZones
 
-`func (o *UpdateGroups200ResponseGroup) SetZones(v []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *UpdateGroups200ResponseGroup) SetZones(v []GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetZones sets Zones field to given value.
 

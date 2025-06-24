@@ -11,11 +11,11 @@ Name | Type | Description | Notes
 **Name** | Pointer to **string** |  | [optional] 
 **Labels** | Pointer to **[]string** | Array of label strings, can be used for filtering. | [optional] 
 **InstanceVersion** | Pointer to **string** |  | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **NullableString** |  | [optional] 
 **Creatable** | Pointer to **bool** |  | [optional] 
-**MemoryRequirement** | Pointer to **int64** |  | [optional] 
+**MemoryRequirement** | Pointer to **NullableInt64** |  | [optional] 
 **SortOrder** | Pointer to **int64** |  | [optional] 
-**SupportsConvertToManaged** | Pointer to **bool** |  | [optional] 
+**SupportsConvertToManaged** | Pointer to **NullableBool** |  | [optional] 
 **ProvisionType** | Pointer to [**GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionType**](GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionType.md) |  | [optional] 
 **TaskSets** | Pointer to **[]map[string]interface{}** |  | [optional] 
 **ContainerTypes** | Pointer to [**[]GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInner**](GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInner.md) |  | [optional] 
@@ -25,7 +25,7 @@ Name | Type | Description | Notes
 **EnvironmentVariables** | Pointer to **[]map[string]interface{}** |  | [optional] 
 **PriceSets** | Pointer to **[]map[string]interface{}** |  | [optional] 
 **SpecTemplates** | Pointer to **[]map[string]interface{}** |  | [optional] 
-**TfvarSecret** | Pointer to **string** |  | [optional] 
+**TfvarSecret** | Pointer to **NullableString** |  | [optional] 
 **Permissions** | Pointer to [**GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerPermissions**](GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerPermissions.md) |  | [optional] 
 
 ## Methods
@@ -197,6 +197,16 @@ SetLabels sets Labels field to given value.
 
 HasLabels returns a boolean if a field has been set.
 
+### SetLabelsNil
+
+`func (o *InstanceTypeLayout) SetLabelsNil(b bool)`
+
+ SetLabelsNil sets the value for Labels to be an explicit nil
+
+### UnsetLabels
+`func (o *InstanceTypeLayout) UnsetLabels()`
+
+UnsetLabels ensures that no value is present for Labels, not even an explicit nil
 ### GetInstanceVersion
 
 `func (o *InstanceTypeLayout) GetInstanceVersion() string`
@@ -247,6 +257,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *InstanceTypeLayout) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *InstanceTypeLayout) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetCreatable
 
 `func (o *InstanceTypeLayout) GetCreatable() bool`
@@ -297,6 +317,16 @@ SetMemoryRequirement sets MemoryRequirement field to given value.
 
 HasMemoryRequirement returns a boolean if a field has been set.
 
+### SetMemoryRequirementNil
+
+`func (o *InstanceTypeLayout) SetMemoryRequirementNil(b bool)`
+
+ SetMemoryRequirementNil sets the value for MemoryRequirement to be an explicit nil
+
+### UnsetMemoryRequirement
+`func (o *InstanceTypeLayout) UnsetMemoryRequirement()`
+
+UnsetMemoryRequirement ensures that no value is present for MemoryRequirement, not even an explicit nil
 ### GetSortOrder
 
 `func (o *InstanceTypeLayout) GetSortOrder() int64`
@@ -347,6 +377,16 @@ SetSupportsConvertToManaged sets SupportsConvertToManaged field to given value.
 
 HasSupportsConvertToManaged returns a boolean if a field has been set.
 
+### SetSupportsConvertToManagedNil
+
+`func (o *InstanceTypeLayout) SetSupportsConvertToManagedNil(b bool)`
+
+ SetSupportsConvertToManagedNil sets the value for SupportsConvertToManaged to be an explicit nil
+
+### UnsetSupportsConvertToManaged
+`func (o *InstanceTypeLayout) UnsetSupportsConvertToManaged()`
+
+UnsetSupportsConvertToManaged ensures that no value is present for SupportsConvertToManaged, not even an explicit nil
 ### GetProvisionType
 
 `func (o *InstanceTypeLayout) GetProvisionType() GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionType`
@@ -397,6 +437,16 @@ SetTaskSets sets TaskSets field to given value.
 
 HasTaskSets returns a boolean if a field has been set.
 
+### SetTaskSetsNil
+
+`func (o *InstanceTypeLayout) SetTaskSetsNil(b bool)`
+
+ SetTaskSetsNil sets the value for TaskSets to be an explicit nil
+
+### UnsetTaskSets
+`func (o *InstanceTypeLayout) UnsetTaskSets()`
+
+UnsetTaskSets ensures that no value is present for TaskSets, not even an explicit nil
 ### GetContainerTypes
 
 `func (o *InstanceTypeLayout) GetContainerTypes() []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInner`
@@ -447,6 +497,16 @@ SetMounts sets Mounts field to given value.
 
 HasMounts returns a boolean if a field has been set.
 
+### SetMountsNil
+
+`func (o *InstanceTypeLayout) SetMountsNil(b bool)`
+
+ SetMountsNil sets the value for Mounts to be an explicit nil
+
+### UnsetMounts
+`func (o *InstanceTypeLayout) UnsetMounts()`
+
+UnsetMounts ensures that no value is present for Mounts, not even an explicit nil
 ### GetPorts
 
 `func (o *InstanceTypeLayout) GetPorts() []map[string]interface{}`
@@ -472,6 +532,16 @@ SetPorts sets Ports field to given value.
 
 HasPorts returns a boolean if a field has been set.
 
+### SetPortsNil
+
+`func (o *InstanceTypeLayout) SetPortsNil(b bool)`
+
+ SetPortsNil sets the value for Ports to be an explicit nil
+
+### UnsetPorts
+`func (o *InstanceTypeLayout) UnsetPorts()`
+
+UnsetPorts ensures that no value is present for Ports, not even an explicit nil
 ### GetOptionTypes
 
 `func (o *InstanceTypeLayout) GetOptionTypes() []map[string]interface{}`
@@ -497,6 +567,16 @@ SetOptionTypes sets OptionTypes field to given value.
 
 HasOptionTypes returns a boolean if a field has been set.
 
+### SetOptionTypesNil
+
+`func (o *InstanceTypeLayout) SetOptionTypesNil(b bool)`
+
+ SetOptionTypesNil sets the value for OptionTypes to be an explicit nil
+
+### UnsetOptionTypes
+`func (o *InstanceTypeLayout) UnsetOptionTypes()`
+
+UnsetOptionTypes ensures that no value is present for OptionTypes, not even an explicit nil
 ### GetEnvironmentVariables
 
 `func (o *InstanceTypeLayout) GetEnvironmentVariables() []map[string]interface{}`
@@ -522,6 +602,16 @@ SetEnvironmentVariables sets EnvironmentVariables field to given value.
 
 HasEnvironmentVariables returns a boolean if a field has been set.
 
+### SetEnvironmentVariablesNil
+
+`func (o *InstanceTypeLayout) SetEnvironmentVariablesNil(b bool)`
+
+ SetEnvironmentVariablesNil sets the value for EnvironmentVariables to be an explicit nil
+
+### UnsetEnvironmentVariables
+`func (o *InstanceTypeLayout) UnsetEnvironmentVariables()`
+
+UnsetEnvironmentVariables ensures that no value is present for EnvironmentVariables, not even an explicit nil
 ### GetPriceSets
 
 `func (o *InstanceTypeLayout) GetPriceSets() []map[string]interface{}`
@@ -547,6 +637,16 @@ SetPriceSets sets PriceSets field to given value.
 
 HasPriceSets returns a boolean if a field has been set.
 
+### SetPriceSetsNil
+
+`func (o *InstanceTypeLayout) SetPriceSetsNil(b bool)`
+
+ SetPriceSetsNil sets the value for PriceSets to be an explicit nil
+
+### UnsetPriceSets
+`func (o *InstanceTypeLayout) UnsetPriceSets()`
+
+UnsetPriceSets ensures that no value is present for PriceSets, not even an explicit nil
 ### GetSpecTemplates
 
 `func (o *InstanceTypeLayout) GetSpecTemplates() []map[string]interface{}`
@@ -572,6 +672,16 @@ SetSpecTemplates sets SpecTemplates field to given value.
 
 HasSpecTemplates returns a boolean if a field has been set.
 
+### SetSpecTemplatesNil
+
+`func (o *InstanceTypeLayout) SetSpecTemplatesNil(b bool)`
+
+ SetSpecTemplatesNil sets the value for SpecTemplates to be an explicit nil
+
+### UnsetSpecTemplates
+`func (o *InstanceTypeLayout) UnsetSpecTemplates()`
+
+UnsetSpecTemplates ensures that no value is present for SpecTemplates, not even an explicit nil
 ### GetTfvarSecret
 
 `func (o *InstanceTypeLayout) GetTfvarSecret() string`
@@ -597,6 +707,16 @@ SetTfvarSecret sets TfvarSecret field to given value.
 
 HasTfvarSecret returns a boolean if a field has been set.
 
+### SetTfvarSecretNil
+
+`func (o *InstanceTypeLayout) SetTfvarSecretNil(b bool)`
+
+ SetTfvarSecretNil sets the value for TfvarSecret to be an explicit nil
+
+### UnsetTfvarSecret
+`func (o *InstanceTypeLayout) UnsetTfvarSecret()`
+
+UnsetTfvarSecret ensures that no value is present for TfvarSecret, not even an explicit nil
 ### GetPermissions
 
 `func (o *InstanceTypeLayout) GetPermissions() GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerPermissions`

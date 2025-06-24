@@ -9,28 +9,28 @@ Name | Type | Description | Notes
 **UniqueId** | Pointer to **string** |  | [optional] 
 **ProcessType** | Pointer to [**ListClusterContainers200ResponseAllOfContainersInnerAvailableActionsInner**](ListClusterContainers200ResponseAllOfContainersInnerAvailableActionsInner.md) |  | [optional] 
 **DisplayName** | Pointer to **string** |  | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
-**SubType** | Pointer to **string** |  | [optional] 
-**SubId** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **NullableString** |  | [optional] 
+**SubType** | Pointer to **NullableString** |  | [optional] 
+**SubId** | Pointer to **NullableString** |  | [optional] 
 **ZoneId** | Pointer to **int64** |  | [optional] 
-**IntegrationId** | Pointer to **string** |  | [optional] 
-**AppId** | Pointer to **string** |  | [optional] 
+**IntegrationId** | Pointer to **NullableString** |  | [optional] 
+**AppId** | Pointer to **NullableString** |  | [optional] 
 **InstanceId** | Pointer to **int64** |  | [optional] 
 **ContainerId** | Pointer to **int64** |  | [optional] 
 **ServerId** | Pointer to **int64** |  | [optional] 
 **ContainerName** | Pointer to **string** |  | [optional] 
 **Status** | Pointer to **string** |  | [optional] 
-**Reason** | Pointer to **string** |  | [optional] 
+**Reason** | Pointer to **NullableString** |  | [optional] 
 **Percent** | Pointer to **int64** |  | [optional] 
 **StatusEta** | Pointer to **int64** |  | [optional] 
-**Message** | Pointer to **string** |  | [optional] 
-**Output** | Pointer to **string** |  | [optional] 
-**Error** | Pointer to **string** |  | [optional] 
+**Message** | Pointer to **NullableString** |  | [optional] 
+**Output** | Pointer to **NullableString** |  | [optional] 
+**Error** | Pointer to **NullableString** |  | [optional] 
 **StartDate** | Pointer to **time.Time** |  | [optional] 
 **EndDate** | Pointer to **time.Time** |  | [optional] 
 **Duration** | Pointer to **int64** |  | [optional] 
-**ResultType** | Pointer to **string** |  | [optional] 
-**ResultId** | Pointer to **int64** |  | [optional] 
+**ResultType** | Pointer to **NullableString** |  | [optional] 
+**ResultId** | Pointer to **NullableInt64** |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
 **CreatedBy** | Pointer to [**GetClusterHistory200ResponseAllOfProcessesInnerCreatedBy**](GetClusterHistory200ResponseAllOfProcessesInnerCreatedBy.md) |  | [optional] 
@@ -206,6 +206,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *ListHistory200ResponseAllOfProcessesInner) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *ListHistory200ResponseAllOfProcessesInner) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetSubType
 
 `func (o *ListHistory200ResponseAllOfProcessesInner) GetSubType() string`
@@ -231,6 +241,16 @@ SetSubType sets SubType field to given value.
 
 HasSubType returns a boolean if a field has been set.
 
+### SetSubTypeNil
+
+`func (o *ListHistory200ResponseAllOfProcessesInner) SetSubTypeNil(b bool)`
+
+ SetSubTypeNil sets the value for SubType to be an explicit nil
+
+### UnsetSubType
+`func (o *ListHistory200ResponseAllOfProcessesInner) UnsetSubType()`
+
+UnsetSubType ensures that no value is present for SubType, not even an explicit nil
 ### GetSubId
 
 `func (o *ListHistory200ResponseAllOfProcessesInner) GetSubId() string`
@@ -256,6 +276,16 @@ SetSubId sets SubId field to given value.
 
 HasSubId returns a boolean if a field has been set.
 
+### SetSubIdNil
+
+`func (o *ListHistory200ResponseAllOfProcessesInner) SetSubIdNil(b bool)`
+
+ SetSubIdNil sets the value for SubId to be an explicit nil
+
+### UnsetSubId
+`func (o *ListHistory200ResponseAllOfProcessesInner) UnsetSubId()`
+
+UnsetSubId ensures that no value is present for SubId, not even an explicit nil
 ### GetZoneId
 
 `func (o *ListHistory200ResponseAllOfProcessesInner) GetZoneId() int64`
@@ -306,6 +336,16 @@ SetIntegrationId sets IntegrationId field to given value.
 
 HasIntegrationId returns a boolean if a field has been set.
 
+### SetIntegrationIdNil
+
+`func (o *ListHistory200ResponseAllOfProcessesInner) SetIntegrationIdNil(b bool)`
+
+ SetIntegrationIdNil sets the value for IntegrationId to be an explicit nil
+
+### UnsetIntegrationId
+`func (o *ListHistory200ResponseAllOfProcessesInner) UnsetIntegrationId()`
+
+UnsetIntegrationId ensures that no value is present for IntegrationId, not even an explicit nil
 ### GetAppId
 
 `func (o *ListHistory200ResponseAllOfProcessesInner) GetAppId() string`
@@ -331,6 +371,16 @@ SetAppId sets AppId field to given value.
 
 HasAppId returns a boolean if a field has been set.
 
+### SetAppIdNil
+
+`func (o *ListHistory200ResponseAllOfProcessesInner) SetAppIdNil(b bool)`
+
+ SetAppIdNil sets the value for AppId to be an explicit nil
+
+### UnsetAppId
+`func (o *ListHistory200ResponseAllOfProcessesInner) UnsetAppId()`
+
+UnsetAppId ensures that no value is present for AppId, not even an explicit nil
 ### GetInstanceId
 
 `func (o *ListHistory200ResponseAllOfProcessesInner) GetInstanceId() int64`
@@ -481,6 +531,16 @@ SetReason sets Reason field to given value.
 
 HasReason returns a boolean if a field has been set.
 
+### SetReasonNil
+
+`func (o *ListHistory200ResponseAllOfProcessesInner) SetReasonNil(b bool)`
+
+ SetReasonNil sets the value for Reason to be an explicit nil
+
+### UnsetReason
+`func (o *ListHistory200ResponseAllOfProcessesInner) UnsetReason()`
+
+UnsetReason ensures that no value is present for Reason, not even an explicit nil
 ### GetPercent
 
 `func (o *ListHistory200ResponseAllOfProcessesInner) GetPercent() int64`
@@ -556,6 +616,16 @@ SetMessage sets Message field to given value.
 
 HasMessage returns a boolean if a field has been set.
 
+### SetMessageNil
+
+`func (o *ListHistory200ResponseAllOfProcessesInner) SetMessageNil(b bool)`
+
+ SetMessageNil sets the value for Message to be an explicit nil
+
+### UnsetMessage
+`func (o *ListHistory200ResponseAllOfProcessesInner) UnsetMessage()`
+
+UnsetMessage ensures that no value is present for Message, not even an explicit nil
 ### GetOutput
 
 `func (o *ListHistory200ResponseAllOfProcessesInner) GetOutput() string`
@@ -581,6 +651,16 @@ SetOutput sets Output field to given value.
 
 HasOutput returns a boolean if a field has been set.
 
+### SetOutputNil
+
+`func (o *ListHistory200ResponseAllOfProcessesInner) SetOutputNil(b bool)`
+
+ SetOutputNil sets the value for Output to be an explicit nil
+
+### UnsetOutput
+`func (o *ListHistory200ResponseAllOfProcessesInner) UnsetOutput()`
+
+UnsetOutput ensures that no value is present for Output, not even an explicit nil
 ### GetError
 
 `func (o *ListHistory200ResponseAllOfProcessesInner) GetError() string`
@@ -606,6 +686,16 @@ SetError sets Error field to given value.
 
 HasError returns a boolean if a field has been set.
 
+### SetErrorNil
+
+`func (o *ListHistory200ResponseAllOfProcessesInner) SetErrorNil(b bool)`
+
+ SetErrorNil sets the value for Error to be an explicit nil
+
+### UnsetError
+`func (o *ListHistory200ResponseAllOfProcessesInner) UnsetError()`
+
+UnsetError ensures that no value is present for Error, not even an explicit nil
 ### GetStartDate
 
 `func (o *ListHistory200ResponseAllOfProcessesInner) GetStartDate() time.Time`
@@ -706,6 +796,16 @@ SetResultType sets ResultType field to given value.
 
 HasResultType returns a boolean if a field has been set.
 
+### SetResultTypeNil
+
+`func (o *ListHistory200ResponseAllOfProcessesInner) SetResultTypeNil(b bool)`
+
+ SetResultTypeNil sets the value for ResultType to be an explicit nil
+
+### UnsetResultType
+`func (o *ListHistory200ResponseAllOfProcessesInner) UnsetResultType()`
+
+UnsetResultType ensures that no value is present for ResultType, not even an explicit nil
 ### GetResultId
 
 `func (o *ListHistory200ResponseAllOfProcessesInner) GetResultId() int64`
@@ -731,6 +831,16 @@ SetResultId sets ResultId field to given value.
 
 HasResultId returns a boolean if a field has been set.
 
+### SetResultIdNil
+
+`func (o *ListHistory200ResponseAllOfProcessesInner) SetResultIdNil(b bool)`
+
+ SetResultIdNil sets the value for ResultId to be an explicit nil
+
+### UnsetResultId
+`func (o *ListHistory200ResponseAllOfProcessesInner) UnsetResultId()`
+
+UnsetResultId ensures that no value is present for ResultId, not even an explicit nil
 ### GetDateCreated
 
 `func (o *ListHistory200ResponseAllOfProcessesInner) GetDateCreated() time.Time`

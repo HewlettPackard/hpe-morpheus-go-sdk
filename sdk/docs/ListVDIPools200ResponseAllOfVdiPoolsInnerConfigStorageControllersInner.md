@@ -6,13 +6,13 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**Active** | Pointer to **bool** |  | [optional] 
+**Active** | Pointer to **NullableBool** |  | [optional] 
 **TypeId** | Pointer to **int64** |  | [optional] 
 **TypeName** | Pointer to **string** |  | [optional] 
 **UnitNumber** | Pointer to **string** |  | [optional] 
 **BusNumber** | Pointer to **string** |  | [optional] 
 **MaxDevices** | Pointer to **float32** |  | [optional] 
-**Removable** | Pointer to **bool** |  | [optional] 
+**Removable** | Pointer to **NullableBool** |  | [optional] 
 **Editable** | Pointer to **bool** |  | [optional] 
 **ReservedUnitNumber** | Pointer to **float32** |  | [optional] 
 **Category** | Pointer to **string** |  | [optional] 
@@ -112,6 +112,16 @@ SetActive sets Active field to given value.
 
 HasActive returns a boolean if a field has been set.
 
+### SetActiveNil
+
+`func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner) SetActiveNil(b bool)`
+
+ SetActiveNil sets the value for Active to be an explicit nil
+
+### UnsetActive
+`func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner) UnsetActive()`
+
+UnsetActive ensures that no value is present for Active, not even an explicit nil
 ### GetTypeId
 
 `func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner) GetTypeId() int64`
@@ -262,6 +272,16 @@ SetRemovable sets Removable field to given value.
 
 HasRemovable returns a boolean if a field has been set.
 
+### SetRemovableNil
+
+`func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner) SetRemovableNil(b bool)`
+
+ SetRemovableNil sets the value for Removable to be an explicit nil
+
+### UnsetRemovable
+`func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner) UnsetRemovable()`
+
+UnsetRemovable ensures that no value is present for Removable, not even an explicit nil
 ### GetEditable
 
 `func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner) GetEditable() bool`

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **string** | Cluster Package name | [optional] 
-**Description** | Pointer to **string** | Cluster Package description | [optional] 
+**Description** | Pointer to **NullableString** | Cluster Package description | [optional] 
 **Code** | Pointer to **string** | Cluster Package code | [optional] 
 **PackageVersion** | Pointer to **string** | Version of the cluster package | [optional] 
 **PackageType** | Pointer to **string** | Package Type | [optional] 
@@ -83,6 +83,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *UpdateClusterPackageRequestClusterPackage) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *UpdateClusterPackageRequestClusterPackage) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetCode
 
 `func (o *UpdateClusterPackageRequestClusterPackage) GetCode() string`

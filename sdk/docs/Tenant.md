@@ -6,12 +6,12 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **NullableString** |  | [optional] 
 **Subdomain** | Pointer to **string** |  | [optional] 
 **Currency** | Pointer to **string** |  | [optional] 
-**ExternalId** | Pointer to **string** |  | [optional] 
-**CustomerNumber** | Pointer to **string** |  | [optional] 
-**AccountNumber** | Pointer to **string** |  | [optional] 
+**ExternalId** | Pointer to **NullableString** |  | [optional] 
+**CustomerNumber** | Pointer to **NullableString** |  | [optional] 
+**AccountNumber** | Pointer to **NullableString** |  | [optional] 
 **AccountName** | Pointer to **string** |  | [optional] 
 **Active** | Pointer to **bool** |  | [optional] 
 **Master** | Pointer to **bool** |  | [optional] 
@@ -114,6 +114,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *Tenant) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *Tenant) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetSubdomain
 
 `func (o *Tenant) GetSubdomain() string`
@@ -189,6 +199,16 @@ SetExternalId sets ExternalId field to given value.
 
 HasExternalId returns a boolean if a field has been set.
 
+### SetExternalIdNil
+
+`func (o *Tenant) SetExternalIdNil(b bool)`
+
+ SetExternalIdNil sets the value for ExternalId to be an explicit nil
+
+### UnsetExternalId
+`func (o *Tenant) UnsetExternalId()`
+
+UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
 ### GetCustomerNumber
 
 `func (o *Tenant) GetCustomerNumber() string`
@@ -214,6 +234,16 @@ SetCustomerNumber sets CustomerNumber field to given value.
 
 HasCustomerNumber returns a boolean if a field has been set.
 
+### SetCustomerNumberNil
+
+`func (o *Tenant) SetCustomerNumberNil(b bool)`
+
+ SetCustomerNumberNil sets the value for CustomerNumber to be an explicit nil
+
+### UnsetCustomerNumber
+`func (o *Tenant) UnsetCustomerNumber()`
+
+UnsetCustomerNumber ensures that no value is present for CustomerNumber, not even an explicit nil
 ### GetAccountNumber
 
 `func (o *Tenant) GetAccountNumber() string`
@@ -239,6 +269,16 @@ SetAccountNumber sets AccountNumber field to given value.
 
 HasAccountNumber returns a boolean if a field has been set.
 
+### SetAccountNumberNil
+
+`func (o *Tenant) SetAccountNumberNil(b bool)`
+
+ SetAccountNumberNil sets the value for AccountNumber to be an explicit nil
+
+### UnsetAccountNumber
+`func (o *Tenant) UnsetAccountNumber()`
+
+UnsetAccountNumber ensures that no value is present for AccountNumber, not even an explicit nil
 ### GetAccountName
 
 `func (o *Tenant) GetAccountName() string`

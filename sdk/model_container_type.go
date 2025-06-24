@@ -30,7 +30,7 @@ type ContainerType struct {
 	ProvisionType        *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerProvisionType        `json:"provisionType,omitempty"`
 	VirtualImage         *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount              `json:"virtualImage,omitempty"`
 	OsType               *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount              `json:"osType,omitempty"`
-	Category             *string                                                                                                                 `json:"category,omitempty"`
+	Category             NullableString                                                                                                          `json:"category,omitempty"`
 	Config               map[string]interface{}                                                                                                  `json:"config,omitempty"`
 	ContainerPorts       []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerContainerPortsInner `json:"containerPorts,omitempty"`
 	ContainerScripts     []map[string]interface{}                                                                                                `json:"containerScripts,omitempty"`
@@ -378,41 +378,52 @@ func (o *ContainerType) SetOsType(v GetInstanceTypeProvisioning200ResponseAllOfI
 	o.OsType = &v
 }
 
-// GetCategory returns the Category field value if set, zero value otherwise.
+// GetCategory returns the Category field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ContainerType) GetCategory() string {
-	if o == nil || IsNil(o.Category) {
+	if o == nil || IsNil(o.Category.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Category
+	return *o.Category.Get()
 }
 
 // GetCategoryOk returns a tuple with the Category field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ContainerType) GetCategoryOk() (*string, bool) {
-	if o == nil || IsNil(o.Category) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Category, true
+	return o.Category.Get(), o.Category.IsSet()
 }
 
 // IsSetCategory returns a boolean if a field has been set.
 func (o *ContainerType) IsSetCategory() bool {
-	if o != nil && !IsNil(o.Category) {
+	if o != nil && o.Category.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCategory gets a reference to the given string and assigns it to the Category field.
+// SetCategory gets a reference to the given NullableString and assigns it to the Category field.
 func (o *ContainerType) SetCategory(v string) {
-	o.Category = &v
+	o.Category.Set(&v)
 }
 
-// GetConfig returns the Config field value if set, zero value otherwise.
+// SetCategoryNil sets the value for Category to be an explicit nil
+func (o *ContainerType) SetCategoryNil() {
+	o.Category.Set(nil)
+}
+
+// UnsetCategory ensures that no value is present for Category, not even an explicit nil
+func (o *ContainerType) UnsetCategory() {
+	o.Category.Unset()
+}
+
+// GetConfig returns the Config field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ContainerType) GetConfig() map[string]interface{} {
-	if o == nil || IsNil(o.Config) {
+	if o == nil {
 		var ret map[string]interface{}
 		return ret
 	}
@@ -421,6 +432,7 @@ func (o *ContainerType) GetConfig() map[string]interface{} {
 
 // GetConfigOk returns a tuple with the Config field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ContainerType) GetConfigOk() (map[string]interface{}, bool) {
 	if o == nil || IsNil(o.Config) {
 		return map[string]interface{}{}, false
@@ -442,9 +454,9 @@ func (o *ContainerType) SetConfig(v map[string]interface{}) {
 	o.Config = v
 }
 
-// GetContainerPorts returns the ContainerPorts field value if set, zero value otherwise.
+// GetContainerPorts returns the ContainerPorts field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ContainerType) GetContainerPorts() []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerContainerPortsInner {
-	if o == nil || IsNil(o.ContainerPorts) {
+	if o == nil {
 		var ret []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerContainerPortsInner
 		return ret
 	}
@@ -453,6 +465,7 @@ func (o *ContainerType) GetContainerPorts() []GetInstanceTypeProvisioning200Resp
 
 // GetContainerPortsOk returns a tuple with the ContainerPorts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ContainerType) GetContainerPortsOk() ([]GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerContainerPortsInner, bool) {
 	if o == nil || IsNil(o.ContainerPorts) {
 		return nil, false
@@ -474,9 +487,9 @@ func (o *ContainerType) SetContainerPorts(v []GetInstanceTypeProvisioning200Resp
 	o.ContainerPorts = v
 }
 
-// GetContainerScripts returns the ContainerScripts field value if set, zero value otherwise.
+// GetContainerScripts returns the ContainerScripts field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ContainerType) GetContainerScripts() []map[string]interface{} {
-	if o == nil || IsNil(o.ContainerScripts) {
+	if o == nil {
 		var ret []map[string]interface{}
 		return ret
 	}
@@ -485,6 +498,7 @@ func (o *ContainerType) GetContainerScripts() []map[string]interface{} {
 
 // GetContainerScriptsOk returns a tuple with the ContainerScripts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ContainerType) GetContainerScriptsOk() ([]map[string]interface{}, bool) {
 	if o == nil || IsNil(o.ContainerScripts) {
 		return nil, false
@@ -506,9 +520,9 @@ func (o *ContainerType) SetContainerScripts(v []map[string]interface{}) {
 	o.ContainerScripts = v
 }
 
-// GetContainerTemplates returns the ContainerTemplates field value if set, zero value otherwise.
+// GetContainerTemplates returns the ContainerTemplates field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ContainerType) GetContainerTemplates() []map[string]interface{} {
-	if o == nil || IsNil(o.ContainerTemplates) {
+	if o == nil {
 		var ret []map[string]interface{}
 		return ret
 	}
@@ -517,6 +531,7 @@ func (o *ContainerType) GetContainerTemplates() []map[string]interface{} {
 
 // GetContainerTemplatesOk returns a tuple with the ContainerTemplates field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ContainerType) GetContainerTemplatesOk() ([]map[string]interface{}, bool) {
 	if o == nil || IsNil(o.ContainerTemplates) {
 		return nil, false
@@ -538,9 +553,9 @@ func (o *ContainerType) SetContainerTemplates(v []map[string]interface{}) {
 	o.ContainerTemplates = v
 }
 
-// GetEnvironmentVariables returns the EnvironmentVariables field value if set, zero value otherwise.
+// GetEnvironmentVariables returns the EnvironmentVariables field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ContainerType) GetEnvironmentVariables() []map[string]interface{} {
-	if o == nil || IsNil(o.EnvironmentVariables) {
+	if o == nil {
 		var ret []map[string]interface{}
 		return ret
 	}
@@ -549,6 +564,7 @@ func (o *ContainerType) GetEnvironmentVariables() []map[string]interface{} {
 
 // GetEnvironmentVariablesOk returns a tuple with the EnvironmentVariables field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ContainerType) GetEnvironmentVariablesOk() ([]map[string]interface{}, bool) {
 	if o == nil || IsNil(o.EnvironmentVariables) {
 		return nil, false
@@ -610,22 +626,22 @@ func (o ContainerType) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.OsType) {
 		toSerialize["osType"] = o.OsType
 	}
-	if !IsNil(o.Category) {
-		toSerialize["category"] = o.Category
+	if o.Category.IsSet() {
+		toSerialize["category"] = o.Category.Get()
 	}
-	if !IsNil(o.Config) {
+	if o.Config != nil {
 		toSerialize["config"] = o.Config
 	}
-	if !IsNil(o.ContainerPorts) {
+	if o.ContainerPorts != nil {
 		toSerialize["containerPorts"] = o.ContainerPorts
 	}
-	if !IsNil(o.ContainerScripts) {
+	if o.ContainerScripts != nil {
 		toSerialize["containerScripts"] = o.ContainerScripts
 	}
-	if !IsNil(o.ContainerTemplates) {
+	if o.ContainerTemplates != nil {
 		toSerialize["containerTemplates"] = o.ContainerTemplates
 	}
-	if !IsNil(o.EnvironmentVariables) {
+	if o.EnvironmentVariables != nil {
 		toSerialize["environmentVariables"] = o.EnvironmentVariables
 	}
 

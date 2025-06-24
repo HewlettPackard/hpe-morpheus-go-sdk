@@ -26,19 +26,19 @@ type GetNetworkRoutersNats200ResponseNetworkRouterNATsInner struct {
 	Description                *string                `json:"description,omitempty"`
 	Enabled                    *bool                  `json:"enabled,omitempty"`
 	SourceNetwork              *string                `json:"sourceNetwork,omitempty"`
-	DestinationNetwork         *string                `json:"destinationNetwork,omitempty"`
+	DestinationNetwork         NullableString         `json:"destinationNetwork,omitempty"`
 	TranslatedNetwork          *string                `json:"translatedNetwork,omitempty"`
-	SourcePorts                *string                `json:"sourcePorts,omitempty"`
-	DestinationPorts           *string                `json:"destinationPorts,omitempty"`
-	TranslatedPorts            *string                `json:"translatedPorts,omitempty"`
+	SourcePorts                NullableString         `json:"sourcePorts,omitempty"`
+	DestinationPorts           NullableString         `json:"destinationPorts,omitempty"`
+	TranslatedPorts            NullableString         `json:"translatedPorts,omitempty"`
 	Priority                   *int32                 `json:"priority,omitempty"`
-	Protocol                   *string                `json:"protocol,omitempty"`
-	MatchIpv6DestinationPrefix *string                `json:"matchIpv6DestinationPrefix,omitempty"`
-	TranslatedIpv4SourcePrefix *string                `json:"translatedIpv4SourcePrefix,omitempty"`
-	RefType                    *string                `json:"refType,omitempty"`
-	RefId                      *string                `json:"refId,omitempty"`
+	Protocol                   NullableString         `json:"protocol,omitempty"`
+	MatchIpv6DestinationPrefix NullableString         `json:"matchIpv6DestinationPrefix,omitempty"`
+	TranslatedIpv4SourcePrefix NullableString         `json:"translatedIpv4SourcePrefix,omitempty"`
+	RefType                    NullableString         `json:"refType,omitempty"`
+	RefId                      NullableString         `json:"refId,omitempty"`
 	SyncSource                 *string                `json:"syncSource,omitempty"`
-	InternalId                 *string                `json:"internalId,omitempty"`
+	InternalId                 NullableString         `json:"internalId,omitempty"`
 	ExternalId                 *string                `json:"externalId,omitempty"`
 	ProviderId                 *string                `json:"providerId,omitempty"`
 	DateCreated                *time.Time             `json:"dateCreated,omitempty"`
@@ -225,36 +225,47 @@ func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) SetSourceNetwor
 	o.SourceNetwork = &v
 }
 
-// GetDestinationNetwork returns the DestinationNetwork field value if set, zero value otherwise.
+// GetDestinationNetwork returns the DestinationNetwork field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) GetDestinationNetwork() string {
-	if o == nil || IsNil(o.DestinationNetwork) {
+	if o == nil || IsNil(o.DestinationNetwork.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.DestinationNetwork
+	return *o.DestinationNetwork.Get()
 }
 
 // GetDestinationNetworkOk returns a tuple with the DestinationNetwork field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) GetDestinationNetworkOk() (*string, bool) {
-	if o == nil || IsNil(o.DestinationNetwork) {
+	if o == nil {
 		return nil, false
 	}
-	return o.DestinationNetwork, true
+	return o.DestinationNetwork.Get(), o.DestinationNetwork.IsSet()
 }
 
 // IsSetDestinationNetwork returns a boolean if a field has been set.
 func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) IsSetDestinationNetwork() bool {
-	if o != nil && !IsNil(o.DestinationNetwork) {
+	if o != nil && o.DestinationNetwork.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDestinationNetwork gets a reference to the given string and assigns it to the DestinationNetwork field.
+// SetDestinationNetwork gets a reference to the given NullableString and assigns it to the DestinationNetwork field.
 func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) SetDestinationNetwork(v string) {
-	o.DestinationNetwork = &v
+	o.DestinationNetwork.Set(&v)
+}
+
+// SetDestinationNetworkNil sets the value for DestinationNetwork to be an explicit nil
+func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) SetDestinationNetworkNil() {
+	o.DestinationNetwork.Set(nil)
+}
+
+// UnsetDestinationNetwork ensures that no value is present for DestinationNetwork, not even an explicit nil
+func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) UnsetDestinationNetwork() {
+	o.DestinationNetwork.Unset()
 }
 
 // GetTranslatedNetwork returns the TranslatedNetwork field value if set, zero value otherwise.
@@ -289,100 +300,133 @@ func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) SetTranslatedNe
 	o.TranslatedNetwork = &v
 }
 
-// GetSourcePorts returns the SourcePorts field value if set, zero value otherwise.
+// GetSourcePorts returns the SourcePorts field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) GetSourcePorts() string {
-	if o == nil || IsNil(o.SourcePorts) {
+	if o == nil || IsNil(o.SourcePorts.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.SourcePorts
+	return *o.SourcePorts.Get()
 }
 
 // GetSourcePortsOk returns a tuple with the SourcePorts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) GetSourcePortsOk() (*string, bool) {
-	if o == nil || IsNil(o.SourcePorts) {
+	if o == nil {
 		return nil, false
 	}
-	return o.SourcePorts, true
+	return o.SourcePorts.Get(), o.SourcePorts.IsSet()
 }
 
 // IsSetSourcePorts returns a boolean if a field has been set.
 func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) IsSetSourcePorts() bool {
-	if o != nil && !IsNil(o.SourcePorts) {
+	if o != nil && o.SourcePorts.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetSourcePorts gets a reference to the given string and assigns it to the SourcePorts field.
+// SetSourcePorts gets a reference to the given NullableString and assigns it to the SourcePorts field.
 func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) SetSourcePorts(v string) {
-	o.SourcePorts = &v
+	o.SourcePorts.Set(&v)
 }
 
-// GetDestinationPorts returns the DestinationPorts field value if set, zero value otherwise.
+// SetSourcePortsNil sets the value for SourcePorts to be an explicit nil
+func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) SetSourcePortsNil() {
+	o.SourcePorts.Set(nil)
+}
+
+// UnsetSourcePorts ensures that no value is present for SourcePorts, not even an explicit nil
+func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) UnsetSourcePorts() {
+	o.SourcePorts.Unset()
+}
+
+// GetDestinationPorts returns the DestinationPorts field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) GetDestinationPorts() string {
-	if o == nil || IsNil(o.DestinationPorts) {
+	if o == nil || IsNil(o.DestinationPorts.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.DestinationPorts
+	return *o.DestinationPorts.Get()
 }
 
 // GetDestinationPortsOk returns a tuple with the DestinationPorts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) GetDestinationPortsOk() (*string, bool) {
-	if o == nil || IsNil(o.DestinationPorts) {
+	if o == nil {
 		return nil, false
 	}
-	return o.DestinationPorts, true
+	return o.DestinationPorts.Get(), o.DestinationPorts.IsSet()
 }
 
 // IsSetDestinationPorts returns a boolean if a field has been set.
 func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) IsSetDestinationPorts() bool {
-	if o != nil && !IsNil(o.DestinationPorts) {
+	if o != nil && o.DestinationPorts.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDestinationPorts gets a reference to the given string and assigns it to the DestinationPorts field.
+// SetDestinationPorts gets a reference to the given NullableString and assigns it to the DestinationPorts field.
 func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) SetDestinationPorts(v string) {
-	o.DestinationPorts = &v
+	o.DestinationPorts.Set(&v)
 }
 
-// GetTranslatedPorts returns the TranslatedPorts field value if set, zero value otherwise.
+// SetDestinationPortsNil sets the value for DestinationPorts to be an explicit nil
+func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) SetDestinationPortsNil() {
+	o.DestinationPorts.Set(nil)
+}
+
+// UnsetDestinationPorts ensures that no value is present for DestinationPorts, not even an explicit nil
+func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) UnsetDestinationPorts() {
+	o.DestinationPorts.Unset()
+}
+
+// GetTranslatedPorts returns the TranslatedPorts field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) GetTranslatedPorts() string {
-	if o == nil || IsNil(o.TranslatedPorts) {
+	if o == nil || IsNil(o.TranslatedPorts.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.TranslatedPorts
+	return *o.TranslatedPorts.Get()
 }
 
 // GetTranslatedPortsOk returns a tuple with the TranslatedPorts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) GetTranslatedPortsOk() (*string, bool) {
-	if o == nil || IsNil(o.TranslatedPorts) {
+	if o == nil {
 		return nil, false
 	}
-	return o.TranslatedPorts, true
+	return o.TranslatedPorts.Get(), o.TranslatedPorts.IsSet()
 }
 
 // IsSetTranslatedPorts returns a boolean if a field has been set.
 func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) IsSetTranslatedPorts() bool {
-	if o != nil && !IsNil(o.TranslatedPorts) {
+	if o != nil && o.TranslatedPorts.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetTranslatedPorts gets a reference to the given string and assigns it to the TranslatedPorts field.
+// SetTranslatedPorts gets a reference to the given NullableString and assigns it to the TranslatedPorts field.
 func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) SetTranslatedPorts(v string) {
-	o.TranslatedPorts = &v
+	o.TranslatedPorts.Set(&v)
+}
+
+// SetTranslatedPortsNil sets the value for TranslatedPorts to be an explicit nil
+func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) SetTranslatedPortsNil() {
+	o.TranslatedPorts.Set(nil)
+}
+
+// UnsetTranslatedPorts ensures that no value is present for TranslatedPorts, not even an explicit nil
+func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) UnsetTranslatedPorts() {
+	o.TranslatedPorts.Unset()
 }
 
 // GetPriority returns the Priority field value if set, zero value otherwise.
@@ -417,164 +461,219 @@ func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) SetPriority(v i
 	o.Priority = &v
 }
 
-// GetProtocol returns the Protocol field value if set, zero value otherwise.
+// GetProtocol returns the Protocol field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) GetProtocol() string {
-	if o == nil || IsNil(o.Protocol) {
+	if o == nil || IsNil(o.Protocol.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Protocol
+	return *o.Protocol.Get()
 }
 
 // GetProtocolOk returns a tuple with the Protocol field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) GetProtocolOk() (*string, bool) {
-	if o == nil || IsNil(o.Protocol) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Protocol, true
+	return o.Protocol.Get(), o.Protocol.IsSet()
 }
 
 // IsSetProtocol returns a boolean if a field has been set.
 func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) IsSetProtocol() bool {
-	if o != nil && !IsNil(o.Protocol) {
+	if o != nil && o.Protocol.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetProtocol gets a reference to the given string and assigns it to the Protocol field.
+// SetProtocol gets a reference to the given NullableString and assigns it to the Protocol field.
 func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) SetProtocol(v string) {
-	o.Protocol = &v
+	o.Protocol.Set(&v)
 }
 
-// GetMatchIpv6DestinationPrefix returns the MatchIpv6DestinationPrefix field value if set, zero value otherwise.
+// SetProtocolNil sets the value for Protocol to be an explicit nil
+func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) SetProtocolNil() {
+	o.Protocol.Set(nil)
+}
+
+// UnsetProtocol ensures that no value is present for Protocol, not even an explicit nil
+func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) UnsetProtocol() {
+	o.Protocol.Unset()
+}
+
+// GetMatchIpv6DestinationPrefix returns the MatchIpv6DestinationPrefix field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) GetMatchIpv6DestinationPrefix() string {
-	if o == nil || IsNil(o.MatchIpv6DestinationPrefix) {
+	if o == nil || IsNil(o.MatchIpv6DestinationPrefix.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.MatchIpv6DestinationPrefix
+	return *o.MatchIpv6DestinationPrefix.Get()
 }
 
 // GetMatchIpv6DestinationPrefixOk returns a tuple with the MatchIpv6DestinationPrefix field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) GetMatchIpv6DestinationPrefixOk() (*string, bool) {
-	if o == nil || IsNil(o.MatchIpv6DestinationPrefix) {
+	if o == nil {
 		return nil, false
 	}
-	return o.MatchIpv6DestinationPrefix, true
+	return o.MatchIpv6DestinationPrefix.Get(), o.MatchIpv6DestinationPrefix.IsSet()
 }
 
 // IsSetMatchIpv6DestinationPrefix returns a boolean if a field has been set.
 func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) IsSetMatchIpv6DestinationPrefix() bool {
-	if o != nil && !IsNil(o.MatchIpv6DestinationPrefix) {
+	if o != nil && o.MatchIpv6DestinationPrefix.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetMatchIpv6DestinationPrefix gets a reference to the given string and assigns it to the MatchIpv6DestinationPrefix field.
+// SetMatchIpv6DestinationPrefix gets a reference to the given NullableString and assigns it to the MatchIpv6DestinationPrefix field.
 func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) SetMatchIpv6DestinationPrefix(v string) {
-	o.MatchIpv6DestinationPrefix = &v
+	o.MatchIpv6DestinationPrefix.Set(&v)
 }
 
-// GetTranslatedIpv4SourcePrefix returns the TranslatedIpv4SourcePrefix field value if set, zero value otherwise.
+// SetMatchIpv6DestinationPrefixNil sets the value for MatchIpv6DestinationPrefix to be an explicit nil
+func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) SetMatchIpv6DestinationPrefixNil() {
+	o.MatchIpv6DestinationPrefix.Set(nil)
+}
+
+// UnsetMatchIpv6DestinationPrefix ensures that no value is present for MatchIpv6DestinationPrefix, not even an explicit nil
+func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) UnsetMatchIpv6DestinationPrefix() {
+	o.MatchIpv6DestinationPrefix.Unset()
+}
+
+// GetTranslatedIpv4SourcePrefix returns the TranslatedIpv4SourcePrefix field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) GetTranslatedIpv4SourcePrefix() string {
-	if o == nil || IsNil(o.TranslatedIpv4SourcePrefix) {
+	if o == nil || IsNil(o.TranslatedIpv4SourcePrefix.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.TranslatedIpv4SourcePrefix
+	return *o.TranslatedIpv4SourcePrefix.Get()
 }
 
 // GetTranslatedIpv4SourcePrefixOk returns a tuple with the TranslatedIpv4SourcePrefix field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) GetTranslatedIpv4SourcePrefixOk() (*string, bool) {
-	if o == nil || IsNil(o.TranslatedIpv4SourcePrefix) {
+	if o == nil {
 		return nil, false
 	}
-	return o.TranslatedIpv4SourcePrefix, true
+	return o.TranslatedIpv4SourcePrefix.Get(), o.TranslatedIpv4SourcePrefix.IsSet()
 }
 
 // IsSetTranslatedIpv4SourcePrefix returns a boolean if a field has been set.
 func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) IsSetTranslatedIpv4SourcePrefix() bool {
-	if o != nil && !IsNil(o.TranslatedIpv4SourcePrefix) {
+	if o != nil && o.TranslatedIpv4SourcePrefix.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetTranslatedIpv4SourcePrefix gets a reference to the given string and assigns it to the TranslatedIpv4SourcePrefix field.
+// SetTranslatedIpv4SourcePrefix gets a reference to the given NullableString and assigns it to the TranslatedIpv4SourcePrefix field.
 func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) SetTranslatedIpv4SourcePrefix(v string) {
-	o.TranslatedIpv4SourcePrefix = &v
+	o.TranslatedIpv4SourcePrefix.Set(&v)
 }
 
-// GetRefType returns the RefType field value if set, zero value otherwise.
+// SetTranslatedIpv4SourcePrefixNil sets the value for TranslatedIpv4SourcePrefix to be an explicit nil
+func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) SetTranslatedIpv4SourcePrefixNil() {
+	o.TranslatedIpv4SourcePrefix.Set(nil)
+}
+
+// UnsetTranslatedIpv4SourcePrefix ensures that no value is present for TranslatedIpv4SourcePrefix, not even an explicit nil
+func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) UnsetTranslatedIpv4SourcePrefix() {
+	o.TranslatedIpv4SourcePrefix.Unset()
+}
+
+// GetRefType returns the RefType field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) GetRefType() string {
-	if o == nil || IsNil(o.RefType) {
+	if o == nil || IsNil(o.RefType.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.RefType
+	return *o.RefType.Get()
 }
 
 // GetRefTypeOk returns a tuple with the RefType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) GetRefTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.RefType) {
+	if o == nil {
 		return nil, false
 	}
-	return o.RefType, true
+	return o.RefType.Get(), o.RefType.IsSet()
 }
 
 // IsSetRefType returns a boolean if a field has been set.
 func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) IsSetRefType() bool {
-	if o != nil && !IsNil(o.RefType) {
+	if o != nil && o.RefType.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetRefType gets a reference to the given string and assigns it to the RefType field.
+// SetRefType gets a reference to the given NullableString and assigns it to the RefType field.
 func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) SetRefType(v string) {
-	o.RefType = &v
+	o.RefType.Set(&v)
 }
 
-// GetRefId returns the RefId field value if set, zero value otherwise.
+// SetRefTypeNil sets the value for RefType to be an explicit nil
+func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) SetRefTypeNil() {
+	o.RefType.Set(nil)
+}
+
+// UnsetRefType ensures that no value is present for RefType, not even an explicit nil
+func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) UnsetRefType() {
+	o.RefType.Unset()
+}
+
+// GetRefId returns the RefId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) GetRefId() string {
-	if o == nil || IsNil(o.RefId) {
+	if o == nil || IsNil(o.RefId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.RefId
+	return *o.RefId.Get()
 }
 
 // GetRefIdOk returns a tuple with the RefId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) GetRefIdOk() (*string, bool) {
-	if o == nil || IsNil(o.RefId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.RefId, true
+	return o.RefId.Get(), o.RefId.IsSet()
 }
 
 // IsSetRefId returns a boolean if a field has been set.
 func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) IsSetRefId() bool {
-	if o != nil && !IsNil(o.RefId) {
+	if o != nil && o.RefId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetRefId gets a reference to the given string and assigns it to the RefId field.
+// SetRefId gets a reference to the given NullableString and assigns it to the RefId field.
 func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) SetRefId(v string) {
-	o.RefId = &v
+	o.RefId.Set(&v)
+}
+
+// SetRefIdNil sets the value for RefId to be an explicit nil
+func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) SetRefIdNil() {
+	o.RefId.Set(nil)
+}
+
+// UnsetRefId ensures that no value is present for RefId, not even an explicit nil
+func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) UnsetRefId() {
+	o.RefId.Unset()
 }
 
 // GetSyncSource returns the SyncSource field value if set, zero value otherwise.
@@ -609,36 +708,47 @@ func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) SetSyncSource(v
 	o.SyncSource = &v
 }
 
-// GetInternalId returns the InternalId field value if set, zero value otherwise.
+// GetInternalId returns the InternalId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) GetInternalId() string {
-	if o == nil || IsNil(o.InternalId) {
+	if o == nil || IsNil(o.InternalId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.InternalId
+	return *o.InternalId.Get()
 }
 
 // GetInternalIdOk returns a tuple with the InternalId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) GetInternalIdOk() (*string, bool) {
-	if o == nil || IsNil(o.InternalId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.InternalId, true
+	return o.InternalId.Get(), o.InternalId.IsSet()
 }
 
 // IsSetInternalId returns a boolean if a field has been set.
 func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) IsSetInternalId() bool {
-	if o != nil && !IsNil(o.InternalId) {
+	if o != nil && o.InternalId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetInternalId gets a reference to the given string and assigns it to the InternalId field.
+// SetInternalId gets a reference to the given NullableString and assigns it to the InternalId field.
 func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) SetInternalId(v string) {
-	o.InternalId = &v
+	o.InternalId.Set(&v)
+}
+
+// SetInternalIdNil sets the value for InternalId to be an explicit nil
+func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) SetInternalIdNil() {
+	o.InternalId.Set(nil)
+}
+
+// UnsetInternalId ensures that no value is present for InternalId, not even an explicit nil
+func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) UnsetInternalId() {
+	o.InternalId.Unset()
 }
 
 // GetExternalId returns the ExternalId field value if set, zero value otherwise.
@@ -794,44 +904,44 @@ func (o GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) ToMap() (map[str
 	if !IsNil(o.SourceNetwork) {
 		toSerialize["sourceNetwork"] = o.SourceNetwork
 	}
-	if !IsNil(o.DestinationNetwork) {
-		toSerialize["destinationNetwork"] = o.DestinationNetwork
+	if o.DestinationNetwork.IsSet() {
+		toSerialize["destinationNetwork"] = o.DestinationNetwork.Get()
 	}
 	if !IsNil(o.TranslatedNetwork) {
 		toSerialize["translatedNetwork"] = o.TranslatedNetwork
 	}
-	if !IsNil(o.SourcePorts) {
-		toSerialize["sourcePorts"] = o.SourcePorts
+	if o.SourcePorts.IsSet() {
+		toSerialize["sourcePorts"] = o.SourcePorts.Get()
 	}
-	if !IsNil(o.DestinationPorts) {
-		toSerialize["destinationPorts"] = o.DestinationPorts
+	if o.DestinationPorts.IsSet() {
+		toSerialize["destinationPorts"] = o.DestinationPorts.Get()
 	}
-	if !IsNil(o.TranslatedPorts) {
-		toSerialize["translatedPorts"] = o.TranslatedPorts
+	if o.TranslatedPorts.IsSet() {
+		toSerialize["translatedPorts"] = o.TranslatedPorts.Get()
 	}
 	if !IsNil(o.Priority) {
 		toSerialize["priority"] = o.Priority
 	}
-	if !IsNil(o.Protocol) {
-		toSerialize["protocol"] = o.Protocol
+	if o.Protocol.IsSet() {
+		toSerialize["protocol"] = o.Protocol.Get()
 	}
-	if !IsNil(o.MatchIpv6DestinationPrefix) {
-		toSerialize["matchIpv6DestinationPrefix"] = o.MatchIpv6DestinationPrefix
+	if o.MatchIpv6DestinationPrefix.IsSet() {
+		toSerialize["matchIpv6DestinationPrefix"] = o.MatchIpv6DestinationPrefix.Get()
 	}
-	if !IsNil(o.TranslatedIpv4SourcePrefix) {
-		toSerialize["translatedIpv4SourcePrefix"] = o.TranslatedIpv4SourcePrefix
+	if o.TranslatedIpv4SourcePrefix.IsSet() {
+		toSerialize["translatedIpv4SourcePrefix"] = o.TranslatedIpv4SourcePrefix.Get()
 	}
-	if !IsNil(o.RefType) {
-		toSerialize["refType"] = o.RefType
+	if o.RefType.IsSet() {
+		toSerialize["refType"] = o.RefType.Get()
 	}
-	if !IsNil(o.RefId) {
-		toSerialize["refId"] = o.RefId
+	if o.RefId.IsSet() {
+		toSerialize["refId"] = o.RefId.Get()
 	}
 	if !IsNil(o.SyncSource) {
 		toSerialize["syncSource"] = o.SyncSource
 	}
-	if !IsNil(o.InternalId) {
-		toSerialize["internalId"] = o.InternalId
+	if o.InternalId.IsSet() {
+		toSerialize["internalId"] = o.InternalId.Get()
 	}
 	if !IsNil(o.ExternalId) {
 		toSerialize["externalId"] = o.ExternalId

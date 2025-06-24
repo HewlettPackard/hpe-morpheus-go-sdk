@@ -28,20 +28,20 @@ type ListBackups200ResponseAllOfBackupsInner struct {
 	// Source Type (instance, server, storage)
 	LocationType      *string                                                   `json:"locationType,omitempty"`
 	Instance          *ListBackups200ResponseAllOfBackupsInnerInstance          `json:"instance,omitempty"`
-	ContainerId       *int64                                                    `json:"containerId,omitempty"`
+	ContainerId       NullableInt64                                             `json:"containerId,omitempty"`
 	Job               *ListBackups200ResponseAllOfBackupsInnerJob               `json:"job,omitempty"`
 	Schedule          *ListBackups200ResponseAllOfBackupsInnerSchedule          `json:"schedule,omitempty"`
-	RetentionCount    *int64                                                    `json:"retentionCount,omitempty"`
+	RetentionCount    NullableInt64                                             `json:"retentionCount,omitempty"`
 	BackupType        *ListBackups200ResponseAllOfBackupsInnerBackupType        `json:"backupType,omitempty"`
 	StorageProvider   *ListBackups200ResponseAllOfBackupsInnerStorageProvider   `json:"storageProvider,omitempty"`
 	BackupProvider    *ListBackups200ResponseAllOfBackupsInnerBackupProvider    `json:"backupProvider,omitempty"`
 	BackupRespository *ListBackups200ResponseAllOfBackupsInnerBackupRespository `json:"backupRespository,omitempty"`
 	// Cron Expression
-	CronExpression *string `json:"cronExpression,omitempty"`
+	CronExpression NullableString `json:"cronExpression,omitempty"`
 	// Next Fire
-	NextFire *time.Time `json:"nextFire,omitempty"`
+	NextFire NullableTime `json:"nextFire,omitempty"`
 	// Last Status
-	LastStatus *string                                            `json:"lastStatus,omitempty"`
+	LastStatus NullableString                                     `json:"lastStatus,omitempty"`
 	LastResult *ListBackups200ResponseAllOfBackupsInnerLastResult `json:"lastResult,omitempty"`
 	Stats      *ListBackups200ResponseAllOfBackupsInnerStats      `json:"stats,omitempty"`
 	// Enabled
@@ -200,36 +200,47 @@ func (o *ListBackups200ResponseAllOfBackupsInner) SetInstance(v ListBackups200Re
 	o.Instance = &v
 }
 
-// GetContainerId returns the ContainerId field value if set, zero value otherwise.
+// GetContainerId returns the ContainerId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListBackups200ResponseAllOfBackupsInner) GetContainerId() int64 {
-	if o == nil || IsNil(o.ContainerId) {
+	if o == nil || IsNil(o.ContainerId.Get()) {
 		var ret int64
 		return ret
 	}
-	return *o.ContainerId
+	return *o.ContainerId.Get()
 }
 
 // GetContainerIdOk returns a tuple with the ContainerId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListBackups200ResponseAllOfBackupsInner) GetContainerIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.ContainerId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ContainerId, true
+	return o.ContainerId.Get(), o.ContainerId.IsSet()
 }
 
 // IsSetContainerId returns a boolean if a field has been set.
 func (o *ListBackups200ResponseAllOfBackupsInner) IsSetContainerId() bool {
-	if o != nil && !IsNil(o.ContainerId) {
+	if o != nil && o.ContainerId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetContainerId gets a reference to the given int64 and assigns it to the ContainerId field.
+// SetContainerId gets a reference to the given NullableInt64 and assigns it to the ContainerId field.
 func (o *ListBackups200ResponseAllOfBackupsInner) SetContainerId(v int64) {
-	o.ContainerId = &v
+	o.ContainerId.Set(&v)
+}
+
+// SetContainerIdNil sets the value for ContainerId to be an explicit nil
+func (o *ListBackups200ResponseAllOfBackupsInner) SetContainerIdNil() {
+	o.ContainerId.Set(nil)
+}
+
+// UnsetContainerId ensures that no value is present for ContainerId, not even an explicit nil
+func (o *ListBackups200ResponseAllOfBackupsInner) UnsetContainerId() {
+	o.ContainerId.Unset()
 }
 
 // GetJob returns the Job field value if set, zero value otherwise.
@@ -296,36 +307,47 @@ func (o *ListBackups200ResponseAllOfBackupsInner) SetSchedule(v ListBackups200Re
 	o.Schedule = &v
 }
 
-// GetRetentionCount returns the RetentionCount field value if set, zero value otherwise.
+// GetRetentionCount returns the RetentionCount field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListBackups200ResponseAllOfBackupsInner) GetRetentionCount() int64 {
-	if o == nil || IsNil(o.RetentionCount) {
+	if o == nil || IsNil(o.RetentionCount.Get()) {
 		var ret int64
 		return ret
 	}
-	return *o.RetentionCount
+	return *o.RetentionCount.Get()
 }
 
 // GetRetentionCountOk returns a tuple with the RetentionCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListBackups200ResponseAllOfBackupsInner) GetRetentionCountOk() (*int64, bool) {
-	if o == nil || IsNil(o.RetentionCount) {
+	if o == nil {
 		return nil, false
 	}
-	return o.RetentionCount, true
+	return o.RetentionCount.Get(), o.RetentionCount.IsSet()
 }
 
 // IsSetRetentionCount returns a boolean if a field has been set.
 func (o *ListBackups200ResponseAllOfBackupsInner) IsSetRetentionCount() bool {
-	if o != nil && !IsNil(o.RetentionCount) {
+	if o != nil && o.RetentionCount.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetRetentionCount gets a reference to the given int64 and assigns it to the RetentionCount field.
+// SetRetentionCount gets a reference to the given NullableInt64 and assigns it to the RetentionCount field.
 func (o *ListBackups200ResponseAllOfBackupsInner) SetRetentionCount(v int64) {
-	o.RetentionCount = &v
+	o.RetentionCount.Set(&v)
+}
+
+// SetRetentionCountNil sets the value for RetentionCount to be an explicit nil
+func (o *ListBackups200ResponseAllOfBackupsInner) SetRetentionCountNil() {
+	o.RetentionCount.Set(nil)
+}
+
+// UnsetRetentionCount ensures that no value is present for RetentionCount, not even an explicit nil
+func (o *ListBackups200ResponseAllOfBackupsInner) UnsetRetentionCount() {
+	o.RetentionCount.Unset()
 }
 
 // GetBackupType returns the BackupType field value if set, zero value otherwise.
@@ -456,100 +478,133 @@ func (o *ListBackups200ResponseAllOfBackupsInner) SetBackupRespository(v ListBac
 	o.BackupRespository = &v
 }
 
-// GetCronExpression returns the CronExpression field value if set, zero value otherwise.
+// GetCronExpression returns the CronExpression field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListBackups200ResponseAllOfBackupsInner) GetCronExpression() string {
-	if o == nil || IsNil(o.CronExpression) {
+	if o == nil || IsNil(o.CronExpression.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.CronExpression
+	return *o.CronExpression.Get()
 }
 
 // GetCronExpressionOk returns a tuple with the CronExpression field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListBackups200ResponseAllOfBackupsInner) GetCronExpressionOk() (*string, bool) {
-	if o == nil || IsNil(o.CronExpression) {
+	if o == nil {
 		return nil, false
 	}
-	return o.CronExpression, true
+	return o.CronExpression.Get(), o.CronExpression.IsSet()
 }
 
 // IsSetCronExpression returns a boolean if a field has been set.
 func (o *ListBackups200ResponseAllOfBackupsInner) IsSetCronExpression() bool {
-	if o != nil && !IsNil(o.CronExpression) {
+	if o != nil && o.CronExpression.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCronExpression gets a reference to the given string and assigns it to the CronExpression field.
+// SetCronExpression gets a reference to the given NullableString and assigns it to the CronExpression field.
 func (o *ListBackups200ResponseAllOfBackupsInner) SetCronExpression(v string) {
-	o.CronExpression = &v
+	o.CronExpression.Set(&v)
 }
 
-// GetNextFire returns the NextFire field value if set, zero value otherwise.
+// SetCronExpressionNil sets the value for CronExpression to be an explicit nil
+func (o *ListBackups200ResponseAllOfBackupsInner) SetCronExpressionNil() {
+	o.CronExpression.Set(nil)
+}
+
+// UnsetCronExpression ensures that no value is present for CronExpression, not even an explicit nil
+func (o *ListBackups200ResponseAllOfBackupsInner) UnsetCronExpression() {
+	o.CronExpression.Unset()
+}
+
+// GetNextFire returns the NextFire field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListBackups200ResponseAllOfBackupsInner) GetNextFire() time.Time {
-	if o == nil || IsNil(o.NextFire) {
+	if o == nil || IsNil(o.NextFire.Get()) {
 		var ret time.Time
 		return ret
 	}
-	return *o.NextFire
+	return *o.NextFire.Get()
 }
 
 // GetNextFireOk returns a tuple with the NextFire field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListBackups200ResponseAllOfBackupsInner) GetNextFireOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.NextFire) {
+	if o == nil {
 		return nil, false
 	}
-	return o.NextFire, true
+	return o.NextFire.Get(), o.NextFire.IsSet()
 }
 
 // IsSetNextFire returns a boolean if a field has been set.
 func (o *ListBackups200ResponseAllOfBackupsInner) IsSetNextFire() bool {
-	if o != nil && !IsNil(o.NextFire) {
+	if o != nil && o.NextFire.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetNextFire gets a reference to the given time.Time and assigns it to the NextFire field.
+// SetNextFire gets a reference to the given NullableTime and assigns it to the NextFire field.
 func (o *ListBackups200ResponseAllOfBackupsInner) SetNextFire(v time.Time) {
-	o.NextFire = &v
+	o.NextFire.Set(&v)
 }
 
-// GetLastStatus returns the LastStatus field value if set, zero value otherwise.
+// SetNextFireNil sets the value for NextFire to be an explicit nil
+func (o *ListBackups200ResponseAllOfBackupsInner) SetNextFireNil() {
+	o.NextFire.Set(nil)
+}
+
+// UnsetNextFire ensures that no value is present for NextFire, not even an explicit nil
+func (o *ListBackups200ResponseAllOfBackupsInner) UnsetNextFire() {
+	o.NextFire.Unset()
+}
+
+// GetLastStatus returns the LastStatus field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListBackups200ResponseAllOfBackupsInner) GetLastStatus() string {
-	if o == nil || IsNil(o.LastStatus) {
+	if o == nil || IsNil(o.LastStatus.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.LastStatus
+	return *o.LastStatus.Get()
 }
 
 // GetLastStatusOk returns a tuple with the LastStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListBackups200ResponseAllOfBackupsInner) GetLastStatusOk() (*string, bool) {
-	if o == nil || IsNil(o.LastStatus) {
+	if o == nil {
 		return nil, false
 	}
-	return o.LastStatus, true
+	return o.LastStatus.Get(), o.LastStatus.IsSet()
 }
 
 // IsSetLastStatus returns a boolean if a field has been set.
 func (o *ListBackups200ResponseAllOfBackupsInner) IsSetLastStatus() bool {
-	if o != nil && !IsNil(o.LastStatus) {
+	if o != nil && o.LastStatus.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetLastStatus gets a reference to the given string and assigns it to the LastStatus field.
+// SetLastStatus gets a reference to the given NullableString and assigns it to the LastStatus field.
 func (o *ListBackups200ResponseAllOfBackupsInner) SetLastStatus(v string) {
-	o.LastStatus = &v
+	o.LastStatus.Set(&v)
+}
+
+// SetLastStatusNil sets the value for LastStatus to be an explicit nil
+func (o *ListBackups200ResponseAllOfBackupsInner) SetLastStatusNil() {
+	o.LastStatus.Set(nil)
+}
+
+// UnsetLastStatus ensures that no value is present for LastStatus, not even an explicit nil
+func (o *ListBackups200ResponseAllOfBackupsInner) UnsetLastStatus() {
+	o.LastStatus.Unset()
 }
 
 // GetLastResult returns the LastResult field value if set, zero value otherwise.
@@ -734,8 +789,8 @@ func (o ListBackups200ResponseAllOfBackupsInner) ToMap() (map[string]interface{}
 	if !IsNil(o.Instance) {
 		toSerialize["instance"] = o.Instance
 	}
-	if !IsNil(o.ContainerId) {
-		toSerialize["containerId"] = o.ContainerId
+	if o.ContainerId.IsSet() {
+		toSerialize["containerId"] = o.ContainerId.Get()
 	}
 	if !IsNil(o.Job) {
 		toSerialize["job"] = o.Job
@@ -743,8 +798,8 @@ func (o ListBackups200ResponseAllOfBackupsInner) ToMap() (map[string]interface{}
 	if !IsNil(o.Schedule) {
 		toSerialize["schedule"] = o.Schedule
 	}
-	if !IsNil(o.RetentionCount) {
-		toSerialize["retentionCount"] = o.RetentionCount
+	if o.RetentionCount.IsSet() {
+		toSerialize["retentionCount"] = o.RetentionCount.Get()
 	}
 	if !IsNil(o.BackupType) {
 		toSerialize["backupType"] = o.BackupType
@@ -758,14 +813,14 @@ func (o ListBackups200ResponseAllOfBackupsInner) ToMap() (map[string]interface{}
 	if !IsNil(o.BackupRespository) {
 		toSerialize["backupRespository"] = o.BackupRespository
 	}
-	if !IsNil(o.CronExpression) {
-		toSerialize["cronExpression"] = o.CronExpression
+	if o.CronExpression.IsSet() {
+		toSerialize["cronExpression"] = o.CronExpression.Get()
 	}
-	if !IsNil(o.NextFire) {
-		toSerialize["nextFire"] = o.NextFire
+	if o.NextFire.IsSet() {
+		toSerialize["nextFire"] = o.NextFire.Get()
 	}
-	if !IsNil(o.LastStatus) {
-		toSerialize["lastStatus"] = o.LastStatus
+	if o.LastStatus.IsSet() {
+		toSerialize["lastStatus"] = o.LastStatus.Get()
 	}
 	if !IsNil(o.LastResult) {
 		toSerialize["lastResult"] = o.LastResult

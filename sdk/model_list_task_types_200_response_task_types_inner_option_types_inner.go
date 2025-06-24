@@ -22,25 +22,25 @@ var _ MappedNullable = &ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner{}
 type ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner struct {
 	Id                    *int64                 `json:"id,omitempty"`
 	Name                  *string                `json:"name,omitempty"`
-	Description           *string                `json:"description,omitempty"`
+	Description           NullableString         `json:"description,omitempty"`
 	Code                  *string                `json:"code,omitempty"`
 	FieldName             *string                `json:"fieldName,omitempty"`
 	FieldLabel            *string                `json:"fieldLabel,omitempty"`
 	FieldCode             *string                `json:"fieldCode,omitempty"`
 	FieldContext          *string                `json:"fieldContext,omitempty"`
-	FieldGroup            *string                `json:"fieldGroup,omitempty"`
-	FieldClass            *string                `json:"fieldClass,omitempty"`
-	FieldAddOn            *string                `json:"fieldAddOn,omitempty"`
-	FieldComponent        *string                `json:"fieldComponent,omitempty"`
-	FieldInput            *string                `json:"fieldInput,omitempty"`
-	PlaceHolder           *string                `json:"placeHolder,omitempty"`
-	VerifyPattern         *string                `json:"verifyPattern,omitempty"`
-	HelpBlock             *string                `json:"helpBlock,omitempty"`
-	HelpBlockFieldCode    *string                `json:"helpBlockFieldCode,omitempty"`
-	DefaultValue          *string                `json:"defaultValue,omitempty"`
-	OptionSource          *string                `json:"optionSource,omitempty"`
-	OptionSourceType      *string                `json:"optionSourceType,omitempty"`
-	OptionList            *string                `json:"optionList,omitempty"`
+	FieldGroup            NullableString         `json:"fieldGroup,omitempty"`
+	FieldClass            NullableString         `json:"fieldClass,omitempty"`
+	FieldAddOn            NullableString         `json:"fieldAddOn,omitempty"`
+	FieldComponent        NullableString         `json:"fieldComponent,omitempty"`
+	FieldInput            NullableString         `json:"fieldInput,omitempty"`
+	PlaceHolder           NullableString         `json:"placeHolder,omitempty"`
+	VerifyPattern         NullableString         `json:"verifyPattern,omitempty"`
+	HelpBlock             NullableString         `json:"helpBlock,omitempty"`
+	HelpBlockFieldCode    NullableString         `json:"helpBlockFieldCode,omitempty"`
+	DefaultValue          NullableString         `json:"defaultValue,omitempty"`
+	OptionSource          NullableString         `json:"optionSource,omitempty"`
+	OptionSourceType      NullableString         `json:"optionSourceType,omitempty"`
+	OptionList            NullableString         `json:"optionList,omitempty"`
 	Type                  *string                `json:"type,omitempty"`
 	Advanced              *bool                  `json:"advanced,omitempty"`
 	Required              *bool                  `json:"required,omitempty"`
@@ -49,17 +49,17 @@ type ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner struct {
 	Creatable             *bool                  `json:"creatable,omitempty"`
 	Config                map[string]interface{} `json:"config,omitempty"`
 	DisplayOrder          *int64                 `json:"displayOrder,omitempty"`
-	WrapperClass          *string                `json:"wrapperClass,omitempty"`
+	WrapperClass          NullableString         `json:"wrapperClass,omitempty"`
 	Enabled               *bool                  `json:"enabled,omitempty"`
 	NoBlank               *bool                  `json:"noBlank,omitempty"`
-	DependsOnCode         *string                `json:"dependsOnCode,omitempty"`
-	VisibleOnCode         *string                `json:"visibleOnCode,omitempty"`
-	RequireOnCode         *string                `json:"requireOnCode,omitempty"`
+	DependsOnCode         NullableString         `json:"dependsOnCode,omitempty"`
+	VisibleOnCode         NullableString         `json:"visibleOnCode,omitempty"`
+	RequireOnCode         NullableString         `json:"requireOnCode,omitempty"`
 	ContextualDefault     *bool                  `json:"contextualDefault,omitempty"`
-	DisplayValueOnDetails *bool                  `json:"displayValueOnDetails,omitempty"`
-	ShowOnCreate          *bool                  `json:"showOnCreate,omitempty"`
-	ShowOnEdit            *bool                  `json:"showOnEdit,omitempty"`
-	LocalCredential       *bool                  `json:"localCredential,omitempty"`
+	DisplayValueOnDetails NullableBool           `json:"displayValueOnDetails,omitempty"`
+	ShowOnCreate          NullableBool           `json:"showOnCreate,omitempty"`
+	ShowOnEdit            NullableBool           `json:"showOnEdit,omitempty"`
+	LocalCredential       NullableBool           `json:"localCredential,omitempty"`
 	AdditionalProperties  map[string]interface{} `json:",remain"`
 }
 
@@ -146,36 +146,47 @@ func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) SetName(v strin
 	o.Name = &v
 }
 
-// GetDescription returns the Description field value if set, zero value otherwise.
+// GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
+	if o == nil || IsNil(o.Description.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Description
+	return *o.Description.Get()
 }
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Description, true
+	return o.Description.Get(), o.Description.IsSet()
 }
 
 // IsSetDescription returns a boolean if a field has been set.
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
+	if o != nil && o.Description.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDescription gets a reference to the given string and assigns it to the Description field.
+// SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) SetDescription(v string) {
-	o.Description = &v
+	o.Description.Set(&v)
+}
+
+// SetDescriptionNil sets the value for Description to be an explicit nil
+func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) SetDescriptionNil() {
+	o.Description.Set(nil)
+}
+
+// UnsetDescription ensures that no value is present for Description, not even an explicit nil
+func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) UnsetDescription() {
+	o.Description.Unset()
 }
 
 // GetCode returns the Code field value if set, zero value otherwise.
@@ -338,420 +349,563 @@ func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) SetFieldContext
 	o.FieldContext = &v
 }
 
-// GetFieldGroup returns the FieldGroup field value if set, zero value otherwise.
+// GetFieldGroup returns the FieldGroup field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) GetFieldGroup() string {
-	if o == nil || IsNil(o.FieldGroup) {
+	if o == nil || IsNil(o.FieldGroup.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.FieldGroup
+	return *o.FieldGroup.Get()
 }
 
 // GetFieldGroupOk returns a tuple with the FieldGroup field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) GetFieldGroupOk() (*string, bool) {
-	if o == nil || IsNil(o.FieldGroup) {
+	if o == nil {
 		return nil, false
 	}
-	return o.FieldGroup, true
+	return o.FieldGroup.Get(), o.FieldGroup.IsSet()
 }
 
 // IsSetFieldGroup returns a boolean if a field has been set.
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) IsSetFieldGroup() bool {
-	if o != nil && !IsNil(o.FieldGroup) {
+	if o != nil && o.FieldGroup.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetFieldGroup gets a reference to the given string and assigns it to the FieldGroup field.
+// SetFieldGroup gets a reference to the given NullableString and assigns it to the FieldGroup field.
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) SetFieldGroup(v string) {
-	o.FieldGroup = &v
+	o.FieldGroup.Set(&v)
 }
 
-// GetFieldClass returns the FieldClass field value if set, zero value otherwise.
+// SetFieldGroupNil sets the value for FieldGroup to be an explicit nil
+func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) SetFieldGroupNil() {
+	o.FieldGroup.Set(nil)
+}
+
+// UnsetFieldGroup ensures that no value is present for FieldGroup, not even an explicit nil
+func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) UnsetFieldGroup() {
+	o.FieldGroup.Unset()
+}
+
+// GetFieldClass returns the FieldClass field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) GetFieldClass() string {
-	if o == nil || IsNil(o.FieldClass) {
+	if o == nil || IsNil(o.FieldClass.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.FieldClass
+	return *o.FieldClass.Get()
 }
 
 // GetFieldClassOk returns a tuple with the FieldClass field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) GetFieldClassOk() (*string, bool) {
-	if o == nil || IsNil(o.FieldClass) {
+	if o == nil {
 		return nil, false
 	}
-	return o.FieldClass, true
+	return o.FieldClass.Get(), o.FieldClass.IsSet()
 }
 
 // IsSetFieldClass returns a boolean if a field has been set.
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) IsSetFieldClass() bool {
-	if o != nil && !IsNil(o.FieldClass) {
+	if o != nil && o.FieldClass.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetFieldClass gets a reference to the given string and assigns it to the FieldClass field.
+// SetFieldClass gets a reference to the given NullableString and assigns it to the FieldClass field.
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) SetFieldClass(v string) {
-	o.FieldClass = &v
+	o.FieldClass.Set(&v)
 }
 
-// GetFieldAddOn returns the FieldAddOn field value if set, zero value otherwise.
+// SetFieldClassNil sets the value for FieldClass to be an explicit nil
+func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) SetFieldClassNil() {
+	o.FieldClass.Set(nil)
+}
+
+// UnsetFieldClass ensures that no value is present for FieldClass, not even an explicit nil
+func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) UnsetFieldClass() {
+	o.FieldClass.Unset()
+}
+
+// GetFieldAddOn returns the FieldAddOn field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) GetFieldAddOn() string {
-	if o == nil || IsNil(o.FieldAddOn) {
+	if o == nil || IsNil(o.FieldAddOn.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.FieldAddOn
+	return *o.FieldAddOn.Get()
 }
 
 // GetFieldAddOnOk returns a tuple with the FieldAddOn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) GetFieldAddOnOk() (*string, bool) {
-	if o == nil || IsNil(o.FieldAddOn) {
+	if o == nil {
 		return nil, false
 	}
-	return o.FieldAddOn, true
+	return o.FieldAddOn.Get(), o.FieldAddOn.IsSet()
 }
 
 // IsSetFieldAddOn returns a boolean if a field has been set.
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) IsSetFieldAddOn() bool {
-	if o != nil && !IsNil(o.FieldAddOn) {
+	if o != nil && o.FieldAddOn.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetFieldAddOn gets a reference to the given string and assigns it to the FieldAddOn field.
+// SetFieldAddOn gets a reference to the given NullableString and assigns it to the FieldAddOn field.
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) SetFieldAddOn(v string) {
-	o.FieldAddOn = &v
+	o.FieldAddOn.Set(&v)
 }
 
-// GetFieldComponent returns the FieldComponent field value if set, zero value otherwise.
+// SetFieldAddOnNil sets the value for FieldAddOn to be an explicit nil
+func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) SetFieldAddOnNil() {
+	o.FieldAddOn.Set(nil)
+}
+
+// UnsetFieldAddOn ensures that no value is present for FieldAddOn, not even an explicit nil
+func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) UnsetFieldAddOn() {
+	o.FieldAddOn.Unset()
+}
+
+// GetFieldComponent returns the FieldComponent field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) GetFieldComponent() string {
-	if o == nil || IsNil(o.FieldComponent) {
+	if o == nil || IsNil(o.FieldComponent.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.FieldComponent
+	return *o.FieldComponent.Get()
 }
 
 // GetFieldComponentOk returns a tuple with the FieldComponent field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) GetFieldComponentOk() (*string, bool) {
-	if o == nil || IsNil(o.FieldComponent) {
+	if o == nil {
 		return nil, false
 	}
-	return o.FieldComponent, true
+	return o.FieldComponent.Get(), o.FieldComponent.IsSet()
 }
 
 // IsSetFieldComponent returns a boolean if a field has been set.
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) IsSetFieldComponent() bool {
-	if o != nil && !IsNil(o.FieldComponent) {
+	if o != nil && o.FieldComponent.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetFieldComponent gets a reference to the given string and assigns it to the FieldComponent field.
+// SetFieldComponent gets a reference to the given NullableString and assigns it to the FieldComponent field.
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) SetFieldComponent(v string) {
-	o.FieldComponent = &v
+	o.FieldComponent.Set(&v)
 }
 
-// GetFieldInput returns the FieldInput field value if set, zero value otherwise.
+// SetFieldComponentNil sets the value for FieldComponent to be an explicit nil
+func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) SetFieldComponentNil() {
+	o.FieldComponent.Set(nil)
+}
+
+// UnsetFieldComponent ensures that no value is present for FieldComponent, not even an explicit nil
+func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) UnsetFieldComponent() {
+	o.FieldComponent.Unset()
+}
+
+// GetFieldInput returns the FieldInput field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) GetFieldInput() string {
-	if o == nil || IsNil(o.FieldInput) {
+	if o == nil || IsNil(o.FieldInput.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.FieldInput
+	return *o.FieldInput.Get()
 }
 
 // GetFieldInputOk returns a tuple with the FieldInput field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) GetFieldInputOk() (*string, bool) {
-	if o == nil || IsNil(o.FieldInput) {
+	if o == nil {
 		return nil, false
 	}
-	return o.FieldInput, true
+	return o.FieldInput.Get(), o.FieldInput.IsSet()
 }
 
 // IsSetFieldInput returns a boolean if a field has been set.
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) IsSetFieldInput() bool {
-	if o != nil && !IsNil(o.FieldInput) {
+	if o != nil && o.FieldInput.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetFieldInput gets a reference to the given string and assigns it to the FieldInput field.
+// SetFieldInput gets a reference to the given NullableString and assigns it to the FieldInput field.
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) SetFieldInput(v string) {
-	o.FieldInput = &v
+	o.FieldInput.Set(&v)
 }
 
-// GetPlaceHolder returns the PlaceHolder field value if set, zero value otherwise.
+// SetFieldInputNil sets the value for FieldInput to be an explicit nil
+func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) SetFieldInputNil() {
+	o.FieldInput.Set(nil)
+}
+
+// UnsetFieldInput ensures that no value is present for FieldInput, not even an explicit nil
+func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) UnsetFieldInput() {
+	o.FieldInput.Unset()
+}
+
+// GetPlaceHolder returns the PlaceHolder field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) GetPlaceHolder() string {
-	if o == nil || IsNil(o.PlaceHolder) {
+	if o == nil || IsNil(o.PlaceHolder.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.PlaceHolder
+	return *o.PlaceHolder.Get()
 }
 
 // GetPlaceHolderOk returns a tuple with the PlaceHolder field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) GetPlaceHolderOk() (*string, bool) {
-	if o == nil || IsNil(o.PlaceHolder) {
+	if o == nil {
 		return nil, false
 	}
-	return o.PlaceHolder, true
+	return o.PlaceHolder.Get(), o.PlaceHolder.IsSet()
 }
 
 // IsSetPlaceHolder returns a boolean if a field has been set.
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) IsSetPlaceHolder() bool {
-	if o != nil && !IsNil(o.PlaceHolder) {
+	if o != nil && o.PlaceHolder.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetPlaceHolder gets a reference to the given string and assigns it to the PlaceHolder field.
+// SetPlaceHolder gets a reference to the given NullableString and assigns it to the PlaceHolder field.
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) SetPlaceHolder(v string) {
-	o.PlaceHolder = &v
+	o.PlaceHolder.Set(&v)
 }
 
-// GetVerifyPattern returns the VerifyPattern field value if set, zero value otherwise.
+// SetPlaceHolderNil sets the value for PlaceHolder to be an explicit nil
+func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) SetPlaceHolderNil() {
+	o.PlaceHolder.Set(nil)
+}
+
+// UnsetPlaceHolder ensures that no value is present for PlaceHolder, not even an explicit nil
+func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) UnsetPlaceHolder() {
+	o.PlaceHolder.Unset()
+}
+
+// GetVerifyPattern returns the VerifyPattern field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) GetVerifyPattern() string {
-	if o == nil || IsNil(o.VerifyPattern) {
+	if o == nil || IsNil(o.VerifyPattern.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.VerifyPattern
+	return *o.VerifyPattern.Get()
 }
 
 // GetVerifyPatternOk returns a tuple with the VerifyPattern field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) GetVerifyPatternOk() (*string, bool) {
-	if o == nil || IsNil(o.VerifyPattern) {
+	if o == nil {
 		return nil, false
 	}
-	return o.VerifyPattern, true
+	return o.VerifyPattern.Get(), o.VerifyPattern.IsSet()
 }
 
 // IsSetVerifyPattern returns a boolean if a field has been set.
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) IsSetVerifyPattern() bool {
-	if o != nil && !IsNil(o.VerifyPattern) {
+	if o != nil && o.VerifyPattern.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetVerifyPattern gets a reference to the given string and assigns it to the VerifyPattern field.
+// SetVerifyPattern gets a reference to the given NullableString and assigns it to the VerifyPattern field.
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) SetVerifyPattern(v string) {
-	o.VerifyPattern = &v
+	o.VerifyPattern.Set(&v)
 }
 
-// GetHelpBlock returns the HelpBlock field value if set, zero value otherwise.
+// SetVerifyPatternNil sets the value for VerifyPattern to be an explicit nil
+func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) SetVerifyPatternNil() {
+	o.VerifyPattern.Set(nil)
+}
+
+// UnsetVerifyPattern ensures that no value is present for VerifyPattern, not even an explicit nil
+func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) UnsetVerifyPattern() {
+	o.VerifyPattern.Unset()
+}
+
+// GetHelpBlock returns the HelpBlock field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) GetHelpBlock() string {
-	if o == nil || IsNil(o.HelpBlock) {
+	if o == nil || IsNil(o.HelpBlock.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.HelpBlock
+	return *o.HelpBlock.Get()
 }
 
 // GetHelpBlockOk returns a tuple with the HelpBlock field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) GetHelpBlockOk() (*string, bool) {
-	if o == nil || IsNil(o.HelpBlock) {
+	if o == nil {
 		return nil, false
 	}
-	return o.HelpBlock, true
+	return o.HelpBlock.Get(), o.HelpBlock.IsSet()
 }
 
 // IsSetHelpBlock returns a boolean if a field has been set.
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) IsSetHelpBlock() bool {
-	if o != nil && !IsNil(o.HelpBlock) {
+	if o != nil && o.HelpBlock.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetHelpBlock gets a reference to the given string and assigns it to the HelpBlock field.
+// SetHelpBlock gets a reference to the given NullableString and assigns it to the HelpBlock field.
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) SetHelpBlock(v string) {
-	o.HelpBlock = &v
+	o.HelpBlock.Set(&v)
 }
 
-// GetHelpBlockFieldCode returns the HelpBlockFieldCode field value if set, zero value otherwise.
+// SetHelpBlockNil sets the value for HelpBlock to be an explicit nil
+func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) SetHelpBlockNil() {
+	o.HelpBlock.Set(nil)
+}
+
+// UnsetHelpBlock ensures that no value is present for HelpBlock, not even an explicit nil
+func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) UnsetHelpBlock() {
+	o.HelpBlock.Unset()
+}
+
+// GetHelpBlockFieldCode returns the HelpBlockFieldCode field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) GetHelpBlockFieldCode() string {
-	if o == nil || IsNil(o.HelpBlockFieldCode) {
+	if o == nil || IsNil(o.HelpBlockFieldCode.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.HelpBlockFieldCode
+	return *o.HelpBlockFieldCode.Get()
 }
 
 // GetHelpBlockFieldCodeOk returns a tuple with the HelpBlockFieldCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) GetHelpBlockFieldCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.HelpBlockFieldCode) {
+	if o == nil {
 		return nil, false
 	}
-	return o.HelpBlockFieldCode, true
+	return o.HelpBlockFieldCode.Get(), o.HelpBlockFieldCode.IsSet()
 }
 
 // IsSetHelpBlockFieldCode returns a boolean if a field has been set.
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) IsSetHelpBlockFieldCode() bool {
-	if o != nil && !IsNil(o.HelpBlockFieldCode) {
+	if o != nil && o.HelpBlockFieldCode.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetHelpBlockFieldCode gets a reference to the given string and assigns it to the HelpBlockFieldCode field.
+// SetHelpBlockFieldCode gets a reference to the given NullableString and assigns it to the HelpBlockFieldCode field.
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) SetHelpBlockFieldCode(v string) {
-	o.HelpBlockFieldCode = &v
+	o.HelpBlockFieldCode.Set(&v)
 }
 
-// GetDefaultValue returns the DefaultValue field value if set, zero value otherwise.
+// SetHelpBlockFieldCodeNil sets the value for HelpBlockFieldCode to be an explicit nil
+func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) SetHelpBlockFieldCodeNil() {
+	o.HelpBlockFieldCode.Set(nil)
+}
+
+// UnsetHelpBlockFieldCode ensures that no value is present for HelpBlockFieldCode, not even an explicit nil
+func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) UnsetHelpBlockFieldCode() {
+	o.HelpBlockFieldCode.Unset()
+}
+
+// GetDefaultValue returns the DefaultValue field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) GetDefaultValue() string {
-	if o == nil || IsNil(o.DefaultValue) {
+	if o == nil || IsNil(o.DefaultValue.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.DefaultValue
+	return *o.DefaultValue.Get()
 }
 
 // GetDefaultValueOk returns a tuple with the DefaultValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) GetDefaultValueOk() (*string, bool) {
-	if o == nil || IsNil(o.DefaultValue) {
+	if o == nil {
 		return nil, false
 	}
-	return o.DefaultValue, true
+	return o.DefaultValue.Get(), o.DefaultValue.IsSet()
 }
 
 // IsSetDefaultValue returns a boolean if a field has been set.
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) IsSetDefaultValue() bool {
-	if o != nil && !IsNil(o.DefaultValue) {
+	if o != nil && o.DefaultValue.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDefaultValue gets a reference to the given string and assigns it to the DefaultValue field.
+// SetDefaultValue gets a reference to the given NullableString and assigns it to the DefaultValue field.
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) SetDefaultValue(v string) {
-	o.DefaultValue = &v
+	o.DefaultValue.Set(&v)
 }
 
-// GetOptionSource returns the OptionSource field value if set, zero value otherwise.
+// SetDefaultValueNil sets the value for DefaultValue to be an explicit nil
+func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) SetDefaultValueNil() {
+	o.DefaultValue.Set(nil)
+}
+
+// UnsetDefaultValue ensures that no value is present for DefaultValue, not even an explicit nil
+func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) UnsetDefaultValue() {
+	o.DefaultValue.Unset()
+}
+
+// GetOptionSource returns the OptionSource field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) GetOptionSource() string {
-	if o == nil || IsNil(o.OptionSource) {
+	if o == nil || IsNil(o.OptionSource.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.OptionSource
+	return *o.OptionSource.Get()
 }
 
 // GetOptionSourceOk returns a tuple with the OptionSource field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) GetOptionSourceOk() (*string, bool) {
-	if o == nil || IsNil(o.OptionSource) {
+	if o == nil {
 		return nil, false
 	}
-	return o.OptionSource, true
+	return o.OptionSource.Get(), o.OptionSource.IsSet()
 }
 
 // IsSetOptionSource returns a boolean if a field has been set.
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) IsSetOptionSource() bool {
-	if o != nil && !IsNil(o.OptionSource) {
+	if o != nil && o.OptionSource.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetOptionSource gets a reference to the given string and assigns it to the OptionSource field.
+// SetOptionSource gets a reference to the given NullableString and assigns it to the OptionSource field.
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) SetOptionSource(v string) {
-	o.OptionSource = &v
+	o.OptionSource.Set(&v)
 }
 
-// GetOptionSourceType returns the OptionSourceType field value if set, zero value otherwise.
+// SetOptionSourceNil sets the value for OptionSource to be an explicit nil
+func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) SetOptionSourceNil() {
+	o.OptionSource.Set(nil)
+}
+
+// UnsetOptionSource ensures that no value is present for OptionSource, not even an explicit nil
+func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) UnsetOptionSource() {
+	o.OptionSource.Unset()
+}
+
+// GetOptionSourceType returns the OptionSourceType field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) GetOptionSourceType() string {
-	if o == nil || IsNil(o.OptionSourceType) {
+	if o == nil || IsNil(o.OptionSourceType.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.OptionSourceType
+	return *o.OptionSourceType.Get()
 }
 
 // GetOptionSourceTypeOk returns a tuple with the OptionSourceType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) GetOptionSourceTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.OptionSourceType) {
+	if o == nil {
 		return nil, false
 	}
-	return o.OptionSourceType, true
+	return o.OptionSourceType.Get(), o.OptionSourceType.IsSet()
 }
 
 // IsSetOptionSourceType returns a boolean if a field has been set.
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) IsSetOptionSourceType() bool {
-	if o != nil && !IsNil(o.OptionSourceType) {
+	if o != nil && o.OptionSourceType.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetOptionSourceType gets a reference to the given string and assigns it to the OptionSourceType field.
+// SetOptionSourceType gets a reference to the given NullableString and assigns it to the OptionSourceType field.
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) SetOptionSourceType(v string) {
-	o.OptionSourceType = &v
+	o.OptionSourceType.Set(&v)
 }
 
-// GetOptionList returns the OptionList field value if set, zero value otherwise.
+// SetOptionSourceTypeNil sets the value for OptionSourceType to be an explicit nil
+func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) SetOptionSourceTypeNil() {
+	o.OptionSourceType.Set(nil)
+}
+
+// UnsetOptionSourceType ensures that no value is present for OptionSourceType, not even an explicit nil
+func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) UnsetOptionSourceType() {
+	o.OptionSourceType.Unset()
+}
+
+// GetOptionList returns the OptionList field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) GetOptionList() string {
-	if o == nil || IsNil(o.OptionList) {
+	if o == nil || IsNil(o.OptionList.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.OptionList
+	return *o.OptionList.Get()
 }
 
 // GetOptionListOk returns a tuple with the OptionList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) GetOptionListOk() (*string, bool) {
-	if o == nil || IsNil(o.OptionList) {
+	if o == nil {
 		return nil, false
 	}
-	return o.OptionList, true
+	return o.OptionList.Get(), o.OptionList.IsSet()
 }
 
 // IsSetOptionList returns a boolean if a field has been set.
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) IsSetOptionList() bool {
-	if o != nil && !IsNil(o.OptionList) {
+	if o != nil && o.OptionList.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetOptionList gets a reference to the given string and assigns it to the OptionList field.
+// SetOptionList gets a reference to the given NullableString and assigns it to the OptionList field.
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) SetOptionList(v string) {
-	o.OptionList = &v
+	o.OptionList.Set(&v)
+}
+
+// SetOptionListNil sets the value for OptionList to be an explicit nil
+func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) SetOptionListNil() {
+	o.OptionList.Set(nil)
+}
+
+// UnsetOptionList ensures that no value is present for OptionList, not even an explicit nil
+func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) UnsetOptionList() {
+	o.OptionList.Unset()
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
@@ -1010,36 +1164,47 @@ func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) SetDisplayOrder
 	o.DisplayOrder = &v
 }
 
-// GetWrapperClass returns the WrapperClass field value if set, zero value otherwise.
+// GetWrapperClass returns the WrapperClass field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) GetWrapperClass() string {
-	if o == nil || IsNil(o.WrapperClass) {
+	if o == nil || IsNil(o.WrapperClass.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.WrapperClass
+	return *o.WrapperClass.Get()
 }
 
 // GetWrapperClassOk returns a tuple with the WrapperClass field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) GetWrapperClassOk() (*string, bool) {
-	if o == nil || IsNil(o.WrapperClass) {
+	if o == nil {
 		return nil, false
 	}
-	return o.WrapperClass, true
+	return o.WrapperClass.Get(), o.WrapperClass.IsSet()
 }
 
 // IsSetWrapperClass returns a boolean if a field has been set.
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) IsSetWrapperClass() bool {
-	if o != nil && !IsNil(o.WrapperClass) {
+	if o != nil && o.WrapperClass.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetWrapperClass gets a reference to the given string and assigns it to the WrapperClass field.
+// SetWrapperClass gets a reference to the given NullableString and assigns it to the WrapperClass field.
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) SetWrapperClass(v string) {
-	o.WrapperClass = &v
+	o.WrapperClass.Set(&v)
+}
+
+// SetWrapperClassNil sets the value for WrapperClass to be an explicit nil
+func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) SetWrapperClassNil() {
+	o.WrapperClass.Set(nil)
+}
+
+// UnsetWrapperClass ensures that no value is present for WrapperClass, not even an explicit nil
+func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) UnsetWrapperClass() {
+	o.WrapperClass.Unset()
 }
 
 // GetEnabled returns the Enabled field value if set, zero value otherwise.
@@ -1106,100 +1271,133 @@ func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) SetNoBlank(v bo
 	o.NoBlank = &v
 }
 
-// GetDependsOnCode returns the DependsOnCode field value if set, zero value otherwise.
+// GetDependsOnCode returns the DependsOnCode field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) GetDependsOnCode() string {
-	if o == nil || IsNil(o.DependsOnCode) {
+	if o == nil || IsNil(o.DependsOnCode.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.DependsOnCode
+	return *o.DependsOnCode.Get()
 }
 
 // GetDependsOnCodeOk returns a tuple with the DependsOnCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) GetDependsOnCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.DependsOnCode) {
+	if o == nil {
 		return nil, false
 	}
-	return o.DependsOnCode, true
+	return o.DependsOnCode.Get(), o.DependsOnCode.IsSet()
 }
 
 // IsSetDependsOnCode returns a boolean if a field has been set.
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) IsSetDependsOnCode() bool {
-	if o != nil && !IsNil(o.DependsOnCode) {
+	if o != nil && o.DependsOnCode.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDependsOnCode gets a reference to the given string and assigns it to the DependsOnCode field.
+// SetDependsOnCode gets a reference to the given NullableString and assigns it to the DependsOnCode field.
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) SetDependsOnCode(v string) {
-	o.DependsOnCode = &v
+	o.DependsOnCode.Set(&v)
 }
 
-// GetVisibleOnCode returns the VisibleOnCode field value if set, zero value otherwise.
+// SetDependsOnCodeNil sets the value for DependsOnCode to be an explicit nil
+func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) SetDependsOnCodeNil() {
+	o.DependsOnCode.Set(nil)
+}
+
+// UnsetDependsOnCode ensures that no value is present for DependsOnCode, not even an explicit nil
+func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) UnsetDependsOnCode() {
+	o.DependsOnCode.Unset()
+}
+
+// GetVisibleOnCode returns the VisibleOnCode field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) GetVisibleOnCode() string {
-	if o == nil || IsNil(o.VisibleOnCode) {
+	if o == nil || IsNil(o.VisibleOnCode.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.VisibleOnCode
+	return *o.VisibleOnCode.Get()
 }
 
 // GetVisibleOnCodeOk returns a tuple with the VisibleOnCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) GetVisibleOnCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.VisibleOnCode) {
+	if o == nil {
 		return nil, false
 	}
-	return o.VisibleOnCode, true
+	return o.VisibleOnCode.Get(), o.VisibleOnCode.IsSet()
 }
 
 // IsSetVisibleOnCode returns a boolean if a field has been set.
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) IsSetVisibleOnCode() bool {
-	if o != nil && !IsNil(o.VisibleOnCode) {
+	if o != nil && o.VisibleOnCode.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetVisibleOnCode gets a reference to the given string and assigns it to the VisibleOnCode field.
+// SetVisibleOnCode gets a reference to the given NullableString and assigns it to the VisibleOnCode field.
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) SetVisibleOnCode(v string) {
-	o.VisibleOnCode = &v
+	o.VisibleOnCode.Set(&v)
 }
 
-// GetRequireOnCode returns the RequireOnCode field value if set, zero value otherwise.
+// SetVisibleOnCodeNil sets the value for VisibleOnCode to be an explicit nil
+func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) SetVisibleOnCodeNil() {
+	o.VisibleOnCode.Set(nil)
+}
+
+// UnsetVisibleOnCode ensures that no value is present for VisibleOnCode, not even an explicit nil
+func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) UnsetVisibleOnCode() {
+	o.VisibleOnCode.Unset()
+}
+
+// GetRequireOnCode returns the RequireOnCode field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) GetRequireOnCode() string {
-	if o == nil || IsNil(o.RequireOnCode) {
+	if o == nil || IsNil(o.RequireOnCode.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.RequireOnCode
+	return *o.RequireOnCode.Get()
 }
 
 // GetRequireOnCodeOk returns a tuple with the RequireOnCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) GetRequireOnCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.RequireOnCode) {
+	if o == nil {
 		return nil, false
 	}
-	return o.RequireOnCode, true
+	return o.RequireOnCode.Get(), o.RequireOnCode.IsSet()
 }
 
 // IsSetRequireOnCode returns a boolean if a field has been set.
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) IsSetRequireOnCode() bool {
-	if o != nil && !IsNil(o.RequireOnCode) {
+	if o != nil && o.RequireOnCode.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetRequireOnCode gets a reference to the given string and assigns it to the RequireOnCode field.
+// SetRequireOnCode gets a reference to the given NullableString and assigns it to the RequireOnCode field.
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) SetRequireOnCode(v string) {
-	o.RequireOnCode = &v
+	o.RequireOnCode.Set(&v)
+}
+
+// SetRequireOnCodeNil sets the value for RequireOnCode to be an explicit nil
+func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) SetRequireOnCodeNil() {
+	o.RequireOnCode.Set(nil)
+}
+
+// UnsetRequireOnCode ensures that no value is present for RequireOnCode, not even an explicit nil
+func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) UnsetRequireOnCode() {
+	o.RequireOnCode.Unset()
 }
 
 // GetContextualDefault returns the ContextualDefault field value if set, zero value otherwise.
@@ -1234,132 +1432,176 @@ func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) SetContextualDe
 	o.ContextualDefault = &v
 }
 
-// GetDisplayValueOnDetails returns the DisplayValueOnDetails field value if set, zero value otherwise.
+// GetDisplayValueOnDetails returns the DisplayValueOnDetails field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) GetDisplayValueOnDetails() bool {
-	if o == nil || IsNil(o.DisplayValueOnDetails) {
+	if o == nil || IsNil(o.DisplayValueOnDetails.Get()) {
 		var ret bool
 		return ret
 	}
-	return *o.DisplayValueOnDetails
+	return *o.DisplayValueOnDetails.Get()
 }
 
 // GetDisplayValueOnDetailsOk returns a tuple with the DisplayValueOnDetails field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) GetDisplayValueOnDetailsOk() (*bool, bool) {
-	if o == nil || IsNil(o.DisplayValueOnDetails) {
+	if o == nil {
 		return nil, false
 	}
-	return o.DisplayValueOnDetails, true
+	return o.DisplayValueOnDetails.Get(), o.DisplayValueOnDetails.IsSet()
 }
 
 // IsSetDisplayValueOnDetails returns a boolean if a field has been set.
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) IsSetDisplayValueOnDetails() bool {
-	if o != nil && !IsNil(o.DisplayValueOnDetails) {
+	if o != nil && o.DisplayValueOnDetails.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDisplayValueOnDetails gets a reference to the given bool and assigns it to the DisplayValueOnDetails field.
+// SetDisplayValueOnDetails gets a reference to the given NullableBool and assigns it to the DisplayValueOnDetails field.
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) SetDisplayValueOnDetails(v bool) {
-	o.DisplayValueOnDetails = &v
+	o.DisplayValueOnDetails.Set(&v)
 }
 
-// GetShowOnCreate returns the ShowOnCreate field value if set, zero value otherwise.
+// SetDisplayValueOnDetailsNil sets the value for DisplayValueOnDetails to be an explicit nil
+func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) SetDisplayValueOnDetailsNil() {
+	o.DisplayValueOnDetails.Set(nil)
+}
+
+// UnsetDisplayValueOnDetails ensures that no value is present for DisplayValueOnDetails, not even an explicit nil
+func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) UnsetDisplayValueOnDetails() {
+	o.DisplayValueOnDetails.Unset()
+}
+
+// GetShowOnCreate returns the ShowOnCreate field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) GetShowOnCreate() bool {
-	if o == nil || IsNil(o.ShowOnCreate) {
+	if o == nil || IsNil(o.ShowOnCreate.Get()) {
 		var ret bool
 		return ret
 	}
-	return *o.ShowOnCreate
+	return *o.ShowOnCreate.Get()
 }
 
 // GetShowOnCreateOk returns a tuple with the ShowOnCreate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) GetShowOnCreateOk() (*bool, bool) {
-	if o == nil || IsNil(o.ShowOnCreate) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ShowOnCreate, true
+	return o.ShowOnCreate.Get(), o.ShowOnCreate.IsSet()
 }
 
 // IsSetShowOnCreate returns a boolean if a field has been set.
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) IsSetShowOnCreate() bool {
-	if o != nil && !IsNil(o.ShowOnCreate) {
+	if o != nil && o.ShowOnCreate.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetShowOnCreate gets a reference to the given bool and assigns it to the ShowOnCreate field.
+// SetShowOnCreate gets a reference to the given NullableBool and assigns it to the ShowOnCreate field.
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) SetShowOnCreate(v bool) {
-	o.ShowOnCreate = &v
+	o.ShowOnCreate.Set(&v)
 }
 
-// GetShowOnEdit returns the ShowOnEdit field value if set, zero value otherwise.
+// SetShowOnCreateNil sets the value for ShowOnCreate to be an explicit nil
+func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) SetShowOnCreateNil() {
+	o.ShowOnCreate.Set(nil)
+}
+
+// UnsetShowOnCreate ensures that no value is present for ShowOnCreate, not even an explicit nil
+func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) UnsetShowOnCreate() {
+	o.ShowOnCreate.Unset()
+}
+
+// GetShowOnEdit returns the ShowOnEdit field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) GetShowOnEdit() bool {
-	if o == nil || IsNil(o.ShowOnEdit) {
+	if o == nil || IsNil(o.ShowOnEdit.Get()) {
 		var ret bool
 		return ret
 	}
-	return *o.ShowOnEdit
+	return *o.ShowOnEdit.Get()
 }
 
 // GetShowOnEditOk returns a tuple with the ShowOnEdit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) GetShowOnEditOk() (*bool, bool) {
-	if o == nil || IsNil(o.ShowOnEdit) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ShowOnEdit, true
+	return o.ShowOnEdit.Get(), o.ShowOnEdit.IsSet()
 }
 
 // IsSetShowOnEdit returns a boolean if a field has been set.
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) IsSetShowOnEdit() bool {
-	if o != nil && !IsNil(o.ShowOnEdit) {
+	if o != nil && o.ShowOnEdit.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetShowOnEdit gets a reference to the given bool and assigns it to the ShowOnEdit field.
+// SetShowOnEdit gets a reference to the given NullableBool and assigns it to the ShowOnEdit field.
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) SetShowOnEdit(v bool) {
-	o.ShowOnEdit = &v
+	o.ShowOnEdit.Set(&v)
 }
 
-// GetLocalCredential returns the LocalCredential field value if set, zero value otherwise.
+// SetShowOnEditNil sets the value for ShowOnEdit to be an explicit nil
+func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) SetShowOnEditNil() {
+	o.ShowOnEdit.Set(nil)
+}
+
+// UnsetShowOnEdit ensures that no value is present for ShowOnEdit, not even an explicit nil
+func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) UnsetShowOnEdit() {
+	o.ShowOnEdit.Unset()
+}
+
+// GetLocalCredential returns the LocalCredential field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) GetLocalCredential() bool {
-	if o == nil || IsNil(o.LocalCredential) {
+	if o == nil || IsNil(o.LocalCredential.Get()) {
 		var ret bool
 		return ret
 	}
-	return *o.LocalCredential
+	return *o.LocalCredential.Get()
 }
 
 // GetLocalCredentialOk returns a tuple with the LocalCredential field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) GetLocalCredentialOk() (*bool, bool) {
-	if o == nil || IsNil(o.LocalCredential) {
+	if o == nil {
 		return nil, false
 	}
-	return o.LocalCredential, true
+	return o.LocalCredential.Get(), o.LocalCredential.IsSet()
 }
 
 // IsSetLocalCredential returns a boolean if a field has been set.
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) IsSetLocalCredential() bool {
-	if o != nil && !IsNil(o.LocalCredential) {
+	if o != nil && o.LocalCredential.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetLocalCredential gets a reference to the given bool and assigns it to the LocalCredential field.
+// SetLocalCredential gets a reference to the given NullableBool and assigns it to the LocalCredential field.
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) SetLocalCredential(v bool) {
-	o.LocalCredential = &v
+	o.LocalCredential.Set(&v)
+}
+
+// SetLocalCredentialNil sets the value for LocalCredential to be an explicit nil
+func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) SetLocalCredentialNil() {
+	o.LocalCredential.Set(nil)
+}
+
+// UnsetLocalCredential ensures that no value is present for LocalCredential, not even an explicit nil
+func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) UnsetLocalCredential() {
+	o.LocalCredential.Unset()
 }
 
 func (o ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) MarshalJSON() ([]byte, error) {
@@ -1378,8 +1620,8 @@ func (o ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) ToMap() (map[str
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !IsNil(o.Description) {
-		toSerialize["description"] = o.Description
+	if o.Description.IsSet() {
+		toSerialize["description"] = o.Description.Get()
 	}
 	if !IsNil(o.Code) {
 		toSerialize["code"] = o.Code
@@ -1396,44 +1638,44 @@ func (o ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) ToMap() (map[str
 	if !IsNil(o.FieldContext) {
 		toSerialize["fieldContext"] = o.FieldContext
 	}
-	if !IsNil(o.FieldGroup) {
-		toSerialize["fieldGroup"] = o.FieldGroup
+	if o.FieldGroup.IsSet() {
+		toSerialize["fieldGroup"] = o.FieldGroup.Get()
 	}
-	if !IsNil(o.FieldClass) {
-		toSerialize["fieldClass"] = o.FieldClass
+	if o.FieldClass.IsSet() {
+		toSerialize["fieldClass"] = o.FieldClass.Get()
 	}
-	if !IsNil(o.FieldAddOn) {
-		toSerialize["fieldAddOn"] = o.FieldAddOn
+	if o.FieldAddOn.IsSet() {
+		toSerialize["fieldAddOn"] = o.FieldAddOn.Get()
 	}
-	if !IsNil(o.FieldComponent) {
-		toSerialize["fieldComponent"] = o.FieldComponent
+	if o.FieldComponent.IsSet() {
+		toSerialize["fieldComponent"] = o.FieldComponent.Get()
 	}
-	if !IsNil(o.FieldInput) {
-		toSerialize["fieldInput"] = o.FieldInput
+	if o.FieldInput.IsSet() {
+		toSerialize["fieldInput"] = o.FieldInput.Get()
 	}
-	if !IsNil(o.PlaceHolder) {
-		toSerialize["placeHolder"] = o.PlaceHolder
+	if o.PlaceHolder.IsSet() {
+		toSerialize["placeHolder"] = o.PlaceHolder.Get()
 	}
-	if !IsNil(o.VerifyPattern) {
-		toSerialize["verifyPattern"] = o.VerifyPattern
+	if o.VerifyPattern.IsSet() {
+		toSerialize["verifyPattern"] = o.VerifyPattern.Get()
 	}
-	if !IsNil(o.HelpBlock) {
-		toSerialize["helpBlock"] = o.HelpBlock
+	if o.HelpBlock.IsSet() {
+		toSerialize["helpBlock"] = o.HelpBlock.Get()
 	}
-	if !IsNil(o.HelpBlockFieldCode) {
-		toSerialize["helpBlockFieldCode"] = o.HelpBlockFieldCode
+	if o.HelpBlockFieldCode.IsSet() {
+		toSerialize["helpBlockFieldCode"] = o.HelpBlockFieldCode.Get()
 	}
-	if !IsNil(o.DefaultValue) {
-		toSerialize["defaultValue"] = o.DefaultValue
+	if o.DefaultValue.IsSet() {
+		toSerialize["defaultValue"] = o.DefaultValue.Get()
 	}
-	if !IsNil(o.OptionSource) {
-		toSerialize["optionSource"] = o.OptionSource
+	if o.OptionSource.IsSet() {
+		toSerialize["optionSource"] = o.OptionSource.Get()
 	}
-	if !IsNil(o.OptionSourceType) {
-		toSerialize["optionSourceType"] = o.OptionSourceType
+	if o.OptionSourceType.IsSet() {
+		toSerialize["optionSourceType"] = o.OptionSourceType.Get()
 	}
-	if !IsNil(o.OptionList) {
-		toSerialize["optionList"] = o.OptionList
+	if o.OptionList.IsSet() {
+		toSerialize["optionList"] = o.OptionList.Get()
 	}
 	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type
@@ -1459,8 +1701,8 @@ func (o ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) ToMap() (map[str
 	if !IsNil(o.DisplayOrder) {
 		toSerialize["displayOrder"] = o.DisplayOrder
 	}
-	if !IsNil(o.WrapperClass) {
-		toSerialize["wrapperClass"] = o.WrapperClass
+	if o.WrapperClass.IsSet() {
+		toSerialize["wrapperClass"] = o.WrapperClass.Get()
 	}
 	if !IsNil(o.Enabled) {
 		toSerialize["enabled"] = o.Enabled
@@ -1468,29 +1710,29 @@ func (o ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) ToMap() (map[str
 	if !IsNil(o.NoBlank) {
 		toSerialize["noBlank"] = o.NoBlank
 	}
-	if !IsNil(o.DependsOnCode) {
-		toSerialize["dependsOnCode"] = o.DependsOnCode
+	if o.DependsOnCode.IsSet() {
+		toSerialize["dependsOnCode"] = o.DependsOnCode.Get()
 	}
-	if !IsNil(o.VisibleOnCode) {
-		toSerialize["visibleOnCode"] = o.VisibleOnCode
+	if o.VisibleOnCode.IsSet() {
+		toSerialize["visibleOnCode"] = o.VisibleOnCode.Get()
 	}
-	if !IsNil(o.RequireOnCode) {
-		toSerialize["requireOnCode"] = o.RequireOnCode
+	if o.RequireOnCode.IsSet() {
+		toSerialize["requireOnCode"] = o.RequireOnCode.Get()
 	}
 	if !IsNil(o.ContextualDefault) {
 		toSerialize["contextualDefault"] = o.ContextualDefault
 	}
-	if !IsNil(o.DisplayValueOnDetails) {
-		toSerialize["displayValueOnDetails"] = o.DisplayValueOnDetails
+	if o.DisplayValueOnDetails.IsSet() {
+		toSerialize["displayValueOnDetails"] = o.DisplayValueOnDetails.Get()
 	}
-	if !IsNil(o.ShowOnCreate) {
-		toSerialize["showOnCreate"] = o.ShowOnCreate
+	if o.ShowOnCreate.IsSet() {
+		toSerialize["showOnCreate"] = o.ShowOnCreate.Get()
 	}
-	if !IsNil(o.ShowOnEdit) {
-		toSerialize["showOnEdit"] = o.ShowOnEdit
+	if o.ShowOnEdit.IsSet() {
+		toSerialize["showOnEdit"] = o.ShowOnEdit.Get()
 	}
-	if !IsNil(o.LocalCredential) {
-		toSerialize["localCredential"] = o.LocalCredential
+	if o.LocalCredential.IsSet() {
+		toSerialize["localCredential"] = o.LocalCredential.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {

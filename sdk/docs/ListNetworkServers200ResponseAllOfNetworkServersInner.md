@@ -6,41 +6,41 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** | Network Server ID | [optional] 
 **Name** | Pointer to **string** | Name | [optional] 
-**Description** | Pointer to **string** | Description | [optional] 
+**Description** | Pointer to **NullableString** | Description | [optional] 
 **Type** | Pointer to [**ListNetworkServers200ResponseAllOfNetworkServersInnerType**](ListNetworkServers200ResponseAllOfNetworkServersInnerType.md) |  | [optional] 
 **Integration** | Pointer to [**ListNetworkServers200ResponseAllOfNetworkServersInnerIntegration**](ListNetworkServers200ResponseAllOfNetworkServersInnerIntegration.md) |  | [optional] 
 **Account** | Pointer to [**ListNetworkServers200ResponseAllOfNetworkServersInnerAccount**](ListNetworkServers200ResponseAllOfNetworkServersInnerAccount.md) |  | [optional] 
 **Visibility** | Pointer to **string** |  | [optional] 
-**InternalId** | Pointer to **string** | Internal ID | [optional] 
-**ExternalId** | Pointer to **string** | External ID | [optional] 
-**ServiceUrl** | Pointer to **string** | Service URL | [optional] 
-**ServiceHost** | Pointer to **string** | Service Host | [optional] 
-**ServicePort** | Pointer to **int32** | Service Port | [optional] 
-**ServiceMode** | Pointer to **string** | Service Mode | [optional] 
-**ServicePath** | Pointer to **string** | Service Path | [optional] 
-**ServiceUsername** | Pointer to **string** | Service Username | [optional] 
-**ServicePassword** | Pointer to **string** | Service Password | [optional] 
-**ServicePasswordHash** | Pointer to **string** |  | [optional] 
-**ServiceToken** | Pointer to **string** | Service Token | [optional] 
-**ServiceTokenHash** | Pointer to **string** |  | [optional] 
-**ApiPort** | Pointer to **int32** |  | [optional] 
-**AdminPort** | Pointer to **int32** |  | [optional] 
+**InternalId** | Pointer to **NullableString** | Internal ID | [optional] 
+**ExternalId** | Pointer to **NullableString** | External ID | [optional] 
+**ServiceUrl** | Pointer to **NullableString** | Service URL | [optional] 
+**ServiceHost** | Pointer to **NullableString** | Service Host | [optional] 
+**ServicePort** | Pointer to **NullableInt32** | Service Port | [optional] 
+**ServiceMode** | Pointer to **NullableString** | Service Mode | [optional] 
+**ServicePath** | Pointer to **NullableString** | Service Path | [optional] 
+**ServiceUsername** | Pointer to **NullableString** | Service Username | [optional] 
+**ServicePassword** | Pointer to **NullableString** | Service Password | [optional] 
+**ServicePasswordHash** | Pointer to **NullableString** |  | [optional] 
+**ServiceToken** | Pointer to **NullableString** | Service Token | [optional] 
+**ServiceTokenHash** | Pointer to **NullableString** |  | [optional] 
+**ApiPort** | Pointer to **NullableInt32** |  | [optional] 
+**AdminPort** | Pointer to **NullableInt32** |  | [optional] 
 **Status** | Pointer to **string** | Status | [optional] 
-**StatusMessage** | Pointer to **string** | Status Message | [optional] 
-**StatusDate** | Pointer to **time.Time** |  | [optional] 
-**LastSync** | Pointer to **time.Time** | Last Sync Date | [optional] 
-**NextRunDate** | Pointer to **time.Time** | Next Run Date | [optional] 
-**LastSyncDuration** | Pointer to **int64** | Last Sync Duration in milliseconds | [optional] 
+**StatusMessage** | Pointer to **NullableString** | Status Message | [optional] 
+**StatusDate** | Pointer to **NullableTime** |  | [optional] 
+**LastSync** | Pointer to **NullableTime** | Last Sync Date | [optional] 
+**NextRunDate** | Pointer to **NullableTime** | Next Run Date | [optional] 
+**LastSyncDuration** | Pointer to **NullableInt64** | Last Sync Duration in milliseconds | [optional] 
 **Config** | Pointer to **map[string]interface{}** | Config object varies with network server type. | [optional] 
-**NetworkFilter** | Pointer to **string** | Network Filter | [optional] 
-**TenantMatch** | Pointer to **string** | Tenant Match | [optional] 
-**ZoneId** | Pointer to **int64** | Cloud ID | [optional] 
+**NetworkFilter** | Pointer to **NullableString** | Network Filter | [optional] 
+**TenantMatch** | Pointer to **NullableString** | Tenant Match | [optional] 
+**ZoneId** | Pointer to **NullableInt64** | Cloud ID | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
 **Visible** | Pointer to **bool** |  | [optional] 
 **Credential** | Pointer to [**ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential**](ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential.md) |  | [optional] 
-**Tenants** | Pointer to [**[]ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
+**Tenants** | Pointer to [**[]GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 
 ## Methods
 
@@ -136,6 +136,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetType
 
 `func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) GetType() ListNetworkServers200ResponseAllOfNetworkServersInnerType`
@@ -261,6 +271,16 @@ SetInternalId sets InternalId field to given value.
 
 HasInternalId returns a boolean if a field has been set.
 
+### SetInternalIdNil
+
+`func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) SetInternalIdNil(b bool)`
+
+ SetInternalIdNil sets the value for InternalId to be an explicit nil
+
+### UnsetInternalId
+`func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) UnsetInternalId()`
+
+UnsetInternalId ensures that no value is present for InternalId, not even an explicit nil
 ### GetExternalId
 
 `func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) GetExternalId() string`
@@ -286,6 +306,16 @@ SetExternalId sets ExternalId field to given value.
 
 HasExternalId returns a boolean if a field has been set.
 
+### SetExternalIdNil
+
+`func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) SetExternalIdNil(b bool)`
+
+ SetExternalIdNil sets the value for ExternalId to be an explicit nil
+
+### UnsetExternalId
+`func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) UnsetExternalId()`
+
+UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
 ### GetServiceUrl
 
 `func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) GetServiceUrl() string`
@@ -311,6 +341,16 @@ SetServiceUrl sets ServiceUrl field to given value.
 
 HasServiceUrl returns a boolean if a field has been set.
 
+### SetServiceUrlNil
+
+`func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) SetServiceUrlNil(b bool)`
+
+ SetServiceUrlNil sets the value for ServiceUrl to be an explicit nil
+
+### UnsetServiceUrl
+`func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) UnsetServiceUrl()`
+
+UnsetServiceUrl ensures that no value is present for ServiceUrl, not even an explicit nil
 ### GetServiceHost
 
 `func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) GetServiceHost() string`
@@ -336,6 +376,16 @@ SetServiceHost sets ServiceHost field to given value.
 
 HasServiceHost returns a boolean if a field has been set.
 
+### SetServiceHostNil
+
+`func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) SetServiceHostNil(b bool)`
+
+ SetServiceHostNil sets the value for ServiceHost to be an explicit nil
+
+### UnsetServiceHost
+`func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) UnsetServiceHost()`
+
+UnsetServiceHost ensures that no value is present for ServiceHost, not even an explicit nil
 ### GetServicePort
 
 `func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) GetServicePort() int32`
@@ -361,6 +411,16 @@ SetServicePort sets ServicePort field to given value.
 
 HasServicePort returns a boolean if a field has been set.
 
+### SetServicePortNil
+
+`func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) SetServicePortNil(b bool)`
+
+ SetServicePortNil sets the value for ServicePort to be an explicit nil
+
+### UnsetServicePort
+`func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) UnsetServicePort()`
+
+UnsetServicePort ensures that no value is present for ServicePort, not even an explicit nil
 ### GetServiceMode
 
 `func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) GetServiceMode() string`
@@ -386,6 +446,16 @@ SetServiceMode sets ServiceMode field to given value.
 
 HasServiceMode returns a boolean if a field has been set.
 
+### SetServiceModeNil
+
+`func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) SetServiceModeNil(b bool)`
+
+ SetServiceModeNil sets the value for ServiceMode to be an explicit nil
+
+### UnsetServiceMode
+`func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) UnsetServiceMode()`
+
+UnsetServiceMode ensures that no value is present for ServiceMode, not even an explicit nil
 ### GetServicePath
 
 `func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) GetServicePath() string`
@@ -411,6 +481,16 @@ SetServicePath sets ServicePath field to given value.
 
 HasServicePath returns a boolean if a field has been set.
 
+### SetServicePathNil
+
+`func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) SetServicePathNil(b bool)`
+
+ SetServicePathNil sets the value for ServicePath to be an explicit nil
+
+### UnsetServicePath
+`func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) UnsetServicePath()`
+
+UnsetServicePath ensures that no value is present for ServicePath, not even an explicit nil
 ### GetServiceUsername
 
 `func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) GetServiceUsername() string`
@@ -436,6 +516,16 @@ SetServiceUsername sets ServiceUsername field to given value.
 
 HasServiceUsername returns a boolean if a field has been set.
 
+### SetServiceUsernameNil
+
+`func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) SetServiceUsernameNil(b bool)`
+
+ SetServiceUsernameNil sets the value for ServiceUsername to be an explicit nil
+
+### UnsetServiceUsername
+`func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) UnsetServiceUsername()`
+
+UnsetServiceUsername ensures that no value is present for ServiceUsername, not even an explicit nil
 ### GetServicePassword
 
 `func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) GetServicePassword() string`
@@ -461,6 +551,16 @@ SetServicePassword sets ServicePassword field to given value.
 
 HasServicePassword returns a boolean if a field has been set.
 
+### SetServicePasswordNil
+
+`func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) SetServicePasswordNil(b bool)`
+
+ SetServicePasswordNil sets the value for ServicePassword to be an explicit nil
+
+### UnsetServicePassword
+`func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) UnsetServicePassword()`
+
+UnsetServicePassword ensures that no value is present for ServicePassword, not even an explicit nil
 ### GetServicePasswordHash
 
 `func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) GetServicePasswordHash() string`
@@ -486,6 +586,16 @@ SetServicePasswordHash sets ServicePasswordHash field to given value.
 
 HasServicePasswordHash returns a boolean if a field has been set.
 
+### SetServicePasswordHashNil
+
+`func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) SetServicePasswordHashNil(b bool)`
+
+ SetServicePasswordHashNil sets the value for ServicePasswordHash to be an explicit nil
+
+### UnsetServicePasswordHash
+`func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) UnsetServicePasswordHash()`
+
+UnsetServicePasswordHash ensures that no value is present for ServicePasswordHash, not even an explicit nil
 ### GetServiceToken
 
 `func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) GetServiceToken() string`
@@ -511,6 +621,16 @@ SetServiceToken sets ServiceToken field to given value.
 
 HasServiceToken returns a boolean if a field has been set.
 
+### SetServiceTokenNil
+
+`func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) SetServiceTokenNil(b bool)`
+
+ SetServiceTokenNil sets the value for ServiceToken to be an explicit nil
+
+### UnsetServiceToken
+`func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) UnsetServiceToken()`
+
+UnsetServiceToken ensures that no value is present for ServiceToken, not even an explicit nil
 ### GetServiceTokenHash
 
 `func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) GetServiceTokenHash() string`
@@ -536,6 +656,16 @@ SetServiceTokenHash sets ServiceTokenHash field to given value.
 
 HasServiceTokenHash returns a boolean if a field has been set.
 
+### SetServiceTokenHashNil
+
+`func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) SetServiceTokenHashNil(b bool)`
+
+ SetServiceTokenHashNil sets the value for ServiceTokenHash to be an explicit nil
+
+### UnsetServiceTokenHash
+`func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) UnsetServiceTokenHash()`
+
+UnsetServiceTokenHash ensures that no value is present for ServiceTokenHash, not even an explicit nil
 ### GetApiPort
 
 `func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) GetApiPort() int32`
@@ -561,6 +691,16 @@ SetApiPort sets ApiPort field to given value.
 
 HasApiPort returns a boolean if a field has been set.
 
+### SetApiPortNil
+
+`func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) SetApiPortNil(b bool)`
+
+ SetApiPortNil sets the value for ApiPort to be an explicit nil
+
+### UnsetApiPort
+`func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) UnsetApiPort()`
+
+UnsetApiPort ensures that no value is present for ApiPort, not even an explicit nil
 ### GetAdminPort
 
 `func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) GetAdminPort() int32`
@@ -586,6 +726,16 @@ SetAdminPort sets AdminPort field to given value.
 
 HasAdminPort returns a boolean if a field has been set.
 
+### SetAdminPortNil
+
+`func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) SetAdminPortNil(b bool)`
+
+ SetAdminPortNil sets the value for AdminPort to be an explicit nil
+
+### UnsetAdminPort
+`func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) UnsetAdminPort()`
+
+UnsetAdminPort ensures that no value is present for AdminPort, not even an explicit nil
 ### GetStatus
 
 `func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) GetStatus() string`
@@ -636,6 +786,16 @@ SetStatusMessage sets StatusMessage field to given value.
 
 HasStatusMessage returns a boolean if a field has been set.
 
+### SetStatusMessageNil
+
+`func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) SetStatusMessageNil(b bool)`
+
+ SetStatusMessageNil sets the value for StatusMessage to be an explicit nil
+
+### UnsetStatusMessage
+`func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) UnsetStatusMessage()`
+
+UnsetStatusMessage ensures that no value is present for StatusMessage, not even an explicit nil
 ### GetStatusDate
 
 `func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) GetStatusDate() time.Time`
@@ -661,6 +821,16 @@ SetStatusDate sets StatusDate field to given value.
 
 HasStatusDate returns a boolean if a field has been set.
 
+### SetStatusDateNil
+
+`func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) SetStatusDateNil(b bool)`
+
+ SetStatusDateNil sets the value for StatusDate to be an explicit nil
+
+### UnsetStatusDate
+`func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) UnsetStatusDate()`
+
+UnsetStatusDate ensures that no value is present for StatusDate, not even an explicit nil
 ### GetLastSync
 
 `func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) GetLastSync() time.Time`
@@ -686,6 +856,16 @@ SetLastSync sets LastSync field to given value.
 
 HasLastSync returns a boolean if a field has been set.
 
+### SetLastSyncNil
+
+`func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) SetLastSyncNil(b bool)`
+
+ SetLastSyncNil sets the value for LastSync to be an explicit nil
+
+### UnsetLastSync
+`func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) UnsetLastSync()`
+
+UnsetLastSync ensures that no value is present for LastSync, not even an explicit nil
 ### GetNextRunDate
 
 `func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) GetNextRunDate() time.Time`
@@ -711,6 +891,16 @@ SetNextRunDate sets NextRunDate field to given value.
 
 HasNextRunDate returns a boolean if a field has been set.
 
+### SetNextRunDateNil
+
+`func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) SetNextRunDateNil(b bool)`
+
+ SetNextRunDateNil sets the value for NextRunDate to be an explicit nil
+
+### UnsetNextRunDate
+`func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) UnsetNextRunDate()`
+
+UnsetNextRunDate ensures that no value is present for NextRunDate, not even an explicit nil
 ### GetLastSyncDuration
 
 `func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) GetLastSyncDuration() int64`
@@ -736,6 +926,16 @@ SetLastSyncDuration sets LastSyncDuration field to given value.
 
 HasLastSyncDuration returns a boolean if a field has been set.
 
+### SetLastSyncDurationNil
+
+`func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) SetLastSyncDurationNil(b bool)`
+
+ SetLastSyncDurationNil sets the value for LastSyncDuration to be an explicit nil
+
+### UnsetLastSyncDuration
+`func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) UnsetLastSyncDuration()`
+
+UnsetLastSyncDuration ensures that no value is present for LastSyncDuration, not even an explicit nil
 ### GetConfig
 
 `func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) GetConfig() map[string]interface{}`
@@ -786,6 +986,16 @@ SetNetworkFilter sets NetworkFilter field to given value.
 
 HasNetworkFilter returns a boolean if a field has been set.
 
+### SetNetworkFilterNil
+
+`func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) SetNetworkFilterNil(b bool)`
+
+ SetNetworkFilterNil sets the value for NetworkFilter to be an explicit nil
+
+### UnsetNetworkFilter
+`func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) UnsetNetworkFilter()`
+
+UnsetNetworkFilter ensures that no value is present for NetworkFilter, not even an explicit nil
 ### GetTenantMatch
 
 `func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) GetTenantMatch() string`
@@ -811,6 +1021,16 @@ SetTenantMatch sets TenantMatch field to given value.
 
 HasTenantMatch returns a boolean if a field has been set.
 
+### SetTenantMatchNil
+
+`func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) SetTenantMatchNil(b bool)`
+
+ SetTenantMatchNil sets the value for TenantMatch to be an explicit nil
+
+### UnsetTenantMatch
+`func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) UnsetTenantMatch()`
+
+UnsetTenantMatch ensures that no value is present for TenantMatch, not even an explicit nil
 ### GetZoneId
 
 `func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) GetZoneId() int64`
@@ -836,6 +1056,16 @@ SetZoneId sets ZoneId field to given value.
 
 HasZoneId returns a boolean if a field has been set.
 
+### SetZoneIdNil
+
+`func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) SetZoneIdNil(b bool)`
+
+ SetZoneIdNil sets the value for ZoneId to be an explicit nil
+
+### UnsetZoneId
+`func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) UnsetZoneId()`
+
+UnsetZoneId ensures that no value is present for ZoneId, not even an explicit nil
 ### GetDateCreated
 
 `func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) GetDateCreated() time.Time`
@@ -963,20 +1193,20 @@ HasCredential returns a boolean if a field has been set.
 
 ### GetTenants
 
-`func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) GetTenants() []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) GetTenants() []GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetTenants returns the Tenants field if non-nil, zero value otherwise.
 
 ### GetTenantsOk
 
-`func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) GetTenantsOk() (*[]ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) GetTenantsOk() (*[]GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetTenantsOk returns a tuple with the Tenants field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenants
 
-`func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) SetTenants(v []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) SetTenants(v []GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetTenants sets Tenants field to given value.
 

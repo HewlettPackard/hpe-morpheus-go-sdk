@@ -6,23 +6,23 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** | Backup Result ID | [optional] 
 **Backup** | Pointer to [**ListBackupJobs200ResponseAllOfJobsInnerBackupsInner**](ListBackupJobs200ResponseAllOfJobsInnerBackupsInner.md) |  | [optional] 
-**BackupSetId** | Pointer to **string** |  | [optional] 
-**InstanceId** | Pointer to **int64** |  | [optional] 
-**ContainerId** | Pointer to **int64** |  | [optional] 
-**ServerId** | Pointer to **int64** |  | [optional] 
-**Status** | Pointer to **string** |  | [optional] 
-**ErrorMessage** | Pointer to **string** |  | [optional] 
-**StartDate** | Pointer to **time.Time** |  | [optional] 
-**EndDate** | Pointer to **time.Time** |  | [optional] 
-**DurationMillis** | Pointer to **int64** |  | [optional] 
-**SizeInBytes** | Pointer to **int64** |  | [optional] 
-**SizeInMb** | Pointer to **int64** |  | [optional] 
-**VolumePath** | Pointer to **string** |  | [optional] 
-**ResultArchive** | Pointer to **string** |  | [optional] 
-**ResultPath** | Pointer to **string** |  | [optional] 
-**ExternalId** | Pointer to **string** |  | [optional] 
-**SnapshotId** | Pointer to **string** |  | [optional] 
-**SnapshotExternalId** | Pointer to **string** |  | [optional] 
+**BackupSetId** | Pointer to **NullableString** |  | [optional] 
+**InstanceId** | Pointer to **NullableInt64** |  | [optional] 
+**ContainerId** | Pointer to **NullableInt64** |  | [optional] 
+**ServerId** | Pointer to **NullableInt64** |  | [optional] 
+**Status** | Pointer to **NullableString** |  | [optional] 
+**ErrorMessage** | Pointer to **NullableString** |  | [optional] 
+**StartDate** | Pointer to **NullableTime** |  | [optional] 
+**EndDate** | Pointer to **NullableTime** |  | [optional] 
+**DurationMillis** | Pointer to **NullableInt64** |  | [optional] 
+**SizeInBytes** | Pointer to **NullableInt64** |  | [optional] 
+**SizeInMb** | Pointer to **NullableInt64** |  | [optional] 
+**VolumePath** | Pointer to **NullableString** |  | [optional] 
+**ResultArchive** | Pointer to **NullableString** |  | [optional] 
+**ResultPath** | Pointer to **NullableString** |  | [optional] 
+**ExternalId** | Pointer to **NullableString** |  | [optional] 
+**SnapshotId** | Pointer to **NullableString** |  | [optional] 
+**SnapshotExternalId** | Pointer to **NullableString** |  | [optional] 
 **CreatedBy** | Pointer to [**ListBackupResults200ResponseAllOfResultsInnerCreatedBy**](ListBackupResults200ResponseAllOfResultsInnerCreatedBy.md) |  | [optional] 
 **DateCreated** | Pointer to **time.Time** | Date Created | [optional] 
 **LastUpdated** | Pointer to **time.Time** | Last Updated | [optional] 
@@ -121,6 +121,16 @@ SetBackupSetId sets BackupSetId field to given value.
 
 HasBackupSetId returns a boolean if a field has been set.
 
+### SetBackupSetIdNil
+
+`func (o *BackupResult) SetBackupSetIdNil(b bool)`
+
+ SetBackupSetIdNil sets the value for BackupSetId to be an explicit nil
+
+### UnsetBackupSetId
+`func (o *BackupResult) UnsetBackupSetId()`
+
+UnsetBackupSetId ensures that no value is present for BackupSetId, not even an explicit nil
 ### GetInstanceId
 
 `func (o *BackupResult) GetInstanceId() int64`
@@ -146,6 +156,16 @@ SetInstanceId sets InstanceId field to given value.
 
 HasInstanceId returns a boolean if a field has been set.
 
+### SetInstanceIdNil
+
+`func (o *BackupResult) SetInstanceIdNil(b bool)`
+
+ SetInstanceIdNil sets the value for InstanceId to be an explicit nil
+
+### UnsetInstanceId
+`func (o *BackupResult) UnsetInstanceId()`
+
+UnsetInstanceId ensures that no value is present for InstanceId, not even an explicit nil
 ### GetContainerId
 
 `func (o *BackupResult) GetContainerId() int64`
@@ -171,6 +191,16 @@ SetContainerId sets ContainerId field to given value.
 
 HasContainerId returns a boolean if a field has been set.
 
+### SetContainerIdNil
+
+`func (o *BackupResult) SetContainerIdNil(b bool)`
+
+ SetContainerIdNil sets the value for ContainerId to be an explicit nil
+
+### UnsetContainerId
+`func (o *BackupResult) UnsetContainerId()`
+
+UnsetContainerId ensures that no value is present for ContainerId, not even an explicit nil
 ### GetServerId
 
 `func (o *BackupResult) GetServerId() int64`
@@ -196,6 +226,16 @@ SetServerId sets ServerId field to given value.
 
 HasServerId returns a boolean if a field has been set.
 
+### SetServerIdNil
+
+`func (o *BackupResult) SetServerIdNil(b bool)`
+
+ SetServerIdNil sets the value for ServerId to be an explicit nil
+
+### UnsetServerId
+`func (o *BackupResult) UnsetServerId()`
+
+UnsetServerId ensures that no value is present for ServerId, not even an explicit nil
 ### GetStatus
 
 `func (o *BackupResult) GetStatus() string`
@@ -221,6 +261,16 @@ SetStatus sets Status field to given value.
 
 HasStatus returns a boolean if a field has been set.
 
+### SetStatusNil
+
+`func (o *BackupResult) SetStatusNil(b bool)`
+
+ SetStatusNil sets the value for Status to be an explicit nil
+
+### UnsetStatus
+`func (o *BackupResult) UnsetStatus()`
+
+UnsetStatus ensures that no value is present for Status, not even an explicit nil
 ### GetErrorMessage
 
 `func (o *BackupResult) GetErrorMessage() string`
@@ -246,6 +296,16 @@ SetErrorMessage sets ErrorMessage field to given value.
 
 HasErrorMessage returns a boolean if a field has been set.
 
+### SetErrorMessageNil
+
+`func (o *BackupResult) SetErrorMessageNil(b bool)`
+
+ SetErrorMessageNil sets the value for ErrorMessage to be an explicit nil
+
+### UnsetErrorMessage
+`func (o *BackupResult) UnsetErrorMessage()`
+
+UnsetErrorMessage ensures that no value is present for ErrorMessage, not even an explicit nil
 ### GetStartDate
 
 `func (o *BackupResult) GetStartDate() time.Time`
@@ -271,6 +331,16 @@ SetStartDate sets StartDate field to given value.
 
 HasStartDate returns a boolean if a field has been set.
 
+### SetStartDateNil
+
+`func (o *BackupResult) SetStartDateNil(b bool)`
+
+ SetStartDateNil sets the value for StartDate to be an explicit nil
+
+### UnsetStartDate
+`func (o *BackupResult) UnsetStartDate()`
+
+UnsetStartDate ensures that no value is present for StartDate, not even an explicit nil
 ### GetEndDate
 
 `func (o *BackupResult) GetEndDate() time.Time`
@@ -296,6 +366,16 @@ SetEndDate sets EndDate field to given value.
 
 HasEndDate returns a boolean if a field has been set.
 
+### SetEndDateNil
+
+`func (o *BackupResult) SetEndDateNil(b bool)`
+
+ SetEndDateNil sets the value for EndDate to be an explicit nil
+
+### UnsetEndDate
+`func (o *BackupResult) UnsetEndDate()`
+
+UnsetEndDate ensures that no value is present for EndDate, not even an explicit nil
 ### GetDurationMillis
 
 `func (o *BackupResult) GetDurationMillis() int64`
@@ -321,6 +401,16 @@ SetDurationMillis sets DurationMillis field to given value.
 
 HasDurationMillis returns a boolean if a field has been set.
 
+### SetDurationMillisNil
+
+`func (o *BackupResult) SetDurationMillisNil(b bool)`
+
+ SetDurationMillisNil sets the value for DurationMillis to be an explicit nil
+
+### UnsetDurationMillis
+`func (o *BackupResult) UnsetDurationMillis()`
+
+UnsetDurationMillis ensures that no value is present for DurationMillis, not even an explicit nil
 ### GetSizeInBytes
 
 `func (o *BackupResult) GetSizeInBytes() int64`
@@ -346,6 +436,16 @@ SetSizeInBytes sets SizeInBytes field to given value.
 
 HasSizeInBytes returns a boolean if a field has been set.
 
+### SetSizeInBytesNil
+
+`func (o *BackupResult) SetSizeInBytesNil(b bool)`
+
+ SetSizeInBytesNil sets the value for SizeInBytes to be an explicit nil
+
+### UnsetSizeInBytes
+`func (o *BackupResult) UnsetSizeInBytes()`
+
+UnsetSizeInBytes ensures that no value is present for SizeInBytes, not even an explicit nil
 ### GetSizeInMb
 
 `func (o *BackupResult) GetSizeInMb() int64`
@@ -371,6 +471,16 @@ SetSizeInMb sets SizeInMb field to given value.
 
 HasSizeInMb returns a boolean if a field has been set.
 
+### SetSizeInMbNil
+
+`func (o *BackupResult) SetSizeInMbNil(b bool)`
+
+ SetSizeInMbNil sets the value for SizeInMb to be an explicit nil
+
+### UnsetSizeInMb
+`func (o *BackupResult) UnsetSizeInMb()`
+
+UnsetSizeInMb ensures that no value is present for SizeInMb, not even an explicit nil
 ### GetVolumePath
 
 `func (o *BackupResult) GetVolumePath() string`
@@ -396,6 +506,16 @@ SetVolumePath sets VolumePath field to given value.
 
 HasVolumePath returns a boolean if a field has been set.
 
+### SetVolumePathNil
+
+`func (o *BackupResult) SetVolumePathNil(b bool)`
+
+ SetVolumePathNil sets the value for VolumePath to be an explicit nil
+
+### UnsetVolumePath
+`func (o *BackupResult) UnsetVolumePath()`
+
+UnsetVolumePath ensures that no value is present for VolumePath, not even an explicit nil
 ### GetResultArchive
 
 `func (o *BackupResult) GetResultArchive() string`
@@ -421,6 +541,16 @@ SetResultArchive sets ResultArchive field to given value.
 
 HasResultArchive returns a boolean if a field has been set.
 
+### SetResultArchiveNil
+
+`func (o *BackupResult) SetResultArchiveNil(b bool)`
+
+ SetResultArchiveNil sets the value for ResultArchive to be an explicit nil
+
+### UnsetResultArchive
+`func (o *BackupResult) UnsetResultArchive()`
+
+UnsetResultArchive ensures that no value is present for ResultArchive, not even an explicit nil
 ### GetResultPath
 
 `func (o *BackupResult) GetResultPath() string`
@@ -446,6 +576,16 @@ SetResultPath sets ResultPath field to given value.
 
 HasResultPath returns a boolean if a field has been set.
 
+### SetResultPathNil
+
+`func (o *BackupResult) SetResultPathNil(b bool)`
+
+ SetResultPathNil sets the value for ResultPath to be an explicit nil
+
+### UnsetResultPath
+`func (o *BackupResult) UnsetResultPath()`
+
+UnsetResultPath ensures that no value is present for ResultPath, not even an explicit nil
 ### GetExternalId
 
 `func (o *BackupResult) GetExternalId() string`
@@ -471,6 +611,16 @@ SetExternalId sets ExternalId field to given value.
 
 HasExternalId returns a boolean if a field has been set.
 
+### SetExternalIdNil
+
+`func (o *BackupResult) SetExternalIdNil(b bool)`
+
+ SetExternalIdNil sets the value for ExternalId to be an explicit nil
+
+### UnsetExternalId
+`func (o *BackupResult) UnsetExternalId()`
+
+UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
 ### GetSnapshotId
 
 `func (o *BackupResult) GetSnapshotId() string`
@@ -496,6 +646,16 @@ SetSnapshotId sets SnapshotId field to given value.
 
 HasSnapshotId returns a boolean if a field has been set.
 
+### SetSnapshotIdNil
+
+`func (o *BackupResult) SetSnapshotIdNil(b bool)`
+
+ SetSnapshotIdNil sets the value for SnapshotId to be an explicit nil
+
+### UnsetSnapshotId
+`func (o *BackupResult) UnsetSnapshotId()`
+
+UnsetSnapshotId ensures that no value is present for SnapshotId, not even an explicit nil
 ### GetSnapshotExternalId
 
 `func (o *BackupResult) GetSnapshotExternalId() string`
@@ -521,6 +681,16 @@ SetSnapshotExternalId sets SnapshotExternalId field to given value.
 
 HasSnapshotExternalId returns a boolean if a field has been set.
 
+### SetSnapshotExternalIdNil
+
+`func (o *BackupResult) SetSnapshotExternalIdNil(b bool)`
+
+ SetSnapshotExternalIdNil sets the value for SnapshotExternalId to be an explicit nil
+
+### UnsetSnapshotExternalId
+`func (o *BackupResult) UnsetSnapshotExternalId()`
+
+UnsetSnapshotExternalId ensures that no value is present for SnapshotExternalId, not even an explicit nil
 ### GetCreatedBy
 
 `func (o *BackupResult) GetCreatedBy() ListBackupResults200ResponseAllOfResultsInnerCreatedBy`

@@ -21,32 +21,32 @@ var _ MappedNullable = &ListLoadBalancers200ResponseAllOfLoadBalancersInner{}
 
 // ListLoadBalancers200ResponseAllOfLoadBalancersInner struct for ListLoadBalancers200ResponseAllOfLoadBalancersInner
 type ListLoadBalancers200ResponseAllOfLoadBalancersInner struct {
-	Id                   *int64                                                                   `json:"id,omitempty"`
-	Uuid                 *string                                                                  `json:"uuid,omitempty"`
-	Name                 *string                                                                  `json:"name,omitempty"`
-	AccountId            *int64                                                                   `json:"accountId,omitempty"`
-	Cloud                *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner  `json:"cloud,omitempty"`
-	Type                 *ListBackupSettings200ResponseBackupSettingsDefaultSchedule              `json:"type,omitempty"`
-	Owner                *GetAlerts200ResponseAllOfCheckGroupsInnerInstance                       `json:"owner,omitempty"`
-	Visibility           *string                                                                  `json:"visibility,omitempty"`
-	Description          *string                                                                  `json:"description,omitempty"`
-	Host                 *string                                                                  `json:"host,omitempty"`
-	Port                 *int64                                                                   `json:"port,omitempty"`
-	Username             *string                                                                  `json:"username,omitempty"`
-	Ip                   *string                                                                  `json:"ip,omitempty"`
-	InternalIp           *string                                                                  `json:"internalIp,omitempty"`
-	ExternalIp           *string                                                                  `json:"externalIp,omitempty"`
-	ApiPort              *string                                                                  `json:"apiPort,omitempty"`
-	AdminPort            *string                                                                  `json:"adminPort,omitempty"`
-	SslEnabled           *bool                                                                    `json:"sslEnabled,omitempty"`
-	SslCert              *string                                                                  `json:"sslCert,omitempty"`
-	Config               map[string]interface{}                                                   `json:"config,omitempty"`
-	DateCreated          *time.Time                                                               `json:"dateCreated,omitempty"`
-	LastUpdated          *time.Time                                                               `json:"lastUpdated,omitempty"`
-	Credential           *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential        `json:"credential,omitempty"`
-	Tenants              []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"tenants,omitempty"`
-	ResourcePermission   *ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission    `json:"resourcePermission,omitempty"`
-	AdditionalProperties map[string]interface{}                                                   `json:",remain"`
+	Id                   *int64                                                                `json:"id,omitempty"`
+	Uuid                 *string                                                               `json:"uuid,omitempty"`
+	Name                 *string                                                               `json:"name,omitempty"`
+	AccountId            *int64                                                                `json:"accountId,omitempty"`
+	Cloud                *GetAlerts200ResponseAllOfCheckGroupsInnerInstance                    `json:"cloud,omitempty"`
+	Type                 *ListBackupSettings200ResponseBackupSettingsDefaultSchedule           `json:"type,omitempty"`
+	Owner                *GetAlerts200ResponseAllOfCheckGroupsInnerInstance                    `json:"owner,omitempty"`
+	Visibility           *string                                                               `json:"visibility,omitempty"`
+	Description          *string                                                               `json:"description,omitempty"`
+	Host                 *string                                                               `json:"host,omitempty"`
+	Port                 *int64                                                                `json:"port,omitempty"`
+	Username             NullableString                                                        `json:"username,omitempty"`
+	Ip                   *string                                                               `json:"ip,omitempty"`
+	InternalIp           NullableString                                                        `json:"internalIp,omitempty"`
+	ExternalIp           NullableString                                                        `json:"externalIp,omitempty"`
+	ApiPort              NullableString                                                        `json:"apiPort,omitempty"`
+	AdminPort            NullableString                                                        `json:"adminPort,omitempty"`
+	SslEnabled           NullableBool                                                          `json:"sslEnabled,omitempty"`
+	SslCert              NullableString                                                        `json:"sslCert,omitempty"`
+	Config               map[string]interface{}                                                `json:"config,omitempty"`
+	DateCreated          *time.Time                                                            `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                                            `json:"lastUpdated,omitempty"`
+	Credential           *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential     `json:"credential,omitempty"`
+	Tenants              []GetAlerts200ResponseAllOfCheckGroupsInnerInstance                   `json:"tenants,omitempty"`
+	ResourcePermission   *ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission `json:"resourcePermission,omitempty"`
+	AdditionalProperties map[string]interface{}                                                `json:",remain"`
 }
 
 type _ListLoadBalancers200ResponseAllOfLoadBalancersInner ListLoadBalancers200ResponseAllOfLoadBalancersInner
@@ -197,9 +197,9 @@ func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) SetAccountId(v int
 }
 
 // GetCloud returns the Cloud field value if set, zero value otherwise.
-func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) GetCloud() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) GetCloud() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.Cloud) {
-		var ret ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return *o.Cloud
@@ -207,7 +207,7 @@ func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) GetCloud() ListApp
 
 // GetCloudOk returns a tuple with the Cloud field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) GetCloudOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) GetCloudOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.Cloud) {
 		return nil, false
 	}
@@ -223,8 +223,8 @@ func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) IsSetCloud() bool 
 	return false
 }
 
-// SetCloud gets a reference to the given ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the Cloud field.
-func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) SetCloud(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetCloud gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Cloud field.
+func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) SetCloud(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.Cloud = &v
 }
 
@@ -420,36 +420,47 @@ func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) SetPort(v int64) {
 	o.Port = &v
 }
 
-// GetUsername returns the Username field value if set, zero value otherwise.
+// GetUsername returns the Username field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) GetUsername() string {
-	if o == nil || IsNil(o.Username) {
+	if o == nil || IsNil(o.Username.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Username
+	return *o.Username.Get()
 }
 
 // GetUsernameOk returns a tuple with the Username field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) GetUsernameOk() (*string, bool) {
-	if o == nil || IsNil(o.Username) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Username, true
+	return o.Username.Get(), o.Username.IsSet()
 }
 
 // IsSetUsername returns a boolean if a field has been set.
 func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) IsSetUsername() bool {
-	if o != nil && !IsNil(o.Username) {
+	if o != nil && o.Username.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetUsername gets a reference to the given string and assigns it to the Username field.
+// SetUsername gets a reference to the given NullableString and assigns it to the Username field.
 func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) SetUsername(v string) {
-	o.Username = &v
+	o.Username.Set(&v)
+}
+
+// SetUsernameNil sets the value for Username to be an explicit nil
+func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) SetUsernameNil() {
+	o.Username.Set(nil)
+}
+
+// UnsetUsername ensures that no value is present for Username, not even an explicit nil
+func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) UnsetUsername() {
+	o.Username.Unset()
 }
 
 // GetIp returns the Ip field value if set, zero value otherwise.
@@ -484,196 +495,262 @@ func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) SetIp(v string) {
 	o.Ip = &v
 }
 
-// GetInternalIp returns the InternalIp field value if set, zero value otherwise.
+// GetInternalIp returns the InternalIp field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) GetInternalIp() string {
-	if o == nil || IsNil(o.InternalIp) {
+	if o == nil || IsNil(o.InternalIp.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.InternalIp
+	return *o.InternalIp.Get()
 }
 
 // GetInternalIpOk returns a tuple with the InternalIp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) GetInternalIpOk() (*string, bool) {
-	if o == nil || IsNil(o.InternalIp) {
+	if o == nil {
 		return nil, false
 	}
-	return o.InternalIp, true
+	return o.InternalIp.Get(), o.InternalIp.IsSet()
 }
 
 // IsSetInternalIp returns a boolean if a field has been set.
 func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) IsSetInternalIp() bool {
-	if o != nil && !IsNil(o.InternalIp) {
+	if o != nil && o.InternalIp.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetInternalIp gets a reference to the given string and assigns it to the InternalIp field.
+// SetInternalIp gets a reference to the given NullableString and assigns it to the InternalIp field.
 func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) SetInternalIp(v string) {
-	o.InternalIp = &v
+	o.InternalIp.Set(&v)
 }
 
-// GetExternalIp returns the ExternalIp field value if set, zero value otherwise.
+// SetInternalIpNil sets the value for InternalIp to be an explicit nil
+func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) SetInternalIpNil() {
+	o.InternalIp.Set(nil)
+}
+
+// UnsetInternalIp ensures that no value is present for InternalIp, not even an explicit nil
+func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) UnsetInternalIp() {
+	o.InternalIp.Unset()
+}
+
+// GetExternalIp returns the ExternalIp field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) GetExternalIp() string {
-	if o == nil || IsNil(o.ExternalIp) {
+	if o == nil || IsNil(o.ExternalIp.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ExternalIp
+	return *o.ExternalIp.Get()
 }
 
 // GetExternalIpOk returns a tuple with the ExternalIp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) GetExternalIpOk() (*string, bool) {
-	if o == nil || IsNil(o.ExternalIp) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ExternalIp, true
+	return o.ExternalIp.Get(), o.ExternalIp.IsSet()
 }
 
 // IsSetExternalIp returns a boolean if a field has been set.
 func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) IsSetExternalIp() bool {
-	if o != nil && !IsNil(o.ExternalIp) {
+	if o != nil && o.ExternalIp.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetExternalIp gets a reference to the given string and assigns it to the ExternalIp field.
+// SetExternalIp gets a reference to the given NullableString and assigns it to the ExternalIp field.
 func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) SetExternalIp(v string) {
-	o.ExternalIp = &v
+	o.ExternalIp.Set(&v)
 }
 
-// GetApiPort returns the ApiPort field value if set, zero value otherwise.
+// SetExternalIpNil sets the value for ExternalIp to be an explicit nil
+func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) SetExternalIpNil() {
+	o.ExternalIp.Set(nil)
+}
+
+// UnsetExternalIp ensures that no value is present for ExternalIp, not even an explicit nil
+func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) UnsetExternalIp() {
+	o.ExternalIp.Unset()
+}
+
+// GetApiPort returns the ApiPort field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) GetApiPort() string {
-	if o == nil || IsNil(o.ApiPort) {
+	if o == nil || IsNil(o.ApiPort.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ApiPort
+	return *o.ApiPort.Get()
 }
 
 // GetApiPortOk returns a tuple with the ApiPort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) GetApiPortOk() (*string, bool) {
-	if o == nil || IsNil(o.ApiPort) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ApiPort, true
+	return o.ApiPort.Get(), o.ApiPort.IsSet()
 }
 
 // IsSetApiPort returns a boolean if a field has been set.
 func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) IsSetApiPort() bool {
-	if o != nil && !IsNil(o.ApiPort) {
+	if o != nil && o.ApiPort.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetApiPort gets a reference to the given string and assigns it to the ApiPort field.
+// SetApiPort gets a reference to the given NullableString and assigns it to the ApiPort field.
 func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) SetApiPort(v string) {
-	o.ApiPort = &v
+	o.ApiPort.Set(&v)
 }
 
-// GetAdminPort returns the AdminPort field value if set, zero value otherwise.
+// SetApiPortNil sets the value for ApiPort to be an explicit nil
+func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) SetApiPortNil() {
+	o.ApiPort.Set(nil)
+}
+
+// UnsetApiPort ensures that no value is present for ApiPort, not even an explicit nil
+func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) UnsetApiPort() {
+	o.ApiPort.Unset()
+}
+
+// GetAdminPort returns the AdminPort field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) GetAdminPort() string {
-	if o == nil || IsNil(o.AdminPort) {
+	if o == nil || IsNil(o.AdminPort.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.AdminPort
+	return *o.AdminPort.Get()
 }
 
 // GetAdminPortOk returns a tuple with the AdminPort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) GetAdminPortOk() (*string, bool) {
-	if o == nil || IsNil(o.AdminPort) {
+	if o == nil {
 		return nil, false
 	}
-	return o.AdminPort, true
+	return o.AdminPort.Get(), o.AdminPort.IsSet()
 }
 
 // IsSetAdminPort returns a boolean if a field has been set.
 func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) IsSetAdminPort() bool {
-	if o != nil && !IsNil(o.AdminPort) {
+	if o != nil && o.AdminPort.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetAdminPort gets a reference to the given string and assigns it to the AdminPort field.
+// SetAdminPort gets a reference to the given NullableString and assigns it to the AdminPort field.
 func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) SetAdminPort(v string) {
-	o.AdminPort = &v
+	o.AdminPort.Set(&v)
 }
 
-// GetSslEnabled returns the SslEnabled field value if set, zero value otherwise.
+// SetAdminPortNil sets the value for AdminPort to be an explicit nil
+func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) SetAdminPortNil() {
+	o.AdminPort.Set(nil)
+}
+
+// UnsetAdminPort ensures that no value is present for AdminPort, not even an explicit nil
+func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) UnsetAdminPort() {
+	o.AdminPort.Unset()
+}
+
+// GetSslEnabled returns the SslEnabled field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) GetSslEnabled() bool {
-	if o == nil || IsNil(o.SslEnabled) {
+	if o == nil || IsNil(o.SslEnabled.Get()) {
 		var ret bool
 		return ret
 	}
-	return *o.SslEnabled
+	return *o.SslEnabled.Get()
 }
 
 // GetSslEnabledOk returns a tuple with the SslEnabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) GetSslEnabledOk() (*bool, bool) {
-	if o == nil || IsNil(o.SslEnabled) {
+	if o == nil {
 		return nil, false
 	}
-	return o.SslEnabled, true
+	return o.SslEnabled.Get(), o.SslEnabled.IsSet()
 }
 
 // IsSetSslEnabled returns a boolean if a field has been set.
 func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) IsSetSslEnabled() bool {
-	if o != nil && !IsNil(o.SslEnabled) {
+	if o != nil && o.SslEnabled.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetSslEnabled gets a reference to the given bool and assigns it to the SslEnabled field.
+// SetSslEnabled gets a reference to the given NullableBool and assigns it to the SslEnabled field.
 func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) SetSslEnabled(v bool) {
-	o.SslEnabled = &v
+	o.SslEnabled.Set(&v)
 }
 
-// GetSslCert returns the SslCert field value if set, zero value otherwise.
+// SetSslEnabledNil sets the value for SslEnabled to be an explicit nil
+func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) SetSslEnabledNil() {
+	o.SslEnabled.Set(nil)
+}
+
+// UnsetSslEnabled ensures that no value is present for SslEnabled, not even an explicit nil
+func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) UnsetSslEnabled() {
+	o.SslEnabled.Unset()
+}
+
+// GetSslCert returns the SslCert field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) GetSslCert() string {
-	if o == nil || IsNil(o.SslCert) {
+	if o == nil || IsNil(o.SslCert.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.SslCert
+	return *o.SslCert.Get()
 }
 
 // GetSslCertOk returns a tuple with the SslCert field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) GetSslCertOk() (*string, bool) {
-	if o == nil || IsNil(o.SslCert) {
+	if o == nil {
 		return nil, false
 	}
-	return o.SslCert, true
+	return o.SslCert.Get(), o.SslCert.IsSet()
 }
 
 // IsSetSslCert returns a boolean if a field has been set.
 func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) IsSetSslCert() bool {
-	if o != nil && !IsNil(o.SslCert) {
+	if o != nil && o.SslCert.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetSslCert gets a reference to the given string and assigns it to the SslCert field.
+// SetSslCert gets a reference to the given NullableString and assigns it to the SslCert field.
 func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) SetSslCert(v string) {
-	o.SslCert = &v
+	o.SslCert.Set(&v)
+}
+
+// SetSslCertNil sets the value for SslCert to be an explicit nil
+func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) SetSslCertNil() {
+	o.SslCert.Set(nil)
+}
+
+// UnsetSslCert ensures that no value is present for SslCert, not even an explicit nil
+func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) UnsetSslCert() {
+	o.SslCert.Unset()
 }
 
 // GetConfig returns the Config field value if set, zero value otherwise.
@@ -805,9 +882,9 @@ func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) SetCredential(v Li
 }
 
 // GetTenants returns the Tenants field value if set, zero value otherwise.
-func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) GetTenants() []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) GetTenants() []GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.Tenants) {
-		var ret []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret []GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return o.Tenants
@@ -815,7 +892,7 @@ func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) GetTenants() []Lis
 
 // GetTenantsOk returns a tuple with the Tenants field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) GetTenantsOk() ([]ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) GetTenantsOk() ([]GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.Tenants) {
 		return nil, false
 	}
@@ -831,8 +908,8 @@ func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) IsSetTenants() boo
 	return false
 }
 
-// SetTenants gets a reference to the given []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the Tenants field.
-func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) SetTenants(v []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetTenants gets a reference to the given []GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Tenants field.
+func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) SetTenants(v []GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.Tenants = v
 }
 
@@ -911,29 +988,29 @@ func (o ListLoadBalancers200ResponseAllOfLoadBalancersInner) ToMap() (map[string
 	if !IsNil(o.Port) {
 		toSerialize["port"] = o.Port
 	}
-	if !IsNil(o.Username) {
-		toSerialize["username"] = o.Username
+	if o.Username.IsSet() {
+		toSerialize["username"] = o.Username.Get()
 	}
 	if !IsNil(o.Ip) {
 		toSerialize["ip"] = o.Ip
 	}
-	if !IsNil(o.InternalIp) {
-		toSerialize["internalIp"] = o.InternalIp
+	if o.InternalIp.IsSet() {
+		toSerialize["internalIp"] = o.InternalIp.Get()
 	}
-	if !IsNil(o.ExternalIp) {
-		toSerialize["externalIp"] = o.ExternalIp
+	if o.ExternalIp.IsSet() {
+		toSerialize["externalIp"] = o.ExternalIp.Get()
 	}
-	if !IsNil(o.ApiPort) {
-		toSerialize["apiPort"] = o.ApiPort
+	if o.ApiPort.IsSet() {
+		toSerialize["apiPort"] = o.ApiPort.Get()
 	}
-	if !IsNil(o.AdminPort) {
-		toSerialize["adminPort"] = o.AdminPort
+	if o.AdminPort.IsSet() {
+		toSerialize["adminPort"] = o.AdminPort.Get()
 	}
-	if !IsNil(o.SslEnabled) {
-		toSerialize["sslEnabled"] = o.SslEnabled
+	if o.SslEnabled.IsSet() {
+		toSerialize["sslEnabled"] = o.SslEnabled.Get()
 	}
-	if !IsNil(o.SslCert) {
-		toSerialize["sslCert"] = o.SslCert
+	if o.SslCert.IsSet() {
+		toSerialize["sslCert"] = o.SslCert.Get()
 	}
 	if !IsNil(o.Config) {
 		toSerialize["config"] = o.Config

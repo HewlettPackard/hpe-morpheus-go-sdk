@@ -24,9 +24,9 @@ type ListClusterPods200ResponseAllOfPodsInner struct {
 	Id                   *int64                                       `json:"id,omitempty"`
 	Name                 *string                                      `json:"name,omitempty"`
 	Code                 *string                                      `json:"code,omitempty"`
-	Description          *string                                      `json:"description,omitempty"`
+	Description          NullableString                               `json:"description,omitempty"`
 	Category             *string                                      `json:"category,omitempty"`
-	ResourceLevel        *string                                      `json:"resourceLevel,omitempty"`
+	ResourceLevel        NullableString                               `json:"resourceLevel,omitempty"`
 	ResourceType         *string                                      `json:"resourceType,omitempty"`
 	Managed              *bool                                        `json:"managed,omitempty"`
 	Status               *string                                      `json:"status,omitempty"`
@@ -152,36 +152,47 @@ func (o *ListClusterPods200ResponseAllOfPodsInner) SetCode(v string) {
 	o.Code = &v
 }
 
-// GetDescription returns the Description field value if set, zero value otherwise.
+// GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListClusterPods200ResponseAllOfPodsInner) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
+	if o == nil || IsNil(o.Description.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Description
+	return *o.Description.Get()
 }
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListClusterPods200ResponseAllOfPodsInner) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Description, true
+	return o.Description.Get(), o.Description.IsSet()
 }
 
 // IsSetDescription returns a boolean if a field has been set.
 func (o *ListClusterPods200ResponseAllOfPodsInner) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
+	if o != nil && o.Description.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDescription gets a reference to the given string and assigns it to the Description field.
+// SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *ListClusterPods200ResponseAllOfPodsInner) SetDescription(v string) {
-	o.Description = &v
+	o.Description.Set(&v)
+}
+
+// SetDescriptionNil sets the value for Description to be an explicit nil
+func (o *ListClusterPods200ResponseAllOfPodsInner) SetDescriptionNil() {
+	o.Description.Set(nil)
+}
+
+// UnsetDescription ensures that no value is present for Description, not even an explicit nil
+func (o *ListClusterPods200ResponseAllOfPodsInner) UnsetDescription() {
+	o.Description.Unset()
 }
 
 // GetCategory returns the Category field value if set, zero value otherwise.
@@ -216,36 +227,47 @@ func (o *ListClusterPods200ResponseAllOfPodsInner) SetCategory(v string) {
 	o.Category = &v
 }
 
-// GetResourceLevel returns the ResourceLevel field value if set, zero value otherwise.
+// GetResourceLevel returns the ResourceLevel field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListClusterPods200ResponseAllOfPodsInner) GetResourceLevel() string {
-	if o == nil || IsNil(o.ResourceLevel) {
+	if o == nil || IsNil(o.ResourceLevel.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ResourceLevel
+	return *o.ResourceLevel.Get()
 }
 
 // GetResourceLevelOk returns a tuple with the ResourceLevel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListClusterPods200ResponseAllOfPodsInner) GetResourceLevelOk() (*string, bool) {
-	if o == nil || IsNil(o.ResourceLevel) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ResourceLevel, true
+	return o.ResourceLevel.Get(), o.ResourceLevel.IsSet()
 }
 
 // IsSetResourceLevel returns a boolean if a field has been set.
 func (o *ListClusterPods200ResponseAllOfPodsInner) IsSetResourceLevel() bool {
-	if o != nil && !IsNil(o.ResourceLevel) {
+	if o != nil && o.ResourceLevel.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetResourceLevel gets a reference to the given string and assigns it to the ResourceLevel field.
+// SetResourceLevel gets a reference to the given NullableString and assigns it to the ResourceLevel field.
 func (o *ListClusterPods200ResponseAllOfPodsInner) SetResourceLevel(v string) {
-	o.ResourceLevel = &v
+	o.ResourceLevel.Set(&v)
+}
+
+// SetResourceLevelNil sets the value for ResourceLevel to be an explicit nil
+func (o *ListClusterPods200ResponseAllOfPodsInner) SetResourceLevelNil() {
+	o.ResourceLevel.Set(nil)
+}
+
+// UnsetResourceLevel ensures that no value is present for ResourceLevel, not even an explicit nil
+func (o *ListClusterPods200ResponseAllOfPodsInner) UnsetResourceLevel() {
+	o.ResourceLevel.Unset()
 }
 
 // GetResourceType returns the ResourceType field value if set, zero value otherwise.
@@ -491,14 +513,14 @@ func (o ListClusterPods200ResponseAllOfPodsInner) ToMap() (map[string]interface{
 	if !IsNil(o.Code) {
 		toSerialize["code"] = o.Code
 	}
-	if !IsNil(o.Description) {
-		toSerialize["description"] = o.Description
+	if o.Description.IsSet() {
+		toSerialize["description"] = o.Description.Get()
 	}
 	if !IsNil(o.Category) {
 		toSerialize["category"] = o.Category
 	}
-	if !IsNil(o.ResourceLevel) {
-		toSerialize["resourceLevel"] = o.ResourceLevel
+	if o.ResourceLevel.IsSet() {
+		toSerialize["resourceLevel"] = o.ResourceLevel.Get()
 	}
 	if !IsNil(o.ResourceType) {
 		toSerialize["resourceType"] = o.ResourceType

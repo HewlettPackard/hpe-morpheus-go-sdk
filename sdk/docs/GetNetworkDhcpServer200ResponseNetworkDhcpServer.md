@@ -13,8 +13,8 @@ Name | Type | Description | Notes
 **Name** | Pointer to **string** |  | [optional] 
 **ExternalId** | Pointer to **string** |  | [optional] 
 **Config** | Pointer to [**GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig**](GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig.md) |  | [optional] 
-**Owner** | Pointer to [**CreateLoadBalancerRequestLoadBalancerTenantsInner**](CreateLoadBalancerRequestLoadBalancerTenantsInner.md) |  | [optional] 
-**NetworkServer** | Pointer to [**CreateLoadBalancerRequestLoadBalancerTenantsInner**](CreateLoadBalancerRequestLoadBalancerTenantsInner.md) |  | [optional] 
+**Owner** | Pointer to [**SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume**](SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume.md) |  | [optional] 
+**NetworkServer** | Pointer to [**SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume**](SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume.md) |  | [optional] 
 
 ## Methods
 
@@ -262,20 +262,20 @@ HasConfig returns a boolean if a field has been set.
 
 ### GetOwner
 
-`func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) GetOwner() CreateLoadBalancerRequestLoadBalancerTenantsInner`
+`func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) GetOwner() SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume`
 
 GetOwner returns the Owner field if non-nil, zero value otherwise.
 
 ### GetOwnerOk
 
-`func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) GetOwnerOk() (*CreateLoadBalancerRequestLoadBalancerTenantsInner, bool)`
+`func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) GetOwnerOk() (*SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume, bool)`
 
 GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOwner
 
-`func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) SetOwner(v CreateLoadBalancerRequestLoadBalancerTenantsInner)`
+`func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) SetOwner(v SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume)`
 
 SetOwner sets Owner field to given value.
 
@@ -287,20 +287,20 @@ HasOwner returns a boolean if a field has been set.
 
 ### GetNetworkServer
 
-`func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) GetNetworkServer() CreateLoadBalancerRequestLoadBalancerTenantsInner`
+`func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) GetNetworkServer() SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume`
 
 GetNetworkServer returns the NetworkServer field if non-nil, zero value otherwise.
 
 ### GetNetworkServerOk
 
-`func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) GetNetworkServerOk() (*CreateLoadBalancerRequestLoadBalancerTenantsInner, bool)`
+`func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) GetNetworkServerOk() (*SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume, bool)`
 
 GetNetworkServerOk returns a tuple with the NetworkServer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNetworkServer
 
-`func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) SetNetworkServer(v CreateLoadBalancerRequestLoadBalancerTenantsInner)`
+`func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) SetNetworkServer(v SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume)`
 
 SetNetworkServer sets NetworkServer field to given value.
 

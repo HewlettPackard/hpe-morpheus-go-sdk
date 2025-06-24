@@ -9,23 +9,23 @@ Name | Type | Description | Notes
 **UniqueId** | Pointer to **string** |  | [optional] 
 **ProcessType** | Pointer to [**ListClusterContainers200ResponseAllOfContainersInnerAvailableActionsInner**](ListClusterContainers200ResponseAllOfContainersInnerAvailableActionsInner.md) |  | [optional] 
 **DisplayName** | Pointer to **string** |  | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
-**SubType** | Pointer to **string** |  | [optional] 
-**SubId** | Pointer to **string** |  | [optional] 
-**ZoneId** | Pointer to **int64** |  | [optional] 
-**IntegrationId** | Pointer to **int64** |  | [optional] 
-**AppId** | Pointer to **int64** |  | [optional] 
-**InstanceId** | Pointer to **int64** |  | [optional] 
-**ContainerId** | Pointer to **int64** |  | [optional] 
-**ServerId** | Pointer to **int64** |  | [optional] 
-**ContainerName** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **NullableString** |  | [optional] 
+**SubType** | Pointer to **NullableString** |  | [optional] 
+**SubId** | Pointer to **NullableString** |  | [optional] 
+**ZoneId** | Pointer to **NullableInt64** |  | [optional] 
+**IntegrationId** | Pointer to **NullableInt64** |  | [optional] 
+**AppId** | Pointer to **NullableInt64** |  | [optional] 
+**InstanceId** | Pointer to **NullableInt64** |  | [optional] 
+**ContainerId** | Pointer to **NullableInt64** |  | [optional] 
+**ServerId** | Pointer to **NullableInt64** |  | [optional] 
+**ContainerName** | Pointer to **NullableString** |  | [optional] 
 **Status** | Pointer to **string** |  | [optional] 
-**Reason** | Pointer to **string** |  | [optional] 
+**Reason** | Pointer to **NullableString** |  | [optional] 
 **Percent** | Pointer to **float32** |  | [optional] 
 **StatusEta** | Pointer to **int64** |  | [optional] 
-**Message** | Pointer to **string** |  | [optional] 
-**Output** | Pointer to **string** |  | [optional] 
-**Error** | Pointer to **string** |  | [optional] 
+**Message** | Pointer to **NullableString** |  | [optional] 
+**Output** | Pointer to **NullableString** |  | [optional] 
+**Error** | Pointer to **NullableString** |  | [optional] 
 **StartDate** | Pointer to **time.Time** |  | [optional] 
 **EndDate** | Pointer to **time.Time** |  | [optional] 
 **Duration** | Pointer to **int64** |  | [optional] 
@@ -204,6 +204,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *ClusterHistory) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *ClusterHistory) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetSubType
 
 `func (o *ClusterHistory) GetSubType() string`
@@ -229,6 +239,16 @@ SetSubType sets SubType field to given value.
 
 HasSubType returns a boolean if a field has been set.
 
+### SetSubTypeNil
+
+`func (o *ClusterHistory) SetSubTypeNil(b bool)`
+
+ SetSubTypeNil sets the value for SubType to be an explicit nil
+
+### UnsetSubType
+`func (o *ClusterHistory) UnsetSubType()`
+
+UnsetSubType ensures that no value is present for SubType, not even an explicit nil
 ### GetSubId
 
 `func (o *ClusterHistory) GetSubId() string`
@@ -254,6 +274,16 @@ SetSubId sets SubId field to given value.
 
 HasSubId returns a boolean if a field has been set.
 
+### SetSubIdNil
+
+`func (o *ClusterHistory) SetSubIdNil(b bool)`
+
+ SetSubIdNil sets the value for SubId to be an explicit nil
+
+### UnsetSubId
+`func (o *ClusterHistory) UnsetSubId()`
+
+UnsetSubId ensures that no value is present for SubId, not even an explicit nil
 ### GetZoneId
 
 `func (o *ClusterHistory) GetZoneId() int64`
@@ -279,6 +309,16 @@ SetZoneId sets ZoneId field to given value.
 
 HasZoneId returns a boolean if a field has been set.
 
+### SetZoneIdNil
+
+`func (o *ClusterHistory) SetZoneIdNil(b bool)`
+
+ SetZoneIdNil sets the value for ZoneId to be an explicit nil
+
+### UnsetZoneId
+`func (o *ClusterHistory) UnsetZoneId()`
+
+UnsetZoneId ensures that no value is present for ZoneId, not even an explicit nil
 ### GetIntegrationId
 
 `func (o *ClusterHistory) GetIntegrationId() int64`
@@ -304,6 +344,16 @@ SetIntegrationId sets IntegrationId field to given value.
 
 HasIntegrationId returns a boolean if a field has been set.
 
+### SetIntegrationIdNil
+
+`func (o *ClusterHistory) SetIntegrationIdNil(b bool)`
+
+ SetIntegrationIdNil sets the value for IntegrationId to be an explicit nil
+
+### UnsetIntegrationId
+`func (o *ClusterHistory) UnsetIntegrationId()`
+
+UnsetIntegrationId ensures that no value is present for IntegrationId, not even an explicit nil
 ### GetAppId
 
 `func (o *ClusterHistory) GetAppId() int64`
@@ -329,6 +379,16 @@ SetAppId sets AppId field to given value.
 
 HasAppId returns a boolean if a field has been set.
 
+### SetAppIdNil
+
+`func (o *ClusterHistory) SetAppIdNil(b bool)`
+
+ SetAppIdNil sets the value for AppId to be an explicit nil
+
+### UnsetAppId
+`func (o *ClusterHistory) UnsetAppId()`
+
+UnsetAppId ensures that no value is present for AppId, not even an explicit nil
 ### GetInstanceId
 
 `func (o *ClusterHistory) GetInstanceId() int64`
@@ -354,6 +414,16 @@ SetInstanceId sets InstanceId field to given value.
 
 HasInstanceId returns a boolean if a field has been set.
 
+### SetInstanceIdNil
+
+`func (o *ClusterHistory) SetInstanceIdNil(b bool)`
+
+ SetInstanceIdNil sets the value for InstanceId to be an explicit nil
+
+### UnsetInstanceId
+`func (o *ClusterHistory) UnsetInstanceId()`
+
+UnsetInstanceId ensures that no value is present for InstanceId, not even an explicit nil
 ### GetContainerId
 
 `func (o *ClusterHistory) GetContainerId() int64`
@@ -379,6 +449,16 @@ SetContainerId sets ContainerId field to given value.
 
 HasContainerId returns a boolean if a field has been set.
 
+### SetContainerIdNil
+
+`func (o *ClusterHistory) SetContainerIdNil(b bool)`
+
+ SetContainerIdNil sets the value for ContainerId to be an explicit nil
+
+### UnsetContainerId
+`func (o *ClusterHistory) UnsetContainerId()`
+
+UnsetContainerId ensures that no value is present for ContainerId, not even an explicit nil
 ### GetServerId
 
 `func (o *ClusterHistory) GetServerId() int64`
@@ -404,6 +484,16 @@ SetServerId sets ServerId field to given value.
 
 HasServerId returns a boolean if a field has been set.
 
+### SetServerIdNil
+
+`func (o *ClusterHistory) SetServerIdNil(b bool)`
+
+ SetServerIdNil sets the value for ServerId to be an explicit nil
+
+### UnsetServerId
+`func (o *ClusterHistory) UnsetServerId()`
+
+UnsetServerId ensures that no value is present for ServerId, not even an explicit nil
 ### GetContainerName
 
 `func (o *ClusterHistory) GetContainerName() string`
@@ -429,6 +519,16 @@ SetContainerName sets ContainerName field to given value.
 
 HasContainerName returns a boolean if a field has been set.
 
+### SetContainerNameNil
+
+`func (o *ClusterHistory) SetContainerNameNil(b bool)`
+
+ SetContainerNameNil sets the value for ContainerName to be an explicit nil
+
+### UnsetContainerName
+`func (o *ClusterHistory) UnsetContainerName()`
+
+UnsetContainerName ensures that no value is present for ContainerName, not even an explicit nil
 ### GetStatus
 
 `func (o *ClusterHistory) GetStatus() string`
@@ -479,6 +579,16 @@ SetReason sets Reason field to given value.
 
 HasReason returns a boolean if a field has been set.
 
+### SetReasonNil
+
+`func (o *ClusterHistory) SetReasonNil(b bool)`
+
+ SetReasonNil sets the value for Reason to be an explicit nil
+
+### UnsetReason
+`func (o *ClusterHistory) UnsetReason()`
+
+UnsetReason ensures that no value is present for Reason, not even an explicit nil
 ### GetPercent
 
 `func (o *ClusterHistory) GetPercent() float32`
@@ -554,6 +664,16 @@ SetMessage sets Message field to given value.
 
 HasMessage returns a boolean if a field has been set.
 
+### SetMessageNil
+
+`func (o *ClusterHistory) SetMessageNil(b bool)`
+
+ SetMessageNil sets the value for Message to be an explicit nil
+
+### UnsetMessage
+`func (o *ClusterHistory) UnsetMessage()`
+
+UnsetMessage ensures that no value is present for Message, not even an explicit nil
 ### GetOutput
 
 `func (o *ClusterHistory) GetOutput() string`
@@ -579,6 +699,16 @@ SetOutput sets Output field to given value.
 
 HasOutput returns a boolean if a field has been set.
 
+### SetOutputNil
+
+`func (o *ClusterHistory) SetOutputNil(b bool)`
+
+ SetOutputNil sets the value for Output to be an explicit nil
+
+### UnsetOutput
+`func (o *ClusterHistory) UnsetOutput()`
+
+UnsetOutput ensures that no value is present for Output, not even an explicit nil
 ### GetError
 
 `func (o *ClusterHistory) GetError() string`
@@ -604,6 +734,16 @@ SetError sets Error field to given value.
 
 HasError returns a boolean if a field has been set.
 
+### SetErrorNil
+
+`func (o *ClusterHistory) SetErrorNil(b bool)`
+
+ SetErrorNil sets the value for Error to be an explicit nil
+
+### UnsetError
+`func (o *ClusterHistory) UnsetError()`
+
+UnsetError ensures that no value is present for Error, not even an explicit nil
 ### GetStartDate
 
 `func (o *ClusterHistory) GetStartDate() time.Time`

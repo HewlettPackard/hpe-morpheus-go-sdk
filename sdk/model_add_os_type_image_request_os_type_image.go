@@ -25,9 +25,9 @@ type AddOsTypeImageRequestOsTypeImage struct {
 	// id of virtualImage
 	VirtualImage int32 `json:"virtualImage"`
 	// id of provisionType
-	ProvisionType *int32 `json:"provisionType,omitempty"`
+	ProvisionType NullableInt32 `json:"provisionType,omitempty"`
 	// id of cloud/zone
-	Zone                 *int32                 `json:"zone,omitempty"`
+	Zone                 NullableInt32          `json:"zone,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -100,68 +100,90 @@ func (o *AddOsTypeImageRequestOsTypeImage) SetVirtualImage(v int32) {
 	o.VirtualImage = v
 }
 
-// GetProvisionType returns the ProvisionType field value if set, zero value otherwise.
+// GetProvisionType returns the ProvisionType field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AddOsTypeImageRequestOsTypeImage) GetProvisionType() int32 {
-	if o == nil || IsNil(o.ProvisionType) {
+	if o == nil || IsNil(o.ProvisionType.Get()) {
 		var ret int32
 		return ret
 	}
-	return *o.ProvisionType
+	return *o.ProvisionType.Get()
 }
 
 // GetProvisionTypeOk returns a tuple with the ProvisionType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AddOsTypeImageRequestOsTypeImage) GetProvisionTypeOk() (*int32, bool) {
-	if o == nil || IsNil(o.ProvisionType) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ProvisionType, true
+	return o.ProvisionType.Get(), o.ProvisionType.IsSet()
 }
 
 // IsSetProvisionType returns a boolean if a field has been set.
 func (o *AddOsTypeImageRequestOsTypeImage) IsSetProvisionType() bool {
-	if o != nil && !IsNil(o.ProvisionType) {
+	if o != nil && o.ProvisionType.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetProvisionType gets a reference to the given int32 and assigns it to the ProvisionType field.
+// SetProvisionType gets a reference to the given NullableInt32 and assigns it to the ProvisionType field.
 func (o *AddOsTypeImageRequestOsTypeImage) SetProvisionType(v int32) {
-	o.ProvisionType = &v
+	o.ProvisionType.Set(&v)
 }
 
-// GetZone returns the Zone field value if set, zero value otherwise.
+// SetProvisionTypeNil sets the value for ProvisionType to be an explicit nil
+func (o *AddOsTypeImageRequestOsTypeImage) SetProvisionTypeNil() {
+	o.ProvisionType.Set(nil)
+}
+
+// UnsetProvisionType ensures that no value is present for ProvisionType, not even an explicit nil
+func (o *AddOsTypeImageRequestOsTypeImage) UnsetProvisionType() {
+	o.ProvisionType.Unset()
+}
+
+// GetZone returns the Zone field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AddOsTypeImageRequestOsTypeImage) GetZone() int32 {
-	if o == nil || IsNil(o.Zone) {
+	if o == nil || IsNil(o.Zone.Get()) {
 		var ret int32
 		return ret
 	}
-	return *o.Zone
+	return *o.Zone.Get()
 }
 
 // GetZoneOk returns a tuple with the Zone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AddOsTypeImageRequestOsTypeImage) GetZoneOk() (*int32, bool) {
-	if o == nil || IsNil(o.Zone) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Zone, true
+	return o.Zone.Get(), o.Zone.IsSet()
 }
 
 // IsSetZone returns a boolean if a field has been set.
 func (o *AddOsTypeImageRequestOsTypeImage) IsSetZone() bool {
-	if o != nil && !IsNil(o.Zone) {
+	if o != nil && o.Zone.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetZone gets a reference to the given int32 and assigns it to the Zone field.
+// SetZone gets a reference to the given NullableInt32 and assigns it to the Zone field.
 func (o *AddOsTypeImageRequestOsTypeImage) SetZone(v int32) {
-	o.Zone = &v
+	o.Zone.Set(&v)
+}
+
+// SetZoneNil sets the value for Zone to be an explicit nil
+func (o *AddOsTypeImageRequestOsTypeImage) SetZoneNil() {
+	o.Zone.Set(nil)
+}
+
+// UnsetZone ensures that no value is present for Zone, not even an explicit nil
+func (o *AddOsTypeImageRequestOsTypeImage) UnsetZone() {
+	o.Zone.Unset()
 }
 
 func (o AddOsTypeImageRequestOsTypeImage) MarshalJSON() ([]byte, error) {
@@ -176,11 +198,11 @@ func (o AddOsTypeImageRequestOsTypeImage) ToMap() (map[string]interface{}, error
 	toSerialize := map[string]interface{}{}
 	toSerialize["osType"] = o.OsType
 	toSerialize["virtualImage"] = o.VirtualImage
-	if !IsNil(o.ProvisionType) {
-		toSerialize["provisionType"] = o.ProvisionType
+	if o.ProvisionType.IsSet() {
+		toSerialize["provisionType"] = o.ProvisionType.Get()
 	}
-	if !IsNil(o.Zone) {
-		toSerialize["zone"] = o.Zone
+	if o.Zone.IsSet() {
+		toSerialize["zone"] = o.Zone.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {

@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **Policy** | Pointer to **string** |  | [optional] 
 **Priority** | Pointer to **int64** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
-**RuleGroup** | Pointer to [**ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
+**RuleGroup** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **GroupName** | Pointer to **string** |  | [optional] 
 **Config** | Pointer to **map[string]interface{}** |  | [optional] 
 **Sources** | Pointer to [**[]ListInstanceServicePlans200ResponsePlansInnerAutoOptionsInner**](ListInstanceServicePlans200ResponsePlansInnerAutoOptionsInner.md) |  | [optional] 
@@ -243,20 +243,20 @@ HasEnabled returns a boolean if a field has been set.
 
 ### GetRuleGroup
 
-`func (o *GetNetworkFirewallRuleGroup200ResponseRuleGroupRulesInner) GetRuleGroup() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *GetNetworkFirewallRuleGroup200ResponseRuleGroupRulesInner) GetRuleGroup() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetRuleGroup returns the RuleGroup field if non-nil, zero value otherwise.
 
 ### GetRuleGroupOk
 
-`func (o *GetNetworkFirewallRuleGroup200ResponseRuleGroupRulesInner) GetRuleGroupOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *GetNetworkFirewallRuleGroup200ResponseRuleGroupRulesInner) GetRuleGroupOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetRuleGroupOk returns a tuple with the RuleGroup field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRuleGroup
 
-`func (o *GetNetworkFirewallRuleGroup200ResponseRuleGroupRulesInner) SetRuleGroup(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *GetNetworkFirewallRuleGroup200ResponseRuleGroupRulesInner) SetRuleGroup(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetRuleGroup sets RuleGroup field to given value.
 

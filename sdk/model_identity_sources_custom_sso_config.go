@@ -32,7 +32,7 @@ type IdentitySourcesCustomSSOConfig struct {
 	ExternalLogin        *bool                                                                       `json:"externalLogin,omitempty"`
 	AllowCustomMappings  *bool                                                                       `json:"allowCustomMappings,omitempty"`
 	ManualRoleAssignment *bool                                                                       `json:"manualRoleAssignment,omitempty"`
-	Account              *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner     `json:"account,omitempty"`
+	Account              *GetAlerts200ResponseAllOfCheckGroupsInnerInstance                          `json:"account,omitempty"`
 	DefaultAccountRole   *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfDefaultAccountRole `json:"defaultAccountRole,omitempty"`
 	Config               *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7Config            `json:"config,omitempty"`
 	RoleMappings         []map[string]interface{}                                                    `json:"roleMappings,omitempty"`
@@ -416,9 +416,9 @@ func (o *IdentitySourcesCustomSSOConfig) SetManualRoleAssignment(v bool) {
 }
 
 // GetAccount returns the Account field value if set, zero value otherwise.
-func (o *IdentitySourcesCustomSSOConfig) GetAccount() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *IdentitySourcesCustomSSOConfig) GetAccount() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.Account) {
-		var ret ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return *o.Account
@@ -426,7 +426,7 @@ func (o *IdentitySourcesCustomSSOConfig) GetAccount() ListApplianceSettings200Re
 
 // GetAccountOk returns a tuple with the Account field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *IdentitySourcesCustomSSOConfig) GetAccountOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *IdentitySourcesCustomSSOConfig) GetAccountOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.Account) {
 		return nil, false
 	}
@@ -442,8 +442,8 @@ func (o *IdentitySourcesCustomSSOConfig) IsSetAccount() bool {
 	return false
 }
 
-// SetAccount gets a reference to the given ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the Account field.
-func (o *IdentitySourcesCustomSSOConfig) SetAccount(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetAccount gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Account field.
+func (o *IdentitySourcesCustomSSOConfig) SetAccount(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.Account = &v
 }
 

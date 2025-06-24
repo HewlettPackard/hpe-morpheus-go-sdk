@@ -7,9 +7,9 @@ Name | Type | Description | Notes
 **Id** | Pointer to **int64** |  | [optional] 
 **DeployType** | Pointer to **string** |  | [optional] 
 **DeploymentId** | Pointer to **int64** |  | [optional] 
-**FetchUrl** | Pointer to **string** |  | [optional] 
-**GitUrl** | Pointer to **string** |  | [optional] 
-**GitRef** | Pointer to **string** |  | [optional] 
+**FetchUrl** | Pointer to **NullableString** |  | [optional] 
+**GitUrl** | Pointer to **NullableString** |  | [optional] 
+**GitRef** | Pointer to **NullableString** |  | [optional] 
 **UserVersion** | Pointer to **string** |  | [optional] 
 **Version** | Pointer to **string** |  | [optional] 
 **Status** | Pointer to **string** |  | [optional] 
@@ -135,6 +135,16 @@ SetFetchUrl sets FetchUrl field to given value.
 
 HasFetchUrl returns a boolean if a field has been set.
 
+### SetFetchUrlNil
+
+`func (o *ListDeploymentVersions200ResponseAllOfVersionsInner) SetFetchUrlNil(b bool)`
+
+ SetFetchUrlNil sets the value for FetchUrl to be an explicit nil
+
+### UnsetFetchUrl
+`func (o *ListDeploymentVersions200ResponseAllOfVersionsInner) UnsetFetchUrl()`
+
+UnsetFetchUrl ensures that no value is present for FetchUrl, not even an explicit nil
 ### GetGitUrl
 
 `func (o *ListDeploymentVersions200ResponseAllOfVersionsInner) GetGitUrl() string`
@@ -160,6 +170,16 @@ SetGitUrl sets GitUrl field to given value.
 
 HasGitUrl returns a boolean if a field has been set.
 
+### SetGitUrlNil
+
+`func (o *ListDeploymentVersions200ResponseAllOfVersionsInner) SetGitUrlNil(b bool)`
+
+ SetGitUrlNil sets the value for GitUrl to be an explicit nil
+
+### UnsetGitUrl
+`func (o *ListDeploymentVersions200ResponseAllOfVersionsInner) UnsetGitUrl()`
+
+UnsetGitUrl ensures that no value is present for GitUrl, not even an explicit nil
 ### GetGitRef
 
 `func (o *ListDeploymentVersions200ResponseAllOfVersionsInner) GetGitRef() string`
@@ -185,6 +205,16 @@ SetGitRef sets GitRef field to given value.
 
 HasGitRef returns a boolean if a field has been set.
 
+### SetGitRefNil
+
+`func (o *ListDeploymentVersions200ResponseAllOfVersionsInner) SetGitRefNil(b bool)`
+
+ SetGitRefNil sets the value for GitRef to be an explicit nil
+
+### UnsetGitRef
+`func (o *ListDeploymentVersions200ResponseAllOfVersionsInner) UnsetGitRef()`
+
+UnsetGitRef ensures that no value is present for GitRef, not even an explicit nil
 ### GetUserVersion
 
 `func (o *ListDeploymentVersions200ResponseAllOfVersionsInner) GetUserVersion() string`

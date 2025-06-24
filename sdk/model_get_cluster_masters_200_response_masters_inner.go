@@ -24,15 +24,15 @@ type GetClusterMasters200ResponseMastersInner struct {
 	Id                       *int64                                                                              `json:"id,omitempty"`
 	Uuid                     *string                                                                             `json:"uuid,omitempty"`
 	ExternalId               *string                                                                             `json:"externalId,omitempty"`
-	InternalId               *string                                                                             `json:"internalId,omitempty"`
-	ExternalUniqueId         *string                                                                             `json:"externalUniqueId,omitempty"`
+	InternalId               NullableString                                                                      `json:"internalId,omitempty"`
+	ExternalUniqueId         NullableString                                                                      `json:"externalUniqueId,omitempty"`
 	Name                     *string                                                                             `json:"name,omitempty"`
 	ExternalName             *string                                                                             `json:"externalName,omitempty"`
 	Hostname                 *string                                                                             `json:"hostname,omitempty"`
 	AccountId                *int64                                                                              `json:"accountId,omitempty"`
-	Account                  *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner             `json:"account,omitempty"`
+	Account                  *GetAlerts200ResponseAllOfCheckGroupsInnerInstance                                  `json:"account,omitempty"`
 	Owner                    *ListActivity200ResponseAllOfActivityInnerActivityInnerUser                         `json:"owner,omitempty"`
-	Zone                     *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner             `json:"zone,omitempty"`
+	Zone                     *GetAlerts200ResponseAllOfCheckGroupsInnerInstance                                  `json:"zone,omitempty"`
 	Plan                     *ListBackupSettings200ResponseBackupSettingsDefaultSchedule                         `json:"plan,omitempty"`
 	ComputeServerType        *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerComputeServerType `json:"computeServerType,omitempty"`
 	Visibility               *string                                                                             `json:"visibility,omitempty"`
@@ -40,12 +40,12 @@ type GetClusterMasters200ResponseMastersInner struct {
 	ZoneId                   *int64                                                                              `json:"zoneId,omitempty"`
 	SiteId                   *int64                                                                              `json:"siteId,omitempty"`
 	ResourcePoolId           *int64                                                                              `json:"resourcePoolId,omitempty"`
-	FolderId                 *string                                                                             `json:"folderId,omitempty"`
+	FolderId                 NullableString                                                                      `json:"folderId,omitempty"`
 	SshHost                  *string                                                                             `json:"sshHost,omitempty"`
 	SshPort                  *int64                                                                              `json:"sshPort,omitempty"`
 	ExternalIp               *string                                                                             `json:"externalIp,omitempty"`
 	InternalIp               *string                                                                             `json:"internalIp,omitempty"`
-	VolumeId                 *string                                                                             `json:"volumeId,omitempty"`
+	VolumeId                 NullableString                                                                      `json:"volumeId,omitempty"`
 	Platform                 *string                                                                             `json:"platform,omitempty"`
 	PlatformVersion          *string                                                                             `json:"platformVersion,omitempty"`
 	SshUsername              *string                                                                             `json:"sshUsername,omitempty"`
@@ -61,37 +61,37 @@ type GetClusterMasters200ResponseMastersInner struct {
 	LastUpdated              *time.Time                                                                          `json:"lastUpdated,omitempty"`
 	Stats                    *GetClusterMasters200ResponseMastersInnerStats                                      `json:"stats,omitempty"`
 	Status                   *string                                                                             `json:"status,omitempty"`
-	StatusMessage            *string                                                                             `json:"statusMessage,omitempty"`
-	ErrorMessage             *string                                                                             `json:"errorMessage,omitempty"`
-	StatusDate               *string                                                                             `json:"statusDate,omitempty"`
-	StatusPercent            *string                                                                             `json:"statusPercent,omitempty"`
-	StatusEta                *string                                                                             `json:"statusEta,omitempty"`
+	StatusMessage            NullableString                                                                      `json:"statusMessage,omitempty"`
+	ErrorMessage             NullableString                                                                      `json:"errorMessage,omitempty"`
+	StatusDate               NullableString                                                                      `json:"statusDate,omitempty"`
+	StatusPercent            NullableString                                                                      `json:"statusPercent,omitempty"`
+	StatusEta                NullableString                                                                      `json:"statusEta,omitempty"`
 	PowerState               *string                                                                             `json:"powerState,omitempty"`
 	AgentInstalled           *bool                                                                               `json:"agentInstalled,omitempty"`
 	LastAgentUpdate          *time.Time                                                                          `json:"lastAgentUpdate,omitempty"`
 	AgentVersion             *string                                                                             `json:"agentVersion,omitempty"`
 	MaxCores                 *int64                                                                              `json:"maxCores,omitempty"`
-	CoresPerSocket           *string                                                                             `json:"coresPerSocket,omitempty"`
+	CoresPerSocket           NullableString                                                                      `json:"coresPerSocket,omitempty"`
 	MaxMemory                *int64                                                                              `json:"maxMemory,omitempty"`
 	MaxStorage               *int64                                                                              `json:"maxStorage,omitempty"`
 	MaxCpu                   *int64                                                                              `json:"maxCpu,omitempty"`
 	HourlyPrice              *float32                                                                            `json:"hourlyPrice,omitempty"`
 	SourceImage              *ListBackupSettings200ResponseBackupSettingsDefaultSchedule                         `json:"sourceImage,omitempty"`
-	ServerOs                 *string                                                                             `json:"serverOs,omitempty"`
+	ServerOs                 NullableString                                                                      `json:"serverOs,omitempty"`
 	Volumes                  []GetClusterMasters200ResponseMastersInnerVolumesInner                              `json:"volumes,omitempty"`
 	Controllers              []map[string]interface{}                                                            `json:"controllers,omitempty"`
 	Interfaces               []GetClusterMasters200ResponseMastersInnerInterfacesInner                           `json:"interfaces,omitempty"`
 	Labels                   []string                                                                            `json:"labels,omitempty"`
 	Tags                     []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner                     `json:"tags,omitempty"`
 	Enabled                  *bool                                                                               `json:"enabled,omitempty"`
-	TagCompliant             *string                                                                             `json:"tagCompliant,omitempty"`
+	TagCompliant             NullableString                                                                      `json:"tagCompliant,omitempty"`
 	Containers               []int64                                                                             `json:"containers,omitempty"`
 	GuestConsolePreferred    *bool                                                                               `json:"guestConsolePreferred,omitempty"`
-	GuestConsoleType         *string                                                                             `json:"guestConsoleType,omitempty"`
-	GuestConsoleUsername     *string                                                                             `json:"guestConsoleUsername,omitempty"`
-	GuestConsolePassword     *string                                                                             `json:"guestConsolePassword,omitempty"`
-	GuestConsolePasswordHash *string                                                                             `json:"guestConsolePasswordHash,omitempty"`
-	GuestConsolePort         *string                                                                             `json:"guestConsolePort,omitempty"`
+	GuestConsoleType         NullableString                                                                      `json:"guestConsoleType,omitempty"`
+	GuestConsoleUsername     NullableString                                                                      `json:"guestConsoleUsername,omitempty"`
+	GuestConsolePassword     NullableString                                                                      `json:"guestConsolePassword,omitempty"`
+	GuestConsolePasswordHash NullableString                                                                      `json:"guestConsolePasswordHash,omitempty"`
+	GuestConsolePort         NullableString                                                                      `json:"guestConsolePort,omitempty"`
 	AdditionalProperties     map[string]interface{}                                                              `json:",remain"`
 }
 
@@ -210,68 +210,90 @@ func (o *GetClusterMasters200ResponseMastersInner) SetExternalId(v string) {
 	o.ExternalId = &v
 }
 
-// GetInternalId returns the InternalId field value if set, zero value otherwise.
+// GetInternalId returns the InternalId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetClusterMasters200ResponseMastersInner) GetInternalId() string {
-	if o == nil || IsNil(o.InternalId) {
+	if o == nil || IsNil(o.InternalId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.InternalId
+	return *o.InternalId.Get()
 }
 
 // GetInternalIdOk returns a tuple with the InternalId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetClusterMasters200ResponseMastersInner) GetInternalIdOk() (*string, bool) {
-	if o == nil || IsNil(o.InternalId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.InternalId, true
+	return o.InternalId.Get(), o.InternalId.IsSet()
 }
 
 // IsSetInternalId returns a boolean if a field has been set.
 func (o *GetClusterMasters200ResponseMastersInner) IsSetInternalId() bool {
-	if o != nil && !IsNil(o.InternalId) {
+	if o != nil && o.InternalId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetInternalId gets a reference to the given string and assigns it to the InternalId field.
+// SetInternalId gets a reference to the given NullableString and assigns it to the InternalId field.
 func (o *GetClusterMasters200ResponseMastersInner) SetInternalId(v string) {
-	o.InternalId = &v
+	o.InternalId.Set(&v)
 }
 
-// GetExternalUniqueId returns the ExternalUniqueId field value if set, zero value otherwise.
+// SetInternalIdNil sets the value for InternalId to be an explicit nil
+func (o *GetClusterMasters200ResponseMastersInner) SetInternalIdNil() {
+	o.InternalId.Set(nil)
+}
+
+// UnsetInternalId ensures that no value is present for InternalId, not even an explicit nil
+func (o *GetClusterMasters200ResponseMastersInner) UnsetInternalId() {
+	o.InternalId.Unset()
+}
+
+// GetExternalUniqueId returns the ExternalUniqueId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetClusterMasters200ResponseMastersInner) GetExternalUniqueId() string {
-	if o == nil || IsNil(o.ExternalUniqueId) {
+	if o == nil || IsNil(o.ExternalUniqueId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ExternalUniqueId
+	return *o.ExternalUniqueId.Get()
 }
 
 // GetExternalUniqueIdOk returns a tuple with the ExternalUniqueId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetClusterMasters200ResponseMastersInner) GetExternalUniqueIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ExternalUniqueId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ExternalUniqueId, true
+	return o.ExternalUniqueId.Get(), o.ExternalUniqueId.IsSet()
 }
 
 // IsSetExternalUniqueId returns a boolean if a field has been set.
 func (o *GetClusterMasters200ResponseMastersInner) IsSetExternalUniqueId() bool {
-	if o != nil && !IsNil(o.ExternalUniqueId) {
+	if o != nil && o.ExternalUniqueId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetExternalUniqueId gets a reference to the given string and assigns it to the ExternalUniqueId field.
+// SetExternalUniqueId gets a reference to the given NullableString and assigns it to the ExternalUniqueId field.
 func (o *GetClusterMasters200ResponseMastersInner) SetExternalUniqueId(v string) {
-	o.ExternalUniqueId = &v
+	o.ExternalUniqueId.Set(&v)
+}
+
+// SetExternalUniqueIdNil sets the value for ExternalUniqueId to be an explicit nil
+func (o *GetClusterMasters200ResponseMastersInner) SetExternalUniqueIdNil() {
+	o.ExternalUniqueId.Set(nil)
+}
+
+// UnsetExternalUniqueId ensures that no value is present for ExternalUniqueId, not even an explicit nil
+func (o *GetClusterMasters200ResponseMastersInner) UnsetExternalUniqueId() {
+	o.ExternalUniqueId.Unset()
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -403,9 +425,9 @@ func (o *GetClusterMasters200ResponseMastersInner) SetAccountId(v int64) {
 }
 
 // GetAccount returns the Account field value if set, zero value otherwise.
-func (o *GetClusterMasters200ResponseMastersInner) GetAccount() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *GetClusterMasters200ResponseMastersInner) GetAccount() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.Account) {
-		var ret ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return *o.Account
@@ -413,7 +435,7 @@ func (o *GetClusterMasters200ResponseMastersInner) GetAccount() ListApplianceSet
 
 // GetAccountOk returns a tuple with the Account field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetClusterMasters200ResponseMastersInner) GetAccountOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *GetClusterMasters200ResponseMastersInner) GetAccountOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.Account) {
 		return nil, false
 	}
@@ -429,8 +451,8 @@ func (o *GetClusterMasters200ResponseMastersInner) IsSetAccount() bool {
 	return false
 }
 
-// SetAccount gets a reference to the given ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the Account field.
-func (o *GetClusterMasters200ResponseMastersInner) SetAccount(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetAccount gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Account field.
+func (o *GetClusterMasters200ResponseMastersInner) SetAccount(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.Account = &v
 }
 
@@ -467,9 +489,9 @@ func (o *GetClusterMasters200ResponseMastersInner) SetOwner(v ListActivity200Res
 }
 
 // GetZone returns the Zone field value if set, zero value otherwise.
-func (o *GetClusterMasters200ResponseMastersInner) GetZone() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+func (o *GetClusterMasters200ResponseMastersInner) GetZone() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.Zone) {
-		var ret ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return *o.Zone
@@ -477,7 +499,7 @@ func (o *GetClusterMasters200ResponseMastersInner) GetZone() ListApplianceSettin
 
 // GetZoneOk returns a tuple with the Zone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetClusterMasters200ResponseMastersInner) GetZoneOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+func (o *GetClusterMasters200ResponseMastersInner) GetZoneOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.Zone) {
 		return nil, false
 	}
@@ -493,8 +515,8 @@ func (o *GetClusterMasters200ResponseMastersInner) IsSetZone() bool {
 	return false
 }
 
-// SetZone gets a reference to the given ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the Zone field.
-func (o *GetClusterMasters200ResponseMastersInner) SetZone(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+// SetZone gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Zone field.
+func (o *GetClusterMasters200ResponseMastersInner) SetZone(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.Zone = &v
 }
 
@@ -722,36 +744,47 @@ func (o *GetClusterMasters200ResponseMastersInner) SetResourcePoolId(v int64) {
 	o.ResourcePoolId = &v
 }
 
-// GetFolderId returns the FolderId field value if set, zero value otherwise.
+// GetFolderId returns the FolderId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetClusterMasters200ResponseMastersInner) GetFolderId() string {
-	if o == nil || IsNil(o.FolderId) {
+	if o == nil || IsNil(o.FolderId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.FolderId
+	return *o.FolderId.Get()
 }
 
 // GetFolderIdOk returns a tuple with the FolderId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetClusterMasters200ResponseMastersInner) GetFolderIdOk() (*string, bool) {
-	if o == nil || IsNil(o.FolderId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.FolderId, true
+	return o.FolderId.Get(), o.FolderId.IsSet()
 }
 
 // IsSetFolderId returns a boolean if a field has been set.
 func (o *GetClusterMasters200ResponseMastersInner) IsSetFolderId() bool {
-	if o != nil && !IsNil(o.FolderId) {
+	if o != nil && o.FolderId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetFolderId gets a reference to the given string and assigns it to the FolderId field.
+// SetFolderId gets a reference to the given NullableString and assigns it to the FolderId field.
 func (o *GetClusterMasters200ResponseMastersInner) SetFolderId(v string) {
-	o.FolderId = &v
+	o.FolderId.Set(&v)
+}
+
+// SetFolderIdNil sets the value for FolderId to be an explicit nil
+func (o *GetClusterMasters200ResponseMastersInner) SetFolderIdNil() {
+	o.FolderId.Set(nil)
+}
+
+// UnsetFolderId ensures that no value is present for FolderId, not even an explicit nil
+func (o *GetClusterMasters200ResponseMastersInner) UnsetFolderId() {
+	o.FolderId.Unset()
 }
 
 // GetSshHost returns the SshHost field value if set, zero value otherwise.
@@ -882,36 +915,47 @@ func (o *GetClusterMasters200ResponseMastersInner) SetInternalIp(v string) {
 	o.InternalIp = &v
 }
 
-// GetVolumeId returns the VolumeId field value if set, zero value otherwise.
+// GetVolumeId returns the VolumeId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetClusterMasters200ResponseMastersInner) GetVolumeId() string {
-	if o == nil || IsNil(o.VolumeId) {
+	if o == nil || IsNil(o.VolumeId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.VolumeId
+	return *o.VolumeId.Get()
 }
 
 // GetVolumeIdOk returns a tuple with the VolumeId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetClusterMasters200ResponseMastersInner) GetVolumeIdOk() (*string, bool) {
-	if o == nil || IsNil(o.VolumeId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.VolumeId, true
+	return o.VolumeId.Get(), o.VolumeId.IsSet()
 }
 
 // IsSetVolumeId returns a boolean if a field has been set.
 func (o *GetClusterMasters200ResponseMastersInner) IsSetVolumeId() bool {
-	if o != nil && !IsNil(o.VolumeId) {
+	if o != nil && o.VolumeId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetVolumeId gets a reference to the given string and assigns it to the VolumeId field.
+// SetVolumeId gets a reference to the given NullableString and assigns it to the VolumeId field.
 func (o *GetClusterMasters200ResponseMastersInner) SetVolumeId(v string) {
-	o.VolumeId = &v
+	o.VolumeId.Set(&v)
+}
+
+// SetVolumeIdNil sets the value for VolumeId to be an explicit nil
+func (o *GetClusterMasters200ResponseMastersInner) SetVolumeIdNil() {
+	o.VolumeId.Set(nil)
+}
+
+// UnsetVolumeId ensures that no value is present for VolumeId, not even an explicit nil
+func (o *GetClusterMasters200ResponseMastersInner) UnsetVolumeId() {
+	o.VolumeId.Unset()
 }
 
 // GetPlatform returns the Platform field value if set, zero value otherwise.
@@ -1394,164 +1438,219 @@ func (o *GetClusterMasters200ResponseMastersInner) SetStatus(v string) {
 	o.Status = &v
 }
 
-// GetStatusMessage returns the StatusMessage field value if set, zero value otherwise.
+// GetStatusMessage returns the StatusMessage field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetClusterMasters200ResponseMastersInner) GetStatusMessage() string {
-	if o == nil || IsNil(o.StatusMessage) {
+	if o == nil || IsNil(o.StatusMessage.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.StatusMessage
+	return *o.StatusMessage.Get()
 }
 
 // GetStatusMessageOk returns a tuple with the StatusMessage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetClusterMasters200ResponseMastersInner) GetStatusMessageOk() (*string, bool) {
-	if o == nil || IsNil(o.StatusMessage) {
+	if o == nil {
 		return nil, false
 	}
-	return o.StatusMessage, true
+	return o.StatusMessage.Get(), o.StatusMessage.IsSet()
 }
 
 // IsSetStatusMessage returns a boolean if a field has been set.
 func (o *GetClusterMasters200ResponseMastersInner) IsSetStatusMessage() bool {
-	if o != nil && !IsNil(o.StatusMessage) {
+	if o != nil && o.StatusMessage.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetStatusMessage gets a reference to the given string and assigns it to the StatusMessage field.
+// SetStatusMessage gets a reference to the given NullableString and assigns it to the StatusMessage field.
 func (o *GetClusterMasters200ResponseMastersInner) SetStatusMessage(v string) {
-	o.StatusMessage = &v
+	o.StatusMessage.Set(&v)
 }
 
-// GetErrorMessage returns the ErrorMessage field value if set, zero value otherwise.
+// SetStatusMessageNil sets the value for StatusMessage to be an explicit nil
+func (o *GetClusterMasters200ResponseMastersInner) SetStatusMessageNil() {
+	o.StatusMessage.Set(nil)
+}
+
+// UnsetStatusMessage ensures that no value is present for StatusMessage, not even an explicit nil
+func (o *GetClusterMasters200ResponseMastersInner) UnsetStatusMessage() {
+	o.StatusMessage.Unset()
+}
+
+// GetErrorMessage returns the ErrorMessage field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetClusterMasters200ResponseMastersInner) GetErrorMessage() string {
-	if o == nil || IsNil(o.ErrorMessage) {
+	if o == nil || IsNil(o.ErrorMessage.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ErrorMessage
+	return *o.ErrorMessage.Get()
 }
 
 // GetErrorMessageOk returns a tuple with the ErrorMessage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetClusterMasters200ResponseMastersInner) GetErrorMessageOk() (*string, bool) {
-	if o == nil || IsNil(o.ErrorMessage) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ErrorMessage, true
+	return o.ErrorMessage.Get(), o.ErrorMessage.IsSet()
 }
 
 // IsSetErrorMessage returns a boolean if a field has been set.
 func (o *GetClusterMasters200ResponseMastersInner) IsSetErrorMessage() bool {
-	if o != nil && !IsNil(o.ErrorMessage) {
+	if o != nil && o.ErrorMessage.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetErrorMessage gets a reference to the given string and assigns it to the ErrorMessage field.
+// SetErrorMessage gets a reference to the given NullableString and assigns it to the ErrorMessage field.
 func (o *GetClusterMasters200ResponseMastersInner) SetErrorMessage(v string) {
-	o.ErrorMessage = &v
+	o.ErrorMessage.Set(&v)
 }
 
-// GetStatusDate returns the StatusDate field value if set, zero value otherwise.
+// SetErrorMessageNil sets the value for ErrorMessage to be an explicit nil
+func (o *GetClusterMasters200ResponseMastersInner) SetErrorMessageNil() {
+	o.ErrorMessage.Set(nil)
+}
+
+// UnsetErrorMessage ensures that no value is present for ErrorMessage, not even an explicit nil
+func (o *GetClusterMasters200ResponseMastersInner) UnsetErrorMessage() {
+	o.ErrorMessage.Unset()
+}
+
+// GetStatusDate returns the StatusDate field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetClusterMasters200ResponseMastersInner) GetStatusDate() string {
-	if o == nil || IsNil(o.StatusDate) {
+	if o == nil || IsNil(o.StatusDate.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.StatusDate
+	return *o.StatusDate.Get()
 }
 
 // GetStatusDateOk returns a tuple with the StatusDate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetClusterMasters200ResponseMastersInner) GetStatusDateOk() (*string, bool) {
-	if o == nil || IsNil(o.StatusDate) {
+	if o == nil {
 		return nil, false
 	}
-	return o.StatusDate, true
+	return o.StatusDate.Get(), o.StatusDate.IsSet()
 }
 
 // IsSetStatusDate returns a boolean if a field has been set.
 func (o *GetClusterMasters200ResponseMastersInner) IsSetStatusDate() bool {
-	if o != nil && !IsNil(o.StatusDate) {
+	if o != nil && o.StatusDate.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetStatusDate gets a reference to the given string and assigns it to the StatusDate field.
+// SetStatusDate gets a reference to the given NullableString and assigns it to the StatusDate field.
 func (o *GetClusterMasters200ResponseMastersInner) SetStatusDate(v string) {
-	o.StatusDate = &v
+	o.StatusDate.Set(&v)
 }
 
-// GetStatusPercent returns the StatusPercent field value if set, zero value otherwise.
+// SetStatusDateNil sets the value for StatusDate to be an explicit nil
+func (o *GetClusterMasters200ResponseMastersInner) SetStatusDateNil() {
+	o.StatusDate.Set(nil)
+}
+
+// UnsetStatusDate ensures that no value is present for StatusDate, not even an explicit nil
+func (o *GetClusterMasters200ResponseMastersInner) UnsetStatusDate() {
+	o.StatusDate.Unset()
+}
+
+// GetStatusPercent returns the StatusPercent field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetClusterMasters200ResponseMastersInner) GetStatusPercent() string {
-	if o == nil || IsNil(o.StatusPercent) {
+	if o == nil || IsNil(o.StatusPercent.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.StatusPercent
+	return *o.StatusPercent.Get()
 }
 
 // GetStatusPercentOk returns a tuple with the StatusPercent field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetClusterMasters200ResponseMastersInner) GetStatusPercentOk() (*string, bool) {
-	if o == nil || IsNil(o.StatusPercent) {
+	if o == nil {
 		return nil, false
 	}
-	return o.StatusPercent, true
+	return o.StatusPercent.Get(), o.StatusPercent.IsSet()
 }
 
 // IsSetStatusPercent returns a boolean if a field has been set.
 func (o *GetClusterMasters200ResponseMastersInner) IsSetStatusPercent() bool {
-	if o != nil && !IsNil(o.StatusPercent) {
+	if o != nil && o.StatusPercent.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetStatusPercent gets a reference to the given string and assigns it to the StatusPercent field.
+// SetStatusPercent gets a reference to the given NullableString and assigns it to the StatusPercent field.
 func (o *GetClusterMasters200ResponseMastersInner) SetStatusPercent(v string) {
-	o.StatusPercent = &v
+	o.StatusPercent.Set(&v)
 }
 
-// GetStatusEta returns the StatusEta field value if set, zero value otherwise.
+// SetStatusPercentNil sets the value for StatusPercent to be an explicit nil
+func (o *GetClusterMasters200ResponseMastersInner) SetStatusPercentNil() {
+	o.StatusPercent.Set(nil)
+}
+
+// UnsetStatusPercent ensures that no value is present for StatusPercent, not even an explicit nil
+func (o *GetClusterMasters200ResponseMastersInner) UnsetStatusPercent() {
+	o.StatusPercent.Unset()
+}
+
+// GetStatusEta returns the StatusEta field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetClusterMasters200ResponseMastersInner) GetStatusEta() string {
-	if o == nil || IsNil(o.StatusEta) {
+	if o == nil || IsNil(o.StatusEta.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.StatusEta
+	return *o.StatusEta.Get()
 }
 
 // GetStatusEtaOk returns a tuple with the StatusEta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetClusterMasters200ResponseMastersInner) GetStatusEtaOk() (*string, bool) {
-	if o == nil || IsNil(o.StatusEta) {
+	if o == nil {
 		return nil, false
 	}
-	return o.StatusEta, true
+	return o.StatusEta.Get(), o.StatusEta.IsSet()
 }
 
 // IsSetStatusEta returns a boolean if a field has been set.
 func (o *GetClusterMasters200ResponseMastersInner) IsSetStatusEta() bool {
-	if o != nil && !IsNil(o.StatusEta) {
+	if o != nil && o.StatusEta.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetStatusEta gets a reference to the given string and assigns it to the StatusEta field.
+// SetStatusEta gets a reference to the given NullableString and assigns it to the StatusEta field.
 func (o *GetClusterMasters200ResponseMastersInner) SetStatusEta(v string) {
-	o.StatusEta = &v
+	o.StatusEta.Set(&v)
+}
+
+// SetStatusEtaNil sets the value for StatusEta to be an explicit nil
+func (o *GetClusterMasters200ResponseMastersInner) SetStatusEtaNil() {
+	o.StatusEta.Set(nil)
+}
+
+// UnsetStatusEta ensures that no value is present for StatusEta, not even an explicit nil
+func (o *GetClusterMasters200ResponseMastersInner) UnsetStatusEta() {
+	o.StatusEta.Unset()
 }
 
 // GetPowerState returns the PowerState field value if set, zero value otherwise.
@@ -1714,36 +1813,47 @@ func (o *GetClusterMasters200ResponseMastersInner) SetMaxCores(v int64) {
 	o.MaxCores = &v
 }
 
-// GetCoresPerSocket returns the CoresPerSocket field value if set, zero value otherwise.
+// GetCoresPerSocket returns the CoresPerSocket field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetClusterMasters200ResponseMastersInner) GetCoresPerSocket() string {
-	if o == nil || IsNil(o.CoresPerSocket) {
+	if o == nil || IsNil(o.CoresPerSocket.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.CoresPerSocket
+	return *o.CoresPerSocket.Get()
 }
 
 // GetCoresPerSocketOk returns a tuple with the CoresPerSocket field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetClusterMasters200ResponseMastersInner) GetCoresPerSocketOk() (*string, bool) {
-	if o == nil || IsNil(o.CoresPerSocket) {
+	if o == nil {
 		return nil, false
 	}
-	return o.CoresPerSocket, true
+	return o.CoresPerSocket.Get(), o.CoresPerSocket.IsSet()
 }
 
 // IsSetCoresPerSocket returns a boolean if a field has been set.
 func (o *GetClusterMasters200ResponseMastersInner) IsSetCoresPerSocket() bool {
-	if o != nil && !IsNil(o.CoresPerSocket) {
+	if o != nil && o.CoresPerSocket.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCoresPerSocket gets a reference to the given string and assigns it to the CoresPerSocket field.
+// SetCoresPerSocket gets a reference to the given NullableString and assigns it to the CoresPerSocket field.
 func (o *GetClusterMasters200ResponseMastersInner) SetCoresPerSocket(v string) {
-	o.CoresPerSocket = &v
+	o.CoresPerSocket.Set(&v)
+}
+
+// SetCoresPerSocketNil sets the value for CoresPerSocket to be an explicit nil
+func (o *GetClusterMasters200ResponseMastersInner) SetCoresPerSocketNil() {
+	o.CoresPerSocket.Set(nil)
+}
+
+// UnsetCoresPerSocket ensures that no value is present for CoresPerSocket, not even an explicit nil
+func (o *GetClusterMasters200ResponseMastersInner) UnsetCoresPerSocket() {
+	o.CoresPerSocket.Unset()
 }
 
 // GetMaxMemory returns the MaxMemory field value if set, zero value otherwise.
@@ -1906,36 +2016,47 @@ func (o *GetClusterMasters200ResponseMastersInner) SetSourceImage(v ListBackupSe
 	o.SourceImage = &v
 }
 
-// GetServerOs returns the ServerOs field value if set, zero value otherwise.
+// GetServerOs returns the ServerOs field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetClusterMasters200ResponseMastersInner) GetServerOs() string {
-	if o == nil || IsNil(o.ServerOs) {
+	if o == nil || IsNil(o.ServerOs.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ServerOs
+	return *o.ServerOs.Get()
 }
 
 // GetServerOsOk returns a tuple with the ServerOs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetClusterMasters200ResponseMastersInner) GetServerOsOk() (*string, bool) {
-	if o == nil || IsNil(o.ServerOs) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ServerOs, true
+	return o.ServerOs.Get(), o.ServerOs.IsSet()
 }
 
 // IsSetServerOs returns a boolean if a field has been set.
 func (o *GetClusterMasters200ResponseMastersInner) IsSetServerOs() bool {
-	if o != nil && !IsNil(o.ServerOs) {
+	if o != nil && o.ServerOs.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetServerOs gets a reference to the given string and assigns it to the ServerOs field.
+// SetServerOs gets a reference to the given NullableString and assigns it to the ServerOs field.
 func (o *GetClusterMasters200ResponseMastersInner) SetServerOs(v string) {
-	o.ServerOs = &v
+	o.ServerOs.Set(&v)
+}
+
+// SetServerOsNil sets the value for ServerOs to be an explicit nil
+func (o *GetClusterMasters200ResponseMastersInner) SetServerOsNil() {
+	o.ServerOs.Set(nil)
+}
+
+// UnsetServerOs ensures that no value is present for ServerOs, not even an explicit nil
+func (o *GetClusterMasters200ResponseMastersInner) UnsetServerOs() {
+	o.ServerOs.Unset()
 }
 
 // GetVolumes returns the Volumes field value if set, zero value otherwise.
@@ -2130,36 +2251,47 @@ func (o *GetClusterMasters200ResponseMastersInner) SetEnabled(v bool) {
 	o.Enabled = &v
 }
 
-// GetTagCompliant returns the TagCompliant field value if set, zero value otherwise.
+// GetTagCompliant returns the TagCompliant field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetClusterMasters200ResponseMastersInner) GetTagCompliant() string {
-	if o == nil || IsNil(o.TagCompliant) {
+	if o == nil || IsNil(o.TagCompliant.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.TagCompliant
+	return *o.TagCompliant.Get()
 }
 
 // GetTagCompliantOk returns a tuple with the TagCompliant field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetClusterMasters200ResponseMastersInner) GetTagCompliantOk() (*string, bool) {
-	if o == nil || IsNil(o.TagCompliant) {
+	if o == nil {
 		return nil, false
 	}
-	return o.TagCompliant, true
+	return o.TagCompliant.Get(), o.TagCompliant.IsSet()
 }
 
 // IsSetTagCompliant returns a boolean if a field has been set.
 func (o *GetClusterMasters200ResponseMastersInner) IsSetTagCompliant() bool {
-	if o != nil && !IsNil(o.TagCompliant) {
+	if o != nil && o.TagCompliant.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetTagCompliant gets a reference to the given string and assigns it to the TagCompliant field.
+// SetTagCompliant gets a reference to the given NullableString and assigns it to the TagCompliant field.
 func (o *GetClusterMasters200ResponseMastersInner) SetTagCompliant(v string) {
-	o.TagCompliant = &v
+	o.TagCompliant.Set(&v)
+}
+
+// SetTagCompliantNil sets the value for TagCompliant to be an explicit nil
+func (o *GetClusterMasters200ResponseMastersInner) SetTagCompliantNil() {
+	o.TagCompliant.Set(nil)
+}
+
+// UnsetTagCompliant ensures that no value is present for TagCompliant, not even an explicit nil
+func (o *GetClusterMasters200ResponseMastersInner) UnsetTagCompliant() {
+	o.TagCompliant.Unset()
 }
 
 // GetContainers returns the Containers field value if set, zero value otherwise.
@@ -2226,164 +2358,219 @@ func (o *GetClusterMasters200ResponseMastersInner) SetGuestConsolePreferred(v bo
 	o.GuestConsolePreferred = &v
 }
 
-// GetGuestConsoleType returns the GuestConsoleType field value if set, zero value otherwise.
+// GetGuestConsoleType returns the GuestConsoleType field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetClusterMasters200ResponseMastersInner) GetGuestConsoleType() string {
-	if o == nil || IsNil(o.GuestConsoleType) {
+	if o == nil || IsNil(o.GuestConsoleType.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.GuestConsoleType
+	return *o.GuestConsoleType.Get()
 }
 
 // GetGuestConsoleTypeOk returns a tuple with the GuestConsoleType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetClusterMasters200ResponseMastersInner) GetGuestConsoleTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.GuestConsoleType) {
+	if o == nil {
 		return nil, false
 	}
-	return o.GuestConsoleType, true
+	return o.GuestConsoleType.Get(), o.GuestConsoleType.IsSet()
 }
 
 // IsSetGuestConsoleType returns a boolean if a field has been set.
 func (o *GetClusterMasters200ResponseMastersInner) IsSetGuestConsoleType() bool {
-	if o != nil && !IsNil(o.GuestConsoleType) {
+	if o != nil && o.GuestConsoleType.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetGuestConsoleType gets a reference to the given string and assigns it to the GuestConsoleType field.
+// SetGuestConsoleType gets a reference to the given NullableString and assigns it to the GuestConsoleType field.
 func (o *GetClusterMasters200ResponseMastersInner) SetGuestConsoleType(v string) {
-	o.GuestConsoleType = &v
+	o.GuestConsoleType.Set(&v)
 }
 
-// GetGuestConsoleUsername returns the GuestConsoleUsername field value if set, zero value otherwise.
+// SetGuestConsoleTypeNil sets the value for GuestConsoleType to be an explicit nil
+func (o *GetClusterMasters200ResponseMastersInner) SetGuestConsoleTypeNil() {
+	o.GuestConsoleType.Set(nil)
+}
+
+// UnsetGuestConsoleType ensures that no value is present for GuestConsoleType, not even an explicit nil
+func (o *GetClusterMasters200ResponseMastersInner) UnsetGuestConsoleType() {
+	o.GuestConsoleType.Unset()
+}
+
+// GetGuestConsoleUsername returns the GuestConsoleUsername field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetClusterMasters200ResponseMastersInner) GetGuestConsoleUsername() string {
-	if o == nil || IsNil(o.GuestConsoleUsername) {
+	if o == nil || IsNil(o.GuestConsoleUsername.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.GuestConsoleUsername
+	return *o.GuestConsoleUsername.Get()
 }
 
 // GetGuestConsoleUsernameOk returns a tuple with the GuestConsoleUsername field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetClusterMasters200ResponseMastersInner) GetGuestConsoleUsernameOk() (*string, bool) {
-	if o == nil || IsNil(o.GuestConsoleUsername) {
+	if o == nil {
 		return nil, false
 	}
-	return o.GuestConsoleUsername, true
+	return o.GuestConsoleUsername.Get(), o.GuestConsoleUsername.IsSet()
 }
 
 // IsSetGuestConsoleUsername returns a boolean if a field has been set.
 func (o *GetClusterMasters200ResponseMastersInner) IsSetGuestConsoleUsername() bool {
-	if o != nil && !IsNil(o.GuestConsoleUsername) {
+	if o != nil && o.GuestConsoleUsername.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetGuestConsoleUsername gets a reference to the given string and assigns it to the GuestConsoleUsername field.
+// SetGuestConsoleUsername gets a reference to the given NullableString and assigns it to the GuestConsoleUsername field.
 func (o *GetClusterMasters200ResponseMastersInner) SetGuestConsoleUsername(v string) {
-	o.GuestConsoleUsername = &v
+	o.GuestConsoleUsername.Set(&v)
 }
 
-// GetGuestConsolePassword returns the GuestConsolePassword field value if set, zero value otherwise.
+// SetGuestConsoleUsernameNil sets the value for GuestConsoleUsername to be an explicit nil
+func (o *GetClusterMasters200ResponseMastersInner) SetGuestConsoleUsernameNil() {
+	o.GuestConsoleUsername.Set(nil)
+}
+
+// UnsetGuestConsoleUsername ensures that no value is present for GuestConsoleUsername, not even an explicit nil
+func (o *GetClusterMasters200ResponseMastersInner) UnsetGuestConsoleUsername() {
+	o.GuestConsoleUsername.Unset()
+}
+
+// GetGuestConsolePassword returns the GuestConsolePassword field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetClusterMasters200ResponseMastersInner) GetGuestConsolePassword() string {
-	if o == nil || IsNil(o.GuestConsolePassword) {
+	if o == nil || IsNil(o.GuestConsolePassword.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.GuestConsolePassword
+	return *o.GuestConsolePassword.Get()
 }
 
 // GetGuestConsolePasswordOk returns a tuple with the GuestConsolePassword field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetClusterMasters200ResponseMastersInner) GetGuestConsolePasswordOk() (*string, bool) {
-	if o == nil || IsNil(o.GuestConsolePassword) {
+	if o == nil {
 		return nil, false
 	}
-	return o.GuestConsolePassword, true
+	return o.GuestConsolePassword.Get(), o.GuestConsolePassword.IsSet()
 }
 
 // IsSetGuestConsolePassword returns a boolean if a field has been set.
 func (o *GetClusterMasters200ResponseMastersInner) IsSetGuestConsolePassword() bool {
-	if o != nil && !IsNil(o.GuestConsolePassword) {
+	if o != nil && o.GuestConsolePassword.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetGuestConsolePassword gets a reference to the given string and assigns it to the GuestConsolePassword field.
+// SetGuestConsolePassword gets a reference to the given NullableString and assigns it to the GuestConsolePassword field.
 func (o *GetClusterMasters200ResponseMastersInner) SetGuestConsolePassword(v string) {
-	o.GuestConsolePassword = &v
+	o.GuestConsolePassword.Set(&v)
 }
 
-// GetGuestConsolePasswordHash returns the GuestConsolePasswordHash field value if set, zero value otherwise.
+// SetGuestConsolePasswordNil sets the value for GuestConsolePassword to be an explicit nil
+func (o *GetClusterMasters200ResponseMastersInner) SetGuestConsolePasswordNil() {
+	o.GuestConsolePassword.Set(nil)
+}
+
+// UnsetGuestConsolePassword ensures that no value is present for GuestConsolePassword, not even an explicit nil
+func (o *GetClusterMasters200ResponseMastersInner) UnsetGuestConsolePassword() {
+	o.GuestConsolePassword.Unset()
+}
+
+// GetGuestConsolePasswordHash returns the GuestConsolePasswordHash field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetClusterMasters200ResponseMastersInner) GetGuestConsolePasswordHash() string {
-	if o == nil || IsNil(o.GuestConsolePasswordHash) {
+	if o == nil || IsNil(o.GuestConsolePasswordHash.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.GuestConsolePasswordHash
+	return *o.GuestConsolePasswordHash.Get()
 }
 
 // GetGuestConsolePasswordHashOk returns a tuple with the GuestConsolePasswordHash field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetClusterMasters200ResponseMastersInner) GetGuestConsolePasswordHashOk() (*string, bool) {
-	if o == nil || IsNil(o.GuestConsolePasswordHash) {
+	if o == nil {
 		return nil, false
 	}
-	return o.GuestConsolePasswordHash, true
+	return o.GuestConsolePasswordHash.Get(), o.GuestConsolePasswordHash.IsSet()
 }
 
 // IsSetGuestConsolePasswordHash returns a boolean if a field has been set.
 func (o *GetClusterMasters200ResponseMastersInner) IsSetGuestConsolePasswordHash() bool {
-	if o != nil && !IsNil(o.GuestConsolePasswordHash) {
+	if o != nil && o.GuestConsolePasswordHash.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetGuestConsolePasswordHash gets a reference to the given string and assigns it to the GuestConsolePasswordHash field.
+// SetGuestConsolePasswordHash gets a reference to the given NullableString and assigns it to the GuestConsolePasswordHash field.
 func (o *GetClusterMasters200ResponseMastersInner) SetGuestConsolePasswordHash(v string) {
-	o.GuestConsolePasswordHash = &v
+	o.GuestConsolePasswordHash.Set(&v)
 }
 
-// GetGuestConsolePort returns the GuestConsolePort field value if set, zero value otherwise.
+// SetGuestConsolePasswordHashNil sets the value for GuestConsolePasswordHash to be an explicit nil
+func (o *GetClusterMasters200ResponseMastersInner) SetGuestConsolePasswordHashNil() {
+	o.GuestConsolePasswordHash.Set(nil)
+}
+
+// UnsetGuestConsolePasswordHash ensures that no value is present for GuestConsolePasswordHash, not even an explicit nil
+func (o *GetClusterMasters200ResponseMastersInner) UnsetGuestConsolePasswordHash() {
+	o.GuestConsolePasswordHash.Unset()
+}
+
+// GetGuestConsolePort returns the GuestConsolePort field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetClusterMasters200ResponseMastersInner) GetGuestConsolePort() string {
-	if o == nil || IsNil(o.GuestConsolePort) {
+	if o == nil || IsNil(o.GuestConsolePort.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.GuestConsolePort
+	return *o.GuestConsolePort.Get()
 }
 
 // GetGuestConsolePortOk returns a tuple with the GuestConsolePort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetClusterMasters200ResponseMastersInner) GetGuestConsolePortOk() (*string, bool) {
-	if o == nil || IsNil(o.GuestConsolePort) {
+	if o == nil {
 		return nil, false
 	}
-	return o.GuestConsolePort, true
+	return o.GuestConsolePort.Get(), o.GuestConsolePort.IsSet()
 }
 
 // IsSetGuestConsolePort returns a boolean if a field has been set.
 func (o *GetClusterMasters200ResponseMastersInner) IsSetGuestConsolePort() bool {
-	if o != nil && !IsNil(o.GuestConsolePort) {
+	if o != nil && o.GuestConsolePort.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetGuestConsolePort gets a reference to the given string and assigns it to the GuestConsolePort field.
+// SetGuestConsolePort gets a reference to the given NullableString and assigns it to the GuestConsolePort field.
 func (o *GetClusterMasters200ResponseMastersInner) SetGuestConsolePort(v string) {
-	o.GuestConsolePort = &v
+	o.GuestConsolePort.Set(&v)
+}
+
+// SetGuestConsolePortNil sets the value for GuestConsolePort to be an explicit nil
+func (o *GetClusterMasters200ResponseMastersInner) SetGuestConsolePortNil() {
+	o.GuestConsolePort.Set(nil)
+}
+
+// UnsetGuestConsolePort ensures that no value is present for GuestConsolePort, not even an explicit nil
+func (o *GetClusterMasters200ResponseMastersInner) UnsetGuestConsolePort() {
+	o.GuestConsolePort.Unset()
 }
 
 func (o GetClusterMasters200ResponseMastersInner) MarshalJSON() ([]byte, error) {
@@ -2405,11 +2592,11 @@ func (o GetClusterMasters200ResponseMastersInner) ToMap() (map[string]interface{
 	if !IsNil(o.ExternalId) {
 		toSerialize["externalId"] = o.ExternalId
 	}
-	if !IsNil(o.InternalId) {
-		toSerialize["internalId"] = o.InternalId
+	if o.InternalId.IsSet() {
+		toSerialize["internalId"] = o.InternalId.Get()
 	}
-	if !IsNil(o.ExternalUniqueId) {
-		toSerialize["externalUniqueId"] = o.ExternalUniqueId
+	if o.ExternalUniqueId.IsSet() {
+		toSerialize["externalUniqueId"] = o.ExternalUniqueId.Get()
 	}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
@@ -2453,8 +2640,8 @@ func (o GetClusterMasters200ResponseMastersInner) ToMap() (map[string]interface{
 	if !IsNil(o.ResourcePoolId) {
 		toSerialize["resourcePoolId"] = o.ResourcePoolId
 	}
-	if !IsNil(o.FolderId) {
-		toSerialize["folderId"] = o.FolderId
+	if o.FolderId.IsSet() {
+		toSerialize["folderId"] = o.FolderId.Get()
 	}
 	if !IsNil(o.SshHost) {
 		toSerialize["sshHost"] = o.SshHost
@@ -2468,8 +2655,8 @@ func (o GetClusterMasters200ResponseMastersInner) ToMap() (map[string]interface{
 	if !IsNil(o.InternalIp) {
 		toSerialize["internalIp"] = o.InternalIp
 	}
-	if !IsNil(o.VolumeId) {
-		toSerialize["volumeId"] = o.VolumeId
+	if o.VolumeId.IsSet() {
+		toSerialize["volumeId"] = o.VolumeId.Get()
 	}
 	if !IsNil(o.Platform) {
 		toSerialize["platform"] = o.Platform
@@ -2516,20 +2703,20 @@ func (o GetClusterMasters200ResponseMastersInner) ToMap() (map[string]interface{
 	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status
 	}
-	if !IsNil(o.StatusMessage) {
-		toSerialize["statusMessage"] = o.StatusMessage
+	if o.StatusMessage.IsSet() {
+		toSerialize["statusMessage"] = o.StatusMessage.Get()
 	}
-	if !IsNil(o.ErrorMessage) {
-		toSerialize["errorMessage"] = o.ErrorMessage
+	if o.ErrorMessage.IsSet() {
+		toSerialize["errorMessage"] = o.ErrorMessage.Get()
 	}
-	if !IsNil(o.StatusDate) {
-		toSerialize["statusDate"] = o.StatusDate
+	if o.StatusDate.IsSet() {
+		toSerialize["statusDate"] = o.StatusDate.Get()
 	}
-	if !IsNil(o.StatusPercent) {
-		toSerialize["statusPercent"] = o.StatusPercent
+	if o.StatusPercent.IsSet() {
+		toSerialize["statusPercent"] = o.StatusPercent.Get()
 	}
-	if !IsNil(o.StatusEta) {
-		toSerialize["statusEta"] = o.StatusEta
+	if o.StatusEta.IsSet() {
+		toSerialize["statusEta"] = o.StatusEta.Get()
 	}
 	if !IsNil(o.PowerState) {
 		toSerialize["powerState"] = o.PowerState
@@ -2546,8 +2733,8 @@ func (o GetClusterMasters200ResponseMastersInner) ToMap() (map[string]interface{
 	if !IsNil(o.MaxCores) {
 		toSerialize["maxCores"] = o.MaxCores
 	}
-	if !IsNil(o.CoresPerSocket) {
-		toSerialize["coresPerSocket"] = o.CoresPerSocket
+	if o.CoresPerSocket.IsSet() {
+		toSerialize["coresPerSocket"] = o.CoresPerSocket.Get()
 	}
 	if !IsNil(o.MaxMemory) {
 		toSerialize["maxMemory"] = o.MaxMemory
@@ -2564,8 +2751,8 @@ func (o GetClusterMasters200ResponseMastersInner) ToMap() (map[string]interface{
 	if !IsNil(o.SourceImage) {
 		toSerialize["sourceImage"] = o.SourceImage
 	}
-	if !IsNil(o.ServerOs) {
-		toSerialize["serverOs"] = o.ServerOs
+	if o.ServerOs.IsSet() {
+		toSerialize["serverOs"] = o.ServerOs.Get()
 	}
 	if !IsNil(o.Volumes) {
 		toSerialize["volumes"] = o.Volumes
@@ -2585,8 +2772,8 @@ func (o GetClusterMasters200ResponseMastersInner) ToMap() (map[string]interface{
 	if !IsNil(o.Enabled) {
 		toSerialize["enabled"] = o.Enabled
 	}
-	if !IsNil(o.TagCompliant) {
-		toSerialize["tagCompliant"] = o.TagCompliant
+	if o.TagCompliant.IsSet() {
+		toSerialize["tagCompliant"] = o.TagCompliant.Get()
 	}
 	if !IsNil(o.Containers) {
 		toSerialize["containers"] = o.Containers
@@ -2594,20 +2781,20 @@ func (o GetClusterMasters200ResponseMastersInner) ToMap() (map[string]interface{
 	if !IsNil(o.GuestConsolePreferred) {
 		toSerialize["guestConsolePreferred"] = o.GuestConsolePreferred
 	}
-	if !IsNil(o.GuestConsoleType) {
-		toSerialize["guestConsoleType"] = o.GuestConsoleType
+	if o.GuestConsoleType.IsSet() {
+		toSerialize["guestConsoleType"] = o.GuestConsoleType.Get()
 	}
-	if !IsNil(o.GuestConsoleUsername) {
-		toSerialize["guestConsoleUsername"] = o.GuestConsoleUsername
+	if o.GuestConsoleUsername.IsSet() {
+		toSerialize["guestConsoleUsername"] = o.GuestConsoleUsername.Get()
 	}
-	if !IsNil(o.GuestConsolePassword) {
-		toSerialize["guestConsolePassword"] = o.GuestConsolePassword
+	if o.GuestConsolePassword.IsSet() {
+		toSerialize["guestConsolePassword"] = o.GuestConsolePassword.Get()
 	}
-	if !IsNil(o.GuestConsolePasswordHash) {
-		toSerialize["guestConsolePasswordHash"] = o.GuestConsolePasswordHash
+	if o.GuestConsolePasswordHash.IsSet() {
+		toSerialize["guestConsolePasswordHash"] = o.GuestConsolePasswordHash.Get()
 	}
-	if !IsNil(o.GuestConsolePort) {
-		toSerialize["guestConsolePort"] = o.GuestConsolePort
+	if o.GuestConsolePort.IsSet() {
+		toSerialize["guestConsolePort"] = o.GuestConsolePort.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {

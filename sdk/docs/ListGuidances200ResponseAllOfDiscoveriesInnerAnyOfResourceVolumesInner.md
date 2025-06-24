@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **DatastoreId** | Pointer to **int64** |  | [optional] 
 **MaxStorage** | Pointer to **int64** |  | [optional] 
 **DisplayOrder** | Pointer to **int64** |  | [optional] 
-**MaxIOPS** | Pointer to **string** |  | [optional] 
+**MaxIOPS** | Pointer to **NullableString** |  | [optional] 
 **Uuid** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -389,6 +389,16 @@ SetMaxIOPS sets MaxIOPS field to given value.
 
 HasMaxIOPS returns a boolean if a field has been set.
 
+### SetMaxIOPSNil
+
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceVolumesInner) SetMaxIOPSNil(b bool)`
+
+ SetMaxIOPSNil sets the value for MaxIOPS to be an explicit nil
+
+### UnsetMaxIOPS
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceVolumesInner) UnsetMaxIOPS()`
+
+UnsetMaxIOPS ensures that no value is present for MaxIOPS, not even an explicit nil
 ### GetUuid
 
 `func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceVolumesInner) GetUuid() string`

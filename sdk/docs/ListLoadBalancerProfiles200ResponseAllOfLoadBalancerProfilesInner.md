@@ -14,20 +14,20 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** |  | [optional] 
 **InternalId** | Pointer to **string** |  | [optional] 
 **ExternalId** | Pointer to **string** |  | [optional] 
-**ProxyType** | Pointer to **string** |  | [optional] 
-**RedirectRewrite** | Pointer to **string** |  | [optional] 
-**PersistenceType** | Pointer to **string** |  | [optional] 
-**SslEnabled** | Pointer to **string** |  | [optional] 
-**SslCert** | Pointer to **string** |  | [optional] 
-**AccountCertificate** | Pointer to **string** |  | [optional] 
+**ProxyType** | Pointer to **NullableString** |  | [optional] 
+**RedirectRewrite** | Pointer to **NullableString** |  | [optional] 
+**PersistenceType** | Pointer to **NullableString** |  | [optional] 
+**SslEnabled** | Pointer to **NullableString** |  | [optional] 
+**SslCert** | Pointer to **NullableString** |  | [optional] 
+**AccountCertificate** | Pointer to **NullableString** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
-**RedirectUrl** | Pointer to **string** |  | [optional] 
+**RedirectUrl** | Pointer to **NullableString** |  | [optional] 
 **InsertXforwardedFor** | Pointer to **bool** |  | [optional] 
-**PersistenceCookieName** | Pointer to **string** |  | [optional] 
-**PersistenceExpiresIn** | Pointer to **string** |  | [optional] 
+**PersistenceCookieName** | Pointer to **NullableString** |  | [optional] 
+**PersistenceExpiresIn** | Pointer to **NullableString** |  | [optional] 
 **Editable** | Pointer to **bool** |  | [optional] 
 **Config** | Pointer to **map[string]interface{}** |  | [optional] 
-**CreatedBy** | Pointer to **string** |  | [optional] 
+**CreatedBy** | Pointer to **NullableString** |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
 
@@ -325,6 +325,16 @@ SetProxyType sets ProxyType field to given value.
 
 HasProxyType returns a boolean if a field has been set.
 
+### SetProxyTypeNil
+
+`func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) SetProxyTypeNil(b bool)`
+
+ SetProxyTypeNil sets the value for ProxyType to be an explicit nil
+
+### UnsetProxyType
+`func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) UnsetProxyType()`
+
+UnsetProxyType ensures that no value is present for ProxyType, not even an explicit nil
 ### GetRedirectRewrite
 
 `func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) GetRedirectRewrite() string`
@@ -350,6 +360,16 @@ SetRedirectRewrite sets RedirectRewrite field to given value.
 
 HasRedirectRewrite returns a boolean if a field has been set.
 
+### SetRedirectRewriteNil
+
+`func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) SetRedirectRewriteNil(b bool)`
+
+ SetRedirectRewriteNil sets the value for RedirectRewrite to be an explicit nil
+
+### UnsetRedirectRewrite
+`func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) UnsetRedirectRewrite()`
+
+UnsetRedirectRewrite ensures that no value is present for RedirectRewrite, not even an explicit nil
 ### GetPersistenceType
 
 `func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) GetPersistenceType() string`
@@ -375,6 +395,16 @@ SetPersistenceType sets PersistenceType field to given value.
 
 HasPersistenceType returns a boolean if a field has been set.
 
+### SetPersistenceTypeNil
+
+`func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) SetPersistenceTypeNil(b bool)`
+
+ SetPersistenceTypeNil sets the value for PersistenceType to be an explicit nil
+
+### UnsetPersistenceType
+`func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) UnsetPersistenceType()`
+
+UnsetPersistenceType ensures that no value is present for PersistenceType, not even an explicit nil
 ### GetSslEnabled
 
 `func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) GetSslEnabled() string`
@@ -400,6 +430,16 @@ SetSslEnabled sets SslEnabled field to given value.
 
 HasSslEnabled returns a boolean if a field has been set.
 
+### SetSslEnabledNil
+
+`func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) SetSslEnabledNil(b bool)`
+
+ SetSslEnabledNil sets the value for SslEnabled to be an explicit nil
+
+### UnsetSslEnabled
+`func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) UnsetSslEnabled()`
+
+UnsetSslEnabled ensures that no value is present for SslEnabled, not even an explicit nil
 ### GetSslCert
 
 `func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) GetSslCert() string`
@@ -425,6 +465,16 @@ SetSslCert sets SslCert field to given value.
 
 HasSslCert returns a boolean if a field has been set.
 
+### SetSslCertNil
+
+`func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) SetSslCertNil(b bool)`
+
+ SetSslCertNil sets the value for SslCert to be an explicit nil
+
+### UnsetSslCert
+`func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) UnsetSslCert()`
+
+UnsetSslCert ensures that no value is present for SslCert, not even an explicit nil
 ### GetAccountCertificate
 
 `func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) GetAccountCertificate() string`
@@ -450,6 +500,16 @@ SetAccountCertificate sets AccountCertificate field to given value.
 
 HasAccountCertificate returns a boolean if a field has been set.
 
+### SetAccountCertificateNil
+
+`func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) SetAccountCertificateNil(b bool)`
+
+ SetAccountCertificateNil sets the value for AccountCertificate to be an explicit nil
+
+### UnsetAccountCertificate
+`func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) UnsetAccountCertificate()`
+
+UnsetAccountCertificate ensures that no value is present for AccountCertificate, not even an explicit nil
 ### GetEnabled
 
 `func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) GetEnabled() bool`
@@ -500,6 +560,16 @@ SetRedirectUrl sets RedirectUrl field to given value.
 
 HasRedirectUrl returns a boolean if a field has been set.
 
+### SetRedirectUrlNil
+
+`func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) SetRedirectUrlNil(b bool)`
+
+ SetRedirectUrlNil sets the value for RedirectUrl to be an explicit nil
+
+### UnsetRedirectUrl
+`func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) UnsetRedirectUrl()`
+
+UnsetRedirectUrl ensures that no value is present for RedirectUrl, not even an explicit nil
 ### GetInsertXforwardedFor
 
 `func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) GetInsertXforwardedFor() bool`
@@ -550,6 +620,16 @@ SetPersistenceCookieName sets PersistenceCookieName field to given value.
 
 HasPersistenceCookieName returns a boolean if a field has been set.
 
+### SetPersistenceCookieNameNil
+
+`func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) SetPersistenceCookieNameNil(b bool)`
+
+ SetPersistenceCookieNameNil sets the value for PersistenceCookieName to be an explicit nil
+
+### UnsetPersistenceCookieName
+`func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) UnsetPersistenceCookieName()`
+
+UnsetPersistenceCookieName ensures that no value is present for PersistenceCookieName, not even an explicit nil
 ### GetPersistenceExpiresIn
 
 `func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) GetPersistenceExpiresIn() string`
@@ -575,6 +655,16 @@ SetPersistenceExpiresIn sets PersistenceExpiresIn field to given value.
 
 HasPersistenceExpiresIn returns a boolean if a field has been set.
 
+### SetPersistenceExpiresInNil
+
+`func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) SetPersistenceExpiresInNil(b bool)`
+
+ SetPersistenceExpiresInNil sets the value for PersistenceExpiresIn to be an explicit nil
+
+### UnsetPersistenceExpiresIn
+`func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) UnsetPersistenceExpiresIn()`
+
+UnsetPersistenceExpiresIn ensures that no value is present for PersistenceExpiresIn, not even an explicit nil
 ### GetEditable
 
 `func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) GetEditable() bool`
@@ -650,6 +740,16 @@ SetCreatedBy sets CreatedBy field to given value.
 
 HasCreatedBy returns a boolean if a field has been set.
 
+### SetCreatedByNil
+
+`func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) SetCreatedByNil(b bool)`
+
+ SetCreatedByNil sets the value for CreatedBy to be an explicit nil
+
+### UnsetCreatedBy
+`func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) UnsetCreatedBy()`
+
+UnsetCreatedBy ensures that no value is present for CreatedBy, not even an explicit nil
 ### GetDateCreated
 
 `func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) GetDateCreated() time.Time`

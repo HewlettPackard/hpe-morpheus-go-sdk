@@ -23,7 +23,7 @@ type InfobloxNetworkPoolServerConfig struct {
 	// Inventory Existing
 	InventoryExisting *string `json:"inventoryExisting,omitempty"`
 	// Extra Attributes
-	ExtraAttributes      *string                `json:"extraAttributes,omitempty"`
+	ExtraAttributes      NullableString         `json:"extraAttributes,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -82,36 +82,47 @@ func (o *InfobloxNetworkPoolServerConfig) SetInventoryExisting(v string) {
 	o.InventoryExisting = &v
 }
 
-// GetExtraAttributes returns the ExtraAttributes field value if set, zero value otherwise.
+// GetExtraAttributes returns the ExtraAttributes field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *InfobloxNetworkPoolServerConfig) GetExtraAttributes() string {
-	if o == nil || IsNil(o.ExtraAttributes) {
+	if o == nil || IsNil(o.ExtraAttributes.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ExtraAttributes
+	return *o.ExtraAttributes.Get()
 }
 
 // GetExtraAttributesOk returns a tuple with the ExtraAttributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *InfobloxNetworkPoolServerConfig) GetExtraAttributesOk() (*string, bool) {
-	if o == nil || IsNil(o.ExtraAttributes) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ExtraAttributes, true
+	return o.ExtraAttributes.Get(), o.ExtraAttributes.IsSet()
 }
 
 // IsSetExtraAttributes returns a boolean if a field has been set.
 func (o *InfobloxNetworkPoolServerConfig) IsSetExtraAttributes() bool {
-	if o != nil && !IsNil(o.ExtraAttributes) {
+	if o != nil && o.ExtraAttributes.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetExtraAttributes gets a reference to the given string and assigns it to the ExtraAttributes field.
+// SetExtraAttributes gets a reference to the given NullableString and assigns it to the ExtraAttributes field.
 func (o *InfobloxNetworkPoolServerConfig) SetExtraAttributes(v string) {
-	o.ExtraAttributes = &v
+	o.ExtraAttributes.Set(&v)
+}
+
+// SetExtraAttributesNil sets the value for ExtraAttributes to be an explicit nil
+func (o *InfobloxNetworkPoolServerConfig) SetExtraAttributesNil() {
+	o.ExtraAttributes.Set(nil)
+}
+
+// UnsetExtraAttributes ensures that no value is present for ExtraAttributes, not even an explicit nil
+func (o *InfobloxNetworkPoolServerConfig) UnsetExtraAttributes() {
+	o.ExtraAttributes.Unset()
 }
 
 func (o InfobloxNetworkPoolServerConfig) MarshalJSON() ([]byte, error) {
@@ -127,8 +138,8 @@ func (o InfobloxNetworkPoolServerConfig) ToMap() (map[string]interface{}, error)
 	if !IsNil(o.InventoryExisting) {
 		toSerialize["inventoryExisting"] = o.InventoryExisting
 	}
-	if !IsNil(o.ExtraAttributes) {
-		toSerialize["extraAttributes"] = o.ExtraAttributes
+	if o.ExtraAttributes.IsSet() {
+		toSerialize["extraAttributes"] = o.ExtraAttributes.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {

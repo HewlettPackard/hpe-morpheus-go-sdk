@@ -23,11 +23,11 @@ type GetMonitoringSettings200ResponseMonitoringSettings struct {
 	// Auto Create Checks
 	AutoManageChecks *bool `json:"autoManageChecks,omitempty"`
 	// Availability Time Frame. The number of days availability should be calculated for. Changes will not take effect until your checks have passed their check interval.
-	AvailabilityTimeFrame *int32 `json:"availabilityTimeFrame,omitempty"`
+	AvailabilityTimeFrame NullableInt32 `json:"availabilityTimeFrame,omitempty"`
 	// Availability Precision. The number of decimal places availability should be displayed in. Can be anywhere between 0 and 5.
-	AvailabilityPrecision *int32 `json:"availabilityPrecision,omitempty"`
+	AvailabilityPrecision NullableInt32 `json:"availabilityPrecision,omitempty"`
 	// Default Check Interval. The number of minutes to use as the default interval to use when creating new checks.
-	DefaultCheckInterval *int32                                                        `json:"defaultCheckInterval,omitempty"`
+	DefaultCheckInterval NullableInt32                                                 `json:"defaultCheckInterval,omitempty"`
 	ServiceNow           *GetMonitoringSettings200ResponseMonitoringSettingsServiceNow `json:"serviceNow,omitempty"`
 	AdditionalProperties map[string]interface{}                                        `json:",remain"`
 }
@@ -83,100 +83,133 @@ func (o *GetMonitoringSettings200ResponseMonitoringSettings) SetAutoManageChecks
 	o.AutoManageChecks = &v
 }
 
-// GetAvailabilityTimeFrame returns the AvailabilityTimeFrame field value if set, zero value otherwise.
+// GetAvailabilityTimeFrame returns the AvailabilityTimeFrame field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetMonitoringSettings200ResponseMonitoringSettings) GetAvailabilityTimeFrame() int32 {
-	if o == nil || IsNil(o.AvailabilityTimeFrame) {
+	if o == nil || IsNil(o.AvailabilityTimeFrame.Get()) {
 		var ret int32
 		return ret
 	}
-	return *o.AvailabilityTimeFrame
+	return *o.AvailabilityTimeFrame.Get()
 }
 
 // GetAvailabilityTimeFrameOk returns a tuple with the AvailabilityTimeFrame field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetMonitoringSettings200ResponseMonitoringSettings) GetAvailabilityTimeFrameOk() (*int32, bool) {
-	if o == nil || IsNil(o.AvailabilityTimeFrame) {
+	if o == nil {
 		return nil, false
 	}
-	return o.AvailabilityTimeFrame, true
+	return o.AvailabilityTimeFrame.Get(), o.AvailabilityTimeFrame.IsSet()
 }
 
 // IsSetAvailabilityTimeFrame returns a boolean if a field has been set.
 func (o *GetMonitoringSettings200ResponseMonitoringSettings) IsSetAvailabilityTimeFrame() bool {
-	if o != nil && !IsNil(o.AvailabilityTimeFrame) {
+	if o != nil && o.AvailabilityTimeFrame.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetAvailabilityTimeFrame gets a reference to the given int32 and assigns it to the AvailabilityTimeFrame field.
+// SetAvailabilityTimeFrame gets a reference to the given NullableInt32 and assigns it to the AvailabilityTimeFrame field.
 func (o *GetMonitoringSettings200ResponseMonitoringSettings) SetAvailabilityTimeFrame(v int32) {
-	o.AvailabilityTimeFrame = &v
+	o.AvailabilityTimeFrame.Set(&v)
 }
 
-// GetAvailabilityPrecision returns the AvailabilityPrecision field value if set, zero value otherwise.
+// SetAvailabilityTimeFrameNil sets the value for AvailabilityTimeFrame to be an explicit nil
+func (o *GetMonitoringSettings200ResponseMonitoringSettings) SetAvailabilityTimeFrameNil() {
+	o.AvailabilityTimeFrame.Set(nil)
+}
+
+// UnsetAvailabilityTimeFrame ensures that no value is present for AvailabilityTimeFrame, not even an explicit nil
+func (o *GetMonitoringSettings200ResponseMonitoringSettings) UnsetAvailabilityTimeFrame() {
+	o.AvailabilityTimeFrame.Unset()
+}
+
+// GetAvailabilityPrecision returns the AvailabilityPrecision field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetMonitoringSettings200ResponseMonitoringSettings) GetAvailabilityPrecision() int32 {
-	if o == nil || IsNil(o.AvailabilityPrecision) {
+	if o == nil || IsNil(o.AvailabilityPrecision.Get()) {
 		var ret int32
 		return ret
 	}
-	return *o.AvailabilityPrecision
+	return *o.AvailabilityPrecision.Get()
 }
 
 // GetAvailabilityPrecisionOk returns a tuple with the AvailabilityPrecision field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetMonitoringSettings200ResponseMonitoringSettings) GetAvailabilityPrecisionOk() (*int32, bool) {
-	if o == nil || IsNil(o.AvailabilityPrecision) {
+	if o == nil {
 		return nil, false
 	}
-	return o.AvailabilityPrecision, true
+	return o.AvailabilityPrecision.Get(), o.AvailabilityPrecision.IsSet()
 }
 
 // IsSetAvailabilityPrecision returns a boolean if a field has been set.
 func (o *GetMonitoringSettings200ResponseMonitoringSettings) IsSetAvailabilityPrecision() bool {
-	if o != nil && !IsNil(o.AvailabilityPrecision) {
+	if o != nil && o.AvailabilityPrecision.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetAvailabilityPrecision gets a reference to the given int32 and assigns it to the AvailabilityPrecision field.
+// SetAvailabilityPrecision gets a reference to the given NullableInt32 and assigns it to the AvailabilityPrecision field.
 func (o *GetMonitoringSettings200ResponseMonitoringSettings) SetAvailabilityPrecision(v int32) {
-	o.AvailabilityPrecision = &v
+	o.AvailabilityPrecision.Set(&v)
 }
 
-// GetDefaultCheckInterval returns the DefaultCheckInterval field value if set, zero value otherwise.
+// SetAvailabilityPrecisionNil sets the value for AvailabilityPrecision to be an explicit nil
+func (o *GetMonitoringSettings200ResponseMonitoringSettings) SetAvailabilityPrecisionNil() {
+	o.AvailabilityPrecision.Set(nil)
+}
+
+// UnsetAvailabilityPrecision ensures that no value is present for AvailabilityPrecision, not even an explicit nil
+func (o *GetMonitoringSettings200ResponseMonitoringSettings) UnsetAvailabilityPrecision() {
+	o.AvailabilityPrecision.Unset()
+}
+
+// GetDefaultCheckInterval returns the DefaultCheckInterval field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetMonitoringSettings200ResponseMonitoringSettings) GetDefaultCheckInterval() int32 {
-	if o == nil || IsNil(o.DefaultCheckInterval) {
+	if o == nil || IsNil(o.DefaultCheckInterval.Get()) {
 		var ret int32
 		return ret
 	}
-	return *o.DefaultCheckInterval
+	return *o.DefaultCheckInterval.Get()
 }
 
 // GetDefaultCheckIntervalOk returns a tuple with the DefaultCheckInterval field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetMonitoringSettings200ResponseMonitoringSettings) GetDefaultCheckIntervalOk() (*int32, bool) {
-	if o == nil || IsNil(o.DefaultCheckInterval) {
+	if o == nil {
 		return nil, false
 	}
-	return o.DefaultCheckInterval, true
+	return o.DefaultCheckInterval.Get(), o.DefaultCheckInterval.IsSet()
 }
 
 // IsSetDefaultCheckInterval returns a boolean if a field has been set.
 func (o *GetMonitoringSettings200ResponseMonitoringSettings) IsSetDefaultCheckInterval() bool {
-	if o != nil && !IsNil(o.DefaultCheckInterval) {
+	if o != nil && o.DefaultCheckInterval.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDefaultCheckInterval gets a reference to the given int32 and assigns it to the DefaultCheckInterval field.
+// SetDefaultCheckInterval gets a reference to the given NullableInt32 and assigns it to the DefaultCheckInterval field.
 func (o *GetMonitoringSettings200ResponseMonitoringSettings) SetDefaultCheckInterval(v int32) {
-	o.DefaultCheckInterval = &v
+	o.DefaultCheckInterval.Set(&v)
+}
+
+// SetDefaultCheckIntervalNil sets the value for DefaultCheckInterval to be an explicit nil
+func (o *GetMonitoringSettings200ResponseMonitoringSettings) SetDefaultCheckIntervalNil() {
+	o.DefaultCheckInterval.Set(nil)
+}
+
+// UnsetDefaultCheckInterval ensures that no value is present for DefaultCheckInterval, not even an explicit nil
+func (o *GetMonitoringSettings200ResponseMonitoringSettings) UnsetDefaultCheckInterval() {
+	o.DefaultCheckInterval.Unset()
 }
 
 // GetServiceNow returns the ServiceNow field value if set, zero value otherwise.
@@ -224,14 +257,14 @@ func (o GetMonitoringSettings200ResponseMonitoringSettings) ToMap() (map[string]
 	if !IsNil(o.AutoManageChecks) {
 		toSerialize["autoManageChecks"] = o.AutoManageChecks
 	}
-	if !IsNil(o.AvailabilityTimeFrame) {
-		toSerialize["availabilityTimeFrame"] = o.AvailabilityTimeFrame
+	if o.AvailabilityTimeFrame.IsSet() {
+		toSerialize["availabilityTimeFrame"] = o.AvailabilityTimeFrame.Get()
 	}
-	if !IsNil(o.AvailabilityPrecision) {
-		toSerialize["availabilityPrecision"] = o.AvailabilityPrecision
+	if o.AvailabilityPrecision.IsSet() {
+		toSerialize["availabilityPrecision"] = o.AvailabilityPrecision.Get()
 	}
-	if !IsNil(o.DefaultCheckInterval) {
-		toSerialize["defaultCheckInterval"] = o.DefaultCheckInterval
+	if o.DefaultCheckInterval.IsSet() {
+		toSerialize["defaultCheckInterval"] = o.DefaultCheckInterval.Get()
 	}
 	if !IsNil(o.ServiceNow) {
 		toSerialize["serviceNow"] = o.ServiceNow

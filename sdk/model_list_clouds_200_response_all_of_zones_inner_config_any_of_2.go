@@ -38,7 +38,7 @@ type ListClouds200ResponseAllOfZonesInnerConfigAnyOf2 struct {
 	DnsIntegrationId     *string                                                       `json:"dnsIntegrationId,omitempty"`
 	ConfigManagementId   *string                                                       `json:"configManagementId,omitempty"`
 	ConfigCmdbId         *string                                                       `json:"configCmdbId,omitempty"`
-	SecurityServer       *string                                                       `json:"securityServer,omitempty"`
+	SecurityServer       NullableString                                                `json:"securityServer,omitempty"`
 	AccountType          *string                                                       `json:"accountType,omitempty"`
 	ServiceRegistryId    *string                                                       `json:"serviceRegistryId,omitempty"`
 	CloudType            *string                                                       `json:"cloudType,omitempty"`
@@ -47,12 +47,12 @@ type ListClouds200ResponseAllOfZonesInnerConfigAnyOf2 struct {
 	EncryptionSet        *string                                                       `json:"encryptionSet,omitempty"`
 	CspTenantId          *string                                                       `json:"cspTenantId,omitempty"`
 	CspClientId          *string                                                       `json:"cspClientId,omitempty"`
-	CspClientSecret      *string                                                       `json:"cspClientSecret,omitempty"`
-	CspCustomer          *string                                                       `json:"cspCustomer,omitempty"`
+	CspClientSecret      NullableString                                                `json:"cspClientSecret,omitempty"`
+	CspCustomer          NullableString                                                `json:"cspCustomer,omitempty"`
 	ConfigCmdbDiscovery  *bool                                                         `json:"configCmdbDiscovery,omitempty"`
 	AzureCostingMode     *string                                                       `json:"azureCostingMode,omitempty"`
 	ClientSecretHash     *string                                                       `json:"clientSecretHash,omitempty"`
-	CspClientSecretHash  *string                                                       `json:"cspClientSecretHash,omitempty"`
+	CspClientSecretHash  NullableString                                                `json:"cspClientSecretHash,omitempty"`
 	AdditionalProperties map[string]interface{}                                        `json:",remain"`
 }
 
@@ -651,36 +651,47 @@ func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf2) SetConfigCmdbId(v str
 	o.ConfigCmdbId = &v
 }
 
-// GetSecurityServer returns the SecurityServer field value if set, zero value otherwise.
+// GetSecurityServer returns the SecurityServer field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf2) GetSecurityServer() string {
-	if o == nil || IsNil(o.SecurityServer) {
+	if o == nil || IsNil(o.SecurityServer.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.SecurityServer
+	return *o.SecurityServer.Get()
 }
 
 // GetSecurityServerOk returns a tuple with the SecurityServer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf2) GetSecurityServerOk() (*string, bool) {
-	if o == nil || IsNil(o.SecurityServer) {
+	if o == nil {
 		return nil, false
 	}
-	return o.SecurityServer, true
+	return o.SecurityServer.Get(), o.SecurityServer.IsSet()
 }
 
 // IsSetSecurityServer returns a boolean if a field has been set.
 func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf2) IsSetSecurityServer() bool {
-	if o != nil && !IsNil(o.SecurityServer) {
+	if o != nil && o.SecurityServer.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetSecurityServer gets a reference to the given string and assigns it to the SecurityServer field.
+// SetSecurityServer gets a reference to the given NullableString and assigns it to the SecurityServer field.
 func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf2) SetSecurityServer(v string) {
-	o.SecurityServer = &v
+	o.SecurityServer.Set(&v)
+}
+
+// SetSecurityServerNil sets the value for SecurityServer to be an explicit nil
+func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf2) SetSecurityServerNil() {
+	o.SecurityServer.Set(nil)
+}
+
+// UnsetSecurityServer ensures that no value is present for SecurityServer, not even an explicit nil
+func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf2) UnsetSecurityServer() {
+	o.SecurityServer.Unset()
 }
 
 // GetAccountType returns the AccountType field value if set, zero value otherwise.
@@ -939,68 +950,90 @@ func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf2) SetCspClientId(v stri
 	o.CspClientId = &v
 }
 
-// GetCspClientSecret returns the CspClientSecret field value if set, zero value otherwise.
+// GetCspClientSecret returns the CspClientSecret field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf2) GetCspClientSecret() string {
-	if o == nil || IsNil(o.CspClientSecret) {
+	if o == nil || IsNil(o.CspClientSecret.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.CspClientSecret
+	return *o.CspClientSecret.Get()
 }
 
 // GetCspClientSecretOk returns a tuple with the CspClientSecret field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf2) GetCspClientSecretOk() (*string, bool) {
-	if o == nil || IsNil(o.CspClientSecret) {
+	if o == nil {
 		return nil, false
 	}
-	return o.CspClientSecret, true
+	return o.CspClientSecret.Get(), o.CspClientSecret.IsSet()
 }
 
 // IsSetCspClientSecret returns a boolean if a field has been set.
 func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf2) IsSetCspClientSecret() bool {
-	if o != nil && !IsNil(o.CspClientSecret) {
+	if o != nil && o.CspClientSecret.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCspClientSecret gets a reference to the given string and assigns it to the CspClientSecret field.
+// SetCspClientSecret gets a reference to the given NullableString and assigns it to the CspClientSecret field.
 func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf2) SetCspClientSecret(v string) {
-	o.CspClientSecret = &v
+	o.CspClientSecret.Set(&v)
 }
 
-// GetCspCustomer returns the CspCustomer field value if set, zero value otherwise.
+// SetCspClientSecretNil sets the value for CspClientSecret to be an explicit nil
+func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf2) SetCspClientSecretNil() {
+	o.CspClientSecret.Set(nil)
+}
+
+// UnsetCspClientSecret ensures that no value is present for CspClientSecret, not even an explicit nil
+func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf2) UnsetCspClientSecret() {
+	o.CspClientSecret.Unset()
+}
+
+// GetCspCustomer returns the CspCustomer field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf2) GetCspCustomer() string {
-	if o == nil || IsNil(o.CspCustomer) {
+	if o == nil || IsNil(o.CspCustomer.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.CspCustomer
+	return *o.CspCustomer.Get()
 }
 
 // GetCspCustomerOk returns a tuple with the CspCustomer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf2) GetCspCustomerOk() (*string, bool) {
-	if o == nil || IsNil(o.CspCustomer) {
+	if o == nil {
 		return nil, false
 	}
-	return o.CspCustomer, true
+	return o.CspCustomer.Get(), o.CspCustomer.IsSet()
 }
 
 // IsSetCspCustomer returns a boolean if a field has been set.
 func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf2) IsSetCspCustomer() bool {
-	if o != nil && !IsNil(o.CspCustomer) {
+	if o != nil && o.CspCustomer.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCspCustomer gets a reference to the given string and assigns it to the CspCustomer field.
+// SetCspCustomer gets a reference to the given NullableString and assigns it to the CspCustomer field.
 func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf2) SetCspCustomer(v string) {
-	o.CspCustomer = &v
+	o.CspCustomer.Set(&v)
+}
+
+// SetCspCustomerNil sets the value for CspCustomer to be an explicit nil
+func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf2) SetCspCustomerNil() {
+	o.CspCustomer.Set(nil)
+}
+
+// UnsetCspCustomer ensures that no value is present for CspCustomer, not even an explicit nil
+func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf2) UnsetCspCustomer() {
+	o.CspCustomer.Unset()
 }
 
 // GetConfigCmdbDiscovery returns the ConfigCmdbDiscovery field value if set, zero value otherwise.
@@ -1099,36 +1132,47 @@ func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf2) SetClientSecretHash(v
 	o.ClientSecretHash = &v
 }
 
-// GetCspClientSecretHash returns the CspClientSecretHash field value if set, zero value otherwise.
+// GetCspClientSecretHash returns the CspClientSecretHash field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf2) GetCspClientSecretHash() string {
-	if o == nil || IsNil(o.CspClientSecretHash) {
+	if o == nil || IsNil(o.CspClientSecretHash.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.CspClientSecretHash
+	return *o.CspClientSecretHash.Get()
 }
 
 // GetCspClientSecretHashOk returns a tuple with the CspClientSecretHash field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf2) GetCspClientSecretHashOk() (*string, bool) {
-	if o == nil || IsNil(o.CspClientSecretHash) {
+	if o == nil {
 		return nil, false
 	}
-	return o.CspClientSecretHash, true
+	return o.CspClientSecretHash.Get(), o.CspClientSecretHash.IsSet()
 }
 
 // IsSetCspClientSecretHash returns a boolean if a field has been set.
 func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf2) IsSetCspClientSecretHash() bool {
-	if o != nil && !IsNil(o.CspClientSecretHash) {
+	if o != nil && o.CspClientSecretHash.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCspClientSecretHash gets a reference to the given string and assigns it to the CspClientSecretHash field.
+// SetCspClientSecretHash gets a reference to the given NullableString and assigns it to the CspClientSecretHash field.
 func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf2) SetCspClientSecretHash(v string) {
-	o.CspClientSecretHash = &v
+	o.CspClientSecretHash.Set(&v)
+}
+
+// SetCspClientSecretHashNil sets the value for CspClientSecretHash to be an explicit nil
+func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf2) SetCspClientSecretHashNil() {
+	o.CspClientSecretHash.Set(nil)
+}
+
+// UnsetCspClientSecretHash ensures that no value is present for CspClientSecretHash, not even an explicit nil
+func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf2) UnsetCspClientSecretHash() {
+	o.CspClientSecretHash.Unset()
 }
 
 func (o ListClouds200ResponseAllOfZonesInnerConfigAnyOf2) MarshalJSON() ([]byte, error) {
@@ -1195,8 +1239,8 @@ func (o ListClouds200ResponseAllOfZonesInnerConfigAnyOf2) ToMap() (map[string]in
 	if !IsNil(o.ConfigCmdbId) {
 		toSerialize["configCmdbId"] = o.ConfigCmdbId
 	}
-	if !IsNil(o.SecurityServer) {
-		toSerialize["securityServer"] = o.SecurityServer
+	if o.SecurityServer.IsSet() {
+		toSerialize["securityServer"] = o.SecurityServer.Get()
 	}
 	if !IsNil(o.AccountType) {
 		toSerialize["accountType"] = o.AccountType
@@ -1222,11 +1266,11 @@ func (o ListClouds200ResponseAllOfZonesInnerConfigAnyOf2) ToMap() (map[string]in
 	if !IsNil(o.CspClientId) {
 		toSerialize["cspClientId"] = o.CspClientId
 	}
-	if !IsNil(o.CspClientSecret) {
-		toSerialize["cspClientSecret"] = o.CspClientSecret
+	if o.CspClientSecret.IsSet() {
+		toSerialize["cspClientSecret"] = o.CspClientSecret.Get()
 	}
-	if !IsNil(o.CspCustomer) {
-		toSerialize["cspCustomer"] = o.CspCustomer
+	if o.CspCustomer.IsSet() {
+		toSerialize["cspCustomer"] = o.CspCustomer.Get()
 	}
 	if !IsNil(o.ConfigCmdbDiscovery) {
 		toSerialize["configCmdbDiscovery"] = o.ConfigCmdbDiscovery
@@ -1237,8 +1281,8 @@ func (o ListClouds200ResponseAllOfZonesInnerConfigAnyOf2) ToMap() (map[string]in
 	if !IsNil(o.ClientSecretHash) {
 		toSerialize["clientSecretHash"] = o.ClientSecretHash
 	}
-	if !IsNil(o.CspClientSecretHash) {
-		toSerialize["cspClientSecretHash"] = o.CspClientSecretHash
+	if o.CspClientSecretHash.IsSet() {
+		toSerialize["cspClientSecretHash"] = o.CspClientSecretHash.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {

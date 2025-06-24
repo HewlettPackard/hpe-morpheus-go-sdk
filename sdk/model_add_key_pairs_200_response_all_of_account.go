@@ -21,15 +21,15 @@ var _ MappedNullable = &AddKeyPairs200ResponseAllOfAccount{}
 
 // AddKeyPairs200ResponseAllOfAccount struct for AddKeyPairs200ResponseAllOfAccount
 type AddKeyPairs200ResponseAllOfAccount struct {
-	Id             *int64  `json:"id,omitempty"`
-	Name           *string `json:"name,omitempty"`
-	AccountId      *int64  `json:"accountId,omitempty"`
-	PublicKey      *string `json:"publicKey,omitempty"`
-	HasPrivateKey  *bool   `json:"hasPrivateKey,omitempty"`
-	PrivateKeyHash *string `json:"privateKeyHash,omitempty"`
+	Id             *int64         `json:"id,omitempty"`
+	Name           *string        `json:"name,omitempty"`
+	AccountId      *int64         `json:"accountId,omitempty"`
+	PublicKey      NullableString `json:"publicKey,omitempty"`
+	HasPrivateKey  *bool          `json:"hasPrivateKey,omitempty"`
+	PrivateKeyHash NullableString `json:"privateKeyHash,omitempty"`
 	// Only present in response to generate
-	PrivateKey           *string                `json:"privateKey,omitempty"`
-	Fingerprint          *string                `json:"fingerprint,omitempty"`
+	PrivateKey           NullableString         `json:"privateKey,omitempty"`
+	Fingerprint          NullableString         `json:"fingerprint,omitempty"`
 	DateCreated          *time.Time             `json:"dateCreated,omitempty"`
 	LastUpdated          *time.Time             `json:"lastUpdated,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
@@ -150,36 +150,47 @@ func (o *AddKeyPairs200ResponseAllOfAccount) SetAccountId(v int64) {
 	o.AccountId = &v
 }
 
-// GetPublicKey returns the PublicKey field value if set, zero value otherwise.
+// GetPublicKey returns the PublicKey field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AddKeyPairs200ResponseAllOfAccount) GetPublicKey() string {
-	if o == nil || IsNil(o.PublicKey) {
+	if o == nil || IsNil(o.PublicKey.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.PublicKey
+	return *o.PublicKey.Get()
 }
 
 // GetPublicKeyOk returns a tuple with the PublicKey field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AddKeyPairs200ResponseAllOfAccount) GetPublicKeyOk() (*string, bool) {
-	if o == nil || IsNil(o.PublicKey) {
+	if o == nil {
 		return nil, false
 	}
-	return o.PublicKey, true
+	return o.PublicKey.Get(), o.PublicKey.IsSet()
 }
 
 // IsSetPublicKey returns a boolean if a field has been set.
 func (o *AddKeyPairs200ResponseAllOfAccount) IsSetPublicKey() bool {
-	if o != nil && !IsNil(o.PublicKey) {
+	if o != nil && o.PublicKey.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetPublicKey gets a reference to the given string and assigns it to the PublicKey field.
+// SetPublicKey gets a reference to the given NullableString and assigns it to the PublicKey field.
 func (o *AddKeyPairs200ResponseAllOfAccount) SetPublicKey(v string) {
-	o.PublicKey = &v
+	o.PublicKey.Set(&v)
+}
+
+// SetPublicKeyNil sets the value for PublicKey to be an explicit nil
+func (o *AddKeyPairs200ResponseAllOfAccount) SetPublicKeyNil() {
+	o.PublicKey.Set(nil)
+}
+
+// UnsetPublicKey ensures that no value is present for PublicKey, not even an explicit nil
+func (o *AddKeyPairs200ResponseAllOfAccount) UnsetPublicKey() {
+	o.PublicKey.Unset()
 }
 
 // GetHasPrivateKey returns the HasPrivateKey field value if set, zero value otherwise.
@@ -214,100 +225,133 @@ func (o *AddKeyPairs200ResponseAllOfAccount) SetHasPrivateKey(v bool) {
 	o.HasPrivateKey = &v
 }
 
-// GetPrivateKeyHash returns the PrivateKeyHash field value if set, zero value otherwise.
+// GetPrivateKeyHash returns the PrivateKeyHash field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AddKeyPairs200ResponseAllOfAccount) GetPrivateKeyHash() string {
-	if o == nil || IsNil(o.PrivateKeyHash) {
+	if o == nil || IsNil(o.PrivateKeyHash.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.PrivateKeyHash
+	return *o.PrivateKeyHash.Get()
 }
 
 // GetPrivateKeyHashOk returns a tuple with the PrivateKeyHash field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AddKeyPairs200ResponseAllOfAccount) GetPrivateKeyHashOk() (*string, bool) {
-	if o == nil || IsNil(o.PrivateKeyHash) {
+	if o == nil {
 		return nil, false
 	}
-	return o.PrivateKeyHash, true
+	return o.PrivateKeyHash.Get(), o.PrivateKeyHash.IsSet()
 }
 
 // IsSetPrivateKeyHash returns a boolean if a field has been set.
 func (o *AddKeyPairs200ResponseAllOfAccount) IsSetPrivateKeyHash() bool {
-	if o != nil && !IsNil(o.PrivateKeyHash) {
+	if o != nil && o.PrivateKeyHash.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetPrivateKeyHash gets a reference to the given string and assigns it to the PrivateKeyHash field.
+// SetPrivateKeyHash gets a reference to the given NullableString and assigns it to the PrivateKeyHash field.
 func (o *AddKeyPairs200ResponseAllOfAccount) SetPrivateKeyHash(v string) {
-	o.PrivateKeyHash = &v
+	o.PrivateKeyHash.Set(&v)
 }
 
-// GetPrivateKey returns the PrivateKey field value if set, zero value otherwise.
+// SetPrivateKeyHashNil sets the value for PrivateKeyHash to be an explicit nil
+func (o *AddKeyPairs200ResponseAllOfAccount) SetPrivateKeyHashNil() {
+	o.PrivateKeyHash.Set(nil)
+}
+
+// UnsetPrivateKeyHash ensures that no value is present for PrivateKeyHash, not even an explicit nil
+func (o *AddKeyPairs200ResponseAllOfAccount) UnsetPrivateKeyHash() {
+	o.PrivateKeyHash.Unset()
+}
+
+// GetPrivateKey returns the PrivateKey field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AddKeyPairs200ResponseAllOfAccount) GetPrivateKey() string {
-	if o == nil || IsNil(o.PrivateKey) {
+	if o == nil || IsNil(o.PrivateKey.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.PrivateKey
+	return *o.PrivateKey.Get()
 }
 
 // GetPrivateKeyOk returns a tuple with the PrivateKey field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AddKeyPairs200ResponseAllOfAccount) GetPrivateKeyOk() (*string, bool) {
-	if o == nil || IsNil(o.PrivateKey) {
+	if o == nil {
 		return nil, false
 	}
-	return o.PrivateKey, true
+	return o.PrivateKey.Get(), o.PrivateKey.IsSet()
 }
 
 // IsSetPrivateKey returns a boolean if a field has been set.
 func (o *AddKeyPairs200ResponseAllOfAccount) IsSetPrivateKey() bool {
-	if o != nil && !IsNil(o.PrivateKey) {
+	if o != nil && o.PrivateKey.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetPrivateKey gets a reference to the given string and assigns it to the PrivateKey field.
+// SetPrivateKey gets a reference to the given NullableString and assigns it to the PrivateKey field.
 func (o *AddKeyPairs200ResponseAllOfAccount) SetPrivateKey(v string) {
-	o.PrivateKey = &v
+	o.PrivateKey.Set(&v)
 }
 
-// GetFingerprint returns the Fingerprint field value if set, zero value otherwise.
+// SetPrivateKeyNil sets the value for PrivateKey to be an explicit nil
+func (o *AddKeyPairs200ResponseAllOfAccount) SetPrivateKeyNil() {
+	o.PrivateKey.Set(nil)
+}
+
+// UnsetPrivateKey ensures that no value is present for PrivateKey, not even an explicit nil
+func (o *AddKeyPairs200ResponseAllOfAccount) UnsetPrivateKey() {
+	o.PrivateKey.Unset()
+}
+
+// GetFingerprint returns the Fingerprint field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AddKeyPairs200ResponseAllOfAccount) GetFingerprint() string {
-	if o == nil || IsNil(o.Fingerprint) {
+	if o == nil || IsNil(o.Fingerprint.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Fingerprint
+	return *o.Fingerprint.Get()
 }
 
 // GetFingerprintOk returns a tuple with the Fingerprint field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AddKeyPairs200ResponseAllOfAccount) GetFingerprintOk() (*string, bool) {
-	if o == nil || IsNil(o.Fingerprint) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Fingerprint, true
+	return o.Fingerprint.Get(), o.Fingerprint.IsSet()
 }
 
 // IsSetFingerprint returns a boolean if a field has been set.
 func (o *AddKeyPairs200ResponseAllOfAccount) IsSetFingerprint() bool {
-	if o != nil && !IsNil(o.Fingerprint) {
+	if o != nil && o.Fingerprint.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetFingerprint gets a reference to the given string and assigns it to the Fingerprint field.
+// SetFingerprint gets a reference to the given NullableString and assigns it to the Fingerprint field.
 func (o *AddKeyPairs200ResponseAllOfAccount) SetFingerprint(v string) {
-	o.Fingerprint = &v
+	o.Fingerprint.Set(&v)
+}
+
+// SetFingerprintNil sets the value for Fingerprint to be an explicit nil
+func (o *AddKeyPairs200ResponseAllOfAccount) SetFingerprintNil() {
+	o.Fingerprint.Set(nil)
+}
+
+// UnsetFingerprint ensures that no value is present for Fingerprint, not even an explicit nil
+func (o *AddKeyPairs200ResponseAllOfAccount) UnsetFingerprint() {
+	o.Fingerprint.Unset()
 }
 
 // GetDateCreated returns the DateCreated field value if set, zero value otherwise.
@@ -393,20 +437,20 @@ func (o AddKeyPairs200ResponseAllOfAccount) ToMap() (map[string]interface{}, err
 	if !IsNil(o.AccountId) {
 		toSerialize["accountId"] = o.AccountId
 	}
-	if !IsNil(o.PublicKey) {
-		toSerialize["publicKey"] = o.PublicKey
+	if o.PublicKey.IsSet() {
+		toSerialize["publicKey"] = o.PublicKey.Get()
 	}
 	if !IsNil(o.HasPrivateKey) {
 		toSerialize["hasPrivateKey"] = o.HasPrivateKey
 	}
-	if !IsNil(o.PrivateKeyHash) {
-		toSerialize["privateKeyHash"] = o.PrivateKeyHash
+	if o.PrivateKeyHash.IsSet() {
+		toSerialize["privateKeyHash"] = o.PrivateKeyHash.Get()
 	}
-	if !IsNil(o.PrivateKey) {
-		toSerialize["privateKey"] = o.PrivateKey
+	if o.PrivateKey.IsSet() {
+		toSerialize["privateKey"] = o.PrivateKey.Get()
 	}
-	if !IsNil(o.Fingerprint) {
-		toSerialize["fingerprint"] = o.Fingerprint
+	if o.Fingerprint.IsSet() {
+		toSerialize["fingerprint"] = o.Fingerprint.Get()
 	}
 	if !IsNil(o.DateCreated) {
 		toSerialize["dateCreated"] = o.DateCreated

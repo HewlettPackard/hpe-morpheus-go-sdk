@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **EmailAddress** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **SmsAddress** | Pointer to **string** |  | [optional] 
-**SlackHook** | Pointer to **string** |  | [optional] 
+**SlackHook** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -154,6 +154,16 @@ SetSlackHook sets SlackHook field to given value.
 
 HasSlackHook returns a boolean if a field has been set.
 
+### SetSlackHookNil
+
+`func (o *Contact) SetSlackHookNil(b bool)`
+
+ SetSlackHookNil sets the value for SlackHook to be an explicit nil
+
+### UnsetSlackHook
+`func (o *Contact) UnsetSlackHook()`
+
+UnsetSlackHook ensures that no value is present for SlackHook, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

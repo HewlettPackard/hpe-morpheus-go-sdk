@@ -7,10 +7,10 @@ Name | Type | Description | Notes
 **Id** | Pointer to **int64** |  | [optional] 
 **Code** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **NullableString** |  | [optional] 
 **Vendor** | Pointer to **string** |  | [optional] 
 **Category** | Pointer to **string** |  | [optional] 
-**OsFamily** | Pointer to **string** |  | [optional] 
+**OsFamily** | Pointer to **NullableString** |  | [optional] 
 **OsVersion** | Pointer to **string** |  | [optional] 
 **BitCount** | Pointer to **int64** |  | [optional] 
 **Platform** | Pointer to **string** |  | [optional] 
@@ -134,6 +134,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *ListHosts200ResponseAllOfServersInnerServerOs) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *ListHosts200ResponseAllOfServersInnerServerOs) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetVendor
 
 `func (o *ListHosts200ResponseAllOfServersInnerServerOs) GetVendor() string`
@@ -209,6 +219,16 @@ SetOsFamily sets OsFamily field to given value.
 
 HasOsFamily returns a boolean if a field has been set.
 
+### SetOsFamilyNil
+
+`func (o *ListHosts200ResponseAllOfServersInnerServerOs) SetOsFamilyNil(b bool)`
+
+ SetOsFamilyNil sets the value for OsFamily to be an explicit nil
+
+### UnsetOsFamily
+`func (o *ListHosts200ResponseAllOfServersInnerServerOs) UnsetOsFamily()`
+
+UnsetOsFamily ensures that no value is present for OsFamily, not even an explicit nil
 ### GetOsVersion
 
 `func (o *ListHosts200ResponseAllOfServersInnerServerOs) GetOsVersion() string`

@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Id** | Pointer to **int64** |  | [optional] 
 **Logo** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **NullableString** |  | [optional] 
 **Status** | Pointer to **string** |  | [optional] 
 **AllocationStatus** | Pointer to **string** |  | [optional] 
 **Allocation** | Pointer to [**ListVdi200ResponseAllOfDesktopsInnerAllocation**](ListVdi200ResponseAllOfDesktopsInnerAllocation.md) |  | [optional] 
@@ -131,6 +131,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *ListVdi200ResponseAllOfDesktopsInner) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *ListVdi200ResponseAllOfDesktopsInner) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetStatus
 
 `func (o *ListVdi200ResponseAllOfDesktopsInner) GetStatus() string`

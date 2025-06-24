@@ -24,9 +24,9 @@ type ListHealth200ResponseAllOfHealthThreadsBusyThreadsInner struct {
 	Name                 *string                  `json:"name,omitempty"`
 	CpuTime              *int64                   `json:"cpuTime,omitempty"`
 	BlockedTime          *int64                   `json:"blockedTime,omitempty"`
-	LockName             *string                  `json:"lockName,omitempty"`
+	LockName             NullableString           `json:"lockName,omitempty"`
 	LockOwnerId          *int64                   `json:"lockOwnerId,omitempty"`
-	LockOwnerName        *string                  `json:"lockOwnerName,omitempty"`
+	LockOwnerName        NullableString           `json:"lockOwnerName,omitempty"`
 	State                *string                  `json:"state,omitempty"`
 	WaitedCount          *int64                   `json:"waitedCount,omitempty"`
 	WaitedTime           *int64                   `json:"waitedTime,omitempty"`
@@ -34,7 +34,7 @@ type ListHealth200ResponseAllOfHealthThreadsBusyThreadsInner struct {
 	IsSuspended          *bool                    `json:"isSuspended,omitempty"`
 	LockedMonitors       []map[string]interface{} `json:"lockedMonitors,omitempty"`
 	LockedSynchronizers  []map[string]interface{} `json:"lockedSynchronizers,omitempty"`
-	LockInfo             *string                  `json:"lockInfo,omitempty"`
+	LockInfo             NullableString           `json:"lockInfo,omitempty"`
 	CurrentLines         *string                  `json:"currentLines,omitempty"`
 	CpuPercent           *float32                 `json:"cpuPercent,omitempty"`
 	AdditionalProperties map[string]interface{}   `json:",remain"`
@@ -187,36 +187,47 @@ func (o *ListHealth200ResponseAllOfHealthThreadsBusyThreadsInner) SetBlockedTime
 	o.BlockedTime = &v
 }
 
-// GetLockName returns the LockName field value if set, zero value otherwise.
+// GetLockName returns the LockName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListHealth200ResponseAllOfHealthThreadsBusyThreadsInner) GetLockName() string {
-	if o == nil || IsNil(o.LockName) {
+	if o == nil || IsNil(o.LockName.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.LockName
+	return *o.LockName.Get()
 }
 
 // GetLockNameOk returns a tuple with the LockName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListHealth200ResponseAllOfHealthThreadsBusyThreadsInner) GetLockNameOk() (*string, bool) {
-	if o == nil || IsNil(o.LockName) {
+	if o == nil {
 		return nil, false
 	}
-	return o.LockName, true
+	return o.LockName.Get(), o.LockName.IsSet()
 }
 
 // IsSetLockName returns a boolean if a field has been set.
 func (o *ListHealth200ResponseAllOfHealthThreadsBusyThreadsInner) IsSetLockName() bool {
-	if o != nil && !IsNil(o.LockName) {
+	if o != nil && o.LockName.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetLockName gets a reference to the given string and assigns it to the LockName field.
+// SetLockName gets a reference to the given NullableString and assigns it to the LockName field.
 func (o *ListHealth200ResponseAllOfHealthThreadsBusyThreadsInner) SetLockName(v string) {
-	o.LockName = &v
+	o.LockName.Set(&v)
+}
+
+// SetLockNameNil sets the value for LockName to be an explicit nil
+func (o *ListHealth200ResponseAllOfHealthThreadsBusyThreadsInner) SetLockNameNil() {
+	o.LockName.Set(nil)
+}
+
+// UnsetLockName ensures that no value is present for LockName, not even an explicit nil
+func (o *ListHealth200ResponseAllOfHealthThreadsBusyThreadsInner) UnsetLockName() {
+	o.LockName.Unset()
 }
 
 // GetLockOwnerId returns the LockOwnerId field value if set, zero value otherwise.
@@ -251,36 +262,47 @@ func (o *ListHealth200ResponseAllOfHealthThreadsBusyThreadsInner) SetLockOwnerId
 	o.LockOwnerId = &v
 }
 
-// GetLockOwnerName returns the LockOwnerName field value if set, zero value otherwise.
+// GetLockOwnerName returns the LockOwnerName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListHealth200ResponseAllOfHealthThreadsBusyThreadsInner) GetLockOwnerName() string {
-	if o == nil || IsNil(o.LockOwnerName) {
+	if o == nil || IsNil(o.LockOwnerName.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.LockOwnerName
+	return *o.LockOwnerName.Get()
 }
 
 // GetLockOwnerNameOk returns a tuple with the LockOwnerName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListHealth200ResponseAllOfHealthThreadsBusyThreadsInner) GetLockOwnerNameOk() (*string, bool) {
-	if o == nil || IsNil(o.LockOwnerName) {
+	if o == nil {
 		return nil, false
 	}
-	return o.LockOwnerName, true
+	return o.LockOwnerName.Get(), o.LockOwnerName.IsSet()
 }
 
 // IsSetLockOwnerName returns a boolean if a field has been set.
 func (o *ListHealth200ResponseAllOfHealthThreadsBusyThreadsInner) IsSetLockOwnerName() bool {
-	if o != nil && !IsNil(o.LockOwnerName) {
+	if o != nil && o.LockOwnerName.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetLockOwnerName gets a reference to the given string and assigns it to the LockOwnerName field.
+// SetLockOwnerName gets a reference to the given NullableString and assigns it to the LockOwnerName field.
 func (o *ListHealth200ResponseAllOfHealthThreadsBusyThreadsInner) SetLockOwnerName(v string) {
-	o.LockOwnerName = &v
+	o.LockOwnerName.Set(&v)
+}
+
+// SetLockOwnerNameNil sets the value for LockOwnerName to be an explicit nil
+func (o *ListHealth200ResponseAllOfHealthThreadsBusyThreadsInner) SetLockOwnerNameNil() {
+	o.LockOwnerName.Set(nil)
+}
+
+// UnsetLockOwnerName ensures that no value is present for LockOwnerName, not even an explicit nil
+func (o *ListHealth200ResponseAllOfHealthThreadsBusyThreadsInner) UnsetLockOwnerName() {
+	o.LockOwnerName.Unset()
 }
 
 // GetState returns the State field value if set, zero value otherwise.
@@ -443,9 +465,9 @@ func (o *ListHealth200ResponseAllOfHealthThreadsBusyThreadsInner) SetIsSuspended
 	o.IsSuspended = &v
 }
 
-// GetLockedMonitors returns the LockedMonitors field value if set, zero value otherwise.
+// GetLockedMonitors returns the LockedMonitors field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListHealth200ResponseAllOfHealthThreadsBusyThreadsInner) GetLockedMonitors() []map[string]interface{} {
-	if o == nil || IsNil(o.LockedMonitors) {
+	if o == nil {
 		var ret []map[string]interface{}
 		return ret
 	}
@@ -454,6 +476,7 @@ func (o *ListHealth200ResponseAllOfHealthThreadsBusyThreadsInner) GetLockedMonit
 
 // GetLockedMonitorsOk returns a tuple with the LockedMonitors field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListHealth200ResponseAllOfHealthThreadsBusyThreadsInner) GetLockedMonitorsOk() ([]map[string]interface{}, bool) {
 	if o == nil || IsNil(o.LockedMonitors) {
 		return nil, false
@@ -475,9 +498,9 @@ func (o *ListHealth200ResponseAllOfHealthThreadsBusyThreadsInner) SetLockedMonit
 	o.LockedMonitors = v
 }
 
-// GetLockedSynchronizers returns the LockedSynchronizers field value if set, zero value otherwise.
+// GetLockedSynchronizers returns the LockedSynchronizers field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListHealth200ResponseAllOfHealthThreadsBusyThreadsInner) GetLockedSynchronizers() []map[string]interface{} {
-	if o == nil || IsNil(o.LockedSynchronizers) {
+	if o == nil {
 		var ret []map[string]interface{}
 		return ret
 	}
@@ -486,6 +509,7 @@ func (o *ListHealth200ResponseAllOfHealthThreadsBusyThreadsInner) GetLockedSynch
 
 // GetLockedSynchronizersOk returns a tuple with the LockedSynchronizers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListHealth200ResponseAllOfHealthThreadsBusyThreadsInner) GetLockedSynchronizersOk() ([]map[string]interface{}, bool) {
 	if o == nil || IsNil(o.LockedSynchronizers) {
 		return nil, false
@@ -507,36 +531,47 @@ func (o *ListHealth200ResponseAllOfHealthThreadsBusyThreadsInner) SetLockedSynch
 	o.LockedSynchronizers = v
 }
 
-// GetLockInfo returns the LockInfo field value if set, zero value otherwise.
+// GetLockInfo returns the LockInfo field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListHealth200ResponseAllOfHealthThreadsBusyThreadsInner) GetLockInfo() string {
-	if o == nil || IsNil(o.LockInfo) {
+	if o == nil || IsNil(o.LockInfo.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.LockInfo
+	return *o.LockInfo.Get()
 }
 
 // GetLockInfoOk returns a tuple with the LockInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListHealth200ResponseAllOfHealthThreadsBusyThreadsInner) GetLockInfoOk() (*string, bool) {
-	if o == nil || IsNil(o.LockInfo) {
+	if o == nil {
 		return nil, false
 	}
-	return o.LockInfo, true
+	return o.LockInfo.Get(), o.LockInfo.IsSet()
 }
 
 // IsSetLockInfo returns a boolean if a field has been set.
 func (o *ListHealth200ResponseAllOfHealthThreadsBusyThreadsInner) IsSetLockInfo() bool {
-	if o != nil && !IsNil(o.LockInfo) {
+	if o != nil && o.LockInfo.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetLockInfo gets a reference to the given string and assigns it to the LockInfo field.
+// SetLockInfo gets a reference to the given NullableString and assigns it to the LockInfo field.
 func (o *ListHealth200ResponseAllOfHealthThreadsBusyThreadsInner) SetLockInfo(v string) {
-	o.LockInfo = &v
+	o.LockInfo.Set(&v)
+}
+
+// SetLockInfoNil sets the value for LockInfo to be an explicit nil
+func (o *ListHealth200ResponseAllOfHealthThreadsBusyThreadsInner) SetLockInfoNil() {
+	o.LockInfo.Set(nil)
+}
+
+// UnsetLockInfo ensures that no value is present for LockInfo, not even an explicit nil
+func (o *ListHealth200ResponseAllOfHealthThreadsBusyThreadsInner) UnsetLockInfo() {
+	o.LockInfo.Unset()
 }
 
 // GetCurrentLines returns the CurrentLines field value if set, zero value otherwise.
@@ -625,14 +660,14 @@ func (o ListHealth200ResponseAllOfHealthThreadsBusyThreadsInner) ToMap() (map[st
 	if !IsNil(o.BlockedTime) {
 		toSerialize["blockedTime"] = o.BlockedTime
 	}
-	if !IsNil(o.LockName) {
-		toSerialize["lockName"] = o.LockName
+	if o.LockName.IsSet() {
+		toSerialize["lockName"] = o.LockName.Get()
 	}
 	if !IsNil(o.LockOwnerId) {
 		toSerialize["lockOwnerId"] = o.LockOwnerId
 	}
-	if !IsNil(o.LockOwnerName) {
-		toSerialize["lockOwnerName"] = o.LockOwnerName
+	if o.LockOwnerName.IsSet() {
+		toSerialize["lockOwnerName"] = o.LockOwnerName.Get()
 	}
 	if !IsNil(o.State) {
 		toSerialize["state"] = o.State
@@ -649,14 +684,14 @@ func (o ListHealth200ResponseAllOfHealthThreadsBusyThreadsInner) ToMap() (map[st
 	if !IsNil(o.IsSuspended) {
 		toSerialize["isSuspended"] = o.IsSuspended
 	}
-	if !IsNil(o.LockedMonitors) {
+	if o.LockedMonitors != nil {
 		toSerialize["lockedMonitors"] = o.LockedMonitors
 	}
-	if !IsNil(o.LockedSynchronizers) {
+	if o.LockedSynchronizers != nil {
 		toSerialize["lockedSynchronizers"] = o.LockedSynchronizers
 	}
-	if !IsNil(o.LockInfo) {
-		toSerialize["lockInfo"] = o.LockInfo
+	if o.LockInfo.IsSet() {
+		toSerialize["lockInfo"] = o.LockInfo.Get()
 	}
 	if !IsNil(o.CurrentLines) {
 		toSerialize["currentLines"] = o.CurrentLines

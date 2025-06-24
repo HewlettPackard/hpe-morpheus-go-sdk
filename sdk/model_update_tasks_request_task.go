@@ -31,7 +31,7 @@ type UpdateTasksRequestTask struct {
 	Labels []string `json:"labels,omitempty"`
 	// Map of options specific to each `task type`. eg. script
 	TaskOptions map[string]interface{} `json:"taskOptions,omitempty"`
-	ResultType  *string                `json:"resultType,omitempty"`
+	ResultType  NullableString         `json:"resultType,omitempty"`
 	// The execution target. eg. local,remote,resource. The default value varies by task type.
 	ExecuteTarget *string `json:"executeTarget,omitempty"`
 	// If the task should be retried or not.
@@ -264,36 +264,47 @@ func (o *UpdateTasksRequestTask) SetTaskOptions(v map[string]interface{}) {
 	o.TaskOptions = v
 }
 
-// GetResultType returns the ResultType field value if set, zero value otherwise.
+// GetResultType returns the ResultType field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UpdateTasksRequestTask) GetResultType() string {
-	if o == nil || IsNil(o.ResultType) {
+	if o == nil || IsNil(o.ResultType.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ResultType
+	return *o.ResultType.Get()
 }
 
 // GetResultTypeOk returns a tuple with the ResultType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *UpdateTasksRequestTask) GetResultTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.ResultType) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ResultType, true
+	return o.ResultType.Get(), o.ResultType.IsSet()
 }
 
 // IsSetResultType returns a boolean if a field has been set.
 func (o *UpdateTasksRequestTask) IsSetResultType() bool {
-	if o != nil && !IsNil(o.ResultType) {
+	if o != nil && o.ResultType.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetResultType gets a reference to the given string and assigns it to the ResultType field.
+// SetResultType gets a reference to the given NullableString and assigns it to the ResultType field.
 func (o *UpdateTasksRequestTask) SetResultType(v string) {
-	o.ResultType = &v
+	o.ResultType.Set(&v)
+}
+
+// SetResultTypeNil sets the value for ResultType to be an explicit nil
+func (o *UpdateTasksRequestTask) SetResultTypeNil() {
+	o.ResultType.Set(nil)
+}
+
+// UnsetResultType ensures that no value is present for ResultType, not even an explicit nil
+func (o *UpdateTasksRequestTask) UnsetResultType() {
+	o.ResultType.Unset()
 }
 
 // GetExecuteTarget returns the ExecuteTarget field value if set, zero value otherwise.
@@ -516,8 +527,8 @@ func (o UpdateTasksRequestTask) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.TaskOptions) {
 		toSerialize["taskOptions"] = o.TaskOptions
 	}
-	if !IsNil(o.ResultType) {
-		toSerialize["resultType"] = o.ResultType
+	if o.ResultType.IsSet() {
+		toSerialize["resultType"] = o.ResultType.Get()
 	}
 	if !IsNil(o.ExecuteTarget) {
 		toSerialize["executeTarget"] = o.ExecuteTarget

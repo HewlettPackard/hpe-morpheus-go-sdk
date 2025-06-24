@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
 **PoolId** | Pointer to **int64** |  | [optional] 
-**Pool** | Pointer to [**ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
+**Pool** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **Instance** | Pointer to [**ListVDIAllocations200ResponseAllOfVdiAllocationsInnerInstance**](ListVDIAllocations200ResponseAllOfVdiAllocationsInnerInstance.md) |  | [optional] 
 **User** | Pointer to [**ListVDIPools200ResponseAllOfVdiPoolsInnerOwner**](ListVDIPools200ResponseAllOfVdiPoolsInnerOwner.md) |  | [optional] 
 **LocalUserCreated** | Pointer to **bool** |  | [optional] 
@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **Status** | Pointer to **string** |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
-**LastReserved** | Pointer to **time.Time** |  | [optional] 
+**LastReserved** | Pointer to **NullableTime** |  | [optional] 
 **ReleaseDate** | Pointer to **time.Time** |  | [optional] 
 
 ## Methods
@@ -89,20 +89,20 @@ HasPoolId returns a boolean if a field has been set.
 
 ### GetPool
 
-`func (o *ListVdi200ResponseAllOfDesktopsInnerAllocation) GetPool() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *ListVdi200ResponseAllOfDesktopsInnerAllocation) GetPool() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetPool returns the Pool field if non-nil, zero value otherwise.
 
 ### GetPoolOk
 
-`func (o *ListVdi200ResponseAllOfDesktopsInnerAllocation) GetPoolOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *ListVdi200ResponseAllOfDesktopsInnerAllocation) GetPoolOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetPoolOk returns a tuple with the Pool field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPool
 
-`func (o *ListVdi200ResponseAllOfDesktopsInnerAllocation) SetPool(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *ListVdi200ResponseAllOfDesktopsInnerAllocation) SetPool(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetPool sets Pool field to given value.
 
@@ -337,6 +337,16 @@ SetLastReserved sets LastReserved field to given value.
 
 HasLastReserved returns a boolean if a field has been set.
 
+### SetLastReservedNil
+
+`func (o *ListVdi200ResponseAllOfDesktopsInnerAllocation) SetLastReservedNil(b bool)`
+
+ SetLastReservedNil sets the value for LastReserved to be an explicit nil
+
+### UnsetLastReserved
+`func (o *ListVdi200ResponseAllOfDesktopsInnerAllocation) UnsetLastReserved()`
+
+UnsetLastReserved ensures that no value is present for LastReserved, not even an explicit nil
 ### GetReleaseDate
 
 `func (o *ListVdi200ResponseAllOfDesktopsInnerAllocation) GetReleaseDate() time.Time`

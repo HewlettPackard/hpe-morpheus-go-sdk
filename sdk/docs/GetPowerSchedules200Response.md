@@ -52,6 +52,16 @@ SetInstances sets Instances field to given value.
 
 HasInstances returns a boolean if a field has been set.
 
+### SetInstancesNil
+
+`func (o *GetPowerSchedules200Response) SetInstancesNil(b bool)`
+
+ SetInstancesNil sets the value for Instances to be an explicit nil
+
+### UnsetInstances
+`func (o *GetPowerSchedules200Response) UnsetInstances()`
+
+UnsetInstances ensures that no value is present for Instances, not even an explicit nil
 ### GetServers
 
 `func (o *GetPowerSchedules200Response) GetServers() []GetPowerSchedules200ResponseAllOfInstancesInner`
@@ -77,6 +87,16 @@ SetServers sets Servers field to given value.
 
 HasServers returns a boolean if a field has been set.
 
+### SetServersNil
+
+`func (o *GetPowerSchedules200Response) SetServersNil(b bool)`
+
+ SetServersNil sets the value for Servers to be an explicit nil
+
+### UnsetServers
+`func (o *GetPowerSchedules200Response) UnsetServers()`
+
+UnsetServers ensures that no value is present for Servers, not even an explicit nil
 ### GetSchedule
 
 `func (o *GetPowerSchedules200Response) GetSchedule() ListPowerSchedules200ResponseAllOfSchedulesInner`

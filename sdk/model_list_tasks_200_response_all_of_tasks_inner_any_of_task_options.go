@@ -20,20 +20,20 @@ var _ MappedNullable = &ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions{}
 
 // ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions struct for ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions
 type ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions struct {
-	AnsibleOptions       *string                `json:"ansibleOptions,omitempty"`
-	AnsiblePlaybook      *string                `json:"ansiblePlaybook,omitempty"`
-	SshKey               *string                `json:"sshKey,omitempty"`
-	Port                 *string                `json:"port,omitempty"`
-	LocalScriptGitRef    *string                `json:"localScriptGitRef,omitempty"`
-	Password             *string                `json:"password,omitempty"`
-	PasswordHash         *string                `json:"passwordHash,omitempty"`
-	LocalScriptGitId     *string                `json:"localScriptGitId,omitempty"`
+	AnsibleOptions       NullableString         `json:"ansibleOptions,omitempty"`
+	AnsiblePlaybook      NullableString         `json:"ansiblePlaybook,omitempty"`
+	SshKey               NullableString         `json:"sshKey,omitempty"`
+	Port                 NullableString         `json:"port,omitempty"`
+	LocalScriptGitRef    NullableString         `json:"localScriptGitRef,omitempty"`
+	Password             NullableString         `json:"password,omitempty"`
+	PasswordHash         NullableString         `json:"passwordHash,omitempty"`
+	LocalScriptGitId     NullableString         `json:"localScriptGitId,omitempty"`
 	AnsibleGitId         *string                `json:"ansibleGitId,omitempty"`
-	Host                 *string                `json:"host,omitempty"`
-	AnsibleSkipTags      *string                `json:"ansibleSkipTags,omitempty"`
-	AnsibleTags          *string                `json:"ansibleTags,omitempty"`
-	Username             *string                `json:"username,omitempty"`
-	AnsibleGitRef        *string                `json:"ansibleGitRef,omitempty"`
+	Host                 NullableString         `json:"host,omitempty"`
+	AnsibleSkipTags      NullableString         `json:"ansibleSkipTags,omitempty"`
+	AnsibleTags          NullableString         `json:"ansibleTags,omitempty"`
+	Username             NullableString         `json:"username,omitempty"`
+	AnsibleGitRef        NullableString         `json:"ansibleGitRef,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -56,260 +56,348 @@ func NewListTasks200ResponseAllOfTasksInnerAnyOfTaskOptionsWithDefaults() *ListT
 	return &this
 }
 
-// GetAnsibleOptions returns the AnsibleOptions field value if set, zero value otherwise.
+// GetAnsibleOptions returns the AnsibleOptions field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) GetAnsibleOptions() string {
-	if o == nil || IsNil(o.AnsibleOptions) {
+	if o == nil || IsNil(o.AnsibleOptions.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.AnsibleOptions
+	return *o.AnsibleOptions.Get()
 }
 
 // GetAnsibleOptionsOk returns a tuple with the AnsibleOptions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) GetAnsibleOptionsOk() (*string, bool) {
-	if o == nil || IsNil(o.AnsibleOptions) {
+	if o == nil {
 		return nil, false
 	}
-	return o.AnsibleOptions, true
+	return o.AnsibleOptions.Get(), o.AnsibleOptions.IsSet()
 }
 
 // IsSetAnsibleOptions returns a boolean if a field has been set.
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) IsSetAnsibleOptions() bool {
-	if o != nil && !IsNil(o.AnsibleOptions) {
+	if o != nil && o.AnsibleOptions.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetAnsibleOptions gets a reference to the given string and assigns it to the AnsibleOptions field.
+// SetAnsibleOptions gets a reference to the given NullableString and assigns it to the AnsibleOptions field.
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) SetAnsibleOptions(v string) {
-	o.AnsibleOptions = &v
+	o.AnsibleOptions.Set(&v)
 }
 
-// GetAnsiblePlaybook returns the AnsiblePlaybook field value if set, zero value otherwise.
+// SetAnsibleOptionsNil sets the value for AnsibleOptions to be an explicit nil
+func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) SetAnsibleOptionsNil() {
+	o.AnsibleOptions.Set(nil)
+}
+
+// UnsetAnsibleOptions ensures that no value is present for AnsibleOptions, not even an explicit nil
+func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) UnsetAnsibleOptions() {
+	o.AnsibleOptions.Unset()
+}
+
+// GetAnsiblePlaybook returns the AnsiblePlaybook field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) GetAnsiblePlaybook() string {
-	if o == nil || IsNil(o.AnsiblePlaybook) {
+	if o == nil || IsNil(o.AnsiblePlaybook.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.AnsiblePlaybook
+	return *o.AnsiblePlaybook.Get()
 }
 
 // GetAnsiblePlaybookOk returns a tuple with the AnsiblePlaybook field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) GetAnsiblePlaybookOk() (*string, bool) {
-	if o == nil || IsNil(o.AnsiblePlaybook) {
+	if o == nil {
 		return nil, false
 	}
-	return o.AnsiblePlaybook, true
+	return o.AnsiblePlaybook.Get(), o.AnsiblePlaybook.IsSet()
 }
 
 // IsSetAnsiblePlaybook returns a boolean if a field has been set.
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) IsSetAnsiblePlaybook() bool {
-	if o != nil && !IsNil(o.AnsiblePlaybook) {
+	if o != nil && o.AnsiblePlaybook.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetAnsiblePlaybook gets a reference to the given string and assigns it to the AnsiblePlaybook field.
+// SetAnsiblePlaybook gets a reference to the given NullableString and assigns it to the AnsiblePlaybook field.
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) SetAnsiblePlaybook(v string) {
-	o.AnsiblePlaybook = &v
+	o.AnsiblePlaybook.Set(&v)
 }
 
-// GetSshKey returns the SshKey field value if set, zero value otherwise.
+// SetAnsiblePlaybookNil sets the value for AnsiblePlaybook to be an explicit nil
+func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) SetAnsiblePlaybookNil() {
+	o.AnsiblePlaybook.Set(nil)
+}
+
+// UnsetAnsiblePlaybook ensures that no value is present for AnsiblePlaybook, not even an explicit nil
+func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) UnsetAnsiblePlaybook() {
+	o.AnsiblePlaybook.Unset()
+}
+
+// GetSshKey returns the SshKey field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) GetSshKey() string {
-	if o == nil || IsNil(o.SshKey) {
+	if o == nil || IsNil(o.SshKey.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.SshKey
+	return *o.SshKey.Get()
 }
 
 // GetSshKeyOk returns a tuple with the SshKey field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) GetSshKeyOk() (*string, bool) {
-	if o == nil || IsNil(o.SshKey) {
+	if o == nil {
 		return nil, false
 	}
-	return o.SshKey, true
+	return o.SshKey.Get(), o.SshKey.IsSet()
 }
 
 // IsSetSshKey returns a boolean if a field has been set.
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) IsSetSshKey() bool {
-	if o != nil && !IsNil(o.SshKey) {
+	if o != nil && o.SshKey.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetSshKey gets a reference to the given string and assigns it to the SshKey field.
+// SetSshKey gets a reference to the given NullableString and assigns it to the SshKey field.
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) SetSshKey(v string) {
-	o.SshKey = &v
+	o.SshKey.Set(&v)
 }
 
-// GetPort returns the Port field value if set, zero value otherwise.
+// SetSshKeyNil sets the value for SshKey to be an explicit nil
+func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) SetSshKeyNil() {
+	o.SshKey.Set(nil)
+}
+
+// UnsetSshKey ensures that no value is present for SshKey, not even an explicit nil
+func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) UnsetSshKey() {
+	o.SshKey.Unset()
+}
+
+// GetPort returns the Port field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) GetPort() string {
-	if o == nil || IsNil(o.Port) {
+	if o == nil || IsNil(o.Port.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Port
+	return *o.Port.Get()
 }
 
 // GetPortOk returns a tuple with the Port field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) GetPortOk() (*string, bool) {
-	if o == nil || IsNil(o.Port) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Port, true
+	return o.Port.Get(), o.Port.IsSet()
 }
 
 // IsSetPort returns a boolean if a field has been set.
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) IsSetPort() bool {
-	if o != nil && !IsNil(o.Port) {
+	if o != nil && o.Port.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetPort gets a reference to the given string and assigns it to the Port field.
+// SetPort gets a reference to the given NullableString and assigns it to the Port field.
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) SetPort(v string) {
-	o.Port = &v
+	o.Port.Set(&v)
 }
 
-// GetLocalScriptGitRef returns the LocalScriptGitRef field value if set, zero value otherwise.
+// SetPortNil sets the value for Port to be an explicit nil
+func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) SetPortNil() {
+	o.Port.Set(nil)
+}
+
+// UnsetPort ensures that no value is present for Port, not even an explicit nil
+func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) UnsetPort() {
+	o.Port.Unset()
+}
+
+// GetLocalScriptGitRef returns the LocalScriptGitRef field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) GetLocalScriptGitRef() string {
-	if o == nil || IsNil(o.LocalScriptGitRef) {
+	if o == nil || IsNil(o.LocalScriptGitRef.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.LocalScriptGitRef
+	return *o.LocalScriptGitRef.Get()
 }
 
 // GetLocalScriptGitRefOk returns a tuple with the LocalScriptGitRef field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) GetLocalScriptGitRefOk() (*string, bool) {
-	if o == nil || IsNil(o.LocalScriptGitRef) {
+	if o == nil {
 		return nil, false
 	}
-	return o.LocalScriptGitRef, true
+	return o.LocalScriptGitRef.Get(), o.LocalScriptGitRef.IsSet()
 }
 
 // IsSetLocalScriptGitRef returns a boolean if a field has been set.
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) IsSetLocalScriptGitRef() bool {
-	if o != nil && !IsNil(o.LocalScriptGitRef) {
+	if o != nil && o.LocalScriptGitRef.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetLocalScriptGitRef gets a reference to the given string and assigns it to the LocalScriptGitRef field.
+// SetLocalScriptGitRef gets a reference to the given NullableString and assigns it to the LocalScriptGitRef field.
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) SetLocalScriptGitRef(v string) {
-	o.LocalScriptGitRef = &v
+	o.LocalScriptGitRef.Set(&v)
 }
 
-// GetPassword returns the Password field value if set, zero value otherwise.
+// SetLocalScriptGitRefNil sets the value for LocalScriptGitRef to be an explicit nil
+func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) SetLocalScriptGitRefNil() {
+	o.LocalScriptGitRef.Set(nil)
+}
+
+// UnsetLocalScriptGitRef ensures that no value is present for LocalScriptGitRef, not even an explicit nil
+func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) UnsetLocalScriptGitRef() {
+	o.LocalScriptGitRef.Unset()
+}
+
+// GetPassword returns the Password field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) GetPassword() string {
-	if o == nil || IsNil(o.Password) {
+	if o == nil || IsNil(o.Password.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Password
+	return *o.Password.Get()
 }
 
 // GetPasswordOk returns a tuple with the Password field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) GetPasswordOk() (*string, bool) {
-	if o == nil || IsNil(o.Password) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Password, true
+	return o.Password.Get(), o.Password.IsSet()
 }
 
 // IsSetPassword returns a boolean if a field has been set.
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) IsSetPassword() bool {
-	if o != nil && !IsNil(o.Password) {
+	if o != nil && o.Password.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetPassword gets a reference to the given string and assigns it to the Password field.
+// SetPassword gets a reference to the given NullableString and assigns it to the Password field.
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) SetPassword(v string) {
-	o.Password = &v
+	o.Password.Set(&v)
 }
 
-// GetPasswordHash returns the PasswordHash field value if set, zero value otherwise.
+// SetPasswordNil sets the value for Password to be an explicit nil
+func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) SetPasswordNil() {
+	o.Password.Set(nil)
+}
+
+// UnsetPassword ensures that no value is present for Password, not even an explicit nil
+func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) UnsetPassword() {
+	o.Password.Unset()
+}
+
+// GetPasswordHash returns the PasswordHash field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) GetPasswordHash() string {
-	if o == nil || IsNil(o.PasswordHash) {
+	if o == nil || IsNil(o.PasswordHash.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.PasswordHash
+	return *o.PasswordHash.Get()
 }
 
 // GetPasswordHashOk returns a tuple with the PasswordHash field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) GetPasswordHashOk() (*string, bool) {
-	if o == nil || IsNil(o.PasswordHash) {
+	if o == nil {
 		return nil, false
 	}
-	return o.PasswordHash, true
+	return o.PasswordHash.Get(), o.PasswordHash.IsSet()
 }
 
 // IsSetPasswordHash returns a boolean if a field has been set.
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) IsSetPasswordHash() bool {
-	if o != nil && !IsNil(o.PasswordHash) {
+	if o != nil && o.PasswordHash.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetPasswordHash gets a reference to the given string and assigns it to the PasswordHash field.
+// SetPasswordHash gets a reference to the given NullableString and assigns it to the PasswordHash field.
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) SetPasswordHash(v string) {
-	o.PasswordHash = &v
+	o.PasswordHash.Set(&v)
 }
 
-// GetLocalScriptGitId returns the LocalScriptGitId field value if set, zero value otherwise.
+// SetPasswordHashNil sets the value for PasswordHash to be an explicit nil
+func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) SetPasswordHashNil() {
+	o.PasswordHash.Set(nil)
+}
+
+// UnsetPasswordHash ensures that no value is present for PasswordHash, not even an explicit nil
+func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) UnsetPasswordHash() {
+	o.PasswordHash.Unset()
+}
+
+// GetLocalScriptGitId returns the LocalScriptGitId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) GetLocalScriptGitId() string {
-	if o == nil || IsNil(o.LocalScriptGitId) {
+	if o == nil || IsNil(o.LocalScriptGitId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.LocalScriptGitId
+	return *o.LocalScriptGitId.Get()
 }
 
 // GetLocalScriptGitIdOk returns a tuple with the LocalScriptGitId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) GetLocalScriptGitIdOk() (*string, bool) {
-	if o == nil || IsNil(o.LocalScriptGitId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.LocalScriptGitId, true
+	return o.LocalScriptGitId.Get(), o.LocalScriptGitId.IsSet()
 }
 
 // IsSetLocalScriptGitId returns a boolean if a field has been set.
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) IsSetLocalScriptGitId() bool {
-	if o != nil && !IsNil(o.LocalScriptGitId) {
+	if o != nil && o.LocalScriptGitId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetLocalScriptGitId gets a reference to the given string and assigns it to the LocalScriptGitId field.
+// SetLocalScriptGitId gets a reference to the given NullableString and assigns it to the LocalScriptGitId field.
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) SetLocalScriptGitId(v string) {
-	o.LocalScriptGitId = &v
+	o.LocalScriptGitId.Set(&v)
+}
+
+// SetLocalScriptGitIdNil sets the value for LocalScriptGitId to be an explicit nil
+func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) SetLocalScriptGitIdNil() {
+	o.LocalScriptGitId.Set(nil)
+}
+
+// UnsetLocalScriptGitId ensures that no value is present for LocalScriptGitId, not even an explicit nil
+func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) UnsetLocalScriptGitId() {
+	o.LocalScriptGitId.Unset()
 }
 
 // GetAnsibleGitId returns the AnsibleGitId field value if set, zero value otherwise.
@@ -344,164 +432,219 @@ func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) SetAnsibleGitId(v 
 	o.AnsibleGitId = &v
 }
 
-// GetHost returns the Host field value if set, zero value otherwise.
+// GetHost returns the Host field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) GetHost() string {
-	if o == nil || IsNil(o.Host) {
+	if o == nil || IsNil(o.Host.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Host
+	return *o.Host.Get()
 }
 
 // GetHostOk returns a tuple with the Host field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) GetHostOk() (*string, bool) {
-	if o == nil || IsNil(o.Host) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Host, true
+	return o.Host.Get(), o.Host.IsSet()
 }
 
 // IsSetHost returns a boolean if a field has been set.
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) IsSetHost() bool {
-	if o != nil && !IsNil(o.Host) {
+	if o != nil && o.Host.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetHost gets a reference to the given string and assigns it to the Host field.
+// SetHost gets a reference to the given NullableString and assigns it to the Host field.
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) SetHost(v string) {
-	o.Host = &v
+	o.Host.Set(&v)
 }
 
-// GetAnsibleSkipTags returns the AnsibleSkipTags field value if set, zero value otherwise.
+// SetHostNil sets the value for Host to be an explicit nil
+func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) SetHostNil() {
+	o.Host.Set(nil)
+}
+
+// UnsetHost ensures that no value is present for Host, not even an explicit nil
+func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) UnsetHost() {
+	o.Host.Unset()
+}
+
+// GetAnsibleSkipTags returns the AnsibleSkipTags field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) GetAnsibleSkipTags() string {
-	if o == nil || IsNil(o.AnsibleSkipTags) {
+	if o == nil || IsNil(o.AnsibleSkipTags.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.AnsibleSkipTags
+	return *o.AnsibleSkipTags.Get()
 }
 
 // GetAnsibleSkipTagsOk returns a tuple with the AnsibleSkipTags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) GetAnsibleSkipTagsOk() (*string, bool) {
-	if o == nil || IsNil(o.AnsibleSkipTags) {
+	if o == nil {
 		return nil, false
 	}
-	return o.AnsibleSkipTags, true
+	return o.AnsibleSkipTags.Get(), o.AnsibleSkipTags.IsSet()
 }
 
 // IsSetAnsibleSkipTags returns a boolean if a field has been set.
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) IsSetAnsibleSkipTags() bool {
-	if o != nil && !IsNil(o.AnsibleSkipTags) {
+	if o != nil && o.AnsibleSkipTags.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetAnsibleSkipTags gets a reference to the given string and assigns it to the AnsibleSkipTags field.
+// SetAnsibleSkipTags gets a reference to the given NullableString and assigns it to the AnsibleSkipTags field.
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) SetAnsibleSkipTags(v string) {
-	o.AnsibleSkipTags = &v
+	o.AnsibleSkipTags.Set(&v)
 }
 
-// GetAnsibleTags returns the AnsibleTags field value if set, zero value otherwise.
+// SetAnsibleSkipTagsNil sets the value for AnsibleSkipTags to be an explicit nil
+func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) SetAnsibleSkipTagsNil() {
+	o.AnsibleSkipTags.Set(nil)
+}
+
+// UnsetAnsibleSkipTags ensures that no value is present for AnsibleSkipTags, not even an explicit nil
+func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) UnsetAnsibleSkipTags() {
+	o.AnsibleSkipTags.Unset()
+}
+
+// GetAnsibleTags returns the AnsibleTags field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) GetAnsibleTags() string {
-	if o == nil || IsNil(o.AnsibleTags) {
+	if o == nil || IsNil(o.AnsibleTags.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.AnsibleTags
+	return *o.AnsibleTags.Get()
 }
 
 // GetAnsibleTagsOk returns a tuple with the AnsibleTags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) GetAnsibleTagsOk() (*string, bool) {
-	if o == nil || IsNil(o.AnsibleTags) {
+	if o == nil {
 		return nil, false
 	}
-	return o.AnsibleTags, true
+	return o.AnsibleTags.Get(), o.AnsibleTags.IsSet()
 }
 
 // IsSetAnsibleTags returns a boolean if a field has been set.
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) IsSetAnsibleTags() bool {
-	if o != nil && !IsNil(o.AnsibleTags) {
+	if o != nil && o.AnsibleTags.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetAnsibleTags gets a reference to the given string and assigns it to the AnsibleTags field.
+// SetAnsibleTags gets a reference to the given NullableString and assigns it to the AnsibleTags field.
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) SetAnsibleTags(v string) {
-	o.AnsibleTags = &v
+	o.AnsibleTags.Set(&v)
 }
 
-// GetUsername returns the Username field value if set, zero value otherwise.
+// SetAnsibleTagsNil sets the value for AnsibleTags to be an explicit nil
+func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) SetAnsibleTagsNil() {
+	o.AnsibleTags.Set(nil)
+}
+
+// UnsetAnsibleTags ensures that no value is present for AnsibleTags, not even an explicit nil
+func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) UnsetAnsibleTags() {
+	o.AnsibleTags.Unset()
+}
+
+// GetUsername returns the Username field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) GetUsername() string {
-	if o == nil || IsNil(o.Username) {
+	if o == nil || IsNil(o.Username.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Username
+	return *o.Username.Get()
 }
 
 // GetUsernameOk returns a tuple with the Username field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) GetUsernameOk() (*string, bool) {
-	if o == nil || IsNil(o.Username) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Username, true
+	return o.Username.Get(), o.Username.IsSet()
 }
 
 // IsSetUsername returns a boolean if a field has been set.
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) IsSetUsername() bool {
-	if o != nil && !IsNil(o.Username) {
+	if o != nil && o.Username.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetUsername gets a reference to the given string and assigns it to the Username field.
+// SetUsername gets a reference to the given NullableString and assigns it to the Username field.
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) SetUsername(v string) {
-	o.Username = &v
+	o.Username.Set(&v)
 }
 
-// GetAnsibleGitRef returns the AnsibleGitRef field value if set, zero value otherwise.
+// SetUsernameNil sets the value for Username to be an explicit nil
+func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) SetUsernameNil() {
+	o.Username.Set(nil)
+}
+
+// UnsetUsername ensures that no value is present for Username, not even an explicit nil
+func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) UnsetUsername() {
+	o.Username.Unset()
+}
+
+// GetAnsibleGitRef returns the AnsibleGitRef field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) GetAnsibleGitRef() string {
-	if o == nil || IsNil(o.AnsibleGitRef) {
+	if o == nil || IsNil(o.AnsibleGitRef.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.AnsibleGitRef
+	return *o.AnsibleGitRef.Get()
 }
 
 // GetAnsibleGitRefOk returns a tuple with the AnsibleGitRef field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) GetAnsibleGitRefOk() (*string, bool) {
-	if o == nil || IsNil(o.AnsibleGitRef) {
+	if o == nil {
 		return nil, false
 	}
-	return o.AnsibleGitRef, true
+	return o.AnsibleGitRef.Get(), o.AnsibleGitRef.IsSet()
 }
 
 // IsSetAnsibleGitRef returns a boolean if a field has been set.
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) IsSetAnsibleGitRef() bool {
-	if o != nil && !IsNil(o.AnsibleGitRef) {
+	if o != nil && o.AnsibleGitRef.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetAnsibleGitRef gets a reference to the given string and assigns it to the AnsibleGitRef field.
+// SetAnsibleGitRef gets a reference to the given NullableString and assigns it to the AnsibleGitRef field.
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) SetAnsibleGitRef(v string) {
-	o.AnsibleGitRef = &v
+	o.AnsibleGitRef.Set(&v)
+}
+
+// SetAnsibleGitRefNil sets the value for AnsibleGitRef to be an explicit nil
+func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) SetAnsibleGitRefNil() {
+	o.AnsibleGitRef.Set(nil)
+}
+
+// UnsetAnsibleGitRef ensures that no value is present for AnsibleGitRef, not even an explicit nil
+func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) UnsetAnsibleGitRef() {
+	o.AnsibleGitRef.Unset()
 }
 
 func (o ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) MarshalJSON() ([]byte, error) {
@@ -514,47 +657,47 @@ func (o ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) MarshalJSON() ([]by
 
 func (o ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AnsibleOptions) {
-		toSerialize["ansibleOptions"] = o.AnsibleOptions
+	if o.AnsibleOptions.IsSet() {
+		toSerialize["ansibleOptions"] = o.AnsibleOptions.Get()
 	}
-	if !IsNil(o.AnsiblePlaybook) {
-		toSerialize["ansiblePlaybook"] = o.AnsiblePlaybook
+	if o.AnsiblePlaybook.IsSet() {
+		toSerialize["ansiblePlaybook"] = o.AnsiblePlaybook.Get()
 	}
-	if !IsNil(o.SshKey) {
-		toSerialize["sshKey"] = o.SshKey
+	if o.SshKey.IsSet() {
+		toSerialize["sshKey"] = o.SshKey.Get()
 	}
-	if !IsNil(o.Port) {
-		toSerialize["port"] = o.Port
+	if o.Port.IsSet() {
+		toSerialize["port"] = o.Port.Get()
 	}
-	if !IsNil(o.LocalScriptGitRef) {
-		toSerialize["localScriptGitRef"] = o.LocalScriptGitRef
+	if o.LocalScriptGitRef.IsSet() {
+		toSerialize["localScriptGitRef"] = o.LocalScriptGitRef.Get()
 	}
-	if !IsNil(o.Password) {
-		toSerialize["password"] = o.Password
+	if o.Password.IsSet() {
+		toSerialize["password"] = o.Password.Get()
 	}
-	if !IsNil(o.PasswordHash) {
-		toSerialize["passwordHash"] = o.PasswordHash
+	if o.PasswordHash.IsSet() {
+		toSerialize["passwordHash"] = o.PasswordHash.Get()
 	}
-	if !IsNil(o.LocalScriptGitId) {
-		toSerialize["localScriptGitId"] = o.LocalScriptGitId
+	if o.LocalScriptGitId.IsSet() {
+		toSerialize["localScriptGitId"] = o.LocalScriptGitId.Get()
 	}
 	if !IsNil(o.AnsibleGitId) {
 		toSerialize["ansibleGitId"] = o.AnsibleGitId
 	}
-	if !IsNil(o.Host) {
-		toSerialize["host"] = o.Host
+	if o.Host.IsSet() {
+		toSerialize["host"] = o.Host.Get()
 	}
-	if !IsNil(o.AnsibleSkipTags) {
-		toSerialize["ansibleSkipTags"] = o.AnsibleSkipTags
+	if o.AnsibleSkipTags.IsSet() {
+		toSerialize["ansibleSkipTags"] = o.AnsibleSkipTags.Get()
 	}
-	if !IsNil(o.AnsibleTags) {
-		toSerialize["ansibleTags"] = o.AnsibleTags
+	if o.AnsibleTags.IsSet() {
+		toSerialize["ansibleTags"] = o.AnsibleTags.Get()
 	}
-	if !IsNil(o.Username) {
-		toSerialize["username"] = o.Username
+	if o.Username.IsSet() {
+		toSerialize["username"] = o.Username.Get()
 	}
-	if !IsNil(o.AnsibleGitRef) {
-		toSerialize["ansibleGitRef"] = o.AnsibleGitRef
+	if o.AnsibleGitRef.IsSet() {
+		toSerialize["ansibleGitRef"] = o.AnsibleGitRef.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {

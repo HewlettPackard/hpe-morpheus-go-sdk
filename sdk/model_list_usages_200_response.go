@@ -20,9 +20,9 @@ var _ MappedNullable = &ListUsages200Response{}
 
 // ListUsages200Response struct for ListUsages200Response
 type ListUsages200Response struct {
-	Activity             []ListUsages200ResponseActivityInner `json:"activity,omitempty"`
-	Meta                 *ListUsages200ResponseMeta           `json:"meta,omitempty"`
-	AdditionalProperties map[string]interface{}               `json:",remain"`
+	Activity             []ListActivity200ResponseAllOfActivityInnerActivityInner `json:"activity,omitempty"`
+	Meta                 *ListUsages200ResponseMeta                               `json:"meta,omitempty"`
+	AdditionalProperties map[string]interface{}                                   `json:",remain"`
 }
 
 type _ListUsages200Response ListUsages200Response
@@ -45,9 +45,9 @@ func NewListUsages200ResponseWithDefaults() *ListUsages200Response {
 }
 
 // GetActivity returns the Activity field value if set, zero value otherwise.
-func (o *ListUsages200Response) GetActivity() []ListUsages200ResponseActivityInner {
+func (o *ListUsages200Response) GetActivity() []ListActivity200ResponseAllOfActivityInnerActivityInner {
 	if o == nil || IsNil(o.Activity) {
-		var ret []ListUsages200ResponseActivityInner
+		var ret []ListActivity200ResponseAllOfActivityInnerActivityInner
 		return ret
 	}
 	return o.Activity
@@ -55,7 +55,7 @@ func (o *ListUsages200Response) GetActivity() []ListUsages200ResponseActivityInn
 
 // GetActivityOk returns a tuple with the Activity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListUsages200Response) GetActivityOk() ([]ListUsages200ResponseActivityInner, bool) {
+func (o *ListUsages200Response) GetActivityOk() ([]ListActivity200ResponseAllOfActivityInnerActivityInner, bool) {
 	if o == nil || IsNil(o.Activity) {
 		return nil, false
 	}
@@ -71,8 +71,8 @@ func (o *ListUsages200Response) IsSetActivity() bool {
 	return false
 }
 
-// SetActivity gets a reference to the given []ListUsages200ResponseActivityInner and assigns it to the Activity field.
-func (o *ListUsages200Response) SetActivity(v []ListUsages200ResponseActivityInner) {
+// SetActivity gets a reference to the given []ListActivity200ResponseAllOfActivityInnerActivityInner and assigns it to the Activity field.
+func (o *ListUsages200Response) SetActivity(v []ListActivity200ResponseAllOfActivityInnerActivityInner) {
 	o.Activity = v
 }
 

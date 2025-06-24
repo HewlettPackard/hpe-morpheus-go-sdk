@@ -21,8 +21,8 @@ var _ MappedNullable = &NetworkPoolCreate{}
 // NetworkPoolCreate struct for NetworkPoolCreate
 type NetworkPoolCreate struct {
 	// Name
-	Name *string                                  `json:"name,omitempty"`
-	Type *CreateNetworkPoolRequestNetworkPoolType `json:"type,omitempty"`
+	Name *string                                                     `json:"name,omitempty"`
+	Type *AddInstance200ResponseAllOfOneOfInstanceConfigInstanceType `json:"type,omitempty"`
 	// Array of IP range objects. Type 'morpheus' expects startAddress and endAddress. Type 'morpheusipv6' expects a cidrIPv6.
 	IpRanges []CreateNetworkPoolRequestNetworkPoolIpRangesInner `json:"ipRanges,omitempty"`
 	// Configuration object with parameters that vary by pool type.
@@ -82,9 +82,9 @@ func (o *NetworkPoolCreate) SetName(v string) {
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
-func (o *NetworkPoolCreate) GetType() CreateNetworkPoolRequestNetworkPoolType {
+func (o *NetworkPoolCreate) GetType() AddInstance200ResponseAllOfOneOfInstanceConfigInstanceType {
 	if o == nil || IsNil(o.Type) {
-		var ret CreateNetworkPoolRequestNetworkPoolType
+		var ret AddInstance200ResponseAllOfOneOfInstanceConfigInstanceType
 		return ret
 	}
 	return *o.Type
@@ -92,7 +92,7 @@ func (o *NetworkPoolCreate) GetType() CreateNetworkPoolRequestNetworkPoolType {
 
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *NetworkPoolCreate) GetTypeOk() (*CreateNetworkPoolRequestNetworkPoolType, bool) {
+func (o *NetworkPoolCreate) GetTypeOk() (*AddInstance200ResponseAllOfOneOfInstanceConfigInstanceType, bool) {
 	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
@@ -108,8 +108,8 @@ func (o *NetworkPoolCreate) IsSetType() bool {
 	return false
 }
 
-// SetType gets a reference to the given CreateNetworkPoolRequestNetworkPoolType and assigns it to the Type field.
-func (o *NetworkPoolCreate) SetType(v CreateNetworkPoolRequestNetworkPoolType) {
+// SetType gets a reference to the given AddInstance200ResponseAllOfOneOfInstanceConfigInstanceType and assigns it to the Type field.
+func (o *NetworkPoolCreate) SetType(v AddInstance200ResponseAllOfOneOfInstanceConfigInstanceType) {
 	o.Type = &v
 }
 

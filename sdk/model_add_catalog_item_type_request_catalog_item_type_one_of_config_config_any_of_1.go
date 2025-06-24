@@ -21,7 +21,7 @@ var _ MappedNullable = &AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfi
 // AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1 struct for AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1
 type AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1 struct {
 	// Skipping Agent installation will result in a lack of logging and guest operating system statistics. Automation scripts may also be adversely affected.
-	NoAgent *bool `json:"noAgent,omitempty"`
+	NoAgent NullableBool `json:"noAgent,omitempty"`
 	// id of the resource group to be used, can be prefixed with `pool-`. A resource pool group can be specified instead by prefixing its ID with `poolGroup-`.
 	ResourcePoolId *string `json:"resourcePoolId,omitempty"`
 	// Specific host to deploy to if so desired.
@@ -44,7 +44,7 @@ type _AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1 AddCatalog
 func NewAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1() *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1 {
 	this := AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1{}
 	var noAgent bool = false
-	this.NoAgent = &noAgent
+	this.NoAgent = *NewNullableBool(&noAgent)
 	var nestedVirtualization string = "off"
 	this.NestedVirtualization = &nestedVirtualization
 	return &this
@@ -56,42 +56,53 @@ func NewAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1() *AddCa
 func NewAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1WithDefaults() *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1 {
 	this := AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1{}
 	var noAgent bool = false
-	this.NoAgent = &noAgent
+	this.NoAgent = *NewNullableBool(&noAgent)
 	var nestedVirtualization string = "off"
 	this.NestedVirtualization = &nestedVirtualization
 	return &this
 }
 
-// GetNoAgent returns the NoAgent field value if set, zero value otherwise.
+// GetNoAgent returns the NoAgent field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) GetNoAgent() bool {
-	if o == nil || IsNil(o.NoAgent) {
+	if o == nil || IsNil(o.NoAgent.Get()) {
 		var ret bool
 		return ret
 	}
-	return *o.NoAgent
+	return *o.NoAgent.Get()
 }
 
 // GetNoAgentOk returns a tuple with the NoAgent field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) GetNoAgentOk() (*bool, bool) {
-	if o == nil || IsNil(o.NoAgent) {
+	if o == nil {
 		return nil, false
 	}
-	return o.NoAgent, true
+	return o.NoAgent.Get(), o.NoAgent.IsSet()
 }
 
 // IsSetNoAgent returns a boolean if a field has been set.
 func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) IsSetNoAgent() bool {
-	if o != nil && !IsNil(o.NoAgent) {
+	if o != nil && o.NoAgent.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetNoAgent gets a reference to the given bool and assigns it to the NoAgent field.
+// SetNoAgent gets a reference to the given NullableBool and assigns it to the NoAgent field.
 func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) SetNoAgent(v bool) {
-	o.NoAgent = &v
+	o.NoAgent.Set(&v)
+}
+
+// SetNoAgentNil sets the value for NoAgent to be an explicit nil
+func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) SetNoAgentNil() {
+	o.NoAgent.Set(nil)
+}
+
+// UnsetNoAgent ensures that no value is present for NoAgent, not even an explicit nil
+func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) UnsetNoAgent() {
+	o.NoAgent.Unset()
 }
 
 // GetResourcePoolId returns the ResourcePoolId field value if set, zero value otherwise.
@@ -264,8 +275,8 @@ func (o AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) Marshal
 
 func (o AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.NoAgent) {
-		toSerialize["noAgent"] = o.NoAgent
+	if o.NoAgent.IsSet() {
+		toSerialize["noAgent"] = o.NoAgent.Get()
 	}
 	if !IsNil(o.ResourcePoolId) {
 		toSerialize["resourcePoolId"] = o.ResourcePoolId

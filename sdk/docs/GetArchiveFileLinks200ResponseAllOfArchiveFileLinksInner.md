@@ -7,11 +7,11 @@ Name | Type | Description | Notes
 **Id** | Pointer to **int64** |  | [optional] 
 **SecretAccessKey** | Pointer to **string** |  | [optional] 
 **ArchiveFile** | Pointer to [**GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile**](GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile.md) |  | [optional] 
-**CreatedBy** | Pointer to [**GetArchiveBucket200ResponseArchiveFilesInnerCreatedBy**](GetArchiveBucket200ResponseArchiveFilesInnerCreatedBy.md) |  | [optional] 
+**CreatedBy** | Pointer to [**ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy**](ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy.md) |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
-**LastAccessDate** | Pointer to **time.Time** |  | [optional] 
-**ExpirationDate** | Pointer to **time.Time** |  | [optional] 
+**LastAccessDate** | Pointer to **NullableTime** |  | [optional] 
+**ExpirationDate** | Pointer to **NullableTime** |  | [optional] 
 **DownloadCount** | Pointer to **int64** |  | [optional] 
 
 ## Methods
@@ -110,20 +110,20 @@ HasArchiveFile returns a boolean if a field has been set.
 
 ### GetCreatedBy
 
-`func (o *GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner) GetCreatedBy() GetArchiveBucket200ResponseArchiveFilesInnerCreatedBy`
+`func (o *GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner) GetCreatedBy() ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy`
 
 GetCreatedBy returns the CreatedBy field if non-nil, zero value otherwise.
 
 ### GetCreatedByOk
 
-`func (o *GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner) GetCreatedByOk() (*GetArchiveBucket200ResponseArchiveFilesInnerCreatedBy, bool)`
+`func (o *GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner) GetCreatedByOk() (*ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy, bool)`
 
 GetCreatedByOk returns a tuple with the CreatedBy field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCreatedBy
 
-`func (o *GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner) SetCreatedBy(v GetArchiveBucket200ResponseArchiveFilesInnerCreatedBy)`
+`func (o *GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner) SetCreatedBy(v ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy)`
 
 SetCreatedBy sets CreatedBy field to given value.
 
@@ -208,6 +208,16 @@ SetLastAccessDate sets LastAccessDate field to given value.
 
 HasLastAccessDate returns a boolean if a field has been set.
 
+### SetLastAccessDateNil
+
+`func (o *GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner) SetLastAccessDateNil(b bool)`
+
+ SetLastAccessDateNil sets the value for LastAccessDate to be an explicit nil
+
+### UnsetLastAccessDate
+`func (o *GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner) UnsetLastAccessDate()`
+
+UnsetLastAccessDate ensures that no value is present for LastAccessDate, not even an explicit nil
 ### GetExpirationDate
 
 `func (o *GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner) GetExpirationDate() time.Time`
@@ -233,6 +243,16 @@ SetExpirationDate sets ExpirationDate field to given value.
 
 HasExpirationDate returns a boolean if a field has been set.
 
+### SetExpirationDateNil
+
+`func (o *GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner) SetExpirationDateNil(b bool)`
+
+ SetExpirationDateNil sets the value for ExpirationDate to be an explicit nil
+
+### UnsetExpirationDate
+`func (o *GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner) UnsetExpirationDate()`
+
+UnsetExpirationDate ensures that no value is present for ExpirationDate, not even an explicit nil
 ### GetDownloadCount
 
 `func (o *GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner) GetDownloadCount() int64`
