@@ -81,6 +81,15 @@ func (v *NullableBool) UnmarshalJSON(src []byte) error {
 	return json.Unmarshal(src, &v.value)
 }
 
+func (v NullableBool) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}
+
 type NullableInt struct {
 	value *int
 	isSet bool
@@ -115,6 +124,15 @@ func (v NullableInt) MarshalJSON() ([]byte, error) {
 func (v *NullableInt) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
+}
+
+func (v NullableInt) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
 }
 
 type NullableInt32 struct {
@@ -153,6 +171,15 @@ func (v *NullableInt32) UnmarshalJSON(src []byte) error {
 	return json.Unmarshal(src, &v.value)
 }
 
+func (v NullableInt32) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}
+
 type NullableInt64 struct {
 	value *int64
 	isSet bool
@@ -187,6 +214,15 @@ func (v NullableInt64) MarshalJSON() ([]byte, error) {
 func (v *NullableInt64) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
+}
+
+func (v NullableInt64) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
 }
 
 type NullableFloat32 struct {
@@ -225,6 +261,15 @@ func (v *NullableFloat32) UnmarshalJSON(src []byte) error {
 	return json.Unmarshal(src, &v.value)
 }
 
+func (v NullableFloat32) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}
+
 type NullableFloat64 struct {
 	value *float64
 	isSet bool
@@ -259,6 +304,15 @@ func (v NullableFloat64) MarshalJSON() ([]byte, error) {
 func (v *NullableFloat64) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
+}
+
+func (v NullableFloat64) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
 }
 
 type NullableString struct {
@@ -297,6 +351,15 @@ func (v *NullableString) UnmarshalJSON(src []byte) error {
 	return json.Unmarshal(src, &v.value)
 }
 
+func (v NullableString) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}
+
 type NullableTime struct {
 	value *time.Time
 	isSet bool
@@ -331,6 +394,15 @@ func (v NullableTime) MarshalJSON() ([]byte, error) {
 func (v *NullableTime) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
+}
+
+func (v NullableTime) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
 }
 
 // IsNil checks if an input is nil
@@ -421,17 +493,10 @@ func decodeTime(src reflect.Type, tgt reflect.Type, data any) (any, error) {
 	return time.Parse(time.RFC3339, s)
 }
 
-func decode(data []byte, v any, decodeFuncs ...mapstructure.DecodeHookFunc) error {
-	m := make(map[string]any)
-	jdec := json.NewDecoder(bytes.NewBuffer(data))
-	if err := jdec.Decode(&m); err != nil {
-		return err
-	}
-
+func mapstructDecode(data, res any, decodeFuncs ...mapstructure.DecodeHookFunc) error {
 	dec, err := mapstructure.NewDecoder(&mapstructure.DecoderConfig{
 		DecodeHook: mapstructure.ComposeDecodeHookFunc(
 			decodeUnmarshaler,
-			mapstructure.ComposeDecodeHookFunc(decodeFuncs...),
 			decodeUIBools,
 			decodeTime,
 		),
@@ -439,15 +504,29 @@ func decode(data []byte, v any, decodeFuncs ...mapstructure.DecodeHookFunc) erro
 		WeaklyTypedInput: true,
 		// Re-use the json tag name for mapstructure. It's difficult to update
 		// the actual tags on structs, so this is an easy workaround.
-		TagName: "json",
-		Result:  &v,
+		TagName:   "json",
+		DecodeNil: true,
+		Result:    res,
 	})
-
 	if err != nil {
 		return err
 	}
 
-	if err := dec.Decode(m); err != nil {
+	if err := dec.Decode(data); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func decode(data []byte, v any, decodeFuncs ...mapstructure.DecodeHookFunc) error {
+	m := make(map[string]any)
+	jdec := json.NewDecoder(bytes.NewBuffer(data))
+	if err := jdec.Decode(&m); err != nil {
+		return err
+	}
+
+	if err := mapstructDecode(&m, &v, decodeFuncs); err != nil {
 		return err
 	}
 
